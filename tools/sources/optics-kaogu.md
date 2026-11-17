@@ -4,7 +4,7 @@
 >
 > **來源與日期：** 112 級 2022-04-27、114 級 2024-04-23、115 級 2025-04-22。資料夾的「級」和實際考試年份不同，以下依資料夾名稱標示。
 
-**三份原卷**：[112 級](https://drive.google.com/file/d/1np2SimPpwpH_m6Il4W5bWp1tvncmUToZ/view)｜[114 級](https://drive.google.com/file/d/1NpkskhRBzwZdj1n601rcng54yhI8LDdO/view)｜[115 級](https://drive.google.com/file/d/1im3w5KsdkiCXdA-Ak4FdJSX8c_w9-3mb/view)｜[114 級附帶的手寫解答](https://drive.google.com/file/d/1y3ocidey9Y6qtGaM3FoRHdpGnNo0R0vm/view)
+**三份原卷**：112 級｜114 級｜115 級｜114 級附帶的手寫解答
 
 > **2026 年本次考試範圍：** 依老師逐字稿，範圍為第八～十章。原 D 組 TM 反射與透射（三年的第 4 題）**不在此次範圍，已刪除**。新增的舊題與課本補強見 [H 組](#h-組本次新增舊考古與課本第一輪補強不含駐波)：八道完整題解，含電磁波能量密度、球／圓柱波平均能流與都卜勒提醒。
 
@@ -1660,8 +1660,8 @@ $$
 
 **來源：**
 
-- [2018～2020 近代光學歷屆原卷](https://drive.google.com/file/d/1D_YBdbOe4EPUWHcsogT9VGltDNR7hsHI/view)：2018 年期中在 PDF **第 1 頁**；2020 年期中在 PDF **第 4 頁**。
-- [Pedrotti, *Introduction to Optics*, 3rd ed.](https://drive.google.com/file/d/12bCZJiJOsfXU-MQbkqaZPlKInXCYaBr2/view)：4-18、4-19 在**印刷第 112 頁／PDF 第 131 頁**；7-1、7-6 在**印刷第 189 頁／PDF 第 208 頁**。
+- 2018～2020 近代光學歷屆原卷：2018 年期中在 PDF **第 1 頁**；2020 年期中在 PDF **第 4 頁**。
+- Pedrotti, *Introduction to Optics*, 3rd ed.：4-18、4-19 在**印刷第 112 頁／PDF 第 131 頁**；7-1、7-6 在**印刷第 189 頁／PDF 第 208 頁**。
 - 老師考前逐字稿：第八章 00:38～02:39；第九章 02:42～04:21；第十章 04:37～05:31。
 
 ### 符號表

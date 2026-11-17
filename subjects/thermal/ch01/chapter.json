@@ -69,25 +69,6 @@
       "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。"
     }
   ],
-  "sources": [
-    {
-      "match": "115 級上學期期中",
-      "label": "開原卷",
-      "url": "https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view"
-    },
-    {
-      "match": "某級上學期期中",
-      "label": "開原卷",
-      "url": "https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view"
-    },
-    {
-      "match": "Schroeder",
-      "label": "開課本原文",
-      "url": "https://drive.google.com/file/d/1Fh2YKWsXhi8u96VNGhJ4CGbApB6mG0uS/view",
-      "pageOffset": 13,
-      "local": "C:/Users/jaiia/Downloads/熱學.pdf"
-    }
-  ],
   "stepSymbols": "step_symbols.json",
   "exam": "exam.html",
   "scripts": [

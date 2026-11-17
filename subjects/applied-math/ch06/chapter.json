@@ -6,15 +6,58 @@
   "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備「應用數學」（柯景元老師，115 學年上學期）的考試。這一章是 10/21 的板書：Bessel 方程 $x^2y''+xy'+(x^2-m^2)y=0$，老師說它是 Frobenius 法的應用例，來自圓柱座標的偏微分方程（徑向方程式）。與標準式比較 $P=\\frac1x$、$Q=\\frac{x^2-m^2}{x^2}$，$xP=1$、$x^2Q=x^2-m^2$ 不發散，所以 $x=0$ 是正則奇點；令 $y=\\sum a_nx^{n+\\gamma}$（$a_0\\ne0$）代入，指標根 $\\gamma=\\pm m$，$a_1=0$，遞迴 $(n+\\gamma+m)(n+\\gamma-m)a_n+a_{n-2}=0$。$\\gamma=m$ 的解歸一化後定義 Bessel 函數 $J_m(x)=\\sum_{n\\ge0}\\frac{(-1)^n}{(m+n)!\\,n!}\\big(\\frac x2\\big)^{m+2n}$；$m$ 為整數時 $J_{-m}=(-1)^mJ_m$（線性相依），所以第二個解要用降階法 $y_2=J_m\\int\\frac{dx}{x J_m^2}$，得 Neumann 函數 $Y_m$（在 $x=0$ 發散），一般解 $y=AJ_m+BY_m$。老師畫了 $J_0,J_1,Y_0,Y_1$ 的圖、半徑 $R$ 的圓盤 $y(r,\\theta)$，給了零點表（$J_0$：2.4、5.5、8.7；$J_1$：3.8、7.0、10.2；$Y_0$：0.9、4.0、7.1；$Y_1$：2.2、5.4、8.6），以及五條遞迴關係：① $x^mJ_{m-1}=\\frac{d}{dx}(x^mJ_m)$；② $J_m'=-\\frac mxJ_m+J_{m-1}=\\frac mxJ_m-J_{m+1}$；③ $x^{-m}J_{m+1}=-\\frac{d}{dx}(x^{-m}J_m)$；④ $J_m=\\frac{x}{2m}(J_{m-1}+J_{m+1})$；⑤ $J_m'=\\frac12(J_{m-1}-J_{m+1})$。板書例題：已知 $J_3(1)=0.0196$、$J_3(2)=0.1289$，用 ③ 求 $\\int_1^2x^{-3}J_4\\,dx=J_3(1)-\\frac{J_3(2)}8\\approx0.00349$。網站補充：$J_{\\pm1/2}=\\sqrt{2/(\\pi x)}\\sin x,\\cos x$、Wronskian、變數代換（$J_m(ax)$、$J_m(e^x)$、$\\sqrt x J_{\\pm1/3}(\\frac23x^{3/2})$）、正交性與 Fourier–Bessel 級數、圓形鼓膜與圓柱熱傳導。考古題：111 上期末 $\\int_0^1(r-r^3)J_0(2r)dr=\\frac12J_2(2)$；113 上期末 $x^2y''+xy'+\\lambda^2x^2y=0$、$y(0)=1$、$y(3)=0$ ⇒ $J_0(3\\lambda)=0$；113 下期中圓柱腔基態能量 $\\frac{\\hbar^2}{2m}(j_{01}^2+\\frac{\\pi^2}{4})$；114 上期末 $x^2y''+xy'+(x^2-\\frac14)y=0$（$J_{\\pm1/2}$）。學生沒有指定課本，回答時用板書的記號（$m$ 是階數、$\\gamma$ 是指標、遞迴關係編號 ①–⑤），並提醒他們寫出判斷（為什麼丟掉 $Y_m$、用哪一條恆等式）。",
   "overview": "s00",
   "sections": [
-    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pages": "10/21 照片 1–7" },
-    { "id": "s01", "file": "01-bessel-eq.html", "title": "Bessel 方程：用 Frobenius 法求 Bessel 函數", "pages": "10/21 照片 1–2", "desc": "圓柱座標 PDE 的徑向方程式 $x^2y''+xy'+(x^2-m^2)y=0$；$x=0$ 正則奇點，指標根 $\\gamma=\\pm m$、$a_1=0$、遞迴 $(n+\\gamma+m)(n+\\gamma-m)a_n+a_{n-2}=0$；$\\gamma=m$ 的解定義 $J_m$；變數代換化成 Bessel 方程。" },
-    { "id": "s02", "file": "02-second.html", "title": "第二個解：Neumann 函數與一般解", "pages": "10/21 照片 2–4", "desc": "$m$ 為整數時 $J_{-m}=(-1)^mJ_m$ 線性相依（板書下限誤植）；降階法 $y_2=J_m\\int\\frac{dx}{xJ_m^2}$ 得 Neumann 函數 $Y_m$，一般解 $AJ_m+BY_m$；半整數階 $J_{\\pm1/2}$ 的封閉形式（114 上期末）。" },
-    { "id": "s03", "file": "03-zeros.html", "title": "圖形、零點與邊界值問題", "pages": "10/21 照片 5–6", "desc": "$J_0,J_1,Y_0,Y_1$ 的圖與零點表；圓盤邊界 $J_m(kR)=0$ 決定 $k$；113 上期末 $J_0(3\\lambda)=0$、113 下期中圓柱腔基態；正交性、鼓膜頻率。" },
-    { "id": "s04", "file": "04-recurrence.html", "title": "遞迴恆等式與積分", "pages": "10/21 照片 6–7", "desc": "五條遞迴關係；積分式 $\\int x^mJ_{m-1}=x^mJ_m$、$\\int x^{-m}J_{m+1}=-x^{-m}J_m$；板書 $\\int_1^2x^{-3}J_4\\,dx$、111 上期末 $\\int_0^1(r-r^3)J_0(2r)dr$；Fourier–Bessel 展開與生成函數。" },
-    { "id": "s05", "file": "05-exam.html", "title": "考前衝刺", "pages": "10/21 照片 1–7", "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與偏難的變化題。" }
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "本章總覽",
+      "pages": "10/21 照片 1–7"
+    },
+    {
+      "id": "s01",
+      "file": "01-bessel-eq.html",
+      "title": "Bessel 方程：用 Frobenius 法求 Bessel 函數",
+      "pages": "10/21 照片 1–2",
+      "desc": "圓柱座標 PDE 的徑向方程式 $x^2y''+xy'+(x^2-m^2)y=0$；$x=0$ 正則奇點，指標根 $\\gamma=\\pm m$、$a_1=0$、遞迴 $(n+\\gamma+m)(n+\\gamma-m)a_n+a_{n-2}=0$；$\\gamma=m$ 的解定義 $J_m$；變數代換化成 Bessel 方程。"
+    },
+    {
+      "id": "s02",
+      "file": "02-second.html",
+      "title": "第二個解：Neumann 函數與一般解",
+      "pages": "10/21 照片 2–4",
+      "desc": "$m$ 為整數時 $J_{-m}=(-1)^mJ_m$ 線性相依（板書下限誤植）；降階法 $y_2=J_m\\int\\frac{dx}{xJ_m^2}$ 得 Neumann 函數 $Y_m$，一般解 $AJ_m+BY_m$；半整數階 $J_{\\pm1/2}$ 的封閉形式（114 上期末）。"
+    },
+    {
+      "id": "s03",
+      "file": "03-zeros.html",
+      "title": "圖形、零點與邊界值問題",
+      "pages": "10/21 照片 5–6",
+      "desc": "$J_0,J_1,Y_0,Y_1$ 的圖與零點表；圓盤邊界 $J_m(kR)=0$ 決定 $k$；113 上期末 $J_0(3\\lambda)=0$、113 下期中圓柱腔基態；正交性、鼓膜頻率。"
+    },
+    {
+      "id": "s04",
+      "file": "04-recurrence.html",
+      "title": "遞迴恆等式與積分",
+      "pages": "10/21 照片 6–7",
+      "desc": "五條遞迴關係；積分式 $\\int x^mJ_{m-1}=x^mJ_m$、$\\int x^{-m}J_{m+1}=-x^{-m}J_m$；板書 $\\int_1^2x^{-3}J_4\\,dx$、111 上期末 $\\int_0^1(r-r^3)J_0(2r)dr$；Fourier–Bessel 展開與生成函數。"
+    },
+    {
+      "id": "s05",
+      "file": "05-exam.html",
+      "title": "考前衝刺",
+      "pages": "10/21 照片 1–7",
+      "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與偏難的變化題。"
+    }
   ],
-  "sources": [{ "match": "應用數學", "label": "開考古題網站", "url": "https://sites.google.com/site/phys207207/%E6%87%89%E7%94%A8%E6%95%B8%E5%AD%B8" }],
+  "sources": [
+    {
+      "match": "應用數學",
+      "label": "開考古題網站",
+      "url": "https://sites.google.com/site/phys207207/%E6%87%89%E7%94%A8%E6%95%B8%E5%AD%B8"
+    }
+  ],
   "stepSymbols": "step_symbols.json",
   "exam": "exam.html",
-  "scripts": ["figures.js"]
+  "scripts": [
+    "figures.js"
+  ]
 }

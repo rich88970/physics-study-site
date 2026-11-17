@@ -5,26 +5,128 @@
   "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備古典力學考試：老師是董育宸，這一章是講義 Lecture 2: Newtonian Mechanics — Single Particles（159 頁），課本是 Thornton & Marion《Classical Dynamics of Particles and Systems》(5th ed.) 第 2 章 Newtonian Mechanics—Single Particle。內容是牛頓三定律與慣性座標系、用 F=mẍ 解一維運動（斜面、摩擦、與速度有關的阻力、終端速度、由 v(x) 求力）、拋體（含空氣阻力）、Atwood 機、帶電粒子、動量與角動量守恆、功與能量、保守力與位能、平衡與穩定性。老師的考題多半出自課本：大約一半是課本例題原題，其餘是課本習題改條件或要求證明、推導。",
   "overview": "s00",
   "sections": [
-    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pages": "p.1–4" },
-    { "id": "s01", "file": "01-laws.html", "title": "牛頓三定律與伽利略的慣性", "pages": "p.1–13", "desc": "三條定律在說什麼、伽利略的斜面與船、對稱性、牛頓力學的適用範圍。" },
-    { "id": "s02", "file": "02-frames.html", "title": "參考座標系：地球算不算慣性系", "pages": "p.14–23", "desc": "慣性座標系的定義、加速列車上的球、地球公轉與自轉的加速度、赤道的體重計、科氏效應。" },
-    { "id": "s03", "file": "03-second-third.html", "title": "第二、第三定律與動量守恆", "pages": "p.24–33", "desc": "$\\vec F=\\mathrm d\\vec p/\\mathrm dt$、各軸分開寫、用第三定律定義質量、由第三定律推出動量守恆。" },
-    { "id": "s04", "file": "04-strategy.html", "title": "解運動方程式的策略", "pages": "p.34–45", "desc": "力的形式決定能不能積分（習題 2-1）、求 $v(t)$、$x(t)$、$v(x)$ 的三種寫法、積分複習。" },
-    { "id": "s05", "file": "05-incline.html", "title": "斜面與摩擦", "pages": "p.46–53", "desc": "例題 2.1–2.3：座標怎麼選、靜摩擦的臨界角、動摩擦的加速度，以及斜面加滑輪、煞車距離。" },
-    { "id": "s06", "file": "06-drag.html", "title": "阻力與終端速度", "pages": "p.54–62", "desc": "$F_r\\propto v^n$、水平與鉛直的線性阻力（例題 2.4、2.5）、終端速度、$v^2$ 阻力下落的距離（習題 2-11）。" },
-    { "id": "s07", "file": "07-force-from-v.html", "title": "指數阻力與由速度求力", "pages": "p.63–73", "desc": "$F=-\\alpha e^{\\beta v}$ 的停止時間與距離（2-39）、$F=\\tfrac12m\\,\\mathrm d(\\dot x^2)/\\mathrm dx$（2-37、2-38）、相對論定力。" },
-    { "id": "s08", "file": "08-projectile.html", "title": "二、三維運動與拋體", "pages": "p.74–84", "desc": "各方向分開解、拋體的位移、速度、射程與 $45^\\circ$（例題 2.6），以及斜坡上的射程、最大射程的兩點距離。" },
-    { "id": "s09", "file": "09-air-projectile.html", "title": "有空氣阻力的拋體", "pages": "p.85–99", "desc": "線性阻力的軌跡、微擾法求射程（例題 2.7）、數值計算（例題 2.8）、$v^2$ 阻力上下要分開解（習題 2-12）。" },
-    { "id": "s10", "file": "10-atwood.html", "title": "Atwood 機與電磁場中的粒子", "pages": "p.100–106", "desc": "Atwood 機與加速電梯（例題 2.9）、帶電粒子的螺旋（例題 2.10）、Lorentz 力與擺線（習題 2-22）。" },
-    { "id": "s11", "file": "11-momentum.html", "title": "守恆定律：動量與角動量", "pages": "p.107–118", "desc": "力為零的方向動量守恆、$\\vec N=\\dot{\\vec L}$、轉動慣量、老鼠跳上吊扇（例題 2.11）、超級球與彈珠。" },
-    { "id": "s12", "file": "12-work.html", "title": "功與功能定理", "pages": "p.119–127", "desc": "功的定義、由 $F=ma$ 推出 $W_{12}=T_2-T_1$、彈簧與摩擦、拉繩上桌、火車上丟球。" },
-    { "id": "s13", "file": "13-conservative.html", "title": "保守力、位能與能量守恆", "pages": "p.128–142", "desc": "重力與摩擦的功、位能的定義、$\\vec F=-\\nabla U$、$\\nabla\\times\\vec F=0$、能量守恆的證明與 $\\partial U/\\partial t$。" },
-    { "id": "s14", "file": "14-loop.html", "title": "能量守恆的應用：迴圈軌道", "pages": "p.143–150", "desc": "習題 2-25：軌道底部與 $45^\\circ$ 處的正向力、離開軌道的速率與落點。" },
-    { "id": "s15", "file": "15-equilibrium.html", "title": "平衡與穩定性", "pages": "p.151–159", "desc": "位能圖與轉折點、泰勒展開判斷穩定、習題 2-47、例題 2.12 滑輪、例題 2.13 雙井位能、立方體放在圓柱上。" },
-    { "id": "s16", "file": "16-exam.html", "title": "考前衝刺", "pages": "p.1–159", "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。" }
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "本章總覽",
+      "pages": "p.1–4"
+    },
+    {
+      "id": "s01",
+      "file": "01-laws.html",
+      "title": "牛頓三定律與伽利略的慣性",
+      "pages": "p.1–13",
+      "desc": "三條定律在說什麼、伽利略的斜面與船、對稱性、牛頓力學的適用範圍。"
+    },
+    {
+      "id": "s02",
+      "file": "02-frames.html",
+      "title": "參考座標系：地球算不算慣性系",
+      "pages": "p.14–23",
+      "desc": "慣性座標系的定義、加速列車上的球、地球公轉與自轉的加速度、赤道的體重計、科氏效應。"
+    },
+    {
+      "id": "s03",
+      "file": "03-second-third.html",
+      "title": "第二、第三定律與動量守恆",
+      "pages": "p.24–33",
+      "desc": "$\\vec F=\\mathrm d\\vec p/\\mathrm dt$、各軸分開寫、用第三定律定義質量、由第三定律推出動量守恆。"
+    },
+    {
+      "id": "s04",
+      "file": "04-strategy.html",
+      "title": "解運動方程式的策略",
+      "pages": "p.34–45",
+      "desc": "力的形式決定能不能積分（習題 2-1）、求 $v(t)$、$x(t)$、$v(x)$ 的三種寫法、積分複習。"
+    },
+    {
+      "id": "s05",
+      "file": "05-incline.html",
+      "title": "斜面與摩擦",
+      "pages": "p.46–53",
+      "desc": "例題 2.1–2.3：座標怎麼選、靜摩擦的臨界角、動摩擦的加速度，以及斜面加滑輪、煞車距離。"
+    },
+    {
+      "id": "s06",
+      "file": "06-drag.html",
+      "title": "阻力與終端速度",
+      "pages": "p.54–62",
+      "desc": "$F_r\\propto v^n$、水平與鉛直的線性阻力（例題 2.4、2.5）、終端速度、$v^2$ 阻力下落的距離（習題 2-11）。"
+    },
+    {
+      "id": "s07",
+      "file": "07-force-from-v.html",
+      "title": "指數阻力與由速度求力",
+      "pages": "p.63–73",
+      "desc": "$F=-\\alpha e^{\\beta v}$ 的停止時間與距離（2-39）、$F=\\tfrac12m\\,\\mathrm d(\\dot x^2)/\\mathrm dx$（2-37、2-38）、相對論定力。"
+    },
+    {
+      "id": "s08",
+      "file": "08-projectile.html",
+      "title": "二、三維運動與拋體",
+      "pages": "p.74–84",
+      "desc": "各方向分開解、拋體的位移、速度、射程與 $45^\\circ$（例題 2.6），以及斜坡上的射程、最大射程的兩點距離。"
+    },
+    {
+      "id": "s09",
+      "file": "09-air-projectile.html",
+      "title": "有空氣阻力的拋體",
+      "pages": "p.85–99",
+      "desc": "線性阻力的軌跡、微擾法求射程（例題 2.7）、數值計算（例題 2.8）、$v^2$ 阻力上下要分開解（習題 2-12）。"
+    },
+    {
+      "id": "s10",
+      "file": "10-atwood.html",
+      "title": "Atwood 機與電磁場中的粒子",
+      "pages": "p.100–106",
+      "desc": "Atwood 機與加速電梯（例題 2.9）、帶電粒子的螺旋（例題 2.10）、Lorentz 力與擺線（習題 2-22）。"
+    },
+    {
+      "id": "s11",
+      "file": "11-momentum.html",
+      "title": "守恆定律：動量與角動量",
+      "pages": "p.107–118",
+      "desc": "力為零的方向動量守恆、$\\vec N=\\dot{\\vec L}$、轉動慣量、老鼠跳上吊扇（例題 2.11）、超級球與彈珠。"
+    },
+    {
+      "id": "s12",
+      "file": "12-work.html",
+      "title": "功與功能定理",
+      "pages": "p.119–127",
+      "desc": "功的定義、由 $F=ma$ 推出 $W_{12}=T_2-T_1$、彈簧與摩擦、拉繩上桌、火車上丟球。"
+    },
+    {
+      "id": "s13",
+      "file": "13-conservative.html",
+      "title": "保守力、位能與能量守恆",
+      "pages": "p.128–142",
+      "desc": "重力與摩擦的功、位能的定義、$\\vec F=-\\nabla U$、$\\nabla\\times\\vec F=0$、能量守恆的證明與 $\\partial U/\\partial t$。"
+    },
+    {
+      "id": "s14",
+      "file": "14-loop.html",
+      "title": "能量守恆的應用：迴圈軌道",
+      "pages": "p.143–150",
+      "desc": "習題 2-25：軌道底部與 $45^\\circ$ 處的正向力、離開軌道的速率與落點。"
+    },
+    {
+      "id": "s15",
+      "file": "15-equilibrium.html",
+      "title": "平衡與穩定性",
+      "pages": "p.151–159",
+      "desc": "位能圖與轉折點、泰勒展開判斷穩定、習題 2-47、例題 2.12 滑輪、例題 2.13 雙井位能、立方體放在圓柱上。"
+    },
+    {
+      "id": "s16",
+      "file": "16-exam.html",
+      "title": "考前衝刺",
+      "pages": "p.1–159",
+      "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。"
+    }
   ],
-  "sources": [{"match": "Thornton", "label": "開課本原文", "url": "https://drive.google.com/file/d/1oQ1-ZUxXR-qQ42Rbaa9H-9KwU7fFJQgC/view", "pageOffset": 16, "local": "C:/Users/jaiia/Downloads/力學.pdf"}, {"match": "講義", "label": "開講義", "url": "https://drive.google.com/file/d/1wZuR4arYEU7vXTP1GVcFxoFgm6tbfIBO/view", "local": "C:/Users/jaiia/Downloads/pdf_CM_chapter02.pdf", "pageOffset": 0}],
   "stepSymbols": "step_symbols.json",
   "exam": "exam.html",
-  "scripts": ["figures.js"]
+  "scripts": [
+    "figures.js"
+  ]
 }

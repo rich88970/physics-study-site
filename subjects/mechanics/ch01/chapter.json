@@ -123,7 +123,6 @@
       "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。"
     }
   ],
-  "sources": [{"match": "Thornton", "label": "開課本原文", "url": "https://drive.google.com/file/d/1oQ1-ZUxXR-qQ42Rbaa9H-9KwU7fFJQgC/view", "pageOffset": 16, "local": "C:/Users/jaiia/Downloads/力學.pdf"}, {"match": "講義", "label": "開講義", "url": "https://drive.google.com/file/d/1YDQGgWaI4UzMXbk2NhZDKCGMYQlz_PsO/view", "pageOffset": 0, "local": "C:/Users/jaiia/Downloads/pdf_CM_chapter01.pdf"}],
   "stepSymbols": "step_symbols.json",
   "exam": "exam.html",
   "scripts": [

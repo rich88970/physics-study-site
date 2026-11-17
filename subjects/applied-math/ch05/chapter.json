@@ -6,15 +6,58 @@
   "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備「應用數學」（柯景元老師，115 學年上學期）的考試。這一章是 10/7 板書後半與 10/14 的板書：Frobenius 法。方程式 $y''+P(x)y'+Q(x)y=0$ 在 $x=0$ 是正則奇點（$P$、$Q$ 發散但 $\\lim xP$、$\\lim x^2Q$ 不發散）時，令 $y=\\sum_{n=0}^\\infty a_nx^{n+\\gamma}$（$a_0\\ne0$，老師用 $\\gamma$ 表示指標），代入、把各項平移到同一個次方，最低次方的係數給出指標方程式（indicial equation）決定 $\\gamma$，其餘給出遞迴關係。板書例題：$2x^2y''-xy'+(1+x)y=0$（$\\gamma=1,\\tfrac12$，兩根差不是整數，兩個級數解都成立）；$(x^2-x)y''+(3x-1)y'+y=0$（$\\gamma=0$ 重根，$y_1=\\frac1{1-x}$，第二解用降階法 $y_2=uy_1$、$u=\\int e^{-\\int P\\,dx}/y_1^2\\,dx$ 得 $\\frac{\\ln x}{1-x}$）；$xy''+3y'-y=0$（$\\gamma=0,-2$，小根 $-2$ 失敗，用降階法與長除法求 $y_2$，含 $\\tfrac14y_1\\ln x$）。10/14 後半是應用例 Legendre 方程式 $(1-x^2)y''-2xy'+l(l+1)y=0$：在常點用冪級數，遞迴 $(n+2)(n+1)a_{n+2}=(n+l+1)(n-l)a_n$，要求 $x=\\pm1$ 不發散，只能保留會截斷的那一串，歸一化 $P_l(1)=1$ 得 Legendre 多項式 $P_0=1,P_1=x,P_2=\\tfrac12(3x^2-1),P_3=\\tfrac12(5x^3-3x)$，以及五條遞迴關係與 $P_l(-x)=(-1)^lP_l(x)$。老師期末考常考：Frobenius 法求一般解（112 上）、加條件（110 上）、Bessel 型 $x^2y''+xy'+(x^2-\\frac14)y=0$ 前三個非零項（114 上）、畫 $P_0$–$P_3$（114 上）。Bessel 函數本身還沒上到。學生沒有指定課本，回答時用板書的記號（$\\gamma$、$a_0$ 待定、recurrence relation、降階法 $y_2=uy_1$），並提醒他們寫出指標方程式與判斷兩根的關係。",
   "overview": "s00",
   "sections": [
-    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pages": "10/7 照片 7–11 · 10/14 照片 1–12" },
-    { "id": "s01", "file": "01-frobenius.html", "title": "Frobenius 法：指標方程式與兩個級數解", "pages": "10/7 照片 7–11", "desc": "令 $y=\\sum a_nx^{n+\\gamma}$、$a_0\\ne0$；最低次方給指標方程式 $\\gamma(\\gamma-1)+p_0\\gamma+q_0=0$；兩根差不是整數時兩個級數都成立（板書 $2x^2y''-xy'+(1+x)y=0$、作業 1）。" },
-    { "id": "s02", "file": "02-repeated.html", "title": "重根：用降階法求第二解", "pages": "10/14 照片 1–5", "desc": "$(x^2-x)y''+(3x-1)y'+y=0$ 的 $\\gamma=0$ 重根只給 $y_1=\\frac1{1-x}$；令 $y_2=uy_1$ 推出 $u=\\int\\frac{e^{-\\int P\\,dx}}{y_1^2}dx$，得 $y_2=\\frac{\\ln x}{1-x}$；重根時第二解一定含 $y_1\\ln x$。" },
-    { "id": "s03", "file": "03-integer.html", "title": "兩根相差整數：小根可能失敗", "pages": "10/14 照片 6–7", "desc": "$xy''+3y'-y=0$ 的 $\\gamma=0,-2$：小根在 $n=2$ 出現矛盾，用降階法加長除法求 $y_2$；小根也可能成功（110、112、114 上期末）；作業 2 的 $y_2=x\\ln x-1+\\cdots$。" },
-    { "id": "s04", "file": "04-legendre.html", "title": "應用例：Legendre 方程式與 Legendre 多項式", "pages": "10/14 照片 8–12", "desc": "$(1-x^2)y''-2xy'+l(l+1)y=0$ 的冪級數解、$x=\\pm1$ 不能發散 → 只留截斷的一串；$P_0$–$P_3$、$P_l(1)=1$、圖形（114 上期末）、五條遞迴關係與奇偶性。" },
-    { "id": "s05", "file": "05-exam.html", "title": "考前衝刺", "pages": "10/7 照片 7–11 · 10/14 照片 1–12", "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。" }
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "本章總覽",
+      "pages": "10/7 照片 7–11 · 10/14 照片 1–12"
+    },
+    {
+      "id": "s01",
+      "file": "01-frobenius.html",
+      "title": "Frobenius 法：指標方程式與兩個級數解",
+      "pages": "10/7 照片 7–11",
+      "desc": "令 $y=\\sum a_nx^{n+\\gamma}$、$a_0\\ne0$；最低次方給指標方程式 $\\gamma(\\gamma-1)+p_0\\gamma+q_0=0$；兩根差不是整數時兩個級數都成立（板書 $2x^2y''-xy'+(1+x)y=0$、作業 1）。"
+    },
+    {
+      "id": "s02",
+      "file": "02-repeated.html",
+      "title": "重根：用降階法求第二解",
+      "pages": "10/14 照片 1–5",
+      "desc": "$(x^2-x)y''+(3x-1)y'+y=0$ 的 $\\gamma=0$ 重根只給 $y_1=\\frac1{1-x}$；令 $y_2=uy_1$ 推出 $u=\\int\\frac{e^{-\\int P\\,dx}}{y_1^2}dx$，得 $y_2=\\frac{\\ln x}{1-x}$；重根時第二解一定含 $y_1\\ln x$。"
+    },
+    {
+      "id": "s03",
+      "file": "03-integer.html",
+      "title": "兩根相差整數：小根可能失敗",
+      "pages": "10/14 照片 6–7",
+      "desc": "$xy''+3y'-y=0$ 的 $\\gamma=0,-2$：小根在 $n=2$ 出現矛盾，用降階法加長除法求 $y_2$；小根也可能成功（110、112、114 上期末）；作業 2 的 $y_2=x\\ln x-1+\\cdots$。"
+    },
+    {
+      "id": "s04",
+      "file": "04-legendre.html",
+      "title": "應用例：Legendre 方程式與 Legendre 多項式",
+      "pages": "10/14 照片 8–12",
+      "desc": "$(1-x^2)y''-2xy'+l(l+1)y=0$ 的冪級數解、$x=\\pm1$ 不能發散 → 只留截斷的一串；$P_0$–$P_3$、$P_l(1)=1$、圖形（114 上期末）、五條遞迴關係與奇偶性。"
+    },
+    {
+      "id": "s05",
+      "file": "05-exam.html",
+      "title": "考前衝刺",
+      "pages": "10/7 照片 7–11 · 10/14 照片 1–12",
+      "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。"
+    }
   ],
-  "sources": [{ "match": "應用數學期末考", "label": "開考古題網站", "url": "https://sites.google.com/site/phys207207/%E6%87%89%E7%94%A8%E6%95%B8%E5%AD%B8" }],
+  "sources": [
+    {
+      "match": "應用數學期末考",
+      "label": "開考古題網站",
+      "url": "https://sites.google.com/site/phys207207/%E6%87%89%E7%94%A8%E6%95%B8%E5%AD%B8"
+    }
+  ],
   "stepSymbols": "step_symbols.json",
   "exam": "exam.html",
-  "scripts": ["figures.js"]
+  "scripts": [
+    "figures.js"
+  ]
 }

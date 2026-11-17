@@ -6,21 +6,93 @@
   "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備熱物理學（趙松柏老師）考試：課本是 Schroeder《An Introduction to Thermal Physics》第 2 章 The Second Law（兩態系統、愛因斯坦固體、交互作用的系統、大數與 Stirling 近似、理想氣體的多重度、熵），沒有講義；考試大多是課本習題原題或換數字（硬幣機率、兩個愛因斯坦固體分能量、用 Stirling 推多重度與高低溫極限、順磁體多重度的高斯形、二維理想氣體多重度），要求寫出完整推導。",
   "overview": "s00",
   "sections": [
-    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pages": "p.49" },
-    { "id": "s01", "file": "01-two-state.html", "title": "兩態系統", "pages": "p.49–53", "desc": "微觀態、巨觀態、多重度 $\\Omega(N,n)=\\binom Nn$；硬幣與兩態順磁體。" },
-    { "id": "s02", "file": "02-einstein.html", "title": "愛因斯坦固體", "pages": "p.53–55", "desc": "等間距能階的振子，用「點與線」證明 $\\Omega(N,q)=\\binom{q+N-1}{q}$。" },
-    { "id": "s03", "file": "03-interacting.html", "title": "交互作用的系統", "pages": "p.56–60", "desc": "兩個固體分能量：基本假設、$\\Omega_{\\text{total}}=\\Omega_A\\Omega_B$、熱流與不可逆的機率解釋。" },
-    { "id": "s04", "file": "04-stirling.html", "title": "很大的數與 Stirling 近似", "pages": "p.60–63", "desc": "大數與「很大的數」的運算規則、$N!\\approx N^Ne^{-N}\\sqrt{2\\pi N}$ 的精確度。" },
-    { "id": "s05", "file": "05-large-solid.html", "title": "大愛因斯坦固體的多重度", "pages": "p.63–64", "desc": "用 Stirling 推出高溫極限 $(eq/N)^N$、低溫極限 $(eN/q)^q$ 與一般公式。" },
-    { "id": "s06", "file": "06-sharpness.html", "title": "多重度函數的尖銳程度", "pages": "p.64–67", "desc": "兩個大固體的多重度是寬 $q/\\sqrt N$ 的高斯峰；順磁體的高斯峰與隨機漫步。" },
-    { "id": "s07", "file": "07-ideal-gas.html", "title": "理想氣體的多重度", "pages": "p.68–74", "desc": "位置空間乘動量空間、除以 $h^{3N}$、超球面、$1/N!$；$\\Omega\\propto V^NU^{3N/2}$。" },
-    { "id": "s08", "file": "08-entropy.html", "title": "熵與第二定律", "pages": "p.74–77", "desc": "$S=k\\ln\\Omega$、熵可相加、第二定律＝熵傾向增加、時間尺度的問題。" },
-    { "id": "s09", "file": "09-gas-entropy.html", "title": "理想氣體的熵", "pages": "p.77–79", "desc": "Sackur–Tetrode 公式、一莫耳氦的熵、等溫膨脹與自由膨脹的 $\\Delta S=Nk\\ln(V_f/V_i)$。" },
-    { "id": "s10", "file": "10-mixing.html", "title": "混合熵與可逆過程", "pages": "p.79–84", "desc": "$\\Delta S_{\\text{mix}}=2Nk\\ln2$、Gibbs 弔詭與 $1/N!$、可逆／不可逆、黑洞的熵。" },
-    { "id": "s11", "file": "11-exam.html", "title": "考前衝刺", "pages": "p.49–84", "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。" }
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "本章總覽",
+      "pages": "p.49"
+    },
+    {
+      "id": "s01",
+      "file": "01-two-state.html",
+      "title": "兩態系統",
+      "pages": "p.49–53",
+      "desc": "微觀態、巨觀態、多重度 $\\Omega(N,n)=\\binom Nn$；硬幣與兩態順磁體。"
+    },
+    {
+      "id": "s02",
+      "file": "02-einstein.html",
+      "title": "愛因斯坦固體",
+      "pages": "p.53–55",
+      "desc": "等間距能階的振子，用「點與線」證明 $\\Omega(N,q)=\\binom{q+N-1}{q}$。"
+    },
+    {
+      "id": "s03",
+      "file": "03-interacting.html",
+      "title": "交互作用的系統",
+      "pages": "p.56–60",
+      "desc": "兩個固體分能量：基本假設、$\\Omega_{\\text{total}}=\\Omega_A\\Omega_B$、熱流與不可逆的機率解釋。"
+    },
+    {
+      "id": "s04",
+      "file": "04-stirling.html",
+      "title": "很大的數與 Stirling 近似",
+      "pages": "p.60–63",
+      "desc": "大數與「很大的數」的運算規則、$N!\\approx N^Ne^{-N}\\sqrt{2\\pi N}$ 的精確度。"
+    },
+    {
+      "id": "s05",
+      "file": "05-large-solid.html",
+      "title": "大愛因斯坦固體的多重度",
+      "pages": "p.63–64",
+      "desc": "用 Stirling 推出高溫極限 $(eq/N)^N$、低溫極限 $(eN/q)^q$ 與一般公式。"
+    },
+    {
+      "id": "s06",
+      "file": "06-sharpness.html",
+      "title": "多重度函數的尖銳程度",
+      "pages": "p.64–67",
+      "desc": "兩個大固體的多重度是寬 $q/\\sqrt N$ 的高斯峰；順磁體的高斯峰與隨機漫步。"
+    },
+    {
+      "id": "s07",
+      "file": "07-ideal-gas.html",
+      "title": "理想氣體的多重度",
+      "pages": "p.68–74",
+      "desc": "位置空間乘動量空間、除以 $h^{3N}$、超球面、$1/N!$；$\\Omega\\propto V^NU^{3N/2}$。"
+    },
+    {
+      "id": "s08",
+      "file": "08-entropy.html",
+      "title": "熵與第二定律",
+      "pages": "p.74–77",
+      "desc": "$S=k\\ln\\Omega$、熵可相加、第二定律＝熵傾向增加、時間尺度的問題。"
+    },
+    {
+      "id": "s09",
+      "file": "09-gas-entropy.html",
+      "title": "理想氣體的熵",
+      "pages": "p.77–79",
+      "desc": "Sackur–Tetrode 公式、一莫耳氦的熵、等溫膨脹與自由膨脹的 $\\Delta S=Nk\\ln(V_f/V_i)$。"
+    },
+    {
+      "id": "s10",
+      "file": "10-mixing.html",
+      "title": "混合熵與可逆過程",
+      "pages": "p.79–84",
+      "desc": "$\\Delta S_{\\text{mix}}=2Nk\\ln2$、Gibbs 弔詭與 $1/N!$、可逆／不可逆、黑洞的熵。"
+    },
+    {
+      "id": "s11",
+      "file": "11-exam.html",
+      "title": "考前衝刺",
+      "pages": "p.49–84",
+      "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。"
+    }
   ],
-  "sources": [{"match": "115 級上學期期中", "label": "開原卷", "url": "https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view"}, {"match": "某級上學期期中", "label": "開原卷", "url": "https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view"}, {"match": "Schroeder", "label": "開課本原文", "url": "https://drive.google.com/file/d/1Fh2YKWsXhi8u96VNGhJ4CGbApB6mG0uS/view", "pageOffset": 13, "local": "C:/Users/jaiia/Downloads/熱學.pdf"}],
   "stepSymbols": "step_symbols.json",
   "exam": "exam.html",
-  "scripts": ["figures.js"]
+  "scripts": [
+    "figures.js"
+  ]
 }

@@ -6,21 +6,93 @@
   "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備近代物理考試：課本是 Beiser《Concepts of Modern Physics》(6th ed.) 第 2 章 Particle Properties of Waves（電磁波、黑體輻射、光電效應、X 射線與繞射、康普頓效應、成對產生與光子吸收、光子與重力），老師是任中元，沒有講義；考試多半是課本例題、課本習題原題或換數字，以及「證明／說明／比較」題。",
   "overview": "s00",
   "sections": [
-    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pages": "p.52–53" },
-    { "id": "s01", "file": "01-em-waves.html", "title": "電磁波", "pages": "p.53–57", "desc": "Maxwell 的預言、$c=1/\\sqrt{\\epsilon_0\\mu_0}$、疊加原理、Young 雙狹縫證明光是波。" },
-    { "id": "s02", "file": "02-blackbody.html", "title": "黑體輻射", "pages": "p.57–62", "desc": "空腔模型、Rayleigh–Jeans 與紫外災變、Planck 公式與能量量子化 $\\epsilon_n=nh\\nu$。" },
-    { "id": "s03", "file": "03-photoelectric.html", "title": "光電效應", "pages": "p.62–67", "desc": "三個古典解釋不了的實驗事實、光子 $E=h\\nu$、功函數、$KE_{\\max}=h\\nu-\\phi$。" },
-    { "id": "s04", "file": "04-what-is-light.html", "title": "光是什麼", "pages": "p.67–68", "desc": "波動與粒子兩種描述互補；雙狹縫中光子到達的機率由 $\\overline{E^2}$ 決定。" },
-    { "id": "s05", "file": "05-xrays.html", "title": "X 射線", "pages": "p.68–72", "desc": "制動輻射、X 光管、特性譜線、截止波長 $\\lambda_{\\min}=hc/Ve$（逆光電效應）。" },
-    { "id": "s06", "file": "06-xray-diffraction.html", "title": "X 射線繞射", "pages": "p.72–75", "desc": "原子的散射、Bragg 平面、$2d\\sin\\theta=n\\lambda$、X 光光譜儀。" },
-    { "id": "s07", "file": "07-compton.html", "title": "康普頓效應", "pages": "p.75–79", "desc": "光子動量 $h\\nu/c$、由能量與動量守恆推出 $\\lambda'-\\lambda=\\lambda_C(1-\\cos\\phi)$、反衝電子。" },
-    { "id": "s08", "file": "08-pair-production.html", "title": "成對產生與湮滅", "pages": "p.79–82", "desc": "門檻 $1.02\\ \\text{MeV}$、為什麼要有原子核、正負電子湮滅成兩個光子。" },
-    { "id": "s09", "file": "09-absorption.html", "title": "光子的吸收", "pages": "p.82–85", "desc": "三種作用隨能量的消長、衰減 $I=I_0e^{-\\mu x}$、半值厚度 $0.693/\\mu$。" },
-    { "id": "s10", "file": "10-gravity.html", "title": "光子與重力", "pages": "p.85–89", "desc": "光子的「質量」$h\\nu/c^2$、掉落時頻率變高、重力紅移 $GM/c^2R$、黑洞與史瓦西半徑。" },
-    { "id": "s11", "file": "11-exam.html", "title": "考前衝刺", "pages": "p.52–91", "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。" }
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "本章總覽",
+      "pages": "p.52–53"
+    },
+    {
+      "id": "s01",
+      "file": "01-em-waves.html",
+      "title": "電磁波",
+      "pages": "p.53–57",
+      "desc": "Maxwell 的預言、$c=1/\\sqrt{\\epsilon_0\\mu_0}$、疊加原理、Young 雙狹縫證明光是波。"
+    },
+    {
+      "id": "s02",
+      "file": "02-blackbody.html",
+      "title": "黑體輻射",
+      "pages": "p.57–62",
+      "desc": "空腔模型、Rayleigh–Jeans 與紫外災變、Planck 公式與能量量子化 $\\epsilon_n=nh\\nu$。"
+    },
+    {
+      "id": "s03",
+      "file": "03-photoelectric.html",
+      "title": "光電效應",
+      "pages": "p.62–67",
+      "desc": "三個古典解釋不了的實驗事實、光子 $E=h\\nu$、功函數、$KE_{\\max}=h\\nu-\\phi$。"
+    },
+    {
+      "id": "s04",
+      "file": "04-what-is-light.html",
+      "title": "光是什麼",
+      "pages": "p.67–68",
+      "desc": "波動與粒子兩種描述互補；雙狹縫中光子到達的機率由 $\\overline{E^2}$ 決定。"
+    },
+    {
+      "id": "s05",
+      "file": "05-xrays.html",
+      "title": "X 射線",
+      "pages": "p.68–72",
+      "desc": "制動輻射、X 光管、特性譜線、截止波長 $\\lambda_{\\min}=hc/Ve$（逆光電效應）。"
+    },
+    {
+      "id": "s06",
+      "file": "06-xray-diffraction.html",
+      "title": "X 射線繞射",
+      "pages": "p.72–75",
+      "desc": "原子的散射、Bragg 平面、$2d\\sin\\theta=n\\lambda$、X 光光譜儀。"
+    },
+    {
+      "id": "s07",
+      "file": "07-compton.html",
+      "title": "康普頓效應",
+      "pages": "p.75–79",
+      "desc": "光子動量 $h\\nu/c$、由能量與動量守恆推出 $\\lambda'-\\lambda=\\lambda_C(1-\\cos\\phi)$、反衝電子。"
+    },
+    {
+      "id": "s08",
+      "file": "08-pair-production.html",
+      "title": "成對產生與湮滅",
+      "pages": "p.79–82",
+      "desc": "門檻 $1.02\\ \\text{MeV}$、為什麼要有原子核、正負電子湮滅成兩個光子。"
+    },
+    {
+      "id": "s09",
+      "file": "09-absorption.html",
+      "title": "光子的吸收",
+      "pages": "p.82–85",
+      "desc": "三種作用隨能量的消長、衰減 $I=I_0e^{-\\mu x}$、半值厚度 $0.693/\\mu$。"
+    },
+    {
+      "id": "s10",
+      "file": "10-gravity.html",
+      "title": "光子與重力",
+      "pages": "p.85–89",
+      "desc": "光子的「質量」$h\\nu/c^2$、掉落時頻率變高、重力紅移 $GM/c^2R$、黑洞與史瓦西半徑。"
+    },
+    {
+      "id": "s11",
+      "file": "11-exam.html",
+      "title": "考前衝刺",
+      "pages": "p.52–91",
+      "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。"
+    }
   ],
-  "sources": [{"match": "107 學年", "label": "開原卷", "url": "https://drive.google.com/file/d/1S8_OI91D1dtJgl8rm-BjxiMJpXryioZy/view"}, {"match": "115 級", "label": "開原卷", "url": "https://drive.google.com/file/d/1ZD3edbQ8erZaCwr0vOx7_cSdz-Am3SrH/view"}, {"match": "109 學年上學期考古", "label": "開考古解答", "url": "https://drive.google.com/file/d/1kBTBH1VbH9L4nq8MXrVEh2tXw2ZeBt4t/view"}, {"match": "104 級上學期考古", "label": "開作答卷", "url": "https://drive.google.com/file/d/1r5BUNrxuO0NQDuZa20fpPYQy112j4TC3/view"}, {"match": "Beiser", "label": "開課本原文", "url": "https://drive.google.com/file/d/1-264jj_TNPuMA6_J7ygwrM3LXls4EZjq/view", "pageOffset": 14, "local": "C:/Users/jaiia/Downloads/近物.pdf"}],
   "stepSymbols": "step_symbols.json",
   "exam": "exam.html",
-  "scripts": ["figures.js"]
+  "scripts": [
+    "figures.js"
+  ]
 }
