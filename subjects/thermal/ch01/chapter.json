@@ -3,7 +3,6 @@
   "shortTitle": "熱學 第 1 章",
   "range": "課本 Schroeder, An Introduction to Thermal Physics 第 1 章 Energy in Thermal Physics p.1–48（§1.1–1.7）",
   "pageLabel": "課本",
-  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備熱物理學（趙松柏老師）考試：課本是 Schroeder《An Introduction to Thermal Physics》第 1 章 Energy in Thermal Physics（熱平衡與溫度、熱膨脹、理想氣體與壓力的微觀模型、能量均分、熱與功、壓縮功與絕熱過程、熱容量與潛熱、焓、熱傳導與平均自由徑、黏滯與擴散），沒有講義；考試大多是課本習題原題或換數字（熱膨脹係數、咖啡加冰、均分定理求 $v_{\\text{rms}}$、$P\\propto V$ 的膨脹功、$PV^\\gamma$、凡得瓦的維里係數、重力束縛系統的負熱容量），要求寫出完整推導。",
   "overview": "s00",
   "sections": [
     {

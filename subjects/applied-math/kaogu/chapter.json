@@ -3,7 +3,6 @@
   "shortTitle": "應數 考古與作業詳解",
   "range": "2021–2025 期中考古題與作業一～五的完整解題，依主題排列：一階（可分離、線性、恰當）、二階齊次、降階法、未定係數法、冪級數、Frobenius、Fourier 級數",
   "pageLabel": "考古",
-  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備「應用數學」的期中考。這一頁是 2021–2025 年期中考古題與作業一～五的完整解題，依主題排列：一階 ODE（可分離變數、線性方程與積分因子、恰當方程與積分因子）、二階齊次常係數、降階法、二階非齊次（未定係數法的 sum／multiplication／modification rule、初值問題）、冪級數解、Frobenius 法、Fourier 級數（實數、複數 Fourier、功率頻譜）。",
   "overview": "s00",
   "sections": [
     {

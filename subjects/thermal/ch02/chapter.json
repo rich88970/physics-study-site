@@ -3,7 +3,6 @@
   "shortTitle": "熱學 第 2 章",
   "range": "課本 Schroeder, An Introduction to Thermal Physics 第 2 章 The Second Law p.49–84（§2.1–2.6）",
   "pageLabel": "課本",
-  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備熱物理學（趙松柏老師）考試：課本是 Schroeder《An Introduction to Thermal Physics》第 2 章 The Second Law（兩態系統、愛因斯坦固體、交互作用的系統、大數與 Stirling 近似、理想氣體的多重度、熵），沒有講義；考試大多是課本習題原題或換數字（硬幣機率、兩個愛因斯坦固體分能量、用 Stirling 推多重度與高低溫極限、順磁體多重度的高斯形、二維理想氣體多重度），要求寫出完整推導。",
   "overview": "s00",
   "sections": [
     {

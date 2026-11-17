@@ -2,7 +2,6 @@
   "title": "Lecture 2｜牛頓力學：單一質點",
   "shortTitle": "力學 Lecture 2",
   "range": "講義 p.1–159 · 課本 Thornton & Marion 第 2 章",
-  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備古典力學考試：老師是董育宸，這一章是講義 Lecture 2: Newtonian Mechanics — Single Particles（159 頁），課本是 Thornton & Marion《Classical Dynamics of Particles and Systems》(5th ed.) 第 2 章 Newtonian Mechanics—Single Particle。內容是牛頓三定律與慣性座標系、用 F=mẍ 解一維運動（斜面、摩擦、與速度有關的阻力、終端速度、由 v(x) 求力）、拋體（含空氣阻力）、Atwood 機、帶電粒子、動量與角動量守恆、功與能量、保守力與位能、平衡與穩定性。老師的考題多半出自課本：大約一半是課本例題原題，其餘是課本習題改條件或要求證明、推導。",
   "overview": "s00",
   "sections": [
     {

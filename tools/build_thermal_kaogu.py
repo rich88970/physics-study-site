@@ -187,7 +187,6 @@ def main():
         "shortTitle": "熱學 考古題",
         "range": "115 級、114 級、某級上學期期中考裡屬於第 1、2 章的題目，依考卷與題號排列",
         "pageLabel": "考古",
-        "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備熱物理學（趙松柏老師）考試，課本 Schroeder《An Introduction to Thermal Physics》。這一章只收上學期期中考考過、屬於第 1 章（理想氣體、均分定理、熱與功、壓縮功、熱容量與潛熱、熱膨脹）與第 2 章（兩態系統、愛因斯坦固體、交互作用的系統、Stirling 近似、多重度的峰、理想氣體多重度、熵）的題目，依考卷排列；考試要求寫出完整推導。",
         "overview": "s00",
         "sections": sections,
         "sources": c2.get("sources", []),

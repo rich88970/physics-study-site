@@ -23,9 +23,6 @@ LECT = {"ch01": "L1", "ch02": "L2"}
 
 TITLE = "公式表（Lecture 1、2）"
 RANGE = "Lecture 1、2 全部公式依主題整理：每條附一兩句說明、符號與使用條件，右上角連回講義那一段"
-TUTOR = ("你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備古典力學考試（老師董育宸，課本 Thornton & Marion 5th ed.）。"
-         "這一頁是力學 Lecture 1（矩陣、向量與向量微積分）與 Lecture 2（牛頓力學：單一質點）的公式表：每條公式附說明、符號與使用條件。"
-         "學生問某條公式時，說明它從哪裡來、什麼條件下能用、常見的用錯方式，必要時舉一個短例子。")
 
 
 def anchor_index():
@@ -125,7 +122,7 @@ def main():
         h2 = f'<h2>{nums[i]}、{s["title"]} <span class="pg">{s["pages"]}</span></h2>'
         (OUT / "sections" / s["file"]).write_text(h2 + "\n\n" + "\n\n".join(s["html"]) + "\n", encoding="utf-8")
         meta_secs.append({"id": s["id"], "file": s["file"], "title": s["title"], "pages": s["pages"], "pageLabel": "", "desc": s["desc"]})
-    meta = {"title": TITLE, "shortTitle": "力學 公式表", "range": RANGE, "pageLabel": "", "tutorIntro": TUTOR,
+    meta = {"title": TITLE, "shortTitle": "力學 公式表", "range": RANGE, "pageLabel": "",
             "overview": "s00", "sections": meta_secs}
     (OUT / "chapter.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     n = sum(len([h for h in s["html"] if h.startswith('<div class="fx"')]) for s in sections)
