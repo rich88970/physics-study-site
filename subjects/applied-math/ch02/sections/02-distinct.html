@@ -1,0 +1,334 @@
+<h2>二、常係數：特徵方程式與相異實根 <span class="pg">板書 9/23 照片 2、4</span></h2>
+
+<p class="lead">老師把常係數齊次方程 $y''+ay'+by=0$ 叫 Type I。它的解法只有一招：猜 $y=e^{\lambda x}$，把微分方程變成二次方程式 $\lambda^2+a\lambda+b=0$。二次方程的根有三種可能（相異實根、共軛複根、重根），對應第 2、3、4 節。這一節先講最直接的相異實根。</p>
+
+<h3 id="a2-ds-char">2.1 Type I：令 $y=e^{\lambda x}$ 得特徵方程式 <span class="pg-tag">照片 2</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 2，右半）</span>
+  <p>Type I.　$y''+ay'+by=0$，Find $y_1,y_2$=?</p>
+  <p>let $y=e^{\lambda x}$</p>
+  $$\lambda^2e^{\lambda x}+a\lambda e^{\lambda x}+be^{\lambda x}=0$$
+  $$\lambda^2+a\lambda+b=0\qquad\text{（特徵方程式）Euler's characteristic eq.}$$
+  <p>roots：$\lambda_1,\lambda_2$</p>
+  <p>$\lambda_1\neq\lambda_2$：相異實數根、共軛複數根　$\begin{cases}y_1=e^{\lambda_1x}\\y_2=e^{\lambda_2x}\end{cases}$</p>
+  <p>★ $\lambda_1=\lambda_2$，only one $y=e^{\lambda_1x}$ → 利用 $y_1$ 找 $y_2$：Reduction of Order（第 4 節）</p>
+</div>
+
+<p><strong>為什麼猜指數函數。</strong>方程式要求 $y''$、$y'$、$y$ 三項加權後互相抵消，最好它們長得一樣。$e^{\lambda x}$ 的每一次微分只多乘一個 $\lambda$：$y'=\lambda e^{\lambda x}$、$y''=\lambda^2e^{\lambda x}$。三項都有公因式 $e^{\lambda x}$，而 $e^{\lambda x}$ 永遠不為 0，可以整個除掉（板書在三個 $e^{\lambda x}$ 下面畫線就是這個意思），剩下只含 $\lambda$ 的二次方程式。</p>
+
+<p>求根公式 $\lambda=\dfrac{-a\pm\sqrt{a^2-4b}}{2}$，判別式 $a^2-4b$ 決定是哪一種：</p>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>判別式</th><th>根</th><th>兩個獨立解</th><th>一般解</th></tr></thead>
+  <tbody>
+    <tr><td>$a^2-4b\gt0$</td><td>相異實根 $\lambda_1\neq\lambda_2$</td><td>$e^{\lambda_1x},\ e^{\lambda_2x}$</td><td>$c_1e^{\lambda_1x}+c_2e^{\lambda_2x}$（本節）</td></tr>
+    <tr><td>$a^2-4b\lt0$</td><td>共軛複根 $\alpha\pm i\beta$</td><td>$e^{\alpha x}\cos\beta x,\ e^{\alpha x}\sin\beta x$</td><td>$e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)$（第 3 節）</td></tr>
+    <tr><td>$a^2-4b=0$</td><td>重根 $\lambda=-a/2$</td><td>$e^{\lambda x},\ xe^{\lambda x}$</td><td>$(c_1+c_2x)e^{\lambda x}$（第 4 節）</td></tr>
+  </tbody>
+</table></div>
+
+<div class="box pitfall">
+  <span class="box-title">$y''$ 前面有係數時</span>
+  <p>$Ay''+By'+Cy=0$ 的特徵方程式直接是 $A\lambda^2+B\lambda+C=0$，不必先除以 $A$；但要讀「$a$、$b$」或用 $\lambda=-a/2$ 判斷重根時，要記得 $a=B/A$、$b=C/A$。$y'$ 的係數是負的（例如 $y''-3y'+2y$）時，特徵方程式的 $\lambda$ 項也要帶負號。</p>
+</div>
+
+<h3 id="a2-ds-ex">2.2 板書例題：相異實根加初始條件 <span class="pg-tag">照片 4</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 4，左半）</span>
+  <p>ex.　$y''-3y'+2y=0$，with $\begin{cases}y(0)=1\\y'(0)=0\end{cases}$</p>
+  <p>let $y=e^{\lambda x}$：$\lambda^2-3\lambda+2=0$，$\lambda=1,2$</p>
+  <p>可能解 $e^{x},\ e^{2x}$；一般解 $y=c_1e^{x}+c_2e^{2x}$，$y'=c_1e^{x}+2c_2e^{2x}$</p>
+  <p>$y(0)=1\to c_1+c_2=1$；$y'(0)=0\to c_1+2c_2=0$；$c_1=2$，$c_2=-1$</p>
+</div>
+
+<div class="problem" data-kind="example" id="a2-b2">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/23 板書 · 照片 4</span></div>
+    <h4>相異實根：$y''-3y'+2y=0$，$y(0)=1$、$y'(0)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-b2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-b2"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.　$y''-3y'+2y=0$, with $y(0)=1$, $y'(0)=0$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''-3y'+2y=0$，初始條件 $y(0)=1$、$y'(0)=0$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-3$、$b=2$</td><td>「$y''-3y'+2y$」：$y'$ 前是 <b>$-3$</b>，負號要帶著</td></tr>
+          <tr><td>右邊</td><td>$g(x)=0$</td><td>「$=0$」：齊次，只要齊次解，不必找特解</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=1$、$y'(0)=0$</td><td>「初始條件 $y(0)=1$、$y'(0)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>係數都是常數、右邊是 0（Type I），<b>所以</b>令 $y=e^{\lambda x}$ 化成特徵方程式。<b>因為</b>判別式 $9-8=1\gt0$，兩根是相異實根，<b>所以</b>一般解是兩個指數函數的組合。</p>
+      <p><b>因為</b>給了 $y(0)$ 和 $y'(0)$ 兩個條件，<b>所以</b>先把一般解微分一次，再把 $x=0$ 代入兩式，解二元一次聯立。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-b2-s1" data-sym="lam,ab">
+        <span class="step-title">特徵方程式</span>
+        <p>令 $y=e^{\lambda x}$，$y'=\lambda e^{\lambda x}$、$y''=\lambda^2e^{\lambda x}$，代入後除以 $e^{\lambda x}$：</p>
+        <p class="sub">代入 $a=-3$、$b=2$（題目的係數）：</p>
+        $$\lambda^2-3\lambda+2=0\quad\Rightarrow\quad(\lambda-1)(\lambda-2)=0$$
+        <p>$\lambda_1=1$、$\lambda_2=2$，相異實根。</p>
+      </div>
+      <div class="step" data-step="a2-b2-s2" data-sym="c12">
+        <span class="step-title">一般解與它的導數</span>
+        <p>$e^{2x}/e^{x}=e^{x}$ 不是常數，兩解獨立：</p>
+        $$y=c_1e^{x}+c_2e^{2x},\qquad y'=c_1e^{x}+2c_2e^{2x}$$
+      </div>
+      <div class="step" data-step="a2-b2-s3">
+        <span class="step-title">代入初始條件</span>
+        <p class="sub">代入 $x=0$（$e^0=1$）與題目的 $y(0)=1$、$y'(0)=0$：</p>
+        $$\begin{aligned}c_1+c_2&=1\\c_1+2c_2&=0\end{aligned}$$
+        <p>下式減上式：$c_2=-1$；代回上式：$c_1=1-(-1)=2$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=2e^{x}-e^{2x}$（和板書的 $c_1=2$、$c_2=-1$ 一致）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=2-1=1$ ✔；$y'(0)=2-2=0$ ✔；$y''-3y'+2y=(2e^x-4e^{2x})-3(2e^x-2e^{2x})+2(2e^x-e^{2x})=0$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a2-110a-m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2021.11.09 第 3 題（110上）</span></div>
+    <h4>相異實根：$y''+y'-2y=0$，$y(0)=4$、$y'(0)=-5$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-110a-m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-110a-m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2021.11.09)　20 points for each problem</p><p>3. Solve $y''+y'-2y=0$ for $y(0)=4$ and $y'(0)=-5$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''+y'-2y=0$，$y(0)=4$、$y'(0)=-5$。（每題 20 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=1$、$b=-2$</td><td>「$y''+y'-2y=0$」：$y$ 的係數是 <b>$-2$</b></td></tr>
+          <tr><td>右邊</td><td>$0$</td><td>「$=0$」：齊次</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=4$、$y'(0)=-5$</td><td>「for $y(0)=4$ and $y'(0)=-5$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>是常係數齊次方程，<b>所以</b>令 $y=e^{\lambda x}$ 得特徵方程式。<b>因為</b>判別式 $1+8=9\gt0$，<b>所以</b>是相異實根，一般解是 $c_1e^{\lambda_1x}+c_2e^{\lambda_2x}$。最後用兩個初始條件解兩個常數——和板書例題完全同型。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-110a-m3-s1" data-sym="lam">
+        <span class="step-title">特徵方程式</span>
+        <p class="sub">代入 $a=1$、$b=-2$（題目）：</p>
+        $$\lambda^2+\lambda-2=0\quad\Rightarrow\quad(\lambda+2)(\lambda-1)=0$$
+        <p>$\lambda_1=1$、$\lambda_2=-2$。</p>
+      </div>
+      <div class="step" data-step="a2-110a-m3-s2" data-sym="c12">
+        <span class="step-title">一般解與導數</span>
+        $$y=c_1e^{x}+c_2e^{-2x},\qquad y'=c_1e^{x}-2c_2e^{-2x}$$
+      </div>
+      <div class="step" data-step="a2-110a-m3-s3">
+        <span class="step-title">代入初始條件</span>
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=4$、$y'(0)=-5$：</p>
+        $$\begin{aligned}c_1+c_2&=4\\c_1-2c_2&=-5\end{aligned}$$
+        <p>上式減下式：$3c_2=9$，$c_2=3$；代回：$c_1=4-3=1$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=e^{x}+3e^{-2x}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=1+3=4$ ✔；$y'(0)=1-6=-5$ ✔；$y''+y'-2y=(e^x+12e^{-2x})+(e^x-6e^{-2x})-2(e^x+3e^{-2x})=0$ ✔</p></div>
+  </div>
+</div>
+
+<h3 id="a2-ds-hyp">2.3 對稱的根 $\pm k$：改用雙曲函數比較好算</h3>
+
+<p>當特徵根是 $\pm k$（方程式 $y''-k^2y=0$），$e^{kx}$、$e^{-kx}$ 的任何兩個獨立組合都可以當 $y_1,y_2$，例如</p>
+$$\cosh kx=\frac{e^{kx}+e^{-kx}}{2},\qquad\sinh kx=\frac{e^{kx}-e^{-kx}}{2}$$
+<p>它們在 $x=0$ 的值是 $1$ 和 $0$、導數是 $0$ 和 $k$，代入 $x=0$ 的條件時幾乎不用解聯立。邊界條件給在 $x=L$ 時，用 $\sinh k(L-x)$（在 $x=L$ 為 0）更省事。這是「一般解的寫法不唯一，挑一組讓條件好代的」的典型例子。</p>
+
+<div class="problem" data-kind="self" id="a2-s02-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>選初始值讓解不發散</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s02-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$y''-y'-6y=0$ 的解滿足 $y(0)=\alpha$、$y'(0)=2$。(a) 用 $\alpha$ 表示一般解裡的兩個常數；(b) $\alpha$ 是多少時，$x\to+\infty$ 時 $y$ 保持有界？此時的解是什麼？(c) 若 $\alpha=0$，$y$ 在 $x\to+\infty$ 與 $x\to-\infty$ 分別趨向什麼？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-1$、$b=-6$</td><td>「$y''-y'-6y=0$」</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=\alpha$（未知）、$y'(0)=2$</td><td>「$y(0)=\alpha$、$y'(0)=2$」：$\alpha$ 是要決定的參數</td></tr>
+          <tr><td>「有界」</td><td>$x\to+\infty$ 時 $|y|$ 不會趨於無限大</td><td>(b)「保持有界」：要讓會爆掉的那一項係數為 0（自己讀出來的條件）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $c_1(\alpha)$、$c_2(\alpha)$；(b) 使解有界的 $\alpha$ 與那個解；(c) $\alpha=0$ 時兩端的趨勢。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>常係數齊次，<b>所以</b>先求特徵根。兩根一正一負：正根的 $e^{\lambda x}$ 在 $x\to+\infty$ 爆掉、負根的趨於 0。<b>所以</b>「有界」就等於「正根那一項的係數為 0」——這是一個條件，用來決定 $\alpha$。</p>
+      <p>不要一開始就把 $\alpha$ 當數字解；保留 $\alpha$ 求出 $c_1,c_2$，再看哪一個 $\alpha$ 讓爆掉的係數消失。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s02-1-s1" data-sym="lam">
+        <span class="step-title">特徵根</span>
+        $$\lambda^2-\lambda-6=0\quad\Rightarrow\quad(\lambda-3)(\lambda+2)=0,\qquad\lambda=3,\ -2$$
+        $$y=c_1e^{3x}+c_2e^{-2x},\qquad y'=3c_1e^{3x}-2c_2e^{-2x}$$
+      </div>
+      <div class="step" data-step="a2-s02-1-s2" data-sym="c12">
+        <span class="step-title">(a) 用 $\alpha$ 表示常數</span>
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=\alpha$、$y'(0)=2$：</p>
+        $$\begin{aligned}c_1+c_2&=\alpha\\3c_1-2c_2&=2\end{aligned}$$
+        <p>上式乘 2 加到下式：$5c_1=2\alpha+2$。所以</p>
+        $$c_1=\frac{2\alpha+2}{5},\qquad c_2=\alpha-c_1=\frac{3\alpha-2}{5}$$
+      </div>
+      <div class="step" data-step="a2-s02-1-s3">
+        <span class="step-title">(b) 有界 ⟺ $e^{3x}$ 的係數為 0</span>
+        <p>$x\to+\infty$ 時 $e^{3x}\to\infty$、$e^{-2x}\to0$，所以必須 $c_1=0$：</p>
+        $$\frac{2\alpha+2}{5}=0\quad\Rightarrow\quad\alpha=-1$$
+        <p class="sub">代入 $\alpha=-1$ 到 $c_2=\dfrac{3\alpha-2}{5}$（步驟 2）：</p>
+        $$c_2=\frac{-3-2}{5}=-1,\qquad y=-e^{-2x}$$
+      </div>
+      <div class="step" data-step="a2-s02-1-s4">
+        <span class="step-title">(c) $\alpha=0$ 時的兩端</span>
+        <p class="sub">代入 $\alpha=0$：$c_1=\tfrac25$、$c_2=-\tfrac25$：</p>
+        $$y=\tfrac25\left(e^{3x}-e^{-2x}\right)$$
+        <p>$x\to+\infty$：$e^{3x}$ 主導，$y\to+\infty$；$x\to-\infty$：$e^{-2x}$ 主導，$y\approx-\tfrac25e^{-2x}\to-\infty$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $c_1=\dfrac{2\alpha+2}5$、$c_2=\dfrac{3\alpha-2}5$；(b) $\alpha=-1$，$y=-e^{-2x}$；(c) $y=\tfrac25(e^{3x}-e^{-2x})$，$x\to+\infty$ 時 $\to+\infty$，$x\to-\infty$ 時 $\to-\infty$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=-e^{-2x}$：$y(0)=-1=\alpha$ ✔、$y'(0)=2$ ✔；$y''=-4e^{-2x}$、$y'=2e^{-2x}$，$y''-y'-6y=-4e^{-2x}-2e^{-2x}+6e^{-2x}=0$ ✔。$\alpha=-1$ 以外的任何值都會留下 $e^{3x}$，所以答案唯一。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a2-s02-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩點邊界條件：$y''-k^2y=0$，$y(0)=1$、$y(L)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s02-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一根細桿的穩態溫度（化成無因次後）滿足 $y''-k^2y=0$（$k\gt0$），邊界條件 $y(0)=1$、$y(L)=0$。(a) 求 $y(x)$，用雙曲函數表示；(b) $k=1$、$L=2$ 時 $y(1)$ 是多少？(c) 桿子無限長（$L\to\infty$）時解趨近什麼？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$a=0$、$b=-k^2$，$k\gt0$</td><td>「$y''-k^2y=0$（$k\gt0$）」</td></tr>
+          <tr><td>邊界條件</td><td>$y(0)=1$、$y(L)=0$</td><td>「邊界條件 $y(0)=1$、$y(L)=0$」：兩個條件在<b>不同的點</b>，不是 $y(0)$ 與 $y'(0)$</td></tr>
+          <tr><td>(b) 數值</td><td>$k=1$、$L=2$，求 $x=1$</td><td>(b)「$k=1$、$L=2$ 時 $y(1)$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $y(x)$；(b) $y(1)$ 的數值；(c) $\lim_{L\to\infty}y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>特徵方程式 $\lambda^2-k^2=0$ 的根是 $\pm k$（相異實根），<b>所以</b>解是 $e^{kx}$、$e^{-kx}$ 的組合。<b>因為</b>任何兩個獨立的組合都可以當基底，<b>所以</b>挑在 $x=L$ 自動為 0 的 $\sinh k(L-x)$ 和在 $x=0$ 為 0 的 $\sinh kx$，兩個條件各自只剩一項，不用解聯立。</p>
+      <p>邊界值問題不一定有唯一解（第 3 節會看到反例），這裡的係數行列式是 $\sinh kL\neq0$，所以一定唯一。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s02-2-s1" data-sym="lam">
+        <span class="step-title">特徵根與好用的基底</span>
+        $$\lambda^2-k^2=0\quad\Rightarrow\quad\lambda=\pm k$$
+        <p>$\sinh k(L-x)=\tfrac12\left(e^{kL}e^{-kx}-e^{-kL}e^{kx}\right)$ 與 $\sinh kx$ 都是 $e^{\pm kx}$ 的組合，而且比值不是常數，所以可以寫</p>
+        $$y=C\sinh k(L-x)+D\sinh kx$$
+      </div>
+      <div class="step" data-step="a2-s02-2-s2">
+        <span class="step-title">(a) 代入兩個邊界條件</span>
+        <p class="sub">代入 $x=L$（$\sinh0=0$）與題目的 $y(L)=0$：</p>
+        $$0+D\sinh kL=0\ \Rightarrow\ D=0\quad(\sinh kL\neq0\ \text{因為}\ kL\gt0)$$
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=1$：</p>
+        $$C\sinh kL=1\ \Rightarrow\ C=\frac1{\sinh kL},\qquad y=\frac{\sinh k(L-x)}{\sinh kL}$$
+      </div>
+      <div class="step" data-step="a2-s02-2-s3">
+        <span class="step-title">(b) 數值</span>
+        <p class="sub">代入 $k=1$、$L=2$、$x=1$（題目 (b)）；$\sinh1=1.1752$、$\sinh2=3.6269$：</p>
+        $$y(1)=\frac{\sinh1}{\sinh2}=\frac{1.1752}{3.6269}=0.3240$$
+      </div>
+      <div class="step" data-step="a2-s02-2-s4">
+        <span class="step-title">(c) $L\to\infty$</span>
+        <p>上下都寫成指數，分子分母同除以 $e^{kL}$：</p>
+        $$y=\frac{e^{k(L-x)}-e^{-k(L-x)}}{e^{kL}-e^{-kL}}=\frac{e^{-kx}-e^{-2kL}e^{kx}}{1-e^{-2kL}}$$
+        <p>$L\to\infty$ 時 $e^{-2kL}\to0$，所以 $y\to e^{-kx}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $y=\dfrac{\sinh k(L-x)}{\sinh kL}$；(b) $y(1)=0.3240$；(c) $y\to e^{-kx}$（無限長時 $x=1$ 處是 $e^{-1}=0.3679$，有限長的桿子因為右端被壓到 0 而比較低）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=\sinh kL/\sinh kL=1$ ✔、$y(L)=0$ ✔；$(\sinh k(L-x))''=k^2\sinh k(L-x)$，所以 $y''-k^2y=0$ ✔；(c) 的 $e^{-kx}$ 滿足 $y(0)=1$ 且在無限遠為 0 ✔</p></div>
+  </div>
+</div>
+
+<h3 id="a2-ds-old">2.4 更早年級的考古題 <span class="pg-tag">109 級下第 1 次期中第 3(a) 題</span></h3>
+
+<p>109 級下第 1 次期中（1st-order ODE and 2nd-order homogeneous ODE）第 3 題三小題剛好是三種根各一題：(a) 相異實根放在這裡，(b) 共軛複根在第 3 節，(c) 重根在第 4 節。這份卷子用 $t$ 當自變數。</p>
+
+<div class="problem" data-kind="exam" id="a2-109b-3a">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 3(a) 題</span></div>
+    <h4>相異實根（分數根）：$3y''+2y'-8y=0$，$y(0)=-6$、$y'(0)=-18$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-109b-3a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-109b-3a"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>3. Solve the 2nd-order homogeneous ODEs.</p><p>(a) $3y''+2y'-8y=0$ for $y(0)=-6$ and $y'(0)=-18$.　Ans: $y(t)=-9e^{\frac43t}+3e^{-2t}$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $3y''+2y'-8y=0$，$y(0)=-6$、$y'(0)=-18$。（考卷附的答案：$y(t)=-9e^{\frac43t}+3e^{-2t}$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$3,\ 2,\ -8$</td><td>「$3y''+2y'-8y=0$」：$y''$ 前有係數 3，不必先除</td></tr>
+          <tr><td>自變數</td><td>$t$</td><td>考卷答案寫 $y(t)$</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=-6$、$y'(0)=-18$</td><td>「for $y(0)=-6$ and $y'(0)=-18$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(t)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>是常係數齊次方程，<b>所以</b>令 $y=e^{\lambda t}$ 得特徵方程式 $3\lambda^2+2\lambda-8=0$（直接用原係數）。<b>因為</b>判別式 $4+96=100>0$，<b>所以</b>兩個相異實根，一般解是兩個指數的線性組合。</p>
+      <p>兩個常數用兩個初始條件定：先寫出 $y'$ 再代 $t=0$，得到二元一次聯立方程。根是分數 $\frac43$，微分時係數要記得乘進去。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-109b-3a-s1" data-sym="lam">
+        <span class="step-title">特徵根</span>
+        <p class="sub">代入 $A=3$、$B=2$、$C=-8$（題目係數）到 $\lambda=\dfrac{-B\pm\sqrt{B^2-4AC}}{2A}$：</p>
+        $$\lambda=\frac{-2\pm\sqrt{4+96}}{6}=\frac{-2\pm10}{6}\ \Longrightarrow\ \lambda_1=\frac43,\quad\lambda_2=-2$$
+        <p>（因式分解檢查：$(3\lambda-4)(\lambda+2)=3\lambda^2+2\lambda-8$ ✔。）</p>
+      </div>
+      <div class="step" data-step="a2-109b-3a-s2" data-sym="c12">
+        <span class="step-title">一般解與它的導數</span>
+        $$y=c_1e^{\frac43t}+c_2e^{-2t},\qquad y'=\frac43c_1e^{\frac43t}-2c_2e^{-2t}$$
+      </div>
+      <div class="step" data-step="a2-109b-3a-s3">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $t=0$（$e^0=1$）與題目的 $y(0)=-6$、$y'(0)=-18$：</p>
+        $$c_1+c_2=-6,\qquad\frac43c_1-2c_2=-18$$
+      </div>
+      <div class="step" data-step="a2-109b-3a-s4">
+        <span class="step-title">解聯立</span>
+        <p>由第一式 $c_2=-6-c_1$，代入第二式：</p>
+        $$\frac43c_1+12+2c_1=-18\ \Longrightarrow\ \frac{10}{3}c_1=-30\ \Longrightarrow\ c_1=-9,\quad c_2=-6-(-9)=3$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y(t)=-9e^{\frac43t}+3e^{-2t}$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=-9+3=-6$ ✔；$y'(0)=-9\cdot\frac43+3\cdot(-2)=-12-6=-18$ ✔。代回：$e^{\frac43t}$ 項 $3\cdot\frac{16}9+2\cdot\frac43-8=\frac{16}3+\frac83-8=0$ ✔，$e^{-2t}$ 項 $3\cdot4-4-8=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>常係數齊次：令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$；判別式決定三種情況。</li>
+    <li>相異實根：$y=c_1e^{\lambda_1x}+c_2e^{\lambda_2x}$；先微分、再代 $x=0$，解二元一次聯立。</li>
+    <li>根是 $\pm k$ 時改用 $\cosh kx$、$\sinh kx$ 或 $\sinh k(L-x)$，條件比較好代。</li>
+  </ol>
+</div>

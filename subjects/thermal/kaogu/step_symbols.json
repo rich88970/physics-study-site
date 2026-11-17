@@ -1,0 +1,494 @@
+{
+ "symbols": {
+  "N": {
+   "tex": "N",
+   "zh": "粒子數：硬幣、偶極、振子或氣體分子的個數",
+   "unit": "無",
+   "note": "愛因斯坦固體的 $N$ 是振子數，$N$ 個振子＝$N/3$ 個原子"
+  },
+  "n": {
+   "tex": "n",
+   "zh": "正面的個數（巨觀態）",
+   "unit": "無"
+  },
+  "Omega": {
+   "tex": "\\Omega",
+   "zh": "多重度：一個巨觀態包含的微觀態數",
+   "en": "multiplicity",
+   "unit": "無",
+   "note": "$\\Omega(\\text{all})$＝所有巨觀態的總和"
+  },
+  "Nud": {
+   "tex": "N_\\uparrow,\\ N_\\downarrow",
+   "zh": "順磁體中平行、反平行於外場的偶極數",
+   "unit": "無",
+   "note": "$N_\\uparrow+N_\\downarrow=N$；向下的個數決定能量"
+  },
+  "q": {
+   "tex": "q",
+   "zh": "愛因斯坦固體的能量單位數",
+   "unit": "無",
+   "note": "$U=q\\,hf$（考卷寫 $U=q\\epsilon$）"
+  },
+  "eps": {
+   "tex": "\\epsilon=hf",
+   "zh": "一份能量（振子的能階間隔）",
+   "unit": "J",
+   "note": "考卷用 $\\epsilon$ 或 $\\hbar\\omega$"
+  },
+  "qAB": {
+   "tex": "q_A,\\ q_B",
+   "zh": "兩個固體各自的能量單位數",
+   "unit": "無",
+   "note": "$q_A+q_B=q_{\\text{total}}$ 固定；$q_A$ 指定巨觀態"
+  },
+  "NAB": {
+   "tex": "N_A,\\ N_B",
+   "zh": "兩個固體各自的振子數",
+   "unit": "無"
+  },
+  "x": {
+   "tex": "x",
+   "zh": "偏離峰值的量",
+   "unit": "無",
+   "note": "固體 $q_A=q/2+x$；順磁體 $N_\\uparrow=N/2+x$"
+  },
+  "U": {
+   "tex": "U",
+   "zh": "系統的（熱）能量",
+   "unit": "J"
+  },
+  "S": {
+   "tex": "S=k\\ln\\Omega",
+   "zh": "熵",
+   "en": "entropy",
+   "unit": "J/K",
+   "note": "常以 $k$ 為單位當純數 $S/k$"
+  },
+  "k": {
+   "tex": "k",
+   "zh": "波茲曼常數",
+   "en": "Boltzmann constant",
+   "unit": "J/K",
+   "note": "$1.38\\times10^{-23}$；$Nk=nR$"
+  },
+  "V": {
+   "tex": "V",
+   "zh": "位置空間的體積",
+   "unit": "m³",
+   "note": "二維時換成面積 $A$"
+  },
+  "Vp": {
+   "tex": "V_p",
+   "zh": "可用的動量空間「體積」（半徑 $\\sqrt{2mU}$ 的球面）",
+   "unit": "(kg·m/s)³"
+  },
+  "h": {
+   "tex": "h",
+   "zh": "普朗克常數：每個量子態在相空間佔 $h$（每個維度）",
+   "unit": "J·s",
+   "note": "$6.63\\times10^{-34}$"
+  },
+  "m": {
+   "tex": "m",
+   "zh": "一個分子的質量",
+   "unit": "kg",
+   "note": "氦 $6.64\\times10^{-27}$、氬 $6.64\\times10^{-26}$"
+  },
+  "d": {
+   "tex": "d",
+   "zh": "超球面的維度",
+   "unit": "無",
+   "note": "$N$ 個分子在三維是 $d=3N$"
+  },
+  "xmix": {
+   "tex": "x",
+   "zh": "混合物中 B 分子的比例",
+   "unit": "無",
+   "note": "第 10 節；和偏離量 $x$ 不同"
+  },
+  "T": {
+   "tex": "T",
+   "zh": "溫度（第 3 章定義 $1/T=\\partial S/\\partial U$）",
+   "unit": "K",
+   "note": "只在考古題用到"
+  },
+  "mu": {
+   "tex": "\\mu",
+   "zh": "化學勢 $-T(\\partial S/\\partial N)_{U,V}$（第 3 章）",
+   "unit": "J",
+   "note": "順磁體題目的 $\\mu$ 則是磁矩"
+  },
+  "P": {
+   "tex": "P",
+   "zh": "壓力",
+   "unit": "Pa＝N/m²",
+   "note": "1 atm＝$1.013\\times10^5$ Pa，1 bar＝$10^5$ Pa"
+  },
+  "R": {
+   "tex": "R",
+   "zh": "氣體常數",
+   "unit": "J/(mol·K)",
+   "note": "$R=N_Ak=8.315$ J/(mol·K)"
+  },
+  "Q": {
+   "tex": "Q",
+   "zh": "熱：因溫差而流入系統的能量",
+   "unit": "J",
+   "note": "流入為正"
+  },
+  "W": {
+   "tex": "W",
+   "zh": "功：對系統做的功（Schroeder 的符號：外界對系統做功為正）",
+   "unit": "J",
+   "note": "第一定律 $\\Delta U=Q+W$；有些課本用系統對外做功，式子會變成 $Q-W$"
+  },
+  "vrms": {
+   "tex": "v_{\\text{rms}}",
+   "zh": "方均根速率 $\\sqrt{\\overline{v^2}}$",
+   "unit": "m/s",
+   "note": "$v_{\\text{rms}}=\\sqrt{3kT/m}$"
+  },
+  "f": {
+   "tex": "f",
+   "zh": "每個分子的二次自由度數",
+   "unit": "無",
+   "note": "單原子 3、雙原子（室溫）5、固體每原子 6"
+  },
+  "gamma": {
+   "tex": "\\gamma",
+   "zh": "絕熱指數 $C_P/C_V=(f+2)/f$",
+   "unit": "無"
+  },
+  "CV": {
+   "tex": "C_V",
+   "zh": "定容熱容量 $(\\partial U/\\partial T)_V$",
+   "unit": "J/K"
+  },
+  "CP": {
+   "tex": "C_P",
+   "zh": "定壓熱容量 $(\\partial H/\\partial T)_P$",
+   "unit": "J/K"
+  },
+  "c": {
+   "tex": "c",
+   "zh": "比熱（每單位質量的熱容量）",
+   "unit": "J/(kg·K)",
+   "note": "水約 4186 J/(kg·K)＝1 cal/(g·°C)"
+  },
+  "L": {
+   "tex": "L",
+   "zh": "潛熱（相變所需的熱）",
+   "unit": "J",
+   "note": "比潛熱 $l=L/m$，冰的熔化熱 333 J/g"
+  },
+  "H": {
+   "tex": "H",
+   "zh": "焓 $H=U+PV$",
+   "unit": "J"
+  },
+  "beta": {
+   "tex": "\\beta",
+   "zh": "體膨脹係數 $\\frac{\\Delta V/V}{\\Delta T}$",
+   "unit": "K⁻¹"
+  },
+  "alpha": {
+   "tex": "\\alpha",
+   "zh": "線膨脹係數 $\\frac{\\Delta L/L}{\\Delta T}$",
+   "unit": "K⁻¹"
+  },
+  "ell": {
+   "tex": "\\ell",
+   "zh": "平均自由徑",
+   "unit": "m",
+   "note": "$\\ell\\approx\\dfrac{1}{4\\pi r^2}\\dfrac VN$"
+  },
+  "kt": {
+   "tex": "k_t",
+   "zh": "熱導率（Fourier 定律）",
+   "unit": "W/(m·K)"
+  },
+  "eta": {
+   "tex": "\\eta",
+   "zh": "黏滯係數",
+   "unit": "Pa·s"
+  },
+  "D": {
+   "tex": "D",
+   "zh": "擴散係數（Fick 定律）",
+   "unit": "m²/s"
+  },
+  "Llen": {
+   "tex": "L",
+   "zh": "長度（熱膨脹）；§1.2 的圓筒長度",
+   "unit": "m",
+   "note": "與潛熱 $L$ 同字母，看上下文"
+  },
+  "NA": {
+   "tex": "N_A",
+   "zh": "Avogadro 數（每莫耳的分子數）",
+   "unit": "mol⁻¹",
+   "note": "$6.02\\times10^{23}$"
+  },
+  "M": {
+   "tex": "M",
+   "zh": "莫耳質量（一莫耳的質量）",
+   "unit": "kg/mol",
+   "note": "空氣 0.029、$\\text{N}_2$ 0.028；$k/m=R/M$"
+  },
+  "rho": {
+   "tex": "\\rho",
+   "zh": "（質量）密度",
+   "unit": "kg/m³",
+   "note": "理想氣體 $\\rho=mP/kT=MP/RT$"
+  },
+  "g": {
+   "tex": "g",
+   "zh": "重力加速度",
+   "unit": "m/s²",
+   "note": "9.8 m/s²"
+  },
+  "z": {
+   "tex": "z",
+   "zh": "高度（海拔）",
+   "unit": "m"
+  },
+  "A": {
+   "tex": "A",
+   "zh": "面積（活塞、窗戶、洞）",
+   "unit": "m²"
+  },
+  "vx": {
+   "tex": "v_x",
+   "zh": "速度的 $x$ 分量（垂直於牆）",
+   "unit": "m/s",
+   "note": "$m\\overline{v_x^2}=kT$"
+  },
+  "Ktr": {
+   "tex": "\\overline{K}_{\\text{trans}}",
+   "zh": "分子的平均平移動能",
+   "unit": "J",
+   "note": "$\\tfrac32kT$"
+  },
+  "Bvir": {
+   "tex": "B(T)",
+   "zh": "第二維里係數",
+   "unit": "m³/mol",
+   "note": "1 cm³/mol＝$10^{-6}$ m³/mol"
+  },
+  "avdw": {
+   "tex": "a",
+   "zh": "凡得瓦常數：分子間吸引",
+   "unit": "J·m³/mol²"
+  },
+  "bvdw": {
+   "tex": "b",
+   "zh": "凡得瓦常數：每莫耳分子本身的體積",
+   "unit": "m³/mol"
+  },
+  "tau": {
+   "tex": "\\tau",
+   "zh": "特徵時間（降為 $1/e$ 所需時間）",
+   "unit": "s",
+   "note": "瀉流 $\\tau=\\frac{2V}{A}\\sqrt{m/kT}$"
+  },
+  "Bmod": {
+   "tex": "B",
+   "zh": "體積模數：$B=-V\\,dP/dV$",
+   "unit": "Pa",
+   "note": "理想氣體等溫 $B=P$、絕熱 $B=\\gamma P$（習題 1.39）"
+  },
+  "cs": {
+   "tex": "c_s",
+   "zh": "聲速 $\\sqrt{B/\\rho}$",
+   "unit": "m/s",
+   "note": "理想氣體 $c_s=\\sqrt{\\gamma kT/m}$，室溫空氣約 347 m/s"
+  },
+  "kappaT": {
+   "tex": "\\kappa_T",
+   "zh": "等溫壓縮係數 $-\\frac1V\\left(\\frac{\\partial V}{\\partial P}\\right)_T$",
+   "unit": "Pa⁻¹",
+   "note": "等溫體積模量的倒數；理想氣體 $\\kappa_T=1/P$"
+  },
+  "lsp": {
+   "tex": "l",
+   "zh": "比潛熱 $l=L/m$（每單位質量完成相變所需的熱）",
+   "unit": "J/g",
+   "note": "冰熔化 333 J/g＝80 cal/g；水沸騰 2260 J/g＝540 cal/g（1 atm）"
+  },
+  "DfH": {
+   "tex": "\\Delta_fH",
+   "zh": "生成焓：由最穩定的元素態生成一莫耳物質的焓變",
+   "unit": "kJ/mol",
+   "note": "元素態為 0；反應焓＝生成物總和 − 反應物總和"
+  },
+  "Wother": {
+   "tex": "W_{\\text{other}}",
+   "zh": "壓縮膨脹功以外的其他功（電功、攪拌等）",
+   "unit": "J",
+   "note": "定壓下 $\\Delta H=Q+W_{\\text{other}}$"
+  },
+  "G": {
+   "tex": "G",
+   "zh": "萬有引力常數",
+   "unit": "N·m²/kg²",
+   "note": "$6.674\\times10^{-11}$ N·m²/kg²"
+  },
+  "Rval": {
+   "tex": "R",
+   "zh": "R 值（熱阻）$R=\\Delta x/k_t$（§1.7，不是氣體常數）",
+   "unit": "K·m²/W",
+   "note": "英制 °F·ft²·hr/Btu，1 SI＝5.68 英制；串聯相加"
+  },
+  "Kdiff": {
+   "tex": "K",
+   "zh": "熱擴散率 $K=k_t/(\\rho c)$（熱方程的係數）",
+   "unit": "m²/s",
+   "note": "熱傳距離 $L$ 約需 $L^2/K$ 的時間"
+  },
+  "rhoD": {
+   "tex": "\\rho",
+   "zh": "密度（質量／體積）",
+   "unit": "kg/m³"
+  },
+  "vbar": {
+   "tex": "\\bar v",
+   "zh": "分子的平均熱運動速率（估計時用 $v_{\\text{rms}}$）",
+   "unit": "m/s",
+   "note": "室溫空氣約 500 m/s"
+  },
+  "rmol": {
+   "tex": "r",
+   "zh": "分子的有效半徑（碰撞時中心距 $2r$）",
+   "unit": "m",
+   "note": "空氣取 1.5 Å＝$1.5\\times10^{-10}$ m"
+  },
+  "ux": {
+   "tex": "u_x",
+   "zh": "流體的巨觀水平流速（不是分子的熱運動速度）",
+   "unit": "m/s"
+  },
+  "nconc": {
+   "tex": "n",
+   "zh": "粒子濃度 $N/V$（只在 §1.7 擴散這樣用；其他地方 $n$ 是莫耳數）",
+   "unit": "m⁻³"
+  },
+  "Jflux": {
+   "tex": "J",
+   "zh": "粒子通量：每單位時間、每單位面積淨穿過的粒子數",
+   "unit": "m⁻²·s⁻¹",
+   "note": "Fick 定律 $J_x=-D\\,dn/dx$"
+  }
+ },
+ "groups": [
+  {
+   "title": "多重度（第 1–3 節）",
+   "keys": [
+    "N",
+    "n",
+    "Omega",
+    "Nud",
+    "q",
+    "eps",
+    "qAB",
+    "NAB"
+   ]
+  },
+  {
+   "title": "大系統與峰（第 4–6 節）",
+   "keys": [
+    "x",
+    "U"
+   ]
+  },
+  {
+   "title": "理想氣體（第 7 節）",
+   "keys": [
+    "V",
+    "Vp",
+    "h",
+    "m",
+    "d"
+   ]
+  },
+  {
+   "title": "熵（第 8–10 節）",
+   "keys": [
+    "S",
+    "k",
+    "xmix",
+    "T",
+    "mu"
+   ]
+  },
+  {
+   "title": "狀態量（§1.1–1.3）",
+   "keys": [
+    "T",
+    "P",
+    "V",
+    "N",
+    "n",
+    "k",
+    "R",
+    "m",
+    "vrms",
+    "f",
+    "alpha",
+    "beta"
+   ]
+  },
+  {
+   "title": "能量、熱與功（§1.4–1.6）",
+   "keys": [
+    "U",
+    "Q",
+    "W",
+    "gamma",
+    "CV",
+    "CP",
+    "c",
+    "L",
+    "H"
+   ]
+  },
+  {
+   "title": "過程的速率（§1.7）與其他",
+   "keys": [
+    "ell",
+    "kt",
+    "eta",
+    "D",
+    "Llen",
+    "NA",
+    "M",
+    "rho",
+    "g",
+    "z",
+    "A",
+    "vx",
+    "Ktr",
+    "Bvir",
+    "avdw",
+    "bvdw",
+    "tau",
+    "Bmod",
+    "cs",
+    "kappaT",
+    "lsp",
+    "DfH",
+    "Wother",
+    "G",
+    "Rval",
+    "Kdiff",
+    "rhoD",
+    "vbar",
+    "rmol",
+    "ux",
+    "nconc",
+    "Jflux"
+   ]
+  }
+ ],
+ "steps": {}
+}

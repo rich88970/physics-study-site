@@ -1,0 +1,85 @@
+{
+ "title": "課本 1-13：由 $\\vec A\\times\\vec X=\\vec B$、$\\vec A\\cdot\\vec X=\\phi$ 解出 $\\vec X$",
+ "lead": 2.6,
+ "duration": 133.054,
+ "scenes": [
+  {
+   "start": 2.6,
+   "dur": 15.67,
+   "sub": "題目：$\\vec A\\times\\vec X=\\vec B,\\ \\ \\vec A\\cdot\\vec X=\\phi$，求 $\\vec X$",
+   "say": "課本第一章第十三題。未知向量 X 滿足兩個條件：A 叉 X 等於 B，A 點 X 等於純量 phi。要用 A、B、phi，和 A 的長度，把 X 表示出來。"
+  },
+  {
+   "start": 18.27,
+   "dur": 6.31,
+   "sub": "難處：向量不能相除，不能把 $\\vec A$「除過去」",
+   "say": "難處在於，向量不能相除，沒辦法把 A 直接除過去。"
+  },
+  {
+   "start": 24.58,
+   "dur": 7.726,
+   "sub": "觀察：$\\vec X=\\vec X_{\\parallel}+\\vec X_{\\perp}$（平行 $\\vec A$ ＋ 垂直 $\\vec A$）",
+   "say": "關鍵的觀察是：把 X 拆成兩部分，一部分平行 A，另一部分垂直 A。"
+  },
+  {
+   "start": 32.306,
+   "dur": 12.046,
+   "sub": "$\\vec A\\cdot\\vec X=\\phi$ 只決定平行部分：$\\vec X_{\\parallel}=\\dfrac{\\phi}{A^2}\\vec A$",
+   "say": "內積只看平行的部分。所以 A 點 X 等於 phi 這個條件，只決定了平行部分：它等於 phi 除以 A 平方，再乘上 A。"
+  },
+  {
+   "start": 44.352,
+   "dur": 10.174,
+   "sub": "$\\vec B=\\vec A\\times\\vec X_{\\perp}$：只和垂直部分有關",
+   "say": "外積只看垂直的部分。B 等於 A 叉 X 的垂直部分，它同時垂直 A，也垂直 X 的垂直部分。"
+  },
+  {
+   "start": 54.526,
+   "dur": 8.47,
+   "sub": "必要條件：$\\vec A\\cdot\\vec B=0$",
+   "say": "順帶注意，B 一定垂直 A，所以題目的資料必須滿足 A 點 B 等於零，否則無解。"
+  },
+  {
+   "start": 62.996,
+   "dur": 6.886,
+   "sub": "技巧：兩邊從左邊外積 $\\vec A$",
+   "say": "現在用一個技巧：把第一個條件的兩邊，再從左邊叉上一個 A。"
+  },
+  {
+   "start": 69.882,
+   "dur": 11.23,
+   "sub": "BAC–CAB：$\\vec A(\\vec A\\cdot\\vec X)-\\vec X(\\vec A\\cdot\\vec A)=\\phi\\vec A-A^2\\vec X$",
+   "say": "用 B A C 減 C A B 公式展開左邊，得到 A 乘上 A 點 X，減掉 X 乘上 A 點 A，也就是 phi 乘 A，減去 A 平方乘 X。"
+  },
+  {
+   "start": 81.112,
+   "dur": 7.654,
+   "sub": "$\\vec X=\\dfrac{\\phi\\vec A-\\vec A\\times\\vec B}{A^2}$",
+   "say": "移項，再除以 A 平方，就得到 X 等於 phi A 減 A 叉 B，整個除以 A 平方。"
+  },
+  {
+   "start": 88.766,
+   "dur": 14.11,
+   "sub": "第一項 $=\\vec X_{\\parallel}$；第二項 $\\dfrac{\\vec B\\times\\vec A}{A^2}=\\vec X_{\\perp}$",
+   "say": "看看這兩項：第一項 phi 除以 A 平方乘 A，正是平行部分。第二項，負 A 叉 B 除以 A 平方，也就是 B 叉 A 除以 A 平方，正是垂直部分。"
+  },
+  {
+   "start": 102.876,
+   "dur": 10.75,
+   "sub": "檢查：$\\vec A\\cdot\\vec X=\\phi$ ✓",
+   "say": "最後代回去檢查。A 點 X 的時候，第二項是有兩個 A 的三重積，等於零，只剩下 phi，正確。"
+  },
+  {
+   "start": 113.626,
+   "dur": 9.334,
+   "sub": "檢查：$\\vec A\\times\\vec X=\\vec B$ ✓（用到 $\\vec A\\cdot\\vec B=0$）",
+   "say": "A 叉 X 的時候，再用一次 B A C 減 C A B，加上 A 點 B 等於零，剛好回到 B，也正確。"
+  },
+  {
+   "start": 122.96,
+   "dur": 8.494,
+   "sub": "內積管平行部分，外積管垂直部分",
+   "say": "記住這題的想法：兩個條件各管一半，內積管平行部分，外積管垂直部分。"
+  }
+ ]
+}

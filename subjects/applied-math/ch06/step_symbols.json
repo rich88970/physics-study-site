@@ -1,0 +1,19 @@
+{
+  "symbols": {
+    "mm": { "tex": "m", "zh": "Bessel 方程的階數", "unit": "", "note": "$x^2y''+xy'+(x^2-m^2)y=0$；圓柱問題中由角度週期性決定，是整數；方程式只含 $m^2$" },
+    "PQ": { "tex": "P(x),\\ Q(x)", "zh": "標準式 y''+P y'+Q y=0 的係數", "unit": "", "note": "Bessel 方程：$P=\\frac1x$、$Q=\\frac{x^2-m^2}{x^2}$" },
+    "gam": { "tex": "\\gamma", "zh": "Frobenius 指標", "unit": "", "note": "$y=\\sum a_nx^{n+\\gamma}$，Bessel 方程的指標根 $\\gamma=\\pm m$" },
+    "an": { "tex": "a_n", "zh": "級數係數", "unit": "", "note": "$a_1=0$；$a_{2k}=-\\frac{a_{2k-2}}{4k(k+m)}$（$\\gamma=m$）" },
+    "Jm": { "tex": "J_m(x)", "zh": "第一類 Bessel 函數（m 階）", "unit": "", "note": "$\\sum\\frac{(-1)^k}{k!(m+k)!}(\\frac x2)^{2k+m}$；$J_0(0)=1$" },
+    "Ym": { "tex": "Y_m(x)", "zh": "Neumann 函數（第二類 Bessel 函數）", "unit": "", "note": "由降階法 $J_m\\int\\frac{dx}{xJ_m^2}$ 得到；$x\\to0^+$ 時 $\\to-\\infty$" },
+    "Gam": { "tex": "\\Gamma(z)", "zh": "Gamma 函數（階乘的推廣）", "unit": "", "note": "$\\Gamma(z+1)=z\\Gamma(z)$、$\\Gamma(n+1)=n!$、$\\Gamma(\\frac12)=\\sqrt\\pi$；非正整數是極點，$\\frac1{(-k)!}=0$" },
+    "jmn": { "tex": "j_{mn}", "zh": "J_m 的第 n 個正零點", "unit": "", "note": "$j_{01}=2.405$、$j_{02}=5.520$、$j_{11}=3.832$；圓形邊界 $k=j_{mn}/R$" },
+    "WW": { "tex": "W", "zh": "Wronskian", "unit": "", "note": "$W=y_1y_2'-y_1'y_2$；Bessel 方程 $W=\\frac Cx$" },
+    "lam": { "tex": "\\lambda", "zh": "113 上期末方程式中的參數", "unit": "", "note": "$x^2y''+xy'+\\lambda^2x^2y=0$ 的解是 $J_0(\\lambda x)$、$Y_0(\\lambda x)$" }
+  },
+  "groups": [
+    { "title": "Bessel 方程與 Frobenius 法", "keys": ["mm", "PQ", "gam", "an"] },
+    { "title": "Bessel 函數", "keys": ["Jm", "Ym", "Gam", "jmn", "WW", "lam"] }
+  ],
+  "steps": {}
+}

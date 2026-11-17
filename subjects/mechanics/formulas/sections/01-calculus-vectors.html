@@ -1,0 +1,121 @@
+<h2>一、微積分與向量運算 <span class="pg">Lecture 1 §1–5、§7</span></h2>
+
+<h3 id="fx-calc">1.1 微分與積分</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">微分的寫法</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#c-differential" title="1.1 微分">L1 §1.1</a></span></div>
+  <div class="math-block">$$\mathrm df=f'(x)\,\mathrm dx,\qquad \mathrm dx^n=nx^{n-1}\,\mathrm dx,\qquad \mathrm d\sin x=\cos x\,\mathrm dx,\qquad \mathrm de^x=e^x\,\mathrm dx$$</div>
+  <p>講義習慣把導數寫成「微分」：$\mathrm df$ 是 $x$ 變一點點 $\mathrm dx$ 時 $f$ 跟著變的量。這種寫法在解運動方程時最好用，因為可以把 $\mathrm dv$、$\mathrm dt$ 分到等號兩邊再積分。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">積分＝把微分表倒過來讀</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#c-integral" title="1.2 積分：把微分表倒過來讀">L1 §1.2</a></span></div>
+  <div class="math-block">$$\int x^n\,\mathrm dx=\frac{x^{n+1}}{n+1}+C\ (n\neq-1),\qquad \int\frac{\mathrm dx}{x}=\ln x+C,\qquad \int e^x\,\mathrm dx=e^x+C$$</div>
+  <p>$n=-1$ 是唯一不能用冪次公式的情況，答案是 $\ln$；阻力題裡 $\int\mathrm dv/v$、$\int\mathrm dv/(g+kv)$ 都屬於這一型。不定積分記得加常數 $C$，再用初始條件定它。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">點記號</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#c-dot" title="1.3 時間導數">L1 §1.3</a></span></div>
+  <div class="math-block">$$\dot x=\frac{\mathrm dx}{\mathrm dt}\iff\mathrm dx=\dot x\,\mathrm dt,\qquad \ddot x=\frac{\mathrm d\dot x}{\mathrm dt}$$</div>
+  <p>上面一點是速度、兩點是加速度，只用在「對時間」微分；對位置微分要寫 $\mathrm d/\mathrm dx$ 或 $'$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">乘積律、商數律</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#c-product" title="1.4 乘積律與商數律">L1 §1.4</a></span></div>
+  <div class="math-block">$$\mathrm d(fg)=g\,\mathrm df+f\,\mathrm dg,\qquad \mathrm d\!\left(\frac fg\right)=\frac{g\,\mathrm df-f\,\mathrm dg}{g^2}$$</div>
+  <p>倒過來用就是分部積分：$\int f\,\mathrm dg=fg-\int g\,\mathrm df$，例如 $\int xe^x\,\mathrm dx=xe^x-e^x+C$（指數阻力的停止距離會用到）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">換元積分</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#c-subst" title="1.5 換元積分">L1 §1.5</a></span></div>
+  <div class="math-block">$$\int f(kx+b)\,\mathrm dx=\frac1k\int f(y)\,\mathrm dy,\qquad y=kx+b$$</div>
+  <p>括號裡是一次式時，把整個括號當新變數，前面補 $1/k$。常見的錯是忘了 $1/k$，例如 $\int e^{-kt}\,\mathrm dt=-\tfrac1ke^{-kt}$。</p>
+</div>
+
+<h3 id="fx-vec">1.2 向量的分量與長度</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">分量、長度與單位向量</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#sv-3d" title="2.4 三維與長度">L1 §2.4</a><a class="fx-src" data-chapter="mechanics/ch01" href="#sv-unit" title="2.2 單位向量">L1 §2.2</a></span></div>
+  <div class="math-block">$$\vec A=A_1\hat i+A_2\hat j+A_3\hat k,\qquad |\vec A|=\sqrt{A_1^2+A_2^2+A_3^2},\qquad \hat A=\frac{\vec A}{|\vec A|}$$</div>
+  <p>向量＝大小＋方向；單位向量只留方向（長度 1）。題目說「沿某方向的單位向量」就是把那個向量除以自己的長度。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">二維的極座標表示</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#sv-2d" title="2.3 二維：分量與極座標">L1 §2.3</a></span></div>
+  <div class="math-block">$$A_1=r\cos\theta,\quad A_2=r\sin\theta;\qquad r=\sqrt{A_1^2+A_2^2},\quad \tan\theta=\frac{A_2}{A_1}$$</div>
+  <p>由分量求角度時，$\tan^{-1}$ 只給 $-90^\circ$ 到 $90^\circ$，要看 $A_1$、$A_2$ 的正負判斷象限。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">加減與純量乘法</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#va-comp" title="3.4 用分量計算">L1 §3.4</a><a class="fx-src" data-chapter="mechanics/ch01" href="#va-scale" title="3.3 純量乘法">L1 §3.3</a></span></div>
+  <div class="math-block">$$\vec A\pm\vec B=(A_1\pm B_1,\ A_2\pm B_2,\ A_3\pm B_3),\qquad |c\vec A|=|c|\,|\vec A|$$</div>
+  <p>分量各自加減。乘上負數會反向，長度乘 $|c|$ 而不是 $c$。</p>
+</div>
+
+<h3 id="fx-dot">1.3 內積</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">內積的兩種算法</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#dot-def" title="4.1 內積的定義">L1 §4.1</a></span></div>
+  <div class="math-block">$$\vec A\cdot\vec B=A_1B_1+A_2B_2+A_3B_3=|\vec A|\,|\vec B|\cos\theta$$</div>
+  <p>結果是純量。左邊用分量算、右邊用夾角算，兩個一起用就能求夾角或求分量。$\vec A\cdot\vec A=|\vec A|^2$。</p>
+  <p class="symnote">符號：$\theta$＝兩向量夾角（$0\le\theta\le\pi$）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">投影（沿某方向的分量）</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#dot-proj" title="4.2 投影：沿某方向的分量">L1 §4.2</a></span></div>
+  <div class="math-block">$$A_B=\vec A\cdot\hat B=\frac{\vec A\cdot\vec B}{|\vec B|}$$</div>
+  <p>$\vec A$ 在 $\vec B$ 方向上「有多長」。斜面上重力沿斜面的分量 $mg\sin\theta$ 就是這樣來的（$\vec F_g\cdot\hat x$）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">夾角與垂直</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#dot-angle" title="4.4 求夾角">L1 §4.4</a><a class="fx-src" data-chapter="mechanics/ch01" href="#dot-orth" title="4.3 判斷垂直">L1 §4.3</a></span></div>
+  <div class="math-block">$$\cos\theta=\frac{\vec A\cdot\vec B}{|\vec A|\,|\vec B|},\qquad \vec A\perp\vec B\iff\vec A\cdot\vec B=0$$</div>
+  <p>判斷垂直不用算角度，內積為零就是垂直（兩向量都不是零向量時）。</p>
+</div>
+
+<h3 id="fx-cross">1.4 外積與三重積</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">外積的大小與方向</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cr-def" title="5.1 外積的定義">L1 §5.1</a></span></div>
+  <div class="math-block">$$|\vec A\times\vec B|=|\vec A|\,|\vec B|\sin\theta,\qquad \vec A\times\vec B=-\vec B\times\vec A$$</div>
+  <p>結果是向量，方向用右手定則（四指從 $\vec A$ 轉向 $\vec B$，拇指方向），同時垂直 $\vec A$ 和 $\vec B$。大小＝兩向量張成的平行四邊形面積；三角形面積再除以 2。次序對調會變號。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">外積的分量（行列式）</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cr-comp" title="5.2 用分量算外積">L1 §5.2</a></span></div>
+  <div class="math-block">$$\vec A\times\vec B=\begin{vmatrix}\hat i&\hat j&\hat k\\ A_1&A_2&A_3\\ B_1&B_2&B_3\end{vmatrix}=\begin{pmatrix}A_2B_3-A_3B_2\\ A_3B_1-A_1B_3\\ A_1B_2-A_2B_1\end{pmatrix}$$</div>
+  <p>中間 $\hat j$ 那一項最容易漏負號；寫成 $A_3B_1-A_1B_3$ 的循環形式就不會錯（下標 $1\to2\to3\to1$ 輪換）。$\hat i\times\hat j=\hat k$，$\hat j\times\hat k=\hat i$，$\hat k\times\hat i=\hat j$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">$\varepsilon_{ijk}$ 記號</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cr-eps" title="5.3 ">L1 §5.3</a></span></div>
+  <div class="math-block">$$(\vec A\times\vec B)_i=\sum_{j,k}\varepsilon_{ijk}A_jB_k,\qquad \sum_k\varepsilon_{ijk}\varepsilon_{lmk}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$$</div>
+  <p>$\varepsilon_{ijk}$：$ijk$ 是 123 的偶排列為 $+1$、奇排列為 $-1$、有重複下標為 $0$。證明向量恆等式（例如 $\vec A\times(\vec B\times\vec C)$）時用右邊的縮併公式最快。</p>
+  <p class="symnote">符號：$\delta_{ij}$＝Kronecker delta，$i=j$ 時為 1，否則為 0。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">純量三重積</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cr-proof" title="5.5 課本例題與證明題">L1 §5.5</a></span></div>
+  <div class="math-block">$$\vec A\cdot(\vec B\times\vec C)=\begin{vmatrix}A_1&A_2&A_3\\ B_1&B_2&B_3\\ C_1&C_2&C_3\end{vmatrix}=\vec B\cdot(\vec C\times\vec A)=\vec C\cdot(\vec A\times\vec B)$$</div>
+  <p>三個向量張成的平行六面體的有號體積；循環輪換不變，對調兩個會變號。等於零 ⟺ 三向量共面。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">向量三重積（BAC−CAB）</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cr-proof" title="5.5 課本例題與證明題">L1 §5.5</a></span></div>
+  <div class="math-block">$$\vec A\times(\vec B\times\vec C)=\vec B(\vec A\cdot\vec C)-\vec C(\vec A\cdot\vec B)$$</div>
+  <p>口訣「BAC 減 CAB」。外積沒有結合律：$(\vec A\times\vec B)\times\vec C\neq\vec A\times(\vec B\times\vec C)$。角動量 $\vec r\times(\vec\omega\times\vec r)$ 就用這條展開。</p>
+</div>
+
+<h3 id="fx-dvec">1.5 向量的微分</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">逐分量微分與乘積律</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#dv-what" title="7.1 怎麼微分一個向量">L1 §7.1</a><a class="fx-src" data-chapter="mechanics/ch01" href="#dv-rules" title="7.2 乘積律">L1 §7.2</a></span></div>
+  <div class="math-block">$$\frac{\mathrm d}{\mathrm dt}(\vec A\cdot\vec B)=\dot{\vec A}\cdot\vec B+\vec A\cdot\dot{\vec B},\qquad \frac{\mathrm d}{\mathrm dt}(\vec A\times\vec B)=\dot{\vec A}\times\vec B+\vec A\times\dot{\vec B}$$</div>
+  <p>直角座標的 $\hat i,\hat j,\hat k$ 不隨時間變，所以向量的導數就是各分量分別微分。外積的乘積律<strong>次序不能換</strong>。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">長度固定的向量</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#dv-rules" title="7.2 乘積律">L1 §7.2</a></span></div>
+  <div class="math-block">$$|\vec A|=\text{常數}\ \Longrightarrow\ \vec A\cdot\dot{\vec A}=0$$</div>
+  <p>長度不變的向量只能轉向，變化量一定垂直它自己。等速率圓周運動的加速度垂直速度、極座標的 $\dot{\hat r}\perp\hat r$ 都是這個原因。</p>
+</div>

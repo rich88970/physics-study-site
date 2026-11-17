@@ -1,0 +1,193 @@
+<h2>一、牛頓三定律與伽利略的慣性 <span class="pg">講義 p.1–13 · 課本 §2.1–2.2、§2.7</span></h2>
+
+<p class="lead">這一節先把三條定律的文字和意思講清楚，再回答兩個問題：第一定律憑什麼成立（伽利略的斜面和船），以及「物理定律在每個慣性座標系都一樣」這句話為什麼是一種對稱性。</p>
+
+<h3 id="c2l-what">1.1 牛頓力學是什麼、管到哪裡 <span class="pg-tag">p.2–3</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.2–3 Newtonian Mechanics</span>
+  <p>力和它造成的加速度之間的關係，最早由牛頓（1642–1727）弄清楚；照牛頓的方式研究這個關係，就叫牛頓力學，核心是三條運動定律。牛頓力學不是所有情況都適用，它是兩個更完整的理論（相對論、量子力學）的特例。</p>
+  <p>講義用一張表依速度 $v$（和光速 $c=3\times10^8\ \text{m/s}$ 比）與尺度 $L$（和 $10^{-9}\ \text{m}$ 比）分類：</p>
+  <div class="symbol-table-wrap"><table>
+    <thead><tr><th></th><th>$v\ll c$</th><th>$v\sim c$</th></tr></thead>
+    <tbody>
+      <tr><td>$L\gg10^{-9}\ \text{m}$</td><td>古典力學</td><td>相對論力學</td></tr>
+      <tr><td>$L\lesssim10^{-9}\ \text{m}$</td><td>量子力學</td><td>量子場論</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<p>「特例」的意思是：在某些條件下，更完整的理論會退化成牛頓力學。課本 §2.7 說明了牛頓力學在哪裡失效：</p>
+
+<div class="box lecture book">
+  <span class="box-title">課本 §2.7 p.88–90 Limitations of Newtonian Mechanics</span>
+  <ul>
+    <li><strong>微觀</strong>：同時測量位置和動量的不確定度有下限 $\Delta x\,\Delta p\gtrsim10^{-34}\ \text{J·s}$（Heisenberg）。對巨觀物體小到可以忽略，對電子不行，要用量子力學。</li>
+    <li><strong>高速</strong>：牛頓假設時間是絕對的、兩地的「同時」可以確定；但訊號最快只有光速 $c\approx3\times10^8\ \text{m/s}$，無法瞬間對時。$v$ 接近 $c$ 時要用狹義相對論（課本第 14 章）。</li>
+    <li><strong>粒子太多</strong>：三個以上互相吸引的物體已經沒有一般的解析解；$10^{19}$ 個氣體分子只能用統計力學算平均性質。</li>
+  </ul>
+</div>
+
+<p>所以這學期的「質點」是巨觀物體、速度遠小於光速。這不是很強的限制：從汽車到行星軌道都在這個範圍內。</p>
+
+<h3 id="c2l-laws">1.2 三條定律 <span class="pg-tag">p.4</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.4 Newton's Laws（1687《自然哲學的數學原理》）</span>
+  <ol>
+    <li>物體若不受力，靜止者恆靜止，運動者保持等速直線運動。</li>
+    <li>物體受力時，動量對時間的變化率等於所受的力。</li>
+    <li>兩物體互相施力時，兩力大小相等、方向相反。</li>
+  </ol>
+</div>
+
+<p>講義 p.33 把三條各用一句話分工：第一定律講<strong>不受力</strong>的運動，第二定律講<strong>受力</strong>的運動，第三定律講<strong>多個物體</strong>之間的交互作用。</p>
+
+<p>課本 p.49–50 指出一件容易被忽略的事：第一定律單獨看只對「力為零」有明確意義——不受任何力的物體叫<strong>自由質點</strong>（free particle），它做等速直線運動。至於「等速」是相對於誰量的，要靠參考座標系來回答（第 2 節）。課本也說，第一、第二定律其實比較像<strong>定義</strong>（定義什麼叫力），真正對世界做出可檢驗主張的是第三定律（第 3 節會用它定義質量）。</p>
+
+<h3 id="c2l-first">1.3 第一定律：伽利略的慣性 <span class="pg-tag">p.5–8</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.5–7 Galileo's Thought Experiment</span>
+  <p>踢出去的足球滾一段就停了，看起來和第一定律矛盾。伽利略之前的人相信「要一直施力，物體才會一直動」。伽利略的想像實驗：球從斜面滾下，會在對面的斜面爬回<strong>同一個高度</strong>，和對面斜面的坡度無關；對面越平，球要滾越遠才能回到原來高度；如果對面是水平的，球永遠到不了原來的高度，就會一直滾下去。</p>
+</div>
+
+<p>這個論證的關鍵是把「摩擦」從現象中拿掉：足球會停，是因為草地和空氣施了力（摩擦、阻力），不是因為「運動自然會停」。斜面越光滑，球爬回的高度越接近原高度；外推到完全沒有摩擦，水平面上的球就沒有理由減速。慣性的觀念（第一定律）其實是伽利略先想到的，講義 p.17 也特別這樣提醒。</p>
+
+<div class="anim" data-anim="c2-galileo"></div>
+
+<div class="box lecture">
+  <span class="box-title">p.8 Galileo's Ship（1632）</span>
+  <p>在平穩航行的船艙裡做任何力學實驗，都無法分辨船是在動還是靜止。<strong>伽利略不變性</strong>（相對性、對稱性）：物理定律在所有慣性座標系中都成立。</p>
+</div>
+
+<p>船艙裡丟球、倒水、看蝴蝶飛，結果都和在岸上一樣，所以「絕對靜止」沒有辦法用力學實驗找出來。這句話在下一小節會用「對稱」的語言再說一次，並且用數學檢查 $\vec F=m\ddot{\vec r}$ 確實滿足它。</p>
+
+<h3 id="c2l-sym">1.4 對稱性與伽利略對稱 <span class="pg-tag">p.9–13</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.10–13 Symmetry（Hermann Weyl）</span>
+  <p>「一個東西是對稱的，如果你可以對它做某件事，做完之後它看起來和原來一樣。」雪花轉 $60^\circ$ 不變；圓轉任意角度都不變（連續對稱），正方形只有轉 $90^\circ$ 的整數倍才不變（離散對稱）。在物理裡，「東西」是物理定律，「某件事」是空間轉換、時間轉換……</p>
+  <p><strong>伽利略對稱</strong>：物理定律在所有慣性座標系中相同；也就是說，物理定律在慣性座標系之間的轉換下是對稱的。</p>
+</div>
+
+<p>課本 p.53 把這個要求說得更具體：描述自由質點時，運動方程式必須和座標原點放哪裡無關（空間均勻）、和座標軸朝哪個方向無關（空間各向同性），而且同樣的實驗今天做和明天做結果一樣（時間均勻）。下面檢查牛頓第二定律在「換到另一個等速運動的座標系」時確實不變：</p>
+
+<div class="step" id="c2l-galinv" data-step="c2l-galinv" data-sym="F,m">
+  <span class="step-title">$\vec F=m\ddot{\vec r}$ 在伽利略轉換下不變</span>
+  <p>座標系 $S'$ 相對 $S$ 以固定速度 $\vec V$ 運動，$t=0$ 時原點重合。同一個質點在兩個座標系的位置差 $\vec Vt$：</p>
+  $$\vec r\,'=\vec r-\vec Vt\quad\Longrightarrow\quad\dot{\vec r}\,'=\dot{\vec r}-\vec V\quad\Longrightarrow\quad\ddot{\vec r}\,'=\ddot{\vec r}$$
+  <p>因為 $\vec V$ 是常數，微分兩次就消失了：兩個座標系量到的<strong>加速度相同</strong>。力（彈簧的伸長、兩物體的距離）也和座標系的等速運動無關，所以 $\vec F=m\ddot{\vec r}$ 在 $S'$ 中寫成 $\vec F=m\ddot{\vec r}\,'$，形式完全一樣。</p>
+  <p>反過來，若 $\vec V$ 隨時間改變（$S'$ 在加速），$\ddot{\vec r}\,'=\ddot{\vec r}-\dot{\vec V}$ 多出一項，牛頓定律的形式就被破壞了——這正是下一節「非慣性座標系」的問題。</p>
+</div>
+
+<p>速度不是不變量（$\dot{\vec r}\,'\neq\dot{\vec r}$），所以動能 $\tfrac12mv^2$ 的值在不同慣性座標系不同，但定律不變；第 12 節的習題 2-41 會看到這件事的具體後果。</p>
+
+<div class="problem" data-kind="self" id="c2-self-01a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>換一個慣性座標系，彈性碰撞還是彈性碰撞嗎</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-01a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>幾個質點（質量 $m_i$）在座標系 $S$ 中碰撞，碰撞前後總動能 $T$ 相等（彈性碰撞）。另一個慣性座標系 $S'$ 相對 $S$ 以固定速度 $\vec V$ 運動。(a) 證明 $S'$ 中的總動能 $T'=T-\vec V\cdot\vec P+\tfrac12MV^2$，其中 $\vec P$ 是 $S$ 中的總動量、$M=\sum m_i$。(b) 由此說明：要讓「碰撞是彈性的」這個結論在所有慣性座標系都成立，還需要哪兩個條件？(c) 用 $m_1=2\ \text{kg}$ 以 $3\ \text{m/s}$ 正面撞上靜止的 $m_2=1\ \text{kg}$（彈性、一維）在 $S$ 與 $V=3\ \text{m/s}$ 的 $S'$ 中各驗算一次。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：質點質量 $m_i$，總質量 $M=\sum_im_i$；$S$ 中碰撞前後總動能相等（$\Delta T=0$）；$S'$ 相對 $S$ 以固定速度 $\vec V$ 運動。(c) $m_1=2\ \text{kg}$、$v_1=3\ \text{m/s}$，$m_2=1\ \text{kg}$、$v_2=0$，一維彈性碰撞；$S'$ 的 $V=+3\ \text{m/s}$（和 $v_1$ 同向）。</p>
+<h4>(a) 證明 $T'=T-\vec V\cdot\vec P+\tfrac12MV^2$</h4>
+<p><strong>① 把 $S'$ 的速度換成 $S$ 的速度：</strong> 兩個慣性系只差固定速度 $\vec V$，用伽利略轉換把 $S'$ 的速度寫成 $S$ 的速度，代進動能定義展開。</p>
+<p class="fnote"><b>公式（伽利略轉換）：</b>$\vec v_i\,'=\vec v_i-\vec V$，其中 $\vec v_i$、$\vec v_i\,'$ 為第 $i$ 個質點在 $S$、$S'$ 中的速度，$\vec V$ 為 $S'$ 相對 $S$ 的速度。</p>
+<p class="fnote"><b>公式（總動能定義）：</b>$T=\sum_i\tfrac12m_iv_i^2$，其中 $m_i$ 為質量、$v_i$ 為速率。</p>
+<div class="math-block">$$T'=\sum_i\tfrac12m_i\,|\vec v_i-\vec V|^2$$</div>
+<p><strong>② 展開向量平方：</strong> 向量的平方是自己和自己內積。</p>
+<div class="math-block">$$|\vec v_i-\vec V|^2=(\vec v_i-\vec V)\cdot(\vec v_i-\vec V)=v_i^2-2\,\vec V\cdot\vec v_i+V^2$$</div>
+<p><strong>③ 加總並辨認各項：</strong> 乘上 $\tfrac12m_i$ 再對 $i$ 加總，$\vec V$ 對每個質點都一樣，可提到加總號外。</p>
+<div class="math-block">$$T'=\sum_i\tfrac12m_iv_i^2-\vec V\cdot\sum_im_i\vec v_i+\tfrac12V^2\sum_im_i$$</div>
+<p>第一項是 $S$ 中的總動能 $T$，第二個加總是 $S$ 中的總動量 $\vec P$，第三個加總是總質量 $M$：</p>
+<div class="math-block">$$\boxed{T'=T-\vec V\cdot\vec P+\tfrac12MV^2}$$</div>
+<h4>(b) 要在所有慣性系都是彈性碰撞的條件</h4>
+<p><strong>① 碰撞前後相減：</strong> 「所有慣性系」就是對任意 $\vec V$ 都成立，$\Delta T'$ 是 $\vec V$ 的多項式，每一次方的係數都必須為零。把 (a) 分別寫給碰撞前、後再相減（$\vec V$ 在碰撞中不變）：</p>
+<div class="math-block">$$\Delta T'=\Delta T-\vec V\cdot\Delta\vec P+\tfrac12V^2\,\Delta M$$</div>
+<p>代入 $\Delta T=0$：</p>
+<div class="math-block">$$\Delta T'=-\vec V\cdot\Delta\vec P+\tfrac12V^2\,\Delta M$$</div>
+<p><strong>② 要求對任意 $\vec V$ 都是零：</strong> 取 $\vec V$ 很小，二次項可忽略，剩 $-\vec V\cdot\Delta\vec P=0$；$\vec V$ 分別取 $x$、$y$、$z$ 方向，得 $\Delta\vec P$ 三個分量都是零。一次項消失後剩 $\tfrac12V^2\Delta M=0$，所以 $\Delta M=0$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\Delta\vec P=0\ \ (\text{動量守恆})\\ \Delta M=0\ \ (\text{質量守恆})\end{gathered}}$$</div>
+<p>伽利略對稱加上能量守恆，逼出了動量守恆——這正是第 3 節要由第三定律推出的結論。</p>
+<h4>(c) 一維彈性碰撞在 $S$ 與 $S'$ 中驗算</h4>
+<p><strong>① $S$ 中碰撞後的速度：</strong> 一維、靶靜止的彈性碰撞，直接用碰後速度公式；到 $S'$ 只要每個速度減 $V$，不必重解碰撞。這裡用 $u$ 表示碰撞後，避免和 $S'$ 的撇號混淆。</p>
+<p class="fnote"><b>公式（一維彈性碰撞、靶靜止）：</b>由動量守恆 $m_1v_1=m_1u_1+m_2u_2$ 與動能守恆聯立得 $u_1=\dfrac{m_1-m_2}{m_1+m_2}v_1$、$u_2=\dfrac{2m_1}{m_1+m_2}v_1$，其中 $v_1$ 為入射速度、$u_1$、$u_2$ 為碰後速度；本題 $m_1=2\ \text{kg}$、$m_2=1\ \text{kg}$、$v_1=3\ \text{m/s}$。</p>
+<div class="math-block">$$u_1=\frac{2-1}{2+1}(3\ \text{m/s})=1\ \text{m/s},\qquad u_2=\frac{2(2)}{2+1}(3\ \text{m/s})=4\ \text{m/s}$$</div>
+<p><strong>② $S$ 中碰撞前後的總動能：</strong> 碰前代入 $v_1=3\ \text{m/s}$、$v_2=0$；碰後代入上一步的 $u_1=1\ \text{m/s}$、$u_2=4\ \text{m/s}$。</p>
+<div class="math-block">$$T=\tfrac12m_1v_1^2+\tfrac12m_2v_2^2$$</div>
+<div class="math-block">$$T_{\text{前}}=\tfrac12(2\ \text{kg})(3\ \text{m/s})^2+0=9\ \text{J}$$</div>
+<div class="math-block">$$\begin{aligned}T_{\text{後}}&amp;=\tfrac12(2\ \text{kg})(1\ \text{m/s})^2+\tfrac12(1\ \text{kg})(4\ \text{m/s})^2\\&amp;=1\ \text{J}+8\ \text{J}=9\ \text{J}\end{aligned}$$</div>
+<p><strong>③ 換到 $S'$：</strong> 用 $v'=v-V$、$V=3\ \text{m/s}$：碰前 $v_1'=3-3=0$、$v_2'=0-3=-3\ \text{m/s}$；碰後 $u_1'=1-3=-2\ \text{m/s}$、$u_2'=4-3=1\ \text{m/s}$。</p>
+<div class="math-block">$$T'_{\text{前}}=\tfrac12(2)(0)^2+\tfrac12(1)(-3)^2=4.5\ \text{J}$$</div>
+<div class="math-block">$$T'_{\text{後}}=\tfrac12(2)(-2)^2+\tfrac12(1)(1)^2=4\ \text{J}+0.5\ \text{J}=4.5\ \text{J}$$</div>
+<p><strong>④ 直接套 (a) 的式子：</strong> 代入 $\vec P=m_1v_1=(2)(3)=6\ \text{kg·m/s}$、$M=3\ \text{kg}$、$T=9\ \text{J}$，結果和逐一計算相同。</p>
+<div class="math-block">$$T'=9-(3)(6)+\tfrac12(3)(3)^2=9-18+13.5=4.5\ \text{J}$$</div>
+<p>兩個座標系的動能值不同（$9\ \text{J}$ 與 $4.5\ \text{J}$），但各自都守恆：</p>
+<div class="math-block">$$\boxed{\begin{gathered}S\text{ 中 }9\ \text{J}\to9\ \text{J}\\ S'\text{ 中 }4.5\ \text{J}\to4.5\ \text{J}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-01b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>把摩擦放回伽利略的斜面：木塊爬回多高</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-01b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>木塊從高 $h$、傾角 $\alpha$ 的斜面由靜止滑下，經過平順的轉角滑上傾角 $\beta$ 的斜面；兩面的動摩擦係數都是 $\mu$（假設 $\mu\lt\tan\alpha$，轉角不損失能量）。(a) 求它在右邊斜面停下時的高度 $h'$。(b) 右邊改成水平面（$\beta\to0$），求滑行距離 $s$。(c) 討論 $\mu\to0$ 的極限，說明這就是伽利略的論證。(d) 取 $h=1\ \text{m}$、$\alpha=30^\circ$、$\mu=0.05$，算 $\beta=30^\circ$、$10^\circ$ 的 $h'$ 和水平面上的 $s$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：起點高 $h$、左斜面傾角 $\alpha$、右斜面傾角 $\beta$，兩面動摩擦係數都是 $\mu$（$\mu\lt\tan\alpha$）；起點靜止、停下時靜止，轉角不損失能量；$g$ 最後會約掉。(d) $h=1\ \text{m}$、$\alpha=30^\circ$、$\mu=0.05$，$\beta=30^\circ$ 或 $10^\circ$。</p>
+<h4>(a) 右斜面上停下的高度 $h'$</h4>
+<p><strong>① 斜面上摩擦功的通用式：</strong> 只問停在多高、不問時間，每段的力都是定值，用功能定理一次寫完；兩斜面角度不同，先推「傾角 $\theta$、高度差 $H$ 的斜面滑過一次，摩擦做多少功」。垂直斜面沒有加速度，$N=mg\cos\theta$；正向力不做功。</p>
+<p class="fnote"><b>公式（動摩擦力）：</b>$f=\mu N$，其中 $\mu$ 為動摩擦係數、$N$ 為正向力，方向和滑動相反；本題 $N=mg\cos\theta$。</p>
+<p>沿斜面的長度 $\ell=H/\sin\theta$：</p>
+<div class="math-block">$$W_f=-f\,\ell=-\mu mg\cos\theta\cdot\frac{H}{\sin\theta}=-\mu mg\,H\cot\theta$$</div>
+<p>斜面越平（$\cot\theta$ 越大），同樣高度要走越長的路，摩擦吃掉越多。</p>
+<p><strong>② 對整段寫功能定理：</strong> 起點、終點都靜止，$\Delta K=0$。重力做功 $mg(h-h')$；左面下降 $h$、右面上升 $h'$，摩擦功用上一步的式子。</p>
+<p class="fnote"><b>公式（功能定理）：</b>$\Delta K=W_{\text{合}}$，其中 $\Delta K$ 為動能變化、$W_{\text{合}}$ 為所有力做的功總和；本題 $\Delta K=0$。</p>
+<div class="math-block">$$0=mg(h-h')-\mu mgh\cot\alpha-\mu mgh'\cot\beta$$</div>
+<p><strong>③ 解出 $h'$：</strong> 同除以 $mg$，把含 $h'$ 的項移到同一邊。</p>
+<div class="math-block">$$\begin{aligned}h-\mu h\cot\alpha&amp;=h'+\mu h'\cot\beta\\ \Longrightarrow\ h(1-\mu\cot\alpha)&amp;=h'(1+\mu\cot\beta)\end{aligned}$$</div>
+<p>題目的 $\mu\lt\tan\alpha$ 保證 $\mu\cot\alpha\lt1$，分子為正，木塊真的滑得下來。</p>
+<div class="math-block">$$\boxed{h'=h\,\frac{1-\mu\cot\alpha}{1+\mu\cot\beta}}$$</div>
+<h4>(b) 右邊改成水平面的滑行距離 $s$</h4>
+<p><strong>① 同一個功能定理：</strong> 水平面上 $N=mg$，摩擦 $\mu mg$ 做功 $-\mu mgs$，重力不做功。</p>
+<div class="math-block">$$0=mgh-\mu mgh\cot\alpha-\mu mgs\ \Longrightarrow\ \mu s=h(1-\mu\cot\alpha)$$</div>
+<p><strong>② 也可以看成 (a) 的極限：</strong> 右斜面上滑行的長度是</p>
+<div class="math-block">$$\frac{h'}{\sin\beta}=\frac{h(1-\mu\cot\alpha)}{\sin\beta\,(1+\mu\cot\beta)}=\frac{h(1-\mu\cot\alpha)}{\sin\beta+\mu\cos\beta}$$</div>
+<p>$\beta\to0$ 時 $\sin\beta\to0$、$\cos\beta\to1$，分母趨近 $\mu$，正好是 $s$：</p>
+<div class="math-block">$$\boxed{s=\frac{h(1-\mu\cot\alpha)}{\mu}}$$</div>
+<h4>(c) $\mu\to0$ 的極限與伽利略的論證</h4>
+<p><strong>① 取極限：</strong> $\mu\to0$ 時分子 $1-\mu\cot\alpha\to1$、分母 $1+\mu\cot\beta\to1$。</p>
+<div class="math-block">$$h'\to h\quad(\text{與 }\beta\text{ 無關}),\qquad s\approx\frac h\mu\to\infty$$</div>
+<p><strong>② 對應伽利略：</strong> 這正是伽利略「爬回同一高度、與坡度無關」，以及「水平面上沒有摩擦就永遠不停」（慣性）。$\mu\neq0$ 時，$\beta$ 越小、$\cot\beta$ 越大、$h'$ 越低（斜面越平，路越長，摩擦吃掉越多），所以實驗上要看出伽利略的規律，必須想像把摩擦外推到零。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\mu\to0:\ h'\to h\ (\text{與坡度無關})\\ s\to\infty\ (\text{慣性})\end{gathered}}$$</div>
+<h4>(d) 數值</h4>
+<p><strong>① 共同的分子：</strong> 代入 $\mu=0.05$、$\alpha=30^\circ$，$\cot30^\circ=\sqrt3=1.7321$：</p>
+<div class="math-block">$$\mu\cot\alpha=0.05\times1.7321=0.0866,\qquad 1-\mu\cot\alpha=0.9134$$</div>
+<p><strong>② 兩個 $h'$：</strong> $\beta=30^\circ$ 的分母 $1+0.0866=1.0866$；$\beta=10^\circ$ 時 $\cot10^\circ=5.671$，分母 $1+0.05(5.671)=1.2836$。代入 $h=1\ \text{m}$：</p>
+<div class="math-block">$$h'(30^\circ)=(1\ \text{m})\frac{0.9134}{1.0866}=0.841\ \text{m}$$</div>
+<div class="math-block">$$h'(10^\circ)=(1\ \text{m})\frac{0.9134}{1.2836}=0.712\ \text{m}$$</div>
+<p><strong>③ 水平面上的 $s$：</strong> 代入 $h=1\ \text{m}$、上面的 $1-\mu\cot\alpha=0.9134$、$\mu=0.05$：</p>
+<div class="math-block">$$s=\frac{(1\ \text{m})(0.9134)}{0.05}=18.3\ \text{m}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}h'(30^\circ)=0.841\ \text{m},\quad h'(10^\circ)=0.712\ \text{m}\\ s=18.3\ \text{m}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>牛頓力學適用於巨觀、低速、少數物體；微觀用量子力學，接近光速用相對論。</li>
+    <li>第一定律（慣性）來自伽利略：去掉摩擦，不受力的物體做等速直線運動；它也指定了牛頓定律成立的座標系。</li>
+    <li>伽利略對稱：$\vec r\,'=\vec r-\vec Vt$ 時 $\ddot{\vec r}\,'=\ddot{\vec r}$，所以 $\vec F=m\ddot{\vec r}$ 在所有慣性座標系形式相同。</li>
+  </ol>
+</div>

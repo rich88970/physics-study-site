@@ -1,0 +1,158 @@
+{
+  "subjects": [
+    {
+      "id": "mechanics",
+      "name": "力學",
+      "teacher": "董育宸",
+      "textbook": "Thornton & Marion, Classical Dynamics of Particles and Systems (5th ed.)",
+      "chapters": [
+        {
+          "id": "ch01",
+          "title": "Lecture 1｜矩陣、向量與向量微積分",
+          "range": "講義 p.1–114：微積分基礎、向量、內積與外積、角速度、矩陣與旋轉、極／柱／球座標、梯度、散度、旋度、Stokes 定理與保守力",
+          "status": "ready"
+        },
+        {
+          "id": "ch02",
+          "title": "Lecture 2｜牛頓力學：單一質點",
+          "range": "講義 p.1–159：牛頓三定律與慣性座標系、斜面與摩擦、阻力與終端速度、由 v(x) 求力、拋體與空氣阻力、Atwood 機、帶電粒子、動量與角動量守恆、功與能量、保守力與位能、平衡與穩定性",
+          "status": "ready"
+        },
+        {
+          "id": "formulas",
+          "title": "公式表（Lecture 1、2）",
+          "range": "Lecture 1、2 的公式依主題分成十節：向量與內外積、旋轉矩陣、曲線座標、梯度散度旋度、牛頓定律、阻力、拋體、Atwood 與帶電粒子、守恆律、平衡與穩定；每條附說明與出處連結",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "id": "thermal",
+      "name": "熱學",
+      "teacher": "趙松柏",
+      "textbook": "Schroeder, An Introduction to Thermal Physics",
+      "chapters": [
+        {
+          "id": "ch01",
+          "title": "第 1 章｜熱物理中的能量",
+          "range": "課本 p.1–48：熱平衡與溫度、熱膨脹、理想氣體與壓力的微觀模型、能量均分、熱與功、壓縮功與絕熱過程、熱容量與潛熱、焓、熱傳導、平均自由徑、黏滯與擴散",
+          "status": "ready"
+        },
+        {
+          "id": "ch02",
+          "title": "第 2 章｜第二定律",
+          "range": "課本 p.49–84：兩態系統、愛因斯坦固體、交互作用的系統、Stirling 近似、多重度的尖峰、理想氣體的多重度、熵、Sackur–Tetrode、混合熵",
+          "status": "ready"
+        },
+        {
+          "id": "kaogu",
+          "title": "考古題（第 1、2 章範圍）",
+          "range": "115 級、114 級、某級上學期期中考裡屬於第 1、2 章的題目，依考卷與題號排列",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "id": "optics",
+      "name": "光學",
+      "chapters": [
+        {
+          "id": "ch08",
+          "title": "講義第八章｜電磁波的表示",
+          "range": "講義第八章（課本第 4 章 Wave Equations）：平面波、球面波、圓柱波、坡印廷向量、照度、都卜勒效應；作業 4-4、4-7、4-15、4-17、4-18、4-23",
+          "status": "ready"
+        },
+        {
+          "id": "ch09",
+          "title": "講義第九章｜波的疊加",
+          "range": "講義第九章（課本第 5 章 Superposition of Waves）：同頻率弦波疊加與相量、相位速度與群速度；作業 5-2、5-8、5-9、5-10、5-11",
+          "status": "ready"
+        },
+        {
+          "id": "ch10",
+          "title": "講義第十章｜光的干涉",
+          "range": "講義第十章（課本第 7 章 Interference of Light）：干涉照度與對比度、楊氏干涉、虛擬光源的干涉；作業 7-1、7-6、7-11、7-14、7-20、7-23",
+          "status": "ready"
+        },
+        {
+          "id": "kaogu",
+          "title": "考古題同類題完整詳解（112、114、115 級）",
+          "range": "李孟恩近代光學 112、114、115 級下學期期中考：波的疊加、平面電磁波、干涉逐年比較，另加 2018、2020 舊考古與課本補強題（球面波、圓柱波、對比度、楊氏干涉、群速度、能量密度）",
+          "status": "ready"
+        }
+      ],
+      "teacher": "李孟恩",
+      "textbook": "Pedrotti, Introduction to Optics (3rd ed.)；上課用老師自己的講義"
+    },
+    {
+      "id": "modern",
+      "name": "近代物理",
+      "teacher": "任中元",
+      "textbook": "Beiser, Concepts of Modern Physics (6th ed.)",
+      "chapters": [
+        {
+          "id": "ch01",
+          "title": "第 1 章｜相對論",
+          "range": "課本 p.1–51：時間膨脹、都卜勒效應、長度收縮、雙生子、相對論動量與能量、勞倫茲轉換、時空",
+          "status": "ready"
+        },
+        {
+          "id": "ch02",
+          "title": "第 2 章｜波的粒子性",
+          "range": "課本 p.52–91：電磁波、黑體輻射、光電效應、X 射線與 Bragg 繞射、康普頓效應、成對產生與湮滅、光子吸收、光子與重力",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "id": "applied-math",
+      "name": "應用數學",
+      "chapters": [
+        {
+          "id": "ch01",
+          "title": "第 1 章｜一階常微分方程",
+          "range": "板書 9/16：可分離、線性（積分因子）、正合、非正合（積分因子 F(x)、F(y)）、RC 電路與 v² 阻力應用；作業 5 題；考古題 110～114 上期中 8 題",
+          "status": "ready"
+        },
+        {
+          "id": "ch02",
+          "title": "第 2 章｜二階線性齊次方程",
+          "range": "板書 9/23：疊加原理與一般解、常係數（相異實根、共軛複根、重根）、初始與邊界條件、降階法、阻尼振盪；Cauchy–Euler（照片缺漏，網站補充）",
+          "status": "ready"
+        },
+        {
+          "id": "ch03",
+          "title": "第 3 章｜非齊次方程：待定係數法",
+          "range": "板書 9/30：三步驟與基本規則、加總規則、乘法規則、修正規則、受迫阻尼振盪與共振；參數變換法（網站補充）",
+          "status": "ready"
+        },
+        {
+          "id": "ch04",
+          "title": "第 4 章｜冪級數解",
+          "range": "板書 10/7（照片 1–6）：常點與奇點、收斂半徑、代入與平移指標、遞迴關係、兩個線性獨立解、初始／邊界條件與非齊次項",
+          "status": "ready"
+        },
+        {
+          "id": "ch05",
+          "title": "第 5 章｜Frobenius 法",
+          "range": "板書 10/7（照片 7–11）、10/14：正則奇點、指標方程式、重根與兩根差整數（降階法求含 ln x 的第二解）、Legendre 方程式與 Legendre 多項式",
+          "status": "ready"
+        },
+        {
+          "id": "ch06",
+          "title": "第 6 章｜Bessel 方程與 Bessel 函數",
+          "range": "板書 10/21（照片 1–7）：Bessel 方程（Frobenius 法、指標根 ±m、遞迴）、J_m 與 J_{−m}、降階法求 Neumann 函數 Y_m、半整數 J_{±1/2}、零點與圓盤邊界、五條遞迴關係與積分、正交性與 Fourier–Bessel；考古題 4 題；自編難題 13 題（比板書難）",
+          "status": "ready"
+        },
+        {
+          "id": "kaogu",
+          "title": "考古題與作業完整解題（依主題）",
+          "range": "2021–2025 期中考古題與作業一～五的完整解題，依主題排列：一階（可分離、線性、恰當）、二階齊次、降階法、未定係數法、冪級數、Frobenius、Fourier 級數",
+          "status": "ready"
+        }
+      ],
+      "teacher": "柯景元",
+      "textbook": "上課板書與作業（115 學年上學期）"
+    }
+  ]
+}

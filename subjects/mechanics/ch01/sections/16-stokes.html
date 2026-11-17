@@ -1,0 +1,200 @@
+<h2>十五、Stokes 定理與保守力 <span class="pg">講義 p.106–114</span></h2>
+
+<p class="lead">Stokes 定理把「沿邊界繞一圈的線積分」換成「曲面上旋度的面積分」。用它可以把保守力的三種說法——有位能、旋度為零、繞一圈做功為零——串成一個圈。</p>
+
+<h3 id="st-thm">15.1 Stokes 定理 <span class="pg-tag">p.107</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.107 Stokes' Theorem</span>
+  $$\oint_C\vec V\cdot\mathrm d\vec\lambda=\int_S(\nabla\times\vec V)\cdot\mathrm d\vec\sigma$$
+  <p>$C$ 是曲面 $S$ 的邊界，$\mathrm d\vec\lambda$ 沿著邊界，$\mathrm d\vec\sigma$ 是面積元（方向為法向量）。</p>
+</div>
+
+<div class="step" data-step="st-why" data-sym="dlam,dsig">
+  <span class="step-title">為什麼成立</span>
+  <p>把曲面切成很多小格子。旋度的意思就是「繞一個小格子一圈的線積分 ÷ 格子面積」，所以每一格的環流量是 $(\nabla\times\vec V)\cdot\mathrm d\vec\sigma$。把所有格子加起來時，相鄰兩格共用的邊方向相反、互相抵消，只剩最外圈的邊界——就是左邊的 $\oint_C$。</p>
+  <p>方向規則（右手定則）：右手四指沿 $C$ 的繞行方向彎，拇指就是 $\mathrm d\vec\sigma$ 的方向。$xy$ 平面上逆時針繞，法向量是 $+\hat k$。</p>
+</div>
+
+<div class="anim" data-anim="stokes-cells"></div>
+
+<div class="problem" data-kind="example" id="ex-p108">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.108</span></div>
+    <h4>用線積分求面積：$\frac12\oint(x\,\mathrm dy-y\,\mathrm dx)=A$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p108">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec t=-y\,\hat i+x\,\hat j$。用 Stokes 定理證明：沿 $xy$ 平面上任一封閉曲線（逆時針）$\frac12\oint\vec t\cdot\mathrm d\vec\lambda=\frac12\oint(x\,\mathrm dy-y\,\mathrm dx)=A$，$A$ 是曲線圍住的面積。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec t=(-y,x,0)$；$C$ 為 $xy$ 平面上任一逆時針封閉曲線（不能假設是圓），$\mathrm d\vec\lambda=(\mathrm dx,\mathrm dy,0)$；$S$ 為 $C$ 圍住的平面區域，面積 $A$，逆時針配 $\mathrm d\vec\sigma=\hat k\,\mathrm d\sigma$。</p>
+<p><strong>① 寫開線積分：</strong> 曲線是任意的，無法逐條參數化，所以要用 Stokes 定理換成面積分；先確認題目的兩個寫法相同。代入 $\vec t=(-y,x,0)$、$\mathrm d\vec\lambda=(\mathrm dx,\mathrm dy,0)$：</p>
+<div class="math-block">$$\vec t\cdot\mathrm d\vec\lambda=(-y)\,\mathrm dx+x\,\mathrm dy+0=x\,\mathrm dy-y\,\mathrm dx$$</div>
+<p>所以題目的兩個寫法是同一個積分。</p>
+<p><strong>② 旋度：</strong> 平面場只有 $\hat k$ 分量 $\frac{\partial t_y}{\partial x}-\frac{\partial t_x}{\partial y}$，代入 $t_x=-y$、$t_y=x$：</p>
+<div class="math-block">$$\nabla\times\vec t=\Big(\frac{\partial x}{\partial x}-\frac{\partial(-y)}{\partial y}\Big)\hat k=(1+1)\hat k=2\hat k$$</div>
+<p><strong>③ Stokes 定理：</strong> 旋度是常數，面積分變成「常數 × 面積」。</p>
+<p class="fnote"><b>公式（Stokes 定理）：</b>$\oint_C\vec V\cdot\mathrm d\vec\lambda=\int_S(\nabla\times\vec V)\cdot\mathrm d\vec\sigma$，其中 $C$ 為封閉曲線、$S$ 為以 $C$ 為邊界的曲面，$\mathrm d\vec\sigma$ 方向和 $C$ 的繞向依右手定則配對；本題 $\vec V=\vec t$、$\mathrm d\vec\sigma=\hat k\,\mathrm d\sigma$。</p>
+<p>代入上一步的旋度 $2\hat k$：</p>
+<div class="math-block">$$\oint\vec t\cdot\mathrm d\vec\lambda=\int_S(2\hat k)\cdot\hat k\,\mathrm d\sigma=2\int_S\mathrm d\sigma=2A$$</div>
+<p>兩邊除以 2：</p>
+<div class="math-block">$$\boxed{\frac12\oint\vec t\cdot\mathrm d\vec\lambda=\frac12\oint(x\,\mathrm dy-y\,\mathrm dx)=A}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-38">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-38 · p.47</span></div>
+    <h4>拋物面上的旋度通量</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-38">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec A=y\,\hat i+z\,\hat j+x\,\hat k$，$S$ 是拋物面 $z=1-x^2-y^2$（$z\ge0$）。求 $\int_S(\nabla\times\vec A)\cdot\mathrm d\vec a$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=(y,z,x)$；$S$ 為 $z=1-x^2-y^2$（$z\ge0$），頂點 $(0,0,1)$，邊界是 $z=0$ 的單位圓 $x^2+y^2=1$；法向量取朝上，對應邊界由上往下看逆時針（題目沒指定）。</p>
+<p><strong>① 旋度：</strong> </p>
+<p class="fnote"><b>公式（旋度定義）：</b>$\nabla\times\vec A=\big(\partial_yA_z-\partial_zA_y,\ \partial_zA_x-\partial_xA_z,\ \partial_xA_y-\partial_yA_x\big)$，其中 $A_x,A_y,A_z$ 為 $\vec A$ 的分量。</p>
+<p>代入 $A_x=y$、$A_y=z$、$A_z=x$：</p>
+<div class="math-block">$$\begin{aligned}\nabla\times\vec A&amp;=\Big(\frac{\partial x}{\partial y}-\frac{\partial z}{\partial z},\ \frac{\partial y}{\partial z}-\frac{\partial x}{\partial x},\ \frac{\partial z}{\partial x}-\frac{\partial y}{\partial y}\Big)\\&amp;=(0-1,\ 0-1,\ 0-1)=(-1,-1,-1)\end{aligned}$$</div>
+<p><strong>② 用 Stokes 換成邊界線積分：</strong> 題目要的正是旋度的面積分，它只由邊界決定，不必在彎曲的拋物面上積；邊界在 $z=0$，$\vec A$ 很簡單。</p>
+<p class="fnote"><b>公式（Stokes 定理）：</b>$\int_S(\nabla\times\vec A)\cdot\mathrm d\vec a=\oint_C\vec A\cdot\mathrm d\vec r$，其中 $C$ 為 $S$ 的邊界，繞向和 $\mathrm d\vec a$ 依右手定則配對；本題 $C$ 為單位圓 $x=\cos\phi$、$y=\sin\phi$、$z=0$，逆時針 $\phi:0\to2\pi$。</p>
+<p>線積分為 $\oint\vec A\cdot\mathrm d\vec r=\oint(y\,\mathrm dx+z\,\mathrm dy+x\,\mathrm dz)$。邊界上 $z=0$、$\mathrm dz=0$，只剩 $y\,\mathrm dx$；代入 $y=\sin\phi$、$\mathrm dx=-\sin\phi\,\mathrm d\phi$：</p>
+<div class="math-block">$$\begin{aligned}\oint y\,\mathrm dx&amp;=\int_0^{2\pi}\sin\phi\,(-\sin\phi)\,\mathrm d\phi\\&amp;=-\int_0^{2\pi}\sin^2\phi\,\mathrm d\phi=-\pi\end{aligned}$$</div>
+<p>（$\int_0^{2\pi}\sin^2\phi\,\mathrm d\phi=\pi$：一整圈的平均值是 $\frac12$。）</p>
+<div class="math-block">$$\boxed{\begin{gathered}\int_S(\nabla\times\vec A)\cdot\mathrm d\vec a=-\pi\\ \text{（法向量朝上；反過來取則為 }+\pi\text{）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="st-pot">15.2 純量位能 <span class="pg-tag">p.110</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.110 Scalar Potential</span>
+  <p>若 $\vec F=-\nabla\phi$，$\phi$ 稱為純量位能，這樣的力是保守力。$\phi$ 只決定到一個常數：通常取無窮遠或某個參考點為 $\phi=0$。</p>
+</div>
+
+<p>只差一個常數，是因為常數的梯度是 0：$\phi$ 和 $\phi+C$ 給出同一個力。物理上有意義的是位能<strong>差</strong>，所以參考點可以自由選。</p>
+
+<h3 id="st-equiv">15.3 保守力的三種等價說法 <span class="pg-tag">p.111–114</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.114 Equivalent formulations of a conservative force</span>
+  $$\vec F=-\nabla\phi\quad\Longleftrightarrow\quad\nabla\times\vec F=0\quad\Longleftrightarrow\quad\oint\vec F\cdot\mathrm d\vec r=0$$
+</div>
+
+<div class="step" id="st-e1" data-step="st-e1" data-sym="work">
+  <span class="step-title">有位能 ⟹ 旋度為 0（p.111）</span>
+  $$\nabla\times(-\nabla\phi)=-\begin{vmatrix}\hat i&\hat j&\hat k\\ \partial_x&\partial_y&\partial_z\\ \partial_x\phi&\partial_y\phi&\partial_z\phi\end{vmatrix}=-\Big(\frac{\partial^2\phi}{\partial y\partial z}-\frac{\partial^2\phi}{\partial z\partial y}\Big)\hat i-\cdots=0$$
+  <p>偏微分的次序可以交換，每一項都抵消。</p>
+</div>
+
+<div class="step" data-step="st-e2">
+  <span class="step-title">旋度為 0 ⟹ 繞一圈做功為 0（p.112）</span>
+  <p>Stokes 定理：$\oint\vec F\cdot\mathrm d\vec r=\int_S(\nabla\times\vec F)\cdot\mathrm d\vec\sigma=0$。（路徑圍住的曲面上 $\vec F$ 必須處處有定義，見上一節的渦旋場。）</p>
+</div>
+
+<div class="step" data-step="st-e3">
+  <span class="step-title">繞一圈為 0 ⟹ 做功與路徑無關（p.113）</span>
+  <p>從 $A$ 到 $B$ 走路徑 1，再沿路徑 2 倒著走回 $A$，合起來是一個封閉路徑：$\int_1\vec F\cdot\mathrm d\vec r-\int_2\vec F\cdot\mathrm d\vec r=0$，所以兩條路徑的功相同。</p>
+</div>
+
+<div class="step" data-step="st-e4">
+  <span class="step-title">做功與路徑無關 ⟹ 有位能（把圈補完）</span>
+  <p>選一個參考點 $P_0$，定義 $\phi(P)=-\int_{P_0}^{P}\vec F\cdot\mathrm d\vec r$（和路徑無關，所以有明確的值）。從 $P$ 走一小步 $\mathrm d\vec r$：$\mathrm d\phi=-\vec F\cdot\mathrm d\vec r$，和 $\mathrm d\phi=\nabla\phi\cdot\mathrm d\vec r$ 比較得 $\vec F=-\nabla\phi$。</p>
+</div>
+
+<div class="box idea">
+  <span class="box-title">求位能的標準做法</span>
+  <p>先算 $\nabla\times\vec F$ 確認是 0；再由 $-\frac{\partial\phi}{\partial x}=F_x$ 積分（積分「常數」可以是 $y,z$ 的函數），代入 $F_y$、$F_z$ 決定剩下的部分。最後對 $\phi$ 取負梯度驗算。練習：<a href="#var-10">變化題 10</a>。</p>
+</div>
+
+<h3 id="self-s16">15.4 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s16-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>哪一條封閉曲線讓線積分最大</h4>
+    <button type="button" class="exam-btn" data-exam="self-s16-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $I(C)=\oint_C\Big[\Big(\frac{y^3}{3}-y\Big)\mathrm dx-\frac{x^3}{3}\,\mathrm dy\Big]$，$C$ 是 $xy$ 平面上任意一條逆時針的簡單封閉曲線。(a) 在所有這樣的曲線中，哪一條使 $I(C)$ 最大？最大值是多少？(b) 直接沿這條曲線計算線積分驗證；(c) 和 $C$ 取正方形 $|x|,|y|\le1$ 的值比較。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec F=\Big(\dfrac{y^3}{3}-y,\ -\dfrac{x^3}{3},\ 0\Big)$（$\mathrm dx$ 前是 $F_x$、$\mathrm dy$ 前是 $F_y$）；$C$ 為任意逆時針簡單封閉曲線，圍出區域 $D$，法向量 $+\hat k$。</p>
+<h4>(a) 使 $I(C)$ 最大的曲線</h4>
+<p><strong>① 旋度：</strong> 曲線有無限多條，用 Stokes 定理把「選曲線」變成「選區域」，先算旋度。代入 $F_x=\frac{y^3}3-y$、$F_y=-\frac{x^3}3$ 到 $(\nabla\times\vec F)_z=\frac{\partial F_y}{\partial x}-\frac{\partial F_x}{\partial y}$：</p>
+<div class="math-block">$$\begin{aligned}(\nabla\times\vec F)_z&amp;=\frac{\partial}{\partial x}\Big(-\frac{x^3}{3}\Big)-\frac{\partial}{\partial y}\Big(\frac{y^3}{3}-y\Big)\\&amp;=-x^2-(y^2-1)=1-x^2-y^2\end{aligned}$$</div>
+<p><strong>② 選區域：</strong> </p>
+<p class="fnote"><b>公式（Stokes 定理，平面版）：</b>$\oint_C(F_x\,\mathrm dx+F_y\,\mathrm dy)=\iint_D(\nabla\times\vec F)_z\,\mathrm dA$，其中 $C$ 為逆時針繞 $D$ 的邊界；本題被積函數為 $1-x^2-y^2$。</p>
+<p>$I(C)=\iint_D(1-x^2-y^2)\,\mathrm dA$。被積函數在單位圓內（$x^2+y^2\lt1$）為正、圓外為負。任何區域 $D$：去掉圓外的部分（負貢獻）、補上圓內缺的部分（正貢獻）都會讓積分變大，所以最大值出現在 $D=$ 單位圓盤，$C$ 是單位圓。</p>
+<p><strong>③ 最大值：</strong> 在單位圓盤上用極座標 $\mathrm dA=r\,\mathrm dr\,\mathrm d\theta$，$1-x^2-y^2=1-r^2$：</p>
+<div class="math-block">$$\begin{aligned}I_{\max}&amp;=\int_0^{2\pi}\!\!\int_0^1(1-r^2)\,r\,\mathrm dr\,\mathrm d\theta=2\pi\int_0^1(r-r^3)\,\mathrm dr\\&amp;=2\pi\Big[\frac{r^2}{2}-\frac{r^4}{4}\Big]_0^1=2\pi\Big(\frac12-\frac14\Big)=\frac\pi2\end{aligned}$$</div>
+<div class="math-block">$$\boxed{C\text{：單位圓 }x^2+y^2=1\text{（逆時針），}I_{\max}=\frac\pi2}$$</div>
+<h4>(b) 沿單位圓直接積分</h4>
+<p><strong>① 參數化：</strong> 代入 $x=\cos t$、$y=\sin t$，$\mathrm dx=-\sin t\,\mathrm dt$、$\mathrm dy=\cos t\,\mathrm dt$：</p>
+<div class="math-block">$$\begin{aligned}F_x\,\mathrm dx&amp;=\Big(\frac{\sin^3t}{3}-\sin t\Big)(-\sin t)\,\mathrm dt\\&amp;=\Big(-\frac{\sin^4t}{3}+\sin^2t\Big)\mathrm dt\end{aligned}$$</div>
+<div class="math-block">$$F_y\,\mathrm dy=-\frac{\cos^3t}{3}\cos t\,\mathrm dt=-\frac{\cos^4t}{3}\,\mathrm dt$$</div>
+<p><strong>② 積一圈：</strong> 用 $\int_0^{2\pi}\sin^4t\,\mathrm dt=\int_0^{2\pi}\cos^4t\,\mathrm dt=\frac{3\pi}4$（$\sin^4t=\frac38-\frac12\cos2t+\frac18\cos4t$）、$\int_0^{2\pi}\sin^2t\,\mathrm dt=\pi$：</p>
+<div class="math-block">$$I=-\frac13\cdot\frac{3\pi}4+\pi-\frac13\cdot\frac{3\pi}4=-\frac\pi4+\pi-\frac\pi4=\frac\pi2$$</div>
+<p>與 (a) 相同。</p>
+<div class="math-block">$$\boxed{I=\frac\pi2}$$</div>
+<h4>(c) 正方形 $|x|,|y|\le1$</h4>
+<p><strong>① 用 Stokes 分三項積：</strong> 在正方形上積 $1-x^2-y^2$：</p>
+<div class="math-block">$$\iint1\,\mathrm dA=2\times2=4,\qquad\iint x^2\,\mathrm dA=\int_{-1}^1x^2\,\mathrm dx\int_{-1}^1\mathrm dy=\frac23\cdot2=\frac43$$</div>
+<p>$\iint y^2\,\mathrm dA$ 同理也是 $\frac43$：</p>
+<div class="math-block">$$I_{\square}=4-\frac43-\frac43=\frac43\approx1.33\lt\frac\pi2\approx1.57$$</div>
+<p>正方形多包了四個角（那裡 $x^2+y^2\gt1$，貢獻為負），所以比圓小。</p>
+<div class="math-block">$$\boxed{I_{\square}=\frac43\approx1.33\lt I_{\max}=\frac\pi2\approx1.57}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s16-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>同一個邊界、兩個曲面</h4>
+    <button type="button" class="exam-btn" data-exam="self-s16-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec F=z\,\hat i+x\,\hat j+y\,\hat k$，$C$ 是 $xy$ 平面上的單位圓（由上往下看逆時針）。分別以 (i) 平面圓盤、(ii) 上半球面 $x^2+y^2+z^2=1,\ z\ge0$ 當 $S$，計算 $\int_S(\nabla\times\vec F)\cdot\mathrm d\vec\sigma$；再直接算 $\oint_C\vec F\cdot\mathrm d\vec r$。三個結果應該有什麼關係？為什麼？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec F=(z,x,y)$；$C$ 為 $xy$ 平面上的單位圓，由上往下看逆時針；(i) 圓盤 $\mathrm d\vec\sigma=\hat k\,\mathrm d\sigma$；(ii) 上半球面 $r=1$、$0\le\theta\le\frac\pi2$，朝外 $\mathrm d\vec\sigma=\hat r\sin\theta\,\mathrm d\theta\,\mathrm d\phi$，$\hat r=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$。</p>
+<p><strong>① 旋度：</strong> Stokes 定理只要求 $S$ 以 $C$ 為邊界，預期兩個曲面和線積分給同一個值；兩個曲面的法向量都取朝上／朝外，和逆時針依右手定則配對。</p>
+<p class="fnote"><b>公式（旋度定義）：</b>$\nabla\times\vec F=\big(\partial_yF_z-\partial_zF_y,\ \partial_zF_x-\partial_xF_z,\ \partial_xF_y-\partial_yF_x\big)$，其中 $F_x,F_y,F_z$ 為 $\vec F$ 的分量。</p>
+<p>代入 $F_x=z$、$F_y=x$、$F_z=y$：</p>
+<div class="math-block">$$\begin{aligned}\nabla\times\vec F&amp;=\Big(\frac{\partial y}{\partial y}-\frac{\partial x}{\partial z},\ \frac{\partial z}{\partial z}-\frac{\partial y}{\partial x},\ \frac{\partial x}{\partial x}-\frac{\partial z}{\partial y}\Big)\\&amp;=(1-0,\ 1-0,\ 1-0)=(1,1,1)\end{aligned}$$</div>
+<p><strong>② (i) 圓盤：</strong> 旋度是常數，平的圓盤上只要「旋度的 $z$ 分量 × 面積」。代入 $\mathrm d\vec\sigma=\hat k\,\mathrm d\sigma$，$(1,1,1)\cdot\hat k=1$：</p>
+<div class="math-block">$$\int_{\text{圓盤}}(1,1,1)\cdot\hat k\,\mathrm d\sigma=\int\mathrm d\sigma=\text{面積}=\pi$$</div>
+<p><strong>③ (ii) 上半球面：</strong> 球面上法向量會變，用 $\hat r$ 和面積元老實積分。旋度和 $\hat r$ 內積：$(1,1,1)\cdot\hat r=\sin\theta\cos\phi+\sin\theta\sin\phi+\cos\theta$。代入 $\mathrm d\sigma=\sin\theta\,\mathrm d\theta\,\mathrm d\phi$（$r=1$），$\theta:0\to\frac\pi2$、$\phi:0\to2\pi$：</p>
+<div class="math-block">$$\int_0^{2\pi}\!\!\int_0^{\pi/2}\big[\sin\theta(\cos\phi+\sin\phi)+\cos\theta\big]\sin\theta\,\mathrm d\theta\,\mathrm d\phi$$</div>
+<p>含 $\cos\phi$、$\sin\phi$ 的項對 $\phi$ 積一圈是 0；剩下 $\cos\theta\sin\theta$ 那一項：</p>
+<div class="math-block">$$\begin{aligned}&amp;=0+2\pi\int_0^{\pi/2}\cos\theta\sin\theta\,\mathrm d\theta\\&amp;=2\pi\Big[\frac{\sin^2\theta}{2}\Big]_0^{\pi/2}=2\pi\cdot\frac12=\pi\end{aligned}$$</div>
+<p><strong>④ 線積分：</strong> 代入 $x=\cos t$、$y=\sin t$、$z=0$，$\mathrm dx=-\sin t\,\mathrm dt$、$\mathrm dy=\cos t\,\mathrm dt$、$\mathrm dz=0$：</p>
+<div class="math-block">$$\begin{aligned}\vec F\cdot\mathrm d\vec r&amp;=z\,\mathrm dx+x\,\mathrm dy+y\,\mathrm dz\\&amp;=0+\cos t\cdot\cos t\,\mathrm dt+0=\cos^2t\,\mathrm dt\end{aligned}$$</div>
+<div class="math-block">$$\oint_C\vec F\cdot\mathrm d\vec r=\int_0^{2\pi}\cos^2t\,\mathrm dt=\pi$$</div>
+<p><strong>⑤ 三者的關係：</strong> </p>
+<p class="fnote"><b>公式（Stokes 定理）：</b>$\oint_C\vec F\cdot\mathrm d\vec r=\int_S(\nabla\times\vec F)\cdot\mathrm d\vec\sigma$，其中 $S$ 可以是任何以 $C$ 為邊界的曲面，$\mathrm d\vec\sigma$ 方向和 $C$ 的繞向依右手定則配對。</p>
+<p>右邊只和邊界 $C$ 有關、和選哪個曲面無關，所以三個結果相等。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{圓盤}=\text{半球面}=\oint_C\vec F\cdot\mathrm d\vec r=\pi\\ \text{（Stokes 定理只和邊界有關）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>Stokes：$\oint_C\vec V\cdot\mathrm d\vec\lambda=\int_S(\nabla\times\vec V)\cdot\mathrm d\vec\sigma$，方向用右手定則；同一個邊界的任何曲面答案相同。</li>
+    <li>$\vec t=-y\hat i+x\hat j$ 的旋度是 $2\hat k$，所以 $\frac12\oint(x\,\mathrm dy-y\,\mathrm dx)$ = 面積。</li>
+    <li>保守 ⟺ $\vec F=-\nabla\phi$ ⟺ $\nabla\times\vec F=0$ ⟺ $\oint\vec F\cdot\mathrm d\vec r=0$（區域單連通）。</li>
+  </ol>
+</div>

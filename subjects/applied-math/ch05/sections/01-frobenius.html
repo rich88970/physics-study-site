@@ -1,0 +1,355 @@
+<h2>一、Frobenius 法：指標方程式與兩個級數解 <span class="pg">板書 10/7 照片 7–11</span></h2>
+
+<p class="lead">10/7 第二節課，老師拿 $2x^2y''-xy'+(1+x)y=0$ 示範第 4 章第 1 節那張表的右欄：$P$、$Q$ 在 $x=0$ 發散，但 $xP$、$x^2Q$ 不發散。這時令 $y=\sum a_nx^{n+\gamma}$，多出來的 $\gamma$ 由「最低次方的係數為零」決定，叫做<strong>指標方程式</strong>。這一題兩個根 $\gamma=1$、$\tfrac12$ 各給一個級數解，是 Frobenius 法最順利的情況。</p>
+
+<h3 id="am5-judge">1.1 判斷：可以用 Frobenius 方法 <span class="pg-tag">照片 7</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/7（照片 7 左半）</span>
+  <p>ex Solve　$2x^2y''-xy'+(1+x)y=0$</p>
+  <p>與標準式 $y''+p(x)y'+q(x)y=0$ 比較：$p(x)=\dfrac{-x}{2x^2}=-\dfrac{1}{2x}$，$q(x)=\dfrac{1+x}{2x^2}$</p>
+  <p>$\displaystyle\lim_{x\to0}p,\ q\to\infty$；$\displaystyle\lim_{x\to0}x\,p=\lim_{x\to0}-\frac12$，$\displaystyle\lim_{x\to0}x^2q=\lim_{x\to0}\frac{1+x}{2}$　⇒ 可以用 Frobenius 方法</p>
+</div>
+
+<div class="step" data-step="am5-judge-s1" data-sym="PQ,p0q0">
+  <span class="step-title">兩個極限值 $p_0$、$q_0$ 之後還會用到</span>
+  <p>$p$、$q$ 在 $x=0$ 發散，所以 $x=0$ 不是常點，不能用第 4 章的 $\sum a_nx^n$；但 $xp\to-\tfrac12$、$x^2q\to\tfrac12$ 都有限，$x=0$ 是<b>正則奇點</b>。把這兩個極限記成</p>
+  $$p_0=\lim_{x\to0}x\,p(x)=-\frac12,\qquad q_0=\lim_{x\to0}x^2q(x)=\frac12.$$
+  <p>直覺上，$x$ 很小時 $xp\approx p_0$、$x^2q\approx q_0$，方程式長得像 Cauchy–Euler $x^2y''+p_0xy'+q_0y=0$，它的解是 $x^\gamma$。所以真正的解在 $x=0$ 附近應該像「$x^\gamma$ 乘一個平滑的修正」，也就是 $x^\gamma\sum a_nx^n$。</p>
+</div>
+
+<h3 id="am5-align">1.2 令 $y=\sum a_nx^{n+\gamma}$，每一項對齊到 $x^{n+\gamma}$ <span class="pg-tag">照片 7–8</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/7（照片 7 右半）</span>
+  <p>令 $y=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+\gamma}$；$a_0\ne0$</p>
+  <p>$y'=\displaystyle\sum_{n=0}^{\infty}(n+\gamma)a_nx^{n+\gamma-1}$，$y''=\displaystyle\sum_{n=0}^{\infty}(n+\gamma)(n+\gamma-1)a_nx^{n+\gamma-2}$</p>
+  <p>$2x^2y''=\displaystyle\sum_{n=0}^{\infty}2(n+\gamma)(n+\gamma-1)a_n\boxed{x^{n+\gamma}}$</p>
+  <p>$-xy'=\displaystyle\sum_{n=0}^{\infty}-(n+\gamma)a_n\boxed{x^{n+\gamma}}$</p>
+  <p>$xy=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+\gamma+1}\ \longrightarrow\ \sum_{n=1}^{\infty}a_{n-1}\boxed{x^{n+\gamma}}$　（shift to $x^{n+\gamma}$）</p>
+  <p>$y=\displaystyle\sum_{n=0}^{\infty}a_n\boxed{x^{n+\gamma}}$</p>
+</div>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/7（照片 8）</span>
+  $$\begin{pmatrix}2\gamma(\gamma-1)a_0x^\gamma\\-\gamma a_0x^\gamma\\+a_0x^\gamma\end{pmatrix}+\sum_{n=1}^{\infty}\Big[2(n+\gamma)(n+\gamma-1)a_n-(n+\gamma)a_n+a_{n-1}+a_n\Big]x^{n+\gamma}=0$$
+</div>
+
+<p>為什麼 $a_0\ne0$？$\gamma$ 的意思是「級數真正開始的次方」：如果 $a_0=0$，最低次方就是 $x^{\gamma+1}$，那把 $\gamma+1$ 叫做新的 $\gamma$ 就好。所以約定 $a_0\ne0$，$\gamma$ 才有唯一的意義，也才能從最低次方解出 $\gamma$。</p>
+
+<p>四個和裡，$2x^2y''$、$-xy'$、$y$ 都已經是 $x^{n+\gamma}$；只有 $xy$ 多乘了一個 $x$，從 $x^{\gamma+1}$ 開始，所以板書把它平移成 $\sum_{n=1}a_{n-1}x^{n+\gamma}$（下限變成 $n=1$）。於是 $n=0$（也就是 $x^\gamma$）只有三個和有貢獻，板書把它們單獨用括號寫在前面；$n\ge1$ 四個和都有，寫成一個和。</p>
+
+<h3 id="am5-indicial">1.3 指標方程式與遞迴關係 <span class="pg-tag">照片 9–10</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/7（照片 9、10）</span>
+  <p>$x^\gamma$：$\boxed{2\gamma(\gamma-1)a_0-\gamma a_0+a_0=0}\ \to\ \gamma$</p>
+  <p>$x^{n+\gamma}$：$2(n+\gamma)(n+\gamma-1)a_n-(n+\gamma)a_n+a_n+a_{n-1}=0$</p>
+  $$\to\ a_n=-\frac{1}{\big[2(n+\gamma)-1\big]\big[(n+\gamma)-1\big]}\,a_{n-1}$$
+  <p>（因式分解；Recurrence relation）</p>
+  <p>由 $x^\gamma$ 的係數關係，$2\gamma(\gamma-1)-\gamma+1=0\ \to\ \gamma=1,\ \tfrac12$</p>
+  <p>$\gamma=1$：$y_{\gamma=1}=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+1}$，$a_n=\dfrac{-a_{n-1}}{(2n+1)n}$</p>
+  <p>$\gamma=\tfrac12$：$y_{\gamma=1/2}=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+1/2}$，$a_n=\dfrac{-a_{n-1}}{n(2n-1)}$</p>
+</div>
+
+<div class="step" data-step="am5-indicial-s1" data-sym="gam">
+  <span class="step-title">指標方程式：因式分解 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>$a_0\ne0$，所以 $x^\gamma$ 的方程式除以 $a_0$：</p>
+  $$2\gamma(\gamma-1)-\gamma+1=2\gamma^2-3\gamma+1=(2\gamma-1)(\gamma-1)=0\quad\Longrightarrow\quad\gamma=1\ \text{或}\ \gamma=\tfrac12$$
+  <p>這和 1.1 節的 $p_0=-\tfrac12$、$q_0=\tfrac12$ 一致：一般的指標方程式是</p>
+  $$\gamma(\gamma-1)+p_0\gamma+q_0=0,$$
+  <p>代入得 $\gamma^2-\tfrac32\gamma+\tfrac12=0$，乘 2 就是上式。考試時可以先用這個公式算出 $\gamma$，再代回原式做遞迴當作驗算。</p>
+</div>
+
+<div class="step" data-step="am5-indicial-s2">
+  <span class="step-title">遞迴的係數就是指標多項式 <span class="added">網站補充</span></span>
+  <p>$x^{n+\gamma}$ 的方程式裡，$a_n$ 前面的係數是 $2s(s-1)-s+1$（記 $s=n+\gamma$），正好就是把指標多項式 $F(\gamma)=2\gamma^2-3\gamma+1$ 的 $\gamma$ 換成 $s$：</p>
+  $$F(n+\gamma)\,a_n=-a_{n-1},\qquad F(s)=(2s-1)(s-1).$$
+  <p>板書的「因式分解」就是這一步。這個結構是 Frobenius 法的通則：$a_n$ 的係數永遠是 $F(n+\gamma)$。只要 $F(n+\gamma)\ne0$，就能一路除下去。$F(n+\gamma)=0$ 代表 $n+\gamma$ 是<b>另一個根</b>——只有當兩根相差整數 $n$ 時才會發生，那是第 3 節的情況。本題兩根差 $\tfrac12$，不會出事。</p>
+</div>
+
+<h3 id="am5-two-sol">1.4 兩個級數解 <span class="pg-tag">照片 11</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/7（照片 11）</span>
+  <p>For $\gamma=1$：$a_0=$ 待定，$a_1=\dfrac{-a_0}{3\cdot1}$，$a_2=\dfrac{-a_1}{10}=\dfrac1{30}a_0$，$a_3=-\dfrac1{630}a_0$</p>
+  $$y_{\gamma=1}=x(a_0+a_1x+a_2x^2+a_3x^3+\cdots)=x\Big(a_0-\tfrac13a_0x+\tfrac1{30}a_0x^2-\tfrac1{630}a_0x^3+\cdots\Big)\propto x\Big(1-\frac x3+\frac{x^2}{30}-\frac{x^3}{630}+\cdots\Big)$$
+  <p>For $\gamma=\tfrac12$：$a_0=$ 待定，$a_1=\dfrac{-a_0}{1}$，$a_2=\dfrac{-a_1}{6}=\dfrac{a_0}6$，$a_3=-\dfrac1{90}a_0$</p>
+  $$y_{\gamma=1/2}=\sqrt x(a_0+a_1x+a_2x^2+a_3x^3+\cdots)\propto\sqrt x\Big(1-x+\frac{x^2}{6}-\frac{x^3}{90}+\cdots\Big)$$
+</div>
+
+<p>板書寫「$\propto$」，意思是 $a_0$ 只是整體的倍數，取 $a_0=1$ 就得到一個代表解。兩個解的最低次方不同（$x^1$ 與 $x^{1/2}$），比值 $y_1/y_2\approx\sqrt x$ 不是常數，所以線性獨立，一般解是</p>
+$$y=c_1\,x\Big(1-\frac x3+\frac{x^2}{30}-\cdots\Big)+c_2\sqrt x\Big(1-x+\frac{x^2}6-\cdots\Big),\qquad x\gt0.$$
+<p>因為有 $\sqrt x$，這個解只在 $x\gt0$ 有定義（板書沒寫範圍；$x\lt0$ 時把 $x$ 換成 $|x|$ 也成立）。$p$、$q$ 除了 $x=0$ 沒有別的奇點，所以兩個級數對所有 $x\gt0$ 都收斂。</p>
+
+<div class="anim" data-anim="am5-two"></div>
+
+<details class="supp">
+  <summary>一般項與 closed form（網站補充）</summary>
+  <div class="supp-body">
+    <p>$\gamma=1$：$a_n=\dfrac{-a_{n-1}}{n(2n+1)}$，連乘 $\prod_{k=1}^nk(2k+1)=n!\cdot3\cdot5\cdots(2n+1)=\dfrac{(2n+1)!}{2^n}$，所以 $a_n=\dfrac{(-1)^n2^n}{(2n+1)!}$：</p>
+    $$y_1=x\sum_{n=0}^{\infty}\frac{(-1)^n(2x)^n}{(2n+1)!}=\sqrt{\frac x2}\,\sum_{n=0}^{\infty}\frac{(-1)^n(\sqrt{2x})^{2n+1}}{(2n+1)!}=\sqrt{\frac x2}\,\sin\sqrt{2x}$$
+    <p>$\gamma=\tfrac12$：$\prod_{k=1}^nk(2k-1)=\dfrac{(2n)!}{2^n}$，$a_n=\dfrac{(-1)^n2^n}{(2n)!}$，$y_2=\sqrt x\,\cos\sqrt{2x}$。兩個都可以直接代回原方程式驗證（驗算腳本已檢查）。</p>
+  </div>
+</details>
+
+<h3 id="am5-cases">1.5 一般的 Frobenius 定理：三種情況 <span class="added">網站補充</span></h3>
+
+<p>板書在 10/7 與 10/14 用三個例題分別示範了三種情況，網站把它們整理成一張表（兩根是實數，記 $\gamma_1\ge\gamma_2$）：</p>
+<ul>
+  <li><b>$\gamma_1-\gamma_2$ 不是整數</b>（本節）：兩個根各給一個級數解 $y=x^{\gamma_i}\sum a_nx^n$。</li>
+  <li><b>重根 $\gamma_1=\gamma_2$</b>（第 2 節）：只有一個級數解 $y_1$；第二解 $y_2=y_1\ln x+x^{\gamma_1}\sum b_nx^n$，用降階法求。</li>
+  <li><b>$\gamma_1-\gamma_2=N$ 是正整數</b>（第 3 節）：大根一定給 $y_1$；小根在 $n=N$ 時 $F(\gamma_2+N)=0$，可能成功（$a_N$ 自由）也可能失敗（矛盾），失敗時 $y_2=k\,y_1\ln x+x^{\gamma_2}\sum b_nx^n$。</li>
+</ul>
+<p>級數至少在 $0\lt x\lt R$ 收斂，$R$ 是 $0$ 到其他最近奇點的距離（例如第 2 節的 $(x^2-x)y''+\cdots$ 有另一個奇點 $x=1$，板書寫「$0\lt x\lt1$」）。</p>
+
+<div class="problem" data-kind="example" id="am5-ex-1">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/7 板書（照片 7–11）</span></div>
+    <h4>$2x^2y''-xy'+(1+x)y=0$：$\gamma=1$ 與 $\gamma=\tfrac12$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-ex-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-1"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex Solve　$2x^2y''-xy'+(1+x)y=0$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 Frobenius 法解 $2x^2y''-xy'+(1+x)y=0$：判斷 $x=0$ 的類型，求指標方程式、遞迴關係，以及兩個線性獨立的級數解（各寫到 $x^3$ 的修正項）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p=-\dfrac1{2x}$、$q=\dfrac{1+x}{2x^2}$</td><td>「$2x^2y''-xy'+(1+x)y$」除以 $2x^2$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$-\tfrac12$、$\tfrac12$</td><td>板書 $\lim xp=-\tfrac12$、$\lim x^2q=\tfrac12$</td></tr>
+          <tr><td>級數形式</td><td>$y=\sum a_nx^{n+\gamma}$，$a_0\ne0$</td><td>板書「令 $y=\sum a_nx^{n+\gamma}$；$a_0\ne0$」</td></tr>
+          <tr><td>定義域</td><td>$x\gt0$</td><td>題目沒寫；$x^\gamma$ 有 $\sqrt x$，要 $x\gt0$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：指標 $\gamma$、遞迴關係、兩個級數解與一般解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $p$、$q$ 在 $x=0$ 發散，但 $xp$、$x^2q$ 有限（正則奇點），<b>所以</b>不能用 $\sum a_nx^n$，要用 Frobenius 的 $\sum a_nx^{n+\gamma}$。</p>
+      <p><b>因為</b> $2x^2y''$、$xy'$、$y$ 都不改變次方，只有 $xy$ 往上推一格，<b>所以</b>全部對齊到 $x^{n+\gamma}$，$xy$ 平移成 $\sum_{n\ge1}a_{n-1}x^{n+\gamma}$；$n=0$ 的係數給指標方程式，$n\ge1$ 給遞迴。兩根差 $\tfrac12$ 不是整數，兩個根都能各自算出一串。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-ex-1-s1" data-sym="gam,an">
+        <span class="step-title">代入並對齊次方</span>
+        <p>$y=\sum a_nx^{n+\gamma}$，$y'=\sum(n+\gamma)a_nx^{n+\gamma-1}$，$y''=\sum(n+\gamma)(n+\gamma-1)a_nx^{n+\gamma-2}$。乘上係數後：</p>
+        $$\sum_{n=0}^{\infty}\big[2(n+\gamma)(n+\gamma-1)-(n+\gamma)+1\big]a_nx^{n+\gamma}+\sum_{n=1}^{\infty}a_{n-1}x^{n+\gamma}=0$$
+        <p>（第二個和是 $xy=\sum a_nx^{n+\gamma+1}$ 令 $n\to n-1$。）</p>
+      </div>
+      <div class="step" data-step="am5-ex-1-s2" data-sym="p0q0">
+        <span class="step-title">$n=0$：指標方程式</span>
+        <p>$x^\gamma$ 只有第一個和的 $n=0$ 項：</p>
+        $$\big[2\gamma(\gamma-1)-\gamma+1\big]a_0=0\ \xrightarrow{\ a_0\ne0\ }\ 2\gamma^2-3\gamma+1=(2\gamma-1)(\gamma-1)=0$$
+        <p class="sub">驗算：公式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$ 代入 $p_0=-\tfrac12$、$q_0=\tfrac12$（1.1 節）得 $\gamma^2-\tfrac32\gamma+\tfrac12=0$，同一條。</p>
+        $$\gamma_1=1,\qquad\gamma_2=\tfrac12,\qquad\gamma_1-\gamma_2=\tfrac12\ \text{（不是整數）}$$
+      </div>
+      <div class="step" data-step="am5-ex-1-s3">
+        <span class="step-title">$n\ge1$：遞迴關係</span>
+        <p>令 $s=n+\gamma$，$a_n$ 的係數 $2s^2-3s+1=(2s-1)(s-1)$：</p>
+        $$(2s-1)(s-1)\,a_n+a_{n-1}=0\quad\Longrightarrow\quad a_n=-\frac{a_{n-1}}{\big(2(n+\gamma)-1\big)\big((n+\gamma)-1\big)}$$
+      </div>
+      <div class="step" data-step="am5-ex-1-s4">
+        <span class="step-title">$\gamma=1$ 的係數</span>
+        <p class="sub">代入 $\gamma=1$：$a_n=-\dfrac{a_{n-1}}{(2n+1)n}$，$n=1,2,3$：</p>
+        $$a_1=-\frac{a_0}{3\cdot1}=-\frac{a_0}{3},\quad a_2=-\frac{a_1}{5\cdot2}=\frac{a_0}{30},\quad a_3=-\frac{a_2}{7\cdot3}=-\frac{a_0}{630}$$
+      </div>
+      <div class="step" data-step="am5-ex-1-s5">
+        <span class="step-title">$\gamma=\tfrac12$ 的係數</span>
+        <p class="sub">代入 $\gamma=\tfrac12$：$2(n+\tfrac12)-1=2n$、$(n+\tfrac12)-1=n-\tfrac12$，乘起來 $n(2n-1)$：</p>
+        $$a_1=-\frac{a_0}{1\cdot1}=-a_0,\quad a_2=-\frac{a_1}{2\cdot3}=\frac{a_0}{6},\quad a_3=-\frac{a_2}{3\cdot5}=-\frac{a_0}{90}$$
+      </div>
+      <div class="step" data-step="am5-ex-1-s6" data-sym="y12">
+        <span class="step-title">一般解</span>
+        $$y=c_1\,x\Big(1-\frac x3+\frac{x^2}{30}-\frac{x^3}{630}+\cdots\Big)+c_2\sqrt x\Big(1-x+\frac{x^2}{6}-\frac{x^3}{90}+\cdots\Big),\quad x\gt0$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$x=0$ 是正則奇點；指標方程式 $(2\gamma-1)(\gamma-1)=0$，$\gamma=1,\tfrac12$；遞迴 $a_n=-\dfrac{a_{n-1}}{[2(n+\gamma)-1][(n+\gamma)-1]}$；$y_1=x\big(1-\tfrac x3+\tfrac{x^2}{30}-\tfrac{x^3}{630}+\cdots\big)$，$y_2=\sqrt x\big(1-x+\tfrac{x^2}6-\tfrac{x^3}{90}+\cdots\big)$，$y=c_1y_1+c_2y_2$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_1$ 的最低兩次：$y_1=x-\tfrac{x^2}3$，$2x^2y_1''=-\tfrac43x^2$、$-xy_1'=-x+\tfrac23x^2$、$(1+x)y_1=x+\tfrac23x^2+\cdots$，$x^1$：$-1+1=0$ ✔，$x^2$：$-\tfrac43+\tfrac23+\tfrac23=0$ ✔。closed form $\sqrt{x/2}\sin\sqrt{2x}$、$\sqrt x\cos\sqrt{2x}$ 代回原式也成立（1.4 節補充）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="am5-hw-1">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">10/14 作業 第 1 題</span></div>
+    <h4>$2x^2y''+3xy'+(2x-1)y=0$：$\gamma=-1$ 與 $\gamma=\tfrac12$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-hw-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-hw-1"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p><b>Homework: Frobenius Method</b></p><p>1. Solve $2x^2y''+3xy'+(2x-1)y=0$.</p><p>Ans: two linear independent solution $y_1(x)$ and $y_2(x)$,</p><p>$y_1(x)=\frac{1}{x}\left(1+2x-2x^2+\frac{4}{9}x^3+\dots\right)$</p><p>$y_2(x)=\sqrt{x}\left(1-\frac{2}{5}x+\frac{2}{35}x^2-\frac{4}{945}x^3+\dots\right)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>解 $2x^2y''+3xy'+(2x-1)y=0$。老師給的答案：兩個線性獨立解 $y_1(x)=\dfrac1x\Big(1+2x-2x^2+\dfrac49x^3+\cdots\Big)$、$y_2(x)=\sqrt x\Big(1-\dfrac25x+\dfrac2{35}x^2-\dfrac4{945}x^3+\cdots\Big)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac{3}{2x}$、$Q=\dfrac{2x-1}{2x^2}$</td><td>「$2x^2y''+3xy'+(2x-1)y$」除以 $2x^2$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$\tfrac32$、$-\tfrac12$</td><td>$xP=\tfrac32$；$x^2Q=\tfrac{2x-1}{2}\to-\tfrac12$</td></tr>
+          <tr><td>方法</td><td>Frobenius</td><td>作業標題 Frobenius Method；$P$、$Q$ 在 0 發散但 $xP$、$x^2Q$ 有限</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：指標、遞迴關係、兩個級數解（驗證老師的答案到 $x^3$ 的修正項）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>結構和板書例題一樣（$2x^2y''$、$xy'$、$y$ 不改次方，$2xy$ 往上推一格），<b>所以</b>同樣對齊到 $x^{n+\gamma}$，$n=0$ 給指標方程式、$n\ge1$ 給 $a_n$ 與 $a_{n-1}$ 的遞迴。</p>
+      <p><b>因為</b>指標根 $-1$ 與 $\tfrac12$ 相差 $\tfrac32$ 不是整數，<b>所以</b>遞迴的係數 $F(n+\gamma)$ 對 $n\ge1$ 都不為零，兩個根各給一串；$\gamma=-1$ 那串在 $x=0$ 像 $1/x$ 發散，這沒關係，它照樣是解。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-hw-1-s1" data-sym="p0q0,gam">
+        <span class="step-title">指標方程式</span>
+        <p class="sub">用 $\gamma(\gamma-1)+p_0\gamma+q_0=0$，代入 $p_0=\tfrac32$、$q_0=-\tfrac12$，乘 2：</p>
+        $$2\gamma(\gamma-1)+3\gamma-1=2\gamma^2+\gamma-1=(2\gamma-1)(\gamma+1)=0\ \Longrightarrow\ \gamma=\tfrac12,\ -1$$
+      </div>
+      <div class="step" data-step="am5-hw-1-s2" data-sym="an">
+        <span class="step-title">遞迴關係</span>
+        <p>代入 $y=\sum a_nx^{n+\gamma}$：$2x^2y''+3xy'-y$ 給 $\big[2s(s-1)+3s-1\big]a_nx^{s}$（$s=n+\gamma$），$2xy=\sum2a_nx^{n+\gamma+1}$ 平移成 $\sum_{n\ge1}2a_{n-1}x^{n+\gamma}$：</p>
+        $$(2s-1)(s+1)\,a_n+2a_{n-1}=0\quad\Longrightarrow\quad a_n=-\frac{2a_{n-1}}{(2n+2\gamma-1)(n+\gamma+1)}$$
+      </div>
+      <div class="step" data-step="am5-hw-1-s3" data-sym="y12">
+        <span class="step-title">$\gamma=-1$</span>
+        <p class="sub">代入 $\gamma=-1$：分母 $(2n-3)\,n$，$n=1,2,3$：</p>
+        $$a_1=-\frac{2a_0}{(-1)(1)}=2a_0,\quad a_2=-\frac{2a_1}{(1)(2)}=-2a_0,\quad a_3=-\frac{2a_2}{(3)(3)}=\frac49a_0$$
+        <p>$y_1=x^{-1}\big(1+2x-2x^2+\tfrac49x^3+\cdots\big)$（$a_0=1$）。注意 $n=1$ 時分母是負的 $-1$，$a_1$ 變號為正。</p>
+      </div>
+      <div class="step" data-step="am5-hw-1-s4">
+        <span class="step-title">$\gamma=\tfrac12$</span>
+        <p class="sub">代入 $\gamma=\tfrac12$：分母 $(2n)(n+\tfrac32)=n(2n+3)$：</p>
+        $$a_1=-\frac{2a_0}{1\cdot5}=-\frac25a_0,\quad a_2=-\frac{2a_1}{2\cdot7}=\frac2{35}a_0,\quad a_3=-\frac{2a_2}{3\cdot9}=-\frac{4}{945}a_0$$
+        <p>$y_2=\sqrt x\big(1-\tfrac25x+\tfrac2{35}x^2-\tfrac4{945}x^3+\cdots\big)$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\gamma=-1,\tfrac12$；$y_1=\dfrac1x\big(1+2x-2x^2+\tfrac49x^3+\cdots\big)$，$y_2=\sqrt x\big(1-\tfrac25x+\tfrac2{35}x^2-\tfrac4{945}x^3+\cdots\big)$，$y=c_1y_1+c_2y_2$（$x\gt0$）。老師的答案正確。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_1$ 最低兩次 $x^{-1}+2$：$2x^2y_1''=4x^{-1}$、$3xy_1'=-3x^{-1}$、$(2x-1)y_1=-x^{-1}+(2-2)+\cdots$，$x^{-1}$：$4-3-1=0$ ✔；下一項 $a_4=-\tfrac{2}{45}$（$y_1$）、$\tfrac{2}{10395}$（$y_2$），由驗算腳本確認。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am5-sf-01a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$4xy''+2y'+y=0$：兩個解是 $\cos\sqrt x$ 與 $\sin\sqrt x$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-sf-01a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $4xy''+2y'+y=0$。(a) 判斷 $x=0$ 的類型並求指標。(b) 求兩個 Frobenius 解並認出 closed form。(c) 求滿足 $y(0)=3$、$y\big(\tfrac{\pi^2}{4}\big)=-2$ 的解。(d) 為什麼這題可以在奇點 $x=0$ 給 $y(0)$？如果改給 $y'(0)$ 會怎樣？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac{1}{2x}$、$Q=\dfrac1{4x}$</td><td>「$4xy''+2y'+y$」除以 $4x$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$\tfrac12$、$0$</td><td>$xP=\tfrac12$；$x^2Q=\tfrac x4\to0$</td></tr>
+          <tr><td>條件</td><td>$y(0)=3$；$y(\pi^2/4)=-2$</td><td>(c)；注意 $\sqrt{\pi^2/4}=\pi/2$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 類型與 $\gamma$；(b) 兩個解與 closed form；(c) 特解；(d) 解釋。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $xy''$ 與 $y'$ 都是 $x^{n+\gamma-1}$ 型、$y$ 是 $x^{n+\gamma}$ 型，<b>所以</b>這次要對齊到<b>較低</b>的 $x^{n+\gamma-1}$，把 $y$ 那一項平移（$a_{n-1}$）。最低次方 $n=0$ 給指標方程式。</p>
+      <p><b>因為</b>分母會出現 $2n(2n-1)$、$(2n+1)(2n)$ 這種「連續兩個整數」，<b>所以</b>係數是 $1/(2n)!$、$1/(2n+1)!$，看到它就想到 $\cos$、$\sin$ 的級數，變數是 $\sqrt x$。條件題只要把一般解代入兩個點。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-sf-01a-s1" data-sym="p0q0,gam">
+        <span class="step-title">(a) 正則奇點與指標</span>
+        <p>$P$、$Q$ 在 0 發散，$p_0=\tfrac12$、$q_0=0$ 有限 → 正則奇點。</p>
+        $$\gamma(\gamma-1)+\tfrac12\gamma+0=\gamma\big(\gamma-\tfrac12\big)=0\ \Longrightarrow\ \gamma=0,\ \tfrac12$$
+      </div>
+      <div class="step" data-step="am5-sf-01a-s2" data-sym="an">
+        <span class="step-title">(b) 遞迴關係</span>
+        <p>$4xy''+2y'=\sum\big[4s(s-1)+2s\big]a_nx^{s-1}$（$s=n+\gamma$），$y=\sum a_nx^{n+\gamma}$ 平移成 $\sum_{n\ge1}a_{n-1}x^{n+\gamma-1}$：</p>
+        $$2s(2s-1)\,a_n+a_{n-1}=0\quad\Longrightarrow\quad a_n=-\frac{a_{n-1}}{2(n+\gamma)\,\big(2(n+\gamma)-1\big)}$$
+      </div>
+      <div class="step" data-step="am5-sf-01a-s3" data-sym="y12">
+        <span class="step-title">(b) 兩個解</span>
+        <p class="sub">$\gamma=0$：分母 $2n(2n-1)$，連乘得 $(2n)!$：</p>
+        $$a_n=\frac{(-1)^n}{(2n)!}a_0\ \Longrightarrow\ y_1=\sum_{n=0}^{\infty}\frac{(-1)^n(\sqrt x)^{2n}}{(2n)!}=\cos\sqrt x$$
+        <p class="sub">$\gamma=\tfrac12$：分母 $(2n+1)(2n)$，連乘得 $(2n+1)!$：</p>
+        $$a_n=\frac{(-1)^n}{(2n+1)!}a_0\ \Longrightarrow\ y_2=x^{1/2}\sum_{n=0}^{\infty}\frac{(-1)^nx^n}{(2n+1)!}=\sum_{n=0}^{\infty}\frac{(-1)^n(\sqrt x)^{2n+1}}{(2n+1)!}=\sin\sqrt x$$
+      </div>
+      <div class="step" data-step="am5-sf-01a-s4">
+        <span class="step-title">(c) 代入條件</span>
+        <p>$y=A\cos\sqrt x+B\sin\sqrt x$。</p>
+        <p class="sub">$y(0)=3$：$\cos0=1$、$\sin0=0$：$A=3$。$y(\pi^2/4)=-2$：$\sqrt{\pi^2/4}=\pi/2$，$\cos\tfrac\pi2=0$、$\sin\tfrac\pi2=1$：$B=-2$。</p>
+        $$y=3\cos\sqrt x-2\sin\sqrt x$$
+      </div>
+      <div class="step" data-step="am5-sf-01a-s5">
+        <span class="step-title">(d) 為什麼 $y(0)$ 可以、$y'(0)$ 不行</span>
+        <p>兩個指標都 $\ge0$，兩個解在 $x=0$ 都有限（$y_1(0)=1$、$y_2(0)=0$），所以 $y(0)$ 有意義而且只定出 $A$。但 $y_2'=\dfrac{\cos\sqrt x}{2\sqrt x}\to\infty$（$x\to0^+$），任何 $B\ne0$ 的解在 0 的導數都發散；要求 $y'(0)$ 有限等於強迫 $B=0$，而 $y_1'(0)=-\tfrac12$ 是定值——給一個任意的 $y'(0)$ 通常無解。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 正則奇點，$\gamma=0,\tfrac12$；(b) $y_1=\cos\sqrt x$、$y_2=\sin\sqrt x$；(c) $y=3\cos\sqrt x-2\sin\sqrt x$；(d) 兩解在 0 都有限所以 $y(0)$ 可以給；$y_2'$ 在 0 發散，$y'(0)$ 一般不能任意指定。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=\cos\sqrt x$：$y'=-\dfrac{\sin\sqrt x}{2\sqrt x}$，$y''=-\dfrac{\cos\sqrt x}{4x}+\dfrac{\sin\sqrt x}{4x^{3/2}}$；$4xy''+2y'+y=-\cos\sqrt x+\dfrac{\sin\sqrt x}{\sqrt x}-\dfrac{\sin\sqrt x}{\sqrt x}+\cos\sqrt x=0$ ✔。也可令 $t=\sqrt x$，方程式變成 $\dfrac{d^2y}{dt^2}+y=0$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am5-sf-01b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$2xy''+(1+x)y'+y=0$：遞迴約分後，一個解是 $\sqrt x\,e^{-x/2}$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-sf-01b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $2xy''+(1+x)y'+y=0$。(a) 求指標。(b) 求遞迴關係，並說明它可以先約分。(c) 求兩個級數解（寫到第五項），其中一個認出 closed form。(d) 哪一個解在 $x=0$ 的導數有限？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac{1+x}{2x}$、$Q=\dfrac1{2x}$</td><td>除以 $2x$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$\tfrac12$、$0$</td><td>$xP=\tfrac{1+x}2\to\tfrac12$；$x^2Q=\tfrac x2\to0$</td></tr>
+          <tr><td>要寫的項數</td><td>每個解前 5 項</td><td>(c)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $\gamma$；(b) 遞迴與約分；(c) 兩個解與 closed form；(d) 導數在 0 有限的解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $xy''$、$y'$ 是 $x^{n+\gamma-1}$ 型，$xy'$、$y$ 是 $x^{n+\gamma}$ 型，<b>所以</b>對齊到 $x^{n+\gamma-1}$，後兩項平移成 $a_{n-1}$。</p>
+      <p><b>因為</b> $xy'+y=(xy)'$，平移後 $a_{n-1}$ 的係數 $(s-1)+1=s$ 和 $a_n$ 的係數 $s(2s-1)$ 有公因式 $s$，<b>所以</b>先約掉，遞迴變得很簡單；分母只剩一個因子時，係數像 $1/n!$ 乘幾何級數，可以認出指數函數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-sf-01b-s1" data-sym="p0q0,gam">
+        <span class="step-title">(a) 指標</span>
+        $$\gamma(\gamma-1)+\tfrac12\gamma+0=\gamma\big(\gamma-\tfrac12\big)=0\ \Longrightarrow\ \gamma=0,\ \tfrac12\quad(\text{差 }\tfrac12)$$
+      </div>
+      <div class="step" data-step="am5-sf-01b-s2" data-sym="an">
+        <span class="step-title">(b) 遞迴並約分</span>
+        <p>$x^{s-1}$（$s=n+\gamma$）的係數：$2xy''+y'$ 給 $\big[2s(s-1)+s\big]a_n=s(2s-1)a_n$；$xy'+y$ 平移後給 $\big[(s-1)+1\big]a_{n-1}=s\,a_{n-1}$：</p>
+        $$s(2s-1)\,a_n+s\,a_{n-1}=0\ \xrightarrow{\ s=n+\gamma\ne0\ (n\ge1)\ }\ a_n=-\frac{a_{n-1}}{2n+2\gamma-1}$$
+      </div>
+      <div class="step" data-step="am5-sf-01b-s3" data-sym="y12">
+        <span class="step-title">(c) $\gamma=0$</span>
+        <p class="sub">分母 $2n-1$，$n=1,2,3,4$：</p>
+        $$a_1=-a_0,\quad a_2=-\frac{a_1}{3}=\frac{a_0}3,\quad a_3=-\frac{a_2}{5}=-\frac{a_0}{15},\quad a_4=-\frac{a_3}{7}=\frac{a_0}{105}$$
+        <p>$y_1=1-x+\dfrac{x^2}3-\dfrac{x^3}{15}+\dfrac{x^4}{105}-\cdots$（分母是奇數連乘 $1\cdot3\cdot5\cdots$，沒有初等 closed form）。</p>
+      </div>
+      <div class="step" data-step="am5-sf-01b-s4">
+        <span class="step-title">(c) $\gamma=\tfrac12$：認出指數函數</span>
+        <p class="sub">分母 $2n+1-1=2n$：$a_n=-\dfrac{a_{n-1}}{2n}$，連乘：</p>
+        $$a_n=\frac{(-1)^n}{2^n\,n!}a_0\ \Longrightarrow\ y_2=\sqrt x\sum_{n=0}^{\infty}\frac{1}{n!}\Big(-\frac x2\Big)^n=\sqrt x\,e^{-x/2}$$
+        <p>前五項：$\sqrt x\big(1-\tfrac x2+\tfrac{x^2}8-\tfrac{x^3}{48}+\tfrac{x^4}{384}-\cdots\big)$。</p>
+      </div>
+      <div class="step" data-step="am5-sf-01b-s5">
+        <span class="step-title">(d) 導數在 0</span>
+        <p>$y_1'=-1+\tfrac23x-\cdots$，$y_1'(0)=-1$ 有限；$y_2'=e^{-x/2}\Big(\dfrac1{2\sqrt x}-\dfrac{\sqrt x}2\Big)\to\infty$。只有 $y_1$（$\gamma=0$，而且下一項是整數次方）在 0 可微。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\gamma=0,\tfrac12$；(b) $a_n=-\dfrac{a_{n-1}}{2n+2\gamma-1}$（約掉 $s$）；(c) $y_1=1-x+\tfrac{x^2}3-\tfrac{x^3}{15}+\tfrac{x^4}{105}-\cdots$，$y_2=\sqrt x\,e^{-x/2}$；(d) $y_1$ 在 0 的導數 $=-1$，$y_2$ 的導數發散。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=\sqrt x\,e^{-x/2}$：令 $y=x^{1/2}e^{-x/2}$，$y'=e^{-x/2}\big(\tfrac12x^{-1/2}-\tfrac12x^{1/2}\big)$，$y''=e^{-x/2}\big(-\tfrac14x^{-3/2}-\tfrac12x^{-1/2}+\tfrac14x^{1/2}\big)$；$2xy''+(1+x)y'+y$ 的 $x^{-1/2}$、$x^{1/2}$、$x^{3/2}$ 係數分別是 $-\tfrac12+\tfrac12=0$、$-1+\tfrac12-\tfrac12+1=0$、$\tfrac12-\tfrac12=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>正則奇點：令 $y=\sum a_nx^{n+\gamma}$，$a_0\ne0$；把所有項對齊到同一個次方（$x^{n+\gamma}$ 或 $x^{n+\gamma-1}$），平移的那一項下限變成 $n=1$。</li>
+    <li>最低次方 $n=0$ 的係數 → 指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$，$p_0=\lim xP$、$q_0=\lim x^2Q$。</li>
+    <li>$a_n$ 的係數就是指標多項式 $F(n+\gamma)$；兩根差不是整數時 $F(n+\gamma)\ne0$，兩個根各給一個級數解。</li>
+    <li>解只在 $x\gt0$（或 $|x|$）有定義；$\gamma\lt0$ 的解在 0 發散，仍然是合法的解。</li>
+  </ol>
+</div>

@@ -1,0 +1,1358 @@
+<!-- 考試書寫版：每份先列完整題目，再列可直接寫在考卷上的完整作答。側欄依 data-exam-id 開啟。考古題的 .orig 與正文題目一字不差。 -->
+
+<!-- ===== 一、兩態系統 ===== -->
+<article class="exam-item" data-exam-id="sc-ex-3coins" data-group="一、兩態系統（§2.1）" data-title="課本 §2.1：三枚硬幣">
+  <h3>課本 §2.1 Table 2.1</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　丟三枚公正硬幣，列出所有微觀態，求每個巨觀態（正面數）的多重度與機率。</div>
+  <ol class="write">
+    <li>每枚 2 種、獨立：$\Omega(\text{all})=2^3=8$，全部等機率。</li>
+    <li>3 正：HHH；2 正：HHT、HTH、THH；1 正：HTT、THT、TTH；0 正：TTT。</li>
+    <li>$\Omega(3)=1,\ \Omega(2)=3,\ \Omega(1)=3,\ \Omega(0)=1$；$P=\Omega/8$。</li>
+  </ol>
+  <div class="final">答：多重度 1、3、3、1；機率 $\tfrac18,\tfrac38,\tfrac38,\tfrac18$。</div>
+  <p class="small"><a href="#sc-ex-3coins">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-100coins" data-group="一、兩態系統（§2.1）" data-title="課本 §2.1：一百枚硬幣">
+  <h3>課本 §2.1 Eq. (2.2)–(2.5)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　丟 100 枚硬幣：微觀態、巨觀態數；$\Omega(0)$–$\Omega(3)$；剛好 50 正的機率。</div>
+  <ol class="write">
+    <li>$\Omega(\text{all})=2^{100}=1.27\times10^{30}$；巨觀態 $n=0..100$ 共 101 個。</li>
+    <li>選 $n$ 枚翻正面、除以順序 $n!$：$\Omega(n)=\dfrac{100!}{n!(100-n)!}$。</li>
+    <li>$\Omega(0)=1,\ \Omega(1)=100,\ \Omega(2)=\dfrac{100\cdot99}{2}=4950,\ \Omega(3)=\dfrac{100\cdot99\cdot98}{6}=161\,700$</li>
+    <li>$P(50)=\binom{100}{50}/2^{100}=1.01\times10^{29}/1.27\times10^{30}=0.080$</li>
+  </ol>
+  <div class="final">答：$2^{100}$、101 個；1、100、4950、161 700；$P(50)\approx8\%$。</div>
+  <p class="small"><a href="#sc-ex-100coins">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-1" data-group="一、兩態系統（§2.1）" data-title="課本 2-1：四枚硬幣">
+  <h3>課本 2-1</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you flip four fair coins.</p><p>(a) Make a list of all the possible outcomes, as in Table 2.1.</p><p>(b) Make a list of all the different “macrostates” and their probabilities.</p><p>(c) Compute the multiplicity of each macrostate using the combinatorial formula 2.6, and check that these results agree with what you got by brute-force counting.</p></div>
+<p class="original-caption">Schroeder 習題 2-1（Problem 2.1）· p.51 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　丟四枚硬幣：(a) 列出所有結果；(b) 巨觀態與機率；(c) 用 (2.6) 驗證多重度。</div>
+  <ol class="write">
+    <li>(a) HHHH；HHHT、HHTH、HTHH、THHH；HHTT、HTHT、HTTH、THHT、THTH、TTHH；HTTT、THTT、TTHT、TTTH；TTTT（共 16）。</li>
+    <li>(b) $P(4)=\tfrac1{16},P(3)=\tfrac4{16},P(2)=\tfrac6{16},P(1)=\tfrac4{16},P(0)=\tfrac1{16}$</li>
+    <li>(c) $\binom40=1,\binom41=\frac{4!}{1!3!}=4,\binom42=\frac{4!}{2!2!}=6,\binom43=4,\binom44=1$，與 (b) 相同。</li>
+  </ol>
+  <div class="final">答：多重度 1、4、6、4、1，總和 $16=2^4$。</div>
+  <p class="small"><a href="#sc-2-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-114-6" data-group="一、兩態系統（§2.1）" data-title="考古 114-6：二十枚硬幣（習題 2.2）">
+  <h3>考古 114-6（課本習題 2.2）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-114-6"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[10pts] Suppose you flip 20 fair coins.</p><p>(a) How many possible outcomes (microstates) are there? (3pts)</p><p>(b) What is the probability of getting the sequence HTHHTTTHTHHHTHHHHTHT (in exactly that order)? (3pts)</p><p>(c) What is the probability of getting 12 heads and 8 tails (in any order)? (4pts)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.2）</strong></p><p>Suppose you flip 20 fair coins.</p><p>(a) How many possible outcomes (microstates) are there?</p><p>(b) What is the probability of getting the sequence HTHHTTTHTHHHTHHHHTHT (in exactly that order)?</p><p>(c) What is the probability of getting 12 heads and 8 tails (in any order)?</p></div>
+<p class="original-caption">114 級上學期期中 第 6 題 · 即 Schroeder Problem 2.2 · p.51</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（10 分）假設你丟 20 枚公正硬幣。(a) 共有多少種可能結果（微觀態）？（3 分）(b) 得到序列 HTHHTTTHTHHHTHHHHTHT（完全照這個順序）的機率是多少？（3 分）(c) 得到 12 個正面、8 個反面（任意順序）的機率是多少？（4 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-3.HEIC，雲端硬碟沒有這份）第 6 題</p>
+  <ol class="write">
+    <li>(a) 每枚 2 種、互相獨立：$\Omega(\text{all})=2^{20}=1\,048\,576$。</li>
+    <li>(b) 指定序列是一個微觀態，所有微觀態等機率：$P=1/2^{20}=9.54\times10^{-7}$。</li>
+    <li>(c) 12 正 8 反是一個巨觀態：$\Omega=\binom{20}{12}=\dfrac{20!}{12!\,8!}=125\,970$，$P=\dfrac{125\,970}{1\,048\,576}=0.120$。</li>
+  </ol>
+  <div class="final">答：(a) $1\,048\,576$；(b) $9.5\times10^{-7}$；(c) 12.0%。</div>
+  <p class="small"><a href="#tk-114-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-115-3" data-group="一、兩態系統（§2.1）" data-title="考古 115-3：十枚硬幣">
+  <h3>考古 115-3（改自習題 2.2）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-3"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>[10pts] Suppose you flip 10 fair coins.</p><p>(a) How many possible microstates are there? (2pts)</p><p>(a) How many possible macrostates are there? (2pts)</p><p>(b) What is the probability of getting the sequence HTHHTTTHTH (in exactly that order)? (3pts)</p><p>(c) What is the probability of getting 7 heads and 3 tails (in any order)? (3pts)</p></div>
+<p class="original-caption">115 級上學期期中 第 3 題 · 改自 Schroeder Problem 2.2 · p.51</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（10 分）假設你丟 10 枚公正硬幣。(a) 共有多少個可能的微觀態？（2 分）(a) 共有多少個可能的巨觀態？（2 分）(b) 得到序列 HTHHTTTHTH（完全照這個順序）的機率是多少？（3 分）(c) 得到 7 個正面、3 個反面（任意順序）的機率是多少？（3 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 3 題</p>
+  <ol class="write">
+    <li>微觀態：每枚 2 種，$2^{10}=1024$ 個。</li>
+    <li>巨觀態：正面數 $n=0,1,\dots,10$，共 11 個。</li>
+    <li>(b) 指定序列＝一個微觀態：$P=1/1024=9.77\times10^{-4}$。</li>
+    <li>(c) $\Omega(7)=\binom{10}7=\dfrac{10\cdot9\cdot8}{3\cdot2\cdot1}=120$，$P=\dfrac{120}{1024}=0.117$。</li>
+  </ol>
+  <div class="final">答：1024、11、$1/1024$、$120/1024\approx11.7\%$。</div>
+  <p class="small"><a href="#tk-115-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-3" data-group="一、兩態系統（§2.1）" data-title="課本 2-3：五十枚硬幣">
+  <h3>課本 2-3</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-3"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you flip 50 fair coins.</p><p>(a) How many possible outcomes (microstates) are there?</p><p>(b) How many ways are there of getting exactly 25 heads and 25 tails?</p><p>(c) What is the probability of getting exactly 25 heads and 25 tails?</p><p>(d) What is the probability of getting exactly 30 heads and 20 tails?</p><p>(e) What is the probability of getting exactly 40 heads and 10 tails?</p><p>(f) What is the probability of getting 50 heads and no tails?</p><p>(g) Plot a graph of the probability of getting n heads, as a function of n.</p></div>
+<p class="original-caption">Schroeder 習題 2-3（Problem 2.3）· p.52</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　丟 50 枚硬幣：(a) 微觀態數；(b)(c) 25 正的方式數與機率；(d)(e)(f) 30、40、50 正的機率；(g) 畫 $P(n)$。</div>
+  <ol class="write">
+    <li>(a) $2^{50}=1.13\times10^{15}$；(b) $\binom{50}{25}=1.26\times10^{14}$；(c) $P=0.112$。</li>
+    <li>(d) $\binom{50}{30}/2^{50}=0.042$；(e) $\binom{50}{40}/2^{50}=9.1\times10^{-6}$；(f) $1/2^{50}=8.9\times10^{-16}$。</li>
+    <li>(g) 以 $n=25$ 為中心的對稱鐘形，峰約 0.11，主要落在 $20\lesssim n\lesssim30$。</li>
+  </ol>
+  <div class="final">答：$1.13\times10^{15}$、$1.26\times10^{14}$、0.112、0.042、$9.1\times10^{-6}$、$8.9\times10^{-16}$。</div>
+  <p class="small"><a href="#sc-2-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-4" data-group="一、兩態系統（§2.1）" data-title="課本 2-4：撲克牌">
+  <h3>課本 2-4</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-4"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the number of possible five-card poker hands, dealt from a deck of 52 cards. (The order of cards in a hand does not matter.) A royal flush consists of the five highest-ranking cards (ace, king, queen, jack, 10) of any one of the four suits. What is the probability of being dealt a royal flush (on the first deal)?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　五張一手的牌組數；第一次就拿到同花大順的機率。</div>
+  <ol class="write">
+    <li>不計順序：$\binom{52}5=\dfrac{52\cdot51\cdot50\cdot49\cdot48}{5!}=2\,598\,960$。</li>
+    <li>同花大順每種花色一手，共 4 手：$P=4/2\,598\,960=1.54\times10^{-6}$。</li>
+  </ol>
+  <div class="final">答：$2\,598\,960$ 手；$P=1.54\times10^{-6}$。</div>
+  <p class="small"><a href="#sc-2-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-01a" data-group="一、兩態系統（§2.1）" data-title="自編難題：固定能量的偶極">
+  <h3>自編難題 1-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　6 個偶極、$U=-2\mu B$：微觀態數、$P(1\uparrow)$、$P(1\uparrow,2\uparrow)$；$N=600,N_\uparrow=400$ 時比較。</div>
+  <ol class="write">
+    <li>$\mu B(N_\downarrow-N_\uparrow)=-2\mu B$、$N_\uparrow+N_\downarrow=6$ ⟹ $N_\uparrow=4$；$\Omega=\binom64=15$。</li>
+    <li>$P(1\uparrow)=\binom53/15=2/3$。</li>
+    <li>$P(1\uparrow,2\uparrow)=\binom42/15=2/5\lt(2/3)^2$：總能量固定，1 號佔掉一個向上名額，$P=\frac46\cdot\frac35$。</li>
+    <li>$N=600$：$\frac{400\cdot399}{600\cdot599}=0.4441\approx0.4444$，相對差 $\sim1/N$，大系統近似獨立。</li>
+  </ol>
+  <div class="final">答：15；$2/3$；$2/5$；大 $N$ 時幾乎獨立。</div>
+  <p class="small"><a href="#sf-01a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-01b" data-group="一、兩態系統（§2.1）" data-title="自編難題：解析度與巨觀態">
+  <h3>自編難題 1-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N=100$、$M=\mu(N_\uparrow-N_\downarrow)$：可能值、$\Omega(0)/\Omega(2\mu)$、$P(|M|\le5\mu)$、$P(|M|\le10\mu)$。</div>
+  <ol class="write">
+    <li>$M=\mu(2N_\uparrow-100)$：$-100\mu\sim100\mu$ 間隔 $2\mu$，101 個；$M=\mu$ 不可能。</li>
+    <li>$\binom{100}{50}/\binom{100}{51}=51/50=1.02$。</li>
+    <li>$|M|\le5\mu$ ⟺ $N_\uparrow=48\sim52$：$P=\sum\binom{100}n/2^{100}=0.383$；$P(M=0)=0.080$。</li>
+    <li>$|M|\le10\mu$ ⟺ $N_\uparrow=45\sim55$：$P=0.729$。巨觀態由量測解析度決定。</li>
+  </ol>
+  <div class="final">答：101 個值；1.02；38.3%；72.9%。</div>
+  <p class="small"><a href="#sf-01b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 二、愛因斯坦固體 ===== -->
+<article class="exam-item" data-exam-id="sc-ex-ein3" data-group="二、愛因斯坦固體（§2.2）" data-title="課本 §2.2：三振子固體">
+  <h3>課本 §2.2 Table 2.2</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N=3$ 的愛因斯坦固體，$q=0,1,2,3$ 時各有幾個微觀態？用 (2.9) 驗證。</div>
+  <ol class="write">
+    <li>$q=0$：000；$q=1$：100、010、001；$q=2$：200、020、002、110、101、011。</li>
+    <li>$q=3$：300、030、003、210、201、120、021、102、012、111。</li>
+    <li>$\Omega(3,q)=\binom{q+2}{q}$：$\binom20=1,\binom31=3,\binom42=6,\binom53=10$。</li>
+  </ol>
+  <div class="final">答：1、3、6、10。</div>
+  <p class="small"><a href="#sc-ex-ein3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-5" data-group="二、愛因斯坦固體（§2.2）" data-title="課本 2-5：列舉驗證 (2.9)">
+  <h3>課本 2-5</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-5"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>For an Einstein solid with each of the following values of N and q, list all of the possible microstates, count them, and verify formula 2.9.</p><p>(a) N = 3, q = 4</p><p>(b) N = 3, q = 5</p><p>(c) N = 3, q = 6</p><p>(d) N = 4, q = 2</p><p>(e) N = 4, q = 3</p><p>(f) N = 1, q = anything</p><p>(g) N = anything, q = 1</p></div>
+<p class="original-caption">Schroeder 習題 2-5（Problem 2.5）· p.55 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　列出並數微觀態以驗證 (2.9)：(a) $N=3,q=4$；(b) $3,5$；(c) $3,6$；(d) $4,2$；(e) $4,3$；(f) $N=1$；(g) $q=1$。</div>
+  <ol class="write">
+    <li>(a) $(4,0,0)\times3+(3,1,0)\times6+(2,2,0)\times3+(2,1,1)\times3=15=\binom64$</li>
+    <li>(b) $3+6+6+3+3=21=\binom75$；(c) $3+6+6+3+3+6+1=28=\binom86$</li>
+    <li>(d) $(2,0,0,0)\times4+(1,1,0,0)\times6=10=\binom52$；(e) $4+12+4=20=\binom63$</li>
+    <li>(f) 能量全在唯一的振子：$1=\binom qq$；(g) 一份能量放在 $N$ 個之一：$N=\binom N1$</li>
+  </ol>
+  <div class="final">答：15、21、28、10、20、1、$N$，全符合 $\binom{q+N-1}{q}$。</div>
+  <p class="small"><a href="#sc-2-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-6" data-group="二、愛因斯坦固體（§2.2）" data-title="課本 2-6：30 振子 30 份">
+  <h3>課本 2-6</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the multiplicity of an Einstein solid with 30 oscillators and 30 units of energy. (Do not attempt to list all the microstates.)</p></div>
+<p class="original-caption">Schroeder 習題 2-6（Problem 2.6）· p.55</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　30 個振子、30 份能量的愛因斯坦固體的多重度。</div>
+  <ol class="write">
+    <li>$\Omega(30,30)=\binom{30+30-1}{30}=\dfrac{59!}{30!\,29!}=5.91\times10^{16}$</li>
+  </ol>
+  <div class="final">答：$5.9\times10^{16}$。</div>
+  <p class="small"><a href="#sc-2-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-7" data-group="二、愛因斯坦固體（§2.2）" data-title="課本 2-7：點與線">
+  <h3>課本 2-7</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>For an Einstein solid with four oscillators and two units of energy, represent each possible microstate as a series of dots and vertical lines, as used in the text to prove equation 2.9.</p></div>
+<p class="original-caption">Schroeder 習題 2-7（Problem 2.7）· p.55 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　4 個振子、2 份能量：把每個微觀態畫成點與直線。</div>
+  <ol class="write">
+    <li>2 個點、3 條隔線，5 個位置選 2 個放點：$\binom52=10$。</li>
+    <li>同格：$\bullet\bullet|||$、$|\bullet\bullet||$、$||\bullet\bullet|$、$|||\bullet\bullet$</li>
+    <li>不同格：$\bullet|\bullet||$、$\bullet||\bullet|$、$\bullet|||\bullet$、$|\bullet|\bullet|$、$|\bullet||\bullet$、$||\bullet|\bullet$</li>
+  </ol>
+  <div class="final">答：共 10 串（同習題 2.5(d)）。</div>
+  <p class="small"><a href="#sc-2-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-02a" data-group="二、愛因斯坦固體（§2.2）" data-title="自編難題：一個振子的能量分布">
+  <h3>自編難題 2-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N=3,q=4$：1 號振子有 $n$ 份的機率、平均能量；大 $N,q$ 時 $P(n+1)/P(n)$。</div>
+  <ol class="write">
+    <li>$P(n)=\Omega(2,4-n)/\Omega(3,4)=(5-n)/15$：$\tfrac5{15},\tfrac4{15},\tfrac3{15},\tfrac2{15},\tfrac1{15}$。</li>
+    <li>$\langle n\rangle=20/15=4/3=q/N$。</li>
+    <li>$\frac{P(n+1)}{P(n)}=\frac{\Omega(N-1,m-1)}{\Omega(N-1,m)}=\frac m{m+N-2}\approx\frac q{q+N}$（$m=q-n$）。</li>
+    <li>等比遞減；$q=N$ 時公比 $1/2$（波茲曼因子的雛形）。</li>
+  </ol>
+  <div class="final">答：$(5-n)/15$；$4/3$；公比 $q/(q+N)$。</div>
+  <p class="small"><a href="#sf-02a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-02b" data-group="二、愛因斯坦固體（§2.2）" data-title="自編難題：遞迴式">
+  <h3>自編難題 2-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\Omega(N,q)=\sum_n\Omega(N-1,q-n)$，求 $\Omega(2,q)$、$\Omega(3,q)$，並以歸納法證 (2.9)。</div>
+  <ol class="write">
+    <li>依 1 號振子的份數 $n$ 分組，其餘 $N-1$ 個分 $q-n$ 份：互斥且完整，得遞迴式。</li>
+    <li>$\Omega(2,q)=q+1$；$\Omega(3,q)=\sum_{m=1}^{q+1}m=\frac{(q+1)(q+2)}2$，$\Omega(3,3)=10$。</li>
+    <li>歸納：$\sum_{m=0}^{q+1}\binom{m+N-2}m=\binom{q+N-1}q+\binom{q+N-1}{q+1}=\binom{q+N}{q+1}$（Pascal），起始 $\Omega(1,q)=1$。</li>
+  </ol>
+  <div class="final">答：遞迴式成立，$\Omega(N,q)=\binom{q+N-1}q$。</div>
+  <p class="small"><a href="#sf-02b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 三、交互作用的系統 ===== -->
+<article class="exam-item" data-exam-id="sc-ex-fig24" data-group="三、交互作用的系統（§2.3）" data-title="課本 Fig. 2.4：3,3 分 6 份">
+  <h3>課本 §2.3 Fig. 2.4</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N_A=N_B=3$、$q=6$：列 $\Omega_A,\Omega_B,\Omega_{\text{total}}$；求各 3 份與全在 B 的機率。</div>
+  <ol class="write">
+    <li>$\Omega(3,q)=\binom{q+2}q$：$q=0..6$ 為 1、3、6、10、15、21、28。</li>
+    <li>$q_A=0..6$：$\Omega_{\text{total}}=\Omega_A\Omega_B=28,63,90,100,90,63,28$。</li>
+    <li>總和 $462=\binom{11}6$；$P(3)=100/462=0.216$，$P(0)=28/462=0.061$。</li>
+  </ol>
+  <div class="final">答：21.6%；6.1%。</div>
+  <p class="small"><a href="#sc-ex-fig24">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-fig25" data-group="三、交互作用的系統（§2.3）" data-title="課本 Fig. 2.5：300,200 分 100 份">
+  <h3>課本 §2.3 Fig. 2.5</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N_A=300,N_B=200,q=100$：最可能與最不可能的巨觀態、多重度與機率。</div>
+  <ol class="write">
+    <li>$\Omega_{\text{total}}(q_A)=\binom{q_A+299}{q_A}\binom{q_B+199}{q_B}$，逐列計算。</li>
+    <li>最可能 $q_A=60$：$6.9\times10^{114}$；$\Omega(\text{all})=\binom{599}{100}=9.3\times10^{115}$，$P=7.4\%$。</li>
+    <li>最不可能 $q_A=0$：$\binom{299}{100}=2.8\times10^{81}$，$P=3\times10^{-35}$；兩者比 $10^{33}$。</li>
+  </ol>
+  <div class="final">答：$q_A=60$（7.4%）；$q_A=0$（$3\times10^{-35}$）。</div>
+  <p class="small"><a href="#sc-ex-fig25">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-8" data-group="三、交互作用的系統（§2.3）" data-title="課本 2-8：10,10 分 20 份">
+  <h3>課本 2-8</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-8"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a system of two Einstein solids, A and B, each containing 10 oscillators, sharing a total of 20 units of energy. Assume that the solids are weakly coupled, and that the total energy is fixed.</p><p>(a) How many different macrostates are available to this system?</p><p>(b) How many different microstates are available to this system?</p><p>(c) Assuming that this system is in thermal equilibrium, what is the probability of finding all the energy in solid A?</p><p>(d) What is the probability of finding exactly half of the energy in solid A?</p><p>(e) Under what circumstances would this system exhibit irreversible behavior?</p></div>
+<p class="original-caption">Schroeder 習題 2-8（Problem 2.8）· p.59 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　兩固體各 10 振子、共 20 份：(a) 巨觀態數；(b) 微觀態數；(c) 全在 A 的機率；(d) 各半的機率；(e) 何時不可逆？</div>
+  <ol class="write">
+    <li>(a) $q_A=0..20$：21 個。</li>
+    <li>(b) $\Omega(20,20)=\binom{39}{20}=6.89\times10^{10}$</li>
+    <li>(c) $\binom{29}{20}\cdot1/6.89\times10^{10}=1.00\times10^7/6.89\times10^{10}=1.45\times10^{-4}$</li>
+    <li>(d) $\binom{19}{10}^2/6.89\times10^{10}=8.53\times10^9/6.89\times10^{10}=0.124$</li>
+    <li>(e) 各半比全在 A 可能約 850 倍：從能量集中的狀態出發時會「近似不可逆」地變平均，但系統小，反向偶爾仍發生。</li>
+  </ol>
+  <div class="final">答：21；$6.89\times10^{10}$；$1.45\times10^{-4}$；0.124；初態遠離最可能巨觀態時。</div>
+  <p class="small"><a href="#sc-2-8">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-115-5" data-group="三、交互作用的系統（§2.3）" data-title="考古 115-5：10,20 分 60 份">
+  <h3>考古 115-5（改自習題 2.8）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-5"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>[20pts] Consider a system of two Einstein solids, A and B, each containing 10 oscillators and 20 oscillators, sharing a total of 60 units of energy. Assume that the solids are weakly coupled, and that the total energy is fixed. <em>In this problem, you may express your answer as some combinatorics without evaluating its numerical value.</em></p><p>(a) How many different macrostates are available to this system? (5pts)</p><p>(b) How many different microstates are available to this system? (5pts)</p><p>(c) Assuming that this system is in thermal equilibrium, what is the probability of finding all the energy in solid A? (5pts)</p><p>(d) Assuming that this system is in thermal equilibrium, what is the probability of finding this system at its most likely macrostate? (5pts)</p></div>
+<p class="original-caption">115 級上學期期中 第 5 題 · 改自 Schroeder Problem 2.8 · p.59</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）考慮由兩個愛因斯坦固體 A、B 組成的系統，分別含 10 個和 20 個振子，共享 60 份能量。假設兩固體弱耦合，且總能量固定。本題的答案可以寫成組合數，不必算出數值。(a) 這個系統有多少個不同的巨觀態？（5 分）(b) 這個系統有多少個不同的微觀態？（5 分）(c) 假設系統處於熱平衡，能量全部在固體 A 的機率是多少？（5 分）(d) 假設系統處於熱平衡，系統處在最可能巨觀態的機率是多少？（5 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 5 題</p>
+  <ol class="write">
+    <li>(a) $q_A=0,1,\dots,60$：61 個巨觀態。</li>
+    <li>(b) 視為 30 振子、60 份能量：$\Omega(\text{all})=\binom{89}{60}=\dfrac{89!}{60!\,29!}\ (\approx2.24\times10^{23})$。</li>
+    <li>(c) $P=\dfrac{\Omega_A(10,60)\Omega_B(20,0)}{\Omega(\text{all})}=\dfrac{\binom{69}{60}}{\binom{89}{60}}=\dfrac{69!\,29!}{89!\,9!}\ (\approx2.5\times10^{-13})$。</li>
+    <li>(d) $\dfrac{\Omega_{\text{total}}(q_A+1)}{\Omega_{\text{total}}(q_A)}=\dfrac{(q_A+10)(60-q_A)}{(q_A+1)(79-q_A)}\ge1\iff q_A\le18.6$，所以最可能 $q_A=19$、$q_B=41$。</li>
+    <li>$P=\dfrac{\binom{28}{19}\binom{60}{41}}{\binom{89}{60}}=\dfrac{1.41\times10^{22}}{2.24\times10^{23}}=0.063$</li>
+  </ol>
+  <div class="final">答：(a) 61；(b) $89!/(60!\,29!)$；(c) $69!\,29!/(89!\,9!)$；(d) $q_A=19$，約 6.3%。</div>
+  <p class="small"><a href="#tk-115-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-114-4" data-group="三、交互作用的系統（§2.3）" data-title="考古 114-4：3,2 分 5 份">
+  <h3>考古 114-4（Fig. 2.4 的作法）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）考慮由兩個交互作用的小愛因斯坦固體 A 與 B 組成的系統。固體 A 由 3 個振子描述，固體 B 由 2 個振子描述。各固體的振子數固定，能量可以在兩固體間交換。固體 A 的能量是 $q_A\epsilon$、固體 B 的能量是 $q_B\epsilon$，其中 $\epsilon$ 是能量單位，在這個封閉系統中 $q_A+q_B=5$ 固定。(a) 在 $q_A=1$、$q_B=4$ 的情況，求固體 A 的多重度（記為 $\Omega_A$）。用示意圖（例如用圓圈代表能量單位）說明你如何得到 $\Omega_A$。（3 分）(b) 列表寫出 $q_A$ 與 $q_B$ 的所有可能值，以及對應的 $\Omega_A$、$\Omega_B$ 與 $\Omega_{\text{total}}=\Omega_A\Omega_B$。（10 分）(c) 以 $\Omega_{\text{total}}$ 為縱軸、$q_A$ 為橫軸畫出長條圖。（5 分）(d) 從 (c) 的圖中，你認為這張圖告訴你什麼（關於這種封閉系統中的能量分布）？（2 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-2、-3.HEIC，雲端硬碟沒有這份）第 4 題</p>
+  <ol class="write">
+    <li>(a) 1 個圓圈、2 條隔線排 3 個位置：$\circ||$、$|\circ|$、$||\circ$，$\Omega_A=\binom{1+3-1}1=3$。</li>
+    <li>(b) $\Omega_A=\binom{q_A+2}{q_A}$，$\Omega_B=q_B+1$：
+      <br>$q_A=0,1,2,3,4,5$；$q_B=5,4,3,2,1,0$
+      <br>$\Omega_A=1,3,6,10,15,21$；$\Omega_B=6,5,4,3,2,1$
+      <br>$\Omega_{\text{total}}=6,15,24,30,30,21$（總和 $126=\binom95$）</li>
+    <li>(c) 長條圖：高 6、15、24、30、30、21，在 $q_A=3,4$ 最高。</li>
+    <li>(d) 微觀態等機率 ⟹ 巨觀態機率 $\propto\Omega_{\text{total}}$；最可能 $q_A=3$ 或 4（各 24%），能量約依振子數 3:2 分配，集中在一邊的機率小 ⟹ 能量自發地趨向分散（熱流方向、第二定律）。</li>
+  </ol>
+  <div class="final">答：$\Omega_A=3$；表如上；能量傾向依振子數比例（約 3:2）分配。</div>
+  <p class="small"><a href="#tk-114-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-9" data-group="三、交互作用的系統（§2.3）" data-title="課本 2-9：6,4 分 6 份">
+  <h3>課本 2-9</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a computer to reproduce the table and graph in Figure 2.4: two Einstein solids, each containing three harmonic oscillators, with a total of six units of energy. Then modify the table and graph to show the case where one Einstein solid contains six harmonic oscillators and the other contains four harmonic oscillators (with the total number of energy units still equal to six). Assuming that all microstates are equally likely, what is the most probable macrostate, and what is its probability? What is the least probable macrostate, and what is its probability?</p></div>
+<p class="original-caption">Schroeder 習題 2-9（Problem 2.9）· p.60</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$N_A=6,N_B=4,q=6$：最可能與最不可能巨觀態及機率。</div>
+  <ol class="write">
+    <li>$\Omega_A=\binom{q_A+5}{q_A}$：1、6、21、56、126、252、462；$\Omega_B=\binom{q_B+3}{q_B}$：84、56、35、20、10、4、1。</li>
+    <li>$\Omega_{\text{total}}=84,336,735,1120,1260,1008,462$，總和 $5005=\binom{15}6$。</li>
+    <li>$P(4)=1260/5005=25.2\%$；$P(0)=84/5005=1.7\%$。</li>
+  </ol>
+  <div class="final">答：最可能 $q_A=4$（25.2%）；最不可能 $q_A=0$（1.7%）。</div>
+  <p class="small"><a href="#sc-2-9">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-10" data-group="三、交互作用的系統（§2.3）" data-title="課本 2-10：200,100 分 100 份">
+  <h3>課本 2-10</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a computer to produce a table and graph, like those in this section, for the case where one Einstein solid contains 200 oscillators, the other contains 100 oscillators, and there are 100 units of energy in total. What is the most probable macrostate, and what is its probability? What is the least probable macrostate, and what is its probability?</p></div>
+<p class="original-caption">Schroeder 習題 2-10（Problem 2.10）· p.60</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$N_A=200,N_B=100,q=100$：最可能與最不可能巨觀態及機率。</div>
+  <ol class="write">
+    <li>$\Omega(\text{all})=\binom{399}{100}=1.68\times10^{96}$。</li>
+    <li>最可能 $q_A=67$：$1.23\times10^{95}$，$P=7.3\%$。</li>
+    <li>最不可能 $q_A=0$：$\binom{199}{100}=4.53\times10^{58}$，$P=2.7\times10^{-38}$。</li>
+  </ol>
+  <div class="final">答：$q_A=67$（7.3%）；$q_A=0$（$2.7\times10^{-38}$）。</div>
+  <p class="small"><a href="#sc-2-10">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-11" data-group="三、交互作用的系統（§2.3）" data-title="課本 2-11：兩個順磁體">
+  <h3>課本 2-11</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-11"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a computer to produce a table and graph, like those in this section, for two interacting two-state paramagnets, each containing 100 elementary magnetic dipoles. Take a “unit” of energy to be the amount needed to flip a single dipole from the “up” state (parallel to the external field) to the “down” state (antiparallel). Suppose that the total number of units of energy, relative to the state with all dipoles pointing up, is 80; this energy can be shared in any way between the two paramagnets. What is the most probable macrostate, and what is its probability? What is the least probable macrostate, and what is its probability?</p></div>
+<p class="original-caption">Schroeder 習題 2-11（Problem 2.11）· p.60</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　兩個各 100 偶極的順磁體共 80 份能量：最可能與最不可能巨觀態及機率。</div>
+  <ol class="write">
+    <li>順磁體 $\Omega(N,q)=\binom Nq$（每偶極最多一份）。</li>
+    <li>$\Omega(\text{all})=\binom{200}{80}=1.65\times10^{57}$。</li>
+    <li>$P(40)=\binom{100}{40}^2/1.65\times10^{57}=11.5\%$；$P(0)=P(80)=\binom{100}{80}/1.65\times10^{57}=3.3\times10^{-37}$。</li>
+  </ol>
+  <div class="final">答：$q_A=40$（11.5%）；$q_A=0$ 或 80（$3.3\times10^{-37}$）。</div>
+  <p class="small"><a href="#sc-2-11">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-03a" data-group="三、交互作用的系統（§2.3）" data-title="自編難題：不用電腦找峰">
+  <h3>自編難題 3-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N_A=300,N_B=200,q=100$：由相鄰多重度的比找峰；考古 115-5 為何峰在 19；大系統的條件。</div>
+  <ol class="write">
+    <li>$\frac{\Omega(N,q+1)}{\Omega(N,q)}=\frac{q+N}{q+1}$ ⟹ $\frac{\Omega_{\text{tot}}(q_A+1)}{\Omega_{\text{tot}}(q_A)}=\frac{q_A+N_A}{q_A+1}\cdot\frac{q_B}{q_B+N_B-1}$。</li>
+    <li>令比值 $=1$：$(q_A+300)(100-q_A)=(q_A+1)(299-q_A)$ ⟹ $q_A=59.64$，峰在 60。</li>
+    <li>一般解 $q_A^*=\frac{(N_A-1)q-(N_B-1)}{N_A+N_B-2}$；$10,20,60$：$521/28=18.6$，峰在 19。</li>
+    <li>大系統 $q_A/N_A=q_B/N_B$。</li>
+  </ol>
+  <div class="final">答：60；19；$q_A/N_A=q_B/N_B$。</div>
+  <p class="small"><a href="#sf-03a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-03b" data-group="三、交互作用的系統（§2.3）" data-title="自編難題：固體與順磁體">
+  <h3>自編難題 3-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　3 振子固體 A＋3 偶極順磁體 B 分 $q$ 份：$q=3$、$q=6$ 的最可能巨觀態，$\langle q_B\rangle$，$q\to\infty$。</div>
+  <ol class="write">
+    <li>$\Omega_A=\binom{q_A+2}{q_A}$，$\Omega_B=\binom3{q_B}$（$q_B\le3$）。</li>
+    <li>$q=3$：$\Omega_{\text{tot}}=1,9,18,10$（$q_A=0..3$），總 38，$q_A=2$ 機率 47.4%。</li>
+    <li>$q=6$：$10,45,63,28$（$q_A=3..6$），總 146，$q_A=5$ 機率 43.2%。</li>
+    <li>$\langle q_B\rangle=39/38=1.03$、$183/146=1.25$；$q\to\infty$ 時權重 $\to\binom3{q_B}$，$\langle q_B\rangle\to1.5$，且恆小於 1.5。</li>
+  </ol>
+  <div class="final">答：$q_A=2$（47.4%）；$q_A=5$（43.2%）；順磁體平均能量不超過 $N_B/2$。</div>
+  <p class="small"><a href="#sf-03b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 四、很大的數與 Stirling 近似 ===== -->
+<article class="exam-item" data-exam-id="sc-ex-stirling" data-group="四、很大的數與 Stirling 近似（§2.4）" data-title="課本 Table 2.3：Stirling 的精確度">
+  <h3>課本 §2.4 Table 2.3</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N=1,10,100$：比較 $N!$ 與 $N^Ne^{-N}\sqrt{2\pi N}$、$\ln N!$ 與 $N\ln N-N$。</div>
+  <ol class="write">
+    <li>$N=1$：1 對 0.922（7.8%，課本表寫 7.7%）；0 對 $-1$。</li>
+    <li>$N=10$：3 628 800 對 3 598 696（0.83%）；15.1 對 13.0（13.8%）。</li>
+    <li>$N=100$：$9.33\times10^{157}$ 對 $9.32\times10^{157}$（0.083%）；363.7 對 360.5（0.89%）。</li>
+  </ol>
+  <div class="final">答：完整式 $N=10$ 準到 1%，對數式 $N=100$ 準到 1%。</div>
+  <p class="small"><a href="#sc-ex-stirling">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-12" data-group="四、很大的數與 Stirling 近似（§2.4）" data-title="課本 2-12：ln 的性質">
+  <h3>課本 2-12</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-12"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The natural logarithm function, ln, is defined so that $e^{\ln x}=x$ for any positive number $x$.</p><p>(a) Sketch a graph of the natural logarithm function.</p><p>(b) Prove the identities $$\ln ab=\ln a+\ln b\qquad\text{and}\qquad\ln a^b=b\ln a.$$</p><p>(c) Prove that $\dfrac{d}{dx}\ln x=\dfrac1x$.</p><p>(d) Derive the useful approximation $$\ln(1+x)\approx x,$$ which is valid when $|x|\ll1$. Use a calculator to check the accuracy of this approximation for $x=0.1$ and $x=0.01$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　ln 的草圖；證 $\ln ab=\ln a+\ln b$、$\ln a^b=b\ln a$、$(\ln x)'=1/x$；$\ln(1+x)\approx x$ 及 $x=0.1,0.01$ 的準確度。</div>
+  <ol class="write">
+    <li>(a) $x\gt0$、遞增、過 $(1,0)$ 與 $(e,1)$、$x\to0^+$ 趨於 $-\infty$、向下彎。</li>
+    <li>(b) $e^{\ln ab}=ab=e^{\ln a}e^{\ln b}=e^{\ln a+\ln b}$；$e^{\ln a^b}=(e^{\ln a})^b=e^{b\ln a}$。</li>
+    <li>(c) $y=\ln x\Rightarrow e^y=x\Rightarrow dx/dy=x\Rightarrow dy/dx=1/x$。</li>
+    <li>(d) $x=0$ 處切線斜率 1：$\ln(1+x)\approx x$；$\ln1.1=0.0953$（差 4.9%），$\ln1.01=0.00995$（差 0.5%）。</li>
+  </ol>
+  <div class="final">答：誤差約 $x/2$：5%、0.5%。</div>
+  <p class="small"><a href="#sc-2-12">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-13" data-group="四、很大的數與 Stirling 近似（§2.4）" data-title="課本 2-13：對數技巧">
+  <h3>課本 2-13</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 化簡 $e^{a\ln b}$；(b) $b\ll a$ 時證明 $\ln(a+b)\approx\ln a+b/a$。</div>
+  <ol class="write">
+    <li>(a) $e^{a\ln b}=(e^{\ln b})^a=b^a$</li>
+    <li>(b) $\ln(a+b)=\ln[a(1+b/a)]=\ln a+\ln(1+b/a)$</li>
+    <li>$b/a\ll1$，$\ln(1+x)\approx x$ ⟹ $\ln(a+b)\approx\ln a+b/a$</li>
+  </ol>
+  <div class="final">答：(a) $b^a$；(b) 得證。</div>
+  <p class="small"><a href="#sc-2-13">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-14" data-group="四、很大的數與 Stirling 近似（§2.4）" data-title="課本 2-14：換底">
+  <h3>課本 2-14</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　把 $e^{10^{23}}$ 寫成 $10^x$。</div>
+  <ol class="write">
+    <li>兩邊取 $\ln$：$10^{23}=x\ln10$</li>
+    <li>$x=10^{23}/2.303=4.34\times10^{22}$</li>
+  </ol>
+  <div class="final">答：$10^{4.34\times10^{22}}$。</div>
+  <p class="small"><a href="#sc-2-14">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-15" data-group="四、很大的數與 Stirling 近似（§2.4）" data-title="課本 2-15：N=50">
+  <h3>課本 2-15</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-15"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a pocket calculator to check the accuracy of Stirling’s approximation for N = 50. Also check the accuracy of equation 2.16 for ln N!.</p></div>
+<p class="original-caption">Schroeder 習題 2-15（Problem 2.15）· p.63</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$N=50$ 時檢查 Stirling 近似與 (2.16) 的準確度。</div>
+  <ol class="write">
+    <li>$50!=3.0414\times10^{64}$；$50^{50}e^{-50}\sqrt{100\pi}=3.0363\times10^{64}$，低 0.17%。</li>
+    <li>$\ln50!=148.48$；$50\ln50-50=145.60$，低 1.9%。</li>
+  </ol>
+  <div class="final">答：0.17%；1.9%。</div>
+  <p class="small"><a href="#sc-2-15">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-16" data-group="四、很大的數與 Stirling 近似（§2.4）" data-title="課本 2-16：1000 枚硬幣">
+  <h3>課本 2-16</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you flip 1000 coins.</p><p>(a) What is the probability of getting exactly 500 heads and 500 tails? (Hint: First write down a formula for the total number of possible outcomes. Then, to determine the “multiplicity” of the 500-500 “macrostate,” use Stirling’s approximation. If you have a fancy calculator that makes Stirling’s approximation unnecessary, multiply all the numbers in this problem by 10, or 100, or 1000, until Stirling’s approximation becomes necessary.)</p><p>(b) What is the probability of getting exactly 600 heads and 400 tails?</p></div>
+<p class="original-caption">Schroeder 習題 2-16（Problem 2.16）· p.63</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　丟 1000 枚硬幣：(a) 剛好 500 正的機率（用 Stirling）；(b) 剛好 600 正的機率。</div>
+  <ol class="write">
+    <li>總數 $2^{1000}$；機率題要保留 $\sqrt{2\pi N}$。</li>
+    <li>(a) $\dfrac{1000!}{(500!)^2}\approx\dfrac{1000^{1000}e^{-1000}\sqrt{2000\pi}}{(500^{500}e^{-500}\sqrt{1000\pi})^2}=\dfrac{2^{1000}}{\sqrt{500\pi}}$，$P=1/\sqrt{500\pi}=0.025$。</li>
+    <li>(b) $\dfrac{1000!}{600!\,400!}\approx\dfrac{1000^{1000}}{600^{600}400^{400}\sqrt{480\pi}}$，$P=\left(\frac56\right)^{600}\left(\frac54\right)^{400}\dfrac1{\sqrt{480\pi}}=4.6\times10^{-11}$。</li>
+  </ol>
+  <div class="final">答：(a) 2.5%；(b) $4.6\times10^{-11}$。</div>
+  <p class="small"><a href="#sc-2-16">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-04a" data-group="四、很大的數與 Stirling 近似（§2.4）" data-title="自編難題：平手的機率">
+  <h3>自編難題 4-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證 $\binom{2N}N\approx4^N/\sqrt{\pi N}$；$2N$ 枚剛好平手的機率；何時低於 1%；為何不能丟根號。</div>
+  <ol class="write">
+    <li>$\binom{2N}N\approx\frac{(2N)^{2N}e^{-2N}\sqrt{4\pi N}}{N^{2N}e^{-2N}2\pi N}=\frac{4^N}{\sqrt{\pi N}}$。</li>
+    <li>$P=\binom{2N}N/4^N\approx1/\sqrt{\pi N}$；$N=50$：0.0798（精確 0.0796）。</li>
+    <li>$1/\sqrt{\pi N}\lt0.01\Rightarrow N\gt10^4/\pi=3183$；精確計算 $N=3183$ 時 $0.0099998$，故 6366 枚。</li>
+    <li>丟掉根號得 $P\approx1$；兩個很大的數相除時根號就是答案。</li>
+  </ol>
+  <div class="final">答：$1/\sqrt{\pi N}$；6366 枚（$N=3183$）。</div>
+  <p class="small"><a href="#sf-04a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-04b" data-group="四、很大的數與 Stirling 近似（§2.4）" data-title="自編難題：比較很大的數">
+  <h3>自編難題 4-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　比較 $(10^{23})!$、$10^{10^{24}}$、$(10^{24})^{10^{23}}$；求 $A/C$；$A\times10^{10^{23}}$ 是否等於 $A$。</div>
+  <ol class="write">
+    <li>$\log_{10}A\approx10^{23}(23-0.434)=2.257\times10^{24}$；$\log_{10}B=10^{24}$；$\log_{10}C=2.4\times10^{24}$。</li>
+    <li>$B\lt A\lt C$。</li>
+    <li>$A/C=10^{-1.434\times10^{23}}=(10e)^{-N}$（來自 $C/A\approx10^Ne^N$）。</li>
+    <li>$\log_{10}(A\cdot10^{10^{23}})=2.357\times10^{24}$：乘很大的數會改變結果。</li>
+  </ol>
+  <div class="final">答：$B\lt A\lt C$；$A/C=10^{-1.43\times10^{23}}$；不相等。</div>
+  <p class="small"><a href="#sf-04b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 五、大愛因斯坦固體的多重度 ===== -->
+<article class="exam-item" data-exam-id="tk-115-4" data-group="五、大愛因斯坦固體的多重度（§2.4）" data-title="考古 115-4：Stirling 推多重度（習題 2.18、2.17）">
+  <h3>考古 115-4（課本習題 2.18、2.17）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-4"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[20pts] Consider an Einstein solid (a model description of the solid, imaging all elements of a solid are connected by some ”springs” in three spatial dimensions. Possible energy state for one oscillation mode is $E_q\equiv(q+\frac12)\hbar\omega$ where $\hbar$ and $\omega$ are Planck constant and some material specific angular frequency.) for which both $N$ (oscillator’s number) and $q$ (energy quantum number) are much greater than 1. Here we simplify the expression for energy mode $E_q\simeq q\epsilon$ with $\epsilon$ as some given energy unit.</p><p>(a) Use Stirling’s approximation (i.e. $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$) to show the multiplicity of an Einstein’s solid is approximately given by: (5pts)$$\Omega(N,q)\simeq\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}$$</p><p>(b)Find the entropy of an Einstein solid as a function of $N$ and $q$ using $\Omega(N,q)\simeq\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N$. (4pts) Explain why the factors omitted in (a) have no effect on the entropy when $N$ and $q$ are large. (1pt)</p><p>(c) Show that when $q\gg N$ this multiplicity can be simplified as $$\Omega(N,q)\simeq\left(\frac{eq}{N}\right)^N$$ This limit is called ”high temperature limit”. (3pts) Explain why this condition is called ”high temperature limit”. (2pt)</p><p>(d) For $q\ll N$ (the ”low temperature limit”), what should be the simplified form of multiplicity function? Derive it <em>or</em> give your answer and argument. (5pts)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.18）</strong></p><p>Use Stirling’s approximation to show that the multiplicity of an Einstein solid, for any large values of $N$ and $q$, is approximately $$\Omega(N,q)\approx\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}.$$ The square root in the denominator is merely large, and can often be neglected. However, it is needed in Problem 2.22. (Hint: First show that $\Omega=\frac{N}{q+N}\frac{(q+N)!}{q!\,N!}$. Do not neglect the $\sqrt{2\pi N}$ in Stirling’s approximation.)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.17）</strong></p><p>Use the methods of this section to derive a formula, similar to equation 2.21, for the multiplicity of an Einstein solid in the “low-temperature” limit, $q\ll N$.</p></div>
+<p class="original-caption">115 級上學期期中 第 4 題 · 即 Schroeder Problem 2.18、2.17 · p.64 · 2.18 也是熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）考慮一個愛因斯坦固體（固體的一種模型：想像固體的所有組成單元在三個空間方向上由「彈簧」連接。一個振動模式可能的能量狀態是 $E_q\equiv(q+\tfrac12)\hbar\omega$，其中 $\hbar$ 是普朗克常數、$\omega$ 是某個與材料有關的角頻率），其中 $N$（振子數）與 $q$（能量量子數）都遠大於 1。這裡把能量模式簡化成 $E_q\simeq q\epsilon$，$\epsilon$ 是某個給定的能量單位。(a) 用 Stirling 近似（即 $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$）證明愛因斯坦固體的多重度近似為（5 分）
+    $$\Omega(N,q)\simeq\frac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$$
+    (b) 用 $\Omega(N,q)\simeq\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N$ 求愛因斯坦固體的熵，表示成 $N$ 與 $q$ 的函數。（4 分）說明為什麼當 $N$、$q$ 很大時，(a) 中被省略的因子對熵沒有影響。（1 分）(c) 證明當 $q\gg N$ 時這個多重度可以化簡為
+    $$\Omega(N,q)\simeq\left(\frac{eq}N\right)^N$$
+    這個極限稱為「高溫極限」。（3 分）說明為什麼這個條件叫「高溫極限」。（2 分）(d) 當 $q\ll N$（「低溫極限」）時，多重度函數的化簡形式應該是什麼？推導出來，或者寫出答案並給出論證。（5 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 4 題</p>
+  <div class="rote">
+    <p><b>看到</b>「愛因斯坦固體」＋「Stirling」＋「$q\gg N$ 高溫／$q\ll N$ 低溫」⟹ 題型：<b>Stirling 推愛因斯坦固體多重度</b></p>
+    <p><b>背</b></p>
+    <ol>
+      <li>$\Omega=\dfrac{(q+N-1)!}{q!\,(N-1)!}$</li>
+      <li>三招：$(N-1)!=\dfrac{N!}N$、$(q+N-1)!=\dfrac{(q+N)!}{q+N}$ → 代 $N!\approx N^Ne^{-N}\sqrt{2\pi N}$ → $e$ 的次方抵消、$(q+N)^{q+N}$ 拆成 $(q+N)^q(q+N)^N$</li>
+      <li>$S=k\ln\Omega=k\big[(q+N)\ln(q+N)-q\ln q-N\ln N\big]$；根號項只有 $\ln N$ 大小，可丟</li>
+      <li>高溫 $\left(1+\frac Nq\right)^q\to e^N$ ⟹ $\left(\frac{eq}N\right)^N$；低溫把 $q\leftrightarrow N$ 對調 ⟹ $\left(\frac{eN}q\right)^q$；「高溫」＝每個振子 $\frac qN\gg1$ 份能量 ⟺ $kT\gg\epsilon$</li>
+    </ol>
+  </div>
+  <ol class="write">
+    <li>(a) $\Omega=\dfrac N{q+N}\cdot\dfrac{(q+N)!}{q!\,N!}$</li>
+    <li>代 Stirling：$\Omega\approx\dfrac N{q+N}\cdot\dfrac{(q+N)^{q+N}e^{-(q+N)}\sqrt{2\pi(q+N)}}{q^qe^{-q}\sqrt{2\pi q}\;N^Ne^{-N}\sqrt{2\pi N}}$</li>
+    <li>$e$ 抵消、根號合併成 $\sqrt{\frac N{2\pi q(q+N)}}$、$(q+N)^{q+N}$ 拆開 ⟹ $\Omega\approx\dfrac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$</li>
+    <li>(b) $S=k\left[q\ln\dfrac{q+N}q+N\ln\dfrac{q+N}N\right]=k\big[(q+N)\ln(q+N)-q\ln q-N\ln N\big]$；丟掉的 $-\frac k2\ln\frac{2\pi q(q+N)}N\sim\ln N\approx53\ll10^{23}$</li>
+    <li>(c) $q\gg N$：$\left(\dfrac{q+N}q\right)^q=e^{q\ln(1+N/q)}\approx e^N$，$\dfrac{q+N}N\approx\dfrac qN$ ⟹ $\Omega\approx\left(\dfrac{eq}N\right)^N$；高溫：每振子 $\frac qN\gg1$ 份，$U/N\gg\epsilon$（$kT\gg\epsilon$）</li>
+    <li>(d) $q\ll N$：$\left(\dfrac{q+N}N\right)^N\approx e^q$，$\dfrac{q+N}q\approx\dfrac Nq$ ⟹ $\Omega\approx\left(\dfrac{eN}q\right)^q$</li>
+  </ol>
+  <div class="final">答：(b) $S=k[(q+N)\ln(q+N)-q\ln q-N\ln N]$；(c) $(eq/N)^N$；(d) $(eN/q)^q$。</div>
+  <p class="small"><a href="#tk-115-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tkx-2" data-group="五、大愛因斯坦固體的多重度（§2.4）" data-title="考古 某級-2：愛因斯坦固體與熱容量">
+  <h3>考古 某級上學期期中 第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tkx-2"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>Consider an Einstein solid (a model description of the solid, imaging all elements of a solid are connected by some ”springs” in three spatial dimensions. Possible energy state for one oscillation mode is $E_q\equiv(q+\frac12)\hbar\omega$ where $\hbar$ and $\omega$ are Planck constant and some material specific angular frequency.) for which both $N$ (particle number) and $q$ (energy quantum number) are much greater than 1. Here we simplify the expression for energy mode $E_q\simeq q\epsilon$ with $\epsilon$ as some given energy unit.</p><p>(a) Use Stirling’s approximation (i.e. $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$) to show the multiplicity of an Einstein’s solid is approximately given by: (5 pts)$$\Omega(N,q)\simeq\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}$$</p><p>(b) Find the chemical potential $\mu$ at some temperature T. Express it in terms of $T$, $N$, Boltzmann constant $k$, and $q$. (4 pts)</p><p>(c) Show that when $q\gg N$ this multiplicity can be simplified as $$\Omega(N,q)\simeq\left(\frac{eq}{N}\right)^N$$ This limit is called ”high temperature limit”. (3 pts) Explain why this condition is called ”high temperature limit”. (1pt)</p><p>(d) For $q\ll N$ (the ”low temperature limit”), what should be the simplified form of multiplicity function? Derive it <em>or</em> give your answer and argument. (3pts)</p><p>(e) Use the thermodynamical definition of temperature and the result in 2(c) to find relation between temperature and internal energy $U$ in terms of Boltzmann constant $k$, $\epsilon$, $N$, and temperature $T$. (3pts) Use this result to find the constant volume heat capacity $C_V$ of this Einstein solid in the high temperature limit.(3pts) Does it consistent with what you expect from energy equipartition theorem? Explain.(1pt)</p><p>(f) Use the thermodynamical definition of temperature and the result in 2(d) to find relation between temperature and internal energy $U$ in terms of Boltzmann constant $k$, $\epsilon$, $N$, and temperature $T$. (3pts) Use this result to find the constant volume heat capacity $C_V$ of this Einstein solid in the low temperature limit. (3pts) Does it consistent with what you expect from energy equipartition theorem? Explain.(1pt)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.18）</strong></p><p>Use Stirling’s approximation to show that the multiplicity of an Einstein solid, for any large values of $N$ and $q$, is approximately $$\Omega(N,q)\approx\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}.$$ The square root in the denominator is merely large, and can often be neglected. However, it is needed in Problem 2.22. (Hint: First show that $\Omega=\frac{N}{q+N}\frac{(q+N)!}{q!\,N!}$. Do not neglect the $\sqrt{2\pi N}$ in Stirling’s approximation.)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.17）</strong></p><p>Use the methods of this section to derive a formula, similar to equation 2.21, for the multiplicity of an Einstein solid in the “low-temperature” limit, $q\ll N$.</p></div>
+<p class="original-caption">某級上學期期中（範圍第 1–4.1 章）第 2 題 · (a)(c)(d) 即 Schroeder Problem 2.18、2.17 · p.64</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（30 分）考慮一個愛因斯坦固體（固體的一種模型：想像固體的所有組成單元在三個空間方向上由「彈簧」連接。一個振動模式可能的能量狀態是 $E_q\equiv(q+\tfrac12)\hbar\omega$，其中 $\hbar$ 與 $\omega$ 是普朗克常數與某個與材料有關的角頻率），其中 $N$（粒子數）與 $q$（能量量子數）都遠大於 1。這裡把能量模式簡化成 $E_q\simeq q\epsilon$，$\epsilon$ 是某個給定的能量單位。(a) 用 Stirling 近似（即 $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$）證明愛因斯坦固體的多重度近似為（5 分）
+    $$\Omega(N,q)\simeq\frac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$$
+    (b) 求某溫度 $T$ 下的化學勢 $\mu$，用 $T$、$N$、波茲曼常數 $k$ 與 $q$ 表示。（4 分）(c) 證明當 $q\gg N$ 時這個多重度可以化簡為 $\Omega(N,q)\simeq\left(\frac{eq}N\right)^N$。這個極限稱為「高溫極限」。（3 分）說明為什麼這個條件叫「高溫極限」。（1 分）(d) 當 $q\ll N$（「低溫極限」）時，多重度函數的化簡形式應該是什麼？推導出來，或者寫出答案並給出論證。（3 分）(e) 用溫度的熱力學定義與 2(c) 的結果，求溫度與內能 $U$ 的關係，以波茲曼常數 $k$、$\epsilon$、$N$ 與溫度 $T$ 表示。（3 分）用這個結果求這個愛因斯坦固體在高溫極限下的定容熱容量 $C_V$。（3 分）它和你從能量均分定理預期的一致嗎？說明。（1 分）(f) 用溫度的熱力學定義與 2(d) 的結果，求溫度與內能 $U$ 的關係，以波茲曼常數 $k$、$\epsilon$、$N$ 與溫度 $T$ 表示。（3 分）用這個結果求這個愛因斯坦固體在低溫極限下的定容熱容量 $C_V$。（3 分）它和你從能量均分定理預期的一致嗎？說明。（1 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級全部熱學（期中末）</a> 第一份考卷第 2 題</p>
+  <ol class="write">
+    <li>(a) $(N-1)!=\dfrac{N!}N$、$(q+N-1)!=\dfrac{(q+N)!}{q+N}$ ⟹ $\Omega=\dfrac N{q+N}\cdot\dfrac{(q+N)!}{q!\,N!}$。</li>
+    <li>代 Stirling：$\Omega\approx\dfrac N{q+N}\dfrac{(q+N)^{q+N}e^{-(q+N)}\sqrt{2\pi(q+N)}}{q^qe^{-q}\sqrt{2\pi q}\,N^Ne^{-N}\sqrt{2\pi N}}$，$e$ 的次方抵消，根號 $=\sqrt{\dfrac N{2\pi q(q+N)}}$。</li>
+    <li>$(q+N)^{q+N}=(q+N)^q(q+N)^N$ ⟹ $\Omega\approx\dfrac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$。</li>
+    <li>(c) $q\gg N$：$\left(1+\frac Nq\right)^q=e^{q\ln(1+N/q)}\approx e^N$，$\frac{q+N}N\approx\frac qN$，根號只是大的因子 ⟹ $\Omega\approx\left(\frac{eq}N\right)^N$。</li>
+    <li>高溫：每個振子平均 $q/N\gg1$ 份能量，$U/N\gg\epsilon$，量子化不明顯（$kT\gg\epsilon$）。</li>
+    <li>(d) $q\ll N$：$\left(1+\frac qN\right)^N\approx e^q$，$\frac{q+N}q\approx\frac Nq$ ⟹ $\Omega\approx\left(\frac{eN}q\right)^q$（$q\leftrightarrow N$ 對稱）。</li>
+    <li>(b) $S=k[(q+N)\ln(q+N)-q\ln q-N\ln N]$，$U$ 固定 ⟹ $q$ 固定：$\dfrac{\partial S}{\partial N}=k\ln\dfrac{q+N}N$，$\mu=-T\dfrac{\partial S}{\partial N}=-kT\ln\left(1+\dfrac qN\right)$。</li>
+    <li>(e) 高溫 $S=Nk[\ln(U/N\epsilon)+1]$：$\dfrac1T=\dfrac{\partial S}{\partial U}=\dfrac{Nk}U$ ⟹ $U=NkT$，$C_V=Nk$；符合均分（每振子 2 個二次自由度共 $kT$）。</li>
+    <li>(f) 低溫 $S=kq\ln(eN/q)$：$\dfrac1T=\dfrac k\epsilon\ln\dfrac Nq$ ⟹ $U=N\epsilon e^{-\epsilon/kT}$，$C_V=Nk\left(\dfrac\epsilon{kT}\right)^2e^{-\epsilon/kT}$；不符合均分：$kT\ll\epsilon$，振動自由度被凍結。</li>
+  </ol>
+  <div class="final">答：(c) $(eq/N)^N$；(d) $(eN/q)^q$；(b) $\mu=-kT\ln(1+q/N)$；高溫 $U=NkT$、$C_V=Nk$；低溫 $U=N\epsilon e^{-\epsilon/kT}$、$C_V=Nk(\epsilon/kT)^2e^{-\epsilon/kT}$。</div>
+  <p class="small"><a href="#tkx-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-19" data-group="五、大愛因斯坦固體的多重度（§2.4）" data-title="課本 2-19：順磁體近似">
+  <h3>課本 2-19</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　用 Stirling 求順磁體多重度近似式，$N_\downarrow\ll N$ 時化成 $(Ne/N_\downarrow)^{N_\downarrow}$，並說明為何與低溫愛因斯坦固體相同。</div>
+  <ol class="write">
+    <li>$\Omega=\dfrac{N!}{N_\downarrow!(N-N_\downarrow)!}\approx\dfrac{N^N}{N_\downarrow^{N_\downarrow}(N-N_\downarrow)^{N-N_\downarrow}}$</li>
+    <li>$\ln(N-N_\downarrow)\approx\ln N-N_\downarrow/N$ ⟹ $\ln\Omega\approx N_\downarrow\ln\dfrac N{N_\downarrow}+N_\downarrow$ ⟹ $\Omega\approx\left(\dfrac{Ne}{N_\downarrow}\right)^{N_\downarrow}$</li>
+    <li>能量份數遠少於粒子數時，某振子拿到兩份以上的排法極少，固體與順磁體（每個最多一份）幾乎相同。</li>
+  </ol>
+  <div class="final">答：$\Omega\approx(Ne/N_\downarrow)^{N_\downarrow}$，即 $(eN/q)^q$。</div>
+  <p class="small"><a href="#sc-2-19">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-05a" data-group="五、大愛因斯坦固體的多重度（§2.4）" data-title="自編難題：(2.20) 的修正項">
+  <h3>自編難題 5-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證 $\ln\Omega/N=(1+r)\ln(1+r)-r\ln r$ 並展開；指出 (2.20) 的錯；用 $N=50,q=5000$ 檢查；求 1% 門檻。</div>
+  <ol class="write">
+    <li>(2.18)÷$N$：$\ln N$ 消去；$u=1/r$ 展開得 $\ln r+1+\frac1{2r}-\frac1{6r^2}$。</li>
+    <li>$(q+N)\big[\frac Nq-\frac12(\frac Nq)^2\big]=N+\frac{N^2}{2q}$：(2.19) 丟掉的二次項同階，正確修正 $N^2/2q$。</li>
+    <li>$50(\ln100+1)+0.25=280.51=(2.18)$。</li>
+    <li>$\frac{1/2r}{\ln r+1}\lt0.01\Rightarrow r\approx13.4$；$q=N$ 時 $2\ln2$ 對 1，差 28%。</li>
+  </ol>
+  <div class="final">答：修正項 $N^2/2q$；$q/N\gtrsim13.4$。</div>
+  <p class="small"><a href="#sf-05a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-05b" data-group="五、大愛因斯坦固體的多重度（§2.4）" data-title="自編難題：加一份能量">
+  <h3>自編難題 5-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N=10^{22}$；A：$q=10^{20}$，B：$q=10^{24}$。各加一份能量多重度變幾倍；B→A 移一份總多重度變幾倍；估 $kT/\epsilon$。</div>
+  <ol class="write">
+    <li>$\frac{\Omega(q+1)}{\Omega(q)}=\frac{q+N}{q+1}$：A 為 101，B 為 1.01。</li>
+    <li>移一份 B→A：$101/1.01=100$ 倍，熱由 B 流向 A。</li>
+    <li>$\epsilon/kT\approx\ln$（比值）：$kT_A\approx\epsilon/4.62=0.22\epsilon$，$kT_B\approx100\epsilon$（$=q_B\epsilon/N$ ✔）。</li>
+  </ol>
+  <div class="final">答：101 倍、1.01 倍、100 倍；B→A。</div>
+  <p class="small"><a href="#sf-05b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 六、多重度函數的尖銳程度 ===== -->
+<article class="exam-item" data-exam-id="sc-2-20" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="課本 2-20：縮進一頁">
+  <h3>課本 2-20</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you were to shrink Figure 2.7 until the entire horizontal scale fits on the page. How wide would the peak be?</p></div>
+<p class="original-caption">Schroeder 習題 2-20（Problem 2.20）· p.66</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　把 Fig. 2.7 縮到整個橫軸放得進一頁，峰有多寬？</div>
+  <ol class="write">
+    <li>縮小倍數 $10^5\ \text{km}/20\ \text{cm}=5\times10^8$。</li>
+    <li>峰寬 $1\ \text{cm}/5\times10^8=2\times10^{-11}\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：約 $0.2\ \text{Å}$，比原子還窄。</div>
+  <p class="small"><a href="#sc-2-20">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-21" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="課本 2-21：畫 [4z(1-z)]^N">
+  <h3>課本 2-21</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-21"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a computer to plot formula 2.22 directly, as follows. Define $z=q_A/q$, so that $(1-z)=q_B/q$. Then, aside from an overall constant that we’ll ignore, the multiplicity function is $[4z(1-z)]^N$, where $z$ ranges from 0 to 1 and the factor of 4 ensures that the height of the peak is equal to 1 for any $N$. Plot this function for $N=1$, 10, 100, 1000, and 10,000. Observe how the width of the peak decreases as $N$ increases.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$z=q_A/q$，畫 $[4z(1-z)]^N$（$N=1\sim10^4$），觀察峰寬。</div>
+  <ol class="write">
+    <li>$\Omega=\left(\frac eN\right)^{2N}[q^2z(1-z)]^N=\Omega_{\max}[4z(1-z)]^N$，峰高 1。</li>
+    <li>$1/e$ 半寬 $w=\tfrac12\sqrt{1-e^{-1/N}}\approx\frac1{2\sqrt N}$。</li>
+    <li>$w=0.398,\ 0.154,\ 0.0499,\ 0.0158,\ 0.0050$。</li>
+  </ol>
+  <div class="final">答：峰寬 $\approx1/(2\sqrt N)$，$N$ 乘 100 寬度縮為 1/10。</div>
+  <p class="small"><a href="#sc-2-21">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-22" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="課本 2-22：面積 ÷ 高">
+  <h3>課本 2-22</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　兩個 $N$ 振子固體共 $2N$ 份：(a) 巨觀態數；(b) 微觀態總數；(c) 平分時的多重度；(d) 峰寬與比例（$N=10^{23}$）。</div>
+  <ol class="write">
+    <li>(a) $2N+1$。</li>
+    <li>(b) 習題 2.18 代 $(2N,2N)$：$2^{2N}2^{2N}\sqrt{\dfrac{2N}{2\pi(2N)(4N)}}=\dfrac{2^{4N}}{\sqrt{8\pi N}}$</li>
+    <li>(c) 代 $(N,N)$ 再平方：$\left(\dfrac{2^{2N}}{\sqrt{4\pi N}}\right)^2=\dfrac{2^{4N}}{4\pi N}$</li>
+    <li>(d) 寬 $\approx\dfrac{(b)}{(c)}=\sqrt{2\pi N}$；比例 $\dfrac{\sqrt{2\pi N}}{2N}=\sqrt{\dfrac\pi{2N}}=4\times10^{-12}$。</li>
+  </ol>
+  <div class="final">答：$2N+1$；$2^{4N}/\sqrt{8\pi N}$；$2^{4N}/(4\pi N)$；$\sqrt{2\pi N}$，$4\times10^{-12}$。</div>
+  <p class="small"><a href="#sc-2-22">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-23" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="課本 2-23：可及的微觀態">
+  <h3>課本 2-23</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a two-state paramagnet with 10<sup>23</sup> elementary dipoles, with the total energy fixed at zero so that exactly half the dipoles point up and half point down.</p><p>(a) How many microstates are “accessible” to this system?</p><p>(b) Suppose that the microstate of this system changes a billion times per second. How many microstates will it explore in ten billion years (the age of the universe)?</p><p>(c) Is it correct to say that, if you wait long enough, a system will eventually be found in every “accessible” microstate? Explain your answer, and discuss the meaning of the word “accessible.”</p></div>
+<p class="original-caption">Schroeder 習題 2-23（Problem 2.23）· p.67</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$10^{23}$ 偶極、總能量 0 的順磁體：(a) 可及微觀態數；(b) 每秒變 $10^9$ 次、一百億年經歷幾個；(c)「終究會經歷每個可及微觀態」對嗎？</div>
+  <ol class="write">
+    <li>(a) $\binom N{N/2}\approx2^N\sqrt{2/(\pi N)}\approx2^{10^{23}}$</li>
+    <li>(b) $10^9\times3.16\times10^{17}\ \text{s}=3\times10^{26}$</li>
+    <li>(c) 不對：經歷比例 $\approx0$。「可及」是允許且我們無法排除，不是真的會去到。</li>
+  </ol>
+  <div class="final">答：$2^{10^{23}}$；$3\times10^{26}$；不對。</div>
+  <p class="small"><a href="#sc-2-23">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-115-6" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="考古 115-6：順磁體高斯峰（習題 2.24）">
+  <h3>考古 115-6（課本習題 2.24）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-6"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[20pts] For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function. (5pts)</p><p>(b) Use the methods similar to what you learned in the textbook to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$, and show that the distribution is a Gaussian function. (10pts) Check that your formula agrees with your answer to part (a) when $x=0$. (1pt)</p><p>(c) How wide is the peak of the Gaussian in the multiplicity function? Remember to derive it, not just write down the answer!(4pts)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.24）</strong></p><p>For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function.</p><p>(b) Use the methods of this section to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$. Check that your formula agrees with your answer to part (a) when $x=0$.</p><p>(c) How wide is the peak in the multiplicity function?</p><p>(d) Suppose you flip 1,000,000 coins. Would you be surprised to obtain 501,000 heads and 499,000 tails? Would you be surprised to obtain 510,000 heads and 490,000 tails? Explain.</p><p class="small">（(d) 不在這份考卷裡，見<a href="#sc-2-24">課本 2-24</a>。）</p></div>
+<p class="original-caption">115 級上學期期中 第 6 題 · 即 Schroeder Problem 2.24(a)–(c) · p.67</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）單一個大的兩態順磁體，其多重度函數在 $N_\uparrow=N/2$ 附近有非常尖的峰。(a) 用 Stirling 近似估計多重度函數峰的高度。（5 分）(b) 用和課本類似的方法，推導峰附近多重度函數的公式，以 $x\equiv N_\uparrow-(N/2)$ 表示，並證明這個分布是高斯函數。（10 分）檢查當 $x=0$ 時你的公式與 (a) 的答案一致。（1 分）(c) 多重度函數的高斯峰有多寬？記得要推導，不能只寫答案！（4 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 6 題</p>
+  <ol class="write">
+    <li>(a) $\Omega_{\max}=\dfrac{N!}{[(N/2)!]^2}\approx\dfrac{N^Ne^{-N}\sqrt{2\pi N}}{[(N/2)^{N/2}e^{-N/2}\sqrt{\pi N}]^2}=2^N\sqrt{\dfrac2{\pi N}}$</li>
+    <li>(b) $\Omega\approx\dfrac{N^N}{N_\uparrow^{N_\uparrow}N_\downarrow^{N_\downarrow}}\sqrt{\dfrac N{2\pi N_\uparrow N_\downarrow}}$，$N_{\uparrow,\downarrow}=\frac N2\pm x$。</li>
+    <li>$f(x)\equiv N_\uparrow\ln N_\uparrow+N_\downarrow\ln N_\downarrow=\frac N2\ln\left[\left(\frac N2\right)^2-x^2\right]+x\ln\dfrac{N/2+x}{N/2-x}$</li>
+    <li>$x\ll N$：$\approx\frac N2\left[2\ln\frac N2-\frac{4x^2}{N^2}\right]+x\cdot\frac{4x}N=N\ln\frac N2+\frac{2x^2}N$；根號 $\approx\sqrt{2/(\pi N)}$。</li>
+    <li>$\ln\Omega\approx N\ln2-\dfrac{2x^2}N+\ln\sqrt{\dfrac2{\pi N}}$ ⟹ $\Omega\approx2^N\sqrt{\dfrac2{\pi N}}\,e^{-2x^2/N}$：高斯函數。$x=0$ 回到 (a)。</li>
+    <li>(c) $e^{-2x^2/N}=e^{-1}$ ⟹ $x=\pm\sqrt{N/2}$，全寬 $\sqrt{2N}$。</li>
+  </ol>
+  <div class="final">答：(a) $2^N\sqrt{2/(\pi N)}$；(b) $\Omega\approx2^N\sqrt{2/(\pi N)}e^{-2x^2/N}$；(c) 半寬 $\sqrt{N/2}$。</div>
+  <p class="small"><a href="#tk-115-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tkx-3" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="考古 某級-3：順磁體與負溫度">
+  <h3>考古 某級上學期期中 第 3 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tkx-3"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>The two-state paramagnetism is composed of spin up/down magnetic dipoles, with $N_\uparrow$ denoting number of particles with spin up and $N-N_\uparrow$ denoting number of particles with spin down. The total energy of the system is given by $$U=\mu B(N-2N_\uparrow),$$ where $\mu$ is called the magnetic moment and $B$ is the external magnetic field. The magnetization, $M$, is defined to be the total magnetic moment of the system expressed as: $$M=\mu(2N_\uparrow-N)$$</p><p>(a) Find the multiplicity function $\Omega(N,N_\uparrow)$ in terms of $N$ and $N_\uparrow$. (3pts)</p><p>(b) Use the Stirling’s approximation to show that the entropy $S$ of the system can be written as: (4pts) $$S\simeq N\ln N-N_\uparrow\ln N_\uparrow-(N-N_\uparrow)\ln(N-N_\uparrow)$$</p><p>(c) Take $N_\uparrow=N/2+x$ and $N_\downarrow=N/2-x$ with $x\ll N$ to show that the multiplicity function plotted as a function of $N_\uparrow$ is a Gaussian function peaked at $N_\uparrow=N/2$. (9pts)</p><p>(d) Sketch entropy $S$ as a function of internal energy $U$ (3pts). Identify the region where the temperature is negative (1pt).</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.19）</strong></p><p>Use Stirling’s approximation to find an approximate formula for the multiplicity of a two-state paramagnet. Simplify this formula in the limit $N_\downarrow\ll N$ to obtain $\Omega\approx(Ne/N_\downarrow)^{N_\downarrow}$. This result should look very similar to your answer to Problem 2.17; explain why these two systems, in the limits considered, are essentially the same.</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.24）</strong></p><p>For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function.</p><p>(b) Use the methods of this section to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$. Check that your formula agrees with your answer to part (a) when $x=0$.</p><p>(c) How wide is the peak in the multiplicity function?</p><p>(d) Suppose you flip 1,000,000 coins. Would you be surprised to obtain 501,000 heads and 499,000 tails? Would you be surprised to obtain 510,000 heads and 490,000 tails? Explain.</p><p class="small">（(d) 不在這份考卷裡，見<a href="#sc-2-24">課本 2-24</a>。）</p></div>
+<p class="original-caption">某級上學期期中（範圍第 1–4.1 章）第 3 題 · 即 Schroeder Problem 2.19、2.24 · p.64–67</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）兩態順磁體由自旋向上／向下的磁偶極組成，$N_\uparrow$ 表示自旋向上的粒子數，$N-N_\uparrow$ 表示自旋向下的粒子數。系統的總能量為
+    $$U=\mu B(N-2N_\uparrow),$$
+    其中 $\mu$ 稱為磁矩，$B$ 是外加磁場。磁化量 $M$ 定義為系統的總磁矩：
+    $$M=\mu(2N_\uparrow-N).$$
+    (a) 求多重度函數 $\Omega(N,N_\uparrow)$，以 $N$ 與 $N_\uparrow$ 表示。（3 分）(b) 用 Stirling 近似證明系統的熵 $S$ 可以寫成（4 分）
+    $$S\simeq N\ln N-N_\uparrow\ln N_\uparrow-(N-N_\uparrow)\ln(N-N_\uparrow)$$
+    (c) 取 $N_\uparrow=N/2+x$、$N_\downarrow=N/2-x$，$x\ll N$，證明多重度函數對 $N_\uparrow$ 作圖是峰值在 $N_\uparrow=N/2$ 的高斯函數。（9 分）(d) 畫出熵 $S$ 對內能 $U$ 的圖（3 分），並標出溫度為負的區域（1 分）。</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級全部熱學（期中末）</a> 第一份考卷第 3 題</p>
+  <ol class="write">
+    <li>(a) $\Omega(N,N_\uparrow)=\dfrac{N!}{N_\uparrow!(N-N_\uparrow)!}$</li>
+    <li>(b) $\dfrac Sk=\ln N!-\ln N_\uparrow!-\ln(N-N_\uparrow)!\approx N\ln N-N_\uparrow\ln N_\uparrow-(N-N_\uparrow)\ln(N-N_\uparrow)$（線性項 $-N+N_\uparrow+N-N_\uparrow=0$）。</li>
+    <li>(c) 代 $N_{\uparrow,\downarrow}=\frac N2\pm x$：$N_\uparrow\ln N_\uparrow+N_\downarrow\ln N_\downarrow\approx N\ln\frac N2+\frac{2x^2}N$ ⟹ $\ln\Omega\approx N\ln2-\frac{2x^2}N$，$\Omega\approx2^Ne^{-2(N_\uparrow-N/2)^2/N}$，峰在 $N_\uparrow=N/2$ 的高斯函數。</li>
+    <li>(d) $U$ 從 $-N\mu B$ 到 $N\mu B$；兩端 $S=0$，$U=0$ 時 $S_{\max}=Nk\ln2$，對稱拱形。$1/T=\partial S/\partial U$：$U\gt0$ 斜率負 ⟹ $T\lt0$。</li>
+  </ol>
+  <div class="final">答：(d) 拱形，$0\lt U\le N\mu B$（$N_\uparrow\lt N/2$）為負溫度區。</div>
+  <p class="small"><a href="#tkx-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-24" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="課本 2-24：一百萬枚硬幣">
+  <h3>課本 2-24</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-24"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function.</p><p>(b) Use the methods of this section to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$. Check that your formula agrees with your answer to part (a) when $x=0$.</p><p>(c) How wide is the peak in the multiplicity function?</p><p>(d) Suppose you flip 1,000,000 coins. Would you be surprised to obtain 501,000 heads and 499,000 tails? Would you be surprised to obtain 510,000 heads and 490,000 tails? Explain.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　順磁體峰高、峰附近公式、峰寬；丟 $10^6$ 枚硬幣得 501 000 或 510 000 正面是否意外。</div>
+  <ol class="write">
+    <li>(a)–(c)（同考古 115-6）：$\Omega\approx2^N\sqrt{\frac2{\pi N}}e^{-2x^2/N}$，半寬 $\sqrt{N/2}$。</li>
+    <li>$N=10^6$：$\sigma=\sqrt N/2=500$。$x=1000=2\sigma$：$\Omega/\Omega_{\max}=e^{-2}=0.135$，$P(\ge501\,000)\approx2.3\%$，不意外。</li>
+    <li>$x=10^4=20\sigma$：$e^{-200}=1.4\times10^{-87}$，極意外，硬幣不公正。</li>
+  </ol>
+  <div class="final">答：501 000 不意外；510 000 極意外。</div>
+  <p class="small"><a href="#sc-2-24">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-25" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="課本 2-25：隨機漫步">
+  <h3>課本 2-25</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-25"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The mathematics of the previous problem can also be applied to a one-dimensional random walk: a journey consisting of N steps, all the same size, each chosen randomly to be either forward or backward. (The usual mental image is that of a drunk stumbling along an alley.)</p><p>(a) Where are you most likely to find yourself, after the end of a long random walk?</p><p>(b) Suppose you take a random walk of 10,000 steps (say each a yard long). About how far from your starting point would you expect to be at the end?</p><p>(c) A good example of a random walk in nature is the diffusion of a molecule through a gas; the average step length is then the mean free path, as computed in Section 1.7. Using this model, and neglecting any small numerical factors that might arise from the varying step size and the multidimensional nature of the path, estimate the expected net displacement of an air molecule (or perhaps a carbon monoxide molecule traveling through air) in one second, at room temperature and atmospheric pressure. Discuss how your estimate would differ if the elapsed time or the temperature were different. Check that your estimate is consistent with the treatment of diffusion in Section 1.7.</p></div>
+<p class="original-caption">Schroeder 習題 2-25（Problem 2.25）· p.67 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　一維隨機漫步：(a) 最可能在哪；(b) 10 000 步（每步 1 碼）約離起點多遠；(c) 空氣分子一秒的淨位移，時間、溫度的影響。</div>
+  <ol class="write">
+    <li>(a) 起點（前後步數最可能相等）。</li>
+    <li>(b) 位移 $D=2x\ell$，分布 $e^{-2x^2/N}=e^{-D^2/2N\ell^2}$：$1/e$ 半寬 $\sqrt{2N}\ell=141$ 碼，方均根 $\sqrt N\ell=100$ 碼。</li>
+    <li>(c) $\ell=1.5\times10^{-7}\ \text{m}$、$\Delta t=3\times10^{-10}\ \text{s}$ ⟹ $N=3.3\times10^9$，$D\approx\sqrt{2N}\ell=1.2\ \text{cm}$。</li>
+    <li>$D\propto\sqrt t$；定壓下 $\ell\propto T$、步數 $\propto T^{-1/2}$ ⟹ $D\propto T^{3/4}$；與 1.7 節 $e^{-x^2/4Dt}$、$D=\frac12\ell\bar v$ 相同。</li>
+  </ol>
+  <div class="final">答：起點；約 100 碼；約 $1\ \text{cm}$。</div>
+  <p class="small"><a href="#sc-2-25">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-06a" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="自編難題：大小不同的兩固體">
+  <h3>自編難題 6-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N$ 與 $2N$ 個振子分 $q$ 份（高溫）：峰位置、$1/e$ 半寬、一般式、相對擾動。</div>
+  <ol class="write">
+    <li>$\Omega\propto q_A^Nq_B^{2N}$，$N/q_A=2N/q_B\Rightarrow q_A=q/3$。</li>
+    <li>展開：$-\big(\frac{9N}{2q^2}+\frac{9N}{4q^2}\big)x^2=-\frac{27N}{4q^2}x^2$，半寬 $\frac{2q}{\sqrt{27N}}=0.385\frac q{\sqrt N}$。</li>
+    <li>一般：$x_{1/e}=q\sqrt{2N_AN_B/N_{\text{tot}}^3}$；$N_A=N_B$ 得 $q/2\sqrt N$。</li>
+    <li>相對擾動 A：$1.155/\sqrt N$，B：$0.577/\sqrt N$；小系統較大。</li>
+  </ol>
+  <div class="final">答：$q/3$；$0.385q/\sqrt N$；A 的相對擾動較大。</div>
+  <p class="small"><a href="#sf-06a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-06b" data-group="六、多重度函數的尖銳程度（§2.4）" data-title="自編難題：十億分之一的擾動">
+  <h3>自編難題 6-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$N=10^{20}$、$\Omega\propto e^{-N(2x/q)^2}$：$\sigma$；$\delta\gt10^{-9}$ 的機率；50% 門檻。</div>
+  <ol class="write">
+    <li>$N(2x/q)^2=x^2/2\sigma^2\Rightarrow\sigma=q/(2\sqrt{2N})$。</li>
+    <li>$x_0/(\sqrt2\sigma)=\delta\sqrt N=10$：$P=\operatorname{erfc}(10)\approx e^{-100}/(10\sqrt\pi)=2.1\times10^{-45}$。</li>
+    <li>$\operatorname{erfc}(\delta\sqrt N)=0.5\Rightarrow\delta=0.477/\sqrt N=4.8\times10^{-11}$（約 10 位有效數字）。</li>
+  </ol>
+  <div class="final">答：$2.1\times10^{-45}$；需約 10 位有效數字。</div>
+  <p class="small"><a href="#sf-06b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 七、理想氣體的多重度 ===== -->
+<article class="exam-item" data-exam-id="sc-ex-half" data-group="七、理想氣體的多重度（§2.5）" data-title="課本 §2.5：全在左半邊">
+  <h3>課本 §2.5 Fig. 2.13</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　氣體分子全部在左半邊的機率；$N=100$ 的數值。</div>
+  <ol class="write">
+    <li>全在左半＝同 $U,N$、體積 $V/2$ 的巨觀態；$\Omega\propto V^N$。</li>
+    <li>$P=\left(\frac12\right)^N=2^{-N}$；$N=100$：$7.9\times10^{-31}$。</li>
+  </ol>
+  <div class="final">答：$2^{-N}$；$8\times10^{-31}$。</div>
+  <p class="small"><a href="#sc-ex-half">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-115-7" data-group="七、理想氣體的多重度（§2.5）" data-title="考古 115-7：二維氣體多重度（習題 2.26）">
+  <h3>考古 115-7（課本習題 2.26）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-7"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[10pts] The multiplicity of monatomic ideal gas in three dimension is $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}(\sqrt{2mU})^{3N}.$$ Now consider an ideal monatomic gas that lives in a two dimensional universe, occupying an area $A$ instead of a volume $V$. By following the same logic as you derive the multiplicity in three dimension, find a formula for the multiplicity of the ideal monatomic gas in two dimension (in terms of $U$, $m$, $N$, $A$).</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.26）</strong></p><p>Consider an ideal monatomic gas that lives in a two-dimensional universe (“flatland”), occupying an area $A$ instead of a volume $V$. By following the same logic as above, find a formula for the multiplicity of this gas, analogous to equation 2.40.</p></div>
+<p class="original-caption">115 級上學期期中 第 7 題 · 即 Schroeder Problem 2.26 · p.72</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（10 分）三維單原子理想氣體的多重度是
+    $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N}.$$
+    現在考慮住在二維宇宙裡的單原子理想氣體，佔據面積 $A$ 而不是體積 $V$。依照你推導三維多重度的同樣邏輯，求二維單原子理想氣體多重度的公式（以 $U$、$m$、$N$、$A$ 表示）。</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 7 題</p>
+  <ol class="write">
+    <li>一個分子：每方向 $LL_p/h$ 個狀態，二維 $\Omega_1=AA_p/h^2$，$A_p$＝半徑 $\sqrt{2mU}$ 的圓周。</li>
+    <li>$N$ 個不可分辨分子：$\Omega_N=\dfrac1{N!}\dfrac{A^N}{h^{2N}}\times(2N\text{ 維超球面面積})$，$\sum_i(p_{ix}^2+p_{iy}^2)=2mU$。</li>
+    <li>$d=2N$、$r=\sqrt{2mU}$：面積 $=\dfrac{2\pi^N}{(N-1)!}(2mU)^{(2N-1)/2}\approx\dfrac{\pi^N}{N!}(2mU)^N$（丟掉大因子 $2N/\sqrt{2mU}$）。</li>
+    <li>$\Omega_N\approx\dfrac1{N!}\dfrac{A^N}{h^{2N}}\dfrac{\pi^N}{N!}(2mU)^N$</li>
+  </ol>
+  <div class="final">答：$\Omega_N\approx\dfrac1{N!}\dfrac{A^N}{h^{2N}}\dfrac{\pi^N}{N!}(2mU)^N=\dfrac1{(N!)^2}\left(\dfrac{2\pi mUA}{h^2}\right)^N$</div>
+  <p class="small"><a href="#tk-115-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-27" data-group="七、理想氣體的多重度（§2.5）" data-title="課本 2-27：最右 1% 為空">
+  <h3>課本 2-27</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-27"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Rather than insisting that all the molecules be in the left half of a container, suppose we only require that they be in the leftmost 99% (leaving the remaining 1% completely empty). What is the probability of finding such an arrangement if there are 100 molecules in the container? What if there are 10,000 molecules? What if there are 10<sup>23</sup>?</p></div>
+<p class="original-caption">Schroeder 習題 2-27（Problem 2.27）· p.74 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　分子全在最左 99% 的機率：100、10 000、$10^{23}$ 個分子。</div>
+  <ol class="write">
+    <li>$\Omega\propto V^N$ ⟹ $P=0.99^N$。</li>
+    <li>$0.99^{100}=0.366$；$0.99^{10^4}=2.2\times10^{-44}$；$0.99^{10^{23}}=10^{-4.4\times10^{20}}$。</li>
+  </ol>
+  <div class="final">答：0.37；$2\times10^{-44}$；$10^{-4.4\times10^{20}}$。</div>
+  <p class="small"><a href="#sc-2-27">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-07a" data-group="七、理想氣體的多重度（§2.5）" data-title="自編難題：小體積的分子數擾動">
+  <h3>自編難題 7-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　由 $\Omega\propto V^N$ 推 $v$ 內 $n$ 個分子的機率；相對擾動；空氣中擾動 1% 的尺度；1 mm³。</div>
+  <ol class="write">
+    <li>位置因子 $v^n(V-v)^{N-n}$ 乘 $\binom Nn$，除以 $V^N$：$P(n)=\binom Nnp^n(1-p)^{N-n}$。</li>
+    <li>$\langle n\rangle=Np$、$\sigma^2\approx Np$，$\sigma/\langle n\rangle=1/\sqrt{\langle n\rangle}$。</li>
+    <li>$N/V=P/kT=2.45\times10^{25}\ \text{m}^{-3}$；$\langle n\rangle=10^4\Rightarrow v=4.1\times10^{-22}\ \text{m}^3$，$L=74$ nm。</li>
+    <li>1 mm³：$\langle n\rangle=2.45\times10^{16}$，$6.4\times10^{-9}$。</li>
+  </ol>
+  <div class="final">答：$L\approx74$ nm；1 mm³ 為 $6\times10^{-9}$。</div>
+  <p class="small"><a href="#sf-07a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-07b" data-group="七、理想氣體的多重度（§2.5）" data-title="自編難題：氣體與固體分能量">
+  <h3>自編難題 7-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　1 mol 單原子氣體與 $N$ 原子高溫固體交換能量：最可能 $U_A/U_B$、物理解釋、峰寬。</div>
+  <ol class="write">
+    <li>$\Omega\propto U_A^{3N/2}U_B^{3N}$；$\frac{3N}{2U_A}=\frac{3N}{U_B}\Rightarrow U_A/U_B=1/2$。</li>
+    <li>自由度：氣體 $3N$、固體 $6N$；$U_A/3N=U_B/6N$，每個二次自由度能量相同（均分）。</li>
+    <li>半寬 $U_{\text{tot}}\sqrt{2ab/(a+b)^3}=0.314U_{\text{tot}}/\sqrt N=4.0\times10^{-13}U_{\text{tot}}$。</li>
+  </ol>
+  <div class="final">答：$U_A/U_B=1/2$；$4\times10^{-13}$。</div>
+  <p class="small"><a href="#sf-07b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 八、熵與第二定律 ===== -->
+<article class="exam-item" data-exam-id="sc-ex-sein" data-group="八、熵與第二定律（§2.6）" data-title="課本 §2.6：固體的熵">
+  <h3>課本 §2.6 Eq. (2.46)–(2.47)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$q\gg N$ 的愛因斯坦固體的熵；$N=10^{22}$、$q=10^{24}$。</div>
+  <ol class="write">
+    <li>$S=k\ln(eq/N)^N=Nk[\ln(q/N)+1]$</li>
+    <li>$q/N=100$：$S=Nk(5.6)=5.6\times10^{22}\times1.38\times10^{-23}=0.77\ \text{J/K}$</li>
+  </ol>
+  <div class="final">答：$0.77\ \text{J/K}$。</div>
+  <p class="small"><a href="#sc-ex-sein">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-28" data-group="八、熵與第二定律（§2.6）" data-title="課本 2-28：洗牌的熵">
+  <h3>課本 2-28</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-28"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>How many possible arrangements are there for a deck of 52 playing cards? (For simplicity, consider only the order of the cards, not whether they are turned upside-down, etc.) Suppose you start with a sorted deck and shuffle it repeatedly, so that all arrangements become “accessible.” How much entropy do you create in the process? Express your answer both as a pure number (neglecting the factor of k) and in SI units. Is this entropy significant compared to the entropy associated with arranging thermal energy among the molecules in the cards?</p></div>
+<p class="original-caption">Schroeder 習題 2-28（Problem 2.28）· p.77</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　52 張牌的排列數；洗牌產生的熵（純數與 SI）；與熱熵比較。</div>
+  <ol class="write">
+    <li>$\Omega=52!=8.07\times10^{67}$；排好的牌 $\Omega=1$。</li>
+    <li>$S/k=\ln52!=156$，$S=2.2\times10^{-21}\ \text{J/K}$。</li>
+    <li>牌本身的熱熵：約 $10^{25}$ 個原子，$\sim Nk\sim100\ \text{J/K}$，比洗牌的熵大 $10^{22}$ 倍以上，洗牌的熵可忽略。</li>
+  </ol>
+  <div class="final">答：$8\times10^{67}$；$156k=2\times10^{-21}\ \text{J/K}$；不重要。</div>
+  <p class="small"><a href="#sc-2-28">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-29" data-group="八、熵與第二定律（§2.6）" data-title="課本 2-29：三種熵">
+  <h3>課本 2-29</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-29"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a system of two Einstein solids, with N<sub>A</sub> = 300, N<sub>B</sub> = 200, and q<sub>total</sub> = 100 (as discussed in Section 2.3). Compute the entropy of the most likely macrostate and of the least likely macrostate. Also compute the entropy over long time scales, assuming that all microstates are accessible. (Neglect the factor of Boltzmann’s constant in the definition of entropy; for systems this small it is best to think of entropy as a pure number.)</p></div>
+<p class="original-caption">Schroeder 習題 2-29（Problem 2.29）· p.77</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$N_A=300,N_B=200,q=100$：最可能、最不可能巨觀態與長時間的熵（純數）。</div>
+  <ol class="write">
+    <li>最可能 $q_A=60$：$\ln(6.87\times10^{114})=264.4$。</li>
+    <li>最不可能 $q_A=0$：$\ln(2.77\times10^{81})=187.5$。</li>
+    <li>長時間：$\ln(9.26\times10^{115})=267.0$。</li>
+  </ol>
+  <div class="final">答：264.4；187.5；267.0。</div>
+  <p class="small"><a href="#sc-2-29">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-30" data-group="八、熵與第二定律（§2.6）" data-title="課本 2-30：插入隔板">
+  <h3>課本 2-30</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-30"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider again the system of two large, identical Einstein solids treated in Problem 2.22.</p><p>(a) For the case N = 10<sup>23</sup>, compute the entropy of this system (in terms of Boltzmann’s constant), assuming that all of the microstates are allowed. (This is the system’s entropy over long time scales.)</p><p>(b) Compute the entropy again, assuming that the system is in its most likely macrostate. (This is the system’s entropy over short time scales, except when there is a large and unlikely fluctuation away from the most likely macrostate.)</p><p>(c) Is the issue of time scales really relevant to the entropy of this system?</p><p>(d) Suppose that, at a moment when the system is near its most likely macrostate, you suddenly insert a partition between the solids so that they can no longer exchange energy. Now, even over long time scales, the entropy is given by your answer to part</p><p>(b). Since this number is less than your answer to part</p><p>(a), you have, in a sense, caused a violation of the second law of thermodynamics. Is this violation significant? Should we lose any sleep over it?</p></div>
+<p class="original-caption">Schroeder 習題 2-30（Problem 2.30）· p.77 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　習題 2.22 的系統、$N=10^{23}$：(a) 長時間熵；(b) 最可能巨觀態的熵；(c) 時間尺度重要嗎；(d) 插隔板的「違反」顯著嗎？</div>
+  <ol class="write">
+    <li>(a) $S/k=\ln\dfrac{2^{4N}}{\sqrt{8\pi N}}=4N\ln2-\ln\sqrt{8\pi N}=2.77\times10^{23}-28.1$</li>
+    <li>(b) $S/k=\ln\dfrac{2^{4N}}{4\pi N}=2.77\times10^{23}-55.5$</li>
+    <li>(c) 差 27.4，相對 $10^{-22}$：不重要。(d) 熵減少 27 個單位，量不到，不顯著。</li>
+  </ol>
+  <div class="final">答：差別只有約 27，可忽略。</div>
+  <p class="small"><a href="#sc-2-30">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-36" data-group="八、熵與第二定律（§2.6）" data-title="課本 2-36：熵的數量級">
+  <h3>課本 2-36</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　用 $S\sim Nk$ 粗估：一本書（$1\ \text{kg}$ 碳）、一隻麋鹿（$400\ \text{kg}$ 水）、太陽（$2\times10^{30}\ \text{kg}$ 游離氫）。</div>
+  <ol class="write">
+    <li>書：約 $80\text{–}100\ \text{mol}$，$N\sim10^{26}$，$S\sim10^3\ \text{J/K}$。</li>
+    <li>麋鹿：約 $2\times10^4\ \text{mol}$，$N\sim10^{28}$，$S\sim10^5$–$10^6\ \text{J/K}$。</li>
+    <li>太陽：$N\approx2\times\frac{2\times10^{30}}{1.67\times10^{-27}}=2.4\times10^{57}$，$S\sim10^{58}$–$10^{59}k\sim10^{36}\ \text{J/K}$。</li>
+  </ol>
+  <div class="final">答：$10^3$、$10^5$–$10^6$、$10^{35}$–$10^{36}\ \text{J/K}$（數量級）。</div>
+  <p class="small"><a href="#sc-2-36">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-08a" data-group="八、熵與第二定律（§2.6）" data-title="自編難題：熱接觸的熵">
+  <h3>自編難題 8-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　各 $N$ 振子，$q_{A0}=3000N$、$q_{B0}=1000N$ 接觸平衡：各幾份、$\Delta S$、證明 $\Delta S\ge0$。</div>
+  <ol class="write">
+    <li>平衡 $q_A=q_B=2000N$。</li>
+    <li>$\Delta S=Nk\ln\frac{2000^2}{3000\cdot1000}=Nk\ln\frac43=0.288Nk$；$N=10^{22}$：0.040 J/K。</li>
+    <li>$\Delta S/Nk=\ln\frac{[(q_{A0}+q_{B0})/2]^2}{q_{A0}q_{B0}}\ge0$（算幾不等式），等號 $q_{A0}=q_{B0}$。</li>
+  </ol>
+  <div class="final">答：$0.288Nk=0.040$ J/K；恆 $\ge0$。</div>
+  <p class="small"><a href="#sf-08a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-08b" data-group="八、熵與第二定律（§2.6）" data-title="自編難題：排硬幣的熵">
+  <h3>自編難題 8-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　100 枚隨機硬幣排成全正面：熵減少；身體散 10 J 到 310 K 的熵；與一枚硬幣的熱熵比較。</div>
+  <ol class="write">
+    <li>$\Delta S=-100k\ln2=-69.3k=-9.6\times10^{-22}$ J/K。</li>
+    <li>$\Delta S_{\text{env}}\approx Q/T=10/310=0.032$ J/K，大 $3\times10^{19}$ 倍，總熵增加。</li>
+    <li>5 g 銅 $4.7\times10^{22}$ 原子，$S\sim Nk$；正反部分佔 $\ln2/4.7\times10^{22}\approx10^{-23}$。</li>
+  </ol>
+  <div class="final">答：$-9.6\times10^{-22}$ J/K；環境 $+0.032$ J/K。</div>
+  <p class="small"><a href="#sf-08b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 九、理想氣體的熵 ===== -->
+<article class="exam-item" data-exam-id="sc-2-31" data-group="九、理想氣體的熵（§2.6）" data-title="課本 2-31：推導 Sackur–Tetrode">
+  <h3>課本 2-31</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-31"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Fill in the algebraic steps to derive the Sackur-Tetrode equation (2.49).</p></div>
+<p class="original-caption">Schroeder 習題 2-31（Problem 2.31）· p.79 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　補上推導 Sackur–Tetrode 公式 (2.49) 的代數步驟。</div>
+  <ol class="write">
+    <li>$\dfrac Sk=\ln\Omega=N\ln V+\dfrac{3N}2\ln\dfrac{2\pi mU}{h^2}-\ln N!-\ln\left(\dfrac{3N}2\right)!$</li>
+    <li>Stirling：$-\ln N!\approx-N\ln N+N$，$-\ln(\frac{3N}2)!\approx-\frac{3N}2\ln\frac{3N}2+\frac{3N}2$。</li>
+    <li>$\dfrac Sk=N\left[\ln\dfrac VN+\ln\left(\dfrac{2\pi mU}{h^2}\cdot\dfrac2{3N}\right)^{3/2}+\dfrac52\right]=N\left[\ln\left(\dfrac VN\left(\dfrac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\dfrac52\right]$</li>
+  </ol>
+  <div class="final">答：即 (2.49)。</div>
+  <p class="small"><a href="#sc-2-31">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-114-3" data-group="九、理想氣體的熵（§2.6）" data-title="考古 114-3：理想氣體的第一定律、熵與溫度">
+  <h3>考古 114-3（(d)(e) 即課本習題 2.31）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（25 分）理想氣體遵守的狀態方程式（也稱為理想氣體定律）是 $PV=NkT$（氣體壓力 $P$、體積 $V$、氣體粒子數 $N$、波茲曼常數 $k$、溫度 $T$）。當原子間的交互作用可以忽略、原子密度很低時，這個理想氣體定律成立。(a) 說明熱力學第一定律。（2 分）(b) 用熱力學第一定律求粒子數為 $N$ 的單原子理想氣體，定容熱容量 $C_V$ 與定壓熱容量 $C_P$ 的關係。（3 分）(c) 證明在準靜態絕熱過程中，氣體壓力 $P$ 與體積 $V$ 滿足
+    $$PV^\gamma=\text{constant}.$$
+    這裡 $\gamma=C_P/C_V$ 稱為絕熱指數。（10 分）(d) $N$ 個相同的理想氣體粒子的多重度函數近似為
+    $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N},$$
+    其中 $U=\sum_{i=1}^N\frac1{2m_i}(p_{x,i}^2+p_{y,i}^2+p_{z,i}^2)$ 代表系統的內能。計算理想氣體的熵。（你可以使用第 4 題所列的 Stirling 近似。）（5 分）(e) 用溫度的熱力學定義（即 $\frac1T=\frac{\partial S}{\partial U}$）求溫度 $T$，表示成 $U$、波茲曼常數 $k$ 與 $N$ 的函數。（5 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-1、-2.HEIC，雲端硬碟沒有這份）第 3 題</p>
+  <ol class="write">
+    <li>(a) $\Delta U=Q+W$：內能變化＝流入的熱＋外界對系統做的功（含熱的能量守恆）。</li>
+    <li>(b) 單原子 $U=\frac32NkT$。定容 $W=0$：$C_V=\left(\dfrac{\partial U}{\partial T}\right)_V=\dfrac32Nk$。</li>
+    <li>定壓 $Q=\Delta U+P\Delta V$，$PV=NkT\Rightarrow P\left(\dfrac{\partial V}{\partial T}\right)_P=Nk$：$C_P=C_V+Nk=\dfrac52Nk$。</li>
+    <li>(c) 絕熱 $Q=0$：$C_V\,\mathrm dT=-P\,\mathrm dV=-\dfrac{NkT}V\mathrm dV\Rightarrow\dfrac{\mathrm dT}T=-(\gamma-1)\dfrac{\mathrm dV}V$（$Nk/C_V=\gamma-1$）。</li>
+    <li>積分：$TV^{\gamma-1}=$ 常數；代 $T=PV/Nk$：$PV^\gamma=$ 常數。</li>
+    <li>(d) $\dfrac Sk=N\ln V+\dfrac{3N}2\ln\dfrac{2\pi mU}{h^2}-(N\ln N-N)-\left(\dfrac{3N}2\ln\dfrac{3N}2-\dfrac{3N}2\right)$</li>
+    <li>$S=Nk\left[\ln\left(\dfrac VN\left(\dfrac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\dfrac52\right]$</li>
+    <li>(e) 只有 $\frac{3N}2k\ln U$ 含 $U$：$\dfrac1T=\left(\dfrac{\partial S}{\partial U}\right)_{V,N}=\dfrac{3Nk}{2U}$</li>
+    <li>$T=\dfrac{2U}{3Nk}$（即 $U=\frac32NkT$）。</li>
+  </ol>
+  <div class="final">答：(a) $\Delta U=Q+W$；(b) $C_P=C_V+Nk$；(c) 得證；(d) Sackur–Tetrode；(e) $T=2U/(3Nk)$。</div>
+  <p class="small"><a href="#tk-114-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tkx-1j" data-group="九、理想氣體的熵（§2.6）" data-title="考古 某級-1(j)：熵與溫度">
+  <h3>考古 某級上學期期中 第 1 題(j)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>原卷題目（第 1 題 (j) 小題）</strong>　(j) $N$ 個相同的理想氣體粒子的多重度函數近似為
+    $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N},$$
+    其中 $U=\sum_{i=1}^N\frac1{2m_i}(p_{x,i}^2+p_{y,i}^2+p_{z,i}^2)$ 代表系統的內能。計算熵，並用溫度的熱力學定義求溫度 $T$，表示成 $U$、波茲曼常數 $k$ 與 $N$ 的函數。（3 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級全部熱學（期中末）</a> 第一份考卷第 1 題 (j)</p>
+  <ol class="write">
+    <li>$S=k\ln\Omega_N\approx Nk\left[\ln\left(\dfrac VN\left(\dfrac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\dfrac52\right]$（$\ln N!$、$\ln(3N/2)!$ 用 Stirling）。</li>
+    <li>$\dfrac1T=\dfrac{\partial S}{\partial U}=\dfrac{3Nk}{2U}$ ⟹ $T=\dfrac{2U}{3Nk}$</li>
+  </ol>
+  <div class="final">答：$T=2U/(3Nk)$。</div>
+  <p class="small"><a href="#tkx-1j">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-helium" data-group="九、理想氣體的熵（§2.6）" data-title="課本 §2.6：一莫耳氦">
+  <h3>課本 §2.6 Eq. (2.50)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　室溫一大氣壓一莫耳氦（$V=0.025\ \text{m}^3$、$U=3700\ \text{J}$）的熵。</div>
+  <ol class="write">
+    <li>$V/N=4.15\times10^{-26}\ \text{m}^3$，$U/N=6.15\times10^{-21}\ \text{J}$，$m=6.64\times10^{-27}\ \text{kg}$。</li>
+    <li>$\dfrac VN\left(\dfrac{4\pi m(U/N)}{3h^2}\right)^{3/2}\approx3.2\times10^5$，$\ln=12.7$。</li>
+    <li>$S=Nk(12.7+2.5)=15.2\,Nk=126\ \text{J/K}$</li>
+  </ol>
+  <div class="final">答：$126\ \text{J/K}$。</div>
+  <p class="small"><a href="#sc-ex-helium">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-34" data-group="九、理想氣體的熵（§2.6）" data-title="課本 2-34：ΔS = Q/T">
+  <h3>課本 2-34</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明準靜態等溫膨脹 $\Delta S=Q/T$；證明自由膨脹不成立。</div>
+  <ol class="write">
+    <li>等溫 ⟹ $\Delta U=0$，$\Delta S=Nk\ln(V_f/V_i)$。</li>
+    <li>$Q=-W=\int P\,\mathrm dV=\int\frac{NkT}V\mathrm dV=NkT\ln\frac{V_f}{V_i}$ ⟹ $Q/T=\Delta S$。</li>
+    <li>自由膨脹：$Q=0$ 但 $\Delta S=Nk\ln(V_f/V_i)\gt0$，不相等。</li>
+  </ol>
+  <div class="final">答：等溫成立；自由膨脹 $\Delta S\gt Q/T=0$。</div>
+  <p class="small"><a href="#sc-2-34">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-114-5" data-group="九、理想氣體的熵（§2.6）" data-title="考古 114-5：空氣定壓加熱的熵增加">
+  <h3>考古 114-5（即課本 Problem 3.28）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-114-5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>[10pts] A liter of air, initially at room temperature and atmospheric pressure, is heated at constant pressure until it doubles in volume. Calculate the increase in its entropy during this process.</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 3.28）</strong></p><p>A liter of air, initially at room temperature and atmospheric pressure, is heated at constant pressure until it doubles in volume. Calculate the increase in its entropy during this process.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（完整翻譯）</strong>　（10 分）一公升的空氣，一開始在室溫與大氣壓力下，在固定壓力下加熱，直到體積變成兩倍。計算這個過程中空氣的熵增加多少。</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-3.HEIC，雲端硬碟沒有這份）第 5 題</p>
+  <ol class="write">
+    <li>理想氣體、雙原子 $f=5$：$\Omega\propto V^NU^{5N/2}$，$S=Nk\ln V+\frac52Nk\ln U+$ 常數。</li>
+    <li>$\Delta S=Nk\ln\dfrac{V_f}{V_i}+\dfrac52Nk\ln\dfrac{U_f}{U_i}$</li>
+    <li>定壓 $T=PV/Nk\propto V$：$T_f/T_i=2$；$U=\frac52NkT$ ⟹ $U_f/U_i=2$。</li>
+    <li>$\Delta S=\dfrac72Nk\ln2$，$Nk=\dfrac{PV_i}{T_i}=\dfrac{(1.013\times10^5)(10^{-3})}{300}=0.338\ \text{J/K}$</li>
+    <li>$\Delta S=\frac72(0.338)(0.693)=0.82\ \text{J/K}$（驗：$C_P\ln\frac{T_f}{T_i}$，$C_P=\frac72Nk$，相同）。</li>
+  </ol>
+  <div class="final">答：$\Delta S=\frac72Nk\ln2\approx0.82\ \text{J/K}$。</div>
+  <p class="small"><a href="#tk-114-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-32" data-group="九、理想氣體的熵（§2.6）" data-title="課本 2-32：二維氣體的熵">
+  <h3>課本 2-32</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-32"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find an expression for the entropy of the two-dimensional ideal gas considered in Problem 2.26. Express your result in terms of U, A, and N.</p></div>
+<p class="original-caption">Schroeder 習題 2-32（Problem 2.32）· p.79 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求二維理想氣體（習題 2.26）的熵，以 $U,A,N$ 表示。</div>
+  <ol class="write">
+    <li>$\Omega=\dfrac1{(N!)^2}\left(\dfrac{2\pi mUA}{h^2}\right)^N$</li>
+    <li>$\dfrac Sk=N\ln\dfrac{2\pi mUA}{h^2}-2(N\ln N-N)=N\left[\ln\left(\dfrac AN\dfrac{2\pi mU}{Nh^2}\right)+2\right]$</li>
+  </ol>
+  <div class="final">答：$S=Nk\left[\ln\left(\frac AN\frac{2\pi mU}{Nh^2}\right)+2\right]$</div>
+  <p class="small"><a href="#sc-2-32">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-33" data-group="九、理想氣體的熵（§2.6）" data-title="課本 2-33：一莫耳氬">
+  <h3>課本 2-33</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-33"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use the Sackur-Tetrode equation to calculate the entropy of a mole of argon gas at room temperature and atmospheric pressure. Why is the entropy greater than that of a mole of helium under the same conditions?</p></div>
+<p class="original-caption">Schroeder 習題 2-33（Problem 2.33）· p.79</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　室溫一大氣壓一莫耳氬的熵；為什麼比氦大？</div>
+  <ol class="write">
+    <li>$V/N=kT/P=4.14\times10^{-26}\ \text{m}^3$，$U/N=\frac32kT=6.21\times10^{-21}\ \text{J}$，$m=6.64\times10^{-26}\ \text{kg}$。</li>
+    <li>對數裡的數 $=1.0\times10^7$；$S=R[\ln(1.0\times10^7)+2.5]=155\ \text{J/K}$。</li>
+    <li>質量大 10 倍 ⟹ 同能量下動量大、動量空間超球面大，對數多 $\ln10^{3/2}$。</li>
+  </ol>
+  <div class="final">答：$155\ \text{J/K}$。</div>
+  <p class="small"><a href="#sc-2-33">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-35" data-group="九、理想氣體的熵（§2.6）" data-title="課本 2-35：負熵的溫度">
+  <h3>課本 2-35</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-35"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>According to the Sackur-Tetrode equation, the entropy of a monatomic ideal gas can become negative when its temperature (and hence its energy) is sufficiently low. Of course this is absurd, so the Sackur-Tetrode equation must be invalid at very low temperatures. Suppose you start with a sample of helium at room temperature and atmospheric pressure, then lower the temperature holding the density fixed. Pretend that the helium remains a gas and does not liquefy. Below what temperature would the Sackur-Tetrode equation predict that S is negative? (The behavior of gases at very low temperatures is the main subject of Chapter 7.)</p></div>
+<p class="original-caption">Schroeder 習題 2-35（Problem 2.35）· p.79</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　氦從室溫一大氣壓、密度不變地降溫；低於什麼溫度 Sackur–Tetrode 給出負熵？</div>
+  <ol class="write">
+    <li>$S\lt0\iff\frac VNe^{5/2}\left(\frac{2\pi mkT}{h^2}\right)^{3/2}\lt1$（$U/N=\frac32kT$）。</li>
+    <li>$T=\left(\dfrac NV\right)^{2/3}\dfrac{h^2}{2\pi e^{5/3}mk}$，$N/V=P_0/kT_0=2.4\times10^{25}\ \text{m}^{-3}$。</li>
+    <li>代入得 $T\approx0.012\ \text{K}$。</li>
+  </ol>
+  <div class="final">答：約 $0.01\ \text{K}$。</div>
+  <p class="small"><a href="#sc-2-35">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-09a" data-group="九、理想氣體的熵（§2.6）" data-title="自編難題：自由膨脹再壓回">
+  <h3>自編難題 9-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　1 mol、300 K 自由膨脹 $V\to2V$，再接觸 300 K 熱庫等溫壓回：氣體、熱庫、宇宙的 $\Delta S$。</div>
+  <ol class="write">
+    <li>自由膨脹 $\Delta S_1=R\ln2=5.76$ J/K；等溫壓回 $\Delta S_2=-5.76$ J/K；氣體合計 0。</li>
+    <li>$W_{\text{on}}=RT\ln2=1729$ J，$\Delta U=0\Rightarrow$ 放熱 1729 J；$\Delta S_{\text{res}}=1729/300=+5.76$ J/K。</li>
+    <li>$\Delta S_{\text{univ}}=+R\ln2=5.76$ J/K $\gt0$，不可逆，無法完全復原。</li>
+  </ol>
+  <div class="final">答：氣體 0；熱庫與宇宙 $+5.76$ J/K。</div>
+  <p class="small"><a href="#sf-09a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-09b" data-group="九、理想氣體的熵（§2.6）" data-title="自編難題：加熱的熵變">
+  <h3>自編難題 9-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　由 Sackur–Tetrode 求 1 mol 氦 300→600 K 定容、定壓的 $\Delta S$；等熵時體積比。</div>
+  <ol class="write">
+    <li>$U/N=\tfrac32kT$：$\Delta S=Nk[\ln(V_f/V_i)+\tfrac32\ln(T_f/T_i)]$。</li>
+    <li>定容：$\tfrac32R\ln2=8.64$ J/K。</li>
+    <li>定壓（$V$ 加倍）：$\tfrac52R\ln2=14.41$ J/K。</li>
+    <li>等熵：$VT^{3/2}$ 固定，$V_f/V_i=2^{-3/2}=0.354$（絕熱壓縮）。</li>
+  </ol>
+  <div class="final">答：8.64 J/K；14.41 J/K；0.354 倍。</div>
+  <p class="small"><a href="#sf-09b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 十、混合熵與可逆過程 ===== -->
+<article class="exam-item" data-exam-id="sc-ex-mix" data-group="十、混合熵與可逆過程（§2.6）" data-title="課本 §2.6：氬 vs 氦">
+  <h3>課本 §2.6 Eq. (2.54)–(2.56)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　一莫耳氦再加入一莫耳氬或一莫耳氦，總熵各是多少？一莫耳氦與一莫耳氬混合的熵增加？</div>
+  <ol class="write">
+    <li>不同種：$S=S_{\text{He}}+S_{\text{Ar}}\approx2S_{\text{He}}$。</li>
+    <li>同種：$N\to2N$、$U\to2U$、$V$ 不變，$V/N$ 減半 ⟹ $S=2S_{\text{He}}-2Nk\ln2$。</li>
+    <li>混合：$\Delta S=2Nk\ln2=2R\ln2=11.5\ \text{J/K}$。</li>
+  </ol>
+  <div class="final">答：差 $2Nk\ln2$ 就是混合熵；$11.5\ \text{J/K}$。</div>
+  <p class="small"><a href="#sc-ex-mix">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-37" data-group="十、混合熵與可逆過程（§2.6）" data-title="課本 2-37：任意比例">
+  <h3>課本 2-37</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　推導任意比例的混合熵 $-Nk[x\ln x+(1-x)\ln(1-x)]$，檢查 $x=\frac12$。</div>
+  <ol class="write">
+    <li>同溫同壓：B 佔 $xV$、A 佔 $(1-x)V$，混合後各膨脹到 $V$。</li>
+    <li>$\Delta S_B=xNk\ln\frac1x$，$\Delta S_A=(1-x)Nk\ln\frac1{1-x}$；相加得結果。</li>
+    <li>$x=\frac12$：$Nk\ln2$，$N$ 為總數，即課文 $2(N/2)k\ln2$。</li>
+  </ol>
+  <div class="final">答：$\Delta S=-Nk[x\ln x+(1-x)\ln(1-x)]$。</div>
+  <p class="small"><a href="#sc-2-37">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-38" data-group="十、混合熵與可逆過程（§2.6）" data-title="課本 2-38：理想混合物">
+  <h3>課本 2-38</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　說明理想混合物的混合熵為 $k\ln\binom N{N_A}$，並用 Stirling 證明與 2.37 相同。</div>
+  <ol class="write">
+    <li>A、B 互換不改變能量；混合新增的只是「$N$ 個位置中哪些放 A」：$\Omega_{\text{mix}}=\binom N{N_A}$。</li>
+    <li>$\frac{\Delta S}k\approx N\ln N-N_A\ln N_A-N_B\ln N_B$，代 $N_A=(1-x)N$、$N_B=xN$。</li>
+    <li>$\ln N$ 項抵消 ⟹ $-N[x\ln x+(1-x)\ln(1-x)]$。</li>
+  </ol>
+  <div class="final">答：與 2.37 相同。</div>
+  <p class="small"><a href="#sc-2-38">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-39" data-group="十、混合熵與可逆過程（§2.6）" data-title="課本 2-39：可分辨的氦">
+  <h3>課本 2-39</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-39"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Compute the entropy of a mole of helium at room temperature and atmospheric pressure, pretending that all the atoms are distinguishable. Compare to the actual entropy, for indistinguishable atoms, computed in the text.</p></div>
+<p class="original-caption">Schroeder 習題 2-39（Problem 2.39）· p.81</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　假裝原子可分辨，求一莫耳氦的熵並與實際值比較。</div>
+  <ol class="write">
+    <li>(2.57)：對數裡多乘 $N$：$\ln[(6.02\times10^{23})(3.2\times10^5)]=67.5$。</li>
+    <li>$S=Nk(67.5+1.5)=69R=573\ \text{J/K}$，是 $126\ \text{J/K}$ 的 4.5 倍。</li>
+  </ol>
+  <div class="final">答：$573\ \text{J/K}$。</div>
+  <p class="small"><a href="#sc-2-39">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-40" data-group="十、混合熵與可逆過程（§2.6）" data-title="課本 2-40：不可逆過程">
+  <h3>課本 2-40</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-40"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>For each of the following irreversible processes, explain how you can tell that the total entropy of the universe has increased.</p><p>(a) Stirring salt into a pot of soup.</p><p>(b) Scrambling an egg.</p><p>(c) Humpty Dumpty having a great fall.</p><p>(d) A wave hitting a sand castle.</p><p>(e) Cutting down a tree.</p><p>(f) Burning gasoline in an automobile.</p></div>
+<p class="original-caption">Schroeder 習題 2-40（Problem 2.40）· p.83</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　說明下列過程宇宙總熵增加：攪鹽入湯、炒蛋、蛋頭先生摔跤、浪打沙堡、砍樹、燃燒汽油。</div>
+  <ol class="write">
+    <li>攪鹽：離子從晶格釋出、在湯中到處分布（混合熵）。炒蛋：蛋黃蛋白混合、蛋白質變性攤開。</li>
+    <li>摔碎：碎成多片的方式遠多於完整；沙堡：散開的方式遠多於堆成堡；砍樹：倒下的方式多，功轉成熱。</li>
+    <li>燃燒：少數大分子變多數小分子，大量化學能變成熱散到環境。</li>
+  </ol>
+  <div class="final">答：每個過程都讓可及微觀態數增加。</div>
+  <p class="small"><a href="#sc-2-40">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-41" data-group="十、混合熵與可逆過程（§2.6）" data-title="課本 2-41：喜歡與不喜歡的不可逆過程">
+  <h3>課本 2-41</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-41"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Describe a few of your favorite, and least favorite, irreversible processes. In each case, explain how you can tell that the entropy of the universe increases.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　舉幾個喜歡與不喜歡的不可逆過程，說明怎麼知道宇宙的熵增加。</div>
+  <ol class="write">
+    <li>咖啡加牛奶：混合使排列方式大增（混合熵），不會自己分離。</li>
+    <li>冰在溫水中融化：冰 $+Q/273=+12.2$ J/K（相變熵），溫水 $-Q/300=-11.1$ J/K，合計 $+1.1$ J/K $\gt0$（$Q=3340$ J）。</li>
+    <li>煞車：$2\times10^5$ J 動能變成 300 K 的熱，$\Delta S\approx670$ J/K；摔破螢幕、電池放電發熱同理。</li>
+    <li>原則：反向過程會讓總熵減少，所以不會發生。</li>
+  </ol>
+  <div class="final">答：開放題；以能量變熱、熱由熱流冷、混合碎裂說明 $\Delta S\gt0$。</div>
+  <p class="small"><a href="#sc-2-41">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-2-42" data-group="十、混合熵與可逆過程（§2.6）" data-title="課本 2-42：黑洞的熵">
+  <h3>課本 2-42</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 因次分析求黑洞半徑、算太陽質量；(b) 熵 $\sim$ 最大粒子數；(c) 光子數估計；(d) 太陽質量黑洞的熵。</div>
+  <ol class="write">
+    <li>(a) $[G/c^2]=\text{m/kg}$ ⟹ $R\sim GM/c^2=1.5\ \text{km}$。</li>
+    <li>(b) $S\sim Nk$，不論用多少粒子做成都是同一黑洞 ⟹ 熵 $\sim$ 最大可能 $N$。</li>
+    <li>(c) $Mc^2=N\dfrac{hc}\lambda$，$\lambda\sim\dfrac{GM}{c^2}$ ⟹ $N\sim\dfrac{GM^2}{hc}$。</li>
+    <li>(d) $S=\dfrac{8\pi^2GM^2}{hc}k=1.1\times10^{77}k=1.5\times10^{54}\ \text{J/K}$，比太陽本身（約 $10^{57}$–$10^{58}k$）大約 $10^{19}$–$10^{20}$ 倍。</li>
+  </ol>
+  <div class="final">答：$1.5\ \text{km}$；$S\approx10^{77}k\approx1.5\times10^{54}\ \text{J/K}$。</div>
+  <p class="small"><a href="#sc-2-42">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-10a" data-group="十、混合熵與可逆過程（§2.6）" data-title="自編難題：同種氣體不同密度">
+  <h3>自編難題 10-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　各 10 L、300 K：1 mol 氦與 2 mol 氦抽掉隔板的 $\Delta S$；右邊改成氬；差值與混合熵。</div>
+  <ol class="write">
+    <li>$U$ 不變 ⟹ $T=300$ K、$U/N$ 不變，只剩 $Nk\ln(V/N)$ 變。</li>
+    <li>氦＋氦：$\Delta S/R=3\ln\frac{20}3-\ln10-2\ln5=\ln\frac{32}{27}$，$\Delta S=1.41$ J/K。</li>
+    <li>氦＋氬：$\Delta S=3R\ln2=17.29$ J/K。</li>
+    <li>差 $R\ln\frac{27}4=15.88$ J/K $=-3R[\frac23\ln\frac23+\frac13\ln\frac13]$（混合熵）。</li>
+  </ol>
+  <div class="final">答：1.41 J/K；17.3 J/K；差值為混合熵 15.9 J/K。</div>
+  <p class="small"><a href="#sf-10a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-10b" data-group="十、混合熵與可逆過程（§2.6）" data-title="自編難題：小溫差熱流">
+  <h3>自編難題 10-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　兩團氣體 $U(1\pm\delta)$ 熱平衡：$\Delta S$ 最低階、$\Delta S/(Q/T)$、1 mol、$\delta=0.01$ 數值。</div>
+  <ol class="write">
+    <li>平衡各 $U$；$\Delta S=-\tfrac32Nk\ln(1-\delta^2)\approx\tfrac32Nk\delta^2$。</li>
+    <li>$Q=U\delta=\tfrac32NkT\delta$，$\Delta S/(Q/T)=\delta\to0$。</li>
+    <li>1 mol：$\Delta S=1.25\times10^{-3}$ J/K，$Q=37.4$ J，$Q/T=0.125$ J/K。</li>
+  </ol>
+  <div class="final">答：$\Delta S\approx\tfrac32Nk\delta^2$，溫差趨於 0 時趨近可逆。</div>
+  <p class="small"><a href="#sf-10b">回到正文詳解</a></p>
+</article>
+

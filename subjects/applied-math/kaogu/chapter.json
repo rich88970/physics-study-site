@@ -1,0 +1,72 @@
+{
+  "title": "考古題與作業完整解題（依主題）",
+  "shortTitle": "應數 考古與作業詳解",
+  "range": "2021–2025 期中考古題與作業一～五的完整解題，依主題排列：一階（可分離、線性、恰當）、二階齊次、降階法、未定係數法、冪級數、Frobenius、Fourier 級數",
+  "pageLabel": "考古",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備「應用數學」的期中考。這一頁是 2021–2025 年期中考古題與作業一～五的完整解題，依主題排列：一階 ODE（可分離變數、線性方程與積分因子、恰當方程與積分因子）、二階齊次常係數、降階法、二階非齊次（未定係數法的 sum／multiplication／modification rule、初值問題）、冪級數解、Frobenius 法、Fourier 級數（實數、複數 Fourier、功率頻譜）。",
+  "overview": "s00",
+  "sections": [
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "總覽與主題目錄",
+      "pages": ""
+    },
+    {
+      "id": "s01",
+      "file": "01-part.html",
+      "title": "一、一階：可分離變數",
+      "pages": ""
+    },
+    {
+      "id": "s02",
+      "file": "02-part.html",
+      "title": "二、一階：線性方程與積分因子",
+      "pages": ""
+    },
+    {
+      "id": "s03",
+      "file": "03-part.html",
+      "title": "三、一階：恰當方程與積分因子",
+      "pages": ""
+    },
+    {
+      "id": "s04",
+      "file": "04-part.html",
+      "title": "四、二階齊次常係數：實根、重根、複根與邊界條件",
+      "pages": ""
+    },
+    {
+      "id": "s05",
+      "file": "05-part.html",
+      "title": "五、降階法",
+      "pages": ""
+    },
+    {
+      "id": "s06",
+      "file": "06-part.html",
+      "title": "六、二階非齊次：未定係數法與初值問題",
+      "pages": ""
+    },
+    {
+      "id": "s07",
+      "file": "07-part.html",
+      "title": "七、冪級數解",
+      "pages": ""
+    },
+    {
+      "id": "s08",
+      "file": "08-part.html",
+      "title": "八、Frobenius 法",
+      "pages": ""
+    },
+    {
+      "id": "s09",
+      "file": "09-part.html",
+      "title": "九、Fourier 級數：實數、複數 Fourier 與功率頻譜",
+      "pages": ""
+    }
+  ],
+  "sources": [],
+  "scripts": []
+}

@@ -1,0 +1,845 @@
+<!-- 考試書寫版：每份先列完整題目，再列可直接寫在考卷上的完整作答。側欄依 data-exam-id 開啟。 -->
+
+<!-- ===== 一、Frobenius 法：指標方程式與兩個級數解 ===== -->
+<article class="exam-item" data-exam-id="am5-ex-1" data-group="一、Frobenius 法與指標方程式" data-title="板書：2x²y''-xy'+(1+x)y=0">
+  <h3>板書例題 10/7</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-1"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex Solve　$2x^2y''-xy'+(1+x)y=0$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用 Frobenius 法解 $2x^2y''-xy'+(1+x)y=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$2x^2y''$（$y''$ 的係數在 $x=0$ 為零）」＋「Solve」＋「$xp$、$x^2q$ 有限」⟹ 題型：<b>Frobenius 法（兩指標相差非整數，各給一個解）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>兩個線性獨立的級數解</h5>
+      <p class="wq-step"><span class="memo">背：$y''+P(x)y'+Q(x)y=0$；$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$ 都有限 ⟹ 正則奇點，令 $y=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+\gamma}$（$a_0\ne0$）</span>
+        <span class="syms">$y$：未知函數；$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$a_n$：級數係數；$n$：求和指標；$\gamma$：指標（級數的起始次方，待求）</span>
+        整式除以 $2x^2$，$P$、$Q$ 在 0 發散，但乘上 $x$、$x^2$ 後有限。<br>
+        $P=-\dfrac1{2x}$，$Q=\dfrac{1+x}{2x^2}$；$p_0=-\dfrac12$，$q_0=\lim\limits_{x\to0}\dfrac{1+x}2=\dfrac12$ ⟹ 正則奇點</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$x^2y''\to s(s-1)a_n$，$xy'\to sa_n$，$y\to a_n$（都是 $x^{s}$）；$xy\to a_{n-1}$（$s=n+\gamma$）</span>
+        <span class="syms">$s=n+\gamma$：第 $n$ 項的次方；$a_n$：級數係數；$a_{n-1}$：$xy$ 平移後的係數；$x$：自變數</span>
+        $2x^2y''$、$-xy'$、$y$ 不改次方，只有 $xy$ 往上推一格，全部對齊到 $x^{n+\gamma}$。<br>
+        $$\sum_{n=0}^{\infty}\big[2s(s-1)-s+1\big]a_nx^{n+\gamma}+\sum_{n=1}^{\infty}a_{n-1}x^{n+\gamma}=0$$</p>
+      <p class="wq-step"><span class="memo">背：指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$（就是 $n=0$ 的係數）</span>
+        <span class="syms">$\gamma$：指標；$p_0$、$q_0$：正則奇點的兩個極限值</span>
+        代 $p_0=-\tfrac12$、$q_0=\tfrac12$，乘 2；兩根差 $\tfrac12$ 不是整數，各給一個解。<br>
+        $2\gamma^2-3\gamma+1=(2\gamma-1)(\gamma-1)=0\Rightarrow\gamma=1,\ \tfrac12$</p>
+      <p class="wq-step"><span class="memo">背：$n\ge1$ 的係數為 0 ⟹ 遞迴</span>
+        <span class="syms">$a_n$、$a_{n-1}$：相鄰兩個係數；$s=n+\gamma$；$\gamma$：指標</span>
+        $a_n$ 的係數 $2s^2-3s+1=(2s-1)(s-1)$。<br>
+        $(2s-1)(s-1)a_n+a_{n-1}=0\Rightarrow a_n=-\dfrac{a_{n-1}}{\big(2(n+\gamma)-1\big)\big((n+\gamma)-1\big)}$</p>
+      <p class="wq-step"><span class="memo">背：$a_n=-\dfrac{a_{n-1}}{\big(2(n+\gamma)-1\big)\big((n+\gamma)-1\big)}$ 代 $\gamma=1$</span>
+        <span class="syms">$a_n$：要求的係數；$a_{n-1}$：前一個係數；$a_0=1$：取定的首項；$n$：求和指標</span>
+        $\gamma=1$ 時分母是 $(2n+1)n$，代 $n=1,2,3$。<br>
+        $a_1=-\dfrac{1}{3\cdot1}=-\dfrac13$，$a_2=-\dfrac{a_1}{5\cdot2}=\dfrac1{30}$，$a_3=-\dfrac{a_2}{7\cdot3}=-\dfrac1{630}$<br>
+        $y_1=x\Big(1-\dfrac x3+\dfrac{x^2}{30}-\dfrac{x^3}{630}+\cdots\Big)$</p>
+      <p class="wq-step"><span class="memo">背：$a_n=-\dfrac{a_{n-1}}{\big(2(n+\gamma)-1\big)\big((n+\gamma)-1\big)}$ 代 $\gamma=\tfrac12$</span>
+        <span class="syms">$a_n$：要求的係數；$a_{n-1}$：前一個係數；$a_0=1$：取定的首項；$n$：求和指標</span>
+        $\gamma=\tfrac12$ 時分母是 $(2n)(n-\tfrac12)=n(2n-1)$，代 $n=1,2,3$。<br>
+        $a_1=-\dfrac{1}{1\cdot1}=-1$，$a_2=-\dfrac{a_1}{2\cdot3}=\dfrac16$，$a_3=-\dfrac{a_2}{3\cdot5}=-\dfrac1{90}$<br>
+        $y_2=\sqrt x\Big(1-x+\dfrac{x^2}6-\dfrac{x^3}{90}+\cdots\Big)$，一般解 $y=c_1y_1+c_2y_2$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=c_1x\big(1-\tfrac x3+\tfrac{x^2}{30}-\tfrac{x^3}{630}+\cdots\big)+c_2\sqrt x\big(1-x+\tfrac{x^2}6-\tfrac{x^3}{90}+\cdots\big)$。</div>
+  <p class="small"><a href="#am5-ex-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-hw-1" data-group="一、Frobenius 法與指標方程式" data-title="作業 1：2x²y''+3xy'+(2x-1)y=0">
+  <h3>10/14 作業 第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-hw-1"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p><b>Homework: Frobenius Method</b></p><p>1. Solve $2x^2y''+3xy'+(2x-1)y=0$.</p><p>Ans: two linear independent solution $y_1(x)$ and $y_2(x)$,</p><p>$y_1(x)=\frac{1}{x}\left(1+2x-2x^2+\frac{4}{9}x^3+\dots\right)$</p><p>$y_2(x)=\sqrt{x}\left(1-\frac{2}{5}x+\frac{2}{35}x^2-\frac{4}{945}x^3+\dots\right)$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $2x^2y''+3xy'+(2x-1)y=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$2x^2y''+3xy'$」＋「老師答案有 $\tfrac1x$、$\sqrt x$ 開頭」⟹ 題型：<b>Frobenius 法（兩指標 $-1$、$\tfrac12$ 相差非整數）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>兩個線性獨立的級數解</h5>
+      <p class="wq-step"><span class="memo">背：$y''+P(x)y'+Q(x)y=0$；$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$ 都有限 ⟹ 正則奇點，令 $y=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+\gamma}$（$a_0\ne0$）</span>
+        <span class="syms">$y$：未知函數；$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$a_n$：級數係數；$\gamma$：指標</span>
+        整式除以 $2x^2$。<br>
+        $P=\dfrac{3}{2x}$，$Q=\dfrac{2x-1}{2x^2}$；$p_0=\dfrac32$，$q_0=\lim\limits_{x\to0}\dfrac{2x-1}{2}=-\dfrac12$ ⟹ 正則奇點</p>
+      <p class="wq-step"><span class="memo">背：指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$\gamma$：指標；$p_0$、$q_0$：正則奇點的兩個極限值</span>
+        代 $p_0=\tfrac32$、$q_0=-\tfrac12$，乘 2；兩根差 $\tfrac32$ 不是整數。<br>
+        $2\gamma^2+\gamma-1=(2\gamma-1)(\gamma+1)=0\Rightarrow\gamma=\tfrac12,\ -1$</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$x^2y''\to s(s-1)a_n$，$xy'\to sa_n$，$y\to a_n$；$xy\to a_{n-1}$（$s=n+\gamma$）</span>
+        <span class="syms">$s=n+\gamma$：第 $n$ 項的次方；$a_n$、$a_{n-1}$：相鄰兩個係數；$\gamma$：指標</span>
+        $2x^2y''+3xy'-y$ 給 $[2s(s-1)+3s-1]a_n$，$2xy$ 平移成 $2a_{n-1}$，令 $n\ge1$ 的係數為 0。<br>
+        $(2s-1)(s+1)a_n+2a_{n-1}=0\Rightarrow a_n=-\dfrac{2a_{n-1}}{(2n+2\gamma-1)(n+\gamma+1)}$</p>
+      <p class="wq-step"><span class="memo">背：$a_n=-\dfrac{2a_{n-1}}{(2n+2\gamma-1)(n+\gamma+1)}$ 代 $\gamma=-1$</span>
+        <span class="syms">$a_n$：要求的係數；$a_{n-1}$：前一個係數；$a_0=1$：取定的首項</span>
+        分母變成 $(2n-3)n$；$n=1$ 時分母是 $-1$，$a_1$ 變正號。<br>
+        $a_1=-\dfrac{2}{(-1)(1)}=2$，$a_2=-\dfrac{2a_1}{(1)(2)}=-2$，$a_3=-\dfrac{2a_2}{(3)(3)}=\dfrac49$<br>
+        $y_1=\dfrac1x\Big(1+2x-2x^2+\dfrac49x^3+\cdots\Big)$</p>
+      <p class="wq-step"><span class="memo">背：$a_n=-\dfrac{2a_{n-1}}{(2n+2\gamma-1)(n+\gamma+1)}$ 代 $\gamma=\tfrac12$</span>
+        <span class="syms">$a_n$：要求的係數；$a_{n-1}$：前一個係數；$a_0=1$：取定的首項</span>
+        分母變成 $(2n)(n+\tfrac32)=n(2n+3)$。<br>
+        $a_1=-\dfrac{2}{1\cdot5}=-\dfrac25$，$a_2=-\dfrac{2a_1}{2\cdot7}=\dfrac2{35}$，$a_3=-\dfrac{2a_2}{3\cdot9}=-\dfrac4{945}$<br>
+        $y_2=\sqrt x\Big(1-\dfrac25x+\dfrac2{35}x^2-\dfrac4{945}x^3+\cdots\Big)$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_1=\tfrac1x\big(1+2x-2x^2+\tfrac49x^3+\cdots\big)$，$y_2=\sqrt x\big(1-\tfrac25x+\tfrac2{35}x^2-\tfrac4{945}x^3+\cdots\big)$。</div>
+  <p class="small"><a href="#am5-hw-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-sf-01a" data-group="一、Frobenius 法與指標方程式" data-title="自編：4xy''+2y'+y=0">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$4xy''+2y'+y=0$：(a) 判斷 $x=0$ 的類型並求指標；(b) 兩個 Frobenius 解並認出 closed form；(c) 滿足 $y(0)=3$、$y(\pi^2/4)=-2$ 的解；(d) 為什麼可以在奇點 $x=0$ 給 $y(0)$？改給 $y'(0)$ 會怎樣？</div>
+  <div class="rote">
+    <p><b>看到</b>「$4xy''+2y'$」＋「認出 closed form」＋「條件給在 $x=0$ 和 $x=\pi^2/4$」⟹ 題型：<b>Frobenius 法＋認出 $\cos\sqrt x$、$\sin\sqrt x$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $x=0$ 的類型與指標</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$ 有限 ⟹ 正則奇點；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        整式除以 $4x$；$P$、$Q$ 在 0 發散，乘上 $x$、$x^2$ 後有限。<br>
+        $P=\dfrac1{2x}$，$Q=\dfrac1{4x}$；$p_0=\dfrac12$，$q_0=\lim\limits_{x\to0}\dfrac x4=0$ ⟹ 正則奇點<br>
+        $\gamma(\gamma-1)+\tfrac12\gamma=\gamma\big(\gamma-\tfrac12\big)=0\Rightarrow\gamma=0,\ \tfrac12$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 兩個解與 closed form</h5>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$xy''\to s(s-1)a_n$，$y'\to sa_n$（都是 $x^{s-1}$）；$y\to a_{n-1}$（$s=n+\gamma$）</span>
+        <span class="syms">$s=n+\gamma$：第 $n$ 項的次方；$a_n$、$a_{n-1}$：相鄰兩個係數；$x$：自變數</span>
+        $xy''$、$y'$ 比 $y$ 低一次，所以對齊到 $x^{n+\gamma-1}$，$y$ 平移。<br>
+        $\big[4s(s-1)+2s\big]a_n+a_{n-1}=0\Rightarrow a_n=-\dfrac{a_{n-1}}{2s(2s-1)}$</p>
+      <p class="wq-step"><span class="memo">背：$\cos u=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^nu^{2n}}{(2n)!}$，$\sin u=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^nu^{2n+1}}{(2n+1)!}$</span>
+        <span class="syms">$u$：泰勒級數的變數（這裡 $u=\sqrt x$）；$n$：求和指標</span>
+        $\gamma=0$ 時分母 $2n(2n-1)$ 連乘成 $(2n)!$；$\gamma=\tfrac12$ 時分母 $(2n+1)(2n)$ 連乘成 $(2n+1)!$（$a_0=1$）。<br>
+        $\gamma=0$：$a_n=\dfrac{(-1)^n}{(2n)!}$，$y_1=\displaystyle\sum\frac{(-1)^n(\sqrt x)^{2n}}{(2n)!}=\cos\sqrt x$<br>
+        $\gamma=\tfrac12$：$a_n=\dfrac{(-1)^n}{(2n+1)!}$，$y_2=x^{1/2}\displaystyle\sum\frac{(-1)^nx^n}{(2n+1)!}=\sin\sqrt x$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 滿足 $y(0)=3$、$y(\pi^2/4)=-2$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：一般解 $y=A\cos\sqrt x+B\sin\sqrt x$，條件代進去解常數</span>
+        <span class="syms">$A$、$B$：任意常數；$y(0)$、$y(\pi^2/4)$：題目給的兩個條件</span>
+        $\sqrt{\pi^2/4}=\dfrac\pi2$，$\cos\dfrac\pi2=0$、$\sin\dfrac\pi2=1$。<br>
+        $y(0)=A\cdot1+B\cdot0=3\Rightarrow A=3$；$y(\pi^2/4)=A\cdot0+B\cdot1=-2\Rightarrow B=-2$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 為什麼 $y(0)$ 可以、$y'(0)$ 不行</h5>
+      <p class="wq-step"><span class="memo">背：指標 $\gamma\ge0$ ⟹ 解在 $x=0$ 有限；$\dfrac{d}{dx}\sin\sqrt x=\dfrac{\cos\sqrt x}{2\sqrt x}$</span>
+        <span class="syms">$\gamma$：指標；$y_1$、$y_2$：(b) 的兩個解；$y'$：導數</span>
+        兩個指標都 $\ge0$，所以 $y(0)$ 有意義；但 $y_2$ 的導數在 0 發散，$y'(0)$ 有限就強迫 $B=0$，不能任意指定。<br>
+        $y_1(0)=1$，$y_2(0)=0$；$y_2'=\dfrac{\cos\sqrt x}{2\sqrt x}\to\infty$（$x\to0^+$），$y_1'(0)=-\tfrac12$ 是定值</p>
+    </div>
+  </div>
+  <div class="final">答：$y=3\cos\sqrt x-2\sin\sqrt x$。</div>
+  <p class="small"><a href="#am5-sf-01a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-sf-01b" data-group="一、Frobenius 法與指標方程式" data-title="自編：2xy''+(1+x)y'+y=0">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$2xy''+(1+x)y'+y=0$：(a) 求指標；(b) 遞迴關係，並說明它可以先約分；(c) 兩個級數解（寫到第五項），其中一個認出 closed form；(d) 哪一個解在 $x=0$ 的導數有限？</div>
+  <div class="rote">
+    <p><b>看到</b>「$2xy''$」＋「遞迴可以約分」＋「認出 closed form」＋「哪個解在 0 可微」⟹ 題型：<b>Frobenius 法（遞迴先約分）＋認出 $e^{-x/2}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 指標</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        整式除以 $2x$。<br>
+        $P=\dfrac{1+x}{2x}$，$Q=\dfrac1{2x}$；$p_0=\lim\limits_{x\to0}\dfrac{1+x}2=\dfrac12$，$q_0=\lim\limits_{x\to0}\dfrac x2=0$<br>
+        $\gamma(\gamma-1)+\tfrac12\gamma=\gamma\big(\gamma-\tfrac12\big)=0\Rightarrow\gamma=0,\ \tfrac12$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 遞迴關係並約分</h5>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$xy''\to s(s-1)a_n$，$y'\to sa_n$（$x^{s-1}$）；$xy'\to(s-1)a_{n-1}$，$y\to a_{n-1}$（平移）</span>
+        <span class="syms">$s=n+\gamma$：第 $n$ 項的次方；$a_n$、$a_{n-1}$：相鄰兩個係數；$\gamma$：指標</span>
+        對齊到 $x^{s-1}$；$a_{n-1}$ 的係數 $(s-1)+1=s$，和 $a_n$ 的係數有公因式 $s$，$n\ge1$ 時 $s\ne0$ 可以約掉。<br>
+        $\big[2s(s-1)+s\big]a_n+s\,a_{n-1}=s(2s-1)a_n+s\,a_{n-1}=0\Rightarrow a_n=-\dfrac{a_{n-1}}{2n+2\gamma-1}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 兩個級數解</h5>
+      <p class="wq-step"><span class="memo">背：$a_n=-\dfrac{a_{n-1}}{2n+2\gamma-1}$ 代 $\gamma=0$</span>
+        <span class="syms">$a_n$：要求的係數；$a_{n-1}$：前一個係數；$a_0=1$：取定的首項</span>
+        分母是 $2n-1$，代 $n=1,2,3,4$。<br>
+        $a_1=-1$，$a_2=-\dfrac{a_1}3=\dfrac13$，$a_3=-\dfrac{a_2}5=-\dfrac1{15}$，$a_4=-\dfrac{a_3}7=\dfrac1{105}$<br>
+        $y_1=1-x+\dfrac{x^2}3-\dfrac{x^3}{15}+\dfrac{x^4}{105}-\cdots$</p>
+      <p class="wq-step"><span class="memo">背：$e^u=\displaystyle\sum_{n=0}^{\infty}\frac{u^n}{n!}$</span>
+        <span class="syms">$u$：泰勒級數的變數（這裡 $u=-\tfrac x2$）；$n$：求和指標；$a_n$：係數</span>
+        $\gamma=\tfrac12$ 時分母 $2n$，連乘得 $\dfrac{(-1)^n}{2^nn!}$。<br>
+        $a_n=-\dfrac{a_{n-1}}{2n}\Rightarrow a_n=\dfrac{(-1)^n}{2^n\,n!}$，$y_2=\sqrt x\displaystyle\sum\frac1{n!}\Big(-\frac x2\Big)^n=\sqrt x\,e^{-x/2}$<br>
+        前五項：$\sqrt x\Big(1-\dfrac x2+\dfrac{x^2}8-\dfrac{x^3}{48}+\dfrac{x^4}{384}-\cdots\Big)$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 哪個解在 $x=0$ 的導數有限</h5>
+      <p class="wq-step"><span class="memo">背：$(x^{1/2})'=\dfrac1{2\sqrt x}$，$x\to0^+$ 發散</span>
+        <span class="syms">$y_1$、$y_2$：(c) 的兩個解；$y'$：導數</span>
+        $y_1$ 只有整數次方，導數在 0 有限；$y_2$ 帶 $\sqrt x$，導數發散。<br>
+        $y_1'=-1+\tfrac23x-\cdots$，$y_1'(0)=-1$；$y_2'=e^{-x/2}\Big(\dfrac1{2\sqrt x}-\dfrac{\sqrt x}2\Big)\to\infty$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=c_1\big(1-x+\tfrac{x^2}3-\cdots\big)+c_2\sqrt x\,e^{-x/2}$；只有 $y_1$ 在 0 可微。</div>
+  <p class="small"><a href="#am5-sf-01b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 二、重根 ===== -->
+<article class="exam-item" data-exam-id="am5-ex-2" data-group="二、重根與降階法" data-title="板書：(x²-x)y''+(3x-1)y'+y=0">
+  <h3>板書例題 10/14</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-2"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　$(x^2-x)y''+(3x-1)y'+y=0\quad(0\lt x\lt1)$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　在 $0\lt x\lt1$ 解 $(x^2-x)y''+(3x-1)y'+y=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(x^2-x)y''$」＋「$0\lt x\lt1$」＋「指標重根」⟹ 題型：<b>Frobenius 重根：先求 $y_1$，再用降階法求 $y_2$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>一般解</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$ 有限 ⟹ 正則奇點；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        整式除以 $x^2-x=x(x-1)$。<br>
+        $P=\dfrac{3x-1}{x^2-x}$，$Q=\dfrac1{x^2-x}$；$p_0=\lim\limits_{x\to0}\dfrac{3x-1}{x-1}=1$，$q_0=\lim\limits_{x\to0}\dfrac{x}{x-1}=0$<br>
+        $\gamma(\gamma-1)+\gamma=\gamma^2=0\Rightarrow\gamma=0$（重根，只有一個級數解）</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$，$x^{s}$ 型與 $x^{s-1}$ 型分開，平移後比較同次方係數（$s=n+\gamma$）</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n+1}$：相鄰兩個係數；$\gamma$：指標</span>
+        $x^2y''+3xy'+y$ 給 $a_n$ 的係數，$-xy''-y'$ 平移後給 $a_{n+1}$ 的係數。<br>
+        $\big[s(s-1)+3s+1\big]a_n=(s+1)^2a_n$，$-\big[(s+1)s+(s+1)\big]a_{n+1}=-(s+1)^2a_{n+1}$<br>
+        $(n+\gamma+1)^2a_n=(n+\gamma+1)^2a_{n+1}\xrightarrow{\gamma=0}a_{n+1}=a_n$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\sum_{n=0}^{\infty}x^n=\frac1{1-x}$（$|x|\lt1$）</span>
+        <span class="syms">$x$：自變數；$n$：求和指標</span>
+        所有係數相等，取 $a_0=1$。<br>
+        $y_1=1+x+x^2+\cdots=\dfrac1{1-x}$</p>
+      <p class="wq-step"><span class="memo">背：降階法 $y_2=uy_1$，$u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx$</span>
+        <span class="syms">$y_1$：已知的第一個解；$y_2$：第二個解；$u$：待求的函數；$P(x)$：標準式 $y'$ 的係數</span>
+        $P$ 先拆部分分式再積分（$0\lt x\lt1$）。<br>
+        $P=\dfrac1x+\dfrac2{x-1}$，$\displaystyle\int P\,dx=\ln x+2\ln(1-x)=\ln\big[x(1-x)^2\big]$，$e^{-\int P\,dx}=\dfrac1{x(1-x)^2}$<br>
+        $u=\displaystyle\int\frac{1}{x(1-x)^2}\cdot(1-x)^2\,dx=\int\frac{dx}{x}=\ln x$，$y_2=uy_1=\dfrac{\ln x}{1-x}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\dfrac{c_1+c_2\ln x}{1-x}$。</div>
+  <p class="small"><a href="#am5-ex-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-sf-02a" data-group="二、重根與降階法" data-title="自編：xy''+(1-x)y'-y=0">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$xy''+(1-x)y'-y=0$：(a) 指標方程式；(b) 用 Frobenius 法求 $y_1$ 並認出 closed form；(c) 用降階公式求 $y_2$，寫出 $\ln x$ 項與其餘部分到 $x^3$；(d) 要求解在 $x\to0^+$ 時有界，一般解剩下什麼？</div>
+  <div class="rote">
+    <p><b>看到</b>「$xy''+(1-x)y'$」＋「降階公式求 $y_2$、寫出 $\ln x$ 項」＋「有界」⟹ 題型：<b>Frobenius 重根＋降階法（被積函數先展開再逐項積分）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 指標方程式</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        整式除以 $x$。<br>
+        $P=\dfrac1x-1$，$Q=-\dfrac1x$；$p_0=1$，$q_0=0$；$\gamma(\gamma-1)+\gamma=\gamma^2=0\Rightarrow\gamma=0$（重根）</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $y_1$ 與 closed form</h5>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$xy''\to s(s-1)a_n$，$y'\to sa_n$（$x^{s-1}$）；$xy'\to(s-1)a_{n-1}$，$y\to a_{n-1}$（平移）</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-1}$：相鄰兩個係數；$\gamma$：指標</span>
+        對齊到 $x^{s-1}$，代 $\gamma=0$（$s=n$）。<br>
+        $s^2a_n=s\,a_{n-1}\Rightarrow a_n=\dfrac{a_{n-1}}{n}\Rightarrow a_n=\dfrac{a_0}{n!}$</p>
+      <p class="wq-step"><span class="memo">背：$e^x=\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$</span>
+        <span class="syms">$x$：自變數；$n$：求和指標</span>
+        取 $a_0=1$。<br>
+        $y_1=\displaystyle\sum\frac{x^n}{n!}=e^x$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 用降階公式求 $y_2$</h5>
+      <p class="wq-step"><span class="memo">背：降階法 $y_2=uy_1$，$u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx$</span>
+        <span class="syms">$y_1=e^x$：第一個解；$y_2$：第二個解；$u$：待求的函數；$P(x)=\tfrac1x-1$：標準式 $y'$ 的係數</span>
+        $\displaystyle\int P\,dx=\ln x-x$，所以 $e^{-\int P\,dx}=\dfrac{e^x}x$；被積函數不能直接積，用 $e^{-x}$ 的級數展開。<br>
+        $u'=\dfrac{e^x/x}{e^{2x}}=\dfrac{e^{-x}}x=\dfrac1x-1+\dfrac x2-\dfrac{x^2}6+\cdots$</p>
+      <p class="wq-step"><span class="memo">背：逐項積分，$\displaystyle\int\frac{dx}x=\ln x$，$\displaystyle\int x^m\,dx=\frac{x^{m+1}}{m+1}$</span>
+        <span class="syms">$u$：降階法的函數；$m$：次方；$y_1=e^x=1+x+\tfrac{x^2}2+\cdots$</span>
+        $\tfrac1x$ 那項積出 $\ln x$；其餘部分乘上 $e^x$ 的級數，到 $x^3$。<br>
+        $u=\ln x-x+\dfrac{x^2}4-\dfrac{x^3}{18}+\cdots$<br>
+        $$\begin{aligned}y_2=e^xu&=e^x\ln x-x+\Big(\tfrac14-1\Big)x^2\\&\quad+\Big(-\tfrac1{18}+\tfrac14-\tfrac12\Big)x^3+\cdots\\&=e^x\ln x-x-\tfrac34x^2-\tfrac{11}{36}x^3-\cdots\end{aligned}$$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 有界的解</h5>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\lim_{x\to0^+}\ln x=-\infty$</span>
+        <span class="syms">$c_1$、$c_2$：一般解的常數；$y_1$、$y_2$：兩個解</span>
+        一般解 $y=c_1e^x+c_2y_2$，$y_2\approx\ln x$ 在 $0^+$ 發散，有界要求 $c_2=0$。<br>
+        有界的解：$y=c_1e^x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_1=e^x$，$y_2=e^x\ln x-x-\tfrac34x^2-\tfrac{11}{36}x^3-\cdots$；有界解 $c_1e^x$。</div>
+  <p class="small"><a href="#am5-sf-02a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-sf-02b" data-group="二、重根與降階法" data-title="自編：代入 y1 ln x + Σ b_n x^(n-1)">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$x^2y''+3xy'+(1+x)y=0$：(a) 指標方程式；(b) $y_1$ 的一般項與前四項；(c) 重根時第二解的形式是 $y_2=y_1\ln x+x^{\gamma}\sum_{n\ge1}b_nx^n$，代入方程式求 $b_1$、$b_2$、$b_3$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$x^2y''+3xy'$」＋「給定 $y_2=y_1\ln x+x^\gamma\sum b_nx^n$ 的形式」⟹ 題型：<b>Frobenius 重根：代入已知形式求 $b_n$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 指標方程式</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        整式除以 $x^2$：$P=\dfrac3x$、$Q=\dfrac{1+x}{x^2}$。<br>
+        $p_0=3$，$q_0=\lim\limits_{x\to0}(1+x)=1$；$\gamma^2+2\gamma+1=(\gamma+1)^2=0\Rightarrow\gamma=-1$（重根）</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $y_1$ 的一般項與前四項</h5>
+      <p class="wq-step"><span class="memo">背：$L[x^m]=x^2(x^m)''+3x(x^m)'+(1+x)x^m=(m+1)^2x^m+x^{m+1}$</span>
+        <span class="syms">$L[\ ]$：把函數代進方程式左邊；$m$：次方；$c_n$：$y_1$ 的係數；$x$：自變數</span>
+        令 $y_1=\sum c_nx^{n-1}$（$m=n-1$），比較 $x^{n-1}$ 的係數。<br>
+        $n^2c_n+c_{n-1}=0\Rightarrow c_n=-\dfrac{c_{n-1}}{n^2}=\dfrac{(-1)^n}{(n!)^2}$（$c_0=1$）<br>
+        $y_1=\dfrac1x\Big(1-x+\dfrac{x^2}4-\dfrac{x^3}{36}+\cdots\Big)$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 求 $b_1$、$b_2$、$b_3$</h5>
+      <p class="wq-step"><span class="memo">背：$(y_1\ln x)'=y_1'\ln x+\dfrac{y_1}x$，$(y_1\ln x)''=y_1''\ln x+\dfrac{2y_1'}x-\dfrac{y_1}{x^2}$</span>
+        <span class="syms">$y_1$：第一個解；$y_1'$、$y_1''$：它的導數；$L[\ ]$：方程式左邊；$c_n$：$y_1$ 的係數</span>
+        含 $\ln x$ 的部分是 $\ln x\cdot L[y_1]=0$，剩下不含 $\ln x$ 的項。<br>
+        $L[y_1\ln x]=x^2\Big(\dfrac{2y_1'}x-\dfrac{y_1}{x^2}\Big)+3x\cdot\dfrac{y_1}x=2xy_1'+2y_1=\displaystyle\sum2n\,c_nx^{n-1}$</p>
+      <p class="wq-step"><span class="memo">背：$L[y_1\ln x]+L\big[\sum b_nx^{n-1}\big]=0$，逐次方比較；$L\big[\sum b_nx^{n-1}\big]=\sum(n^2b_n+b_{n-1})x^{n-1}$</span>
+        <span class="syms">$b_n$：第二解級數部分的係數（$b_0=0$）；$c_n$：$y_1$ 的係數；$n$：次方編號</span>
+        $\gamma=-1$，所以 $x^\gamma\sum b_nx^n=\sum b_nx^{n-1}$；代 $c_1=-1$、$c_2=\tfrac14$、$c_3=-\tfrac1{36}$。<br>
+        $n^2b_n+b_{n-1}=-2n\,c_n$<br>
+        $b_1=-2c_1=2$；$4b_2=-4c_2-b_1=-1-2\Rightarrow b_2=-\dfrac34$；$9b_3=-6c_3-b_2=\dfrac16+\dfrac34\Rightarrow b_3=\dfrac{11}{108}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_2=y_1\ln x+2-\tfrac34x+\tfrac{11}{108}x^2-\cdots$。</div>
+  <p class="small"><a href="#am5-sf-02b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 三、兩根相差整數 ===== -->
+<article class="exam-item" data-exam-id="am5-ex-3" data-group="三、兩根相差整數" data-title="板書：xy''+3y'-y=0">
+  <h3>板書例題 10/14</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-3"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex Solve　$xy''+3y'-y=0$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用 Frobenius 法解 $xy''+3y'-y=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$xy''+3y'$」＋「Solve」＋「指標 $0$、$-2$ 相差整數」⟹ 題型：<b>Frobenius 兩根差整數：小根失敗 → 降階法（$\tfrac1{y_1^2}$ 展開）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>兩個線性獨立解</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        整式除以 $x$：$P=\dfrac3x$、$Q=-\dfrac1x$。<br>
+        $p_0=3$，$q_0=0$；$\gamma(\gamma-1)+3\gamma=\gamma(\gamma+2)=0\Rightarrow\gamma=0,\ -2$（相差 $N=2$）</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$xy''\to s(s-1)a_n$，$y'\to sa_n$（$x^{s-1}$）；$y\to a_{n-1}$（平移）</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-1}$：相鄰兩個係數；$\gamma$：指標</span>
+        對齊到 $x^{s-1}$。<br>
+        $\big[s(s-1)+3s\big]a_n=a_{n-1}\Rightarrow s(s+2)a_n=a_{n-1}$</p>
+      <p class="wq-step"><span class="memo">背：先用大根 $\gamma_1$（一定成功）</span>
+        <span class="syms">$\gamma_1=0$：大根；$a_n$：係數；$a_0=1$：取定的首項</span>
+        $\gamma=0$：$n(n+2)a_n=a_{n-1}$，代 $n=1,2,3$。<br>
+        $a_1=\dfrac1{1\cdot3}=\dfrac13$，$a_2=\dfrac{a_1}{2\cdot4}=\dfrac1{24}$，$a_3=\dfrac{a_2}{3\cdot5}=\dfrac1{360}$<br>
+        $y_1=1+\dfrac x3+\dfrac{x^2}{24}+\dfrac{x^3}{360}+\cdots$</p>
+      <p class="wq-step"><span class="memo">背：小根 $\gamma_2$ 在 $n=N$ 時 $a_N$ 的係數為 0，右邊不為 0 就失敗</span>
+        <span class="syms">$\gamma_2=-2$：小根；$N=2$：兩根的差；$a_n$：係數</span>
+        $\gamma=-2$：$(n-2)n\,a_n=a_{n-1}$。<br>
+        $n=2$：$0\cdot a_2=a_1\Rightarrow a_1=0$；$n=1$：$-a_1=a_0\Rightarrow a_0=0$，和 $a_0\ne0$ 矛盾 ✗</p>
+      <p class="wq-step"><span class="memo">背：降階法 $y_2=uy_1$，$u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx$；$(1+t)^{-2}=1-2t+3t^2-4t^3+\cdots$</span>
+        <span class="syms">$y_1$：大根的解；$u$：待求的函數；$P(x)=\tfrac3x$：標準式 $y'$ 的係數；$t$：二項式展開的變數（這裡 $t=y_1-1$）</span>
+        $\displaystyle\int P\,dx=3\ln x$，$e^{-\int P\,dx}=x^{-3}$；$\tfrac1{y_1^2}$ 用二項式展開成冪級數。<br>
+        $u'=\dfrac1{x^3y_1^2}=\dfrac1{x^3}\Big(1-\dfrac23x+\dfrac14x^2-\dfrac{19}{270}x^3+\cdots\Big)$</p>
+      <p class="wq-step"><span class="memo">背：逐項積分，$\displaystyle\int\frac{dx}x=\ln x$，$\displaystyle\int x^m\,dx=\frac{x^{m+1}}{m+1}$</span>
+        <span class="syms">$u$：降階法的函數；$m$：次方；$y_1$：大根的解</span>
+        $x^{-1}$ 那項積出 $\tfrac14\ln x$，再乘回 $y_1$。<br>
+        $u=-\dfrac1{2x^2}+\dfrac2{3x}+\dfrac14\ln x-\dfrac{19}{270}x+\cdots$<br>
+        $y_2=uy_1=\dfrac14y_1\ln x+\dfrac1{x^2}\Big(-\dfrac12+\dfrac12x+\dfrac{29}{144}x^2+\cdots\Big)$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=c_1y_1+c_2y_2$，$y_1=1+\tfrac x3+\tfrac{x^2}{24}+\tfrac{x^3}{360}+\cdots$。</div>
+  <p class="small"><a href="#am5-ex-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-hw-2" data-group="三、兩根相差整數" data-title="作業 2：xy''-xy'+y=0">
+  <h3>10/14 作業 第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-hw-2"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>2. Solve $xy''-xy'+y=0$.</p><p>Ans: two linear independent solution $y_1(x)$ and $y_2(x)$,</p><p>$y_1(x)=x$</p><p>$y_2(x)=x\ln x-1+\frac{1}{2}x^2+\frac{1}{12}x^3+\frac{1}{72}x^4+\dots$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $xy''-xy'+y=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$xy''-xy'+y=0$」＋「老師答案 $y_1=x$、$y_2$ 含 $x\ln x$」⟹ 題型：<b>Frobenius 兩根差 1：小根失敗 → 降階法（$e^x$ 展開）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>兩個線性獨立解</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        整式除以 $x$：$P=-1$、$Q=\dfrac1x$。<br>
+        $p_0=\lim\limits_{x\to0}(-x)=0$，$q_0=\lim\limits_{x\to0}x=0$；$\gamma(\gamma-1)=0\Rightarrow\gamma=1,\ 0$（相差 1）</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$xy''\to s(s-1)a_n$（$x^{s-1}$）；$xy'\to(s-1)a_{n-1}$，$y\to a_{n-1}$（平移）</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-1}$：相鄰兩個係數</span>
+        $-xy'+y$ 平移後係數 $-(s-1)+1=-(s-2)$。<br>
+        $s(s-1)a_n=(s-2)a_{n-1}$</p>
+      <p class="wq-step"><span class="memo">背：先用大根（一定成功）；小根在 $n=N$ 時 $a_N$ 的係數為 0，右邊不為 0 就失敗</span>
+        <span class="syms">$\gamma=1$：大根；$\gamma=0$：小根；$N=1$：兩根的差；$a_n$：係數</span>
+        大根在 $n=1$ 分子為 0，級數截斷；小根在 $n=1$ 矛盾。<br>
+        $\gamma=1$：$(n+1)n\,a_n=(n-1)a_{n-1}$，$n=1$：$2a_1=0$ ⟹ 之後全為零，$y_1=x$<br>
+        $\gamma=0$：$n(n-1)a_n=(n-2)a_{n-1}$，$n=1$：$0\cdot a_1=-a_0$，矛盾 ✗</p>
+      <p class="wq-step"><span class="memo">背：降階法 $y_2=uy_1$，$u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx$；$e^x=\displaystyle\sum\frac{x^n}{n!}$</span>
+        <span class="syms">$y_1=x$：第一個解；$u$：待求的函數；$P(x)=-1$：標準式 $y'$ 的係數；$n$：求和指標</span>
+        $e^{-\int P\,dx}=e^x$，把 $e^x$ 展開後除以 $x^2$ 逐項積分，再乘 $y_1=x$。<br>
+        $u=\displaystyle\int\Big(\frac1{x^2}+\frac1x+\frac12+\frac x6+\frac{x^2}{24}+\cdots\Big)dx=-\frac1x+\ln x+\frac x2+\frac{x^2}{12}+\frac{x^3}{72}+\cdots$<br>
+        $y_2=xu=x\ln x-1+\tfrac12x^2+\tfrac1{12}x^3+\tfrac1{72}x^4+\cdots$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_1=x$，$y_2=xu=x\ln x-1+\tfrac12x^2+\tfrac1{12}x^3+\tfrac1{72}x^4+\cdots$。</div>
+  <p class="small"><a href="#am5-hw-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-k110-4" data-group="三、兩根相差整數" data-title="考古 110上期末 4：xy''+(x-1)y'-y=0">
+  <h3>110 上期末 第 4 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-k110-4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>4. Solve $xy''+(x-1)y'-y=0$ with $y(0)=1,y(1)=0$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $xy''+(x-1)y'-y=0$，$y(0)=1$、$y(1)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$xy''$（$x=0$ 是奇點）」＋「$y(0)=1$、$y(1)=0$」＋「指標 $0$、$2$ 相差整數」⟹ 題型：<b>Frobenius 小根成功＋認出 closed form＋代條件</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>一般解與滿足條件的解</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$ 有限 ⟹ 正則奇點；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        整式除以 $x$：$P=\dfrac{x-1}x$、$Q=-\dfrac1x$。<br>
+        $p_0=\lim\limits_{x\to0}(x-1)=-1$，$q_0=\lim\limits_{x\to0}(-x)=0$；$\gamma(\gamma-1)-\gamma=\gamma(\gamma-2)=0\Rightarrow\gamma=2,\ 0$</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$xy''\to s(s-1)a_n$，$y'\to sa_n$（$x^{s-1}$）；$xy'\to(s-1)a_{n-1}$，$y\to a_{n-1}$（平移）</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-1}$：相鄰兩個係數</span>
+        對齊到 $x^{s-1}$。<br>
+        $\big[s(s-1)-s\big]a_n+\big[(s-1)-1\big]a_{n-1}=0\Rightarrow s(s-2)a_n+(s-2)a_{n-1}=0$</p>
+      <p class="wq-step"><span class="memo">背：$e^{-x}=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^nx^n}{n!}=1-x+\frac{x^2}{2!}-\cdots$</span>
+        <span class="syms">$\gamma=2$：大根；$a_n$：係數；$n$：求和指標</span>
+        $\gamma=2$：$(n+2)n\,a_n=-n\,a_{n-1}$，約掉 $n$ 得 $a_n=-\dfrac{a_{n-1}}{n+2}$；取 $a_0=\tfrac12$ 讓係數變成 $\dfrac{(-1)^n}{(n+2)!}$。<br>
+        $y=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^nx^{n+2}}{(n+2)!}=\frac{x^2}{2!}-\frac{x^3}{3!}+\cdots=e^{-x}-1+x$</p>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 時 $a_N$ 的係數為 0；右邊也是 0 ⟹ $a_N$ 任意，小根成功</span>
+        <span class="syms">$\gamma=0$：小根；$N=2$：兩根的差；$a_n$：係數；$a_0$：任意常數</span>
+        $\gamma=0$：$n(n-2)a_n=-(n-2)a_{n-1}$。<br>
+        $n=1$：$-a_1=a_0\Rightarrow a_1=-a_0$；$n=2$：$0\cdot a_2=0$，$a_2$ 任意，取 $a_2=0$；$n\ge3$：$a_n=-\dfrac{a_{n-1}}n=0$<br>
+        $y=a_0(1-x)$</p>
+      <p class="wq-step"><span class="memo">背：一般解 $y=c_1y_1+c_2y_2$，條件代進去解常數</span>
+        <span class="syms">$c_1$、$c_2$：常數；$y(0)$、$y(1)$：題目給的兩個條件</span>
+        兩個指標都 $\ge0$，兩個解在 $x=0$ 都有限，可以代 $y(0)$。<br>
+        $y=c_1(1-x)+c_2(e^{-x}-1+x)$<br>
+        $y(0)=c_1\cdot1+c_2(1-1+0)=1\Rightarrow c_1=1$；$y(1)=c_1\cdot0+c_2(e^{-1}-1+1)=c_2e^{-1}=0\Rightarrow c_2=0$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=1-x$。</div>
+  <p class="small"><a href="#am5-k110-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-k112-4" data-group="三、兩根相差整數" data-title="考古 112上期末 4：(x²+2x)y''-2(x+1)y'+2y=0">
+  <h3>112 上期末 第 4 題（8 分）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-k112-4"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">卷頭印「應用數學期中考 (2024. 01.)」，時間與考古題網站的分類都是 112 學年上學期期末考。</p>
+<div class="original-text" lang="en"><p>4. (8 points) Solve the general solution of $(x^2+2x)y''-2(x+1)y'+2y=0$ by Frobenius method.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用 Frobenius 法求 $(x^2+2x)y''-2(x+1)y'+2y=0$ 的一般解。</div>
+  <div class="rote">
+    <p><b>看到</b>「by Frobenius method」＋「$(x^2+2x)y''$」＋「general solution」⟹ 題型：<b>Frobenius 兩根差 2，小根一次給出兩個解（截斷成多項式）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>一般解</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$ 有限 ⟹ 正則奇點</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值</span>
+        整式除以 $x^2+2x=x(x+2)$。<br>
+        $P=\dfrac{-2(x+1)}{x(x+2)}$，$Q=\dfrac2{x(x+2)}$；$p_0=\lim\limits_{x\to0}\dfrac{-2(x+1)}{x+2}=-1$，$q_0=\lim\limits_{x\to0}\dfrac{2x}{x+2}=0$</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$，$x^{s-1}$ 型與 $x^{s}$ 型分開，$x^s$ 型平移成 $a_{n-1}$（$s=n+\gamma$）</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-1}$：相鄰兩個係數；$\gamma$：指標</span>
+        $2xy''-2y'$ 是 $x^{s-1}$ 型；$x^2y''-2xy'+2y$ 是 $x^s$ 型，平移時 $s$ 換成 $s-1$。<br>
+        $\big[2s(s-1)-2s\big]a_n=2s(s-2)a_n$，$\big[(s-1)(s-2)-2(s-1)+2\big]a_{n-1}=(s-2)(s-3)a_{n-1}$<br>
+        $2s(s-2)a_n+(s-2)(s-3)a_{n-1}=0$；$n=0$：$2\gamma(\gamma-2)=0\Rightarrow\gamma=0,\ 2$</p>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 時 $a_N$ 的係數為 0；右邊也是 0 ⟹ $a_N$ 任意，小根成功</span>
+        <span class="syms">$\gamma=0$：小根；$N=2$：兩根的差；$a_n$：係數；$a_0$、$a_2$：兩個任意常數</span>
+        $\gamma=0$ 代 $s=n$：$2n(n-2)a_n=-(n-2)(n-3)a_{n-1}$。<br>
+        $n=1$：$-2a_1=-2a_0\Rightarrow a_1=a_0$；$n=2$：$0\cdot a_2=0$，$a_2$ 任意；$n=3$：$6a_3=-(1)(0)a_2=0\Rightarrow a_3=0$，之後全為零<br>
+        $y=a_0(1+x)+a_2x^2$</p>
+      <p class="wq-step"><span class="memo">背：大根 $\gamma=2$ 的解應包含在小根的結果裡（驗證）</span>
+        <span class="syms">$\gamma=2$：大根；$a_n$：係數</span>
+        代 $s=n+2$。<br>
+        $2(n+2)n\,a_n=-n(n-1)a_{n-1}$，$n=1$：$6a_1=0$ ⟹ $y=x^2$，和 $a_2x^2$ 那部分相同 ✓</p>
+    </div>
+  </div>
+  <div class="final">答：$y=c_1(1+x)+c_2x^2$。</div>
+  <p class="small"><a href="#am5-k112-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-k114-2" data-group="三、兩根相差整數" data-title="考古 114上期末 2：x²y''+xy'+(x²-1/4)y=0">
+  <h3>114 上期末 第 2 題（25%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-k114-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. (25%) Solve $x^2y''+xy'+\left(x^2-\frac{1}{4}\right)y=0$ by the Frobenius method. You only need to find the first three nonzero terms of each of the two linearly independent series solutions.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用 Frobenius 法解 $x^2y''+xy'+(x^2-\tfrac14)y=0$，兩個解各寫前三個非零項。</div>
+  <div class="rote">
+    <p><b>看到</b>「by the Frobenius method」＋「$x^2y''+xy'+(x^2-\tfrac14)y$」＋「各前三個非零項」⟹ 題型：<b>Frobenius 兩根差 1、遞迴跳兩格：小根成功（Bessel 階 $\tfrac12$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>兩個線性獨立解各前三個非零項</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        整式除以 $x^2$：$P=\dfrac1x$、$Q=\dfrac{x^2-\frac14}{x^2}$。<br>
+        $p_0=1$，$q_0=\lim\limits_{x\to0}\big(x^2-\tfrac14\big)=-\tfrac14$；$\gamma^2-\tfrac14=0\Rightarrow\gamma=\pm\tfrac12$（相差 1）</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$x^2y''\to s(s-1)a_n$，$xy'\to sa_n$，$y\to a_n$；$x^2y\to a_{n-2}$（$s=n+\gamma$）</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-2}$：差兩格的係數；$\gamma$：指標</span>
+        $x^2y$ 高兩次，平移兩格；$n=0$、$n=1$ 單獨寫。<br>
+        $$\begin{aligned}&(\gamma+\tfrac12)(\gamma-\tfrac12)a_0+(\gamma+\tfrac32)(\gamma+\tfrac12)a_1x\\&+\sum_{n\ge2}\Big[(n+\gamma+\tfrac12)(n+\gamma-\tfrac12)a_n+a_{n-2}\Big]x^n=0\end{aligned}$$
+        （全式已除以 $x^\gamma$）</p>
+      <p class="wq-step"><span class="memo">背：$a_n=-\dfrac{a_{n-2}}{(n+\gamma+\frac12)(n+\gamma-\frac12)}$ 代 $\gamma=\tfrac12$</span>
+        <span class="syms">$a_n$：要求的係數；$a_{n-2}$：前兩格的係數；$a_0$：任意常數</span>
+        $n=1$ 的係數 $(2)(1)\ne0$，所以 $a_1=0$，奇數項全為零；分母變 $(n+1)n$。<br>
+        $a_1=0$，$a_2=-\dfrac{a_0}{3\cdot2}=-\dfrac16a_0$，$a_4=-\dfrac{a_2}{5\cdot4}=\dfrac1{120}a_0$<br>
+        $y_1=x^{1/2}\Big(1-\dfrac{x^2}6+\dfrac{x^4}{120}-\cdots\Big)$</p>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 時 $a_N$ 的係數為 0；右邊也是 0 ⟹ $a_N$ 任意，小根成功</span>
+        <span class="syms">$\gamma=-\tfrac12$：小根；$N=1$：兩根的差；$a_n$、$a_{n-2}$：係數</span>
+        $n=1$ 的係數 $(1)(0)=0$、右邊沒有 $a_{-1}$，所以 $0\cdot a_1=0$，取 $a_1=0$；分母變 $n(n-1)$。<br>
+        $a_2=-\dfrac{a_0}{2\cdot1}=-\dfrac12a_0$，$a_4=-\dfrac{a_2}{4\cdot3}=\dfrac1{24}a_0$<br>
+        $y_2=x^{-1/2}\Big(1-\dfrac{x^2}2+\dfrac{x^4}{24}-\cdots\Big)$</p>
+      <p class="wq-step"><span class="memo">背：$\sin x=x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots$，$\cos x=1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\cdots$</span>
+        <span class="syms">$x$：自變數；$c_1$、$c_2$：一般解的常數</span>
+        $y_1$ 的括號乘上 $x$ 是 $\sin x$，$y_2$ 的括號就是 $\cos x$。<br>
+        $y=c_1\dfrac{\sin x}{\sqrt x}+c_2\dfrac{\cos x}{\sqrt x}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_1=x^{1/2}\big(1-\tfrac16x^2+\tfrac1{120}x^4-\cdots\big)$，$y_2=x^{-1/2}\big(1-\tfrac12x^2+\tfrac1{24}x^4-\cdots\big)$（$=\tfrac{\sin x}{\sqrt x}$、$\tfrac{\cos x}{\sqrt x}$）。</div>
+  <p class="small"><a href="#am5-k114-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-sf-03a" data-group="三、兩根相差整數" data-title="自編：小根成功與失敗各一">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) $xy''+2y'-xy=0$ 只用小根求兩解；(b) $xy''-y=0$ 小根為何失敗，大根 $y_1$ 前四項；(c) 判斷法。</div>
+  <div class="rote">
+    <p><b>看到</b>「兩個方程式的指標根都相差 1」＋「只用小根」「小根為什麼失敗」⟹ 題型：<b>兩根差整數：看小根在 $n=N$ 那條方程式的右邊</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $xy''+2y'-xy=0$ 只用小根求兩個解</h5>
+      <p class="wq-step"><span class="memo">背：指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$，$p_0=\displaystyle\lim_{x\to0}xP$，$q_0=\displaystyle\lim_{x\to0}x^2Q$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $y''$ 的係數後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        除以 $x$：$P=\dfrac2x$、$Q=-1$。<br>
+        $p_0=2$，$q_0=\lim\limits_{x\to0}(-x^2)=0$；$\gamma(\gamma-1)+2\gamma=\gamma(\gamma+1)=0\Rightarrow\gamma=0,\ -1$</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$xy''\to s(s-1)a_n$，$y'\to sa_n$（$x^{s-1}$）；$xy\to a_{n-2}$（平移兩格）</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-2}$：差兩格的係數</span>
+        $xy$ 比 $x^{s-1}$ 高兩次。<br>
+        $s(s+1)a_n=a_{n-2}$</p>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 時 $a_N$ 的係數為 0；右邊也是 0 ⟹ $a_N$ 任意，小根一次給出兩個解</span>
+        <span class="syms">$\gamma=-1$：小根；$N=1$；$a_0$、$a_1$：兩個任意常數</span>
+        $\gamma=-1$：$(n-1)n\,a_n=a_{n-2}$；$n=1$ 右邊是 $a_{-1}=0$。<br>
+        $n=1$：$0\cdot a_1=0$，$a_1$ 任意<br>
+        $a_2=\dfrac{a_0}2$，$a_4=\dfrac{a_2}{12}=\dfrac{a_0}{24}$；$a_3=\dfrac{a_1}6$，$a_5=\dfrac{a_3}{20}=\dfrac{a_1}{120}$</p>
+      <p class="wq-step"><span class="memo">背：$\cosh x=1+\dfrac{x^2}{2!}+\dfrac{x^4}{4!}+\cdots$，$\sinh x=x+\dfrac{x^3}{3!}+\dfrac{x^5}{5!}+\cdots$</span>
+        <span class="syms">$x$：自變數；$a_0$、$a_1$：任意常數</span>
+        係數沒有正負交錯，前面還有 $x^{\gamma}=x^{-1}$。<br>
+        $y=\dfrac{a_0}x\Big(1+\dfrac{x^2}{2!}+\dfrac{x^4}{4!}+\cdots\Big)+\dfrac{a_1}x\Big(x+\dfrac{x^3}{3!}+\dfrac{x^5}{5!}+\cdots\Big)=a_0\dfrac{\cosh x}x+a_1\dfrac{\sinh x}x$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $xy''-y=0$ 小根失敗，大根 $y_1$ 前四項</h5>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$xy''\to s(s-1)a_n$（$x^{s-1}$）；$y\to a_{n-1}$（平移一格）；$n=0$ 給指標</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-1}$：相鄰兩個係數；$\gamma$：指標</span>
+        $p_0=q_0=0$，遞迴只跳一格。<br>
+        $s(s-1)a_n=a_{n-1}$；$\gamma(\gamma-1)=0\Rightarrow\gamma=1,\ 0$</p>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 時 $a_N$ 的係數為 0，右邊不為 0 就失敗</span>
+        <span class="syms">$\gamma=0$：小根；$N=1$；$a_0\ne0$：首項</span>
+        $n=1$ 的右邊直接是 $a_0$。<br>
+        $\gamma=0$、$n=1$：$0\cdot a_1=a_0$，和 $a_0\ne0$ 矛盾 ✗</p>
+      <p class="wq-step"><span class="memo">背：大根一定成功：$s(s-1)a_n=a_{n-1}$ 代 $s=n+1$</span>
+        <span class="syms">$\gamma=1$：大根；$a_n$、$a_{n-1}$：相鄰兩個係數；$a_0=1$：取定的首項</span>
+        $(n+1)n\,a_n=a_{n-1}$，代 $n=1,2,3$。<br>
+        $a_1=\dfrac12$，$a_2=\dfrac{a_1}6=\dfrac1{12}$，$a_3=\dfrac{a_2}{12}=\dfrac1{144}$，$y_1=x\Big(1+\dfrac x2+\dfrac{x^2}{12}+\dfrac{x^3}{144}+\cdots\Big)$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 怎麼事先判斷小根會不會成功</h5>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 的方程式是 $0\cdot a_N=(\text{右邊})$；右邊 $=0$ 成功，$\ne0$ 失敗</span>
+        <span class="syms">$N$：兩根的差；$a_N$：小根第 $N$ 個係數；右邊：由 $a_{N-1},a_{N-2},\dots$ 組成</span>
+        遞迴跳兩格而 $N=1$ 時，右邊只有 $a_{-1}=0$，一定成功；跳一格時右邊直接含 $a_0$，一定失敗；一般情況要把 $a_1,\dots,a_{N-1}$ 算出來代進去看。<br>
+        (a) 右邊 $a_{-1}=0$ ⟹ 成功；(b) 右邊 $a_0\ne0$ ⟹ 失敗</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $a_0\tfrac{\cosh x}x+a_1\tfrac{\sinh x}x$；(b) $y_1=x(1+\tfrac x2+\tfrac{x^2}{12}+\tfrac{x^3}{144}+\cdots)$。</div>
+  <p class="small"><a href="#am5-sf-03a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-sf-03b" data-group="三、兩根相差整數" data-title="自編：xy''+y=0 的 ln 係數">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$xy''+y=0$：(a) 求指標，並用大根求 $y_1$ 的前四項；(b) 說明小根失敗；(c) 設 $y_2=k\,y_1\ln x+\sum_{n\ge0}b_nx^n$，取 $b_0=1$、$b_1=0$，代入方程式求 $k$、$b_2$、$b_3$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$xy''+y=0$」＋「給定 $y_2=ky_1\ln x+\sum b_nx^n$ 的形式」⟹ 題型：<b>兩根差 1、小根失敗：代入帶 $\ln$ 的形式求 $k$ 與 $b_n$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 指標與 $y_1$ 前四項</h5>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$xy''\to s(s-1)a_n$（$x^{s-1}$）；$y\to a_{n-1}$（平移）；$n=0$ 給指標</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-1}$：相鄰兩個係數；$\gamma$：指標</span>
+        $P=0$、$Q=\tfrac1x$，$p_0=q_0=0$。<br>
+        $s(s-1)a_n=-a_{n-1}$；$\gamma(\gamma-1)=0\Rightarrow\gamma=1,\ 0$</p>
+      <p class="wq-step"><span class="memo">背：大根一定成功：$s(s-1)a_n=-a_{n-1}$ 代 $s=n+1$</span>
+        <span class="syms">$\gamma=1$：大根；$a_n$：係數；$a_0=1$：取定的首項</span>
+        $a_n=-\dfrac{a_{n-1}}{n(n+1)}$，連乘得 $\dfrac{(-1)^n}{n!\,(n+1)!}$。<br>
+        $y_1=x-\dfrac{x^2}2+\dfrac{x^3}{12}-\dfrac{x^4}{144}+\cdots$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 小根失敗</h5>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 時 $a_N$ 的係數為 0，右邊不為 0 就失敗</span>
+        <span class="syms">$\gamma=0$：小根；$N=1$；$a_0\ne0$：首項</span>
+        $\gamma=0$ 代 $s=n$，$n=1$。<br>
+        $1\cdot0\cdot a_1=-a_0$，即 $0=-a_0$，和 $a_0\ne0$ 矛盾 ✗</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 求 $k$、$b_2$、$b_3$</h5>
+      <p class="wq-step"><span class="memo">背：$(y_1\ln x)''=y_1''\ln x+\dfrac{2y_1'}x-\dfrac{y_1}{x^2}$；$L[y_1\ln x]=\ln x\cdot L[y_1]+(\text{不含}\ln\text{的項})$</span>
+        <span class="syms">$L[\ ]$：把函數代進 $xy''+y$；$y_1$：大根的解；$y_1'$、$y_1''$：它的導數；$c_n$：$y_1=\sum c_nx^{n+1}$ 的係數</span>
+        $L[y_1]=0$，剩下的項代 $c_0=1$、$c_1=-\tfrac12$、$c_2=\tfrac1{12}$。<br>
+        $L[y_1\ln x]=2y_1'-\dfrac{y_1}x=\displaystyle\sum(2n+1)c_nx^n=1-\frac32x+\frac5{12}x^2-\cdots$</p>
+      <p class="wq-step"><span class="memo">背：$L\big[\sum b_mx^m\big]=\sum\big[m(m-1)b_m+b_{m-1}\big]x^{m-1}$；$L[y_2]=0$ 逐次方比較</span>
+        <span class="syms">$b_m$：第二解級數部分的係數；$k$：$\ln$ 項的係數；$m$：次方</span>
+        題目取 $b_0=1$、$b_1=0$；$x^0$ 的方程式直接決定 $k$。<br>
+        $x^0$：$0\cdot b_1+b_0+k=0\Rightarrow k=-1$<br>
+        $x^1$：$2b_2+b_1-\tfrac32k=0\Rightarrow2b_2+\tfrac32=0\Rightarrow b_2=-\tfrac34$<br>
+        $x^2$：$6b_3+b_2+\tfrac5{12}k=0\Rightarrow6b_3=\tfrac34+\tfrac5{12}=\tfrac76\Rightarrow b_3=\tfrac7{36}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_2=-y_1\ln x+1-\tfrac34x^2+\tfrac7{36}x^3+\cdots$。</div>
+  <p class="small"><a href="#am5-sf-03b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 四、Legendre ===== -->
+<article class="exam-item" data-exam-id="am5-ex-4" data-group="四、Legendre 方程式" data-title="板書：Legendre 方程式 l=0、l=1 的物理解">
+  <h3>板書例題 10/14</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-4"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例：Legendre's Eq（Legendre's poly）</p><p>$(1-x^2)y''-2xy'+l(l+1)y=0$，$l=0,1,2,\dots$，$-1\le x\le1$</p><p>y 是否滿足物理的邊界條件　$x=\pm1$，y 不能發散！　※以 $l=0$ 為例；考慮 $l=1$，$y_{l=1}$ 的物理解？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$(1-x^2)y''-2xy'+l(l+1)y=0$，$l=0,1,2,\dots$，$-1\le x\le1$，$x=\pm1$ 時 $y$ 不能發散：(a) 為什麼在 $x=0$ 可以用冪級數；(b) 遞迴關係與 $a_2$–$a_5$；(c) $l=0$、$l=1$ 時哪一串在 $x=\pm1$ 發散？物理解是什麼？</div>
+  <div class="rote">
+    <p><b>看到</b>「Legendre 方程式」＋「$x=\pm1$ 時 $y$ 不能發散」＋「$l=0$、$l=1$ 的物理解」⟹ 題型：<b>常點冪級數＋截斷的那串才是物理解</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 為什麼可以用冪級數</h5>
+      <p class="wq-step"><span class="memo">背：$y''$ 的係數在 $x_0$ 不為零 ⟹ $x_0$ 是常點，令 $y=\sum a_nx^n$</span>
+        <span class="syms">$x_0$：展開點；$a_n$：$x^n$ 項的係數；$P(x)$、$Q(x)$：標準式 $y'$、$y$ 的係數</span>
+        $1-x^2$ 在 $x=0$ 為 1；標準式的係數只在 $x=\pm1$ 發散。<br>
+        $P=\dfrac{-2x}{1-x^2}$，$Q=\dfrac{l(l+1)}{1-x^2}$，奇點 $x=\pm1$，$x=0$ 是常點</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 遞迴關係與 $a_2$–$a_5$</h5>
+      <p class="wq-step"><span class="memo">背：$y''\to(n+2)(n+1)a_{n+2}$，$x^2y''\to n(n-1)a_n$，$xy'\to na_n$；每個 $x^n$ 係數為 0</span>
+        <span class="syms">$a_n$：$x^n$ 項的係數；$n$：次方；$l$：題目的非負整數</span>
+        $a_n$ 的係數 $-[n(n-1)+2n-l(l+1)]=-[n(n+1)-l(l+1)]=-(n-l)(n+l+1)$。<br>
+        $a_{n+2}=\dfrac{(n-l)(n+l+1)}{(n+2)(n+1)}a_n$</p>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{(n-l)(n+l+1)}{(n+2)(n+1)}a_n$ 代 $n=0,1,2,3$</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$：前兩格的係數；$a_0$、$a_1$：任意常數；$l$：題目的非負整數</span>
+        $n=2,3$ 時代入上一行的結果。<br>
+        $a_2=-\dfrac{l(l+1)}{2!}a_0$，$a_3=-\dfrac{(l-1)(l+2)}{3!}a_1$<br>
+        $a_4=\dfrac{(2-l)(l+3)}{4\cdot3}a_2=\dfrac{(l-2)l(l+1)(l+3)}{4!}a_0$，$a_5=\dfrac{(3-l)(l+4)}{5\cdot4}a_3=\dfrac{(l-3)(l-1)(l+2)(l+4)}{5!}a_1$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $l=0$、$l=1$ 的發散串與物理解</h5>
+      <p class="wq-step"><span class="memo">背：$1+\tfrac13+\tfrac15+\cdots\ge\tfrac12\big(1+\tfrac12+\tfrac13+\cdots\big)\to\infty$（和調和級數比較）</span>
+        <span class="syms">$a_0$、$a_1$：兩串的常數；$l$：題目的非負整數</span>
+        $l=0$：$a_2=0$，偶串只剩 $a_0$；奇串 $a_{n+2}=\dfrac{n}{n+2}a_n$ 不截斷，在 $x=1$ 發散，所以 $a_1=0$。<br>
+        $y_{l=0}=a_0+a_1\Big(x+\dfrac{x^3}3+\dfrac{x^5}5+\cdots\Big)$，$x=1$：$1+\tfrac13+\tfrac15+\cdots\to\infty$ ⟹ $y_{l=0}=a_0$</p>
+      <p class="wq-step"><span class="memo">背：$1+\tfrac13+\tfrac15+\cdots\ge\tfrac12\big(1+\tfrac12+\tfrac13+\cdots\big)\to\infty$（和調和級數比較）</span>
+        <span class="syms">$a_0$、$a_1$：兩串的常數；$l$：題目的非負整數</span>
+        $l=1$：$a_3=0$，奇串只剩 $a_1x$；偶串 $a_{n+2}=\dfrac{n-1}{n+1}a_n$ 不截斷，在 $x=\pm1$ 發散，所以 $a_0=0$。<br>
+        $y_{l=1}=a_0\Big(1-x^2-\dfrac{x^4}3-\dfrac{x^6}5-\cdots\Big)+a_1x$，$x=\pm1$：$1-\big(1+\tfrac13+\tfrac15+\cdots\big)\to-\infty$ ⟹ $y_{l=1}=a_1x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_{l=0}=a_0$，$y_{l=1}=a_1x$。</div>
+  <p class="small"><a href="#am5-ex-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-ex-5" data-group="四、Legendre 方程式" data-title="板書：P2、P3 的截斷與歸一化">
+  <h3>板書例題 10/14</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-5"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>物理解：$l=0$：$y_{l=0}\propto1$；$l=1$：$y_{l=1}\propto x$；$l=2$：$y_{l=2}\propto(1-3x^2)$；$l=3$：$y_{l=3}\propto(3x-5x^3)$</p><p>要求 $y_l(x=1)=1$ → Legendre's Polynomials</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用 Legendre 方程式的遞迴關係求 $l=2$、$l=3$ 的物理解（在 $x=\pm1$ 不發散），依 $y_l(1)=1$ 歸一化成 $P_2$、$P_3$，再用遞迴關係 ① 驗算。</div>
+  <div class="rote">
+    <p><b>看到</b>「$l=2$、$l=3$ 的物理解」＋「要求 $y_l(1)=1$」⟹ 題型：<b>Legendre 級數截斷＋歸一化成 $P_l$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>$P_2$、$P_3$ 與驗算</h5>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{(n-l)(n+l+1)}{(n+2)(n+1)}a_n$，和 $l$ 同奇偶的那串在 $n=l$ 之後為零</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$：前兩格的係數；$l$：Legendre 方程式的非負整數；$a_0$：偶串的常數</span>
+        $l=2$ 取偶串（另一串在 $\pm1$ 發散，令 $a_1=0$），代 $n=0$、$n=2$。<br>
+        $a_2=\dfrac{(0-2)(0+3)}{2\cdot1}a_0=-3a_0$，$a_4=\dfrac{(2-2)(2+3)}{4\cdot3}a_2=0$ ⟹ $y_{l=2}=a_0(1-3x^2)$</p>
+      <p class="wq-step"><span class="memo">背：歸一化 $P_l(1)=1$：物理解除以它在 $x=1$ 的值</span>
+        <span class="syms">$P_l$：Legendre 多項式；$y_l$：物理解（只確定到常數倍）</span>
+        $1-3x^2$ 在 $x=1$ 是 $-2$。<br>
+        $P_2=\dfrac{1-3x^2}{-2}=\dfrac12(3x^2-1)$</p>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{(n-l)(n+l+1)}{(n+2)(n+1)}a_n$，和 $l$ 同奇偶的那串在 $n=l$ 之後為零</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$：前兩格的係數；$l$：Legendre 方程式的非負整數；$a_1$：奇串的常數</span>
+        $l=3$ 取奇串（令 $a_0=0$），代 $n=1$、$n=3$。<br>
+        $a_3=\dfrac{(1-3)(1+4)}{3\cdot2}a_1=-\dfrac53a_1$，$a_5=\dfrac{(3-3)(3+4)}{5\cdot4}a_3=0$ ⟹ $y_{l=3}=a_1\big(x-\tfrac53x^3\big)\propto3x-5x^3$</p>
+      <p class="wq-step"><span class="memo">背：歸一化 $P_l(1)=1$：物理解除以它在 $x=1$ 的值</span>
+        <span class="syms">$P_l$：Legendre 多項式；$y_l$：物理解（只確定到常數倍）</span>
+        $3x-5x^3$ 在 $x=1$ 是 $-2$。<br>
+        $P_3=\dfrac{3x-5x^3}{-2}=\dfrac12(5x^3-3x)$</p>
+      <p class="wq-step"><span class="memo">背：① $lP_l=(2l-1)xP_{l-1}-(l-1)P_{l-2}$</span>
+        <span class="syms">$P_l$：第 $l$ 個 Legendre 多項式；$P_0=1$、$P_1=x$；$l$：階數</span>
+        $l=2$ 用 $P_1$、$P_0$；$l=3$ 用剛算的 $P_2$ 和 $P_1$。<br>
+        $2P_2=3x\cdot x-1\Rightarrow P_2=\tfrac12(3x^2-1)$ ✓<br>
+        $3P_3=5x\cdot\tfrac12(3x^2-1)-2x=\tfrac{15x^3-9x}2\Rightarrow P_3=\tfrac12(5x^3-3x)$ ✓</p>
+    </div>
+  </div>
+  <div class="final">答：$P_2=\tfrac12(3x^2-1)$，$P_3=\tfrac12(5x^3-3x)$。</div>
+  <p class="small"><a href="#am5-ex-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-k114-3" data-group="四、Legendre 方程式" data-title="考古 114上期末 3：畫 P0–P3">
+  <h3>114 上期末 第 3 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-k114-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>3. (20%) Sketch graphs of Legendre polynomials $P_0(x),P_1(x),P_2(x)$, and, $P_3(x)$ for $x\in[-1,1]$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　畫出 Legendre 多項式 $P_0$–$P_3$ 在 $[-1,1]$ 的圖形。</div>
+  <div class="rote">
+    <p><b>看到</b>「Sketch graphs」＋「$P_0$ 到 $P_3$」＋「$x\in[-1,1]$」⟹ 題型：<b>畫 Legendre 多項式：寫式子＋端點、對稱、零點、極值</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>$P_0$–$P_3$ 的圖形</h5>
+      <p class="wq-step"><span class="memo">背：$P_0=1$，$P_1=x$，① $lP_l=(2l-1)xP_{l-1}-(l-1)P_{l-2}$</span>
+        <span class="syms">$P_l$：第 $l$ 個 Legendre 多項式；$l$：階數；$x$：自變數</span>
+        題目沒給式子，先用 ① 從 $P_0$、$P_1$ 推出來寫在考卷上。<br>
+        $P_2=\tfrac12(3x^2-1)$，$P_3=\tfrac12(5x^3-3x)$</p>
+      <p class="wq-step"><span class="memo">背：$P_l(1)=1$，$P_l(-x)=(-1)^lP_l(x)$</span>
+        <span class="syms">$P_l$：Legendre 多項式；$l$：階數</span>
+        四條線都過 $(1,1)$；偶數階對 $y$ 軸對稱，奇數階對原點對稱。<br>
+        $P_l(-1)=(-1)^l$：$P_0(-1)=1$，$P_1(-1)=-1$，$P_2(-1)=1$，$P_3(-1)=-1$</p>
+      <p class="wq-step"><span class="memo">背：零點：令 $P_l=0$；極值：令 $P_l'=0$</span>
+        <span class="syms">$P_2$：拋物線；$x$：自變數</span>
+        $P_2$ 的頂點在 $x=0$。<br>
+        $P_2(0)=-\tfrac12$；$3x^2-1=0\Rightarrow x=\pm\dfrac1{\sqrt3}\approx\pm0.577$</p>
+      <p class="wq-step"><span class="memo">背：零點：令 $P_l=0$；極值：令 $P_l'=0$</span>
+        <span class="syms">$P_3$：三次多項式；$P_3'$：它的導數；$x$：自變數</span>
+        $P_3$ 從 $(-1,-1)$ 升到極大、過原點降到極小、再升到 $(1,1)$。<br>
+        零點 $x(5x^2-3)=0\Rightarrow x=0,\ \pm\sqrt{\tfrac35}\approx\pm0.775$<br>
+        $P_3'=\tfrac12(15x^2-3)=0\Rightarrow x=\pm\dfrac1{\sqrt5}\approx\pm0.447$，$P_3=\mp\dfrac1{\sqrt5}\approx\mp0.447$</p>
+      <p class="wq-step"><span class="memo">背：畫圖：端點、零點、極值點連成平滑曲線</span>
+        <span class="syms">$P_0$：水平線 $y=1$；$P_1$：直線；$P_2$、$P_3$：照上面的特徵點描</span>
+        四條曲線都在 $[-1,1]\times[-1,1]$ 的方框內，照下圖畫。<br>
+        $P_0$：過 $(\pm1,1)$ 的水平線；$P_1$：$(-1,-1)$ 到 $(1,1)$ 的直線</p>
+    </div>
+  </div>
+  <svg class="exam-sketch" viewBox="0 0 300 230" width="300" style="display:block;max-width:100%;height:auto;margin:6px 0;color:var(--ink)" role="img" aria-label="Legendre 多項式 P0 到 P3 在 -1 到 1 的圖形"><rect x="34.0" y="33.2" width="252.0" height="163.6" fill="none" style="stroke:var(--grid)" stroke-width="1"/><line x1="34.0" y1="115.0" x2="286.0" y2="115.0" stroke="currentColor" stroke-opacity="0.5" stroke-width="1"/><line x1="160.0" y1="25.0" x2="160.0" y2="205.0" stroke="currentColor" stroke-opacity="0.5" stroke-width="1"/><text x="34.0" y="212.8" font-size="11" text-anchor="middle" fill="currentColor">-1</text><text x="97.0" y="212.8" font-size="11" text-anchor="middle" fill="currentColor">-0.5</text><text x="223.0" y="212.8" font-size="11" text-anchor="middle" fill="currentColor">0.5</text><text x="286.0" y="212.8" font-size="11" text-anchor="middle" fill="currentColor">1</text><text x="29.0" y="37.2" font-size="11" text-anchor="end" fill="currentColor">1</text><text x="29.0" y="200.8" font-size="11" text-anchor="end" fill="currentColor">-1</text><text x="29.0" y="159.9" font-size="11" text-anchor="end" fill="currentColor">-0.5</text><polyline points="34.0,33.2 36.1,33.2 38.2,33.2 40.3,33.2 42.4,33.2 44.5,33.2 46.6,33.2 48.7,33.2 50.8,33.2 52.9,33.2 55.0,33.2 57.1,33.2 59.2,33.2 61.3,33.2 63.4,33.2 65.5,33.2 67.6,33.2 69.7,33.2 71.8,33.2 73.9,33.2 76.0,33.2 78.1,33.2 80.2,33.2 82.3,33.2 84.4,33.2 86.5,33.2 88.6,33.2 90.7,33.2 92.8,33.2 94.9,33.2 97.0,33.2 99.1,33.2 101.2,33.2 103.3,33.2 105.4,33.2 107.5,33.2 109.6,33.2 111.7,33.2 113.8,33.2 115.9,33.2 118.0,33.2 120.1,33.2 122.2,33.2 124.3,33.2 126.4,33.2 128.5,33.2 130.6,33.2 132.7,33.2 134.8,33.2 136.9,33.2 139.0,33.2 141.1,33.2 143.2,33.2 145.3,33.2 147.4,33.2 149.5,33.2 151.6,33.2 153.7,33.2 155.8,33.2 157.9,33.2 160.0,33.2 162.1,33.2 164.2,33.2 166.3,33.2 168.4,33.2 170.5,33.2 172.6,33.2 174.7,33.2 176.8,33.2 178.9,33.2 181.0,33.2 183.1,33.2 185.2,33.2 187.3,33.2 189.4,33.2 191.5,33.2 193.6,33.2 195.7,33.2 197.8,33.2 199.9,33.2 202.0,33.2 204.1,33.2 206.2,33.2 208.3,33.2 210.4,33.2 212.5,33.2 214.6,33.2 216.7,33.2 218.8,33.2 220.9,33.2 223.0,33.2 225.1,33.2 227.2,33.2 229.3,33.2 231.4,33.2 233.5,33.2 235.6,33.2 237.7,33.2 239.8,33.2 241.9,33.2 244.0,33.2 246.1,33.2 248.2,33.2 250.3,33.2 252.4,33.2 254.5,33.2 256.6,33.2 258.7,33.2 260.8,33.2 262.9,33.2 265.0,33.2 267.1,33.2 269.2,33.2 271.3,33.2 273.4,33.2 275.5,33.2 277.6,33.2 279.7,33.2 281.8,33.2 283.9,33.2 286.0,33.2" fill="none" style="stroke:var(--muted)" stroke-width="2"/><polyline points="34.0,196.8 36.1,195.5 38.2,194.1 40.3,192.7 42.4,191.4 44.5,190.0 46.6,188.6 48.7,187.3 50.8,185.9 52.9,184.5 55.0,183.2 57.1,181.8 59.2,180.5 61.3,179.1 63.4,177.7 65.5,176.4 67.6,175.0 69.7,173.6 71.8,172.3 73.9,170.9 76.0,169.5 78.1,168.2 80.2,166.8 82.3,165.5 84.4,164.1 86.5,162.7 88.6,161.4 90.7,160.0 92.8,158.6 94.9,157.3 97.0,155.9 99.1,154.5 101.2,153.2 103.3,151.8 105.4,150.5 107.5,149.1 109.6,147.7 111.7,146.4 113.8,145.0 115.9,143.6 118.0,142.3 120.1,140.9 122.2,139.5 124.3,138.2 126.4,136.8 128.5,135.5 130.6,134.1 132.7,132.7 134.8,131.4 136.9,130.0 139.0,128.6 141.1,127.3 143.2,125.9 145.3,124.5 147.4,123.2 149.5,121.8 151.6,120.5 153.7,119.1 155.8,117.7 157.9,116.4 160.0,115.0 162.1,113.6 164.2,112.3 166.3,110.9 168.4,109.5 170.5,108.2 172.6,106.8 174.7,105.5 176.8,104.1 178.9,102.7 181.0,101.4 183.1,100.0 185.2,98.6 187.3,97.3 189.4,95.9 191.5,94.5 193.6,93.2 195.7,91.8 197.8,90.5 199.9,89.1 202.0,87.7 204.1,86.4 206.2,85.0 208.3,83.6 210.4,82.3 212.5,80.9 214.6,79.5 216.7,78.2 218.8,76.8 220.9,75.5 223.0,74.1 225.1,72.7 227.2,71.4 229.3,70.0 231.4,68.6 233.5,67.3 235.6,65.9 237.7,64.5 239.8,63.2 241.9,61.8 244.0,60.5 246.1,59.1 248.2,57.7 250.3,56.4 252.4,55.0 254.5,53.6 256.6,52.3 258.7,50.9 260.8,49.5 262.9,48.2 265.0,46.8 267.1,45.5 269.2,44.1 271.3,42.7 273.4,41.4 275.5,40.0 277.6,38.6 279.7,37.3 281.8,35.9 283.9,34.5 286.0,33.2" fill="none" style="stroke:var(--b)" stroke-width="2"/><polyline points="34.0,33.2 36.1,37.2 38.2,41.2 40.3,45.1 42.4,49.0 44.5,52.8 46.6,56.5 48.7,60.1 50.8,63.7 52.9,67.2 55.0,70.7 57.1,74.1 59.2,77.4 61.3,80.6 63.4,83.8 65.5,86.9 67.6,89.9 69.7,92.9 71.8,95.8 73.9,98.6 76.0,101.4 78.1,104.1 80.2,106.7 82.3,109.2 84.4,111.7 86.5,114.1 88.6,116.5 90.7,118.8 92.8,121.0 94.9,123.1 97.0,125.2 99.1,127.2 101.2,129.2 103.3,131.1 105.4,132.9 107.5,134.6 109.6,136.3 111.7,137.9 113.8,139.4 115.9,140.9 118.0,142.3 120.1,143.6 122.2,144.9 124.3,146.1 126.4,147.2 128.5,148.2 130.6,149.2 132.7,150.1 134.8,151.0 136.9,151.8 139.0,152.5 141.1,153.1 143.2,153.7 145.3,154.2 147.4,154.7 149.5,155.1 151.6,155.4 153.7,155.6 155.8,155.8 157.9,155.9 160.0,155.9 162.1,155.9 164.2,155.8 166.3,155.6 168.4,155.4 170.5,155.1 172.6,154.7 174.7,154.2 176.8,153.7 178.9,153.1 181.0,152.5 183.1,151.8 185.2,151.0 187.3,150.1 189.4,149.2 191.5,148.2 193.6,147.2 195.7,146.1 197.8,144.9 199.9,143.6 202.0,142.3 204.1,140.9 206.2,139.4 208.3,137.9 210.4,136.3 212.5,134.6 214.6,132.9 216.7,131.1 218.8,129.2 220.9,127.2 223.0,125.2 225.1,123.1 227.2,121.0 229.3,118.8 231.4,116.5 233.5,114.1 235.6,111.7 237.7,109.2 239.8,106.7 241.9,104.1 244.0,101.4 246.1,98.6 248.2,95.8 250.3,92.9 252.4,89.9 254.5,86.9 256.6,83.8 258.7,80.6 260.8,77.4 262.9,74.1 265.0,70.7 267.1,67.2 269.2,63.7 271.3,60.1 273.4,56.5 275.5,52.8 277.6,49.0 279.7,45.1 281.8,41.2 283.9,37.2 286.0,33.2" fill="none" style="stroke:var(--c)" stroke-width="2" stroke-dasharray="6 4"/><polyline points="34.0,196.8 36.1,188.8 38.2,181.1 40.3,173.8 42.4,166.8 44.5,160.1 46.6,153.7 48.7,147.6 50.8,141.8 52.9,136.3 55.0,131.1 57.1,126.2 59.2,121.5 61.3,117.2 63.4,113.1 65.5,109.2 67.6,105.7 69.7,102.3 71.8,99.3 73.9,96.4 76.0,93.8 78.1,91.4 80.2,89.2 82.3,87.3 84.4,85.5 86.5,84.0 88.6,82.7 90.7,81.5 92.8,80.6 94.9,79.8 97.0,79.2 99.1,78.8 101.2,78.5 103.3,78.4 105.4,78.5 107.5,78.7 109.6,79.0 111.7,79.5 113.8,80.1 115.9,80.8 118.0,81.7 120.1,82.6 122.2,83.7 124.3,84.9 126.4,86.2 128.5,87.5 130.6,89.0 132.7,90.5 134.8,92.1 136.9,93.8 139.0,95.5 141.1,97.3 143.2,99.1 145.3,101.0 147.4,102.9 149.5,104.9 151.6,106.9 153.7,108.9 155.8,110.9 157.9,113.0 160.0,115.0 162.1,117.0 164.2,119.1 166.3,121.1 168.4,123.1 170.5,125.1 172.6,127.1 174.7,129.0 176.8,130.9 178.9,132.7 181.0,134.5 183.1,136.2 185.2,137.9 187.3,139.5 189.4,141.0 191.5,142.5 193.6,143.8 195.7,145.1 197.8,146.3 199.9,147.4 202.0,148.3 204.1,149.2 206.2,149.9 208.3,150.5 210.4,151.0 212.5,151.3 214.6,151.5 216.7,151.6 218.8,151.5 220.9,151.2 223.0,150.8 225.1,150.2 227.2,149.4 229.3,148.5 231.4,147.3 233.5,146.0 235.6,144.5 237.7,142.7 239.8,140.8 241.9,138.6 244.0,136.2 246.1,133.6 248.2,130.8 250.3,127.7 252.4,124.3 254.5,120.8 256.6,116.9 258.7,112.8 260.8,108.5 262.9,103.8 265.0,98.9 267.1,93.7 269.2,88.2 271.3,82.4 273.4,76.3 275.5,69.9 277.6,63.2 279.7,56.2 281.8,48.9 283.9,41.2 286.0,33.2" fill="none" style="stroke:var(--a)" stroke-width="2"/><text x="238.1" y="33.2" font-size="13" style="fill:var(--muted)">P₀</text><text x="229.3" y="59.4" font-size="13" style="fill:var(--b)">P₁</text><text x="175.1" y="165.7" font-size="13" style="fill:var(--c)">P₂</text><text x="238.1" y="165.7" font-size="13" style="fill:var(--a)">P₃</text></svg>
+  <div class="final">答：如圖（四條曲線都通過 $(1,1)$，都在 $[-1,1]\times[-1,1]$ 內）。</div>
+  <p class="small"><a href="#am5-k114-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-sf-04a" data-group="四、Legendre 方程式" data-title="自編：兩種方法求 P4、P5">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 用 ① 求 $P_4$、$P_5$；(b) 用 $l=4$ 的級數截斷驗證 $P_4$；(c) $P_4$ 的零點與 $P_4(0)$。</div>
+  <div class="rote">
+    <p><b>看到</b>「用 ① 求 $P_4$、$P_5$」＋「用 $l=4$ 的級數截斷驗證」＋「零點」⟹ 題型：<b>Legendre 遞迴 ① ＋截斷法互相驗證</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 用 ① 求 $P_4$、$P_5$</h5>
+      <p class="wq-step"><span class="memo">背：① $lP_l=(2l-1)xP_{l-1}-(l-1)P_{l-2}$</span>
+        <span class="syms">$P_l$：第 $l$ 個 Legendre 多項式；$l$：階數；$x$：自變數</span>
+        $l=4$ 代題目給的 $P_3=\tfrac12(5x^3-3x)$、$P_2=\tfrac12(3x^2-1)$。<br>
+        $4P_4=7x\cdot\tfrac12(5x^3-3x)-3\cdot\tfrac12(3x^2-1)=\tfrac12(35x^4-21x^2-9x^2+3)\Rightarrow P_4=\dfrac{35x^4-30x^2+3}8$</p>
+      <p class="wq-step"><span class="memo">背：① $lP_l=(2l-1)xP_{l-1}-(l-1)P_{l-2}$</span>
+        <span class="syms">$P_l$：第 $l$ 個 Legendre 多項式；$l$：階數；$x$：自變數</span>
+        $l=5$ 代剛算的 $P_4$ 與 $P_3$，通分成分母 8。<br>
+        $$\begin{aligned}5P_5&=9x\cdot\tfrac{35x^4-30x^2+3}8-4\cdot\tfrac{5x^3-3x}2\\&=\tfrac{315x^5-270x^3+27x-80x^3+48x}8\end{aligned}$$
+        $P_5=\dfrac{315x^5-350x^3+75x}{40}=\dfrac{63x^5-70x^3+15x}8$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 用 $l=4$ 的級數截斷驗證 $P_4$</h5>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{(n-l)(n+l+1)}{(n+2)(n+1)}a_n$；歸一化 $P_l(1)=1$</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$：前兩格的係數；$l$：階數（這裡 $4$）；$a_0$：偶串的常數</span>
+        $l=4$ 取偶串，代 $n=0,2,4$，最後除以 $x=1$ 的值。<br>
+        $a_2=\dfrac{(-4)(5)}{2}a_0=-10a_0$，$a_4=\dfrac{(2-4)(7)}{12}a_2=\dfrac{35}3a_0$，$a_6=\dfrac{(4-4)(9)}{30}a_4=0$<br>
+        $x=1$：$1-10+\tfrac{35}3=\tfrac83$，$P_4=\tfrac38\big(1-10x^2+\tfrac{35}3x^4\big)=\dfrac{35x^4-30x^2+3}8$ ✓</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $P_4$ 的零點與 $P_4(0)$</h5>
+      <p class="wq-step"><span class="memo">背：$au^2+bu+c=0\Rightarrow u=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$u=x^2$：換元的變數；$a$、$b$、$c$：二次式的係數</span>
+        $P_4$ 只有 $x^4$、$x^2$、常數，令 $u=x^2$；代 $a=35$、$b=-30$、$c=3$。<br>
+        $u=\dfrac{30\pm\sqrt{900-420}}{70}=\dfrac{30\pm21.91}{70}=0.7416$ 或 $0.1156$ ⟹ $x=\pm0.861,\ \pm0.340$（4 個都在 $(-1,1)$ 內）<br>
+        $P_4(0)=\dfrac38$</p>
+    </div>
+  </div>
+  <div class="final">答：$P_4=\tfrac18(35x^4-30x^2+3)$，$P_5=\tfrac18(63x^5-70x^3+15x)$。</div>
+  <p class="small"><a href="#am5-sf-04a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am5-sf-04b" data-group="四、Legendre 方程式" data-title="自編：用 ⑤ 算 P_l 的積分">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 由板書的關係式 ⑤ 證明 $\displaystyle\int_0^1P_l\,dx=\frac{P_{l-1}(0)-P_{l+1}(0)}{2l+1}$（$l\ge1$）；(b) 求 $l=1,2,3,4$ 的值；(c) 直接積分驗算 $l=3$；(d) 說明為什麼偶數 $l\ge2$ 的積分都是 0。</div>
+  <div class="rote">
+    <p><b>看到</b>「關係式 ⑤」＋「$\displaystyle\int_0^1P_l\,dx$」⟹ 題型：<b>⑤ 把 $P_l$ 寫成導數 → 微積分基本定理＋$P_l(1)=1$、奇偶性</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 推導公式</h5>
+      <p class="wq-step"><span class="memo">背：⑤ $(2l+1)P_l=P_{l+1}'-P_{l-1}'$；$\displaystyle\int_0^1F'\,dx=F(1)-F(0)$；$P_l(1)=1$</span>
+        <span class="syms">$P_l$：第 $l$ 個 Legendre 多項式；$P_l'$：它的導數；$l$：階數；$F$：任一個函數</span>
+        ⑤ 兩邊從 0 積到 1，上端的 $P_{l+1}(1)$、$P_{l-1}(1)$ 都是 1，互相抵消。<br>
+        $$\begin{aligned}&(2l+1)\int_0^1P_l\,dx\\&=\Big[P_{l+1}-P_{l-1}\Big]_0^1\\&=(1-1)-\big(P_{l+1}(0)-P_{l-1}(0)\big)\end{aligned}$$
+        $\displaystyle\int_0^1P_l\,dx=\frac{P_{l-1}(0)-P_{l+1}(0)}{2l+1}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $l=1,2,3,4$ 的值</h5>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int_0^1P_l\,dx=\frac{P_{l-1}(0)-P_{l+1}(0)}{2l+1}$；$P_0(0)=1$，$P_2(0)=-\tfrac12$，$P_4(0)=\tfrac38$，奇數階 $P(0)=0$</span>
+        <span class="syms">$P_l(0)$：Legendre 多項式在原點的值；$l$：階數</span>
+        $P_2(0)$、$P_4(0)$ 由 $P_2=\tfrac12(3x^2-1)$、$P_4=\tfrac18(35x^4-30x^2+3)$ 代 $x=0$。<br>
+        $l=1$：$\dfrac{1-(-\frac12)}3=\dfrac12$；$l=2$：$\dfrac{0-0}5=0$；$l=3$：$\dfrac{-\frac12-\frac38}7=-\dfrac18$；$l=4$：$\dfrac{0-0}9=0$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 直接積分驗算 $l=3$</h5>
+      <p class="wq-step"><span class="memo">背：$P_3=\tfrac12(5x^3-3x)$，$\displaystyle\int x^m\,dx=\frac{x^{m+1}}{m+1}$</span>
+        <span class="syms">$P_3$：第 3 個 Legendre 多項式；$m$：次方</span>
+        直接積分和公式的 $-\tfrac18$ 比對。<br>
+        $\displaystyle\int_0^1\frac{5x^3-3x}2dx=\frac12\Big[\frac{5x^4}4-\frac{3x^2}2\Big]_0^1=\frac12\Big(\frac54-\frac32\Big)=-\frac18$ ✓</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 偶數 $l$ 為什麼是 0</h5>
+      <p class="wq-step"><span class="memo">背：$P_l(-x)=(-1)^lP_l(x)$；奇函數在 0 的值是 0</span>
+        <span class="syms">$P_l$：Legendre 多項式；$l$：階數</span>
+        $l$ 是偶數時 $l\pm1$ 是奇數，$P_{l\pm1}$ 是奇函數，公式分子是 $0-0$。<br>
+        $P_{l-1}(0)=P_{l+1}(0)=0\Rightarrow\displaystyle\int_0^1P_l\,dx=0$</p>
+    </div>
+  </div>
+  <div class="final">答：$\tfrac12,\ 0,\ -\tfrac18,\ 0$。</div>
+  <p class="small"><a href="#am5-sf-04b">回到正文詳解</a></p>
+</article>

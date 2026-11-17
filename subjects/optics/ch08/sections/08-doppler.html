@@ -1,0 +1,94 @@
+<h2>八、都卜勒效應 <span class="must teacher maybe">老師：注意一下</span> <span class="pg">講義 chp8 第 11 頁</span></h2>
+
+<p class="lead">光源和觀察者互相接近時看到的波長變短（藍移），遠離時變長（紅移）。逐字稿 02:13：「都卜勒效應這邊也稍微注意一下。所以用的——如果有用到這個公式，<strong>你自己要把它記起來</strong>。」02:26「都卜勒效應要注意。」02:30「大概第八章主要就是這兩個部分：平面波、球面波、圓柱波的表示，跟都卜勒效應。」老師把它列為第八章的兩大部分之一，閉書考，公式要背。李孟恩課程資料夾的 5 份下學期期中考裡這部分沒有出現過（0/5；物理考古資料夾的 16 份舊考卷也沒有），所以考古題幫不上忙，只能靠作業 4-23 和講義例題練。</p>
+
+<h3 id="o8-s08-formula">8.1 光的都卜勒公式 <span class="pg-tag">第 11 頁</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">講義 · chp8 第 11 頁（8.8 Doppler Effect）</span>
+  <p>When dealing with sound waves, the apparent frequency of a source increases or decreases depending on the motion of both source and observer along the line joining them. The frequency shift due to a moving source is based physically on a change in transmitted wavelength. The frequency shift due to a moving observer is based physically on the change in speed of the sound waves relative to the observer.</p>
+  <p>This is different from the case of light waves. Whereas sound waves propagate through a material medium, light waves propagate in vacuum. From the theory of special relativity</p>
+  $$\frac{\lambda'}{\lambda}=\sqrt{\frac{1-\frac vc}{1+\frac vc}}$$
+  <p>$\lambda'$: Doppler shifted wavelength；$v$: relative velocity between source and observer (positive when they approach one another)</p>
+  <p>When $v\ll c$, $\dfrac{\lambda'}{\lambda}\approx1-\dfrac vc$.</p>
+  <p>The Doppler effect is especially important when used to determine the speed of astronomical sources emitting electromagnetic radiation. Red shift: the shift in wavelength toward longer wavelengths due to a relative speed of the source away from us. Doppler broadening of spectral lines: due to fast-moving atoms of a gas radiating light with both increases and decreases in frequency due to their random motion toward and away from the observer making spectroscopic measurements.</p>
+</div>
+
+<div class="step" data-step="o8-s08-sign" data-sym="beta">
+  <span class="step-title">符號約定與近似（背這三行）</span>
+  <ul>
+    <li>$v>0$：互相接近 ⟹ $\lambda'\lt\lambda$（藍移）；$v\lt0$：遠離 ⟹ $\lambda'>\lambda$（紅移）。</li>
+    <li>精確式反解：令 $r=\lambda'/\lambda$，$r^2=\dfrac{1-\beta}{1+\beta}$ ⟹ $\beta=\dfrac vc=\dfrac{1-r^2}{1+r^2}$。</li>
+    <li>$v\ll c$：$\sqrt{1-\beta}\approx1-\tfrac\beta2$、$1/\sqrt{1+\beta}\approx1-\tfrac\beta2$，相乘 $\approx1-\beta$，所以 $\Delta\lambda=\lambda'-\lambda\approx-\lambda\,v/c$（課本習題 4-20 就是證這個）。</li>
+  </ul>
+  <p>和聲波不同：光的公式只和<strong>相對速度</strong>有關，分不出是誰在動（沒有介質可以當參考）。</p>
+</div>
+
+<div class="box lecture" id="o8-ex3">
+  <span class="box-title">講義 · chp8 第 11 頁（Example）</span>
+  <p>講義這裡只寫了「Example」標題、沒有題目。下面用課本同一段的 Example 3 補上。</p>
+</div>
+
+<p><strong>課本 Example 3</strong>（Pedrotti §4-10）：遙遠星系的氧譜線，實驗室中 513 nm 的那條線觀測到 525 nm。星系相對地球的速度？用近似式：$\dfrac{525}{513}=1.0234=1-\dfrac vc$ ⟹ $v=-0.0234c=-7020\ \text{km/s}$。負號表示遠離（波長變長、紅移）。用精確式：$r^2=1.0473$，$\beta=\dfrac{1-1.0473}{1+1.0473}=-0.0231$，$v=-6930\ \text{km/s}$。$v/c$ 只有 2%，兩式差約 1%，所以課本用近似式。</p>
+
+<div class="problem" data-kind="textbook" id="o8-4-23">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 4-23（作業）</span></div>
+    <h4>1000 K 氦氣 706.52 nm 譜線的都卜勒增寬 <span class="must teacher maybe">老師：注意一下</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-4-23">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-4-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Estimate the Doppler broadening of the 706.52-nm line of helium when the gas is at 1000 K. Use the root-mean-square velocity of a gas molecule given by</p><p>$$v_{rms}=\sqrt{\dfrac{3RT}{M}}$$</p><p>where $R$ is the gas constant, $T$ the Kelvin temperature, and $M$ the molecular weight.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>估計溫度 1000 K 的氦氣中 706.52 nm 譜線的都卜勒增寬。氣體分子的方均根速率用 $v_{rms}=\sqrt{3RT/M}$（$R$ 氣體常數、$T$ 絕對溫度、$M$ 分子量）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>譜線波長</td><td>$\lambda=706.52\ \text{nm}$</td><td>「the 706.52-nm line of helium」</td></tr>
+          <tr><td>溫度</td><td>$T=1000\ \text{K}$</td><td>「when the gas is at 1000 K」</td></tr>
+          <tr><td>氦的莫耳質量</td><td>$M=4\ \text{g/mol}=0.004\ \text{kg/mol}$</td><td>題目只說 molecular weight；氦原子量 4，要換成 kg/mol 才和 $R$ 的 SI 單位一致</td></tr>
+          <tr><td>氣體常數、光速</td><td>$R=8.314\ \text{J/(mol·K)}$、$c=3\times10^8\ \text{m/s}$</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>速度方向</td><td>有的原子接近、有的遠離</td><td>講義：Doppler broadening … random motion toward and away from the observer</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：譜線被增寬的寬度（估計值）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>氣體原子的典型速率 $v_{rms}$ 遠小於 $c$，<b>所以</b>用講義的近似 $\Delta\lambda=\lambda v/c$。<b>因為</b>朝觀察者來的原子讓波長變短 $\Delta\lambda$、遠離的變長 $\Delta\lambda$，<b>所以</b>譜線從 $\lambda-\Delta\lambda$ 展到 $\lambda+\Delta\lambda$，寬度估計為 $2\Delta\lambda$。</p>
+      <p>「估計」是因為真實的速度是一個分布，嚴格的半高寬要用 Maxwell 分布算，數量級相同。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-4-23-s1">
+        <span class="step-title">方均根速率</span>
+        $$v_{rms}=\sqrt{\frac{3RT}{M}}$$
+        <p class="sub">代入 $R=8.314$、$T=1000\ \text{K}$（題目）、$M=0.004\ \text{kg/mol}$（氦）：</p>
+        $$v_{rms}=\sqrt{\frac{3(8.314)(1000)}{0.004}}=\sqrt{6.24\times10^6}=2497\ \text{m/s}$$
+      </div>
+      <div class="step" data-step="o8-4-23-s2" data-sym="beta">
+        <span class="step-title">單邊的波長位移</span>
+        $$\frac{\lambda'}{\lambda}\approx1-\frac vc\ \Longrightarrow\ |\Delta\lambda|=\lambda\frac{v}{c}$$
+        <p class="sub">代入 $\lambda=706.52\ \text{nm}$（題目）、$v=2497\ \text{m/s}$（步驟 1）：</p>
+        $$|\Delta\lambda|=706.52\ \text{nm}\times\frac{2497}{3\times10^8}=5.88\times10^{-3}\ \text{nm}$$
+      </div>
+      <div class="step" data-step="o8-4-23-s3">
+        <span class="step-title">增寬＝兩側相加</span>
+        $$\text{都卜勒寬度}\approx2|\Delta\lambda|=0.0118\ \text{nm}\approx0.012\ \text{nm}=0.12\ \text{Å}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$v_{rms}\approx2.5\times10^3\ \text{m/s}$，單邊位移 $\approx0.0059\ \text{nm}$，都卜勒增寬 $\approx0.012\ \text{nm}$（0.12 Å）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$v/c=8.3\times10^{-6}\ll1$，近似式完全適用 ✔。課本答案 $2\Delta\lambda=0.12\ \text{Å}$、解答本 0.012 nm 一致。相對寬度 $\sim10^{-5}$，所以高解析度光譜儀才看得到。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\dfrac{\lambda'}{\lambda}=\sqrt{\dfrac{1-v/c}{1+v/c}}$，$v$ <strong>接近為正</strong>；$v\ll c$ 時 $\approx1-v/c$。</li>
+    <li>紅移 $\lambda'>\lambda$ ⟹ $v\lt0$（遠離）。</li>
+    <li>都卜勒增寬 $\approx2\lambda v/c$，$v$ 用 $\sqrt{3RT/M}$，$M$ 換成 kg/mol。</li>
+  </ol>
+</div>

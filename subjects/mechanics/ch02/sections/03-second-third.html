@@ -1,0 +1,342 @@
+<h2>三、第二、第三定律與動量守恆 <span class="pg">講義 p.24–33 · 課本 §2.2</span></h2>
+
+<p class="lead">第二定律把力和加速度連起來，但「力」和「質量」本身要怎麼定義？課本的答案是：用第三定律比較兩個物體的加速度來定義質量，再用 $F=ma$ 定義力。最後由第三定律直接推出兩體系統的動量守恆。</p>
+
+<h3 id="c2s-second">3.1 第二定律：$\vec F=\mathrm d\vec p/\mathrm dt$ <span class="pg-tag">p.24–29</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.24 Newton's Second Law</span>
+  $$\vec F=\frac{\mathrm d\vec p}{\mathrm dt}=\frac{\mathrm d(m\vec v)}{\mathrm dt},\qquad\vec p\equiv m\vec v$$
+  <p>多數情況質量是常數：$\vec F=m\dfrac{\mathrm d\vec v}{\mathrm dt}=m\vec a$，也寫成 $\vec F=m\ddot{\vec x}$。記號：$q$ 可以是距離或角位置；$\dot q=\mathrm dq/\mathrm dt$ 是速度或角速度，$\ddot q=\mathrm d^2q/\mathrm dt^2$ 是加速度或角加速度。</p>
+</div>
+
+<p>原始形式是「動量的變化率」，不是 $m\vec a$。兩者只有在 $m$ 不變時相同；火箭噴氣、雨滴吸收水氣這種質量會變的問題要回到 $\mathrm d\vec p/\mathrm dt$（課本第 9 章）。講義 p.25–28 把 $F=ma$ 的三個字母分開看：</p>
+
+<ul>
+  <li><strong>力 $F$</strong>：使物體加速、改變速度的外在作用。讓 $1\ \text{kg}$ 產生 $1\ \text{m/s}^2$ 的力定義為 $1\ \text{N}$：$F=(1\ \text{kg})(1\ \text{m/s}^2)=1\ \text{N}$。力是向量，有好幾個力時先做<strong>向量相加</strong>得到淨力，才代入 $F=ma$。</li>
+  <li><strong>加速度 $a$</strong>：唯一能直接量的量。記錄位置對時間 $x(t)$，微分兩次就得到加速度。</li>
+  <li><strong>質量 $m$</strong>：物體本身抵抗加速的性質。施一個已知的力、量加速度，就能用 $m=F/a$ 求出。</li>
+</ul>
+
+<div class="box lecture">
+  <span class="box-title">p.29 Separation of Axes</span>
+  $$\vec F=m\vec a\iff F_x=ma_x,\quad F_y=ma_y,\quad F_z=ma_z$$
+  <p>某一軸的加速度分量，只由同一軸的力分量的和造成，和其他軸的力分量無關。</p>
+</div>
+
+<p>這一句是之後所有題目的起點：向量方程式等於三條純量方程式，每一條各自積分。斜面（第 5 節）選一軸沿斜面、一軸垂直斜面；拋體（第 8 節）選水平和鉛直。選得好，某些軸的方程式會變得非常簡單（例如加速度為零）。</p>
+
+<h3 id="c2s-third">3.2 第三定律與動量守恆 <span class="pg-tag">p.30–32</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.30–32 Newton's Third Law</span>
+  <p>兩個物體互相推或拉時，稱它們有<strong>交互作用</strong>：每個物體都受到另一個物體施的力。書 B 斜靠在箱子 C 上，箱子對書的水平力 $\vec F_{BC}$ 與書對箱子的水平力 $\vec F_{CB}$ 大小相等、方向相反：$\vec F_1=-\vec F_2$。</p>
+  $$\vec F_1=-\vec F_2\ \Rightarrow\ \frac{\mathrm d\vec p_1}{\mathrm dt}+\frac{\mathrm d\vec p_2}{\mathrm dt}=0\ \Rightarrow\ \int\frac{\mathrm d}{\mathrm dt}\big[\vec p_1+\vec p_2\big]\mathrm dt=\int0\,\mathrm dt\ \Rightarrow\ \vec p_1+\vec p_2=\text{constant}$$
+  <p>第三定律導致<strong>動量守恆</strong>。</p>
+</div>
+
+<p>注意這對力作用在<strong>不同物體</strong>上（一個在書、一個在箱子），所以不會互相抵消；只有把書和箱子看成一個系統時，它們才是內力，在系統的總動量裡抵消。這也是為什麼動量守恆的前提是「孤立系統」（沒有外力）。</p>
+
+<h3 id="c2s-mass">3.3 用第三定律定義質量 <span class="pg-tag">課本 p.50–52</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">課本 p.51 Eq. (2.3)–(2.6)</span>
+  <p>第三定律的另一種說法（III′）：兩物體構成理想的孤立系統時，它們的加速度永遠方向相反，大小比值固定，這個比值等於質量的反比。</p>
+  $$\vec F_1=-\vec F_2\ \Rightarrow\ m_1\vec a_1=-m_2\vec a_2\ \Rightarrow\ \frac{m_2}{m_1}=-\frac{a_1}{a_2}\qquad(2.5)$$
+</div>
+
+<p>這樣就不必先知道「力」是什麼：選一個物體當單位質量 $m_1$，讓它和任何物體交互作用，量兩者的加速度比，就得到那個物體的質量。負號只表示兩個加速度方向相反，質量本身是正的。有了質量，再用 $F=ma$ 定義力——這就是課本說「第一、第二定律是定義，第三定律才是物理」的意思。</p>
+
+<p>平常用秤「稱重」量質量，用的是另一個 $m$：重力 $W=mg$ 裡的質量。前者叫<strong>慣性質量</strong>（決定受力時的加速度），後者叫<strong>重力質量</strong>（決定物體之間的重力）。兩者相等並不是邏輯上的必然，而是實驗結果：Eötvös（1890）用扭秤比較地球引力和自轉造成的慣性效應，Dicke 等人把精度推到 $10^{12}$ 分之幾。主張兩者完全相等，叫<strong>等效原理</strong>，是廣義相對論的基礎。</p>
+
+<details class="supp">
+  <summary>第三定律不是普遍成立的 <span class="pg-tag">課本 p.50</span></summary>
+  <div class="supp-body">
+    <p>第三定律對<strong>連心力</strong>成立：兩個（點）物體之間的力沿著兩者連線，例如重力、靜電力、直彈簧。和速度有關的力一般不是連心力，可能不滿足第三定律：<strong>運動中的電荷</strong>之間的電磁力以光速傳遞，作用力與反作用力在同一時刻不一定相等反向。這時要把電磁場本身的動量算進去，總動量才守恆。運動物體之間的重力也有極小的速度相依性，唯一觀測得到的效果是內行星近日點的進動。</p>
+  </div>
+</details>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-49">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-49 · p.97</span></div>
+    <h4>雙星的週期與 $d^{3/2}$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-49">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-49"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Two gravitationally bound stars with unequal masses $m_1$ and $m_2$, separated by a distance $d$, revolve about their center of mass in circular orbits. Show that the period $\tau$ is proportional to $d^{3/2}$ (Kepler’s Third Law) and find the proportionality constant.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-49 · p.97</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩顆質量 $m_1$、$m_2$（不相等）的恆星以重力互相束縛，相距 $d$，繞共同的質心做圓周運動。證明週期 $\tau$ 正比於 $d^{3/2}$（克卜勒第三定律），並求比例常數。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：兩星質量 $m_1\neq m_2$，相距 $d$（圓軌道上固定），萬有引力常數 $G$；沒有外力，質心不動；兩星到質心的距離 $r_1$、$r_2$，共同角速度 $\omega$。</p>
+<p><strong>① 兩星到質心的距離：</strong> 系統不受外力、質心不動，兩星都繞它轉；質心永遠在連線上，兩星角速度相同。向心加速度要用到質心的距離，不是 $d$，所以先求 $r_1$。</p>
+<p class="fnote"><b>公式（質心定義）：</b>$m_1\vec r_1+m_2\vec r_2=0$（質心在原點），其中 $\vec r_1$、$\vec r_2$ 為兩星相對質心的位置；兩星在相反兩側，寫成大小 $m_1r_1=m_2r_2$。</p>
+<div class="math-block">$$m_1r_1=m_2r_2,\qquad r_1+r_2=d$$</div>
+<p>把 $r_2=d-r_1$ 代入第一式：$m_1r_1=m_2(d-r_1)$，移項得 $(m_1+m_2)r_1=m_2d$：</p>
+<div class="math-block">$$r_1=\frac{m_2}{m_1+m_2}\,d,\qquad r_2=\frac{m_1}{m_1+m_2}\,d$$</div>
+<p>重的星離質心近。</p>
+<p><strong>② 對 $m_1$ 寫向心方向的 $F=ma$：</strong> 引力用兩星距離 $d$，向心加速度用半徑 $r_1$。</p>
+<p class="fnote"><b>公式（萬有引力）：</b>$F=\dfrac{Gm_1m_2}{d^2}$，其中 $G$ 為萬有引力常數、$d$ 為兩質點距離，方向沿連線互相吸引。</p>
+<p class="fnote"><b>公式（牛頓第二定律、等速圓周運動）：</b>$F=m\omega^2r$，其中 $m$ 為質量、$\omega$ 為角速度、$r$ 為圓周半徑；本題 $m=m_1$、$r=r_1$。</p>
+<div class="math-block">$$\frac{Gm_1m_2}{d^2}=m_1\omega^2r_1$$</div>
+<p>代入上一步的 $r_1=\dfrac{m_2d}{m_1+m_2}$：</p>
+<div class="math-block">$$\frac{Gm_1m_2}{d^2}=m_1\omega^2\,\frac{m_2d}{m_1+m_2}$$</div>
+<p>兩邊同除以 $m_1m_2$，再乘 $(m_1+m_2)/d$：</p>
+<div class="math-block">$$\omega^2=\frac{G(m_1+m_2)}{d^3}$$</div>
+<p>對 $m_2$ 寫會得到同一個 $\omega^2$（下標對調，式子對稱）。</p>
+<p><strong>③ 換成週期：</strong> 轉一圈的角度是 $2\pi$，$\tau=2\pi/\omega$，代入上一步開根號：</p>
+<div class="math-block">$$\tau=\frac{2\pi}{\omega}=\frac{2\pi}{\sqrt{G(m_1+m_2)/d^3}}=\frac{2\pi}{\sqrt{G(m_1+m_2)}}\,d^{3/2}$$</div>
+<p>$m_1$、$m_2$ 固定時，$\tau$ 只透過 $d^{3/2}$ 依賴距離，這就是 $\tau\propto d^{3/2}$。等質量時比例常數為 $\dfrac{2\pi}{\sqrt{2Gm}}$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\tau=\frac{2\pi}{\sqrt{G(m_1+m_2)}}\,d^{3/2}\\ \text{比例常數 }\frac{2\pi}{\sqrt{G(m_1+m_2)}}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-48">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-48 · p.97</span></div>
+    <h4>等質量雙星的週期</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-48">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-48"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Two gravitationally bound stars with equal masses $m$, separated by a distance $d$, revolve about their center of mass in circular orbits. Show that the period $\tau$ is proportional to $d^{3/2}$ (Kepler’s Third Law) and find the proportionality constant.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩顆質量都是 $m$ 的恆星以重力互相束縛，相距 $d$，繞共同質心做圓周運動。證明週期 $\tau\propto d^{3/2}$（克卜勒第三定律），並求比例常數。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：兩星質量都是 $m$，相距 $d$（固定），萬有引力常數 $G$；沒有外力，質心不動；軌道半徑 $r$，角速度 $\omega$。</p>
+<p><strong>① 質心在正中間：</strong> 這題就是 2-49 取 $m_1=m_2=m$；質心在連線中點，兩星角速度相同、隔著質心相對。</p>
+<p class="fnote"><b>公式（質心定義）：</b>$m_1r_1=m_2r_2$，其中 $r_1$、$r_2$ 為兩星到質心的距離；本題 $m_1=m_2=m$。</p>
+<p>$m r_1=m r_2$，約掉 $m$ 得 $r_1=r_2$；又 $r_1+r_2=d$：</p>
+<div class="math-block">$$r_1=r_2=\frac d2$$</div>
+<p><strong>② 引力提供向心力：</strong> 引力用兩星距離 $d$，向心加速度 $\omega^2r$ 用上一步的 $r=d/2$。</p>
+<p class="fnote"><b>公式（萬有引力與等速圓周運動）：</b>$\dfrac{Gm_1m_2}{d^2}=m\omega^2r$，其中 $G$ 為萬有引力常數、$d$ 為兩星距離、$\omega$ 為角速度、$r$ 為軌道半徑；本題 $m_1=m_2=m$、$r=d/2$。</p>
+<div class="math-block">$$\frac{Gm^2}{d^2}=m\omega^2\,\frac d2$$</div>
+<p>兩邊除以 $m$，再乘 $2/d$：</p>
+<div class="math-block">$$\omega^2=\frac{2Gm}{d^3}$$</div>
+<p><strong>③ 週期：</strong></p>
+<div class="math-block">$$\tau=\frac{2\pi}{\omega}=\frac{2\pi}{\sqrt{2Gm/d^3}}=\frac{2\pi}{\sqrt{2Gm}}\,d^{3/2}$$</div>
+<p>$m$ 固定時 $\tau\propto d^{3/2}$。</p>
+<div class="math-block">$$\boxed{\tau=\frac{2\pi}{\sqrt{2Gm}}\,d^{3/2},\ \ \text{比例常數 }\frac{2\pi}{\sqrt{2Gm}}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="c2-exam5-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">力學 Exam Chapter-05（2025/05/22）第 2 題（113下・116 級下學期）</span></div>
+    <h4>力 $kr^n$ 與 $T^2\propto r^3$：證明 $n=-2$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-exam5-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-exam5-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Classical Mechanics - Exam Chapter-05 (2025/05/22)</p><p>2. (10 points) Suppose the gravitational force between two bodies is $kr^n$, where $r$ is the distance between them. It is observed that the Moon orbits the Earth in a nearly circular path and that its orbital period $T$ satisfies the relation $T^2 \propto r^3$, where $r$ is the radius of the orbit. Assuming the moon’s orbit is perfectly circular. Show that $n = -2$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（10 分）假設兩物體之間的重力是 $kr^n$，$r$ 是兩者的距離。觀測到月球繞地球的軌道近似圓形，而且軌道週期 $T$ 滿足 $T^2\propto r^3$，$r$ 是軌道半徑。假設月球的軌道是正圓，證明 $n=-2$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：重力大小 $F=|k|\,r^n$，指向地球（$k$ 的正負號只表示方向）；月球質量 $m$，做半徑 $r$、速率 $v$ 的正圓等速運動，地球當固定圓心；觀測 $T^2=C\,r^3$（$C$ 為常數）。</p>
+<p><strong>① 徑向的第二定律：</strong> 等速圓周運動的加速度是指向圓心的 $v^2/r$，唯一的力是指向圓心的重力，所以寫徑向分量。</p>
+<p class="fnote"><b>公式（牛頓第二定律徑向分量、等速圓周運動）：</b>$F=m\dfrac{v^2}{r}$，其中 $F$ 為指向圓心的合力、$m$ 為質量、$v$ 為速率、$r$ 為軌道半徑。</p>
+<p>代入 $F=|k|r^n$：</p>
+<div class="math-block">$$|k|\,r^n=\frac{mv^2}{r}$$</div>
+<p><strong>② 把速率換成週期：</strong> 題目給的是週期，等速率繞一圈走周長 $2\pi r$、花時間 $T$。</p>
+<div class="math-block">$$v=\frac{2\pi r}{T}\quad\Longrightarrow\quad v^2=\frac{4\pi^2r^2}{T^2}$$</div>
+<p>代入上一步的式子：</p>
+<div class="math-block">$$|k|\,r^n=\frac mr\cdot\frac{4\pi^2r^2}{T^2}=\frac{4\pi^2m\,r}{T^2}$$</div>
+<p><strong>③ 解出 $T^2$：</strong> 兩邊乘 $T^2$、除以 $|k|r^n$。</p>
+<div class="math-block">$$T^2=\frac{4\pi^2m}{|k|}\cdot\frac{r}{r^n}=\frac{4\pi^2m}{|k|}\,r^{\,1-n}$$</div>
+<p>係數 $\frac{4\pi^2m}{|k|}$ 和 $r$ 無關，所以 $T^2\propto r^{1-n}$。</p>
+<p><strong>④ 和觀測比較指數：</strong> 觀測是 $T^2\propto r^3$，兩者要對所有半徑都成立，只能比 $r$ 的指數，不能代某一個 $r$ 解方程：</p>
+<div class="math-block">$$1-n=3\quad\Longrightarrow\quad n=1-3=-2$$</div>
+<p>所以重力 $\propto r^{-2}$，就是平方反比律（兩星質量相當時的雙星情形見 <a href="#c2-tm-2-49">課本 2-49</a>，不影響 $r$ 的次方）。</p>
+<div class="math-block">$$\boxed{T^2=\frac{4\pi^2m}{|k|}r^{1-n},\ \ 1-n=3\ \Rightarrow\ n=-2}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-2">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-2 · p.90</span></div>
+    <h4>被限制在球面上的質點：運動方程式</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-2"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A particle of mass $m$ is constrained to move on the surface of a sphere of radius $R$ by an applied force $\mathbf F(\theta,\phi)$. Write the equation of motion.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的質點被限制在半徑 $R$ 的球面上運動，外加力為 $\vec F(\theta,\phi)$。寫出運動方程式。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：質點質量 $m$，限制在半徑 $R$ 的球面上（$r=R$，$\dot r=\ddot r=0$），只剩 $\theta(t)$、$\phi(t)$；外力 $\vec F(\theta,\phi)=F_r\hat e_r+F_\theta\hat e_\theta+F_\phi\hat e_\phi$；光滑球面的正向力 $N\hat e_r$。</p>
+<p><strong>① 單位向量的時間導數：</strong> 用球座標最自然——$r$ 固定，約束力只有 $\hat e_r$ 分量，不會出現在 $\theta$、$\phi$ 兩條方程式裡；但 $\hat e_r,\hat e_\theta,\hat e_\phi$ 隨位置轉動，微分時要一起微分，所以先求它們的導數。三個單位向量用直角座標寫：</p>
+<div class="math-block">$$\hat e_r=(\sin\theta\cos\phi,\ \sin\theta\sin\phi,\ \cos\theta)$$</div>
+<div class="math-block">$$\hat e_\theta=(\cos\theta\cos\phi,\ \cos\theta\sin\phi,\ -\sin\theta),\qquad\hat e_\phi=(-\sin\phi,\ \cos\phi,\ 0)$$</div>
+<p>以 $\hat e_r$ 為例，每個分量用連鎖律對 $t$ 微分（$\theta$、$\phi$ 都隨時間變）：</p>
+<div class="math-block">$$\begin{aligned}\dot{\hat e}_r=&amp;\ \dot\theta(\cos\theta\cos\phi,\ \cos\theta\sin\phi,\ -\sin\theta)\\&amp;+\dot\phi(-\sin\theta\sin\phi,\ \sin\theta\cos\phi,\ 0)\end{aligned}$$</div>
+<p>第一個括號是 $\hat e_\theta$，第二個括號是 $\sin\theta\,\hat e_\phi$。同樣方法算另外兩個：</p>
+<div class="math-block">$$\dot{\hat e}_r=\dot\theta\,\hat e_\theta+\dot\phi\sin\theta\,\hat e_\phi,\qquad\dot{\hat e}_\theta=-\dot\theta\,\hat e_r+\dot\phi\cos\theta\,\hat e_\phi$$</div>
+<div class="math-block">$$\dot{\hat e}_\phi=-\dot\phi\left(\sin\theta\,\hat e_r+\cos\theta\,\hat e_\theta\right)$$</div>
+<p><strong>② 位置與速度：</strong> $R$ 是常數，微分只作用在 $\hat e_r$ 上，代入上一步的 $\dot{\hat e}_r$：</p>
+<div class="math-block">$$\vec r=R\,\hat e_r,\qquad\dot{\vec r}=R\,\dot{\hat e}_r=R\dot\theta\,\hat e_\theta+R\dot\phi\sin\theta\,\hat e_\phi$$</div>
+<p>速度沒有 $\hat e_r$ 分量，質點永遠沿球面的切面運動。</p>
+<p><strong>③ 加速度：</strong> 兩項分別用乘積法則微分。第一項 $R\dot\theta\,\hat e_\theta$ 代入 $\dot{\hat e}_\theta$：</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}\left(\dot\theta\,\hat e_\theta\right)=\ddot\theta\,\hat e_\theta+\dot\theta\left(-\dot\theta\,\hat e_r+\dot\phi\cos\theta\,\hat e_\phi\right)$$</div>
+<p>第二項 $R\dot\phi\sin\theta\,\hat e_\phi$ 有三個隨時間變的因子 $\dot\phi$、$\sin\theta$、$\hat e_\phi$，代入 $\dot{\hat e}_\phi$：</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm d}{\mathrm dt}\left(\dot\phi\sin\theta\,\hat e_\phi\right)=&amp;\left(\ddot\phi\sin\theta+\dot\phi\dot\theta\cos\theta\right)\hat e_\phi\\&amp;-\dot\phi^2\sin\theta\left(\sin\theta\,\hat e_r+\cos\theta\,\hat e_\theta\right)\end{aligned}$$</div>
+<p>兩項相加乘 $R$，依單位向量整理（$\hat e_\phi$ 的兩個 $\dot\theta\dot\phi\cos\theta$ 合成 $2\dot\theta\dot\phi\cos\theta$）：</p>
+<div class="math-block">$$\begin{aligned}\ddot{\vec r}=&amp;-R\left(\dot\theta^2+\dot\phi^2\sin^2\theta\right)\hat e_r\\&amp;+R\left(\ddot\theta-\dot\phi^2\sin\theta\cos\theta\right)\hat e_\theta\\&amp;+R\left(\ddot\phi\sin\theta+2\dot\theta\dot\phi\cos\theta\right)\hat e_\phi\end{aligned}$$</div>
+<p><strong>④ 逐分量寫第二定律：</strong> 總力是外力加正向力；三個單位向量互相垂直，左右兩邊各分量分別相等。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\sum\vec F=m\ddot{\vec r}$，其中 $\sum\vec F$ 為合力、$m$ 為質量、$\ddot{\vec r}$ 為加速度；本題 $\sum\vec F=\vec F+N\hat e_r$。</p>
+<div class="math-block">$$\begin{aligned}\hat e_r:&amp;\quad F_r+N=-mR(\dot\theta^2+\dot\phi^2\sin^2\theta)\\ \hat e_\theta:&amp;\quad F_\theta=mR(\ddot\theta-\dot\phi^2\sin\theta\cos\theta)\\ \hat e_\phi:&amp;\quad F_\phi=mR(\ddot\phi\sin\theta+2\dot\theta\dot\phi\cos\theta)\end{aligned}$$</div>
+<p>後兩條只含外力的切向分量，是決定 $\theta(t)$、$\phi(t)$ 的運動方程式；第一條不決定運動，而是解出運動後告訴我們球面要施多大的正向力 $N$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}mR(\ddot\theta-\dot\phi^2\sin\theta\cos\theta)=F_\theta(\theta,\phi)\\ mR(\ddot\phi\sin\theta+2\dot\theta\dot\phi\cos\theta)=F_\phi(\theta,\phi)\\ N=-F_r-mR(\dot\theta^2+\dot\phi^2\sin^2\theta)\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="c2-exam4-1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">力學 Exam-4（2025/12/18）第 1 題（114上・117 級上學期期末）</span></div>
+    <h4>空中爆炸成三塊：第二塊的速度與釋放的能量</h4>
+    <button type="button" class="exam-btn" data-exam="c2-exam4-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-exam4-1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Classical Mechanics - Exam-4 (2025/12/18)</p><p>1. A projectile of mass $M$ is moving horizontally with speed $v$ when it suddenly explodes in midair into three fragments. The explosion occurs in a very short time interval, so that external forces may be neglected during the explosion. The three fragments have masses $m_1 = M/2$, $m_2 = M/6$, and $m_3 = M/3$. Immediately after the explosion: mass $m_1$ continues moving in the original direction of the projectile with speed $4v$, mass $m_2$ travels in the opposite direction, and mass $m_3$ comes to rest.</p><p>(a) Determine the velocity (magnitude and direction) of the fragment $m_2$. (10 points)</p><p>(b) Find the energy released in the explosion in units of the initial kinetic energy. (10 points)</p></div>
+<p class="original-caption">力學 Exam-4（2025/12/18）第 1 題（114上・117 級上學期期末）</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>質量 $M$ 的拋射體以速率 $v$ 水平運動時，突然在空中爆炸成三塊碎片。爆炸發生在極短的時間內，因此爆炸期間的外力可以忽略。三塊碎片的質量為 $m_1=M/2$、$m_2=M/6$、$m_3=M/3$。爆炸後瞬間：$m_1$ 沿拋射體原來的方向以速率 $4v$ 繼續前進，$m_2$ 往相反方向運動，$m_3$ 靜止。(a) 求碎片 $m_2$ 的速度（大小與方向）。（10 分）(b) 以初動能為單位，求爆炸釋放的能量。（10 分）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：取原來的運動方向為 $+x$；爆炸前質量 $M$、速度 $v$；碎片 $m_1=\frac M2$、$m_2=\frac M6$、$m_3=\frac M3$，$v_1=4v$、$v_3=0$，$v_2$ 待求。爆炸期間外力可忽略。</p>
+<h4>(a) 碎片 $m_2$ 的速度</h4>
+<p><strong>① 寫出動量守恆：</strong> 碎片間互推是內力、成對抵消，外力又可忽略，所以總動量在爆炸前後相同；所有速度在同一水平線上，只剩一個分量。</p>
+<p class="fnote"><b>公式（動量守恆）：</b>系統所受外力為零時 $\sum_i m_i\vec v_i$ 不隨時間改變，其中 $m_i$、$\vec v_i$ 為各部分的質量與速度；本題爆炸前只有 $M$、$v$，爆炸後為三塊碎片。</p>
+<div class="math-block">$$Mv=m_1v_1+m_2v_2+m_3v_3$$</div>
+<p>代入三個質量與 $v_1=4v$、$v_3=0$：</p>
+<div class="math-block">$$Mv=\frac M2(4v)+\frac M6v_2+\frac M3(0)$$</div>
+<p><strong>② 解出 $v_2$：</strong> 兩邊同除以 $M$，把 $2v$ 移到左邊，再兩邊乘 6。</p>
+<div class="math-block">$$v=2v+\frac{v_2}{6}$$</div>
+<div class="math-block">$$\frac{v_2}{6}=v-2v=-v\quad\Longrightarrow\quad v_2=-6v$$</div>
+<p>負號表示和原來的運動方向相反，與題目「$m_2$ 往相反方向運動」一致。</p>
+<div class="math-block">$$\boxed{v_2=-6v\text{：速率 }6v\text{，方向與原運動方向相反}}$$</div>
+<h4>(b) 釋放的能量（以初動能為單位）</h4>
+<p><strong>① 爆炸前的動能：</strong> 爆炸把化學能轉成動能，動能不守恆，所以用 (a) 的速度直接算前後動能的差。</p>
+<p class="fnote"><b>公式（動能）：</b>$T=\frac12mv^2$，其中 $m$ 為質量、$v$ 為速率；本題爆炸前只有一個質量 $M$、速率 $v$ 的物體。</p>
+<div class="math-block">$$T_i=\tfrac12Mv^2$$</div>
+<p><strong>② 爆炸後的動能：</strong> 三塊碎片的動能相加（動能是純量，速度平方都是正的）。</p>
+<div class="math-block">$$T_f=\tfrac12m_1v_1^2+\tfrac12m_2v_2^2+\tfrac12m_3v_3^2$$</div>
+<p>代入 $v_1=4v$、(a) 的 $v_2=-6v$、$v_3=0$ 與三個質量：</p>
+<div class="math-block">$$\begin{aligned}T_f&amp;=\tfrac12\cdot\frac M2(4v)^2+\tfrac12\cdot\frac M6(-6v)^2+0\\&amp;=\tfrac12\cdot\frac M2\cdot16v^2+\tfrac12\cdot\frac M6\cdot36v^2\\&amp;=4Mv^2+3Mv^2=7Mv^2\end{aligned}$$</div>
+<p><strong>③ 釋放的能量：</strong> 爆炸釋放的能量就是動能增加的量。代入 $T_f=7Mv^2$、$T_i=\frac12Mv^2$：</p>
+<div class="math-block">$$Q=T_f-T_i=7Mv^2-\tfrac12Mv^2=\tfrac{13}{2}Mv^2$$</div>
+<p>除以 $T_i=\frac12Mv^2$ 換成初動能的幾倍：</p>
+<div class="math-block">$$\frac{Q}{T_i}=\frac{\tfrac{13}{2}Mv^2}{\tfrac12Mv^2}=13$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}Q=\tfrac{13}{2}Mv^2=13\,T_i\\ \text{（爆炸後總動能 }7Mv^2=14\,T_i\text{）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-03a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>繩子落到秤上：讀數為什麼是落上去部分重量的 3 倍</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-03a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>長 $L$、質量 $M$ 的均勻柔軟繩子（線密度 $\lambda=M/L$）鉛直懸著，下端剛好碰到秤盤，然後由靜止放手。(a) 當繩子頂端已經落下 $x$ 時，秤的讀數是多少？(b) 讀數的最大值是多少？最後一段落下後讀數變成多少？(c) 取 $L=1.0\ \text{m}$、$M=0.50\ \text{kg}$，求 $x=0.5\ \text{m}$ 時的讀數，並和「已落在秤上那段的重量」比較。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：繩長 $L$、質量 $M$、線密度 $\lambda=M/L$；$x$ 為頂端落下的距離（＝已堆在秤上的長度）；秤的讀數＝秤對繩的支撐力 $N$；向下為正，$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 頂端落下 $x$ 時的讀數</h4>
+<p><strong>① 空中那段的質量、速率、加速度：</strong> 繩子柔軟、自由下落時沒有張力，空中那段就是自由落體。頂端落下 $x$ 時，空中剩長度 $L-x$、質量 $\lambda(L-x)$。</p>
+<p class="fnote"><b>公式（等加速度運動）：</b>$v^2=v_0^2+2a\,\Delta x$，其中 $v_0$ 為初速、$a$ 為加速度、$\Delta x$ 為位移；本題 $v_0=0$、$a=g$、$\Delta x=x$。</p>
+<div class="math-block">$$v^2=2gx,\qquad\dot v=g,\qquad\dot x=v$$</div>
+<p><strong>② 整條繩子的動量與變化率：</strong> 繩子質量一直從空中轉移到秤上，只看秤上那段會碰到質量在變的麻煩，所以對整條繩子用 $F=\mathrm dp/\mathrm dt$。秤上那段靜止，總動量只有空中那段：</p>
+<div class="math-block">$$p=\lambda(L-x)\,v$$</div>
+<p>$(L-x)$ 和 $v$ 都在變，用乘積法則；$\frac{\mathrm d}{\mathrm dt}(L-x)=-\dot x=-v$、$\dot v=g$：</p>
+<div class="math-block">$$\frac{\mathrm dp}{\mathrm dt}=\lambda\left[(-\dot x)\,v+(L-x)\,\dot v\right]=-\lambda v^2+\lambda(L-x)g$$</div>
+<p><strong>③ 第二定律求 $N$：</strong> 整條繩子受重力 $Mg=\lambda Lg$ 向下、支撐力 $N$ 向上。</p>
+<p class="fnote"><b>公式（牛頓第二定律，動量形式）：</b>$\vec F=\dfrac{\mathrm d\vec p}{\mathrm dt}$，其中 $\vec F$ 為系統所受外力合力、$\vec p$ 為系統總動量；本題系統是整條繩子，外力為 $Mg$ 與 $N$。</p>
+<div class="math-block">$$\begin{aligned}Mg-N&amp;=\frac{\mathrm dp}{\mathrm dt}\\ \Longrightarrow\ N&amp;=\lambda Lg-\left[-\lambda v^2+\lambda(L-x)g\right]=\lambda gx+\lambda v^2\end{aligned}$$</div>
+<p>代入 $v^2=2gx$：</p>
+<div class="math-block">$$N=\lambda gx+\lambda(2gx)=3\lambda gx$$</div>
+<p>讀數 $=\underbrace{\lambda gx}_{\text{秤上那段的重量}}+\underbrace{\lambda v^2}_{\text{每秒落上去的動量}}$；第二項是每秒有 $\lambda v$ 的質量以速率 $v$ 撞上來、被停住所需的力。</p>
+<div class="math-block">$$\boxed{N=3\lambda gx=\frac{3Mgx}{L}}$$</div>
+<h4>(b) 最大值與落完之後</h4>
+<p><strong>① 最大值：</strong> $N=3\lambda gx$ 隨 $x$ 一直增加，最後一小段剛要落下時 $x\to L$：</p>
+<div class="math-block">$$N_{\max}=3\lambda gL=3Mg$$</div>
+<p><strong>② 落完之後：</strong> 再也沒有繩子撞上秤，繩子靜止堆在秤上，讀數只剩重量 $N=Mg$，讀數從 $3Mg$ 突然掉到 $Mg$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}N_{\max}=3Mg\text{（剛落完前一瞬間）}\\ \text{落完後 }N=Mg\end{gathered}}$$</div>
+<h4>(c) 數值</h4>
+<p><strong>① 線密度與讀數：</strong> $\lambda=M/L=0.50\ \text{kg}/1.0\ \text{m}=0.50\ \text{kg/m}$。代入 $x=0.5\ \text{m}$、$g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$N(0.5\ \text{m})=3(0.50\ \text{kg/m})(9.8\ \text{m/s}^2)(0.5\ \text{m})=7.35\ \text{N}$$</div>
+<p><strong>② 和秤上那段的重量比較：</strong></p>
+<div class="math-block">$$\text{秤上那段的重量}=\lambda gx=(0.50)(9.8)(0.5)\ \text{N}=2.45\ \text{N}$$</div>
+<p>讀數正好是秤上那段重量的 3 倍。最大值 $N_{\max}=3Mg=3(0.50)(9.8)\ \text{N}=14.7\ \text{N}$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}N=7.35\ \text{N}\\ \text{是秤上那段重量 }2.45\ \text{N}\text{ 的 3 倍}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-03b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>人在船上走：船退多少？加上水的阻力又如何</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-03b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $M=120\ \text{kg}$ 的小船靜止在水面，質量 $m=60\ \text{kg}$ 的人從船尾走到船頭，相對船走了 $L=3.0\ \text{m}$ 後停下。(a) 忽略水的阻力，船移動多少？證明答案和他怎麼走（快慢、中途停幾次）無關。(b) 若水對船的阻力是 $-bv_b$（線性，$b\gt0$），等人停下、一切都靜止之後，船<strong>最後</strong>離原位多遠？(c) 用第三定律說明 (b) 的結果為什麼不違反直覺。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：船 $M=120\ \text{kg}$、人 $m=60\ \text{kg}$；船對岸速度 $v_b$，人相對船速度 $u(t)$，人對岸速度 $v_b+u$；$\int u\,\mathrm dt=L=3.0\ \text{m}$；一開始全部靜止，總動量 $P(0)=0$。</p>
+<h4>(a) 無水阻時船移動多少</h4>
+<p><strong>① 動量守恆：</strong> 人和船之間的摩擦是一對內力，把人＋船當成一個系統；水平沒有外力，總動量一直是 0。注意 $L$ 是相對船的距離，人對岸的速度要寫 $v_b+u$。</p>
+<p class="fnote"><b>公式（動量守恆）：</b>系統所受外力為零時總動量 $P=\sum_i m_iv_i$ 不變，其中 $m_i$、$v_i$ 為各部分的質量與對岸速度；本題系統為人與船，$P=0$。</p>
+<div class="math-block">$$m(v_b+u)+Mv_b=0$$</div>
+<p>把 $v_b$ 的項放一起：$(M+m)v_b=-mu$，所以</p>
+<div class="math-block">$$v_b(t)=-\frac{m}{M+m}\,u(t)$$</div>
+<p>每一瞬間船速都和 $u$ 成正比、方向相反。</p>
+<p><strong>② 對時間積分：</strong> 比例常數 $m/(M+m)$ 不隨時間變，可提到積分外；$\int u\,\mathrm dt=L$：</p>
+<div class="math-block">$$\Delta x_b=\int v_b\,\mathrm dt=-\frac{m}{M+m}\int u\,\mathrm dt=-\frac{mL}{M+m}$$</div>
+<p>代入 $m=60\ \text{kg}$、$M=120\ \text{kg}$、$L=3.0\ \text{m}$：</p>
+<div class="math-block">$$\begin{aligned}\Delta x_b&amp;=-\frac{(60)(3.0)}{60+120}\ \text{m}=-1.0\ \text{m}\\ \Delta x_{\text{人}}&amp;=\Delta x_b+L=2.0\ \text{m}\end{aligned}$$</div>
+<p>積分後只剩 $\int u\,\mathrm dt=L$，所以不管走快走慢、中途停幾次，結果都一樣。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{船後退 }\dfrac{mL}{M+m}=1.0\ \text{m}\text{，人對岸前進 }2.0\ \text{m}\\ \text{與走法無關}\end{gathered}}$$</div>
+<h4>(b) 有線性水阻時船最後的位置</h4>
+<p><strong>① 系統的第二定律：</strong> 外力 $-bv_b$ 和船速成正比，而 $v_b\,\mathrm dt$ 正好是船的位移，所以對整段時間積分，總衝量就是 $-b\,\Delta x_b$，不需要知道人怎麼走。</p>
+<p class="fnote"><b>公式（牛頓第二定律，動量形式）：</b>$\dfrac{\mathrm dP}{\mathrm dt}=F_{\text{外}}$，其中 $P$ 為系統總動量、$F_{\text{外}}$ 為外力合力；本題 $F_{\text{外}}=-bv_b$。</p>
+<div class="math-block">$$\frac{\mathrm dP}{\mathrm dt}=-bv_b$$</div>
+<p><strong>② 積分總衝量：</strong> 從人開始走（$t=0$）積到一切靜止（$t\to\infty$），用 $v_b\,\mathrm dt=\mathrm dx_b$：</p>
+<div class="math-block">$$P(\infty)-P(0)=-b\int_0^\infty v_b\,\mathrm dt=-b\,\Delta x_b$$</div>
+<p>代入 $P(0)=0$、$P(\infty)=0$：</p>
+<div class="math-block">$$0=-b\,\Delta x_b\ \Longrightarrow\ \Delta x_b=0$$</div>
+<p>船最後回到原位，人對岸前進整整 $3.0\ \text{m}$。人走的時候船還是會往後退，之後慢慢漂回來：把 $P=(M+m)v_b+mu$ 代入得 $(M+m)\dot v_b=-m\dot u-bv_b$，取 $b=30\ \text{kg/s}$、$u=0.75\left(1-\cos\frac{\pi t}{2}\right)\ \text{m/s}$（$0\le t\le4\ \text{s}$，網站另取的例子）數值積分，人停下（$t=4\ \text{s}$）時船退了約 $0.72\ \text{m}$。退多少和 $b$、走法有關，但最後的 $\Delta x_b=0$ 和它們無關。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\Delta x_b=0\text{（船最後回到原位）}\\ \text{人前進 }3.0\ \text{m}\end{gathered}}$$</div>
+<h4>(c) 用第三定律說明</h4>
+<p><strong>① 內力衝量為零：</strong> 人加速時腳推船向後，人減速（停下）時腳推船向前，這一對內力的總衝量為零。</p>
+<p><strong>② 水阻把位移補回零：</strong> 沒有水阻時，船的總位移由「質心不動」決定；有水阻時，船在後退途中一直受到向前的水阻衝量，人停下那一刻船還帶著向前的速度，之後的總漂移剛好把位移補回零。$b$ 不論大小都成立，只要阻力和速度成正比。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{內力衝量為零，水阻總衝量 }-b\Delta x_b\\ \text{必須等於總動量變化 }0\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\vec F=\mathrm d\vec p/\mathrm dt$；質量不變時 $=m\ddot{\vec x}$。向量方程式拆成三軸各自的 $F_i=ma_i$。</li>
+    <li>第三定律的兩力作用在不同物體；兩體孤立系統 $\vec p_1+\vec p_2$ 守恆。</li>
+    <li>質量由加速度比定義 $m_2/m_1=-a_1/a_2$；慣性質量＝重力質量是實驗事實（等效原理）。</li>
+  </ol>
+</div>

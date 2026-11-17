@@ -1,0 +1,59 @@
+{
+  "title": "考古題（第 1、2 章範圍）",
+  "shortTitle": "熱學 考古題",
+  "range": "115 級、114 級、某級上學期期中考裡屬於第 1、2 章的題目，依考卷與題號排列",
+  "pageLabel": "考古",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備熱物理學（趙松柏老師）考試，課本 Schroeder《An Introduction to Thermal Physics》。這一章只收上學期期中考考過、屬於第 1 章（理想氣體、均分定理、熱與功、壓縮功、熱容量與潛熱、熱膨脹）與第 2 章（兩態系統、愛因斯坦固體、交互作用的系統、Stirling 近似、多重度的峰、理想氣體多重度、熵）的題目，依考卷排列；考試要求寫出完整推導。",
+  "overview": "s00",
+  "sections": [
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "本章總覽：考卷與題目一覽",
+      "pages": ""
+    },
+    {
+      "id": "s01",
+      "file": "01-115-mid.html",
+      "title": "115 級上學期期中",
+      "pages": "",
+      "desc": "範圍第 1–2 章，7 題 100 分。"
+    },
+    {
+      "id": "s02",
+      "file": "02-114-mid.html",
+      "title": "114 級上學期期中",
+      "pages": "",
+      "desc": "7 題（只有手機照片，封面沒拍到）。"
+    },
+    {
+      "id": "s03",
+      "file": "03-x-mid.html",
+      "title": "某級上學期期中",
+      "pages": "",
+      "desc": "範圍第 1–4.1 章，4 大題 110 分；第 1 題 (f)–(h) 是第 4 章熱機，不在本章範圍。"
+    }
+  ],
+  "sources": [
+    {
+      "match": "115 級上學期期中",
+      "label": "開原卷",
+      "url": "https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view"
+    },
+    {
+      "match": "某級上學期期中",
+      "label": "開原卷",
+      "url": "https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view"
+    },
+    {
+      "match": "Schroeder",
+      "label": "開課本原文",
+      "url": "https://drive.google.com/file/d/1Fh2YKWsXhi8u96VNGhJ4CGbApB6mG0uS/view",
+      "pageOffset": 13,
+      "local": "C:/Users/jaiia/Downloads/熱學.pdf"
+    }
+  ],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": []
+}

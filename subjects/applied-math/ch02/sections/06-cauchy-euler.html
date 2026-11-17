@@ -1,0 +1,267 @@
+<h2>六、Cauchy–Euler 方程 <span class="pg">網站補充 · 依 9/23 作業第 3 題</span></h2>
+
+<p class="lead"><span class="added">網站補充（照片缺漏）</span>9/23 的八張照片拍到阻尼振盪就結束了，但當天的作業第 3 題寫著「a Cauchy–Euler equation $4x^2y''+8xy'+y=0$」，課程進度也列了 Cauchy–Euler，所以這一節由網站補上。Cauchy–Euler 方程的係數不是常數，但有一個特殊結構：$x^2$ 配 $y''$、$x$ 配 $y'$。猜 $y=x^m$ 就能把它化成代數方程，三種情況和常係數方程一一對應。</p>
+
+<h3 id="a2-ce-form">6.1 形式與 $y=x^m$</h3>
+
+$$x^2y''+axy'+by=0\qquad(x\gt0,\ a,b\ \text{是常數})$$
+
+<p><strong>為什麼猜 $x^m$。</strong>$y=x^m$ 每微分一次少一次方，但前面又乘上 $x$ 補回來：$xy'=mx^m$、$x^2y''=m(m-1)x^m$。三項都是 $x^m$ 的倍數，除掉 $x^m$（$x\gt0$ 時不為 0）：</p>
+$$m(m-1)+am+b=0\quad\Longleftrightarrow\quad m^2+(a-1)m+b=0$$
+<p>這叫指標方程（indicial equation，也有人叫輔助方程）。注意是 $a-1$ 不是 $a$——直接把常係數的 $\lambda^2+a\lambda+b$ 抄過來是最常見的錯誤。如果 $x^2y''$ 前有係數（例如作業的 $4x^2y''$），就用 $4m(m-1)+8m+1=0$，不必先除。</p>
+
+<h3 id="a2-ce-cases">6.2 三種情況</h3>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>指標方程的根</th><th>兩個獨立解</th><th>對應的常係數情況</th></tr></thead>
+  <tbody>
+    <tr><td>相異實根 $m_1\neq m_2$</td><td>$x^{m_1},\ x^{m_2}$</td><td>$e^{\lambda_1t},\ e^{\lambda_2t}$</td></tr>
+    <tr><td>重根 $m$</td><td>$x^m,\ x^m\ln x$</td><td>$e^{\lambda t},\ te^{\lambda t}$</td></tr>
+    <tr><td>複根 $\alpha\pm i\beta$</td><td>$x^\alpha\cos(\beta\ln x),\ x^\alpha\sin(\beta\ln x)$</td><td>$e^{\alpha t}\cos\beta t,\ e^{\alpha t}\sin\beta t$</td></tr>
+  </tbody>
+</table></div>
+
+<p><strong>重根的 $\ln x$ 從哪來。</strong>用第 4 節的降階公式：標準式 $y''+\dfrac axy'+\dfrac b{x^2}y=0$，$P=\dfrac ax$，$e^{-\int P\,dx}=x^{-a}$。重根時 $m=\dfrac{1-a}2$，$y_1^2=x^{2m}=x^{1-a}$，</p>
+$$\frac{e^{-\int P\,dx}}{y_1^2}=\frac{x^{-a}}{x^{1-a}}=\frac1x\quad\Rightarrow\quad u=\ln x,\quad y_2=x^m\ln x$$
+
+<p><strong>複根的 $\cos(\beta\ln x)$ 從哪來。</strong>$x^{i\beta}=e^{i\beta\ln x}=\cos(\beta\ln x)+i\sin(\beta\ln x)$，和第 3 節同樣取實部、虛部。</p>
+
+<h3 id="a2-ce-sub">6.3 代換 $x=e^t$：變回常係數</h3>
+
+<p>表格右欄的對應不是巧合。令 $x=e^t$（$t=\ln x$），$Y(t)=y(e^t)$，連鎖律：</p>
+$$\frac{dy}{dx}=\frac{dY}{dt}\frac{dt}{dx}=\frac1x\dot Y\ \Rightarrow\ xy'=\dot Y$$
+$$\frac{d^2y}{dx^2}=\frac{d}{dx}\!\left(\frac{\dot Y}{x}\right)=\frac{\ddot Y}{x^2}-\frac{\dot Y}{x^2}\ \Rightarrow\ x^2y''=\ddot Y-\dot Y$$
+<p>代入原式得 $\ddot Y+(a-1)\dot Y+bY=0$，特徵方程式正好是指標方程。所以 $e^{\lambda t}=x^\lambda$、$te^{\lambda t}=x^\lambda\ln x$、$e^{\alpha t}\cos\beta t=x^\alpha\cos(\beta\ln x)$。$x\lt0$ 時把所有 $x$ 換成 $|x|$ 即可。</p>
+
+<div class="problem" data-kind="textbook" id="a2-hw3">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">9/23 作業 第 3 題</span></div>
+    <h4>已知 $y_1=1/\sqrt x$，求 Cauchy–Euler 方程的第二解</h4>
+    <button type="button" class="exam-btn" data-exam="a2-hw3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-hw3"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>3. Given that $y_1=\dfrac{1}{\sqrt{x}}$ is a solution of a Cauchy-Euler equation</p>$$4x^2y''+8xy'+y=0,$$<p>find the second linearly independent solution $y_2$.</p><p>Ans: $y_2=\dfrac{\ln x}{\sqrt{x}}$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>已知 $y_1=\dfrac1{\sqrt x}$ 是 Cauchy–Euler 方程 $4x^2y''+8xy'+y=0$ 的解，求第二個線性獨立解 $y_2$。（老師給的答案：$y_2=\dfrac{\ln x}{\sqrt x}$）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$4x^2y''+8xy'+y=0$</td><td>題目；$y''$ 前係數 $4x^2$，不是 1</td></tr>
+          <tr><td>已知解</td><td>$y_1=x^{-1/2}$</td><td>「Given that $y_1=\frac1{\sqrt x}$ is a solution」</td></tr>
+          <tr><td>範圍</td><td>$x\gt0$</td><td>$\sqrt x$ 與 $\ln x$ 要有定義（題目沒寫，自己讀出來的）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：與 $y_1$ 線性獨立的第二解 $y_2$，並驗證老師的答案。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目已經給了一個解，<b>所以</b>最直接的是第 4 節的降階公式 $y_2=y_1\int e^{-\int P\,dx}/y_1^2\,dx$；公式要先把 $y''$ 的係數除成 1 讀出 $P$。</p>
+      <p><b>因為</b>它是 Cauchy–Euler 方程，<b>所以</b>也可以用指標方程交叉檢查：如果是重根，第二解就是 $x^m\ln x$。兩種方法結果相同，考試寫一種、用另一種驗算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-hw3-s1">
+        <span class="step-title">驗證 $y_1$</span>
+        <p>$y_1=x^{-1/2}$，$y_1'=-\tfrac12x^{-3/2}$，$y_1''=\tfrac34x^{-5/2}$：</p>
+        $$4x^2\cdot\tfrac34x^{-5/2}+8x\cdot\left(-\tfrac12x^{-3/2}\right)+x^{-1/2}=(3-4+1)x^{-1/2}=0$$
+      </div>
+      <div class="step" data-step="a2-hw3-s2" data-sym="PQ">
+        <span class="step-title">化成標準式，讀出 $P$</span>
+        <p>除以 $4x^2$：$y''+\dfrac2xy'+\dfrac1{4x^2}y=0$，所以 $P=\dfrac2x$。</p>
+        $$e^{-\int P\,dx}=e^{-2\ln x}=x^{-2}$$
+      </div>
+      <div class="step" data-step="a2-hw3-s3" data-sym="u">
+        <span class="step-title">降階公式</span>
+        <p class="sub">代入 $y_1^2=x^{-1}$（題目的 $y_1$ 平方）：</p>
+        $$\frac{e^{-\int P\,dx}}{y_1^2}=\frac{x^{-2}}{x^{-1}}=\frac1x,\qquad\int\frac{dx}x=\ln x$$
+        $$y_2=y_1\ln x=\frac{\ln x}{\sqrt x}$$
+      </div>
+      <div class="step" data-step="a2-hw3-s4" data-sym="m">
+        <span class="step-title">用指標方程交叉檢查</span>
+        <p>令 $y=x^m$：$4m(m-1)+8m+1=4m^2+4m+1=(2m+1)^2=0$，$m=-\tfrac12$ 是重根，所以兩個解是 $x^{-1/2}$ 和 $x^{-1/2}\ln x$，和降階公式的結果一致。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_2=\dfrac{\ln x}{\sqrt x}$，與老師的答案相同；一般解 $y=\dfrac{c_1+c_2\ln x}{\sqrt x}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_2/y_1=\ln x$ 不是常數，線性獨立 ✔；Wronskian $W=y_1^2(\ln x)'=x^{-1}\cdot x^{-1}=x^{-2}=e^{-\int P\,dx}$ ✔（Abel 公式）</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a2-113b-m4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2025.Apr. 第 4 題（113下）</span></div>
+    <h4>Cauchy–Euler 的特徵值問題：$x^2y''+xy'+\lambda y=0$，$y(1)=y(5)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-113b-m4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-113b-m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學 (2025. Apr.)</p><p>4. (15%) Solve the eigenvalues $\lambda$ and eigenfunctions $y(x)$ of $x^2y''+xy'+\lambda y=0$ with $y(1)=0$, and $y(5)=0$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（15%）求 $x^2y''+xy'+\lambda y=0$、$y(1)=0$、$y(5)=0$ 的特徵值 $\lambda$ 與特徵函數 $y(x)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$a=1$、$b=\lambda$（$\lambda$ 未知）</td><td>「$x^2y''+xy'+\lambda y=0$」：Cauchy–Euler，$\lambda$ 是待定參數</td></tr>
+          <tr><td>邊界條件</td><td>$y(1)=0$、$y(5)=0$</td><td>「with $y(1)=0$, and $y(5)=0$」：兩端都是 0（齊次邊界條件）</td></tr>
+          <tr><td>「特徵函數」</td><td>$y\not\equiv0$</td><td>「eigenvalues ⋯ and eigenfunctions」：$y\equiv0$ 永遠滿足，題目要的是<b>非零解</b>存在的 $\lambda$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：所有使非零解存在的 $\lambda$，以及對應的 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>是 Cauchy–Euler，<b>所以</b>令 $y=x^m$；指標方程 $m^2+\lambda=0$ 的根的種類由 $\lambda$ 的正負決定，<b>所以</b>分 $\lambda\lt0$、$\lambda=0$、$\lambda\gt0$ 三種情況討論。</p>
+      <p><b>因為</b>兩個邊界條件都是 0，代入後是齊次聯立方程，<b>所以</b>非零解存在 ⟺ 係數行列式為 0（第 3 節 3.2）。只有振盪型的解（複根）才會在 $x=1$ 和 $x=5$ 兩處都等於 0。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-113b-m4-s1" data-sym="m">
+        <span class="step-title">指標方程</span>
+        <p class="sub">令 $y=x^m$，代入 $a=1$、$b=\lambda$：</p>
+        $$m(m-1)+m+\lambda=m^2+\lambda=0$$
+      </div>
+      <div class="step" data-step="a2-113b-m4-s2">
+        <span class="step-title">$\lambda\lt0$：只有零解</span>
+        <p>令 $\lambda=-\mu^2$（$\mu\gt0$），$m=\pm\mu$，$y=c_1x^\mu+c_2x^{-\mu}$。</p>
+        <p class="sub">代入 $y(1)=0$：$c_1+c_2=0$；代入 $y(5)=0$：$c_1\cdot5^\mu+c_2\cdot5^{-\mu}=c_1(5^\mu-5^{-\mu})=0$。</p>
+        <p>$\mu\gt0$ 時 $5^\mu\gt1\gt5^{-\mu}$，括號不為 0，所以 $c_1=0$、$c_2=0$：沒有非零解。</p>
+      </div>
+      <div class="step" data-step="a2-113b-m4-s3">
+        <span class="step-title">$\lambda=0$：只有零解</span>
+        <p>$m=0$ 重根，$y=c_1+c_2\ln x$。$y(1)=c_1=0$；$y(5)=c_2\ln5=0$，$\ln5\neq0$，所以 $c_2=0$。</p>
+      </div>
+      <div class="step" data-step="a2-113b-m4-s4">
+        <span class="step-title">$\lambda\gt0$：複根</span>
+        <p>令 $\lambda=\beta^2$（$\beta\gt0$），$m=\pm i\beta$，$\alpha=0$：</p>
+        $$y=c_1\cos(\beta\ln x)+c_2\sin(\beta\ln x)$$
+        <p class="sub">代入 $y(1)=0$（$\ln1=0$）：$c_1=0$。代入 $y(5)=0$：</p>
+        $$c_2\sin(\beta\ln5)=0$$
+        <p>要 $c_2\neq0$，必須 $\sin(\beta\ln5)=0$，即 $\beta\ln5=n\pi$，$n=1,2,3,\ldots$（$n=0$ 是 $\beta=0$，不屬於這一情況）。</p>
+      </div>
+      <div class="step" data-step="a2-113b-m4-s5">
+        <span class="step-title">特徵值與特徵函數</span>
+        $$\lambda_n=\beta_n^2=\left(\frac{n\pi}{\ln5}\right)^2,\qquad y_n=\sin\!\left(\frac{n\pi\ln x}{\ln5}\right)$$
+        <p class="sub">代入 $\ln5=1.6094$：</p>
+        $$\lambda_1=\left(\frac{\pi}{1.6094}\right)^2=3.810,\quad\lambda_2=4\lambda_1=15.24,\quad\lambda_3=9\lambda_1=34.29$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>特徵值 $\lambda_n=\dfrac{n^2\pi^2}{(\ln5)^2}$（$n=1,2,3,\ldots$），特徵函數 $y_n(x)=\sin\!\left(\dfrac{n\pi\ln x}{\ln5}\right)$（乘任意非零常數）；$\lambda\le0$ 沒有非零解。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_n(1)=\sin0=0$ ✔、$y_n(5)=\sin(n\pi)=0$ ✔。代換 $t=\ln x$：方程式變成 $\ddot Y+\lambda Y=0$、$Y(0)=Y(\ln5)=0$，就是長 $\ln5$ 的弦振動，$\lambda_n=(n\pi/L)^2$、$L=\ln5$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a2-s06-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>代換 $x=e^t$ 解複根型 Cauchy–Euler</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s06-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $x^2y''-xy'+5y=0$（$x\gt0$），$y(1)=1$、$y'(1)=0$。(a) 用代換 $x=e^t$ 化成常係數方程後求解；(b) 求 $x\gt1$ 的第一個零點。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$a=-1$、$b=5$</td><td>「$x^2y''-xy'+5y=0$」</td></tr>
+          <tr><td>初始條件</td><td>$y(1)=1$、$y'(1)=0$</td><td>「$y(1)=1$、$y'(1)=0$」：給在 $x=1$，對應 $t=0$</td></tr>
+          <tr><td>方法</td><td>$x=e^t$</td><td>(a)「用代換 $x=e^t$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $y(x)$；(b) 第一個 $x\gt1$ 的零點。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目指定 $x=e^t$，<b>所以</b>用連鎖律把 $xy'$、$x^2y''$ 換成 $\dot Y$、$\ddot Y$，得到常係數方程，再照第 3 節處理複根。<b>因為</b>條件在 $x=1$，而 $\ln1=0$，<b>所以</b>代入時 $\cos(2\ln x)=1$、$\sin(2\ln x)=0$，最省事。</p>
+      <p>微分 $y'$ 時，$\cos(2\ln x)$ 的導數是 $-\sin(2\ln x)\cdot\dfrac2x$（連鎖律），不要漏掉 $\dfrac1x$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s06-1-s1">
+        <span class="step-title">代換後的方程式</span>
+        <p class="sub">用 6.3 的 $xy'=\dot Y$、$x^2y''=\ddot Y-\dot Y$ 代入：</p>
+        $$(\ddot Y-\dot Y)-\dot Y+5Y=\ddot Y-2\dot Y+5Y=0$$
+      </div>
+      <div class="step" data-step="a2-s06-1-s2" data-sym="ab2">
+        <span class="step-title">常係數方程的解</span>
+        $$r^2-2r+5=0\ \Rightarrow\ r=1\pm2i,\qquad Y=e^t(K_1\cos2t+K_2\sin2t)$$
+        <p>換回 $t=\ln x$（$e^t=x$）：</p>
+        $$y=x\left[K_1\cos(2\ln x)+K_2\sin(2\ln x)\right]$$
+      </div>
+      <div class="step" data-step="a2-s06-1-s3" data-sym="c12">
+        <span class="step-title">代入初始條件</span>
+        <p class="sub">代入 $x=1$（$\ln1=0$）與 $y(1)=1$：$K_1=1$。</p>
+        <p>乘積法則加連鎖律：</p>
+        $$\begin{aligned}y'&=(K_1+2K_2)\cos(2\ln x)\\&\quad+(K_2-2K_1)\sin(2\ln x)\end{aligned}$$
+        <p class="sub">代入 $x=1$ 與 $y'(1)=0$：$K_1+2K_2=0$，$K_2=-\tfrac12$。</p>
+      </div>
+      <div class="step" data-step="a2-s06-1-s4">
+        <span class="step-title">(b) 第一個零點</span>
+        <p>$x\gt0$，所以 $y=0\iff\cos(2\ln x)=\tfrac12\sin(2\ln x)\iff\tan(2\ln x)=2$。$x\gt1$ 時 $2\ln x\gt0$，第一個解：</p>
+        $$2\ln x=\tan^{-1}2=1.1071\ \Rightarrow\ x=e^{0.5536}=1.739$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $y=x\left[\cos(2\ln x)-\tfrac12\sin(2\ln x)\right]$；(b) $x=e^{\frac12\tan^{-1}2}\approx1.739$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>指標方程 $m(m-1)-m+5=m^2-2m+5$，根 $1\pm2i$，和代換結果相同 ✔；$y(1)=1$ ✔、$y'(1)=1+2(-\tfrac12)=0$ ✔；$x=1.739$：$2\ln x=1.107$，$\cos1.107=0.447$、$\tfrac12\sin1.107=0.447$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a2-s06-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>平移過的 Cauchy–Euler：$(2x+1)^2y''-2(2x+1)y'-12y=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s06-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(2x+1)^2y''-2(2x+1)y'-12y=0$（$x\gt-\tfrac12$），$y(0)=2$、$y'(0)=2$。（提示：這不是標準的 Cauchy–Euler，先想想該令什麼。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>係數是 $(2x+1)$ 的次方</td><td>「$(2x+1)^2y''-2(2x+1)y'$」：$(2x+1)^2$ 配 $y''$、$(2x+1)$ 配 $y'$</td></tr>
+          <tr><td>範圍</td><td>$2x+1\gt0$</td><td>「$x\gt-\tfrac12$」</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=2$、$y'(0)=2$</td><td>「$y(0)=2$、$y'(0)=2$」：$x=0$ 對應 $2x+1=1$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>方程式的結構是「$s^2$ 配 $y''$、$s$ 配 $y'$」，只是 $s=2x+1$ 而不是 $x$，<b>所以</b>令 $s=2x+1$ 把它變回標準 Cauchy–Euler。換變數時 $\dfrac{d}{dx}=2\dfrac{d}{ds}$，二階導數多一個 $4$，這些係數要算對。</p>
+      <p>也可以直接猜 $y=(2x+1)^m$（$y'=2m(2x+1)^{m-1}$、$y''=4m(m-1)(2x+1)^{m-2}$），兩種做法得到同一個指標方程。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s06-2-s1">
+        <span class="step-title">令 $s=2x+1$</span>
+        <p>$\dfrac{ds}{dx}=2$，所以 $y'=2\dfrac{dy}{ds}$、$y''=4\dfrac{d^2y}{ds^2}$。代入：</p>
+        $$4s^2\frac{d^2y}{ds^2}-4s\frac{dy}{ds}-12y=0\ \Rightarrow\ s^2\frac{d^2y}{ds^2}-s\frac{dy}{ds}-3y=0$$
+      </div>
+      <div class="step" data-step="a2-s06-2-s2" data-sym="m">
+        <span class="step-title">指標方程</span>
+        <p class="sub">代入 $a=-1$、$b=-3$ 到 $m^2+(a-1)m+b=0$：</p>
+        $$m^2-2m-3=(m-3)(m+1)=0\ \Rightarrow\ m=3,\ -1$$
+        $$y=c_1(2x+1)^3+c_2(2x+1)^{-1}$$
+      </div>
+      <div class="step" data-step="a2-s06-2-s3" data-sym="c12">
+        <span class="step-title">代入初始條件</span>
+        <p>$y'=6c_1(2x+1)^2-2c_2(2x+1)^{-2}$。</p>
+        <p class="sub">代入 $x=0$（$2x+1=1$）與 $y(0)=2$、$y'(0)=2$：</p>
+        $$\begin{aligned}c_1+c_2&=2\\6c_1-2c_2&=2\end{aligned}$$
+        <p>上式乘 2 加下式：$8c_1=6$，$c_1=\tfrac34$，$c_2=\tfrac54$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\tfrac34(2x+1)^3+\dfrac{5}{4(2x+1)}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=(2x+1)^3$：$(2x+1)^2\cdot24(2x+1)-2(2x+1)\cdot6(2x+1)^2-12(2x+1)^3=(24-12-12)(2x+1)^3=0$ ✔；$y(0)=\tfrac34+\tfrac54=2$ ✔，$y'(0)=\tfrac92-\tfrac52=2$ ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$x^2y''+axy'+by=0$：令 $y=x^m$，指標方程 $m^2+(a-1)m+b=0$（不是 $m^2+am+b$）。</li>
+    <li>相異實根 $x^{m_1},x^{m_2}$；重根 $x^m,x^m\ln x$；複根 $x^\alpha\cos(\beta\ln x),x^\alpha\sin(\beta\ln x)$。</li>
+    <li>$x=e^t$ 把它變成 $\ddot Y+(a-1)\dot Y+bY=0$；邊界值特徵值問題變成弦振動，$\lambda_n=(n\pi/\ln(x_2/x_1))^2$。</li>
+  </ol>
+</div>

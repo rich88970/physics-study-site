@@ -1,0 +1,472 @@
+<!-- 由 tools/build_thermal_kaogu.py 從 ch01／ch02 的 exam.html 複製 -->
+
+<article class="exam-item" data-exam-id="tk1-115-1" data-group="115 級上學期期中" data-title="考古 115-1：咖啡加冰（習題 1.47）">
+  <h3>考古 115-1（改自習題 1.47）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1-115-1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. [10pts] Your 100-g cup of coffee is boiling-hot. About how much ice should you add to bring it down to a comfortable sipping temperature of 60°C? (Assume that the ice is initially at −15°C. The specific heat of ice is 0.5 cal/g°C.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（10 分）100 g 滾燙的咖啡要降到 60°C，大約要加多少冰？（冰原本 −15°C，冰的比熱 0.5 cal/(g·°C)。）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 1 題</p>
+  <ol class="write">
+    <li>咖啡（當水）放熱：$Q=(100)(1)(100-60)=4000$ cal。</li>
+    <li>每克冰吸熱：$0.5(15)+80+1(60)=147.5$ cal/g（$l_f=80$ cal/g）。</li>
+    <li>$m=4000/147.5=27.1$ g。</li>
+  </ol>
+  <div class="final">答：約 27 g。</div>
+  <p class="small"><a href="#tk1-115-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-8" data-group="115 級上學期期中" data-title="課本 1-8＝考古 115-2、114-1：線膨脹">
+  <h3>課本 1-8（考古 115 級期中第 2 題、114 級期中第 1 題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-8"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>課本原文（Schroeder Problem 1.8）</strong></p><p>For a solid, we also define the <strong>linear thermal expansion coefficient</strong>, $\alpha$, as the fractional increase in length per degree: $$\alpha\equiv\frac{\Delta L/L}{\Delta T}.$$</p><p>(a) For steel, $\alpha$ is $1.1\times10^{-5}\ \text{K}^{-1}$. Estimate the total variation in length of a 1-km steel bridge between a cold winter night and a hot summer day.</p><p>(b) The dial thermometer in Figure 1.2 uses a coiled metal strip made of two different metals laminated together. Explain how this works.</p><p>(c) Prove that the volume thermal expansion coefficient of a solid is equal to the sum of its linear expansion coefficients in the three directions: $\beta=\alpha_x+\alpha_y+\alpha_z$. (So for an isotropic solid, which expands the same in all directions, $\beta=3\alpha$.)</p><p class="original-subhead"><strong>考卷原文（115 級上學期期中第 2 題；114 級上學期期中第 1 題同一題）</strong></p><p>[10pts] For a solid, the linear thermal expansion coefficient $\alpha$ is defined as the fractional change in length per degree: $$\alpha=\frac{\Delta L/L}{\Delta T}$$</p><p>(a) For steel, $\alpha$ is $1.1\times10^{-5}\text{K}^{-1}$. Estimate the total variation in length of a 1-km steel bridge between a cold winter night and a hot summer day. (5pts)</p><p>(b) Prove that the volume thermal expansion coefficient of a solid is equal to the sum of its linear expansion coefficients in the three directions: $\beta=\alpha_x+\alpha_y+\alpha_z$. (5pts)</p></div>
+<p class="original-caption">Schroeder 習題 1-8（Problem 1.8）· p.6 · 即 115 級上學期期中 第 2 題、114 級上學期期中 第 1 題（考卷只考 (a)(c)）</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$\alpha\equiv\frac{\Delta L/L}{\Delta T}$。(a) 鋼 $\alpha=1.1\times10^{-5}\ \text{K}^{-1}$，估計 1 km 鋼橋冬夜到夏日的長度變化；(b) 雙金屬片溫度計原理；(c) 證明 $\beta=\alpha_x+\alpha_y+\alpha_z$。（考卷只考 (a)(c)，各 5 分。）</div>
+  <p class="small">原卷：115 級上學期熱學期中第 2 題（115級上學期熱學(期中)-1.pdf p.2）；114 級上學期期中第 1 題（手機照片 114級熱學期中(上學期)-1.HEIC）。</p>
+  <ol class="write">
+    <li>(a) $\Delta L=\alpha L\Delta T$；估 $\Delta T\approx25\ \text{K}$（冬夜 $10^\circ\text{C}$、夏日 $35^\circ\text{C}$）：$\Delta L=(1.1\times10^{-5})(1000\ \text{m})(25)=0.275\ \text{m}\approx28\ \text{cm}$。</li>
+    <li>(b) 兩金屬 $\alpha$ 不同，升溫時伸長量不同又黏在一起 ⟹ 彎曲；捲成螺旋則轉動，帶動指針。</li>
+    <li>(c) 長方體 $V=L_xL_yL_z$，升溫後 $V+\Delta V=L_x(1+\alpha_x\Delta T)L_y(1+\alpha_y\Delta T)L_z(1+\alpha_z\Delta T)$。</li>
+    <li>展開：$=V[1+(\alpha_x+\alpha_y+\alpha_z)\Delta T+O(\Delta T^2)]$；$\alpha\Delta T\sim10^{-4}$，略去二次以上。</li>
+    <li>$\dfrac{\Delta V/V}{\Delta T}=\alpha_x+\alpha_y+\alpha_z$，即 $\beta=\alpha_x+\alpha_y+\alpha_z$（各向同性 $3\alpha$）。（或 $\ln V=\sum\ln L_i$ 對 $T$ 微分。）</li>
+  </ol>
+  <div class="final">答：(a) 約 0.3 m（$\Delta T=25$ K；溫帶 70 K 約 0.8 m）；(b) 雙金屬彎曲；(c) $\beta=\alpha_x+\alpha_y+\alpha_z$。</div>
+  <p class="small"><a href="#sc-1-8">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-115-3" data-group="115 級上學期期中" data-title="考古 115-3：十枚硬幣">
+  <h3>考古 115-3（改自習題 2.2）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-3"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>[10pts] Suppose you flip 10 fair coins.</p><p>(a) How many possible microstates are there? (2pts)</p><p>(a) How many possible macrostates are there? (2pts)</p><p>(b) What is the probability of getting the sequence HTHHTTTHTH (in exactly that order)? (3pts)</p><p>(c) What is the probability of getting 7 heads and 3 tails (in any order)? (3pts)</p></div>
+<p class="original-caption">115 級上學期期中 第 3 題 · 改自 Schroeder Problem 2.2 · p.51</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（10 分）假設你丟 10 枚公正硬幣。(a) 共有多少個可能的微觀態？（2 分）(a) 共有多少個可能的巨觀態？（2 分）(b) 得到序列 HTHHTTTHTH（完全照這個順序）的機率是多少？（3 分）(c) 得到 7 個正面、3 個反面（任意順序）的機率是多少？（3 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 3 題</p>
+  <ol class="write">
+    <li>微觀態：每枚 2 種，$2^{10}=1024$ 個。</li>
+    <li>巨觀態：正面數 $n=0,1,\dots,10$，共 11 個。</li>
+    <li>(b) 指定序列＝一個微觀態：$P=1/1024=9.77\times10^{-4}$。</li>
+    <li>(c) $\Omega(7)=\binom{10}7=\dfrac{10\cdot9\cdot8}{3\cdot2\cdot1}=120$，$P=\dfrac{120}{1024}=0.117$。</li>
+  </ol>
+  <div class="final">答：1024、11、$1/1024$、$120/1024\approx11.7\%$。</div>
+  <p class="small"><a href="#tk-115-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-115-4" data-group="115 級上學期期中" data-title="考古 115-4：Stirling 推多重度（習題 2.18、2.17）">
+  <h3>考古 115-4（課本習題 2.18、2.17）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-4"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[20pts] Consider an Einstein solid (a model description of the solid, imaging all elements of a solid are connected by some ”springs” in three spatial dimensions. Possible energy state for one oscillation mode is $E_q\equiv(q+\frac12)\hbar\omega$ where $\hbar$ and $\omega$ are Planck constant and some material specific angular frequency.) for which both $N$ (oscillator’s number) and $q$ (energy quantum number) are much greater than 1. Here we simplify the expression for energy mode $E_q\simeq q\epsilon$ with $\epsilon$ as some given energy unit.</p><p>(a) Use Stirling’s approximation (i.e. $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$) to show the multiplicity of an Einstein’s solid is approximately given by: (5pts)$$\Omega(N,q)\simeq\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}$$</p><p>(b)Find the entropy of an Einstein solid as a function of $N$ and $q$ using $\Omega(N,q)\simeq\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N$. (4pts) Explain why the factors omitted in (a) have no effect on the entropy when $N$ and $q$ are large. (1pt)</p><p>(c) Show that when $q\gg N$ this multiplicity can be simplified as $$\Omega(N,q)\simeq\left(\frac{eq}{N}\right)^N$$ This limit is called ”high temperature limit”. (3pts) Explain why this condition is called ”high temperature limit”. (2pt)</p><p>(d) For $q\ll N$ (the ”low temperature limit”), what should be the simplified form of multiplicity function? Derive it <em>or</em> give your answer and argument. (5pts)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.18）</strong></p><p>Use Stirling’s approximation to show that the multiplicity of an Einstein solid, for any large values of $N$ and $q$, is approximately $$\Omega(N,q)\approx\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}.$$ The square root in the denominator is merely large, and can often be neglected. However, it is needed in Problem 2.22. (Hint: First show that $\Omega=\frac{N}{q+N}\frac{(q+N)!}{q!\,N!}$. Do not neglect the $\sqrt{2\pi N}$ in Stirling’s approximation.)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.17）</strong></p><p>Use the methods of this section to derive a formula, similar to equation 2.21, for the multiplicity of an Einstein solid in the “low-temperature” limit, $q\ll N$.</p></div>
+<p class="original-caption">115 級上學期期中 第 4 題 · 即 Schroeder Problem 2.18、2.17 · p.64 · 2.18 也是熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）考慮一個愛因斯坦固體（固體的一種模型：想像固體的所有組成單元在三個空間方向上由「彈簧」連接。一個振動模式可能的能量狀態是 $E_q\equiv(q+\tfrac12)\hbar\omega$，其中 $\hbar$ 是普朗克常數、$\omega$ 是某個與材料有關的角頻率），其中 $N$（振子數）與 $q$（能量量子數）都遠大於 1。這裡把能量模式簡化成 $E_q\simeq q\epsilon$，$\epsilon$ 是某個給定的能量單位。(a) 用 Stirling 近似（即 $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$）證明愛因斯坦固體的多重度近似為（5 分）
+    $$\Omega(N,q)\simeq\frac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$$
+    (b) 用 $\Omega(N,q)\simeq\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N$ 求愛因斯坦固體的熵，表示成 $N$ 與 $q$ 的函數。（4 分）說明為什麼當 $N$、$q$ 很大時，(a) 中被省略的因子對熵沒有影響。（1 分）(c) 證明當 $q\gg N$ 時這個多重度可以化簡為
+    $$\Omega(N,q)\simeq\left(\frac{eq}N\right)^N$$
+    這個極限稱為「高溫極限」。（3 分）說明為什麼這個條件叫「高溫極限」。（2 分）(d) 當 $q\ll N$（「低溫極限」）時，多重度函數的化簡形式應該是什麼？推導出來，或者寫出答案並給出論證。（5 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 4 題</p>
+  <div class="rote">
+    <p><b>看到</b>「愛因斯坦固體」＋「Stirling」＋「$q\gg N$ 高溫／$q\ll N$ 低溫」⟹ 題型：<b>Stirling 推愛因斯坦固體多重度</b></p>
+    <p><b>背</b></p>
+    <ol>
+      <li>$\Omega=\dfrac{(q+N-1)!}{q!\,(N-1)!}$</li>
+      <li>三招：$(N-1)!=\dfrac{N!}N$、$(q+N-1)!=\dfrac{(q+N)!}{q+N}$ → 代 $N!\approx N^Ne^{-N}\sqrt{2\pi N}$ → $e$ 的次方抵消、$(q+N)^{q+N}$ 拆成 $(q+N)^q(q+N)^N$</li>
+      <li>$S=k\ln\Omega=k\big[(q+N)\ln(q+N)-q\ln q-N\ln N\big]$；根號項只有 $\ln N$ 大小，可丟</li>
+      <li>高溫 $\left(1+\frac Nq\right)^q\to e^N$ ⟹ $\left(\frac{eq}N\right)^N$；低溫把 $q\leftrightarrow N$ 對調 ⟹ $\left(\frac{eN}q\right)^q$；「高溫」＝每個振子 $\frac qN\gg1$ 份能量 ⟺ $kT\gg\epsilon$</li>
+    </ol>
+  </div>
+  <ol class="write">
+    <li>(a) $\Omega=\dfrac N{q+N}\cdot\dfrac{(q+N)!}{q!\,N!}$</li>
+    <li>代 Stirling：$\Omega\approx\dfrac N{q+N}\cdot\dfrac{(q+N)^{q+N}e^{-(q+N)}\sqrt{2\pi(q+N)}}{q^qe^{-q}\sqrt{2\pi q}\;N^Ne^{-N}\sqrt{2\pi N}}$</li>
+    <li>$e$ 抵消、根號合併成 $\sqrt{\frac N{2\pi q(q+N)}}$、$(q+N)^{q+N}$ 拆開 ⟹ $\Omega\approx\dfrac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$</li>
+    <li>(b) $S=k\left[q\ln\dfrac{q+N}q+N\ln\dfrac{q+N}N\right]=k\big[(q+N)\ln(q+N)-q\ln q-N\ln N\big]$；丟掉的 $-\frac k2\ln\frac{2\pi q(q+N)}N\sim\ln N\approx53\ll10^{23}$</li>
+    <li>(c) $q\gg N$：$\left(\dfrac{q+N}q\right)^q=e^{q\ln(1+N/q)}\approx e^N$，$\dfrac{q+N}N\approx\dfrac qN$ ⟹ $\Omega\approx\left(\dfrac{eq}N\right)^N$；高溫：每振子 $\frac qN\gg1$ 份，$U/N\gg\epsilon$（$kT\gg\epsilon$）</li>
+    <li>(d) $q\ll N$：$\left(\dfrac{q+N}N\right)^N\approx e^q$，$\dfrac{q+N}q\approx\dfrac Nq$ ⟹ $\Omega\approx\left(\dfrac{eN}q\right)^q$</li>
+  </ol>
+  <div class="final">答：(b) $S=k[(q+N)\ln(q+N)-q\ln q-N\ln N]$；(c) $(eq/N)^N$；(d) $(eN/q)^q$。</div>
+  <p class="small"><a href="#tk-115-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-115-5" data-group="115 級上學期期中" data-title="考古 115-5：10,20 分 60 份">
+  <h3>考古 115-5（改自習題 2.8）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-5"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>[20pts] Consider a system of two Einstein solids, A and B, each containing 10 oscillators and 20 oscillators, sharing a total of 60 units of energy. Assume that the solids are weakly coupled, and that the total energy is fixed. <em>In this problem, you may express your answer as some combinatorics without evaluating its numerical value.</em></p><p>(a) How many different macrostates are available to this system? (5pts)</p><p>(b) How many different microstates are available to this system? (5pts)</p><p>(c) Assuming that this system is in thermal equilibrium, what is the probability of finding all the energy in solid A? (5pts)</p><p>(d) Assuming that this system is in thermal equilibrium, what is the probability of finding this system at its most likely macrostate? (5pts)</p></div>
+<p class="original-caption">115 級上學期期中 第 5 題 · 改自 Schroeder Problem 2.8 · p.59</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）考慮由兩個愛因斯坦固體 A、B 組成的系統，分別含 10 個和 20 個振子，共享 60 份能量。假設兩固體弱耦合，且總能量固定。本題的答案可以寫成組合數，不必算出數值。(a) 這個系統有多少個不同的巨觀態？（5 分）(b) 這個系統有多少個不同的微觀態？（5 分）(c) 假設系統處於熱平衡，能量全部在固體 A 的機率是多少？（5 分）(d) 假設系統處於熱平衡，系統處在最可能巨觀態的機率是多少？（5 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 5 題</p>
+  <ol class="write">
+    <li>(a) $q_A=0,1,\dots,60$：61 個巨觀態。</li>
+    <li>(b) 視為 30 振子、60 份能量：$\Omega(\text{all})=\binom{89}{60}=\dfrac{89!}{60!\,29!}\ (\approx2.24\times10^{23})$。</li>
+    <li>(c) $P=\dfrac{\Omega_A(10,60)\Omega_B(20,0)}{\Omega(\text{all})}=\dfrac{\binom{69}{60}}{\binom{89}{60}}=\dfrac{69!\,29!}{89!\,9!}\ (\approx2.5\times10^{-13})$。</li>
+    <li>(d) $\dfrac{\Omega_{\text{total}}(q_A+1)}{\Omega_{\text{total}}(q_A)}=\dfrac{(q_A+10)(60-q_A)}{(q_A+1)(79-q_A)}\ge1\iff q_A\le18.6$，所以最可能 $q_A=19$、$q_B=41$。</li>
+    <li>$P=\dfrac{\binom{28}{19}\binom{60}{41}}{\binom{89}{60}}=\dfrac{1.41\times10^{22}}{2.24\times10^{23}}=0.063$</li>
+  </ol>
+  <div class="final">答：(a) 61；(b) $89!/(60!\,29!)$；(c) $69!\,29!/(89!\,9!)$；(d) $q_A=19$，約 6.3%。</div>
+  <p class="small"><a href="#tk-115-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-115-6" data-group="115 級上學期期中" data-title="考古 115-6：順磁體高斯峰（習題 2.24）">
+  <h3>考古 115-6（課本習題 2.24）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-6"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[20pts] For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function. (5pts)</p><p>(b) Use the methods similar to what you learned in the textbook to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$, and show that the distribution is a Gaussian function. (10pts) Check that your formula agrees with your answer to part (a) when $x=0$. (1pt)</p><p>(c) How wide is the peak of the Gaussian in the multiplicity function? Remember to derive it, not just write down the answer!(4pts)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.24）</strong></p><p>For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function.</p><p>(b) Use the methods of this section to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$. Check that your formula agrees with your answer to part (a) when $x=0$.</p><p>(c) How wide is the peak in the multiplicity function?</p><p>(d) Suppose you flip 1,000,000 coins. Would you be surprised to obtain 501,000 heads and 499,000 tails? Would you be surprised to obtain 510,000 heads and 490,000 tails? Explain.</p><p class="small">（(d) 不在這份考卷裡，見<a data-chapter="thermal/ch02" href="#sc-2-24">課本 2-24</a>。）</p></div>
+<p class="original-caption">115 級上學期期中 第 6 題 · 即 Schroeder Problem 2.24(a)–(c) · p.67</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）單一個大的兩態順磁體，其多重度函數在 $N_\uparrow=N/2$ 附近有非常尖的峰。(a) 用 Stirling 近似估計多重度函數峰的高度。（5 分）(b) 用和課本類似的方法，推導峰附近多重度函數的公式，以 $x\equiv N_\uparrow-(N/2)$ 表示，並證明這個分布是高斯函數。（10 分）檢查當 $x=0$ 時你的公式與 (a) 的答案一致。（1 分）(c) 多重度函數的高斯峰有多寬？記得要推導，不能只寫答案！（4 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 6 題</p>
+  <ol class="write">
+    <li>(a) $\Omega_{\max}=\dfrac{N!}{[(N/2)!]^2}\approx\dfrac{N^Ne^{-N}\sqrt{2\pi N}}{[(N/2)^{N/2}e^{-N/2}\sqrt{\pi N}]^2}=2^N\sqrt{\dfrac2{\pi N}}$</li>
+    <li>(b) $\Omega\approx\dfrac{N^N}{N_\uparrow^{N_\uparrow}N_\downarrow^{N_\downarrow}}\sqrt{\dfrac N{2\pi N_\uparrow N_\downarrow}}$，$N_{\uparrow,\downarrow}=\frac N2\pm x$。</li>
+    <li>$f(x)\equiv N_\uparrow\ln N_\uparrow+N_\downarrow\ln N_\downarrow=\frac N2\ln\left[\left(\frac N2\right)^2-x^2\right]+x\ln\dfrac{N/2+x}{N/2-x}$</li>
+    <li>$x\ll N$：$\approx\frac N2\left[2\ln\frac N2-\frac{4x^2}{N^2}\right]+x\cdot\frac{4x}N=N\ln\frac N2+\frac{2x^2}N$；根號 $\approx\sqrt{2/(\pi N)}$。</li>
+    <li>$\ln\Omega\approx N\ln2-\dfrac{2x^2}N+\ln\sqrt{\dfrac2{\pi N}}$ ⟹ $\Omega\approx2^N\sqrt{\dfrac2{\pi N}}\,e^{-2x^2/N}$：高斯函數。$x=0$ 回到 (a)。</li>
+    <li>(c) $e^{-2x^2/N}=e^{-1}$ ⟹ $x=\pm\sqrt{N/2}$，全寬 $\sqrt{2N}$。</li>
+  </ol>
+  <div class="final">答：(a) $2^N\sqrt{2/(\pi N)}$；(b) $\Omega\approx2^N\sqrt{2/(\pi N)}e^{-2x^2/N}$；(c) 半寬 $\sqrt{N/2}$。</div>
+  <p class="small"><a href="#tk-115-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-115-7" data-group="115 級上學期期中" data-title="考古 115-7：二維氣體多重度（習題 2.26）">
+  <h3>考古 115-7（課本習題 2.26）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-7"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[10pts] The multiplicity of monatomic ideal gas in three dimension is $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}(\sqrt{2mU})^{3N}.$$ Now consider an ideal monatomic gas that lives in a two dimensional universe, occupying an area $A$ instead of a volume $V$. By following the same logic as you derive the multiplicity in three dimension, find a formula for the multiplicity of the ideal monatomic gas in two dimension (in terms of $U$, $m$, $N$, $A$).</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.26）</strong></p><p>Consider an ideal monatomic gas that lives in a two-dimensional universe (“flatland”), occupying an area $A$ instead of a volume $V$. By following the same logic as above, find a formula for the multiplicity of this gas, analogous to equation 2.40.</p></div>
+<p class="original-caption">115 級上學期期中 第 7 題 · 即 Schroeder Problem 2.26 · p.72</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（10 分）三維單原子理想氣體的多重度是
+    $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N}.$$
+    現在考慮住在二維宇宙裡的單原子理想氣體，佔據面積 $A$ 而不是體積 $V$。依照你推導三維多重度的同樣邏輯，求二維單原子理想氣體多重度的公式（以 $U$、$m$、$N$、$A$ 表示）。</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 7 題</p>
+  <ol class="write">
+    <li>一個分子：每方向 $LL_p/h$ 個狀態，二維 $\Omega_1=AA_p/h^2$，$A_p$＝半徑 $\sqrt{2mU}$ 的圓周。</li>
+    <li>$N$ 個不可分辨分子：$\Omega_N=\dfrac1{N!}\dfrac{A^N}{h^{2N}}\times(2N\text{ 維超球面面積})$，$\sum_i(p_{ix}^2+p_{iy}^2)=2mU$。</li>
+    <li>$d=2N$、$r=\sqrt{2mU}$：面積 $=\dfrac{2\pi^N}{(N-1)!}(2mU)^{(2N-1)/2}\approx\dfrac{\pi^N}{N!}(2mU)^N$（丟掉大因子 $2N/\sqrt{2mU}$）。</li>
+    <li>$\Omega_N\approx\dfrac1{N!}\dfrac{A^N}{h^{2N}}\dfrac{\pi^N}{N!}(2mU)^N$</li>
+  </ol>
+  <div class="final">答：$\Omega_N\approx\dfrac1{N!}\dfrac{A^N}{h^{2N}}\dfrac{\pi^N}{N!}(2mU)^N=\dfrac1{(N!)^2}\left(\dfrac{2\pi mUA}{h^2}\right)^N$</div>
+  <p class="small"><a href="#tk-115-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1-114-2" data-group="114 級上學期期中" data-title="考古 114-2：均分定理求 v_rms、氫與氧">
+  <h3>考古 114-2</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1-114-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. [15pts] Equipartition theorem states that the average energy of any quadratic degree of freedom at temperature $T$ is $\frac12kT$.</p><p>(a) Use above theorem to find the root mean square speed of a gas molecule with mass $m$ confined in a three dimensional box at temperature $T$. (5pts)</p><p>(b) Calculate the root mean square speed of a hydrogen molecule at room temperature. (5pts)</p><p>(c) For a gas containing hydrogen molecules and oxygen molecules in thermal equilibrium. Which molecules are moving faster, on average? (2pts) By what factor? (3pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（完整翻譯）</strong>　（15 分）均分定理說：溫度 $T$ 時任何一個二次自由度的平均能量是 $\frac12kT$。(a) 用這個定理求質量 $m$、在溫度 $T$ 的三維盒子中的氣體分子的方均根速率。（5 分）(b) 計算室溫下氫分子的方均根速率。（5 分）(c) 氫分子與氧分子組成的氣體處於熱平衡。平均而言哪一種分子跑得比較快？（2 分）快幾倍？（3 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-1.HEIC）第 2 題</p>
+  <ol class="write">
+    <li>(a) 三個平移平方項各 $\frac12kT$：$\frac12m\overline{v^2}=\frac32kT$ ⟹ $v_{\text{rms}}=\sqrt{3kT/m}$。</li>
+    <li>(b) $m_{\text{H}_2}=2.016\times1.6605\times10^{-27}=3.348\times10^{-27}\ \text{kg}$。</li>
+    <li>$v_{\text{rms}}=\sqrt{\dfrac{3(1.381\times10^{-23})(300)}{3.348\times10^{-27}}}=1.93\times10^3\ \text{m/s}$。</li>
+    <li>(c) 熱平衡同 $T$，$v_{\text{rms}}\propto m^{-1/2}$：$\sqrt{32.00/2.016}=3.98\approx4$。</li>
+  </ol>
+  <div class="final">答：(a) $\sqrt{3kT/m}$；(b) 約 1930 m/s；(c) 氫較快，約 4 倍。</div>
+  <p class="small"><a href="#tk1-114-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-114-3" data-group="114 級上學期期中" data-title="考古 114-3：理想氣體的第一定律、熵與溫度">
+  <h3>考古 114-3（(d)(e) 即課本習題 2.31）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（25 分）理想氣體遵守的狀態方程式（也稱為理想氣體定律）是 $PV=NkT$（氣體壓力 $P$、體積 $V$、氣體粒子數 $N$、波茲曼常數 $k$、溫度 $T$）。當原子間的交互作用可以忽略、原子密度很低時，這個理想氣體定律成立。(a) 說明熱力學第一定律。（2 分）(b) 用熱力學第一定律求粒子數為 $N$ 的單原子理想氣體，定容熱容量 $C_V$ 與定壓熱容量 $C_P$ 的關係。（3 分）(c) 證明在準靜態絕熱過程中，氣體壓力 $P$ 與體積 $V$ 滿足
+    $$PV^\gamma=\text{constant}.$$
+    這裡 $\gamma=C_P/C_V$ 稱為絕熱指數。（10 分）(d) $N$ 個相同的理想氣體粒子的多重度函數近似為
+    $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N},$$
+    其中 $U=\sum_{i=1}^N\frac1{2m_i}(p_{x,i}^2+p_{y,i}^2+p_{z,i}^2)$ 代表系統的內能。計算理想氣體的熵。（你可以使用第 4 題所列的 Stirling 近似。）（5 分）(e) 用溫度的熱力學定義（即 $\frac1T=\frac{\partial S}{\partial U}$）求溫度 $T$，表示成 $U$、波茲曼常數 $k$ 與 $N$ 的函數。（5 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-1、-2.HEIC，雲端硬碟沒有這份）第 3 題</p>
+  <ol class="write">
+    <li>(a) $\Delta U=Q+W$：內能變化＝流入的熱＋外界對系統做的功（含熱的能量守恆）。</li>
+    <li>(b) 單原子 $U=\frac32NkT$。定容 $W=0$：$C_V=\left(\dfrac{\partial U}{\partial T}\right)_V=\dfrac32Nk$。</li>
+    <li>定壓 $Q=\Delta U+P\Delta V$，$PV=NkT\Rightarrow P\left(\dfrac{\partial V}{\partial T}\right)_P=Nk$：$C_P=C_V+Nk=\dfrac52Nk$。</li>
+    <li>(c) 絕熱 $Q=0$：$C_V\,\mathrm dT=-P\,\mathrm dV=-\dfrac{NkT}V\mathrm dV\Rightarrow\dfrac{\mathrm dT}T=-(\gamma-1)\dfrac{\mathrm dV}V$（$Nk/C_V=\gamma-1$）。</li>
+    <li>積分：$TV^{\gamma-1}=$ 常數；代 $T=PV/Nk$：$PV^\gamma=$ 常數。</li>
+    <li>(d) $\dfrac Sk=N\ln V+\dfrac{3N}2\ln\dfrac{2\pi mU}{h^2}-(N\ln N-N)-\left(\dfrac{3N}2\ln\dfrac{3N}2-\dfrac{3N}2\right)$</li>
+    <li>$S=Nk\left[\ln\left(\dfrac VN\left(\dfrac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\dfrac52\right]$</li>
+    <li>(e) 只有 $\frac{3N}2k\ln U$ 含 $U$：$\dfrac1T=\left(\dfrac{\partial S}{\partial U}\right)_{V,N}=\dfrac{3Nk}{2U}$</li>
+    <li>$T=\dfrac{2U}{3Nk}$（即 $U=\frac32NkT$）。</li>
+  </ol>
+  <div class="final">答：(a) $\Delta U=Q+W$；(b) $C_P=C_V+Nk$；(c) 得證；(d) Sackur–Tetrode；(e) $T=2U/(3Nk)$。</div>
+  <p class="small"><a href="#tk-114-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-114-4" data-group="114 級上學期期中" data-title="考古 114-4：3,2 分 5 份">
+  <h3>考古 114-4（Fig. 2.4 的作法）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）考慮由兩個交互作用的小愛因斯坦固體 A 與 B 組成的系統。固體 A 由 3 個振子描述，固體 B 由 2 個振子描述。各固體的振子數固定，能量可以在兩固體間交換。固體 A 的能量是 $q_A\epsilon$、固體 B 的能量是 $q_B\epsilon$，其中 $\epsilon$ 是能量單位，在這個封閉系統中 $q_A+q_B=5$ 固定。(a) 在 $q_A=1$、$q_B=4$ 的情況，求固體 A 的多重度（記為 $\Omega_A$）。用示意圖（例如用圓圈代表能量單位）說明你如何得到 $\Omega_A$。（3 分）(b) 列表寫出 $q_A$ 與 $q_B$ 的所有可能值，以及對應的 $\Omega_A$、$\Omega_B$ 與 $\Omega_{\text{total}}=\Omega_A\Omega_B$。（10 分）(c) 以 $\Omega_{\text{total}}$ 為縱軸、$q_A$ 為橫軸畫出長條圖。（5 分）(d) 從 (c) 的圖中，你認為這張圖告訴你什麼（關於這種封閉系統中的能量分布）？（2 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-2、-3.HEIC，雲端硬碟沒有這份）第 4 題</p>
+  <ol class="write">
+    <li>(a) 1 個圓圈、2 條隔線排 3 個位置：$\circ||$、$|\circ|$、$||\circ$，$\Omega_A=\binom{1+3-1}1=3$。</li>
+    <li>(b) $\Omega_A=\binom{q_A+2}{q_A}$，$\Omega_B=q_B+1$：
+      <br>$q_A=0,1,2,3,4,5$；$q_B=5,4,3,2,1,0$
+      <br>$\Omega_A=1,3,6,10,15,21$；$\Omega_B=6,5,4,3,2,1$
+      <br>$\Omega_{\text{total}}=6,15,24,30,30,21$（總和 $126=\binom95$）</li>
+    <li>(c) 長條圖：高 6、15、24、30、30、21，在 $q_A=3,4$ 最高。</li>
+    <li>(d) 微觀態等機率 ⟹ 巨觀態機率 $\propto\Omega_{\text{total}}$；最可能 $q_A=3$ 或 4（各 24%），能量約依振子數 3:2 分配，集中在一邊的機率小 ⟹ 能量自發地趨向分散（熱流方向、第二定律）。</li>
+  </ol>
+  <div class="final">答：$\Omega_A=3$；表如上；能量傾向依振子數比例（約 3:2）分配。</div>
+  <p class="small"><a href="#tk-114-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-114-5" data-group="114 級上學期期中" data-title="考古 114-5：空氣定壓加熱的熵增加">
+  <h3>考古 114-5（即課本 Problem 3.28）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-114-5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>[10pts] A liter of air, initially at room temperature and atmospheric pressure, is heated at constant pressure until it doubles in volume. Calculate the increase in its entropy during this process.</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 3.28）</strong></p><p>A liter of air, initially at room temperature and atmospheric pressure, is heated at constant pressure until it doubles in volume. Calculate the increase in its entropy during this process.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（完整翻譯）</strong>　（10 分）一公升的空氣，一開始在室溫與大氣壓力下，在固定壓力下加熱，直到體積變成兩倍。計算這個過程中空氣的熵增加多少。</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-3.HEIC，雲端硬碟沒有這份）第 5 題</p>
+  <ol class="write">
+    <li>理想氣體、雙原子 $f=5$：$\Omega\propto V^NU^{5N/2}$，$S=Nk\ln V+\frac52Nk\ln U+$ 常數。</li>
+    <li>$\Delta S=Nk\ln\dfrac{V_f}{V_i}+\dfrac52Nk\ln\dfrac{U_f}{U_i}$</li>
+    <li>定壓 $T=PV/Nk\propto V$：$T_f/T_i=2$；$U=\frac52NkT$ ⟹ $U_f/U_i=2$。</li>
+    <li>$\Delta S=\dfrac72Nk\ln2$，$Nk=\dfrac{PV_i}{T_i}=\dfrac{(1.013\times10^5)(10^{-3})}{300}=0.338\ \text{J/K}$</li>
+    <li>$\Delta S=\frac72(0.338)(0.693)=0.82\ \text{J/K}$（驗：$C_P\ln\frac{T_f}{T_i}$，$C_P=\frac72Nk$，相同）。</li>
+  </ol>
+  <div class="final">答：$\Delta S=\frac72Nk\ln2\approx0.82\ \text{J/K}$。</div>
+  <p class="small"><a href="#tk-114-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk-114-6" data-group="114 級上學期期中" data-title="考古 114-6：二十枚硬幣（習題 2.2）">
+  <h3>考古 114-6（課本習題 2.2）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-114-6"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[10pts] Suppose you flip 20 fair coins.</p><p>(a) How many possible outcomes (microstates) are there? (3pts)</p><p>(b) What is the probability of getting the sequence HTHHTTTHTHHHTHHHHTHT (in exactly that order)? (3pts)</p><p>(c) What is the probability of getting 12 heads and 8 tails (in any order)? (4pts)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.2）</strong></p><p>Suppose you flip 20 fair coins.</p><p>(a) How many possible outcomes (microstates) are there?</p><p>(b) What is the probability of getting the sequence HTHHTTTHTHHHTHHHHTHT (in exactly that order)?</p><p>(c) What is the probability of getting 12 heads and 8 tails (in any order)?</p></div>
+<p class="original-caption">114 級上學期期中 第 6 題 · 即 Schroeder Problem 2.2 · p.51</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（10 分）假設你丟 20 枚公正硬幣。(a) 共有多少種可能結果（微觀態）？（3 分）(b) 得到序列 HTHHTTTHTHHHTHHHHTHT（完全照這個順序）的機率是多少？（3 分）(c) 得到 12 個正面、8 個反面（任意順序）的機率是多少？（4 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-3.HEIC，雲端硬碟沒有這份）第 6 題</p>
+  <ol class="write">
+    <li>(a) 每枚 2 種、互相獨立：$\Omega(\text{all})=2^{20}=1\,048\,576$。</li>
+    <li>(b) 指定序列是一個微觀態，所有微觀態等機率：$P=1/2^{20}=9.54\times10^{-7}$。</li>
+    <li>(c) 12 正 8 反是一個巨觀態：$\Omega=\binom{20}{12}=\dfrac{20!}{12!\,8!}=125\,970$，$P=\dfrac{125\,970}{1\,048\,576}=0.120$。</li>
+  </ol>
+  <div class="final">答：(a) $1\,048\,576$；(b) $9.5\times10^{-7}$；(c) 12.0%。</div>
+  <p class="small"><a href="#tk-114-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1-114-7" data-group="114 級上學期期中" data-title="考古 114-7：氦 P∝V 膨脹到 4 L">
+  <h3>考古 114-7（課本 1.31 換數字）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1-114-7"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>7. [10pts] Imagine some helium in a cylinder with an initial volume of 1 liter and an initial pressure of 1 atm (around $10^5N/m^2$). Somehow the helium is made to expand to a final volume of 4 liters (1 liter is $10^{-3}m$), in such a way that its pressure rises in direct proportional to its volume. For the following calculations related to energy, use Joule as the energy unit.</p><p>(a) Sketch a graph of pressure vs. volume for this process. (2pts)</p><p>(b) Calculate the work done on the gas during this process, assuming that there are no ”other” types of work being done. (4pts)</p><p>(c) Calculate the change in the helium’s energy content during this process. (4pts)</p><p class=\"original-subhead\"><strong>課本原文（Schroeder Problem 1.31，原題是膨脹到 3 L，另有 (d)(e)）</strong></p><p>Imagine some helium in a cylinder with an initial volume of 1 liter and an initial pressure of 1 atm. Somehow the helium is made to expand to a final volume of 3 liters, in such a way that its pressure rises in direct proportion to its volume.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（完整翻譯）</strong>　（10 分）想像汽缸裡有一些氦，初體積 1 公升、初壓力 1 atm（約 $10^5\ \text{N/m}^2$）。用某種方法讓氦膨脹到末體積 4 公升（1 公升是 $10^{-3}\ \text{m}^3$；原卷寫成 $10^{-3}\,m$），而且壓力與體積成正比地上升。以下和能量有關的計算，請用焦耳當能量單位。(a) 畫出這個過程的壓力對體積圖。（2 分）(b) 計算過程中對氣體做的功，假設沒有「其他」種類的功。（4 分）(c) 計算過程中氦的能量變化。（4 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-3、-4.HEIC）第 7 題</p>
+  <ol class="write">
+    <li>(a) $P=cV$：過原點直線 $(1\ \text{L},1\ \text{atm})\to(4\ \text{L},4\ \text{atm})$。</li>
+    <li>(b) $W=-\int cV\,dV=-\frac12(P_fV_f-P_iV_i)$；$P_fV_f=(4\times10^5)(4\times10^{-3})=1600\ \text{J}$，$P_iV_i=100\ \text{J}$。</li>
+    <li>$W=-\frac12(1600-100)=-750\ \text{J}$。</li>
+    <li>(c) $\Delta U=\frac32(P_fV_f-P_iV_i)=\frac32(1500)=2250\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：(b) $W=-750\ \text{J}$；(c) $\Delta U=+2250\ \text{J}$。</div>
+  <p class="small"><a href="#tk1-114-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1x-1a" data-group="某級上學期期中" data-title="考古某級 1(a)：微觀模型推 ½m⟨v²⟩=3/2 kT">
+  <h3>考古 某級上學期期中 1(a)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1a"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is $$PV=NkT$$ (gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>(a) Assuming this ideal gas law is valid, use this law and the microscopic model (hint: gas molecules colliding with walls of chamber causing pressure) to show for a monoatomic ideal gas confined in three spatial dimensions: (6pts) $$\frac12m\langle\vec v^2\rangle=\frac32kT$$</p></div>
+<p class="original-caption">某級上學期期中 第 1(a) 題 · 即 Schroeder §1.2 課文 (1.8)–(1.17) · p.10–12</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　理想氣體遵守 $PV=NkT$。(a) 假設此定律成立，用它與微觀模型（提示：氣體分子撞擊容器壁產生壓力）證明三維單原子理想氣體 $\tfrac12m\langle v^2\rangle=\tfrac32kT$。（6 分）</div>
+  <p class="small">原卷：某級全部熱學(期中末).pdf p.2，某級上學期期中第 1(a) 題。</p>
+  <ol class="write">
+    <li>圓筒長 $L$、活塞面積 $A$，$V=LA$；一個分子 $x$ 速度 $v_x$，彈性碰撞。</li>
+    <li>$\overline P=\dfrac{\overline F_{\text{活塞}}}{A}=-\dfrac{m\overline{\Delta v_x/\Delta t}}{A}$（牛頓第三、第二定律）。</li>
+    <li>取一來回 $\Delta t=2L/v_x$，撞活塞一次：$\Delta v_x=(-v_x)-v_x=-2v_x$。</li>
+    <li>$\overline P=-\dfrac mA\cdot\dfrac{-2v_x}{2L/v_x}=\dfrac{mv_x^2}{V}$。</li>
+    <li>$N$ 個分子：$PV=\sum_imv_{ix}^2=Nm\overline{v_x^2}$；代入 $PV=NkT$：$\tfrac12m\overline{v_x^2}=\tfrac12kT$。</li>
+    <li>各向同性：$\overline{v_x^2}=\overline{v_y^2}=\overline{v_z^2}$，$\tfrac12m\langle v^2\rangle=3\times\tfrac12kT=\tfrac32kT$。$\blacksquare$</li>
+  </ol>
+  <div class="final">答：$PV=Nm\overline{v_x^2}=NkT$ ⟹ $\tfrac12m\langle v^2\rangle=\tfrac32kT$。</div>
+  <p class="small"><a href="#tk1x-1a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1x-1b" data-group="某級上學期期中" data-title="考古 某級 1(b)：敘述均分定理">
+  <h3>考古 某級期中 1(b)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1b"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is</p>$$PV=NkT$$<p>(gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>(a) Assuming this ideal gas law is valid, use this law and the microscopic model (hint: gas molecules colliding with walls of chamber causing pressure) to show for a monoatomic ideal gas confined in three spatial dimensions: (6pts)</p>$$\frac12m\lt\vec v^2\gt=\frac32kT$$<p>(b) The extension of 1(a) is called energy equipartition theorem. State this theorem by using this result as an example. (2pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（第 1 題 (b) 小題，完整翻譯）</strong>　（承第 1 題：理想氣體遵守 $PV=NkT$。(a) 用這個定律與微觀模型證明三維單原子理想氣體 $\frac12m\langle\vec v^2\rangle=\frac32kT$。）(b) 1(a) 的推廣稱為能量均分定理。以這個結果為例，敘述這個定理。（2 分）</div>
+  <p class="small">原卷：某級全部熱學（期中末）.pdf p.2（某級上學期期中，範圍第 1–4.1 章）第 1 題 (b)</p>
+  <ol class="write">
+    <li>$v^2=v_x^2+v_y^2+v_z^2$，三方向等價：$\frac12m\overline{v_x^2}=\frac12m\overline{v_y^2}=\frac12m\overline{v_z^2}=\frac13\cdot\frac32kT=\frac12kT$。</li>
+    <li>均分定理：熱平衡溫度 $T$ 時，能量中每一個座標或速度分量的<b>二次項</b>（二次自由度），平均能量都是 $\frac12kT$（如 $\frac12I\omega^2$、$\frac12k_sx^2$）。</li>
+    <li>$N$ 個分子、每個 $f$ 個自由度：$U_{\text{thermal}}=Nf\cdot\frac12kT$；1(a) 是 $f=3$。</li>
+  </ol>
+  <div class="final">答：每個二次自由度平均 $\frac12kT$；單原子 3 個平移自由度 ⟹ $\frac32kT$。</div>
+  <p class="small"><a href="#tk1x-1b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1x-1cd" data-group="某級上學期期中" data-title="考古 某級 1(c)(d)：第一定律與 C_P、C_V">
+  <h3>考古 某級 1(c)(d)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1cd"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is $$PV=NkT$$ (gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>……</p><p>(c) Explain the first law of thermodynamics. (2pts)</p><p>(d) Use the first law of thermodynamics to find the relationship between the constant volume heat capacity $C_V$ and the constant pressure heat capacity $C_P$ of monoatomic ideal gas with number of gas particles N.(3pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　理想氣體 $PV=NkT$……(c) 說明熱力學第一定律。（2 分）(d) 用第一定律求粒子數 $N$ 的單原子理想氣體 $C_V$ 與 $C_P$ 的關係。（3 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級上學期熱學期中</a> 第 1 題；114 級期中第 3(a)(b) 題相同</p>
+  <ol class="write">
+    <li>(c) $\Delta U=Q+W$：內能變化＝吸熱＋外界做功（能量守恆）；準靜態 $dU=dQ-P\,dV$。</li>
+    <li>(d) 定容 $dV=0$：$dQ=dU$，$C_V=dU/dT=\tfrac32Nk$。</li>
+    <li>定壓：$dQ=dU+P\,dV$；$dU=C_VdT$（$U$ 只和 $T$ 有關），$P\,dV=Nk\,dT$。</li>
+    <li>$C_P=C_V+Nk=\tfrac52Nk$。</li>
+  </ol>
+  <div class="final">答：$C_P=C_V+Nk$（$C_V=\tfrac32Nk$、$C_P=\tfrac52Nk$）。</div>
+  <p class="small"><a href="#tk1x-1cd">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1x-1e" data-group="某級上學期期中" data-title="考古 某級 1(e)：證明 PV^γ = 常數">
+  <h3>考古 某級期中 1(e)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1e"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is</p>$$PV=NkT$$<p>(gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>(d) Use the first law of thermodynamics to find the relationship between the constant volume heat capacity $C_V$ and the constant pressure heat capacity $C_P$ of monatomic ideal gas with number of gas particles N.(3pts)</p><p>(e) Show that in the quasi-static and adiabatic process, the gas pressure P and volume V obey</p>$$PV^\gamma=constant$$<p>. Here $\gamma=C_P/C_V$ is called adiabatic exponent. (6pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（第 1 題 (e) 小題，完整翻譯）</strong>　（承第 1 題：理想氣體遵守 $PV=NkT$；(d) 用第一定律求粒子數為 $N$ 的單原子理想氣體 $C_V$ 與 $C_P$ 的關係。）(e) 證明在準靜態且絕熱的過程中，氣體壓力 $P$ 與體積 $V$ 滿足
+    $$PV^\gamma=\text{constant}.$$
+    這裡 $\gamma=C_P/C_V$ 稱為絕熱指數。（6 分）</div>
+  <p class="small">原卷：某級全部熱學（期中末）.pdf p.2（某級上學期期中，範圍第 1–4.1 章）第 1 題 (e)</p>
+  <ol class="write">
+    <li>$Q=0$、$W=-P\,dV$、$dU=C_V\,dT$：$C_V\,dT=-P\,dV$。</li>
+    <li>$P=NkT/V$：$\frac{dT}T=-\frac{Nk}{C_V}\frac{dV}V$；由 (d) $Nk=C_P-C_V$ ⟹ $\frac{Nk}{C_V}=\gamma-1$。</li>
+    <li>積分：$\ln T+(\gamma-1)\ln V=$ 常數 ⟹ $TV^{\gamma-1}=$ 常數。</li>
+    <li>$T=PV/Nk$ 代入：$PV^\gamma=$ 常數（單原子 $\gamma=5/3$）。</li>
+  </ol>
+  <div class="final">答：得證 $PV^\gamma=$ 常數。</div>
+  <p class="small"><a href="#tk1x-1e">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-17" data-group="某級上學期期中" data-title="課本 1-17＝考古某級 1(i)：維里係數">
+  <h3>課本 1-17（(c) 即考古某級期中第 1(i) 題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-17"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>課本原文（Schroeder Problem 1.17）</strong></p><p>Even at low density, real gases don’t quite obey the ideal gas law. A systematic way to account for deviations from ideal behavior is the <strong>virial expansion</strong>, $$PV=nRT\left(1+\frac{B(T)}{(V/n)}+\frac{C(T)}{(V/n)^2}+\cdots\right),$$ where the functions $B(T)$, $C(T)$, and so on are called the <strong>virial coefficients</strong>. When the density of the gas is fairly low, so that the volume per mole is large, each term in the series is much smaller than the one before. In many situations it’s sufficient to omit the third term and concentrate on the second, whose coefficient $B(T)$ is called the second virial coefficient (the first coefficient being 1). Here are some measured values of the second virial coefficient for nitrogen (N<sub>2</sub>):</p><table><thead><tr><th>$T$ (K)</th><th>$B$ (cm<sup>3</sup>/mol)</th></tr></thead><tbody><tr><td>100</td><td>−160</td></tr><tr><td>200</td><td>−35</td></tr><tr><td>300</td><td>−4.2</td></tr><tr><td>400</td><td>9.0</td></tr><tr><td>500</td><td>16.9</td></tr><tr><td>600</td><td>21.3</td></tr></tbody></table><p>(a) For each temperature in the table, compute the second term in the virial equation, $B(T)/(V/n)$, for nitrogen at atmospheric pressure. Discuss the validity of the ideal gas law under these conditions.</p><p>(b) Think about the forces between molecules, and explain why we might expect $B(T)$ to be negative at low temperatures but positive at high temperatures.</p><p>(c) Any proposed relation between $P$, $V$, and $T$, like the ideal gas law or the virial equation, is called an <strong>equation of state</strong>. Another famous equation of state, which is qualitatively accurate even for dense fluids, is the <strong>van der Waals equation</strong>, $$\left(P+\frac{an^2}{V^2}\right)(V-nb)=nRT,$$ where $a$ and $b$ are constants that depend on the type of gas. Calculate the second and third virial coefficients ($B$ and $C$) for a gas obeying the van der Waals equation, in terms of $a$ and $b$. (Hint: The binomial expansion says that $(1+x)^p\approx1+px+\frac12p(p-1)x^2$, provided that $|px|\ll1$. Apply this approximation to the quantity $[1-(nb/V)]^{-1}$.)</p><p>(d) Plot a graph of the van der Waals prediction for $B(T)$, choosing $a$ and $b$ so as to approximately match the data given above for nitrogen. Discuss the accuracy of the van der Waals equation over this range of conditions. (The van der Waals equation is discussed much further in Section 5.3.)</p><p class="original-subhead"><strong>考卷原文（某級上學期期中第 1(i) 題）</strong></p><p>(i) The correction to ideal gas law comes in various different form. One of them is to use volume density as an expansion parameter, and this approach is called the <em>virial expansion</em>. The form is given as: $$PV=nRT\left(1+\frac{B(T)}{(V/n)}+\frac{C(T)}{(V/n)^2}+\dots\right)$$ Another famous form of correction to ideal gas law is the van der Waals equation expressed as: $$\left(P+\frac{an^2}{V^2}\right)(V-nb)=nRT,$$ where $a$ and $b$ are constants that depend on the type of gas. Calculate the second and third virial coefficients ($B$ and $C$) for a gas obeying the van der Waals equation, in terms of $a$ and $b$. (6pts)</p></div>
+<p class="original-caption">Schroeder 習題 1-17（Problem 1.17）· p.9 · 熱學小考（上）作業題 · (c) 即某級上學期期中 第 1(i) 題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　氮的 $B(T)$ 表。(a) 1 atm 下 $B/(V/n)$；(b) $B$ 低溫負、高溫正的原因；(c) 凡得瓦的 $B$、$C$；(d) 擬合 $a,b$ 並討論。</div>
+  <p class="small">原卷：某級全部熱學(期中末).pdf p.2–3，某級上學期期中第 1(i) 題（6 分），只考 (c)。</p>
+  <ol class="write">
+    <li>(a) $V/n\approx RT/P$：100 K 為 $8.20\times10^{-3}\ \text{m}^3/\text{mol}$，$B/(V/n)=-1.60\times10^{-4}/8.20\times10^{-3}=-0.0195$；其餘 $-0.0021,-0.00017,+0.00027,+0.00041,+0.00043$。只有 100 K 偏 2%。</li>
+    <li>(b) 吸引使壓力變小（$B\lt0$），低溫分子慢、吸引為主；高溫分子快，排斥（分子體積）為主（$B\gt0$）。</li>
+    <li>(c) $P=\dfrac{nRT}{V-nb}-\dfrac{an^2}{V^2}$ ⟹ $PV=nRT\left[\dfrac1{1-nb/V}-\dfrac{an}{RTV}\right]$。</li>
+    <li>$\left[1-\tfrac{nb}V\right]^{-1}\approx1+\tfrac{b}{V/n}+\tfrac{b^2}{(V/n)^2}$ ⟹ $PV\approx nRT\left[1+\dfrac{b-a/RT}{V/n}+\dfrac{b^2}{(V/n)^2}\right]$。</li>
+    <li>對照：$B=b-\dfrac a{RT}$，$C=b^2$。</li>
+    <li>(d) 最小平方：$b=6.4\times10^{-5}\ \text{m}^3/\text{mol}$、$a=0.18\ \text{J}\cdot\text{m}^3/\text{mol}^2$；預測 $-155,-45,-9,9,20,28$ 對數據 $-160,-35,-4.2,9,16.9,21.3$：定性對、定量粗。</li>
+  </ol>
+  <div class="final">答：(a) 只有 100 K 約 2% 修正；(c) $B=b-a/RT$、$C=b^2$；(d) $a\approx0.18$、$b\approx6.4\times10^{-5}$。</div>
+  <p class="small"><a href="#sc-1-17">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tkx-1j" data-group="某級上學期期中" data-title="考古 某級-1(j)：熵與溫度">
+  <h3>考古 某級上學期期中 第 1 題(j)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>原卷題目（第 1 題 (j) 小題）</strong>　(j) $N$ 個相同的理想氣體粒子的多重度函數近似為
+    $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N},$$
+    其中 $U=\sum_{i=1}^N\frac1{2m_i}(p_{x,i}^2+p_{y,i}^2+p_{z,i}^2)$ 代表系統的內能。計算熵，並用溫度的熱力學定義求溫度 $T$，表示成 $U$、波茲曼常數 $k$ 與 $N$ 的函數。（3 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級全部熱學（期中末）</a> 第一份考卷第 1 題 (j)</p>
+  <ol class="write">
+    <li>$S=k\ln\Omega_N\approx Nk\left[\ln\left(\dfrac VN\left(\dfrac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\dfrac52\right]$（$\ln N!$、$\ln(3N/2)!$ 用 Stirling）。</li>
+    <li>$\dfrac1T=\dfrac{\partial S}{\partial U}=\dfrac{3Nk}{2U}$ ⟹ $T=\dfrac{2U}{3Nk}$</li>
+  </ol>
+  <div class="final">答：$T=2U/(3Nk)$。</div>
+  <p class="small"><a href="#tkx-1j">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tkx-2" data-group="某級上學期期中" data-title="考古 某級-2：愛因斯坦固體與熱容量">
+  <h3>考古 某級上學期期中 第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tkx-2"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>Consider an Einstein solid (a model description of the solid, imaging all elements of a solid are connected by some ”springs” in three spatial dimensions. Possible energy state for one oscillation mode is $E_q\equiv(q+\frac12)\hbar\omega$ where $\hbar$ and $\omega$ are Planck constant and some material specific angular frequency.) for which both $N$ (particle number) and $q$ (energy quantum number) are much greater than 1. Here we simplify the expression for energy mode $E_q\simeq q\epsilon$ with $\epsilon$ as some given energy unit.</p><p>(a) Use Stirling’s approximation (i.e. $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$) to show the multiplicity of an Einstein’s solid is approximately given by: (5 pts)$$\Omega(N,q)\simeq\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}$$</p><p>(b) Find the chemical potential $\mu$ at some temperature T. Express it in terms of $T$, $N$, Boltzmann constant $k$, and $q$. (4 pts)</p><p>(c) Show that when $q\gg N$ this multiplicity can be simplified as $$\Omega(N,q)\simeq\left(\frac{eq}{N}\right)^N$$ This limit is called ”high temperature limit”. (3 pts) Explain why this condition is called ”high temperature limit”. (1pt)</p><p>(d) For $q\ll N$ (the ”low temperature limit”), what should be the simplified form of multiplicity function? Derive it <em>or</em> give your answer and argument. (3pts)</p><p>(e) Use the thermodynamical definition of temperature and the result in 2(c) to find relation between temperature and internal energy $U$ in terms of Boltzmann constant $k$, $\epsilon$, $N$, and temperature $T$. (3pts) Use this result to find the constant volume heat capacity $C_V$ of this Einstein solid in the high temperature limit.(3pts) Does it consistent with what you expect from energy equipartition theorem? Explain.(1pt)</p><p>(f) Use the thermodynamical definition of temperature and the result in 2(d) to find relation between temperature and internal energy $U$ in terms of Boltzmann constant $k$, $\epsilon$, $N$, and temperature $T$. (3pts) Use this result to find the constant volume heat capacity $C_V$ of this Einstein solid in the low temperature limit. (3pts) Does it consistent with what you expect from energy equipartition theorem? Explain.(1pt)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.18）</strong></p><p>Use Stirling’s approximation to show that the multiplicity of an Einstein solid, for any large values of $N$ and $q$, is approximately $$\Omega(N,q)\approx\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}.$$ The square root in the denominator is merely large, and can often be neglected. However, it is needed in Problem 2.22. (Hint: First show that $\Omega=\frac{N}{q+N}\frac{(q+N)!}{q!\,N!}$. Do not neglect the $\sqrt{2\pi N}$ in Stirling’s approximation.)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.17）</strong></p><p>Use the methods of this section to derive a formula, similar to equation 2.21, for the multiplicity of an Einstein solid in the “low-temperature” limit, $q\ll N$.</p></div>
+<p class="original-caption">某級上學期期中（範圍第 1–4.1 章）第 2 題 · (a)(c)(d) 即 Schroeder Problem 2.18、2.17 · p.64</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（30 分）考慮一個愛因斯坦固體（固體的一種模型：想像固體的所有組成單元在三個空間方向上由「彈簧」連接。一個振動模式可能的能量狀態是 $E_q\equiv(q+\tfrac12)\hbar\omega$，其中 $\hbar$ 與 $\omega$ 是普朗克常數與某個與材料有關的角頻率），其中 $N$（粒子數）與 $q$（能量量子數）都遠大於 1。這裡把能量模式簡化成 $E_q\simeq q\epsilon$，$\epsilon$ 是某個給定的能量單位。(a) 用 Stirling 近似（即 $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$）證明愛因斯坦固體的多重度近似為（5 分）
+    $$\Omega(N,q)\simeq\frac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$$
+    (b) 求某溫度 $T$ 下的化學勢 $\mu$，用 $T$、$N$、波茲曼常數 $k$ 與 $q$ 表示。（4 分）(c) 證明當 $q\gg N$ 時這個多重度可以化簡為 $\Omega(N,q)\simeq\left(\frac{eq}N\right)^N$。這個極限稱為「高溫極限」。（3 分）說明為什麼這個條件叫「高溫極限」。（1 分）(d) 當 $q\ll N$（「低溫極限」）時，多重度函數的化簡形式應該是什麼？推導出來，或者寫出答案並給出論證。（3 分）(e) 用溫度的熱力學定義與 2(c) 的結果，求溫度與內能 $U$ 的關係，以波茲曼常數 $k$、$\epsilon$、$N$ 與溫度 $T$ 表示。（3 分）用這個結果求這個愛因斯坦固體在高溫極限下的定容熱容量 $C_V$。（3 分）它和你從能量均分定理預期的一致嗎？說明。（1 分）(f) 用溫度的熱力學定義與 2(d) 的結果，求溫度與內能 $U$ 的關係，以波茲曼常數 $k$、$\epsilon$、$N$ 與溫度 $T$ 表示。（3 分）用這個結果求這個愛因斯坦固體在低溫極限下的定容熱容量 $C_V$。（3 分）它和你從能量均分定理預期的一致嗎？說明。（1 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級全部熱學（期中末）</a> 第一份考卷第 2 題</p>
+  <ol class="write">
+    <li>(a) $(N-1)!=\dfrac{N!}N$、$(q+N-1)!=\dfrac{(q+N)!}{q+N}$ ⟹ $\Omega=\dfrac N{q+N}\cdot\dfrac{(q+N)!}{q!\,N!}$。</li>
+    <li>代 Stirling：$\Omega\approx\dfrac N{q+N}\dfrac{(q+N)^{q+N}e^{-(q+N)}\sqrt{2\pi(q+N)}}{q^qe^{-q}\sqrt{2\pi q}\,N^Ne^{-N}\sqrt{2\pi N}}$，$e$ 的次方抵消，根號 $=\sqrt{\dfrac N{2\pi q(q+N)}}$。</li>
+    <li>$(q+N)^{q+N}=(q+N)^q(q+N)^N$ ⟹ $\Omega\approx\dfrac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$。</li>
+    <li>(c) $q\gg N$：$\left(1+\frac Nq\right)^q=e^{q\ln(1+N/q)}\approx e^N$，$\frac{q+N}N\approx\frac qN$，根號只是大的因子 ⟹ $\Omega\approx\left(\frac{eq}N\right)^N$。</li>
+    <li>高溫：每個振子平均 $q/N\gg1$ 份能量，$U/N\gg\epsilon$，量子化不明顯（$kT\gg\epsilon$）。</li>
+    <li>(d) $q\ll N$：$\left(1+\frac qN\right)^N\approx e^q$，$\frac{q+N}q\approx\frac Nq$ ⟹ $\Omega\approx\left(\frac{eN}q\right)^q$（$q\leftrightarrow N$ 對稱）。</li>
+    <li>(b) $S=k[(q+N)\ln(q+N)-q\ln q-N\ln N]$，$U$ 固定 ⟹ $q$ 固定：$\dfrac{\partial S}{\partial N}=k\ln\dfrac{q+N}N$，$\mu=-T\dfrac{\partial S}{\partial N}=-kT\ln\left(1+\dfrac qN\right)$。</li>
+    <li>(e) 高溫 $S=Nk[\ln(U/N\epsilon)+1]$：$\dfrac1T=\dfrac{\partial S}{\partial U}=\dfrac{Nk}U$ ⟹ $U=NkT$，$C_V=Nk$；符合均分（每振子 2 個二次自由度共 $kT$）。</li>
+    <li>(f) 低溫 $S=kq\ln(eN/q)$：$\dfrac1T=\dfrac k\epsilon\ln\dfrac Nq$ ⟹ $U=N\epsilon e^{-\epsilon/kT}$，$C_V=Nk\left(\dfrac\epsilon{kT}\right)^2e^{-\epsilon/kT}$；不符合均分：$kT\ll\epsilon$，振動自由度被凍結。</li>
+  </ol>
+  <div class="final">答：(c) $(eq/N)^N$；(d) $(eN/q)^q$；(b) $\mu=-kT\ln(1+q/N)$；高溫 $U=NkT$、$C_V=Nk$；低溫 $U=N\epsilon e^{-\epsilon/kT}$、$C_V=Nk(\epsilon/kT)^2e^{-\epsilon/kT}$。</div>
+  <p class="small"><a href="#tkx-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tkx-3" data-group="某級上學期期中" data-title="考古 某級-3：順磁體與負溫度">
+  <h3>考古 某級上學期期中 第 3 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tkx-3"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>The two-state paramagnetism is composed of spin up/down magnetic dipoles, with $N_\uparrow$ denoting number of particles with spin up and $N-N_\uparrow$ denoting number of particles with spin down. The total energy of the system is given by $$U=\mu B(N-2N_\uparrow),$$ where $\mu$ is called the magnetic moment and $B$ is the external magnetic field. The magnetization, $M$, is defined to be the total magnetic moment of the system expressed as: $$M=\mu(2N_\uparrow-N)$$</p><p>(a) Find the multiplicity function $\Omega(N,N_\uparrow)$ in terms of $N$ and $N_\uparrow$. (3pts)</p><p>(b) Use the Stirling’s approximation to show that the entropy $S$ of the system can be written as: (4pts) $$S\simeq N\ln N-N_\uparrow\ln N_\uparrow-(N-N_\uparrow)\ln(N-N_\uparrow)$$</p><p>(c) Take $N_\uparrow=N/2+x$ and $N_\downarrow=N/2-x$ with $x\ll N$ to show that the multiplicity function plotted as a function of $N_\uparrow$ is a Gaussian function peaked at $N_\uparrow=N/2$. (9pts)</p><p>(d) Sketch entropy $S$ as a function of internal energy $U$ (3pts). Identify the region where the temperature is negative (1pt).</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.19）</strong></p><p>Use Stirling’s approximation to find an approximate formula for the multiplicity of a two-state paramagnet. Simplify this formula in the limit $N_\downarrow\ll N$ to obtain $\Omega\approx(Ne/N_\downarrow)^{N_\downarrow}$. This result should look very similar to your answer to Problem 2.17; explain why these two systems, in the limits considered, are essentially the same.</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.24）</strong></p><p>For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function.</p><p>(b) Use the methods of this section to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$. Check that your formula agrees with your answer to part (a) when $x=0$.</p><p>(c) How wide is the peak in the multiplicity function?</p><p>(d) Suppose you flip 1,000,000 coins. Would you be surprised to obtain 501,000 heads and 499,000 tails? Would you be surprised to obtain 510,000 heads and 490,000 tails? Explain.</p><p class="small">（(d) 不在這份考卷裡，見<a data-chapter="thermal/ch02" href="#sc-2-24">課本 2-24</a>。）</p></div>
+<p class="original-caption">某級上學期期中（範圍第 1–4.1 章）第 3 題 · 即 Schroeder Problem 2.19、2.24 · p.64–67</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（20 分）兩態順磁體由自旋向上／向下的磁偶極組成，$N_\uparrow$ 表示自旋向上的粒子數，$N-N_\uparrow$ 表示自旋向下的粒子數。系統的總能量為
+    $$U=\mu B(N-2N_\uparrow),$$
+    其中 $\mu$ 稱為磁矩，$B$ 是外加磁場。磁化量 $M$ 定義為系統的總磁矩：
+    $$M=\mu(2N_\uparrow-N).$$
+    (a) 求多重度函數 $\Omega(N,N_\uparrow)$，以 $N$ 與 $N_\uparrow$ 表示。（3 分）(b) 用 Stirling 近似證明系統的熵 $S$ 可以寫成（4 分）
+    $$S\simeq N\ln N-N_\uparrow\ln N_\uparrow-(N-N_\uparrow)\ln(N-N_\uparrow)$$
+    (c) 取 $N_\uparrow=N/2+x$、$N_\downarrow=N/2-x$，$x\ll N$，證明多重度函數對 $N_\uparrow$ 作圖是峰值在 $N_\uparrow=N/2$ 的高斯函數。（9 分）(d) 畫出熵 $S$ 對內能 $U$ 的圖（3 分），並標出溫度為負的區域（1 分）。</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級全部熱學（期中末）</a> 第一份考卷第 3 題</p>
+  <ol class="write">
+    <li>(a) $\Omega(N,N_\uparrow)=\dfrac{N!}{N_\uparrow!(N-N_\uparrow)!}$</li>
+    <li>(b) $\dfrac Sk=\ln N!-\ln N_\uparrow!-\ln(N-N_\uparrow)!\approx N\ln N-N_\uparrow\ln N_\uparrow-(N-N_\uparrow)\ln(N-N_\uparrow)$（線性項 $-N+N_\uparrow+N-N_\uparrow=0$）。</li>
+    <li>(c) 代 $N_{\uparrow,\downarrow}=\frac N2\pm x$：$N_\uparrow\ln N_\uparrow+N_\downarrow\ln N_\downarrow\approx N\ln\frac N2+\frac{2x^2}N$ ⟹ $\ln\Omega\approx N\ln2-\frac{2x^2}N$，$\Omega\approx2^Ne^{-2(N_\uparrow-N/2)^2/N}$，峰在 $N_\uparrow=N/2$ 的高斯函數。</li>
+    <li>(d) $U$ 從 $-N\mu B$ 到 $N\mu B$；兩端 $S=0$，$U=0$ 時 $S_{\max}=Nk\ln2$，對稱拱形。$1/T=\partial S/\partial U$：$U\gt0$ 斜率負 ⟹ $T\lt0$。</li>
+  </ol>
+  <div class="final">答：(d) 拱形，$0\lt U\le N\mu B$（$N_\uparrow\lt N/2$）為負溫度區。</div>
+  <p class="small"><a href="#tkx-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1x-4" data-group="某級上學期期中" data-title="考古 某級 4：均勻球恆星的負熱容量">
+  <h3>考古 某級 4（改自習題 1.55）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>4. Heat capacities are normally positive, but there is an important class of exceptions: systems of particles held together by gravity, such as stars and star clusters.</p><p>(a) Consider a system of just two particles, with identical masses, orbiting in circles about their center of mass. Find the ratio between the gravitational potential energy and the total kinetic energy of this system. (5pts)</p><p>(b) It turns out, on average, that any system of particles held by mutual gravitational attraction has the same ratio as evaluated in 4(a) (This result is known as virial theorem). Model the star as a gas of particles that interact with each other only gravitationally. According to the equipartition theorem, the average kinetic energy of the particles in such a star should be $3kT/2$, where $T$ is the temperature. For a star composed by $N$ particles, find the heat capacity. Note the sign. (5pts)</p><p>(c) For a star with uniform mass density, total mass M, and radius R, find the total gravitational potential energy. Express your answer in terms of $M$, $R$, and gravitational constant $G$. (5pts)</p><p>(d) Estimate the average temperature of the sun, whose mass is $2\times10^{30}$ kg and whose radius is $7\times10^8$m. Assume, for simplicity, that the sun is made entirely of protons and electrons and can be treated as a uniform sphere as described in 4(c). (5pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　(a) 兩粒子繞質心，求位能與總動能的比值。（5 分）(b) 依均位定理與均分定理（平均動能 $3kT/2$），求 $N$ 粒子恆星的熱容量，注意正負號。（5 分）(c) 均勻密度、質量 $M$、半徑 $R$ 的恆星的總重力位能。（5 分）(d) 太陽 $M=2\times10^{30}$ kg、$R=7\times10^8$ m，由質子與電子組成、視為均勻球，估計平均溫度。（5 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級上學期熱學期中</a> 第 4 題</p>
+  <ol class="write">
+    <li>(a) $mv^2=\dfrac{Gm^2}{4r}$：$U_{\text{pot}}/U_{\text{kin}}=\dfrac{-Gm^2/2r}{Gm^2/4r}=-2$。</li>
+    <li>(b) $U=-U_{\text{kin}}=-\tfrac32NkT$，$C=-\tfrac32Nk$。</li>
+    <li>(c) $dU=-\dfrac{G\,m(r)\,dm}{r}$，$m(r)=M\dfrac{r^3}{R^3}$，$dm=\dfrac{3Mr^2}{R^3}dr$：$U_{\text{pot}}=-\dfrac{3GM^2}{R^6}\displaystyle\int_0^Rr^4dr=-\dfrac{3GM^2}{5R}$。</li>
+    <li>(d) $\tfrac32\cdot\dfrac{2M}{m_p}kT=\dfrac{3GM^2}{10R}$：$T=\dfrac{GMm_p}{10kR}=2.3\times10^6$ K。</li>
+  </ol>
+  <div class="final">答：$-2$；$-\tfrac32Nk$；$-\tfrac35GM^2/R$；$2.3\times10^6$ K。</div>
+  <p class="small"><a href="#tk1x-4">回到正文詳解</a></p>
+</article>

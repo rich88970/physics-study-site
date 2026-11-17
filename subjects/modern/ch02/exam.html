@@ -1,0 +1,1588 @@
+<!-- 考試書寫版：每份先列完整題目，再列可直接寫在考卷上的完整作答。側欄依 data-exam-id 開啟。 -->
+
+<!-- ===== 一、電磁波 ===== -->
+<article class="exam-item" data-exam-id="sf-2-01a" data-group="一、電磁波（§2.1）" data-title="自編：兩縫亮度不同的干涉條紋">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　雙狹縫實驗中，兩條狹縫各自在屏幕某點產生的電場振幅分別是 $E_0$ 和 $E_0/2$（例如一條狹縫被部分遮住），頻率相同，相位差為 $\delta$。(a) 用疊加原理求該點的光強（正比於 $\overline{E^2}$）和 $\delta$ 的關係。(b) 求亮紋與暗紋的光強比 $I_{\max}/I_{\min}$，以及條紋對比 $V=\dfrac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}$。(c) 兩縫振幅相同時 $V$ 是多少？由此說明「暗紋全黑」代表什麼。</div>
+  <ol class="write">
+    <li>$E=E_0\cos\omega t+\tfrac12E_0\cos(\omega t+\delta)$</li>
+    <li>$\overline{E^2}=\tfrac12E_0^2+\tfrac18E_0^2+\tfrac12E_0^2\cos\delta=\tfrac18E_0^2(5+4\cos\delta)$</li>
+    <li>$I_{\max}:I_{\min}=9:1$，$V=\dfrac{9-1}{9+1}=0.8$</li>
+    <li>等振幅：$\overline{E^2}=2E_0^2\cos^2\tfrac\delta2$，$I_{\min}=0$，$V=1$</li>
+  </ol>
+  <div class="final">答：(a) $I\propto5+4\cos\delta$；(b) $9$、$V=0.8$；(c) $V=1$。</div>
+  <p class="small"><a href="#sf-2-01a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-01b" data-group="一、電磁波（§2.1）" data-title="自編：白光雙狹縫從第幾階開始重疊">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　以白光（$400$–$700\ \text{nm}$）照射縫距 $d=0.20\ \text{mm}$ 的雙狹縫，屏幕在 $L=1.0\ \text{m}$ 外。(a) 第 $m$ 階亮紋的位置 $y_m$ 和波長有什麼關係？第 $1$、$2$、$3$ 階彩色亮紋各分布在屏幕上哪個範圍？(b) 從哪兩階開始，相鄰兩階的彩色亮紋會互相重疊？在 $y=6.5\ \text{mm}$ 處同時出現哪兩個波長的亮紋？(c) 為什麼中央亮紋（$m=0$）是白色的？</div>
+  <ol class="write">
+    <li>$d\sin\theta=m\lambda$，$\sin\theta\approx y/L\Rightarrow y_m=m\lambda L/d=5000\,m\lambda$</li>
+    <li>$m=1$：$2.0$–$3.5\ \text{mm}$；$m=2$：$4.0$–$7.0\ \text{mm}$；$m=3$：$6.0$–$10.5\ \text{mm}$</li>
+    <li>重疊：$700m>400(m+1)\Rightarrow m>4/3$，第 2、3 階開始重疊</li>
+    <li>$y=6.5\ \text{mm}$：$\lambda=yd/(mL)$，$m=2$ 得 $650\ \text{nm}$，$m=3$ 得 $433\ \text{nm}$</li>
+    <li>$m=0$：$y_0=0$ 與 $\lambda$ 無關，各色疊成白色</li>
+  </ol>
+  <div class="final">答：第 2、3 階開始重疊；$650\ \text{nm}$ 與 $433\ \text{nm}$；中央白色。</div>
+  <p class="small"><a href="#sf-2-01b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 二、黑體輻射 ===== -->
+<article class="exam-item" data-exam-id="bz-ex2-1" data-group="二、黑體輻射（§2.2）" data-title="例題 2.1：音叉與原子的能量量子">
+  <h3>課本例題 2.1</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-1"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Assume that a certain 660-Hz tuning fork can be considered as a harmonic oscillator whose vibrational energy is 0.04 J. Compare the energy quanta of this tuning fork with those of an atomic oscillator that emits and absorbs orange light whose frequency is $5.00\times10^{14}$ Hz.</p></div>
+<p class="original-caption">Beiser Example 2.1 · p.61–62</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$660\ \text{Hz}$ 的音叉看成振動能量 $0.04\ \text{J}$ 的簡諧振子。比較它的能量量子和發射、吸收 $5.00\times10^{14}\ \text{Hz}$ 橙光的原子振子的能量量子。</div>
+  <ol class="write">
+    <li>能量量子 $=h\nu$。</li>
+    <li>音叉：$h\nu_1=(6.63\times10^{-34})(660)=4.38\times10^{-31}\ \text{J}$；$0.04/4.38\times10^{-31}\approx10^{29}$，量子化觀察不到，可用古典物理。</li>
+    <li>原子：$h\nu_2=(6.63\times10^{-34})(5.00\times10^{14})=3.32\times10^{-19}\ \text{J}=\dfrac{3.32\times10^{-19}}{1.60\times10^{-19}}\ \text{eV}=2.08\ \text{eV}$，是原子尺度上可觀的能量。</li>
+  </ol>
+  <div class="final">答：音叉 $4.38\times10^{-31}\ \text{J}$（總能量的 $10^{-29}$）；原子 $3.32\times10^{-19}\ \text{J}=2.08\ \text{eV}$。</div>
+  <p class="small"><a href="#bz-ex2-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-1" data-group="二、黑體輻射（§2.2）" data-title="課本 2-1：Planck 常數更小">
+  <h3>課本 2-1</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>If Planck’s constant were smaller than it is, would quantum phenomena be more or less conspicuous than they are now?</p></div>
+<p class="original-caption">Beiser 習題 2-1 · p.89</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如果 Planck 常數比現在小，量子現象會比現在更明顯還是更不明顯？</div>
+  <ol class="write">
+    <li>量子效應的大小由一份量子 $h\nu$ 和其他能量（如 $kT$）的比較決定。</li>
+    <li>$h$ 越小，同頻率的量子越小，要到更高頻率才有 $h\nu\gtrsim kT$；$h\to0$ 時 Planck 公式變回古典的 Rayleigh–Jeans 公式。</li>
+  </ol>
+  <div class="final">答：更不明顯。</div>
+  <p class="small"><a href="#bz-2-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-2" data-group="二、黑體輻射（§2.2）" data-title="課本 2-2：Planck 公式改寫成波長">
+  <h3>課本 2-2</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-2"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Express the Planck radiation formula in terms of wavelength.</p></div>
+<p class="original-caption">Beiser 習題 2-2 · p.89</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　把 Planck 輻射公式改用波長表示。</div>
+  <ol class="write">
+    <li>同一份能量：$u(\lambda)\,\mathrm d\lambda=u(\nu)\,|\mathrm d\nu|$，$\nu=c/\lambda$，$|\mathrm d\nu|=\dfrac{c}{\lambda^2}\mathrm d\lambda$。</li>
+    <li>$u(\lambda)\,\mathrm d\lambda=\dfrac{8\pi h}{c^3}\dfrac{(c/\lambda)^3}{e^{hc/\lambda kT}-1}\cdot\dfrac{c}{\lambda^2}\mathrm d\lambda$</li>
+    <li>$=\dfrac{8\pi hc}{\lambda^5}\dfrac{\mathrm d\lambda}{e^{hc/\lambda kT}-1}$</li>
+  </ol>
+  <div class="final">答：$u(\lambda)\,\mathrm d\lambda=\dfrac{8\pi hc}{\lambda^5}\dfrac{\mathrm d\lambda}{e^{hc/\lambda kT}-1}$。</div>
+  <p class="small"><a href="#bz-2-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-02a" data-group="二、黑體輻射（§2.2）" data-title="自編：Planck 平均能量的兩個極限">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　Planck 的振子平均能量 $\bar\epsilon=\dfrac{h\nu}{e^{h\nu/kT}-1}$，令 $x=h\nu/kT$。(a) 展開到 $x$ 的一次項，證明 $h\nu\ll kT$ 時 $\bar\epsilon\approx kT-\tfrac12h\nu$，並說明第二項的意義。(b) $h\nu\gg kT$ 時 $\bar\epsilon$ 近似成什麼？為什麼高頻的駐波幾乎分不到能量？(c) $T=1500\ \text{K}$ 時，頻率多高的駐波只分到古典值 $kT$ 的一半？對應的波長是多少？</div>
+  <ol class="write">
+    <li>$\dfrac{\bar\epsilon}{kT}=\dfrac{x}{e^x-1}$，$e^x-1\approx x(1+\tfrac x2)$</li>
+    <li>$x\ll1$：$\bar\epsilon\approx kT(1-\tfrac x2)=kT-\tfrac12h\nu$</li>
+    <li>$x\gg1$：$\bar\epsilon\approx h\nu\,e^{-h\nu/kT}\to0$</li>
+    <li>$\dfrac{x}{e^x-1}=\dfrac12\Rightarrow e^x-1=2x\Rightarrow x=1.256$</li>
+    <li>$\nu=\dfrac{xkT}{h}=\dfrac{(1.256)(1.381\times10^{-23})(1500)}{6.626\times10^{-34}}=3.93\times10^{13}\ \text{Hz}$，$\lambda=7.6\ \mu\text{m}$</li>
+  </ol>
+  <div class="final">答：(a) $kT-\tfrac12h\nu$；(b) $h\nu e^{-h\nu/kT}$；(c) $3.9\times10^{13}\ \text{Hz}$（$7.6\ \mu\text{m}$）。</div>
+  <p class="small"><a href="#sf-2-02a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-02b" data-group="二、黑體輻射（§2.2）" data-title="自編：溫度加倍時三個頻率區各變幾倍">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　黑體的溫度從 $T_1$ 升到 $2T_1$。(a) 不必算出積分，只用變數代換 $x=h\nu/kT$ 證明總能量密度 $\int_0^\infty u(\nu)\,\mathrm d\nu\propto T^4$，並求總能量變幾倍。(b) 在一個 $h\nu\ll kT_1$ 的固定低頻，$u(\nu)$ 變幾倍？(c) 在 $h\nu=10\,kT_1$ 的固定高頻，$u(\nu)$ 變幾倍？(d) 由 (b)(c) 說明溫度升高時，熱物體的顏色為什麼往高頻移。</div>
+  <ol class="write">
+    <li>$x=\dfrac{h\nu}{kT}$：$\displaystyle\int_0^\infty u\,\mathrm d\nu=\frac{8\pi h}{c^3}\Big(\frac{kT}{h}\Big)^4\int_0^\infty\frac{x^3\mathrm dx}{e^x-1}\propto T^4$，變 16 倍</li>
+    <li>低頻 $u\approx8\pi kT\nu^2/c^3\propto T$：2 倍</li>
+    <li>高頻：$\dfrac{e^{10}-1}{e^5-1}=e^5+1=149$ 倍</li>
+    <li>高頻增加最多，峰值往高頻移</li>
+  </ol>
+  <div class="final">答：16 倍；2 倍；149 倍；光譜往高頻移。</div>
+  <p class="small"><a href="#sf-2-02b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 三、光電效應 ===== -->
+<article class="exam-item" data-exam-id="bz-ex2-2" data-group="三、光電效應（§2.3）" data-title="例題 2.2：$350\ \text{nm}$ 照鉀">
+  <h3>課本例題 2.2</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-2"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Ultraviolet light of wavelength 350 nm and intensity 1.00 W/m$^2$ is directed at a potassium surface.</p><p>(a) Find the maximum KE of the photoelectrons.</p><p>(b) If 0.50 percent of the incident photons produce photoelectrons, how many are emitted per second if the potassium surface has an area of 1.00 cm$^2$?</p></div>
+<p class="original-caption">Beiser Example 2.2 · p.66–67</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$350\ \text{nm}$、$1.00\ \text{W/m}^2$ 的紫外光照在鉀表面。(a) 求光電子最大動能。(b) 若 $0.50\%$ 的入射光子產生光電子、表面積 $1.00\ \text{cm}^2$，每秒放出多少光電子？</div>
+  <ol class="write">
+    <li>(a) $E_p=\dfrac{1.24\times10^{-6}\ \text{eV·m}}{350\times10^{-9}\ \text{m}}=3.5\ \text{eV}$；鉀 $\phi=2.2\ \text{eV}$。</li>
+    <li>$KE_{\max}=h\nu-\phi=3.5-2.2=1.3\ \text{eV}$</li>
+    <li>(b) $E_p=5.68\times10^{-19}\ \text{J}$；$n_p=\dfrac{(P/A)A}{E_p}=\dfrac{(1.00)(1.00\times10^{-4})}{5.68\times10^{-19}}=1.76\times10^{14}\ \text{s}^{-1}$</li>
+    <li>$n_e=0.0050\,n_p=8.8\times10^{11}\ \text{s}^{-1}$</li>
+  </ol>
+  <div class="final">答：(a) $1.3\ \text{eV}$；(b) $8.8\times10^{11}$ 個/s。</div>
+  <p class="small"><a href="#bz-ex2-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="kg-107-6" data-group="三、光電效應（§2.3）" data-title="考古 107-6：鈉表面的光電效應">
+  <h3>考古 107-6（改自課本 2-13）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-6"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>Sodium surface has a work function of 2.28eV. Determine whether the photoelectrons are ejected or not and if so, calculate their maximum kinetic energy, when the surface is illuminated by light of wavelength (a) 410 nm (b) 560 nm. (10%)</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 6 題 · 改自 Beiser 習題 2-13 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　鈉表面的功函數為 $2.28\ \text{eV}$。當表面分別以波長 (a) $410\ \text{nm}$、(b) $560\ \text{nm}$ 的光照射時，判斷是否有光電子射出；若有，計算其最大動能。（10%）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1S8_OI91D1dtJgl8rm-BjxiMJpXryioZy/view" target="_blank" rel="noopener">107 學年近物期中（2018/10/30）</a> 第 6 題</p>
+  <ol class="write">
+    <li>光子能量 $E=\dfrac{hc}{\lambda}=\dfrac{1240\ \text{eV·nm}}{\lambda}$；須 $E>\phi$ 才有光電子，$KE_{\max}=E-\phi$。（截止波長 $\lambda_0=1240/2.28=544\ \text{nm}$。）</li>
+    <li>(a) $E=\dfrac{1240}{410}=3.02\ \text{eV}>2.28\ \text{eV}$，有光電子：$KE_{\max}=3.02-2.28=0.74\ \text{eV}$。</li>
+    <li>(b) $E=\dfrac{1240}{560}=2.21\ \text{eV}<2.28\ \text{eV}$：一個光子的能量不足以讓電子脫離，無論強度多大都沒有光電子。</li>
+  </ol>
+  <div class="final">答：(a) 有，$KE_{\max}=0.74\ \text{eV}$；(b) 沒有光電子射出。</div>
+  <p class="small"><a href="#kg-107-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-3" data-group="三、光電效應（§2.3）" data-title="課本 2-3：$KE_{\max}$ 與頻率的關係">
+  <h3>課本 2-3</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-3"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Is it correct to say that the maximum photoelectron energy KE<sub>max</sub> is proportional to the frequency $\nu$ of the incident light? If not, what would a correct statement of the relationship between KE<sub>max</sub> and $\nu$ be?</p></div>
+<p class="original-caption">Beiser 習題 2-3 · p.89</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　說光電子的最大能量 $KE_{\max}$ 和入射光頻率 $\nu$ 成正比，對嗎？若不對，正確的關係該怎麼說？</div>
+  <ol class="write">
+    <li>Einstein：$KE_{\max}=h\nu-\phi=h(\nu-\nu_0)$。</li>
+    <li>這是 $\nu$ 的一次函數（斜率 $h$、截距 $-\phi$），不過原點；$\nu<\nu_0$ 時沒有光電子。</li>
+  </ol>
+  <div class="final">答：不對；$KE_{\max}$ 是 $\nu$ 的線性函數，和 $(\nu-\nu_0)$ 成正比，比例常數為 $h$。</div>
+  <p class="small"><a href="#bz-2-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-5" data-group="三、光電效應（§2.3）" data-title="課本 2-5：$700\ \text{nm}$ 光子">
+  <h3>課本 2-5</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-5"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the energy of a 700-nm photon.</p></div>
+<p class="original-caption">Beiser 習題 2-5 · p.89</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求波長 $700\ \text{nm}$ 的光子的能量。</div>
+  <ol class="write">
+    <li>$E=\dfrac{hc}{\lambda}=\dfrac{1.240\times10^{-6}\ \text{eV·m}}{700\times10^{-9}\ \text{m}}=1.77\ \text{eV}$</li>
+    <li>$=1.77\times1.602\times10^{-19}\ \text{J}=2.84\times10^{-19}\ \text{J}$</li>
+  </ol>
+  <div class="final">答：$1.77\ \text{eV}$（$2.84\times10^{-19}\ \text{J}$）。</div>
+  <p class="small"><a href="#bz-2-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-6" data-group="三、光電效應（§2.3）" data-title="課本 2-6：$100\ \text{MeV}$ 光子">
+  <h3>課本 2-6</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the wavelength and frequency of a 100-MeV photon.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $100\ \text{MeV}$ 光子的波長與頻率。</div>
+  <ol class="write">
+    <li>$\lambda=\dfrac{hc}{E}=\dfrac{1.240\times10^{-6}\ \text{eV·m}}{1.00\times10^{8}\ \text{eV}}=1.24\times10^{-14}\ \text{m}$</li>
+    <li>$\nu=\dfrac{E}{h}=\dfrac{1.00\times10^{8}}{4.136\times10^{-15}}\ \text{Hz}=2.42\times10^{22}\ \text{Hz}$</li>
+  </ol>
+  <div class="final">答：$\lambda=1.24\times10^{-14}\ \text{m}$，$\nu=2.42\times10^{22}\ \text{Hz}$。</div>
+  <p class="small"><a href="#bz-2-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-7" data-group="三、光電效應（§2.3）" data-title="課本 2-7：電台的光子數">
+  <h3>課本 2-7</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A 1.00-kW radio transmitter operates at a frequency of 880 kHz. How many photons per second does it emit?</p></div>
+<p class="original-caption">Beiser 習題 2-7 · p.89</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$1.00\ \text{kW}$ 的無線電發射台以 $880\ \text{kHz}$ 發射，每秒發出多少光子？</div>
+  <ol class="write">
+    <li>每秒光子數 $=\dfrac{P}{h\nu}$</li>
+    <li>$=\dfrac{1.00\times10^{3}}{(6.626\times10^{-34})(880\times10^{3})}=1.72\times10^{30}\ \text{s}^{-1}$</li>
+  </ol>
+  <div class="final">答：約 $1.72\times10^{30}$ 個/s。</div>
+  <p class="small"><a href="#bz-2-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-8" data-group="三、光電效應（§2.3）" data-title="課本 2-8：人眼能察覺幾個光子">
+  <h3>課本 2-8</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-8"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Under favorable circumstances the human eye can detect $1.0\times10^{-18}$ J of electromagnetic energy. How many 600-nm photons does this represent?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　在有利的條件下，人眼能察覺 $1.0\times10^{-18}\ \text{J}$ 的電磁能量。這相當於幾個 $600\ \text{nm}$ 的光子？</div>
+  <ol class="write">
+    <li>一個光子：$E=\dfrac{hc}{\lambda}=\dfrac{(6.626\times10^{-34})(3.00\times10^{8})}{600\times10^{-9}}=3.31\times10^{-19}\ \text{J}$</li>
+    <li>$N=\dfrac{1.0\times10^{-18}}{3.31\times10^{-19}}=3.0$</li>
+  </ol>
+  <div class="final">答：約 3 個光子。</div>
+  <p class="small"><a href="#bz-2-8">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-9" data-group="三、光電效應（§2.3）" data-title="課本 2-9：太陽光的光子">
+  <h3>課本 2-9</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Light from the sun arrives at the earth, an average of 1.5 × 10<sup>11</sup> m away, at the rate of 1.4 × 10<sup>3</sup> W/m<sup>2</sup> of area perpendicular to the direction of the light. Assume that sunlight is monochromatic with a frequency of 5.0 × 10<sup>14</sup> Hz.</p><p>(a) How many photons fall per second on each square meter of the earth’s surface directly facing the sun?</p><p>(b) What is the power output of the sun, and how many photons per second does it emit?</p><p>(c) How many photons per cubic meter are there near the earth?</p></div>
+<p class="original-caption">Beiser 習題 2-9 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　太陽光在 $1.5\times10^{11}\ \text{m}$ 外的地球為 $1.4\times10^{3}\ \text{W/m}^2$，設為 $5.0\times10^{14}\ \text{Hz}$ 單色光。(a) 每秒每平方公尺多少光子？(b) 太陽總功率與每秒光子數？(c) 地球附近每立方公尺多少光子？</div>
+  <ol class="write">
+    <li>$h\nu=(6.63\times10^{-34})(5.0\times10^{14})=3.3\times10^{-19}\ \text{J}$</li>
+    <li>(a) $\dfrac{P/A}{h\nu}=\dfrac{1.4\times10^{3}}{3.3\times10^{-19}}=4.2\times10^{21}\ \text{m}^{-2}\text{s}^{-1}$</li>
+    <li>(b) 均勻向各方向輻射：$P=(1.4\times10^{3})\,4\pi(1.5\times10^{11})^2=4.0\times10^{26}\ \text{W}$；$P/h\nu=1.2\times10^{45}\ \text{s}^{-1}$</li>
+    <li>(c) 通量 $=$ 密度 $\times c$：$n=\dfrac{4.2\times10^{21}}{3.0\times10^{8}}=1.4\times10^{13}\ \text{m}^{-3}$</li>
+  </ol>
+  <div class="final">答：(a) $4.2\times10^{21}$；(b) $4.0\times10^{26}\ \text{W}$、$1.2\times10^{45}$ 個/s；(c) $1.4\times10^{13}$ 個/$\text{m}^3$。</div>
+  <p class="small"><a href="#bz-2-9">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-10" data-group="三、光電效應（§2.3）" data-title="課本 2-10：雷射脈衝的光子數">
+  <h3>課本 2-10</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A detached retina is being “welded” back in place using 20-ms pulses from a 0.50-W laser operating at a wavelength of 632 nm. How many photons are in each pulse?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用功率 $0.50\ \text{W}$、波長 $632\ \text{nm}$ 的雷射，以 $20\ \text{ms}$ 的脈衝把剝離的視網膜「焊」回原位。每個脈衝有多少個光子？</div>
+  <ol class="write">
+    <li>$E_{\text{pulse}}=Pt=(0.50)(0.020)=1.0\times10^{-2}\ \text{J}$</li>
+    <li>$E=\dfrac{hc}{\lambda}=\dfrac{(6.626\times10^{-34})(3.00\times10^{8})}{632\times10^{-9}}=3.15\times10^{-19}\ \text{J}$</li>
+    <li>$N=\dfrac{1.0\times10^{-2}}{3.15\times10^{-19}}=3.2\times10^{16}$</li>
+  </ol>
+  <div class="final">答：約 $3.2\times10^{16}$ 個光子。</div>
+  <p class="small"><a href="#bz-2-10">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-11" data-group="三、光電效應（§2.3）" data-title="課本 2-11：鎢">
+  <h3>課本 2-11</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-11"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The maximum wavelength for photoelectric emission in tungsten is 230 nm. What wavelength of light must be used in order for electrons with a maximum energy of 1.5 eV to be ejected?</p></div>
+<p class="original-caption">Beiser 習題 2-11 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　鎢的光電發射最大波長為 $230\ \text{nm}$。要射出最大能量 $1.5\ \text{eV}$ 的電子，需用什麼波長的光？</div>
+  <ol class="write">
+    <li>$\phi=\dfrac{hc}{\lambda_0}=\dfrac{1240}{230}=5.39\ \text{eV}$</li>
+    <li>$\dfrac{hc}{\lambda}=KE_{\max}+\phi\Rightarrow\lambda=\dfrac{1240}{1.5+5.39}=180\ \text{nm}$</li>
+  </ol>
+  <div class="final">答：$180\ \text{nm}$。</div>
+  <p class="small"><a href="#bz-2-11">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-12" data-group="三、光電效應（§2.3）" data-title="課本 2-12：銅的光電子最大能量">
+  <h3>課本 2-12</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-12"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The minimum frequency for photoelectric emission in copper is $1.1\times10^{15}$ Hz. Find the maximum energy of the photoelectrons (in electronvolts) when light of frequency $1.5\times10^{15}$ Hz is directed on a copper surface.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　銅發生光電發射的最低頻率是 $1.1\times10^{15}\ \text{Hz}$。以頻率 $1.5\times10^{15}\ \text{Hz}$ 的光照射銅表面，光電子的最大能量是多少 eV？</div>
+  <ol class="write">
+    <li>$\phi=h\nu_0$，$KE_{\max}=h\nu-\phi=h(\nu-\nu_0)$</li>
+    <li>$KE_{\max}=(4.136\times10^{-15}\ \text{eV·s})(0.4\times10^{15}\ \text{Hz})=1.65\ \text{eV}$</li>
+  </ol>
+  <div class="final">答：$KE_{\max}\approx1.7\ \text{eV}$。</div>
+  <p class="small"><a href="#bz-2-12">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-13" data-group="三、光電效應（§2.3）" data-title="課本 2-13：鈉的截止波長">
+  <h3>課本 2-13</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-13"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What is the maximum wavelength of light that will cause photoelectrons to be emitted from sodium? What will the maximum kinetic energy of the photoelectrons be if 200-nm light falls on a sodium surface?</p></div>
+<p class="original-caption">Beiser 習題 2-13 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　使鈉放出光電子的最大波長是多少？$200\ \text{nm}$ 的光照在鈉上，光電子最大動能是多少？</div>
+  <ol class="write">
+    <li>鈉 $\phi=2.3\ \text{eV}$：$\lambda_{\max}=\dfrac{hc}{\phi}=\dfrac{1.240\times10^{-6}}{2.3}=5.39\times10^{-7}\ \text{m}=539\ \text{nm}$</li>
+    <li>$KE_{\max}=\dfrac{1240}{200}-2.3=6.2-2.3=3.9\ \text{eV}$</li>
+  </ol>
+  <div class="final">答：$539\ \text{nm}$；$3.9\ \text{eV}$。</div>
+  <p class="small"><a href="#bz-2-13">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-14" data-group="三、光電效應（§2.3）" data-title="課本 2-14：銀球的電位">
+  <h3>課本 2-14</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-14"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A silver ball is suspended by a string in a vacuum chamber and ultraviolet light of wavelength 200 nm is directed at it. What electrical potential will the ball acquire as a result?</p></div>
+<p class="original-caption">Beiser 習題 2-14 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　真空中吊著的銀球以 $200\ \text{nm}$ 紫外光照射，最後帶多少電位？</div>
+  <ol class="write">
+    <li>銀 $\phi=4.7\ \text{eV}$：$KE_{\max}=\dfrac{1240}{200}-4.7=1.5\ \text{eV}$</li>
+    <li>球失去電子帶正電；當 $eV=KE_{\max}$ 時，所有光電子都被拉回，電位不再上升。</li>
+    <li>$V=KE_{\max}/e=1.5\ \text{V}$</li>
+  </ol>
+  <div class="final">答：約 $+1.5\ \text{V}$。</div>
+  <p class="small"><a href="#bz-2-14">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-15" data-group="三、光電效應（§2.3）" data-title="課本 2-15：光電管電流">
+  <h3>課本 2-15</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-15"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>1.5 mW of 400-nm light is directed at a photoelectric cell. If 0.10 percent of the incident photons produce photoelectrons, find the current in the cell.</p></div>
+<p class="original-caption">Beiser 習題 2-15 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$1.5\ \text{mW}$、$400\ \text{nm}$ 的光照在光電管上，$0.10\%$ 的光子產生光電子，求電流。</div>
+  <ol class="write">
+    <li>$E_p=\dfrac{1240}{400}=3.10\ \text{eV}=4.97\times10^{-19}\ \text{J}$</li>
+    <li>每秒光子數 $=\dfrac{1.5\times10^{-3}}{4.97\times10^{-19}}=3.0\times10^{15}\ \text{s}^{-1}$</li>
+    <li>$I=(0.0010)(3.0\times10^{15})(1.602\times10^{-19})=4.8\times10^{-7}\ \text{A}$</li>
+  </ol>
+  <div class="final">答：$0.48\ \mu\text{A}$。</div>
+  <p class="small"><a href="#bz-2-15">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-16" data-group="三、光電效應（§2.3）" data-title="課本 2-16：截止電壓與速率">
+  <h3>課本 2-16</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Light of wavelength 400 nm is shone on a metal surface in an apparatus like that of Fig. 2.9. The work function of the metal is 2.50 eV.</p><p>(a) Find the extinction voltage, that is, the retarding voltage at which the photoelectron current disappears.</p><p>(b) Find the speed of the fastest photoelectrons.</p></div>
+<p class="original-caption">Beiser 習題 2-16 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$400\ \text{nm}$ 的光照在功函數 $2.50\ \text{eV}$ 的金屬上。(a) 截止電壓？(b) 最快光電子的速率？</div>
+  <ol class="write">
+    <li>(a) $KE_{\max}=\dfrac{1240}{400}-2.50=0.60\ \text{eV}=eV_0\Rightarrow V_0=0.60\ \text{V}$</li>
+    <li>(b) $KE\ll mc^2$，用 $\tfrac12mv^2$：$v=\sqrt{\dfrac{2(0.60)(1.602\times10^{-19})}{9.11\times10^{-31}}}=4.6\times10^{5}\ \text{m/s}$</li>
+  </ol>
+  <div class="final">答：(a) $0.60\ \text{V}$；(b) $4.6\times10^{5}\ \text{m/s}$。</div>
+  <p class="small"><a href="#bz-2-16">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-17" data-group="三、光電效應（§2.3）" data-title="課本 2-17：由數據求 $h$ 與 $\phi$">
+  <h3>課本 2-17</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-17"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A metal surface illuminated by 8.5 × 10<sup>14</sup> Hz light emits electrons whose maximum energy is 0.52 eV. The same surface illuminated by 12.0 × 10<sup>14</sup> Hz hight emits electrons whose maximum energy is 1.97 eV. From these data find Planck’s constant and the work function of the surface.</p></div>
+<p class="original-caption">Beiser 習題 2-17 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　某表面以 $8.5\times10^{14}\ \text{Hz}$ 照射，$KE_{\max}=0.52\ \text{eV}$；以 $12.0\times10^{14}\ \text{Hz}$ 照射，$KE_{\max}=1.97\ \text{eV}$。求 Planck 常數與功函數。</div>
+  <ol class="write">
+    <li>$KE_1=h\nu_1-\phi$，$KE_2=h\nu_2-\phi$，相減：$h=\dfrac{KE_2-KE_1}{\nu_2-\nu_1}=\dfrac{1.45\ \text{eV}}{3.5\times10^{14}\ \text{Hz}}=4.1\times10^{-15}\ \text{eV·s}$</li>
+    <li>$h=4.1\times10^{-15}\times1.602\times10^{-19}=6.6\times10^{-34}\ \text{J·s}$</li>
+    <li>$\phi=h\nu_1-KE_1=(4.14\times10^{-15})(8.5\times10^{14})-0.52=3.0\ \text{eV}$</li>
+  </ol>
+  <div class="final">答：$h\approx6.6\times10^{-34}\ \text{J·s}$；$\phi\approx3.0\ \text{eV}$。</div>
+  <p class="small"><a href="#bz-2-17">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-18" data-group="三、光電效應（§2.3）" data-title="課本 2-18：由鎢的數據求 Planck 常數">
+  <h3>課本 2-18</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-18"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The work function of a tungsten surface is 5.4 eV. When the surface is illuminated by light of wavelength 175 nm, the maximum photoelectron energy is 1.7 eV. Find Planck’s constant from these data.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　鎢表面的功函數是 $5.4\ \text{eV}$。以波長 $175\ \text{nm}$ 的光照射時，光電子的最大能量是 $1.7\ \text{eV}$。由這些數據求 Planck 常數。</div>
+  <ol class="write">
+    <li>$h\nu=KE_{\max}+\phi=1.7+5.4=7.1\ \text{eV}$</li>
+    <li>$\nu=\dfrac{c}{\lambda}=\dfrac{3.00\times10^{8}}{175\times10^{-9}}=1.71\times10^{15}\ \text{Hz}$</li>
+    <li>$h=\dfrac{7.1}{1.71\times10^{15}}=4.14\times10^{-15}\ \text{eV·s}=6.6\times10^{-34}\ \text{J·s}$</li>
+  </ol>
+  <div class="final">答：$h\approx6.6\times10^{-34}\ \text{J·s}$。</div>
+  <p class="small"><a href="#bz-2-18">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-19" data-group="三、光電效應（§2.3）" data-title="課本 2-19：自由電子不能吸收光子">
+  <h3>課本 2-19</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-19"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show that it is impossible for a photon to give up all its energy and momentum to a free electron. This is the reason why the photoelectric effect can take place only when photons strike bound electrons.</p></div>
+<p class="original-caption">Beiser 習題 2-19 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　證明光子不可能把全部能量和動量交給一個自由電子（所以光電效應只發生在束縛電子）。</div>
+  <ol class="write">
+    <li>設電子原本靜止，光子能量 $E_0$、動量 $E_0/c$ 全部被吸收。</li>
+    <li>動量守恆：$p_e=E_0/c$；能量守恆：$E_e=E_0+mc^2=p_ec+mc^2$。</li>
+    <li>電子須滿足 $E_e^2=(p_ec)^2+(mc^2)^2$：$(p_ec+mc^2)^2=(p_ec)^2+(mc^2)^2\Rightarrow2p_ec\,mc^2=0\Rightarrow p_e=0$。</li>
+    <li>則 $E_0=0$，光子不存在，矛盾。束縛電子可由原子分擔動量。</li>
+  </ol>
+  <div class="final">得證：能量與動量不能同時守恆。</div>
+  <p class="small"><a href="#bz-2-19">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-03a" data-group="三、光電效應（§2.3）" data-title="自編：光電管加正反向電壓時的到達動能">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　鉀（$\phi=2.2\ \text{eV}$）陰極被 $400\ \text{nm}$ 的光照射（忽略接觸電位差）。(a) 光電子離開陰極時的動能範圍是多少？(b) 陽極電位比陰極高 $2.0\ \text{V}$ 時，到達陽極的電子動能範圍是多少？(c) 陽極電位比陰極低 $0.50\ \text{V}$ 時，哪些電子到得了？到達時的動能範圍是多少？(d) 截止電壓是多少？若光強加倍，(b)(c) 的動能範圍和電流各怎麼變？</div>
+  <ol class="write">
+    <li>$h\nu=1240/400=3.10\ \text{eV}$，$KE_{\max}=3.10-2.2=0.90\ \text{eV}$，初動能 $0$–$0.90\ \text{eV}$</li>
+    <li>$+2.0\ \text{V}$：$KE=KE_0+2.0$，範圍 $2.0$–$2.9\ \text{eV}$</li>
+    <li>$-0.50\ \text{V}$：需 $KE_0\ge0.50\ \text{eV}$，到達 $KE=KE_0-0.50$，範圍 $0$–$0.40\ \text{eV}$</li>
+    <li>$V_0=KE_{\max}/e=0.90\ \text{V}$；光強加倍：電流加倍、能量不變</li>
+  </ol>
+  <div class="final">答：$0$–$0.90$；$2.0$–$2.9$；$0$–$0.40\ \text{eV}$；$V_0=0.90\ \text{V}$。</div>
+  <p class="small"><a href="#sf-2-03a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-03b" data-group="三、光電效應（§2.3）" data-title="自編：古典理論的光電延遲時間">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　用古典波動理論估計：強度 $1.0\times10^{-3}\ \text{W/m}^2$ 的微弱 $400\ \text{nm}$ 光照在鉀（$\phi=2.2\ \text{eV}$）上，假設一個電子只能吸收落在一個原子截面（半徑 $0.10\ \text{nm}$ 的圓）上的能量。(a) 電子要累積多久才能逸出？(b) 實驗上光電子在 $10^{-9}\ \text{s}$ 內就出現。用光子圖像算每秒每平方公尺落下幾個光子；並解釋：平均而言一個原子截面也要等好幾個小時才接到一個光子，為什麼光電子仍然立刻出現？</div>
+  <ol class="write">
+    <li>$A=\pi(10^{-10})^2=3.14\times10^{-20}\ \text{m}^2$</li>
+    <li>$t=\dfrac{\phi}{IA}=\dfrac{2.2\times1.602\times10^{-19}}{(10^{-3})(3.14\times10^{-20})}=1.1\times10^{4}\ \text{s}$</li>
+    <li>$h\nu=3.10\ \text{eV}=4.97\times10^{-19}\ \text{J}$，$I/h\nu=2.0\times10^{15}\ \text{m}^{-2}\text{s}^{-1}$</li>
+    <li>能量集中在光子：被打到的電子一次吸收即逸出，表面上立刻有光電子</li>
+  </ol>
+  <div class="final">答：古典約 $3$ 小時；光子 $2.0\times10^{15}\ \text{m}^{-2}\text{s}^{-1}$，無延遲。</div>
+  <p class="small"><a href="#sf-2-03b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 四、光是什麼 ===== -->
+<article class="exam-item" data-exam-id="bz-2-4" data-group="四、光是什麼（§2.4）" data-title="課本 2-4：粒子與波">
+  <h3>課本 2-4</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-4"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Compare the properties of particles with those of waves. Why do you think the wave aspect of light was discovered earlier than its particle aspect?</p></div>
+<p class="original-caption">Beiser 習題 2-4 · p.89</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　比較粒子與波的性質。為什麼光的波動性比粒子性更早被發現？</div>
+  <ol class="write">
+    <li>粒子：局域化、有確定位置與動量（質量、電荷）；能量集中，一次整份交出；不干涉、不繞射。</li>
+    <li>波：分布在空間中，以 $\lambda$、$\nu$、振幅描述；能量連續分散在波前；遵守疊加，會干涉、繞射、偏振。</li>
+    <li>可見光光子只有約 $2\ \text{eV}$，一般光束每秒有 $10^{18}$ 個以上光子，顆粒性被平均掉；干涉、繞射用和波長相當的狹縫就容易看到。</li>
+    <li>粒子性要偵測單一光子與單一電子的作用（光電效應），需真空管與靈敏偵測器，較晚才做得到。</li>
+  </ol>
+  <div class="final">答：見上；波動性容易用干涉看到，光子能量小、數量多，粒子性要等到能觀察單一光子事件才顯現。</div>
+  <p class="small"><a href="#bz-2-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="kg-109-2" data-group="四、光是什麼（§2.4）" data-title="考古 109-2：顯示光的粒子性的現象">
+  <h3>考古 109-2（觀念題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-109-2"><span class="part-label original-label">考卷原文（題目卷未保存，以考古解答代替）</span>
+<p class="original-note">原卷題目沒有保存；雲端只有「109上近物考古解答」一張手寫解答。下面是解答中這一題的逐字轉寫，截圖只保留這一題。</p>
+<div class="original-text" lang="en"><p>2. ① photoelectric effect　$hf=E_K-\phi$</p><p>② compton effect　$\lambda-\lambda'=\frac{h}{mc}(1-\cos\phi)$</p><p>③ black body radiation　$E_n=nh\nu$</p><p>④ X-ray　$eV=\frac{hc}{\lambda}$</p></div>
+<p class="original-caption">109 學年上學期考古 第 2 題（只有手寫解答，題目卷未保存）· 觀念題，綜合 §2.2–2.7</p>
+</section>
+<!-- original-question:end -->
+<strong>題意（原卷未保存，由手寫解答推回）</strong>　列出顯示光具有粒子性（能量量子化）的現象，寫出各自的關係式，並說明古典波動理論為什麼解釋不了。</div>
+  <p class="small">考古解答：<a href="https://drive.google.com/file/d/1kBTBH1VbH9L4nq8MXrVEh2tXw2ZeBt4t/view" target="_blank" rel="noopener">109 學年上學期近物考古解答（手寫）</a> 右欄第 2 題；題目卷未保存</p>
+  <ol class="write">
+    <li>光電效應：$KE_{\max}=h\nu-\phi$。$KE_{\max}$ 只隨頻率變、有截止頻率、瞬間發射——古典波做不到。</li>
+    <li>康普頓效應：$\lambda'-\lambda=\dfrac{h}{mc}(1-\cos\phi)$。散射 X 光波長變長，光子帶動量 $h/\lambda$ 和電子碰撞。</li>
+    <li>黑體輻射：振子能量 $\epsilon_n=nh\nu$，得 Planck 公式，避開紫外災變。</li>
+    <li>X 射線：$eV=h\nu_{\max}=\dfrac{hc}{\lambda_{\min}}$，截止波長只由電壓決定（逆光電效應）。</li>
+    <li>（補充）成對產生：$h\nu\ge2mc^2=1.022\ \text{MeV}$。</li>
+  </ol>
+  <div class="final">答：光電效應、康普頓效應、黑體輻射、X 射線截止波長（及成對產生）；共同點是能量以 $h\nu$ 一份一份交換。</div>
+  <p class="small"><a href="#kg-109-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-04a" data-group="四、光是什麼（§2.4）" data-title="自編：「一次一個光子」要多弱的光（Poisson）">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$500\ \text{nm}$ 的單色光通過雙狹縫裝置，從狹縫到屏幕（偵測器）長 $L=1.5\ \text{m}$。光子從弱光源出發的時刻彼此獨立、隨機，所以任一時刻裝置裡的光子數 $n$ 服從 Poisson 分布 $P(n)=\dfrac{\mu^n}{n!}e^{-\mu}$，$\mu$ 是平均光子數。(a) 以功率 $P$ 表示 $\mu$。(b) 有人說「讓 $\mu=1$ 就是一次一個光子」。這時功率多大？裝置裡同時有兩個以上光子的機率是多少？這個說法對嗎？(c) 實際用 $P=1.0\times10^{-13}\ \text{W}$：$\mu$、同時有兩個以上光子的機率、相鄰兩個光子在空間中的平均間距各多少？(d) 這時屏幕上長時間累積仍出現干涉條紋，說明了什麼？</div>
+  <ol class="write">
+    <li>$h\nu=3.97\times10^{-19}\ \text{J}$，$t=L/c=5.0\times10^{-9}\ \text{s}$，$\mu=\dfrac{P}{h\nu}t$</li>
+    <li>$\mu=1$：$P=h\nu/t=7.9\times10^{-11}\ \text{W}$；$P(n\ge2)=1-2/e=0.26$，不夠</li>
+    <li>$P=10^{-13}\ \text{W}$：$R=2.5\times10^5\ \text{s}^{-1}$，$\mu=1.3\times10^{-3}$，$P(n\ge2)\approx\mu^2/2=7.9\times10^{-7}$</li>
+    <li>間距 $c/R=1.2\ \text{km}\gg L$ ⇒ 干涉是每個光子自己的性質</li>
+  </ol>
+  <div class="final">答：$\mu=1$ 時仍有 $26\%$ 機率多於一個；$10^{-13}\ \text{W}$ 時 $7.9\times10^{-7}$、間距 $1.2\ \text{km}$。</div>
+  <p class="small"><a href="#sf-2-04a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-04b" data-group="四、光是什麼（§2.4）" data-title="自編：遮住一縫，暗紋處光子反而變多">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　等寬雙狹縫，兩縫在屏幕上各自產生的電場振幅相同（設單狹縫繞射的包絡很寬，只看中央附近）。某段時間內，中央亮紋處一個小偵測器記到 $10\,000$ 個光子。(a) 同樣時間內，在相位差 $\delta=\pi/3$ 處、同樣大小的偵測器平均記到幾個？在暗紋（$\delta=\pi$）處呢？(b) 把一條狹縫遮住，三個位置各記到幾個？(c) 遮住一條狹縫反而讓某處的光子變多，這和「光子是小球、各走一條縫」的想法有什麼矛盾？</div>
+  <ol class="write">
+    <li>$I(\delta)=4I_1\cos^2\dfrac\delta2$；中央 $4I_1\leftrightarrow10\,000$，$I_1\leftrightarrow2500$</li>
+    <li>$\delta=\pi/3$：$10\,000\cos^230^\circ=7500$；$\delta=\pi$：$0$</li>
+    <li>遮一縫：處處 $I_1$，各 $2500$（暗紋處 $0\to2500$）</li>
+    <li>機率 ∝ 振幅和的平方，不是兩縫機率相加</li>
+  </ol>
+  <div class="final">答：$7500$、$0$；遮縫後都 $2500$；振幅相加再平方。</div>
+  <p class="small"><a href="#sf-2-04b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 五、X 射線 ===== -->
+<article class="exam-item" data-exam-id="bz-ex2-3" data-group="五、X 射線（§2.5）" data-title="例題 2.3：$50\ \text{kV}$ 的最短波長">
+  <h3>課本例題 2.3</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-3"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Find the shortest wavelength present in the radiation from an x-ray machine whose accelerating potential is 50,000 V.</p></div>
+<p class="original-caption">Beiser Example 2.3 · p.72</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　加速電壓 $50{,}000\ \text{V}$ 的 X 光機，輻射中最短的波長是多少？</div>
+  <ol class="write">
+    <li>電子動能 $eV$ 全部給一個光子：$\lambda_{\min}=\dfrac{1.24\times10^{-6}}{V}\ \text{V·m}$</li>
+    <li>$\lambda_{\min}=\dfrac{1.24\times10^{-6}}{5.00\times10^{4}}=2.48\times10^{-11}\ \text{m}=0.0248\ \text{nm}$</li>
+    <li>$\nu_{\max}=c/\lambda_{\min}=\dfrac{3.00\times10^{8}}{2.48\times10^{-11}}=1.21\times10^{19}\ \text{Hz}$</li>
+  </ol>
+  <div class="final">答：$0.0248\ \text{nm}$（$1.21\times10^{19}\ \text{Hz}$）。</div>
+  <p class="small"><a href="#bz-ex2-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-20" data-group="五、X 射線（§2.5）" data-title="課本 2-20：$30\ \text{pm}$ 需要的電壓">
+  <h3>課本 2-20</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What voltage must be applied to an x-ray tube for it to emit x-rays with a minimum wavelength of 30 pm?</p></div>
+<p class="original-caption">Beiser 習題 2-20 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　X 光管要加多少電壓，才能發出最短波長 $30\ \text{pm}$ 的 X 光？</div>
+  <ol class="write">
+    <li>$\lambda_{\min}=\dfrac{1.24\times10^{-6}}{V}\Rightarrow V=\dfrac{1.24\times10^{-6}}{30\times10^{-12}}=4.1\times10^{4}\ \text{V}$</li>
+  </ol>
+  <div class="final">答：約 $41\ \text{kV}$。</div>
+  <p class="small"><a href="#bz-2-20">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-21" data-group="五、X 射線（§2.5）" data-title="課本 2-21：映像管的輻射">
+  <h3>課本 2-21</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-21"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Electrons are accelerated in television tubes through potential differences of about 10 kV. Find the highest frequency of the electromagnetic waves emitted when these electrons strike the screen of the tube. What kind of waves are these?</p></div>
+<p class="original-caption">Beiser 習題 2-21 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　映像管電子經 $10\ \text{kV}$ 加速，打到螢幕時發出的電磁波最高頻率是多少？是哪一種波？</div>
+  <ol class="write">
+    <li>$h\nu_{\max}=eV=1.0\times10^{4}\ \text{eV}$</li>
+    <li>$\nu_{\max}=\dfrac{1.0\times10^{4}\ \text{eV}}{4.136\times10^{-15}\ \text{eV·s}}=2.4\times10^{18}\ \text{Hz}$（$\lambda=0.124\ \text{nm}$）</li>
+  </ol>
+  <div class="final">答：$2.4\times10^{18}\ \text{Hz}$，X 射線。</div>
+  <p class="small"><a href="#bz-2-21">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-05a" data-group="五、X 射線（§2.5）" data-title="自編：制動輻射時動量交給誰">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$50\ \text{kV}$ X 光管中，一個電子在一次碰撞裡把全部動能變成一個光子（截止波長的那種光子）。(a) 用第 1 章的相對論求電子撞靶前的速率，並和古典 $\tfrac12mv^2=KE$ 的結果比較。(b) 比較電子的動量和產生的光子的動量。光子帶不走的動量到哪裡去了？(c) 鎢原子核（$Mc^2\approx1.71\times10^{5}\ \text{MeV}$）分走的動能最多約多少？會不會影響 $\lambda_{\min}=hc/Ve$？</div>
+  <ol class="write">
+    <li>$\gamma=1+50/511=1.098$，$v=c\sqrt{1-1/\gamma^2}=0.413c$（古典 $0.442c$）</li>
+    <li>$pc=\sqrt{KE^2+2KE\,mc^2}=232\ \text{keV}$；光子 $pc=50\ \text{keV}$</li>
+    <li>差額 $\ge182\ \text{keV}/c$ 由原子核承受</li>
+    <li>$KE_M=\dfrac{(pc)^2}{2Mc^2}\le\dfrac{0.282^2}{2(1.71\times10^{5})}\ \text{MeV}=0.23\ \text{eV}$，可忽略</li>
+  </ol>
+  <div class="final">答：$0.413c$；原子核承受動量；約 $0.2\ \text{eV}$，不影響 $\lambda_{\min}$。</div>
+  <p class="small"><a href="#sf-2-05a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-05b" data-group="五、X 射線（§2.5）" data-title="自編：X 光管的光子數要看低能截止（Kramers 譜）">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　X 光管以 $30\ \text{kV}$、$10\ \text{mA}$ 運作，電子束能量有 $0.30\%$ 變成 X 光。厚靶的連續譜可以用 Kramers 近似描述：單位頻率的輻射功率 $I(\nu)\propto\nu_{\max}-\nu$（$0\lt\nu\lt\nu_{\max}$）。(a) 求電子束功率與 X 光總功率；只用 Duane–Hunt 能得到每秒光子數的什麼界限？(b) 證明在這個模型中，若不設低能截止，每秒光子數是無限大，而總功率卻有限。物理上是什麼讓光子數變成有限？(c) 管窗吸收掉所有 $h\nu\lt3.0\ \text{keV}$ 的光子。求穿出管窗的功率、平均光子能量與每秒光子數，並和 (a) 的界限比較。</div>
+  <ol class="write">
+    <li>$P=IV=300\ \text{W}$，$P_X=0.90\ \text{W}$；$h\nu\le30\ \text{keV}\Rightarrow N\ge1.9\times10^{14}\ \text{s}^{-1}$</li>
+    <li>$u=\nu/\nu_{\max}$：$P\propto\int(1-u)\mathrm du$，$N\propto\int_{u_c}^1\dfrac{1-u}{u}\mathrm du=\ln\dfrac1{u_c}-(1-u_c)\to\infty$</li>
+    <li>$u_c=0.1$：$P_{\text{out}}=0.90\times\dfrac{0.405}{0.5}=0.73\ \text{W}$</li>
+    <li>$\bar E=\dfrac{0.405}{1.403}\times30\ \text{keV}=8.7\ \text{keV}$，$N=\dfrac{0.73}{8.7\times10^3\times1.602\times10^{-19}}=5.3\times10^{14}\ \text{s}^{-1}$</li>
+  </ol>
+  <div class="final">答：下限 $1.9\times10^{14}$；無截止時發散；$3\ \text{keV}$ 截止下 $\bar E=8.7\ \text{keV}$、$N=5.3\times10^{14}\ \text{s}^{-1}$。</div>
+  <p class="small"><a href="#sf-2-05b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 六、X 射線繞射 ===== -->
+<article class="exam-item" data-exam-id="bz-2-22" data-group="六、X 射線繞射（§2.6）" data-title="課本 2-22：KCl 的平面間距">
+  <h3>課本 2-22</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-22"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The smallest angle of Bragg scattering in potassium chloride (KCl) is 28.4° for 0.30-nm x-rays. Find the distance between atomic planes in potassium chloride.</p></div>
+<p class="original-caption">Beiser 習題 2-22 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$0.30\ \text{nm}$ X 光在 KCl 中最小 Bragg 角 $28.4^\circ$，求原子平面間距。</div>
+  <ol class="write">
+    <li>最小角 $n=1$：$2d\sin\theta=\lambda$</li>
+    <li>$d=\dfrac{\lambda}{2\sin\theta}=\dfrac{0.30}{2\sin28.4^\circ}=\dfrac{0.30}{0.951}=0.32\ \text{nm}$</li>
+  </ol>
+  <div class="final">答：$d\approx0.32\ \text{nm}$。</div>
+  <p class="small"><a href="#bz-2-22">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-23" data-group="六、X 射線繞射（§2.6）" data-title="課本 2-23：方解石">
+  <h3>課本 2-23</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The distance between adjacent atomic planes in calcite (CaCO<sub>3</sub>) is 0.300 nm. Find the smallest angle of Bragg scattering for 0.030-nm x-rays.</p></div>
+<p class="original-caption">Beiser 習題 2-23 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　方解石原子平面間距 $0.300\ \text{nm}$，求 $0.030\ \text{nm}$ X 光的最小 Bragg 角。</div>
+  <ol class="write">
+    <li>$n=1$：$\sin\theta=\dfrac{\lambda}{2d}=\dfrac{0.030}{0.600}=0.050$</li>
+    <li>$\theta=\sin^{-1}0.050=2.9^\circ$</li>
+  </ol>
+  <div class="final">答：$2.9^\circ$。</div>
+  <p class="small"><a href="#bz-2-23">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-24" data-group="六、X 射線繞射（§2.6）" data-title="課本 2-24：岩鹽的原子間距">
+  <h3>課本 2-24</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-24"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the atomic spacing in a crystal of rock salt (NaCl), whose structure is shown in Fig. 2.19. The density of rock salt is 2.16 × 10<sup>3</sup> kg/m<sup>3</sup> and the average masses of the Na and Cl atoms are respectively 3.82 × 10<sup>−26</sup> kg and 5.89 × 10<sup>−26</sup> kg.</p></div>
+<p class="original-caption">Beiser 習題 2-24 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　岩鹽（NaCl）密度 $2.16\times10^{3}\ \text{kg/m}^3$，Na、Cl 原子質量 $3.82\times10^{-26}$、$5.89\times10^{-26}\ \text{kg}$，求原子間距。</div>
+  <ol class="write">
+    <li>Na、Cl 交錯排在邊長 $a$ 的立方格點上，每個原子平均占體積 $a^3$。</li>
+    <li>$\rho=\dfrac{(m_{\text{Na}}+m_{\text{Cl}})/2}{a^3}\Rightarrow a=\left(\dfrac{m_{\text{Na}}+m_{\text{Cl}}}{2\rho}\right)^{1/3}$</li>
+    <li>$a=\left(\dfrac{9.71\times10^{-26}}{4.32\times10^{3}}\right)^{1/3}=(2.25\times10^{-29})^{1/3}=2.82\times10^{-10}\ \text{m}$</li>
+  </ol>
+  <div class="final">答：$0.282\ \text{nm}$。</div>
+  <p class="small"><a href="#bz-2-24">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-06a" data-group="六、X 射線繞射（§2.6）" data-title="自編：固定 Bragg 角同時反射幾個波長">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　用 NaCl 晶體（$d=0.282\ \text{nm}$）當 X 光光譜儀，入射光是 $30\ \text{kV}$ X 光管發出的連續譜。(a) 偵測器固定在掠射角 $\theta=10.0^\circ$，哪些波長會被 Bragg 反射進偵測器（考慮所有的 $n$）？(b) 管電壓要在什麼範圍內，偵測器在這個角度才會收到 X 光、而且只收到第一階？</div>
+  <ol class="write">
+    <li>$\lambda_n=\dfrac{2d\sin\theta}{n}=\dfrac{2(0.282)\sin10^\circ}{n}\ \text{nm}=\dfrac{97.9}{n}\ \text{pm}$</li>
+    <li>$\lambda_{\min}=1.24\times10^{-6}/3.0\times10^4=41.3\ \text{pm}$</li>
+    <li>$n=1$：$97.9$、$n=2$：$49.0\ \text{pm}$ 存在；$n=3$：$32.6\lt41.3$ 不存在</li>
+    <li>只要第一階：$\lambda_{\min}\gt49.0\ \text{pm}\Rightarrow V\lt25.3\ \text{kV}$；且 $\lambda_{\min}\le97.9\ \text{pm}\Rightarrow V\ge12.7\ \text{kV}$</li>
+  </ol>
+  <div class="final">答：$97.9$ 與 $49.0\ \text{pm}$；$12.7\ \text{kV}\le V\lt25.3\ \text{kV}$。</div>
+  <p class="small"><a href="#sf-2-06a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-06b" data-group="六、X 射線繞射（§2.6）" data-title="自編：鉬 K$\alpha$ 雙線的角距">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　鉬的 K$\alpha$ 特性譜線其實是兩條很接近的線：$70.93\ \text{pm}$ 和 $71.36\ \text{pm}$。用方解石（$d=0.300\ \text{nm}$）晶體光譜儀觀察。(a) 由 Bragg 條件推出波長差 $\Delta\lambda$ 和角度差 $\Delta\theta$ 的關係。(b) 第一階時兩線的角距是多少度？用精確的 $\arcsin$ 驗算。(c) 改用第二階，角距變多少？為什麼高階比較容易分開？</div>
+  <ol class="write">
+    <li>$n\lambda=2d\sin\theta\Rightarrow n\,\Delta\lambda=2d\cos\theta\,\Delta\theta$</li>
+    <li>$n=1$：$\theta=\arcsin(70.93/600)=6.79^\circ$，$\Delta\theta=\dfrac{0.43}{600\cos6.79^\circ}=7.22\times10^{-4}\ \text{rad}=0.041^\circ$</li>
+    <li>$n=2$：$\theta=13.68^\circ$，$\Delta\theta=\dfrac{2(0.43)}{600\cos13.68^\circ}=0.085^\circ$</li>
+  </ol>
+  <div class="final">答：$0.041^\circ$；$0.085^\circ$（高階色散大）。</div>
+  <p class="small"><a href="#sf-2-06b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 七、康普頓效應 ===== -->
+<article class="exam-item" data-exam-id="bz-ex2-4" data-group="七、康普頓效應（§2.7）" data-title="例題 2.4：$10.0\ \text{pm}$ 的散射">
+  <h3>課本例題 2.4</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-4"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>X-rays of wavelength 10.0 pm are scattered from a target.</p><p>(a) Find the wavelength of the x-rays scattered through 45°.</p><p>(b) Find the maximum wavelength present in the scattered x-rays.</p><p>(c) Find the maximum kinetic energy of the recoil electrons.</p></div>
+<p class="original-caption">Beiser Example 2.4 · p.78</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$10.0\ \text{pm}$ 的 X 光被靶散射。(a) 散射 $45^\circ$ 的波長？(b) 散射 X 光的最長波長？(c) 反衝電子的最大動能？</div>
+  <ol class="write">
+    <li>(a) $\lambda'=\lambda+\lambda_C(1-\cos45^\circ)=10.0+(2.426)(0.293)=10.7\ \text{pm}$</li>
+    <li>(b) $\phi=180^\circ$：$\lambda'=\lambda+2\lambda_C=10.0+4.9=14.9\ \text{pm}$</li>
+    <li>(c) $KE_{\max}=hc\left(\dfrac1\lambda-\dfrac1{\lambda'}\right)=\dfrac{(6.626\times10^{-34})(3.00\times10^{8})}{10^{-12}}\left(\dfrac1{10.0}-\dfrac1{14.9}\right)$</li>
+    <li>$=6.54\times10^{-15}\ \text{J}=40.8\ \text{keV}$</li>
+  </ol>
+  <div class="final">答：(a) $10.7\ \text{pm}$；(b) $14.9\ \text{pm}$；(c) $40.8\ \text{keV}$。</div>
+  <p class="small"><a href="#bz-ex2-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="kg-107-7" data-group="七、康普頓效應（§2.7）" data-title="考古 107-7：反衝電子的動能（課本 2-30）">
+  <h3>考古 107-7（課本 2-30）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-7"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>A photon whose initial frequency was $1.5\times10^{19}$ Hz scattered from a rest electron with a frequency of $1.2\times10^{19}$ Hz. How much kinetic energy was imparted to the electron? (10%)</p><p class="original-sub"><strong>課本原文（Beiser Exercise 2-30）</strong></p><p>An x-ray photon whose initial frequency was $1.5\times10^{19}$ Hz emerges from a collision with an electron with a frequency of $1.2\times10^{19}$ Hz. How much kinetic energy was imparted to the electron?</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 7 題 · 即 Beiser 習題 2-30 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　一個初始頻率為 $1.5\times10^{19}\ \text{Hz}$ 的光子被一個靜止的電子散射，散射後頻率為 $1.2\times10^{19}\ \text{Hz}$。有多少動能傳給了電子？（10%）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1S8_OI91D1dtJgl8rm-BjxiMJpXryioZy/view" target="_blank" rel="noopener">107 學年近物期中（2018/10/30）</a> 第 7 題</p>
+  <ol class="write">
+    <li>能量守恆：光子損失的能量 $=$ 電子得到的動能，$KE=h\nu-h\nu'$。</li>
+    <li>$KE=(6.626\times10^{-34}\ \text{J·s})(1.5\times10^{19}-1.2\times10^{19})\ \text{Hz}=1.99\times10^{-15}\ \text{J}$</li>
+    <li>$=\dfrac{1.99\times10^{-15}}{1.602\times10^{-19}}\ \text{eV}=1.24\times10^{4}\ \text{eV}$</li>
+  </ol>
+  <div class="final">答：約 $2.0\times10^{-15}\ \text{J}$（$12\ \text{keV}$）。</div>
+  <p class="small"><a href="#kg-107-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="kg-104-4" data-group="七、康普頓效應（§2.7）" data-title="考古 104-4：光子被質子散射 $45^\circ$">
+  <h3>考古 104-4（質子的康普頓散射）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-104-4"><span class="part-label original-label">考卷原文（題目卷未保存，以考古解答代替）</span>
+<p class="original-note">原卷題目沒有保存；雲端只有「104級上學期近物考古」兩張學生作答卷照片。下面是作答卷第 4 題的逐字轉寫，截圖只保留這一題（不含姓名學號）。</p>
+<div class="original-text" lang="en"><p>4. （圖：photon → 質子，散射 photon 偏 $45^\circ$）</p><p>(a) $\lambda'-\lambda=\frac{h}{mc}(1-\cos\theta)$, $\lambda=\frac{hc}{E}=\frac{hc}{1\,\mathrm{MeV}}$</p><p>$\frac{hc}{E'}=\frac{h}{m_pc}(1-\cos\theta)+\frac{hc}{1\,\mathrm{MeV}}$</p><p>$\frac{1}{E'}=\frac{1}{M_pc^2}(1-\cos\theta)+\frac{1}{1\,\mathrm{MeV}}$</p><p>$\frac{1}{E'}=\frac{1-\cos45^\circ}{938\,\mathrm{MeV}}+\frac{1}{1\,\mathrm{MeV}}$</p><p>$E'=0.999688$ MeV</p><p>(b) $E_k=-\Delta E=E-E'=3.12\times10^{-4}$ MeV</p></div>
+<p class="original-caption">104 級上學期考古 第 4 題（只有作答卷，題目卷未保存）· 質子的康普頓散射</p>
+</section>
+<!-- original-question:end -->
+<strong>題意（原卷未保存，由作答卷推回）</strong>　能量 $1\ \text{MeV}$ 的光子被靜止的自由質子散射，散射角 $45^\circ$。(a) 散射光子能量？(b) 質子得到的動能？</div>
+  <p class="small">作答卷：<a href="https://drive.google.com/file/d/1r5BUNrxuO0NQDuZa20fpPYQy112j4TC3/view" target="_blank" rel="noopener">104 級上學期近物作答卷（DSC_0278）</a> 第 4 題；題目卷未保存</p>
+  <ol class="write">
+    <li>質子版康普頓公式：$\lambda'-\lambda=\dfrac{h}{m_pc}(1-\cos\theta)$；用 $\lambda=hc/E$ 改寫：$\dfrac1{E'}=\dfrac1E+\dfrac{1-\cos\theta}{m_pc^2}$</li>
+    <li>(a) $\dfrac1{E'}=\dfrac1{1\ \text{MeV}}+\dfrac{1-0.70711}{938.3\ \text{MeV}}=1.000312\ \text{MeV}^{-1}\Rightarrow E'=0.999688\ \text{MeV}$</li>
+    <li>(b) $KE_p=E-E'=1-0.999688=3.12\times10^{-4}\ \text{MeV}=312\ \text{eV}$</li>
+  </ol>
+  <div class="final">答：(a) $0.9997\ \text{MeV}$；(b) $3.12\times10^{-4}\ \text{MeV}$（$312\ \text{eV}$）。</div>
+  <p class="small"><a href="#kg-104-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-25" data-group="七、康普頓效應（§2.7）" data-title="課本 2-25：由動量求 X 光頻率">
+  <h3>課本 2-25</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-25"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What is the frequency of an x-ray photon whose momentum is $1.1\times10^{-23}$ kg·m/s?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　動量 $1.1\times10^{-23}\ \text{kg·m/s}$ 的 X 光光子，頻率是多少？</div>
+  <ol class="write">
+    <li>光子 $p=\dfrac{h\nu}{c}\Rightarrow\nu=\dfrac{pc}{h}$</li>
+    <li>$\nu=\dfrac{(1.1\times10^{-23})(3.00\times10^{8})}{6.626\times10^{-34}}=5.0\times10^{18}\ \text{Hz}$</li>
+  </ol>
+  <div class="final">答：$5.0\times10^{18}\ \text{Hz}$。</div>
+  <p class="small"><a href="#bz-2-25">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-26" data-group="七、康普頓效應（§2.7）" data-title="課本 2-26：和 $10\ \text{MeV}$ 質子同動量的光子">
+  <h3>課本 2-26</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-26"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>How much energy must a photon have if it is to have the momentum of a 10-MeV proton?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　光子要有多少能量，才會和動能 $10\ \text{MeV}$ 的質子有相同的動量？</div>
+  <ol class="write">
+    <li>質子：$(pc)^2=KE^2+2KE\,m_pc^2=10^2+2(10)(938.3)=18\,866\ \text{MeV}^2$</li>
+    <li>$pc=137\ \text{MeV}$</li>
+    <li>光子 $E=pc=137\ \text{MeV}$</li>
+  </ol>
+  <div class="final">答：約 $137\ \text{MeV}$。</div>
+  <p class="small"><a href="#bz-2-26">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-27" data-group="七、康普頓效應（§2.7）" data-title="課本 2-27：Na 原子的康普頓波長">
+  <h3>課本 2-27</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-27"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In Sec. 2.7 the x-rays scattered by a crystal were assumed to undergo no change in wavelength. Show that this assumption is reasonable by calculating the Compton wavelength of a Na atom and comparing it with the typical x-ray wavelength of 0.1 nm.</p></div>
+<p class="original-caption">Beiser 習題 2-27 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　課本 Sec. 2.7（實為 §2.6 X 光繞射）假設晶體散射的 X 光波長不變。計算 Na 原子的康普頓波長並和 $0.1\ \text{nm}$ 比較，說明這個假設合理。</div>
+  <ol class="write">
+    <li>晶格中原子整體反衝，用原子質量：$\lambda_{C,\text{Na}}=\dfrac{h}{m_{\text{Na}}c}=\dfrac{6.626\times10^{-34}}{(3.82\times10^{-26})(3.0\times10^{8})}=5.8\times10^{-17}\ \text{m}$</li>
+    <li>$\Delta\lambda_{\max}/\lambda=2(5.8\times10^{-17})/(1\times10^{-10})\approx10^{-6}$，可忽略。</li>
+  </ol>
+  <div class="final">答：$5.8\times10^{-17}\ \text{m}\ll0.1\ \text{nm}$，波長改變可忽略。</div>
+  <p class="small"><a href="#bz-2-27">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-28" data-group="七、康普頓效應（§2.7）" data-title="課本 2-28：$55.8\ \text{pm}$ 散射 $46^\circ$">
+  <h3>課本 2-28</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-28"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A monochromatic x-ray beam whose wavelength is 55.8 pm is scattered through 46°. Find the wavelength of the scattered beam.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　波長 $55.8\ \text{pm}$ 的單色 X 光束被散射 $46^\circ$，散射光束的波長是多少？</div>
+  <ol class="write">
+    <li>$\lambda'=\lambda+\lambda_C(1-\cos\phi)=55.8+2.426(1-\cos46^\circ)$</li>
+    <li>$=55.8+0.74=56.5\ \text{pm}$</li>
+  </ol>
+  <div class="final">答：$56.5\ \text{pm}$。</div>
+  <p class="small"><a href="#bz-2-28">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-29" data-group="七、康普頓效應（§2.7）" data-title="課本 2-29：反推入射波長">
+  <h3>課本 2-29</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-29"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A beam of x-rays is scattered by a target. At 45° from the beam direction the scattered x-rays have a wavelength of 2.2 pm. What is the wavelength of the x-rays in the direct beam?</p></div>
+<p class="original-caption">Beiser 習題 2-29 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　在 $45^\circ$ 散射的 X 光波長 $2.2\ \text{pm}$，直射光束的波長是多少？</div>
+  <ol class="write">
+    <li>$\lambda=\lambda'-\lambda_C(1-\cos\phi)=2.2-(2.426)(1-\cos45^\circ)$</li>
+    <li>$=2.2-0.71=1.5\ \text{pm}$</li>
+  </ol>
+  <div class="final">答：$1.5\ \text{pm}$。</div>
+  <p class="small"><a href="#bz-2-29">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-31" data-group="七、康普頓效應（§2.7）" data-title="課本 2-31：散射 $90^\circ$ 的頻率">
+  <h3>課本 2-31</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-31"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An x-ray photon of initial frequency 3.0 × 10<sup>19</sup> Hz collides with an electron and is scattered through 90°. Find its new frequency.</p></div>
+<p class="original-caption">Beiser 習題 2-31 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$3.0\times10^{19}\ \text{Hz}$ 的 X 光光子被電子散射 $90^\circ$，求新頻率。</div>
+  <ol class="write">
+    <li>$\cos90^\circ=0$：$\lambda'=\lambda+\lambda_C$，即 $\dfrac{c}{\nu'}=\dfrac{c}{\nu}+\lambda_C$</li>
+    <li>$\nu'=\left(\dfrac1{3.0\times10^{19}}+\dfrac{2.426\times10^{-12}}{3.0\times10^{8}}\right)^{-1}=2.4\times10^{19}\ \text{Hz}$</li>
+  </ol>
+  <div class="final">答：$2.4\times10^{19}\ \text{Hz}$。</div>
+  <p class="small"><a href="#bz-2-31">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-32" data-group="七、康普頓效應（§2.7）" data-title="課本 2-32：最多給 $50\ \text{keV}$">
+  <h3>課本 2-32</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-32"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the energy of an x-ray photon which can impart a maximum energy of 50 keV to an electron.</p></div>
+<p class="original-caption">Beiser 習題 2-32 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　X 光光子最多能給電子 $50\ \text{keV}$，求光子能量。</div>
+  <ol class="write">
+    <li>最大轉移在 $\phi=180^\circ$：$KE_{\max}=\dfrac{2E^2}{mc^2+2E}$</li>
+    <li>$50=\dfrac{2E^2}{511+2E}$（keV）$\Rightarrow2E^2-100E-25\,550=0$</li>
+    <li>$E=\dfrac{100+\sqrt{100^2+8(25\,550)}}{4}=141\ \text{keV}$</li>
+  </ol>
+  <div class="final">答：約 $141\ \text{keV}$。</div>
+  <p class="small"><a href="#bz-2-32">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-33" data-group="七、康普頓效應（§2.7）" data-title="課本 2-33：$100\to90\ \text{keV}$ 的角度">
+  <h3>課本 2-33</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-33"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>At what scattering angle will incident 100-keV x-rays leave a target with an energy of 90 keV?</p></div>
+<p class="original-caption">Beiser 習題 2-33 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　入射 $100\ \text{keV}$ X 光在什麼散射角離開時為 $90\ \text{keV}$？</div>
+  <ol class="write">
+    <li>能量形式：$\dfrac1{E'}-\dfrac1E=\dfrac{1-\cos\phi}{mc^2}$</li>
+    <li>$\cos\phi=1-511\left(\dfrac1{90}-\dfrac1{100}\right)=1-0.568=0.432$</li>
+    <li>$\phi=64^\circ$</li>
+  </ol>
+  <div class="final">答：約 $64^\circ$。</div>
+  <p class="small"><a href="#bz-2-33">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-34" data-group="七、康普頓效應（§2.7）" data-title="課本 2-34：$80\ \text{pm}$ 散射 $120^\circ$">
+  <h3>課本 2-34</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-34"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>(a) Find the change in wavelength of 80-pm x-rays that are scattered 120° by a target.</p><p>(b) Find the angle between the directions of the recoil electron and the incident photon.</p><p>(c) Find the energy of the recoil electron.</p></div>
+<p class="original-caption">Beiser 習題 2-34 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$80\ \text{pm}$ X 光散射 $120^\circ$。(a) 波長改變？(b) 反衝電子與入射方向的夾角？(c) 反衝電子能量？</div>
+  <ol class="write">
+    <li>(a) $\Delta\lambda=2.426(1-\cos120^\circ)=3.64\ \text{pm}$，$\lambda'=83.64\ \text{pm}$</li>
+    <li>(b) 由兩個動量分量：$\tan\theta=\dfrac{\sin\phi}{\lambda'/\lambda-\cos\phi}=\dfrac{0.866}{1.0455+0.5}=0.560\Rightarrow\theta=29^\circ$</li>
+    <li>(c) $KE=hc\left(\dfrac1\lambda-\dfrac1{\lambda'}\right)=1.240\times10^{6}\left(\dfrac1{80}-\dfrac1{83.64}\right)\ \text{eV}=674\ \text{eV}$</li>
+  </ol>
+  <div class="final">答：(a) $3.64\ \text{pm}$；(b) $29^\circ$；(c) $674\ \text{eV}$。</div>
+  <p class="small"><a href="#bz-2-34">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-35" data-group="七、康普頓效應（§2.7）" data-title="課本 2-35：最大反衝動能公式">
+  <h3>課本 2-35</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　驗證反衝電子最大動能 $KE_{\max}=\dfrac{2h^2\nu^2/mc^2}{1+2h\nu/mc^2}$。</div>
+  <ol class="write">
+    <li>電子動能 $=h\nu-h\nu'$，最大時 $\phi=180^\circ$，$\lambda'=\lambda+2\lambda_C$。</li>
+    <li>$\dfrac{\nu'}{\nu}=\dfrac{\lambda}{\lambda+2\lambda_C}=\dfrac1{1+2\lambda_C/\lambda}$，且 $\dfrac{\lambda_C}{\lambda}=\dfrac{h}{mc}\dfrac{\nu}{c}=\dfrac{h\nu}{mc^2}$</li>
+    <li>$KE_{\max}=h\nu\left(1-\dfrac1{1+2h\nu/mc^2}\right)=\dfrac{2h^2\nu^2/mc^2}{1+2h\nu/mc^2}$</li>
+  </ol>
+  <div class="final">得證。</div>
+  <p class="small"><a href="#bz-2-35">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-36" data-group="七、康普頓效應（§2.7）" data-title="課本 2-36：反衝電子的動量">
+  <h3>課本 2-36</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-36"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In a Compton-effect experiment in which the incident x-rays have a wavelength of 10.0 pm, the scattered x-rays at a certain angle have a wavelength of 10.5 pm. Find the momentum (magnitude and direction) of the corresponding recoil electrons.</p></div>
+<p class="original-caption">Beiser 習題 2-36 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　入射 $10.0\ \text{pm}$，某角度散射為 $10.5\ \text{pm}$，求反衝電子動量的大小與方向。</div>
+  <ol class="write">
+    <li>$1-\cos\phi=\dfrac{0.5}{2.426}=0.206\Rightarrow\phi=37.4^\circ$</li>
+    <li>$h/\lambda=6.626\times10^{-23}$，$h/\lambda'=6.310\times10^{-23}\ \text{kg·m/s}$</li>
+    <li>$p_x=\dfrac h\lambda-\dfrac h{\lambda'}\cos\phi=1.62\times10^{-23}$；$p_y=-\dfrac h{\lambda'}\sin\phi=-3.84\times10^{-23}$</li>
+    <li>$p=\sqrt{p_x^2+p_y^2}=4.2\times10^{-23}\ \text{kg·m/s}$；$\tan\theta=3.84/1.62\Rightarrow\theta=67^\circ$</li>
+  </ol>
+  <div class="final">答：$4.2\times10^{-23}\ \text{kg·m/s}$，與入射方向夾 $67^\circ$，在散射光子的另一側。</div>
+  <p class="small"><a href="#bz-2-36">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-37" data-group="七、康普頓效應（§2.7）" data-title="課本 2-37：電子以 $40^\circ$ 離開">
+  <h3>課本 2-37</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-37"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A photon whose energy equals the rest energy of the electron undergoes a Compton collision with an electron. If the electron moves off at an angle of 40° with the original photon direction, what is the energy of the scattered photon?</p></div>
+<p class="original-caption">Beiser 習題 2-37 · p.90</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　能量等於電子靜能的光子做康普頓碰撞，電子以和入射方向夾 $40^\circ$ 離開，求散射光子能量。</div>
+  <ol class="write">
+    <li>$E=mc^2\Rightarrow\lambda=\lambda_C$，$\lambda'/\lambda=2-\cos\phi$。</li>
+    <li>$\tan\theta=\dfrac{\sin\phi}{\lambda'/\lambda-\cos\phi}=\dfrac{\sin\phi}{2(1-\cos\phi)}=\dfrac12\cot\dfrac\phi2$</li>
+    <li>$\tan\dfrac\phi2=\dfrac1{2\tan40^\circ}=0.596\Rightarrow\phi=61.6^\circ$</li>
+    <li>$E'=\dfrac{E}{2-\cos\phi}=\dfrac{511}{1.524}=335\ \text{keV}$</li>
+  </ol>
+  <div class="final">答：約 $335\ \text{keV}$。</div>
+  <p class="small"><a href="#bz-2-37">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-38" data-group="七、康普頓效應（§2.7）" data-title="課本 2-38：任意粒子的最大反衝能">
+  <h3>課本 2-38</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-38"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A photon of energy E is scattered by a particle of rest energy E<sub>0</sub>. Find the maximum kinetic energy of the recoiling particle in terms of E and E<sub>0</sub>.</p></div>
+<p class="original-caption">Beiser 習題 2-38 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　能量 $E$ 的光子被靜能 $E_0$ 的粒子散射，求反衝粒子最大動能。</div>
+  <ol class="write">
+    <li>康普頓公式對任何靜止質量的粒子成立：$\dfrac1{E'}=\dfrac1E+\dfrac{1-\cos\phi}{E_0}$</li>
+    <li>最大在 $\phi=180^\circ$：$E'=\dfrac{EE_0}{E_0+2E}$</li>
+    <li>$KE_{\max}=E-E'=\dfrac{2E^2}{E_0+2E}$</li>
+  </ol>
+  <div class="final">答：$KE_{\max}=\dfrac{2E^2}{E_0+2E}$。</div>
+  <p class="small"><a href="#bz-2-38">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-07a" data-group="七、康普頓效應（§2.7）" data-title="自編：兩次 $90^\circ$ 散射與一次 $180^\circ$">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$1.00\ \text{MeV}$ 的光子先被一個靜止的自由電子散射 $90^\circ$，散射後的光子再被另一個靜止電子散射 $90^\circ$。(a) 最後光子的能量是多少？兩個電子各得多少動能？(b) 和一次散射 $180^\circ$ 的結果比較，並證明：連續幾次康普頓散射後的波長只由 $\sum_i(1-\cos\phi_i)$ 決定，和順序無關。(c) 連續三次各 $60^\circ$ 的散射，等效於一次幾度的散射？</div>
+  <ol class="write">
+    <li>$\dfrac1{E'}-\dfrac1E=\dfrac{1-\cos\phi}{mc^2}$</li>
+    <li>$90^\circ$：$\dfrac1{E_1}=1+\dfrac1{0.511}=2.957$，$E_1=0.338\ \text{MeV}$</li>
+    <li>再 $90^\circ$：$\dfrac1{E_2}=2.957+1.957=4.914$，$E_2=0.204\ \text{MeV}$</li>
+    <li>$180^\circ$：$\dfrac1{E'}=1+\dfrac2{0.511}=4.914$，相同</li>
+    <li>相加：$\dfrac1{E_f}-\dfrac1E=\dfrac1{mc^2}\sum(1-\cos\phi_i)$，與順序無關</li>
+    <li>$3\times0.5=1.5=1-\cos\phi\Rightarrow\phi=120^\circ$</li>
+  </ol>
+  <div class="final">答：$0.204\ \text{MeV}$（同一次 $180^\circ$）；三次 $60^\circ$ 等效 $120^\circ$。</div>
+  <p class="small"><a href="#sf-2-07a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-07b" data-group="七、康普頓效應（§2.7）" data-title="自編：康普頓邊緣與背散射峰">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　銫-137 放出 $662\ \text{keV}$ 的 $\gamma$ 射線，用閃爍偵測器量能譜（偵測器讀到的是沉積在晶體裡的能量）。(a) 光子在晶體中只做一次康普頓散射、散射光子逃出晶體時，沉積的能量（反衝電子的動能）最大是多少？這個「康普頓邊緣」為什麼在能譜上是一個陡降？(b) 光子先在偵測器後方的牆壁背散射（$180^\circ$），再進入偵測器被完全吸收，會在能譜的哪裡形成峰？(c) (a)(b) 兩個能量的和是多少？為什麼？</div>
+  <ol class="write">
+    <li>$KE_{\max}=\dfrac{2E^2}{mc^2+2E}=\dfrac{2(662)^2}{511+1324}=478\ \text{keV}$（$\phi=180^\circ$）</li>
+    <li>$\dfrac1{E'}=\dfrac1{662}+\dfrac2{511}\Rightarrow E'=184\ \text{keV}$</li>
+    <li>$478+184=662\ \text{keV}$：同一次 $180^\circ$ 散射，能量守恆</li>
+  </ol>
+  <div class="final">答：康普頓邊緣 $478\ \text{keV}$；背散射峰 $184\ \text{keV}$；和為 $662\ \text{keV}$。</div>
+  <p class="small"><a href="#sf-2-07b">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="pe-cp-1" data-group="七、康普頓效應（§2.7）" data-title="老師指定：光電效應與康普頓效應的差異">
+  <h3>老師指定必考（網站自編）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　請說明光電效應和康普頓效應的差異。（老師上課提示這題會考；作答時除了觀念，最好附上兩條公式，並說明兩個效應各自證明了光的什麼性質。）</div>
+  <ol class="write">
+    <li><b>光子</b>：光電效應中光子被電子完全吸收而消失；康普頓效應中光子被散射，剩下能量較低、波長較長的光子。</li>
+    <li><b>電子</b>：光電效應是金屬中的束縛電子（自由電子不能吸收光子，要靠原子／晶格分擔動量）；康普頓效應是近乎自由的電子。</li>
+    <li><b>守恆律與公式</b>：光電只用能量守恆，$K_{\max}=h\nu-\phi$；康普頓同時用能量與動量守恆，能量式 $h\nu=h\nu'+K_e$，合起來得 $\Delta\lambda=\dfrac{h}{m_ec}(1-\cos\theta)$（$\theta$ 為散射角）。</li>
+    <li><b>能量範圍</b>：光電主要是可見光、紫外線（幾 eV）；康普頓是 X 光、$\gamma$ 射線，因為 $\Delta\lambda\le2h/m_ec=4.85\ \text{pm}$，只有短波長看得出來（$500\ \text{nm}$：$10^{-5}$；$0.1\ \text{nm}$：$5\%$）。</li>
+    <li><b>實驗</b>：光電子在照光瞬間就射出（沒有延遲）；光電量截止電壓，$K_{\max}=eV_0$ 隨頻率線性增加、與強度無關、有截止頻率；康普頓量散射波長，$\Delta\lambda$ 隨散射角增加、與入射波長和強度無關。</li>
+    <li><b>意義</b>：光電證明光子能量 $E=h\nu$；康普頓證明光子動量 $p=h/\lambda$。共同點：都是一個光子對一個電子、都放出電子、都證明光的粒子性。</li>
+  </ol>
+  <div class="final">答：光電效應＝光子被束縛電子吸收（能量守恆，$K_{\max}=h\nu-\phi$，可見／紫外，證明 $E=h\nu$）；康普頓效應＝光子被自由電子散射（能量＋動量守恆，$\Delta\lambda=\frac{h}{m_ec}(1-\cos\theta)$，X／$\gamma$ 射線，證明 $p=h/\lambda$）。</div>
+  <p class="small"><a href="#pe-cp-1">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="pe-cp-2" data-group="七、康普頓效應（§2.7）" data-title="老師指定：自由電子不能吸收光子">
+  <h3>老師指定必考（網站自編）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 證明：一個自由電子不能完全吸收一個光子——吸收後只剩下一個電子的過程，不可能同時守恆能量與動量。先做電子原本靜止的情形，再推廣到電子原本在運動。(b) 由此說明為什麼光電效應一定要有束縛電子。以 $5.0\ \text{eV}$ 的紫外光子照射銅（功函數 $4.7\ \text{eV}$）為例：射出的光電子最大動量是光子動量的幾倍？若光子與光電子動量的差由一個銅原子（靜能 $Mc^2=5.92\times10^{10}\ \text{eV}$）承接，它分走多少動能？(c) 康普頓散射中的電子也是自由電子，為什麼就沒有矛盾？</div>
+  <ol class="write">
+    <li>假設靜止電子吸收光子：能量 $E+mc^2=E_e$，動量 $E/c=p_e$</li>
+    <li>代入 $E_e^2=(mc^2)^2+(p_ec)^2$：$(E+mc^2)^2=(mc^2)^2+E^2\Rightarrow2E\,mc^2=0\Rightarrow E=0$，矛盾</li>
+    <li>電子在動：$S_{\text{前}}=(mc^2)^2+2E(E_0-p_0c\cos\alpha)\gt(mc^2)^2=S_{\text{後}}$，仍矛盾</li>
+    <li>$K_{\max}=0.3\ \text{eV}$，$p_ec=\sqrt{2mc^2K}=554\ \text{eV}\approx110\,p_\gamma c$：多的動量由晶格提供</li>
+    <li>原子接下 $\vec p_\gamma-\vec p_e$：$549\le p_{\text{原子}}c\le559\ \text{eV}$，$KE\le\dfrac{(559)^2}{2(5.92\times10^{10})}=2.6\times10^{-6}\ \text{eV}$，可忽略，故 $h\nu=K_{\max}+\phi$</li>
+    <li>康普頓：末態還有散射光子，能量與動量可同時守恆</li>
+  </ol>
+  <div class="final">答：自由電子不能吸收光子；光電效應要束縛電子（光電子動量約光子的 110 倍，原子承接動量差、只拿約 $3\times10^{-6}\ \text{eV}$）；康普頓有第二個粒子，不矛盾。</div>
+  <p class="small"><a href="#pe-cp-2">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="pe-cp-3" data-group="七、康普頓效應（§2.7）" data-title="老師指定：同一光子的兩種命運">
+  <h3>老師指定必考（網站自編）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　分別取 (i) $400\ \text{nm}$ 的紫光、(ii) $0.0500\ \text{nm}$ 的 X 光。(a) 光子打在鈉金屬（功函數 $2.28\ \text{eV}$）表面，光電子的最大動能 $K_{\max}$ 各是多少？(b) 若改被靜止的自由電子散射，散射角 $90^\circ$ 時的波長改變 $\Delta\lambda$、相對改變 $\Delta\lambda/\lambda$、反衝電子的動能各是多少？最大可能的 $\Delta\lambda/\lambda$（$\theta=180^\circ$）又是多少？(c) 用 (a)(b) 的數字說明：為什麼可見光看不到康普頓效應、X 光看得到；以及為什麼對 X 光來說功函數幾乎無關緊要。</div>
+  <ol class="write">
+    <li>$E=hc/\lambda$：紫光 $1240/400=3.10\ \text{eV}$；X 光 $1240/0.0500=24.8\ \text{keV}$</li>
+    <li>$K_{\max}=E-\phi$：紫光 $0.82\ \text{eV}$；X 光 $24.8\ \text{keV}$（$\phi$ 只占 $10^{-4}$）</li>
+    <li>$90^\circ$：$\Delta\lambda=\lambda_C=2.43\ \text{pm}$（兩者相同）；$\Delta\lambda/\lambda$：$6.1\times10^{-6}$、$4.85\%$；$180^\circ$：$1.2\times10^{-5}$、$9.7\%$</li>
+    <li>$K=E\dfrac{\Delta\lambda}{\lambda+\Delta\lambda}$：紫光 $1.9\times10^{-5}\ \text{eV}$；X 光 $1.15\ \text{keV}$</li>
+    <li>可見光：相對位移太小，且給電子的能量遠小於束縛能，電子不自由 → 看不到；X 光：位移約 $5\%$、電子可視為自由 → 看得到</li>
+  </ol>
+  <div class="final">答：(a) $0.82\ \text{eV}$、$24.8\ \text{keV}$；(b) $\Delta\lambda=2.43\ \text{pm}$，$\Delta\lambda/\lambda=6.1\times10^{-6}$、$4.85\%$，$K=1.9\times10^{-5}\ \text{eV}$、$1.15\ \text{keV}$；(c) 見第 5 行。</div>
+  <p class="small"><a href="#pe-cp-3">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="pe-cp-4" data-group="七、康普頓效應（§2.7）" data-title="老師指定：康普頓電子 vs 光電子">
+  <h3>老師指定必考（網站自編）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　鉬靶 X 光管發出的 K$\alpha$ 線波長 $\lambda=71.0\ \text{pm}$。(a) 這個光子被靜止的自由電子散射 $90^\circ$：求散射光子的波長與能量、反衝電子的動能與方向。(b) 同一個光子若被銅原子 K 殼層的電子（束縛能 $B=8.98\ \text{keV}$）吸收，射出的光電子動能是多少？(c) 兩種情況中電子各拿到光子能量的百分之幾？若用偵測器量電子的能量分布，兩種過程的電子看起來有什麼不同？（提示：康普頓電子的最大動能出現在 $180^\circ$。）</div>
+  <ol class="write">
+    <li>$E=hc/\lambda=1240/71.0=17.46\ \text{keV}$</li>
+    <li>$\lambda'=\lambda+\lambda_C(1-\cos90^\circ)=73.43\ \text{pm}$，$E'=16.89\ \text{keV}$</li>
+    <li>$K=E-E'=0.577\ \text{keV}$；$\tan\theta_e=\dfrac{\sin\theta}{\lambda'/\lambda-\cos\theta}=\dfrac{71.0}{73.43}$，$\theta_e=44.0^\circ$</li>
+    <li>光電：$K=E-B=17.46-8.98=8.48\ \text{keV}$</li>
+    <li>比例：康普頓 $3.3\%$（最多 $\dfrac{2E^2}{mc^2+2E}=1.12\ \text{keV}$，$6.4\%$）；光電 $48.6\%$。康普頓電子 $0$～$1.12\ \text{keV}$ 連續分布，光電子是固定能量的一條線</li>
+  </ol>
+  <div class="final">答：(a) $73.43\ \text{pm}$、$16.89\ \text{keV}$，電子 $0.577\ \text{keV}$、$44.0^\circ$；(b) $8.48\ \text{keV}$；(c) $3.3\%$ 對 $48.6\%$，連續譜對一條線。</div>
+  <p class="small"><a href="#pe-cp-4">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="pe-cp-5" data-group="七、康普頓效應（§2.7）" data-title="老師指定：先散射再打金屬">
+  <h3>老師指定必考（網站自編）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　波長 $\lambda=0.1350\ \text{nm}$ 的 X 光被石墨中近乎自由的電子康普頓散射，散射光子再射到一片銅上。銅的功函數 $\phi=4.7\ \text{eV}$，銅原子 K 殼層電子的束縛能 $B_K=8.98\ \text{keV}$。(a) 散射角 $\theta=60^\circ$ 與 $150^\circ$ 時，散射光子打在銅表面產生的光電子最大動能各是多少？(b) 這兩個角度的散射光子還能不能把銅的 K 殼層電子打出來？求能打出 K 殼層電子的最大散射角。(c) 若改用 $500\ \text{nm}$ 的可見光（假設電子仍可看成自由）散射後照在鉀（$\phi=2.2\ \text{eV}$）上，有沒有某個散射角會讓散射光再也打不出光電子？寫出一般的判斷條件。</div>
+  <ol class="write">
+    <li>$E=1240/135.0=9.185\ \text{keV}$</li>
+    <li>$60^\circ$：$\lambda'=135.0+2.426(0.5)=136.21\ \text{pm}$，$E'=9.103\ \text{keV}$，$K_{\max}=E'-\phi=9.10\ \text{keV}$</li>
+    <li>$150^\circ$：$\lambda'=135.0+2.426(1.866)=139.53\ \text{pm}$，$E'=8.887\ \text{keV}$，$K_{\max}=8.88\ \text{keV}$</li>
+    <li>K 殼層：$\lambda_K=1240/8.98=138.08\ \text{pm}$；$60^\circ$ 可以（$0.123\ \text{keV}$）、$150^\circ$ 不行；$1-\cos\theta_c=\dfrac{138.085-135.0}{2.426}=1.2715$，$\theta_c=105.75^\circ\approx106^\circ$（對常數敏感，約 $\pm0.5^\circ$）</li>
+    <li>可見光：$\lambda_0=1240/2.2=564\ \text{nm}\gt500+0.005\ \text{nm}$，任何角度都有光電子；條件 $\lambda+2\lambda_C\le hc/\phi$</li>
+  </ol>
+  <div class="final">答：(a) $9.10\ \text{keV}$、$8.88\ \text{keV}$；(b) $60^\circ$ 可、$150^\circ$ 不可，$\theta_c\approx106^\circ$（$105.8^\circ$）；(c) 不會，因 $2\lambda_C$ 遠小於 $\lambda_0-\lambda$。</div>
+  <p class="small"><a href="#pe-cp-5">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="pe-cp-6" data-group="七、康普頓效應（§2.7）" data-title="老師指定：由實驗數據判斷效應">
+  <h3>老師指定必考（網站自編）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　實驗甲：用不同波長的單色光照射同一塊金屬板，量截止電壓 $V_0$：$\lambda=250,300,350,400\ \text{nm}$ 時 $V_0=1.76,\ 0.93,\ 0.34\ \text{V}$、沒有光電流。光的強度加倍時，$V_0$ 不變、光電流加倍；$400\ \text{nm}$ 的光就算強度加到 10 倍也沒有電流。實驗乙：波長 $70.80\ \text{pm}$ 的單色 X 光射向石墨，散射角 $0^\circ,45^\circ,90^\circ,135^\circ$ 的峰分別在 $70.80$；$70.80$、$71.51$；$70.80$、$73.23$；$70.80$、$74.94\ \text{pm}$。X 光強度加倍時，峰的位置不變，只有峰變高。(a) 甲、乙各是哪一種效應？各寫出兩個判斷依據。(b) 由甲求 Planck 常數與功函數，判斷金屬可能是什麼（Table 2.1），並解釋 $400\ \text{nm}$ 為什麼沒有電流。(c) 由乙求康普頓波長和散射粒子的質量，判斷被撞的是什麼粒子；每個角度都有的 $70.80\ \text{pm}$ 峰怎麼解釋？</div>
+  <ol class="write">
+    <li>甲：量電子的截止電壓、有截止波長、$V_0$ 與強度無關 → 光電效應；乙：量散射光波長、位移隨角度增加、與強度無關 → 康普頓效應</li>
+    <li>$\nu=c/\lambda$：$1.200\times10^{15}$、$1.000\times10^{15}$、$8.571\times10^{14}\ \text{Hz}$</li>
+    <li>$h=\dfrac{e(1.76-0.34)}{(12.00-8.571)\times10^{14}\ \text{Hz}}=4.14\times10^{-15}\ \text{eV·s}=6.63\times10^{-34}\ \text{J·s}$</li>
+    <li>$\phi=h\nu-eV_0=4.97-1.76=3.21\ \text{eV}$（鈣）；$400\ \text{nm}$：$h\nu=3.11\ \text{eV}\lt\phi$</li>
+    <li>$\lambda_C=\dfrac{\Delta\lambda}{1-\cos\theta}=\dfrac{4.14}{1.707}=2.425\ \text{pm}$；$m=\dfrac{h}{\lambda_Cc}=9.11\times10^{-31}\ \text{kg}$，電子</li>
+    <li>不位移峰：束縛緊的電子讓整個碳原子反衝，$\lambda_C=h/Mc=1.1\times10^{-4}\ \text{pm}$，量不到</li>
+  </ol>
+  <div class="final">答：(a) 甲光電、乙康普頓；(b) $h\approx4.14\times10^{-15}\ \text{eV·s}$、$\phi\approx3.21\ \text{eV}$（鈣），$400\ \text{nm}$ 光子能量不足；(c) $\lambda_C\approx2.43\ \text{pm}$，$m\approx9.1\times10^{-31}\ \text{kg}$（電子），不位移峰來自整個原子反衝。</div>
+  <p class="small"><a href="#pe-cp-6">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 八、成對產生與湮滅 ===== -->
+<article class="exam-item" data-exam-id="bz-ex2-5" data-group="八、成對產生與湮滅（§2.8）" data-title="例題 2.5：真空中不能成對產生">
+  <h3>課本例題 2.5</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-5"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Show that pair production cannot occur in empty space.</p></div>
+<p class="original-caption">Beiser Example 2.5 · p.81–82 · 也是 109上 考古第 3 題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　證明成對產生不能在真空中發生。</div>
+  <ol class="write">
+    <li>能量守恆：$h\nu=2\gamma mc^2$（橫向動量守恆 ⟹ 兩粒子對稱，動量大小 $p$、夾角 $\theta$ 相同）。</li>
+    <li>光子方向動量守恆：$\dfrac{h\nu}{c}=2p\cos\theta\Rightarrow h\nu=2pc\cos\theta=2\gamma mc^2\dfrac vc\cos\theta$</li>
+    <li>因 $v/c<1$、$\cos\theta\le1$：$h\nu<2\gamma mc^2$，與能量守恆矛盾。</li>
+    <li>須有原子核帶走部分動量。</li>
+  </ol>
+  <div class="final">得證：真空中能量與動量不能同時守恆。</div>
+  <p class="small"><a href="#bz-ex2-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-ex2-6" data-group="八、成對產生與湮滅（§2.8）" data-title="例題 2.6：並排 $0.500c$ 湮滅">
+  <h3>課本例題 2.6</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-6"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>An electron and a positron are moving side by side in the $+x$ direction at 0.500c when they annihilate each other. Two photons are produced that move along the $x$ axis.</p><p>(a) Do both photons move in the $+x$ direction?</p><p>(b) What is the energy of each photon?</p></div>
+<p class="original-caption">Beiser Example 2.6 · p.82</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　電子與正子並排以 $0.500c$ 沿 $+x$ 運動時湮滅，產生兩個沿 $x$ 軸的光子。(a) 兩個都往 $+x$ 嗎？(b) 各自的能量？</div>
+  <ol class="write">
+    <li>(a) 質心系中兩光子反向；質心系速率 $\lt c$，換回實驗室後方向不變：一個 $+x$、一個 $-x$。</li>
+    <li>(b) 動量：$p_1-p_2=2\gamma mv=\dfrac{2(0.511)(0.500)}{\sqrt{1-0.25}}=0.590\ \text{MeV}/c$</li>
+    <li>能量：$p_1c+p_2c=2\gamma mc^2=\dfrac{2(0.511)}{\sqrt{0.75}}=1.180\ \text{MeV}$</li>
+    <li>$p_1=0.885\ \text{MeV}/c$，$p_2=0.295\ \text{MeV}/c$；$E=pc$</li>
+  </ol>
+  <div class="final">答：(a) 否；(b) $+x$：$0.885\ \text{MeV}$，$-x$：$0.295\ \text{MeV}$。</div>
+  <p class="small"><a href="#bz-ex2-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="kg-107-8" data-group="八、成對產生與湮滅（§2.8）" data-title="考古 107-8：正子湮滅（課本 2-40）">
+  <h3>考古 107-8（課本 2-40）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-8"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>A positron with a kinetic energy of 2.0 MeV collider with an electron at rest and two particles are annihilated. After the annihilation, two photons are produced. What are the energies of these two photons? (15%)</p><p class="original-sub"><strong>課本原文（Beiser Exercise 2-40）</strong></p><p>A positron with a kinetic energy of 2.000 MeV collides with an electron at rest and the two particles are annihilated. Two photons are produced; one moves in the same direction as the incoming positron and the other moves in the opposite direction. Find the energies of the photons.</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 8 題 · 即 Beiser 習題 2-40 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　動能 $2.0\ \text{MeV}$ 的正子和一個靜止的電子碰撞，兩個粒子湮滅。湮滅後產生兩個光子。這兩個光子的能量各是多少？（15%）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1S8_OI91D1dtJgl8rm-BjxiMJpXryioZy/view" target="_blank" rel="noopener">107 學年近物期中（2018/10/30）</a> 第 8 題</p>
+  <ol class="write">
+    <li>（依課本習題 2-40 的題意：一個光子沿正子入射方向、一個沿反方向。）</li>
+    <li>能量守恆：$E_1+E_2=(KE+mc^2)+mc^2=2.0+1.022=3.022\ \text{MeV}$</li>
+    <li>正子動量：$pc=\sqrt{KE^2+2KE\,mc^2}=\sqrt{4.0+2.044}=2.458\ \text{MeV}$</li>
+    <li>動量守恆：$\dfrac{E_1}c-\dfrac{E_2}c=p\Rightarrow E_1-E_2=2.458\ \text{MeV}$</li>
+    <li>$E_1=\dfrac{3.022+2.458}2=2.740\ \text{MeV}$，$E_2=\dfrac{3.022-2.458}2=0.282\ \text{MeV}$</li>
+  </ol>
+  <div class="final">答：$2.74\ \text{MeV}$（沿入射方向）與 $0.28\ \text{MeV}$（反方向）。</div>
+  <p class="small"><a href="#kg-107-8">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="kg-109-4" data-group="八、成對產生與湮滅（§2.8）" data-title="考古 109-4：$3\ \text{MeV}$ 正子湮滅（改自課本 2-40）">
+  <h3>考古 109-4（改自課本 2-40）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-109-4"><span class="part-label original-label">考卷原文（題目卷未保存，以考古解答代替）</span>
+<p class="original-note">原卷題目沒有保存；雲端只有「109上近物考古解答」一張手寫解答。下面是解答中這一題的逐字轉寫，截圖只保留這一題。</p>
+<div class="original-text" lang="en"><p>4. $e^+\to e^-$　$E_1=3+0.51$, $E_2=0.51$ MeV.</p><p>（圖：$\leftarrow\gamma_2$　$\gamma_1\rightarrow$）　$P_1=0.0115$ eV·s/m　$P_2=0$.</p><p>$E_1'+E_2'=4.02$ MeV　　$E_1'=3.735$ MeV</p><p>$c(P_1'-P_2')=3.45$ MeV.　　$E_2'=0.285$ MeV</p></div>
+<p class="original-caption">109 學年上學期考古 第 4 題（只有手寫解答，題目卷未保存）· 改自 Beiser 習題 2-40 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題意（原卷未保存，由手寫解答推回）</strong>　動能 $3\ \text{MeV}$ 的正子撞上靜止電子並湮滅，產生兩個光子，一個沿入射方向、一個反向。求兩光子的能量。</div>
+  <p class="small">考古解答：<a href="https://drive.google.com/file/d/1kBTBH1VbH9L4nq8MXrVEh2tXw2ZeBt4t/view" target="_blank" rel="noopener">109 學年上學期近物考古解答（手寫）</a> 右欄第 4 題；題目卷未保存</p>
+  <ol class="write">
+    <li>能量守恆：$E_1+E_2=(KE+mc^2)+mc^2=3+1.022=4.022\ \text{MeV}$</li>
+    <li>正子動量：$pc=\sqrt{KE^2+2KE\,mc^2}=\sqrt{9+3.066}=3.474\ \text{MeV}$</li>
+    <li>動量守恆：$\dfrac{E_1}c-\dfrac{E_2}c=p\Rightarrow E_1-E_2=3.474\ \text{MeV}$</li>
+    <li>$E_1=\dfrac{4.022+3.474}2=3.748\ \text{MeV}$，$E_2=\dfrac{4.022-3.474}2=0.274\ \text{MeV}$</li>
+  </ol>
+  <div class="final">答：$3.75\ \text{MeV}$（沿入射方向）與 $0.274\ \text{MeV}$（反方向）。（手寫解答的 $3.735$、$0.285$ 是把 $pc$ 算成 $3.45$ 的誤差。）</div>
+  <p class="small"><a href="#kg-109-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-39" data-group="八、成對產生與湮滅（§2.8）" data-title="課本 2-39：迎面湮滅的波長">
+  <h3>課本 2-39</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-39"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A positron collides head on with an electron and both are annihilated. Each particle had a kinetic energy of 1.00 MeV. Find the wavelength of the resulting photons.</p></div>
+<p class="original-caption">Beiser 習題 2-39 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　正子與電子迎面相撞湮滅，兩者動能都是 $1.00\ \text{MeV}$，求光子波長。</div>
+  <ol class="write">
+    <li>總動量為零：兩光子反向、能量相等，各 $E=KE+mc^2=1.511\ \text{MeV}$。</li>
+    <li>$\lambda=\dfrac{hc}{E}=\dfrac{1.240\times10^{-6}}{1.511\times10^{6}}=8.21\times10^{-13}\ \text{m}$</li>
+  </ol>
+  <div class="final">答：$0.821\ \text{pm}$。</div>
+  <p class="small"><a href="#bz-2-39">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-41" data-group="八、成對產生與湮滅（§2.8）" data-title="課本 2-41：散射超過 $60^\circ$">
+  <h3>課本 2-41</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-41"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show that, regardless of its initial energy, a photon cannot undergo Compton scattering through an angle of more than 60° and still be able to produce an electron-positron pair. (Hint: Start by expressing the Compton wavelength of the electron in terms of the maximum photon wavelength needed for pair production.)</p></div>
+<p class="original-caption">Beiser 習題 2-41 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　證明不論起初能量多大，光子經康普頓散射超過 $60^\circ$ 後就不能再產生電子–正子對。</div>
+  <ol class="write">
+    <li>成對產生最大波長 $\lambda_{\max}=\dfrac{hc}{2mc^2}=\dfrac12\dfrac h{mc}=\dfrac{\lambda_C}2$。</li>
+    <li>散射後 $\lambda'=\lambda+\lambda_C(1-\cos\phi)>\lambda_C(1-\cos\phi)$。</li>
+    <li>要 $\lambda'\le\lambda_C/2$：$1-\cos\phi<\tfrac12\Rightarrow\phi<60^\circ$。</li>
+  </ol>
+  <div class="final">得證：$\phi\ge60^\circ$ 時散射光子能量必小於 $2mc^2$。</div>
+  <p class="small"><a href="#bz-2-41">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-42" data-group="八、成對產生與湮滅（§2.8）" data-title="課本 2-42：考慮原子核的門檻">
+  <h3>課本 2-42</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 驗證在靜止原子核 $M$ 附近成對產生的最小光子能量為 $2mc^2(1+m/M)$。(b) 在質子附近的門檻？</div>
+  <ol class="write">
+    <li>不變量 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 守恆。前：$(E+Mc^2)^2-E^2=2EMc^2+M^2c^4$。</li>
+    <li>門檻時產物一起運動：後 $=(2m+M)^2c^4$。</li>
+    <li>$2EMc^2=(4m^2+4mM)c^4\Rightarrow E_{\min}=2mc^2\left(1+\dfrac mM\right)$</li>
+    <li>(b) $E_{\min}=1.022(1+0.511/938.3)=1.0226\ \text{MeV}$</li>
+  </ol>
+  <div class="final">答：(a) 得證；(b) 約 $1.023\ \text{MeV}$。</div>
+  <p class="small"><a href="#bz-2-42">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-08a" data-group="八、成對產生與湮滅（§2.8）" data-title="自編：PET 定位與兩光子不共線">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　正子斷層掃描（PET）中，正子在體內停下後和電子湮滅成兩個光子，由相距 $D=0.80\ \text{m}$、面對面的兩個偵測器記錄。(a) 若湮滅前電子–正子系統的總動量為零，兩個光子的能量與方向為何？(b) 兩個偵測器收到光子的時間差是 $0.40\ \text{ns}$，湮滅點離兩偵測器的中點多遠？(c) 實際上原子中電子的動能約 $10\ \text{eV}$，讓系統帶有一個小動量（設全部垂直於光子方向）。估計兩個光子偏離 $180^\circ$ 的角度，以及在中點湮滅時，$0.40\ \text{m}$ 外的偵測器上光子偏離直線多遠。</div>
+  <ol class="write">
+    <li>$p_{\text{tot}}=0$：兩光子反向、各 $mc^2=0.511\ \text{MeV}$</li>
+    <li>$c\,\Delta t=2s\Rightarrow s=\dfrac{(3.00\times10^8)(0.40\times10^{-9})}{2}=6.0\ \text{cm}$</li>
+    <li>$pc=\sqrt{2KE\,mc^2}=\sqrt{2(10)(511\times10^3)}\ \text{eV}=3.2\ \text{keV}$</li>
+    <li>$\delta\approx\dfrac{pc}{mc^2}=\dfrac{3.2}{511}=6.3\times10^{-3}\ \text{rad}=0.36^\circ$；偏移 $0.40\delta=2.5\ \text{mm}$</li>
+  </ol>
+  <div class="final">答：各 $0.511\ \text{MeV}$；$6.0\ \text{cm}$；$0.36^\circ$、$2.5\ \text{mm}$。</div>
+  <p class="small"><a href="#sf-2-08a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-08b" data-group="八、成對產生與湮滅（§2.8）" data-title="自編：成對產生時原子核拿走多少">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$5.00\ \text{MeV}$ 的光子在鉛原子核附近產生電子–正子對，設兩者平分動能。(a) 每個粒子的動能和動量各是多少？(b) 即使兩個粒子都沿光子原來的方向飛，它們的總動量也比光子的動量少多少？差額由誰提供？(c) 鉛原子核（$Mc^2\approx1.93\times10^{5}\ \text{MeV}$）因此得到的動能約多少？用這個數字說明「原子核帶走動量、但幾乎不分走能量」。</div>
+  <ol class="write">
+    <li>$KE=\dfrac{5.00-1.022}{2}=1.989\ \text{MeV}$</li>
+    <li>$pc=\sqrt{KE^2+2KE\,mc^2}=2.447\ \text{MeV}$</li>
+    <li>同向最大 $4.894\ \text{MeV}/c\lt 5.00$，原子核至少拿 $0.106\ \text{MeV}/c$</li>
+    <li>$KE_{\text{核}}=\dfrac{(0.106)^2}{2(1.93\times10^5)}\ \text{MeV}=2.9\times10^{-8}\ \text{MeV}$</li>
+  </ol>
+  <div class="final">答：$1.99\ \text{MeV}$、$2.45\ \text{MeV}/c$；$\ge0.106\ \text{MeV}/c$；約 $0.03\ \text{eV}$。</div>
+  <p class="small"><a href="#sf-2-08b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 九、光子的吸收 ===== -->
+<article class="exam-item" data-exam-id="kg-115-2" data-group="九、光子的吸收（§2.8）" data-title="考古 115-2：三種光子作用的比較">
+  <h3>考古 115-2（課本 Fig. 2.27）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>原卷題目</strong>　〔原卷附圖：三列示意圖，每列都是能量 $h\nu$ 的光子（波浪箭頭）射向一個原子（標示 Atom）。(i) 作用後原子射出一個電子，沒有光子出來；(ii) 作用後射出一個能量 $h\nu'$ 的光子和一個電子；(iii) 作用後射出兩個粒子。〕<svg class="exam-sketch" viewBox="0 0 270 186" width="270" style="display:block;max-width:100%;height:auto;margin:6px 0;color:var(--ink)" role="img" aria-label="原卷附圖示意：三列光子射向原子的過程"><text x="6" y="30" font-size="13" fill="currentColor">(i)</text><path d="M46.0 26.0 L47.5 27.8 L49.0 28.9 L50.4 28.9 L51.9 27.8 L53.4 26.0 L54.9 24.2 L56.3 23.1 L57.8 23.1 L59.3 24.2 L60.8 26.0 L62.2 27.8 L63.7 28.9 L65.2 28.9 L66.7 27.8 L68.1 26.0 L69.6 24.2 L71.1 23.1 L72.5 23.1 L74.0 24.2 L75.5 26.0 L77.0 27.8 L78.5 28.9 L79.9 28.9 L81.4 27.8 L82.9 26.0 L84.3 24.2 L85.8 23.1 L87.3 23.1 L88.8 24.2 L90.2 26.0 L91.7 27.8 L93.2 28.9 L94.7 28.9 L96.2 27.8 L97.6 26.0 L99.1 24.2 L100.6 23.1 L102.0 23.1 L103.5 24.2 L105.0 26.0" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="112.0,26.0 105.0,29.5 105.0,22.5" fill="currentColor"/><circle cx="128" cy="26" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="178" cy="26" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="194.0" cy="26.0" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="198.0" y1="26.0" x2="229.0" y2="26.0" stroke="currentColor" stroke-width="1.4"/><polygon points="236.0,26.0 229.0,29.5 229.0,22.5" fill="currentColor"/><text x="6" y="96" font-size="13" fill="currentColor">(ii)</text><path d="M46.0 92.0 L47.5 93.8 L49.0 94.9 L50.4 94.9 L51.9 93.8 L53.4 92.0 L54.9 90.2 L56.3 89.1 L57.8 89.1 L59.3 90.2 L60.8 92.0 L62.2 93.8 L63.7 94.9 L65.2 94.9 L66.7 93.8 L68.1 92.0 L69.6 90.2 L71.1 89.1 L72.5 89.1 L74.0 90.2 L75.5 92.0 L77.0 93.8 L78.5 94.9 L79.9 94.9 L81.4 93.8 L82.9 92.0 L84.3 90.2 L85.8 89.1 L87.3 89.1 L88.8 90.2 L90.2 92.0 L91.7 93.8 L93.2 94.9 L94.7 94.9 L96.2 93.8 L97.6 92.0 L99.1 90.2 L100.6 89.1 L102.0 89.1 L103.5 90.2 L105.0 92.0" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="112.0,92.0 105.0,95.5 105.0,88.5" fill="currentColor"/><circle cx="128" cy="92" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="178" cy="92" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><path d="M190.0 86.0 L191.9 87.2 L193.6 87.8 L194.9 87.4 L195.9 85.9 L196.7 83.8 L197.4 81.7 L198.4 80.2 L199.8 79.7 L201.4 80.3 L203.3 81.6 L205.2 82.8 L206.9 83.4 L208.2 82.9 L209.2 81.4 L210.0 79.3 L210.8 77.2 L211.8 75.7 L213.1 75.3 L214.8 75.9 L216.7 77.1 L218.6 78.3 L220.2 78.9 L221.6 78.5 L222.6 77.0 L223.3 74.9 L224.1 72.8 L225.1 71.3 L226.4 70.8 L228.1 71.4 L230.0 72.7 L231.9 73.9 L233.6 74.5 L234.9 74.0 L235.9 72.6 L236.7 70.4 L237.5 68.3 L238.5 66.8 L239.8 66.4 L241.5 67.0 L243.4 68.2" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="250.0,66.0 244.5,71.5 242.3,64.9" fill="currentColor"/><circle cx="193.0" cy="98.0" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="196.0" y1="100.0" x2="221.6" y2="111.2" stroke="currentColor" stroke-width="1.4"/><polygon points="228.0,114.0 220.2,114.4 223.0,108.0" fill="currentColor"/><text x="6" y="162" font-size="13" fill="currentColor">(iii)</text><path d="M46.0 158.0 L47.5 159.8 L49.0 160.9 L50.4 160.9 L51.9 159.8 L53.4 158.0 L54.9 156.2 L56.3 155.1 L57.8 155.1 L59.3 156.2 L60.8 158.0 L62.2 159.8 L63.7 160.9 L65.2 160.9 L66.7 159.8 L68.1 158.0 L69.6 156.2 L71.1 155.1 L72.5 155.1 L74.0 156.2 L75.5 158.0 L77.0 159.8 L78.5 160.9 L79.9 160.9 L81.4 159.8 L82.9 158.0 L84.3 156.2 L85.8 155.1 L87.3 155.1 L88.8 156.2 L90.2 158.0 L91.7 159.8 L93.2 160.9 L94.7 160.9 L96.2 159.8 L97.6 158.0 L99.1 156.2 L100.6 155.1 L102.0 155.1 L103.5 156.2 L105.0 158.0" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="112.0,158.0 105.0,161.5 105.0,154.5" fill="currentColor"/><circle cx="128" cy="158" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="178" cy="158" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="193.0" cy="152.0" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="196.0" y1="150.0" x2="219.7" y2="139.0" stroke="currentColor" stroke-width="1.4"/><polygon points="226.0,136.0 221.1,142.1 218.2,135.8" fill="currentColor"/><circle cx="193.0" cy="164.0" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="196.0" y1="166.0" x2="219.7" y2="177.0" stroke="currentColor" stroke-width="1.4"/><polygon points="226.0,180.0 218.2,180.2 221.1,173.9" fill="currentColor"/></svg>在上面三個過程中，(a) 哪一個是康普頓散射？(b) 就入射光子的能量而言，哪一個最大？為什麼？(c) 詳細比較過程 (i) 與 (ii)。</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1ZD3edbQ8erZaCwr0vOx7_cSdz-Am3SrH/view" target="_blank" rel="noopener">115 級上學期近物期中</a> 第 2 題</p>
+  <ol class="write">
+    <li>(a) (ii) 是康普頓散射（(i) 光電效應、(iii) 成對產生）。</li>
+    <li>(b) (iii) 最大：要產生電子與正子，至少提供兩份靜能 $h\nu\ge2mc^2=1.02\ \text{MeV}$；光電效應只需超過功函數／束縛能，康普頓主要在數十 keV 到數 MeV。</li>
+    <li>(c) 光子：(i) 被完全吸收而消失；(ii) 散射成能量較低、波長較長的光子。</li>
+    <li>能量：(i) $h\nu=KE_{\max}+\phi$；(ii) $h\nu=h\nu'+KE$，$\lambda'-\lambda=\dfrac h{mc}(1-\cos\phi)$，分配由角度決定。</li>
+    <li>電子：(i) 須為束縛電子（自由電子不能吸收整個光子，原子分擔動量）；(ii) 可視為自由電子，光子與電子能量、動量皆守恆。</li>
+    <li>能量範圍：(i) 低能（可見、紫外到低能 X 光）為主，原子序越大範圍越寬；(ii) 較高能為主：輕元素約數十 keV 到 $10\ \text{MeV}$ 以上，重元素約 $0.5$–$4\ \text{MeV}$。</li>
+    <li>共同：都是一個光子與一個電子作用並放出電子；(i) 證明光子能量 $h\nu$，(ii) 再證明光子動量 $h\nu/c$。</li>
+  </ol>
+  <div class="final">答：(a) (ii)；(b) (iii)，因需 $h\nu\ge2mc^2$；(c) 見上。</div>
+  <p class="small"><a href="#kg-115-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-ex2-7" data-group="九、光子的吸收（§2.8）" data-title="例題 2.7：$\gamma$ 射線在水中">
+  <h3>課本例題 2.7</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-7"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>The linear attenuation coefficient for 2.0-MeV gamma rays in water is 4.9 m$^{-1}$.</p><p>(a) Find the relative intensity of a beam of 2.0-MeV gamma rays after it has passed through 10 cm of water.</p><p>(b) How far must such a beam travel in water before its intensity is reduced to 1 percent of its original value?</p></div>
+<p class="original-caption">Beiser Example 2.7 · p.85</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$2.0\ \text{MeV}$ $\gamma$ 射線在水中 $\mu=4.9\ \text{m}^{-1}$。(a) 通過 $10\ \text{cm}$ 水後的相對強度？(b) 要多遠強度才降到 $1\%$？</div>
+  <ol class="write">
+    <li>(a) $\mu x=(4.9)(0.10)=0.49$，$I/I_0=e^{-0.49}=0.61$</li>
+    <li>(b) $x=\dfrac{\ln(I_0/I)}{\mu}=\dfrac{\ln100}{4.9}=0.94\ \text{m}$</li>
+  </ol>
+  <div class="final">答：(a) $61\%$；(b) $0.94\ \text{m}$。</div>
+  <p class="small"><a href="#bz-ex2-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="kg-107-9" data-group="九、光子的吸收（§2.8）" data-title="考古 107-9：鉛的半值厚度（課本 2-45）">
+  <h3>考古 107-9（課本 2-45）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-9"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficient for 1 MeV gamma ray in lead is 78 m$^{-1}$. Find the thickness of lead required to reduce by half of the intensity of a beam of such gamma ray (10%)</p><p class="original-sub"><strong>課本原文（Beiser Exercise 2-45）</strong></p><p>The linear absorption coefficient for 1-MeV gamma rays in lead is 78 m$^{-1}$. Find the thickness of lead required to reduce by half the intensity of a beam of such gamma rays.</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 9 題 · 即 Beiser 習題 2-45 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　$1\ \text{MeV}$ $\gamma$ 射線在鉛中的線性吸收係數為 $78\ \text{m}^{-1}$。求要使這種 $\gamma$ 射線光束的強度減為一半所需的鉛厚度。（10%）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1S8_OI91D1dtJgl8rm-BjxiMJpXryioZy/view" target="_blank" rel="noopener">107 學年近物期中（2018/10/30）</a> 第 9 題</p>
+  <ol class="write">
+    <li>$I=I_0e^{-\mu x}$，減半：$\dfrac{I_0}{I}=2=e^{\mu x}\Rightarrow x=\dfrac{\ln2}{\mu}$</li>
+    <li>$x_{1/2}=\dfrac{0.693}{78\ \text{m}^{-1}}=8.9\times10^{-3}\ \text{m}$</li>
+  </ol>
+  <div class="final">答：約 $8.9\ \text{mm}$。</div>
+  <p class="small"><a href="#kg-107-9">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-43" data-group="九、光子的吸收（§2.8）" data-title="課本 2-43：半值厚度">
+  <h3>課本 2-43</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 證明強度減半所需厚度 $x_{1/2}=0.693/\mu$。(b) 減為十分之一需多厚？</div>
+  <ol class="write">
+    <li>(a) $\tfrac12=e^{-\mu x_{1/2}}\Rightarrow\mu x_{1/2}=\ln2\Rightarrow x_{1/2}=0.693/\mu$</li>
+    <li>(b) $\tfrac1{10}=e^{-\mu x}\Rightarrow x_{1/10}=\ln10/\mu=2.30/\mu$</li>
+  </ol>
+  <div class="final">答：(a) 得證；(b) $2.30/\mu$。</div>
+  <p class="small"><a href="#bz-2-43">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-44" data-group="九、光子的吸收（§2.8）" data-title="課本 2-44：薄吸收體近似">
+  <h3>課本 2-44</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 證明 $\mu x\ll1$ 時吸收的強度為 $I_0\mu x$。(b) $\mu x=0.100$ 時用此式的百分誤差？</div>
+  <ol class="write">
+    <li>(a) 吸收 $=I_0-I=I_0(1-e^{-\mu x})=I_0\left(\mu x-\tfrac12(\mu x)^2+\cdots\right)\approx I_0\mu x$</li>
+    <li>(b) 精確 $1-e^{-0.100}=0.0952$，近似 $0.100$；誤差 $=\dfrac{0.100-0.0952}{0.0952}=5.1\%$</li>
+  </ol>
+  <div class="final">答：(a) 得證；(b) 約 $5\%$（偏大）。</div>
+  <p class="small"><a href="#bz-2-44">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-46" data-group="九、光子的吸收（§2.8）" data-title="課本 2-46：X 光通過空氣">
+  <h3>課本 2-46</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-46"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficient for 50-keV x-rays in sea-level air is 5.0 × 10<sup>−3</sup> m<sup>−1</sup>. By how much is the intensity of a beam of such x-rays reduced when it passes through 0.50 m of air? Through 5.0 m of air?</p></div>
+<p class="original-caption">Beiser 習題 2-46 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$50\ \text{keV}$ X 光在空氣中 $\mu=5.0\times10^{-3}\ \text{m}^{-1}$，通過 $0.50\ \text{m}$ 與 $5.0\ \text{m}$ 後強度減少多少？</div>
+  <ol class="write">
+    <li>$0.50\ \text{m}$：$I/I_0=e^{-0.0025}=0.9975$，減少 $0.25\%$</li>
+    <li>$5.0\ \text{m}$：$I/I_0=e^{-0.025}=0.975$，減少 $2.5\%$</li>
+  </ol>
+  <div class="final">答：$0.25\%$；$2.5\%$。</div>
+  <p class="small"><a href="#bz-2-46">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-47" data-group="九、光子的吸收（§2.8）" data-title="課本 2-47：水與鉛">
+  <h3>課本 2-47</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-47"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficients for 2.0-MeV gamma rays are 4.9 m<sup>−1</sup> in water and 52 m<sup>−1</sup> in lead. What thickness of water would give the same shielding for such gamma rays as 10 mm of lead?</p></div>
+<p class="original-caption">Beiser 習題 2-47 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$2.0\ \text{MeV}$ $\gamma$ 射線：水 $\mu=4.9\ \text{m}^{-1}$、鉛 $52\ \text{m}^{-1}$。多厚的水等於 $10\ \text{mm}$ 鉛的屏蔽？</div>
+  <ol class="write">
+    <li>屏蔽相同 ⟺ $e^{-\mu x}$ 相同 ⟺ $\mu_{\text{水}}x_{\text{水}}=\mu_{\text{鉛}}x_{\text{鉛}}$</li>
+    <li>$x_{\text{水}}=(10\ \text{mm})\dfrac{52}{4.9}=106\ \text{mm}$</li>
+  </ol>
+  <div class="final">答：約 $11\ \text{cm}$。</div>
+  <p class="small"><a href="#bz-2-47">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-48" data-group="九、光子的吸收（§2.8）" data-title="課本 2-48：穿過 $0.10\ \text{mm}$ 銅箔">
+  <h3>課本 2-48</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-48"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficient of copper for 80-keV x-rays is $4.7\times10^{4}$ m$^{-1}$. Find the relative intensity of a beam of 80-keV x-rays after it has passed through a 0.10-mm copper foil.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　銅對 $80\ \text{keV}$ X 光的線性吸收係數是 $4.7\times10^{4}\ \text{m}^{-1}$。$80\ \text{keV}$ 的 X 光束穿過 $0.10\ \text{mm}$ 厚的銅箔後，相對強度是多少？</div>
+  <ol class="write">
+    <li>$\mu x=(4.7\times10^{4})(1.0\times10^{-4})=4.7$</li>
+    <li>$\dfrac{I}{I_0}=e^{-\mu x}=e^{-4.7}=9.1\times10^{-3}$</li>
+  </ol>
+  <div class="final">答：$I/I_0\approx9.1\times10^{-3}$。</div>
+  <p class="small"><a href="#bz-2-48">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-49" data-group="九、光子的吸收（§2.8）" data-title="課本 2-49：銅的半值厚度">
+  <h3>課本 2-49</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-49"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What thickness of copper is needed to reduce the intensity of the beam in Exercise 48 by half?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　要把習題 2-48 的光束強度減為一半，需要多厚的銅？</div>
+  <ol class="write">
+    <li>$\dfrac{I}{I_0}=e^{-\mu x}=\dfrac12\Rightarrow x_{1/2}=\dfrac{\ln2}{\mu}$</li>
+    <li>$x_{1/2}=\dfrac{0.693}{4.7\times10^{4}}=1.5\times10^{-5}\ \text{m}$</li>
+  </ol>
+  <div class="final">答：$0.015\ \text{mm}$。</div>
+  <p class="small"><a href="#bz-2-49">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-50" data-group="九、光子的吸收（§2.8）" data-title="課本 2-50：鐵與鉛">
+  <h3>課本 2-50</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-50"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficients for 0.05-nm x-rays in lead and in iron are, respectively, 5.8 × 10<sup>4</sup> m<sup>−1</sup> and 1.1 × 10<sup>4</sup> m<sup>−1</sup>. How thick should an iron shield be in order to provide the same protection from these x-rays as 10 mm of lead?</p></div>
+<p class="original-caption">Beiser 習題 2-50 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$0.05\ \text{nm}$ X 光：鉛 $\mu=5.8\times10^{4}\ \text{m}^{-1}$、鐵 $1.1\times10^{4}\ \text{m}^{-1}$。多厚的鐵等於 $10\ \text{mm}$ 鉛？</div>
+  <ol class="write">
+    <li>$\mu_{\text{鐵}}x_{\text{鐵}}=\mu_{\text{鉛}}x_{\text{鉛}}$</li>
+    <li>$x_{\text{鐵}}=(10\ \text{mm})\dfrac{5.8\times10^{4}}{1.1\times10^{4}}=53\ \text{mm}$</li>
+  </ol>
+  <div class="final">答：約 $53\ \text{mm}$。</div>
+  <p class="small"><a href="#bz-2-50">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-09a" data-group="九、光子的吸收（§2.8）" data-title="自編：同樣重量的屏蔽，鉛和水差不多">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$2.0\ \text{MeV}$ $\gamma$ 射線的線性吸收係數：水 $4.9\ \text{m}^{-1}$、鉛 $52\ \text{m}^{-1}$；密度：水 $1.00\times10^{3}\ \text{kg/m}^3$、鉛 $11.3\times10^{3}\ \text{kg/m}^3$。(a) 求兩者的 $\mu/\rho$（每單位質量的衰減能力）。(b) 和 $10\ \text{mm}$ 鉛同樣屏蔽效果的水層（習題 2-47），每平方公尺的質量和那層鉛相比如何？(c) 一面牆由 $5.0\ \text{mm}$ 鉛加 $20\ \text{cm}$ 水組成，透射比例是多少？兩層的先後順序有沒有影響？(d) 什麼情況下仍應選鉛？</div>
+  <ol class="write">
+    <li>$\mu/\rho$：鉛 $52/11300=4.6\times10^{-3}$，水 $4.9/1000=4.9\times10^{-3}\ \text{m}^2/\text{kg}$</li>
+    <li>$10\ \text{mm}$ 鉛 $=113\ \text{kg/m}^2$；等效水 $106\ \text{mm}=106\ \text{kg/m}^2$</li>
+    <li>$I/I_0=e^{-52(0.005)-4.9(0.20)}=e^{-1.24}=0.29$，與順序無關</li>
+    <li>空間受限時選鉛</li>
+  </ol>
+  <div class="final">答：$\mu/\rho$ 相近；質量差不多；$29\%$；厚度受限時用鉛。</div>
+  <p class="small"><a href="#sf-2-09a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-09b" data-group="九、光子的吸收（§2.8）" data-title="自編：平均自由徑與半值厚度">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　一束窄光束射入吸收係數為 $\mu$ 的物質。(a) 由 $I=I_0e^{-\mu x}$ 寫出一個光子在 $x$ 到 $x+\mathrm dx$ 之間第一次被作用（被吸收或散射出光束）的機率，並證明光子被作用前平均走的距離（平均自由徑）是 $1/\mu$。(b) $1\ \text{MeV}$ $\gamma$ 射線在鉛中 $\mu=78\ \text{m}^{-1}$：平均自由徑、半值厚度各多少？在第一個平均自由徑內被作用的比例是多少？(c) 為什麼平均自由徑比半值厚度長？</div>
+  <ol class="write">
+    <li>存活機率 $e^{-\mu x}$，$P(x)\,\mathrm dx=\mu e^{-\mu x}\mathrm dx$</li>
+    <li>$\langle x\rangle=\displaystyle\int_0^\infty x\mu e^{-\mu x}\mathrm dx=\Big[-xe^{-\mu x}\Big]_0^\infty+\int_0^\infty e^{-\mu x}\mathrm dx=\frac1\mu$</li>
+    <li>鉛：$1/\mu=12.8\ \text{mm}$，$x_{1/2}=0.693/78=8.9\ \text{mm}$，$1-e^{-1}=63\%$</li>
+    <li>長尾巴：$1/\mu=1.44\,x_{1/2}$</li>
+  </ol>
+  <div class="final">答：$1/\mu$；$12.8\ \text{mm}$、$8.9\ \text{mm}$、$63\%$。</div>
+  <p class="small"><a href="#sf-2-09b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 十、光子與重力 ===== -->
+<article class="exam-item" data-exam-id="bz-ex2-8" data-group="十、光子與重力（§2.9）" data-title="例題 2.8：Pound–Rebka">
+  <h3>課本例題 2.8</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-8"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>The increase in energy of a fallen photon was first observed in 1960 by Pound and Rebka at Harvard. In their work $H$ was 22.5 m. Find the change in frequency of a photon of red light whose original frequency is $7.3\times10^{14}$ Hz when it falls through 22.5 m.</p></div>
+<p class="original-caption">Beiser Example 2.8 · p.86</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$7.3\times10^{14}\ \text{Hz}$ 的紅光光子落下 $22.5\ \text{m}$，頻率改變多少？</div>
+  <ol class="write">
+    <li>光子「質量」$h\nu/c^2$：$h\nu'=h\nu+\dfrac{h\nu}{c^2}gH\Rightarrow\nu'-\nu=\dfrac{gH}{c^2}\nu$</li>
+    <li>$\nu'-\nu=\dfrac{(9.8)(22.5)(7.3\times10^{14})}{(3.0\times10^{8})^2}=1.8\ \text{Hz}$</li>
+  </ol>
+  <div class="final">答：增加約 $1.8\ \text{Hz}$。</div>
+  <p class="small"><a href="#bz-ex2-8">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-51" data-group="十、光子與重力（§2.9）" data-title="課本 2-51：太陽的重力紅移">
+  <h3>課本 2-51</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-51"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The sun’s mass is 2.0 × 10<sup>30</sup> kg and its radius is 7.0 × 10<sup>8</sup> m. Find the approximate gravitational red shift in light of wavelength 500 nm emitted by the sun.</p></div>
+<p class="original-caption">Beiser 習題 2-51 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　太陽 $M=2.0\times10^{30}\ \text{kg}$、$R=7.0\times10^{8}\ \text{m}$，求 $500\ \text{nm}$ 光的近似重力紅移。</div>
+  <ol class="write">
+    <li>$\dfrac{\Delta\nu}{\nu}=\dfrac{GM}{c^2R}=\dfrac{(6.67\times10^{-11})(2.0\times10^{30})}{(3.0\times10^{8})^2(7.0\times10^{8})}=2.1\times10^{-6}$</li>
+    <li>很小，$\Delta\lambda/\lambda\approx\Delta\nu/\nu$：$\Delta\lambda=(500\ \text{nm})(2.1\times10^{-6})=1.1\times10^{-3}\ \text{nm}$</li>
+  </ol>
+  <div class="final">答：約 $1.1\ \text{pm}$。</div>
+  <p class="small"><a href="#bz-2-51">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-52" data-group="十、光子與重力（§2.9）" data-title="課本 2-52：白矮星">
+  <h3>課本 2-52</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-52"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the approximate gravitational red shift in 500-nm light emitted by a white dwarf star whose mass is that of the sun but whose radius is that of the earth, 6.4 × 10<sup>6</sup> m.</p></div>
+<p class="original-caption">Beiser 習題 2-52 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　白矮星質量同太陽、半徑同地球（$6.4\times10^{6}\ \text{m}$），求 $500\ \text{nm}$ 光的近似重力紅移。</div>
+  <ol class="write">
+    <li>$\dfrac{GM}{c^2R}=\dfrac{(6.67\times10^{-11})(2.0\times10^{30})}{(3.0\times10^{8})^2(6.4\times10^{6})}=2.3\times10^{-4}$</li>
+    <li>$\Delta\lambda\approx(500\ \text{nm})(2.3\times10^{-4})=0.12\ \text{nm}$</li>
+  </ol>
+  <div class="final">答：約 $0.12\ \text{nm}$。</div>
+  <p class="small"><a href="#bz-2-52">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-53" data-group="十、光子與重力（§2.9）" data-title="課本 2-53：反衝與 Mössbauer">
+  <h3>課本 2-53</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$^{57}\text{Fe}$（$9.5\times10^{-26}\ \text{kg}$）放出 $14.4\ \text{keV}$ 光子。(a) 原子反衝使光子能量少多少？(b) 整塊 $1.0\ \text{g}$ 晶體反衝時少多少？(c) $14.4\ \text{keV}$ 光子的頻率，及在地表落下 $20\ \text{m}$ 的頻率改變？</div>
+  <ol class="write">
+    <li>(a) 反衝動量 $=E/c$，動能 $\Delta E=\dfrac{p^2}{2M}=\dfrac{E^2}{2Mc^2}=\dfrac{(2.31\times10^{-15}\ \text{J})^2}{2(9.5\times10^{-26})(9.0\times10^{16})}=3.1\times10^{-22}\ \text{J}=1.9\times10^{-3}\ \text{eV}$</li>
+    <li>(b) $\Delta E\propto1/M$：$(1.9\times10^{-3})\dfrac{9.5\times10^{-26}}{1.0\times10^{-3}}=1.8\times10^{-25}\ \text{eV}$</li>
+    <li>(c) $\nu=\dfrac{E}{h}=\dfrac{14.4\times10^{3}}{4.136\times10^{-15}}=3.48\times10^{18}\ \text{Hz}$；$\Delta\nu=\dfrac{gH}{c^2}\nu=\dfrac{(9.8)(20)}{9.0\times10^{16}}(3.48\times10^{18})=7.6\times10^{3}\ \text{Hz}$</li>
+  </ol>
+  <div class="final">答：(a) $1.9\times10^{-3}\ \text{eV}$；(b) $1.8\times10^{-25}\ \text{eV}$；(c) $3.48\times10^{18}\ \text{Hz}$、$7.6\ \text{kHz}$。</div>
+  <p class="small"><a href="#bz-2-53">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-54" data-group="十、光子與重力（§2.9）" data-title="課本 2-54：地球的史瓦西半徑">
+  <h3>課本 2-54</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-54"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the Schwarzschild radius of the earth, whose mass is 5.98 × 10<sup>24</sup> kg.</p></div>
+<p class="original-caption">Beiser 習題 2-54 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求地球（$5.98\times10^{24}\ \text{kg}$）的史瓦西半徑。</div>
+  <ol class="write">
+    <li>$R_S=\dfrac{2GM}{c^2}=\dfrac{2(6.67\times10^{-11})(5.98\times10^{24})}{(3.0\times10^{8})^2}=8.9\times10^{-3}\ \text{m}$</li>
+  </ol>
+  <div class="final">答：約 $8.9\ \text{mm}$。</div>
+  <p class="small"><a href="#bz-2-54">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="bz-2-55" data-group="十、光子與重力（§2.9）" data-title="課本 2-55：脫離速率與史瓦西半徑">
+  <h3>課本 2-55</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$U=-GmM/R$。(a) 求半徑 $R$ 的物體的脫離速率 $v_e$。(b) 令 $v_e=c$ 求史瓦西半徑公式。</div>
+  <ol class="write">
+    <li>(a) 剛好脫離：總能量 $=0$，$\tfrac12mv_e^2-\dfrac{GmM}{R}=0\Rightarrow v_e=\sqrt{\dfrac{2GM}{R}}$</li>
+    <li>(b) $v_e=c$：$R=\dfrac{2GM}{c^2}=R_S$</li>
+  </ol>
+  <div class="final">答：(a) $v_e=\sqrt{2GM/R}$；(b) $R_S=2GM/c^2$。</div>
+  <p class="small"><a href="#bz-2-55">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-10a" data-group="十、光子與重力（§2.9）" data-title="自編：Pound–Rebka 怎麼量出比線寬小百倍的位移">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　例題 2.8 的 Pound–Rebka 實驗用 ${}^{57}\text{Fe}$ 的 $14.4\ \text{keV}$ 無反衝（Mössbauer）$\gamma$ 射線，這條譜線的自然寬度是 $\Gamma=4.7\times10^{-9}\ \text{eV}$；塔高 $H=22.5\ \text{m}$。(a) 把線寬 $\Gamma/E$ 換成「都卜勒速度」$v_\Gamma=c\,\Gamma/E$，並和重力位移 $gH/c^2$ 比較：重力位移是線寬的幾分之一？實驗能看到「另一條線」嗎？還是只能看到什麼？(b) 光源裝在振動器上，速度 $v(t)=v_0\sin2\pi ft$，$f=50\ \text{Hz}$。要讓都卜勒位移掃過整條共振線（$\pm v_\Gamma$），$v_0$ 至少多大？光源振動的位移振幅是多少？(c) 為什麼一定要用無反衝的光子？比較單一原子核反衝造成的能量損失（習題 2-53a）和重力位移。(d) 實驗把光源和吸收體上下對調再量一次。這樣做能消掉哪一類誤差？兩次結果的差是多少？</div>
+  <ol class="write">
+    <li>$\Gamma/E=3.3\times10^{-13}$，$v_\Gamma=c\Gamma/E=9.8\times10^{-5}\ \text{m/s}$</li>
+    <li>$gH/c^2=2.45\times10^{-15}=\Gamma/E\div133$：只量得到共振中心的平移</li>
+    <li>$v_0\ge v_\Gamma$，$x_0=v_0/2\pi f=3.1\times10^{-7}\ \text{m}$</li>
+    <li>自由核反衝 $1.9\times10^{-3}\ \text{eV}\approx4\times10^5\,\Gamma$：不共振，須無反衝</li>
+    <li>上下對調：重力位移變號、固定偏差不變，相減得 $2gH/c^2=4.9\times10^{-15}$</li>
+  </ol>
+  <div class="final">答：位移約線寬的 $1/133$；$v_0\ge0.1\ \text{mm/s}$、振幅 $0.3\ \mu\text{m}$；對調後差 $4.9\times10^{-15}$。</div>
+  <p class="small"><a href="#sf-2-10a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sf-2-10b" data-group="十、光子與重力（§2.9）" data-title="自編：白矮星與中子星的重力紅移（弱場 vs 精確）">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　課本 (2.29) 的重力紅移 $\dfrac{\Delta\nu}{\nu}=\dfrac{GM}{c^2R}$ 是把光子「質量」$h\nu/c^2$ 當成常數得到的弱場結果。廣義相對論的精確結果是：從星體表面（半徑 $R$）發出、到無窮遠的頻率比 $\dfrac{\nu_\infty}{\nu}=\sqrt{1-\dfrac{R_S}{R}}$，$R_S=2GM/c^2$。(a) 若在課本的論證裡讓光子的質量隨能量改變：$\mathrm dE=-\dfrac{E}{c^2}\dfrac{GM}{r^2}\mathrm dr$，從 $R$ 積到 $\infty$，得到什麼？弱場時是否回到 (2.29)？(b) 對白矮星（習題 2-52：$M=2.0\times10^{30}\ \text{kg}$、$R=6.4\times10^{6}\ \text{m}$）和中子星（$M=2.8\times10^{30}\ \text{kg}$、$R=10\ \text{km}$），分別用 (2.29)、(a) 的結果和精確式求 $\Delta\nu/\nu=1-\nu_\infty/\nu$。(c) $R$ 小於幾倍的 $R_S$ 時，(2.29) 和精確式相差超過 $10\%$？(d) $R\to R_S$ 時精確式給什麼？物理意義是什麼？</div>
+  <ol class="write">
+    <li>$\displaystyle\int\frac{\mathrm dE}{E}=-\frac{GM}{c^2}\int_R^\infty\frac{\mathrm dr}{r^2}\Rightarrow E_\infty=Ee^{-x}$，$x=\dfrac{GM}{c^2R}$；$x\ll1$ 時 $\Delta\nu/\nu\approx x$</li>
+    <li>白矮星：$x=2.32\times10^{-4}$，三式相同</li>
+    <li>中子星：$x=0.2075$；$1-e^{-x}=0.187$；$1-\sqrt{1-2x}=0.235$</li>
+    <li>$\dfrac{1-\sqrt{1-u}}{u/2}=1.1\Rightarrow u=0.33$，$R\lesssim3R_S$</li>
+    <li>$R\to R_S$：$\nu_\infty\to0$，事件視界</li>
+  </ol>
+  <div class="final">答：白矮星 $2.3\times10^{-4}$（都一樣）；中子星 $0.208/0.187/0.235$；$R\lesssim3R_S$ 時誤差 $\gt10\%$；$R_S$ 處紅移無限大。</div>
+  <p class="small"><a href="#sf-2-10b">回到正文詳解</a></p>
+</article>

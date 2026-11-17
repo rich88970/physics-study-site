@@ -1,0 +1,180 @@
+<h2>四、電磁波的電場與磁場：振幅與方向 <span class="must teacher">老師：一定會考</span> <span class="pg">講義 chp8 第 8–9 頁</span></h2>
+
+<p class="lead">平面電磁波由電場、磁場兩個平面波組成，三個方向 $\hat k,\hat e,\hat b$ 互相垂直，振幅差一個波速：$E_0=vB_0$。考卷每年給其中一個場的方向（或兩個都給）和振幅，要你寫出另一個。逐字稿 01:01：「去求它的振幅——求電場的振幅、求磁場的振幅，求它的照度。」</p>
+
+<h3 id="o8-s04-em">4.1 講義：電磁波的兩個場 <span class="pg-tag">第 8–9 頁</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">講義 · chp8 第 8–9 頁（8.7 Electromagnetic Waves）</span>
+  <p>Figure 8-7 Plane electromagnetic wave. The electric field $\mathbf E$, magnetic field $\mathbf B$, and propagation vector $\mathbf k$ are everywhere mutually perpendicular.</p>
+  $$\vec E=\vec E_0\,e^{i(\vec k\cdot\vec r-\omega t)}\ \ \text{electric field}$$
+  $$\vec B=\vec B_0\,e^{i(\vec k\cdot\vec r-\omega t)}\ \ \text{magnetic field}$$
+  <p>Both components of the wave travel with the same propagation vector $\vec k$ and angular frequency $\omega$, and thus with the same wavelength and speed. At any specified time and place, $\|\vec E\|=c\cdot\|\vec B\|$. In free space, the velocity $c$ is given by $c=\dfrac{1}{\sqrt{\epsilon_0\mu_0}}$；$\epsilon_0=8.8542\times10^{-12}\ (\text{C·s})^2/\text{kg·m}^3$ — permittivity（介電常數）；$\mu_0=4\pi\times10^{-7}\ \text{kg·m}/(\text{A·s})^2$ — permeability（磁導率）；$c=2.998\times10^8\ \text{m/s}$.</p>
+</div>
+
+<p>講義寫的是真空。到了折射率 $n$ 的介質（$\mu_r=1$），$\|\vec E\|=v\|\vec B\|$ 裡的速度要換成介質中的波速 $v=c_0/n$：</p>
+$$B_0=\frac{E_0}{v}=\frac{nE_0}{c_0}$$
+<p>這是考卷最常扣分的一步：寫成 $E_0/c_0$ 會少一個 $n$。（2022 年的詳解把介質中的速度記成 $c=c_0/n=10^8$，寫 $B_0=E_0/c$，意思相同。）</p>
+
+<h3 id="o8-s04-dir">4.2 三個方向怎麼定 <span class="pg-tag">第 8 頁圖 8-7</span></h3>
+
+<div class="step" data-step="o8-s04-rule" data-sym="E0,B0">
+  <span class="step-title">右手規則：$\hat e\times\hat b=\hat k$</span>
+  <p>能量往 $\hat k$ 走（坡印廷向量 $\vec S\propto\vec E\times\vec B$，第 6 節），所以三個單位向量依 $\hat e\to\hat b\to\hat k$ 構成右手系，循環輪換也成立：</p>
+  $$\hat e\times\hat b=\hat k,\qquad\hat b=\hat k\times\hat e,\qquad\hat e=\hat b\times\hat k$$
+  <p>題目給 $\hat k$ 和 $\hat e$：用 $\hat b=\hat k\times\hat e$。題目給 $\hat k$ 和 $\hat b$（2022、2024、2025 期中考，以及舊考卷 2014）：用 $\hat e=\hat b\times\hat k$。</p>
+</div>
+
+<div class="step" data-step="o8-s04-xy" data-sym="k">
+  <span class="step-title">x-y 平面裡的快速算法</span>
+  <p>若 $\hat k=(\cos\theta,\sin\theta,0)$，在 x-y 平面裡垂直它的方向只有兩個：$\theta+90^\circ$ 和 $\theta-90^\circ$。</p>
+  <ul>
+    <li>$\hat e$ 在 $\theta+90^\circ$（$\hat k$ 逆時針轉 90°）⟹ $\hat b=\hat k\times\hat e=+\hat z$。</li>
+    <li>$\hat e$ 在 $\theta-90^\circ$（順時針轉 90°）⟹ $\hat b=-\hat z$。</li>
+    <li>$\hat e=+\hat z$ ⟹ $\hat b=\hat k\times\hat z=(\sin\theta,-\cos\theta,0)$，也就是 $\hat k$ 順時針轉 90°。</li>
+  </ul>
+  <p>兩個 x-y 向量 $(a_x,a_y,0)\times(b_x,b_y,0)=(0,0,a_xb_y-a_yb_x)$，算 z 分量一行就好。</p>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">讀圖的角度</span>
+  <p>圖上的 30°、60° 常常是和 $-x$、$\pm y$ 軸的夾角。先寫出「從 $+x$ 軸逆時針量起」的角度，再取 $\cos,\sin$；最後檢查 $\hat k\cdot\hat e=0$，不為 0 就是讀錯角度。</p>
+</div>
+
+<h3 id="o8-s04-full">4.3 「完整表示」要寫的四樣東西</h3>
+
+<p>考卷的「完整表示（包含振幅、偏振方向、平面波的指數表示及單位）」= 振幅 × 單位方向向量 × 指數 × 單位，例如</p>
+$$\vec E(x,y,z;t)=\underbrace{E_0}_{\text{振幅}}\ \underbrace{(\hat e_x\hat x+\hat e_y\hat y+\hat e_z\hat z)}_{\text{偏振方向}}\ \underbrace{e^{i[k(\hat k_xx+\hat k_yy+\hat k_zz)-\omega t+\varphi_0]}}_{\text{指數表示}}\ \ \underbrace{\text{V/m}}_{\text{單位}}$$
+<p>$\vec B$ 同一個指數、振幅換 $B_0$、方向換 $\hat b$、單位 T。$k$、$\omega$ 的數字照題目要求保留 $\pi$（「π 不必展開」）。</p>
+
+<p>這一型的考古題（課程資料夾的 2018、2022、2024、2025 期中考）放在<a href="#o8-x18">第 7 節</a>，一步一步寫出 $\vec E$、$\vec B$、$\vec S$ 與照度。物理考古資料夾還有 <a href="#o8-x07">2007</a>、2017、2021 期中考收在第 10 節，可以再多練。</p>
+
+<p class="small muted">下面兩題是物理考古資料夾的舊考卷（2009 期中考、2011 平時考），不是李孟恩課程資料夾的考卷，放在這裡當本節的練習；不算進出題頻率。</p>
+
+<div class="problem" data-kind="exam" id="o8-x09">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2009-04-27）第 2 題（97下）</span></div>
+    <h4>$\hat k$ 夾 θ（符號）、照度 $10^5$：$E_0$、$B_0$、$\vec k$、$\vec E$、$\vec B$ <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 4/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-x09">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-x09"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">手抄考卷照片（IMG_5595，另一張 IMG_5620 是同一份）。圖一：$\vec k$ 在 x-y 平面、與 +x 軸夾 θ（向右上）；$\vec E$ 在 x-y 平面、與 $\vec k$ 垂直、指向左上。卷末 $\epsilon_0=8.854\times10^{-12}$。</p>
+<div class="original-text" lang="en"><p>2.（25%）一光波在一折射率為 2 的介質內傳播，方向如圖一所示。若其頻率為 $10^{14}$ Hz，照度為 $10^5$ W/m²，試求在此介質內</p><p>(a) 電場的振幅大小。</p><p>(b) 磁場的振幅大小。</p><p>(c) 將 $\vec k$ 以直角座標表示出來，包括其大小及方向。</p><p>(d) 將 $\vec E$ 以指數方式表示出來。</p><p>(e) 將 $\vec B$ 以指數方式表示出來。</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（25%）光波在折射率 2 的介質內傳播，方向如圖一（$\vec k$ 在 x-y 平面、與 $+x$ 軸夾 θ；$\vec E$ 在 x-y 平面、垂直 $\vec k$ 指向左上）。頻率 $10^{14}$ Hz，照度 $10^5$ W/m²。求 (a) 電場振幅；(b) 磁場振幅；(c) $\vec k$ 的直角座標表示；(d) $\vec E$ 的指數表示；(e) $\vec B$ 的指數表示。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>折射率</td><td>$n=2$</td><td>「折射率為 2 的介質」</td></tr>
+          <tr><td>頻率</td><td>$\nu=10^{14}\ \text{Hz}$</td><td>「頻率為 $10^{14}$ Hz」</td></tr>
+          <tr><td>照度</td><td>$E_e=10^5\ \text{W/m}^2$</td><td>「照度為 $10^5$ W/m²」</td></tr>
+          <tr><td>傳播方向</td><td>$\hat k=(\cos\theta,\sin\theta,0)$</td><td>圖一：與 $+x$ 夾 θ，θ 沒給數值，答案保留 θ</td></tr>
+          <tr><td>電場方向</td><td>$\hat e=(-\sin\theta,\cos\theta,0)$</td><td>圖一：在 x-y 平面、垂直 $\vec k$、指向左上 ⟹ $\hat k$ 逆時針轉 90°</td></tr>
+          <tr><td>$\epsilon_0$、$c_0$</td><td>$8.854\times10^{-12}$、$3\times10^8$</td><td>卷末常數；光速用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$E_0$、$B_0$、$\vec k$、$\vec E$、$\vec B$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目給的是照度而不是振幅，<b>所以</b>先用 $E_e=\tfrac12n\epsilon_0c_0E_0^2$ 反解 $E_0$，再用 $B_0=nE_0/c_0$。<b>因為</b>$\hat e$ 是 $\hat k$ 逆時針轉 90°，<b>所以</b>依 4.2 節 $\hat b=+\hat z$。角度沒給數字，就把 $\cos\theta,\sin\theta$ 留在答案裡。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-x09-s1" data-sym="Ee,E0,eps">
+        <span class="step-title">(a) 由照度求電場振幅</span>
+        $$E_e=\tfrac12n\epsilon_0c_0E_0^2\ \Longrightarrow\ E_0=\sqrt{\frac{2E_e}{n\epsilon_0c_0}}$$
+        <p class="sub">代入 $E_e=10^5$、$n=2$（題目）、$\epsilon_0=8.854\times10^{-12}$、$c_0=3\times10^8$：</p>
+        $$E_0=\sqrt{\frac{2\times10^5}{2(8.854\times10^{-12})(3\times10^8)}}=\sqrt{3.765\times10^7}=6137\ \text{V/m}$$
+      </div>
+      <div class="step" data-step="o8-x09-s2" data-sym="B0">
+        <span class="step-title">(b) 磁場振幅</span>
+        $$B_0=\frac{nE_0}{c_0}=\frac{2\times6137}{3\times10^8}=4.09\times10^{-5}\ \text{T}$$
+      </div>
+      <div class="step" data-step="o8-x09-s3" data-sym="k">
+        <span class="step-title">(c) 波向量</span>
+        <p class="sub">代入 $n=2$、$\nu=10^{14}$（題目）：</p>
+        $$k=\frac{2\pi n\nu}{c_0}=\frac{2\pi(2)(10^{14})}{3\times10^8}=\frac{4\pi}{3}\times10^6=4.19\times10^6\ \text{m}^{-1}$$
+        $$\vec k=4.19\times10^6\,(\cos\theta\,\hat x+\sin\theta\,\hat y)\ \text{m}^{-1}$$
+      </div>
+      <div class="step" data-step="o8-x09-s4" data-sym="E0">
+        <span class="step-title">(d) 電場</span>
+        $$\begin{aligned}&\vec E=6137\,(-\sin\theta\,\hat x+\cos\theta\,\hat y)\,\\&\quad\times e^{i\left[4.19\times10^6(x\cos\theta+y\sin\theta)-2\pi\times10^{14}t\right]}\ \text{V/m}\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x09-s5" data-sym="B0">
+        <span class="step-title">(e) 磁場</span>
+        $$\hat b=\hat k\times\hat e=(0,0,\cos^2\theta+\sin^2\theta)=\hat z$$
+        $$\begin{aligned}&\vec B=4.09\times10^{-5}\,\hat z\,\\&\quad\times e^{i\left[4.19\times10^6(x\cos\theta+y\sin\theta)-2\pi\times10^{14}t\right]}\ \text{T}\end{aligned}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=6137\ \text{V/m}$；(b) $B_0=4.09\times10^{-5}\ \text{T}$；(c) $\vec k=4.19\times10^6(\cos\theta\hat x+\sin\theta\hat y)\ \text{m}^{-1}$；(d) $\vec E=6137(-\sin\theta\hat x+\cos\theta\hat y)e^{i[4.19\times10^6(x\cos\theta+y\sin\theta)-2\pi\times10^{14}t]}$ V/m；(e) $\vec B=4.09\times10^{-5}\hat z\,e^{i[\cdots]}$ T。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>雲端手寫解答（IMG_5594）(a)(b)(c) 數值相同。它的 (d) 把 $\hat e$ 寫成 $\cos(\tfrac\pi2+\theta)\hat x+\sin(\tfrac\pi2+\theta)\hat y$，等於本站的 $(-\sin\theta,\cos\theta)$ ✔；但它指數裡寫成「$9.42\times10^{-6}$」，數字和 (c) 的 $k$ 不一致，應以 $k=4.19\times10^6\ \text{m}^{-1}$ 為準。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o8-q11">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學平時考（2011-04-06）第 1 題（99下）</span></div>
+    <h4>從圖讀出 $\vec k$，寫出電場的複數型態 <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 4/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-q11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-q11"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">手抄考卷照片（IMG_5616）。右圖：$\vec k$ 在 −y 軸右側 30°（圖上另標「−60°」，即從 +x 軸往下 60°）；$\vec E$ 在 −x 軸下方、與 −y 軸夾 60°。</p>
+<div class="original-text" lang="en"><p>近代光學　平時考</p><p>1.（30%）一平面電磁波在折射率 1.5 的介質中傳播。若其振幅為 200 V/m，頻率為 $10^{14}$ Hz，且其電場與傳播方向如右圖所示。</p><p>(a) 試求其波向量（註明單位）</p><p>(b) 試將上述於介質中的電磁波之電場以複數型態表示出來（註明單位）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（30%）平面電磁波在折射率 1.5 的介質中傳播，振幅 200 V/m，頻率 $10^{14}$ Hz，電場與傳播方向如圖（$\vec k$ 在 $-y$ 軸右側 30°；$\vec E$ 在 $-x$ 軸下方、與 $-y$ 軸夾 60°）。(a) 求波向量（註明單位）；(b) 把電場以複數型態表示（註明單位）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>折射率</td><td>$n=1.5$</td><td>「折射率 1.5 的介質」</td></tr>
+          <tr><td>電場振幅</td><td>$E_0=200\ \text{V/m}$</td><td>「振幅為 200 V/m」</td></tr>
+          <tr><td>頻率</td><td>$\nu=10^{14}\ \text{Hz}$</td><td>「頻率為 $10^{14}$ Hz」</td></tr>
+          <tr><td>傳播方向</td><td>從 $+x$ 量起 $-60^\circ$：$\hat k=(\tfrac12,-\tfrac{\sqrt3}{2},0)$</td><td>圖：$\vec k$ 與 $-y$ 夾 30°、向右下（圖上標「−60°」）</td></tr>
+          <tr><td>電場方向</td><td>從 $+x$ 量起 $210^\circ$：$\hat e=(-\tfrac{\sqrt3}{2},-\tfrac12,0)$</td><td>圖：$\vec E$ 向左下、與 $-y$ 夾 60°（即 $-x$ 下方 30°）</td></tr>
+          <tr><td>初始相位</td><td>0</td><td>題目沒給，取 0</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\vec k$；$\vec E$ 的複數（指數）表示。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>$\vec k$ 的大小由介質中的波長決定，$k=2\pi n\nu/c_0$，方向就是圖上的傳播方向，<b>所以</b>先把圖上的角度換成從 $+x$ 量起，再寫分量。複數型態就是 4.3 節的「振幅 × 方向 × 指數」。</p>
+      <p>讀圖要檢查：$\hat k\cdot\hat e=\tfrac12(-\tfrac{\sqrt3}{2})+(-\tfrac{\sqrt3}{2})(-\tfrac12)=0$ ✔；若把 $\vec E$ 讀成 $-x$ 下方 60°，內積不為 0，表示讀錯。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-q11-s1" data-sym="k,n">
+        <span class="step-title">(a) 波向量的大小</span>
+        $$k=\frac{2\pi n\nu}{c_0}$$
+        <p class="sub">代入 $n=1.5$、$\nu=10^{14}$（題目）、$c_0=3\times10^8$：</p>
+        $$k=\frac{2\pi(1.5)(10^{14})}{3\times10^8}=\pi\times10^6=3.14\times10^6\ \text{m}^{-1}$$
+      </div>
+      <div class="step" data-step="o8-q11-s2">
+        <span class="step-title">(a) 波向量的方向</span>
+        $$\vec k=\pi\times10^6\left(\cos(-60^\circ)\hat x+\sin(-60^\circ)\hat y\right)=\pi\times10^6\left(\tfrac12\hat x-\tfrac{\sqrt3}{2}\hat y\right)\ \text{m}^{-1}$$
+      </div>
+      <div class="step" data-step="o8-q11-s3" data-sym="E0,w">
+        <span class="step-title">(b) 電場的複數型態</span>
+        <p class="sub">$\omega=2\pi\nu=2\pi\times10^{14}$；方向 $\hat e=(-\tfrac{\sqrt3}{2},-\tfrac12)$（圖）：</p>
+        $$\begin{aligned}&\vec E=200\left(-\tfrac{\sqrt3}{2}\hat x-\tfrac12\hat y\right)\\&\quad\times e^{i\left[\pi\times10^6\left(\frac12x-\frac{\sqrt3}{2}y\right)-2\pi\times10^{14}t\right]}\ \text{V/m}\end{aligned}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\vec k=\pi\times10^6(\tfrac12\hat x-\tfrac{\sqrt3}{2}\hat y)\ \text{m}^{-1}$，$k=3.14\times10^6\ \text{m}^{-1}$；(b) $\vec E=200(-\tfrac{\sqrt3}{2}\hat x-\tfrac12\hat y)e^{i[\pi\times10^6(\frac12x-\frac{\sqrt3}{2}y)-2\pi\times10^{14}t]}$ V/m。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>介質中的波長 $\lambda=2\pi/k=2\ \mu\text{m}=\lambda_0/n=3\ \mu\text{m}/1.5$ ✔。$\hat k\times\hat e$ 的 z 分量 $=\tfrac12(-\tfrac12)-(-\tfrac{\sqrt3}{2})(-\tfrac{\sqrt3}{2})=-1$，磁場沿 $-\hat z$（題目沒問，但寫得出來）。</p></div>
+  </div>
+</div>
+
+
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\hat k,\hat e,\hat b$ 互相垂直、$\hat e\times\hat b=\hat k$；給 $\hat b$ 時 $\hat e=\hat b\times\hat k$。</li>
+    <li>介質中 $B_0=nE_0/c_0$；$k=2\pi n\nu/c_0$；$\omega=2\pi\nu$ 不變。</li>
+    <li>完整表示 = 振幅 × 方向單位向量 × $e^{i(\vec k\cdot\vec r-\omega t)}$ × 單位。</li>
+  </ol>
+</div>

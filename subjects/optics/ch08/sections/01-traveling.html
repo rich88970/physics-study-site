@@ -1,0 +1,172 @@
+<h2>一、行進波與簡諧波：讀出波長、頻率、波速 <span class="pg">講義 chp8 第 1–5 頁</span></h2>
+
+<p class="lead">給你一條波的式子，要能一眼讀出它往哪裡走、走多快、波長和頻率多少。逐字稿 00:44 老師說「怎麼去求波長……這以前考古題都考過」：這是後面寫平面電磁波的基本功。</p>
+
+<h3 id="o8-s01-travel">1.1 行進波 $y=f(x\pm vt)$ <span class="pg-tag">第 1–2 頁</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">講義 · chp8 第 1 頁（8.1 One-Dimensional Wave Equation）</span>
+  <p>Consider a one-dimensional wave pulse of arbitrary shape, described by $y'=f(x')$, fixed to a coordinate system $O'(x',y')$. Consider next that the $O'$ system, together with the pulse, moves to the right along the $x$-axis at uniform speed $v$ relative to a fixed coordinate system $O(x,y)$. As it moves, the pulse is assumed to maintain its shape.</p>
+  <p>Any point on the pulse can be described by either of the two coordinates, $x$ or $x'$, where $x'=x-vt$. … $y=y'=f(x')=f(x-vt)$. If the pulse moves to the left, $x'=x+vt$. In general, a traveling wave has the general form $y=f(x\pm vt)$.</p>
+</div>
+
+<p>重點只有一句：<strong>只要 $x$ 和 $t$ 以 $x-vt$ 的組合出現，整個形狀就以速度 $v$ 往 $+x$ 平移</strong>；$x+vt$ 則往 $-x$。原因是：$t$ 增加 $\Delta t$ 時，只要 $x$ 同時增加 $v\Delta t$，$x-vt$ 就不變、函數值也不變，等於同一個形狀搬到 $v\Delta t$ 之外。講義第 2 頁舉的例子 $y=A\sin(x-vt)$、$y=A(x+vt)^2$、$y=e^{(x-vt)}$ 都是行進波。</p>
+
+<div class="box lecture">
+  <span class="box-title">講義 · chp8 第 2 頁（波動方程的推導）</span>
+  <p>$y=f(x')$ where $x'=x\pm vt$ → $\dfrac{\partial x'}{\partial x}=1$ and $\dfrac{\partial x'}{\partial t}=\pm v$. Employing the chain rule, $\dfrac{\partial^2y}{\partial x^2}=\dfrac{\partial^2f}{\partial x'^2}$ ①；$\dfrac{\partial^2y}{\partial t^2}=v^2\dfrac{\partial^2f}{\partial x'^2}$ ②. Combining ① and ②,</p>
+  $$\frac{\partial^2y}{\partial x^2}=\frac{1}{v^2}\frac{\partial^2y}{\partial t^2}$$
+  <p>— one-dimensional differential wave equation</p>
+</div>
+
+<p>反過來用：題目問「是不是行進波」時，可以把式子代進波動方程檢查，但更快的方法是<strong>配方，看能不能寫成單一變數 $x\pm vt$ 的函數</strong>（作業 4-4，以及第 10 節物理考古資料夾的 <a href="#o8-x12">2012 期中考第 2 題</a>都是這樣）。</p>
+
+<h3 id="o8-s01-harmonic">1.2 簡諧波：$\lambda$、$k$、$T$、$\nu$、$\omega$ <span class="pg-tag">第 2–4 頁</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">講義 · chp8 第 2–4 頁（8.2 Harmonic Waves）</span>
+  <p>Harmonic waves involve the sine or cosine functions: $y=A\sin[k(x\pm vt)]$, $y=A\cos[k(x\pm vt)]$. … The sine and cosine functions together form a complete set of functions; … Such a series of terms is called a Fourier series.</p>
+  <p>Sine wave at a fixed time — Wavelength ($\lambda$): $A\sin\{k[(x+\lambda)+vt]\}=A\sin\{k(x+vt)+2\pi\}$ → $k\lambda=2\pi$, i.e. $k=\dfrac{2\pi}{\lambda}$ — propagation constant.</p>
+  <p>Sine wave at a fixed point — Period ($T$): $A\sin\{k[x+v(t+T)]\}=A\sin\{k(x+vt)+2\pi\}$ → $kvT=2\pi$, i.e. $v=\dfrac{2\pi}{kT}=\dfrac{\lambda}{T}=\nu\lambda$, where $\nu=\dfrac1T$ — frequency；$\omega=2\pi\nu$ — angular frequency；$\kappa=\dfrac1\lambda$ — wave number.</p>
+  <p>Therefore $y=A\begin{smallmatrix}\sin\\ \cos\end{smallmatrix}[k(x\pm vt)]$ can be shown equivalent to $y=A\begin{smallmatrix}\sin\\ \cos\end{smallmatrix}[kx\pm\omega t]$.</p>
+</div>
+
+<p>把這些整理成一張「讀式子」的對照：簡諧波寫成標準式 $y=A\sin(kx-\omega t+\varphi_0)$ 之後，</p>
+$$\lambda=\frac{2\pi}{k},\qquad T=\frac{2\pi}{\omega},\qquad \nu=\frac{\omega}{2\pi}=\frac1T,\qquad v=\frac{\omega}{k}=\nu\lambda$$
+<p>$x$ 前面的係數就是 $k$、$t$ 前面的係數就是 $\omega$。注意講義的 $\kappa=1/\lambda$ 叫 wave number，$k=2\pi/\lambda$ 叫 propagation constant，兩者差 $2\pi$；課本 4-17 的解答就把這兩個搞混過（見第 5 節）。</p>
+
+<h3 id="o8-s01-phase">1.3 相位與定相位法 <span class="pg-tag">第 4–5 頁</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">講義 · chp8 第 4–5 頁（Phase）</span>
+  <p>Phase $\varphi$: the argument of the sine or cosine, which is an angle that depends on space and time. For $y=A\sin[k(x\pm vt)]$, $\varphi=k(x\pm vt)$. The condition of constant phase evidently describes the motion of a fixed point on the wave form, which moves with the velocity of the wave. Thus if $\varphi$ is constant, $d\varphi=0=k(dx\pm v\,dt)$ → $\dfrac{dx}{dt}=\mp v$ … In general, some angle must be added to the phase: $y=A\sin[k(x\pm vt)+\varphi_0]$. Suppose the initial boundary conditions are $y=y_0$ when $x=0,\ t=0$ → $\varphi_0=\sin^{-1}(y_0/A)$.</p>
+</div>
+
+<div class="step" data-step="o8-s01-cp" data-sym="phi,v">
+  <span class="step-title">定相位法（任何行進波都能用）</span>
+  <p>令相位（或整個函數裡 $x,t$ 的組合）等於常數，對 $t$ 微分，解出 $dx/dt$，那就是波速，正負號就是方向：</p>
+  $$\varphi(x,t)=\text{常數}\ \Longrightarrow\ \frac{\partial\varphi}{\partial x}\,dx+\frac{\partial\varphi}{\partial t}\,dt=0\ \Longrightarrow\ v=\frac{dx}{dt}=-\frac{\partial\varphi/\partial t}{\partial\varphi/\partial x}$$
+  <p>例如 $\varphi=kx-\omega t$：$v=-(-\omega)/k=+\omega/k$，往 $+x$。$\varphi=kx+\omega t$：$v=-\omega/k$，往 $-x$。</p>
+</div>
+
+<div class="box lecture" id="o8-ex1">
+  <span class="box-title">講義 · chp8 第 5 頁（Example）</span>
+  <p>講義這裡只寫了「Example」標題、沒有題目（上課時當場出題）。下面用課本同一段的 Example 1 補上。</p>
+</div>
+
+<p><strong>課本 Example 1</strong>（Pedrotti §4-2）：弦上的行進波 $y(x,t)=(0.35\ \text{m})\sin[(3\pi/\text{m})x-(10\pi/\text{s})t+\pi/4]$，求波長、頻率、波速、初始相位，以及 $x=10\ \text{cm}$、$t=0$ 的位移。</p>
+<p>和標準式 $A\sin(kx-\omega t+\varphi_0)$ 逐項比較：$k=3\pi\ \text{m}^{-1}$、$\omega=10\pi\ \text{s}^{-1}$、$\varphi_0=\pi/4$。所以 $\lambda=2\pi/k=\tfrac23\ \text{m}$、$\nu=\omega/2\pi=5\ \text{Hz}$、$v=\nu\lambda=(5)(\tfrac23)=3.33\ \text{m/s}$，往 $+x$（相位裡 $t$ 前是負號）。用定相位法也一樣：$d\varphi=(3\pi)dx-(10\pi)dt=0$ ⟹ $dx/dt=10\pi/3\pi=3.33\ \text{m/s}$。位移：$y(0.1\ \text{m},0)=0.35\sin(0.3\pi+\pi/4)=0.35\sin(0.55\pi)=0.35\times0.988=0.346\ \text{m}$。</p>
+
+<div class="problem" data-kind="textbook" id="o8-4-4">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 4-4（作業）</span></div>
+    <h4>這是不是行進波？速度多少、往哪走</h4>
+    <button type="button" class="exam-btn" data-exam="o8-4-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-4-4"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>If the following represents a traveling wave, determine its velocity (magnitude and direction), where distances are in meters.</p><p>$$y=\dfrac{(100\ \text{m})\,e^{[x^2/\text{m}^2-20(x/\text{m})(t/\text{s})+100t^2/\text{s}^2]}}{x/\text{m}-10t/\text{s}}$$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>若下式代表一個行進波，求它的速度（大小與方向），距離以公尺為單位：$$y=\frac{(100\ \text{m})\,e^{[x^2/\text{m}^2-20(x/\text{m})(t/\text{s})+100t^2/\text{s}^2]}}{x/\text{m}-10t/\text{s}}$$</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>指數裡的組合</td><td>$x^2-20xt+100t^2$</td><td>題目式子分子的指數（$x$ 以 m、$t$ 以 s 為單位，數字都是純數）</td></tr>
+          <tr><td>分母</td><td>$x-10t$</td><td>題目式子的分母</td></tr>
+          <tr><td>前提</td><td>行進波 ⟺ 可寫成 $f(x\pm vt)$</td><td>講義第 1 頁：traveling wave has the general form $y=f(x\pm vt)$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：波速的大小與方向。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>行進波的判斷標準是「$x$ 和 $t$ 只以 $x\pm vt$ 的組合出現」（講義 8.1），<b>所以</b>把指數配方，看它是不是 $(x-vt)^2$；如果分子分母都只含同一個 $x-vt$，整個 $y$ 就是一個變數的函數，$v$ 直接讀出來。</p>
+      <p>不必把式子代進波動方程硬算二階偏微分：那樣也對，但很長；配方一行就結束。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-4-4-s1">
+        <span class="step-title">把指數配成完全平方</span>
+        <p>$x^2-20xt+100t^2$ 是 $a^2-2ab+b^2$ 的形式，其中 $a=x$、$2ab=20xt$ ⟹ $b=10t$，而且 $b^2=100t^2$ 正好吻合：</p>
+        $$x^2-20xt+100t^2=(x-10t)^2$$
+      </div>
+      <div class="step" data-step="o8-4-4-s2">
+        <span class="step-title">整個式子只剩一個變數 $u=x-10t$</span>
+        <p>分母本來就是 $x-10t$，所以</p>
+        $$y=\frac{100\,e^{(x-10t)^2}}{x-10t}=f(u),\qquad f(u)=\frac{100\,e^{u^2}}{u},\quad u=x-10t$$
+      </div>
+      <div class="step" data-step="o8-4-4-s3" data-sym="v,phi">
+        <span class="step-title">讀出速度（或用定相位法確認）</span>
+        <p>和 $f(x-vt)$ 比較，$v=10$（單位 m/s，因為 $x$ 以 m、$t$ 以 s 計），符號是 $x-vt$ ⟹ 往 $+x$。定相位法：令 $u=x-10t=$ 常數，$dx-10\,dt=0$ ⟹ $dx/dt=+10\ \text{m/s}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>是行進波，$v=10\ \text{m/s}$，往 $+x$ 方向。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$x=10t$ 那一點的 $u=0$：$t=0$ 在 $x=0$，$t=1\ \text{s}$ 在 $x=10\ \text{m}$，同一個特徵點每秒前進 $10\ \text{m}$ ✔。課本書末答案「10 m/s in $+x$-direction」一致。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="o8-4-7">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 4-7（作業）</span></div>
+    <h4>從簡諧波的式子讀出七個量</h4>
+    <button type="button" class="exam-btn" data-exam="o8-4-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-4-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>For a harmonic wave given by</p><p>$$y=(10\ \text{cm})\sin[(628.3/\text{cm})x-(6283/\text{s})t]$$</p><p>determine (a) wavelength; (b) frequency; (c) propagation constant; (d) angular frequency; (e) period; (f) velocity; (g) amplitude.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>簡諧波 $y=(10\ \text{cm})\sin[(628.3/\text{cm})x-(6283/\text{s})t]$，求 (a) 波長；(b) 頻率；(c) 傳播常數；(d) 角頻率；(e) 週期；(f) 速度；(g) 振幅。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振幅</td><td>$A=10\ \text{cm}$</td><td>$\sin$ 前面的係數「$(10\ \text{cm})$」</td></tr>
+          <tr><td>傳播常數</td><td>$k=628.3\ \text{cm}^{-1}$</td><td>$x$ 前面的係數「$(628.3/\text{cm})$」</td></tr>
+          <tr><td>角頻率</td><td>$\omega=6283\ \text{s}^{-1}$</td><td>$t$ 前面的係數「$(6283/\text{s})$」</td></tr>
+          <tr><td>相位的符號</td><td>$kx-\omega t$</td><td>中間是減號 ⟹ 往 $+x$；沒有額外常數 ⟹ $\varphi_0=0$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\lambda$、$\nu$、$k$、$\omega$、$T$、$v$、$A$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>式子已經是講義第 4 頁的標準形 $y=A\sin(kx-\omega t)$，<b>所以</b>逐項比較係數就得到 $A,k,\omega$，其餘四個量用 $\lambda=2\pi/k$、$T=2\pi/\omega$、$\nu=1/T$、$v=\omega/k$ 換算。</p>
+      <p>常見陷阱：$628.3\approx200\pi$、$6283\approx2000\pi$，看出來之後答案都是整數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-4-7-s1" data-sym="k,lam">
+        <span class="step-title">(a)(c) 傳播常數與波長</span>
+        <p>$k$ 直接讀：$k=628.3\ \text{cm}^{-1}$。波長由 $k\lambda=2\pi$（講義第 3 頁）：</p>
+        $$\lambda=\frac{2\pi}{k}$$
+        <p class="sub">代入 $k=628.3\ \text{cm}^{-1}$（題目 $x$ 的係數）：</p>
+        $$\lambda=\frac{2\pi}{628.3\ \text{cm}^{-1}}=0.0100\ \text{cm}=0.1\ \text{mm}$$
+      </div>
+      <div class="step" data-step="o8-4-7-s2" data-sym="w,nu">
+        <span class="step-title">(d)(e)(b) 角頻率、週期、頻率</span>
+        <p>$\omega$ 直接讀：$\omega=6283\ \text{s}^{-1}$。$T=2\pi/\omega$、$\nu=1/T=\omega/2\pi$：</p>
+        <p class="sub">代入 $\omega=6283\ \text{s}^{-1}$（題目 $t$ 的係數）：</p>
+        $$T=\frac{2\pi}{6283\ \text{s}^{-1}}=1.00\times10^{-3}\ \text{s},\qquad \nu=\frac{1}{T}=1000\ \text{Hz}$$
+      </div>
+      <div class="step" data-step="o8-4-7-s3" data-sym="v">
+        <span class="step-title">(f)(g) 速度與振幅</span>
+        <p>$v=\omega/k$（或 $\nu\lambda$，兩者相同）：</p>
+        <p class="sub">代入 $\omega=6283\ \text{s}^{-1}$（步驟 2）、$k=628.3\ \text{cm}^{-1}$（步驟 1）：</p>
+        $$v=\frac{6283\ \text{s}^{-1}}{628.3\ \text{cm}^{-1}}=10.0\ \text{cm/s}\quad(\text{往}+x)$$
+        <p>振幅 $A=10\ \text{cm}$（直接讀）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\lambda=0.01\ \text{cm}$；(b) $\nu=1000\ \text{Hz}$；(c) $k=628.3\ \text{cm}^{-1}$；(d) $\omega=6283\ \text{s}^{-1}$；(e) $T=1\ \text{ms}$；(f) $v=10\ \text{cm/s}$，往 $+x$；(g) $A=10\ \text{cm}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\nu\lambda=(1000)(0.01\ \text{cm})=10\ \text{cm/s}$，和 $\omega/k$ 一致 ✔；與課本書末答案完全相同。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$x\pm vt$ 一起出現 ⟹ 行進波，$-$ 往 $+x$、$+$ 往 $-x$；不確定時用定相位法 $v=-\dfrac{\partial\varphi/\partial t}{\partial\varphi/\partial x}$。</li>
+    <li>$A\sin(kx-\omega t+\varphi_0)$：$\lambda=2\pi/k$、$T=2\pi/\omega$、$\nu=1/T$、$v=\omega/k=\nu\lambda$。</li>
+    <li>先看出 $628.3=200\pi$ 這類數字，答案常常是整數。</li>
+  </ol>
+</div>

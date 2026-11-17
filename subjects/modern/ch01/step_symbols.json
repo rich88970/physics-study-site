@@ -1,0 +1,34 @@
+{
+  "_說明": "symbols 是本章符號總表；groups 決定總表分組；步驟用 data-sym 指定要提醒的符號（每頁只提醒第一次）。",
+  "symbols": {
+    "c":     { "tex": "c", "zh": "真空中的光速", "en": "speed of light", "unit": "m/s", "note": "$2.998\\times10^8$，計算常取 $3.00\\times10^8$；對所有觀察者相同" },
+    "v":     { "tex": "v", "zh": "兩座標系（或物體與觀察者）的相對速率", "en": "relative speed", "unit": "m/s", "note": "課本寫成 $\\upsilon$" },
+    "beta":  { "tex": "\\beta=v/c", "zh": "速率與光速的比", "unit": "無", "note": "$0\\le\\beta<1$" },
+    "gamma": { "tex": "\\gamma", "zh": "勞倫茲因子 $1/\\sqrt{1-v^2/c^2}$", "en": "Lorentz factor", "unit": "無", "note": "$\\ge1$；$0.6c\\to1.25$、$0.8c\\to1.667$" },
+    "t0":    { "tex": "t_0", "zh": "固有時間：兩事件在同一地點的座標系量到的時間", "en": "proper time", "unit": "s", "note": "所有觀察者量到的時間中最短" },
+    "t":     { "tex": "t", "zh": "相對事件發生處運動的觀察者量到的時間", "unit": "s", "note": "$t=\\gamma t_0$" },
+    "L0":    { "tex": "L_0", "zh": "固有長度：物體靜止的座標系量到的長度", "en": "proper length", "unit": "m", "note": "最長的長度" },
+    "L":     { "tex": "L", "zh": "相對物體運動的觀察者量到的長度", "unit": "m", "note": "$L=L_0/\\gamma$，只縮運動方向" },
+    "nu0":   { "tex": "\\nu_0", "zh": "光源座標系中的頻率", "en": "source frequency", "unit": "Hz" },
+    "nu":    { "tex": "\\nu", "zh": "觀察者量到的頻率", "unit": "Hz" },
+    "lam":   { "tex": "\\lambda_0,\\ \\lambda", "zh": "光源發出、觀察者量到的波長", "unit": "nm", "note": "$\\lambda=c/\\nu$" },
+    "T0":    { "tex": "T_0", "zh": "碰撞推導中球在自己座標系的往返時間", "unit": "s" },
+    "m":     { "tex": "m", "zh": "靜止質量（固有質量），所有座標系相同", "en": "rest mass", "unit": "kg、MeV/$c^2$" },
+    "p":     { "tex": "p", "zh": "相對論動量 $\\gamma mv$", "en": "momentum", "unit": "kg·m/s、MeV/$c$" },
+    "F":     { "tex": "F", "zh": "力 $=\\mathrm dp/\\mathrm dt$", "unit": "N" },
+    "a":     { "tex": "a", "zh": "加速度 $\\mathrm dv/\\mathrm dt$", "unit": "m/s²" },
+    "E":     { "tex": "E", "zh": "總能量 $\\gamma mc^2$", "en": "total energy", "unit": "J、MeV", "note": "守恆，但隨座標系改變" },
+    "E0":    { "tex": "E_0", "zh": "靜能 $mc^2$", "en": "rest energy", "unit": "J、MeV" },
+    "KE":    { "tex": "KE", "zh": "動能 $(\\gamma-1)mc^2$", "en": "kinetic energy", "unit": "J、MeV", "note": "不是 $\\tfrac12\\gamma mv^2$" },
+    "xt":    { "tex": "(x,t),\\ (x',t')", "zh": "同一事件在 $S$、$S'$ 中的座標", "unit": "m、s", "note": "$S'$ 相對 $S$ 以 $v$ 沿 $+x$ 運動" },
+    "Vx":    { "tex": "V_x,\\ V'_x", "zh": "物體在 $S$、$S'$ 中的速度分量", "unit": "m/s", "note": "和座標系速度 $v$ 不同" },
+    "ds":    { "tex": "(\\Delta s)^2", "zh": "時空間隔 $(c\\Delta t)^2-(\\Delta x)^2$", "en": "spacetime interval", "unit": "m²", "note": "所有慣性座標系相同" }
+  },
+  "groups": [
+    { "title": "時間與長度（第 1–5 節）", "keys": ["c", "v", "beta", "gamma", "t0", "t", "L0", "L"] },
+    { "title": "都卜勒（第 3 節）", "keys": ["nu0", "nu", "lam"] },
+    { "title": "動量與能量（第 7–9 節）", "keys": ["T0", "m", "p", "F", "a", "E", "E0", "KE"] },
+    { "title": "勞倫茲轉換與時空（第 11–12 節）", "keys": ["xt", "Vx", "ds"] }
+  ],
+  "steps": {}
+}

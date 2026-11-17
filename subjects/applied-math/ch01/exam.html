@@ -1,0 +1,1664 @@
+<!-- 考試書寫版：每份先列完整題目，再列可直接寫在考卷上的完整作答。側欄依 data-exam-id 開啟。 -->
+
+<!-- ===== 一、一階方程的四型與可分離方程 ===== -->
+<article class="exam-item" data-exam-id="am1-ex-sep" data-group="一、一階方程的四型與可分離方程（照片 1）" data-title="板書例題：dy/dx=(2x−8xy)/(x²+4)">
+  <h3>板書例題（9/16 照片 1）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-sep"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　$\dfrac{dy}{dx}=\dfrac{2x-8xy}{x^2+4}$ with $y(0)=1$（constrain）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $\dfrac{dy}{dx}=\dfrac{2x-8xy}{x^2+4}$，$y(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$\dfrac{dy}{dx}=$ 一個分式」＋「分子 $2x-8xy$ 可以提出 $2x$」＋「初始條件 $y(0)=1$」⟹ 題型：<b>可分離方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dy}{dx}=M(x)N(y)\ \Rightarrow\ \displaystyle\int\frac{dy}{N(y)}=\int M(x)\,dx$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$M(x)$：只含 $x$ 的因式；$N(y)$：只含 $y$ 的因式</span>
+        分子提出 $2x$ 後，右邊是 $\dfrac{2x}{x^2+4}$ 乘 $(1-4y)$，所以 $M(x)=\dfrac{2x}{x^2+4}$、$N(y)=1-4y$。<br>
+        $\dfrac{dy}{dx}=\dfrac{2x}{x^2+4}(1-4y)\ \Rightarrow\ \displaystyle\int\frac{dy}{1-4y}=\int\frac{2x}{x^2+4}\,dx$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int\frac{du}{u}=\ln|u|+C$</span>
+        <span class="syms">$u$：代換的新變數；$du$：$u$ 的微分；$C$：積分常數</span>
+        左邊令 $u=1-4y$、$du=-4\,dy$；右邊令 $u=x^2+4$、$du=2x\,dx$（$x^2+4\gt0$ 不用絕對值）。<br>
+        $-\tfrac14\ln|1-4y|=\ln(x^2+4)+C$</p>
+      <p class="wq-step"><span class="memo">背：$a\ln b=\ln b^a$，$\ln A+\ln B=\ln(AB)$</span>
+        <span class="syms">$a$：對數前面的係數；$b$、$A$、$B$：對數裡面的正數</span>
+        兩邊乘 $-4$、移項合併；取指數時 $\pm e^{-4C}$ 併成一個新常數，仍記為 $C$。<br>
+        $\ln\big[(x^2+4)^4|1-4y|\big]=-4C\ \Rightarrow\ (x^2+4)^4(1-4y)=C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：上一步的常數</span>
+        題目給 $y(0)=1$，代 $x=0$、$y=1$。<br>
+        $C=(0^2+4)^4(1-4\cdot1)=256\times(-3)=-768$<br>
+        $(x^2+4)^4(1-4y)=-768\ \Rightarrow\ y=\tfrac14+\dfrac{192}{(x^2+4)^4}$</p>
+    </div>
+  </div>
+  <div class="final">答：$(x^2+4)^4(1-4y)=-768$（$y=\tfrac14+192/(x^2+4)^4$）。</div>
+  <p class="small"><a href="#am1-ex-sep">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-hw-1" data-group="一、一階方程的四型與可分離方程（照片 1）" data-title="作業 1：xy cos(y²) y′+2 sin(y²)=0">
+  <h3>作業第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-hw-1"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p><b>First Order ODE</b></p><p>1. $xy\cos(y^2)y'+2\sin(y^2)=0$, $y(1)=\sqrt{\dfrac{\pi}{2}}$</p><p>Ans : $x^4\sin(y^2)=1$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $xy\cos(y^2)y'+2\sin(y^2)=0$，$y(1)=\sqrt{\pi/2}$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$xy\cos(y^2)\,y'$」＋「$2\sin(y^2)$」：兩項都是「只含 $x$ 的部分 × 只含 $y$ 的部分」⟹ 題型：<b>可分離方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=\sqrt{\pi/2}$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dy}{dx}=M(x)N(y)\ \Rightarrow\ \displaystyle\int\frac{dy}{N(y)}=\int M(x)\,dx$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$M(x)$：只含 $x$ 的因式；$N(y)$：只含 $y$ 的因式</span>
+        移項成 $xy\cos(y^2)\,y'=-2\sin(y^2)$，兩邊除以 $x\sin(y^2)$、乘 $dx$。<br>
+        $\dfrac{y\cos(y^2)}{\sin(y^2)}\,dy=-\dfrac2x\,dx$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int\frac{du}{u}=\ln|u|+C$</span>
+        <span class="syms">$u$：代換的新變數；$du$：$u$ 的微分；$C$：積分常數</span>
+        左邊令 $u=\sin(y^2)$，$du=2y\cos(y^2)\,dy$，所以 $y\cos(y^2)\,dy=\tfrac12du$。<br>
+        $\tfrac12\ln|\sin(y^2)|=-2\ln|x|+C$</p>
+      <p class="wq-step"><span class="memo">背：$a\ln b=\ln b^a$，$\ln A+\ln B=\ln(AB)$</span>
+        <span class="syms">$a$：對數前面的係數；$b$、$A$、$B$：對數裡面的正數</span>
+        乘 2、移項合併，取指數後正負號和 $e^{2C}$ 併成新常數 $K$。<br>
+        $\ln\big|x^4\sin(y^2)\big|=2C\ \Rightarrow\ x^4\sin(y^2)=K$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$K$：上一步的常數</span>
+        題目給 $y(1)=\sqrt{\pi/2}$，所以 $x=1$、$y^2=\dfrac\pi2$。<br>
+        $K=1^4\cdot\sin\dfrac\pi2=1\ \Rightarrow\ x^4\sin(y^2)=1$</p>
+    </div>
+  </div>
+  <div class="final">答：$x^4\sin(y^2)=1$。</div>
+  <p class="small"><a href="#am1-hw-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-113a-m2" data-group="一、一階方程的四型與可分離方程（照片 1）" data-title="113 上期中 2：y′+y²=9">
+  <h3>113 上期中第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-113a-m2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>2. Solve $y'+y^2=9$ for $y(0)=0$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y'+y^2=9$，$y(0)=0$。（25 分）</div>
+  <div class="rote">
+    <p><b>看到</b>「$y'+y^2=9$」移項成「$y'=9-y^2$，右邊只含 $y$」⟹ 題型：<b>可分離方程＋部分分式</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=0$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dy}{dx}=M(x)N(y)\ \Rightarrow\ \displaystyle\int\frac{dy}{N(y)}=\int M(x)\,dx$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$M(x)$：只含 $x$ 的因式；$N(y)$：只含 $y$ 的因式</span>
+        這題 $M(x)=1$、$N(y)=9-y^2$，先設 $y\ne\pm3$ 才能除。<br>
+        $\displaystyle\int\frac{dy}{9-y^2}=\int dx$</p>
+      <p class="wq-step"><span class="memo">背：部分分式 $\dfrac{1}{(3-y)(3+y)}=\dfrac{A}{3-y}+\dfrac{B}{3+y}$</span>
+        <span class="syms">$A$、$B$：待定常數；$y$：未知函數</span>
+        通分得 $1=A(3+y)+B(3-y)$，代 $y=3$ 得 $1=6A$，代 $y=-3$ 得 $1=6B$。<br>
+        $A=B=\tfrac16$，$\displaystyle\int\frac{dy}{9-y^2}=\frac16\Big(-\ln|3-y|+\ln|3+y|\Big)$<br>
+        $\dfrac16\ln\left|\dfrac{3+y}{3-y}\right|=x+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：積分常數</span>
+        題目給 $y(0)=0$；解從 0 出發不會穿過平衡解 $y=\pm3$，所以 $-3\lt y\lt3$，絕對值可以拿掉。<br>
+        $\dfrac16\ln1=0+C\ \Rightarrow\ C=0$，$\dfrac{3+y}{3-y}=e^{6x}$</p>
+      <p class="wq-step"><span class="memo">背：$\tanh u=\dfrac{e^{u}-e^{-u}}{e^{u}+e^{-u}}$</span>
+        <span class="syms">$\tanh$：雙曲正切；$u$：引數</span>
+        交叉相乘解出 $y$，再分子分母同除 $e^{3x}$。<br>
+        $3+y=e^{6x}(3-y)\ \Rightarrow\ y=\dfrac{3(e^{6x}-1)}{e^{6x}+1}=3\,\dfrac{e^{3x}-e^{-3x}}{e^{3x}+e^{-3x}}=3\tanh(3x)$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=3\tanh(3x)$。</div>
+  <p class="small"><a href="#am1-113a-m2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-109b-1a" data-group="一、一階方程的四型與可分離方程（照片 1）" data-title="109 級下期中 1(a)：y′=y cos x/(1+2y²)">
+  <h3>109 級下第 1 次期中 1(a)（108 級下 1(a)）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1a"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(a) $\dfrac{dy}{dx}=\dfrac{y\cos x}{1+2y^2}$ for $y(0)=1$.　Ans: $\ln|y|+y^2=-\sin x+1$</p><p>（108級下學期 First Order ODE 1(a) 同題同答案。）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $\dfrac{dy}{dx}=\dfrac{y\cos x}{1+2y^2}$，$y(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $\dfrac{y\cos x}{1+2y^2}$ ＝ $\cos x$ 乘只含 $y$ 的分式」⟹ 題型：<b>可分離方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dy}{dx}=M(x)N(y)\ \Rightarrow\ \displaystyle\int\frac{dy}{N(y)}=\int M(x)\,dx$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$M(x)$：只含 $x$ 的因式；$N(y)$：只含 $y$ 的因式</span>
+        右邊拆成 $M(x)=\cos x$、$N(y)=\dfrac{y}{1+2y^2}$，設 $y\ne0$。<br>
+        $\dfrac{1+2y^2}{y}\,dy=\cos x\,dx$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int\frac{dy}{y}=\ln|y|$，$\displaystyle\int y\,dy=\frac{y^2}2$，$\displaystyle\int\cos x\,dx=\sin x$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$\ln$：自然對數</span>
+        左邊先拆成兩項 $\dfrac1y+2y$ 再積分，兩邊的常數合成一個 $C$。<br>
+        $\displaystyle\int\Big(\frac1y+2y\Big)dy=\int\cos x\,dx\ \Rightarrow\ \ln|y|+y^2=\sin x+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：積分常數</span>
+        題目給 $y(0)=1$；解從 $y=1\gt0$ 出發不會穿過 $y\equiv0$，所以 $\ln|y|=\ln y$。<br>
+        $\ln1+1^2=\sin0+C\ \Rightarrow\ C=1$，$\ln y+y^2=\sin x+1$</p>
+    </div>
+    <div class="wq">
+      <h5>檢查考卷附的答案</h5>
+      <p class="wq-step"><span class="memo">背：隱函數微分：對 $G(x,y)=C$ 兩邊對 $x$ 微分，$y$ 要乘 $y'$</span>
+        <span class="syms">$G(x,y)$：隱式解左邊的式子；$C$：常數；$y'$：$y$ 對 $x$ 的導數</span>
+        考卷寫 $\ln|y|+y^2=-\sin x+1$，微分回去和題目差一個負號，所以是誤植。<br>
+        $\Big(\dfrac1y+2y\Big)y'=-\cos x\ \Rightarrow\ y'=-\dfrac{y\cos x}{1+2y^2}$（和題目相反）</p>
+    </div>
+  </div>
+  <div class="final">答：$\ln y+y^2=\sin x+1$（考卷答案的 $-\sin x$ 是誤植）。</div>
+  <p class="small"><a href="#am1-109b-1a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-109b-1g" data-group="一、一階方程的四型與可分離方程（照片 1）" data-title="109 級下期中 1(g)：y′=e^(9y−x)">
+  <h3>109 級下第 1 次期中 1(g)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1g"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(g) $\dfrac{dy}{dx}=e^{9y-x}$ for $y(0)=0$.　Ans: $y(x)=\dfrac19\left[x-\ln(9-8e^x)\right]$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $\dfrac{dy}{dx}=e^{9y-x}$，$y(0)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$\dfrac{dy}{dx}=e^{9y-x}$」，指數可以拆成 $e^{9y}e^{-x}$ ⟹ 題型：<b>可分離方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=0$ 的解與定義範圍</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dy}{dx}=M(x)N(y)\ \Rightarrow\ \displaystyle\int\frac{dy}{N(y)}=\int M(x)\,dx$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$M(x)$：只含 $x$ 的因式；$N(y)$：只含 $y$ 的因式</span>
+        用 $e^{9y-x}=e^{9y}e^{-x}$，所以 $M(x)=e^{-x}$、$N(y)=e^{9y}$。<br>
+        $e^{-9y}\,dy=e^{-x}\,dx$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int e^{ay}\,dy=\frac{e^{ay}}{a}+C$</span>
+        <span class="syms">$a$：指數裡的係數；$y$：積分變數；$C$：積分常數</span>
+        左邊 $a=-9$，右邊 $a=-1$。<br>
+        $-\tfrac19e^{-9y}=-e^{-x}+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：積分常數</span>
+        題目給 $y(0)=0$，$e^0=1$。<br>
+        $-\tfrac19=-1+C\ \Rightarrow\ C=\tfrac89$</p>
+      <p class="wq-step"><span class="memo">背：$\ln(AB)=\ln A+\ln B$，$\ln e^{u}=u$</span>
+        <span class="syms">$A$、$B$：對數裡面的正數；$u$：指數</span>
+        兩邊乘 $-9$ 後取對數，再從對數裡提出 $e^{-x}$。<br>
+        $e^{-9y}=9e^{-x}-8\ \Rightarrow\ y=-\tfrac19\ln\big(9e^{-x}-8\big)$<br>
+        $9e^{-x}-8=e^{-x}(9-8e^x)\ \Rightarrow\ y=\tfrac19\big[x-\ln(9-8e^x)\big]$</p>
+      <p class="wq-step"><span class="memo">背：$\ln u$ 只在 $u\gt0$ 有定義</span>
+        <span class="syms">$u$：對數裡面的式子</span>
+        要 $9-8e^x\gt0$；$x\to\ln\frac98$ 時 $y\to+\infty$，解在那裡爆掉。<br>
+        $e^x\lt\tfrac98\ \Rightarrow\ x\lt\ln\tfrac98\approx0.118$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\dfrac19\big[x-\ln(9-8e^x)\big]$，$x\lt\ln\frac98$。</div>
+  <p class="small"><a href="#am1-109b-1g">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-109b-1d" data-group="一、一階方程的四型與可分離方程（照片 1）" data-title="109 級下期中 1(d)：齊次型 (2x+4y)dx+(y−x)dy=0">
+  <h3>109 級下第 1 次期中 1(d)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1d"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(d) $(2x+4y)dx+(y-x)dy=0$ for $y(1)=0$.　Ans: $8(y+x)^2=(y+2x)^3$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(2x+4y)\,dx+(y-x)\,dy=0$，$y(1)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(2x+4y)\,dx+(y-x)\,dy=0$」＋「每一項都是一次」＋「$M_y=4\ne N_x=-1$ 不正合」⟹ 題型：<b>齊次型（令 $y=vx$ 化成可分離）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=0$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：齊次型 $\dfrac{dy}{dx}=g\!\left(\dfrac yx\right)$，令 $y=vx$，$\dfrac{dy}{dx}=v+x\dfrac{dv}{dx}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$v=\dfrac yx$：新的未知函數；$x$：自變數；$g$：只跟 $\dfrac yx$ 有關的函數</span>
+        $\dfrac{dy}{dx}=-\dfrac MN$，分子分母同除 $x$ 就只剩 $v$。<br>
+        $\dfrac{dy}{dx}=\dfrac{2x+4y}{x-y}=\dfrac{2+4v}{1-v}$<br>
+        $v+x\dfrac{dv}{dx}=\dfrac{2+4v}{1-v}\ \Rightarrow\ x\dfrac{dv}{dx}=\dfrac{v^2+3v+2}{1-v}=\dfrac{(v+1)(v+2)}{1-v}$</p>
+      <p class="wq-step"><span class="memo">背：部分分式 $\dfrac{1-v}{(v+1)(v+2)}=\dfrac{A}{v+1}+\dfrac{B}{v+2}$</span>
+        <span class="syms">$A$、$B$：待定常數；$v$：新的未知函數</span>
+        分離成 $\dfrac{1-v}{(v+1)(v+2)}dv=\dfrac{dx}x$；通分得 $1-v=A(v+2)+B(v+1)$，代 $v=-1$ 得 $A=2$，代 $v=-2$ 得 $3=-B$。<br>
+        $A=2$，$B=-3$<br>
+        $\displaystyle\int\Big(\frac2{v+1}-\frac3{v+2}\Big)dv=\int\frac{dx}x\ \Rightarrow\ 2\ln|v+1|-3\ln|v+2|=\ln|x|+C$</p>
+      <p class="wq-step"><span class="memo">背：$a\ln b=\ln b^a$，$\ln A-\ln B=\ln\dfrac AB$</span>
+        <span class="syms">$a$：對數前面的係數；$b$、$A$、$B$：對數裡面的正數</span>
+        合併對數、取指數（正負號併進新常數 $K$），再把 $v=\dfrac yx$ 代回，$x$ 會消掉。<br>
+        $\dfrac{(v+1)^2}{(v+2)^3}=Kx\ \Rightarrow\ \dfrac{x\,(y+x)^2}{(y+2x)^3}=Kx\ \Rightarrow\ (y+x)^2=K(y+2x)^3$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$K$：上一步的常數</span>
+        題目給 $y(1)=0$，代 $x=1$、$y=0$。<br>
+        $(0+1)^2=K(0+2)^3\ \Rightarrow\ K=\tfrac18$，$8(y+x)^2=(y+2x)^3$</p>
+    </div>
+  </div>
+  <div class="final">答：$8(y+x)^2=(y+2x)^3$。</div>
+  <p class="small"><a href="#am1-109b-1d">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-self-01a" data-group="一、一階方程的四型與可分離方程（照片 1）" data-title="自編難題：y′=(x+y+1)²">
+  <h3>自編難題（第 1 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y'=(x+y+1)^2$，$y(0)=-1$，並寫出存在區間。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y'=(x+y+1)^2$」，右邊只透過 $x+y+1$ 這個組合依賴 $x,y$ ⟹ 題型：<b>代換 $u=x+y+1$ 化成可分離</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=-1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$u=ax+by+c\ \Rightarrow\ u'=a+b\,y'$</span>
+        <span class="syms">$u$：新的未知函數；$a$、$b$、$c$：常數；$y'$：$y$ 對 $x$ 的導數</span>
+        這題 $a=b=c=1$，把 $y'=u^2$ 代進去；初始值也要換成 $u$。<br>
+        $u'=1+y'=1+u^2$，$u(0)=0+(-1)+1=0$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int\frac{du}{1+u^2}=\tan^{-1}u+C$</span>
+        <span class="syms">$u$：新的未知函數；$\tan^{-1}$：反正切；$C$：積分常數</span>
+        $u'=1+u^2$ 可分離，積完代 $u(0)=0$。<br>
+        $\tan^{-1}u=x+C$，$\tan^{-1}0=0=C\ \Rightarrow\ u=\tan x$<br>
+        $y=u-x-1=\tan x-x-1$</p>
+    </div>
+    <div class="wq">
+      <h5>存在區間</h5>
+      <p class="wq-step"><span class="memo">背：$\tan x$ 在 $x=\pm\dfrac\pi2$ 發散</span>
+        <span class="syms">$x$：自變數；$\tan x$：正切函數</span>
+        取包含初始點 $x=0$、又不碰到發散點的最大區間。<br>
+        $-\dfrac\pi2\lt x\lt\dfrac\pi2$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\tan x-x-1$，$|x|\lt\pi/2$。</div>
+  <p class="small"><a href="#am1-self-01a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-self-01b" data-group="一、一階方程的四型與可分離方程（照片 1）" data-title="自編難題：xy′=y²−1 三個初始條件">
+  <h3>自編難題（第 1 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$xy'=y^2-1$（$x>0$），求 (a) $y(1)=0$、(b) $y(1)=-1$、(c) $y(1)=3$ 的解；(c) 在哪裡爆掉？</div>
+  <div class="rote">
+    <p><b>看到</b>「$xy'=y^2-1$」＋「三個不同的初始條件，其中 $y(1)=-1$ 讓 $y^2-1=0$」⟹ 題型：<b>可分離方程＋被除掉的平衡解</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（三小題共用的通解）</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dy}{dx}=M(x)N(y)\ \Rightarrow\ \displaystyle\int\frac{dy}{N(y)}=\int M(x)\,dx$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數（$x\gt0$）；$M(x)$：只含 $x$ 的因式；$N(y)$：只含 $y$ 的因式</span>
+        這題 $M(x)=\dfrac1x$、$N(y)=y^2-1$，設 $y\ne\pm1$。<br>
+        $\displaystyle\int\frac{dy}{y^2-1}=\int\frac{dx}x$</p>
+      <p class="wq-step"><span class="memo">背：部分分式 $\dfrac{1}{y^2-1}=\dfrac12\left(\dfrac1{y-1}-\dfrac1{y+1}\right)$</span>
+        <span class="syms">$y$：未知函數</span>
+        積完乘 2、取指數，$e^{2C}$ 和正負號併成 $K$。<br>
+        $\tfrac12\ln\left|\dfrac{y-1}{y+1}\right|=\ln x+C\ \Rightarrow\ \dfrac{y-1}{y+1}=Kx^2$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) $y(1)=0$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$K$：通解的常數</span>
+        代 $x=1$、$y=0$，再解出 $y$。<br>
+        $\dfrac{0-1}{0+1}=K\ \Rightarrow\ K=-1$<br>
+        $y-1=-x^2(y+1)\ \Rightarrow\ y=\dfrac{1-x^2}{1+x^2}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $y(1)=-1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：除以 $N(y)$ 會丟掉 $N(y_0)=0$ 的常數解 $y\equiv y_0$</span>
+        <span class="syms">$N(y)$：只含 $y$ 的因式（這題 $y^2-1$）；$y_0$：讓 $N$ 等於 0 的值</span>
+        代進通解左邊得 $\dfrac{-2}{0}$，求不出 $K$；$y=-1$ 讓 $y^2-1=0$，正是分離時被除掉的平衡解。<br>
+        $y\equiv-1$：$xy'=0$，$y^2-1=1-1=0$ ✔</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $y(1)=3$ 的解與爆掉的位置</h5>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$K$：通解的常數</span>
+        代 $x=1$、$y=3$，解出 $y$ 後看分母何時為 0。<br>
+        $\dfrac{3-1}{3+1}=K\ \Rightarrow\ K=\tfrac12$<br>
+        $2(y-1)=x^2(y+1)\ \Rightarrow\ y=\dfrac{2+x^2}{2-x^2}$，$x\to\sqrt2^-$ 時 $y\to+\infty$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $\frac{1-x^2}{1+x^2}$；(b) $y\equiv-1$；(c) $\frac{2+x^2}{2-x^2}$，在 $x=\sqrt2$ 爆掉。</div>
+  <p class="small"><a href="#am1-self-01b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 二、線性方程與積分因子 ===== -->
+<article class="exam-item" data-exam-id="am1-ex-lin" data-group="二、線性方程與積分因子（照片 2–3）" data-title="板書例題：y′+y=eˣ sin x">
+  <h3>板書例題（9/16 照片 3）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-lin"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　$\dfrac{dy}{dx}+y=e^x\sin x$, for $y(0)=1$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $\dfrac{dy}{dx}+y=e^x\sin x$，$y(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$\dfrac{dy}{dx}+y$」＋「右邊 $e^x\sin x$ 只含 $x$」⟹ 題型：<b>一階線性方程（積分因子）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$y'+p(x)\,y=q(x)$，$F=e^{\int p\,dx}$，$(Fy)'=Fq$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$p(x)$：$y'$ 係數化成 1 後 $y$ 的係數；$q(x)$：右邊只含 $x$ 的項；$F$：積分因子</span>
+        題目已經是標準式，$p=1$、$q=e^x\sin x$。<br>
+        $F=e^{\int1\,dx}=e^x$，$(e^xy)'=e^x\cdot e^x\sin x=e^{2x}\sin x$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int e^{ax}\sin bx\,dx=\frac{e^{ax}(a\sin bx-b\cos bx)}{a^2+b^2}+C$</span>
+        <span class="syms">$a$：指數裡 $x$ 的係數；$b$：$\sin$ 裡 $x$ 的係數；$C$：積分常數</span>
+        這裡 $a=2$、$b=1$（也可以分部積分兩次得到同樣結果）。<br>
+        $\displaystyle\int e^{2x}\sin x\,dx=\frac{e^{2x}(2\sin x-\cos x)}{5}$<br>
+        $e^xy=\dfrac{e^{2x}}5(2\sin x-\cos x)+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：積分常數</span>
+        題目給 $y(0)=1$，$\sin0=0$、$\cos0=1$。<br>
+        $e^0\cdot1=\tfrac15(0-1)+C\ \Rightarrow\ C=\tfrac65$</p>
+      <p class="wq-step"><span class="memo">背：$y=\dfrac1F\left[\displaystyle\int Fq\,dx+C\right]$</span>
+        <span class="syms">$F$：積分因子；$q$：右邊只含 $x$ 的項；$C$：積分常數</span>
+        兩邊除以 $F=e^x$，常數 $C$ 也要一起除。<br>
+        $y=\dfrac{e^x}5(2\sin x-\cos x)+\dfrac65e^{-x}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\dfrac{e^x}{5}(2\sin x-\cos x)+\dfrac65e^{-x}$。</div>
+  <p class="small"><a href="#am1-ex-lin">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-hw-2" data-group="二、線性方程與積分因子（照片 2–3）" data-title="作業 2：y′=1/(eʸ−x)">
+  <h3>作業第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-hw-2"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>2. $y'=\dfrac{1}{e^y-x}$, $y(1)=0$</p><p>Ans : $xe^y=\dfrac12e^{2y}+\dfrac12$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y'=\dfrac{1}{e^y-x}$，$y(1)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y'=\dfrac1{e^y-x}$，$y$ 在指數裡、對 $y$ 不線性」＋「倒過來 $\dfrac{dx}{dy}=e^y-x$ 對 $x$ 只有一次」⟹ 題型：<b>把 $x$ 當未知函數的線性方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=0$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dx}{dy}=\dfrac{1}{dy/dx}$</span>
+        <span class="syms">$\dfrac{dy}{dx}$：$y$ 對 $x$ 的導數；$\dfrac{dx}{dy}$：把 $x$ 看成 $y$ 的函數時的導數</span>
+        取倒數，改成以 $y$ 為自變數。<br>
+        $\dfrac{dx}{dy}=e^y-x\ \Rightarrow\ \dfrac{dx}{dy}+x=e^y$</p>
+      <p class="wq-step"><span class="memo">背：$y'+p(x)\,y=q(x)$，$F=e^{\int p\,dx}$，$(Fy)'=Fq$</span>
+        <span class="syms">$p$：未知函數的係數；$q$：右邊只含自變數的項；$F$：積分因子</span>
+        這裡要把公式裡的 $x$、$y$ 對調使用，因為這題的未知函數是 $x(y)$：$p=1$、$q=e^y$，對 $y$ 積分。<br>
+        $F=e^{\int1\,dy}=e^y$，$\dfrac{d}{dy}\big(xe^y\big)=e^{2y}\ \Rightarrow\ xe^y=\tfrac12e^{2y}+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：積分常數</span>
+        題目給 $y(1)=0$，代 $x=1$、$y=0$。<br>
+        $1\cdot e^0=\tfrac12e^0+C\ \Rightarrow\ C=\tfrac12$，$xe^y=\tfrac12e^{2y}+\tfrac12$</p>
+      <p class="wq-step"><span class="memo">背：$\cosh y=\dfrac{e^y+e^{-y}}2$</span>
+        <span class="syms">$\cosh$：雙曲餘弦；$y$：引數</span>
+        兩邊除以 $e^y$ 可以寫得更簡潔。<br>
+        $x=\dfrac{e^y+e^{-y}}2=\cosh y$</p>
+    </div>
+  </div>
+  <div class="final">答：$xe^y=\tfrac12e^{2y}+\tfrac12$（即 $x=\cosh y$）。</div>
+  <p class="small"><a href="#am1-hw-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-hw-3" data-group="二、線性方程與積分因子（照片 2–3）" data-title="作業 3：xy′+(1+x)y=e⁻ˣ sin 2x">
+  <h3>作業第 3 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-hw-3"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>3. $xy'+(1+x)y=e^{-x}\sin(2x)$</p><p>Ans : $-\dfrac{1}{2x}e^{-x}\cos(2x)+K\dfrac{e^{-x}}{x}$. $K$ is constant.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $xy'+(1+x)y=e^{-x}\sin(2x)$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$xy'+(1+x)y$」：$y$、$y'$ 都是一次、係數只含 $x$＋「右邊 $e^{-x}\sin2x$」⟹ 題型：<b>一階線性方程（先除以 $x$ 化成標準式）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求通解</h5>
+      <p class="wq-step"><span class="memo">背：標準式 $y'+p(x)\,y=q(x)$（$y'$ 的係數要是 1）</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$p(x)$：$y$ 的係數；$q(x)$：右邊只含 $x$ 的項</span>
+        兩邊除以 $x$（$x\ne0$）。<br>
+        $y'+\left(\dfrac1x+1\right)y=\dfrac{e^{-x}\sin2x}{x}$</p>
+      <p class="wq-step"><span class="memo">背：$F=e^{\int p\,dx}$</span>
+        <span class="syms">$F$：積分因子；$p$：$y$ 的係數</span>
+        $|x|$ 和 $x$ 只差正負號，整條方程同乘不影響，取 $F=xe^x$。<br>
+        $\displaystyle\int\Big(\frac1x+1\Big)dx=\ln|x|+x$，$F=|x|e^x\to xe^x$</p>
+      <p class="wq-step"><span class="memo">背：$(Fy)'=Fq$</span>
+        <span class="syms">$F$：積分因子；$y$：未知函數；$q$：右邊只含 $x$ 的項</span>
+        右邊 $x$、$e^x$ 剛好和 $q$ 的分母、$e^{-x}$ 消掉。<br>
+        $\big(xe^xy\big)'=xe^x\cdot\dfrac{e^{-x}\sin2x}{x}=\sin2x$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int\sin ax\,dx=-\frac1a\cos ax+K$</span>
+        <span class="syms">$a$：$\sin$ 裡 $x$ 的係數；$K$：積分常數</span>
+        $a=2$，積完兩邊除以 $F=xe^x$，常數也要除。<br>
+        $xe^xy=-\tfrac12\cos2x+K\ \Rightarrow\ y=-\dfrac{e^{-x}\cos2x}{2x}+K\dfrac{e^{-x}}{x}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=-\dfrac{1}{2x}e^{-x}\cos2x+K\dfrac{e^{-x}}{x}$。</div>
+  <p class="small"><a href="#am1-hw-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-112a-m1" data-group="二、線性方程與積分因子（照片 2–3）" data-title="112 上期中 1：dy+(2xy−xe^{−x²})dx=0">
+  <h3>112 上期中第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-112a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (6 points) Solve $dy+(2xy-xe^{-x^2})dx=0$ for $y(0)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(6 分) 解 $dy+(2xy-xe^{-x^2})dx=0$，$y(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$dy+(2xy-xe^{-x^2})dx=0$」除以 $dx$ 後 $y$ 只有一次、係數只含 $x$ ⟹ 題型：<b>一階線性方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：標準式 $y'+p(x)\,y=q(x)$（$y'$ 的係數要是 1）</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$p(x)$：$y$ 的係數；$q(x)$：右邊只含 $x$ 的項</span>
+        除以 $dx$、把只含 $x$ 的項移到右邊。<br>
+        $y'+2x\,y=xe^{-x^2}$，$p=2x$，$q=xe^{-x^2}$</p>
+      <p class="wq-step"><span class="memo">背：$F=e^{\int p\,dx}$，$(Fy)'=Fq$</span>
+        <span class="syms">$F$：積分因子；$p$：$y$ 的係數；$q$：右邊只含 $x$ 的項；$C$：積分常數</span>
+        $F$ 剛好把 $e^{-x^2}$ 消掉。<br>
+        $F=e^{\int2x\,dx}=e^{x^2}$，$\big(e^{x^2}y\big)'=e^{x^2}\cdot xe^{-x^2}=x$<br>
+        $e^{x^2}y=\dfrac{x^2}2+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：積分常數</span>
+        題目給 $y(0)=1$，再除以 $e^{x^2}$。<br>
+        $e^0\cdot1=0+C\ \Rightarrow\ C=1$，$y=\left(\dfrac{x^2}2+1\right)e^{-x^2}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\left(\dfrac{x^2}{2}+1\right)e^{-x^2}$。</div>
+  <p class="small"><a href="#am1-112a-m1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-114a-m1" data-group="二、線性方程與積分因子（照片 2–3）" data-title="114 上期中 1：(x²−x−2)y′+3xy=x²−4x+4">
+  <h3>114 上期中第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-114a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>1. Solve $(x^2-x-2)y'+3xy=x^2-4x+4$ for $y(1)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(x^2-x-2)y'+3xy=x^2-4x+4$，$y(1)=1$。（25 分）</div>
+  <div class="rote">
+    <p><b>看到</b>「$(x^2-x-2)y'+3xy=x^2-4x+4$」：$y$、$y'$ 都一次＋「$y'$ 的係數會等於 0」⟹ 題型：<b>一階線性方程＋奇異點之間的區間</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：標準式 $y'+p(x)\,y=q(x)$（$y'$ 的係數要是 1）</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$p(x)$：$y$ 的係數；$q(x)$：右邊只含 $x$ 的項</span>
+        先因式分解 $x^2-x-2=(x-2)(x+1)$、$x^2-4x+4=(x-2)^2$，再除以 $y'$ 的係數；奇異點 $x=2$、$x=-1$，初始點 $x=1$ 在中間。<br>
+        $y'+\dfrac{3x}{(x-2)(x+1)}\,y=\dfrac{x-2}{x+1}$，取 $-1\lt x\lt2$</p>
+      <p class="wq-step"><span class="memo">背：部分分式 $\dfrac{3x}{(x-2)(x+1)}=\dfrac{A}{x-2}+\dfrac{B}{x+1}$</span>
+        <span class="syms">$A$、$B$：待定常數；$x$：自變數</span>
+        通分得 $3x=A(x+1)+B(x-2)$，代 $x=2$ 得 $6=3A$，代 $x=-1$ 得 $-3=-3B$。<br>
+        $A=2$，$B=1$，$\displaystyle\int p\,dx=2\ln|x-2|+\ln|x+1|$</p>
+      <p class="wq-step"><span class="memo">背：$F=e^{\int p\,dx}$</span>
+        <span class="syms">$F$：積分因子；$p$：$y$ 的係數</span>
+        在 $-1\lt x\lt2$ 裡 $x+1\gt0$，絕對值拿掉。<br>
+        $F=e^{2\ln|x-2|+\ln|x+1|}=(x-2)^2(x+1)$</p>
+      <p class="wq-step"><span class="memo">背：$(Fy)'=Fq$</span>
+        <span class="syms">$F$：積分因子；$y$：未知函數；$q$：右邊只含 $x$ 的項；$C$：積分常數</span>
+        $F$ 乘上 $q$ 時 $(x+1)$ 約掉，剩 $(x-2)^3$。<br>
+        $\Big[(x-2)^2(x+1)\,y\Big]'=(x-2)^2(x+1)\cdot\dfrac{x-2}{x+1}=(x-2)^3$<br>
+        $(x-2)^2(x+1)\,y=\dfrac{(x-2)^4}4+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：積分常數</span>
+        題目給 $y(1)=1$：左邊 $(1-2)^2(1+1)\cdot1=2$。<br>
+        $2=\tfrac14+C\ \Rightarrow\ C=\tfrac74$<br>
+        $y=\dfrac{(x-2)^4+7}{4(x-2)^2(x+1)}$，$-1\lt x\lt2$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\dfrac{(x-2)^4+7}{4(x-2)^2(x+1)}$，$-1\lt x\lt2$。</div>
+  <p class="small"><a href="#am1-114a-m1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-109b-1b" data-group="二、線性方程與積分因子（照片 2–3）" data-title="109 級下期中 1(b)：(x+y)dx+(x ln x)dy=0">
+  <h3>109 級下第 1 次期中 1(b)（108 級下 1(b)）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1b"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(b) $(x+y)dx+(x\ln x)dy=0$ $(x>0)$ for $y(1)=1$.　Ans: $y\ln x=-x+1$</p><p>（108級下學期 First Order ODE 1(b) 同題同答案。）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(x+y)\,dx+(x\ln x)\,dy=0$（$x>0$），$y(1)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(x+y)\,dx+(x\ln x)\,dy=0$」除以 $dx$ 後 $y$、$y'$ 都一次、係數只含 $x$ ⟹ 題型：<b>一階線性方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：標準式 $y'+p(x)\,y=q(x)$（$y'$ 的係數要是 1）</span>
+        <span class="syms">$y$：未知函數；$x$：自變數（$x\gt0$）；$p(x)$：$y$ 的係數；$q(x)$：右邊只含 $x$ 的項</span>
+        除以 $dx$ 得 $x\ln x\,y'+y=-x$，再除以 $x\ln x$（$x\ne1$）。<br>
+        $y'+\dfrac{1}{x\ln x}\,y=-\dfrac1{\ln x}$</p>
+      <p class="wq-step"><span class="memo">背：$F=e^{\int p\,dx}$</span>
+        <span class="syms">$F$：積分因子；$p$：$y$ 的係數</span>
+        令 $u=\ln x$、$du=\dfrac{dx}x$；積分因子差 $\pm1$ 不影響，取 $F=\ln x$。<br>
+        $\displaystyle\int\frac{dx}{x\ln x}=\int\frac{du}u=\ln|\ln x|\ \Rightarrow\ F=\ln x$</p>
+      <p class="wq-step"><span class="memo">背：$(Fy)'=Fq$</span>
+        <span class="syms">$F$：積分因子；$y$：未知函數；$q$：右邊只含 $x$ 的項；$C$：積分常數</span>
+        $\ln x$ 剛好和 $q$ 的分母消掉。<br>
+        $\big(y\ln x\big)'=\ln x\cdot\Big(-\dfrac1{\ln x}\Big)=-1\ \Rightarrow\ y\ln x=-x+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：積分常數</span>
+        題目給 $y(1)=1$；$\ln1=0$，所以 $y_0=1$ 乘上 0，沒有用到（$x=1$ 是奇異點，解曲線在那裡的極限其實是 $-1$）。<br>
+        $1\cdot0=-1+C\ \Rightarrow\ C=1$，$y\ln x=-x+1$</p>
+    </div>
+  </div>
+  <div class="final">答：$y\ln x=-x+1$（註：$x=1$ 是奇異點，解曲線 $y=\frac{1-x}{\ln x}$ 在 $x\to1$ 趨近 $-1$）。</div>
+  <p class="small"><a href="#am1-109b-1b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-108b-1c" data-group="二、線性方程與積分因子（照片 2–3）" data-title="108 級下 1(c)：xy′−4y=x⁶eˣ">
+  <h3>108 級下 First Order ODE 1(c)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-108b-1c"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>First Order ODE</p><p>1. Solve the differential equations.</p><p>(c) $x\dfrac{dy}{dx}-4y=x^6e^x$ for $y(1)=1$. Ans: $\dfrac{y}{x^4}=xe^x-e^x+1$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $x\dfrac{dy}{dx}-4y=x^6e^x$，$y(1)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$x\dfrac{dy}{dx}-4y=x^6e^x$」：$y$、$y'$ 都一次、係數只含 $x$ ⟹ 題型：<b>一階線性方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：標準式 $y'+p(x)\,y=q(x)$（$y'$ 的係數要是 1）</span>
+        <span class="syms">$y$：未知函數；$x$：自變數（$x\gt0$）；$p(x)$：$y$ 的係數；$q(x)$：右邊只含 $x$ 的項</span>
+        兩邊除以 $x$。<br>
+        $y'-\dfrac4x\,y=x^5e^x$，$p=-\dfrac4x$，$q=x^5e^x$</p>
+      <p class="wq-step"><span class="memo">背：$F=e^{\int p\,dx}$，$(Fy)'=Fq$</span>
+        <span class="syms">$F$：積分因子；$p$：$y$ 的係數；$q$：右邊只含 $x$ 的項；$y$：未知函數</span>
+        $-4\ln x=\ln x^{-4}$。<br>
+        $F=e^{\int-\frac4x\,dx}=e^{-4\ln x}=x^{-4}$，$\Big(\dfrac{y}{x^4}\Big)'=x^{-4}\cdot x^5e^x=xe^x$</p>
+      <p class="wq-step"><span class="memo">背：分部積分 $\displaystyle\int u\,dv=uv-\int v\,du$</span>
+        <span class="syms">$u$：要微分的那個因式；$dv$：要積分的那個因式；$v$：$dv$ 積分的結果；$C$：積分常數</span>
+        取 $u=x$、$dv=e^x\,dx$，所以 $du=dx$、$v=e^x$。<br>
+        $\displaystyle\int xe^x\,dx=xe^x-\int e^x\,dx=xe^x-e^x\ \Rightarrow\ \frac{y}{x^4}=xe^x-e^x+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C$：積分常數</span>
+        題目給 $y(1)=1$。<br>
+        $\dfrac11=e-e+C\ \Rightarrow\ C=1$，$\dfrac{y}{x^4}=xe^x-e^x+1$</p>
+    </div>
+  </div>
+  <div class="final">答：$\dfrac{y}{x^4}=xe^x-e^x+1$。</div>
+  <p class="small"><a href="#am1-108b-1c">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-109b-1c" data-group="二、線性方程與積分因子（照片 2–3）" data-title="109 級下期中 1(c)：Bernoulli y′+y/x=xy²">
+  <h3>109 級下第 1 次期中 1(c)（108 級下 1(h)）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1c"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(c) $\dfrac{dy}{dx}+\dfrac{y}{x}=xy^2$ for $y(1)=1$.　Ans: $\dfrac{1}{xy}=-x+2$</p><p>（108級下學期 First Order ODE：(h) $\dfrac{dy}{dx}+\dfrac{y}{x}=xy^2$ for $y(1)=1$. (Hint: Bernoulli equation)　Ans: $\dfrac{1}{xy}=-x+2$）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y'+\dfrac yx=xy^2$，$y(1)=1$（Bernoulli）。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y'+\dfrac yx$」像線性，但右邊多了「$xy^2$」＋「題目提示 Bernoulli」⟹ 題型：<b>Bernoulli 方程（$n=2$，代換成線性）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：Bernoulli $y'+p\,y=q\,y^n$，令 $v=y^{1-n}$ ⟹ $v'+(1-n)p\,v=(1-n)q$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$p(x)$：$y$ 的係數；$q(x)$：$y^n$ 的係數；$n$：右邊 $y$ 的次方；$v$：新的未知函數</span>
+        這題 $n=2$、$p=\dfrac1x$、$q=x$，所以 $v=y^{-1}$；初始值也換成 $v$。<br>
+        $v'+(1-2)\dfrac1x\,v=(1-2)\,x\ \Rightarrow\ v'-\dfrac1x\,v=-x$，$v(1)=\dfrac11=1$</p>
+      <p class="wq-step"><span class="memo">背：$F=e^{\int p\,dx}$，$(Fv)'=Fq$</span>
+        <span class="syms">$F$：積分因子；$p$：$v$ 的係數（這裡 $-\dfrac1x$）；$q$：右邊（這裡 $-x$）；$v$：新的未知函數；$C$：積分常數</span>
+        $x\gt0$，$e^{-\ln x}=\dfrac1x$。<br>
+        $F=e^{\int-\frac1x\,dx}=\dfrac1x$，$\Big(\dfrac vx\Big)'=\dfrac1x\cdot(-x)=-1\ \Rightarrow\ \dfrac vx=-x+C$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $v(x_0)=v_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$v_0$：初始點的 $v$；$C$：積分常數</span>
+        用 $v(1)=1$，再把 $v=\dfrac1y$ 代回。<br>
+        $1=-1+C\ \Rightarrow\ C=2$，$\dfrac1{xy}=2-x$，$y=\dfrac1{2x-x^2}$</p>
+      <p class="wq-step"><span class="memo">背：解只能活在分母不為 0、包含初始點的區間</span>
+        <span class="syms">$v=2x-x^2$：$y$ 的分母；$x_0=1$：初始點</span>
+        $v=0$ 在 $x=0$ 和 $x=2$。<br>
+        $0\lt x\lt2$</p>
+    </div>
+  </div>
+  <div class="final">答：$\dfrac1{xy}=-x+2$。</div>
+  <p class="small"><a href="#am1-109b-1c">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-self-02a" data-group="二、線性方程與積分因子（照片 2–3）" data-title="自編難題：Bernoulli y′+y=xy³">
+  <h3>自編難題（第 2 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y'+y=xy^3$，$y(0)=1$，並求最大存在區間。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y'+y$」像線性，但右邊多了「$xy^3$」＋「問開根號正負號、最大存在區間」⟹ 題型：<b>Bernoulli 方程（$n=3$）＋找區間端點</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做：解出 $v=y^{-2}$</h5>
+      <p class="wq-step"><span class="memo">背：Bernoulli $y'+p\,y=q\,y^n$，令 $v=y^{1-n}$ ⟹ $v'+(1-n)p\,v=(1-n)q$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$p(x)$：$y$ 的係數；$q(x)$：$y^n$ 的係數；$n$：右邊 $y$ 的次方；$v$：新的未知函數</span>
+        這題 $n=3$、$p=1$、$q=x$，所以 $v=y^{-2}$；初始值也換成 $v$。<br>
+        $v'+(1-3)\cdot1\cdot v=(1-3)\,x\ \Rightarrow\ v'-2v=-2x$，$v(0)=1^{-2}=1$</p>
+      <p class="wq-step"><span class="memo">背：$F=e^{\int p\,dx}$，$(Fv)'=Fq$</span>
+        <span class="syms">$F$：積分因子；$p$：$v$ 的係數（這裡 $-2$）；$q$：右邊（這裡 $-2x$）；$v$：新的未知函數</span>
+        $p=-2$。<br>
+        $F=e^{\int-2\,dx}=e^{-2x}$，$\big(ve^{-2x}\big)'=-2xe^{-2x}$</p>
+      <p class="wq-step"><span class="memo">背：分部積分 $\displaystyle\int u\,dw=uw-\int w\,du$</span>
+        <span class="syms">$u$：要微分的那個因式；$dw$：要積分的那個因式；$w$：$dw$ 積分的結果；$C$：積分常數</span>
+        取 $u=x$、$dw=-2e^{-2x}dx$，所以 $du=dx$、$w=e^{-2x}$；積完兩邊除以 $e^{-2x}$。<br>
+        $\displaystyle\int-2xe^{-2x}dx=xe^{-2x}-\int e^{-2x}dx=xe^{-2x}+\tfrac12e^{-2x}$<br>
+        $v=x+\tfrac12+Ce^{2x}$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $v(x_0)=v_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$v_0$：初始點的 $v$；$C$：積分常數</span>
+        用 $v(0)=1$。<br>
+        $1=0+\tfrac12+C\ \Rightarrow\ C=\tfrac12$，$v=x+\tfrac12+\tfrac12e^{2x}$</p>
+    </div>
+    <div class="wq">
+      <h5>開根號的正負號</h5>
+      <p class="wq-step"><span class="memo">背：$y^2=\dfrac1v\ \Rightarrow\ y=\pm v^{-1/2}$，符號跟著初始值</span>
+        <span class="syms">$y$：未知函數；$v$：上面解出的 $x+\tfrac12+\tfrac12e^{2x}$</span>
+        題目給 $y(0)=1\gt0$，解連續又不會穿過 $y\equiv0$，取正號。<br>
+        $y=\Big(x+\tfrac12+\tfrac12e^{2x}\Big)^{-1/2}$</p>
+    </div>
+    <div class="wq">
+      <h5>最大存在區間</h5>
+      <p class="wq-step"><span class="memo">背：要 $v\gt0$；牛頓法 $x_{k+1}=x_k-\dfrac{v(x_k)}{v'(x_k)}$</span>
+        <span class="syms">$v(x)$：$x+\tfrac12+\tfrac12e^{2x}$；$v'(x)$：$v$ 的導數 $1+e^{2x}$；$x_k$：第 $k$ 次的近似根</span>
+        $v'=1+e^{2x}\gt0$，$v$ 遞增，只有一個零點 $x^*$；先試值夾出零點，再走一步牛頓法。<br>
+        $v(-0.6)=-0.1+\tfrac12e^{-1.2}\approx0.0506$，$v(-0.65)=-0.15+\tfrac12e^{-1.3}\approx-0.0137$<br>
+        $x_1=-0.65-\dfrac{-0.0137}{1+e^{-1.3}}=-0.65+\dfrac{0.0137}{1.2725}\approx-0.6392$<br>
+        區間 $x^*\lt x\lt\infty$，$x^*\approx-0.639$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\big(x+\frac12+\frac12e^{2x}\big)^{-1/2}$，$x>x^*\approx-0.639$。</div>
+  <p class="small"><a href="#am1-self-02a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-self-02b" data-group="二、線性方程與積分因子（照片 2–3）" data-title="自編難題：右邊分段的線性方程">
+  <h3>自編難題（第 2 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y'+2y=g(x)$，$g=1$（$0\le x\le1$）、$g=0$（$x>1$），$y(0)=0$。求連續解與 $y(1)$、$y(2)$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y'+2y=g(x)$」＋「$g$ 分兩段」＋「要連續解」⟹ 題型：<b>一階線性方程分段解，用連續條件接起來</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>$0\le x\le1$ 的解與 $y(1)$</h5>
+      <p class="wq-step"><span class="memo">背：$y'+p(x)\,y=q(x)$，$F=e^{\int p\,dx}$，$(Fy)'=Fq$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$p(x)$：$y$ 的係數；$q(x)$：右邊只含 $x$ 的項（這段 $g=1$）；$F$：積分因子；$C_1$：積分常數</span>
+        這段 $p=2$、$q=1$。<br>
+        $F=e^{2x}$，$\big(e^{2x}y\big)'=e^{2x}\ \Rightarrow\ e^{2x}y=\tfrac12e^{2x}+C_1$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$C_1$：積分常數</span>
+        題目給 $y(0)=0$；$e^{-2}\approx0.1353$。<br>
+        $0=\tfrac12+C_1\ \Rightarrow\ C_1=-\tfrac12$，$y=\tfrac12\big(1-e^{-2x}\big)$<br>
+        $y(1)=\tfrac12(1-0.1353)=0.4323$</p>
+    </div>
+    <div class="wq">
+      <h5>$x\gt1$ 的解與 $y(2)$</h5>
+      <p class="wq-step"><span class="memo">背：$y'+p(x)\,y=q(x)$，$F=e^{\int p\,dx}$，$(Fy)'=Fq$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$p(x)$：$y$ 的係數；$q(x)$：右邊（這段 $g=0$）；$F$：積分因子；$C_2$：積分常數</span>
+        這段 $p=2$、$q=0$。<br>
+        $\big(e^{2x}y\big)'=0\ \Rightarrow\ y=C_2e^{-2x}$</p>
+      <p class="wq-step"><span class="memo">背：連續條件：兩段在接點 $x=1$ 的值相等</span>
+        <span class="syms">$C_2$：第二段的常數；$y(1)$：第一段在 $x=1$ 的值</span>
+        第二段沒有自己的初始條件，用第一段算出的 $y(1)$ 接起來。<br>
+        $C_2e^{-2}=\tfrac12(1-e^{-2})\ \Rightarrow\ C_2=\tfrac12(e^2-1)$<br>
+        $y(2)=\tfrac12(e^2-1)e^{-4}=0.4323\times0.1353=0.0585$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\tfrac12(1-e^{-2x})$（$x\le1$）、$\tfrac12(e^2-1)e^{-2x}$（$x>1$）；$y(1)=0.4323$，$y(2)=0.0585$。</div>
+  <p class="small"><a href="#am1-self-02b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 三、正合方程 ===== -->
+<article class="exam-item" data-exam-id="am1-ex-exact" data-group="三、正合方程（照片 4–6）" data-title="板書例題：(x²−2xy)dx+(sin y−x²)dy=0">
+  <h3>板書例題（9/16 照片 5–6）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-exact"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　Solve $(x^2-2xy)\,dx+(\sin y-x^2)\,dy=0$；$y(1)=0$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(x^2-2xy)dx+(\sin y-x^2)dy=0$，$y(1)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$M\,dx+N\,dy=0$ 的形式」＋「$\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$」⟹ 題型：<b>正合方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=0$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分（$x$ 當常數）；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分（$y$ 當常數）</span>
+        $M=x^2-2xy$、$N=\sin y-x^2$。<br>
+        $\dfrac{\partial M}{\partial y}=-2x=\dfrac{\partial N}{\partial x}$，正合</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int M\,dx+h(y)$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$M$：$dx$ 的係數；$h(y)$：對 $x$ 積分時冒出的只含 $y$ 的函數</span>
+        對 $x$ 積分時 $y$ 當常數，$\int2xy\,dx=x^2y$。<br>
+        $f=\dfrac{x^3}3-x^2y+h(y)$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\partial f}{\partial y}=N$ 定 $h(y)$</span>
+        <span class="syms">$\dfrac{\partial f}{\partial y}$：$f$ 對 $y$ 偏微分；$N$：$dy$ 的係數；$h'(y)$：$h$ 對 $y$ 的導數</span>
+        兩邊的 $-x^2$ 消掉，剩下只含 $y$。<br>
+        $-x^2+h'(y)=\sin y-x^2\ \Rightarrow\ h'=\sin y\ \Rightarrow\ h=-\cos y$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(1)=0$，代 $x=1$、$y=0$。<br>
+        $\dfrac{x^3}3-x^2y-\cos y=C$，$C=\tfrac13-0-\cos0=-\tfrac23$</p>
+    </div>
+  </div>
+  <div class="final">答：$\dfrac{x^3}{3}-x^2y-\cos y=-\dfrac23$。</div>
+  <p class="small"><a href="#am1-ex-exact">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-110a-m1" data-group="三、正合方程（照片 4–6）" data-title="110 上期中 1／作業 4：(2y+eʸ+6x²)y′+4+12xy=0">
+  <h3>110 上期中第 1 題（＝作業第 4 題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-110a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2021.11.09)　20 points for each problem</p><p>1. Solve $(2y+e^y+6x^2)y'+4+12xy=0$ for $y(0)=0$.</p><p>（9/16 作業 第 4 題：$(2y+e^y+6x^2)y'+4+12xy=0$ with $y(0)=0$.　Ans : $4x+6x^2y+y^2+e^y=1$）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(20 分) 解 $(2y+e^y+6x^2)y'+4+12xy=0$，$y(0)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(2y+e^y+6x^2)y'+4+12xy=0$」：可以乘 $dx$ 寫成 $M\,dx+N\,dy=0$＋「$M_y=N_x$」⟹ 題型：<b>正合方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=0$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$y'=\dfrac{dy}{dx}$，乘 $dx$ 寫成 $M\,dx+N\,dy=0$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數（就是原式 $y'$ 的係數）</span>
+        $y'$ 的係數是 $N$，其他項是 $M$。<br>
+        $(4+12xy)\,dx+(2y+e^y+6x^2)\,dy=0$</p>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分（$x$ 當常數）；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分（$y$ 當常數）</span>
+        兩個偏導數相等。<br>
+        $\dfrac{\partial M}{\partial y}=12x=\dfrac{\partial N}{\partial x}$，正合</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int M\,dx+h(y)$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$M$：$dx$ 的係數；$h(y)$：對 $x$ 積分時冒出的只含 $y$ 的函數</span>
+        $y$ 當常數積分。<br>
+        $f=4x+6x^2y+h(y)$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\partial f}{\partial y}=N$ 定 $h(y)$</span>
+        <span class="syms">$\dfrac{\partial f}{\partial y}$：$f$ 對 $y$ 偏微分；$N$：$dy$ 的係數；$h'(y)$：$h$ 對 $y$ 的導數</span>
+        $6x^2$ 兩邊消掉。<br>
+        $6x^2+h'=2y+e^y+6x^2\ \Rightarrow\ h'=2y+e^y\ \Rightarrow\ h=y^2+e^y$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(0)=0$。<br>
+        $4x+6x^2y+y^2+e^y=C$，$C=0+0+0+e^0=1$</p>
+    </div>
+  </div>
+  <div class="final">答：$4x+6x^2y+y^2+e^y=1$。</div>
+  <p class="small"><a href="#am1-110a-m1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-112a-m2" data-group="三、正合方程（照片 4–6）" data-title="112 上期中 2：(2xe³ʸ+eˣ)dx+(3x²e³ʸ−y²)dy=0">
+  <h3>112 上期中第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-112a-m2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. (6 points) Solve $(2xe^{3y}+e^x)dx+(3x^2e^{3y}-y^2)dy=0$ for $y(0)=1$.</p><p>（108級下學期 First Order ODE：(e) $(2xe^{3y}+e^x)dx+(3x^2e^{3y}-y^2)dy=0$ for $y(0)=3$. Ans: $x^2e^{3y}+e^x-\dfrac13y^3+8=0$）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(6 分) 解 $(2xe^{3y}+e^x)dx+(3x^2e^{3y}-y^2)dy=0$，$y(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$M\,dx+N\,dy=0$ 的形式」＋「$M_y=N_x=6xe^{3y}$」⟹ 題型：<b>正合方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分（$x$ 當常數）；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分（$y$ 當常數）</span>
+        $M=2xe^{3y}+e^x$、$N=3x^2e^{3y}-y^2$。<br>
+        $\dfrac{\partial M}{\partial y}=6xe^{3y}=\dfrac{\partial N}{\partial x}$，正合</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int M\,dx+h(y)$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$M$：$dx$ 的係數；$h(y)$：對 $x$ 積分時冒出的只含 $y$ 的函數</span>
+        $e^{3y}$ 當常數。<br>
+        $f=x^2e^{3y}+e^x+h(y)$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\partial f}{\partial y}=N$ 定 $h(y)$</span>
+        <span class="syms">$\dfrac{\partial f}{\partial y}$：$f$ 對 $y$ 偏微分；$N$：$dy$ 的係數；$h'(y)$：$h$ 對 $y$ 的導數</span>
+        $3x^2e^{3y}$ 兩邊消掉。<br>
+        $3x^2e^{3y}+h'=3x^2e^{3y}-y^2\ \Rightarrow\ h'=-y^2\ \Rightarrow\ h=-\dfrac{y^3}3$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(0)=1$；108 級下 1(e) 同方程、初始條件 $y(0)=3$，也一起代。<br>
+        $x^2e^{3y}+e^x-\dfrac{y^3}3=C$<br>
+        $(0,1)$：$C=0+1-\tfrac13=\tfrac23$；$(0,3)$：$C=0+1-\tfrac{27}3=-8$</p>
+    </div>
+  </div>
+  <div class="final">答：$x^2e^{3y}+e^x-\dfrac{y^3}{3}=\dfrac23$。（108 級下 1(e) 的 $y(0)=3$ 版：$C=-8$。）</div>
+  <p class="small"><a href="#am1-112a-m2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-113a-m1" data-group="三、正合方程（照片 4–6）" data-title="113 上期中 1：(e²ʸ−y cos xy)dx+(2xe²ʸ−x cos xy+2y)dy=0">
+  <h3>113 上期中第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-113a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>1. Solve $(e^{2y}-y\cos xy)dx+(2xe^{2y}-x\cos xy+2y)dy=0$ for $x=0$ and $y=2$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(e^{2y}-y\cos xy)dx+(2xe^{2y}-x\cos xy+2y)dy=0$，$x=0$ 時 $y=2$。（25 分）</div>
+  <div class="rote">
+    <p><b>看到</b>「$M\,dx+N\,dy=0$」＋「$M$、$N$ 都有 $\cos xy$，偏微分要用乘積法則」＋「$M_y=N_x$」⟹ 題型：<b>正合方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求 $x=0$ 時 $y=2$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$；乘積法則 $(uv)'=u'v+uv'$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分（$x$ 當常數）；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分（$y$ 當常數）；$u$、$v$：相乘的兩個因式</span>
+        $y\cos xy$ 對 $y$ 微分、$x\cos xy$ 對 $x$ 微分都要用乘積法則。<br>
+        $\dfrac{\partial M}{\partial y}=2e^{2y}-\cos xy+xy\sin xy$<br>
+        $\dfrac{\partial N}{\partial x}=2e^{2y}-\cos xy+xy\sin xy$，正合</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int M\,dx+h(y)$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$M$：$dx$ 的係數；$h(y)$：對 $x$ 積分時冒出的只含 $y$ 的函數</span>
+        $\int y\cos(xy)\,dx$ 令 $u=xy$、$du=y\,dx$，得 $\sin(xy)$。<br>
+        $f=xe^{2y}-\sin(xy)+h(y)$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\partial f}{\partial y}=N$ 定 $h(y)$</span>
+        <span class="syms">$\dfrac{\partial f}{\partial y}$：$f$ 對 $y$ 偏微分；$N$：$dy$ 的係數；$h'(y)$：$h$ 對 $y$ 的導數</span>
+        $2xe^{2y}-x\cos xy$ 兩邊消掉。<br>
+        $2xe^{2y}-x\cos xy+h'=2xe^{2y}-x\cos xy+2y\ \Rightarrow\ h'=2y\ \Rightarrow\ h=y^2$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $x=0$、$y=2$。<br>
+        $xe^{2y}-\sin(xy)+y^2=C$，$C=0-\sin0+4=4$</p>
+    </div>
+  </div>
+  <div class="final">答：$xe^{2y}-\sin(xy)+y^2=4$。</div>
+  <p class="small"><a href="#am1-113a-m1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-109b-1e" data-group="三、正合方程（照片 4–6）" data-title="109 級下期中 1(e)：(3x²−2xy+2)dx+(6y²−x²+3)dy=0">
+  <h3>109 級下第 1 次期中 1(e)（108 級下 1(d)）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1e"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(e) $(3x^2-2xy+2)dx+(6y^2-x^2+3)dy=0$ for $y(1)=0$.　Ans: $2y^3-x^2y+3y+x^3+2x=3$</p><p>（108級下學期 First Order ODE 1(d) 同題同答案。）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(3x^2-2xy+2)\,dx+(6y^2-x^2+3)\,dy=0$，$y(1)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$M\,dx+N\,dy=0$ 的形式」＋「$M_y=N_x=-2x$」⟹ 題型：<b>正合方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=0$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分（$x$ 當常數）；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分（$y$ 當常數）</span>
+        $M=3x^2-2xy+2$、$N=6y^2-x^2+3$。<br>
+        $\dfrac{\partial M}{\partial y}=-2x=\dfrac{\partial N}{\partial x}$，正合</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int M\,dx+h(y)$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$M$：$dx$ 的係數；$h(y)$：對 $x$ 積分時冒出的只含 $y$ 的函數</span>
+        $y$ 當常數積分。<br>
+        $f=x^3-x^2y+2x+h(y)$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\partial f}{\partial y}=N$ 定 $h(y)$</span>
+        <span class="syms">$\dfrac{\partial f}{\partial y}$：$f$ 對 $y$ 偏微分；$N$：$dy$ 的係數；$h'(y)$：$h$ 對 $y$ 的導數</span>
+        $-x^2$ 兩邊消掉。<br>
+        $-x^2+h'=6y^2-x^2+3\ \Rightarrow\ h'=6y^2+3\ \Rightarrow\ h=2y^3+3y$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(1)=0$。<br>
+        $x^3-x^2y+2x+2y^3+3y=C$，$C=1-0+2+0+0=3$</p>
+    </div>
+  </div>
+  <div class="final">答：$x^3-x^2y+2x+2y^3+3y=3$。</div>
+  <p class="small"><a href="#am1-109b-1e">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-self-03a" data-group="三、正合方程（照片 4–6）" data-title="自編難題：給 M 造 N">
+  <h3>自編難題（第 3 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$M=y\cos x+2xe^y$。(a) 求所有使 $M\,dx+N\,dy=0$ 正合的 $N$；(b) 取 $N(0,y)=y$ 的那個，解 $y(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「只給 $M$，要找讓方程正合的 $N$」⟹ 題型：<b>由正合條件 $N_x=M_y$ 反推 $N$，再照正合方程解</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 所有使方程正合的 $N$</h5>
+      <p class="wq-step"><span class="memo">背：正合 ⟺ $\dfrac{\partial N}{\partial x}=\dfrac{\partial M}{\partial y}$，所以 $N=\displaystyle\int\frac{\partial M}{\partial y}\,dx+g(y)$</span>
+        <span class="syms">$M$：$dx$ 的係數（題目給）；$N$：$dy$ 的係數（要找）；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分；$g(y)$：任意只含 $y$ 的函數</span>
+        先算 $M_y$，再對 $x$ 積分。<br>
+        $\dfrac{\partial M}{\partial y}=\cos x+2xe^y\ \Rightarrow\ N=\sin x+x^2e^y+g(y)$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $N(0,y)=y$ 的那個 $N$，解 $y(0)=1$</h5>
+      <p class="wq-step"><span class="memo">背：用附加條件定任意函數</span>
+        <span class="syms">$N(0,y)$：$N$ 在 $x=0$ 的值；$g(y)$：(a) 的任意函數</span>
+        代 $x=0$：$\sin0+0+g(y)=y$。<br>
+        $g(y)=y$，$N=\sin x+x^2e^y+y$</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int M\,dx+h(y)$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$M$：$dx$ 的係數；$h(y)$：對 $x$ 積分時冒出的只含 $y$ 的函數</span>
+        $y$、$e^y$ 當常數。<br>
+        $f=y\sin x+x^2e^y+h(y)$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\partial f}{\partial y}=N$ 定 $h(y)$</span>
+        <span class="syms">$\dfrac{\partial f}{\partial y}$：$f$ 對 $y$ 偏微分；$N$：$dy$ 的係數；$h'(y)$：$h$ 對 $y$ 的導數</span>
+        $\sin x+x^2e^y$ 兩邊消掉。<br>
+        $\sin x+x^2e^y+h'=\sin x+x^2e^y+y\ \Rightarrow\ h=\dfrac{y^2}2$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(0)=1$。<br>
+        $y\sin x+x^2e^y+\dfrac{y^2}2=C$，$C=0+0+\tfrac12=\tfrac12$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $N=\sin x+x^2e^y+g(y)$；(b) $y\sin x+x^2e^y+\tfrac{y^2}2=\tfrac12$。</div>
+  <p class="small"><a href="#am1-self-03a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-self-03b" data-group="三、正合方程（照片 4–6）" data-title="自編難題：(2xy+3)dx+(x²−1)dy=0 兩種解法">
+  <h3>自編難題（第 3 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(2xy+3)dx+(x^2-1)dy=0$，$y(0)=2$，用正合與線性兩種方法，並寫出區間。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(2xy+3)\,dx+(x^2-1)\,dy=0$，$M_y=N_x=2x$」＋「$y$ 只有一次」＋「要兩種方法與區間」⟹ 題型：<b>正合方程＝線性方程，奇異點 $x=\pm1$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>方法一：正合</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$，$f=\displaystyle\int M\,dx+h(y)$，$\dfrac{\partial f}{\partial y}=N$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$f(x,y)$：要找的函數，解寫成 $f=C$；$h(y)$：只含 $y$ 的函數；$h'(y)$：$h$ 的導數</span>
+        $M=2xy+3$、$N=x^2-1$，$M_y=2x=N_x$。<br>
+        $f=x^2y+3x+h(y)$，$x^2+h'=x^2-1\ \Rightarrow\ h=-y$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(0)=2$，再解出 $y$。<br>
+        $x^2y+3x-y=C$，$C=0+0-2=-2$<br>
+        $y(x^2-1)=-2-3x\ \Rightarrow\ y=\dfrac{2+3x}{1-x^2}$</p>
+    </div>
+    <div class="wq">
+      <h5>方法二：線性</h5>
+      <p class="wq-step"><span class="memo">背：$y'+p(x)\,y=q(x)$，$F=e^{\int p\,dx}$，$(Fy)'=Fq$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$p(x)$：$y$ 的係數；$q(x)$：右邊只含 $x$ 的項；$F$：積分因子；$K$：積分常數</span>
+        除以 $dx$ 再除以 $x^2-1$；$\int p\,dx=\ln|x^2-1|$，在 $-1\lt x\lt1$ 取 $F=1-x^2$（差負號不影響）。<br>
+        $y'+\dfrac{2x}{x^2-1}\,y=\dfrac{-3}{x^2-1}$<br>
+        $\big[(1-x^2)y\big]'=(1-x^2)\cdot\dfrac{-3}{x^2-1}=3\ \Rightarrow\ (1-x^2)y=3x+K$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $y(x_0)=y_0$ 定常數</span>
+        <span class="syms">$x_0$：初始點的 $x$；$y_0$：初始點的 $y$；$K$：積分常數</span>
+        題目給 $y(0)=2$，結果和方法一相同。<br>
+        $K=2$，$y=\dfrac{2+3x}{1-x^2}$</p>
+    </div>
+    <div class="wq">
+      <h5>存在區間</h5>
+      <p class="wq-step"><span class="memo">背：解只活在包含初始點、不含奇異點的區間</span>
+        <span class="syms">奇異點：$y'$ 係數 $x^2-1$ 為 0 的點；$x_0=0$：初始點</span>
+        分母 $1-x^2$ 在 $x=\pm1$ 為 0，分子在那裡不為 0，$y$ 發散。<br>
+        $-1\lt x\lt1$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\dfrac{2+3x}{1-x^2}$，$-1\lt x\lt1$。</div>
+  <p class="small"><a href="#am1-self-03b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 四、非正合方程與積分因子 ===== -->
+<article class="exam-item" data-exam-id="am1-ex-nonexact" data-group="四、非正合方程與積分因子（照片 7–10）" data-title="板書例題：[3x sin2y−2y]dx+[2x² cos2y−x]dy=0">
+  <h3>板書例題（9/16 照片 9–10）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-nonexact"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　$[3x\sin(2y)-2y]\,dx+[2x^2\cos(2y)-x]\,dy=0$　Check exact eq. or not?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$[3x\sin(2y)-2y]dx+[2x^2\cos(2y)-x]dy=0$：檢查正合並求通解。</div>
+  <div class="rote">
+    <p><b>看到</b>「$M\,dx+N\,dy=0$」＋「$M_y\ne N_x$」＋「$\dfrac{M_y-N_x}{N}$ 約分後只剩 $x$」⟹ 題型：<b>非正合方程，積分因子 $F(x)$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>是否正合</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$；不相等時算 $\Delta=\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分；$\Delta$：兩者的差</span>
+        $M=3x\sin(2y)-2y$、$N=2x^2\cos(2y)-x$。<br>
+        $\dfrac{\partial M}{\partial y}=6x\cos2y-2$，$\dfrac{\partial N}{\partial x}=4x\cos2y-1$，不相等，不正合<br>
+        $\Delta=2x\cos(2y)-1$</p>
+    </div>
+    <div class="wq">
+      <h5>通解</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\Delta}{N}$ 只含 $x$ ⟹ $F(x)=e^{\int\frac{\Delta}{N}dx}$</span>
+        <span class="syms">$\Delta$：$\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$；$N$：$dy$ 的係數；$F(x)$：只含 $x$ 的積分因子</span>
+        $N$ 提出 $x$ 後剛好和 $\Delta$ 約分；$x\lt0$ 時 $F=-x$，整條方程乘 $-1$ 不影響，統一用 $F=x$。<br>
+        $\dfrac{\Delta}{N}=\dfrac{2x\cos2y-1}{x(2x\cos2y-1)}=\dfrac1x\ \Rightarrow\ F=e^{\ln x}=x$</p>
+      <p class="wq-step"><span class="memo">背：乘上 $F$ 後再驗 $\dfrac{\partial(FM)}{\partial y}=\dfrac{\partial(FN)}{\partial x}$</span>
+        <span class="syms">$FM$：乘完的 $dx$ 係數；$FN$：乘完的 $dy$ 係數；$F$：積分因子</span>
+        乘 $x$ 進 $M$、$N$。<br>
+        $\big[3x^2\sin2y-2xy\big]dx+\big[2x^3\cos2y-x^2\big]dy=0$<br>
+        $\dfrac{\partial(FM)}{\partial y}=6x^2\cos2y-2x=\dfrac{\partial(FN)}{\partial x}$ ✔</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int FM\,dx+h(y)$，$\dfrac{\partial f}{\partial y}=FN$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$FM$、$FN$：乘完的係數；$h(y)$：只含 $y$ 的函數；$h'(y)$：$h$ 的導數</span>
+        對 $x$ 積分，再對 $y$ 微分比較，$h'=0$。<br>
+        $f=x^3\sin2y-x^2y+h(y)$<br>
+        $2x^3\cos2y-x^2+h'=2x^3\cos2y-x^2\ \Rightarrow\ h'=0$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：任意常數（沒有初始條件）</span>
+        題目沒給初始條件，留下 $C$。<br>
+        $x^3\sin(2y)-x^2y=C$</p>
+    </div>
+  </div>
+  <div class="final">答：不正合，$F=x$；$x^3\sin(2y)-x^2y=C$。</div>
+  <p class="small"><a href="#am1-ex-nonexact">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-hw-5" data-group="四、非正合方程與積分因子（照片 7–10）" data-title="作業 5：cos y dx−2(x−y) sin y dy−cos y dy=0">
+  <h3>作業第 5 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-hw-5"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>5. $\cos y\,dx-2(x-y)\sin y\,dy-\cos y\,dy=0$ with $y(1)=0$.</p><p>Ans : $(x-y)\cos^2y=1$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $\cos y\,dx-2(x-y)\sin y\,dy-\cos y\,dy=0$，$y(1)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$\cos y\,dx-2(x-y)\sin y\,dy-\cos y\,dy=0$」＋「$M_y\ne N_x$」＋「$\dfrac{M_y-N_x}{M}$ 只剩 $y$」⟹ 題型：<b>非正合方程，積分因子 $F(y)$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=0$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$；不相等時算 $\Delta=\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分；$\Delta$：兩者的差</span>
+        兩個 $dy$ 項合起來才是 $N$。<br>
+        $M=\cos y$，$N=-2(x-y)\sin y-\cos y$<br>
+        $\dfrac{\partial M}{\partial y}=-\sin y$，$\dfrac{\partial N}{\partial x}=-2\sin y$，$\Delta=\sin y$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\Delta}{M}$ 只含 $y$ ⟹ $F(y)=e^{-\int\frac{\Delta}{M}dy}$</span>
+        <span class="syms">$\Delta$：$\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$；$M$：$dx$ 的係數；$F(y)$：只含 $y$ 的積分因子</span>
+        $\Delta/N$ 含 $x$ 不能用；$\Delta/M=\tan y$，$\int\tan y\,dy=-\ln|\cos y|$，$y=0$ 附近 $\cos y\gt0$。<br>
+        $F=e^{-\int\tan y\,dy}=e^{\ln\cos y}=\cos y$</p>
+      <p class="wq-step"><span class="memo">背：乘上 $F$ 後再驗 $\dfrac{\partial(FM)}{\partial y}=\dfrac{\partial(FN)}{\partial x}$</span>
+        <span class="syms">$FM$：乘完的 $dx$ 係數；$FN$：乘完的 $dy$ 係數；$F$：積分因子</span>
+        乘 $\cos y$ 進 $M$、$N$。<br>
+        $\cos^2y\,dx+\big[-2(x-y)\sin y\cos y-\cos^2y\big]dy=0$<br>
+        $\dfrac{\partial(FM)}{\partial y}=-2\sin y\cos y=\dfrac{\partial(FN)}{\partial x}$ ✔</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int FM\,dx+h(y)$，$\dfrac{\partial f}{\partial y}=FN$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$FM$、$FN$：乘完的係數；$h(y)$：只含 $y$ 的函數；$h'(y)$：$h$ 的導數</span>
+        $-2x\sin y\cos y$ 兩邊消掉，剩下只含 $y$。<br>
+        $f=x\cos^2y+h(y)$<br>
+        $-2x\sin y\cos y+h'=-2x\sin y\cos y+2y\sin y\cos y-\cos^2y$<br>
+        $h'=y\sin2y-\cos^2y$</p>
+      <p class="wq-step"><span class="memo">背：分部積分 $\displaystyle\int u\,dv=uv-\int v\,du$；$\cos^2y=\dfrac{1+\cos2y}2$</span>
+        <span class="syms">$u$：要微分的因式；$dv$：要積分的因式；$v$：$dv$ 積分的結果</span>
+        第一項取 $u=y$、$dv=\sin2y\,dy$；兩個 $\tfrac14\sin2y$ 相減消掉。<br>
+        $\displaystyle\int y\sin2y\,dy=-\frac y2\cos2y+\frac14\sin2y$，$\displaystyle\int\cos^2y\,dy=\frac y2+\frac14\sin2y$<br>
+        $h=-\dfrac y2\cos2y-\dfrac y2=-y\cos^2y$，$f=(x-y)\cos^2y$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(1)=0$。<br>
+        $(x-y)\cos^2y=C$，$C=(1-0)\cos^20=1$</p>
+    </div>
+  </div>
+  <div class="final">答：$(x-y)\cos^2y=1$。</div>
+  <p class="small"><a href="#am1-hw-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-111a-m1" data-group="四、非正合方程與積分因子（照片 7–10）" data-title="111 上期中 1：(y²+xy³)dx+(5y²−xy+y³ sin y)dy=0">
+  <h3>111 上期中第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-111a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (5 points) Solve $(y^2+xy^3)dx+(5y^2-xy+y^3\sin y)dy=0$ for $y(0)=\dfrac{\pi}{2}$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(5 分) 解 $(y^2+xy^3)dx+(5y^2-xy+y^3\sin y)dy=0$，$y(0)=\pi/2$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$M\,dx+N\,dy=0$」＋「$M_y\ne N_x$」＋「$M=y^2(1+xy)$ 能和 $\Delta$ 約分，$\dfrac{\Delta}{M}$ 只剩 $y$」⟹ 題型：<b>非正合方程，積分因子 $F(y)$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=\pi/2$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$；不相等時算 $\Delta=\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分；$\Delta$：兩者的差</span>
+        $M=y^2+xy^3$、$N=5y^2-xy+y^3\sin y$。<br>
+        $\dfrac{\partial M}{\partial y}=2y+3xy^2$，$\dfrac{\partial N}{\partial x}=-y$，$\Delta=3y+3xy^2=3y(1+xy)$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\Delta}{M}$ 只含 $y$ ⟹ $F(y)=e^{-\int\frac{\Delta}{M}dy}$</span>
+        <span class="syms">$\Delta$：$\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$；$M$：$dx$ 的係數；$F(y)$：只含 $y$ 的積分因子</span>
+        $\Delta/N$ 含 $x$ 不能用；初始值 $y=\frac\pi2\gt0$，$\ln|y|=\ln y$。<br>
+        $\dfrac{\Delta}{M}=\dfrac{3y(1+xy)}{y^2(1+xy)}=\dfrac3y\ \Rightarrow\ F=e^{-3\ln y}=y^{-3}$</p>
+      <p class="wq-step"><span class="memo">背：乘上 $F$ 後再驗 $\dfrac{\partial(FM)}{\partial y}=\dfrac{\partial(FN)}{\partial x}$</span>
+        <span class="syms">$FM$：乘完的 $dx$ 係數；$FN$：乘完的 $dy$ 係數；$F$：積分因子</span>
+        每一項除以 $y^3$。<br>
+        $\Big(\dfrac1y+x\Big)dx+\Big(\dfrac5y-\dfrac x{y^2}+\sin y\Big)dy=0$<br>
+        $\dfrac{\partial(FM)}{\partial y}=-\dfrac1{y^2}=\dfrac{\partial(FN)}{\partial x}$ ✔</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int FM\,dx+h(y)$，$\dfrac{\partial f}{\partial y}=FN$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$FM$、$FN$：乘完的係數；$h(y)$：只含 $y$ 的函數；$h'(y)$：$h$ 的導數</span>
+        $-\dfrac x{y^2}$ 兩邊消掉。<br>
+        $f=\dfrac xy+\dfrac{x^2}2+h(y)$<br>
+        $-\dfrac x{y^2}+h'=\dfrac5y-\dfrac x{y^2}+\sin y\ \Rightarrow\ h=5\ln y-\cos y$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(0)=\frac\pi2$，$\cos\frac\pi2=0$。<br>
+        $C=0+0+5\ln\dfrac\pi2-\cos\dfrac\pi2=5\ln\dfrac\pi2$</p>
+    </div>
+  </div>
+  <div class="final">答：$\dfrac xy+\dfrac{x^2}2+5\ln y-\cos y=5\ln\dfrac\pi2$。</div>
+  <p class="small"><a href="#am1-111a-m1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-109b-1f" data-group="四、非正合方程與積分因子（照片 7–10）" data-title="109 級下期中 1(f)：(x+y)sin y dx+(x sin y+cos y)dy=0">
+  <h3>109 級下第 1 次期中 1(f)（108 級下 1(g)）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1f"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(f) $(x+y)\sin y\,dx+(x\sin y+\cos y)\,dy=0$ for $y(0)=\dfrac{\pi}{2}$.</p><p>Ans: $\dfrac12x^2+xy+\ln|\sin y|=0$</p><p>（108級下學期 First Order ODE：(g) Solve $(x+y)\sin y\,dx+(x\sin y+\cos y)\,dy=0$ for $y(0)=\dfrac{\pi}{2}$. 同答案。）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(x+y)\sin y\,dx+(x\sin y+\cos y)\,dy=0$，$y(0)=\frac\pi2$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(x+y)\sin y\,dx+(x\sin y+\cos y)\,dy=0$」＋「$M_y\ne N_x$」＋「$\Delta$ 和 $M$ 都有 $(x+y)$，$\dfrac{\Delta}{M}$ 只剩 $y$」⟹ 題型：<b>非正合方程，積分因子 $F(y)$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(0)=\frac\pi2$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$；不相等時算 $\Delta=\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分；$\Delta$：兩者的差</span>
+        $M=(x+y)\sin y$ 對 $y$ 偏微分要用乘積法則。<br>
+        $\dfrac{\partial M}{\partial y}=\sin y+(x+y)\cos y$，$\dfrac{\partial N}{\partial x}=\sin y$，$\Delta=(x+y)\cos y$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\Delta}{M}$ 只含 $y$ ⟹ $F(y)=e^{-\int\frac{\Delta}{M}dy}$</span>
+        <span class="syms">$\Delta$：$\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$；$M$：$dx$ 的係數；$F(y)$：只含 $y$ 的積分因子</span>
+        $\Delta/N$ 同時含 $x,y$ 不能用；$\int\cot y\,dy=\ln|\sin y|$，初始點附近 $\sin y\gt0$。<br>
+        $\dfrac{\Delta}{M}=\dfrac{(x+y)\cos y}{(x+y)\sin y}=\cot y\ \Rightarrow\ F=e^{-\ln\sin y}=\dfrac1{\sin y}$</p>
+      <p class="wq-step"><span class="memo">背：乘上 $F$ 後再驗 $\dfrac{\partial(FM)}{\partial y}=\dfrac{\partial(FN)}{\partial x}$</span>
+        <span class="syms">$FM$：乘完的 $dx$ 係數；$FN$：乘完的 $dy$ 係數；$F$：積分因子</span>
+        每一項除以 $\sin y$。<br>
+        $(x+y)\,dx+(x+\cot y)\,dy=0$，$\dfrac{\partial(FM)}{\partial y}=1=\dfrac{\partial(FN)}{\partial x}$ ✔</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int FM\,dx+h(y)$，$\dfrac{\partial f}{\partial y}=FN$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$FM$、$FN$：乘完的係數；$h(y)$：只含 $y$ 的函數；$h'(y)$：$h$ 的導數</span>
+        $x$ 兩邊消掉。<br>
+        $f=\dfrac{x^2}2+xy+h(y)$，$x+h'=x+\cot y\ \Rightarrow\ h=\ln|\sin y|$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(0)=\frac\pi2$。<br>
+        $C=0+0+\ln\Big|\sin\dfrac\pi2\Big|=\ln1=0$</p>
+    </div>
+  </div>
+  <div class="final">答：$\dfrac{x^2}{2}+xy+\ln|\sin y|=0$。</div>
+  <p class="small"><a href="#am1-109b-1f">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-109b-1h" data-group="四、非正合方程與積分因子（照片 7–10）" data-title="109 級下期中 1(h)：F=xᵃyᵇ">
+  <h3>109 級下第 1 次期中 1(h)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1h"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(h) $(5xy^2-2y)dx+(3x^2y-x)dy=0$ for $y(1)=1$.</p><p>(Hint: 原式乘以積分因子 $F(x,y)=x^ay^b$，變成 exact eq.)</p><p>Ans: $x^5y^3-\dfrac12x^4y^2=\dfrac12$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(5xy^2-2y)\,dx+(3x^2y-x)\,dy=0$，$y(1)=1$（提示 $F=x^ay^b$）。</div>
+  <div class="rote">
+    <p><b>看到</b>「$M_y\ne N_x$」＋「$\dfrac{\Delta}{N}$、$\dfrac{\Delta}{M}$ 都混著 $x,y$」＋「提示 $F=x^ay^b$」⟹ 題型：<b>非正合方程，積分因子 $x^ay^b$（比較係數）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$；不相等時算 $\Delta=\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分；$\Delta$：兩者的差</span>
+        $M=5xy^2-2y$、$N=3x^2y-x$；$\Delta/N$、$\Delta/M$ 都約不掉，只能用提示。<br>
+        $\dfrac{\partial M}{\partial y}=10xy-2$，$\dfrac{\partial N}{\partial x}=6xy-1$，$\Delta=4xy-1$</p>
+      <p class="wq-step"><span class="memo">背：要 $\dfrac{\partial(FM)}{\partial y}=\dfrac{\partial(FN)}{\partial x}$，$F=x^ay^b$</span>
+        <span class="syms">$F$：積分因子；$a$、$b$：待定次方；$FM$、$FN$：乘完的係數</span>
+        先乘開再偏微分。<br>
+        $FM=5x^{a+1}y^{b+2}-2x^ay^{b+1}$，$FN=3x^{a+2}y^{b+1}-x^{a+1}y^b$<br>
+        $\dfrac{\partial(FM)}{\partial y}=5(b+2)x^{a+1}y^{b+1}-2(b+1)x^ay^b$<br>
+        $\dfrac{\partial(FN)}{\partial x}=3(a+2)x^{a+1}y^{b+1}-(a+1)x^ay^b$</p>
+      <p class="wq-step"><span class="memo">背：兩邊同類項係數相等</span>
+        <span class="syms">$x^{a+1}y^{b+1}$、$x^ay^b$：兩邊共有的兩種項；$a$、$b$：待定次方</span>
+        比兩種項的係數，解聯立。<br>
+        $5(b+2)=3(a+2)\ \Rightarrow\ 3a-5b=4$；$2(b+1)=a+1\ \Rightarrow\ a=2b+1$<br>
+        $3(2b+1)-5b=4\ \Rightarrow\ b=1$，$a=3$，$F=x^3y$</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int FM\,dx+h(y)$，$\dfrac{\partial f}{\partial y}=FN$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$FM$、$FN$：乘完的係數；$h(y)$：只含 $y$ 的函數；$h'(y)$：$h$ 的導數</span>
+        乘 $x^3y$ 後積分，對 $y$ 微分剛好等於 $FN$，$h'=0$。<br>
+        $(5x^4y^3-2x^3y^2)\,dx+(3x^5y^2-x^4y)\,dy=0$<br>
+        $f=x^5y^3-\tfrac12x^4y^2+h(y)$，$h'=0$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(1)=1$。<br>
+        $C=1-\tfrac12=\tfrac12$</p>
+    </div>
+  </div>
+  <div class="final">答：$x^5y^3-\dfrac12x^4y^2=\dfrac12$。</div>
+  <p class="small"><a href="#am1-109b-1h">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-108b-1f" data-group="四、非正合方程與積分因子（照片 7–10）" data-title="108 級下 1(f)：(3xy+y²)dx+(x²+xy)dy=0">
+  <h3>108 級下 First Order ODE 1(f)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-108b-1f"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>First Order ODE</p><p>1. Solve the differential equations.</p><p>(f) $(3xy+y^2)dx+(x^2+xy)dy=0$ for $y(1)=1$.</p><p>Ans: $\ln|x|+\dfrac14\left(\ln\left|\dfrac{y}{x}\right|+\ln\left|\dfrac{y}{x}+2\right|\right)-\dfrac{\ln3}{4}=0$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(3xy+y^2)\,dx+(x^2+xy)\,dy=0$，$y(1)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(3xy+y^2)\,dx+(x^2+xy)\,dy=0$」＋「$M_y\ne N_x$」＋「$N=x(x+y)$ 和 $\Delta=x+y$ 約分」⟹ 題型：<b>非正合方程，積分因子 $F(x)$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求滿足 $y(1)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：正合判別 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$；不相等時算 $\Delta=\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\dfrac{\partial M}{\partial y}$：$M$ 對 $y$ 偏微分；$\dfrac{\partial N}{\partial x}$：$N$ 對 $x$ 偏微分；$\Delta$：兩者的差</span>
+        $M=3xy+y^2$、$N=x^2+xy$。<br>
+        $\Delta=(3x+2y)-(2x+y)=x+y$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\Delta}{N}$ 只含 $x$ ⟹ $F(x)=e^{\int\frac{\Delta}{N}dx}$</span>
+        <span class="syms">$\Delta$：$\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$；$N$：$dy$ 的係數；$F(x)$：只含 $x$ 的積分因子</span>
+        $N$ 提出 $x$。<br>
+        $\dfrac{\Delta}{N}=\dfrac{x+y}{x(x+y)}=\dfrac1x\ \Rightarrow\ F=x$</p>
+      <p class="wq-step"><span class="memo">背：乘上 $F$ 後再驗 $\dfrac{\partial(FM)}{\partial y}=\dfrac{\partial(FN)}{\partial x}$</span>
+        <span class="syms">$FM$：乘完的 $dx$ 係數；$FN$：乘完的 $dy$ 係數；$F$：積分因子</span>
+        乘 $x$ 進去。<br>
+        $(3x^2y+xy^2)\,dx+(x^3+x^2y)\,dy=0$，兩個偏導數都是 $3x^2+2xy$ ✔</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int FM\,dx+h(y)$，$\dfrac{\partial f}{\partial y}=FN$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$FM$、$FN$：乘完的係數；$h(y)$：只含 $y$ 的函數；$h'(y)$：$h$ 的導數</span>
+        對 $y$ 微分剛好等於 $FN$。<br>
+        $f=x^3y+\tfrac12x^2y^2+h(y)$，$h'=0$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(1)=1$，最後乘 2 去分數。<br>
+        $C=1+\tfrac12=\tfrac32$，$2x^3y+x^2y^2=3$</p>
+      <p class="wq-step"><span class="memo">背：$a\ln b=\ln b^a$，$\ln A+\ln B=\ln(AB)$</span>
+        <span class="syms">$a$：對數前面的係數；$b$、$A$、$B$：對數裡面的正數</span>
+        對照考卷答案：乘 4 後合併對數、取指數（初始點附近 $x,y\gt0$）。<br>
+        $4\ln x+\ln\dfrac yx+\ln\Big(\dfrac yx+2\Big)=\ln3\ \Rightarrow\ x^2y(y+2x)=3$，相同</p>
+    </div>
+  </div>
+  <div class="final">答：$2x^3y+x^2y^2=3$（＝考卷的對數形式）。</div>
+  <p class="small"><a href="#am1-108b-1f">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-self-04a" data-group="四、非正合方程與積分因子（照片 7–10）" data-title="自編難題：積分因子 xᵃyᵇ">
+  <h3>自編難題（第 4 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$(3y+4xy^2)dx+(2x+3x^2y)dy=0$，$y(1)=1$：(a) 說明 $F(x)$、$F(y)$ 都不存在；(b) 找 $F=x^ay^b$；(c) 解。</div>
+  <div class="rote">
+    <p><b>看到</b>「$M_y\ne N_x$」＋「要說明 $F(x)$、$F(y)$ 都不行」＋「找 $x^ay^b$」⟹ 題型：<b>非正合方程，積分因子 $x^ay^b$（比較係數）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 說明 $F(x)$、$F(y)$ 都不存在</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\Delta}{N}$ 只含 $x$ 才有 $F(x)$；$\dfrac{\Delta}{M}$ 只含 $y$ 才有 $F(y)$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\Delta$：$\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$</span>
+        $M=3y+4xy^2$、$N=2x+3x^2y$，算出 $\Delta$ 再看兩個比值。<br>
+        $\dfrac{\partial M}{\partial y}=3+8xy$，$\dfrac{\partial N}{\partial x}=2+6xy$，$\Delta=1+2xy$<br>
+        $\dfrac{\Delta}{N}=\dfrac{1+2xy}{x(2+3xy)}$ 含 $y$；$\dfrac{\Delta}{M}=\dfrac{1+2xy}{y(3+4xy)}$ 含 $x$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 積分因子 $F=x^ay^b$</h5>
+      <p class="wq-step"><span class="memo">背：要 $\dfrac{\partial(FM)}{\partial y}=\dfrac{\partial(FN)}{\partial x}$，$F=x^ay^b$</span>
+        <span class="syms">$F$：積分因子；$a$、$b$：待定次方；$FM$、$FN$：乘完的係數</span>
+        先乘開再偏微分。<br>
+        $FM=3x^ay^{b+1}+4x^{a+1}y^{b+2}$，$FN=2x^{a+1}y^b+3x^{a+2}y^{b+1}$<br>
+        $\dfrac{\partial(FM)}{\partial y}=3(b+1)x^ay^b+4(b+2)x^{a+1}y^{b+1}$<br>
+        $\dfrac{\partial(FN)}{\partial x}=2(a+1)x^ay^b+3(a+2)x^{a+1}y^{b+1}$</p>
+      <p class="wq-step"><span class="memo">背：兩邊同類項係數相等</span>
+        <span class="syms">$x^ay^b$、$x^{a+1}y^{b+1}$：兩邊共有的兩種項；$a$、$b$：待定次方</span>
+        整理成聯立方程：第一式乘 3、第二式乘 2 相減。<br>
+        $3(b+1)=2(a+1)\ \Rightarrow\ 2a-3b=1$；$4(b+2)=3(a+2)\ \Rightarrow\ 3a-4b=2$<br>
+        $b=1$，$a=2$，$F=x^2y$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 解 $y(1)=1$</h5>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int FM\,dx+h(y)$，$\dfrac{\partial f}{\partial y}=FN$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$FM$、$FN$：乘完的係數；$h(y)$：只含 $y$ 的函數；$h'(y)$：$h$ 的導數</span>
+        乘 $x^2y$ 後積分，對 $y$ 微分剛好等於 $FN$。<br>
+        $(3x^2y^2+4x^3y^3)\,dx+(2x^3y+3x^4y^2)\,dy=0$<br>
+        $f=x^3y^2+x^4y^3+h(y)$，$h'=0$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $y(1)=1$。<br>
+        $C=1+1=2$，$x^3y^2+x^4y^3=2$</p>
+    </div>
+  </div>
+  <div class="final">答：$F=x^2y$；$x^3y^2+x^4y^3=2$。</div>
+  <p class="small"><a href="#am1-self-04a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-self-04b" data-group="四、非正合方程與積分因子（照片 7–10）" data-title="自編難題：y dx+(2x−yeʸ)dy=0 兩種解法">
+  <h3>自編難題（第 4 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y\,dx+(2x-ye^y)dy=0$，$x=0$ 時 $y=1$。用 (a) 積分因子 $F(y)$、(b) 把 $x$ 當未知函數的線性方程，兩種方法解，並比較。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y\,dx+(2x-ye^y)\,dy=0$」＋「$M_y=1\ne N_x=2$」＋「$x$ 只有一次」⟹ 題型：<b>非正合方程 $F(y)$／把 $x$ 當未知函數的線性方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 積分因子 $F(y)$</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\Delta}{M}$ 只含 $y$ ⟹ $F(y)=e^{-\int\frac{\Delta}{M}dy}$</span>
+        <span class="syms">$M$：$dx$ 的係數；$N$：$dy$ 的係數；$\Delta$：$\dfrac{\partial M}{\partial y}-\dfrac{\partial N}{\partial x}$；$F(y)$：只含 $y$ 的積分因子</span>
+        $M=y$、$N=2x-ye^y$。<br>
+        $\Delta=1-2=-1$，$-\dfrac{\Delta}{M}=\dfrac1y\ \Rightarrow\ F=e^{\int\frac1ydy}=y$</p>
+      <p class="wq-step"><span class="memo">背：乘上 $F$ 後再驗 $\dfrac{\partial(FM)}{\partial y}=\dfrac{\partial(FN)}{\partial x}$</span>
+        <span class="syms">$FM$：乘完的 $dx$ 係數；$FN$：乘完的 $dy$ 係數；$F$：積分因子</span>
+        乘 $y$ 進去。<br>
+        $y^2\,dx+(2xy-y^2e^y)\,dy=0$，兩個偏導數都是 $2y$ ✔</p>
+      <p class="wq-step"><span class="memo">背：$f=\displaystyle\int FM\,dx+h(y)$，$\dfrac{\partial f}{\partial y}=FN$</span>
+        <span class="syms">$f(x,y)$：要找的函數，解寫成 $f=C$；$FM$、$FN$：乘完的係數；$h(y)$：只含 $y$ 的函數；$h'(y)$：$h$ 的導數</span>
+        $2xy$ 兩邊消掉。<br>
+        $f=xy^2+h(y)$，$2xy+h'=2xy-y^2e^y\ \Rightarrow\ h'=-y^2e^y$</p>
+      <p class="wq-step"><span class="memo">背：分部積分 $\displaystyle\int u\,dv=uv-\int v\,du$</span>
+        <span class="syms">$u$：要微分的因式；$dv$：要積分的因式；$v$：$dv$ 積分的結果</span>
+        取 $dv=e^y\,dy$，先 $u=y^2$、再 $u=y$，做兩次。<br>
+        $\displaystyle\int y^2e^ydy=y^2e^y-2\int ye^ydy=y^2e^y-2(ye^y-e^y)=(y^2-2y+2)e^y$<br>
+        $h=-(y^2-2y+2)e^y$</p>
+      <p class="wq-step"><span class="memo">背：解是 $f(x,y)=C$，代初始點定 $C$</span>
+        <span class="syms">$f(x,y)$：上面求出的函數；$C$：常數；$(x_0,y_0)$：題目給的初始點</span>
+        題目給 $x=0$ 時 $y=1$。<br>
+        $xy^2-(y^2-2y+2)e^y=C$，$C=0-(1-2+2)e=-e$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 把 $x$ 當未知函數的線性方程</h5>
+      <p class="wq-step"><span class="memo">背：$y'+p(x)\,y=q(x)$，$F=e^{\int p\,dx}$，$(Fy)'=Fq$</span>
+        <span class="syms">$p$：未知函數的係數；$q$：右邊只含自變數的項；$F$：積分因子；$K$：積分常數</span>
+        這裡要把公式裡的 $x$、$y$ 對調使用，因為 $x$ 只有一次、未知函數取 $x(y)$：除以 $y\,dy$ 得標準式，$p=\dfrac2y$、$q=e^y$。<br>
+        $\dfrac{dx}{dy}+\dfrac2y\,x=e^y$，$F=e^{\int\frac2ydy}=y^2$<br>
+        $\dfrac{d}{dy}\big(y^2x\big)=y^2e^y\ \Rightarrow\ y^2x=(y^2-2y+2)e^y+K$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件定常數</span>
+        <span class="syms">$(x_0,y_0)$：題目給的初始點；$K$：積分常數</span>
+        代 $y=1$、$x=0$；移項後和 (a) 完全相同。<br>
+        $0=e+K\ \Rightarrow\ K=-e$，$xy^2-(y^2-2y+2)e^y=-e$</p>
+    </div>
+  </div>
+  <div class="final">答：$xy^2-(y^2-2y+2)e^y=-e$。</div>
+  <p class="small"><a href="#am1-self-04b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 五、應用：RC 電路與空氣阻力 ===== -->
+<article class="exam-item" data-exam-id="am1-ex-rc" data-group="五、應用：RC 電路與空氣阻力（照片 11–13）" data-title="板書例題：RC 電路放電（與充電）">
+  <h3>板書例題（9/16 照片 11–12）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-rc"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例　RC-circuit: discharging（電路圖：電池 $\varepsilon$、開關 a／b、電容 $C$、電阻 $R$、電流 $i$；$q_0=C\varepsilon$）　$C\equiv\dfrac QV$　Kirchhoff's loop rule</p><p>[a] $\varepsilon-\dfrac qC-iR=0\to\dfrac qC+iR=\varepsilon$　[b] $\dfrac qC+iR=0\to R\dfrac{dq}{dt}+\dfrac qC=0$，$i=\dfrac{dq}{dt}$</p><p>方法二　引入 $F=e^{\int\frac{1}{RC}dt}$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如板書電路圖：電池 $\varepsilon$、開關 a／b、電容 $C$、電阻 $R$ 接成迴路，圖上標出電流 $i$ 的方向；電容先充到 $q_0=C\varepsilon$。(a) $t=0$ 開關撥到 b，電容經 $R$ 放電，求 $q(t)$、$i(t)$；(b)（網站補充）開關在 a、$q(0)=0$，求充電的 $q(t)$。</div>
+  <div class="rote">
+    <p><b>看到</b>「電路圖：電池、開關 a／b、$C$、$R$」＋「$q_0=C\varepsilon$」＋「求 $q(t)$、$i(t)$」⟹ 題型：<b>RC 電路的一階方程（放電可分離、充電線性）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）</h5>
+      <p class="wq-step"><span class="memo">讀電路圖：開關在 b 時迴路只有 $C$、$R$；開關在 a 時電池 $\varepsilon$、$C$、$R$ 串成一圈</span>
+        <span class="syms">$\varepsilon$：電池電動勢（V）；$C$：電容（F）；$R$：電阻（Ω）；$i$：圖上箭頭方向的電流（A）</span>
+        圖上開關有 a、b 兩個接點：撥到 b 時電池被切出迴路，撥到 a 時電池在迴路裡；兩種情況都是單一迴路，各元件電流相同。</p>
+      <p class="wq-step"><span class="memo">背：迴路定則（繞一圈電壓總和為 0）；電容電壓 $\dfrac qC$，電阻電壓 $iR$，$i=\dfrac{dq}{dt}$</span>
+        <span class="syms">$q$：電容上的電荷（C）；$C$：電容（F）；$i$：電流（A）；$R$：電阻（Ω）；$t$：時間（s）；$\varepsilon$：電池電動勢（V）</span>
+        依讀圖的兩種接法各寫一條。<br>
+        b：$\dfrac qC+R\dfrac{dq}{dt}=0$；a：$\dfrac qC+R\dfrac{dq}{dt}=\varepsilon$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 放電的 $q(t)$、$i(t)$</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dq}{dt}=M(t)N(q)\ \Rightarrow\ \displaystyle\int\frac{dq}{N(q)}=\int M(t)\,dt$</span>
+        <span class="syms">$q$：未知函數（電荷）；$t$：自變數（時間）；$M(t)$：只含 $t$ 的因式；$N(q)$：只含 $q$ 的因式；$K_1$：積分常數</span>
+        b 的方程移項成 $\dfrac{dq}{dt}=-\dfrac{q}{RC}$；$q\gt0$，$\ln q$ 不用絕對值，取指數後 $e^{K_1}$ 改叫 $K$。<br>
+        $\displaystyle\int\frac{dq}q=\int-\frac1{RC}dt\ \Rightarrow\ \ln q=-\frac t{RC}+K_1\ \Rightarrow\ q=Ke^{-t/RC}$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $q(0)=q_0$ 定常數</span>
+        <span class="syms">$q_0$：$t=0$ 的電荷；$K$：上一步的常數</span>
+        題目給 $q_0=C\varepsilon$。<br>
+        $C\varepsilon=Ke^0\ \Rightarrow\ K=C\varepsilon$，$q(t)=C\varepsilon\,e^{-t/RC}$</p>
+      <p class="wq-step"><span class="memo">背：$i=\dfrac{dq}{dt}$</span>
+        <span class="syms">$i$：電流（A）；$q$：電荷（C）；$t$：時間（s）</span>
+        負號表示實際電流和圖上箭頭相反。<br>
+        $i=C\varepsilon\cdot\Big(-\dfrac1{RC}\Big)e^{-t/RC}=-\dfrac\varepsilon Re^{-t/RC}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 充電的 $q(t)$</h5>
+      <p class="wq-step"><span class="memo">背：$q'+p(t)\,q=g(t)$，$F=e^{\int p\,dt}$，$(Fq)'=Fg$</span>
+        <span class="syms">$q$：未知函數（電荷）；$t$：自變數；$p(t)$：$q$ 的係數；$g(t)$：右邊只含 $t$ 的項；$F$：積分因子；$K$：積分常數</span>
+        a 的方程除以 $R$：$p=\dfrac1{RC}$、$g=\dfrac\varepsilon R$。<br>
+        $F=e^{t/RC}$，$\big(e^{t/RC}q\big)'=\dfrac\varepsilon Re^{t/RC}\ \Rightarrow\ e^{t/RC}q=\dfrac\varepsilon R\cdot RC\,e^{t/RC}+K=C\varepsilon\,e^{t/RC}+K$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $q(0)=q_0$ 定常數</span>
+        <span class="syms">$q_0$：$t=0$ 的電荷；$K$：積分常數</span>
+        題目給 $q(0)=0$，再除以 $e^{t/RC}$。<br>
+        $0=C\varepsilon+K\ \Rightarrow\ K=-C\varepsilon$，$q(t)=C\varepsilon\big(1-e^{-t/RC}\big)$</p>
+    </div>
+  </div>
+  <div class="final">答：放電 $q=C\varepsilon e^{-t/RC}$、$i=-\frac{\varepsilon}{R}e^{-t/RC}$；充電 $q=C\varepsilon(1-e^{-t/RC})$。</div>
+  <p class="small"><a href="#am1-ex-rc">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-ex-ac" data-group="五、應用：RC 電路與空氣阻力（照片 11–13）" data-title="板書例題：交流驅動 RC 電路">
+  <h3>板書例題（9/16 照片 12–13）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-ac"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例二　AC driving RC-circuit（電路圖：交流電源、電容 $C$、電阻 $R$ 串聯）</p><p>$\dfrac{dq}{dt}+\dfrac{q}{RC}=\dfrac{V_0}{R}\sin\omega t$，引入 $F=e^{\frac{1}{RC}t}$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如板書電路圖：交流電源、電容 $C$、電阻 $R$ 串成一個迴路。解電荷的方程 $\dfrac{dq}{dt}+\dfrac{q}{RC}=\dfrac{V_0}{R}\sin\omega t$。</div>
+  <div class="rote">
+    <p><b>看到</b>「電路圖：交流電源、$C$、$R$ 串聯」＋「$\dfrac{dq}{dt}+\dfrac q{RC}$」＋「右邊 $\sin\omega t$」⟹ 題型：<b>一階線性方程＋$\int e^{at}\sin bt\,dt$ 公式</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求 $q(t)$</h5>
+      <p class="wq-step"><span class="memo">讀電路圖：電源、$C$、$R$ 串成單一迴路</span>
+        <span class="syms">$C$：電容（F）；$R$：電阻（Ω）；$V_0$：電源電壓振幅（V）；$\omega$：角頻率（rad/s）</span>
+        圖上只有一個迴路，所以電流處處相同；由方程右邊 $\dfrac{V_0}R\sin\omega t$ 知道電源是 $V_0\sin\omega t$，迴路定則就是題目給的方程。</p>
+      <p class="wq-step"><span class="memo">背：$q'+p(t)\,q=g(t)$，$F=e^{\int p\,dt}$，$(Fq)'=Fg$</span>
+        <span class="syms">$q$：未知函數（電荷，C）；$t$：時間（s）；$p(t)$：$q$ 的係數；$g(t)$：右邊只含 $t$ 的項；$F$：積分因子</span>
+        $p=\dfrac1{RC}$ 是常數，$g=\dfrac{V_0}R\sin\omega t$。<br>
+        $F=e^{t/RC}$，$\big(e^{t/RC}q\big)'=\dfrac{V_0}R\,e^{t/RC}\sin\omega t$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int e^{at}\sin bt\,dt=\frac{e^{at}(a\sin bt-b\cos bt)}{a^2+b^2}+K$</span>
+        <span class="syms">$a$：指數裡 $t$ 的係數；$b$：$\sin$ 裡 $t$ 的係數；$K$：積分常數</span>
+        $a=\dfrac1{RC}$、$b=\omega$，$a^2+b^2=\dfrac{1+\omega^2R^2C^2}{R^2C^2}$；把 $\dfrac{V_0}R\cdot R^2C^2$ 乘進括號。<br>
+        $$\begin{aligned}&\int\frac{V_0}Re^{t/RC}\sin\omega t\,dt\\&=\frac{V_0}R\cdot\frac{R^2C^2\,e^{t/RC}}{1+\omega^2R^2C^2}\\&\quad\times\Big(\frac{\sin\omega t}{RC}-\omega\cos\omega t\Big)\\&=\frac{e^{t/RC}}{1+\omega^2R^2C^2}\big(CV_0\sin\omega t-\omega RC^2V_0\cos\omega t\big)\end{aligned}$$</p>
+      <p class="wq-step"><span class="memo">背：$q=\dfrac1F\left[\displaystyle\int Fg\,dt+K\right]$</span>
+        <span class="syms">$F$：積分因子；$g$：右邊只含 $t$ 的項；$K$：積分常數</span>
+        兩邊除以 $e^{t/RC}$，$K$ 變成 $Ke^{-t/RC}$（暫態）。<br>
+        $$q=\frac{CV_0\sin\omega t-\omega RC^2V_0\cos\omega t}{1+\omega^2R^2C^2}+Ke^{-t/RC}$$</p>
+      <p class="wq-step"><span class="memo">背：$\sin(\omega t-\phi)=\sin\omega t\cos\phi-\cos\omega t\sin\phi$</span>
+        <span class="syms">$\phi$：相位落後角；$\omega$：角頻率；$t$：時間</span>
+        取 $\tan\phi=\omega RC$，則 $\cos\phi=\dfrac1{\sqrt{1+\omega^2R^2C^2}}$、$\sin\phi=\dfrac{\omega RC}{\sqrt{1+\omega^2R^2C^2}}$，前兩項合成一個正弦（穩態）。<br>
+        $q_{\text{穩態}}=\dfrac{CV_0}{\sqrt{1+\omega^2R^2C^2}}\sin(\omega t-\phi)$，$\tan\phi=\omega RC$</p>
+    </div>
+  </div>
+  <div class="final">答：$q=\dfrac{CV_0(\sin\omega t-\omega RC\cos\omega t)}{1+\omega^2R^2C^2}+Ke^{-t/RC}$。</div>
+  <p class="small"><a href="#am1-ex-ac">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-110a-m2" data-group="五、應用：RC 電路與空氣阻力（照片 11–13）" data-title="110 上期中 2：v² 阻力落體">
+  <h3>110 上期中第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-110a-m2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2021.11.09)　20 points for each problem</p><p>2. An object of mass $m$ falls from rest under gravity subject to an air resistance proportional to the square of its velocity. Taking the $y$ axis as positive down, find $v$ as a function of $t$.</p><p>（109級下學期應數(第1次期中)：2. A body of mass $m$ falls vertically downward through a medium offering a resistance proportional to the square of the instantaneous velocity $v$. (a) Determine the differential equation for the velocity $v$ of the body. (b) If the initial condition is $v(0)=0$, find $v(t)$.　Ans: (a) $m\dfrac{dv}{dt}=-kv^2+mg$ $(k>0)$ (b) $v(t)=\sqrt{\dfrac{mg}{k}}\,\dfrac{e^{2\sqrt{\frac{kg}{m}}t}-1}{e^{2\sqrt{\frac{kg}{m}}t}+1}$）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(20 分) 質量 $m$ 由靜止落下，阻力正比於 $v^2$，向下為正，求 $v(t)$。</div>
+  <div class="rote">
+    <p><b>看到</b>「阻力正比於 $v^2$」＋「由靜止落下」＋「向下為正，求 $v(t)$」⟹ 題型：<b>$v^2$ 阻力落體（可分離＋部分分式，答案是 $\tanh$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求 $v(t)$</h5>
+      <p class="wq-step"><span class="memo">背：牛頓第二定律 $m\dfrac{dv}{dt}=\sum F$</span>
+        <span class="syms">$m$：質量（kg）；$v$：速度（m/s，向下為正）；$t$：時間（s）；$\sum F$：合力（N）；$g$：重力加速度（m/s²）；$k$：阻力比例常數（kg/m）</span>
+        重力 $mg$ 向下（正），阻力 $kv^2$ 向上（負），$k\gt0$ 自己設；「由靜止」給 $v(0)=0$。<br>
+        $m\dfrac{dv}{dt}=mg-kv^2$，$v(0)=0$</p>
+      <p class="wq-step"><span class="memo">背：終端速度 $v_t=\sqrt{\dfrac{mg}k}$（合力為 0 的速度）</span>
+        <span class="syms">$v_t$：終端速度（m/s）；$m$：質量；$g$：重力加速度；$k$：阻力比例常數</span>
+        用 $mg=kv_t^2$ 改寫，右邊變成「常數減平方」，可分離。<br>
+        $\dfrac{dv}{dt}=\dfrac km\big(v_t^2-v^2\big)\ \Rightarrow\ \displaystyle\int\frac{dv}{v_t^2-v^2}=\int\frac km\,dt$</p>
+      <p class="wq-step"><span class="memo">背：部分分式 $\dfrac1{v_t^2-v^2}=\dfrac1{2v_t}\Big(\dfrac1{v_t-v}+\dfrac1{v_t+v}\Big)$</span>
+        <span class="syms">$v_t$：終端速度；$v$：速度；$C$：積分常數</span>
+        在 $0\le v\lt v_t$ 絕對值可以拿掉；代 $t=0$、$v=0$ 得 $C=0$。<br>
+        $\dfrac1{2v_t}\ln\dfrac{v_t+v}{v_t-v}=\dfrac kmt+C$，$\dfrac1{2v_t}\ln1=0=C$</p>
+      <p class="wq-step"><span class="memo">背：$\tanh u=\dfrac{e^{u}-e^{-u}}{e^{u}+e^{-u}}=\dfrac{e^{2u}-1}{e^{2u}+1}$</span>
+        <span class="syms">$\tanh$：雙曲正切；$u$：引數</span>
+        乘 $2v_t$ 取指數，指數係數 $\dfrac{2kv_t}m=2\sqrt{\dfrac{gk}m}$；交叉相乘解 $v$。<br>
+        $\dfrac{v_t+v}{v_t-v}=e^{2\sqrt{gk/m}\,t}\ \Rightarrow\ v=v_t\,\dfrac{e^{2\sqrt{gk/m}\,t}-1}{e^{2\sqrt{gk/m}\,t}+1}$<br>
+        $v(t)=\sqrt{\dfrac{mg}k}\tanh\!\Big(\sqrt{\dfrac{gk}m}\,t\Big)$</p>
+    </div>
+  </div>
+  <div class="final">答：$v(t)=\sqrt{\dfrac{mg}{k}}\tanh\!\left(\sqrt{\dfrac{gk}{m}}\,t\right)$。</div>
+  <p class="small"><a href="#am1-110a-m2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-108b-2" data-group="五、應用：RC 電路與空氣阻力（照片 11–13）" data-title="108 級下 2：牛頓冷卻定律">
+  <h3>108 級下 First Order ODE 第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-108b-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>First Order ODE</p><p>2. Newton's law of cooling states that the time rate at which a body cools is proportional to the difference between the temperature of the body and the temperature of the surrounding medium. If $T(t)$ denotes the temperature of the body at any time $t$, and $T_s$ is the constant temperature of the surrounding medium.</p><p>(a) Determine the differential equation for the temperature of the body.</p><p>(b) When a cake is removed from a baking oven, its temperature is $T(0)=100^\circ$C. Put the cake on a table in the room temperature $25^\circ$C. After 3 min., the temperature of the cake is $T(3)=90^\circ$C. How long will it take to cool off to $50^\circ$C?</p><p>Ans: (a) $\dfrac{dT}{dt}=-k(T-T_s)$, $(k>0)$ (b) $\dfrac{\ln3}{\frac13\ln\frac{15}{13}}$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 寫出牛頓冷卻定律的微分方程；(b) $T(0)=100^\circ$C、$T_s=25^\circ$C、$T(3)=90^\circ$C，何時冷到 $50^\circ$C？</div>
+  <div class="rote">
+    <p><b>看到</b>「冷卻速率正比於溫差」＋「$T(0)$、$T(3)$ 兩個溫度」＋「求冷到 $50^\circ$C 的時間」⟹ 題型：<b>牛頓冷卻定律（可分離，兩個條件定 $K$ 和 $k$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 溫度的微分方程</h5>
+      <p class="wq-step"><span class="memo">背：牛頓冷卻定律 $\dfrac{dT}{dt}=-k(T-T_s)$，$k\gt0$</span>
+        <span class="syms">$T(t)$：物體溫度（°C）；$t$：時間（min）；$T_s$：周圍介質的固定溫度（°C）；$k$：比例常數（min⁻¹）</span>
+        「變化率正比於溫差」，比周圍熱時溫度下降，所以前面是負號。<br>
+        $\dfrac{dT}{dt}=-k(T-T_s)$，$k\gt0$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 冷到 $50^\circ$C 要多久</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dT}{dt}=M(t)N(T)\ \Rightarrow\ \displaystyle\int\frac{dT}{N(T)}=\int M(t)\,dt$</span>
+        <span class="syms">$T$：未知函數（溫度）；$t$：自變數（時間）；$M(t)$：只含 $t$ 的因式；$N(T)$：只含 $T$ 的因式；$C_1$：積分常數；$K$：取指數後的常數</span>
+        $N(T)=T-T_s$、$M(t)=-k$；代 $T(0)=100$、$T_s=25$ 得 $K$。<br>
+        $\ln|T-T_s|=-kt+C_1\ \Rightarrow\ T-T_s=Ke^{-kt}$<br>
+        $K=100-25=75$，$T=25+75e^{-kt}$</p>
+      <p class="wq-step"><span class="memo">背：第二個條件定比例常數 $k$</span>
+        <span class="syms">$k$：比例常數（min⁻¹）；$T(3)$：3 分鐘時的溫度</span>
+        題目給 $T(3)=90$。<br>
+        $90=25+75e^{-3k}\ \Rightarrow\ e^{-3k}=\dfrac{65}{75}=\dfrac{13}{15}\ \Rightarrow\ k=\dfrac13\ln\dfrac{15}{13}\approx0.04770\ \text{min}^{-1}$</p>
+      <p class="wq-step"><span class="memo">背：令 $T(t^*)=$ 目標溫度，解 $t^*$</span>
+        <span class="syms">$t^*$：冷到 $50^\circ$C 的時間（min）；$k$：上一步的比例常數</span>
+        $\ln3\approx1.09861$、$\ln\frac{15}{13}\approx0.14310$。<br>
+        $50=25+75e^{-kt^*}\ \Rightarrow\ e^{-kt^*}=\dfrac13\ \Rightarrow\ t^*=\dfrac{\ln3}k=\dfrac{\ln3}{\frac13\ln\frac{15}{13}}$<br>
+        $t^*\approx\dfrac{3\times1.09861}{0.14310}\approx23.0\ \text{min}$</p>
+    </div>
+  </div>
+  <div class="final">答：$t=\dfrac{\ln3}{\frac13\ln\frac{15}{13}}\approx23.0$ min。</div>
+  <p class="small"><a href="#am1-108b-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-108b-3" data-group="五、應用：RC 電路與空氣阻力（照片 11–13）" data-title="108 級下 3：RC 串聯 V₀cos ωt 的電流">
+  <h3>108 級下 First Order ODE 第 3 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-108b-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>First Order ODE</p><p>3. Find the solutions of the current for an $RC$ series circuit with $V=V_0\cos\omega t$.</p><p>Ans: $i(t)=\dfrac{V_0}{R}\dfrac{1}{(\frac{1}{RC})^2+\omega^2}\left(\dfrac{-\omega\sin\omega t}{RC}+\omega^2\cos\omega t\right)+Ke^{-\frac{t}{RC}}$, where $K$ is constant.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$RC$ 串聯，$V=V_0\cos\omega t$，求電流 $i(t)$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$RC$ 串聯」＋「電源 $V_0\cos\omega t$」＋「求電流 $i(t)$」⟹ 題型：<b>迴路方程微分一次消掉 $q$ → $i$ 的一階線性方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求電流 $i(t)$</h5>
+      <p class="wq-step"><span class="memo">背：迴路定則 $iR+\dfrac qC=V$，$i=\dfrac{dq}{dt}$</span>
+        <span class="syms">$i$：電流（A）；$R$：電阻（Ω）；$q$：電容電荷（C）；$C$：電容（F）；$V$：電源電壓（V）；$t$：時間（s）</span>
+        方程裡同時有 $i$ 和 $q$，對 $t$ 微分一次把 $\dfrac{dq}{dt}$ 換成 $i$，再除以 $R$。<br>
+        $iR+\dfrac qC=V_0\cos\omega t\ \Rightarrow\ R\dfrac{di}{dt}+\dfrac iC=-\omega V_0\sin\omega t$<br>
+        $\dfrac{di}{dt}+a\,i=-\dfrac{\omega V_0}R\sin\omega t$，$a=\dfrac1{RC}$</p>
+      <p class="wq-step"><span class="memo">背：$i'+p\,i=g(t)$，$F=e^{\int p\,dt}$，$(Fi)'=Fg$</span>
+        <span class="syms">$i$：未知函數（電流）；$p$：$i$ 的係數（這裡 $a$）；$g(t)$：右邊只含 $t$ 的項；$F$：積分因子</span>
+        $p=a$ 是常數。<br>
+        $F=e^{at}$，$\big(e^{at}i\big)'=-\dfrac{\omega V_0}Re^{at}\sin\omega t$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int e^{at}\sin bt\,dt=\frac{e^{at}(a\sin bt-b\cos bt)}{a^2+b^2}+K$</span>
+        <span class="syms">$a$：指數裡 $t$ 的係數；$b$：$\sin$ 裡 $t$ 的係數；$K$：積分常數</span>
+        $b=\omega$。<br>
+        $e^{at}i=-\dfrac{\omega V_0}R\cdot\dfrac{e^{at}(a\sin\omega t-\omega\cos\omega t)}{a^2+\omega^2}+K$</p>
+      <p class="wq-step"><span class="memo">背：$i=\dfrac1F\left[\displaystyle\int Fg\,dt+K\right]$</span>
+        <span class="syms">$F$：積分因子；$g$：右邊只含 $t$ 的項；$K$：積分常數</span>
+        兩邊除以 $e^{at}$（$K$ 也要除），再把 $a=\dfrac1{RC}$ 代回。<br>
+        $i=\dfrac{V_0}R\,\dfrac{1}{a^2+\omega^2}\big(-a\omega\sin\omega t+\omega^2\cos\omega t\big)+Ke^{-at}$<br>
+        $$i=\frac{V_0}R\,\frac{1}{(\frac1{RC})^2+\omega^2}\Big(-\frac{\omega\sin\omega t}{RC}+\omega^2\cos\omega t\Big)+Ke^{-t/RC}$$</p>
+    </div>
+  </div>
+  <div class="final">答：$i=\dfrac{V_0}{R}\dfrac{1}{(\frac1{RC})^2+\omega^2}\Big(-\dfrac{\omega\sin\omega t}{RC}+\omega^2\cos\omega t\Big)+Ke^{-t/RC}$。</div>
+  <p class="small"><a href="#am1-108b-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-109a-e4" data-group="五、應用：RC 電路與空氣阻力（照片 11–13）" data-title="109 級上 Euler 4：RC 串聯 V₀sin ωt 的電流">
+  <h3>109 級上第 2 次期中（Euler Formula）第 4 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109a-e4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Euler Formula</p><p>4. Find the current passes through the resistor $R$ of an AC circuit shown below.</p><p>［考卷附圖：電阻 R 與電容 C 串聯在上方導線，下方為交流電源 $V_0\sin(\omega t)$，三者構成單一迴路。］</p><p>Ans: $\dfrac{V_0}{\sqrt{R^2+\left(\frac{1}{\omega C}\right)^2}}\sin(\omega t+\phi)$,　$\phi=-\tan^{-1}(\omega RC)$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如圖：電阻 $R$ 與電容 $C$ 串在上方導線，下方是交流電源 $V_0\sin(\omega t)$，三者構成單一迴路。求通過電阻 $R$ 的電流。</div>
+  <div class="rote">
+    <p><b>看到</b>「圖：$R$、$C$、交流電源 $V_0\sin\omega t$ 一個迴路」＋「求通過 $R$ 的電流」⟹ 題型：<b>交流 RC：微分迴路方程 → 線性方程，取穩態合成振幅與相位</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求通過 $R$ 的電流</h5>
+      <p class="wq-step"><span class="memo">讀圖：$R$、$C$ 和電源串成單一迴路</span>
+        <span class="syms">$R$：電阻（Ω）；$C$：電容（F）；$V_0$：電源電壓振幅（V）；$\omega$：角頻率（rad/s）；$i$：迴路電流（A）</span>
+        圖上只有一個迴路，沒有分支，所以通過 $R$ 的電流就是迴路電流 $i$；電源電壓是 $V_0\sin\omega t$。</p>
+      <p class="wq-step"><span class="memo">背：迴路定則 $iR+\dfrac qC=V$，$i=\dfrac{dq}{dt}$</span>
+        <span class="syms">$i$：電流（A）；$R$：電阻（Ω）；$q$：電容電荷（C）；$C$：電容（F）；$V$：電源電壓（V）；$t$：時間（s）</span>
+        對 $t$ 微分一次消掉 $q$，再除以 $R$。<br>
+        $R\dfrac{di}{dt}+\dfrac iC=\omega V_0\cos\omega t\ \Rightarrow\ \dfrac{di}{dt}+a\,i=\dfrac{\omega V_0}R\cos\omega t$，$a=\dfrac1{RC}$</p>
+      <p class="wq-step"><span class="memo">背：$F=e^{\int a\,dt}=e^{at}$；$\displaystyle\int e^{at}\cos bt\,dt=\frac{e^{at}(a\cos bt+b\sin bt)}{a^2+b^2}+K$</span>
+        <span class="syms">$F$：積分因子；$a$：$i$ 的係數 $\dfrac1{RC}$；$b$：$\cos$ 裡 $t$ 的係數；$K$：積分常數</span>
+        $b=\omega$；除以 $e^{at}$ 後 $Ke^{-t/RC}$ 會衰減掉，只留穩態。<br>
+        $i=\dfrac{\omega V_0}R\,\dfrac{a\cos\omega t+\omega\sin\omega t}{a^2+\omega^2}+Ke^{-at}$</p>
+      <p class="wq-step"><span class="memo">背：$A\sin\omega t+B\cos\omega t=\sqrt{A^2+B^2}\,\sin(\omega t+\theta)$，$\tan\theta=\dfrac BA$</span>
+        <span class="syms">$A$：$\sin$ 的係數；$B$：$\cos$ 的係數；$\theta$：相位角</span>
+        $A=\omega$、$B=a$，所以 $\tan\theta=\dfrac a\omega=\dfrac1{\omega RC}$；振幅化簡用 $\dfrac{a}{\omega}=\dfrac1{\omega RC}$。<br>
+        $i_{\text{穩態}}=\dfrac{\omega V_0}{R\sqrt{a^2+\omega^2}}\sin(\omega t+\theta)=\dfrac{V_0}{\sqrt{R^2+\frac1{\omega^2C^2}}}\sin(\omega t+\theta)$</p>
+      <p class="wq-step"><span class="memo">背：$\tan^{-1}\dfrac1u=\dfrac\pi2-\tan^{-1}u$（$u\gt0$），$\sin\!\Big(\alpha+\dfrac\pi2\Big)=\cos\alpha$</span>
+        <span class="syms">$u$：正數（這裡 $\omega RC$）；$\alpha$：任意角</span>
+        把相位改寫成考卷的 $\tan^{-1}(\omega RC)$；考卷寫 $\sin(\omega t+\phi)$、$\phi=-\tan^{-1}(\omega RC)$，應是 $\cos$。<br>
+        $\theta=\dfrac\pi2-\tan^{-1}(\omega RC)$<br>
+        $i=\dfrac{V_0}{\sqrt{R^2+(\frac1{\omega C})^2}}\cos\big(\omega t-\tan^{-1}\omega RC\big)$</p>
+    </div>
+  </div>
+  <div class="final">答：$\dfrac{V_0}{\sqrt{R^2+(\frac1{\omega C})^2}}\cos(\omega t-\tan^{-1}\omega RC)$（考卷寫 $\sin$ 是誤植）。</div>
+  <p class="small"><a href="#am1-109a-e4">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="am1-self-05a" data-group="五、應用：RC 電路與空氣阻力（照片 11–13）" data-title="自編難題：體積會變的混合槽">
+  <h3>自編難題（第 5 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$100\ \text{L}$ 純水，容量 $200\ \text{L}$；$2\ \text{g/L}$ 鹽水 $3\ \text{L/min}$ 流入、$2\ \text{L/min}$ 流出。求 $Q(t)$ 與裝滿時的鹽量、濃度。</div>
+  <div class="rote">
+    <p><b>看到</b>「槽內鹽水」＋「流入 $3$、流出 $2$ L/min，體積會變」＋「求鹽量 $Q(t)$」⟹ 題型：<b>混合槽（流入－流出），一階線性方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>鹽量 $Q(t)$</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{dQ}{dt}=$ 流入濃度 × 流入量 $-\dfrac QV$ × 流出量；$V=V_0+(\text{流入量}-\text{流出量})\,t$</span>
+        <span class="syms">$Q(t)$：槽內鹽量（g）；$t$：時間（min）；$V$：槽內溶液體積（L）；$V_0$：一開始的體積（L）；流入量、流出量：每分鐘幾公升（L/min）</span>
+        $V_0=100$，流入 $2\ \text{g/L}\times3\ \text{L/min}=6\ \text{g/min}$；「純水」給 $Q(0)=0$。<br>
+        $V=100+t$，$\dfrac{dQ}{dt}=6-\dfrac{2Q}{100+t}\ \Rightarrow\ Q'+\dfrac2{100+t}Q=6$</p>
+      <p class="wq-step"><span class="memo">背：$Q'+p(t)\,Q=g(t)$，$F=e^{\int p\,dt}$，$(FQ)'=Fg$</span>
+        <span class="syms">$Q$：未知函數（鹽量）；$t$：自變數；$p(t)$：$Q$ 的係數；$g(t)$：右邊只含 $t$ 的項；$F$：積分因子；$K$：積分常數</span>
+        $p=\dfrac2{100+t}$、$g=6$。<br>
+        $F=e^{2\ln(100+t)}=(100+t)^2$<br>
+        $\big[(100+t)^2Q\big]'=6(100+t)^2\ \Rightarrow\ (100+t)^2Q=2(100+t)^3+K$</p>
+      <p class="wq-step"><span class="memo">背：代初始條件 $Q(0)=Q_0$ 定常數</span>
+        <span class="syms">$Q_0$：$t=0$ 的鹽量；$K$：積分常數</span>
+        $Q(0)=0$，再除以 $(100+t)^2$。<br>
+        $0=2(100)^3+K\ \Rightarrow\ K=-2\times10^6$<br>
+        $Q(t)=2(100+t)-\dfrac{2\times10^6}{(100+t)^2}\ \text{g}$</p>
+    </div>
+    <div class="wq">
+      <h5>裝滿時的鹽量與濃度</h5>
+      <p class="wq-step"><span class="memo">背：濃度 $=\dfrac QV$</span>
+        <span class="syms">$Q$：鹽量（g）；$V$：體積（L）</span>
+        容量 $200\ \text{L}$：$100+t=200$，$t=100\ \text{min}$。<br>
+        $Q(100)=2(200)-\dfrac{2\times10^6}{200^2}=400-50=350\ \text{g}$，濃度 $\dfrac{350}{200}=1.75\ \text{g/L}$</p>
+    </div>
+  </div>
+  <div class="final">答：$Q=2(100+t)-\dfrac{2\times10^6}{(100+t)^2}$；裝滿時 $350\ \text{g}$、$1.75\ \text{g/L}$。</div>
+  <p class="small"><a href="#am1-self-05a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am1-self-05b" data-group="五、應用：RC 電路與空氣阻力（照片 11–13）" data-title="自編難題：v² 阻力下的上拋">
+  <h3>自編難題（第 5 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　阻力 $kv^2$（同 110 上期中第 2 題），物體以初速 $v_0$ 鉛直上拋，終端速度記為 $v_t=\sqrt{mg/k}$。(a) 求上升到最高點的時間 $t_{\text{top}}$；(b) 求最大高度 $h$；(c) $v_0=20\ \text{m/s}$、$v_t=30\ \text{m/s}$、$g=9.8\ \text{m/s}^2$ 時的數值，並和沒有空氣阻力比較。</div>
+  <div class="rote">
+    <p><b>看到</b>「阻力 $kv^2$」＋「上拋」＋「求上升時間、最大高度」⟹ 題型：<b>$v^2$ 阻力上拋（上升段 $-mg-kv^2$，時間用 $dv/dt$、高度用 $v\,dv/dy$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（三小題共用）</h5>
+      <p class="wq-step"><span class="memo">背：牛頓第二定律 $m\dfrac{dv}{dt}=\sum F$；終端速度 $v_t=\sqrt{\dfrac{mg}k}$</span>
+        <span class="syms">$m$：質量（kg）；$v$：速度（m/s，向上為正）；$t$：時間（s）；$\sum F$：合力（N）；$g$：重力加速度（m/s²）；$k$：阻力比例常數（kg/m）；$v_t$：終端速度（m/s）</span>
+        上升時重力和阻力都向下；用 $\dfrac km=\dfrac g{v_t^2}$ 改寫。<br>
+        $m\dfrac{dv}{dt}=-mg-kv^2\ \Rightarrow\ \dfrac{dv}{dt}=-g\Big(1+\dfrac{v^2}{v_t^2}\Big)$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 上升時間 $t_{\text{top}}$</h5>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int\frac{dv}{1+v^2/c^2}=c\tan^{-1}\frac vc$</span>
+        <span class="syms">$v$：速度；$c$：常數（這裡 $v_t$）；$\tan^{-1}$：反正切</span>
+        分離後從 $v_0$ 積到最高點的 $v=0$，時間從 0 積到 $t_{\text{top}}$。<br>
+        $\displaystyle\int_{v_0}^0\frac{dv}{1+v^2/v_t^2}=-g\,t_{\text{top}}\ \Rightarrow\ -v_t\tan^{-1}\frac{v_0}{v_t}=-g\,t_{\text{top}}$<br>
+        $t_{\text{top}}=\dfrac{v_t}g\tan^{-1}\dfrac{v_0}{v_t}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 最大高度 $h$</h5>
+      <p class="wq-step"><span class="memo">背：連鎖律 $\dfrac{dv}{dt}=v\dfrac{dv}{dy}$</span>
+        <span class="syms">$v$：速度；$y$：高度（m，向上為正）；$t$：時間</span>
+        要的是距離，把 $t$ 換成 $y$。<br>
+        $v\dfrac{dv}{dy}=-g\Big(1+\dfrac{v^2}{v_t^2}\Big)\ \Rightarrow\ \displaystyle\int_{v_0}^0\frac{v\,dv}{1+v^2/v_t^2}=-g\,h$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int\frac{du}{u}=\ln|u|$（$u$ 代換）</span>
+        <span class="syms">$u$：代換的新變數 $1+\dfrac{v^2}{v_t^2}$；$du$：$u$ 的微分 $\dfrac{2v\,dv}{v_t^2}$</span>
+        $v\,dv=\dfrac{v_t^2}2du$，上下限 $1+\dfrac{v_0^2}{v_t^2}$ 到 $1$。<br>
+        $\dfrac{v_t^2}2\Big[\ln u\Big]_{1+v_0^2/v_t^2}^{1}=-\dfrac{v_t^2}2\ln\Big(1+\dfrac{v_0^2}{v_t^2}\Big)=-g\,h$<br>
+        $h=\dfrac{v_t^2}{2g}\ln\Big(1+\dfrac{v_0^2}{v_t^2}\Big)$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 數值與真空比較</h5>
+      <p class="wq-step"><span class="memo">背：(a)(b) 的兩個式子；真空 $t=\dfrac{v_0}g$、$h=\dfrac{v_0^2}{2g}$</span>
+        <span class="syms">$v_0=20$ m/s：初速；$v_t=30$ m/s：終端速度；$g=9.8$ m/s²：重力加速度</span>
+        代題目 (c) 的數字。<br>
+        $t_{\text{top}}=\dfrac{30}{9.8}\tan^{-1}\dfrac23=3.061\times0.5880=1.800\ \text{s}$<br>
+        $h=\dfrac{900}{19.6}\ln\dfrac{13}9=16.89\ \text{m}$<br>
+        真空：$t=\dfrac{20}{9.8}=2.041\ \text{s}$，$h=\dfrac{400}{19.6}=20.41\ \text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：$t_{\text{top}}=\frac{v_t}{g}\tan^{-1}\frac{v_0}{v_t}\approx1.800\ \text{s}$，$h=\frac{v_t^2}{2g}\ln(1+\frac{v_0^2}{v_t^2})\approx16.89\ \text{m}$。</div>
+  <p class="small"><a href="#am1-self-05b">回到正文詳解</a></p>
+</article>

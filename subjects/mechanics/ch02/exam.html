@@ -1,0 +1,1690 @@
+<!-- 考試書寫版：每份先列完整題目，再列可直接寫在考卷上的完整作答。側欄依 data-exam-id 開啟。 -->
+
+<!-- ===== 一、牛頓三定律與伽利略的慣性 ===== -->
+<article class="exam-item" data-exam-id="c2-self-01a" data-group="一、牛頓三定律與伽利略的慣性（p.1–13）" data-title="自編難題：換座標系的彈性碰撞">
+  <h3>自編難題（第 1 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　彈性碰撞在 $S$ 中總動能守恆。$S'$ 相對 $S$ 以 $\vec V$ 等速運動。(a) 證明 $T'=T-\vec V\cdot\vec P+\tfrac12MV^2$；(b) 動能守恆要在所有慣性系成立還需什麼條件？(c) $m_1=2\ \text{kg}$、$3\ \text{m/s}$ 撞靜止 $m_2=1\ \text{kg}$，在 $S$ 與 $V=3\ \text{m/s}$ 的 $S'$ 中驗算。</div>
+  <ol class="write">
+    <li>$\vec v_i'=\vec v_i-\vec V$：$T'=\sum\tfrac12m_i(\vec v_i-\vec V)^2=T-\vec V\cdot\vec P+\tfrac12MV^2$。</li>
+    <li>前後相減：$\Delta T'=\Delta T-\vec V\cdot\Delta\vec P+\tfrac12V^2\Delta M$。$\Delta T=0$ 且對任意 $\vec V$ 要 $\Delta T'=0$ ⟹ $\Delta\vec P=0$、$\Delta M=0$。</li>
+    <li>(c) $v_1'=\frac{m_1-m_2}{m_1+m_2}v_1=1$、$v_2'=\frac{2m_1}{m_1+m_2}v_1=4\ \text{m/s}$。$S$：$9\ \text{J}\to\tfrac12(2)(1)+\tfrac12(1)(16)=9\ \text{J}$。</li>
+    <li>$S'$：速度各減 3：前 $(0,-3)$、後 $(-2,1)$；$T'$：$4.5\to4+0.5=4.5\ \text{J}$；套 (a)：$9-3\cdot6+\tfrac12\cdot3\cdot9=4.5$ ✔。</li>
+  </ol>
+  <div class="final">答：(a) 得證；(b) 動量守恆 $\Delta\vec P=0$ 與質量守恆 $\Delta M=0$；(c) $S$：$9\to9\ \text{J}$，$S'$：$4.5\to4.5\ \text{J}$。</div>
+  <p class="small"><a href="#c2-self-01a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-01b" data-group="一、牛頓三定律與伽利略的慣性（p.1–13）" data-title="自編難題：有摩擦的伽利略斜面">
+  <h3>自編難題（第 1 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　木塊由高 $h$、傾角 $\alpha$ 的斜面靜止滑下，再滑上傾角 $\beta$ 的斜面，動摩擦係數皆 $\mu$。(a) 求停下的高度 $h'$；(b) 右邊改水平面，求滑行距離 $s$；(c) 討論 $\mu\to0$；(d) $h=1\ \text{m}$、$\alpha=30^\circ$、$\mu=0.05$，求 $\beta=30^\circ$、$10^\circ$ 的 $h'$ 與 $s$。</div>
+  <ol class="write">
+    <li>斜面長 $=$ 高$/\sin\theta$，摩擦功 $=\mu mg\cos\theta\cdot\text{高}/\sin\theta=\mu mg\,\text{高}\cot\theta$。</li>
+    <li>功能關係：$mgh-\mu mgh\cot\alpha=mgh'+\mu mgh'\cot\beta$ ⟹ $h'=h\dfrac{1-\mu\cot\alpha}{1+\mu\cot\beta}$。</li>
+    <li>水平面：$mgh(1-\mu\cot\alpha)=\mu mgs$ ⟹ $s=\dfrac{h(1-\mu\cot\alpha)}{\mu}$。</li>
+    <li>$\mu\to0$：$h'\to h$ 與 $\beta$ 無關，$s\to\infty$（不受力就不停：慣性）。</li>
+    <li>數值：$h'(30^\circ)=0.9134/1.0866=0.841\ \text{m}$，$h'(10^\circ)=0.9134/1.2836=0.712\ \text{m}$，$s=18.3\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：$h'=h\dfrac{1-\mu\cot\alpha}{1+\mu\cot\beta}$，$s=\dfrac{h(1-\mu\cot\alpha)}{\mu}$；$\mu\to0$ 時 $h'\to h$、$s\to\infty$；數值 $0.841\ \text{m}$、$0.712\ \text{m}$、$18.3\ \text{m}$。</div>
+  <p class="small"><a href="#c2-self-01b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 二、參考座標系：地球算不算慣性系 ===== -->
+<article class="exam-item" data-exam-id="c2-self-02a" data-group="二、參考座標系：地球算不算慣性系（p.14–23）" data-title="自編難題：鉛垂線的偏角">
+  <h3>自編難題（第 2 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　地球半徑 $6.378\times10^6\ \text{m}$、自轉週期 $86164\ \text{s}$（恆星日）、$g=9.8\ \text{m/s}^2$ 指向地心。(a) 求緯度 $\lambda$ 處鉛垂線與地心方向的夾角 $\delta$；(b) 何處最大、多大？(c) 高雄 $\lambda=22.6^\circ$ 的 $\delta$ 與體重計讀數的減少比例。</div>
+  <ol class="write">
+    <li>慣性系：鉛錘做半徑 $R\cos\lambda$ 的圓周運動，$a=\omega^2R\cos\lambda$ 指向地軸；$\omega^2R=(465)^2/R=0.0339\ \text{m/s}^2$。</li>
+    <li>$\vec T+m\vec g=m\vec a$ ⟹ 鉛垂方向 $\vec g_{\text{eff}}=\vec g-\vec a$：沿地心分量 $g-\omega^2R\cos^2\lambda$，垂直分量 $\omega^2R\sin\lambda\cos\lambda$（指向赤道）。</li>
+    <li>$\tan\delta=\dfrac{\omega^2R\sin\lambda\cos\lambda}{g-\omega^2R\cos^2\lambda}\approx\dfrac{\omega^2R}{2g}\sin2\lambda$。</li>
+    <li>$\lambda=45^\circ$ 最大：$\delta\approx0.0339/19.6=1.73\times10^{-3}\ \text{rad}=0.099^\circ$。</li>
+    <li>高雄：$\tan\delta=\dfrac{0.0339(0.3843)(0.9232)}{9.8-0.0339(0.8523)}=1.23\times10^{-3}$，$\delta=0.070^\circ$；讀數少 $0.0339(0.8523)/9.8=0.29\%$。</li>
+  </ol>
+  <div class="final">答：$\tan\delta\approx\dfrac{\omega^2R}{2g}\sin2\lambda$；$45^\circ$ 時最大約 $0.10^\circ$；高雄 $0.07^\circ$、讀數少約 $0.29\%$。</div>
+  <p class="small"><a href="#c2-self-02a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-02b" data-group="二、參考座標系：地球算不算慣性系（p.14–23）" data-title="自編難題：加速列車裡落下的球">
+  <h3>自編難題（第 2 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　列車以 $a=1.5\ \text{m/s}^2$ 加速，車上單擺已靜止；有人在離地板 $H=1.0\ \text{m}$ 處相對車廂靜止放開小球。(a) 地面上分析，球落在正下方哪一側、多遠？(b) 車上看路徑為何？證明與擺線平行。(c) 「有向後的力推球」錯在哪？</div>
+  <ol class="write">
+    <li>放手後只受重力；水平保持 $u_0$。$t_f=\sqrt{2H/g}$。</li>
+    <li>$\Delta x=x_{\text{車}}-x_{\text{球}}=\tfrac12at_f^2=aH/g=1.5(1.0)/9.8=0.153\ \text{m}$，落在後面。</li>
+    <li>車上：$x'=-\tfrac12at^2$、$y'=-\tfrac12gt^2$ ⟹ $x'/y'=a/g$：直線，與鉛直夾 $\tan^{-1}(a/g)=8.7^\circ$。</li>
+    <li>單擺：$T\sin\phi=ma$、$T\cos\phi=mg$ ⟹ $\tan\phi=a/g$，兩者平行。</li>
+    <li>(c) 球只受重力，沒有向後的施力者；向後的加速度 $\ddot x'=-a$ 來自車廂座標系本身在加速（非慣性系）。</li>
+  </ol>
+  <div class="final">答：(a) 後方 $15.3\ \text{cm}$；(b) 傾角 $8.7^\circ$ 的直線，與擺線平行；(c) 假想力沒有施力者，是非慣性系的效應。</div>
+  <p class="small"><a href="#c2-self-02b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 三、第二、第三定律與動量守恆 ===== -->
+<article class="exam-item" data-exam-id="c2-tm-2-49" data-group="三、第二、第三定律與動量守恆（p.24–33）" data-title="課本 2-49：雙星的週期">
+  <h3>課本 2-49</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-49"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Two gravitationally bound stars with unequal masses $m_1$ and $m_2$, separated by a distance $d$, revolve about their center of mass in circular orbits. Show that the period $\tau$ is proportional to $d^{3/2}$ (Kepler’s Third Law) and find the proportionality constant.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-49 · p.97</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　兩顆質量 $m_1$、$m_2$（不相等）的恆星以重力互相束縛，相距 $d$，繞共同質心做圓周運動。證明週期 $\tau\propto d^{3/2}$，並求比例常數。</div>
+  <ol class="write">
+    <li>質心：$m_1r_1=m_2r_2$，$r_1+r_2=d$ ⟹ $r_1=\dfrac{m_2d}{m_1+m_2}$。兩星連線恆過質心，角速度 $\omega$ 相同。</li>
+    <li>對 $m_1$，重力提供向心力：$\dfrac{Gm_1m_2}{d^2}=m_1\omega^2r_1=\dfrac{m_1m_2\omega^2d}{m_1+m_2}$。</li>
+    <li>$\omega^2=\dfrac{G(m_1+m_2)}{d^3}$，$\tau=\dfrac{2\pi}\omega=\dfrac{2\pi}{\sqrt{G(m_1+m_2)}}d^{3/2}$。</li>
+  </ol>
+  <div class="final">答：$\tau=\dfrac{2\pi}{\sqrt{G(m_1+m_2)}}\,d^{3/2}$，比例常數 $\dfrac{2\pi}{\sqrt{G(m_1+m_2)}}$（等質量時 $\dfrac{2\pi}{\sqrt{2Gm}}$）。</div>
+  <p class="small"><a href="#c2-tm-2-49">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-48" data-group="三、第二、第三定律與動量守恆（p.24–33）" data-title="課本 2-48：等質量雙星">
+  <h3>課本 2-48</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-48"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Two gravitationally bound stars with equal masses $m$, separated by a distance $d$, revolve about their center of mass in circular orbits. Show that the period $\tau$ is proportional to $d^{3/2}$ (Kepler’s Third Law) and find the proportionality constant.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　兩顆質量皆 $m$ 的恆星相距 $d$，繞質心做圓周運動。證明 $\tau\propto d^{3/2}$ 並求比例常數。</div>
+  <ol class="write">
+    <li>等質量：質心在中點，軌道半徑 $d/2$，兩星角速度 $\omega$ 相同。</li>
+    <li>引力＝向心力：$\dfrac{Gm^2}{d^2}=m\omega^2\dfrac d2$ ⟹ $\omega^2=\dfrac{2Gm}{d^3}$。</li>
+    <li>$\tau=\dfrac{2\pi}{\omega}=\dfrac{2\pi}{\sqrt{2Gm}}\,d^{3/2}$。</li>
+  </ol>
+  <div class="final">答：$\tau=\dfrac{2\pi}{\sqrt{2Gm}}d^{3/2}$，比例常數 $\dfrac{2\pi}{\sqrt{2Gm}}$。</div>
+  <p class="small"><a href="#c2-tm-2-48">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-exam5-2" data-group="三、第二、第三定律與動量守恆（p.24–33）" data-title="考古題 第 5 章第 2 題：由 T²∝r³ 證明 n=−2">
+  <h3>Chapter-05（2025/05/22）第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-exam5-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Classical Mechanics - Exam Chapter-05 (2025/05/22)</p><p>2. (10 points) Suppose the gravitational force between two bodies is $kr^n$, where $r$ is the distance between them. It is observed that the Moon orbits the Earth in a nearly circular path and that its orbital period $T$ satisfies the relation $T^2 \propto r^3$, where $r$ is the radius of the orbit. Assuming the moon’s orbit is perfectly circular. Show that $n = -2$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　重力為 $kr^n$，月球圓軌道的週期滿足 $T^2\propto r^3$，證明 $n=-2$。（10 分）</div>
+  <ol class="write">
+    <li>正圓等速：徑向 $F=ma$，$|k|r^n=\dfrac{mv^2}{r}$。</li>
+    <li>$v=\dfrac{2\pi r}{T}$ ⟹ $|k|r^n=\dfrac{4\pi^2mr}{T^2}$。</li>
+    <li>$T^2=\dfrac{4\pi^2m}{|k|}\,r^{1-n}\propto r^{1-n}$。</li>
+    <li>與 $T^2\propto r^3$ 比較：$1-n=3$ ⟹ $n=-2$。</li>
+    <li>驗：$|k|=GMm$ 時 $T^2=\dfrac{4\pi^2}{GM}r^3$（克卜勒第三定律）✔。</li>
+  </ol>
+  <div class="final">答：$T^2\propto r^{1-n}=r^3$ ⟹ $n=-2$（平方反比）。</div>
+  <p class="small"><a href="#c2-exam5-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-2" data-group="三、第二、第三定律與動量守恆（p.24–33）" data-title="課本 2-2：球面上的質點">
+  <h3>課本 2-2</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-2"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A particle of mass $m$ is constrained to move on the surface of a sphere of radius $R$ by an applied force $\mathbf F(\theta,\phi)$. Write the equation of motion.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　質量 $m$ 的質點被限制在半徑 $R$ 的球面上，受外力 $\vec F(\theta,\phi)$。寫出運動方程式。</div>
+  <ol class="write">
+    <li>球座標，$r=R$；約束力 $N\hat e_r$。$\vec r=R\hat e_r$，$\dot{\vec r}=R(\dot\theta\hat e_\theta+\dot\phi\sin\theta\hat e_\phi)$。</li>
+    <li>用 $\dot{\hat e}_r=\dot\theta\hat e_\theta+\dot\phi\sin\theta\hat e_\phi$、$\dot{\hat e}_\theta=-\dot\theta\hat e_r+\dot\phi\cos\theta\hat e_\phi$、$\dot{\hat e}_\phi=-\dot\phi(\sin\theta\hat e_r+\cos\theta\hat e_\theta)$ 再微分：</li>
+    <li>$\ddot{\vec r}=-R(\dot\theta^2+\dot\phi^2\sin^2\theta)\hat e_r+R(\ddot\theta-\dot\phi^2\sin\theta\cos\theta)\hat e_\theta+R(\ddot\phi\sin\theta+2\dot\theta\dot\phi\cos\theta)\hat e_\phi$。</li>
+    <li>$\vec F+N\hat e_r=m\ddot{\vec r}$ 逐分量：$F_\theta=mR(\ddot\theta-\dot\phi^2\sin\theta\cos\theta)$，$F_\phi=mR(\ddot\phi\sin\theta+2\dot\theta\dot\phi\cos\theta)$，$F_r+N=-mR(\dot\theta^2+\dot\phi^2\sin^2\theta)$。</li>
+  </ol>
+  <div class="final">答：$mR(\ddot\theta-\dot\phi^2\sin\theta\cos\theta)=F_\theta$，$mR(\ddot\phi\sin\theta+2\dot\theta\dot\phi\cos\theta)=F_\phi$；徑向式決定約束力 $N$。</div>
+  <p class="small"><a href="#c2-tm-2-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-exam4-1" data-group="三、第二、第三定律與動量守恆（p.24–33）" data-title="考古題 Exam-4 第 1 題：爆炸成三塊">
+  <h3>Exam-4（2025/12/18）第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-exam4-1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Classical Mechanics - Exam-4 (2025/12/18)</p><p>1. A projectile of mass $M$ is moving horizontally with speed $v$ when it suddenly explodes in midair into three fragments. The explosion occurs in a very short time interval, so that external forces may be neglected during the explosion. The three fragments have masses $m_1 = M/2$, $m_2 = M/6$, and $m_3 = M/3$. Immediately after the explosion: mass $m_1$ continues moving in the original direction of the projectile with speed $4v$, mass $m_2$ travels in the opposite direction, and mass $m_3$ comes to rest.</p><p>(a) Determine the velocity (magnitude and direction) of the fragment $m_2$. (10 points)</p><p>(b) Find the energy released in the explosion in units of the initial kinetic energy. (10 points)</p></div>
+<p class="original-caption">力學 Exam-4（2025/12/18）第 1 題（114上・117 級上學期期末）</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　質量 $M$ 以 $v$ 水平運動，爆炸成 $m_1=M/2$、$m_2=M/6$、$m_3=M/3$；$m_1$ 以 $4v$ 沿原方向、$m_2$ 反向、$m_3$ 靜止。(a) $m_2$ 的速度；(b) 釋放的能量是初動能的幾倍。（各 10 分）</div>
+  <ol class="write">
+    <li>爆炸極短、外力可忽略，內力成對抵消 ⟹ 總動量守恆。取原方向為 $+x$。</li>
+    <li>$Mv=\frac M2(4v)+\frac M6v_2+\frac M3(0)$ ⟹ $v=2v+\frac{v_2}6$ ⟹ $v_2=-6v$。</li>
+    <li>$T_i=\tfrac12Mv^2$；$T_f=\tfrac12\cdot\frac M2(4v)^2+\tfrac12\cdot\frac M6(6v)^2=4Mv^2+3Mv^2=7Mv^2$。</li>
+    <li>$Q=T_f-T_i=\tfrac{13}2Mv^2$，$Q/T_i=13$。</li>
+    <li>驗：$v_{\text{cm}}=\frac{2Mv-Mv}{M}=v$ 不變 ✔。</li>
+  </ol>
+  <div class="final">答：(a) $v_2=6v$，與原方向相反；(b) $Q=\tfrac{13}{2}Mv^2=13\,T_i$。</div>
+  <p class="small"><a href="#c2-exam4-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-03a" data-group="三、第二、第三定律與動量守恆（p.24–33）" data-title="自編難題：繩子落到秤上">
+  <h3>自編難題（第 3 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　長 $L$、質量 $M$ 的柔軟繩鉛直懸著，下端剛碰秤盤，由靜止放手。(a) 頂端落下 $x$ 時秤的讀數；(b) 最大讀數與落完後的讀數；(c) $L=1.0\ \text{m}$、$M=0.50\ \text{kg}$、$x=0.5\ \text{m}$ 的讀數。</div>
+  <ol class="write">
+    <li>空中部分自由落體：$v=\sqrt{2gx}$，$\dot x=v$，$\dot v=g$；$\lambda=M/L$。</li>
+    <li>整條繩（向下為正）：$p=\lambda(L-x)v$，$\dfrac{\mathrm dp}{\mathrm dt}=-\lambda v^2+\lambda(L-x)g$。</li>
+    <li>$Mg-N=\dfrac{\mathrm dp}{\mathrm dt}$ ⟹ $N=\lambda gx+\lambda v^2=\lambda gx+2\lambda gx=3\lambda gx$。</li>
+    <li>$x\to L$：$N\to3Mg$；落完 $N=Mg$。數值：$N=3(0.5)(9.8)(0.5)=7.35\ \text{N}$，秤上那段重 $2.45\ \text{N}$。</li>
+  </ol>
+  <div class="final">答：(a) $3\lambda gx$；(b) 最大 $3Mg=14.7\ \text{N}$，落完 $Mg$；(c) $7.35\ \text{N}$（秤上部分重量的 3 倍）。</div>
+  <p class="small"><a href="#c2-self-03a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-03b" data-group="三、第二、第三定律與動量守恆（p.24–33）" data-title="自編難題：人在船上走">
+  <h3>自編難題（第 3 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$M=120\ \text{kg}$ 的船靜止，$m=60\ \text{kg}$ 的人相對船走 $L=3.0\ \text{m}$ 後停下。(a) 無水阻，船移動多少？與走法無關？(b) 水阻 $-bv_b$，一切靜止後船的位移？(c) 用第三定律說明。</div>
+  <ol class="write">
+    <li>(a) 無水平外力：$m(v_b+u)+Mv_b=0$ ⟹ $v_b=-\dfrac{m}{M+m}u$。</li>
+    <li>積分：$\Delta x_b=-\dfrac{m}{M+m}\int u\,\mathrm dt=-\dfrac{mL}{M+m}=-1.0\ \text{m}$；與 $u(t)$ 形式無關。</li>
+    <li>(b) $\dfrac{\mathrm dP}{\mathrm dt}=-bv_b$ ⟹ $P(\infty)-P(0)=-b\Delta x_b$；兩端皆靜止 ⟹ $\Delta x_b=0$。</li>
+    <li>(c) 人腳與船的摩擦是內力，總衝量為零；只有水阻改變總動量，而總動量前後都是零。</li>
+  </ol>
+  <div class="final">答：(a) 後退 $1.0\ \text{m}$（人前進 $2.0\ \text{m}$），與走法無關；(b) 船最後回到原位；(c) 見上。</div>
+  <p class="small"><a href="#c2-self-03b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 四、解運動方程式的策略 ===== -->
+<article class="exam-item" data-exam-id="c2-tm-2-1" data-group="四、解運動方程式的策略（p.34–45）" data-title="課本 2-1：哪些力可以積分">
+  <h3>課本 2-1（講義 p.35–37）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　力可分解成 (a) $F(x_i,t)=f(x_i)g(t)$；(b) $F(\dot x_i,t)=f(\dot x_i)g(t)$；(c) $F(x_i,\dot x_i)=f(x_i)g(\dot x_i)$。哪些情況的運動方程式可以積分？</div>
+  <ol class="write">
+    <li>$m\ddot x=m\dfrac{\mathrm d\dot x}{\mathrm dt}=F$，試著分離變數。</li>
+    <li>(a) $\dfrac{m}{f(x_i)}\mathrm d\dot x=g(t)\,\mathrm dt$：左邊含未知函數 $x_i(t)$ 與 $\dot x$，無法積分。</li>
+    <li>(b) $\dfrac{m}{f(\dot x_i)}\mathrm d\dot x=g(t)\,\mathrm dt$：兩邊各只有一個變數，$\displaystyle\int\frac{m\,\mathrm d\dot x}{f(\dot x_i)}=\int g(t)\,\mathrm dt$，可積分。</li>
+    <li>(c) $\dfrac{m}{f(x_i)g(\dot x_i)}\mathrm d\dot x=\mathrm dt$：同 (a)，分離 $\mathrm d\dot x$／$\mathrm dt$ 不行。</li>
+    <li>但 (c) 不含 $t$，一維改用 $\ddot x=\dot x\,\mathrm d\dot x/\mathrm dx$：$\dfrac{m\dot x\,\mathrm d\dot x}{g(\dot x)}=f(x)\,\mathrm dx$，兩邊分開積分得 $\dot x(x)$，再由 $\mathrm dt=\mathrm dx/\dot x$ 求 $t(x)$，可積。</li>
+  </ol>
+  <div class="final">答：(b) 可積；一維 (c) 用 $\dot x\,\mathrm d\dot x/\mathrm dx$ 也可積；(a) 一般不可積。</div>
+  <p class="small"><a href="#c2-tm-2-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-23" data-group="四、解運動方程式的策略（p.34–45）" data-title="課本 2-23：F = kt e^(−αt)">
+  <h3>課本 2-23</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A particle of mass $m = 1$ kg is subjected to a one-dimensional force $F(t) = kte^{-\alpha t}$, where $k = 1$ N/s and $\alpha = 0.5\ \text{s}^{-1}$. If the particle is initially at rest, calculate and plot with the aid of a computer the position, speed, and acceleration of the particle as a function of time.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$m=1\ \text{kg}$ 受 $F(t)=kte^{-\alpha t}$，$k=1\ \text{N/s}$、$\alpha=0.5\ \text{s}^{-1}$，初始靜止。求 $x(t)$、$v(t)$、$a(t)$ 並作圖。</div>
+  <ol class="write">
+    <li>$a=\dfrac kmte^{-\alpha t}$；$a'=0$ 於 $t=1/\alpha=2\ \text{s}$，$a_{\max}=0.736\ \text{m/s}^2$。</li>
+    <li>$v=\dfrac km\displaystyle\int_0^t\tau e^{-\alpha\tau}\mathrm d\tau=\dfrac{k}{m\alpha^2}\left[1-(1+\alpha t)e^{-\alpha t}\right]$（分部積分）。</li>
+    <li>$x=\displaystyle\int_0^tv\,\mathrm d\tau=\dfrac{k}{m\alpha^2}\left[t-\dfrac2\alpha+\left(t+\dfrac2\alpha\right)e^{-\alpha t}\right]$。</li>
+    <li>數值：$a=te^{-t/2}$，$v=4[1-(1+t/2)e^{-t/2}]$，$x=4[t-4+(t+4)e^{-t/2}]$；$t=2$：$(0.736,\,1.06,\,0.83)$，$t=10$：$(0.067,\,3.84,\,24.4)$。</li>
+    <li>$t\to\infty$：$v\to k/m\alpha^2=4\ \text{m/s}$（＝總衝量 $k/\alpha^2$ 除以 $m$），$x\approx4(t-4)$。</li>
+  </ol>
+  <div class="final">答：$v=\dfrac{k}{m\alpha^2}[1-(1+\alpha t)e^{-\alpha t}]$，$x=\dfrac{k}{m\alpha^2}[t-\tfrac2\alpha+(t+\tfrac2\alpha)e^{-\alpha t}]$；終速 $4\ \text{m/s}$。</div>
+  <p class="small"><a href="#c2-tm-2-23">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-30" data-group="四、解運動方程式的策略（p.34–45）" data-title="課本 2-30：水球與聲音">
+  <h3>課本 2-30</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-30"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A student drops a water-filled balloon from the roof of the tallest building in town trying to hit her roommate on the ground (who is too quick). The first student ducks back but hears the water splash 4.021 s after dropping the balloon. If the speed of sound is 331 m/s, find the height of the building, neglecting air resistance.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　從樓頂丟下水球，$4.021\ \text{s}$ 後聽到水花聲，聲速 $331\ \text{m/s}$，忽略空氣阻力，求樓高。</div>
+  <ol class="write">
+    <li>$t_1+t_2=4.021$，$t_1=\sqrt{2h/g}$，$t_2=h/v_s$；以 $h=\tfrac12gt_1^2$ 代入。</li>
+    <li>$\dfrac{g}{2v_s}t_1^2+t_1-4.021=0$，$\dfrac{g}{2v_s}=0.014804$。</li>
+    <li>$t_1=\dfrac{-1+\sqrt{1+4(0.014804)(4.021)}}{2(0.014804)}=3.807\ \text{s}$。</li>
+    <li>$h=\tfrac12(9.8)(3.807)^2=71.0\ \text{m}$；驗：$3.807+71.0/331=4.021$ ✔。</li>
+  </ol>
+  <div class="final">答：$h\approx71.0\ \text{m}$。</div>
+  <p class="small"><a href="#c2-tm-2-30">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-04a" data-group="四、解運動方程式的策略（p.34–45）" data-title="自編難題：F = −kx 怎麼積">
+  <h3>自編難題（第 4 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　木塊受 $F=-kx$，在 $x=A$ 由靜止放開。(a) 用乘 $\dot x$ 的技巧求 $v(x)$；(b) 用 $\mathrm dt=\mathrm dx/v$ 求 $x(t)$；(c) 第一次到 $x=0$ 的時間，為何與 $A$ 無關？</div>
+  <ol class="write">
+    <li>$m\dot x\dfrac{\mathrm d\dot x}{\mathrm dx}=-kx$ ⟹ $\tfrac12m\dot x^2=\tfrac12k(A^2-x^2)$ ⟹ $v=-\omega\sqrt{A^2-x^2}$，$\omega=\sqrt{k/m}$。</li>
+    <li>$\omega t=\displaystyle\int_x^A\frac{\mathrm dx'}{\sqrt{A^2-x'^2}}=\frac\pi2-\sin^{-1}\frac xA$ ⟹ $x=A\cos\omega t$。</li>
+    <li>$t_{1/4}=\dfrac1\omega\displaystyle\int_0^A\frac{\mathrm dx}{\sqrt{A^2-x^2}}=\dfrac\pi{2\omega}$；令 $x=Au$，$A$ 消去。</li>
+  </ol>
+  <div class="final">答：$v=-\sqrt{k/m}\sqrt{A^2-x^2}$，$x=A\cos\sqrt{k/m}\,t$，$t=\tfrac\pi2\sqrt{m/k}$（線性回復力的等時性）。</div>
+  <p class="small"><a href="#c2-self-04a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-04b" data-group="四、解運動方程式的策略（p.34–45）" data-title="自編難題：越來越強的阻力">
+  <h3>自編難題（第 4 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　阻力 $F=-mbtv$，$v(0)=v_0$。(a) 屬哪一型？求 $v(t)$；(b) 總滑行距離；(c) $v_0=20\ \text{m/s}$、$b=0.5\ \text{s}^{-2}$ 的總距離、半速時間，並與同半速時間的 $-mkv$ 比較。</div>
+  <ol class="write">
+    <li>$f(\dot x)g(t)$ 型：$\dfrac{\mathrm dv}{v}=-bt\,\mathrm dt$ ⟹ $v=v_0e^{-bt^2/2}$。</li>
+    <li>$x_\infty=v_0\displaystyle\int_0^\infty e^{-bt^2/2}\mathrm dt=v_0\sqrt{\frac{\pi}{2b}}$（高斯積分）。</li>
+    <li>數值：$x_\infty=20\sqrt\pi=35.4\ \text{m}$；$t_{1/2}=\sqrt{2\ln2/b}=1.67\ \text{s}$。</li>
+    <li>線性阻力 $k=\ln2/1.665=0.416\ \text{s}^{-1}$，$x_\infty=v_0/k=48.0\ \text{m}$，較遠。</li>
+  </ol>
+  <div class="final">答：$v=v_0e^{-bt^2/2}$，$x_\infty=v_0\sqrt{\pi/2b}=35.4\ \text{m}$，$t_{1/2}=1.67\ \text{s}$；線性阻力 $48.0\ \text{m}$。</div>
+  <p class="small"><a href="#c2-self-04b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 五、斜面與摩擦 ===== -->
+<article class="exam-item" data-exam-id="c2-ex21" data-group="五、斜面與摩擦（p.46–53）" data-title="例題 2.1：無摩擦斜面">
+  <h3>講義例題 2.1</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　木塊沿固定、無摩擦、傾角 $\theta$ 的斜面滑下（$\theta=30^\circ$）。求加速度，以及由靜止滑下 $x_0$ 後的速率。</div>
+  <ol class="write">
+    <li>取 $x$ 沿斜面向下、$y$ 垂直斜面。受力：重力 $mg$、正向力 $N$。</li>
+    <li>$y$：$N-mg\cos\theta=m\ddot y=0$ ⟹ $N=mg\cos\theta$。</li>
+    <li>$x$：$mg\sin\theta=m\ddot x$ ⟹ $\ddot x=g\sin\theta=9.8\sin30^\circ=4.9\ \text{m/s}^2$。</li>
+    <li>$\ddot x=\dfrac{\mathrm d\dot x}{\mathrm dt}$，兩邊乘 $\dot x$：$\dot x\,\mathrm d\dot x=g\sin\theta\,\mathrm dx$ ⟹ $\tfrac12\dot x^2=g\sin\theta\,x+C$。</li>
+    <li>$x=0$ 時 $\dot x=0$ ⟹ $C=0$；$x=x_0$：$v_0=\sqrt{2g\sin\theta\,x_0}$。</li>
+  </ol>
+  <div class="final">答：$\ddot x=g\sin\theta=4.9\ \text{m/s}^2$；$v_0=\sqrt{2g\sin\theta\,x_0}$。</div>
+  <p class="small"><a href="#c2-ex21">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-ex22" data-group="五、斜面與摩擦（p.46–53）" data-title="例題 2.2：開始滑動的角度">
+  <h3>講義例題 2.2</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　上題的木塊與斜面之間 $\mu_s=0.4$。木塊原本靜止，角度 $\theta$ 多大時開始滑動？</div>
+  <ol class="write">
+    <li>$y$：$N=mg\cos\theta$；$x$：$mg\sin\theta-f_s=m\ddot x$，其中 $f_s\le f_{\max}=\mu_sN$。</li>
+    <li>臨界：$f_s=\mu_smg\cos\theta$ 且 $\ddot x=0$：$mg\sin\theta-\mu_smg\cos\theta=0$。</li>
+    <li>$\tan\theta_c=\mu_s=0.4$ ⟹ $\theta_c=\tan^{-1}0.4=21.8^\circ$。</li>
+  </ol>
+  <div class="final">答：$\theta\ge\tan^{-1}\mu_s\approx22^\circ$ 時開始滑。</div>
+  <p class="small"><a href="#c2-ex22">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-ex23" data-group="五、斜面與摩擦（p.46–53）" data-title="例題 2.3：動摩擦下的加速度">
+  <h3>講義例題 2.3</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　上題木塊開始滑動後，動摩擦係數 $\mu_k=0.3$。求 $\theta=30^\circ$ 時的加速度。</div>
+  <ol class="write">
+    <li>$f_k=\mu_kN=\mu_kmg\cos\theta$，方向沿斜面向上。</li>
+    <li>$x$：$m\ddot x=mg\sin\theta-\mu_kmg\cos\theta$ ⟹ $\ddot x=g(\sin\theta-\mu_k\cos\theta)$。</li>
+    <li>$\ddot x=9.8(0.500-0.3\times0.866)=0.24g=2.35\ \text{m/s}^2$。</li>
+  </ol>
+  <div class="final">答：$\ddot x=0.24g\approx2.4\ \text{m/s}^2$，沿斜面向下。</div>
+  <p class="small"><a href="#c2-ex23">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-16" data-group="五、斜面與摩擦（p.46–53）" data-title="課本 2-16：上坡再滑回">
+  <h3>課本 2-16</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A particle is projected with an initial velocity $v_0$ up a slope that makes an angle $\alpha$ with the horizontal. Assume frictionless motion and find the time required for the particle to return to its starting position. Find the time for $v_0=2.4\ \mathrm{m/s}$ and $\alpha=26^\circ$.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-16 · p.92</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　質點以初速 $v_0$ 沿傾角 $\alpha$ 的光滑斜坡向上射出。求回到出發點的時間；$v_0=2.4\ \text{m/s}$、$\alpha=26^\circ$ 時為多少？</div>
+  <ol class="write">
+    <li>沿坡向上為 $+x$：唯一的沿坡力 $-mg\sin\alpha$，上升下降都一樣 ⟹ $\ddot x=-g\sin\alpha$。</li>
+    <li>$x(t)=v_0t-\tfrac12g\sin\alpha\,t^2$。</li>
+    <li>$x=0$：$t\left(v_0-\tfrac12g\sin\alpha\,t\right)=0$ ⟹ $t=\dfrac{2v_0}{g\sin\alpha}$。</li>
+    <li>$t=\dfrac{2(2.4)}{9.8\sin26^\circ}=\dfrac{4.8}{4.30}=1.12\ \text{s}$。</li>
+  </ol>
+  <div class="final">答：$t=\dfrac{2v_0}{g\sin\alpha}\approx1.1\ \text{s}$。</div>
+  <p class="small"><a href="#c2-tm-2-16">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-32" data-group="五、斜面與摩擦（p.46–53）" data-title="課本 2-32：斜面滑輪等速">
+  <h3>課本 2-32</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　斜面上質量 $2m$ 的木塊以繩跨過頂端光滑滑輪，連到懸掛的質量 $m$；動摩擦係數 $\mu_k$。斜面角度 $\theta$ 多大時兩木塊可等速移動？</div>
+  <ol class="write">
+    <li>等速 ⟹ 加速度為零。設 $m$ 下降、$2m$ 上滑，摩擦沿斜面向下。</li>
+    <li>懸掛的 $m$：$T=mg$。斜面上的 $2m$：$N=2mg\cos\theta$，$T=2mg\sin\theta+2\mu_kmg\cos\theta$。</li>
+    <li>⟹ $1=2\sin\theta+2\mu_k\cos\theta$。令 $s=\sin\theta$：$2\mu_k\sqrt{1-s^2}=1-2s$。</li>
+    <li>平方：$4(1+\mu_k^2)s^2-4s+1-4\mu_k^2=0$ ⟹ $s=\dfrac{1\pm\mu_k\sqrt{3+4\mu_k^2}}{2(1+\mu_k^2)}$；需 $1-2s\ge0$，取負號。</li>
+  </ol>
+  <div class="final">答：$\theta=\sin^{-1}\dfrac{1-\mu_k\sqrt{3+4\mu_k^2}}{2(1+\mu_k^2)}$（$\mu_k=0$ 時 $30^\circ$）。</div>
+  <p class="small"><a href="#c2-tm-2-32">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-24" data-group="五、斜面與摩擦（p.46–53）" data-title="課本 2-24：滑雪者的摩擦係數">
+  <h3>課本 2-24</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-24"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A skier weighing 90 kg starts from rest down a hill inclined at $17^\circ$. She skis 100 m down the hill and then coasts for 70 m along level snow until she stops. Find the coefficient of kinetic friction between the skis and the snow. What velocity does the skier have at the bottom of the hill?</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-24 · p.93</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$90\ \text{kg}$ 的滑雪者由靜止沿 $17^\circ$ 山坡滑下 $100\ \text{m}$，再在平地滑行 $70\ \text{m}$ 後停下。求滑雪板與雪之間的動摩擦係數與坡底速率。</div>
+  <ol class="write">
+    <li>坡上 $a_1=g(\sin\theta-\mu\cos\theta)$，平地 $a_2=-\mu g$（皆為常數）。</li>
+    <li>$v_B^2=2a_1d$；平地 $0=v_B^2-2\mu gs$ ⟹ $(\sin\theta-\mu\cos\theta)d=\mu s$。</li>
+    <li>$\mu=\dfrac{d\sin\theta}{d\cos\theta+s}=\dfrac{100(0.2924)}{100(0.9563)+70}=0.18$。</li>
+    <li>$v_B=\sqrt{2\mu gs}=\sqrt{2(0.177)(9.8)(70)}=15.6\ \text{m/s}$。</li>
+  </ol>
+  <div class="final">答：$\mu_k\approx0.18$，坡底速率 $\approx15.6\ \text{m/s}$。</div>
+  <p class="small"><a href="#c2-tm-2-24">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-29" data-group="五、斜面與摩擦（p.46–53）" data-title="課本 2-29：下坡煞車">
+  <h3>課本 2-29</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　駕駛在 8% 坡度的下坡猛踩煞車，打滑 $30\ \text{m}$ 後撞上停著的車；$\mu_k=0.45$。律師說他超過 25 MPH，對嗎？</div>
+  <ol class="write">
+    <li>$\tan\theta=0.08$ ⟹ $\theta=4.57^\circ$。下坡打滑：$m\ddot x=mg\sin\theta-\mu_kmg\cos\theta$，減速度 $a=g(\mu_k\cos\theta-\sin\theta)=3.61\ \text{m/s}^2$。</li>
+    <li>25 MPH $=11.2\ \text{m/s}$：煞車距離 $\dfrac{v_0^2}{2a}=\dfrac{(11.2)^2}{2(3.61)}=17.3\ \text{m}$。</li>
+    <li>滑 30 m 還撞車 ⟹ $v_0\ge\sqrt{2a(30)}=14.7\ \text{m/s}=32.9\ \text{MPH}$。</li>
+  </ol>
+  <div class="final">答：律師正確；初速至少約 33 MPH（25 MPH 只會滑 17.3 m）。</div>
+  <p class="small"><a href="#c2-tm-2-29">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-05a" data-group="五、斜面與摩擦（p.46–53）" data-title="自編難題：斜面上最省力的拉法">
+  <h3>自編難題（第 5 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　箱子 $m$ 在傾角 $\theta$、動摩擦 $\mu$ 的斜面上被以拉力 $F$（與斜面夾 $\phi$）等速往上拉。(a) $F(\phi)$；(b) 最省力的 $\phi$ 與 $F_{\min}$；(c) $m=20\ \text{kg}$、$\theta=20^\circ$、$\mu=0.4$ 的數值。</div>
+  <ol class="write">
+    <li>$y$：$N=mg\cos\theta-F\sin\phi$；$x$：$F\cos\phi=mg\sin\theta+\mu N$。</li>
+    <li>$F=\dfrac{mg(\sin\theta+\mu\cos\theta)}{\cos\phi+\mu\sin\phi}$。</li>
+    <li>$\mu=\tan\lambda$：$\cos\phi+\mu\sin\phi=\cos(\phi-\lambda)/\cos\lambda$，$\phi=\lambda$ 時最大 $\sqrt{1+\mu^2}$。</li>
+    <li>$\phi^*=\tan^{-1}\mu$，$F_{\min}=\dfrac{mg(\sin\theta+\mu\cos\theta)}{\sqrt{1+\mu^2}}$。</li>
+    <li>數值：$\phi^*=21.8^\circ$，$F_{\min}=130.6\ \text{N}$，$F(0)=140.7\ \text{N}$；$N=135.7\ \text{N}\gt0$ ✔。</li>
+  </ol>
+  <div class="final">答：$\phi^*=\tan^{-1}\mu=21.8^\circ$，$F_{\min}=130.6\ \text{N}$（平行拉 $140.7\ \text{N}$）。</div>
+  <p class="small"><a href="#c2-self-05a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-05b" data-group="五、斜面與摩擦（p.46–53）" data-title="自編難題：加速楔子上的木塊">
+  <h3>自編難題（第 5 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　傾角 $\theta$ 的楔子以水平加速度 $a$ 前進（斜面頂著木塊），靜摩擦 $\mu$。(a) 光滑時 $a$ 為何木塊不滑？(b) 有摩擦時 $a$ 的範圍；(c) $\theta=30^\circ$、$\mu=0.2$ 的數值。</div>
+  <ol class="write">
+    <li>地面（慣性系）：木塊加速度水平 $a$。光滑：$N\sin\theta=ma$、$N\cos\theta=mg$ ⟹ $a=g\tan\theta$。</li>
+    <li>下限（摩擦 $\mu N$ 朝上坡）：$N(\sin\theta-\mu\cos\theta)=ma$、$N(\cos\theta+\mu\sin\theta)=mg$ ⟹ $a_{\min}=g\tan(\theta-\lambda)$。</li>
+    <li>上限（摩擦朝下坡）：$N(\sin\theta+\mu\cos\theta)=ma$、$N(\cos\theta-\mu\sin\theta)=mg$ ⟹ $a_{\max}=g\tan(\theta+\lambda)$，$\tan\lambda=\mu$。</li>
+    <li>數值：$\lambda=11.31^\circ$，$a_{\min}=9.8\tan18.69^\circ=3.32$，$a_{\max}=9.8\tan41.31^\circ=8.61\ \text{m/s}^2$。</li>
+  </ol>
+  <div class="final">答：$a=g\tan\theta$；$g\tan(\theta-\lambda)\le a\le g\tan(\theta+\lambda)$；$3.32\le a\le8.61\ \text{m/s}^2$。</div>
+  <p class="small"><a href="#c2-self-05b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 六、阻力與終端速度 ===== -->
+<article class="exam-item" data-exam-id="c2-ex24" data-group="六、阻力與終端速度（p.54–62）" data-title="例題 2.4：水平線性阻力">
+  <h3>講義例題 2.4</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　物體以初速 $v_0$ 在介質中水平運動，阻力 $kmv$ 與運動方向相反。求 $v(t)$、$x(t)$ 與 $v(x)$。</div>
+  <ol class="write">
+    <li>$m\dfrac{\mathrm d\dot x}{\mathrm dt}=-km\dot x$ ⟹ $\dfrac{\mathrm d\dot x}{\dot x}=-k\,\mathrm dt$ ⟹ $\ln\dot x=-kt+C$。</li>
+    <li>$v(0)=v_0$：$v(t)=v_0e^{-kt}$。</li>
+    <li>$x=\int v_0e^{-kt}\,\mathrm dt=-\dfrac{v_0}ke^{-kt}+C_2$，$x(0)=0$ ⟹ $x(t)=\dfrac{v_0}k(1-e^{-kt})$。</li>
+    <li>$-k\dot x\,\mathrm dt=\mathrm d\dot x$ ⟹ $-k\,\mathrm dx=\mathrm d\dot x$ ⟹ $\dot x=v_0-kx$。</li>
+  </ol>
+  <div class="final">答：$v=v_0e^{-kt}$，$x=\dfrac{v_0}k(1-e^{-kt})$，$v=v_0-kx$；$x\to v_0/k$。</div>
+  <p class="small"><a href="#c2-ex24">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-ex25" data-group="六、阻力與終端速度（p.54–62）" data-title="例題 2.5：鉛直線性阻力">
+  <h3>講義例題 2.5</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質點在重力場中鉛直運動，阻力 $kmv$。由高度 $h$ 以初速 $v_0$ 出發，求速度、位移與終端速度。</div>
+  <ol class="write">
+    <li>$z$ 軸向上，地面 $z=0$：$m\ddot z=-km\dot z-mg$ ⟹ $\dfrac{\mathrm d\dot z}{k\dot z+g}=-\mathrm dt$。</li>
+    <li>$\dfrac1k\ln(k\dot z+g)=-t+C$ ⟹ $k\dot z+g=(kv_0+g)e^{-kt}$ ⟹ $\dot z=-\dfrac gk+\dfrac{kv_0+g}ke^{-kt}$。</li>
+    <li>$t\to\infty$：$\dot z\to-\dfrac gk$，終端速度 $v_t=\dfrac gk$。</li>
+    <li>$z=-\dfrac{gt}k-\dfrac{kv_0+g}{k^2}e^{-kt}+C$，$z(0)=h$ ⟹ $z=h-\dfrac{gt}k+\dfrac{kv_0+g}{k^2}(1-e^{-kt})$。</li>
+  </ol>
+  <div class="final">答：$\dot z=-\dfrac gk+\dfrac{kv_0+g}ke^{-kt}$，$z=h-\dfrac{gt}k+\dfrac{kv_0+g}{k^2}(1-e^{-kt})$，$v_t=g/k$。</div>
+  <p class="small"><a href="#c2-ex25">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-11" data-group="六、阻力與終端速度（p.54–62）" data-title="課本 2-11：v² 阻力下落距離">
+  <h3>課本 2-11（講義 p.61–62）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質點由靜止在重力場中下落，阻力 $kmv^2$。證明由 $v_0$ 加速到 $v_1$ 落下的距離為 $s=\dfrac1{2k}\ln\dfrac{g-kv_0^2}{g-kv_1^2}$。</div>
+  <ol class="write">
+    <li>向下為正：$m\dfrac{\mathrm d\dot z}{\mathrm dt}=mg-km\dot z^2$ ⟹ $\mathrm dt=\dfrac{\mathrm d\dot z}{g-k\dot z^2}$。</li>
+    <li>乘 $\dot z$：$\mathrm dz=\dfrac{\dot z\,\mathrm d\dot z}{g-k\dot z^2}=\dfrac12\dfrac{\mathrm d(\dot z^2)}{g-k\dot z^2}$。</li>
+    <li>$s=\displaystyle\int_{v_0}^{v_1}\frac12\frac{\mathrm d(\dot z^2)}{g-k\dot z^2}=-\frac1{2k}\ln(g-k\dot z^2)\Big|_{v_0}^{v_1}=\frac1{2k}\ln\frac{g-kv_0^2}{g-kv_1^2}$。</li>
+  </ol>
+  <div class="final">答：$s(v_0\to v_1)=\dfrac1{2k}\ln\dfrac{g-kv_0^2}{g-kv_1^2}$（得證）。</div>
+  <p class="small"><a href="#c2-tm-2-11">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-9" data-group="六、阻力與終端速度（p.54–62）" data-title="課本 2-9：上拋到最高點的時間">
+  <h3>課本 2-9</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a projectile fired vertically in a constant gravitational field. For the same initial velocities, compare the times required for the projectile to reach its maximum height</p><p>(a) for zero resisting force,</p><p>(b) for a resisting force proportional to the instantaneous velocity of the projectile.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-9 · p.91</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　鉛直上拋，初速相同。比較到達最高點的時間：(a) 無阻力；(b) 阻力正比於速度。</div>
+  <ol class="write">
+    <li>(a) $v=v_0-gt=0$ ⟹ $t_m=v_0/g$。</li>
+    <li>(b) $m\dot v=-mg-kmv$ ⟹ $v=-\dfrac gk+\dfrac{kv_0+g}ke^{-kt}$。令 $v=0$：$e^{kt_m'}=1+\dfrac{kv_0}g$ ⟹ $t_m'=\dfrac1k\ln\!\left(1+\dfrac{kv_0}g\right)$。</li>
+    <li>$\ln(1+z)\lt z$（$z>0$）⟹ $t_m'\lt \dfrac1k\cdot\dfrac{kv_0}g=t_m$；展開 $t_m'=\dfrac{v_0}g\left(1-\dfrac{kv_0}{2g}+\cdots\right)$。</li>
+  </ol>
+  <div class="final">答：(a) $v_0/g$；(b) $\dfrac1k\ln(1+kv_0/g)$，較短。</div>
+  <p class="small"><a href="#c2-tm-2-9">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-34" data-group="六、阻力與終端速度（p.54–62）" data-title="課本 2-34：v 與落下距離">
+  <h3>課本 2-34</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質點由靜止（$y=0$）在重力與空氣阻力下落下。求 $v$ 與落下距離 $y$ 的關係，阻力為 (a) $\alpha v$；(b) $\beta v^2$。</div>
+  <ol class="write">
+    <li>向下為正，$m\ddot y=mv\dfrac{\mathrm dv}{\mathrm dy}$。</li>
+    <li>(a) $mv\dfrac{\mathrm dv}{\mathrm dy}=mg-\alpha v$ ⟹ $\mathrm dy=\dfrac m\alpha\left[-1+\dfrac{mg}{mg-\alpha v}\right]\mathrm dv$ ⟹ $y=-\dfrac m\alpha v-\dfrac{m^2g}{\alpha^2}\ln\!\left(1-\dfrac{\alpha v}{mg}\right)$。</li>
+    <li>(b) $\dfrac m2\dfrac{\mathrm d(v^2)}{\mathrm dy}=mg-\beta v^2$ ⟹ $y=-\dfrac m{2\beta}\ln\dfrac{mg-\beta v^2}{mg}$ ⟹ $v^2=\dfrac{mg}\beta\left(1-e^{-2\beta y/m}\right)$。</li>
+  </ol>
+  <div class="final">答：(a) $y=-\dfrac m\alpha v-\dfrac{m^2g}{\alpha^2}\ln\!\left(1-\dfrac{\alpha v}{mg}\right)$；(b) $v^2=\dfrac{mg}\beta(1-e^{-2\beta y/m})$。</div>
+  <p class="small"><a href="#c2-tm-2-34">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-15" data-group="六、阻力與終端速度（p.54–62）" data-title="課本 2-15：斜面上的 v² 阻力">
+  <h3>課本 2-15</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質點沿傾角 $\theta$ 的斜面滑下，阻力 $f=kmv^2$。證明由靜止滑下 $d$ 所需時間 $t=\dfrac{\cosh^{-1}(e^{kd})}{\sqrt{kg\sin\theta}}$。</div>
+  <ol class="write">
+    <li>$\dot v=g\sin\theta-kv^2$。令 $a^2=g\sin\theta/k$：$\dfrac{\mathrm dv}{a^2-v^2}=k\,\mathrm dt$ ⟹ $\dfrac1a\tanh^{-1}\dfrac va=kt$。</li>
+    <li>$v=a\tanh(akt)$；令 $\lambda=ak=\sqrt{kg\sin\theta}$，$v=\dfrac\lambda k\tanh\lambda t$。</li>
+    <li>$x=\displaystyle\int_0^t\frac\lambda k\tanh\lambda t'\,\mathrm dt'=\frac1k\ln\cosh\lambda t$。</li>
+    <li>$x=d$：$\cosh\lambda t=e^{kd}$ ⟹ $t=\dfrac{\cosh^{-1}(e^{kd})}{\sqrt{kg\sin\theta}}$。</li>
+  </ol>
+  <div class="final">答：$t=\dfrac{\cosh^{-1}(e^{kd})}{\sqrt{kg\sin\theta}}$（得證）。</div>
+  <p class="small"><a href="#c2-tm-2-15">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-13" data-group="六、阻力與終端速度（p.54–62）" data-title="課本 2-13：距離上限 π/2ka">
+  <h3>課本 2-13</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質點受阻力 $mk(v^3+a^2v)$。證明不論初速多大，移動距離都不超過 $\pi/2ka$，且只有 $t\to\infty$ 時才停下。</div>
+  <ol class="write">
+    <li>$mv\dfrac{\mathrm dv}{\mathrm dx}=-mk(v^3+a^2v)$ ⟹ $\dfrac{\mathrm dv}{v^2+a^2}=-k\,\mathrm dx$。</li>
+    <li>積分：$x=\dfrac1{ka}\left(\tan^{-1}\dfrac{v_0}a-\tan^{-1}\dfrac va\right)$；停下 $v\to0$：$x_{\text{tot}}=\dfrac1{ka}\tan^{-1}\dfrac{v_0}a\lt \dfrac{\pi}{2ka}$。</li>
+    <li>時間：$\dfrac{\mathrm dv}{v(v^2+a^2)}=-k\,\mathrm dt$ ⟹ $\dfrac{v^2}{v^2+a^2}=C'e^{-2a^2kt}$，只有 $t\to\infty$ 時 $v\to0$。</li>
+  </ol>
+  <div class="final">答：$x_{\text{tot}}=\dfrac1{ka}\tan^{-1}\dfrac{v_0}a\lt \dfrac\pi{2ka}$，且 $v=0$ 只在 $t\to\infty$（得證）。</div>
+  <p class="small"><a href="#c2-tm-2-13">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-51" data-group="六、阻力與終端速度（p.54–62）" data-title="課本 2-51：bv² 的船">
+  <h3>課本 2-51</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質量 $m$ 的船以 $v_0$ 滑行，阻力 $bv^2$。(a) 求 $v(t)$；降到 $v_0/1000$ 要多久？(b) 求 $x(t)$；這段時間走多遠？$m=200\ \text{kg}$、$v_0=2\ \text{m/s}$、$b=0.2\ \text{N·m}^{-2}\text{s}^2$。</div>
+  <ol class="write">
+    <li>$m\dot v=-bv^2$ ⟹ $\dfrac1v-\dfrac1{v_0}=\dfrac bmt$ ⟹ $v=\dfrac{v_0}{1+bv_0t/m}$。</li>
+    <li>$v=v_0/1000$：$t=\dfrac{999m}{bv_0}=\dfrac{999(200)}{(0.2)(2)}=4.995\times10^5\ \text{s}$（約 5.8 天）。</li>
+    <li>$x=\displaystyle\int_0^t v\,\mathrm dt'=\frac mb\ln\!\left(1+\frac{bv_0t}m\right)=1000\ln1000=6.9\times10^3\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：$v=\dfrac{v_0}{1+bv_0t/m}$，$t\approx5.0\times10^5\ \text{s}$；$x=\dfrac mb\ln(1+bv_0t/m)\approx6.9\ \text{km}$。</div>
+  <p class="small"><a href="#c2-tm-2-51">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-54" data-group="六、阻力與終端速度（p.54–62）" data-title="課本 2-54：馬鈴薯">
+  <h3>課本 2-54</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$0.5\ \text{kg}$ 馬鈴薯，阻力 $-kmv$，$k=0.01\ \text{s}^{-1}$。(a) 由靜止釋放的終端速度；(b) 以 $120\ \text{m/s}$ 鉛直上射的最大高度。</div>
+  <ol class="write">
+    <li>(a) $v_t=g/k=9.8/0.01=980\ \text{m/s}$。</li>
+    <li>(b) 向上為正：$mv\dfrac{\mathrm dv}{\mathrm dy}=-mg-kmv$ ⟹ $\mathrm dy=-\dfrac1k\left[1-\dfrac{g}{g+kv}\right]\mathrm dv$。</li>
+    <li>從 $v_0$ 積到 $0$：$y_{\max}=\dfrac{v_0}k-\dfrac g{k^2}\ln\!\left(1+\dfrac{kv_0}g\right)=12\,000-98\,000\ln(1.1224)=680\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：(a) $980\ \text{m/s}$；(b) 約 $680\ \text{m}$（無阻力 $735\ \text{m}$）。</div>
+  <p class="small"><a href="#c2-tm-2-54">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-10" data-group="六、阻力與終端速度（p.54–62）" data-title="課本 2-10：例題 2.4 的數值解">
+  <h3>課本 2-10</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Repeat Example 2.4 by performing a calculation using a computer to solve Equation 2.22. Use the following values: $m = 1$ kg, $v_0 = 10$ m/s, $x_0 = 0$, and $k = 0.1\ \text{s}^{-1}$. Make plots of $v$ versus $t$, $x$ versus $t$, and $v$ versus $x$. Compare with the results of Example 2.4 to see if your results are reasonable.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用電腦解 $m\ddot x=-km\dot x$ 重做例題 2.4：$m=1\ \text{kg}$、$v_0=10\ \text{m/s}$、$x_0=0$、$k=0.1\ \text{s}^{-1}$；畫 $v$–$t$、$x$–$t$、$v$–$x$，與例題 2.4 比較。</div>
+  <ol class="write">
+    <li>化成一階：$\dot x=v$、$\dot v=-kv$；逐步積分（Euler：$v_{n+1}=v_n(1-k\Delta t)$，$x_{n+1}=x_n+v_n\Delta t$；正式用 RK4）。</li>
+    <li>解析：$v=v_0e^{-kt}=10e^{-0.1t}$，$x=\dfrac{v_0}k(1-e^{-kt})=100(1-e^{-0.1t})$，$v=v_0-kx$。</li>
+    <li>對照：$t=10\ \text{s}$：$v=3.679$、$x=63.21$；$t=30\ \text{s}$：$v=0.498$、$x=95.02$，數值與解析一致。</li>
+    <li>圖：$v$ 指數衰減（半衰 $6.9\ \text{s}$）；$x\to100\ \text{m}$；$v$–$x$ 為斜率 $-0.1$ 的直線。</li>
+  </ol>
+  <div class="final">答：數值解與 $v=10e^{-0.1t}$、$x=100(1-e^{-0.1t})$、$v=10-0.1x$ 一致；最多走 $100\ \text{m}$。</div>
+  <p class="small"><a href="#c2-tm-2-10">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-33" data-group="六、阻力與終端速度（p.54–62）" data-title="課本 2-33：三種物體的落下">
+  <h3>課本 2-33</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-33"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Perform a computer calculation for an object moving vertically in air under gravity and experiencing a retarding force proportional to the square of the object’s speed (see Equation 2.21). Use variables $m$ for mass and $r$ for the object’s radius: All the objects are dropped from rest from the top of a 100-m-tall building. Use a value of $c_W = 0.5$ and make computer plots of height $y$, speed $v$, and acceleration $a$ versus $t$ for the following conditions and answer the questions:</p><p><strong>(a)</strong> A baseball of $m = 0.145$ kg and $r = 0.0366$ m.<br><strong>(b)</strong> A ping-pong ball of $m = 0.0024$ kg and $r = 0.019$ m.<br><strong>(c)</strong> A raindrop of $r = 0.003$ m.<br><strong>(d)</strong> Do all the objects reach their terminal speeds? Discuss the values of the terminal velocities and explain their differences.<br><strong>(e)</strong> Why can a baseball be thrown farther than a ping-pong ball even though the baseball is so much more massive?<br><strong>(f)</strong> Discuss the terminal speeds of big and small raindrops. What are the terminal speeds of raindrops having radii 0.002 m and 0.004 m?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$v^2$ 阻力 $\tfrac12c_W\rho Av^2$（$c_W=0.5$），從 $100\ \text{m}$ 靜止落下：(a) 棒球 $0.145\ \text{kg}$、$r=0.0366\ \text{m}$；(b) 乒乓球 $0.0024\ \text{kg}$、$r=0.019\ \text{m}$；(c) 雨滴 $r=0.003\ \text{m}$。(d) 是否達到終端速度？(e) 棒球為何丟得比乒乓球遠？(f) 半徑 $2$、$4\ \text{mm}$ 雨滴的終端速度。</div>
+  <ol class="write">
+    <li>$v_t=\sqrt{2mg/c_W\rho A}$（$\rho=1.3$）；$v=v_t\tanh(gt/v_t)$，$v^2(y)=v_t^2(1-e^{-2gy/v_t^2})$，$a=g\,\mathrm{sech}^2(gt/v_t)$。</li>
+    <li>棒球 $v_t=32.2$、$v_t^2/g=106\ \text{m}$；落地 $v=29.7\ \text{m/s}$（$92\%$）、$5.25\ \text{s}$。</li>
+    <li>乒乓球 $v_t=7.99$（$v_t^2/g=6.5\ \text{m}$）、$13.1\ \text{s}$；雨滴 $m=1.13\times10^{-4}\ \text{kg}$，$v_t=11.0$、$9.88\ \text{s}$。都達到 $v_t$。</li>
+    <li>(e) 減速度 $\dfrac{c_W\rho A}{2m}v^2$：棒球係數 $9.4\times10^{-3}$、乒乓球 $0.154\ \text{m}^{-1}$，乒乓球被減速快 16 倍。</li>
+    <li>(f) 水滴 $v_t=\sqrt{8\rho_{\text{水}}gr/3c_W\rho}\propto\sqrt r$：$2\ \text{mm}$ $8.97$、$4\ \text{mm}$ $12.7\ \text{m/s}$。</li>
+  </ol>
+  <div class="final">答：$v_t$ 棒球 $32.2$、乒乓球 $7.99$、雨滴 $11.0\ \text{m/s}$；只有棒球沒到終端速度（$29.7\ \text{m/s}$）；雨滴 $v_t\propto\sqrt r$：$8.97$、$12.7\ \text{m/s}$。</div>
+  <p class="small"><a href="#c2-tm-2-33">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-06a" data-group="六、阻力與終端速度（p.54–62）" data-title="自編難題：開傘後的減速">
+  <h3>自編難題（第 6 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　以 $v_1=55\ \text{m/s}$ 落下時開傘，阻力 $kmv^2$，$v_t=5.0\ \text{m/s}$。(a) $v(t)$；(b) 降到 $6.0\ \text{m/s}$ 的時間與距離；(c) 開傘瞬間減速度幾倍 $g$？合理嗎？</div>
+  <ol class="write">
+    <li>$\dot v=g(1-v^2/v_t^2)$，$v\gt v_t$：$\dfrac{\mathrm dv}{1-v^2/v_t^2}=g\,\mathrm dt$ ⟹ $v=v_t\coth\!\left(\dfrac{gt}{v_t}+\coth^{-1}\dfrac{v_1}{v_t}\right)$。</li>
+    <li>$t=\dfrac{v_t}g\left[\coth^{-1}1.2-\coth^{-1}11\right]=0.510(1.199-0.091)=0.565\ \text{s}$。</li>
+    <li>$v\dfrac{\mathrm dv}{\mathrm dy}=g(1-v^2/v_t^2)$ ⟹ $y=\dfrac{v_t^2}{2g}\ln\dfrac{v_1^2-v_t^2}{v^2-v_t^2}=1.276\ln272.7=7.15\ \text{m}$。</li>
+    <li>$|\dot v|=g(v_1^2/v_t^2-1)=120g$：不合理，傘必須逐漸張開。</li>
+  </ol>
+  <div class="final">答：$v=v_t\coth(gt/v_t+\coth^{-1}11)$；$0.565\ \text{s}$、$7.15\ \text{m}$；$120g$，「瞬間全開」不合理。</div>
+  <p class="small"><a href="#c2-self-06a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-06b" data-group="六、阻力與終端速度（p.54–62）" data-title="自編難題：下降比上升久">
+  <h3>自編難題（第 6 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　以 $v_0$ 上拋，阻力 $-kmv$。(a) 證明 $t_{\text{下}}\gt t_{\text{上}}$；(b) $v_0=20\ \text{m/s}$、$k=0.2\ \text{s}^{-1}$ 的 $t_{\text{上}}$、$H$、$t_{\text{下}}$、回程速率；(c) 少掉的動能去哪？</div>
+  <ol class="write">
+    <li>同一高度 $y$：上升經過到下降經過之間阻力做負功、重力功為零 ⟹ $v_\downarrow(y)\lt v_\uparrow(y)$。</li>
+    <li>$t=\int_0^H\mathrm dy/v$ ⟹ $t_{\text{下}}\gt t_{\text{上}}$。</li>
+    <li>$t_{\text{上}}=\frac1k\ln(1+kv_0/g)=1.711\ \text{s}$，$H=\frac{v_0}k-\frac g{k^2}\ln(1+\frac{kv_0}g)=16.14\ \text{m}$。</li>
+    <li>下降：$H=\frac gkt-\frac g{k^2}(1-e^{-kt})$ ⟹ $t_{\text{下}}=1.932\ \text{s}$，$v=\frac gk(1-e^{-kt})=15.70\ \text{m/s}$。</li>
+    <li>(c) 損失 $1-15.70^2/20^2=38\%$ 的動能，被阻力轉成熱。</li>
+  </ol>
+  <div class="final">答：$t_{\text{上}}=1.71\ \text{s}$、$H=16.1\ \text{m}$、$t_{\text{下}}=1.93\ \text{s}$、回程 $15.7\ \text{m/s}$；約 $38\%$ 動能變成熱。</div>
+  <p class="small"><a href="#c2-self-06b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 七、指數阻力與由速度求力 ===== -->
+<article class="exam-item" data-exam-id="c2-tm-2-39" data-group="七、指數阻力與由速度求力（p.63–73）" data-title="課本 2-39：指數阻力的船">
+  <h3>課本 2-39（講義 p.63–68）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　船以初速 $v_0$ 出發，阻力 $F=-\alpha e^{\beta v}$。(a) 求 $v(t)$；(b) 停下所需時間；(c) 停下前走的距離。</div>
+  <ol class="write">
+    <li>$-\alpha e^{\beta\dot x}=m\dfrac{\mathrm d\dot x}{\mathrm dt}$ ⟹ $-\dfrac\alpha m\mathrm dt=e^{-\beta\dot x}\mathrm d\dot x$ ⟹ $\dfrac{\alpha\beta}mt=e^{-\beta\dot x}-e^{-\beta v_0}$。</li>
+    <li>(a) $\dot x=-\dfrac1\beta\ln\!\left[\dfrac{\alpha\beta}mt+e^{-\beta v_0}\right]$。</li>
+    <li>(b) $\dot x=0$：$\dfrac{\alpha\beta}mt+e^{-\beta v_0}=1$ ⟹ $t_{\text{end}}=\dfrac m{\alpha\beta}(1-e^{-\beta v_0})$。</li>
+    <li>(c) 乘 $\dot x$：$-\dfrac\alpha m\mathrm dx=\dot xe^{-\beta\dot x}\mathrm d\dot x$；分部積分 $\int\dot xe^{-\beta\dot x}\mathrm d\dot x=-\dfrac1\beta\left[\dot xe^{-\beta\dot x}+\dfrac1\beta e^{-\beta\dot x}\right]$。</li>
+    <li>從 $\dot x=v_0$（$x=0$）積到 $\dot x=0$（$x=d$）：$\dfrac{\alpha\beta}md=\dfrac1\beta-v_0e^{-\beta v_0}-\dfrac1\beta e^{-\beta v_0}$。</li>
+  </ol>
+  <div class="final">答：(a) $v=-\dfrac1\beta\ln\!\left[\dfrac{\alpha\beta}mt+e^{-\beta v_0}\right]$；(b) $t_{\text{end}}=\dfrac m{\alpha\beta}(1-e^{-\beta v_0})$；(c) $d=\dfrac m{\alpha\beta^2}\left[1-(1+\beta v_0)e^{-\beta v_0}\right]$。</div>
+  <p class="small"><a href="#c2-tm-2-39">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-37" data-group="七、指數阻力與由速度求力（p.63–73）" data-title="課本 2-37：v=α/x 的力">
+  <h3>課本 2-37（講義 p.69–70）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-37"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A particle of mass $m$ has speed $v=\alpha/x$, where $x$ is its displacement. Find the force $F(x)$ responsible.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-37 · p.96 · 講義 p.69–70</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　質量 $m$ 的質點速率 $v=\alpha/x$。求造成此運動的力 $F(x)$。</div>
+  <ol class="write">
+    <li>$F\,\mathrm dt=m\,\mathrm d\dot x$，乘 $\dot x$：$F\,\mathrm dx=m\dot x\,\mathrm d\dot x=\tfrac12m\,\mathrm d(\dot x^2)$ ⟹ $F=\dfrac12m\dfrac{\mathrm d(\dot x^2)}{\mathrm dx}$。</li>
+    <li>$\dot x^2=\alpha^2x^{-2}$：$F=\dfrac12m(-2\alpha^2x^{-3})=-\dfrac{m\alpha^2}{x^3}$。</li>
+  </ol>
+  <div class="final">答：$F(x)=-\dfrac{m\alpha^2}{x^3}$。</div>
+  <p class="small"><a href="#c2-tm-2-37">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-38" data-group="七、指數阻力與由速度求力（p.63–73）" data-title="課本 2-38：v=αx^{-n}">
+  <h3>課本 2-38（講義 p.71–73）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質點速率 $v(x)=\alpha x^{-n}$，設 $t=0$ 時 $v(x=0)=0$。(a) 求 $F(x)$；(b) 求 $x(t)$；(c) 求 $F(t)$。</div>
+  <ol class="write">
+    <li>(a) $F=\dfrac12m\dfrac{\mathrm d}{\mathrm dx}(\alpha^2x^{-2n})=-mn\alpha^2x^{-2n-1}$。</li>
+    <li>(b) $\dfrac{\mathrm dx}{\mathrm dt}=\alpha x^{-n}$ ⟹ $x^n\mathrm dx=\alpha\,\mathrm dt$ ⟹ $\dfrac{x^{n+1}}{n+1}=\alpha t$（$x(0)=0$）⟹ $x=[(n+1)\alpha t]^{1/(n+1)}$。</li>
+    <li>(c) 代入 (a)：$F(t)=-mn\alpha^2[(n+1)\alpha t]^{-(2n+1)/(n+1)}$。</li>
+  </ol>
+  <div class="final">答：$F(x)=-mn\alpha^2x^{-2n-1}$，$x=[(n+1)\alpha t]^{1/(n+1)}$，$F(t)=-mn\alpha^2[(n+1)\alpha t]^{-(2n+1)/(n+1)}$。</div>
+  <p class="small"><a href="#c2-tm-2-38">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-50" data-group="七、指數阻力與由速度求力（p.63–73）" data-title="課本 2-50：相對論定力">
+  <h3>課本 2-50</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　相對論中 $\mathrm dp/\mathrm dt=F$，$p=m_0v/\sqrt{1-v^2/c^2}$。(a) $F$ 為常數、$x(0)=v(0)=0$，求 $x(t)$、$v(t)$；(b) 畫 $v(t)$；(c) $F/m_0=10\ \text{m/s}^2$，多久達到 $c/2$、$0.99c$？</div>
+  <ol class="write">
+    <li>$p=Ft$：$\dfrac{m_0v}{\sqrt{1-v^2/c^2}}=Ft$ ⟹ $v=\dfrac{Ft/m_0}{\sqrt{1+(Ft/m_0c)^2}}$。</li>
+    <li>$x=\displaystyle\int_0^tv\,\mathrm dt'=\frac{m_0c^2}F\left[\sqrt{1+\left(\frac{Ft}{m_0c}\right)^2}-1\right]$。</li>
+    <li>(b) 小 $t$：$v\approx Ft/m_0$；$t\to\infty$：$v\to c$（漸近線）。</li>
+    <li>(c) $\dfrac{Ft}{m_0c}=\dfrac{\beta}{\sqrt{1-\beta^2}}$：$\beta=0.5$ ⟹ $0.577$，$t=\dfrac{0.577(3\times10^8)}{10}=1.73\times10^7\ \text{s}$；$\beta=0.99$ ⟹ $7.02$，$t=2.1\times10^8\ \text{s}$。</li>
+  </ol>
+  <div class="final">答：$v=\dfrac{Ft/m_0}{\sqrt{1+(Ft/m_0c)^2}}$，$x=\dfrac{m_0c^2}F[\sqrt{1+(Ft/m_0c)^2}-1]$；$c/2$ 需 $1.7\times10^7\ \text{s}$（0.55 年），$0.99c$ 需 $2.1\times10^8\ \text{s}$（6.7 年）。</div>
+  <p class="small"><a href="#c2-tm-2-50">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-07a" data-group="七、指數阻力與由速度求力（p.63–73）" data-title="自編難題：v = v0 e^(−x/L) 的力">
+  <h3>自編難題（第 7 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　船速 $v(x)=v_0e^{-x/L}$。(a) 求 $F(x)$ 並寫成 $v$ 的函數；(b) $x(t)$、$v(t)$；(c) 會不會停？與線性阻力比較。</div>
+  <ol class="write">
+    <li>$F=\tfrac12m\dfrac{\mathrm d(\dot x^2)}{\mathrm dx}=\tfrac12m\dfrac{\mathrm d}{\mathrm dx}(v_0^2e^{-2x/L})=-\dfrac{mv_0^2}Le^{-2x/L}=-\dfrac mLv^2$。</li>
+    <li>$\dot x=v_0e^{-x/L}$ ⟹ $e^{x/L}\mathrm dx=v_0\mathrm dt$ ⟹ $L(e^{x/L}-1)=v_0t$。</li>
+    <li>$x=L\ln(1+v_0t/L)$，$v=\dfrac{v_0}{1+v_0t/L}$。</li>
+    <li>$v\to0$ 只在 $t\to\infty$，$x$ 無上限；線性阻力 $v=v_0-kx$ 在 $x=v_0/k$ 停住。</li>
+  </ol>
+  <div class="final">答：$F=-mv^2/L$（$v^2$ 阻力）；$x=L\ln(1+v_0t/L)$；不會在有限距離停下。</div>
+  <p class="small"><a href="#c2-self-07a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-07b" data-group="七、指數阻力與由速度求力（p.63–73）" data-title="自編難題：相對論定力的雙曲線">
+  <h3>自編難題（第 7 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$x(t)=X[\sqrt{1+(ct/X)^2}-1]$，$X=m_0c^2/F$。(a) 證 $(x+X)^2-(ct)^2=X^2$；(b) 牛頓極限；(c) 證 $ct-x\to X$；(d) $F/m_0=10\ \text{m/s}^2$ 的 $X$。</div>
+  <ol class="write">
+    <li>$Ft/m_0c=ct/X$ ⟹ $x+X=\sqrt{X^2+c^2t^2}$，平方得證。</li>
+    <li>$ct\ll X$：$\sqrt{1+u}\approx1+u/2$ ⟹ $x\approx c^2t^2/2X=\tfrac12(F/m_0)t^2$。</li>
+    <li>$ct-x=X+ct-\sqrt{X^2+c^2t^2}=X-\dfrac{X^2}{ct+\sqrt{X^2+c^2t^2}}\to X$。</li>
+    <li>$X=c^2/(F/m_0)=(2.998\times10^8)^2/10=8.99\times10^{15}\ \text{m}=0.95$ 光年。</li>
+  </ol>
+  <div class="final">答：雙曲線 $(x+X)^2-(ct)^2=X^2$；小 $t$ 為 $\tfrac12(F/m_0)t^2$；光領先的距離趨近 $X\approx0.95$ 光年。</div>
+  <p class="small"><a href="#c2-self-07b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 八、二、三維運動與拋體 ===== -->
+<article class="exam-item" data-exam-id="c2-ex26" data-group="八、二、三維運動與拋體（p.74–84）" data-title="例題 2.6：拋體">
+  <h3>講義例題 2.6</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　不計空氣阻力，砲口初速 $v_0$、仰角 $\theta$。求位移、速度與射程，以及射程最大的仰角。（大貝莎：$v_0=1450\ \text{m/s}$、$\theta=55^\circ$。）</div>
+  <ol class="write">
+    <li>$x$：$m\ddot x=0$ ⟹ $\dot x=v_0\cos\theta$，$x=v_0\cos\theta\,t$。</li>
+    <li>$y$：$m\ddot y=-mg$ ⟹ $\dot y=v_0\sin\theta-gt$，$y=v_0\sin\theta\,t-\tfrac12gt^2$。</li>
+    <li>$v=(v_0^2+g^2t^2-2v_0gt\sin\theta)^{1/2}$，$r=(v_0^2t^2+\tfrac14g^2t^4-v_0gt^3\sin\theta)^{1/2}$。</li>
+    <li>$y=0$：$T=\dfrac{2v_0\sin\theta}g$；$R=v_0\cos\theta\,T=\dfrac{v_0^2\sin2\theta}g$。</li>
+    <li>$\dfrac{\mathrm dR}{\mathrm d\theta}=\dfrac{2v_0^2\cos2\theta}g=0$ ⟹ $\theta=45^\circ$。</li>
+    <li>大貝莎：$R=\dfrac{1450^2\sin110^\circ}{9.8}=202\ \text{km}$，$T=242\ \text{s}$，$y_{\max}=\dfrac{(v_0\sin\theta)^2}{2g}=72\ \text{km}$。</li>
+  </ol>
+  <div class="final">答：$R=\dfrac{v_0^2\sin2\theta}g$，$45^\circ$ 最大；大貝莎 $202\ \text{km}$、$72\ \text{km}$、$242\ \text{s}$。</div>
+  <p class="small"><a href="#c2-ex26">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-3" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-3：穿過斜線的時間">
+  <h3>課本 2-3</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　拋體從原點以 $v_0$、仰角 $\alpha$ 射出。求它穿過通過原點、仰角 $\beta\lt \alpha$ 的直線所需時間。</div>
+  <ol class="write">
+    <li>$x=v_0\cos\alpha\,t$，$y=v_0\sin\alpha\,t-\tfrac12gt^2$；直線 $y=x\tan\beta$。</li>
+    <li>$v_0\sin\alpha\,t-\tfrac12gt^2=v_0\cos\alpha\tan\beta\,t$，除以 $t\neq0$：$t=\dfrac{2v_0(\sin\alpha\cos\beta-\cos\alpha\sin\beta)}{g\cos\beta}$。</li>
+  </ol>
+  <div class="final">答：$t=\dfrac{2v_0\sin(\alpha-\beta)}{g\cos\beta}$。</div>
+  <p class="small"><a href="#c2-tm-2-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-8" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-8：兩點距離">
+  <h3>課本 2-8</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　初速 $v_0$ 的拋體通過兩個高度 $h$ 的點。證明調成最大射程時兩點距離 $d=\dfrac{v_0}g\sqrt{v_0^2-4gh}$。</div>
+  <ol class="write">
+    <li>軌跡 $y=x\tan\theta-\dfrac{gx^2}{2v_0^2\cos^2\theta}$；最大射程 $\theta=45^\circ$：$y=x-\dfrac{gx^2}{v_0^2}$。</li>
+    <li>$y=h$：$gx^2-v_0^2x+v_0^2h=0$ ⟹ $x_\pm=\dfrac{v_0^2\pm\sqrt{v_0^4-4gv_0^2h}}{2g}$。</li>
+    <li>$d=x_+-x_-=\dfrac{\sqrt{v_0^4-4gv_0^2h}}g=\dfrac{v_0}g\sqrt{v_0^2-4gh}$。</li>
+  </ol>
+  <div class="final">答：$d=\dfrac{v_0}g\sqrt{v_0^2-4gh}$（得證）。</div>
+  <p class="small"><a href="#c2-tm-2-8">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-14" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-14：山坡上的射程">
+  <h3>課本 2-14</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　拋體以 $v_0$、仰角 $\alpha$ 向坡度 $\beta$ 的山坡上方射出（$\alpha>\beta$）。(a) 落在坡上多遠？(b) $\alpha$ 多少時最遠？(c) 最大射程？</div>
+  <ol class="write">
+    <li>落點 $(d\cos\beta,d\sin\beta)$ 代入軌跡：$d\sin\beta=d\cos\beta\tan\alpha-\dfrac{gd^2\cos^2\beta}{2v_0^2\cos^2\alpha}$。</li>
+    <li>(a) $d=\dfrac{2v_0^2\cos\alpha\sin(\alpha-\beta)}{g\cos^2\beta}$。</li>
+    <li>(b) $\dfrac{\mathrm dd}{\mathrm d\alpha}\propto\cos\alpha\cos(\alpha-\beta)-\sin\alpha\sin(\alpha-\beta)=\cos(2\alpha-\beta)=0$ ⟹ $\alpha=\dfrac\pi4+\dfrac\beta2$。</li>
+    <li>(c) $2\cos\alpha\sin(\alpha-\beta)=\sin(2\alpha-\beta)-\sin\beta=1-\sin\beta$ ⟹ $d_{\max}=\dfrac{v_0^2(1-\sin\beta)}{g(1-\sin^2\beta)}=\dfrac{v_0^2}{g(1+\sin\beta)}$。</li>
+  </ol>
+  <div class="final">答：(a) $\dfrac{2v_0^2\cos\alpha\sin(\alpha-\beta)}{g\cos^2\beta}$；(b) $\dfrac\pi4+\dfrac\beta2$；(c) $\dfrac{v_0^2}{g(1+\sin\beta)}$。</div>
+  <p class="small"><a href="#c2-tm-2-14">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-19" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-19：距離恆增加">
+  <h3>課本 2-19</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-19"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>If a projectile moves such that its distance from the point of projection is always increasing, find the maximum angle above the horizontal with which the particle could have been projected. (Assume no air resistance.)</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-19 · p.92</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　若拋體離出發點的距離始終增加，射出仰角最大可為多少？（無空氣阻力）</div>
+  <ol class="write">
+    <li>$r^2=x^2+y^2=v_0^2t^2-v_0gt^3\sin\theta+\tfrac14g^2t^4$。</li>
+    <li>$\dfrac{\mathrm d(r^2)}{\mathrm dt}=t(g^2t^2-3v_0g\sin\theta\,t+2v_0^2)>0$ 對所有 $t>0$ ⟹ 括號的判別式 $\lt 0$。</li>
+    <li>$9v_0^2g^2\sin^2\theta-8v_0^2g^2\lt 0$ ⟹ $\sin\theta\lt \sqrt{8/9}$ ⟹ $\theta\lt 70.5^\circ$。</li>
+  </ol>
+  <div class="final">答：$\theta_{\max}=\sin^{-1}\sqrt{8/9}\approx70.5^\circ$。</div>
+  <p class="small"><a href="#c2-tm-2-19">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-5" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-5：戰機拉起">
+  <h3>課本 2-5</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　飛行員最多承受 $9g$。以 3 馬赫垂直俯衝，在撞地前以圓周運動拉起。(a) 最大加速度在哪裡？(b) 最小半徑？</div>
+  <ol class="write">
+    <li>徑向：$N-mg\cos\phi=\dfrac{mv^2}R$ ⟹ $\dfrac Nm=\dfrac{v^2}R+g\cos\phi$，最低點（$\phi=0$）最大。</li>
+    <li>$\dfrac{v^2}R+g\le9g$ ⟹ $R\ge\dfrac{v^2}{8g}=\dfrac{(990)^2}{8(9.8)}=1.25\times10^4\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：(a) 圓弧最低點；(b) $R_{\min}\approx12.5\ \text{km}$。</div>
+  <p class="small"><a href="#c2-tm-2-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-4" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-4：雜耍四顆球">
+  <h3>課本 2-4</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-4"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A clown is juggling four balls simultaneously. Students use a video tape to determine that it takes the clown 0.9 s to cycle each ball through his hands (including catching, transferring, and throwing) and to be ready to catch the next ball. What is the minimum vertical speed the clown must throw up each ball?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　小丑拋接四顆球，每顆球在手中處理一輪（含準備接下一顆）要 $0.9\ \text{s}$。每顆球的最小上拋速度？</div>
+  <ol class="write">
+    <li>手每 $0.9\ \text{s}$ 處理一顆；一顆被拋出後，要等另外三顆處理完才回來：$t_{\text{空中}}=3(0.9)=2.7\ \text{s}$。</li>
+    <li>鉛直上拋 $t_{\text{空中}}=2v_0/g$ ⟹ $v_0=g(2.7)/2=13.2\ \text{m/s}$（高 $8.9\ \text{m}$）。</li>
+    <li>（另一讀法：$0.9\ \text{s}$ 為相鄰兩拋的間隔、忽略手上時間 ⟹ 空中 $3.6\ \text{s}$，$v_0=17.6\ \text{m/s}$；原文說 $0.9\ \text{s}$ 含接、換手、拋，故採 $2.7\ \text{s}$。）</li>
+  </ol>
+  <div class="final">答：$v_0\ge13.2\ \text{m/s}$。</div>
+  <p class="small"><a href="#c2-tm-2-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-6" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-6：空投乾草">
+  <h3>課本 2-6</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In the blizzard of ’88, a rancher was forced to drop hay bales from an airplane to feed her cattle. The plane flew horizontally at 160 km/hr and dropped the bales from a height of 80 m above the flat range. <strong>(a)</strong> She wanted the bales of hay to land 30 m behind the cattle so as to not hit them. Where should she push the bales out of the airplane? <strong>(b)</strong> To not hit the cattle, what is the largest time error she could make while pushing the bales out of the airplane? Ignore air resistance.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　飛機 $160\ \text{km/h}$ 水平飛行，高 $80\ \text{m}$ 投草捆。(a) 要落在牛群前（飛機來的一側）$30\ \text{m}$，在哪裡推出？(b) 推出時間最多誤差多少？忽略空氣阻力。</div>
+  <ol class="write">
+    <li>$v=44.4\ \text{m/s}$；$t=\sqrt{2h/g}=\sqrt{160/9.8}=4.04\ \text{s}$；水平距離 $vt=179.6\ \text{m}$。</li>
+    <li>(a) 牛在 $x=0$、飛機往 $+x$：落點 $x=-30$，推出點 $x=-30-179.6=-209.6\ \text{m}$，即飛到牛群正上方之前約 $210\ \text{m}$ 處推出。</li>
+    <li>(b) 晚 $\Delta t$ 落點前移 $v\Delta t\le30\ \text{m}$ ⟹ $\Delta t\le30/44.4=0.68\ \text{s}$。</li>
+  </ol>
+  <div class="final">答：(a) 距牛群約 $210\ \text{m}$（$209.6\ \text{m}$）處推出；(b) $0.68\ \text{s}$。</div>
+  <p class="small"><a href="#c2-tm-2-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-17" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-17：壘球過牆">
+  <h3>課本 2-17</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-17"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A strong softball player smacks the ball at a height of 0.7 m above home plate. The ball leaves the player’s bat at an elevation angle of 35° and travels toward a fence 2 m high and 60 m away in center field. What must the initial speed of the softball be to clear the center field fence? Ignore air resistance.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　壘球在高 $0.7\ \text{m}$ 處以仰角 $35^\circ$ 擊出，牆高 $2\ \text{m}$、距離 $60\ \text{m}$。最小初速？忽略空氣阻力。</div>
+  <ol class="write">
+    <li>軌跡：$y=y_0+x\tan\theta-\dfrac{gx^2}{2v_0^2\cos^2\theta}$。</li>
+    <li>$2=0.7+60\tan35^\circ-\dfrac{9.8(3600)}{2v_0^2\cos^235^\circ}$ ⟹ $\dfrac{35280}{1.342\,v_0^2}=40.71$。</li>
+    <li>$v_0^2=645.7$，$v_0=25.4\ \text{m/s}$。</li>
+  </ol>
+  <div class="final">答：$v_0\ge25.4\ \text{m/s}$。</div>
+  <p class="small"><a href="#c2-tm-2-17">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-36" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-36：懸崖上的砲">
+  <h3>課本 2-36</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-36"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A gun is located on a bluff of height $h$ overlooking a river valley. If the muzzle velocity is $v_0$, find the expression for the range as a function of the elevation angle of the gun. Solve numerically for the maximum range out into the valley for a given $h$ and $v_0$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　砲在高 $h$ 的懸崖上，砲口速率 $v_0$。求射程對仰角的函數，並數值求最大射程。</div>
+  <ol class="write">
+    <li>$-h=v_0\sin\theta\,T-\tfrac12gT^2$ ⟹ $T=\dfrac{v_0\sin\theta+\sqrt{v_0^2\sin^2\theta+2gh}}g$。</li>
+    <li>$R(\theta)=\dfrac{v_0\cos\theta}g\left[v_0\sin\theta+\sqrt{v_0^2\sin^2\theta+2gh}\right]$。</li>
+    <li>數值最大化（例 $v_0=100\ \text{m/s}$、$h=100\ \text{m}$）：$\theta^*=42.4^\circ$，$R_{\max}=1116\ \text{m}$。</li>
+    <li>解析對照：$\sin\theta^*=\dfrac{v_0}{\sqrt{2(v_0^2+gh)}}$，$R_{\max}=\dfrac{v_0}g\sqrt{v_0^2+2gh}$；$h\to0$ 回到 $45^\circ$、$v_0^2/g$。</li>
+  </ol>
+  <div class="final">答：$R(\theta)$ 如上；$R_{\max}=\dfrac{v_0}g\sqrt{v_0^2+2gh}$（仰角小於 $45^\circ$）。</div>
+  <p class="small"><a href="#c2-tm-2-36">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-40" data-group="八、二、三維運動與拋體（p.74–84）" data-title="課本 2-40：切向與法向加速度">
+  <h3>課本 2-40</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-40"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A particle moves in a two-dimensional orbit defined by</p>$$x(t) = A(2\alpha t - \sin\alpha t)$$$$y(t) = A(1 - \cos\alpha t)$$<p><strong>(a)</strong> Find the tangential acceleration $a_t$ and normal acceleration $a_n$ as a function of time where the tangential and normal components are taken with respect to the velocity.<br><strong>(b)</strong> Determine at what times in the orbit $a_n$ has a maximum.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-40 · p.96</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$x=A(2\alpha t-\sin\alpha t)$、$y=A(1-\cos\alpha t)$。(a) 求 $a_t$、$a_n$；(b) 何時 $a_n$ 最大？</div>
+  <ol class="write">
+    <li>$\dot x=A\alpha(2-\cos\alpha t)$、$\dot y=A\alpha\sin\alpha t$，$v=A\alpha\sqrt{5-4\cos\alpha t}$；$\ddot x=A\alpha^2\sin\alpha t$、$\ddot y=A\alpha^2\cos\alpha t$，$|\vec a|=A\alpha^2$。</li>
+    <li>$a_t=\dfrac{\mathrm dv}{\mathrm dt}=\dfrac{2A\alpha^2\sin\alpha t}{\sqrt{5-4\cos\alpha t}}$。</li>
+    <li>$a_n=\dfrac{|\dot x\ddot y-\dot y\ddot x|}{v}=\dfrac{A\alpha^2|2\cos\alpha t-1|}{\sqrt{5-4\cos\alpha t}}$。</li>
+    <li>$f(c)=\dfrac{(2c-1)^2}{5-4c}$，$f'=\dfrac{4(2c-1)(4-2c)}{(5-4c)^2}$：$c=\tfrac12$ 最小，端點 $c=\pm1$ 最大 $f=1$。</li>
+  </ol>
+  <div class="final">答：$a_t=\dfrac{2A\alpha^2\sin\alpha t}{\sqrt{5-4\cos\alpha t}}$，$a_n=\dfrac{A\alpha^2|2\cos\alpha t-1|}{\sqrt{5-4\cos\alpha t}}$；$t=n\pi/\alpha$ 時 $a_n$ 最大 $=A\alpha^2$。</div>
+  <p class="small"><a href="#c2-tm-2-40">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-08a" data-group="八、二、三維運動與拋體（p.74–84）" data-title="自編難題：安全拋物線">
+  <h3>自編難題（第 8 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　以固定速率 $v_0$ 任意仰角拋出。(a) 證明可達區域 $y\le\dfrac{v_0^2}{2g}-\dfrac{gx^2}{2v_0^2}$；(b) $v_0=20\ \text{m/s}$ 能否打中 $(30,8)\ \text{m}$？仰角？(c) 用 (a) 求懸崖 $h$ 的最大射程。</div>
+  <ol class="write">
+    <li>$u=\tan\theta$：$\dfrac{gx^2}{2v_0^2}u^2-xu+\left(y+\dfrac{gx^2}{2v_0^2}\right)=0$，有實根 ⟺ 判別式 $\ge0$ ⟺ $y\le\dfrac{v_0^2}{2g}-\dfrac{gx^2}{2v_0^2}$。</li>
+    <li>(b) 邊界在 $x=30$：$20.41-11.03=9.38\gt8$，可。$a=11.025$：$u=\dfrac{30\pm\sqrt{61.0}}{22.05}=1.715,\ 1.006$ ⟹ $59.8^\circ$、$45.2^\circ$。</li>
+    <li>(c) 令 $y=-h$：$x_{\max}=\dfrac{v_0}g\sqrt{v_0^2+2gh}$，$\tan\theta^*=\dfrac{v_0^2}{gx_{\max}}=\dfrac{v_0}{\sqrt{v_0^2+2gh}}$。</li>
+  </ol>
+  <div class="final">答：(a) 得證；(b) 可，$59.8^\circ$ 或 $45.2^\circ$；(c) $R_{\max}=\dfrac{v_0}g\sqrt{v_0^2+2gh}$。</div>
+  <p class="small"><a href="#c2-self-08a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-08b" data-group="八、二、三維運動與拋體（p.74–84）" data-title="自編難題：獵人與猴子">
+  <h3>自編難題（第 8 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　瞄準在 $(D,H)$ 的猴子，開槍瞬間猴子落下。(a) 證明必中；(b) $D=20$、$H=10\ \text{m}$ 的最小初速；(c) 兩者受同樣線性阻力 $-km\vec v$ 還會中嗎？</div>
+  <ol class="write">
+    <li>$\tan\theta=H/D$；到 $x=D$ 時 $t_1=D/v_0\cos\theta$，$y_{\text{鏢}}=D\tan\theta-\tfrac12gt_1^2=H-\tfrac12gt_1^2=y_{\text{猴}}$。</li>
+    <li>(b) $t_1=\sqrt{D^2+H^2}/v_0$，$\tfrac12gt_1^2\le H$ ⟹ $v_0\ge\sqrt{g(D^2+H^2)/2H}=15.7\ \text{m/s}$。</li>
+    <li>(c) 相對位置 $\vec r=\vec r_{\text{鏢}}-\vec r_{\text{猴}}$：$\ddot{\vec r}=-k\dot{\vec r}$（重力消去）。</li>
+    <li>$\vec r=\vec r(0)+\dfrac{\dot{\vec r}(0)}k(1-e^{-kt})$，$\dot{\vec r}(0)\parallel-\vec r(0)$：沿瞄準線前進，$v_0/k\gt\sqrt{D^2+H^2}$ 時必過零。</li>
+  </ol>
+  <div class="final">答：(a) 必中；(b) $15.7\ \text{m/s}$；(c) 仍會中（條件 $v_0\gt k\sqrt{D^2+H^2}$ 且落地前到達）。</div>
+  <p class="small"><a href="#c2-self-08b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 九、有空氣阻力的拋體 ===== -->
+<article class="exam-item" data-exam-id="c2-ex27" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="例題 2.7：線性阻力的射程">
+  <h3>講義例題 2.7</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　例題 2.6 加上正比於速度的空氣阻力。初始 $x=y=0$，$\dot x=v_0\cos\theta\equiv U$，$\dot y=v_0\sin\theta\equiv V$。求軌跡與射程的減少量。</div>
+  <ol class="write">
+    <li>$m\ddot x=-km\dot x$ ⟹ $x=\dfrac Uk(1-e^{-kt})$。</li>
+    <li>$m\ddot y=-km\dot y-mg$ ⟹ $y=-\dfrac{gt}k+\dfrac{kV+g}{k^2}(1-e^{-kt})$。</li>
+    <li>$y(T)=0$：$T=\dfrac{kV+g}{gk}(1-e^{-kT})$，無解析解。</li>
+    <li>$e^{-kT}$ 展開到 $k^3$：$T=\dfrac{2V/g}{1+kV/g}+\dfrac13kT^2\approx\dfrac{2V}g\left(1-\dfrac{kV}{3g}\right)$。</li>
+    <li>$R'=x(T)\approx U\left(T-\tfrac12kT^2\right)\approx\dfrac{2UV}g\left(1-\dfrac{4kV}{3g}\right)$，$\dfrac{2UV}g=R$。</li>
+  </ol>
+  <div class="final">答：$R'\approx R\left(1-\dfrac{4kV}{3g}\right)$，減少 $\dfrac{4kV}{3g}R$（需 $k\ll g/V$）。</div>
+  <p class="small"><a href="#c2-ex27">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-12" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="課本 2-12：v² 阻力的上拋">
+  <h3>課本 2-12（講義 p.93–99）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質點以 $v_0$ 鉛直上拋，阻力 $-kmv^2$。證明回到出發點時速率為 $\dfrac{v_0v_t}{\sqrt{v_0^2+v_t^2}}$，$v_t$ 為終端速度。</div>
+  <ol class="write">
+    <li>上升（向上為正）：$-mg-km\dot x^2=m\dfrac{\mathrm d\dot x}{\mathrm dt}$，乘 $\dot x$：$-2\,\mathrm dx=\dfrac{\mathrm d(\dot x^2)}{g+k\dot x^2}$ ⟹ $x=\dfrac1{2k}\ln\dfrac{g+kv_0^2}{g+k\dot x^2}$。</li>
+    <li>最高點 $\dot x=0$：$x_{\max}=\dfrac1{2k}\ln\dfrac{g+kv_0^2}g$。</li>
+    <li>下降（從最高點、向下為正）：$mg-km\dot x^2=m\dfrac{\mathrm d\dot x}{\mathrm dt}$ ⟹ $2\,\mathrm dx=\dfrac{\mathrm d(\dot x^2)}{g-k\dot x^2}$；$\dot x(0)=0$ ⟹ $\dot x^2=\dfrac gk(1-e^{-2kx})$，$v_t^2=\dfrac gk$。</li>
+    <li>$x=x_{\max}$：$e^{-2kx_{\max}}=\dfrac g{g+kv_0^2}$ ⟹ $\dot x^2=\dfrac gk\cdot\dfrac{kv_0^2}{g+kv_0^2}=\dfrac{v_t^2v_0^2}{v_t^2+v_0^2}$。</li>
+  </ol>
+  <div class="final">答：回到原處的速率 $\dfrac{v_0v_t}{\sqrt{v_0^2+v_t^2}}$，$v_t=\sqrt{g/k}$（得證）。</div>
+  <p class="small"><a href="#c2-tm-2-12">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tbex28" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="例題 2.8：真實砲彈">
+  <h3>課本例題 2.8</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　用 Fig. 2-3 的阻力數據計算軌跡：$v_0=600\ \text{m/s}$、仰角 $45^\circ$、質量 $30\ \text{kg}$；畫有、無阻力的 $y$–$x$ 與 $y$、$\dot x$、$\dot y$–$t$ 圖。只考慮阻力與重力。</div>
+  <ol class="write">
+    <li>由圖讀出阻力表 $F(v)$（每 $50$ 或 $100\ \text{m/s}$ 一點，直線內插）。</li>
+    <li>$\ddot x=-\dfrac{F_x}m$，$\ddot y=-\dfrac{F_y}m-g$；$v=\sqrt{\dot x^2+\dot y^2}$，$\tan\theta=\dot y/\dot x$，$F_x=F\cos\theta$，$F_y=F\sin\theta$。</li>
+    <li>每一小段 $\Delta t$ 以當下的力更新 $\dot x,\dot y$，再更新 $x,y$，直到 $y=0$。</li>
+    <li>結果：無阻力射程 $v_0^2/g=36.7\ \text{km}$；有阻力約 $16\ \text{km}$（計入空氣密度隨高度遞減約 $18\ \text{km}$）。</li>
+  </ol>
+  <div class="final">答：有阻力射程約 $16\ \text{km}$，無阻力約 $37\ \text{km}$。</div>
+  <p class="small"><a href="#c2-tbex28">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-7" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="課本 2-7：乾草捆的 v² 阻力">
+  <h3>課本 2-7</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Include air resistance for the bales of hay in the previous problem. A bale of hay has a mass of about 30 kg and an average area of about 0.2 m<sup>2</sup>. Let the resistance be proportional to the square of the speed and let $c_W = 0.8$. Plot the trajectories with a computer if the hay bales land 30 m behind the cattle for both including air resistance and not. If the bales of hay were released at the same time in the two cases, what is the distance between landing positions of the bales?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　2-6 的草捆（$30\ \text{kg}$、$0.2\ \text{m}^2$、$c_W=0.8$，$v^2$ 阻力）。畫出有、無阻力且都落在牛群前 $30\ \text{m}$ 的軌跡；若同時投下，兩落點相距多遠？</div>
+  <ol class="write">
+    <li>$\ddot x=-cv\dot x$、$\ddot y=-g-cv\dot y$，$c=\dfrac{c_W\rho A}{2m}=\dfrac{0.8(1.3)(0.2)}{60}=3.47\times10^{-3}\ \text{m}^{-1}$。</li>
+    <li>初值 $(0,80)$、$(44.4,0)$，數值積分到 $y=0$：$t=4.44\ \text{s}$，$x=147.5\ \text{m}$。</li>
+    <li>無阻力：$t=4.04\ \text{s}$，$x=179.6\ \text{m}$。</li>
+    <li>投放位置（落點在牛群前 $30\ \text{m}$）：無阻力距牛群 $179.6+30=209.6\ \text{m}$，有阻力 $147.5+30=177.5\ \text{m}$；同時投下落點差 $179.6-147.5=32.0\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：落點相距約 $32\ \text{m}$（有阻力時應在距牛群 $177.5\ \text{m}$ 處投下）。</div>
+  <p class="small"><a href="#c2-tm-2-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-18" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="課本 2-18：壘球的 v² 阻力">
+  <h3>課本 2-18</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-18"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Include air resistance proportional to the square of the ball’s speed in the previous problem. Let the drag coefficient be $c_W = 0.5$, the softball radius be 5 cm and the mass be 200 g. <strong>(a)</strong> Find the initial speed of the softball needed now to clear the fence. <strong>(b)</strong> For this speed, find the initial elevation angle that allows the ball to most easily clear the fence. By how much does the ball now vertically clear the fence?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　2-17 加 $v^2$ 阻力：$c_W=0.5$、$r=5\ \text{cm}$、$m=200\ \text{g}$。(a) $35^\circ$ 過牆所需初速；(b) 此初速下最容易過牆的仰角，高出牆多少？</div>
+  <ol class="write">
+    <li>$c=\dfrac{c_W\rho\pi r^2}{2m}=1.28\times10^{-2}\ \text{m}^{-1}$（$\rho=1.3$），$v_t=\sqrt{g/c}=27.7\ \text{m/s}$。</li>
+    <li>數值積分 $\ddot{\vec r}=\vec g-cv\dot{\vec r}$，從 $(0,0.7)$ 出發，求 $x=60$ 時的 $y_{60}(v_0,\theta)$。</li>
+    <li>(a) 二分法解 $y_{60}(v_0,35^\circ)=2$：$v_0=35.2\ \text{m/s}$。</li>
+    <li>(b) 固定 $v_0=35.2$ 對 $\theta$ 最大化：$\theta^*\approx40.7^\circ$，$y_{60}=3.10\ \text{m}$，高出 $1.1\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：(a) $35.2\ \text{m/s}$；(b) 約 $41^\circ$，高出牆約 $1.1\ \text{m}$（$\rho=1.3$）。</div>
+  <p class="small"><a href="#c2-tm-2-18">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-20" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="課本 2-20：Fig. 2-3 的砲彈">
+  <h3>課本 2-20</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A gun fires a projectile of mass 10 kg of the type to which the curves of Figure 2-3 apply. The muzzle velocity is 140 m/s. Through what angle must the barrel be elevated to hit a target on the same horizontal plane as the gun and 1000 m away? Compare the results with those for the case of no retardation.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-20 · p.92；所需 Fig. 2-3 見課本 p.60</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$10\ \text{kg}$ 砲彈（Fig. 2-3 的阻力），砲口 $140\ \text{m/s}$，打同高度 $1000\ \text{m}$ 外的目標，仰角？與無阻力比較。</div>
+  <ol class="write">
+    <li>$140\ \text{m/s}$＝Mach 0.42，Fig. 2-3(b) $c_W\approx0.2$：$W=\tfrac12(0.2)(1.3)\pi(0.05)^2v^2$，$W(140)=20.0\ \text{N}$。</li>
+    <li>無阻力：$\sin2\theta=gR/v_0^2=0.5$ ⟹ $15.0^\circ$ 或 $75.0^\circ$。</li>
+    <li>有阻力數值積分：$15^\circ$ 只到 $936\ \text{m}$、$75^\circ$ 只到 $862\ \text{m}$。</li>
+    <li>割線法調仰角使 $R=1000$：$16.2^\circ$（$7.8\ \text{s}$）或 $72.2^\circ$（$26.0\ \text{s}$）。</li>
+  </ol>
+  <div class="final">答：$16.2^\circ$（或 $72.2^\circ$）；無阻力 $15.0^\circ$（或 $75.0^\circ$）。</div>
+  <p class="small"><a href="#c2-tm-2-20">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-35" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="課本 2-35：Fig. 2-8、2-9 的數值計算">
+  <h3>課本 2-35</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-35"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Perform the numerical calculations of Example 2.7 for the values given in Figure 2-8. Plot both Figures 2-8 and 2-9. Do not duplicate the solution in Appendix H; compose your own solution.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-35 · p.95；所需 Fig. 2-8 見課本 p.66</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用 Fig. 2-8 的數值（$v_0=600\ \text{m/s}$、$\theta=60^\circ$、$k=0\sim0.08\ \text{s}^{-1}$）做例題 2.7 的數值計算，畫 Fig. 2-8、2-9。</div>
+  <ol class="write">
+    <li>$U=300$、$V=519.6\ \text{m/s}$；$x=\frac Uk(1-e^{-kt})$，$y=-\frac{gt}k+\frac{kV+g}{k^2}(1-e^{-kt})$。</li>
+    <li>每個 $k$ 解 $T=\frac{kV+g}{gk}(1-e^{-kT})$（迭代，初值 $2V/g$），$R'=x(T)$。</li>
+    <li>結果（km）：$k=0$：$31.8$；$0.005$：$23.3$；$0.01$：$18.1$；$0.02$：$12.2$；$0.04$：$7.1$；$0.08$：$3.7$。</li>
+    <li>微擾 $R(1-\frac{4kV}{3g})$：$0.005$ 給 $20.6$，$k=3g/4V=0.0141$ 降到零，之後為負。</li>
+  </ol>
+  <div class="final">答：數值射程如上；微擾只在 $k\lesssim0.005\ \text{s}^{-1}$ 可信。</div>
+  <p class="small"><a href="#c2-tm-2-35">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-55" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="課本 2-55：南瓜砲的 k">
+  <h3>課本 2-55</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-55"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A pumpkin of mass 5 kg shot out of a student-made cannon under air pressure at an elevation angle of 45° fell at a distance of 142 m from the cannon. The students used light beams and photocells to measure the initial velocity of 54 m/s. If the air resistive force was $F = -kmv$, what was the value of $k$?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$5\ \text{kg}$ 南瓜以 $45^\circ$、$54\ \text{m/s}$ 射出，落在 $142\ \text{m}$ 外。阻力 $-kmv$，求 $k$。</div>
+  <ol class="write">
+    <li>$U=V=38.18\ \text{m/s}$；無阻力射程 $v_0^2/g=297.6\ \text{m}$，差很多，不能用微擾。</li>
+    <li>$T=\dfrac{kV+g}{gk}(1-e^{-kT})$，$R(k)=\dfrac Uk(1-e^{-kT})=142$。</li>
+    <li>雙層求根：$R(0.1)=192$、$R(0.3)=107$ ⟹ $k=0.191\ \text{s}^{-1}$，$T=6.49\ \text{s}$。</li>
+    <li>（對照：微擾式給 $0.101$，因 $kV/g=0.74$ 不小而失準。）</li>
+  </ol>
+  <div class="final">答：$k\approx0.19\ \text{s}^{-1}$。</div>
+  <p class="small"><a href="#c2-tm-2-55">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-09a" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="自編難題：最高點提早到">
+  <h3>自編難題（第 9 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　線性阻力拋體。(a) $t_{\text{top}}$；(b) 精確證明 $T\gt2t_{\text{top}}$；(c) 一次微擾比較，並以 $V=519.6\ \text{m/s}$、$k=0.005\ \text{s}^{-1}$ 驗證。</div>
+  <ol class="write">
+    <li>$\dot y=(V+g/k)e^{-kt}-g/k=0$ ⟹ $q=e^{-kt_{\text{top}}}=\dfrac g{kV+g}$，$t_{\text{top}}=\frac1k\ln(1+kV/g)$。</li>
+    <li>$y(2t_{\text{top}})=\dfrac g{k^2}\left[2\ln q+\dfrac{1-q^2}q\right]=\dfrac g{k^2}f(w)$，$f(w)=w-\frac1w-2\ln w$，$w=1/q\gt1$。</li>
+    <li>$f(1)=0$，$f'(w)=(1-1/w)^2\gt0$ ⟹ $f\gt0$ ⟹ $y(2t_{\text{top}})\gt0$ ⟹ $T\gt2t_{\text{top}}$。</li>
+    <li>$t_{\text{top}}\approx\frac Vg(1-\frac{kV}{2g})$，$\frac T2\approx\frac Vg(1-\frac{kV}{3g})$；數值 $47.0\ \text{s}\lt49.0\ \text{s}$。</li>
+  </ol>
+  <div class="final">答：$t_{\text{top}}=\frac1k\ln(1+kV/g)$；$T\gt2t_{\text{top}}$（上升比下降快）。</div>
+  <p class="small"><a href="#c2-self-09a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-09b" data-group="九、有空氣阻力的拋體（p.85–99）" data-title="自編難題：最佳仰角小於 45°">
+  <h3>自編難題（第 9 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$R'\approx\frac{v_0^2\sin2\theta}g(1-\frac{4kv_0\sin\theta}{3g})$。(a) 求 $\theta^*$ 到 $\varepsilon=kv_0/g$ 的一次；(b) 物理解釋；(c) $v_0=50\ \text{m/s}$、$k=0.01\ \text{s}^{-1}$ 的數值。</div>
+  <ol class="write">
+    <li>$\frac{\mathrm d}{\mathrm d\theta}$：$2\cos2\theta-\frac{4\varepsilon}3(2\cos2\theta\sin\theta+\sin2\theta\cos\theta)=0$。</li>
+    <li>$\theta=\frac\pi4+\delta$：$-4\delta-\frac{4\varepsilon}{3\sqrt2}=0$ ⟹ $\delta=-\dfrac{\varepsilon}{3\sqrt2}$。</li>
+    <li>(b) 損失比例 $\propto\sin\theta$：仰角越高滯空越久、損失越多。</li>
+    <li>(c) $\varepsilon=0.0510$，$\delta=-0.0120\ \text{rad}=-0.69^\circ$，$\theta^*=44.31^\circ$（精確 $44.33^\circ$）。</li>
+  </ol>
+  <div class="final">答：$\theta^*\approx\dfrac\pi4-\dfrac{kv_0}{3\sqrt2\,g}$（弧度），即 $45^\circ-\dfrac{180^\circ}{\pi}\cdot\dfrac{kv_0}{3\sqrt2\,g}$；數值 $44.3^\circ$。</div>
+  <p class="small"><a href="#c2-self-09b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 十、Atwood 機與電磁場中的粒子 ===== -->
+<article class="exam-item" data-exam-id="c2-ex29" data-group="十、Atwood 機與電磁場中的粒子（p.100–106）" data-title="例題 2.9：Atwood 機">
+  <h3>講義例題 2.9</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　Atwood 機（光滑滑輪、輕繩，兩端 $m_1$、$m_2$）。求加速度與張力：(a) 滑輪中心靜止；(b) 滑輪在以 $\alpha$ 向下加速的電梯中。</div>
+  <ol class="write">
+    <li>(a) $m_1g-T=m_1\ddot x_1$，$m_2g-T=m_2\ddot x_2$；繩長不變 $\ddot x_2=-\ddot x_1$。</li>
+    <li>相減：$(m_1-m_2)g=(m_1+m_2)\ddot x_1$ ⟹ $\ddot x_1=\dfrac{(m_1-m_2)g}{m_1+m_2}$，$T=m_1(g-\ddot x_1)=\dfrac{2m_1m_2g}{m_1+m_2}$。</li>
+    <li>(b) 電梯不是慣性系；從電梯井頂端（慣性系）量，物體加速度 $\ddot x_i+\alpha$：$m_1g-T=m_1(\ddot x_1+\alpha)$，$m_2g-T=m_2(\ddot x_2+\alpha)$。</li>
+    <li>仍 $\ddot x_2=-\ddot x_1$：$\ddot x_1=\dfrac{(m_1-m_2)(g-\alpha)}{m_1+m_2}$，$T=\dfrac{2m_1m_2(g-\alpha)}{m_1+m_2}$。</li>
+  </ol>
+  <div class="final">答：(a) $\ddot x_1=-\ddot x_2=\dfrac{(m_1-m_2)g}{m_1+m_2}$，$T=\dfrac{2m_1m_2g}{m_1+m_2}$；(b) 把 $g$ 換成 $g-\alpha$。</div>
+  <p class="small"><a href="#c2-ex29">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tbex210" data-group="十、Atwood 機與電磁場中的粒子（p.100–106）" data-title="例題 2.10：磁場中的螺旋">
+  <h3>課本例題 2.10</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　帶電粒子進入均勻磁場 $\vec B$ 的區域（例如地球磁場，Fig. 2-12），求它之後的運動。</div>
+  <ol class="write">
+    <li>設定：$y$ 軸平行磁場，$\vec B=B_0\hat j$，電荷 $q$；$t=0$ 時 $\dot x=0$、$\dot z=\dot z_0$、$\dot y=\dot y_0$。</li>
+    <li>$m\ddot{\vec r}=q\dot{\vec r}\times B_0\hat j=qB_0(\dot x\hat k-\dot z\hat i)$ ⟹ $m\ddot x=-qB_0\dot z$，$m\ddot y=0$，$m\ddot z=qB_0\dot x$。</li>
+    <li>$y=\dot y_0t+y_0$。令 $\alpha=qB_0/m$：$\ddot x=-\alpha\dot z$，$\ddot z=\alpha\dot x$ ⟹ $\dddot x=-\alpha^2\dot x$，$\dddot z=-\alpha^2\dot z$。</li>
+    <li>$x-x_0=A\cos\alpha t+B\sin\alpha t$，$z-z_0=A'\cos\alpha t+B'\sin\alpha t$；代回耦合方程式得 $A=B'$、$B=-A'$。</li>
+    <li>初始條件：$\dot x(0)=\alpha B=0$，$\dot z(0)=\alpha A=\dot z_0$ ⟹ $x-x_0=\dfrac{\dot z_0m}{qB_0}\cos\dfrac{qB_0t}m$，$z-z_0=\dfrac{\dot z_0m}{qB_0}\sin\dfrac{qB_0t}m$。</li>
+  </ol>
+  <div class="final">答：沿 $\vec B$ 以 $\dot y_0$ 等速、垂直平面上半徑 $\dfrac{\dot z_0m}{qB_0}$ 的圓：圓螺旋線。</div>
+  <p class="small"><a href="#c2-tbex210">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-22" data-group="十、Atwood 機與電磁場中的粒子（p.100–106）" data-title="課本 2-22：Lorentz 力與擺線">
+  <h3>課本 2-22</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec F=q\vec E+q\vec v\times\vec B$（$v\ll c$）。(a) 無電場、垂直磁場射入，證明 $r=mv/qB=v/\omega_c$，$\omega_c=qB/m$。(b) $\vec B=B\hat k$、$\vec E=E_y\hat j+E_z\hat k$，證明 $z=z_0+\dot z_0t+\dfrac{qE_z}{2m}t^2$。(c) 求 $\dot x(t)$、$\dot y(t)$，證明時間平均 $\langle\dot x\rangle=E_y/B$、$\langle\dot y\rangle=0$。(d) 以 $x(0)=-A/\omega_c$、$\dot x(0)=E_y/B$、$y(0)=0$、$\dot y(0)=A$ 積分，證明 $x=-\dfrac A{\omega_c}\cos\omega_ct+\dfrac{E_y}Bt$、$y=\dfrac A{\omega_c}\sin\omega_ct$，並畫出 $A>|E_y/B|$、$A\lt |E_y/B|$、$A=|E_y/B|$ 的軌跡。</div>
+  <ol class="write">
+    <li>(a) 磁力 $qvB$ 垂直速度、不做功，速率不變 ⟹ 等速圓周：$qvB=\dfrac{mv^2}r$ ⟹ $r=\dfrac{mv}{qB}=\dfrac v{\omega_c}$。</li>
+    <li>(b) $\vec v\times B\hat k=B(\dot y\hat i-\dot x\hat j)$：$m\ddot x=qB\dot y$，$m\ddot y=qE_y-qB\dot x$，$m\ddot z=qE_z$ ⟹ $z=z_0+\dot z_0t+\dfrac{qE_z}{2m}t^2$。</li>
+    <li>(c) $\ddot x=\omega_c\dot y$，$\ddot y=\omega_c(E_y/B-\dot x)$。令 $u=\dot x-E_y/B$：$\ddot u=-\omega_c^2u$ ⟹ $\dot x=\dfrac{E_y}B+A\sin(\omega_ct+\phi)$，$\dot y=A\cos(\omega_ct+\phi)$；週期 $2\pi/\omega_c$，平均 $\langle\dot x\rangle=E_y/B$，$\langle\dot y\rangle=0$。</li>
+    <li>(d) $\dot x(0)=E_y/B$、$\dot y(0)=A$ ⟹ $\phi=0$；積分並用 $x(0)=-A/\omega_c$、$y(0)=0$：$x=-\dfrac A{\omega_c}\cos\omega_ct+\dfrac{E_y}Bt$，$y=\dfrac A{\omega_c}\sin\omega_ct$。</li>
+    <li>軌跡＝以 $E_y/B$ 前進的圓心＋半徑 $A/\omega_c$ 的圓周：$A>|E_y/B|$ 有迴圈，$A\lt |E_y/B|$ 波浪無迴圈，$A=|E_y/B|$ 有尖點（旋輪線）。</li>
+  </ol>
+  <div class="final">答：如上；平均漂移速度 $E_y/B$（$\vec E\times\vec B$ 方向）。</div>
+  <p class="small"><a href="#c2-tm-2-22">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-31" data-group="十、Atwood 機與電磁場中的粒子（p.100–106）" data-title="課本 2-31：螺旋只改半徑">
+  <h3>課本 2-31</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-31"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In Example 2.10, the initial velocity of the incoming charged particle had no component along the $x$-axis. Show that, even if it had an $x$ component, the subsequent motion of the particle would be the same—that only the radius of the helix would be altered.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　例題 2.10 的粒子初速若有 $x$ 分量，證明運動相同、只有螺旋半徑改變。</div>
+  <ol class="write">
+    <li>$\vec B=B_0\hat j$，$\alpha=qB_0/m$：$\ddot x=-\alpha\dot z$、$\ddot y=0$、$\ddot z=\alpha\dot x$（與初值無關）。</li>
+    <li>通解：$x-x_0=A\cos\alpha t+B\sin\alpha t$，$z-z_0=-B\cos\alpha t+A\sin\alpha t$，$y=y_0+\dot y_0t$。</li>
+    <li>$\dot x(0)=\alpha B=\dot x_0$、$\dot z(0)=\alpha A=\dot z_0$ ⟹ $B=\dot x_0/\alpha$、$A=\dot z_0/\alpha$。</li>
+    <li>$(x-x_0)^2+(z-z_0)^2=A^2+B^2$ ⟹ $r=\dfrac{m\sqrt{\dot x_0^2+\dot z_0^2}}{qB_0}$；頻率 $\alpha$、螺距 $2\pi\dot y_0/\alpha$ 不變。</li>
+  </ol>
+  <div class="final">答：仍為同頻率、同螺距的螺旋，半徑 $r=m\sqrt{\dot x_0^2+\dot z_0^2}/qB_0$。</div>
+  <p class="small"><a href="#c2-tm-2-31">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-10a" data-group="十、Atwood 機與電磁場中的粒子（p.100–106）" data-title="自編難題：吊 Atwood 機的秤">
+  <h3>自編難題（第 10 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　Atwood 機（$m_1\gt m_2$）掛在彈簧秤下。(a) 讀數；(b) 證明 $\le(m_1+m_2)g$；(c) 以質心加速度解釋；(d) $m_1=3$、$m_2=1\ \text{kg}$。</div>
+  <ol class="write">
+    <li>輕滑輪：$F=2T=\dfrac{4m_1m_2g}{m_1+m_2}$。</li>
+    <li>$(m_1+m_2)g-F=\dfrac{(m_1-m_2)^2g}{m_1+m_2}\ge0$，等質量時相等。</li>
+    <li>$a_{\text{cm}}=\dfrac{(m_1-m_2)a}{m_1+m_2}=\dfrac{(m_1-m_2)^2g}{(m_1+m_2)^2}$ 向下；$(m_1+m_2)g-F=(m_1+m_2)a_{\text{cm}}$ ✔。</li>
+    <li>(d) $F=4(3)(1)(9.8)/4=29.4\ \text{N}$，總重 $39.2\ \text{N}$，$a_{\text{cm}}=0.25g$。</li>
+  </ol>
+  <div class="final">答：$F=\dfrac{4m_1m_2g}{m_1+m_2}$，比總重少 $\dfrac{(m_1-m_2)^2g}{m_1+m_2}$；數值 $29.4\ \text{N}$。</div>
+  <p class="small"><a href="#c2-self-10a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-10b" data-group="十、Atwood 機與電磁場中的粒子（p.100–106）" data-title="自編難題：E×B 中的擺線">
+  <h3>自編難題（第 10 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec E=E\hat y$、$\vec B=B\hat z$，$q\gt0$ 由原點靜止出發，$\omega=qB/m$。(a) $x(t)$、$y(t)$；(b) $y_{\max}$、$v_{\max}$；(c) 功能定理檢查；(d) 質子 $E=1000\ \text{V/m}$、$B=0.01\ \text{T}$。</div>
+  <ol class="write">
+    <li>$\ddot x=\omega\dot y$、$\ddot y=\omega E/B-\omega\dot x$；令 $u=\dot x-E/B$：$\dot u=\omega\dot y$、$\ddot y=-\omega u$。</li>
+    <li>$u(0)=-E/B$、$\dot y(0)=0$ ⟹ $\dot x=\frac EB(1-\cos\omega t)$、$\dot y=\frac EB\sin\omega t$。</li>
+    <li>$x=\frac EB(t-\frac{\sin\omega t}\omega)$、$y=\frac E{B\omega}(1-\cos\omega t)$：擺線。</li>
+    <li>$y_{\max}=\frac{2E}{B\omega}=\frac{2mE}{qB^2}$；$v^2=\frac{2E^2}{B^2}(1-\cos\omega t)$ ⟹ $v_{\max}=2E/B$。</li>
+    <li>$\tfrac12mv^2=qEy$ ✔。(d) $\omega=9.58\times10^5\ \text{s}^{-1}$，$y_{\max}=0.209\ \text{m}$，$v_{\max}=2\times10^5\ \text{m/s}$。</li>
+  </ol>
+  <div class="final">答：擺線；$y_{\max}=2mE/qB^2$、$v_{\max}=2E/B$；質子 $0.21\ \text{m}$、$2\times10^5\ \text{m/s}$。</div>
+  <p class="small"><a href="#c2-self-10b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 十一、守恆定律：動量與角動量 ===== -->
+<article class="exam-item" data-exam-id="c2-ex211" data-group="十一、守恆定律：動量與角動量（p.107–118）" data-title="例題 2.11：老鼠與吊扇">
+  <h3>講義例題 2.11</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質量 $m$ 的老鼠跳到自由轉動的吊扇外緣；吊扇轉動慣量 $I$、半徑 $R$。角速度變為原來的幾倍？</div>
+  <ol class="write">
+    <li>老鼠鉛直跳上，對轉軸無外力矩 ⟹ 角動量守恆；跳上前老鼠對軸無角動量。</li>
+    <li>前：$L_0=I\omega_0$；後：$L=I\omega+mvR=(I+mR^2)\omega$（$v=\omega R$）。</li>
+    <li>$(I+mR^2)\omega=I\omega_0$ ⟹ $\dfrac\omega{\omega_0}=\dfrac I{I+mR^2}$。</li>
+  </ol>
+  <div class="final">答：$\dfrac{\omega}{\omega_0}=\dfrac{I}{I+mR^2}$。</div>
+  <p class="small"><a href="#c2-ex211">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-21" data-group="十一、守恆定律：動量與角動量（p.107–118）" data-title="課本 2-21：拋體的 dL/dt=N">
+  <h3>課本 2-21</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-21"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show directly that the time rate of change of the angular momentum about the origin for a projectile fired from the origin (constant $g$) is equal to the moment of force (or torque) about the origin.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-21 · p.92</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　拋體從原點射出（$g$ 為常數）。直接證明對原點的角動量變化率等於對原點的力矩。</div>
+  <ol class="write">
+    <li>$x=v_0\cos\alpha\,t$，$y=v_0\sin\alpha\,t-\tfrac12gt^2$，$\dot x=v_0\cos\alpha$，$\dot y=v_0\sin\alpha-gt$。</li>
+    <li>$L_z=m(x\dot y-y\dot x)=mv_0\cos\alpha\left[t(v_0\sin\alpha-gt)-v_0\sin\alpha\,t+\tfrac12gt^2\right]=-\tfrac12mgv_0\cos\alpha\,t^2$。</li>
+    <li>$\dfrac{\mathrm dL_z}{\mathrm dt}=-mgv_0\cos\alpha\,t$。</li>
+    <li>$\vec N=\vec r\times(-mg\hat j)=-mgx\,\hat k=-mgv_0\cos\alpha\,t\,\hat k$，兩者相等。</li>
+  </ol>
+  <div class="final">答：$\dot{\vec L}=\vec N=-mgv_0\cos\alpha\,t\,\hat k$（得證）。</div>
+  <p class="small"><a href="#c2-tm-2-21">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-28" data-group="十一、守恆定律：動量與角動量（p.107–118）" data-title="課本 2-28：超級球與彈珠">
+  <h3>課本 2-28</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-28"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A superball of mass $M$ and a marble of mass $m$ are dropped from a height $h$ with the marble just on top of the superball. A superball has a coefficient of restitution of nearly 1 (i.e., its collision is essentially elastic). Ignore the sizes of the superball and marble. The superball collides with the floor, rebounds, and smacks the marble, which moves back up. How high does the marble go if all the motion is vertical? How high does the superball go?</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-28 · p.94</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　質量 $M$ 的超級球與疊在其上的彈珠 $m$ 從高度 $h$ 落下，碰撞皆為彈性、運動皆鉛直。彈珠與超級球各上升多高？</div>
+  <ol class="write">
+    <li>落地速率 $v=\sqrt{2gh}$。超級球原速反彈（$+v$）後撞上仍下落的彈珠（$-v$）。</li>
+    <li>動量：$Mv-mv=Mv_3+mv_4$；彈性（相對速度反向）：$v_4-v_3=2v$。</li>
+    <li>$\alpha=m/M$：$v_3=\dfrac{1-3\alpha}{1+\alpha}v$，$v_4=\dfrac{3-\alpha}{1+\alpha}v$。</li>
+    <li>高度 $\propto v^2$：$h_{\text{彈珠}}=\left(\dfrac{3-\alpha}{1+\alpha}\right)^2h$，$h_{\text{超級球}}=\left(\dfrac{1-3\alpha}{1+\alpha}\right)^2h$。</li>
+  </ol>
+  <div class="final">答：彈珠 $\left(\dfrac{3-\alpha}{1+\alpha}\right)^2h$（$m\ll M$ 時約 $9h$），超級球 $\left(\dfrac{1-3\alpha}{1+\alpha}\right)^2h$。</div>
+  <p class="small"><a href="#c2-tm-2-28">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-exam8-1" data-group="十一、守恆定律：動量與角動量（p.107–118）" data-title="考古題 第 8 章第 1 題：克卜勒第二定律">
+  <h3>Chapter-08（2025/06/12）第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-exam8-1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Classical Mechanics - Exam Chapter-08 (2025/06/12)</p><p>1. (20 points) Show that Kepler's second law — which states that a particle sweeps out equal areas in equal times — holds for any central attractive force $F(r)$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　證明克卜勒第二定律（等時間掃過等面積）對任何連心吸引力 $F(r)$ 都成立。（20 分）</div>
+  <ol class="write">
+    <li>原點放在力心，$\vec F=F(r)\hat r$：$\vec N=\vec r\times\vec F=rF(r)\,\hat r\times\hat r=0$。</li>
+    <li>$\vec N=\dot{\vec L}$ ⟹ $\vec L=\vec r\times m\vec v$ 為常向量。</li>
+    <li>$\vec r\cdot\vec L=0$ 且 $\vec L$ 固定 ⟹ 運動在垂直 $\vec L$ 的平面上。</li>
+    <li>$\mathrm dA=\tfrac12|\vec r\times\mathrm d\vec r|=\tfrac12|\vec r\times\vec v|\,\mathrm dt=\dfrac{|\vec L|}{2m}\mathrm dt$。</li>
+    <li>$\dfrac{\mathrm dA}{\mathrm dt}=\dfrac{|\vec L|}{2m}=$ 常數 ⟹ $\Delta A=\dfrac{|\vec L|}{2m}\Delta t$，只和 $\Delta t$ 有關。</li>
+  </ol>
+  <div class="final">答：連心力無力矩 ⟹ $\vec L$ 守恆 ⟹ $\dfrac{\mathrm dA}{\mathrm dt}=\dfrac{L}{2m}$ 為常數，與 $F(r)$ 的形式無關。</div>
+  <p class="small"><a href="#c2-exam8-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-11a" data-group="十一、守恆定律：動量與角動量（p.107–118）" data-title="自編難題：穿洞拉繩的冰球">
+  <h3>自編難題（第 11 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　冰球 $m$ 繫繩穿過桌面小洞，以 $r_0$、$v_0$ 繞洞轉，慢慢把繩拉到半徑 $r$。(a) 新速率；(b) 張力與拉繩做功，證明等於 $\Delta T$；(c) $m=0.20\ \text{kg}$、$v_0=1.0\ \text{m/s}$、$0.50\to0.25\ \text{m}$。</div>
+  <ol class="write">
+    <li>連心力：$\vec N=\vec r\times\vec F=0$ ⟹ $mrv=mr_0v_0$ ⟹ $v=v_0r_0/r$。</li>
+    <li>$F=\dfrac{mv^2}r=\dfrac{mv_0^2r_0^2}{r^3}$。</li>
+    <li>$W=\displaystyle\int_r^{r_0}\frac{mv_0^2r_0^2}{r'^3}\mathrm dr'=\tfrac12mv_0^2\left(\frac{r_0^2}{r^2}-1\right)=\tfrac12mv^2-\tfrac12mv_0^2$ ✔。</li>
+    <li>(c) $v=2.0\ \text{m/s}$，$W=\tfrac12(0.2)(1)(4-1)=0.30\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：$v=v_0r_0/r$；$W=\tfrac12mv_0^2(r_0^2/r^2-1)=\Delta T$；數值 $2.0\ \text{m/s}$、$0.30\ \text{J}$。</div>
+  <p class="small"><a href="#c2-self-11a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-11b" data-group="十一、守恆定律：動量與角動量（p.107–118）" data-title="自編難題：三球疊落">
+  <h3>自編難題（第 11 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$m_1\gg m_2\gg m_3$ 疊著從 $h$ 落下，彈性、依序碰撞。(a) 頂球速度與高度；(b) $n$ 顆球；(c) 與能量守恆矛盾嗎？</div>
+  <ol class="write">
+    <li>輕撞重的彈性碰撞極限：$v_{\text{輕}}'=2v_{\text{重}}-v_{\text{輕}}$。</li>
+    <li>落地速度 $v=\sqrt{2gh}$（向上為正，三球都 $-v$）：$m_1\to+v$；$m_2\to2v+v=3v$；$m_3\to6v+v=7v$。</li>
+    <li>$h_3=(7v)^2/2g=49h$；$n$ 顆：$u_k=2u_{k-1}+1$ ⟹ $(2^n-1)v$，$(2^n-1)^2h$。</li>
+    <li>(c) $49m_3gh\ll m_1gh$，不矛盾。</li>
+  </ol>
+  <div class="final">答：$7v$、$49h$；$n$ 顆 $(2^n-1)^2h$；不違反能量守恆。</div>
+  <p class="small"><a href="#c2-self-11b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-11c" data-group="十一、守恆定律：動量與角動量（p.107–118）" data-title="自編難題：球鑽孔的環與離合器">
+  <h3>自編難題（第 11 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　半徑 $R$ 的均勻球沿直徑鑽半徑 $a$ 的孔，環高 $h$。(a) $M$ 只與 $h$ 有關；(b) 對孔軸的 $I$ 與兩極限；(c) 同材料 $h=6.0\ \text{cm}$，$R_1=5.0$、$R_2=10.0\ \text{cm}$，小環 $0.50\ \text{kg}$、$30\ \text{rad/s}$，離合器接合後的 $\omega_f$ 與動能損失比例；(d) 摩擦力矩 $0.010\ \text{N·m}$ 的接合時間與熱量驗算。</div>
+  <ol class="write">
+    <li>區域 $a\le r\le R$、$|z|\le\sqrt{R^2-r^2}$；$b=h/2=\sqrt{R^2-a^2}$。</li>
+    <li>$M=4\pi\rho\displaystyle\int_a^R r\sqrt{R^2-r^2}\,\mathrm dr\overset{u=R^2-r^2}{=}2\pi\rho\int_0^{b^2}u^{1/2}\mathrm du=\tfrac43\pi\rho b^3=\dfrac{\pi\rho h^3}6$，與 $R$ 無關。</li>
+    <li>$I=4\pi\rho\displaystyle\int_a^R r^3\sqrt{R^2-r^2}\,\mathrm dr=2\pi\rho\Big(\tfrac23R^2b^3-\tfrac25b^5\Big)=M\big(R^2-\tfrac35b^2\big)=\tfrac15M(2R^2+3a^2)$。</li>
+    <li>$a\to0$：$\tfrac25MR^2$ ✔；$a\to R$：$MR^2$ ✔。</li>
+    <li>(c) $M_2=M_1=0.50$；$I_1=0.5(0.0025-0.00054)=9.8\times10^{-4}$，$I_2=0.5(0.01-0.00054)=4.73\times10^{-3}\ \text{kg·m}^2$。</li>
+    <li>外力矩 $0$：$I_1\omega_0=(I_1+I_2)\omega_f$ ⟹ $\omega_f=5.15\ \text{rad/s}$；$\Delta T/T_i=I_2/(I_1+I_2)=0.828$。</li>
+    <li>(d) $\omega_1=\omega_0-Nt/I_1$，$\omega_2=Nt/I_2$ ⟹ $t^*=\dfrac{\omega_0}{N(1/I_1+1/I_2)}=2.44\ \text{s}$；$Q=N\cdot\tfrac12\omega_0t^*=0.010\times36.5=0.365\ \text{J}=\Delta T$ ✔。</li>
+  </ol>
+  <div class="final">答：$M=\pi\rho h^3/6$；$I=\tfrac15M(2R^2+3a^2)$；$\omega_f\approx5.15\ \text{rad/s}$，損失約 $83\%$；$t^*\approx2.44\ \text{s}$，熱 $0.365\ \text{J}$。</div>
+  <p class="small"><a href="#c2-self-11c">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 十二、功與功能定理 ===== -->
+<article class="exam-item" data-exam-id="c2-tm-2-26" data-group="十二、功與功能定理（p.119–127）" data-title="課本 2-26：木塊撞彈簧">
+  <h3>課本 2-26</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$2\ \text{kg}$ 木塊以 $4\ \text{m/s}$ 在光滑地板上撞向 $k=6\ \text{N/m}$ 的彈簧，求最大壓縮量；若先滑過 $2\ \text{m}$ 的 $\mu_k=0.2$ 粗糙地面呢？</div>
+  <ol class="write">
+    <li>功能定理（到最大壓縮 $v=0$）：$-\tfrac12kx^2=-\tfrac12mv_0^2$ ⟹ $x=v_0\sqrt{m/k}=4\sqrt{2/6}=2.31\ \text{m}$。</li>
+    <li>加摩擦：$-\mu_kmgd-\tfrac12kx^2=-\tfrac12mv_0^2$ ⟹ $3x^2=16-7.84=8.16$ ⟹ $x=1.65\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：$2.31\ \text{m}$；有粗糙段時 $1.65\ \text{m}$。</div>
+  <p class="small"><a href="#c2-tm-2-26">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-27" data-group="十二、功與功能定理（p.119–127）" data-title="課本 2-27：拉繩上桌">
+  <h3>課本 2-27</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-27"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A rope having a total mass of 0.4 kg and total length 4 m has 0.6 m of the rope hanging vertically down off a work bench. How much work must be done to place all the rope on the bench?</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-27 · p.94</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　總質量 $0.4\ \text{kg}$、長 $4\ \text{m}$ 的繩子有 $0.6\ \text{m}$ 垂在桌邊。全部拉上桌需做多少功？</div>
+  <ol class="write">
+    <li>線密度 $\mu=0.1\ \text{kg/m}$；深度 $z$ 的一小段 $\mu\,\mathrm dz$ 要上升 $z$，需功 $\mu gz\,\mathrm dz$。</li>
+    <li>$W=\displaystyle\int_0^{z_0}\mu gz\,\mathrm dz=\frac{\mu gz_0^2}2=\frac{(0.1)(9.8)(0.36)}2=0.18\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：$W\approx0.18\ \text{J}$。</div>
+  <p class="small"><a href="#c2-tm-2-27">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-41" data-group="十二、功與功能定理（p.119–127）" data-title="課本 2-41：火車上丟球">
+  <h3>課本 2-41</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　火車以等速 $u$ 前進，車上的女士把質量 $m$ 的球以相對自己 $v$ 往前丟。(a) 車上量到的動能增加；(b) 地面量到的；(c) 女士做的功；(d) 火車做的功。</div>
+  <ol class="write">
+    <li>(a) 車上：$\Delta T=\tfrac12mv^2-0=\tfrac12mv^2$。</li>
+    <li>(b) 地面：$\Delta T=\tfrac12m(u+v)^2-\tfrac12mu^2=\tfrac12mv^2+muv$。</li>
+    <li>(c) 女士在自己座標系推球：$W=\tfrac12mv^2$。</li>
+    <li>(d) 球推女士（火車）的反作用衝量 $mv$；火車保持 $u$ 需額外的力 $F$，$\int F\,\mathrm dt=mv$，做功 $\int Fu\,\mathrm dt=muv$。</li>
+  </ol>
+  <div class="final">答：(a) $\tfrac12mv^2$；(b) $\tfrac12mv^2+muv$；(c) $\tfrac12mv^2$；(d) $muv$。</div>
+  <p class="small"><a href="#c2-tm-2-41">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-exam4-3" data-group="十二、功與功能定理（p.119–127）" data-title="考古題 Exam-4 第 3 題：從桌面滑下的繩子">
+  <h3>Exam-4（2025/12/18）第 3 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-exam4-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Classical Mechanics - Exam-4 (2025/12/18)</p><p>3. A flexible rope of length $L$ and mass $M$ lies on a frictionless tabletop, with a segment of length $x_0$ hanging over the edge. At $t = 0$, the rope is released from rest and begins to slide off the table under its own weight.</p><p>(a) Determine the length of the hanging portion $x(t)$ as a function of time. (15 points)</p><p>(b) Find $\dot x$ when $x = L$, the speed of the rope at the instant it completely leaves the table. (15 points)</p></div>
+<p class="original-caption">力學 Exam-4（2025/12/18）第 3 題（114上・117 級上學期期末）</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　長 $L$、質量 $M$ 的繩在無摩擦桌上，垂下 $x_0$，$t=0$ 由靜止放開。(a) $x(t)$；(b) $x=L$ 時的 $\dot x$。（各 15 分）</div>
+  <ol class="write">
+    <li>整條繩速率相同，淨外力只有垂下段重量：$M\ddot x=\frac MLgx$ ⟹ $\ddot x=\frac gLx$。</li>
+    <li>$\kappa=\sqrt{g/L}$，$r^2=\kappa^2$：$x=C_1e^{\kappa t}+C_2e^{-\kappa t}$。</li>
+    <li>$x(0)=x_0$、$\dot x(0)=0$ ⟹ $C_1=C_2=\frac{x_0}2$ ⟹ $x(t)=x_0\cosh(\sqrt{g/L}\,t)$。</li>
+    <li>(b) $\ddot x=v\frac{\mathrm dv}{\mathrm dx}$：$\displaystyle\int_0^{v}v\,\mathrm dv=\frac gL\int_{x_0}^{L}x\,\mathrm dx$ ⟹ $v^2=\frac{g(L^2-x_0^2)}{L}$。</li>
+    <li>驗：$\dot x=x_0\kappa\sinh\kappa t$，$\cosh\kappa t=L/x_0$ ⟹ $\dot x=\kappa\sqrt{L^2-x_0^2}$，相同 ✔。</li>
+  </ol>
+  <div class="final">答：(a) $x(t)=x_0\cosh\!\left(\sqrt{g/L}\,t\right)$；(b) $\dot x=\sqrt{g(L^2-x_0^2)/L}$。</div>
+  <p class="small"><a href="#c2-exam4-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-12a" data-group="十二、功與功能定理（p.119–127）" data-title="自編難題：從桌面滑下的鏈條">
+  <h3>自編難題（第 12 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　長 $L$、質量 $M$ 的鏈在光滑桌上，垂下 $a$，由靜止放開。(a) 完全離開時的速率；(b) $x(t)$ 與離開所需時間；(c) $L=2.0\ \text{m}$、$a=0.50\ \text{m}$。</div>
+  <ol class="write">
+    <li>$\lambda=M/L$；重力功 $W=\displaystyle\int_a^L\lambda gx\,\mathrm dx=\tfrac12\lambda g(L^2-a^2)=\tfrac12Mv^2$ ⟹ $v=\sqrt{g(L^2-a^2)/L}$。</li>
+    <li>$M\ddot x=\lambda gx$ ⟹ $\ddot x=\frac gLx$，$x=a\cosh(\sqrt{g/L}\,t)$。</li>
+    <li>$x=L$：$t_{\text{end}}=\sqrt{L/g}\cosh^{-1}(L/a)$。</li>
+    <li>(c) $v=\sqrt{9.8(3.75)/2}=4.29\ \text{m/s}$；$t=0.452\cosh^{-1}4=0.932\ \text{s}$；驗：$\dot x=a\sqrt{g/L}\sqrt{15}=4.29$ ✔。</li>
+  </ol>
+  <div class="final">答：$v=\sqrt{g(L^2-a^2)/L}=4.29\ \text{m/s}$；$t=\sqrt{L/g}\cosh^{-1}(L/a)=0.932\ \text{s}$。</div>
+  <p class="small"><a href="#c2-self-12a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-12b" data-group="十二、功與功能定理（p.119–127）" data-title="自編難題：輸送帶上的箱子">
+  <h3>自編難題（第 12 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　皮帶速率 $u$，箱子 $m$ 靜止放上，動摩擦 $\mu$。(a) 地面系：箱子滑行距離、摩擦對箱與對帶做的功；(b) 熱；(c) 皮帶系重做；(d) $m=10\ \text{kg}$、$u=2.0\ \text{m/s}$、$\mu=0.50$。</div>
+  <ol class="write">
+    <li>$t=u/\mu g$；$d_{\text{箱}}=u^2/2\mu g$，$d_{\text{帶}}=ut=u^2/\mu g$。</li>
+    <li>$W_{\to\text{箱}}=\mu mgd_{\text{箱}}=\tfrac12mu^2$，$W_{\to\text{帶}}=-\mu mgd_{\text{帶}}=-mu^2$（馬達做 $mu^2$）。</li>
+    <li>$Q=mu^2-\tfrac12mu^2=\tfrac12mu^2=\mu mg(d_{\text{帶}}-d_{\text{箱}})$。</li>
+    <li>皮帶系：箱子 $-u\to0$，摩擦做功 $-\tfrac12mu^2$，帶不動不受功；$Q=\tfrac12mu^2$ 相同。</li>
+    <li>(d) $0.408\ \text{m}$、$0.816\ \text{m}$；馬達 $40\ \text{J}$、動能 $20\ \text{J}$、熱 $20\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：熱 $\tfrac12mu^2=20\ \text{J}$（兩座標系相同）；地面系馬達做 $mu^2=40\ \text{J}$。</div>
+  <p class="small"><a href="#c2-self-12b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 十三、保守力、位能與能量守恆 ===== -->
+<article class="exam-item" data-exam-id="c2-p139" data-group="十三、保守力、位能與能量守恆（p.128–142）" data-title="講義 p.139：保守力的條件">
+  <h3>講義 p.139 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec F=(ax+by^2)\hat i+cxy\,\hat j$。常數 $a,b,c$ 為何值時 $\vec F$ 是保守力？</div>
+  <ol class="write">
+    <li>保守力 ⟺ $\nabla\times\vec F=0$。</li>
+    <li>$\nabla\times\vec F=\left[\dfrac{\partial(cxy)}{\partial x}-\dfrac{\partial(ax+by^2)}{\partial y}\right]\hat k=(c-2b)y\,\hat k$（其餘分量為零）。</li>
+    <li>對所有 $y$ 為零 ⟹ $c=2b$，$a$ 任意。</li>
+    <li>（此時 $U=-\tfrac12ax^2-bxy^2+$ 常數。）</li>
+  </ol>
+  <div class="final">答：$c=2b$，$a$ 可為任意值。</div>
+  <p class="small"><a href="#c2-p139">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-53" data-group="十三、保守力、位能與能量守恆（p.128–142）" data-title="課本 2-53：哪些力保守">
+  <h3>課本 2-53</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　判斷是否為保守力，若是求 $U$：(a) $F_x=ayz+bx+c$，$F_y=axz+bz$，$F_z=axy+by$；(b) $F_x=-ze^{-x}$，$F_y=\ln z$，$F_z=e^{-x}+y/z$；(c) $\vec F=\hat e_ra/r$。</div>
+  <ol class="write">
+    <li>(a) 旋度三分量：$(ax+b)-(ax+b)=0$，$ay-ay=0$，$az-az=0$ ⟹ 保守。積分：$U=-axyz-\tfrac12bx^2-cx-byz$。</li>
+    <li>(b) 旋度：$\tfrac1z-\tfrac1z=0$，$-e^{-x}+e^{-x}=0$，$0-0=0$ ⟹ 保守。$U=-ze^{-x}-y\ln z$。</li>
+    <li>(c) 只和 $r$ 有關的連心力，旋度為零；$-U'(r)=a/r$ ⟹ $U=-a\ln(r/r_0)$。</li>
+  </ol>
+  <div class="final">答：三者皆保守：(a) $U=-(axyz+\tfrac12bx^2+cx+byz)$；(b) $U=-(ze^{-x}+y\ln z)$；(c) $U=-a\ln(r/r_0)$（各加常數）。</div>
+  <p class="small"><a href="#c2-tm-2-53">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-13a" data-group="十三、保守力、位能與能量守恆（p.128–142）" data-title="自編難題：旋度為零但不保守">
+  <h3>自編難題（第 13 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec F=k(-y\hat i+x\hat j)/(x^2+y^2)$。(a) 證明原點外 $\nabla\times\vec F=0$；(b) 繞單位圓一圈的功；(c) 繞圓心 $(3,0)$ 半徑 1 的圓；(d) 是不是保守力？</div>
+  <ol class="write">
+    <li>$\partial_xF_y=k\dfrac{y^2-x^2}{(x^2+y^2)^2}=\partial_yF_x$ ⟹ $(\nabla\times\vec F)_z=0$。</li>
+    <li>單位圓：$\vec F\cdot\mathrm d\vec r=k(\sin^2\theta+\cos^2\theta)\mathrm d\theta$ ⟹ $\oint=2\pi k$。</li>
+    <li>(c) 圍住的區域無奇點，Stokes ⟹ $\oint=0$。</li>
+    <li>(d) $\vec F=k\nabla\theta$，$U=-k\theta$ 多值；區域有洞（非單連通），旋度為零不保證保守。不是保守力。</li>
+  </ol>
+  <div class="final">答：$2\pi k$、$0$；不是保守力（多值位能，區域不單連通）。</div>
+  <p class="small"><a href="#c2-self-13a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-13b" data-group="十三、保守力、位能與能量守恆（p.128–142）" data-title="自編難題：被拖著走的彈簧">
+  <h3>自編難題（第 13 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$U(x,t)=\tfrac12k(x-vt)^2$（手以 $v$ 拖彈簧）。(a) 證明 $\dfrac{\mathrm dE}{\mathrm dt}=\dfrac{\partial U}{\partial t}$；(b) 物理意義；(c) 跟著手的座標系 $E'$ 守恆。</div>
+  <ol class="write">
+    <li>$\dfrac{\mathrm dE}{\mathrm dt}=\dot x(m\ddot x+\partial_xU)+\partial_tU=\partial_tU=-kv(x-vt)$。</li>
+    <li>手拉彈簧的力 $k(vt-x)$，功率 $k(vt-x)v=\partial_tU$：外力做功，$E$ 不守恆。</li>
+    <li>$x'=x-vt$：$m\ddot x'=-kx'$，$\dfrac{\mathrm dE'}{\mathrm dt}=\dot x'(m\ddot x'+kx')=0$。</li>
+    <li>$E=E'+mv\dot x'+\tfrac12mv^2$，不同座標系的能量不同，不矛盾。</li>
+  </ol>
+  <div class="final">答：$\dot E=\partial U/\partial t=-kv(x-vt)$（手的功率）；跟著手的座標系中 $E'$ 守恆。</div>
+  <p class="small"><a href="#c2-self-13b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 十四、能量守恆的應用：迴圈軌道 ===== -->
+<article class="exam-item" data-exam-id="c2-tm-2-25" data-group="十四、能量守恆的應用：迴圈軌道（p.143–150）" data-title="課本 2-25：迴圈軌道">
+  <h3>課本 2-25（講義 p.143–150）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$m=1.62\ \text{kg}$ 的木塊從軌道最低點上方 $h=3.91\ \text{m}$ 由靜止沿光滑軌道滑下；底部是半徑 $R$ 的圓弧，最低點 A，延伸到與鉛直線夾 $45^\circ$ 的 B 點。(a) A 點軌道對木塊的力；(b) B 點的力；(c) 離開軌道的速率；(d) 落地點離 A 多遠；(e) 畫 $U(x)$ 並標出總能量。</div>
+  <ol class="write">
+    <li>能量守恆（$U=0$ 在 A）：$mgh=\tfrac12mv_A^2$ ⟹ $v_A=\sqrt{2gh}$。</li>
+    <li>(a) $N_A-mg=\dfrac{mv_A^2}R$ ⟹ $N_A=mg\left(1+\dfrac{2h}R\right)$。</li>
+    <li>(c) $mgh=\tfrac12mv_B^2+mgR(1-\cos45^\circ)$ ⟹ $v_B=\sqrt{2gh-2gR+\sqrt2gR}$。</li>
+    <li>(b) $N_B-mg\cos45^\circ=\dfrac{mv_B^2}R$ ⟹ $N_B=mg\left[\dfrac{2h}R+\dfrac3{\sqrt2}-2\right]$。</li>
+    <li>(d) 原點在 A，$h'=R(1-\tfrac1{\sqrt2})$：$x=\dfrac R{\sqrt2}+\dfrac{v_B}{\sqrt2}t$，$y=h'+\dfrac{v_B}{\sqrt2}t-\tfrac12gt^2=0$ ⟹ $t=\dfrac1g\left[\dfrac{v_B}{\sqrt2}+\sqrt{\dfrac{v_B^2}2+2gh'}\right]$。</li>
+    <li>用 $v_B^2=2g(h-h')$：$d=\dfrac R{\sqrt2}+(h-h')+\sqrt{h^2-h'^2}$。</li>
+    <li>(e) $U(x)=mgy(x)$，形狀同軌道；$E=mgh$ 為水平線。</li>
+  </ol>
+  <div class="final">答：$N_A=mg(1+2h/R)$；$N_B=mg[2h/R+3/\sqrt2-2]$；$v_B=\sqrt{2gh-(2-\sqrt2)gR}$；$d=\dfrac R{\sqrt2}+(h-h')+\sqrt{h^2-h'^2}$。</div>
+  <p class="small"><a href="#c2-tm-2-25">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-14a" data-group="十四、能量守恆的應用：迴圈軌道（p.143–150）" data-title="自編難題：從半球頂滑下">
+  <h3>自編難題（第 14 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　物塊從光滑半球（半徑 $R$）頂端幾乎靜止滑下。(a) 離開角與速率；(b) 頂端初速 $v_0$ 時的離開角，$v_0$ 多大立即離開；(c) 與 2-25 的共同方法。</div>
+  <ol class="write">
+    <li>能量：$v^2=v_0^2+2gR(1-\cos\theta)$。</li>
+    <li>徑向：$mg\cos\theta-N=mv^2/R$ ⟹ $N=mg(3\cos\theta-2)-mv_0^2/R$。</li>
+    <li>(a) $v_0=0$，$N=0$：$\cos\theta=2/3$，$\theta=48.2^\circ$，$v=\sqrt{2gR/3}$。</li>
+    <li>(b) $\cos\theta=\tfrac23+\tfrac{v_0^2}{3gR}$；$v_0^2\ge gR$ 時立即離開。</li>
+    <li>(c) 能量守恆求 $v$、徑向 $F=ma$ 求 $N$，$N=0$ 為臨界。</li>
+  </ol>
+  <div class="final">答：$\cos\theta=2/3$、$v=\sqrt{2gR/3}$；$\cos\theta=\tfrac23+\tfrac{v_0^2}{3gR}$，$v_0\ge\sqrt{gR}$ 立即離開。</div>
+  <p class="small"><a href="#c2-self-14a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-14b" data-group="十四、能量守恆的應用：迴圈軌道（p.143–150）" data-title="自編難題：迴圈的 6mg">
+  <h3>自編難題（第 14 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　光滑完整迴圈（半徑 $R$），由高 $h$ 靜止滑入。(a) 證明 $N_{\text{底}}-N_{\text{頂}}=6mg$；(b) 繞完一圈的最低 $h$；(c) 此時 $N_{\text{底}}$。</div>
+  <ol class="write">
+    <li>底：$N_{\text{底}}-mg=mv_{\text{底}}^2/R$；頂：$N_{\text{頂}}+mg=mv_{\text{頂}}^2/R$。</li>
+    <li>能量：$v_{\text{底}}^2=v_{\text{頂}}^2+4gR$ ⟹ $N_{\text{底}}-N_{\text{頂}}=2mg+4mg=6mg$。</li>
+    <li>(b) $N_{\text{頂}}\ge0$ ⟹ $v_{\text{頂}}^2=2g(h-2R)\ge gR$ ⟹ $h\ge\tfrac52R$。</li>
+    <li>(c) $N_{\text{頂}}=0$ ⟹ $N_{\text{底}}=6mg$（亦即 $mg(1+2h/R)$ 代 $h=5R/2$）。</li>
+  </ol>
+  <div class="final">答：$6mg$；$h_{\min}=\tfrac52R$；$N_{\text{底}}=6mg$。</div>
+  <p class="small"><a href="#c2-self-14b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 十五、平衡與穩定性 ===== -->
+<article class="exam-item" data-exam-id="c2-tm-2-47" data-group="十五、平衡與穩定性（p.151–159）" data-title="課本 2-47：U=U₀(a/x+x/a)">
+  <h3>課本 2-47（講義 p.155）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質點在 $x>0$ 運動，$U(x)=U_0\left(\dfrac ax+\dfrac xa\right)$（$U_0=1\ \text{J}$、$a=2\ \text{m}$）。畫位能，求平衡點並判斷極大或極小。</div>
+  <ol class="write">
+    <li>$\dfrac{\mathrm dU}{\mathrm dx}=U_0\left(-\dfrac a{x^2}+\dfrac1a\right)=0$ ⟹ $x=a=2\ \text{m}$（$x>0$）。</li>
+    <li>$\dfrac{\mathrm d^2U}{\mathrm dx^2}\Big|_a=\dfrac{2U_0a}{x^3}\Big|_a=\dfrac{2U_0}{a^2}=0.5\ \text{J/m}^2>0$ ⟹ 極小、穩定。</li>
+    <li>圖：$x\to0^+$、$x\to\infty$ 時 $U\to\infty$，單谷，谷底 $U(a)=2U_0=2\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：唯一平衡點 $x=a=2\ \text{m}$，位能極小，穩定。</div>
+  <p class="small"><a href="#c2-tm-2-47">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-ex212" data-group="十五、平衡與穩定性（p.151–159）" data-title="例題 2.12：滑輪系統的平衡">
+  <h3>講義例題 2.12</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　長 $b$ 的輕繩一端固定於 A，跨過相距 $2d$ 的 B 點滑輪後掛 $m_1$；掛 $m_2$ 的滑輪騎在 AB 間的繩上。求平衡時的 $x_1$，並判斷穩定性（滑輪無質量）。</div>
+  <ol class="write">
+    <li>AB 線為 $U=0$：$x_2=\sqrt{(b-x_1)^2/4-d^2}$，$U=-m_1gx_1-m_2g\sqrt{(b-x_1)^2/4-d^2}-m_2gc$。</li>
+    <li>$\dfrac{\mathrm dU}{\mathrm dx_1}=-m_1g+\dfrac{m_2g(b-x_1)}{4\sqrt{(b-x_1)^2/4-d^2}}=0$ ⟹ $(b-x_0)^2(4m_1^2-m_2^2)=16m_1^2d^2$。</li>
+    <li>$x_0=b-\dfrac{4m_1d}{\sqrt{4m_1^2-m_2^2}}$（需 $4m_1^2>m_2^2$）。</li>
+    <li>$\dfrac{\mathrm d^2U}{\mathrm dx_1^2}=\dfrac{-m_2g}{4[(b-x_1)^2/4-d^2]^{1/2}}+\dfrac{m_2g(b-x_1)^2}{16[(b-x_1)^2/4-d^2]^{3/2}}$，代入 $x_0$：$\dfrac{g(4m_1^2-m_2^2)^{3/2}}{4m_2^2d}>0$。</li>
+  </ol>
+  <div class="final">答：$x_0=b-\dfrac{4m_1d}{\sqrt{4m_1^2-m_2^2}}$；平衡存在時必穩定。</div>
+  <p class="small"><a href="#c2-ex212">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-ex213" data-group="十五、平衡與穩定性（p.151–159）" data-title="例題 2.13：雙井位能">
+  <h3>講義例題 2.13</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$U(x)=\dfrac{-Wd^2(x^2+d^2)}{x^4+8d^4}$（$W>0$）。畫位能並討論運動：有界或無界？平衡點與穩定性？求 $E=-W/8$ 的轉折點。</div>
+  <ol class="write">
+    <li>令 $y=x/d$：$Z=\dfrac UW=\dfrac{-(y^2+1)}{y^4+8}$。</li>
+    <li>$\dfrac{\mathrm dZ}{\mathrm dy}=0$ ⟹ $-2y(y^4+8)+4y^3(y^2+1)=0$ ⟹ $y(y^2+4)(y^2-2)=0$ ⟹ $x=0,\pm\sqrt2d$。</li>
+    <li>$Z(0)=-\tfrac18$，$Z(\pm\sqrt2)=-\tfrac14$，$|y|\to\infty$ 時 $Z\to0^-$：$\pm\sqrt2d$ 為極小（穩定），$0$ 為極大（不穩定）。</li>
+    <li>$U\lt 0$ 且遠處 $U\to0$：$E\lt 0$ 有界，$E\ge0$ 無界。</li>
+    <li>$-\tfrac18=\dfrac{-(y^2+1)}{y^4+8}$ ⟹ $y^4=8y^2$ ⟹ $y=0,\pm2\sqrt2$。</li>
+  </ol>
+  <div class="final">答：$x=\pm\sqrt2d$ 穩定、$x=0$ 不穩定；$E\lt 0$ 有界；$E=-W/8$ 的轉折點 $x=\pm2\sqrt2d$ 及 $x=0$。</div>
+  <p class="small"><a href="#c2-ex213">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-43" data-group="十五、平衡與穩定性（p.151–159）" data-title="課本 2-43：x²−x⁴ 位能">
+  <h3>課本 2-43</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$F=-kx+kx^3/\alpha^2$（$k>0$）。求 $U(x)$ 並討論運動；$E=\tfrac14k\alpha^2$ 時會怎樣？</div>
+  <ol class="write">
+    <li>$U=-\displaystyle\int_0^xF\,\mathrm dx=\frac12kx^2-\frac{kx^4}{4\alpha^2}$。</li>
+    <li>$F=0$：$x=0$（$U''=k>0$，穩定）、$x=\pm\alpha$（$U''=-2k\lt 0$，不穩定，$U=\tfrac14k\alpha^2$）。</li>
+    <li>$E\lt \tfrac14k\alpha^2$ 且 $|x|\lt \alpha$：有界振動；$|x|>\alpha$ 或 $E>\tfrac14k\alpha^2$：無界。</li>
+    <li>$E=\tfrac14k\alpha^2$：峰頂附近 $E-U\approx k(x-\alpha)^2$，$|v|\propto|x-\alpha|$，$t=\int\mathrm dx/|v|$ 對數發散 ⟹ 無限久才到 $x=\pm\alpha$。</li>
+  </ol>
+  <div class="final">答：$U=\tfrac12kx^2-\dfrac{kx^4}{4\alpha^2}$；$E=\tfrac14k\alpha^2$ 時質點漸近地逼近不穩定平衡點 $\pm\alpha$。</div>
+  <p class="small"><a href="#c2-tm-2-43">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-52" data-group="十五、平衡與穩定性（p.151–159）" data-title="課本 2-52：振盪與逃脫">
+  <h3>課本 2-52</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$U(x)=U_0[2(x/a)^2-(x/a)^4]$。(a) 求 $F(x)$；(b) 畫 $U$，找穩定與不穩定平衡；(c) 穩定點附近振盪的 $\omega$；(d) 在原點至少要多快才能逃到無限遠；(e) $t=0$ 在原點、速度為正且等於 (d) 的值，求 $x(t)$。</div>
+  <ol class="write">
+    <li>(a) $F=-U'=-\dfrac{4U_0x}{a^2}\left(1-\dfrac{x^2}{a^2}\right)$。</li>
+    <li>(b) $x=0$：$U''=4U_0/a^2>0$ 穩定；$x=\pm a$：$U''=-8U_0/a^2\lt 0$ 不穩定，$U=U_0$。</li>
+    <li>(c) $\omega=\sqrt{U''(0)/m}=\dfrac2a\sqrt{U_0/m}$。</li>
+    <li>(d) $\tfrac12mv^2\ge U_0$ ⟹ $v=\sqrt{2U_0/m}$。</li>
+    <li>(e) $\tfrac12m\dot x^2=U_0(1-u^2)^2$（$u=x/a$）⟹ $\dfrac{a\,\mathrm du}{1-u^2}=\sqrt{\dfrac{2U_0}m}\mathrm dt$ ⟹ $x=a\tanh\!\left(\sqrt{\dfrac{2U_0}{ma^2}}t\right)$。</li>
+  </ol>
+  <div class="final">答：(c) $\omega=\dfrac2a\sqrt{U_0/m}$；(d) $\sqrt{2U_0/m}$；(e) $x=a\tanh(\sqrt{2U_0/ma^2}\,t)$，漸近趨向 $a$。</div>
+  <p class="small"><a href="#c2-tm-2-52">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-42" data-group="十五、平衡與穩定性（p.151–159）" data-title="課本 2-42：立方體在圓柱上">
+  <h3>課本 2-42</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　邊長 $b$ 的均勻立方體平衡地放在半徑 $R$ 的圓柱頂上，四個面平行於圓柱軸，接觸完全粗糙。何時平衡穩定？</div>
+  <ol class="write">
+    <li>滾過角度 $\theta$（不打滑，接觸點沿立方體底面移動 $R\theta$）：質心高度 $h(\theta)=\left(R+\dfrac b2\right)\cos\theta+R\theta\sin\theta$，$U=mgh$。</li>
+    <li>$U'(\theta)=mg\left(R\theta\cos\theta-\dfrac b2\sin\theta\right)$，$U'(0)=0$。</li>
+    <li>$U''(0)=mg\left(R-\dfrac b2\right)$：$R>b/2$ 穩定，$R\lt b/2$ 不穩定。</li>
+    <li>$R=b/2$：$h\approx b-\dfrac{b\theta^4}{24}$，四階項為負 ⟹ 不穩定。</li>
+  </ol>
+  <div class="final">答：$R>b/2$ 時穩定；$R\le b/2$ 不穩定。</div>
+  <p class="small"><a href="#c2-tm-2-42">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-44" data-group="十五、平衡與穩定性（p.151–159）" data-title="課本 2-44：例題 2.12 用力求解">
+  <h3>課本 2-44</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-44"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Solve Example 2.12 by using forces rather than energy. How can you determine whether the system equilibrium is stable or unstable?</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-44 · p.96；例題 2.12 的圖見講義 p.156</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用力（不用能量）重解例題 2.12，並說明如何判斷平衡是否穩定。</div>
+  <ol class="write">
+    <li>無質量滑輪，張力處處 $T$：$m_1$：$T=m_1g$；$m_2$：$2T\cos\phi=m_2g$ ⟹ $\cos\phi=\dfrac{m_2}{2m_1}$（需 $4m_1^2\gt m_2^2$）。</li>
+    <li>半段繩長 $L=\dfrac{b-x_1}2$，$\sin\phi=d/L$ ⟹ $L=\dfrac{2m_1d}{\sqrt{4m_1^2-m_2^2}}$。</li>
+    <li>$x_1=b-2L=b-\dfrac{4m_1d}{\sqrt{4m_1^2-m_2^2}}$（同 2.105）。</li>
+    <li>穩定性：$x_2=x_{2e}+\xi$，$x_1=b-2\sqrt{x_2^2+d^2}$；線性化 $m_1\ddot x_1=m_1g-T$、$m_2\ddot x_2=m_2g-2T\cos\phi$：</li>
+    <li>$(m_2+4m_1\cos^2\phi_e)\ddot\xi=-\dfrac{2m_1gd^2}{L^3}\xi$：恢復力 ⟹ 穩定（係數即 $U''(x_2)$）。</li>
+  </ol>
+  <div class="final">答：$x_1=b-\dfrac{4m_1d}{\sqrt{4m_1^2-m_2^2}}$；小位移時合力指回平衡點，穩定。</div>
+  <p class="small"><a href="#c2-tm-2-44">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-45" data-group="十五、平衡與穩定性（p.151–159）" data-title="課本 2-45：U''=0 的判準">
+  <h3>課本 2-45</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-45"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Describe how to determine whether an equilibrium is stable or unstable when $(d^2U/dx^2)_0 = 0$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$(\mathrm d^2U/\mathrm dx^2)_0=0$ 時如何判斷平衡穩定與否？</div>
+  <ol class="write">
+    <li>泰勒展開（$U'_0=U''_0=0$）：$U\approx U_0+\dfrac{U'''_0}6x^3+\dfrac{U^{(4)}_0}{24}x^4+\cdots$。</li>
+    <li>$U'''_0\neq0$：$x^3$ 兩側變號，一側位能較低 ⟹ 不穩定（反曲點）。</li>
+    <li>$U'''_0=0$：$U^{(4)}_0\gt0$ 穩定，$\lt0$ 不穩定；再為零則看更高階。</li>
+    <li>例：$x^3$ 不穩定；$x^4$ 穩定；$-x^4$ 不穩定。</li>
+  </ol>
+  <div class="final">答：看下一個非零導數：三階非零 ⟹ 不穩定；三階為零時四階正 ⟹ 穩定、負 ⟹ 不穩定。</div>
+  <p class="small"><a href="#c2-tm-2-45">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-tm-2-46" data-group="十五、平衡與穩定性（p.151–159）" data-title="課本 2-46：一般的高階判準">
+  <h3>課本 2-46</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-46"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Write the criteria for determining whether an equilibrium is stable or unstable when all derivatives up through order $n$, $(d^nU/dx^n)_0 = 0$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　直到第 $n$ 階的導數 $(\mathrm d^nU/\mathrm dx^n)_0$ 都為零時，寫出穩定判準。</div>
+  <ol class="write">
+    <li>第一個非零為 $U^{(n+1)}_0$：$U-U_0\approx\dfrac{U^{(n+1)}_0}{(n+1)!}x^{n+1}$，$F\approx-\dfrac{U^{(n+1)}_0}{n!}x^n$。</li>
+    <li>$n+1$ 奇：兩側變號 ⟹ 不穩定。</li>
+    <li>$n+1$ 偶：$U^{(n+1)}_0\gt0$ ⟹ 穩定；$\lt0$ ⟹ 不穩定。</li>
+    <li>全部為零：直接比較 $U$（常數為中性平衡；如 $e^{-1/x^2}$ 仍穩定）。</li>
+  </ol>
+  <div class="final">答：$n+1$ 奇 ⟹ 不穩定；$n+1$ 偶且 $U^{(n+1)}_0\gt0$ ⟹ 穩定、$\lt0$ ⟹ 不穩定。</div>
+  <p class="small"><a href="#c2-tm-2-46">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-15a" data-group="十五、平衡與穩定性（p.151–159）" data-title="自編難題：Lennard-Jones 位能">
+  <h3>自編難題（第 15 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$U=4\varepsilon[(\sigma/r)^{12}-(\sigma/r)^6]$，一原子固定、另一原子 $m$。(a) $r_0$ 與穩定性；(b) 拉到無窮遠的最小能量；(c) 小振動 $k$、$\omega$；(d) 氬 $\varepsilon=1.65\times10^{-21}\ \text{J}$、$\sigma=3.4\times10^{-10}\ \text{m}$、$39.95\ \text{u}$。</div>
+  <ol class="write">
+    <li>$U'=4\varepsilon[-12\sigma^{12}/r^{13}+6\sigma^6/r^7]=0$ ⟹ $r_0=2^{1/6}\sigma$。</li>
+    <li>$(\sigma/r_0)^6=\tfrac12$：$U(r_0)=4\varepsilon(\tfrac14-\tfrac12)=-\varepsilon$ ⟹ 需 $\varepsilon$。</li>
+    <li>$U''(r_0)=\dfrac{4\varepsilon}{r_0^2}(39-21)=\dfrac{72\varepsilon}{2^{1/3}\sigma^2}\gt0$：穩定，$k=U''(r_0)$，$\omega=\sqrt{k/m}$。</li>
+    <li>(d) $r_0=0.382\ \text{nm}$，$k=0.816\ \text{N/m}$，$\omega=3.5\times10^{12}\ \text{s}^{-1}$，$f=5.6\times10^{11}\ \text{Hz}$。</li>
+  </ol>
+  <div class="final">答：$r_0=2^{1/6}\sigma$（穩定）；鍵能 $\varepsilon$；$k\approx57.1\varepsilon/\sigma^2$；氬 $f\approx5.6\times10^{11}\ \text{Hz}$。</div>
+  <p class="small"><a href="#c2-self-15a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="c2-self-15b" data-group="十五、平衡與穩定性（p.151–159）" data-title="自編難題：彈簧拉著的珠子">
+  <h3>自編難題（第 15 節）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　珠子在 $x$ 軸導軌上，以彈簧（$k$、$l_0$）連到距導軌 $d$ 的固定點。(a) 平衡點；(b) $d\gt l_0$、$d\lt l_0$ 的穩定性；(c) $x=0$ 小振動頻率；(d) $d=l_0$ 時穩定嗎？</div>
+  <ol class="write">
+    <li>$U=\tfrac12k(\sqrt{x^2+d^2}-l_0)^2$；$U'=k(\sqrt{x^2+d^2}-l_0)\dfrac{x}{\sqrt{x^2+d^2}}=0$ ⟹ $x=0$ 或 $x=\pm\sqrt{l_0^2-d^2}$。</li>
+    <li>$U''(0)=k(1-l_0/d)$：$d\gt l_0$ 穩定；$d\lt l_0$ 不穩定。</li>
+    <li>$U''(\pm\sqrt{l_0^2-d^2})=k(l_0^2-d^2)/l_0^2\gt0$：兩側穩定（雙谷）。</li>
+    <li>(c) $\omega=\sqrt{\frac km(1-\frac{l_0}d)}$，$d\to l_0$ 時 $\to0$。</li>
+    <li>(d) $U\approx\dfrac k{8d^2}x^4$，$U^{(4)}_0=3k/d^2\gt0$：穩定（非簡諧）。</li>
+  </ol>
+  <div class="final">答：$d\gt l_0$ 單一穩定點 $x=0$；$d\lt l_0$ 時 $x=0$ 不穩定、$\pm\sqrt{l_0^2-d^2}$ 穩定；$d=l_0$ 時四次型穩定。</div>
+  <p class="small"><a href="#c2-self-15b">回到正文詳解</a></p>
+</article>

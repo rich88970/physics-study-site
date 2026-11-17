@@ -1,0 +1,164 @@
+<h2>三、虛擬光源的干涉：洛埃鏡、菲涅耳雙面鏡、雙稜鏡 <span class="pg">課本 p.173–175</span> <span class="must teacher maybe">老師：可能會考 1 題</span> <span class="must exam">考古 1/5（雙稜鏡）</span></h2>
+
+<p class="lead">只有一個光源也能干涉：讓它經過反射或折射，形成兩個「虛擬像」，這兩個像就是兩個同調光源。解題只有兩步：先用幾何光學找出兩個虛擬光源的間距 $a$ 和它們到屏幕的距離 $L$，再套楊氏公式 $\Delta y=\lambda L/a$。</p>
+
+<p class="small muted">（逐字稿 05:17：「楊氏干涉，包括這些虛擬光源之間的干涉，可能會考 1 題。」課程資料夾的考卷出過一次菲涅耳雙稜鏡：2022 期中第 3 題（物理考古資料夾的 2017 期中第 3 題也是這一型，收在<a href="#o10-old-vs">第 9 節</a>），兩題都附提示「上學期幾何光學學過：光經過稜鏡的偏折角 $\delta\approx\alpha(n-1)$」。依考古題統計推論。）</p>
+
+<h3 id="o10-vs-lloyd">3.1 洛埃鏡（Lloyd's mirror）<span class="pg-tag">p.173</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti Figure 7</span>
+  <p>光源 S 在平面鏡上方高度 $h$，鏡子把它成像在鏡面下方 $h$ 的 $S'$。直接光與反射光在屏幕重疊：兩光源間距 $a=2h$，$y_m=m\lambda L/a$。</p>
+</div>
+
+<p>和楊氏不同的地方：反射光在空氣→玻璃的反射（外反射）多了 $\pi$ 的相位，所以亮暗條件<strong>互換</strong>：在鏡面延伸處（$y=0$，光程差 0）是<strong>暗紋</strong>，照度 $I=4I_0\sin^2(\pi ay/\lambda L)$。課本習題 7-5：狹縫在鏡面上 1 mm、屏幕 1 m、546.1 nm → 條紋間距 $\lambda L/a=546.1\times10^{-9}(1)/(2\times10^{-3})=0.273\ \text{mm}$。另外只有鏡面上方有光，所以只看得到半邊圖樣。</p>
+
+<h3 id="o10-vs-mirror">3.2 菲涅耳雙面鏡（Fresnel's mirrors）<span class="pg-tag">p.173–174</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti Figure 8</span>
+  <p>兩面平面鏡夾很小的角 $\theta$，光源 S 離交線 $d$。兩個像 $S_1,S_2$ 都在以交線為圓心、半徑 $d$ 的圓上，對交線張開 $2\theta$，所以 $a\approx d(2\theta)=2d\theta$；屏幕到交線 $D$，$L=d+D$：$y_m=\dfrac{m\lambda(d+D)}{2d\theta}$。</p>
+</div>
+
+<p>兩道光都是反射一次，反射相位相同，中央（光程差 0）是亮紋。課本習題 7-12（書末答案 $6'5''$）：$d=50\ \text{cm}$、$D=100\ \text{cm}$、$\Delta y=0.5\ \text{mm}$、589.3 nm → $\theta=\lambda(d+D)/(2d\Delta y)=1.77\times10^{-3}\ \text{rad}$。</p>
+
+<h3 id="o10-vs-biprism">3.3 菲涅耳雙稜鏡（Fresnel's biprism）<span class="pg-tag">p.174–175</span> <span class="must teacher maybe">老師：可能會考 1 題</span> <span class="must exam">考古 1/5</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti Figure 9、式 (25)</span>
+  $$\delta_m=(n-1)\alpha,\qquad a=2d\,\delta_m=2d(n-1)\alpha,\qquad y_m=\frac{m\lambda(d+s)}{a}$$
+</div>
+
+<div class="step" data-step="o10-vs-s1" data-sym="alpha,n">
+  <span class="step-title">每半個稜鏡把光源「搬」了 $d\,\delta_m$</span>
+  <p>雙稜鏡是兩個頂角 $\alpha$ 很小的薄稜鏡底對底黏在一起。薄稜鏡讓光偏折 $\delta_m=(n-1)\alpha$（上學期幾何光學）。從稜鏡往回看，上半部折射出來的光好像來自往上移的光源 $S_1$，下半部的好像來自往下移的 $S_2$；光源到稜鏡距離 $d$，角度小時移動量 $d\tan\delta_m\approx d\,\delta_m$：</p>
+  $$a=2d\,\delta_m=2d(n-1)\alpha$$
+</div>
+
+<div class="step" data-step="o10-vs-s2" data-sym="L,dy">
+  <span class="step-title">$L$ 從虛擬光源算起</span>
+  <p>兩個虛擬光源和真正的狹縫 S 幾乎在同一個平面上，所以到屏幕的距離是「狹縫到稜鏡 $d$」加「稜鏡到屏幕 $s$」：$L=d+s$。</p>
+  $$\Delta y=\frac{\lambda L}{a}=\frac{\lambda(d+s)}{2d(n-1)\alpha}$$
+</div>
+
+<p>常見設計是 $s=kd$（稜鏡到屏幕是狹縫到稜鏡的 $k$ 倍），這時 $\Delta y=\dfrac{(k+1)\lambda}{2(n-1)\alpha}$，<strong>$d$ 會約掉</strong>：只給比例就能求 $\alpha$，但問「兩虛擬光源的距離」時才需要 $d$。</p>
+
+<div class="box pitfall">
+  <span class="box-title">最常見的錯誤</span>
+  <p>把 $L$ 寫成稜鏡到屏幕的 $s$（漏了 $d$）；把 $a$ 寫成 $d(n-1)\alpha$（漏了 2，上下兩半各移一份）；頂角用度代進 $\delta=(n-1)\alpha$（要用弧度）。</p>
+</div>
+
+<h3 id="o10-vs-hw">3.4 作業與考古題</h3>
+
+<div class="problem" data-kind="textbook" id="o10-7-11">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 7-11（作業）· p.189</span></div>
+    <h4>菲涅耳雙稜鏡：由條紋間距求稜鏡角 <span class="must teacher maybe">老師：可能會考 1 題</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-7-11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-11"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>11</b> Sodium light (589.3 nm) from a narrow slit illuminates a Fresnel biprism made of glass of index 1.50. The biprism is twice as far from a screen on which fringes are observed as it is from the slit. The fringes are observed to be separated by 0.03 cm. What is the biprism angle $\alpha$?</p></div>
+<p class="original-caption">Pedrotti Problem 7-11</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>鈉光（589.3 nm）從一條窄縫照到折射率 1.50 的菲涅耳雙稜鏡。雙稜鏡到屏幕的距離是它到狹縫距離的兩倍。屏幕上條紋間距 0.03 cm，求雙稜鏡的角 $\alpha$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>波長</td><td>$\lambda=589.3\ \text{nm}$</td><td>「Sodium light (589.3 nm)」</td></tr>
+          <tr><td>折射率</td><td>$n=1.50$</td><td>「glass of index 1.50」</td></tr>
+          <tr><td>距離</td><td>狹縫–稜鏡 $d$，稜鏡–屏幕 $s=2d$</td><td>「twice as far from a screen … as it is from the slit」；圖 26 標 $d$、$2d$</td></tr>
+          <tr><td>條紋間距</td><td>$\Delta y=0.03\ \text{cm}=3\times10^{-4}\ \text{m}$</td><td>「separated by 0.03 cm」</td></tr>
+          <tr><td>小角度</td><td>$\delta_m=(n-1)\alpha$、$\tan\delta\approx\delta$</td><td>雙稜鏡的角很小（題目沒寫，雙稜鏡的前提）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：稜鏡角 $\alpha$（弧度與角分）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>雙稜鏡把一條狹縫變成兩個虛擬光源，<b>所以</b>先用薄稜鏡偏折角求虛擬光源間距 $a=2d(n-1)\alpha$、距離 $L=d+2d$，再代楊氏的 $\Delta y=\lambda L/a$。<b>因為</b>題目只給距離的比例，$d$ 會在 $L/a$ 裡約掉，<b>所以</b>不需要知道 $d$ 的數值。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-7-11-s1" data-sym="a,alpha">
+        <span class="step-title">虛擬光源的間距與距離</span>
+        $$a=2d(n-1)\alpha,\qquad L=d+s=d+2d=3d$$
+      </div>
+      <div class="step" data-step="o10-7-11-s2" data-sym="dy">
+        <span class="step-title">代入楊氏條紋間距，$d$ 約掉</span>
+        $$\Delta y=\frac{\lambda L}{a}=\frac{\lambda(3d)}{2d(n-1)\alpha}=\frac{3\lambda}{2(n-1)\alpha}\ \Longrightarrow\ \alpha=\frac{3\lambda}{2(n-1)\Delta y}$$
+      </div>
+      <div class="step" data-step="o10-7-11-s3">
+        <span class="step-title">代入數值</span>
+        <p class="sub">代入 $\lambda=589.3\times10^{-9}\ \text{m}$、$n=1.50$、$\Delta y=3\times10^{-4}\ \text{m}$（題目）：</p>
+        $$\alpha=\frac{3(589.3\times10^{-9})}{2(0.50)(3\times10^{-4})}=5.89\times10^{-3}\ \text{rad}$$
+        $$\alpha=5.893\times10^{-3}\times\frac{180^\circ}{\pi}=0.338^\circ=20.3'$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\alpha\approx5.89\times10^{-3}\ \text{rad}\approx0.338^\circ\approx20.3'$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>與書末答案 $20.3'$ 一致 ✔。角度確實很小，$\delta_m=(n-1)\alpha=2.9\times10^{-3}\ \text{rad}$，小角近似成立。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o10-k22m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2022-04-27）第 3 題（110下）</span></div>
+    <h4>雙稜鏡（$n=1.6$、稜鏡到屏幕 $3d$）：稜鏡角與兩虛擬光源的距離 <span class="must teacher maybe">老師：可能會考 1 題</span> <span class="must exam">考古 1/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-k22m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k22m3"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">附圖為考卷的圖二（只截圖，題文已轉寫）。</p>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/27/2022</p><p>3. (20%) 如下圖二，一道波長為 632.8 nm 的光先經過一狹縫 S，再入射至一 Fresnel 雙稜鏡。已知稜鏡的折射率 n=1.6，且稜鏡至屏幕的距離為稜鏡至狹縫距離的 3 倍。若屏幕上之亮紋間距為 0.04 cm，且狹縫至稜鏡的距離為 d=20 cm，試求</p><p>a. 下圖二中，稜鏡的角度 α 為多少 rad？</p><p>b. 兩虛擬光源之間的距離為多少 cm？</p><p>（提示：上學期幾何光學課程學過：當 α 很小時，光經過稜鏡的偏折角 δ ≈ α(n−1)，且 tanδ ≈ δ）</p></div>
+<p class="original-caption">下學期近代光學期中考（2022-04-27）第 3 題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（20%）如圖二，波長 632.8 nm 的光先經過狹縫 S，再射到菲涅耳雙稜鏡。稜鏡折射率 $n=1.6$，稜鏡到屏幕的距離是稜鏡到狹縫距離的 3 倍。屏幕上亮紋間距 0.04 cm，狹縫到稜鏡 $d=20\ \text{cm}$。求 a. 稜鏡角 $\alpha$（rad）；b. 兩虛擬光源之間的距離（cm）。（提示：$\alpha$ 很小時偏折角 $\delta\approx\alpha(n-1)$，且 $\tan\delta\approx\delta$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>波長</td><td>$\lambda=632.8\ \text{nm}$</td><td>「波長為 632.8 nm 的光」（He-Ne 雷射）</td></tr>
+          <tr><td>折射率</td><td>$n=1.6$</td><td>「稜鏡的折射率 n=1.6」</td></tr>
+          <tr><td>狹縫–稜鏡</td><td>$d=20\ \text{cm}=0.20\ \text{m}$</td><td>「狹縫至稜鏡的距離為 d=20 cm」</td></tr>
+          <tr><td>稜鏡–屏幕</td><td>$s=3d=60\ \text{cm}$</td><td>「稜鏡至屏幕的距離為稜鏡至狹縫距離的 3 倍」；圖二標 $d$、$3d$</td></tr>
+          <tr><td>亮紋間距</td><td>$\Delta y=0.04\ \text{cm}=4\times10^{-4}\ \text{m}$</td><td>「亮紋間距為 0.04 cm」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：a. $\alpha$（rad）；b. 虛擬光源間距 $a$（cm）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>和 <a href="#o10-k17m3">2017 那題</a>同一型。<b>因為</b>條紋是兩個虛擬光源的楊氏干涉，<b>所以</b> $\Delta y=\lambda L/a$，$L=d+3d$；<b>因為</b>每半個稜鏡把光源移 $d\delta=d(n-1)\alpha$，<b>所以</b> $a=2d(n-1)\alpha$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-k22m3-s1" data-sym="L,a">
+        <span class="step-title">寫出 $L$ 與 $a$</span>
+        $$L=d+3d=4d,\qquad a=2d\,\delta=2d(n-1)\alpha$$
+      </div>
+      <div class="step" data-step="o10-k22m3-s2" data-sym="alpha,dy">
+        <span class="step-title">a. 代入條紋間距，$d$ 約掉</span>
+        $$\Delta y=\frac{\lambda(4d)}{2d(n-1)\alpha}=\frac{2\lambda}{(n-1)\alpha}\ \Longrightarrow\ \alpha=\frac{2\lambda}{(n-1)\Delta y}$$
+        <p class="sub">代入 $\lambda=632.8\times10^{-9}\ \text{m}$、$n=1.6$、$\Delta y=4\times10^{-4}\ \text{m}$（題目）：</p>
+        $$\alpha=\frac{2(632.8\times10^{-9})}{(0.6)(4\times10^{-4})}=5.27\times10^{-3}\ \text{rad}$$
+      </div>
+      <div class="step" data-step="o10-k22m3-s3">
+        <span class="step-title">b. 虛擬光源間距</span>
+        <p class="sub">代入 $d=0.20\ \text{m}$、$n=1.6$（題目）、$\alpha=5.273\times10^{-3}$（步驟 2）：</p>
+        $$a=2(0.20)(0.6)(5.273\times10^{-3})\ \text{m}=1.27\times10^{-3}\ \text{m}=0.127\ \text{cm}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>a. $\alpha\approx5.27\times10^{-3}\ \text{rad}$；b. 兩虛擬光源相距約 $0.127\ \text{cm}$（1.27 mm）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>另一條路：$a=\lambda L/\Delta y=(632.8\times10^{-9})(0.80)/(4\times10^{-4})=1.266\times10^{-3}\ \text{m}$ ✔。雲端的 2022 手寫詳解 α 相同，但 b 寫成「$1.266\times10^{-3}=12.66\ \text{cm}$」，是 m→cm 換算錯誤（應為 0.1266 cm）。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>虛擬光源三型：洛埃鏡 $a=2h$（中央暗紋）；雙面鏡 $a=2d\theta$、$L=d+D$；雙稜鏡 $a=2d(n-1)\alpha$、$L=d+s$。</li>
+    <li>之後一律套 $\Delta y=\lambda L/a$；比例給定時 $d$ 會約掉。</li>
+    <li>單位：$\alpha$ 用弧度，題目常要 cm 或 rad，最後一步再換。</li>
+  </ol>
+</div>

@@ -1,0 +1,37 @@
+<p class="lead">第 1 章解的是一階方程；這一章進入物理最常見的二階線性方程 $y''+ay'+by=g(x)$——牛頓第二定律、彈簧、電路都是這個形式。9/23 這堂課只處理右邊為 0 的<strong>齊次</strong>方程：先講清楚解的結構（疊加原理、兩個線性獨立解、初始條件定常數），再用「令 $y=e^{\lambda x}$」把常係數方程變成二次方程式，依特徵根是相異實根、共軛複根、重根分成三種寫法；重根時用降階法找第二個解，最後用阻尼振盪把三種情況串起來。Cauchy–Euler 方程照片裡沒有，由網站依作業補上。右邊不為 0 的特解在第 3 章。</p>
+
+<p>每一節是一頁，照 9/23 板書照片的順序（共 8 張，檔名就是拍攝時間 14:23–16:22）。板書原文放在淡棕色框裡，照片拍不完整、被擋住或沒寫完的地方由網站補上，並用紅色虛線框「網站補充（照片缺漏）」標示。照片本身不放上網站。題目右上角可以開「考試寫法」。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">考古題怎麼出</span>
+  <p>翻過雲端的 18 份考卷（110 上～114 上）：本章的題目集中在<strong>上學期期中考</strong>——110 上第 3 題（相異實根加初始條件）、111 上第 2 題（$y''+y=0$）、113 上第 3 題（$4y''+4y'+17y=0$，要求寫成實函數）、114 上第 2 題（證明降階公式），以及 113 下期中第 4 題（Cauchy–Euler 的邊界值特徵值問題）。這 5 題全部收在對應的節裡。另外 110 上期末第 4 題 $xy''+(x-1)y'-y=0$、111 上期末第 3 題 $(x^2+1)y''-2xy'+2y=0$ 也可以先猜一個解再用降階法，但它們出在期末、和冪級數／Frobenius 法同卷，屬於第 4、5 章的範圍，本章不收。本章另收板書例題 5 題、9/23 作業 3 題，每個講解節 2 題標示「自編難題」的網站自編題（共 12 題，不是上課、作業或考卷題目）；考前衝刺頁有 8 題變化題。</p>
+  <p><strong>更早年級的考古卷（2026-10 補收）。</strong>109 級下第 1 次期中第 3 題三小題（相異實根、複根、重根各一，第 2–4 節）、108 級下 2nd Order ODE 第 1(a) 題（複根，第 3 節），以及 108 級上微積分卷的三題「驗證 $A\cos kt+B\sin kt$、$e^x(\cos x+\sin x)$ 是解、反求 $e^t\cos\omega t$ 的 $\omega$」（第 3 節；其中一題也出現在 109 級上第 1 次期中），共 7 張新卡，答案都和考卷相同。</p>
+</div>
+
+<p class="exam-entry"><strong>準備考試？</strong>先看<a href="#a2x-formulas">第 7 節「考前衝刺」</a>：必背公式、題型總表和變化題。各節頁面上方的「考試模式」會把解說收起來，只留公式、題目和思路。</p>
+
+<div data-section-list></div>
+
+<details class="supp" id="symbols">
+  <summary>符號總表</summary>
+  <div class="supp-body">
+    <p class="small muted">撇號是對 $x$ 微分（$y'=dy/dx$），第 5 節的點是對時間微分（$\dot x=dx/dt$）。板書在化成實數形式後把常數從 $c_1,c_2$ 改寫成 $K_1,K_2$，本站照用。</p>
+    <div data-symbol-table></div>
+  </div>
+</details>
+
+<details class="supp" id="photo-notes">
+  <summary>照片缺漏與板書小筆誤（本章）</summary>
+  <div class="supp-body">
+    <ol>
+      <li><strong>照片 1</strong>：中間「⋯數，special function」前面的字已被擦掉，推測是「變係數」（看不清，<a href="#a2-st-types">第 1 節</a>）。</li>
+      <li><strong>照片 2</strong>：例題 $y''+y=e^{-x}$ 只寫到「$y_p(0)=\tfrac12$」，加齊次解、代初始條件由網站補完（<a href="#a2-b1">第 1 節例題</a>）。</li>
+      <li><strong>照片 3→4 之間</strong>（14:52 到 15:36）：照片 3 的最後一行 $u=\int e^{-\int[\ ]}\cdots$ 被老師擋住，網站依推導補完 $u=\int\frac{e^{-ax}}{y_1^2}dx$，並代回重根得 $u=x$（<a href="#a2-rp-derive">第 4 節</a>）。</li>
+      <li><strong>照片 4</strong>：$y''+y'+y=0$ 展開的第二項與最後一項被擋住，依 Euler 公式補上（<a href="#a2-cx-euler">第 3 節</a>）。</li>
+      <li><strong>照片 6</strong>：$y''-6y'+9y=0$ 只寫到一般解，初始條件由網站代入（<a href="#a2-b4">第 4 節例題</a>）。</li>
+      <li><strong>照片 7–8</strong>：阻尼振盪寫了 $x(0)=x_0$、$v(0)=0$ 與三種一般解，常數沒有定，由網站補完（<a href="#a2-b5">第 5 節例題</a>）。照片 8 的 case 3 第二個指數寫成 $(\gamma-i\sqrt{\ })t$，應為 $(-\gamma-i\sqrt{\ })t$。</li>
+      <li><strong>Cauchy–Euler</strong>：整段沒有照片（應在 16:22 之後），依作業第 3 題與課程進度由網站補成<a href="#a2-ce-form">第 6 節</a>。</li>
+      <li>照片 6 在降階法旁寫「參數變異法 Variation of parameters」，兩者想法相同但一般課本的「參數變換法」指的是第 3 章找特解的方法（<a href="#a2-rp-ex">第 4 節說明</a>）。</li>
+    </ol>
+  </div>
+</details>

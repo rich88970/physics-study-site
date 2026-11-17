@@ -1,0 +1,369 @@
+<h2>八、成對產生與湮滅 <span class="pg">課本 §2.8 · p.79–82</span></h2>
+
+<p class="lead">光子可以把全部能量交給電子（光電效應）、交出一部分（康普頓效應），還可以直接變成物質：一個能量至少 $1.02\ \text{MeV}$ 的光子在原子核附近變成一對電子與正子。反過來，正子遇上電子會一起消失，變成兩個 $\gamma$ 光子。兩件事都要同時守恆能量和動量。</p>
+
+<h3 id="m2-pp-pair">8.1 成對產生 <span class="pg-tag">p.79–81</span></h3>
+
+<p><strong>正子</strong>是帶正電的電子（電子的反粒子，質量相同、電荷 $+e$）。在<strong>成對產生</strong>中，電磁能量直接轉換成物質（Fig. 2.25）。在原子核附近產生電子–正子對時，沒有違反任何守恆律：</p>
+<ul>
+  <li><strong>電荷</strong>：電子 $-e$ 加正子 $+e$ 等於零，和光子的電荷一樣。</li>
+  <li><strong>能量</strong>：電子和正子的總能量（含靜能）等於光子能量。</li>
+  <li><strong>動量</strong>：原子核帶走足夠的光子動量。原子核質量很大，只分走光子能量中可忽略的一小部分。</li>
+</ul>
+<p>若在真空中、沒有原子核，能量和動量不能同時守恆，所以成對產生不會發生（例題 2.5）。氣泡室照片中，垂直於紙面的磁場讓電子、正子往相反方向彎；它們邊走邊損失能量，軌跡成螺旋。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.81 Threshold of pair production</span>
+  $$h\nu\ge2mc^2=1.02\ \text{MeV},\qquad\lambda\le1.2\ \text{pm}$$
+  <p>電子、正子的靜能各 $0.51\ \text{MeV}$；多出來的光子能量變成兩者的動能。這種波長的電磁波叫 <strong>$\gamma$ 射線</strong>，來自放射性原子核和宇宙射線。</p>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">門檻是 $2mc^2$，不是 $mc^2$</span>
+  <p>一次要產生兩個粒子（電荷守恆），所以是兩份靜能。嚴格說原子核也分走一點動能，門檻是 $2mc^2(1+m/M)$（習題 2-42），只比 $1.022\ \text{MeV}$ 大一點點。</p>
+</div>
+
+<h3 id="m2-pp-annih">8.2 湮滅 <span class="pg-tag">p.81</span></h3>
+
+<p>成對產生的逆過程：正子靠近電子，兩者因異性電荷互相吸引而接近，同時消失，失去的質量變成兩個 $\gamma$ 光子：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.81 Pair annihilation</span>
+  $$e^++e^-\to\gamma+\gamma$$
+  <p>正子與電子的總質量相當於 $1.02\ \text{MeV}$；每個光子的能量是 $0.51\ \text{MeV}$ 加上兩粒子相對於質心的動能的一半。光子的方向會讓能量和動量都守恆，所以湮滅不需要原子核或其他粒子。</p>
+</div>
+
+<p>為什麼至少兩個光子：在質心座標系中總動量為零，一個光子一定帶動量，不可能（第 1 章考古 115-4）；兩個光子反向、能量相同就同時滿足能量與動量守恆。在實驗室座標系，如果粒子對在運動，兩個光子的能量就不相等（例題 2.6）。</p>
+
+<div class="anim" data-anim="m2-annihilation"></div>
+
+<div class="problem" data-kind="tbexample" id="bz-ex2-5">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 2.5 · p.81–82 · 也是 109上 考古第 3 題</span></div>
+    <h4>證明成對產生不能在真空中發生</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex2-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-5"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Show that pair production cannot occur in empty space.</p></div>
+<p class="original-caption">Beiser Example 2.5 · p.81–82 · 也是 109上 考古第 3 題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明成對產生不能在真空中（沒有其他物體）發生。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：光子能量 $h\nu$；電子、正子質量各 $m$、速率 $v\lt c$、動量大小 $p$，和光子方向都夾 $\theta$（光子沒有橫向動量，兩者對稱）；真空中反應後只有電子和正子。</p>
+<p><strong>① 能量守恆：</strong> 用反證法，先假設反應發生，把能量守恆和光子方向的動量守恆都寫出來，看能不能同時成立。光子能量全部變成電子和正子的總能量（含靜能）。</p>
+<p class="fnote"><b>公式（相對論能量與動量）：</b>有質量粒子的總能量 $E=\gamma mc^2$、動量 $p=\gamma mv$，其中 $\gamma=1/\sqrt{1-v^2/c^2}$；光子能量 $h\nu$、動量 $h\nu/c$。本題兩粒子動量大小、夾角相同，所以 $\gamma$ 也相同。</p>
+<div class="math-block">$$h\nu=2\gamma mc^2$$</div>
+<p><strong>② 光子方向的動量守恆：</strong> 兩個粒子沿光子方向的動量分量各是 $p\cos\theta$。</p>
+<div class="math-block">$$\frac{h\nu}{c}=2p\cos\theta\ \Longrightarrow\ h\nu=2pc\cos\theta$$</div>
+<p>代入 $p=\gamma mv$，把 $pc$ 寫成 $\gamma mc^2(v/c)$：</p>
+<div class="math-block">$$h\nu=2\gamma mc^2\left(\frac vc\right)\cos\theta$$</div>
+<p><strong>③ 兩式比較：</strong> 有質量的粒子 $v/c\lt1$，而 $\cos\theta\le1$，所以 $\left(\dfrac vc\right)\cos\theta\lt1$，動量守恆給出</p>
+<div class="math-block">$$h\nu=2\gamma mc^2\left(\frac vc\right)\cos\theta\lt2\gamma mc^2$$</div>
+<p>但能量守恆要求 $h\nu=2\gamma mc^2$，兩者不能同時成立。</p>
+<p><strong>④ 原子核的角色：</strong> 同樣的能量，光子帶的動量比電子–正子對能帶的多，多出來的動量必須交給別的物體。原子核附近就可以：原子核接下差額動量，因為很重，分走的能量可以忽略（自編難題 <a href="#sf-2-08b">sf-2-08b</a> 算出只有約 $0.03\ \text{eV}$）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{能量與動量不可能同時守恆，}\\ \text{除非原子核帶走部分光子動量，}\\ \text{所以真空中不會發生成對產生}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="tbexample" id="bz-ex2-6">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 2.6 · p.82</span></div>
+    <h4>並排以 $0.500c$ 運動的正負電子湮滅</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex2-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-6"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>An electron and a positron are moving side by side in the $+x$ direction at 0.500c when they annihilate each other. Two photons are produced that move along the $x$ axis.</p><p>(a) Do both photons move in the $+x$ direction?</p><p>(b) What is the energy of each photon?</p></div>
+<p class="original-caption">Beiser Example 2.6 · p.82</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一個電子和一個正子並排以 $0.500c$ 沿 $+x$ 方向運動時互相湮滅，產生兩個沿 $x$ 軸運動的光子。(a) 兩個光子都往 $+x$ 方向嗎？(b) 每個光子的能量是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：電子、正子並排以 $v=0.500c$ 沿 $+x$ 運動；兩個光子都在 $x$ 軸上；$mc^2=0.511\ \text{MeV}$（標準值）。</p>
+<h4>(a) 方向</h4>
+<p><strong>① 在質心系判斷：</strong> 跟著粒子一起動的質心系總動量為零，兩個光子必須往相反方向。質心系相對實驗室的速率 $0.500c$ 小於光速，而光子在任何座標系都以 $c$ 前進，換到實驗室後往 $-x$ 走的光子仍往 $-x$。</p>
+<div class="math-block">$$\boxed{\text{不是，一個往 }+x\text{、一個往 }-x}$$</div>
+<h4>(b) 每個光子的能量</h4>
+<p><strong>① 先算 $\gamma$：</strong> 一維守恆問題：設 $+x$ 光子動量 $p_1$、$-x$ 光子動量 $p_2$，寫出動量與能量守恆再相加減。先求粒子的勞侖茲因子。</p>
+<p class="fnote"><b>公式（勞侖茲因子）：</b>$\gamma=\dfrac1{\sqrt{1-v^2/c^2}}$，其中 $v$ 為粒子速率、$c$ 為光速；本題 $v=0.500c$。</p>
+<div class="math-block">$$\gamma=\frac1{\sqrt{1-(0.500)^2}}=\frac1{\sqrt{0.750}}=1.155$$</div>
+<p><strong>② 動量守恆：</strong> 湮滅前總動量是兩個粒子的 $\gamma mv$；光子 1 往 $+x$、光子 2 往 $-x$。</p>
+<p class="fnote"><b>公式（相對論動量）：</b>$p=\gamma mv$，其中 $m$ 為靜止質量、$v$ 為速率；本題兩個粒子各 $\gamma mv$。</p>
+<div class="math-block">$$p_1-p_2=2\gamma mv=\frac{2\gamma(mc^2)(v/c)}{c}$$</div>
+<p>代入 $\gamma=1.155$、$mc^2=0.511\ \text{MeV}$、$v/c=0.500$：</p>
+<div class="math-block">$$p_1-p_2=2(1.155)(0.511\ \text{MeV})(0.500)/c=0.590\ \text{MeV}/c$$</div>
+<p><strong>③ 能量守恆：</strong> 湮滅前總能量是兩個粒子的 $\gamma mc^2$。</p>
+<p class="fnote"><b>公式（光子能量動量關係）：</b>$E=pc$，其中 $E$ 為光子能量、$p$ 為光子動量；本題 $E_1=p_1c$、$E_2=p_2c$。</p>
+<div class="math-block">$$p_1c+p_2c=2\gamma mc^2$$</div>
+<p>代入 $\gamma=1.155$、$mc^2=0.511\ \text{MeV}$：</p>
+<div class="math-block">$$p_1c+p_2c=2(1.155)(0.511\ \text{MeV})=1.180\ \text{MeV}$$</div>
+<p>即 $p_1+p_2=1.180\ \text{MeV}/c$。</p>
+<p><strong>④ 解聯立：</strong> 兩式相加得 $2p_1$，再用和減去 $p_1$ 得 $p_2$。</p>
+<div class="math-block">$$2p_1=(0.590+1.180)\ \text{MeV}/c\ \Longrightarrow\ p_1=0.885\ \text{MeV}/c$$</div>
+<div class="math-block">$$p_2=(1.180-0.885)\ \text{MeV}/c=0.295\ \text{MeV}/c$$</div>
+<p>光子能量 $E=pc$：</p>
+<div class="math-block">$$\boxed{\begin{gathered}E_1=p_1c=0.885\ \text{MeV}\ (+x)\\ E_2=p_2c=0.295\ \text{MeV}\ (-x)\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="kg-107-8">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">107 學年期中（2018/10/30）第 8 題 · 即 Beiser 習題 2-40 · p.91</span></div>
+    <h4>動能 $2.0\ \text{MeV}$ 的正子撞上靜止電子</h4>
+    <button type="button" class="exam-btn" data-exam="kg-107-8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-8"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>A positron with a kinetic energy of 2.0 MeV collider with an electron at rest and two particles are annihilated. After the annihilation, two photons are produced. What are the energies of these two photons? (15%)</p><p class="original-sub"><strong>課本原文（Beiser Exercise 2-40）</strong></p><p>A positron with a kinetic energy of 2.000 MeV collides with an electron at rest and the two particles are annihilated. Two photons are produced; one moves in the same direction as the incoming positron and the other moves in the opposite direction. Find the energies of the photons.</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 8 題 · 即 Beiser 習題 2-40 · p.91</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>動能 $2.0\ \text{MeV}$ 的正子和一個靜止的電子碰撞，兩個粒子湮滅。湮滅後產生兩個光子。這兩個光子的能量各是多少？（15%）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：正子動能 $KE=2.0\ \text{MeV}$，電子靜止；$mc^2=0.511\ \text{MeV}$（標準值）；$E_1$ 為沿正子方向的光子、$E_2$ 為反方向的光子。原卷沒寫光子方向，照課本習題 2-40 與雲端解答頁的題意取一前一後。</p>
+<p><strong>① 能量守恆：</strong> 兩光子共線，是一維問題：能量守恆給 $E_1+E_2$、動量守恆給 $E_1-E_2$，再相加減。總能量＝正子的總能量（動能＋靜能）＋靜止電子的靜能。</p>
+<div class="math-block">$$E_1+E_2=(KE+mc^2)+mc^2=KE+2mc^2$$</div>
+<p>代入 $KE=2.0\ \text{MeV}$、$mc^2=0.511\ \text{MeV}$：</p>
+<div class="math-block">$$E_1+E_2=2.0+2(0.511)=3.022\ \text{MeV}$$</div>
+<p><strong>② 正子的動量：</strong> $2.0\ \text{MeV}$ 比靜能大，要用相對論式。</p>
+<p class="fnote"><b>公式（相對論能量動量關係）：</b>$E^2=(pc)^2+(mc^2)^2$，其中 $E=KE+mc^2$ 為總能量、$p$ 為動量、$mc^2$ 為靜能；本題用來求正子的 $pc$。</p>
+<div class="math-block">$$pc=\sqrt{(KE+mc^2)^2-(mc^2)^2}=\sqrt{KE^2+2KE\,mc^2}$$</div>
+<p>代入 $KE=2.0\ \text{MeV}$、$mc^2=0.511\ \text{MeV}$：</p>
+<div class="math-block">$$pc=\sqrt{2.0^2+2(2.0)(0.511)}\ \text{MeV}=\sqrt{6.044}\ \text{MeV}=2.458\ \text{MeV}$$</div>
+<p><strong>③ 動量守恆：</strong> 湮滅前只有正子在動；光子動量 $E/c$，往後的取負號。</p>
+<div class="math-block">$$\frac{E_1}c-\frac{E_2}c=p\ \Longrightarrow\ E_1-E_2=pc$$</div>
+<p>代入上一步的 $pc=2.458\ \text{MeV}$：$E_1-E_2=2.458\ \text{MeV}$。</p>
+<p><strong>④ 解聯立：</strong> 能量式與動量式相加除以 2 得 $E_1$，相減除以 2 得 $E_2$。</p>
+<div class="math-block">$$E_1=\frac{3.022+2.458}2=2.740\ \text{MeV}$$</div>
+<div class="math-block">$$E_2=\frac{3.022-2.458}2=0.282\ \text{MeV}$$</div>
+<p><strong>⑤ 補充：光子不沿入射方向時：</strong> 總能量 $3.022\ \text{MeV}$、總動量 $2.458\ \text{MeV}/c$ 固定，但兩光子可以斜著分開。共線情形給出單一光子能量的最大與最小值，所以一般 $0.282\ \text{MeV}\le E\le2.740\ \text{MeV}$。例如兩光子能量相等時各為 $1.511\ \text{MeV}$，分別和入射方向夾 $\cos^{-1}\dfrac{2.458/2}{1.511}=35.6^\circ$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}E_1=2.74\ \text{MeV}\ (\text{沿正子入射方向})\\ E_2=0.28\ \text{MeV}\ (\text{反方向})\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="kg-109-4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">109 學年上學期考古 第 4 題（只有手寫解答，題目卷未保存）· 改自 Beiser 習題 2-40 · p.91</span></div>
+    <h4>動能 $3\ \text{MeV}$ 的正子撞上靜止電子</h4>
+    <button type="button" class="exam-btn" data-exam="kg-109-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-109-4"><span class="part-label original-label">考卷原文（題目卷未保存，以考古解答代替）</span>
+<p class="original-note">原卷題目沒有保存；雲端只有「109上近物考古解答」一張手寫解答。下面是解答中這一題的逐字轉寫，截圖只保留這一題。</p>
+<div class="original-text" lang="en"><p>4. $e^+\to e^-$　$E_1=3+0.51$, $E_2=0.51$ MeV.</p><p>（圖：$\leftarrow\gamma_2$　$\gamma_1\rightarrow$）　$P_1=0.0115$ eV·s/m　$P_2=0$.</p><p>$E_1'+E_2'=4.02$ MeV　　$E_1'=3.735$ MeV</p><p>$c(P_1'-P_2')=3.45$ MeV.　　$E_2'=0.285$ MeV</p></div>
+<p class="original-caption">109 學年上學期考古 第 4 題（只有手寫解答，題目卷未保存）· 改自 Beiser 習題 2-40 · p.91</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題意（原卷未保存，由手寫解答推回）</span><p>雲端只有這一題的手寫解答：寫著 $e^+\to e^-$、「$E_1=3+0.51$，$E_2=0.51\ \text{MeV}$」、「$P_2=0$」，並畫了一個光子往前、一個往後。推回題意（和 107 學年第 8 題、課本習題 2-40 同型，只是動能改成 $3\ \text{MeV}$）：<br>動能 $3\ \text{MeV}$ 的正子和一個靜止的電子碰撞並湮滅，產生兩個光子，一個沿正子的入射方向、一個沿反方向。求兩個光子的能量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：正子動能 $KE=3\ \text{MeV}$，電子靜止；$mc^2=0.511\ \text{MeV}$（標準值，手寫解答用 $0.51$）；$E_1$ 為往前的光子、$E_2$ 為往後的光子。</p>
+<p><strong>① 能量守恆：</strong> 兩光子一前一後共線，是一維問題：能量守恆給 $E_1+E_2$、動量守恆給 $E_1-E_2$，兩式相加減（和 <a href="#kg-107-8">107 學年第 8 題</a> 同一個方法）。湮滅前總能量＝正子的總能量（動能＋靜能）＋靜止電子的靜能，全部變成兩個光子。</p>
+<div class="math-block">$$E_1+E_2=(KE+mc^2)+mc^2=KE+2mc^2$$</div>
+<p>代入 $KE=3\ \text{MeV}$、$mc^2=0.511\ \text{MeV}$：</p>
+<div class="math-block">$$E_1+E_2=3+2(0.511)=4.022\ \text{MeV}$$</div>
+<p><strong>② 正子的動量（相對論）：</strong> 動能是靜能的 6 倍，不能用古典的 $\sqrt{2mKE}$。</p>
+<p class="fnote"><b>公式（相對論能量動量關係）：</b>$E^2=(pc)^2+(mc^2)^2$，其中 $E=KE+mc^2$ 為總能量、$p$ 為動量、$mc^2$ 為靜能；本題用來求正子的 $pc$。</p>
+<div class="math-block">$$pc=\sqrt{(KE+mc^2)^2-(mc^2)^2}=\sqrt{KE^2+2KE\,mc^2}$$</div>
+<p>代入 $KE=3\ \text{MeV}$、$mc^2=0.511\ \text{MeV}$：</p>
+<div class="math-block">$$\begin{aligned}pc&amp;=\sqrt{3^2+2(3)(0.511)}\ \text{MeV}=\sqrt{9+3.066}\ \text{MeV}\\&amp;=\sqrt{12.066}\ \text{MeV}=3.474\ \text{MeV}\end{aligned}$$</div>
+<p><strong>③ 動量守恆：</strong> 湮滅前只有正子有動量；光子動量 $E/c$，往後的取負號。</p>
+<div class="math-block">$$\frac{E_1}c-\frac{E_2}c=p\ \Longrightarrow\ E_1-E_2=pc$$</div>
+<p>代入上一步的 $pc=3.474\ \text{MeV}$：$E_1-E_2=3.474\ \text{MeV}$。</p>
+<p><strong>④ 解聯立：</strong> 能量式與動量式相加除以 2 得 $E_1$，相減除以 2 得 $E_2$。</p>
+<div class="math-block">$$E_1=\frac{4.022+3.474}2=3.748\ \text{MeV}$$</div>
+<div class="math-block">$$E_2=\frac{4.022-3.474}2=0.274\ \text{MeV}$$</div>
+<p>手寫解答寫 $c(P_1'-P_2')=3.45\ \text{MeV}$、$E_1'=3.735$、$E_2'=0.285\ \text{MeV}$：$\sqrt{12.066}$ 應是 $3.474$ 而非 $3.45$，所以兩個數字各差約 $0.012\ \text{MeV}$，方法正確。</p>
+<div class="math-block">$$\boxed{\begin{gathered}E_1\approx3.75\ \text{MeV}\ (\text{沿正子入射方向})\\ E_2\approx0.274\ \text{MeV}\ (\text{反方向})\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-39">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-39 · p.91</span></div>
+    <h4>迎面相撞湮滅：光子的波長</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-39">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-39"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A positron collides head on with an electron and both are annihilated. Each particle had a kinetic energy of 1.00 MeV. Find the wavelength of the resulting photons.</p></div>
+<p class="original-caption">Beiser 習題 2-39 · p.91</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>正子和電子迎面相撞，兩者都湮滅。兩個粒子的動能都是 $1.00\ \text{MeV}$。求產生的光子的波長。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：每個粒子動能 $KE=1.00\ \text{MeV}$，迎面相撞；$mc^2=0.511\ \text{MeV}$、$hc=1.240\times10^{-6}\ \text{eV·m}$（標準值）。</p>
+<p><strong>① 每個光子的能量：</strong> 兩粒子質量、動能相同又迎面而來，總動量為零，實驗室就是質心系：兩光子反向、動量大小相等，能量也相等，各分到總能量 $2(KE+mc^2)$ 的一半（記得加靜能）。</p>
+<div class="math-block">$$E_\gamma=\frac{2(KE+mc^2)}{2}=KE+mc^2$$</div>
+<p>代入 $KE=1.00\ \text{MeV}$、$mc^2=0.511\ \text{MeV}$：</p>
+<div class="math-block">$$E_\gamma=1.00+0.511=1.511\ \text{MeV}$$</div>
+<p><strong>② 波長：</strong> 由光子能量換成波長。</p>
+<p class="fnote"><b>公式（光子能量與波長）：</b>$E=\dfrac{hc}{\lambda}$，其中 $h$ 為普朗克常數、$c$ 為光速、$\lambda$ 為波長；本題 $E=E_\gamma$。</p>
+<div class="math-block">$$\lambda=\frac{hc}{E_\gamma}$$</div>
+<p>代入 $hc=1.240\times10^{-6}\ \text{eV·m}$ 與上一步的 $E_\gamma=1.511\times10^{6}\ \text{eV}$：</p>
+<div class="math-block">$$\lambda=\frac{1.240\times10^{-6}\ \text{eV·m}}{1.511\times10^{6}\ \text{eV}}=8.21\times10^{-13}\ \text{m}$$</div>
+<div class="math-block">$$\boxed{\lambda=8.21\times10^{-13}\ \text{m}=0.821\ \text{pm}\ (\text{兩個光子相同})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-41">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-41 · p.91</span></div>
+    <h4>證明：散射超過 $60^\circ$ 就不能再成對產生</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-41">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-41"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show that, regardless of its initial energy, a photon cannot undergo Compton scattering through an angle of more than 60° and still be able to produce an electron-positron pair. (Hint: Start by expressing the Compton wavelength of the electron in terms of the maximum photon wavelength needed for pair production.)</p></div>
+<p class="original-caption">Beiser 習題 2-41 · p.91</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明不論光子起初的能量多大，它經過康普頓散射超過 $60^\circ$ 之後，就不可能再產生電子–正子對。（提示：先用成對產生所需的最大光子波長表示電子的康普頓波長。）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：電子質量 $m$，康普頓波長 $\lambda_C=h/mc$；入射光子波長 $\lambda\gt0$（入射能量任意），散射角 $\phi$，散射後波長 $\lambda'$。</p>
+<p><strong>① 成對產生的最大波長：</strong> 照提示把「成對產生的波長上限」和「康普頓散射的波長增加量」都用 $\lambda_C$ 表示來比較。成對產生需光子能量至少 $2mc^2$。</p>
+<p class="fnote"><b>公式（光子能量與波長）：</b>$E=\dfrac{hc}{\lambda}$，其中 $h$ 為普朗克常數、$c$ 為光速、$\lambda$ 為波長；本題取 $E=2mc^2$ 得波長上限。</p>
+<div class="math-block">$$\lambda_{\max}=\frac{hc}{2mc^2}=\frac12\cdot\frac{h}{mc}=\frac{\lambda_C}2$$</div>
+<p><strong>② 散射後的波長有下限：</strong> 考慮最有利的情況 $\lambda\to0$（入射能量趨近無限大），散射後波長仍至少有 $\lambda_C(1-\cos\phi)$。</p>
+<p class="fnote"><b>公式（康普頓公式）：</b>$\lambda'=\lambda+\lambda_C(1-\cos\phi)$，其中 $\lambda$、$\lambda'$ 為散射前後波長、$\lambda_C=h/mc$ 為電子康普頓波長、$\phi$ 為散射角。</p>
+<div class="math-block">$$\lambda'=\lambda+\lambda_C(1-\cos\phi)\gt\lambda_C(1-\cos\phi)$$</div>
+<p>要能成對產生需 $\lambda'\le\lambda_C/2$，所以至少要</p>
+<div class="math-block">$$\lambda_C(1-\cos\phi)\lt\frac{\lambda_C}2$$</div>
+<p>兩邊除以 $\lambda_C$、移項：</p>
+<div class="math-block">$$1-\cos\phi\lt\frac12\ \Longrightarrow\ \cos\phi\gt\frac12\ \Longrightarrow\ \phi\lt60^\circ$$</div>
+<p><strong>③ 結論：</strong> 反過來說，$\phi\ge60^\circ$ 時 $\lambda'\gt\lambda_C(1-\cos\phi)\ge\lambda_C/2=\lambda_{\max}$，散射光子能量一定低於 $2mc^2$，不論起初多大都不能再成對產生。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\phi\ge60^\circ\text{ 時 }\lambda'\ge\lambda_C/2\text{，散射光子能量}\\ \text{必低於 }2mc^2\text{，不能再成對產生}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-42">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-42 · p.91</span></div>
+    <h4>考慮原子核反衝的門檻能量</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-42">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 驗證在質量 $M$ 的靜止原子核附近，光子產生電子–正子對所需的最小能量是 $2mc^2(1+m/M)$，$m$ 為電子靜止質量。(b) 求在質子附近成對產生所需的最小能量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：光子能量 $E$；原子核質量 $M$、原本靜止；電子、正子質量各 $m$。門檻（最小能量）時產物彼此沒有相對運動、一起前進。(b) 質子 $Mc^2=938.3\ \text{MeV}$、$mc^2=0.511\ \text{MeV}$（標準值）。</p>
+<h4>(a) 驗證門檻能量</h4>
+<p><strong>① 反應前的不變量：</strong> 門檻時產物一起運動，可看成一個質量 $2m+M$ 的粒子；用反應前後相等的 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 列方程，不必解產物速度。反應前光子 $E$、動量 $E/c$，原子核 $Mc^2$、動量 0，總能量 $E+Mc^2$、總動量 $E/c$。</p>
+<p class="fnote"><b>公式（不變質量）：</b>$E_{\text{tot}}^2-(p_{\text{tot}}c)^2=(M_{\text{inv}}c^2)^2$，其中 $E_{\text{tot}}$、$p_{\text{tot}}$ 為系統總能量與總動量，此量在反應前後相等、在任何座標系相同；本題反應後 $M_{\text{inv}}=2m+M$。</p>
+<div class="math-block">$$E_{\text{tot}}^2-(p_{\text{tot}}c)^2=(E+Mc^2)^2-E^2=2EMc^2+M^2c^4$$</div>
+<p><strong>② 門檻時的反應後：</strong> 三個粒子一起運動，不變量就是質量 $2m+M$ 粒子的靜能平方。</p>
+<div class="math-block">$$E_{\text{tot}}^2-(p_{\text{tot}}c)^2=(2m+M)^2c^4$$</div>
+<p><strong>③ 兩者相等，解出 $E_{\min}$：</strong></p>
+<div class="math-block">$$2EMc^2+M^2c^4=(2m+M)^2c^4$$</div>
+<p>移項，右邊展開 $(2m+M)^2-M^2=4m^2+4mM$：</p>
+<div class="math-block">$$2EMc^2=(4m^2+4mM)c^4$$</div>
+<div class="math-block">$$\boxed{E_{\min}=\frac{4m(m+M)c^2}{2M}=2mc^2\left(1+\frac mM\right)}$$</div>
+<h4>(b) 質子附近的門檻能量</h4>
+<p><strong>① 代入質子：</strong> 質子 $M=1836m$，代入 $2mc^2=1.022\ \text{MeV}$、$m/M=0.511/938.3=5.45\times10^{-4}$：</p>
+<div class="math-block">$$E_{\min}=1.022\ \text{MeV}\left(1+5.45\times10^{-4}\right)=1.0226\ \text{MeV}$$</div>
+<div class="math-block">$$\boxed{E_{\min}\approx1.023\ \text{MeV}\ (\text{只比 }2mc^2\text{ 多約 }0.05\%)}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-08a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>PET 掃描：用兩個 $511\ \text{keV}$ 光子定位</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-08a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>正子斷層掃描（PET）中，正子在體內停下後和電子湮滅成兩個光子，由相距 $D=0.80\ \text{m}$、面對面的兩個偵測器記錄。(a) 若湮滅前電子–正子系統的總動量為零，兩個光子的能量與方向為何？(b) 兩個偵測器收到光子的時間差是 $0.40\ \text{ns}$，湮滅點離兩偵測器的中點多遠？(c) 實際上原子中電子的動能約 $10\ \text{eV}$，讓系統帶有一個小動量（設全部垂直於光子方向）。估計兩個光子偏離 $180^\circ$ 的角度，以及在中點湮滅時，$0.40\ \text{m}$ 外的偵測器上光子偏離直線多遠。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：兩偵測器相距 $D=0.80\ \text{m}$；(b) 時間差 $\Delta t=0.40\ \text{ns}=0.40\times10^{-9}\ \text{s}$；(c) 電子動能 $KE\approx10\ \text{eV}$、動量垂直於光子方向，偵測器在 $0.40\ \text{m}$ 外；$mc^2=511\ \text{keV}$、$c=3.00\times10^{8}\ \text{m/s}$（標準值）。</p>
+<h4>(a) 靜止湮滅</h4>
+<p><strong>① 能量與方向：</strong> 總動量為零，兩光子動量大小相等、方向相反，所以能量也相等（即例題 2.6 取 $v=0$）。總能量 $2mc^2=1.022\ \text{MeV}$ 平分。</p>
+<div class="math-block">$$\boxed{\text{兩光子各 }0.511\ \text{MeV}\text{，方向相反}}$$</div>
+<h4>(b) 用時間差定位</h4>
+<p><strong>① 路程差：</strong> 兩光子同時出發、速率都是 $c$，時間差完全來自路程差。湮滅點離中點 $s$，到兩偵測器的距離是 $D/2\pm s$，路程差 $2s$。</p>
+<div class="math-block">$$c\,\Delta t=2s\ \Rightarrow\ s=\frac{c\,\Delta t}{2}$$</div>
+<p>代入 $c=3.00\times10^{8}\ \text{m/s}$、$\Delta t=0.40\times10^{-9}\ \text{s}$：</p>
+<div class="math-block">$$s=\frac{(3.00\times10^{8}\ \text{m/s})(0.40\times10^{-9}\ \text{s})}{2}=0.060\ \text{m}$$</div>
+<div class="math-block">$$\boxed{s=6.0\ \text{cm}\ (\text{在先收到光子的一側})}$$</div>
+<h4>(c) 兩光子不共線的角度與偏移</h4>
+<p><strong>① 電子的動量：</strong> 系統多了一點橫向動量，兩光子不能剛好背對背；$10\ \text{eV}\ll mc^2$，電子動量用古典式。</p>
+<p class="fnote"><b>公式（古典動量與動能）：</b>$KE=\dfrac{p^2}{2m}$，即 $p=\sqrt{2m\,KE}$，其中 $m$ 為質量、$p$ 為動量；兩邊乘 $c$ 得 $pc=\sqrt{2\,KE\,mc^2}$。</p>
+<div class="math-block">$$pc=\sqrt{2\,KE\,mc^2}$$</div>
+<p>代入 $KE=10\ \text{eV}$、$mc^2=511\times10^{3}\ \text{eV}$：</p>
+<div class="math-block">$$pc=\sqrt{2(10)(511\times10^{3})}\ \text{eV}=3.2\times10^{3}\ \text{eV}=3.2\ \text{keV}$$</div>
+<p><strong>② 偏角：</strong> 光子 1 沿 $+x$；光子 2 的動量約 $mc$，偏離 $-x$ 方向小角 $\delta$。由橫向動量守恆（$\sin\delta\approx\delta$）：</p>
+<div class="math-block">$$mc\,\delta\approx p\ \Rightarrow\ \delta\approx\frac{pc}{mc^2}$$</div>
+<p>代入上一步的 $pc=3.2\ \text{keV}$、$mc^2=511\ \text{keV}$：</p>
+<div class="math-block">$$\delta\approx\frac{3.2\ \text{keV}}{511\ \text{keV}}=6.3\times10^{-3}\ \text{rad}=0.36^\circ$$</div>
+<p><strong>③ 偵測器上的偏移：</strong> 偵測器在 $0.40\ \text{m}$ 外，偏移＝距離×角度：</p>
+<div class="math-block">$$\text{偏移}\approx(0.40\ \text{m})(6.3\times10^{-3})=2.5\times10^{-3}\ \text{m}=2.5\ \text{mm}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\delta\approx6.3\times10^{-3}\ \text{rad}\approx0.36^\circ\\ \text{偏移約 }2.5\ \text{mm}\end{gathered}}$$</div>
+<p>這是 PET 影像解析度的基本限制之一。</p>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-08b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>成對產生時，原子核要拿走多少動量和能量</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-08b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$5.00\ \text{MeV}$ 的光子在鉛原子核附近產生電子–正子對，設兩者平分動能。(a) 每個粒子的動能和動量各是多少？(b) 即使兩個粒子都沿光子原來的方向飛，它們的總動量也比光子的動量少多少？差額由誰提供？(c) 鉛原子核（$Mc^2\approx1.93\times10^{5}\ \text{MeV}$）因此得到的動能約多少？用這個數字說明「原子核帶走動量、但幾乎不分走能量」。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：光子能量 $E=5.00\ \text{MeV}$；電子、正子平分動能，各 $KE$；鉛原子核 $Mc^2\approx1.93\times10^{5}\ \text{MeV}$；$mc^2=0.511\ \text{MeV}$（標準值）。</p>
+<h4>(a) 每個粒子的動能和動量</h4>
+<p><strong>① 動能：</strong> 原子核很重、幾乎不分能量（(c) 會說明），先忽略它：光子能量＝兩份靜能＋兩份動能，即 $E=2mc^2+2KE$。</p>
+<div class="math-block">$$KE=\frac{E-2mc^2}{2}$$</div>
+<p>代入 $E=5.00\ \text{MeV}$、$2mc^2=1.022\ \text{MeV}$：</p>
+<div class="math-block">$$KE=\frac{5.00-1.022}{2}\ \text{MeV}=1.989\ \text{MeV}$$</div>
+<p><strong>② 動量：</strong> 動能和靜能同數量級，要用相對論式。</p>
+<p class="fnote"><b>公式（相對論能量動量關係）：</b>$E^2=(pc)^2+(mc^2)^2$，其中 $E=KE+mc^2$ 為總能量、$p$ 為動量；整理得 $pc=\sqrt{KE^2+2KE\,mc^2}$。</p>
+<div class="math-block">$$pc=\sqrt{KE^2+2KE\,mc^2}$$</div>
+<p>代入上一步的 $KE=1.989\ \text{MeV}$ 與 $mc^2=0.511\ \text{MeV}$：</p>
+<div class="math-block">$$\begin{aligned}pc&amp;=\sqrt{(1.989)^2+2(1.989)(0.511)}\ \text{MeV}\\&amp;=\sqrt{3.956+2.033}\ \text{MeV}=2.447\ \text{MeV}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{KE=1.99\ \text{MeV},\quad p=2.45\ \text{MeV}/c\ (\text{各})}$$</div>
+<h4>(b) 動量的差額</h4>
+<p><strong>① 和光子動量比較：</strong> 兩粒子同向時總動量最大，拿這個最大值和光子的 $E/c$ 比，差額就是至少要由別人提供的動量。同向時總動量 $2(2.447)=4.894\ \text{MeV}/c$，仍比光子的 $5.00\ \text{MeV}/c$ 少：</p>
+<div class="math-block">$$\Delta p\,c\ge5.00-4.894=0.106\ \text{MeV}$$</div>
+<p>其他任何方向只會讓總動量更小、差額更大。這份動量只能由原子核提供，是例題 2.5「真空中不能成對產生」的定量版。</p>
+<div class="math-block">$$\boxed{\text{至少少 }0.106\ \text{MeV}/c\text{，由原子核提供}}$$</div>
+<h4>(c) 原子核的動能</h4>
+<p><strong>① 古典動能：</strong> 原子核接下的動量小、速度很慢，用古典動能。</p>
+<p class="fnote"><b>公式（古典動能與動量）：</b>$KE=\dfrac{p^2}{2M}$，其中 $M$ 為質量、$p$ 為動量；本題 $p=\Delta p$，分子分母同乘 $c^2$。</p>
+<div class="math-block">$$KE_{\text{核}}=\frac{(\Delta p)^2}{2M}=\frac{(\Delta p\,c)^2}{2Mc^2}$$</div>
+<p>代入 (b) 的 $\Delta p\,c=0.106\ \text{MeV}$ 與 $Mc^2=1.93\times10^{5}\ \text{MeV}$：</p>
+<div class="math-block">$$\begin{aligned}KE_{\text{核}}&amp;=\frac{(0.106)^2}{2(1.93\times10^{5})}\ \text{MeV}\\&amp;=2.9\times10^{-8}\ \text{MeV}\approx0.03\ \text{eV}\end{aligned}$$</div>
+<p>只有光子能量的 $6\times10^{-9}$。原子核像一面很重的牆：能吸收需要的動量，卻幾乎不拿能量，所以 $h\nu=2mc^2+KE_-+KE_+$ 完全成立。</p>
+<div class="math-block">$$\boxed{KE_{\text{核}}\approx3\times10^{-8}\ \text{MeV}=0.03\ \text{eV}\ (\text{可忽略})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>成對產生：$h\nu\ge2mc^2=1.02\ \text{MeV}$，一定要有原子核分擔動量；真空中能量與動量不能同時守恆。</li>
+    <li>湮滅 $e^++e^-\to2\gamma$：質心系兩光子反向、各 $0.511\ \text{MeV}$＋一半動能；不需要原子核。</li>
+    <li>實驗室中做湮滅題：$E_1+E_2=E_{\text{tot}}$、$E_1-E_2=p_{\text{tot}}c$（光子共線時）。</li>
+  </ol>
+</div>

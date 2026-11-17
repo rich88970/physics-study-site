@@ -1,0 +1,365 @@
+<h2>五、斜面與摩擦 <span class="pg">講義 p.46–53 · 課本 §2.4 p.55–58</span></h2>
+
+<p class="lead">斜面是練習「選座標、拆力、各軸分開寫」最好的例子。三個例題一路加條件：無摩擦（例題 2.1）、靜摩擦何時撐不住（例題 2.2）、開始滑之後的動摩擦（例題 2.3）。後面四題課本習題把同樣的方法用在來回運動、滑輪、滑雪和煞車。</p>
+
+<h3 id="c2i-axes">5.1 座標要選得聰明 <span class="pg-tag">p.46–47</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.46–47 Example 2.1（座標與分量）</span>
+  <p>先聰明地設座標：$x$ 軸沿木塊運動方向（順著斜面向下），$y$ 軸垂直斜面。重力分量：</p>
+  $$F_x=\vec F_g\cdot\hat x=|\vec F_g||\hat x|\cos\phi=mg\cos\!\left(\tfrac\pi2-\theta\right)=mg\sin\theta,\qquad F_y=\vec F_g\cdot\hat y+N=-mg\cos\theta+N$$
+</div>
+
+<p>$\phi$ 是重力（鉛直向下）和 $\hat x$ 的夾角。斜面傾角 $\theta$，$\hat x$ 和水平面的夾角也是 $\theta$，所以 $\hat x$ 和鉛直線的夾角 $\phi=\tfrac\pi2-\theta$。另一個軸 $\hat y$ 和向下鉛直線的夾角是 $\tfrac\pi2+\phi=\pi-\theta$，內積得 $-mg\cos\theta$。這樣選的好處是：木塊不會離開斜面，$y$ 方向加速度一定是零，只剩 $x$ 一條真正的運動方程式。若用水平、鉛直軸，兩個方向都有加速度，還要另外寫「沿著斜面」的拘束條件。</p>
+
+<div class="anim" data-anim="c2-incline"></div>
+
+<div class="problem" data-kind="example" id="c2-ex21">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.46–51 · Example 2.1（課本 p.56–57）</span></div>
+    <h4>無摩擦斜面：加速度與滑下 $x_0$ 後的速率</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex21">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>木塊沿固定、無摩擦、傾角 $\theta$ 的斜面滑下（課本取 $\theta=30^\circ$）。(a) 木塊的加速度是多少？(b) 從靜止開始滑下距離 $x_0$ 後，速率是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：斜面固定、無摩擦、傾角 $\theta$（課本取 $30^\circ$）；$x$ 沿斜面向下、$y$ 垂直斜面向外；從靜止出發，$x(0)=0$、$\dot x(0)=0$；$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 加速度與正向力</h4>
+<p><strong>① 重力的分量與 $y$ 方向：</strong> 木塊只沿斜面動，取 $x$ 沿斜面、$y$ 垂直斜面，$y$ 方向加速度為零，只剩 $x$ 一條真正的運動方程式。重力鉛直向下，和 $\hat x$ 夾 $\tfrac\pi2-\theta$、和 $\hat y$ 夾 $\pi-\theta$：</p>
+<div class="math-block">$$F_{g,x}=mg\cos\!\left(\tfrac\pi2-\theta\right)=mg\sin\theta,\qquad F_{g,y}=mg\cos(\pi-\theta)=-mg\cos\theta$$</div>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\sum F_i=m\ddot x_i$，其中 $\sum F_i$ 為第 $i$ 方向的合力、$m$ 為質量、$\ddot x_i$ 為該方向加速度；本題 $y$ 方向 $\ddot y=0$。</p>
+<p>正向力 $N$ 只有 $y$ 分量：</p>
+<div class="math-block">$$y:\ -mg\cos\theta+N=m\ddot y=0\ \Longrightarrow\ N=mg\cos\theta$$</div>
+<p><strong>② $x$ 方向給出加速度：</strong> $x$ 方向只有重力分量（斜面光滑、正向力沒有 $x$ 分量）：</p>
+<div class="math-block">$$x:\ mg\sin\theta=m\ddot x\ \Longrightarrow\ \ddot x=g\sin\theta$$</div>
+<p>加速度是常數，和質量無關。代入 $\theta=30^\circ$、$g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$\ddot x=(9.8\ \text{m/s}^2)\sin30^\circ=\tfrac12(9.8)\ \text{m/s}^2=4.9\ \text{m/s}^2$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\ddot x=g\sin\theta\ (30^\circ\text{ 時 }4.9\ \text{m/s}^2)\\ N=mg\cos\theta\end{gathered}}$$</div>
+<h4>(b) 滑下 $x_0$ 後的速率</h4>
+<p><strong>① 方法一：先求 $v(t)$、$x(t)$，再消去 $t$：</strong> 加速度是常數，對時間積分一次，用 $\dot x(0)=0$ 定常數；再積一次，用 $x(0)=0$：</p>
+<div class="math-block">$$v(t)=\int g\sin\theta\,\mathrm dt=g\sin\theta\,t+C,\quad C=0\ \Longrightarrow\ v(t)=g\sin\theta\,t$$</div>
+<div class="math-block">$$x(t)=\int g\sin\theta\,t\,\mathrm dt=\tfrac12g\sin\theta\,t^2$$</div>
+<p>令 $x=x_0$ 解出到達時間，再代回 $v(t)$：</p>
+<div class="math-block">$$t=\sqrt{\frac{2x_0}{g\sin\theta}}\ \Longrightarrow\ v=g\sin\theta\sqrt{\frac{2x_0}{g\sin\theta}}=\sqrt{2g\sin\theta\,x_0}$$</div>
+<p><strong>② 方法二：直接求 $v(x)$：</strong> 題目問的是滑下一段距離後的速率，可以把時間消掉。運動方程式兩邊乘 $\dot x\,\mathrm dt$，右邊的 $\dot x\,\mathrm dt$ 就是 $\mathrm dx$：</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm d\dot x}{\mathrm dt}=g\sin\theta\ &amp;\Rightarrow\ \dot x\,\mathrm d\dot x=g\sin\theta\,\dot x\,\mathrm dt=g\sin\theta\,\mathrm dx\\ &amp;\Rightarrow\ \tfrac12\dot x^2=g\sin\theta\,x+C\end{aligned}$$</div>
+<p>初始條件寫成位置的形式：$x=0$ 時 $\dot x=0$（從靜止開始），所以 $C=0$：</p>
+<div class="math-block">$$\dot x^2=2g\sin\theta\,x\ \xrightarrow{\ x=x_0\ }\ v=\sqrt{2g\sin\theta\,x_0}$$</div>
+<p>課本的寫法是乘 $2\dot x$：$\dfrac{\mathrm d}{\mathrm dt}(\dot x^2)=2g\sin\theta\,\dfrac{\mathrm dx}{\mathrm dt}$，從 $0$ 積到 $x_0$，結果相同。</p>
+<div class="math-block">$$\boxed{v_0=\sqrt{2g\sin\theta\,x_0}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="c2i-friction">5.2 靜摩擦與動摩擦 <span class="pg-tag">p.52–53</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.52–53 Friction</span>
+  <p>最大靜摩擦 $f_{\max}=\mu_sN$；淨力 $F_{\text{net}}=mg\sin\theta-\mu_smg\cos\theta\ge0$ 時木塊開始滑動。開始滑之後摩擦變成動摩擦 $f_k=\mu_kN$，運動方程式 $mg\sin\theta-\mu_kmg\cos\theta=m\ddot x$。</p>
+</div>
+
+<p>靜摩擦不是固定值，它「需要多少就給多少」，最多到 $\mu_sN$：斜面很平時，重力分量 $mg\sin\theta$ 小，靜摩擦只要等於它就能讓木塊不動。角度加大到 $mg\sin\theta$ 超過 $\mu_sN$ 那一刻，木塊才開始滑。動摩擦則近似固定為 $\mu_kN$，方向和相對滑動方向相反。</p>
+
+<div class="problem" data-kind="example" id="c2-ex22">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.52 · Example 2.2（課本 p.57）</span></div>
+    <h4>靜摩擦係數 0.4：多大角度開始滑</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex22">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>上一題的木塊和斜面之間的靜摩擦係數 $\mu_s=0.4$。木塊原本靜止，斜面角度 $\theta$ 多大時開始滑動？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：靜摩擦係數 $\mu_s=0.4$；木塊原本靜止；座標沿用例題 2.1（$x$ 沿斜面向下、$y$ 垂直斜面）；靜摩擦 $f_s$ 沿斜面向上。</p>
+<p><strong>① 兩個方向的方程式：</strong> 木塊靜止，用的是靜摩擦——需要多少給多少、最多 $\mu_sN$；所以先算靜止需要多少摩擦，再和上限比。和例題 2.1 一樣拆重力，只是 $x$ 方向多了沿斜面向上（$-x$）的 $f_s$：</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\sum F_i=m\ddot x_i$，其中 $\sum F_i$ 為第 $i$ 方向的合力、$m$ 為質量、$\ddot x_i$ 為該方向加速度；本題 $y$ 方向 $\ddot y=0$。</p>
+<div class="math-block">$$y:\ N=mg\cos\theta;\qquad x:\ -f_s+mg\sin\theta=m\ddot x$$</div>
+<p><strong>② 靜止需要的摩擦和它的上限：</strong> 要保持 $\ddot x=0$，靜摩擦必須等於重力的斜面分量；而它最多只能到 $\mu_sN$。</p>
+<p class="fnote"><b>公式（最大靜摩擦）：</b>$f_s\le\mu_sN$，其中 $f_s$ 為靜摩擦、$\mu_s$ 為靜摩擦係數、$N$ 為正向力；本題 $N=mg\cos\theta$。</p>
+<div class="math-block">$$f_s=mg\sin\theta,\qquad f_s\le f_{\max}=\mu_sN=\mu_smg\cos\theta$$</div>
+<p>角度越大，需要的 $mg\sin\theta$ 越大、能給的 $\mu_smg\cos\theta$ 越小，總有一個角度撐不住。</p>
+<p><strong>③ 臨界條件：</strong> 需要的摩擦超過上限就會滑，也就是 $mg\sin\theta\ge\mu_smg\cos\theta$。兩邊除以 $mg\cos\theta$（質量約掉）：</p>
+<div class="math-block">$$\tan\theta\ge\mu_s\ \Longrightarrow\ \theta_c=\tan^{-1}\mu_s$$</div>
+<p>代入 $\mu_s=0.4$：</p>
+<div class="math-block">$$\theta_c=\tan^{-1}0.4=21.8^\circ\approx22^\circ$$</div>
+<div class="math-block">$$\boxed{\theta_c=\tan^{-1}(0.4)\approx22^\circ\ (21.8^\circ)\text{，和質量無關}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="c2-ex23">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.53 · Example 2.3（課本 p.57–58）</span></div>
+    <h4>開始滑之後：動摩擦 0.3、角度 $30^\circ$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex23">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>上一題的木塊開始滑動後，動摩擦係數變成 $\mu_k=0.3$。求 $\theta=30^\circ$ 時的加速度。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：動摩擦係數 $\mu_k=0.3$，$\theta=30^\circ$；木塊正往下滑；座標沿用例題 2.1（$x$ 沿斜面向下）；$g=9.8\ \text{m/s}^2$。</p>
+<p><strong>① $y$ 方向：正向力與動摩擦的大小：</strong> 木塊已經在滑，摩擦是固定的 $\mu_kN$、方向和滑動相反（沿斜面向上）。垂直斜面沒有加速度，正向力和重力的垂直分量平衡：</p>
+<p class="fnote"><b>公式（動摩擦）：</b>$f_k=\mu_kN$，其中 $f_k$ 為動摩擦大小、$\mu_k$ 為動摩擦係數、$N$ 為正向力；方向和滑動相反。</p>
+<div class="math-block">$$N=mg\cos\theta,\qquad f_k=\mu_kN=\mu_kmg\cos\theta$$</div>
+<p><strong>② $x$ 方向的運動方程式：</strong> 重力分量 $mg\sin\theta$ 沿斜面向下，上一步的動摩擦 $f_k$ 沿斜面向上。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\sum F_x=m\ddot x$，其中 $\sum F_x$ 為沿斜面的合力、$m$ 為質量、$\ddot x$ 為沿斜面的加速度。</p>
+<div class="math-block">$$m\ddot x=mg\sin\theta-\mu_kmg\cos\theta\ \Longrightarrow\ \ddot x=g(\sin\theta-\mu_k\cos\theta)$$</div>
+<p>質量約掉，加速度和木塊多重無關。</p>
+<p><strong>③ 代入 $\theta=30^\circ$：</strong> 代入 $\theta=30^\circ$、$\mu_k=0.3$，$\sin30^\circ=0.500$、$\cos30^\circ=0.866$：</p>
+<div class="math-block">$$\sin\theta-\mu_k\cos\theta=0.500-0.3\times0.866=0.500-0.260=0.240$$</div>
+<div class="math-block">$$\ddot x=0.240\,g=0.240\times9.8\ \text{m/s}^2\approx2.35\ \text{m/s}^2$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\ddot x=g(\sin\theta-\mu_k\cos\theta)=0.24\,g\\ \approx2.4\ \text{m/s}^2\text{，沿斜面向下}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<p>課本 p.58 接著指出一個可以在桌上做的實驗：開始滑之後，把角度降到 $\tan^{-1}\mu_k=16.7^\circ$ 以下，$\ddot x\lt 0$，木塊會減速停下；停下後再把角度抬回 $16.7^\circ$ 以上，木塊<strong>不會</strong>馬上再滑，要到 $22^\circ$ 才動，因為停下後又變回靜摩擦。在 $16.7^\circ$ 到 $22^\circ$ 之間，木塊「已經在滑就繼續滑、靜止就繼續靜止」。速度很小時，摩擦係數會很快地從 $\mu_s$ 過渡到 $\mu_k$，所以起動時加速度沒有不連續的跳躍。</p>
+
+<p>$f=\mu N$ 只是近似。研究發現摩擦力其實正比於兩物體在<strong>微觀上</strong>真正接觸的面積，而 $N$ 越大這個面積越大，所以看起來正比於 $N$；靜摩擦比動摩擦大，一般認為是靜止時兩表面的原子有時間形成較多鍵結。</p>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-16">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-16 · p.92</span></div>
+    <h4>沿光滑斜坡往上推出，多久回到起點</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-16">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A particle is projected with an initial velocity $v_0$ up a slope that makes an angle $\alpha$ with the horizontal. Assume frictionless motion and find the time required for the particle to return to its starting position. Find the time for $v_0=2.4\ \mathrm{m/s}$ and $\alpha=26^\circ$.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-16 · p.92</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點以初速 $v_0$ 沿傾角 $\alpha$ 的斜坡往上射出，運動無摩擦。求它回到出發點所需的時間；並算 $v_0=2.4\ \text{m/s}$、$\alpha=26^\circ$ 的值。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：初速 $v_0$ 沿斜坡向上（$v_0=2.4\ \text{m/s}$），傾角 $\alpha$（$\alpha=26^\circ$），無摩擦；取沿斜坡向上為 $+x$，$x(0)=0$、$\dot x(0)=v_0$；$g=9.8\ \text{m/s}^2$。</p>
+<p><strong>① 加速度、速度、位置：</strong> 無摩擦時沿斜坡的力只有重力分量 $mg\sin\alpha$（指向下坡），上坡下坡都一樣，所以一條等加速度方程式管全程。正向力沒有 $x$ 分量：</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\sum F_x=m\ddot x$，其中 $\sum F_x$ 為沿斜坡的合力、$m$ 為質量、$\ddot x$ 為沿斜坡的加速度。</p>
+<div class="math-block">$$m\ddot x=-mg\sin\alpha\ \Longrightarrow\ \ddot x=-g\sin\alpha$$</div>
+<p>積分兩次，用 $\dot x(0)=v_0$、$x(0)=0$ 定常數：</p>
+<div class="math-block">$$\dot x=v_0-g\sin\alpha\,t,\qquad x=v_0t-\tfrac12g\sin\alpha\,t^2$$</div>
+<p><strong>② 令 $x=0$：</strong> 提出公因式 $t$：</p>
+<div class="math-block">$$t\left(v_0-\tfrac12g\sin\alpha\,t\right)=0$$</div>
+<p>$t=0$ 是出發的那一刻，要的是另一個根：</p>
+<div class="math-block">$$v_0-\tfrac12g\sin\alpha\,t=0\ \Longrightarrow\ t=\frac{2v_0}{g\sin\alpha}$$</div>
+<p>（課本解答先算上升時間 $v_0/(g\sin\alpha)$，再算從最高點滑回的時間，也是 $v_0/(g\sin\alpha)$，相加結果相同。）</p>
+<p><strong>③ 代入數值：</strong> 代入 $v_0=2.4\ \text{m/s}$、$\alpha=26^\circ$、$g=9.8\ \text{m/s}^2$；$\sin26^\circ=0.438$，所以 $g\sin\alpha=4.30\ \text{m/s}^2$：</p>
+<div class="math-block">$$t=\frac{2(2.4\ \text{m/s})}{(9.8\ \text{m/s}^2)\sin26^\circ}=\frac{4.8\ \text{m/s}}{4.30\ \text{m/s}^2}=1.12\ \text{s}$$</div>
+<div class="math-block">$$\boxed{t=\frac{2v_0}{g\sin\alpha}\text{；數值 }1.1\ \text{s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-32">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-32 · p.95</span></div>
+    <h4>斜面加滑輪：什麼角度能等速移動</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-32">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $2m$ 的木塊放在傾角 $\theta$ 的斜面上，用繩子跨過斜面頂端的光滑滑輪，連到鉛直懸掛、質量 $m$ 的木塊（Fig. 2-B）。木塊與斜面的動摩擦係數為 $\mu_k$。斜面角度 $\theta$ 多大時，兩木塊可以等速移動？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：斜面上木塊 $2m$、懸掛木塊 $m$，傾角 $\theta$（所求），動摩擦係數 $\mu_k$；光滑滑輪，兩邊張力都是 $T$；等速，兩木塊合力為零；取課本的情況：$m$ 下降、$2m$ 沿斜面上滑，摩擦沿斜面向下。</p>
+<p><strong>① 懸掛的 $m$：張力等於重量：</strong> 等速表示加速度為零，對每個木塊各寫力平衡，再聯立消去共同的 $T$。$m$ 只受向上的 $T$ 和向下的 $mg$：</p>
+<p class="fnote"><b>公式（力平衡）：</b>等速運動時 $\sum\vec F=0$，其中 $\sum\vec F$ 為物體所受合力；本題兩木塊都適用。</p>
+<div class="math-block">$$T-mg=0\ \Longrightarrow\ T=mg$$</div>
+<p><strong>② 斜面上的 $2m$：兩個方向的平衡：</strong> 垂直斜面：正向力和重力的垂直分量平衡。沿斜面（向上為正）：張力向上，重力分量和動摩擦都向下。</p>
+<p class="fnote"><b>公式（動摩擦）：</b>$f_k=\mu_kN$，其中 $f_k$ 為動摩擦大小、$\mu_k$ 為動摩擦係數、$N$ 為正向力；方向和滑動相反。</p>
+<div class="math-block">$$N=2mg\cos\theta,\qquad T-2mg\sin\theta-\mu_kN=0$$</div>
+<p><strong>③ 消去 $T$ 與 $N$：</strong> 代入 ① 的 $T=mg$、② 的 $N=2mg\cos\theta$：</p>
+<div class="math-block">$$mg-2mg\sin\theta-2\mu_kmg\cos\theta=0$$</div>
+<p>同除以 $mg$（質量約掉）：</p>
+<div class="math-block">$$1=2\sin\theta+2\mu_k\cos\theta$$</div>
+<p><strong>④ 解 $\sin\theta$：</strong> 令 $s=\sin\theta$，$\cos\theta=\sqrt{1-s^2}$（$\theta$ 在 $0^\circ$ 到 $90^\circ$），化成 $s$ 的二次式。把 $\cos$ 那項留在一邊：</p>
+<div class="math-block">$$2\mu_k\sqrt{1-s^2}=1-2s$$</div>
+<p>兩邊平方：$4\mu_k^2(1-s^2)=1-4s+4s^2$，全部移到右邊整理：</p>
+<div class="math-block">$$4(1+\mu_k^2)s^2-4s+(1-4\mu_k^2)=0$$</div>
+<p>判別式 $16-16(1+\mu_k^2)(1-4\mu_k^2)=16\mu_k^2(3+4\mu_k^2)$，公式解：</p>
+<div class="math-block">$$s=\frac{4\pm4\mu_k\sqrt{3+4\mu_k^2}}{8(1+\mu_k^2)}=\frac{1\pm\mu_k\sqrt{3+4\mu_k^2}}{2(1+\mu_k^2)}$$</div>
+<p>平方前左邊 $2\mu_k\sqrt{1-s^2}\ge0$，所以右邊也要 $1-2s\ge0$，即 $s\le\tfrac12$。正號的根大於 $\tfrac12$，是平方產生的假根，取負號。</p>
+<p><strong>⑤ 代一個數值：</strong> 取 $\mu_k=0.1$（網站舉例）：$\sqrt{3+4(0.01)}=1.7436$，</p>
+<div class="math-block">$$\sin\theta=\frac{1-0.1(1.7436)}{2(1.01)}=\frac{0.8256}{2.02}=0.4087\ \Longrightarrow\ \theta=24.1^\circ$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\theta=\sin^{-1}\!\left[\frac{1-\mu_k\sqrt{3+4\mu_k^2}}{2(1+\mu_k^2)}\right]\ (m\text{ 下降})\\ \mu_k=0.1\text{ 時 }\theta\approx24.1^\circ\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-24">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-24 · p.93</span></div>
+    <h4>滑雪者：由滑行距離求動摩擦係數</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-24">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-24"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A skier weighing 90 kg starts from rest down a hill inclined at $17^\circ$. She skis 100 m down the hill and then coasts for 70 m along level snow until she stops. Find the coefficient of kinetic friction between the skis and the snow. What velocity does the skier have at the bottom of the hill?</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-24 · p.93</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$90\ \text{kg}$ 的滑雪者從靜止沿 $17^\circ$ 的山坡滑下 $100\ \text{m}$，接著在水平雪地上滑行 $70\ \text{m}$ 後停下。求滑雪板與雪之間的動摩擦係數，以及滑雪者在坡底的速率。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m=90\ \text{kg}$（會約掉），坡度 $\theta=17^\circ$；坡上從靜止滑 $d=100\ \text{m}$，平地滑 $s=70\ \text{m}$ 停下；兩段動摩擦係數同為 $\mu$；坡底轉角速率 $v_B$ 不變；$g=9.8\ \text{m/s}^2$。</p>
+<p><strong>① 兩段的加速度：</strong> 每段的力都是定值，兩段都是等加速度。坡上（沿坡向下為正）：$N=mg\cos\theta$，摩擦 $\mu mg\cos\theta$ 向上坡；平地：$N=mg$，摩擦 $\mu mg$ 和運動相反：</p>
+<p class="fnote"><b>公式（牛頓第二定律＋動摩擦）：</b>$\sum F=ma$，$f_k=\mu N$，其中 $a$ 為沿運動方向的加速度、$\mu$ 為動摩擦係數、$N$ 為正向力。</p>
+<div class="math-block">$$a_1=g(\sin\theta-\mu\cos\theta),\qquad a_2=-\mu g$$</div>
+<p><strong>② 兩段各寫一次等加速度公式：</strong> 題目給距離不給時間，用不含時間的公式；$v_B$ 是兩段共同的量。</p>
+<p class="fnote"><b>公式（等加速度）：</b>$v^2=v_0^2+2a\,\Delta x$，其中 $v_0$、$v$ 為初、末速，$a$ 為加速度，$\Delta x$ 為位移；坡上 $v_0=0$、$v=v_B$、$\Delta x=d$，平地 $v_0=v_B$、$v=0$、$\Delta x=s$。</p>
+<div class="math-block">$$\text{坡上：}v_B^2=0+2g(\sin\theta-\mu\cos\theta)\,d$$</div>
+<div class="math-block">$$\text{平地：}0=v_B^2-2\mu g\,s\ \Longrightarrow\ v_B^2=2\mu gs$$</div>
+<p><strong>③ 消去 $v_B$ 解 $\mu$：</strong> 兩個 $v_B^2$ 相等，約掉 $2g$，再把含 $\mu$ 的項移到同一邊：</p>
+<div class="math-block">$$\begin{aligned}(\sin\theta-\mu\cos\theta)d=\mu s\ &amp;\Longrightarrow\ d\sin\theta=\mu(d\cos\theta+s)\\ &amp;\Longrightarrow\ \mu=\frac{d\sin\theta}{d\cos\theta+s}\end{aligned}$$</div>
+<p>代入 $d=100\ \text{m}$、$s=70\ \text{m}$、$\theta=17^\circ$，$\sin17^\circ=0.2924$、$\cos17^\circ=0.9563$：</p>
+<div class="math-block">$$\mu=\frac{100(0.2924)}{100(0.9563)+70}=\frac{29.24}{165.63}=0.1765\approx0.18$$</div>
+<p><strong>④ 坡底速率：</strong> 用平地那條式子最簡單：</p>
+<div class="math-block">$$v_B=\sqrt{2\mu gs}$$</div>
+<p>代入上一步的 $\mu=0.1765$、$g=9.8\ \text{m/s}^2$、$s=70\ \text{m}$：</p>
+<div class="math-block">$$v_B=\sqrt{2(0.1765)(9.8\ \text{m/s}^2)(70\ \text{m})}=\sqrt{242.2}\ \text{m/s}=15.6\ \text{m/s}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\mu_k\approx0.18\\ \text{坡底速率}\approx15.6\ \text{m/s}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-29">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-29 · p.94</span></div>
+    <h4>下坡煞車滑了 30 m：有沒有超速</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-29">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>駕駛在 8% 坡度的下坡路上猛踩煞車，打滑 $30\ \text{m}$ 後撞上一輛停著的車。律師請的專家量到輪胎與路面的動摩擦係數 $\mu_k=0.45$。律師指控駕駛超過時速 25 英里（25 MPH）的速限，對嗎？請說明。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：8% 坡度下坡，$\tan\theta=0.08$；打滑 $\Delta x=30\ \text{m}$ 後撞車（撞時速度 $\gt0$）；$\mu_k=0.45$；速限 $25\ \text{MPH}$；$1\ \text{mile}=1609\ \text{m}$；$g=9.8\ \text{m/s}^2$。</p>
+<p><strong>① 坡角與減速度的式子：</strong> 打滑時力都是定值，車做等減速度運動；下坡時重力分量抵掉一部分摩擦。坡度 8% 是 $\tan\theta=0.08$：</p>
+<div class="math-block">$$\theta=\tan^{-1}0.08=4.57^\circ$$</div>
+<p>沿坡向下為正：$N=mg\cos\theta$，動摩擦 $\mu_kmg\cos\theta$ 向上坡，重力分量 $mg\sin\theta$ 向下坡。</p>
+<p class="fnote"><b>公式（牛頓第二定律＋動摩擦）：</b>$\sum F=m\ddot x$，$f_k=\mu_kN$，其中 $\ddot x$ 為沿坡加速度、$\mu_k$ 為動摩擦係數、$N$ 為正向力。</p>
+<div class="math-block">$$m\ddot x=mg\sin\theta-\mu_kmg\cos\theta\ \Longrightarrow\ \text{減速度 }a=g(\mu_k\cos\theta-\sin\theta)$$</div>
+<p><strong>② 代入數值求減速度：</strong> 代入 $\mu_k=0.45$、上一步的 $\theta=4.57^\circ$，$\cos\theta=0.9968$、$\sin\theta=0.0797$：</p>
+<div class="math-block">$$\begin{aligned}a&amp;=9.8\left[0.45(0.9968)-0.0797\right]\ \text{m/s}^2\\&amp;=9.8(0.4486-0.0797)\ \text{m/s}^2=3.61\ \text{m/s}^2\end{aligned}$$</div>
+<p><strong>③ 以 25 MPH 開，能在多遠內停下：</strong> 單位換算（$1\ \text{mile}=1609\ \text{m}$，$1\ \text{h}=3600\ \text{s}$）：</p>
+<div class="math-block">$$25\ \text{MPH}=\frac{25\times1609\ \text{m}}{3600\ \text{s}}=11.17\ \text{m/s}$$</div>
+<p class="fnote"><b>公式（等減速度）：</b>$v^2=v_0^2-2a\,\Delta x$，其中 $v_0$、$v$ 為初、末速，$a$ 為減速度大小，$\Delta x$ 為滑行距離；停下時 $v=0$。</p>
+<div class="math-block">$$\Delta x=\frac{v_0^2}{2a}=\frac{(11.17\ \text{m/s})^2}{2(3.61\ \text{m/s}^2)}=17.3\ \text{m}\lt30\ \text{m}$$</div>
+<p>以速限行駛只會滑 $17.3\ \text{m}$ 就停，不可能滑 $30\ \text{m}$ 還撞上車。</p>
+<p><strong>④ 反求最小初速：</strong> 滑了 $30\ \text{m}$ 時速度仍 $\gt0$，所以 $v_0^2-2a(30\ \text{m})\gt0$：</p>
+<div class="math-block">$$v_0\gt\sqrt{2a(30\ \text{m})}=\sqrt{2(3.61\ \text{m/s}^2)(30\ \text{m})}=14.7\ \text{m/s}$$</div>
+<p>換回英里／小時：</p>
+<div class="math-block">$$14.7\ \frac{\text{m}}{\text{s}}\times\frac{3600\ \text{s/h}}{1609\ \text{m/mile}}\approx32.9\ \text{MPH}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{律師是對的：25 MPH 只滑 }17.3\ \text{m}\\ \text{滑 }30\ \text{m 還撞車，初速至少 }33\ \text{MPH}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">靜摩擦不一定等於 $\mu_sN$</span>
+  <p>$\mu_sN$ 是上限，只有在「剛好要滑」的臨界狀態才等於它。木塊靜止、還沒到臨界時，靜摩擦等於使合力為零所需的值。</p>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-05a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>沿斜面往上拉箱子：繩子該斜多少度最省力</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-05a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的箱子放在傾角 $\theta$ 的粗糙斜面上（動摩擦係數 $\mu$），用繩子以拉力 $F$ 把它沿斜面<strong>等速</strong>往上拉，繩子和斜面夾角 $\phi$（向斜面上方偏離）。(a) 求 $F(\phi)$。(b) $\phi$ 取多少時 $F$ 最小？最小值多少？(c) 取 $m=20\ \text{kg}$、$\theta=20^\circ$、$\mu=0.4$，求最佳角、最小拉力，以及繩子平行斜面時的拉力；並檢查最佳角時箱子不會離開斜面。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：箱子質量 $m$，斜面傾角 $\theta$，動摩擦係數 $\mu$；拉力 $F$ 和斜面夾 $\phi$（向斜面上方）；等速往上，摩擦沿斜面向下；$x$ 沿斜面向上、$y$ 垂直斜面；(c) $m=20\ \text{kg}$、$\theta=20^\circ$、$\mu=0.4$、$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 拉力 $F(\phi)$</h4>
+<p><strong>① 垂直斜面：正向力被拉力減少：</strong> 斜拉時 $F\sin\phi$ 把箱子往上提，$N$ 不能直接寫成 $mg\cos\theta$，要先由 $y$ 方向求 $N$。等速，$y$ 方向合力為零：</p>
+<p class="fnote"><b>公式（力平衡）：</b>等速運動時 $\sum F_x=0$、$\sum F_y=0$，其中 $\sum F_x$、$\sum F_y$ 為沿斜面、垂直斜面的合力。</p>
+<div class="math-block">$$N+F\sin\phi-mg\cos\theta=0\ \Longrightarrow\ N=mg\cos\theta-F\sin\phi$$</div>
+<p><strong>② 沿斜面：代入 $N$ 解 $F$：</strong> 拉力分量 $F\cos\phi$ 向上，重力分量 $mg\sin\theta$ 與摩擦 $\mu N$ 向下。</p>
+<p class="fnote"><b>公式（動摩擦）：</b>$f_k=\mu N$，其中 $\mu$ 為動摩擦係數、$N$ 為正向力；方向和滑動相反。</p>
+<div class="math-block">$$F\cos\phi-mg\sin\theta-\mu N=0$$</div>
+<p>代入上一步的 $N=mg\cos\theta-F\sin\phi$：</p>
+<div class="math-block">$$F\cos\phi-mg\sin\theta-\mu mg\cos\theta+\mu F\sin\phi=0$$</div>
+<p>含 $F$ 的項放左邊：</p>
+<div class="math-block">$$F(\cos\phi+\mu\sin\phi)=mg(\sin\theta+\mu\cos\theta)$$</div>
+<div class="math-block">$$\boxed{F(\phi)=\frac{mg(\sin\theta+\mu\cos\theta)}{\cos\phi+\mu\sin\phi}}$$</div>
+<h4>(b) 最省力的角度</h4>
+<p><strong>① 分母最大時 $F$ 最小：</strong> 分子和 $\phi$ 無關，要讓分母 $D(\phi)=\cos\phi+\mu\sin\phi$ 最大。對 $\phi$ 微分令為零：</p>
+<div class="math-block">$$D'(\phi)=-\sin\phi+\mu\cos\phi=0\ \Longrightarrow\ \tan\phi^*=\mu$$</div>
+<p><strong>② 最小值：</strong> 這時 $\cos\phi^*=\dfrac1{\sqrt{1+\mu^2}}$、$\sin\phi^*=\dfrac{\mu}{\sqrt{1+\mu^2}}$，代回分母：</p>
+<div class="math-block">$$D_{\max}=\frac{1+\mu^2}{\sqrt{1+\mu^2}}=\sqrt{1+\mu^2}\ \Longrightarrow\ F_{\min}=\frac{mg(\sin\theta+\mu\cos\theta)}{\sqrt{1+\mu^2}}$$</div>
+<p>最佳角只和 $\mu$ 有關，和斜面角 $\theta$ 無關。令 $\mu=\tan\lambda$，$\lambda$ 是「摩擦角」：正向力與摩擦力的合力（接觸力）和法線夾 $\lambda$，拉力垂直於這個合力方向時最省。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\phi^*=\tan^{-1}\mu\\ F_{\min}=\frac{mg(\sin\theta+\mu\cos\theta)}{\sqrt{1+\mu^2}}\end{gathered}}$$</div>
+<h4>(c) 數值與 $N\gt0$ 的檢查</h4>
+<p><strong>① 最佳角與最小拉力：</strong> 代入 $m=20\ \text{kg}$、$\theta=20^\circ$、$\mu=0.4$、$g=9.8$：$mg=196\ \text{N}$，$\sin20^\circ=0.3420$，$\mu\cos20^\circ=0.4(0.9397)=0.3759$，$\sqrt{1+0.4^2}=1.0770$。</p>
+<div class="math-block">$$\phi^*=\tan^{-1}0.4=21.8^\circ$$</div>
+<div class="math-block">$$F_{\min}=\frac{196\ \text{N}\,(0.3420+0.3759)}{1.0770}=\frac{140.7\ \text{N}}{1.0770}=130.6\ \text{N}$$</div>
+<p><strong>② 平行斜面拉：</strong> $\phi=0$，$\cos0=1$、$\sin0=0$，分母為 $1$：</p>
+<div class="math-block">$$F(0)=196\ \text{N}\,(0.7179)=140.7\ \text{N}$$</div>
+<p>最佳角省了 $1-130.6/140.7\approx7\%$。</p>
+<p><strong>③ 檢查最佳角時 $N\gt0$：</strong> 代入 $F=130.6\ \text{N}$、$\phi=21.8^\circ$（$\sin21.8^\circ=0.371$）、$\theta=20^\circ$（$\cos20^\circ=0.9397$）到 (a) 的 $N$：</p>
+<div class="math-block">$$N=196(0.9397)-130.6(0.371)=184.2-48.5=135.7\ \text{N}\gt0$$</div>
+<p>正向力仍為正，箱子沒有被拉離斜面，前面的公式適用。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\phi^*=21.8^\circ,\ F_{\min}=130.6\ \text{N}\\ \text{平行拉需 }140.7\ \text{N（省約 }7\%\text{）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-05b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>推著楔子跑：加速度在什麼範圍木塊不會滑</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-05b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>傾角 $\theta$ 的楔子放在水平地面上，被水平推著以加速度 $a$ 前進（推的方向使斜面「頂著」木塊，也就是斜面的法線有向前的分量）。木塊與斜面間靜摩擦係數 $\mu$。(a) 斜面光滑時，$a$ 要多少木塊才相對楔子靜止？(b) 有摩擦時，求木塊不滑的 $a$ 範圍。(c) $\theta=30^\circ$、$\mu=0.2$ 的數值範圍。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：楔子傾角 $\theta$，水平加速度 $a$，斜面「頂著」木塊（$N$ 的水平分量 $N\sin\theta$ 向前、鉛直分量 $N\cos\theta$ 向上）；木塊相對楔子靜止，對地加速度為水平的 $a$；靜摩擦係數 $\mu=\tan\lambda$（摩擦角 $\lambda$）；(c) $\theta=30^\circ$、$\mu=0.2$、$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 光滑斜面</h4>
+<p><strong>① 水平與鉛直兩條方程式：</strong> 楔子在加速，要在地面（慣性系）寫 $F=ma$；木塊加速度是水平的，所以改用水平、鉛直座標。只有正向力和重力：$N\sin\theta$ 提供 $ma$，$N\cos\theta$ 撐住重量。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\sum F_x=ma_x$、$\sum F_y=ma_y$，其中 $a_x$、$a_y$ 為水平、鉛直加速度；本題 $a_x=a$、$a_y=0$。</p>
+<div class="math-block">$$N\sin\theta=ma,\qquad N\cos\theta=mg$$</div>
+<p>兩式相除，$N$、$m$ 都消掉：</p>
+<div class="math-block">$$\frac{a}{g}=\tan\theta\ \Longrightarrow\ a=g\tan\theta$$</div>
+<div class="math-block">$$\boxed{a=g\tan\theta}$$</div>
+<h4>(b) 有摩擦時不滑的範圍</h4>
+<p><strong>① 下限：摩擦朝上坡、取最大值 $\mu N$：</strong> 不滑的範圍由兩個臨界情況決定：$a$ 太小木塊剛要下滑（摩擦朝上坡），$a$ 太大剛要上滑（摩擦朝下坡），臨界時摩擦都取 $\mu N$。</p>
+<p class="fnote"><b>公式（最大靜摩擦）：</b>$f_s\le\mu N$，其中 $f_s$ 為靜摩擦、$\mu$ 為靜摩擦係數、$N$ 為正向力；臨界時取等號。</p>
+<p>上坡方向是「向後、向上」，所以摩擦的水平分量 $-\mu N\cos\theta$、鉛直分量 $+\mu N\sin\theta$：</p>
+<div class="math-block">$$N\sin\theta-\mu N\cos\theta=ma,\qquad N\cos\theta+\mu N\sin\theta=mg$$</div>
+<p>兩式相除消去 $N$：</p>
+<div class="math-block">$$a_{\min}=g\,\frac{\sin\theta-\mu\cos\theta}{\cos\theta+\mu\sin\theta}$$</div>
+<p><strong>② 用摩擦角化簡：</strong> 代入 $\mu=\tan\lambda=\sin\lambda/\cos\lambda$，分子分母同乘 $\cos\lambda$，再用差角公式：</p>
+<div class="math-block">$$\frac{\sin\theta\cos\lambda-\cos\theta\sin\lambda}{\cos\theta\cos\lambda+\sin\theta\sin\lambda}=\frac{\sin(\theta-\lambda)}{\cos(\theta-\lambda)}\ \Longrightarrow\ a_{\min}=g\tan(\theta-\lambda)$$</div>
+<p><strong>③ 上限：摩擦朝下坡：</strong> 摩擦反向，水平分量 $+\mu N\cos\theta$、鉛直分量 $-\mu N\sin\theta$：</p>
+<div class="math-block">$$N(\sin\theta+\mu\cos\theta)=ma,\qquad N(\cos\theta-\mu\sin\theta)=mg$$</div>
+<p>同樣相除、用和角公式：</p>
+<div class="math-block">$$a_{\max}=g\,\frac{\sin\theta+\mu\cos\theta}{\cos\theta-\mu\sin\theta}=g\tan(\theta+\lambda)$$</div>
+<p>若 $\theta+\lambda\ge90^\circ$，分母 $\cos\theta-\mu\sin\theta\le0$，再大的加速度木塊都不會往上滑（沒有上限）。若 $\theta\lt\lambda$，下限是負的：楔子不動木塊也不會滑。</p>
+<div class="math-block">$$\boxed{g\tan(\theta-\lambda)\le a\le g\tan(\theta+\lambda),\ \lambda=\tan^{-1}\mu}$$</div>
+<h4>(c) 數值範圍</h4>
+<p><strong>① 摩擦角：</strong> 代入 $\mu=0.2$、$\theta=30^\circ$、$g=9.8\ \text{m/s}^2$：$\lambda=\tan^{-1}0.2=11.31^\circ$，所以 $\theta-\lambda=18.69^\circ$、$\theta+\lambda=41.31^\circ$。</p>
+<p><strong>② 上下限：</strong></p>
+<div class="math-block">$$a_{\min}=9.8\tan18.69^\circ=9.8(0.3383)\ \text{m/s}^2=3.32\ \text{m/s}^2$$</div>
+<div class="math-block">$$a_{\max}=9.8\tan41.31^\circ=9.8(0.8788)\ \text{m/s}^2=8.61\ \text{m/s}^2$$</div>
+<p>光滑時只有 $a=9.8\tan30^\circ=5.66\ \text{m/s}^2$ 一個值；摩擦把它擴成一個區間。</p>
+<div class="math-block">$$\boxed{3.32\ \text{m/s}^2\le a\le8.61\ \text{m/s}^2}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$x$ 沿斜面、$y$ 垂直斜面：$N=mg\cos\theta$，$\ddot x=g\sin\theta$（無摩擦）。</li>
+    <li>開始滑動：$\tan\theta_c=\mu_s$；滑動中 $\ddot x=g(\sin\theta-\mu_k\cos\theta)$。</li>
+    <li>等加速度的兩段運動用 $v^2=v_0^2+2a\Delta x$ 串起來；滑輪題對每個物體分別寫 $F=ma$，用繩子把張力、加速度連起來。</li>
+  </ol>
+</div>

@@ -1,0 +1,1863 @@
+<!-- 考試書寫版：由 tools/merge_parts_thermal_ch01.py 合併產生（片段在 tools/parts/thermal-ch01/exam-*.html）。側欄依 data-exam-id 開啟。 -->
+
+<!-- ===== 片段 A ===== -->
+<!-- ===== 一、熱平衡與溫度（§1.1）===== -->
+<article class="exam-item" data-exam-id="sc-ex-fig13" data-group="一、熱平衡與溫度（§1.1）" data-title="課本 §1.1：氣體溫度計外插絕對零度">
+  <h3>課本 §1.1 Fig. 1.3</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-fig13"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>A thermometer based on expansion of a gas is especially interesting, though, because if you extrapolate the scale down to very low temperatures, you are led to predict that for any low-density gas at constant pressure, the volume should go to zero at approximately −273°C. (In practice the gas will always liquefy first, but until then the trend is quite clear.) Alternatively, if you hold the volume of the gas fixed, then its pressure will approach zero as the temperature approaches −273°C (see Figure 1.3).</p><p><strong>Figure 1.3.</strong> Data from a student experiment measuring the pressure of a fixed volume of gas at various temperatures (using the bulb apparatus shown in Figure 1.2). The three data sets are for three different amounts of gas (air) in the bulb. Regardless of the amount of gas, the pressure is a linear function of temperature that extrapolates to zero at approximately −280°C. (More precise measurements show that the zero-point does depend slightly on the amount of gas, but has a well-defined limit of −273.15°C as the density of the gas goes to zero.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　定容氣體溫度計的兩個讀數 $(-76^\circ\text{C},0.66\ \text{atm})$、$(95^\circ\text{C},1.21\ \text{atm})$，設 $P$ 對 $T$ 線性，求 $P=0$ 的溫度，並說明三條線交於一點的意義。</div>
+  <ol class="write">
+    <li>斜率 $s=\dfrac{1.21-0.66}{95-(-76)}=\dfrac{0.55}{171}=3.22\times10^{-3}\ \text{atm}/^\circ\text{C}$。</li>
+    <li>令 $0=P_1+s(T_0-T_1)$：$T_0=T_1-\dfrac{P_1}{s}=-76-\dfrac{0.66}{3.22\times10^{-3}}=-76-205=-281^\circ\text{C}$。</li>
+    <li>每條線 $P=s(T-T_0)$；氣體量只改斜率（$P\propto N$），零點相同 ⟹ 存在與氣體無關的最低溫度，密度 →0 的極限 $-273.15^\circ\text{C}$＝絕對零度。</li>
+    <li>從此點量起 $T(\text{K})=T(^\circ\text{C})+273.15$，則 $P\propto T$。</li>
+  </ol>
+  <div class="final">答：$T_0\approx-280^\circ\text{C}$（讀圖誤差內與 $-273.15^\circ\text{C}$ 一致）；共同零點就是絕對零度。</div>
+  <p class="small"><a href="#sc-ex-fig13">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-1" data-group="一、熱平衡與溫度（§1.1）" data-title="課本 1-1：華氏與攝氏">
+  <h3>課本 1-1</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The Fahrenheit temperature scale is defined so that ice melts at 32°F and water boils at 212°F.</p><p>(a) Derive the formulas for converting from Fahrenheit to Celsius and back.</p><p>(b) What is absolute zero on the Fahrenheit scale?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　冰在 $32^\circ\text{F}$ 熔化、水在 $212^\circ\text{F}$ 沸騰。(a) 推導華氏與攝氏互換的公式；(b) 絕對零度在華氏是多少？</div>
+  <ol class="write">
+    <li>兩溫標都在兩定點間等分刻度 ⟹ 線性 $T_F=aT_C+b$。</li>
+    <li>$(0,32)$：$b=32$；$(100,212)$：$a=\dfrac{212-32}{100}=\dfrac95$。</li>
+    <li>(a) $T_F=\tfrac95T_C+32$，$T_C=\tfrac59(T_F-32)$。</li>
+    <li>(b) $T_F=\tfrac95(-273.15)+32=-491.67+32=-459.67$。</li>
+  </ol>
+  <div class="final">答：(a) $T_F=\tfrac95T_C+32$、$T_C=\tfrac59(T_F-32)$；(b) $-459.67^\circ\text{F}$。</div>
+  <p class="small"><a href="#sc-1-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-2" data-group="一、熱平衡與溫度（§1.1）" data-title="課本 1-2：蘭氏溫標">
+  <h3>課本 1-2</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-2"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The Rankine temperature scale (abbreviated °R) uses the same size degrees as Fahrenheit, but measured up from absolute zero like kelvin (so Rankine is to Fahrenheit as kelvin is to Celsius). Find the conversion formula between Rankine and Fahrenheit, and also between Rankine and kelvin. What is room temperature on the Rankine scale?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　蘭氏溫標一度與華氏一樣大、從絕對零度量起。求蘭氏↔華氏、蘭氏↔kelvin 的公式與室溫的蘭氏值。</div>
+  <ol class="write">
+    <li>度大小相同、只差零點：$T_R=T_F+c$；絕對零度 $0=-459.67+c$ ⟹ $T_R=T_F+459.67$。</li>
+    <li>零點相同、只差度大小（$1^\circ\text{F}=\tfrac59\ \text{K}$）：$T_R=\tfrac95T_K$。</li>
+    <li>室溫 $300\ \text{K}$：$T_R=\tfrac95\times300=540^\circ\text{R}$。</li>
+  </ol>
+  <div class="final">答：$T_R=T_F+459.67$；$T_R=\tfrac95T_K$；室溫約 $540^\circ\text{R}$。</div>
+  <p class="small"><a href="#sc-1-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-3" data-group="一、熱平衡與溫度（§1.1）" data-title="課本 1-3：換成 kelvin">
+  <h3>課本 1-3</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-3"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Determine the kelvin temperature for each of the following:</p><p>(a) human body temperature;</p><p>(b) the boiling point of water (at the standard pressure of 1 atm);</p><p>(c) the coldest day you can remember;</p><p>(d) the boiling point of liquid nitrogen (−196°C);</p><p>(e) the melting point of lead (327°C).</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 kelvin 溫度：(a) 體溫；(b) 水的沸點；(c) 你記得最冷的一天；(d) 液態氮沸點 $-196^\circ\text{C}$；(e) 鉛熔點 $327^\circ\text{C}$。</div>
+  <ol class="write">
+    <li>$T_K=T_C+273.15$。</li>
+    <li>(a) $37+273.15=310\ \text{K}$；(b) $100+273.15=373\ \text{K}$；(c) 例如 $5^\circ\text{C}$：$278\ \text{K}$。</li>
+    <li>(d) $-196+273.15=77\ \text{K}$；(e) $327+273.15=600\ \text{K}$。</li>
+  </ol>
+  <div class="final">答：310 K、373 K、（例）278 K、77 K、600 K。</div>
+  <p class="small"><a href="#sc-1-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-4" data-group="一、熱平衡與溫度（§1.1）" data-title="課本 1-4：「兩倍熱」">
+  <h3>課本 1-4</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-4"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Does it ever make sense to say that one object is “twice as hot” as another? Does it matter whether one is referring to Celsius or kelvin temperatures? Explain.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　說一個物體比另一個「熱兩倍」有沒有意義？攝氏或 kelvin 有差嗎？</div>
+  <ol class="write">
+    <li>「兩倍」是比值，比值只在零點有物理意義時才不隨零點改變。</li>
+    <li>攝氏零點任意：$20^\circ\text{C}$ 對 $10^\circ\text{C}$ 攝氏比 2，換成 kelvin $293.15/283.15=1.035$ ⟹ 攝氏比值無意義。</li>
+    <li>kelvin 從絕對零度量起，各絕對溫標只差比例因子，比值不變：鉛熔點 600 K 是室溫 300 K 的兩倍（蘭氏 $1080/540$ 也是 2）。</li>
+  </ol>
+  <div class="final">答：只有用絕對溫標（K）時才有意義；攝氏、華氏的比值沒有意義。</div>
+  <p class="small"><a href="#sc-1-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-5" data-group="一、熱平衡與溫度（§1.1）" data-title="課本 1-5：量體溫的鬆弛時間">
+  <h3>課本 1-5</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-5"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>When you’re sick with a fever and you take your temperature with a thermometer, approximately what is the relaxation time?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　發燒時用溫度計量體溫，鬆弛時間大約多少？</div>
+  <ol class="write">
+    <li>設 $\Delta T(t)=\Delta T_0e^{-t/\tau}$；初始溫差約 $38-25=13\ \text{K}$，要準到 $0.1\ \text{K}$：$t=\tau\ln(13/0.1)\approx5\tau$。</li>
+    <li>經驗：水銀體溫計等 3–5 min ⟹ $\tau\approx40$–$60\ \text{s}$；電子體溫計約 1 min ⟹ $\tau\approx10$–$20\ \text{s}$。</li>
+  </ol>
+  <div class="final">答：約一分鐘的數量級（$1/e$ 定義 10 s–1 min；讀數準到 $0.1^\circ\text{C}$ 約需 3–5 min）。</div>
+  <p class="small"><a href="#sc-1-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-6" data-group="一、熱平衡與溫度（§1.1）" data-title="課本 1-6：手摸判斷不了溫度">
+  <h3>課本 1-6（熱學小考作業）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Give an example to illustrate why you cannot accurately judge the temperature of an object by how hot or cold it feels to the touch.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　舉例說明為什麼不能用摸起來的冷熱準確判斷物體的溫度。</div>
+  <ol class="write">
+    <li>例：同一房間放整晚的金屬（磁磚）與木頭（腳踏墊）已熱平衡、同溫，但金屬摸起來冷得多。</li>
+    <li>手感量的是熱從皮膚流走的速率；金屬導熱率與熱容量大，迅速帶走熱，皮膚表面降溫多；木頭導熱差，皮膚附近很快接近體溫。</li>
+    <li>估計：接觸溫度 $T_c=\dfrac{e_1T_1+e_2T_2}{e_1+e_2}$，$e=\sqrt{k_t\rho c}$：$20^\circ\text{C}$ 鋼約 $21^\circ\text{C}$、木頭約 $30^\circ\text{C}$。</li>
+  </ol>
+  <div class="final">答：溫度相同的金屬與木頭手感不同，因為手感由熱流速率（導熱率、熱容量）決定，不只由溫度決定。</div>
+  <p class="small"><a href="#sc-1-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-7" data-group="一、熱平衡與溫度（§1.1）" data-title="課本 1-7：水銀溫度計、湖水結冰">
+  <h3>課本 1-7</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>When the temperature of liquid mercury increases by one degree Celsius (or one kelvin), its volume increases by one part in 5500. The fractional increase in volume per unit change in temperature (when the pressure is held fixed) is called the <strong>thermal expansion coefficient</strong>, $\beta$: $$\beta\equiv\frac{\Delta V/V}{\Delta T}$$ (where $V$ is volume, $T$ is temperature, and $\Delta$ signifies a change, which in this case should really be infinitesimal if $\beta$ is to be well defined). So for mercury, $\beta=1/5500\ \text{K}^{-1}=1.81\times10^{-4}\ \text{K}^{-1}$. (The exact value varies with temperature, but between 0°C and 200°C the variation is less than 1%.)</p><p>(a) Get a mercury thermometer, estimate the size of the bulb at the bottom, and then estimate what the inside diameter of the tube has to be in order for the thermometer to work as required. Assume that the thermal expansion of the glass is negligible.</p><p>(b) The thermal expansion coefficient of water varies significantly with temperature: It is $7.5\times10^{-4}\ \text{K}^{-1}$ at 100°C, but decreases as the temperature is lowered until it becomes zero at 4°C. Below 4°C it is slightly negative, reaching a value of $-0.68\times10^{-4}\ \text{K}^{-1}$ at 0°C. (This behavior is related to the fact that ice is less dense than water.) With this behavior in mind, imagine the process of a lake freezing over, and discuss in some detail how this process would be different if the thermal expansion coefficient of water were always positive.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　水銀 $\beta=1.81\times10^{-4}\ \text{K}^{-1}$。(a) 估計溫度計球泡大小與毛細管內徑（玻璃膨脹忽略）；(b) 水的 $\beta$ 在 $4^\circ\text{C}$ 以下為負，討論湖水結冰，以及若 $\beta$ 恆正會怎樣。</div>
+  <ol class="write">
+    <li>(a) 球泡：直徑 4 mm、長 8 mm 圓柱，$V=\pi(2)^2(8)=100\ \text{mm}^3$。</li>
+    <li>每度：$\Delta V=\beta V\Delta T=(1.81\times10^{-4})(100)(1)=0.0183\ \text{mm}^3$。</li>
+    <li>一格 5 mm：$A=\Delta V/\ell=3.66\times10^{-3}\ \text{mm}^2$，$d=2\sqrt{A/\pi}=0.068\ \text{mm}$。</li>
+    <li>(b) $4^\circ\text{C}$ 以上越冷越重，對流使全湖到 $4^\circ\text{C}$；以下越冷越輕，冷水留在湖面，湖面先結冰，冰浮起隔熱，底部維持 $4^\circ\text{C}$。</li>
+    <li>若 $\beta$ 恆正：冷水永遠沉底，冰從湖底結起，沒有隔熱層，湖可能整個凍透。</li>
+  </ol>
+  <div class="final">答：(a) 內徑約 0.07 mm；(b) 真實湖水由上往下結冰；$\beta$ 恆正則由下往上結冰、可能凍透。</div>
+  <p class="small"><a href="#sc-1-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-8" data-group="一、熱平衡與溫度（§1.1）" data-title="課本 1-8＝考古 115-2、114-1：線膨脹">
+  <h3>課本 1-8（考古 115 級期中第 2 題、114 級期中第 1 題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-8"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>課本原文（Schroeder Problem 1.8）</strong></p><p>For a solid, we also define the <strong>linear thermal expansion coefficient</strong>, $\alpha$, as the fractional increase in length per degree: $$\alpha\equiv\frac{\Delta L/L}{\Delta T}.$$</p><p>(a) For steel, $\alpha$ is $1.1\times10^{-5}\ \text{K}^{-1}$. Estimate the total variation in length of a 1-km steel bridge between a cold winter night and a hot summer day.</p><p>(b) The dial thermometer in Figure 1.2 uses a coiled metal strip made of two different metals laminated together. Explain how this works.</p><p>(c) Prove that the volume thermal expansion coefficient of a solid is equal to the sum of its linear expansion coefficients in the three directions: $\beta=\alpha_x+\alpha_y+\alpha_z$. (So for an isotropic solid, which expands the same in all directions, $\beta=3\alpha$.)</p><p class="original-subhead"><strong>考卷原文（115 級上學期期中第 2 題；114 級上學期期中第 1 題同一題）</strong></p><p>[10pts] For a solid, the linear thermal expansion coefficient $\alpha$ is defined as the fractional change in length per degree: $$\alpha=\frac{\Delta L/L}{\Delta T}$$</p><p>(a) For steel, $\alpha$ is $1.1\times10^{-5}\text{K}^{-1}$. Estimate the total variation in length of a 1-km steel bridge between a cold winter night and a hot summer day. (5pts)</p><p>(b) Prove that the volume thermal expansion coefficient of a solid is equal to the sum of its linear expansion coefficients in the three directions: $\beta=\alpha_x+\alpha_y+\alpha_z$. (5pts)</p></div>
+<p class="original-caption">Schroeder 習題 1-8（Problem 1.8）· p.6 · 即 115 級上學期期中 第 2 題、114 級上學期期中 第 1 題（考卷只考 (a)(c)）</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$\alpha\equiv\frac{\Delta L/L}{\Delta T}$。(a) 鋼 $\alpha=1.1\times10^{-5}\ \text{K}^{-1}$，估計 1 km 鋼橋冬夜到夏日的長度變化；(b) 雙金屬片溫度計原理；(c) 證明 $\beta=\alpha_x+\alpha_y+\alpha_z$。（考卷只考 (a)(c)，各 5 分。）</div>
+  <p class="small">原卷：115 級上學期熱學期中第 2 題（115級上學期熱學(期中)-1.pdf p.2）；114 級上學期期中第 1 題（手機照片 114級熱學期中(上學期)-1.HEIC）。</p>
+  <ol class="write">
+    <li>(a) $\Delta L=\alpha L\Delta T$；估 $\Delta T\approx25\ \text{K}$（冬夜 $10^\circ\text{C}$、夏日 $35^\circ\text{C}$）：$\Delta L=(1.1\times10^{-5})(1000\ \text{m})(25)=0.275\ \text{m}\approx28\ \text{cm}$。</li>
+    <li>(b) 兩金屬 $\alpha$ 不同，升溫時伸長量不同又黏在一起 ⟹ 彎曲；捲成螺旋則轉動，帶動指針。</li>
+    <li>(c) 長方體 $V=L_xL_yL_z$，升溫後 $V+\Delta V=L_x(1+\alpha_x\Delta T)L_y(1+\alpha_y\Delta T)L_z(1+\alpha_z\Delta T)$。</li>
+    <li>展開：$=V[1+(\alpha_x+\alpha_y+\alpha_z)\Delta T+O(\Delta T^2)]$；$\alpha\Delta T\sim10^{-4}$，略去二次以上。</li>
+    <li>$\dfrac{\Delta V/V}{\Delta T}=\alpha_x+\alpha_y+\alpha_z$，即 $\beta=\alpha_x+\alpha_y+\alpha_z$（各向同性 $3\alpha$）。（或 $\ln V=\sum\ln L_i$ 對 $T$ 微分。）</li>
+  </ol>
+  <div class="final">答：(a) 約 0.3 m（$\Delta T=25$ K；溫帶 70 K 約 0.8 m）；(b) 雙金屬彎曲；(c) $\beta=\alpha_x+\alpha_y+\alpha_z$。</div>
+  <p class="small"><a href="#sc-1-8">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-01a" data-group="一、熱平衡與溫度（§1.1）" data-title="自編 1-A：鋼捲尺量鋁棒">
+  <h3>自編難題 1-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\alpha_{\text{s}}=1.1\times10^{-5}$、$\alpha_{\text{Al}}=2.3\times10^{-5}\ \text{K}^{-1}$。(a) $20^\circ\text{C}$ 校正的鋼捲尺在 $40^\circ\text{C}$ 量 $20^\circ\text{C}$ 時 1.000 m 的鋁棒，讀數？(b) 鋁環內徑 99.95 mm、鋼軸 100.00 mm：只熱環、環軸一起熱各要升幾度？(c) 洞為何變大？</div>
+  <ol class="write">
+    <li>(a) 讀數 $=\dfrac{1+\alpha_{\text{Al}}\Delta T}{1+\alpha_{\text{s}}\Delta T}\ \text{m}=\dfrac{1.00046}{1.00022}=1.00024\ \text{m}$，多 0.24 mm。</li>
+    <li>(b) 只熱環：$\Delta T=\dfrac{0.05}{\alpha_{\text{Al}}(99.95)}=21.7\ \text{K}$。</li>
+    <li>一起熱：$99.95(1+\alpha_{\text{Al}}\Delta T)=100.00(1+\alpha_{\text{s}}\Delta T)$ ⟹ $\Delta T=\dfrac{0.05}{1.199\times10^{-3}}=41.7\ \text{K}$（約 $62^\circ\text{C}$）。</li>
+    <li>(c) 均勻膨脹＝整體等比例放大，洞的直徑也乘 $1+\alpha_{\text{Al}}\Delta T$。</li>
+  </ol>
+  <div class="final">答：(a) 1.00024 m；(b) 21.7 K、41.7 K；(c) 等比例放大。</div>
+  <p class="small"><a href="#t1-self-01a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-01b" data-group="一、熱平衡與溫度（§1.1）" data-title="自編 1-B：水溫度計">
+  <h3>自編難題 1-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　水溫度計在 $0$、$100^\circ\text{C}$ 標 0、100，依體積等分；$\beta(T)$ 取通過 $(0,-6.8\times10^{-5})$、$(4,0)$、$(100,7.5\times10^{-4})$ 的二次式。(a) 求二次式；(b) 真實 $50^\circ\text{C}$ 的讀數；(c) 讀數 0 的兩個溫度、$4^\circ\text{C}$ 的讀數，能否當溫度計？</div>
+  <ol class="write">
+    <li>(a) 解聯立：$c_0=-6.8\times10^{-5}$、$c_1=1.737\times10^{-5}$、$c_2=-9.19\times10^{-8}$。</li>
+    <li>$dV/V=\beta dT$ ⟹ $V\approx V_0[1+I(T)]$，$I=c_0T+\tfrac{c_1}2T^2+\tfrac{c_2}3T^3$；$I(100)=0.0494$、$I(50)=0.0145$。</li>
+    <li>(b) $\theta=100I(T)/I(100)=29.3$。</li>
+    <li>(c) $I=0$ 的另一根：$c_0+\tfrac{c_1}2T+\tfrac{c_2}3T^2=0$ ⟹ $T=8.06^\circ\text{C}$；$\theta(4)=100(-1.35\times10^{-4})/0.0494=-0.27$。</li>
+    <li>讀數不單調（$0$ 與 $8.06^\circ\text{C}$ 同讀 0），不能當溫度計。</li>
+  </ol>
+  <div class="final">答：(b) 29.3；(c) $0^\circ\text{C}$、$8.06^\circ\text{C}$ 都讀 0，$4^\circ\text{C}$ 讀 $-0.27$；不可用。</div>
+  <p class="small"><a href="#t1-self-01b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 二、理想氣體（§1.2）===== -->
+<article class="exam-item" data-exam-id="sc-ex-k" data-group="二、理想氣體（§1.2）" data-title="課本 §1.2：k=R/N_A">
+  <h3>課本 §1.2 (1.2)–(1.7)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-k"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>A mole of molecules is Avogadro’s number of them, $$N_A=6.02\times10^{23}.\qquad(1.3)$$ This is another “unit” that’s more useful in chemistry than in physics. More often we will want to simply discuss the number of molecules, denoted by capital $N$: $$N=n\times N_A.\qquad(1.4)$$ If you plug in $N/N_A$ for $n$ in the ideal gas law, then group together the combination $R/N_A$ and call it a new constant $k$, you get $$PV=NkT.\qquad(1.5)$$ This is the form of the ideal gas law that we’ll usually use. The constant $k$ is called <strong>Boltzmann’s constant</strong>, and is tiny when expressed in SI units (since Avogadro’s number is so huge): $$k=\frac{R}{N_A}=1.381\times10^{-23}\ \text{J/K}.\qquad(1.6)$$ In order to remember how all the constants are related, I recommend memorizing $$nR=Nk.\qquad(1.7)$$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 由 $R=8.31$、$N_A=6.02\times10^{23}$ 求 $k$，驗證 $nR=Nk$；(b) 1 L·atm 是多少 J？</div>
+  <ol class="write">
+    <li>(a) $nRT=NkT$ ⟹ $k=nR/N=R/N_A=8.31/6.02\times10^{23}=1.38\times10^{-23}\ \text{J/K}$。</li>
+    <li>1 mol：$Nk=(6.02\times10^{23})(1.381\times10^{-23})=8.31\ \text{J/K}=nR$。</li>
+    <li>(b) $(1.013\times10^5\ \text{Pa})(10^{-3}\ \text{m}^3)=101.3\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：$k=1.38\times10^{-23}\ \text{J/K}$；$1\ \text{L}\cdot\text{atm}=101.3\ \text{J}$。</div>
+  <p class="small"><a href="#sc-ex-k">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-9" data-group="二、理想氣體（§1.2）" data-title="課本 1-9：一莫耳空氣的體積">
+  <h3>課本 1-9</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What is the volume of one mole of air, at room temperature and 1 atm pressure?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　室溫、1 atm 下一莫耳空氣的體積？</div>
+  <ol class="write">
+    <li>$V=\dfrac{nRT}{P}=\dfrac{(1)(8.31)(300)}{1.013\times10^5}\ \text{m}^3=0.0246\ \text{m}^3=24.6\ \text{L}$。</li>
+  </ol>
+  <div class="final">答：約 24.6 L（25 L）。</div>
+  <p class="small"><a href="#sc-1-9">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-10" data-group="二、理想氣體（§1.2）" data-title="課本 1-10：房間的空氣分子數">
+  <h3>課本 1-10</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Estimate the number of air molecules in an average-sized room.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　估計一間普通房間的空氣分子數。</div>
+  <ol class="write">
+    <li>房間 $4\times4\times3=48\ \text{m}^3$，$T=300\ \text{K}$，$P=1.013\times10^5\ \text{Pa}$。</li>
+    <li>$N=\dfrac{PV}{kT}=\dfrac{(1.013\times10^5)(48)}{(1.381\times10^{-23})(300)}=1.2\times10^{27}$（約 2000 mol）。</li>
+  </ol>
+  <div class="final">答：約 $10^{27}$ 個。</div>
+  <p class="small"><a href="#sc-1-10">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-11" data-group="二、理想氣體（§1.2）" data-title="課本 1-11：相通房間的空氣質量">
+  <h3>課本 1-11</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-11"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Rooms A and B are the same size, and are connected by an open door. Room A, however, is warmer (perhaps because its windows face the sun). Which room contains the greater mass of air? Explain carefully.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　A、B 兩房一樣大、門開著，A 較暖。哪間空氣質量大？</div>
+  <ol class="write">
+    <li>門開著 ⟹ $P_A=P_B$（否則空氣流動）；$V_A=V_B$。</li>
+    <li>$N=PV/kT$ ⟹ $N_A/N_B=T_B/T_A\lt1$；質量 $=Nm$，$m$ 相同。</li>
+  </ol>
+  <div class="final">答：較冷的 B 空氣質量較大（$M\propto1/T$）。</div>
+  <p class="small"><a href="#sc-1-11">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-12" data-group="二、理想氣體（§1.2）" data-title="課本 1-12：分子間距">
+  <h3>課本 1-12</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-12"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the average volume per molecule for an ideal gas at room temperature and atmospheric pressure. Then take the cube root to get an estimate of the average distance between molecules. How does this distance compare to the size of a small molecule like N<sub>2</sub> or H<sub>2</sub>O?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　室溫一大氣壓下每個分子的平均體積、平均間距，與 $\text{N}_2$、$\text{H}_2\text{O}$ 大小比較。</div>
+  <ol class="write">
+    <li>$\dfrac VN=\dfrac{kT}{P}=\dfrac{(1.381\times10^{-23})(300)}{1.013\times10^5}=4.09\times10^{-26}\ \text{m}^3=41\ \text{nm}^3$。</li>
+    <li>$d=(V/N)^{1/3}=3.4\ \text{nm}$；分子約 0.3 nm ⟹ 約 10 倍。</li>
+  </ol>
+  <div class="final">答：41 nm³、3.4 nm，約分子大小的十倍。</div>
+  <p class="small"><a href="#sc-1-12">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-13" data-group="二、理想氣體（§1.2）" data-title="課本 1-13：一莫耳的質量">
+  <h3>課本 1-13</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-13"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A mole is approximately the number of protons in a gram of protons. The mass of a neutron is about the same as the mass of a proton, while the mass of an electron is usually negligible in comparison, so if you know the total number of protons and neutrons in a molecule (i.e., its “atomic mass”), you know the approximate mass (in grams) of a mole of these molecules. Referring to the periodic table at the back of this book, find the mass of a mole of each of the following: water, nitrogen (N<sub>2</sub>), lead, quartz (SiO<sub>2</sub>).</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求水、$\text{N}_2$、鉛、$\text{SiO}_2$ 一莫耳的質量。</div>
+  <ol class="write">
+    <li>一莫耳核子約 1 g，莫耳質量＝核子數（g）。</li>
+    <li>$\text{H}_2\text{O}$：$2+16=18$；$\text{N}_2$：$28$；Pb：$207$；$\text{SiO}_2$：$28+32=60$。</li>
+  </ol>
+  <div class="final">答：18 g、28 g、207 g、60 g。</div>
+  <p class="small"><a href="#sc-1-13">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-14" data-group="二、理想氣體（§1.2）" data-title="課本 1-14：乾空氣的莫耳質量">
+  <h3>課本 1-14</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-14"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the mass of a mole of dry air, which is a mixture of N<sub>2</sub> (78% by volume), O<sub>2</sub> (21%), and argon (1%).</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　乾空氣 $\text{N}_2$ 78%、$\text{O}_2$ 21%、Ar 1%（體積），求一莫耳的質量。</div>
+  <ol class="write">
+    <li>同溫同壓 $V\propto N$ ⟹ 體積比＝莫耳分率。</li>
+    <li>$M=0.78(28)+0.21(32)+0.01(40)=21.84+6.72+0.40=28.96\ \text{g}$。</li>
+  </ol>
+  <div class="final">答：約 29 g/mol。</div>
+  <p class="small"><a href="#sc-1-14">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-15" data-group="二、理想氣體（§1.2）" data-title="課本 1-15：熱氣球">
+  <h3>課本 1-15</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-15"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Estimate the average temperature of the air inside a hot-air balloon (see Figure 1.1). Assume that the total mass of the unfilled balloon and payload is 500 kg. What is the mass of the air inside the balloon?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　氣球＋載重 500 kg，估計熱氣球內空氣溫度與內部空氣質量。</div>
+  <ol class="write">
+    <li>估計：直徑 15 m，$V=\tfrac43\pi(7.5)^3=1767\ \text{m}^3$；外面 $T_0=300\ \text{K}$、1 atm；$M=0.029\ \text{kg/mol}$。</li>
+    <li>浮力平衡 $\rho_0Vg=(M_0+\rho V)g$ ⟹ $\rho_0-\rho=M_0/V$；$\rho=MP/RT$。</li>
+    <li>$\dfrac1T=\dfrac1{T_0}-\dfrac{M_0R}{MPV}=\dfrac1{300}-\dfrac{500(8.31)}{0.029(1.013\times10^5)(1767)}=3.333\times10^{-3}-8.00\times10^{-4}$ ⟹ $T=395\ \text{K}$。</li>
+    <li>$M_{\text{in}}=\dfrac{MPV}{RT}=\dfrac{0.029(1.013\times10^5)(1767)}{8.31(395)}=1.6\times10^3\ \text{kg}$。</li>
+  </ol>
+  <div class="final">答：約 395 K（$120^\circ\text{C}$）；內部空氣約 1600 kg。</div>
+  <p class="small"><a href="#sc-1-15">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-16" data-group="二、理想氣體（§1.2）" data-title="課本 1-16：指數大氣">
+  <h3>課本 1-16</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><em>The exponential atmosphere.</em></p><p>(a) Consider a horizontal slab of air whose thickness (height) is $dz$. If this slab is at rest, the pressure holding it up from below must balance both the pressure from above and the weight of the slab. Use this fact to find an expression for $dP/dz$, the variation of pressure with altitude, in terms of the density of air.</p><p>(b) Use the ideal gas law to write the density of air in terms of pressure, temperature, and the average mass $m$ of the air molecules. (The information needed to calculate $m$ is given in Problem 1.14.) Show, then, that the pressure obeys the differential equation $$\frac{dP}{dz}=-\frac{mg}{kT}P,$$ called the <strong>barometric equation</strong>.</p><p>(c) Assuming that the temperature of the atmosphere is independent of height (not a great assumption but not terrible either), solve the barometric equation to obtain the pressure as a function of height: $P(z)=P(0)e^{-mgz/kT}$. Show also that the density obeys a similar equation.</p><p>(d) Estimate the pressure, in atmospheres, at the following locations: Ogden, Utah (4700 ft or 1430 m above sea level); Leadville, Colorado (10,150 ft, 3090 m); Mt. Whitney, California (14,500 ft, 4420 m); Mt. Everest, Nepal/Tibet (29,000 ft, 8850 m). (Assume that the pressure at sea level is 1 atm.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 由空氣層的力平衡求 $dP/dz$；(b) 證明 $dP/dz=-\frac{mg}{kT}P$；(c) 等溫解 $P(z)$、$\rho(z)$；(d) Ogden 1430 m、Leadville 3090 m、Whitney 4420 m、Everest 8850 m 的氣壓。</div>
+  <ol class="write">
+    <li>(a) $P(z)A=P(z+dz)A+\rho A\,dz\,g$ ⟹ $dP/dz=-\rho g$。</li>
+    <li>(b) $\rho=Nm/V=mP/kT$ ⟹ $dP/dz=-\dfrac{mg}{kT}P$。</li>
+    <li>(c) $\int dP/P=-\frac{mg}{kT}\int dz$ ⟹ $P=P(0)e^{-mgz/kT}$；$\rho=\frac m{kT}P=\rho(0)e^{-mgz/kT}$。</li>
+    <li>(d) $H=\dfrac{RT}{Mg}=\dfrac{8.31(280)}{0.029(9.8)}=8190\ \text{m}$；$P=e^{-z/H}$ atm：0.84、0.69、0.58、0.34。</li>
+  </ol>
+  <div class="final">答：$dP/dz=-\rho g$；$P=P_0e^{-mgz/kT}$；0.84、0.69、0.58、0.34 atm。</div>
+  <p class="small"><a href="#sc-1-16">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-17" data-group="二、理想氣體（§1.2）" data-title="課本 1-17＝考古某級 1(i)：維里係數">
+  <h3>課本 1-17（(c) 即考古某級期中第 1(i) 題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-17"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>課本原文（Schroeder Problem 1.17）</strong></p><p>Even at low density, real gases don’t quite obey the ideal gas law. A systematic way to account for deviations from ideal behavior is the <strong>virial expansion</strong>, $$PV=nRT\left(1+\frac{B(T)}{(V/n)}+\frac{C(T)}{(V/n)^2}+\cdots\right),$$ where the functions $B(T)$, $C(T)$, and so on are called the <strong>virial coefficients</strong>. When the density of the gas is fairly low, so that the volume per mole is large, each term in the series is much smaller than the one before. In many situations it’s sufficient to omit the third term and concentrate on the second, whose coefficient $B(T)$ is called the second virial coefficient (the first coefficient being 1). Here are some measured values of the second virial coefficient for nitrogen (N<sub>2</sub>):</p><table><thead><tr><th>$T$ (K)</th><th>$B$ (cm<sup>3</sup>/mol)</th></tr></thead><tbody><tr><td>100</td><td>−160</td></tr><tr><td>200</td><td>−35</td></tr><tr><td>300</td><td>−4.2</td></tr><tr><td>400</td><td>9.0</td></tr><tr><td>500</td><td>16.9</td></tr><tr><td>600</td><td>21.3</td></tr></tbody></table><p>(a) For each temperature in the table, compute the second term in the virial equation, $B(T)/(V/n)$, for nitrogen at atmospheric pressure. Discuss the validity of the ideal gas law under these conditions.</p><p>(b) Think about the forces between molecules, and explain why we might expect $B(T)$ to be negative at low temperatures but positive at high temperatures.</p><p>(c) Any proposed relation between $P$, $V$, and $T$, like the ideal gas law or the virial equation, is called an <strong>equation of state</strong>. Another famous equation of state, which is qualitatively accurate even for dense fluids, is the <strong>van der Waals equation</strong>, $$\left(P+\frac{an^2}{V^2}\right)(V-nb)=nRT,$$ where $a$ and $b$ are constants that depend on the type of gas. Calculate the second and third virial coefficients ($B$ and $C$) for a gas obeying the van der Waals equation, in terms of $a$ and $b$. (Hint: The binomial expansion says that $(1+x)^p\approx1+px+\frac12p(p-1)x^2$, provided that $|px|\ll1$. Apply this approximation to the quantity $[1-(nb/V)]^{-1}$.)</p><p>(d) Plot a graph of the van der Waals prediction for $B(T)$, choosing $a$ and $b$ so as to approximately match the data given above for nitrogen. Discuss the accuracy of the van der Waals equation over this range of conditions. (The van der Waals equation is discussed much further in Section 5.3.)</p><p class="original-subhead"><strong>考卷原文（某級上學期期中第 1(i) 題）</strong></p><p>(i) The correction to ideal gas law comes in various different form. One of them is to use volume density as an expansion parameter, and this approach is called the <em>virial expansion</em>. The form is given as: $$PV=nRT\left(1+\frac{B(T)}{(V/n)}+\frac{C(T)}{(V/n)^2}+\dots\right)$$ Another famous form of correction to ideal gas law is the van der Waals equation expressed as: $$\left(P+\frac{an^2}{V^2}\right)(V-nb)=nRT,$$ where $a$ and $b$ are constants that depend on the type of gas. Calculate the second and third virial coefficients ($B$ and $C$) for a gas obeying the van der Waals equation, in terms of $a$ and $b$. (6pts)</p></div>
+<p class="original-caption">Schroeder 習題 1-17（Problem 1.17）· p.9 · 熱學小考（上）作業題 · (c) 即某級上學期期中 第 1(i) 題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　氮的 $B(T)$ 表。(a) 1 atm 下 $B/(V/n)$；(b) $B$ 低溫負、高溫正的原因；(c) 凡得瓦的 $B$、$C$；(d) 擬合 $a,b$ 並討論。</div>
+  <p class="small">原卷：某級全部熱學(期中末).pdf p.2–3，某級上學期期中第 1(i) 題（6 分），只考 (c)。</p>
+  <ol class="write">
+    <li>(a) $V/n\approx RT/P$：100 K 為 $8.20\times10^{-3}\ \text{m}^3/\text{mol}$，$B/(V/n)=-1.60\times10^{-4}/8.20\times10^{-3}=-0.0195$；其餘 $-0.0021,-0.00017,+0.00027,+0.00041,+0.00043$。只有 100 K 偏 2%。</li>
+    <li>(b) 吸引使壓力變小（$B\lt0$），低溫分子慢、吸引為主；高溫分子快，排斥（分子體積）為主（$B\gt0$）。</li>
+    <li>(c) $P=\dfrac{nRT}{V-nb}-\dfrac{an^2}{V^2}$ ⟹ $PV=nRT\left[\dfrac1{1-nb/V}-\dfrac{an}{RTV}\right]$。</li>
+    <li>$\left[1-\tfrac{nb}V\right]^{-1}\approx1+\tfrac{b}{V/n}+\tfrac{b^2}{(V/n)^2}$ ⟹ $PV\approx nRT\left[1+\dfrac{b-a/RT}{V/n}+\dfrac{b^2}{(V/n)^2}\right]$。</li>
+    <li>對照：$B=b-\dfrac a{RT}$，$C=b^2$。</li>
+    <li>(d) 最小平方：$b=6.4\times10^{-5}\ \text{m}^3/\text{mol}$、$a=0.18\ \text{J}\cdot\text{m}^3/\text{mol}^2$；預測 $-155,-45,-9,9,20,28$ 對數據 $-160,-35,-4.2,9,16.9,21.3$：定性對、定量粗。</li>
+  </ol>
+  <div class="final">答：(a) 只有 100 K 約 2% 修正；(c) $B=b-a/RT$、$C=b^2$；(d) $a\approx0.18$、$b\approx6.4\times10^{-5}$。</div>
+  <p class="small"><a href="#sc-1-17">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1x-1a" data-group="二、理想氣體（§1.2）" data-title="考古某級 1(a)：微觀模型推 ½m⟨v²⟩=3/2 kT">
+  <h3>考古 某級上學期期中 1(a)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1a"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is $$PV=NkT$$ (gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>(a) Assuming this ideal gas law is valid, use this law and the microscopic model (hint: gas molecules colliding with walls of chamber causing pressure) to show for a monoatomic ideal gas confined in three spatial dimensions: (6pts) $$\frac12m\langle\vec v^2\rangle=\frac32kT$$</p></div>
+<p class="original-caption">某級上學期期中 第 1(a) 題 · 即 Schroeder §1.2 課文 (1.8)–(1.17) · p.10–12</p>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　理想氣體遵守 $PV=NkT$。(a) 假設此定律成立，用它與微觀模型（提示：氣體分子撞擊容器壁產生壓力）證明三維單原子理想氣體 $\tfrac12m\langle v^2\rangle=\tfrac32kT$。（6 分）</div>
+  <p class="small">原卷：某級全部熱學(期中末).pdf p.2，某級上學期期中第 1(a) 題。</p>
+  <ol class="write">
+    <li>圓筒長 $L$、活塞面積 $A$，$V=LA$；一個分子 $x$ 速度 $v_x$，彈性碰撞。</li>
+    <li>$\overline P=\dfrac{\overline F_{\text{活塞}}}{A}=-\dfrac{m\overline{\Delta v_x/\Delta t}}{A}$（牛頓第三、第二定律）。</li>
+    <li>取一來回 $\Delta t=2L/v_x$，撞活塞一次：$\Delta v_x=(-v_x)-v_x=-2v_x$。</li>
+    <li>$\overline P=-\dfrac mA\cdot\dfrac{-2v_x}{2L/v_x}=\dfrac{mv_x^2}{V}$。</li>
+    <li>$N$ 個分子：$PV=\sum_imv_{ix}^2=Nm\overline{v_x^2}$；代入 $PV=NkT$：$\tfrac12m\overline{v_x^2}=\tfrac12kT$。</li>
+    <li>各向同性：$\overline{v_x^2}=\overline{v_y^2}=\overline{v_z^2}$，$\tfrac12m\langle v^2\rangle=3\times\tfrac12kT=\tfrac32kT$。$\blacksquare$</li>
+  </ol>
+  <div class="final">答：$PV=Nm\overline{v_x^2}=NkT$ ⟹ $\tfrac12m\langle v^2\rangle=\tfrac32kT$。</div>
+  <p class="small"><a href="#tk1x-1a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-kT" data-group="二、理想氣體（§1.2）" data-title="課本 §1.2：室溫的 kT">
+  <h3>課本 §1.2 (1.18)–(1.19)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-kT"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>This result gives us a nice interpretation of Boltzmann’s constant, $k$. Recall that $k$ has just the right units, J/K, to convert a temperature into an energy. Indeed, we now see that $k$ is essentially a conversion factor between temperature and molecular energy, at least for this simple system. Think about the numbers, though: For an air molecule at room temperature (300 K), the quantity $kT$ is $$(1.38\times10^{-23}\ \text{J/K})(300\ \text{K})=4.14\times10^{-21}\ \text{J},\qquad(1.18)$$ and the average translational energy is 3/2 times as much. … we often use the <strong>electron-volt</strong> (eV), which is the kinetic energy of an electron that has been accelerated through a voltage difference of one volt: $1\ \text{eV}=1.6\times10^{-19}\ \text{J}$. Boltzmann’s constant is $8.62\times10^{-5}\ \text{eV/K}$, so at room temperature, $$kT=(8.62\times10^{-5}\ \text{eV/K})(300\ \text{K})=0.026\ \text{eV}\approx\frac1{40}\ \text{eV}.\qquad(1.19)$$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　室溫 300 K：$kT$ 與平均平移動能（J）；$k$（eV/K）與 $kT$（eV）。</div>
+  <ol class="write">
+    <li>$kT=(1.38\times10^{-23})(300)=4.14\times10^{-21}\ \text{J}$；$\overline K=\tfrac32kT=6.2\times10^{-21}\ \text{J}$。</li>
+    <li>$k=1.38\times10^{-23}/1.6\times10^{-19}=8.62\times10^{-5}\ \text{eV/K}$；$kT=0.026\ \text{eV}\approx\tfrac1{40}\ \text{eV}$。</li>
+  </ol>
+  <div class="final">答：$4.14\times10^{-21}$ J、$6.2\times10^{-21}$ J；$8.62\times10^{-5}$ eV/K、$1/40$ eV。</div>
+  <p class="small"><a href="#sc-ex-kT">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-18" data-group="二、理想氣體（§1.2）" data-title="課本 1-18：氮的 v_rms">
+  <h3>課本 1-18</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-18"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the rms speed of a nitrogen molecule at room temperature.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　室溫氮分子的方均根速率。</div>
+  <ol class="write">
+    <li>$v_{\text{rms}}=\sqrt{3kT/m}=\sqrt{3RT/M}=\sqrt{\dfrac{3(8.31)(300)}{0.028}}=517\ \text{m/s}$。</li>
+  </ol>
+  <div class="final">答：約 517 m/s。</div>
+  <p class="small"><a href="#sc-1-18">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-19" data-group="二、理想氣體（§1.2）" data-title="課本 1-19：氫與氧">
+  <h3>課本 1-19</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-19"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you have a gas containing hydrogen molecules and oxygen molecules, in thermal equilibrium. Which molecules are moving faster, on average? By what factor?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　熱平衡的氫與氧混合氣體，哪種分子平均較快？快幾倍？</div>
+  <ol class="write">
+    <li>熱平衡 ⟹ 同溫 ⟹ $\tfrac32kT$ 相同；$v_{\text{rms}}=\sqrt{3kT/m}\propto m^{-1/2}$。</li>
+    <li>$\dfrac{v(\text{H}_2)}{v(\text{O}_2)}=\sqrt{\dfrac{32}{2}}=4$。</li>
+  </ol>
+  <div class="final">答：氫較快，4 倍。</div>
+  <p class="small"><a href="#sc-1-19">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-20" data-group="二、理想氣體（§1.2）" data-title="課本 1-20：UF₆ 同位素">
+  <h3>課本 1-20（熱學小考作業）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Uranium has two common isotopes, with atomic masses of 238 and 235. One way to separate these isotopes is to combine the uranium with fluorine to make uranium hexafluoride gas, UF<sub>6</sub>, then exploit the difference in the average thermal speeds of molecules containing the different isotopes. Calculate the rms speed of each type of molecule at room temperature, and compare them.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$^{238}\text{UF}_6$ 與 $^{235}\text{UF}_6$ 室溫的 $v_{\text{rms}}$ 並比較。</div>
+  <ol class="write">
+    <li>$M=238+6(19)=352$、$235+114=349\ \text{g/mol}$。</li>
+    <li>$v=\sqrt{3RT/M}$：$\sqrt{3(8.31)(300)/0.352}=145.8\ \text{m/s}$；$/0.349$：$146.4\ \text{m/s}$。</li>
+    <li>比值 $\sqrt{352/349}=1.0043$。</li>
+  </ol>
+  <div class="final">答：145.8、146.4 m/s，輕的快 0.43%。</div>
+  <p class="small"><a href="#sc-1-20">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-21" data-group="二、理想氣體（§1.2）" data-title="課本 1-21：冰雹的壓力">
+  <h3>課本 1-21</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-21"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>During a hailstorm, hailstones with an average mass of 2 g and a speed of 15 m/s strike a window pane at a 45° angle. The area of the window is 0.5 m<sup>2</sup> and the hailstones hit it at a rate of 30 per second. What average pressure do they exert on the window? How does this compare to the pressure of the atmosphere?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　2 g、15 m/s 的冰雹以 $45^\circ$ 打在 $0.5\ \text{m}^2$ 的窗上，每秒 30 顆。平均壓力？與大氣壓比較。</div>
+  <ol class="write">
+    <li>彈性反彈：$|\Delta v_\perp|=2v\cos45^\circ=21.2\ \text{m/s}$。</li>
+    <li>$\overline F=m|\Delta v_\perp|\times30\ \text{s}^{-1}=(0.002)(21.2)(30)=1.27\ \text{N}$。</li>
+    <li>$\overline P=\overline F/A=1.27/0.5=2.5\ \text{Pa}$；$1.013\times10^5/2.5\approx4\times10^4$。</li>
+  </ol>
+  <div class="final">答：約 2.5 Pa，是大氣壓的四萬分之一。</div>
+  <p class="small"><a href="#sc-1-21">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-22" data-group="二、理想氣體（§1.2）" data-title="課本 1-22：瀉流">
+  <h3>課本 1-22（熱學小考作業）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-22"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>If you poke a hole in a container full of gas, the gas will start leaking out. In this problem you will make a rough estimate of the rate at which gas escapes through a hole. (This process is called <strong>effusion</strong>, at least when the hole is sufficiently small.)</p><p>(a) Consider a small portion (area $=A$) of the inside wall of a container full of gas. Show that the number of molecules colliding with this surface in a time interval $\Delta t$ is $PA\,\Delta t/(2m\bar v_x)$, where $P$ is the pressure, $m$ is the average molecular mass, and $\bar v_x$ is the average $x$ velocity of those molecules that collide with the wall.</p><p>(b) It’s not easy to calculate $\bar v_x$, but a good enough approximation is $(\overline{v_x^2})^{1/2}$, where the bar now represents an average over all molecules in the gas. Show that $(\overline{v_x^2})^{1/2}=\sqrt{kT/m}$.</p><p>(c) If we now take away this small part of the wall of the container, the molecules that would have collided with it will instead escape through the hole. Assuming that nothing enters through the hole, show that the number $N$ of molecules inside the container as a function of time is governed by the differential equation $$\frac{dN}{dt}=-\frac{A}{2V}\sqrt{\frac{kT}{m}}\,N.$$ Solve this equation (assuming constant temperature) to obtain a formula of the form $N(t)=N(0)e^{-t/\tau}$, where $\tau$ is the “characteristic time” for $N$ (and $P$) to drop by a factor of $e$.</p><p>(d) Calculate the characteristic time for air at room temperature to escape from a 1-liter container punctured by a 1-mm<sup>2</sup> hole.</p><p>(e) Your bicycle tire has a slow leak, so that it goes flat within about an hour after being inflated. Roughly how big is the hole? (Use any reasonable estimate for the volume of the tire.)</p><p>(f) In Jules Verne’s <em>Round the Moon</em>, the space travelers dispose of a dog’s corpse by quickly opening a window, tossing it out, and closing the window. Do you think they can do this quickly enough to prevent a significant amount of air from escaping? Justify your answer with some rough estimates and calculations.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 證明 $\Delta t$ 內撞上面積 $A$ 的分子數 $PA\Delta t/(2m\bar v_x)$；(b) $(\overline{v_x^2})^{1/2}=\sqrt{kT/m}$；(c) 推 $dN/dt$ 並解出 $\tau$；(d) 1 L、1 mm² 洞；(e) 輪胎一小時扁，洞多大；(f)《環月旅行》開窗丟狗。</div>
+  <ol class="write">
+    <li>(a) 每次衝量 $2mv_x$：$PA\Delta t=\mathcal N\cdot2m\bar v_x$ ⟹ $\mathcal N=\dfrac{PA\Delta t}{2m\bar v_x}$。</li>
+    <li>(b) $kT=m\overline{v_x^2}$ ⟹ $(\overline{v_x^2})^{1/2}=\sqrt{kT/m}$。</li>
+    <li>(c) $-\Delta N=\dfrac{PA\Delta t}{2\sqrt{mkT}}$，$P=NkT/V$ ⟹ $\dfrac{dN}{dt}=-\dfrac{A}{2V}\sqrt{\dfrac{kT}m}N$，$N=N_0e^{-t/\tau}$，$\tau=\dfrac{2V}{A}\sqrt{\dfrac m{kT}}$。</li>
+    <li>(d) $\sqrt{RT/M}=\sqrt{8.31(300)/0.029}=293\ \text{m/s}$；$\tau=\dfrac{2(10^{-3})}{(10^{-6})(293)}=6.8\ \text{s}$。</li>
+    <li>(e) $V=\pi(0.012)^2(2.1)=9.5\times10^{-4}\ \text{m}^3$，$\tau=3600\ \text{s}$：$A=\dfrac{2V}{\tau(293)}=1.8\times10^{-9}\ \text{m}^2$，$d\approx0.05\ \text{mm}$。</li>
+    <li>(f) $V=20\ \text{m}^3$、$A=0.1\ \text{m}^2$：$\tau=\dfrac{40}{0.1(293)}=1.4\ \text{s}$；開窗 1 s 漏 $1-e^{-1/1.36}=52\%$，不可行。</li>
+  </ol>
+  <div class="final">答：(c) $\tau=\frac{2V}{A}\sqrt{m/kT}$；(d) 6.8 s；(e) 約 0.05 mm；(f) 會漏掉約一半空氣。</div>
+  <p class="small"><a href="#sc-1-22">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-02a" data-group="二、理想氣體（§1.2）" data-title="自編 2-A：離心機分離鈾">
+  <h3>自編難題 2-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\text{UF}_6$ 在半徑 10 cm、壁速 500 m/s 的離心機中，300 K。(a) 證明 $n(r)=n(0)e^{m\omega^2r^2/2kT}$；(b) $^{238}\text{UF}_6$ 壁/軸壓力比；(c) 分離因子；(d) 相當於幾級擴散（每級 1.0043）。</div>
+  <ol class="write">
+    <li>(a) 薄層：$P(r+dr)A-P(r)A=\rho A\,dr\,\omega^2r$ ⟹ $dP/dr=\rho\omega^2r$；$P=nkT$、$\rho=mn$ ⟹ $\ln\frac{n}{n_0}=\frac{m\omega^2r^2}{2kT}$。</li>
+    <li>(b) $\dfrac{m(\omega a)^2}{2kT}=\dfrac{(5.84\times10^{-25})(2.5\times10^5)}{2(4.14\times10^{-21})}=17.6$，比 $e^{17.6}=4.6\times10^7$。</li>
+    <li>(c) 比值相除只剩 $\Delta m=3\ \text{u}$：$\dfrac{\Delta m(\omega a)^2}{2kT}=0.150$，因子 $e^{0.150}=1.16$。</li>
+    <li>(d) $n=\ln1.16/\ln1.0043=0.150/0.00429\approx35$。</li>
+  </ol>
+  <div class="final">答：(b) $\approx5\times10^7$；(c) 1.16；(d) 約 35 級。</div>
+  <p class="small"><a href="#t1-self-02a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-02b" data-group="二、理想氣體（§1.2）" data-title="自編 2-B：熱流逸">
+  <h3>自編難題 2-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　兩容器以遠小於平均自由徑的小孔相連，$T_1=300\ \text{K}$、$T_2=600\ \text{K}$。(a) 通量；(b) 穩定時 $P_2/P_1$（$P_1=100$ Pa）；(c) $n_2/n_1$；(d) 為何與開門的房間不同？</div>
+  <ol class="write">
+    <li>(a) 習題 1.22：$\Phi=\dfrac{P}{2m\bar v_x}=\dfrac{P}{2\sqrt{mkT}}$。</li>
+    <li>(b) $\Phi_1=\Phi_2$ ⟹ $P_2/P_1=\sqrt{T_2/T_1}=\sqrt2$，$P_2=141\ \text{Pa}$。</li>
+    <li>(c) $n=P/kT$ ⟹ $n_2/n_1=\sqrt{T_1/T_2}=0.707$。</li>
+    <li>(d) 小孔時分子各自穿過，平衡條件是兩向分子流相等；大開口可整團流動，條件才是壓力相等。</li>
+  </ol>
+  <div class="final">答：$P_2=141$ Pa，$n_2/n_1=0.707$；熱流逸，不是壓力相等。</div>
+  <p class="small"><a href="#t1-self-02b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 片段 B ===== -->
+<!-- ===== 三、能量均分（§1.3）===== -->
+<article class="exam-item" data-exam-id="tk1x-1b" data-group="三、能量均分（§1.3）" data-title="考古 某級 1(b)：敘述均分定理">
+  <h3>考古 某級期中 1(b)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1b"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is</p>$$PV=NkT$$<p>(gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>(a) Assuming this ideal gas law is valid, use this law and the microscopic model (hint: gas molecules colliding with walls of chamber causing pressure) to show for a monoatomic ideal gas confined in three spatial dimensions: (6pts)</p>$$\frac12m\lt\vec v^2\gt=\frac32kT$$<p>(b) The extension of 1(a) is called energy equipartition theorem. State this theorem by using this result as an example. (2pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（第 1 題 (b) 小題，完整翻譯）</strong>　（承第 1 題：理想氣體遵守 $PV=NkT$。(a) 用這個定律與微觀模型證明三維單原子理想氣體 $\frac12m\langle\vec v^2\rangle=\frac32kT$。）(b) 1(a) 的推廣稱為能量均分定理。以這個結果為例，敘述這個定理。（2 分）</div>
+  <p class="small">原卷：某級全部熱學（期中末）.pdf p.2（某級上學期期中，範圍第 1–4.1 章）第 1 題 (b)</p>
+  <ol class="write">
+    <li>$v^2=v_x^2+v_y^2+v_z^2$，三方向等價：$\frac12m\overline{v_x^2}=\frac12m\overline{v_y^2}=\frac12m\overline{v_z^2}=\frac13\cdot\frac32kT=\frac12kT$。</li>
+    <li>均分定理：熱平衡溫度 $T$ 時，能量中每一個座標或速度分量的<b>二次項</b>（二次自由度），平均能量都是 $\frac12kT$（如 $\frac12I\omega^2$、$\frac12k_sx^2$）。</li>
+    <li>$N$ 個分子、每個 $f$ 個自由度：$U_{\text{thermal}}=Nf\cdot\frac12kT$；1(a) 是 $f=3$。</li>
+  </ol>
+  <div class="final">答：每個二次自由度平均 $\frac12kT$；單原子 3 個平移自由度 ⟹ $\frac32kT$。</div>
+  <p class="small"><a href="#tk1x-1b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-dof" data-group="三、能量均分（§1.3）" data-title="課本 §1.3：數自由度與一莫耳的熱能">
+  <h3>課本 §1.3 Eq. (1.23)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-dof"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>In a gas of monatomic molecules like helium or argon, only translational motion counts, so each molecule has three degrees of freedom, that is, $f = 3$. In a diatomic gas like oxygen ($\text{O}_2$) or nitrogen ($\text{N}_2$), each molecule can also rotate about two different axes (see Figure 1.5).</p><p>So air molecules ($\text{N}_2$ and $\text{O}_2$), for instance, have only five degrees of freedom, not seven, at room temperature.</p><p>In a solid, each atom can vibrate in three perpendicular directions, so for each atom there are six degrees of freedom (three for kinetic energy and three for potential energy).</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　寫出氦、空氣（室溫）、固體（每原子）的 $f$，求一莫耳在 300 K 的 $U_{\text{thermal}}$；一個自由度平均多少能量？</div>
+  <ol class="write">
+    <li>$\frac12kT=\frac12(1.381\times10^{-23})(300)=2.07\times10^{-21}\ \text{J}$。</li>
+    <li>一莫耳 $Nk=R$：$U=\frac f2RT$，$RT=8.315\times300=2494.5\ \text{J}$。</li>
+    <li>氦 $f=3$：$\frac32RT=3742\ \text{J}$；空氣 $f=5$（平移 3＋轉動 2，振動凍結）：$6236\ \text{J}$；固體 $f=6$：$3RT=7484\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：3742 J、6236 J、7484 J；$\frac12kT=2.07\times10^{-21}\ \text{J}$。</div>
+  <p class="small"><a href="#sc-ex-dof">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-23" data-group="三、能量均分（§1.3）" data-title="課本 1-23：一公升氦與空氣的熱能">
+  <h3>課本 1-23</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the total thermal energy in a liter of helium at room temperature and atmospheric pressure. Then repeat the calculation for a liter of air.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　計算室溫、一大氣壓下一公升氦的總熱能；再對一公升空氣算一次。</div>
+  <ol class="write">
+    <li>$U=Nf\cdot\frac12kT=\frac f2NkT=\frac f2PV$（理想氣體）。</li>
+    <li>$PV=(1.013\times10^5)(10^{-3})=101.3\ \text{J}$。</li>
+    <li>氦 $f=3$：$U=\frac32(101.3)=152\ \text{J}$；空氣 $f=5$：$U=\frac52(101.3)=253\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：氦約 150 J，空氣約 250 J。</div>
+  <p class="small"><a href="#sc-1-23">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-24" data-group="三、能量均分（§1.3）" data-title="課本 1-24：一克鉛的熱能">
+  <h3>課本 1-24（熱學小考作業題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-24"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the total thermal energy in a gram of lead at room temperature, assuming that none of the degrees of freedom are “frozen out” (this happens to be a good assumption in this case).</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　計算室溫下一克鉛的總熱能，假設沒有自由度被凍結。</div>
+  <ol class="write">
+    <li>固體每原子 $f=6$（三方向各一動能一位能）。</li>
+    <li>$n=1/207.2=4.83\times10^{-3}\ \text{mol}$。</li>
+    <li>$U=\frac f2nRT=3(4.83\times10^{-3})(8.315)(300)=36.1\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：約 36 J。</div>
+  <p class="small"><a href="#sc-1-24">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-25" data-group="三、能量均分（§1.3）" data-title="課本 1-25：水蒸氣分子的自由度">
+  <h3>課本 1-25</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-25"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>List all the degrees of freedom, or as many as you can, for a molecule of water vapor. (Think carefully about the various ways in which the molecule can vibrate.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　列出一個水蒸氣分子所有的自由度（仔細想想它可以怎麼振動）。</div>
+  <ol class="write">
+    <li>3 原子 × 3 座標 ＝ 9 種運動：平移 3、轉動 3（彎曲形，三軸都能轉），振動模式 $9-3-3=3$。</li>
+    <li>振動模式：對稱伸縮、反對稱伸縮、彎曲；每個模式動能＋位能 2 個自由度。</li>
+    <li>$f=3+3+3\times2=12$。</li>
+  </ol>
+  <div class="final">答：12 個（平移 3、轉動 3、振動 6）；室溫時伸縮凍結、彎曲部分活化。</div>
+  <p class="small"><a href="#sc-1-25">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1-114-2" data-group="三、能量均分（§1.3）" data-title="考古 114-2：均分定理求 v_rms、氫與氧">
+  <h3>考古 114-2</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1-114-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. [15pts] Equipartition theorem states that the average energy of any quadratic degree of freedom at temperature $T$ is $\frac12kT$.</p><p>(a) Use above theorem to find the root mean square speed of a gas molecule with mass $m$ confined in a three dimensional box at temperature $T$. (5pts)</p><p>(b) Calculate the root mean square speed of a hydrogen molecule at room temperature. (5pts)</p><p>(c) For a gas containing hydrogen molecules and oxygen molecules in thermal equilibrium. Which molecules are moving faster, on average? (2pts) By what factor? (3pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（完整翻譯）</strong>　（15 分）均分定理說：溫度 $T$ 時任何一個二次自由度的平均能量是 $\frac12kT$。(a) 用這個定理求質量 $m$、在溫度 $T$ 的三維盒子中的氣體分子的方均根速率。（5 分）(b) 計算室溫下氫分子的方均根速率。（5 分）(c) 氫分子與氧分子組成的氣體處於熱平衡。平均而言哪一種分子跑得比較快？（2 分）快幾倍？（3 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-1.HEIC）第 2 題</p>
+  <ol class="write">
+    <li>(a) 三個平移平方項各 $\frac12kT$：$\frac12m\overline{v^2}=\frac32kT$ ⟹ $v_{\text{rms}}=\sqrt{3kT/m}$。</li>
+    <li>(b) $m_{\text{H}_2}=2.016\times1.6605\times10^{-27}=3.348\times10^{-27}\ \text{kg}$。</li>
+    <li>$v_{\text{rms}}=\sqrt{\dfrac{3(1.381\times10^{-23})(300)}{3.348\times10^{-27}}}=1.93\times10^3\ \text{m/s}$。</li>
+    <li>(c) 熱平衡同 $T$，$v_{\text{rms}}\propto m^{-1/2}$：$\sqrt{32.00/2.016}=3.98\approx4$。</li>
+  </ol>
+  <div class="final">答：(a) $\sqrt{3kT/m}$；(b) 約 1930 m/s；(c) 氫較快，約 4 倍。</div>
+  <p class="small"><a href="#tk1-114-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-03a" data-group="三、能量均分（§1.3）" data-title="自編 03a：AFM 懸臂的熱擾動">
+  <h3>自編難題 03a</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　AFM 懸臂當一維彈簧振子：$k_s=0.05\ \text{N/m}$、$m=10^{-11}\ \text{kg}$、300 K。(a) $x_{\text{rms}}$；(b) $v_{\text{rms}}$ 與 $v_{\text{rms}}/x_{\text{rms}}$；(c) 要 $x_{\text{rms}}\lt0.01\ \text{nm}$ 的最小 $k_s$；4 K 時的 $x_{\text{rms}}$。</div>
+  <ol class="write">
+    <li>能量 $\frac12mv^2+\frac12k_sx^2$：兩個二次自由度，各 $\frac12kT$；$kT=4.14\times10^{-21}\ \text{J}$。</li>
+    <li>(a) $x_{\text{rms}}=\sqrt{kT/k_s}=\sqrt{4.14\times10^{-21}/0.05}=2.9\times10^{-10}\ \text{m}$。</li>
+    <li>(b) $v_{\text{rms}}=\sqrt{kT/m}=2.0\times10^{-5}\ \text{m/s}$；$v_{\text{rms}}/x_{\text{rms}}=\sqrt{k_s/m}=\omega=7.1\times10^4\ \text{rad/s}$。</li>
+    <li>(c) $k_s\gt kT/x_0^2=4.14\times10^{-21}/10^{-22}=41\ \text{N/m}$；4 K：$x_{\text{rms}}=\sqrt{(1.381\times10^{-23})(4)/0.05}=3.3\times10^{-11}\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：(a) 0.29 nm；(b) $2.0\times10^{-5}\ \text{m/s}$，比值 $=\omega$；(c) $k_s\gt41\ \text{N/m}$；4 K 時 0.033 nm（仍不夠）。</div>
+  <p class="small"><a href="#t1-self-03a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-03b" data-group="三、能量均分（§1.3）" data-title="自編 03b：氦與氮達成熱平衡">
+  <h3>自編難題 03b</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　剛性絕熱容器、固定導熱隔板：1 mol He 400 K、1 mol N$_2$ 250 K。(a) 平衡溫度（為何不是 325 K）；(b) 傳熱量；(c) 平衡後兩者 $v_{\text{rms}}$、比值、平均平移動能。</div>
+  <ol class="write">
+    <li>$Q_{\text{外}}=W=0$，總熱能守恆：$\frac32RT_{\text{He}}+\frac52RT_{\text{N}_2}=4RT_f$。</li>
+    <li>$T_f=\dfrac{3(400)+5(250)}8=306\ \text{K}$（$f$ 加權平均，偏向氮）。</li>
+    <li>$Q_{\text{He}}=\frac32(8.315)(306.25-400)=-1169\ \text{J}$：1169 J 由氦流向氮。</li>
+    <li>$v=\sqrt{3RT_f/M}$：He 1381 m/s，N$_2$ 522 m/s，比 $\sqrt{28.01/4.003}=2.65$；平均平移動能都是 $\frac32kT_f$。</li>
+  </ol>
+  <div class="final">答：306 K；1169 J；氦快 2.65 倍，平均平移動能相同。</div>
+  <p class="small"><a href="#t1-self-03b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 四、熱與功（§1.4）===== -->
+<article class="exam-item" data-exam-id="sc-ex-cal" data-group="四、熱與功（§1.4）" data-title="課本 §1.4：焦耳、卡與大卡">
+  <h3>課本 §1.4 p.19</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-cal"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>The official SI unit of energy is the joule, defined as $1\ \text{kg·m}^2/\text{s}^2$. (So a 1-kg object traveling at 1 m/s has $\frac12$ J of kinetic energy, $\frac12mv^2$.) Traditionally, however, heat has been measured in calories, where 1 cal was defined as the amount of heat needed to raise the temperature of a gram of water by 1°C (while no work is being done on it).</p><p>Today the “thermochemical calorie” is defined to equal exactly 4.184 J, and many people still use this unit when dealing with thermal or chemical energy. The well-known food calorie (sometimes spelled with a capital C) is actually a kilocalorie, or 4184 J.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 1 kg、1 m/s 的動能；(b) 1 kg 水升 1°C 要多少 J、cal、大卡；(c) 這些能量能把 1 kg 舉多高。</div>
+  <ol class="write">
+    <li>(a) $\frac12(1)(1)^2=0.5\ \text{J}$。</li>
+    <li>(b) $1000\ \text{g}\times1\ \text{cal/(g·°C)}\times1\ \text{°C}=1000\ \text{cal}=1\ \text{Cal}=4184\ \text{J}$。</li>
+    <li>(c) $h=Q/mg=4184/9.8=427\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：0.5 J；4184 J＝1000 cal＝1 大卡；427 m。</div>
+  <p class="small"><a href="#sc-ex-cal">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-26" data-group="四、熱與功（§1.4）" data-title="課本 1-26：電池、電阻與水">
+  <h3>課本 1-26</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-26"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A battery is connected in series to a resistor, which is immersed in water (to prepare a nice hot cup of tea). Would you classify the flow of energy from the battery to the resistor as “heat” or “work”? What about the flow of energy from the resistor to the water?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　電池與電阻串聯，電阻泡在水裡。電池到電阻的能量是熱還是功？電阻到水呢？</div>
+  <ol class="write">
+    <li>熱＝因溫差自發的能量流動；功＝其他所有方式。</li>
+    <li>電池 → 電阻：電池即使比電阻冷也照樣送能量，不是溫差驅動 ⟹ 功（電功）。</li>
+    <li>電阻 → 水：電阻比水熱，自發傳導 ⟹ 熱。</li>
+  </ol>
+  <div class="final">答：電池到電阻是功；電阻到水是熱。</div>
+  <p class="small"><a href="#sc-1-26">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-27" data-group="四、熱與功（§1.4）" data-title="課本 1-27：沒加熱卻升溫、加熱卻不升溫">
+  <h3>課本 1-27</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-27"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Give an example of a process in which no heat is added to a system, but its temperature increases. Then give an example of the opposite: a process in which heat is added to a system but its temperature does not change.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　舉例：沒有熱加入但溫度升高；有熱加入但溫度不變。</div>
+  <ol class="write">
+    <li>$Q=0$、$W\gt0$ ⟹ $\Delta U=W\gt0$：快速打氣（絕熱壓縮）、搓手、微波爐、通電的電阻。</li>
+    <li>$Q\gt0$、$T$ 不變：沸騰等相變（能量拆分子間的鍵）。</li>
+    <li>或理想氣體等溫膨脹：$W=-Q$，$\Delta U=0$。</li>
+  </ol>
+  <div class="final">答：絕熱壓縮／搓手／微波；沸騰／等溫膨脹。</div>
+  <p class="small"><a href="#sc-1-27">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-28" data-group="四、熱與功（§1.4）" data-title="課本 1-28：微波爐煮沸一杯水">
+  <h3>課本 1-28</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-28"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Estimate how long it should take to bring a cup of water to boiling temperature in a typical 600-watt microwave oven, assuming that all the energy ends up in the water. (Assume any reasonable initial temperature for the water.) Explain why no heat is involved in this process.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　估計 600 W 微波爐把一杯水加熱到沸點要多久（能量全進水，初溫自取），並說明為什麼沒有熱。</div>
+  <ol class="write">
+    <li>取 200 g、20°C：$\Delta U=mc\Delta T=(200)(4.186)(80)=6.7\times10^4\ \text{J}$。</li>
+    <li>$t=\Delta U/P=6.7\times10^4/600=112\ \text{s}\approx2\ \text{min}$。</li>
+    <li>磁控管不是因為比水熱才送能量，是電磁功；沒有更熱的物體 ⟹ 沒有熱。</li>
+  </ol>
+  <div class="final">答：約 2 分鐘；能量以電磁功進入。</div>
+  <p class="small"><a href="#sc-1-28">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-29" data-group="四、熱與功（§1.4）" data-title="課本 1-29：升溫 5°C 加了多少熱（陷阱）">
+  <h3>課本 1-29</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-29"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A cup containing 200 g of water is sitting on your dining room table. After carefully measuring its temperature to be 20°C, you leave the room. Returning ten minutes later, you measure its temperature again and find that it is now 25°C. What can you conclude about the amount of heat added to the water? (Hint: This is a trick question.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　200 g 水十分鐘內由 20°C 變 25°C（你不在場）。加了多少熱？（陷阱題）</div>
+  <ol class="write">
+    <li>$\Delta U=mc\Delta T=(200)(1)(5)=1000\ \text{cal}=4186\ \text{J}$。</li>
+    <li>$Q=\Delta U-W$，$W$ 未知（可能有人攪拌）⟹ $Q$ 無法確定。</li>
+  </ol>
+  <div class="final">答：只知道能量增加約 1000 cal；熱多少無法得知。</div>
+  <p class="small"><a href="#sc-1-29">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-30" data-group="四、熱與功（§1.4）" data-title="課本 1-30：搖一瓶水升溫多少">
+  <h3>課本 1-30</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-30"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Put a few spoonfuls of water into a bottle with a tight lid. Make sure everything is at room temperature, measuring the temperature of the water with a thermometer to make sure. Now close the bottle and shake it as hard as you can for several minutes. When you’re exhausted and ready to drop, shake it for several minutes more. Then measure the temperature again. Make a rough calculation of the expected temperature change, and compare.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用力搖一瓶裝少量水的瓶子幾分鐘再幾分鐘，粗估水溫升多少並和實驗比較。</div>
+  <ol class="write">
+    <li>估每半次水移 0.3 m、0.125 s：$v=2.4\ \text{m/s}$。</li>
+    <li>每半次動能全變內能：$mc\Delta T_1=\frac12mv^2$ ⟹ $\Delta T_1=v^2/2c=6.9\times10^{-4}\ \text{K}$（與水量無關）。</li>
+    <li>每秒 8 次：每分鐘 0.33 K；搖 10 分鐘最多約 3 K。</li>
+    <li>比較時做「只握不搖」對照組，扣掉手傳進去的熱。</li>
+  </ol>
+  <div class="final">答：每分鐘約 0.3 K，10 分鐘最多約 3 K（上限估計）。</div>
+  <p class="small"><a href="#sc-1-30">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-04a" data-group="四、熱與功（§1.4）" data-title="自編 04a：Joule 落錘攪拌">
+  <h3>自編難題 04a</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　2.0 kg 重物等速落 1.5 m、共 20 次，帶槳攪拌絕熱容器中 0.50 kg 水。(a) 水的 $W$、$Q$、$\Delta U$、$\Delta T$；(b) 拿掉絕熱外殼冷卻回室溫的 $Q$、$W$、$\Delta U$；(c) 能否說水什麼都沒發生。</div>
+  <ol class="write">
+    <li>(a) $W=20Mgh=20(2.0)(9.8)(1.5)=588\ \text{J}$（等速：位能全給槳葉，是功）；$Q=0$；$\Delta U=588\ \text{J}$。</li>
+    <li>$\Delta T=\Delta U/mc=588/(0.50\times4186)=0.28\ \text{K}$。</li>
+    <li>(b) $W=0$，$\Delta U=-588\ \text{J}$，$Q=-588\ \text{J}$（溫差自發流出，是熱）。</li>
+    <li>(c) 全程 $\Delta U=0$，但 $W=+588$、$Q=-588$：水把功轉成熱送給環境。</li>
+  </ol>
+  <div class="final">答：(a) 588 J、0、588 J，0.28 K；(b) 0、−588 J、−588 J；(c) 不能。</div>
+  <p class="small"><a href="#t1-self-04a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-04b" data-group="四、熱與功（§1.4）" data-title="自編 04b：系統邊界與熱、功">
+  <h3>自編難題 04b</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　汽缸中電熱絲：電源給 500 J，氣體推活塞對外 200 J，經缸壁傳出 100 J，電熱絲穩態。(a) 系統＝氣體；(b) 系統＝氣體＋電熱絲；(c) 用 $\Delta U=Q-W$ 慣例重寫 (a)。</div>
+  <ol class="write">
+    <li>(a) 熱絲比氣體熱 ⟹ 500 J 是熱：$Q=500-100=400\ \text{J}$，$W=-200\ \text{J}$，$\Delta U=200\ \text{J}$。</li>
+    <li>(b) 電流穿過邊界 ⟹ 500 J 是功：$W=500-200=300\ \text{J}$，$Q=-100\ \text{J}$，$\Delta U=200\ \text{J}$。</li>
+    <li>(c) $W_{\text{by}}=200\ \text{J}$：$\Delta U=Q-W_{\text{by}}=400-200=200\ \text{J}$。</li>
+    <li>$Q$、$W$ 隨邊界、慣例改變；$\Delta U$ 不變。</li>
+  </ol>
+  <div class="final">答：(a) 400、−200、200 J；(b) −100、300、200 J；(c) 400、200、200 J。</div>
+  <p class="small"><a href="#t1-self-04b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 五、壓縮功（§1.5）===== -->
+<article class="exam-item" data-exam-id="sc-ex-100j" data-group="五、壓縮功（§1.5）" data-title="課本 §1.5：壓掉一公升要 100 J">
+  <h3>課本 §1.5 Eq. (1.28)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-100j"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>For example, if you have a tank of air at atmospheric pressure ($10^5\ \text{N/m}^2$) and you wish to reduce its volume by one liter ($10^{-3}\ \text{m}^3$), you must perform 100 J of work. You can easily convince yourself that the same formula holds if the gas expands; then $\Delta V$ is positive, so the work done on the gas is negative, as required.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　大氣壓（$10^5\ \text{N/m}^2$）的空氣槽，體積減少一公升要做多少功？膨脹一公升呢？</div>
+  <ol class="write">
+    <li>準靜態、$P$ 近似不變：$W=-P\Delta V$。</li>
+    <li>壓縮：$W=-(10^5)(-10^{-3})=+100\ \text{J}$；膨脹：$W=-100\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：壓縮 +100 J；膨脹 −100 J（氣體對外做 100 J）。</div>
+  <p class="small"><a href="#sc-ex-100j">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-31" data-group="五、壓縮功（§1.5）" data-title="課本 1-31：氦 P∝V 由 1 L 到 3 L">
+  <h3>課本 1-31</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-31"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Imagine some helium in a cylinder with an initial volume of 1 liter and an initial pressure of 1 atm. Somehow the helium is made to expand to a final volume of 3 liters, in such a way that its pressure rises in direct proportion to its volume.</p><p>(a) Sketch a graph of pressure vs. volume for this process.</p><p>(b) Calculate the work done on the gas during this process, assuming that there are no “other” types of work being done.</p><p>(c) Calculate the change in the helium’s energy content during this process.</p><p>(d) Calculate the amount of heat added to or removed from the helium during this process.</p><p>(e) Describe what you might do to cause the pressure to rise as the helium expands.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　氦初始 1 L、1 atm，壓力與體積成正比地膨脹到 3 L。(a) PV 圖；(b) $W$；(c) $\Delta U$；(d) $Q$；(e) 怎麼做到。</div>
+  <div class="rote">
+    <p><b>看到</b>「壓力與體積成正比」＋「求 $W$、$\Delta U$、$Q$」⟹ 題型：<b>PV 圖直線路徑的功＋第一定律</b></p>
+    <p><b>背</b></p>
+    <ol>
+      <li>$W=-\int P\,dV$；$P\propto V$ 時 $W=-\tfrac12(P_fV_f-P_iV_i)$</li>
+      <li>理想氣體 $\Delta U=\tfrac f2(P_fV_f-P_iV_i)$（單原子 $f=3$、雙原子 $f=5$）</li>
+      <li>$Q=\Delta U-W$</li>
+      <li>$1\ \text{atm·L}=101.3\ \text{J}$</li>
+    </ol>
+  </div>
+  <ol class="write">
+    <li>$P=cV$，$c=\dfrac{1\ \text{atm}}{1\ \text{L}}$，$P_f=3\ \text{atm}$；(a) 圖：過原點直線 $(1,1)\to(3,3)$。</li>
+    <li>(b) $W=-\tfrac12(3\cdot3-1\cdot1)=-4\ \text{atm·L}=-405\ \text{J}$</li>
+    <li>(c) $\Delta U=\tfrac32(9-1)=12\ \text{atm·L}=1216\ \text{J}$</li>
+    <li>(d) $Q=12-(-4)=16\ \text{atm·L}=1621\ \text{J}$（吸熱）</li>
+    <li>(e) $PV$ 變 9 倍 ⟹ 溫度升 9 倍：一邊加熱、一邊讓活塞慢慢外移。</li>
+  </ol>
+  <div class="final">答：$W\approx-405\ \text{J}$，$\Delta U\approx1216\ \text{J}$，$Q\approx1621\ \text{J}$（課本取 $10^5$ Pa：−400、1200、1600 J）。</div>
+  <p class="small"><a href="#sc-1-31">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1-114-7" data-group="五、壓縮功（§1.5）" data-title="考古 114-7：氦 P∝V 膨脹到 4 L">
+  <h3>考古 114-7（課本 1.31 換數字）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1-114-7"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>7. [10pts] Imagine some helium in a cylinder with an initial volume of 1 liter and an initial pressure of 1 atm (around $10^5N/m^2$). Somehow the helium is made to expand to a final volume of 4 liters (1 liter is $10^{-3}m$), in such a way that its pressure rises in direct proportional to its volume. For the following calculations related to energy, use Joule as the energy unit.</p><p>(a) Sketch a graph of pressure vs. volume for this process. (2pts)</p><p>(b) Calculate the work done on the gas during this process, assuming that there are no ”other” types of work being done. (4pts)</p><p>(c) Calculate the change in the helium’s energy content during this process. (4pts)</p><p class=\"original-subhead\"><strong>課本原文（Schroeder Problem 1.31，原題是膨脹到 3 L，另有 (d)(e)）</strong></p><p>Imagine some helium in a cylinder with an initial volume of 1 liter and an initial pressure of 1 atm. Somehow the helium is made to expand to a final volume of 3 liters, in such a way that its pressure rises in direct proportion to its volume.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（完整翻譯）</strong>　（10 分）想像汽缸裡有一些氦，初體積 1 公升、初壓力 1 atm（約 $10^5\ \text{N/m}^2$）。用某種方法讓氦膨脹到末體積 4 公升（1 公升是 $10^{-3}\ \text{m}^3$；原卷寫成 $10^{-3}\,m$），而且壓力與體積成正比地上升。以下和能量有關的計算，請用焦耳當能量單位。(a) 畫出這個過程的壓力對體積圖。（2 分）(b) 計算過程中對氣體做的功，假設沒有「其他」種類的功。（4 分）(c) 計算過程中氦的能量變化。（4 分）</div>
+  <p class="small">原卷：114 級上學期熱學期中（只有手機照片 114級熱學期中(上學期)-3、-4.HEIC）第 7 題</p>
+  <ol class="write">
+    <li>(a) $P=cV$：過原點直線 $(1\ \text{L},1\ \text{atm})\to(4\ \text{L},4\ \text{atm})$。</li>
+    <li>(b) $W=-\int cV\,dV=-\frac12(P_fV_f-P_iV_i)$；$P_fV_f=(4\times10^5)(4\times10^{-3})=1600\ \text{J}$，$P_iV_i=100\ \text{J}$。</li>
+    <li>$W=-\frac12(1600-100)=-750\ \text{J}$。</li>
+    <li>(c) $\Delta U=\frac32(P_fV_f-P_iV_i)=\frac32(1500)=2250\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：(b) $W=-750\ \text{J}$；(c) $\Delta U=+2250\ \text{J}$。</div>
+  <p class="small"><a href="#tk1-114-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-32" data-group="五、壓縮功（§1.5）" data-title="課本 1-32：壓縮一公升水">
+  <h3>課本 1-32</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-32"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>By applying a pressure of 200 atm, you can compress water to 99% of its usual volume. Sketch this process (not necessarily to scale) on a <i>PV</i> diagram, and estimate the work required to compress a liter of water by this amount. Does the result surprise you?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　200 atm 可把水壓到 99%。畫 PV 圖並估計壓縮一公升水這麼多所需的功。意外嗎？</div>
+  <ol class="write">
+    <li>PV 圖：$V$ 只在 0.99–1.00 L，$P$ 由 1 升到 200 atm，幾乎垂直的線。</li>
+    <li>直線近似：$W\approx-\bar P\Delta V=-\frac12(1+200)(-0.01)=1.0\ \text{atm·L}\approx100\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：約 100 J；壓力大但位移（$\Delta V$）很小，功不大。</div>
+  <p class="small"><a href="#sc-1-32">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-33" data-group="五、壓縮功（§1.5）" data-title="課本 1-33：三角形循環的正負">
+  <h3>課本 1-33</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-33"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An ideal gas is made to undergo the cyclic process shown in Figure 1.10(a). For each of the steps A, B, and C, determine whether each of the following is positive, negative, or zero: (a) the work done on the gas; (b) the change in the energy content of the gas; (c) the heat added to the gas. Then determine the sign of each of these three quantities for the whole cycle. What does this process accomplish?</p></div>
+<p class="original-caption">Schroeder 習題 1-33（Problem 1.33）· p.23</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　理想氣體做 Fig. 1.10(a) 的循環（A 定壓膨脹、B 定容加壓、C 斜線回原點）。各步與整圈的 $W$、$\Delta U$、$Q$ 正負；這個過程達成什麼？</div>
+  <ol class="write">
+    <li>$W$ 看 $V$（變小為正）；$\Delta U\propto PV$；$Q=\Delta U-W$。</li>
+    <li>A：$W-$、$\Delta U+$、$Q+$。B：$W0$、$\Delta U+$、$Q+$。C：$W+$、$\Delta U-$、$Q-$。</li>
+    <li>整圈：$\Delta U=0$；逆時針，C 壓力高於 A ⟹ $W\gt0$；$Q=-W\lt0$。</li>
+  </ol>
+  <div class="final">答：整圈 $W+$、$\Delta U=0$、$Q-$：吃進功、放出熱，把熱從 A、B 的熱源搬到 C 的放熱處。</div>
+  <p class="small"><a href="#sc-1-33">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-34" data-group="五、壓縮功（§1.5）" data-title="課本 1-34：雙原子氣體矩形循環">
+  <h3>課本 1-34</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-34"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An ideal diatomic gas, in a cylinder with a movable piston, undergoes the rectangular cyclic process shown in Figure 1.10(b). Assume that the temperature is always such that rotational degrees of freedom are active, but vibrational modes are “frozen out.” Also assume that the only type of work done on the gas is quasistatic compression-expansion work.</p><p>(a) For each of the four steps A through D, compute the work done on the gas, the heat added to the gas, and the change in the energy content of the gas. Express all answers in terms of $P_1$, $P_2$, $V_1$, and $V_2$. (Hint: Compute $\Delta U$ before $Q$, using the ideal gas law and the equipartition theorem.)</p><p>(b) Describe in words what is physically being done during each of the four steps; for example, during step A, heat is added to the gas (from an external flame or something) while the piston is held fixed.</p><p>(c) Compute the net work done on the gas, the net heat added to the gas, and the net change in the energy of the gas during the entire cycle. Are the results as you expected? Explain briefly.</p></div>
+<p class="original-caption">Schroeder 習題 1-34（Problem 1.34）· p.23</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　雙原子理想氣體（轉動活化、振動凍結）做 Fig. 1.10(b) 的矩形循環 A（定容 $P_1\to P_2$）、B（定壓 $V_1\to V_2$）、C（定容 $P_2\to P_1$）、D（定壓 $V_2\to V_1$）。(a) 各步 $W$、$Q$、$\Delta U$；(b) 物理描述；(c) 整圈。</div>
+  <ol class="write">
+    <li>$U=\frac52PV$：$\Delta U=\frac52(P_fV_f-P_iV_i)$；定容 $W=0$、定壓 $W=-P\Delta V$；$Q=\Delta U-W$。</li>
+    <li>A：$W=0$，$\Delta U=Q=\frac52V_1(P_2-P_1)$。B：$W=-P_2(V_2-V_1)$，$\Delta U=\frac52P_2(V_2-V_1)$，$Q=\frac72P_2(V_2-V_1)$。</li>
+    <li>C：$W=0$，$\Delta U=Q=-\frac52V_2(P_2-P_1)$。D：$W=P_1(V_2-V_1)$，$\Delta U=-\frac52P_1(V_2-V_1)$，$Q=-\frac72P_1(V_2-V_1)$。</li>
+    <li>(b) A 固定活塞加熱；B 加熱並外移活塞；C 固定活塞冷卻；D 冷卻並推回活塞。</li>
+    <li>(c) $W_{\text{淨}}=-(P_2-P_1)(V_2-V_1)$，$\Delta U=0$，$Q_{\text{淨}}=(P_2-P_1)(V_2-V_1)$。</li>
+  </ol>
+  <div class="final">答：整圈氣體淨對外做功＝矩形面積，淨吸熱全部變成功（熱機）。</div>
+  <p class="small"><a href="#sc-1-34">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-isotherm" data-group="五、壓縮功（§1.5）" data-title="課本 §1.5：等溫壓縮的功與熱">
+  <h3>課本 §1.5 Eq. (1.30)–(1.31)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-isotherm"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>Suppose, then, that you compress an ideal gas isothermally, that is, without changing its temperature. This almost certainly implies that the process is quasistatic, so I can use formula 1.29 to calculate the work done, with $P$ determined by the ideal gas law.</p>$$W=-\int_{V_i}^{V_f}P\,dV=-NkT\int_{V_i}^{V_f}\frac1V\,dV=NkT\ln\frac{V_i}{V_f}.\qquad(1.30)$$<p>As the gas is compressed isothermally, heat must be flowing out, into the environment.</p>$$Q=\Delta U-W=\Delta\left(\tfrac12NfkT\right)-W=0-W=NkT\ln\frac{V_f}{V_i}.\qquad(1.31)$$</div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　理想氣體由 $V_i$ 準靜態等溫壓縮到 $V_f$：推導 $W$、$Q$；1 L、1 atm 空氣等溫壓到 0.5 L 的數值。</div>
+  <ol class="write">
+    <li>$W=-\int P\,dV=-NkT\int_{V_i}^{V_f}\frac{dV}V=NkT\ln\frac{V_i}{V_f}$。</li>
+    <li>等溫 $\Delta U=0$：$Q=-W=NkT\ln\frac{V_f}{V_i}$。</li>
+    <li>$NkT=PV=101.3\ \text{J}$：$W=101.3\ln2=70.2\ \text{J}$，$Q=-70.2\ \text{J}$。</li>
+  </ol>
+  <div class="final">答：$W=NkT\ln(V_i/V_f)$，$Q=-W$；數值 70.2 J、−70.2 J。</div>
+  <p class="small"><a href="#sc-ex-isotherm">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-adiabat" data-group="五、壓縮功（§1.5）" data-title="課本 §1.5：推導 VT^{f/2} = 常數">
+  <h3>課本 §1.5 Eq. (1.32)–(1.39)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-adiabat"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>Now let’s consider adiabatic compression, which is so fast that no heat flows out of (or into) the gas. I’ll still assume, however, that the compression is quasistatic.</p><p>To find an equation describing the exact shape of this curve, let me first use the equipartition theorem to write $U=\frac f2NkT$ (1.33), where $f$ is the number of degrees of freedom per molecule—3 for a monatomic gas, 5 for a diatomic gas near room temperature, etc.</p><p>To simplify this equation, exponentiate both sides and gather the $i$’s and $f$’s. After a couple of lines of algebra you’ll find $V_fT_f^{f/2}=V_iT_i^{f/2}$ (1.38), or more compactly, $VT^{f/2}=\text{constant}$ (1.39).</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　由第一定律與均分定理推出準靜態絕熱過程的 $VT^{f/2}=$ 常數，說明絕熱線為何比等溫線陡。</div>
+  <ol class="write">
+    <li>$Q=0$：$dU=-P\,dV$，$dU=\frac f2Nk\,dT$ ⟹ $\frac f2Nk\,dT=-P\,dV$。</li>
+    <li>$P=NkT/V$：$\frac f2\frac{dT}T=-\frac{dV}V$。</li>
+    <li>積分：$\frac f2\ln\frac{T_f}{T_i}=-\ln\frac{V_f}{V_i}$ ⟹ $V_fT_f^{f/2}=V_iT_i^{f/2}$。</li>
+    <li>壓縮時 $T$ 上升，$P=NkT/V$ 比等溫時（只有 $1/V$）升得快 ⟹ 較陡。</li>
+  </ol>
+  <div class="final">答：$VT^{f/2}=$ 常數。</div>
+  <p class="small"><a href="#sc-ex-adiabat">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-35" data-group="五、壓縮功（§1.5）" data-title="課本 1-35：由 (1.39) 推 PV^γ">
+  <h3>課本 1-35</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-35"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Derive equation 1.40 from equation 1.39.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　由 (1.39) $VT^{f/2}=$ 常數推導 (1.40) $PV^\gamma=$ 常數。</div>
+  <ol class="write">
+    <li>$T=PV/Nk$：$V(PV/Nk)^{f/2}=$ 常數 ⟹ $P^{f/2}V^{1+f/2}=$ 常數。</li>
+    <li>兩邊 $2/f$ 次方：$PV^{(1+f/2)(2/f)}=PV^{(f+2)/f}=$ 常數。</li>
+  </ol>
+  <div class="final">答：$PV^\gamma=$ 常數，$\gamma=(f+2)/f$。</div>
+  <p class="small"><a href="#sc-1-35">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1x-1e" data-group="五、壓縮功（§1.5）" data-title="考古 某級 1(e)：證明 PV^γ = 常數">
+  <h3>考古 某級期中 1(e)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1e"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is</p>$$PV=NkT$$<p>(gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>(d) Use the first law of thermodynamics to find the relationship between the constant volume heat capacity $C_V$ and the constant pressure heat capacity $C_P$ of monatomic ideal gas with number of gas particles N.(3pts)</p><p>(e) Show that in the quasi-static and adiabatic process, the gas pressure P and volume V obey</p>$$PV^\gamma=constant$$<p>. Here $\gamma=C_P/C_V$ is called adiabatic exponent. (6pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目（第 1 題 (e) 小題，完整翻譯）</strong>　（承第 1 題：理想氣體遵守 $PV=NkT$；(d) 用第一定律求粒子數為 $N$ 的單原子理想氣體 $C_V$ 與 $C_P$ 的關係。）(e) 證明在準靜態且絕熱的過程中，氣體壓力 $P$ 與體積 $V$ 滿足
+    $$PV^\gamma=\text{constant}.$$
+    這裡 $\gamma=C_P/C_V$ 稱為絕熱指數。（6 分）</div>
+  <p class="small">原卷：某級全部熱學（期中末）.pdf p.2（某級上學期期中，範圍第 1–4.1 章）第 1 題 (e)</p>
+  <ol class="write">
+    <li>$Q=0$、$W=-P\,dV$、$dU=C_V\,dT$：$C_V\,dT=-P\,dV$。</li>
+    <li>$P=NkT/V$：$\frac{dT}T=-\frac{Nk}{C_V}\frac{dV}V$；由 (d) $Nk=C_P-C_V$ ⟹ $\frac{Nk}{C_V}=\gamma-1$。</li>
+    <li>積分：$\ln T+(\gamma-1)\ln V=$ 常數 ⟹ $TV^{\gamma-1}=$ 常數。</li>
+    <li>$T=PV/Nk$ 代入：$PV^\gamma=$ 常數（單原子 $\gamma=5/3$）。</li>
+  </ol>
+  <div class="final">答：得證 $PV^\gamma=$ 常數。</div>
+  <p class="small"><a href="#tk1x-1e">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-36" data-group="五、壓縮功（§1.5）" data-title="課本 1-36：打氣到 7 atm">
+  <h3>課本 1-36</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-36"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In the course of pumping up a bicycle tire, a liter of air at atmospheric pressure is compressed adiabatically to a pressure of 7 atm. (Air is mostly diatomic nitrogen and oxygen.)</p><p>(a) What is the final volume of this air after compression?</p><p>(b) How much work is done in compressing the air?</p><p>(c) If the temperature of the air is initially 300 K, what is the temperature after compression?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　1 L 大氣壓的空氣絕熱壓到 7 atm。(a) 末體積；(b) 壓縮功；(c) 初溫 300 K 時的末溫。</div>
+  <ol class="write">
+    <li>(a) $\gamma=7/5$：$V_f=V_i(P_i/P_f)^{1/\gamma}=(1/7)^{5/7}=0.249\ \text{L}$。</li>
+    <li>(b) $W=\Delta U=\frac52(P_fV_f-P_iV_i)=\frac52(1.743-1)=1.86\ \text{atm·L}=188\ \text{J}$。</li>
+    <li>(c) $T_f=T_i(V_i/V_f)^{2/5}=300(4.01)^{0.4}=523\ \text{K}$。</li>
+  </ol>
+  <div class="final">答：0.25 L；188 J；523 K。</div>
+  <p class="small"><a href="#sc-1-36">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-37" data-group="五、壓縮功（§1.5）" data-title="課本 1-37：柴油引擎">
+  <h3>課本 1-37</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-37"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In a Diesel engine, atmospheric air is quickly compressed to about 1/20 of its original volume. Estimate the temperature of the air after compression, and explain why a Diesel engine does not require spark plugs.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　柴油引擎把空氣快速壓到 1/20 體積，估計溫度並說明為什麼不需要火星塞。</div>
+  <ol class="write">
+    <li>快速 ⟹ 絕熱：$T_f=T_i(V_i/V_f)^{2/f}=300\times20^{0.4}=994\ \text{K}$。</li>
+    <li>遠高於柴油自燃溫度（約 500 多 K）：噴入即自燃。</li>
+  </ol>
+  <div class="final">答：約 1000 K，燃料自燃，不需要火星塞。</div>
+  <p class="small"><a href="#sc-1-37">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-38" data-group="五、壓縮功（§1.5）" data-title="課本 1-38：湖底的兩個氣泡">
+  <h3>課本 1-38</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-38"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Two identical bubbles of gas form at the bottom of a lake, then rise to the surface. Because the pressure is much lower at the surface than at the bottom, both bubbles expand as they rise. However, bubble A rises very quickly, so that no heat is exchanged between it and the water. Meanwhile, bubble B rises slowly (impeded by a tangle of seaweed), so that it always remains in thermal equilibrium with the water (which has the same temperature everywhere). Which of the two bubbles is larger by the time they reach the surface? Explain your reasoning fully.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　兩個一樣的氣泡由湖底升到水面；A 快（絕熱），B 慢（一直與水同溫）。到水面時哪個大？</div>
+  <ol class="write">
+    <li>同 $N$、同末壓力：$V=NkT/P$ ⟹ $V_A/V_B=T_A/T_B$。</li>
+    <li>兩者膨脹都對外做功；B 吸熱維持水溫；A 不吸熱，$\Delta U=W\lt0$，降溫。</li>
+    <li>$T_A\lt T_B$ ⟹ $V_A\lt V_B$。</li>
+  </ol>
+  <div class="final">答：B（慢的）較大。</div>
+  <p class="small"><a href="#sc-1-38">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-39" data-group="五、壓縮功（§1.5）" data-title="課本 1-39：體積模數與聲速">
+  <h3>課本 1-39（熱學小考作業題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-39"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>By applying Newton’s laws to the oscillations of a continuous medium, one can show that the speed of a sound wave is given by</p>$$c_s=\sqrt{\frac B\rho},$$<p>where $\rho$ is the density of the medium (mass per unit volume) and $B$ is the <i>bulk modulus</i>, a measure of the medium’s stiffness. More precisely, if we imagine applying an increase in pressure $\Delta P$ to a chunk of the material, and this increase results in a (negative) change in volume $\Delta V$, then $B$ is defined as the change in pressure divided by the magnitude of the fractional change in volume:</p>$$B\equiv\frac{\Delta P}{-\Delta V/V}.$$<p>This definition is still ambiguous, however, because I haven’t said whether the compression is to take place isothermally or adiabatically (or in some other way).</p><p>(a) Compute the bulk modulus of an ideal gas, in terms of its pressure $P$, for both isothermal and adiabatic compressions.</p><p>(b) Argue that for purposes of computing the speed of a sound wave, the adiabatic $B$ is the one we should use.</p><p>(c) Derive an expression for the speed of sound in an ideal gas, in terms of its temperature and average molecular mass. Compare your result to the formula for the rms speed of the molecules in the gas. Evaluate the speed of sound numerically for air at room temperature.</p><p>(d) When Scotland’s Battlefield Band played in Utah, one musician remarked that the high altitude threw their bagpipes out of tune. Would you expect altitude to affect the speed of sound (and hence the frequencies of the standing waves in the pipes)? If so, in which direction? If not, why not?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$c_s=\sqrt{B/\rho}$，$B=\Delta P/(-\Delta V/V)$。(a) 理想氣體等溫與絕熱的 $B$；(b) 為何用絕熱；(c) $c_s(T,m)$、與 $v_{\text{rms}}$ 比較、室溫空氣數值；(d) 海拔會不會影響聲速。</div>
+  <ol class="write">
+    <li>(a) 等溫 $P=NkT/V$：$B=-V\,dP/dV=P$；絕熱 $P=C/V^\gamma$：$B=\gamma P$。</li>
+    <li>(b) 熱傳導遠慢於聲波的壓縮–稀疏互換，來不及交換熱 ⟹ 絕熱。</li>
+    <li>(c) $\rho=mP/kT$：$c_s=\sqrt{\gamma P/(mP/kT)}=\sqrt{\gamma kT/m}=\sqrt{\gamma RT/M}$，$=v_{\text{rms}}\sqrt{\gamma/3}$。</li>
+    <li>$c_s=\sqrt{1.4(8.315)(300)/0.029}=347\ \text{m/s}$。</li>
+    <li>(d) 與 $P$ 無關，只看 $T$：海拔本身不改變聲速，要變也是溫度造成。</li>
+  </ol>
+  <div class="final">答：$B_T=P$、$B_S=\gamma P$；$c_s=\sqrt{\gamma kT/m}\approx347\ \text{m/s}$；不受壓力影響。</div>
+  <p class="small"><a href="#sc-1-39">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-40" data-group="五、壓縮功（§1.5）" data-title="課本 1-40：乾絕熱遞減率">
+  <h3>課本 1-40（熱學小考作業題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-40"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In Problem 1.16 you calculated the pressure of earth’s atmosphere as a function of altitude, assuming constant temperature. Ordinarily, however, the temperature of the bottommost 10–15 km of the atmosphere (called the <i>troposphere</i>) decreases with increasing altitude, due to heating from the ground (which is warmed by sunlight). If the temperature gradient $|dT/dz|$ exceeds a certain critical value, <i>convection</i> will occur: Warm, low-density air will rise, while cool, high-density air sinks. The decrease of pressure with altitude causes a rising air mass to expand adiabatically and thus to cool. The condition for convection to occur is that the rising air mass must remain warmer than the surrounding air despite this adiabatic cooling.</p><p>(a) Show that when an ideal gas expands adiabatically, the temperature and pressure are related by the differential equation</p>$$\frac{dT}{dP}=\frac2{f+2}\frac TP.$$<p>(b) Assume that $dT/dz$ is just at the critical value for convection to begin, so that the vertical forces on a convecting air mass are always approximately in balance. Use the result of Problem 1.16(b) to find a formula for $dT/dz$ in this case. The result should be a constant, independent of temperature and pressure, which evaluates to approximately −10°C/km. This fundamental meteorological quantity is known as the <i>dry adiabatic lapse rate</i>.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 證明絕熱時 $\dfrac{dT}{dP}=\dfrac2{f+2}\dfrac TP$；(b) 用 1.16(b) 求臨界對流時的 $dT/dz$（約 $-10\ \text{°C/km}$）。</div>
+  <ol class="write">
+    <li>(a) $\frac f2Nk\,dT=-P\,dV$；$d(PV)=Nk\,dT$ ⟹ $P\,dV=Nk\,dT-\frac{NkT}P\,dP$。</li>
+    <li>代回：$\frac{f+2}2\,dT=\frac TP\,dP$ ⟹ $\frac{dT}{dP}=\frac2{f+2}\frac TP$。</li>
+    <li>(b) $dP=-\frac{mg}{kT}P\,dz$：$\frac{dT}{dz}=-\frac2{f+2}\frac{mg}k=-\frac2{f+2}\frac{Mg}R$。</li>
+    <li>$=-\frac27\frac{(0.029)(9.8)}{8.315}=-9.8\times10^{-3}\ \text{K/m}$。</li>
+  </ol>
+  <div class="final">答：$dT/dz\approx-9.8\ \text{K/km}$。</div>
+  <p class="small"><a href="#sc-1-40">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-05a" data-group="五、壓縮功（§1.5）" data-title="自編 05a：等溫 vs 絕熱再冷卻">
+  <h3>自編難題 05a</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　1 L、1 atm、300 K 空氣變成 0.1 L、300 K：路徑一等溫；路徑二絕熱壓到 0.1 L 再定容冷卻。(a) 末壓力；(b) 各自的功與放熱；(c) 哪條省功、省多少、多的功去哪。</div>
+  <ol class="write">
+    <li>(a) 末狀態相同：$P_f=10\ \text{atm}$；路徑二中間 $P_2=10^{1.4}=25.1\ \text{atm}$、$T_2=754\ \text{K}$。</li>
+    <li>(b) 等溫：$W_1=NkT\ln10=101.3\ln10=233\ \text{J}$，$Q_1=-233\ \text{J}$。</li>
+    <li>絕熱：$W_{2a}=\frac52(2.512-1)=3.78\ \text{atm·L}=383\ \text{J}$；冷卻 $W=0$，$Q=-383\ \text{J}$。</li>
+    <li>(c) 差 150 J，冷卻時以熱散失；壓縮機用分段壓縮＋中間冷卻。</li>
+  </ol>
+  <div class="final">答：等溫 233 J、絕熱＋冷卻 383 J，等溫省 150 J。</div>
+  <p class="small"><a href="#t1-self-05a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-05b" data-group="五、壓縮功（§1.5）" data-title="自編 05b：多方過程與負熱容量">
+  <h3>自編難題 05b</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$PV^n=$ 常數：(a) 證 $W=\frac{P_fV_f-P_iV_i}{n-1}$；(b) 證每莫耳熱容量 $C=R(\frac1{\gamma-1}-\frac1{n-1})$ 並驗特例；(c) 1 mol 空氣 $n=1.2$、300→270 K 的 $W$、$\Delta U$、$Q$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$PV^n=$ 常數」＋「證 $W$」「每莫耳熱容量」「吸熱卻降溫」⟹ 題型：<b>多方過程</b></p>
+    <p><b>背</b></p>
+    <ol>
+      <li>$P=KV^{-n}$ 代進 $W=-\int P\,dV$，積完用 $KV^{1-n}=PV$ 換回端點 ⟹ $W=\dfrac{P_fV_f-P_iV_i}{n-1}=\dfrac{Nk\Delta T}{n-1}$</li>
+      <li>$\Delta U=\tfrac f2Nk\Delta T$，$\tfrac f2=\dfrac1{\gamma-1}$</li>
+      <li>$Q=\Delta U-W$ ⟹ $C_{\text{mol}}=R\left(\dfrac1{\gamma-1}-\dfrac1{n-1}\right)$</li>
+      <li>特例：$n=0$ 定壓、$n=\gamma$ 絕熱、$n\to\infty$ 定容、$n=1$ 等溫；$1\lt n\lt\gamma$ 時 $C\lt0$</li>
+    </ol>
+  </div>
+  <ol class="write">
+    <li>(a) $W=-\int KV^{-n}dV=\dfrac{KV_f^{1-n}-KV_i^{1-n}}{n-1}=\dfrac{P_fV_f-P_iV_i}{n-1}=\dfrac{Nk\Delta T}{n-1}$</li>
+    <li>(b) $Q=\dfrac1{\gamma-1}Nk\Delta T-\dfrac{Nk\Delta T}{n-1}$ ⟹ 一莫耳除以 $\Delta T$：$C=R\left(\dfrac1{\gamma-1}-\dfrac1{n-1}\right)$</li>
+    <li>特例：$n=0$：$C_P$；$n=\gamma$：$0$；$n\to\infty$：$C_V$；$n=-1$、氦：$R(\tfrac32+\tfrac12)=2R$（＝1.31 的 $16/8$）</li>
+    <li>(c) $\Delta T=-30\ \text{K}$、$f=5$：$\Delta U=\tfrac52(8.315)(-30)=-624\ \text{J}$，$W=\dfrac{8.315(-30)}{0.2}=-1247\ \text{J}$，$Q=-624+1247=+624\ \text{J}$</li>
+    <li>$n=1.2$ 在 $1$ 與 $\gamma=1.4$ 之間 ⟹ $C\lt0$：吸熱 624 J 仍降溫（對外做功 1247 J，一半靠吸熱、一半靠內能減少）。</li>
+  </ol>
+  <div class="final">答：(c) 吸熱 624 J 卻降溫，熱容量 $-2.5R$。</div>
+  <p class="small"><a href="#t1-self-05b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 片段 C ===== -->
+<!-- ===== 六、熱容量（§1.6） ===== -->
+<article class="exam-item" data-exam-id="sc-1-41" data-group="六、熱容量（§1.6）" data-title="課本 1-41：量測金屬的熱容量">
+  <h3>課本 1-41</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-41"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>To measure the heat capacity of an object, all you usually have to do is put it in thermal contact with another object whose heat capacity you know. As an example, suppose that a chunk of metal is immersed in boiling water (100°C), then is quickly transferred into a Styrofoam cup containing 250 g of water at 20°C. After a minute or so, the temperature of the contents of the cup is 24°C. Assume that during this time no significant energy is transferred between the contents of the cup and the surroundings. The heat capacity of the cup itself is negligible.</p><p>(a) How much heat is gained by the water?</p><p>(b) How much heat is lost by the metal?</p><p>(c) What is the heat capacity of this chunk of metal?</p><p>(d) If the mass of the chunk of metal is 100 g, what is its specific heat capacity?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　100°C 的金屬塊放進 250 g、20°C 的水，平衡在 24°C：求水吸的熱、金屬放的熱、熱容量與比熱（金屬 100 g）。</div>
+  <ol class="write">
+    <li>(a) $Q_w=m_wc_w\Delta T=(250)(4.186)(4)=4186$ J。</li>
+    <li>(b) 絕熱、杯子不吸熱：$Q_m=-Q_w$，金屬放出 4186 J。</li>
+    <li>(c) $C_m=\dfrac{Q_m}{\Delta T_m}=\dfrac{-4186}{24-100}=55$ J/K。</li>
+    <li>(d) $c_m=C_m/m=55/100=0.55$ J/(g·K)。</li>
+  </ol>
+  <div class="final">答：4186 J；4186 J；55 J/K；0.55 J/(g·K)。</div>
+  <p class="small"><a href="#sc-1-41">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-42" data-group="六、熱容量（§1.6）" data-title="課本 1-42：義大利麵丟進沸水">
+  <h3>課本 1-42</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-42"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The specific heat capacity of Albertson’s Rotini Tricolore is approximately 1.8 J/g·°C. Suppose you toss 340 g of this pasta (at 25°C) into 1.5 liters of boiling water. What effect does this have on the temperature of the water (before there is time for the stove to provide more heat)?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　340 g、25°C、比熱 1.8 J/(g·°C) 的麵丟進 1.5 L 沸水，水溫變多少？</div>
+  <ol class="write">
+    <li>能量守恆：$m_wc_w(T_f-100)+m_pc_p(T_f-25)=0$。</li>
+    <li>$m_wc_w=6279$ J/K，$m_pc_p=612$ J/K：$T_f=\dfrac{6279(100)+612(25)}{6891}=93.3^\circ$C。</li>
+  </ol>
+  <div class="final">答：降到約 93°C（降約 7°C）。</div>
+  <p class="small"><a href="#sc-1-42">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-6-cv" data-group="六、熱容量（§1.6）" data-title="課本 §1.6：均分定理的莫耳熱容量">
+  <h3>課本 §1.6 均分定理預測 $C_V$</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-6-cv"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>Suppose that our system stores thermal energy only in quadratic “degrees of freedom,” as described in Section 1.3. Then the equipartition theorem says $U=\frac12NfkT$ (neglecting any “static” energy, which doesn’t depend on temperature), so $$C_V=\frac{\partial U}{\partial T}=\frac{\partial}{\partial T}\left(\frac{NfkT}{2}\right)=\frac{Nfk}{2},\qquad(1.46)$$ assuming that $f$ is independent of temperature. … For instance, in a monatomic gas like helium, $f=3$, so we expect $C_V=\frac32Nk=\frac32nR$; that is, the heat capacity per mole should be $\frac32R=12.5$ J/K. … For a solid, there are six degrees of freedom per atom, so the heat capacity per mole should be $\frac62R=3R$; this general result is called the rule of Dulong and Petit.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　用 $C_V=\tfrac f2Nk$ 求一莫耳單原子氣體、雙原子氣體（室溫、含振動）、元素固體的 $C_V$。</div>
+  <ol class="write">
+    <li>一莫耳 $Nk=nR=R$：$C_V=\tfrac f2R$。</li>
+    <li>$f=3$：$12.5$ J/K；$f=5$：$20.8$ J/K；$f=7$：$29.1$ J/K。</li>
+    <li>固體每原子 $f=6$：$C_V=3R=24.9$ J/K（Dulong–Petit）。</li>
+  </ol>
+  <div class="final">答：12.5、20.8、29.1、24.9 J/K。</div>
+  <p class="small"><a href="#sc-ex-6-cv">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-43" data-group="六、熱容量（§1.6）" data-title="課本 1-43：水每分子的熱容量">
+  <h3>課本 1-43</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-43"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the heat capacity of liquid water per molecule, in terms of $k$. Suppose (incorrectly) that all the thermal energy of water is stored in quadratic degrees of freedom. How many degrees of freedom would each molecule have to have?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　液態水每分子的熱容量（以 $k$ 表示）；若全是二次自由度，每分子幾個自由度？</div>
+  <ol class="write">
+    <li>18 g（一莫耳）：$C/N=\dfrac{18(4.186)}{6.022\times10^{23}}=1.25\times10^{-22}$ J/K $=9.06\,k$。</li>
+    <li>$C/N=\tfrac f2k\Rightarrow f=18$：太多，能量大多存在分子間（非二次）的位能。</li>
+  </ol>
+  <div class="final">答：約 $9k$；約 18 個自由度。</div>
+  <p class="small"><a href="#sc-1-43">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-44" data-group="六、熱容量（§1.6）" data-title="課本 1-44：書末 C_P 數據">
+  <h3>課本 1-44</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-44"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>At the back of this book is a table of thermodynamic data for selected substances at room temperature. Browse through the $C_P$ values in this table, and check that you can account for most of them (approximately) using the equipartition theorem. Which values seem anomalous?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　用均分定理解釋書末的 $C_P$ 值，指出反常者。</div>
+  <ol class="write">
+    <li>氣體 $C_P=(\tfrac f2+1)R$：單原子 20.8（Ar、He、Ne、H 符合）；線形 29.1（N₂、CO 符合）；非線形 33.3（H₂O、NH₃、CH₄ 接近）。</li>
+    <li>固體每莫耳原子 $3R=24.9$：Al、Cu、Fe、Pb 符合；NaCl $6R$、CaCl₂ $9R$ 符合。</li>
+    <li>反常：Cl₂、CO₂、C₂H₆、C₃H₈ 偏高（振動已活化）；石墨、鑽石、葡萄糖、SiO₂、CaCO₃ 偏低（振動凍結）；液態水、乙醇偏高。</li>
+  </ol>
+  <div class="final">答：大部分符合；反常者如上。</div>
+  <p class="small"><a href="#sc-1-44">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-6-cpcv" data-group="六、熱容量（§1.6）" data-title="課本 §1.6：C_P − C_V = Nk">
+  <h3>課本 §1.6 Eq. (1.47)(1.48)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-6-cpcv"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>What about heat capacities of gases at constant pressure? For an ideal gas, the derivative $\partial U/\partial T$ is the same with $P$ fixed as with $V$ fixed, and we can compute the second term in equation 1.45 using the ideal gas law. At constant pressure, $$\left(\frac{\partial V}{\partial T}\right)_P=\frac{\partial}{\partial T}\left(\frac{NkT}{P}\right)=\frac{Nk}{P}\quad\text{(ideal gas)}.\qquad(1.47)$$ Therefore, $$C_P=C_V+Nk=C_V+nR\quad\text{(ideal gas)}.\qquad(1.48)$$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　由 $C_P=(\partial U/\partial T)_P+P(\partial V/\partial T)_P$ 證明理想氣體 $C_P=C_V+Nk$，並求 $\gamma$。</div>
+  <ol class="write">
+    <li>$U=\tfrac f2NkT$ 只含 $T$：$(\partial U/\partial T)_P=C_V$。</li>
+    <li>$V=NkT/P$：$(\partial V/\partial T)_P=Nk/P$，乘 $P$ 得 $Nk$。</li>
+    <li>$C_P=C_V+Nk$；$\gamma=\dfrac{f+2}{f}$：單原子 $5/3$，雙原子 $7/5$。</li>
+  </ol>
+  <div class="final">答：$C_P=C_V+Nk=C_V+nR$。</div>
+  <p class="small"><a href="#sc-ex-6-cpcv">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1x-1cd" data-group="六、熱容量（§1.6）" data-title="考古 某級 1(c)(d)：第一定律與 C_P、C_V">
+  <h3>考古 某級 1(c)(d)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1cd"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is $$PV=NkT$$ (gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>……</p><p>(c) Explain the first law of thermodynamics. (2pts)</p><p>(d) Use the first law of thermodynamics to find the relationship between the constant volume heat capacity $C_V$ and the constant pressure heat capacity $C_P$ of monoatomic ideal gas with number of gas particles N.(3pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　理想氣體 $PV=NkT$……(c) 說明熱力學第一定律。（2 分）(d) 用第一定律求粒子數 $N$ 的單原子理想氣體 $C_V$ 與 $C_P$ 的關係。（3 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級上學期熱學期中</a> 第 1 題；114 級期中第 3(a)(b) 題相同</p>
+  <ol class="write">
+    <li>(c) $\Delta U=Q+W$：內能變化＝吸熱＋外界做功（能量守恆）；準靜態 $dU=dQ-P\,dV$。</li>
+    <li>(d) 定容 $dV=0$：$dQ=dU$，$C_V=dU/dT=\tfrac32Nk$。</li>
+    <li>定壓：$dQ=dU+P\,dV$；$dU=C_VdT$（$U$ 只和 $T$ 有關），$P\,dV=Nk\,dT$。</li>
+    <li>$C_P=C_V+Nk=\tfrac52Nk$。</li>
+  </ol>
+  <div class="final">答：$C_P=C_V+Nk$（$C_V=\tfrac32Nk$、$C_P=\tfrac52Nk$）。</div>
+  <p class="small"><a href="#tk1x-1cd">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-45" data-group="六、熱容量（§1.6）" data-title="課本 1-45：偏微分固定誰">
+  <h3>課本 1-45</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-45"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>As an illustration of why it matters which variables you hold fixed when taking partial derivatives, consider the following mathematical example. Let $w=xy$ and $x=yz$.</p><p>(a) Write $w$ purely in terms of $x$ and $z$, and then purely in terms of $y$ and $z$.</p><p>(b) Compute the partial derivatives $$\left(\frac{\partial w}{\partial x}\right)_y\quad\text{and}\quad\left(\frac{\partial w}{\partial x}\right)_z,$$ and show that they are not equal. (Hint: To compute $(\partial w/\partial x)_y$, use a formula for $w$ in terms of $x$ and $y$, not $z$. Similarly, compute $(\partial w/\partial x)_z$ from a formula for $w$ in terms of only $x$ and $z$.)</p><p>(c) Compute the other four partial derivatives of $w$ (two each with respect to $y$ and $z$), and show that it matters which variable is held fixed.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　$w=xy$、$x=yz$：寫出 $w(x,z)$、$w(y,z)$，比較六個偏微分。</div>
+  <ol class="write">
+    <li>$w=x^2/z=y^2z$。</li>
+    <li>$(\partial w/\partial x)_y=y$；$(\partial w/\partial x)_z=2x/z=2y$。</li>
+    <li>$(\partial w/\partial y)_x=x$；$(\partial w/\partial y)_z=2yz=2x$。</li>
+    <li>$(\partial w/\partial z)_x=-x^2/z^2=-y^2$；$(\partial w/\partial z)_y=y^2$。</li>
+  </ol>
+  <div class="final">答：每一對都不相等，固定的變數會改變偏微分。</div>
+  <p class="small"><a href="#sc-1-45">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-46" data-group="六、熱容量（§1.6）" data-title="課本 1-46：維持定容要多大壓力">
+  <h3>課本 1-46</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-46"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Measured heat capacities of solids and liquids are almost always at constant pressure, not constant volume. To see why, estimate the pressure needed to keep $V$ fixed as $T$ increases, as follows.</p><p>(a) First imagine slightly increasing the temperature of a material at constant pressure. Write the change in volume, $dV_1$, in terms of $dT$ and the thermal expansion coefficient $\beta$ introduced in Problem 1.7.</p><p>(b) Now imagine slightly compressing the material, holding its temperature fixed. Write the change in volume for this process, $dV_2$, in terms of $dP$ and the isothermal compressibility $\kappa_T$, defined as $$\kappa_T\equiv-\frac1V\left(\frac{\partial V}{\partial P}\right)_T.$$ (This is the reciprocal of the isothermal bulk modulus defined in Problem 1.39.)</p><p>(c) Finally, imagine that you compress the material just enough in part (b) to offset the expansion in part (a). Then the ratio of $dP$ to $dT$ is equal to $(\partial P/\partial T)_V$, since there is no net change in volume. Express this partial derivative in terms of $\beta$ and $\kappa_T$. Then express it more abstractly in terms of the partial derivatives used to define $\beta$ and $\kappa_T$. For the second expression you should obtain $$\left(\frac{\partial P}{\partial T}\right)_V=-\frac{(\partial V/\partial T)_P}{(\partial V/\partial P)_T}.$$ This result is actually a purely mathematical relation, true for any three quantities that are related in such a way that any two determine the third.</p><p>(d) Compute $\beta$, $\kappa_T$, and $(\partial P/\partial T)_V$ for an ideal gas, and check that the three expressions satisfy the identity you found in part (c).</p><p>(e) For water at 25°C, $\beta=2.57\times10^{-4}\ \text{K}^{-1}$ and $\kappa_T=4.52\times10^{-10}\ \text{Pa}^{-1}$. Suppose you increase the temperature of some water from 20°C to 30°C. How much pressure must you apply to prevent it from expanding? Repeat the calculation for mercury, for which (at 25°C) $\beta=1.81\times10^{-4}\ \text{K}^{-1}$ and $\kappa_T=4.04\times10^{-11}\ \text{Pa}^{-1}$. Given the choice, would you rather measure the heat capacities of these substances at constant $V$ or at constant $P$?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　用 $\beta$、$\kappa_T$ 推 $(\partial P/\partial T)_V$；理想氣體驗證；水、汞升溫 10 K 要多少壓力才不膨脹。</div>
+  <ol class="write">
+    <li>$dV_1=\beta V\,dT$，$dV_2=-\kappa_TV\,dP$，相消：$(\partial P/\partial T)_V=\beta/\kappa_T=-\dfrac{(\partial V/\partial T)_P}{(\partial V/\partial P)_T}$。</li>
+    <li>理想氣體：$\beta=1/T$，$\kappa_T=1/P$，$(\partial P/\partial T)_V=Nk/V=P/T=\beta/\kappa_T$ ✔</li>
+    <li>水：$\Delta P=\dfrac{2.57\times10^{-4}}{4.52\times10^{-10}}(10)=5.69\times10^6$ Pa $=56$ atm。</li>
+    <li>汞：$\Delta P=\dfrac{1.81\times10^{-4}}{4.04\times10^{-11}}(10)=4.48\times10^7$ Pa $=442$ atm。壓力太大，選定壓量 $C_P$。</li>
+  </ol>
+  <div class="final">答：56 atm；442 atm；在定壓下量。</div>
+  <p class="small"><a href="#sc-1-46">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-47" data-group="六、熱容量（§1.6）" data-title="課本 1-47：熱茶加冰">
+  <h3>課本 1-47</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-47"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Your 200-g cup of tea is boiling-hot. About how much ice should you add to bring it down to a comfortable sipping temperature of 65°C? (Assume that the ice is initially at −15°C. The specific heat capacity of ice is 0.5 cal/g·°C.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　200 g 沸騰的茶降到 65°C，要加多少 −15°C 的冰（冰比熱 0.5 cal/(g·°C)）？</div>
+  <ol class="write">
+    <li>茶放熱：$Q=(200)(1)(35)=7000$ cal。</li>
+    <li>每克冰：$0.5(15)+80+1(65)=152.5$ cal/g（升溫＋熔化＋升溫）。</li>
+    <li>$m=7000/152.5=46$ g。</li>
+  </ol>
+  <div class="final">答：約 46 g。</div>
+  <p class="small"><a href="#sc-1-47">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1-115-1" data-group="六、熱容量（§1.6）" data-title="考古 115-1：咖啡加冰（習題 1.47）">
+  <h3>考古 115-1（改自習題 1.47）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1-115-1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. [10pts] Your 100-g cup of coffee is boiling-hot. About how much ice should you add to bring it down to a comfortable sipping temperature of 60°C? (Assume that the ice is initially at −15°C. The specific heat of ice is 0.5 cal/g°C.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　（10 分）100 g 滾燙的咖啡要降到 60°C，大約要加多少冰？（冰原本 −15°C，冰的比熱 0.5 cal/(g·°C)。）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view" target="_blank" rel="noopener">115 級上學期熱學期中</a> 第 1 題</p>
+  <ol class="write">
+    <li>咖啡（當水）放熱：$Q=(100)(1)(100-60)=4000$ cal。</li>
+    <li>每克冰吸熱：$0.5(15)+80+1(60)=147.5$ cal/g（$l_f=80$ cal/g）。</li>
+    <li>$m=4000/147.5=27.1$ g。</li>
+  </ol>
+  <div class="final">答：約 27 g。</div>
+  <p class="small"><a href="#tk1-115-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-48" data-group="六、熱容量（§1.6）" data-title="課本 1-48：積雪能撐幾週">
+  <h3>課本 1-48</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-48"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>When spring finally arrives in the mountains, the snow pack may be two meters deep, composed of 50% ice and 50% air. Direct sunlight provides about 1000 watts/m² to earth’s surface, but the snow might reflect 90% of this energy. Estimate how many weeks the snow pack should last, if direct solar radiation is the only source of energy.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　2 m 深、一半是冰的積雪，日照 1000 W/m² 反射 90%，能撐幾週？</div>
+  <ol class="write">
+    <li>每 m²：1 m³ 冰 $=917$ kg，$E=917(3.33\times10^5)=3.05\times10^8$ J（假設已在 0°C）。</li>
+    <li>吸收 100 W/m²，每天約 8 h 直射：$2.88\times10^6$ J/天。</li>
+    <li>$3.05\times10^8/2.88\times10^6=106$ 天 $\approx15$ 週。</li>
+  </ol>
+  <div class="final">答：約 15 週（3–4 個月）。</div>
+  <p class="small"><a href="#sc-1-48">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-6-boil" data-group="六、熱容量（§1.6）" data-title="課本 §1.6：沸騰一莫耳水的焓變">
+  <h3>課本 §1.6 Eq. (1.57)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-6-boil"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>For instance, standard tables say that the change in enthalpy when you boil one mole of water at 1 atm is 40,660 J. Since a mole of water is about 18 grams (16 for the oxygen and 2 for the hydrogen), this means that the change in enthalpy when you boil one gram of water should be (40,660 J)/18 = 2260 J, precisely the number I quoted earlier for the latent heat. However, not all of this energy ends up in the vaporized water. The volume of one mole of water vapor, according to the ideal gas law, is $RT/P$ (while the initial volume of the liquid is negligible), so the work needed to push the atmosphere away is $$PV=RT=(8.31\ \text{J/K})(373\ \text{K})=3100\ \text{J}.\qquad(1.57)$$ This is only 8% of the 40,660 J of energy put in, but sometimes it’s necessary to keep track of such things.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　沸騰一莫耳水 $\Delta H=40\,660$ J：每克多少、$PV$ 佔多少、$\Delta U$？</div>
+  <ol class="write">
+    <li>$40\,660/18=2260$ J/g＝汽化潛熱。</li>
+    <li>$PV=RT=(8.315)(373)=3100$ J，佔 8%。</li>
+    <li>$\Delta U=\Delta H-PV=37\,600$ J。</li>
+  </ol>
+  <div class="final">答：2260 J/g；3100 J（8%）；$3.76\times10^4$ J。</div>
+  <p class="small"><a href="#sc-ex-6-boil">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-49" data-group="六、熱容量（§1.6）" data-title="課本 1-49：氫燃燒的熱從哪裡來">
+  <h3>課本 1-49</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-49"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider the combustion of one mole of H<sub>2</sub> with 1/2 mole of O<sub>2</sub> under standard conditions, as discussed in the text. How much of the heat energy expelled comes from a decrease in the energy of the system, and how much comes from work done by the collapsing atmosphere? (Treat the volume of the liquid water as negligible.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　1 mol H₂＋½ mol O₂ 燃燒成液態水：放出的熱多少來自系統能量、多少來自大氣做功？</div>
+  <ol class="write">
+    <li>大氣做功 $W=PV_{\text{氣}}=nRT=(1.5)(8.315)(298)=3.7$ kJ。</li>
+    <li>$\Delta U=\Delta H+W=-285.8+3.7=-282.1$ kJ。</li>
+  </ol>
+  <div class="final">答：282 kJ 來自系統能量，3.7 kJ 來自大氣做功。</div>
+  <p class="small"><a href="#sc-1-49">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-50" data-group="六、熱容量（§1.6）" data-title="課本 1-50：甲烷燃燒">
+  <h3>課本 1-50</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-50"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider the combustion of one mole of methane gas: $$\begin{aligned}&\mathrm{CH_4(gas)+2O_2(gas)}\\&\quad\longrightarrow\mathrm{CO_2(gas)+2H_2O(gas)}.\end{aligned}$$ The system is at standard temperature (298 K) and pressure ($10^5$ Pa) both before and after the reaction.</p><p>(a) First imagine the process of converting a mole of methane into its elemental consituents (graphite and hydrogen gas). Use the data at the back of this book to find $\Delta H$ for this process.</p><p>(b) Now imagine forming a mole of CO<sub>2</sub> and two moles of water vapor from their elemental constituents. Determine $\Delta H$ for this process.</p><p>(c) What is $\Delta H$ for the actual reaction in which methane and oxygen form carbon dioxide and water vapor directly? Explain.</p><p>(d) How much heat is given off during this reaction, assuming that no “other” forms of work are done?</p><p>(e) What is the change in the system’s energy during this reaction? How would your answer differ if the H<sub>2</sub>O ended up as liquid water instead of vapor?</p><p>(f) The sun has a mass of $2\times10^{30}$ kg and gives off energy at a rate of $3.9\times10^{26}$ watts. If the source of the sun’s energy were ordinary combustion of a chemical fuel such as methane, about how long could it last?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　$\mathrm{CH_4+2O_2\to CO_2+2H_2O(g)}$：用生成焓求各步 $\Delta H$、放熱、$\Delta U$，以及太陽若燒甲烷能撐多久。</div>
+  <ol class="write">
+    <li>(a) $-\Delta_fH(\mathrm{CH_4})=+74.81$ kJ；(b) $-393.51+2(-241.82)=-877.15$ kJ。</li>
+    <li>(c) Hess：$\Delta H=-802.34$ kJ；(d) 放熱 802 kJ。</li>
+    <li>(e) 氣體 3→3 mol，$\Delta U\approx\Delta H=-802$ kJ；液態水：$\Delta H=-890.36$ kJ，$\Delta U=\Delta H+2RT=-885.4$ kJ。</li>
+    <li>(f) 每次 80 g：$\dfrac{2\times10^{30}}{0.080}(8.0\times10^5)/3.9\times10^{26}=5.1\times10^{10}$ s $\approx1600$ 年。</li>
+  </ol>
+  <div class="final">答：$+74.8$、$-877$、$-802$ kJ；802 kJ；$-802$（液態 $-885$）kJ；約 1600 年。</div>
+  <p class="small"><a href="#sc-1-50">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-51" data-group="六、熱容量（§1.6）" data-title="課本 1-51：葡萄糖燃燒">
+  <h3>課本 1-51</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-51"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use the data at the back of this book to determine $\Delta H$ for the combustion of a mole of glucose, $$\mathrm{C_6H_{12}O_6+6O_2\longrightarrow6CO_2+6H_2O}.$$ This is the (net) reaction that provides most of the energy needs in our bodies.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　用書末資料求一莫耳葡萄糖燃燒的 $\Delta H$。</div>
+  <ol class="write">
+    <li>$\Delta H=6(-393.51)+6(-285.83)-(-1273)=-2803$ kJ（水為液態）。</li>
+  </ol>
+  <div class="final">答：$-2803$ kJ（約 3.7 kcal/g）。</div>
+  <p class="small"><a href="#sc-1-51">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-52" data-group="六、熱容量（§1.6）" data-title="課本 1-52：汽油與玉米片的價錢">
+  <h3>課本 1-52</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-52"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The enthalpy of combustion of a gallon (3.8 liters) of gasoline is about 31,000 kcal. The enthalpy of combustion of an ounce (28 g) of corn flakes is about 100 kcal. Compare the cost of gasoline to the cost of corn flakes, per calorie.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　一加侖汽油 31 000 kcal、一盎司玉米片 100 kcal：比較每大卡的價錢。</div>
+  <ol class="write">
+    <li>假設汽油 30 元/L：$114/31\,000=0.0037$ 元/kcal。</li>
+    <li>假設玉米片 150 元/500 g：$8.4/100=0.084$ 元/kcal。</li>
+    <li>比值約 23 倍。</li>
+  </ol>
+  <div class="final">答：玉米片每大卡約貴 20 倍以上。</div>
+  <p class="small"><a href="#sc-1-52">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-53" data-group="六、熱容量（§1.6）" data-title="課本 1-53：H₂ 的解離能">
+  <h3>課本 1-53</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-53"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Look up the enthalpy of formation of atomic hydrogen in the back of this book. This is the enthalpy change when a mole of atomic hydrogen is formed by dissociating 1/2 mole of molecular hydrogen (the more stable state of the element). From this number, determine the energy needed to dissociate a single H<sub>2</sub> molecule, in electron-volts.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　由原子氫的生成焓 217.97 kJ 求解離一個 H₂ 分子的能量（eV）。</div>
+  <ol class="write">
+    <li>$\Delta U=\Delta H-(\Delta n)RT=217.97-\tfrac12(8.315)(298)\times10^{-3}=216.73$ kJ。</li>
+    <li>每分子：$\dfrac{2.1673\times10^5}{\tfrac12(6.022\times10^{23})}=7.20\times10^{-19}$ J $=4.49$ eV。</li>
+  </ol>
+  <div class="final">答：約 4.49 eV。</div>
+  <p class="small"><a href="#sc-1-53">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-54" data-group="六、熱容量（§1.6）" data-title="課本 1-54：爬山的能量">
+  <h3>課本 1-54</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-54"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A 60-kg hiker wishes to climb to the summit of Mt. Ogden, an ascent of 5000 vertical feet (1500 m).</p><p>(a) Assuming that she is 25% efficient at converting chemical energy from food into mechanical work, and that essentially all the mechanical work is used to climb vertically, roughly how many bowls of corn flakes (standard serving size 1 ounce, 100 kilocalories) should the hiker eat before setting out?</p><p>(b) As the hiker climbs the mountain, three-quarters of the energy from the corn flakes is converted to thermal energy. If there were no way to dissipate this energy, by how many degrees would her body temperature increase?</p><p>(c) In fact, the extra energy does not warm the hiker’s body significantly; instead, it goes (mostly) into evaporating water from her skin. How many liters of water should she drink during the hike to replace the lost fluids? (At 25°C, a reasonable temperature to assume, the specific latent heat of vaporization of water is 580 cal/g, 8% more than at 100°C.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　60 kg 登山者爬 1500 m，效率 25%：幾碗玉米片？3/4 變熱、不散熱升溫多少？要補多少水（580 cal/g）？</div>
+  <ol class="write">
+    <li>$mgh=(60)(9.8)(1500)=8.82\times10^5$ J $=211$ kcal；食物 $211/0.25=843$ kcal ≈ 8.4 碗。</li>
+    <li>熱 $\tfrac34(843)=632$ kcal；$\Delta T=632/(60\times1)=10.5$ K。</li>
+    <li>水 $632/580=1.09$ kg ≈ 1.1 L。</li>
+  </ol>
+  <div class="final">答：約 8–9 碗；約 10°C；約 1.1 L。</div>
+  <p class="small"><a href="#sc-1-54">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-55" data-group="六、熱容量（§1.6）" data-title="課本 1-55：負熱容量">
+  <h3>課本 1-55</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-55"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Heat capacities are normally positive, but there is an important class of exceptions: systems of particles held together by gravity, such as stars and star clusters.</p><p>(a) Consider a system of just two particles, with identical masses, orbiting in circles about their center of mass. Show that the gravitational potential energy of this system is −2 times the total kinetic energy.</p><p>(b) The conclusion of part (a) turns out to be true, at least on average, for any system of particles held together by mutual gravitational attraction: $$U_{\text{potential}}=-2U_{\text{kinetic}}.$$ Here each $U$ refers to the total energy (of that type) for the entire system, averaged over some sufficiently long time period. This result is known as the virial theorem. (For a proof, see Carroll and Ostlie (1996), Section 2.4.) Suppose, then, that you add some energy to such a system and then wait for the system to equilibrate. Does the average total kinetic energy increase or decrease? Explain.</p><p>(c) A star can be modeled as a gas of particles that interact with each other only gravitationally. According to the equipartition theorem, the average kinetic energy of the particles in such a star should be $\frac32kT$, where $T$ is the average temperature. Express the total energy of a star in terms of its average temperature, and calculate the heat capacity. Note the sign.</p><p>(d) Use dimensional analysis to argue that a star of mass $M$ and radius $R$ should have a total potential energy of $-GM^2/R$, times some constant of order 1.</p><p>(e) Estimate the average temperature of the sun, whose mass is $2\times10^{30}$ kg and whose radius is $7\times10^8$ m. Assume, for simplicity, that the sun is made entirely of protons and electrons.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題意</strong>　兩粒子繞質心：證明 $U_{\text{pot}}=-2U_{\text{kin}}$；加能量動能增減；恆星的 $U(T)$ 與熱容量；因次分析；太陽平均溫度。</div>
+  <ol class="write">
+    <li>(a) $\dfrac{Gm^2}{(2r)^2}=\dfrac{mv^2}{r}$：$U_{\text{kin}}=mv^2=\dfrac{Gm^2}{4r}$，$U_{\text{pot}}=-\dfrac{Gm^2}{2r}=-2U_{\text{kin}}$。</li>
+    <li>(b) $U=-U_{\text{kin}}$：加能量，動能減少。</li>
+    <li>(c) $U=-\tfrac32NkT$，$C=-\tfrac32Nk$。(d) 只有 $GM^2/R$ 有能量單位。</li>
+    <li>(e) $\tfrac32NkT=\dfrac{GM^2}{2R}$，$M/N=m_p/2$：$T=\dfrac{GMm_p}{6kR}=3.9\times10^6$ K。</li>
+  </ol>
+  <div class="final">答：$-2$；減少；$C=-\tfrac32Nk$；$T\approx4\times10^6$ K。</div>
+  <p class="small"><a href="#sc-1-55">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tk1x-4" data-group="六、熱容量（§1.6）" data-title="考古 某級 4：均勻球恆星的負熱容量">
+  <h3>考古 某級 4（改自習題 1.55）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>4. Heat capacities are normally positive, but there is an important class of exceptions: systems of particles held together by gravity, such as stars and star clusters.</p><p>(a) Consider a system of just two particles, with identical masses, orbiting in circles about their center of mass. Find the ratio between the gravitational potential energy and the total kinetic energy of this system. (5pts)</p><p>(b) It turns out, on average, that any system of particles held by mutual gravitational attraction has the same ratio as evaluated in 4(a) (This result is known as virial theorem). Model the star as a gas of particles that interact with each other only gravitationally. According to the equipartition theorem, the average kinetic energy of the particles in such a star should be $3kT/2$, where $T$ is the temperature. For a star composed by $N$ particles, find the heat capacity. Note the sign. (5pts)</p><p>(c) For a star with uniform mass density, total mass M, and radius R, find the total gravitational potential energy. Express your answer in terms of $M$, $R$, and gravitational constant $G$. (5pts)</p><p>(d) Estimate the average temperature of the sun, whose mass is $2\times10^{30}$ kg and whose radius is $7\times10^8$m. Assume, for simplicity, that the sun is made entirely of protons and electrons and can be treated as a uniform sphere as described in 4(c). (5pts)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>原卷題目</strong>　(a) 兩粒子繞質心，求位能與總動能的比值。（5 分）(b) 依均位定理與均分定理（平均動能 $3kT/2$），求 $N$ 粒子恆星的熱容量，注意正負號。（5 分）(c) 均勻密度、質量 $M$、半徑 $R$ 的恆星的總重力位能。（5 分）(d) 太陽 $M=2\times10^{30}$ kg、$R=7\times10^8$ m，由質子與電子組成、視為均勻球，估計平均溫度。（5 分）</div>
+  <p class="small">原卷：<a href="https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view" target="_blank" rel="noopener">某級上學期熱學期中</a> 第 4 題</p>
+  <ol class="write">
+    <li>(a) $mv^2=\dfrac{Gm^2}{4r}$：$U_{\text{pot}}/U_{\text{kin}}=\dfrac{-Gm^2/2r}{Gm^2/4r}=-2$。</li>
+    <li>(b) $U=-U_{\text{kin}}=-\tfrac32NkT$，$C=-\tfrac32Nk$。</li>
+    <li>(c) $dU=-\dfrac{G\,m(r)\,dm}{r}$，$m(r)=M\dfrac{r^3}{R^3}$，$dm=\dfrac{3Mr^2}{R^3}dr$：$U_{\text{pot}}=-\dfrac{3GM^2}{R^6}\displaystyle\int_0^Rr^4dr=-\dfrac{3GM^2}{5R}$。</li>
+    <li>(d) $\tfrac32\cdot\dfrac{2M}{m_p}kT=\dfrac{3GM^2}{10R}$：$T=\dfrac{GMm_p}{10kR}=2.3\times10^6$ K。</li>
+  </ol>
+  <div class="final">答：$-2$；$-\tfrac32Nk$；$-\tfrac35GM^2/R$；$2.3\times10^6$ K。</div>
+  <p class="small"><a href="#tk1x-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-06a" data-group="六、熱容量（§1.6）" data-title="自編難題：蒸汽通入冰">
+  <h3>自編難題 6-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題意</strong>　20 g、100°C 蒸汽通入 100 g、−20°C 冰（1 atm、絕熱）：判斷末狀態與末溫；臨界蒸汽量；凝結時大氣做的功。</div>
+  <ol class="write">
+    <li>關卡：冰全熔 $Q_1=100(41.86+333)=37\,486$ J；蒸汽全凝結 $Q_2=45\,200$ J；冰到 100°C 水 $Q_3=79\,346$ J。$Q_1\lt Q_2\lt Q_3$ ⟹ 全是液態水。</li>
+    <li>$45\,200+20(4.186)(100-T)=37\,486+418.6\,T$ ⟹ $T=16\,086/502.3=32.0^\circ$C。</li>
+    <li>臨界：$m_s^*=Q_3/l_v=79\,346/2260=35.1$ g。</li>
+    <li>$W=nRT=\tfrac{20}{18}(8.315)(373)=3446$ J（7.6%）；潛熱是定壓焓變，已含此功，熱量平衡＝焓守恆。</li>
+  </ol>
+  <div class="final">答：32°C 的水；35.1 g；3.4 kJ。</div>
+  <p class="small"><a href="#t1-self-06a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-06b" data-group="六、熱容量（§1.6）" data-title="自編難題：越放光越熱的恆星">
+  <h3>自編難題 6-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題意</strong>　$U=-\tfrac32NkT$ 的恆星以功率 $\mathcal L$ 放光：$dT/dt$；太陽的 Kelvin–Helmholtz 時標；與熱庫接觸是否穩定。</div>
+  <ol class="write">
+    <li>$C\,\dfrac{dT}{dt}=-\mathcal L$，$C=-\tfrac32Nk$ ⟹ $\dfrac{dT}{dt}=\dfrac{\mathcal L}{\frac32Nk}\gt0$；$\dfrac1T\dfrac{dT}{dt}=\dfrac{\mathcal L}{|U|}$。</li>
+    <li>$|U|=\dfrac{GM^2}{2R}=1.91\times10^{41}$ J；$t=|U|/\mathcal L=4.9\times10^{14}$ s $=1.5\times10^7$ 年 ≪ $4.6\times10^9$ 年 ⟹ 核融合。</li>
+    <li>$dT/dt=3.9\times10^{26}/4.95\times10^{34}=7.9\times10^{-9}$ K/s ≈ 0.25 K/年。</li>
+    <li>$T\gt T_r$ 放熱 ⟹ $dT=dQ/C\gt0$，溫差擴大：不穩定。</li>
+  </ol>
+  <div class="final">答：放光變熱；約 $1.5\times10^7$ 年；不能與熱庫穩定平衡。</div>
+  <p class="small"><a href="#t1-self-06b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 片段 D ===== -->
+<!-- ===== 七、過程的速率（§1.7）（代理 D） ===== -->
+<article class="exam-item" data-exam-id="sc-ex-window" data-group="七、過程的速率（§1.7）" data-title="課本 §1.7：一片玻璃窗的熱流">
+  <h3>課本 §1.7 Eq. (1.61)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　1 m²、厚 3.2 mm 的玻璃窗（$k_t=0.8$ W/(m·K)），緊貼內側 20°C、外側 0°C，求熱流率並判斷是否合理。</div>
+  <ol class="write">
+    <li>傳導、一維穩態：$\left|\dfrac{dT}{dx}\right|=\dfrac{\Delta T}{\Delta x}=\dfrac{20\ \text K}{0.0032\ \text m}=6250$ K/m。</li>
+    <li>Fourier：$\dfrac{Q}{\Delta t}=k_tA\left|\dfrac{dT}{dx}\right|=(0.8)(1)(6250)=5000$ W。</li>
+    <li>太大：忽略了玻璃兩側的靜止空氣層（空氣 $k_t$ 小 30 倍），實際約幾百瓦。</li>
+  </ol>
+  <div class="final">答：5000 W（由內往外），不合理地大；需計入兩側空氣層。</div>
+  <p class="small"><a href="#sc-ex-window">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-56" data-group="七、過程的速率（§1.7）" data-title="課本 1-56：1 mm 靜止空氣層">
+  <h3>課本 1-56</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-56"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the rate of heat conduction through a layer of still air that is 1 mm thick, with an area of 1 m<sup>2</sup>, for a temperature difference of 20°C.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　計算一層 1 mm 厚、面積 1 m² 的靜止空氣，在溫差 20°C 時的熱傳導率。</div>
+  <ol class="write">
+    <li>靜止空氣只有傳導，$k_t=0.026$ W/(m·K)（課文值）。</li>
+    <li>$\dfrac{Q}{\Delta t}=k_tA\dfrac{\Delta T}{\Delta x}=\dfrac{(0.026)(1)(20)}{0.001}=520$ W。</li>
+    <li>約為同條件 3.2 mm 玻璃（5000 W）的 1/10。</li>
+  </ol>
+  <div class="final">答：約 520 W。</div>
+  <p class="small"><a href="#sc-1-56">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-57" data-group="七、過程的速率（§1.7）" data-title="課本 1-57：R 值">
+  <h3>課本 1-57（熱學小考（上）作業題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-57"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Home owners and builders discuss thermal conductivities in terms of the R value (R for resistance) of a material, defined as the thickness divided by the thermal conductivity: $$R\equiv\frac{\Delta x}{k_t}.$$</p><p>(a) Calculate the R value of a 1/8-inch (3.2 mm) piece of plate glass, and then of a 1 mm layer of still air. Express both answers in SI units.</p><p>(b) In the United States, R values of building materials are normally given in English units, °F·ft<sup>2</sup>·hr/Btu. A Btu, or British thermal unit, is the energy needed to raise the temperature of a pound of water by 1°F. Work out the conversion factor between the SI and English units for R values. Convert your answers from part (a) to English units.</p><p>(c) Prove that for a compound layer of two different materials sandwiched together (such as air and glass, or brick and wood), the effective total R value is the sum of the individual R values.</p><p>(d) Calculate the effective R value of a single piece of plate glass with a 1.0-mm layer of still air on each side. (The effective thickness of the air layer will depend on how much wind is blowing; 1 mm is of the right order of magnitude under most conditions.) Using this effective R value, make a revised estimate of the heat loss through a 1-m<sup>2</sup> single-pane window when the temperature in the room is 20°C higher than the outdoor temperature.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$R\equiv\Delta x/k_t$。(a) 3.2 mm 玻璃、1 mm 靜止空氣的 SI R 值；(b) SI 與英制 °F·ft²·hr/Btu 的換算因子，把 (a) 換成英制；(c) 證明兩層疊合的總 R 值是相加；(d) 玻璃兩側各 1.0 mm 空氣的等效 R 值，與 1 m²、溫差 20°C 時的熱損失。</div>
+  <ol class="write">
+    <li>(a) $R_{\text{玻}}=\dfrac{3.2\times10^{-3}}{0.8}=0.0040$、$R_{\text{氣}}=\dfrac{1.0\times10^{-3}}{0.026}=0.038$ K·m²/W。</li>
+    <li>(b) $1\ \text{Btu}=(453.6\ \text g)(4.186\ \text{J/(g·K)})(\tfrac59\ \text K)=1055$ J。</li>
+    <li>$1\ \dfrac{\text{K·m}^2}{\text W}=(1.8^\circ\text F)(10.76\ \text{ft}^2)\left(\dfrac{1055}{3600}\dfrac{\text{hr}}{\text{Btu}}\right)=5.68\ \dfrac{^\circ\text F\cdot\text{ft}^2\cdot\text{hr}}{\text{Btu}}$；英制 $R_{\text{玻}}=0.023$、$R_{\text{氣}}=0.22$。</li>
+    <li>(c) 穩態熱流相同：$\dfrac{T_2-T_1}{R_1}=\dfrac{T_3-T_2}{R_2}\Rightarrow T_2=\dfrac{T_3R_1+T_1R_2}{R_1+R_2}$。</li>
+    <li>$T_3-T_2=\dfrac{R_2(T_3-T_1)}{R_1+R_2}\Rightarrow\dfrac{Q}{A\Delta t}=\dfrac{T_3-T_1}{R_1+R_2}$，故 $R_{\text{total}}=R_1+R_2$。</li>
+    <li>(d) $R=0.0040+2(0.0385)=0.081$ K·m²/W（0.46 英制）；$\dfrac{Q}{\Delta t}=\dfrac{(1)(20)}{0.081}\approx250$ W。</li>
+  </ol>
+  <div class="final">答：(a) 0.0040、0.038 K·m²/W；(b) ×5.68：0.023、0.22；(c) $R_1+R_2$；(d) 0.081 K·m²/W，約 250 W。</div>
+  <p class="small"><a href="#sc-1-57">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-58" data-group="七、過程的速率（§1.7）" data-title="課本 1-58：空氣間隙與玻璃纖維">
+  <h3>課本 1-58</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-58"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>According to a standard reference table, the R value of a 3.5-inch-thick vertical air space (within a wall) is 1.0 (in English units), while the R value of a 3.5-inch thickness of fiberglass batting is 10.9. Calculate the R value of a 3.5-inch thickness of still air, then discuss whether these two numbers are reasonable. (Hint: These reference values include the effects of convection.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　3.5 吋垂直空氣間隙 R＝1.0、3.5 吋玻璃纖維棉 R＝10.9（英制，含對流）。計算 3.5 吋靜止空氣的 R 值並討論是否合理。</div>
+  <ol class="write">
+    <li>$\Delta x=3.5\times0.0254=0.0889$ m：$R=\dfrac{0.0889}{0.026}=3.42$ K·m²/W，×5.68 ＝ 19.4（英制）。</li>
+    <li>玻璃纖維 10.9 &lt; 19.4：棉絮抑制對流但不完全，纖維本身也導熱。</li>
+    <li>空氣間隙 1.0 ≪ 19.4：有對流；但仍 &gt; 兩面牆上靜止邊界層 $2\times0.22=0.44$。</li>
+  </ol>
+  <div class="final">答：19.4（英制）；$0.44\lt1.0\lt10.9\lt19.4$，合理。</div>
+  <p class="small"><a href="#sc-1-58">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-59" data-group="七、過程的速率（§1.7）" data-title="課本 1-59：房子的熱損失">
+  <h3>課本 1-59</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-59"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Make a rough estimate of the total rate of conductive heat loss through the windows, walls, floor, and roof of a typical house in a cold climate. Then estimate the cost of replacing this lost energy over the course of a month. If possible, compare your estimate to a real utility bill. (Utility companies measure electricity by the kilowatt-hour, a unit equal to 3.6 MJ. In the United States, natural gas is billed in therms, where 1 therm = 10<sup>5</sup> Btu. Utility rates vary by region; I currently pay about 7 cents per kilowatt-hour for electricity and 50 cents per therm for natural gas.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　粗估寒冷地區一棟典型房子經由窗、牆、地板、屋頂的傳導熱損失，與一個月的費用（1 kWh＝3.6 MJ；1 therm＝$10^5$ Btu；電 7¢/kWh、天然氣 50¢/therm）。</div>
+  <ol class="write">
+    <li>假設：單層 12 m×10 m、牆高 2.5 m；淨牆 95 m²、屋頂 120、地板 120、窗 15 m²；R（SI）牆 2.3、屋頂 5.3、地板 3.5、雙層窗 0.35；$\Delta T=25$ K。</li>
+    <li>並聯：$\sum\dfrac{A}{R}=\dfrac{95}{2.3}+\dfrac{120}{5.3}+\dfrac{120}{3.5}+\dfrac{15}{0.35}=41+23+34+43\approx141$ W/K。</li>
+    <li>$\dfrac{Q}{\Delta t}=141\times25\approx3.5$ kW；一個月 $3530\times2.59\times10^6=9.1\times10^9$ J。</li>
+    <li>$=2500$ kWh → 電費約 180 美元；$=87$ therm → 天然氣約 43 美元。</li>
+  </ol>
+  <div class="final">答：約 3.5 kW；每月約 $9\times10^9$ J（電費約 180 美元、天然氣約 45 美元）。窗戶貢獻最大。</div>
+  <p class="small"><a href="#sc-1-59">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-60" data-group="七、過程的速率（§1.7）" data-title="課本 1-60：鐵鍋柄多久變燙">
+  <h3>課本 1-60</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-60"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A frying pan is quickly heated on the stovetop to 200°C. It has an iron handle that is 20 cm long. Estimate how much time should pass before the end of the handle is too hot to grab with your bare hand. (Hint: The cross-sectional area of the handle doesn’t matter. The density of iron is about 7.9 g/cm<sup>3</sup> and its specific heat is 0.45 J/g·°C).</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　平底鍋很快加熱到 200°C，鐵柄長 20 cm。估計多久後柄端燙到不能握（$\rho=7.9$ g/cm³、$c=0.45$ J/(g·°C)；截面積無關）。</div>
+  <ol class="write">
+    <li>假設室溫 20°C、60°C 就燙；$k_t=80$ W/(m·K)。柄分兩半，$\ell=0.10$ m。</li>
+    <li>遠端半段需熱 $Q=\rho A\ell c\,\Delta T_{\text{需}}$，$\Delta T_{\text{需}}=40$ K。</li>
+    <li>流過中點 $\dfrac{Q}{\Delta t}=k_tA\dfrac{\Delta T_{\text{驅}}}{\ell}$，$\Delta T_{\text{驅}}\approx200-40=160$ K。</li>
+    <li>$\Delta t=\dfrac{\rho c\ell^2\Delta T_{\text{需}}}{k_t\Delta T_{\text{驅}}}=\dfrac{(7900)(450)(0.01)(40)}{(80)(160)}\approx110$ s。</li>
+    <li>檢查：$K=k_t/\rho c=2.25\times10^{-5}$ m²/s，熱方程精確解（末端絕熱）約 350 s。</li>
+  </ol>
+  <div class="final">答：約幾分鐘（粗估 2 分鐘，精確約 6 分鐘）。</div>
+  <p class="small"><a href="#sc-1-60">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-61" data-group="七、過程的速率（§1.7）" data-title="課本 1-61：地熱流">
+  <h3>課本 1-61（熱學小考（上）作業題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-61"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Geologists measure conductive heat flow out of the earth by drilling holes (a few hundred meters deep) and measuring the temperature as a function of depth. Suppose that in a certain location the temperature increases by 20°C per kilometer of depth and the thermal conductivity of the rock is 2.5 W/m·K. What is the rate of heat conduction per square meter in this location? Assuming that this value is typical of other locations over all of earth’s surface, at approximately what rate is the earth losing heat via conduction? (The radius of the earth is 6400 km.)</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　溫度每深 1 km 增加 20°C，岩石 $k_t=2.5$ W/(m·K)。求每平方公尺的熱傳導率，以及全地球（半徑 6400 km）的傳導熱損失。</div>
+  <ol class="write">
+    <li>$\dfrac{Q}{\Delta t}=k_tA\dfrac{dT}{dx}=(2.5)(1)\dfrac{20}{1000}=0.05$ W。</li>
+    <li>$A_\oplus=4\pi(6.4\times10^6)^2=5.1\times10^{14}$ m²。</li>
+    <li>總熱流 $=(0.05)(5.1\times10^{14})=2.6\times10^{13}$ W。</li>
+  </ol>
+  <div class="final">答：0.05 W/m²；約 $2.6\times10^{13}$ W。</div>
+  <p class="small"><a href="#sc-1-61">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-62" data-group="七、過程的速率（§1.7）" data-title="課本 1-62：熱方程">
+  <h3>課本 1-62</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-62"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a uniform rod of material whose temperature varies only along its length, in the x direction. By considering the heat flowing from both directions into a small segment of length $\Delta x$, derive the heat equation, $$\frac{\partial T}{\partial t}=K\frac{\partial^2T}{\partial x^2},$$ where $K=k_t/c\rho$, $c$ is the specific heat of the material, and $\rho$ is its density. (Assume that the only motion of energy is heat conduction within the rod; no energy enters or leaves along the sides.) Assuming that $K$ is independent of temperature, show that a solution of the heat equation is $$T(x,t)=T_0+\frac{A}{\sqrt t}e^{-x^2/4Kt},$$ where $T_0$ is a constant background temperature and $A$ is any constant. Sketch (or use a computer to plot) this solution as a function of $x$, for several values of $t$. Interpret this solution physically, and discuss in some detail how energy spreads through the rod as time passes.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　由流進一小段 $\Delta x$ 的熱推導 $\partial_tT=K\partial_x^2T$（$K=k_t/c\rho$，側面絕熱）；證明 $T=T_0+\dfrac{A}{\sqrt t}e^{-x^2/4Kt}$ 是解；畫圖並討論能量如何散開。</div>
+  <ol class="write">
+    <li>左端流進 $-k_tA\,\partial_xT|_{x-\Delta x/2}$，右端流進 $+k_tA\,\partial_xT|_{x+\Delta x/2}$；合計 $\dfrac{Q}{\Delta t}=k_tA\,\Delta x\,\partial_x^2T$。</li>
+    <li>$Q=mc\Delta T$，$m=\rho A\Delta x$：$\rho A\Delta x\,c\,\partial_tT=k_tA\Delta x\,\partial_x^2T\Rightarrow\partial_tT=\dfrac{k_t}{\rho c}\partial_x^2T$。</li>
+    <li>令 $G=e^{-x^2/4Kt}$：$\partial_tT=\dfrac{A}{\sqrt t}G\left(\dfrac{x^2}{4Kt^2}-\dfrac1{2t}\right)$。</li>
+    <li>$\partial_x^2T=\dfrac{A}{\sqrt t}G\left(\dfrac{x^2}{4K^2t^2}-\dfrac1{2Kt}\right)$，乘 $K$ 與上式相同，得證。</li>
+    <li>高斯形：峰高 $\propto t^{-1/2}$、寬 $\propto\sqrt{Kt}$；$\int(T-T_0)dx=2A\sqrt{\pi K}$ 不變（能量守恆）；$t=0$ 的熱脈衝先快後慢地散開，最後均勻。</li>
+  </ol>
+  <div class="final">答：$\partial_tT=K\partial_x^2T$；給定函數滿足之；代表一團熱以高斯形擴散、總熱量守恆。</div>
+  <p class="small"><a href="#sc-1-62">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-mfp" data-group="七、過程的速率（§1.7）" data-title="課本 §1.7：空氣的平均自由徑">
+  <h3>課本 §1.7 Eq. (1.62)–(1.63)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　取 $r=1.5$ Å，估計室溫一大氣壓空氣的 $V/N$、平均自由徑（與分子間距比較）、平均碰撞時間。</div>
+  <ol class="write">
+    <li>$\dfrac VN=\dfrac{kT}{P}=\dfrac{(1.381\times10^{-23})(300)}{1.013\times10^5}=4.1\times10^{-26}$ m³。</li>
+    <li>$\pi(2r)^2\ell\approx\dfrac VN\Rightarrow\ell\approx\dfrac{4.1\times10^{-26}}{4\pi(1.5\times10^{-10})^2}=1.5\times10^{-7}$ m。</li>
+    <li>間距 $(V/N)^{1/3}=3.4$ nm，$\ell$ 約其 40 倍。</li>
+    <li>$\Delta t=\ell/\bar v\approx1.5\times10^{-7}/500=3\times10^{-10}$ s。</li>
+  </ol>
+  <div class="final">答：$4\times10^{-26}$ m³；$\ell\approx150$ nm（約 40 倍間距）；$3\times10^{-10}$ s。</div>
+  <p class="small"><a href="#sc-ex-mfp">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-kt-air" data-group="七、過程的速率（§1.7）" data-title="課本 §1.7：預測空氣的熱導率">
+  <h3>課本 §1.7 Eq. (1.64)–(1.67)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　用 $k_t=\tfrac12\frac{C_V}{V}\ell\bar v$ 估計室溫一大氣壓空氣的熱導率，與實測 0.026 W/(m·K) 比較。</div>
+  <ol class="write">
+    <li>兩盒子（各厚 $\ell$）各一半分子穿過：$Q=\tfrac12(U_1-U_2)=-\tfrac12C_V\ell\dfrac{dT}{dx}$，得 $k_t=\tfrac12\dfrac{C_V}{V}\ell\bar v$。</li>
+    <li>$\dfrac{C_V}{V}=\dfrac f2\dfrac PT=\dfrac52\cdot\dfrac{10^5}{300}=833$ J/(m³·K)。</li>
+    <li>$k_t\approx\tfrac12(833)(1.5\times10^{-7})(500)=0.031$ W/(m·K)。</li>
+  </ol>
+  <div class="final">答：0.031 W/(m·K)，比實測 0.026 高約 20%。</div>
+  <p class="small"><a href="#sc-ex-kt-air">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-63" data-group="七、過程的速率（§1.7）" data-title="課本 1-63：自由徑 10 cm 的壓力">
+  <h3>課本 1-63（熱學小考（上）作業題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-63"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>At about what pressure would the mean free path of an air molecule at room temperature equal 10 cm, the size of a typical laboratory apparatus?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　壓力約多少時，室溫空氣分子的平均自由徑等於 10 cm？</div>
+  <ol class="write">
+    <li>$\ell\approx\dfrac{1}{4\pi r^2}\dfrac VN=\dfrac{kT}{4\pi r^2P}\Rightarrow P\approx\dfrac{kT}{4\pi r^2\ell}$。</li>
+    <li>$T=300$ K、$r=1.5$ Å、$\ell=0.10$ m：$P=\dfrac{(1.381\times10^{-23})(300)}{4\pi(1.5\times10^{-10})^2(0.10)}=0.15$ Pa。</li>
+    <li>$=1.5\times10^{-6}$ atm，機械幫浦就抽得到。</li>
+  </ol>
+  <div class="final">答：約 0.15 Pa ≈ $1.5\times10^{-6}$ atm。</div>
+  <p class="small"><a href="#sc-1-63">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-64" data-group="七、過程的速率（§1.7）" data-title="課本 1-64：氦的熱導率">
+  <h3>課本 1-64</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-64"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Make a rough estimate of the thermal conductivity of helium at room temperature. Discuss your result, explaining why it differs from the value for air.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　粗估室溫下氦的熱導率，說明它為什麼和空氣不同。</div>
+  <ol class="write">
+    <li>$\bar v\approx\sqrt{3kT/m}=\sqrt{\dfrac{3(1.381\times10^{-23})(300)}{6.64\times10^{-27}}}=1370$ m/s（空氣的 2.7 倍）。</li>
+    <li>取 $r\approx1.0$ Å：$\ell\approx\dfrac{4.1\times10^{-26}}{4\pi(10^{-10})^2}=3.3\times10^{-7}$ m（空氣的 2.25 倍）。</li>
+    <li>$f=3$：$\dfrac{C_V}{V}=\dfrac32\dfrac PT=507$ J/(m³·K)（空氣的 3/5）。</li>
+    <li>$k_t\approx\tfrac12(507)(3.3\times10^{-7})(1370)\approx0.11$ W/(m·K)，約空氣的 4 倍。</li>
+  </ol>
+  <div class="final">答：約 0.1 W/(m·K)；氦輕（快）又小（自由徑長），勝過自由度少的影響。</div>
+  <p class="small"><a href="#sc-1-64">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-65" data-group="七、過程的速率（§1.7）" data-title="課本 1-65：從熱導率估亞佛加厥數">
+  <h3>課本 1-65</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-65"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Pretend that you live in the 19th century and don’t know the value of Avogadro’s number (or of Boltzmann’s constant or of the mass or size of any molecule). Show how you could make a rough estimate of Avogadro’s number from a measurement of the thermal conductivity of a gas, together with other measurements that are relatively easy.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　假裝活在 19 世紀，不知道 $N_A$、$k$、分子的質量或大小。如何從氣體的熱導率加上容易的測量粗估亞佛加厥數？</div>
+  <ol class="write">
+    <li>巨觀量：$\bar v\approx\sqrt{3RT/M}$；$C_V/V$ 由量熱；量 $k_t$ 得 $\ell=\dfrac{2k_t}{(C_V/V)\bar v}$（氮：$1.2\times10^{-7}$ m）。</li>
+    <li>一莫耳：氣體 $\ell=\dfrac{V_{\text{氣}}}{4\pi r^2N_A}$；液體 $V_{\text{液}}\approx N_A(2r)^3$。</li>
+    <li>相除：$r=\dfrac\pi2\ell\dfrac{V_{\text{液}}}{V_{\text{氣}}}=\dfrac\pi2(1.23\times10^{-7})\dfrac{34.7\ \text{cm}^3}{24.6\ \text L}=2.7\times10^{-10}$ m。</li>
+    <li>$N_A\approx\dfrac{V_{\text{液}}}{(2r)^3}=\dfrac{3.47\times10^{-5}}{(5.4\times10^{-10})^3}\approx2\times10^{23}$。</li>
+  </ol>
+  <div class="final">答：$k_t\to\ell$，再與液體體積聯立解 $r$ 和 $N_A$；示範得 $N_A\sim10^{23}$ 量級。</div>
+  <p class="small"><a href="#sc-1-65">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-66" data-group="七、過程的速率（§1.7）" data-title="課本 1-66：理想氣體的黏滯">
+  <h3>課本 1-66（熱學小考（上）作業題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-66"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In analogy with the thermal conductivity, derive an approximate formula for the viscosity of an ideal gas in terms of its density, mean free path, and average thermal speed. Show explicitly that the viscosity is independent of pressure and proportional to the square root of the temperature. Evaluate your formula numerically for air at room temperature and compare to the experimental value quoted in the text.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　仿照熱導率，用密度、平均自由徑、平均熱速率推導理想氣體的黏滯係數；證明與壓力無關、$\propto\sqrt T$；對室溫空氣代入並和實驗值比較。</div>
+  <ol class="write">
+    <li>上下兩盒（各厚 $\ell$、$N$ 個分子），$\Delta t=\ell/\bar v$ 內各一半交換：$\Delta p_x=-\tfrac12Nm\Delta u_x$。</li>
+    <li>$\dfrac{|F_x|}{A}=\dfrac{Nm\Delta u_x}{2A\Delta t}=\dfrac{Nm\bar v}{2A\ell}\,\ell\dfrac{du_x}{dz}=\tfrac12\rho\ell\bar v\dfrac{du_x}{dz}\Rightarrow\eta\approx\tfrac12\rho\ell\bar v$。</li>
+    <li>$\rho\ell=\dfrac{Nm}{V}\cdot\dfrac{V}{4\pi r^2N}=\dfrac{m}{4\pi r^2}$ 與 $P$ 無關；$\bar v\propto\sqrt T$。</li>
+    <li>$\rho=\dfrac{PM}{RT}=1.18$ kg/m³：$\eta\approx\tfrac12(1.18)(1.5\times10^{-7})(500)=4.4\times10^{-5}$ Pa·s，約實驗 $1.9\times10^{-5}$ 的 2.3 倍。</li>
+  </ol>
+  <div class="final">答：$\eta\approx\tfrac12\rho\ell\bar v\propto\sqrt T$、與 $P$ 無關；空氣 $4.4\times10^{-5}$ Pa·s（實驗 $1.9\times10^{-5}$）。</div>
+  <p class="small"><a href="#sc-1-66">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-ex-dye" data-group="七、過程的速率（§1.7）" data-title="課本 §1.7：色素擴散時間">
+  <h3>課本 §1.7 Eq. (1.71)</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　色素已均勻分布在半杯水中，只靠擴散到另一半要多久？（$\Delta x\approx0.1$ m，$D=10^{-9}$ m²/s）</div>
+  <ol class="write">
+    <li>粗略 Fick：$\dfrac{N}{A\Delta t}\approx D\dfrac{N/V}{\Delta x}$，$V\approx A\Delta x$。</li>
+    <li>$\Delta t\approx\dfrac{(\Delta x)^2}{D}=\dfrac{(0.1)^2}{10^{-9}}=10^7$ s。</li>
+  </ol>
+  <div class="final">答：約 $10^7$ s（將近四個月）；實際靠對流快得多。</div>
+  <p class="small"><a href="#sc-ex-dye">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-67" data-group="七、過程的速率（§1.7）" data-title="課本 1-67：一分鐘擴散多遠">
+  <h3>課本 1-67</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-67"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Make a rough estimate of how far food coloring (or sugar) will diffuse through water in one minute.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　粗估食用色素（或糖）一分鐘內在水中擴散多遠。</div>
+  <ol class="write">
+    <li>$\Delta t\approx(\Delta x)^2/D\Rightarrow\Delta x\approx\sqrt{D\Delta t}$，$D\approx10^{-9}$ m²/s。</li>
+    <li>$\Delta x\approx\sqrt{(10^{-9})(60)}=2.4\times10^{-4}$ m。</li>
+  </ol>
+  <div class="final">答：約 0.25 mm。</div>
+  <p class="small"><a href="#sc-1-67">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-68" data-group="七、過程的速率（§1.7）" data-title="課本 1-68：香水的擴散">
+  <h3>課本 1-68</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-68"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you open a bottle of perfume at one end of a room. Very roughly, how much time would pass before a person at the other end of the room could smell the perfume, if diffusion were the only transport mechanism? Do you think diffusion is the dominant transport mechanism in this situation?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　房間一端打開香水，只靠擴散多久另一端才聞得到？擴散是主要機制嗎？</div>
+  <ol class="write">
+    <li>設房間 $\Delta x\approx5$ m，空氣中 $D\approx2\times10^{-5}$ m²/s。</li>
+    <li>$\Delta t\approx\dfrac{(\Delta x)^2}{D}=\dfrac{25}{2\times10^{-5}}=1.25\times10^6$ s ≈ 2 週。</li>
+    <li>實際幾分鐘就聞到 → 主要是對流（氣流），不是擴散。</li>
+  </ol>
+  <div class="final">答：約 $10^6$ s（一兩週）；擴散不是主要機制，對流才是。</div>
+  <p class="small"><a href="#sc-1-68">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-69" data-group="七、過程的速率（§1.7）" data-title="課本 1-69：Fick 第二定律">
+  <h3>課本 1-69（熱學小考（上）作業題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-69"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Imagine a narrow pipe, filled with fluid, in which the concentration of a certain type of molecule varies only along the length of the pipe (in the x direction). By considering the flux of these particles from both directions into a short segment $\Delta x$, derive Fick’s second law, $$\frac{\partial n}{\partial t}=D\frac{\partial^2n}{\partial x^2}.$$ Noting the similarity to the heat equation derived in Problem 1.62, discuss the implications of this equation in some detail.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　細管中濃度只沿 $x$ 變化。由流進一小段 $\Delta x$ 的通量推導 $\partial_tn=D\partial_x^2n$，並對照熱方程討論其意涵。</div>
+  <ol class="write">
+    <li>粒子守恆：$\dfrac{dN}{dt}=(J_1+J_2)A$，除以 $A\Delta x$：$\partial_tn=\dfrac{J_1+J_2}{\Delta x}$。</li>
+    <li>$J_1=-D\,\partial_xn|_{x-\Delta x/2}$，$J_2=+D\,\partial_xn|_{x+\Delta x/2}$（流進為正）。</li>
+    <li>$\partial_tn=\dfrac D{\Delta x}\left[\partial_xn|_{x+\Delta x/2}-\partial_xn|_{x-\Delta x/2}\right]\to D\,\partial_x^2n$。</li>
+    <li>與熱方程同形（$T\to n$、$K\to D$）：高斯解 $n=n_0+\dfrac{a}{\sqrt t}e^{-x^2/4Dt}$，寬 $\propto\sqrt{Dt}$、$\langle x^2\rangle=2Dt$、粒子數守恆、峰降谷升、最後均勻。</li>
+  </ol>
+  <div class="final">答：$\partial_tn=D\,\partial_x^2n$；擴散與熱傳導數學相同，距離 $\propto\sqrt{\text{時間}}$。</div>
+  <p class="small"><a href="#sc-1-69">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="sc-1-70" data-group="七、過程的速率（§1.7）" data-title="課本 1-70：理想氣體的擴散係數">
+  <h3>課本 1-70</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-70"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In analogy with the thermal conductivity, derive an approximate formula for the diffusion coefficient of an ideal gas in terms of the mean free path and the average thermal speed. Evaluate your formula numerically for air at room temperature and atmospheric pressure, and compare to the experimental value quoted in the text. How does $D$ depend on $T$, at fixed pressure?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　仿照熱導率，用平均自由徑與平均熱速率推導理想氣體的擴散係數；對室溫一大氣壓空氣代入並和實驗值比較；固定壓力時 $D$ 與 $T$ 的關係？</div>
+  <ol class="write">
+    <li>兩盒（寬 $\ell$）淨穿越 $\tfrac12A\ell(n_1-n_2)$，$\Delta t=\ell/\bar v$。</li>
+    <li>$J_x=\dfrac{\ell(n_1-n_2)}{2\ell/\bar v}=-\tfrac12\ell\bar v\dfrac{dn}{dx}\Rightarrow D\approx\tfrac12\ell\bar v$。</li>
+    <li>$D\approx\tfrac12(1.5\times10^{-7})(500)=3.8\times10^{-5}$ m²/s，約實驗 $2\times10^{-5}$ 的 2 倍。</li>
+    <li>$\ell\propto T/P$、$\bar v\propto\sqrt T$：$D\propto T^{3/2}/P$；固定 $P$，$T$ 加倍 $D$ 變 2.8 倍。</li>
+  </ol>
+  <div class="final">答：$D\approx\tfrac12\ell\bar v\approx4\times10^{-5}$ m²/s；$D\propto T^{3/2}$（固定 $P$）。</div>
+  <p class="small"><a href="#sc-1-70">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-07a" data-group="七、過程的速率（§1.7）" data-title="自編難題：湖面結冰">
+  <h3>自編難題 7-A</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　冰層上表面 −10°C、下表面接觸 0°C 湖水；冰 $k_t=2.2$ W/(m·K)、$\rho=917$ kg/m³、$c=2.1$ kJ/(kg·K)、$L=333$ kJ/kg。(a) 準穩態下證明 $x=\sqrt{2k_t\Delta T\,t/\rho L}$；(b) 長到 10 cm、再到 20 cm 各要多久；(c) 說明準穩態合理的兩個理由。</div>
+  <ol class="write">
+    <li>(a) 潛熱產生率＝傳導熱流：$\rho LA\dfrac{dx}{dt}=k_tA\dfrac{\Delta T}{x}$。</li>
+    <li>$x\,dx=\dfrac{k_t\Delta T}{\rho L}dt\Rightarrow\dfrac{x^2}2=\dfrac{k_t\Delta T}{\rho L}t\Rightarrow x=\sqrt{\dfrac{2k_t\Delta T\,t}{\rho L}}$。</li>
+    <li>(b) $t=\dfrac{\rho Lx^2}{2k_t\Delta T}=\dfrac{(917)(3.33\times10^5)(0.01)}{2(2.2)(10)}=6.9\times10^4$ s ≈ 19 h；$t\propto x^2$：到 20 cm 77 h，10→20 cm 再 58 h。</li>
+    <li>(c) 顯熱/潛熱 $=\dfrac{c\Delta T/2}{L}=\dfrac{(2100)(5)}{3.33\times10^5}=0.03$；$K=\dfrac{k_t}{\rho c}=1.14\times10^{-6}$ m²/s，$\dfrac{x^2}K\approx2.4$ h ≪ 19 h。</li>
+  </ol>
+  <div class="final">答：$x\propto\sqrt t$；10 cm 約 19 h，再 10 cm 約 58 h；顯熱只 3%、溫度調整時間遠短於結冰時間。</div>
+  <p class="small"><a href="#t1-self-07a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="t1-self-07b" data-group="七、過程的速率（§1.7）" data-title="自編難題：由黏滯預測熱導與擴散">
+  <h3>自編難題 7-B</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 證明 $k_t/\eta=c_V=\tfrac f2k/m$、$D=\eta/\rho$；(b) 由實測 $\eta_{\text{空氣}}=19\ \mu$Pa·s 預測 $k_t$、$D$ 並與 0.026 W/(m·K)、$2\times10^{-5}$ m²/s 比較；(c) 為何比直接用 $\ell$ 可靠？$k_t$ 剩下的差距代表什麼？</div>
+  <ol class="write">
+    <li>(a) $\dfrac{k_t}{\eta}=\dfrac{\tfrac12(C_V/V)\ell\bar v}{\tfrac12\rho\ell\bar v}=\dfrac{C_V}{\rho V}=\dfrac{\tfrac f2Nk}{Nm}=c_V$；$\dfrac\eta D=\rho$。</li>
+    <li>(b) $c_V=\dfrac52\dfrac{1.381\times10^{-23}}{4.82\times10^{-26}}=717$ J/(kg·K)；$k_t=\eta c_V=0.0136$ W/(m·K)（實測的 1/1.9）。</li>
+    <li>$D=\eta/\rho=1.9\times10^{-5}/1.18=1.6\times10^{-5}$ m²/s（實測的 0.8）。</li>
+    <li>(c) 比值消去 $\ell\bar v$，不依賴不準的 $r$。剩下 1.9 倍：快分子自由徑長又帶較多能量，能量輸運較強；Eucken $\dfrac{9\gamma-5}4=1.9$ → $k_t=0.026$。</li>
+  </ol>
+  <div class="final">答：$k_t\approx0.014$、$D\approx1.6\times10^{-5}$ m²/s；比值法消去 $\ell$；Eucken 因子 1.9 補足 $k_t$。</div>
+  <p class="small"><a href="#t1-self-07b">回到正文詳解</a></p>
+</article>

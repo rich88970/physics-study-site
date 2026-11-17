@@ -1,0 +1,510 @@
+<h2>三、變係數方程式：遞迴關係與兩個線性獨立解 <span class="pg">板書 10/7 照片 6</span></h2>
+
+<p class="lead">冪級數法真正派上用場的是係數含 $x$ 的方程式。$x\,y'$、$x^2y'$、$x\,y$ 這種項會把次方往上推，和 $y''$ 往下推兩格的效果不一樣，於是遞迴關係可能「跳兩格」「跳三格」，或同時牽涉三個係數。這一節從板書的 $y''-xy'+y=0$ 開始，接著做作業 1、2 和兩題期末考。</p>
+
+<h3 id="am4-var-board">3.1 板書例題：$y''-xy'+y=0$ <span class="pg-tag">照片 6</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/7（照片 6）</span>
+  <p>ex Solve　$y''-xy'+y=0$</p>
+  <p>let $y=\displaystyle\sum_{n=0}^{\infty}a_nx^n$，$y'=\displaystyle\sum_{n=0}^{\infty}na_nx^{n-1}$，$y''=\displaystyle\sum_{n=0}^{\infty}n(n-1)a_nx^{n-2}$</p>
+  $$\boxed{\sum_{n=0}^{\infty}n(n-1)a_nx^{n-2}}\ \boxed{-\sum_{n=0}^{\infty}na_nx^{n}}+\sum_{n=0}^{\infty}a_nx^n=0$$
+  <p>$\{x^0,x^1,\dots\}$　$\{x^1,x^2,\dots\}$　$\{x^0,x^1,\dots\}$　→ 整理 $x$ 的多項式的係數</p>
+  <p>$x^0$：$2\cdot1\cdot a_2+a_0=0\ \to\ a_2=-\tfrac12a_0$，$a_1=$ 待定</p>
+  <p>$x^1$：$3\cdot2\cdot a_3-a_1+a_1=0\ \to\ a_3=0$</p>
+  <p>$x^2$：$4\cdot3\cdot a_4-2a_2+a_2=0\ \to\ a_4=\tfrac1{12}a_2=-\tfrac1{24}a_0$</p>
+  <p>$x^3$：$5\cdot4\cdot a_5-3a_3+a_3=0\ \to\ a_5=\tfrac{2}{20}a_3=0$</p>
+  <p>$6\cdot5\cdot a_6-4a_4+a_4=0$，⋯，$a_7=0$；$a_3=a_5=a_7=\cdots=0$</p>
+  $$y=a_0+a_1x-\tfrac12a_0x^2-\tfrac1{24}a_0x^4+\cdots=a_0\Big(\underbrace{1-\tfrac12x^2-\tfrac1{24}x^4\cdots}_{\text{even}}\Big)+\underbrace{a_1x}_{\text{odd}}$$
+</div>
+
+<p>板書在三個和底下標了它們各自從哪個次方開始：$y''$ 的和從 $x^0$ 開始，$-xy'$ 的和 $-\sum na_nx^n$ 從 $x^1$ 開始（$n=0$ 那項是 0），$y$ 的和從 $x^0$ 開始。所以 $x^0$ 的方程式只有兩項（$2a_2+a_0=0$），從 $x^1$ 起每個方程式都有三項。這種「先標出每個和從哪個次方開始」的習慣，可以避免漏掉低次方的特殊方程式。</p>
+
+<div class="step" data-step="am4-var-s1" data-sym="an">
+  <span class="step-title">一般的遞迴關係 <span class="added">網站補充</span></span>
+  <p>板書逐個次方對，看得出規律但沒寫一般式。$-xy'$ 這一項本來就是 $x^n$（$x\cdot na_nx^{n-1}=na_nx^n$），不用平移；只有 $y''$ 要平移。$x^n$ 的係數：</p>
+  $$(n+2)(n+1)a_{n+2}-na_n+a_n=0\quad\Longrightarrow\quad a_{n+2}=\frac{n-1}{(n+2)(n+1)}\,a_n,\qquad n\ge0$$
+  <p>$n=0$ 代入得 $a_2=-\tfrac12a_0$、$n=1$ 得 $a_3=0$，和板書逐項的結果相同（$n=0$ 時 $-na_n$ 那項本來就是 0，所以一般式對 $n=0$ 也適用）。</p>
+</div>
+
+<div class="step" data-step="am4-var-s2" data-sym="y12">
+  <span class="step-title">奇次串截斷：$y_2=x$ 是精確解</span>
+  <p>遞迴的分子有 $(n-1)$：從 $a_1$ 走到 $a_3$ 時 $n=1$，分子為零，$a_3=0$，之後 $a_5=a_7=\cdots=0$。奇次串只剩 $a_1x$，所以 $y_2=x$ 是一個<strong>多項式解</strong>。直接驗算：$y=x$、$y'=1$、$y''=0$，$0-x\cdot1+x=0$ ✓。偶次串的分子 $n-1$ 在 $n=0,2,4,\dots$ 都不為零，不會截斷。</p>
+</div>
+
+<div class="step" data-step="am4-var-s3">
+  <span class="step-title">偶次串多算幾項 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>照片 6 停在「$6\cdot5\cdot a_6-4a_4+a_4=0$」沒有解出來。由一般遞迴：</p>
+  $$a_6=\frac{3}{6\cdot5}a_4=\frac1{10}\Big(-\frac1{24}a_0\Big)=-\frac1{240}a_0,\qquad a_8=\frac{5}{8\cdot7}a_6=-\frac{1}{2688}a_0$$
+  <p>所以 $y_1=1-\dfrac{x^2}{2}-\dfrac{x^4}{24}-\dfrac{x^6}{240}-\dfrac{x^8}{2688}-\cdots$，一般解 $y=a_0y_1+a_1x$。</p>
+</div>
+
+<details class="supp">
+  <summary>$y_1$ 有沒有 closed form？（網站補充）</summary>
+  <div class="supp-body">
+    <p>已知 $y_2=x$ 時可以用第 2 章的降階法：$p=-x$，$e^{-\int p\,dx}=e^{x^2/2}$，第二個解 $x\displaystyle\int\frac{e^{x^2/2}}{x^2}dx$。分部積分得 $-e^{x^2/2}+x\displaystyle\int e^{x^2/2}dx$。所以</p>
+    $$y_1=e^{x^2/2}-x\int_0^xe^{t^2/2}\,dt$$
+    <p>展開 $e^{x^2/2}=1+\tfrac{x^2}{2}+\tfrac{x^4}{8}+\cdots$、$x\int_0^x e^{t^2/2}dt=x^2+\tfrac{x^4}{6}+\cdots$，相減正好是 $1-\tfrac{x^2}2-\tfrac{x^4}{24}-\cdots$。$\int e^{t^2/2}dt$ 不是初等函數，所以級數就是最實用的寫法——這正是冪級數法存在的理由。</p>
+  </div>
+</details>
+
+<h3 id="am4-var-types">3.2 遞迴關係的三種長相 <span class="added">網站補充</span></h3>
+
+<p>係數裡的 $x$ 次方決定遞迴怎麼跳。把 $y''$ 平移成 $x^n$ 之後（帶 $a_{n+2}$），其他項各自帶的係數是：</p>
+<ul>
+  <li>$x^ky'$ 帶 $(n-k+1)\,a_{n-k+1}$，$x^ky$ 帶 $a_{n-k}$。</li>
+  <li><b>跳兩格</b>：只有 $y''$、$xy'$、$y$（例如板書兩題）→ $a_{n+2}$ 只和 $a_n$ 有關，偶、奇兩條鏈。</li>
+  <li><b>跳三格</b>：$y''$ 配上 $x^2y'$、$xy$（作業 1、114 上期末）→ $a_{n+2}$ 和 $a_{n-1}$ 有關，三條鏈 $a_0\to a_3\to a_6$、$a_1\to a_4\to a_7$、$a_2\to a_5$；$x^0$ 的方程式只有 $2a_2$，所以 $a_2=0$，第三條鏈全為零。</li>
+  <li><b>三項以上</b>：係數是 $(x^3+1)$、$(4x^2-2)$ 這種多項式（作業 2、112 上期末）→ 一個方程式牽涉好幾個係數，$a_0$、$a_1$ 會混在一起，要分別取 $(a_0,a_1)=(1,0)$ 與 $(0,1)$ 各算一次。</li>
+</ul>
+<p>「前三個非零項」是指每個解自己的前三個不為零的項（中間為零的項不算），例如 $y_1=1+\tfrac16x^3+\tfrac1{45}x^6+\cdots$。</p>
+
+<div class="problem" data-kind="example" id="am4-ex-2">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/7 板書（照片 6）</span></div>
+    <h4>$y''-xy'+y=0$：一串截斷成 $x$，另一串無窮</h4>
+    <button type="button" class="exam-btn" data-exam="am4-ex-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-ex-2"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex Solve　$y''-xy'+y=0$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用冪級數法解 $y''-xy'+y=0$，求遞迴關係與兩個線性獨立解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p(x)=-x$、$q(x)=1$</td><td>「$y''-xy'+y=0$」：$y''$ 係數是 1</td></tr>
+          <tr><td>展開點</td><td>$x_0=0$，常點，$R=\infty$</td><td>板書「let $y=\sum a_nx^n$」；$p$、$q$ 是多項式，沒有奇點</td></tr>
+          <tr><td>初始條件</td><td>沒有</td><td>題目只說 Solve，所以 $a_0$、$a_1$ 待定</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：遞迴關係、兩個線性獨立解（寫到 $x^6$）、一般解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>係數 $-x$、$1$ 是多項式，$x=0$ 是常點（第 1 節），<b>所以</b>令 $y=\sum a_nx^n$。</p>
+      <p><b>因為</b> $-xy'$ 這一項 $x\cdot na_nx^{n-1}=na_nx^n$ 本來就是 $x^n$，只有 $y''$ 需要平移，<b>所以</b>遞迴只連結 $a_{n+2}$ 與 $a_n$（跳兩格），偶、奇兩條鏈各自就是一個解。遞迴分子出現 $(n-1)$，要注意哪一條鏈會在 $n=1$ 截斷。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-ex-2-s1" data-sym="an">
+        <span class="step-title">寫出三個級數，標出起始次方</span>
+        $$y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n,\qquad -xy'=-\sum_{n=0}^{\infty}na_nx^n,\qquad y=\sum_{n=0}^{\infty}a_nx^n$$
+        <p>（$y''$ 已平移；$-xy'$ 在 $n=0$ 的項是 0，實際從 $x^1$ 開始。）</p>
+      </div>
+      <div class="step" data-step="am4-ex-2-s2">
+        <span class="step-title">每個 $x^n$ 的係數為零</span>
+        $$(n+2)(n+1)a_{n+2}-na_n+a_n=0\quad\Longrightarrow\quad a_{n+2}=\frac{n-1}{(n+2)(n+1)}\,a_n$$
+      </div>
+      <div class="step" data-step="am4-ex-2-s3" data-sym="a01">
+        <span class="step-title">奇次串（從 $a_1$ 出發）</span>
+        <p class="sub">$n=1$：分子 $n-1=0$：</p>
+        $$a_3=\frac{1-1}{3\cdot2}a_1=0\quad\Longrightarrow\quad a_5=\frac{2}{5\cdot4}a_3=0,\ \ a_7=0,\ \dots$$
+        <p>奇次串只剩 $a_1x$：$y_2=x$。</p>
+      </div>
+      <div class="step" data-step="am4-ex-2-s4">
+        <span class="step-title">偶次串（從 $a_0$ 出發）</span>
+        <p class="sub">$n=0,2,4$ 依序代入，每次用上一個算出的係數：</p>
+        $$a_2=\frac{-1}{2\cdot1}a_0=-\frac12a_0,\quad a_4=\frac{1}{4\cdot3}a_2=-\frac1{24}a_0,\quad a_6=\frac{3}{6\cdot5}a_4=-\frac1{240}a_0$$
+        <p>分子 $n-1$ 在偶數 $n$ 不會是零，這條鏈無窮多項。</p>
+      </div>
+      <div class="step" data-step="am4-ex-2-s5" data-sym="y12">
+        <span class="step-title">一般解</span>
+        $$y=a_0\Big(1-\frac{x^2}{2}-\frac{x^4}{24}-\frac{x^6}{240}-\cdots\Big)+a_1x$$
+        <p>$y_1$（$a_0=1$、$a_1=0$）只有偶次、$y_2=x$ 只有奇次，一個是偶函數一個是奇函數，比值不是常數，線性獨立。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>遞迴 $a_{n+2}=\dfrac{n-1}{(n+2)(n+1)}a_n$；$y=a_0\Big(1-\dfrac{x^2}2-\dfrac{x^4}{24}-\dfrac{x^6}{240}-\cdots\Big)+a_1x$，兩個線性獨立解 $y_1=1-\tfrac12x^2-\tfrac1{24}x^4-\cdots$、$y_2=x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_2=x$ 代入：$0-x+x=0$ ✔。$y_1$ 到 $x^2$：$y_1''=-1-\tfrac12x^2$、$-xy_1'=x^2$、$y_1=1-\tfrac12x^2$，相加 $=0+0\cdot x^2+O(x^4)$ ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am4-var-hw">3.3 跳三格的遞迴：作業 1 與 114 上期末</h3>
+
+<p>作業 1 和 114 上期末第 1 題只差正負號（$x^2y'+xy$ 變成 $-x^2y'-xy$），做法完全相同：$x^2y'$ 與 $xy$ 都把次方往上推一格（$x^2\cdot x^{n-1}=x^{n+1}$），而 $y''$ 往下推兩格，所以 $a_{k+2}$ 連到 $a_{k-1}$。</p>
+
+<div class="problem" data-kind="textbook" id="am4-hw-1">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">10/7 作業 第 1 題</span></div>
+    <h4>$y''+x^2y'+xy=0$：三條鏈、第三條全為零</h4>
+    <button type="button" class="exam-btn" data-exam="am4-hw-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-hw-1"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p><b>Homework: Power Series Solution</b></p><p>1. Solve $y''+x^2y'+xy=0$.</p><p>Ans: two linear independent solution $y_1(x)$ and $y_2(x)$,</p><p>$y_1(x)=1-\frac{1}{6}x^3+\frac{1}{45}x^6-\dots$</p><p>$y_2(x)=x-\frac{1}{6}x^4+\frac{5}{252}x^7-\dots$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>解 $y''+x^2y'+xy=0$。老師給的答案：兩個線性獨立解 $y_1(x)=1-\tfrac16x^3+\tfrac1{45}x^6-\cdots$、$y_2(x)=x-\tfrac16x^4+\tfrac5{252}x^7-\cdots$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p=x^2$、$q=x$</td><td>「$y''+x^2y'+xy=0$」</td></tr>
+          <tr><td>展開點</td><td>$x_0=0$，常點，$R=\infty$</td><td>題目沒寫，作業標題 Power Series Solution 預設在 0 展開；$p$、$q$ 是多項式</td></tr>
+          <tr><td>兩個解的取法</td><td>$y_1$：$a_0=1,a_1=0$；$y_2$：$a_0=0,a_1=1$</td><td>老師答案 $y_1=1+\cdots$、$y_2=x+\cdots$：常數項與一次項分別是 1</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：遞迴關係與兩個線性獨立解（驗證老師的答案到 $x^6$、$x^7$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $x^2y'$ 與 $xy$ 都是 $x^{n+1}$ 型、$y''$ 是 $x^{n-2}$ 型，兩邊差三次方，<b>所以</b>把全部寫成 $x^k$ 後，遞迴連結 $a_{k+2}$ 與 $a_{k-1}$，係數分成三條鏈 $a_0\to a_3\to a_6$、$a_1\to a_4\to a_7$、$a_2\to a_5\to a_8$。</p>
+      <p><b>因為</b> $x^2y'$、$xy$ 從 $x^1$ 才開始，$x^0$ 的方程式只有 $y''$ 的 $2a_2$，<b>所以</b> $a_2=0$，第三條鏈整條是零；只剩兩條鏈，正好是兩個線性獨立解。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-hw-1-s1" data-sym="an">
+        <span class="step-title">三個級數都寫成 $x^k$</span>
+        <p>$y''$ 平移成 $\sum_{k\ge0}(k+2)(k+1)a_{k+2}x^k$。$x^2y'=\sum_{n\ge1}na_nx^{n+1}$，令 $k=n+1$；$xy=\sum_{n\ge0}a_nx^{n+1}$，也令 $k=n+1$：</p>
+        $$x^2y'=\sum_{k=1}^{\infty}(k-1)a_{k-1}x^k,\qquad xy=\sum_{k=1}^{\infty}a_{k-1}x^k$$
+      </div>
+      <div class="step" data-step="am4-hw-1-s2">
+        <span class="step-title">$x^0$ 單獨一條、$x^k$（$k\ge1$）一般式</span>
+        <p class="sub">$x^0$：只有 $y''$ 的項：</p>
+        $$2\cdot1\cdot a_2=0\quad\Longrightarrow\quad a_2=0$$
+        <p class="sub">$x^k$，$k\ge1$：三個和都有項，$(k-1)a_{k-1}+a_{k-1}=ka_{k-1}$：</p>
+        $$(k+2)(k+1)a_{k+2}+k\,a_{k-1}=0\quad\Longrightarrow\quad a_{k+2}=-\frac{k}{(k+2)(k+1)}\,a_{k-1}$$
+        <p>$a_2=0$ 之後，$k=3$ 給 $a_5=-\tfrac{3}{5\cdot4}a_2=0$，同理 $a_8=a_{11}=\cdots=0$：第三條鏈整條是零。</p>
+      </div>
+      <div class="step" data-step="am4-hw-1-s3" data-sym="y12">
+        <span class="step-title">$y_1$：$a_0=1$、$a_1=0$</span>
+        <p class="sub">$k=1$（用 $a_0=1$）、$k=4$（用 $a_3$）、$k=7$（用 $a_6$）：</p>
+        $$a_3=-\frac{1}{3\cdot2}a_0=-\frac16,\qquad a_6=-\frac{4}{6\cdot5}a_3=-\frac{2}{15}\Big(-\frac16\Big)=\frac1{45},\qquad a_9=-\frac{7}{9\cdot8}a_6=-\frac{7}{3240}$$
+        <p>$a_1=0$ 使 $a_4=a_7=\cdots=0$，所以 $y_1=1-\tfrac16x^3+\tfrac1{45}x^6-\tfrac7{3240}x^9+\cdots$。</p>
+      </div>
+      <div class="step" data-step="am4-hw-1-s4">
+        <span class="step-title">$y_2$：$a_0=0$、$a_1=1$</span>
+        <p class="sub">$k=2$（用 $a_1=1$）、$k=5$（用 $a_4$）、$k=8$（用 $a_7$）：</p>
+        $$a_4=-\frac{2}{4\cdot3}a_1=-\frac16,\qquad a_7=-\frac{5}{7\cdot6}a_4=-\frac{5}{42}\Big(-\frac16\Big)=\frac5{252},\qquad a_{10}=-\frac{8}{10\cdot9}a_7=-\frac1{567}$$
+        <p>所以 $y_2=x-\tfrac16x^4+\tfrac5{252}x^7-\tfrac1{567}x^{10}+\cdots$。</p>
+      </div>
+      <div class="step" data-step="am4-hw-1-s5">
+        <span class="step-title">一般解與老師的答案比對</span>
+        $$y=a_0\Big(1-\frac16x^3+\frac1{45}x^6-\cdots\Big)+a_1\Big(x-\frac16x^4+\frac5{252}x^7-\cdots\Big)$$
+        <p>和老師的 $y_1$、$y_2$ 每一項都相同；下一項 $-\tfrac7{3240}x^9$、$-\tfrac1{567}x^{10}$ 都是負的，和老師寫的「$-\cdots$」一致。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$a_2=0$，$a_{k+2}=-\dfrac{k}{(k+2)(k+1)}a_{k-1}$（$k\ge1$）；$y_1=1-\tfrac16x^3+\tfrac1{45}x^6-\cdots$，$y_2=x-\tfrac16x^4+\tfrac5{252}x^7-\cdots$，一般解 $y=a_0y_1+a_1y_2$。老師的答案正確。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_1$ 到 $x^3$：$y_1''=-x+\cdots$、$x^2y_1'=-\tfrac12x^4+\cdots$、$xy_1=x+\cdots$，最低次 $-x+x=0$ ✔；$y_2$：$y_2''=-2x^2+\cdots$、$x^2y_2'=x^2+\cdots$、$xy_2=x^2+\cdots$，$-2+1+1=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am4-k114-1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2025.Dec. 第 1 題（114上）</span></div>
+    <h4>$y''-x^2y'-xy=0$：兩個解各寫前三個非零項</h4>
+    <button type="button" class="exam-btn" data-exam="am4-k114-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k114-1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (25%) Solve $y''-x^2y'-xy=0$ by the power series method. You only need to find the first three nonzero terms of each of the two linearly independent series solutions.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（25%）用冪級數法解 $y''-x^2y'-xy=0$。只需要寫出兩個線性獨立級數解各自的前三個非零項。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p=-x^2$、$q=-x$</td><td>「$y''-x^2y'-xy=0$」</td></tr>
+          <tr><td>方法與展開點</td><td>冪級數，$x_0=0$（常點）</td><td>「by the power series method」；係數是多項式</td></tr>
+          <tr><td>要寫到哪裡</td><td>每個解 3 個非零項</td><td>「only need to find the first three nonzero terms of each」</td></tr>
+          <tr><td>和作業的關係</td><td>作業 1 的 $x^2y'+xy$ 改成負號</td><td>對照 10/7 作業第 1 題</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：遞迴關係，以及 $y_1$、$y_2$ 各自的前三個非零項。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>方程式和作業 1 只差正負號，$x^2y'$ 與 $xy$ 都是 $x^{n+1}$ 型，<b>所以</b>同樣得到跳三格的遞迴、$a_2=0$、兩條鏈。</p>
+      <p><b>因為</b>題目只要「前三個非零項」，<b>所以</b>每條鏈算兩步就夠：$y_1$ 要 $a_0,a_3,a_6$，$y_2$ 要 $a_1,a_4,a_7$。老師的參考解答用 $a_{n+3}$ 的寫法，和這裡的 $a_{k+2}$ 只差 $k=n+1$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-k114-1-s1" data-sym="an">
+        <span class="step-title">代入、平移成 $x^k$</span>
+        $$\sum_{k=0}^{\infty}(k+2)(k+1)a_{k+2}x^k-\sum_{k=1}^{\infty}(k-1)a_{k-1}x^k-\sum_{k=1}^{\infty}a_{k-1}x^k=0$$
+        <p>（後兩個和同作業 1：$x^2y'$、$xy$ 令 $k=n+1$，從 $x^1$ 開始。）</p>
+      </div>
+      <div class="step" data-step="am4-k114-1-s2">
+        <span class="step-title">$x^0$ 與 $x^k$ 的方程式</span>
+        <p class="sub">$x^0$：只有第一個和：</p>
+        $$2a_2=0\ \Longrightarrow\ a_2=0\quad(\text{所以 }a_5=a_8=\cdots=0)$$
+        <p class="sub">$x^k$，$k\ge1$：</p>
+        $$(k+2)(k+1)a_{k+2}-k\,a_{k-1}=0\ \Longrightarrow\ a_{k+2}=\frac{k}{(k+2)(k+1)}\,a_{k-1}$$
+        <p>令 $n=k-1$ 就是老師解答的 $a_{n+3}=\dfrac{n+1}{(n+3)(n+2)}a_n$。</p>
+      </div>
+      <div class="step" data-step="am4-k114-1-s3" data-sym="a01">
+        <span class="step-title">$a_0$ 鏈</span>
+        <p class="sub">$k=1$ 用 $a_0$；$k=4$ 用 $a_3$：</p>
+        $$a_3=\frac{1}{3\cdot2}a_0=\frac16a_0,\qquad a_6=\frac{4}{6\cdot5}a_3=\frac{2}{15}\cdot\frac16a_0=\frac1{45}a_0$$
+      </div>
+      <div class="step" data-step="am4-k114-1-s4">
+        <span class="step-title">$a_1$ 鏈</span>
+        <p class="sub">$k=2$ 用 $a_1$；$k=5$ 用 $a_4$：</p>
+        $$a_4=\frac{2}{4\cdot3}a_1=\frac16a_1,\qquad a_7=\frac{5}{7\cdot6}a_4=\frac{5}{42}\cdot\frac16a_1=\frac5{252}a_1$$
+      </div>
+      <div class="step" data-step="am4-k114-1-s5" data-sym="y12">
+        <span class="step-title">寫出兩個解</span>
+        $$y=a_0\Big(1+\frac16x^3+\frac1{45}x^6+\cdots\Big)+a_1\Big(x+\frac16x^4+\frac5{252}x^7+\cdots\Big)$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_1=1+\tfrac16x^3+\tfrac1{45}x^6+\cdots$，$y_2=x+\tfrac16x^4+\tfrac5{252}x^7+\cdots$，一般解 $y=a_0y_1+a_1y_2$。（與老師參考解答相同。）</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>令 $x=-s$：$\dfrac{dy}{dx}=-\dfrac{dy}{ds}$，作業 1 的 $y''+x^2y'+xy=0$ 變成 $y_{ss}-s^2y_s-sy=0$，正好是本題。所以本題的解是作業 1 的解把 $x$ 換成 $-x$：$1-\tfrac16(-x)^3+\tfrac1{45}(-x)^6=1+\tfrac16x^3+\tfrac1{45}x^6$ ✔，$-\big[(-x)-\tfrac16(-x)^4+\tfrac5{252}(-x)^7\big]=x+\tfrac16x^4+\tfrac5{252}x^7$ ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am4-var-three">3.4 三項遞迴：作業 2 與 112 上期末</h3>
+
+<p>係數是 $(x^3+1)$ 或 $(4x^2-2)$ 這種「好幾個次方加起來」的多項式時，每一項各自平移，一個 $x^k$ 的方程式會同時含三、四個係數。這時沒有乾淨的鏈，就照作業 2 的提示：先取 $(a_0,a_1)=(1,0)$ 算一個解，再取 $(0,1)$ 算另一個。</p>
+
+<div class="problem" data-kind="textbook" id="am4-hw-2">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">10/7 作業 第 2 題</span></div>
+    <h4>$y''+(x^3+1)y'-y=0$：$a_0$、$a_1$ 混在一起</h4>
+    <button type="button" class="exam-btn" data-exam="am4-hw-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-hw-2"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>2. Solve $y''+(x^3+1)y'-y=0$.</p><p>提示: 兩個線性獨立解對應於待定係數 $a_0=1,a_1=0$ 以及 $a_0=0,a_1=1$</p><p>Ans: two linear independent solution $y_1(x)$ and $y_2(x)$,</p><p>$y_1(x)=1+\frac{1}{2}x^2-\frac{1}{6}x^3+\frac{1}{12}x^4-\dots$</p><p>$y_2(x)=x-\frac{1}{2}x^2+\frac{1}{3}x^3-\frac{1}{8}x^4-\dots$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>解 $y''+(x^3+1)y'-y=0$。提示：兩個線性獨立解對應於待定係數 $a_0=1,a_1=0$ 以及 $a_0=0,a_1=1$。老師給的答案：$y_1(x)=1+\tfrac12x^2-\tfrac16x^3+\tfrac1{12}x^4-\cdots$、$y_2(x)=x-\tfrac12x^2+\tfrac13x^3-\tfrac18x^4-\cdots$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p=x^3+1$、$q=-1$</td><td>「$y''+(x^3+1)y'-y=0$」</td></tr>
+          <tr><td>展開點</td><td>$x_0=0$，常點，$R=\infty$</td><td>係數是多項式</td></tr>
+          <tr><td>$y_1$ 的取法</td><td>$a_0=1$、$a_1=0$</td><td>提示「待定係數 $a_0=1,a_1=0$」</td></tr>
+          <tr><td>$y_2$ 的取法</td><td>$a_0=0$、$a_1=1$</td><td>提示「以及 $a_0=0,a_1=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：遞迴關係，$y_1$、$y_2$ 寫到 $x^4$（驗證老師的答案）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $(x^3+1)y'$ 拆成 $x^3y'+y'$ 兩項，前者帶 $a_{k-2}$、後者帶 $a_{k+1}$，加上 $y''$ 的 $a_{k+2}$ 和 $-y$ 的 $a_k$，<b>所以</b>一個方程式有四個係數，偶次和奇次會混在一起（例如 $a_2=\tfrac12(a_0-a_1)$）。</p>
+      <p><b>因為</b>係數同時依賴 $a_0$ 和 $a_1$，<b>所以</b>照提示分開算兩次，每次只有一組具體的數字，最不容易算錯；兩組初始值 $(1,0)$、$(0,1)$ 保證兩個解線性獨立。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-hw-2-s1" data-sym="an">
+        <span class="step-title">四個和都寫成 $x^k$</span>
+        <p>$y''\to(k+2)(k+1)a_{k+2}$；$y'=\sum na_nx^{n-1}$ 令 $k=n-1$ $\to(k+1)a_{k+1}$；$x^3y'=\sum na_nx^{n+2}$ 令 $k=n+2$ $\to(k-2)a_{k-2}$（從 $k=2$ 起，且 $k=2$ 那項係數 0）；$-y\to-a_k$。</p>
+      </div>
+      <div class="step" data-step="am4-hw-2-s2">
+        <span class="step-title">低次方與一般式</span>
+        <p class="sub">$x^0$、$x^1$（$x^3y'$ 還沒出現）：</p>
+        $$2a_2+a_1-a_0=0,\qquad 6a_3+2a_2-a_1=0$$
+        <p class="sub">$x^k$，$k\ge2$：</p>
+        $$(k+2)(k+1)a_{k+2}+(k+1)a_{k+1}+(k-2)a_{k-2}-a_k=0$$
+        <p>移項：$a_{k+2}=\dfrac{a_k-(k+1)a_{k+1}-(k-2)a_{k-2}}{(k+2)(k+1)}$。</p>
+      </div>
+      <div class="step" data-step="am4-hw-2-s3" data-sym="a01,y12">
+        <span class="step-title">$y_1$：$a_0=1$、$a_1=0$</span>
+        <p class="sub">依序代入（每一行用前面算出的值）：</p>
+        $$a_2=\frac{a_0-a_1}{2}=\frac12,\qquad a_3=\frac{a_1-2a_2}{6}=\frac{0-1}{6}=-\frac16$$
+        $$k=2:\ a_4=\frac{a_2-3a_3-0\cdot a_0}{12}=\frac{\frac12+\frac12}{12}=\frac1{12},\qquad k=3:\ a_5=\frac{a_3-4a_4-1\cdot a_1}{20}=\frac{-\frac16-\frac13}{20}=-\frac1{40}$$
+        <p>$y_1=1+\tfrac12x^2-\tfrac16x^3+\tfrac1{12}x^4-\tfrac1{40}x^5+\cdots$</p>
+      </div>
+      <div class="step" data-step="am4-hw-2-s4">
+        <span class="step-title">$y_2$：$a_0=0$、$a_1=1$</span>
+        $$a_2=\frac{0-1}{2}=-\frac12,\qquad a_3=\frac{1-2(-\frac12)}{6}=\frac13$$
+        $$k=2:\ a_4=\frac{-\frac12-3\cdot\frac13-0}{12}=-\frac18,\qquad k=3:\ a_5=\frac{\frac13-4(-\frac18)-1}{20}=\frac{-\frac16}{20}=-\frac1{120}$$
+        <p>$y_2=x-\tfrac12x^2+\tfrac13x^3-\tfrac18x^4-\tfrac1{120}x^5+\cdots$</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_1=1+\tfrac12x^2-\tfrac16x^3+\tfrac1{12}x^4-\cdots$，$y_2=x-\tfrac12x^2+\tfrac13x^3-\tfrac18x^4-\cdots$，一般解 $y=a_0y_1+a_1y_2$。老師的答案正確（下一項 $-\tfrac1{40}x^5$、$-\tfrac1{120}x^5$ 都是負的，和「$-\cdots$」一致）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>任意 $(a_0,a_1)$ 的解是 $a_0y_1+a_1y_2$：它的 $a_2=\tfrac12a_0-\tfrac12a_1$，和直接由 $2a_2+a_1-a_0=0$ 解出的相同 ✔。$y_1$ 代入到 $x^0$：$y_1''(0)+y_1'(0)-y_1(0)=1+0-1=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am4-k112-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2024.01. 第 3 題（112上） · 115級上學期應數(期末) 第 3 題（同卷）</span></div>
+    <h4>$y''-4xy'+(4x^2-2)y=0$：認出 $e^{x^2}$ 與 $xe^{x^2}$</h4>
+    <button type="button" class="exam-btn" data-exam="am4-k112-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k112-3"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">卷頭印「應用數學期中考 (2024. 01.)」，時間與考古題網站的分類都是 112 學年上學期期末考。</p>
+<div class="original-text" lang="en"><p>3. (8 points) Solve the general solution of $y''-4xy'+(4x^2-2)y=0$ by the power series method.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（8 分）用冪級數法求 $y''-4xy'+(4x^2-2)y=0$ 的一般解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p=-4x$、$q=4x^2-2$</td><td>「$y''-4xy'+(4x^2-2)y=0$」</td></tr>
+          <tr><td>方法與展開點</td><td>冪級數，$x_0=0$（常點，$R=\infty$）</td><td>「by the power series method」；係數是多項式</td></tr>
+          <tr><td>要求的形式</td><td>一般解（兩個任意常數）</td><td>「the general solution」：沒有初始條件</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：遞迴關係、兩個線性獨立解，並寫出一般解（能認出 closed form 更好）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $(4x^2-2)y$ 拆成 $4x^2y$（帶 $a_{n-2}$）和 $-2y$（帶 $a_n$），<b>所以</b>遞迴同時有 $a_{n+2}$、$a_n$、$a_{n-2}$ 三個係數。好消息是三者的下標同奇偶，偶次和奇次不會混在一起，所以還是兩條各自獨立的鏈。</p>
+      <p><b>因為</b>算出來的係數 $1,1,\tfrac12,\tfrac16$ 是 $1/k!$，<b>所以</b>猜 $a_{2k}=1/k!$，也就是 $e^{x^2}=\sum x^{2k}/k!$，代回遞迴證明，得到 closed form。這題 8 分，寫出兩串前幾項就有大部分分數；認出 $e^{x^2}$ 可以當驗算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-k112-3-s1" data-sym="an">
+        <span class="step-title">每一項的係數（對 $x^n$）</span>
+        <p>$y''\to(n+2)(n+1)a_{n+2}$；$-4xy'=-\sum4na_nx^n\to-4na_n$；$4x^2y=\sum4a_nx^{n+2}$ 令 $n\to n-2$ $\to4a_{n-2}$（$n\ge2$）；$-2y\to-2a_n$。</p>
+      </div>
+      <div class="step" data-step="am4-k112-3-s2">
+        <span class="step-title">低次方與一般遞迴</span>
+        <p class="sub">$x^0$、$x^1$（$4x^2y$ 還沒出現）：</p>
+        $$2a_2-2a_0=0\Rightarrow a_2=a_0,\qquad 6a_3-4a_1-2a_1=0\Rightarrow a_3=a_1$$
+        <p class="sub">$x^n$，$n\ge2$：</p>
+        $$a_{n+2}=\frac{(4n+2)a_n-4a_{n-2}}{(n+2)(n+1)}$$
+      </div>
+      <div class="step" data-step="am4-k112-3-s3" data-sym="a01">
+        <span class="step-title">偶次鏈（$a_0$）</span>
+        <p class="sub">$n=2$ 用 $a_2=a_0$、$a_0$；$n=4$ 用 $a_4$、$a_2$：</p>
+        $$a_4=\frac{10a_2-4a_0}{12}=\frac{6a_0}{12}=\frac12a_0,\qquad a_6=\frac{18a_4-4a_2}{30}=\frac{9a_0-4a_0}{30}=\frac16a_0$$
+        <p>$1,\ 1,\ \tfrac12,\ \tfrac16$ 就是 $\tfrac1{0!},\tfrac1{1!},\tfrac1{2!},\tfrac1{3!}$。</p>
+      </div>
+      <div class="step" data-step="am4-k112-3-s4">
+        <span class="step-title">奇次鏈（$a_1$）</span>
+        <p class="sub">$n=3$ 用 $a_3=a_1$、$a_1$；$n=5$ 用 $a_5$、$a_3$：</p>
+        $$a_5=\frac{14a_3-4a_1}{20}=\frac{10a_1}{20}=\frac12a_1,\qquad a_7=\frac{22a_5-4a_3}{42}=\frac{11a_1-4a_1}{42}=\frac16a_1$$
+      </div>
+      <div class="step" data-step="am4-k112-3-s5" data-sym="y12">
+        <span class="step-title">證明規律並寫成 closed form</span>
+        <p>猜 $a_{2k}=\dfrac{1}{k!}$（取 $a_0=1$），代入 $n=2k$ 的遞迴，兩邊都化成分母 $k!$：</p>
+        $$\text{左}=\frac{(2k+2)(2k+1)}{(k+1)!}=\frac{2(2k+1)}{k!},\qquad \text{右}=\frac{8k+2}{k!}-\frac{4}{(k-1)!}=\frac{8k+2-4k}{k!}=\frac{2(2k+1)}{k!}$$
+        <p>相等，所以偶次串 $=\sum\dfrac{x^{2k}}{k!}=e^{x^2}$。奇次串同理 $a_{2k+1}=\dfrac1{k!}$（代 $n=2k+1$：左 $\tfrac{2(2k+3)}{k!}$、右 $\tfrac{8k+6-4k}{k!}$），奇次串 $=x\sum\dfrac{x^{2k}}{k!}=xe^{x^2}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=a_0\Big(1+x^2+\dfrac{x^4}{2!}+\dfrac{x^6}{3!}+\cdots\Big)+a_1\Big(x+x^3+\dfrac{x^5}{2!}+\dfrac{x^7}{3!}+\cdots\Big)=(a_0+a_1x)\,e^{x^2}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>令 $y=ue^{x^2}$：$y'=(u'+2xu)e^{x^2}$、$y''=(u''+4xu'+(2+4x^2)u)e^{x^2}$，代入得 $\big[u''+4xu'+(2+4x^2)u-4xu'-8x^2u+(4x^2-2)u\big]e^{x^2}=u''e^{x^2}$，所以方程式等價於 $u''=0$、$u=a_0+a_1x$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am4-sf-03a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$y''-2xy'+2\lambda y=0$：$\lambda$ 是多少才有多項式解</h4>
+    <button type="button" class="exam-btn" data-exam="am4-sf-03a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $y''-2xy'+2\lambda y=0$，$\lambda$ 為常數。(a) 用冪級數法求遞迴關係。(b) $\lambda$ 是哪些值時，方程式有多項式解？多項式的次數是多少？(c) $\lambda=3$ 時求多項式解，並把最高次項係數取成 $8$；另一個線性獨立解是不是多項式？(d) $\lambda=2.5$ 時呢？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p=-2x$、$q=2\lambda$</td><td>「$y''-2xy'+2\lambda y=0$」</td></tr>
+          <tr><td>展開點</td><td>$x_0=0$，常點，$R=\infty$</td><td>係數是多項式，沒有奇點</td></tr>
+          <tr><td>參數</td><td>(c) $\lambda=3$；(d) $\lambda=2.5$</td><td>題目各小題</td></tr>
+          <tr><td>正規化</td><td>最高次項係數 $8$</td><td>(c)「把最高次項係數取成 8」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 遞迴；(b) 有多項式解的條件與次數；(c) $\lambda=3$ 的多項式與另一解的性質；(d) $\lambda=2.5$ 的情形。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>只有 $y''$、$xy'$、$y$ 三種項，<b>所以</b>遞迴跳兩格，偶、奇兩條鏈獨立（和板書 $y''-xy'+y=0$ 同型）。</p>
+      <p><b>因為</b>多項式解代表某一條鏈在某一格之後全為零，而遞迴的分子是 $(n-\lambda)$，<b>所以</b>鏈要截斷，必須在某個 $n$ 讓 $n-\lambda=0$，也就是 $\lambda$ 是非負整數；截斷的那條鏈的奇偶由 $\lambda$ 的奇偶決定。這是「從遞迴判斷級數會不會截斷」的題型，和板書 $y_2=x$、第 5 章的 Legendre 多項式同一個道理。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-sf-03a-s1" data-sym="an">
+        <span class="step-title">(a) 遞迴關係</span>
+        <p>$-2xy'=-\sum2na_nx^n$，不用平移；$x^n$ 的係數：</p>
+        $$(n+2)(n+1)a_{n+2}-2na_n+2\lambda a_n=0\quad\Longrightarrow\quad a_{n+2}=\frac{2(n-\lambda)}{(n+2)(n+1)}\,a_n$$
+      </div>
+      <div class="step" data-step="am4-sf-03a-s2">
+        <span class="step-title">(b) 截斷的條件</span>
+        <p>一條鏈要在 $a_N$ 之後全為零，需要 $a_{N+2}=\dfrac{2(N-\lambda)}{(N+2)(N+1)}a_N=0$ 而 $a_N\ne0$，所以 $\lambda=N$。$N$ 是鏈裡出現的下標，必須是非負整數：</p>
+        $$\lambda=0,1,2,3,\dots\quad\Longrightarrow\quad\text{和 }N=\lambda\text{ 同奇偶的那條鏈截斷，得到 }\lambda\text{ 次多項式}$$
+        <p>另一條鏈的分子 $n-\lambda$ 在不同奇偶的 $n$ 永遠不為零，不會截斷。</p>
+      </div>
+      <div class="step" data-step="am4-sf-03a-s3" data-sym="a01,y12">
+        <span class="step-title">(c) $\lambda=3$：奇次鏈截斷</span>
+        <p class="sub">代入 $\lambda=3$，奇次鏈從 $a_1$ 出發，$n=1$、$n=3$：</p>
+        $$a_3=\frac{2(1-3)}{3\cdot2}a_1=-\frac23a_1,\qquad a_5=\frac{2(3-3)}{5\cdot4}a_3=0$$
+        <p>所以 $y=a_1\big(x-\tfrac23x^3\big)$。要最高次項係數 $8$：$-\tfrac23a_1=8\Rightarrow a_1=-12$，</p>
+        $$y=8x^3-12x.$$
+      </div>
+      <div class="step" data-step="am4-sf-03a-s4">
+        <span class="step-title">(c) 另一個解（偶次鏈）不截斷</span>
+        <p class="sub">偶次鏈 $n=0,2,4$，代入 $\lambda=3$：</p>
+        $$a_2=\frac{2(0-3)}{2}a_0=-3a_0,\quad a_4=\frac{2(2-3)}{12}a_2=\frac12a_0,\quad a_6=\frac{2(4-3)}{30}a_4=\frac1{30}a_0$$
+        <p>之後分子 $n-3$（$n=6,8,\dots$）都是正的，係數不會變零：$y_1=1-3x^2+\tfrac12x^4+\tfrac1{30}x^6+\cdots$ 是無窮級數，不是多項式。</p>
+      </div>
+      <div class="step" data-step="am4-sf-03a-s5">
+        <span class="step-title">(d) $\lambda=2.5$</span>
+        <p>$n-2.5$ 對整數 $n$ 永遠不為零，兩條鏈都不截斷，兩個解都是無窮級數，沒有多項式解。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $a_{n+2}=\dfrac{2(n-\lambda)}{(n+2)(n+1)}a_n$；(b) $\lambda=0,1,2,\dots$ 時有一個 $\lambda$ 次多項式解（另一個解仍是無窮級數）；(c) $y=8x^3-12x$（Hermite 多項式 $H_3$），另一個解 $1-3x^2+\tfrac12x^4+\tfrac1{30}x^6+\cdots$ 不是多項式；(d) 沒有多項式解。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=8x^3-12x$：$y'=24x^2-12$、$y''=48x$，$48x-2x(24x^2-12)+6(8x^3-12x)=48x-48x^3+24x+48x^3-72x=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am4-sf-03b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$y''=xy$：一般項、收斂半徑，以及要幾項才夠準</h4>
+    <button type="button" class="exam-btn" data-exam="am4-sf-03b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''=xy$，$y(0)=1$、$y'(0)=0$。(a) 求遞迴關係，說明哪些係數為零。(b) 寫出非零係數的一般式。(c) 用比值審斂法求收斂半徑。(d) 求 $y(1)$ 到小數點後第 5 位，並說明取幾項就夠。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式</td><td>$y''-xy=0$，$p=0$、$q=-x$</td><td>「$y''=xy$」移項</td></tr>
+          <tr><td>$a_0$、$a_1$</td><td>$a_0=1$、$a_1=0$</td><td>「$y(0)=1$、$y'(0)=0$」</td></tr>
+          <tr><td>求值的點</td><td>$x=1$</td><td>(d)「$y(1)$」</td></tr>
+          <tr><td>精度</td><td>誤差 $\lt5\times10^{-6}$</td><td>(d)「到小數點後第 5 位」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 遞迴與零係數；(b) 一般式；(c) 收斂半徑；(d) $y(1)$ 與需要的項數。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $xy$ 把次方往上推一格、$y''$ 往下推兩格，<b>所以</b>遞迴跳三格（$a_{n+2}$ 接 $a_{n-1}$），而 $x^0$ 的方程式只有 $2a_2$，得 $a_2=0$；再加上 $a_1=0$，三條鏈只剩 $a_0$ 那條。</p>
+      <p><b>因為</b>每走一步分母多乘兩個越來越大的整數，項會急速變小，<b>所以</b>用比值審斂法得 $R=\infty$；估計 $y(1)$ 時，被截掉的部分小於「下一項 × 一個接近 1 的因子」，用它判斷項數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-sf-03b-s1" data-sym="an">
+        <span class="step-title">(a) 遞迴與零係數</span>
+        <p>$xy=\sum a_nx^{n+1}$ 令 $n\to n-1$ 變成 $\sum_{n\ge1}a_{n-1}x^n$：</p>
+        $$x^0:\ 2a_2=0,\qquad x^n\ (n\ge1):\ (n+2)(n+1)a_{n+2}-a_{n-1}=0\ \Longrightarrow\ a_{n+2}=\frac{a_{n-1}}{(n+2)(n+1)}$$
+        <p>$a_2=0$ 使 $a_5=a_8=\cdots=0$；$a_1=0$（題目）使 $a_4=a_7=\cdots=0$。只剩 $a_0,a_3,a_6,\dots$</p>
+      </div>
+      <div class="step" data-step="am4-sf-03b-s2">
+        <span class="step-title">(b) 一般式</span>
+        <p class="sub">由 $a_0=1$ 出發，$n=1,4,7,10$：</p>
+        $$a_3=\frac{1}{3\cdot2},\quad a_6=\frac{a_3}{6\cdot5}=\frac1{180},\quad a_9=\frac{a_6}{9\cdot8}=\frac1{12960},\quad a_{12}=\frac{a_9}{12\cdot11}=\frac1{1710720}$$
+        $$a_{3k}=\frac{1}{(2\cdot3)(5\cdot6)(8\cdot9)\cdots\big((3k-1)(3k)\big)}$$
+      </div>
+      <div class="step" data-step="am4-sf-03b-s3" data-sym="Rc">
+        <span class="step-title">(c) 比值審斂</span>
+        <p>相鄰兩個非零項 $a_{3k}x^{3k}$ 與 $a_{3k+3}x^{3k+3}$ 的比：</p>
+        $$\left|\frac{a_{3k+3}x^{3k+3}}{a_{3k}x^{3k}}\right|=\frac{|x|^3}{(3k+3)(3k+2)}\ \xrightarrow{\ k\to\infty\ }\ 0$$
+        <p>對所有 $x$ 都小於 1，所以 $R=\infty$——和 $p=0$、$q=-x$ 沒有奇點一致。</p>
+      </div>
+      <div class="step" data-step="am4-sf-03b-s4">
+        <span class="step-title">(d) $y(1)$ 與項數</span>
+        <p class="sub">代入 $x=1$（題目），把 (b) 的係數逐項相加：</p>
+        $$y(1)=1+0.1666667+0.0055556+0.0000772+0.0000006+\cdots=1.1723000$$
+        <p>第 5 項 $a_{12}=5.8\times10^{-7}$，之後每一項都比前一項小 $(3k+3)(3k+2)\ge210$ 倍，所以截掉的尾巴小於 $5.8\times10^{-7}\times1.01$。前 4 項 $1+\tfrac16+\tfrac1{180}+\tfrac1{12960}=1.172299$，誤差 $\lt10^{-6}$，四捨五入到第 5 位已經是 $1.17230$；取 4 個非零項就夠。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $a_2=0$，$a_{n+2}=\dfrac{a_{n-1}}{(n+2)(n+1)}$；只有 $a_0,a_3,a_6,\dots$ 不為零。(b) $a_{3k}=\Big[\prod_{j=1}^{k}(3j-1)(3j)\Big]^{-1}$，$y=1+\tfrac{x^3}{6}+\tfrac{x^6}{180}+\tfrac{x^9}{12960}+\cdots$。(c) $R=\infty$。(d) $y(1)\approx1.17230$，取 4 個非零項就夠。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=1+\tfrac{x^3}6+\cdots$：$y''=x+\tfrac{x^4}{6}+\cdots$、$xy=x+\tfrac{x^4}6+\cdots$ ✔。用 Airy 函數的數值 $\mathrm{Ai}$、$\mathrm{Bi}$ 組出滿足同樣初始條件的解，在 $x=1$ 的值也是 $1.17230$。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>先標出每個和從哪個次方開始，低次方的方程式單獨寫（$2a_2=0$ 之類）。</li>
+    <li>$x^ky'$ 帶 $(n-k+1)a_{n-k+1}$、$x^ky$ 帶 $a_{n-k}$：只有 $y''$、$xy'$、$y$ → 跳兩格；有 $x^2y'$、$xy$ → 跳三格；多項式係數 → 三項以上。</li>
+    <li>三項以上的遞迴分別取 $(a_0,a_1)=(1,0)$、$(0,1)$ 各算一次；同奇偶的三項（如 $a_{n+2},a_n,a_{n-2}$）仍是兩條獨立的鏈。</li>
+    <li>遞迴分子出現 $(n-\lambda)$ 時，$\lambda$ 為非負整數的那條鏈截斷成多項式；看到 $1/k!$ 就想 $e^{x}$、$e^{x^2}$。</li>
+  </ol>
+</div>

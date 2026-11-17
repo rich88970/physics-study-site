@@ -1,0 +1,977 @@
+<!-- 考試書寫版：每份先列完整題目，再列可直接寫在考卷上的完整作答。側欄依 data-exam-id 開啟。 -->
+
+<!-- ===== 一、Bessel 方程與 Frobenius 法 ===== -->
+<article class="exam-item" data-exam-id="am6-ex-1" data-group="一、Bessel 方程與 Frobenius 法" data-title="板書：Bessel 方程的 Frobenius 解">
+  <h3>板書例題 10/21</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-ex-1"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例：Bessel's diff. Eq &amp; Bessel's function　$x^2y''+xy'+(x^2-m^2)y=0$，$m=0,\pm1,\pm2,\dots$</p><p>與標準式比較 $P(x)=\frac1x$，$Q(x)=\frac{x^2-m^2}{x^2}$；$xP(x)=1$，$x^2Q=x^2-m^2$　選 Frobenius method</p><p>let $y=\sum_{n=0}^{\infty}a_nx^{n+\gamma}$（$a_0\ne0$），代入原式；找 $\gamma$，遞迴關係</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用 Frobenius 法解 Bessel 方程 $x^2y''+xy'+(x^2-m^2)y=0$（$m\ge0$）：(a) 判斷 $x=0$ 的類型並求指標根；(b) 求遞迴關係，說明為什麼 $a_1=0$；(c) 求 $\gamma=m$ 的解，選 $a_0$ 使它等於 $J_m(x)$；(d) 寫出 $J_0$、$J_1$ 的前三個非零項。</div>
+  <div class="rote">
+    <p><b>看到</b>「$x^2y''+xy'+(x^2-m^2)y=0$」＋「選 Frobenius method」＋「找 $\gamma$、遞迴」⟹ 題型：<b>Bessel 方程的 Frobenius 解（推出 $J_m$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $x=0$ 的類型與指標根</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$ 有限 ⟹ 正則奇點；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $x^2$ 後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標；$m$：Bessel 方程的階數</span>
+        板書給 $P=\dfrac1x$、$Q=\dfrac{x^2-m^2}{x^2}$，在 0 發散，乘上 $x$、$x^2$ 後有限。<br>
+        $p_0=\lim\limits_{x\to0}xP=1$，$q_0=\lim\limits_{x\to0}(x^2-m^2)=-m^2$<br>
+        $\gamma(\gamma-1)+\gamma-m^2=\gamma^2-m^2=0\Rightarrow\gamma=m,\ -m$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 遞迴關係與 $a_1=0$</h5>
+      <p class="wq-step"><span class="memo">背：代入 $y=\sum a_nx^{n+\gamma}$：$x^2y''\to s(s-1)a_n$，$xy'\to sa_n$，$y\to a_n$；$x^2y\to a_{n-2}$（$s=n+\gamma$）</span>
+        <span class="syms">$s=n+\gamma$：第 $n$ 項的次方；$a_n$：級數係數；$a_{n-2}$：$x^2y$ 平移兩格後的係數；$m$：階數</span>
+        前三項合併成 $(s^2-m^2)a_n$；$x^2y$ 高兩次，$n=0$、$n=1$ 單獨寫。<br>
+        $$\begin{aligned}&(\gamma^2-m^2)a_0x^\gamma\\&+\big[(1+\gamma)^2-m^2\big]a_1x^{1+\gamma}\\&+\sum_{n\ge2}\big[(n+\gamma+m)(n+\gamma-m)a_n\\&\qquad+a_{n-2}\big]x^{n+\gamma}=0\end{aligned}$$
+        遞迴：$(n+\gamma+m)(n+\gamma-m)a_n+a_{n-2}=0$（$n\ge2$）</p>
+      <p class="wq-step"><span class="memo">背：每個次方的係數為 0；遞迴跳兩格，$a_1=0$ ⟹ 奇數項全為 0</span>
+        <span class="syms">$a_1$：$x^{1+\gamma}$ 項的係數；$\gamma=m$：大根；$m\ge0$：階數</span>
+        $n=1$ 的係數代 $\gamma=m$，$1+2m\ge1$ 不為零。<br>
+        $\big[(1+m)^2-m^2\big]a_1=(1+2m)a_1=0\Rightarrow a_1=0$，$a_3=a_5=\cdots=0$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $\gamma=m$ 的解與 $J_m$</h5>
+      <p class="wq-step"><span class="memo">背：$(n+\gamma+m)(n+\gamma-m)a_n=-a_{n-2}$ 代 $\gamma=m$、$n=2k$</span>
+        <span class="syms">$a_{2k}$：偶數項係數；$k$：第幾個偶數項；$m$：階數；$a_0$：首項</span>
+        $\gamma=m$ 時 $(n+2m)n\,a_n=-a_{n-2}$，$n=2k$ 代入。<br>
+        $a_{2k}=-\dfrac{a_{2k-2}}{2k(2k+2m)}=-\dfrac{a_{2k-2}}{4k(k+m)}$</p>
+      <p class="wq-step"><span class="memo">背：連乘 $(m+1)(m+2)\cdots(m+k)=\dfrac{(m+k)!}{m!}$，$1\cdot2\cdots k=k!$</span>
+        <span class="syms">$a_{2k}$：偶數項係數；$k$：項的編號；$m$：階數；$a_0$：首項</span>
+        從 $k=1$ 連乘到 $k$：分子 $(-1)^k$，分母 $4^k\cdot k!\cdot(m+1)\cdots(m+k)$。<br>
+        $a_{2k}=\dfrac{(-1)^k\,m!}{4^k\,k!\,(m+k)!}\,a_0$（$k=1$：$a_2=-\dfrac{a_0}{4(m+1)}$）</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac{x^{2k+m}}{4^k}=2^m\Big(\dfrac x2\Big)^{2k+m}$；$J_m=\displaystyle\sum_{k\ge0}\frac{(-1)^k}{k!\,(m+k)!}\Big(\frac x2\Big)^{2k+m}$</span>
+        <span class="syms">$J_m$：$m$ 階第一類 Bessel 函數；$a_0$：首項；$k$：求和指標；$m$：階數</span>
+        代回 $y=\sum a_{2k}x^{2k+m}$，再選 $a_0$ 讓前面的係數變成 1。<br>
+        $y=a_0\,2^m\,m!\displaystyle\sum_{k\ge0}\frac{(-1)^k}{k!\,(m+k)!}\Big(\frac x2\Big)^{2k+m}$，取 $a_0=\dfrac1{2^m\,m!}$ ⟹ $y=J_m(x)$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $J_0$、$J_1$ 前三個非零項</h5>
+      <p class="wq-step"><span class="memo">背：$J_m=\displaystyle\sum_{k\ge0}\frac{(-1)^k}{k!\,(m+k)!}\Big(\frac x2\Big)^{2k+m}$</span>
+        <span class="syms">$J_m$：$m$ 階 Bessel 函數；$k$：求和指標；$m$：階數</span>
+        $m=0$ 與 $m=1$ 各代 $k=0,1,2$。<br>
+        $m=0$：$\dfrac1{0!0!}$、$-\dfrac1{1!1!}\cdot\dfrac14$、$\dfrac1{2!2!}\cdot\dfrac1{16}$ ⟹ $J_0=1-\dfrac{x^2}4+\dfrac{x^4}{64}-\cdots$<br>
+        $m=1$：$\dfrac1{0!1!}\cdot\dfrac12$、$-\dfrac1{1!2!}\cdot\dfrac18$、$\dfrac1{2!3!}\cdot\dfrac1{32}$ ⟹ $J_1=\dfrac x2-\dfrac{x^3}{16}+\dfrac{x^5}{384}-\cdots$</p>
+    </div>
+  </div>
+  <div class="final">答：$\gamma=\pm m$；$J_m=\sum\frac{(-1)^k}{k!(m+k)!}(\frac x2)^{2k+m}$；$J_0=1-\frac{x^2}4+\frac{x^4}{64}-\cdots$，$J_1=\frac x2-\frac{x^3}{16}+\frac{x^5}{384}-\cdots$。</div>
+  <p class="small"><a href="#am6-ex-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-01a" data-group="一、Bessel 方程與 Frobenius 法" data-title="自編：y''+λ²e^{2x}y=0">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''+\lambda^2e^{2x}y=0$，$-\infty\lt x\le0$，$\lambda\gt0$：(a) 令 $t=\lambda e^x$，證明 $y$ 對 $t$ 滿足 Bessel 方程，寫出一般解；(b) 要求 $x\to-\infty$ 時 $y$ 有界、且 $y(0)=0$，求所有 $\lambda$ 與對應的解；(c) 第二小的 $\lambda$ 對應的解在 $(-\infty,0)$ 內哪裡為零；(d) 寫出 $y''+(e^{2x}-m^2)y=0$ 的一般解。</div>
+  <div class="rote">
+    <p><b>看到</b>「係數 $e^{2x}$」＋「令 $t=\lambda e^x$」＋「有界、$y(0)=0$ 求 $\lambda$」⟹ 題型：<b>換變數化成 Bessel 方程＋本徵值＝$J_0$ 的零點</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 化成 Bessel 方程與一般解</h5>
+      <p class="wq-step"><span class="memo">背：連鎖律 $\dfrac{dy}{dx}=\dfrac{dy}{dt}\dfrac{dt}{dx}$</span>
+        <span class="syms">$t$：新變數（$t=\lambda e^x$）；$y_t$、$y_{tt}$：$y$ 對 $t$ 的一、二階導數；$\lambda$：題目的正常數</span>
+        題目的代換 $\dfrac{dt}{dx}=\lambda e^x=t$，第二次微分要對乘積微分。<br>
+        $\dfrac{dy}{dx}=t\,y_t$，$\dfrac{d^2y}{dx^2}=t\dfrac{d}{dt}\big(t\,y_t\big)=t^2y_{tt}+t\,y_t$</p>
+      <p class="wq-step"><span class="memo">背：$t^2y_{tt}+ty_t+(t^2-m^2)y=0$ ⟹ $y=AJ_m(t)+BY_m(t)$</span>
+        <span class="syms">$m$：Bessel 方程的階數；$J_m$、$Y_m$：第一、二類 Bessel 函數；$A$、$B$：常數</span>
+        代入原式，$\lambda^2e^{2x}=t^2$，得到 $m=0$ 的 Bessel 方程。<br>
+        $t^2y_{tt}+ty_t+t^2y=0$ ⟹ $y=AJ_0(\lambda e^x)+BY_0(\lambda e^x)$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 有界且 $y(0)=0$ 的 $\lambda$ 與解</h5>
+      <p class="wq-step"><span class="memo">背：$t\to0^+$ 時 $J_0(t)\to1$，$Y_0(t)\to-\infty$</span>
+        <span class="syms">$J_0$、$Y_0$：0 階第一、二類 Bessel 函數；$t=\lambda e^x$；$B$：$Y_0$ 的係數</span>
+        $x\to-\infty$ 對應 $t\to0^+$，要有界就得丟掉 $Y_0$。<br>
+        $B=0$，$y=AJ_0(\lambda e^x)$</p>
+      <p class="wq-step"><span class="memo">背：$J_0(j_{0n})=0$，$j_{01}=2.405$、$j_{02}=5.520$、$j_{03}=8.654$</span>
+        <span class="syms">$j_{0n}$：$J_0$ 的第 $n$ 個正零點；$A$：常數（不可為 0）；$\lambda$：要求的常數</span>
+        $x=0$ 對應 $t=\lambda e^0=\lambda$；$A\ne0$，否則 $y\equiv0$。<br>
+        $y(0)=AJ_0(\lambda)=0\Rightarrow\lambda=j_{0n}\approx2.405,\ 5.520,\ 8.654,\dots$，$y_n=AJ_0(j_{0n}e^x)$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 第二個解的內部零點</h5>
+      <p class="wq-step"><span class="memo">背：$J_0(t)=0\iff t=j_{0n}$</span>
+        <span class="syms">$t=j_{02}e^x$：$x\lt0$ 時從 0 增加到 $j_{02}$；$j_{01}=2.4048$、$j_{02}=5.5201$：$J_0$ 的前兩個零點</span>
+        $t$ 從 0 走到 $j_{02}$，中間只經過一個零點 $j_{01}$。<br>
+        $j_{02}e^x=j_{01}\Rightarrow x=\ln\dfrac{j_{01}}{j_{02}}=\ln\dfrac{2.4048}{5.5201}=\ln0.43565=-0.831$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $y''+(e^{2x}-m^2)y=0$ 的一般解</h5>
+      <p class="wq-step"><span class="memo">背：$t=e^x$ ⟹ $\dfrac{d^2y}{dx^2}=t^2y_{tt}+ty_t$；$t^2y_{tt}+ty_t+(t^2-m^2)y=0$ ⟹ $y=AJ_m(t)+BY_m(t)$</span>
+        <span class="syms">$t$：新變數；$m$：階數；$J_m$、$Y_m$：$m$ 階第一、二類 Bessel 函數；$A$、$B$：常數</span>
+        同 (a) 的做法，$\lambda=1$，$e^{2x}=t^2$。<br>
+        $t^2y_{tt}+ty_t+(t^2-m^2)y=0$ ⟹ $y=AJ_m(e^x)+BY_m(e^x)$</p>
+    </div>
+  </div>
+  <div class="final">答：$\lambda=j_{0n}$，$y_n=AJ_0(j_{0n}e^x)$；$y_2$ 零點 $x\approx-0.831$；$y=AJ_m(e^x)+BY_m(e^x)$。</div>
+  <p class="small"><a href="#am6-sf-01a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-01b" data-group="一、Bessel 方程與 Frobenius 法" data-title="自編：y''+xy=0 化成 1/3 階">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''+xy=0$（$x\gt0$）：(a) 令 $y=\sqrt x\,w(x)$，證明 $x^2w''+xw'+\big(x^3-\tfrac14\big)w=0$；(b) 再令 $t=\tfrac23x^{3/2}$，證明 $w$ 對 $t$ 滿足 $m=\tfrac13$ 的 Bessel 方程，寫出 $y$ 的一般解；(c) 用 $J_{\pm1/3}$ 的首項說明兩個解在 $x\to0$ 分別像 $x$ 與 $1$，並和冪級數解 $y=a_0\big(1-\tfrac{x^3}{6}+\cdots\big)+a_1\big(x-\tfrac{x^4}{12}+\cdots\big)$ 對照。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y''+xy=0$」＋「令 $y=\sqrt x\,w$、$t=\tfrac23x^{3/2}$」⟹ 題型：<b>兩次代換化成分數階 Bessel 方程</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 代入 $y=\sqrt x\,w$</h5>
+      <p class="wq-step"><span class="memo">背：乘積微分 $(fg)'=f'g+fg'$，$(x^{1/2})'=\tfrac12x^{-1/2}$</span>
+        <span class="syms">$y$：原來的未知函數；$w(x)$：新的未知函數；$w'$、$w''$：$w$ 對 $x$ 的導數</span>
+        微兩次後代入 $y''+xy=0$，再乘 $x^{3/2}$ 讓 $w''$ 的係數變 $x^2$。<br>
+        $y'=\tfrac12x^{-1/2}w+x^{1/2}w'$，$y''=-\tfrac14x^{-3/2}w+x^{-1/2}w'+x^{1/2}w''$<br>
+        $x^2w''+xw'-\tfrac14w+x^3w=0\Rightarrow x^2w''+xw'+\big(x^3-\tfrac14\big)w=0$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 令 $t=\tfrac23x^{3/2}$ 化成 Bessel 方程</h5>
+      <p class="wq-step"><span class="memo">背：$x^2w''+xw'=x\dfrac{d}{dx}\Big(x\dfrac{dw}{dx}\Big)$；$t=\tfrac23x^{3/2}$ ⟹ $x\dfrac{d}{dx}=\dfrac32\,t\dfrac{d}{dt}$</span>
+        <span class="syms">$t$：新變數；$w_t$、$w_{tt}$：$w$ 對 $t$ 的導數；$x\frac{d}{dx}$：Euler 算子</span>
+        $\dfrac{dt}{dx}=x^{1/2}$，所以 $x\dfrac{d}{dx}=x^{3/2}\dfrac{d}{dt}$，再代 $x^{3/2}=\tfrac32t$；另外 $x^3=\tfrac94t^2$。<br>
+        $x^2w''+xw'=\dfrac94\big(t^2w_{tt}+tw_t\big)$，$\dfrac94\big(t^2w_{tt}+tw_t+t^2w\big)-\dfrac14w=0$<br>
+        $t^2w_{tt}+tw_t+\Big(t^2-\dfrac19\Big)w=0$，$m=\tfrac13$</p>
+      <p class="wq-step"><span class="memo">背：$m$ 不是整數時 $J_m$、$J_{-m}$ 線性獨立，一般解 $AJ_m+BJ_{-m}$</span>
+        <span class="syms">$J_{\pm1/3}$：$\pm\tfrac13$ 階 Bessel 函數；$A$、$B$：常數</span>
+        $m=\tfrac13$ 不是整數；再乘回 $\sqrt x$。<br>
+        $y=\sqrt x\Big[A\,J_{1/3}\big(\tfrac23x^{3/2}\big)+B\,J_{-1/3}\big(\tfrac23x^{3/2}\big)\Big]$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $x\to0$ 的行為與冪級數對照</h5>
+      <p class="wq-step"><span class="memo">背：$J_\nu(t)\approx\dfrac{(t/2)^\nu}{\Gamma(\nu+1)}$（$t\to0$）</span>
+        <span class="syms">$J_\nu$：$\nu$ 階 Bessel 函數；$\Gamma$：Gamma 函數；$t=\tfrac23x^{3/2}$</span>
+        $t^{1/3}\propto x^{1/2}$、$t^{-1/3}\propto x^{-1/2}$，再乘 $\sqrt x$。<br>
+        $\sqrt x\,J_{1/3}\propto\sqrt x\cdot x^{1/2}=x$，$\sqrt x\,J_{-1/3}\propto\sqrt x\cdot x^{-1/2}=1$</p>
+      <p class="wq-step"><span class="memo">背：$y=\sum a_nx^n$ 代入 $y''+xy=0$：$(n+2)(n+1)a_{n+2}+a_{n-1}=0$，$a_2=0$</span>
+        <span class="syms">$a_n$：冪級數係數；$a_0$、$a_1$：任意常數；$n$：比較係數的次方</span>
+        遞迴跳三格，代 $n=1$、$n=2$；$J_{1/3}$ 的解對應 $a_1$ 串，$J_{-1/3}$ 的解對應 $a_0$ 串。<br>
+        $a_3=-\dfrac{a_0}{3\cdot2}=-\dfrac{a_0}6$，$a_4=-\dfrac{a_1}{4\cdot3}=-\dfrac{a_1}{12}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\sqrt x\big[AJ_{1/3}(\frac23x^{3/2})+BJ_{-1/3}(\frac23x^{3/2})\big]$。</div>
+  <p class="small"><a href="#am6-sf-01b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-01c" data-group="一、Bessel 方程與 Frobenius 法" data-title="自編：小根 γ=-m 何時成功">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　Bessel 方程取小根 $\gamma=-m$（$m\gt0$）時，遞迴是 $n(n-2m)a_n=-a_{n-2}$（$n\ge2$），$n=1$ 那一格是 $(1-2m)a_1=0$：(a) $2m$ 不是整數（例如 $m=\tfrac13$）；(b) $m=\tfrac12$、$m=\tfrac32$；(c) $m=1,2,3,\dots$，並說明和板書「$J_{-m}=(-1)^mJ_m$、線性相依」是同一件事；(d) $m=0$——各自能不能給出第二個獨立解？</div>
+  <div class="rote">
+    <p><b>看到</b>「小根 $\gamma=-m$ 的遞迴 $n(n-2m)a_n=-a_{n-2}$」＋「不同的 $m$ 是否給出第二個解」⟹ 題型：<b>看「問題格」$n=2m$：$0\cdot a_N=$ 右邊</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $2m$ 不是整數</h5>
+      <p class="wq-step"><span class="memo">背：$a_n=-\dfrac{a_{n-2}}{n(n-2m)}$ 只在 $n=2m$ 時除以 0</span>
+        <span class="syms">$a_n$：小根級數的係數；$n$：正整數指標；$m$：階數</span>
+        $2m$ 不是整數，每一格都能除；首項 $x^{-m}$ 和 $J_m$ 的首項 $x^m$ 比值 $x^{-2m}$ 不是常數。<br>
+        $(1-2m)\ne0\Rightarrow a_1=0$；$a_{2k}=-\dfrac{a_{2k-2}}{4k(k-m)}$ 都能算 ⟹ $J_{-m}$ 與 $J_m$ 獨立，一般解 $AJ_m+BJ_{-m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $m=\tfrac12$、$m=\tfrac32$</h5>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 的方程式是 $0\cdot a_N=(\text{右邊})$；右邊 $=0$ ⟹ $a_N$ 任意，小根成功</span>
+        <span class="syms">$N=2m$：兩根的差（問題格）；$a_N$：問題格的係數；右邊：$-a_{N-2}$</span>
+        $m=\tfrac12$ 的問題格是 $n=1$；$m=\tfrac32$ 的問題格是 $n=3$，奇數串在它之前已經全為 0。<br>
+        $m=\tfrac12$：$(1-1)a_1=0\cdot a_1=0$ ⟹ $a_1$ 任意；偶數串 $a_{2k}=-\dfrac{a_{2k-2}}{2k(2k-1)}$ 都能算<br>
+        $m=\tfrac32$：$n=1$：$(1-3)a_1=0\Rightarrow a_1=0$；$n=3$：$3(3-3)a_3=-a_1$，即 $0\cdot a_3=0$ ⟹ 成功</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $m$ 是正整數</h5>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 的方程式是 $0\cdot a_N=(\text{右邊})$；右邊 $\ne0$ ⟹ 矛盾，小根失敗</span>
+        <span class="syms">$N=2m$：問題格（偶數）；$a_{2m-2}$：偶數串的前一格；$a_0\ne0$：首項</span>
+        偶數串從 $a_0\ne0$ 開始，每一步乘非零數，所以 $a_{2m-2}\ne0$。<br>
+        $2m\cdot0\cdot a_{2m}=-a_{2m-2}\ne0$，矛盾（例：$m=1$，$n=2$：$0=-a_0$）⟹ 第二解要含 $\ln x$（$Y_m$）</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac1{(-k)!}=\dfrac1{\Gamma(1-k)}=0$（$k\ge1$）</span>
+        <span class="syms">$J_{-m}$：板書用定義算出的級數；$J_m$：大根的解；$\Gamma$：Gamma 函數</span>
+        板書的 $J_{-m}$ 用 $\tfrac1{(-k)!}=0$ 把前 $m$ 項全刪掉，等於強迫 $a_0=\cdots=a_{2m-2}=0$，級數從 $x^m$ 才開始，所以只是 $J_m$ 的倍數。<br>
+        $J_{-m}=(-1)^mJ_m$，線性相依，和上面的矛盾是同一件事</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $m=0$</h5>
+      <p class="wq-step"><span class="memo">背：指標重根 ⟹ Frobenius 只給一個解，第二解含 $y_1\ln x$</span>
+        <span class="syms">$\gamma=\pm m$：兩個指標；$J_0$：唯一的級數解</span>
+        $m=0$ 時兩根都是 0。<br>
+        $\gamma=\pm0$ 重根，只得 $J_0$；第二解含 $J_0\ln x$</p>
+    </div>
+  </div>
+  <div class="final">答：非整數或半奇數 $m$：$J_{-m}$ 是第二解；整數 $m$（含 0）：要用 $Y_m$。</div>
+  <p class="small"><a href="#am6-sf-01c">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 二、第二個解 ===== -->
+<article class="exam-item" data-exam-id="am6-ex-2" data-group="二、第二個解與一般解" data-title="板書：J_{-m}=(-1)^m J_m">
+  <h3>板書例題 10/21</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-ex-2"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>考慮 $\gamma=-m$，$a_0=$ 待定，$a_1=0$；$(n)(n-2m)a_n+a_{n-2}=0$；$y_{\gamma=-m}\propto J_{-m}(x)$</p><p>$J_{-m}(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(-m+n)!\,n!}\left(\frac x2\right)^{-m+2n}$　$n\to n+m$　$=\sum_{n=m}^{\infty}\frac{(-1)^{n+m}}{n!\,(n+m)!}\left(\frac x2\right)^{2n+m}$</p><p>$J_{-m}(x)=(-1)^mJ_m(x)$；$y_{\gamma=-m}$ 和 $y_{\gamma=m}$ 線性相依，$y_{\gamma=-m}$ 不是第二個線性獨立解</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$m$ 為正整數，$J_{-m}(x)=\sum_{n\ge0}\frac{(-1)^n}{(n-m)!\,n!}\big(\frac x2\big)^{2n-m}$：(a) 證明 $J_{-m}(x)=(-1)^mJ_m(x)$；(b) 說明為什麼 $\gamma=-m$ 得不到第二個線性獨立解；(c) 以 $m=1$ 寫出 $J_{-1}$ 的前兩個非零項驗證。</div>
+  <div class="rote">
+    <p><b>看到</b>「$J_{-m}$ 的級數」＋「$m$ 是整數」＋「$n\to n+m$」⟹ 題型：<b>負整數階乘為 0 → 平移指標 → $J_{-m}=(-1)^mJ_m$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 證明 $J_{-m}=(-1)^mJ_m$</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac1{(-k)!}=\dfrac1{\Gamma(1-k)}=0$（$k=1,2,\dots$）</span>
+        <span class="syms">$J_{-m}$：題目給的級數；$n$：求和指標；$m$：正整數階數；$\Gamma$：Gamma 函數</span>
+        $n=0,\dots,m-1$ 時 $n-m$ 是負整數，那幾項是 0，求和從 $n=m$ 開始。<br>
+        $J_{-m}=\displaystyle\sum_{n=m}^{\infty}\frac{(-1)^n}{(n-m)!\,n!}\Big(\frac x2\Big)^{2n-m}$</p>
+      <p class="wq-step"><span class="memo">背：平移指標 $n=k+m$；$J_m=\displaystyle\sum_{k\ge0}\frac{(-1)^k}{k!\,(k+m)!}\Big(\frac x2\Big)^{2k+m}$</span>
+        <span class="syms">$k$：新的求和指標（從 0 開始）；$J_m$：$m$ 階 Bessel 函數</span>
+        $(n-m)!=k!$、$n!=(k+m)!$、$2n-m=2k+m$、$(-1)^n=(-1)^m(-1)^k$。<br>
+        $J_{-m}=(-1)^m\displaystyle\sum_{k=0}^{\infty}\frac{(-1)^k}{k!\,(k+m)!}\Big(\frac x2\Big)^{2k+m}=(-1)^mJ_m$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 為什麼不是第二個解</h5>
+      <p class="wq-step"><span class="memo">背：$W(y_1,cy_1)=y_1(cy_1)'-y_1'(cy_1)=0$ ⟹ 線性相依</span>
+        <span class="syms">$W$：Wronskian；$y_1$：一個解；$c$：常數</span>
+        $J_{-m}$ 只是 $J_m$ 的常數倍，一般解需要兩個獨立解，所以要用降階法另找 $y_2$。<br>
+        $W(J_m,J_{-m})=(-1)^mW(J_m,J_m)=0$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $m=1$ 驗證</h5>
+      <p class="wq-step"><span class="memo">背：$J_{-m}=\displaystyle\sum_{n\ge0}\frac{(-1)^n}{(n-m)!\,n!}\Big(\frac x2\Big)^{2n-m}$，$\dfrac1{(-1)!}=0$</span>
+        <span class="syms">$J_{-1}$：$-1$ 階的級數；$n$：求和指標</span>
+        代 $m=1$，$n=0$ 那項是 0，算 $n=1$、$n=2$。<br>
+        $J_{-1}=\dfrac{(-1)^1}{0!\,1!}\Big(\dfrac x2\Big)+\dfrac{(-1)^2}{1!\,2!}\Big(\dfrac x2\Big)^3+\cdots=-\dfrac x2+\dfrac{x^3}{16}-\cdots=-J_1$ ✓</p>
+    </div>
+  </div>
+  <div class="final">答：$J_{-m}=(-1)^mJ_m$（平移後下限為 $0$）；線性相依，第二解要另找。</div>
+  <p class="small"><a href="#am6-ex-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-ex-3" data-group="二、第二個解與一般解" data-title="板書：降階法求 m=0 的第二解">
+  <h3>板書例題 10/21（板書一般公式；m=0 小題由網站設計）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-ex-3"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>但可利用降階法，找第二個解 $y_2=y_1u$</p><p>$y_2=y_1\int\frac{e^{-\int P(x)dx}}{y_1^2}dx$（$e^{-\int P dx}\to\frac1x$）$=J_m(x)\int\frac{1}{x[J_m(x)]^2}dx=$ 多項式級數 $\propto$ Neumann function $Y_m(x)$</p><p>① $J_m(x)$、$Y_m(x)$ 是 Bessel's diff. eq 的兩個線性獨立解　② general solution $y(x)=AJ_m(x)+BY_m(x)$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　板書 $y_2=y_1\int\frac{e^{-\int P\,dx}}{y_1^2}dx=J_m\int\frac{dx}{x[J_m]^2}$。取 $m=0$、$y_1=J_0=1-\frac{x^2}4+\frac{x^4}{64}-\cdots$：(a) 求 $\frac{1}{xJ_0^2}$ 到 $x^3$ 項；(b) 求 $y_2$ 到 $x^4$ 項；(c) 說明 $y_2$ 在 $x\to0$ 的行為，並和 Neumann 函數 $Y_0$ 對照。</div>
+  <div class="rote">
+    <p><b>看到</b>「降階法 $y_2=y_1\int\frac{e^{-\int P}}{y_1^2}dx$」＋「$y_1=J_0$ 的級數」⟹ 題型：<b>降階法：$\tfrac1{J_0^2}$ 用 $\tfrac1{1-s}$ 展開，逐項積分出 $\ln x$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $\dfrac1{xJ_0^2}$ 到 $x^3$</h5>
+      <p class="wq-step"><span class="memo">背：$y_2=y_1\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}dx$，$P=\dfrac1x\Rightarrow e^{-\int P\,dx}=\dfrac1x$</span>
+        <span class="syms">$y_1=J_0$：第一個解；$y_2$：第二個解；$P(x)$：標準式 $y'$ 的係數</span>
+        Bessel 方程除以 $x^2$ 後 $P=\tfrac1x$，所以被積函數是 $\dfrac1{xJ_0^2}$；先算 $J_0^2$ 到 $x^4$。<br>
+        $J_0^2=\Big(1-\dfrac{x^2}4+\dfrac{x^4}{64}\Big)^2=1-\dfrac{x^2}2+\Big(\dfrac1{16}+\dfrac2{64}\Big)x^4=1-\dfrac{x^2}2+\dfrac{3x^4}{32}$</p>
+      <p class="wq-step"><span class="memo">背：$\dfrac1{1-s}=1+s+s^2+\cdots$（$s$ 很小）</span>
+        <span class="syms">$s$：小量（這裡 $s=\tfrac{x^2}2-\tfrac{3x^4}{32}$）；$s^2=\tfrac{x^4}4+\cdots$</span>
+        $J_0^2=1-s$，取倒數保留到 $x^4$，再除以 $x$。<br>
+        $\dfrac1{J_0^2}=1+\dfrac{x^2}2+\Big(-\dfrac3{32}+\dfrac14\Big)x^4=1+\dfrac{x^2}2+\dfrac{5x^4}{32}$<br>
+        $\dfrac1{xJ_0^2}=\dfrac1x+\dfrac x2+\dfrac{5x^3}{32}+\cdots$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $y_2$ 到 $x^4$</h5>
+      <p class="wq-step"><span class="memo">背：逐項積分，$\displaystyle\int\frac{dx}x=\ln x$，$\displaystyle\int x^k\,dx=\frac{x^{k+1}}{k+1}$</span>
+        <span class="syms">$u$：降階法的函數（$y_2=uy_1$）；$k$：次方</span>
+        積分常數只會加上 $J_0$ 的倍數，取 0。<br>
+        $u=\ln x+\dfrac{x^2}4+\dfrac{5x^4}{128}+\cdots$</p>
+      <p class="wq-step"><span class="memo">背：$y_2=u\,y_1$</span>
+        <span class="syms">$y_2$：第二個解；$u$：上一步的積分；$y_1=J_0=1-\tfrac{x^2}4+\cdots$</span>
+        非對數部分 $(1-\tfrac{x^2}4)(\tfrac{x^2}4+\tfrac{5x^4}{128})$ 保留到 $x^4$。<br>
+        $\dfrac{x^2}4+\Big(\dfrac5{128}-\dfrac1{16}\Big)x^4=\dfrac{x^2}4-\dfrac{3x^4}{128}$<br>
+        $y_2=J_0\ln x+\dfrac{x^2}4-\dfrac{3x^4}{128}+\cdots$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $x\to0$ 的行為與 $Y_0$</h5>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\lim_{x\to0^+}\ln x=-\infty$；$Y_0=\dfrac2\pi\big[y_2+(\gamma_E-\ln2)J_0\big]$</span>
+        <span class="syms">$Y_0$：0 階 Neumann 函數；$\gamma_E\approx0.5772$：Euler 常數；$J_0(0)=1$</span>
+        $J_0\to1$、$\ln x\to-\infty$，所以 $y_2$ 在 0 發散；$Y_0$ 只是 $y_2$ 加上 $J_0$ 的倍數再乘常數，一樣發散。<br>
+        $y_2\approx\ln x\to-\infty$；一般解 $y=AJ_0+BY_0$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_2=J_0\ln x+\frac{x^2}4-\frac{3x^4}{128}+\cdots$，在 0 發散；一般解 $AJ_0+BY_0$。</div>
+  <p class="small"><a href="#am6-ex-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-k114-2" data-group="二、第二個解與一般解" data-title="114上期末2：x²y''+xy'+(x²-1/4)y=0">
+  <h3>應用數學期末考 2025.Dec. 第 2 題（114上）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-k114-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. (25%) Solve $x^2y''+xy'+\left(x^2-\frac{1}{4}\right)y=0$ by the Frobenius method. You only need to find the first three nonzero terms of each of the two linearly independent series solutions.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　（25%）用 Frobenius 法解 $x^2y''+xy'+(x^2-\frac14)y=0$，兩個解各寫前三個非零項。</div>
+  <div class="rote">
+    <p><b>看到</b>「by the Frobenius method」＋「$x^2y''+xy'+(x^2-\tfrac14)y$（$m^2=\tfrac14$ 的 Bessel 方程）」＋「各前三個非零項」⟹ 題型：<b>半整數階 Bessel：兩根差 1，小根成功</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>兩個線性獨立解各前三個非零項</h5>
+      <p class="wq-step"><span class="memo">背：$p_0=\displaystyle\lim_{x\to0}xP$、$q_0=\displaystyle\lim_{x\to0}x^2Q$ 有限 ⟹ 正則奇點；指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$</span>
+        <span class="syms">$P(x)$、$Q(x)$：除以 $x^2$ 後 $y'$、$y$ 的係數；$p_0$、$q_0$：兩個極限值；$\gamma$：指標</span>
+        $xP=1$、$x^2Q=x^2-\tfrac14$。<br>
+        $p_0=1$，$q_0=-\tfrac14$；$\gamma^2-\tfrac14=0\Rightarrow\gamma=\pm\tfrac12$</p>
+      <p class="wq-step"><span class="memo">背：代入 $\sum a_nx^{n+\gamma}$：$x^2y''+xy'-\tfrac14y\to(s^2-\tfrac14)a_n$；$x^2y\to a_{n-2}$（$s=n+\gamma$）</span>
+        <span class="syms">$s=n+\gamma$：次方；$a_n$、$a_{n-2}$：差兩格的係數</span>
+        $n=1$ 單獨一格，$n\ge2$ 是遞迴。<br>
+        $n=1$：$(\gamma+\tfrac32)(\gamma+\tfrac12)a_1=0$；$n\ge2$：$(n+\gamma+\tfrac12)(n+\gamma-\tfrac12)a_n=-a_{n-2}$</p>
+      <p class="wq-step"><span class="memo">背：$a_n=-\dfrac{a_{n-2}}{(n+\gamma+\frac12)(n+\gamma-\frac12)}$ 代 $\gamma=\tfrac12$</span>
+        <span class="syms">$a_n$：要求的係數；$a_{n-2}$：前兩格的係數；$a_0$：任意常數</span>
+        $n=1$ 係數 $2\cdot1\ne0$，$a_1=0$；分母變 $(n+1)n$。<br>
+        $a_2=-\dfrac{a_0}{3\cdot2}=-\dfrac{a_0}6$，$a_4=-\dfrac{a_2}{5\cdot4}=\dfrac{a_0}{120}$，$y_1=x^{1/2}\Big(1-\dfrac{x^2}6+\dfrac{x^4}{120}-\cdots\Big)$</p>
+      <p class="wq-step"><span class="memo">背：小根在 $n=N$ 的方程式是 $0\cdot a_N=(\text{右邊})$；右邊 $=0$ ⟹ 小根成功</span>
+        <span class="syms">$\gamma=-\tfrac12$：小根；$N=1$：兩根的差；$a_1$：問題格的係數</span>
+        $n=1$ 係數 $1\cdot0=0$、右邊沒有東西，$a_1$ 任意，取 0；分母變 $n(n-1)$。<br>
+        $a_2=-\dfrac{a_0}{2\cdot1}=-\dfrac{a_0}2$，$a_4=-\dfrac{a_2}{4\cdot3}=\dfrac{a_0}{24}$，$y_2=x^{-1/2}\Big(1-\dfrac{x^2}2+\dfrac{x^4}{24}-\cdots\Big)$</p>
+      <p class="wq-step"><span class="memo">背：$\sin x=x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots$，$\cos x=1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\cdots$</span>
+        <span class="syms">$x$：自變數；$J_{\pm1/2}$：$\pm\tfrac12$ 階 Bessel 函數</span>
+        $y_1$ 括號乘 $x$ 是 $\sin x$，$y_2$ 括號是 $\cos x$。<br>
+        $y_1=\dfrac{\sin x}{\sqrt x}=\sqrt{\tfrac\pi2}\,J_{1/2}$，$y_2=\dfrac{\cos x}{\sqrt x}=\sqrt{\tfrac\pi2}\,J_{-1/2}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_1=x^{1/2}\big(1-\frac{x^2}6+\frac{x^4}{120}-\cdots\big)=\frac{\sin x}{\sqrt x}$，$y_2=x^{-1/2}\big(1-\frac{x^2}2+\frac{x^4}{24}-\cdots\big)=\frac{\cos x}{\sqrt x}$（$\propto J_{\pm1/2}$）。</div>
+  <p class="small"><a href="#am6-k114-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-02a" data-group="二、第二個解與一般解" data-title="自編：J_{±1/2} 的封閉形式">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$J_\nu(x)=\sum_{n\ge0}\frac{(-1)^n}{n!\,\Gamma(n+\nu+1)}\big(\frac x2\big)^{2n+\nu}$，$\Gamma(\tfrac12)=\sqrt\pi$：(a) 用 $\Gamma(z+1)=z\Gamma(z)$ 證明 $n!\,\Gamma(n+\tfrac32)=\frac{\sqrt\pi\,(2n+1)!}{2^{2n+1}}$、$n!\,\Gamma(n+\tfrac12)=\frac{\sqrt\pi\,(2n)!}{2^{2n}}$；(b) 證明 $J_{1/2}=\sqrt{\frac2{\pi x}}\sin x$、$J_{-1/2}=\sqrt{\frac2{\pi x}}\cos x$；(c) 求 $J_{1/2}$ 的全部正零點，和板書 $J_0$ 零點表的間距比較；(d) 證明 $J_{1/2}^2+J_{-1/2}^2=\frac2{\pi x}$；(e) 求 $x^2y''+xy'+\big(\lambda^2x^2-\frac14\big)y=0$ 在 $x\to0^+$ 有界、且 $y(1)=0$ 的所有 $\lambda\gt0$ 與解，說明為什麼不用查零點表、為什麼條件要寫「有界」而不能寫 $y(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$\Gamma(n+\tfrac32)$、$\Gamma(\tfrac12)=\sqrt\pi$」＋「$J_{\pm1/2}$ 的封閉形式」＋「有界、$y(1)=0$ 求 $\lambda$」⟹ 題型：<b>半整數階 Bessel ＝ $\sin$、$\cos$ ＋本徵值問題</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 兩個 Gamma 恆等式</h5>
+      <p class="wq-step"><span class="memo">背：$\Gamma(z+1)=z\Gamma(z)$，$\Gamma(\tfrac12)=\sqrt\pi$；$2^n\,n!=2\cdot4\cdots(2n)$</span>
+        <span class="syms">$\Gamma$：Gamma 函數；$z$：任意正數；$n$：非負整數</span>
+        連降 $n+1$ 次到 $\Gamma(\tfrac12)$，得到奇數連乘；乘 $n!$ 時把偶數補進去湊成階乘。<br>
+        $\Gamma\big(n+\tfrac32\big)=\tfrac{2n+1}2\cdot\tfrac{2n-1}2\cdots\tfrac12\sqrt\pi=\dfrac{1\cdot3\cdots(2n+1)}{2^{n+1}}\sqrt\pi$<br>
+        $$n!\,\Gamma\big(n+\tfrac32\big)=\frac{(2\cdot4\cdots2n)\,(1\cdot3\cdots(2n+1))}{2^n\cdot2^{n+1}}\sqrt\pi=\frac{\sqrt\pi\,(2n+1)!}{2^{2n+1}}$$
+        同理 $\Gamma\big(n+\tfrac12\big)=\dfrac{1\cdot3\cdots(2n-1)}{2^n}\sqrt\pi$，$n!\,\Gamma\big(n+\tfrac12\big)=\dfrac{\sqrt\pi\,(2n)!}{2^{2n}}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $J_{\pm1/2}$ 的封閉形式</h5>
+      <p class="wq-step"><span class="memo">背：$J_\nu=\displaystyle\sum_{n\ge0}\frac{(-1)^n}{n!\,\Gamma(n+\nu+1)}\Big(\frac x2\Big)^{2n+\nu}$；$\sin x=\displaystyle\sum\frac{(-1)^nx^{2n+1}}{(2n+1)!}$</span>
+        <span class="syms">$J_\nu$：$\nu$ 階 Bessel 函數；$\nu=\tfrac12$；$n$：求和指標</span>
+        $\nu=\tfrac12$ 的分母是 $n!\,\Gamma(n+\tfrac32)$，代 (a)；$(\tfrac x2)^{2n+1/2}=\dfrac{x^{2n+1/2}}{2^{2n+1/2}}$。<br>
+        $$\begin{aligned}J_{1/2}&=\sum\frac{(-1)^n2^{2n+1}}{\sqrt\pi(2n+1)!}\cdot\frac{x^{2n+1/2}}{2^{2n+1/2}}\\&=\sqrt{\tfrac2\pi}\,x^{-1/2}\sum\frac{(-1)^nx^{2n+1}}{(2n+1)!}=\sqrt{\tfrac{2}{\pi x}}\sin x\end{aligned}$$</p>
+      <p class="wq-step"><span class="memo">背：$J_\nu=\displaystyle\sum_{n\ge0}\frac{(-1)^n}{n!\,\Gamma(n+\nu+1)}\Big(\frac x2\Big)^{2n+\nu}$；$\cos x=\displaystyle\sum\frac{(-1)^nx^{2n}}{(2n)!}$</span>
+        <span class="syms">$J_\nu$：$\nu$ 階 Bessel 函數；$\nu=-\tfrac12$；$n$：求和指標</span>
+        $\nu=-\tfrac12$ 的分母是 $n!\,\Gamma(n+\tfrac12)$，代 (a)；$(\tfrac x2)^{2n-1/2}=\dfrac{x^{2n-1/2}}{2^{2n-1/2}}$。<br>
+        $$\begin{aligned}J_{-1/2}&=\sum\frac{(-1)^n2^{2n}}{\sqrt\pi(2n)!}\cdot\frac{x^{2n-1/2}}{2^{2n-1/2}}\\&=\sqrt{\tfrac2\pi}\,x^{-1/2}\sum\frac{(-1)^nx^{2n}}{(2n)!}=\sqrt{\tfrac{2}{\pi x}}\cos x\end{aligned}$$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $J_{1/2}$ 的零點與 $J_0$ 比較</h5>
+      <p class="wq-step"><span class="memo">背：$\sin x=0\iff x=n\pi$</span>
+        <span class="syms">$n$：正整數；$\sqrt{2/(\pi x)}$：不為零的振幅因子</span>
+        振幅因子不為零，零點只看 $\sin x$；板書 $J_0$ 零點 2.4、5.5、8.7 的間距也接近 $\pi$。<br>
+        $x=n\pi=3.14,\ 6.28,\ 9.42,\dots$，間距 $\pi$；$J_0$：$5.5-2.4=3.1$、$8.7-5.5=3.2$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 平方和</h5>
+      <p class="wq-step"><span class="memo">背：$\sin^2x+\cos^2x=1$</span>
+        <span class="syms">$J_{\pm1/2}$：(b) 的封閉形式</span>
+        兩個平方的振幅因子相同，提出來。<br>
+        $J_{1/2}^2+J_{-1/2}^2=\dfrac2{\pi x}\big(\sin^2x+\cos^2x\big)=\dfrac2{\pi x}$</p>
+    </div>
+    <div class="wq">
+      <h5>(e) 有界、$y(1)=0$ 的 $\lambda$ 與解</h5>
+      <p class="wq-step"><span class="memo">背：$x^2y''+xy'+(a^2x^2-m^2)y=0$ 令 $t=ax$ ⟹ $m$ 階 Bessel 方程</span>
+        <span class="syms">$a=\lambda$：比例常數；$m=\tfrac12$：階數；$A'$、$B'$：常數（$\tfrac1{\sqrt\lambda}$ 併進去）</span>
+        $m^2=\tfrac14$，一般解用 (b) 的封閉形式寫。<br>
+        $y=AJ_{1/2}(\lambda x)+BJ_{-1/2}(\lambda x)=\dfrac{A'\sin\lambda x+B'\cos\lambda x}{\sqrt x}$</p>
+      <p class="wq-step"><span class="memo">背：$x\to0^+$：$\dfrac{\cos\lambda x}{\sqrt x}\to\infty$，$\dfrac{\sin\lambda x}{\sqrt x}\approx\lambda\sqrt x\to0$</span>
+        <span class="syms">$B'$：$\cos$ 項的係數；$y(0^+)$：解在 0 附近的值</span>
+        有界刪掉 $\cos$ 項；剩下的解在 0 的值是 0，所以若寫 $y(0)=1$ 就無解，只能寫「有界」。<br>
+        $B'=0$，$y=\dfrac{A'\sin\lambda x}{\sqrt x}$，$y(0^+)=0$</p>
+      <p class="wq-step"><span class="memo">背：$\sin\lambda=0\iff\lambda=n\pi$</span>
+        <span class="syms">$\lambda$：本徵值；$n$：正整數；$A'\ne0$：常數</span>
+        代 $x=1$；本徵值就是 $J_{1/2}$ 的零點 $n\pi$，是精確值，不用查表（113 上期末是 $J_0$，只能查表）。<br>
+        $A'\sin\lambda=0\Rightarrow\lambda=n\pi$，$y_n=\dfrac{\sin n\pi x}{\sqrt x}$</p>
+    </div>
+  </div>
+  <div class="final">答：如題；$J_{1/2}$ 零點 $n\pi$；$J_{1/2}^2+J_{-1/2}^2=\frac{2}{\pi x}$；$\lambda=n\pi$，$y_n=\frac{\sin n\pi x}{\sqrt x}$。</div>
+  <p class="small"><a href="#am6-sf-02a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-02b" data-group="二、第二個解與一般解" data-title="自編：Wronskian W(J_m, J_{-m})">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 由 Abel 公式說明 Bessel 方程任兩個解的 Wronskian 一定是 $W=\frac{C}{x}$；(b) 用 $J_{\pm m}$ 在 $x\to0$ 的首項求 $C$，證明 $W(J_m,J_{-m})=-\frac{2\sin m\pi}{\pi x}$（可用 $\Gamma(1+m)\Gamma(1-m)=\frac{m\pi}{\sin m\pi}$）；(c) 由此說明「$J_m$、$J_{-m}$ 線性相依 $\iff$ $m$ 是整數」；(d) 用 $J_{\pm1/2}$ 的封閉形式直接算 $m=\frac12$ 的 Wronskian 驗證。</div>
+  <div class="rote">
+    <p><b>看到</b>「Abel 公式」＋「首項求 $C$」＋「$\Gamma(1+m)\Gamma(1-m)=\frac{m\pi}{\sin m\pi}$」⟹ 題型：<b>Wronskian：Abel 定形式、首項定常數</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $W=\dfrac Cx$</h5>
+      <p class="wq-step"><span class="memo">背：Abel 公式 $W'=-P\,W$</span>
+        <span class="syms">$W=y_1y_2'-y_1'y_2$：兩個解的 Wronskian；$P(x)$：標準式 $y'$ 的係數；$C$：積分常數</span>
+        Bessel 方程除以 $x^2$ 後 $P=\tfrac1x$，解這個一階方程。<br>
+        $\dfrac{dW}{W}=-\dfrac{dx}x\Rightarrow W=\dfrac Cx$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 求 $C$</h5>
+      <p class="wq-step"><span class="memo">背：$J_{\pm m}(x)\approx\dfrac{(x/2)^{\pm m}}{\Gamma(1\pm m)}$（$x\to0$）</span>
+        <span class="syms">$J_{\pm m}$：$\pm m$ 階 Bessel 函數；$a=\tfrac1{\Gamma(1+m)}$、$b=\tfrac1{\Gamma(1-m)}$：首項係數</span>
+        $J_m'\approx\dfrac{am}{x}(\tfrac x2)^m$、$J_{-m}'\approx-\dfrac{bm}{x}(\tfrac x2)^{-m}$；$xW$ 是常數，首項就是精確值。<br>
+        $$\begin{aligned}W&\approx a(\tfrac x2)^m\Big(-\tfrac{bm}x\Big)(\tfrac x2)^{-m}-\tfrac{am}x(\tfrac x2)^m\,b(\tfrac x2)^{-m}\\&=-\frac{2m\,ab}{x}\end{aligned}$$</p>
+      <p class="wq-step"><span class="memo">背：$\Gamma(1+m)\Gamma(1-m)=\dfrac{m\pi}{\sin m\pi}$</span>
+        <span class="syms">$ab=\tfrac1{\Gamma(1+m)\Gamma(1-m)}$；$m$：階數</span>
+        題目給的提示代進 $ab$。<br>
+        $W(J_m,J_{-m})=-\dfrac{2m}x\cdot\dfrac{\sin m\pi}{m\pi}=-\dfrac{2\sin m\pi}{\pi x}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 何時線性相依</h5>
+      <p class="wq-step"><span class="memo">背：$W\equiv0$ ⟺ 線性相依；$\sin m\pi=0\iff m\in\mathbb Z$</span>
+        <span class="syms">$W$：Wronskian；$m$：階數；$\mathbb Z$：整數</span>
+        整數 $m$ 和板書 $J_{-m}=(-1)^mJ_m$ 一致；非整數時 $AJ_m+BJ_{-m}$ 是一般解。<br>
+        $W=0\iff m$ 是整數</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $m=\tfrac12$ 直接驗證</h5>
+      <p class="wq-step"><span class="memo">背：$J_{1/2}=f\sin x$，$J_{-1/2}=f\cos x$，$f=\sqrt{\tfrac2\pi}\,x^{-1/2}$</span>
+        <span class="syms">$f$：振幅因子；$W$：Wronskian</span>
+        乘積法則裡 $ff'$ 的項互相抵消。<br>
+        $W=f\sin x\,(f\cos x)'-(f\sin x)'f\cos x=f^2(-\sin^2x-\cos^2x)=-\dfrac2{\pi x}$<br>
+        公式：$-\dfrac{2\sin(\pi/2)}{\pi x}=-\dfrac2{\pi x}$ ✓</p>
+    </div>
+  </div>
+  <div class="final">答：$W(J_m,J_{-m})=-\frac{2\sin m\pi}{\pi x}$；整數 $m$ 才相依。</div>
+  <p class="small"><a href="#am6-sf-02b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-02c" data-group="二、第二個解與一般解" data-title="自編：降階法何時出現 ln x">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　用板書的降階法 $y_2=y_1\int\frac{dx}{xy_1^2}$：(a) $m=\tfrac12$、$y_1=\frac{\sin x}{\sqrt x}$，求 $y_2$ 的封閉形式，說明它是 $J_{-1/2}$ 的倍數、沒有 $\ln x$；(b) $m=1$、$y_1=J_1=\frac x2-\frac{x^3}{16}+\frac{x^5}{384}-\cdots$，求 $\frac1{xJ_1^2}$ 到 $x^1$ 項，並寫出 $y_2$ 到 $x^3$ 項（含 $\ln x$ 的係數）；(c) 用「被積函數 $\frac1{xy_1^2}$ 有沒有 $\frac1x$ 項」說明兩種情況為什麼不同。</div>
+  <div class="rote">
+    <p><b>看到</b>「降階法 $y_2=y_1\int\frac{dx}{xy_1^2}$」＋「$m=\tfrac12$ 與 $m=1$」＋「何時有 $\ln x$」⟹ 題型：<b>降階法：被積函數的 $\tfrac1x$ 項決定 $\ln x$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $m=\tfrac12$ 的封閉形式</h5>
+      <p class="wq-step"><span class="memo">背：$y_2=y_1\displaystyle\int\frac{dx}{xy_1^2}$；$\displaystyle\int\csc^2x\,dx=-\cot x$</span>
+        <span class="syms">$y_1=\tfrac{\sin x}{\sqrt x}$：題目給的第一個解；$y_2$：第二個解</span>
+        $y_1^2=\dfrac{\sin^2x}x$，被積函數剛好是 $\csc^2x$。<br>
+        $\dfrac1{xy_1^2}=\dfrac1{\sin^2x}$，$u=-\cot x$，$y_2=\dfrac{\sin x}{\sqrt x}(-\cot x)=-\dfrac{\cos x}{\sqrt x}=-\sqrt{\tfrac\pi2}\,J_{-1/2}$（沒有 $\ln x$）</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $m=1$：$\dfrac1{xJ_1^2}$ 與 $y_2$</h5>
+      <p class="wq-step"><span class="memo">背：$(1-a+b)^2=1-2a+a^2+2b+\cdots$；$\dfrac1{1-s}=1+s+s^2+\cdots$</span>
+        <span class="syms">$J_1=\tfrac x2\big(1-\tfrac{x^2}8+\tfrac{x^4}{192}\big)$：題目給的級數；$s$：小量（$s=\tfrac{x^2}4-\tfrac{5x^4}{192}$）</span>
+        先平方（$x^4$ 係數 $\tfrac1{64}+\tfrac2{192}=\tfrac5{192}$），再取倒數、除以 $x$。<br>
+        $J_1^2=\dfrac{x^2}4\Big(1-\dfrac{x^2}4+\dfrac{5x^4}{192}\Big)$，$\dfrac1{J_1^2}=\dfrac4{x^2}\Big(1+\dfrac{x^2}4+\Big(\dfrac1{16}-\dfrac5{192}\Big)x^4\Big)=\dfrac4{x^2}\Big(1+\dfrac{x^2}4+\dfrac{7x^4}{192}\Big)$<br>
+        $\dfrac1{xJ_1^2}=\dfrac4{x^3}+\dfrac1x+\dfrac{7x}{48}+\cdots$</p>
+      <p class="wq-step"><span class="memo">背：逐項積分，$\displaystyle\int\frac{dx}x=\ln x$；$y_2=uJ_1$</span>
+        <span class="syms">$u$：降階法的函數；$J_1=\tfrac x2-\tfrac{x^3}{16}+\tfrac{x^5}{384}$；$y_2$：第二個解</span>
+        $-\tfrac2{x^2}J_1=-\tfrac1x+\tfrac x8-\tfrac{x^3}{192}$，$\tfrac{7x^2}{96}J_1=\tfrac{7x^3}{192}$，$x^3$ 項合計 $\tfrac6{192}=\tfrac1{32}$。<br>
+        $u=-\dfrac2{x^2}+\ln x+\dfrac{7x^2}{96}+\cdots$<br>
+        $y_2=J_1\ln x-\dfrac1x+\dfrac x8+\dfrac{x^3}{32}+\cdots$（$\ln x$ 的係數 1）</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 為什麼兩種情況不同</h5>
+      <p class="wq-step"><span class="memo">背：$y_1\approx cx^m$ ⟹ $\dfrac1{xy_1^2}\approx\dfrac{1}{c^2x^{2m+1}}\big(1+b_2x^2+b_4x^4+\cdots\big)$</span>
+        <span class="syms">$c$：首項係數；$m$：階數；$b_2$、$b_4$：展開係數（只有偶次方）</span>
+        要出現 $\tfrac1x$，需要某個 $2k-(2m+1)=-1$，即 $k=m$，所以 $m$ 必須是非負整數。<br>
+        $m=\tfrac12$：次方全是偶數 $x^{-2},x^0,\dots$，沒有 $\tfrac1x$；$m=1$：有 $\tfrac1x$ ⟹ $y_2$ 含 $\ln x$</p>
+    </div>
+  </div>
+  <div class="final">答：$m=\frac12$：$y_2\propto\frac{\cos x}{\sqrt x}$；$m=1$：$y_2=J_1\ln x-\frac1x+\frac x8+\frac{x^3}{32}+\cdots$；整數 $m$ 才有 $\ln x$。</div>
+  <p class="small"><a href="#am6-sf-02c">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 三、零點與邊界值 ===== -->
+<article class="exam-item" data-exam-id="am6-k113-3" data-group="三、圖形、零點與邊界值問題" data-title="113上期末3：x²y''+xy'+λ²x²y=0">
+  <h3>應用數學期末考 2024.Dec. 第 3 題（113上）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-k113-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>3. If a function $y$ satisfies $x^2y''+xy'+\lambda^2x^2y=0$ with $y(0)=1$ and $y(3)=0$, find the values of $\lambda$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　（25 分）$x^2y''+xy'+\lambda^2x^2y=0$，$y(0)=1$、$y(3)=0$，求 $\lambda$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$x^2y''+xy'+\lambda^2x^2y=0$」＋「$y(0)=1$、$y(3)=0$」＋「find $\lambda$」⟹ 題型：<b>0 階 Bessel 的本徵值問題（$\lambda$＝零點 ÷ 3）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>$\lambda$ 的值</h5>
+      <p class="wq-step"><span class="memo">背：$x^2y''+xy'+(a^2x^2-m^2)y=0$ ⟹ $y=AJ_m(ax)+BY_m(ax)$</span>
+        <span class="syms">$a$：比例常數（這裡 $a=\lambda$）；$m$：階數（這裡 $m=0$）；$J_0$、$Y_0$：0 階第一、二類 Bessel 函數；$A$、$B$：常數</span>
+        先設 $\lambda\ne0$，令 $t=\lambda x$ 就是 0 階 Bessel 方程 $t^2y_{tt}+ty_t+t^2y=0$。<br>
+        $y=AJ_0(\lambda x)+BY_0(\lambda x)$</p>
+      <p class="wq-step"><span class="memo">背：$Y_0(0^+)=-\infty$，$J_0(0)=1$</span>
+        <span class="syms">$B$：$Y_0$ 的係數；$A$：$J_0$ 的係數；$y(0)=1$：題目的條件</span>
+        $y(0)=1$ 是有限值，丟掉 $Y_0$；再用 $J_0(0)=1$ 定 $A$。<br>
+        $B=0$，$y(0)=A\cdot1=1\Rightarrow A=1$，$y=J_0(\lambda x)$</p>
+      <p class="wq-step"><span class="memo">背：$J_0(j_{0n})=0$，$j_{01}=2.405$、$j_{02}=5.520$、$j_{03}=8.654$</span>
+        <span class="syms">$j_{0n}$：$J_0$ 的第 $n$ 個正零點；$\lambda$：要求的值</span>
+        代題目 $y(3)=0$；$J_0$ 是偶函數，$\lambda$ 取負號也成立。<br>
+        $J_0(3\lambda)=0\Rightarrow3\lambda=\pm j_{0n}\Rightarrow\lambda=\pm\dfrac{j_{0n}}3=\pm0.802,\ \pm1.840,\ \pm2.885,\dots$</p>
+      <p class="wq-step"><span class="memo">背：Cauchy–Euler $x^2y''+xy'=0$ ⟹ $y=c_1+c_2\ln x$</span>
+        <span class="syms">$c_1$、$c_2$：常數；$\lambda=0$：要另外檢查的情形</span>
+        $\lambda=0$ 時方程式變成 Cauchy–Euler；$y(0)$ 有限要 $c_2=0$。<br>
+        $y(0)=1\Rightarrow y\equiv1$，$y(3)=1\ne0$，不合</p>
+    </div>
+  </div>
+  <div class="final">答：$\lambda=\pm\frac{j_{0n}}3\approx\pm0.80,\pm1.84,\pm2.88,\dots$，$y=J_0(\lambda x)$。</div>
+  <p class="small"><a href="#am6-k113-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-k113b-2" data-group="三、圖形、零點與邊界值問題" data-title="113下期中2：圓柱腔基態能量">
+  <h3>應用數學期中考 2025.Apr. 第 2 題（113下）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-k113b-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. (15%) Consider the stationary Schrödinger equation $-\frac{\hbar^2}{2m}\nabla^2\Psi=E\Psi$ in a cylindrical cavity. The wave function is give by $\Psi=\Psi(r,\theta,z)$ and the boundary conditions are</p><p>$\Psi|_{r=1}=0,\quad\Psi|_{z=1}=0,\quad\Psi|_{z=-1}=0.$</p><p>Find the ground state energy.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　（15%）圓柱腔 $-\frac{\hbar^2}{2m}\nabla^2\Psi=E\Psi$，$\Psi|_{r=1}=0$、$\Psi|_{z=\pm1}=0$，求基態能量。</div>
+  <div class="rote">
+    <p><b>看到</b>「cylindrical cavity」＋「$\Psi|_{r=1}=0$、$\Psi|_{z=\pm1}=0$」＋「ground state energy」⟹ 題型：<b>圓柱座標分離變數：$z$ 取最長半波、$r$ 取最小零點 $j_{01}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>基態能量</h5>
+      <p class="wq-step"><span class="memo">背：$-\dfrac{\hbar^2}{2m}\nabla^2\Psi=E\Psi\iff\nabla^2\Psi+k^2\Psi=0$，$k^2=\dfrac{2mE}{\hbar^2}$；令 $\Psi=R(r)\Theta(\theta)Z(z)$</span>
+        <span class="syms">$\Psi$：波函數；$\hbar$：約化普朗克常數；$m$：粒子質量；$E$：能量；$k$：波數；$R$、$\Theta$、$Z$：三個方向的函數</span>
+        分離變數得三條方程；$\Theta$ 要單值，所以 $p$ 是整數（階數寫 $p$，避免和質量 $m$ 混淆）。<br>
+        $Z''=-k_z^2Z$，$\Theta''=-p^2\Theta$，$r^2R''+rR'+(k_r^2r^2-p^2)R=0$，$k^2=k_r^2+k_z^2$</p>
+      <p class="wq-step"><span class="memo">背：兩端固定、長 $L$：$k_z=\dfrac{n_z\pi}L$</span>
+        <span class="syms">$k_z$：$z$ 方向的波數；$n_z$：正整數；$L$：區間長度</span>
+        題目 $z$ 從 $-1$ 到 $1$，$L=2$；基態取 $n_z=1$。<br>
+        $k_z=\dfrac\pi2$，$Z=\cos\dfrac{\pi z}2$（$\cos(\pm\tfrac\pi2)=0$ ✓）</p>
+      <p class="wq-step"><span class="memo">背：$R=AJ_p(k_rr)+BY_p(k_rr)$，$r=0$ 有限 ⟹ $B=0$；$J_p(k_r)=0\Rightarrow k_r=j_{pn}$</span>
+        <span class="syms">$k_r$：徑向波數；$j_{pn}$：$J_p$ 的第 $n$ 個零點；$j_{01}=2.4048$：所有零點中最小的</span>
+        題目 $\Psi|_{r=1}=0$；$j_{11}=3.83$、$j_{21}=5.14$ 都比 $j_{01}$ 大。<br>
+        $k_r=j_{01}=2.4048$，$R=J_0(2.4048\,r)$</p>
+      <p class="wq-step"><span class="memo">背：$E=\dfrac{\hbar^2k^2}{2m}=\dfrac{\hbar^2}{2m}\big(k_r^2+k_z^2\big)$</span>
+        <span class="syms">$E$：能量；$\hbar$：約化普朗克常數；$m$：粒子質量；$k_r$、$k_z$：上面兩步的最小波數</span>
+        代 $k_r=2.4048$、$k_z=\tfrac\pi2$；下一個候選 $p=1$（$17.15$）或 $n_z=2$（$15.65$）都比較大。<br>
+        $E_0=\dfrac{\hbar^2}{2m}\Big(j_{01}^2+\dfrac{\pi^2}4\Big)=\dfrac{\hbar^2}{2m}(5.783+2.467)=8.251\,\dfrac{\hbar^2}{2m}$</p>
+    </div>
+  </div>
+  <div class="final">答：$E_0=\frac{\hbar^2}{2m}\big(j_{01}^2+\frac{\pi^2}4\big)\approx8.25\frac{\hbar^2}{2m}$，$\Psi_0\propto J_0(2.405r)\cos\frac{\pi z}2$。</div>
+  <p class="small"><a href="#am6-k113b-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-03a" data-group="三、圖形、零點與邊界值問題" data-title="自編：圓形鼓膜的頻率">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　半徑 $R$、邊緣固定的圓形鼓膜 $u_{tt}=c^2\nabla^2u$，$u(R,\theta,t)=0$：(a) 用 $u=J_p(kr)\cos(p\theta)\cos(\omega t)$ 說明 $\omega_{pn}=\frac{c\,j_{pn}}{R}$；(b) 最低四個相異頻率（基頻的倍數），和弦比較；(c) $(0,2)$ 模態的節線圓半徑；(d) 基頻 $100\ \text{Hz}$ 時 $(1,1)$ 模態的頻率；(e) 挖掉中央半徑 $\frac R2$ 的圓成為內外都固定的圓環 $\frac R2\le r\le R$：軸對稱模態的頻率條件、最低的 $kR$，並和「拉直成長 $\frac R2$ 的弦」的估計比較。</div>
+  <div class="rote">
+    <p><b>看到</b>「圓形鼓膜、邊緣固定」＋「頻率比」＋「節線圓」＋「圓環（不含圓心）」⟹ 題型：<b>Bessel 零點＝鼓膜頻率；圓環要保留 $Y_0$（行列式＝0）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 允許的頻率</h5>
+      <p class="wq-step"><span class="memo">背：$\nabla^2\big[J_p(kr)\cos p\theta\big]=-k^2J_p(kr)\cos p\theta$；$J_p(j_{pn})=0$</span>
+        <span class="syms">$u$：膜的位移；$c$：波速；$k$：波數；$\omega$：角頻率；$p$：角向階數；$j_{pn}$：$J_p$ 的第 $n$ 個零點</span>
+        代入波動方程，左邊 $-\omega^2u$、右邊 $-c^2k^2u$；邊緣 $u(R)=0$ 定 $k$。<br>
+        $\omega=ck$，$J_p(kR)=0\Rightarrow kR=j_{pn}\Rightarrow\omega_{pn}=\dfrac{c\,j_{pn}}R$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 最低四個相異頻率</h5>
+      <p class="wq-step"><span class="memo">背：$\omega_{pn}\propto j_{pn}$；$j_{01}=2.405$、$j_{11}=3.832$、$j_{21}=5.136$、$j_{02}=5.520$</span>
+        <span class="syms">$\omega_{pn}$：模態 $(p,n)$ 的角頻率；$j_{pn}$：Bessel 零點；$\omega_{01}$：基頻</span>
+        不同 $p$ 的零點混在一起排序，各除以 $j_{01}$。<br>
+        $\dfrac{3.832}{2.405}=1.593$，$\dfrac{5.136}{2.405}=2.136$，$\dfrac{5.520}{2.405}=2.295$ ⟹ $1:1.593:2.136:2.295$，不是弦的 $1:2:3:4$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $(0,2)$ 模態的節線圓</h5>
+      <p class="wq-step"><span class="memo">背：$J_0(t)=0\iff t=j_{0n}$</span>
+        <span class="syms">$r$：節線圓半徑；$j_{01}=2.4048$、$j_{02}=5.5201$；$R$：鼓膜半徑</span>
+        $(0,2)$ 的徑向函數 $J_0\big(\tfrac{j_{02}r}R\big)$ 在膜內部經過 $j_{01}$ 時為零。<br>
+        $\dfrac{j_{02}r}R=j_{01}\Rightarrow r=\dfrac{2.4048}{5.5201}R=0.4357R$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $(1,1)$ 模態的頻率</h5>
+      <p class="wq-step"><span class="memo">背：$f=\dfrac{\omega}{2\pi}$，頻率比＝角頻率比</span>
+        <span class="syms">$f_{11}$：$(1,1)$ 的頻率；$f_{01}=100$ Hz：題目給的基頻</span>
+        用 (b) 的比值 1.593。<br>
+        $f_{11}=1.593\times100=159.3\ \text{Hz}$</p>
+    </div>
+    <div class="wq">
+      <h5>(e) 圓環的頻率條件與最低 $kR$</h5>
+      <p class="wq-step"><span class="memo">背：區域不含圓心 ⟹ 保留 $AJ_0+BY_0$；$A$、$B$ 有非零解 ⟺ 係數行列式 $=0$</span>
+        <span class="syms">$A$、$B$：常數；$J_0$、$Y_0$：0 階第一、二類 Bessel 函數；$k$：波數；$R$：外半徑</span>
+        兩個邊界 $u(\tfrac R2)=0$、$u(R)=0$ 是 $A$、$B$ 的齊次聯立方程。<br>
+        $AJ_0(\tfrac{kR}2)+BY_0(\tfrac{kR}2)=0$，$AJ_0(kR)+BY_0(kR)=0$<br>
+        $\Rightarrow J_0\big(\tfrac{kR}2\big)Y_0(kR)-J_0(kR)\,Y_0\big(\tfrac{kR}2\big)=0$</p>
+      <p class="wq-step"><span class="memo">背：變號就有根；線性內插 $\kappa\approx a+(b-a)\dfrac{f(a)}{f(a)-f(b)}$</span>
+        <span class="syms">$f(\kappa)$：上式的左邊；$\kappa=kR$；$a=6.2$、$b=6.3$：試算的兩點</span>
+        試算 $f(6.2)=+0.0033$、$f(6.3)=-0.0038$，中間變號。<br>
+        $\kappa_1\approx6.2+0.1\times\dfrac{0.0033}{0.0033+0.0038}=6.246$</p>
+      <p class="wq-step"><span class="memo">背：兩端固定的弦 $kL=\pi$</span>
+        <span class="syms">$L=\tfrac R2$：圓環拉直後的弦長；$k$：波數</span>
+        窄圓環近似成長 $\tfrac R2$ 的弦；和整片鼓膜的 $j_{01}$ 比較。<br>
+        $kR\approx\dfrac{\pi}{1/2}=2\pi=6.283$（差 0.6%）；$\dfrac{6.246}{2.405}=2.60$ 倍</p>
+    </div>
+  </div>
+  <div class="final">答：$\omega_{pn}=cj_{pn}/R$；$1:1.593:2.136:2.295$（非整數倍）；$0.436R$；$159$ Hz；圓環最低 $kR\approx6.25$（基頻的 2.60 倍）。</div>
+  <p class="small"><a href="#am6-sf-03a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-03b" data-group="三、圖形、零點與邊界值問題" data-title="自編：J_0 的正交性與歸一化">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　設 $\alpha\ne\beta$ 都是 $J_0$ 的正零點，$u=J_0(\alpha x)$、$v=J_0(\beta x)$：(a) 證明 $(xu')'+\alpha^2xu=0$；(b) 證明 $\int_0^1x\,u\,v\,dx=0$；(c) 證明 $\int_0^1x\,u^2\,dx=\tfrac12\big[J_1(\alpha)\big]^2$（可用 $J_0'=-J_1$）；(d) 用 $\alpha=j_{01}$ 算出數值。</div>
+  <div class="rote">
+    <p><b>看到</b>「$\alpha$、$\beta$ 是 $J_0$ 的零點」＋「$\int_0^1xJ_0(\alpha x)J_0(\beta x)dx$」⟹ 題型：<b>自伴形式交叉相減（正交）＋乘 $2xu'$（歸一化）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 自伴形式</h5>
+      <p class="wq-step"><span class="memo">背：$t^2J_0''+tJ_0'+t^2J_0=0$；$t=\alpha x$ ⟹ $u'=\alpha J_0'$，$u''=\alpha^2J_0''$</span>
+        <span class="syms">$u=J_0(\alpha x)$；$u'$、$u''$：對 $x$ 的導數；$\alpha$：$J_0$ 的零點</span>
+        換回 $x$ 後除以 $x$；$xu''+u'$ 正好是 $(xu')'$。<br>
+        $xu''+u'+\alpha^2xu=0\iff(xu')'+\alpha^2xu=0$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 正交</h5>
+      <p class="wq-step"><span class="memo">背：$v(xu')'-u(xv')'=\dfrac{d}{dx}\big[x(vu'-uv')\big]$</span>
+        <span class="syms">$u=J_0(\alpha x)$、$v=J_0(\beta x)$；$\alpha$、$\beta$：兩個不同的零點</span>
+        $v$ 乘 $u$ 的方程、減 $u$ 乘 $v$ 的方程，左邊是全微分。<br>
+        $v(xu')'-u(xv')'=(\beta^2-\alpha^2)\,x\,uv$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int_0^1F'\,dx=F(1)-F(0)$</span>
+        <span class="syms">$u(1)=J_0(\alpha)=0$、$v(1)=J_0(\beta)=0$；$x=0$ 時前面有因子 $x$</span>
+        兩端都是 0，而 $\beta^2-\alpha^2\ne0$。<br>
+        $(\beta^2-\alpha^2)\displaystyle\int_0^1x\,uv\,dx=\Big[x(vu'-uv')\Big]_0^1=0\Rightarrow\int_0^1x\,uv\,dx=0$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 歸一化</h5>
+      <p class="wq-step"><span class="memo">背：$2(xu')(xu')'=\dfrac{d}{dx}(xu')^2$，$2uu'=\dfrac{d}{dx}(u^2)$；分部積分</span>
+        <span class="syms">$u=J_0(\alpha x)$；$u'$：導數；$\alpha$：零點</span>
+        $(xu')'+\alpha^2xu=0$ 乘 $2xu'$，積分 0 到 1，第二項分部積分。<br>
+        $\dfrac{d}{dx}(xu')^2+\alpha^2x^2\dfrac{d}{dx}(u^2)=0$<br>
+        $\big[(xu')^2\big]_0^1+\alpha^2\big[x^2u^2\big]_0^1-2\alpha^2\displaystyle\int_0^1xu^2\,dx=0$</p>
+      <p class="wq-step"><span class="memo">背：$J_0'=-J_1$</span>
+        <span class="syms">$J_1$：1 階 Bessel 函數；$u'(1)=\alpha J_0'(\alpha)$</span>
+        $x=1$：$u(1)=0$、$u'(1)=-\alpha J_1(\alpha)$；$x=0$：兩項都有 $x$ 因子為 0。<br>
+        $\alpha^2J_1(\alpha)^2-2\alpha^2\displaystyle\int_0^1xu^2\,dx=0\Rightarrow\int_0^1xJ_0(\alpha x)^2dx=\tfrac12J_1(\alpha)^2$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $\alpha=j_{01}$ 的數值</h5>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int_0^1xJ_0(\alpha x)^2dx=\tfrac12J_1(\alpha)^2$</span>
+        <span class="syms">$\alpha=j_{01}=2.4048$；$J_1(2.4048)=0.51915$（標準值）</span>
+        代標準值（四位的 0.5191 平方再除 2 只得 0.1347，這裡多留一位）。<br>
+        $\tfrac12(0.51915)^2=0.1348$</p>
+    </div>
+  </div>
+  <div class="final">答：正交（權重 $x$）；$\int_0^1xJ_0(\alpha x)^2dx=\frac12J_1(\alpha)^2$；$0.1348$。</div>
+  <p class="small"><a href="#am6-sf-03b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-03c" data-group="三、圖形、零點與邊界值問題" data-title="自編：零點交錯與漸近估計">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 直接由級數證明 $J_0'=-J_1$ 與 $(xJ_1)'=xJ_0$；(b) 用 Rolle 定理證明 $J_0$ 相鄰兩零點之間有 $J_1$ 的零點、$J_1$ 相鄰兩零點（含 $x=0$）之間有 $J_0$ 的零點，說明板書表 $2.4\lt3.8\lt5.5\lt7.0\lt8.7\lt10.2$ 的交錯；(c) 用 $J_m(x)\approx\sqrt{\frac2{\pi x}}\cos\big(x-\frac{m\pi}2-\frac\pi4\big)$ 估計 $J_0$、$J_1$ 的前三個零點，和板書表比較，說明誤差隨 $n$ 怎麼變。</div>
+  <div class="rote">
+    <p><b>看到</b>「由級數證明 $J_0'=-J_1$」＋「Rolle 定理、零點交錯」＋「漸近式估計零點」⟹ 題型：<b>導數關係 → Rolle 定理 → 零點交錯；漸近式的 $\cos$ 零點</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $J_0'=-J_1$ 與 $(xJ_1)'=xJ_0$</h5>
+      <p class="wq-step"><span class="memo">背：$J_m=\displaystyle\sum_{k\ge0}\frac{(-1)^k}{k!\,(k+m)!}\Big(\frac x2\Big)^{2k+m}$；$\dfrac{d}{dx}\Big(\dfrac x2\Big)^{j}=\dfrac j2\Big(\dfrac x2\Big)^{j-1}$</span>
+        <span class="syms">$J_0$、$J_1$：0、1 階 Bessel 函數；$k$、$j$：求和指標</span>
+        逐項微分，$k=0$ 的常數項消失；再令 $k=j+1$。<br>
+        $$\begin{aligned}J_0'&=\sum_{k\ge1}\frac{(-1)^k}{k!\,(k-1)!}\Big(\frac x2\Big)^{2k-1}\\&=-\sum_{j\ge0}\frac{(-1)^j}{(j+1)!\,j!}\Big(\frac x2\Big)^{2j+1}=-J_1\end{aligned}$$</p>
+      <p class="wq-step"><span class="memo">背：$J_m=\displaystyle\sum_{k\ge0}\frac{(-1)^k}{k!\,(k+m)!}\Big(\frac x2\Big)^{2k+m}$；$\dfrac{d}{dx}\Big(\dfrac x2\Big)^{j}=\dfrac j2\Big(\dfrac x2\Big)^{j-1}$</span>
+        <span class="syms">$xJ_1$：要微分的函數；$k$：求和指標</span>
+        $xJ_1=\sum\dfrac{(-1)^k\,2}{k!(k+1)!}\big(\tfrac x2\big)^{2k+2}$，微分拉下 $(k+1)$，和 $(k+1)!$ 約掉一格。<br>
+        $(xJ_1)'=\displaystyle\sum\frac{(-1)^k\,2(k+1)}{k!\,(k+1)!}\Big(\frac x2\Big)^{2k+1}=x\sum\frac{(-1)^k}{(k!)^2}\Big(\frac x2\Big)^{2k}=xJ_0$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 零點交錯</h5>
+      <p class="wq-step"><span class="memo">背：Rolle 定理：$f(a)=f(b)=0$ ⟹ $(a,b)$ 內有 $f'=0$</span>
+        <span class="syms">$f$：可微函數；$a$、$b$：兩個相鄰零點；$j_{0n}$、$j_{1n}$：$J_0$、$J_1$ 的零點</span>
+        $f=J_0$ 時 $f'=-J_1$；$f=xJ_1$（在 0 與 $J_1$ 的零點為 0）時 $f'=xJ_0$，$x\gt0$ 時就是 $J_0=0$。<br>
+        $J_0$ 相鄰零點之間有 $J_1=0$；$0$、$j_{11}$ 之間與 $J_1$ 相鄰零點之間有 $J_0=0$<br>
+        ⟹ $0\lt j_{01}\lt j_{11}\lt j_{02}\lt j_{12}\lt\cdots$：$2.4\lt3.8\lt5.5\lt7.0\lt8.7\lt10.2$ ✓</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 漸近估計前三個零點</h5>
+      <p class="wq-step"><span class="memo">背：$\cos\theta=0\iff\theta=(n-\tfrac12)\pi$</span>
+        <span class="syms">$\theta=x-\tfrac{m\pi}2-\tfrac\pi4$：漸近式的相位；$m$：階數；$n$：第幾個零點</span>
+        解出 $x$ 後代 $m=0$、$m=1$，$n=1,2,3$。<br>
+        $x_n\approx\Big(n+\dfrac m2-\dfrac14\Big)\pi$：$m=0$：$2.356,\ 5.498,\ 8.639$；$m=1$：$3.927,\ 7.069,\ 10.210$</p>
+      <p class="wq-step"><span class="memo">背：誤差＝估計值 − 精確值；漸近式在 $x$ 大時才準</span>
+        <span class="syms">$j_{0n}=2.405,\ 5.520,\ 8.654$；$j_{1n}=3.832,\ 7.016,\ 10.173$：精確零點</span>
+        和精確值相減，誤差大約像 $\tfrac1x$ 遞減。<br>
+        $J_0$：$-0.049,\ -0.022,\ -0.014$；$J_1$：$+0.095,\ +0.053,\ +0.037$</p>
+    </div>
+  </div>
+  <div class="final">答：$0\lt j_{01}\lt j_{11}\lt j_{02}\lt j_{12}\lt\cdots$；漸近估計誤差隨 $n$ 遞減。</div>
+  <p class="small"><a href="#am6-sf-03c">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 四、遞迴恆等式與積分 ===== -->
+<article class="exam-item" data-exam-id="am6-ex-4" data-group="四、遞迴恆等式與積分" data-title="板書：∫₁² x⁻³J₄ dx">
+  <h3>板書例題 10/21</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-ex-4"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　已知 $J_3(1)=0.0196$，$J_3(2)=0.1289$</p><p>計算 $\int_1^2x^{-3}J_4(x)\,dx$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　已知 $J_3(1)=0.0196$、$J_3(2)=0.1289$，計算 $\int_1^2x^{-3}J_4\,dx$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$\int x^{-3}J_4\,dx$（次方 $-3$、階數 $3+1$）」＋「已知 $J_3(1)$、$J_3(2)$」⟹ 題型：<b>恆等式 ③ 認出全微分，代兩端點</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>$\displaystyle\int_1^2x^{-3}J_4\,dx$</h5>
+      <p class="wq-step"><span class="memo">背：③ $\dfrac{d}{dx}\big(x^{-m}J_m\big)=-x^{-m}J_{m+1}$</span>
+        <span class="syms">$J_m$：$m$ 階 Bessel 函數；$m$：階數（這裡 $m=3$）；$x$：自變數</span>
+        被積函數是 $x^{-m}J_{m+1}$ 的形式，代 $m=3$。<br>
+        $x^{-3}J_4=-\dfrac{d}{dx}\big(x^{-3}J_3\big)$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int_a^bF'(x)\,dx=F(b)-F(a)$</span>
+        <span class="syms">$F=-x^{-3}J_3$：原函數；$a=1$、$b=2$：積分上下限</span>
+        只需要兩個端點的 $J_3$，題目正好給了。<br>
+        $\displaystyle\int_1^2x^{-3}J_4\,dx=-\Big[\frac{J_3(x)}{x^3}\Big]_1^2=J_3(1)-\frac{J_3(2)}8$</p>
+      <p class="wq-step"><span class="memo">背：代題目給的 $J_3(1)=0.0196$、$J_3(2)=0.1289$</span>
+        <span class="syms">$J_3(1)$、$J_3(2)$：題目給的函數值</span>
+        直接代數字。<br>
+        $0.0196-\dfrac{0.1289}8=0.0196-0.0161125=0.0034875\approx0.00349$</p>
+    </div>
+  </div>
+  <div class="final">答：$\approx0.00349$。</div>
+  <p class="small"><a href="#am6-ex-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-k111-4" data-group="四、遞迴恆等式與積分" data-title="111上期末4：∫₀¹(r-r³)J₀(2r)dr">
+  <h3>應用數學期末考 2022.Dec. 第 4 題（111上）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-k111-4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>4. (5 pts) $\displaystyle\int_0^1(r-r^3)J_0(2r)dr=?$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　（5 分）$\int_0^1(r-r^3)J_0(2r)\,dr=?$</div>
+  <div class="rote">
+    <p><b>看到</b>「$\int_0^1(r-r^3)J_0(2r)\,dr$」⟹ 題型：<b>換變數 $x=2r$ ＋恆等式 ① ＋分部積分＋ ④ 換表值</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>積分值</h5>
+      <p class="wq-step"><span class="memo">背：換變數 $x=2r$，$dr=\dfrac{dx}2$，上下限一起換</span>
+        <span class="syms">$r$：原積分變數；$x=2r$：新變數；$J_0$：0 階 Bessel 函數</span>
+        恆等式是用 $J(x)$ 寫的，先讓引數變成 $x$；$r:0\to1$ 變成 $x:0\to2$。<br>
+        $I=\displaystyle\int_0^2\Big(\frac x2-\frac{x^3}8\Big)J_0(x)\frac{dx}2=\frac14\int_0^2xJ_0\,dx-\frac1{16}\int_0^2x^3J_0\,dx$</p>
+      <p class="wq-step"><span class="memo">背：① $\dfrac{d}{dx}\big(x^mJ_m\big)=x^mJ_{m-1}$ ⟹ $\displaystyle\int x^mJ_{m-1}\,dx=x^mJ_m$</span>
+        <span class="syms">$J_m$：$m$ 階 Bessel 函數；$m$：階數（這裡 $m=1$）</span>
+        第一項是 $xJ_0$，用 $m=1$。<br>
+        $\displaystyle\int_0^2xJ_0\,dx=\Big[xJ_1\Big]_0^2=2J_1(2)$</p>
+      <p class="wq-step"><span class="memo">背：分部積分 $\displaystyle\int u\,dv=uv-\int v\,du$；① $\displaystyle\int x^2J_1\,dx=x^2J_2$</span>
+        <span class="syms">$u=x^2$；$dv=xJ_0\,dx$，$v=xJ_1$；$J_2$：2 階 Bessel 函數</span>
+        $x^3J_0$ 比 ① 多兩次方，拆成 $x^2\cdot xJ_0$，降成 $x^2J_1$（① 的 $m=2$）。<br>
+        $\displaystyle\int x^3J_0\,dx=x^3J_1-\int2x^2J_1\,dx=x^3J_1-2x^2J_2$，$\displaystyle\int_0^2x^3J_0\,dx=8J_1(2)-8J_2(2)$</p>
+      <p class="wq-step"><span class="memo">背：合併兩項</span>
+        <span class="syms">$J_1(2)$、$J_2(2)$：Bessel 函數在 $x=2$ 的值；$I$：要求的積分</span>
+        $J_1(2)$ 的項剛好抵消。<br>
+        $I=\dfrac14\cdot2J_1(2)-\dfrac1{16}\big(8J_1(2)-8J_2(2)\big)=\dfrac{J_1(2)}2-\dfrac{J_1(2)}2+\dfrac{J_2(2)}2=\dfrac12J_2(2)$</p>
+      <p class="wq-step"><span class="memo">背：④ $J_{m+1}=\dfrac{2m}xJ_m-J_{m-1}$</span>
+        <span class="syms">$m$：階數（這裡 $m=1$）；$J_0(2)=0.2239$、$J_1(2)=0.5767$：標準表值</span>
+        $m=1$、$x=2$ 時 $J_2(2)=J_1(2)-J_0(2)$。<br>
+        $J_2(2)=0.5767-0.2239=0.3528$，$I=\dfrac{0.3528}2=0.1764$</p>
+    </div>
+  </div>
+  <div class="final">答：$\frac12J_2(2)=\frac{J_1(2)-J_0(2)}2\approx0.176$。</div>
+  <p class="small"><a href="#am6-k111-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-04a" data-group="四、遞迴恆等式與積分" data-title="自編：由級數證明遞迴關係">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　用 $J_m(x)=\sum_{n\ge0}\frac{(-1)^n}{n!\,\Gamma(n+m+1)}\big(\frac x2\big)^{2n+m}$（$m$ 可以不是整數）：(a) 證明 ① $\frac{d}{dx}(x^mJ_m)=x^mJ_{m-1}$；(b) 證明 ③ $\frac{d}{dx}(x^{-m}J_m)=-x^{-m}J_{m+1}$；(c) 由 (a)(b) 推出板書的 ②、④、⑤；(d) 用 ④ 由 $J_{\pm1/2}$ 求 $J_{3/2}$ 的封閉形式。</div>
+  <div class="rote">
+    <p><b>看到</b>「由級數證明遞迴關係」＋「推出 ②④⑤」＋「求 $J_{3/2}$」⟹ 題型：<b>逐項微分約掉一格 $\Gamma$ → 兩個基本式 → 相加相減</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 證明 ①</h5>
+      <p class="wq-step"><span class="memo">背：$\Gamma(z+1)=z\Gamma(z)$ ⟹ $\dfrac{2(n+m)}{\Gamma(n+m+1)}=\dfrac{2}{\Gamma(n+m)}$</span>
+        <span class="syms">$J_m$：$m$ 階 Bessel 函數；$x$：自變數；$n$：求和指標；$\Gamma$：Gamma 函數；$z$：任意正數；$m$：階數</span>
+        $x^mJ_m=\sum\dfrac{(-1)^nx^{2n+2m}}{2^{2n+m}n!\,\Gamma(n+m+1)}$，微分拉下 $2n+2m$，和 $\Gamma$ 約掉一格。<br>
+        $$\begin{aligned}&\tfrac{d}{dx}(x^mJ_m)\\&=\sum\frac{(-1)^n\,2(n+m)\,x^{2n+2m-1}}{2^{2n+m}\,n!\,\Gamma(n+m+1)}\\&=x^m\sum\frac{(-1)^nx^{2n+m-1}}{2^{2n+m-1}\,n!\,\Gamma(n+m)}\\&=x^mJ_{m-1}\end{aligned}$$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 證明 ③</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{2n}{n!}=\dfrac{2}{(n-1)!}$；平移 $n=k+1$</span>
+        <span class="syms">$x^{-m}J_m$：要微分的函數；$m$：階數；$n$、$k$：求和指標；$\Gamma$：Gamma 函數</span>
+        $x^{-m}J_m=\sum\dfrac{(-1)^nx^{2n}}{2^{2n+m}n!\,\Gamma(n+m+1)}$，$n=0$ 的常數項微分後消失。<br>
+        $$\begin{aligned}&\tfrac{d}{dx}(x^{-m}J_m)\\&=\sum_{n\ge1}\frac{(-1)^nx^{2n-1}}{2^{2n+m-1}(n-1)!\,\Gamma(n+m+1)}\\&=-x^{-m}\sum_{k\ge0}\frac{(-1)^kx^{2k+m+1}}{2^{2k+m+1}k!\,\Gamma(k+m+2)}\\&=-x^{-m}J_{m+1}\end{aligned}$$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 推出 ②、④、⑤</h5>
+      <p class="wq-step"><span class="memo">背：乘積法則 $\dfrac{d}{dx}(x^{\pm m}J_m)=\pm mx^{\pm m-1}J_m+x^{\pm m}J_m'$</span>
+        <span class="syms">$J_m'$：$J_m$ 的導數；$m$：階數；$J_{m\pm1}$：相鄰階</span>
+        (a) 展開後除以 $x^m$；(b) 展開後乘 $x^m$，得到 ② 的兩種寫法。<br>
+        ②：$J_m'=J_{m-1}-\dfrac mxJ_m=\dfrac mxJ_m-J_{m+1}$</p>
+      <p class="wq-step"><span class="memo">背：② 的兩式相減、相加</span>
+        <span class="syms">$J_m$、$J_{m\pm1}$：相鄰三階；$J_m'$：導數</span>
+        兩式左邊都是 $J_m'$；相減消掉 $J_m'$，相加消掉 $\tfrac mxJ_m$。<br>
+        ④：$0=J_{m-1}+J_{m+1}-\dfrac{2m}xJ_m\Rightarrow J_m=\dfrac{x(J_{m-1}+J_{m+1})}{2m}$<br>
+        ⑤：$2J_m'=J_{m-1}-J_{m+1}$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $J_{3/2}$</h5>
+      <p class="wq-step"><span class="memo">背：④ $J_{m+1}=\dfrac{2m}xJ_m-J_{m-1}$；$J_{1/2}=\sqrt{\tfrac2{\pi x}}\sin x$，$J_{-1/2}=\sqrt{\tfrac2{\pi x}}\cos x$</span>
+        <span class="syms">$m=\tfrac12$：代入的階數；$J_{\pm1/2}$：半整數階的封閉形式</span>
+        $m=\tfrac12$ 時 $\tfrac{2m}x=\tfrac1x$。<br>
+        $J_{3/2}=\dfrac1xJ_{1/2}-J_{-1/2}=\sqrt{\dfrac2{\pi x}}\Big(\dfrac{\sin x}x-\cos x\Big)$</p>
+    </div>
+  </div>
+  <div class="final">答：如上；$J_{3/2}=\sqrt{\frac2{\pi x}}\big(\frac{\sin x}x-\cos x\big)$。</div>
+  <p class="small"><a href="#am6-sf-04a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-04b" data-group="四、遞迴恆等式與積分" data-title="自編：∫J₃、∫x⁴J₁、∫J₂">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 求 $\int J_3(x)\,dx$，用 $J_0$、$J_1$ 表示；(b) 求 $\int x^4J_1(x)\,dx$；(c) 說明 $\int J_2(x)\,dx$ 為什麼化不完，並寫成 $\int J_0\,dx$ 加上封閉項；(d) 已知 $J_0(2)=0.2239$、$J_1(2)=0.5767$、$J_2(2)=0.3528$、$J_3(2)=0.1289$，求 $\int_0^2x^4J_1\,dx$ 與 $\int_0^2J_3\,dx$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$\int J_3$、$\int x^4J_1$、$\int J_2$」＋「已知 $x=2$ 的表值」⟹ 題型：<b>⑤ 拆成導數＋低階；分部積分降次；$\int J_0$ 化不完</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $\displaystyle\int J_3\,dx$</h5>
+      <p class="wq-step"><span class="memo">背：⑤ $2J_m'=J_{m-1}-J_{m+1}$；③（$m=0$）$\displaystyle\int J_1\,dx=-J_0$</span>
+        <span class="syms">$J_m$：$m$ 階 Bessel 函數；$J_m'$：導數；$m$：階數（這裡 $m=2$）；$C$：積分常數</span>
+        $J_3$ 不是 $x^{\pm m}J_{m\pm1}$ 的形式，先用 ⑤（$m=2$）拆。<br>
+        $J_3=J_1-2J_2'$ ⟹ $\displaystyle\int J_3\,dx=-J_0-2J_2+C$</p>
+      <p class="wq-step"><span class="memo">背：④ $J_{m+1}=\dfrac{2m}xJ_m-J_{m-1}$</span>
+        <span class="syms">$m=1$：代入的階數；$J_0$、$J_1$、$J_2$：Bessel 函數</span>
+        $J_2=\tfrac2xJ_1-J_0$，換成 $J_0$、$J_1$。<br>
+        $\displaystyle\int J_3\,dx=-J_0-2\Big(\frac2xJ_1-J_0\Big)+C=J_0-\frac4xJ_1+C$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $\displaystyle\int x^4J_1\,dx$</h5>
+      <p class="wq-step"><span class="memo">背：分部積分 $\displaystyle\int u\,dv=uv-\int v\,du$；① $\displaystyle\int x^mJ_{m-1}\,dx=x^mJ_m$</span>
+        <span class="syms">$u=x^2$；$dv=x^2J_1\,dx$，$v=x^2J_2$（① 的 $m=2$）；$C$：積分常數</span>
+        剩下的 $\int x^3J_2$ 再用 ① 的 $m=3$。<br>
+        $\displaystyle\int x^4J_1\,dx=x^4J_2-\int2x\cdot x^2J_2\,dx=x^4J_2-2x^3J_3+C$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $\displaystyle\int J_2\,dx$ 為什麼化不完</h5>
+      <p class="wq-step"><span class="memo">背：⑤ $2J_m'=J_{m-1}-J_{m+1}$</span>
+        <span class="syms">$m=1$：代入的階數；$J_0$、$J_1$、$J_2$：Bessel 函數</span>
+        拆完留下 $\int J_0$，它既不是 $x^mJ_{m-1}$（需要 $xJ_0$）也不是 $x^{-m}J_{m+1}$，沒有封閉形式。<br>
+        $J_2=J_0-2J_1'$ ⟹ $\displaystyle\int J_2\,dx=\int J_0\,dx-2J_1+C$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 兩個定積分</h5>
+      <p class="wq-step"><span class="memo">背：$J_0(0)=1$，$J_m(0)=0$（$m\ge1$）</span>
+        <span class="syms">$J_m(2)$：題目給的表值；$x=0$：下限</span>
+        (b) 的結果在 $x=0$ 為 0；(a) 的第一式在 $x=0$ 為 $-J_0(0)-2J_2(0)=-1$。<br>
+        $\displaystyle\int_0^2x^4J_1\,dx=16(0.3528)-16(0.1289)=16\times0.2239=3.582$<br>
+        $\displaystyle\int_0^2J_3\,dx=\big(-0.2239-2\times0.3528\big)-(-1)=0.0705$</p>
+    </div>
+  </div>
+  <div class="final">答：$\int J_3=-J_0-2J_2+C$；$\int x^4J_1=x^4J_2-2x^3J_3+C$；$\int_0^2x^4J_1\approx3.58$、$\int_0^2J_3\approx0.070$。</div>
+  <p class="small"><a href="#am6-sf-04b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-04c" data-group="四、遞迴恆等式與積分" data-title="自編：圓柱熱傳導 Fourier–Bessel">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　長圓柱（半徑 $R$）的溫度 $u_t=\kappa\big(u_{rr}+\frac1ru_r\big)$，表面 $u(R,t)=0$，初溫 $u(r,0)=u_0\big(1-\frac{r^2}{R^2}\big)$：(a) 分離變數，寫出 $u=\sum c_nJ_0\big(\frac{j_nr}R\big)e^{-\kappa j_n^2t/R^2}$（$j_n=j_{0n}$）；(b) 證明 $c_n=\dfrac{8u_0}{j_n^3J_1(j_n)}$，求 $c_1,c_2,c_3$；(c) 用第一項估計中心溫度降到 $\frac{u_0}2$ 的時間，並估計忽略第二項的誤差。</div>
+  <div class="rote">
+    <p><b>看到</b>「軸對稱熱方程 $u_t=\kappa(u_{rr}+\frac1ru_r)$」＋「$u(R,t)=0$」＋「初溫 $u_0(1-\frac{r^2}{R^2})$」⟹ 題型：<b>分離變數＋Fourier–Bessel 係數（正交性）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 分離變數</h5>
+      <p class="wq-step"><span class="memo">背：$u=F(r)T(t)$，$\dfrac{T'}{\kappa T}=\dfrac{F''+F'/r}{F}=-k^2$</span>
+        <span class="syms">$u$：溫度；$\kappa$：熱擴散係數；$F(r)$、$T(t)$：分離後的函數；$k$：分離常數</span>
+        徑向是 0 階 Bessel 方程；中心有限丟 $Y_0$，表面 $u(R)=0$ 定 $k$。<br>
+        $T=e^{-\kappa k^2t}$，$F=J_0(kr)$，$J_0(kR)=0\Rightarrow k=\dfrac{j_n}R$<br>
+        $u=\displaystyle\sum_{n\ge1}c_nJ_0\Big(\frac{j_nr}R\Big)e^{-\kappa j_n^2t/R^2}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $c_n$ 與數值</h5>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int_0^RrJ_0\Big(\frac{j_nr}R\Big)^2dr=\frac{R^2}2J_1(j_n)^2$（權重 $r$ 的正交性）</span>
+        <span class="syms">$c_n$：展開係數；$f(r)=u_0(1-\tfrac{r^2}{R^2})$：初溫；$s=\tfrac rR$：無因次半徑；$j_n$：$J_0$ 的零點</span>
+        $t=0$ 兩邊乘 $rJ_0(\tfrac{j_kr}R)$ 積分，只留 $n=k$。<br>
+        $c_n=\dfrac{2u_0}{J_1(j_n)^2}\displaystyle\int_0^1s(1-s^2)J_0(j_ns)\,ds$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\int_0^jxJ_0\,dx=jJ_1(j)$，$\displaystyle\int_0^jx^3J_0\,dx=j^3J_1(j)-2j^2J_2(j)$</span>
+        <span class="syms">$x=js$：換變數；$j=j_n$；$J_1$、$J_2$：1、2 階 Bessel 函數</span>
+        和 111 上期末同一招（① 與分部積分）。<br>
+        $\displaystyle\int_0^1s(1-s^2)J_0(js)\,ds=\frac{jJ_1(j)}{j^2}-\frac{j^3J_1(j)-2j^2J_2(j)}{j^4}=\frac{2J_2(j)}{j^2}$</p>
+      <p class="wq-step"><span class="memo">背：④ $J_2=\dfrac2xJ_1-J_0$，且 $J_0(j)=0$</span>
+        <span class="syms">$j=j_n$：$J_0$ 的零點；$c_n$：展開係數；$u_0$：初溫的中心值</span>
+        在零點上 $J_2(j)=\tfrac2jJ_1(j)$，代回 $c_n$。<br>
+        $\dfrac{2J_2(j)}{j^2}=\dfrac{4J_1(j)}{j^3}$ ⟹ $c_n=\dfrac{2u_0}{J_1^2}\cdot\dfrac{4J_1}{j_n^3}=\dfrac{8u_0}{j_n^3J_1(j_n)}$</p>
+      <p class="wq-step"><span class="memo">背：$c_n=\dfrac{8u_0}{j_n^3J_1(j_n)}$</span>
+        <span class="syms">$j_n=2.4048,\ 5.5201,\ 8.6537$；$J_1(j_n)=0.5191,\ -0.3403,\ 0.2715$：標準表值</span>
+        $J_1(j_n)$ 正負交替，所以 $c_n$ 也正負交替。<br>
+        $c_1=\dfrac{8u_0}{13.907\times0.5191}=1.108u_0$，$c_2=-0.1398u_0$，$c_3=0.0455u_0$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 中心溫度降到一半的時間</h5>
+      <p class="wq-step"><span class="memo">背：$J_0(0)=1$；$\tau=\dfrac{\kappa t}{R^2}$</span>
+        <span class="syms">$\tau$：無因次時間；$c_1=1.108u_0$；$j_1^2=5.783$</span>
+        中心 $r=0$，只留第一項，令它等於 $\tfrac{u_0}2$。<br>
+        $1.108\,e^{-5.783\tau}=\dfrac12\Rightarrow\tau=\dfrac{\ln(2\times1.108)}{5.783}=\dfrac{0.7957}{5.783}=0.1376$，$t\approx0.138\dfrac{R^2}\kappa$</p>
+      <p class="wq-step"><span class="memo">背：第 $n$ 項在中心 $=c_ne^{-j_n^2\tau}$</span>
+        <span class="syms">$c_2=-0.1398u_0$；$j_2^2=30.47$；$\tau=0.1376$</span>
+        估計被忽略的第二項（第三項約 $10^{-6}$）。<br>
+        $c_2e^{-30.47\times0.1376}=-0.0021u_0$，誤差約 0.4%</p>
+    </div>
+  </div>
+  <div class="final">答：$c_n=\frac{8u_0}{j_n^3J_1(j_n)}$；$t\approx0.138R^2/\kappa$（誤差約 0.4%）。</div>
+  <p class="small"><a href="#am6-sf-04c">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am6-sf-04d" data-group="四、遞迴恆等式與積分" data-title="自編：生成函數">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　已知生成函數 $g(x,t)=e^{\frac x2\left(t-\frac1t\right)}=\sum_{n=-\infty}^{\infty}J_n(x)\,t^n$：(a) 把 $e^{xt/2}$ 與 $e^{-x/(2t)}$ 的級數相乘，求 $t^n$（$n\ge0$）的係數，確認是 $J_n$；(b) 對 $t$ 偏微分，推出遞迴 ④；(c) 對 $x$ 偏微分，推出遞迴 ⑤；(d) 令 $t=e^{i\theta}$，推出 $J_n(x)=\frac1\pi\int_0^\pi\cos(n\theta-x\sin\theta)\,d\theta$，並證明 $|J_n(x)|\le1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「生成函數 $e^{\frac x2(t-\frac1t)}=\sum J_nt^n$」＋「對 $t$、$x$ 微分」＋「$t=e^{i\theta}$」⟹ 題型：<b>生成函數：比較 $t^n$ 係數＋Fourier 係數取積分表示</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $t^n$ 的係數</h5>
+      <p class="wq-step"><span class="memo">背：$e^z=\displaystyle\sum_{k\ge0}\frac{z^k}{k!}$；兩級數相乘取 $t^n$：次方相加等於 $n$</span>
+        <span class="syms">$g$：生成函數；$x$：自變數；$t$：展開變數；$j$、$k$：兩個級數的指標；$J_n$：$n$ 階 Bessel 函數</span>
+        $e^{xt/2}$ 給 $t^j$、$e^{-x/(2t)}$ 給 $t^{-k}$，$t^n$ 需要 $j=n+k$。<br>
+        $[t^n]g=\displaystyle\sum_{k\ge0}\frac{(x/2)^{n+k}}{(n+k)!}\cdot\frac{(-1)^k(x/2)^k}{k!}=\sum_{k\ge0}\frac{(-1)^k}{k!\,(n+k)!}\Big(\frac x2\Big)^{n+2k}=J_n$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 對 $t$ 微分推出 ④</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\partial g}{\partial t}=\dfrac x2\Big(1+\dfrac1{t^2}\Big)g$；兩邊同次方係數相等</span>
+        <span class="syms">$g=\sum J_nt^n$；$n$：階數；$t^{n-1}$：要比較的次方</span>
+        左邊 $t^{n-1}$ 的係數 $nJ_n$；右邊來自 $t^n$ 項的 $J_{n-1}$ 與 $t^{n-2}$ 項的 $J_{n+1}$。<br>
+        $\displaystyle\sum nJ_nt^{n-1}=\frac x2\sum J_n\big(t^n+t^{n-2}\big)$ ⟹ $nJ_n=\dfrac x2\big(J_{n-1}+J_{n+1}\big)$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 對 $x$ 微分推出 ⑤</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac{\partial g}{\partial x}=\dfrac12\Big(t-\dfrac1t\Big)g$；兩邊同次方係數相等</span>
+        <span class="syms">$J_n'$：$J_n$ 對 $x$ 的導數；$t^n$：要比較的次方</span>
+        右邊 $t^n$ 來自 $t^{n+1}$ 項的 $J_{n-1}$ 與 $t^{n-1}$ 項的 $J_{n+1}$。<br>
+        $\displaystyle\sum J_n't^n=\frac12\sum J_n\big(t^{n+1}-t^{n-1}\big)$ ⟹ $J_n'=\dfrac12\big(J_{n-1}-J_{n+1}\big)$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 積分表示與 $|J_n|\le1$</h5>
+      <p class="wq-step"><span class="memo">背：$t=e^{i\theta}$ ⟹ $t-\dfrac1t=2i\sin\theta$；$\displaystyle\int_0^{2\pi}e^{i(k-n)\theta}d\theta=2\pi\delta_{kn}$</span>
+        <span class="syms">$\theta$：角度；$\delta_{kn}$：$k=n$ 時為 1、否則為 0；$J_k$：Bessel 函數</span>
+        $e^{ix\sin\theta}=\sum J_ke^{ik\theta}$，兩邊乘 $e^{-in\theta}$ 從 0 積到 $2\pi$；$J_n$ 是實數，只留實部。<br>
+        $J_n(x)=\dfrac1{2\pi}\displaystyle\int_0^{2\pi}e^{i(x\sin\theta-n\theta)}d\theta=\frac1{2\pi}\int_0^{2\pi}\cos(x\sin\theta-n\theta)\,d\theta$</p>
+      <p class="wq-step"><span class="memo">背：$[\pi,2\pi]$ 那半段令 $\theta=2\pi-\phi$；$|\cos|\le1$</span>
+        <span class="syms">$\phi$：新角度；$n$：整數階數</span>
+        後半段的被積函數變成 $\cos(n\phi-x\sin\phi)$，和前半段相同。<br>
+        $J_n(x)=\dfrac1\pi\displaystyle\int_0^\pi\cos(n\theta-x\sin\theta)\,d\theta$，$|J_n(x)|\le\dfrac1\pi\displaystyle\int_0^\pi1\,d\theta=1$</p>
+    </div>
+  </div>
+  <div class="final">答：④⑤ 如上；$J_n(x)=\frac1\pi\int_0^\pi\cos(n\theta-x\sin\theta)d\theta$，$|J_n|\le1$。</div>
+  <p class="small"><a href="#am6-sf-04d">回到正文詳解</a></p>
+</article>

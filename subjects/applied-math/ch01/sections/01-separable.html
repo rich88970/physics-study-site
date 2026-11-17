@@ -1,0 +1,548 @@
+<h2>一、一階方程的四型與可分離方程 <span class="pg">板書 9/16 照片 1</span></h2>
+
+<p class="lead">9/16 第一堂先把這學期第一個主題「一階常微分方程」分成四型，接著講最簡單的第一型：右邊能拆成「只含 $x$」乘「只含 $y$」的可分離方程。這一節也整理一個貫穿全章的習慣：拿到題目先判斷是哪一型，再決定方法。</p>
+
+<h3 id="am1s-types">1.1 一階常微分方程與四種型 <span class="pg-tag">照片 1</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 1 左半）</span>
+  <p>⊙ 1st order ordinary diff. eq.</p>
+  <p>Type 1 Separable eq.　2. linear eq.　3. exact eq.　4. non-exact eq.</p>
+  <p>$y$：目標　$x$：自變　$y=y(x)$</p>
+  <p>Type 1. Separable eq.　$F(y',y;x)=0$，$\dfrac{dy}{dx}=f(x,y)$</p>
+</div>
+
+<p>「常微分方程」（ODE）是含有未知函數 $y(x)$ 及其導數的方程；「一階」表示式中最高只出現 $y'$。板書把 $y$ 叫做「目標」（我們要求的未知函數）、$x$ 叫做「自變」（自變數）。最一般的一階方程寫成 $F(y',y;x)=0$，如果能把 $y'$ 解出來，就寫成</p>
+$$\frac{dy}{dx}=f(x,y).$$
+<p>老師把這一章要會的方程分成四型，整章的節就照這個順序排：</p>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>型</th><th>長相</th><th>怎麼認</th><th>方法（本站第幾節）</th></tr></thead>
+  <tbody>
+    <tr><td>Type 1 可分離</td><td>$\dfrac{dy}{dx}=M(x)N(y)$</td><td>右邊能拆成「只含 $x$」×「只含 $y$」</td><td>兩邊分開積分（第 1 節）</td></tr>
+    <tr><td>Type 2 線性</td><td>$y'+p(x)y=q(x)$</td><td>$y$ 和 $y'$ 都只出現一次方，係數只含 $x$</td><td>乘積分因子 $e^{\int p\,dx}$（第 2 節）</td></tr>
+    <tr><td>Type 3 正合</td><td>$M\,dx+N\,dy=0$，$M_y=N_x$</td><td>寫成微分形式後檢查交叉偏導數相等</td><td>找 $f(x,y)=C$（第 3 節）</td></tr>
+    <tr><td>Type 4 非正合</td><td>$M\,dx+N\,dy=0$，$M_y\ne N_x$</td><td>不正合，但 $\Delta/N$ 只含 $x$ 或 $\Delta/M$ 只含 $y$</td><td>乘 $F(x)$ 或 $F(y)$ 變正合（第 4 節）</td></tr>
+  </tbody>
+</table></div>
+
+<p>同一題常常同時屬於好幾型（例如 112 上期中第 1 題既是線性、也能用第 4 型的 $F(x)$ 解，見第 2 節），考試時挑最快的那一型。判斷順序建議：先看能不能分離（最快），再看是不是線性，最後才寫成 $M\,dx+N\,dy$ 檢查正合。</p>
+
+<h3 id="am1s-sep">1.2 可分離方程：兩邊分開積分 <span class="pg-tag">照片 1</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 1 中間）</span>
+  $$\frac{dy}{dx}=M(x)N(y)\qquad\Longrightarrow\qquad\int\frac{dy}{N(y)}=\int M(x)\,dx$$
+</div>
+
+<p>板書這兩行背後的理由：把方程兩邊同除 $N(y)$，得到 $\dfrac{1}{N(y)}\dfrac{dy}{dx}=M(x)$。左邊對 $x$ 積分時，用代換 $y=y(x)$、$dy=y'\,dx$（連鎖律），</p>
+$$\int\frac{1}{N(y)}\frac{dy}{dx}\,dx=\int\frac{dy}{N(y)},$$
+<p>所以「把 $dy$ 和 $dx$ 分到兩邊再各自積分」是合法的，不只是記號遊戲。兩邊積分各會產生一個常數，合併成一個 $C$ 寫在一邊就好。</p>
+
+<div class="step" data-step="am1s-sep-s1" data-sym="y,yp,sepMN,Cst">
+  <span class="step-title">三個一定要注意的細節</span>
+  <ol>
+    <li><b>對數要加絕對值</b>：$\int\dfrac{du}{u}=\ln|u|$。最後取指數時 $|u|=e^{C}$，正負號可以併進常數：$u=\pm e^{C}=K$（$K$ 可正可負）。板書例題就是這樣把 $\ln[\cdots]=C$ 直接寫成 $(\cdots)=C$。</li>
+    <li><b>除掉 $N(y)$ 會漏解</b>：若某個常數 $y_0$ 使 $N(y_0)=0$，那 $y\equiv y_0$ 本身就是解（$y'=0$，右邊也是 0），但除以 $N(y)$ 時把它丟了。題目的初始條件剛好落在 $y_0$ 時，答案就是 $y\equiv y_0$（見自編難題 1b）。</li>
+    <li><b>初始條件最後才代</b>：先得到含 $C$ 的通解，再代 $x_0$、$y_0$ 決定 $C$；板書稱初始條件為 constrain（限制條件），代進去後得到「唯一解」。</li>
+  </ol>
+</div>
+
+<div class="problem" data-kind="example" id="am1-ex-sep">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/16 板書（照片 1）</span></div>
+    <h4>$\dfrac{dy}{dx}=\dfrac{2x-8xy}{x^2+4}$，$y(0)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-ex-sep">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-sep"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　$\dfrac{dy}{dx}=\dfrac{2x-8xy}{x^2+4}$ with $y(0)=1$（constrain）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $\dfrac{dy}{dx}=\dfrac{2x-8xy}{x^2+4}$，初始條件 $y(0)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$y'=\dfrac{2x-8xy}{x^2+4}$</td><td>題目主式；已經解出 $y'$，是 $y'=f(x,y)$ 的形式</td></tr>
+          <tr><td>右邊的結構</td><td>分子 $2x-8xy=2x(1-4y)$</td><td>分子兩項都有 $2x$，可以提出來（題目沒寫，要自己看出來）</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=1$</td><td>「$y(0)=1$」（板書在下面標 constrain）</td></tr>
+          <tr><td>定義域</td><td>所有實數 $x$</td><td>分母 $x^2+4\ge4$ 永遠不為 0</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的解 $y(x)$（隱式或顯式皆可）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>分子 $2x-8xy$ 可以提出 $2x$，右邊變成 $\dfrac{2x}{x^2+4}\cdot(1-4y)$，正好是「只含 $x$」乘「只含 $y$」，<b>所以</b>這是 Type 1 可分離方程：除以 $(1-4y)$、乘 $dx$，兩邊各自積分。</p>
+      <p><b>因為</b>右邊的 $\dfrac{2x}{x^2+4}$ 分子剛好是分母的導數、左邊 $\dfrac{1}{1-4y}$ 是一次式的倒數，兩邊積分都是對數，<b>所以</b>最後把對數合併、取指數，就得到不含對數的隱式解。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-ex-sep-s1" data-sym="sepMN">
+        <span class="step-title">因式分解，確認可分離</span>
+        $$\frac{dy}{dx}=\frac{2x(1-4y)}{x^2+4}=\underbrace{\frac{2x}{x^2+4}}_{M(x)}\cdot\underbrace{(1-4y)}_{N(y)}$$
+      </div>
+      <div class="step" data-step="am1-ex-sep-s2">
+        <span class="step-title">分離變數，兩邊積分</span>
+        <p>設 $1-4y\ne0$，兩邊除以 $1-4y$、乘 $dx$：</p>
+        $$\int\frac{dy}{1-4y}=\int\frac{2x}{x^2+4}\,dx$$
+        <p>左邊令 $u=1-4y$、$du=-4\,dy$：$\displaystyle\int\frac{dy}{1-4y}=-\frac14\int\frac{du}{u}=-\frac14\ln|1-4y|$。右邊令 $w=x^2+4$、$dw=2x\,dx$：$\displaystyle\int\frac{dw}{w}=\ln(x^2+4)$（$x^2+4>0$ 不用絕對值）。</p>
+        $$-\frac14\ln|1-4y|=\ln(x^2+4)+C$$
+      </div>
+      <div class="step" data-step="am1-ex-sep-s3" data-sym="Cst">
+        <span class="step-title">把對數合併、取指數</span>
+        <p>兩邊乘 $-4$，移項：$\ln|1-4y|+4\ln(x^2+4)=-4C$。用 $a\ln b=\ln b^a$、$\ln A+\ln B=\ln AB$，再把 $-4C$ 重新叫做 $C$：</p>
+        $$\ln\big[(x^2+4)^4\,|1-4y|\big]=C\quad\Longrightarrow\quad(x^2+4)^4(1-4y)=C$$
+        <p>最後一步取指數時 $\pm e^{C}$ 又併成一個新的常數，仍記為 $C$（板書的寫法）。</p>
+      </div>
+      <div class="step" data-step="am1-ex-sep-s4">
+        <span class="step-title">代初始條件決定 $C$</span>
+        <p class="sub">代入 $x=0$、$y=1$（題目「$y(0)=1$」）：</p>
+        $$C=(0^2+4)^4(1-4\cdot1)=256\times(-3)=-768$$
+        $$(x^2+4)^4(1-4y)=-768$$
+      </div>
+      <div class="step" data-step="am1-ex-sep-s5">
+        <span class="step-title">（網站補充）解出顯式 $y(x)$</span>
+        <p>兩邊除以 $(x^2+4)^4$：$1-4y=\dfrac{-768}{(x^2+4)^4}$，所以</p>
+        $$y=\frac14+\frac{192}{(x^2+4)^4}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$(x^2+4)^4(1-4y)=-768$，即 $y=\dfrac14+\dfrac{192}{(x^2+4)^4}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$x=0$：$y=\tfrac14+\tfrac{192}{256}=1$ ✔。代回方程：$y'=\dfrac{-1536x}{(x^2+4)^5}$；右邊 $\dfrac{2x(1-4y)}{x^2+4}=\dfrac{2x}{x^2+4}\cdot\dfrac{-768}{(x^2+4)^4}=\dfrac{-1536x}{(x^2+4)^5}$ ✔。被除掉的 $y\equiv\tfrac14$（$1-4y=0$）也是解，但不滿足 $y(0)=1$，不影響答案；$x\to\pm\infty$ 時 $y\to\tfrac14$，解曲線往這條常數解靠近。</p></div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">取指數時常數不是「$e^C$ 再加回去」</span>
+  <p>$\ln|u|=g(x)+C$ 取指數得 $|u|=e^{C}e^{g(x)}$，常數是<strong>乘</strong>在外面，不是 $u=e^{g(x)}+C$。板書 RC 電路（第 5 節）的 $q=e^{-t/RC}\cdot K$ 也是這個道理。</p>
+</div>
+
+<h3 id="am1s-hw">1.3 作業與考古題 <span class="pg-tag">作業第 1 題 · 113 上期中第 2 題</span></h3>
+
+<p>下面兩題右邊都不是一眼就寫成 $M(x)N(y)$：作業第 1 題要先移項，考古題 $y'+y^2=9$ 要看出右邊 $9-y^2$ 只含 $y$。</p>
+
+<div class="problem" data-kind="textbook" id="am1-hw-1">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">9/16 作業 第 1 題</span></div>
+    <h4>$xy\cos(y^2)\,y'+2\sin(y^2)=0$，$y(1)=\sqrt{\pi/2}$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-hw-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-hw-1"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p><b>First Order ODE</b></p><p>1. $xy\cos(y^2)y'+2\sin(y^2)=0$, $y(1)=\sqrt{\dfrac{\pi}{2}}$</p><p>Ans : $x^4\sin(y^2)=1$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $xy\cos(y^2)\,y'+2\sin(y^2)=0$，$y(1)=\sqrt{\dfrac{\pi}{2}}$。（老師答案：$x^4\sin(y^2)=1$）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$xy\cos(y^2)\,y'=-2\sin(y^2)$</td><td>題目主式把 $2\sin(y^2)$ 移到右邊</td></tr>
+          <tr><td>結構</td><td>$y'=\dfrac{1}{x}\cdot\dfrac{-2\sin(y^2)}{y\cos(y^2)}$</td><td>係數 $xy\cos(y^2)$ 是「$x$」乘「只含 $y$ 的東西」，右邊只含 $y$</td></tr>
+          <tr><td>初始條件</td><td>$x_0=1$，$y_0^2=\dfrac{\pi}{2}$</td><td>「$y(1)=\sqrt{\pi/2}$」；平方後 $\sin(y_0^2)=\sin\frac{\pi}{2}=1$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的解（並核對老師答案 $x^4\sin(y^2)=1$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>把 $2\sin(y^2)$ 移到右邊後，$x$ 只出現在係數 $x$，其餘都是 $y$ 的函數，<b>所以</b>是可分離方程：把所有 $y$ 的東西搬到 $dy$ 那邊、$x$ 搬到 $dx$ 那邊。</p>
+      <p><b>因為</b>左邊會出現 $\dfrac{y\cos(y^2)}{\sin(y^2)}$，而 $\dfrac{d}{dy}\sin(y^2)=2y\cos(y^2)$ 正好是分子的 2 倍，<b>所以</b>用代換 $u=\sin(y^2)$ 積成對數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-hw-1-s1" data-sym="sepMN">
+        <span class="step-title">分離變數</span>
+        <p>$xy\cos(y^2)\dfrac{dy}{dx}=-2\sin(y^2)$，兩邊除以 $x\sin(y^2)$（設不為 0）、乘 $dx$：</p>
+        $$\frac{y\cos(y^2)}{\sin(y^2)}\,dy=-\frac{2}{x}\,dx$$
+      </div>
+      <div class="step" data-step="am1-hw-1-s2">
+        <span class="step-title">兩邊積分</span>
+        <p>左邊令 $u=\sin(y^2)$，$du=2y\cos(y^2)\,dy$，所以 $y\cos(y^2)\,dy=\tfrac12du$：</p>
+        $$\int\frac{y\cos(y^2)}{\sin(y^2)}dy=\frac12\int\frac{du}{u}=\frac12\ln|\sin(y^2)|,\qquad\int-\frac2x\,dx=-2\ln|x|$$
+        $$\frac12\ln|\sin(y^2)|=-2\ln|x|+C$$
+      </div>
+      <div class="step" data-step="am1-hw-1-s3" data-sym="Cst">
+        <span class="step-title">整理成不含對數的式子</span>
+        <p>乘 2、移項：$\ln|\sin(y^2)|+4\ln|x|=2C$，即 $\ln\big|x^4\sin(y^2)\big|=2C$。取指數、正負號併進常數：</p>
+        $$x^4\sin(y^2)=K$$
+      </div>
+      <div class="step" data-step="am1-hw-1-s4">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=1$、$y^2=\dfrac{\pi}{2}$（題目「$y(1)=\sqrt{\pi/2}$」）：</p>
+        $$K=1^4\cdot\sin\frac{\pi}{2}=1$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$x^4\sin(y^2)=1$（和老師答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>對 $x^4\sin(y^2)=1$ 隱微分：$4x^3\sin(y^2)+x^4\cdot2y\cos(y^2)\,y'=0$，兩邊除以 $2x^3$ 就是 $2\sin(y^2)+xy\cos(y^2)\,y'=0$ ✔。注意初始點 $y_0^2=\pi/2$ 使 $\cos(y_0^2)=0$，原方程在 $x=1$ 的 $y'$ 分母為 0：解曲線在這點的切線是鉛直的，$x^4\sin(y^2)=1$ 也要求 $x^4\ge1$，所以通過 $(1,\sqrt{\pi/2})$ 的解只存在於 $x\ge1$（$x\le-1$ 是隱式曲線另一個不相連的分支，不是這個初值問題的解）。隱式解照樣成立，答案寫隱式即可。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-113a-m2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2024.Nov. 第 2 題（113上）</span></div>
+    <h4>$y'+y^2=9$，$y(0)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-113a-m2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-113a-m2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>2. Solve $y'+y^2=9$ for $y(0)=0$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y'+y^2=9$，$y(0)=0$。（25 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$y'=9-y^2=(3-y)(3+y)$</td><td>題目主式移項；右邊<b>只含 $y$</b>，不含 $x$</td></tr>
+          <tr><td>平衡解</td><td>$y\equiv3$、$y\equiv-3$</td><td>令 $9-y^2=0$（題目沒寫，自己找；分離時會被除掉）</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=0$</td><td>「$y(0)=0$」；$0$ 在 $-3$ 與 $3$ 之間</td></tr>
+          <tr><td>配分</td><td>25 分</td><td>考卷「25 points for each problem」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足 $y(0)=0$ 的解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>移項後 $y'=9-y^2$ 的右邊只含 $y$（相當於 $M(x)=1$、$N(y)=9-y^2$），<b>所以</b>是可分離方程：$\dfrac{dy}{9-y^2}=dx$。它雖然有 $y^2$ 不是線性方程，但分離變數就能解。</p>
+      <p><b>因為</b>$\dfrac{1}{9-y^2}$ 的分母可以因式分解成 $(3-y)(3+y)$，<b>所以</b>用部分分式拆成兩個一次式的倒數，各自積成對數。初始值 $0$ 夾在兩條平衡解 $\pm3$ 之間，解永遠不會穿過它們，絕對值可以直接拿掉。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-113a-m2-s1">
+        <span class="step-title">分離變數</span>
+        <p>$y'=9-y^2$，設 $y\ne\pm3$，兩邊除以 $9-y^2$：</p>
+        $$\int\frac{dy}{9-y^2}=\int dx$$
+      </div>
+      <div class="step" data-step="am1-113a-m2-s2">
+        <span class="step-title">部分分式</span>
+        <p>設 $\dfrac{1}{(3-y)(3+y)}=\dfrac{A}{3-y}+\dfrac{B}{3+y}$，通分得 $1=A(3+y)+B(3-y)$。代 $y=3$：$1=6A$；代 $y=-3$：$1=6B$。所以 $A=B=\tfrac16$：</p>
+        $$\int\frac{dy}{9-y^2}=\frac16\int\left(\frac{1}{3-y}+\frac{1}{3+y}\right)dy=\frac16\Big(-\ln|3-y|+\ln|3+y|\Big)=\frac16\ln\left|\frac{3+y}{3-y}\right|$$
+        $$\frac16\ln\left|\frac{3+y}{3-y}\right|=x+C$$
+      </div>
+      <div class="step" data-step="am1-113a-m2-s3" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=0$、$y=0$（題目「$y(0)=0$」）：</p>
+        $$\frac16\ln\left|\frac{3+0}{3-0}\right|=\frac16\ln1=0=0+C\ \Longrightarrow\ C=0$$
+        <p>因為 $-3\lt y\lt 3$ 一路成立（解不能穿過平衡解），$\dfrac{3+y}{3-y}>0$，絕對值拿掉：</p>
+        $$\frac{3+y}{3-y}=e^{6x}$$
+      </div>
+      <div class="step" data-step="am1-113a-m2-s4">
+        <span class="step-title">解出 $y$</span>
+        <p>交叉相乘：$3+y=e^{6x}(3-y)$ ⟹ $y\,(1+e^{6x})=3(e^{6x}-1)$：</p>
+        $$y=\frac{3\,(e^{6x}-1)}{e^{6x}+1}=3\,\frac{e^{3x}-e^{-3x}}{e^{3x}+e^{-3x}}=3\tanh(3x)$$
+        <p>中間那步是分子分母同除 $e^{3x}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\dfrac{3(e^{6x}-1)}{e^{6x}+1}=3\tanh(3x)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=3\tanh0=0$ ✔。$y'=9\,\mathrm{sech}^2(3x)=9(1-\tanh^2 3x)=9-y^2$ ✔。$x\to\infty$ 時 $y\to3$：解趨近平衡解 $y=3$，和第 5 節 $v^2$ 阻力落體趨近終端速度是同一個數學結構。</p></div>
+  </div>
+</div>
+
+<h3 id="am1s-old">1.4 更早年級的考古題 <span class="pg-tag">109 級下第 1 次期中 · 108 級下 First Order ODE</span></h3>
+
+<p>使用者雲端的「109級下學期應數（第 1 次期中）」與「108級下學期 First Order ODE」兩份考古卷附有老師的答案，題目大量重複（同一題兩份都出現時，卡片的出處兩個都寫）。這一節收可分離的三題；其中 1(d) 是「齊次型」，要先代換 $y=vx$ 才能分離。</p>
+
+<p><span class="added">網站補充</span> <strong>齊次型方程（homogeneous equation）。</strong>若 $M(x,y)$、$N(x,y)$ 的每一項次數都相同（例如都是一次：$2x+4y$、$y-x$），則 $\dfrac{dy}{dx}=-\dfrac MN$ 只和比值 $v=\dfrac yx$ 有關。令 $y=vx$，$\dfrac{dy}{dx}=v+x\dfrac{dv}{dx}$，方程就變成 $x\dfrac{dv}{dx}=g(v)$，可以分離成 $\dfrac{dv}{g(v)}=\dfrac{dx}{x}$。這和本節自編難題 1a 的「$u=x+y+1$」是同一個想法：用代換把拆不開的組合變成一個新變數。（這裡的「齊次」和第 2 章「齊次線性方程」右邊為 0 是不同的意思。）</p>
+
+<div class="problem" data-kind="exam" id="am1-109b-1a">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 1(a) 題 · 108級下學期 First Order ODE 第 1(a) 題</span></div>
+    <h4>$\dfrac{dy}{dx}=\dfrac{y\cos x}{1+2y^2}$，$y(0)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-109b-1a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1a"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(a) $\dfrac{dy}{dx}=\dfrac{y\cos x}{1+2y^2}$ for $y(0)=1$.　Ans: $\ln|y|+y^2=-\sin x+1$</p><p>（108級下學期 First Order ODE 1(a) 同題同答案。）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $\dfrac{dy}{dx}=\dfrac{y\cos x}{1+2y^2}$，$y(0)=1$。（考卷附的答案：$\ln|y|+y^2=-\sin x+1$，正負號有誤植，見步驟 4。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$y'=\cos x\cdot\dfrac{y}{1+2y^2}$</td><td>「$\frac{dy}{dx}=\frac{y\cos x}{1+2y^2}$」：分子的 $\cos x$ 只含 $x$，其餘只含 $y$</td></tr>
+          <tr><td>$M(x)$、$N(y)$</td><td>$M=\cos x$，$N=\dfrac{y}{1+2y^2}$</td><td>把右邊拆成兩個因式（自己拆）</td></tr>
+          <tr><td>平衡解</td><td>$y\equiv0$</td><td>$N(0)=0$（題目沒寫；除以 $N$ 時會丟掉，但初值 $1\ne0$ 用不到）</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=1$</td><td>「for $y(0)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：通過 $(0,1)$ 的解（隱式即可）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是「只含 $x$ 的 $\cos x$」乘「只含 $y$ 的 $\dfrac{y}{1+2y^2}$」，<b>所以</b>是第 1 型可分離方程，直接把 $y$ 的部分搬到左邊、兩邊各自積分。</p>
+      <p><b>因為</b>左邊 $\dfrac{1+2y^2}{y}=\dfrac1y+2y$ 積出來是 $\ln|y|+y^2$，解不出 $y=\cdots$ 的顯式，<b>所以</b>答案寫隱式 $G(x,y)=C$ 即可；最後用隱微分驗算，順便看出考卷答案的正負號錯在哪。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-109b-1a-s1" data-sym="sepMN">
+        <span class="step-title">分離變數</span>
+        <p>一般式 $\dfrac{dy}{dx}=M(x)N(y)\Rightarrow\dfrac{dy}{N(y)}=M(x)\,dx$。</p>
+        <p class="sub">代入 $M=\cos x$、$N=\dfrac{y}{1+2y^2}$（題目右邊拆開），設 $y\ne0$：</p>
+        $$\frac{1+2y^2}{y}\,dy=\cos x\,dx$$
+      </div>
+      <div class="step" data-step="am1-109b-1a-s2">
+        <span class="step-title">兩邊積分</span>
+        <p>左邊先拆成兩項 $\dfrac{1+2y^2}{y}=\dfrac1y+2y$：</p>
+        $$\int\Big(\frac1y+2y\Big)dy=\ln|y|+y^2,\qquad\int\cos x\,dx=\sin x$$
+        $$\ln|y|+y^2=\sin x+C$$
+      </div>
+      <div class="step" data-step="am1-109b-1a-s3" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=0$、$y=1$（題目「$y(0)=1$」）：</p>
+        $$\ln1+1^2=\sin0+C\ \Longrightarrow\ 0+1=0+C\ \Longrightarrow\ C=1$$
+        <p>解從 $y=1>0$ 出發，不會穿過平衡解 $y\equiv0$，所以一路 $y>0$，$\ln|y|=\ln y$。</p>
+      </div>
+      <div class="step" data-step="am1-109b-1a-s4">
+        <span class="step-title">檢查考卷附的答案</span>
+        <p>考卷寫 $\ln|y|+y^2=-\sin x+1$。對它隱微分：</p>
+        $$\Big(\frac1y+2y\Big)y'=-\cos x\ \Longrightarrow\ y'=-\frac{y\cos x}{1+2y^2}$$
+        <p>和題目的 $y'$ 差一個負號，所以那是 $\dfrac{dy}{dx}=-\dfrac{y\cos x}{1+2y^2}$ 的解；本題正確的是 $+\sin x$。（初始點代入兩者都得 $C=1$，所以只代初始條件看不出錯，一定要微分回去驗。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\ln y+y^2=\sin x+1$（考卷答案 $-\sin x$ 為誤植）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>對 $\ln y+y^2=\sin x+1$ 隱微分：$\big(\frac1y+2y\big)y'=\cos x$ ⟹ $y'=\dfrac{y\cos x}{1+2y^2}$ ✔；$(0,1)$：$0+1=0+1$ ✔。在 $x=0$ 斜率 $y'=\frac{1\cdot1}{3}=\frac13>0$，而 $\sin x$ 在 $x=0$ 附近也遞增，符號一致。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-109b-1g">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 1(g) 題</span></div>
+    <h4>$\dfrac{dy}{dx}=e^{9y-x}$，$y(0)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-109b-1g">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1g"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(g) $\dfrac{dy}{dx}=e^{9y-x}$ for $y(0)=0$.　Ans: $y(x)=\dfrac19\left[x-\ln(9-8e^x)\right]$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $\dfrac{dy}{dx}=e^{9y-x}$，$y(0)=0$。（考卷附的答案：$y(x)=\frac19\big[x-\ln(9-8e^x)\big]$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$y'=e^{9y}\cdot e^{-x}$</td><td>「$e^{9y-x}$」：指數律 $e^{a-b}=e^ae^{-b}$ 拆成兩個因式</td></tr>
+          <tr><td>$M(x)$、$N(y)$</td><td>$M=e^{-x}$，$N=e^{9y}$</td><td>拆開後各只含一個變數</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=0$</td><td>「for $y(0)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：顯式解 $y(x)$，以及它在哪個區間有定義（題目沒問，但取對數時一定要檢查）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>指數裡是 $9y-x$ 的差，用指數律拆成 $e^{9y}e^{-x}$ 後就是「只含 $y$」乘「只含 $x$」，<b>所以</b>是可分離方程；<b>因為</b> $e^{9y}$ 永不為 0，<b>所以</b>除過去不會漏解。</p>
+      <p><b>因為</b>最後要從 $e^{-9y}=\cdots$ 取對數解 $y$，對數裡必須是正數，<b>所以</b>要找出解存在的範圍：解會在有限的 $x$ 爆掉。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-109b-1g-s1" data-sym="sepMN">
+        <span class="step-title">拆指數、分離</span>
+        <p class="sub">用 $e^{9y-x}=e^{9y}e^{-x}$（題目指數），兩邊除以 $e^{9y}$：</p>
+        $$e^{-9y}\,dy=e^{-x}\,dx$$
+      </div>
+      <div class="step" data-step="am1-109b-1g-s2">
+        <span class="step-title">積分</span>
+        <p>一般式 $\displaystyle\int e^{ay}dy=\frac{e^{ay}}{a}$，這裡左邊 $a=-9$、右邊 $a=-1$：</p>
+        $$-\frac19e^{-9y}=-e^{-x}+C$$
+      </div>
+      <div class="step" data-step="am1-109b-1g-s3" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=0$、$y=0$（題目「$y(0)=0$」），$e^0=1$：</p>
+        $$-\frac19=-1+C\ \Longrightarrow\ C=1-\frac19=\frac89$$
+      </div>
+      <div class="step" data-step="am1-109b-1g-s4">
+        <span class="step-title">解出 $y$</span>
+        <p>兩邊乘 $-9$：$e^{-9y}=9e^{-x}-8$。取對數：</p>
+        $$-9y=\ln\!\big(9e^{-x}-8\big)\ \Longrightarrow\ y=-\frac19\ln\!\big(9e^{-x}-8\big)$$
+        <p>把對數裡提出 $e^{-x}$：$9e^{-x}-8=e^{-x}(9-8e^{x})$，$\ln$ 拆開得 $-x+\ln(9-8e^x)$，所以</p>
+        $$y=\frac19\Big[x-\ln\!\big(9-8e^{x}\big)\Big]$$
+        <p>和考卷答案相同。</p>
+      </div>
+      <div class="step" data-step="am1-109b-1g-s5">
+        <span class="step-title">存在區間</span>
+        <p>對數要求 $9-8e^x>0$，即 $e^x\lt\frac98$，$x\lt\ln\frac98\approx0.118$。當 $x\to\ln\frac98$ 時 $\ln(9-8e^x)\to-\infty$，$y\to+\infty$：解在 $x\approx0.118$ 爆掉。因為 $y'=e^{9y-x}$ 在 $y$ 變大時以 $e^{9y}$ 的速度暴增，爆得很快並不奇怪。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\dfrac19\big[x-\ln(9-8e^x)\big]$，定義在 $x\lt\ln\frac98$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=\frac19[0-\ln1]=0$ ✔。$y'=\frac19\Big[1+\dfrac{8e^x}{9-8e^x}\Big]=\dfrac{1}{9-8e^x}$；而 $e^{9y-x}=e^{x-\ln(9-8e^x)}e^{-x}=\dfrac{1}{9-8e^x}$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-109b-1d">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 1(d) 題</span></div>
+    <h4>齊次型：$(2x+4y)\,dx+(y-x)\,dy=0$，$y(1)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-109b-1d">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1d"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(d) $(2x+4y)dx+(y-x)dy=0$ for $y(1)=0$.　Ans: $8(y+x)^2=(y+2x)^3$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(2x+4y)\,dx+(y-x)\,dy=0$，$y(1)=0$。（考卷附的答案：$8(y+x)^2=(y+2x)^3$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$、$N$</td><td>$M=2x+4y$，$N=y-x$</td><td>$dx$ 的係數、$dy$ 的係數</td></tr>
+          <tr><td>正合？</td><td>$M_y=4$，$N_x=-1$，不相等</td><td>自己偏微分檢查</td></tr>
+          <tr><td>積分因子規則</td><td>$\Delta=M_y-N_x=5$；$\Delta/N=\frac{5}{y-x}$、$\Delta/M=\frac{5}{2x+4y}$ 都同時含 $x,y$</td><td>第 4 節的兩條規則都不能用</td></tr>
+          <tr><td>次數</td><td>$M$、$N$ 每一項都是一次</td><td>$2x$、$4y$、$y$、$-x$ 都是一次項 ⟹ 齊次型</td></tr>
+          <tr><td>初始條件</td><td>$x_0=1$，$y_0=0$</td><td>「for $y(1)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：通過 $(1,0)$ 的解（隱式即可）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>不正合、兩條積分因子規則也失效，而且 $M$、$N$ 每一項都是同次（一次），<b>所以</b> $\dfrac{dy}{dx}=-\dfrac{2x+4y}{y-x}$ 分子分母同除 $x$ 後只剩 $v=y/x$：這是齊次型，代換 $y=vx$ 變成對 $v$ 可分離。</p>
+      <p><b>因為</b>分離後的 $v$ 積分是有理式，分母可以因式分解，<b>所以</b>用部分分式積成對數；最後把 $v=y/x$ 代回、整理成多項式形式再代初始點。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-109b-1d-s1">
+        <span class="step-title">寫成 $v=y/x$ 的函數</span>
+        <p class="sub">移項 $\dfrac{dy}{dx}=-\dfrac MN$，代入 $M=2x+4y$、$N=y-x$（題目），分子分母同除 $x$：</p>
+        $$\frac{dy}{dx}=-\frac{2x+4y}{y-x}=\frac{2x+4y}{x-y}=\frac{2+4v}{1-v},\qquad v=\frac yx$$
+      </div>
+      <div class="step" data-step="am1-109b-1d-s2">
+        <span class="step-title">代換 $y=vx$</span>
+        <p>$y=vx$ 對 $x$ 微分（乘積法則）：$\dfrac{dy}{dx}=v+x\dfrac{dv}{dx}$。代進步驟 1：</p>
+        $$v+x\frac{dv}{dx}=\frac{2+4v}{1-v}\ \Longrightarrow\ x\frac{dv}{dx}=\frac{2+4v-v(1-v)}{1-v}=\frac{v^2+3v+2}{1-v}$$
+        <p>分子因式分解 $v^2+3v+2=(v+1)(v+2)$。</p>
+      </div>
+      <div class="step" data-step="am1-109b-1d-s3">
+        <span class="step-title">分離、部分分式</span>
+        $$\frac{1-v}{(v+1)(v+2)}\,dv=\frac{dx}{x}$$
+        <p>設 $\dfrac{1-v}{(v+1)(v+2)}=\dfrac{A}{v+1}+\dfrac{B}{v+2}$，通分得 $1-v=A(v+2)+B(v+1)$。</p>
+        <p class="sub">代 $v=-1$：$2=A\cdot1$，$A=2$；代 $v=-2$：$3=B\cdot(-1)$，$B=-3$：</p>
+        $$\int\Big(\frac{2}{v+1}-\frac{3}{v+2}\Big)dv=\int\frac{dx}{x}\ \Longrightarrow\ 2\ln|v+1|-3\ln|v+2|=\ln|x|+C$$
+      </div>
+      <div class="step" data-step="am1-109b-1d-s4" data-sym="Cst">
+        <span class="step-title">合併對數、換回 $y$</span>
+        <p>合併成 $\ln\dfrac{(v+1)^2}{|v+2|^3}=\ln|x|+C$，取指數（正負號併進常數）：$\dfrac{(v+1)^2}{(v+2)^3}=Kx$。</p>
+        <p class="sub">代 $v+1=\dfrac{y+x}{x}$、$v+2=\dfrac{y+2x}{x}$：</p>
+        $$\frac{(y+x)^2/x^2}{(y+2x)^3/x^3}=\frac{x\,(y+x)^2}{(y+2x)^3}=Kx\ \Longrightarrow\ (y+x)^2=K\,(y+2x)^3$$
+      </div>
+      <div class="step" data-step="am1-109b-1d-s5">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=1$、$y=0$（題目「$y(1)=0$」）：</p>
+        $$(0+1)^2=K\,(0+2)^3\ \Longrightarrow\ 1=8K\ \Longrightarrow\ K=\frac18$$
+        $$8\,(y+x)^2=(y+2x)^3$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$8(y+x)^2=(y+2x)^3$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$(1,0)$：$8\cdot1=2^3$ ✔。隱微分 $16(y+x)(y'+1)=3(y+2x)^2(y'+2)$，在 $(1,0)$：$16(y'+1)=12(y'+2)$ ⟹ $y'=2$；原方程 $y'=-\frac{2\cdot1+0}{0-1}=2$ ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am1s-self">1.5 自編難題</h3>
+
+<div class="problem" data-kind="self" id="am1-self-01a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>不能直接分離：$y'=(x+y+1)^2$，$y(0)=-1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-01a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y'=(x+y+1)^2$，$y(0)=-1$。並說明解在哪個區間存在。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$y'=(x+y+1)^2$</td><td>右邊展開有 $2xy$ 這種交叉項，<b>拆不成</b> $M(x)N(y)$</td></tr>
+          <tr><td>特徵</td><td>$x$、$y$ 只以 $x+y+1$ 的組合出現</td><td>括號裡是一次式（自己看出來的）</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=-1$</td><td>「$y(0)=-1$」；代入得 $x+y+1=0$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$y(x)$ 與它存在的最大區間。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊只透過 $x+y+1$ 這個組合依賴 $x$、$y$，<b>所以</b>令 $u=x+y+1$ 把它當新的未知函數：$u'=1+y'$，方程變成只含 $u$ 的 $u'=1+u^2$，就可以分離了。直接硬分離是做不到的。</p>
+      <p><b>因為</b>$\displaystyle\int\frac{du}{1+u^2}=\tan^{-1}u$，解會是 $\tan$，<b>所以</b>要注意 $\tan$ 在 $\pm\frac{\pi}{2}$ 發散，解只在有限區間存在。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-01a-s1" data-sym="y,yp">
+        <span class="step-title">代換 $u=x+y+1$</span>
+        <p>對 $x$ 微分：$u'=1+y'$。把 $y'=u^2$ 代入：</p>
+        $$u'=1+u^2$$
+        <p class="sub">初始值：代入 $x=0$、$y=-1$（題目「$y(0)=-1$」）：$u(0)=0+(-1)+1=0$。</p>
+      </div>
+      <div class="step" data-step="am1-self-01a-s2">
+        <span class="step-title">分離變數</span>
+        $$\int\frac{du}{1+u^2}=\int dx\ \Longrightarrow\ \tan^{-1}u=x+C$$
+        <p class="sub">代入 $u(0)=0$（步驟 1）：$\tan^{-1}0=0=C$，所以 $C=0$。</p>
+        $$u=\tan x$$
+      </div>
+      <div class="step" data-step="am1-self-01a-s3">
+        <span class="step-title">換回 $y$，找存在區間</span>
+        $$y=u-x-1=\tan x-x-1$$
+        <p>$\tan x$ 在 $x=\pm\dfrac{\pi}{2}$ 發散，包含初始點 $x=0$ 的最大區間是 $-\dfrac{\pi}{2}\lt x\lt\dfrac{\pi}{2}$。右邊 $(x+y+1)^2$ 到處都很好，解卻在有限的 $x$ 爆掉——這是非線性方程才有的現象。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\tan x-x-1$，存在於 $-\dfrac{\pi}{2}\lt x\lt\dfrac{\pi}{2}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=0-0-1=-1$ ✔。$y'=\sec^2x-1=\tan^2x$；$x+y+1=\tan x$，平方也是 $\tan^2x$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am1-self-01b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>同一個方程三個初始條件：$xy'=y^2-1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-01b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>方程 $xy'=y^2-1$（$x>0$）。分別求滿足 (a) $y(1)=0$、(b) $y(1)=-1$、(c) $y(1)=3$ 的解；(c) 的解在哪裡爆掉？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$y'=\dfrac1x\,(y^2-1)$</td><td>主式除以 $x$（題目限定 $x>0$，可以除）</td></tr>
+          <tr><td>平衡解</td><td>$y\equiv1$、$y\equiv-1$</td><td>令 $y^2-1=0$（自己找）</td></tr>
+          <tr><td>三組初始條件</td><td>$(1,0)$、$(1,-1)$、$(1,3)$</td><td>(a)(b)(c)；(b) 剛好落在平衡解上，(c) 在平衡解 $y=1$ 上方</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：三個解；(c) 爆掉的位置。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是 $\frac1x$ 乘 $(y^2-1)$，<b>所以</b>是可分離方程，先求通解一次就能處理 (a)(c)。</p>
+      <p><b>因為</b>分離時除以 $y^2-1$，會丟掉 $y\equiv\pm1$ 這兩條平衡解；(b) 的初始值 $-1$ 正好在被丟掉的那條上，<b>所以</b>不能硬代通解（會代不出常數），要直接認出答案是 $y\equiv-1$。這是 1.2 節第 2 點「除掉 $N(y)$ 會漏解」的實例。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-01b-s1">
+        <span class="step-title">通解</span>
+        <p>部分分式 $\dfrac{1}{y^2-1}=\dfrac12\left(\dfrac{1}{y-1}-\dfrac{1}{y+1}\right)$：</p>
+        $$\int\frac{dy}{y^2-1}=\int\frac{dx}{x}\ \Longrightarrow\ \frac12\ln\left|\frac{y-1}{y+1}\right|=\ln x+C\ \Longrightarrow\ \frac{y-1}{y+1}=Kx^2$$
+        <p>最後一步：乘 2、取指數，$e^{2C}$ 和正負號併成 $K$。</p>
+      </div>
+      <div class="step" data-step="am1-self-01b-s2">
+        <span class="step-title">(a) $y(1)=0$</span>
+        <p class="sub">代入 $x=1$、$y=0$：$\dfrac{0-1}{0+1}=K\cdot1$，$K=-1$。</p>
+        $$\frac{y-1}{y+1}=-x^2\ \Longrightarrow\ y-1=-x^2y-x^2\ \Longrightarrow\ y=\frac{1-x^2}{1+x^2}$$
+      </div>
+      <div class="step" data-step="am1-self-01b-s3">
+        <span class="step-title">(b) $y(1)=-1$：通解代不出來</span>
+        <p>代入通解：左邊 $\dfrac{-2}{0}$ 沒有定義，找不到 $K$。原因是 $y=-1$ 讓 $y^2-1=0$：$y\equiv-1$ 時 $y'=0$、右邊 $\tfrac1x(1-1)=0$，本身就是解，但分離時被除掉了。由解的唯一性（右邊在 $x>0$ 光滑），答案就是</p>
+        $$y\equiv-1$$
+      </div>
+      <div class="step" data-step="am1-self-01b-s4">
+        <span class="step-title">(c) $y(1)=3$，找爆掉的點</span>
+        <p class="sub">代入 $x=1$、$y=3$：$\dfrac{3-1}{3+1}=\dfrac12=K$。</p>
+        $$\frac{y-1}{y+1}=\frac{x^2}{2}\ \Longrightarrow\ 2y-2=x^2y+x^2\ \Longrightarrow\ y=\frac{2+x^2}{2-x^2}$$
+        <p>分母在 $x=\sqrt2$ 為 0：解從 $x=1$ 往右走，在 $x\to\sqrt2^-$ 時 $y\to+\infty$。所以 (c) 的解只存在於 $0\lt x\lt\sqrt2$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $y=\dfrac{1-x^2}{1+x^2}$；(b) $y\equiv-1$（被分離變數丟掉的平衡解）；(c) $y=\dfrac{2+x^2}{2-x^2}$，在 $x=\sqrt2$ 爆掉。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>(a) $y'=\dfrac{-4x}{(1+x^2)^2}$，$xy'=\dfrac{-4x^2}{(1+x^2)^2}$；$y^2-1=\dfrac{(1-x^2)^2-(1+x^2)^2}{(1+x^2)^2}=\dfrac{-4x^2}{(1+x^2)^2}$ ✔。(c) $y'=\dfrac{8x}{(2-x^2)^2}$，$xy'=\dfrac{8x^2}{(2-x^2)^2}=y^2-1$ ✔。(a) 的解夾在 $\pm1$ 之間（$x\to\infty$ 趨近 $-1$），(c) 在 $1$ 上方被推離——平衡解 $y=1$ 不穩定、$y=-1$ 穩定。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>一階方程四型：可分離、線性、正合、非正合；先判斷型再選方法，同一題可能有好幾種解法。</li>
+    <li>可分離：$\dfrac{dy}{dx}=M(x)N(y)\Rightarrow\displaystyle\int\frac{dy}{N(y)}=\int M(x)\,dx$；對數加絕對值，取指數後常數是乘在外面。</li>
+    <li>除以 $N(y)$ 會丟掉 $N(y_0)=0$ 的常數解；初始值落在那裡時答案就是 $y\equiv y_0$。</li>
+    <li>右邊只透過 $ax+by+c$ 依賴 $x,y$ 時，令 $u=ax+by+c$ 變成可分離。</li>
+  </ol>
+</div>

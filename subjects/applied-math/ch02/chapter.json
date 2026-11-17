@@ -1,0 +1,21 @@
+{
+  "title": "第 2 章｜二階線性齊次方程",
+  "shortTitle": "應用數學 第 2 章",
+  "range": "板書 9/23（照片 1–8）· 作業 9/23 · 考古題 110上～114上期中、113下期中、108級與109級考古卷",
+  "pageLabel": "板書",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備「應用數學」（柯景元老師，115 學年上學期）的考試。這一章是 9/23 的板書：二階線性方程 $y''+ay'+by=g(x)$ 的結構（齊次／非齊次、疊加原理、一般解 $y=c_1y_1+c_2y_2(+y_p)$、線性獨立 $y_1/y_2\\neq$ 常數、由初始條件決定 $c_1,c_2$），Type I 常係數齊次方程：令 $y=e^{\\lambda x}$ 得特徵方程式 $\\lambda^2+a\\lambda+b=0$，相異實根、共軛複根（Euler 公式化成 $e^{\\alpha x}(K_1\\cos\\beta x+K_2\\sin\\beta x)=Ae^{\\alpha x}\\cos(\\beta x+\\phi)$）、重根（降階法 $y_2=y_1u$，得 $y_2=xy_1$），以及阻尼振盪 $\\ddot x+2\\gamma\\dot x+\\omega_0^2x=0$ 的過阻尼、臨界、欠阻尼三種情況；Cauchy–Euler 方程 $x^2y''+axy'+by=0$（令 $y=x^m$）在照片裡沒有，由網站依作業第 3 題補上。老師的期中考幾乎每年有一題常係數齊次方程加初始條件（110、111、113 上），114 上考了降階公式 $y_2=y_1\\int e^{-\\int P\\,dx}/y_1^2\\,dx$ 的證明，113 下考了 Cauchy–Euler 的邊界值特徵值問題。學生的課本是上課板書，沒有指定教科書；回答時用板書的記號（$\\lambda$ 是特徵根、$c_1,c_2$ 或 $K_1,K_2$ 是常數、$\\gamma$ 是阻尼、$\\omega_0$ 是自然頻率），並提醒他們寫出「為什麼選這個方法」與初始條件代入的過程。",
+  "overview": "s00",
+  "sections": [
+    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pages": "9/23 照片 1–8" },
+    { "id": "s01", "file": "01-structure.html", "title": "二階線性方程的結構：疊加原理與一般解", "pages": "9/23 照片 1–2", "desc": "齊次與非齊次、疊加原理、為什麼一般解是 $c_1y_1+c_2y_2+y_p$、線性獨立與 Wronskian、初始條件決定唯一解；板書例題 $y''+y=e^{-x}$。" },
+    { "id": "s02", "file": "02-distinct.html", "title": "常係數：特徵方程式與相異實根", "pages": "9/23 照片 2、4", "desc": "令 $y=e^{\\lambda x}$ 得 $\\lambda^2+a\\lambda+b=0$、判別式分三種情況；相異實根 $c_1e^{\\lambda_1x}+c_2e^{\\lambda_2x}$；板書例題、110 上期中、109 級下 3(a)。" },
+    { "id": "s03", "file": "03-complex.html", "title": "共軛複根：Euler 公式與實數形式", "pages": "9/23 照片 4–5", "desc": "$\\lambda=\\alpha\\pm i\\beta$、用 $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$ 化成 $e^{\\alpha x}(K_1\\cos\\beta x+K_2\\sin\\beta x)$ 與振幅相位形式；邊界條件（作業第 1 題）、111 與 113 上期中、109 級下 3(b)、108 級下 1(a)，以及 108 級上微積分卷的三題「驗證解／反求 ω」。" },
+    { "id": "s04", "file": "04-repeated.html", "title": "重根與降階法", "pages": "9/23 照片 2–3、6", "desc": "重根只給一個 $e^{\\lambda x}$，令 $y_2=y_1u$ 降成 $w=u'$ 的一階方程；常係數時 $u''=0$、$y_2=xy_1$；一般 $P(x)$ 的降階公式（114 上期中證明題）、作業第 2 題、109 級下 3(c)。" },
+    { "id": "s05", "file": "05-damped.html", "title": "應用：阻尼振盪", "pages": "9/23 照片 7–8", "desc": "彈簧加空氣阻力的運動方程 $\\ddot x+2\\gamma\\dot x+\\omega_0^2x=0$；$\\gamma\\gt\\omega_0$ 過阻尼、$\\gamma=\\omega_0$ 臨界、$\\gamma\\lt\\omega_0$ 欠阻尼，含初始條件 $x(0)=x_0$、$v(0)=0$ 的完整解與圖解。" },
+    { "id": "s06", "file": "06-cauchy-euler.html", "title": "Cauchy–Euler 方程", "pages": "9/23 作業第 3 題（照片缺漏，網站補充）", "desc": "$x^2y''+axy'+by=0$ 令 $y=x^m$ 得指標方程；相異實根、重根 $x^m\\ln x$、複根 $x^\\alpha\\cos(\\beta\\ln x)$；代換 $x=e^t$；作業第 3 題、113 下期中的邊界值特徵值問題。" },
+    { "id": "s07", "file": "07-exam.html", "title": "考前衝刺", "pages": "9/23 全部", "desc": "必背公式、題型總表（怎麼認／做法／常錯／代表題）與變化題。" }
+  ],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": ["figures.js"]
+}

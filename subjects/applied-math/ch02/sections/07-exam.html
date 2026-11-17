@@ -1,0 +1,226 @@
+<h2>七、考前衝刺 <span class="pg">板書 9/23 全部</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>翻過 110 上～114 上的五份期中考：<strong>每年都有一題本章的齊次方程</strong>，而且幾乎都是「常係數 + 兩個初始條件」——110 上（相異實根，20 分）、111 上（$y''+y=0$，5 分）、113 上（共軛複根、要求寫成實函數，25 分）。114 上改考降階公式的<strong>證明</strong>（25 分），113 下期中考了 Cauchy–Euler 的邊界值特徵值問題（15%）。準備方式：三種根的一般解要能不假思索寫出；$y'(0)$ 的代入要熟練乘積法則；降階法的推導要能一行一行寫出理由；Cauchy–Euler 的指標方程是 $m^2+(a-1)m+b=0$。</p>
+</div>
+
+<h3 id="a2x-formulas">7.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>結構</h4>
+    <ul>
+      <li>$L[y]=y''+ay'+by$ 是線性的：$L[c_1y_1+c_2y_2]=c_1L[y_1]+c_2L[y_2]$</li>
+      <li>一般解 $y=c_1y_1+c_2y_2+y_p$；$y_1/y_2\neq$ 常數</li>
+      <li>$W=y_1y_2'-y_2y_1'\neq0$；$W=e^{-\int P\,dx}$（Abel）</li>
+      <li>初始條件代入<strong>完整的</strong> $y$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>常係數 $y''+ay'+by=0$</h4>
+    <ul>
+      <li>$y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</li>
+      <li>相異實根：$c_1e^{\lambda_1x}+c_2e^{\lambda_2x}$</li>
+      <li>$\alpha\pm i\beta$：$e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)$</li>
+      <li>重根 $\lambda=-\tfrac a2$：$(K_1+K_2x)e^{\lambda x}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>複根的兩個常用式</h4>
+    <ul>
+      <li>$y'(0)=\alpha K_1+\beta K_2$</li>
+      <li>$K_1\cos\theta+K_2\sin\theta=A\cos(\theta+\phi)$：$K_1=A\cos\phi$、$K_2=-A\sin\phi$</li>
+      <li>$e^{i\theta}=\cos\theta+i\sin\theta$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>降階法</h4>
+    <ul>
+      <li>$y_2=y_1u$ ⟹ $y_1u''+(2y_1'+Py_1)u'=0$</li>
+      <li>$y_2=y_1\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}dx$（$P$ 從標準式讀）</li>
+      <li>常係數重根：$u''=0$，$y_2=xy_1$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>阻尼振盪</h4>
+    <ul>
+      <li>$\ddot x+2\gamma\dot x+\omega_0^2x=0$，$2\gamma=b/m$、$\omega_0^2=k/m$</li>
+      <li>$\lambda=-\gamma\pm\sqrt{\gamma^2-\omega_0^2}$；過／臨界／欠：$\gamma\gtrless\omega_0$</li>
+      <li>由靜止放開（欠）：$x_0e^{-\gamma t}(\cos\omega t+\tfrac\gamma\omega\sin\omega t)$</li>
+      <li>由靜止放開（臨界）：$x_0(1+\gamma t)e^{-\gamma t}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>Cauchy–Euler $x^2y''+axy'+by=0$</h4>
+    <ul>
+      <li>$y=x^m$ ⟹ $m^2+(a-1)m+b=0$</li>
+      <li>$x^{m_1},x^{m_2}$；重根 $x^m,x^m\ln x$；複根 $x^\alpha\cos(\beta\ln x),x^\alpha\sin(\beta\ln x)$</li>
+      <li>$x=e^t$：$xy'=\dot Y$、$x^2y''=\ddot Y-\dot Y$</li>
+      <li>邊界值 $y(1)=y(L)=0$：$\lambda_n=(n\pi/\ln L)^2$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="a2x-types">7.2 題型總表</h3>
+
+<p class="type-jump"><a href="#a2type-1">① 相異實根</a><a href="#a2type-2">② 共軛複根</a><a href="#a2type-3">③ 重根</a><a href="#a2type-4">④ 邊界值</a><a href="#a2type-5">⑤ 降階法</a><a href="#a2type-6">⑥ Cauchy–Euler</a><a href="#a2type-7">⑦ 阻尼振盪</a><a href="#a2type-8">⑧ 結構與反推</a></p>
+
+<div class="drill" id="a2type-1">
+  <h4>① 相異實根 + 初始條件</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>常係數、右邊 0，$\lambda^2+a\lambda+b$ 判別式 $\gt0$（通常能因式分解）。</dd>
+    <dt>做法</dt><dd>因式分解得 $\lambda_1,\lambda_2$ → $y=c_1e^{\lambda_1x}+c_2e^{\lambda_2x}$ → 微分 → 代 $x=0$ 解二元一次。</dd>
+    <dt>常錯</dt><dd>$y'$ 係數的負號沒帶進特徵方程式；$y'(0)$ 忘了乘 $\lambda$。</dd>
+    <dt>代表題</dt><dd><a href="#a2-b2">板書 $y''-3y'+2y$</a>　<a href="#a2-110a-m3">110 上第 3 題</a>　<a href="#a2-109b-3a">109 級下 3(a)</a>　<a href="#a2-s02-1">自編：有界條件</a>　<a href="#a2var-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a2type-2">
+  <h4>② 共軛複根（寫成實函數）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>判別式 $\lt0$；題目常寫「in terms of real functions」。</dd>
+    <dt>做法</dt><dd>$\lambda=\alpha\pm i\beta$ → $e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)$ → $K_1=y(0)$、$\alpha K_1+\beta K_2=y'(0)$。需要時合成 $Ae^{\alpha x}\cos(\beta x+\phi)$。</dd>
+    <dt>常錯</dt><dd>$y''$ 有係數時（$4y''$）根公式分母是 $2A$；微分時漏掉 $e^{\alpha x}$ 的導數；$\phi$ 只看 $\tan$ 判斷象限。</dd>
+    <dt>代表題</dt><dd><a href="#a2-b3">板書 $y''+y'+y$</a>　<a href="#a2-111a-m2">111 上第 2 題</a>　<a href="#a2-113a-m3">113 上第 3 題</a>　<a href="#a2-109b-3b">109 級下 3(b)</a>　<a href="#a2-108b-1a">108 級下 1(a)</a>　<a href="#a2-s03-2">自編：零點與極大值比</a>　<a href="#a2var-2">變化題 2</a>　<a href="#a2var-8">變化題 8</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a2type-3">
+  <h4>③ 重根</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>特徵方程式是完全平方 $(\lambda-r)^2$，判別式 $=0$。</dd>
+    <dt>做法</dt><dd>$y=(K_1+K_2x)e^{rx}$；$y'(0)=K_2+rK_1$。被問「為什麼」時用降階法 $y_2=e^{rx}u$ 推出 $u''=0$。</dd>
+    <dt>常錯</dt><dd>寫成 $c_1e^{rx}+c_2e^{rx}$（只有一個獨立解）；$K_2=0$ 時誤以為不需要 $xe^{rx}$ 項。</dd>
+    <dt>代表題</dt><dd><a href="#a2-b4">板書 $y''-6y'+9y$</a>　<a href="#a2-hw2">作業第 2 題</a>　<a href="#a2-109b-3c">109 級下 3(c)</a>　<a href="#a2-s04-2">自編：兩根靠近的極限</a>　<a href="#a2var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a2type-4">
+  <h4>④ 邊界值問題</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>兩個條件給在不同點（$y(0)$、$y(L)$），沒有 $y'(0)$。</dd>
+    <dt>做法</dt><dd>一般解直接代兩點；挑在那兩點有 0 的函數（$\sin$、$\cos$、$\sinh k(L-x)$）讓常數分開。行列式為 0 ⟹ 無解或無限多解。</dd>
+    <dt>常錯</dt><dd>以為一定有唯一解；忘了 $e^{\alpha x}$ 在 $x=L$ 不是 1。</dd>
+    <dt>代表題</dt><dd><a href="#a2-hw1">作業第 1 題</a>　<a href="#a2-s03-1">自編：無解或無限多解</a>　<a href="#a2-s02-2">自編：$\sinh$ 邊界</a>　<a href="#a2var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a2type-5">
+  <h4>⑤ 降階法（已知 $y_1$ 求 $y_2$、證明公式）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>變係數方程、題目給了一個解；或要求「using reduction of order, show that⋯」。</dd>
+    <dt>做法</dt><dd>證明：$y_2=y_1u$ → 乘積法則 → $u$ 的係數 $=L[y_1]=0$ → $w=u'$ 分離變數 → $w=e^{-\int P}/y_1^2$。應用：先除成標準式讀 $P$，再套公式。</dd>
+    <dt>常錯</dt><dd>$P$ 沒有先除以 $y''$ 的係數；$(y_1u)''$ 漏掉 $2y_1'u'$；證明沒說明為什麼 $u$ 的項消失、為什麼獨立。</dd>
+    <dt>代表題</dt><dd><a href="#a2-114a-m2">114 上第 2 題（證明）</a>　<a href="#a2-hw3">作業第 3 題</a>　<a href="#a2-s04-1">自編：Legendre $n=1$</a>　<a href="#a2var-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a2type-6">
+  <h4>⑥ Cauchy–Euler（含特徵值問題）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$x^2y''$、$xy'$、$y$ 三項（或 $(cx+d)^2y''$ 的平移版）。</dd>
+    <dt>做法</dt><dd>$y=x^m$ → $m^2+(a-1)m+b=0$ → 查三種情況。含參數 $\lambda$ 的邊界值問題：分 $\lambda\lt0,=0,\gt0$，只有振盪解能滿足兩端為 0。</dd>
+    <dt>常錯</dt><dd>指標方程寫成 $m^2+am+b$；重根忘了 $\ln x$；複根寫成 $\cos\beta x$ 而不是 $\cos(\beta\ln x)$；特徵值題忘了討論 $\lambda\le0$。</dd>
+    <dt>代表題</dt><dd><a href="#a2-113b-m4">113 下第 4 題</a>　<a href="#a2-hw3">作業第 3 題</a>　<a href="#a2-s06-1">自編：$x=e^t$</a>　<a href="#a2-s06-2">自編：平移</a>　<a href="#a2var-6">變化題 6</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a2type-7">
+  <h4>⑦ 阻尼振盪</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>彈簧 + 阻力、$m\ddot x+b\dot x+kx=0$，問會不會振盪、多快回到平衡。</dd>
+    <dt>做法</dt><dd>化成 $\ddot x+2\gamma\dot x+\omega_0^2x=0$，比較 $\gamma$ 與 $\omega_0$ 選解的形式，再代 $x(0)$、$\dot x(0)$。</dd>
+    <dt>常錯</dt><dd>$\gamma$ 寫成 $b/m$（少了 2）；把量到的週期當成 $2\pi/\omega_0$；以為阻尼越大回得越快。</dd>
+    <dt>代表題</dt><dd><a href="#a2-b5">板書：三種情況</a>　<a href="#a2-s05-1">自編：臨界阻尼越過</a>　<a href="#a2-s05-2">自編：對數衰減</a>　<a href="#a2var-7">變化題 7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a2type-8">
+  <h4>⑧ 結構與反推</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給解反推方程式、判斷某函數是不是解、給特解問一般解。</dd>
+    <dt>做法</dt><dd>疊加原理；非齊次解相減是齊次解；解已知 ⟹ 特徵根已知 ⟹ $a=-(\lambda_1+\lambda_2)$、$b=\lambda_1\lambda_2$。</dd>
+    <dt>常錯</dt><dd>把常數 1 當成齊次解（只有 $b=0$ 時才是）；只用 $y_p$ 套初始條件。</dd>
+    <dt>代表題</dt><dd><a href="#a2-b1">板書 $y''+y=e^{-x}$</a>　<a href="#a2-108a-c5">108 級上：驗證解</a>　<a href="#a2-108a-c6">108 級上：反求 $\omega$</a>　<a href="#a2-s01-1">自編：由兩解反推</a>　<a href="#a2-s01-2">自編：三個非齊次解</a>　<a href="#a2var-8">變化題 8</a></dd>
+  </dl>
+</div>
+
+<h3 id="a2x-var">7.3 變化題</h3>
+
+<div class="drill-q" id="a2var-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#a2-110a-m3">110 上第 3 題</a></p>
+  <p>解 $y''-4y'-5y=0$，$y(0)=0$、$y'(0)=6$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\lambda^2-4\lambda-5=(\lambda-5)(\lambda+1)$，$\lambda=5,-1$。$c_1+c_2=0$、$5c_1-c_2=6$ ⟹ $c_1=1$、$c_2=-1$：</p>
+    $$y=e^{5x}-e^{-x}$$
+    <p>驗算：$y'(0)=5+1=6$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="a2var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#a2-113a-m3">113 上第 3 題</a></p>
+  <p>解 $y''+6y'+13y=0$，$y(0)=2$、$y'(0)=-2$，用實函數表示。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\lambda=\dfrac{-6\pm\sqrt{36-52}}2=-3\pm2i$。$K_1=2$；$\alpha K_1+\beta K_2=-6+2K_2=-2$ ⟹ $K_2=2$：</p>
+    $$y=2e^{-3x}(\cos2x+\sin2x)$$
+    <p>驗算：$y'(0)=-3(2)+2(2)=-2$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="a2var-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#a2-hw2">作業第 2 題</a></p>
+  <p>解 $9y''-12y'+4y=0$，$y(0)=3$、$y'(0)=1$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$9\lambda^2-12\lambda+4=(3\lambda-2)^2$，$\lambda=\tfrac23$ 重根。$y=(K_1+K_2x)e^{2x/3}$：$K_1=3$；$K_2+\tfrac23K_1=1$ ⟹ $K_2=-1$：</p>
+    $$y=(3-x)e^{2x/3}$$
+    <p>驗算：$y'=(-1+\tfrac23(3-x))e^{2x/3}$，$y'(0)=-1+2=1$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="a2var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#a2-s03-1">自編邊界值題</a></p>
+  <p>$y''+9y=0$。(a) $y(0)=0$、$y(\pi/3)=0$ 有幾個解？(b) $y(0)=0$、$y(\pi/6)=1$ 呢？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$y=K_1\cos3x+K_2\sin3x$，$y(0)=0$ ⟹ $K_1=0$。(a) $y(\pi/3)=K_2\sin\pi=0$ 對任何 $K_2$ 都成立：無限多解 $y=K_2\sin3x$。(b) $y(\pi/6)=K_2\sin\tfrac\pi2=K_2=1$：唯一解 $y=\sin3x$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="a2var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#a2-s04-1">自編降階題</a></p>
+  <p>已知 $y_1=e^x$ 是 $xy''-(x+1)y'+y=0$（$x\gt0$）的解，求 $y_2$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>標準式 $P=-\dfrac{x+1}{x}=-1-\dfrac1x$，$e^{-\int P\,dx}=e^{x+\ln x}=xe^x$。</p>
+    $$y_2=e^x\int\frac{xe^x}{e^{2x}}dx=e^x\int xe^{-x}dx=e^x\left[-(x+1)e^{-x}\right]=-(x+1)$$
+    <p>取 $y_2=x+1$。驗算：$x\cdot0-(x+1)\cdot1+(x+1)=0$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="a2var-6">
+  <p class="q-src">變化題 6 · 改自 <a href="#a2-hw3">作業第 3 題</a></p>
+  <p>解 $x^2y''-3xy'+4y=0$，$y(1)=1$、$y'(1)=0$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$m^2+(-3-1)m+4=(m-2)^2$，$m=2$ 重根：$y=x^2(c_1+c_2\ln x)$。$y(1)=c_1=1$；$y'=2x(c_1+c_2\ln x)+c_2x$，$y'(1)=2c_1+c_2=0$ ⟹ $c_2=-2$：</p>
+    $$y=x^2(1-2\ln x)$$
+  </details>
+</div>
+
+<div class="drill-q" id="a2var-7">
+  <p class="q-src">變化題 7 · 改自 <a href="#a2-b5">板書阻尼振盪</a></p>
+  <p>$m=1\ \text{kg}$、$k=16\ \text{N/m}$、$b=10\ \text{N·s/m}$，$x(0)=1\ \text{m}$、$\dot x(0)=0$。判斷阻尼類型並求 $x(t)$；$b$ 要多少才是臨界阻尼？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$2\gamma=10$、$\gamma=5\ \text{s}^{-1}$；$\omega_0=4\ \text{rad/s}$。$\gamma\gt\omega_0$：過阻尼，$\lambda=-5\pm3=-2,-8$。$c_1+c_2=1$、$-2c_1-8c_2=0$ ⟹ $c_1=\tfrac43$、$c_2=-\tfrac13$：</p>
+    $$x=\tfrac43e^{-2t}-\tfrac13e^{-8t}\ \text{m}$$
+    <p>臨界：$\gamma=\omega_0$，$b=2m\omega_0=8\ \text{N·s/m}$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="a2var-8">
+  <p class="q-src">變化題 8 · 反推型</p>
+  <p>$y=e^{-x}(3\cos2x-\sin2x)$ 是哪一個 $y''+ay'+by=0$ 的解？它滿足的初始條件 $y(0)$、$y'(0)$ 是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>根是 $-1\pm2i$：$a=-(\lambda_1+\lambda_2)=2$、$b=\lambda_1\lambda_2=1+4=5$，方程式 $y''+2y'+5y=0$。$y(0)=K_1=3$；$y'(0)=\alpha K_1+\beta K_2=-3+2(-1)=-5$。</p>
+  </details>
+</div>

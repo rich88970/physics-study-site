@@ -1,0 +1,146 @@
+<h2>三、向量加減與純量乘法 <span class="pg">講義 p.17–23</span></h2>
+
+<p class="lead">向量可以平移，所以加法就是「首尾相接」。這一節整理加、減、乘以純量，以及怎麼用分量計算。</p>
+
+<h3 id="va-add">3.1 加法：首尾相接 <span class="pg-tag">p.17–19</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.17–19 Addition</span>
+  <p>把第二個向量的尾端接到第一個向量的箭頭，和向量從第一個的尾端指向第二個的箭頭：$\vec r_2=\vec r_1+\Delta\vec r$。</p>
+  $$\vec A+\vec B=\vec B+\vec A,\qquad (\vec A+\vec B)+\vec C=\vec A+(\vec B+\vec C)$$
+</div>
+
+<p>向量只由大小和方向決定，平移不改變它，所以可以把 $\Delta\vec r$ 搬到 $\vec r_1$ 的箭頭處，意思就是「新位置 = 舊位置 + 位移」。交換次序時，兩條路線是同一個平行四邊形的兩組對邊，終點相同（交換律）；三段依序接起來，先合哪兩段都一樣（結合律）。</p>
+
+<div class="anim" data-anim="vec-add"></div>
+
+<h3 id="va-sub">3.2 減法 <span class="pg-tag">p.20</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.20 Subtraction</span>
+  <p>由 $\vec r_2=\vec r_1+\Delta\vec r$ 得 $\Delta\vec r=\vec r_2-\vec r_1$。</p>
+</div>
+
+<div class="step" data-step="va-sub">
+  <span class="step-title">怎麼畫 $\vec r_2-\vec r_1$</span>
+  <p>兩個向量尾端放在一起，$\vec r_2-\vec r_1$ 從 $\vec r_1$ 的箭頭指向 $\vec r_2$ 的箭頭——「終點減起點」（上圖最後一步）。</p>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">方向不要畫反</span>
+  <p>「從 $B$ 到 $A$」的向量是 $\vec A-\vec B$；$\vec B-\vec A$ 長度相同、方向相反。</p>
+</div>
+
+<h3 id="va-scale">3.3 純量乘法 <span class="pg-tag">p.21–22</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.21–22 Multiplication</span>
+  <p>每個分量都乘上該純量：$c\vec A=cA_x\hat i+cA_y\hat j$。乘正數 $k$：方向不變，大小 $k|\vec A|$；乘負數 $-k$：方向反轉，大小 $k|\vec A|$。</p>
+</div>
+
+<div class="step" data-step="va-scale">
+  <span class="step-title">大小為什麼是 $|c|$ 倍</span>
+  $$|c\vec A|=\sqrt{(cA_1)^2+(cA_2)^2}=\sqrt{c^2}\sqrt{A_1^2+A_2^2}=|c|\,|\vec A|$$
+  <p>$\sqrt{c^2}=|c|$：乘 $-2$ 長度變 2 倍，負號只負責反轉方向。</p>
+</div>
+
+<div class="anim" data-anim="scalar-mult"></div>
+
+<h3 id="va-comp">3.4 用分量計算 <span class="pg-tag">p.23</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.23 Vector Arithmetic</span>
+  $$\begin{aligned}\vec A+\vec B&=(A_1+B_1)\hat i+(A_2+B_2)\hat j+(A_3+B_3)\hat k\\ \vec A-\vec B&=(A_1-B_1)\hat i+(A_2-B_2)\hat j+(A_3-B_3)\hat k\end{aligned}$$
+  <p>圖中 $\vec A+\vec C=\vec B$，所以 $\vec C=\vec B-\vec A$。</p>
+</div>
+
+<p>逐分量相加減的前提，是兩個向量用<strong>同一組基底</strong>表示。若分量是在不同座標系量的（例如一個用 $x,y$、一個用旋轉後的 $x',y'$），要先換到同一組座標，這正是第九節旋轉矩陣的用途。</p>
+
+<h3 id="self-s03">3.5 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s03-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>三角形的三條中線交於一點</h4>
+    <button type="button" class="exam-btn" data-exam="self-s03-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>三角形頂點的位置向量為 $\vec a,\vec b,\vec c$。只用向量加減和純量乘法證明：三條中線交於同一點 $\vec g=\tfrac13(\vec a+\vec b+\vec c)$，且這一點把每條中線分成 $2:1$。再對 $A(0,0,0)$、$B(6,0,0)$、$C(0,3,3)$ 求出這一點，並驗證 $\vec{GA}+\vec{GB}+\vec{GC}=0$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：頂點位置向量 $\vec a,\vec b,\vec c$；中線是頂點到對邊中點的線段；從 $P$ 往 $Q$ 走全長的 $t$ 倍到達 $\vec p+t(\vec q-\vec p)$；數值例 $A(0,0,0)$、$B(6,0,0)$、$C(0,3,3)$。</p>
+<p><strong>① 對邊 $BC$ 的中點：</strong> 題目只准用加減和純量乘法，「沿線段走某個比例」剛好只需要這兩種運算。從 $B$ 往 $C$ 走一半，位移是終點減起點 $\vec c-\vec b$，取 $t=\frac12$：</p>
+<div class="math-block">$$\vec m_a=\vec b+\tfrac12(\vec c-\vec b)=\tfrac12\vec b+\tfrac12\vec c=\tfrac12(\vec b+\vec c)$$</div>
+<p><strong>② 中線上從 $A$ 走 $\frac23$ 的點：</strong> 中線從 $A$ 到 $\vec m_a$，位移是 $\vec m_a-\vec a$，走全長的 $\frac23$：</p>
+<div class="math-block">$$\vec a+\tfrac23(\vec m_a-\vec a)$$</div>
+<p>代入上一步的 $\vec m_a=\frac12(\vec b+\vec c)$，展開後合併 $\vec a$ 的係數 $1-\frac23=\frac13$：</p>
+<div class="math-block">$$\begin{aligned}&amp;\vec a+\tfrac23\Big(\tfrac{\vec b+\vec c}{2}-\vec a\Big)\\&amp;=\vec a+\tfrac13\vec b+\tfrac13\vec c-\tfrac23\vec a\\&amp;=\tfrac13\vec a+\tfrac13\vec b+\tfrac13\vec c\end{aligned}$$</div>
+<p><strong>③ 對稱 ⟹ 三線共點、分成 $2:1$：</strong> 結果 $\frac13(\vec a+\vec b+\vec c)$ 對 $\vec a,\vec b,\vec c$ 完全對稱。從 $B$ 出發的中線，把 ①② 的 $\vec a$ 和 $\vec b$ 角色互換，算出來仍是同一個式子；從 $C$ 出發也一樣。所以三條中線都經過 $\vec g=\frac13(\vec a+\vec b+\vec c)$。頂點到 $\vec g$ 是中線的 $\frac23$，$\vec g$ 到中點是剩下的 $\frac13$，比例 $\frac23:\frac13=2:1$。</p>
+<p><strong>④ 代入數值：</strong> 代入 $\vec a=(0,0,0)$、$\vec b=(6,0,0)$、$\vec c=(0,3,3)$，逐分量相加再乘 $\frac13$：</p>
+<div class="math-block">$$\begin{aligned}\vec a+\vec b+\vec c&amp;=(6,\,3,\,3)\\ \vec g&amp;=\tfrac13(6,3,3)=(2,1,1)\end{aligned}$$</div>
+<p><strong>⑤ 驗證 $\vec{GA}+\vec{GB}+\vec{GC}=0$：</strong> $\vec{GA}$ 從 $G$ 指向 $A$，終點減起點 $=\vec a-\vec g$，另外兩個同理：</p>
+<div class="math-block">$$\begin{aligned}\vec{GA}&amp;=(0,0,0)-(2,1,1)=(-2,-1,-1)\\ \vec{GB}&amp;=(6,0,0)-(2,1,1)=(4,-1,-1)\\ \vec{GC}&amp;=(0,3,3)-(2,1,1)=(-2,2,2)\end{aligned}$$</div>
+<p>三個相加：$x$ 分量 $-2+4-2=0$，$y$ 分量 $-1-1+2=0$，$z$ 分量 $-1-1+2=0$，和為 $(0,0,0)$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec g=\tfrac13(\vec a+\vec b+\vec c)\text{，分中線為 }2:1\\ \text{本題 }G=(2,1,1)\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s03-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>渡河：直直過去、最快過去、漂最少</h4>
+    <button type="button" class="exam-btn" data-exam="self-s03-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>河寬 $120\ \text{m}$，水流向東 $3\ \text{m/s}$，對岸在北方。(a) 船相對水的速率 $5\ \text{m/s}$：要沿正北直直過河，船頭朝哪？要多久？(b) 同一條船要最快過河，船頭朝哪？多久？漂到下游多遠？(c) 換成相對水只有 $2\ \text{m/s}$ 的小船，已經不可能直直過河。船頭朝哪個方向，被沖到下游的距離最短？最短是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：河寬 $W=120\ \text{m}$，水對地 $3\ \text{m/s}$ 向東，對岸在北；船對水速率 (a)(b) $u=5\ \text{m/s}$、(c) $u=2\ \text{m/s}$；$\varphi$ 為船頭從正北偏向上游（西）的角度。假設流速、船速、航向都不變。</p>
+<p><strong>① 設座標，寫出對地速度、時間和漂移：</strong> 船的對地速度是「船對水」加「水對地」，寫成分量後，北向分量決定過河時間，東向分量決定漂移。</p>
+<p class="fnote"><b>公式（相對速度的向量加法）：</b>$\vec v_{\text{船對地}}=\vec v_{\text{船對水}}+\vec v_{\text{水對地}}$，首尾相接相加；本題 $\vec v_{\text{船對水}}=u(-\sin\varphi,\cos\varphi)$、$\vec v_{\text{水對地}}=(3,0)$，$x$ 向東、$y$ 向北。</p>
+<div class="math-block">$$\vec v_{\text{地}}=(3-u\sin\varphi,\ u\cos\varphi)$$</div>
+<p>北向分量走完河寬 $W$ 所需的時間，以及這段時間裡東向分量造成的漂移：</p>
+<div class="math-block">$$t=\frac{W}{u\cos\varphi},\qquad D=(3-u\sin\varphi)\,t$$</div>
+<h4>(a) 直直過河</h4>
+<p><strong>② 令東向分量為 0：</strong> 直直過河要求 $3-u\sin\varphi=0$，代入 $u=5\ \text{m/s}$：</p>
+<div class="math-block">$$3-5\sin\varphi=0\ \Longrightarrow\ \sin\varphi=\tfrac35$$</div>
+<div class="math-block">$$\varphi=\sin^{-1}0.6=36.9^\circ$$</div>
+<p><strong>③ 北向分量與時間：</strong> 這時 $\cos\varphi=\sqrt{1-\frac{9}{25}}=\frac45$：</p>
+<div class="math-block">$$\begin{aligned}u\cos\varphi&amp;=5\times\tfrac45=4\ \text{m/s}\\ t&amp;=\frac{120\ \text{m}}{4\ \text{m/s}}=30\ \text{s}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\text{船頭北偏西 }36.9^\circ\text{，}t=30\ \text{s}}$$</div>
+<h4>(b) 最快過河</h4>
+<p><strong>① 讓時間最短：</strong> $t=\dfrac{W}{u\cos\varphi}$ 的分子固定，$\cos\varphi$ 最大（$=1$，即 $\varphi=0$）時 $t$ 最小，船頭正北。代入 $W=120\ \text{m}$、$u=5\ \text{m/s}$、$\varphi=0$：</p>
+<div class="math-block">$$t=\frac{120\ \text{m}}{5\ \text{m/s}}=24\ \text{s}$$</div>
+<p><strong>② 漂移：</strong> 東向分量是 $3-5\sin0=3\ \text{m/s}$：</p>
+<div class="math-block">$$D=3\ \text{m/s}\times24\ \text{s}=72\ \text{m}$$</div>
+<div class="math-block">$$\boxed{\text{船頭正北，}t=24\ \text{s}\text{，漂 }72\ \text{m}}$$</div>
+<h4>(c) $u=2$ 時漂移最短</h4>
+<p><strong>① 寫出漂移的函數：</strong> 東向分量 $3-2\sin\varphi\ge3-2=1\gt0$，永遠不為 0，一定會漂；船頭正對上游過不了河、正對北方漂 $180\ \text{m}$，最佳方向在兩者之間，要對 $\varphi$ 微分求極小。把 $u=2$、$W=120$ 代入 $D$：</p>
+<div class="math-block">$$D(\varphi)=(3-2\sin\varphi)\frac{120}{2\cos\varphi}=60\,\frac{3-2\sin\varphi}{\cos\varphi}$$</div>
+<p><strong>② 對 $\varphi$ 微分：</strong> 分子 $f=3-2\sin\varphi$（$f'=-2\cos\varphi$）、分母 $g=\cos\varphi$（$g'=-\sin\varphi$）。</p>
+<p class="fnote"><b>公式（商數律）：</b>$\dfrac{\mathrm d}{\mathrm d\varphi}\dfrac fg=\dfrac{gf'-fg'}{g^2}$，其中 $f$ 為分子、$g$ 為分母；本題 $f=3-2\sin\varphi$、$g=\cos\varphi$。</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm d}{\mathrm d\varphi}\frac fg&amp;=\frac{-2\cos^2\varphi+(3-2\sin\varphi)\sin\varphi}{\cos^2\varphi}\\&amp;=\frac{3\sin\varphi-2(\cos^2\varphi+\sin^2\varphi)}{\cos^2\varphi}\\&amp;=\frac{3\sin\varphi-2}{\cos^2\varphi}\end{aligned}$$</div>
+<p><strong>③ 令導數為 0：</strong> 得 $\sin\varphi=\frac23$。$\sin\varphi\lt\frac23$ 時導數為負、$\gt\frac23$ 時為正，所以是極小。</p>
+<div class="math-block">$$\varphi=\sin^{-1}\tfrac23=41.8^\circ,\qquad \cos\varphi=\sqrt{1-\tfrac49}=\tfrac{\sqrt5}{3}$$</div>
+<p><strong>④ 最短漂移與時間：</strong> 代入 $\sin\varphi=\frac23$、$\cos\varphi=\frac{\sqrt5}3$ 到 $D(\varphi)$：</p>
+<div class="math-block">$$\begin{aligned}D_{\min}&amp;=60\times\frac{3-\frac43}{\frac{\sqrt5}{3}}=60\times\frac53\times\frac{3}{\sqrt5}\\&amp;=\frac{300}{\sqrt5}=60\sqrt5\approx134\ \text{m}\end{aligned}$$</div>
+<div class="math-block">$$t=\frac{120}{2\cdot\frac{\sqrt5}3}=\frac{180}{\sqrt5}=36\sqrt5\approx80\ \text{s}$$</div>
+<p>幾何意義：$\sin\varphi=\frac u3$ 時，船對水的速度和對地速度正好垂直，對地路線和河岸的夾角最大，所以漂得最少。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{船頭北偏西 }41.8^\circ\ (\sin\varphi=\tfrac23)\\ D_{\min}=60\sqrt5\approx134\ \text{m}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>加法首尾相接；向量可平移，所以加法可交換、可結合。</li>
+    <li>$\vec r_2-\vec r_1$ 從 $\vec r_1$ 的箭頭指向 $\vec r_2$ 的箭頭。</li>
+    <li>$|c\vec A|=|c||\vec A|$；分量相加的前提是同一組基底。</li>
+  </ol>
+</div>

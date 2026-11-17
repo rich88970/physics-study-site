@@ -1,0 +1,47 @@
+<h2 id="kp-15">H-8. 2020 年期中第 3 題：相位速度推導群速度（10 分）</h2>
+<p><strong>來源</strong>：2020 年 4 月 21 日期中第 3 題。</p>
+<p><strong>中文：</strong> 原卷給</p>
+<div class="math-block">$$\boxed{v_p=\left(\frac{g\lambda}{2\pi}\right)^{1/3}},$$</div>
+<p>其中 $g$ 為重力加速度，求<strong>群速度是相位速度的幾倍</strong>。</p>
+<p><strong>注意：</strong> 原卷印成 $1/3$ 次方，但 $g\lambda$ 單位是 m²/s²，取 $1/3$ 次方不是速度單位，題目量綱不自洽。以下按原卷的數學關係求比值，不擅自改成 $1/2$；深水重力波的平方根版本另列在最後。</p>
+<p class="symnote">符號：$k$ 為波數、$\lambda$ 為波長、$\omega$ 為角頻率、$v_p$ 為相位速度、$v_g$ 為群速度。</p>
+<p><strong>① 群速度定義：</strong> 知道 $v_p$ 與 $k$ 的關係後，先求 $\omega=kv_p$ 再對 $k$ 微分：</p>
+<div class="math-block">$$v_p=\frac\omega k,\qquad\boxed{v_g=\frac{d\omega}{dk}}.$$</div>
+<p><strong>② 把波長改成波數：</strong></p>
+<div class="math-block">$$k=\frac{2\pi}{\lambda}\quad\Rightarrow\quad\lambda=\frac{2\pi}{k}.$$</div>
+<p>代入原卷公式：</p>
+<div class="math-block">$$
+\begin{aligned}
+v_p&amp;=\left(\frac{g(2\pi/k)}{2\pi}\right)^{1/3}\\
+&amp;=\left(\frac gk\right)^{1/3}\\
+&amp;=\boxed{g^{1/3}k^{-1/3}}.
+\end{aligned}
+$$</div>
+<p><strong>③ 求 $\omega(k)$：</strong> 由 $v_p=\omega/k$：</p>
+<div class="math-block">$$\omega=kv_p.$$</div>
+<p>代入：</p>
+<div class="math-block">$$
+\begin{aligned}
+\omega&amp;=k\cdot g^{1/3}k^{-1/3}\\
+&amp;=g^{1/3}k^{1-1/3}\\
+&amp;=\boxed{g^{1/3}k^{2/3}}.
+\end{aligned}
+$$</div>
+<p><strong>④ 對 $k$ 微分：</strong> $g^{1/3}$ 是常數，用冪次法則 $\dfrac{d}{dk}k^a=ak^{a-1}$：</p>
+<div class="math-block">$$
+\begin{aligned}
+v_g&amp;=\frac{d\omega}{dk}\\
+&amp;=g^{1/3}\frac{d}{dk}k^{2/3}\\
+&amp;=g^{1/3}\left(\frac23k^{-1/3}\right)\\
+&amp;=\frac23g^{1/3}k^{-1/3}.
+\end{aligned}
+$$</div>
+<p>由 ② 的 $v_p=g^{1/3}k^{-1/3}$：</p>
+<div class="math-block">$$\boxed{v_g=\frac23v_p}.$$</div>
+<p><strong>按原卷印出的 $1/3$ 次方：</strong></p>
+<div class="math-block">$$\boxed{\frac{v_g}{v_p}=\frac23}.$$</div>
+<p><strong>注意（平方根版本，不是修改原題）：</strong> 若原意是深水重力波：</p>
+<div class="math-block">$$v_p=\sqrt{\frac{g\lambda}{2\pi}}=\sqrt{\frac gk},$$</div>
+<p>同樣 $\omega=kv_p=g^{1/2}k^{1/2}$，微分得：</p>
+<div class="math-block">$$v_g=\frac12g^{1/2}k^{-1/2}=\boxed{\frac12v_p}.$$</div>
+<p>原卷 $1/3$ → 數學答案 $2/3$；深水波 $1/2$ → 物理答案 $1/2$，作答時不要混用。</p>

@@ -1,0 +1,291 @@
+<h2>十二、功與功能定理 <span class="pg">講義 p.119–127 · 課本 §2.5 p.78、§2.6 p.82–83</span></h2>
+
+<p class="lead">能量守恆要靠三塊拼圖：功、功能定理、保守力與位能（講義 p.122）。這一節先放好前兩塊：定義功，再直接由 $F=ma$ 證明「淨力做的功等於動能的變化」。</p>
+
+<h3 id="c2k-energy">12.1 這門課的「能量守恆」 <span class="pg-tag">p.119–122</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.119–121 Conservation of Energy</span>
+  <p>能量守恆支配所有已知的自然現象，到目前為止都成立：能量可以從一種形式轉成另一種（熱能、化學能、位能、動能），總量不變，不能被創造或消滅。巨觀物體（汽車、棒球）的能量稱為<strong>力學能</strong>，有兩種：動能（運動的能量）與位能（位置或組態的能量）。這門課說的「能量守恆」指的是<strong>力學能守恆</strong>：物體的動能加位能不隨時間改變。力學能守恆並不總是成立：在有摩擦的地面上滾動的足球，最後停下、重力位能也沒變，失去的動能被摩擦轉成了熱。</p>
+</div>
+
+<p>所以有兩個層次：「總能量守恆」是普遍定律；「力學能守恆」只在力是保守力時成立（第 13 節）。足球停下並沒有違反總能量守恆，只是能量離開了力學能的帳本。歷史上，Rumford 觀察鑽砲管產生的大量熱，Joule 做量熱實驗，Helmholtz 在 1847 年提出一般的能量守恆定律（課本 p.82–83）。</p>
+
+<h3 id="c2k-work">12.2 功 <span class="pg-tag">p.123–124</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.123–124 Work</span>
+  <p>功 $W$ 是力作用在物體上、轉移給（或取自）物體的能量。推重物時，推得越遠覺得做的功越多（$W\propto$ 距離），推得越用力越快累（$W\propto$ 力）。定義：</p>
+  $$\mathrm dW\equiv\vec F\cdot\mathrm d\vec r\ \ (\text{一小段 }\mathrm d\vec r),\qquad W_{12}\equiv\int_1^2\vec F\cdot\mathrm d\vec r\ \ (\text{從位置 1 到 2})$$
+</div>
+
+<p>內積的意思是：只有沿位移方向的力分量做功。垂直於位移的力（正向力、磁力、等速圓周的向心力）不做功。$W_{12}$ 是沿著實際路徑的線積分，一般和路徑有關——這正是下一節區分保守力與非保守力的地方。</p>
+
+<h3 id="c2k-theorem">12.3 功能定理 <span class="pg-tag">p.125–127</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.125–126 Work-Energy Theorem</span>
+  <p>假設 $\vec F$ 是作用在物體上的<strong>唯一</strong>的力，由第二定律：</p>
+  $$\mathrm dW\equiv\vec F\cdot\mathrm d\vec r=\left(m\frac{\mathrm d\dot{\vec r}}{\mathrm dt}\right)\cdot(\dot{\vec r}\,\mathrm dt)=m\left(\frac{\mathrm d\dot{\vec r}}{\mathrm dt}\cdot\dot{\vec r}\right)\mathrm dt=\frac12m\frac{\mathrm d(\dot{\vec r}\cdot\dot{\vec r})}{\mathrm dt}\mathrm dt=\mathrm d\!\left(\tfrac12m\dot r^2\right)\equiv\mathrm dT$$
+  $$W_{12}=\int_1^2\mathrm d\!\left(\tfrac12m\dot r^2\right)=\tfrac12m\left(\dot r_2^2-\dot r_1^2\right)=T_2-T_1$$
+  <p>（$\dfrac{\mathrm d}{\mathrm dt}(\dot{\vec r}\cdot\dot{\vec r})=2\dfrac{\mathrm d\dot{\vec r}}{\mathrm dt}\cdot\dot{\vec r}$，Eq. 1.86c。）淨力對物體做的功等於動能的變化。$T_2>T_1$ 時 $W_{12}>0$，力做正功、動能增加；$T_1>T_2$ 時 $W_{12}\lt 0$，力做負功、動能減少。</p>
+</div>
+
+<p>兩個重點。第一，這裡的 $\vec F$ 必須是<strong>淨力</strong>（課本 p.78 特別強調）：有好幾個力時，是所有力做的功加起來等於 $\Delta T$。第二，被積函數 $\vec F\cdot\mathrm d\vec r$ 剛好是一個<strong>全微分</strong> $\mathrm dT$，所以不必知道路徑細節就能積分——這和第 4 節「乘 $\dot x$」的技巧是同一件事的向量版本：$F\,\mathrm dx=m\dot x\,\mathrm d\dot x$。</p>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-26">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-26 · p.94</span></div>
+    <h4>木塊撞彈簧：最大壓縮量，有無摩擦</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-26">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>小孩在光滑的廚房地板上推出一個 $2\ \text{kg}$ 的木塊，初速 $4\ \text{m/s}$，木塊撞上彈簧常數 $6\ \text{N/m}$ 的彈簧。彈簧最大壓縮量是多少？若木塊在撞到彈簧前先滑過 $2\ \text{m}$ 動摩擦係數 $\mu_k=0.2$ 的粗糙地面，結果又如何？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m=2\ \text{kg}$，$v_0=4\ \text{m/s}$，$k=6\ \text{N/m}$；粗糙段 $d=2\ \text{m}$、$\mu_k=0.2$（彈簧所在處仍光滑）；$g=9.8\ \text{m/s}^2$；最大壓縮時木塊速度為 $0$，壓縮量記為 $x$。</p>
+<h4>(1) 全程光滑</h4>
+<p><strong>① 起點動能與彈簧做的功：</strong> 只問起點與最大壓縮兩個狀態、兩者速度都知道，用功能定理，不必解運動方程式；重力、正向力垂直位移不做功。</p>
+<p class="fnote"><b>公式（功能定理）：</b>$W_{\text{淨}}=T_2-T_1$，其中 $W_{\text{淨}}$ 為所有力做功的總和、$T_1$、$T_2$ 為始末動能；本題 $T_2=0$（最大壓縮）。</p>
+<p>代入 $m=2\ \text{kg}$、$v_0=4\ \text{m/s}$：</p>
+<div class="math-block">$$T_1=\tfrac12mv_0^2=\tfrac12(2)(4)^2\ \text{J}=16\ \text{J}$$</div>
+<p class="fnote"><b>公式（虎克定律）：</b>彈簧力 $F=-kx'$，其中 $k$ 為彈簧常數、$x'$ 為壓縮量；力隨壓縮量變，做功要積分。</p>
+<p>彈簧力和壓縮方向相反，從 $0$ 壓到 $x$ 做的功：</p>
+<div class="math-block">$$W_{\text{彈簧}}=\int_0^x(-kx')\,\mathrm dx'=-\tfrac12kx^2$$</div>
+<p><strong>② 最大壓縮量：</strong> 只有彈簧做功：</p>
+<div class="math-block">$$-\tfrac12kx^2=0-\tfrac12mv_0^2\quad\Longrightarrow\quad x=v_0\sqrt{\frac mk}$$</div>
+<p>代入 $v_0=4\ \text{m/s}$、$m=2\ \text{kg}$、$k=6\ \text{N/m}$：</p>
+<div class="math-block">$$x=4\sqrt{\frac26}\ \text{m}=4(0.577)\ \text{m}=2.31\ \text{m}$$</div>
+<div class="math-block">$$\boxed{x=2.31\ \text{m}}$$</div>
+<h4>(2) 先滑過 2 m 粗糙地面</h4>
+<p><strong>① 摩擦做的功：</strong> 摩擦力大小固定、方向和運動相反，淨功要再加上這一項。</p>
+<p class="fnote"><b>公式（動摩擦力）：</b>$f=\mu_kN$，其中 $\mu_k$ 為動摩擦係數、$N$ 為正向力；本題水平地面 $N=mg$，滑過 $d$ 做功 $-\mu_kmgd$。</p>
+<p>代入 $\mu_k=0.2$、$m=2\ \text{kg}$、$d=2\ \text{m}$、$g=9.8$：</p>
+<div class="math-block">$$W_{\text{摩擦}}=-0.2(2)(9.8)(2)\ \text{J}=-7.84\ \text{J}$$</div>
+<p><strong>② 功能定理求壓縮量：</strong> 淨功 $=W_{\text{摩擦}}+W_{\text{彈簧}}=0-T_1$：</p>
+<div class="math-block">$$-7.84-\tfrac12kx^2=-16\quad\Longrightarrow\quad\tfrac12(6)x^2=16-7.84=8.16\ \text{J}$$</div>
+<p>兩邊乘 $2/6$ 再開根號：</p>
+<div class="math-block">$$x=\sqrt{\frac{2(8.16)}{6}}\ \text{m}=\sqrt{2.72}\ \text{m}=1.65\ \text{m}$$</div>
+<div class="math-block">$$\boxed{x=1.65\ \text{m}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-27">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-27 · p.94</span></div>
+    <h4>把垂下的繩子拉上桌要做多少功</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-27">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-27"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A rope having a total mass of 0.4 kg and total length 4 m has 0.6 m of the rope hanging vertically down off a work bench. How much work must be done to place all the rope on the bench?</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-27 · p.94</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一條總質量 $0.4\ \text{kg}$、總長 $4\ \text{m}$ 的繩子，有 $0.6\ \text{m}$ 從工作檯邊緣鉛直垂下。把整條繩子拉回檯面上，需要做多少功？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：繩總質量 $0.4\ \text{kg}$、總長 $4\ \text{m}$（均勻），垂下長度 $z_0=0.6\ \text{m}$；$z$ 為從檯面往下量的深度；慢慢拉、動能不變；檯面上那段水平移動不需做功；$g=9.8\ \text{m/s}^2$。</p>
+<p><strong>① 線密度：</strong> 代入總質量 $0.4\ \text{kg}$、總長 $4\ \text{m}$：</p>
+<div class="math-block">$$\mu=\frac{0.4\ \text{kg}}{4\ \text{m}}=0.1\ \text{kg/m}$$</div>
+<p><strong>② 積分求功：</strong> 慢慢拉、動能不變，拉力的功就等於克服重力的功；垂下那段各部分要上升的高度不同，所以切成小段再積分。</p>
+<p class="fnote"><b>公式（功能定理）：</b>$W_{\text{淨}}=\Delta T$，其中 $W_{\text{淨}}$ 為所有力做功的總和、$\Delta T$ 為動能變化；本題 $\Delta T=0$，所以 $W_{\text{拉}}=-W_{\text{重力}}$。</p>
+<p>深度 $z$ 處的一小段質量 $\mu\,\mathrm dz$，拉上檯面要升高 $z$，做功 $(\mu\,\mathrm dz)gz$。全部加起來：</p>
+<div class="math-block">$$W=\int_0^{z_0}gz\,\mu\,\mathrm dz=\mu g\left[\frac{z^2}{2}\right]_0^{z_0}=\frac{\mu gz_0^2}{2}$$</div>
+<p><strong>③ 代入數值：</strong> 代入 $\mu=0.1\ \text{kg/m}$、$z_0=0.6\ \text{m}$、$g=9.8$：</p>
+<div class="math-block">$$W=\frac{(0.1)(9.8)(0.6)^2}{2}\ \text{J}=\frac{0.3528}{2}\ \text{J}=0.18\ \text{J}$$</div>
+<div class="math-block">$$\boxed{W=\tfrac12\mu gz_0^2\approx0.18\ \text{J}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-41">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-41 · p.96</span></div>
+    <h4>火車上丟球：動能增加多少、誰做了功</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-41">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>火車以固定速率 $u$ 沿軌道前進。車上的女士把質量 $m$ 的球以相對自己 $v$ 的速度往正前方丟出。(a) 火車上的人量到球的動能增加多少？(b) 站在鐵軌旁的人量到多少？(c) 女士丟球做了多少功？(d) 火車做了多少功？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：火車等速 $u$（火車系是慣性系，丟球時火車速度也不變），球質量 $m$；丟前球相對火車靜止，丟後相對火車速度 $v$ 向前。</p>
+<h4>(a) 火車上量到的動能增加</h4>
+<p><strong>① 火車座標系：</strong> 動能用的是速度，而速度在不同座標系不同，所以兩個座標系要分別寫「丟前」「丟後」的速度。</p>
+<p class="fnote"><b>公式（動能）：</b>$T=\tfrac12mv^2$，其中 $m$ 為質量、$v$ 為在該座標系中的速率。</p>
+<p>在火車上看，丟前球拿在手上靜止，丟後速度 $v$：</p>
+<div class="math-block">$$T_i=0,\qquad T_f=\tfrac12mv^2$$</div>
+<div class="math-block">$$\boxed{\Delta T=\tfrac12mv^2}$$</div>
+<h4>(b) 鐵軌旁的人量到的動能增加</h4>
+<p><strong>① 地面座標系：</strong> </p>
+<p class="fnote"><b>公式（伽利略速度相加）：</b>$v_{\text{對地}}=v_{\text{相對火車}}+u$，其中 $u$ 為火車對地速度；本題同方向，丟前球對地 $u$、丟後 $u+v$。</p>
+<div class="math-block">$$T_i=\tfrac12mu^2,\qquad T_f=\tfrac12m(u+v)^2$$</div>
+<p><strong>② 相減：</strong> 展開 $(u+v)^2=u^2+2uv+v^2$，$\tfrac12mu^2$ 抵消：</p>
+<div class="math-block">$$\Delta T=\tfrac12m(u^2+2uv+v^2)-\tfrac12mu^2=\tfrac12mv^2+muv$$</div>
+<div class="math-block">$$\boxed{\Delta T=\tfrac12mv^2+muv}$$</div>
+<h4>(c) 女士做的功</h4>
+<p><strong>① 在火車系用功能定理：</strong> 女士做的功由她自己的動作決定，在火車系看最清楚：球只受女士的推力（水平方向）。</p>
+<p class="fnote"><b>公式（功能定理）：</b>$W_{\text{淨}}=\Delta T$，在每個慣性系都成立，其中 $W_{\text{淨}}$ 為所有力做功的總和、$\Delta T$ 為該系中的動能變化；本題取火車系，$W_{\text{女士}}=\Delta T_{\text{火車系}}$。</p>
+<div class="math-block">$$\boxed{W_{\text{女士}}=\tfrac12mv^2}$$</div>
+<h4>(d) 火車做的功</h4>
+<p><strong>① 地面多出的動能由火車提供：</strong> 地面看多出 $\Delta T_{\text{地面}}-W_{\text{女士}}=muv$。丟球時球對女士（也就是對火車）有向後的反作用力，火車要維持速率 $u$，引擎必須多做功；否則火車會稍微減速，球對地的速度也就不是 $u+v$。</p>
+<p><strong>② 用衝量算引擎的功：</strong> </p>
+<p class="fnote"><b>公式（衝量—動量定理）：</b>$\int F\,\mathrm dt=\Delta p$，其中 $F$ 為作用力、$\Delta p$ 為動量變化；本題球相對速度從 $0$ 到 $v$，女士推力給球的衝量為 $mv$。</p>
+<p>引擎要抵消同樣的反作用衝量，以速度 $u$ 前進時做功：</p>
+<div class="math-block">$$W_{\text{火車}}=\int Fu\,\mathrm dt=u\,mv$$</div>
+<div class="math-block">$$\boxed{W_{\text{火車}}=muv}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">功能定理用的是淨力</span>
+  <p>$W_{12}=T_2-T_1$ 的 $W$ 是所有力的功的總和。只算重力或只算推力的功，不會等於動能變化。</p>
+</div>
+
+<div class="problem" data-kind="exam" id="c2-exam4-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">力學 Exam-4（2025/12/18）第 3 題（114上・117 級上學期期末）</span></div>
+    <h4>從光滑桌面滑下的繩子：$x(t)$ 與離開桌面時的速率</h4>
+    <button type="button" class="exam-btn" data-exam="c2-exam4-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-exam4-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Classical Mechanics - Exam-4 (2025/12/18)</p><p>3. A flexible rope of length $L$ and mass $M$ lies on a frictionless tabletop, with a segment of length $x_0$ hanging over the edge. At $t = 0$, the rope is released from rest and begins to slide off the table under its own weight.</p><p>(a) Determine the length of the hanging portion $x(t)$ as a function of time. (15 points)</p><p>(b) Find $\dot x$ when $x = L$, the speed of the rope at the instant it completely leaves the table. (15 points)</p></div>
+<p class="original-caption">力學 Exam-4（2025/12/18）第 3 題（114上・117 級上學期期末）</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>長度 $L$、質量 $M$ 的柔軟繩子放在無摩擦的桌面上，有一段長 $x_0$ 垂在桌緣外。$t=0$ 時繩子由靜止放開，開始因自身重量從桌上滑下。(a) 求垂下部分的長度 $x(t)$ 隨時間的函數。（15 分）(b) 求 $x=L$ 時的 $\dot x$，也就是繩子完全離開桌面那一瞬間的速率。（15 分）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：繩長 $L$、質量 $M$，均勻，線密度 $\lambda=M/L$；桌面與桌緣無摩擦；$x$ 為垂下長度，$x(0)=x_0$、$\dot x(0)=0$；繩不伸長，整條繩速率處處為 $\dot x$；重力加速度用符號 $g$。</p>
+<h4>(a) 垂下長度 $x(t)$</h4>
+<p><strong>① 整條繩的運動方程式：</strong> 整條繩以同一速率運動、總質量不變，把它當成一個質量 $M$ 的物體，桌緣的張力是內力不必求。外力中，桌上部分的重力被正向力抵消；垂下部分（長 $x$，質量 $\lambda x$）的重量 $\lambda x\,g$ 沿著繩子運動方向，是唯一的淨外力。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$F_{\text{淨}}=m\ddot x$，其中 $F_{\text{淨}}$ 為淨外力、$m$ 為質量、$\ddot x$ 為加速度；本題 $m=M$、$F_{\text{淨}}=\lambda g\,x$。</p>
+<div class="math-block">$$M\ddot x=\lambda g\,x$$</div>
+<p>代入 $\lambda=M/L$，兩邊消去 $M$：</p>
+<div class="math-block">$$M\ddot x=\frac MLg\,x\quad\Longrightarrow\quad\ddot x=\frac gL\,x$$</div>
+<p><strong>② 解方程式的通解：</strong> 令 $\kappa=\sqrt{g/L}$，方程式是 $\ddot x-\kappa^2x=0$。試 $x=e^{rt}$，代入得 $r^2e^{rt}-\kappa^2e^{rt}=0$，所以</p>
+<div class="math-block">$$r^2=\kappa^2\quad\Longrightarrow\quad r=\pm\kappa$$</div>
+<p>兩個根是實數（不是彈簧的 $\pm i\omega$），通解是兩個指數函數的組合：</p>
+<div class="math-block">$$\begin{aligned}x(t)&amp;=C_1e^{\kappa t}+C_2e^{-\kappa t}\\\dot x(t)&amp;=\kappa C_1e^{\kappa t}-\kappa C_2e^{-\kappa t}\end{aligned}$$</div>
+<p><strong>③ 代入初始條件：</strong> 代入 $x(0)=x_0$、$\dot x(0)=0$，$e^0=1$：</p>
+<div class="math-block">$$C_1+C_2=x_0,\qquad\kappa(C_1-C_2)=0$$</div>
+<p>第二式給 $C_1=C_2$，代回第一式得 $C_1=C_2=\frac{x_0}{2}$：</p>
+<div class="math-block">$$x(t)=\frac{x_0}{2}\left(e^{\kappa t}+e^{-\kappa t}\right)=x_0\cosh\!\left(\sqrt{\frac gL}\,t\right)$$</div>
+<p>這條式子適用到繩子完全離開桌面（$x=L$）為止；之後整條繩自由落下，方程式就不同了。</p>
+<div class="math-block">$$\boxed{x(t)=x_0\cosh\!\left(\sqrt{\frac gL}\,t\right)\quad(\text{到 }x=L\text{ 為止})}$$</div>
+<h4>(b) 完全離開桌面時的速率</h4>
+<p><strong>① 把 $\ddot x$ 改寫成 $v\,\mathrm dv/\mathrm dx$：</strong> 只問到 $x=L$ 時多快、不問時間，所以直接對 $x$ 積分。令 $v=\dot x$：</p>
+<div class="math-block">$$\ddot x=\frac{\mathrm dv}{\mathrm dt}=\frac{\mathrm dv}{\mathrm dx}\frac{\mathrm dx}{\mathrm dt}=v\frac{\mathrm dv}{\mathrm dx}$$</div>
+<p>(a) 的方程式變成可以分離的形式：</p>
+<div class="math-block">$$v\frac{\mathrm dv}{\mathrm dx}=\frac gLx\quad\Longrightarrow\quad v\,\mathrm dv=\frac gLx\,\mathrm dx$$</div>
+<p><strong>② 兩邊積分：</strong> 下限是起點 $x=x_0$、$v=0$，上限是 $x=L$、$v=v_{\text{end}}$：</p>
+<div class="math-block">$$\int_0^{v_{\text{end}}}v\,\mathrm dv=\frac gL\int_{x_0}^{L}x\,\mathrm dx\quad\Longrightarrow\quad\frac{v_{\text{end}}^2}{2}=\frac gL\cdot\frac{L^2-x_0^2}{2}$$</div>
+<p>兩邊乘 2、開根號（速率取正）：</p>
+<div class="math-block">$$\dot x\big|_{x=L}=v_{\text{end}}=\sqrt{\frac{g\,(L^2-x_0^2)}{L}}$$</div>
+<p>兩邊乘 $M$ 就是功能定理：左邊 $\tfrac12Mv_{\text{end}}^2$ 是末動能，右邊 $\int_{x_0}^{L}\lambda g\,x\,\mathrm dx$ 是重力對垂下部分做的功。</p>
+<div class="math-block">$$\boxed{\dot x\big|_{x=L}=\sqrt{\frac{g\,(L^2-x_0^2)}{L}}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-12a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>從光滑桌面滑下的鏈條：離開桌面時多快、花多久</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-12a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>長 $L$、質量 $M$ 的均勻鏈條放在光滑水平桌面上，有長度 $a$ 從桌緣垂下，由靜止放開（桌緣光滑、鏈條緊貼桌緣轉彎）。(a) 用功能定理求最後一節離開桌面時的速率。(b) 寫出垂下長度 $x$ 的運動方程式並解出 $x(t)$，求鏈條完全離開桌面所需的時間。(c) $L=2.0\ \text{m}$、$a=0.50\ \text{m}$ 的數值，並用 (b) 的解驗算 (a)。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：鏈長 $L$、質量 $M$，均勻，線密度 $\lambda=M/L$；桌面與桌緣光滑，只有重力做功；$x$ 為垂下長度，$x(0)=a$、$\dot x(0)=0$；鏈緊貼桌緣、不伸長，整條鏈速率處處相同。(c) 的數據 $L=2.0\ \text{m}$、$a=0.50\ \text{m}$，$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 最後一節離開桌面時的速率</h4>
+<p><strong>① 重力做的功：</strong> 只問末速率、只有重力做功，用功能定理；但重力只對垂下部分做功、垂下長度一直在變，所以功要積分。垂下長度從 $x$ 增加 $\mathrm dx$，等效於把一小段 $\lambda\,\mathrm dx$ 從桌面移到下端（下降 $x$），重力做功 $(\lambda\,\mathrm dx)gx$。垂下長度從 $a$ 增加到 $L$：</p>
+<div class="math-block">$$W=\int_a^L\lambda g\,x\,\mathrm dx=\lambda g\left[\frac{x^2}{2}\right]_a^L=\frac{\lambda g}{2}(L^2-a^2)$$</div>
+<p><strong>② 功能定理：</strong> </p>
+<p class="fnote"><b>公式（功能定理）：</b>$W_{\text{淨}}=T_2-T_1$，其中 $W_{\text{淨}}$ 為所有力做功的總和、$T_1$、$T_2$ 為始末動能；本題起始靜止 $T_1=0$，末了整條鏈以 $v$ 運動 $T_2=\tfrac12Mv^2$。</p>
+<div class="math-block">$$\frac{\lambda g}{2}(L^2-a^2)=\tfrac12Mv^2$$</div>
+<p>代入 $\lambda=M/L$，兩邊消去 $M/2$：</p>
+<div class="math-block">$$v^2=\frac{g(L^2-a^2)}{L}\quad\Longrightarrow\quad v=\sqrt{\frac{g(L^2-a^2)}{L}}$$</div>
+<div class="math-block">$$\boxed{v=\sqrt{\frac{g(L^2-a^2)}{L}}}$$</div>
+<h4>(b) 運動方程式、$x(t)$ 與離開時間</h4>
+<p><strong>① 運動方程式：</strong> 整條鏈的加速度相同，可以當成一個質量 $M$ 的物體；驅動力只有垂下部分的重量 $\lambda gx$（桌上部分的重力被正向力抵消）。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$F_{\text{淨}}=m\ddot x$，其中 $F_{\text{淨}}$ 為淨外力、$m$ 為質量、$\ddot x$ 為加速度；本題 $m=M$、$F_{\text{淨}}=\lambda gx$。</p>
+<div class="math-block">$$M\ddot x=\lambda gx=\frac MLgx\quad\Longrightarrow\quad\ddot x=\frac gLx$$</div>
+<p><strong>② 解出 $x(t)$：</strong> 通解 $x=C_1e^{\kappa t}+C_2e^{-\kappa t}$，$\kappa=\sqrt{g/L}$。代入 $x(0)=a$、$\dot x(0)=0$：$C_1+C_2=a$、$\kappa(C_1-C_2)=0$，所以 $C_1=C_2=a/2$：</p>
+<div class="math-block">$$x(t)=\frac a2\left(e^{\kappa t}+e^{-\kappa t}\right)=a\cosh\!\left(\sqrt{\frac gL}\,t\right)$$</div>
+<p>這是「負的彈簧」，解是雙曲函數而不是三角函數。</p>
+<p><strong>③ 完全離開的時間：</strong> 完全離開時 $x=L$，$\cosh(\kappa t_{\text{end}})=L/a$：</p>
+<div class="math-block">$$t_{\text{end}}=\sqrt{\frac Lg}\cosh^{-1}\frac La$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}x(t)=a\cosh\!\left(\sqrt{\frac gL}\,t\right)\\ t_{\text{end}}=\sqrt{\frac Lg}\cosh^{-1}\frac La\end{gathered}}$$</div>
+<h4>(c) 數值與互相驗算</h4>
+<p><strong>① 末速率：</strong> 代入 $L=2.0\ \text{m}$、$a=0.50\ \text{m}$、$g=9.8$，$L^2-a^2=4-0.25=3.75\ \text{m}^2$：</p>
+<div class="math-block">$$v=\sqrt{\frac{9.8(3.75)}{2}}\ \text{m/s}=\sqrt{18.4}\ \text{m/s}=4.29\ \text{m/s}$$</div>
+<p><strong>② 離開時間：</strong> $\sqrt{L/g}=\sqrt{2/9.8}=0.452\ \text{s}$，$L/a=4$，$\cosh^{-1}4=\ln(4+\sqrt{15})=2.063$：</p>
+<div class="math-block">$$t_{\text{end}}=0.452(2.063)\ \text{s}=0.932\ \text{s}$$</div>
+<p><strong>③ 用 (b) 的解驗算 (a)：</strong> $\dot x=a\kappa\sinh(\kappa t)$，在 $t_{\text{end}}$ 時 $\cosh=4$，$\sinh=\sqrt{\cosh^2-1}=\sqrt{15}=3.873$；$\kappa=\sqrt{9.8/2}=2.214\ \text{s}^{-1}$：</p>
+<div class="math-block">$$\dot x=0.5(2.214)(3.873)\ \text{m/s}=4.29\ \text{m/s}$$</div>
+<p>和 (a) 的功能定理結果相同。</p>
+<div class="math-block">$$\boxed{v=4.29\ \text{m/s},\qquad t_{\text{end}}=0.932\ \text{s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-12b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>箱子放上輸送帶：馬達做的功一半變熱——換個座標系呢</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-12b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>水平輸送帶以固定速率 $u$ 運行。把質量 $m$ 的箱子靜止放上去，箱子與皮帶的動摩擦係數 $\mu$，直到箱子和皮帶同速。(a) 在地面座標系，求箱子滑行（相對地面）的距離、摩擦對箱子做的功、摩擦對皮帶做的功（馬達要補上的功）。(b) 生成多少熱？(c) 改在跟皮帶一起走的座標系重做，哪些量變了、哪些沒變？(d) $m=10\ \text{kg}$、$u=2.0\ \text{m/s}$、$\mu=0.50$ 的數值。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：皮帶等速 $u$（馬達補足損失），箱子質量 $m$、起始對地靜止，動摩擦係數 $\mu$；直到箱子速度 $=u$ 為止（之後無相對滑動）。(d) 的數據 $m=10\ \text{kg}$、$u=2.0\ \text{m/s}$、$\mu=0.50$，$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 地面座標系：滑行距離與摩擦做的功</h4>
+<p><strong>① 箱子的加速度與滑行距離：</strong> 摩擦力大小固定，箱子做等加速度運動直到速率 $u$。</p>
+<p class="fnote"><b>公式（動摩擦力）：</b>$f=\mu N$，其中 $\mu$ 為動摩擦係數、$N$ 為正向力；本題水平皮帶 $N=mg$，$f=\mu mg$ 向前，加速度 $a=\mu g$。</p>
+<p class="fnote"><b>公式（等加速度運動）：</b>$v=at$、$v^2=2ad$，其中 $a$ 為加速度、$t$ 為時間、$d$ 為位移；本題從 $0$ 加速到 $u$。</p>
+<div class="math-block">$$t=\frac u{\mu g},\qquad d_{\text{箱}}=\frac{u^2}{2a}=\frac{u^2}{2\mu g}$$</div>
+<p><strong>② 皮帶走的距離：</strong> 同一段時間皮帶等速走了</p>
+<div class="math-block">$$d_{\text{帶}}=ut=\frac{u^2}{\mu g}=2d_{\text{箱}}$$</div>
+<p><strong>③ 摩擦對箱子與皮帶做的功：</strong> 一個力做的功等於力乘以受力點的位移，箱子與皮帶的位移不同，所以這對作用力與反作用力做的功不相等。</p>
+<p class="fnote"><b>公式（定力做功）：</b>$W=Fd\cos\theta$，其中 $F$ 為力的大小、$d$ 為受力點位移、$\theta$ 為兩者夾角；本題對箱子力向前、位移向前，對皮帶反作用力向後、皮帶向前。</p>
+<div class="math-block">$$\begin{aligned}W_{\text{摩擦→箱}}&amp;=\mu mg\,d_{\text{箱}}=\tfrac12mu^2=\Delta T_{\text{箱}}\\W_{\text{摩擦→帶}}&amp;=-\mu mg\,d_{\text{帶}}=-mu^2\end{aligned}$$</div>
+<p>皮帶要維持等速，馬達必須做 $+mu^2$ 的功。</p>
+<div class="math-block">$$\boxed{\begin{gathered}d_{\text{箱}}=\frac{u^2}{2\mu g},\quad W_{\text{摩擦→箱}}=\tfrac12mu^2\\ W_{\text{摩擦→帶}}=-mu^2\ (\text{馬達補 }mu^2)\end{gathered}}$$</div>
+<h4>(b) 生成的熱</h4>
+<p><strong>① 能量帳：</strong> 馬達給進來的能量，一部分變成箱子的動能，其餘變成熱：</p>
+<div class="math-block">$$Q=W_{\text{馬達}}-\Delta T_{\text{箱}}=mu^2-\tfrac12mu^2=\tfrac12mu^2$$</div>
+<p><strong>② 用相對滑動距離表示：</strong> 熱也可以寫成摩擦力乘以兩者位移的差：</p>
+<div class="math-block">$$Q=\mu mg\,(d_{\text{帶}}-d_{\text{箱}})=\mu mg\cdot\frac{u^2}{2\mu g}=\tfrac12mu^2$$</div>
+<p>熱等於摩擦力乘以相對滑動的距離，不論 $\mu$ 大小，永遠等於箱子最後的動能。</p>
+<div class="math-block">$$\boxed{Q=\tfrac12mu^2}$$</div>
+<h4>(c) 皮帶座標系</h4>
+<p><strong>① 在皮帶系重算：</strong> 功與動能的值和座標系有關，換到皮帶系看熱是否不變。皮帶系也是慣性系（皮帶等速）。箱子一開始以 $-u$ 運動、被摩擦減速到 $0$：動能減少 $\tfrac12mu^2$，摩擦對箱子做功 $-\tfrac12mu^2$；皮帶不動，摩擦對它不做功，馬達也不做功。熱 $=\tfrac12mu^2$，和地面座標系相同。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{變的：各個功、箱子的動能變化（甚至正負號）}\\ \text{不變的：熱 }Q=\tfrac12mu^2\text{（只和相對滑動距離有關）}\end{gathered}}$$</div>
+<h4>(d) 數值</h4>
+<p><strong>① 滑行距離：</strong> 代入 $u=2.0\ \text{m/s}$、$\mu=0.50$、$g=9.8$，$\mu g=4.9\ \text{m/s}^2$：</p>
+<div class="math-block">$$d_{\text{箱}}=\frac{(2.0)^2}{2(4.9)}\ \text{m}=0.408\ \text{m},\qquad d_{\text{帶}}=2d_{\text{箱}}=0.816\ \text{m}$$</div>
+<p><strong>② 功、動能與熱：</strong> 代入 $m=10\ \text{kg}$：</p>
+<div class="math-block">$$\begin{aligned}W_{\text{馬達}}&amp;=mu^2=10(2.0)^2\ \text{J}=40\ \text{J}\\\Delta T_{\text{箱}}&amp;=\tfrac12mu^2=20\ \text{J},\qquad Q=20\ \text{J}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}d_{\text{箱}}=0.408\ \text{m},\quad W_{\text{馬達}}=40\ \text{J}\\ \Delta T_{\text{箱}}=20\ \text{J},\quad Q=20\ \text{J}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\mathrm dW=\vec F\cdot\mathrm d\vec r$，$W_{12}=\int_1^2\vec F\cdot\mathrm d\vec r$；垂直位移的力不做功。</li>
+    <li>由 $F=ma$：$\vec F\cdot\mathrm d\vec r=\mathrm d(\tfrac12mv^2)$，淨力的功 $=T_2-T_1$。</li>
+    <li>動能的值依座標系而變，但功能定理在每個慣性系都成立（2-41）。</li>
+  </ol>
+</div>

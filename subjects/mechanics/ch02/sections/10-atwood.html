@@ -1,0 +1,304 @@
+<h2>十、Atwood 機與電磁場中的粒子 <span class="pg">講義 p.100–106 · 課本 §2.4 p.71–76</span></h2>
+
+<p class="lead">兩個「標準例題」：Atwood 機示範多物體的寫法（每個物體一條方程式，用繩長不變把它們連起來），以及「觀察者必須在慣性座標系」——電梯加速時要怎麼寫。帶電粒子進入磁場則是力和速度垂直、各分量互相耦合的例子，解出來是螺旋線。</p>
+
+<h3 id="c2w-atwood">10.1 Atwood 機 <span class="pg-tag">p.100–106</span></h3>
+
+<div class="problem" data-kind="example" id="c2-ex29">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.100–106 · Example 2.9（課本 p.71–73）</span></div>
+    <h4>Atwood 機：滑輪固定時，與在加速電梯中</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex29">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>Atwood 機由一個光滑滑輪和一條輕繩組成，繩的兩端各掛質量 $m_1$、$m_2$。求兩物體的加速度和繩的張力：(a) 滑輪中心靜止時；(b) 滑輪在以固定加速度 $\alpha$ 下降的電梯中時。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：光滑滑輪、輕繩，兩端掛 $m_1$、$m_2$，繩上張力處處同為 $T$；$x_1$、$x_2$ 從滑輪中心向下量（向下為正）；(b) 滑輪隨電梯以固定加速度 $\alpha$ 向下。</p>
+<h4>(a) 滑輪靜止</h4>
+<p><strong>① 兩條運動方程式：</strong> 兩物體只靠繩子相連，各畫自由體圖、各寫一條 $F=ma$；繩輕、滑輪光滑，所以兩段繩是同一個 $T$。每個物體受重力 $m_ig$（向下）和拉力 $T$（向上）。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\sum F=ma$，其中 $\sum F$ 為合力、$m$ 為質量、$a$ 為在慣性系量的加速度；本題對 $m_1$、$m_2$ 各寫一條，$a=\ddot x_i$。</p>
+<div class="math-block">$$m_1g-T=m_1\ddot x_1,\qquad m_2g-T=m_2\ddot x_2$$</div>
+<p>兩式相減，消去未知的 $T$：</p>
+<div class="math-block">$$(m_1-m_2)g=m_1\ddot x_1-m_2\ddot x_2$$</div>
+<p><strong>② 繩長不變：</strong> 兩條方程式三個未知數，還需要拘束條件。繩長 $=x_1+x_2+(\text{繞過滑輪的長度})=\text{定值}$，繞過滑輪那段不變，所以 $\Delta x_1=-\Delta x_2$，對時間微分兩次：</p>
+<div class="math-block">$$\ddot x_1=-\ddot x_2$$</div>
+<p>代入①的相減式，把 $\ddot x_2$ 換成 $-\ddot x_1$：</p>
+<div class="math-block">$$(m_1-m_2)g=m_1\ddot x_1+m_2\ddot x_1=(m_1+m_2)\ddot x_1$$</div>
+<div class="math-block">$$\ddot x_1=\frac{(m_1-m_2)g}{m_1+m_2}=-\ddot x_2$$</div>
+<p><strong>③ 張力：</strong> 把 $\ddot x_1$ 代回 $m_1$ 的方程式 $T=m_1g-m_1\ddot x_1$，通分：</p>
+<div class="math-block">$$T=m_1g\left[1-\frac{m_1-m_2}{m_1+m_2}\right]=m_1g\cdot\frac{2m_2}{m_1+m_2}=\frac{2m_1m_2g}{m_1+m_2}$$</div>
+<div class="math-block">$$\boxed{\ddot x_1=-\ddot x_2=\frac{(m_1-m_2)g}{m_1+m_2},\quad T=\frac{2m_1m_2g}{m_1+m_2}}$$</div>
+<h4>(b) 滑輪在以 $\alpha$ 下降加速的電梯中</h4>
+<p><strong>① 換到慣性系：</strong> $F=ma$ 的 $a$ 必須在慣性系量，以滑輪為原點的 $\ddot x_i$ 只是相對加速度，所以從電梯井頂端（慣性系）看：$x_1''=x_1'+x_1$，其中 $x_1'$ 是滑輪的位置、$x_1$ 是物體相對滑輪的位置。微分兩次，滑輪的加速度 $\ddot x_1'=\ddot x_2'=\alpha$（向下）：</p>
+<div class="math-block">$$\ddot x_i''=\alpha+\ddot x_i$$</div>
+<p>力沒有變（重力、張力），只是 $a$ 要用慣性系的 $\ddot x_i''$：</p>
+<div class="math-block">$$m_1g-T=m_1(\ddot x_1+\alpha),\qquad m_2g-T=m_2(\ddot x_2+\alpha)$$</div>
+<p>兩式相減消去 $T$：</p>
+<div class="math-block">$$(m_1-m_2)g=m_1\ddot x_1-m_2\ddot x_2+(m_1-m_2)\alpha$$</div>
+<p><strong>② 拘束條件仍是 $\ddot x_1=-\ddot x_2$：</strong> 繩長是相對滑輪量的，所以拘束條件不變。代入上式，把 $(m_1-m_2)\alpha$ 移到左邊：</p>
+<div class="math-block">$$(m_1-m_2)(g-\alpha)=(m_1+m_2)\ddot x_1$$</div>
+<div class="math-block">$$\ddot x_1=\frac{(m_1-m_2)(g-\alpha)}{m_1+m_2}=-\ddot x_2$$</div>
+<p><strong>③ 張力：</strong> 代回 $T=m_1g-m_1(\ddot x_1+\alpha)=m_1\left[(g-\alpha)-\ddot x_1\right]$，和 (a) 一樣通分：</p>
+<div class="math-block">$$T=m_1(g-\alpha)\cdot\frac{2m_2}{m_1+m_2}=\frac{2m_1m_2(g-\alpha)}{m_1+m_2}$$</div>
+<p>結果和 (a) 相同，只是 $g$ 換成 $g-\alpha$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\ddot x_1=-\ddot x_2=\frac{(m_1-m_2)(g-\alpha)}{m_1+m_2}\ (\text{相對滑輪})\\ T=\frac{2m_1m_2(g-\alpha)}{m_1+m_2}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="anim" data-anim="c2-atwood"></div>
+
+<p>課本 p.72 的評語：力的觀念的好處就在這裡——只要找出作用在每個物體上的力，張力 $T$ 在兩條方程式中相同，問題就解完了。結果「好像重力加速度被電梯的加速度減掉了 $\alpha$」：從電梯裡看，就像身處一個重力是 $g-\alpha$ 的世界。</p>
+
+<h3 id="c2w-em">10.2 帶電粒子在均勻磁場中 <span class="pg-tag">課本 p.73–76</span></h3>
+
+<div class="problem" data-kind="tbexample" id="c2-tbex210">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Thornton &amp; Marion Example 2.10 · p.73–76</span></div>
+    <h4>帶電粒子射入均勻磁場：螺旋線</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tbex210">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>帶電粒子進入一個均勻磁場 $\vec B$ 的區域（例如地球磁場，Fig. 2-12），求它之後的運動。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：均勻磁場 $\vec B=B_0\hat j$；粒子電荷 $q$、質量 $m$，只受磁力 $q\vec v\times\vec B$；初速 $\dot x(0)=0$、$\dot y(0)=\dot y_0$、$\dot z(0)=\dot z_0$（課本設定）。</p>
+<p><strong>① 外積與分量方程式：</strong> 磁力由外積決定，先算成三個分量，各寫一條 $F=ma$。</p>
+<p class="fnote"><b>公式（磁場中的牛頓第二定律）：</b>$m\ddot{\vec r}=q\dot{\vec r}\times\vec B$，其中 $m$ 為質量、$q$ 為電荷、$\dot{\vec r}$ 為速度、$\vec B$ 為磁場；本題 $\vec B=B_0\hat j$。</p>
+<p>用 $\hat i\times\hat j=\hat k$、$\hat j\times\hat j=0$、$\hat k\times\hat j=-\hat i$：</p>
+<div class="math-block">$$\begin{aligned}\dot{\vec r}\times B_0\hat j&amp;=B_0\left(\dot x\,\hat i\times\hat j+\dot y\,\hat j\times\hat j+\dot z\,\hat k\times\hat j\right)\\&amp;=B_0(\dot x\,\hat k-\dot z\,\hat i)\end{aligned}$$</div>
+<p>比較兩邊的 $\hat i$、$\hat j$、$\hat k$ 分量：</p>
+<div class="math-block">$$m\ddot x=-qB_0\dot z,\qquad m\ddot y=0,\qquad m\ddot z=qB_0\dot x\qquad(2.73)$$</div>
+<p>$y$ 方向沒有力，代入初始條件 $\dot y(0)=\dot y_0$：$\dot y=\dot y_0$，$y=y_0+\dot y_0t$。</p>
+<p><strong>② 解耦：</strong> $x$、$z$ 兩條互相耦合（$\ddot x$ 由 $\dot z$ 決定、$\ddot z$ 由 $\dot x$ 決定），把其中一條再微分、代入另一條。令 $\alpha\equiv qB_0/m$（單位 $\text{s}^{-1}$），兩條方程式變成</p>
+<div class="math-block">$$\ddot x=-\alpha\dot z,\qquad\ddot z=\alpha\dot x$$</div>
+<p>把第二式對 $t$ 再微分一次，右邊的 $\ddot x$ 用第一式代換；另一條同理：</p>
+<div class="math-block">$$\begin{aligned}\dddot z&amp;=\alpha\ddot x=-\alpha^2\dot z\\\dddot x&amp;=-\alpha\ddot z=-\alpha^2\dot x\end{aligned}\qquad(2.75)$$</div>
+<p>$\dot x$、$\dot z$ 都滿足簡諧方程式 $\ddot f=-\alpha^2f$，解是 $\cos\alpha t$、$\sin\alpha t$ 的組合；再積分一次，位置也是（$x_0$、$z_0$ 為積分常數）：</p>
+<div class="math-block">$$\begin{aligned}x-x_0&amp;=A\cos\alpha t+B\sin\alpha t\\z-z_0&amp;=A'\cos\alpha t+B'\sin\alpha t\end{aligned}$$</div>
+<p><strong>③ 用耦合方程式連接常數：</strong> 四個常數 $A,B,A',B'$ 不互相獨立，因為原式 $\ddot x=-\alpha\dot z$ 也必須成立。左邊、右邊分別是</p>
+<div class="math-block">$$\begin{aligned}\ddot x&amp;=-\alpha^2A\cos\alpha t-\alpha^2B\sin\alpha t\\-\alpha\dot z&amp;=-\alpha(-\alpha A'\sin\alpha t+\alpha B'\cos\alpha t)\end{aligned}$$</div>
+<p>要對所有 $t$ 相等，$\cos$、$\sin$ 的係數分別相等（等同取 $t=0$ 與 $t=\pi/2\alpha$）：$-\alpha^2A=-\alpha^2B'$、$-\alpha^2B=\alpha^2A'$，所以 $A=B'$、$B=-A'$：</p>
+<div class="math-block">$$\begin{aligned}x-x_0&amp;=A\cos\alpha t+B\sin\alpha t\\z-z_0&amp;=-B\cos\alpha t+A\sin\alpha t\end{aligned}$$</div>
+<p><strong>④ 初始條件：</strong> 先求速度：$\dot x=\alpha(-A\sin\alpha t+B\cos\alpha t)$，$\dot z=\alpha(B\sin\alpha t+A\cos\alpha t)$。代入 $t=0$ 的 $\dot x(0)=0$、$\dot z(0)=\dot z_0$：$\dot x(0)=\alpha B=0$ ⟹ $B=0$；$\dot z(0)=\alpha A=\dot z_0$ ⟹ $A=\dot z_0/\alpha=\dot z_0m/qB_0$。</p>
+<div class="math-block">$$\begin{aligned}x-x_0&amp;=\frac{\dot z_0m}{qB_0}\cos\frac{qB_0t}{m}\\y-y_0&amp;=\dot y_0t\\z-z_0&amp;=\frac{\dot z_0m}{qB_0}\sin\frac{qB_0t}{m}\end{aligned}\qquad(2.79)$$</div>
+<p><strong>⑤ 軌跡形狀：</strong> $x$、$z$ 兩式平方相加：</p>
+<div class="math-block">$$(x-x_0)^2+(z-z_0)^2=\left(\frac{\dot z_0m}{qB_0}\right)^2$$</div>
+<p>在 $xz$ 平面上是圓，同時沿 $y$ 等速前進。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{沿磁場等速漂移，垂直磁場平面上做}\\ \text{半徑 }\frac{\dot z_0m}{qB_0}\text{、角頻率 }\frac{qB_0}{m}\text{ 的圓周運動：圓螺旋線}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="anim" data-anim="c2-helix"></div>
+
+<p>粒子被磁場「捕獲」，只能沿磁力線漂移。地球磁場不均勻，但同樣的機制讓低能量的宇宙射線與太陽風被困在范艾倫輻射帶。</p>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-22">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-22 · p.92–93</span></div>
+    <h4>Lorentz 力：迴旋半徑、電場方向的等加速、$E\times B$ 漂移</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-22">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>電磁場中帶電粒子的運動由 Lorentz 方程式決定：電場 $\vec E$、磁場 $\vec B$ 中，質量 $m$、電荷 $q$、速度 $\vec v$ 的粒子受力 $\vec F=q\vec E+q\vec v\times\vec B$（設 $v\ll c$）。<br>(a) 若沒有電場，粒子沿垂直磁力線的方向進入磁場，證明軌跡是半徑 $r=\dfrac{mv}{qB}=\dfrac v{\omega_c}$ 的圓，$\omega_c\equiv qB/m$ 是迴旋頻率。<br>(b) 取 $z$ 軸沿 $\vec B$，並讓 $\vec E$ 與 $\vec B$ 所在的平面為 $yz$ 平面：$\vec B=B\hat k$，$\vec E=E_y\hat j+E_z\hat k$。證明運動的 $z$ 分量為 $z(t)=z_0+\dot z_0t+\dfrac{qE_z}{2m}t^2$，其中 $z(0)\equiv z_0$、$\dot z(0)\equiv\dot z_0$。<br>(c) 繼續求 $\dot x(t)$、$\dot y(t)$，證明這兩個速度分量的時間平均為 $\langle\dot x\rangle=\dfrac{E_y}B$、$\langle\dot y\rangle=0$（先證明運動是週期性的，再對一個完整週期平均）。<br>(d) 積分 (c) 的速度式，在初始條件 $x(0)=-A/\omega_c$、$\dot x(0)=E_y/B$、$y(0)=0$、$\dot y(0)=A$ 下證明 $x(t)=-\dfrac A{\omega_c}\cos\omega_ct+\dfrac{E_y}Bt$、$y(t)=\dfrac A{\omega_c}\sin\omega_ct$。這是擺線（trochoid）的參數式；畫出 $xy$ 平面的投影：(i) $A>|E_y/B|$；(ii) $A\lt |E_y/B|$；(iii) $A=|E_y/B|$（最後一種是旋輪線 cycloid）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：Lorentz 力 $\vec F=q\vec E+q\vec v\times\vec B$，$v\ll c$ 用牛頓力學；$\omega_c\equiv qB/m$；(b) 起 $\vec B=B\hat k$、$\vec E=E_y\hat j+E_z\hat k$（皆為常數）；$z(0)=z_0$、$\dot z(0)=\dot z_0$；(d) 初始條件 $x(0)=-A/\omega_c$、$\dot x(0)=E_y/B$、$y(0)=0$、$\dot y(0)=A$。</p>
+<h4>(a) 只有磁場：圓周運動</h4>
+<p><strong>① 磁力當向心力：</strong> 磁力永遠垂直速度、不做功，速率 $v$ 不變；$\vec v\perp\vec B$ 時大小 $|q\vec v\times\vec B|=qvB\sin90^\circ=qvB$ 固定。大小固定、方向垂直速度的力就是等速圓周運動的向心力。</p>
+<p class="fnote"><b>公式（向心力）：</b>$F=\dfrac{mv^2}{r}$，其中 $m$ 為質量、$v$ 為速率、$r$ 為圓半徑；本題 $F=qvB$。</p>
+<div class="math-block">$$qvB=\frac{mv^2}{r}\quad\Longrightarrow\quad r=\frac{mv}{qB}$$</div>
+<p><strong>② 迴旋頻率：</strong> 繞圈的角速度是速率除以半徑：</p>
+<div class="math-block">$$\omega_c=\frac vr=\frac{v}{mv/qB}=\frac{qB}m,\qquad r=\frac{v}{\omega_c}$$</div>
+<div class="math-block">$$\boxed{r=\frac{mv}{qB}=\frac{v}{\omega_c}}$$</div>
+<h4>(b) $z$ 方向的運動</h4>
+<p><strong>① 分量方程式：</strong> 力含外積，先把 $\vec v\times\vec B$ 算成分量。</p>
+<p class="fnote"><b>公式（Lorentz 力與牛頓第二定律）：</b>$m\ddot{\vec r}=q\vec E+q\vec v\times\vec B$，其中 $m$ 為質量、$q$ 為電荷、$\vec E$ 為電場、$\vec B$ 為磁場、$\vec v$ 為速度；本題 $\vec B=B\hat k$、$\vec E=E_y\hat j+E_z\hat k$。</p>
+<p>用 $\hat i\times\hat k=-\hat j$、$\hat j\times\hat k=\hat i$、$\hat k\times\hat k=0$：</p>
+<div class="math-block">$$\vec v\times B\hat k=B(\dot x\,\hat i\times\hat k+\dot y\,\hat j\times\hat k)=B(\dot y\,\hat i-\dot x\,\hat j)$$</div>
+<p>加上電力 $q\vec E=qE_y\hat j+qE_z\hat k$，三個分量：</p>
+<div class="math-block">$$m\ddot x=qB\dot y,\qquad m\ddot y=qE_y-qB\dot x,\qquad m\ddot z=qE_z$$</div>
+<p><strong>② 積分 $z$：</strong> $z$ 方向平行 $\vec B$，只剩常數力，等加速度 $\ddot z=qE_z/m$。積分一次 $\dot z=\dot z_0+\dfrac{qE_z}mt$，再積一次，代入 $z(0)=z_0$、$\dot z(0)=\dot z_0$：</p>
+<div class="math-block">$$z(t)=z_0+\dot z_0t+\frac{qE_z}{2m}t^2$$</div>
+<div class="math-block">$$\boxed{z(t)=z_0+\dot z_0t+\frac{qE_z}{2m}t^2}$$</div>
+<h4>(c) $\dot x$、$\dot y$ 與時間平均</h4>
+<p><strong>① 換變數吸收常數項：</strong> $x$、$y$ 兩條耦合且有常數項 $qE_y$，先扣掉漂移速度變回簡諧方程式。前兩式除以 $m$，並用 $\dfrac qm=\dfrac{\omega_c}B$：</p>
+<div class="math-block">$$\ddot x=\omega_c\dot y,\qquad\ddot y=\omega_c\left(\frac{E_y}B-\dot x\right)$$</div>
+<p>令 $u\equiv\dot x-\dfrac{E_y}B$。$E_y/B$ 是常數，所以 $\dot u=\ddot x$，兩式變成</p>
+<div class="math-block">$$\dot u=\omega_c\dot y,\qquad\ddot y=-\omega_cu$$</div>
+<p><strong>② 解耦：</strong> 第一式再微分、代入第二式：</p>
+<div class="math-block">$$\ddot u=\omega_c\ddot y=-\omega_c^2u$$</div>
+<p>簡諧方程式，解寫成 $u=A\sin(\omega_ct+\phi)$；$\dot y=\dot u/\omega_c=A\cos(\omega_ct+\phi)$。換回 $\dot x=u+E_y/B$：</p>
+<div class="math-block">$$\dot x=\frac{E_y}B+A\sin(\omega_ct+\phi),\qquad\dot y=A\cos(\omega_ct+\phi)$$</div>
+<p><strong>③ 週期性與平均：</strong> 兩者都以週期 $\tau=2\pi/\omega_c$ 重複，所以運動是週期性的。對一個週期平均：$\dfrac1\tau\displaystyle\int_0^\tau\sin(\omega_ct+\phi)\,\mathrm dt=0$，$\cos$ 也一樣，常數的平均是它自己：</p>
+<div class="math-block">$$\langle\dot x\rangle=\frac{E_y}{B},\qquad\langle\dot y\rangle=0$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\dot x=\frac{E_y}B+A\sin(\omega_ct+\phi),\quad\dot y=A\cos(\omega_ct+\phi)\\ \langle\dot x\rangle=\frac{E_y}B,\quad\langle\dot y\rangle=0\end{gathered}}$$</div>
+<h4>(d) 積分得軌跡與三種投影</h4>
+<p><strong>① 用速度初值定相位：</strong> $\dot x(0)=\dfrac{E_y}B+A\sin\phi=\dfrac{E_y}B$ ⟹ $\sin\phi=0$；$\dot y(0)=A\cos\phi=A$ ⟹ $\cos\phi=1$，所以 $\phi=0$（$A$ 的正負號已包含在 $A$ 裡）：</p>
+<div class="math-block">$$\dot x=\frac{E_y}B+A\sin\omega_ct,\qquad\dot y=A\cos\omega_ct$$</div>
+<p><strong>② 積分並用位置初值定常數：</strong> 對 $t$ 積分，各帶一個常數：</p>
+<div class="math-block">$$\begin{aligned}x(t)&amp;=-\frac A{\omega_c}\cos\omega_ct+\frac{E_y}Bt+C_1\\y(t)&amp;=\frac A{\omega_c}\sin\omega_ct+C_2\end{aligned}$$</div>
+<p>代入 $x(0)=-A/\omega_c$：$-\dfrac A{\omega_c}+C_1=-\dfrac A{\omega_c}$ ⟹ $C_1=0$；代入 $y(0)=0$：$C_2=0$。得到要證的式子。</p>
+<p><strong>③ 三種投影：</strong> 這是「以 $E_y/B$ 等速前進的圓心」加上「半徑 $A/\omega_c$、轉速 $A$ 的圓周運動」。取 $E_y/B\gt0$，$\dot x=E_y/B+A\sin\omega_ct$ 的最小值是 $E_y/B-|A|$（圓周速度正好和漂移反向的瞬間）：</p>
+<ul>
+<li>(i) $A\gt|E_y/B|$：$\dot x$ 會變成負的，繞圈速度比前進快，軌跡打出一個個小迴圈；</li>
+<li>(ii) $A\lt|E_y/B|$：$\dot x$ 永遠為正，沒有迴圈，只是波浪起伏；</li>
+<li>(iii) $A=|E_y/B|$：每轉一圈有一瞬間 $\dot x=\dot y=0$，形成尖點，就是旋輪線。</li>
+</ul>
+<div class="math-block">$$\boxed{x(t)=-\frac A{\omega_c}\cos\omega_ct+\frac{E_y}Bt,\quad y(t)=\frac A{\omega_c}\sin\omega_ct}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">滑輪在加速時，加速度要加上 $\alpha$</span>
+  <p>在電梯裡量的 $\ddot x_i$ 是相對加速度。$F=ma$ 的 $a$ 必須是慣性系量到的 $\ddot x_i+\alpha$；寫成 $m_1g-T=m_1\ddot x_1$ 會得到和電梯無關的錯誤答案。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-31">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-31 · p.95</span></div>
+    <h4>例題 2.10 加上 $x$ 方向初速：只有螺旋半徑改變</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-31">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-31"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In Example 2.10, the initial velocity of the incoming charged particle had no component along the $x$-axis. Show that, even if it had an $x$ component, the subsequent motion of the particle would be the same—that only the radius of the helix would be altered.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>例題 2.10 中，射入的帶電粒子初速沒有沿 $x$ 軸的分量。證明即使它有 $x$ 分量，之後的運動仍然相同——只有螺旋的半徑改變。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：沿用例題 2.10：$\vec B=B_0\hat j$，電荷 $q$、質量 $m$，只有磁力，$\alpha=qB_0/m$；新增初速 $\dot x(0)=\dot x_0\ne0$，其他 $\dot y(0)=\dot y_0$、$\dot z(0)=\dot z_0$。</p>
+<p><strong>① 通解照用例題 2.10 的 (2.77)：</strong> 運動方程式只由場和粒子決定、和初速無關，所以通解完全照用，初速只在定常數時才出現：</p>
+<div class="math-block">$$\begin{aligned}x-x_0&amp;=A\cos\alpha t+B\sin\alpha t\\z-z_0&amp;=-B\cos\alpha t+A\sin\alpha t\\y&amp;=y_0+\dot y_0t\end{aligned}$$</div>
+<p>（$x_0$、$z_0$ 是圓心座標，不是初位置。）</p>
+<p><strong>② 新的初始條件：</strong> 微分得速度：$\dot x=\alpha(-A\sin\alpha t+B\cos\alpha t)$、$\dot z=\alpha(B\sin\alpha t+A\cos\alpha t)$，在 $t=0$：$\dot x(0)=\alpha B$、$\dot z(0)=\alpha A$。代入 $\dot x(0)=\dot x_0$、$\dot z(0)=\dot z_0$：</p>
+<div class="math-block">$$B=\frac{\dot x_0}\alpha,\qquad A=\frac{\dot z_0}\alpha$$</div>
+<p>和例題 2.10 唯一的差別是 $B$ 不再是 $0$。</p>
+<p><strong>③ 仍是圓，只是半徑不同：</strong> 把 $x$、$z$ 兩式平方相加，交叉項 $\pm2AB\cos\alpha t\sin\alpha t$ 互相抵消，$\cos^2+\sin^2=1$：</p>
+<div class="math-block">$$(x-x_0)^2+(z-z_0)^2=A^2+B^2$$</div>
+<p>代入上一步的 $A$、$B$，以及 $\alpha=qB_0/m$：</p>
+<div class="math-block">$$\begin{aligned}A^2+B^2&amp;=\frac{\dot x_0^2+\dot z_0^2}{\alpha^2}\\ \Longrightarrow\ r&amp;=\frac{m\sqrt{\dot x_0^2+\dot z_0^2}}{qB_0}=\frac{mv_\perp}{qB_0}\end{aligned}$$</div>
+<p>其中 $v_\perp=\sqrt{\dot x_0^2+\dot z_0^2}$ 是垂直磁場的速率。</p>
+<p><strong>④ 逐項比較螺旋特徵：</strong> 角頻率仍是 $\alpha=qB_0/m$（與速度無關）；沿磁場的速度仍是 $\dot y_0$，所以一圈前進的距離（螺距）$2\pi\dot y_0/\alpha$ 也不變；圓仍在 $xz$ 平面、軸仍平行 $\vec B$。改變的只有 $v_\perp$，因而只有半徑變了；起始相位也變了，但那只是選 $t=0$ 的位置不同。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{仍是軸平行 }\vec B\text{、角頻率 }qB_0/m\text{、螺距 }2\pi m\dot y_0/qB_0\text{ 的圓螺旋}\\ \text{半徑變成 }\frac{m\sqrt{\dot x_0^2+\dot z_0^2}}{qB_0}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-10a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>把 Atwood 機掛在彈簧秤下：讀數比總重小多少</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-10a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>例題 2.9(a) 的 Atwood 機（輕滑輪、輕繩，$m_1\gt m_2$），滑輪的軸掛在天花板的彈簧秤下。(a) 運動中彈簧秤的讀數是多少？(b) 證明它不超過 $(m_1+m_2)g$，什麼情況下相等？(c) 用「系統質心的加速度」解釋讀數為什麼比較小。(d) $m_1=3\ \text{kg}$、$m_2=1\ \text{kg}$ 的數值。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：例題 2.9(a) 的 Atwood 機，輕滑輪、輕繩，$m_1\gt m_2$；滑輪的軸掛在彈簧秤下，讀數為秤拉滑輪的力 $F$；(d) 用 $m_1=3\ \text{kg}$、$m_2=1\ \text{kg}$、$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 秤的讀數</h4>
+<p><strong>① 滑輪受力平衡：</strong> 秤直接拉的是滑輪：秤向上拉 $F$，兩段繩各向下拉 $T$；滑輪是輕的，合力必須為 0：</p>
+<div class="math-block">$$F-T-T=0\quad\Longrightarrow\quad F=2T$$</div>
+<p><strong>② 代入張力：</strong> 代入例題 2.9(a) 的 $T=\dfrac{2m_1m_2g}{m_1+m_2}$：</p>
+<div class="math-block">$$F=\frac{4m_1m_2g}{m_1+m_2}$$</div>
+<div class="math-block">$$\boxed{F=\frac{4m_1m_2g}{m_1+m_2}}$$</div>
+<h4>(b) 和總重比較</h4>
+<p><strong>① 相減後通分：</strong> 總重減讀數，通分到分母 $m_1+m_2$，看差是不是完全平方：</p>
+<div class="math-block">$$(m_1+m_2)g-F=\frac{g[(m_1+m_2)^2-4m_1m_2]}{m_1+m_2}$$</div>
+<p><strong>② 分子化成完全平方：</strong></p>
+<div class="math-block">$$(m_1+m_2)^2-4m_1m_2=m_1^2+2m_1m_2+m_2^2-4m_1m_2=m_1^2-2m_1m_2+m_2^2=(m_1-m_2)^2$$</div>
+<p>所以</p>
+<div class="math-block">$$(m_1+m_2)g-F=\frac{(m_1-m_2)^2g}{m_1+m_2}\ge0$$</div>
+<p>完全平方不會是負的，所以 $F\le(m_1+m_2)g$；只有 $m_1=m_2$（系統不加速）時讀數等於總重。</p>
+<div class="math-block">$$\boxed{\begin{gathered}(m_1+m_2)g-F=\frac{(m_1-m_2)^2g}{m_1+m_2}\ge0\\ \text{只有 }m_1=m_2\text{ 時相等}\end{gathered}}$$</div>
+<h4>(c) 用質心加速度解釋</h4>
+<p><strong>① 質心的加速度：</strong> 把兩個質量＋滑輪看成一個系統，內力（張力）抵消，外力只有重力 $(m_1+m_2)g$ 和秤的拉力 $F$。質心加速度是各質量加速度的加權平均（向下為正）。代入例題 2.9：$m_1$ 以 $a=\dfrac{(m_1-m_2)g}{m_1+m_2}$ 向下（$+a$）、$m_2$ 以同樣大小向上（$-a$）；滑輪不動、質量 0：</p>
+<div class="math-block">$$a_{\text{cm}}=\frac{m_1a-m_2a}{m_1+m_2}=\frac{(m_1-m_2)a}{m_1+m_2}=\frac{(m_1-m_2)^2g}{(m_1+m_2)^2}$$</div>
+<p>（向下。）</p>
+<p><strong>② 系統的運動方程式：</strong></p>
+<p class="fnote"><b>公式（質心運動定律）：</b>$\sum F_{\text{ext}}=Ma_{\text{cm}}$，其中 $\sum F_{\text{ext}}$ 為系統所受外力和、$M$ 為系統總質量、$a_{\text{cm}}$ 為質心加速度；本題 $M=m_1+m_2$，向下為正。</p>
+<div class="math-block">$$(m_1+m_2)g-F=(m_1+m_2)a_{\text{cm}}=\frac{(m_1-m_2)^2g}{m_1+m_2}$$</div>
+<p>和 (b) 相同。重的往下、輕的往上，整體的質心在往下加速，所以支撐力必須小於總重——就像在往下加速的電梯裡體重計讀數變小。</p>
+<div class="math-block">$$\boxed{\text{質心以 }\frac{(m_1-m_2)^2}{(m_1+m_2)^2}g\text{ 向下加速}}$$</div>
+<h4>(d) 數值</h4>
+<p><strong>① 讀數與總重：</strong> 代入 $m_1=3\ \text{kg}$、$m_2=1\ \text{kg}$、$g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$\begin{aligned}F&amp;=\frac{4(3)(1)(9.8)}{3+1}\ \text{N}=29.4\ \text{N}\\(m_1+m_2)g&amp;=4(9.8)\ \text{N}=39.2\ \text{N}\end{aligned}$$</div>
+<p><strong>② 質心加速度：</strong> $m_1-m_2=2$、$m_1+m_2=4$：</p>
+<div class="math-block">$$a_{\text{cm}}=\frac{(2)^2}{(4)^2}g=0.25g=2.45\ \text{m/s}^2$$</div>
+<div class="math-block">$$\boxed{F=29.4\ \text{N}\ (\text{總重 }39.2\ \text{N}),\quad a_{\text{cm}}=2.45\ \text{m/s}^2}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-10b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>在互相垂直的 $\vec E$、$\vec B$ 中由靜止出發：擺線、最遠多遠、最快多快</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-10b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>電荷 $q\gt0$、質量 $m$ 的粒子在 $\vec E=E\hat y$、$\vec B=B\hat z$ 中，$t=0$ 時靜止於原點。令 $\omega=qB/m$。(a) 求 $x(t)$、$y(t)$，並說明軌跡形狀。(b) 粒子沿電場方向最遠到哪裡？最大速率多少？(c) 用功能定理檢查 (b)，並說明為什麼磁場不做功卻能讓粒子停下來。(d) 質子在 $E=1000\ \text{V/m}$、$B=0.01\ \text{T}$ 中的數值。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：粒子電荷 $q\gt0$、質量 $m$；$\vec E=E\hat y$、$\vec B=B\hat z$（均勻、互相垂直）；$t=0$ 靜止於原點；$\omega=qB/m$。(d) 的質子用標準值 $q=1.602\times10^{-19}\ \text{C}$、$m=1.673\times10^{-27}\ \text{kg}$。</p>
+<h4>(a) 解運動方程式</h4>
+<p><strong>① 寫出分量方程式：</strong> 這是習題 2-22 的場（$E_z=0$），沿用同一套方法：先算外積寫分量式，再換變數吸收常數項。</p>
+<p class="fnote"><b>公式（勞侖茲力＋牛頓第二定律）：</b>$m\ddot{\vec r}=q(\vec E+\vec v\times\vec B)$，其中 $q$ 為電荷、$\vec v$ 為速度、$\vec E$、$\vec B$ 為電場與磁場；本題 $\vec E=E\hat y$、$\vec B=B\hat z$。</p>
+<p>外積 $\vec v\times B\hat z=B(\dot y\,\hat x-\dot x\,\hat y)$，加上電力 $qE\hat y$，除以 $m$ 並用 $qE/m=\omega E/B$：</p>
+<div class="math-block">$$\ddot x=\omega\dot y,\qquad\ddot y=\omega\left(\frac EB-\dot x\right)$$</div>
+<p><strong>② 換變數成簡諧方程式：</strong> 令 $u=\dot x-E/B$（相對於漂移速度 $E/B$ 的速度，$\dot u=\ddot x$），得 $\dot u=\omega\dot y$、$\ddot y=-\omega u$，所以</p>
+<div class="math-block">$$\ddot u=-\omega^2u$$</div>
+<p>$(u,\dot y)$ 以角頻率 $\omega$ 轉圈，通解：</p>
+<div class="math-block">$$u=C\cos\omega t+D\sin\omega t,\qquad\dot y=\frac{\dot u}{\omega}=-C\sin\omega t+D\cos\omega t$$</div>
+<p><strong>③ 代入初始條件：</strong> 代入「靜止」：$u(0)=0-E/B$ ⟹ $C=-E/B$；$\dot y(0)=D=0$：</p>
+<div class="math-block">$$\dot x=\frac EB(1-\cos\omega t),\qquad\dot y=\frac EB\sin\omega t$$</div>
+<p><strong>④ 積分得位置：</strong> 從 $0$ 積到 $t$，起點 $x=y=0$：</p>
+<div class="math-block">$$\begin{aligned}x&amp;=\frac EB\left(t-\frac{\sin\omega t}\omega\right)\\y&amp;=\frac{E}{B\omega}(1-\cos\omega t)\end{aligned}$$</div>
+<p>這是半徑 $E/B\omega$ 的圓沿 $x$ 軸以速率 $E/B$ 滾動時邊緣一點的軌跡：擺線。粒子平均以 $E/B$ 沿 $\vec E\times\vec B$ 方向漂移。</p>
+<div class="math-block">$$\boxed{\begin{gathered}x=\frac EB\left(t-\frac{\sin\omega t}\omega\right),\quad y=\frac{E}{B\omega}(1-\cos\omega t)\\ \text{軌跡為擺線}\end{gathered}}$$</div>
+<h4>(b) 最遠與最快</h4>
+<p><strong>① 最遠的 $y$：</strong> 直接從 (a) 的 $y(t)$ 讀最大值。$y=\dfrac{E}{B\omega}(1-\cos\omega t)$ 在 $\cos\omega t=-1$（$\omega t=\pi$）最大，再代入 $\omega=qB/m$：</p>
+<div class="math-block">$$y_{\max}=\frac{2E}{B\omega}=\frac{2mE}{qB^2}$$</div>
+<p><strong>② 最大速率：</strong> 速率平方，用 $\cos^2+\sin^2=1$：</p>
+<div class="math-block">$$\begin{aligned}v^2&amp;=\dot x^2+\dot y^2=\frac{E^2}{B^2}\left[(1-\cos\omega t)^2+\sin^2\omega t\right]\\&amp;=\frac{E^2}{B^2}(2-2\cos\omega t)\end{aligned}$$</div>
+<p>也在 $\cos\omega t=-1$ 最大，就在擺線的頂點：</p>
+<div class="math-block">$$v_{\max}^2=\frac{4E^2}{B^2}$$</div>
+<div class="math-block">$$\boxed{y_{\max}=\frac{2mE}{qB^2},\qquad v_{\max}=\frac{2E}{B}}$$</div>
+<h4>(c) 用功能定理檢查，並說明磁場的角色</h4>
+<p><strong>① 只有電力做功：</strong> 磁力垂直 $\vec v$ 不做功，所以功能定理能獨立檢查 (b)。從原點走到高度 $y$ 時電力做功 $qEy$，起始動能 0。</p>
+<p class="fnote"><b>公式（功能定理）：</b>$\Delta T=W$，其中 $T=\tfrac12mv^2$ 為動能、$W$ 為合力做的功；本題 $W=qEy$（只有電力做功）、起始 $T=0$。</p>
+<div class="math-block">$$\tfrac12mv^2=qEy$$</div>
+<p><strong>② 代入兩邊比較：</strong> 代入 (b) 的 $v^2$、(a) 的 $y$，以及 $m=qB/\omega$：</p>
+<div class="math-block">$$\begin{aligned}\text{左}&amp;=\frac12\cdot\frac{qB}\omega\cdot\frac{2E^2}{B^2}(1-\cos\omega t)\\&amp;=\frac{qE^2}{B\omega}(1-\cos\omega t)\\\text{右}&amp;=qE\cdot\frac{E}{B\omega}(1-\cos\omega t)\\&amp;=\frac{qE^2}{B\omega}(1-\cos\omega t)\end{aligned}$$</div>
+<p>兩邊相等。</p>
+<p><strong>③ 磁場不做功卻能讓粒子停下：</strong> 磁力不改變速率，但把速度轉向；粒子被轉到逆著電場走時，電力做負功讓它減速，回到 $y=0$ 時剛好停下（$v^2\propto y$）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\tfrac12mv^2=qEy\ \text{成立}\\ \text{磁力只轉向，減速靠電力做負功}\end{gathered}}$$</div>
+<h4>(d) 質子的數值</h4>
+<p><strong>① 角頻率：</strong> 代入 $B=0.01\ \text{T}$ 與質子的 $q$、$m$：</p>
+<div class="math-block">$$\omega=\frac{qB}{m}=\frac{(1.602\times10^{-19})(0.01)}{1.673\times10^{-27}}\ \text{s}^{-1}=9.58\times10^5\ \text{s}^{-1}$$</div>
+<p><strong>② 漂移速率：</strong> 代入 $E=1000\ \text{V/m}$、$B=0.01\ \text{T}$：</p>
+<div class="math-block">$$\frac EB=\frac{1000}{0.01}\ \text{m/s}=10^5\ \text{m/s}$$</div>
+<p><strong>③ 代入 (b) 的公式：</strong></p>
+<div class="math-block">$$\begin{aligned}y_{\max}&amp;=\frac{2(10^5)}{9.58\times10^5}\ \text{m}=0.209\ \text{m}\\v_{\max}&amp;=2(10^5)\ \text{m/s}=2\times10^5\ \text{m/s}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{y_{\max}\approx0.21\ \text{m},\qquad v_{\max}=2\times10^5\ \text{m/s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>Atwood：$a=\dfrac{(m_1-m_2)g}{m_1+m_2}$、$T=\dfrac{2m_1m_2g}{m_1+m_2}$；電梯以 $\alpha$ 下降加速時 $g\to g-\alpha$。</li>
+    <li>多物體：每個物體一條 $F=ma$，再用拘束（繩長不變）連接加速度；加速度一律在慣性系量。</li>
+    <li>均勻磁場：速率不變，螺旋半徑 $mv_\perp/qB$、角頻率 $\omega_c=qB/m$；再加電場：平行 $\vec B$ 的分量等加速，垂直方向平均漂移 $E_\perp/B$。</li>
+  </ol>
+</div>

@@ -1,0 +1,439 @@
+<h2>二、愛因斯坦固體 <span class="pg">課本 §2.2 · p.53–55</span></h2>
+
+<p class="lead">硬幣每枚只能放一個「單位」；真實的固體裡，每個原子振動可以存任意多份能量。這一節的模型叫愛因斯坦固體，關鍵公式 $\Omega(N,q)=\binom{q+N-1}{q}$ 用一個漂亮的「點與線」技巧證明。</p>
+
+<h3 id="te-model">2.1 等間距能階的振子 <span class="pg-tag">p.53–54</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.53–54 愛因斯坦固體（Einstein solid）</span>
+  <p>量子諧振子（位能 $\tfrac12k_sx^2$）的能階等間距，間隔 $hf$，$f=\frac1{2\pi}\sqrt{k_s/m}$。從基態算起，允許的能量是 $0,\ hf,\ 2hf,\dots$。三維固體中每個原子可沿三個方向振動，所以 $N$ 個振子對應 $N/3$ 個原子。$N$ 個同頻率振子的集合（Fig. 2.2）就是愛因斯坦固體。</p>
+</div>
+
+<p>為什麼可以從 0 算？真正的能階是 $\tfrac12hf,\ \tfrac32hf,\dots$，但最低的「零點能」$\tfrac12hf$ 永遠在那裡、不會流動，不參與熱交換，所以把它扣掉不影響任何熱力學結論。這樣固體的總能量就是 $U=q\,hf$，只要說「有 $q$ 份能量」就夠了。<strong>注意「振子」不等於「原子」</strong>：一個原子有 $x,y,z$ 三個方向的振動，算三個振子。</p>
+
+<h3 id="te-count">2.2 多重度公式與「點與線」證明 <span class="pg-tag">p.54–55</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.55 Eq. (2.9) 愛因斯坦固體的多重度</span>
+  $$\Omega(N,q)=\binom{q+N-1}{q}=\frac{(q+N-1)!}{q!\,(N-1)!}$$
+  <p>$N$：振子數；$q$：能量單位數（$U=q\,hf$）。</p>
+</div>
+
+<div class="step" data-step="te-dots" data-sym="q,N">
+  <span class="step-title">把微觀態畫成一串符號</span>
+  <p>每一份能量畫成一個點 $\bullet$，振子和振子之間畫一條隔線 $|$。例如四個振子分別有 1、3、0、4 份：</p>
+  $$\bullet\,|\,\bullet\bullet\bullet\,|\,|\,\bullet\bullet\bullet\bullet$$
+  <p>$N$ 個振子要 $N-1$ 條隔線；$q$ 份能量是 $q$ 個點。每一個微觀態都恰好對應一串符號，每一串符號也恰好對應一個微觀態（一對一）。</p>
+</div>
+<div class="step" data-step="te-choose">
+  <span class="step-title">數符號串</span>
+  <p>總共有 $q+N-1$ 個位置，從中選 $q$ 個放點（其餘自動是隔線），方法數就是</p>
+  $$\Omega(N,q)=\binom{q+N-1}{q}$$
+</div>
+
+<div class="anim" data-anim="t2-dots"></div>
+
+<p>為什麼不直接說「每份能量選一個振子，$N^q$ 種」？因為能量單位是不可分辨的：「第一份給 A、第二份給 B」和「第一份給 B、第二份給 A」是同一個微觀態。$N^q$ 把順序算進去了；點與線的串列只看「每個振子有幾份」，正好去掉了重複。</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-ein3">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.2 Table 2.2 · p.54</span></div>
+    <h4>三個振子的愛因斯坦固體</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-ein3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$N=3$ 的愛因斯坦固體，總能量 $q=0,1,2,3$ 份時各有幾個微觀態？用 (2.9) 驗證。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振子數</td><td>$N=3$</td><td>「$N=3$ 的愛因斯坦固體」；三個振子位置不同，<b>分辨得出</b></td></tr>
+          <tr><td>能量份數</td><td>$q=0,1,2,3$</td><td>「總能量 $q=0,1,2,3$ 份時」</td></tr>
+          <tr><td>一個振子能存幾份</td><td>$0,1,2,\dots$ 份都可以</td><td>「愛因斯坦固體」：每個振子的能階是 $0,\ hf,\ 2hf,\dots$（本節 2.1）</td></tr>
+          <tr><td>能量單位</td><td>沒有編號、不可分辨</td><td>題目沒寫；一份能量就是一份，只看每個振子「有幾份」</td></tr>
+          <tr><td>要驗證的公式</td><td>$\Omega(N,q)=\binom{q+N-1}{q}$</td><td>「用 <b>(2.9)</b> 驗證」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$q=0,1,2,3$ 時各有幾個微觀態，並用 (2.9) 檢查。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>振子分辨得出、能量單位分辨不出，<b>所以</b>一個微觀態就是「1、2、3 號振子各有幾份」，寫成三個數字 $(n_1,n_2,n_3)$，條件是 $n_1+n_2+n_3=q$。</p>
+      <p><b>因為</b>一個振子可以存好幾份（不像硬幣只有 0 或 1），直接亂列容易漏，<b>所以</b>先列出「份數的分配型態」（例如 $q=3$ 的 $3+0+0$、$2+1+0$、$1+1+1$），再數每個型態能排成幾種，最後代入 (2.9) 比對。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-ein3-s1" data-sym="q,N">
+        <span class="step-title">一個型態有幾種排法</span>
+        <p>例如型態 $2+1+0$：三個數字都不同，分給三個可分辨的振子有 $3!=6$ 種；型態 $1+1+0$ 有兩個數字相同，對調它們得到同一個微觀態，所以要除以 $2!$：</p>
+        $$\text{排法數}=\frac{N!}{(\text{相同數字個數})!\ \text{的乘積}}$$
+        <p class="sub">代入 $N=3$（題目）：三數全不同 $3!=6$；兩個相同 $\tfrac{3!}{2!}=3$；三個相同 $\tfrac{3!}{3!}=1$。</p>
+      </div>
+      <div class="step" data-step="te3a" data-sym="Omega">
+        <span class="step-title">逐一窮舉 $q=0,1,2,3$</span>
+        <p>微觀態寫成 $n_1n_2n_3$。</p>
+        <p>$q=0$：型態 $0+0+0$，只有 000。</p>
+        <p>$q=1$：型態 $1+0+0$（兩個 0 相同，3 種）：100、010、001。</p>
+        <p>$q=2$：型態 $2+0+0$（3 種）：200、020、002；型態 $1+1+0$（3 種）：110、101、011。</p>
+        <p>$q=3$：型態 $3+0+0$（3 種）：300、030、003；型態 $2+1+0$（6 種）：210、201、120、021、102、012；型態 $1+1+1$（1 種）：111。</p>
+        $$\Omega(0)=1,\quad\Omega(1)=3,\quad\Omega(2)=3+3=6,\quad\Omega(3)=3+6+1=10$$
+      </div>
+      <div class="step" data-step="te3b">
+        <span class="step-title">公式 (2.9) 檢查</span>
+        $$\Omega(N,q)=\binom{q+N-1}{q}$$
+        <p class="sub">代入 $N=3$（題目），$\Omega(3,q)=\binom{q+2}{q}$，$q=0,1,2,3$：</p>
+        $$\begin{aligned}\Omega(3,0)&=\binom20=1\\\Omega(3,1)&=\binom31=3\\\Omega(3,2)&=\binom42=\frac{4\cdot3}{2!}=6\\\Omega(3,3)&=\binom53=\frac{5\cdot4\cdot3}{3!}=10\end{aligned}$$
+        <p>四個數都和步驟 2 窮舉的結果相同。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$q=0,1,2,3$ 的微觀態數 $\Omega=1,3,6,10$，與公式 $\binom{q+2}{q}$ 一致。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$q=3$ 的 10 種中，「3 份全在同一個振子」3 種、「2+1」6 種、「1+1+1」1 種：$3+6+1=10$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-5">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-5（Problem 2.5）· p.55 · 熱學小考（上）作業題</span></div>
+    <h4>列出微觀態驗證 (2.9)</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-5"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>For an Einstein solid with each of the following values of N and q, list all of the possible microstates, count them, and verify formula 2.9.</p><p>(a) N = 3, q = 4</p><p>(b) N = 3, q = 5</p><p>(c) N = 3, q = 6</p><p>(d) N = 4, q = 2</p><p>(e) N = 4, q = 3</p><p>(f) N = 1, q = anything</p><p>(g) N = anything, q = 1</p></div>
+<p class="original-caption">Schroeder 習題 2-5（Problem 2.5）· p.55 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>對下列 $N$、$q$ 的愛因斯坦固體，列出所有微觀態、數數看，並驗證公式 2.9：(a) $N=3,q=4$；(b) $N=3,q=5$；(c) $N=3,q=6$；(d) $N=4,q=2$；(e) $N=4,q=3$；(f) $N=1$，$q$ 任意；(g) $N$ 任意，$q=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>(a)(b)(c)</td><td>$N=3$；$q=4,\ 5,\ 6$</td><td>「(a) $N=3,q=4$；(b) $N=3,q=5$；(c) $N=3,q=6$」</td></tr>
+          <tr><td>(d)(e)</td><td>$N=4$；$q=2,\ 3$</td><td>「(d) $N=4,q=2$；(e) $N=4,q=3$」</td></tr>
+          <tr><td>(f)(g)</td><td>$N=1$、$q$ 任意；$N$ 任意、$q=1$</td><td>「(f) $N=1$，$q$ 任意；(g) $N$ 任意，$q=1$」</td></tr>
+          <tr><td>振子與能量</td><td>振子可分辨；能量單位不可分辨；一個振子可存任意多份</td><td>「愛因斯坦固體」（本節 2.1、2.2）</td></tr>
+          <tr><td>要驗證的公式</td><td>$\Omega(N,q)=\binom{q+N-1}{q}$</td><td>「驗證<b>公式 2.9</b>」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：每一組 $(N,q)$ 列出所有微觀態、數出個數，並和 (2.9) 比對。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>微觀態最多有 28 個，一個一個想容易漏或重複，<b>所以</b>先把 $q$ 拆成「每個振子幾份」的<b>型態</b>（份數由大到小排，例如 $q=4$ 拆成 $4+0+0$、$3+1+0$、$2+2+0$、$2+1+1$），型態列完就不會漏。</p>
+      <p><b>因為</b>振子分辨得出，同一個型態把數字分給不同的振子是不同的微觀態，<b>所以</b>每個型態的排法數是 $N!$ 除以「相同數字個數的階乘」（相同的數字對調不產生新的微觀態）。各型態相加就是 $\Omega$，再代入 (2.9) 比對。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-5-s1">
+        <span class="step-title">每個型態的排法數</span>
+        <p>令 $m_k$＝有 $k$ 份能量的振子個數（相同數字有幾個），相同數字互換不產生新的微觀態，所以</p>
+        $$\text{排法數}=\frac{N!}{m_0!\,m_1!\,m_2!\cdots}$$
+        <p class="sub">代入 $N=3$：三數全不同 $3!=6$，兩個相同 $\tfrac{3!}{2!}=3$，三個相同 $1$。代入 $N=4$：$(2,0,0,0)$ 有三個 0，$\tfrac{4!}{3!}=4$；$(1,1,0,0)$ 是 $\tfrac{4!}{2!\,2!}=6$；$(2,1,0,0)$ 是 $\tfrac{4!}{2!}=12$；$(1,1,1,0)$ 是 $\tfrac{4!}{3!}=4$。</p>
+      </div>
+      <div class="step" data-step="t25a" data-sym="Omega,q,N">
+        <span class="step-title">(a) $N=3,q=4$</span>
+        <p>微觀態寫成 $n_1n_2n_3$：</p>
+        <p>$(4,0,0)$：400、040、004（3）；$(3,1,0)$：310、301、130、031、103、013（6）；$(2,2,0)$：220、202、022（3）；$(2,1,1)$：211、121、112（3）。</p>
+        <p class="sub">代入 (2.9)：$N=3$、$q=4$（題目 (a)）：</p>
+        $$\text{數出 }3+6+3+3=15$$
+        $$\binom{4+3-1}{4}=\binom64=\frac{6\cdot5}{2!}=15\quad\checkmark$$
+      </div>
+      <div class="step" data-step="t25b">
+        <span class="step-title">(b) $N=3,q=5$</span>
+        <p>$(5,0,0)$：500、050、005（3）；$(4,1,0)$：410、401、140、041、104、014（6）；$(3,2,0)$：320、302、230、032、203、023（6）；$(3,1,1)$：311、131、113（3）；$(2,2,1)$：221、212、122（3）。</p>
+        <p class="sub">代入 (2.9)：$N=3$、$q=5$（題目 (b)）：</p>
+        $$\text{數出 }3+6+6+3+3=21$$
+        $$\binom{7}{5}=\binom72=\frac{7\cdot6}{2!}=21\quad\checkmark$$
+      </div>
+      <div class="step" data-step="t25c">
+        <span class="step-title">(c) $N=3,q=6$</span>
+        <p>$(6,0,0)$：600、060、006（3）；$(5,1,0)$：510、501、150、051、105、015（6）；$(4,2,0)$：420、402、240、042、204、024（6）；$(4,1,1)$：411、141、114（3）；$(3,3,0)$：330、303、033（3）；$(3,2,1)$：321、312、231、213、132、123（6）；$(2,2,2)$：222（1）。</p>
+        <p class="sub">代入 (2.9)：$N=3$、$q=6$（題目 (c)）：</p>
+        $$\text{數出 }3+6+6+3+3+6+1=28$$
+        $$\binom86=\binom82=\frac{8\cdot7}{2!}=28\quad\checkmark$$
+      </div>
+      <div class="step" data-step="t25d">
+        <span class="step-title">(d)(e) $N=4$</span>
+        <p>(d) $q=2$，寫成 $n_1n_2n_3n_4$：$(2,0,0,0)$：2000、0200、0020、0002（4）；$(1,1,0,0)$：1100、1010、1001、0110、0101、0011（6）。</p>
+        <p class="sub">代入 (2.9)：$N=4$、$q=2$（題目 (d)）：</p>
+        $$\text{數出 }4+6=10$$
+        $$\binom{2+4-1}{2}=\binom52=10\quad\checkmark$$
+        <p>(e) $q=3$：$(3,0,0,0)$：3000、0300、0030、0003（4）；$(2,1,0,0)$：2100、2010、2001、1200、0210、0201、1020、0120、0021、1002、0102、0012（12）；$(1,1,1,0)$：1110、1101、1011、0111（4）。</p>
+        <p class="sub">代入 (2.9)：$N=4$、$q=3$（題目 (e)）：</p>
+        $$\text{數出 }4+12+4=20$$
+        $$\binom63=\frac{6\cdot5\cdot4}{3!}=20\quad\checkmark$$
+      </div>
+      <div class="step" data-step="t25e">
+        <span class="step-title">(f)(g) 極端情況</span>
+        <p>(f) 只有一個振子，$q$ 份全在它身上，只有 1 個微觀態。代入 $N=1$：</p>
+        $$\binom{q+1-1}{q}=\binom qq=1\quad\checkmark$$
+        <p>(g) 只有一份能量，看它在 $N$ 個振子中的哪一個：100…0、010…0、…、00…01，共 $N$ 個。代入 $q=1$：</p>
+        $$\binom{1+N-1}{1}=\binom N1=N\quad\checkmark$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 15；(b) 21；(c) 28；(d) 10；(e) 20；(f) 1；(g) $N$。全部與 $\binom{q+N-1}{q}$ 相符。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>每個型態的排法數是「多項式係數」，例如 $(3,2,1)$ 三個數都不同，排法 $3!=6$；$(2,2,1)$ 有兩個相同，$3!/2!=3$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-6">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-6（Problem 2.6）· p.55</span></div>
+    <h4>30 個振子、30 份能量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the multiplicity of an Einstein solid with 30 oscillators and 30 units of energy. (Do not attempt to list all the microstates.)</p></div>
+<p class="original-caption">Schroeder 習題 2-6（Problem 2.6）· p.55</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>計算 30 個振子、30 份能量的愛因斯坦固體的多重度。（不要試著列出所有微觀態。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振子數</td><td>$N=30$</td><td>「<b>30 個振子</b>」</td></tr>
+          <tr><td>能量份數</td><td>$q=30$</td><td>「<b>30 份能量</b>」</td></tr>
+          <tr><td>系統</td><td>愛因斯坦固體，可用 (2.9)</td><td>「愛因斯坦固體的多重度」</td></tr>
+          <tr><td>作法限制</td><td>不窮舉，用公式</td><td>「（<b>不要試著列出</b>所有微觀態。）」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\Omega(30,30)$ 的數值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這是愛因斯坦固體、$N$ 和 $q$ 都給了，而題目明說不要列舉，<b>所以</b>直接代入 (2.9) $\Omega(N,q)=\binom{q+N-1}{q}$。</p>
+      <p><b>因為</b> $59!$ 有 81 位數，一般計算機會溢位，<b>所以</b>可以用常用對數 $\log_{10}$ 把乘除變成加減，算完再取 $10$ 的次方（這也是第 4 節處理大數的方法）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t26a" data-sym="Omega">
+        <span class="step-title">代入 (2.9)</span>
+        $$\Omega(N,q)=\binom{q+N-1}{q}=\frac{(q+N-1)!}{q!\,(N-1)!}$$
+        <p class="sub">代入 $N=30$、$q=30$（題目「30 個振子、30 份能量」），$q+N-1=59$、$N-1=29$：</p>
+        $$\Omega(30,30)=\binom{59}{30}=\frac{59!}{30!\,29!}$$
+      </div>
+      <div class="step" data-step="sc-2-6-s2">
+        <span class="step-title">用對數算出數值</span>
+        <p>取 $\log_{10}$，除法變成減法：</p>
+        $$\log_{10}\Omega=\log_{10}59!-\log_{10}30!-\log_{10}29!$$
+        <p class="sub">代入（計算機的 $\log_{10}$ 或 $\ln\Gamma$ 函數）$\log_{10}59!=80.1420$、$\log_{10}30!=32.4237$、$\log_{10}29!=30.9465$：</p>
+        $$\log_{10}\Omega=80.1420-32.4237-30.9465=16.7718$$
+        $$\Omega=10^{16.7718}=10^{0.7718}\times10^{16}=5.91\times10^{16}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\Omega(30,30)=\binom{59}{30}\approx5.9\times10^{16}$</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>只有 30 個振子就已經 $10^{16}$，這是為什麼之後要改用 $\ln\Omega$ 和 Stirling 近似 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-7">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-7（Problem 2.7）· p.55 · 熱學小考（上）作業題</span></div>
+    <h4>用點與線畫出所有微觀態</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>For an Einstein solid with four oscillators and two units of energy, represent each possible microstate as a series of dots and vertical lines, as used in the text to prove equation 2.9.</p></div>
+<p class="original-caption">Schroeder 習題 2-7（Problem 2.7）· p.55 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>四個振子、兩份能量的愛因斯坦固體，把每個可能的微觀態畫成一串點與直線（課本證明 2.9 用的表示法）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振子數</td><td>$N=4$ ⟹ 隔線 $N-1=3$ 條</td><td>「<b>四個振子</b>」；四格之間要 3 條隔線</td></tr>
+          <tr><td>能量份數</td><td>$q=2$ ⟹ 點 2 個</td><td>「<b>兩份能量</b>」</td></tr>
+          <tr><td>表示法</td><td>一份能量＝$\bullet$，振子之間＝$|$</td><td>「一串點與直線（課本證明 2.9 用的表示法）」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：把每一個微觀態畫成一串點與直線（全部列出）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每個微觀態恰好對應一串「$q$ 個點＋$N-1$ 條隔線」的排列，每一串也恰好對應一個微觀態（一對一），<b>所以</b>列出所有符號串就是列出所有微觀態；總數是 $q+N-1$ 個位置中選 $q$ 個放點。</p>
+      <p><b>因為</b>只有 2 個點，它們不是在同一格就是在不同格，<b>所以</b>分這兩類列，可以確定沒有漏掉。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-7-s1">
+        <span class="step-title">先算應該有幾串</span>
+        <p>符號串從左讀到右：第一條隔線之前的點數是 1 號振子的份數，第一、二條隔線之間是 2 號，依此類推。總共有 $q+N-1$ 個符號，選哪 $q$ 個位置放點：</p>
+        $$\Omega(N,q)=\binom{q+N-1}{q}$$
+        <p class="sub">代入 $N=4$、$q=2$（題目「四個振子和兩份能量」），$q+N-1=5$：</p>
+        $$\Omega(4,2)=\binom52=\frac{5\cdot4}{2!}=10$$
+      </div>
+      <div class="step" data-step="t27a" data-sym="q,N">
+        <span class="step-title">兩點在同一格（4 種）</span>
+        <p>兩份都給同一個振子，看是哪一個振子：4 種。</p>
+        $$\bullet\bullet|||\qquad|\bullet\bullet||\qquad||\bullet\bullet|\qquad|||\bullet\bullet$$
+        <p>依序是 2000、0200、0020、0002。</p>
+      </div>
+      <div class="step" data-step="t27b">
+        <span class="step-title">兩點在不同格（6 種）</span>
+        <p>從 4 個振子選 2 個各給一份：$\binom42=6$ 種。</p>
+        $$\bullet|\bullet||\quad\bullet||\bullet|\quad\bullet|||\bullet$$
+        $$|\bullet|\bullet|\quad|\bullet||\bullet\quad||\bullet|\bullet$$
+        <p>依序是 1100、1010、1001、0110、0101、0011。合計 $4+6=10$，和步驟 1 相同。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>共 10 串，對應 2000、0200、0020、0002、1100、1010、1001、0110、0101、0011。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$4+6=10=\binom52$，和習題 2.5(d) 相同 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-02a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>一個振子分到幾份能量</h4>
+    <button type="button" class="exam-btn" data-exam="sf-02a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>愛因斯坦固體有 $N=3$ 個振子、$q=4$ 份能量，所有微觀態等機率。(a) 求 1 號振子剛好有 $n$ 份能量的機率 $P(n)$，$n=0,\dots,4$。(b) 求 1 號振子的平均能量（以份為單位），檢查是否等於 $q/N$。(c) $N$、$q$ 都很大且 $n\ll q$ 時，證明 $P(n+1)/P(n)\approx q/(q+N)$，所以 $P(n)$ 是等比數列；$q=N$ 時公比是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振子數</td><td>$N=3$</td><td>「愛因斯坦固體有 $N=3$ 個振子」</td></tr>
+          <tr><td>能量份數</td><td>$q=4$</td><td>「$q=4$ 份能量」</td></tr>
+          <tr><td>機率假設</td><td>整個固體的微觀態等機率</td><td>「所有微觀態<b>等機率</b>」</td></tr>
+          <tr><td>(c) 的條件</td><td>$N,q\gg1$，$n\ll q$</td><td>(c)「$N$、$q$ 都<b>很大</b>且 $n\ll q$」：可以做近似</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 1 號振子剛好有 $n$ 份的機率 $P(n)$，$n=0,\dots,4$；(b) 1 號振子的平均份數，是否等於 $q/N$；(c) 證明 $P(n+1)/P(n)\approx q/(q+N)$，並求 $q=N$ 時的公比。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>整個固體的微觀態等機率，<b>所以</b> $P(n)$＝「1 號振子有 $n$ 份的微觀態數」÷「全部微觀態數」。<b>因為</b>固定 1 號振子有 $n$ 份之後，其餘 $N-1$ 個振子分剩下的 $q-n$ 份，本身就是一個小愛因斯坦固體，<b>所以</b>分子是 $\Omega(N-1,q-n)$：</p>
+      $$P(n)=\frac{\Omega(N-1,\,q-n)}{\Omega(N,q)}$$
+      <p>這等於把「一個振子」當小系統、其餘當大系統，是第 3 節兩系統分能量的特例。(b) 用平均值的定義 $\sum nP(n)$；(c) <b>因為</b>只要相鄰兩項的比，<b>所以</b>寫成階乘後大部分約掉，再用 $n\ll q$、$N\gg1$ 近似。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf02a1" data-sym="Omega,q">
+        <span class="step-title">(a) 分母與分子的多重度</span>
+        <p>分母：整個固體 $\Omega(N,q)=\binom{q+N-1}{q}$。分子：其餘兩個振子分 $m$ 份，$\Omega(2,m)=\binom{m+1}{m}=m+1$（另一個振子拿 $0,1,\dots,m$ 份中的哪一個）。</p>
+        <p class="sub">代入 $N=3$、$q=4$（題目），$m=q-n=4-n$：</p>
+        $$\Omega(3,4)=\binom64=15$$
+        $$\Omega(2,4-n)=(4-n)+1=5-n$$
+      </div>
+      <div class="step" data-step="sf-02a-s2">
+        <span class="step-title">(a) 逐一算 $P(n)$</span>
+        $$P(n)=\frac{\Omega(2,4-n)}{\Omega(3,4)}=\frac{5-n}{15}$$
+        <p class="sub">代入 $n=0,1,2,3,4$（題目要求的範圍）：</p>
+        $$P(0)=\frac5{15},\quad P(1)=\frac4{15},\quad P(2)=\frac3{15}$$
+        $$P(3)=\frac2{15},\quad P(4)=\frac1{15}$$
+        <p>總和 $\tfrac{5+4+3+2+1}{15}=1$。</p>
+      </div>
+      <div class="step" data-step="sf02a2">
+        <span class="step-title">(b) 平均份數</span>
+        <p>平均值的定義是每個可能值乘上它的機率再相加：</p>
+        $$\langle n\rangle=\sum_{n=0}^{4}n\,P(n)$$
+        <p class="sub">代入步驟 2 的 $P(n)$：</p>
+        $$\langle n\rangle=\frac{0\cdot5+1\cdot4+2\cdot3+3\cdot2+4\cdot1}{15}=\frac{20}{15}=\frac43$$
+        <p>題目的 $q/N=4/3$，相等。原因：三個振子地位對稱，平均必須各分 $q/N$。</p>
+      </div>
+      <div class="step" data-step="sf02a3" data-sym="N">
+        <span class="step-title">(c) 相鄰兩項的比</span>
+        <p>令 $m=q-n$。$P(n+1)$ 的分子是其餘振子分 $m-1$ 份，分母 $\Omega(N,q)$ 相同會約掉：</p>
+        $$\frac{P(n+1)}{P(n)}=\frac{\Omega(N-1,m-1)}{\Omega(N-1,m)}$$
+        <p>其中由 (2.9)，</p>
+        $$\Omega(N-1,m)=\frac{(m+N-2)!}{m!\,(N-2)!}$$
+        <p class="sub">代入上式，$(N-2)!$ 約掉，再用 $m!=m\,(m-1)!$、$(m+N-2)!=(m+N-2)\,(m+N-3)!$：</p>
+        $$\frac{P(n+1)}{P(n)}=\frac{(m+N-3)!}{(m-1)!}\cdot\frac{m!}{(m+N-2)!}=\frac{m}{m+N-2}$$
+        <p>近似：$n\ll q$ 所以 $m=q-n\approx q$；$N\gg1$ 所以 $N-2\approx N$。於是</p>
+        $$\frac{P(n+1)}{P(n)}\approx\frac q{q+N}\quad\Longrightarrow\quad P(n)\propto\left(\frac q{q+N}\right)^n$$
+      </div>
+      <div class="step" data-step="sf-02a-s5">
+        <span class="step-title">(c) $q=N$ 時的公比</span>
+        <p class="sub">代入 $q=N$（題目 (c) 最後一問）：</p>
+        $$\frac{q}{q+N}=\frac{N}{2N}=\frac12$$
+        <p>等比數列 $P(n)=P(0)\,r^n$ 要加起來等於 1，$P(0)\sum r^n=P(0)/(1-r)=1$，所以 $P(0)=1-r=\tfrac12$、$P(1)\approx\tfrac14$、$P(2)\approx\tfrac18$……</p>
+      </div>
+      <div class="step" data-step="sf02a4">
+        <span class="step-title">物理意義</span>
+        <p>整個固體的微觀態等機率，但<strong>單一振子的能量並不等機率</strong>：一個振子拿越多，留給其他振子的越少、排法越少，所以機率指數遞減。這就是第 6 章波茲曼因子 $e^{-E/kT}$ 的雛形（愛因斯坦固體 $q/(q+N)=e^{-\epsilon/kT}$）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $P(n)=(5-n)/15$，即 $\tfrac5{15},\tfrac4{15},\tfrac3{15},\tfrac2{15},\tfrac1{15}$；(b) $\langle n\rangle=4/3=q/N$；(c) 公比 $q/(q+N)$，$q=N$ 時為 $1/2$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$N=q=1000$ 精確計算：$P(0)=\frac{999}{1999}=0.4998$、$P(1)/P(0)=\frac{1000}{1998}=0.5005$，和 $\tfrac12$ 一致 ✔；(a) 的機率總和 $15/15=1$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-02b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>用遞迴式證明 $\Omega(N,q)$</h4>
+    <button type="button" class="exam-btn" data-exam="sf-02b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 依「1 號振子分到幾份」分類，證明 $\Omega(N,q)=\sum_{n=0}^{q}\Omega(N-1,q-n)$。(b) 用 (a) 與 $\Omega(1,q)=1$ 算出 $\Omega(2,q)$、$\Omega(3,q)$，檢查 Table 2.2 的 $\Omega(3,3)=10$。(c) 用數學歸納法證明 $\binom{q+N-1}{q}$ 滿足 (a) 的遞迴式，因此 (2.9) 不靠「點與線」也成立。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>$\Omega(N,q)$ 的意義</td><td>$N$ 個振子分 $q$ 份能量的微觀態數</td><td>愛因斯坦固體的定義（本節 2.2）；振子可分辨、能量單位不可分辨</td></tr>
+          <tr><td>分類方式</td><td>依 1 號振子分到 $n$ 份，$n=0,1,\dots,q$</td><td>(a)「依『<b>1 號振子分到幾份</b>』分類」</td></tr>
+          <tr><td>起始條件</td><td>$\Omega(1,q)=1$</td><td>(b)「用 (a) 與 $\Omega(1,q)=1$」：只有一個振子時能量全給它</td></tr>
+          <tr><td>對照值</td><td>$\Omega(3,3)=10$</td><td>(b)「檢查 Table 2.2 的 $\Omega(3,3)=10$」</td></tr>
+          <tr><td>Pascal 公式</td><td>$\binom ab=\binom{a-1}b+\binom{a-1}{b-1}$</td><td>題目沒給，(c) 歸納時要用的組合恆等式</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明 $\Omega(N,q)=\sum_{n=0}^{q}\Omega(N-1,q-n)$；(b) 算出 $\Omega(2,q)$、$\Omega(3,q)$ 並檢查 $\Omega(3,3)=10$；(c) 用數學歸納法證明 $\binom{q+N-1}{q}$ 滿足 (a) 的遞迴式，因此 (2.9) 成立。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>每個微觀態的 1 號振子都有確定的份數 $n$，按 $n$ 分組<b>不重複也不遺漏</b>，<b>所以</b>總數＝各組個數相加（加法原理）；每組裡 1 號已固定，其餘 $N-1$ 個振子分剩下的 $q-n$ 份，個數就是 $\Omega(N-1,q-n)$。</p>
+      <p>(b) <b>因為</b>遞迴式把 $N$ 的值用 $N-1$ 的值表示，<b>所以</b>從已知的 $N=1$ 一層一層往上代。</p>
+      <p>(c) <b>因為</b>遞迴式加上起始條件就唯一決定了所有 $\Omega(N,q)$，<b>所以</b>只要證明 $\binom{q+N-1}{q}$ 也滿足同樣的起始條件與遞迴式，它就等於 $\Omega(N,q)$。遞迴式右邊是一個和，要再對 $q$ 歸納，每一步用 Pascal 公式把兩項併成一項。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf02b1" data-sym="N,q">
+        <span class="step-title">(a) 按 1 號振子的份數分組</span>
+        <p>1 號振子有 $n$ 份（$n=0,\dots,q$）的微觀態，就是其餘 $N-1$ 個振子分 $q-n$ 份的方法數 $\Omega(N-1,q-n)$。不同的 $n$ 互斥、合起來是全部：</p>
+        $$\Omega(N,q)=\sum_{n=0}^{q}\Omega(N-1,q-n)$$
+      </div>
+      <div class="step" data-step="sf02b2">
+        <span class="step-title">(b) $N=2$：每一項都是 1</span>
+        <p class="sub">代入 $N=2$，右邊每一項是 $\Omega(1,q-n)=1$（題目給的起始條件），共 $q+1$ 項：</p>
+        $$\Omega(2,q)=\sum_{n=0}^q\Omega(1,q-n)=\sum_{n=0}^q1=q+1$$
+      </div>
+      <div class="step" data-step="sf-02b-s3">
+        <span class="step-title">(b) $N=3$：等差數列求和</span>
+        <p class="sub">代入 $N=3$，每一項用上一步的 $\Omega(2,q-n)=q-n+1$；令 $m=q-n+1$，$n=0\to q$ 時 $m=q+1\to1$：</p>
+        $$\Omega(3,q)=\sum_{n=0}^q(q-n+1)=\sum_{m=1}^{q+1}m=\frac{(q+1)(q+2)}2$$
+        <p class="sub">代入 $q=3$（題目要檢查的 $\Omega(3,3)$）：</p>
+        $$\Omega(3,3)=\frac{4\cdot5}2=10$$
+        <p>和 Table 2.2 相同；$\Omega(3,q)$ 對 $q=0,1,2,3$ 是 1、3、6、10（三角形數），正是 Table 2.2。</p>
+      </div>
+      <div class="step" data-step="sf02b3">
+        <span class="step-title">(c) 和式的恆等式：對 $q$ 歸納</span>
+        <p>假設 $\Omega(N-1,m)=\binom{m+N-2}{m}$ 對所有 $m$ 成立。代進遞迴式（令 $m=q-n$），要證明的是</p>
+        $$\sum_{m=0}^{q}\binom{m+N-2}{m}=\binom{q+N-1}{q}$$
+        <p>$q=0$：左邊 $\binom{N-2}0=1$，右邊 $\binom{N-1}0=1$，成立。若對 $q$ 成立，$q+1$ 時左邊多加一項 $m=q+1$：</p>
+        $$\sum_{m=0}^{q+1}\binom{m+N-2}{m}=\binom{q+N-1}{q}+\binom{q+N-1}{q+1}$$
+        <p class="sub">用 Pascal 公式，取 $a=q+N$、$b=q+1$：$\binom{a-1}{b-1}+\binom{a-1}{b}=\binom ab$：</p>
+        $$\binom{q+N-1}{q}+\binom{q+N-1}{q+1}=\binom{q+N}{q+1}$$
+        <p>這正是 $q+1$ 時的右邊 $\binom{(q+1)+N-1}{q+1}$，所以對所有 $q$ 成立。</p>
+      </div>
+      <div class="step" data-step="sf-02b-s5">
+        <span class="step-title">(c) 對 $N$ 歸納，完成證明</span>
+        <p>起始：$N=1$ 時 $\binom{q+1-1}{q}=\binom qq=1=\Omega(1,q)$。遞推：若 $\Omega(N-1,m)=\binom{m+N-2}m$，由 (a) 與上一步，</p>
+        $$\Omega(N,q)=\sum_{m=0}^{q}\binom{m+N-2}{m}=\binom{q+N-1}{q}$$
+        <p>所以 $\Omega(N,q)=\binom{q+N-1}{q}$ 對所有 $N\ge1$ 成立——(2.9) 不靠「點與線」也證得出來。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 得證；(b) $\Omega(2,q)=q+1$、$\Omega(3,q)=\frac{(q+1)(q+2)}2$，$\Omega(3,3)=10$；(c) $\binom{q+N-1}q$ 滿足遞迴式與起始條件，得證。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$\Omega(3,4)=\frac{5\cdot6}2=15=\binom64$ ✔；另一種更短的分法是「1 號振子有沒有能量」：$\Omega(N,q)=\Omega(N-1,q)+\Omega(N,q-1)$，對應的就是 Pascal 公式本身。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>愛因斯坦固體：$N$ 個同頻率振子，能量以 $hf$ 為單位，$U=q\,hf$；一個原子＝三個振子。</li>
+    <li>$\Omega(N,q)=\binom{q+N-1}{q}$：$q$ 個點和 $N-1$ 條隔線排成一列，選哪 $q$ 格放點。</li>
+    <li>能量單位不可分辨，所以不是 $N^q$；驗算時先分「型態」再數排列。</li>
+  </ol>
+</div>

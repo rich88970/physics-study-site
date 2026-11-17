@@ -1,0 +1,23 @@
+{
+  "title": "講義第十章｜光的干涉",
+  "shortTitle": "光學 第十章",
+  "range": "老師講義第十章（檔案缺，依逐字稿＋課本 Pedrotti 第 7 章 Interference of Light p.163–191）· 作業 7-1、7-6、7-11、7-14、7-20、7-23 · 考古題：李孟恩課程資料夾的下學期近代光學期中考（2018、2020、2022、2024、2025）；物理考古資料夾的舊考卷（2007–2017、2021）另收第 9 節",
+  "pageLabel": "講義",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備「光學」（李孟恩老師，115 學年上學期）的考試。這一章是老師講義第十章「光的干涉」，對應課本 Pedrotti《Introduction to Optics》3rd ed. 第 7 章 Interference of Light（老師的講義檔案這一章沒有拿到，網站以考前錄音逐字稿和課本為準）。內容：兩道同調光的疊加 $I=I_1+I_2+2\\sqrt{I_1I_2}\\cos\\delta$、照度極大 $I_{\\max}=(\\sqrt{I_1}+\\sqrt{I_2})^2$ 與極小 $I_{\\min}=(\\sqrt{I_1}-\\sqrt{I_2})^2$、對比度（visibility, fringe contrast）$V=(I_{\\max}-I_{\\min})/(I_{\\max}+I_{\\min})=2\\sqrt N/(N+1)$；楊氏雙狹縫 $\\Delta y=\\lambda L/a$、玻璃片使條紋平移 $(n-1)tL/a$；虛擬光源：洛埃鏡（$a=2h$，反射多 $\\pi$）、菲涅耳雙面鏡（$a=2d\\theta$）、菲涅耳雙稜鏡（偏折角 $\\delta\\approx(n-1)\\alpha$，$a=2d(n-1)\\alpha$，$L=d+s$）；薄膜干涉 $\\Delta_p+\\Delta_r$，$\\Delta_p=2n_ft\\cos\\theta_t$，$\\Delta_r=\\lambda/2$ 或 0；空氣楔；牛頓環（暗環 $r_m^2=m\\lambda R$、第 m 亮環 $r_m^2=(m-\\tfrac12)\\lambda R$、平凸透鏡 $R=(n-1)f$、兩個波長的環重合）；膜厚量測 $d=(\\Delta x/x)(\\lambda/2)$。老師考前說第十章「著重」干涉後照度極大、極小與對比度，楊氏干涉與含虛擬光源的干涉「可能會考 1 題」。往年這三章（第八、九、十章）是下學期「近代光學」的範圍；李孟恩課程資料夾的 5 份下學期期中考（2018、2020、2022、2024、2025）每份都有干涉題，其中牛頓環 3 份（2020、2024 兩個波長、2025 單一波長；老師沒有口頭點名，但考古題最高頻），對比度、楊氏（2018）與雙稜鏡（2022）各 1 份。回答時用老師考卷的記號（$\\Delta_p$、$\\Delta_r$、$n_f$、$t_m$、$r_m$），並提醒學生寫出相位差的來源、亮環暗環用哪一個條件、單位換算。",
+  "overview": "s00",
+  "sections": [
+    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pageLabel": "課本", "pages": "p.163–191" },
+    { "id": "s01", "file": "01-two-beam.html", "title": "兩光束干涉：照度極大、極小與對比度", "pageLabel": "課本", "pages": "p.163–169", "desc": "$I=I_1+I_2+2\\sqrt{I_1I_2}\\cos\\delta$、$I_{\\max}$、$I_{\\min}$、對比度 $V=2\\sqrt N/(N+1)$ 與反解 N；老師說「著重」；作業 7-1、對比度考古題（2018 期中考）。" },
+    { "id": "s02", "file": "02-young.html", "title": "楊氏雙狹縫干涉", "pageLabel": "課本", "pages": "p.169–173", "desc": "光程差 $a\\sin\\theta$、亮紋暗紋位置、條紋間距 $\\lambda L/a$、$I=4I_0\\cos^2(\\pi ay/\\lambda L)$、玻璃片造成的平移；作業 7-6、2018 期中考。" },
+    { "id": "s03", "file": "03-virtual.html", "title": "虛擬光源的干涉：洛埃鏡、菲涅耳雙面鏡、雙稜鏡", "pageLabel": "課本", "pages": "p.173–175", "desc": "把一個光源經反射或折射變成兩個虛擬同調光源，再套楊氏公式；雙稜鏡 $a=2d(n-1)\\alpha$；作業 7-11、2022 期中考。" },
+    { "id": "s04", "file": "04-films.html", "title": "薄膜干涉與空氣楔", "pageLabel": "課本", "pages": "p.175–181", "desc": "$\\Delta_p=2n_ft\\cos\\theta_t$ 與反射相位 $\\Delta_r$、抗反射膜、等傾與等厚條紋、空氣楔；作業 7-14、7-20。" },
+    { "id": "s05", "file": "05-newton.html", "title": "牛頓環（一）：亮環、暗環的半徑", "pageLabel": "課本", "pages": "p.181–183", "desc": "$R\\approx r^2/2t$、暗環 $r_m^2=m\\lambda R$、亮環 $r_m^2=(m-\\tfrac12)\\lambda R$、平凸透鏡 $R=(n-1)f$；作業 7-23 與 2025 期中考（牛頓環是考古最高頻）。" },
+    { "id": "s06", "file": "06-newton-two.html", "title": "牛頓環（二）：兩個波長的環重合", "pageLabel": "課本", "pages": "p.181–183、p.191", "desc": "重合 ⟺ 空氣膜厚度相同：$(m_1-\\tfrac12)\\lambda_1=(m_2-\\tfrac12)\\lambda_2$；求另一波長、重合半徑、空氣膜厚度；2020、2024 期中考 2 題。" },
+    { "id": "s07", "file": "07-thickness.html", "title": "膜厚量測與本章其餘內容", "pageLabel": "課本", "pages": "p.183–189", "desc": "條紋平移量 $\\Delta x$ 與膜厚 $d=(\\Delta x/x)(\\lambda/2)$；Stokes 關係與多光束干涉簡述（2017 舊考卷的膜厚題在第 9 節）。" },
+    { "id": "s08", "file": "08-exam.html", "title": "考前衝刺", "pageLabel": "課本", "pages": "p.163–191", "desc": "必背公式、題型總表（老師點名的放最前面：怎麼認、做法、常錯、代表題）與變化題。" },
+    { "id": "s09", "file": "09-old-exams.html", "title": "物理考古資料夾題目", "pageLabel": "課本", "pages": "p.163–189", "desc": "雲端「物理考古／光學」資料夾裡的舊考卷（2007–2017、2021 等），不是李孟恩課程資料夾的考卷，另外收在這裡：對比度、雙稜鏡、薄膜、牛頓環共 16 題（膜厚量測等 2 題放回第 7 節）；不算進出題頻率。" }
+  ],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": []
+}

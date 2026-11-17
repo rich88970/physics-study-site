@@ -1,0 +1,163 @@
+<h2>六、參數變換法 <span class="pg">網站補充</span></h2>
+
+<p class="lead"><span class="added">網站補充（照片缺漏）</span>9/30 的照片只教待定係數法；9/23 的板書在降階法旁邊寫過「參數變異法 Variation of parameters」這個名字。這一節補上一般課本所說的參數變換法：它不必猜，對任何 $g(x)$ 都能用（只要積得出來），是待定係數法用不了時的備案，也可以拿來檢查待定係數法的答案。考古題裡沒有指定用這個方法的題目。</p>
+
+<h3 id="a3-vp-why">6.1 待定係數法什麼時候不能用</h3>
+
+<p>第 1 節說過：待定係數法要求 $g(x)$「微分後還在同一家族」。$\sec x$、$\tan x$、$\ln x$、$1/x$、$e^{x}/x$ 微分後會不斷產生新函數（$\sec x\to\sec x\tan x\to\sec x\tan^2x+\sec^3x\to\cdots$），猜不出有限項的組合。這時要用參數變換法。另外，待定係數法只適用於常係數方程；參數變換法對變係數方程也成立（只要知道 $y_1,y_2$）。</p>
+
+<h3 id="a3-vp-derive">6.2 推導</h3>
+
+<p>先把方程式寫成標準式 $y''+P(x)y'+Q(x)y=g(x)$（$y''$ 的係數為 1），並已知齊次解 $y_1,y_2$。想法和降階法相同：把一般解 $c_1y_1+c_2y_2$ 的常數換成函數：</p>
+$$y_p=u_1(x)y_1+u_2(x)y_2$$
+<p>兩個未知函數只要滿足一條方程式，所以可以<strong>多加一個方便的條件</strong>。求導：</p>
+$$y_p'=u_1y_1'+u_2y_2'+\underbrace{(u_1'y_1+u_2'y_2)}_{\text{令它}=0}$$
+<p>這樣 $y_p''=u_1y_1''+u_2y_2''+u_1'y_1'+u_2'y_2'$ 就不會出現 $u''$。代入方程式，因為 $y_1,y_2$ 是齊次解，$u_1(\cdots)$、$u_2(\cdots)$ 兩組都是 0，只剩：</p>
+$$u_1'y_1'+u_2'y_2'=g$$
+<p>和前面的條件 $u_1'y_1+u_2'y_2=0$ 聯立，用克拉瑪公式（行列式就是 Wronskian $W=y_1y_2'-y_2y_1'$）：</p>
+$$u_1'=-\frac{y_2\,g}{W},\qquad u_2'=\frac{y_1\,g}{W}$$
+<p>積分得 $u_1,u_2$（積分常數可以取 0，它們只會加回齊次解）。</p>
+
+<div class="box pitfall">
+  <span class="box-title">$g$ 要從標準式讀</span>
+  <p>$4y''+\cdots=8\sec x$ 要先除以 4，公式裡的 $g$ 是 $2\sec x$。和降階公式讀 $P(x)$ 的注意事項一樣。</p>
+</div>
+
+<h3 id="a3-vp-check">6.3 用它重算修正規則的例題</h3>
+
+<p>第 4 節的 $y''-4y'+4y=2e^{2x}$：$y_1=e^{2x}$、$y_2=xe^{2x}$，$W=e^{2x}(e^{2x}+2xe^{2x})-xe^{2x}\cdot2e^{2x}=e^{4x}$。</p>
+$$u_1'=-\frac{xe^{2x}\cdot2e^{2x}}{e^{4x}}=-2x\ \Rightarrow\ u_1=-x^2,\qquad u_2'=\frac{e^{2x}\cdot2e^{2x}}{e^{4x}}=2\ \Rightarrow\ u_2=2x$$
+$$y_p=-x^2e^{2x}+2x\cdot xe^{2x}=x^2e^{2x}$$
+<p>和待定係數法（板書）的結果完全一樣，而且完全不用判斷「要乘 $x$ 還是 $x^2$」——參數變換法自動處理了修正規則。代價是要積分；右邊在對照表裡時，待定係數法通常比較快。</p>
+
+<div class="problem" data-kind="self" id="a3-s06-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>變係數方程的參數變換法：$x^2y''+xy'-y=x^2\ln x$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s06-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>已知 $y_1=x$、$y_2=x^{-1}$ 是 $x^2y''+xy'-y=0$（$x\gt0$）的解。(a) 用參數變換法求 $x^2y''+xy'-y=x^2\ln x$ 的特解；(b) 求滿足 $y(1)=0$、$y'(1)=0$ 的解；(c) 用代換 $x=e^t$ 加待定係數法檢查 (a)。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>齊次解</td><td>$y_1=x$、$y_2=x^{-1}$</td><td>「已知 $y_1=x$、$y_2=x^{-1}$ 是⋯⋯的解」：變係數方程，自己沒有特徵方程式可用</td></tr>
+          <tr><td>方程式</td><td>$x^2y''+xy'-y=x^2\ln x$</td><td>題目；$y''$ 的係數是 $x^2$，<b>不是標準式</b></td></tr>
+          <tr><td>標準式的右邊</td><td>$g=\ln x$</td><td>除以 $x^2$ 之後才是公式裡的 $g$（自己讀出來的）</td></tr>
+          <tr><td>初始條件</td><td>$y(1)=0$、$y'(1)=0$</td><td>(b)：給在 $x=1$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $y_p$；(b) 唯一解；(c) 用另一種方法驗證 $y_p$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>係數是 $x^2$、$x$（變係數），待定係數法的對照表不能直接用（那是給常係數方程的），<b>但因為</b>已經知道兩個齊次解，<b>所以</b>參數變換法照樣可用。公式 $u_1'=-y_2g/W$ 是從<b>標準式</b> $y''+Py'+Qy=g$ 推出來的，<b>所以</b>先除以 $x^2$：$g=\ln x$。直接拿 $x^2\ln x$ 當 $g$ 是這題最常見的錯誤，答案會多出 $x^2$ 倍。</p>
+      <p>(c) <b>因為</b>這是 Cauchy–Euler 方程（第 2 章第 6 節），<b>所以</b>代換 $x=e^t$ 會變成常係數方程，右邊 $x^2\ln x=te^{2t}$ 落在乘法規則的範圍，可以獨立驗算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s06-1-s1" data-sym="W">
+        <span class="step-title">化成標準式，算 Wronskian</span>
+        <p>除以 $x^2$：$y''+\dfrac1xy'-\dfrac1{x^2}y=\ln x$，所以 $g=\ln x$。</p>
+        <p class="sub">代入 $y_1=x$、$y_2=x^{-1}$（題目）：$y_1'=1$、$y_2'=-x^{-2}$：</p>
+        $$W=y_1y_2'-y_2y_1'=x\cdot(-x^{-2})-x^{-1}\cdot1=-\frac2x$$
+      </div>
+      <div class="step" data-step="a3-s06-1-s2" data-sym="u12">
+        <span class="step-title">$u_1'$、$u_2'$</span>
+        <p class="sub">代入 $g=\ln x$（步驟 1）與 $W=-2/x$：</p>
+        $$u_1'=-\frac{y_2g}{W}=-\frac{x^{-1}\ln x}{-2/x}=\frac{\ln x}2$$
+        $$u_2'=\frac{y_1g}{W}=\frac{x\ln x}{-2/x}=-\frac{x^2\ln x}2$$
+      </div>
+      <div class="step" data-step="a3-s06-1-s3">
+        <span class="step-title">分部積分</span>
+        <p>$\displaystyle\int\ln x\,dx=x\ln x-x$；$\displaystyle\int x^2\ln x\,dx=\frac{x^3}3\ln x-\int\frac{x^3}3\cdot\frac1x\,dx=\frac{x^3\ln x}3-\frac{x^3}9$：</p>
+        $$u_1=\frac{x\ln x-x}2,\qquad u_2=-\frac{x^3\ln x}6+\frac{x^3}{18}$$
+      </div>
+      <div class="step" data-step="a3-s06-1-s4" data-sym="yp">
+        <span class="step-title">(a) 組合</span>
+        $$\begin{aligned}y_p&=x\cdot\frac{x\ln x-x}2+\frac1x\left(-\frac{x^3\ln x}6+\frac{x^3}{18}\right)\\&=\left(\frac12-\frac16\right)x^2\ln x+\left(-\frac12+\frac1{18}\right)x^2\\&=\frac13x^2\ln x-\frac49x^2\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-s06-1-s5" data-sym="c12">
+        <span class="step-title">(b) 代入初始條件</span>
+        <p>$y=c_1x+c_2x^{-1}+\tfrac13x^2\ln x-\tfrac49x^2$，$y'=c_1-c_2x^{-2}+\tfrac23x\ln x+\tfrac13x-\tfrac89x$。</p>
+        <p class="sub">代入 $x=1$（$\ln1=0$）與 $y(1)=0$、$y'(1)=0$：</p>
+        $$\begin{aligned}c_1+c_2-\tfrac49&=0\\c_1-c_2+\tfrac13-\tfrac89&=0\end{aligned}$$
+        <p>相加：$2c_1=\tfrac49+\tfrac59=1$，$c_1=\tfrac12$；$c_2=\tfrac49-\tfrac12=-\tfrac1{18}$。</p>
+      </div>
+      <div class="step" data-step="a3-s06-1-s6">
+        <span class="step-title">(c) 用 $x=e^t$ 驗算</span>
+        <p>Cauchy–Euler 的 $a=1$、$b=-1$：$\ddot Y+(a-1)\dot Y+bY=\ddot Y-Y$；右邊 $x^2\ln x=te^{2t}$。乘法規則猜 $Y=e^{2t}(At+B)$（$2$ 不是根 $\pm1$），捷徑 $k=2$：$u''+4u'+3u=t$：</p>
+        $$3A=1,\quad4A+3B=0\ \Rightarrow\ A=\tfrac13,\ B=-\tfrac49$$
+        <p>換回 $x$：$Y=e^{2t}(\tfrac13t-\tfrac49)=\tfrac13x^2\ln x-\tfrac49x^2$，和 (a) 相同。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $y_p=\tfrac13x^2\ln x-\tfrac49x^2$；(b) $y=\tfrac12x-\dfrac1{18x}+\tfrac13x^2\ln x-\tfrac49x^2$；(c) 兩種方法一致。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_p''=\tfrac23\ln x+1-\tfrac89$，$x^2y_p''+xy_p'-y_p=x^2[\tfrac23\ln x+\tfrac19]+x^2[\tfrac23\ln x-\tfrac59]-x^2[\tfrac13\ln x-\tfrac49]=x^2\ln x$ ✔。若誤用 $g=x^2\ln x$，會得到 $x^2$ 倍的錯誤答案，代回立刻看出不對。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a3-s06-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>待定係數法失敗之後：$y''+y=\sec x$ 的初值問題與存在區間</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s06-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $y''+y=\sec x$，$y(0)=1$、$y'(0)=0$。(a) 說明為什麼不能用待定係數法；(b) 用參數變換法求解；(c) 這個解在包含 $x=0$ 的哪個最大區間上成立？在區間端點 $y$ 和 $y''$ 會怎樣？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$P=0$、$Q=1$、$g=\sec x$</td><td>「$y''+y=\sec x$」：已是標準式</td></tr>
+          <tr><td>齊次解</td><td>$\cos x$、$\sin x$</td><td>特徵根 $\pm i$（題目沒給，自己求）</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=1$、$y'(0)=0$</td><td>題目</td></tr>
+          <tr><td>$g$ 的定義域</td><td>$\cos x\neq0$</td><td>$\sec x=1/\cos x$ 在 $x=\pm\tfrac\pi2$ 沒有定義（自己讀出來的）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 理由；(b) 唯一解；(c) 存在區間與端點行為。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $\sec x$ 的導數 $\sec x\tan x$、$\sec x\tan^2x+\sec^3x$⋯⋯一直產生新函數，沒有有限的猜測涵蓋得了，<b>所以</b>待定係數法不行，改用參數變換法。</p>
+      <p><b>因為</b>存在唯一性定理只保證「係數和右邊都連續的區間」上有解，而 $\sec x$ 在 $\pm\tfrac\pi2$ 斷掉，<b>所以</b>從 $x=0$ 出發的解只在 $(-\tfrac\pi2,\tfrac\pi2)$ 上——解公式裡的 $\ln(\cos x)$ 也正好在這個區間才有意義。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s06-2-s1">
+        <span class="step-title">(a) 為什麼猜不到</span>
+        <p>$(\sec x)'=\sec x\tan x$，$(\sec x)''=\sec x\tan^2x+\sec^3x$，每微分一次就多出新的函數組合，「猜一個有限組合、比較係數」無法封閉。</p>
+      </div>
+      <div class="step" data-step="a3-s06-2-s2" data-sym="W,u12">
+        <span class="step-title">(b) 參數變換法求 $y_p$</span>
+        <p>$y_1=\cos x$、$y_2=\sin x$，$W=\cos^2x+\sin^2x=1$。</p>
+        <p class="sub">代入 $g=\sec x$：</p>
+        $$u_1'=-\sin x\sec x=-\tan x,\qquad u_2'=\cos x\sec x=1$$
+        <p>$\displaystyle\int-\tan x\,dx=\ln|\cos x|$（分子是分母的導數），$u_2=x$：</p>
+        $$y_p=\cos x\ln(\cos x)+x\sin x$$
+      </div>
+      <div class="step" data-step="a3-s06-2-s3" data-sym="c12">
+        <span class="step-title">(b) 代入初始條件</span>
+        <p>$y=c_1\cos x+c_2\sin x+\cos x\ln(\cos x)+x\sin x$，$y'=-c_1\sin x+c_2\cos x-\sin x\ln(\cos x)+x\cos x$。</p>
+        <p class="sub">代入 $x=0$（$\ln1=0$）與 $y(0)=1$、$y'(0)=0$：</p>
+        $$c_1=1,\qquad c_2=0$$
+      </div>
+      <div class="step" data-step="a3-s06-2-s4">
+        <span class="step-title">(c) 存在區間與端點</span>
+        <p>$\sec x$ 在 $x=0$ 兩側第一次不連續的地方是 $\pm\tfrac\pi2$，所以解成立的最大區間是 $-\tfrac\pi2\lt x\lt\tfrac\pi2$。</p>
+        <p>$x\to\tfrac\pi2^-$ 時，$\cos x\ln(\cos x)\to0$（$s\ln s\to0$），所以 $y\to0+\tfrac\pi2\cdot1=\tfrac\pi2$，$y$ 本身有限；但 $y''=\sec x-y\to+\infty$。解在端點「彎得無限快」，不能延伸過去。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\sec x$ 不在對照表裡，導數不封閉；(b) $y=\cos x+\cos x\ln(\cos x)+x\sin x$；(c) 區間 $|x|\lt\tfrac\pi2$；端點處 $y\to\tfrac\pi2$ 有限，$y''\to+\infty$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_p'=-\sin x\ln\cos x+x\cos x$，$y_p''=-\cos x\ln\cos x+\dfrac{\sin^2x}{\cos x}+\cos x-x\sin x$；$y_p''+y_p=\dfrac{\sin^2x+\cos^2x}{\cos x}=\sec x$ ✔；$y(0)=1$、$y'(0)=0$ ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>標準式 $y''+Py'+Qy=g$；$y_p=u_1y_1+u_2y_2$，$u_1'=-\dfrac{y_2g}{W}$、$u_2'=\dfrac{y_1g}{W}$。</li>
+    <li>$\sec x$、$\tan x$、$\ln x$、$1/x$ 這類右邊，或變係數方程（已知 $y_1,y_2$），只能用參數變換法；$g$ 一定要從標準式讀。</li>
+    <li>它自動包含修正規則；結果中屬於齊次解的部分可以丟掉。</li>
+  </ol>
+</div>

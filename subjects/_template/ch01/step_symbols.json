@@ -1,0 +1,7 @@
+{
+  "symbols": {
+    "W": { "tex": "W_{\\text{on}},\\ W_{\\text{by}}", "zh": "外界對系統作功／系統對外作功", "unit": "J", "note": "兩者差一個負號" }
+  },
+  "groups": [ { "title": "本章符號", "keys": ["W"] } ],
+  "steps": { "ex-step1": ["W"] }
+}

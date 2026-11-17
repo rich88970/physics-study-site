@@ -1,0 +1,35 @@
+<h2>十、位能圖、平衡與穩定 <span class="pg">Lecture 2 §15</span></h2>
+
+<h3 id="fx-diagram">10.1 讀位能圖</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">由能量守恆求速度與時間</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2q-diagram" title="15.1 讀位能圖 課本">L2 §15.1</a></span></div>
+  <div class="math-block">$$v=\pm\sqrt{\frac2m\big[E-U(x)\big]},\qquad t-t_0=\int_{x_0}^x\frac{\mathrm dx}{\pm\sqrt{\frac2m\big[E-U(x)\big]}}$$</div>
+  <p>一維保守系統不必解 $F=ma$：直接由 $E$ 和 $U(x)$ 得到速度，再積分得到時間。$E\ge U$ 的區域才能到達。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">轉折點</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2q-diagram" title="15.1 讀位能圖 課本">L2 §15.1</a></span></div>
+  <div class="math-block">$$E=U(x_{\text{轉折}})$$</div>
+  <p>速度為零、要掉頭的位置。兩個轉折點之間是束縛運動（來回振動）；只有一邊有轉折點則會跑到無窮遠。</p>
+</div>
+
+<h3 id="fx-stability">10.2 平衡與穩定</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">平衡點與穩定性</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2q-taylor" title="15.2 泰勒展開：為什麼看 ">L2 §15.2</a></span></div>
+  <div class="math-block">$$\Big(\frac{\mathrm dU}{\mathrm dx}\Big)_{x_0}=0;\qquad \Big(\frac{\mathrm d^2U}{\mathrm dx^2}\Big)_{x_0}>0\ \text{穩定},\quad <0\ \text{不穩定}$$</div>
+  <p>平衡＝合力為零＝位能圖的水平切線。穩定是谷底（偏離後被拉回），不穩定是山頂（偏離後越跑越遠）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">二階導數為零時</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2q-taylor" title="15.2 泰勒展開：為什麼看 ">L2 §15.2</a></span></div>
+  <div class="math-block">$$U''(x_0)=0:\ \text{看第一個不為零的導數 }U^{(n)}(x_0)$$</div>
+  <p>$n$ 為偶數且 $U^{(n)}>0$ 才穩定；$n$ 為奇數一定不穩定（一邊推得回來、另一邊推不回來）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">平衡點附近的小振動</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2q-taylor" title="15.2 泰勒展開：為什麼看 ">L2 §15.2</a></span></div>
+  <div class="math-block">$$U(x)\approx U(x_0)+\tfrac12U''(x_0)(x-x_0)^2,\qquad \omega=\sqrt{\frac{U''(x_0)}m},\qquad T=\frac{2\pi}\omega$$</div>
+  <p>在穩定平衡點附近把位能泰勒展開到二次，就是彈簧（等效彈力常數 $k=U''(x_0)$），做簡諧振動。</p>
+</div>

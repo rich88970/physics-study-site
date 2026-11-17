@@ -1,0 +1,548 @@
+<h2>四、非正合方程與積分因子 <span class="pg">板書 9/16 照片 7–10</span></h2>
+
+<p class="lead">$M\,dx+N\,dy=0$ 不正合（$M_y\ne N_x$）時，老師的想法是「乘一個東西 $F$ 讓它變正合」——和第 2 節線性方程的積分因子同一個精神。一般的 $F(x,y)$ 要解偏微分方程，太難；但如果 $F$ 只和 $x$（或只和 $y$）有關，條件就退化成一個可分離的常微分方程，直接積得出來。判斷看 $\Delta/N$、$\Delta/M$ 兩個比值。</p>
+
+<h3 id="am1n-idea">4.1 想法：乘上 $F$ 讓它正合 <span class="pg-tag">照片 7</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 7）</span>
+  <p>Type 4 nonexact eq.　idea：當 $\dfrac{\partial M}{\partial y}\ne\dfrac{\partial N}{\partial x}$，$F$ 乘入原 ODE 使其成為 exact eq.</p>
+  $$FM\,dx+FN\,dy=0\ \checkmark\quad\text{可以滿足}\quad\frac{\partial(FM)}{\partial y}=\frac{\partial(FN)}{\partial x}$$
+  <p>$F=F(x)$？$F(y)$？$F(x,y)$？</p>
+  $$\frac{\partial[F(x)M]}{\partial y}=\frac{\partial[F(x)N]}{\partial x}\ \Rightarrow\ \underbrace{\frac{\partial F}{\partial y}}_{=0}M+\frac{\partial M}{\partial y}F=\frac{dF}{dx}N+\frac{\partial N}{\partial x}F\ \Rightarrow\ \frac{dF}{dx}N=\left(\frac{\partial M}{\partial y}-\frac{\partial N}{\partial x}\right)F$$
+  $$\int\frac{dF}{F}=\int\frac{\frac{\partial M}{\partial y}-\frac{\partial N}{\partial x}}{N}\,dx,\qquad\ln F=\int\frac{\frac{\partial M}{\partial y}-\frac{\partial N}{\partial x}}{N}\,dx,\qquad F=e^{\int\cdots}$$
+</div>
+
+<p>乘上 $F$ 不改變解：$F\ne0$ 時 $FM\,dx+FN\,dy=0$ 和原方程是同一條件。要讓新的方程正合，就要 $(FM)_y=(FN)_x$。如果允許 $F(x,y)$ 是任意函數，這條件 $F_yM+FM_y=F_xN+FN_x$ 是一個偏微分方程，通常比原題還難。老師的技巧是<strong>猜 $F$ 只含一個變數</strong>：</p>
+<ul>
+  <li>$F=F(x)$ 時 $F_y=0$，條件變成 $F'(x)\,N=(M_y-N_x)F$，即 $\dfrac{F'}{F}=\dfrac{M_y-N_x}{N}$。</li>
+  <li>左邊只含 $x$，所以這招<strong>只有在右邊也只含 $x$ 時才成立</strong>。這就是照片 8 那句「若出現變數 $y$」的意思：比值裡有 $y$，$F(x)$ 就不存在，改試 $F(y)$。</li>
+</ul>
+
+<h3 id="am1n-rule">4.2 判斷規則：$\Delta/N$ 與 $\Delta/M$ <span class="pg-tag">照片 8</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 8）</span>
+  $$\Delta\equiv\frac{\partial M}{\partial y}-\frac{\partial N}{\partial x}$$
+  <p>若 $\dfrac{\Delta}{N}$ 沒有出現 $y$，則 $F=e^{\int\frac{\Delta}{N}dx}$；若 $\dfrac{\Delta}{M}$ 沒有出現 $x$，則 $F=e^{\int-\frac{\Delta}{M}dy}$。</p>
+</div>
+
+<div class="step" data-step="am1n-rule-s1" data-sym="Delta,F">
+  <span class="step-title"><span class="added">網站補充（照片缺漏）</span>$F(y)$ 那條的推導與負號</span>
+  <p>照片只寫了結果。仿照 $F(x)$ 的推法，令 $F=F(y)$，此時 $F_x=0$：</p>
+  $$\frac{\partial[F(y)M]}{\partial y}=\frac{\partial[F(y)N]}{\partial x}\ \Rightarrow\ \frac{dF}{dy}M+F\frac{\partial M}{\partial y}=F\frac{\partial N}{\partial x}\ \Rightarrow\ \frac{dF}{dy}M=-\Delta\,F$$
+  $$\frac{dF}{F}=-\frac{\Delta}{M}\,dy\ \Longrightarrow\ F(y)=e^{-\int\frac{\Delta}{M}dy}$$
+  <p>負號的來源：$F(x)$ 的情況 $F'$ 出現在 $N$ 那一側（等號右邊），$F(y)$ 的情況 $F'$ 出現在 $M$ 那一側（等號左邊），移項方向相反。記法：$\Delta=M_y-N_x$ 的順序固定，配 $N$ 不加負號、配 $M$ 加負號。</p>
+</div>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>情況</th><th>檢查</th><th>積分因子</th><th>本章例子</th></tr></thead>
+  <tbody>
+    <tr><td>$\Delta=0$</td><td>本來就正合</td><td>不用乘</td><td>第 3 節</td></tr>
+    <tr><td>$\Delta/N$ 只含 $x$</td><td>$\dfrac{M_y-N_x}{N}=R(x)$</td><td>$F(x)=e^{\int R\,dx}$</td><td>板書例題 $F=x$；112 上期中 $F=e^{x^2}$</td></tr>
+    <tr><td>$\Delta/M$ 只含 $y$</td><td>$\dfrac{M_y-N_x}{M}=S(y)$</td><td>$F(y)=e^{-\int S\,dy}$</td><td>作業第 5 題 $F=\cos y$；111 上期中 $F=y^{-3}$</td></tr>
+    <tr><td>兩者都不行</td><td>—</td><td>試 $x^ay^b$ 等（網站補充）</td><td>自編難題 4a</td></tr>
+  </tbody>
+</table></div>
+
+<div class="problem" data-kind="example" id="am1-ex-nonexact">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/16 板書（照片 9–10）</span></div>
+    <h4>$[3x\sin(2y)-2y]\,dx+[2x^2\cos(2y)-x]\,dy=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-ex-nonexact">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-nonexact"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　$[3x\sin(2y)-2y]\,dx+[2x^2\cos(2y)-x]\,dy=0$　Check exact eq. or not?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$[3x\sin(2y)-2y]\,dx+[2x^2\cos(2y)-x]\,dy=0$。先檢查是不是正合方程（check exact eq. or not?），再解出通解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$</td><td>$3x\sin(2y)-2y$</td><td>跟著 $dx$ 的中括號</td></tr>
+          <tr><td>$N$</td><td>$2x^2\cos(2y)-x$</td><td>跟著 $dy$ 的中括號</td></tr>
+          <tr><td>初始條件</td><td>無</td><td>板書沒給，答案留常數 $C$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：判斷正不正合；求通解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目是微分形式，<b>所以</b>先算 $M_y$、$N_x$；結果不相等，是 Type 4。<b>因為</b> $N=x\,[2x\cos(2y)-1]$ 而 $\Delta=2x\cos(2y)-1$，兩者只差一個因子 $x$，$\Delta/N=1/x$ 不含 $y$，<b>所以</b>積分因子是 $F(x)$。</p>
+      <p>乘上 $F$ 之後一定要<b>再檢查一次正合</b>（板書寫「check 是否變成 exact」），確定 $F$ 算對了，再照第 3 節的步驟求 $f$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-ex-nonexact-s1" data-sym="MN,Delta">
+        <span class="step-title">檢查正合</span>
+        <p class="sub">代入 $M=3x\sin(2y)-2y$、$N=2x^2\cos(2y)-x$（題目跟著 $dx$、$dy$ 的中括號）：</p>
+        $$\frac{\partial M}{\partial y}=6x\cos(2y)-2,\qquad\frac{\partial N}{\partial x}=4x\cos(2y)-1\qquad\Longrightarrow\ \frac{\partial M}{\partial y}\ne\frac{\partial N}{\partial x}$$
+        $$\Delta=\big(6x\cos2y-2\big)-\big(4x\cos2y-1\big)=2x\cos(2y)-1$$
+      </div>
+      <div class="step" data-step="am1-ex-nonexact-s2" data-sym="F">
+        <span class="step-title">$\Delta/N$ 只含 $x$ ⟹ $F(x)$</span>
+        <p class="sub">代入 $\Delta=2x\cos(2y)-1$（步驟 1）與 $N=2x^2\cos(2y)-x$（題目）：</p>
+        $$\frac{\Delta}{N}=\frac{2x\cos(2y)-1}{2x^2\cos(2y)-x}=\frac{2x\cos(2y)-1}{x\,[2x\cos(2y)-1]}=\frac1x$$
+        $$F(x)=e^{\int\frac1x\,dx}=e^{\ln x}=x$$
+        <p>取 $x>0$；$x\lt 0$ 時 $F=e^{\ln|x|}=|x|=-x$，只差一個正負號，整條方程乘 $-1$ 不影響，所以統一用 $F=x$。</p>
+      </div>
+      <div class="step" data-step="am1-ex-nonexact-s3">
+        <span class="step-title">乘上 $F=x$，再檢查正合</span>
+        <p class="sub">代入 $F=x$（步驟 2），乘進題目的 $M$、$N$：</p>
+        $$\big[3x^2\sin(2y)-2xy\big]\,dx+\big[2x^3\cos(2y)-x^2\big]\,dy=0$$
+        <p>新的係數 $M'=3x^2\sin(2y)-2xy$、$N'=2x^3\cos(2y)-x^2$：</p>
+        $$\frac{\partial M'}{\partial y}=6x^2\cos(2y)-2x,\qquad\frac{\partial N'}{\partial x}=6x^2\cos(2y)-2x\quad\checkmark$$
+        <p>照片 10 拍到老師正在寫 $\partial N'/\partial x$，之後的板書沒有照片；<span class="added">網站補充（照片缺漏）</span>從這裡到答案由網站補上。</p>
+      </div>
+      <div class="step" data-step="am1-ex-nonexact-s4" data-sym="f,h">
+        <span class="step-title">求 $f$</span>
+        <p class="sub">代入 $M'=3x^2\sin(2y)-2xy$、$N'=2x^3\cos(2y)-x^2$（步驟 3）：</p>
+        $$f=\int\big[3x^2\sin(2y)-2xy\big]dx+h(y)=x^3\sin(2y)-x^2y+h(y)$$
+        $$f_y=2x^3\cos(2y)-x^2+h'(y)=N'=2x^3\cos(2y)-x^2\ \Longrightarrow\ h'=0$$
+      </div>
+      <div class="step" data-step="am1-ex-nonexact-s5" data-sym="Cst">
+        <span class="step-title">通解</span>
+        $$x^3\sin(2y)-x^2y=C$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>不正合（$M_y\ne N_x$）；積分因子 $F=x$；通解 $x^3\sin(2y)-x^2y=C$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$d\big(x^3\sin2y-x^2y\big)=(3x^2\sin2y-2xy)\,dx+(2x^3\cos2y-x^2)\,dy=x\,\big[M\,dx+N\,dy\big]$ ✔。乘 $F=x$ 時要小心 $x=0$：原方程在 $x=0$ 上 $N=0$，所以鉛直線 $x=0$（$dx=0$）本身是解，而它也包含在 $C=0$ 的 $x^2\,(x\sin2y-y)=0$ 裡，沒有漏解。</p></div>
+  </div>
+</div>
+
+<h3 id="am1n-hw">4.3 作業與考古題：$F(y)$ 的兩題 <span class="pg-tag">作業第 5 題 · 111 上期中第 1 題</span></h3>
+
+<div class="problem" data-kind="textbook" id="am1-hw-5">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">9/16 作業 第 5 題</span></div>
+    <h4>$\cos y\,dx-2(x-y)\sin y\,dy-\cos y\,dy=0$，$y(1)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-hw-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-hw-5"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>5. $\cos y\,dx-2(x-y)\sin y\,dy-\cos y\,dy=0$ with $y(1)=0$.</p><p>Ans : $(x-y)\cos^2y=1$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $\cos y\,dx-2(x-y)\sin y\,dy-\cos y\,dy=0$，$y(1)=0$。（老師答案：$(x-y)\cos^2y=1$）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$</td><td>$\cos y$</td><td>跟著 $dx$ 的只有 $\cos y$</td></tr>
+          <tr><td>$N$</td><td>$-2(x-y)\sin y-\cos y$</td><td>兩個跟著 $dy$ 的項合併（注意兩個負號）</td></tr>
+          <tr><td>初始條件</td><td>$x_0=1$，$y_0=0$</td><td>「with $y(1)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的解（隱式），並核對老師答案。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目有兩個 $dy$ 項，<b>所以</b>先合併成 $N$。算出 $M_y=-\sin y$、$N_x=-2\sin y$ 不相等，是 Type 4。</p>
+      <p><b>因為</b> $\Delta=\sin y$，$\Delta/N$ 裡有 $x$（$N$ 含 $x$），$F(x)$ 不行；但 $\Delta/M=\tan y$ 只含 $y$，<b>所以</b>用 $F(y)=e^{-\int\tan y\,dy}$。負號別忘（4.2 節的補充）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-hw-5-s1" data-sym="MN,Delta">
+        <span class="step-title">寫出 $M$、$N$，檢查正合</span>
+        $$\cos y\,dx+\big[-2(x-y)\sin y-\cos y\big]\,dy=0$$
+        $$\frac{\partial M}{\partial y}=-\sin y,\qquad\frac{\partial N}{\partial x}=-2\sin y,\qquad\Delta=-\sin y-(-2\sin y)=\sin y$$
+      </div>
+      <div class="step" data-step="am1-hw-5-s2" data-sym="F">
+        <span class="step-title">選 $F(y)$</span>
+        <p>$\dfrac{\Delta}{N}=\dfrac{\sin y}{-2(x-y)\sin y-\cos y}$ 含 $x$，不行；$\dfrac{\Delta}{M}=\dfrac{\sin y}{\cos y}=\tan y$ 只含 $y$：</p>
+        $$F=e^{-\int\tan y\,dy}=e^{\ln|\cos y|}=\cos y$$
+        <p>$\int\tan y\,dy=-\ln|\cos y|$，前面的負號把它變正；在 $y=0$ 附近 $\cos y>0$，絕對值拿掉。</p>
+      </div>
+      <div class="step" data-step="am1-hw-5-s3">
+        <span class="step-title">乘上 $\cos y$，確認正合</span>
+        $$\cos^2y\,dx+\big[-2(x-y)\sin y\cos y-\cos^2y\big]\,dy=0$$
+        $$\frac{\partial}{\partial y}\cos^2y=-2\sin y\cos y,\qquad\frac{\partial}{\partial x}\big[-2(x-y)\sin y\cos y-\cos^2y\big]=-2\sin y\cos y\quad\checkmark$$
+      </div>
+      <div class="step" data-step="am1-hw-5-s4" data-sym="f,h">
+        <span class="step-title">求 $f$</span>
+        <p>對 $x$ 積：$f=x\cos^2y+h(y)$。對 $y$ 微分和 $N'$ 比較：</p>
+        $$-2x\sin y\cos y+h'(y)=-2x\sin y\cos y+2y\sin y\cos y-\cos^2y\ \Longrightarrow\ h'=y\sin2y-\cos^2y$$
+        <p>分部積分 $\int y\sin2y\,dy=-\tfrac{y}{2}\cos2y+\tfrac14\sin2y$；$\int\cos^2y\,dy=\tfrac{y}{2}+\tfrac14\sin2y$。相減：</p>
+        $$h=-\frac y2\cos2y-\frac y2=-\frac y2(1+\cos2y)=-y\cos^2y$$
+        $$f=x\cos^2y-y\cos^2y=(x-y)\cos^2y$$
+      </div>
+      <div class="step" data-step="am1-hw-5-s5" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=1$、$y=0$（題目「$y(1)=0$」）：$C=(1-0)\cos^20=1$。</p>
+        $$(x-y)\cos^2y=1$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$(x-y)\cos^2y=1$（和老師答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$d\big[(x-y)\cos^2y\big]=\cos^2y\,dx+\big[-\cos^2y-2(x-y)\cos y\sin y\big]dy=\cos y\,\big[M\,dx+N\,dy\big]$ ✔。$(1,0)$ 代入 $=1$ ✔。也可以看出解是 $x=y+\sec^2y$，一個顯式的 $x(y)$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-111a-m1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2022.Nov. 第 1 題（111上） · 114級上學期應數(期中) 第 1 題（學生手抄同卷）</span></div>
+    <h4>$(y^2+xy^3)\,dx+(5y^2-xy+y^3\sin y)\,dy=0$，$y(0)=\pi/2$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-111a-m1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-111a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (5 points) Solve $(y^2+xy^3)dx+(5y^2-xy+y^3\sin y)dy=0$ for $y(0)=\dfrac{\pi}{2}$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(5 分) 解 $(y^2+xy^3)\,dx+(5y^2-xy+y^3\sin y)\,dy=0$，$y(0)=\dfrac{\pi}{2}$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$</td><td>$y^2+xy^3=y^2(1+xy)$</td><td>跟著 $dx$ 的括號；可以提出 $y^2$</td></tr>
+          <tr><td>$N$</td><td>$5y^2-xy+y^3\sin y$</td><td>跟著 $dy$ 的括號</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=\dfrac{\pi}{2}$</td><td>「for $y(0)=\pi/2$」</td></tr>
+          <tr><td>配分</td><td>5 分</td><td>考卷「(5 points)」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的解（隱式）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $M_y=2y+3xy^2$、$N_x=-y$ 不相等，<b>所以</b>是 Type 4。$\Delta=3y+3xy^2=3y(1+xy)$。</p>
+      <p><b>因為</b> $\Delta$ 和 $M=y^2(1+xy)$ 有共同因子 $(1+xy)$，$\Delta/M=3/y$ 只含 $y$，<b>所以</b>積分因子是 $F(y)=e^{-\int3/y\,dy}=y^{-3}$。這題看到 $M$ 可以因式分解就是提示：答案的關鍵是約掉 $(1+xy)$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-111a-m1-s1" data-sym="MN,Delta">
+        <span class="step-title">檢查正合</span>
+        $$\frac{\partial M}{\partial y}=2y+3xy^2,\qquad\frac{\partial N}{\partial x}=-y,\qquad\Delta=3y+3xy^2=3y(1+xy)$$
+      </div>
+      <div class="step" data-step="am1-111a-m1-s2" data-sym="F">
+        <span class="step-title">選 $F(y)$</span>
+        <p>$\Delta/N=\dfrac{3y(1+xy)}{5y^2-xy+y^3\sin y}$ 含 $x$，不行。$\Delta/M=\dfrac{3y(1+xy)}{y^2(1+xy)}=\dfrac3y$ 只含 $y$：</p>
+        $$F=e^{-\int\frac3y\,dy}=e^{-3\ln y}=y^{-3}$$
+        <p>初始值 $y=\pi/2>0$，取 $y>0$，$\ln|y|=\ln y$。</p>
+      </div>
+      <div class="step" data-step="am1-111a-m1-s3">
+        <span class="step-title">乘上 $y^{-3}$，確認正合</span>
+        $$\left(\frac1y+x\right)dx+\left(\frac5y-\frac{x}{y^2}+\sin y\right)dy=0$$
+        $$\frac{\partial}{\partial y}\left(\frac1y+x\right)=-\frac{1}{y^2},\qquad\frac{\partial}{\partial x}\left(\frac5y-\frac{x}{y^2}+\sin y\right)=-\frac1{y^2}\quad\checkmark$$
+      </div>
+      <div class="step" data-step="am1-111a-m1-s4" data-sym="f,h">
+        <span class="step-title">求 $f$</span>
+        $$f=\int\left(\frac1y+x\right)dx+h(y)=\frac xy+\frac{x^2}{2}+h(y)$$
+        $$f_y=-\frac{x}{y^2}+h'(y)=\frac5y-\frac{x}{y^2}+\sin y\ \Longrightarrow\ h'=\frac5y+\sin y\ \Longrightarrow\ h=5\ln y-\cos y$$
+      </div>
+      <div class="step" data-step="am1-111a-m1-s5" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        $$\frac xy+\frac{x^2}{2}+5\ln y-\cos y=C$$
+        <p class="sub">代入 $x=0$、$y=\pi/2$（題目「$y(0)=\pi/2$」）：$C=0+0+5\ln\dfrac{\pi}{2}-\cos\dfrac{\pi}{2}=5\ln\dfrac{\pi}{2}\approx2.258$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\dfrac xy+\dfrac{x^2}{2}+5\ln y-\cos y=5\ln\dfrac{\pi}{2}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$d f=\left(\tfrac1y+x\right)dx+\left(-\tfrac{x}{y^2}+\tfrac5y+\sin y\right)dy=y^{-3}\big[M\,dx+N\,dy\big]$ ✔。$(0,\tfrac\pi2)$ 代入 ✔。乘 $y^{-3}$ 時丟掉了 $y\equiv0$（原方程在 $y=0$ 時 $M=0$、$dy=0$，它也是解），但不滿足初始條件。</p></div>
+  </div>
+</div>
+
+<h3 id="am1n-old">4.4 更早年級的考古題 <span class="pg-tag">109 級下第 1 次期中 · 108 級下 First Order ODE</span></h3>
+
+<p>三題正好對應三種積分因子：$F(y)$（$\Delta/M$ 只含 $y$）、$F=x^ay^b$（兩條規則都失效，考卷給提示）、$F(x)$（$\Delta/N$ 只含 $x$）。判斷流程和第 4.2 節一樣：先算 $\Delta=M_y-N_x$，再試 $\Delta/N$、$\Delta/M$。</p>
+
+<div class="problem" data-kind="exam" id="am1-109b-1f">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 1(f) 題 · 108級下學期 First Order ODE 第 1(g) 題</span></div>
+    <h4>$(x+y)\sin y\,dx+(x\sin y+\cos y)\,dy=0$，$y(0)=\pi/2$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-109b-1f">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1f"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(f) $(x+y)\sin y\,dx+(x\sin y+\cos y)\,dy=0$ for $y(0)=\dfrac{\pi}{2}$.</p><p>Ans: $\dfrac12x^2+xy+\ln|\sin y|=0$</p><p>（108級下學期 First Order ODE：(g) Solve $(x+y)\sin y\,dx+(x\sin y+\cos y)\,dy=0$ for $y(0)=\dfrac{\pi}{2}$. 同答案。）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(x+y)\sin y\,dx+(x\sin y+\cos y)\,dy=0$，$y(0)=\dfrac\pi2$。（考卷附的答案：$\frac12x^2+xy+\ln|\sin y|=0$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$</td><td>$(x+y)\sin y$</td><td>$dx$ 的係數</td></tr>
+          <tr><td>$N$</td><td>$x\sin y+\cos y$</td><td>$dy$ 的係數</td></tr>
+          <tr><td>初始點</td><td>$(0,\tfrac\pi2)$；$\sin\tfrac\pi2=1>0$</td><td>「for $y(0)=\frac\pi2$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：通過 $(0,\frac\pi2)$ 的隱式解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>先檢查發現 $M_y\ne N_x$（不正合），<b>所以</b>找積分因子。<b>因為</b> $\Delta=(x+y)\cos y$ 和 $M=(x+y)\sin y$ 有共同因子 $(x+y)$，約掉後 $\Delta/M=\cot y$ 只含 $y$，<b>所以</b>用板書的 $F(y)=e^{-\int\Delta/M\,dy}$（注意負號）。</p>
+      <p>乘上 $F$ 之後一定要再驗一次正合，然後照第 3 節的三步驟求 $f$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-109b-1f-s1" data-sym="MN,Delta">
+        <span class="step-title">檢查正合，算 $\Delta$</span>
+        <p>$M=(x+y)\sin y$ 對 $y$ 偏微分要用乘積法則：</p>
+        $$M_y=\sin y+(x+y)\cos y,\qquad N_x=\sin y$$
+        $$\Delta=M_y-N_x=(x+y)\cos y\ne0\quad\text{（不正合）}$$
+      </div>
+      <div class="step" data-step="am1-109b-1f-s2" data-sym="F">
+        <span class="step-title">選積分因子</span>
+        <p>$\dfrac{\Delta}{N}=\dfrac{(x+y)\cos y}{x\sin y+\cos y}$ 同時含 $x,y$，不能用。</p>
+        <p class="sub">$\dfrac{\Delta}{M}=\dfrac{(x+y)\cos y}{(x+y)\sin y}=\cot y$ 只含 $y$，代入 $F(y)=e^{-\int\Delta/M\,dy}$：</p>
+        $$F=e^{-\int\cot y\,dy}=e^{-\ln|\sin y|}=\frac{1}{\sin y}\qquad(\text{初始點附近 }\sin y>0)$$
+      </div>
+      <div class="step" data-step="am1-109b-1f-s3">
+        <span class="step-title">乘上 $F$，再驗正合</span>
+        $$(x+y)\,dx+\Big(x+\frac{\cos y}{\sin y}\Big)dy=0$$
+        $$\frac{\partial}{\partial y}(x+y)=1,\qquad\frac{\partial}{\partial x}(x+\cot y)=1\quad✔$$
+      </div>
+      <div class="step" data-step="am1-109b-1f-s4" data-sym="f,h">
+        <span class="step-title">求 $f$</span>
+        $$f=\int(x+y)\,dx=\frac{x^2}{2}+xy+h(y),\qquad f_y=x+h'(y)=x+\cot y$$
+        $$h'(y)=\cot y\ \Longrightarrow\ h(y)=\ln|\sin y|$$
+      </div>
+      <div class="step" data-step="am1-109b-1f-s5" data-sym="Cst">
+        <span class="step-title">代初始點</span>
+        <p class="sub">代入 $x=0$、$y=\frac\pi2$（題目）：</p>
+        $$C=0+0+\ln\Big|\sin\frac\pi2\Big|=\ln1=0$$
+        <p>附帶：乘 $\frac1{\sin y}$ 時排除了 $\sin y=0$；而 $y\equiv k\pi$ 時 $M=0$、$dy=0$，所以 $y\equiv k\pi$ 本身也是原方程的解，只是不通過本題的初始點。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\dfrac{x^2}{2}+xy+\ln|\sin y|=0$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>全微分 $df=(x+y)\,dx+(x+\cot y)\,dy$，乘回 $\sin y$ 得 $(x+y)\sin y\,dx+(x\sin y+\cos y)\,dy$ ✔；$(0,\frac\pi2)$ 代入得 0 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-109b-1h">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 1(h) 題</span></div>
+    <h4>試 $F=x^ay^b$：$(5xy^2-2y)\,dx+(3x^2y-x)\,dy=0$，$y(1)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-109b-1h">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1h"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(h) $(5xy^2-2y)dx+(3x^2y-x)dy=0$ for $y(1)=1$.</p><p>(Hint: 原式乘以積分因子 $F(x,y)=x^ay^b$，變成 exact eq.)</p><p>Ans: $x^5y^3-\dfrac12x^4y^2=\dfrac12$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(5xy^2-2y)\,dx+(3x^2y-x)\,dy=0$，$y(1)=1$。（提示：原式乘以積分因子 $F(x,y)=x^ay^b$，變成 exact eq.；考卷附的答案：$x^5y^3-\frac12x^4y^2=\frac12$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$、$N$</td><td>$M=5xy^2-2y$，$N=3x^2y-x$</td><td>$dx$、$dy$ 的係數</td></tr>
+          <tr><td>積分因子的形式</td><td>$F=x^ay^b$，$a,b$ 待定</td><td>「Hint: 原式乘以積分因子 $F(x,y)=x^ay^b$」</td></tr>
+          <tr><td>初始點</td><td>$(1,1)$</td><td>「for $y(1)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$a$、$b$，以及通過 $(1,1)$ 的隱式解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $\Delta=M_y-N_x=4xy-1$，而 $\dfrac\Delta N=\dfrac{4xy-1}{x(3xy-1)}$、$\dfrac\Delta M=\dfrac{4xy-1}{y(5xy-2)}$ 都同時含 $x,y$，<b>所以</b>板書的 $F(x)$、$F(y)$ 兩條規則都失效。</p>
+      <p><b>因為</b>每一項都是 $x^my^n$ 的單項式，乘上 $x^ay^b$ 後還是單項式，<b>所以</b>正合條件 $(FM)_y=(FN)_x$ 變成「同類項係數相等」的聯立方程，可以解出 $a$、$b$（就是考卷的提示，也是自編難題 4a 的方法）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-109b-1h-s1" data-sym="MN,Delta">
+        <span class="step-title">確認兩條規則都不能用</span>
+        $$M_y=10xy-2,\quad N_x=6xy-1,\quad\Delta=4xy-1$$
+        <p>$\Delta/N$、$\Delta/M$ 約不掉，都同時含 $x$、$y$。</p>
+      </div>
+      <div class="step" data-step="am1-109b-1h-s2" data-sym="F">
+        <span class="step-title">乘上 $x^ay^b$ 後偏微分</span>
+        $$FM=5x^{a+1}y^{b+2}-2x^ay^{b+1},\qquad FN=3x^{a+2}y^{b+1}-x^{a+1}y^b$$
+        $$(FM)_y=5(b+2)\,x^{a+1}y^{b+1}-2(b+1)\,x^ay^b$$
+        $$(FN)_x=3(a+2)\,x^{a+1}y^{b+1}-(a+1)\,x^ay^b$$
+      </div>
+      <div class="step" data-step="am1-109b-1h-s3">
+        <span class="step-title">比較同類項係數</span>
+        <p>$x^{a+1}y^{b+1}$ 項：$5(b+2)=3(a+2)$ ⟹ $3a-5b=4$。</p>
+        <p>$x^ay^b$ 項：$2(b+1)=a+1$ ⟹ $a=2b+1$。</p>
+        <p class="sub">把第二式代入第一式：$3(2b+1)-5b=4$ ⟹ $b=1$，再代回 $a=2(1)+1=3$：</p>
+        $$F=x^3y$$
+      </div>
+      <div class="step" data-step="am1-109b-1h-s4">
+        <span class="step-title">乘上 $F$，驗正合</span>
+        $$(5x^4y^3-2x^3y^2)\,dx+(3x^5y^2-x^4y)\,dy=0$$
+        $$\frac{\partial}{\partial y}(5x^4y^3-2x^3y^2)=15x^4y^2-4x^3y=\frac{\partial}{\partial x}(3x^5y^2-x^4y)\quad✔$$
+      </div>
+      <div class="step" data-step="am1-109b-1h-s5" data-sym="f,h,Cst">
+        <span class="step-title">求 $f$、代初始點</span>
+        $$f=\int(5x^4y^3-2x^3y^2)\,dx=x^5y^3-\frac12x^4y^2+h(y)$$
+        <p>$f_y=3x^5y^2-x^4y+h'(y)$ 要等於 $3x^5y^2-x^4y$，所以 $h'=0$，$h$ 取 0。</p>
+        <p class="sub">代入 $x=1$、$y=1$（題目「$y(1)=1$」）：$C=1-\frac12=\frac12$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$F=x^3y$（$a=3$、$b=1$）；$x^5y^3-\dfrac12x^4y^2=\dfrac12$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$df=(5x^4y^3-2x^3y^2)\,dx+(3x^5y^2-x^4y)\,dy=x^3y\,[(5xy^2-2y)\,dx+(3x^2y-x)\,dy]$ ✔；$f(1,1)=\frac12$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-108b-1f">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級下學期 First Order ODE 第 1(f) 題</span></div>
+    <h4>$(3xy+y^2)\,dx+(x^2+xy)\,dy=0$，$y(1)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-108b-1f">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-108b-1f"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>First Order ODE</p><p>1. Solve the differential equations.</p><p>(f) $(3xy+y^2)dx+(x^2+xy)dy=0$ for $y(1)=1$.</p><p>Ans: $\ln|x|+\dfrac14\left(\ln\left|\dfrac{y}{x}\right|+\ln\left|\dfrac{y}{x}+2\right|\right)-\dfrac{\ln3}{4}=0$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(3xy+y^2)\,dx+(x^2+xy)\,dy=0$，$y(1)=1$。（考卷附的答案：$\ln|x|+\frac14\big(\ln|\frac yx|+\ln|\frac yx+2|\big)-\frac{\ln3}{4}=0$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$、$N$</td><td>$M=3xy+y^2$，$N=x^2+xy=x(x+y)$</td><td>$dx$、$dy$ 的係數；$N$ 可提出 $x$</td></tr>
+          <tr><td>次數</td><td>每一項都是二次</td><td>$3xy$、$y^2$、$x^2$、$xy$（所以也能用齊次型代換，考卷答案就是那樣做的）</td></tr>
+          <tr><td>初始點</td><td>$(1,1)$</td><td>「for $y(1)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：通過 $(1,1)$ 的隱式解，並和考卷的對數形式比對。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $M_y=3x+2y\ne N_x=2x+y$，不正合；算出 $\Delta=x+y$ 剛好是 $N=x(x+y)$ 的因式，$\Delta/N=\frac1x$ 只含 $x$，<b>所以</b>用板書的 $F(x)=e^{\int\Delta/N\,dx}$，比考卷用的齊次型代換（要做部分分式）快很多。</p>
+      <p><b>因為</b>兩種方法答案長得不一樣，<b>所以</b>最後把考卷的對數式取指數、整理成多項式，確認是同一條曲線。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-108b-1f-s1" data-sym="MN,Delta">
+        <span class="step-title">算 $\Delta$</span>
+        $$M_y=3x+2y,\quad N_x=2x+y,\quad\Delta=M_y-N_x=x+y$$
+      </div>
+      <div class="step" data-step="am1-108b-1f-s2" data-sym="F">
+        <span class="step-title">$\Delta/N$ 只含 $x$</span>
+        <p class="sub">代入 $N=x(x+y)$（題目 $dy$ 的係數提出 $x$）：</p>
+        $$\frac{\Delta}{N}=\frac{x+y}{x(x+y)}=\frac1x\ \Longrightarrow\ F=e^{\int\frac{dx}{x}}=x$$
+      </div>
+      <div class="step" data-step="am1-108b-1f-s3">
+        <span class="step-title">乘上 $x$，驗正合</span>
+        $$(3x^2y+xy^2)\,dx+(x^3+x^2y)\,dy=0$$
+        $$\frac{\partial}{\partial y}(3x^2y+xy^2)=3x^2+2xy=\frac{\partial}{\partial x}(x^3+x^2y)\quad✔$$
+      </div>
+      <div class="step" data-step="am1-108b-1f-s4" data-sym="f,h,Cst">
+        <span class="step-title">求 $f$、代初始點</span>
+        $$f=\int(3x^2y+xy^2)\,dx=x^3y+\frac12x^2y^2+h(y),\qquad f_y=x^3+x^2y+h'=x^3+x^2y\Rightarrow h'=0$$
+        <p class="sub">代入 $(1,1)$（題目）：$C=1+\frac12=\frac32$，即 $x^3y+\frac12x^2y^2=\frac32$，乘 2：</p>
+        $$2x^3y+x^2y^2=3$$
+      </div>
+      <div class="step" data-step="am1-108b-1f-s5">
+        <span class="step-title">和考卷答案比對</span>
+        <p>考卷式乘 4：$4\ln x+\ln\frac yx+\ln\big(\frac yx+2\big)=\ln3$（初始點附近 $x,y>0$，絕對值拿掉）。合併對數取指數：</p>
+        $$x^4\cdot\frac yx\cdot\Big(\frac yx+2\Big)=3\ \Longrightarrow\ x^2y\,(y+2x)=3\ \Longrightarrow\ x^2y^2+2x^3y=3$$
+        <p>和步驟 4 完全相同。考卷是用齊次型代換 $y=vx$ 做的（每項都二次），積分後留在對數形式。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$x^3y+\dfrac12x^2y^2=\dfrac32$（即 $2x^3y+x^2y^2=3$），和考卷的對數形式等價。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$df=(3x^2y+xy^2)\,dx+(x^3+x^2y)\,dy=x\,[(3xy+y^2)\,dx+(x^2+xy)\,dy]$ ✔；$(1,1)$：$2+1=3$ ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am1n-self">4.5 自編難題</h3>
+
+<div class="problem" data-kind="self" id="am1-self-04a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩條規則都失效：試 $F=x^ay^b$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-04a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$(3y+4xy^2)\,dx+(2x+3x^2y)\,dy=0$，$y(1)=1$。(a) 說明 $F(x)$、$F(y)$ 都不存在；(b) 找形如 $F=x^ay^b$ 的積分因子；(c) 解初值問題。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$、$N$</td><td>$M=3y+4xy^2$，$N=2x+3x^2y$</td><td>跟著 $dx$、$dy$ 的括號</td></tr>
+          <tr><td>結構</td><td>每一項都是 $x^my^n$ 的單項式</td><td>自己觀察：這種題目才適合猜 $x^ay^b$</td></tr>
+          <tr><td>積分因子形式</td><td>$F=x^ay^b$</td><td>(b) 題目指定</td></tr>
+          <tr><td>初始條件</td><td>$x_0=1$，$y_0=1$</td><td>「$y(1)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 判斷；(b) $a$、$b$；(c) 解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> 4.2 節的兩條規則要求比值只含一個變數，<b>所以</b>先算 $\Delta/N$、$\Delta/M$ 看它們是否失效。</p>
+      <p><b>因為</b>方程每一項都是單項式，乘上 $x^ay^b$ 仍是單項式，$(FM)_y=(FN)_x$ 會變成「同類項的係數相等」，<b>所以</b>得到 $a$、$b$ 的聯立一次方程，比解偏微分方程簡單得多。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-04a-s1" data-sym="Delta">
+        <span class="step-title">(a) 兩條規則都不行</span>
+        $$M_y=3+8xy,\quad N_x=2+6xy,\quad\Delta=1+2xy$$
+        $$\frac{\Delta}{N}=\frac{1+2xy}{x(2+3xy)}\ (\text{含 }y),\qquad\frac{\Delta}{M}=\frac{1+2xy}{y(3+4xy)}\ (\text{含 }x)$$
+      </div>
+      <div class="step" data-step="am1-self-04a-s2" data-sym="F">
+        <span class="step-title">(b) 代入 $F=x^ay^b$</span>
+        <p>$FM=3x^ay^{b+1}+4x^{a+1}y^{b+2}$，$FN=2x^{a+1}y^b+3x^{a+2}y^{b+1}$：</p>
+        $$(FM)_y=3(b+1)x^ay^b+4(b+2)x^{a+1}y^{b+1},\qquad(FN)_x=2(a+1)x^ay^b+3(a+2)x^{a+1}y^{b+1}$$
+        <p>比較 $x^ay^b$ 與 $x^{a+1}y^{b+1}$ 的係數：</p>
+        $$3(b+1)=2(a+1),\qquad4(b+2)=3(a+2)$$
+        <p>整理成 $2a-3b=1$、$3a-4b=2$。第一式乘 3、第二式乘 2 相減：$-9b+8b=3-4$，$b=1$；代回 $2a=4$，$a=2$。</p>
+        $$F=x^2y$$
+      </div>
+      <div class="step" data-step="am1-self-04a-s3" data-sym="f,Cst">
+        <span class="step-title">(c) 正合後求 $f$</span>
+        $$(3x^2y^2+4x^3y^3)\,dx+(2x^3y+3x^4y^2)\,dy=0$$
+        $$f=\int(3x^2y^2+4x^3y^3)\,dx+h=x^3y^2+x^4y^3+h(y),\qquad f_y=2x^3y+3x^4y^2+h'\Rightarrow h'=0$$
+        <p class="sub">代入 $x=1$、$y=1$（題目「$y(1)=1$」）：$C=1+1=2$。</p>
+        $$x^3y^2+x^4y^3=2$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\Delta/N$ 含 $y$、$\Delta/M$ 含 $x$；(b) $F=x^2y$；(c) $x^3y^2+x^4y^3=2$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$(FM)_y=6x^2y+12x^3y^2$、$(FN)_x=6x^2y+12x^3y^2$ ✔；$df=x^2y\,[M\,dx+N\,dy]$ ✔；$(1,1)$ 代入得 2 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am1-self-04b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>積分因子 vs. 把 $x$ 當未知函數：$y\,dx+(2x-ye^y)\,dy=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-04b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y\,dx+(2x-ye^y)\,dy=0$，$x=0$ 時 $y=1$。用 (a) 積分因子 $F(y)$、(b) 把 $x$ 當未知函數的線性方程，兩種方法解，並比較。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$、$N$</td><td>$M=y$，$N=2x-ye^y$</td><td>跟著 $dx$、$dy$</td></tr>
+          <tr><td>對 $x$ 線性</td><td>$\dfrac{dx}{dy}+\dfrac2y\,x=e^y$</td><td>除以 $y\,dy$：$x$ 只以一次方出現（作業第 2 題的技巧）</td></tr>
+          <tr><td>初始條件</td><td>$(x,y)=(0,1)$</td><td>「$x=0$ 時 $y=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：兩種方法的解，確認相同。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $M_y=1\ne N_x=2$，不正合；$\Delta=-1$，$\Delta/M=-\dfrac1y$ 只含 $y$，<b>所以</b>可以用 $F(y)=e^{-\int(-1/y)dy}=y$。</p>
+      <p><b>因為</b> $N$ 裡的 $x$ 只有一次方、$M$ 不含 $x$，<b>所以</b>也可以看成 $x(y)$ 的線性方程。兩種方法的積分因子都是 $y$ 的次方，結果必須一樣——這說明「非正合的積分因子」和「線性方程的積分因子」其實是同一個想法。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-04b-s1" data-sym="Delta,F">
+        <span class="step-title">(a) 積分因子 $F=y$</span>
+        $$\Delta=M_y-N_x=1-2=-1,\qquad-\frac{\Delta}{M}=\frac1y,\qquad F=e^{\int\frac1y dy}=y$$
+        $$y^2\,dx+(2xy-y^2e^y)\,dy=0\qquad\big(\partial_y y^2=2y=\partial_x(2xy-y^2e^y)\ \checkmark\big)$$
+      </div>
+      <div class="step" data-step="am1-self-04b-s2" data-sym="f,h">
+        <span class="step-title">求 $f$（分部積分兩次）</span>
+        $$f=xy^2+h(y),\qquad f_y=2xy+h'=2xy-y^2e^y\ \Rightarrow\ h'=-y^2e^y$$
+        <p>$\int y^2e^y\,dy=y^2e^y-2\int ye^y\,dy=y^2e^y-2(ye^y-e^y)=(y^2-2y+2)e^y$，所以 $h=-(y^2-2y+2)e^y$。</p>
+        $$xy^2-(y^2-2y+2)e^y=C$$
+        <p class="sub">代入 $x=0$、$y=1$（題目）：$C=0-(1-2+2)e=-e$。</p>
+      </div>
+      <div class="step" data-step="am1-self-04b-s3" data-sym="pq">
+        <span class="step-title">(b) 當成 $x(y)$ 的線性方程</span>
+        <p>$p(y)=\dfrac2y$，$F=e^{\int2/y\,dy}=y^2$：</p>
+        $$\frac{d}{dy}\big(y^2x\big)=y^2e^y\ \Longrightarrow\ y^2x=(y^2-2y+2)e^y+K$$
+        <p class="sub">代入 $y=1$、$x=0$：$0=e+K$，$K=-e$。和 (a) 移項後完全相同。</p>
+        $$x=\frac{(y^2-2y+2)e^y-e}{y^2}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$xy^2-(y^2-2y+2)e^y=-e$，即 $x=\dfrac{(y^2-2y+2)e^y-e}{y^2}$；兩種方法一致。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\dfrac{d}{dy}\big[(y^2-2y+2)e^y\big]=(2y-2)e^y+(y^2-2y+2)e^y=y^2e^y$ ✔。(a) 的 $F=y$、(b) 的 $F=y^2$ 看起來不同，是因為 (b) 先把原方程除以 $y$ 化成標準式、再乘 $y^2$，對原方程總共乘了 $y^2/y=y$，和 (a) 一樣。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>不正合就乘 $F$；要求 $(FM)_y=(FN)_x$。</li>
+    <li>$\Delta=M_y-N_x$。$\Delta/N$ 只含 $x$ ⟹ $F=e^{\int\Delta/N\,dx}$；$\Delta/M$ 只含 $y$ ⟹ $F=e^{-\int\Delta/M\,dy}$（負號）。</li>
+    <li>乘完一定再檢查一次正合；乘 $F$ 可能丟掉 $F=0$ 或分母為 0 的解（如 $y\equiv0$）。</li>
+    <li>單項式組成的方程可以試 $F=x^ay^b$；$x$ 只有一次方時也可以直接當 $x(y)$ 的線性方程。</li>
+  </ol>
+</div>

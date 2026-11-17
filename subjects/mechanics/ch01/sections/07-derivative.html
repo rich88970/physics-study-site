@@ -1,0 +1,299 @@
+<h2>七、向量的微分 <span class="pg">講義 p.35</span></h2>
+
+<p class="lead">速度是位置對時間的導數，加速度是速度的導數。這一頁把第一節的乘積律推廣到向量：相加、內積、外積、純量乘向量。</p>
+
+<div class="box lecture">
+  <span class="box-title">p.35 Derivatives of Vectors</span>
+  $$\begin{aligned}
+  \frac{\mathrm d}{\mathrm ds}(\vec A+\vec B)&=\frac{\mathrm d\vec A}{\mathrm ds}+\frac{\mathrm d\vec B}{\mathrm ds}\\
+  \frac{\mathrm d}{\mathrm ds}(\vec A\cdot\vec B)&=\vec A\cdot\frac{\mathrm d\vec B}{\mathrm ds}+\frac{\mathrm d\vec A}{\mathrm ds}\cdot\vec B\\
+  \frac{\mathrm d}{\mathrm ds}(\vec A\times\vec B)&=\vec A\times\frac{\mathrm d\vec B}{\mathrm ds}+\frac{\mathrm d\vec A}{\mathrm ds}\times\vec B\\
+  \frac{\mathrm d}{\mathrm ds}(\phi\vec A)&=\phi\frac{\mathrm d\vec A}{\mathrm ds}+\frac{\mathrm d\phi}{\mathrm ds}\vec A
+  \end{aligned}$$
+  <p>對照純量：$\frac{\mathrm d}{\mathrm ds}(f+g)=\frac{\mathrm df}{\mathrm ds}+\frac{\mathrm dg}{\mathrm ds}$，$\frac{\mathrm d}{\mathrm ds}(fg)=f\frac{\mathrm dg}{\mathrm ds}+\frac{\mathrm df}{\mathrm ds}g$。</p>
+</div>
+
+<h3 id="dv-what">7.1 怎麼微分一個向量</h3>
+
+<div class="step" data-step="dv-comp">
+  <span class="step-title">定義與算法</span>
+  <p>定義和一般函數一樣：$\dfrac{\mathrm d\vec A}{\mathrm ds}=\displaystyle\lim_{\Delta s\to0}\frac{\vec A(s+\Delta s)-\vec A(s)}{\Delta s}$。在直角座標中基底 $\hat i,\hat j,\hat k$ 固定不動，所以就是逐分量微分：</p>
+  $$\frac{\mathrm d\vec A}{\mathrm ds}=\frac{\mathrm dA_1}{\mathrm ds}\hat i+\frac{\mathrm dA_2}{\mathrm ds}\hat j+\frac{\mathrm dA_3}{\mathrm ds}\hat k$$
+  <p class="small muted">講義 p.58 起的極座標，基底會跟著粒子轉，那時要連基底一起微分。</p>
+</div>
+
+<h3 id="dv-rules">7.2 乘積律</h3>
+
+<p>$\vec A\cdot\vec B=\sum A_iB_i$ 的每一項都是普通的乘積，用第一節的乘積律再加起來，就是講義的第二式；$\phi\vec A$ 的每個分量是 $\phi A_i$，同理。外積的式子形式一樣，但要注意次序。</p>
+
+<div class="box pitfall">
+  <span class="box-title">外積的乘積律要保持左右次序</span>
+  <p>每一項都是 $\vec A$（或它的導數）在左、$\vec B$ 在右。寫成 $\frac{\mathrm d\vec B}{\mathrm ds}\times\vec A$ 會差一個負號。</p>
+</div>
+
+<div class="step" data-step="dv-rules">
+  <span class="step-title">推論：長度固定的向量，導數與它垂直</span>
+  <p>$|\vec A|$ 固定，則 $\vec A\cdot\vec A$ 是常數，微分為 0：</p>
+  $$0=\frac{\mathrm d}{\mathrm ds}(\vec A\cdot\vec A)=2\,\vec A\cdot\frac{\mathrm d\vec A}{\mathrm ds}\ \Longrightarrow\ \vec A\perp\frac{\mathrm d\vec A}{\mathrm ds}$$
+  <p>例如等速圓周運動，$|\vec r|$ 固定，所以速度垂直 $\vec r$。</p>
+</div>
+
+<div class="anim" data-anim="const-length"></div>
+
+<h3 id="dv-tm">7.3 課本題</h3>
+
+<div class="problem" data-kind="textbook" id="tm-1-10">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-10 · p.44</span></div>
+    <h4>橢圓軌道的速度、加速度與夾角</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-10">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec r=2b\sin\omega t\,\hat i+b\cos\omega t\,\hat j$。(a) 求 $\vec v$、$\vec a$ 與速率；(b) $t=\pi/2\omega$ 時 $\vec v$ 與 $\vec a$ 的夾角。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec r=2b\sin\omega t\,\hat i+b\cos\omega t\,\hat j$，$b,\omega$ 為常數；軌道是半長軸 $2b$（沿 $x$）、半短軸 $b$ 的橢圓；(b) 的時刻 $\omega t=\frac\pi2$。</p>
+<h4>(a) 速度、加速度與速率</h4>
+<div class="anim" data-anim="ellipse"></div>
+<p><strong>① 速度：</strong> 直角座標的 $\hat i,\hat j$ 不隨時間變，向量微分就是逐分量微分；每個分量是 $\sin\omega t$ 或 $\cos\omega t$，連鎖律會帶出一個 $\omega$。</p>
+<p class="fnote"><b>公式（連鎖律）：</b>$\dfrac{\mathrm d}{\mathrm dt}f(u)=f'(u)\dfrac{\mathrm du}{\mathrm dt}$，其中 $u$ 是 $t$ 的函數；本題 $u=\omega t$、$\frac{\mathrm du}{\mathrm dt}=\omega$，所以 $\frac{\mathrm d}{\mathrm dt}\sin\omega t=\omega\cos\omega t$、$\frac{\mathrm d}{\mathrm dt}\cos\omega t=-\omega\sin\omega t$。</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm d}{\mathrm dt}(2b\sin\omega t)&amp;=2b\omega\cos\omega t\\ \frac{\mathrm d}{\mathrm dt}(b\cos\omega t)&amp;=-b\omega\sin\omega t\end{aligned}$$</div>
+<div class="math-block">$$\vec v=2b\omega\cos\omega t\,\hat i-b\omega\sin\omega t\,\hat j$$</div>
+<p><strong>② 加速度：</strong> 對速度的兩個分量再微分一次，連鎖律再帶出一個 $\omega$：</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm d}{\mathrm dt}(2b\omega\cos\omega t)&amp;=-2b\omega^2\sin\omega t\\ \frac{\mathrm d}{\mathrm dt}(-b\omega\sin\omega t)&amp;=-b\omega^2\cos\omega t\end{aligned}$$</div>
+<p>提出 $-\omega^2$，括號裡正好是 $\vec r$：</p>
+<div class="math-block">$$\vec a=-\omega^2\big(2b\sin\omega t\,\hat i+b\cos\omega t\,\hat j\big)=-\omega^2\vec r$$</div>
+<p>$\vec a$ 和 $\vec r$ 反向：加速度永遠指向橢圓中心。</p>
+<p><strong>③ 速率：</strong> 速率是速度的長度，代入 $\vec v$ 的兩個分量：</p>
+<div class="math-block">$$\begin{aligned}v=|\vec v|&amp;=\sqrt{(2b\omega\cos\omega t)^2+(b\omega\sin\omega t)^2}\\&amp;=b\omega\sqrt{4\cos^2\omega t+\sin^2\omega t}\end{aligned}$$</div>
+<p>用 $\sin^2\omega t=1-\cos^2\omega t$，$4\cos^2+1-\cos^2=1+3\cos^2$：</p>
+<div class="math-block">$$v=b\omega\sqrt{1+3\cos^2\omega t}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\vec v=2b\omega\cos\omega t\,\hat i-b\omega\sin\omega t\,\hat j\\ \vec a=-\omega^2\vec r\\ v=b\omega\sqrt{1+3\cos^2\omega t}\end{gathered}}$$</div>
+<h4>(b) $t=\pi/2\omega$ 時 $\vec v$ 與 $\vec a$ 的夾角</h4>
+<p><strong>① 代入時刻：</strong> 要夾角，先算內積；此時粒子在長軸端點 $(2b,0)$。代入 $\sin\frac\pi2=1$、$\cos\frac\pi2=0$ 到 (a) 的 $\vec v$、$\vec a$：</p>
+<div class="math-block">$$\begin{aligned}\vec v&amp;=2b\omega(0)\,\hat i-b\omega(1)\,\hat j=-b\omega\,\hat j\\ \vec a&amp;=-2b\omega^2(1)\,\hat i-b\omega^2(0)\,\hat j=-2b\omega^2\,\hat i\end{aligned}$$</div>
+<p><strong>② 內積：</strong></p>
+<p class="fnote"><b>公式（內積與夾角）：</b>$\vec A\cdot\vec B=|\vec A||\vec B|\cos\theta$，其中 $\theta$ 是兩向量的夾角；兩個非零向量內積為 0 時 $\cos\theta=0$、$\theta=90^\circ$。</p>
+<div class="math-block">$$\vec v\cdot\vec a=(0)(-2b\omega^2)+(-b\omega)(0)=0$$</div>
+<p>兩個向量都不為 0，內積為 0，所以夾角 $90^\circ$。</p>
+<div class="math-block">$$\boxed{\theta=90^\circ}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-32">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-32 · p.46</span></div>
+    <h4>$\displaystyle\int(2a\,\vec r\cdot\dot{\vec r}+2b\,\dot{\vec r}\cdot\ddot{\vec r})\,\mathrm dt=ar^2+b\dot r^2+\text{const.}$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-32">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明上式；$r$、$\dot r$ 分別是 $\vec r$、$\dot{\vec r}$ 的大小，$a,b$ 為常數。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$a,b$ 為常數；$r=|\vec r|$，$\dot r=|\dot{\vec r}|$（速率）；$\vec r(t)$ 沒有給出具體形式。</p>
+<p><strong>① 兩個導數：</strong> $\vec r(t)$ 沒有具體形式，不能逐分量積分；被積式裡「向量點自己的導數」正是對「向量點自己」用內積乘積律會出現的組合，所以猜原函數：分別對 $\vec r\cdot\vec r$ 和 $\dot{\vec r}\cdot\dot{\vec r}$ 微分。</p>
+<p class="fnote"><b>公式（內積的乘積律）：</b>$\dfrac{\mathrm d}{\mathrm dt}(\vec A\cdot\vec B)=\vec A\cdot\dot{\vec B}+\dot{\vec A}\cdot\vec B$，其中 $\vec A,\vec B$ 是隨時間變的向量；本題先取 $\vec A=\vec B=\vec r$，再取 $\vec A=\vec B=\dot{\vec r}$（導數為 $\ddot{\vec r}$）。</p>
+<p>內積可交換，兩項相同：</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}(\vec r\cdot\vec r)=\vec r\cdot\dot{\vec r}+\dot{\vec r}\cdot\vec r=2\,\vec r\cdot\dot{\vec r}$$</div>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}(\dot{\vec r}\cdot\dot{\vec r})=2\,\dot{\vec r}\cdot\ddot{\vec r}$$</div>
+<p>自己內積自己是長度平方，$\vec r\cdot\vec r=r^2$、$\dot{\vec r}\cdot\dot{\vec r}=\dot r^2$，所以</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}r^2=2\,\vec r\cdot\dot{\vec r},\qquad \frac{\mathrm d}{\mathrm dt}\dot r^2=2\,\dot{\vec r}\cdot\ddot{\vec r}$$</div>
+<p><strong>② 被積式是全微分：</strong> 把上一步兩式分別乘上常數 $a$、$b$ 再相加：</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}\big(ar^2+b\dot r^2\big)=2a\,\vec r\cdot\dot{\vec r}+2b\,\dot{\vec r}\cdot\ddot{\vec r}$$</div>
+<p>右邊正是題目的被積式。積分是微分倒過來讀（若 $\frac{\mathrm dF}{\mathrm dt}=f$，則 $\int f\,\mathrm dt=F+\text{const.}$），所以</p>
+<div class="math-block">$$\boxed{\begin{aligned}&amp;\int(2a\,\vec r\cdot\dot{\vec r}+2b\,\dot{\vec r}\cdot\ddot{\vec r})\,\mathrm dt\\&amp;=ar^2+b\dot r^2+\text{const.}\end{aligned}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-33">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-33 · p.46</span></div>
+    <h4>$\displaystyle\int\left(\frac{\dot{\vec r}}{r}-\frac{\vec r\,\dot r}{r^2}\right)\mathrm dt=\frac{\vec r}{r}+\vec C$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-33">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明上式，$\vec C$ 為常向量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$r=|\vec r|$；這裡的 $\dot r=\dfrac{\mathrm d|\vec r|}{\mathrm dt}$ 是<strong>長度</strong>的變化率，不是速率 $|\dot{\vec r}|$；$\vec C$ 為常向量。</p>
+<p><strong>① $\phi=1/r$ 的導數：</strong> 題目已給答案 $\vec r/r$，積分是微分倒過來，所以直接對 $\vec r/r=\phi\vec r$（$\phi=1/r$）微分，看是否等於被積式；先求純量 $\phi$ 的導數。</p>
+<p class="fnote"><b>公式（冪次微分＋連鎖律）：</b>$\mathrm d(x^n)=nx^{n-1}\,\mathrm dx$，其中 $n$ 是常數；本題 $x=r$、$n=-1$，兩邊除以 $\mathrm dt$ 帶出 $\dot r$。</p>
+<div class="math-block">$$\mathrm d(r^{-1})=-r^{-2}\,\mathrm dr$$</div>
+<div class="math-block">$$\dot\phi=\frac{\mathrm d}{\mathrm dt}\Big(\frac1r\Big)=-\frac{\dot r}{r^2}$$</div>
+<p><strong>② 用乘積律微分 $\vec r/r$：</strong></p>
+<p class="fnote"><b>公式（純量乘向量的乘積律）：</b>$\dfrac{\mathrm d}{\mathrm dt}(\phi\vec A)=\phi\dot{\vec A}+\dot\phi\vec A$，其中 $\phi$ 是純量函數、$\vec A$ 是向量函數；本題 $\phi=1/r$、$\vec A=\vec r$、$\dot{\vec A}=\dot{\vec r}$。</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}\left(\frac{\vec r}{r}\right)=\frac1r\,\dot{\vec r}+\left(-\frac{\dot r}{r^2}\right)\vec r=\frac{\dot{\vec r}}{r}-\frac{\vec r\,\dot r}{r^2}$$</div>
+<p><strong>③ 積分：</strong> 上一步的結果正是題目的被積式，所以積分就是 $\vec r/r$ 加上積分常數；向量的三個分量各自積分、各有一個常數，合起來是一個常向量 $\vec C$。</p>
+<div class="math-block">$$\boxed{\int\left(\frac{\dot{\vec r}}{r}-\frac{\vec r\,\dot r}{r^2}\right)\mathrm dt=\frac{\vec r}{r}+\vec C}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-27">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-27 · p.46</span></div>
+    <h4>$\frac{\mathrm d}{\mathrm dt}[\vec r\times(\vec v\times\vec r)]$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-27">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec v=\dot{\vec r}$、$\vec a=\dot{\vec v}$，證明 $\dfrac{\mathrm d}{\mathrm dt}[\vec r\times(\vec v\times\vec r)]=r^2\vec a+(\vec r\cdot\vec v)\vec v-(v^2+\vec r\cdot\vec a)\vec r$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec v=\dot{\vec r}$、$\vec a=\dot{\vec v}$；$r^2=\vec r\cdot\vec r$、$v^2=\vec v\cdot\vec v$。</p>
+<p><strong>① 乘積律（兩層各一次）：</strong> 乘積律一次只能拆一層，所以令 $\vec W=\vec v\times\vec r$，外層、內層各用一次，每次都保持左右次序（外積交換會變號）。</p>
+<p class="fnote"><b>公式（外積的乘積律）：</b>$\frac{\mathrm d}{\mathrm dt}(\vec A\times\vec B)=\vec A\times\dot{\vec B}+\dot{\vec A}\times\vec B$，其中 $\vec A$、$\vec B$ 是隨時間變的向量，次序不能換；本題外層 $\vec A=\vec r$、$\vec B=\vec W$，內層 $\vec A=\vec v$、$\vec B=\vec r$。</p>
+<p>外層用 $\dot{\vec r}=\vec v$：</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}(\vec r\times\vec W)=\vec v\times\vec W+\vec r\times\dot{\vec W}$$</div>
+<p>內層用 $\dot{\vec v}=\vec a$、$\dot{\vec r}=\vec v$，自己叉自己 $\vec v\times\vec v=0$：</p>
+<div class="math-block">$$\dot{\vec W}=\vec a\times\vec r+\vec v\times\vec v=\vec a\times\vec r$$</div>
+<p>把 $\vec W$、$\dot{\vec W}$ 代回第一式：</p>
+<div class="math-block">$$\begin{aligned}&amp;\frac{\mathrm d}{\mathrm dt}[\vec r\times(\vec v\times\vec r)]\\&amp;=\vec v\times(\vec v\times\vec r)+\vec r\times(\vec a\times\vec r)\end{aligned}$$</div>
+<p><strong>② BAC–CAB 展開兩個三重外積（<a href="#bac-cab">第五節</a>）：</strong> 題目右邊只有「純量 × 向量」，所以把兩個三重外積展開成內積乘向量。</p>
+<p class="fnote"><b>公式（BAC–CAB）：</b>$\vec A\times(\vec B\times\vec C)=\vec B(\vec A\cdot\vec C)-\vec C(\vec A\cdot\vec B)$，其中 $\vec A,\vec B,\vec C$ 為任意向量；本題第一項 $\vec A,\vec B,\vec C$ 換成 $\vec v,\vec v,\vec r$，第二項換成 $\vec r,\vec a,\vec r$。</p>
+<div class="math-block">$$\begin{aligned}
+\vec v\times(\vec v\times\vec r)&amp;=\vec v(\vec v\cdot\vec r)-\vec r(\vec v\cdot\vec v)\\&amp;=(\vec r\cdot\vec v)\vec v-v^2\vec r\\[4pt]
+\vec r\times(\vec a\times\vec r)&amp;=\vec a(\vec r\cdot\vec r)-\vec r(\vec r\cdot\vec a)\\&amp;=r^2\vec a-(\vec r\cdot\vec a)\vec r
+\end{aligned}$$</div>
+<p><strong>③ 相加、整理：</strong> 上一步的兩式相加，把兩個含 $\vec r$ 的項合併。</p>
+<div class="math-block">$$\begin{aligned}&amp;(\vec r\cdot\vec v)\vec v-v^2\vec r+r^2\vec a-(\vec r\cdot\vec a)\vec r\\&amp;=r^2\vec a+(\vec r\cdot\vec v)\vec v-(v^2+\vec r\cdot\vec a)\vec r\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\frac{\mathrm d}{\mathrm dt}[\vec r\times(\vec v\times\vec r)]\\=r^2\vec a+(\vec r\cdot\vec v)\vec v-(v^2+\vec r\cdot\vec a)\vec r\ \blacksquare\end{gathered}}$$</div>
+<details class="supp">
+      <summary>另一條路驗算：先展開再微分</summary>
+      <div class="supp-body">
+        <p>$\vec r\times(\vec v\times\vec r)=r^2\vec v-(\vec r\cdot\vec v)\vec r$，再用 $\frac{\mathrm d}{\mathrm dt}r^2=2\vec r\cdot\vec v$、$\frac{\mathrm d}{\mathrm dt}(\vec r\cdot\vec v)=v^2+\vec r\cdot\vec a$：</p>
+        $$\begin{aligned}
+        \frac{\mathrm d}{\mathrm dt}(r^2\vec v)&=r^2\vec a+2(\vec r\cdot\vec v)\vec v\\
+        \frac{\mathrm d}{\mathrm dt}[(\vec r\cdot\vec v)\vec r]&=(\vec r\cdot\vec v)\vec v+(v^2+\vec r\cdot\vec a)\vec r
+        \end{aligned}$$
+        <p>相減得到同一個結果 ✔</p>
+      </div>
+    </details>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-34">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-34 · p.47</span></div>
+    <h4>$\int\vec A\times\ddot{\vec A}\,\mathrm dt$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-34">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>計算 $\displaystyle\int\vec A\times\ddot{\vec A}\,\mathrm dt$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A(t)$ 為任意可微分的向量函數，沒有具體形式。</p>
+<p><strong>① 對 $\vec A\times\dot{\vec A}$ 微分：</strong> $\vec A(t)$ 沒有具體形式、不能逐分量積分，所以猜被積式是 $\vec A\times\dot{\vec A}$ 的導數（次序要對，猜成 $\dot{\vec A}\times\vec A$ 會差一個負號）。</p>
+<p class="fnote"><b>公式（外積的乘積律）：</b>$\frac{\mathrm d}{\mathrm dt}(\vec X\times\vec Y)=\dot{\vec X}\times\vec Y+\vec X\times\dot{\vec Y}$，其中 $\vec X$、$\vec Y$ 是隨時間變的向量，各自留在原來的位置；本題 $\vec X=\vec A$、$\vec Y=\dot{\vec A}$。</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}\big(\vec A\times\dot{\vec A}\big)=\dot{\vec A}\times\dot{\vec A}+\vec A\times\ddot{\vec A}$$</div>
+<p>第一項是自己叉自己，等於 0：</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}\big(\vec A\times\dot{\vec A}\big)=\vec A\times\ddot{\vec A}$$</div>
+<p><strong>② 積分：</strong> 積分是微分倒過來，積分常數是向量（三個分量各一個）。</p>
+<div class="math-block">$$\boxed{\int\vec A\times\ddot{\vec A}\,\mathrm dt=\vec A\times\dot{\vec A}+\vec C}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s07">7.4 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s07-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>螺旋線：速率固定 ⟺ 加速度垂直速度</h4>
+    <button type="button" class="exam-btn" data-exam="self-s07-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>帶電粒子在均勻磁場中沿螺旋線運動：$\vec r(t)=R\cos\omega t\,\hat i+R\sin\omega t\,\hat j+bt\,\hat k$。(a) 證明速率固定並求之；(b) 證明 $\vec a\perp\vec v$，並說明它和「長度固定 ⟹ 導數垂直」的關係；(c) 求 $|\vec a|$，$\vec a$ 指向哪裡？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec r=R\cos\omega t\,\hat i+R\sin\omega t\,\hat j+bt\,\hat k$，$R,\omega,b$ 為常數；$\hat i,\hat j,\hat k$ 不隨時間變。</p>
+<h4>(a) 速率固定並求之</h4>
+<p><strong>① 速度：</strong> 直角座標的單位向量固定，所以逐分量微分，$\sin\omega t$、$\cos\omega t$ 用連鎖律帶出 $\omega$。</p>
+<p class="fnote"><b>公式（連鎖律）：</b>$\frac{\mathrm d}{\mathrm dt}\cos\omega t=-\omega\sin\omega t$、$\frac{\mathrm d}{\mathrm dt}\sin\omega t=\omega\cos\omega t$，其中 $\omega$ 為常數；$bt$ 的導數是 $b$。</p>
+<div class="math-block">$$\vec v=(-R\omega\sin\omega t,\ R\omega\cos\omega t,\ b)$$</div>
+<p><strong>② 速率：</strong> 速率平方 $=\vec v\cdot\vec v$，前兩項用 $\sin^2+\cos^2=1$。</p>
+<div class="math-block">$$\begin{aligned}v^2&amp;=R^2\omega^2\sin^2\omega t+R^2\omega^2\cos^2\omega t+b^2\\&amp;=R^2\omega^2+b^2\end{aligned}$$</div>
+<p>和 $t$ 無關，所以速率固定：</p>
+<div class="math-block">$$\boxed{v=\sqrt{R^2\omega^2+b^2}}$$</div>
+<h4>(b) $\vec a\perp\vec v$，與「長度固定 ⟹ 導數垂直」的關係</h4>
+<p><strong>① 加速度：</strong> 對 (a) 的 $\vec v$ 再逐分量微分一次（常數 $b$ 的導數是 0）。</p>
+<div class="math-block">$$\vec a=(-R\omega^2\cos\omega t,\ -R\omega^2\sin\omega t,\ 0)$$</div>
+<p><strong>② 內積：</strong> 和 (a) 的 $\vec v$ 做內積，三個分量各乘。</p>
+<div class="math-block">$$\begin{aligned}\vec a\cdot\vec v&amp;=(-R\omega^2\cos\omega t)(-R\omega\sin\omega t)\\&amp;\quad+(-R\omega^2\sin\omega t)(R\omega\cos\omega t)+0\cdot b\\&amp;=R^2\omega^3\sin\omega t\cos\omega t\\&amp;\quad-R^2\omega^3\sin\omega t\cos\omega t=0\end{aligned}$$</div>
+<p><strong>③ 和 p.35 定理的關係：</strong> 對 $\vec v\cdot\vec v$ 用內積乘積律，看出「速率固定」和「$\vec a\perp\vec v$」是同一件事。</p>
+<p class="fnote"><b>公式（內積的乘積律）：</b>$\frac{\mathrm d}{\mathrm dt}(\vec A\cdot\vec B)=\dot{\vec A}\cdot\vec B+\vec A\cdot\dot{\vec B}$，其中 $\vec A$、$\vec B$ 是隨時間變的向量；本題 $\vec A=\vec B=\vec v$。</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}(v^2)=\frac{\mathrm d}{\mathrm dt}(\vec v\cdot\vec v)=2\,\vec v\cdot\vec a$$</div>
+<p>所以「速率固定」（左邊為 0）⟺ $\vec a\perp\vec v$（右邊為 0）。這就是「$|\vec A|$ 固定 ⟹ $\vec A\perp\frac{\mathrm d\vec A}{\mathrm dt}$」用在 $\vec A=\vec v$ 上；它只要求速率固定，不要求軌道是圓。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec a\cdot\vec v=0\\ \text{速率固定}\iff\vec a\perp\vec v\end{gathered}}$$</div>
+<h4>(c) $|\vec a|$ 與 $\vec a$ 的方向</h4>
+<p><strong>① 寫成位置分量的倍數：</strong> (b) 的 $\vec a$ 提出 $-\omega^2$，括號裡是位置的 $x,y$ 分量（$x=R\cos\omega t$、$y=R\sin\omega t$）。</p>
+<div class="math-block">$$\vec a=-\omega^2(x,\ y,\ 0)$$</div>
+<div class="math-block">$$|\vec a|=\omega^2\sqrt{x^2+y^2}=R\omega^2$$</div>
+<p>方向是從粒子水平指向 $z$ 軸（不是指向原點）：$z$ 方向等速、不需要加速度，只有繞軸的圓周部分需要向心加速度。</p>
+<div class="math-block">$$\boxed{\begin{gathered}|\vec a|=R\omega^2\\ \text{方向：水平指向轉軸（}z\text{ 軸）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s07-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>橢圓軌道上 $\vec r\times\vec v$ 守恆</h4>
+    <button type="button" class="exam-btn" data-exam="self-s07-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>沿用 <a href='#tm-1-10'>課本 1-10</a> 的軌道 $\vec r=2b\sin\omega t\,\hat i+b\cos\omega t\,\hat j$。(a) 證明 $\frac{\mathrm d}{\mathrm dt}(\vec r\times\vec v)=\vec r\times\vec a$；(b) 由 $\vec a$ 的方向說明 $\vec r\times\vec v$ 是常數，並直接算出它；(c) 求 $\vec r$ 每單位時間掃過的面積，驗證一個週期正好掃過整個橢圓。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec r=2b\sin\omega t\,\hat i+b\cos\omega t\,\hat j$；1-10 已得 $\vec v=2b\omega\cos\omega t\,\hat i-b\omega\sin\omega t\,\hat j$；週期 $T=2\pi/\omega$。</p>
+<h4>(a) 證明 $\frac{\mathrm d}{\mathrm dt}(\vec r\times\vec v)=\vec r\times\vec a$</h4>
+<p><strong>① 乘積律：</strong> $\vec r\times\vec v$ 是兩個隨時間變的向量的外積，用外積乘積律並保持次序。</p>
+<p class="fnote"><b>公式（外積的乘積律）：</b>$\frac{\mathrm d}{\mathrm dt}(\vec A\times\vec B)=\dot{\vec A}\times\vec B+\vec A\times\dot{\vec B}$，其中 $\vec A$、$\vec B$ 是隨時間變的向量，次序不能換；本題 $\vec A=\vec r$、$\vec B=\vec v$。</p>
+<p>代入 $\dot{\vec r}=\vec v$、$\dot{\vec v}=\vec a$：</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm d}{\mathrm dt}(\vec r\times\vec v)&amp;=\dot{\vec r}\times\vec v+\vec r\times\dot{\vec v}\\&amp;=\vec v\times\vec v+\vec r\times\vec a\end{aligned}$$</div>
+<p>$\vec v\times\vec v=0$，所以</p>
+<div class="math-block">$$\boxed{\frac{\mathrm d}{\mathrm dt}(\vec r\times\vec v)=\vec r\times\vec a}$$</div>
+<h4>(b) $\vec r\times\vec v$ 是常數並算出</h4>
+<p><strong>① 加速度沿位置向量：</strong> 1-10 對題目的 $\vec r$ 微分兩次得</p>
+<div class="math-block">$$\vec a=\ddot{\vec r}=-\omega^2(2b\sin\omega t,\ b\cos\omega t)=-\omega^2\vec r$$</div>
+<p><strong>② 導數為 0：</strong> 代入 (a) 的結果：</p>
+<div class="math-block">$$\vec r\times\vec a=\vec r\times(-\omega^2\vec r)=-\omega^2\,\vec r\times\vec r=0$$</div>
+<p>導數為 0，所以 $\vec r\times\vec v$ 不隨時間改變。</p>
+<p><strong>③ 直接算出 $\vec r\times\vec v$：</strong> 兩個向量都在 $xy$ 平面，外積只有 $z$ 分量 $xv_y-yv_x$。</p>
+<p>代入 $x=2b\sin\omega t$、$y=b\cos\omega t$、$v_x=2b\omega\cos\omega t$、$v_y=-b\omega\sin\omega t$：</p>
+<div class="math-block">$$\begin{aligned}(\vec r\times\vec v)_z&amp;=(2b\sin\omega t)(-b\omega\sin\omega t)\\&amp;\quad-(b\cos\omega t)(2b\omega\cos\omega t)\\&amp;=-2b^2\omega(\sin^2\omega t+\cos^2\omega t)\\&amp;=-2b^2\omega\end{aligned}$$</div>
+<p>確實和 $t$ 無關；負號表示從 $+z$ 往下看是順時針繞行。</p>
+<div class="math-block">$$\boxed{\vec r\times\vec v=-2b^2\omega\,\hat k\ \text{（常數）}}$$</div>
+<h4>(c) 掃過的面積</h4>
+<p><strong>① 掃面積速率：</strong> $\mathrm dt$ 時間內位置向量掃過以 $\vec r$、$\mathrm d\vec r=\vec v\,\mathrm dt$ 為兩邊的細長三角形，面積是外積長度的一半。</p>
+<p class="fnote"><b>公式（三角形面積）：</b>$\mathrm dA=\frac12|\vec r\times\mathrm d\vec r|$，其中 $\vec r$、$\mathrm d\vec r$ 為三角形的兩邊；本題 $\mathrm d\vec r=\vec v\,\mathrm dt$。</p>
+<div class="math-block">$$\frac{\mathrm dA}{\mathrm dt}=\frac12|\vec r\times\vec v|$$</div>
+<p>代入 (b) 的 $|\vec r\times\vec v|=2b^2\omega$：</p>
+<div class="math-block">$$\frac{\mathrm dA}{\mathrm dt}=\frac12\times2b^2\omega=b^2\omega$$</div>
+<p><strong>② 一個週期掃過的面積：</strong> 掃面積速率固定，乘上週期 $T=2\pi/\omega$。</p>
+<div class="math-block">$$A_{\text{一週}}=b^2\omega\times\frac{2\pi}{\omega}=2\pi b^2$$</div>
+<p>半軸 $2b$、$b$ 的橢圓面積是 $\pi(2b)(b)=2\pi b^2$，相同，一週正好掃過整個橢圓。這就是 Kepler 第二定律的數學：連心力（$\vec a\parallel\vec r$）⟹ 等時間掃過等面積。</p>
+<div class="math-block">$$\boxed{\frac{\mathrm dA}{\mathrm dt}=b^2\omega,\quad A_{\text{一週}}=2\pi b^2}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>直角座標中向量逐分量微分；內積、外積、純量乘向量都有乘積律。</li>
+    <li>外積的乘積律要保持左右次序。</li>
+    <li>長度固定的向量，導數與它垂直；$\vec r\cdot\dot{\vec r}=\tfrac12\frac{\mathrm d}{\mathrm dt}r^2$。</li>
+  </ol>
+</div>

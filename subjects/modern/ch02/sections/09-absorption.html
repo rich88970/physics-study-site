@@ -1,0 +1,413 @@
+<h2>九、光子的吸收 <span class="pg">課本 §2.8 · p.82–85</span></h2>
+
+<p class="lead">光子、X 光、$\gamma$ 射線和物質作用主要有三種方式：光電效應、康普頓散射、成對產生。哪一種占優勢由光子能量和吸收體的原子序決定；三者合起來讓光束強度隨厚度指數地衰減，$I=I_0e^{-\mu x}$。</p>
+
+<h3 id="m2-ab-three">9.1 三種作用 <span class="pg-tag">p.82–84</span></h3>
+
+<p>Fig. 2.27 把三種過程畫在一起，每一種都是光子的能量交給電子，電子再把能量損失給吸收體中的原子：</p>
+<ul>
+  <li><strong>光電效應</strong>：光子 $h\nu$ 被原子中的（束縛）電子吸收，光子消失，射出一個電子。</li>
+  <li><strong>康普頓散射</strong>：光子把一部分能量交給電子，自己變成能量較低的光子 $h\nu'$ 繼續前進，電子反衝出去。</li>
+  <li><strong>成對產生</strong>：光子在原子核附近消失，變成一對電子 $e^-$ 與正子 $e^+$；需要 $h\nu\ge1.02\ \text{MeV}$。</li>
+</ul>
+
+<p>隨能量的消長（Fig. 2.28）：低能量時光電效應是主要的能量損失機制；能量升高，光電效應變弱，由康普頓散射接手。吸收體的原子序越大，光電效應能維持重要的能量越高：輕元素（碳）在幾十 keV 就以康普頓散射為主，重元素（鉛）要到接近 $1\ \text{MeV}$。超過 $1.02\ \text{MeV}$ 門檻後，成對產生越來越重要；原子序越大，它越早成為主要機制——最重的元素交會點約 $4\ \text{MeV}$，輕元素要超過 $10\ \text{MeV}$。所以放射性衰變典型能量範圍的 $\gamma$ 射線，主要靠康普頓散射和物質作用。</p>
+
+<h3 id="m2-ab-atten">9.2 衰減定律 <span class="pg-tag">p.84</span></h3>
+
+<p>X 光或 $\gamma$ 射線光束的強度 $I$ 是每單位截面積輸送能量的速率。實驗發現，光束通過厚度 $\mathrm dx$ 的吸收體時損失的能量比例和 $\mathrm dx$ 成正比：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.84 Eq. (2.24)–(2.26) Attenuation</span>
+  $$-\frac{\mathrm dI}{I}=\mu\,\mathrm dx$$
+  $$I=I_0e^{-\mu x}$$
+  $$x=\frac{\ln(I_0/I)}{\mu}$$
+  <p>比例常數 $\mu$ 叫<strong>線性衰減係數</strong>，由光子能量和吸收材料決定。第二式由第一式積分（$x=0$ 時 $I=I_0$），第三式是把它反解出厚度。</p>
+</div>
+
+<div class="step" data-step="m2-ab-int" data-sym="mu,I">
+  <span class="step-title">積分</span>
+  $$\int_{I_0}^{I}\frac{\mathrm dI}{I}=-\mu\int_0^x\mathrm dx\ \Longrightarrow\ \ln\frac{I}{I_0}=-\mu x\ \Longrightarrow\ \frac{I_0}{I}=e^{\mu x},\quad\ln\frac{I_0}{I}=\mu x$$
+</div>
+
+<p>指數衰減的意思是：每多一段相同的厚度，強度就再乘上同一個比例，不是減掉同一個量；所以永遠不會剛好降到零。Fig. 2.29 是鉛對光子的 $\mu$ 隨能量的變化，總和曲線在約 $3$–$4\ \text{MeV}$ 有最小值（光電效應已衰退、成對產生還沒起來）——這時鉛擋 $\gamma$ 射線的效果最差。</p>
+
+<div class="anim" data-anim="m2-attenuation"></div>
+
+<div class="problem" data-kind="exam" id="kg-115-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 2 題 · 即 Beiser Fig. 2.27 · p.83</span></div>
+    <h4>三種光子–原子作用的比較</h4>
+    <button type="button" class="exam-btn" data-exam="kg-115-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>〔原卷附圖：三列示意圖，每列都是能量 $h\nu$ 的光子（波浪箭頭）射向一個原子（標示 Atom）。(i) 作用後原子射出一個電子，沒有光子出來；(ii) 作用後射出一個能量 $h\nu'$ 的光子和一個電子；(iii) 作用後射出兩個粒子。〕</p><svg class="exam-sketch" viewBox="0 0 270 186" width="270" style="display:block;max-width:100%;height:auto;margin:6px 0;color:var(--ink)" role="img" aria-label="原卷附圖示意：三列光子射向原子的過程"><text x="6" y="30" font-size="13" fill="currentColor">(i)</text><path d="M46.0 26.0 L47.5 27.8 L49.0 28.9 L50.4 28.9 L51.9 27.8 L53.4 26.0 L54.9 24.2 L56.3 23.1 L57.8 23.1 L59.3 24.2 L60.8 26.0 L62.2 27.8 L63.7 28.9 L65.2 28.9 L66.7 27.8 L68.1 26.0 L69.6 24.2 L71.1 23.1 L72.5 23.1 L74.0 24.2 L75.5 26.0 L77.0 27.8 L78.5 28.9 L79.9 28.9 L81.4 27.8 L82.9 26.0 L84.3 24.2 L85.8 23.1 L87.3 23.1 L88.8 24.2 L90.2 26.0 L91.7 27.8 L93.2 28.9 L94.7 28.9 L96.2 27.8 L97.6 26.0 L99.1 24.2 L100.6 23.1 L102.0 23.1 L103.5 24.2 L105.0 26.0" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="112.0,26.0 105.0,29.5 105.0,22.5" fill="currentColor"/><circle cx="128" cy="26" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="178" cy="26" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="194.0" cy="26.0" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="198.0" y1="26.0" x2="229.0" y2="26.0" stroke="currentColor" stroke-width="1.4"/><polygon points="236.0,26.0 229.0,29.5 229.0,22.5" fill="currentColor"/><text x="6" y="96" font-size="13" fill="currentColor">(ii)</text><path d="M46.0 92.0 L47.5 93.8 L49.0 94.9 L50.4 94.9 L51.9 93.8 L53.4 92.0 L54.9 90.2 L56.3 89.1 L57.8 89.1 L59.3 90.2 L60.8 92.0 L62.2 93.8 L63.7 94.9 L65.2 94.9 L66.7 93.8 L68.1 92.0 L69.6 90.2 L71.1 89.1 L72.5 89.1 L74.0 90.2 L75.5 92.0 L77.0 93.8 L78.5 94.9 L79.9 94.9 L81.4 93.8 L82.9 92.0 L84.3 90.2 L85.8 89.1 L87.3 89.1 L88.8 90.2 L90.2 92.0 L91.7 93.8 L93.2 94.9 L94.7 94.9 L96.2 93.8 L97.6 92.0 L99.1 90.2 L100.6 89.1 L102.0 89.1 L103.5 90.2 L105.0 92.0" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="112.0,92.0 105.0,95.5 105.0,88.5" fill="currentColor"/><circle cx="128" cy="92" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="178" cy="92" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><path d="M190.0 86.0 L191.9 87.2 L193.6 87.8 L194.9 87.4 L195.9 85.9 L196.7 83.8 L197.4 81.7 L198.4 80.2 L199.8 79.7 L201.4 80.3 L203.3 81.6 L205.2 82.8 L206.9 83.4 L208.2 82.9 L209.2 81.4 L210.0 79.3 L210.8 77.2 L211.8 75.7 L213.1 75.3 L214.8 75.9 L216.7 77.1 L218.6 78.3 L220.2 78.9 L221.6 78.5 L222.6 77.0 L223.3 74.9 L224.1 72.8 L225.1 71.3 L226.4 70.8 L228.1 71.4 L230.0 72.7 L231.9 73.9 L233.6 74.5 L234.9 74.0 L235.9 72.6 L236.7 70.4 L237.5 68.3 L238.5 66.8 L239.8 66.4 L241.5 67.0 L243.4 68.2" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="250.0,66.0 244.5,71.5 242.3,64.9" fill="currentColor"/><circle cx="193.0" cy="98.0" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="196.0" y1="100.0" x2="221.6" y2="111.2" stroke="currentColor" stroke-width="1.4"/><polygon points="228.0,114.0 220.2,114.4 223.0,108.0" fill="currentColor"/><text x="6" y="162" font-size="13" fill="currentColor">(iii)</text><path d="M46.0 158.0 L47.5 159.8 L49.0 160.9 L50.4 160.9 L51.9 159.8 L53.4 158.0 L54.9 156.2 L56.3 155.1 L57.8 155.1 L59.3 156.2 L60.8 158.0 L62.2 159.8 L63.7 160.9 L65.2 160.9 L66.7 159.8 L68.1 158.0 L69.6 156.2 L71.1 155.1 L72.5 155.1 L74.0 156.2 L75.5 158.0 L77.0 159.8 L78.5 160.9 L79.9 160.9 L81.4 159.8 L82.9 158.0 L84.3 156.2 L85.8 155.1 L87.3 155.1 L88.8 156.2 L90.2 158.0 L91.7 159.8 L93.2 160.9 L94.7 160.9 L96.2 159.8 L97.6 158.0 L99.1 156.2 L100.6 155.1 L102.0 155.1 L103.5 156.2 L105.0 158.0" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="112.0,158.0 105.0,161.5 105.0,154.5" fill="currentColor"/><circle cx="128" cy="158" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="178" cy="158" r="8" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.2"/><circle cx="193.0" cy="152.0" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="196.0" y1="150.0" x2="219.7" y2="139.0" stroke="currentColor" stroke-width="1.4"/><polygon points="226.0,136.0 221.1,142.1 218.2,135.8" fill="currentColor"/><circle cx="193.0" cy="164.0" r="3" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="196.0" y1="166.0" x2="219.7" y2="177.0" stroke="currentColor" stroke-width="1.4"/><polygon points="226.0,180.0 218.2,180.2 221.1,173.9" fill="currentColor"/></svg><p>在上面三個過程中，(a) 哪一個是康普頓散射？(b) 就入射光子的能量而言，哪一個最大？為什麼？(c) 詳細比較過程 (i) 與 (ii)。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：三列都是能量 $h\nu$ 的光子射向原子；(i) 出來一個電子、沒有光子，(ii) 出來一個 $h\nu'$ 光子和一個電子，(iii) 出來兩個粒子、沒有光子。$m$ 為電子質量，$mc^2=0.511\ \text{MeV}$。</p>
+<h4>(a) 認出康普頓散射</h4>
+<p><strong>① 看光子最後怎麼了：</strong> 三個過程的差別就在作用後還有沒有光子、出來幾個粒子。(ii) 作用後還有一個能量較低的光子 $h\nu'$ 和一個反衝電子，是康普頓散射；(i) 光子消失、只出來電子，是光電效應；(iii) 出來兩個粒子，是成對產生。</p>
+<div class="math-block">$$\boxed{\text{(ii) 是康普頓散射}}$$</div>
+<h4>(b) 哪個需要的入射光子能量最大</h4>
+<p><strong>① 成對產生的門檻：</strong> 光子要變成一個電子和一個正子（電荷守恆，一定成對），至少要提供兩份靜能，多的變成動能，原子核幫忙守恆動量。</p>
+<p class="fnote"><b>公式（成對產生門檻）：</b>$h\nu\ge2mc^2$，其中 $h\nu$ 為入射光子能量、$m$ 為電子（正子）質量、$c$ 為光速；本題 $mc^2=0.511\ \text{MeV}$。</p>
+<div class="math-block">$$h\nu\ge2mc^2=2(0.511\ \text{MeV})=1.02\ \text{MeV}$$</div>
+<p><strong>② 和另外兩者比較：</strong> 光電效應只要 $h\nu$ 超過功函數或束縛能（幾 eV 到 keV），康普頓散射主要在幾十 keV 到幾 MeV，都比成對產生低。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{(iii) 成對產生需要的能量最大}\\ \text{要產生電子–正子對的靜能：}h\nu\ge1.02\ \text{MeV}\end{gathered}}$$</div>
+<h4>(c) 比較 (i) 光電效應與 (ii) 康普頓散射</h4>
+<p><strong>① 光子的結果：</strong> 比較題分點寫，每點附理由或公式（完整的標準答案見 §2.7 的 <a href="#pe-cp-1">老師指定必考 pe-cp-1</a>）。(i) 光子被完全吸收、消失；(ii) 光子沒有消失，散射成能量較低、波長較長的光子。</p>
+<p><strong>② 能量分配：</strong> (i) 電子拿到扣掉束縛能後的全部能量；(ii) 能量分給散射光子和電子，分配由散射角決定。</p>
+<p class="fnote"><b>公式（光電方程）：</b>$h\nu=KE_{\max}+\phi$，其中 $h\nu$ 為入射光子能量、$KE_{\max}$ 為光電子最大動能、$\phi$ 為功函數；對應過程 (i)。</p>
+<p class="fnote"><b>公式（康普頓公式）：</b>$\lambda'-\lambda=\dfrac h{mc}(1-\cos\phi)$，其中 $\lambda$、$\lambda'$ 為入射與散射光子波長、$h$ 為普朗克常數、$m$ 為電子質量、$\phi$ 為散射角；對應過程 (ii)。</p>
+<div class="math-block">$$\text{(ii)}:\ h\nu=h\nu'+KE$$</div>
+<p><strong>③ 電子：</strong> (i) 必須是束縛電子——自由電子不能吸收整個光子而同時守恆能量與動量（習題 2-19、<a href="#pe-cp-2">pe-cp-2</a>），原子分擔動量；(ii) 可以看成自由（鬆束縛）電子，光子和電子像撞球一樣守恆能量與動量。</p>
+<p><strong>④ 能量範圍：</strong> (i) 在低能量（可見光、紫外線到低能 X 光）占優勢，原子序越大範圍越寬；(ii) 在較高能量占優勢：輕元素（碳）約從數十 keV 一直到 $10\ \text{MeV}$ 以上（Fig. 2.28 中約到 $20\ \text{MeV}$ 才被成對產生取代），重元素（鉛）約 $0.5$–$4\ \text{MeV}$。</p>
+<p><strong>⑤ 共同點：</strong> 都是一個光子和一個電子的作用，都放出電子，都證明光的粒子性——(i) 證明光子能量 $h\nu$，(ii) 進一步證明光子有動量 $h\nu/c$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{光子被吸收 vs 被散射；能量分配不同}\\ \text{束縛電子 vs 自由電子；低能 vs 較高能}\\ \text{兩者都證明光的粒子性}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="tbexample" id="bz-ex2-7">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 2.7 · p.85</span></div>
+    <h4>$2.0\ \text{MeV}$ $\gamma$ 射線在水中的衰減</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex2-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-7"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>The linear attenuation coefficient for 2.0-MeV gamma rays in water is 4.9 m$^{-1}$.</p><p>(a) Find the relative intensity of a beam of 2.0-MeV gamma rays after it has passed through 10 cm of water.</p><p>(b) How far must such a beam travel in water before its intensity is reduced to 1 percent of its original value?</p></div>
+<p class="original-caption">Beiser Example 2.7 · p.85</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$2.0\ \text{MeV}$ 的 $\gamma$ 射線在水中的線性衰減係數是 $4.9\ \text{m}^{-1}$。(a) 求一束 $2.0\ \text{MeV}$ $\gamma$ 射線通過 $10\ \text{cm}$ 的水之後的相對強度。(b) 這樣的光束在水中要走多遠，強度才會降到原來的 $1\%$？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\mu=4.9\ \text{m}^{-1}$ 為 $2.0\ \text{MeV}$ $\gamma$ 射線在水中的線性衰減係數，$x$ 為水的厚度，$I_0$、$I$ 為入射與透射強度。</p>
+<h4>(a) 相對強度</h4>
+<p><strong>① 指數衰減：</strong> 每走一小段 $\mathrm dx$ 強度就損失固定比例 $\mu\,\mathrm dx$，積分後是指數衰減，直接代入；先算無因次的 $\mu x$，厚度要換成公尺。</p>
+<p class="fnote"><b>公式（指數衰減定律 (2.25)）：</b>$I=I_0e^{-\mu x}$，其中 $I_0$ 為入射強度、$I$ 為通過厚度 $x$ 後的強度、$\mu$ 為線性衰減係數；本題 $\mu=4.9\ \text{m}^{-1}$。</p>
+<div class="math-block">$$\frac{I}{I_0}=e^{-\mu x}$$</div>
+<p>代入 $\mu=4.9\ \text{m}^{-1}$、$x=10\ \text{cm}=0.10\ \text{m}$：</p>
+<div class="math-block">$$\mu x=(4.9\ \text{m}^{-1})(0.10\ \text{m})=0.49$$</div>
+<div class="math-block">$$\frac{I}{I_0}=e^{-0.49}=0.61$$</div>
+<div class="math-block">$$\boxed{\frac{I}{I_0}=0.61\ \text{（剩 }61\%\text{）}}$$</div>
+<h4>(b) 降到 1% 的距離</h4>
+<p><strong>① 反解厚度：</strong> 已知強度比求厚度，用反解的 (2.26)。</p>
+<div class="math-block">$$x=\frac{\ln(I_0/I)}{\mu}$$</div>
+<p>代入 $I_0/I=100$（降到 $1\%$）、$\mu=4.9\ \text{m}^{-1}$：</p>
+<div class="math-block">$$x=\frac{\ln100}{4.9\ \text{m}^{-1}}=\frac{4.61}{4.9\ \text{m}^{-1}}=0.94\ \text{m}$$</div>
+<div class="math-block">$$\boxed{x=0.94\ \text{m}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="kg-107-9">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">107 學年期中（2018/10/30）第 9 題 · 即 Beiser 習題 2-45 · p.91</span></div>
+    <h4>鉛的半值厚度</h4>
+    <button type="button" class="exam-btn" data-exam="kg-107-9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-9"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficient for 1 MeV gamma ray in lead is 78 m$^{-1}$. Find the thickness of lead required to reduce by half of the intensity of a beam of such gamma ray (10%)</p><p class="original-sub"><strong>課本原文（Beiser Exercise 2-45）</strong></p><p>The linear absorption coefficient for 1-MeV gamma rays in lead is 78 m$^{-1}$. Find the thickness of lead required to reduce by half the intensity of a beam of such gamma rays.</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 9 題 · 即 Beiser 習題 2-45 · p.91</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>$1\ \text{MeV}$ $\gamma$ 射線在鉛中的線性吸收係數為 $78\ \text{m}^{-1}$。求要使這種 $\gamma$ 射線光束的強度減為一半所需的鉛厚度。（10%）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\mu=78\ \text{m}^{-1}$ 為 $1\ \text{MeV}$ $\gamma$ 射線在鉛中的線性吸收係數；強度減為一半，$I/I_0=\tfrac12$；所求厚度為半值厚度 $x_{1/2}$。</p>
+<p><strong>① 強度減半的條件：</strong> 強度按指數衰減，已知強度比求厚度，把 $\tfrac12$ 代入後取對數把 $x$ 拿下來（就是習題 2-43 的半值厚度）。</p>
+<p class="fnote"><b>公式（指數衰減定律）：</b>$I/I_0=e^{-\mu x}$，其中 $I_0$ 為入射強度、$I$ 為通過厚度 $x$ 後的強度、$\mu$ 為線性吸收係數；本題 $I/I_0=\tfrac12$、$x=x_{1/2}$。</p>
+<div class="math-block">$$\frac12=e^{-\mu x_{1/2}}$$</div>
+<p>兩邊取倒數再取自然對數：</p>
+<div class="math-block">$$e^{\mu x_{1/2}}=2\ \Rightarrow\ \mu x_{1/2}=\ln2\ \Rightarrow\ x_{1/2}=\frac{\ln2}{\mu}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $\ln2=0.693$、$\mu=78\ \text{m}^{-1}$：</p>
+<div class="math-block">$$x_{1/2}=\frac{0.693}{78\ \text{m}^{-1}}=8.9\times10^{-3}\ \text{m}=8.9\ \text{mm}$$</div>
+<div class="math-block">$$\boxed{x_{1/2}\approx8.9\ \text{mm}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-43">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-43 · p.91</span></div>
+    <h4>證明半值厚度 $0.693/\mu$；降為十分之一</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-43">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 證明使輻射光束強度減為一半所需的吸收體厚度為 $x_{1/2}=0.693/\mu$。(b) 求使強度減為十分之一所需的厚度。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\mu$ 為線性吸收係數，$I_0$、$I$ 為入射與透射強度；(a) $I/I_0=\tfrac12$，(b) $I/I_0=\tfrac1{10}$。</p>
+<h4>(a) 證明半值厚度</h4>
+<p><strong>① 代入強度比後取對數：</strong> 厚度在指數上，把強度比代入衰減定律後兩邊取自然對數，就能把 $x$ 拿下來。</p>
+<p class="fnote"><b>公式（指數衰減定律 (2.25)）：</b>$I=I_0e^{-\mu x}$，其中 $I_0$ 為入射強度、$I$ 為通過厚度 $x$ 後的強度、$\mu$ 為線性吸收係數；本題 (a) 取 $I/I_0=\tfrac12$，厚度記為 $x_{1/2}$。</p>
+<div class="math-block">$$\frac12=e^{-\mu x_{1/2}}$$</div>
+<p>兩邊取倒數再取 $\ln$：</p>
+<div class="math-block">$$e^{\mu x_{1/2}}=2\ \Rightarrow\ \mu x_{1/2}=\ln2$$</div>
+<div class="math-block">$$\boxed{x_{1/2}=\frac{\ln2}{\mu}=\frac{0.693}{\mu}\quad\text{得證}}$$</div>
+<h4>(b) 降為十分之一</h4>
+<p><strong>① 同樣做法：</strong> 代入 $I/I_0=\tfrac1{10}$：</p>
+<div class="math-block">$$e^{\mu x_{1/10}}=10\ \Rightarrow\ x_{1/10}=\frac{\ln10}{\mu}=\frac{2.30}{\mu}$$</div>
+<p><strong>② 換成半值厚度的倍數：</strong></p>
+<div class="math-block">$$\frac{x_{1/10}}{x_{1/2}}=\frac{2.30}{0.693}\approx3.3$$</div>
+<div class="math-block">$$\boxed{x_{1/10}=\frac{2.30}{\mu}\ \text{（約 }3.3\text{ 個半值厚度）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-44">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-44 · p.91</span></div>
+    <h4>薄吸收體的近似 $I_0\mu x$</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-44">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 證明當 $\mu x\ll1$ 時，厚度 $x$ 的吸收體吸收掉的輻射強度為 $I_0\mu x$。(b) 若 $\mu x=0.100$，用這個式子代替 (2.25) 的百分誤差是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\mu$ 為線性吸收係數，$x$ 為吸收體厚度，$I_0$、$I$ 為入射與透射強度；被吸收的強度是 $I_0-I$（減少的部分，不是剩下的 $I$）。</p>
+<h4>(a) 證明 $\mu x\ll1$ 時吸收掉 $I_0\mu x$</h4>
+<p><strong>① 寫出被吸收的強度：</strong> $\mu x\ll1$ 時 $e^{-\mu x}$ 很接近 1，可以泰勒展開只留一次項；先把被吸收的部分寫成入射減去透射。</p>
+<p class="fnote"><b>公式（指數衰減定律 (2.25)）：</b>$I=I_0e^{-\mu x}$，其中 $I_0$ 為入射強度、$I$ 為通過厚度 $x$ 後的強度、$\mu$ 為線性吸收係數。</p>
+<div class="math-block">$$I_0-I=I_0\left(1-e^{-\mu x}\right)$$</div>
+<p><strong>② 泰勒展開：</strong> 令 $u=\mu x$。</p>
+<p class="fnote"><b>公式（指數函數的泰勒展開）：</b>$e^{-u}=1-u+\dfrac{u^2}{2}-\cdots$，其中 $u$ 為任意實數，$|u|\ll1$ 時後面的項迅速變小；本題 $u=\mu x$。</p>
+<div class="math-block">$$1-e^{-\mu x}=\mu x-\frac{(\mu x)^2}{2}+\cdots$$</div>
+<p><strong>③ 丟掉高次項：</strong> $\mu x\ll1$ 時平方項以後都遠小於 $\mu x$，可以丟掉：</p>
+<div class="math-block">$$\boxed{I_0-I\approx I_0\mu x\qquad(\mu x\ll1)\quad\text{得證}}$$</div>
+<h4>(b) $\mu x=0.100$ 時的百分誤差</h4>
+<p><strong>① 精確值與近似值相比：</strong> 要知道近似差多少，就把兩者都算出來。代入 $\mu x=0.100$，被吸收的比例：</p>
+<div class="math-block">$$\text{精確：}\ 1-e^{-0.100}=1-0.9048=0.0952$$</div>
+<div class="math-block">$$\text{近似：}\ \mu x=0.100$$</div>
+<div class="math-block">$$\text{誤差}=\frac{0.100-0.0952}{0.0952}=5.1\%$$</div>
+<div class="math-block">$$\boxed{\text{近似值偏大約 }5\%\ (5.1\%)}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-46">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-46 · p.91</span></div>
+    <h4>$50\ \text{keV}$ X 光通過空氣</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-46">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-46"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficient for 50-keV x-rays in sea-level air is 5.0 × 10<sup>−3</sup> m<sup>−1</sup>. By how much is the intensity of a beam of such x-rays reduced when it passes through 0.50 m of air? Through 5.0 m of air?</p></div>
+<p class="original-caption">Beiser 習題 2-46 · p.91</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$50\ \text{keV}$ 的 X 光在海平面空氣中的線性吸收係數是 $5.0\times10^{-3}\ \text{m}^{-1}$。這樣的光束通過 $0.50\ \text{m}$ 的空氣後強度減少多少？通過 $5.0\ \text{m}$ 呢？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\mu=5.0\times10^{-3}\ \text{m}^{-1}$ 為 $50\ \text{keV}$ X 光在海平面空氣中的線性吸收係數；兩個厚度 $x_1=0.50\ \text{m}$、$x_2=5.0\ \text{m}$；題目問「減少多少」，即 $1-I/I_0$。</p>
+<h4>(1) 通過 $0.50\ \text{m}$</h4>
+<p><strong>① 先算 $\mu x$ 再取指數：</strong> 強度按指數衰減，先算 $\mu x$、再算 $I/I_0$，減少的比例是 $1-I/I_0$。</p>
+<p class="fnote"><b>公式（指數衰減定律）：</b>$I=I_0e^{-\mu x}$，其中 $I_0$ 為入射強度、$I$ 為通過厚度 $x$ 後的強度、$\mu$ 為線性吸收係數；本題 $\mu=5.0\times10^{-3}\ \text{m}^{-1}$。</p>
+<p>代入 $x_1=0.50\ \text{m}$：</p>
+<div class="math-block">$$\mu x_1=(5.0\times10^{-3}\ \text{m}^{-1})(0.50\ \text{m})=2.5\times10^{-3}$$</div>
+<div class="math-block">$$\frac{I}{I_0}=e^{-0.0025}=0.9975\ \Longrightarrow\ \text{減少}\ 1-0.9975=0.25\%$$</div>
+<div class="math-block">$$\boxed{\text{減少約 }0.25\%}$$</div>
+<h4>(2) 通過 $5.0\ \text{m}$</h4>
+<p><strong>① 同樣做法：</strong> 代入 $x_2=5.0\ \text{m}$：</p>
+<div class="math-block">$$\mu x_2=(5.0\times10^{-3}\ \text{m}^{-1})(5.0\ \text{m})=0.025$$</div>
+<div class="math-block">$$\frac{I}{I_0}=e^{-0.025}=0.975\ \Longrightarrow\ \text{減少}\ 1-0.975=2.5\%$$</div>
+<div class="math-block">$$\boxed{\text{減少約 }2.5\%}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-47">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-47 · p.91</span></div>
+    <h4>多厚的水等於 $10\ \text{mm}$ 的鉛</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-47">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-47"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficients for 2.0-MeV gamma rays are 4.9 m<sup>−1</sup> in water and 52 m<sup>−1</sup> in lead. What thickness of water would give the same shielding for such gamma rays as 10 mm of lead?</p></div>
+<p class="original-caption">Beiser 習題 2-47 · p.91</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$2.0\ \text{MeV}$ $\gamma$ 射線的線性吸收係數在水中是 $4.9\ \text{m}^{-1}$、在鉛中是 $52\ \text{m}^{-1}$。多厚的水對這種 $\gamma$ 射線的屏蔽效果和 $10\ \text{mm}$ 的鉛相同？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$2.0\ \text{MeV}$ $\gamma$ 射線的線性吸收係數 $\mu_{\text{水}}=4.9\ \text{m}^{-1}$、$\mu_{\text{鉛}}=52\ \text{m}^{-1}$；鉛厚 $x_{\text{鉛}}=10\ \text{mm}$；「屏蔽效果相同」即透射比例 $I/I_0$ 相同。</p>
+<p><strong>① 屏蔽相同 ⟹ $\mu x$ 相同：</strong> 透射比例 $e^{-\mu x}$ 相同，而指數函數一對一，所以只要 $\mu x$ 相同，不必真的算出強度比；兩邊同單位，厚度可以保持 mm。</p>
+<p class="fnote"><b>公式（指數衰減定律）：</b>$I/I_0=e^{-\mu x}$，其中 $I_0$ 為入射強度、$I$ 為通過厚度 $x$ 後的強度、$\mu$ 為線性吸收係數；本題水、鉛各一組 $\mu$、$x$。</p>
+<div class="math-block">$$e^{-\mu_{\text{水}}x_{\text{水}}}=e^{-\mu_{\text{鉛}}x_{\text{鉛}}}$$</div>
+<p>兩邊取自然對數、再除以 $\mu_{\text{水}}$：</p>
+<div class="math-block">$$\mu_{\text{水}}x_{\text{水}}=\mu_{\text{鉛}}x_{\text{鉛}}\ \Longrightarrow\ x_{\text{水}}=x_{\text{鉛}}\frac{\mu_{\text{鉛}}}{\mu_{\text{水}}}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $x_{\text{鉛}}=10\ \text{mm}$、$\mu_{\text{鉛}}=52\ \text{m}^{-1}$、$\mu_{\text{水}}=4.9\ \text{m}^{-1}$：</p>
+<div class="math-block">$$x_{\text{水}}=(10\ \text{mm})\frac{52}{4.9}=106\ \text{mm}$$</div>
+<div class="math-block">$$\boxed{x_{\text{水}}=106\ \text{mm}\approx11\ \text{cm}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-48">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-48 · p.91</span></div>
+    <h4>X 光穿過 $0.10\ \text{mm}$ 銅箔</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-48">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-48"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficient of copper for 80-keV x-rays is $4.7\times10^{4}$ m$^{-1}$. Find the relative intensity of a beam of 80-keV x-rays after it has passed through a 0.10-mm copper foil.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>銅對 $80\ \text{keV}$ X 光的線性吸收係數是 $4.7\times10^{4}\ \text{m}^{-1}$。$80\ \text{keV}$ 的 X 光束穿過 $0.10\ \text{mm}$ 厚的銅箔後，相對強度是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\mu=4.7\times10^{4}\ \text{m}^{-1}$ 為銅對 $80\ \text{keV}$ X 光的線性吸收係數，銅箔厚 $x=0.10\ \text{mm}=1.0\times10^{-4}\ \text{m}$（換成公尺才能和 $\text{m}^{-1}$ 相乘）。</p>
+<p><strong>① 算 $\mu x$：</strong> 強度按指數衰減，先算無因次的 $\mu x$，再取指數。代入 $\mu=4.7\times10^{4}\ \text{m}^{-1}$、$x=1.0\times10^{-4}\ \text{m}$：</p>
+<div class="math-block">$$\mu x=(4.7\times10^{4}\ \text{m}^{-1})(1.0\times10^{-4}\ \text{m})=4.7$$</div>
+<p><strong>② 相對強度：</strong> 代入上一步的 $\mu x=4.7$。</p>
+<p class="fnote"><b>公式（指數衰減定律）：</b>$I/I_0=e^{-\mu x}$，其中 $I_0$ 為入射強度、$I$ 為通過厚度 $x$ 後的強度、$\mu$ 為線性吸收係數；本題 $\mu x=4.7$。</p>
+<div class="math-block">$$\frac{I}{I_0}=e^{-\mu x}=e^{-4.7}=9.1\times10^{-3}$$</div>
+<div class="math-block">$$\boxed{\frac{I}{I_0}\approx0.0091\ \text{（剩不到 }1\%\text{）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-49">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-49 · p.91</span></div>
+    <h4>銅的半值厚度</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-49">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-49"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What thickness of copper is needed to reduce the intensity of the beam in Exercise 48 by half?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>要把習題 2-48 的光束強度減為一半，需要多厚的銅？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：沿用習題 2-48 的銅與 $80\ \text{keV}$ X 光，$\mu=4.7\times10^{4}\ \text{m}^{-1}$；強度減為一半，$I/I_0=\tfrac12$。</p>
+<p><strong>① 半值厚度公式：</strong> 「減為一半」就是半值厚度的定義，直接用習題 2-43 證明的結果：由 $\tfrac12=e^{-\mu x_{1/2}}$ 取對數，</p>
+<div class="math-block">$$x_{1/2}=\frac{\ln2}{\mu}=\frac{0.693}{\mu}$$</div>
+<p><strong>② 代入數值：</strong> 代入習題 2-48 的 $\mu=4.7\times10^{4}\ \text{m}^{-1}$：</p>
+<div class="math-block">$$x_{1/2}=\frac{0.693}{4.7\times10^{4}\ \text{m}^{-1}}=1.5\times10^{-5}\ \text{m}=0.015\ \text{mm}$$</div>
+<div class="math-block">$$\boxed{x_{1/2}\approx0.015\ \text{mm}\ (15\ \mu\text{m})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-50">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-50 · p.91</span></div>
+    <h4>鐵屏蔽要多厚才等於 $10\ \text{mm}$ 鉛</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-50">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-50"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The linear absorption coefficients for 0.05-nm x-rays in lead and in iron are, respectively, 5.8 × 10<sup>4</sup> m<sup>−1</sup> and 1.1 × 10<sup>4</sup> m<sup>−1</sup>. How thick should an iron shield be in order to provide the same protection from these x-rays as 10 mm of lead?</p></div>
+<p class="original-caption">Beiser 習題 2-50 · p.91</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$0.05\ \text{nm}$ 的 X 光在鉛和鐵中的線性吸收係數分別是 $5.8\times10^{4}\ \text{m}^{-1}$ 和 $1.1\times10^{4}\ \text{m}^{-1}$。鐵屏蔽要多厚，才能和 $10\ \text{mm}$ 的鉛提供相同的防護？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$0.05\ \text{nm}$ X 光的線性吸收係數 $\mu_{\text{鉛}}=5.8\times10^{4}\ \text{m}^{-1}$、$\mu_{\text{鐵}}=1.1\times10^{4}\ \text{m}^{-1}$（「分別」：第一個是鉛）；鉛厚 $x_{\text{鉛}}=10\ \text{mm}$；「相同防護」即 $I/I_0$ 相同。</p>
+<p><strong>① 防護相同 ⟹ $\mu x$ 相同：</strong> 和習題 2-47 一樣，透射比例 $e^{-\mu x}$ 相等，取對數得 $\mu_{\text{鐵}}x_{\text{鐵}}=\mu_{\text{鉛}}x_{\text{鉛}}$：</p>
+<div class="math-block">$$x_{\text{鐵}}=x_{\text{鉛}}\frac{\mu_{\text{鉛}}}{\mu_{\text{鐵}}}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $x_{\text{鉛}}=10\ \text{mm}$、$\mu_{\text{鉛}}=5.8\times10^{4}\ \text{m}^{-1}$、$\mu_{\text{鐵}}=1.1\times10^{4}\ \text{m}^{-1}$：</p>
+<div class="math-block">$$x_{\text{鐵}}=(10\ \text{mm})\frac{5.8\times10^{4}}{1.1\times10^{4}}=53\ \text{mm}$$</div>
+<div class="math-block">$$\boxed{x_{\text{鐵}}\approx53\ \text{mm}\ (5.3\ \text{cm})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-09a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>同樣重量的屏蔽：鉛和水差不多</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-09a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$2.0\ \text{MeV}$ $\gamma$ 射線的線性吸收係數：水 $4.9\ \text{m}^{-1}$、鉛 $52\ \text{m}^{-1}$；密度：水 $1.00\times10^{3}\ \text{kg/m}^3$、鉛 $11.3\times10^{3}\ \text{kg/m}^3$。(a) 求兩者的 $\mu/\rho$（每單位質量的衰減能力）。(b) 和 $10\ \text{mm}$ 鉛同樣屏蔽效果的水層（習題 2-47），每平方公尺的質量和那層鉛相比如何？(c) 一面牆由 $5.0\ \text{mm}$ 鉛加 $20\ \text{cm}$ 水組成，透射比例是多少？兩層的先後順序有沒有影響？(d) 什麼情況下仍應選鉛？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$2.0\ \text{MeV}$ $\gamma$ 射線；水 $\mu=4.9\ \text{m}^{-1}$、$\rho=1.00\times10^{3}\ \text{kg/m}^3$；鉛 $\mu=52\ \text{m}^{-1}$、$\rho=11.3\times10^{3}\ \text{kg/m}^3$。假設窄光束：被散射的光子算作離開光束（指數衰減定律的前提）。</p>
+<h4>(a) 兩者的 $\mu/\rho$</h4>
+<p><strong>① 每單位質量的衰減能力：</strong> 衰減只看 $\mu x$，把它拆成 $\mu/\rho$ 乘上每平方公尺的質量 $\rho x$，比較「同樣重量誰擋得多」就是比較 $\mu/\rho$。</p>
+<p class="fnote"><b>公式（質量衰減係數）：</b>$\mu x=\left(\dfrac\mu\rho\right)(\rho x)$，其中 $\mu$ 為線性吸收係數、$\rho$ 為密度、$x$ 為厚度、$\rho x$ 為屏蔽每平方公尺的質量；本題分別代入水和鉛的 $\mu$、$\rho$。</p>
+<p>代入題目給的 $\mu$ 與 $\rho$：</p>
+<div class="math-block">$$\begin{aligned}\text{鉛}&amp;:\ \frac{52\ \text{m}^{-1}}{11.3\times10^{3}\ \text{kg/m}^3}=4.6\times10^{-3}\ \text{m}^2/\text{kg}\\\text{水}&amp;:\ \frac{4.9\ \text{m}^{-1}}{1.00\times10^{3}\ \text{kg/m}^3}=4.9\times10^{-3}\ \text{m}^2/\text{kg}\end{aligned}$$</div>
+<p><strong>② 為什麼幾乎一樣：</strong> 水甚至略好。$2\ \text{MeV}$ 時以康普頓散射為主（Fig. 2.27），它只看路上有多少電子：每公斤水的電子比鉛多約 $1.4$ 倍（$Z/A$：$0.56$ 對 $0.40$），但鉛另外還有成對產生和光電效應補上，結果兩者相近。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{鉛 }4.6\times10^{-3}\ \text{m}^2/\text{kg}\\ \text{水 }4.9\times10^{-3}\ \text{m}^2/\text{kg}\end{gathered}}$$</div>
+<h4>(b) 等效屏蔽的每平方公尺質量</h4>
+<p><strong>① 鉛層：</strong> 每平方公尺的質量 $=\rho x$。代入 $\rho=11.3\times10^{3}\ \text{kg/m}^3$、$x=10\ \text{mm}=0.010\ \text{m}$：</p>
+<div class="math-block">$$\rho x=(11.3\times10^{3})(0.010)=113\ \text{kg/m}^2$$</div>
+<p><strong>② 水層：</strong> 等效水厚由習題 2-47 得 $10\ \text{mm}\times52/4.9=106\ \text{mm}$，代入 $\rho=1.00\times10^{3}\ \text{kg/m}^3$、$x=0.106\ \text{m}$：</p>
+<div class="math-block">$$\rho x=(1.00\times10^{3})(0.106)=106\ \text{kg/m}^2$$</div>
+<p>同樣效果，水甚至比鉛輕一點。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{水 }106\ \text{kg/m}^2\text{ 對鉛 }113\ \text{kg/m}^2\\ \text{差不多}\end{gathered}}$$</div>
+<h4>(c) 兩層牆的透射比例</h4>
+<p><strong>① 透射因子相乘：</strong> 光束依序通過兩層，每層各乘上一個透射因子，指數相乘就是指數相加，總衰減只看 $\mu x$ 的總和。</p>
+<div class="math-block">$$\frac{I}{I_0}=e^{-\mu_{\text{鉛}}x_{\text{鉛}}}e^{-\mu_{\text{水}}x_{\text{水}}}=e^{-(\mu_{\text{鉛}}x_{\text{鉛}}+\mu_{\text{水}}x_{\text{水}})}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $\mu_{\text{鉛}}=52\ \text{m}^{-1}$、$x_{\text{鉛}}=0.0050\ \text{m}$、$\mu_{\text{水}}=4.9\ \text{m}^{-1}$、$x_{\text{水}}=0.20\ \text{m}$：</p>
+<div class="math-block">$$\begin{aligned}\frac{I}{I_0}&amp;=e^{-(52)(0.0050)-(4.9)(0.20)}\\&amp;=e^{-0.26-0.98}=e^{-1.24}=0.29\end{aligned}$$</div>
+<p><strong>③ 順序：</strong> 指數相加可以交換，先後順序沒有影響（窄光束的衰減）。</p>
+<div class="math-block">$$\boxed{\frac{I}{I_0}=0.29\ (29\%)\text{，與順序無關}}$$</div>
+<h4>(d) 什麼情況下仍應選鉛</h4>
+<p><strong>① 比較厚度：</strong> 同樣的衰減，鉛的厚度只有水的</p>
+<div class="math-block">$$\frac{4.9}{52}=\frac1{10.6}$$</div>
+<p>空間受限（儀器外殼、防護衣、運輸容器）時用鉛；不在乎厚度、只在乎重量和成本時，水或混凝土一樣好。</p>
+<div class="math-block">$$\boxed{\text{厚度（空間）受限時選鉛}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-09b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>光子平均走多遠才被作用：平均自由徑</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-09b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一束窄光束射入吸收係數為 $\mu$ 的物質。(a) 由 $I=I_0e^{-\mu x}$ 寫出一個光子在 $x$ 到 $x+\mathrm dx$ 之間第一次被作用（被吸收或散射出光束）的機率，並證明光子被作用前平均走的距離（平均自由徑）是 $1/\mu$。(b) $1\ \text{MeV}$ $\gamma$ 射線在鉛中 $\mu=78\ \text{m}^{-1}$：平均自由徑、半值厚度各多少？在第一個平均自由徑內被作用的比例是多少？(c) 為什麼平均自由徑比半值厚度長？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：吸收係數 $\mu$，衰減定律 $I=I_0e^{-\mu x}$；窄光束中被作用（吸收或散射出去）的光子就離開光束，所以 $I/I_0$ 是一個光子走到 $x$ 還沒被作用的機率。(b) 鉛 $\mu=78\ \text{m}^{-1}$。</p>
+<h4>(a) 機率分布與平均自由徑</h4>
+<p><strong>① 機率分布：</strong> $I/I_0$ 是光子「活到」$x$ 的機率，在 $x$ 到 $x+\mathrm dx$ 之間第一次被作用的機率就是這個機率的減少量。對 $I/I_0=e^{-\mu x}$ 微分，取負號：</p>
+<div class="math-block">$$P(x)\,\mathrm dx=-\mathrm d\Big(\frac{I}{I_0}\Big)=\mu e^{-\mu x}\,\mathrm dx$$</div>
+<p><strong>② 平均距離：分部積分：</strong> 平均距離是「距離 × 機率」的總和，被積函數是 $x$ 乘指數，用分部積分。</p>
+<p class="fnote"><b>公式（期望值）：</b>$\langle x\rangle=\int_0^\infty xP(x)\,\mathrm dx$，其中 $P(x)$ 為機率密度、$x$ 為光子被作用前走的距離；本題 $P(x)=\mu e^{-\mu x}$。</p>
+<p>令 $u=x$、$\mathrm dv=\mu e^{-\mu x}\mathrm dx$，則 $\mathrm du=\mathrm dx$、$v=-e^{-\mu x}$；$x\to\infty$ 時 $xe^{-\mu x}\to0$，$x=0$ 時為 0：</p>
+<div class="math-block">$$\begin{aligned}\langle x\rangle&amp;=\int_0^\infty x\,\mu e^{-\mu x}\,\mathrm dx\\&amp;=\Big[-xe^{-\mu x}\Big]_0^\infty+\int_0^\infty e^{-\mu x}\,\mathrm dx\\&amp;=0+\frac1\mu\end{aligned}$$</div>
+<div class="math-block">$$\boxed{P(x)=\mu e^{-\mu x},\quad\langle x\rangle=\frac1\mu}$$</div>
+<h4>(b) 鉛的數字</h4>
+<p><strong>① 平均自由徑與半值厚度：</strong> 代入 $\mu=78\ \text{m}^{-1}$。</p>
+<p class="fnote"><b>公式（半值厚度）：</b>$x_{1/2}=\dfrac{\ln2}{\mu}=\dfrac{0.693}{\mu}$，其中 $x_{1/2}$ 為強度剩一半的厚度、$\mu$ 為吸收係數；本題 $\mu=78\ \text{m}^{-1}$。</p>
+<div class="math-block">$$\frac1\mu=\frac{1}{78\ \text{m}^{-1}}=12.8\ \text{mm}$$</div>
+<div class="math-block">$$x_{1/2}=\frac{0.693}{78\ \text{m}^{-1}}=8.9\ \text{mm}$$</div>
+<p><strong>② 第一個平均自由徑內被作用的比例：</strong> 代入 $x=1/\mu$，$\mu x=1$：</p>
+<div class="math-block">$$1-e^{-1}=1-0.368=63\%$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{平均自由徑 }12.8\ \text{mm，半值厚度 }8.9\ \text{mm}\\ \text{第一個平均自由徑內被作用 }63\%\end{gathered}}$$</div>
+<h4>(c) 為什麼平均自由徑比較長</h4>
+<p><strong>① 中位數與平均：</strong> $x_{1/2}$ 是「一半光子已被作用」的距離（中位數）；指數分布有一條很長的尾巴，少數光子走得很遠，把平均拉長：</p>
+<div class="math-block">$$\frac1\mu=\frac{x_{1/2}}{\ln2}=1.44\,x_{1/2}$$</div>
+<div class="math-block">$$\boxed{\text{長尾巴把平均拉到中位數的 }1/\ln2=1.44\text{ 倍}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>低能光電、中能康普頓、$>1.02\ \text{MeV}$ 成對產生；原子序越大，光電效應範圍越寬、成對產生越早接手。</li>
+    <li>$I=I_0e^{-\mu x}$，$x=\ln(I_0/I)/\mu$；相同屏蔽 ⟺ $\mu x$ 相同。</li>
+    <li>半值厚度 $0.693/\mu$、十分之一厚度 $2.30/\mu$；$\mu x\ll1$ 時吸收 $\approx I_0\mu x$。</li>
+  </ol>
+</div>

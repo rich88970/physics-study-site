@@ -1,0 +1,193 @@
+<h2>六、角速度向量 <span class="pg">講義 p.33–34</span></h2>
+
+<p class="lead">外積在物理上的第一個應用：用一個向量 $\vec\omega$ 同時表示「轉多快」和「繞哪根軸轉」，再用 $\vec v=\vec\omega\times\vec r$ 一次寫出圓周運動速度的大小和方向。</p>
+
+<h3 id="ang-scalar">6.1 $v=R\omega$ <span class="pg-tag">p.33</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.33 Angular Velocity</span>
+  $$\omega=\frac{\mathrm d\theta}{\mathrm dt}=\dot\theta,\qquad v=R\frac{\mathrm d\theta}{\mathrm dt}=R\omega$$
+</div>
+
+<div class="step" data-step="ang-arc">
+  <span class="step-title">由弧長推出</span>
+  <p>半徑 $R$、圓心角 $\theta$ 的弧長是 $s=R\theta$，速率是弧長的變化率：</p>
+  $$v=\frac{\mathrm ds}{\mathrm dt}=R\frac{\mathrm d\theta}{\mathrm dt}=R\omega$$
+</div>
+
+<div class="anim" data-anim="arc-length"></div>
+
+<div class="box pitfall">
+  <span class="box-title">$\omega$ 要用 rad/s</span>
+  <p>$s=R\theta$ 只在 $\theta$ 用弧度時成立。每秒 2 圈是 $\omega=2\times2\pi=4\pi\ \text{rad/s}$，不是 $720$ 度/秒直接代入。</p>
+</div>
+
+<h3 id="ang-vector">6.2 $\vec v=\vec\omega\times\vec r$ <span class="pg-tag">p.34</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.34</span>
+  $$\vec v=\vec\omega\times\vec r\quad(\neq\vec r\times\vec\omega),\qquad v=r\omega\sin\alpha$$
+  <p>$\vec r$ 從軸上的原點 $O$ 指向粒子，$\alpha$ 是 $\vec r$ 與轉軸的夾角，$R$ 是粒子到轉軸的距離。</p>
+</div>
+
+<div class="step" data-step="ang-cross">
+  <span class="step-title">為什麼 $\vec\omega\times\vec r$ 就是速度</span>
+  <p>$\vec\omega$ 沿轉軸，方向用右手定則：四指順著轉動方向彎，拇指就是 $\vec\omega$。<strong>大小</strong>：$|\vec\omega\times\vec r|=\omega r\sin\alpha$，而 $r\sin\alpha=R$（到軸的距離），所以等於 $R\omega$。<strong>方向</strong>：外積同時垂直轉軸和 $\vec r$，正好是圓周的切線方向。次序反過來會指向相反方向，所以是 $\vec\omega\times\vec r$，不是 $\vec r\times\vec\omega$。</p>
+</div>
+
+<p>原點可以選在轉軸上的任何位置：$\vec r$ 和 $\alpha$ 會變，但 $r\sin\alpha=R$ 不變，算出的 $\vec v$ 相同（下圖第 4、5 步）。原點不在軸上時這個公式不能直接用。</p>
+
+<div class="anim" data-anim="angular"></div>
+
+<div class="problem" data-kind="example" id="ex-p33">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.33–34</span></div>
+    <h4>角速度：$v=R\omega$ 與 $\vec v=\vec\omega\times\vec r$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p33">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="ex-p33"><span class="part-label original-label">講義英文原文</span>
+<div class="original-text" lang="en"><p><strong>Example: Angular Velocity</strong></p><p>As a particle moves in a circular path, the rate of change of the angular position is called the angular velocity: $\omega=\dfrac{\mathrm d\theta}{\mathrm dt}=\dot\theta$</p><p>For the motion in a circle of radius $R$, the instantaneous magnitude of the linear velocity is given by: $v=R\dfrac{\mathrm d\theta}{\mathrm dt}=R\omega$</p><p>Angular velocity, with respect to a coordinate system centered at the origin $O$, can be expressed in a more general form using vector notation: $\vec v=\vec\omega\times\vec r$ $(\neq\vec r\times\vec\omega)$, $v=r\omega\sin\alpha$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點沿半徑 $R$ 的圓周運動，角位置 $\theta(t)$。(a) 證明速率 $v=R\dot\theta=R\omega$。(b) 原點 $O$ 取在轉軸上，$\vec r$ 從 $O$ 指向質點、和轉軸夾 $\alpha$，$\vec\omega$ 沿轉軸（右手定則）。證明 $\vec v=\vec\omega\times\vec r$、大小 $v=r\omega\sin\alpha$，並說明為什麼不能寫成 $\vec r\times\vec\omega$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：半徑 $R$ 固定；角位置 $\theta(t)$，角速度 $\omega=\dot\theta$；(b) 原點 $O$ 在轉軸上，$\vec r$ 和轉軸夾 $\alpha$，$\vec\omega$ 沿轉軸（右手定則）。</p>
+<h4>(a) 證明 $v=R\omega$</h4>
+<p><strong>① 弧長對時間微分：</strong> 速率是沿路徑走過的長度對時間的變化率，圓周上走過的長度就是弧長，$R$ 固定可以提出來。</p>
+<p class="fnote"><b>公式（弧長）：</b>$s=R\theta$，其中 $R$ 是半徑、$\theta$ 是圓心角（弧度）。</p>
+<div class="math-block">$$v=\frac{\mathrm ds}{\mathrm dt}=\frac{\mathrm d(R\theta)}{\mathrm dt}=R\frac{\mathrm d\theta}{\mathrm dt}$$</div>
+<p>代入 $\omega=\dfrac{\mathrm d\theta}{\mathrm dt}$：</p>
+<div class="math-block">$$\boxed{v=R\omega}$$</div>
+<h4>(b) 證明 $\vec v=\vec\omega\times\vec r$、$v=r\omega\sin\alpha$，並說明次序</h4>
+<p><strong>① 拆開 $\vec r$：</strong> $\vec r$ 一般不垂直轉軸，直接想 $\vec\omega\times\vec r$ 不好想像，所以從質點往轉軸作垂線，拆成沿軸的 $\vec r_\parallel$ 和垂直軸的 $\vec R$：$\vec r=\vec r_\parallel+\vec R$。$\vec r_\parallel$ 的長度是 $\vec r$ 在軸方向的投影，$\vec R$ 從軸垂直指向質點、長度就是圓的半徑：</p>
+<div class="math-block">$$\vec r_\parallel=(r\cos\alpha)\hat\omega,\qquad |\vec R|=r\sin\alpha$$</div>
+<p><strong>② 沿軸那段的外積是 0：</strong> 外積有分配律，而 $\vec\omega\parallel\vec r_\parallel$：</p>
+<div class="math-block">$$\vec\omega\times\vec r=\underbrace{\vec\omega\times\vec r_\parallel}_{0}+\vec\omega\times\vec R=\vec\omega\times\vec R$$</div>
+<p><strong>③ 大小：</strong></p>
+<p class="fnote"><b>公式（外積的大小）：</b>$|\vec A\times\vec B|=AB\sin\theta$，其中 $\theta$ 是兩向量的夾角；本題 $\vec\omega\perp\vec R$，$\theta=90^\circ$、$\sin90^\circ=1$。</p>
+<div class="math-block">$$|\vec\omega\times\vec R|=\omega\,|\vec R|=\omega R=r\omega\sin\alpha$$</div>
+<p>正是 (a) 的速率 $R\omega$。</p>
+<p><strong>④ 方向：</strong> 外積同時垂直轉軸和 $\vec R$，也就是圓在質點處的切線方向；從 $\vec\omega$ 的尖端往下看，質點逆時針轉，右手四指從 $\hat\omega$ 彎向 $\hat R$，拇指正好指向前進方向。大小、方向都對，所以 $\vec v=\vec\omega\times\vec r$。</p>
+<p><strong>⑤ 次序與原點：</strong> 外積反交換：$\vec r\times\vec\omega=-\vec\omega\times\vec r$，大小一樣但指向後退方向，所以次序不能換。原點沿軸移動時只改變 $\vec r_\parallel$（被外積消掉的那段），$\vec R$ 不變，所以 $\vec v$ 不變。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec v=\vec\omega\times\vec r,\quad |\vec v|=r\omega\sin\alpha=R\omega\\ \vec r\times\vec\omega\text{ 方向相反}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="ex-ang">
+  <header>
+    <div class="meta"><span class="chip">練習</span><span class="src">非課本題</span></div>
+    <h4>用 $\vec\omega\times\vec r$ 算速度</h4>
+    <button type="button" class="exam-btn" data-exam="ex-ang">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>剛體以 $\vec\omega=2\hat k\ \text{rad/s}$ 繞 $z$ 軸轉，其上一點 $\vec r=(1,0,1)\ \text{m}$（原點在軸上）。求 $\vec v$，並用 $v=r\omega\sin\alpha$ 驗算。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec\omega=2\hat k\ \text{rad/s}=(0,0,2)$，$\vec r=(1,0,1)\ \text{m}$，原點在轉軸上。</p>
+<p><strong>① 外積求 $\vec v$：</strong> 原點在轉軸上，$\vec v=\vec\omega\times\vec r$ 可以直接用，兩向量都有分量，用外積分量公式。</p>
+<p class="fnote"><b>公式（剛體轉動的速度）：</b>$\vec v=\vec\omega\times\vec r$，其中 $\vec\omega$ 是角速度、$\vec r$ 是從轉軸上的原點指向該點的位置向量；外積第 1、2、3 分量依序用下標 $(2,3)$、$(3,1)$、$(1,2)$。代入 $\vec\omega=(0,0,2)$、$\vec r=(1,0,1)$：</p>
+<div class="math-block">$$\begin{aligned}v_1&amp;=\omega_2r_3-\omega_3r_2=0\cdot1-2\cdot0=0\\ v_2&amp;=\omega_3r_1-\omega_1r_3=2\cdot1-0\cdot1=2\\ v_3&amp;=\omega_1r_2-\omega_2r_1=0\cdot0-0\cdot1=0\end{aligned}$$</div>
+<p>單位 $\text{rad/s}\times\text{m}=\text{m/s}$（弧度沒有單位）：</p>
+<div class="math-block">$$\vec v=(0,\,2,\,0)\ \text{m/s}$$</div>
+<p><strong>② 用 $v=r\omega\sin\alpha$ 驗算：</strong> $\alpha$ 是 $\vec r$ 和轉軸 $\hat k$ 的夾角，先用內積求 $\cos\alpha$：</p>
+<div class="math-block">$$\begin{aligned}r&amp;=\sqrt{1+0+1}=\sqrt2\ \text{m}\\ \cos\alpha&amp;=\frac{\vec r\cdot\hat k}{r}=\frac1{\sqrt2}\end{aligned}$$</div>
+<p>所以 $\alpha=45^\circ$、$\sin\alpha=\frac{\sqrt2}{2}$。代入 $\omega=2\ \text{rad/s}$：</p>
+<div class="math-block">$$v=r\omega\sin\alpha=\sqrt2\times2\times\frac{\sqrt2}{2}=2\ \text{m/s}$$</div>
+<p>和上一步的 $|\vec v|=2\ \text{m/s}$ 相同。</p>
+<p><strong>③ 方向：</strong> $\vec\omega$ 沿 $+z$，從上往下看是逆時針轉；這一點在 $+x$ 側（離 $z$ 軸 $R=r\sin\alpha=1\ \text{m}$），下一瞬間往 $+y$ 移動，和 $\vec v=2\hat j$ 一致。</p>
+<div class="math-block">$$\boxed{\vec v=2\hat j\ \text{m/s},\quad |\vec v|=r\omega\sin\alpha=2\ \text{m/s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s06">6.3 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s06-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>高雄隨地球自轉的速度</h4>
+    <button type="button" class="exam-btn" data-exam="self-s06-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>地球每 $T=86164\ \text{s}$（恆星日）繞地軸轉一圈，半徑 $R_E=6.37\times10^6\ \text{m}$。高雄在北緯 $\lambda=22.6^\circ$。原點取在地心，用 $\vec v=\vec\omega\times\vec r$ 求高雄地面隨自轉的速度大小與方向。公式 $v=r\omega\sin\alpha$ 裡的 $\alpha$ 是多少？為什麼不是 $\lambda$？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$T=86164\ \text{s}$，$R_E=6.37\times10^6\ \text{m}$，緯度 $\lambda=22.6^\circ$（$\vec r$ 和赤道面的夾角）；原點在地心（在地軸上），地球當球、$|\vec r|=R_E$，自轉由西向東。</p>
+<p><strong>① $\vec\omega$ 的大小與方向：</strong> 原點在地軸上，可以直接用 $\vec v=\vec\omega\times\vec r$；先求 $\vec\omega$。轉一圈是 $2\pi$ 弧度，花一個週期 $T$。</p>
+<p class="fnote"><b>公式（角速度與週期）：</b>$\omega=\dfrac{2\pi}{T}$，其中 $T$ 是轉一圈的時間；本題 $T=86164\ \text{s}$。</p>
+<div class="math-block">$$\omega=\frac{2\pi}{86164\ \text{s}}=7.292\times10^{-5}\ \text{rad/s}$$</div>
+<p>從北極上空看地球逆時針（西→東）轉，右手四指順著轉向彎，拇指朝上：$\vec\omega$ 沿地軸指向北。</p>
+<p><strong>② $\alpha=90^\circ-\lambda$：</strong> $\alpha$ 是 $\vec r$ 和<strong>轉軸</strong>的夾角，$\lambda$ 是 $\vec r$ 和<strong>赤道面</strong>的夾角，轉軸垂直赤道面，所以兩者互餘，直接把 $\lambda$ 代進 $\sin$ 會錯：</p>
+<div class="math-block">$$\alpha=90^\circ-22.6^\circ=67.4^\circ$$</div>
+<p><strong>③ 速率：</strong> $r\sin\alpha=R_E\sin(90^\circ-\lambda)=R_E\cos\lambda$，就是高雄所在緯度圈的半徑（到地軸的距離）。</p>
+<p class="fnote"><b>公式（剛體轉動的速率）：</b>$v=r\omega\sin\alpha$，其中 $r$ 是到原點的距離、$\alpha$ 是 $\vec r$ 和轉軸的夾角；本題 $r=R_E$、$\alpha=90^\circ-\lambda$。</p>
+<div class="math-block">$$v=r\omega\sin\alpha=R_E\,\omega\cos\lambda$$</div>
+<p>代入 $R_E=6.37\times10^6\ \text{m}$、$\omega=7.292\times10^{-5}\ \text{rad/s}$、$\cos22.6^\circ=0.9232$：</p>
+<div class="math-block">$$\begin{aligned}v&amp;=(6.37\times10^6)(7.292\times10^{-5})(0.9232)\\&amp;=464.5\times0.9232\approx429\ \text{m/s}\end{aligned}$$</div>
+<p><strong>④ 方向：用座標算外積：</strong> 取 $z$ 軸指北（沿地軸），$x$ 軸在高雄所在的經線平面上（赤道面內），$y=z\times x$ 方向：</p>
+<div class="math-block">$$\vec r=R_E(\cos\lambda,\ 0,\ \sin\lambda),\qquad \vec\omega=(0,0,\omega)$$</div>
+<p class="fnote"><b>公式（外積的分量）：</b>$\vec A\times\vec B=(A_2B_3-A_3B_2,\ A_3B_1-A_1B_3,\ A_1B_2-A_2B_1)$；本題 $\vec A=\vec\omega$、$\vec B=\vec r$。</p>
+<div class="math-block">$$\begin{aligned}\vec\omega\times\vec r&amp;=\omega R_E\big(0\cdot\sin\lambda-1\cdot0,\ 1\cdot\cos\lambda-0,\ 0\big)\\&amp;=(0,\ \omega R_E\cos\lambda,\ 0)\end{aligned}$$</div>
+<p>只有 $+y$ 分量，大小和上一步相同；在高雄當地，$+y$（垂直經線平面、順著自轉方向）是正東方。</p>
+<div class="math-block">$$\boxed{\begin{gathered}v\approx429\ \text{m/s，向東}\\ \alpha=90^\circ-\lambda=67.4^\circ\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s06-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>由兩點的速度反推角速度</h4>
+    <button type="button" class="exam-btn" data-exam="self-s06-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>剛體繞過原點的軸轉動，角速度 $\vec\omega$ 未知。測得 $\vec r_1=(1,0,0)$ 處速度 $\vec v_1=(0,3,-2)$，$\vec r_2=(0,1,0)$ 處速度 $\vec v_2=(-3,0,1)$（單位 m、m/s）。(a) 求 $\vec\omega$；(b) 求 $(1,1,1)$ 處的速度；(c) 只量 $\vec v_1$ 為什麼不夠？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：軸過原點，每一點都滿足 $\vec v=\vec\omega\times\vec r$；設 $\vec\omega=(a,b,c)$；$\vec r_1=(1,0,0)\ \text{m}$、$\vec v_1=(0,3,-2)\ \text{m/s}$；$\vec r_2=(0,1,0)\ \text{m}$、$\vec v_2=(-3,0,1)\ \text{m/s}$；$\vec r_3=(1,1,1)\ \text{m}$。</p>
+<h4>(a) 求 $\vec\omega$</h4>
+<p><strong>① 由 $\vec v_1$ 比較分量：</strong> $\vec\omega$ 有三個未知分量，把 $\vec\omega\times\vec r$ 展開和量到的速度逐分量比較；速度一定垂直 $\vec r$，每點只給兩個有效方程式，所以要兩個點。</p>
+<p class="fnote"><b>公式（外積的分量）：</b>$\vec A\times\vec B=(A_2B_3-A_3B_2,\ A_3B_1-A_1B_3,\ A_1B_2-A_2B_1)$；本題 $\vec A=\vec\omega=(a,b,c)$、$\vec B=\vec r_1=(1,0,0)$。</p>
+<div class="math-block">$$\begin{aligned}\vec\omega\times\vec r_1&amp;=(b\cdot0-c\cdot0,\ c\cdot1-a\cdot0,\ a\cdot0-b\cdot1)\\&amp;=(0,\ c,\ -b)\end{aligned}$$</div>
+<p>和 $\vec v_1=(0,3,-2)$ 比較，第 1 分量 $0=0$ 自動成立：</p>
+<div class="math-block">$$c=3,\qquad -b=-2\ \Longrightarrow\ b=2$$</div>
+<p><strong>② 由 $\vec v_2$ 比較分量：</strong> 同樣代入 $\vec r_2=(0,1,0)$：</p>
+<div class="math-block">$$\begin{aligned}\vec\omega\times\vec r_2&amp;=(b\cdot0-c\cdot1,\ c\cdot0-a\cdot0,\ a\cdot1-b\cdot0)\\&amp;=(-c,\ 0,\ a)\end{aligned}$$</div>
+<p>和 $\vec v_2=(-3,0,1)$ 比較：</p>
+<div class="math-block">$$-c=-3\ \Longrightarrow\ c=3$$</div>
+<p>和上一步的 $c=3$ 一致；第 2 分量 $0=0$ 自動成立；第 3 分量給出</p>
+<div class="math-block">$$a=1$$</div>
+<p><strong>③ 合起來：</strong></p>
+<div class="math-block">$$\begin{aligned}\vec\omega&amp;=(1,2,3)\ \text{rad/s}\\ |\vec\omega|&amp;=\sqrt{1+4+9}=\sqrt{14}\approx3.74\ \text{rad/s}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\vec\omega=(1,2,3)\ \text{rad/s}}$$</div>
+<h4>(b) $(1,1,1)$ 處的速度</h4>
+<p><strong>① 一般式：</strong> $\vec\omega=(a,b,c)$、$\vec r=(x,y,z)$ 時</p>
+<div class="math-block">$$\vec\omega\times\vec r=(bz-cy,\ cx-az,\ ay-bx)$$</div>
+<p><strong>② 代入：</strong> 代入 (a) 的 $a=1,\ b=2,\ c=3$ 與 $\vec r_3=(1,1,1)$；分量寫成 $(\vec v_3)_x$ 等，以免和 $\vec v_1$、$\vec v_2$ 混淆：</p>
+<div class="math-block">$$\begin{aligned}(\vec v_3)_x&amp;=bz-cy=2\cdot1-3\cdot1=-1\\ (\vec v_3)_y&amp;=cx-az=3\cdot1-1\cdot1=2\\ (\vec v_3)_z&amp;=ay-bx=1\cdot1-2\cdot1=-1\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\vec v_3=(-1,\ 2,\ -1)\ \text{m/s}}$$</div>
+<h4>(c) 只量 $\vec v_1$ 為什麼不夠</h4>
+<p><strong>① 沿 $\vec r_1$ 的分量看不見：</strong> (a) 第 ① 步只用到 $\vec v_1$ 的後兩個分量，定出 $b,c$，$a$ 完全沒出現。原因：把 $\vec\omega$ 換成 $\vec\omega+\lambda\vec r_1$，</p>
+<div class="math-block">$$\begin{aligned}(\vec\omega+\lambda\vec r_1)\times\vec r_1&amp;=\vec\omega\times\vec r_1+\lambda\,\vec r_1\times\vec r_1\\&amp;=\vec\omega\times\vec r_1\end{aligned}$$</div>
+<p>$\vec v_1$ 不變。$\vec\omega$ 沿 $\vec r_1$ 的分量（這裡就是 $a$）對這一點「看不見」，需要第二個和 $\vec r_1$ 不共線的點。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{一個點只決定 }\vec\omega\text{ 垂直於 }\vec r_1\text{ 的部分}\\ \text{沿 }\vec r_1\text{ 的分量 }a\text{ 定不出來}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\omega=\dot\theta$（rad/s）；$v=R\omega$ 來自弧長 $s=R\theta$。</li>
+    <li>$\vec\omega$ 沿轉軸、右手定則；$\vec v=\vec\omega\times\vec r$，次序不能反。</li>
+    <li>$|\vec\omega\times\vec r|=r\omega\sin\alpha=R\omega$，原點可在軸上任意位置。</li>
+  </ol>
+</div>

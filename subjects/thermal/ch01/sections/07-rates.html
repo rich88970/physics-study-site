@@ -1,0 +1,1456 @@
+<h2>七、過程的速率 <span class="pg">課本 §1.7 · p.37–48</span></h2>
+
+<p class="lead">前六節只問「最後平衡在哪裡」，這一節問「要多久才到」。熱、動量、粒子都會被分子的亂跑從多的地方帶到少的地方：熱傳導（Fourier 定律）、黏滯（$\eta$）、擴散（Fick 定律）三條定律長得一模一樣——流量正比於梯度。對理想氣體，用「平均自由徑」與「兩個盒子交換分子」的粗略圖像，就能估出三個係數的大小，還能預測它們和壓力無關、正比於 $\sqrt T$。</p>
+
+<h3 id="r7-conduction">7.1 熱傳的三種方式與 Fourier 熱傳導定律 <span class="pg-tag">p.37–39</span></h3>
+
+<p>熱力學（thermodynamics）只研究平衡態；「多快」的問題屬於輸運理論（transport theory），又叫動力學（kinetics）。課本說這一節不是全書主線，後面的章節不依賴它，但它把「熱是怎麼流的」講成可以計算的定律。</p>
+
+<p>熱從熱的物體流到冷的物體有三種方式（§1.4 也提過）：</p>
+<ul>
+  <li><strong>輻射（radiation）</strong>：中間是真空時唯一的方式（太陽與地球、保溫瓶的內外壁）。第 7 章才推公式。</li>
+  <li><strong>對流（convection）</strong>：流體整團移動把熱帶走，常常是氣體、液體裡最主要的方式，但和流體受的力有關，太複雜，本書不算。</li>
+  <li><strong>傳導（conduction）</strong>：分子層級的直接接觸。氣體、液體裡靠碰撞（快分子撞慢分子把能量交出去）；固體裡靠晶格振動，金屬還有傳導電子——所以導電好的材料通常也導熱好。</li>
+</ul>
+
+<p>以一片玻璃窗為例（課本 Fig. 1.16）：通過的熱 $Q$ 應該正比於面積 $A$ 和經過的時間 $\Delta t$，反比於厚度 $\Delta x$，而且兩邊同溫時必須是 0。最簡單的猜法是 $Q\propto\Delta T$——對傳導這猜法是對的（輻射就不是）。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.38 Eq. (1.59)–(1.60) Fourier 熱傳導定律（Fourier heat conduction law）</span>
+  $$Q\propto\frac{A\,\Delta T\,\Delta t}{\Delta x}\qquad\Longrightarrow\qquad\frac{Q}{\Delta t}=-k_tA\,\frac{dT}{dx}$$
+  <p>比例常數 $k_t$ 叫熱導率（thermal conductivity），只和材料有關；課本加下標 $t$ 是為了和波茲曼常數 $k$ 區分。負號：$T$ 往 $+x$ 增加時，熱往 $-x$ 流。</p>
+</div>
+
+<div class="step" data-step="t1r-fourier-1" data-sym="kt">
+  <span class="step-title">為什麼可以把 $\Delta T/\Delta x$ 換成 $dT/dx$</span>
+  <p>穩態時（溫度不再隨時間變），一片均勻材料裡每一層的熱流都相同，不然中間某層會一直加熱或冷卻。熱流相同、$k_t$ 相同，梯度就處處相同——溫度在材料裡是<strong>直線</strong>，所以 $dT/dx=\Delta T/\Delta x$。</p>
+</div>
+<div class="step" data-step="t1r-fourier-2">
+  <span class="step-title">單位與數量級</span>
+  <p>$k_t=\dfrac{Q/\Delta t}{A\,|dT/dx|}$ 的單位是 $\dfrac{\text W}{\text m^2\cdot\text{K/m}}=\text{W/(m·K)}$。常見材料差了四個數量級以上：</p>
+  <div class="symbol-table-wrap"><table>
+    <thead><tr><th>材料</th><th>$k_t$（W/(m·K)）</th></tr></thead>
+    <tbody><tr><td>空氣</td><td>0.026</td></tr><tr><td>木頭</td><td>0.08</td></tr><tr><td>水</td><td>0.6</td></tr><tr><td>玻璃</td><td>0.8</td></tr><tr><td>鐵</td><td>80</td></tr><tr><td>銅</td><td>400</td></tr></tbody>
+  </table></div>
+  <p>空氣和水的數值只算傳導；實際上它們的對流常常更重要。</p>
+</div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-window">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.7 Eq. (1.61) · p.39</span></div>
+    <h4>一片玻璃窗的熱流</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-window">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一片玻璃窗面積 1 m²、厚 3.2 mm（1/8 吋），玻璃的熱導率 0.8 W/(m·K)。若緊貼窗戶內側的溫度是 20°C、緊貼外側是 0°C，通過窗戶的熱流率是多少？這個數字合理嗎？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>面積</td><td>$A=1\ \text{m}^2$</td><td>「面積 <b>1 m²</b>」</td></tr>
+          <tr><td>厚度</td><td>$\Delta x=3.2\ \text{mm}=3.2\times10^{-3}\ \text{m}$</td><td>「厚 <b>3.2 mm</b>」；要換成公尺</td></tr>
+          <tr><td>熱導率</td><td>$k_t=0.8\ \text{W/(m·K)}$</td><td>「玻璃的熱導率 <b>0.8 W/(m·K)</b>」</td></tr>
+          <tr><td>兩面溫度</td><td>$T_2=20^\circ\text C=293$ K，$T_1=0^\circ\text C=273$ K</td><td>「緊貼內側 <b>20°C</b>、緊貼外側 <b>0°C</b>」</td></tr>
+          <tr><td>溫差</td><td>$\Delta T=20$ K</td><td>題目沒寫；溫差用 °C 或 K 數值相同</td></tr>
+          <tr><td>狀態</td><td>穩態、一維</td><td>題目沒寫；窗戶很薄很寬，溫度只沿厚度變化，且不隨時間變</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：熱流率 $Q/\Delta t$，並判斷合不合理。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>熱是穿過固體玻璃、靠分子層級的接觸傳過去（沒有流體整團移動、也不是真空），<b>所以</b>是傳導，用 Fourier 定律 (1.60)。</p>
+      <p><b>因為</b>窗戶在穩態下溫度是直線分布（7.1 的說明），<b>所以</b>梯度直接用 $\Delta T/\Delta x$；題目只問熱流多大，負號只表示方向（由內往外），算大小時取絕對值。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-window-s1" data-sym="T">
+        <span class="step-title">求溫度梯度</span>
+        <p>一維穩態，溫度線性，梯度等於溫差除以厚度：</p>
+        $$\left|\frac{dT}{dx}\right|=\frac{T_2-T_1}{\Delta x}$$
+        <p class="sub">代入 $T_2-T_1=293\ \text{K}-273\ \text{K}=20$ K（題目「20°C」「0°C」）、$\Delta x=0.0032$ m（題目「3.2 mm」）：</p>
+        $$\left|\frac{dT}{dx}\right|=\frac{20\ \text{K}}{0.0032\ \text{m}}=6250\ \text{K/m}$$
+      </div>
+      <div class="step" data-step="sc-ex-window-s2" data-sym="kt">
+        <span class="step-title">代入 Fourier 定律</span>
+        $$\frac{Q}{\Delta t}=k_tA\left|\frac{dT}{dx}\right|$$
+        <p class="sub">代入 $k_t=0.8$ W/(m·K)、$A=1$ m²（題目）、梯度 6250 K/m（步驟 1）：</p>
+        $$\frac{Q}{\Delta t}=(0.8\ \text{W/(m·K)})(1\ \text{m}^2)(6250\ \text{K/m})=5000\ \text{W}$$
+      </div>
+      <div class="step" data-step="sc-ex-window-s3">
+        <span class="step-title">判斷合理性</span>
+        <p>5000 W 相當於一片窗戶要五台 1000 W 電暖器才補得回來，太大了。錯在假設「緊貼玻璃」的溫度就是室內和室外的溫度：玻璃兩側各黏著一層幾乎不動的空氣，空氣的 $k_t$ 只有玻璃的 1/30，這兩層的隔熱效果比玻璃本身大得多，實際熱流只有幾百瓦（習題 1.57(d) 算出約 250 W）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$Q/\Delta t=5000$ W（由室內流向室外）；數值不合理地大，因為忽略了玻璃兩側的靜止空氣層。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$\text{W/(m·K)}\times\text{m}^2\times\text{K/m}=\text{W}$ ✔；和課本 (1.61) 的 5000 watts 相同 ✔</p></div>
+  </div>
+</div>
+
+<p>把 Fourier 定律寫成 $\dfrac{Q}{\Delta t}=\dfrac{A\,\Delta T}{R}$，其中 $R\equiv\Delta x/k_t$ 叫 <strong>R 值</strong>（R value，「熱阻」，單位 m²·K/W）。好處是多層材料疊在一起時，R 值直接相加（習題 1.57(c)），就像串聯電阻。下面的圖把窗戶加上兩層靜止空氣，看溫度降在哪裡。</p>
+
+<div class="anim" data-anim="t1-window"></div>
+
+<div class="problem" data-kind="textbook" id="sc-1-56">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-56（Problem 1.56）· p.39</span></div>
+    <h4>1 mm 靜止空氣層的熱流</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-56">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-56"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the rate of heat conduction through a layer of still air that is 1 mm thick, with an area of 1 m<sup>2</sup>, for a temperature difference of 20°C.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>計算一層 1 mm 厚、面積 1 m² 的靜止空氣，在溫差 20°C 時的熱傳導率。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>厚度</td><td>$\Delta x=1\ \text{mm}=10^{-3}$ m</td><td>「<b>1 mm</b> 厚」</td></tr>
+          <tr><td>面積</td><td>$A=1\ \text{m}^2$</td><td>「面積 <b>1 m²</b>」</td></tr>
+          <tr><td>溫差</td><td>$\Delta T=20$ K</td><td>「溫差 <b>20°C</b>」；溫差 1°C＝1 K</td></tr>
+          <tr><td>只有傳導</td><td>沒有對流</td><td>「<b>靜止</b>空氣」</td></tr>
+          <tr><td>空氣熱導率</td><td>$k_t=0.026$ W/(m·K)</td><td>題目沒給，用課文 p.39 的空氣值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：通過這層空氣的熱流率 $Q/\Delta t$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目說「靜止」空氣，沒有整團流動，熱只能靠分子碰撞傳過去，<b>所以</b>是純傳導，用 Fourier 定律；<b>因為</b>是一層均勻薄層、穩態，<b>所以</b>梯度＝$\Delta T/\Delta x$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-56-s1" data-sym="kt">
+        <span class="step-title">寫出 Fourier 定律的大小</span>
+        $$\frac{Q}{\Delta t}=k_tA\,\frac{\Delta T}{\Delta x}$$
+        <p class="sub">代入 $k_t=0.026$ W/(m·K)（課文 p.39）、$A=1$ m²、$\Delta T=20$ K、$\Delta x=0.001$ m（題目）：</p>
+        $$\frac{Q}{\Delta t}=\frac{(0.026\ \text{W/(m·K)})(1\ \text{m}^2)(20\ \text{K})}{0.001\ \text{m}}=520\ \text{W}$$
+      </div>
+      <div class="step" data-step="sc-1-56-s2">
+        <span class="step-title">和玻璃比較</span>
+        <p>課文例題同樣 1 m²、20 K 的 3.2 mm 玻璃是 5000 W。1 mm 空氣只有 520 W，約少 10 倍：一層薄薄的靜止空氣比整片玻璃還能隔熱。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$Q/\Delta t\approx520$ W（約 500 W），約為同條件玻璃窗的 1/10。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>比例：$\dfrac{520}{5000}=\dfrac{0.026/0.001}{0.8/0.0032}=\dfrac{26}{250}\approx0.10$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-57">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-57（Problem 1.57）· p.39 · 熱學小考（上）作業題</span></div>
+    <h4>R 值：單位換算、串聯相加、修正窗戶熱流</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-57">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-57"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Home owners and builders discuss thermal conductivities in terms of the R value (R for resistance) of a material, defined as the thickness divided by the thermal conductivity: $$R\equiv\frac{\Delta x}{k_t}.$$</p><p>(a) Calculate the R value of a 1/8-inch (3.2 mm) piece of plate glass, and then of a 1 mm layer of still air. Express both answers in SI units.</p><p>(b) In the United States, R values of building materials are normally given in English units, °F·ft<sup>2</sup>·hr/Btu. A Btu, or British thermal unit, is the energy needed to raise the temperature of a pound of water by 1°F. Work out the conversion factor between the SI and English units for R values. Convert your answers from part (a) to English units.</p><p>(c) Prove that for a compound layer of two different materials sandwiched together (such as air and glass, or brick and wood), the effective total R value is the sum of the individual R values.</p><p>(d) Calculate the effective R value of a single piece of plate glass with a 1.0-mm layer of still air on each side. (The effective thickness of the air layer will depend on how much wind is blowing; 1 mm is of the right order of magnitude under most conditions.) Using this effective R value, make a revised estimate of the heat loss through a 1-m<sup>2</sup> single-pane window when the temperature in the room is 20°C higher than the outdoor temperature.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>屋主與營建業用材料的 R 值（R 代表 resistance）談熱導率，定義為厚度除以熱導率：$R\equiv\Delta x/k_t$。(a) 計算 1/8 吋（3.2 mm）平板玻璃的 R 值，再算 1 mm 靜止空氣層的 R 值，都用 SI 單位。(b) 美國的建材 R 值通常用英制單位 °F·ft²·hr/Btu；1 Btu（英熱單位）是把 1 磅水升高 1°F 所需的能量。求 SI 與英制 R 值的換算因子，並把 (a) 的答案換成英制。(c) 證明兩種材料疊成的複合層（例如空氣與玻璃、磚與木頭），等效總 R 值是各層 R 值的和。(d) 一片平板玻璃兩側各有 1.0 mm 靜止空氣層，計算等效 R 值（空氣層的等效厚度與風有多大有關；1 mm 在多數情況下數量級正確）。用這個 R 值重新估計：室內比室外高 20°C 時，1 m² 單層玻璃窗的熱損失。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>R 值定義</td><td>$R=\Delta x/k_t$</td><td>「定義為<b>厚度除以熱導率</b>」</td></tr>
+          <tr><td>玻璃</td><td>$\Delta x=3.2\times10^{-3}$ m，$k_t=0.8$ W/(m·K)</td><td>(a)「<b>3.2 mm</b> 平板玻璃」；$k_t$ 題目沒給，用課文 p.39</td></tr>
+          <tr><td>空氣</td><td>$\Delta x=1.0\times10^{-3}$ m，$k_t=0.026$ W/(m·K)</td><td>(a)「<b>1 mm</b> 靜止空氣層」；$k_t$ 用課文 p.39</td></tr>
+          <tr><td>英制單位</td><td>°F·ft²·hr/Btu</td><td>(b)「英制單位 <b>°F·ft²·hr/Btu</b>」</td></tr>
+          <tr><td>Btu 的定義</td><td>1 磅水升 1°F</td><td>(b)「把 <b>1 磅水升高 1°F</b> 所需的能量」</td></tr>
+          <tr><td>換算常數</td><td>1 lb＝453.6 g；1°F（溫差）＝$\tfrac59$ K；1 m＝3.281 ft；1 hr＝3600 s；水 $c=4.186$ J/(g·K)</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>(d) 的窗戶</td><td>玻璃＋兩側各 1.0 mm 空氣，$A=1$ m²，$\Delta T=20$ K</td><td>(d)「<b>兩側各有 1.0 mm</b>」「<b>1 m²</b>」「高 <b>20°C</b>」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 玻璃與空氣的 SI R 值；(b) 換算因子與英制 R 值；(c) 證明 $R_{\text{total}}=R_1+R_2$；(d) 等效 R 值與修正後的熱損失。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>題目直接給了定義 $R=\Delta x/k_t$，<b>所以</b>代數字就好。(b) <b>因為</b> R 值的單位是「溫差×面積÷功率」，<b>所以</b>把溫差、面積、功率三個單位分別換成英制再相乘；功率裡的能量要先算出 1 Btu 等於幾焦耳。</p>
+      <p>(c) <b>因為</b>穩態時中間介面的溫度不再改變，流進介面的熱必須等於流出的熱，<b>所以</b>兩層的熱流相同；用這個條件消去介面溫度。(d) <b>因為</b>三層（空氣、玻璃、空氣）串聯，<b>所以</b>用 (c) 的結果把 R 值相加，再用 $Q/\Delta t=A\,\Delta T/R$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-57-s1" data-sym="Rval,kt">
+        <span class="step-title">(a) 兩種材料的 SI R 值</span>
+        $$R=\frac{\Delta x}{k_t}$$
+        <p class="sub">代入玻璃 $\Delta x=3.2\times10^{-3}$ m（題目 (a)）、$k_t=0.8$ W/(m·K)（課文）：</p>
+        $$R_{\text{玻}}=\frac{3.2\times10^{-3}\ \text{m}}{0.8\ \text{W/(m·K)}}=0.0040\ \text{K·m}^2/\text{W}$$
+        <p class="sub">代入空氣 $\Delta x=1.0\times10^{-3}$ m（題目 (a)）、$k_t=0.026$ W/(m·K)（課文）：</p>
+        $$R_{\text{氣}}=\frac{1.0\times10^{-3}\ \text{m}}{0.026\ \text{W/(m·K)}}=0.038\ \text{K·m}^2/\text{W}$$
+        <p>1 mm 空氣的 R 值是 3.2 mm 玻璃的約 10 倍。</p>
+      </div>
+      <div class="step" data-step="sc-1-57-s2" data-sym="c">
+        <span class="step-title">(b) 1 Btu 等於幾焦耳</span>
+        <p>Btu 是 1 磅水升高 1°F 的熱，用 $Q=mc\,\Delta T$：</p>
+        $$1\ \text{Btu}=m\,c\,\Delta T$$
+        <p class="sub">代入 $m=453.6$ g（1 磅）、$c=4.186$ J/(g·K)（水的比熱）、$\Delta T=1^\circ\text F=\tfrac59$ K（溫差換算）：</p>
+        $$1\ \text{Btu}=(453.6\ \text{g})(4.186\ \text{J/(g·K)})\left(\tfrac59\ \text{K}\right)=1055\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-57-s3">
+        <span class="step-title">(b) 換算因子</span>
+        <p>把 SI 單位的三個部分各自換成英制：溫差 $1\ \text K=1.8^\circ\text F$；面積 $1\ \text m^2=(3.281\ \text{ft})^2=10.76\ \text{ft}^2$；$\dfrac1{\text W}=\dfrac{\text s}{\text J}$，而 $1\ \text s=\tfrac1{3600}$ hr、$1\ \text J=\tfrac1{1055}$ Btu：</p>
+        $$\frac1{\text W}=\frac{\tfrac1{3600}\ \text{hr}}{\tfrac1{1055}\ \text{Btu}}=0.2931\ \frac{\text{hr}}{\text{Btu}}$$
+        <p class="sub">三者相乘（數值來自上一行與步驟 2 的 1055 J）：</p>
+        $$\begin{aligned}1\ \frac{\text{K·m}^2}{\text W}&=(1.8^\circ\text F)(10.76\ \text{ft}^2)\left(0.2931\ \frac{\text{hr}}{\text{Btu}}\right)\\&=5.68\ \frac{^\circ\text F\cdot\text{ft}^2\cdot\text{hr}}{\text{Btu}}\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-57-s4" data-sym="Rval">
+        <span class="step-title">(b) 換成英制</span>
+        $$R_{\text{英}}=5.68\times R_{\text{SI}}$$
+        <p class="sub">代入步驟 1 的 $R_{\text{玻}}=0.0040$、$R_{\text{氣}}=0.0385$：</p>
+        $$R_{\text{玻}}=5.68\times0.0040=0.023,\qquad R_{\text{氣}}=5.68\times0.0385=0.22$$
+        <p>（英制單位 °F·ft²·hr/Btu。建材上標的 R-13、R-30 都是這個單位。）</p>
+      </div>
+      <div class="step" data-step="sc-1-57-s5">
+        <span class="step-title">(c) 串聯兩層：熱流相同</span>
+        <p>設外側溫度 $T_1$、介面 $T_2$、內側 $T_3$，兩層的 R 值 $R_1$（$T_1$ 與 $T_2$ 之間）、$R_2$（$T_2$ 與 $T_3$ 之間）。用 R 值寫的 Fourier 定律是 $\dfrac{Q}{\Delta t}=\dfrac{A\,\Delta T}{R}$。穩態時介面溫度不變，流過兩層的熱流相同、面積也相同：</p>
+        $$\frac{T_2-T_1}{R_1}=\frac{T_3-T_2}{R_2}$$
+        <p>移項求介面溫度：$R_2(T_2-T_1)=R_1(T_3-T_2)\Rightarrow T_2(R_1+R_2)=T_3R_1+T_1R_2$，</p>
+        $$T_2=\frac{T_3R_1+T_1R_2}{R_1+R_2}$$
+      </div>
+      <div class="step" data-step="sc-1-57-s6">
+        <span class="step-title">(c) 求等效 R 值</span>
+        <p>等效 $R_{\text{total}}$ 的定義是「用總溫差 $T_3-T_1$ 得到同樣的熱流」：$\dfrac{T_3-T_1}{R_{\text{total}}}=\dfrac{T_3-T_2}{R_2}$。</p>
+        <p class="sub">代入上一步的 $T_2$，先算 $T_3-T_2$（通分）：</p>
+        $$T_3-T_2=\frac{T_3(R_1+R_2)-T_3R_1-T_1R_2}{R_1+R_2}=\frac{R_2(T_3-T_1)}{R_1+R_2}$$
+        $$\frac{T_3-T_2}{R_2}=\frac{T_3-T_1}{R_1+R_2}\quad\Longrightarrow\quad R_{\text{total}}=R_1+R_2$$
+        <p>直觀：同樣的熱流要依序穿過兩層，每層的溫降 $=\text{熱流}\times R_i$，總溫降是兩者相加——和串聯電阻 $V=I(R_1+R_2)$ 一樣。</p>
+      </div>
+      <div class="step" data-step="sc-1-57-s7" data-sym="Rval">
+        <span class="step-title">(d) 玻璃＋兩層空氣</span>
+        $$R_{\text{total}}=R_{\text{玻}}+2R_{\text{氣}}$$
+        <p class="sub">代入步驟 1 的 $R_{\text{玻}}=0.0040$、$R_{\text{氣}}=0.0385$（K·m²/W）：</p>
+        $$R_{\text{total}}=0.0040+2(0.0385)=0.081\ \text{K·m}^2/\text{W}\ \ (=0.46\text{ 英制})$$
+        $$\frac{Q}{\Delta t}=\frac{A\,\Delta T}{R_{\text{total}}}$$
+        <p class="sub">代入 $A=1$ m²、$\Delta T=20$ K（題目 (d)）：</p>
+        $$\frac{Q}{\Delta t}=\frac{(1\ \text{m}^2)(20\ \text K)}{0.081\ \text{K·m}^2/\text W}\approx250\ \text W$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $R_{\text{玻}}=0.0040$、$R_{\text{氣}}=0.038$ K·m²/W；(b) $1$ K·m²/W $=5.68$ °F·ft²·hr/Btu（1 Btu $\approx1055$ J），英制 $R_{\text{玻}}=0.023$、$R_{\text{氣}}=0.22$；(c) $R_{\text{total}}=R_1+R_2$；(d) $R_{\text{total}}=0.081$ K·m²/W（0.46 英制），熱損失約 250 W，只有課文天真估計 5000 W 的 1/20。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>溫降分配：熱流 247 W/m² 乘 $R_{\text{玻}}=0.004$ 只有 1.0 K，其餘 19 K 降在兩層空氣上（上面的圖解）✔。常錯：(d) 的玻璃厚度仍是 3.2 mm，不要和空氣層的 1 mm 混用（用 1 mm 會得到約 256 W）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-58">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-58（Problem 1.58）· p.40</span></div>
+    <h4>牆內空氣層與玻璃纖維的 R 值</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-58">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-58"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>According to a standard reference table, the R value of a 3.5-inch-thick vertical air space (within a wall) is 1.0 (in English units), while the R value of a 3.5-inch thickness of fiberglass batting is 10.9. Calculate the R value of a 3.5-inch thickness of still air, then discuss whether these two numbers are reasonable. (Hint: These reference values include the effects of convection.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>根據標準參考表，牆內 3.5 吋厚的垂直空氣間隙 R 值是 1.0（英制），3.5 吋厚的玻璃纖維棉 R 值是 10.9。計算 3.5 吋厚<strong>靜止</strong>空氣的 R 值，並討論這兩個數字是否合理。（提示：參考值包含了對流的效果。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>厚度</td><td>$\Delta x=3.5\ \text{in}=0.0889$ m</td><td>「<b>3.5 吋</b>」；1 in＝0.0254 m（標準值）</td></tr>
+          <tr><td>空氣間隙（實測）</td><td>$R=1.0$（英制）</td><td>「垂直空氣間隙 R 值是 <b>1.0</b>」</td></tr>
+          <tr><td>玻璃纖維棉</td><td>$R=10.9$（英制）</td><td>「玻璃纖維棉 R 值是 <b>10.9</b>」</td></tr>
+          <tr><td>空氣熱導率</td><td>$k_t=0.026$ W/(m·K)</td><td>題目沒給，用課文 p.39（只含傳導）</td></tr>
+          <tr><td>換算因子</td><td>1 SI＝5.68 英制</td><td>習題 1.57(b) 算出</td></tr>
+          <tr><td>參考值含對流</td><td>實測 R 值比純傳導小</td><td>「提示：參考值<b>包含了對流</b>」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：3.5 吋靜止空氣的 R 值（英制），並討論 1.0 與 10.9 是否合理。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>「靜止」空氣只有傳導，<b>所以</b>用 $R=\Delta x/k_t$ 算出純傳導的上限；<b>因為</b>題目的參考值是英制，<b>所以</b>乘 1.57(b) 的換算因子 5.68 才能比較。</p>
+      <p><b>因為</b>對流會額外帶走熱、等於多一條並聯的熱流路徑，<b>所以</b>有對流的材料 R 值一定比純傳導的小；比較三個數字的大小順序就能判斷合不合理。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-58-s1" data-sym="Rval,kt">
+        <span class="step-title">靜止空氣的 R 值</span>
+        $$R=\frac{\Delta x}{k_t}$$
+        <p class="sub">代入 $\Delta x=3.5\times0.0254=0.0889$ m（題目「3.5 吋」）、$k_t=0.026$ W/(m·K)（課文）：</p>
+        $$R=\frac{0.0889\ \text m}{0.026\ \text{W/(m·K)}}=3.42\ \text{K·m}^2/\text W$$
+        <p class="sub">乘換算因子 5.68（習題 1.57(b)）：</p>
+        $$R=3.42\times5.68=19.4\ \ ^\circ\text F\cdot\text{ft}^2\cdot\text{hr/Btu}$$
+      </div>
+      <div class="step" data-step="sc-1-58-s2">
+        <span class="step-title">和玻璃纖維棉比較</span>
+        <p>玻璃纖維棉 10.9 &lt; 靜止空氣 19.4。棉絮的作用是把空氣切成很多小格子、阻止對流，但做不到完全阻止，而且玻璃纖維本身（$k_t$ 比空氣大）也會傳熱，所以 R 值比「完全靜止的空氣」小，合理。</p>
+      </div>
+      <div class="step" data-step="sc-1-58-s3">
+        <span class="step-title">和空氣間隙比較</span>
+        <p>空氣間隙 1.0 遠小於 19.4：牆內 9 cm 的空隙裡，靠熱牆那面的空氣上升、靠冷牆的下降，對流把熱大量帶過去。但它也不會小到 0：兩面牆上各黏著一層約 1 mm 的靜止空氣（習題 1.57），兩層合計</p>
+        $$2R_{\text{氣}}=2\times0.22=0.44$$
+        <p>所以實測 1.0 落在「兩層邊界靜止空氣」0.44 與「全部靜止」19.4 之間，也合理。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>3.5 吋靜止空氣 $R\approx3.4$ K·m²/W ＝ 19.4（英制）。順序 $1.0\lt10.9\lt19.4$ 合理：對流讓空氣間隙的 R 值大降；玻璃纖維大幅（但非完全）抑制對流；空氣間隙仍大於兩層 1 mm 靜止邊界層的 0.44。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>以 1 mm 空氣 0.22 英制為單位，89 mm 應約 $89\times0.22=19.6$，與 19.4 一致 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-59">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-59（Problem 1.59）· p.40</span></div>
+    <h4>估計一棟房子的傳導熱損失與月費</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-59">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-59"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Make a rough estimate of the total rate of conductive heat loss through the windows, walls, floor, and roof of a typical house in a cold climate. Then estimate the cost of replacing this lost energy over the course of a month. If possible, compare your estimate to a real utility bill. (Utility companies measure electricity by the kilowatt-hour, a unit equal to 3.6 MJ. In the United States, natural gas is billed in therms, where 1 therm = 10<sup>5</sup> Btu. Utility rates vary by region; I currently pay about 7 cents per kilowatt-hour for electricity and 50 cents per therm for natural gas.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>粗估寒冷地區一棟典型房子，經由窗戶、牆、地板、屋頂傳導散失熱的總速率。再估計補回這些能量一個月要花多少錢；可能的話和真實帳單比較。（電力公司以千瓦小時計價，1 kWh＝3.6 MJ。美國天然氣以 therm 計價，1 therm＝$10^5$ Btu。各地費率不同；作者付的電費約每 kWh 7 美分、天然氣每 therm 50 美分。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>單位換算</td><td>1 kWh＝3.6 MJ；1 therm＝$10^5$ Btu＝$1.055\times10^8$ J</td><td>題目括號；1 Btu＝1055 J 來自習題 1.57(b)</td></tr>
+          <tr><td>費率</td><td>電 7 ¢/kWh；天然氣 50 ¢/therm</td><td>「約每 kWh <b>7 美分</b>、每 therm <b>50 美分</b>」</td></tr>
+          <tr><td>房子尺寸（自訂）</td><td>單層 12 m × 10 m，牆高 2.5 m，窗共 15 m²</td><td>題目要自己估：「典型房子」</td></tr>
+          <tr><td>各部位 R 值（自訂，SI）</td><td>牆 2.3（R-13 玻璃纖維）、屋頂 5.3（R-30）、地板 3.5、雙層玻璃窗 0.35</td><td>題目要自己估；牆的數量級參考習題 1.58 的 10.9 英制</td></tr>
+          <tr><td>溫差（自訂）</td><td>室內 20°C、室外月均 −5°C：$\Delta T=25$ K</td><td>「寒冷地區」</td></tr>
+          <tr><td>一個月</td><td>30 天＝$2.59\times10^6$ s</td><td>「一個月」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：傳導熱損失的總功率；一個月的能量與費用（電、天然氣）；與真實帳單的數量級比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每一部分（牆、屋頂、地板、窗）都是兩側溫差相同、各自的 R 值不同的薄層，熱流各走各的路，<b>所以</b>它們是<strong>並聯</strong>：總熱流＝各部分 $\dfrac{A_i}{R_i}\Delta T$ 相加（不是把 R 值相加——R 值相加是同一條路徑上的串聯）。</p>
+      <p><b>因為</b>這是估計題，數字只求數量級，<b>所以</b>先清楚列出假設，再算 $\sum A_i/R_i$、乘溫差得功率、乘時間得能量、再換成帳單單位。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-59-s1" data-sym="Rval">
+        <span class="step-title">各部位面積</span>
+        <p>周長 $2(12+10)=44$ m，牆總面積 $44\times2.5=110$ m²，扣掉窗 15 m²，淨牆 95 m²；屋頂（天花板）與地板各 $12\times10=120$ m²。</p>
+      </div>
+      <div class="step" data-step="sc-1-59-s2">
+        <span class="step-title">每部分的 $A/R$（並聯相加）</span>
+        $$\frac{Q}{\Delta t}=\Delta T\sum_i\frac{A_i}{R_i}$$
+        <p class="sub">代入步驟 1 的面積與自訂的 R 值（K·m²/W）：</p>
+        $$\begin{aligned}\text{牆}&:\ \tfrac{95}{2.3}=41.3\ \text{W/K}\\\text{屋頂}&:\ \tfrac{120}{5.3}=22.6\ \text{W/K}\\\text{地板}&:\ \tfrac{120}{3.5}=34.3\ \text{W/K}\\\text{窗}&:\ \tfrac{15}{0.35}=42.9\ \text{W/K}\end{aligned}$$
+        $$\sum\frac{A_i}{R_i}\approx141\ \text{W/K}$$
+        <p>窗戶只佔表面積的 3%，卻貢獻了 30% 的熱損失（單層窗 $R=0.081$ 的話會變成 185 W/K，比其他全部加起來還多）。</p>
+      </div>
+      <div class="step" data-step="sc-1-59-s3">
+        <span class="step-title">總功率</span>
+        <p class="sub">代入 $\Delta T=25$ K（自訂：20°C 對 −5°C）：</p>
+        $$\frac{Q}{\Delta t}=(141\ \text{W/K})(25\ \text K)\approx3.5\ \text{kW}$$
+      </div>
+      <div class="step" data-step="sc-1-59-s4">
+        <span class="step-title">一個月的能量</span>
+        $$E=\frac{Q}{\Delta t}\times t$$
+        <p class="sub">代入 3530 W（步驟 3）、$t=30\times24\times3600=2.59\times10^6$ s：</p>
+        $$E=(3530\ \text W)(2.59\times10^6\ \text s)=9.1\times10^9\ \text J$$
+        <p class="sub">換成帳單單位（題目的 1 kWh＝3.6 MJ、1 therm＝$1.055\times10^8$ J）：</p>
+        $$E=\frac{9.1\times10^9}{3.6\times10^6}\approx2500\ \text{kWh}=\frac{9.1\times10^9}{1.055\times10^8}\approx87\ \text{therm}$$
+      </div>
+      <div class="step" data-step="sc-1-59-s5">
+        <span class="step-title">費用</span>
+        <p class="sub">代入題目的費率：</p>
+        $$\begin{aligned}\text{電熱}&:\ 2540\times0.07\ \text{美元}\approx180\ \text{美元}\\\text{天然氣}&:\ 87\times0.50\ \text{美元}\approx43\ \text{美元}\end{aligned}$$
+        <p>美國寒冷地區的住宅冬季一個月燒掉約 100 therm 天然氣是常見的量級，所以這個估計合理；實際還要加上漏風、熱水器等，並扣掉陽光照入的熱。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>（依上述假設）傳導熱損失約 3.5 kW；一個月約 $9\times10^9$ J ≈ 2500 kWh ≈ 90 therm，用電暖約 180 美元、用天然氣約 45 美元。結論的重點是數量級：幾 kW、每月約一百 therm；窗戶是最大的漏洞。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$\text{m}^2/(\text{K·m}^2/\text W)=\text{W/K}$，乘 K 得 W ✔。3.5 kW 約三、四台電暖器整天開著，對寒冷冬天的一棟房子合理 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-60">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-60（Problem 1.60）· p.40</span></div>
+    <h4>平底鍋的鐵柄多久變燙</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-60">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-60"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A frying pan is quickly heated on the stovetop to 200°C. It has an iron handle that is 20 cm long. Estimate how much time should pass before the end of the handle is too hot to grab with your bare hand. (Hint: The cross-sectional area of the handle doesn’t matter. The density of iron is about 7.9 g/cm<sup>3</sup> and its specific heat is 0.45 J/g·°C).</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>平底鍋在爐上很快加熱到 200°C，它有一支 20 cm 長的鐵柄。估計要經過多久，柄的末端會燙到不能空手握。（提示：柄的截面積無關緊要。鐵的密度約 7.9 g/cm³，比熱 0.45 J/(g·°C)。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>鍋端溫度</td><td>$T_s=200^\circ$C（固定）</td><td>「<b>很快</b>加熱到 <b>200°C</b>」：當成一開始就固定</td></tr>
+          <tr><td>柄長</td><td>$L=0.20$ m</td><td>「<b>20 cm</b> 長的鐵柄」</td></tr>
+          <tr><td>密度</td><td>$\rho=7.9\ \text{g/cm}^3=7900\ \text{kg/m}^3$</td><td>提示「密度約 <b>7.9 g/cm³</b>」</td></tr>
+          <tr><td>比熱</td><td>$c=0.45\ \text{J/(g·°C)}=450\ \text{J/(kg·K)}$</td><td>提示「比熱 <b>0.45 J/(g·°C)</b>」</td></tr>
+          <tr><td>鐵的熱導率</td><td>$k_t=80$ W/(m·K)</td><td>題目沒給，用課文 p.39</td></tr>
+          <tr><td>初溫與「燙手」（自訂）</td><td>室溫 20°C；末端到約 60°C 就握不住：升溫 40 K</td><td>題目要自己估：「燙到不能空手握」</td></tr>
+          <tr><td>截面積</td><td>會消去</td><td>提示「截面積<b>無關緊要</b>」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：柄的末端升到燙手溫度所需時間的數量級。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>熱從鍋端沿著鐵柄傳過去，<b>所以</b>流進末端那一半的熱流由 Fourier 定律決定；<b>因為</b>這些熱用來讓那一半升溫，<b>所以</b>熱量又等於 $mc\,\Delta T$。讓「流進的熱」＝「升溫需要的熱」，就解出時間。</p>
+      <p><b>因為</b>熱流 $\propto A$、需要的熱 $\propto m=\rho A\ell$ 也 $\propto A$，<b>所以</b>截面積消去（提示說的）。這是粗估：把柄切成兩半，靠鍋那半當成 200°C，遠的那半是要加熱的對象，梯度用兩半中心的溫差除以中心距離。最後用熱方程的精確解檢查數量級。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-60-s1" data-sym="m,c">
+        <span class="step-title">遠端那半需要的熱</span>
+        <p>遠的那半長 $\ell=L/2$、截面積 $A$，質量 $m=\rho A\ell$，要平均升溫 $\Delta T_{\text{需}}$：</p>
+        $$Q=mc\,\Delta T_{\text{需}}=\rho A\ell\,c\,\Delta T_{\text{需}}$$
+        <p class="sub">取 $\ell=0.10$ m（柄長 20 cm 的一半）、$\Delta T_{\text{需}}=40$ K（20°C→60°C，自訂）。</p>
+      </div>
+      <div class="step" data-step="sc-1-60-s2" data-sym="kt">
+        <span class="step-title">流過柄中點的熱流</span>
+        $$\frac{Q}{\Delta t}=k_tA\frac{\Delta T_{\text{驅}}}{\ell}$$
+        <p>近的那半約 200°C；遠的那半從 20°C 升到 60°C，平均約 40°C。兩半中心相距 $\ell$，平均溫差</p>
+        $$\Delta T_{\text{驅}}\approx200-40=160\ \text K$$
+      </div>
+      <div class="step" data-step="sc-1-60-s3">
+        <span class="step-title">兩式相等，解出時間</span>
+        <p>流進的熱 $\frac{Q}{\Delta t}\cdot\Delta t$ 等於步驟 1 的 $Q$：</p>
+        $$\rho A\ell c\,\Delta T_{\text{需}}=k_tA\frac{\Delta T_{\text{驅}}}{\ell}\,\Delta t\ \Longrightarrow\ \Delta t=\frac{\rho c\,\ell^2\,\Delta T_{\text{需}}}{k_t\,\Delta T_{\text{驅}}}$$
+        <p>$A$ 消去了。</p>
+        <p class="sub">代入 $\rho=7900$ kg/m³、$c=450$ J/(kg·K)（提示）、$\ell=0.10$ m、$\Delta T_{\text{需}}=40$ K、$k_t=80$ W/(m·K)（課文）、$\Delta T_{\text{驅}}=160$ K（步驟 2）：</p>
+        $$\Delta t=\frac{(7900)(450)(0.10)^2(40)}{(80)(160)}\ \text s\approx110\ \text s$$
+      </div>
+      <div class="step" data-step="sc-1-60-s4" data-sym="Kdiff">
+        <span class="step-title">用熱方程的精確解檢查</span>
+        <p>粗估把近的那半一開始就當成 200°C，高估了熱流。改用熱方程 $\partial T/\partial t=K\,\partial^2T/\partial x^2$（7.2 節），熱擴散率</p>
+        $$K=\frac{k_t}{\rho c}=\frac{80}{(7900)(450)}=2.25\times10^{-5}\ \text{m}^2/\text s$$
+        <p>熱擴散的特徵時間 $L^2/K=0.04/2.25\times10^{-5}\approx1800$ s 是「整支柄幾乎都熱透」的時間；末端只要升到 $\tfrac{40}{180}$ 的程度就夠燙，所以比較早。解「$x=0$ 固定 200°C、末端絕熱、初溫 20°C」的熱方程（數值解或鏡像法），末端升 40 K 需約 350 s ≈ 6 分鐘。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約幾分鐘：兩段粗估約 2 分鐘，熱方程的精確解（忽略柄側面散熱）約 6 分鐘。數量級是「分鐘」，不是秒，也不是小時。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$\dfrac{\text{kg/m}^3\cdot\text{J/(kg·K)}\cdot\text m^2\cdot\text K}{\text{W/(m·K)}\cdot\text K}=\dfrac{\text{J/m}}{\text{W/m}}=\text s$ ✔。經驗上鐵柄鍋子炒幾分鐘就要用布墊著拿 ✔；實際柄會從側面散熱給空氣，時間還會更長一些。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-61">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-61（Problem 1.61）· p.40 · 熱學小考（上）作業題</span></div>
+    <h4>地球從內部傳導出來的熱</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-61">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-61"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Geologists measure conductive heat flow out of the earth by drilling holes (a few hundred meters deep) and measuring the temperature as a function of depth. Suppose that in a certain location the temperature increases by 20°C per kilometer of depth and the thermal conductivity of the rock is 2.5 W/m·K. What is the rate of heat conduction per square meter in this location? Assuming that this value is typical of other locations over all of earth’s surface, at approximately what rate is the earth losing heat via conduction? (The radius of the earth is 6400 km.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>地質學家鑽幾百公尺深的孔、量溫度隨深度的變化，來測量地球向外傳導的熱流。假設某地溫度每深 1 公里增加 20°C，岩石的熱導率 2.5 W/(m·K)。這個地點每平方公尺的熱傳導率是多少？假設這個值代表全球地表，地球經由傳導失去熱的速率大約是多少？（地球半徑 6400 km。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>溫度梯度</td><td>$\dfrac{dT}{dx}=\dfrac{20\ \text K}{1000\ \text m}=0.020$ K/m</td><td>「每深 <b>1 公里</b>增加 <b>20°C</b>」</td></tr>
+          <tr><td>岩石熱導率</td><td>$k_t=2.5$ W/(m·K)</td><td>「熱導率 <b>2.5 W/(m·K)</b>」</td></tr>
+          <tr><td>面積（第一問）</td><td>$A=1$ m²</td><td>「<b>每平方公尺</b>」</td></tr>
+          <tr><td>地球半徑</td><td>$r=6.4\times10^6$ m</td><td>「地球半徑 <b>6400 km</b>」</td></tr>
+          <tr><td>代表性</td><td>全球地表都一樣</td><td>「假設這個值<b>代表全球地表</b>」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：每平方公尺的熱流；全地球的傳導熱損失。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>岩石固體裡熱只能傳導，而題目直接給了溫度梯度，<b>所以</b>用 Fourier 定律 $Q/\Delta t=k_tA\,|dT/dx|$；越深越熱，熱往上（向地表）流。</p>
+      <p><b>因為</b>假設每平方公尺都一樣，<b>所以</b>全球熱流＝每平方公尺的值 × 地球表面積 $4\pi r^2$（地殼只有幾十公里厚，比半徑小很多，當成平板沒問題）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-61-s1" data-sym="kt">
+        <span class="step-title">每平方公尺的熱流</span>
+        $$\frac{Q}{\Delta t}=k_tA\left|\frac{dT}{dx}\right|$$
+        <p class="sub">代入 $k_t=2.5$ W/(m·K)、$A=1$ m²、$dT/dx=20\ \text K/1000\ \text m$（題目）：</p>
+        $$\frac{Q}{\Delta t}=(2.5\ \text{W/(m·K)})(1\ \text m^2)\frac{20\ \text K}{1000\ \text m}=0.05\ \text W$$
+      </div>
+      <div class="step" data-step="sc-1-61-s2">
+        <span class="step-title">地球表面積</span>
+        $$A_{\oplus}=4\pi r^2$$
+        <p class="sub">代入 $r=6.4\times10^6$ m（題目「6400 km」）：</p>
+        $$A_\oplus=4\pi(6.4\times10^6\ \text m)^2=5.1\times10^{14}\ \text m^2$$
+      </div>
+      <div class="step" data-step="sc-1-61-s3">
+        <span class="step-title">全球熱流</span>
+        <p class="sub">每平方公尺 0.05 W（步驟 1）乘表面積（步驟 2）：</p>
+        $$\left(\frac{Q}{\Delta t}\right)_\oplus=(0.05\ \text{W/m}^2)(5.1\times10^{14}\ \text m^2)=2.6\times10^{13}\ \text W$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>每平方公尺約 0.05 W（1/20 瓦）；全地球約 $2.6\times10^{13}$ W（26 TW）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>地表接收的太陽光平均約 $240$ W/m²，地熱 0.05 W/m² 小了四千多倍，所以地表溫度幾乎完全由陽光決定 ✔；實測全球地熱流約 $4.7\times10^{13}$ W，數量級相同 ✔</p></div>
+  </div>
+</div>
+
+<h3 id="r7-heat-eq">7.2 熱傳導方程式：溫度怎麼隨時間攤開 <span class="pg-tag">p.40 習題 1.62</span></h3>
+
+<p>Fourier 定律只說「此刻熱怎麼流」。再加上能量守恆——流進一小段的淨熱＝這一段升溫用掉的熱——就得到溫度隨時間演化的方程式，叫<strong>熱方程</strong>（heat equation）：</p>
+$$\frac{\partial T}{\partial t}=K\frac{\partial^2T}{\partial x^2},\qquad K=\frac{k_t}{c\rho}$$
+<p>$K$ 叫熱擴散率（thermal diffusivity，單位 m²/s）。右邊是溫度曲線的<strong>彎曲程度</strong>：曲線往下凹的地方（局部最熱）會降溫，往上凹的地方會升溫，所以溫度總是被抹平。單位告訴我們最重要的估計：熱傳到距離 $L$ 需要的時間約 $L^2/K$——距離加倍，時間變四倍。7.6 節的擴散方程式長得完全一樣，只是把 $T$ 換成濃度 $n$、$K$ 換成 $D$。</p>
+
+<div class="anim" data-anim="t1-spread"></div>
+
+<div class="problem" data-kind="textbook" id="sc-1-62">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-62（Problem 1.62）· p.40</span></div>
+    <h4>推導熱方程並驗證高斯解</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-62">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-62"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a uniform rod of material whose temperature varies only along its length, in the x direction. By considering the heat flowing from both directions into a small segment of length $\Delta x$, derive the heat equation, $$\frac{\partial T}{\partial t}=K\frac{\partial^2T}{\partial x^2},$$ where $K=k_t/c\rho$, $c$ is the specific heat of the material, and $\rho$ is its density. (Assume that the only motion of energy is heat conduction within the rod; no energy enters or leaves along the sides.) Assuming that $K$ is independent of temperature, show that a solution of the heat equation is $$T(x,t)=T_0+\frac{A}{\sqrt t}e^{-x^2/4Kt},$$ where $T_0$ is a constant background temperature and $A$ is any constant. Sketch (or use a computer to plot) this solution as a function of $x$, for several values of $t$. Interpret this solution physically, and discuss in some detail how energy spreads through the rod as time passes.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一根均勻的棒，溫度只沿長度方向（$x$ 方向）變化。考慮從兩側流進一小段長 $\Delta x$ 的熱，推導熱方程 $\dfrac{\partial T}{\partial t}=K\dfrac{\partial^2T}{\partial x^2}$，其中 $K=k_t/c\rho$，$c$ 是材料的比熱、$\rho$ 是密度。（假設能量只在棒內以熱傳導移動，側面沒有能量進出。）假設 $K$ 與溫度無關，證明熱方程有一個解 $T(x,t)=T_0+\dfrac{A}{\sqrt t}e^{-x^2/4Kt}$，其中 $T_0$ 是固定的背景溫度、$A$ 是任意常數。畫出（或用電腦畫）幾個不同 $t$ 時這個解對 $x$ 的圖。說明這個解的物理意義，並仔細討論能量如何隨時間沿棒散開。</p></div>
+    <div class="part givens"><span class="part-label">已知的關係與前提</span>
+      <table>
+        <thead><tr><th>項目</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>一維</td><td>$T=T(x,t)$</td><td>「溫度<b>只沿長度方向</b>變化」</td></tr>
+          <tr><td>側面絕熱</td><td>能量只沿 $x$ 方向傳導</td><td>「<b>側面沒有能量進出</b>」</td></tr>
+          <tr><td>Fourier 定律</td><td>$\dfrac{Q}{\Delta t}=-k_tA\dfrac{\partial T}{\partial x}$</td><td>課文 (1.60)；$A$ 是棒的截面積</td></tr>
+          <tr><td>升溫需要的熱</td><td>$Q=mc\,\Delta T$，$m=\rho A\,\Delta x$</td><td>「$c$ 是比熱、$\rho$ 是密度」</td></tr>
+          <tr><td>$K$ 為常數</td><td>$K=k_t/c\rho$ 與 $T$ 無關</td><td>「假設 $K$ <b>與溫度無關</b>」</td></tr>
+          <tr><td>試驗解</td><td>$T=T_0+\dfrac{A}{\sqrt t}e^{-x^2/4Kt}$</td><td>題目給的（這裡的 $A$ 是任意常數，不是面積）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(1) 推導熱方程；(2) 驗證試驗解；(3) 畫圖並解釋能量如何散開。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>側面絕熱，一小段棒的能量只會從左右兩端進出，<b>所以</b>用能量守恆：兩端流進的淨熱流（各用 Fourier 定律寫）＝這一段的 $mc\,\partial T/\partial t$。兩端梯度的差除以 $\Delta x$ 就是二階導數。</p>
+      <p><b>因為</b>要驗證的是一個給定的函數，<b>所以</b>直接分別算 $\partial T/\partial t$ 和 $\partial^2T/\partial x^2$，看是否差一個因子 $K$。物理意義從函數的形狀（高斯）、峰高、寬度、曲線下面積來讀。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-62-s1" data-sym="kt">
+        <span class="step-title">兩端流進的熱</span>
+        <p>取 $x-\tfrac{\Delta x}2$ 到 $x+\tfrac{\Delta x}2$ 這一段。Fourier 定律的熱流向 $+x$ 為正，所以左端<strong>流進</strong>的是 $-k_tA\,\partial_xT$ 在左端的值；右端流進的方向是 $-x$，要再加一個負號：</p>
+        $$\begin{aligned}\frac{Q_1}{\Delta t}&=-k_tA\left.\frac{\partial T}{\partial x}\right|_{x-\Delta x/2}\\\frac{Q_2}{\Delta t}&=+k_tA\left.\frac{\partial T}{\partial x}\right|_{x+\Delta x/2}\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-62-s2">
+        <span class="step-title">淨熱流＝二階導數</span>
+        $$\begin{aligned}\frac{Q_1+Q_2}{\Delta t}=k_tA\Big[&\left.\frac{\partial T}{\partial x}\right|_{x+\Delta x/2}\\&-\left.\frac{\partial T}{\partial x}\right|_{x-\Delta x/2}\Big]\end{aligned}$$
+        <p>中括號是「一階導數在相距 $\Delta x$ 的兩點之差」，$\Delta x\to0$ 時等於 $\Delta x\,\partial^2T/\partial x^2$：</p>
+        $$\frac{Q}{\Delta t}=k_tA\,\Delta x\frac{\partial^2T}{\partial x^2}$$
+      </div>
+      <div class="step" data-step="sc-1-62-s3" data-sym="Kdiff,rhoD,c">
+        <span class="step-title">熱用來讓這一段升溫</span>
+        <p>這一段質量 $m=\rho A\,\Delta x$，吸熱 $Q$ 升溫 $\Delta T$：$Q=mc\,\Delta T$。兩邊除以 $\Delta t$：</p>
+        $$\rho A\,\Delta x\,c\,\frac{\Delta T}{\Delta t}=k_tA\,\Delta x\frac{\partial^2T}{\partial x^2}$$
+        <p>$A\,\Delta x$ 兩邊約掉，$\Delta T/\Delta t\to\partial T/\partial t$：</p>
+        $$\frac{\partial T}{\partial t}=\frac{k_t}{\rho c}\frac{\partial^2T}{\partial x^2}=K\frac{\partial^2T}{\partial x^2}$$
+      </div>
+      <div class="step" data-step="sc-1-62-s4">
+        <span class="step-title">驗證試驗解：對 $t$ 微分</span>
+        <p>令 $G=e^{-x^2/4Kt}$，則 $T-T_0=A\,t^{-1/2}G$，且 $\partial G/\partial t=G\cdot\dfrac{x^2}{4Kt^2}$。乘積法則：</p>
+        $$\begin{aligned}\frac{\partial T}{\partial t}&=A\left[-\tfrac12t^{-3/2}G+t^{-1/2}G\frac{x^2}{4Kt^2}\right]\\&=\frac{A}{\sqrt t}\,G\left(\frac{x^2}{4Kt^2}-\frac1{2t}\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-62-s5">
+        <span class="step-title">驗證試驗解：對 $x$ 微兩次</span>
+        $$\frac{\partial T}{\partial x}=\frac{A}{\sqrt t}\,G\left(-\frac{x}{2Kt}\right)$$
+        $$\begin{aligned}\frac{\partial^2T}{\partial x^2}&=\frac{A}{\sqrt t}\left[-\frac{1}{2Kt}G+\left(-\frac{x}{2Kt}\right)^2G\right]\\&=\frac{A}{\sqrt t}\,G\left(\frac{x^2}{4K^2t^2}-\frac1{2Kt}\right)\end{aligned}$$
+        <p class="sub">乘上 $K$：</p>
+        $$K\frac{\partial^2T}{\partial x^2}=\frac{A}{\sqrt t}\,G\left(\frac{x^2}{4Kt^2}-\frac1{2t}\right)$$
+        <p>和步驟 4 的 $\partial T/\partial t$ 完全相同，所以它是熱方程的解（$T_0$ 是常數，微分後消失）。</p>
+      </div>
+      <div class="step" data-step="sc-1-62-s6">
+        <span class="step-title">畫圖與物理意義</span>
+        <p>固定 $t$，$T-T_0$ 對 $x$ 是高斯鐘形曲線（上面的圖解，$A=K=1$）：</p>
+        <ul>
+          <li>峰高 $A/\sqrt t$：隨時間下降。半高寬 $2\sqrt{4\ln2\,Kt}\approx3.3\sqrt{Kt}$：隨 $\sqrt t$ 變寬。</li>
+          <li>曲線下面積 $\displaystyle\int_{-\infty}^{\infty}(T-T_0)\,dx=\frac{A}{\sqrt t}\sqrt{4\pi Kt}=2A\sqrt{\pi K}$ 與 $t$ 無關。多出來的熱能 $=c\rho\times(\text{截面積})\times\text{面積}$，所以能量守恆，只是重新分布。</li>
+          <li>$t\to0^+$ 時峰無限高、無限窄：這個解代表 $t=0$ 時在 $x=0$ 放進一團熱（一個脈衝）。</li>
+          <li>早期梯度大，散得快；之後梯度變小，散得越來越慢（寬度 $\propto\sqrt t$，不是 $\propto t$）。$t\to\infty$ 時整根棒回到均勻的 $T_0$。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>能量守恆＋Fourier 定律給出 $\dfrac{\partial T}{\partial t}=\dfrac{k_t}{\rho c}\dfrac{\partial^2T}{\partial x^2}$；代入驗證 $T_0+\dfrac{A}{\sqrt t}e^{-x^2/4Kt}$ 滿足它。這個解是 $x=0$ 處一團熱的擴散：高斯形，峰高 $\propto t^{-1/2}$、寬度 $\propto\sqrt{Kt}$、總熱量不變，先快後慢地散開到整根棒。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$K=\dfrac{\text{W/(m·K)}}{\text{J/(kg·K)}\cdot\text{kg/m}^3}=\text{m}^2/\text s$ ✔，指數 $x^2/(Kt)$ 無因次 ✔。鐵 $K=2.25\times10^{-5}$ m²/s，傳 20 cm 約 $L^2/K\approx30$ 分鐘量級，與習題 1.60 的「幾分鐘」一致（末端只要升一小部分）✔</p></div>
+  </div>
+</div>
+
+<h3 id="r7-mfp">7.3 平均自由徑 <span class="pg-tag">p.41–42</span></h3>
+
+<p>氣體裡，熱傳導的快慢取決於一個分子撞到別人之前能走多遠。兩次碰撞之間走的平均距離叫<strong>平均自由徑</strong>（mean free path）$\ell$。稀薄氣體的 $\ell$ 比分子間的平均距離大很多倍：一個分子可以從許多鄰居旁邊擦身而過，才真的撞上一個。</p>
+
+<div class="step" data-step="t1r-mfp-1" data-sym="rmol">
+  <span class="step-title">只讓一個分子動</span>
+  <p>先假設除了一個分子之外，其他分子都凍結不動。分子半徑 $r$，兩個分子的中心距離小於 $2r$ 就算碰撞（課本 Fig. 1.17）。等價地，把移動的分子想成半徑 $2r$ 的大球、其他分子都是點——碰撞次數一樣。</p>
+</div>
+<div class="step" data-step="t1r-mfp-2" data-sym="ell">
+  <span class="step-title">掃出的圓柱</span>
+  <p>大球直線走一段 $\ell$，掃出一根半徑 $2r$、長 $\ell$ 的圓柱，體積 $\pi(2r)^2\ell$。圓柱裡平均有一個分子時，就差不多撞上了；平均每個分子分到的體積是 $V/N$：</p>
+  $$\pi(2r)^2\ell\approx\frac VN\qquad\Longrightarrow\qquad\ell\approx\frac{1}{4\pi r^2}\frac VN$$
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.41 Eq. (1.62) 平均自由徑</span>
+  $$\ell\approx\frac{1}{4\pi r^2}\,\frac VN$$
+  <p>「≈」：忽略了其他分子也在動、每次自由徑長短不一，真正的值差一個數量級為 1 的因子。但分子沒有清楚的邊界、多半也不是球形，$r$ 本身就不精確，所以沒必要算得更準。</p>
+</div>
+
+<div class="anim" data-anim="t1-mfp"></div>
+
+<p>兩個重要的結論：$\ell\propto V/N$，氣體越稀薄自由徑越長；理想氣體 $V/N=kT/P$，所以在固定溫度下 $\ell\propto1/P$。</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-mfp">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.7 Eq. (1.62)–(1.63) · p.41–42</span></div>
+    <h4>空氣分子的平均自由徑與碰撞時間</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-mfp">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>氮或氧分子的有效半徑約 1–2 Å，取 $r=1.5$ Å。把室溫、一大氣壓的空氣當成理想氣體，估計 (a) 每個分子分到的體積 $V/N$；(b) 平均自由徑 $\ell$，並和分子間的平均距離比較；(c) 兩次碰撞之間的平均時間。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>分子半徑</td><td>$r=1.5\ \text{Å}=1.5\times10^{-10}$ m</td><td>「取 <b>$r=1.5$ Å</b>」</td></tr>
+          <tr><td>溫度</td><td>$T\approx300$ K</td><td>「<b>室溫</b>」</td></tr>
+          <tr><td>壓力</td><td>$P=1.013\times10^5$ Pa</td><td>「<b>一大氣壓</b>」</td></tr>
+          <tr><td>狀態方程式</td><td>$PV=NkT$</td><td>「當成<b>理想氣體</b>」</td></tr>
+          <tr><td>平均速率</td><td>$\bar v\approx v_{\text{rms}}\approx500$ m/s</td><td>題目沒給；§1.2 空氣 $v_{\text{rms}}=\sqrt{3kT/m}\approx510$ m/s</td></tr>
+          <tr><td>波茲曼常數</td><td>$k=1.381\times10^{-23}$ J/K</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $V/N$；(b) $\ell$ 以及 $\ell$ 是分子間距的幾倍；(c) 平均碰撞時間 $\Delta t$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>平均自由徑 (1.62) 需要「每個分子的體積」$V/N$，而氣體是理想氣體，<b>所以</b>先用 $PV=NkT$ 得 $V/N=kT/P$，再代入 (1.62)。</p>
+      <p><b>因為</b>分子間距是「每個分子分到的小立方體的邊長」，<b>所以</b>取 $(V/N)^{1/3}$ 比較。<b>因為</b>兩次碰撞之間分子以平均速率走一段 $\ell$，<b>所以</b> $\Delta t=\ell/\bar v$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-mfp-s1" data-sym="V,N,k">
+        <span class="step-title">(a) 每個分子的體積</span>
+        $$\frac VN=\frac{kT}{P}$$
+        <p class="sub">代入 $k=1.381\times10^{-23}$ J/K、$T=300$ K、$P=1.013\times10^5$ Pa（室溫、一大氣壓）：</p>
+        $$\frac VN=\frac{(1.381\times10^{-23})(300)}{1.013\times10^5}\ \text m^3=4.1\times10^{-26}\ \text m^3$$
+      </div>
+      <div class="step" data-step="sc-ex-mfp-s2" data-sym="ell,rmol">
+        <span class="step-title">(b) 平均自由徑</span>
+        $$\ell\approx\frac{1}{4\pi r^2}\frac VN$$
+        <p class="sub">代入 $r=1.5\times10^{-10}$ m（題目）、$V/N=4.1\times10^{-26}$ m³（步驟 1）：</p>
+        $$\ell\approx\frac{4.1\times10^{-26}\ \text m^3}{4\pi(1.5\times10^{-10}\ \text m)^2}=\frac{4.1\times10^{-26}}{2.83\times10^{-19}}\ \text m=1.5\times10^{-7}\ \text m$$
+        <p>也就是約 150 nm。</p>
+      </div>
+      <div class="step" data-step="sc-ex-mfp-s3">
+        <span class="step-title">(b) 與分子間距比較</span>
+        $$d=\left(\frac VN\right)^{1/3}=(4.1\times10^{-26}\ \text m^3)^{1/3}=3.4\times10^{-9}\ \text m$$
+        $$\frac{\ell}{d}=\frac{1.5\times10^{-7}}{3.4\times10^{-9}}\approx40$$
+      </div>
+      <div class="step" data-step="sc-ex-mfp-s4" data-sym="vbar">
+        <span class="step-title">(c) 碰撞之間的時間</span>
+        $$\Delta t=\frac{\ell}{\bar v}\approx\frac{\ell}{v_{\text{rms}}}$$
+        <p class="sub">代入 $\ell=1.5\times10^{-7}$ m（步驟 2）、$\bar v\approx500$ m/s（§1.2）：</p>
+        $$\Delta t\approx\frac{1.5\times10^{-7}\ \text m}{500\ \text{m/s}}=3\times10^{-10}\ \text s$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $V/N\approx4\times10^{-26}$ m³；(b) $\ell\approx150$ nm，約為分子間距 3.4 nm 的 40 倍；(c) $\Delta t\approx3\times10^{-10}$ s——每個空氣分子每秒碰撞約 30 億次。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$\ell/d=\dfrac{d^2}{4\pi r^2}=\dfrac{(3.4\text{ nm})^2}{4\pi(0.15\text{ nm})^2}\approx41$ ✔：分子間距是分子半徑的 20 多倍，難怪能擦身而過許多鄰居。</p></div>
+  </div>
+</div>
+
+<h3 id="r7-kt">7.4 理想氣體的熱導率 <span class="pg-tag">p.42–44</span></h3>
+
+<p>現在用平均自由徑推導 Fourier 定律，並預測 $k_t$。考慮氣體中溫度沿 $x$ 增加的一小區域，取一個垂直於 $x$ 的平面（課本 Fig. 1.18 的虛線），問有多少熱穿過它。</p>
+
+<div class="step" data-step="t1r-kt-1" data-sym="ell,U">
+  <span class="step-title">兩個厚 $\ell$ 的盒子</span>
+  <p>令 $\Delta t$ 是平均碰撞時間，這段時間內每個分子大約走一個 $\ell$。所以從左邊穿過平面的分子，出發點都在左邊厚 $\ell$ 的盒子 1 裡；從右邊來的都在盒子 2 裡。兩個盒子截面積都是 $A$。盒子 1 的總能量 $U_1$，但這一刻只有一半分子的 $x$ 速度為正，所以從左邊帶過來的能量約 $U_1/2$；同理從右邊帶過去的約 $U_2/2$。</p>
+</div>
+<div class="step" data-step="t1r-kt-2" data-sym="CV">
+  <span class="step-title">淨熱流</span>
+  <p>能量差用熱容量寫：$U_2-U_1=C_V(T_2-T_1)$；兩盒中心相距 $\ell$，所以 $T_2-T_1=\ell\,dT/dx$：</p>
+  $$Q=\tfrac12(U_1-U_2)=-\tfrac12C_V(T_2-T_1)=-\tfrac12C_V\,\ell\frac{dT}{dx}$$
+  <p>這正是 Fourier 定律的形式：熱流正比於溫度梯度、方向相反（課本 (1.64)）。</p>
+</div>
+<div class="step" data-step="t1r-kt-3" data-sym="kt,vbar">
+  <span class="step-title">讀出 $k_t$</span>
+  <p>和 (1.60) $Q=-k_tA\,\dfrac{dT}{dx}\Delta t$ 比較，並用盒子體積 $V=A\ell$、$\Delta t=\ell/\bar v$：</p>
+  $$k_t=\frac12\frac{C_V\,\ell}{A\,\Delta t}=\frac12\frac{C_V}{A\ell}\frac{\ell^2}{\Delta t}=\frac12\frac{C_V}{V}\,\ell\,\bar v$$
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.43 Eq. (1.65)–(1.66) 理想氣體的熱導率</span>
+  $$k_t=\frac12\,\frac{C_V}{V}\,\ell\,\bar v,\qquad\frac{C_V}{V}=\frac{\tfrac f2Nk}{V}=\frac f2\frac PT$$
+  <p>$C_V/V$ 是每單位體積的熱容量，$f$ 是每個分子的自由度數。</p>
+</div>
+
+<p><strong>為什麼和壓力無關？</strong>$C_V/V\propto N/V$，但 $\ell\propto V/N$，兩者相乘把密度消掉了：密的氣體每單位體積帶的能量多，但每次只能帶得近。剩下的只有 $\bar v\propto\sqrt T$（以及 $f$，在不太大的溫度範圍內近似不變），所以<strong>氣體的 $k_t\propto\sqrt T$，與壓力無關</strong>——課本 Fig. 1.19 的氦、氖、空氣、氪的 $k_t$ 對 $\sqrt T$ 都近似直線。這種從真實分子運動出發的方法叫<strong>動力論</strong>（kinetic theory）；§1.2 的壓力微觀模型也是。動力論最直接也最難；平衡性質大多有更簡單的方法，但預測速率通常只能靠它。</p>
+
+<div class="anim" data-anim="t1-transport"></div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-kt-air">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.7 Eq. (1.64)–(1.67) · p.42–43</span></div>
+    <h4>預測空氣的熱導率</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-kt-air">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 $k_t=\tfrac12\dfrac{C_V}{V}\ell\bar v$ 估計室溫、一大氣壓空氣的熱導率，並與實測值 0.026 W/(m·K) 比較。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>公式</td><td>$k_t=\tfrac12\frac{C_V}{V}\ell\bar v$，$\frac{C_V}{V}=\frac f2\frac PT$</td><td>題目；本節 (1.65)(1.66)</td></tr>
+          <tr><td>自由度</td><td>$f=5$</td><td>題目沒寫；空氣是雙原子（N₂、O₂），室溫 3 平移＋2 轉動</td></tr>
+          <tr><td>壓力、溫度</td><td>$P\approx10^5$ Pa，$T\approx300$ K</td><td>「室溫、一大氣壓」（課本取整數）</td></tr>
+          <tr><td>平均自由徑</td><td>$\ell\approx1.5\times10^{-7}$ m</td><td>前一題例題 <a href="#sc-ex-mfp">sc-ex-mfp</a></td></tr>
+          <tr><td>平均速率</td><td>$\bar v\approx500$ m/s</td><td>同上</td></tr>
+          <tr><td>實測值</td><td>$k_t=0.026$ W/(m·K)</td><td>「與實測值 <b>0.026</b> 比較」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$k_t$ 的預測值，並和 0.026 比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>公式裡三個因子 $C_V/V$、$\ell$、$\bar v$ 都能從已知量算出（前一題已算 $\ell$、$\bar v$），<b>所以</b>只差 $C_V/V$；<b>因為</b>空氣是理想氣體、均分定理給 $C_V=\tfrac f2Nk$，<b>所以</b>用 $\tfrac f2P/T$，連分子數都不用知道。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-kt-air-s1" data-sym="CV,f">
+        <span class="step-title">每單位體積的熱容量</span>
+        $$\frac{C_V}{V}=\frac f2\frac PT$$
+        <p class="sub">代入 $f=5$（雙原子）、$P=10^5$ N/m²、$T=300$ K：</p>
+        $$\frac{C_V}{V}=\frac52\cdot\frac{10^5\ \text{N/m}^2}{300\ \text K}=833\ \text{J/(m}^3\text{·K)}\approx800\ \text{J/(m}^3\text{·K)}$$
+      </div>
+      <div class="step" data-step="sc-ex-kt-air-s2" data-sym="kt,ell,vbar">
+        <span class="step-title">代入 (1.65)</span>
+        $$k_t=\frac12\frac{C_V}{V}\,\ell\,\bar v$$
+        <p class="sub">代入 833 J/(m³·K)（步驟 1）、$\ell=1.5\times10^{-7}$ m、$\bar v=500$ m/s（例題 sc-ex-mfp）：</p>
+        $$k_t\approx\tfrac12(833)(1.5\times10^{-7})(500)\ \text{W/(m·K)}=0.031\ \text{W/(m·K)}$$
+      </div>
+      <div class="step" data-step="sc-ex-kt-air-s3">
+        <span class="step-title">和實測比較</span>
+        $$\frac{0.031}{0.026}\approx1.2$$
+        <p>只比實測高 20%。考慮到 $r$ 只知道「1 到 2 Å」、盒子圖像又很粗糙，這個吻合程度算很好。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$k_t\approx0.031$ W/(m·K)，比實測 0.026 只高約 20%。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$\text{J/(m}^3\text{·K)}\cdot\text m\cdot\text{m/s}=\text{W/(m·K)}$ ✔；與課本 (1.67) 的 0.031 相同 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-63">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-63（Problem 1.63）· p.44 · 熱學小考（上）作業題</span></div>
+    <h4>多低的壓力，平均自由徑才有 10 cm</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-63">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-63"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>At about what pressure would the mean free path of an air molecule at room temperature equal 10 cm, the size of a typical laboratory apparatus?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>壓力大約多少時，室溫空氣分子的平均自由徑會等於 10 cm，也就是一般實驗裝置的大小？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>平均自由徑</td><td>$\ell=10\ \text{cm}=0.10$ m</td><td>「平均自由徑會等於 <b>10 cm</b>」</td></tr>
+          <tr><td>溫度</td><td>$T=300$ K</td><td>「<b>室溫</b>」</td></tr>
+          <tr><td>分子半徑</td><td>$r=1.5\times10^{-10}$ m</td><td>題目沒給，用課文 p.42 對空氣取的 1.5 Å</td></tr>
+          <tr><td>理想氣體</td><td>$V/N=kT/P$</td><td>題目沒寫；低壓氣體更接近理想氣體</td></tr>
+          <tr><td>常數</td><td>$k=1.381\times10^{-23}$ J/K，1 atm＝$1.013\times10^5$ Pa</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：使 $\ell=10$ cm 的壓力 $P$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> (1.62) $\ell\approx\dfrac1{4\pi r^2}\dfrac VN$ 裡的 $V/N$ 對理想氣體是 $kT/P$，<b>所以</b> $\ell\propto1/P$：壓力越低、自由徑越長。把式子反過來解 $P$ 即可。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-63-s1" data-sym="ell,P">
+        <span class="step-title">把 $\ell$ 寫成 $P$ 的函數</span>
+        <p class="sub">代入理想氣體的 $V/N=kT/P$：</p>
+        $$\ell\approx\frac{1}{4\pi r^2}\frac{kT}{P}\quad\Longrightarrow\quad P\approx\frac{kT}{4\pi r^2\,\ell}$$
+      </div>
+      <div class="step" data-step="sc-1-63-s2">
+        <span class="step-title">代入數值</span>
+        <p class="sub">代入 $k=1.381\times10^{-23}$ J/K、$T=300$ K（室溫）、$r=1.5\times10^{-10}$ m（課文）、$\ell=0.10$ m（題目）：</p>
+        $$P\approx\frac{(1.381\times10^{-23}\ \text{J/K})(300\ \text K)}{4\pi(1.5\times10^{-10}\ \text m)^2(0.10\ \text m)}=\frac{4.14\times10^{-21}}{2.83\times10^{-20}}\ \text{Pa}=0.15\ \text{Pa}$$
+      </div>
+      <div class="step" data-step="sc-1-63-s3">
+        <span class="step-title">換成大氣壓並解讀</span>
+        $$P\approx\frac{0.15\ \text{Pa}}{1.013\times10^5\ \text{Pa/atm}}=1.5\times10^{-6}\ \text{atm}$$
+        <p>這種壓力普通的機械真空幫浦就抽得到。所以在像樣的實驗室真空系統裡，分子撞器壁比撞彼此還頻繁。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$P\approx0.15$ Pa $\approx1.5\times10^{-6}$ atm。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>比例法：一大氣壓時 $\ell=1.5\times10^{-7}$ m，要變長 $\tfrac{0.1}{1.5\times10^{-7}}=6.7\times10^5$ 倍，壓力就要降到 $1/(6.7\times10^5)=1.5\times10^{-6}$ atm ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-64">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-64（Problem 1.64）· p.44</span></div>
+    <h4>估計氦的熱導率</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-64">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-64"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Make a rough estimate of the thermal conductivity of helium at room temperature. Discuss your result, explaining why it differs from the value for air.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>粗估室溫下氦的熱導率。討論你的結果，說明它為什麼和空氣的值不同。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氣體</td><td>氦，單原子：$f=3$，$m=4.00$ u</td><td>「<b>氦</b>」；單原子只有 3 個平移自由度（§1.3）</td></tr>
+          <tr><td>溫度、壓力</td><td>$T=300$ K，$P=1.013\times10^5$ Pa</td><td>「<b>室溫</b>」；$k_t$ 與壓力無關，取一大氣壓方便算</td></tr>
+          <tr><td>氦的半徑（自訂）</td><td>$r\approx1.0\times10^{-10}$ m</td><td>題目沒給；氦是最小的原子，取空氣 1.5 Å 的約 2/3</td></tr>
+          <tr><td>公式</td><td>$k_t=\tfrac12\frac{C_V}{V}\ell\bar v$</td><td>本節 (1.65)</td></tr>
+          <tr><td>比較用</td><td>空氣 $k_t=0.026$ W/(m·K)</td><td>課文 p.39</td></tr>
+          <tr><td>常數</td><td>$k=1.381\times10^{-23}$ J/K，$1\ \text u=1.661\times10^{-27}$ kg</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：氦在室溫的 $k_t$ 估計值，並說明它與空氣不同的原因。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>氦也是理想氣體，<b>所以</b>同樣用動力論的 (1.65)；三個因子 $C_V/V$、$\ell$、$\bar v$ 分別和空氣比較，就能看出「為什麼不同」：自由度少（$C_V/V$ 小）、原子小（$\ell$ 長）、質量輕（$\bar v$ 快）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-64-s1" data-sym="vrms,m">
+        <span class="step-title">平均速率</span>
+        $$\bar v\approx v_{\text{rms}}=\sqrt{\frac{3kT}{m}}$$
+        <p class="sub">代入 $T=300$ K、$m=4.00\times1.661\times10^{-27}=6.64\times10^{-27}$ kg：</p>
+        $$\bar v\approx\sqrt{\frac{3(1.381\times10^{-23})(300)}{6.64\times10^{-27}}}\ \text{m/s}=1370\ \text{m/s}$$
+        <p>是空氣（$m=29$ u，約 510 m/s）的 $\sqrt{29/4}=2.7$ 倍。</p>
+      </div>
+      <div class="step" data-step="sc-1-64-s2" data-sym="ell,rmol">
+        <span class="step-title">平均自由徑</span>
+        $$\ell\approx\frac{1}{4\pi r^2}\frac{kT}{P}$$
+        <p class="sub">代入 $kT/P=4.1\times10^{-26}$ m³（同溫同壓，與例題 sc-ex-mfp 相同）、$r=1.0\times10^{-10}$ m（自訂）：</p>
+        $$\ell\approx\frac{4.1\times10^{-26}}{4\pi(1.0\times10^{-10})^2}\ \text m=3.3\times10^{-7}\ \text m$$
+        <p>是空氣的 $(1.5/1.0)^2=2.25$ 倍。</p>
+      </div>
+      <div class="step" data-step="sc-1-64-s3" data-sym="CV,f">
+        <span class="step-title">每單位體積的熱容量</span>
+        $$\frac{C_V}{V}=\frac f2\frac PT$$
+        <p class="sub">代入 $f=3$（單原子）、$P=1.013\times10^5$ Pa、$T=300$ K：</p>
+        $$\frac{C_V}{V}=\frac32\cdot\frac{1.013\times10^5}{300}=507\ \text{J/(m}^3\text{·K)}$$
+        <p>是空氣（$f=5$）的 $3/5$。</p>
+      </div>
+      <div class="step" data-step="sc-1-64-s4" data-sym="kt">
+        <span class="step-title">代入 (1.65)</span>
+        $$k_t=\frac12\frac{C_V}{V}\,\ell\,\bar v$$
+        <p class="sub">代入步驟 1–3 的 $\bar v=1370$ m/s、$\ell=3.3\times10^{-7}$ m、$C_V/V=507$ J/(m³·K)：</p>
+        $$k_t\approx\tfrac12(507)(3.3\times10^{-7})(1370)\ \text{W/(m·K)}\approx0.11\ \text{W/(m·K)}$$
+      </div>
+      <div class="step" data-step="sc-1-64-s5">
+        <span class="step-title">為什麼和空氣不同</span>
+        <p>三個因子和空氣的比值相乘：</p>
+        $$\frac{k_{t,\text{He}}}{k_{t,\text{空氣}}}\approx\underbrace{\frac35}_{C_V/V}\times\underbrace{2.25}_{\ell}\times\underbrace{2.7}_{\bar v}\approx3.6$$
+        <p>氦原子又輕又小，跑得快、自由徑長，大大勝過「自由度少、每個原子帶的能量少」的不利因素，所以導熱好得多。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$k_t(\text{He})\approx0.1$ W/(m·K)，約為空氣的 4 倍（依 $r$ 的取法可在 0.1–0.4 之間）。原因：$\bar v$ 大 2.7 倍（輕）、$\ell$ 長約 2 倍（小），雖然 $C_V/V$ 只有空氣的 3/5（只有 3 個自由度）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>實測氦在 300 K 約 0.15 W/(m·K)（查表值），是空氣的 6 倍，數量級一致 ✔。$\ell\propto1/r^2$ 非常敏感：$r$ 取 0.85 Å 就會得到 0.15；這說明估計的不準大多來自 $r$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-65">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-65（Problem 1.65）· p.44</span></div>
+    <h4>從熱導率估計亞佛加厥數</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-65">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-65"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Pretend that you live in the 19th century and don’t know the value of Avogadro’s number (or of Boltzmann’s constant or of the mass or size of any molecule). Show how you could make a rough estimate of Avogadro’s number from a measurement of the thermal conductivity of a gas, together with other measurements that are relatively easy.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>假裝你活在 19 世紀，不知道亞佛加厥數（也不知道波茲曼常數、任何分子的質量或大小）。說明如何從一種氣體的熱導率測量，加上其他相對容易的測量，粗估亞佛加厥數。</p></div>
+    <div class="part givens"><span class="part-label">已知與可測的量</span>
+      <table>
+        <thead><tr><th>量</th><th>怎麼得到</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>不知道的</td><td>$N_A$、$k$、分子質量 $m$、分子半徑 $r$</td><td>「<b>不知道</b>亞佛加厥數（也不知道波茲曼常數、任何分子的質量或大小）」</td></tr>
+          <tr><td>莫耳質量 $M$、氣體常數 $R$</td><td>化學秤重；$PV=nRT$ 用莫耳數量</td><td>「其他<b>相對容易</b>的測量」：都是巨觀量</td></tr>
+          <tr><td>熱導率 $k_t$</td><td>直接量</td><td>「從一種氣體的<b>熱導率測量</b>」</td></tr>
+          <tr><td>每單位體積熱容量 $C_V/V$</td><td>量熱法</td><td>巨觀量</td></tr>
+          <tr><td>液體的莫耳體積 $V_{\text{液}}$</td><td>把氣體液化後量密度</td><td>巨觀量（示範數字用液態氮 0.807 g/cm³）</td></tr>
+          <tr><td>公式</td><td>(1.62) $\ell\approx\frac{V}{4\pi r^2N}$；(1.65) $k_t=\tfrac12\frac{C_V}V\ell\bar v$</td><td>本節</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一套只用巨觀測量得出 $N_A$ 的方法（下面再用氮氣的數字示範一次）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> (1.65) 裡的 $\bar v$ 和 $C_V/V$ 都能用巨觀量算出，<b>所以</b>量了 $k_t$ 就能反推平均自由徑 $\ell$——這是一個「微觀長度」。</p>
+      <p><b>因為</b> (1.62) 的 $\ell$ 同時含有兩個未知數 $r$ 和 $N$，一條式子解不出來，<b>所以</b>還需要第二條關係：液體裡分子幾乎緊挨著，液體的體積≈$N$ 個分子本身的體積。兩條式子聯立，就能解出 $r$ 和 $N$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-65-s1" data-sym="vrms,R">
+        <span class="step-title">用巨觀量算平均速率</span>
+        <p>§1.2 的 $v_{\text{rms}}=\sqrt{3kT/m}$，分子分母同乘 $N_A$：$k N_A=R$、$mN_A=M$，</p>
+        $$\bar v\approx v_{\text{rms}}=\sqrt{\frac{3RT}{M}}$$
+        <p class="sub">示範：氮氣 $M=0.028$ kg/mol、$T=300$ K、$R=8.31$ J/(mol·K)，得 $\bar v\approx520$ m/s（取空氣值 508 m/s 也可以）。</p>
+      </div>
+      <div class="step" data-step="sc-1-65-s2" data-sym="ell,kt">
+        <span class="step-title">由 $k_t$ 反推 $\ell$</span>
+        $$\ell=\frac{2k_t}{(C_V/V)\,\bar v}$$
+        <p class="sub">示範：代入 $k_t=0.026$ W/(m·K)、$C_V/V=833$ J/(m³·K)（量熱，或 $\tfrac52P/T$）、$\bar v=508$ m/s：</p>
+        $$\ell=\frac{2(0.026)}{(833)(508)}\ \text m=1.23\times10^{-7}\ \text m$$
+      </div>
+      <div class="step" data-step="sc-1-65-s3" data-sym="rmol">
+        <span class="step-title">第二條關係：液體</span>
+        <p>同一莫耳物質（$N_A$ 個分子）：氣體時 (1.62) 給 $\ell=\dfrac{V_{\text{氣}}}{4\pi r^2N_A}$；液體時分子緊挨，每個分子佔一個邊長 $2r$ 的小立方體：$V_{\text{液}}\approx N_A(2r)^3$。兩式相除消去 $N_A$：</p>
+        $$\frac{V_{\text{液}}}{V_{\text{氣}}}=\frac{8r^3}{4\pi r^2\ell}=\frac{2r}{\pi\ell}\quad\Longrightarrow\quad r=\frac\pi2\,\ell\,\frac{V_{\text{液}}}{V_{\text{氣}}}$$
+      </div>
+      <div class="step" data-step="sc-1-65-s4">
+        <span class="step-title">示範數值：分子半徑</span>
+        <p class="sub">代入液態氮莫耳體積 $V_{\text{液}}=\dfrac{28\ \text g}{0.807\ \text{g/cm}^3}=34.7\ \text{cm}^3$、氣體莫耳體積 $V_{\text{氣}}=RT/P=0.0246$ m³（300 K、1 atm）、$\ell=1.23\times10^{-7}$ m（步驟 2）：</p>
+        $$r=\frac\pi2(1.23\times10^{-7}\ \text m)\frac{3.47\times10^{-5}}{0.0246}=2.7\times10^{-10}\ \text m$$
+      </div>
+      <div class="step" data-step="sc-1-65-s5">
+        <span class="step-title">得到 $N_A$</span>
+        $$N_A\approx\frac{V_{\text{液}}}{(2r)^3}$$
+        <p class="sub">代入 $V_{\text{液}}=3.47\times10^{-5}$ m³、$r=2.7\times10^{-10}$ m（步驟 4）：</p>
+        $$N_A\approx\frac{3.47\times10^{-5}}{(5.4\times10^{-10})^3}=2\times10^{23}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>方法：(1) 由 $\bar v=\sqrt{3RT/M}$ 與 $C_V/V$（都是巨觀量）和量到的 $k_t$，從 $k_t=\tfrac12\frac{C_V}V\ell\bar v$ 求出 $\ell$；(2) 由 $\ell=\frac{V_{\text{氣}}}{4\pi r^2N_A}$ 與液體 $V_{\text{液}}\approx N_A(2r)^3$ 聯立，解出 $r=\frac\pi2\ell\frac{V_{\text{液}}}{V_{\text{氣}}}$，再得 $N_A\approx V_{\text{液}}/(2r)^3$。用氮氣示範得 $N_A\sim2\times10^{23}$，與真值 $6.0\times10^{23}$ 同數量級。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>一致性：$V_{\text{氣}}/(4\pi r^2\ell)=0.0246/[4\pi(2.7\times10^{-10})^2(1.23\times10^{-7})]=2\times10^{23}$，與步驟 5 相同 ✔。歷史上 Loschmidt 在 1865 年就是用類似的想法（以黏滯係數代替熱導率）第一次估出每單位體積的分子數。</p></div>
+  </div>
+</div>
+
+<h3 id="r7-viscosity">7.5 黏滯 <span class="pg-tag">p.44–46</span></h3>
+
+<p>分子亂跑不只帶走能量，也帶走<strong>動量</strong>。考慮兩片平行的板子中間夾一層流體（課本 Fig. 1.20）：下板靜止，上板往 $+x$ 移動。巨觀上，緊貼下板的薄層流體跟著下板不動，緊貼上板的跟著上板移動（「黏在」表面上）。若移動夠慢或間隙夠窄，流體只做水平運動、沒有亂流，叫<strong>層流</strong>（laminar flow）；這時流體的水平速度 $u_x$ 沿 $z$ 均勻增加。這裡 $u_x$ 是巨觀的流速，和分子每秒幾百公尺的熱運動速度是兩回事。</p>
+
+<p>幾乎所有流體都抵抗這種「一層滑過一層」的剪切流動，這叫<strong>黏滯</strong>（viscosity）：最上層把一部分前進動量交給下一層、下一層再往下交……最後底層對下板施一個往前的力；同時（牛頓第三定律）上層失去動量，對上板施一個往後的力。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.45 Eq. (1.68)–(1.69) 黏滯係數（coefficient of viscosity）</span>
+  $$\frac{F_x}{A}\propto\frac{u_{x,\text{top}}-u_{x,\text{bottom}}}{\Delta z}\qquad\Longrightarrow\qquad\frac{|F_x|}{A}=\eta\,\frac{du_x}{dz}$$
+  <p>$\eta$（eta）是黏滯係數。加絕對值是因為 $F_x$ 可以指任一片板受的力，兩者大小相等、方向相反。</p>
+</div>
+
+<div class="step" data-step="t1r-visc-1" data-sym="eta">
+  <span class="step-title">剪應力與單位</span>
+  <p>$|F_x|/A$ 的單位和壓力一樣（Pa），但它<strong>平行</strong>於表面，不要叫它壓力，正確名稱是<strong>剪應力</strong>（shear stress）。$\eta=\dfrac{|F_x|/A}{du_x/dz}$ 的單位是 $\dfrac{\text{Pa}}{(\text{m/s})/\text m}=$ Pa·s。cgs 單位 poise（1 dyne·s/cm²）＝0.1 Pa·s。</p>
+  <div class="symbol-table-wrap"><table>
+    <thead><tr><th>流體</th><th>$\eta$（Pa·s）</th></tr></thead>
+    <tbody><tr><td>水 0°C</td><td>0.0018</td></tr><tr><td>水 100°C</td><td>0.00028</td></tr><tr><td>SAE 10 機油（室溫）</td><td>0.25</td></tr><tr><td>空氣（室溫）</td><td>$19\times10^{-6}$</td></tr></tbody>
+  </table></div>
+</div>
+
+<p><strong>令人意外的事實</strong>：理想氣體的黏滯係數與壓力無關，而且隨溫度<strong>增加</strong>。原因和 $k_t$ 完全一樣：上下輸運水平動量靠三個因子——每單位體積的動量（∝ 密度）、平均自由徑（∝ 1/密度）、平均熱運動速率（∝ $\sqrt T$）。密度相消，剩下 $\eta\propto\sqrt T$，實驗也證實了。</p>
+
+<p>那液體為什麼溫度越高越不黏？液體的密度和自由徑幾乎不隨溫度、壓力變，但另一個因素出現了：低溫時熱運動慢，分子碰撞時比較能「勾住」彼此，動量傳得很有效率。極端情況是固體，分子幾乎永久綁在一起，黏滯近乎無限大——固體也會流動，但要地質時間尺度。</p>
+
+<div class="problem" data-kind="textbook" id="sc-1-66">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-66（Problem 1.66）· p.46 · 熱學小考（上）作業題</span></div>
+    <h4>理想氣體的黏滯係數</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-66">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-66"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In analogy with the thermal conductivity, derive an approximate formula for the viscosity of an ideal gas in terms of its density, mean free path, and average thermal speed. Show explicitly that the viscosity is independent of pressure and proportional to the square root of the temperature. Evaluate your formula numerically for air at room temperature and compare to the experimental value quoted in the text.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>仿照熱導率的推導，用密度、平均自由徑和平均熱運動速率，推導理想氣體黏滯係數的近似公式。明確證明黏滯係數與壓力無關、正比於溫度的平方根。對室溫的空氣代入數值，並和課文給的實驗值比較。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值／關係</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>模型</td><td>兩個厚 $\ell$ 的盒子交換分子（同 7.4）</td><td>「<b>仿照熱導率</b>的推導」</td></tr>
+          <tr><td>定義</td><td>$\dfrac{|F_x|}{A}=\eta\dfrac{du_x}{dz}$</td><td>課文 (1.69)</td></tr>
+          <tr><td>密度</td><td>$\rho=\dfrac{PM}{RT}=1.18$ kg/m³</td><td>題目沒給；空氣 $M=0.029$ kg/mol、300 K、1 atm</td></tr>
+          <tr><td>平均自由徑</td><td>$\ell\approx1.5\times10^{-7}$ m</td><td>課文 p.42（例題 sc-ex-mfp）</td></tr>
+          <tr><td>平均速率</td><td>$\bar v\approx500$ m/s</td><td>課文 p.42</td></tr>
+          <tr><td>實驗值</td><td>$\eta=19\ \mu\text{Pa·s}$</td><td>「和課文給的<b>實驗值</b>比較」：p.45 空氣 19 µPa·s</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(1) $\eta$ 用 $\rho$、$\ell$、$\bar v$ 表示；(2) 證明與 $P$ 無關、$\propto\sqrt T$；(3) 空氣的數值並和 19 µPa·s 比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>黏滯是「水平動量沿 $z$ 方向的輸運」，和熱導是「能量沿 $x$ 方向的輸運」同一個機制，<b>所以</b>把 7.4 的兩盒子論證裡的「能量 $U$」換成「$x$ 動量 $p_x$」：上下兩個厚 $\ell$ 的盒子，一個碰撞時間內各有一半分子穿過中間的平面，淨動量轉移除以時間就是力。</p>
+      <p><b>因為</b>要證明與壓力無關，<b>所以</b>把 $\rho$ 和 $\ell$ 都寫成密度 $N/V$ 的函數，看它們相乘時消掉。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-66-s1" data-sym="ux,ell">
+        <span class="step-title">兩盒子的動量交換</span>
+        <p>下盒（盒 1，中心 $z_1$）與上盒（盒 2，中心 $z_2=z_1+\ell$），各厚 $\ell$、截面積 $A$、含 $N$ 個質量 $m$ 的分子，平均水平速度分別 $u_x(z_1)$、$u_x(z_2)$。一個碰撞時間 $\Delta t$ 內，盒 1 的一半分子往上、盒 2 的一半往下，各自帶著自己盒子的水平動量。盒 2 的淨動量變化：</p>
+        $$\Delta p_x\approx\tfrac12Nm\,u_x(z_1)-\tfrac12Nm\,u_x(z_2)=-\tfrac12Nm\,\Delta u_x$$
+      </div>
+      <div class="step" data-step="sc-1-66-s2" data-sym="rhoD,vbar">
+        <span class="step-title">動量變化率＝力</span>
+        $$\frac{|F_x|}{A}=\frac1A\frac{|\Delta p_x|}{\Delta t}=\frac{Nm\,\Delta u_x}{2A\,\Delta t}$$
+        <p class="sub">代入 $\Delta t=\ell/\bar v$、$\Delta u_x=\ell\,du_x/dz$（兩盒中心相距 $\ell$），並認出 $\dfrac{Nm}{A\ell}=\rho$（一個盒子的質量除以體積）：</p>
+        $$\frac{|F_x|}{A}=\frac{Nm\,\bar v\,\ell}{2A\ell}\frac{du_x}{dz}=\left(\tfrac12\rho\,\ell\,\bar v\right)\frac{du_x}{dz}$$
+        <p>和 (1.69) 比較，括號就是黏滯係數：</p>
+        $$\eta\approx\tfrac12\rho\,\ell\,\bar v$$
+      </div>
+      <div class="step" data-step="sc-1-66-s3" data-sym="rmol">
+        <span class="step-title">與壓力無關、$\propto\sqrt T$</span>
+        <p class="sub">代入 $\rho=\dfrac{Nm}{V}$ 與 (1.62) $\ell\approx\dfrac{V}{4\pi r^2N}$：</p>
+        $$\rho\,\ell\approx\frac{Nm}{V}\cdot\frac{V}{4\pi r^2N}=\frac{m}{4\pi r^2}$$
+        <p>只跟分子的質量和大小有關，與 $P$、$V$、$T$ 都無關。剩下的 $\bar v\approx\sqrt{3kT/m}\propto\sqrt T$，所以</p>
+        $$\eta\approx\frac{m}{8\pi r^2}\sqrt{\frac{3kT}{m}}=\frac{\sqrt{3mkT}}{8\pi r^2}\ \propto\ \sqrt T,\ \text{與 }P\text{ 無關}$$
+      </div>
+      <div class="step" data-step="sc-1-66-s4">
+        <span class="step-title">空氣的數值</span>
+        <p class="sub">先算密度：代入 $P=1.013\times10^5$ Pa、$M=0.029$ kg/mol、$R=8.31$ J/(mol·K)、$T=300$ K：</p>
+        $$\rho=\frac{PM}{RT}=\frac{(1.013\times10^5)(0.029)}{(8.31)(300)}=1.18\ \text{kg/m}^3$$
+        <p class="sub">代入 $\eta\approx\tfrac12\rho\ell\bar v$，$\ell=1.5\times10^{-7}$ m、$\bar v=500$ m/s（課文 p.42）：</p>
+        $$\eta\approx\tfrac12(1.18)(1.5\times10^{-7})(500)\ \text{Pa·s}=4.4\times10^{-5}\ \text{Pa·s}$$
+        $$\frac{\eta_{\text{估}}}{\eta_{\text{實}}}=\frac{44\ \mu\text{Pa·s}}{19\ \mu\text{Pa·s}}\approx2.3$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\eta\approx\tfrac12\rho\ell\bar v$；因 $\rho\ell\approx m/(4\pi r^2)$ 與狀態無關，$\eta\propto\bar v\propto\sqrt T$、與壓力無關。室溫空氣 $\eta\approx4.4\times10^{-5}$ Pa·s，約為實驗值 $1.9\times10^{-5}$ 的 2 倍多，數量級正確。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$\text{kg/m}^3\cdot\text m\cdot\text{m/s}=\text{kg/(m·s)}=\text{Pa·s}$ ✔。與熱導率的式子 $k_t=\tfrac12\frac{C_V}{V}\ell\bar v$ 形狀相同，只是「每單位體積帶的量」從熱容量換成質量（動量／速度）✔</p></div>
+  </div>
+</div>
+
+<h3 id="r7-diffusion">7.6 擴散與 Fick 定律 <span class="pg-tag">p.46–48</span></h3>
+
+<p>熱傳導是能量的輸運，黏滯是動量的輸運；第三種被分子亂跑輸運的是<strong>粒子本身</strong>：粒子會從濃度高的地方散到濃度低的地方，叫<strong>擴散</strong>（diffusion）。例如一滴食用色素滴進一杯靜止的水，會慢慢往四面八方散開。（習題 1.22 是更簡單的情況：氣體從小洞漏進真空，叫逸散 effusion。）</p>
+
+<div class="box pitfall">
+  <span class="box-title">這一節的 $n$ 不是莫耳數</span>
+  <p>只有在這一小節，課本用 $n$ 表示粒子<strong>濃度</strong>（每單位體積的粒子數 $N/V$，單位 m⁻³）。其他地方 $n$ 是莫耳數。</p>
+</div>
+
+<p>熱傳導由溫度差驅動、黏滯由速度差驅動，擴散由濃度差驅動。取 $n$ 沿 $x$ 均勻增加的區域（課本 Fig. 1.21），粒子的<strong>通量</strong>（flux）$\vec J$ 是每單位時間、每單位面積淨穿過某個面的粒子數。仿照 (1.60)(1.69)，猜 $|\vec J|\propto dn/dx$——多數情況下這是對的：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.47 Eq. (1.70) Fick 定律（Fick's law）</span>
+  $$J_x=-D\,\frac{dn}{dx}$$
+  <p>$D$ 是擴散係數（diffusion coefficient），單位 m²/s，和擴散的分子種類與它穿過的介質都有關。負號：$dn/dx$ 為正時，通量往 $-x$。</p>
+</div>
+
+<div class="step" data-step="t1r-diff-1" data-sym="D,Jflux,nconc">
+  <span class="step-title">擴散係數的數量級</span>
+  <p>室溫水中：H⁺ 離子 $9\times10^{-9}$、蔗糖 $5\times10^{-10}$、蛋白質等大分子幾個 $10^{-11}$ m²/s。氣體裡快得多：CO 在室溫、一大氣壓的空氣中 $D=2\times10^{-5}$ m²/s，其他小分子類似。$D$ 通常隨溫度增加。這些值都很小：擴散在細胞、雲滴、半導體製程這種小尺度很重要，但不是大尺度混合的有效機制。</p>
+</div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-dye">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.7 Eq. (1.71) · p.47–48</span></div>
+    <h4>色素擴散到杯子的另一半要多久</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-dye">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一杯水中加了一滴食用色素，假設色素已經均勻分布在杯子的一半。只靠擴散，色素擴散到另一半大約要多久？杯子的尺寸約 0.1 m；色素分子大小應該和蔗糖差不多，取 $D=10^{-9}$ m²/s。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>距離</td><td>$\Delta x\approx0.1$ m</td><td>「杯子的尺寸約 <b>0.1 m</b>」</td></tr>
+          <tr><td>擴散係數</td><td>$D=10^{-9}$ m²/s</td><td>「和蔗糖差不多，取 <b>$D=10^{-9}$</b>」（蔗糖 $5\times10^{-10}$）</td></tr>
+          <tr><td>初始狀態</td><td>$N$ 個色素分子在一半的體積 $V\approx A\,\Delta x$ 裡</td><td>「均勻分布在杯子的<b>一半</b>」</td></tr>
+          <tr><td>要移動的量</td><td>約 $N$ 個（大約一半，即全部的數量級）穿過中線</td><td>「擴散到<b>另一半</b>」</td></tr>
+          <tr><td>只有擴散</td><td>沒有對流</td><td>「<b>只靠</b>擴散」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：擴散時間 $\Delta t$ 的數量級。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>只問數量級，<b>所以</b>把 Fick 定律粗略化：濃度梯度 ≈「一邊的濃度 $N/V$」÷ 距離 $\Delta x$；通量 ≈「要穿過的分子數 $N$」÷（面積 × 時間）。課本在兩邊故意用同一個 $N$，表示 $\Delta t$ 是「大部分分子穿過中線」的時間。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-dye-s1" data-sym="D,Jflux,nconc">
+        <span class="step-title">粗略化的 Fick 定律</span>
+        $$|J|=D\left|\frac{dn}{dx}\right|\quad\Longrightarrow\quad\frac{N}{A\,\Delta t}\approx D\,\frac{N/V}{\Delta x}$$
+      </div>
+      <div class="step" data-step="sc-ex-dye-s2">
+        <span class="step-title">解出時間</span>
+        <p class="sub">代入 $V\approx A\,\Delta x$（半杯的體積），$N$、$A$ 兩邊約掉：</p>
+        $$\frac{N}{A\,\Delta t}\approx\frac{DN}{A(\Delta x)^2}\quad\Longrightarrow\quad\Delta t\approx\frac{(\Delta x)^2}{D}$$
+      </div>
+      <div class="step" data-step="sc-ex-dye-s3">
+        <span class="step-title">代入數值</span>
+        <p class="sub">代入 $\Delta x=0.1$ m、$D=10^{-9}$ m²/s（題目）：</p>
+        $$\Delta t\approx\frac{(0.1\ \text m)^2}{10^{-9}\ \text{m}^2/\text s}=10^7\ \text s\approx116\ \text{天}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\Delta t\approx(\Delta x)^2/D\approx10^7$ s，將近四個月。真的做實驗會快得多，因為水的整體流動（對流）在混合；只有仔細看色水與清水的交界，才看得到擴散。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位 $\text m^2/(\text m^2/\text s)=\text s$ ✔。$(\Delta x)^2/D$ 和 7.2 節熱方程的 $L^2/K$ 是同一個公式：擴散距離 $\propto\sqrt{\text{時間}}$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-67">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-67（Problem 1.67）· p.48</span></div>
+    <h4>色素一分鐘能擴散多遠</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-67">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-67"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Make a rough estimate of how far food coloring (or sugar) will diffuse through water in one minute.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>粗估食用色素（或糖）一分鐘內在水中能擴散多遠。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>時間</td><td>$\Delta t=60$ s</td><td>「<b>一分鐘</b>內」</td></tr>
+          <tr><td>擴散係數</td><td>$D\approx10^{-9}$ m²/s</td><td>題目沒給；課文例題對色素／蔗糖取的值</td></tr>
+          <tr><td>只有擴散</td><td>水靜止</td><td>「在水中<b>擴散</b>」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：擴散距離 $\Delta x$ 的數量級。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>課文例題已經把 Fick 定律粗略化成 $\Delta t\approx(\Delta x)^2/D$，而這題是反過來「給時間求距離」，<b>所以</b>直接解出 $\Delta x\approx\sqrt{D\,\Delta t}$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-67-s1" data-sym="D">
+        <span class="step-title">反解距離</span>
+        $$\Delta t\approx\frac{(\Delta x)^2}{D}\quad\Longrightarrow\quad\Delta x\approx\sqrt{D\,\Delta t}$$
+      </div>
+      <div class="step" data-step="sc-1-67-s2">
+        <span class="step-title">代入數值</span>
+        <p class="sub">代入 $D=10^{-9}$ m²/s（課文）、$\Delta t=60$ s（題目「一分鐘」）：</p>
+        $$\Delta x\approx\sqrt{(10^{-9}\ \text{m}^2/\text s)(60\ \text s)}=\sqrt{6\times10^{-8}\ \text m^2}=2.4\times10^{-4}\ \text m$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約 0.25 mm（四分之一毫米）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>與課文例題比：距離 0.1 m 要 $10^7$ s；距離縮小 400 倍，時間縮小 $400^2=1.6\times10^5$ 倍，得 60 s ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-68">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-68（Problem 1.68）· p.48</span></div>
+    <h4>香水靠擴散傳到房間另一頭要多久</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-68">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-68"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you open a bottle of perfume at one end of a room. Very roughly, how much time would pass before a person at the other end of the room could smell the perfume, if diffusion were the only transport mechanism? Do you think diffusion is the dominant transport mechanism in this situation?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在房間的一端打開一瓶香水。如果擴散是唯一的輸運機制，非常粗略地說，要過多久房間另一端的人才聞得到？你認為在這情況下擴散是主要的輸運機制嗎？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>距離（自訂）</td><td>$\Delta x\approx5$ m</td><td>「房間的一端」到「另一端」：一般房間幾公尺</td></tr>
+          <tr><td>擴散係數</td><td>$D\approx2\times10^{-5}$ m²/s</td><td>題目沒給；課文 p.47 小分子在空氣中的值（香水分子較大，實際更小）</td></tr>
+          <tr><td>只有擴散</td><td>不考慮對流</td><td>「如果擴散是<b>唯一</b>的輸運機制」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：擴散時間的數量級；判斷擴散是不是主要機制。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>和課文的色素例題一樣（只是換成空氣、距離換成房間長度），<b>所以</b>用 $\Delta t\approx(\Delta x)^2/D$。<b>因為</b>題目問「是不是主要機制」，<b>所以</b>把算出的時間和日常經驗（幾分鐘就聞到）比較。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-68-s1" data-sym="D">
+        <span class="step-title">擴散時間</span>
+        $$\Delta t\approx\frac{(\Delta x)^2}{D}$$
+        <p class="sub">代入 $\Delta x=5$ m（自訂房間長度）、$D=2\times10^{-5}$ m²/s（課文）：</p>
+        $$\Delta t\approx\frac{(5\ \text m)^2}{2\times10^{-5}\ \text{m}^2/\text s}=1.25\times10^6\ \text s\approx14\ \text{天}$$
+      </div>
+      <div class="step" data-step="sc-1-68-s2">
+        <span class="step-title">和經驗比較</span>
+        <p>實際上幾分鐘就聞得到，比擴散快了幾千倍。所以主要機制不是擴散，而是空氣的整體流動——對流（人走動、溫差造成的氣流、通風）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>只靠擴散約 $10^6$ s，也就是一兩週；實際幾分鐘就聞得到，所以這情況下主要靠對流，不是擴散。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$\Delta x\approx\sqrt{D\,\Delta t}$：一分鐘只擴散 $\sqrt{2\times10^{-5}\times60}\approx3.5$ cm，連鼻子到瓶口都不夠 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-69">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-69（Problem 1.69）· p.48 · 熱學小考（上）作業題</span></div>
+    <h4>推導 Fick 第二定律</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-69">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-69"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Imagine a narrow pipe, filled with fluid, in which the concentration of a certain type of molecule varies only along the length of the pipe (in the x direction). By considering the flux of these particles from both directions into a short segment $\Delta x$, derive Fick’s second law, $$\frac{\partial n}{\partial t}=D\frac{\partial^2n}{\partial x^2}.$$ Noting the similarity to the heat equation derived in Problem 1.62, discuss the implications of this equation in some detail.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一根充滿流體的細管，其中某種分子的濃度只沿管長（$x$ 方向）變化。考慮從兩側流進一小段 $\Delta x$ 的粒子通量，推導 Fick 第二定律 $\dfrac{\partial n}{\partial t}=D\dfrac{\partial^2n}{\partial x^2}$。注意它和習題 1.62 導出的熱方程的相似處，仔細討論這個方程式的意涵。</p></div>
+    <div class="part givens"><span class="part-label">已知的關係與前提</span>
+      <table>
+        <thead><tr><th>項目</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>一維</td><td>$n=n(x,t)$</td><td>「濃度<b>只沿管長</b>變化」</td></tr>
+          <tr><td>通量的意義</td><td>每單位面積、每單位時間穿過的粒子數</td><td>課文 p.47</td></tr>
+          <tr><td>Fick 第一定律</td><td>$J_x=-D\,\partial n/\partial x$</td><td>課文 (1.70)</td></tr>
+          <tr><td>粒子守恆</td><td>粒子不會憑空產生或消失</td><td>題目沒寫；分子只會移動</td></tr>
+          <tr><td>可比較的方程</td><td>熱方程 $\partial_tT=K\partial_x^2T$</td><td>「和習題 <b>1.62</b> 的熱方程」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：推導 $\partial_tn=D\,\partial_x^2n$，並討論它的意涵（與熱方程對照）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>粒子守恆，一小段管子裡粒子數的變化率只能來自兩端的通量，<b>所以</b>寫出「兩端流進的粒子數＝段內粒子增加」，再用 Fick 第一定律把通量換成濃度梯度——步驟和習題 1.62 用能量守恆＋Fourier 定律完全平行。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-69-s1" data-sym="Jflux">
+        <span class="step-title">粒子數的變化率</span>
+        <p>取 $x-\tfrac{\Delta x}2$ 到 $x+\tfrac{\Delta x}2$ 這一段，截面積 $A$。令 $J_1$、$J_2$ 分別是從左端、右端<strong>流進</strong>這一段的通量。通量乘面積就是每秒流進的粒子數：</p>
+        $$\frac{dN}{dt}=(J_1+J_2)A$$
+      </div>
+      <div class="step" data-step="sc-1-69-s2" data-sym="nconc">
+        <span class="step-title">換成濃度</span>
+        <p>除以這一段的體積 $A\,\Delta x$：</p>
+        $$\frac{\partial n}{\partial t}=\frac{dN/dt}{A\,\Delta x}=\frac{J_1+J_2}{\Delta x}$$
+      </div>
+      <div class="step" data-step="sc-1-69-s3" data-sym="D">
+        <span class="step-title">用 Fick 第一定律（注意符號）</span>
+        <p>左端流進＝往 $+x$ 的通量：$J_1=-D\,\partial_xn|_{x-\Delta x/2}$；右端流進＝往 $-x$ 的通量，要加負號：$J_2=+D\,\partial_xn|_{x+\Delta x/2}$。</p>
+        <p class="sub">代入上一步：</p>
+        $$\begin{aligned}\frac{\partial n}{\partial t}&=\frac{D}{\Delta x}\Big[\left.\frac{\partial n}{\partial x}\right|_{x+\Delta x/2}-\left.\frac{\partial n}{\partial x}\right|_{x-\Delta x/2}\Big]\\&\xrightarrow{\Delta x\to0}D\frac{\partial^2n}{\partial x^2}\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-69-s4" data-sym="Kdiff">
+        <span class="step-title">與熱方程對照</span>
+        <p>形式完全相同：$T\leftrightarrow n$、$K\leftrightarrow D$。所以熱方程的每一個解都能直接搬過來，例如習題 1.62 的高斯解變成</p>
+        $$n(x,t)=n_0+\frac{a}{\sqrt t}\,e^{-x^2/4Dt}$$
+        <p>代表 $t=0$ 時集中在 $x=0$ 的一團粒子（背景濃度 $n_0$ 之上）向兩側散開。</p>
+      </div>
+      <div class="step" data-step="sc-1-69-s5">
+        <span class="step-title">意涵</span>
+        <ul>
+          <li>$\partial n/\partial t\propto\partial^2n/\partial x^2$：濃度曲線的「山頭」（向下凹）會降低、「山谷」會被填平；直線分布（$\partial^2n/\partial x^2=0$）不隨時間變——這就是穩定的濃度梯度、等速擴散流。</li>
+          <li>粒子總數守恆：高斯解曲線下的面積 $2a\sqrt{\pi D}$ 不隨時間變。</li>
+          <li>寬度 $\propto\sqrt{Dt}$：均方位移 $\langle x^2\rangle=2Dt$。擴散對短距離很快、長距離極慢（距離加倍，時間四倍），這就是 $\Delta t\approx(\Delta x)^2/D$。</li>
+          <li>一開始梯度大、散得快，之後越來越慢；$t\to\infty$ 時濃度均勻，不再有淨通量。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>粒子守恆 $\partial_tn=(J_1+J_2)/\Delta x$ 加上 $J=-D\,\partial_xn$，得 $\dfrac{\partial n}{\partial t}=D\dfrac{\partial^2n}{\partial x^2}$。它和熱方程同形（$T\to n$、$K\to D$），所以擴散和熱傳導有相同的數學行為：一團粒子以高斯形散開，寬度 $\propto\sqrt{Dt}$、總數守恆、先快後慢，最後均勻。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：左邊 $\text m^{-3}/\text s$；右邊 $(\text m^2/\text s)(\text m^{-3}/\text m^2)=\text m^{-3}/\text s$ ✔。驗算 $\langle x^2\rangle=\dfrac{\int x^2e^{-x^2/4Dt}dx}{\int e^{-x^2/4Dt}dx}=2Dt$（verify 腳本以 sympy 計算）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-70">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-70（Problem 1.70）· p.48</span></div>
+    <h4>理想氣體的擴散係數</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-70">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-70"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In analogy with the thermal conductivity, derive an approximate formula for the diffusion coefficient of an ideal gas in terms of the mean free path and the average thermal speed. Evaluate your formula numerically for air at room temperature and atmospheric pressure, and compare to the experimental value quoted in the text. How does $D$ depend on $T$, at fixed pressure?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>仿照熱導率的推導，用平均自由徑和平均熱運動速率，推導理想氣體擴散係數的近似公式。對室溫、一大氣壓的空氣代入數值，並和課文給的實驗值比較。在固定壓力下，$D$ 和 $T$ 有什麼關係？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值／關係</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>模型</td><td>兩個厚 $\ell$ 的盒子交換分子</td><td>「<b>仿照熱導率</b>的推導」</td></tr>
+          <tr><td>Fick 定律</td><td>$J_x=-D\,dn/dx$</td><td>課文 (1.70)</td></tr>
+          <tr><td>平均自由徑</td><td>$\ell\approx1.5\times10^{-7}$ m</td><td>課文 p.42（室溫、一大氣壓空氣）</td></tr>
+          <tr><td>平均速率</td><td>$\bar v\approx500$ m/s</td><td>課文 p.42</td></tr>
+          <tr><td>實驗值</td><td>$D\approx2\times10^{-5}$ m²/s</td><td>「課文給的<b>實驗值</b>」：p.47 CO 在空氣中</td></tr>
+          <tr><td>固定壓力</td><td>$P$ 不變、改 $T$</td><td>「在<b>固定壓力</b>下」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$D$ 的近似式；空氣的數值與比較；固定 $P$ 時 $D$ 對 $T$ 的關係。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>擴散輸運的是「粒子數」，<b>所以</b>把 7.4 兩盒子論證裡每個分子帶的能量換成「1 個粒子」：兩盒各有一半分子穿過中線，淨粒子數除以面積和時間就是通量，再和 Fick 定律比較讀出 $D$。</p>
+      <p><b>因為</b>這次「每單位體積帶的量」就是濃度本身，不像 $k_t$、$\eta$ 有一個密度可以和 $\ell\propto1/$密度相消，<b>所以</b>預期 $D$ 會和壓力有關。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-70-s1" data-sym="nconc,ell">
+        <span class="step-title">兩盒子的淨粒子數</span>
+        <p>盒 1（左）、盒 2（右）各寬 $\ell$、截面積 $A$，濃度 $n_1$、$n_2$。一個碰撞時間 $\Delta t=\ell/\bar v$ 內各有一半分子穿過中線，由左到右的淨分子數：</p>
+        $$\tfrac12n_1A\ell-\tfrac12n_2A\ell=\tfrac12A\ell\,(n_1-n_2)$$
+      </div>
+      <div class="step" data-step="sc-1-70-s2" data-sym="Jflux,vbar">
+        <span class="step-title">通量與擴散係數</span>
+        <p>除以面積 $A$ 與時間 $\Delta t$：</p>
+        $$J_x\approx\frac{A\ell(n_1-n_2)}{2A\,\Delta t}=\frac{\ell(n_1-n_2)}{2\ell/\bar v}$$
+        <p class="sub">代入 $n_1-n_2=-\ell\,dn/dx$（兩盒中心相距 $\ell$）：</p>
+        $$J_x\approx-\tfrac12\ell\bar v\,\frac{dn}{dx}\quad\Longrightarrow\quad D\approx\tfrac12\ell\,\bar v$$
+      </div>
+      <div class="step" data-step="sc-1-70-s3" data-sym="D">
+        <span class="step-title">空氣的數值</span>
+        <p class="sub">代入 $\ell=1.5\times10^{-7}$ m、$\bar v=500$ m/s（課文 p.42）：</p>
+        $$D\approx\tfrac12(1.5\times10^{-7}\ \text m)(500\ \text{m/s})=3.8\times10^{-5}\ \text{m}^2/\text s$$
+        <p>比實驗值 $2\times10^{-5}$ 大約 2 倍。</p>
+      </div>
+      <div class="step" data-step="sc-1-70-s4">
+        <span class="step-title">對溫度與壓力的依賴</span>
+        <p class="sub">代入 $\ell\approx\dfrac{1}{4\pi r^2}\dfrac{kT}{P}$ 與 $\bar v\propto\sqrt T$：</p>
+        $$D\propto\frac TP\cdot\sqrt T=\frac{T^{3/2}}{P}$$
+        <p>固定壓力時 $D\propto T^{3/2}$：溫度加倍，$D$ 變為 $2^{3/2}\approx2.8$ 倍。（和 $k_t$、$\eta$ 不同，$D\propto1/P$：氣體越稀薄擴散越快。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$D\approx\tfrac12\ell\bar v$；室溫一大氣壓空氣 $D\approx4\times10^{-5}$ m²/s，約為實驗值 $2\times10^{-5}$ 的 2 倍；$D\propto T^{3/2}/P$，固定壓力下 $D\propto T^{3/2}$（溫度加倍約 2.8 倍）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位 $\text m\cdot\text{m/s}=\text m^2/\text s$ ✔。黏滯推導裡 $\eta=\tfrac12\rho\ell\bar v$，所以 $D=\eta/\rho$：用實驗 $\eta=19\ \mu$Pa·s 得 $D\approx1.6\times10^{-5}$，更接近實驗值（自編難題 t1-self-07b）✔</p></div>
+  </div>
+</div>
+
+<h3 id="r7-compare">7.7 三種輸運的比較 <span class="pg-tag">網站整理</span></h3>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th></th><th>熱傳導</th><th>黏滯</th><th>擴散</th></tr></thead>
+  <tbody>
+    <tr><td>被輸運的量</td><td>能量</td><td>水平動量</td><td>粒子</td></tr>
+    <tr><td>驅動的梯度</td><td>$dT/dx$</td><td>$du_x/dz$</td><td>$dn/dx$</td></tr>
+    <tr><td>定律</td><td>$\dfrac{Q}{A\Delta t}=-k_t\dfrac{dT}{dx}$</td><td>$\dfrac{|F_x|}{A}=\eta\dfrac{du_x}{dz}$</td><td>$J_x=-D\dfrac{dn}{dx}$</td></tr>
+    <tr><td>理想氣體（動力論）</td><td>$\tfrac12\frac{C_V}{V}\ell\bar v$</td><td>$\tfrac12\rho\,\ell\bar v$</td><td>$\tfrac12\ell\bar v$</td></tr>
+    <tr><td>室溫空氣：估計／實測</td><td>0.031／0.026 W/(m·K)</td><td>44／19 µPa·s</td><td>$3.8$／$2\times10^{-5}$ m²/s</td></tr>
+    <tr><td>對壓力（固定 $T$）</td><td>無關</td><td>無關</td><td>$\propto1/P$</td></tr>
+    <tr><td>對溫度（固定 $P$）</td><td>$\propto\sqrt T$</td><td>$\propto\sqrt T$</td><td>$\propto T^{3/2}$</td></tr>
+  </tbody>
+</table></div>
+
+<p>三個係數有一個共同的「核心」$\tfrac12\ell\bar v$（單位 m²/s，正是擴散係數）：$k_t=\frac{C_V}{V}\times D$、$\eta=\rho\times D$。所以三者的<strong>比值</strong>不含 $\ell$，不需要知道不準的分子半徑——下面的自編難題就利用這一點。</p>
+
+<div class="problem" data-kind="self" id="t1-self-07a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>湖面結冰：冰層厚度 $\propto\sqrt t$</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-07a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>寒流來時，平靜湖面的冰層上表面維持在 $-10^\circ$C（等於氣溫，忽略冰上的空氣層），冰層下表面接觸 $0^\circ$C 的湖水。冰的熱導率 $k_t=2.2$ W/(m·K)、密度 $\rho=917$ kg/m³、比熱 $c=2.1$ kJ/(kg·K)，熔化熱 $L=333$ kJ/kg。(a) 假設冰層內的溫度分布隨時都是直線（準穩態），證明冰層厚度 $x(t)=\sqrt{2k_t\Delta T\,t/\rho L}$（$t=0$ 時厚度 0）。(b) 冰從 0 長到 10 cm 要多久？從 10 cm 長到 20 cm 又要多久？(c) 用兩種方法說明 (a) 的準穩態假設為什麼合理。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>冰層兩面溫度</td><td>上 $-10^\circ$C、下 $0^\circ$C：$\Delta T=10$ K</td><td>「上表面維持在 <b>−10°C</b>」「接觸 <b>0°C</b> 的湖水」</td></tr>
+          <tr><td>冰的性質</td><td>$k_t=2.2$ W/(m·K)，$\rho=917$ kg/m³，$c=2100$ J/(kg·K)</td><td>題目</td></tr>
+          <tr><td>熔化熱</td><td>$L=3.33\times10^5$ J/kg</td><td>「熔化熱 <b>333 kJ/kg</b>」；結冰時放出同樣多的熱</td></tr>
+          <tr><td>水的狀態</td><td>水已在 0°C，不需再冷卻</td><td>「<b>0°C</b> 的湖水」：放出的熱全是潛熱</td></tr>
+          <tr><td>準穩態</td><td>冰內 $T$ 隨時是直線</td><td>(a)「假設冰層內的溫度分布<b>隨時都是直線</b>」</td></tr>
+          <tr><td>起始</td><td>$x(0)=0$</td><td>「$t=0$ 時厚度 <b>0</b>」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 推導 $x(t)$；(b) $0\to10$ cm、$10\to20$ cm 的時間；(c) 說明準穩態假設合理的兩個理由。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>冰的下表面要繼續結冰，水凝固放出的潛熱必須被帶走，而唯一的出路是穿過已有的冰層傳導到冷空氣，<b>所以</b>「潛熱產生率＝冰層的傳導熱流」——這把 §1.6 的潛熱和本節的 Fourier 定律接起來。冰層越厚、梯度 $\Delta T/x$ 越小、熱流越小，結冰就越慢，得到一條 $dx/dt\propto1/x$ 的微分方程。</p>
+      <p>(c) <b>因為</b>「準穩態」的意思是冰內溫度調整得比冰層增厚快、而且冰本身升降溫的熱可以忽略，<b>所以</b>分別比較 (i) 冰的顯熱和潛熱的大小、(ii) 熱擴散時間 $x^2/K$ 和結冰時間。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-07a-s1" data-sym="L,kt">
+        <span class="step-title">(a) 能量平衡</span>
+        <p>面積 $A$、時間 $dt$ 內冰層增厚 $dx$，凝固的水質量 $\rho A\,dx$，放出潛熱 $L\rho A\,dx$。冰層厚 $x$，溫度直線分布，傳導熱流 $k_tA\,\Delta T/x$。兩者相等：</p>
+        $$\rho L\,A\,\frac{dx}{dt}=k_tA\,\frac{\Delta T}{x}$$
+      </div>
+      <div class="step" data-step="t1-self-07a-s2">
+        <span class="step-title">(a) 分離變數積分</span>
+        <p>$A$ 消去，把 $x$ 移到左邊：</p>
+        $$x\,dx=\frac{k_t\Delta T}{\rho L}\,dt\quad\Longrightarrow\quad\int_0^xx'\,dx'=\frac{k_t\Delta T}{\rho L}\int_0^tdt'$$
+        $$\frac{x^2}{2}=\frac{k_t\Delta T}{\rho L}\,t\quad\Longrightarrow\quad x(t)=\sqrt{\frac{2k_t\Delta T\,t}{\rho L}}$$
+      </div>
+      <div class="step" data-step="t1-self-07a-s3">
+        <span class="step-title">(b) 長到 10 cm</span>
+        $$t=\frac{\rho L\,x^2}{2k_t\Delta T}$$
+        <p class="sub">代入 $\rho=917$ kg/m³、$L=3.33\times10^5$ J/kg、$x=0.10$ m、$k_t=2.2$ W/(m·K)、$\Delta T=10$ K（題目）：</p>
+        $$t=\frac{(917)(3.33\times10^5)(0.10)^2}{2(2.2)(10)}\ \text s=\frac{3.05\times10^6}{44}\ \text s=6.9\times10^4\ \text s\approx19\ \text h$$
+      </div>
+      <div class="step" data-step="t1-self-07a-s4">
+        <span class="step-title">(b) 從 10 cm 到 20 cm</span>
+        <p>$t\propto x^2$，長到 20 cm 的總時間是 $2^2=4$ 倍：</p>
+        $$t(20\ \text{cm})=4\times19.3\ \text h=77\ \text h,\qquad t(20)-t(10)=3\times19.3\ \text h\approx58\ \text h$$
+        <p>第二個 10 cm 比第一個慢 3 倍：冰越厚，隔熱越好，自己減慢了自己的生長。</p>
+      </div>
+      <div class="step" data-step="t1-self-07a-s5" data-sym="Kdiff,c">
+        <span class="step-title">(c) 理由一：冰的顯熱 ≪ 潛熱</span>
+        <p>每公斤新冰除了潛熱 $L$，之後還要從 0°C 冷到冰層的平均溫度 $-5^\circ$C，放出顯熱 $c\times5$ K：</p>
+        $$\frac{c\,\Delta T/2}{L}=\frac{(2100)(5)}{3.33\times10^5}=0.032$$
+        <p>只佔 3%，所以「傳導帶走的熱幾乎全是潛熱」，忽略冰溫變化造成的誤差只有幾個百分點。</p>
+      </div>
+      <div class="step" data-step="t1-self-07a-s6">
+        <span class="step-title">(c) 理由二：溫度調整比冰長得快</span>
+        <p>冰的熱擴散率 $K=\dfrac{k_t}{\rho c}=\dfrac{2.2}{(917)(2100)}=1.14\times10^{-6}$ m²/s。厚 10 cm 的冰內溫度重新排成直線需要約</p>
+        $$\frac{x^2}{K}=\frac{(0.10)^2}{1.14\times10^{-6}}\ \text s\approx8800\ \text s\approx2.4\ \text h$$
+        <p>遠小於長到 10 cm 的 19 h。兩者之比 $\dfrac{t}{x^2/K}=\dfrac{L}{2c\,\Delta T}\approx8$ 與厚度無關，其實和理由一是同一件事（潛熱比顯熱大得多），所以冰層在增厚的過程中，溫度隨時來得及調成直線。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\rho L\,\dot x=k_t\Delta T/x\Rightarrow x=\sqrt{2k_t\Delta T\,t/\rho L}$；(b) 長到 10 cm 約 $6.9\times10^4$ s ≈ 19 小時，10→20 cm 再要約 58 小時（3 倍）；(c) 冰的顯熱只有潛熱的 3%，且冰內溫度重新分布的時間（約 2.4 h）遠短於結冰時間，準穩態合理。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>直接數值積分 $dx/dt=k_t\Delta T/(\rho Lx)$ 到 10 cm 得 $6.94\times10^4$ s ✔。極限：$\Delta T\to0$ 時 $x\to0$（不結冰）✔；$L\to0$ 時瞬間結凍 ✔。單位 $\sqrt{\text{W/(m·K)}\cdot\text K\cdot\text s/(\text{kg/m}^3\cdot\text{J/kg})}=\sqrt{\text m^2}$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-07b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>由黏滯係數預測熱導率與擴散係數</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-07b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 由本節動力論的三個公式，證明理想氣體的 $\dfrac{k_t}{\eta}=c_V$（每單位<strong>質量</strong>的定容比熱 $\tfrac f2k/m$），以及 $D=\eta/\rho$。(b) 只用課文的實測 $\eta_{\text{空氣}}=19\ \mu$Pa·s（室溫），預測空氣的 $k_t$ 和 $D$，和實測 0.026 W/(m·K)、$2\times10^{-5}$ m²/s 比較。(c) 為什麼 (b) 的預測方法比直接用 $\ell\approx150$ nm 算更可靠？$k_t$ 剩下的差距說明了動力論的哪個粗糙之處？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值／關係</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>三個公式</td><td>$k_t=\tfrac12\frac{C_V}V\ell\bar v$，$\eta=\tfrac12\rho\ell\bar v$，$D=\tfrac12\ell\bar v$</td><td>「本節動力論的三個公式」(1.65)、習題 1.66、1.70</td></tr>
+          <tr><td>實測黏滯</td><td>$\eta=1.9\times10^{-5}$ Pa·s</td><td>「實測 <b>19 µPa·s</b>」（課文 p.45）</td></tr>
+          <tr><td>空氣</td><td>$f=5$，$m=29$ u，$\rho=1.18$ kg/m³</td><td>題目沒寫；雙原子、平均分子量 29、密度同習題 1.66</td></tr>
+          <tr><td>比較值</td><td>$k_t=0.026$ W/(m·K)，$D=2\times10^{-5}$ m²/s</td><td>「和實測 <b>0.026</b>、<b>$2\times10^{-5}$</b> 比較」</td></tr>
+          <tr><td>常數</td><td>$k=1.381\times10^{-23}$ J/K，$1\ \text u=1.661\times10^{-27}$ kg</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 兩個比值關係；(b) $k_t$、$D$ 的預測與比較；(c) 方法較可靠的理由與剩餘差距的物理原因。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>三個公式都是「每單位體積帶的量」$\times\tfrac12\ell\bar v$，<b>所以</b>兩兩相除時 $\tfrac12\ell\bar v$ 整個消掉，只剩下巨觀可量的量（熱容量、密度）。這個比值不含最不準的 $r$（$\ell\propto1/r^2$），所以拿一個實測的係數去預測另一個，誤差只剩「模型本身」。</p>
+      <p>(c) <b>因為</b>預測後還差一個因子，而這個因子不可能來自 $\ell$ 或 $\bar v$（已消掉），<b>所以</b>它反映的是「能量和動量的輸運效率不同」——模型假設每個分子帶的量都一樣、走的自由徑也一樣，實際上快的分子自由徑較長、又帶比較多能量。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-07b-s1" data-sym="kt,eta">
+        <span class="step-title">(a) $k_t/\eta$</span>
+        $$\frac{k_t}{\eta}=\frac{\tfrac12(C_V/V)\,\ell\bar v}{\tfrac12\rho\,\ell\bar v}=\frac{C_V/V}{\rho}=\frac{C_V}{\rho V}=\frac{C_V}{M_{\text{總}}}$$
+        <p class="sub">代入 $C_V=\tfrac f2Nk$、總質量 $\rho V=Nm$：</p>
+        $$\frac{k_t}{\eta}=\frac{\tfrac f2Nk}{Nm}=\frac f2\frac km\equiv c_V$$
+      </div>
+      <div class="step" data-step="t1-self-07b-s2" data-sym="D,rhoD">
+        <span class="step-title">(a) $D$ 與 $\eta$</span>
+        $$\frac{\eta}{D}=\frac{\tfrac12\rho\,\ell\bar v}{\tfrac12\ell\bar v}=\rho\quad\Longrightarrow\quad D=\frac\eta\rho$$
+      </div>
+      <div class="step" data-step="t1-self-07b-s3">
+        <span class="step-title">(b) 空氣的 $c_V$</span>
+        <p class="sub">代入 $f=5$、$k=1.381\times10^{-23}$ J/K、$m=29\times1.661\times10^{-27}=4.82\times10^{-26}$ kg：</p>
+        $$c_V=\frac52\cdot\frac{1.381\times10^{-23}}{4.82\times10^{-26}}=717\ \text{J/(kg·K)}$$
+      </div>
+      <div class="step" data-step="t1-self-07b-s4">
+        <span class="step-title">(b) 預測 $k_t$ 與 $D$</span>
+        <p class="sub">代入 $\eta=1.9\times10^{-5}$ Pa·s（課文實測）、$c_V=717$（步驟 3）、$\rho=1.18$ kg/m³（習題 1.66）：</p>
+        $$k_t=\eta\,c_V=(1.9\times10^{-5})(717)=0.0136\ \text{W/(m·K)}$$
+        $$D=\frac\eta\rho=\frac{1.9\times10^{-5}}{1.18}=1.6\times10^{-5}\ \text{m}^2/\text s$$
+        <p>和實測比：$D$ 是 $1.6/2=0.8$，相當接近；$k_t$ 是實測 0.026 的約一半（實測／預測 $=1.9$）。</p>
+      </div>
+      <div class="step" data-step="t1-self-07b-s5">
+        <span class="step-title">(c) 為什麼比較可靠</span>
+        <p>直接計算要用 $\ell\approx\dfrac1{4\pi r^2}\dfrac VN$，而 $r$「1 到 2 Å」之間差一倍，$\ell$ 就差四倍。比值法讓 $\ell\bar v$ 整個消掉，所有關於分子大小的不確定都不見了；用實測的 $\eta$ 等於「讓實驗告訴我們 $\ell\bar v$ 是多少」。所以 $D$ 的預測（0.8 倍）比直接算（1.9 倍，習題 1.70）準得多。</p>
+      </div>
+      <div class="step" data-step="t1-self-07b-s6">
+        <span class="step-title">(c) $k_t$ 剩下的因子 2</span>
+        <p>這個差距不可能來自 $\ell$ 或 $\bar v$，只能來自模型假設「每個分子帶的量相同、自由徑相同」。實際上速度快的分子自由徑也比較長、穿越得比較頻繁，<strong>而且</strong>它們的動能比較大——能量的輸運因此特別被快分子加強，動量沒有這麼強的偏重。對內部自由度（轉動）帶的能量又是另一回事。精確的動力論給出 Eucken 修正：</p>
+        $$k_t=\frac{9\gamma-5}{4}\,\eta\,c_V$$
+        <p class="sub">代入空氣 $\gamma=1.4$：$\dfrac{9(1.4)-5}{4}=1.9$，</p>
+        $$k_t=1.9\times0.0136=0.026\ \text{W/(m·K)}$$
+        <p>正好是實測值。（Eucken 公式是網站補充，課本沒有。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $k_t/\eta=c_V=\tfrac f2k/m$，$D=\eta/\rho$；(b) 由 $\eta=19\ \mu$Pa·s 預測 $k_t\approx0.014$ W/(m·K)（實測的一半）、$D\approx1.6\times10^{-5}$ m²/s（實測的 0.8）；(c) 比值消去了 $\ell\bar v$，不依賴不準的分子半徑；$k_t$ 剩下的 1.9 倍反映快分子對能量輸運的額外貢獻，Eucken 因子 $(9\gamma-5)/4=1.9$ 正好補上。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$\text{Pa·s}\times\text{J/(kg·K)}=\dfrac{\text{kg}}{\text{m·s}}\cdot\dfrac{\text J}{\text{kg·K}}=\text{W/(m·K)}$ ✔；$\text{Pa·s}/(\text{kg/m}^3)=\text m^2/\text s$ ✔。單原子氣體 $\gamma=5/3$ 的 Eucken 因子是 $2.5$，實測氦、氬的 $k_t/(\eta c_V)$ 也確實約 2.5 ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>熱傳三方式：輻射、對流、傳導。傳導遵守 Fourier 定律 $\dfrac{Q}{\Delta t}=-k_tA\dfrac{dT}{dx}$；穩態平板 $\dfrac{Q}{\Delta t}=\dfrac{A\Delta T}{R}$，$R=\Delta x/k_t$，串聯時 R 值相加，並聯時 $A/R$ 相加。</li>
+    <li>窗戶的熱阻主要來自兩側約 1 mm 的靜止空氣層：5000 W → 250 W。</li>
+    <li>熱方程 $\partial_tT=K\partial_x^2T$（$K=k_t/\rho c$）與 Fick 第二定律 $\partial_tn=D\partial_x^2n$ 同形；擴散距離 $\propto\sqrt{\text{時間}}$，$\Delta t\approx(\Delta x)^2/D$。</li>
+    <li>平均自由徑 $\ell\approx\dfrac{1}{4\pi r^2}\dfrac VN=\dfrac{kT}{4\pi r^2P}$；空氣約 150 nm、碰撞時間約 $3\times10^{-10}$ s；0.15 Pa 時 $\ell\approx10$ cm。</li>
+    <li>兩盒子模型：$k_t\approx\tfrac12\frac{C_V}{V}\ell\bar v$、$\eta\approx\tfrac12\rho\ell\bar v$、$D\approx\tfrac12\ell\bar v$。氣體的 $k_t$、$\eta$ 與壓力無關、$\propto\sqrt T$；$D\propto T^{3/2}/P$。液體的黏滯反而隨溫度下降。</li>
+    <li>估計題要寫清楚自己的假設（房子大小、R 值、燙手溫度、房間長度），答案重點是數量級。</li>
+  </ol>
+</div>

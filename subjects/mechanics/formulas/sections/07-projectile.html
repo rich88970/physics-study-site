@@ -1,0 +1,48 @@
+<h2>七、拋體（含空氣阻力） <span class="pg">Lecture 2 §8–9</span></h2>
+
+<h3 id="fx-proj">7.1 無阻力的拋體</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">各方向分開解</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2p-comp" title="8.1 各方向分開處理">L2 §8.1</a></span></div>
+  <div class="math-block">$$x=v_0\cos\theta\,t,\qquad y=v_0\sin\theta\,t-\tfrac12gt^2$$</div>
+  <p>水平無力、等速；鉛直只有重力、等加速。兩方向只透過時間 $t$ 連起來。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">飛行時間、射程、最大高度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2p-comp" title="8.1 各方向分開處理">L2 §8.1</a></span></div>
+  <div class="math-block">$$T=\frac{2v_0\sin\theta}g,\qquad R=\frac{v_0^2\sin2\theta}g,\qquad y_{\max}=\frac{v_0^2\sin^2\theta}{2g}$$</div>
+  <p>只在<strong>起點和終點同高</strong>時成立。最大射程在 $\theta=45^\circ$，且 $\theta$ 和 $90^\circ-\theta$ 射程相同。起終點不同高（從懸崖拋出）要回到 $y(t)$ 解二次方程。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">軌跡方程式</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2p-comp" title="8.1 各方向分開處理">L2 §8.1</a></span></div>
+  <div class="math-block">$$y=x\tan\theta-\frac{gx^2}{2v_0^2\cos^2\theta}$$</div>
+  <p>消去 $t$ 得到拋物線。問「能不能打中某點 $(x,y)$」或「要用什麼角度」時用這條，把 $1/\cos^2\theta=1+\tan^2\theta$ 代進去變成 $\tan\theta$ 的二次方程。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">斜坡上的射程</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2p-more" title="8.2 課本習題 課本">L2 §8.2</a></span></div>
+  <div class="math-block">$$d_{\max}=\frac{v_0^2}{g(1+\sin\beta)},\qquad \alpha=\frac\pi4+\frac\beta2$$</div>
+  <p>往傾角 $\beta$ 的斜坡上方發射時，沿坡面的最大射程與對應的仰角（從水平量）。往下坡發射時把 $\beta$ 換成 $-\beta$。</p>
+</div>
+
+<h3 id="fx-airproj">7.2 有空氣阻力的拋體</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">線性阻力的拋體</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2a-linear" title="9.1 線性阻力的拋體">L2 §9.1</a></span></div>
+  <div class="math-block">$$x=\frac Uk\big(1-e^{-kt}\big),\qquad y=-\frac{gt}k+\frac{kV+g}{k^2}\big(1-e^{-kt}\big)$$</div>
+  <p>阻力 $-km\vec v$ 時 $x$、$y$ 兩方向各自獨立，可以分開解（水平就是 6.2 的水平阻力、鉛直就是鉛直阻力）。水平距離有上限 $U/k$。</p>
+  <p class="symnote">符號：$U=v_0\cos\theta$、$V=v_0\sin\theta$ 為初速的水平、鉛直分量。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">微擾法：阻力很小時的修正</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2a-linear" title="9.1 線性阻力的拋體">L2 §9.1</a></span></div>
+  <div class="math-block">$$T\approx\frac{2V}g\Big(1-\frac{kV}{3g}\Big),\qquad R'\approx R\Big(1-\frac{4kV}{3g}\Big)$$</div>
+  <p>$kV/g\ll1$ 時把指數展開到一階。阻力讓飛行時間和射程都變短；最佳角度也略小於 $45^\circ$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">$v^2$ 阻力的拋體</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2a-updown" title="9.2 上升和下降用不用分開寫">L2 §9.2</a></span></div>
+  <div class="math-block">$$m\ddot x=-kmv\,\dot x,\qquad m\ddot y=-mg-kmv\,\dot y,\qquad v=\sqrt{\dot x^2+\dot y^2}$$</div>
+  <p>$v$ 同時含 $\dot x$、$\dot y$，兩方向耦合在一起，沒有解析解，只能數值計算。一維的 $v^2$ 阻力（鉛直上拋）才有解析解，且上升、下降要分開寫。</p>
+</div>

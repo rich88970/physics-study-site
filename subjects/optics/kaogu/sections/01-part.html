@@ -1,0 +1,383 @@
+<h2 id="kp-01">A 組：第 1 題｜波的疊加（每份 20 分）</h2>
+<p><strong>老師逐字稿：</strong> 第九章，明確說「一定會考」。三年都是把四個同頻率的正弦／餘弦波合成一個餘弦波，求<strong>合成振幅</strong>和<strong>初始相位角</strong>。</p>
+<h3 id="k01-1">A-1. 共同解法：為什麼把波分成 cos 和 sin？</h3>
+<p class="symnote">符號：$E$：疊加後的波動量（無指定單位）；$E_0\ge0$：合成振幅；$\alpha$：合成相位（rad 或度）；$\omega$：角頻率（rad/s）；$t$：時間（s）；$A$、$B$：全部 $\cos\omega t$、$\sin\omega t$ 項的係數加總。</p>
+<p><strong>① 每項拆成 cos、sin 兩部分：</strong> 頻率相同，就能用和角公式把每一項展開，再把同類項相加：</p>
+<div class="math-block">$$
+\boxed{E=A\cos\omega t+B\sin\omega t}.
+$$</div>
+<p><strong>② 對照目標形式：</strong> 題目要求的最後形式是</p>
+<div class="math-block">$$
+\boxed{E=E_0\cos(\alpha-\omega t)}.
+$$</div>
+<p>用 cos 減法公式展開：</p>
+<div class="math-block">$$
+\cos(a-b)=\cos a\cos b+\sin a\sin b,
+$$</div>
+<div class="math-block">$$
+\begin{aligned}
+E&amp;=E_0\cos(\alpha-\omega t)\\
+ &amp;=E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t.
+\end{aligned}
+$$</div>
+<p>與 ① 比較係數：</p>
+<div class="math-block">$$
+\boxed{A=E_0\cos\alpha},\qquad
+\boxed{B=E_0\sin\alpha}.
+$$</div>
+<p><strong>③ 求振幅：</strong> 兩式平方相加，用 $\cos^2\alpha+\sin^2\alpha=1$：</p>
+<div class="math-block">$$
+\begin{aligned}
+A^2+B^2
+&amp;=E_0^2\cos^2\alpha+E_0^2\sin^2\alpha\\
+&amp;=E_0^2(\cos^2\alpha+\sin^2\alpha)\\
+&amp;=E_0^2.
+\end{aligned}
+$$</div>
+<p>振幅不能為負：</p>
+<div class="math-block">$$
+\boxed{E_0=\sqrt{A^2+B^2}}.
+$$</div>
+<p><strong>④ 求相位並判斷象限：</strong> 兩式相除：</p>
+<div class="math-block">$$
+\boxed{\tan\alpha=\frac{B}{A}}.
+$$</div>
+<p>$\tan\alpha$ 不能單獨決定象限，要看 $A=E_0\cos\alpha$、$B=E_0\sin\alpha$ 的正負號：</p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$\alpha$ 所在象限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正</td>
+<td>正</td>
+<td>第一象限</td>
+</tr>
+<tr>
+<td>負</td>
+<td>正</td>
+<td>第二象限</td>
+</tr>
+<tr>
+<td>負</td>
+<td>負</td>
+<td>第三象限</td>
+</tr>
+<tr>
+<td>正</td>
+<td>負</td>
+<td>第四象限</td>
+</tr>
+</tbody>
+</table></div>
+<p>三年都是 $A&lt;0,B&gt;0$，在<strong>第二象限</strong>：</p>
+<div class="math-block">$$
+\boxed{\alpha=\pi-\tan^{-1}\left(\frac{|B|}{|A|}\right)}.
+$$</div>
+<p>最後換到題目指定的相位範圍：112、114 級採 $-\pi&lt;\alpha\le\pi$；115 級採 $0\le\alpha&lt;2\pi$。</p>
+<p><strong>展開用的三角函數：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+\cos(a+b)&amp;=\cos a\cos b-\sin a\sin b,\\
+\cos(a-b)&amp;=\cos a\cos b+\sin a\sin b,\\
+\sin(a+b)&amp;=\sin a\cos b+\cos a\sin b,\\
+\sin(a-b)&amp;=\sin a\cos b-\cos a\sin b.
+\end{aligned}
+$$</div>
+
+<h3 id="k01-2">A-2. 112 級第 1 題（20 分）</h3>
+<p><strong>題目：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+E={}&amp;-3\cos\left(\frac\pi6+\omega t\right)
++4\sin\left(\frac{2\pi}3+\omega t\right)\\
+&amp;+\cos\left(-\frac\pi4+\omega t\right)
+-2\sin\left(\frac\pi3-\omega t\right).
+\end{aligned}
+$$</div>
+<p>(a) 求合成振幅 $E_0$（非負）；(b) 求相位 $\alpha$，範圍 $-\pi&lt;\alpha\le\pi$。</p>
+<p><strong>① 展開第一項：</strong> 用 cos 加法公式。</p>
+<p class="fnote"><b>公式（cos 加法公式）：</b>$\cos(a+b)=\cos a\cos b-\sin a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a=\dfrac{\pi}{6}$、$b=\omega t$（$\omega$ 為角頻率，rad/s；$t$ 為時間，s）。</p>
+<div class="math-block">$$
+-3\cos\left(\frac\pi6+\omega t\right).
+$$</div>
+<div class="math-block">$$
+\begin{aligned}
+&amp;=-3\left[\cos\frac\pi6\cos\omega t-\sin\frac\pi6\sin\omega t\right]\\
+&amp;=-3\left[\frac{\sqrt3}{2}\cos\omega t-\frac12\sin\omega t\right]\\
+&amp;=\boxed{-\frac{3\sqrt3}{2}\cos\omega t+\frac32\sin\omega t}.
+\end{aligned}
+$$</div>
+<p><strong>② 展開第二項：</strong> 用 sin 加法公式。</p>
+<p class="fnote"><b>公式（sin 加法公式）：</b>$\sin(a+b)=\sin a\cos b+\cos a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a=\dfrac{2\pi}{3}$、$b=\omega t$（$\omega$ 為角頻率，rad/s；$t$ 為時間，s）。</p>
+<div class="math-block">$$
+\begin{aligned}
+4\sin\left(\frac{2\pi}3+\omega t\right)
+&amp;=4\left[\sin\frac{2\pi}3\cos\omega t+\cos\frac{2\pi}3\sin\omega t\right]\\
+&amp;=4\left[\frac{\sqrt3}2\cos\omega t-\frac12\sin\omega t\right]\\
+&amp;=\boxed{2\sqrt3\cos\omega t-2\sin\omega t}.
+\end{aligned}
+$$</div>
+<p><strong>③ 展開第三項：</strong> 負角度要注意：$\cos(-\pi/4)=+\sqrt2/2$，$\sin(-\pi/4)=-\sqrt2/2$。</p>
+<p class="fnote"><b>公式（餘弦偶函數、正弦奇函數）：</b>$\cos(-\theta)=\cos\theta$，$\sin(-\theta)=-\sin\theta$，其中 $\theta$ 為任意角（rad）；本題 $\theta=\dfrac{\pi}{4}$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\cos\left(-\frac\pi4+\omega t\right)
+&amp;=\cos\left(-\frac\pi4\right)\cos\omega t
+-\sin\left(-\frac\pi4\right)\sin\omega t\\
+&amp;=\boxed{\frac{\sqrt2}2\cos\omega t+\frac{\sqrt2}2\sin\omega t}.
+\end{aligned}
+$$</div>
+<p><strong>④ 展開第四項：</strong> 這項是 <strong>sin 減法</strong>，不是 sin 加法。</p>
+<p class="fnote"><b>公式（sin 減法公式）：</b>$\sin(a-b)=\sin a\cos b-\cos a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a=\dfrac{\pi}{3}$、$b=\omega t$（$\omega$ 為角頻率，rad/s；$t$ 為時間，s）。</p>
+<div class="math-block">$$
+\begin{aligned}
+-2\sin\left(\frac\pi3-\omega t\right)
+&amp;=-2\left[\sin\frac\pi3\cos\omega t-\cos\frac\pi3\sin\omega t\right]\\
+&amp;=-2\left[\frac{\sqrt3}2\cos\omega t-\frac12\sin\omega t\right]\\
+&amp;=\boxed{-\sqrt3\cos\omega t+\sin\omega t}.
+\end{aligned}
+$$</div>
+<p><strong>⑤ cos 係數加總得 $A$：</strong></p>
+<p class="fnote"><b>公式（同頻率波疊加）：</b>$\sum_i\left(c_i\cos\omega t+s_i\sin\omega t\right)=A\cos\omega t+B\sin\omega t$，$A=\sum_i c_i$，$B=\sum_i s_i$，其中 $c_i,s_i$ 為第 $i$ 個波展開後 $\cos\omega t$、$\sin\omega t$ 的係數（與 $E$ 同單位），$\omega$ 為共同角頻率（rad/s），$t$ 為時間（s）；本題 ⑤ 的 $A$ 取 ①～④ 四項的 $\cos\omega t$ 係數，⑥ 的 $B$ 取它們的 $\sin\omega t$ 係數。</p>
+<div class="math-block">$$
+\begin{aligned}
+A&amp;=-\frac{3\sqrt3}2+2\sqrt3+\frac{\sqrt2}2-\sqrt3\\
+&amp;=\left(-\frac32+2-1\right)\sqrt3+\frac{\sqrt2}2\\
+&amp;=\boxed{\frac{\sqrt2-\sqrt3}2\approx-0.158919}.
+\end{aligned}
+$$</div>
+<p><strong>⑥ sin 係數加總得 $B$：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+B&amp;=\frac32-2+\frac{\sqrt2}2+1\\
+&amp;=\boxed{\frac{1+\sqrt2}2\approx1.207107}.
+\end{aligned}
+$$</div>
+<p>合成波的中間形式：</p>
+<div class="math-block">$$E=-0.158919\cos\omega t+1.207107\sin\omega t.$$</div>
+<h4>(a) 合成振幅</h4>
+<p><strong>① 平方和開根號：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+E_0&amp;=\sqrt{A^2+B^2}\\
+&amp;=\sqrt{(-0.158919)^2+(1.207107)^2}\\
+&amp;=\boxed{1.217523}.
+\end{aligned}
+$$</div>
+<h4>(b) 相位</h4>
+<p><strong>① 求參考銳角 $\beta$：</strong> $A&lt;0,B&gt;0$，在第二象限。</p>
+<p class="fnote"><b>公式（第二象限相位）：</b>若 $A\lt0$、$B\gt0$，先求參考銳角 $\beta=\tan^{-1}\left(\dfrac{|B|}{|A|}\right)$，再取 $\alpha=\pi-\beta$（以度計為 $180^\circ-\beta$），其中 $A,B$ 為 $\cos\omega t$、$\sin\omega t$ 的係數總和，$\beta$ 為參考銳角，$\alpha$ 為合成波 $E=E_0\cos(\alpha-\omega t)$ 的相位（rad 或度）；本題 $A=-0.158919$、$B=1.207107$。</p>
+<div class="math-block">$$
+\beta=\tan^{-1}\left(\frac{1.207107}{0.158919}\right)\approx82.5^\circ.
+$$</div>
+<p><strong>② 取真正相位：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+\alpha&amp;=180^\circ-\beta\\
+&amp;=97.5^\circ\\
+&amp;=\boxed{1.701696\ \mathrm{rad}}.
+\end{aligned}
+$$</div>
+<p><strong>答案：</strong></p>
+<div class="math-block">$$
+\boxed{E=1.217523\cos(1.701696-\omega t)}.
+$$</div>
+
+<h3 id="k01-3">A-3. 114 級第 1 題（20 分）</h3>
+<p><strong>題目：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+E={}&amp;-2\cos\left(\frac\pi6+\omega t\right)
+-3\sin\left(\frac\pi3+\omega t\right)\\
+&amp;+4\cos\left(-\frac\pi3+\omega t\right)
++\sin\left(-\frac\pi4-\omega t\right).
+\end{aligned}
+$$</div>
+<p>(a) 求合成振幅 $E_0\ge0$；(b) 求 $-\pi&lt;\alpha\le\pi$ 的相位。</p>
+<p><strong>① 展開第一項：</strong> 用 cos 加法公式。</p>
+<p class="fnote"><b>公式（cos 加法公式）：</b>$\cos(a+b)=\cos a\cos b-\sin a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a=\dfrac{\pi}{6}$、$b=\omega t$（$\omega$ 為角頻率，rad/s；$t$ 為時間，s）。</p>
+<div class="math-block">$$
+\begin{aligned}
+-2\cos\left(\frac\pi6+\omega t\right)
+&amp;=-2\left[\frac{\sqrt3}2\cos\omega t-\frac12\sin\omega t\right]\\
+&amp;=\boxed{-\sqrt3\cos\omega t+\sin\omega t}.
+\end{aligned}
+$$</div>
+<p><strong>② 展開第二項：</strong> 用 sin 加法公式。</p>
+<p class="fnote"><b>公式（sin 加法公式）：</b>$\sin(a+b)=\sin a\cos b+\cos a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a=\dfrac{\pi}{3}$、$b=\omega t$（$\omega$ 為角頻率，rad/s；$t$ 為時間，s）。</p>
+<div class="math-block">$$
+\begin{aligned}
+-3\sin\left(\frac\pi3+\omega t\right)
+&amp;=-3\left[\frac{\sqrt3}2\cos\omega t+\frac12\sin\omega t\right]\\
+&amp;=\boxed{-\frac{3\sqrt3}2\cos\omega t-\frac32\sin\omega t}.
+\end{aligned}
+$$</div>
+<p><strong>③ 展開第三項：</strong> 負角度用偶／奇函數處理。</p>
+<p class="fnote"><b>公式（餘弦偶函數、正弦奇函數）：</b>$\cos(-\theta)=\cos\theta$，$\sin(-\theta)=-\sin\theta$，其中 $\theta$ 為任意角（rad）；本題 $\theta=\dfrac{\pi}{3}$。</p>
+<div class="math-block">$$
+\begin{aligned}
+4\cos\left(-\frac\pi3+\omega t\right)
+&amp;=4\left[\frac12\cos\omega t+\frac{\sqrt3}2\sin\omega t\right]\\
+&amp;=\boxed{2\cos\omega t+2\sqrt3\sin\omega t}.
+\end{aligned}
+$$</div>
+<p><strong>④ 展開第四項：</strong> 特別注意負角度和減號。</p>
+<p class="fnote"><b>公式（sin 減法公式）：</b>$\sin(a-b)=\sin a\cos b-\cos a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a=-\dfrac{\pi}{4}$、$b=\omega t$（$\omega$ 為角頻率，rad/s；$t$ 為時間，s）。</p>
+<div class="math-block">$$
+\begin{aligned}
+\sin\left(-\frac\pi4-\omega t\right)
+&amp;=\sin\left(-\frac\pi4\right)\cos\omega t
+-\cos\left(-\frac\pi4\right)\sin\omega t\\
+&amp;=\boxed{-\frac{\sqrt2}2\cos\omega t-\frac{\sqrt2}2\sin\omega t}.
+\end{aligned}
+$$</div>
+<p><strong>⑤ 加總得 $A$、$B$：</strong></p>
+<p class="fnote"><b>公式（同頻率波疊加）：</b>$\sum_i\left(c_i\cos\omega t+s_i\sin\omega t\right)=A\cos\omega t+B\sin\omega t$，$A=\sum_i c_i$，$B=\sum_i s_i$，其中 $c_i,s_i$ 為第 $i$ 個波展開後 $\cos\omega t$、$\sin\omega t$ 的係數（與 $E$ 同單位），$\omega$ 為共同角頻率（rad/s），$t$ 為時間（s）；本題 $A$ 取 ①～④ 四項的 $\cos\omega t$ 係數，$B$ 取它們的 $\sin\omega t$ 係數。</p>
+<div class="math-block">$$
+\begin{aligned}
+A&amp;=-\sqrt3-\frac{3\sqrt3}2+2-\frac{\sqrt2}2\\
+&amp;=\boxed{2-\frac{5\sqrt3+\sqrt2}2\approx-3.037234},\\
+B&amp;=1-\frac32+2\sqrt3-\frac{\sqrt2}2\\
+&amp;=\boxed{2\sqrt3-\frac12-\frac{\sqrt2}2\approx2.256995}.
+\end{aligned}
+$$</div>
+<h4>(a) 合成振幅</h4>
+<p><strong>① 平方和開根號：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+E_0&amp;=\sqrt{A^2+B^2}\\
+&amp;=\sqrt{(-3.037234)^2+(2.256995)^2}\\
+&amp;=\boxed{3.784021}.
+\end{aligned}
+$$</div>
+<h4>(b) 相位</h4>
+<p><strong>① 第二象限取角：</strong> $A&lt;0,B&gt;0$，仍在第二象限。</p>
+<p class="fnote"><b>公式（第二象限相位）：</b>若 $A\lt0$、$B\gt0$，則 $\alpha=\pi-\tan^{-1}\left(\dfrac{|B|}{|A|}\right)$（以度計為 $180^\circ-\tan^{-1}(|B|/|A|)$），其中 $A,B$ 為 $\cos\omega t$、$\sin\omega t$ 的係數總和，$\alpha$ 為合成波 $E=E_0\cos(\alpha-\omega t)$ 的相位（rad 或度）；本題 $A=-3.037234$、$B=2.256995$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\alpha&amp;=180^\circ-\tan^{-1}\left(\frac{2.256995}{3.037234}\right)\\
+&amp;=143.3836^\circ\\
+&amp;=\boxed{2.502517\ \mathrm{rad}}.
+\end{aligned}
+$$</div>
+<p><strong>答案：</strong></p>
+<div class="math-block">$$\boxed{E=3.784021\cos(2.502517-\omega t)}.$$</div>
+
+<h3 id="k01-4">A-4. 115 級第 1 題（20 分）</h3>
+<p><strong>題目：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+E={}&amp;2\cos\left(\frac{5\pi}{6}+\omega t\right)
++\sin\left(\frac{3\pi}{4}+\omega t\right)\\
+&amp;-4\cos\left(\frac\pi3+\omega t\right)
+-3\sin\left(\frac{4\pi}{3}-\omega t\right).
+\end{aligned}
+$$</div>
+<p>求 $E_0$ 和 $\alpha$；相位範圍是 $0\le\alpha&lt;2\pi$。</p>
+<p><strong>① 展開第一項：</strong> 用 cos 加法公式。</p>
+<p class="fnote"><b>公式（cos 加法公式）：</b>$\cos(a+b)=\cos a\cos b-\sin a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a=\dfrac{5\pi}{6}$、$b=\omega t$（$\omega$ 為角頻率，rad/s；$t$ 為時間，s）。</p>
+<div class="math-block">$$
+\begin{aligned}
+2\cos\left(\frac{5\pi}6+\omega t\right)
+&amp;=2\left[-\frac{\sqrt3}2\cos\omega t-\frac12\sin\omega t\right]\\
+&amp;=-\sqrt3\cos\omega t-\sin\omega t.
+\end{aligned}
+$$</div>
+<p><strong>② 展開第二項：</strong> 用 sin 加法公式。</p>
+<p class="fnote"><b>公式（sin 加法公式）：</b>$\sin(a+b)=\sin a\cos b+\cos a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a=\dfrac{3\pi}{4}$、$b=\omega t$（$\omega$ 為角頻率，rad/s；$t$ 為時間，s）。</p>
+<div class="math-block">$$
+\begin{aligned}
+\sin\left(\frac{3\pi}4+\omega t\right)
+&amp;=\frac{\sqrt2}2\cos\omega t-\frac{\sqrt2}2\sin\omega t.
+\end{aligned}
+$$</div>
+<p><strong>③ 展開第三項：</strong> 同樣用 cos 加法公式。</p>
+<div class="math-block">$$
+\begin{aligned}
+-4\cos\left(\frac\pi3+\omega t\right)
+&amp;=-4\left[\frac12\cos\omega t-\frac{\sqrt3}2\sin\omega t\right]\\
+&amp;=-2\cos\omega t+2\sqrt3\sin\omega t.
+\end{aligned}
+$$</div>
+<p><strong>④ 展開第四項：</strong> 用 sin 減法公式。</p>
+<p class="fnote"><b>公式（sin 減法公式）：</b>$\sin(a-b)=\sin a\cos b-\cos a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a=\dfrac{4\pi}{3}$、$b=\omega t$（$\omega$ 為角頻率，rad/s；$t$ 為時間，s）。</p>
+<div class="math-block">$$
+\begin{aligned}
+-3\sin\left(\frac{4\pi}3-\omega t\right)
+&amp;=-3\left[-\frac{\sqrt3}2\cos\omega t+\frac12\sin\omega t\right]\\
+&amp;=\frac{3\sqrt3}2\cos\omega t-\frac32\sin\omega t.
+\end{aligned}
+$$</div>
+<p><strong>⑤ 加總得 $A$、$B$：</strong></p>
+<p class="fnote"><b>公式（同頻率波疊加）：</b>$\sum_i\left(c_i\cos\omega t+s_i\sin\omega t\right)=A\cos\omega t+B\sin\omega t$，$A=\sum_i c_i$，$B=\sum_i s_i$，其中 $c_i,s_i$ 為第 $i$ 個波展開後 $\cos\omega t$、$\sin\omega t$ 的係數（與 $E$ 同單位），$\omega$ 為共同角頻率（rad/s），$t$ 為時間（s）；本題 $A$ 取 ①～④ 四項的 $\cos\omega t$ 係數，$B$ 取它們的 $\sin\omega t$ 係數。</p>
+<div class="math-block">$$
+\begin{aligned}
+A&amp;=-\sqrt3+\frac{\sqrt2}2-2+\frac{3\sqrt3}2\\
+&amp;=\boxed{-2+\frac{\sqrt2+\sqrt3}2\approx-0.426868},\\
+B&amp;=-1-\frac{\sqrt2}2+2\sqrt3-\frac32\\
+&amp;=\boxed{2\sqrt3-\frac52-\frac{\sqrt2}2\approx0.256995}.
+\end{aligned}
+$$</div>
+<h4>(a) 合成振幅</h4>
+<p><strong>① 平方和開根號：</strong></p>
+<p class="fnote"><b>公式（合成振幅）：</b>$E_0=\sqrt{A^2+B^2}$，其中 $A,B$ 為 $\cos\omega t$、$\sin\omega t$ 的係數總和，$E_0\ge0$ 為合成振幅（與 $E$ 同單位）；本題 $A=-0.426868$、$B=0.256995$。</p>
+<div class="math-block">$$
+\begin{aligned}
+E_0&amp;=\sqrt{(-0.426868)^2+(0.256995)^2}\\
+&amp;=\boxed{0.498259}.
+\end{aligned}
+$$</div>
+<h4>(b) 相位</h4>
+<p><strong>① 第二象限取角：</strong> $A&lt;0,B&gt;0$，在第二象限；結果已落在 $0\le\alpha&lt;2\pi$。</p>
+<p class="fnote"><b>公式（第二象限相位）：</b>若 $A\lt0$、$B\gt0$，則 $\alpha=\pi-\tan^{-1}\left(\dfrac{|B|}{|A|}\right)$（以度計為 $180^\circ-\tan^{-1}(|B|/|A|)$），其中 $A,B$ 為 $\cos\omega t$、$\sin\omega t$ 的係數總和，$\alpha$ 為合成波 $E=E_0\cos(\alpha-\omega t)$ 的相位（rad 或度）；本題 $A=-0.426868$、$B=0.256995$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\alpha&amp;=180^\circ-\tan^{-1}\left(\frac{0.256995}{0.426868}\right)\\
+&amp;=148.950^\circ\\
+&amp;=\boxed{2.599669\ \mathrm{rad}}.
+\end{aligned}
+$$</div>
+<p><strong>答案：</strong></p>
+<div class="math-block">$$\boxed{E=0.498259\cos(2.599669-\omega t)}.$$</div>
+<p><strong>A 組三年份總表：</strong></p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>數值</th>
+<th style="text-align: right;">112 級</th>
+<th style="text-align: right;">114 級</th>
+<th style="text-align: right;">115 級</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$A$</td>
+<td style="text-align: right;">-0.158919</td>
+<td style="text-align: right;">-3.037234</td>
+<td style="text-align: right;">-0.426868</td>
+</tr>
+<tr>
+<td>$B$</td>
+<td style="text-align: right;">+1.207107</td>
+<td style="text-align: right;">+2.256995</td>
+<td style="text-align: right;">+0.256995</td>
+</tr>
+<tr>
+<td>$E_0$</td>
+<td style="text-align: right;">1.217523</td>
+<td style="text-align: right;">3.784021</td>
+<td style="text-align: right;">0.498259</td>
+</tr>
+<tr>
+<td>$\alpha$</td>
+<td style="text-align: right;">97.500°</td>
+<td style="text-align: right;">143.384°</td>
+<td style="text-align: right;">148.950°</td>
+</tr>
+</tbody>
+</table></div>

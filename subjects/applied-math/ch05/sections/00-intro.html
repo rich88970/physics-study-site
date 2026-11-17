@@ -1,0 +1,40 @@
+<p class="lead">第 4 章的冪級數法只能在常點用。像 $2x^2y''-xy'+(1+x)y=0$ 這種在 $x=0$ 讓 $P$、$Q$ 發散的方程式，解本身在 $x=0$ 也常常「壞掉」——可能像 $\sqrt x$、$1/x$ 或 $\ln x$——寫成 $\sum a_nx^n$ 根本湊不出來。<strong>Frobenius 法</strong>的想法是在級數前面多乘一個 $x^\gamma$：令 $y=\sum a_nx^{n+\gamma}$，讓方程式自己決定 $\gamma$。</p>
+
+<p>這一章接著 10/7 後半與 10/14 的板書：先用 $2x^2y''-xy'+(1+x)y=0$ 走一遍 Frobenius 法（第 1 節），再看指標方程式出現<b>重根</b>（第 2 節）與<b>兩根相差整數</b>（第 3 節）時，第二個解怎麼用降階法補出來——這兩種情況第二解會帶 $\ln x$。10/14 最後老師講了一個應用例：Legendre 方程式與 Legendre 多項式（第 4 節），它其實是在常點用冪級數，但重點是「物理上要求解在 $x=\pm1$ 不發散」怎麼挑出多項式解。</p>
+
+<p>每一節先講板書，再做板書例題、作業與考古題，最後是兩題網站自編難題。照片拍不完整、或板書只寫結果的地方，網站補上推導並標「網站補充（照片缺漏）」；板書的符號誤植也標出並更正。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">考古題怎麼出</span>
+  <p>110–114 學年上學期期末考，Frobenius 法出現在 110、112、114 上，而且題目都屬於「兩根相差整數、小根仍然成功」的情況：</p>
+  <ul>
+    <li>110 上「$xy''+(x-1)y'-y=0$，$y(0)=1$、$y(1)=0$」：$\gamma=0,2$，兩個解是 $1-x$ 與 $e^{-x}$，條件挑出 $y=1-x$。</li>
+    <li>112 上「$(x^2+2x)y''-2(x+1)y'+2y=0$ by Frobenius method」：$\gamma=0,2$，一般解 $c_1(1+x)+c_2x^2$。</li>
+    <li>114 上「$x^2y''+xy'+(x^2-\tfrac14)y=0$，兩個解各寫前三個非零項」：$\gamma=\pm\tfrac12$，就是 $\frac{\sin x}{\sqrt x}$ 與 $\frac{\cos x}{\sqrt x}$（老師的參考解答有兩處下標誤植，見第 3 節）。</li>
+    <li>114 上「畫 $P_0$–$P_3$ 的圖」：第 4 節。</li>
+  </ul>
+  <p>另外 111 上的 $\int_0^1(r-r^3)J_0(2r)\,dr$ 與 113 上的 $x^2y''+xy'+\lambda^2x^2y=0$（$y(0)=1$、$y(3)=0$）屬於 Bessel 函數，收在<a href="#~applied-math~ch06~s00" data-chapter="applied-math/ch06">第 6 章「Bessel 方程與 Bessel 函數」</a>（am6-k111-4、am6-k113-3）。</p>
+</div>
+
+<p class="exam-entry"><strong>準備考試？</strong>先看<a href="#am5x-formulas">第 5 節「考前衝刺」</a>：必背公式、題型總表和變化題。各節頁面上方的「考試模式」會把解說收起來，只留公式、題目和思路。</p>
+
+<div data-section-list></div>
+
+<details class="supp" id="symbols">
+  <summary>符號總表</summary>
+  <div class="supp-body">
+    <p class="small muted">老師把 Frobenius 的指標寫成 $\gamma$（很多課本寫 $r$），本站照板書用 $\gamma$；兩個根記 $\gamma_1\ge\gamma_2$。10/14 板書的標準式寫成 $y''+P(x)y'+Q(x)y=0$（大寫），10/7 寫小寫 $p$、$q$，意思相同。</p>
+    <div data-symbol-table></div>
+  </div>
+</details>
+
+<details class="supp" id="confusions">
+  <summary>三個最常錯的地方</summary>
+  <div class="supp-body">
+    <ol>
+      <li><strong>對齊次方</strong>：$x^2y''$、$xy'$、$y$ 都是 $x^{n+\gamma}$ 型，$xy''$、$y'$ 是 $x^{n+\gamma-1}$ 型，$xy$ 是 $x^{n+\gamma+1}$ 型。要先決定對齊到哪個次方，平移後下限會變成 $n=1$ 或 $n=-1$，最低的那一項單獨寫出來就是指標方程式。</li>
+      <li><strong>$a_0\ne0$</strong>：指標方程式來自「最低次方的係數 $\times a_0=0$」，因為 $a_0\ne0$ 才能推出 $\gamma$ 的方程式。不要把 $a_0$ 設成 0。</li>
+      <li><strong>兩根相差整數</strong>：大根一定成功；小根算到 $n=\gamma_1-\gamma_2$ 那一格時，若方程式變成 $0\cdot a_N=0$，$a_N$ 自由、小根成功；若變成 $0\cdot a_N=$ 非零，小根失敗，第二解要用降階法，會有 $\ln x$。</li>
+    </ol>
+  </div>
+</details>

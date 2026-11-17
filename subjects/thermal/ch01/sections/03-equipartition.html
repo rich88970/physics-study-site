@@ -1,0 +1,541 @@
+<h2>三、能量均分 <span class="pg">課本 §1.3 · p.14–17</span></h2>
+
+<p class="lead">上一節由壓力的微觀模型得到「每個分子的平均平移動能 $\tfrac32kT$」。這一節把它推廣：只要某種能量寫成某個座標或速度分量的「平方」，它在溫度 $T$ 時平均就分到 $\tfrac12kT$。學會數「有幾個平方項」，就能直接寫出氣體、固體的熱能，也能算分子跑多快。</p>
+
+<h3 id="t13-theorem">3.1 二次自由度與均分定理 <span class="pg-tag">p.14–15</span></h3>
+
+<p>先看各種能量的公式長什麼樣子（課本 (1.22)）：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.15 Eq. (1.22) 二次形式的能量</span>
+  $$\begin{gathered}\tfrac12mv_x^2,\quad\tfrac12mv_y^2,\quad\tfrac12mv_z^2,\\\tfrac12I\omega_x^2,\quad\tfrac12I\omega_y^2,\quad\tfrac12k_sx^2,\ \ldots\end{gathered}$$
+  <p>前三個是三個方向的平移動能；第四、五個是轉動動能（$I$ 是轉動慣量、$\omega$ 是角速度）；第六個是彈簧的彈性位能（$k_s$ 是彈力常數、$x$ 是離開平衡的位移）。</p>
+</div>
+
+<p>它們的共同點：都是「某個常數 × 某個變數的平方」。每一個這樣的項叫做一個<strong>自由度</strong>（degree of freedom；更精確地說是「二次自由度」）。第 1.2 節的結果 $\tfrac12m\overline{v^2}=\tfrac32kT$ 拆成三個方向就是每個方向 $\tfrac12m\overline{v_x^2}=\tfrac12kT$——三個平移自由度各分到 $\tfrac12kT$。<strong>均分定理</strong>（equipartition theorem）說：不只平移，<em>每一個</em>二次自由度都分到一樣多。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.15 Equipartition theorem ＋ Eq. (1.23)</span>
+  <p>在溫度 $T$ 時，任何一個二次自由度的平均能量是 $\tfrac12kT$。</p>
+  $$U_{\text{thermal}}=N\cdot f\cdot\tfrac12kT$$
+  <p>$N$ 個分子、每個分子 $f$ 個自由度，而且沒有其他（非二次的）會隨溫度變的能量形式。</p>
+</div>
+
+<p>讀這個式子要注意三件事：</p>
+<ol>
+  <li><strong>它是平均值。</strong>某一瞬間的總熱能會在 $U_{\text{thermal}}$ 附近擾動，但 $N$ 很大時擾動相對於平均小到可以忽略（第 2 章的「峰非常尖」）。</li>
+  <li><strong>它只是「熱」能，不是總能量。</strong>化學鍵的能量、粒子的靜止能 $mc^2$ 這類「靜態」能量不隨溫度變，不在式子裡。所以最安全的用法是算<strong>溫度改變時能量改變多少</strong>：$\Delta U=Nf\cdot\tfrac12k\,\Delta T$，而且過程中不能有相變或化學反應（那會打斷化學鍵、改變靜態能量）。</li>
+  <li><strong>它要求能量是平方項。</strong>液體分子間的位能不是漂亮的二次函數，所以液體只有平移部分可以用 $\tfrac32kT$，其餘不能套均分定理。</li>
+</ol>
+<p>均分定理的證明要用到第 6 章的 Boltzmann 分布（§6.3）。現在先接受它，重點放在<strong>正確數出 $f$</strong>。</p>
+
+<div class="problem" data-kind="exam" id="tk1x-1b">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">某級上學期期中（範圍第 1–4.1 章）第 1 題(b)</span></div>
+    <h4>以 $\tfrac12m\overline{v^2}=\tfrac32kT$ 為例敘述均分定理</h4>
+    <button type="button" class="exam-btn" data-exam="tk1x-1b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1b"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is</p>$$PV=NkT$$<p>(gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>(a) Assuming this ideal gas law is valid, use this law and the microscopic model (hint: gas molecules colliding with walls of chamber causing pressure) to show for a monoatomic ideal gas confined in three spatial dimensions: (6pts)</p>$$\frac12m\lt\vec v^2\gt=\frac32kT$$<p>(b) The extension of 1(a) is called energy equipartition theorem. State this theorem by using this result as an example. (2pts)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（第 1 題 (b) 小題，完整翻譯）</span><p>（承第 1 題：理想氣體遵守 $PV=NkT$。(a) 用這個定律與微觀模型證明三維單原子理想氣體 $\frac12m\langle\vec v^2\rangle=\frac32kT$。）(b) 1(a) 的推廣稱為能量均分定理。以這個結果為例，敘述這個定理。（2 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>1(a) 的結果</td><td>$\frac12m\overline{v^2}=\frac32kT$</td><td>「以這個結果為例」：指 1(a) 證出的式子（證明見第 2 節）</td></tr>
+          <tr><td>氣體</td><td>單原子、三維</td><td>1(a)「三維單原子理想氣體」：只有平移運動</td></tr>
+          <tr><td>速度平方</td><td>$v^2=v_x^2+v_y^2+v_z^2$</td><td>題目沒寫：三維向量的長度平方</td></tr>
+          <tr><td>各方向等價</td><td>$\overline{v_x^2}=\overline{v_y^2}=\overline{v_z^2}$</td><td>題目沒寫：平衡的氣體沒有特別的方向</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：敘述能量均分定理，並說明 1(a) 的結果怎麼是它的一個例子。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目說「以這個結果為例」，<b>所以</b>答案要從 $\frac32kT$ 拆出「每個平方項 $\frac12kT$」，再把「平方項」推廣到所有二次形式的能量——這就是定理本身。</p>
+      <p><b>因為</b>只有 2 分，<b>所以</b>寫清楚三件事即可：定理的敘述（含「二次」與「平均」兩個關鍵字）、$\frac32=3\times\frac12$ 的拆法、推廣後的 $U=Nf\cdot\frac12kT$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk1x-1b-s1" data-sym="m,T,k">
+        <span class="step-title">把 1(a) 的結果拆成三個方向</span>
+        <p>$v^2=v_x^2+v_y^2+v_z^2$，三個方向等價，平均值各占三分之一：</p>
+        $$\tfrac12m\overline{v_x^2}=\tfrac12m\overline{v_y^2}=\tfrac12m\overline{v_z^2}=\frac13\cdot\frac32kT=\frac12kT$$
+        <p>每一個「平方項」$\frac12mv_x^2$ 平均分到 $\frac12kT$；三項加起來就是 $\frac32kT$。</p>
+      </div>
+      <div class="step" data-step="tk1x-1b-s2" data-sym="f">
+        <span class="step-title">推廣：均分定理</span>
+        <p><strong>在溫度 $T$ 的熱平衡中，能量中每一個「座標或速度分量的二次項」（每個二次自由度），平均能量都是 $\frac12kT$。</strong>例如轉動動能 $\frac12I\omega_x^2$、彈性位能 $\frac12k_sx^2$ 也各分到 $\frac12kT$。</p>
+        <p>$N$ 個分子、每個 $f$ 個二次自由度：</p>
+        $$U_{\text{thermal}}=Nf\cdot\tfrac12kT$$
+        <p>1(a) 就是 $f=3$（只有三個平移自由度）的情形：$U=\frac32NkT$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>每個二次自由度的平均能量是 $\frac12kT$；單原子氣體 3 個平移自由度 ⟹ $\frac12m\overline{v^2}=3\times\frac12kT=\frac32kT$；一般 $U_{\text{thermal}}=Nf\cdot\frac12kT$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>關鍵字「二次」不能漏：液體的分子間位能不是平方項，就不能用這個定理（課本 p.16–17）✔</p></div>
+  </div>
+</div>
+
+<h3 id="t13-count">3.2 怎麼數自由度 <span class="pg-tag">p.15–16</span></h3>
+
+<p>數 $f$ 是本節唯一要練的技術。依照分子的樣子分類：</p>
+<ul>
+  <li><strong>單原子氣體</strong>（氦 He、氬 Ar）：只有平移，$f=3$。</li>
+  <li><strong>雙原子氣體</strong>（氧 O<sub>2</sub>、氮 N<sub>2</sub>）：平移 3 個，加上繞兩個垂直於分子軸的軸轉動（Fig. 1.5），共 $f=5$。繞分子軸本身的轉動<strong>不算</strong>——原因在量子力學：原子幾乎全部質量都在很小的原子核上，繞這個軸的轉動慣量極小，第一個轉動能階高到室溫碰撞給不起。同樣的道理適用於直線形的二氧化碳 CO<sub>2</sub>。</li>
+  <li><strong>非直線形的多原子分子</strong>（如 H<sub>2</sub>O）：三個軸都能轉，轉動自由度 3 個。</li>
+  <li><strong>振動</strong>：兩個原子像被彈簧連著，振動有動能、彈性位能兩個平方項，<strong>每個振動模式算 2 個自由度</strong>（簡諧振子的平均動能等於平均位能，和均分定理一致）。複雜分子有伸縮、彎曲、扭轉等多個模式。</li>
+  <li><strong>「凍結」</strong>（frozen out）：室溫下大多數振動模式不貢獻熱能——碰撞夠猛烈到讓分子轉起來，卻幾乎從來不夠猛烈到讓它振動（理由同樣在量子力學，第 3 章）。所以<strong>空氣在室溫是 $f=5$，不是 7</strong>；高溫時振動才「解凍」。</li>
+  <li><strong>固體</strong>：每個原子可以在三個互相垂直的方向振動，每個方向一個動能、一個位能，<strong>每原子 $f=6$</strong>（Fig. 1.6 的「彈簧床」模型）。這時 (1.23) 的 $N$ 是原子數。低溫時這些自由度也可能凍結。</li>
+</ul>
+
+<p>為什麼轉動自由度會分到和平移「一樣多」的能量？想像分子在容器裡不斷互撞、撞牆：每一次碰撞都可能把平移能變成轉動能，或反過來。分子跑得快（高溫）時轉動能被帶到比較大的平衡值，跑得慢時比較小；平均起來兩種轉換互相抵消，最後每個平方項分到同樣的份量。至於怎麼用實驗檢驗：加一點能量、量溫度升多少，和 (1.23) 比——這就是第 6 節的熱容量。</p>
+
+<div class="anim" data-anim="t1-dof"></div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-dof">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.3 Eq. (1.23) · p.15–16</span></div>
+    <h4>數自由度：一莫耳氦、空氣、固體在室溫的熱能</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-dof">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-dof"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>In a gas of monatomic molecules like helium or argon, only translational motion counts, so each molecule has three degrees of freedom, that is, $f = 3$. In a diatomic gas like oxygen ($\text{O}_2$) or nitrogen ($\text{N}_2$), each molecule can also rotate about two different axes (see Figure 1.5).</p><p>So air molecules ($\text{N}_2$ and $\text{O}_2$), for instance, have only five degrees of freedom, not seven, at room temperature.</p><p>In a solid, each atom can vibrate in three perpendicular directions, so for each atom there are six degrees of freedom (three for kinetic energy and three for potential energy).</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>依課文的計數規則，寫出 (a) 氦、(b) 空氣（N<sub>2</sub>、O<sub>2</sub>，室溫）、(c) 固體（每原子）的自由度數 $f$，並求一莫耳在 300 K 的熱能 $U_{\text{thermal}}$。一個二次自由度在 300 K 平均分到多少能量？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>分子數</td><td>$N=N_A$，所以 $Nk=R$</td><td>「一莫耳」；$R=N_Ak=8.315\ \text{J/(mol·K)}$（題目沒給，用標準值）</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>「300 K」（室溫）</td></tr>
+          <tr><td>氦</td><td>單原子：只有平移</td><td>課文 p.15「only translational motion counts」</td></tr>
+          <tr><td>空氣</td><td>雙原子，室溫振動凍結</td><td>課文 p.16「air molecules … have only five degrees of freedom, not seven」</td></tr>
+          <tr><td>固體</td><td>每原子三方向振動</td><td>課文 p.16 Fig. 1.6 彈簧床模型</td></tr>
+          <tr><td>$k$</td><td>$1.381\times10^{-23}\ \text{J/K}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)(b)(c) 的 $f$ 與 $U_{\text{thermal}}$（一莫耳、300 K）；一個自由度的平均能量 $\tfrac12kT$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>三種物質的熱能都只存在二次自由度裡（題目給的情況沒有相變、沒有非二次位能），<b>所以</b>直接用 (1.23) $U=Nf\cdot\tfrac12kT$；整道題的工作只是數 $f$。</p>
+      <p><b>因為</b>是一莫耳，<b>所以</b>把 $Nk$ 換成 $R$，算起來比用 $6.02\times10^{23}$ 乘 $k$ 簡單：$U=\tfrac f2RT$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-dof-s1" data-sym="f,T,k">
+        <span class="step-title">一個自由度分到多少</span>
+        <p class="sub">代入 $k=1.381\times10^{-23}\ \text{J/K}$、$T=300\ \text{K}$：</p>
+        $$\tfrac12kT=\tfrac12(1.381\times10^{-23})(300)\ \text{J}=2.07\times10^{-21}\ \text{J}$$
+        <p>約 $0.013\ \text{eV}$（$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$）——遠小於化學鍵的幾 eV，所以室溫碰撞拆不散分子。</p>
+      </div>
+      <div class="step" data-step="sc-ex-dof-s2" data-sym="U,R,N">
+        <span class="step-title">一莫耳的一般式</span>
+        <p>$N=N_A$，$Nk=N_Ak=R$：</p>
+        $$U_{\text{thermal}}=N_Af\cdot\tfrac12kT=\frac f2RT$$
+        <p class="sub">代入 $R=8.315\ \text{J/(mol·K)}$、$T=300\ \text{K}$：$RT=2494.5\ \text{J}$。</p>
+      </div>
+      <div class="step" data-step="sc-ex-dof-s3">
+        <span class="step-title">(a) 氦：$f=3$</span>
+        <p>只有 $x,y,z$ 三個平移動能：</p>
+        $$U=\tfrac32RT=\tfrac32(2494.5\ \text{J})=3742\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-ex-dof-s4">
+        <span class="step-title">(b) 空氣：$f=5$</span>
+        <p>平移 3 個＋繞兩個垂直軸的轉動 2 個；繞分子軸的轉動不算；振動（2 個）室溫凍結：</p>
+        $$U=\tfrac52RT=\tfrac52(2494.5\ \text{J})=6236\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-ex-dof-s5">
+        <span class="step-title">(c) 固體：每原子 $f=6$</span>
+        <p>三個方向各有動能、位能兩個平方項：</p>
+        $$U=\tfrac62RT=3RT=3(2494.5\ \text{J})=7484\ \text{J}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\tfrac12kT=2.07\times10^{-21}\ \text{J}$；(a) $f=3$，3742 J；(b) $f=5$，6236 J；(c) $f=6$，7484 J（每莫耳原子）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>三者比值就是 $f$ 的比 $3:5:6$ ✔；對 $T$ 微分得每莫耳熱容量 $\tfrac32R=12.5$、$\tfrac52R=20.8$、$3R=24.9\ \text{J/K}$，正是第 6 節的 $C_V$ 與 Dulong–Petit 定律 ✔</p></div>
+  </div>
+</div>
+
+<h3 id="t13-use">3.3 用均分定理算熱能與分子速率 <span class="pg-tag">p.17</span></h3>
+
+<p>理想氣體有一個很方便的組合：$NkT=PV$，所以</p>
+$$U_{\text{thermal}}=\frac f2NkT=\frac f2PV.$$
+<p>只要知道壓力與體積，不必知道溫度或分子數，就能算熱能（習題 1.23）。反過來，給了溫度，平移部分 $\tfrac32kT=\tfrac12m\overline{v^2}$ 給出方均根速率 $v_{\text{rms}}=\sqrt{3kT/m}$：同溫度下，分子越輕跑得越快（考古 114-2）。</p>
+
+<div class="box pitfall">
+  <span class="box-title">$v_{\text{rms}}$ 只用平移的 3 個自由度</span>
+  <p>雙原子分子 $f=5$，但轉動能和「跑多快」無關：$\tfrac12m\overline{v^2}=\tfrac32kT$ 永遠用 3，不是 $\tfrac52kT$。$f$ 只在算<strong>總熱能</strong>時才全部用上。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-23">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-23（Problem 1.23）· p.17</span></div>
+    <h4>一公升氦與一公升空氣的熱能</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-23">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the total thermal energy in a liter of helium at room temperature and atmospheric pressure. Then repeat the calculation for a liter of air.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>計算室溫、一大氣壓下一公升氦的總熱能。再對一公升空氣算一次。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>體積</td><td>$V=1\ \text{L}=10^{-3}\ \text{m}^3$</td><td>「<b>一公升</b>氦」</td></tr>
+          <tr><td>壓力</td><td>$P=1\ \text{atm}=1.013\times10^5\ \text{Pa}$</td><td>「<b>一大氣壓</b>」</td></tr>
+          <tr><td>溫度</td><td>$T\approx300\ \text{K}$</td><td>「室溫」（下面會看到其實用不到）</td></tr>
+          <tr><td>氦的自由度</td><td>$f=3$</td><td>題目沒寫：氦是單原子，只有平移</td></tr>
+          <tr><td>空氣的自由度</td><td>$f=5$</td><td>題目沒寫：N<sub>2</sub>、O<sub>2</sub> 雙原子，室溫振動凍結</td></tr>
+          <tr><td>理想氣體</td><td>$PV=NkT$</td><td>題目沒寫：室溫常壓的氦與空氣都很接近理想氣體</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一公升氦、一公升空氣的總熱能 $U_{\text{thermal}}$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>熱能只存在二次自由度，<b>所以</b>用均分定理 $U=Nf\cdot\frac12kT$。</p>
+      <p><b>因為</b>題目給的是 $P$ 和 $V$，而理想氣體 $NkT=PV$，<b>所以</b>把 $NkT$ 整個換成 $PV$：$U=\frac f2PV$。這樣不必先算分子數 $N$，連「室溫」的確切值都不需要——$P$、$V$ 已經決定了 $NT$ 的乘積。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-23-s1" data-sym="U,f,P,V">
+        <span class="step-title">把均分定理寫成 $P$、$V$ 的函數</span>
+        $$U=Nf\cdot\tfrac12kT=\frac f2(NkT)=\frac f2PV$$
+      </div>
+      <div class="step" data-step="sc-1-23-s2">
+        <span class="step-title">算 $PV$</span>
+        <p class="sub">代入 $P=1.013\times10^5\ \text{Pa}$（「一大氣壓」）、$V=10^{-3}\ \text{m}^3$（「一公升」）：</p>
+        $$PV=(1.013\times10^5\ \text{N/m}^2)(10^{-3}\ \text{m}^3)=101.3\ \text{J}$$
+        <p>（$\text{N/m}^2\times\text{m}^3=\text{N·m}=\text{J}$。）</p>
+      </div>
+      <div class="step" data-step="sc-1-23-s3">
+        <span class="step-title">氦：$f=3$</span>
+        $$U_{\text{He}}=\tfrac32PV=\tfrac32(101.3\ \text{J})=152\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-23-s4">
+        <span class="step-title">空氣：$f=5$</span>
+        $$U_{\text{air}}=\tfrac52PV=\tfrac52(101.3\ \text{J})=253\ \text{J}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>氦約 $150\ \text{J}$（152 J）；空氣約 $250\ \text{J}$（253 J）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>另一種算法：$N=PV/kT=101.3/(1.381\times10^{-23}\times300)=2.45\times10^{22}$，$\tfrac32NkT=152\ \text{J}$ ✔。解答手冊取 $P=10^5\ \text{Pa}$，得 150 J 與 250 J，差在取位 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-24">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-24（Problem 1.24）· p.17 · 熱學小考（上）作業題</span></div>
+    <h4>一克鉛的熱能</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-24">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-24"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the total thermal energy in a gram of lead at room temperature, assuming that none of the degrees of freedom are “frozen out” (this happens to be a good assumption in this case).</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>計算室溫下一克鉛的總熱能，假設沒有任何自由度被「凍結」（對鉛來說這剛好是很好的假設）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>質量</td><td>$1\ \text{g}$</td><td>「<b>一克</b>鉛」</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>「室溫」</td></tr>
+          <tr><td>自由度</td><td>$f=6$（每原子）</td><td>鉛是固體：三方向各一動能一位能；「沒有任何自由度被凍結」⟹ 6 個全算</td></tr>
+          <tr><td>鉛的莫耳質量</td><td>$207.2\ \text{g/mol}$</td><td>題目沒給，查週期表</td></tr>
+          <tr><td>$R$</td><td>$8.315\ \text{J/(mol·K)}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一克鉛在室溫的總熱能。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>固體的每個原子在三個方向像彈簧上的球那樣振動，每個方向的動能與位能都是平方項，<b>所以</b>用均分定理、$f=6$，$N$ 是原子數。</p>
+      <p><b>因為</b>題目給的是質量，<b>所以</b>先用莫耳質量換成莫耳數 $n$，再用 $Nk=nR$ 寫成 $U=\frac f2nRT$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-24-s1" data-sym="n">
+        <span class="step-title">莫耳數</span>
+        <p class="sub">代入 1 g（題目）、莫耳質量 207.2 g/mol（週期表）：</p>
+        $$n=\frac{1\ \text{g}}{207.2\ \text{g/mol}}=4.83\times10^{-3}\ \text{mol}$$
+      </div>
+      <div class="step" data-step="sc-1-24-s2" data-sym="U,f,R">
+        <span class="step-title">均分定理</span>
+        $$U_{\text{thermal}}=Nf\cdot\tfrac12kT=\frac f2nRT$$
+        <p class="sub">代入 $f=6$、$n=4.83\times10^{-3}\ \text{mol}$（步驟 1）、$R=8.315$、$T=300\ \text{K}$：</p>
+        $$U=3(4.83\times10^{-3})(8.315)(300)\ \text{J}=36.1\ \text{J}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$U_{\text{thermal}}\approx36\ \text{J}$</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>小考答案卷用莫耳質量 207 得 36.15 J，解答手冊 36 J，一致 ✔。鉛很重，一克只有 $2.9\times10^{21}$ 個原子，所以雖然 $f=6$，熱能比一公升氦（152 J，習題 1.23）小 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-25">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-25（Problem 1.25）· p.17</span></div>
+    <h4>水蒸氣分子的自由度</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-25">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-25"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>List all the degrees of freedom, or as many as you can, for a molecule of water vapor. (Think carefully about the various ways in which the molecule can vibrate.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>列出一個水蒸氣分子所有的自由度（或盡可能多列）。（仔細想想這個分子可以用哪些不同的方式振動。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>分子</td><td>H<sub>2</sub>O，3 個原子</td><td>「水蒸氣分子」</td></tr>
+          <tr><td>形狀</td><td>彎曲形（H–O–H 夾角約 104.5°），不是直線</td><td>題目沒寫：化學常識</td></tr>
+          <tr><td>計數規則</td><td>平移 3；非直線分子轉動 3；每個振動模式 2</td><td>課文 p.15–16</td></tr>
+          <tr><td>總運動自由度</td><td>3 個原子 × 3 方向 ＝ 9 個座標</td><td>題目沒寫：用來檢查模式數有沒有數漏</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：列出所有自由度（平移、轉動、各振動模式）與總數。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每個原子有 3 個座標，3 個原子共 9 個座標，<b>所以</b>分子的「運動方式」總共 9 種：整體平移用掉 3 種、整體轉動用掉 3 種（非直線形，三個軸都有轉動慣量），剩下 $9-3-3=3$ 種就是振動模式。這樣可以確定振動模式不多不少剛好 3 個。</p>
+      <p><b>因為</b>每個振動模式同時有動能與位能兩個平方項，<b>所以</b>振動模式數要乘 2 才是自由度數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-25-s1" data-sym="f">
+        <span class="step-title">平移：3 個</span>
+        <p>質心沿 $x$、$y$、$z$ 的動能 $\frac12Mv_x^2$、$\frac12Mv_y^2$、$\frac12Mv_z^2$。</p>
+      </div>
+      <div class="step" data-step="sc-1-25-s2">
+        <span class="step-title">轉動：3 個</span>
+        <p>H<sub>2</sub>O 是彎的，沒有一條「原子全部在上面」的對稱軸，繞三個互相垂直的主軸轉動慣量都不小，所以 $\frac12I_1\omega_1^2$、$\frac12I_2\omega_2^2$、$\frac12I_3\omega_3^2$ 三個都算（對比：直線形的 CO<sub>2</sub> 只有 2 個）。</p>
+      </div>
+      <div class="step" data-step="sc-1-25-s3">
+        <span class="step-title">振動模式：$9-3-3=3$ 個</span>
+        <ol>
+          <li><strong>對稱伸縮</strong>：兩個 O–H 鍵同時伸長、同時縮短。</li>
+          <li><strong>反對稱伸縮</strong>：一個 O–H 伸長時另一個縮短。</li>
+          <li><strong>彎曲</strong>：鍵長不變，H–O–H 夾角張開、合起（兩個 H 互相靠近、遠離）。</li>
+        </ol>
+        <p>（伸縮也可以描述成「兩個 H 各自獨立地進出」，同樣是 2 個模式。）</p>
+      </div>
+      <div class="step" data-step="sc-1-25-s4">
+        <span class="step-title">加總</span>
+        <p>每個振動模式有動能、位能各一個平方項：</p>
+        $$f=\underbrace{3}_{\text{平移}}+\underbrace{3}_{\text{轉動}}+\underbrace{3\times2}_{\text{振動}}=12$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>平移 3、轉動 3、振動 3 個模式 × 2 ＝ 6，共 12 個自由度。室溫時兩個伸縮模式凍結、彎曲模式只部分活化，有效的 $f$ 大約 6 多一點。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>數座標：$3\times3=9$ 個座標，每個座標配一個動能、振動座標再多一個位能：$9+3=12$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk1-114-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">114 級上學期期中 第 2 題 · 課文 Eq. (1.21) 的推法</span></div>
+    <h4>由均分定理求 $v_{\text{rms}}$：氫分子與氧分子誰快</h4>
+    <button type="button" class="exam-btn" data-exam="tk1-114-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1-114-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. [15pts] Equipartition theorem states that the average energy of any quadratic degree of freedom at temperature $T$ is $\frac12kT$.</p><p>(a) Use above theorem to find the root mean square speed of a gas molecule with mass $m$ confined in a three dimensional box at temperature $T$. (5pts)</p><p>(b) Calculate the root mean square speed of a hydrogen molecule at room temperature. (5pts)</p><p>(c) For a gas containing hydrogen molecules and oxygen molecules in thermal equilibrium. Which molecules are moving faster, on average? (2pts) By what factor? (3pts)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（15 分）均分定理說：溫度 $T$ 時任何一個二次自由度的平均能量是 $\frac12kT$。(a) 用這個定理求質量 $m$、在溫度 $T$ 的三維盒子中的氣體分子的方均根速率。（5 分）(b) 計算室溫下氫分子的方均根速率。（5 分）(c) 氫分子與氧分子組成的氣體處於熱平衡。平均而言哪一種分子跑得比較快？（2 分）快幾倍？（3 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>定理</td><td>每個二次自由度平均 $\frac12kT$</td><td>題目第一句</td></tr>
+          <tr><td>運動空間</td><td>三維：平移自由度 3 個</td><td>(a)「<b>三維</b>盒子」</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>(b)「室溫」</td></tr>
+          <tr><td>氫分子質量</td><td>$m_{\text{H}_2}=2.016\ \text{u}=3.348\times10^{-27}\ \text{kg}$</td><td>題目沒給：H<sub>2</sub> 的分子量 2.016；$1\ \text{u}=1.6605\times10^{-27}\ \text{kg}$</td></tr>
+          <tr><td>氧分子質量</td><td>$m_{\text{O}_2}=32.00\ \text{u}$</td><td>題目沒給：O<sub>2</sub> 的分子量</td></tr>
+          <tr><td>熱平衡</td><td>H<sub>2</sub> 與 O<sub>2</sub> 同溫度</td><td>(c)「處於<b>熱平衡</b>」</td></tr>
+          <tr><td>$k$</td><td>$1.381\times10^{-23}\ \text{J/K}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $v_{\text{rms}}$ 的公式；(b) 室溫氫分子的 $v_{\text{rms}}$；(c) 誰快、快幾倍。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>速率只和平移動能有關，而三維平移有 $\frac12mv_x^2$、$\frac12mv_y^2$、$\frac12mv_z^2$ 三個平方項，<b>所以</b>平均平移動能是 $3\times\frac12kT$；令它等於 $\frac12m\overline{v^2}$ 解出 $\sqrt{\overline{v^2}}$。雙原子分子的轉動自由度不影響速率，不要算進去。</p>
+      <p>(c) <b>因為</b>熱平衡 ⟹ 同溫度 ⟹ 兩種分子的平均平移動能相同，<b>所以</b>質量小的速率大，$v_{\text{rms}}\propto1/\sqrt m$，倍數只需要質量比，不必代任何常數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk1-114-2-s1" data-sym="vrms,m">
+        <span class="step-title">(a) 三個平移自由度</span>
+        <p>$v^2=v_x^2+v_y^2+v_z^2$，平均平移動能是三個平方項的平均之和，每項 $\frac12kT$：</p>
+        $$\tfrac12m\overline{v^2}=\tfrac12m\overline{v_x^2}+\tfrac12m\overline{v_y^2}+\tfrac12m\overline{v_z^2}=3\cdot\tfrac12kT$$
+        <p>兩邊乘 $2/m$ 再開根號：</p>
+        $$v_{\text{rms}}\equiv\sqrt{\overline{v^2}}=\sqrt{\frac{3kT}m}$$
+      </div>
+      <div class="step" data-step="tk1-114-2-s2">
+        <span class="step-title">(b) 氫分子的質量</span>
+        <p class="sub">代入分子量 2.016（週期表）、$1\ \text{u}=1.6605\times10^{-27}\ \text{kg}$：</p>
+        $$m_{\text{H}_2}=2.016\times1.6605\times10^{-27}\ \text{kg}=3.348\times10^{-27}\ \text{kg}$$
+      </div>
+      <div class="step" data-step="tk1-114-2-s3">
+        <span class="step-title">(b) 代入 $v_{\text{rms}}$</span>
+        <p class="sub">代入 $k=1.381\times10^{-23}\ \text{J/K}$、$T=300\ \text{K}$（「室溫」）、$m$（步驟 2）：</p>
+        $$\begin{aligned}v_{\text{rms}}&=\sqrt{\frac{3(1.381\times10^{-23})(300)}{3.348\times10^{-27}}}\ \text{m/s}\\&=\sqrt{3.71\times10^6}\ \text{m/s}=1.93\times10^3\ \text{m/s}\end{aligned}$$
+      </div>
+      <div class="step" data-step="tk1-114-2-s4">
+        <span class="step-title">(c) 比較</span>
+        <p>同溫度、$v_{\text{rms}}\propto m^{-1/2}$，兩式相除 $3kT$ 消掉：</p>
+        $$\frac{v_{\text{rms,H}_2}}{v_{\text{rms,O}_2}}=\sqrt{\frac{m_{\text{O}_2}}{m_{\text{H}_2}}}$$
+        <p class="sub">代入分子量 32.00 與 2.016（週期表）：</p>
+        $$\sqrt{\frac{32.00}{2.016}}=\sqrt{15.9}=3.98\approx4$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $v_{\text{rms}}=\sqrt{3kT/m}$；(b) 約 $1.9\times10^3\ \text{m/s}$（1930 m/s）；(c) 氫分子較快，約 4 倍。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>氧分子 $v_{\text{rms}}=\sqrt{3kT/m_{\text{O}_2}}=484\ \text{m/s}$，$1927/484=3.98$ ✔。量級：空氣分子幾百 m/s，與聲速同量級（習題 1.39）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-03a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>原子力顯微鏡懸臂的熱擾動</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-03a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>原子力顯微鏡（AFM）的探針裝在一根小懸臂上。把懸臂的彎曲看成一個一維彈簧振子：彈力常數 $k_s=0.05\ \text{N/m}$，等效質量 $m=1\times10^{-11}\ \text{kg}$，在 300 K 的空氣中與周圍達成熱平衡。(a) 懸臂尖端因熱擾動而來回抖動，方均根位移 $x_{\text{rms}}=\sqrt{\overline{x^2}}$ 是多少？(b) 尖端的方均根速率是多少？$v_{\text{rms}}/x_{\text{rms}}$ 等於什麼？(c) 想讓 $x_{\text{rms}}$ 小於 0.01 nm（量原子級起伏時才不會被雜訊淹沒），在 300 K 時 $k_s$ 至少要多大？若保持 $k_s=0.05\ \text{N/m}$ 改成降溫到 4 K，$x_{\text{rms}}$ 變多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>模型</td><td>一維彈簧振子：$E=\frac12mv^2+\frac12k_sx^2$</td><td>「看成一個<b>一維</b>彈簧振子」</td></tr>
+          <tr><td>彈力常數</td><td>$k_s=0.05\ \text{N/m}$</td><td>題目</td></tr>
+          <tr><td>等效質量</td><td>$m=1\times10^{-11}\ \text{kg}$</td><td>題目</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$；(c) 另有 4 K</td><td>「300 K 的空氣」「降溫到 4 K」</td></tr>
+          <tr><td>熱平衡</td><td>可用均分定理</td><td>「與周圍達成<b>熱平衡</b>」</td></tr>
+          <tr><td>雜訊上限</td><td>$x_{\text{rms}}\lt0.01\ \text{nm}=10^{-11}\ \text{m}$</td><td>(c)</td></tr>
+          <tr><td>$k$</td><td>$1.381\times10^{-23}\ \text{J/K}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $x_{\text{rms}}$；(b) $v_{\text{rms}}$ 與 $v_{\text{rms}}/x_{\text{rms}}$ 的意義；(c) 300 K 時需要的最小 $k_s$、4 K 時的 $x_{\text{rms}}$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>懸臂與周圍的空氣分子不斷碰撞、達成熱平衡，而它的能量 $\frac12mv^2+\frac12k_sx^2$ 正好是<b>兩個平方項</b>，<b>所以</b>均分定理直接給出：位能、動能平均各 $\frac12kT$。這題的關鍵是看出「彈性位能也是一個自由度」——巨觀物體的一個振動模式和一個分子一樣分到 $\frac12kT$。</p>
+      <p><b>因為</b>位能那一項只含 $x$、動能那一項只含 $v$，<b>所以</b> (a)、(b) 各自獨立解；兩者的比值把 $kT$ 消掉，只剩 $\sqrt{k_s/m}$，這是個可以檢查的物理量。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-03a-s1" data-sym="T,k">
+        <span class="step-title">(a) 位能自由度</span>
+        <p>均分定理用在 $\frac12k_sx^2$：</p>
+        $$\tfrac12k_s\overline{x^2}=\tfrac12kT\quad\Longrightarrow\quad x_{\text{rms}}=\sqrt{\frac{kT}{k_s}}$$
+        <p class="sub">代入 $kT=(1.381\times10^{-23})(300)=4.14\times10^{-21}\ \text{J}$、$k_s=0.05\ \text{N/m}$（題目）：</p>
+        $$x_{\text{rms}}=\sqrt{\frac{4.14\times10^{-21}\ \text{J}}{0.05\ \text{N/m}}}=\sqrt{8.29\times10^{-20}}\ \text{m}=2.9\times10^{-10}\ \text{m}$$
+        <p>約 0.29 nm——和一個原子的大小差不多！</p>
+      </div>
+      <div class="step" data-step="t1-self-03a-s2" data-sym="m">
+        <span class="step-title">(b) 動能自由度</span>
+        <p>一維只有一個動能平方項 $\frac12mv^2$：</p>
+        $$\tfrac12m\overline{v^2}=\tfrac12kT\quad\Longrightarrow\quad v_{\text{rms}}=\sqrt{\frac{kT}m}$$
+        <p class="sub">代入 $kT=4.14\times10^{-21}\ \text{J}$、$m=10^{-11}\ \text{kg}$（題目）：</p>
+        $$v_{\text{rms}}=\sqrt{\frac{4.14\times10^{-21}}{10^{-11}}}\ \text{m/s}=2.0\times10^{-5}\ \text{m/s}$$
+      </div>
+      <div class="step" data-step="t1-self-03a-s3">
+        <span class="step-title">(b) 比值的意義</span>
+        <p>步驟 2 除以步驟 1，$kT$ 消掉：</p>
+        $$\frac{v_{\text{rms}}}{x_{\text{rms}}}=\sqrt{\frac{kT/m}{kT/k_s}}=\sqrt{\frac{k_s}m}=\omega$$
+        <p class="sub">代入 $k_s=0.05$、$m=10^{-11}$：$\omega=7.07\times10^4\ \text{rad/s}$，共振頻率 $\omega/2\pi=11\ \text{kHz}$。</p>
+        <p>和簡諧運動 $x=A\cos\omega t$ 的 $v_{\max}=\omega A$ 一致：熱擾動就是懸臂以自己的共振頻率、隨機振幅在抖。</p>
+      </div>
+      <div class="step" data-step="t1-self-03a-s4">
+        <span class="step-title">(c) 壓低雜訊的兩個辦法</span>
+        <p>由 $x_{\text{rms}}=\sqrt{kT/k_s}$ 解 $k_s$：要 $x_{\text{rms}}\lt x_0$ 就要</p>
+        $$k_s\gt\frac{kT}{x_0^2}$$
+        <p class="sub">代入 $kT=4.14\times10^{-21}\ \text{J}$、$x_0=10^{-11}\ \text{m}$（題目 0.01 nm）：</p>
+        $$k_s\gt\frac{4.14\times10^{-21}}{(10^{-11})^2}\ \text{N/m}=41\ \text{N/m}$$
+        <p class="sub">或保持 $k_s=0.05\ \text{N/m}$、改 $T=4\ \text{K}$（題目）：</p>
+        $$x_{\text{rms}}=\sqrt{\frac{(1.381\times10^{-23})(4)}{0.05}}\ \text{m}=3.3\times10^{-11}\ \text{m}$$
+        <p>只降到 0.033 nm（$x_{\text{rms}}\propto\sqrt T$，溫度降 75 倍、雜訊只降 $\sqrt{75}\approx8.7$ 倍），仍不到 0.01 nm。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $x_{\text{rms}}\approx0.29\ \text{nm}$；(b) $v_{\text{rms}}\approx2.0\times10^{-5}\ \text{m/s}$，$v_{\text{rms}}/x_{\text{rms}}=\sqrt{k_s/m}=\omega\approx7.1\times10^4\ \text{rad/s}$；(c) $k_s\gt41\ \text{N/m}$；4 K 時 $x_{\text{rms}}\approx0.033\ \text{nm}$，仍不夠。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>平均總能量 $=\frac12kT+\frac12kT=kT$，和「一個振動模式 2 個自由度」一致 ✔；$x_{\text{rms}}$ 與質量無關、$v_{\text{rms}}$ 與 $k_s$ 無關——各自只看自己那一項 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-03b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>氦與氮隔著導熱壁達成平衡</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-03b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一個剛性、絕熱的容器被一片固定不動、但可以導熱的隔板分成兩室：一室裝 1 mol 氦，400 K；另一室裝 1 mol 氮氣，250 K。兩者都可當理想氣體，溫度範圍內氮的振動凍結。(a) 達成熱平衡後的溫度是多少？為什麼不是兩者的平均 325 K？(b) 過程中有多少熱從氦流到氮？(c) 平衡後，氦原子與氮分子的方均根速率各是多少？誰快、快幾倍？平均平移動能誰大？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氦</td><td>$n=1\ \text{mol}$，$T_{\text{He}}=400\ \text{K}$，$f=3$</td><td>題目；氦是單原子</td></tr>
+          <tr><td>氮</td><td>$n=1\ \text{mol}$，$T_{\text{N}_2}=250\ \text{K}$，$f=5$</td><td>題目；雙原子、「振動凍結」</td></tr>
+          <tr><td>功</td><td>$W=0$（兩室各自）</td><td>「剛性」容器、「<b>固定不動</b>」的隔板：體積都不變</td></tr>
+          <tr><td>對外的熱</td><td>$Q_{\text{外}}=0$</td><td>「<b>絕熱</b>」容器：總能量守恆</td></tr>
+          <tr><td>兩室之間</td><td>可以傳熱</td><td>「可以導熱」</td></tr>
+          <tr><td>莫耳質量</td><td>He 4.003 g/mol，N<sub>2</sub> 28.01 g/mol</td><td>題目沒給，查週期表</td></tr>
+          <tr><td>$R$</td><td>$8.315\ \text{J/(mol·K)}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 平衡溫度與不是 325 K 的理由；(b) 傳熱量；(c) 兩種 $v_{\text{rms}}$、比值，平均平移動能比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>整個容器絕熱、剛性，對外 $Q=W=0$，<b>所以</b>氦＋氮的總熱能守恆；<b>因為</b>兩室的熱能都只在二次自由度，<b>所以</b>用均分定理把能量寫成溫度的函數：$U=\frac f2nRT$。令平衡前後總能量相等，解末溫。</p>
+      <p><b>因為</b>氮每個分子的「能量容器」（$f=5$）比氦（$f=3$）大，每升降 1 K 的能量不同，<b>所以</b>末溫是以 $f$ 加權的平均，偏向氮那邊——這就是不能取算術平均的原因。</p>
+      <p>(b) <b>因為</b>每一室的 $W=0$，<b>所以</b>每一室的 $\Delta U$ 全部是熱。(c) <b>因為</b>平衡後同溫度，<b>所以</b>平均平移動能都是 $\frac32kT$，速率只差在質量。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-03b-s1" data-sym="U,f,n">
+        <span class="step-title">(a) 寫出總能量守恆</span>
+        <p>兩室熱能 $U=\frac f2nRT$，平衡末溫 $T_f$；總能量前後相等：</p>
+        $$\tfrac32nRT_{\text{He}}+\tfrac52nRT_{\text{N}_2}=\tfrac32nRT_f+\tfrac52nRT_f$$
+        <p>兩邊同除 $\frac12nR$，移項：</p>
+        $$T_f=\frac{3T_{\text{He}}+5T_{\text{N}_2}}{3+5}$$
+      </div>
+      <div class="step" data-step="t1-self-03b-s2">
+        <span class="step-title">(a) 代入</span>
+        <p class="sub">代入 $T_{\text{He}}=400\ \text{K}$、$T_{\text{N}_2}=250\ \text{K}$（題目）：</p>
+        $$T_f=\frac{3(400)+5(250)}{8}\ \text{K}=\frac{1200+1250}8\ \text{K}=306\ \text{K}$$
+        <p>以 $f$ 為權重：氮的權重 5 比氦的 3 大，末溫偏向氮的 250 K，所以低於算術平均 325 K。</p>
+      </div>
+      <div class="step" data-step="t1-self-03b-s3" data-sym="Q">
+        <span class="step-title">(b) 熱</span>
+        <p>每一室 $W=0$，第一定律（下一節）$Q=\Delta U$；氦室：</p>
+        $$Q_{\text{He}}=\tfrac32nR(T_f-T_{\text{He}})$$
+        <p class="sub">代入 $n=1$、$R=8.315$、$T_f=306.25\ \text{K}$（步驟 2）、$T_{\text{He}}=400\ \text{K}$：</p>
+        $$Q_{\text{He}}=\tfrac32(8.315)(306.25-400)\ \text{J}=-1169\ \text{J}$$
+        <p>氮室 $Q_{\text{N}_2}=\frac52(8.315)(306.25-250)=+1169\ \text{J}$，正好互相抵消。</p>
+      </div>
+      <div class="step" data-step="t1-self-03b-s4" data-sym="vrms">
+        <span class="step-title">(c) 平衡後的速率</span>
+        <p>$v_{\text{rms}}=\sqrt{3kT/m}=\sqrt{3RT/M}$（$M$ 是莫耳質量，分子分母同乘 $N_A$）：</p>
+        <p class="sub">代入 $R=8.315$、$T_f=306.25\ \text{K}$、$M_{\text{He}}=4.003\times10^{-3}$、$M_{\text{N}_2}=28.01\times10^{-3}\ \text{kg/mol}$：</p>
+        $$v_{\text{He}}=\sqrt{\frac{3(8.315)(306.25)}{4.003\times10^{-3}}}\ \text{m/s}=1381\ \text{m/s}$$
+        $$v_{\text{N}_2}=\sqrt{\frac{3(8.315)(306.25)}{28.01\times10^{-3}}}\ \text{m/s}=522\ \text{m/s}$$
+        <p>比值 $\sqrt{28.01/4.003}=2.65$。平均平移動能都是 $\frac32kT_f$，<strong>一樣大</strong>；氮多出來的 $kT_f$ 在轉動。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $T_f\approx306\ \text{K}$（$f$ 加權平均）；(b) 1169 J 由氦流向氮；(c) 氦 1381 m/s、氮 522 m/s，氦快 2.65 倍；平均平移動能相同。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>氦降 93.75 K、氮升 56.25 K，比值 $56.25/93.75=3/5$，正是 $f$ 的反比 ✔；若兩邊都是氦，權重相同，才會得到 325 K ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>均分定理：每個<strong>二次</strong>自由度平均 $\tfrac12kT$；$U_{\text{thermal}}=Nf\cdot\tfrac12kT$，理想氣體也可寫成 $\tfrac f2PV$。</li>
+    <li>數 $f$：單原子 3；雙原子（室溫）5（繞分子軸的轉動不算、振動凍結）；非直線分子轉動 3；每個振動模式 2；固體每原子 6。</li>
+    <li>它只算「熱」能，最好用在溫度改變時的 $\Delta U$；液體的分子間位能不是二次的，不能套。</li>
+    <li>$v_{\text{rms}}=\sqrt{3kT/m}$ 永遠只用 3 個平移自由度；同溫度下 $v_{\text{rms}}\propto1/\sqrt m$（氫比氧快 4 倍）。</li>
+  </ol>
+</div>

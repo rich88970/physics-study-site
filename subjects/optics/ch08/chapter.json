@@ -1,0 +1,24 @@
+{
+  "title": "講義第八章｜電磁波的表示",
+  "shortTitle": "光學 第八章",
+  "range": "講義 chp8（Wave Equations，11 頁）· 課本 Pedrotti 第 4 章 · 作業 4-4、4-7、4-15、4-17、4-18、4-23 · 考古題：李孟恩課程資料夾的下學期近代光學期中考（2018、2020、2022、2024、2025）；物理考古資料夾的舊考卷（2007–2017、2021）另收第 10 節",
+  "pageLabel": "講義",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備「光學」（李孟恩老師，115 學年上學期）的期中考。這一章是老師講義第八章 Wave Equations（對應課本 Pedrotti《Introduction to Optics》3rd ed. 第 4 章）：一維波動方程與行進波 $y=f(x\\pm vt)$、簡諧波的 $\\lambda,k,T,\\nu,\\omega$ 與定相位法求波速、複數與指數表示法 $\\psi=Ae^{i(\\vec k\\cdot\\vec r-\\omega t)}$、平面波、球面波 $(A/r)e^{i(kr-\\omega t)}$、圓柱波 $(A/\\sqrt\\rho)e^{i(k\\rho-\\omega t)}$（圓柱波講義沒有，取自課本）、電磁波 $\\vec E,\\vec B,\\vec k$ 互相垂直且 $E=vB$、能量密度 $u=\\epsilon_0E^2$、坡印廷向量 $\\vec S=\\epsilon_0c^2\\vec E\\times\\vec B$、照度 $E_e=\\langle\\|\\vec S\\|\\rangle=\\tfrac12\\epsilon_0cE_0^2$（介質中 $\\epsilon_0\\to n^2\\epsilon_0$、$c\\to c/n$，得 $\\tfrac12n\\epsilon_0cE_0^2$）、都卜勒效應 $\\lambda'/\\lambda=\\sqrt{(1-v/c)/(1+v/c)}$（$v$ 互相接近為正）。老師考前說：平面波、球面波、圓柱波的指數表示、電場與磁場振幅、照度，以及瞬時與時間平均坡印廷向量「一定會考」，都卜勒效應「注意一下、公式自己要記」。考古題（李孟恩課程資料夾的 5 份下學期近代光學期中考：2018、2020、2022、2024、2025，每份都有一題 30–40 分）的固定題型是：給折射率、頻率、電場或磁場的方向與振幅（或照度）和一張方向圖，要寫出 $\\vec E(x,y,z;t)$、$\\vec B$、瞬時 $\\vec S$ 的完整表示（振幅、方向單位向量、指數式、單位）與照度。考卷與詳解的寫法：$\\vec E=E_0\\hat e\\,e^{i(\\vec k\\cdot\\vec r-\\omega t)}$、$B_0=nE_0/c_0$、$\\hat b=\\hat k\\times\\hat e$、$\\vec S=\\epsilon_0c_0^2E_0B_0\\,\\hat k\\,e^{2i(\\vec k\\cdot\\vec r-\\omega t)}$、照度是 $\\vec S$ 振幅的一半；常數 $\\epsilon_0=8.8542\\times10^{-12}$、$c_0\\approx3\\times10^8$、$\\mu_r=1$，題目常寫「π 不必展開」。回答時請照這個寫法，並提醒學生寫出方向是怎麼由圖讀出來的、$\\hat k\\times\\hat e$ 怎麼算、單位要寫。考試閉書、要帶工程用計算機、不能用手機、只能用藍或黑筆。",
+  "overview": "s00",
+  "sections": [
+    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pages": "chp8 全 11 頁" },
+    { "id": "s01", "file": "01-traveling.html", "title": "行進波與簡諧波：讀出波長、頻率、波速", "pages": "chp8 第 1–5 頁", "desc": "$y=f(x\\pm vt)$ 與一維波動方程、簡諧波的 $\\lambda,k,T,\\nu,\\omega$、相位與定相位法求波速；講義 Example、作業 4-4、4-7。" },
+    { "id": "s02", "file": "02-complex-plane.html", "title": "指數表示法與平面波", "pages": "chp8 第 5–7 頁", "desc": "複數、Euler 公式、$\\psi=Ae^{i(\\vec k\\cdot\\vec r-\\omega t)}$、波前、$\\vec k$ 的方向與大小、從一條式子讀出 $f,\\lambda,n,v$。" },
+    { "id": "s03", "file": "03-spherical-cylindrical.html", "title": "球面波與圓柱波", "pages": "chp8 第 8 頁 · 課本 §4-6–4-7", "desc": "球面波 $(A/r)e^{i(kr-\\omega t)}$ 與平方反比、圓柱波 $(A/\\sqrt\\rho)e^{i(k\\rho-\\omega t)}$（講義沒有，取自課本）；2020 期中考球面波完整表示。" },
+    { "id": "s04", "file": "04-em-fields.html", "title": "電磁波的電場與磁場：振幅與方向", "pages": "chp8 第 8–9 頁", "desc": "$\\vec E,\\vec B,\\vec k$ 互相垂直、$E=vB$、介質中 $B_0=nE_0/c$、從圖讀 $\\hat k$ 與 $\\hat e$、$\\hat b=\\hat k\\times\\hat e$；考古題的完整寫法見第 7 節。" },
+    { "id": "s05", "file": "05-energy-irradiance.html", "title": "能量密度與照度", "pages": "chp8 第 9–10 頁", "desc": "$u=\\epsilon_0E^2$、照度 $E_e=\\tfrac12\\epsilon_0cE_0^2$、介質中 $\\tfrac12n\\epsilon_0cE_0^2$、點光源 $\\Phi/4\\pi r^2$、光子通量；講義 Example、作業 4-15、4-17、4-18。" },
+    { "id": "s06", "file": "06-poynting.html", "title": "瞬時與時間平均坡印廷向量", "pages": "chp8 第 10 頁", "desc": "$\\vec S=\\epsilon_0c^2\\vec E\\times\\vec B$、考卷要的指數寫法 $\\epsilon_0c_0^2E_0B_0\\hat k\\,e^{2i(\\cdots)}$、時間平均＝照度＝振幅的一半；考古題見第 7 節。" },
+    { "id": "s07", "file": "07-midterms.html", "title": "綜合題：近年期中考的完整表示", "pages": "chp8 第 6–10 頁", "desc": "課程資料夾 5 份期中考每份都有一題 30–40 分的固定題型：2018、2022、2024、2025 四題（2020 是球面波，在第 3 節），一步一步寫出 $\\vec E$、$\\vec B$、$\\vec S$、照度。" },
+    { "id": "s08", "file": "08-doppler.html", "title": "都卜勒效應", "pages": "chp8 第 11 頁", "desc": "光的都卜勒公式 $\\lambda'/\\lambda=\\sqrt{(1-v/c)/(1+v/c)}$、$v\\ll c$ 的近似、紅移、都卜勒增寬；講義 Example、作業 4-23。" },
+    { "id": "s09", "file": "09-exam.html", "title": "考前衝刺", "pages": "chp8 全部", "desc": "必背公式、題型總表（老師說一定會考的放最前面）、變化題。" },
+    { "id": "s10", "file": "10-old-exams.html", "title": "物理考古資料夾題目", "pages": "chp8 第 1–10 頁", "desc": "雲端「物理考古／光學」資料夾裡的舊考卷（2007–2017、2021 等），不是李孟恩課程資料夾的考卷，另外收在這裡：讀波函數、平面波 $\\vec E$、$\\vec B$ 完整表示、照度、瞬時坡印廷向量共 9 題（另 6 題放回第 2、4、6 節）；不算進出題頻率。" }
+  ],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": []
+}

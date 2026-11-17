@@ -1,0 +1,381 @@
+<h2>十二、$\nabla$ 與梯度 <span class="pg">講義 p.75–87</span></h2>
+
+<p class="lead">$\nabla$ 是一個「等著作用的向量」：作用在純量上叫梯度，指向函數增加最快的方向；後面兩節的散度、旋度是它和向量做內積、外積。力學裡最重要的用法是 $\vec F=-\nabla V$：力指向位能下降最快的方向。</p>
+
+<h3 id="gr-del">12.1 $\nabla$ 運算子 <span class="pg-tag">p.76–77</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.76–77 Del Operator</span>
+  $$\nabla\equiv\frac{\partial}{\partial x}\hat i+\frac{\partial}{\partial y}\hat j+\frac{\partial}{\partial z}\hat k=\Big(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\Big)$$
+  <p>梯度 $\nabla\phi$（$\phi$ 是純量）、散度 $\nabla\cdot\vec f$（$\vec f$ 是向量）、旋度 $\nabla\times\vec V$（$\vec V$ 是向量）。</p>
+</div>
+
+<p>$\partial/\partial x$ 是偏微分：只對 $x$ 微分，把 $y,z$ 當常數。三種運算的輸入和輸出不同，考試時先確認型別：梯度「純量 → 向量」，散度「向量 → 純量」，旋度「向量 → 向量」。寫成 $\nabla\cdot\phi$（純量取散度）或 $\nabla\times\phi$ 都是沒有意義的式子。</p>
+
+<h3 id="gr-def">12.2 梯度的意義 <span class="pg-tag">p.79–80</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.79–80 Gradient</span>
+  $$\nabla\phi=\frac{\partial\phi}{\partial x}\hat i+\frac{\partial\phi}{\partial y}\hat j+\frac{\partial\phi}{\partial z}\hat k$$
+  <p>方向：$\phi$ 增加最快的方向，垂直於等高線。大小：沿該方向的斜率，越大越陡。</p>
+</div>
+
+<div class="step" id="gr-why" data-step="gr-why" data-sym="phis,grad">
+  <span class="step-title">為什麼垂直等高線、又是最陡方向</span>
+  <p>走一小段 $\mathrm d\vec s=(\mathrm dx,\mathrm dy,\mathrm dz)$，函數的改變量是（連鎖律）</p>
+  $$\mathrm d\phi=\frac{\partial\phi}{\partial x}\mathrm dx+\frac{\partial\phi}{\partial y}\mathrm dy+\frac{\partial\phi}{\partial z}\mathrm dz=\nabla\phi\cdot\mathrm d\vec s=|\nabla\phi|\,|\mathrm d\vec s|\cos\alpha$$
+  <p>沿著等高線走，$\phi$ 不變，$\mathrm d\phi=0$，所以 $\nabla\phi\perp\mathrm d\vec s$。固定步長時，$\cos\alpha=1$（順著 $\nabla\phi$ 走）讓 $\mathrm d\phi$ 最大，所以 $\nabla\phi$ 指向增加最快的方向，大小 $|\nabla\phi|=\big(\frac{\mathrm d\phi}{\mathrm ds}\big)_{\max}$。沿任意單位方向 $\hat n$ 的變化率（方向導數）是 $\hat n\cdot\nabla\phi$。</p>
+</div>
+
+<div class="anim" data-anim="grad-contour"></div>
+
+<div class="problem" data-kind="example" id="ex-p81">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.81–83</span></div>
+    <h4>三個函數的梯度</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p81">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求下列函數的梯度，並算出指定點的值：(a) $\phi=x$，在 $(1,1),(3,3),(1,3)$；(b) $\phi=-(x-3)^2-(y-3)^2$，在 $(1,1),(3,3),(1,3)$；(c) $\phi=y^2\sin x$，在 $(1,1),(\frac\pi2,1),(\pi,3)$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：二維梯度 $\nabla\phi=\frac{\partial\phi}{\partial x}\hat i+\frac{\partial\phi}{\partial y}\hat j$；(c) 的 $x$ 用弧度。</p>
+<h4>(a) 斜面 $\phi=x$</h4>
+<p><strong>① 偏微分：</strong> 梯度就是對每個座標分別偏微分當成該方向分量；先求一般式再代點。</p>
+<p class="fnote"><b>公式（梯度）：</b>$\nabla\phi=\dfrac{\partial\phi}{\partial x}\hat i+\dfrac{\partial\phi}{\partial y}\hat j$，其中對 $x$ 偏微分時 $y$ 當常數、對 $y$ 偏微分時 $x$ 當常數；本題 $\phi$ 依各小題給定。</p>
+<div class="math-block">$$\frac{\partial\phi}{\partial x}=\frac{\partial x}{\partial x}=1,\qquad\frac{\partial\phi}{\partial y}=0$$</div>
+<p><strong>② 代點：</strong> $\nabla\phi$ 和 $x,y$ 都無關，三點 $(1,1),(3,3),(1,3)$ 都相同：函數只往 $+x$ 增加，坡度處處一樣。</p>
+<div class="math-block">$$\boxed{\nabla\phi=\hat i\ \text{（三點都是）}}$$</div>
+<h4>(b) 山頂在 $(3,3)$ 的山 $\phi=-(x-3)^2-(y-3)^2$</h4>
+<p><strong>① 偏微分：</strong> 對 $x$ 偏微分時 $(y-3)^2$ 是常數、導數為 0；$(x-3)^2$ 用連鎖律：</p>
+<div class="math-block">$$\frac{\partial\phi}{\partial x}=-2(x-3),\qquad\frac{\partial\phi}{\partial y}=-2(y-3)$$</div>
+<div class="math-block">$$\nabla\phi=-2(x-3)\,\hat i-2(y-3)\,\hat j$$</div>
+<p><strong>② 代入三點：</strong></p>
+<div class="math-block">$$(1,1):\ -2(-2)\hat i-2(-2)\hat j=4\hat i+4\hat j$$</div>
+<div class="math-block">$$(3,3):\ -2(0)\hat i-2(0)\hat j=\vec 0$$</div>
+<div class="math-block">$$(1,3):\ -2(-2)\hat i-2(0)\hat j=4\hat i$$</div>
+<p>$(1,1)$ 的梯度指向山頂 $(3,3)$；山頂本身是平的，梯度為 0。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\nabla\phi=-2(x-3)\hat i-2(y-3)\hat j\\ (1,1):\,4\hat i+4\hat j;\quad(3,3):\,\vec 0;\quad(1,3):\,4\hat i\end{gathered}}$$</div>
+<h4>(c) $\phi=y^2\sin x$</h4>
+<p><strong>① 偏微分：</strong> 對 $x$ 偏微分時 $y^2$ 是常數係數；對 $y$ 偏微分時 $\sin x$ 是常數係數：</p>
+<div class="math-block">$$\frac{\partial\phi}{\partial x}=y^2\cos x,\qquad\frac{\partial\phi}{\partial y}=2y\sin x$$</div>
+<div class="math-block">$$\nabla\phi=y^2\cos x\,\hat i+2y\sin x\,\hat j$$</div>
+<p><strong>② 代入 $(1,1)$：</strong> $\cos1\approx0.540$、$\sin1\approx0.841$（弧度）：</p>
+<div class="math-block">$$\nabla\phi=\cos1\,\hat i+2\sin1\,\hat j\approx0.54\hat i+1.68\hat j$$</div>
+<p><strong>③ 代入 $(\frac\pi2,1)$：</strong> $\cos\frac\pi2=0$、$\sin\frac\pi2=1$：</p>
+<div class="math-block">$$\nabla\phi=0\,\hat i+2\hat j=2\hat j$$</div>
+<p><strong>④ 代入 $(\pi,3)$：</strong> $y^2=9$、$2y=6$、$\cos\pi=-1$、$\sin\pi=0$：</p>
+<div class="math-block">$$\nabla\phi=9\cos\pi\,\hat i+6\sin\pi\,\hat j=-9\hat i$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\nabla\phi=y^2\cos x\,\hat i+2y\sin x\,\hat j\\ (1,1):\,\approx0.54\hat i+1.68\hat j;\quad(\tfrac\pi2,1):\,2\hat j;\quad(\pi,3):\,-9\hat i\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="gr-force">12.3 位能與力 <span class="pg-tag">p.84–87</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.84–85 Potential Energy and Force</span>
+  $$\vec F=-\nabla V$$
+  <p>負號表示力永遠指向 $\nabla V$ 的反方向。</p>
+</div>
+
+<p>把 $V$ 想成地形高度（重力位能 $\propto$ 高度）。$\nabla V$ 指向上坡最陡的方向，放在山坡上的球會往<strong>下坡最陡</strong>的方向滾，所以力是 $-\nabla V$。等高線越密，$|\nabla V|$ 越大，力越強。</p>
+
+<div class="problem" data-kind="example" id="ex-p84">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.84–85</span></div>
+    <h4>位能地形上的質點往哪裡走</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p84">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="ex-p84"><span class="part-label original-label">講義英文原文</span>
+<div class="original-text" lang="en"><p><strong>Potential Energy and Force</strong></p><p>Suppose the scalar function $V$ represents the gravitational potential as a function of altitude ($V(x,y)\propto$ altitude). If a particle of mass $m$ is placed at a certain point on $V$, try to relate the force acting on the particle to $V$.</p><p>Which direction would it go?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>純量函數 $V(x,y)$ 代表重力位能（$V\propto$ 高度）。把質量 $m$ 的質點放在 $V$ 上的某一點，試把作用在質點上的力和 $V$ 連起來：質點會往哪個方向走？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$V(x,y)\propto$ 高度（$V$ 的圖形像地形），質點質量 $m$，小位移 $\mathrm d\vec s$。</p>
+<p><strong>① 功與位能：</strong> 題目只給位能，連結力和位能的是「功」：力做的功等於位能的減少。質點移動 $\mathrm d\vec s$，往下走位能減少、重力做正功；往上走位能增加、重力做負功。</p>
+<p class="fnote"><b>公式（保守力的功）：</b>$\mathrm dW=\vec F\cdot\mathrm d\vec s=-\mathrm dV$，其中 $\vec F$ 為保守力、$\mathrm dV$ 為位能變化；本題 $\vec F$ 是重力。</p>
+<p>兩種情形都可寫成：</p>
+<div class="math-block">$$\vec F\cdot\mathrm d\vec s=-\mathrm dV$$</div>
+<p><strong>② 認出 $\vec F$：</strong> 代入梯度的性質 $\mathrm dV=\nabla V\cdot\mathrm d\vec s$。</p>
+<p class="fnote"><b>公式（梯度與全微分）：</b>$\mathrm dV=\nabla V\cdot\mathrm d\vec s$，其中 $\nabla V$ 為 $V$ 的梯度、$\mathrm d\vec s$ 為任意小位移（p.80，連鎖律）。</p>
+<div class="math-block">$$\vec F\cdot\mathrm d\vec s=-\nabla V\cdot\mathrm d\vec s$$</div>
+<p>移到同一邊，用內積分配律合併：</p>
+<div class="math-block">$$(\vec F+\nabla V)\cdot\mathrm d\vec s=0\qquad\text{對所有}\ \mathrm d\vec s$$</div>
+<p>一個向量和所有方向的內積都是 0，只能是零向量（取 $\mathrm d\vec s$ 沿 $x$、$y$ 方向，兩個分量都是 0）：</p>
+<div class="math-block">$$\vec F=-\nabla V$$</div>
+<p><strong>③ 往哪裡走：</strong> $\nabla V$ 指向上坡最陡、垂直等高線（p.80），所以 $\vec F=-\nabla V$ 指向<strong>下坡最陡</strong>、垂直等高線。從靜止釋放時質點一開始沿 $-\nabla V$ 走；等高線越密，$|\nabla V|$ 越大，力越強。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec F=-\nabla V\\ \text{質點往垂直等高線、下坡最陡的方向走}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="ex-p86">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.86–87</span></div>
+    <h4>只和 $r$ 有關的位能：$\nabla V(r)$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p86">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>位能 $V(r)$ 只和到原點的距離 $r$ 有關，求 $\nabla V(r)$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$V=V(r)$，$r=\sqrt{x^2+y^2+z^2}$；$\hat r=\vec r/r=(x\hat i+y\hat j+z\hat k)/r$。</p>
+<p><strong>① 求 $\dfrac{\partial r}{\partial x}$：</strong> 梯度要對 $x,y,z$ 偏微分，但 $V$ 寫成 $r$ 的函數，所以用連鎖律，真正要算的只有 $\partial r/\partial x$。把 $r=(x^2+y^2+z^2)^{1/2}$ 對 $x$ 偏微分（$y,z$ 當常數），外層 $u^{1/2}$ 的導數 $\frac12u^{-1/2}$、內層對 $x$ 的導數 $2x$：</p>
+<div class="math-block">$$\frac{\partial r}{\partial x}=\frac{1}{2\sqrt{x^2+y^2+z^2}}\cdot2x=\frac{x}{r}$$</div>
+<p>$r$ 對 $x,y,z$ 對稱，同理 $\dfrac{\partial r}{\partial y}=\dfrac yr$、$\dfrac{\partial r}{\partial z}=\dfrac zr$。</p>
+<p><strong>② 組出三個分量：</strong></p>
+<p class="fnote"><b>公式（連鎖律）：</b>$\dfrac{\partial V}{\partial x_i}=\dfrac{\mathrm dV}{\mathrm dr}\dfrac{\partial r}{\partial x_i}$，其中 $x_i$ 為 $x,y,z$ 任一、$\frac{\mathrm dV}{\mathrm dr}$ 為單變數導數；本題 $\frac{\partial r}{\partial x_i}=\frac{x_i}{r}$。</p>
+<p>代入上一步的結果：</p>
+<div class="math-block">$$\nabla V=\frac{\mathrm dV}{\mathrm dr}\frac xr\,\hat i+\frac{\mathrm dV}{\mathrm dr}\frac yr\,\hat j+\frac{\mathrm dV}{\mathrm dr}\frac zr\,\hat k$$</div>
+<p>提出共同的 $\frac{\mathrm dV}{\mathrm dr}\cdot\frac1r$，剩下的 $x\hat i+y\hat j+z\hat k$ 就是 $\vec r$：</p>
+<div class="math-block">$$\nabla V=\frac{\mathrm dV}{\mathrm dr}\,\frac{\vec r}{r}=\frac{\mathrm dV}{\mathrm dr}\,\hat r$$</div>
+<p>力 $\vec F=-\nabla V=-\frac{\mathrm dV}{\mathrm dr}\hat r$ 沿徑向：$V$ 隨 $r$ 增加（$\frac{\mathrm dV}{\mathrm dr}\gt0$）時力指向原點（吸引）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\nabla V(r)=\frac{\mathrm dV}{\mathrm dr}\,\hat r\\ \vec F=-\frac{\mathrm dV}{\mathrm dr}\hat r\ \text{沿徑向（連心力）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="gr-tb">12.4 課本例題與課本題</h3>
+
+<div class="problem" data-kind="tbexample" id="tb-grad">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Thornton &amp; Marion §1.16 · p.37–38</span></div>
+    <h4>梯度真的是向量</h4>
+    <button type="button" class="exam-btn" data-exam="tb-grad">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明：座標旋轉時，$\big(\frac{\partial\phi}{\partial x_1},\frac{\partial\phi}{\partial x_2},\frac{\partial\phi}{\partial x_3}\big)$ 依 $A_i'=\sum_j\lambda_{ij}A_j$ 變換，所以 $\nabla\phi$ 是向量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：座標旋轉 $x_i'=\sum_j\lambda_{ij}x_j$，$\lambda$ 正交（$\lambda^{-1}=\lambda^{\mathsf T}$）；$\phi$ 是純量，$\phi'(\vec x')=\phi(\vec x)$；向量的定義是分量滿足 $A_i'=\sum_j\lambda_{ij}A_j$。</p>
+<p><strong>① 連鎖律：</strong> 判斷是不是向量看分量的變換規則，所以要算新座標下的 $\partial\phi'/\partial x_i'$。$\vec x$ 的每個分量都是 $\vec x'$ 的函數，對 $x_i'$ 偏微分要對每個 $x_j$ 的路徑求和。</p>
+<p class="fnote"><b>公式（多變數連鎖律）：</b>$\dfrac{\partial f}{\partial u}=\sum_j\dfrac{\partial f}{\partial x_j}\dfrac{\partial x_j}{\partial u}$，其中 $f$ 是 $x_j$ 的函數、$x_j$ 又是 $u$ 的函數；本題 $f=\phi$、$u=x_i'$。</p>
+<div class="math-block">$$\frac{\partial\phi'}{\partial x_i'}=\sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_i'}$$</div>
+<p><strong>② 反變換求 $\partial x_j/\partial x_i'$：</strong> 由 $\vec x'=\lambda\vec x$ 得 $\vec x=\lambda^{-1}\vec x'=\lambda^{\mathsf T}\vec x'$，寫成分量（轉置把下標對調）：</p>
+<div class="math-block">$$x_j=\sum_k(\lambda^{\mathsf T})_{jk}x_k'=\sum_k\lambda_{kj}x_k'$$</div>
+<p>對 $x_i'$ 偏微分，$\lambda_{kj}$ 是常數；新座標彼此獨立，代入 $\partial x_k'/\partial x_i'=\delta_{ki}$（只留下 $k=i$ 那一項）：</p>
+<div class="math-block">$$\frac{\partial x_j}{\partial x_i'}=\sum_k\lambda_{kj}\delta_{ki}=\lambda_{ij}$$</div>
+<p><strong>③ 代回：</strong> 把上一步的 $\lambda_{ij}$ 代入 ①：</p>
+<div class="math-block">$$\frac{\partial\phi'}{\partial x_i'}=\sum_j\lambda_{ij}\frac{\partial\phi}{\partial x_j}$$</div>
+<p>令 $A_j=\partial\phi/\partial x_j$，這就是 $A_i'=\sum_j\lambda_{ij}A_j$，和向量的變換規則完全相同。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\frac{\partial\phi'}{\partial x_i'}=\sum_j\lambda_{ij}\frac{\partial\phi}{\partial x_j}\\ \text{所以 }\nabla\phi\text{ 是向量}\end{gathered}}\ \blacksquare$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-28">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-28 · p.46</span></div>
+    <h4>$\nabla(\ln|\vec r|)=\vec r/r^2$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-28">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 $\nabla(\ln|\vec r|)=\dfrac{\vec r}{r^2}$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$f(r)=\ln r$，$r=|\vec r|=\sqrt{x^2+y^2+z^2}$，$r\gt0$（$\ln$ 在 $r=0$ 沒有定義）；$\hat r=\vec r/r$。</p>
+<p><strong>① 單變數導數：</strong> $\ln|\vec r|$ 只和 $r$ 有關，正是講義 p.86 的情形，只要算一個單變數導數：</p>
+<div class="math-block">$$f'(r)=\frac{\mathrm d}{\mathrm dr}\ln r=\frac1r$$</div>
+<p><strong>② 套徑向函數的梯度：</strong></p>
+<p class="fnote"><b>公式（只和 $r$ 有關的函數的梯度）：</b>$\nabla f(r)=f'(r)\,\hat r$，其中 $f'(r)$ 為對 $r$ 的導數、$\hat r$ 為單位徑向量（講義 p.86）；本題 $f=\ln r$。</p>
+<p>代入 $f'(r)=\frac1r$ 與 $\hat r=\frac{\vec r}{r}$：</p>
+<div class="math-block">$$\nabla\ln r=\frac{1}{r}\,\hat r=\frac1r\cdot\frac{\vec r}{r}=\frac{\vec r}{r^2}$$</div>
+<p>方向沿 $\hat r$（向外），大小 $\frac1r$，離原點越遠越小。</p>
+<div class="math-block">$$\boxed{\nabla\ln|\vec r|=\frac{\vec r}{r^2}}\ \blacksquare$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-30">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-30 · p.46</span></div>
+    <h4>梯度的乘積律</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-30">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 $\nabla(\phi\psi)=\phi\nabla\psi+\psi\nabla\phi$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\phi(x_1,x_2,x_3)$、$\psi(x_1,x_2,x_3)$ 為兩個純量函數；兩個向量相等就是每個分量都相等。</p>
+<p><strong>① 左邊的第 $i$ 個分量：</strong> 向量等式只要證任意第 $i$ 個分量；梯度的第 $i$ 個分量就是對 $x_i$ 偏微分，偏微分時其他座標當常數，所以每個分量只是一次普通的乘積律。</p>
+<p class="fnote"><b>公式（梯度的分量）：</b>$(\nabla f)_i=\dfrac{\partial f}{\partial x_i}$，其中 $f$ 為純量函數、$x_i$ 為第 $i$ 個座標；本題 $f=\phi\psi$。</p>
+<div class="math-block">$$\big[\nabla(\phi\psi)\big]_i=\frac{\partial(\phi\psi)}{\partial x_i}$$</div>
+<p class="fnote"><b>公式（偏微分的乘積律）：</b>$\dfrac{\partial(fg)}{\partial x}=f\dfrac{\partial g}{\partial x}+g\dfrac{\partial f}{\partial x}$，其中 $f$、$g$ 為兩個函數；本題 $f=\phi$、$g=\psi$、對 $x_i$ 偏微分。</p>
+<p>用乘積律展開：</p>
+<div class="math-block">$$\frac{\partial(\phi\psi)}{\partial x_i}=\phi\frac{\partial\psi}{\partial x_i}+\psi\frac{\partial\phi}{\partial x_i}$$</div>
+<p><strong>② 認出右邊：</strong> $\phi\frac{\partial\psi}{\partial x_i}$ 是向量 $\phi\nabla\psi$ 的第 $i$ 個分量（純量 $\phi$ 乘以 $\nabla\psi$ 的第 $i$ 個分量）；同理 $\psi\frac{\partial\phi}{\partial x_i}$ 是 $\psi\nabla\phi$ 的第 $i$ 個分量：</p>
+<div class="math-block">$$\big[\nabla(\phi\psi)\big]_i=\big[\phi\nabla\psi+\psi\nabla\phi\big]_i$$</div>
+<p>$i=1,2,3$ 三個分量都成立，所以兩個向量相等。</p>
+<div class="math-block">$$\boxed{\nabla(\phi\psi)=\phi\nabla\psi+\psi\nabla\phi}\quad\blacksquare$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-29">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-29 · p.46</span></div>
+    <h4>兩個曲面在交點的夾角</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-29">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求曲面 $r^2=9$ 與 $x+y+z^2=1$ 在點 $(2,-2,1)$ 的夾角。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：第一個曲面 $\phi_1=x^2+y^2+z^2=9$（$r^2=9$，半徑 3 的球面），第二個曲面 $\phi_2=x+y+z^2=1$，交點 $(2,-2,1)$；兩曲面的夾角就是交點處兩個法向量的夾角。</p>
+<p><strong>① 兩個法向量：</strong> 兩個曲面都是「函數 = 常數」的等高面，梯度垂直等高面，所以法向量直接用 $\nabla\phi_1$、$\nabla\phi_2$。</p>
+<p class="fnote"><b>公式（梯度垂直等高面）：</b>曲面 $\phi(x,y,z)=$ 常數 的法向量是 $\nabla\phi=\Big(\dfrac{\partial\phi}{\partial x},\dfrac{\partial\phi}{\partial y},\dfrac{\partial\phi}{\partial z}\Big)$；本題 $\phi$ 分別是 $\phi_1$、$\phi_2$。</p>
+<p>對 $x,y,z$ 分別偏微分：</p>
+<div class="math-block">$$\nabla\phi_1=(2x,\ 2y,\ 2z),\qquad\nabla\phi_2=(1,\ 1,\ 2z)$$</div>
+<p>代入交點 $x=2,\ y=-2,\ z=1$：</p>
+<div class="math-block">$$\begin{aligned}\nabla\phi_1&amp;=(4,-4,2)\\ \nabla\phi_2&amp;=(1,1,2)\end{aligned}$$</div>
+<p><strong>② 夾角：</strong> 用內積公式求兩個法向量的夾角。</p>
+<p class="fnote"><b>公式（內積求夾角）：</b>$\cos\theta=\dfrac{\vec a\cdot\vec b}{|\vec a||\vec b|}$，其中 $\theta$ 為 $\vec a$、$\vec b$ 的夾角；本題 $\vec a=\nabla\phi_1$、$\vec b=\nabla\phi_2$。</p>
+<p>內積與長度：</p>
+<div class="math-block">$$\nabla\phi_1\cdot\nabla\phi_2=4\cdot1+(-4)\cdot1+2\cdot2=4$$</div>
+<div class="math-block">$$|\nabla\phi_1|=\sqrt{16+16+4}=6,\qquad|\nabla\phi_2|=\sqrt{1+1+4}=\sqrt6$$</div>
+<p>代入內積公式：</p>
+<div class="math-block">$$\cos\theta=\frac{4}{6\sqrt6}=\frac{2}{3\sqrt6}\approx0.272$$</div>
+<div class="math-block">$$\boxed{\theta=\cos^{-1}\frac{2}{3\sqrt6}\approx74.2^\circ}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-40">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-40 · p.47</span></div>
+    <h4>山的高度函數：山頂、坡度、最陡方向</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-40">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>山的高度（公尺）$z=2xy-3x^2-4y^2-18x+28y+12$，$x$ 向東、$y$ 向北。(a) 山頂在哪、多高？(b) 在 $x=y=1$ 處坡有多陡？垂直山坡的向量和 $z$ 軸夾多少度？(c) 在 $x=y=1$ 處，往哪個方位最陡？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：高度 $h(x,y)=2xy-3x^2-4y^2-18x+28y+12$（m，寫成 $h$ 以免和座標 $z$ 混淆）；$+x$ 向東、$+y$ 向北；(b)(c) 都在 $x=y=1$。</p>
+<h4>(a) 山頂的位置與高度</h4>
+<p><strong>① 令梯度為 0：</strong> 山頂是高度的最大值，在那裡往任何方向斜率都是 0，所以令 $\nabla h=\vec 0$。對 $x$ 偏微分（$y$ 當常數）、對 $y$ 偏微分（$x$ 當常數）：</p>
+<div class="math-block">$$\frac{\partial h}{\partial x}=2y-6x-18,\qquad \frac{\partial h}{\partial y}=2x-8y+28$$</div>
+<p><strong>② 解聯立：</strong> 兩個都令為 0。由第一式 $2y=6x+18$，所以 $y=3x+9$。代入第二式：</p>
+<div class="math-block">$$2x-8(3x+9)+28=2x-24x-72+28=-22x-44=0$$</div>
+<div class="math-block">$$x=-2,\qquad y=3(-2)+9=3$$</div>
+<p><strong>③ 山頂高度：</strong> 代入 $x=-2$、$y=3$ 到 $h$：</p>
+<div class="math-block">$$\begin{aligned}h(-2,3)&amp;=2(-2)(3)-3(-2)^2-4(3)^2-18(-2)+28(3)+12\\&amp;=-12-12-36+36+84+12=72\ \text{m}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\text{山頂在 }(-2,3)\text{，高 }72\ \text{m}}$$</div>
+<h4>(b) 在 $(1,1)$ 的坡度與山坡法向量</h4>
+<p><strong>① 坡度：</strong> 二維梯度的大小就是最陡方向的斜率，所以坡度用 $|\nabla h|$。</p>
+<p class="fnote"><b>公式（梯度與最大變化率）：</b>$|\nabla h|=\sqrt{h_x^2+h_y^2}$ 是 $h$ 在該點最大的變化率，$\nabla h$ 指向上升最快的方向，其中 $h_x=\partial h/\partial x$、$h_y=\partial h/\partial y$；本題 $h$ 為高度。</p>
+<p>代入 $x=y=1$ 到 (a) 的偏導數：</p>
+<div class="math-block">$$h_x=2-6-18=-22,\qquad h_y=2-8+28=22$$</div>
+<div class="math-block">$$|\nabla h|=\sqrt{(-22)^2+22^2}=22\sqrt2\approx31.1$$</div>
+<p>沿最陡方向每水平走 1 m 升約 31 m，非常陡。</p>
+<p><strong>② 山坡法向量：</strong> 「垂直山坡的向量」要用三維：把地面寫成等高面 $\Phi(x,y,z)=z-h(x,y)=0$，法向量就是 $\nabla\Phi$。</p>
+<div class="math-block">$$\nabla\Phi=(-h_x,-h_y,1)=(22,-22,1)$$</div>
+<p><strong>③ 和 $z$ 軸的夾角：</strong> 和 $\hat k=(0,0,1)$ 做內積。</p>
+<p class="fnote"><b>公式（內積求夾角）：</b>$\cos\alpha=\dfrac{\vec a\cdot\vec b}{|\vec a||\vec b|}$，其中 $\alpha$ 為 $\vec a$、$\vec b$ 的夾角；本題 $\vec a=\nabla\Phi$、$\vec b=\hat k$。</p>
+<div class="math-block">$$\cos\alpha=\frac{(22,-22,1)\cdot(0,0,1)}{\sqrt{22^2+22^2+1}}=\frac{1}{\sqrt{969}}\approx0.032$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{坡度 }|\nabla h|=22\sqrt2\approx31\\ \text{法向量與 }z\text{ 軸夾 }\alpha\approx88.2^\circ\end{gathered}}$$</div>
+<h4>(c) 最陡的方位</h4>
+<p><strong>① 把 $\nabla h$ 翻成方位：</strong> $\nabla h$ 指向上坡最陡的方向。$\nabla h=(-22,22)$：$x$ 分量負（往西）、$y$ 分量正（往北），大小相等，所以指向正西北。換個說法，這一點的坡面朝向東南，往東南是下坡最陡——課本答案寫 SE 指的是這個，兩者說的是同一條最陡線。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{往西北上坡最陡}\\ \text{（坡面朝東南，課本答案 SE）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s13">12.5 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s13-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>沿著升溫最快方向爬的蟲</h4>
+    <button type="button" class="exam-btn" data-exam="self-s13-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>平板上的溫度 $T(x,y)=100-x^2-2y^2$。一隻蟲從 $(1,1)$ 出發，每一刻都朝溫度上升最快的方向爬。(a) 起點的爬行方向與最大升溫率；(b) 求蟲的路徑 $y(x)$；(c) 蟲最後到哪裡？路徑是直線嗎？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：溫度 $T(x,y)=100-x^2-2y^2$，起點 $(1,1)$；蟲每一刻的爬行方向都平行 $\nabla T$。</p>
+<h4>(a) 起點的爬行方向與最大升溫率</h4>
+<p><strong>① 梯度：</strong> 梯度指向函數增加最快的方向、大小就是最大變化率，所以直接算 $\nabla T$。</p>
+<p class="fnote"><b>公式（梯度的方向與大小）：</b>$\nabla T=\Big(\dfrac{\partial T}{\partial x},\dfrac{\partial T}{\partial y}\Big)$ 指向 $T$ 增加最快的方向，$|\nabla T|$ 為最大變化率；本題 $T$ 為溫度。</p>
+<p>偏微分：$\frac{\partial T}{\partial x}=-2x$、$\frac{\partial T}{\partial y}=-4y$，所以</p>
+<div class="math-block">$$\nabla T=(-2x,\ -4y)$$</div>
+<p><strong>② 代入起點：</strong> 代入 $(1,1)$：</p>
+<div class="math-block">$$\nabla T(1,1)=(-2,-4),\qquad |\nabla T|=\sqrt{4+16}=\sqrt{20}=2\sqrt5\approx4.47$$</div>
+<p><strong>③ 方向的單位向量：</strong> 除以長度：</p>
+<div class="math-block">$$\hat u=\frac{(-2,-4)}{2\sqrt5}=\frac{1}{\sqrt5}(-1,-2)$$</div>
+<p>往左下方，$y$ 方向的分量比較大。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{方向 }\tfrac1{\sqrt5}(-1,-2)\\ \text{最大升溫率 }2\sqrt5\approx4.47\end{gathered}}$$</div>
+<h4>(b) 路徑 $y(x)$</h4>
+<p><strong>① 路徑的微分方程：</strong> 蟲每一刻都沿梯度走，所以路徑上每點的切線斜率等於該點梯度的斜率：</p>
+<div class="math-block">$$\frac{\mathrm dy}{\mathrm dx}=\frac{\partial_yT}{\partial_xT}=\frac{-4y}{-2x}=\frac{2y}{x}$$</div>
+<p><strong>② 分離變數：</strong> 把 $y$ 移到左邊、$x$ 移到右邊，兩邊積分（路徑上 $x,y\gt0$）：</p>
+<div class="math-block">$$\frac{\mathrm dy}{y}=2\frac{\mathrm dx}{x}\ \Longrightarrow\ \ln y=2\ln x+C\ \Longrightarrow\ y=Kx^2$$</div>
+<p><strong>③ 定常數：</strong> 代入起點 $(1,1)$：$1=K\cdot1^2$，所以 $K=1$。</p>
+<div class="math-block">$$\boxed{y=x^2}$$</div>
+<h4>(c) 終點與路徑形狀</h4>
+<p><strong>① 終點：</strong> 沿梯度走 $T$ 一直上升，蟲停下來的地方是 $\nabla T=0$：</p>
+<div class="math-block">$$-2x=0,\quad -4y=0\ \Longrightarrow\ (x,y)=(0,0)$$</div>
+<p>只有原點（$T=100$ 最高）。蟲沿拋物線 $y=x^2$ 爬向原點，抵達時切線斜率 $\frac{\mathrm dy}{\mathrm dx}=2x\to0$，是水平的。</p>
+<p><strong>② 為什麼不是直線：</strong> 梯度垂直等溫線（橢圓 $x^2+2y^2=$ 常數），而不是指向最熱點。$y$ 方向的溫度變化比較陡（係數 2），蟲會先把 $y$ 降下來，路徑因此彎成拋物線。若等溫線是圓（$T=100-x^2-y^2$），梯度就會直接指向中心、路徑才是直線。</p>
+<div class="math-block">$$\boxed{\text{爬到原點 }(0,0)\text{，路徑 }y=x^2\text{ 不是直線}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s13-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>非等向彈簧：力不指向中心</h4>
+    <button type="button" class="exam-btn" data-exam="self-s13-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點在位能 $V=\tfrac12k(x^2+4y^2)$ 中運動（$x$、$y$ 兩方向的彈簧勁度不同）。(a) 求 $\vec F$；(b) 在 $(2,1)$ 處，$\vec F$ 和「指向原點」的方向夾幾度？(c) 哪些位置的 $\vec F$ 正好指向原點？這是不是連心力？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：位能 $V=\tfrac12k(x^2+4y^2)$（$x$ 方向勁度 $k$、$y$ 方向勁度 $4k$）；指向原點的方向是 $-\vec r=(-x,-y)$；連心力指處處 $\vec F\parallel\vec r$。</p>
+<h4>(a) 力</h4>
+<p><strong>① 由位能求力：</strong> 題目給位能、問力，用 $\vec F=-\nabla V$ 逐分量偏微分。</p>
+<p class="fnote"><b>公式（力與位能）：</b>$\vec F=-\nabla V$，其中 $V$ 為位能；本題 $V=\tfrac12k(x^2+4y^2)$。</p>
+<div class="math-block">$$\frac{\partial V}{\partial x}=\frac12k\cdot2x=kx,\qquad\frac{\partial V}{\partial y}=\frac12k\cdot8y=4ky$$</div>
+<div class="math-block">$$\boxed{\vec F=-\nabla V=-(kx,\ 4ky)=-k(x,\ 4y)}$$</div>
+<h4>(b) 在 $(2,1)$ 和指向原點方向的夾角</h4>
+<p><strong>① 代入位置：</strong> 代入 $x=2$、$y=1$：</p>
+<div class="math-block">$$\vec F=-k(2,\ 4\cdot1)=-k(2,4),\qquad-\vec r=(-2,-1)$$</div>
+<p><strong>② 內積求夾角：</strong> 要比較兩個向量的方向，用內積；夾角只和方向有關，$k\gt0$ 可以先拿掉，用 $(-2,-4)$ 與 $(-2,-1)$。</p>
+<p class="fnote"><b>公式（內積求夾角）：</b>$\cos\beta=\dfrac{\vec a\cdot\vec b}{|\vec a||\vec b|}$，其中 $\beta$ 為 $\vec a$、$\vec b$ 的夾角；本題 $\vec a=\vec F$、$\vec b=-\vec r$。</p>
+<div class="math-block">$$\cos\beta=\frac{(-2)(-2)+(-4)(-1)}{\sqrt{4+16}\,\sqrt{4+1}}=\frac{8}{\sqrt{20}\sqrt5}=\frac{8}{10}=0.8$$</div>
+<div class="math-block">$$\boxed{\beta=\cos^{-1}0.8\approx36.9^\circ}$$</div>
+<h4>(c) 何時指向原點、是不是連心力</h4>
+<p><strong>① 平行條件：</strong> 「正好指向原點」就是 $\vec F\parallel\vec r$，而兩個向量平行 ⟺ 外積為 0，所以看 $\vec F\times\vec r$ 在哪裡為 0。</p>
+<p class="fnote"><b>公式（平面向量的外積）：</b>$(\vec F\times\vec r)_z=F_xy-F_yx$，其中 $\vec F=(F_x,F_y)$、$\vec r=(x,y)$，平面向量的外積只有 $z$ 分量；兩向量平行 ⟺ 外積為 0。</p>
+<p>代入 (a) 的 $F_x=-kx$、$F_y=-4ky$：</p>
+<div class="math-block">$$(\vec F\times\vec r)_z=(-kx)y-(-4ky)x=-kxy+4kxy=3kxy$$</div>
+<div class="math-block">$$3kxy=0\ \Longleftrightarrow\ x=0\ \text{或}\ y=0$$</div>
+<p><strong>② 結論：</strong> 只有在兩條座標軸上力才指向原點（在軸上 $\vec F$ 和 $\vec r$ 都只有一個分量）；其他地方都偏開，所以不是連心力（$x^2+4y^2\neq r^2$，$V$ 不只和 $r$ 有關）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{只在座標軸上（}x=0\text{ 或 }y=0\text{）指向原點}\\ \text{不是連心力}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\nabla\phi$ 垂直等高面、指向增加最快的方向；$\mathrm d\phi=\nabla\phi\cdot\mathrm d\vec s$。</li>
+    <li>$\vec F=-\nabla V$；只和 $r$ 有關時 $\nabla f(r)=f'(r)\,\hat r$。</li>
+    <li>曲面 $\phi=$ 常數的法向量是 $\nabla\phi$：求曲面夾角、切平面都用它。</li>
+  </ol>
+</div>

@@ -1,0 +1,573 @@
+<h2>十五、平衡與穩定性 <span class="pg">講義 p.151–159 · 課本 §2.6 p.83–88</span></h2>
+
+<p class="lead">一維保守系統只要畫出位能 $U(x)$，不必解方程式就能看出很多事：質點能到哪裡、在哪裡折返、運動有沒有界、平衡點穩不穩定。這一節先讀位能圖，再用泰勒展開把「穩定」寫成 $U''>0$，最後做講義的三個例題與三題課本習題。</p>
+
+<h3 id="c2q-diagram">15.1 讀位能圖 <span class="pg-tag">課本 p.83–84 · 講義 p.152</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">課本 p.83 Eq. (2.96)–(2.98)</span>
+  $$E=T+U=\tfrac12mv^2+U(x),\qquad v(t)=\frac{\mathrm dx}{\mathrm dt}=\pm\sqrt{\frac2m\big[E-U(x)\big]},\qquad t-t_0=\int_{x_0}^{x}\frac{\pm\,\mathrm dx}{\sqrt{\frac2m\big[E-U(x)\big]}}$$
+</div>
+
+<p>最後一式形式上已經解完一維問題：給 $U(x)$ 就能積出 $t(x)$，再反過來得到 $x(t)$。更重要的是定性的結論：$T=\tfrac12mv^2\ge0$，所以真實的運動只發生在 $E\ge U(x)$ 的區域；在 $E=U(x)$ 的點速度為零，質點在那裡折返，叫<strong>轉折點</strong>。</p>
+
+<p>課本 Fig. 2-14 是一條有兩個谷、一個峰的位能曲線，畫出幾條能量水平線：</p>
+<ul>
+  <li>$E_0$ 剛好等於最低點：質點靜止在谷底。</li>
+  <li>$E_1$：被困在一個谷裡，在兩個轉折點 $x_a$、$x_b$ 之間來回（週期運動），谷底附近像彈簧。</li>
+  <li>$E_2$：有兩個分開的「口袋」，質點只能在其中一個裡面來回，不能跳到另一個（能量不夠翻過中間的峰）。</li>
+  <li>$E_3$：從遠處來、在 $x_g$ 撞上位能牆折返，回到遠處，像網球打到練習牆。</li>
+  <li>$E_4$：比所有位能都高，無界運動，速率隨 $E-U$ 變化但一路走到無限遠。</li>
+</ul>
+
+<div class="box lecture">
+  <span class="box-title">p.151–152 Static Equilibrium</span>
+  <p><strong>平衡</strong>：物體不受淨力與淨力矩。<strong>穩定平衡</strong>：小擾動後會回到平衡點；<strong>不穩定平衡</strong>：小擾動會讓它越離越遠。力學平衡點在 $U(x)$ 斜率為零處：$\mathrm dU/\mathrm dx=0$；穩定平衡要求 $U(x)$ 向上彎：$\mathrm d^2U/\mathrm dx^2>0$。講義圖中平衡點為 A、C、D、E、F，其中 C、E 穩定，A、D、F 不穩定。</p>
+</div>
+
+<p>直覺：$F=-\mathrm dU/\mathrm dx$。谷底兩側，左邊斜率為負、力向右；右邊斜率為正、力向左——力永遠推回谷底，所以穩定。峰頂兩側的力都把質點推離。課本用碗和鋼珠比喻：碗口向上，珠子停在碗底是穩定平衡；碗倒扣，珠子放在頂端是不穩定平衡；在平滑的水平桌面上是<strong>中性平衡</strong>。</p>
+
+<h3 id="c2q-taylor">15.2 泰勒展開：為什麼看 $U''$ <span class="pg-tag">p.153–154</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.153–154 Taylor Series</span>
+  $$U(x)=U(a)+(x-a)\left(\frac{\mathrm dU}{\mathrm dx}\right)_a+\frac{(x-a)^2}{2!}\left(\frac{\mathrm d^2U}{\mathrm dx^2}\right)_a+\frac{(x-a)^3}{3!}\left(\frac{\mathrm d^3U}{\mathrm dx^3}\right)_a+\cdots$$
+  <p>若 $a$ 是平衡點：$U(a)$ 只是常數；一次項為零（$a$ 點的淨力為零）；二次項 $>0$（位能在 $a$ 附近向上彎）才穩定。若二次項也為零呢？</p>
+</div>
+
+<p>靠近平衡點時 $x-a$ 很小，每一項都比前一項小得多，所以保留第一個不為零的項就好（課本 Eq. 2.102）：$U\approx U(a)+\tfrac12U''(a)(x-a)^2$。$U''(a)>0$ 時這正是彈簧位能 $\tfrac12k(x-a)^2$，$k=U''(a)$，質點在平衡點附近做簡諧振動，角頻率 $\omega=\sqrt{U''(a)/m}$（第 3 章）；$U''(a)\lt 0$ 則是倒過來的拋物線，任何偏離都會被放大。</p>
+
+<details class="supp">
+  <summary>$U''(a)=0$ 時怎麼判斷（習題 2-45、2-46）</summary>
+  <div class="supp-body">
+    <p>找第一個不為零的導數 $U^{(n)}(a)$，展開的主項是 $\dfrac{(x-a)^n}{n!}U^{(n)}(a)$。</p>
+    <ul>
+      <li>$n$ 為奇數：$(x-a)^n$ 在兩側變號，一邊位能升高、另一邊降低（反曲點），質點會從降低的那一側滑走：<strong>不穩定</strong>。</li>
+      <li>$n$ 為偶數：兩側同號；$U^{(n)}(a)>0$ 為<strong>穩定</strong>，$\lt 0$ 為不穩定。</li>
+      <li>所有導數都為零（例如 $U$ 在一段區間是常數）：中性平衡。</li>
+    </ul>
+    <p>例：$U=x^4$ 在 $0$ 穩定（$n=4$，正）；$U=x^3$ 在 $0$ 不穩定（$n=3$）。本節習題 2-42 在 $R=b/2$ 時就要用到四階導數。</p>
+  </div>
+</details>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-47">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-47 · p.97 · 講義 p.155</span></div>
+    <h4>$U=U_0(a/x+x/a)$ 的平衡點與穩定性</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-47">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點在 $x>0$ 的區域中運動，位能為 $U(x)=U_0\left(\dfrac ax+\dfrac xa\right)$，其中 $U_0=1\ \text{J}$、$a=2\ \text{m}$。畫出位能，求平衡點，並判斷是極大還是極小（穩定或不穩定）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$U(x)=U_0\left(\dfrac ax+\dfrac xa\right)$，$U_0=1\ \text{J}$、$a=2\ \text{m}$；只在 $x\gt0$ 運動（負的平衡點捨去）。</p>
+<p><strong>① 平衡點：</strong> 保守力 $F=-\mathrm dU/\mathrm dx$，淨力為零就是位能斜率為零。</p>
+<p class="fnote"><b>公式（平衡條件）：</b>平衡點滿足 $\dfrac{\mathrm dU}{\mathrm dx}=0$，因為 $F=-\dfrac{\mathrm dU}{\mathrm dx}$，其中 $F$ 為保守力、$U$ 為位能。</p>
+<p>逐項微分（$\frac{\mathrm d}{\mathrm dx}\frac ax=-\frac a{x^2}$、$\frac{\mathrm d}{\mathrm dx}\frac xa=\frac1a$），令它為零：</p>
+<div class="math-block">$$\frac{\mathrm dU}{\mathrm dx}=U_0\left(-\frac{a}{x^2}+\frac1a\right)=0$$</div>
+<p>移項 $\dfrac a{x^2}=\dfrac1a$，兩邊乘 $ax^2$：</p>
+<div class="math-block">$$x^2=a^2\quad\Longrightarrow\quad x=\pm a$$</div>
+<p>題目限定 $x\gt0$，只留 $x=a$；代入 $a=2\ \text{m}$：平衡點 $x=2\ \text{m}$。</p>
+<p><strong>② 穩定性：</strong> 看平衡點附近位能往上彎還是往下彎。</p>
+<p class="fnote"><b>公式（穩定判準）：</b>平衡點 $x_0$ 處 $\dfrac{\mathrm d^2U}{\mathrm dx^2}\gt0$ 為位能極小、穩定；$\lt0$ 為極大、不穩定。</p>
+<p>再微分一次：$\frac{\mathrm d}{\mathrm dx}\left(-\frac a{x^2}\right)=\frac{2a}{x^3}$，常數 $\frac1a$ 的導數為零：</p>
+<div class="math-block">$$\frac{\mathrm d^2U}{\mathrm dx^2}=U_0\frac{2a}{x^3}$$</div>
+<p>代入平衡點 $x=a$：</p>
+<div class="math-block">$$\frac{\mathrm d^2U}{\mathrm dx^2}\bigg|_{x=a}=\frac{2U_0}{a^2}\gt0\quad\Longrightarrow\quad\text{極小，穩定}$$</div>
+<p>代入 $U_0=1\ \text{J}$、$a=2\ \text{m}$：</p>
+<div class="math-block">$$U''(2)=\frac{2(1)}{2^2}=0.5\ \text{J/m}^2$$</div>
+<p><strong>③ 圖形：</strong> 兩端 $x\to0^+$ 時 $U\approx U_0a/x\to+\infty$，$x\to\infty$ 時 $U\approx U_0x/a\to\infty$：一個單谷，谷底在 $x=a$，$U(a)=U_0(1+1)=2U_0=2\ \text{J}$。再取幾個點描圖（$U_0=1\ \text{J}$、$a=2\ \text{m}$）：</p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>$x$ (m)</th>
+<th>0.5</th>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$U$ (J)</td>
+<td>4.25</td>
+<td>2.5</td>
+<td>2</td>
+<td>2.5</td>
+<td>4.25</td>
+</tr>
+</tbody>
+</table></div>
+<p>（$x$ 和 $a^2/x$ 的位能相同，所以表是「對數對稱」的。）</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{唯一平衡點 }x=a=2\ \text{m}\\ \text{位能極小，穩定平衡}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="c2q-examples">15.3 講義例題 <span class="pg-tag">p.156–159</span></h3>
+
+<div class="problem" data-kind="example" id="c2-ex212">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.156–158 · Example 2.12（課本 p.85–86）</span></div>
+    <h4>繩子、兩個滑輪與兩個質量：平衡位置與穩定性</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex212">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>如 Fig. 2-15 的滑輪、質量與繩子系統：長度 $b$ 的輕繩一端固定在 A 點，跨過距離 A 為 $2d$ 的 B 點處的滑輪，另一端掛質量 $m_1$。另一個掛著質量 $m_2$ 的滑輪騎在繩子上，把 A、B 之間的繩子往下拉。求系統平衡時的距離 $x_1$（$m_1$ 在 B 下方的距離），並判斷平衡是穩定還是不穩定。滑輪質量可忽略。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：輕繩長 $b$，一端固定在 A，跨過相距 $2d$ 的 B 點滑輪後掛 $m_1$；$x_1$ 為 $m_1$ 在 B 下方的距離；騎繩的無質量滑輪掛 $m_2$，會滑到 AB 中點正下方，深度 $x_2$；$c$ 為滑輪到 $m_2$ 的固定距離（Fig. 2-15）；取 AB 連線為 $U=0$、向下量深度。</p>
+<p><strong>① 位能寫成 $x_1$ 的函數：</strong> 繩長固定，系統只有一個自由度，且只有重力做功，可把總位能寫成 $x_1$ 的單變數函數，用能量法直接判斷穩定。繩長 $b=x_1+2\times(\text{一段斜繩})$，每段斜繩長 $\frac{b-x_1}{2}$；斜繩、水平半跨距 $d$、深度 $x_2$ 構成直角三角形：</p>
+<div class="math-block">$$x_2^2+d^2=\left(\frac{b-x_1}{2}\right)^2\quad\Longrightarrow\quad x_2=\sqrt{\left(\frac{b-x_1}{2}\right)^2-d^2}$$</div>
+<p class="fnote"><b>公式（重力位能）：</b>$U=-mg\times\text{深度}$，其中深度從 $U=0$ 的 AB 連線向下量；本題 $m_1$ 深度 $x_1$、$m_2$ 深度 $x_2+c$。</p>
+<div class="math-block">$$\begin{aligned}U&amp;=-m_1gx_1-m_2g(x_2+c)\\&amp;=-m_1gx_1-m_2g\sqrt{\frac{(b-x_1)^2}{4}-d^2}-m_2gc\end{aligned}$$</div>
+<p>（$c$ 只貢獻常數。）</p>
+<p><strong>② $\mathrm dU/\mathrm dx_1=0$：</strong> </p>
+<p class="fnote"><b>公式（平衡與穩定判準）：</b>平衡點滿足 $\dfrac{\mathrm dU}{\mathrm dx_1}=0$；該點 $\dfrac{\mathrm d^2U}{\mathrm dx_1^2}\gt0$ 為穩定、$\lt0$ 為不穩定。</p>
+<p>令 $S\equiv\frac{(b-x_1)^2}{4}-d^2$，$\frac{\mathrm dS}{\mathrm dx_1}=-\frac{b-x_1}{2}$；$\frac{\mathrm d}{\mathrm dx_1}\sqrt S=\frac{1}{2\sqrt S}\frac{\mathrm dS}{\mathrm dx_1}=-\frac{b-x_1}{4\sqrt S}$：</p>
+<div class="math-block">$$\frac{\mathrm dU}{\mathrm dx_1}=-m_1g+\frac{m_2g(b-x_1)}{4\sqrt{(b-x_1)^2/4-d^2}}=0$$</div>
+<p>在平衡點 $x_1=x_0$，移項並消去 $g$：</p>
+<div class="math-block">$$4m_1\sqrt{\frac{(b-x_0)^2}{4}-d^2}=m_2(b-x_0)$$</div>
+<p><strong>③ 解 $x_0$：</strong> 兩邊平方再展開移項：</p>
+<div class="math-block">$$\begin{aligned}16m_1^2\left[\frac{(b-x_0)^2}{4}-d^2\right]&amp;=m_2^2(b-x_0)^2\\4m_1^2(b-x_0)^2-m_2^2(b-x_0)^2&amp;=16m_1^2d^2\\(b-x_0)^2(4m_1^2-m_2^2)&amp;=16m_1^2d^2\end{aligned}$$</div>
+<p>開根號（$b-x_0\gt0$，取正根）：</p>
+<div class="math-block">$$x_0=b-\frac{4m_1d}{\sqrt{4m_1^2-m_2^2}}\qquad(2.105)$$</div>
+<p>實數解只在 $4m_1^2\gt m_2^2$（$m_2\lt 2m_1$）時存在。</p>
+<p><strong>④ 二階導數：</strong> 對 $\dfrac{m_2g}{4}(b-x_1)S^{-1/2}$ 再微分（乘積法則：$(b-x_1)'=-1$，$(S^{-1/2})'=-\tfrac12S^{-3/2}\cdot\left(-\tfrac{b-x_1}{2}\right)$）：</p>
+<div class="math-block">$$\frac{\mathrm d^2U}{\mathrm dx_1^2}=\frac{m_2g}{4}\left[-\frac1{S^{1/2}}+\frac{(b-x_1)^2}{4S^{3/2}}\right]$$</div>
+<p><strong>⑤ 代入平衡點：</strong> 由上一步的 $(b-x_0)^2=\dfrac{16m_1^2d^2}{4m_1^2-m_2^2}$：</p>
+<div class="math-block">$$S_0=\frac{4m_1^2d^2}{4m_1^2-m_2^2}-d^2=\frac{m_2^2d^2}{4m_1^2-m_2^2},\qquad\frac{(b-x_0)^2}{4S_0}=\frac{4m_1^2}{m_2^2}$$</div>
+<p>提出 $\dfrac{1}{S_0^{1/2}}$：括號 $=\dfrac1{S_0^{1/2}}\left(\dfrac{4m_1^2}{m_2^2}-1\right)=\dfrac{4m_1^2-m_2^2}{m_2^2S_0^{1/2}}$，再代 $S_0^{1/2}=\dfrac{m_2d}{\sqrt{4m_1^2-m_2^2}}$：</p>
+<div class="math-block">$$\left(\frac{\mathrm d^2U}{\mathrm dx_1^2}\right)_0=\frac{g(4m_1^2-m_2^2)^{3/2}}{4m_2^2d}$$</div>
+<p><strong>⑥ 判斷穩定：</strong> 平衡存在的條件是 $4m_1^2-m_2^2\gt0$，這時上式分子、分母都是正的：</p>
+<div class="math-block">$$\left(\frac{\mathrm d^2U}{\mathrm dx_1^2}\right)_0\gt0$$</div>
+<p>位能在平衡點向上彎：只要平衡存在，它就是穩定的。</p>
+<div class="math-block">$$\boxed{\begin{gathered}x_0=b-\frac{4m_1d}{\sqrt{4m_1^2-m_2^2}}\\ 4m_1^2\gt m_2^2\text{ 時 }U''\gt0\text{，穩定}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="c2-ex213">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.159 · Example 2.13（課本 p.87–88）</span></div>
+    <h4>雙井位能：平衡點、有界運動與轉折點</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex213">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一維位能 $U(x)=\dfrac{-Wd^2(x^2+d^2)}{x^4+8d^4}$，$W$ 為正的常數。畫出位能並討論各種 $x$ 值的運動：運動有界還是無界？平衡點在哪裡？穩定還是不穩定？求 $E=-W/8$ 時的轉折點。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：位能 $U(x)=\dfrac{-Wd^2(x^2+d^2)}{x^4+8d^4}$，$W\gt0$（能量尺度）、$d$（長度尺度）；分子帶負號，$U\lt0$ 處處成立；指定能量 $E=-W/8$。</p>
+<p><strong>① 無因次化：</strong> 同時有 $W$ 和 $d$ 直接微分很雜，先改用 $y=x/d$、$Z=U/W$ 把常數拿掉，形狀不變。代入 $x=yd$：分子 $x^2+d^2=d^2(y^2+1)$，分母 $x^4+8d^4=d^4(y^4+8)$：</p>
+<div class="math-block">$$U=\frac{-Wd^2\cdot d^2(y^2+1)}{d^4(y^4+8)}=\frac{-W(y^2+1)}{y^4+8}$$</div>
+<p>$d^4$ 消掉了，令 $Z\equiv U/W$：</p>
+<div class="math-block">$$Z(y)=\frac{-(y^2+1)}{y^4+8},\qquad y=\frac xd$$</div>
+<p><strong>② 平衡點：</strong> 平衡點是位能斜率為零的地方。</p>
+<p class="fnote"><b>公式（平衡條件）：</b>平衡點滿足 $\dfrac{\mathrm dU}{\mathrm dx}=0$，其中 $U$ 為位能、$x$ 為位置；本題改寫成 $\dfrac{\mathrm dZ}{\mathrm dy}=0$。</p>
+<p>對 $Z=-(y^2+1)(y^4+8)^{-1}$ 用乘積法則：</p>
+<div class="math-block">$$\frac{\mathrm dZ}{\mathrm dy}=\frac{-2y}{y^4+8}+\frac{4y^3(y^2+1)}{(y^4+8)^2}=0$$</div>
+<p>乘上 $(y^4+8)^2$：</p>
+<div class="math-block">$$-2y(y^4+8)+4y^3(y^2+1)=0$$</div>
+<p>展開並把 $y^4+2y^2-8$ 看成 $y^2$ 的二次式因式分解：</p>
+<div class="math-block">$$\begin{aligned}-2y^5-16y+4y^5+4y^3&amp;=2y^5+4y^3-16y\\&amp;=2y(y^4+2y^2-8)\end{aligned}$$</div>
+<div class="math-block">$$y(y^2+4)(y^2-2)=0\quad\Longrightarrow\quad y=0,\ \pm\sqrt2$$</div>
+<p>$y^2+4=0$ 沒有實根，所以 $x_{01}=0$、$x_{02,03}=\pm\sqrt2\,d$。代入 $Z$：</p>
+<div class="math-block">$$Z(0)=\frac{-1}{8},\qquad Z(\pm\sqrt2)=\frac{-(2+1)}{4+8}=-\frac{3}{12}=-\frac14$$</div>
+<p><strong>③ 穩定性與圖形：</strong> $Z(\pm\sqrt2)=-\tfrac14$ 低於 $Z(0)=-\tfrac18$，兩側又都趨近 $0^-$：圖形是兩個谷（$\pm\sqrt2\,d$）夾一個小峰（$0$），像 W。所以 $\pm\sqrt2\,d$ 是極小、穩定；$x=0$ 是極大、不穩定。</p>
+<p class="fnote"><b>公式（穩定判準）：</b>平衡點 $x_0$ 處 $U''(x_0)\gt0$ 為穩定、$U''(x_0)\lt0$ 為不穩定，其中 $U''$ 為位能對位置的二階導數；本題用 $Z''(y)$。</p>
+<div class="math-block">$$Z''(0)=-\tfrac14\lt0,\qquad Z''(\pm\sqrt2)=\tfrac13\gt0$$</div>
+<p><strong>④ 有界或無界：</strong> 用能量水平線判斷。$U\lt0$ 處處成立，且 $|x|\to\infty$ 時 $U\to0$。$E\lt0$ 時遠處 $E\lt U$，質點到不了，運動有界；$E\ge0$ 無界。再細分：$-\tfrac W4\lt E\lt-\tfrac W8$ 時被困在其中一個谷；$-\tfrac W8\lt E\lt0$ 時能越過中間的峰，在兩個谷之間來回。</p>
+<p><strong>⑤ $E=-W/8$ 的轉折點：</strong> 轉折點是動能為零、$E=U$ 的點。</p>
+<p class="fnote"><b>公式（能量守恆與轉折點）：</b>$E=\tfrac12mv^2+U(x)$，其中 $E$ 為總力學能、$m$ 為質量、$v$ 為速度；轉折點 $v=0$，滿足 $E=U(x)$。本題 $E=-W/8$。</p>
+<p>令 $U=E$，代入 $E=-W/8$，兩邊除以 $-W$：</p>
+<div class="math-block">$$\frac18=\frac{y^2+1}{y^4+8}$$</div>
+<p>交叉相乘：$y^4+8=8y^2+8$，即</p>
+<div class="math-block">$$y^4-8y^2=y^2(y^2-8)=0$$</div>
+<div class="math-block">$$y=0,\ \pm\sqrt8=\pm2\sqrt2\quad\Longrightarrow\quad x=0,\ \pm2\sqrt2\,d$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{平衡點 }x=0\text{（不穩定）、}x=\pm\sqrt2\,d\text{（穩定）}\\ E\lt0\text{ 有界、}E\ge0\text{ 無界}\\ E=-W/8\text{ 的轉折點 }x=\pm2\sqrt2\,d\\ \text{以及 }x=0\text{（剛好是不穩定平衡點）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="anim" data-anim="c2-potential"></div>
+
+<h3 id="c2q-more">15.4 課本習題 <span class="pg-tag">課本 p.96–97</span></h3>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-43">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-43 · p.96</span></div>
+    <h4>$F=-kx+kx^3/\alpha^2$：位能與 $E=k\alpha^2/4$ 的運動</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-43">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點受力 $F=-kx+kx^3/\alpha^2$，$k$、$\alpha$ 為常數且 $k>0$。求 $U(x)$ 並討論運動。$E=\tfrac14k\alpha^2$ 時會發生什麼事？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：力 $F=-kx+kx^3/\alpha^2$，$k\gt0$、$\alpha$ 為常數；取 $U(0)=0$；質量設為 $m$；指定能量 $E=\tfrac14k\alpha^2$。</p>
+<p><strong>① 位能：</strong> 力只和 $x$ 有關，是保守力，可以由積分定義位能，再用位能圖討論運動。</p>
+<p class="fnote"><b>公式（保守力的位能）：</b>$U(x)=U(0)-\displaystyle\int_0^xF\,\mathrm dx'$，其中 $F$ 為保守力、$U(0)$ 為零點的位能；本題取 $U(0)=0$。</p>
+<p>逐項積分（$\int x'\,\mathrm dx'=\tfrac12x^2$、$\int x'^3\,\mathrm dx'=\tfrac14x^4$）：</p>
+<div class="math-block">$$\begin{aligned}U(x)&amp;=-\int_0^x\left(-kx'+\frac{kx'^3}{\alpha^2}\right)\mathrm dx'\\&amp;=\frac12kx^2-\frac{kx^4}{4\alpha^2}\end{aligned}$$</div>
+<p><strong>② 平衡點與穩定性：</strong> 平衡要 $F=0$，穩定性看 $U''$ 的正負。提出 $-kx$ 因式分解：</p>
+<div class="math-block">$$F=-kx\left(1-\frac{x^2}{\alpha^2}\right)=0\quad\Longrightarrow\quad x=0,\ \pm\alpha$$</div>
+<p class="fnote"><b>公式（穩定判準）：</b>平衡點處 $U''\gt0$ 穩定、$U''\lt0$ 不穩定，其中 $U''=\dfrac{\mathrm d^2U}{\mathrm dx^2}=-\dfrac{\mathrm dF}{\mathrm dx}$。</p>
+<div class="math-block">$$U''=-F'=k-\frac{3kx^2}{\alpha^2}$$</div>
+<div class="math-block">$$U''(0)=k\gt0\ (\text{穩定}),\qquad U''(\pm\alpha)=k-3k=-2k\lt0\ (\text{不穩定})$$</div>
+<p>峰的高度，代入 $x=\pm\alpha$：</p>
+<div class="math-block">$$U(\pm\alpha)=\tfrac12k\alpha^2-\tfrac14k\alpha^2=\tfrac14k\alpha^2$$</div>
+<p><strong>③ 運動分類：</strong> 位能在 $0$ 是谷底（$U=0$）、在 $\pm\alpha$ 是峰頂（$U=\tfrac14k\alpha^2$），$|x|\gt\alpha$ 後 $-x^4$ 項主導、一路下降到 $-\infty$。畫能量水平線：</p>
+<ul>
+<li>$E\lt\tfrac14k\alpha^2$ 且 $|x|\lt\alpha$：在谷裡來回振動（小振幅時是簡諧振動，$\omega=\sqrt{U''(0)/m}=\sqrt{k/m}$）。</li>
+<li>$E\lt\tfrac14k\alpha^2$ 且 $|x|\gt\alpha$：在峰外側，被推往無限遠。</li>
+<li>$E\gt\tfrac14k\alpha^2$：翻過峰頂，無界。</li>
+</ul>
+<p><strong>④ $E=\tfrac14k\alpha^2$：永遠到不了峰頂：</strong> 能量剛好等於峰頂，能不能到達是時間的問題，所以在峰頂附近近似 $U$，再用 $t=\int\mathrm dx/v$ 看要花多久。</p>
+<p class="fnote"><b>公式（泰勒展開）：</b>$U(x)\approx U(\alpha)+U'(\alpha)(x-\alpha)+\tfrac12U''(\alpha)(x-\alpha)^2$，其中 $\alpha$ 為展開點；本題峰頂 $U'(\alpha)=0$。</p>
+<p>代入 $U(\alpha)=\tfrac14k\alpha^2$、② 的 $U''(\alpha)=-2k$：</p>
+<div class="math-block">$$U\approx\tfrac14k\alpha^2+\tfrac12(-2k)(x-\alpha)^2=\tfrac14k\alpha^2-k(x-\alpha)^2$$</div>
+<p>所以 $E-U\approx k(x-\alpha)^2$。</p>
+<p class="fnote"><b>公式（能量守恆）：</b>$\tfrac12mv^2=E-U(x)$，其中 $m$ 為質量、$v$ 為速度、$E$ 為總力學能。</p>
+<div class="math-block">$$|v|\approx\sqrt{\frac{2k}{m}}\,|x-\alpha|$$</div>
+<p>速率和到峰頂的距離成正比。走到峰頂的時間 $t=\int\mathrm dx/|v|$：</p>
+<div class="math-block">$$t\approx\sqrt{\frac m{2k}}\int\frac{\mathrm dx}{|x-\alpha|}\ \to\ \infty$$</div>
+<p>$\int\mathrm dx/|x-\alpha|=-\ln|x-\alpha|$，在 $x\to\alpha$ 對數發散。質點越靠近越慢，要無限久才「到達」不穩定平衡點；若它一開始就靜止在 $x=\pm\alpha$，則停在那裡（但任何擾動都會讓它離開）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}U=\tfrac12kx^2-\frac{kx^4}{4\alpha^2}\\ x=0\text{ 穩定、}x=\pm\alpha\text{ 不穩定（}U=\tfrac14k\alpha^2\text{）}\\ E=\tfrac14k\alpha^2\text{：漸近地逼近 }x=\pm\alpha\text{，需無限長時間}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-52">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-52 · p.97</span></div>
+    <h4>$U=U_0[2(x/a)^2-(x/a)^4]$：振盪頻率、逃脫速率與 $x(t)$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-52">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的質點在一維中運動，位能 $U(x)=U_0\left[2\left(\dfrac xa\right)^2-\left(\dfrac xa\right)^4\right]$，$U_0$、$a$ 為正的常數。(a) 求作用在質點上的力 $F(x)$。(b) 畫出 $U(x)$，找出穩定與不穩定平衡的位置。(c) 在穩定平衡點附近振盪的角頻率 $\omega$ 是多少？(d) 質點在原點至少要有多大速率才能逃到無限遠？(e) $t=0$ 時質點在原點，速度為正、大小等於 (d) 的逃脫速率，求 $x(t)$ 並畫圖。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：質量 $m$，位能 $U(x)=U_0\left[2\left(\dfrac xa\right)^2-\left(\dfrac xa\right)^4\right]$，$U_0\gt0$、$a\gt0$；(e) 初始條件 $x(0)=0$、$\dot x(0)=+v_{\text{逃}}$。</p>
+<h4>(a) 力</h4>
+<p><strong>① 由位能求力：</strong> 給的是位能，力直接用負梯度。</p>
+<p class="fnote"><b>公式（保守力與位能）：</b>$F=-\dfrac{\mathrm dU}{\mathrm dx}$，其中 $F$ 為力、$U$ 為位能、$x$ 為位置。</p>
+<p>展開 $U=U_0\left(\dfrac{2x^2}{a^2}-\dfrac{x^4}{a^4}\right)$，逐項微分再加負號：</p>
+<div class="math-block">$$\begin{aligned}F=-\frac{\mathrm dU}{\mathrm dx}&amp;=-U_0\left(\frac{4x}{a^2}-\frac{4x^3}{a^4}\right)\\&amp;=-\frac{4U_0x}{a^2}\left(1-\frac{x^2}{a^2}\right)\end{aligned}$$</div>
+<div class="math-block">$$\boxed{F=-\frac{4U_0x}{a^2}\left(1-\frac{x^2}{a^2}\right)}$$</div>
+<h4>(b) 平衡點與穩定性</h4>
+<p><strong>① 平衡點：</strong> 令 $F=0$：$x=0$ 或 $1-x^2/a^2=0$，即</p>
+<div class="math-block">$$x=0,\ \pm a$$</div>
+<p><strong>② 穩定性：</strong> 看 $U''$ 的正負。</p>
+<p class="fnote"><b>公式（穩定判準）：</b>平衡點處 $U''\gt0$ 穩定、$U''\lt0$ 不穩定，其中 $U''$ 為位能對位置的二階導數。</p>
+<div class="math-block">$$U''=U_0\left(\frac4{a^2}-\frac{12x^2}{a^4}\right)$$</div>
+<p>代入三個平衡點：</p>
+<div class="math-block">$$U''(0)=\frac{4U_0}{a^2}\gt0\ (\text{穩定})$$</div>
+<div class="math-block">$$U''(\pm a)=\frac{4U_0}{a^2}-\frac{12U_0}{a^2}=-\frac{8U_0}{a^2}\lt0\ (\text{不穩定})$$</div>
+<p><strong>③ 位能圖形：</strong> $U(0)=0$（谷底），$U(\pm a)=U_0(2-1)=U_0$（峰），$|x|\to\infty$ 時 $-x^4$ 項主導、$U\to-\infty$。圖形像 2-43：中間一個谷，兩側兩個峰，外面一路下降。</p>
+<div class="math-block">$$\boxed{x=0\text{ 穩定},\quad x=\pm a\text{ 不穩定}}$$</div>
+<h4>(c) 振盪頻率</h4>
+<p><strong>① 等效彈簧：</strong> 穩定點附近 $U\approx U(0)+\tfrac12U''(0)x^2$ 就像彈簧，等效彈力常數是 $U''(0)$。</p>
+<p class="fnote"><b>公式（小振動角頻率）：</b>$\omega=\sqrt{\dfrac{k_{\text{等效}}}{m}}=\sqrt{\dfrac{U''(x_0)}{m}}$，其中 $x_0$ 為穩定平衡點、$m$ 為質量；本題 $x_0=0$。</p>
+<p>代入 (b) 的 $U''(0)=4U_0/a^2$：</p>
+<div class="math-block">$$\omega=\sqrt{\frac{U''(0)}m}=\sqrt{\frac{4U_0}{ma^2}}$$</div>
+<div class="math-block">$$\boxed{\omega=\frac2a\sqrt{\frac{U_0}m}}$$</div>
+<h4>(d) 逃脫速率</h4>
+<p><strong>① 翻過峰頂：</strong> 從原點出發要逃到無限遠，必須翻過 $x=\pm a$ 的峰，出發時的動能至少等於峰高。</p>
+<p class="fnote"><b>公式（能量守恆）：</b>$\tfrac12mv^2+U(x)=E$ 為常數，其中 $m$ 為質量、$v$ 為速度、$U$ 為位能；本題起點 $U(0)=0$，峰頂 $U(\pm a)=U_0$。</p>
+<div class="math-block">$$\tfrac12mv^2\ge U_0\quad\Longrightarrow\quad v_{\min}=\sqrt{\frac{2U_0}m}$$</div>
+<div class="math-block">$$\boxed{v_{\min}=\sqrt{\frac{2U_0}m}}$$</div>
+<h4>(e) $E=U_0$ 的 $x(t)$</h4>
+<p><strong>① 寫出 $v(x)$：</strong> 能量剛好等於峰頂，速度可由能量守恆寫成 $v(x)$，再用 $\mathrm dt=\mathrm dx/v$ 分離變數。初速等於逃脫速率，所以 $E=\tfrac12mv_{\min}^2=U_0$。令 $u=x/a$：</p>
+<div class="math-block">$$\tfrac12m\dot x^2=U_0-U_0(2u^2-u^4)=U_0(1-2u^2+u^4)=U_0(1-u^2)^2$$</div>
+<p>剛好是完全平方。速度為正、$|u|\lt1$，開根號：</p>
+<div class="math-block">$$\dot x=\sqrt{\frac{2U_0}m}\,(1-u^2)$$</div>
+<p><strong>② 分離變數：</strong> 用 $\dot x=a\dot u$：</p>
+<div class="math-block">$$a\frac{\mathrm du}{\mathrm dt}=\sqrt{\frac{2U_0}m}\,(1-u^2)$$</div>
+<div class="math-block">$$\frac{\mathrm du}{1-u^2}=\lambda\,\mathrm dt,\qquad\lambda\equiv\sqrt{\frac{2U_0}{ma^2}}$$</div>
+<p><strong>③ 積分：</strong> 兩邊從 $t=0$（$u=0$，在原點）積到 $t$；$|u|\lt1$ 時 $\int\frac{\mathrm du}{1-u^2}=\tanh^{-1}u$：</p>
+<div class="math-block">$$\tanh^{-1}u=\lambda t\quad\Longrightarrow\quad x(t)=a\tanh\!\left(\sqrt{\frac{2U_0}{ma^2}}\,t\right)$$</div>
+<p>$\tanh$ 從 0 出發、單調增加、$t\to\infty$ 時趨近 1：質點漸近地趨向峰頂 $x=a$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}x(t)=a\tanh\!\left(\sqrt{\frac{2U_0}{ma^2}}\,t\right)\\ \text{從 }0\text{ 出發、漸近地趨向 }a\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-42">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-42 · p.96</span></div>
+    <h4>立方體放在圓柱頂上：什麼條件下穩定</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-42">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>邊長 $b$、密度均勻的實心立方體，平衡地放在半徑 $R$ 的圓柱頂上（Fig. 2-C）。立方體有四個面平行於圓柱的軸。立方體與圓柱的接觸面完全粗糙（不打滑）。在什麼條件下平衡是穩定的？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：立方體邊長 $b$、密度均勻（質心離底面 $b/2$），圓柱半徑 $R$ 固定；只滾不滑；$\theta$ 為滾過的角度，$h$ 為質心高度。</p>
+<p><strong>① 質心高度：</strong> 只有重力做功、只有一個自由度 $\theta$，用能量法：寫出 $h(\theta)$，看 $\theta=0$ 處 $U''$ 的正負。不打滑使底面上 Q 到 P 的距離等於圓柱上的弧長 $R\theta$，這是寫出 $h(\theta)$ 的關鍵。</p>
+<p>圓柱軸心當原點。滾過 $\theta$ 後，新接觸點 P 在圓柱上與鉛直線夾 $\theta$ 處，高度 $R\cos\theta$。立方體底面貼著 P 的切線，傾斜 $\theta$。底面中心 Q 離 P 沿切線 $R\theta$（往上坡那側），高度增加 $R\theta\sin\theta$；質心再從 Q 沿底面法線（與鉛直夾 $\theta$）往外 $b/2$，高度增加 $\tfrac b2\cos\theta$：</p>
+<div class="math-block">$$h(\theta)=R\cos\theta+R\theta\sin\theta+\frac b2\cos\theta$$</div>
+<div class="math-block">$$h(\theta)=\left(R+\frac b2\right)\cos\theta+R\theta\sin\theta$$</div>
+<p><strong>② 一、二階導數：</strong> 位能只來自重力，對 $\theta$ 微分兩次，看 $\theta=0$ 處的正負。</p>
+<p class="fnote"><b>公式（重力位能）：</b>$U=mgh$，其中 $m$ 為質量、$g$ 為重力加速度、$h$ 為質心高度；本題 $h=h(\theta)$。</p>
+<p class="fnote"><b>公式（穩定判準）：</b>平衡點處 $\dfrac{\mathrm dU}{\mathrm d\theta}=0$，且 $\dfrac{\mathrm d^2U}{\mathrm d\theta^2}\gt0$ 穩定、$\lt0$ 不穩定。</p>
+<p>逐項微分，$R\theta\sin\theta$ 用乘積法則（$(\theta\sin\theta)'=\sin\theta+\theta\cos\theta$）：</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm dU}{\mathrm d\theta}&amp;=mg\left[-\left(R+\tfrac b2\right)\sin\theta+R\sin\theta+R\theta\cos\theta\right]\\&amp;=mg\left(R\theta\cos\theta-\frac b2\sin\theta\right)\end{aligned}$$</div>
+<p>再微分一次（$(\theta\cos\theta)'=\cos\theta-\theta\sin\theta$）：</p>
+<div class="math-block">$$\frac{\mathrm d^2U}{\mathrm d\theta^2}=mg\left[\left(R-\frac b2\right)\cos\theta-R\theta\sin\theta\right]$$</div>
+<p>代入 $\theta=0$：$U'(0)=0$，確實是平衡點；</p>
+<div class="math-block">$$\left(\frac{\mathrm d^2U}{\mathrm d\theta^2}\right)_0=mg\left(R-\frac b2\right)$$</div>
+<p>$R\gt b/2$ 時為正、穩定；$R\lt b/2$ 時為負、不穩定。</p>
+<p><strong>③ 邊界情況 $R=b/2$：</strong> 二階導數為零，要看更高階項（習題 2-45 的判準）。代入 $R=b/2$：$h=b\cos\theta+\tfrac b2\theta\sin\theta$。</p>
+<p class="fnote"><b>公式（泰勒展開）：</b>$\cos\theta\approx1-\tfrac{\theta^2}2+\tfrac{\theta^4}{24}$、$\theta\sin\theta\approx\theta^2-\tfrac{\theta^4}6$，其中 $\theta$ 為小角度（弧度）。</p>
+<div class="math-block">$$\begin{aligned}h&amp;\approx b\left(1-\tfrac{\theta^2}2+\tfrac{\theta^4}{24}\right)+\tfrac b2\left(\theta^2-\tfrac{\theta^4}6\right)\\&amp;=b-\frac{b\theta^4}{24}\end{aligned}$$</div>
+<p>$\theta^2$ 項互相抵消，第一個不為零的是四階項，係數為負：兩側位能都比平衡點低，不穩定。</p>
+<div class="math-block">$$\boxed{R\gt b/2\text{ 時穩定；}R\le b/2\text{ 時不穩定}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">先確認是平衡點，再看二階導數</span>
+  <p>$U''>0$ 只在 $U'=0$ 的點才代表穩定平衡。另外要確認平衡點在題目允許的區域（2-47 的 $x>0$ 排除了 $x=-a$）。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-44">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-44 · p.96</span></div>
+    <h4>例題 2.12 改用力來解：平衡位置與穩定性</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-44">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-44"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Solve Example 2.12 by using forces rather than energy. How can you determine whether the system equilibrium is stable or unstable?</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-44 · p.96；例題 2.12 的圖見講義 p.156</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用「力」而不是能量重解例題 2.12（長 $b$ 的輕繩一端固定在 $A$，跨過相距 $2d$ 的滑輪 $B$ 吊著 $m_1$；另一個掛著 $m_2$ 的輕滑輪騎在 $A$、$B$ 之間的繩上）。要怎麼判斷這個平衡是穩定還是不穩定？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：例題 2.12 的裝置——輕繩長 $b$、A 與 B 相距 $2d$，$m_1$ 吊在 B 外側（那段長 $x_1$），$m_2$ 掛在騎繩的輕滑輪上；繩上張力處處為 $T$；兩段斜繩都與鉛直夾 $\phi$（對稱）；重力加速度 $g$。</p>
+<p><strong>① 平衡條件：</strong> 題目要求用力，對兩個物體各令合力為零；$m_2$ 滑輪受的兩段斜繩水平分量對稱抵消，只看鉛直方向。</p>
+<p class="fnote"><b>公式（靜力平衡）：</b>$\sum\vec F=0$，其中 $\vec F$ 為作用在物體上的各個力；本題 $m_1$ 受 $T$ 與 $m_1g$，$m_2$ 受兩段 $T$ 與 $m_2g$。</p>
+<div class="math-block">$$T=m_1g,\qquad 2T\cos\phi=m_2g$$</div>
+<p>把第一式的 $T=m_1g$ 代入第二式：$2m_1g\cos\phi=m_2g$：</p>
+<div class="math-block">$$\cos\phi=\frac{m_2}{2m_1}$$</div>
+<p>需要 $\cos\phi\lt1$，即 $4m_1^2\gt m_2^2$（和例題 2.12 一樣，否則 $m_2$ 會把 $m_1$ 一直拉上去）。</p>
+<p><strong>② 幾何：求 $x_1$：</strong> 用繩長把 $\phi$ 換成 $x_1$。每半段繩長 $L=\dfrac{b-x_1}2$，水平跨距 $d$，所以 $\sin\phi=\dfrac dL$，即 $L=\dfrac{d}{\sin\phi}$。代入上一步的 $\cos\phi$：</p>
+<div class="math-block">$$\sin\phi=\sqrt{1-\cos^2\phi}=\sqrt{1-\frac{m_2^2}{4m_1^2}}=\frac{\sqrt{4m_1^2-m_2^2}}{2m_1}$$</div>
+<div class="math-block">$$L=\frac{2m_1d}{\sqrt{4m_1^2-m_2^2}}$$</div>
+<p>由 $L=\frac{b-x_1}{2}$ 解出 $x_1=b-2L$：</p>
+<div class="math-block">$$x_1=b-\frac{4m_1d}{\sqrt{4m_1^2-m_2^2}}$$</div>
+<p>與例題 2.12 用 $\mathrm dU/\mathrm dx_1=0$ 得到的 (2.105) 相同。</p>
+<p><strong>③ 穩定性：線性化的運動方程式：</strong> 力的做法沒有 $U''$ 可看，改用定義：把系統稍微推離平衡，只留偏移量的一次項，看合力是推回來還是推更遠。以 $m_2$ 的下垂深度 $x_2$ 為變數（向下為正）。半段繩長 $L=\sqrt{x_2^2+d^2}$，所以 $x_1=b-2\sqrt{x_2^2+d^2}$、$\cos\phi=x_2/L$。對時間微分 $x_1$：</p>
+<div class="math-block">$$\dot x_1=-2\frac{x_2}{L}\dot x_2=-2\cos\phi\,\dot x_2$$</div>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\ddot x=\sum F$，其中 $m$ 為質量、$\ddot x$ 為加速度、$\sum F$ 為合力；本題 $x_1$、$x_2$ 都取向下為正。</p>
+<div class="math-block">$$m_1\ddot x_1=m_1g-T,\qquad m_2\ddot x_2=m_2g-2T\cos\phi$$</div>
+<p>令 $x_2=x_{2e}+\xi$（$\xi$ 很小），只留 $\xi$ 的一次項：</p>
+<div class="math-block">$$\frac{\mathrm d\cos\phi}{\mathrm dx_2}=\frac{L^2-x_2^2}{L^3}=\frac{d^2}{L^3}$$</div>
+<p>所以 $\cos\phi\approx\cos\phi_e+\dfrac{d^2}{L^3}\xi$；$\ddot x_1\approx-2\cos\phi_e\,\ddot\xi$（丟掉 $\dot\xi^2$ 等二階項）。由第一式：</p>
+<div class="math-block">$$T=m_1(g-\ddot x_1)=m_1g+2m_1\cos\phi_e\ddot\xi$$</div>
+<p>代入第二式：</p>
+<div class="math-block">$$m_2\ddot\xi=m_2g-2\left(m_1g+2m_1\cos\phi_e\ddot\xi\right)\left(\cos\phi_e+\frac{d^2}{L^3}\xi\right)$$</div>
+<p>展開、丟掉 $\xi\ddot\xi$ 二階項，並用平衡條件 $2m_1g\cos\phi_e=m_2g$ 消掉常數項：</p>
+<div class="math-block">$$\left(m_2+4m_1\cos^2\phi_e\right)\ddot\xi=-\frac{2m_1gd^2}{L^3}\,\xi$$</div>
+<p>左邊的係數是正的等效質量，右邊係數為負：$\xi$ 的加速度永遠指向平衡點，是簡諧振動，所以平衡穩定。</p>
+<p><strong>④ 直觀說法：</strong> $m_2$ 被推下去一點（$\xi\gt0$），兩段繩變得比較直、$\cos\phi$ 變大，向上的 $2T\cos\phi$ 大於 $m_2g$，把它拉回；推上去則 $\cos\phi$ 變小、托不住，它又掉回來。只要平衡存在，恢復力就存在。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\cos\phi=\frac{m_2}{2m_1},\quad x_1=b-\frac{4m_1d}{\sqrt{4m_1^2-m_2^2}}\ (4m_1^2\gt m_2^2)\\ (m_2+4m_1\cos^2\phi_e)\ddot\xi=-\frac{2m_1gd^2}{L^3}\xi\text{：恢復力，平衡穩定}\\ \text{判斷法：小位移時合力是否指向平衡點（等價於 }U''\gt0\text{）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-45">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-45 · p.97</span></div>
+    <h4>$(d^2U/dx^2)_0=0$ 時怎麼判斷穩定</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-45">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-45"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Describe how to determine whether an equilibrium is stable or unstable when $(d^2U/dx^2)_0 = 0$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>說明當 $(\mathrm d^2U/\mathrm dx^2)_0=0$ 時，如何判斷一個平衡是穩定還是不穩定。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：平衡點取在 $x=0$，$U'_0=0$；本題條件 $U''_0=0$（二階判準失效）；穩定的意思是兩側位能都比 $U_0$ 高（等價於小位移時 $F=-U'$ 指回平衡點）。</p>
+<p><strong>① 三次項不為零：不穩定：</strong> 穩定性只由平衡點附近的位能形狀決定，$x$ 很小時形狀由泰勒展開中第一個不為零的項主導；二次項為零就往下看三次、四次項。</p>
+<p class="fnote"><b>公式（泰勒展開）：</b>$U(x)=U_0+\dfrac{x^2}{2!}U''_0+\dfrac{x^3}{3!}U'''_0+\dfrac{x^4}{4!}U^{(4)}_0+\cdots$，其中下標 $0$ 表示在平衡點 $x=0$ 取值；本題 $U'_0=U''_0=0$。</p>
+<p>$U'''_0\neq0$ 時主導項是三次：</p>
+<div class="math-block">$$U\approx U_0+\frac{U'''_0}{6}x^3$$</div>
+<p>$x^3$ 在平衡點兩側正負相反：一側位能較低。用力確認，$U'\approx\tfrac12U'''_0x^2$：</p>
+<div class="math-block">$$F=-U'\approx-\frac12U'''_0x^2$$</div>
+<p>例如 $U'''_0\gt0$ 時，不論往哪邊偏 $F\lt0$：往 $x\lt0$ 偏會被推得更遠。所以 $U'''_0\neq0$ 一定不穩定（這是反曲點）。</p>
+<p><strong>② 三次項也為零：看四次項：</strong> $U'''_0=0$ 時，主導項是四次（$4!=24$）：</p>
+<div class="math-block">$$U\approx U_0+\frac{U^{(4)}_0}{24}x^4$$</div>
+<p>$x^4\ge0$，兩側同號：$U^{(4)}_0\gt0$ 時兩側都比 $U_0$ 高，穩定（比拋物線更平的谷底）；$U^{(4)}_0\lt0$ 時兩側都較低，不穩定。力的方向：</p>
+<div class="math-block">$$F\approx-\tfrac16U^{(4)}_0x^3$$</div>
+<p>$U^{(4)}_0\gt0$ 時 $F$ 和 $x$ 反號，指回原點。若四次也為零，繼續看下一項（見習題 2-46）。</p>
+<p><strong>③ 例子：</strong> 用上面的判準判斷幾個簡單位能。</p>
+<ul>
+<li>$U=x^3$：$U''_0=0$、$U'''_0=6$，不穩定。</li>
+<li>$U=x^4$：$U''_0=U'''_0=0$、$U^{(4)}_0=24\gt0$，穩定。</li>
+<li>$U=-x^4$：不穩定。</li>
+<li>$U=x^4-x^5$：第一個非零是 $x^4$ 項，穩定（$x^5$ 在夠小的 $x$ 處比 $x^4$ 小）。</li>
+</ul>
+<div class="math-block">$$\boxed{\begin{gathered}\text{看下一個不為零的導數：}U'''_0\neq0\Rightarrow\text{不穩定（反曲點）}\\ U'''_0=0\text{ 時：}U^{(4)}_0\gt0\Rightarrow\text{穩定、}U^{(4)}_0\lt0\Rightarrow\text{不穩定}\\ \text{依此類推}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-46">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-46 · p.97</span></div>
+    <h4>到第 $n$ 階導數都為零：一般的穩定判準</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-46">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-46"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Write the criteria for determining whether an equilibrium is stable or unstable when all derivatives up through order $n$, $(d^nU/dx^n)_0 = 0$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>寫出當直到第 $n$ 階的所有導數 $(\mathrm d^nU/\mathrm dx^n)_0$ 都為零時，判斷平衡穩定或不穩定的準則。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：平衡點取在 $x=0$，$U'_0=U''_0=\cdots=U^{(n)}_0=0$；一般情況下第一個不為零的是 $U^{(n+1)}_0$；穩定＝兩側位能都比 $U_0$ 高。</p>
+<p><strong>① 主導項：</strong> 前 $n$ 階導數都是零，泰勒展開的前幾項全部消失，平衡點附近由第 $n+1$ 階項主導——把 2-45 的論證一般化。</p>
+<p class="fnote"><b>公式（泰勒展開）：</b>$U(x)=U_0+\displaystyle\sum_{j\ge1}\frac{U^{(j)}_0}{j!}x^j$，其中 $U^{(j)}_0$ 為第 $j$ 階導數在 $x=0$ 的值；本題 $j\le n$ 的項都為零。</p>
+<div class="math-block">$$U(x)-U_0=\frac{U^{(n+1)}_0}{(n+1)!}x^{n+1}+O(x^{n+2})$$</div>
+<p>對 $x$ 微分再加負號（$\frac{(n+1)}{(n+1)!}=\frac1{n!}$）得到平衡點附近的力：</p>
+<div class="math-block">$$F=-U'\approx-\frac{U^{(n+1)}_0}{n!}x^{n}$$</div>
+<p><strong>② 分情況：</strong> 只要看 $x^{n+1}$ 兩側是否同號（由 $n+1$ 的奇偶決定），以及係數 $U^{(n+1)}_0$ 的正負。</p>
+<ul>
+<li>$n+1$ 為奇數（$n$ 偶）：$x^{n+1}$ 兩側變號，一側位能較低 ⟹ 不穩定（不論係數正負）。</li>
+<li>$n+1$ 為偶數（$n$ 奇）且 $U^{(n+1)}_0\gt0$：兩側位能都較高，力 $\propto-x^n$ 指回原點 ⟹ 穩定。</li>
+<li>$n+1$ 為偶數且 $U^{(n+1)}_0\lt0$：兩側都較低 ⟹ 不穩定。</li>
+</ul>
+<p>題目的「平衡」本身就要求 $U'_0=0$，所以 $n\ge1$；$n=1$ 就是課本 (2.103) 的二階判準。</p>
+<p><strong>③ 所有導數都為零的特例：</strong> 若 $U$ 在一段區間內是常數，是隨遇（中性）平衡。還有一個數學上的例外：$U=e^{-1/x^2}$（$U(0)=0$）在 $x=0$ 的各階導數全為零，但兩側 $U\gt0$，其實是穩定的——這時泰勒判準失效，要直接比較 $U(x)$ 與 $U_0$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{第一個不為零的導數是 }U^{(n+1)}_0\text{：}\\ n+1\text{ 奇數}\Rightarrow\text{不穩定}\\ n+1\text{ 偶數：}U^{(n+1)}_0\gt0\Rightarrow\text{穩定、}U^{(n+1)}_0\lt0\Rightarrow\text{不穩定}\\ \text{全部為零：直接看 }U\text{ 本身（常數為中性平衡）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-15a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>Lennard-Jones 位能：平衡距離、鍵能與小振動頻率</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-15a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩個中性原子間的位能常用 $U(r)=4\varepsilon\left[\left(\dfrac\sigma r\right)^{12}-\left(\dfrac\sigma r\right)^6\right]$ 近似。把一個原子當成固定（例如吸附在很重的表面上），另一個質量 $m$ 的原子沿連線運動。(a) 求平衡距離 $r_0$ 並判斷穩定性。(b) 從平衡點把原子拉到無窮遠至少要多少能量？(c) 求平衡點附近小振動的等效彈力常數與角頻率。(d) 氬：$\varepsilon=1.65\times10^{-21}\ \text{J}$、$\sigma=3.4\times10^{-10}\ \text{m}$、$m=39.95\ \text{u}$，算數值。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$U(r)=4\varepsilon\left[\left(\frac\sigma r\right)^{12}-\left(\frac\sigma r\right)^6\right]$，$r$ 為兩原子距離，一個原子固定、另一個質量 $m$ 沿連線運動；$U(\infty)=0$；(d) 氬 $\varepsilon=1.65\times10^{-21}\ \text{J}$、$\sigma=3.4\times10^{-10}\ \text{m}$、$m=39.95\ \text{u}$，$1\ \text{u}=1.6605\times10^{-27}\ \text{kg}$。</p>
+<h4>(a) 平衡距離與穩定性</h4>
+<p><strong>① 平衡點：</strong> 一維運動、力由位能給出，用 $U'(r_0)=0$ 求平衡，$U''(r_0)$ 判穩定。</p>
+<p class="fnote"><b>公式（平衡條件）：</b>平衡點滿足 $\dfrac{\mathrm dU}{\mathrm dr}=0$，其中 $U$ 為位能、$r$ 為位置座標。</p>
+<p>把 $U$ 寫成 $4\varepsilon(\sigma^{12}r^{-12}-\sigma^6r^{-6})$，用 $(r^{-n})'=-nr^{-n-1}$：</p>
+<div class="math-block">$$U'(r)=4\varepsilon\left[-\frac{12\sigma^{12}}{r^{13}}+\frac{6\sigma^6}{r^7}\right]=0$$</div>
+<p>兩邊乘 $\dfrac{r^{13}}{24\varepsilon}$：$-\sigma^{12}+\tfrac12\sigma^6r^6=0$，所以</p>
+<div class="math-block">$$r_0^6=2\sigma^6,\qquad r_0=2^{1/6}\sigma\approx1.12\sigma$$</div>
+<p>穩定性由 (c) 算出的 $U''(r_0)\gt0$ 判斷。</p>
+<div class="math-block">$$\boxed{r_0=2^{1/6}\sigma\approx1.12\sigma,\ \text{穩定}}$$</div>
+<h4>(b) 鍵能</h4>
+<p><strong>① 平衡點的位能：</strong> 從靜止在 $r_0$ 到無窮遠剛好停下，兩端動能都是 0，最少要給的能量就是位能差。代入 $r_0^6=2\sigma^6$：$(\sigma/r_0)^6=\tfrac12$，$(\sigma/r_0)^{12}=\tfrac14$：</p>
+<div class="math-block">$$U(r_0)=4\varepsilon\left[\frac14-\frac12\right]=-\varepsilon$$</div>
+<p><strong>② 位能差：</strong> $r\to\infty$ 時兩項都趨近 0，$U(\infty)=0$。</p>
+<p class="fnote"><b>公式（能量守恆）：</b>外界至少需提供 $W=\Delta K+\Delta U$，其中 $K$ 為動能、$U$ 為位能；本題起終點都靜止，$\Delta K=0$。</p>
+<div class="math-block">$$U(\infty)-U(r_0)=0-(-\varepsilon)=\varepsilon$$</div>
+<div class="math-block">$$\boxed{\varepsilon}$$</div>
+<h4>(c) 等效彈力常數與角頻率</h4>
+<p><strong>① 二階導數：</strong> 平衡點附近 $U\approx U(r_0)+\tfrac12U''(r_0)(r-r_0)^2$ 和彈簧位能同形，$U''(r_0)$ 就是等效彈力常數。再微分一次（$(r^{-13})'=-13r^{-14}$、$(r^{-7})'=-7r^{-8}$）：</p>
+<div class="math-block">$$U''(r)=4\varepsilon\left[\frac{156\sigma^{12}}{r^{14}}-\frac{42\sigma^6}{r^8}\right]$$</div>
+<p><strong>② 代入 $r_0$：</strong> 提出 $\dfrac1{r_0^2}$，用 (b) 的 $(\sigma/r_0)^{12}=\tfrac14$、$(\sigma/r_0)^6=\tfrac12$：</p>
+<div class="math-block">$$U''(r_0)=\frac{4\varepsilon}{r_0^2}\left[\frac{156}4-\frac{42}2\right]=\frac{4\varepsilon(39-21)}{r_0^2}=\frac{72\varepsilon}{r_0^2}$$</div>
+<p>代入 (a) 的 $r_0^2=2^{1/3}\sigma^2$，$2^{1/3}=1.260$：</p>
+<div class="math-block">$$k=U''(r_0)=\frac{72\varepsilon}{2^{1/3}\sigma^2}\approx57.1\frac{\varepsilon}{\sigma^2}\gt0$$</div>
+<p>$U''\gt0$：穩定平衡。</p>
+<p class="fnote"><b>公式（小振動角頻率）：</b>$\omega=\sqrt{k/m}$，其中 $k$ 為等效彈力常數、$m$ 為振動物體的質量；本題 $k=U''(r_0)$。</p>
+<div class="math-block">$$\boxed{k=\frac{72\varepsilon}{2^{1/3}\sigma^2}\approx57.1\frac{\varepsilon}{\sigma^2},\quad\omega=\sqrt{\frac km}}$$</div>
+<h4>(d) 氬的數值</h4>
+<p><strong>① 平衡距離：</strong> 代入 $\sigma=3.4\times10^{-10}\ \text{m}$、$2^{1/6}=1.122$：</p>
+<div class="math-block">$$r_0=1.122(3.4\times10^{-10})\ \text{m}=3.82\times10^{-10}\ \text{m}$$</div>
+<p><strong>② 彈力常數：</strong> 代入 $\varepsilon=1.65\times10^{-21}\ \text{J}$：</p>
+<div class="math-block">$$k=\frac{57.1(1.65\times10^{-21})}{(3.4\times10^{-10})^2}\ \text{N/m}=0.816\ \text{N/m}$$</div>
+<p><strong>③ 頻率：</strong> 質量 $m=39.95\ \text{u}\times1.6605\times10^{-27}\ \text{kg/u}=6.63\times10^{-26}\ \text{kg}$：</p>
+<div class="math-block">$$\begin{aligned}\omega&amp;=\sqrt{\frac{0.816}{6.63\times10^{-26}}}\ \text{s}^{-1}=3.5\times10^{12}\ \text{s}^{-1}\\f&amp;=\frac\omega{2\pi}=5.6\times10^{11}\ \text{Hz}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}r_0=0.382\ \text{nm},\quad k=0.82\ \text{N/m}\\ f\approx5.6\times10^{11}\ \text{Hz（遠紅外到微波）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-15b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>彈簧拉著的珠子：平衡點一分為二</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-15b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的珠子套在水平光滑直線導軌（$x$ 軸）上，用一條自然長度 $l_0$、彈力常數 $k$ 的彈簧連到導軌外距離 $d$ 的固定點 $P$（$P$ 在 $x=0$ 正上方）。不計重力影響。(a) 寫出 $U(x)$，求所有平衡點。(b) 分 $d\gt l_0$ 與 $d\lt l_0$ 兩種情況判斷穩定性，畫出位能圖的形狀。(c) $d\gt l_0$ 時求 $x=0$ 附近的小振動頻率；$d\to l_0^+$ 時會怎樣？(d) $d=l_0$ 剛好相等時，$x=0$ 穩定嗎？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：珠子質量 $m$，只能沿水平光滑 $x$ 軸動；彈簧自然長度 $l_0$、彈力常數 $k$，接到固定點 $P(0,d)$，彈簧長度 $s=\sqrt{x^2+d^2}$；不計重力。</p>
+<h4>(a) 位能與平衡點</h4>
+<p><strong>① 寫出位能並微分：</strong> 只有一個自由度、彈簧力是保守力，把彈簧位能寫成 $x$ 的函數，用 $U'=0$ 求平衡。$U'$ 是伸長量乘方向因子，所以平衡有兩種：$x=0$（彈簧垂直導軌）或彈簧剛好自然長。</p>
+<p class="fnote"><b>公式（彈簧位能）：</b>$U=\tfrac12k(\text{長度}-l_0)^2$，其中 $k$ 為彈力常數、$l_0$ 為自然長度；本題長度為 $s=\sqrt{x^2+d^2}$。</p>
+<p>$U=\tfrac12k(s-l_0)^2$。連鎖律，$\dfrac{\mathrm ds}{\mathrm dx}=\dfrac{x}{s}$：</p>
+<div class="math-block">$$U'(x)=k\left(\sqrt{x^2+d^2}-l_0\right)\frac{x}{\sqrt{x^2+d^2}}=0$$</div>
+<p><strong>② 解平衡點：</strong> 乘積為零，兩個因子之一為零：</p>
+<div class="math-block">$$x=0\quad\text{或}\quad\sqrt{x^2+d^2}=l_0\ \Rightarrow\ x=\pm\sqrt{l_0^2-d^2}$$</div>
+<p>第二組只在 $l_0\gt d$ 時是實數（彈簧要比 $d$ 長才能剛好是自然長度）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}U=\tfrac12k\left(\sqrt{x^2+d^2}-l_0\right)^2\\ x=0\text{；}l_0\gt d\text{ 時另有 }x=\pm\sqrt{l_0^2-d^2}\end{gathered}}$$</div>
+<h4>(b) 穩定性與位能形狀</h4>
+<p><strong>① 二階導數：</strong> 用 $U''$ 的正負判穩定。</p>
+<p class="fnote"><b>公式（穩定判準）：</b>平衡點處 $U''\gt0$ 穩定、$U''\lt0$ 不穩定，其中 $U''$ 為位能對位置的二階導數。</p>
+<p>再微分：</p>
+<div class="math-block">$$U''=k\left(\frac{\mathrm ds}{\mathrm dx}\right)^2+k(s-l_0)\frac{\mathrm d^2s}{\mathrm dx^2},\qquad\frac{\mathrm d^2s}{\mathrm dx^2}=\frac{s^2-x^2}{s^3}=\frac{d^2}{s^3}$$</div>
+<p><strong>② 代入各平衡點：</strong> $x=0$ 處 $s=d$、$s'=0$、$s''=1/d$；$x=\pm\sqrt{l_0^2-d^2}$ 處 $s=l_0$、$s-l_0=0$、$s'^2=\dfrac{l_0^2-d^2}{l_0^2}$：</p>
+<div class="math-block">$$\begin{aligned}U''(0)&amp;=k\,s'^2+k(s-l_0)s''\\&amp;=k\cdot0+k(d-l_0)\cdot\frac1d=k\left(1-\frac{l_0}{d}\right)\end{aligned}$$</div>
+<div class="math-block">$$\begin{aligned}U''\!\left(\pm\sqrt{l_0^2-d^2}\right)&amp;=k\,s'^2+k\cdot0\cdot s''\\&amp;=k\,\frac{l_0^2-d^2}{l_0^2}\end{aligned}$$</div>
+<p><strong>③ 分兩種情況：</strong> 看 $U''(0)=k(1-l_0/d)$ 的正負與另兩個平衡點是否存在。</p>
+<ul>
+<li>$d\gt l_0$（彈簧在 $x=0$ 已被拉長）：只有 $x=0$ 一個平衡點，$U''(0)\gt0$，穩定；位能是單一的谷。</li>
+<li>$d\lt l_0$（彈簧在 $x=0$ 被壓縮）：$x=0$ 的 $U''\lt0$，變成不穩定的小山丘，兩旁出現兩個穩定的谷 $x=\pm\sqrt{l_0^2-d^2}$（彈簧剛好自然長），位能圖是例題 2.13 那種雙井形狀。</li>
+</ul>
+<div class="math-block">$$\boxed{\begin{gathered}d\gt l_0\text{：}x=0\text{ 穩定（單谷）}\\ d\lt l_0\text{：}x=0\text{ 不穩定，}\pm\sqrt{l_0^2-d^2}\text{ 穩定（雙谷）}\end{gathered}}$$</div>
+<h4>(c) 小振動頻率</h4>
+<p><strong>① 等效彈力常數：</strong> 穩定點附近 $U''(0)$ 就是等效彈力常數。</p>
+<p class="fnote"><b>公式（小振動角頻率）：</b>$\omega=\sqrt{\dfrac{U''(x_0)}{m}}$，其中 $x_0$ 為穩定平衡點、$m$ 為質量；本題 $x_0=0$。</p>
+<p>代入 (b) 的 $U''(0)=k(1-l_0/d)$（$d\gt l_0$ 時為正）：</p>
+<div class="math-block">$$\omega=\sqrt{\frac{U''(0)}m}=\sqrt{\frac km\left(1-\frac{l_0}d\right)}$$</div>
+<p><strong>② $d\to l_0^+$：</strong> $\omega\to0$：回復力越來越弱，振動越來越慢（「軟化」），預告平衡即將一分為二。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\omega=\sqrt{\frac km\left(1-\frac{l_0}d\right)}\\ d\to l_0^+\text{ 時 }\omega\to0\end{gathered}}$$</div>
+<h4>(d) 臨界 $d=l_0$</h4>
+<p><strong>① 二階判準失效：</strong> 代入 $l_0=d$：$U''(0)=k(1-1)=0$，要用習題 2-45 的高階判準，把位能展開到第一個不為零的項。</p>
+<p class="fnote"><b>公式（二項式展開）：</b>$\sqrt{1+\epsilon}\approx1+\tfrac12\epsilon$，其中 $\epsilon\ll1$；本題 $\epsilon=x^2/d^2$。</p>
+<div class="math-block">$$\sqrt{x^2+d^2}=d\sqrt{1+x^2/d^2}\approx d\left(1+\frac{x^2}{2d^2}\right)$$</div>
+<div class="math-block">$$\sqrt{x^2+d^2}-l_0=\sqrt{x^2+d^2}-d\approx\frac{x^2}{2d}$$</div>
+<p><strong>② 四次位能：</strong> 把伸長量代回彈簧位能。</p>
+<div class="math-block">$$U\approx\frac12k\left(\frac{x^2}{2d}\right)^2=\frac{k}{8d^2}x^4$$</div>
+<p>第一個不為零的是四階導數：</p>
+<div class="math-block">$$U^{(4)}_0=4!\cdot\frac{k}{8d^2}=\frac{3k}{d^2}\gt0$$</div>
+<p>依習題 2-45 判為穩定，但小振動不是簡諧的。</p>
+<div class="math-block">$$\boxed{U\approx\frac{k}{8d^2}x^4,\ \text{穩定（四次）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$E\ge U(x)$ 才是允許區域；$E=U$ 是轉折點；$E$ 低於兩側位能時運動有界。</li>
+    <li>平衡 $U'(a)=0$；$U''(a)>0$ 穩定、$\lt 0$ 不穩定；為零時看第一個不為零的導數（偶數階正值才穩定）。</li>
+    <li>穩定點附近 $U\approx\tfrac12U''(a)(x-a)^2$，$\omega=\sqrt{U''(a)/m}$；能量剛好等於峰頂時要無限久才到達峰頂。</li>
+  </ol>
+</div>

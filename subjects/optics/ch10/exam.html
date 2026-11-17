@@ -1,0 +1,1163 @@
+<article class="exam-item" data-exam-id="o10-7-1" data-group="一、兩光束干涉：照度極大、極小與對比度" data-title="作業 7-1：I1、I2、I12、I、V">
+  <h3>Pedrotti 7-1（作業）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>1</b> Two mutually coherent beams having parallel electric fields are described by</p>$$E_1=3\cos\left(ks_1-\omega t+\frac{\pi}{5}\right)$$$$E_2=4\cos\left(ks_2-\omega t+\frac{\pi}{6}\right)$$<p>with amplitudes in kV/m. The beams interfere at a point $P$ where the phase difference due to path is $\pi/3$ (the first beam having the longer path). At the point of superposition, calculate (a) the irradiances $I_1$ and $I_2$ of the individual beams; (b) the irradiance $I_{12}$ due to their interference; (c) the net irradiance; (d) the fringe visibility.</p></div>
+<p class="original-caption">Pedrotti Problem 7-1</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如圖（課本 Figure 23）畫了上下兩個光源，振幅 $E_{01}$、$E_{02}$ 的兩道波，$E_1$ 斜著、$E_2$ 水平地走到同一點 $P$。兩道光互相同調、電場平行：$E_1=3\cos(ks_1-\omega t+\pi/5)$、$E_2=4\cos(ks_2-\omega t+\pi/6)$（振幅單位 kV/m），在 $P$ 點路徑造成的相位差為 $\pi/3$（第一道光的路徑較長）。求 (a) 各自的照度 $I_1$、$I_2$；(b) 干涉項 $I_{12}$；(c) 淨照度；(d) 條紋對比度。</div>
+  <div class="rote">
+    <p><b>看到</b>「兩道同調光的 $E_1$、$E_2$ 式子」＋「路徑相位差 $\pi/3$」＋「求 $I_1$、$I_2$、$I_{12}$、淨照度、對比度」⟹ 題型：<b>兩光束干涉（照度、干涉項、對比度）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（四小題共用）</h5>
+      <p class="wq-step"><span class="memo">讀圖 23：$E_1$ 走斜線、$E_2$ 走水平線，兩道光在 $P$ 會合</span>
+        <span class="syms">$E_{01}$、$E_{02}$：兩道光的電場振幅（V/m）；$s_1$、$s_2$：兩道光從光源到 $P$ 的路徑長（m）；$k$：波數（m⁻¹）；$P$：疊加點</span>
+        圖上兩個光源上下排列，斜著走的 $E_1$ 比水平走的 $E_2$ 路徑長，和題目「第一道光路徑較長」一致，所以路徑相位差取正號。<br>
+        $s_1\gt s_2$，$k(s_1-s_2)=+\dfrac{\pi}{3}$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 各自的照度 $I_1$、$I_2$</h5>
+      <p class="wq-step"><span class="memo">背：$I=\tfrac12\varepsilon_0cE_0^2$</span>
+        <span class="syms">$I$：照度（W/m²）；$\varepsilon_0=8.854\times10^{-12}$ F/m：真空電容率；$c=3\times10^8$ m/s：真空光速；$E_0$：電場振幅（V/m）</span>
+        題目的振幅單位是 kV/m，先換成 $E_{01}=3000$ V/m、$E_{02}=4000$ V/m；光在空氣中走，$n\approx1$。<br>
+        $\tfrac12\varepsilon_0c=\tfrac12(8.854\times10^{-12})(3\times10^8)=1.328\times10^{-3}\ \text{A/V}$<br>
+        $I_1=(1.328\times10^{-3})(3000)^2=1.195\times10^4\ \text{W/m}^2$<br>
+        $I_2=(1.328\times10^{-3})(4000)^2=2.125\times10^4\ \text{W/m}^2$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 干涉項 $I_{12}$</h5>
+      <p class="wq-step"><span class="memo">背：$\delta=(ks_1+\phi_1)-(ks_2+\phi_2)=k(s_1-s_2)+(\phi_1-\phi_2)$</span>
+        <span class="syms">$\delta$：兩道光在 $P$ 的相位差（rad）；$k$：波數（m⁻¹）；$s_1$、$s_2$：兩道光的路徑長（m）；$\phi_1$、$\phi_2$：兩道光的初相位（cos 括號裡的常數，rad）</span>
+        兩道光的 $-\omega t$ 一樣，相減消掉。路徑部分用圖 23 讀出的 $+\pi/3$，初相位從題目式子讀出 $\phi_1=\pi/5$、$\phi_2=\pi/6$，兩部分要相加。<br>
+        $\delta=\dfrac{\pi}{3}+\left(\dfrac{\pi}{5}-\dfrac{\pi}{6}\right)=\dfrac{\pi}{3}+\dfrac{\pi}{30}=\dfrac{11\pi}{30}=66^\circ$</p>
+      <p class="wq-step"><span class="memo">背：$I_{12}=2\sqrt{I_1I_2}\cos\delta$</span>
+        <span class="syms">$I_{12}$：干涉項（W/m²）；$I_1$、$I_2$：兩道光各自的照度（W/m²）；$\delta$：兩道光在 $P$ 的相位差（rad）</span>
+        題目說電場平行，干涉項直接用這個式子；$I_1$、$I_2$ 用 (a) 的結果。<br>
+        $I_{12}=2\sqrt{(1.195\times10^4)(2.125\times10^4)}\cos66^\circ=2(1.594\times10^4)(0.4067)=1.296\times10^4\ \text{W/m}^2$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 淨照度 $I$</h5>
+      <p class="wq-step"><span class="memo">背：$I=I_1+I_2+I_{12}$</span>
+        <span class="syms">$I$：疊加後的淨照度（W/m²）；$I_1$、$I_2$：兩道光各自的照度（W/m²）；$I_{12}$：干涉項（W/m²）</span>
+        把 (a)(b) 的三個數加起來，不能漏掉干涉項。<br>
+        $I=(1.195+2.125+1.296)\times10^4=4.62\times10^4\ \text{W/m}^2$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 條紋對比度 $V$</h5>
+      <p class="wq-step"><span class="memo">背：$V=\dfrac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}=\dfrac{2\sqrt{I_1I_2}}{I_1+I_2}=\dfrac{2E_{01}E_{02}}{E_{01}^2+E_{02}^2}$</span>
+        <span class="syms">$V$：條紋對比度（無單位）；$I_{\max}$、$I_{\min}$：條紋最亮、最暗處的照度（W/m²）；$I_1$、$I_2$：兩道光各自的照度（W/m²）；$E_{01}$、$E_{02}$：兩道光的電場振幅</span>
+        對比度看的是 $P$ 附近整片條紋的明暗差，和 $P$ 點本身的 $\delta$ 無關；比值和單位無關，直接代振幅 3、4。<br>
+        $V=\dfrac{2(3)(4)}{3^2+4^2}=\dfrac{24}{25}=0.96$</p>
+    </div>
+  </div>
+  <div class="final">答：$I_1\approx11\,950$、$I_2\approx21\,250$、$I_{12}\approx12\,960$、$I\approx46\,170\ \text{W/m}^2$；$V=0.96$。</div>
+  <p class="small"><a href="#o10-7-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k18m3" data-group="一、兩光束干涉：照度極大、極小與對比度" data-title="2018 期中第 3 題：V=3/4">
+  <h3>2018 期中第 3 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k18m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/25/2018</p><p>3. (20%) 兩道光進行干涉實驗，形成干涉條紋。</p><p>(a) 若一道光之照度恰為另一道光照度的 N 倍 (N&gt;1)，試求此時干涉條紋之對比度 (contrast 或 fringe visibility) 為多少（以 N 表示）？</p><p>(b) 若干涉條紋之對比度恰為 3/4，試求照度較大的那道光之照度為另一道光之照度的多少倍？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　兩道光干涉，一道光的照度是另一道的 $N$ 倍（$N\gt1$）。(a) 求干涉條紋的對比度（以 $N$ 表示）；(b) 若對比度為 $\tfrac34$，照度較大的那道光是另一道的幾倍？</div>
+  <div class="rote">
+    <p><b>看到</b>「一道光的照度是另一道的 $N$ 倍」＋「求對比度」＋「給對比度反求倍數」⟹ 題型：<b>對比度與照度比 $V=\dfrac{2\sqrt N}{N+1}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 對比度 $V$（以 $N$ 表示）</h5>
+      <p class="wq-step"><span class="memo">背：$I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$</span>
+        <span class="syms">$I$：疊加後的照度；$I_1$、$I_2$：兩道光各自的照度；$\delta$：兩道光的相位差；$\cos\delta=+1$ 是亮紋、$\cos\delta=-1$ 是暗紋</span>
+        題目給 $I_1=NI_2$，代入後取 $\cos\delta=\pm1$ 就是最亮與最暗。<br>
+        $I_{\max}=(N+1+2\sqrt N)I_2,\qquad I_{\min}=(N+1-2\sqrt N)I_2$</p>
+      <p class="wq-step"><span class="memo">背：$V=\dfrac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}$</span>
+        <span class="syms">$V$：條紋對比度（無單位）；$I_{\max}$：最亮處的照度；$I_{\min}$：最暗處的照度</span>
+        代入上面兩式，$I_2$ 上下約掉。<br>
+        $V=\dfrac{(N+1+2\sqrt N)-(N+1-2\sqrt N)}{(N+1+2\sqrt N)+(N+1-2\sqrt N)}=\dfrac{4\sqrt N}{2(N+1)}=\dfrac{2\sqrt N}{N+1}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 對比度 $\tfrac34$ 時的倍數 $N$</h5>
+      <p class="wq-step"><span class="memo">背：令 $x=\sqrt N$，一元二次公式 $x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$x$：$\sqrt N$；$N$：較亮的光是較暗的光的幾倍；$a$、$b$、$c$：方程式 $ax^2+bx+c=0$ 的三個係數</span>
+        把 $V=\tfrac34$ 代進 (a) 的式子，兩邊乘 $4(N+1)$ 變成 $x$ 的二次方程式；題目規定 $N\gt1$，只留 $x\gt1$ 的根。<br>
+        $\dfrac34=\dfrac{2x}{x^2+1}\ \Longrightarrow\ 3x^2-8x+3=0$<br>
+        $x=\dfrac{8\pm\sqrt{64-36}}{6}=\dfrac{4\pm\sqrt7}{3}=2.215\ \text{或}\ 0.451$，取 $x=2.215$<br>
+        $N=x^2=\left(\dfrac{4+\sqrt7}{3}\right)^2=\dfrac{23+8\sqrt7}{9}=4.91$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $2\sqrt N/(N+1)$；(b) $N\approx4.91$。</div>
+  <p class="small"><a href="#o10-k18m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-7-6" data-group="二、楊氏雙狹縫干涉" data-title="作業 7-6：第 4 暗紋＝第 3 亮紋">
+  <h3>Pedrotti 7-6（作業）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>6</b> Two slits are illuminated by light that consists of two wavelengths. One wavelength is known to be 436 nm. On a screen, the fourth minimum of the 436-nm light coincides with the third maximum of the other light. What is the wavelength of the other light?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　436 nm 的第 4 極小與另一波長的第 3 極大重合，求另一波長。</div>
+  <div class="rote">
+    <p><b>看到</b>「雙狹縫」＋「兩個波長」＋「某波長的第幾暗紋和另一波長的第幾亮紋重合」⟹ 題型：<b>楊氏雙狹縫：兩個波長的條紋重合</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>另一個波長 $\lambda_2$</h5>
+      <p class="wq-step"><span class="memo">背：暗紋 $a\sin\theta=\left(m+\tfrac12\right)\lambda$（第 1 個暗紋是 $m=0$）</span>
+        <span class="syms">$a$：兩狹縫間距（m）；$\theta$：屏幕上該點相對狹縫中心的角度；$m$：級數（整數）；$\lambda$：波長（m）</span>
+        暗紋從 $m=0$ 開始數，所以 436 nm 的第 4 個暗紋是 $m=3$。<br>
+        $a\sin\theta=\left(3+\tfrac12\right)\lambda_1=3.5\lambda_1$</p>
+      <p class="wq-step"><span class="memo">背：亮紋 $a\sin\theta=m\lambda$（中央亮紋 $m=0$ 不算第幾個）</span>
+        <span class="syms">$a$：兩狹縫間距（m）；$\theta$：屏幕上該點相對狹縫中心的角度；$m$：級數（整數）；$\lambda$：波長（m）</span>
+        另一波長的第 3 亮紋是 $m=3$；兩條紋重合表示在同一個 $\theta$，所以兩個 $a\sin\theta$ 相等，不必知道 $a$。<br>
+        $3.5\lambda_1=3\lambda_2\ \Longrightarrow\ \lambda_2=\dfrac{3.5}{3}(436\ \text{nm})=508.7\ \text{nm}$</p>
+    </div>
+  </div>
+  <div class="final">答：$\lambda_2\approx509\ \text{nm}$。</div>
+  <p class="small"><a href="#o10-7-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k18m4" data-group="二、楊氏雙狹縫干涉" data-title="2018 期中第 4 題：L 與玻璃片平移">
+  <h3>2018 期中第 4 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k18m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/25/2018</p><p>4. (20%) 利用楊氏干涉的架構進行實驗。若兩狹縫間距為 0.6 mm，波長為 550 nm。</p><p>(a) 欲使干涉條紋中兩亮紋之間距為 1 mm 時，試問屏幕應置放於距離狹縫多遠處？</p><p>(b) 若將一片厚度 200 μm，折射率為 1.5 的玻璃片放在其中一個狹縫上，試求條紋會平移多少距離（在 (a) 小題中的屏幕上）？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$a=0.6\ \text{mm}$、$\lambda=550\ \text{nm}$。(a) 亮紋間距 1 mm 時屏幕距離；(b) 200 μm、$n=1.5$ 玻璃片蓋一縫，條紋平移。</div>
+  <div class="rote">
+    <p><b>看到</b>「楊氏干涉」＋「縫距、波長、亮紋間距」＋「玻璃片蓋住一個狹縫」⟹ 題型：<b>楊氏條紋間距＋玻璃片使條紋平移</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 屏幕到狹縫的距離 $L$</h5>
+      <p class="wq-step"><span class="memo">背：$\Delta y=\dfrac{\lambda L}{a}$</span>
+        <span class="syms">$\Delta y$：相鄰亮紋間距（m）；$\lambda$：波長（m）；$L$：狹縫到屏幕的距離（m）；$a$：兩狹縫間距（m）</span>
+        題目給 $\Delta y=1$ mm、$a=0.6$ mm、$\lambda=550$ nm，只剩 $L$ 未知，直接反解。<br>
+        $L=\dfrac{a\,\Delta y}{\lambda}=\dfrac{(6\times10^{-4})(1\times10^{-3})}{550\times10^{-9}}=1.09\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 蓋上玻璃片後條紋平移的距離</h5>
+      <p class="wq-step"><span class="memo">背：玻璃片多出的光程 $=nt-t=(n-1)t$</span>
+        <span class="syms">$n$：玻璃片折射率；$t$：玻璃片厚度（m）</span>
+        玻璃片取代同樣厚度的空氣，那一路的光程從 $t$ 變成 $nt$。<br>
+        $(n-1)t=(1.5-1)(200\times10^{-6})=1\times10^{-4}\ \text{m}=\dfrac{1\times10^{-4}}{550\times10^{-9}}\lambda=181.8\lambda$</p>
+      <p class="wq-step"><span class="memo">背：中央亮紋移到 $\dfrac{ay}{L}=(n-1)t$ 的位置</span>
+        <span class="syms">$a$：兩狹縫間距（m）；$y$：條紋平移的距離（m）；$L$：狹縫到屏幕的距離（m）；$n$：玻璃片折射率；$t$：玻璃片厚度（m）</span>
+        幾何路徑差 $ay/L$ 剛好補回玻璃片多出的光程，中央亮紋就在那裡；$L$ 用 (a) 的 $1.091$ m，條紋往蓋玻璃片那一側移。<br>
+        $y=\dfrac{(n-1)tL}{a}=\dfrac{(1\times10^{-4})(1.091)}{6\times10^{-4}}=0.182\ \text{m}=18.2\ \text{cm}$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $1.09\ \text{m}$；(b) 往蓋片一側平移 $18.2\ \text{cm}$（約 182 條）。</div>
+  <p class="small"><a href="#o10-k18m4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-7-11" data-group="三、虛擬光源的干涉：洛埃鏡、菲涅耳雙面鏡、雙稜鏡" data-title="作業 7-11：雙稜鏡角">
+  <h3>Pedrotti 7-11（作業）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-11"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>11</b> Sodium light (589.3 nm) from a narrow slit illuminates a Fresnel biprism made of glass of index 1.50. The biprism is twice as far from a screen on which fringes are observed as it is from the slit. The fringes are observed to be separated by 0.03 cm. What is the biprism angle $\alpha$?</p></div>
+<p class="original-caption">Pedrotti Problem 7-11</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如圖（課本 Figure 26）：左邊是狹縫 $S$，右邊依序是雙稜鏡（標 $n=1.5$、稜鏡角 $\alpha$）和屏幕；圖下方標出狹縫到稜鏡 $d$、稜鏡到屏幕 $2d$，屏幕旁標出條紋間距 0.03 cm。鈉光 589.3 nm，求稜鏡角 $\alpha$。</div>
+  <div class="rote">
+    <p><b>看到</b>「Fresnel 雙稜鏡」＋「狹縫、稜鏡、屏幕的距離比例」＋「條紋間距」＋「求稜鏡角」⟹ 題型：<b>雙稜鏡：兩個虛擬光源的楊氏干涉</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>稜鏡角 $\alpha$</h5>
+      <p class="wq-step"><span class="memo">讀圖 26：狹縫到稜鏡 $d$，稜鏡到屏幕 $2d$，條紋間距 0.03 cm</span>
+        <span class="syms">$d$：狹縫到稜鏡的距離（m）；$s$：稜鏡到屏幕的距離（m）；$\Delta y$：屏幕上相鄰條紋的間距（m）</span>
+        圖下方的兩段箭頭分別標 $d$ 和 $2d$，屏幕右邊的小箭頭夾住相鄰兩條紋，標 0.03 cm。<br>
+        $s=2d$，$\Delta y=0.03\ \text{cm}=3\times10^{-4}\ \text{m}$</p>
+      <p class="wq-step"><span class="memo">背：薄稜鏡偏折角 $\delta=(n-1)\alpha$</span>
+        <span class="syms">$\delta$：光經過半個稜鏡的偏折角（rad）；$n$：稜鏡折射率；$\alpha$：稜鏡角（rad）</span>
+        雙稜鏡上下兩半各把光往中間偏 $\delta$，從屏幕看回去，光像是從兩個虛擬光源發出。<br>
+        $\delta=(1.50-1)\alpha=0.50\,\alpha$</p>
+      <p class="wq-step"><span class="memo">背：虛擬光源間距 $a=2d\,\delta=2d(n-1)\alpha$，到屏幕的距離 $L=d+s$</span>
+        <span class="syms">$a$：兩個虛擬光源的間距（m）；$d$：狹縫到稜鏡的距離（m）；$\delta$：偏折角（rad）；$n$：稜鏡折射率；$\alpha$：稜鏡角（rad）；$L$：虛擬光源（約在狹縫平面）到屏幕的距離（m）；$s$：稜鏡到屏幕的距離（m）</span>
+        每個虛擬光源離狹縫 $d\delta$，兩個相距 $2d\delta$；$s$ 用圖 26 讀出的 $2d$。<br>
+        $a=2d(0.50)\alpha$，$L=d+2d=3d$</p>
+      <p class="wq-step"><span class="memo">背：$\Delta y=\dfrac{\lambda L}{a}$</span>
+        <span class="syms">$\Delta y$：相鄰條紋間距（m）；$\lambda$：波長（m）；$L$：虛擬光源到屏幕的距離（m）；$a$：兩個虛擬光源的間距（m）</span>
+        代入上面的 $a$、$L$，$d$ 會約掉，所以不需要 $d$ 的數值。<br>
+        $\Delta y=\dfrac{\lambda(3d)}{2d(n-1)\alpha}=\dfrac{3\lambda}{2(n-1)\alpha}\ \Longrightarrow\ \alpha=\dfrac{3\lambda}{2(n-1)\Delta y}$<br>
+        $\alpha=\dfrac{3(589.3\times10^{-9})}{2(0.50)(3\times10^{-4})}=5.89\times10^{-3}\ \text{rad}$<br>
+        $\alpha=5.893\times10^{-3}\times\dfrac{180^\circ}{\pi}=0.338^\circ=20.3'$</p>
+    </div>
+  </div>
+  <div class="final">答：$\alpha\approx5.89\times10^{-3}\ \text{rad}=0.338^\circ=20.3'$。</div>
+  <p class="small"><a href="#o10-7-11">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k22m3" data-group="三、虛擬光源的干涉：洛埃鏡、菲涅耳雙面鏡、雙稜鏡" data-title="2022 期中第 3 題：雙稜鏡 n=1.6">
+  <h3>2022 期中第 3 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k22m3"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">附圖為考卷的圖二（只截圖，題文已轉寫）。</p>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/27/2022</p><p>3. (20%) 如下圖二，一道波長為 632.8 nm 的光先經過一狹縫 S，再入射至一 Fresnel 雙稜鏡。已知稜鏡的折射率 n=1.6，且稜鏡至屏幕的距離為稜鏡至狹縫距離的 3 倍。若屏幕上之亮紋間距為 0.04 cm，且狹縫至稜鏡的距離為 d=20 cm，試求</p><p>a. 下圖二中，稜鏡的角度 α 為多少 rad？</p><p>b. 兩虛擬光源之間的距離為多少 cm？</p><p>（提示：上學期幾何光學課程學過：當 α 很小時，光經過稜鏡的偏折角 δ ≈ α(n−1)，且 tanδ ≈ δ）</p></div>
+<p class="original-caption">下學期近代光學期中考（2022-04-27）第 3 題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如圖二：左邊是狹縫 $S$，往右距離 $d$ 處是雙稜鏡（標 $n=1.6$、稜鏡頂端標角 $\alpha$），稜鏡到右邊屏幕的距離標 $3d$，屏幕上畫出條紋並用箭頭標出條紋間距。波長 632.8 nm，屏幕上亮紋間距 0.04 cm，狹縫到稜鏡 $d=20\ \text{cm}$（提示：$\alpha$ 很小時偏折角 $\delta\approx\alpha(n-1)$，$\tan\delta\approx\delta$）。求 (a) 稜鏡角 $\alpha$（rad）；(b) 兩虛擬光源之間的距離（cm）。</div>
+  <div class="rote">
+    <p><b>看到</b>「Fresnel 雙稜鏡」＋「圖二的 $d$、$3d$」＋「亮紋間距」＋「求稜鏡角、虛擬光源距離」⟹ 題型：<b>雙稜鏡：兩個虛擬光源的楊氏干涉</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）</h5>
+      <p class="wq-step"><span class="memo">讀圖二：狹縫到稜鏡 $d$，稜鏡到屏幕 $3d$</span>
+        <span class="syms">$d$：狹縫到稜鏡的距離（m）；$s$：稜鏡到屏幕的距離（m）</span>
+        圖二下方兩段距離標 $d$ 和 $3d$；題目給 $d=20$ cm。<br>
+        $d=0.20\ \text{m}$，$s=3d=0.60\ \text{m}$</p>
+      <p class="wq-step"><span class="memo">背：薄稜鏡偏折角 $\delta=(n-1)\alpha$（題目提示）</span>
+        <span class="syms">$\delta$：光經過半個稜鏡的偏折角（rad）；$n$：稜鏡折射率；$\alpha$：稜鏡角（rad）</span>
+        雙稜鏡上下兩半各把光往中間偏 $\delta$，屏幕上的條紋像是兩個虛擬光源的楊氏干涉。<br>
+        $\delta=(1.6-1)\alpha=0.6\,\alpha$</p>
+      <p class="wq-step"><span class="memo">背：虛擬光源間距 $a=2d\,\delta=2d(n-1)\alpha$，到屏幕的距離 $L=d+s$</span>
+        <span class="syms">$a$：兩個虛擬光源的間距（m）；$d$：狹縫到稜鏡的距離（m）；$\delta$：偏折角（rad）；$n$：稜鏡折射率；$\alpha$：稜鏡角（rad）；$L$：虛擬光源（約在狹縫平面）到屏幕的距離（m）；$s$：稜鏡到屏幕的距離（m）</span>
+        每個虛擬光源離狹縫 $d\delta$（$\tan\delta\approx\delta$），兩個相距 $2d\delta$；$s$ 用圖二讀出的 $3d$。<br>
+        $a=2d(0.6)\alpha$，$L=d+3d=4d=0.80\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 稜鏡角 $\alpha$（rad）</h5>
+      <p class="wq-step"><span class="memo">背：$\Delta y=\dfrac{\lambda L}{a}$</span>
+        <span class="syms">$\Delta y$：相鄰亮紋間距（m）；$\lambda$：波長（m）；$L$：虛擬光源到屏幕的距離（m）；$a$：兩個虛擬光源的間距（m）</span>
+        代入上面的 $L=4d$、$a=2d(n-1)\alpha$，$d$ 約掉；$\Delta y=0.04$ cm 是題目給的。<br>
+        $\Delta y=\dfrac{\lambda(4d)}{2d(n-1)\alpha}=\dfrac{2\lambda}{(n-1)\alpha}\ \Longrightarrow\ \alpha=\dfrac{2\lambda}{(n-1)\Delta y}$<br>
+        $\alpha=\dfrac{2(632.8\times10^{-9})}{(0.6)(4\times10^{-4})}=5.27\times10^{-3}\ \text{rad}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 兩虛擬光源之間的距離（cm）</h5>
+      <p class="wq-step"><span class="memo">背：$a=2d(n-1)\alpha$</span>
+        <span class="syms">$a$：兩個虛擬光源的間距（m）；$d$：狹縫到稜鏡的距離（m）；$n$：稜鏡折射率；$\alpha$：稜鏡角（rad）</span>
+        $d=0.20$ m、$n=1.6$ 是題目給的，$\alpha$ 用 (a) 的 $5.273\times10^{-3}$ rad；最後換成 cm。<br>
+        $a=2(0.20)(0.6)(5.273\times10^{-3})=1.27\times10^{-3}\ \text{m}=0.127\ \text{cm}$</p>
+    </div>
+  </div>
+  <div class="final">答：a. $5.27\times10^{-3}\ \text{rad}$；b. $0.127\ \text{cm}$。</div>
+  <p class="small"><a href="#o10-k22m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-7-14" data-group="四、薄膜干涉與空氣楔" data-title="作業 7-14：油膜 525、675 nm 消光">
+  <h3>Pedrotti 7-14（作業）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-14"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>14</b> Light of continuously variable wavelength illuminates normally a thin oil (index of 1.30) film on a glass surface. Extinction of the reflected light is observed to occur at wavelengths of 525 and 675 nm in the visible spectrum. Determine the thickness of the oil film and the orders of the interference.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　玻璃上的油膜 $n=1.30$，正向，反射在 525、675 nm 消光。求厚度與級數。</div>
+  <div class="rote">
+    <p><b>看到</b>「玻璃上的油膜」＋「正向入射」＋「兩個波長的反射光消失」⟹ 題型：<b>薄膜干涉：兩個波長破壞性干涉求膜厚</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>油膜厚度 $t$ 與干涉級數</h5>
+      <p class="wq-step"><span class="memo">背：反射相位：低折射率→高折射率（外反射）多 $\pi$，高→低（內反射）不變；兩次同類 $\Delta_r=0$，一外一內 $\Delta_r=\dfrac{\lambda}{2}$</span>
+        <span class="syms">$\Delta_r$：兩道反射光因反射相位不同造成的光程差（m）；$\lambda$：真空波長（m）</span>
+        空氣→油（1→1.30）和油→玻璃（1.30→約 1.5）都是外反射，兩次都多 $\pi$，互相抵消。<br>
+        $\Delta_r=0$</p>
+      <p class="wq-step"><span class="memo">背：破壞性干涉 $2n_ft\cos\theta_t+\Delta_r=\left(m+\tfrac12\right)\lambda$</span>
+        <span class="syms">$n_f$：膜的折射率；$t$：膜厚（m）；$\theta_t$：膜內的折射角；$\Delta_r$：反射相位造成的光程差（m）；$m$：干涉級數（整數）；$\lambda$：真空波長（m）</span>
+        正向入射 $\cos\theta_t=1$。同一個厚度要讓兩個波長都消光，長波長級數較低，所以設 675 nm 是第 $m$ 級、525 nm 是第 $m+1$ 級，兩個 $2n_ft$ 相等。<br>
+        $\left(m+\tfrac12\right)(675)=\left(m+\tfrac32\right)(525)$<br>
+        $675m+337.5=525m+787.5\ \Longrightarrow\ 150m=450\ \Longrightarrow\ m=3$<br>
+        675 nm 是第 3 級，525 nm 是第 4 級</p>
+      <p class="wq-step"><span class="memo">背：同一式解出 $t=\dfrac{\left(m+\tfrac12\right)\lambda}{2n_f}$</span>
+        <span class="syms">$t$：膜厚（nm）；$m$：干涉級數；$\lambda$：真空波長（nm）；$n_f=1.30$：油膜折射率</span>
+        用 675 nm、$m=3$ 代入，再用 525 nm、$m=4$ 檢查。<br>
+        $t=\dfrac{3.5(675\ \text{nm})}{2(1.30)}=908.7\ \text{nm}$；$\dfrac{4.5(525\ \text{nm})}{2(1.30)}=908.7\ \text{nm}$</p>
+    </div>
+  </div>
+  <div class="final">答：$t\approx909\ \text{nm}$；675 nm 第 3 級、525 nm 第 4 級。</div>
+  <p class="small"><a href="#o10-7-14">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-7-20" data-group="四、薄膜干涉與空氣楔" data-title="作業 7-20：空氣楔 40 條亮紋">
+  <h3>Pedrotti 7-20（作業）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>20</b> Two microscope slides are placed together but held apart at one end by a thin piece of tin foil. Under sodium light (589 nm) normally incident on the air film formed between the slides, one observes exactly 40 bright fringes from the edges in contact to the edge of the tin foil. Determine the thickness of the foil.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　兩玻片夾錫箔，589 nm 正向，從接觸邊到錫箔邊恰 40 條亮紋，求錫箔厚度。</div>
+  <div class="rote">
+    <p><b>看到</b>「兩片玻片一端墊錫箔（空氣楔）」＋「正向入射」＋「從接觸邊到錫箔數到 40 條亮紋」⟹ 題型：<b>空氣楔：數條紋求厚度</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>錫箔厚度 $t$</h5>
+      <p class="wq-step"><span class="memo">背：反射相位：低折射率→高折射率（外反射）多 $\pi$，高→低（內反射）不變；一外一內 $\Delta_r=\dfrac{\lambda}{2}$</span>
+        <span class="syms">$\Delta_r$：兩道反射光因反射相位不同造成的光程差（m）；$\lambda$：波長（m）</span>
+        上玻片→空氣是內反射（不變），空氣→下玻片是外反射（多 $\pi$），一內一外，所以接觸處 $t=0$ 是暗紋。<br>
+        $\Delta_r=\dfrac{\lambda}{2}$</p>
+      <p class="wq-step"><span class="memo">背：亮紋 $2n_ft\cos\theta_t+\Delta_r=m\lambda$</span>
+        <span class="syms">$n_f$：膜的折射率（空氣 $=1$）；$t$：該處空氣膜厚度（m）；$\theta_t$：膜內的折射角；$\Delta_r$：反射相位造成的光程差（m）；$m$：第幾條亮紋；$\lambda$：波長（m）</span>
+        正向 $\cos\theta_t=1$；接觸處是暗紋，第 1 條亮紋是 $m=1$，錫箔邊在第 40 條亮紋上，$m=40$。<br>
+        $2t+\dfrac{\lambda}{2}=40\lambda\ \Longrightarrow\ t=\dfrac{39.5\lambda}{2}=\dfrac{39.5(589\ \text{nm})}{2}=1.163\times10^4\ \text{nm}=11.6\ \mu\text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：約 $11.6\ \mu\text{m}$。</div>
+  <p class="small"><a href="#o10-7-20">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-7-23" data-group="五、牛頓環（一）：亮環、暗環的半徑" data-title="作業 7-23：第 10 亮環求 R">
+  <h3>Pedrotti 7-23（作業）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>23</b> Newton’s rings are formed between a spherical lens surface and an optical flat. If the tenth bright ring of green light (546.1 nm) is 7.89 mm in diameter, what is the radius of curvature of the lens surface?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　546.1 nm 第 10 亮環直徑 7.89 mm，求曲率半徑。</div>
+  <div class="rote">
+    <p><b>看到</b>「牛頓環」＋「第 10 亮環的直徑」＋「求曲率半徑」⟹ 題型：<b>牛頓環亮環半徑 $r_m^2=\left(m-\tfrac12\right)\lambda R$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>透鏡表面的曲率半徑 $R$</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：透鏡球面的曲率半徑（m）</span>
+        空氣膜一內一外反射，亮環條件 $2t+\tfrac{\lambda}{2}=m\lambda$ 配上幾何 $r^2=2Rt$ 就是這條式子。題目給的是直徑，要先除以 2 才是式子裡的半徑。<br>
+        $r_{10}=\dfrac{7.89\ \text{mm}}{2}=3.945\times10^{-3}\ \text{m}$<br>
+        $R=\dfrac{r_{10}^2}{\left(10-\tfrac12\right)\lambda}=\dfrac{(3.945\times10^{-3})^2}{9.5(546.1\times10^{-9})}=\dfrac{1.556\times10^{-5}}{5.188\times10^{-6}}=3.00\ \text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：$R\approx3.00\ \text{m}$。</div>
+  <p class="small"><a href="#o10-7-23">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k25m3" data-group="五、牛頓環（一）：亮環、暗環的半徑" data-title="2025 期中第 3 題：第 2 亮環、第 4 暗環">
+  <h3>2025 期中第 3 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k25m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/22/2025</p><p>3. (20%) 一焦距為 6.00 m 的平凸透鏡 (n=1.7328)，被用來進行牛頓環的實驗。若使用的波長為 486.1 nm，試求：</p><p>(a) 第 2 亮環的的半徑為多少 mm；</p><p>(b) 第 4 暗環的的半徑為多少 mm 。</p><p>（「的的」為原卷重複字，照原樣保留 [sic]）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$f=6.00\ \text{m}$、$n=1.7328$、486.1 nm。(a) 第 2 亮環；(b) 第 4 暗環半徑（mm）。</div>
+  <div class="rote">
+    <p><b>看到</b>「平凸透鏡的焦距與折射率」＋「牛頓環」＋「第 2 亮環、第 4 暗環半徑」⟹ 題型：<b>牛頓環：由焦距求 $R$，再分別用亮環、暗環公式</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）</h5>
+      <p class="wq-step"><span class="memo">背：平凸透鏡 $\dfrac1f=\dfrac{n-1}{R}$</span>
+        <span class="syms">$f$：透鏡焦距（m）；$n$：透鏡折射率；$R$：凸面的曲率半徑（m）</span>
+        環的半徑公式要用 $R$，題目只給 $f$ 和 $n$，先換成 $R$；透鏡的 $n$ 只用在這裡，不進干涉條件。<br>
+        $R=(n-1)f=(1.7328-1)(6.00)=4.397\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 第 2 亮環的半徑（mm）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        $m=2$、$\lambda=486.1$ nm 是題目給的，$R$ 用上面算出的 4.397 m。<br>
+        $r_2=\sqrt{1.5(486.1\times10^{-9})(4.397)}=\sqrt{3.206\times10^{-6}}=1.79\times10^{-3}\ \text{m}=1.79\ \text{mm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 第 4 暗環的半徑（mm）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 暗環 $r_m^2=m\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 暗環的半徑（m）；$m$：第幾個暗環（中心暗點不算，$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        暗環條件 $2t=m\lambda$ 配上 $r^2=2Rt$，沒有 $-\tfrac12$；$m=4$。<br>
+        $r_4=\sqrt{4(486.1\times10^{-9})(4.397)}=\sqrt{8.549\times10^{-6}}=2.92\times10^{-3}\ \text{m}=2.92\ \text{mm}$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $1.79\ \text{mm}$；(b) $2.92\ \text{mm}$。</div>
+  <p class="small"><a href="#o10-k25m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k20m4" data-group="六、牛頓環（二）：兩個波長的環重合" data-title="2020 期中第 4 題：4 亮＝3 亮">
+  <h3>2020 期中第 4 題（15%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k20m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/21/2020</p><p>4. (15%) 一牛頓環的實驗使用兩道不同的波長來進行，其中一道光的波長為 532 nm。若此波長的光產生的第 4 道亮環的位置恰與另一波長的第 3 道亮環的位置重合。若透鏡球面的曲率半徑為 80 cm，試求：</p><p>a. 另一道光的波長為多少 nm；</p><p>b. 上述亮環重合處的半徑為多少 mm；</p><p>c. 上述亮環重合處的空氣薄膜之厚度為多少 nm 。</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　牛頓環實驗用兩個不同的波長，其中一個是 532 nm；532 nm 的第 4 道亮環與另一波長的第 3 道亮環重合，透鏡球面的曲率半徑 80 cm。求 (a) 另一道光的波長（nm）；(b) 重合處的半徑（mm）；(c) 重合處空氣薄膜的厚度（nm）。</div>
+  <div class="rote">
+    <p><b>看到</b>「牛頓環」＋「兩個波長」＋「某波長的第幾亮環和另一波長的第幾亮環重合」⟹ 題型：<b>牛頓環兩波長重合（同一位置＝同一個 $2t$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 另一道光的波長 $\lambda_2$（nm）</h5>
+      <p class="wq-step"><span class="memo">背：亮環 $2t=\left(m-\tfrac12\right)\lambda$；重合 ⟺ 兩個波長的 $2t$ 相同</span>
+        <span class="syms">$t$：該處空氣膜厚度（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）</span>
+        同一個半徑就是同一個空氣膜厚度；題目給 532 nm 是第 4 亮環、另一波長是第 3 亮環。<br>
+        $\left(4-\tfrac12\right)(532)=\left(3-\tfrac12\right)\lambda_2\ \Longrightarrow\ \lambda_2=\dfrac{3.5}{2.5}(532\ \text{nm})=744.8\ \text{nm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 重合處的半徑（mm）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環；$\lambda$：波長（m）；$R$：透鏡球面的曲率半徑（m）</span>
+        用 532 nm 的第 4 亮環算，$R=0.80$ m 是題目給的。<br>
+        $r=\sqrt{3.5(532\times10^{-9})(0.80)}=\sqrt{1.490\times10^{-6}}=1.22\times10^{-3}\ \text{m}=1.22\ \text{mm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 重合處空氣薄膜的厚度（nm）</h5>
+      <p class="wq-step"><span class="memo">背：亮環 $2t=\left(m-\tfrac12\right)\lambda$</span>
+        <span class="syms">$t$：該處空氣膜厚度（nm）；$m$：第幾個亮環；$\lambda$：波長（nm）</span>
+        一樣用 532 nm 的第 4 亮環，除以 2 得到厚度。<br>
+        $t=\dfrac{3.5(532\ \text{nm})}{2}=931\ \text{nm}$</p>
+    </div>
+  </div>
+  <div class="final">答：a. $744.8\ \text{nm}$；b. $1.22\ \text{mm}$；c. $931\ \text{nm}$。</div>
+  <p class="small"><a href="#o10-k20m4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k24m3" data-group="六、牛頓環（二）：兩個波長的環重合" data-title="2024 期中第 3 題：6 亮＝8 亮">
+  <h3>2024 期中第 3 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k24m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/23/2024</p><p>3. (20%) 一牛頓環的實驗使用兩道不同的波長來進行，其中一道光的波長為 589.2 nm。若此波長的光產生的第 6 道亮環的位置恰與另一波長的第 8 道亮環的位置重合。若透鏡球面的曲率半徑為 50 cm，試求：</p><p>(a) 另一道光的波長為多少 nm？</p><p>(b) 上述亮環重合處的半徑為多少 mm？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　牛頓環實驗用兩個不同的波長，其中一個是 589.2 nm；589.2 nm 的第 6 道亮環與另一波長的第 8 道亮環重合，透鏡球面的曲率半徑 50 cm。求 (a) 另一道光的波長（nm）；(b) 重合處的半徑（mm）。</div>
+  <div class="rote">
+    <p><b>看到</b>「牛頓環」＋「兩個波長」＋「某波長的第幾亮環和另一波長的第幾亮環重合」⟹ 題型：<b>牛頓環兩波長重合（同一位置＝同一個 $2t$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 另一道光的波長 $\lambda_2$（nm）</h5>
+      <p class="wq-step"><span class="memo">背：亮環 $2t=\left(m-\tfrac12\right)\lambda$；重合 ⟺ 兩個波長的 $2t$ 相同</span>
+        <span class="syms">$t$：該處空氣膜厚度（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）</span>
+        題目給 589.2 nm 是第 6 亮環、另一波長是第 8 亮環；另一波長在同一處已經數到第 8 環，應該比較短。<br>
+        $\left(6-\tfrac12\right)(589.2)=\left(8-\tfrac12\right)\lambda_2\ \Longrightarrow\ \lambda_2=\dfrac{5.5}{7.5}(589.2\ \text{nm})=432.1\ \text{nm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 重合處的半徑（mm）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環；$\lambda$：波長（m）；$R$：透鏡球面的曲率半徑（m）</span>
+        用 589.2 nm 的第 6 亮環算，$R=0.50$ m 是題目給的。<br>
+        $r=\sqrt{5.5(589.2\times10^{-9})(0.50)}=\sqrt{1.620\times10^{-6}}=1.27\times10^{-3}\ \text{m}=1.27\ \text{mm}$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $432.1\ \text{nm}$；(b) $1.27\ \text{mm}$。</div>
+  <p class="small"><a href="#o10-k24m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k17m4" data-group="七、膜厚量測與本章其餘內容" data-title="2017 期中第 4 題：條紋平移求厚度">
+  <h3>2017 期中第 4 題（10%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k17m4"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">「干涉儀」上方手寫的「薄膜」二字是作答者的註記。</p>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/26/2017</p><p>4. (10%) 右圖 (a) 為干涉儀量測所得的干涉條紋，圖的中間因為一物體造成條紋平移了 0.8 mm（圖 (b) 中的 Δx）。若條紋的亮紋間距為 1 mm（圖 (b) 中的 x），波長為 546.1 nm，試求圖 (a) 中央待測物的厚度為多少 nm？</p></div>
+<p class="original-caption">下學期近代光學期中考（2017-04-26）第 4 題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如右圖：圖 (a) 是干涉儀拍到的一組平行條紋，中間有一段條紋被待測物整段錯開；圖 (b) 是示意圖，用平行線畫出條紋，標出相鄰亮紋的間距 $x$ 和中間那段錯開的距離 $\Delta x$。已知 $\Delta x=0.8\ \text{mm}$、$x=1\ \text{mm}$、波長 546.1 nm，求圖 (a) 中央待測物的厚度（nm）。</div>
+  <div class="rote">
+    <p><b>看到</b>「干涉條紋被物體錯開」＋「平移量 $\Delta x$、條紋間距 $x$」＋「求厚度」⟹ 題型：<b>條紋平移量測厚度：每移一條＝厚度差 $\tfrac{\lambda}{2}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>待測物的厚度 $d$（nm）</h5>
+      <p class="wq-step"><span class="memo">讀圖 (b)：$x$ 是相鄰兩條亮紋的間距，$\Delta x$ 是中間那段條紋錯開的距離</span>
+        <span class="syms">$x$：相鄰亮紋的間距（mm）；$\Delta x$：條紋平移量（mm）</span>
+        圖 (b) 中段的平行線整段往旁邊錯開 $\Delta x$，$\Delta x$ 比 $x$ 小，所以平移不到一整條。<br>
+        $x=1\ \text{mm}$，$\Delta x=0.8\ \text{mm}$</p>
+      <p class="wq-step"><span class="memo">背：平移的條數 $\Delta m=\dfrac{\Delta x}{x}$</span>
+        <span class="syms">$\Delta m$：條紋移動了幾條；$\Delta x$：條紋平移量（mm）；$x$：相鄰亮紋的間距（mm）</span>
+        用圖 (b) 讀出的兩個長度相除。<br>
+        $\Delta m=\dfrac{0.8\ \text{mm}}{1\ \text{mm}}=0.8$</p>
+      <p class="wq-step"><span class="memo">背：反射式每移一條 ⟺ 厚度差 $\dfrac{\lambda}{2}$，$d=\Delta m\cdot\dfrac{\lambda}{2}$</span>
+        <span class="syms">$d$：待測物厚度（nm）；$\Delta m$：條紋移動了幾條；$\lambda$：波長（nm）</span>
+        反射光來回走兩次，厚度差 $d$ 造成光程差 $2d$，所以一整條對應 $\tfrac{\lambda}{2}$。<br>
+        $d=0.8\times\dfrac{546.1\ \text{nm}}{2}=218.4\ \text{nm}$</p>
+    </div>
+  </div>
+  <div class="final">答：約 $218\ \text{nm}$。</div>
+  <p class="small"><a href="#o10-k17m4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k07m2" data-group="七、膜厚量測與本章其餘內容" data-title="2007 期中第 2 題：TM 薄膜建設性條件">
+  <h3>2007 期中第 2 題（20%；年份為推定）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k07m2"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">考卷印的年份被手寫遮住；同冊學長姐解答頁寫「2007/4/24」，且 2007-04-24 為星期二（2016-04-24 為星期日），判定為 2007 年（推定）。配分「(20%)」被筆跡劃過但讀得出來；圈起來的 TM 與鉛筆算式是作答者的註記。</p>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/24/（印的年份被手寫遮住；依同冊解答頁推定為 2007，不是原卷印的）</p><p>2. (20%) 在學習過 Chap.20 Fresnel Equations 之後，若有一薄膜結構如圖二所示，試寫出 TM 模態產生建設性干涉的條件。</p><p>（註：需將 Δp 及 Δr 完整表示出來，其中 Δr 為入射角的函數，需針對不同的入射角範圍加以討論）</p><p>（圖二：n<sub>0</sub> = 1／n<sub>1</sub> = 1.2／n<sub>0</sub> = 1）</p></div>
+<p class="original-caption">下學期近代光學期中考（2007-04-24）第 2 題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如圖二：三層結構，上層 $n_0=1$、中間薄膜 $n_1=1.2$（右側箭頭標出膜厚，題目沒給數字，以 $t$ 表示）、下層 $n_0=1$。學過 Fresnel 方程式之後，寫出 TM 模態產生建設性干涉的條件；$\Delta_p$ 及 $\Delta_r$ 要完整寫出，$\Delta_r$ 是入射角的函數，要分不同入射角範圍討論。</div>
+  <div class="rote">
+    <p><b>看到</b>「薄膜結構圖」＋「TM 模態」＋「$\Delta_r$ 是入射角的函數、分範圍討論」⟹ 題型：<b>斜射薄膜干涉＋TM 反射相位（過布魯斯特角會變號）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>TM 模態建設性干涉的條件</h5>
+      <p class="wq-step"><span class="memo">讀圖二：上下都是 $n_0=1$，中間的膜 $n_1=1.2$，厚度 $t$</span>
+        <span class="syms">$n_0$：膜外介質（空氣）的折射率；$n_1$：膜的折射率；$t$：膜厚（m）</span>
+        兩條水平線之間是膜，右邊的箭頭標膜厚；膜的上下兩側是同一種介質。<br>
+        $n_0=1$，$n_1=1.2$</p>
+      <p class="wq-step"><span class="memo">背：司乃耳定律 $n_0\sin\theta_i=n_1\sin\theta_t$</span>
+        <span class="syms">$n_0$：空氣折射率；$\theta_i$：入射角；$n_1$：膜的折射率；$\theta_t$：膜內的折射角</span>
+        斜射時光程差要用膜內的折射角，先用入射角表示出來。<br>
+        $\sin\theta_t=\dfrac{\sin\theta_i}{1.2}$，$\cos\theta_t=\sqrt{1-\dfrac{\sin^2\theta_i}{1.44}}$</p>
+      <p class="wq-step"><span class="memo">背：$\Delta_p=2n_1t\cos\theta_t$</span>
+        <span class="syms">$\Delta_p$：兩道反射光的路徑光程差（m）；$n_1$：膜的折射率；$t$：膜厚（m）；$\theta_t$：膜內的折射角</span>
+        代入圖二的 $n_1=1.2$ 和上一步的 $\cos\theta_t$。<br>
+        $\Delta_p=2(1.2)t\cos\theta_t=2.4\,t\sqrt{1-\dfrac{\sin^2\theta_i}{1.44}}$</p>
+      <p class="wq-step"><span class="memo">背：$r_{TM}=\dfrac{-n_t\cos\theta_{\text{入}}+n_i\cos\theta_{\text{折}}}{n_t\cos\theta_{\text{入}}+n_i\cos\theta_{\text{折}}}$</span>
+        <span class="syms">$r_{TM}$：TM 光的反射係數（正：反射相位 0；負：反射相位 $\pi$）；$n_i$：入射側折射率；$n_t$：透射側折射率；$\theta_{\text{入}}$：該界面的入射角；$\theta_{\text{折}}$：該界面的折射角</span>
+        上表面光從空氣射入膜：$n_i=1$、$n_t=1.2$，入射角 $\theta_i$、折射角 $\theta_t$。分子是 0 的角度就是布魯斯特角。<br>
+        $r_{\text{上}}=\dfrac{-1.2\cos\theta_i+\cos\theta_t}{1.2\cos\theta_i+\cos\theta_t}$，分子為 0 ⟺ $\tan\theta_i=1.2$，$\theta_p=\tan^{-1}1.2=50.2^\circ$<br>
+        $\theta_i\lt50.2^\circ$：分子為負，相位 $\pi$；$\theta_i\gt50.2^\circ$：分子為正，相位 0</p>
+      <p class="wq-step"><span class="memo">背：$r_{TM}=\dfrac{-n_t\cos\theta_{\text{入}}+n_i\cos\theta_{\text{折}}}{n_t\cos\theta_{\text{入}}+n_i\cos\theta_{\text{折}}}$</span>
+        <span class="syms">$r_{TM}$：TM 光的反射係數（正：反射相位 0；負：反射相位 $\pi$）；$n_i$：入射側折射率；$n_t$：透射側折射率；$\theta_{\text{入}}$：該界面的入射角；$\theta_{\text{折}}$：該界面的折射角</span>
+        下表面光從膜射向空氣：$n_i=1.2$、$n_t=1$；因為下面也是空氣，這個界面的入射角是 $\theta_t$、折射角是 $\theta_i$。<br>
+        $r_{\text{下}}=\dfrac{-\cos\theta_t+1.2\cos\theta_i}{\cos\theta_t+1.2\cos\theta_i}=-r_{\text{上}}$<br>
+        $\theta_i\lt50.2^\circ$：相位 0；$\theta_i\gt50.2^\circ$：相位 $\pi$</p>
+      <p class="wq-step"><span class="memo">背：兩次反射相位差 $\pi$ ⟹ $\Delta_r=\pm\dfrac{\lambda}{2}$</span>
+        <span class="syms">$\Delta_r$：反射相位不同造成的光程差（m）；$\lambda$：真空波長（m）</span>
+        上下兩面的 $r_{TM}$ 永遠異號，依上面兩步分三段寫。<br>
+        $0\le\theta_i\lt50.2^\circ$：上 $\pi$、下 0，$\Delta_r=+\dfrac{\lambda}{2}$<br>
+        $\theta_i=50.2^\circ$：$r_{TM}=0$，沒有 TM 反射光，不會干涉<br>
+        $50.2^\circ\lt\theta_i\lt90^\circ$：上 0、下 $\pi$，$\Delta_r=-\dfrac{\lambda}{2}$</p>
+      <p class="wq-step"><span class="memo">背：建設性干涉 $\Delta_p+\Delta_r=m\lambda$</span>
+        <span class="syms">$\Delta_p$：路徑光程差（m）；$\Delta_r$：反射相位造成的光程差（m）；$m$：整數級數；$\lambda$：真空波長（m）</span>
+        把 $\Delta_p$ 和兩段的 $\Delta_r$ 代進去；$+\tfrac{\lambda}{2}$ 和 $-\tfrac{\lambda}{2}$ 只差一個整波長，把 $m$ 重新編號就是同一式。<br>
+        $2.4\,t\cos\theta_t\pm\dfrac{\lambda}{2}=m\lambda$<br>
+        $$2.4\,t\sqrt{1-\frac{\sin^2\theta_i}{1.44}}=\left(m-\tfrac12\right)\lambda,\qquad \theta_i\ne50.2^\circ$$</p>
+    </div>
+  </div>
+  <div class="final">答：$2(1.2)t\sqrt{1-\sin^2\theta_i/1.44}=(m-\tfrac12)\lambda$（$\theta_i\ne50.2^\circ$）。</div>
+  <p class="small"><a href="#o10-k07m2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k09m3" data-group="九、物理考古資料夾題目" data-title="2009／2012 期中：V(N)，V=1/2">
+  <h3>2009 期中第 3 題／2012 期中第 3 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k09m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/27/2009</p><p>3. 在一具有兩道光束干涉的架構中，一道光束的照度為另一道的 N 倍，試求</p><p>(a) 此狀況下的對比值 (fringe visibility) 為多少（以 N 的函數表示）？</p><p>(b) 當對比值 0.5 時，兩道光的照度比例為多少？</p><hr><p>近代光學 期中考　5/2/2012</p><p>3. (20%) 兩道光進行干涉實驗，形成干涉條紋。</p><p>(a) 若一道光之照度恰為另一道光照度的 N 倍時，試求干涉條紋之對比度 (contrast, fringe visibility) 為多少？</p><p>(b) 若干涉條紋之對比度恰為 1/2，試求照度較大的那道光之照度為另外一道光之照度的多少倍？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　兩道光干涉（2009 與 2012 兩份考卷同一題），一道光的照度是另一道的 $N$ 倍。(a) 求條紋對比度（以 $N$ 表示）；(b) 若對比度為 $\tfrac12$（0.5），兩道光的照度比例（照度較大的是另一道的幾倍）是多少？</div>
+  <div class="rote">
+    <p><b>看到</b>「一道光的照度是另一道的 $N$ 倍」＋「求對比度」＋「給對比度反求倍數」⟹ 題型：<b>對比度與照度比 $V=\dfrac{2\sqrt N}{N+1}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 對比度 $V$（以 $N$ 表示）</h5>
+      <p class="wq-step"><span class="memo">背：$I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$</span>
+        <span class="syms">$I$：疊加後的照度；$I_1$、$I_2$：兩道光各自的照度；$\delta$：兩道光的相位差；$\cos\delta=+1$ 是亮紋、$\cos\delta=-1$ 是暗紋</span>
+        題目給 $I_1=NI_2$，代入後取 $\cos\delta=\pm1$ 就是最亮與最暗。<br>
+        $I_{\max}=(N+1+2\sqrt N)I_2,\qquad I_{\min}=(N+1-2\sqrt N)I_2$</p>
+      <p class="wq-step"><span class="memo">背：$V=\dfrac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}$</span>
+        <span class="syms">$V$：條紋對比度（無單位）；$I_{\max}$：最亮處的照度；$I_{\min}$：最暗處的照度</span>
+        代入上面兩式，$I_2$ 上下約掉。<br>
+        $V=\dfrac{(N+1+2\sqrt N)-(N+1-2\sqrt N)}{(N+1+2\sqrt N)+(N+1-2\sqrt N)}=\dfrac{4\sqrt N}{2(N+1)}=\dfrac{2\sqrt N}{N+1}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 對比度 $\tfrac12$ 時的照度比</h5>
+      <p class="wq-step"><span class="memo">背：令 $x=\sqrt N$，一元二次公式 $x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$x$：$\sqrt N$；$N$：較亮的光是較暗的光的幾倍；$a$、$b$、$c$：方程式 $ax^2+bx+c=0$ 的三個係數</span>
+        把 $V=\tfrac12$ 代進 (a) 的式子，兩邊乘 $2(N+1)$ 變成 $x$ 的二次方程式；兩根互為倒數，代表同一件事，取大於 1 的那個當「較亮的是較暗的幾倍」。<br>
+        $\dfrac12=\dfrac{2x}{x^2+1}\ \Longrightarrow\ x^2-4x+1=0$<br>
+        $x=\dfrac{4\pm\sqrt{16-4}}{2}=2\pm\sqrt3$<br>
+        $N=(2+\sqrt3)^2=7+4\sqrt3=13.9$（另一根 $(2-\sqrt3)^2=7-4\sqrt3=\dfrac{1}{13.9}$）</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $V=2\sqrt N/(N+1)$；(b) $N=7+4\sqrt3\approx13.9$。</div>
+  <p class="small"><a href="#o10-k09m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k14q2" data-group="九、物理考古資料夾題目" data-title="2014 平時考第 2 題：V=2/3">
+  <h3>2014 平時考第 2 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k14q2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 平時考　4/9/2014</p><p>2. (20%) 兩道光進行干涉實驗，形成干涉條紋。</p><p>(a) 若一道光之照度恰為另一道光照度的 N 倍 (N&gt;1)，試求此時干涉條紋之對比度 (contrast 或 fringe visibility) 為多少（以 N 表示）？</p><p>(b) 若干涉條紋之對比度恰為 2/3，試求照度較大的那道光之照度為另一道光之照度的多少倍？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　兩道光干涉，一道光的照度是另一道的 $N$ 倍（$N\gt1$）。(a) 求干涉條紋的對比度（以 $N$ 表示）；(b) 若對比度為 $\tfrac23$，照度較大的那道光是另一道的幾倍？</div>
+  <div class="rote">
+    <p><b>看到</b>「一道光的照度是另一道的 $N$ 倍」＋「求對比度」＋「給對比度反求倍數」⟹ 題型：<b>對比度與照度比 $V=\dfrac{2\sqrt N}{N+1}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 對比度 $V$（以 $N$ 表示）</h5>
+      <p class="wq-step"><span class="memo">背：$I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$</span>
+        <span class="syms">$I$：疊加後的照度；$I_1$、$I_2$：兩道光各自的照度；$\delta$：兩道光的相位差；$\cos\delta=+1$ 是亮紋、$\cos\delta=-1$ 是暗紋</span>
+        題目給 $I_1=NI_2$，代入後取 $\cos\delta=\pm1$ 就是最亮與最暗。<br>
+        $I_{\max}=(N+1+2\sqrt N)I_2,\qquad I_{\min}=(N+1-2\sqrt N)I_2$</p>
+      <p class="wq-step"><span class="memo">背：$V=\dfrac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}$</span>
+        <span class="syms">$V$：條紋對比度（無單位）；$I_{\max}$：最亮處的照度；$I_{\min}$：最暗處的照度</span>
+        代入上面兩式，$I_2$ 上下約掉。<br>
+        $V=\dfrac{(N+1+2\sqrt N)-(N+1-2\sqrt N)}{(N+1+2\sqrt N)+(N+1-2\sqrt N)}=\dfrac{4\sqrt N}{2(N+1)}=\dfrac{2\sqrt N}{N+1}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 對比度 $\tfrac23$ 時的倍數 $N$</h5>
+      <p class="wq-step"><span class="memo">背：令 $x=\sqrt N$，一元二次公式 $x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$x$：$\sqrt N$；$N$：較亮的光是較暗的光的幾倍；$a$、$b$、$c$：方程式 $ax^2+bx+c=0$ 的三個係數</span>
+        把 $V=\tfrac23$ 代進 (a) 的式子，兩邊乘 $3(N+1)$ 再除以 2；題目規定 $N\gt1$，只留 $x\gt1$ 的根。<br>
+        $\dfrac23=\dfrac{2x}{x^2+1}\ \Longrightarrow\ x^2-3x+1=0$<br>
+        $x=\dfrac{3\pm\sqrt{9-4}}{2}=\dfrac{3\pm\sqrt5}{2}=2.618\ \text{或}\ 0.382$，取 $x=2.618$<br>
+        $N=x^2=\left(\dfrac{3+\sqrt5}{2}\right)^2=\dfrac{7+3\sqrt5}{2}=6.85$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $2\sqrt N/(N+1)$；(b) $N\approx6.85$。</div>
+  <p class="small"><a href="#o10-k14q2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k13m5" data-group="九、物理考古資料夾題目" data-title="2013 期中第 5 題：N=4；V=1/3">
+  <h3>2013 期中第 5 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k13m5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/24/2013</p><p>5. (20%) 進行一干涉實驗時，若一道光的照度 I<sub>1</sub> 恰為另一道光照度 I<sub>2</sub> 的 4 倍，試求</p><p>ⓐ 干涉條紋的對比度 (fringe contrast)</p><p>ⓑ 若條紋對比度恰為 1/3，試求照度較大的光是照度較小的光之照度的多少倍？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　干涉實驗中，一道光的照度 $I_1$ 是另一道光照度 $I_2$ 的 4 倍。ⓐ 求干涉條紋的對比度；ⓑ 若條紋對比度為 $\tfrac13$，照度較大的光是照度較小的光的幾倍？</div>
+  <div class="rote">
+    <p><b>看到</b>「$I_1$ 是 $I_2$ 的幾倍」＋「求對比度」＋「給對比度反求倍數」⟹ 題型：<b>對比度與照度比 $V=\dfrac{2\sqrt N}{N+1}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）：對比度的通式</h5>
+      <p class="wq-step"><span class="memo">背：$I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$</span>
+        <span class="syms">$I$：疊加後的照度；$I_1$、$I_2$：兩道光各自的照度；$\delta$：兩道光的相位差；$\cos\delta=+1$ 是亮紋、$\cos\delta=-1$ 是暗紋</span>
+        令照度比 $N=I_1/I_2$，取 $\cos\delta=\pm1$ 得到最亮與最暗。<br>
+        $I_{\max}=(N+1+2\sqrt N)I_2,\qquad I_{\min}=(N+1-2\sqrt N)I_2$</p>
+      <p class="wq-step"><span class="memo">背：$V=\dfrac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}$</span>
+        <span class="syms">$V$：條紋對比度（無單位）；$I_{\max}$：最亮處的照度；$I_{\min}$：最暗處的照度</span>
+        代入上面兩式，$I_2$ 上下約掉。<br>
+        $V=\dfrac{4\sqrt N}{2(N+1)}=\dfrac{2\sqrt N}{N+1}$</p>
+    </div>
+    <div class="wq">
+      <h5>ⓐ $I_1=4I_2$ 時的對比度</h5>
+      <p class="wq-step"><span class="memo">背：$V=\dfrac{2\sqrt N}{N+1}$</span>
+        <span class="syms">$V$：條紋對比度（無單位）；$N$：較亮的光是較暗的光的幾倍</span>
+        題目給 4 倍，$N=4$。<br>
+        $V=\dfrac{2\sqrt4}{4+1}=\dfrac45=0.8$</p>
+    </div>
+    <div class="wq">
+      <h5>ⓑ 對比度 $\tfrac13$ 時的倍數</h5>
+      <p class="wq-step"><span class="memo">背：令 $x=\sqrt N$，一元二次公式 $x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$x$：$\sqrt N$；$N$：較亮的光是較暗的光的幾倍；$a$、$b$、$c$：方程式 $ax^2+bx+c=0$ 的三個係數</span>
+        ⓑ 和 ⓐ 的 4 倍無關。把 $V=\tfrac13$ 代進通式，兩邊乘 $3(N+1)$；要的是「較大的是較小的幾倍」，取大於 1 的根。<br>
+        $\dfrac13=\dfrac{2x}{x^2+1}\ \Longrightarrow\ x^2-6x+1=0$<br>
+        $x=\dfrac{6\pm\sqrt{36-4}}{2}=3\pm2\sqrt2$，取 $x=3+2\sqrt2=5.828$<br>
+        $N=(3+2\sqrt2)^2=17+12\sqrt2=33.97$</p>
+    </div>
+  </div>
+  <div class="final">答：ⓐ $0.8$；ⓑ 約 $34.0$ 倍。</div>
+  <p class="small"><a href="#o10-k13m5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k17q4" data-group="九、物理考古資料夾題目" data-title="2017 平時考第 4 題：N=3；V=1/3">
+  <h3>2017 平時考第 4 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k17q4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 平時考　4/12/2017</p><p>4. (20%) 進行一干涉實驗時，若一道光的照度 I<sub>1</sub> 恰為另一道光照度 I<sub>2</sub> 的 3 倍，試求</p><p>① 此時干涉條紋的對比度 (fringe contrast)</p><p>② 若另一干涉實驗產生條紋的對比度恰為 1/3，試求此時照度較大的光是照度較小的那道光之照度的多少倍？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　干涉實驗中，一道光的照度 $I_1$ 是另一道光照度 $I_2$ 的 3 倍。① 求干涉條紋的對比度；② 另一個干涉實驗的條紋對比度為 $\tfrac13$，照度較大的光是照度較小的光的幾倍？</div>
+  <div class="rote">
+    <p><b>看到</b>「$I_1$ 是 $I_2$ 的幾倍」＋「求對比度」＋「給對比度反求倍數」⟹ 題型：<b>對比度與照度比 $V=\dfrac{2\sqrt N}{N+1}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）：對比度的通式</h5>
+      <p class="wq-step"><span class="memo">背：$I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$</span>
+        <span class="syms">$I$：疊加後的照度；$I_1$、$I_2$：兩道光各自的照度；$\delta$：兩道光的相位差；$\cos\delta=+1$ 是亮紋、$\cos\delta=-1$ 是暗紋</span>
+        令照度比 $N=I_1/I_2$，取 $\cos\delta=\pm1$ 得到最亮與最暗。<br>
+        $I_{\max}=(N+1+2\sqrt N)I_2,\qquad I_{\min}=(N+1-2\sqrt N)I_2$</p>
+      <p class="wq-step"><span class="memo">背：$V=\dfrac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}$</span>
+        <span class="syms">$V$：條紋對比度（無單位）；$I_{\max}$：最亮處的照度；$I_{\min}$：最暗處的照度</span>
+        代入上面兩式，$I_2$ 上下約掉。<br>
+        $V=\dfrac{4\sqrt N}{2(N+1)}=\dfrac{2\sqrt N}{N+1}$</p>
+    </div>
+    <div class="wq">
+      <h5>① $I_1=3I_2$ 時的對比度</h5>
+      <p class="wq-step"><span class="memo">背：$V=\dfrac{2\sqrt N}{N+1}$</span>
+        <span class="syms">$V$：條紋對比度（無單位）；$N$：較亮的光是較暗的光的幾倍</span>
+        題目給 3 倍，$N=3$。<br>
+        $V=\dfrac{2\sqrt3}{3+1}=\dfrac{\sqrt3}{2}=0.866$</p>
+    </div>
+    <div class="wq">
+      <h5>② 對比度 $\tfrac13$ 時的倍數</h5>
+      <p class="wq-step"><span class="memo">背：令 $x=\sqrt N$，一元二次公式 $x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$x$：$\sqrt N$；$N$：較亮的光是較暗的光的幾倍；$a$、$b$、$c$：方程式 $ax^2+bx+c=0$ 的三個係數</span>
+        ② 是另一個實驗，和 ① 的 3 倍無關。把 $V=\tfrac13$ 代進通式，兩邊乘 $3(N+1)$，取大於 1 的根。<br>
+        $\dfrac13=\dfrac{2x}{x^2+1}\ \Longrightarrow\ x^2-6x+1=0$<br>
+        $x=\dfrac{6\pm\sqrt{36-4}}{2}=3\pm2\sqrt2$，取 $x=3+2\sqrt2=5.828$<br>
+        $N=(3+2\sqrt2)^2=17+12\sqrt2=33.97$</p>
+    </div>
+  </div>
+  <div class="final">答：① $0.866$；② 約 $34.0$ 倍。</div>
+  <p class="small"><a href="#o10-k17q4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k17m3" data-group="九、物理考古資料夾題目" data-title="2017 期中第 3 題：雙稜鏡 n=1.8">
+  <h3>2017 期中第 3 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k17m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/26/2017</p><p>3. (20%) 如右圖，一道波長為 589.3 nm 的光先經過一道狹縫，再入射至一 Fresnel 雙稜鏡。已知稜鏡之折射率為 1.8 且稜鏡至屏幕的距離是稜鏡至狹縫距離的 2 倍。若屏幕上亮紋之間隔距離為 0.02 cm，且狹縫至稜鏡的距離為 10 cm，試求：</p><p>① 稜鏡的角度 (α) 為多少 rad？</p><p>② 兩虛擬光源之間的距離為多少 cm？</p><p>【提示：上學期幾何光學中學過：光經過稜鏡的偏折角 δ ≃ α(n−1)，當 α 很小】</p></div>
+<p class="original-caption">下學期近代光學期中考（2017-04-26）第 3 題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如右圖：狹縫 $S$ 在左，往右依序是雙稜鏡（標 $n=1.8$、稜鏡角 $\alpha$）和屏幕；圖下方標出狹縫到稜鏡 $d$、稜鏡到屏幕 $2d$，屏幕旁標出亮紋間距 0.02 cm。波長 589.3 nm，狹縫到稜鏡 10 cm（提示：偏折角 $\delta\simeq\alpha(n-1)$，$\alpha$ 很小）。求 ① 稜鏡角 $\alpha$（rad）；② 兩虛擬光源之間的距離（cm）。</div>
+  <div class="rote">
+    <p><b>看到</b>「Fresnel 雙稜鏡」＋「右圖的 $d$、$2d$」＋「亮紋間距」＋「求稜鏡角、虛擬光源距離」⟹ 題型：<b>雙稜鏡：兩個虛擬光源的楊氏干涉</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）</h5>
+      <p class="wq-step"><span class="memo">讀右圖：狹縫到稜鏡 $d$，稜鏡到屏幕 $2d$，亮紋間距 0.02 cm</span>
+        <span class="syms">$d$：狹縫到稜鏡的距離（m）；$s$：稜鏡到屏幕的距離（m）；$\Delta y$：相鄰亮紋間距（m）</span>
+        圖下方兩段箭頭標 $d$ 和 $2d$，屏幕右邊的小箭頭標 0.02 cm；題目給 $d=10$ cm。<br>
+        $d=0.10\ \text{m}$，$s=2d=0.20\ \text{m}$，$\Delta y=2\times10^{-4}\ \text{m}$</p>
+      <p class="wq-step"><span class="memo">背：虛擬光源到屏幕的距離 $L=d+s$</span>
+        <span class="syms">$L$：虛擬光源（約在狹縫平面）到屏幕的距離（m）；$d$：狹縫到稜鏡的距離（m）；$s$：稜鏡到屏幕的距離（m）</span>
+        兩個虛擬光源和狹縫差不多在同一個平面，所以從狹縫量到屏幕。<br>
+        $L=0.10+0.20=0.30\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>① 稜鏡角 $\alpha$（rad）</h5>
+      <p class="wq-step"><span class="memo">背：薄稜鏡偏折角 $\delta=(n-1)\alpha$（題目提示）</span>
+        <span class="syms">$\delta$：光經過半個稜鏡的偏折角（rad）；$n$：稜鏡折射率；$\alpha$：稜鏡角（rad）</span>
+        雙稜鏡上下兩半各把光往中間偏 $\delta$，屏幕上的條紋像是兩個虛擬光源的楊氏干涉。<br>
+        $\delta=(1.8-1)\alpha=0.8\,\alpha$</p>
+      <p class="wq-step"><span class="memo">背：虛擬光源間距 $a=2d\,\delta=2d(n-1)\alpha$</span>
+        <span class="syms">$a$：兩個虛擬光源的間距（m）；$d$：狹縫到稜鏡的距離（m）；$\delta$：偏折角（rad）；$n$：稜鏡折射率；$\alpha$：稜鏡角（rad）</span>
+        每個虛擬光源離狹縫 $d\delta$，兩個相距 $2d\delta$。<br>
+        $a=2(0.10)(0.8)\alpha=0.16\,\alpha$</p>
+      <p class="wq-step"><span class="memo">背：$\Delta y=\dfrac{\lambda L}{a}$</span>
+        <span class="syms">$\Delta y$：相鄰亮紋間距（m）；$\lambda$：波長（m）；$L$：虛擬光源到屏幕的距離（m）；$a$：兩個虛擬光源的間距（m）</span>
+        把 $a=2d(n-1)\alpha$ 代進去解 $\alpha$；$L=0.30$ m、$\Delta y$ 用右圖讀出的 0.02 cm。<br>
+        $\alpha=\dfrac{\lambda L}{2d(n-1)\Delta y}=\dfrac{(589.3\times10^{-9})(0.30)}{2(0.10)(0.8)(2\times10^{-4})}=5.53\times10^{-3}\ \text{rad}$</p>
+    </div>
+    <div class="wq">
+      <h5>② 兩虛擬光源之間的距離（cm）</h5>
+      <p class="wq-step"><span class="memo">背：$\Delta y=\dfrac{\lambda L}{a}$</span>
+        <span class="syms">$\Delta y$：相鄰亮紋間距（m）；$\lambda$：波長（m）；$L$：虛擬光源到屏幕的距離（m）；$a$：兩個虛擬光源的間距（m）</span>
+        直接反解 $a$，不必用到 $\alpha$；最後換成 cm。<br>
+        $a=\dfrac{\lambda L}{\Delta y}=\dfrac{(589.3\times10^{-9})(0.30)}{2\times10^{-4}}=8.84\times10^{-4}\ \text{m}=0.0884\ \text{cm}$</p>
+    </div>
+  </div>
+  <div class="final">答：① $5.53\times10^{-3}\ \text{rad}$；② $0.0884\ \text{cm}$。</div>
+  <p class="small"><a href="#o10-k17m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k07q1" data-group="九、物理考古資料夾題目" data-title="2007 平時考第 1 題：三層薄膜">
+  <h3>2007 平時考第 1 題（10%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k07q1"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">考卷上「可以」等鉛筆字與右上角算式是作答者的註記，轉寫時略去。</p>
+<div class="original-text" lang="en"><p>近代光學 平時考　6/1/07</p><p>① (10%) 一個三層薄膜結構，如右圖。若中間層薄膜厚度 2 μm，且光垂直入射，試求哪些波長（真空中的波長 λ<sub>0</sub>）在反射光產生建設性干涉？（必須求出 Δr）</p><p>（圖一：n<sub>1</sub> = 4/3、n<sub>2</sub> = 2、n<sub>3</sub> = 4/3，t = 2 μm）</p></div>
+<p class="original-caption">下學期近代光學平時考（2007-06-01）第 1 題</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　如圖一：光由上方垂直向下射入；三層結構由上到下是 $n_1=\tfrac43$、$n_2=2$（中間層，右側標厚度 $t=2\ \mu\text{m}$）、$n_3=\tfrac43$。求哪些波長（真空中的波長 $\lambda_0$）在反射光產生建設性干涉（必須求出 $\Delta_r$）。</div>
+  <div class="rote">
+    <p><b>看到</b>「三層薄膜圖」＋「垂直入射」＋「反射光建設性干涉的波長」＋「必須求 $\Delta_r$」⟹ 題型：<b>薄膜干涉：反射相位＋建設性條件</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>反射光建設性干涉的波長 $\lambda_0$（含 $\Delta_r$）</h5>
+      <p class="wq-step"><span class="memo">讀圖一：由上到下 $n_1=\tfrac43$、$n_2=2$、$n_3=\tfrac43$，中間層厚 $t=2\ \mu\text{m}$，光垂直入射</span>
+        <span class="syms">$n_1$：上層折射率；$n_2$：中間薄膜折射率；$n_3$：下層折射率；$t$：中間層厚度（μm）</span>
+        圖一的箭頭由上往下垂直射到膜上，右側的雙箭頭標出中間層厚度。<br>
+        $n_1=\tfrac43\lt n_2=2\gt n_3=\tfrac43$，$t=2\ \mu\text{m}$，$\cos\theta_t=1$</p>
+      <p class="wq-step"><span class="memo">背：反射相位：低折射率→高折射率（外反射）多 $\pi$，高→低（內反射）不變；一外一內 $\Delta_r=\dfrac{\lambda_0}{2}$</span>
+        <span class="syms">$\Delta_r$：兩道反射光因反射相位不同造成的光程差（μm）；$\lambda_0$：真空波長（μm）</span>
+        上表面 $\tfrac43\to2$ 是外反射（多 $\pi$），下表面 $2\to\tfrac43$ 是內反射（不變），兩者差 $\pi$。<br>
+        $\Delta_r=\dfrac{\lambda_0}{2}$</p>
+      <p class="wq-step"><span class="memo">背：$\Delta_p=2n_2t\cos\theta_t$</span>
+        <span class="syms">$\Delta_p$：兩道反射光的路徑光程差（μm）；$n_2$：中間薄膜折射率；$t$：膜厚（μm）；$\theta_t$：膜內折射角</span>
+        垂直入射 $\cos\theta_t=1$，$n_2$、$t$ 用圖一讀出的值。<br>
+        $\Delta_p=2(2)(2\ \mu\text{m})=8\ \mu\text{m}$</p>
+      <p class="wq-step"><span class="memo">背：建設性干涉 $\Delta_p+\Delta_r=m\lambda_0$</span>
+        <span class="syms">$\Delta_p$：路徑光程差（μm）；$\Delta_r$：反射相位造成的光程差（μm）；$m$：整數級數（$m=1,2,\ldots$）；$\lambda_0$：真空波長（μm）</span>
+        代入上面兩步，解出 $\lambda_0$ 的通式；再挑出可見光（400–700 nm）：$m-\tfrac12$ 要在 $8000/700=11.4$ 到 $8000/400=20$ 之間。<br>
+        $8\ \mu\text{m}+\dfrac{\lambda_0}{2}=m\lambda_0\ \Longrightarrow\ \lambda_0=\dfrac{8\ \mu\text{m}}{m-\tfrac12}$<br>
+        $m=12\sim20$：$\lambda_0=696,\ 640,\ 593,\ 552,\ 516,\ 485,\ 457,\ 432,\ 410\ \text{nm}$</p>
+    </div>
+  </div>
+  <div class="final">答：$\Delta_r=\lambda_0/2$；$\lambda_0=8\ \mu\text{m}/(m-\tfrac12)$。</div>
+  <p class="small"><a href="#o10-k07q1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k07q2" data-group="九、物理考古資料夾題目" data-title="2007 平時考第 2 題：第一暗環 2 mm">
+  <h3>2007 平時考第 2 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k07q2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 平時考　6/1/07</p><p>② (20%) 一平凸透鏡置於光學平台上進行牛頓環實驗，若透鏡折射率 n=1.5，使用光波長為 633 nm，且觀察到第一個暗環之半徑為 2 mm。</p><p>① 試求出透鏡凸面之曲率半徑（標明正負號及單位）</p><p>② 試求出此透鏡之焦距（標明正負號及單位）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$n=1.5$、633 nm，第一暗環半徑 2 mm。① 凸面曲率半徑；② 焦距（標正負號）。</div>
+  <div class="rote">
+    <p><b>看到</b>「平凸透鏡放在平台上做牛頓環」＋「第一個暗環半徑」＋「求曲率半徑、焦距（標正負號）」⟹ 題型：<b>牛頓環暗環反求 $R$，再用造鏡者公式求 $f$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>① 凸面的曲率半徑（含正負號）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 暗環 $r_m^2=m\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 暗環的半徑（m）；$m$：第幾個暗環（中心暗點不算，$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        透鏡和平台之間是空氣膜（$n_f=1$），透鏡的 $n=1.5$ 不進這條式子；第一個暗環 $m=1$。<br>
+        $R=\dfrac{r_1^2}{\lambda}=\dfrac{(2\times10^{-3})^2}{633\times10^{-9}}=6.32\ \text{m}$</p>
+      <p class="wq-step"><span class="memo">背：曲率半徑正負號：曲率中心在出射側為正、在入射側為負</span>
+        <span class="syms">$R_1$：光先經過的那一面的曲率半徑（m）；$R_2$：光後經過的那一面的曲率半徑（m）</span>
+        光從上方的平面射入，凸面朝下貼著平台，凸面的曲率中心在上方（入射側）。<br>
+        $R_1=\infty$，$R_2=-6.32\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>② 透鏡的焦距（含正負號）</h5>
+      <p class="wq-step"><span class="memo">背：造鏡者公式 $\dfrac1f=(n-1)\left(\dfrac1{R_1}-\dfrac1{R_2}\right)$</span>
+        <span class="syms">$f$：焦距（m）；$n$：透鏡折射率；$R_1$：光先經過的那一面的曲率半徑（m）；$R_2$：光後經過的那一面的曲率半徑（m）</span>
+        $n=1.5$ 是題目給的，$R_1$、$R_2$ 用 ① 的結果。<br>
+        $\dfrac1f=(1.5-1)\left(0-\dfrac{1}{-6.32}\right)=\dfrac{0.5}{6.32\ \text{m}}\ \Longrightarrow\ f=+12.6\ \text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：① $|R|=6.32\ \text{m}$（$R_2=-6.32\ \text{m}$）；② $f=+12.6\ \text{m}$。</div>
+  <p class="small"><a href="#o10-k07q2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k12q3" data-group="九、物理考古資料夾題目" data-title="2012 平時考第 3 題：第一暗環 1 mm">
+  <h3>2012 平時考第 3 題（30%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k12q3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 平時考　4/11/2012</p><p>3. (30%) 一平凸透鏡置於光學平台上進行牛頓環實驗。若透鏡折射率 n=1.5，使用光波長為 633 nm，且觀察到第一個暗環之半徑為 1 mm。</p><p>(a) 試求出透鏡凸面之曲率半徑（註明正負號與單位）</p><p>(b) 試求出透鏡之焦距（註明正負號與單位）</p><p>(c) 第 5 暗環處之半徑為多少 mm？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$n=1.5$、633 nm，第一暗環 1 mm。(a) $R$；(b) $f$；(c) 第 5 暗環半徑。</div>
+  <div class="rote">
+    <p><b>看到</b>「平凸透鏡放在平台上做牛頓環」＋「第一個暗環半徑」＋「求曲率半徑、焦距、第 5 暗環」⟹ 題型：<b>牛頓環暗環反求 $R$，再用造鏡者公式求 $f$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 凸面的曲率半徑（含正負號）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 暗環 $r_m^2=m\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 暗環的半徑（m）；$m$：第幾個暗環（中心暗點不算，$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        透鏡和平台之間是空氣膜，透鏡的 $n=1.5$ 不進這條式子；第一個暗環 $m=1$。<br>
+        $R=\dfrac{r_1^2}{\lambda}=\dfrac{(1\times10^{-3})^2}{633\times10^{-9}}=1.58\ \text{m}$</p>
+      <p class="wq-step"><span class="memo">背：曲率半徑正負號：曲率中心在出射側為正、在入射側為負</span>
+        <span class="syms">$R_1$：光先經過的那一面的曲率半徑（m）；$R_2$：光後經過的那一面的曲率半徑（m）</span>
+        光從上方的平面射入，凸面朝下貼著平台，凸面的曲率中心在上方（入射側）。<br>
+        $R_1=\infty$，$R_2=-1.58\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 透鏡的焦距（含正負號）</h5>
+      <p class="wq-step"><span class="memo">背：造鏡者公式 $\dfrac1f=(n-1)\left(\dfrac1{R_1}-\dfrac1{R_2}\right)$</span>
+        <span class="syms">$f$：焦距（m）；$n$：透鏡折射率；$R_1$：光先經過的那一面的曲率半徑（m）；$R_2$：光後經過的那一面的曲率半徑（m）</span>
+        $n=1.5$ 是題目給的，$R_1$、$R_2$ 用 (a) 的結果。<br>
+        $\dfrac1f=(1.5-1)\left(0-\dfrac{1}{-1.58}\right)=\dfrac{0.5}{1.58\ \text{m}}\ \Longrightarrow\ f=+3.16\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 第 5 暗環的半徑（mm）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 暗環 $r_m^2=m\lambda R$，所以 $r_m\propto\sqrt m$</span>
+        <span class="syms">$r_m$：第 $m$ 暗環的半徑（m）；$m$：第幾個暗環；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        同一個透鏡、同一個波長，$\lambda R$ 相同，第 5 暗環和第 1 暗環的半徑比就是 $\sqrt5$。<br>
+        $r_5=\sqrt{\dfrac{5\lambda R}{1\cdot\lambda R}}\,r_1=\sqrt5\,(1\ \text{mm})=2.24\ \text{mm}$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $|R|=1.58\ \text{m}$（$R_2=-1.58\ \text{m}$）；(b) $+3.16\ \text{m}$；(c) $2.24\ \text{mm}$。</div>
+  <p class="small"><a href="#o10-k12q3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k08m4" data-group="九、物理考古資料夾題目" data-title="2008 期中第 4 題：n=7/4、f=10 m">
+  <h3>2008 期中第 4 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k08m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　5/5/2008</p><p>4. (20%) 一平凸透鏡（折射率 n = 7/4）之焦距為 10 m，使用波長 λ=633 nm 的光源進行牛頓環實驗，試求</p><p>a. 第一道亮紋所在位置之半徑大小</p><p>b. 第五道暗紋所在位置之半徑大小</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　平凸透鏡（折射率 $n=7/4$）焦距 10 m，用波長 633 nm 的光做牛頓環實驗。求 (a) 第一道亮紋的半徑；(b) 第五道暗紋的半徑。</div>
+  <div class="rote">
+    <p><b>看到</b>「平凸透鏡的焦距與折射率」＋「牛頓環」＋「第幾亮紋、第幾暗紋半徑」⟹ 題型：<b>牛頓環：由焦距求 $R$，再分別用亮環、暗環公式</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）</h5>
+      <p class="wq-step"><span class="memo">背：平凸透鏡 $\dfrac1f=\dfrac{n-1}{R}$</span>
+        <span class="syms">$f$：透鏡焦距（m）；$n$：透鏡折射率；$R$：凸面的曲率半徑（m）</span>
+        環的半徑公式要用 $R$，題目只給 $f$ 和 $n$，先換成 $R$；透鏡的 $n$ 只用在這裡，不進干涉條件。<br>
+        $R=(n-1)f=\left(\tfrac74-1\right)(10)=7.5\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 第一道亮紋的半徑</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        $m=1$、$\lambda=633$ nm 是題目給的，$R$ 用上面算出的 7.5 m。<br>
+        $r_1=\sqrt{0.5(633\times10^{-9})(7.5)}=\sqrt{2.374\times10^{-6}}=1.54\times10^{-3}\ \text{m}=1.54\ \text{mm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 第五道暗紋的半徑</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 暗環 $r_m^2=m\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 暗環的半徑（m）；$m$：第幾個暗環（中心暗點不算，$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        暗環沒有 $-\tfrac12$；$m=5$。<br>
+        $r_5=\sqrt{5(633\times10^{-9})(7.5)}=\sqrt{2.374\times10^{-5}}=4.87\times10^{-3}\ \text{m}=4.87\ \text{mm}$</p>
+    </div>
+  </div>
+  <div class="final">答：a. $1.54\ \text{mm}$；b. $4.87\ \text{mm}$。</div>
+  <p class="small"><a href="#o10-k08m4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k10m5" data-group="九、物理考古資料夾題目" data-title="2010 期中第 5 題：n=1.720、f=6 m">
+  <h3>2010 期中第 5 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k10m5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/28/2010</p><p>5. (20%) 一平凸透鏡 (n=1.720)，焦距為 6 m，用來做牛頓環實驗。若使用的光波長為 633 nm，試求</p><p>(a) 第一暗環的半徑。</p><p>(b) 第 3 亮環的半徑。</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$n=1.720$、$f=6\ \text{m}$、633 nm。(a) 第一暗環；(b) 第 3 亮環半徑。</div>
+  <div class="rote">
+    <p><b>看到</b>「平凸透鏡的焦距與折射率」＋「牛頓環」＋「第一暗環、第 3 亮環半徑」⟹ 題型：<b>牛頓環：由焦距求 $R$，再分別用亮環、暗環公式</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）</h5>
+      <p class="wq-step"><span class="memo">背：平凸透鏡 $\dfrac1f=\dfrac{n-1}{R}$</span>
+        <span class="syms">$f$：透鏡焦距（m）；$n$：透鏡折射率；$R$：凸面的曲率半徑（m）</span>
+        環的半徑公式要用 $R$，題目只給 $f$ 和 $n$，先換成 $R$；透鏡的 $n$ 只用在這裡，不進干涉條件。<br>
+        $R=(n-1)f=(1.720-1)(6)=4.32\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 第一暗環的半徑</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 暗環 $r_m^2=m\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 暗環的半徑（m）；$m$：第幾個暗環（中心暗點不算，$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        $m=1$、$\lambda=633$ nm 是題目給的，$R$ 用上面算出的 4.32 m。<br>
+        $r_1=\sqrt{(633\times10^{-9})(4.32)}=\sqrt{2.735\times10^{-6}}=1.65\times10^{-3}\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 第 3 亮環的半徑</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        $m=3$，亮環要用 $m-\tfrac12=2.5$。<br>
+        $r_3=\sqrt{2.5(633\times10^{-9})(4.32)}=\sqrt{6.836\times10^{-6}}=2.61\times10^{-3}\ \text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $1.65\ \text{mm}$；(b) $2.61\ \text{mm}$。</div>
+  <p class="small"><a href="#o10-k10m5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k11m4" data-group="九、物理考古資料夾題目" data-title="2011 期中第 4 題：n=8/5、f=8 m">
+  <h3>2011 期中第 4 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k11m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/27/2011</p><p>4. (20%) 一平凸透鏡 (n = 8/5)，焦距為 8 m，用來做牛頓環實驗。若使用的光波長為 532 nm，試求</p><p>(a) 第一暗環的半徑為多少公尺？</p><p>(b) 第 5 亮環的半徑為多少公尺？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$n=8/5$、$f=8\ \text{m}$、532 nm。(a) 第一暗環；(b) 第 5 亮環半徑（m）。</div>
+  <div class="rote">
+    <p><b>看到</b>「平凸透鏡的焦距與折射率」＋「牛頓環」＋「第一暗環、第 5 亮環半徑」⟹ 題型：<b>牛頓環：由焦距求 $R$，再分別用亮環、暗環公式</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）</h5>
+      <p class="wq-step"><span class="memo">背：平凸透鏡 $\dfrac1f=\dfrac{n-1}{R}$</span>
+        <span class="syms">$f$：透鏡焦距（m）；$n$：透鏡折射率；$R$：凸面的曲率半徑（m）</span>
+        環的半徑公式要用 $R$，題目只給 $f$ 和 $n$，先換成 $R$；透鏡的 $n$ 只用在這裡，不進干涉條件。<br>
+        $R=(n-1)f=\left(\tfrac85-1\right)(8)=4.8\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 第一暗環的半徑（m）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 暗環 $r_m^2=m\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 暗環的半徑（m）；$m$：第幾個暗環（中心暗點不算，$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        $m=1$、$\lambda=532$ nm 是題目給的，$R$ 用上面算出的 4.8 m；題目要公尺。<br>
+        $r_1=\sqrt{(532\times10^{-9})(4.8)}=\sqrt{2.554\times10^{-6}}=1.60\times10^{-3}\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 第 5 亮環的半徑（m）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        $m=5$，亮環要用 $m-\tfrac12=4.5$。<br>
+        $r_5=\sqrt{4.5(532\times10^{-9})(4.8)}=\sqrt{1.149\times10^{-5}}=3.39\times10^{-3}\ \text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $1.60\times10^{-3}\ \text{m}$；(b) $3.39\times10^{-3}\ \text{m}$。</div>
+  <p class="small"><a href="#o10-k11m4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k21m5" data-group="九、物理考古資料夾題目" data-title="2021 期中第 5 題：656.3 nm 第 3、6 亮環">
+  <h3>2021 期中第 5 題（20%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k21m5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/27/2021</p><p>5. (20%) 一焦距為 5.00 m 的平凸透鏡 (n=1.7076)，被用來進行牛頓環的實驗。若使用的波長為 656.3 nm，試求：</p><p>a. 第 3 亮環的的半徑為多少 mm；</p><p>b. 第 6 亮環的的半徑為多少 mm 。</p><p>（「的的」為原卷重複字，照原樣保留 [sic]）</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　焦距 5.00 m 的平凸透鏡（$n=1.7076$）用來做牛頓環實驗，波長 656.3 nm。求 (a) 第 3 亮環的半徑（mm）；(b) 第 6 亮環的半徑（mm）。</div>
+  <div class="rote">
+    <p><b>看到</b>「平凸透鏡的焦距與折射率」＋「牛頓環」＋「第 3、第 6 亮環半徑」⟹ 題型：<b>牛頓環：由焦距求 $R$，再用亮環公式</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（兩小題共用）</h5>
+      <p class="wq-step"><span class="memo">背：平凸透鏡 $\dfrac1f=\dfrac{n-1}{R}$</span>
+        <span class="syms">$f$：透鏡焦距（m）；$n$：透鏡折射率；$R$：凸面的曲率半徑（m）</span>
+        環的半徑公式要用 $R$，題目只給 $f$ 和 $n$，先換成 $R$；透鏡的 $n$ 只用在這裡，不進干涉條件。<br>
+        $R=(n-1)f=(1.7076-1)(5.00)=3.538\ \text{m}$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 第 3 亮環的半徑（mm）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        $m=3$、$\lambda=656.3$ nm 是題目給的，$R$ 用上面算出的 3.538 m。<br>
+        $r_3=\sqrt{2.5(656.3\times10^{-9})(3.538)}=\sqrt{5.805\times10^{-6}}=2.41\times10^{-3}\ \text{m}=2.41\ \text{mm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 第 6 亮環的半徑（mm）</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）；$R$：凸面的曲率半徑（m）</span>
+        $m=6$，其餘和 (a) 相同。<br>
+        $r_6=\sqrt{5.5(656.3\times10^{-9})(3.538)}=\sqrt{1.277\times10^{-5}}=3.57\times10^{-3}\ \text{m}=3.57\ \text{mm}$</p>
+    </div>
+  </div>
+  <div class="final">答：a. $2.41\ \text{mm}$；b. $3.57\ \text{mm}$。</div>
+  <p class="small"><a href="#o10-k21m5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k09m4" data-group="九、物理考古資料夾題目" data-title="2009 期中第 4 題：10 亮＝9 亮">
+  <h3>2009 期中第 4 題（15%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k09m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/27/2009</p><p>4. (15%) 一牛頓環量測架構以兩個波長的光束照射，其中一個波長為 546 nm。若 546 nm 的第 10 道亮環位置與另一波長的第 9 道亮環的位置重合，試求（假設球面曲率半徑為 1 m）</p><p>(a) 另一道光的波長為多少 nm？</p><p>(b) 亮環重合處距圓心有多遠？</p><p>(c) 亮環重合處的空氣層之厚度為多少？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　牛頓環量測以兩個波長照射，其中一個是 546 nm；546 nm 的第 10 道亮環與另一波長的第 9 道亮環重合（假設球面曲率半徑 1 m）。求 (a) 另一道光的波長（nm）；(b) 亮環重合處距圓心多遠；(c) 亮環重合處的空氣層厚度。</div>
+  <div class="rote">
+    <p><b>看到</b>「牛頓環」＋「兩個波長」＋「某波長的第幾亮環和另一波長的第幾亮環重合」⟹ 題型：<b>牛頓環兩波長重合（同一位置＝同一個 $2t$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 另一道光的波長 $\lambda_2$（nm）</h5>
+      <p class="wq-step"><span class="memo">背：亮環 $2t=\left(m-\tfrac12\right)\lambda$；重合 ⟺ 兩個波長的 $2t$ 相同</span>
+        <span class="syms">$t$：該處空氣膜厚度（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）</span>
+        同一個半徑就是同一個空氣膜厚度；題目給 546 nm 是第 10 亮環、另一波長是第 9 亮環。<br>
+        $\left(10-\tfrac12\right)(546)=\left(9-\tfrac12\right)\lambda_2\ \Longrightarrow\ \lambda_2=\dfrac{9.5}{8.5}(546\ \text{nm})=610.2\ \text{nm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 亮環重合處距圓心的距離</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環；$\lambda$：波長（m）；$R$：透鏡球面的曲率半徑（m）</span>
+        用 546 nm 的第 10 亮環算，$R=1$ m 是題目給的。<br>
+        $r=\sqrt{9.5(546\times10^{-9})(1)}=\sqrt{5.187\times10^{-6}}=2.28\times10^{-3}\ \text{m}=2.28\ \text{mm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 亮環重合處的空氣層厚度</h5>
+      <p class="wq-step"><span class="memo">背：亮環 $2t=\left(m-\tfrac12\right)\lambda$</span>
+        <span class="syms">$t$：該處空氣膜厚度（nm）；$m$：第幾個亮環；$\lambda$：波長（nm）</span>
+        一樣用 546 nm 的第 10 亮環，除以 2 得到厚度。<br>
+        $t=\dfrac{9.5(546\ \text{nm})}{2}=2594\ \text{nm}=2.59\ \mu\text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $610\ \text{nm}$；(b) $2.28\ \text{mm}$；(c) $2.59\ \mu\text{m}$。</div>
+  <p class="small"><a href="#o10-k09m4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k13q3" data-group="九、物理考古資料夾題目" data-title="2013 平時考第 3 題：11 亮＝10 亮">
+  <h3>2013 平時考第 3 題（30%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k13q3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 平時考　4/10/2013</p><p>3. (30%) 一牛頓環的實驗使用兩道不同波長的光來進行，其中一道光的波長為 546 nm。若 546 nm 的光產生的第 11 道亮環位置恰與另一波長的第 10 道亮環的位置重合，試求</p><p>(a) 另一道光的波長</p><p>(b) 上述亮環重合處的半徑為何</p><p>(c) 上述亮環重合處的空氣薄膜之厚度</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　牛頓環實驗用兩個不同的波長，其中一個是 546 nm；546 nm 的第 11 道亮環與另一波長的第 10 道亮環重合。求 (a) 另一道光的波長；(b) 重合處的半徑；(c) 重合處空氣薄膜的厚度。（考卷沒有給曲率半徑 $R$。）</div>
+  <div class="rote">
+    <p><b>看到</b>「牛頓環」＋「兩個波長」＋「某波長的第幾亮環和另一波長的第幾亮環重合」⟹ 題型：<b>牛頓環兩波長重合（同一位置＝同一個 $2t$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 另一道光的波長 $\lambda_2$</h5>
+      <p class="wq-step"><span class="memo">背：亮環 $2t=\left(m-\tfrac12\right)\lambda$；重合 ⟺ 兩個波長的 $2t$ 相同</span>
+        <span class="syms">$t$：該處空氣膜厚度（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）</span>
+        同一個半徑就是同一個空氣膜厚度；題目給 546 nm 是第 11 亮環、另一波長是第 10 亮環。這一小題不需要 $R$。<br>
+        $\left(11-\tfrac12\right)(546)=\left(10-\tfrac12\right)\lambda_2\ \Longrightarrow\ \lambda_2=\dfrac{10.5}{9.5}(546\ \text{nm})=603.5\ \text{nm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 重合處的半徑</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環；$\lambda$：波長（m）；$R$：透鏡球面的曲率半徑（m）</span>
+        用 546 nm 的第 11 亮環。這裡要另外假設 $R$，因為考卷沒給：先寫出式子，再取課本習題 7-25 的 $R=1$ m 代入。<br>
+        $r=\sqrt{10.5\lambda_1R}=\sqrt{10.5(546\times10^{-9})(1)}=\sqrt{5.733\times10^{-6}}=2.39\times10^{-3}\ \text{m}=2.39\ \text{mm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 重合處空氣薄膜的厚度</h5>
+      <p class="wq-step"><span class="memo">背：亮環 $2t=\left(m-\tfrac12\right)\lambda$</span>
+        <span class="syms">$t$：該處空氣膜厚度（nm）；$m$：第幾個亮環；$\lambda$：波長（nm）</span>
+        一樣用 546 nm 的第 11 亮環，除以 2 得到厚度；不需要 $R$。<br>
+        $t=\dfrac{10.5(546\ \text{nm})}{2}=2867\ \text{nm}=2.87\ \mu\text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $603.5\ \text{nm}$；(b) $\sqrt{10.5\lambda_1R}$，$R=1\ \text{m}$ 時 $2.39\ \text{mm}$；(c) $2.87\ \mu\text{m}$。</div>
+  <p class="small"><a href="#o10-k13q3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k14m3" data-group="九、物理考古資料夾題目" data-title="2014 期中第 3 題：10 亮＝8 亮">
+  <h3>2014 期中第 3 題（30%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k14m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/23/2014</p><p>3. (30%) 一牛頓環的實驗使用兩道不同波長的光束進行。其中一道光的波長為 532 nm。若此波長的光產生的第 10 道亮環位置恰與另一波長的第 8 道亮環的位置重合。若透鏡球面的曲率半徑為 80 cm，試求</p><p>(10%) (a) 另一道光的波長</p><p>(10%) (b) 上述亮環重合處的半徑為何？</p><p>(10%) (c) 上述亮環重合處的空氣薄膜之厚度</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　牛頓環實驗用兩個不同波長的光，其中一個是 532 nm；532 nm 的第 10 道亮環與另一波長的第 8 道亮環重合，透鏡球面的曲率半徑 80 cm。求 (a) 另一道光的波長；(b) 重合處的半徑；(c) 重合處空氣薄膜的厚度。</div>
+  <div class="rote">
+    <p><b>看到</b>「牛頓環」＋「兩個波長」＋「某波長的第幾亮環和另一波長的第幾亮環重合」⟹ 題型：<b>牛頓環兩波長重合（同一位置＝同一個 $2t$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 另一道光的波長 $\lambda_2$</h5>
+      <p class="wq-step"><span class="memo">背：亮環 $2t=\left(m-\tfrac12\right)\lambda$；重合 ⟺ 兩個波長的 $2t$ 相同</span>
+        <span class="syms">$t$：該處空氣膜厚度（m）；$m$：第幾個亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）</span>
+        同一個半徑就是同一個空氣膜厚度；題目給 532 nm 是第 10 亮環、另一波長是第 8 亮環。<br>
+        $\left(10-\tfrac12\right)(532)=\left(8-\tfrac12\right)\lambda_2\ \Longrightarrow\ \lambda_2=\dfrac{9.5}{7.5}(532\ \text{nm})=673.9\ \text{nm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 重合處的半徑</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 亮環 $r_m^2=\left(m-\tfrac12\right)\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 亮環的半徑（m）；$m$：第幾個亮環；$\lambda$：波長（m）；$R$：透鏡球面的曲率半徑（m）</span>
+        用 532 nm 的第 10 亮環算，$R=0.80$ m 是題目給的。<br>
+        $r=\sqrt{9.5(532\times10^{-9})(0.80)}=\sqrt{4.043\times10^{-6}}=2.01\times10^{-3}\ \text{m}=2.01\ \text{mm}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 重合處空氣薄膜的厚度</h5>
+      <p class="wq-step"><span class="memo">背：亮環 $2t=\left(m-\tfrac12\right)\lambda$</span>
+        <span class="syms">$t$：該處空氣膜厚度（nm）；$m$：第幾個亮環；$\lambda$：波長（nm）</span>
+        一樣用 532 nm 的第 10 亮環，除以 2 得到厚度。<br>
+        $t=\dfrac{9.5(532\ \text{nm})}{2}=2527\ \text{nm}=2.53\ \mu\text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $674\ \text{nm}$；(b) $2.01\ \text{mm}$；(c) $2.53\ \mu\text{m}$。</div>
+  <p class="small"><a href="#o10-k14m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="o10-k17q3" data-group="九、物理考古資料夾題目" data-title="2017 平時考第 3 題：8 暗＝7 亮">
+  <h3>2017 平時考第 3 題（30%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k17q3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 平時考　4/12/2017</p><p>3. (30%) 一牛頓環實驗使用兩種不同的波長來進行。其中一道光的波長為 589 nm。若此波長的光產生的第 8 道暗環的位置恰與另一波長的第 7 道亮環的位置重合。若透鏡的曲率半徑為 80 cm，試求</p><p>① 另一道光的波長為多少 nm？</p><p>② 上述重合位置的半徑為何（註明單位）？</p><p>③ 上述重合位置的空氣薄膜之厚度為何（註明單位）？</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　牛頓環實驗用兩種不同的波長，其中一道光是 589 nm；589 nm 的第 8 道暗環與另一波長的第 7 道亮環重合，透鏡的曲率半徑 80 cm。求 ① 另一道光的波長（nm）；② 重合位置的半徑（註明單位）；③ 重合位置空氣薄膜的厚度（註明單位）。</div>
+  <div class="rote">
+    <p><b>看到</b>「牛頓環」＋「兩個波長」＋「某波長的第幾<b>暗</b>環和另一波長的第幾<b>亮</b>環重合」⟹ 題型：<b>牛頓環兩波長重合（一暗一亮，同一個 $2t$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>① 另一道光的波長 $\lambda_2$（nm）</h5>
+      <p class="wq-step"><span class="memo">背：暗環 $2t=m\lambda$、亮環 $2t=\left(m-\tfrac12\right)\lambda$；重合 ⟺ 兩個波長的 $2t$ 相同</span>
+        <span class="syms">$t$：該處空氣膜厚度（m）；$m$：第幾個暗環或亮環（$m=1,2,\ldots$）；$\lambda$：波長（m）</span>
+        589 nm 是第 8 <b>暗</b>環（沒有 $-\tfrac12$），另一波長是第 7 亮環，兩個 $2t$ 相等。<br>
+        $8(589)=\left(7-\tfrac12\right)\lambda_2\ \Longrightarrow\ \lambda_2=\dfrac{8}{6.5}(589\ \text{nm})=724.9\ \text{nm}$</p>
+    </div>
+    <div class="wq">
+      <h5>② 重合位置的半徑</h5>
+      <p class="wq-step"><span class="memo">背：第 $m$ 暗環 $r_m^2=m\lambda R$</span>
+        <span class="syms">$r_m$：第 $m$ 暗環的半徑（m）；$m$：第幾個暗環（中心暗點不算）；$\lambda$：波長（m）；$R$：透鏡的曲率半徑（m）</span>
+        用 589 nm 的第 8 暗環算，$R=0.80$ m 是題目給的。<br>
+        $r=\sqrt{8(589\times10^{-9})(0.80)}=\sqrt{3.770\times10^{-6}}=1.94\times10^{-3}\ \text{m}=1.94\ \text{mm}$</p>
+    </div>
+    <div class="wq">
+      <h5>③ 重合位置空氣薄膜的厚度</h5>
+      <p class="wq-step"><span class="memo">背：暗環 $2t=m\lambda$</span>
+        <span class="syms">$t$：該處空氣膜厚度（nm）；$m$：第幾個暗環；$\lambda$：波長（nm）</span>
+        一樣用 589 nm 的第 8 暗環，除以 2 得到厚度。<br>
+        $t=\dfrac{8(589\ \text{nm})}{2}=2356\ \text{nm}=2.36\ \mu\text{m}$</p>
+    </div>
+  </div>
+  <div class="final">答：① $725\ \text{nm}$；② $1.94\ \text{mm}$；③ $2.36\ \mu\text{m}$。</div>
+  <p class="small"><a href="#o10-k17q3">回到正文詳解</a></p>
+</article>
+

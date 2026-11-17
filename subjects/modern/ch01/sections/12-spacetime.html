@@ -1,0 +1,164 @@
+<h2>十二、附錄 II　時空 <span class="pg">課本 Appendix II · p.46–49</span></h2>
+
+<p class="lead">一位觀察者只用尺量的長度，另一位要用尺和鐘一起量——空間和時間在相對論裡混在一起。把它們合成四維時空，就有一個所有觀察者都同意的量：時空間隔。它也決定兩個事件之間能不能有因果關係。</p>
+
+<h3 id="st-4d">12.1 四維時空與不變量 <span class="pg-tag">p.46–47</span></h3>
+
+<p>把事件看成四維時空中的點，座標是 $x,y,z$ 和 $ict$（$i=\sqrt{-1}$）。取 $ict$ 的原因是下面這個量在勞倫茲轉換下不變：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.46 Eq. (1.52)</span>
+  $$s^2=x^2+y^2+z^2-(ct)^2=x'^2+y'^2+z'^2-(ct')^2$$
+</div>
+
+<div class="step" data-step="st-check" data-sym="xt,gamma">
+  <span class="step-title">用勞倫茲轉換驗證（$y,z$ 不變，只看 $x,t$）</span>
+  $$x'^2-c^2t'^2=\gamma^2\left[(x-vt)^2-c^2\left(t-\frac{vx}{c^2}\right)^2\right]=\gamma^2\left[x^2\left(1-\frac{v^2}{c^2}\right)-c^2t^2\left(1-\frac{v^2}{c^2}\right)\right]=x^2-c^2t^2$$
+  <p>交叉項 $-2xvt$ 和 $+2xvt$ 互相抵消，剩下的正好乘上 $\gamma^2(1-v^2/c^2)=1$。</p>
+</div>
+
+<p>就像在平面上旋轉座標軸時 $x^2+y^2$ 不變（Fig. 1.24），勞倫茲轉換可以看成四維時空中座標軸的「旋轉」：$(x,y,z,ict)$ 這個四維向量本身不動，只是不同的慣性觀察者用不同的軸來分解它。</p>
+
+<p>另一個四維向量是 $(p_x,p_y,p_z,iE/c)$，它的「長度」不變：</p>
+$$p_x^2+p_y^2+p_z^2-\frac{E^2}{c^2}=p^2-\frac{E^2}{c^2}=-m^2c^2$$
+<p>這正是第 9 節的 $E^2-p^2c^2=(mc^2)^2$。</p>
+
+<h3 id="st-interval">12.2 時空間隔與因果 <span class="pg-tag">p.47–49</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.47 Eq. (1.53) Spacetime interval</span>
+  $$(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2=(c\Delta t')^2-(\Delta x')^2$$
+</div>
+
+<p>事件 1 放在原點，事件 2 在 $(\Delta x,\Delta t)$。在一個座標系得到的分類，在所有座標系都成立：</p>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>類型</th><th>條件</th><th>意義</th></tr></thead>
+  <tbody>
+    <tr><td>類時（timelike）</td><td>$(\Delta s)^2>0$，$c\Delta t>|\Delta x|$</td><td>比光慢的訊號連得起來，<strong>可能</strong>有因果關係；在光錐內。存在一個座標系讓兩事件<strong>同地點</strong>，那裡量到固有時間 $\Delta s/c$。</td></tr>
+    <tr><td>類空（spacelike）</td><td>$(\Delta s)^2<0$，$c\Delta t<|\Delta x|$</td><td>完全無關，不可能有因果；在光錐外。存在一個座標系讓兩事件<strong>同時</strong>，那裡量到固有距離 $\sqrt{-(\Delta s)^2}$。</td></tr>
+    <tr><td>類光（lightlike）</td><td>$\Delta s=0$，$c\Delta t=|\Delta x|$</td><td>只能用光連起來；在光錐面上。</td></tr>
+  </tbody>
+</table></div>
+
+<p>光錐（Fig. 1.25）：以事件 1 為頂點、邊界 $x=\pm ct$。<strong>過去光錐</strong>內是所有可能影響事件 1 的事件；<strong>未來光錐</strong>內是事件 1 能影響的事件。因為 $(\Delta s)^2$ 不變，一個事件在某座標系是另一事件的「未來」，在所有座標系都是未來——過去和未來是絕對的。但光錐外的事件，總能找到一個座標系讓它和事件 1 同時，所以「同時」是相對的。這也確認了第 2 節末的說法：一個地點的事件順序對所有人相同，沒有人能看到未來。</p>
+
+<p>粒子在時空中的路徑叫<strong>世界線</strong>（world line，Fig. 1.26），它必須一直在自己的光錐內（速度小於 $c$）。</p>
+
+<div class="anim" data-anim="light-cone"></div>
+
+<div class="problem" data-kind="self" id="st-ex1">
+  <header>
+    <div class="meta"><span class="chip">練習</span><span class="src">非課本題 · 用間隔判斷</span></div>
+    <h4>兩事件能否有因果？找讓它們同時的座標系</h4>
+    <button type="button" class="exam-btn" data-exam="st-ex1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在 $S$ 中，事件 2 比事件 1 晚 $1.00\ \mu\text{s}$、在 $600\ \text{m}$ 外（沿 $x$）。(a) 兩事件可能有因果關係嗎？(b) 若可以找到讓兩事件同時的座標系，求它相對 $S$ 的速度，以及在那裡兩事件相距多遠。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：事件 2 比事件 1 晚 $\Delta t=1.00\ \mu\text{s}=1.00\times10^{-6}\ \text{s}$，沿 $x$ 相距 $\Delta x=600\ \text{m}$（$\Delta y=\Delta z=0$）；$c=3.00\times10^8\ \text{m/s}$（題目沒給，用標準值）。</p>
+<h4>(a) 可能有因果關係嗎</h4>
+<p><strong>① 光能走多遠：</strong> 因果關係需要一個不快於光的訊號從事件 1 傳到事件 2，所以比較光在 $\Delta t$ 內走的距離和 $\Delta x$。</p>
+<div class="math-block">$$c\Delta t=(3.00\times10^8\ \text{m/s})(1.00\times10^{-6}\ \text{s})=300\ \text{m}$$</div>
+<p><strong>② 看間隔的正負號：</strong></p>
+<p class="fnote"><b>公式（時空間隔）：</b>$(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2$，其中 $\Delta t$、$\Delta x$ 為兩事件的時間差與距離；$(\Delta s)^2\gt0$ 為類時、$\lt0$ 為類空，這個分類在所有慣性座標系都一樣；本題 $c\Delta t=300\ \text{m}$、$\Delta x=600\ \text{m}$。</p>
+<div class="math-block">$$(\Delta s)^2=300^2-600^2=-2.7\times10^5\ \text{m}^2\lt0$$</div>
+<p>類空：光都來不及從事件 1 到事件 2，不可能有因果。</p>
+<div class="math-block">$$\boxed{\text{不可能有因果關係（類空）}}$$</div>
+<h4>(b) 讓兩事件同時的座標系</h4>
+<p><strong>① 求速度：</strong> 「同時」就是 $\Delta t'=0$，令勞倫茲轉換的時間差等於零解出 $v$。</p>
+<p class="fnote"><b>公式（勞倫茲轉換的時間差）：</b>$\Delta t'=\gamma\left(\Delta t-\dfrac{v\Delta x}{c^2}\right)$，其中 $v$ 為新座標系相對 $S$ 沿 $+x$ 的速度、$\Delta t'$ 為新座標系中的時間差；本題要求 $\Delta t'=0$。</p>
+<p>令 $\Delta t'=0$，括號為零：</p>
+<div class="math-block">$$v=\frac{c^2\Delta t}{\Delta x}=c\,\frac{c\Delta t}{\Delta x}$$</div>
+<p>代入 (a) 的 $c\Delta t=300\ \text{m}$ 與 $\Delta x=600\ \text{m}$：</p>
+<div class="math-block">$$v=c\,\frac{300\ \text{m}}{600\ \text{m}}=0.500c$$</div>
+<p><strong>② 那裡兩事件的距離：</strong> 不必再用 $\gamma$ 算，間隔不變：$(c\Delta t')^2-(\Delta x')^2=(c\Delta t)^2-(\Delta x)^2$，令 $\Delta t'=0$：</p>
+<div class="math-block">$$\Delta x'=\sqrt{\Delta x^2-(c\Delta t)^2}$$</div>
+<p>代入 $\Delta x=600\ \text{m}$、$c\Delta t=300\ \text{m}$：</p>
+<div class="math-block">$$\Delta x'=\sqrt{600^2-300^2}\ \text{m}=\sqrt{270000}\ \text{m}=520\ \text{m}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}v=0.500c\text{，沿 }+x\\ \text{兩事件相距 }520\ \text{m}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-12-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>同樣的起點和終點，直線世界線的固有時間最長</h4>
+    <button type="button" class="exam-btn" data-exam="sf-12-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在地球座標系中，事件 O 是 $(x,t)=(0,0)$，事件 F 是 $(0,\ 10\ \text{y})$。三條世界線都從 O 到 F：(i) 留在原地；(ii) 等速到 $(3\ \text{ly},\ 5\ \text{y})$ 再等速回來；(iii) 等速到 $(4\ \text{ly},\ 8\ \text{y})$ 再等速回來。(a) 用時空間隔求每條世界線上的鐘走了多久，並寫出 (ii)(iii) 的去程、回程速率。(b) 證明一般情形：轉折點為 $(x_1,t_1)$ 時，固有時間 $\tau=\sqrt{t_1^2-x_1^2/c^2}+\sqrt{(10\ \text{y}-t_1)^2-x_1^2/c^2}\le10\ \text{y}$，等號只在 $x_1=0$ 時成立。這和雙生子弔詭有什麼關係？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：地球座標系中 O 為 $(0,0)$、F 為 $(0,\ 10\ \text{y})$；(ii) 轉折點 $(3\ \text{ly},\ 5\ \text{y})$、(iii) 轉折點 $(4\ \text{ly},\ 8\ \text{y})$；用 $c=1\ \text{ly/y}$。</p>
+<h4>(a) 三條世界線上的鐘</h4>
+<p><strong>① 算法：</strong> 每條世界線都由等速直線段組成，等速運動的鐘走的就是該段兩端點之間的固有時間，所以每段用間隔算再相加，不必另算 $\gamma$；每段要先確認是類時。</p>
+<p class="fnote"><b>公式（固有時間與間隔）：</b>$\tau=\dfrac{\Delta s}{c}=\sqrt{\Delta t^2-\dfrac{\Delta x^2}{c^2}}$，其中 $\Delta t$、$\Delta x$ 為該段兩端點在地球座標系的時間差與位置差、$\tau$ 為沿該段等速運動的鐘走的時間；只有 $(\Delta s)^2\gt0$（類時）的段才可能是物體走的路，負的代表需要超光速。</p>
+<p><strong>② 世界線 (i)：</strong> 只有一段，$\Delta x=0$、$\Delta t=10\ \text{y}$：</p>
+<div class="math-block">$$\tau_{\text{i}}=10\ \text{y}$$</div>
+<p><strong>③ 世界線 (ii)：</strong> 去程 $(0,0)\to(3,5)$：$\Delta t=5\ \text{y}$、$\Delta x=3\ \text{ly}$；回程 $(3,5)\to(0,10)$ 也是 $5\ \text{y}$、$3\ \text{ly}$：</p>
+<div class="math-block">$$\tau_{\text{ii}}=2\sqrt{5^2-3^2}\ \text{y}=2\sqrt{16}\ \text{y}=8.0\ \text{y}$$</div>
+<p>速率 $=\Delta x/\Delta t=3/5=0.6c$（去、回程相同）。</p>
+<p><strong>④ 世界線 (iii)：</strong> 去程 $(0,0)\to(4,8)$：$\Delta t=8$、$\Delta x=4$；回程 $(4,8)\to(0,10)$：$\Delta t=2$、$\Delta x=4$：</p>
+<div class="math-block">$$\tau_{\text{去}}=\sqrt{8^2-4^2}=6.9\ \text{y}\quad(0.5c\text{，沒問題})$$</div>
+<div class="math-block">$$(\Delta s)^2_{\text{回程}}=(2)^2-(4)^2=-12\lt0\quad(\text{類空})$$</div>
+<p>回程要在 $2\ \text{y}$ 內走 $4\ \text{ly}$，速率 $2c$，不可能，所以 (iii) 不是合法的世界線。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{(i) }10\ \text{y}\\ \text{(ii) }8.0\ \text{y}\text{（來回各 }0.6c\text{）}\\ \text{(iii) 回程需要 }2c\text{，不可能}\end{gathered}}$$</div>
+<h4>(b) 一般的轉折點與雙生子</h4>
+<p><strong>① 每段不超過 $\Delta t$：</strong> 轉折點 $(x_1,t_1)$，兩段都要類時：$|x_1|\le ct_1$ 且 $|x_1|\le c(10\ \text{y}-t_1)$。每段根號裡減掉一個非負的 $x_1^2/c^2$：</p>
+<div class="math-block">$$\sqrt{\Delta t^2-\frac{x_1^2}{c^2}}\le\sqrt{\Delta t^2}=\Delta t\quad(\text{等號}\iff x_1=0)$$</div>
+<p><strong>② 兩段相加：</strong> 兩段的 $\Delta t$ 分別是 $t_1$ 和 $10\ \text{y}-t_1$：</p>
+<div class="math-block">$$\tau\le t_1+(10\ \text{y}-t_1)=10\ \text{y}$$</div>
+<p><strong>③ 和雙生子的關係：</strong> 留在地球的人走的是兩事件間唯一的慣性（直線）世界線，固有時間最長；任何離開再回來的人都走了「折線」，固有時間比較短。時空的幾何和歐氏幾何相反：歐氏平面上直線最短，時空中直線（類時）的固有時間最長。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\tau\le10\ \text{y}\text{，等號只在 }x_1=0\\ \text{旅行的雙胞胎比較年輕的幾何原因}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-12-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>用不變量求 $p+p\to p+p+\pi^0$ 的門檻動能</h4>
+    <button type="button" class="exam-btn" data-exam="sf-12-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>加速器把質子（$m_pc^2=938.27\ \text{MeV}$）射向靜止的質子靶，產生 $p+p\to p+p+\pi^0$（$m_\pi c^2=134.98\ \text{MeV}$）。(a) 利用 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 在所有座標系相同，且門檻時產物在質心系中都靜止，證明入射質子的門檻動能是 $KE_{\text{th}}=\dfrac{m_\pi(4m_p+m_\pi)c^2}{2m_p}$。(b) 求數值。(c) 為什麼答案比 $m_\pi c^2=135\ \text{MeV}$ 大很多？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m_pc^2=938.27\ \text{MeV}$、$m_\pi c^2=134.98\ \text{MeV}$；入射質子總能量 $E_1$、動量 $p_1$；靶質子靜止（$E=m_pc^2$、$p=0$）；門檻時質心系中三個產物都靜止。</p>
+<h4>(a) 證明門檻動能公式</h4>
+<p><strong>① 不變量兩邊相等：</strong> 已知的是實驗室的量，門檻條件卻在質心系才簡單，所以用兩系相同又守恆的 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 接起來：碰撞前用實驗室算＝碰撞後用質心系算。</p>
+<p class="fnote"><b>公式（相對論能量動量關係）：</b>$E^2-(pc)^2=(mc^2)^2$，其中 $E$ 為總能量、$p$ 為動量、$m$ 為質量；對整個系統，$E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 在所有慣性座標系相同，碰撞前後也守恆；本題實驗室總能量 $E_1+m_pc^2$、總動量 $p_1$，質心系門檻總能量 $(2m_p+m_\pi)c^2$、總動量 0。</p>
+<div class="math-block">$$(E_1+m_pc^2)^2-(p_1c)^2=\big[(2m_p+m_\pi)c^2\big]^2$$</div>
+<p><strong>② 消去 $p_1$：</strong> 左邊展開為 $E_1^2-(p_1c)^2+2E_1m_pc^2+(m_pc^2)^2$，再用入射質子自己的 $E_1^2-(p_1c)^2=(m_pc^2)^2$：</p>
+<div class="math-block">$$2(m_pc^2)^2+2E_1m_pc^2=(2m_p+m_\pi)^2c^4$$</div>
+<p><strong>③ 解出 $E_1$：</strong> 移項、兩邊除以 $2m_pc^2$：</p>
+<div class="math-block">$$E_1=\frac{(2m_p+m_\pi)^2-2m_p^2}{2m_p}\,c^2$$</div>
+<p><strong>④ 換成動能：</strong> $KE=E_1-m_pc^2$，把 $m_pc^2$ 寫成 $\dfrac{2m_p^2}{2m_p}c^2$ 通分：</p>
+<div class="math-block">$$KE_{\text{th}}=\frac{(2m_p+m_\pi)^2-4m_p^2}{2m_p}\,c^2$$</div>
+<p>分子用平方差 $(2m_p+m_\pi)^2-(2m_p)^2=m_\pi(4m_p+m_\pi)$：</p>
+<div class="math-block">$$\boxed{KE_{\text{th}}=\frac{m_\pi(4m_p+m_\pi)}{2m_p}\,c^2}$$</div>
+<h4>(b) 數值</h4>
+<p><strong>① 代入：</strong> 代入 $m_\pi c^2=134.98\ \text{MeV}$、$m_pc^2=938.27\ \text{MeV}$：</p>
+<div class="math-block">$$\begin{aligned}KE_{\text{th}}&amp;=\frac{(134.98)(4\times938.27+134.98)}{2(938.27)}\ \text{MeV}\\&amp;=\frac{(134.98)(3888.06)}{1876.54}\ \text{MeV}\\&amp;=279.7\ \text{MeV}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{KE_{\text{th}}=279.7\ \text{MeV}\approx280\ \text{MeV}}$$</div>
+<h4>(c) 為什麼比 $m_\pi c^2$ 大很多</h4>
+<p><strong>① 動量守恆的代價：</strong> 總動量必須守恆，產物不可能全部靜止在實驗室；整個系統要帶著動量往前跑，那部分動能不能用來產生新粒子。只有質心系中的能量能轉成靜能。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{約一半的能量必須留作整體運動的動能}\\ \text{以維持動量守恆}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2$ 在所有慣性座標系相同；勞倫茲轉換＝時空中的旋轉。</li>
+    <li>類時：可能有因果、可找到同地點的座標系；類空：無因果、可找到同時的座標系；類光：$\Delta s=0$。</li>
+    <li>過去、未來是絕對的；同時是相對的。$(p,iE/c)$ 的不變長度就是 $E^2-p^2c^2=(mc^2)^2$。</li>
+  </ol>
+</div>

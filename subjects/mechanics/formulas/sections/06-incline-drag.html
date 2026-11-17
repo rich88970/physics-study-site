@@ -1,0 +1,82 @@
+<h2>六、斜面、阻力與由速度求力 <span class="pg">Lecture 2 §5–7</span></h2>
+
+<h3 id="fx-incline">6.1 斜面與摩擦</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">斜面的分力與正向力</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2i-axes" title="5.1 座標要選得聰明">L2 §5.1</a></span></div>
+  <div class="math-block">$$F_x=mg\sin\theta,\qquad N=mg\cos\theta$$</div>
+  <p>$x$ 軸沿斜面向下、$y$ 軸垂直斜面：這樣運動只在 $x$ 方向，$y$ 方向直接得到 $N$。$N=mg\cos\theta$ 只在垂直斜面沒有其他力時成立；有斜拉的力要重算。</p>
+  <p class="symnote">符號：$\theta$＝斜面傾角。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">靜摩擦與開始滑的角度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2i-friction" title="5.2 靜摩擦與動摩擦">L2 §5.2</a></span></div>
+  <div class="math-block">$$f_s\le\mu_sN,\qquad \tan\theta_c=\mu_s$$</div>
+  <p>靜摩擦是「需要多少給多少」，最大才到 $\mu_sN$；只有在「剛好要滑」時才寫等號。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">動摩擦與滑動的加速度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2i-friction" title="5.2 靜摩擦與動摩擦">L2 §5.2</a></span></div>
+  <div class="math-block">$$f_k=\mu_kN,\qquad \ddot x=g(\sin\theta-\mu_k\cos\theta)\ \text{（下滑）}$$</div>
+  <p>方向和相對運動相反。往上滑時摩擦向下，加速度變 $-g(\sin\theta+\mu_k\cos\theta)$，上滑和下滑要分開寫。</p>
+</div>
+
+<h3 id="fx-drag">6.2 阻力</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">阻力的一般形式</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2d-law" title="6.1 阻力的形式 課本">L2 §6.1</a></span></div>
+  <div class="math-block">$$\vec F_r=-mk\,v^n\,\frac{\vec v}{v}$$</div>
+  <p>方向永遠和速度相反（$-\vec v/v$）。低速小物體 $n\approx1$、一般空氣中 $n\approx2$。$n$ 為奇數時可以寫成帶號的 $-mkv$ 一條式子管上升和下降；$n=2$ 時不行，要分段。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">水平運動的線性阻力</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2d-hor" title="6.2 水平運動的線性阻力">L2 §6.2</a></span></div>
+  <div class="math-block">$$v=v_0e^{-kt},\qquad x=\frac{v_0}k\big(1-e^{-kt}\big),\qquad v=v_0-kx$$</div>
+  <p>速度指數衰減、永遠不會真正停下，但走的總距離有限 $v_0/k$。</p>
+  <p class="symnote">符號：阻力 $F_r=-kmv$，$k$ 的單位是 $\text{s}^{-1}$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">鉛直運動的線性阻力與終端速度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2d-vert" title="6.3 鉛直運動與終端速度">L2 §6.3</a></span></div>
+  <div class="math-block">$$\dot z=-\frac gk+\Big(v_0+\frac gk\Big)e^{-kt},\qquad v_t=\frac gk$$</div>
+  <p>$z$ 向上為正、$v_0$ 帶號。時間夠長時指數項消失，速度趨近終端速度 $g/k$（重力＝阻力）。$k\to0$ 時要退回 $\dot z=v_0-gt$，可以用來檢查答案。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">線性阻力上拋的最高點</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2d-vert" title="6.3 鉛直運動與終端速度">L2 §6.3</a></span></div>
+  <div class="math-block">$$t_{\text{top}}=\frac1k\ln\!\Big(1+\frac{kv_0}g\Big),\qquad y_{\max}=\frac{v_0}k-\frac g{k^2}\ln\!\Big(1+\frac{kv_0}g\Big)$$</div>
+  <p>令 $\dot z=0$ 得時間，再代回位置。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">$v^2$ 阻力：終端速度與由靜止下落</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2d-more" title="6.4 課本習題 課本">L2 §6.4</a></span></div>
+  <div class="math-block">$$v_t=\sqrt{\frac gk},\qquad v=v_t\tanh\!\big(\sqrt{gk}\,t\big),\qquad v^2=v_t^2\big(1-e^{-2ky}\big)$$</div>
+  <p>阻力 $kmv^2$。要時間用 $\mathrm dv/(g-kv^2)$ 積出 $\tanh$；要距離用 $\tfrac12\mathrm d(v^2)/(g-kv^2)$，比較好積。</p>
+  <p class="symnote">符號：$y$＝下落的距離（向下為正）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">$v^2$ 阻力：上升的最大高度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2d-more" title="6.4 課本習題 課本">L2 §6.4</a></span></div>
+  <div class="math-block">$$x_{\max}=\frac1{2k}\ln\frac{g+kv_0^2}g,\qquad \text{回到原處的速率 }v=\frac{v_0v_t}{\sqrt{v_0^2+v_t^2}}$$</div>
+  <p>上升時重力和阻力同向（$g+kv^2$），下降時反向（$g-kv^2$），一定要在最高點分成兩段。回到原處的速率比 $v_0$ 小。</p>
+</div>
+
+<h3 id="fx-otherforce">6.3 其他形式的力</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">指數阻力的停止時間與距離</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2v-exp" title="7.1 指數阻力：船多久、多遠會停">L2 §7.1</a></span></div>
+  <div class="math-block">$$F=-\alpha e^{\beta v}:\qquad t_{\text{stop}}=\frac m{\alpha\beta}\big(1-e^{-\beta v_0}\big),\qquad x_{\text{stop}}=\frac m{\alpha\beta^2}\big[1-(1+\beta v_0)e^{-\beta v_0}\big]$$</div>
+  <p>時間用 $m\,\mathrm dv/\mathrm dt=F$、距離用 $mv\,\mathrm dv/\mathrm dx=F$，令 $v=0$；距離要分部積分 $\int ve^{-\beta v}\,\mathrm dv$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">已知 $v(x)$ 求力</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2v-force" title="7.2 已知 ">L2 §7.2</a></span></div>
+  <div class="math-block">$$F(x)=m\,v\frac{\mathrm dv}{\mathrm dx}=\frac12m\frac{\mathrm d(v^2)}{\mathrm dx}$$</div>
+  <p>不必先求 $x(t)$。要 $F(t)$ 時再由 $\mathrm dx/\mathrm dt=v(x)$ 分離變數求 $x(t)$，代進 $F(x)$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">動量不是 $mv$：相對論的定力</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2v-rel" title="7.3 動量不是 ">L2 §7.3</a></span></div>
+  <div class="math-block">$$p=\frac{mv}{\sqrt{1-v^2/c^2}}=Ft\ \Longrightarrow\ v=\frac{Ft/m}{\sqrt{1+(Ft/mc)^2}}$$</div>
+  <p>由 $F=\mathrm dp/\mathrm dt$ 直接積出 $p=Ft$（從靜止開始）再解 $v$。$t\to\infty$ 時 $v\to c$，不會超過光速；$Ft\ll mc$ 時退回 $v=Ft/m$。</p>
+</div>

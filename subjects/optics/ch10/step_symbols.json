@@ -1,0 +1,31 @@
+{
+  "_說明": "symbols 是本章符號總表；groups 決定總表分組；步驟用 data-sym 指定要提醒的符號（每頁只提醒第一次）。",
+  "symbols": {
+    "I":     { "tex": "I", "zh": "照度（irradiance，時間平均的功率面密度）", "unit": "W/m²", "note": "課本把照度寫成 $I$，避免和電場 $E$ 混淆；平面波 $I=\\tfrac12\\varepsilon_0cE_0^2$（介質中再乘 $n$）" },
+    "I12":   { "tex": "I_1,\\ I_2,\\ I_{12}", "zh": "兩道光各自的照度、干涉項", "unit": "W/m²", "note": "$I_{12}=2\\sqrt{I_1I_2}\\cos\\delta$，可正可負" },
+    "delta": { "tex": "\\delta", "zh": "兩道光在觀察點的相位差", "unit": "rad", "note": "$\\delta=k(s_2-s_1)+(\\phi_2-\\phi_1)$；也可以用光程差 $\\Delta$ 表示：$\\delta=2\\pi\\Delta/\\lambda_0$" },
+    "V":     { "tex": "V", "zh": "對比度（visibility、fringe contrast、對比值）", "unit": "—", "note": "$V=(I_{\\max}-I_{\\min})/(I_{\\max}+I_{\\min})$，介於 0 和 1" },
+    "N":     { "tex": "N", "zh": "兩道光的照度比 $I_1/I_2$", "unit": "—", "note": "$V=2\\sqrt N/(N+1)$；$N$ 和 $1/N$ 給同一個 $V$" },
+    "lam":   { "tex": "\\lambda,\\ \\lambda_0", "zh": "波長（真空中）", "unit": "nm", "note": "薄膜裡的波長是 $\\lambda_0/n_f$；本章公式裡寫 $\\lambda$ 都指真空波長" },
+    "a":     { "tex": "a", "zh": "兩個（真實或虛擬）光源的間距", "unit": "m", "note": "楊氏：狹縫間距；洛埃鏡 $a=2h$；雙面鏡 $a=2d\\theta$；雙稜鏡 $a=2d(n-1)\\alpha$" },
+    "L":     { "tex": "L", "zh": "光源平面到屏幕的距離", "unit": "m", "note": "虛擬光源的題目要從虛擬光源所在的平面算起（雙稜鏡 $L=d+s$）" },
+    "dy":    { "tex": "\\Delta y", "zh": "相鄰亮紋（或暗紋）的間距", "unit": "m", "note": "$\\Delta y=\\lambda L/a$" },
+    "alpha": { "tex": "\\alpha", "zh": "雙稜鏡的頂角（很小的那個角）", "unit": "rad", "note": "偏折角 $\\delta_m\\approx(n-1)\\alpha$（上學期幾何光學的薄稜鏡）" },
+    "n":     { "tex": "n,\\ n_f,\\ n_0,\\ n_s", "zh": "折射率（透鏡或稜鏡、薄膜、入射介質、基板）", "unit": "—", "note": "牛頓環的空氣膜 $n_f=1$；題目給的 $n$ 是透鏡的，用來由 $f$ 求 $R$" },
+    "t":     { "tex": "t,\\ t_m", "zh": "薄膜（或空氣膜）厚度；第 m 環處的空氣膜厚度", "unit": "m", "note": "" },
+    "Dp":    { "tex": "\\Delta_p", "zh": "兩道反射光的光程差（路徑造成）", "unit": "m", "note": "$\\Delta_p=2n_ft\\cos\\theta_t$，正向入射 $2n_ft$" },
+    "Dr":    { "tex": "\\Delta_r", "zh": "反射相位變化造成的等效光程差", "unit": "m", "note": "一次外反射、一次內反射 → $\\lambda/2$；兩次同類 → 0" },
+    "R":     { "tex": "R", "zh": "透鏡凸面（空氣膜）的曲率半徑", "unit": "m", "note": "$R\\approx r_m^2/2t_m$；平凸透鏡 $R=(n-1)f$" },
+    "rm":    { "tex": "r_m", "zh": "第 m 個環的半徑", "unit": "m", "note": "暗環 $r_m^2=m\\lambda R$；第 m 亮環 $r_m^2=(m-\\tfrac12)\\lambda R$" },
+    "m":     { "tex": "m", "zh": "干涉級數（第幾條紋）", "unit": "—", "note": "牛頓環的暗環 $m=0$ 是中心暗點，「第一暗環」是 $m=1$" },
+    "f":     { "tex": "f", "zh": "透鏡焦距", "unit": "m", "note": "造鏡者公式 $1/f=(n-1)(1/R_1-1/R_2)$" },
+    "tht":   { "tex": "\\theta_i,\\ \\theta_t", "zh": "入射角、薄膜內的折射角", "unit": "°", "note": "$n_0\\sin\\theta_i=n_f\\sin\\theta_t$" },
+    "dx":    { "tex": "x,\\ \\Delta x", "zh": "條紋間距、膜邊緣處條紋的平移量", "unit": "m", "note": "膜厚 $d=(\\Delta x/x)(\\lambda/2)$" }
+  },
+  "groups": [
+    { "title": "照度與對比度", "keys": ["I", "I12", "delta", "V", "N"] },
+    { "title": "楊氏與虛擬光源", "keys": ["lam", "a", "L", "dy", "alpha"] },
+    { "title": "薄膜與牛頓環", "keys": ["n", "t", "Dp", "Dr", "tht", "R", "rm", "m", "f", "dx"] }
+  ],
+  "steps": {}
+}

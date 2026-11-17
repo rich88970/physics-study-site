@@ -1,0 +1,765 @@
+<h2>九、理想氣體的熵 <span class="pg">課本 §2.6 · p.77–79</span></h2>
+
+<p class="lead">把理想氣體的多重度 (2.40) 取對數、用 Stirling，就得到 Sackur–Tetrode 公式。它告訴我們一莫耳氦有多少熵，也告訴我們體積改變時熵怎麼變——而且不論那個體積變化是慢慢推活塞，還是戳破隔板讓氣體衝進真空。</p>
+
+<h3 id="tr-st">9.1 Sackur–Tetrode 公式 <span class="pg-tag">p.77–78</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.77 Eq. (2.49) Sackur–Tetrode equation</span>
+  $$S=Nk\left[\ln\left(\frac VN\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\frac52\right]$$
+  <p>單原子理想氣體的熵：由 (2.40) 套 Stirling 近似、丟掉只是大的因子、取對數而得。</p>
+</div>
+
+<p>怎麼看這個式子？對數裡是「每個分子分到的體積 $V/N$」乘上「每個分子分到的動量空間 $(mU/N)^{3/2}$ 除以 $h^3$」，也就是每個分子平均可用的相空間格子數；熵約是 $N$ 乘上它的對數。$V$、$U$、$N$ 任一個增加，熵都增加。<strong>$V$ 底下那個 $N$</strong> 來自 $1/N!$（分子不可分辨），第 10 節的混合熵和 Gibbs 弔詭全靠它。</p>
+
+<div class="problem" data-kind="textbook" id="sc-2-31">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-31（Problem 2.31）· p.79 · 熱學小考（上）作業題</span></div>
+    <h4>推導 Sackur–Tetrode 公式</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-31">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-31"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Fill in the algebraic steps to derive the Sackur-Tetrode equation (2.49).</p></div>
+<p class="original-caption">Schroeder 習題 2-31（Problem 2.31）· p.79 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>補上推導 Sackur–Tetrode 公式 (2.49) 的代數步驟。</p></div>
+    <div class="part givens"><span class="part-label">已知的關係與目標</span>
+      <table>
+        <thead><tr><th>項目</th><th>關係</th><th>出處</th></tr></thead>
+        <tbody>
+          <tr><td>出發的多重度</td><td>$\Omega_N=\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}(2mU)^{3N/2}$</td><td>課本 (2.40) 的近似形；$(\sqrt{2mU})^{3N}=(2mU)^{3N/2}$</td></tr>
+          <tr><td>熵的定義</td><td>$S=k\ln\Omega$</td><td>課本 (2.45)</td></tr>
+          <tr><td>Stirling</td><td>$\ln n!\approx n\ln n-n$</td><td>$N$ 與 $\frac{3N}2$ 都很大；根號項 $\frac12\ln(2\pi n)$ 比 $n$ 小太多，丟掉</td></tr>
+          <tr><td>目標</td><td>(2.49) $S=Nk\left[\ln\left(\frac VN\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\frac52\right]$</td><td>題目「推導 Sackur–Tetrode 公式 (2.49)」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：補齊從多重度到 (2.49) 的每一步代數。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>熵是多重度的對數，而多重度是一堆乘、除與次方，<b>所以</b>取 $\ln$ 後每個因子各變成一項加減，可以逐項處理。</p>
+      <p><b>因為</b>兩個階乘 $N!$、$(3N/2)!$ 的引數都很大，<b>所以</b>用 Stirling 的對數形式；它帶出的 $-N\ln N$ 和 $-\frac{3N}2\ln\frac{3N}2$ 正好把 $V$ 變成 $V/N$、把 $U$ 變成 $U/N$。</p>
+      <p><b>因為</b>目標是「$N\times$（一個對數＋常數）」的形式，<b>所以</b>最後把含 $N$ 的對數項提出 $N$、併進同一個對數，剩下的常數就是 Stirling 帶來的 $1+\frac32=\frac52$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t231a" data-sym="S,V,U,m,h">
+        <span class="step-title">取對數，逐項寫開</span>
+        <p>乘變加、除變減、次方拉到前面：</p>
+        $$\begin{aligned}\frac Sk={}&N\ln V-3N\ln h+\tfrac{3N}2\ln\pi\\&+\tfrac{3N}2\ln(2mU)-\ln N!-\ln\left(\tfrac{3N}2\right)!\end{aligned}$$
+        <p>含 $h$、$\pi$、$2mU$ 的三項都寫成 $\frac{3N}2\ln(\cdots)$（$3N\ln h=\frac{3N}2\ln h^2$），合併：</p>
+        $$\frac Sk=N\ln V+\frac{3N}2\ln\frac{2\pi mU}{h^2}-\ln N!-\ln\left(\frac{3N}2\right)!$$
+      </div>
+      <div class="step" data-step="t231b">
+        <span class="step-title">Stirling</span>
+        <p>$\ln N!\approx N\ln N-N$，$\ln(\frac{3N}2)!\approx\frac{3N}2\ln\frac{3N}2-\frac{3N}2$，代入（注意前面的負號會把 $-N$ 變成 $+N$）：</p>
+        $$\begin{aligned}\frac Sk={}&N\ln V+\tfrac{3N}2\ln\tfrac{2\pi mU}{h^2}\\&-N\ln N+N-\tfrac{3N}2\ln\tfrac{3N}2+\tfrac{3N}2\end{aligned}$$
+      </div>
+      <div class="step" data-step="t231c">
+        <span class="step-title">提出 $N$、併成一個對數</span>
+        <p>$N\ln V-N\ln N=N\ln\frac VN$；兩個 $\frac{3N}2\ln$ 相減：</p>
+        $$\frac{3N}2\left[\ln\frac{2\pi mU}{h^2}-\ln\frac{3N}2\right]=\frac{3N}2\ln\frac{4\pi mU}{3Nh^2}$$
+        <p>（$\frac{2\pi mU}{h^2}\div\frac{3N}2=\frac{4\pi mU}{3Nh^2}$。）常數 $N+\frac{3N}2=\frac52N$。全部提出 $N$：</p>
+        $$\frac Sk=N\left[\ln\frac VN+\frac32\ln\frac{4\pi mU}{3Nh^2}+\frac52\right]$$
+      </div>
+      <div class="step" data-step="sc-2-31-s4">
+        <span class="step-title">寫成 (2.49)</span>
+        <p>$\frac32\ln y=\ln y^{3/2}$，兩個對數相加變成一個：</p>
+        $$S=Nk\left[\ln\left(\frac VN\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\frac52\right]$$
+        <p>就是 (2.49)。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>即 (2.49)。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$S$ 是廣延量：$V,U,N$ 同時加倍，$V/N$、$U/N$ 不變，$S$ 加倍 ✔（少了 $1/N!$ 就不是，見第 10 節）</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk-114-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">114 級上學期期中 第 3 題 · (d)(e) 即 Schroeder Problem 2.31 · p.79</span></div>
+    <h4>理想氣體：第一定律、絕熱過程、熵與溫度</h4>
+    <button type="button" class="exam-btn" data-exam="tk-114-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（25 分）理想氣體遵守的狀態方程式（也稱為理想氣體定律）是 $PV=NkT$（氣體壓力 $P$、體積 $V$、氣體粒子數 $N$、波茲曼常數 $k$、溫度 $T$）。當原子間的交互作用可以忽略、原子密度很低時，這個理想氣體定律成立。(a) 說明熱力學第一定律。（2 分）(b) 用熱力學第一定律求粒子數為 $N$ 的單原子理想氣體，定容熱容量 $C_V$ 與定壓熱容量 $C_P$ 的關係。（3 分）(c) 證明在準靜態絕熱過程中，氣體壓力 $P$ 與體積 $V$ 滿足
+    $$PV^\gamma=\text{constant}.$$
+    這裡 $\gamma=C_P/C_V$ 稱為絕熱指數。（10 分）(d) $N$ 個相同的理想氣體粒子的多重度函數近似為
+    $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N},$$
+    其中 $U=\sum_{i=1}^N\frac1{2m_i}(p_{x,i}^2+p_{y,i}^2+p_{z,i}^2)$ 代表系統的內能。計算理想氣體的熵。（你可以使用第 4 題所列的 Stirling 近似。）（5 分）(e) 用溫度的熱力學定義（即 $\frac1T=\frac{\partial S}{\partial U}$）求溫度 $T$，表示成 $U$、波茲曼常數 $k$ 與 $N$ 的函數。（5 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>狀態方程式</td><td>$PV=NkT$</td><td>題目給</td></tr>
+          <tr><td>氣體</td><td>單原子理想氣體，$N$ 個粒子</td><td>(b)「粒子數為 $N$ 的<b>單原子</b>理想氣體」</td></tr>
+          <tr><td>內能</td><td>$U=\frac32NkT$</td><td>題目沒給：單原子只有 3 個平移二次自由度（均分定理，第 1 章）</td></tr>
+          <tr><td>準靜態絕熱</td><td>$Q=0$，$W=-P\,dV$</td><td>(c)「準靜態絕熱過程」</td></tr>
+          <tr><td>絕熱指數</td><td>$\gamma=C_P/C_V$</td><td>(c) 題目定義</td></tr>
+          <tr><td>多重度</td><td>$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}(\sqrt{2mU})^{3N}$</td><td>(d) 題目給</td></tr>
+          <tr><td>Stirling</td><td>$\ln n!\approx n\ln n-n$</td><td>(d)「可以使用第 4 題所列的 Stirling 近似」</td></tr>
+          <tr><td>溫度的定義</td><td>$\dfrac1T=\dfrac{\partial S}{\partial U}$（$V,N$ 固定）</td><td>(e) 題目給</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 第一定律；(b) $C_V$ 與 $C_P$ 的關係；(c) 證明 $PV^\gamma=$ 常數；(d) 熵；(e) $T$ 表示成 $U$、$k$、$N$ 的函數。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a)–(c) 是第 1 章（Schroeder §1.4–1.6）。(b) <b>因為</b>理想氣體的 $U$ 只和 $T$ 有關，<b>所以</b> $C_V$ 直接由 $U=\tfrac32NkT$ 對 $T$ 微分；$C_P$ 多了「定壓膨脹時對外做功」那一份，由 $PV=NkT$ 算出正好是 $Nk$。</p>
+      <p>(c) <b>因為</b>絕熱 $Q=0$，第一定律變成 $dU=-P\,dV$；代入 $dU=C_V\,dT$、$P=NkT/V$ 後變數可以分離成 $dT/T$ 與 $dV/V$，<b>所以</b>直接積分，再用 $PV=NkT$ 把 $T$ 換成 $P$、$V$。</p>
+      <p>(d) 就是習題 2.31：取 $\ln$、兩個階乘用 Stirling。(e) <b>因為</b>偏微分時 $V$、$N$ 固定，只有含 $U$ 的那一項 $\frac{3N}2k\ln U$ 有貢獻，<b>所以</b>不必整個式子都微分。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="k1143p" data-sym="U">
+        <span class="step-title">(a) 第一定律（第 1 章）</span>
+        $$\Delta U=Q+W$$
+        <p>系統內能的變化，等於流入系統的熱 $Q$ 加上外界對系統做的功 $W$。它是把「熱」也算成一種能量傳遞之後的能量守恆。</p>
+      </div>
+      <div class="step" data-step="k1143q">
+        <span class="step-title">(b) 定容熱容量 $C_V$</span>
+        <p>熱容量是「每升高 1 K 要吸的熱」。定容時體積不變，外界不做功 $W=0$，第一定律給 $Q=\Delta U$：</p>
+        $$C_V=\left(\frac{\partial U}{\partial T}\right)_V$$
+        <p class="sub">代入 $U=\tfrac32NkT$（單原子，均分定理）：</p>
+        $$C_V=\frac32Nk$$
+      </div>
+      <div class="step" data-step="tk-114-3-s3">
+        <span class="step-title">(b) 定壓熱容量 $C_P$</span>
+        <p>定壓時氣體膨脹、外界做的功 $W=-P\Delta V$，所以 $Q=\Delta U-W=\Delta U+P\Delta V$：</p>
+        $$C_P=\left(\frac{\partial U}{\partial T}\right)_P+P\left(\frac{\partial V}{\partial T}\right)_P$$
+        <p>理想氣體 $U$ 只和 $T$ 有關，第一項就等於 $C_V$；由 $PV=NkT$，$P$ 固定時 $V=NkT/P$，$(\partial V/\partial T)_P=Nk/P$，第二項 $=Nk$：</p>
+        $$C_P=C_V+Nk=\frac52Nk$$
+      </div>
+      <div class="step" data-step="k1143r">
+        <span class="step-title">(c) 絕熱：寫出微分方程（第 1 章）</span>
+        <p>準靜態絕熱 $Q=0$，第一定律 $dU=-P\,dV$。理想氣體 $dU=C_V\,dT$，$P=NkT/V$：</p>
+        $$C_V\,dT=-\frac{NkT}V\,dV$$
+        <p>兩邊除以 $C_VT$，把 $T$ 和 $V$ 分到兩邊：</p>
+        $$\frac{dT}T=-\frac{Nk}{C_V}\frac{dV}V=-(\gamma-1)\frac{dV}V$$
+        <p>（由 (b)，$Nk=C_P-C_V$，所以 $\frac{Nk}{C_V}=\frac{C_P}{C_V}-1=\gamma-1$。）</p>
+      </div>
+      <div class="step" data-step="tk-114-3-s5">
+        <span class="step-title">(c) 積分</span>
+        <p>兩邊積分（$\int dT/T=\ln T$，$\int dV/V=\ln V$）：</p>
+        $$\ln T=-(\gamma-1)\ln V+\text{常數}$$
+        $$\ln T+\ln V^{\gamma-1}=\text{常數}\ \Longrightarrow\ TV^{\gamma-1}=\text{常數}$$
+      </div>
+      <div class="step" data-step="tk-114-3-s6">
+        <span class="step-title">(c) 換成 $P$、$V$</span>
+        <p>由 $PV=NkT$，$T=PV/(Nk)$；$Nk$ 是常數，可以併進右邊：</p>
+        $$\frac{PV}{Nk}V^{\gamma-1}=\text{常數}\ \Longrightarrow\ PV^\gamma=\text{常數}$$
+        <p class="sub">代入 (b) 的結果：$\gamma=\frac{C_P}{C_V}=\frac{5/2}{3/2}=\frac53$（單原子）。</p>
+      </div>
+      <div class="step" data-step="k1143a" data-sym="S">
+        <span class="step-title">(d) 取對數並用 $\ln n!\approx n\ln n-n$</span>
+        <p>$S=k\ln\Omega_N$；$(\sqrt{2mU})^{3N}=(2mU)^{3N/2}$，與 $\pi$、$h$ 的次方合併（每一步見習題 2.31）：</p>
+        $$\begin{aligned}\frac Sk\approx{}&N\ln V+\tfrac{3N}2\ln\tfrac{2\pi mU}{h^2}\\&-(N\ln N-N)-\left(\tfrac{3N}2\ln\tfrac{3N}2-\tfrac{3N}2\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="tk-114-3-s8">
+        <span class="step-title">(d) 整理成 Sackur–Tetrode</span>
+        <p>$N\ln V-N\ln N=N\ln\frac VN$；$\frac{3N}2\big[\ln\frac{2\pi mU}{h^2}-\ln\frac{3N}2\big]=\frac{3N}2\ln\frac{4\pi mU}{3Nh^2}$；常數 $N+\frac{3N}2=\frac52N$：</p>
+        $$S=Nk\left[\ln\left(\frac VN\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\frac52\right]$$
+      </div>
+      <div class="step" data-step="k1143b" data-sym="T,U">
+        <span class="step-title">(e) 只有 $\frac{3N}2k\ln U$ 含 $U$</span>
+        <p>把對數裡的 $U^{3/2}$ 拆出來：$S=\frac32Nk\ln U+C(V,N)$，$C(V,N)$ 不含 $U$。對 $U$ 偏微分：</p>
+        $$\frac1T=\left(\frac{\partial S}{\partial U}\right)_{V,N}=\frac32\frac{Nk}U\quad\Longrightarrow\quad T=\frac{2U}{3Nk}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\Delta U=Q+W$；(b) $C_P=C_V+Nk$（$C_V=\tfrac32Nk$、$C_P=\tfrac52Nk$）；(c) 得證，$\gamma=\tfrac53$；(d) Sackur–Tetrode 公式；(e) $T=\dfrac{2U}{3Nk}$，即 $U=\tfrac32NkT$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>和均分定理一致：$3N$ 個二次自由度各 $\tfrac12kT$ ✔。一莫耳氦 $U=3700\ \text{J}$ 給 $T=297\ \text{K}$，正是室溫 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tkx-1j">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">某級上學期期中（範圍第 1–4.1 章）第 1 題(j) · 即 Schroeder Problem 2.31 · p.79</span></div>
+    <h4>由多重度求熵與溫度</h4>
+    <button type="button" class="exam-btn" data-exam="tkx-1j">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">原卷題目（第 1 題 (j) 小題，完整翻譯）</span><p>(j) $N$ 個相同的理想氣體粒子的多重度函數近似為
+    $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N},$$
+    其中 $U=\sum_{i=1}^N\frac1{2m_i}(p_{x,i}^2+p_{y,i}^2+p_{z,i}^2)$ 代表系統的內能。計算熵，並用溫度的熱力學定義求溫度 $T$，表示成 $U$、波茲曼常數 $k$ 與 $N$ 的函數。（3 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>多重度</td><td>$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}(\sqrt{2mU})^{3N}$</td><td>題目給</td></tr>
+          <tr><td>內能</td><td>$U=\sum_i\frac{p_i^2}{2m}$</td><td>題目：只有動能</td></tr>
+          <tr><td>熵的定義</td><td>$S=k\ln\Omega$</td><td>課本 (2.45)</td></tr>
+          <tr><td>Stirling</td><td>$\ln n!\approx n\ln n-n$</td><td>$N$ 很大（題目沒寫）</td></tr>
+          <tr><td>溫度的定義</td><td>$1/T=\partial S/\partial U$（$V,N$ 固定）</td><td>「用溫度的熱力學定義」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：熵 $S$，以及 $T$ 表示成 $U$、$k$、$N$ 的函數。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>第 1 題（40 分，(a)–(j) 共十小題）的 (a)–(i) 屬第 1 章（壓力的微觀模型、均分定理、第一定律、熱容量、絕熱過程、熱機循環與效率、凡得瓦方程式的維里係數），這裡只收 (j)。</p>
+      <p><b>因為</b>這小題只有 3 分，<b>所以</b>熵寫到 Sackur–Tetrode 公式即可（完整代數見習題 2.31）。<b>因為</b> $\Omega$ 對 $U$ 的依賴只有 $(2mU)^{3N/2}$ 這一個因子，取對數後是 $\frac{3N}2\ln U$ 加上不含 $U$ 的項，<b>所以</b>對 $U$ 偏微分只剩這一項。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="kx1a" data-sym="S">
+        <span class="step-title">熵</span>
+        <p>取 $\ln$，兩個階乘用 Stirling，整理後（步驟同習題 2.31）：</p>
+        $$S=k\ln\Omega_N\approx Nk\left[\ln\left(\frac VN\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\frac52\right]$$
+      </div>
+      <div class="step" data-step="tkx-1j-s2">
+        <span class="step-title">找出含 $U$ 的項</span>
+        <p>對數裡的 $U^{3/2}$ 拆出來：$Nk\ln U^{3/2}=\frac32Nk\ln U$，其餘都不含 $U$：</p>
+        $$S=\frac32Nk\ln U+C(V,N)$$
+        <p>（$C(V,N)$ 包含 $\ln\frac VN$、$m$、$h$、$\frac52$ 等，$V$、$N$ 固定時是常數。）</p>
+      </div>
+      <div class="step" data-step="kx1b" data-sym="T">
+        <span class="step-title">溫度</span>
+        <p>$\frac d{dU}\ln U=\frac1U$：</p>
+        $$\frac1T=\left(\frac{\partial S}{\partial U}\right)_{V,N}=\frac{3Nk}{2U}$$
+        <p>取倒數：</p>
+        $$T=\frac{2U}{3Nk}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$S$ 為 Sackur–Tetrode 式；$T=2U/(3Nk)$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>不必算出整個 $S$ 也能求 $T$：$\Omega\propto U^{3N/2}$ ⟹ $S=\tfrac{3N}2k\ln U+\cdots$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-helium">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.6 Eq. (2.50) · p.78</span></div>
+    <h4>一莫耳氦的熵</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-helium">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>室溫、一大氣壓下的一莫耳氦：體積 $0.025\ \text{m}^3$，動能 $\tfrac32nRT=3700\ \text{J}$。用 Sackur–Tetrode 公式求熵。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>粒子數</td><td>$N=6.02\times10^{23}$</td><td>「一莫耳氦」</td></tr>
+          <tr><td>體積</td><td>$V=0.025\ \text{m}^3$</td><td>「體積 $0.025\ \text{m}^3$」（室溫一大氣壓的一莫耳）</td></tr>
+          <tr><td>動能</td><td>$U=3700\ \text{J}$</td><td>「動能 $\tfrac32nRT=3700\ \text{J}$」</td></tr>
+          <tr><td>氦原子質量</td><td>$m=4\ \text{u}=6.64\times10^{-27}\ \text{kg}$</td><td>題目沒給：$1\ \text{u}=1.66\times10^{-27}\ \text{kg}$</td></tr>
+          <tr><td>普朗克常數</td><td>$h=6.63\times10^{-34}\ \text{J·s}$</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>$Nk$</td><td>$R=8.31\ \text{J/K}$</td><td>一莫耳的 $Nk$ 就是氣體常數</td></tr>
+          <tr><td>公式</td><td>Sackur–Tetrode (2.49)</td><td>「用 Sackur–Tetrode 公式」：氦是單原子理想氣體</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一莫耳氦的熵（以 $Nk$ 與 J/K 表示）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>氦是單原子理想氣體，<b>所以</b>直接用 Sackur–Tetrode 公式；公式是「$Nk\times$（一個對數＋$\frac52$）」，關鍵是算出對數裡的數。</p>
+      <p><b>因為</b>對數裡都是「每個分子」的量（$\frac{4\pi mU}{3Nh^2}=\frac{4\pi m(U/N)}{3h^2}$），<b>所以</b>先算 $V/N$、$U/N$，再分三段算括號、$\frac32$ 次方、乘 $V/N$——一次全部代入很容易按錯計算機，分段也方便檢查單位。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="theA" data-sym="V,U,m">
+        <span class="step-title">每個分子的體積與能量</span>
+        <p class="sub">代入 $V=0.025\ \text{m}^3$、$U=3700\ \text{J}$、$N=6.02\times10^{23}$（題目）：</p>
+        $$\frac VN=\frac{0.025\ \text{m}^3}{6.02\times10^{23}}=4.15\times10^{-26}\ \text{m}^3$$
+        $$\frac UN=\frac{3700\ \text{J}}{6.02\times10^{23}}=6.15\times10^{-21}\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-ex-helium-s2">
+        <span class="step-title">括號裡的數</span>
+        <p class="sub">代入 $m=6.64\times10^{-27}\ \text{kg}$、$U/N$（步驟 1）、$h=6.63\times10^{-34}\ \text{J·s}$：</p>
+        $$\frac{4\pi m(U/N)}{3h^2}=\frac{4\pi(6.64\times10^{-27})(6.15\times10^{-21})}{3(6.63\times10^{-34})^2}$$
+        $$=\frac{5.13\times10^{-46}}{1.32\times10^{-66}}=3.9\times10^{20}\ \text{m}^{-2}$$
+        <p>（單位：$\text{kg·J}/(\text{J·s})^2=\text{kg}/(\text{J·s}^2)=\text{m}^{-2}$。）</p>
+      </div>
+      <div class="step" data-step="theB">
+        <span class="step-title">對數裡的數</span>
+        <p>取 $\frac32$ 次方（單位變成 $\text{m}^{-3}$），再乘 $V/N$（步驟 1）：</p>
+        $$(3.9\times10^{20}\ \text{m}^{-2})^{3/2}=7.7\times10^{30}\ \text{m}^{-3}$$
+        $$(4.15\times10^{-26}\ \text{m}^3)(7.7\times10^{30}\ \text{m}^{-3})\approx3.2\times10^5$$
+        <p>沒有單位，可以取對數。（課本寫 330 000，差在常數的取位。）</p>
+      </div>
+      <div class="step" data-step="theC" data-sym="S,k">
+        <span class="step-title">熵</span>
+        <p>$\ln(3.2\times10^5)=\ln3.2+5\ln10=1.16+11.51=12.7$：</p>
+        $$S=Nk(12.7+2.5)=15.2\,Nk$$
+        <p class="sub">$Nk=R=8.31\ \text{J/K}$（一莫耳）：</p>
+        $$S=15.2\times8.31\ \text{J/K}=126\ \text{J/K}$$
+        <p>純數 $S/k=15.2\times6.02\times10^{23}=9.1\times10^{24}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$S\approx15.2\,Nk\approx126\ \text{J/K}$</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>對數裡的數是 30 萬，對數本身只有 12.7：熵 $\sim Nk$ 的典型例子 ✔</p></div>
+  </div>
+</div>
+
+<div class="anim" data-anim="t2-sackur"></div>
+
+<h3 id="tr-vol">9.2 體積改變：等溫膨脹與自由膨脹 <span class="pg-tag">p.78</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.78 Eq. (2.51)–(2.52) 體積改變的熵變化</span>
+  $$\Delta S=Nk\ln\frac{V_f}{V_i}\qquad(U,N\text{ 固定})$$
+  <p>自由膨脹（Fig. 2.14）：氣體不推動任何東西，$W=0$；沒有熱流入流出，$Q=0$；所以 $\Delta U=Q+W=0$，(2.51) 適用。</p>
+</div>
+
+<p>同樣的 $\Delta S=Nk\ln(V_f/V_i)$，原因卻完全不同。<strong>準靜態等溫膨脹</strong>（1.5 節）：氣體推活塞做功，同時從外面供熱保持溫度，熵的增加可以看成是「熱帶進來的」——第 3 章會證明 $\Delta S=Q/T$（習題 2.34）。<strong>自由膨脹</strong>：$Q=0$，沒有任何東西帶熵進來，熵卻增加了——是就地<strong>產生</strong>的新熵。產生新熵的過程不能反向進行（否則宇宙的熵減少），這就是第 10 節「不可逆」的定義。</p>
+
+<div class="box pitfall">
+  <span class="box-title">自由膨脹的 $\Delta S\ne Q/T$</span>
+  <p>$Q=0$ 不代表 $\Delta S=0$。熵是狀態函數：只看初末狀態（$U$ 不變、$V$ 變大），所以 $\Delta S=Nk\ln(V_f/V_i)\gt0$。$\Delta S=Q/T$ 只對準靜態過程成立。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-34">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-34（Problem 2.34）· p.79</span></div>
+    <h4>等溫膨脹 $\Delta S=Q/T$，自由膨脹不是</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-34">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明在單原子理想氣體的準靜態等溫膨脹中，熵的變化與吸收的熱 $Q$ 有簡單的關係 $\Delta S=Q/T$。下一章會證明這個公式對任何準靜態過程都成立。但請證明它對上面描述的自由膨脹不成立。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氣體</td><td>單原子理想氣體</td><td>題目</td></tr>
+          <tr><td>過程一</td><td>準靜態等溫膨脹 $V_i\to V_f$</td><td>「準靜態等溫膨脹」</td></tr>
+          <tr><td>等溫的後果</td><td>$U=\frac32NkT$ 不變</td><td>理想氣體 $U$ 只和 $T$ 有關（題目沒寫）</td></tr>
+          <tr><td>熵變（$U,N$ 固定）</td><td>$\Delta S=Nk\ln\frac{V_f}{V_i}$</td><td>課本 (2.51)，由 Sackur–Tetrode 得到</td></tr>
+          <tr><td>準靜態的功</td><td>$W=-\int P\,dV$，$P=NkT/V$</td><td>1.5 節；「準靜態」才能用氣體本身的壓力</td></tr>
+          <tr><td>過程二</td><td>自由膨脹：$Q=0$、$W=0$</td><td>「上面描述的自由膨脹」（Fig. 2.14）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：證明準靜態等溫膨脹 $\Delta S=Q/T$；證明自由膨脹 $\Delta S\ne Q/T$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>等溫時理想氣體的 $U$ 不變、$N$ 也不變，<b>所以</b>熵變直接用 (2.51)；只要再算出這個過程吸的熱 $Q$，就能比較 $Q/T$ 和 $\Delta S$。</p>
+      <p><b>因為</b> $\Delta U=0$，第一定律給 $Q=-W$；<b>因為</b>準靜態時氣體每一刻都在平衡、壓力 $P=NkT/V$ 有定義，<b>所以</b>可以積分算功。</p>
+      <p><b>因為</b>自由膨脹的初末狀態和等溫膨脹一樣（$U$ 不變、$V_i\to V_f$），而熵是狀態函數，<b>所以</b> $\Delta S$ 相同；但它 $Q=0$，兩邊不可能相等。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-34-s1">
+        <span class="step-title">等溫膨脹的熵變</span>
+        <p>等溫 ⟹ $U=\frac32NkT$ 不變，$N$ 也不變，Sackur–Tetrode 中只有 $Nk\ln V$ 改變：</p>
+        $$\Delta S=Nk\ln V_f-Nk\ln V_i=Nk\ln\frac{V_f}{V_i}$$
+      </div>
+      <div class="step" data-step="t234a" data-sym="S">
+        <span class="step-title">等溫膨脹的熱</span>
+        <p>$\Delta U=0$，第一定律 $Q=\Delta U-W=-W$；準靜態 $W=-\int P\,dV$：</p>
+        $$Q=\int_{V_i}^{V_f}P\,dV=\int_{V_i}^{V_f}\frac{NkT}V\,dV$$
+        <p>$T$ 固定，提出積分外，$\int dV/V=\ln V$：</p>
+        $$Q=NkT\left[\ln V\right]_{V_i}^{V_f}=NkT\ln\frac{V_f}{V_i}$$
+      </div>
+      <div class="step" data-step="t234b">
+        <span class="step-title">比較</span>
+        <p>步驟 2 的 $Q$ 除以 $T$，和步驟 1 比：</p>
+        $$\frac QT=Nk\ln\frac{V_f}{V_i}=\Delta S\ ✔$$
+      </div>
+      <div class="step" data-step="sc-2-34-s4">
+        <span class="step-title">自由膨脹</span>
+        <p>自由膨脹（Fig. 2.14）：氣體衝進真空、不推任何東西，$W=0$；容器絕熱，$Q=0$；所以 $\Delta U=0$，初末狀態和等溫膨脹一樣，熵變也一樣：</p>
+        $$\Delta S=Nk\ln\frac{V_f}{V_i}\gt0,\qquad\frac QT=0$$
+        <p>所以 $\Delta S\ne Q/T$：自由膨脹的熵不是熱帶進來的，而是過程中就地產生的。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>等溫：$\Delta S=Q/T=Nk\ln(V_f/V_i)$；自由膨脹：$\Delta S=Nk\ln(V_f/V_i)\gt0=Q/T$，不相等。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>自由膨脹不是準靜態（氣體不平衡地衝進真空），所以 $\Delta S\ge Q/T$ 的不等號成立 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk-114-5">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">114 級上學期期中 第 5 題 · 即 Schroeder Problem 3.28（用 §2.6 理想氣體的熵解）· p.113</span></div>
+    <h4>一公升空氣定壓加熱到兩倍體積的熵增加</h4>
+    <button type="button" class="exam-btn" data-exam="tk-114-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-114-5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>[10pts] A liter of air, initially at room temperature and atmospheric pressure, is heated at constant pressure until it doubles in volume. Calculate the increase in its entropy during this process.</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 3.28）</strong></p><p>A liter of air, initially at room temperature and atmospheric pressure, is heated at constant pressure until it doubles in volume. Calculate the increase in its entropy during this process.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（10 分）一公升的空氣，一開始在室溫與大氣壓力下，在固定壓力下加熱，直到體積變成兩倍。計算這個過程中空氣的熵增加多少。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>初體積</td><td>$V_i=1\ \text{L}=1.0\times10^{-3}\ \text{m}^3$</td><td>「<b>一公升</b>的空氣」</td></tr>
+          <tr><td>初溫度</td><td>$T_i=300\ \text{K}$</td><td>「室溫」（題目沒寫數字，取 300 K）</td></tr>
+          <tr><td>壓力（全程不變）</td><td>$P=1\ \text{atm}=1.013\times10^5\ \text{N/m}^2$</td><td>「大氣壓力」、「在<b>固定壓力</b>下加熱」</td></tr>
+          <tr><td>末體積</td><td>$V_f=2V_i$</td><td>「直到體積變成<b>兩倍</b>」</td></tr>
+          <tr><td>理想氣體</td><td>$PV=NkT$</td><td>題目沒寫：常溫常壓的空氣密度很低，可當理想氣體（考卷第 3 題給了這個定律）</td></tr>
+          <tr><td>每個分子的二次自由度</td><td>$f=5$</td><td>題目沒寫：空氣主要是 $\text{N}_2$、$\text{O}_2$ 雙原子分子，室溫下 3 個平移＋2 個轉動，振動凍結（第 1 章）</td></tr>
+          <tr><td>內能</td><td>$U=\frac f2NkT$</td><td>均分定理（第 1 章）</td></tr>
+          <tr><td>熵</td><td>$S=k\ln\Omega$，只由狀態（$U,V,N$）決定</td><td>課本 (2.45)；本章 §2.6</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：熵的增加量 $\Delta S=S_f-S_i$（J/K）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>這份考卷的封面沒拍到；同格式的 115 級期中範圍是第 1–2 章，114 級這份的其他題也都在第 1–2 章，所以本題要用<b>第 2 章的工具</b>：熵是多重度的對數，只看初、末狀態。課本把它放在第 3 章（Problem 3.28，用 $dS=C_P\,dT/T$ 積分），那個做法放在「檢查」對照。</p>
+      <p><b>因為</b>熵是狀態函數，<b>所以</b>不必管加熱過程怎麼進行，只要知道 $S$ 怎麼隨 $V$ 和 $U$ 變。§2.5 的多重度裡，位置部分給 $V^N$，動量（能量）部分是「$fN$ 維球面」給 $U^{fN/2}$——單原子 $f=3$ 就是 Sackur–Tetrode 的 $V^NU^{3N/2}$。<b>因為</b>空氣是雙原子，能量裡每個分子多了 2 個轉動的二次項，<b>所以</b>指數要用 $f=5$，不能直接套單原子的 Sackur–Tetrode。</p>
+      <p><b>因為</b>定壓下 $PV=NkT$ 讓體積變兩倍時溫度也變兩倍，而 $U\propto T$，<b>所以</b>這個過程 $V$ 和 $U$ 都變成兩倍：熵的增加有「體積變大」和「能量變大」兩份。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk-114-5-s1" data-sym="S,V,U">
+        <span class="step-title">熵怎麼隨 $V$、$U$ 變</span>
+        <p>多重度的 $V$、$U$ 依賴（§2.5 的邏輯，每個分子 $f$ 個二次自由度，能量部分是 $fN$ 維球面，$fN$ 很大時面積 $\propto U^{(fN-1)/2}\approx U^{fN/2}$）：</p>
+        $$\Omega=C(N)\,V^NU^{fN/2}$$
+        <p>取對數乘 $k$（$\ln$ 把乘積變成相加）：</p>
+        $$S=k\ln\Omega=Nk\ln V+\frac f2Nk\ln U+k\ln C(N)$$
+        <p>$C(N)$ 包含 $N!$、$h$、$\pi$、質量等，粒子數不變時是常數。</p>
+      </div>
+      <div class="step" data-step="tk-114-5-s2" data-sym="N">
+        <span class="step-title">熵的變化：常數消掉</span>
+        <p>末狀態減初狀態，$k\ln C(N)$ 消掉；$\ln a-\ln b=\ln\frac ab$：</p>
+        $$\Delta S=Nk\ln\frac{V_f}{V_i}+\frac f2Nk\ln\frac{U_f}{U_i}$$
+        <p>第一項就是 §2.6 的 (2.51)（只改體積）；第二項來自能量增加。</p>
+      </div>
+      <div class="step" data-step="tk-114-5-s3" data-sym="T">
+        <span class="step-title">定壓：溫度與內能也變兩倍</span>
+        <p>理想氣體 $T=\dfrac{PV}{Nk}$，$P$、$N$ 固定，所以 $T\propto V$：</p>
+        $$\frac{T_f}{T_i}=\frac{V_f}{V_i}=2$$
+        <p class="sub">代入 $U=\frac f2NkT$（均分定理），$N$ 不變：</p>
+        $$\frac{U_f}{U_i}=\frac{T_f}{T_i}=2$$
+      </div>
+      <div class="step" data-step="tk-114-5-s4">
+        <span class="step-title">代回 $\Delta S$</span>
+        <p class="sub">代入 $V_f/V_i=2$（題目「兩倍」）、$U_f/U_i=2$（步驟 3）、$f=5$（雙原子）：</p>
+        $$\Delta S=Nk\ln2+\frac52Nk\ln2=\frac72Nk\ln2$$
+      </div>
+      <div class="step" data-step="tk-114-5-s5" data-sym="k">
+        <span class="step-title">用初狀態算 $Nk$，求數值</span>
+        <p>$N$ 沒給，但 $PV=NkT$ 直接給出 $Nk$：</p>
+        $$Nk=\frac{PV_i}{T_i}$$
+        <p class="sub">代入 $P=1.013\times10^5\ \text{N/m}^2$（大氣壓力）、$V_i=1.0\times10^{-3}\ \text{m}^3$（一公升）、$T_i=300\ \text{K}$（室溫）：</p>
+        $$Nk=\frac{(1.013\times10^5\ \text{N/m}^2)(1.0\times10^{-3}\ \text{m}^3)}{300\ \text{K}}=\frac{101.3\ \text{J}}{300\ \text{K}}=0.338\ \text{J/K}$$
+        <p class="sub">代入 $\Delta S=\frac72Nk\ln2$（步驟 4），$\ln2=0.693$：</p>
+        $$\Delta S=\frac72(0.338\ \text{J/K})(0.693)=0.82\ \text{J/K}$$
+        <p>換成純數：$\Delta S/k=0.82/(1.38\times10^{-23})=5.9\times10^{22}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\Delta S=\dfrac72Nk\ln2=\dfrac72\dfrac{PV_i}{T_i}\ln2\approx0.82\ \text{J/K}$（取 $P=10^5\ \text{N/m}^2$ 則為 $0.81\ \text{J/K}$，與課本解答相同）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>第 3 章做法：$\Delta S=\int_{T_i}^{T_f}\frac{C_P}T\,dT=C_P\ln\frac{T_f}{T_i}$，$C_P=C_V+Nk=\frac72Nk$，同樣得 $\frac72Nk\ln2$ ✔。若誤把空氣當單原子（$f=3$），會得 $\frac52Nk\ln2=0.59\ \text{J/K}$，少了轉動那一份。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-32">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-32（Problem 2.32）· p.79 · 熱學小考（上）作業題</span></div>
+    <h4>二維理想氣體的熵</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-32">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-32"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find an expression for the entropy of the two-dimensional ideal gas considered in Problem 2.26. Express your result in terms of U, A, and N.</p></div>
+<p class="original-caption">Schroeder 習題 2-32（Problem 2.32）· p.79 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求習題 2.26 中二維理想氣體的熵，以 $U$、$A$、$N$ 表示。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>二維多重度</td><td>$\Omega=\frac1{(N!)^2}\left(\frac{2\pi mUA}{h^2}\right)^N$</td><td>「習題 2.26 中二維理想氣體」：即考古 115-7 的結果</td></tr>
+          <tr><td>熵</td><td>$S=k\ln\Omega$</td><td>課本 (2.45)</td></tr>
+          <tr><td>Stirling</td><td>$\ln N!\approx N\ln N-N$</td><td>$N$ 很大</td></tr>
+          <tr><td>以什麼表示</td><td>$U,\ A,\ N$</td><td>「以 $U$、$A$、$N$ 表示」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：二維理想氣體的熵 $S(U,A,N)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>習題 2.26 已經算出多重度，<b>所以</b>熵就是取對數乘 $k$；兩個 $N!$（一個來自不可分辨、一個來自 $2N$ 維超球面面積）都用 Stirling。</p>
+      <p>最後仿照三維的 Sackur–Tetrode，把式子整理成「每個分子分到的面積 $A/N$ × 每個分子分到的能量 $U/N$」，<b>因為</b>這樣容易看出它是廣延量，也方便和三維比較。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t232a" data-sym="S">
+        <span class="step-title">取對數、兩個 $\ln N!$</span>
+        <p>次方拉到前面，$\frac1{(N!)^2}$ 變成 $-2\ln N!$：</p>
+        $$\frac Sk=N\ln\frac{2\pi mUA}{h^2}-2\ln N!$$
+        <p>Stirling：$-2\ln N!\approx-2N\ln N+2N=-N\ln N^2+2N$，提出 $N$：</p>
+        $$\frac Sk\approx N\left[\ln\frac{2\pi mUA}{h^2}-\ln N^2+2\right]$$
+        $$\frac Sk\approx N\left[\ln\frac{2\pi mUA}{N^2h^2}+2\right]$$
+      </div>
+      <div class="step" data-step="t232b">
+        <span class="step-title">寫成「每個分子」的形式</span>
+        <p>$N^2$ 拆成一個給 $A$、一個給 $U$：</p>
+        $$S=Nk\left[\ln\left(\frac AN\cdot\frac{2\pi mU}{Nh^2}\right)+2\right]$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$S=Nk\left[\ln\left(\dfrac AN\dfrac{2\pi mU}{Nh^2}\right)+2\right]$</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>和三維比：$\tfrac52\to2$（$1+\tfrac{d}{2}$）、$(\cdot)^{3/2}\to(\cdot)^1$；$A,U,N$ 同時加倍 $S$ 加倍 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-33">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-33（Problem 2.33）· p.79</span></div>
+    <h4>一莫耳氬的熵</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-33">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-33"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use the Sackur-Tetrode equation to calculate the entropy of a mole of argon gas at room temperature and atmospheric pressure. Why is the entropy greater than that of a mole of helium under the same conditions?</p></div>
+<p class="original-caption">Schroeder 習題 2-33（Problem 2.33）· p.79</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 Sackur–Tetrode 公式計算室溫、一大氣壓下一莫耳氬氣的熵。為什麼它比同條件下一莫耳氦的熵大？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>「室溫」</td></tr>
+          <tr><td>壓力</td><td>$P=10^5\ \text{Pa}$</td><td>「一大氣壓」（取 $1.0\times10^5\ \text{Pa}$）</td></tr>
+          <tr><td>莫耳數</td><td>1 mol，$Nk=R=8.31\ \text{J/K}$</td><td>「一莫耳氬氣」</td></tr>
+          <tr><td>氬原子質量</td><td>$m=40\ \text{u}=6.64\times10^{-26}\ \text{kg}$</td><td>題目沒給：氬的原子量約 40</td></tr>
+          <tr><td>單原子</td><td>$U/N=\frac32kT$</td><td>氬是單原子惰性氣體</td></tr>
+          <tr><td>常數</td><td>$k=1.38\times10^{-23}\ \text{J/K}$、$h=6.63\times10^{-34}\ \text{J·s}$</td><td>標準值</td></tr>
+          <tr><td>比較對象</td><td>氦 $S=126\ \text{J/K}$</td><td>「同條件下一莫耳氦」：課文例題</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一莫耳氬的熵；解釋為什麼比同條件下的氦大。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>氬是單原子理想氣體，<b>所以</b>用 Sackur–Tetrode；題目給的是溫度和壓力，而公式要 $V/N$、$U/N$，<b>所以</b>先用 $PV=NkT$ 與 $U=\frac32NkT$ 換算。</p>
+      <p><b>因為</b>「同條件」的氦 $V/N$、$U/N$ 都相同，兩者唯一的差別是原子質量 $m$，<b>所以</b>比較時只要看 $m$ 在公式裡出現的地方（$m^{3/2}$），就能說出差多少、為什麼。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t233a" data-sym="V,U,m">
+        <span class="step-title">每個分子的體積與能量</span>
+        <p class="sub">由 $PV=NkT$ 與 $U=\frac32NkT$，代入 $T=300\ \text{K}$、$P=10^5\ \text{Pa}$（題目「室溫、一大氣壓」）：</p>
+        $$\frac VN=\frac{kT}P=\frac{(1.38\times10^{-23})(300)}{10^5}\ \text{m}^3=4.14\times10^{-26}\ \text{m}^3$$
+        $$\frac UN=\frac32kT=1.5(1.38\times10^{-23})(300)\ \text{J}=6.21\times10^{-21}\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-2-33-s2">
+        <span class="step-title">括號裡的數</span>
+        <p class="sub">代入 $m=6.64\times10^{-26}\ \text{kg}$（氬）、$U/N$（步驟 1）、$h$：</p>
+        $$\frac{4\pi m(U/N)}{3h^2}=\frac{4\pi(6.64\times10^{-26})(6.21\times10^{-21})}{3(6.63\times10^{-34})^2}$$
+        $$=3.9\times10^{21}\ \text{m}^{-2}$$
+      </div>
+      <div class="step" data-step="t233b">
+        <span class="step-title">對數裡的數</span>
+        <p>取 $\frac32$ 次方，再乘 $V/N$（步驟 1）：</p>
+        $$(3.9\times10^{21})^{3/2}=2.5\times10^{32}\ \text{m}^{-3}$$
+        $$(4.14\times10^{-26})(2.5\times10^{32})=1.0\times10^7$$
+      </div>
+      <div class="step" data-step="t233c" data-sym="S">
+        <span class="step-title">熵</span>
+        <p>$\ln(1.0\times10^7)=7\ln10=16.1$；$Nk=R$：</p>
+        $$S=R\left[16.1+2.5\right]=8.31\times18.6\ \text{J/K}=155\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sc-2-33-s5">
+        <span class="step-title">為什麼比氦大</span>
+        <p>同溫同壓下 $V/N$、$U/N$ 都相同，只有 $m$ 不同；對數裡含 $m^{3/2}$，所以</p>
+        $$S_{\text{Ar}}-S_{\text{He}}=Nk\ln\left(\frac{m_{\text{Ar}}}{m_{\text{He}}}\right)^{3/2}=\frac32R\ln10$$
+        <p class="sub">代入 $m_{\text{Ar}}/m_{\text{He}}=40/4=10$、$R=8.31\ \text{J/K}$：</p>
+        $$\frac32R\ln10=1.5\times8.31\times2.303\ \text{J/K}=29\ \text{J/K}$$
+        <p>和 $155-126=29\ \text{J/K}$ 相符。物理原因：同樣的動能，重的原子動量大（$p=\sqrt{2mU}$），動量空間的超球面大，可及的量子態（相空間格子）多，排列方式多，熵就大。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$S\approx155\ \text{J/K}$（氦 $126\ \text{J/K}$）；氬較重，同樣能量下動量空間較大，多出 $\frac32R\ln10\approx29\ \text{J/K}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>改用課文氦例題的 $V=0.025\ \text{m}^3$、$U=3700\ \text{J}$ 直接代入：對數裡是 $3.2\times10^5\times10^{3/2}=1.0\times10^7$，同一個答案 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-35">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-35（Problem 2.35）· p.79</span></div>
+    <h4>Sackur–Tetrode 在多低溫會失效</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-35">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-35"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>According to the Sackur-Tetrode equation, the entropy of a monatomic ideal gas can become negative when its temperature (and hence its energy) is sufficiently low. Of course this is absurd, so the Sackur-Tetrode equation must be invalid at very low temperatures. Suppose you start with a sample of helium at room temperature and atmospheric pressure, then lower the temperature holding the density fixed. Pretend that the helium remains a gas and does not liquefy. Below what temperature would the Sackur-Tetrode equation predict that S is negative? (The behavior of gases at very low temperatures is the main subject of Chapter 7.)</p></div>
+<p class="original-caption">Schroeder 習題 2-35（Problem 2.35）· p.79</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>依 Sackur–Tetrode 公式，溫度（因而能量）夠低時單原子理想氣體的熵會變成負的。這當然荒謬，所以這個公式在極低溫一定不成立。假設你從室溫、一大氣壓的氦開始，維持密度不變降低溫度（假裝氦一直是氣體、不會液化）。低於什麼溫度時，Sackur–Tetrode 公式會預測 $S$ 為負？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氣體</td><td>氦，$m=6.64\times10^{-27}\ \text{kg}$</td><td>題目「氦」；質量題目沒給</td></tr>
+          <tr><td>起始狀態</td><td>$T_0=300\ \text{K}$、$P_0=1.013\times10^5\ \text{Pa}$</td><td>「從室溫、一大氣壓的氦開始」</td></tr>
+          <tr><td>密度</td><td>$N/V=P_0/(kT_0)$ 固定</td><td>「維持<b>密度不變</b>降低溫度」</td></tr>
+          <tr><td>不液化</td><td>一直用 Sackur–Tetrode</td><td>「假裝氦一直是氣體、不會液化」</td></tr>
+          <tr><td>單原子</td><td>$U/N=\frac32kT$</td><td>氦是單原子（題目沒寫）</td></tr>
+          <tr><td>條件</td><td>$S\lt0$</td><td>「低於什麼溫度時……預測 $S$ 為負」</td></tr>
+          <tr><td>常數</td><td>$h$、$k$；$e^{5/3}=5.29$</td><td>標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：Sackur–Tetrode 公式預測 $S\lt0$ 的溫度門檻。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $S=Nk[\ln(\cdots)+\frac52]$，$S\lt0$ ⟺ 方括號 $\lt0$，<b>所以</b>邊界是「方括號 $=0$」，也就是對數的引數 $\times e^{5/2}=1$。</p>
+      <p><b>因為</b>題目固定的是密度 $N/V$、改變的是溫度，<b>所以</b>先用 $U/N=\frac32kT$ 把公式裡的 $U$ 換成 $T$，再解出邊界溫度，最後代入室溫一大氣壓的密度。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-35-s1">
+        <span class="step-title">把 $U$ 換成 $T$</span>
+        <p>代入 $U/N=\frac32kT$：</p>
+        $$\frac{4\pi mU}{3Nh^2}=\frac{4\pi m}{3h^2}\cdot\frac32kT=\frac{2\pi mkT}{h^2}$$
+        $$S=Nk\left[\ln\left(\frac VN\left(\frac{2\pi mkT}{h^2}\right)^{3/2}\right)+\frac52\right]$$
+      </div>
+      <div class="step" data-step="t235a" data-sym="T">
+        <span class="step-title">令方括號 $=0$，解出 $T$</span>
+        <p>$S=0$ ⟺ $\ln(\cdots)=-\frac52$ ⟺ 引數 $=e^{-5/2}$，兩邊乘 $e^{5/2}$：</p>
+        $$\frac VNe^{5/2}\left(\frac{2\pi mkT}{h^2}\right)^{3/2}=1$$
+        <p>移項，兩邊取 $\frac23$ 次方：</p>
+        $$\frac{2\pi mkT}{h^2}=\left(\frac NV\right)^{2/3}e^{-5/3}$$
+        $$T=\left(\frac NV\right)^{2/3}\frac{h^2}{2\pi e^{5/3}mk}$$
+        <p>溫度再低，引數更小，$S\lt0$。</p>
+      </div>
+      <div class="step" data-step="sc-2-35-s3">
+        <span class="step-title">室溫一大氣壓的密度</span>
+        <p class="sub">代入 $P_0=1.013\times10^5\ \text{Pa}$、$T_0=300\ \text{K}$（題目「室溫、一大氣壓」）：</p>
+        $$\frac NV=\frac{P_0}{kT_0}=\frac{1.013\times10^5}{(1.38\times10^{-23})(300)}\ \text{m}^{-3}=2.45\times10^{25}\ \text{m}^{-3}$$
+        $$\left(\frac NV\right)^{2/3}=(2.45\times10^{25})^{2/3}=8.4\times10^{16}\ \text{m}^{-2}$$
+      </div>
+      <div class="step" data-step="t235b">
+        <span class="step-title">代入求 $T$</span>
+        <p class="sub">代入 $(N/V)^{2/3}$（步驟 3）、$h=6.63\times10^{-34}$、$e^{5/3}=5.29$、$m=6.64\times10^{-27}\ \text{kg}$、$k$：</p>
+        $$T=\frac{(8.4\times10^{16})(6.63\times10^{-34})^2}{2\pi(5.29)(6.64\times10^{-27})(1.38\times10^{-23})}$$
+        $$T=\frac{3.7\times10^{-50}}{3.05\times10^{-48}}\ \text{K}\approx0.012\ \text{K}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約 $0.01\ \text{K}$（$0.012\ \text{K}$）以下。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>密度固定時 $S/Nk=15.2+\tfrac32\ln(T/300\ \text{K})$，等於 0 在 $T=300e^{-10.1}=0.012\ \text{K}$ ✔（上方圖解）。這麼低溫時要用第 7 章的量子統計。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-09a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>自由膨脹之後再等溫壓回原狀</h4>
+    <button type="button" class="exam-btn" data-exam="sf-09a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>1 mol 單原子理想氣體在 300 K 由 $V$ 自由膨脹到 $2V$（容器絕熱，Fig. 2.14）。接著讓容器接觸 300 K 的熱庫，用活塞準靜態、等溫地把氣體壓回 $V$。(a) 兩個步驟中氣體的 $\Delta S$ 各是多少？整個過程後氣體的 $\Delta S$？(b) 壓縮時外界對氣體做多少功？氣體放多少熱給熱庫？熱庫的熵變多少？(c) 宇宙（氣體＋熱庫）的總熵變多少？能不能把一切恢復原狀？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氣體</td><td>1 mol 單原子理想氣體，$Nk=R=8.314\ \text{J/K}$</td><td>題目</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>題目</td></tr>
+          <tr><td>步驟一</td><td>自由膨脹 $V\to2V$：$Q=0$、$W=0$</td><td>「自由膨脹到 $2V$（容器<b>絕熱</b>）」</td></tr>
+          <tr><td>步驟二</td><td>準靜態等溫壓縮 $2V\to V$</td><td>「接觸 300 K 的熱庫，用活塞準靜態、等溫地壓回 $V$」</td></tr>
+          <tr><td>熵變（$U,N$ 固定）</td><td>$\Delta S=Nk\ln(V_f/V_i)$</td><td>課本 (2.51)</td></tr>
+          <tr><td>熱庫</td><td>溫度固定 300 K，$\Delta S=Q/T$</td><td>熱庫很大、準靜態吸熱（習題 2.34）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 兩步驟及全程氣體的 $\Delta S$；(b) 壓縮時的功、放熱、熱庫的熵變；(c) 宇宙的總熵變，能否完全復原。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩個步驟中氣體的 $U$ 都不變（自由膨脹 $Q=W=0$；等溫壓縮 $T$ 不變），<b>所以</b>氣體的熵變都可以用 (2.51)。<b>因為</b>熵是狀態函數，氣體最後回到原狀態，<b>所以</b>全程氣體 $\Delta S=0$——不論中間怎麼走。</p>
+      <p>但宇宙的帳要把熱庫算進去：<b>因為</b>等溫壓縮時外界做功、氣體把等量的熱放給熱庫，熱庫的熵增加 $Q/T$，<b>所以</b> (b) 先由第一定律求功與熱，(c) 再加總。自由膨脹「就地產生」的熵，最後被搬到了熱庫。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf09a1" data-sym="S,V">
+        <span class="step-title">(a) 氣體的熵</span>
+        <p>自由膨脹：$Q=W=0$ ⟹ $U$ 不變；等溫壓縮：$T$ 不變 ⟹ $U$ 不變。兩步都用 (2.51)。</p>
+        <p class="sub">代入體積比 $2V/V=2$、$V/2V=\tfrac12$，$Nk=R=8.314\ \text{J/K}$（1 mol）：</p>
+        $$\Delta S_1=R\ln2=8.314\times0.693=+5.76\ \text{J/K}$$
+        $$\Delta S_2=R\ln\tfrac12=-5.76\ \text{J/K}$$
+        $$\Delta S_{\text{gas}}=\Delta S_1+\Delta S_2=0$$
+      </div>
+      <div class="step" data-step="sf09a2">
+        <span class="step-title">(b) 等溫壓縮的功與熱</span>
+        <p>外界對氣體做的功，$P=NkT/V$，從 $2V$ 積到 $V$：</p>
+        $$W_{\text{on}}=-\int_{2V}^{V}\frac{NkT}{V'}\,dV'=-NkT\ln\frac V{2V}=RT\ln2$$
+        <p class="sub">代入 $R=8.314\ \text{J/K}$、$T=300\ \text{K}$（題目）：</p>
+        $$W_{\text{on}}=8.314\times300\times0.693\ \text{J}=1729\ \text{J}$$
+        <p>$\Delta U=0$，第一定律 $Q=\Delta U-W_{\text{on}}=-1729\ \text{J}$：氣體<strong>放出</strong> 1729 J 的熱給熱庫。</p>
+      </div>
+      <div class="step" data-step="sf-09a-s3">
+        <span class="step-title">(b) 熱庫的熵</span>
+        <p class="sub">熱庫在 300 K 準靜態地吸收 $+1729\ \text{J}$（步驟 2），用 $\Delta S=Q/T$（習題 2.34）：</p>
+        $$\Delta S_{\text{res}}=\frac{+1729\ \text{J}}{300\ \text{K}}=+5.76\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sf09a3">
+        <span class="step-title">(c) 宇宙的熵</span>
+        $$\Delta S_{\text{universe}}=\Delta S_{\text{gas}}+\Delta S_{\text{res}}=0+5.76=R\ln2\gt0$$
+        <p>無法完全復原：要讓熱庫的熵回去，得從熱庫取出 1729 J 的熱、全部變成功而沒有其他影響，這會讓總熵減少（第 4 章的 Kelvin 敘述）。自由膨脹的不可逆性沒有消失，只是轉移到了熱庫。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $+5.76$、$-5.76$、合計 0 J/K；(b) $W=1729$ J、放熱 1729 J、熱庫 $+5.76$ J/K；(c) $+5.76$ J/K，不能完全復原。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>對照：如果第一步改成等溫準靜態膨脹（從熱庫吸 1729 J），熱庫先 $-5.76$ 再 $+5.76$，整個循環宇宙 $\Delta S=0$——可逆 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-09b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>加熱一莫耳氦：定容與定壓</h4>
+    <button type="button" class="exam-btn" data-exam="sf-09b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>由 Sackur–Tetrode 公式 (2.49) 加上 $U=\tfrac32NkT$：(a) 把 $S$ 寫成 $V$、$T$、$N$ 的函數，說明 $S$ 怎麼依賴 $T$。(b) 1 mol 氦由 300 K 加熱到 600 K，體積不變，$\Delta S=$？(c) 壓力不變，$\Delta S=$？(d) 若要讓氦從 300 K 升到 600 K 而熵不變，體積要變成原來的幾倍？這是什麼過程？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>熵</td><td>Sackur–Tetrode (2.49)</td><td>題目</td></tr>
+          <tr><td>內能</td><td>$U=\frac32NkT$</td><td>「加上 $U=\tfrac32NkT$」</td></tr>
+          <tr><td>氣體</td><td>1 mol 氦，$Nk=R=8.314\ \text{J/K}$</td><td>(b)–(d)</td></tr>
+          <tr><td>溫度</td><td>$T_i=300\ \text{K}\to T_f=600\ \text{K}$</td><td>「由 300 K 加熱到 600 K」</td></tr>
+          <tr><td>(b)</td><td>$V_f/V_i=1$</td><td>「體積不變」</td></tr>
+          <tr><td>(c)</td><td>$P$ 不變 ⟹ $V_f/V_i=T_f/T_i$</td><td>「壓力不變」，由 $PV=NkT$</td></tr>
+          <tr><td>(d)</td><td>$\Delta S=0$</td><td>「熵不變」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $S(V,T,N)$ 與它怎麼依賴 $T$；(b) 定容 $\Delta S$；(c) 定壓 $\Delta S$；(d) 等熵時的體積比與過程名稱。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> (b)–(d) 都是「同一團氣體的兩個狀態相減」，Sackur–Tetrode 裡的 $m$、$h$、$\frac52$ 在相減時全部消掉，<b>所以</b>先把 $S$ 寫成「$Nk[\ln\frac VN+\frac32\ln T]$＋常數」，之後每小題只要代比值。</p>
+      <p>定壓時<b>因為</b> $PV=NkT$ 中 $P$、$N$ 固定，<b>所以</b> $V\propto T$；等熵時令 $\Delta S=0$ 解體積比。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf09b1" data-sym="S,T,V">
+        <span class="step-title">(a) $S(V,T,N)$</span>
+        <p>代入 $U/N=\frac32kT$（同習題 2.35）：</p>
+        $$\frac{4\pi mU}{3Nh^2}=\frac{2\pi mkT}{h^2}$$
+        <p>$\ln\big[(\cdots)^{3/2}\big]=\frac32\ln T+\frac32\ln\frac{2\pi mk}{h^2}$，後者和 $V$、$T$ 無關：</p>
+        $$S=Nk\left[\ln\frac VN+\frac32\ln T+\text{常數}\right]$$
+        <p>同一團氣體（$N$ 固定）兩個狀態相減：</p>
+        $$\Delta S=Nk\left[\ln\frac{V_f}{V_i}+\frac32\ln\frac{T_f}{T_i}\right]$$
+        <p>$S$ 隨 $T$ 以 $\frac32Nk\ln T$ 增加：溫度每加倍，熵增加 $\frac32Nk\ln2$。</p>
+      </div>
+      <div class="step" data-step="sf09b2">
+        <span class="step-title">(b) 定容</span>
+        <p class="sub">代入 $V_f/V_i=1$、$T_f/T_i=600/300=2$、$Nk=R$：</p>
+        $$\Delta S=\frac32R\ln2=1.5\times8.314\times0.693\ \text{J/K}=8.64\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sf09b3">
+        <span class="step-title">(c) 定壓：$V_f/V_i=T_f/T_i=2$</span>
+        $$\Delta S=R\left[\ln2+\frac32\ln2\right]=\frac52R\ln2=14.41\ \text{J/K}$$
+        <p>多出來的 $R\ln2=5.76\ \text{J/K}$ 是體積加倍的貢獻。</p>
+      </div>
+      <div class="step" data-step="sf09b4">
+        <span class="step-title">(d) 等熵</span>
+        <p>令 $\Delta S=0$：</p>
+        $$\ln\frac{V_f}{V_i}=-\frac32\ln\frac{T_f}{T_i}\ \Longrightarrow\ \frac{V_f}{V_i}=\left(\frac{T_i}{T_f}\right)^{3/2}$$
+        <p class="sub">代入 $T_i/T_f=300/600=\tfrac12$：</p>
+        $$\frac{V_f}{V_i}=\left(\frac12\right)^{3/2}=\frac1{2.83}=0.354$$
+        <p>也就是 $VT^{3/2}$ 固定，等價於 $TV^{2/3}=TV^{\gamma-1}$ 固定（$\gamma=5/3$），即 $PV^{5/3}=$ 常數：這是準靜態絕熱壓縮（考古 114-3 (c)）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $S=Nk[\ln(V/N)+\tfrac32\ln T+\text{常數}]$；(b) 8.64 J/K；(c) 14.41 J/K；(d) 體積變成 0.354 倍，準靜態絕熱壓縮。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>把 300 K、600 K 的 $V$、$U$ 直接代入完整的 Sackur–Tetrode 數值計算，差值也是 8.64、14.41 J/K ✔；兩者比值 $5/3=C_P/C_V$，第 3 章會看到 $dS=C\,dT/T$ ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>Sackur–Tetrode：$S=Nk[\ln(\frac VN(\frac{4\pi mU}{3Nh^2})^{3/2})+\tfrac52]$；一莫耳氦 $126\ \text{J/K}$、氬 $155\ \text{J/K}$。</li>
+    <li>$U,N$ 固定：$\Delta S=Nk\ln(V_f/V_i)$——等溫膨脹（熱帶進來）與自由膨脹（就地產生）都適用。</li>
+    <li>由 $S(U)$ 與 $1/T=\partial S/\partial U$ 得 $U=\tfrac32NkT$（考古常接著問）。</li>
+  </ol>
+</div>

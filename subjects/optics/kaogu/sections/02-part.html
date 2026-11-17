@@ -1,0 +1,634 @@
+<h2 id="kp-02">B 組：第 2 題｜平面電磁波（每份 40 分）</h2>
+<p><strong>老師逐字稿：</strong> 第八章，明確說「一定會考」。三年都考相同四小題：(a) 電場；(b) 磁場；(c) 瞬時 Poynting 向量；(d) 輻射照度。</p>
+<h3 id="k02-1">B-1. 共同概念：解題順序</h3>
+<p><strong>符號表</strong>（三年都給相對磁導率 $\mu_r=1$，後面的能流式用此簡化）：</p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>符號</th>
+<th>意義</th>
+<th>單位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$n$</td>
+<td>介質折射率</td>
+<td>無</td>
+</tr>
+<tr>
+<td>$c_0$</td>
+<td>真空光速，題目取 $3\times10^8$</td>
+<td>m/s</td>
+</tr>
+<tr>
+<td>$v$</td>
+<td>光在介質中的速度</td>
+<td>m/s</td>
+</tr>
+<tr>
+<td>$f$</td>
+<td>頻率</td>
+<td>Hz</td>
+</tr>
+<tr>
+<td>$\lambda$</td>
+<td>介質中的波長</td>
+<td>m</td>
+</tr>
+<tr>
+<td>$\omega$</td>
+<td>角頻率</td>
+<td>rad/s</td>
+</tr>
+<tr>
+<td>$k$</td>
+<td>波數（大小）</td>
+<td>rad/m</td>
+</tr>
+<tr>
+<td>$\hat k$</td>
+<td>傳播單位方向向量</td>
+<td>無</td>
+</tr>
+<tr>
+<td>$\vec k=k\hat k$</td>
+<td>波向量</td>
+<td>rad/m</td>
+</tr>
+<tr>
+<td>$\hat e,\hat b$</td>
+<td>電場與磁場的單位方向</td>
+<td>無</td>
+</tr>
+<tr>
+<td>$E_0$</td>
+<td>電場振幅</td>
+<td>V/m</td>
+</tr>
+<tr>
+<td>$B_0$</td>
+<td>磁通密度振幅</td>
+<td>T</td>
+</tr>
+<tr>
+<td>$\vec r=x\hat x+y\hat y+z\hat z$</td>
+<td>位置向量，$x,y,z$ 為座標</td>
+<td>m</td>
+</tr>
+<tr>
+<td>$\Phi$</td>
+<td>時空相位</td>
+<td>rad</td>
+</tr>
+<tr>
+<td>$\vec S$</td>
+<td>瞬時 Poynting 向量</td>
+<td>W/m²</td>
+</tr>
+<tr>
+<td>$S_0$</td>
+<td>瞬時能流的最大大小</td>
+<td>W/m²</td>
+</tr>
+<tr>
+<td>$I$</td>
+<td>瞬時能流的時間平均大小／輻射照度</td>
+<td>W/m²</td>
+</tr>
+<tr>
+<td>$\varepsilon_0$</td>
+<td>真空介電常數，$8.8542\times10^{-12}$</td>
+<td>F/m</td>
+</tr>
+<tr>
+<td>$\mu_0$</td>
+<td>真空磁導率</td>
+<td>H/m</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>① 判斷三個方向 $\hat k$、$\hat e$、$\hat b$：</strong> 平面電磁波的三個方向兩兩垂直：</p>
+<div class="math-block">$$
+\vec E\perp\vec B,\qquad\vec E\perp\vec k,\qquad\vec B\perp\vec k.
+$$</div>
+<p>能量傳播方向由電場叉乘磁場決定：</p>
+<div class="math-block">$$
+\boxed{\hat e\times\hat b=\hat k}.
+$$</div>
+<p>叉積順序（$\hat x,\hat y,\hat z$ 為座標軸單位向量）如下，反過來要加負號，例如 $\hat x\times\hat z=-\hat y$，所以電場方向不能用猜的：</p>
+<div class="math-block">$$
+\hat x\times\hat y=\hat z,\quad
+\hat y\times\hat z=\hat x,\quad
+\hat z\times\hat x=\hat y.
+$$</div>
+<p><strong>② 求波速、波長、角頻率、波數與另一個振幅：</strong> 折射率是真空光速與介質相速度之比：</p>
+<div class="math-block">$$
+\boxed{v=\frac{c_0}{n}}.
+$$</div>
+<p>由 $v=f\lambda$：</p>
+<div class="math-block">$$\boxed{\lambda=\frac vf}.$$</div>
+<p>一個週期、一個波長都對應 $2\pi$ 的相位變化：</p>
+<div class="math-block">$$
+\boxed{\omega=2\pi f},\qquad\boxed{k=\frac{2\pi}{\lambda}}.
+$$</div>
+<p>兩個場的振幅關係：</p>
+<div class="math-block">$$
+\boxed{E_0=vB_0}.
+$$</div>
+<p>已知 $E_0$ 就用 $B_0=E_0/v$；已知 $B_0$ 就用 $E_0=vB_0$。</p>
+<p><strong>③ 組合完整相位：</strong> $\vec k\cdot\vec r$ 是空間相位，$-\omega t$ 是時間相位，$\phi_0$ 是初始相位（<strong>三份考卷均為 $0$</strong>）：</p>
+<div class="math-block">$$
+\boxed{\Phi=\vec k\cdot\vec r-\omega t+\phi_0}.
+$$</div>
+<p>例如 $\vec k=k_x\hat x+k_y\hat y$（$k_x,k_y$：$\vec k$ 的 x、y 分量）時，$\vec k\cdot\vec r=k_xx+k_yy$；$\vec k$ 沒有 $z$ 分量，相位就不含 $z$。</p>
+<p><strong>④ 寫出電場、磁場與指數表示：</strong></p>
+<div class="math-block">$$
+\boxed{\vec E(x,y,z;t)=E_0\hat e\cos\Phi},\qquad
+\boxed{\vec B(x,y,z;t)=B_0\hat b\cos\Phi}.
+$$</div>
+<p>指數表示來自歐拉公式（$i^2=-1$）：</p>
+<div class="math-block">$$e^{i\Phi}=\cos\Phi+i\sin\Phi.$$</div>
+<p>實際的場是實數，所以取實部 $\operatorname{Re}\{\cdots\}$；複數只是計算工具：</p>
+<div class="math-block">$$
+\boxed{\vec E=\operatorname{Re}\{E_0\hat e\,e^{i\Phi}\}},\qquad
+\boxed{\vec B=\operatorname{Re}\{B_0\hat b\,e^{i\Phi}\}}.
+$$</div>
+<p><strong>⑤ 瞬時 Poynting 向量：</strong> 定義為</p>
+<div class="math-block">$$\boxed{\vec S=\frac1{\mu_0}\vec E\times\vec B}.$$</div>
+<p>代入兩個場，兩個 $\cos\Phi$ 相乘得到 $\cos^2\Phi$：</p>
+<div class="math-block">$$
+\begin{aligned}
+\vec S
+&amp;=\frac1{\mu_0}(E_0\hat e\cos\Phi)\times(B_0\hat b\cos\Phi)\\
+&amp;=\frac{E_0B_0}{\mu_0}\cos^2\Phi(\hat e\times\hat b)\\
+&amp;=\frac{E_0B_0}{\mu_0}\cos^2\Phi\,\hat k.
+\end{aligned}
+$$</div>
+<p>用 $B_0=nE_0/c_0$、$1/\mu_0=\varepsilon_0c_0^2$ 化簡：</p>
+<div class="math-block">$$
+\boxed{\vec S=\varepsilon_0nc_0E_0^2\cos^2\Phi\,\hat k}.
+$$</div>
+<p>令不含 $\cos^2\Phi$ 的係數為 $S_0$：</p>
+<div class="math-block">$$\boxed{S_0=\varepsilon_0nc_0E_0^2}.$$</div>
+<p>所以 $\vec S=S_0\hat k\cos^2\Phi$。指數形式利用</p>
+<div class="math-block">$$
+\cos^2\Phi=\frac{e^{2i\Phi}+2+e^{-2i\Phi}}4,
+$$</div>
+<p>得到：</p>
+<div class="math-block">$$
+\boxed{\vec S=\frac{S_0}{4}\hat k
+\left(e^{2i\Phi}+2+e^{-2i\Phi}\right)}.
+$$</div>
+<p><strong>⑥ 照度取時間平均：</strong> 照度 $I$ 是瞬時能流大小在一個完整週期的平均（$\langle\cdots\rangle$：週期平均；$|\vec S|$：$\vec S$ 的大小），而</p>
+<div class="math-block">$$\langle\cos^2\Phi\rangle=\frac12.$$</div>
+<p>所以：</p>
+<div class="math-block">$$
+\boxed{I=\langle|\vec S|\rangle=\frac12S_0=\frac12\varepsilon_0nc_0E_0^2}.
+$$</div>
+<p>瞬時 $\vec S$ 有方向、隨時間以 $\cos^2\Phi$ 變化；照度 $I$ 是非負的平均純量。</p>
+
+<h3 id="k02-2">B-4. 112 級第 2 題（40 分）</h3>
+<p><strong>題目：</strong> 平面電磁波在折射率 $n=3$ 的介質傳播，波向量在 $xy$ 平面、與 $+x$ 軸夾 $30^\circ$，向右上方傳播。已知磁場方向 $-\hat z$，電場振幅 $E_0=2\ \mathrm{V/m}$，<strong>頻率 $f=10^{14}\ \mathrm{Hz}$</strong>，初始相位 $0$。</p>
+<p>求：(a) 完整電場；(b) 完整磁場；(c) 完整瞬時 Poynting 向量；(d) 輻射照度（各要有單位，前 3 小題需包含指數表示法）。</p>
+<p><strong>① 傳播方向：</strong> 由 $+x$ 軸往上轉 $30^\circ$。</p>
+<p class="fnote"><b>公式（平面內方向單位向量）：</b>與單位向量 $\hat u$ 夾角 $\theta$、往與它垂直的單位向量 $\hat w$ 那一側偏轉的方向為 $\hat k=\cos\theta\,\hat u+\sin\theta\,\hat w$，其中 $\hat u\perp\hat w$，$\theta$ 為夾角（度或 rad），$\hat k$ 為傳播方向單位向量；本題 $\hat u=\hat x$、$\hat w=\hat y$、$\theta=30^\circ$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\hat k&amp;=\cos30^\circ\hat x+\sin30^\circ\hat y\\
+&amp;=\boxed{\frac{\sqrt3}{2}\hat x+\frac12\hat y}.
+\end{aligned}
+$$</div>
+<p><strong>② 磁場與電場方向：</strong> 磁場題目已給：</p>
+<div class="math-block">$$\boxed{\hat b=-\hat z}.$$</div>
+<p>電場必須滿足 $\hat e\times\hat b=\hat k$：</p>
+<p class="fnote"><b>公式（電場方向）：</b>$\hat e=\hat b\times\hat k$（由 $\hat e\times\hat b=\hat k$ 且 $\hat e,\hat b,\hat k$ 兩兩垂直、構成右手系得到），其中 $\hat e,\hat b,\hat k$ 分別為電場、磁場、傳播方向的單位向量；本題 $\hat b=-\hat z$、$\hat k=\frac{\sqrt3}{2}\hat x+\frac12\hat y$。</p>
+<p class="fnote"><b>公式（單位向量叉積）：</b>$\hat x\times\hat y=\hat z$，$\hat y\times\hat z=\hat x$，$\hat z\times\hat x=\hat y$，順序對調則加負號（如 $\hat x\times\hat z=-\hat y$），且 $(a\hat u)\times(b\hat w)=ab\,(\hat u\times\hat w)$，其中 $\hat x,\hat y,\hat z$ 為座標軸單位向量，$a,b$ 為純量，$\hat u,\hat w$ 為任意單位向量；本題用來算 $\hat e=\hat b\times\hat k$。</p>
+<div class="math-block">$$\boxed{\hat e=\frac12\hat x-\frac{\sqrt3}{2}\hat y}.$$</div>
+<p><strong>③ 介質波速：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+v&amp;=\frac{c_0}{n}=\frac{3\times10^8}{3}\\
+&amp;=\boxed{1.00\times10^8\ \mathrm{m/s}}.
+\end{aligned}
+$$</div>
+<p><strong>④ 波長、角頻率、波數：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+\lambda&amp;=\frac vf=\frac{1.00\times10^8}{10^{14}}\\
+&amp;=\boxed{10^{-6}\ \mathrm m=1000\ \mathrm{nm}}.
+\end{aligned}
+$$</div>
+<div class="math-block">$$\boxed{\omega=2\pi f=2\pi\times10^{14}\ \mathrm{rad/s}}.$$</div>
+<div class="math-block">$$
+\boxed{k=\frac{2\pi}{\lambda}=\frac{2\pi}{10^{-6}}
+=2\pi\times10^6\ \mathrm{rad/m}}.
+$$</div>
+<p><strong>⑤ 完整相位：</strong> 先寫 $\vec k=k\hat k$：</p>
+<div class="math-block">$$
+\vec k=2\pi\times10^6\left(\frac{\sqrt3}{2}\hat x+\frac12\hat y\right).
+$$</div>
+<p>與 $\vec r=x\hat x+y\hat y+z\hat z$ 取內積：</p>
+<p class="fnote"><b>公式（內積）：</b>$\vec k\cdot\vec r=k_xx+k_yy+k_zz$，其中 $k_x,k_y,k_z$ 為波向量 $\vec k$ 的分量（rad/m），$x,y,z$ 為位置座標（m）；本題 $k_x=\sqrt3\pi\times10^6$、$k_y=\pi\times10^6$、$k_z=0$（單位 rad/m）。</p>
+<div class="math-block">$$
+\begin{aligned}
+\vec k\cdot\vec r
+&amp;=2\pi\times10^6\left(\frac{\sqrt3}{2}x+\frac12y\right)\\
+&amp;=\pi\times10^6(\sqrt3x+y).
+\end{aligned}
+$$</div>
+<p>再扣掉時間相位 $\omega t$：</p>
+<p class="fnote"><b>公式（平面波完整相位）：</b>$\Phi=\vec k\cdot\vec r-\omega t+\phi_0$，其中 $\vec k$ 為波向量（rad/m），$\vec r$ 為位置向量（m），$\omega$ 為角頻率（rad/s），$t$ 為時間（s），$\phi_0$ 為初始相位（rad）；本題 $\omega=2\pi\times10^{14}\ \mathrm{rad/s}$、$\phi_0=0$。</p>
+<div class="math-block">$$
+\boxed{\Phi_{112}=\pi\times10^6(\sqrt3x+y)-2\pi\times10^{14}t}.
+$$</div>
+<p class="symnote">符號：$\Phi_{112}$：本題完整相位（rad），下標只標示年級；不含 $z$，因為 $\vec k$ 沒有 $z$ 分量。</p>
+<h4>(a) 完整電場</h4>
+<p><strong>① 實數形式：</strong> 代入 $\vec E=E_0\hat e\cos\Phi_{112}$。</p>
+<div class="math-block">$$
+\boxed{
+\vec E(x,y,z;t)=2\left(\frac12\hat x-\frac{\sqrt3}{2}\hat y\right)
+\cos\Phi_{112}\ \mathrm{V/m}
+}.
+$$</div>
+<p><strong>② 指數表示：</strong></p>
+<p class="fnote"><b>公式（指數表示）：</b>$\vec E=\operatorname{Re}\{E_0\hat e\,e^{i\Phi}\}$，因為歐拉公式 $e^{i\Phi}=\cos\Phi+i\sin\Phi$ 的實部就是 $\cos\Phi$，其中 $E_0$ 為電場振幅（V/m），$\hat e$ 為電場方向單位向量，$\Phi$ 為完整相位（rad），$i^2=-1$；本題 $E_0=2\ \mathrm{V/m}$、$\hat e=\frac12\hat x-\frac{\sqrt3}{2}\hat y$、$\Phi=\Phi_{112}$。</p>
+<div class="math-block">$$
+\boxed{
+\vec E=\operatorname{Re}\left\{2\left(\frac12\hat x-\frac{\sqrt3}{2}\hat y\right)
+e^{i\Phi_{112}}\right\}\ \mathrm{V/m}
+}.
+$$</div>
+<h4>(b) 完整磁場</h4>
+<p><strong>① 磁場振幅：</strong> 已知 $E_0$，用 $B_0=E_0/v$。</p>
+<div class="math-block">$$
+\begin{aligned}
+B_0&amp;=\frac{E_0}{v}=\frac2{1.00\times10^8}\\
+&amp;=\boxed{2.00\times10^{-8}\ \mathrm T}.
+\end{aligned}
+$$</div>
+<p><strong>② 寫出磁場：</strong> 方向為 $-\hat z$。</p>
+<p class="fnote"><b>公式（平面波磁場）：</b>$\vec B=B_0\hat b\cos\Phi=\operatorname{Re}\{B_0\hat b\,e^{i\Phi}\}$，其中 $B_0$ 為磁場振幅（T），$\hat b$ 為磁場方向單位向量，$\Phi$ 為完整相位（rad），$\operatorname{Re}\{\cdots\}$ 表示取實部；本題 $B_0=2.00\times10^{-8}\ \mathrm{T}$、$\hat b=-\hat z$、$\Phi=\Phi_{112}$。</p>
+<div class="math-block">$$\boxed{\vec B=-2.00\times10^{-8}\hat z\cos\Phi_{112}\ \mathrm T}.$$</div>
+<p>指數表示：</p>
+<div class="math-block">$$
+\boxed{\vec B=\operatorname{Re}\left\{-2.00\times10^{-8}\hat z\,e^{i\Phi_{112}}\right\}\ \mathrm T}.
+$$</div>
+<h4>(c) 瞬時 Poynting 向量</h4>
+<p><strong>① 求 $S_0$：</strong> 代入 $S_0=\varepsilon_0nc_0E_0^2$。</p>
+<div class="math-block">$$
+\begin{aligned}
+S_0
+&amp;=(8.8542\times10^{-12})(3)(3\times10^8)(2^2)\\
+&amp;=(8.8542\times10^{-12})(3)(3\times10^8)(4)\\
+&amp;=\boxed{0.03187512\ \mathrm{W/m^2}}.
+\end{aligned}
+$$</div>
+<p><strong>② 補上方向 $\hat k$ 與 $\cos^2\Phi_{112}$：</strong></p>
+<p class="fnote"><b>公式（瞬時 Poynting 向量）：</b>$\vec S=\dfrac{1}{\mu_0}\vec E\times\vec B=S_0\hat k\cos^2\Phi$，其中 $\mu_0$ 為真空磁導率（H/m），$\vec E$ 為電場（V/m），$\vec B$ 為磁場（T），$S_0=\varepsilon_0nc_0E_0^2$ 為能流最大值（W/m²），$\hat k=\hat e\times\hat b$ 為傳播方向，$\Phi$ 為完整相位（rad）；本題 $S_0=0.03187512\ \mathrm{W/m^2}$、$\hat k=\frac{\sqrt3}{2}\hat x+\frac12\hat y$、$\Phi=\Phi_{112}$。</p>
+<div class="math-block">$$
+\boxed{\vec S=0.03187512
+\left(\frac{\sqrt3}{2}\hat x+\frac12\hat y\right)
+\cos^2\Phi_{112}\ \mathrm{W/m^2}}.
+$$</div>
+<p><strong>③ 指數表示：</strong> 用 B-1 ⑤ 的 $\cos^2\Phi$ 展開。</p>
+<div class="math-block">$$
+\boxed{\vec S=\frac{0.03187512}{4}
+\left(\frac{\sqrt3}{2}\hat x+\frac12\hat y\right)
+\left(e^{2i\Phi_{112}}+2+e^{-2i\Phi_{112}}\right)\ \mathrm{W/m^2}}.
+$$</div>
+<h4>(d) 平均照度</h4>
+<p><strong>① 取時間平均：</strong> $\cos^2\Phi_{112}$ 一週期平均為 $\frac12$，所以 $I=\frac12S_0$。</p>
+<div class="math-block">$$
+\begin{aligned}
+I&amp;=\frac12S_0=\frac{0.03187512}{2}\\
+&amp;=\boxed{0.01593756\ \mathrm{W/m^2}}.
+\end{aligned}
+$$</div>
+<p><strong>112 級第 2 題答案整理：</strong></p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>小題</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(a)</td>
+<td>$\vec E=2(\frac12\hat x-\frac{\sqrt3}{2}\hat y)\cos\Phi_{112}$ V/m</td>
+</tr>
+<tr>
+<td>(b)</td>
+<td>$\vec B=-2.00\times10^{-8}\hat z\cos\Phi_{112}$ T</td>
+</tr>
+<tr>
+<td>(c)</td>
+<td>$\vec S=0.03187512\hat k\cos^2\Phi_{112}$ W/m²</td>
+</tr>
+<tr>
+<td>(d)</td>
+<td>$I=0.01593756$ W/m²</td>
+</tr>
+</tbody>
+</table></div>
+
+<h3 id="k02-3">B-5. 114 級第 2 題（40 分）</h3>
+<p><strong>題目：</strong> 折射率 $n=1.5$，波向量在 $yz$ 平面，朝 $+y,-z$ 方向（與 $-z$ 軸夾 $30^\circ$）。已知<strong>磁場振幅</strong> $B_0=2\times10^{-6}\ \mathrm T$，磁場指向 $-\hat x$，頻率 $f=5\times10^{13}\ \mathrm{Hz}$，初始相位 0。</p>
+<p>同樣求 (a) 電場、(b) 磁場、(c) 瞬時能流、(d) 照度。與 112 級的差別：<strong>這一年先給 $B_0$，要反過來算 $E_0$</strong>。</p>
+<p><strong>① 傳播方向與磁場方向：</strong> 由 $-z$ 軸往 $+y$ 側偏 $30^\circ$。</p>
+<p class="fnote"><b>公式（平面內方向單位向量）：</b>與單位向量 $\hat u$ 夾角 $\theta$、往與它垂直的單位向量 $\hat w$ 那一側偏轉的方向為 $\hat k=\cos\theta\,\hat u+\sin\theta\,\hat w$，其中 $\hat u\perp\hat w$，$\theta$ 為夾角（度或 rad），$\hat k$ 為傳播方向單位向量；本題 $\hat u=-\hat z$、$\hat w=\hat y$、$\theta=30^\circ$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\hat k&amp;=\sin30^\circ\hat y-\cos30^\circ\hat z\\
+&amp;=\boxed{\frac12\hat y-\frac{\sqrt3}{2}\hat z}.
+\end{aligned}
+$$</div>
+<p>題目給 $\boxed{\hat b=-\hat x}$。</p>
+<p><strong>② 電場方向：</strong> 由 $\hat e\times(-\hat x)=\hat k$：</p>
+<p class="fnote"><b>公式（電場方向）：</b>$\hat e=\hat b\times\hat k$（由 $\hat e\times\hat b=\hat k$ 且 $\hat e,\hat b,\hat k$ 兩兩垂直、構成右手系得到），其中 $\hat e,\hat b,\hat k$ 分別為電場、磁場、傳播方向的單位向量；本題 $\hat b=-\hat x$、$\hat k=\frac12\hat y-\frac{\sqrt3}{2}\hat z$。</p>
+<p class="fnote"><b>公式（單位向量叉積）：</b>$\hat x\times\hat y=\hat z$，$\hat y\times\hat z=\hat x$，$\hat z\times\hat x=\hat y$，順序對調則加負號（如 $\hat x\times\hat z=-\hat y$），且 $(a\hat u)\times(b\hat w)=ab\,(\hat u\times\hat w)$，其中 $\hat x,\hat y,\hat z$ 為座標軸單位向量，$a,b$ 為純量，$\hat u,\hat w$ 為任意單位向量；本題用來算 $\hat e=\hat b\times\hat k$。</p>
+<div class="math-block">$$\boxed{\hat e=-\frac{\sqrt3}{2}\hat y-\frac12\hat z}.$$</div>
+<p><strong>③ 波速，再由磁場振幅反推電場振幅：</strong></p>
+<div class="math-block">$$
+\boxed{v=\frac{3\times10^8}{1.5}=2.00\times10^8\ \mathrm{m/s}}.
+$$</div>
+<p>利用 $E_0=vB_0$：</p>
+<div class="math-block">$$
+\begin{aligned}
+E_0&amp;=(2.00\times10^8)(2\times10^{-6})\\
+&amp;=4\times10^2\\
+&amp;=\boxed{400\ \mathrm{V/m}}.
+\end{aligned}
+$$</div>
+<p><strong>④ 波長、角頻率、波數：</strong></p>
+<p class="fnote"><b>公式（波長）：</b>$\lambda=\dfrac{v}{f}$，其中 $v$ 為介質中波速（m/s），$f$ 為頻率（Hz），$\lambda$ 為介質中波長（m）；本題 $v=2.00\times10^8\ \mathrm{m/s}$、$f=5\times10^{13}\ \mathrm{Hz}$。</p>
+<p class="fnote"><b>公式（角頻率）：</b>$\omega=2\pi f$，其中 $f$ 為頻率（Hz），$\omega$ 為角頻率（rad/s）；本題 $f=5\times10^{13}\ \mathrm{Hz}$。</p>
+<p class="fnote"><b>公式（波數）：</b>$k=\dfrac{2\pi}{\lambda}$，其中 $\lambda$ 為介質中波長（m），$k$ 為波數（rad/m）；本題 $\lambda=4.00\times10^{-6}\ \mathrm{m}$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\lambda&amp;=\frac{2.00\times10^8}{5\times10^{13}}
+=\boxed{4.00\times10^{-6}\ \mathrm m},\\
+\omega&amp;=2\pi(5\times10^{13})=\boxed{\pi\times10^{14}\ \mathrm{rad/s}},\\
+k&amp;=\frac{2\pi}{4.00\times10^{-6}}
+=\boxed{5\pi\times10^5\ \mathrm{rad/m}}.
+\end{aligned}
+$$</div>
+<p><strong>⑤ 完整相位：</strong> 先寫波向量。</p>
+<p class="fnote"><b>公式（波向量）：</b>$\vec k=k\hat k$，其中 $k$ 為波數（rad/m），$\hat k$ 為傳播方向單位向量；本題 $k=5\pi\times10^5\ \mathrm{rad/m}$。</p>
+<div class="math-block">$$
+\vec k=5\pi\times10^5\left(\frac12\hat y-\frac{\sqrt3}{2}\hat z\right).
+$$</div>
+<p>取內積：</p>
+<p class="fnote"><b>公式（內積）：</b>$\vec k\cdot\vec r=k_xx+k_yy+k_zz$，其中 $k_x,k_y,k_z$ 為波向量 $\vec k$ 的分量（rad/m），$x,y,z$ 為位置座標（m）；本題 $k_x=0$、$k_y=\frac{5\pi}{2}\times10^5$、$k_z=-\frac{5\sqrt3\pi}{2}\times10^5$（單位 rad/m）。</p>
+<div class="math-block">$$
+\begin{aligned}
+\vec k\cdot\vec r
+&amp;=5\pi\times10^5\left(\frac12y-\frac{\sqrt3}{2}z\right)\\
+&amp;=\frac{5\pi}{2}\times10^5(y-\sqrt3z).
+\end{aligned}
+$$</div>
+<p>再扣掉 $\omega t$：</p>
+<p class="fnote"><b>公式（平面波完整相位）：</b>$\Phi=\vec k\cdot\vec r-\omega t+\phi_0$，其中 $\vec k$ 為波向量（rad/m），$\vec r$ 為位置向量（m），$\omega$ 為角頻率（rad/s），$t$ 為時間（s），$\phi_0$ 為初始相位（rad）；本題 $\omega=\pi\times10^{14}\ \mathrm{rad/s}$、$\phi_0=0$。</p>
+<div class="math-block">$$
+\boxed{\Phi_{114}=\frac{5\pi}{2}\times10^5(y-\sqrt3z)
+-\pi\times10^{14}t}.
+$$</div>
+<p class="symnote">符號：$\Phi_{114}$：本題完整相位（rad）；不含 $x$，因為波沿 $yz$ 平面傳播。</p>
+<h4>(a) 電場</h4>
+<p><strong>① 代入 $E_0=400$ V/m 與 $\hat e$：</strong></p>
+<p class="fnote"><b>公式（平面波電場）：</b>$\vec E=E_0\hat e\cos\Phi=\operatorname{Re}\{E_0\hat e\,e^{i\Phi}\}$，其中 $E_0$ 為電場振幅（V/m），$\hat e$ 為電場方向單位向量，$\Phi$ 為完整相位（rad），$\operatorname{Re}\{\cdots\}$ 表示取實部；本題 $E_0=400\ \mathrm{V/m}$、$\hat e=-\frac{\sqrt3}{2}\hat y-\frac12\hat z$、$\Phi=\Phi_{114}$。</p>
+<div class="math-block">$$
+\boxed{
+\vec E=400\left(-\frac{\sqrt3}{2}\hat y-\frac12\hat z\right)
+\cos\Phi_{114}\ \mathrm{V/m}}.
+$$</div>
+<p><strong>② 指數表示：</strong></p>
+<div class="math-block">$$
+\boxed{\vec E=\operatorname{Re}\left\{400
+\left(-\frac{\sqrt3}{2}\hat y-\frac12\hat z\right)
+e^{i\Phi_{114}}\right\}\ \mathrm{V/m}}.
+$$</div>
+<h4>(b) 磁場</h4>
+<p><strong>① 代入 $B_0=2\times10^{-6}$ T 與 $\hat b=-\hat x$：</strong></p>
+<p class="fnote"><b>公式（平面波磁場）：</b>$\vec B=B_0\hat b\cos\Phi=\operatorname{Re}\{B_0\hat b\,e^{i\Phi}\}$，其中 $B_0$ 為磁場振幅（T），$\hat b$ 為磁場方向單位向量，$\Phi$ 為完整相位（rad），$\operatorname{Re}\{\cdots\}$ 表示取實部；本題 $B_0=2\times10^{-6}\ \mathrm{T}$、$\hat b=-\hat x$、$\Phi=\Phi_{114}$。</p>
+<div class="math-block">$$\boxed{\vec B=-2\times10^{-6}\hat x\cos\Phi_{114}\ \mathrm T}.$$</div>
+<p><strong>② 指數表示：</strong></p>
+<div class="math-block">$$
+\boxed{\vec B=\operatorname{Re}\left\{-2\times10^{-6}\hat x\,e^{i\Phi_{114}}\right\}\ \mathrm T}.
+$$</div>
+<h4>(c) 瞬時 Poynting 向量</h4>
+<p><strong>① 求 $S_0$：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+S_0&amp;=\varepsilon_0nc_0E_0^2\\
+&amp;=(8.8542\times10^{-12})(1.5)(3\times10^8)(400^2).
+\end{aligned}
+$$</div>
+<p>先平方 $400^2=160000$，再算得：</p>
+<div class="math-block">$$\boxed{S_0=637.5024\ \mathrm{W/m^2}}.$$</div>
+<p><strong>② 加入傳播方向：</strong></p>
+<p class="fnote"><b>公式（瞬時 Poynting 向量）：</b>$\vec S=\dfrac{1}{\mu_0}\vec E\times\vec B=S_0\hat k\cos^2\Phi$，其中 $\mu_0$ 為真空磁導率（H/m），$\vec E$ 為電場（V/m），$\vec B$ 為磁場（T），$S_0=\varepsilon_0nc_0E_0^2$ 為能流最大值（W/m²），$\hat k=\hat e\times\hat b$ 為傳播方向，$\Phi$ 為完整相位（rad）；本題 $S_0=637.5024\ \mathrm{W/m^2}$、$\hat k=\frac12\hat y-\frac{\sqrt3}{2}\hat z$、$\Phi=\Phi_{114}$。</p>
+<div class="math-block">$$
+\boxed{\vec S=637.5024
+\left(\frac12\hat y-\frac{\sqrt3}{2}\hat z\right)
+\cos^2\Phi_{114}\ \mathrm{W/m^2}}.
+$$</div>
+<p><strong>③ 指數表示：</strong></p>
+<div class="math-block">$$
+\vec S=\frac{637.5024}{4}
+\left(\frac12\hat y-\frac{\sqrt3}{2}\hat z\right)
+\left(e^{2i\Phi_{114}}+2+e^{-2i\Phi_{114}}\right)\ \mathrm{W/m^2}.
+$$</div>
+<h4>(d) 輻射照度</h4>
+<p><strong>① 取時間平均 $I=\frac12S_0$：</strong></p>
+<div class="math-block">$$
+\boxed{I=\frac{637.5024}{2}=318.7512\ \mathrm{W/m^2}}.
+$$</div>
+<p><strong>114 級第 2 題答案整理：</strong></p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>小題</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(a)</td>
+<td>$\vec E=400(-\frac{\sqrt3}{2}\hat y-\frac12\hat z)\cos\Phi_{114}$ V/m</td>
+</tr>
+<tr>
+<td>(b)</td>
+<td>$\vec B=-2\times10^{-6}\hat x\cos\Phi_{114}$ T</td>
+</tr>
+<tr>
+<td>(c)</td>
+<td>$\vec S=637.5024\hat k\cos^2\Phi_{114}$ W/m²</td>
+</tr>
+<tr>
+<td>(d)</td>
+<td>$I=318.7512$ W/m²</td>
+</tr>
+</tbody>
+</table></div>
+
+<h3 id="k02-4">B-6. 115 級第 2 題（40 分）</h3>
+<p><strong>題目：</strong> 折射率 $n=2.5$，電場振幅 $E_0=5\ \mathrm{V/m}$，頻率 $f=2\times10^{14}\ \mathrm{Hz}$，磁場朝 $+\hat z$。波向量在 $xy$ 平面朝左下方，與 $-y$ 軸夾 $30^\circ$；初始相位 $0$。</p>
+<p><strong>① 傳播、磁場、電場方向：</strong> 朝左下、靠近負 $y$ 軸。</p>
+<p class="fnote"><b>公式（平面內方向單位向量）：</b>與單位向量 $\hat u$ 夾角 $\theta$、往與它垂直的單位向量 $\hat w$ 那一側偏轉的方向為 $\hat k=\cos\theta\,\hat u+\sin\theta\,\hat w$，其中 $\hat u\perp\hat w$，$\theta$ 為夾角（度或 rad），$\hat k$ 為傳播方向單位向量；本題 $\hat u=-\hat y$、$\hat w=-\hat x$、$\theta=30^\circ$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\hat k&amp;=-\sin30^\circ\hat x-\cos30^\circ\hat y\\
+&amp;=\boxed{-\frac12\hat x-\frac{\sqrt3}{2}\hat y}.
+\end{aligned}
+$$</div>
+<p>已知 $\hat b=+\hat z$，要讓 $\hat e\times\hat z=\hat k$：</p>
+<p class="fnote"><b>公式（電場方向）：</b>$\hat e=\hat b\times\hat k$（由 $\hat e\times\hat b=\hat k$ 且 $\hat e,\hat b,\hat k$ 兩兩垂直、構成右手系得到），其中 $\hat e,\hat b,\hat k$ 分別為電場、磁場、傳播方向的單位向量；本題 $\hat b=\hat z$、$\hat k=-\frac12\hat x-\frac{\sqrt3}{2}\hat y$。</p>
+<p class="fnote"><b>公式（單位向量叉積）：</b>$\hat x\times\hat y=\hat z$，$\hat y\times\hat z=\hat x$，$\hat z\times\hat x=\hat y$，順序對調則加負號（如 $\hat x\times\hat z=-\hat y$），且 $(a\hat u)\times(b\hat w)=ab\,(\hat u\times\hat w)$，其中 $\hat x,\hat y,\hat z$ 為座標軸單位向量，$a,b$ 為純量，$\hat u,\hat w$ 為任意單位向量；本題用來算 $\hat e=\hat b\times\hat k$。</p>
+<div class="math-block">$$\boxed{\hat e=\frac{\sqrt3}{2}\hat x-\frac12\hat y}.$$</div>
+<p><strong>② 基本波動量：</strong> 依序求 $v=c_0/n$、$\lambda$、$\omega$、$k$，再用 $B_0=E_0/v$。</p>
+<p class="fnote"><b>公式（波長）：</b>$\lambda=\dfrac{v}{f}$，其中 $v$ 為介質中波速（m/s），$f$ 為頻率（Hz），$\lambda$ 為介質中波長（m）；本題 $v=1.20\times10^8\ \mathrm{m/s}$、$f=2\times10^{14}\ \mathrm{Hz}$。</p>
+<p class="fnote"><b>公式（角頻率）：</b>$\omega=2\pi f$，其中 $f$ 為頻率（Hz），$\omega$ 為角頻率（rad/s）；本題 $f=2\times10^{14}\ \mathrm{Hz}$。</p>
+<p class="fnote"><b>公式（波數）：</b>$k=\dfrac{2\pi}{\lambda}$，其中 $\lambda$ 為介質中波長（m），$k$ 為波數（rad/m）；本題 $\lambda=6.00\times10^{-7}\ \mathrm{m}$。</p>
+<div class="math-block">$$
+\begin{aligned}
+v&amp;=\frac{3\times10^8}{2.5}=\boxed{1.20\times10^8\ \mathrm{m/s}},\\
+\lambda&amp;=\frac{1.20\times10^8}{2\times10^{14}}
+=\boxed{6.00\times10^{-7}\ \mathrm m},\\
+\omega&amp;=2\pi(2\times10^{14})=\boxed{4\pi\times10^{14}\ \mathrm{rad/s}},\\
+k&amp;=\frac{2\pi}{6.00\times10^{-7}}
+=\boxed{\frac{10\pi}{3}\times10^6\ \mathrm{rad/m}},\\
+B_0&amp;=\frac{E_0}{v}=\frac{5}{1.20\times10^8}
+=\boxed{4.16667\times10^{-8}\ \mathrm T}.
+\end{aligned}
+$$</div>
+<p><strong>③ 完整相位：</strong> 先寫波向量。</p>
+<p class="fnote"><b>公式（波向量）：</b>$\vec k=k\hat k$，其中 $k$ 為波數（rad/m），$\hat k$ 為傳播方向單位向量；本題 $k=\frac{10\pi}{3}\times10^6\ \mathrm{rad/m}$。</p>
+<div class="math-block">$$
+\vec k=\frac{10\pi}{3}\times10^6
+\left(-\frac12\hat x-\frac{\sqrt3}{2}\hat y\right).
+$$</div>
+<p>取內積：</p>
+<p class="fnote"><b>公式（內積）：</b>$\vec k\cdot\vec r=k_xx+k_yy+k_zz$，其中 $k_x,k_y,k_z$ 為波向量 $\vec k$ 的分量（rad/m），$x,y,z$ 為位置座標（m）；本題 $k_x=-\frac{5\pi}{3}\times10^6$、$k_y=-\frac{5\sqrt3\pi}{3}\times10^6$、$k_z=0$（單位 rad/m）。</p>
+<div class="math-block">$$
+\vec k\cdot\vec r=-\frac{5\pi}{3}\times10^6(x+\sqrt3y).
+$$</div>
+<p>再扣掉 $\omega t$：</p>
+<p class="fnote"><b>公式（平面波完整相位）：</b>$\Phi=\vec k\cdot\vec r-\omega t+\phi_0$，其中 $\vec k$ 為波向量（rad/m），$\vec r$ 為位置向量（m），$\omega$ 為角頻率（rad/s），$t$ 為時間（s），$\phi_0$ 為初始相位（rad）；本題 $\omega=4\pi\times10^{14}\ \mathrm{rad/s}$、$\phi_0=0$。</p>
+<div class="math-block">$$
+\boxed{\Phi_{115}=-\frac{5\pi}{3}\times10^6(x+\sqrt3y)-4\pi\times10^{14}t}.
+$$</div>
+<p class="symnote">符號：$\Phi_{115}$：本題完整相位（rad）。</p>
+<h4>(a) 電場</h4>
+<p><strong>① 代入 $E_0=5$ V/m 與 $\hat e$：</strong></p>
+<p class="fnote"><b>公式（平面波電場）：</b>$\vec E=E_0\hat e\cos\Phi=\operatorname{Re}\{E_0\hat e\,e^{i\Phi}\}$，其中 $E_0$ 為電場振幅（V/m），$\hat e$ 為電場方向單位向量，$\Phi$ 為完整相位（rad），$\operatorname{Re}\{\cdots\}$ 表示取實部；本題 $E_0=5\ \mathrm{V/m}$、$\hat e=\frac{\sqrt3}{2}\hat x-\frac12\hat y$、$\Phi=\Phi_{115}$。</p>
+<div class="math-block">$$
+\boxed{\vec E=5\left(\frac{\sqrt3}{2}\hat x-\frac12\hat y\right)
+\cos\Phi_{115}\ \mathrm{V/m}}.
+$$</div>
+<p><strong>② 指數表示：</strong></p>
+<div class="math-block">$$
+\vec E=\operatorname{Re}\left\{5\left(\frac{\sqrt3}{2}\hat x-\frac12\hat y\right)e^{i\Phi_{115}}\right\}\ \mathrm{V/m}.
+$$</div>
+<h4>(b) 磁場</h4>
+<p><strong>① 代入 ② 求出的 $B_0$ 與 $\hat b=\hat z$：</strong></p>
+<p class="fnote"><b>公式（平面波磁場）：</b>$\vec B=B_0\hat b\cos\Phi=\operatorname{Re}\{B_0\hat b\,e^{i\Phi}\}$，其中 $B_0$ 為磁場振幅（T），$\hat b$ 為磁場方向單位向量，$\Phi$ 為完整相位（rad），$\operatorname{Re}\{\cdots\}$ 表示取實部；本題 $B_0=4.16667\times10^{-8}\ \mathrm{T}$、$\hat b=\hat z$、$\Phi=\Phi_{115}$。</p>
+<div class="math-block">$$\boxed{\vec B=4.16667\times10^{-8}\hat z\cos\Phi_{115}\ \mathrm T}.$$</div>
+<p><strong>② 指數表示：</strong></p>
+<div class="math-block">$$
+\vec B=\operatorname{Re}\left\{4.16667\times10^{-8}\hat z e^{i\Phi_{115}}\right\}\ \mathrm T.
+$$</div>
+<h4>(c) 瞬時 Poynting 向量</h4>
+<p><strong>① 求 $S_0=\varepsilon_0nc_0E_0^2$：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+S_0&amp;=(8.8542\times10^{-12})(2.5)(3\times10^8)(5^2)\\
+&amp;=(8.8542\times10^{-12})(2.5)(3\times10^8)(25)\\
+&amp;=\boxed{0.16601625\ \mathrm{W/m^2}}.
+\end{aligned}
+$$</div>
+<p><strong>② 加入傳播方向：</strong></p>
+<p class="fnote"><b>公式（瞬時 Poynting 向量）：</b>$\vec S=\dfrac{1}{\mu_0}\vec E\times\vec B=S_0\hat k\cos^2\Phi$，其中 $\mu_0$ 為真空磁導率（H/m），$\vec E$ 為電場（V/m），$\vec B$ 為磁場（T），$S_0=\varepsilon_0nc_0E_0^2$ 為能流最大值（W/m²），$\hat k=\hat e\times\hat b$ 為傳播方向，$\Phi$ 為完整相位（rad）；本題 $S_0=0.16601625\ \mathrm{W/m^2}$、$\hat k=-\frac12\hat x-\frac{\sqrt3}{2}\hat y$、$\Phi=\Phi_{115}$。</p>
+<div class="math-block">$$
+\boxed{\vec S=0.16601625\left(-\frac12\hat x-\frac{\sqrt3}{2}\hat y\right)
+\cos^2\Phi_{115}\ \mathrm{W/m^2}}.
+$$</div>
+<p><strong>③ 指數表示：</strong></p>
+<div class="math-block">$$
+\vec S=\frac{0.16601625}{4}
+\left(-\frac12\hat x-\frac{\sqrt3}{2}\hat y\right)
+\left(e^{2i\Phi_{115}}+2+e^{-2i\Phi_{115}}\right)\ \mathrm{W/m^2}.
+$$</div>
+<h4>(d) 照度</h4>
+<p><strong>① 取時間平均 $I=\frac12S_0$：</strong></p>
+<div class="math-block">$$
+\boxed{I=\frac12S_0=\frac{0.16601625}{2}=0.083008125\ \mathrm{W/m^2}}.
+$$</div>
+<p><strong>B 組三年份比較：</strong></p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>物理量／條件</th>
+<th style="text-align: right;">112 級</th>
+<th style="text-align: right;">114 級</th>
+<th style="text-align: right;">115 級</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>折射率 $n$</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+<tr>
+<td>題目給的振幅</td>
+<td style="text-align: right;">$E_0=2$ V/m</td>
+<td style="text-align: right;">$B_0=2\times10^{-6}$ T</td>
+<td style="text-align: right;">$E_0=5$ V/m</td>
+</tr>
+<tr>
+<td>頻率 $f$</td>
+<td style="text-align: right;">$10^{14}$ Hz</td>
+<td style="text-align: right;">$5\times10^{13}$ Hz</td>
+<td style="text-align: right;">$2\times10^{14}$ Hz</td>
+</tr>
+<tr>
+<td>傳播平面</td>
+<td style="text-align: right;">$xy$</td>
+<td style="text-align: right;">$yz$</td>
+<td style="text-align: right;">$xy$</td>
+</tr>
+<tr>
+<td>磁場方向</td>
+<td style="text-align: right;">$-\hat z$</td>
+<td style="text-align: right;">$-\hat x$</td>
+<td style="text-align: right;">$+\hat z$</td>
+</tr>
+<tr>
+<td>波長 $\lambda$</td>
+<td style="text-align: right;">$10^{-6}$ m</td>
+<td style="text-align: right;">$4\times10^{-6}$ m</td>
+<td style="text-align: right;">$6\times10^{-7}$ m</td>
+</tr>
+<tr>
+<td>$B_0$</td>
+<td style="text-align: right;">$2\times10^{-8}$ T</td>
+<td style="text-align: right;">$2\times10^{-6}$ T</td>
+<td style="text-align: right;">$4.16667\times10^{-8}$ T</td>
+</tr>
+<tr>
+<td>$S_0$</td>
+<td style="text-align: right;">$0.03187512$</td>
+<td style="text-align: right;">$637.5024$</td>
+<td style="text-align: right;">$0.16601625$ W/m²</td>
+</tr>
+<tr>
+<td>照度 $I$</td>
+<td style="text-align: right;">$0.01593756$</td>
+<td style="text-align: right;">$318.7512$</td>
+<td style="text-align: right;">$0.083008125$ W/m²</td>
+</tr>
+</tbody>
+</table></div>

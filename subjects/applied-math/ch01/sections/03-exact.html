@@ -1,0 +1,440 @@
+<h2>三、正合方程 <span class="pg">板書 9/16 照片 4–6</span></h2>
+
+<p class="lead">第三型把方程寫成「微分形式」$M(x,y)\,dx+N(x,y)\,dy=0$。如果左邊剛好是某個函數 $f(x,y)$ 的全微分 $df$，方程就是 $df=0$，解就是 $f(x,y)=C$——連積分都只要做一次。判斷標準只有一條：$\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$。老師的期中考幾乎每年都有一題正合方程。</p>
+
+<h3 id="am1e-def">3.1 什麼是正合 <span class="pg-tag">照片 4</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 4）</span>
+  <p>Type 3 Exact Eq.　考慮 $M(x,y)\,dx+N(x,y)\,dy=0$ ——①</p>
+  <p>若 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$，則①式稱為 exact eq.；若 $\dfrac{\partial M}{\partial y}\ne\dfrac{\partial N}{\partial x}$，則為 non-exact eq.</p>
+  $$\checkmark\ \frac{\partial}{\partial y}\!\left(\frac{\partial f}{\partial x}\right)=\frac{\partial}{\partial x}\!\left(\frac{\partial f}{\partial y}\right),\quad f=f(x,y)$$
+  $$\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}\ \Longrightarrow\ M=\frac{\partial f}{\partial x},\ \ N=\frac{\partial f}{\partial y}$$
+  $$\left(\frac{\partial f}{\partial x}\right)dx+\left(\frac{\partial f}{\partial y}\right)dy=0\ \Longrightarrow\ df=0\ \Longrightarrow\ \boxed{f(x,y)=\text{const.}}$$
+</div>
+
+<p>任何兩變數函數 $f(x,y)$ 的全微分是 $df=f_x\,dx+f_y\,dy$。所以如果找得到 $f$ 使 $f_x=M$、$f_y=N$，方程①就是 $df=0$：沿著解曲線 $f$ 不變，解是 $f$ 的等高線 $f(x,y)=C$。</p>
+<p>板書打勾的那行是「為什麼條件是 $M_y=N_x$」：若 $M=f_x$、$N=f_y$，則 $M_y=f_{xy}$、$N_x=f_{yx}$，而二階偏導數的次序可以交換（$f$ 夠光滑時），所以 $M_y=N_x$ 是<strong>必要</strong>條件。反過來，在沒有破洞的區域（例如整個平面、矩形）上它也是<strong>充分</strong>條件：下面 3.2 節的步驟保證能把 $f$ 造出來。</p>
+
+<div class="step" data-step="am1e-def-s1" data-sym="MN,f">
+  <span class="step-title">怎麼把題目寫成 $M\,dx+N\,dy=0$</span>
+  <p>題目若寫成 $A(x,y)\,y'+B(x,y)=0$，把 $y'=\dfrac{dy}{dx}$ 乘上 $dx$：$B\,dx+A\,dy=0$，所以 $M=B$（跟著 $dx$ 的）、$N=A$（跟著 $dy$ 的）。例如 110 上期中 $(2y+e^y+6x^2)y'+4+12xy=0$ 是 $M=4+12xy$、$N=2y+e^y+6x^2$。<strong>不要把 $M$、$N$ 對調</strong>，否則 $M_y$ 與 $N_x$ 會比錯。</p>
+</div>
+
+<h3 id="am1e-proc">3.2 求 $f$ 的三個步驟 <span class="pg-tag">照片 5–6</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 5 左）</span>
+  $$\text{Ⓐ}\ \frac{\partial f}{\partial x}=M\ \to\ f=\int M\,dx+\boxed{h(y)}\qquad\text{Ⓑ}\ \frac{\partial f}{\partial y}=N$$
+  <p>將 $f$ 代入 Ⓑ：$\dfrac{\partial}{\partial y}\Big[\displaystyle\int M\,dx+h(y)\Big]=N$</p>
+</div>
+
+<ol>
+  <li><b>Ⓐ 對 $x$ 積分</b>：把 $y$ 當常數積 $\int M\,dx$。因為是「偏」積分，積分常數可以是任何只含 $y$ 的函數，所以寫成 $+h(y)$（板書特別框起來）。</li>
+  <li><b>Ⓑ 對 $y$ 微分、和 $N$ 比較</b>：$\dfrac{\partial}{\partial y}\int M\,dx+h'(y)=N$。正合時，含 $x$ 的項一定兩邊抵消，剩下的 $h'(y)$ 只含 $y$。<strong>如果 $h'$ 裡還有 $x$</strong>，代表方程不正合或前面算錯，回頭檢查。</li>
+  <li><b>積 $h$，寫 $f=C$，代初始條件</b>：$h$ 不必再加常數（都併進右邊的 $C$）。最後可以像板書照片 6 那樣把 $f$ 全微分一次，確認回到原方程（「OK!」）。</li>
+</ol>
+<p>也可以反過來先對 $y$ 積 $N$ 再補 $g(x)$；哪個積分比較好做就從哪個開始（113 上期中第 1 題先積 $M$ 比較快）。</p>
+
+<div class="problem" data-kind="example" id="am1-ex-exact">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/16 板書（照片 5–6）</span></div>
+    <h4>$(x^2-2xy)\,dx+(\sin y-x^2)\,dy=0$，$y(1)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-ex-exact">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-exact"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　Solve $(x^2-2xy)\,dx+(\sin y-x^2)\,dy=0$；$y(1)=0$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(x^2-2xy)\,dx+(\sin y-x^2)\,dy=0$；$y(1)=0$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M(x,y)$</td><td>$x^2-2xy$</td><td>跟著 $dx$ 的括號</td></tr>
+          <tr><td>$N(x,y)$</td><td>$\sin y-x^2$</td><td>跟著 $dy$ 的括號</td></tr>
+          <tr><td>初始條件</td><td>$x_0=1$，$y_0=0$</td><td>「$y(1)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的解（隱式即可）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目已經是 $M\,dx+N\,dy=0$ 的形式，而且 $y$ 出現在 $\sin y$ 與 $xy$ 裡，既不能分離也不是線性，<b>所以</b>先檢查是不是 Type 3 正合方程：比較 $\partial M/\partial y$ 與 $\partial N/\partial x$。</p>
+      <p><b>因為</b>兩者都等於 $-2x$，<b>所以</b>存在 $f$ 使 $f_x=M$、$f_y=N$，照 Ⓐ、Ⓑ 兩步把 $f$ 造出來，解是 $f=C$，再用 $y(1)=0$ 定 $C$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-ex-exact-s1" data-sym="MN">
+        <span class="step-title">檢查正合</span>
+        $$\frac{\partial M}{\partial y}=\frac{\partial}{\partial y}(x^2-2xy)=-2x,\qquad\frac{\partial N}{\partial x}=\frac{\partial}{\partial x}(\sin y-x^2)=-2x$$
+        <p>$\because\ \dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$，$\therefore$ 此為 exact eq.，存在 $f$ 使 $M=\dfrac{\partial f}{\partial x}$ ①、$N=\dfrac{\partial f}{\partial y}$ ②。</p>
+      </div>
+      <div class="step" data-step="am1-ex-exact-s2" data-sym="f,h">
+        <span class="step-title">由 ① 對 $x$ 積分</span>
+        $$f=\int(x^2-2xy)\,dx+h(y)=\frac{x^3}{3}-x^2y+h(y)$$
+        <p>積分時 $y$ 當常數，所以 $\int2xy\,dx=x^2y$。</p>
+      </div>
+      <div class="step" data-step="am1-ex-exact-s3">
+        <span class="step-title">代入 ② 求 $h$</span>
+        $$\frac{\partial f}{\partial y}=-x^2+\frac{dh}{dy}=\sin y-x^2\ \Longrightarrow\ \frac{dh}{dy}=\sin y$$
+        <p>兩邊的 $-x^2$ 抵消（板書照片 6 把它劃掉），剩下只含 $y$，確認正合沒算錯。</p>
+        $$h=\int\sin y\,dy=-\cos y$$
+      </div>
+      <div class="step" data-step="am1-ex-exact-s4" data-sym="Cst">
+        <span class="step-title">寫出 $f=C$，代初始條件</span>
+        $$\frac{x^3}{3}-x^2y-\cos y=C$$
+        <p class="sub">代入 $x=1$、$y=0$（題目「$y(1)=0$」）：</p>
+        $$C=\frac13-0-\cos0=\frac13-1=-\frac23$$
+      </div>
+      <div class="step" data-step="am1-ex-exact-s5">
+        <span class="step-title">板書的驗算：全微分回去</span>
+        $$d\!\left(\frac{x^3}{3}-x^2y-\cos y\right)=d\!\left(-\frac23\right)\ \Longrightarrow\ (x^2-2xy)\,dx+(-x^2+\sin y)\,dy=0\quad\text{OK!}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\dfrac{x^3}{3}-x^2y-\cos y=-\dfrac23$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$(1,0)$ 代入左邊：$\tfrac13-0-1=-\tfrac23$ ✔；全微分回到原方程 ✔（步驟 5）。這個解寫不出顯式 $y(x)$（$y$ 同時在 $\cos y$ 與 $x^2y$ 裡），正合方程的答案通常就停在隱式 $f=C$。</p></div>
+  </div>
+</div>
+
+<h3 id="am1e-exam">3.3 考古題 <span class="pg-tag">110、112、113 上期中 · 109 級下</span></h3>
+
+<p>三題的 $M_y=N_x$ 都直接成立，差別在積分的難度與 $y'$ 寫法要不要先轉換。110 上這題也就是 9/16 作業第 4 題（同一題、同一個初始條件）。</p>
+
+<div class="problem" data-kind="exam" id="am1-110a-m1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="chip">作業</span><span class="src">應用數學期中考 2021.11.09 第 1 題（110上）· 即 9/16 作業 第 4 題</span></div>
+    <h4>$(2y+e^y+6x^2)\,y'+4+12xy=0$，$y(0)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-110a-m1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-110a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2021.11.09)　20 points for each problem</p><p>1. Solve $(2y+e^y+6x^2)y'+4+12xy=0$ for $y(0)=0$.</p><p>（9/16 作業 第 4 題：$(2y+e^y+6x^2)y'+4+12xy=0$ with $y(0)=0$.　Ans : $4x+6x^2y+y^2+e^y=1$）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(20 分) 解 $(2y+e^y+6x^2)\,y'+4+12xy=0$，$y(0)=0$。（9/16 作業第 4 題同題，老師答案：$4x+6x^2y+y^2+e^y=1$）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>微分形式</td><td>$(4+12xy)\,dx+(2y+e^y+6x^2)\,dy=0$</td><td>題目 $y'=dy/dx$，整式乘 $dx$（自己轉）</td></tr>
+          <tr><td>$M$、$N$</td><td>$M=4+12xy$，$N=2y+e^y+6x^2$</td><td>$M$ 是原本不帶 $y'$ 的部分，$N$ 是 $y'$ 的係數</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=0$</td><td>「for $y(0)=0$」</td></tr>
+          <tr><td>配分</td><td>20 分</td><td>考卷「20 points for each problem」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的解（隱式），並核對作業答案。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $y$ 出現在 $e^y$ 和 $xy$ 裡，不能分離、也不是線性，<b>所以</b>改寫成 $M\,dx+N\,dy=0$ 檢查正合。關鍵是先認出「$y'$ 的係數是 $N$、其他是 $M$」。</p>
+      <p><b>因為</b> $M_y=12x=N_x$，<b>所以</b>是正合方程；$M$ 是 $x$ 的多項式比較好積，<b>所以</b>先對 $x$ 積 $M$，再用 $N$ 補 $h(y)$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-110a-m1-s1" data-sym="MN">
+        <span class="step-title">寫成微分形式、檢查正合</span>
+        $$(4+12xy)\,dx+(2y+e^y+6x^2)\,dy=0$$
+        $$\frac{\partial M}{\partial y}=12x,\qquad\frac{\partial N}{\partial x}=12x\quad\Longrightarrow\quad\text{exact}$$
+      </div>
+      <div class="step" data-step="am1-110a-m1-s2" data-sym="f,h">
+        <span class="step-title">對 $x$ 積 $M$</span>
+        $$f=\int(4+12xy)\,dx+h(y)=4x+6x^2y+h(y)$$
+      </div>
+      <div class="step" data-step="am1-110a-m1-s3">
+        <span class="step-title">用 $f_y=N$ 求 $h$</span>
+        $$\frac{\partial f}{\partial y}=6x^2+h'(y)=2y+e^y+6x^2\ \Longrightarrow\ h'(y)=2y+e^y\ \Longrightarrow\ h=y^2+e^y$$
+      </div>
+      <div class="step" data-step="am1-110a-m1-s4" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        $$4x+6x^2y+y^2+e^y=C$$
+        <p class="sub">代入 $x=0$、$y=0$（題目「$y(0)=0$」）：$C=0+0+0+e^0=1$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$4x+6x^2y+y^2+e^y=1$（和作業答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$(0,0)$：$e^0=1$ ✔。全微分 $d(4x+6x^2y+y^2+e^y)=(4+12xy)\,dx+(6x^2+2y+e^y)\,dy$，除以 $dx$ 就是原式 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-112a-m2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2023.Nov. 第 2 題（112上） · 115級上學期應數(期中) 第 2 題（同卷）· 108級下學期 First Order ODE 第 1(e) 題（初始條件 $y(0)=3$）</span></div>
+    <h4>$(2xe^{3y}+e^x)\,dx+(3x^2e^{3y}-y^2)\,dy=0$，$y(0)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-112a-m2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-112a-m2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. (6 points) Solve $(2xe^{3y}+e^x)dx+(3x^2e^{3y}-y^2)dy=0$ for $y(0)=1$.</p><p>（108級下學期 First Order ODE：(e) $(2xe^{3y}+e^x)dx+(3x^2e^{3y}-y^2)dy=0$ for $y(0)=3$. Ans: $x^2e^{3y}+e^x-\dfrac13y^3+8=0$）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(6 分) 解 $(2xe^{3y}+e^x)\,dx+(3x^2e^{3y}-y^2)\,dy=0$，$y(0)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$</td><td>$2xe^{3y}+e^x$</td><td>跟著 $dx$ 的括號</td></tr>
+          <tr><td>$N$</td><td>$3x^2e^{3y}-y^2$</td><td>跟著 $dy$ 的括號</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=1$</td><td>「for $y(0)=1$」</td></tr>
+          <tr><td>配分</td><td>6 分</td><td>考卷「(6 points)」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的解（隱式）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目直接給微分形式、而且 $y$ 在指數 $e^{3y}$ 裡，<b>所以</b>先檢查正合：$\partial(2xe^{3y})/\partial y=6xe^{3y}$、$\partial(3x^2e^{3y})/\partial x=6xe^{3y}$，其餘的 $e^x$ 只含 $x$、$-y^2$ 只含 $y$，各自的交叉偏導數為 0。</p>
+      <p><b>因為</b>正合，<b>所以</b>對 $x$ 積 $M$ 得 $x^2e^{3y}+e^x$，再補 $h(y)$；$e^x$ 與 $-y^2$ 這種「只含一個變數」的項會分別落在積 $M$ 的結果與 $h(y)$ 裡。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-112a-m2-s1" data-sym="MN">
+        <span class="step-title">檢查正合</span>
+        $$\frac{\partial M}{\partial y}=6xe^{3y},\qquad\frac{\partial N}{\partial x}=6xe^{3y}\quad\Longrightarrow\quad\text{exact}$$
+      </div>
+      <div class="step" data-step="am1-112a-m2-s2" data-sym="f,h">
+        <span class="step-title">對 $x$ 積 $M$</span>
+        $$f=\int(2xe^{3y}+e^x)\,dx+h(y)=x^2e^{3y}+e^x+h(y)$$
+      </div>
+      <div class="step" data-step="am1-112a-m2-s3">
+        <span class="step-title">用 $f_y=N$ 求 $h$</span>
+        $$\frac{\partial f}{\partial y}=3x^2e^{3y}+h'(y)=3x^2e^{3y}-y^2\ \Longrightarrow\ h'=-y^2\ \Longrightarrow\ h=-\frac{y^3}{3}$$
+      </div>
+      <div class="step" data-step="am1-112a-m2-s4" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        $$x^2e^{3y}+e^x-\frac{y^3}{3}=C$$
+        <p class="sub">代入 $x=0$、$y=1$（題目「$y(0)=1$」）：$C=0+e^0-\dfrac13=\dfrac23$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$x^2e^{3y}+e^x-\dfrac{y^3}{3}=\dfrac23$（或乘 3：$3x^2e^{3y}+3e^x-y^3=2$）。</p><p>108 級下 First Order ODE 1(e) 是同一個方程、初始條件改成 $y(0)=3$：步驟到 $f=x^2e^{3y}+e^x-\frac{y^3}{3}=C$ 都一樣，代入 $x=0$、$y=3$ 得 $C=0+1-\frac{27}{3}=-8$，答案 $x^2e^{3y}+e^x-\dfrac13y^3+8=0$（和該卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$(0,1)$：$0+1-\tfrac13=\tfrac23$ ✔。$f_x=2xe^{3y}+e^x=M$、$f_y=3x^2e^{3y}-y^2=N$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-113a-m1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2024.Nov. 第 1 題（113上）</span></div>
+    <h4>$(e^{2y}-y\cos xy)\,dx+(2xe^{2y}-x\cos xy+2y)\,dy=0$，過 $(0,2)$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-113a-m1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-113a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>1. Solve $(e^{2y}-y\cos xy)dx+(2xe^{2y}-x\cos xy+2y)dy=0$ for $x=0$ and $y=2$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(e^{2y}-y\cos xy)\,dx+(2xe^{2y}-x\cos xy+2y)\,dy=0$，$x=0$ 時 $y=2$。（25 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$</td><td>$e^{2y}-y\cos xy$</td><td>跟著 $dx$ 的括號；$\cos xy$ 是 $\cos(xy)$</td></tr>
+          <tr><td>$N$</td><td>$2xe^{2y}-x\cos xy+2y$</td><td>跟著 $dy$ 的括號</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=2$</td><td>「for $x=0$ and $y=2$」，即 $y(0)=2$</td></tr>
+          <tr><td>配分</td><td>25 分</td><td>考卷「25 points for each problem」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：通過 $(0,2)$ 的解（隱式）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>有 $\cos(xy)$ 這種 $x$、$y$ 纏在一起的函數，分離和線性都不可能，<b>所以</b>檢查正合。$\partial(y\cos xy)/\partial y$ 要用乘積法則和連鎖律，這一步最容易算錯。</p>
+      <p><b>因為</b>對 $x$ 積 $M$ 時，$\int y\cos(xy)\,dx=\sin(xy)$（令 $u=xy$、$du=y\,dx$）一步就出來，比對 $y$ 積 $N$ 簡單，<b>所以</b>從 $M$ 開始。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-113a-m1-s1" data-sym="MN">
+        <span class="step-title">檢查正合（乘積法則）</span>
+        $$\frac{\partial M}{\partial y}=2e^{2y}-\Big[\cos xy+y\cdot(-\sin xy)\cdot x\Big]=2e^{2y}-\cos xy+xy\sin xy$$
+        $$\frac{\partial N}{\partial x}=2e^{2y}-\Big[\cos xy+x\cdot(-\sin xy)\cdot y\Big]=2e^{2y}-\cos xy+xy\sin xy$$
+        <p>兩者相等，exact。</p>
+      </div>
+      <div class="step" data-step="am1-113a-m1-s2" data-sym="f,h">
+        <span class="step-title">對 $x$ 積 $M$</span>
+        <p>$\int e^{2y}\,dx=xe^{2y}$；$\int y\cos(xy)\,dx$：令 $u=xy$，$du=y\,dx$，得 $\int\cos u\,du=\sin(xy)$。</p>
+        $$f=xe^{2y}-\sin(xy)+h(y)$$
+      </div>
+      <div class="step" data-step="am1-113a-m1-s3">
+        <span class="step-title">用 $f_y=N$ 求 $h$</span>
+        $$\frac{\partial f}{\partial y}=2xe^{2y}-x\cos(xy)+h'(y)=2xe^{2y}-x\cos xy+2y\ \Longrightarrow\ h'=2y\ \Longrightarrow\ h=y^2$$
+      </div>
+      <div class="step" data-step="am1-113a-m1-s4" data-sym="Cst">
+        <span class="step-title">代初始點</span>
+        $$xe^{2y}-\sin(xy)+y^2=C$$
+        <p class="sub">代入 $x=0$、$y=2$（題目「for $x=0$ and $y=2$」）：$C=0-\sin0+4=4$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$xe^{2y}-\sin(xy)+y^2=4$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$(0,2)$：$0-0+4=4$ ✔。$f_x=e^{2y}-y\cos xy=M$ ✔，$f_y=2xe^{2y}-x\cos xy+2y=N$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">$h(y)$ 不是常數</span>
+  <p>對 $x$ 偏積分時把 $y$ 當常數，所以「積分常數」是任意的 $h(y)$。寫成 $+C$ 就會漏掉 112 上的 $-y^3/3$、113 上的 $y^2$ 這些只含 $y$ 的項，答案一定錯。</p>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-109b-1e">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 1(e) 題 · 108級下學期 First Order ODE 第 1(d) 題</span></div>
+    <h4>$(3x^2-2xy+2)\,dx+(6y^2-x^2+3)\,dy=0$，$y(1)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-109b-1e">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1e"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(e) $(3x^2-2xy+2)dx+(6y^2-x^2+3)dy=0$ for $y(1)=0$.　Ans: $2y^3-x^2y+3y+x^3+2x=3$</p><p>（108級下學期 First Order ODE 1(d) 同題同答案。）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(3x^2-2xy+2)\,dx+(6y^2-x^2+3)\,dy=0$，$y(1)=0$。（考卷附的答案：$2y^3-x^2y+3y+x^3+2x=3$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$</td><td>$3x^2-2xy+2$</td><td>$dx$ 的係數</td></tr>
+          <tr><td>$N$</td><td>$6y^2-x^2+3$</td><td>$dy$ 的係數</td></tr>
+          <tr><td>初始點</td><td>$(x_0,y_0)=(1,0)$</td><td>「for $y(1)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：通過 $(1,0)$ 的隱式解 $f(x,y)=C$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目已經寫成 $M\,dx+N\,dy=0$，而且 $M$ 裡的 $-2xy$ 和 $N$ 裡的 $-x^2$ 看起來是同一個 $-x^2y$ 分別對 $x$、$y$ 偏微分來的，<b>所以</b>先檢查正合條件 $M_y=N_x$；成立就用第 3 節的三步驟找 $f$。</p>
+      <p><b>因為</b> $y$ 有 $6y^2$ 而且和 $x$ 混在 $-2xy$ 裡，解不成 $y=\cdots$，<b>所以</b>答案寫隱式即可。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-109b-1e-s1" data-sym="MN">
+        <span class="step-title">檢查正合</span>
+        <p class="sub">把題目的 $M$ 對 $y$、$N$ 對 $x$ 偏微分：</p>
+        $$\frac{\partial M}{\partial y}=-2x,\qquad\frac{\partial N}{\partial x}=-2x\qquad\Longrightarrow\qquad M_y=N_x\ \text{正合}$$
+      </div>
+      <div class="step" data-step="am1-109b-1e-s2" data-sym="f,h">
+        <span class="step-title">$f=\int M\,dx+h(y)$</span>
+        <p>對 $x$ 積分時 $y$ 當常數：</p>
+        $$f=\int(3x^2-2xy+2)\,dx=x^3-x^2y+2x+h(y)$$
+      </div>
+      <div class="step" data-step="am1-109b-1e-s3">
+        <span class="step-title">用 $f_y=N$ 定 $h(y)$</span>
+        $$f_y=-x^2+h'(y)=6y^2-x^2+3\ \Longrightarrow\ h'(y)=6y^2+3\ \Longrightarrow\ h(y)=2y^3+3y$$
+        <p>$-x^2$ 兩邊消掉、$h'$ 只剩 $y$：這正是正合保證的事。</p>
+      </div>
+      <div class="step" data-step="am1-109b-1e-s4" data-sym="Cst">
+        <span class="step-title">代初始點</span>
+        <p class="sub">$f=x^3-x^2y+2x+2y^3+3y=C$，代入 $x=1$、$y=0$（題目）：</p>
+        $$C=1-0+2+0+0=3$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$x^3-x^2y+2x+2y^3+3y=3$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$f_x=3x^2-2xy+2=M$ ✔，$f_y=-x^2+6y^2+3=N$ ✔；$f(1,0)=3$ ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am1e-self">3.4 自編難題</h3>
+
+<div class="problem" data-kind="self" id="am1-self-03a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>倒過來用正合條件：給 $M$，造出 $N$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-03a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>已知 $M(x,y)=y\cos x+2xe^y$。(a) 求所有能讓 $M\,dx+N\,dy=0$ 成為正合方程的 $N(x,y)$；(b) 在其中挑出滿足 $N(0,y)=y$ 的那一個，並解 $y(0)=1$ 的初值問題。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$</td><td>$y\cos x+2xe^y$</td><td>題目給定</td></tr>
+          <tr><td>要滿足的條件</td><td>$N_x=M_y$</td><td>「成為正合方程」：正合的定義（反過來用）</td></tr>
+          <tr><td>附加條件</td><td>$N(0,y)=y$</td><td>(b) 用來決定 $N$ 裡只含 $y$ 的那部分</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=1$</td><td>(b)「$y(0)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $N$ 的一般形式；(b) 特定的 $N$ 與初值問題的解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>正合的條件是 $N_x=M_y$，而 $M$ 已知，<b>所以</b>把 $M_y$ 算出來、對 $x$ 積分就得到 $N$；對 $x$ 積分會多出一個任意的 $g(y)$，那就是「所有的 $N$」的自由度。</p>
+      <p><b>因為</b>附加條件 $N(0,y)=y$ 只在 $x=0$ 上給值，<b>所以</b>它正好決定 $g(y)$。之後就是一般的正合方程流程。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-03a-s1" data-sym="MN">
+        <span class="step-title">(a) 由 $N_x=M_y$ 反推 $N$</span>
+        $$M_y=\cos x+2xe^y\ \Longrightarrow\ N=\int(\cos x+2xe^y)\,dx=\sin x+x^2e^y+g(y)$$
+        <p>$g(y)$ 是任意只含 $y$ 的函數。</p>
+      </div>
+      <div class="step" data-step="am1-self-03a-s2">
+        <span class="step-title">(b) 用 $N(0,y)=y$ 定 $g$</span>
+        <p class="sub">代入 $x=0$（題目「$N(0,y)=y$」）：$\sin0+0+g(y)=y$，所以 $g(y)=y$。</p>
+        $$N=\sin x+x^2e^y+y$$
+      </div>
+      <div class="step" data-step="am1-self-03a-s3" data-sym="f,h">
+        <span class="step-title">求 $f$</span>
+        $$f=\int(y\cos x+2xe^y)\,dx+h(y)=y\sin x+x^2e^y+h(y)$$
+        $$f_y=\sin x+x^2e^y+h'(y)=\sin x+x^2e^y+y\ \Longrightarrow\ h=\frac{y^2}{2}$$
+      </div>
+      <div class="step" data-step="am1-self-03a-s4" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=0$、$y=1$（題目「$y(0)=1$」）：$f=0+0+\tfrac12=\tfrac12$。</p>
+        $$y\sin x+x^2e^y+\frac{y^2}{2}=\frac12$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $N=\sin x+x^2e^y+g(y)$，$g$ 任意；(b) $N=\sin x+x^2e^y+y$，解為 $y\sin x+x^2e^y+\dfrac{y^2}{2}=\dfrac12$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$N_x=\cos x+2xe^y=M_y$ ✔；$f_x=y\cos x+2xe^y=M$、$f_y=N$ ✔；$(0,1)$ 代入 $f$ 得 $\tfrac12$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am1-self-03b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>同一題兩條路：$(2xy+3)\,dx+(x^2-1)\,dy=0$，$y(0)=2$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-03b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(2xy+3)\,dx+(x^2-1)\,dy=0$，$y(0)=2$。分別用「正合方程」與「線性方程」兩種方法解，確認答案相同，並寫出解存在的區間。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$、$N$</td><td>$M=2xy+3$，$N=x^2-1$</td><td>跟著 $dx$、$dy$ 的括號</td></tr>
+          <tr><td>線性形式</td><td>$y'+\dfrac{2x}{x^2-1}y=\dfrac{-3}{x^2-1}$</td><td>除以 $(x^2-1)dx$；$y$ 只有一次方</td></tr>
+          <tr><td>奇異點</td><td>$x=\pm1$</td><td>$y'$ 的係數 $x^2-1=0$（自己找）</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=2$</td><td>「$y(0)=2$」；$0$ 在 $(-1,1)$ 內</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：兩種方法的解、比較、存在區間。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $M_y=2x=N_x$，<b>所以</b>是正合方程；<b>又因為</b> $y$ 只以一次方出現，<b>所以</b>它同時也是線性方程。兩種方法都要會，考試時挑計算最少的。</p>
+      <p><b>因為</b>線性形式的係數在 $x=\pm1$ 沒有定義，而初始點 $x=0$ 在中間，<b>所以</b>解只在 $-1\lt x\lt 1$。正合法的隱式解看不出這件事，要解出顯式才看得到——這也是兩種方法互相補充的地方。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-03b-s1" data-sym="MN,f,h">
+        <span class="step-title">方法一：正合</span>
+        $$f=\int(2xy+3)\,dx+h(y)=x^2y+3x+h(y),\qquad f_y=x^2+h'=x^2-1\Rightarrow h=-y$$
+        $$x^2y+3x-y=C$$
+        <p class="sub">代入 $x=0$、$y=2$（題目）：$C=0+0-2=-2$。所以 $y(x^2-1)=-2-3x$：</p>
+        $$y=\frac{2+3x}{1-x^2}$$
+      </div>
+      <div class="step" data-step="am1-self-03b-s2" data-sym="F">
+        <span class="step-title">方法二：線性</span>
+        <p>$p=\dfrac{2x}{x^2-1}$，$\int p\,dx=\ln|x^2-1|$，在 $-1\lt x\lt 1$ 上 $|x^2-1|=1-x^2$，取 $F=1-x^2$（差一個負號不影響）：</p>
+        $$\frac{d}{dx}\big[(1-x^2)y\big]=(1-x^2)\cdot\frac{-3}{x^2-1}=3\ \Longrightarrow\ (1-x^2)y=3x+K$$
+        <p class="sub">代入 $y(0)=2$（題目）：$K=2$。$y=\dfrac{2+3x}{1-x^2}$，和方法一相同。</p>
+      </div>
+      <div class="step" data-step="am1-self-03b-s3">
+        <span class="step-title">存在區間</span>
+        <p>分母 $1-x^2$ 在 $x=\pm1$ 為 0，分子 $2+3x$ 在那裡不為 0（$5$ 與 $-1$），所以 $y$ 在兩端都發散。包含 $x=0$ 的區間是 $-1\lt x\lt 1$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$x^2y+3x-y=-2$，即 $y=\dfrac{2+3x}{1-x^2}$，$-1\lt x\lt 1$；兩種方法一致。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=2$ ✔。$y'=\dfrac{3(1-x^2)+2x(2+3x)}{(1-x^2)^2}=\dfrac{3x^2+4x+3}{(1-x^2)^2}$；$(2xy+3)+(x^2-1)y'=\dfrac{2x(2+3x)+3(1-x^2)}{1-x^2}-\dfrac{3x^2+4x+3}{1-x^2}=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>寫成 $M\,dx+N\,dy=0$：$M$ 跟著 $dx$、$N$ 跟著 $dy$；$y'$ 的係數是 $N$。</li>
+    <li>正合 ⟺ $M_y=N_x$（必要來自 $f_{xy}=f_{yx}$）。解是 $f(x,y)=C$。</li>
+    <li>$f=\int M\,dx+h(y)$，再用 $f_y=N$ 定 $h$；$h'$ 裡若還有 $x$ 就是算錯或不正合。</li>
+    <li>正合法給隱式解；能解顯式時順便找存在區間。</li>
+  </ol>
+</div>

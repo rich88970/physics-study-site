@@ -1,0 +1,188 @@
+<h2>五、考前衝刺 <span class="pg">板書 10/7 照片 1–6</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>110–114 學年上學期期末考每年一題冪級數解，配分 8%–25%：112 上求一般解（三項遞迴，認得出 $e^{x^2}$ 最好）、114 上「兩個解各寫前三個非零項」（作業 1 改正負號）、113 上與 110 上加初始條件（110 上還是非齊次）、111 上加邊界條件（兩串都截斷）。全部在 $x=0$ 展開、係數是多項式。<strong>分數在過程</strong>：寫出 $y,y',y''$ 的級數、平移指標、低次方的方程式、一般遞迴、逐項代入，最後整理成 $a_0(\cdots)+a_1(\cdots)$。</p>
+</div>
+
+<h3 id="am4x-formulas">5.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>能不能用冪級數</h4>
+    <ul>
+      <li>先化成標準式 $y''+p(x)y'+q(x)y=0$，約分</li>
+      <li>$p$、$q$ 在 $x_0$ 不發散 → 常點，令 $y=\sum a_n(x-x_0)^n$</li>
+      <li>$xp$、$x^2q$ 不發散 → 正則奇點，用 Frobenius（第 5 章）</li>
+      <li>$R\ge$ 到最近奇點（含複數，非齊次時含 $g$ 的奇點）的距離</li>
+    </ul>
+  </section>
+  <section>
+    <h4>代入與平移</h4>
+    <ul>
+      <li>$y'=\sum_{n\ge1}na_nx^{n-1}=\sum_{n\ge0}(n+1)a_{n+1}x^n$</li>
+      <li>$y''=\sum_{n\ge2}n(n-1)a_nx^{n-2}=\sum_{n\ge0}(n+2)(n+1)a_{n+2}x^n$</li>
+      <li>$x^ky'$ 的 $x^n$ 係數 $(n-k+1)a_{n-k+1}$；$x^ky$ 的 $x^n$ 係數 $a_{n-k}$</li>
+      <li>$xy'=\sum na_nx^n$、$x^2y''=\sum n(n-1)a_nx^n$（不用平移）</li>
+    </ul>
+  </section>
+  <section>
+    <h4>遞迴的長相</h4>
+    <ul>
+      <li>$y''+\omega_0^2y$：$a_{n+2}=-\dfrac{\omega_0^2}{(n+2)(n+1)}a_n$（偶 $\cos$、奇 $\sin$）</li>
+      <li>$y''-xy'+y$：$a_{n+2}=\dfrac{n-1}{(n+2)(n+1)}a_n$（$y_2=x$）</li>
+      <li>$y''\pm x^2y'\pm xy$：$a_2=0$，$a_{k+2}=\mp\dfrac{k}{(k+2)(k+1)}a_{k-1}$</li>
+      <li>分子含 $(n-\lambda)$：$\lambda$ 為非負整數的那條鏈截斷</li>
+    </ul>
+  </section>
+  <section>
+    <h4>條件與非齊次</h4>
+    <ul>
+      <li>$a_0=y(0)$、$a_1=y'(0)$；$a_n=y^{(n)}(0)/n!$（泰勒法驗算）</li>
+      <li>邊界條件：先一般解 $a_0y_1+a_1y_2$，再代兩點</li>
+      <li>非齊次：右邊 $\sum g_nx^n$，$x^n$ 的方程式右邊加 $g_n$</li>
+      <li>條件在 $x_0$：令 $t=x-x_0$，$a_0=y(x_0)$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>要認得的級數</h4>
+    <ul>
+      <li>$e^x=\sum\dfrac{x^n}{n!}$、$e^{x^2}=\sum\dfrac{x^{2k}}{k!}$、$e^{-t^2/2}=\sum\dfrac{(-1)^kt^{2k}}{2^kk!}$</li>
+      <li>$\cos x=\sum\dfrac{(-1)^kx^{2k}}{(2k)!}$、$\sin x=\sum\dfrac{(-1)^kx^{2k+1}}{(2k+1)!}$</li>
+      <li>$\dfrac1{1-x}=\sum x^n$（$|x|\lt1$）、$(1+x)^p=\sum\dbinom pnx^n$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="am4x-types">5.2 題型總表</h3>
+
+<p class="type-jump"><a href="#am4type-1">① 奇點與收斂半徑</a><a href="#am4type-2">② 跳兩格的遞迴</a><a href="#am4type-3">③ 跳三格、前三個非零項</a><a href="#am4type-4">④ 三項遞迴</a><a href="#am4type-5">⑤ 初始條件</a><a href="#am4type-6">⑥ 非齊次</a><a href="#am4type-7">⑦ 截斷、closed form、邊界條件</a></p>
+
+<div class="drill" id="am4type-1">
+  <h4>① 判斷奇點與保證的收斂半徑</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>問「在哪裡可以用冪級數」「收斂半徑至少多少」「是常點還是正則奇點」。</dd>
+    <dt>做法</dt><dd>除以 $y''$ 的係數並約分；分母的零點（含複數根）就是奇點；常點的 $R$ 是到最近奇點的距離 $|x_0-x_s|$；奇點再用 $(x-x_s)p$、$(x-x_s)^2q$ 判斷正則與否。</dd>
+    <dt>常錯</dt><dd>只看實數根；沒約分；把「至少」當成「等於」。</dd>
+    <dt>代表題</dt><dd><a href="#am4-sf-01a">自編 1-a</a>　<a href="#am4-sf-01b">自編 1-b</a>　<a href="#am4-sf-02b">自編 2-b</a>　<a href="#am4var-6">變化題 6</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am4type-2">
+  <h4>② 只有 $y''$、$xy'$、$y$：跳兩格的遞迴</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>係數最多是 $x$ 乘 $y'$、常數乘 $y$（或 $x^2y''$、$xy'$、$y$ 搭配 $y''$）。</dd>
+    <dt>做法</dt><dd>$y''$ 平移成 $(n+2)(n+1)a_{n+2}$，其他項都是 $a_n$；得 $a_{n+2}=f(n)a_n$；偶次鏈從 $a_0$、奇次鏈從 $a_1$，各自一個解。</dd>
+    <dt>常錯</dt><dd>平移只換次方不換係數；忘了 $a_0$、$a_1$ 是任意常數。</dd>
+    <dt>代表題</dt><dd><a href="#am4-ex-1">板書 $y''+\omega_0^2y=0$</a>　<a href="#am4-ex-2">板書 $y''-xy'+y=0$</a>　<a href="#am4-sf-03a">自編 3-a</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am4type-3">
+  <h4>③ 有 $x^2y'$、$xy$：跳三格，前三個非零項</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>114 上期末型、作業 1；題目常寫「first three nonzero terms of each」。</dd>
+    <dt>做法</dt><dd>$x^0$：$2a_2=0$；$x^k$（$k\ge1$）：$a_{k+2}$ 接 $a_{k-1}$。三條鏈中 $a_2$ 那條全為零；$y_1$ 要 $a_0,a_3,a_6$、$y_2$ 要 $a_1,a_4,a_7$。</dd>
+    <dt>常錯</dt><dd>漏掉 $x^0$ 的方程式，把 $a_2$ 當成待定；$x^2y'$ 的係數寫成 $ka_{k-1}$（應為 $(k-1)a_{k-1}$）。</dd>
+    <dt>代表題</dt><dd><a href="#am4-k114-1">114 上期末 1</a>　<a href="#am4-hw-1">作業 1</a>　<a href="#am4-sf-03b">自編 3-b</a>　<a href="#am4var-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am4type-4">
+  <h4>④ 係數是多項式：三項以上的遞迴</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$(x^3+1)y'$、$(4x^2-2)y$、$(1+x)y$ 這種「幾個次方加起來」的係數。</dd>
+    <dt>做法</dt><dd>每一項分開平移，寫出低次方的方程式與一般式；$a_0$、$a_1$ 混在一起時分別取 $(1,0)$、$(0,1)$ 各算一次；同奇偶的三項仍是兩條鏈。看到 $1/k!$ 試試 $e^{x}$、$e^{x^2}$。</dd>
+    <dt>常錯</dt><dd>$x^3y'$ 的起始次方算錯；兩個解的係數混在一起寫。</dd>
+    <dt>代表題</dt><dd><a href="#am4-hw-2">作業 2</a>　<a href="#am4-k112-3">112 上期末 3</a>　<a href="#am4-sf-02a">自編 2-a</a>　<a href="#am4var-2">變化題 2</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am4type-5">
+  <h4>⑤ 有初始條件 $y(0)$、$y'(0)$</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>113 上期末型、作業 3。</dd>
+    <dt>做法</dt><dd>$a_0=y(0)$、$a_1=y'(0)$ 直接代入遞迴算出一串數字；用泰勒法（解出 $y''$ 後在 0 代值、微分再代值）驗算前兩三項。條件在 $x_0\ne0$ 就在 $x_0$ 展開。</dd>
+    <dt>常錯</dt><dd>先求一般解再代條件，多花時間又容易抄錯；$a_n$ 和 $y^{(n)}(0)$ 差了 $n!$。</dd>
+    <dt>代表題</dt><dd><a href="#am4-k113-2">113 上期末 2</a>　<a href="#am4-hw-3">作業 3</a>　<a href="#am4-sf-04a">自編 4-a</a>　<a href="#am4var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am4type-6">
+  <h4>⑥ 非齊次（右邊不為零）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>110 上期末「$\cdots=x$」；係數含 $x$，所以待定係數法不能用。</dd>
+    <dt>做法</dt><dd>右邊寫成 $\sum g_nx^n$，$x^n$ 的方程式右邊加 $g_n$；初始條件給 $a_0$、$a_1$ 後一路算。</dd>
+    <dt>常錯</dt><dd>把右邊的 $x$ 放進 $x^0$ 的方程式；以為要先找齊次解再找特解。</dd>
+    <dt>代表題</dt><dd><a href="#am4-k110-3">110 上期末 3</a>　<a href="#am4-sf-04b">自編 4-b</a>　<a href="#am4var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am4type-7">
+  <h4>⑦ 級數截斷、closed form 與邊界條件</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>條件在兩個不同的點（111 上期末）；遞迴分子有 $(n-1)(n-2)$、$(n-\lambda)$ 這種因子。</dd>
+    <dt>做法</dt><dd>找出讓分子為零的 $n$，判斷哪條鏈截斷；寫出一般解（多項式或 closed form）後代兩個點。</dd>
+    <dt>常錯</dt><dd>把 $y(1)$ 當成 $a_1$；在保證半徑的邊界上直接用沒截斷的無窮級數。</dd>
+    <dt>代表題</dt><dd><a href="#am4-k111-3">111 上期末 3</a>　<a href="#am4-ex-2">板書 $y''-xy'+y=0$</a>　<a href="#am4-sf-03a">自編 3-a</a>　<a href="#am4var-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<h3 id="am4x-vars">5.3 變化題：老師可能的改法</h3>
+
+<p>每題都是把考古題或作業換條件。先自己寫，再打開解答對照。</p>
+
+<div class="drill-q" id="am4var-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#am4-k114-1">114 上期末 1</a></p>
+  <p>用冪級數法解 $y''+x^2y'-xy=0$，兩個線性獨立解各寫前三個非零項（若某個解是多項式，直接寫出）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$x^0$：$2a_2=0$；$x^k$：$(k+2)(k+1)a_{k+2}+(k-1)a_{k-1}-a_{k-1}=0$，即 $a_{k+2}=-\dfrac{k-2}{(k+2)(k+1)}a_{k-1}$。</p>
+    <p>$a_0$ 鏈：$a_3=\tfrac{1}{6}a_0$、$a_6=-\tfrac{2}{30}a_3=-\tfrac1{90}a_0$、$a_9=-\tfrac{5}{72}a_6=\tfrac1{1296}a_0$。$a_1$ 鏈：$k=2$ 時分子 $k-2=0$，$a_4=0$，截斷——$y_2=x$。</p>
+    <p>$y=a_0\big(1+\tfrac16x^3-\tfrac1{90}x^6+\tfrac1{1296}x^9+\cdots\big)+a_1x$。驗算：$y=x$ 代入 $0+x^2-x^2=0$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am4var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#am4-k112-3">112 上期末 3</a></p>
+  <p>用冪級數法求 $y''-2xy'+(x^2-1)y=0$ 的一般解，並認出 closed form。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$x^0$：$2a_2-a_0=0$；$x^1$：$6a_3-2a_1-a_1=0$；$x^n$：$a_{n+2}=\dfrac{(2n+1)a_n-a_{n-2}}{(n+2)(n+1)}$。</p>
+    <p>偶次：$a_2=\tfrac12$、$a_4=\tfrac{5\cdot\frac12-1}{12}=\tfrac18$、$a_6=\tfrac1{48}$；奇次：$a_3=\tfrac12$、$a_5=\tfrac18$。係數是 $\dfrac{1}{2^kk!}$，所以 $y=(a_0+a_1x)e^{x^2/2}$。驗算：令 $y=ue^{x^2/2}$，方程式化成 $u''=0$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am4var-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#am4-k113-2">113 上期末 2</a></p>
+  <p>求 $y''-(1+x)y=0$ 在 $y(0)=0$、$y'(0)=1$ 下的冪級數解，寫到 $x^6$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>同一條遞迴 $a_2=\tfrac{a_0}2$、$a_{n+2}=\dfrac{a_n+a_{n-1}}{(n+2)(n+1)}$，改代 $a_0=0$、$a_1=1$：$a_2=0$、$a_3=\tfrac{1+0}{6}=\tfrac16$、$a_4=\tfrac{0+1}{12}=\tfrac1{12}$、$a_5=\tfrac{\frac16+0}{20}=\tfrac1{120}$、$a_6=\tfrac{\frac1{12}+\frac16}{30}=\tfrac1{120}$。</p>
+    <p>$y=x+\tfrac16x^3+\tfrac1{12}x^4+\tfrac1{120}x^5+\tfrac1{120}x^6+\cdots$。驗算：$y'''(0)=y(0)+y'(0)=1$ ⇒ $a_3=\tfrac16$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am4var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#am4-k110-3">110 上期末 3</a></p>
+  <p>解 $y''-x^2y'+(x+2)y=1$，$y(0)=0$、$y'(0)=0$，寫到 $x^6$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>右邊只有 $g_0=1$。$x^0$：$2a_2+2a_0=1$ ⇒ $a_2=\tfrac12$；$x^k$（$k\ge1$）：$a_{k+2}=\dfrac{(k-2)a_{k-1}-2a_k}{(k+2)(k+1)}$。</p>
+    <p>$a_3=\tfrac{-a_0-2a_1}{6}=0$、$a_4=\tfrac{0-2a_2}{12}=-\tfrac1{12}$、$a_5=\tfrac{a_2-2a_3}{20}=\tfrac1{40}$、$a_6=\tfrac{2a_3-2a_4}{30}=\tfrac1{180}$。$y=\tfrac12x^2-\tfrac1{12}x^4+\tfrac1{40}x^5+\tfrac1{180}x^6+\cdots$。驗算：$y''(0)=1-2y(0)=1$ ⇒ $a_2=\tfrac12$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am4var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#am4-k111-3">111 上期末 3</a></p>
+  <p>解 $(x^2+1)y''-2xy'+2y=0$，$y(1)=0$、$y(2)=3$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>一般解同原題 $y=a_0(1-x^2)+a_1x$。$y(1)=0\cdot a_0+a_1=0$ ⇒ $a_1=0$；$y(2)=-3a_0=3$ ⇒ $a_0=-1$。$y=x^2-1$。驗算：$(x^2+1)(2)-2x(2x)+2(x^2-1)=0$ ✔、$y(2)=3$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am4var-6">
+  <p class="q-src">變化題 6 · 改自 <a href="#am4-sf-01a">自編 1-a</a></p>
+  <p>$(x^2+9)(x-4)\,y''+y=0$。在 $x=0$、$x=2$ 展開的冪級數解，保證的收斂半徑各是多少？在 $x=4$ 呢？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>奇點 $x=\pm3i$ 與 $x=4$。$x_0=0$：到 $\pm3i$ 是 3、到 4 是 4，$R\ge3$。$x_0=2$：到 4 是 2、到 $\pm3i$ 是 $\sqrt{4+9}=\sqrt{13}$，$R\ge2$。$x=4$ 本身是奇點（$q=\dfrac1{(x^2+9)(x-4)}$，$(x-4)^2q\to0$、$p=0$，是正則奇點），要用 Frobenius。</p>
+  </details>
+</div>

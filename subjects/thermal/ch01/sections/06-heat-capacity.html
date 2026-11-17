@@ -1,0 +1,1595 @@
+<h2>六、熱容量 <span class="pg">課本 §1.6 p.28–37</span></h2>
+
+<p class="lead">「升高 1 度要加多少熱」聽起來是一個數字，其實要先說清楚<strong>過程中有沒有做功</strong>。這一節把熱容量分成定容 $C_V$ 與定壓 $C_P$，用均分定理預測它們（理想氣體 $C_P=C_V+Nk$），再處理溫度不變也能吸熱的潛熱，最後引入讓定壓過程變簡單的焓 $H=U+PV$。考試最常出的是「咖啡加冰」這類熱量平衡、$C_P$ 與 $C_V$ 的關係，以及重力束縛系統的負熱容量。</p>
+
+<h3 id="th6-def">6.1 熱容量的定義：為什麼它有歧義 <span class="pg-tag">p.28</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.28 Eq. (1.41)–(1.43) 熱容量（heat capacity）與比熱（specific heat capacity）</span>
+  $$C=\frac{Q}{\Delta T}\ \ (\text{有時候，見下}),\qquad c\equiv\frac{C}{m}$$
+  <p>把第一定律 $\Delta U=Q+W$ 代入：</p>
+  $$C=\frac{Q}{\Delta T}=\frac{\Delta U-W}{\Delta T}$$
+  <p>即使 $U$ 只由溫度決定，外界對物體做的功 $W$ 可以是任何值，所以 $C$ 也可以是任何值。</p>
+</div>
+
+<p>熱容量（大寫 $C$）是「整個物體」升高 1 K 需要的熱，物質越多 $C$ 越大；比熱（小寫 $c$）除以質量，才是物質本身的性質。水的比熱 $c=1\ \text{cal/(g·°C)}=4.186\ \text{J/(g·K)}$，這是 calorie 的定義。溫度「差」用 °C 或 K 數值相同，所以 J/(g·°C) 與 J/(g·K) 可以混用。</p>
+
+<p><strong>為什麼說定義有歧義？</strong>因為 $Q$ 不是狀態量（第 4 節）：同樣從 $T$ 升到 $T+\Delta T$，如果過程中外界還對物體做功 $W\gt0$，需要的熱就比較少；如果物體膨脹、對外做功（$W\lt0$），就要多給熱來補。所以「熱容量」一定要附上條件：最常見的兩種是<strong>體積固定</strong>（不做壓縮功）與<strong>壓力固定</strong>（做定壓膨脹功）。</p>
+
+<div class="box pitfall">
+  <span class="box-title">熱量平衡題的正負號</span>
+  <p>兩物體接觸、與外界絕熱時，總能量守恆：$Q_{\text{得}}+Q_{\text{失}}=0$，也就是「放出的熱＝吸收的熱」。每一項都寫成 $Q=mc\,(T_f-T_i)$（末減初），溫度降的物體自然是負的，不必自己猜正負。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-41">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-41（Problem 1.41）· p.31</span></div>
+    <h4>用一杯水量測金屬塊的熱容量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-41">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-41"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>To measure the heat capacity of an object, all you usually have to do is put it in thermal contact with another object whose heat capacity you know. As an example, suppose that a chunk of metal is immersed in boiling water (100°C), then is quickly transferred into a Styrofoam cup containing 250 g of water at 20°C. After a minute or so, the temperature of the contents of the cup is 24°C. Assume that during this time no significant energy is transferred between the contents of the cup and the surroundings. The heat capacity of the cup itself is negligible.</p><p>(a) How much heat is gained by the water?</p><p>(b) How much heat is lost by the metal?</p><p>(c) What is the heat capacity of this chunk of metal?</p><p>(d) If the mass of the chunk of metal is 100 g, what is its specific heat capacity?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>要量一個物體的熱容量，通常只要讓它和另一個熱容量已知的物體熱接觸。例如一塊金屬泡在沸水（100°C）中，然後很快移到裝有 250 g、20°C 水的保麗龍杯裡。大約一分鐘後，杯內溫度是 24°C。假設這段時間杯內物質與外界沒有明顯的能量交換，杯子本身的熱容量可忽略。(a) 水吸收了多少熱？(b) 金屬放出多少熱？(c) 這塊金屬的熱容量是多少？(d) 若金屬質量是 100 g，它的比熱是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>水的質量</td><td>$m_w=250\ \text{g}$</td><td>「裝有 <b>250 g</b>、20°C 水」</td></tr>
+          <tr><td>水的初溫</td><td>$T_{w,i}=20^\circ\text{C}$</td><td>「250 g、<b>20°C</b> 水」</td></tr>
+          <tr><td>金屬初溫</td><td>$T_{m,i}=100^\circ\text{C}$</td><td>「泡在<b>沸水（100°C）</b>中」：泡夠久，與沸水同溫</td></tr>
+          <tr><td>共同末溫</td><td>$T_f=24^\circ\text{C}$</td><td>「大約一分鐘後，杯內溫度是 <b>24°C</b>」：已達熱平衡</td></tr>
+          <tr><td>與外界的能量交換</td><td>0</td><td>「杯內物質與外界<b>沒有明顯的能量交換</b>」</td></tr>
+          <tr><td>杯子的熱容量</td><td>0</td><td>「杯子本身的熱容量<b>可忽略</b>」</td></tr>
+          <tr><td>金屬質量</td><td>$m_m=100\ \text{g}$</td><td>(d)「若金屬質量是 <b>100 g</b>」</td></tr>
+          <tr><td>水的比熱</td><td>$c_w=4.186\ \text{J/(g·K)}$</td><td>題目沒給，用標準值（1 cal/(g·°C)）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 水吸收的熱；(b) 金屬放出的熱；(c) 金屬的熱容量 $C_m$；(d) 金屬的比熱 $c_m$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>水的比熱已知、升溫已知，<b>所以</b>先用 $Q=mc\,\Delta T$ 算水吸的熱。</p>
+      <p><b>因為</b>題目說與外界沒有能量交換、杯子不吸熱，又是固體與液體（體積幾乎不變、不做功），<b>所以</b>能量守恆：金屬放出的熱＝水吸收的熱。再用定義 $C=Q/\Delta T$ 與 $c=C/m$ 得到熱容量與比熱。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-41-s1" data-sym="Q,c">
+        <span class="step-title">(a) 水吸收的熱</span>
+        <p>水從 20°C 升到 24°C，比熱已知，用比熱的定義：</p>
+        $$Q_w=m_wc_w\,(T_f-T_{w,i})$$
+        <p class="sub">代入 $m_w=250\ \text{g}$、$T_{w,i}=20^\circ\text{C}$、$T_f=24^\circ\text{C}$（題目），$c_w=4.186\ \text{J/(g·K)}$（標準值）：</p>
+        $$Q_w=(250\ \text{g})(4.186\ \text{J/g·K})(4\ \text{K})=4186\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-41-s2" data-sym="U">
+        <span class="step-title">(b) 能量守恆得金屬放的熱</span>
+        <p>杯內（水＋金屬）與外界絕熱、杯子不吸熱，所以金屬失去的能量全部進了水：</p>
+        $$Q_m+Q_w=0\ \Rightarrow\ Q_m=-Q_w$$
+        <p class="sub">代入步驟 1 的 $Q_w=4186\ \text{J}$：</p>
+        $$Q_m=-4186\ \text{J}\quad(\text{金屬放出 }4186\ \text{J})$$
+      </div>
+      <div class="step" data-step="sc-1-41-s3" data-sym="CV">
+        <span class="step-title">(c) 熱容量的定義</span>
+        $$C_m=\frac{Q_m}{\Delta T_m}=\frac{Q_m}{T_f-T_{m,i}}$$
+        <p class="sub">代入 $Q_m=-4186\ \text{J}$（步驟 2）、$T_{m,i}=100^\circ\text{C}$、$T_f=24^\circ\text{C}$（題目）：</p>
+        $$C_m=\frac{-4186\ \text{J}}{24^\circ\text{C}-100^\circ\text{C}}=\frac{-4186\ \text{J}}{-76\ \text{K}}=55.1\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sc-1-41-s4">
+        <span class="step-title">(d) 除以質量得比熱</span>
+        $$c_m=\frac{C_m}{m_m}$$
+        <p class="sub">代入 $C_m=55.1\ \text{J/K}$（步驟 3）、$m_m=100\ \text{g}$（題目 (d)）：</p>
+        $$c_m=\frac{55.1\ \text{J/K}}{100\ \text{g}}=0.551\ \text{J/(g·K)}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $4186\ \text{J}$（$=1000$ cal）；(b) $4186\ \text{J}$；(c) $C\approx55\ \text{J/K}$；(d) $c\approx0.55\ \text{J/(g·K)}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$0.55\ \text{J/(g·K)}$ 約是水的 $1/8$，落在常見金屬的範圍（鋁 0.90、鐵 0.45、銅 0.39）；金屬降了 76 K、水只升 4 K，正是因為水的熱容量（1046 J/K）約是金屬的 19 倍 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-42">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-42（Problem 1.42）· p.31</span></div>
+    <h4>義大利麵丟進沸水，水溫降多少</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-42">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-42"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The specific heat capacity of Albertson’s Rotini Tricolore is approximately 1.8 J/g·°C. Suppose you toss 340 g of this pasta (at 25°C) into 1.5 liters of boiling water. What effect does this have on the temperature of the water (before there is time for the stove to provide more heat)?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>Albertson 牌三色螺旋麵的比熱約為 1.8 J/(g·°C)。把 340 g 這種麵（25°C）丟進 1.5 公升的沸水裡，對水溫有什麼影響（在爐子來得及補充熱量之前）？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>麵的比熱</td><td>$c_p=1.8\ \text{J/(g·K)}$</td><td>「比熱約為 <b>1.8 J/(g·°C)</b>」</td></tr>
+          <tr><td>麵的質量、初溫</td><td>$m_p=340\ \text{g}$，$T_p=25^\circ\text{C}$</td><td>「<b>340 g</b> 這種麵（<b>25°C</b>）」</td></tr>
+          <tr><td>水的質量</td><td>$m_w=1500\ \text{g}$</td><td>「<b>1.5 公升</b>」；水 1 L 約 1 kg（題目沒寫，自己換算）</td></tr>
+          <tr><td>水的初溫</td><td>$T_w=100^\circ\text{C}$</td><td>「<b>沸水</b>」：1 atm 下 100°C</td></tr>
+          <tr><td>爐子供熱</td><td>不計</td><td>「在爐子來得及補充熱量<b>之前</b>」：只有水與麵交換能量</td></tr>
+          <tr><td>水的比熱</td><td>$c_w=4.186\ \text{J/(g·K)}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：混合後的共同溫度 $T_f$，以及水溫降多少。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>爐子還沒補熱、只有水和麵互相交換能量，<b>所以</b>寫能量守恆：水放的熱＝麵吸的熱，兩者最後同溫 $T_f$。</p>
+      <p><b>因為</b> $T_f$ 是唯一未知數、方程式是一次的，<b>所以</b>直接解出 $T_f$——結果是「以熱容量 $mc$ 為權重的溫度平均」，這個形式之後的混合題都能直接用。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-42-s1" data-sym="Q,c">
+        <span class="step-title">寫能量守恆</span>
+        <p>每一項都用「末溫減初溫」，總和為 0：</p>
+        $$m_wc_w\,(T_f-T_w)+m_pc_p\,(T_f-T_p)=0$$
+      </div>
+      <div class="step" data-step="sc-1-42-s2">
+        <span class="step-title">解出 $T_f$</span>
+        <p>把含 $T_f$ 的項移到左邊：$(m_wc_w+m_pc_p)T_f=m_wc_wT_w+m_pc_pT_p$，所以</p>
+        $$T_f=\frac{m_wc_wT_w+m_pc_pT_p}{m_wc_w+m_pc_p}$$
+        <p class="sub">先算兩個熱容量：$m_wc_w=(1500\ \text{g})(4.186\ \text{J/g·K})=6279\ \text{J/K}$，$m_pc_p=(340\ \text{g})(1.8\ \text{J/g·K})=612\ \text{J/K}$（題目數據）。代入 $T_w=100^\circ\text{C}$、$T_p=25^\circ\text{C}$：</p>
+        $$\begin{aligned}T_f&=\frac{(6279)(100)+(612)(25)}{6279+612}\ ^\circ\text{C}\\&=\frac{627\,900+15\,300}{6891}\ ^\circ\text{C}=93.3^\circ\text{C}\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-42-s3">
+        <span class="step-title">水溫的變化</span>
+        <p class="sub">代入 $T_f=93.3^\circ\text{C}$（步驟 2）、$T_w=100^\circ\text{C}$（題目）：</p>
+        $$\Delta T_w=T_f-T_w=93.3^\circ\text{C}-100^\circ\text{C}=-6.7\ \text{K}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>水溫從 100°C 降到約 $93^\circ\text{C}$，下降約 $7^\circ\text{C}$（水暫時不再沸騰）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>水放熱 $6279\times6.7\approx4.2\times10^4$ J，麵吸熱 $612\times68.3\approx4.2\times10^4$ J，相等 ✔；想讓水溫掉得少就用更大一鍋水（$m_wc_w$ 越大，$T_f$ 越接近 100°C）。</p></div>
+  </div>
+</div>
+
+<h3 id="th6-cvcp">6.2 定容熱容量 $C_V$ 與定壓熱容量 $C_P$ <span class="pg-tag">p.28–29</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.28–29 Eq. (1.44)(1.45)</span>
+  $$C_V=\left(\frac{\Delta U}{\Delta T}\right)_V=\left(\frac{\partial U}{\partial T}\right)_V$$
+  $$C_P=\left(\frac{\Delta U-(-P\Delta V)}{\Delta T}\right)_P=\left(\frac{\partial U}{\partial T}\right)_P+P\left(\frac{\partial V}{\partial T}\right)_P$$
+  <p>下標表示偏微分時固定哪個變數。最後一項是補償「膨脹對外做功」所需的額外的熱；固體、液體的 $\partial V/\partial T$ 通常很小可忽略，氣體則很顯著。</p>
+</div>
+
+<p><strong>定容（constant volume）</strong>：體積不變就沒有壓縮功，$W=0$，所以 $Q=\Delta U$，$C_V$ 直接等於「內能隨溫度的變化率」。課本說 $C_V$ 更好的名字是「能量容量」：它只關心能量增加多少，不管能量是以熱還是以其他方式（例如攪拌）進來的。1 g 水的 $C_V$ 約 $1\ \text{cal/°C}=4.2\ \text{J/°C}$。</p>
+
+<div class="step" data-step="th6-cp-derive" data-sym="CV,CP,P,V">
+  <span class="step-title">為什麼 $C_P$ 多了一項</span>
+  <p>定壓下物體膨脹 $\Delta V$，外界對它做的功是 $W=-P\,\Delta V$（負的：其實是物體推開大氣）。代入 $C=(\Delta U-W)/\Delta T$：</p>
+  $$C_P=\frac{\Delta U+P\,\Delta V}{\Delta T}\ \xrightarrow{\ \Delta T\to0\ }\ \left(\frac{\partial U}{\partial T}\right)_P+P\left(\frac{\partial V}{\partial T}\right)_P$$
+  <p>第二項永遠是「熱量中變成功的那部分」。體積膨脹越多，要多給的熱越多，所以通常 $C_P\gt C_V$。</p>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">$(\partial U/\partial T)_P$ 不一定等於 $C_V$</span>
+  <p>(1.45) 第一項固定的是 $P$、不是 $V$。一般物質的 $U$ 還和 $V$ 有關（分子間有作用力），兩者不同；只有理想氣體（$U$ 只是 $T$ 的函數）才相等。習題 1.45 用一個純數學例子說明「固定誰」真的會改變偏微分的值。</p>
+</div>
+
+<h3 id="th6-equip">6.3 用均分定理預測熱容量 <span class="pg-tag">p.29–30</span></h3>
+
+<p>(1.41)–(1.45) 只是定義，對任何物體都成立。要知道某個物體的熱容量有三條路：量（習題 1.41）、查表（書末 p.404–405）、或從理論預測。第 3 節的均分定理（equipartition theorem）已經足以預測一大類物質：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.29 Eq. (1.46)</span>
+  <p>若熱能只存在二次自由度（quadratic degrees of freedom）裡，$U=\tfrac12NfkT$（不計與溫度無關的「靜態」能量），且 $f$ 與溫度無關，則</p>
+  $$C_V=\frac{\partial U}{\partial T}=\frac{\partial}{\partial T}\left(\frac{NfkT}{2}\right)=\frac{Nfk}{2}$$
+  <p>此時 $\partial U/\partial T$ 固定 $V$ 或 $P$ 都一樣。量出 $C_V$ 就能「數」出每個分子有幾個自由度，或反過來檢驗均分定理。</p>
+</div>
+
+<p><strong>自由度會「凍結」（freeze out）</strong>：均分定理只在 $kT$ 遠大於該運動的量子能階間隔時成立。溫度太低時，轉動或振動的第一個激發態能量比 $kT$ 大得多，分子幾乎都待在基態，那些自由度就不分配能量。Fig. 1.13 的氫氣是最清楚的例子：約 100 K 以下只有 3 個平動自由度（$C_V=\tfrac32R$）；室溫附近 2 個轉動自由度也活化（$\tfrac52R$）；1000 K 以上 2 個振動自由度（動能＋位能）開始活化，趨向 $\tfrac72R$。</p>
+
+<div class="anim" data-anim="t1-cv-h2"></div>
+
+<p>固體每個原子有 6 個自由度（三方向各一個動能、一個彈性位能），所以莫耳熱容量 $\tfrac62R=3R$，這叫 <strong>Dulong–Petit 定律</strong>（rule of Dulong and Petit）。但固體的所有自由度在 $T\to0$ 時都會凍結，熱容量趨於 0；「低溫」的標準因材料而異（Fig. 1.14：鉛在 100 K 已接近 $3R$，鑽石到 400 K 還遠低於 $3R$——原子越輕、鍵越硬，振動能階間隔越大，越晚解凍）。Fig. 1.14 的數據點在高溫時略高於 $3R$，主要是因為量的是 $C_P$ 而不是 $C_V$。</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-6-cv">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.6 · p.29–30</span></div>
+    <h4>均分定理預測的莫耳熱容量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-6-cv">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-6-cv"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>Suppose that our system stores thermal energy only in quadratic “degrees of freedom,” as described in Section 1.3. Then the equipartition theorem says $U=\frac12NfkT$ (neglecting any “static” energy, which doesn’t depend on temperature), so $$C_V=\frac{\partial U}{\partial T}=\frac{\partial}{\partial T}\left(\frac{NfkT}{2}\right)=\frac{Nfk}{2},\qquad(1.46)$$ assuming that $f$ is independent of temperature. … For instance, in a monatomic gas like helium, $f=3$, so we expect $C_V=\frac32Nk=\frac32nR$; that is, the heat capacity per mole should be $\frac32R=12.5$ J/K. … For a solid, there are six degrees of freedom per atom, so the heat capacity per mole should be $\frac62R=3R$; this general result is called the rule of Dulong and Petit.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 $C_V=\tfrac12Nfk$ 計算一莫耳下列物質的定容熱容量：(a) 單原子氣體（例如氦）；(b) 室溫的雙原子氣體（例如氫）；(c) 高溫、振動也活化的雙原子氣體；(d) 元素固體（Dulong–Petit）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>物質的量</td><td>$n=1\ \text{mol}$，$Nk=nR=R$</td><td>「<b>一莫耳</b>」；$Nk=nN_Ak=nR$</td></tr>
+          <tr><td>(a) 自由度</td><td>$f=3$</td><td>「單原子」：只有 $x,y,z$ 平動（第 3 節）</td></tr>
+          <tr><td>(b) 自由度</td><td>$f=5$</td><td>「室溫的雙原子」：3 平動＋2 轉動（Fig. 1.13）</td></tr>
+          <tr><td>(c) 自由度</td><td>$f=7$</td><td>「振動也活化」：再加振動的動能與位能各 1</td></tr>
+          <tr><td>(d) 自由度</td><td>每原子 $f=6$</td><td>「元素固體」：三方向各有動能與彈性位能</td></tr>
+          <tr><td>氣體常數</td><td>$R=8.315\ \text{J/(mol·K)}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)–(d) 每莫耳的 $C_V$（J/K）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這些物質的熱能都存在二次自由度裡，而且在題目指定的溫度範圍內 $f$ 不隨溫度變，<b>所以</b>可以直接用 (1.46) $C_V=\tfrac f2Nk$；一莫耳時 $Nk=R$，答案就是「$\tfrac f2$ 乘 $R$」。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-6-cv-s1" data-sym="f,CV,R">
+        <span class="step-title">把 $Nk$ 換成 $nR$</span>
+        $$C_V=\frac f2Nk=\frac f2nR$$
+        <p class="sub">代入 $n=1\ \text{mol}$（題目）、$R=8.315\ \text{J/(mol·K)}$（標準值）：$C_V=\tfrac f2\times8.315\ \text{J/K}$。</p>
+      </div>
+      <div class="step" data-step="sc-ex-6-cv-s2">
+        <span class="step-title">(a)(b)(c) 氣體</span>
+        <p class="sub">分別代入 $f=3,\ 5,\ 7$（題目所指的分子）：</p>
+        $$\begin{aligned}\text{(a)}\ C_V&=\tfrac32R=12.5\ \text{J/K}\\\text{(b)}\ C_V&=\tfrac52R=20.8\ \text{J/K}\\\text{(c)}\ C_V&=\tfrac72R=29.1\ \text{J/K}\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-ex-6-cv-s3">
+        <span class="step-title">(d) 固體</span>
+        <p class="sub">代入每原子 $f=6$（一莫耳原子）：</p>
+        $$C_V=\frac62R=3R=3(8.315\ \text{J/K})=24.9\ \text{J/K}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $12.5\ \text{J/K}$；(b) $20.8\ \text{J/K}$；(c) $29.1\ \text{J/K}$；(d) $3R=24.9\ \text{J/K}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>書末資料表的單原子氣體 $C_P=20.79\ \text{J/K}=\tfrac32R+R$（見 6.4 的 $C_P=C_V+R$）；鋁、銅、鐵的 $C_P$ 是 24.4–25.1 J/K，接近 $3R$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-43">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-43（Problem 1.43）· p.31</span></div>
+    <h4>液態水每個分子的熱容量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-43">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-43"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the heat capacity of liquid water per molecule, in terms of $k$. Suppose (incorrectly) that all the thermal energy of water is stored in quadratic degrees of freedom. How many degrees of freedom would each molecule have to have?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>以 $k$ 為單位，計算液態水每個分子的熱容量。假設（並不正確）水的熱能全部存在二次自由度中，每個分子要有幾個自由度？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>物質</td><td>液態水</td><td>「<b>液態水</b>」：比熱用 $c=4.186\ \text{J/(g·K)}$（題目沒給，標準值）</td></tr>
+          <tr><td>水的莫耳質量</td><td>$18\ \text{g/mol}$</td><td>題目沒給：H₂O＝16＋2</td></tr>
+          <tr><td>亞佛加厥數</td><td>$N_A=6.022\times10^{23}$</td><td>題目沒給，標準值</td></tr>
+          <tr><td>波茲曼常數</td><td>$k=1.381\times10^{-23}\ \text{J/K}$</td><td>「以 <b>$k$</b> 為單位」</td></tr>
+          <tr><td>假設</td><td>$C=\tfrac f2Nk$</td><td>「熱能全部存在<b>二次自由度</b>中」：用均分定理 (1.46)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：每個水分子的熱容量 $C/N$（寫成 $k$ 的倍數），以及對應的自由度數 $f$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>比熱是「每克」的熱容量，而 18 g 水恰好是一莫耳、$N_A$ 個分子，<b>所以</b>取 18 g 水算總熱容量再除以 $N_A$，就得到每分子的熱容量。</p>
+      <p><b>因為</b>均分定理說每個二次自由度貢獻 $\tfrac12k$ 的熱容量，<b>所以</b> $f=2\,(C/N)/k$。液體的比熱是定壓量的，但液體膨脹很小，$C_P\approx C_V$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-43-s1" data-sym="c,N">
+        <span class="step-title">每分子的熱容量</span>
+        $$\frac CN=\frac{m\,c}{N}$$
+        <p class="sub">取 $m=18\ \text{g}$（一莫耳），代入 $c=4.186\ \text{J/(g·K)}$、$N=N_A=6.022\times10^{23}$（標準值）：</p>
+        $$\frac CN=\frac{(18\ \text{g})(4.186\ \text{J/g·K})}{6.022\times10^{23}}=\frac{75.3\ \text{J/K}}{6.022\times10^{23}}=1.25\times10^{-22}\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sc-1-43-s2" data-sym="k">
+        <span class="step-title">換成 $k$ 的倍數</span>
+        <p class="sub">除以 $k=1.381\times10^{-23}\ \text{J/K}$：</p>
+        $$\frac CN=\frac{1.25\times10^{-22}}{1.381\times10^{-23}}\,k=9.06\,k$$
+      </div>
+      <div class="step" data-step="sc-1-43-s3" data-sym="f">
+        <span class="step-title">反推自由度</span>
+        <p>均分定理：每個二次自由度貢獻 $\tfrac12k$，所以 $C/N=\tfrac f2k$，</p>
+        $$f=\frac{2\,(C/N)}{k}$$
+        <p class="sub">代入 $C/N=9.06\,k$（步驟 2）：</p>
+        $$f=2\times9.06=18.1\approx18$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>每個分子 $C/N\approx9.1\,k$（$1.25\times10^{-22}$ J/K）；若全是二次自由度，需要約 18 個自由度——遠多於一個三原子分子合理的數目。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>水蒸氣分子最多 3 平動＋3 轉動＋6（3 個振動模式）＝12，室溫下振動還凍結，只有 6。18 太多，表示液態水的熱能大量存在分子間作用（氫鍵）的位能裡，而那些位能不是二次函數，均分定理不適用 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-44">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-44（Problem 1.44）· p.31</span></div>
+    <h4>用均分定理解釋書末的 $C_P$ 數據</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-44">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-44"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>At the back of this book is a table of thermodynamic data for selected substances at room temperature. Browse through the $C_P$ values in this table, and check that you can account for most of them (approximately) using the equipartition theorem. Which values seem anomalous?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>書末有一張室溫下若干物質的熱力學數據表。瀏覽表中的 $C_P$ 值，檢查你能否用均分定理（大致）解釋其中大部分。哪些數值看起來反常？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>數據</td><td>每莫耳、298 K、1 bar 的 $C_P$</td><td>「書末……熱力學數據表」（p.404–405，表頭寫明一莫耳、298 K、1 bar）</td></tr>
+          <tr><td>溫度</td><td>$T=298\ \text{K}$</td><td>「<b>室溫</b>下」：振動多半凍結、轉動已活化（Fig. 1.13）</td></tr>
+          <tr><td>理想氣體</td><td>$C_P=C_V+R$</td><td>題目沒寫；表中氣體要用 6.4 的 (1.48) 從 $C_V$ 換到 $C_P$</td></tr>
+          <tr><td>固體</td><td>$C_P\approx C_V$</td><td>題目沒寫；固體膨脹小，(1.45) 第二項小</td></tr>
+          <tr><td>$R$</td><td>$8.315\ \text{J/(mol·K)}$</td><td>題目沒給，標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：把表中 $C_P$ 和均分定理的預測比較，指出哪些符合、哪些反常並解釋。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>均分定理預測的是 $C_V=\tfrac f2nR$，表列的是 $C_P$，<b>所以</b>氣體要加 $R$（理想氣體 $C_P=C_V+R$），固體則直接比較 $3R$ 乘上每莫耳的原子數。</p>
+      <p><b>因為</b>室溫下轉動已活化、振動大多凍結，<b>所以</b>先用「只有平動＋轉動」當基準；實測值明顯高於基準，表示部分振動已解凍；明顯低於固體的 $3R$，表示振動還沒全部解凍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-44-s1" data-sym="f,CP,R">
+        <span class="step-title">各類物質的預測值</span>
+        $$C_P=\left(\frac f2+1\right)R\ (\text{氣體}),\qquad C_P\approx3R\times(\text{每莫耳原子數})\ (\text{固體})$$
+        <p class="sub">代入 $R=8.315$ J/K：單原子 $f=3$：$\tfrac52R=20.8$；線形分子 $f=5$：$\tfrac72R=29.1$；非線形分子 3 轉動 $f=6$：$4R=33.3$；固體每莫耳原子 $3R=24.9$（J/K）。</p>
+      </div>
+      <div class="step" data-step="sc-1-44-s2">
+        <span class="step-title">氣體：和表比較</span>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>物質</th><th>預測</th><th>表（J/K）</th><th>判斷</th></tr></thead>
+          <tbody>
+            <tr><td>Ar、He、Ne、H</td><td>20.8</td><td>20.79、20.79、20.79、20.78</td><td>完全符合</td></tr>
+            <tr><td>N₂、CO</td><td>29.1</td><td>29.12、29.14</td><td>符合</td></tr>
+            <tr><td>H₂、O₂</td><td>29.1</td><td>28.82、29.38</td><td>略低／略高（O₂ 振動稍微開始）</td></tr>
+            <tr><td>Cl₂</td><td>29.1</td><td>33.91</td><td><b>反常偏高</b>：鍵弱、原子重，振動已大半活化</td></tr>
+            <tr><td>CO₂（線形）</td><td>29.1</td><td>37.11</td><td><b>反常偏高</b>：不拉伸鍵長的「彎曲」振動已活化</td></tr>
+            <tr><td>H₂O、NH₃、CH₄</td><td>33.3</td><td>33.58、35.06、35.31</td><td>接近，依序有少量振動</td></tr>
+            <tr><td>C₂H₆、C₃H₈</td><td>33.3</td><td>52.63、73.5</td><td><b>偏高很多</b>：大分子有許多低頻振動</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="sc-1-44-s3">
+        <span class="step-title">固體：和 $3R$ 乘原子數比較</span>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>物質（原子數）</th><th>預測</th><th>表（J/K）</th><th>判斷</th></tr></thead>
+          <tbody>
+            <tr><td>Al、Cu、Fe、Pb（1）</td><td>24.9</td><td>24.35、24.44、25.10、26.44</td><td>符合（Pb 略高是 $C_P-C_V$）</td></tr>
+            <tr><td>石墨、鑽石（1）</td><td>24.9</td><td>8.53、6.11</td><td><b>反常偏低</b>：碳原子輕、鍵硬，振動大多凍結</td></tr>
+            <tr><td>NaCl（2）、CaCl₂（3）</td><td>49.9、74.8</td><td>50.50、72.59</td><td>符合</td></tr>
+            <tr><td>SiO₂（3）、CaCO₃（5）</td><td>74.8、124.7</td><td>44.43、81.88</td><td>偏低：部分硬鍵不振動</td></tr>
+            <tr><td>Al₂SiO₅（8）</td><td>199.6</td><td>約 122</td><td>偏低</td></tr>
+            <tr><td>葡萄糖 C₆H₁₂O₆（24）</td><td>598.7</td><td>115</td><td><b>最反常</b>：絕大多數振動凍結</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="sc-1-44-s4">
+        <span class="step-title">液體</span>
+        <p>液體沒有簡單的預測（分子間位能不是二次式）。汞 27.98 J/K 只比固體的 $3R$ 稍大；水 75.29 J/K、乙醇 111.46 J/K 遠大於同分子氣體的值（水蒸氣 33.58），和習題 1.43 的結論一致：大量能量存在分子間作用裡。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>單原子氣體（$\tfrac52R$）、多數雙原子氣體（$\tfrac72R$）、金屬與簡單離子晶體（每原子 $3R$）都符合均分定理。反常：Cl₂ 與 CO₂ 偏高（振動已部分活化）、大烴分子偏高；石墨、鑽石、葡萄糖與複雜礦物偏低（振動凍結）；液態水與乙醇偏高（分子間作用）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>偏低的都是含輕原子、硬鍵的固體，正是 Fig. 1.14 鑽石「到 400 K 還沒到 $3R$」的情形 ✔（解答手冊估葡萄糖全活化約 500 J/K；照 24 個原子 $\times3R$ 算是 599 J/K，兩者都是表值 115 的 4–5 倍，結論相同。）</p></div>
+  </div>
+</div>
+
+<h3 id="th6-ideal">6.4 理想氣體：$C_P=C_V+Nk$ <span class="pg-tag">p.29–31</span></h3>
+
+<p>理想氣體的 $U$ 只和 $T$ 有關（$U=\tfrac f2NkT$），所以 (1.45) 第一項 $(\partial U/\partial T)_P$ 就是 $C_V$；第二項用理想氣體定律算。結果非常乾淨：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.29–30 Eq. (1.47)(1.48)</span>
+  $$\left(\frac{\partial V}{\partial T}\right)_P=\frac{\partial}{\partial T}\left(\frac{NkT}{P}\right)=\frac{Nk}{P}\quad(\text{理想氣體})$$
+  $$C_P=C_V+Nk=C_V+nR\quad(\text{理想氣體})$$
+  <p>每莫耳理想氣體的 $C_P$ 比 $C_V$ 大 $R$。奇妙的是這個多出的項和壓力大小無關：壓力高時氣體膨脹得少，兩者恰好抵消，對外做的功與 $P$ 無關。</p>
+</div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-6-cpcv">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.6 Eq. (1.47)(1.48) · p.29–30</span></div>
+    <h4>推導理想氣體的 $C_P-C_V=Nk$</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-6-cpcv">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-6-cpcv"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>What about heat capacities of gases at constant pressure? For an ideal gas, the derivative $\partial U/\partial T$ is the same with $P$ fixed as with $V$ fixed, and we can compute the second term in equation 1.45 using the ideal gas law. At constant pressure, $$\left(\frac{\partial V}{\partial T}\right)_P=\frac{\partial}{\partial T}\left(\frac{NkT}{P}\right)=\frac{Nk}{P}\quad\text{(ideal gas)}.\qquad(1.47)$$ Therefore, $$C_P=C_V+Nk=C_V+nR\quad\text{(ideal gas)}.\qquad(1.48)$$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>從 $C_P=(\partial U/\partial T)_P+P(\partial V/\partial T)_P$ 出發，證明理想氣體 $C_P=C_V+Nk$，並求絕熱指數 $\gamma=C_P/C_V$ 與單原子、雙原子氣體的值。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>$C_P$ 的一般式</td><td>$\left(\frac{\partial U}{\partial T}\right)_P+P\left(\frac{\partial V}{\partial T}\right)_P$</td><td>題目給的出發點（Eq. 1.45）</td></tr>
+          <tr><td>狀態方程式</td><td>$PV=NkT\Rightarrow V=NkT/P$</td><td>「<b>理想氣體</b>」</td></tr>
+          <tr><td>內能</td><td>$U=\tfrac f2NkT$，只和 $T$ 有關</td><td>「理想氣體」＋均分定理（第 3 節）</td></tr>
+          <tr><td>自由度</td><td>單原子 $f=3$，雙原子 $f=5$</td><td>題目沒寫；室溫的值（6.3）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：證明 $C_P-C_V=Nk$；求 $\gamma$ 的一般式與 $f=3,5$ 的值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>理想氣體的 $U$ 只是 $T$ 的函數，固定 $P$ 或固定 $V$ 對 $T$ 微分結果相同，<b>所以</b>第一項就是 $C_V$。</p>
+      <p><b>因為</b>第二項只要 $V(T,P)$，<b>所以</b>把狀態方程式寫成 $V=NkT/P$，固定 $P$ 對 $T$ 微分。$\gamma$ 再用 $C_V=\tfrac f2Nk$ 代入相除。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-6-cpcv-s1" data-sym="U,CV">
+        <span class="step-title">第一項等於 $C_V$</span>
+        <p>$U=\tfrac f2NkT$ 裡沒有 $V$ 也沒有 $P$，所以</p>
+        $$\left(\frac{\partial U}{\partial T}\right)_P=\left(\frac{\partial U}{\partial T}\right)_V=\frac f2Nk=C_V$$
+      </div>
+      <div class="step" data-step="sc-ex-6-cpcv-s2" data-sym="V,P">
+        <span class="step-title">第二項用狀態方程式</span>
+        <p>固定 $P$ 時 $V=NkT/P$ 是 $T$ 的一次函數：</p>
+        $$\left(\frac{\partial V}{\partial T}\right)_P=\frac{\partial}{\partial T}\left(\frac{NkT}{P}\right)=\frac{Nk}{P}$$
+        <p class="sub">乘上 $P$：</p>
+        $$P\left(\frac{\partial V}{\partial T}\right)_P=P\cdot\frac{Nk}{P}=Nk$$
+      </div>
+      <div class="step" data-step="sc-ex-6-cpcv-s3" data-sym="CP,n,R">
+        <span class="step-title">合起來</span>
+        <p class="sub">代入步驟 1、2：</p>
+        $$C_P=C_V+Nk=C_V+nR$$
+      </div>
+      <div class="step" data-step="sc-ex-6-cpcv-s4" data-sym="gamma,f">
+        <span class="step-title">絕熱指數</span>
+        $$\gamma=\frac{C_P}{C_V}=\frac{\tfrac f2Nk+Nk}{\tfrac f2Nk}=\frac{f+2}{f}$$
+        <p class="sub">代入 $f=3$（單原子）、$f=5$（雙原子，室溫）：</p>
+        $$\gamma_{\text{單}}=\frac53\approx1.67,\qquad\gamma_{\text{雙}}=\frac75=1.40$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$C_P=C_V+Nk$（每莫耳多 $R$）；$\gamma=\dfrac{f+2}{f}$，單原子 $5/3$、雙原子 $7/5$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單原子每莫耳 $C_P=\tfrac52R=20.8$ J/K，和書末表的 He、Ne、Ar 完全一致 ✔；$\gamma$ 正是第 5 節絕熱過程 $PV^\gamma$＝常數裡的那個指數。</p></div>
+  </div>
+</div>
+
+<p>考卷常把這一段和第 5 節的絕熱過程綁在一起考：某級期中第 1(c)(d) 題（下面這張卡）與 114 級期中第 3 題 (a)–(c) 幾乎同一段文字。114 級那題的 (a)(b)(c)（第一定律、$C_P$ 與 $C_V$ 的關係、證明 $PV^\gamma$＝常數）已經和它的 (d)(e) 熵的部分一起放在<a data-chapter="thermal/ch02" href="#tk-114-3">第 2 章</a>第 9 節「理想氣體的熵」的考古 114-3 卡（id <code>tk-114-3</code>），不另做卡；$PV^\gamma$ 的推導見第 5 節。</p>
+
+<div class="problem" data-kind="exam" id="tk1x-1cd">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">某級上學期期中 第 1(c)(d) 題 · 同 114 級上學期期中 第 3(a)(b) 題 · 對應 Schroeder Eq. (1.48) · p.30</span></div>
+    <h4>說明第一定律，求單原子理想氣體 $C_P$ 與 $C_V$ 的關係</h4>
+    <button type="button" class="exam-btn" data-exam="tk1x-1cd">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1cd"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is $$PV=NkT$$ (gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>……</p><p>(c) Explain the first law of thermodynamics. (2pts)</p><p>(d) Use the first law of thermodynamics to find the relationship between the constant volume heat capacity $C_V$ and the constant pressure heat capacity $C_P$ of monoatomic ideal gas with number of gas particles N.(3pts)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>理想氣體遵守的狀態方程式（也稱為理想氣體定律）是 $PV=NkT$（氣體壓力 $P$、體積 $V$、氣體粒子數 $N$、波茲曼常數 $k$、溫度 $T$）。當原子間的交互作用可以忽略、原子密度很低時，這個理想氣體定律成立。……(c) 說明熱力學第一定律。（2 分）(d) 用熱力學第一定律，求粒子數為 $N$ 的單原子理想氣體，定容熱容量 $C_V$ 與定壓熱容量 $C_P$ 的關係。（3 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>狀態方程式</td><td>$PV=NkT$</td><td>題幹「理想氣體定律是 $PV=NkT$」</td></tr>
+          <tr><td>粒子數</td><td>$N$（固定）</td><td>(d)「粒子數為 <b>$N$</b>」：答案要用 $N$、$k$ 表示</td></tr>
+          <tr><td>單原子</td><td>$f=3$，$U=\tfrac32NkT$</td><td>(d)「<b>單原子</b>理想氣體」＋均分定理</td></tr>
+          <tr><td>$U$ 只和 $T$ 有關</td><td>$dU=C_V\,dT$（任何過程）</td><td>題幹「原子間的交互作用<b>可以忽略</b>」：沒有位能，$U$ 只有動能</td></tr>
+          <tr><td>功的符號</td><td>$W=-P\,dV$（對氣體做的功）</td><td>題目沒寫；用 Schroeder 的 $\Delta U=Q+W$ 慣例</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(c) 說明第一定律；(d) 用第一定律推出 $C_P$ 與 $C_V$ 的關係（以 $N$、$k$ 表示）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(c) <b>因為</b>題目只問「說明」，<b>所以</b>寫出式子、每個符號的意義與正負號慣例，並點出它就是能量守恆、$Q$ 與 $W$ 是過程量而 $U$ 是狀態量。</p>
+      <p>(d) <b>因為</b>題目指定「用第一定律」，<b>所以</b>分別寫出定容（$dV=0$）與定壓（$dP=0$）兩種加熱的 $dQ$，用熱容量的定義 $C=dQ/dT$；<b>因為</b>理想氣體的 $U$ 只和 $T$ 有關，兩種過程的 $dU$ 一樣，相減就剩下膨脹功那一項。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk1x-1cd-s1" data-sym="U,Q,W">
+        <span class="step-title">(c) 第一定律</span>
+        $$\Delta U=Q+W$$
+        <p>系統內能的變化＝流入系統的熱 $Q$（因溫差而傳入的能量）＋外界對系統做的功 $W$。這是能量守恆用在熱力學系統上。$U$ 是狀態量（只看初末狀態），$Q$ 和 $W$ 是過程量（看路徑），但兩者之和只看初末。對準靜態壓縮，$W=-\int P\,dV$，微小變化寫成 $dU=dQ-P\,dV$。</p>
+      </div>
+      <div class="step" data-step="tk1x-1cd-s2" data-sym="CV">
+        <span class="step-title">(d) 定容加熱</span>
+        <p>體積不變，$dV=0$，沒有壓縮功：</p>
+        $$dQ_V=dU\ \Rightarrow\ C_V=\left(\frac{dQ}{dT}\right)_V=\frac{dU}{dT}$$
+        <p class="sub">代入單原子 $U=\tfrac32NkT$（題目「單原子」＋均分定理）：</p>
+        $$C_V=\frac{d}{dT}\left(\frac32NkT\right)=\frac32Nk$$
+      </div>
+      <div class="step" data-step="tk1x-1cd-s3" data-sym="CP,P,V">
+        <span class="step-title">(d) 定壓加熱</span>
+        <p>壓力不變時氣體膨脹，第一定律移項：</p>
+        $$dQ_P=dU+P\,dV$$
+        <p>$U$ 只和 $T$ 有關，所以 $dU=C_V\,dT$（和定容時相同）。定壓下對 $PV=NkT$ 取微分：$P\,dV=Nk\,dT$。</p>
+        <p class="sub">代入：</p>
+        $$dQ_P=C_V\,dT+Nk\,dT\ \Rightarrow\ C_P=\left(\frac{dQ}{dT}\right)_P=C_V+Nk$$
+      </div>
+      <div class="step" data-step="tk1x-1cd-s4">
+        <span class="step-title">單原子的數值</span>
+        <p class="sub">代入步驟 2 的 $C_V=\tfrac32Nk$：</p>
+        $$C_P=\frac32Nk+Nk=\frac52Nk,\qquad\gamma=\frac{C_P}{C_V}=\frac53$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(c) $\Delta U=Q+W$：內能變化＝吸收的熱＋外界做的功（能量守恆）。(d) $C_P=C_V+Nk$；單原子 $C_V=\tfrac32Nk$、$C_P=\tfrac52Nk$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>多出的 $Nk$ 正好是定壓下每升高 1 K 氣體對外做的功 $P\,\Delta V=Nk\,\Delta T$；換成莫耳是 $C_P-C_V=R$ ✔</p></div>
+  </div>
+</div>
+
+<h3 id="th6-partial">6.5 偏微分要寫明固定誰：$C_V$ 為什麼難量 <span class="pg-tag">p.31–32</span></h3>
+
+<p>熱力學的函數常常有三個變數彼此相關（$P$、$V$、$T$ 任兩個決定第三個），所以「對 $T$ 微分」一定要說固定 $P$ 還是 $V$。習題 1.45 是純數學的提醒，習題 1.46 則推出一個 $P,V,T$ 之間的普遍關係，順便說明為什麼固體與液體的熱容量幾乎都在定壓下量。</p>
+
+<div class="problem" data-kind="textbook" id="sc-1-45">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-45（Problem 1.45）· p.31</span></div>
+    <h4>同一個 $w$，固定不同變數，偏微分不同</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-45">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-45"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>As an illustration of why it matters which variables you hold fixed when taking partial derivatives, consider the following mathematical example. Let $w=xy$ and $x=yz$.</p><p>(a) Write $w$ purely in terms of $x$ and $z$, and then purely in terms of $y$ and $z$.</p><p>(b) Compute the partial derivatives $$\left(\frac{\partial w}{\partial x}\right)_y\quad\text{and}\quad\left(\frac{\partial w}{\partial x}\right)_z,$$ and show that they are not equal. (Hint: To compute $(\partial w/\partial x)_y$, use a formula for $w$ in terms of $x$ and $y$, not $z$. Similarly, compute $(\partial w/\partial x)_z$ from a formula for $w$ in terms of only $x$ and $z$.)</p><p>(c) Compute the other four partial derivatives of $w$ (two each with respect to $y$ and $z$), and show that it matters which variable is held fixed.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用數學例子說明偏微分時固定哪個變數很重要。令 $w=xy$、$x=yz$。(a) 把 $w$ 只用 $x,z$ 表示，再只用 $y,z$ 表示。(b) 計算 $(\partial w/\partial x)_y$ 與 $(\partial w/\partial x)_z$，證明它們不相等。（提示：算 $(\partial w/\partial x)_y$ 時用只含 $x,y$ 的式子；算 $(\partial w/\partial x)_z$ 時用只含 $x,z$ 的式子。）(c) 計算 $w$ 的另外四個偏微分（對 $y$、對 $z$ 各兩個），證明固定哪個變數有影響。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>函數</td><td>$w=xy$</td><td>「令 <b>$w=xy$</b>」</td></tr>
+          <tr><td>變數的關係</td><td>$x=yz$</td><td>「<b>$x=yz$</b>」：三個變數只有兩個獨立</td></tr>
+          <tr><td>作法</td><td>求 $(\partial w/\partial a)_b$ 時先把 $w$ 寫成只含 $a,b$</td><td>題目 (b) 的提示</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $w(x,z)$、$w(y,z)$；(b) $(\partial w/\partial x)_y$、$(\partial w/\partial x)_z$；(c) $(\partial w/\partial y)_x$、$(\partial w/\partial y)_z$、$(\partial w/\partial z)_x$、$(\partial w/\partial z)_y$，並比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $x,y,z$ 只有兩個獨立，偏微分 $(\partial w/\partial a)_b$ 的意思是「把 $w$ 看成 $a$ 與 $b$ 的函數，固定 $b$ 只動 $a$」，<b>所以</b>每次都要先消去第三個變數，把 $w$ 寫成只含 $a,b$ 的式子再微分。若用含第三個變數的式子直接微分，那個變數其實也在跟著變，答案就錯了。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-45-s1">
+        <span class="step-title">(a) 消去一個變數</span>
+        <p>消去 $y$：由 $x=yz$ 得 $y=x/z$；消去 $x$：直接代 $x=yz$。</p>
+        <p class="sub">代入 $w=xy$：</p>
+        $$w=x\cdot\frac xz=\frac{x^2}{z},\qquad w=(yz)\,y=y^2z$$
+      </div>
+      <div class="step" data-step="sc-1-45-s2">
+        <span class="step-title">(b) 對 $x$ 微分</span>
+        <p>固定 $y$：用 $w=xy$；固定 $z$：用 $w=x^2/z$。</p>
+        $$\left(\frac{\partial w}{\partial x}\right)_y=y,\qquad\left(\frac{\partial w}{\partial x}\right)_z=\frac{2x}{z}$$
+        <p class="sub">把第二個用 $x/z=y$（由 $x=yz$）改寫：</p>
+        $$\left(\frac{\partial w}{\partial x}\right)_z=2y\ne y=\left(\frac{\partial w}{\partial x}\right)_y$$
+      </div>
+      <div class="step" data-step="sc-1-45-s3">
+        <span class="step-title">(c) 對 $y$ 微分</span>
+        <p>固定 $x$：用 $w=xy$；固定 $z$：用 $w=y^2z$。</p>
+        $$\left(\frac{\partial w}{\partial y}\right)_x=x,\qquad\left(\frac{\partial w}{\partial y}\right)_z=2yz=2x$$
+      </div>
+      <div class="step" data-step="sc-1-45-s4">
+        <span class="step-title">(c) 對 $z$ 微分</span>
+        <p>固定 $x$：用 $w=x^2/z$；固定 $y$：用 $w=y^2z$。</p>
+        $$\left(\frac{\partial w}{\partial z}\right)_x=-\frac{x^2}{z^2}=-y^2,\qquad\left(\frac{\partial w}{\partial z}\right)_y=y^2$$
+        <p>連正負號都相反：固定 $x$ 時 $z$ 變大，$y=x/z$ 變小，$w=xy$ 跟著變小；固定 $y$ 時 $z$ 變大，$x=yz$ 變大，$w$ 變大。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $w=x^2/z=y^2z$。(b) $(\partial w/\partial x)_y=y$，$(\partial w/\partial x)_z=2x/z=2y$。(c) $(\partial w/\partial y)_x=x$，$(\partial w/\partial y)_z=2x$；$(\partial w/\partial z)_x=-y^2$，$(\partial w/\partial z)_y=+y^2$。每一對都不相等。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>取 $y=1,z=2$（$x=2$，$w=2$），把 $z$ 增加 0.01 並固定 $y$：$w=y^2z=2.01$，變化率 $1=y^2$ ✔；固定 $x=2$：$w=4/2.01=1.990$，變化率 $-1=-y^2$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-46">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-46（Problem 1.46）· p.32 · 熱學小考（上）作業題</span></div>
+    <h4>要多大壓力才能讓水不膨脹</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-46">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-46"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Measured heat capacities of solids and liquids are almost always at constant pressure, not constant volume. To see why, estimate the pressure needed to keep $V$ fixed as $T$ increases, as follows.</p><p>(a) First imagine slightly increasing the temperature of a material at constant pressure. Write the change in volume, $dV_1$, in terms of $dT$ and the thermal expansion coefficient $\beta$ introduced in Problem 1.7.</p><p>(b) Now imagine slightly compressing the material, holding its temperature fixed. Write the change in volume for this process, $dV_2$, in terms of $dP$ and the isothermal compressibility $\kappa_T$, defined as $$\kappa_T\equiv-\frac1V\left(\frac{\partial V}{\partial P}\right)_T.$$ (This is the reciprocal of the isothermal bulk modulus defined in Problem 1.39.)</p><p>(c) Finally, imagine that you compress the material just enough in part (b) to offset the expansion in part (a). Then the ratio of $dP$ to $dT$ is equal to $(\partial P/\partial T)_V$, since there is no net change in volume. Express this partial derivative in terms of $\beta$ and $\kappa_T$. Then express it more abstractly in terms of the partial derivatives used to define $\beta$ and $\kappa_T$. For the second expression you should obtain $$\left(\frac{\partial P}{\partial T}\right)_V=-\frac{(\partial V/\partial T)_P}{(\partial V/\partial P)_T}.$$ This result is actually a purely mathematical relation, true for any three quantities that are related in such a way that any two determine the third.</p><p>(d) Compute $\beta$, $\kappa_T$, and $(\partial P/\partial T)_V$ for an ideal gas, and check that the three expressions satisfy the identity you found in part (c).</p><p>(e) For water at 25°C, $\beta=2.57\times10^{-4}\ \text{K}^{-1}$ and $\kappa_T=4.52\times10^{-10}\ \text{Pa}^{-1}$. Suppose you increase the temperature of some water from 20°C to 30°C. How much pressure must you apply to prevent it from expanding? Repeat the calculation for mercury, for which (at 25°C) $\beta=1.81\times10^{-4}\ \text{K}^{-1}$ and $\kappa_T=4.04\times10^{-11}\ \text{Pa}^{-1}$. Given the choice, would you rather measure the heat capacities of these substances at constant $V$ or at constant $P$?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>固體與液體的熱容量幾乎都在定壓、而不是定容下量。為了看出原因，估計升溫時要維持 $V$ 不變所需的壓力：(a) 先想像在定壓下把材料稍微升溫，用 $dT$ 與習題 1.7 的熱膨脹係數 $\beta$ 寫出體積變化 $dV_1$。(b) 再想像固定溫度、稍微壓縮材料，用 $dP$ 與等溫壓縮係數 $\kappa_T\equiv-\frac1V\left(\frac{\partial V}{\partial P}\right)_T$ 寫出體積變化 $dV_2$（$\kappa_T$ 是習題 1.39 等溫體積模量的倒數）。(c) 最後想像 (b) 的壓縮恰好抵消 (a) 的膨脹，則 $dP/dT$ 等於 $(\partial P/\partial T)_V$（體積沒有淨變化）。用 $\beta$、$\kappa_T$ 表示這個偏微分，再用定義 $\beta$、$\kappa_T$ 的偏微分更抽象地表示它，應得到 $\left(\frac{\partial P}{\partial T}\right)_V=-\frac{(\partial V/\partial T)_P}{(\partial V/\partial P)_T}$。這其實是純數學關係，對任何「任兩個決定第三個」的三個量都成立。(d) 對理想氣體計算 $\beta$、$\kappa_T$ 與 $(\partial P/\partial T)_V$，檢查三者滿足 (c) 的恆等式。(e) 25°C 的水 $\beta=2.57\times10^{-4}\ \text{K}^{-1}$、$\kappa_T=4.52\times10^{-10}\ \text{Pa}^{-1}$。把水從 20°C 加熱到 30°C，要施加多少壓力才能防止它膨脹？對汞（25°C 時 $\beta=1.81\times10^{-4}\ \text{K}^{-1}$、$\kappa_T=4.04\times10^{-11}\ \text{Pa}^{-1}$）重做一次。可以選的話，你會在定 $V$ 還是定 $P$ 下量這些物質的熱容量？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>熱膨脹係數</td><td>$\beta=\frac1V\left(\frac{\partial V}{\partial T}\right)_P$</td><td>(a)「習題 1.7 的熱膨脹係數」（定壓下每升 1 K 的體積相對變化）</td></tr>
+          <tr><td>等溫壓縮係數</td><td>$\kappa_T=-\frac1V\left(\frac{\partial V}{\partial P}\right)_T$</td><td>(b) 題目給的定義；負號讓 $\kappa_T\gt0$</td></tr>
+          <tr><td>淨體積變化</td><td>$dV_1+dV_2=0$</td><td>(c)「壓縮<b>恰好抵消</b>膨脹」</td></tr>
+          <tr><td>理想氣體</td><td>$V=NkT/P$</td><td>(d)「對<b>理想氣體</b>」</td></tr>
+          <tr><td>水</td><td>$\beta=2.57\times10^{-4}\ \text{K}^{-1}$，$\kappa_T=4.52\times10^{-10}\ \text{Pa}^{-1}$</td><td>(e)「25°C 的水……」</td></tr>
+          <tr><td>汞</td><td>$\beta=1.81\times10^{-4}\ \text{K}^{-1}$，$\kappa_T=4.04\times10^{-11}\ \text{Pa}^{-1}$</td><td>(e)「對汞……」</td></tr>
+          <tr><td>溫度變化</td><td>$\Delta T=10\ \text{K}$</td><td>(e)「從 <b>20°C 加熱到 30°C</b>」；$\beta,\kappa_T$ 用 25°C 的值當平均</td></tr>
+          <tr><td>換算</td><td>$1\ \text{atm}=1.013\times10^5\ \text{Pa}$</td><td>題目沒給，標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $dV_1$；(b) $dV_2$；(c) $(\partial P/\partial T)_V$ 用 $\beta,\kappa_T$ 與用偏微分表示；(d) 理想氣體的 $\beta,\kappa_T,(\partial P/\partial T)_V$ 並驗證；(e) 水與汞所需的壓力，並判斷該在定 $V$ 還是定 $P$ 下量熱容量。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $V$ 是 $T$ 和 $P$ 的函數，任何小變化都能拆成「固定 $P$ 改 $T$」加「固定 $T$ 改 $P$」，<b>所以</b>把定容升溫想成兩步：先定壓膨脹 $dV_1$，再等溫壓縮 $dV_2$，兩者相消。這就是全微分 $dV=(\partial V/\partial T)_PdT+(\partial V/\partial P)_TdP=0$。</p>
+      <p><b>因為</b>溫度只變 10 K，$\beta,\kappa_T$ 幾乎不變，<b>所以</b> (e) 可以把 $dP=(\partial P/\partial T)_V\,dT$ 直接用在 $\Delta T=10$ K 上。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-46-s1" data-sym="beta,V,T">
+        <span class="step-title">(a) 定壓升溫的膨脹</span>
+        $$dV_1=\left(\frac{\partial V}{\partial T}\right)_PdT=\beta V\,dT$$
+      </div>
+      <div class="step" data-step="sc-1-46-s2" data-sym="kappaT,P">
+        <span class="step-title">(b) 等溫壓縮</span>
+        $$dV_2=\left(\frac{\partial V}{\partial P}\right)_TdP=-\kappa_TV\,dP$$
+        <p>加壓（$dP\gt0$）體積變小，負號正好反映這件事。</p>
+      </div>
+      <div class="step" data-step="sc-1-46-s3">
+        <span class="step-title">(c) 兩者相消</span>
+        <p class="sub">代入 $dV_1+dV_2=0$（題目 (c)）：</p>
+        $$\beta V\,dT-\kappa_TV\,dP=0\ \Rightarrow\ \left(\frac{\partial P}{\partial T}\right)_V=\frac{dP}{dT}=\frac{\beta}{\kappa_T}$$
+        <p class="sub">再代入定義 $\beta=\frac1V(\partial V/\partial T)_P$、$\kappa_T=-\frac1V(\partial V/\partial P)_T$，$\tfrac1V$ 約掉：</p>
+        $$\left(\frac{\partial P}{\partial T}\right)_V=\frac{\frac1V(\partial V/\partial T)_P}{-\frac1V(\partial V/\partial P)_T}=-\frac{(\partial V/\partial T)_P}{(\partial V/\partial P)_T}$$
+      </div>
+      <div class="step" data-step="sc-1-46-s4" data-sym="N,k">
+        <span class="step-title">(d) 理想氣體驗證</span>
+        <p class="sub">代入 $V=NkT/P$：</p>
+        $$\begin{aligned}\beta&=\frac1V\frac{\partial}{\partial T}\left(\frac{NkT}{P}\right)=\frac1V\frac{Nk}{P}=\frac1T\\\kappa_T&=-\frac1V\frac{\partial}{\partial P}\left(\frac{NkT}{P}\right)=\frac1V\frac{NkT}{P^2}=\frac1P\\\left(\frac{\partial P}{\partial T}\right)_V&=\frac{\partial}{\partial T}\left(\frac{NkT}{V}\right)=\frac{Nk}{V}=\frac PT\end{aligned}$$
+        <p>而 $\beta/\kappa_T=(1/T)/(1/P)=P/T$，和直接算的 $(\partial P/\partial T)_V$ 相同，恆等式成立。</p>
+      </div>
+      <div class="step" data-step="sc-1-46-s5">
+        <span class="step-title">(e) 水需要的壓力</span>
+        $$\Delta P\approx\frac{\beta}{\kappa_T}\,\Delta T$$
+        <p class="sub">代入水的 $\beta=2.57\times10^{-4}\ \text{K}^{-1}$、$\kappa_T=4.52\times10^{-10}\ \text{Pa}^{-1}$、$\Delta T=10\ \text{K}$（題目 (e)）：</p>
+        $$\Delta P=\frac{2.57\times10^{-4}}{4.52\times10^{-10}}\,(10)\ \text{Pa}=5.69\times10^6\ \text{Pa}$$
+        <p class="sub">換成大氣壓（$1\ \text{atm}=1.013\times10^5\ \text{Pa}$）：</p>
+        $$\Delta P=\frac{5.69\times10^6}{1.013\times10^5}\ \text{atm}=56\ \text{atm}$$
+      </div>
+      <div class="step" data-step="sc-1-46-s6">
+        <span class="step-title">(e) 汞需要的壓力</span>
+        <p class="sub">代入汞的 $\beta=1.81\times10^{-4}\ \text{K}^{-1}$、$\kappa_T=4.04\times10^{-11}\ \text{Pa}^{-1}$、$\Delta T=10\ \text{K}$：</p>
+        $$\begin{aligned}\Delta P&=\frac{1.81\times10^{-4}}{4.04\times10^{-11}}\,(10)\ \text{Pa}\\&=4.48\times10^7\ \text{Pa}=442\ \text{atm}\end{aligned}$$
+        <p>汞的 $\beta$ 比水小，但它難壓縮得多（$\kappa_T$ 小 11 倍），所以要的壓力反而大 8 倍。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $dV_1=\beta V\,dT$；(b) $dV_2=-\kappa_TV\,dP$；(c) $(\partial P/\partial T)_V=\beta/\kappa_T=-(\partial V/\partial T)_P/(\partial V/\partial P)_T$；(d) $\beta=1/T$、$\kappa_T=1/P$、$(\partial P/\partial T)_V=P/T$，滿足恆等式；(e) 水約 $5.7\times10^6$ Pa（56 atm），汞約 $4.5\times10^7$ Pa（440 atm）。升溫 10 K 就要數十到數百大氣壓，設備昂貴又危險，所以寧可在定壓（大氣壓）下量 $C_P$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$\text{K}^{-1}/\text{Pa}^{-1}\times\text{K}=\text{Pa}$ ✔。$5.69\times10^6$ Pa 換 atm 是「除以 $10^5$」等級，得到幾十 atm；小考答案卷把水寫成 5.611 atm 是換算少了一個 10 倍，正確是 56 atm（汞的 442 atm 正確）。</p></div>
+  </div>
+</div>
+
+<h3 id="th6-latent">6.6 潛熱 <span class="pg-tag">p.32–33</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.32–33 Eq. (1.49)(1.50) 潛熱（latent heat）</span>
+  <p>相變（phase transformation，例如冰熔化、水沸騰）時加熱，溫度不升高，熱容量形式上是無限大：</p>
+  $$C=\frac{Q}{\Delta T}=\frac Q0=\infty\quad(\text{相變期間})$$
+  <p>完全熔化或沸騰所需的熱叫潛熱 $L$，除以質量得比潛熱（specific latent heat）：</p>
+  $$l\equiv\frac Lm=\frac Qm\quad(\text{完成相變所需})$$
+  <p>慣例上假設壓力固定（通常 1 atm），除了定壓膨脹或收縮之外沒有其他功。冰的熔化熱 333 J/g＝80 cal/g；水的汽化熱 2260 J/g＝540 cal/g。（對照：水從 0°C 升到 100°C 只要 100 cal/g。）</p>
+</div>
+
+<p>為什麼溫度不升？相變期間加進去的能量用來拆開分子之間的鍵（冰的晶格、液體分子間的吸引），而不是增加分子的平均動能；兩相共存時溫度被「釘」在相變溫度。比較數字：把 1 g 水煮乾（540 cal）是把它從 0°C 燒到 100°C（100 cal）的 5 倍多，熔化 1 g 冰（80 cal）也差不多等於把水加熱 80°C。所以加冰降溫特別有效——大部分冷卻來自熔化。</p>
+
+<p>和熱容量一樣，「潛熱」也要說清楚過程：課本約定是 1 atm 定壓，所以表上的潛熱其實是焓變（6.7 節），包含了推開大氣的功。</p>
+
+<div class="anim" data-anim="t1-heat-curve"></div>
+
+<div class="problem" data-kind="textbook" id="sc-1-47">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-47（Problem 1.47）· p.33</span></div>
+    <h4>一杯熱茶要加多少冰</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-47">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-47"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Your 200-g cup of tea is boiling-hot. About how much ice should you add to bring it down to a comfortable sipping temperature of 65°C? (Assume that the ice is initially at −15°C. The specific heat capacity of ice is 0.5 cal/g·°C.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>你的 200 g 熱茶滾燙。大約要加多少冰，才能把它降到適合啜飲的 65°C？（假設冰原本是 −15°C；冰的比熱是 0.5 cal/(g·°C)。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>茶的質量</td><td>$M=200\ \text{g}$</td><td>「<b>200 g</b> 熱茶」</td></tr>
+          <tr><td>茶的初溫</td><td>$100^\circ\text{C}$</td><td>「<b>滾燙</b>（boiling-hot）」：剛沸騰</td></tr>
+          <tr><td>茶的比熱</td><td>$1\ \text{cal/(g·°C)}$</td><td>題目沒寫；茶當成水</td></tr>
+          <tr><td>末溫</td><td>$T_f=65^\circ\text{C}$</td><td>「降到……<b>65°C</b>」</td></tr>
+          <tr><td>冰的初溫</td><td>$-15^\circ\text{C}$</td><td>「冰原本是 <b>−15°C</b>」</td></tr>
+          <tr><td>冰的比熱</td><td>$c_{\text{冰}}=0.5\ \text{cal/(g·°C)}$</td><td>「冰的比熱是 <b>0.5 cal/(g·°C)</b>」</td></tr>
+          <tr><td>冰的熔化熱</td><td>$l_f=80\ \text{cal/g}$</td><td>題目沒給，用課文 p.33 的值</td></tr>
+          <tr><td>熱損失</td><td>不計</td><td>題目沒寫；「大約」：只考慮茶與冰交換能量</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：冰的質量 $m$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>茶放出的熱全部被冰吸收，<b>所以</b>寫「茶放熱＝冰吸熱」。<b>因為</b>冰要經過三個階段才到 65°C——先以冰的比熱升到 0°C、在 0°C 熔化（溫度不變，用潛熱）、熔化後的水再升到 65°C——每段用的公式不同，<b>所以</b>把冰的吸熱拆成三段相加。不能只寫 $mc\Delta T$ 從 −15°C 到 65°C，那樣漏掉了最大的熔化熱。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-47-s1" data-sym="Q,c">
+        <span class="step-title">茶放出的熱</span>
+        $$Q_{\text{茶}}=Mc_w\,(100^\circ\text{C}-T_f)$$
+        <p class="sub">代入 $M=200\ \text{g}$、$T_f=65^\circ\text{C}$（題目），$c_w=1\ \text{cal/(g·°C)}$（茶當水）：</p>
+        $$Q_{\text{茶}}=(200\ \text{g})(1\ \text{cal/g·°C})(35^\circ\text{C})=7000\ \text{cal}$$
+      </div>
+      <div class="step" data-step="sc-1-47-s2" data-sym="lsp">
+        <span class="step-title">每克冰吸收的熱（三段）</span>
+        $$\frac{Q_{\text{冰}}}{m}=c_{\text{冰}}\,(0-(-15))+l_f+c_w\,(T_f-0)$$
+        <p class="sub">代入 $c_{\text{冰}}=0.5$（題目）、$l_f=80\ \text{cal/g}$（課文）、$c_w=1$、$T_f=65^\circ\text{C}$：</p>
+        $$\frac{Q_{\text{冰}}}{m}=(0.5)(15)+80+(1)(65)=7.5+80+65=152.5\ \text{cal/g}$$
+      </div>
+      <div class="step" data-step="sc-1-47-s3">
+        <span class="step-title">熱量平衡解出 $m$</span>
+        $$m\cdot\frac{Q_{\text{冰}}}{m}=Q_{\text{茶}}\ \Rightarrow\ m=\frac{Q_{\text{茶}}}{Q_{\text{冰}}/m}$$
+        <p class="sub">代入步驟 1、2：</p>
+        $$m=\frac{7000\ \text{cal}}{152.5\ \text{cal/g}}=45.9\ \text{g}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約 $46\ \text{g}$ 的冰（約兩、三塊冰塊）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>冰吸熱 $45.9\times152.5=7000$ cal ✔；三段中熔化佔 $80/152.5=52\%$，比升溫 15°C 的 7.5 cal/g 重要得多。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk1-115-1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 1 題 · 改自 Schroeder Problem 1.47 · p.33</span></div>
+    <h4>100 g 咖啡加冰降到 60°C</h4>
+    <button type="button" class="exam-btn" data-exam="tk1-115-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1-115-1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. [10pts] Your 100-g cup of coffee is boiling-hot. About how much ice should you add to bring it down to a comfortable sipping temperature of 60°C? (Assume that the ice is initially at −15°C. The specific heat of ice is 0.5 cal/g°C.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（10 分）你的 100 g 咖啡滾燙。大約要加多少冰，才能把它降到適合啜飲的 60°C？（假設冰原本是 −15°C；冰的比熱是 0.5 cal/(g·°C)。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>咖啡的質量</td><td>$M=100\ \text{g}$</td><td>「<b>100 g</b> 咖啡」</td></tr>
+          <tr><td>咖啡的初溫</td><td>$100^\circ\text{C}$</td><td>「<b>滾燙</b>」</td></tr>
+          <tr><td>咖啡的比熱</td><td>$1\ \text{cal/(g·°C)}$</td><td>題目沒寫；咖啡當成水</td></tr>
+          <tr><td>末溫</td><td>$T_f=60^\circ\text{C}$</td><td>「降到……<b>60°C</b>」</td></tr>
+          <tr><td>冰的初溫、比熱</td><td>$-15^\circ\text{C}$，$0.5\ \text{cal/(g·°C)}$</td><td>「冰原本是 <b>−15°C</b>；冰的比熱是 <b>0.5</b>」</td></tr>
+          <tr><td>冰的熔化熱</td><td>$l_f=80\ \text{cal/g}$</td><td>題目沒給，要背（課文 333 J/g＝80 cal/g）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：冰的質量 $m$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這是習題 1.47 只換數字（200 g→100 g、65°C→60°C），<b>所以</b>做法完全相同：咖啡放的熱＝冰「升到 0°C＋熔化＋升到 60°C」三段吸的熱。考卷沒給熔化熱，要自己記得 80 cal/g；全程用 cal 就不必換算焦耳。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk1-115-1-s1" data-sym="Q,c">
+        <span class="step-title">咖啡放出的熱</span>
+        $$Q_{\text{咖啡}}=Mc_w\,(100^\circ\text{C}-T_f)$$
+        <p class="sub">代入 $M=100\ \text{g}$、$T_f=60^\circ\text{C}$（題目），$c_w=1\ \text{cal/(g·°C)}$：</p>
+        $$Q_{\text{咖啡}}=(100)(1)(40)\ \text{cal}=4000\ \text{cal}$$
+      </div>
+      <div class="step" data-step="tk1-115-1-s2" data-sym="lsp">
+        <span class="step-title">每克冰吸收的熱</span>
+        $$\frac{Q_{\text{冰}}}{m}=c_{\text{冰}}(15^\circ\text{C})+l_f+c_w\,(T_f-0)$$
+        <p class="sub">代入 $c_{\text{冰}}=0.5$（題目）、$l_f=80$（記憶值）、$T_f=60^\circ\text{C}$：</p>
+        $$\frac{Q_{\text{冰}}}{m}=7.5+80+60=147.5\ \text{cal/g}$$
+      </div>
+      <div class="step" data-step="tk1-115-1-s3">
+        <span class="step-title">解出冰的質量</span>
+        <p class="sub">代入步驟 1、2：</p>
+        $$m=\frac{Q_{\text{咖啡}}}{Q_{\text{冰}}/m}=\frac{4000\ \text{cal}}{147.5\ \text{cal/g}}=27.1\ \text{g}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約 $27\ \text{g}$ 的冰。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>咖啡量是習題 1.47 的一半、要降的溫度多 5°C，冰約是 46 g 的 $0.59$ 倍 ✔；115 級答案卷寫 27.12 g，得滿分。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-48">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-48（Problem 1.48）· p.33</span></div>
+    <h4>山上的積雪能撐幾週</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-48">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-48"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>When spring finally arrives in the mountains, the snow pack may be two meters deep, composed of 50% ice and 50% air. Direct sunlight provides about 1000 watts/m² to earth’s surface, but the snow might reflect 90% of this energy. Estimate how many weeks the snow pack should last, if direct solar radiation is the only source of energy.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>山上春天終於來臨時，積雪可能有兩公尺深，由 50% 的冰與 50% 的空氣組成。直射陽光提供地表約 1000 W/m²，但雪可能反射其中 90%。若直射陽光是唯一的能量來源，估計積雪能維持幾週。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>積雪深度</td><td>$2\ \text{m}$</td><td>「積雪可能有<b>兩公尺深</b>」</td></tr>
+          <tr><td>冰的體積比例</td><td>50%</td><td>「<b>50% 的冰</b>與 50% 的空氣」：每 m² 地面有 1 m³ 的冰；空氣質量可忽略</td></tr>
+          <tr><td>日照強度</td><td>$1000\ \text{W/m}^2$</td><td>「直射陽光提供地表約 <b>1000 W/m²</b>」</td></tr>
+          <tr><td>吸收比例</td><td>10%</td><td>「雪可能<b>反射其中 90%</b>」</td></tr>
+          <tr><td>雪的溫度</td><td>$0^\circ\text{C}$</td><td>題目沒寫；「春天終於來臨」：假設雪已在熔點，只需熔化熱</td></tr>
+          <tr><td>冰的密度</td><td>$917\ \text{kg/m}^3$</td><td>題目沒給，標準值</td></tr>
+          <tr><td>熔化熱</td><td>$333\ \text{J/g}$</td><td>題目沒給，課文 p.33</td></tr>
+          <tr><td>每天的有效日照</td><td>約 8 小時直射</td><td>題目沒給，自己估計（太陽斜射、夜晚、陰天打折）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：積雪全部熔化需要幾週。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>日照是「每平方公尺」的功率，<b>所以</b>取 1 m² 的地面當系統：算這塊地面上方的冰熔化需要多少能量，再除以這塊地面每天吸收的太陽能，得到天數。</p>
+      <p><b>因為</b>這是估計題，日照時數題目沒給，<b>所以</b>明白寫出假設（每天相當於 8 小時直射），並用「24 小時都直射」給一個絕對下限，讓讀者知道答案對假設多敏感。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-48-s1" data-sym="lsp">
+        <span class="step-title">每平方公尺要熔化的冰與所需能量</span>
+        $$E=\rho_{\text{冰}}V_{\text{冰}}\,l_f$$
+        <p class="sub">代入 $V_{\text{冰}}=2\ \text{m}\times1\ \text{m}^2\times50\%=1\ \text{m}^3$（題目）、$\rho_{\text{冰}}=917\ \text{kg/m}^3$、$l_f=333\ \text{J/g}=3.33\times10^5\ \text{J/kg}$：</p>
+        $$\begin{aligned}E&=(917\ \text{kg})(3.33\times10^5\ \text{J/kg})\\&=3.05\times10^8\ \text{J}\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-48-s2">
+        <span class="step-title">每天吸收的太陽能</span>
+        $$E_{\text{天}}=(10\%\times I)\,A\,t$$
+        <p class="sub">代入 $I=1000\ \text{W/m}^2$、吸收 10%（題目），$A=1\ \text{m}^2$，$t=8\ \text{h}=2.88\times10^4\ \text{s}$（假設）：</p>
+        $$E_{\text{天}}=(100\ \text{W})(2.88\times10^4\ \text{s})=2.88\times10^6\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-48-s3">
+        <span class="step-title">天數與週數</span>
+        <p class="sub">代入步驟 1、2：</p>
+        $$\frac{E}{E_{\text{天}}}=\frac{3.05\times10^8}{2.88\times10^6}=106\ \text{天}\approx15\ \text{週}$$
+        <p>若太陽 24 小時都直射（不可能），$E_{\text{天}}$ 變 3 倍，仍要 35 天＝5 週——這是下限。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約 100 天，也就是 3 到 4 個月（約 15 週）；即使全天直射也要 5 週以上。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>解答手冊用冰約 1000 kg、每天約 3 MJ，得「超過 100 天、約 14 週」，同一數量級 ✔。實際積雪消得比這快，因為還有暖空氣、雨水、地面與岩石傳來的熱。</p></div>
+  </div>
+</div>
+
+<h3 id="th6-enthalpy">6.7 焓 $H=U+PV$ <span class="pg-tag">p.33–34</span></h3>
+
+<p>定壓過程在自然界與實驗室裡非常普遍，每次都要算「推開大氣做了多少功」很麻煩。技巧是：不要只談系統的能量 $U$，而是把「在壓力 $P$ 下為系統騰出空間所需的功」$PV$ 一起算進去。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.33–34 Eq. (1.51)–(1.56) 焓（enthalpy）</span>
+  $$H\equiv U+PV$$
+  <p>$H$ 是「憑空造出這個系統、放進這個環境」所需的總能量（Fig. 1.15：魔術師變出兔子，除了兔子的能量 $U$，還要 $PV$ 把空氣推開）。定壓下：</p>
+  $$\Delta H=\Delta U+P\,\Delta V\quad(P\ \text{固定})$$
+  <p>與第一定律 $\Delta U=Q+(-P\,\Delta V)+W_{\text{other}}$ 結合：</p>
+  $$\Delta H=Q+W_{\text{other}}\quad(P\ \text{固定})$$
+  $$C_P=\left(\frac{\partial H}{\partial T}\right)_P$$
+</div>
+
+<div class="step" data-step="th6-dh" data-sym="H,P,V">
+  <span class="step-title">(1.52)：定壓下的焓變</span>
+  <p>壓力固定為 $P$，系統的 $U$、$V$ 各變了 $\Delta U$、$\Delta V$，新的焓是</p>
+  $$\begin{aligned}H+\Delta H&=(U+\Delta U)+P(V+\Delta V)\\&=(U+PV)+(\Delta U+P\,\Delta V)\\&=H+(\Delta U+P\,\Delta V)\end{aligned}$$
+  <p>所以 $\Delta H=\Delta U+P\,\Delta V$：焓增加有兩個原因——能量增加，或系統膨脹、對大氣做功騰出空間。</p>
+</div>
+<div class="step" data-step="th6-dh2" data-sym="Wother,Q">
+  <span class="step-title">(1.55)：壓縮功被「吸收」掉了</span>
+  <p>第一定律把功分成壓縮膨脹功 $-P\,\Delta V$ 和其他功 $W_{\text{other}}$（電功、攪拌等）：$\Delta U=Q-P\,\Delta V+W_{\text{other}}$。代入 $\Delta H=\Delta U+P\,\Delta V$，$P\,\Delta V$ 兩項相消：</p>
+  $$\Delta H=Q+W_{\text{other}}$$
+  <p>定壓過程只要用焓，就可以完全忘掉壓縮膨脹功。沒有其他功時，$\Delta H$ 直接就是吸收的熱——這就是課本用符號 $H$（heat）的原因。</p>
+</div>
+
+<p>(1.56) $C_P=(\partial H/\partial T)_P$ 是 $C_P$ 最好的定義：定壓下 $dQ=dH$，所以 $C_P=dQ/dT=(\partial H/\partial T)_P$，展開 $H=U+PV$ 就回到 (1.45)。如同 $C_V$ 該叫「能量容量」，$C_P$ 該叫「焓容量」，而且焓也可以完全由「其他功」提供（例如微波爐加熱），不一定有熱。</p>
+
+<div class="box pitfall">
+  <span class="box-title">$\Delta H=Q$ 的兩個條件</span>
+  <p>只在 (1) 壓力固定、(2) 沒有其他功時成立。電池放電（有電功）或自由膨脹到真空（壓力不固定）都不能用。題目說「燃燒放出多少熱」「1 atm 下沸騰」通常就是在暗示用焓。</p>
+</div>
+
+<h3 id="th6-tables">6.8 焓變的應用：沸騰、生成焓與 Hess 定律 <span class="pg-tag">p.34–36</span></h3>
+
+<p>化學書裡有大量 $\Delta H$ 表：相變、化學反應、游離、溶解……書末 p.404–405 列出 298 K、1 bar 下每莫耳物質的<strong>生成焓</strong>（enthalpy of formation）$\Delta_fH$：從最穩定的元素態（石墨、H₂、O₂ 氣體……）組成一莫耳該物質的焓變；元素本身的 $\Delta_fH=0$。</p>
+
+<p><strong>為什麼可以用生成焓相減？</strong>$H$ 是狀態函數，只看初末狀態。任何反應都可以想成兩步：先把反應物拆回元素（焓變 $-\sum\Delta_fH_{\text{反應物}}$），再把元素組成生成物（$+\sum\Delta_fH_{\text{生成物}}$）。真實反應不必真的這樣走，但初末相同，所以</p>
+$$\Delta H_{\text{反應}}=\sum\Delta_fH_{\text{生成物}}-\sum\Delta_fH_{\text{反應物}}$$
+<p>例如氫燃燒 $\mathrm{H_2}+\tfrac12\mathrm{O_2}\to\mathrm{H_2O}(l)$，每莫耳水 $\Delta H=-286$ kJ（水的生成焓）：燒掉一莫耳氫放出 286 kJ 的熱，絕大部分來自分子本身的化學能，一小部分來自大氣收縮填補消失的氣體體積時所做的功（習題 1.49）。這 286 kJ 能不能有些以電功而不是熱的形式取出？可以一部分，但有上限（第 5 章）。</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-6-boil">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.6 Eq. (1.57) · p.34–35</span></div>
+    <h4>沸騰一莫耳水：焓變中有多少是推開大氣的功</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-6-boil">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-6-boil"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>For instance, standard tables say that the change in enthalpy when you boil one mole of water at 1 atm is 40,660 J. Since a mole of water is about 18 grams (16 for the oxygen and 2 for the hydrogen), this means that the change in enthalpy when you boil one gram of water should be (40,660 J)/18 = 2260 J, precisely the number I quoted earlier for the latent heat. However, not all of this energy ends up in the vaporized water. The volume of one mole of water vapor, according to the ideal gas law, is $RT/P$ (while the initial volume of the liquid is negligible), so the work needed to push the atmosphere away is $$PV=RT=(8.31\ \text{J/K})(373\ \text{K})=3100\ \text{J}.\qquad(1.57)$$ This is only 8% of the 40,660 J of energy put in, but sometimes it’s necessary to keep track of such things.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>標準表列出 1 atm 下沸騰一莫耳水的焓變是 40 660 J。(a) 換算成每克，與潛熱 2260 J/g 比較。(b) 其中推開大氣所做的功 $PV$ 是多少？佔幾成？(c) 水分子本身的能量增加 $\Delta U$ 是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>焓變</td><td>$\Delta H=40\,660\ \text{J}$</td><td>「沸騰一莫耳水的焓變是 <b>40 660 J</b>」</td></tr>
+          <tr><td>莫耳質量</td><td>$18\ \text{g/mol}$</td><td>題目沒給：氧 16＋氫 2</td></tr>
+          <tr><td>壓力、溫度</td><td>1 atm，$T=373\ \text{K}$</td><td>「<b>1 atm</b> 下沸騰」：沸點 100°C</td></tr>
+          <tr><td>液體體積</td><td>可忽略</td><td>題目沒寫；18 cm³ 液體 ≪ 約 30 L 蒸汽</td></tr>
+          <tr><td>水蒸氣</td><td>理想氣體 $V=RT/P$</td><td>題目沒寫；課文假設</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 每克的 $\Delta H$；(b) $PV$ 與佔 $\Delta H$ 的比例；(c) $\Delta U$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>沸騰在 1 atm 定壓下進行、沒有其他功，<b>所以</b> $\Delta H=Q$，表上的焓變就是潛熱；除以莫耳質量就是比潛熱。</p>
+      <p><b>因為</b> $\Delta H=\Delta U+P\,\Delta V$，而 $\Delta V\approx V_{\text{蒸汽}}$（液體體積可忽略），<b>所以</b>推開大氣的功是 $PV_{\text{蒸汽}}$，用理想氣體定律 $PV=RT$ 就不必知道體積；剩下的才是 $\Delta U$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-6-boil-s1" data-sym="H,lsp">
+        <span class="step-title">(a) 每克的焓變</span>
+        <p class="sub">代入 $\Delta H=40\,660\ \text{J}$（題目）、一莫耳 $18\ \text{g}$：</p>
+        $$\frac{\Delta H}{m}=\frac{40\,660\ \text{J}}{18\ \text{g}}=2259\ \text{J/g}\approx2260\ \text{J/g}$$
+        <p>正是課文的汽化潛熱：潛熱就是定壓相變的焓變。</p>
+      </div>
+      <div class="step" data-step="sc-ex-6-boil-s2" data-sym="P,V,R">
+        <span class="step-title">(b) 推開大氣的功</span>
+        $$P\,\Delta V\approx PV_{\text{蒸汽}}=nRT$$
+        <p class="sub">代入 $n=1\ \text{mol}$、$R=8.315\ \text{J/(mol·K)}$、$T=373\ \text{K}$（沸點）：</p>
+        $$PV=(8.315\ \text{J/K})(373\ \text{K})=3100\ \text{J}$$
+        <p class="sub">與 $\Delta H$ 相比：</p>
+        $$\frac{PV}{\Delta H}=\frac{3100}{40\,660}=0.076\approx8\%$$
+      </div>
+      <div class="step" data-step="sc-ex-6-boil-s3" data-sym="U">
+        <span class="step-title">(c) 分子本身得到的能量</span>
+        $$\Delta U=\Delta H-P\,\Delta V$$
+        <p class="sub">代入 (a)(b)：</p>
+        $$\Delta U=40\,660\ \text{J}-3100\ \text{J}=3.76\times10^4\ \text{J}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 2260 J/g；(b) $PV=RT\approx3100$ J，只佔約 8%；(c) $\Delta U\approx37\,600$ J（約 92%）用來拆開分子間的鍵。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>一莫耳水蒸氣在 373 K、1 atm 的體積 $RT/P=3100/1.013\times10^5=0.031\ \text{m}^3=31$ L，是液體 18 cm³ 的 1700 倍，忽略液體體積合理 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-49">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-49（Problem 1.49）· p.35</span></div>
+    <h4>氫燃燒的熱有多少來自大氣做功</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-49">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-49"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider the combustion of one mole of H<sub>2</sub> with 1/2 mole of O<sub>2</sub> under standard conditions, as discussed in the text. How much of the heat energy expelled comes from a decrease in the energy of the system, and how much comes from work done by the collapsing atmosphere? (Treat the volume of the liquid water as negligible.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮課文中討論的、在標準狀態下一莫耳 H₂ 與 1/2 莫耳 O₂ 燃燒的反應。放出的熱能有多少來自系統能量的減少、多少來自收縮的大氣所做的功？（液態水的體積視為可忽略。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>反應物氣體</td><td>$n=1+\tfrac12=1.5\ \text{mol}$</td><td>「<b>一莫耳 H₂ 與 1/2 莫耳 O₂</b>」</td></tr>
+          <tr><td>生成物</td><td>液態水，體積 ≈ 0</td><td>「液態水的體積視為<b>可忽略</b>」</td></tr>
+          <tr><td>焓變</td><td>$\Delta H=-285.83\ \text{kJ}$</td><td>「課文中討論的」：水的生成焓（p.35；書末 p.405 $\mathrm{H_2O}(l)$）</td></tr>
+          <tr><td>狀態</td><td>$T=298\ \text{K}$，$P$ 固定</td><td>「<b>標準狀態</b>」：298 K、1 bar</td></tr>
+          <tr><td>$R$</td><td>$8.315\ \text{J/(mol·K)}$</td><td>題目沒給，標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：放出的 286 kJ 中，來自系統能量減少的部分 $-\Delta U$，與大氣做功的部分。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>反應在定壓下進行、沒有其他功，<b>所以</b>放出的熱 $=-\Delta H=286$ kJ。<b>因為</b> 1.5 莫耳氣體變成幾乎沒有體積的液體，大氣把這個空間填滿時對系統做功 $W=-P\,\Delta V=PV_{\text{氣}}$，<b>所以</b>用 $\Delta U=\Delta H-P\,\Delta V$ 拆開：一部分熱是大氣「推進來」的功轉成的，其餘才是系統本身能量的減少。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-49-s1" data-sym="W,n,R">
+        <span class="step-title">大氣做的功</span>
+        <p>體積從 $V_{\text{氣}}$ 變成約 0，$\Delta V=-V_{\text{氣}}$，大氣對系統做功</p>
+        $$W=-P\,\Delta V=PV_{\text{氣}}=nRT$$
+        <p class="sub">代入 $n=1.5\ \text{mol}$（題目）、$R=8.315$、$T=298\ \text{K}$（標準狀態）：</p>
+        $$W=(1.5)(8.315)(298)\ \text{J}=3717\ \text{J}\approx3.7\ \text{kJ}$$
+      </div>
+      <div class="step" data-step="sc-1-49-s2" data-sym="U,H">
+        <span class="step-title">系統能量的變化</span>
+        $$\Delta U=\Delta H-P\,\Delta V=\Delta H+W$$
+        <p class="sub">代入 $\Delta H=-285.83\ \text{kJ}$（書末表）、$W=3.72\ \text{kJ}$（步驟 1）：</p>
+        $$\Delta U=-285.83+3.72=-282.1\ \text{kJ}$$
+      </div>
+      <div class="step" data-step="sc-1-49-s3" data-sym="Q">
+        <span class="step-title">熱的來源分配</span>
+        <p>第一定律 $\Delta U=Q+W$ 移項：$-Q=-\Delta U+W$。</p>
+        <p class="sub">代入步驟 1、2：</p>
+        $$-Q=282.1\ \text{kJ}+3.7\ \text{kJ}=285.8\ \text{kJ}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>放出的 286 kJ 中，約 282 kJ 來自系統能量（主要是化學鍵能）的減少，約 3.7 kJ（1.3%）來自大氣收縮所做的功。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>1.5 莫耳氣體在 298 K、1 bar 的體積約 37 L，$PV=10^5\times0.037=3.7\times10^3$ J ✔，和步驟 1 一致。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-50">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-50（Problem 1.50）· p.35–36</span></div>
+    <h4>甲烷燃燒：Hess 定律與太陽的化學壽命</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-50">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-50"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider the combustion of one mole of methane gas: $$\begin{aligned}&\mathrm{CH_4(gas)+2O_2(gas)}\\&\quad\longrightarrow\mathrm{CO_2(gas)+2H_2O(gas)}.\end{aligned}$$ The system is at standard temperature (298 K) and pressure ($10^5$ Pa) both before and after the reaction.</p><p>(a) First imagine the process of converting a mole of methane into its elemental consituents (graphite and hydrogen gas). Use the data at the back of this book to find $\Delta H$ for this process.</p><p>(b) Now imagine forming a mole of CO<sub>2</sub> and two moles of water vapor from their elemental constituents. Determine $\Delta H$ for this process.</p><p>(c) What is $\Delta H$ for the actual reaction in which methane and oxygen form carbon dioxide and water vapor directly? Explain.</p><p>(d) How much heat is given off during this reaction, assuming that no “other” forms of work are done?</p><p>(e) What is the change in the system’s energy during this reaction? How would your answer differ if the H<sub>2</sub>O ended up as liquid water instead of vapor?</p><p>(f) The sun has a mass of $2\times10^{30}$ kg and gives off energy at a rate of $3.9\times10^{26}$ watts. If the source of the sun’s energy were ordinary combustion of a chemical fuel such as methane, about how long could it last?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮一莫耳甲烷燃燒：$\mathrm{CH_4(g)+2O_2(g)\to CO_2(g)+2H_2O(g)}$，反應前後系統都在標準溫度（298 K）與壓力（$10^5$ Pa）。(a) 先想像把一莫耳甲烷轉成元素（石墨與氫氣），用書末資料求這個過程的 $\Delta H$。(b) 再想像從元素生成一莫耳 CO₂ 與兩莫耳水蒸氣，求 $\Delta H$。(c) 甲烷與氧直接生成二氧化碳與水蒸氣的實際反應 $\Delta H$ 是多少？說明理由。(d) 假設沒有「其他」形式的功，反應放出多少熱？(e) 反應中系統能量的變化是多少？如果 H₂O 最後是液態水，答案會怎麼不同？(f) 太陽質量 $2\times10^{30}$ kg，以 $3.9\times10^{26}$ W 的功率放出能量。如果太陽的能量來源是甲烷之類化學燃料的普通燃燒，大約能維持多久？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>反應式</td><td>$\mathrm{CH_4+2O_2\to CO_2+2H_2O(g)}$</td><td>題目</td></tr>
+          <tr><td>狀態</td><td>$T=298\ \text{K}$，$P=10^5\ \text{Pa}$，前後相同</td><td>「反應<b>前後</b>系統都在標準溫度與壓力」：定壓</td></tr>
+          <tr><td>生成焓（kJ/mol）</td><td>CH₄ $-74.81$；CO₂ $-393.51$；H₂O(g) $-241.82$；H₂O(l) $-285.83$；O₂ 0</td><td>「書末資料」p.404–405</td></tr>
+          <tr><td>其他功</td><td>0</td><td>(d)「沒有『其他』形式的功」</td></tr>
+          <tr><td>太陽</td><td>$M=2\times10^{30}\ \text{kg}$，$\mathcal P=3.9\times10^{26}\ \text{W}$</td><td>(f) 題目</td></tr>
+          <tr><td>莫耳質量</td><td>CH₄ 16 g、O₂ 32 g</td><td>題目沒給：C 12、H 1、O 16</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)(b)(c) 三個 $\Delta H$；(d) 放出的熱；(e) $\Delta U$（水蒸氣與液態水兩種）；(f) 太陽能燒多久。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>表上的 $\Delta_fH$ 是「從元素生成」的焓變，<b>所以</b>拆回元素的焓變是 $-\Delta_fH$。<b>因為</b> $H$ 是狀態函數，(a)(b) 兩個假想步驟的初末狀態和真實反應相同，<b>所以</b> (c) 就是兩者相加（Hess 定律）。</p>
+      <p>(d) <b>因為</b>定壓、沒有其他功，$\Delta H=Q$。(e) <b>因為</b> $\Delta U=\Delta H-P\,\Delta V$，而理想氣體 $P\,\Delta V=(\Delta n_{\text{氣}})RT$，<b>所以</b>只要數反應前後氣體的莫耳數。(f) 把太陽當成燃料與氧氣的混合物，總熱量除以功率。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-50-s1" data-sym="DfH">
+        <span class="step-title">(a) 甲烷拆回元素</span>
+        <p>$\mathrm{CH_4\to C(graphite)+2H_2}$ 是生成反應的逆反應：</p>
+        $$\Delta H_a=-\Delta_fH(\mathrm{CH_4})$$
+        <p class="sub">代入 $\Delta_fH(\mathrm{CH_4})=-74.81\ \text{kJ}$（p.404）：</p>
+        $$\Delta H_a=+74.81\ \text{kJ}$$
+      </div>
+      <div class="step" data-step="sc-1-50-s2">
+        <span class="step-title">(b) 從元素生成產物</span>
+        $$\Delta H_b=\Delta_fH(\mathrm{CO_2})+2\,\Delta_fH(\mathrm{H_2O,g})$$
+        <p class="sub">代入 $-393.51$、$-241.82\ \text{kJ}$（p.404–405）：</p>
+        $$\Delta H_b=-393.51+2(-241.82)=-877.15\ \text{kJ}$$
+      </div>
+      <div class="step" data-step="sc-1-50-s3" data-sym="H">
+        <span class="step-title">(c)(d) 真實反應與放出的熱</span>
+        <p>(a)＋(b) 的起點（CH₄＋2O₂）與終點（CO₂＋2H₂O）和真實反應相同，焓只看狀態：</p>
+        $$\Delta H_c=\Delta H_a+\Delta H_b$$
+        <p class="sub">代入步驟 1、2：</p>
+        $$\Delta H_c=74.81-877.15=-802.34\ \text{kJ}$$
+        <p>(d) 定壓、無其他功，$Q=\Delta H_c=-802$ kJ：放出 802 kJ 的熱。</p>
+      </div>
+      <div class="step" data-step="sc-1-50-s4" data-sym="U,n">
+        <span class="step-title">(e) 能量變化：水蒸氣</span>
+        $$\Delta U=\Delta H-P\,\Delta V=\Delta H-(\Delta n_{\text{氣}})RT$$
+        <p class="sub">反應前氣體 $1+2=3$ mol，反應後 $1+2=3$ mol（水是氣態），$\Delta n_{\text{氣}}=0$：</p>
+        $$\Delta U=\Delta H=-802\ \text{kJ}$$
+      </div>
+      <div class="step" data-step="sc-1-50-s5">
+        <span class="step-title">(e) 能量變化：液態水</span>
+        <p class="sub">(b) 改用 $\Delta_fH(\mathrm{H_2O},l)=-285.83\ \text{kJ}$（p.405）：</p>
+        $$\Delta H=74.81-393.51+2(-285.83)=-890.36\ \text{kJ}$$
+        <p class="sub">氣體從 3 mol 變成只剩 1 mol CO₂（液體體積可忽略），$\Delta n_{\text{氣}}=-2$，$R=8.315$、$T=298\ \text{K}$：</p>
+        $$\begin{aligned}\Delta U&=\Delta H+2RT\\&=-890.36\ \text{kJ}+4.96\ \text{kJ}=-885.40\ \text{kJ}\end{aligned}$$
+        <p>放出的熱（890 kJ）比系統能量的減少（885 kJ）多一點，多出來的是大氣把系統壓小所做的功。</p>
+      </div>
+      <div class="step" data-step="sc-1-50-s6">
+        <span class="step-title">(f) 太陽的化學壽命</span>
+        <p>一次反應用掉 16 g CH₄ ＋ 64 g O₂ ＝ 80 g ＝ 0.080 kg 燃料。</p>
+        <p class="sub">代入 $M=2\times10^{30}\ \text{kg}$（題目）：</p>
+        $$n=\frac{2\times10^{30}\ \text{kg}}{0.080\ \text{kg}}=2.5\times10^{31}\ \text{次反應}$$
+        <p class="sub">每次放 $8.0\times10^5$ J（步驟 3），除以功率 $3.9\times10^{26}$ W（題目）：</p>
+        $$\begin{aligned}t&=\frac{(2.5\times10^{31})(8.0\times10^5\ \text{J})}{3.9\times10^{26}\ \text{W}}\\&=5.1\times10^{10}\ \text{s}\approx1600\ \text{年}\end{aligned}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $+74.81$ kJ；(b) $-877.15$ kJ；(c) $-802$ kJ（焓是狀態函數，與路徑無關）；(d) 放熱 802 kJ；(e) 水蒸氣：$\Delta U\approx-802$ kJ（氣體莫耳數不變）；液態水：$\Delta H=-890$ kJ、$\Delta U=-885$ kJ；(f) 約 1600 年。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>就算只算甲烷質量（不含氧）也只有約 8000 年；地質證據顯示太陽已發光數十億年，所以太陽的能源不可能是化學反應（實際是核融合）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-51">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-51（Problem 1.51）· p.36</span></div>
+    <h4>葡萄糖燃燒的焓變</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-51">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-51"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use the data at the back of this book to determine $\Delta H$ for the combustion of a mole of glucose, $$\mathrm{C_6H_{12}O_6+6O_2\longrightarrow6CO_2+6H_2O}.$$ This is the (net) reaction that provides most of the energy needs in our bodies.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用書末資料求一莫耳葡萄糖燃燒的 $\Delta H$：$\mathrm{C_6H_{12}O_6+6O_2\to6CO_2+6H_2O}$。這是提供我們身體大部分能量需求的（淨）反應。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>反應式</td><td>$\mathrm{C_6H_{12}O_6+6O_2\to6CO_2+6H_2O}$</td><td>題目</td></tr>
+          <tr><td>生成焓（kJ/mol）</td><td>葡萄糖 $-1273$；CO₂ $-393.51$；H₂O(l) $-285.83$；O₂ 0</td><td>「書末資料」p.404–405</td></tr>
+          <tr><td>水的相</td><td>液態</td><td>題目沒寫；「身體」裡（37°C）水是液態</td></tr>
+          <tr><td>狀態</td><td>298 K、1 bar</td><td>題目沒寫；表的標準狀態</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一莫耳葡萄糖燃燒的 $\Delta H$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>焓是狀態函數，<b>所以</b>把反應想成「葡萄糖拆回元素」＋「元素組成 6 CO₂ 與 6 H₂O」，$\Delta H$＝生成物的生成焓總和 − 反應物的生成焓總和（O₂ 是元素態，生成焓 0）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-51-s1" data-sym="DfH">
+        <span class="step-title">寫出 Hess 定律</span>
+        $$\Delta H=6\,\Delta_fH(\mathrm{CO_2})+6\,\Delta_fH(\mathrm{H_2O})-\Delta_fH(\text{葡萄糖})-6\,\Delta_fH(\mathrm{O_2})$$
+      </div>
+      <div class="step" data-step="sc-1-51-s2">
+        <span class="step-title">代入表值</span>
+        <p class="sub">代入 $-393.51$、$-285.83$、$-1273$、$0$（kJ，書末表）：</p>
+        $$\begin{aligned}\Delta H&=6(-393.51)+6(-285.83)-(-1273)\\&=-2361.06-1714.98+1273\\&=-2803\ \text{kJ}\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-51-s3">
+        <span class="step-title">換成每克、每 kcal</span>
+        <p class="sub">葡萄糖莫耳質量 $6(12)+12(1)+6(16)=180\ \text{g}$，$1\ \text{kcal}=4.186\ \text{kJ}$：</p>
+        $$\frac{2803\ \text{kJ}}{180\ \text{g}}=15.6\ \text{kJ/g}=3.7\ \text{kcal/g}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\Delta H\approx-2803$ kJ/mol（燃燒焓 2803 kJ）；若產物是水蒸氣則為 $-2539$ kJ。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>每克 3.7 kcal，和營養標示「醣類每克 4 大卡」相符 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-52">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-52（Problem 1.52）· p.36</span></div>
+    <h4>每大卡的價錢：汽油與玉米片</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-52">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-52"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The enthalpy of combustion of a gallon (3.8 liters) of gasoline is about 31,000 kcal. The enthalpy of combustion of an ounce (28 g) of corn flakes is about 100 kcal. Compare the cost of gasoline to the cost of corn flakes, per calorie.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一加侖（3.8 公升）汽油的燃燒焓約 31 000 kcal；一盎司（28 g）玉米片的燃燒焓約 100 kcal。比較汽油與玉米片每大卡的價錢。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>汽油</td><td>3.8 L → 31 000 kcal</td><td>「一加侖（<b>3.8 公升</b>）汽油的燃燒焓約 <b>31 000 kcal</b>」</td></tr>
+          <tr><td>玉米片</td><td>28 g → 100 kcal</td><td>「一盎司（<b>28 g</b>）玉米片……約 <b>100 kcal</b>」</td></tr>
+          <tr><td>汽油價格</td><td>每公升 30 元（新台幣）</td><td>題目沒給，<b>假設值</b>（台灣 95 無鉛約這個價位）</td></tr>
+          <tr><td>玉米片價格</td><td>500 g 一盒 150 元</td><td>題目沒給，<b>假設值</b>（超市一盒）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：兩者每 kcal 的價錢與比值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目只給了能量，價錢要自己查，<b>所以</b>先明寫假設的價格；<b>因為</b>要比較「每大卡」，<b>所以</b>把同一份量的價錢除以它的燃燒焓，再相除得倍數。價格會變，但倍數大致穩定。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-52-s1">
+        <span class="step-title">汽油每大卡</span>
+        <p class="sub">一加侖價錢 $3.8\ \text{L}\times30\ \text{元/L}=114\ \text{元}$（假設價格），除以 31 000 kcal（題目）：</p>
+        $$\frac{114\ \text{元}}{31\,000\ \text{kcal}}=0.0037\ \text{元/kcal}$$
+      </div>
+      <div class="step" data-step="sc-1-52-s2">
+        <span class="step-title">玉米片每大卡</span>
+        <p class="sub">一盎司價錢 $28\ \text{g}\times\dfrac{150\ \text{元}}{500\ \text{g}}=8.4\ \text{元}$（假設價格），除以 100 kcal（題目）：</p>
+        $$\frac{8.4\ \text{元}}{100\ \text{kcal}}=0.084\ \text{元/kcal}$$
+      </div>
+      <div class="step" data-step="sc-1-52-s3">
+        <span class="step-title">比較</span>
+        <p class="sub">代入步驟 1、2：</p>
+        $$\frac{0.084}{0.0037}\approx23$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>以假設價格，玉米片每大卡約是汽油的 20 多倍（汽油每大卡約 0.004 元，玉米片約 0.08 元）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>解答手冊用 2001 年美國猶他州價格（汽油每加侖 1.5 美元、玉米片每盎司 10 美分）得到約 20 倍，數量級相同 ✔。當然人不能喝汽油：身體只能用特定的「燃料」。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-53">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-53（Problem 1.53）· p.36</span></div>
+    <h4>從原子氫的生成焓求 H₂ 的解離能</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-53">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-53"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Look up the enthalpy of formation of atomic hydrogen in the back of this book. This is the enthalpy change when a mole of atomic hydrogen is formed by dissociating 1/2 mole of molecular hydrogen (the more stable state of the element). From this number, determine the energy needed to dissociate a single H<sub>2</sub> molecule, in electron-volts.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在書末查原子氫的生成焓。這是把 1/2 莫耳氫分子（該元素較穩定的狀態）解離成一莫耳原子氫的焓變。由這個數字求解離單一個 H₂ 分子所需的能量（以電子伏特表示）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>原子氫的生成焓</td><td>$\Delta H=217.97\ \text{kJ}$</td><td>「書末」p.405：H(g) 的 $\Delta_fH$</td></tr>
+          <tr><td>反應</td><td>$\tfrac12\mathrm{H_2}\to\mathrm H$</td><td>「把 <b>1/2 莫耳氫分子</b>解離成<b>一莫耳原子氫</b>」</td></tr>
+          <tr><td>氣體莫耳數變化</td><td>$\Delta n=1-\tfrac12=+\tfrac12\ \text{mol}$</td><td>題目沒寫；由反應式自己數</td></tr>
+          <tr><td>溫度</td><td>$T=298\ \text{K}$</td><td>題目沒寫；表的標準狀態</td></tr>
+          <tr><td>常數</td><td>$R=8.315$、$N_A=6.022\times10^{23}$、$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$</td><td>題目沒給，標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：解離一個 H₂ 分子的能量（eV）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>表上給的是焓變，而「拆開分子要多少能量」問的是能量 $\Delta U$，兩者差一個推開大氣的功 $P\,\Delta V$，<b>所以</b>先用 $\Delta U=\Delta H-(\Delta n)RT$ 扣掉；氣體變多（半莫耳變一莫耳），要額外做功騰出空間。</p>
+      <p><b>因為</b>反應用掉的是 $\tfrac12$ 莫耳 H₂ 分子，<b>所以</b>每個分子的能量要除以 $\tfrac12N_A$，不是 $N_A$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-53-s1" data-sym="H,U,n">
+        <span class="step-title">焓變換成能量變化</span>
+        $$\Delta U=\Delta H-P\,\Delta V=\Delta H-(\Delta n)RT$$
+        <p class="sub">代入 $\Delta H=217.97\ \text{kJ}$（表）、$\Delta n=\tfrac12\ \text{mol}$、$R=8.315$、$T=298\ \text{K}$：</p>
+        $$\begin{aligned}\Delta U&=217.97\ \text{kJ}-\tfrac12(8.315)(298)\ \text{J}\\&=217.97-1.24=216.73\ \text{kJ}\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-53-s2">
+        <span class="step-title">除以分子數</span>
+        $$\epsilon=\frac{\Delta U}{N_{\mathrm{H_2}}}=\frac{\Delta U}{\tfrac12N_A}$$
+        <p class="sub">代入步驟 1 的 $\Delta U$、$N_A=6.022\times10^{23}$：</p>
+        $$\epsilon=\frac{2.1673\times10^5\ \text{J}}{3.011\times10^{23}}=7.20\times10^{-19}\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-53-s3">
+        <span class="step-title">換成 eV</span>
+        <p class="sub">除以 $1.602\times10^{-19}\ \text{J/eV}$：</p>
+        $$\epsilon=\frac{7.20\times10^{-19}}{1.602\times10^{-19}}\ \text{eV}=4.49\ \text{eV}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>解離一個 H₂ 分子約需 $4.49\ \text{eV}$（$7.2\times10^{-19}$ J）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>若忘了扣 $P\,\Delta V$，會得到 4.52 eV，只差 0.6%；化學鍵能是幾個 eV 的數量級，遠大於室溫 $kT\approx0.026$ eV，所以室溫下氫分子不會自己解離 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-54">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-54（Problem 1.54）· p.36</span></div>
+    <h4>爬 Ogden 山：要吃幾碗玉米片、要喝多少水</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-54">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-54"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A 60-kg hiker wishes to climb to the summit of Mt. Ogden, an ascent of 5000 vertical feet (1500 m).</p><p>(a) Assuming that she is 25% efficient at converting chemical energy from food into mechanical work, and that essentially all the mechanical work is used to climb vertically, roughly how many bowls of corn flakes (standard serving size 1 ounce, 100 kilocalories) should the hiker eat before setting out?</p><p>(b) As the hiker climbs the mountain, three-quarters of the energy from the corn flakes is converted to thermal energy. If there were no way to dissipate this energy, by how many degrees would her body temperature increase?</p><p>(c) In fact, the extra energy does not warm the hiker’s body significantly; instead, it goes (mostly) into evaporating water from her skin. How many liters of water should she drink during the hike to replace the lost fluids? (At 25°C, a reasonable temperature to assume, the specific latent heat of vaporization of water is 580 cal/g, 8% more than at 100°C.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一位 60 kg 的登山者要登上 Ogden 山頂，垂直爬升 5000 英尺（1500 m）。(a) 假設她把食物的化學能轉成機械功的效率是 25%，且機械功基本上全用在垂直爬升，出發前大約要吃幾碗玉米片（標準一份 1 盎司、100 大卡）？(b) 爬山時玉米片能量的四分之三變成熱能。若這些能量無法散掉，她的體溫會升高幾度？(c) 事實上多出的能量不會讓身體明顯變熱，而是（大部分）用來蒸發皮膚上的水。爬山途中她要喝幾公升水來補充流失的水分？（25°C 是合理的假設溫度，此時水的汽化潛熱是 580 cal/g，比 100°C 時多 8%。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>質量</td><td>$m=60\ \text{kg}$</td><td>「一位 <b>60 kg</b> 的登山者」</td></tr>
+          <tr><td>爬升高度</td><td>$h=1500\ \text{m}$</td><td>「垂直爬升 5000 英尺（<b>1500 m</b>）」</td></tr>
+          <tr><td>效率</td><td>25%</td><td>(a)「效率是 <b>25%</b>」：食物能量 ＝ 功 ÷ 0.25</td></tr>
+          <tr><td>一碗玉米片</td><td>100 kcal</td><td>(a)「1 盎司、<b>100 大卡</b>」</td></tr>
+          <tr><td>變成熱的比例</td><td>3/4</td><td>(b)「<b>四分之三</b>變成熱能」</td></tr>
+          <tr><td>人體比熱</td><td>約 $1\ \text{kcal/(kg·K)}$</td><td>題目沒給；人體大部分是水</td></tr>
+          <tr><td>汽化潛熱</td><td>$580\ \text{cal/g}=580\ \text{kcal/kg}$</td><td>(c)「水的汽化潛熱是 <b>580 cal/g</b>」</td></tr>
+          <tr><td>常數</td><td>$g=9.8\ \text{m/s}^2$，$1\ \text{kcal}=4186\ \text{J}$</td><td>題目沒給，標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 碗數；(b) 不散熱時的體溫上升；(c) 要喝的水量。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>機械功全用在爬升，<b>所以</b>功＝重力位能增加 $mgh$；<b>因為</b>效率 25%，<b>所以</b>要吃進 4 倍的能量。這裡忽略能量與焓的小差別（只要粗估）。</p>
+      <p>(b) <b>因為</b>人體主要是水，<b>所以</b>用水的比熱算 $\Delta T=Q/(mc)$。(c) <b>因為</b>熱都拿去蒸發水，<b>所以</b>蒸發的質量＝熱 ÷ 汽化潛熱。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-54-s1" data-sym="W">
+        <span class="step-title">(a) 爬升需要的功</span>
+        $$W=mgh$$
+        <p class="sub">代入 $m=60\ \text{kg}$、$h=1500\ \text{m}$（題目）、$g=9.8\ \text{m/s}^2$：</p>
+        $$W=(60)(9.8)(1500)\ \text{J}=8.82\times10^5\ \text{J}=\frac{8.82\times10^5}{4186}\ \text{kcal}=211\ \text{kcal}$$
+      </div>
+      <div class="step" data-step="sc-1-54-s2">
+        <span class="step-title">(a) 要吃的食物</span>
+        $$E_{\text{食物}}=\frac{W}{0.25}$$
+        <p class="sub">代入 $W=211\ \text{kcal}$（步驟 1）、效率 25%（題目）：</p>
+        $$E_{\text{食物}}=\frac{211\ \text{kcal}}{0.25}=843\ \text{kcal}\ \Rightarrow\ \frac{843}{100}\approx8.4\ \text{碗}$$
+      </div>
+      <div class="step" data-step="sc-1-54-s3" data-sym="Q,c">
+        <span class="step-title">(b) 不散熱時的升溫</span>
+        $$Q=\tfrac34E_{\text{食物}},\qquad\Delta T=\frac{Q}{mc}$$
+        <p class="sub">代入 $E_{\text{食物}}=843\ \text{kcal}$（步驟 2）、$m=60\ \text{kg}$、$c=1\ \text{kcal/(kg·K)}$：</p>
+        $$Q=632\ \text{kcal},\qquad\Delta T=\frac{632\ \text{kcal}}{(60\ \text{kg})(1\ \text{kcal/kg·K})}=10.5\ \text{K}$$
+      </div>
+      <div class="step" data-step="sc-1-54-s4" data-sym="lsp">
+        <span class="step-title">(c) 蒸發的水量</span>
+        $$m_{\text{水}}=\frac{Q}{l_v}$$
+        <p class="sub">代入 $Q=632\ \text{kcal}$（步驟 3）、$l_v=580\ \text{kcal/kg}$（題目）：</p>
+        $$m_{\text{水}}=\frac{632}{580}\ \text{kg}=1.09\ \text{kg}\approx1.1\ \text{L}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 約 8–9 碗（843 kcal）；(b) 體溫會升高約 10°C（會致命）；(c) 約 1.1 公升的水。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>解答手冊：8.5 碗、10.5°C、1.1 kg，一致 ✔。體溫升 10°C 會致命，所以排汗散熱是必要的；保險起見應帶 2 公升水。</p></div>
+  </div>
+</div>
+
+<h3 id="th6-gravity">6.9 負熱容量：重力束縛的系統 <span class="pg-tag">p.36–37</span></h3>
+
+<p>熱容量通常是正的：加能量、溫度就升高。但有一類重要的例外——<strong>靠重力束縛在一起的系統</strong>，例如恆星與星團。關鍵是均位定理（virial theorem）：重力束縛的系統，長時間平均下 $U_{\text{potential}}=-2U_{\text{kinetic}}$，所以總能量 $U=-U_{\text{kinetic}}$。總能量越高（越不負），動能反而越小、溫度越低：<strong>加能量會變冷，失去能量會變熱</strong>。恆星向太空輻射能量時收縮、變熱，這正是恆星核心能升到點燃核融合溫度的原因。</p>
+
+<div class="anim" data-anim="t1-virial"></div>
+
+<div class="problem" data-kind="textbook" id="sc-1-55">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-55（Problem 1.55）· p.36–37</span></div>
+    <h4>重力束縛系統的負熱容量與太陽的平均溫度</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-55">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-55"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Heat capacities are normally positive, but there is an important class of exceptions: systems of particles held together by gravity, such as stars and star clusters.</p><p>(a) Consider a system of just two particles, with identical masses, orbiting in circles about their center of mass. Show that the gravitational potential energy of this system is −2 times the total kinetic energy.</p><p>(b) The conclusion of part (a) turns out to be true, at least on average, for any system of particles held together by mutual gravitational attraction: $$U_{\text{potential}}=-2U_{\text{kinetic}}.$$ Here each $U$ refers to the total energy (of that type) for the entire system, averaged over some sufficiently long time period. This result is known as the virial theorem. (For a proof, see Carroll and Ostlie (1996), Section 2.4.) Suppose, then, that you add some energy to such a system and then wait for the system to equilibrate. Does the average total kinetic energy increase or decrease? Explain.</p><p>(c) A star can be modeled as a gas of particles that interact with each other only gravitationally. According to the equipartition theorem, the average kinetic energy of the particles in such a star should be $\frac32kT$, where $T$ is the average temperature. Express the total energy of a star in terms of its average temperature, and calculate the heat capacity. Note the sign.</p><p>(d) Use dimensional analysis to argue that a star of mass $M$ and radius $R$ should have a total potential energy of $-GM^2/R$, times some constant of order 1.</p><p>(e) Estimate the average temperature of the sun, whose mass is $2\times10^{30}$ kg and whose radius is $7\times10^8$ m. Assume, for simplicity, that the sun is made entirely of protons and electrons.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>熱容量通常為正，但有一類重要的例外：靠重力束縛在一起的粒子系統，例如恆星與星團。(a) 考慮只有兩顆質量相同的粒子、繞質心做圓周運動的系統。證明這個系統的重力位能是總動能的 −2 倍。(b) (a) 的結論對任何靠相互重力吸引束縛在一起的粒子系統（至少平均而言）都成立：$U_{\text{potential}}=-2U_{\text{kinetic}}$。這裡每個 $U$ 是整個系統該類能量的總和，並對足夠長的時間取平均。這個結果叫均位定理（virial theorem）。假設你給這樣的系統加一些能量，然後等它達到平衡。平均總動能會增加還是減少？說明之。(c) 恆星可以模型化成只靠重力彼此作用的粒子氣體。根據均分定理，這種恆星中粒子的平均動能應為 $\tfrac32kT$，$T$ 是平均溫度。用平均溫度表示恆星的總能量，並計算熱容量。注意正負號。(d) 用因次分析論證：質量 $M$、半徑 $R$ 的恆星總位能應為 $-GM^2/R$ 乘上某個數量級為 1 的常數。(e) 估計太陽的平均溫度：質量 $2\times10^{30}$ kg、半徑 $7\times10^8$ m。為了簡單，假設太陽完全由質子和電子組成。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>(a) 兩粒子</td><td>質量都是 $m$，各在半徑 $r$ 的圓上，相距 $2r$</td><td>「兩顆<b>質量相同</b>的粒子、繞<b>質心</b>做圓周運動」：質心在連線中點</td></tr>
+          <tr><td>(b) 均位定理</td><td>$U_{\text{pot}}=-2U_{\text{kin}}$（時間平均）</td><td>(b) 題目給的</td></tr>
+          <tr><td>(c) 每粒子平均動能</td><td>$\tfrac32kT$</td><td>(c)「平均動能應為 $\tfrac32kT$」</td></tr>
+          <tr><td>(d) 可用的量</td><td>$G$、$M$、$R$</td><td>(d)「質量 $M$、半徑 $R$」＋重力常數</td></tr>
+          <tr><td>(e) 太陽</td><td>$M=2\times10^{30}\ \text{kg}$，$R=7\times10^8\ \text{m}$</td><td>(e) 題目</td></tr>
+          <tr><td>(e) 組成</td><td>質子＋電子，各一半：$N=2M/m_p$</td><td>「完全由<b>質子和電子</b>組成」：電子質量 ≪ 質子，每個粒子平均質量 $m_p/2$</td></tr>
+          <tr><td>(e) 位能常數</td><td>取 1：$U_{\text{pot}}\approx-GM^2/R$</td><td>(d) 的「數量級為 1 的常數」</td></tr>
+          <tr><td>常數</td><td>$G=6.674\times10^{-11}$，$m_p=1.673\times10^{-27}\ \text{kg}$，$k=1.381\times10^{-23}\ \text{J/K}$</td><td>題目沒給，標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明 $U_{\text{pot}}=-2U_{\text{kin}}$；(b) 加能量後平均動能增或減；(c) 總能量 $U(T)$ 與熱容量；(d) 因次分析得 $U_{\text{pot}}\sim-GM^2/R$；(e) 太陽平均溫度。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>是圓周運動，<b>所以</b>重力提供向心力，牛頓第二定律把 $v^2$ 和 $r$ 連起來，再代進動能與位能比較。(b)(c) <b>因為</b>均位定理給出 $U_{\text{pot}}=-2U_{\text{kin}}$，<b>所以</b>總能量 $U=U_{\text{kin}}+U_{\text{pot}}=-U_{\text{kin}}$，再用均分定理把 $U_{\text{kin}}$ 寫成 $T$ 的函數，對 $T$ 微分得熱容量。</p>
+      <p>(d) <b>因為</b>只有 $G,M,R$ 三個量、要湊出能量的單位，<b>所以</b>用因次分析唯一決定組合。(e) 把 (c)(d) 合起來：$U_{\text{kin}}=-\tfrac12U_{\text{pot}}$，解出 $T$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-55-s1" data-sym="m,G">
+        <span class="step-title">(a) 向心力由重力提供</span>
+        <p>每顆粒子繞質心做半徑 $r$、速率 $v$ 的圓周運動，兩粒子相距 $2r$：</p>
+        $$\frac{Gm^2}{(2r)^2}=\frac{mv^2}{r}\ \Rightarrow\ mv^2=\frac{Gm^2}{4r}$$
+      </div>
+      <div class="step" data-step="sc-1-55-s2">
+        <span class="step-title">(a) 比較位能與動能</span>
+        $$U_{\text{kin}}=2\cdot\tfrac12mv^2=mv^2,\qquad U_{\text{pot}}=-\frac{Gm^2}{2r}$$
+        <p class="sub">代入步驟 1 的 $mv^2=Gm^2/(4r)$：</p>
+        $$U_{\text{kin}}=\frac{Gm^2}{4r},\qquad U_{\text{pot}}=-\frac{Gm^2}{2r}=-2\cdot\frac{Gm^2}{4r}=-2U_{\text{kin}}$$
+      </div>
+      <div class="step" data-step="sc-1-55-s3" data-sym="U">
+        <span class="step-title">(b) 加能量，動能反而減少</span>
+        $$U=U_{\text{kin}}+U_{\text{pot}}=U_{\text{kin}}-2U_{\text{kin}}=-U_{\text{kin}}$$
+        <p>加入能量 $\Delta U\gt0$，則 $\Delta U_{\text{kin}}=-\Delta U\lt0$：平均動能<b>減少</b>。每加 1 份能量，位能增加（變得不那麼負）2 份、動能減少 1 份——系統膨脹、粒子變慢。</p>
+      </div>
+      <div class="step" data-step="sc-1-55-s4" data-sym="N,k,T">
+        <span class="step-title">(c) 總能量與熱容量</span>
+        <p class="sub">代入均分定理 $U_{\text{kin}}=N\cdot\tfrac32kT$（題目 (c)）到 $U=-U_{\text{kin}}$：</p>
+        $$U=-\frac32NkT,\qquad C=\frac{dU}{dT}=-\frac32Nk$$
+        <p>熱容量是負的。（恆星在真空中沒有明確的體積或外壓，所以不叫 $C_V$ 或 $C_P$。）</p>
+      </div>
+      <div class="step" data-step="sc-1-55-s5">
+        <span class="step-title">(d) 因次分析</span>
+        <p>SI 單位：$[G]=\text{N·m}^2/\text{kg}^2$，$[M]=\text{kg}$，$[R]=\text{m}$；能量 $[U]=\text{N·m}$。N、m、kg 彼此獨立：只有 $G$ 帶 N，所以恰好一個 $G$；要消掉 $G$ 的 $\text{kg}^{-2}$ 需要 $M^2$；剩下 $\text{N·m}^2$ 要變成 $\text{N·m}$，除以一個 $R$：</p>
+        $$U_{\text{pot}}=-(\text{常數})\times\frac{GM^2}{R}$$
+        <p>負號：重力是吸引力，把粒子分開到無限遠要做正功。</p>
+      </div>
+      <div class="step" data-step="sc-1-55-s6">
+        <span class="step-title">(e) 解出平均溫度</span>
+        <p>均位定理 $U_{\text{kin}}=-\tfrac12U_{\text{pot}}$，左邊用 (c)、右邊用 (d)（常數取 1）：</p>
+        $$\frac32NkT=\frac{GM^2}{2R}\ \Rightarrow\ T=\frac{GM^2}{3NkR}=\frac{GM}{3kR}\cdot\frac MN$$
+        <p class="sub">代入 $M/N=m_p/2=8.37\times10^{-28}\ \text{kg}$（質子、電子各半，$m_p=1.673\times10^{-27}$ kg），$G=6.674\times10^{-11}$、$M=2\times10^{30}\ \text{kg}$、$R=7\times10^8\ \text{m}$（題目）：</p>
+        $$\begin{aligned}T&=\frac{(6.674\times10^{-11})(2\times10^{30})(8.37\times10^{-28})}{3(1.381\times10^{-23})(7\times10^8)}\\&=\frac{1.117\times10^{-7}}{2.900\times10^{-14}}\ \text{K}=3.9\times10^6\ \text{K}\end{aligned}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $U_{\text{pot}}=-2U_{\text{kin}}$；(b) 平均動能減少；(c) $U=-\tfrac32NkT$，$C=-\tfrac32Nk\lt0$；(d) $U_{\text{pot}}\sim-GM^2/R$；(e) $T\approx4\times10^6$ K。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>遠高於太陽表面的 6000 K，但低於精確計算的中心溫度 $1.5\times10^7$ K，作為「平均」合理 ✔；解答手冊也得約 $4\times10^6$ K。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk1x-4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">某級上學期期中 第 4 題 · 改自 Schroeder Problem 1.55 · p.36–37</span></div>
+    <h4>均勻密度的恆星：負熱容量與太陽平均溫度</h4>
+    <button type="button" class="exam-btn" data-exam="tk1x-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>4. Heat capacities are normally positive, but there is an important class of exceptions: systems of particles held together by gravity, such as stars and star clusters.</p><p>(a) Consider a system of just two particles, with identical masses, orbiting in circles about their center of mass. Find the ratio between the gravitational potential energy and the total kinetic energy of this system. (5pts)</p><p>(b) It turns out, on average, that any system of particles held by mutual gravitational attraction has the same ratio as evaluated in 4(a) (This result is known as virial theorem). Model the star as a gas of particles that interact with each other only gravitationally. According to the equipartition theorem, the average kinetic energy of the particles in such a star should be $3kT/2$, where $T$ is the temperature. For a star composed by $N$ particles, find the heat capacity. Note the sign. (5pts)</p><p>(c) For a star with uniform mass density, total mass M, and radius R, find the total gravitational potential energy. Express your answer in terms of $M$, $R$, and gravitational constant $G$. (5pts)</p><p>(d) Estimate the average temperature of the sun, whose mass is $2\times10^{30}$ kg and whose radius is $7\times10^8$m. Assume, for simplicity, that the sun is made entirely of protons and electrons and can be treated as a uniform sphere as described in 4(c). (5pts)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>熱容量通常為正，但有一類重要的例外：靠重力束縛的粒子系統，例如恆星與星團。(a) 考慮只有兩顆質量相同的粒子、繞質心做圓周運動的系統。求這個系統的重力位能與總動能的比值。（5 分）(b) 事實上，任何靠相互重力吸引束縛的粒子系統，平均而言都有和 4(a) 相同的比值（這個結果叫均位定理）。把恆星模型化成只靠重力彼此作用的粒子氣體。根據均分定理，這種恆星中粒子的平均動能應為 $3kT/2$，$T$ 是溫度。對由 $N$ 個粒子組成的恆星，求熱容量。注意正負號。（5 分）(c) 對密度均勻、總質量 $M$、半徑 $R$ 的恆星，求總重力位能，以 $M$、$R$ 與重力常數 $G$ 表示。（5 分）(d) 估計太陽的平均溫度：質量 $2\times10^{30}$ kg、半徑 $7\times10^8$ m。為了簡單，假設太陽完全由質子和電子組成，並可視為 4(c) 所述的均勻球。（5 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>(a) 兩粒子</td><td>質量 $m$、各距質心 $r$、相距 $2r$</td><td>「兩顆<b>質量相同</b>……繞質心做圓周運動」</td></tr>
+          <tr><td>(b) 均位定理</td><td>$U_{\text{pot}}/U_{\text{kin}}$ 與 (a) 相同</td><td>(b)「平均而言都有和 4(a) <b>相同的比值</b>」</td></tr>
+          <tr><td>(b) 每粒子動能</td><td>$\tfrac32kT$，共 $N$ 個</td><td>(b)「平均動能應為 $3kT/2$」「由 <b>$N$ 個粒子</b>組成」</td></tr>
+          <tr><td>(c) 密度</td><td>$\rho=\dfrac{M}{\frac43\pi R^3}$，均勻</td><td>(c)「<b>密度均勻</b>、總質量 $M$、半徑 $R$」</td></tr>
+          <tr><td>(d) 太陽</td><td>$M=2\times10^{30}\ \text{kg}$，$R=7\times10^8\ \text{m}$</td><td>(d) 題目</td></tr>
+          <tr><td>(d) 粒子數</td><td>$N=2M/m_p$</td><td>「完全由<b>質子和電子</b>組成」：電子質量可忽略</td></tr>
+          <tr><td>常數</td><td>$G=6.674\times10^{-11}$，$m_p=1.673\times10^{-27}\ \text{kg}$，$k=1.381\times10^{-23}\ \text{J/K}$</td><td>題目沒給，標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $U_{\text{pot}}/U_{\text{kin}}$；(b) $N$ 粒子恆星的熱容量；(c) 均勻球的重力位能；(d) 太陽平均溫度。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a)(b) 與習題 1.55 (a)–(c) 相同。和課本不同的是 (c)：課本只用因次分析，這裡要真的算出常數。<b>因為</b>密度均勻，<b>所以</b>想像把恆星一層一層從中心「堆」起來：每次從無限遠搬來一層薄殼，殼受到的只有內部球的吸引（殼外的質量對它沒有淨作用），這一層的位能是 $-G\,m(r)\,dm/r$，積分到 $R$。(d) 再用均位定理把位能換成動能、解出 $T$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk1x-4-s1" data-sym="G,m">
+        <span class="step-title">(a) 比值</span>
+        <p>向心力由重力提供：$\dfrac{Gm^2}{(2r)^2}=\dfrac{mv^2}{r}$，所以 $mv^2=\dfrac{Gm^2}{4r}$。</p>
+        <p class="sub">代入 $U_{\text{kin}}=2\cdot\tfrac12mv^2$、$U_{\text{pot}}=-\dfrac{Gm^2}{2r}$：</p>
+        $$\frac{U_{\text{pot}}}{U_{\text{kin}}}=\frac{-Gm^2/(2r)}{Gm^2/(4r)}=-2$$
+      </div>
+      <div class="step" data-step="tk1x-4-s2" data-sym="N,k,T">
+        <span class="step-title">(b) 熱容量</span>
+        <p>總能量 $U=U_{\text{kin}}+U_{\text{pot}}=U_{\text{kin}}-2U_{\text{kin}}=-U_{\text{kin}}$。</p>
+        <p class="sub">代入 $U_{\text{kin}}=N\cdot\tfrac32kT$（題目 (b)）：</p>
+        $$U=-\frac32NkT,\qquad C=\frac{dU}{dT}=-\frac32Nk\lt0$$
+      </div>
+      <div class="step" data-step="tk1x-4-s3">
+        <span class="step-title">(c) 一層薄殼的位能</span>
+        <p>半徑 $r$ 以內的質量與厚度 $dr$ 的殼質量：</p>
+        $$m(r)=\rho\cdot\tfrac43\pi r^3=M\frac{r^3}{R^3},\qquad dm=\rho\cdot4\pi r^2dr=\frac{3Mr^2}{R^3}dr$$
+        <p class="sub">把殼從無限遠搬到半徑 $r$，只受內部 $m(r)$ 吸引（球殼定理），位能是 $-G\,m(r)\,dm/r$：</p>
+        $$dU_{\text{pot}}=-\frac{G}{r}\cdot\frac{Mr^3}{R^3}\cdot\frac{3Mr^2}{R^3}dr=-\frac{3GM^2}{R^6}r^4\,dr$$
+      </div>
+      <div class="step" data-step="tk1x-4-s4">
+        <span class="step-title">(c) 積分</span>
+        $$U_{\text{pot}}=-\frac{3GM^2}{R^6}\int_0^Rr^4\,dr=-\frac{3GM^2}{R^6}\cdot\frac{R^5}{5}=-\frac{3GM^2}{5R}$$
+        <p>和習題 1.55(d) 的因次分析一致，常數是 $3/5$。</p>
+      </div>
+      <div class="step" data-step="tk1x-4-s5">
+        <span class="step-title">(d) 用均位定理解 $T$</span>
+        <p>$U_{\text{kin}}=-\tfrac12U_{\text{pot}}$，左邊用 (b)，右邊用 (c)，$N=2M/m_p$：</p>
+        $$\frac32\cdot\frac{2M}{m_p}\cdot kT=\frac{3GM^2}{10R}\ \Rightarrow\ T=\frac{GMm_p}{10kR}$$
+        <p class="sub">代入 $G=6.674\times10^{-11}$、$M=2\times10^{30}\ \text{kg}$、$R=7\times10^8\ \text{m}$（題目）、$m_p=1.673\times10^{-27}\ \text{kg}$、$k=1.381\times10^{-23}\ \text{J/K}$：</p>
+        $$\begin{aligned}T&=\frac{(6.674\times10^{-11})(2\times10^{30})(1.673\times10^{-27})}{10(1.381\times10^{-23})(7\times10^8)}\\&=\frac{2.233\times10^{-7}}{9.667\times10^{-14}}\ \text{K}=2.3\times10^6\ \text{K}\end{aligned}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $U_{\text{pot}}/U_{\text{kin}}=-2$；(b) $C=-\tfrac32Nk$；(c) $U_{\text{pot}}=-\dfrac{3GM^2}{5R}$；(d) $T\approx2.3\times10^6$ K。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>與習題 1.55(e)（常數取 1）的 $3.9\times10^6$ K 相比正好乘 $3/5$ ✔；真實太陽中心較密，位能常數比 $3/5$ 大，所以均勻球低估了溫度。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-06a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>蒸汽通入冰：先判斷末狀態，再算溫度</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-06a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>1 atm 下的絕熱容器裡有 100 g、−20°C 的冰。把 20 g、100°C 的水蒸氣通入，充分混合到平衡。冰的比熱 $0.5\ \text{cal/(g·°C)}=2.093\ \text{J/(g·K)}$，水的比熱 $4.186\ \text{J/(g·K)}$，熔化熱 333 J/g，汽化熱 2260 J/g。(a) 不要先假設末狀態：先比較幾個「關卡」需要或能放出的熱，判斷末狀態是「冰水共存於 0°C」「全是液態水」還是「水與蒸汽共存於 100°C」，再求末溫。(b) 至少要通入多少蒸汽，末狀態才會變成 100°C 的水（剛好沒有剩下蒸汽）？(c) 20 g 蒸汽在 100°C 凝結時，大氣對它做了多少功？佔凝結放熱的幾成？為什麼 (a) 的熱量平衡可以直接用潛熱，不必另外算這個功？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>冰</td><td>$m_i=100\ \text{g}$，$-20^\circ\text{C}$</td><td>「<b>100 g、−20°C</b> 的冰」</td></tr>
+          <tr><td>蒸汽</td><td>$m_s=20\ \text{g}$，$100^\circ\text{C}$</td><td>「<b>20 g、100°C</b> 的水蒸氣」</td></tr>
+          <tr><td>比熱</td><td>$c_i=2.093$，$c_w=4.186\ \text{J/(g·K)}$</td><td>題目</td></tr>
+          <tr><td>潛熱</td><td>$l_f=333$，$l_v=2260\ \text{J/g}$</td><td>題目</td></tr>
+          <tr><td>壓力</td><td>1 atm 固定</td><td>「<b>1 atm</b> 下」：相變溫度 0°C、100°C，潛熱是定壓值</td></tr>
+          <tr><td>熱損失、其他功</td><td>0</td><td>「<b>絕熱</b>容器」</td></tr>
+          <tr><td>常數</td><td>$R=8.315\ \text{J/(mol·K)}$，水 18 g/mol</td><td>(c) 要用，題目沒給</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 判斷末狀態並求末溫；(b) 讓末態成為 100°C 液態水所需的最少蒸汽量；(c) 凝結時大氣做的功、比例，與為什麼熱量平衡不必另計。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目同時有兩個相變，末狀態可能停在 0°C（冰沒熔完）、100°C（蒸汽沒凝結完）或兩者之間，若先假設「全變成液態水」直接解，算出不合理的溫度時才知道錯，<b>所以</b>先算「關卡熱量」：冰升到 0°C 並全部熔化要多少熱、蒸汽全部凝結（仍在 100°C）能放多少熱、把冰一路加熱到 100°C 的水又要多少熱，比較大小就能確定末狀態落在哪一段。</p>
+      <p><b>因為</b>整個過程在 1 atm 定壓下、沒有其他功，<b>所以</b>真正守恆的是總焓：$\sum\Delta H=Q_{\text{外}}=0$。表上的潛熱本身就是定壓焓變，已經包含 $P\,\Delta V$，所以「放熱＝吸熱」用潛熱寫就是焓守恆，(c) 要說明這點。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-06a-s1" data-sym="lsp,c">
+        <span class="step-title">(a) 關卡 1：冰升到 0°C 並全部熔化</span>
+        $$Q_1=m_i\,(c_i\cdot20\ \text{K}+l_f)$$
+        <p class="sub">代入 $m_i=100\ \text{g}$、$c_i=2.093$、$l_f=333$（題目）：</p>
+        $$Q_1=100\,(41.86+333)\ \text{J}=37\,486\ \text{J}$$
+      </div>
+      <div class="step" data-step="t1-self-06a-s2">
+        <span class="step-title">(a) 關卡 2：蒸汽全部凝結，仍在 100°C</span>
+        $$Q_2=m_sl_v$$
+        <p class="sub">代入 $m_s=20\ \text{g}$、$l_v=2260\ \text{J/g}$：</p>
+        $$Q_2=20\times2260\ \text{J}=45\,200\ \text{J}$$
+        <p>$Q_2\gt Q_1$：蒸汽光是凝結放的熱就足以熔掉全部的冰，末態不會是「0°C 冰水共存」。</p>
+      </div>
+      <div class="step" data-step="t1-self-06a-s3">
+        <span class="step-title">(a) 關卡 3：會不會停在 100°C</span>
+        <p>若末態是 100°C，冰要一路變成 100°C 的水，需要</p>
+        $$Q_3=Q_1+m_ic_w\cdot100\ \text{K}$$
+        <p class="sub">代入 $Q_1=37\,486\ \text{J}$（步驟 1）、$m_ic_w=418.6\ \text{J/K}$：</p>
+        $$Q_3=37\,486+41\,860=79\,346\ \text{J}\gt Q_2$$
+        <p>蒸汽全部凝結也給不起 $Q_3$，所以不會剩蒸汽、末溫低於 100°C。結論：末態全是液態水，$0\lt T_f\lt100^\circ\text{C}$。</p>
+      </div>
+      <div class="step" data-step="t1-self-06a-s4" data-sym="Q">
+        <span class="step-title">(a) 熱量平衡求末溫</span>
+        <p>蒸汽：凝結＋水從 100°C 降到 $T_f$；冰：關卡 1＋水從 0°C 升到 $T_f$：</p>
+        $$m_sl_v+m_sc_w(100-T_f)=Q_1+m_ic_w\,T_f$$
+        <p>移項：$(m_s+m_i)c_wT_f=m_sl_v+m_sc_w\cdot100-Q_1$。</p>
+        <p class="sub">代入 $m_sl_v=45\,200$、$m_sc_w\cdot100=8372$、$Q_1=37\,486$（J），$(m_s+m_i)c_w=120\times4.186=502.3\ \text{J/K}$：</p>
+        $$T_f=\frac{45\,200+8372-37\,486}{502.3}\ ^\circ\text{C}=\frac{16\,086}{502.3}\ ^\circ\text{C}=32.0^\circ\text{C}$$
+      </div>
+      <div class="step" data-step="t1-self-06a-s5">
+        <span class="step-title">(b) 臨界蒸汽量</span>
+        <p>剛好末態為 100°C 的水：蒸汽只凝結、不降溫，放熱要等於關卡 3：</p>
+        $$m_s^{*}l_v=Q_3\ \Rightarrow\ m_s^{*}=\frac{Q_3}{l_v}$$
+        <p class="sub">代入 $Q_3=79\,346\ \text{J}$（步驟 3）、$l_v=2260\ \text{J/g}$：</p>
+        $$m_s^{*}=\frac{79\,346}{2260}\ \text{g}=35.1\ \text{g}$$
+        <p>超過 35.1 g 的蒸汽就會有一部分留著不凝結，末態停在 100°C。</p>
+      </div>
+      <div class="step" data-step="t1-self-06a-s6" data-sym="H,W,n,R">
+        <span class="step-title">(c) 凝結時大氣做的功</span>
+        <p>蒸汽體積 $V=nRT/P$，凝結後液體體積可忽略，大氣把這個空間壓掉，對系統做功</p>
+        $$W=-P\,\Delta V=PV_{\text{蒸汽}}=nRT$$
+        <p class="sub">代入 $n=20/18=1.11\ \text{mol}$、$R=8.315$、$T=373\ \text{K}$：</p>
+        $$W=(1.11)(8.315)(373)\ \text{J}=3446\ \text{J},\qquad\frac{W}{Q_2}=\frac{3446}{45\,200}=7.6\%$$
+        <p>這 3446 J 是大氣「送給」系統的能量，最後也變成給冰的熱。但 2260 J/g 是 1 atm 下量的焓變 $\Delta H=\Delta U+P\,\Delta V$，已經把它算進去了：定壓、無其他功時 $\sum\Delta H=Q_{\text{外}}=0$，「放熱＝吸熱」就是總焓守恆，不必也不能再加一次 $P\,\Delta V$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $Q_1=37\,486\ \text{J}\lt Q_2=45\,200\ \text{J}\lt Q_3=79\,346\ \text{J}$，所以冰全熔、蒸汽全凝結，末態是 $32^\circ\text{C}$ 的 120 g 水。(b) 至少 35.1 g 蒸汽。(c) $W=nRT\approx3.4\times10^3$ J，約佔凝結熱的 7.6%；潛熱是定壓焓變，已包含這個功，熱量平衡就是焓守恆。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>蒸汽放熱 $45\,200+20(4.186)(68.0)=50\,890$ J；冰吸熱 $37\,486+100(4.186)(32.0)=50\,880$ J，相等 ✔。只用 20 g 蒸汽就熔掉 100 g 冰，是因為汽化熱是熔化熱的 6.8 倍。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-06b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>越放光越熱的恆星與不穩定的熱平衡</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-06b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>把恆星看成只靠重力作用的粒子氣體（習題 1.55），總能量 $U=-\tfrac32NkT$。(a) 恆星以功率 $\mathcal L$ 向太空輻射能量、沒有核反應補充。證明它的平均溫度隨時間<b>上升</b>，寫出 $dT/dt$，並證明 $\dfrac{1}{T}\dfrac{dT}{dt}=\dfrac{\mathcal L}{|U|}$。(b) 以太陽估計：$M=2\times10^{30}$ kg、$R=7\times10^8$ m、$\mathcal L=3.9\times10^{26}$ W，位能取 $-GM^2/R$，由質子與電子組成。只靠重力收縮能維持目前亮度多久（Kelvin–Helmholtz 時標）？平均溫度每年升高多少？和習題 1.50(f) 的化學燃燒比較，再和太陽年齡約 $4.6\times10^9$ 年比較，能得到什麼結論？(c) 把這顆恆星放進溫度 $T_r$ 的巨大熱庫裡（熱庫的熱容量為正且非常大）。若某一刻恆星溫度稍高於 $T_r$，熱怎麼流？接著恆星溫度怎麼變？說明負熱容量的系統為什麼不能和熱庫達到穩定的熱平衡。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>總能量</td><td>$U=-\tfrac32NkT$，$C=-\tfrac32Nk$</td><td>「總能量 $U=-\tfrac32NkT$」（習題 1.55(c)）</td></tr>
+          <tr><td>能量流失</td><td>$dU/dt=-\mathcal L$</td><td>(a)「以功率 $\mathcal L$ 向太空輻射」「<b>沒有</b>核反應補充」</td></tr>
+          <tr><td>太陽數據</td><td>$M=2\times10^{30}$ kg，$R=7\times10^8$ m，$\mathcal L=3.9\times10^{26}$ W</td><td>(b) 題目</td></tr>
+          <tr><td>位能</td><td>$U_{\text{pot}}=-GM^2/R$ ⟹ $U=\tfrac12U_{\text{pot}}=-GM^2/(2R)$</td><td>(b)「位能取 $-GM^2/R$」＋均位定理 $U=-U_{\text{kin}}=\tfrac12U_{\text{pot}}$</td></tr>
+          <tr><td>粒子數</td><td>$N=2M/m_p=2.39\times10^{57}$</td><td>(b)「由質子與電子組成」</td></tr>
+          <tr><td>熱庫</td><td>溫度 $T_r$ 幾乎不變</td><td>(c)「<b>巨大</b>熱庫」「熱容量為正且非常大」</td></tr>
+          <tr><td>對照</td><td>化學燃燒約 1600 年；太陽年齡 $4.6\times10^9$ 年</td><td>(b) 習題 1.50(f)；題目給的年齡</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $dT/dt$ 的式子與正負、相對變化率；(b) 時標與每年升溫、結論；(c) 與熱庫接觸時的熱流方向與溫度變化、為何不穩定。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>輻射讓總能量以 $\mathcal L$ 的速率減少，而 $U$ 與 $T$ 的關係已知，<b>所以</b>對 $U=CT$ 取時間微分、連鎖律得 $dT/dt=(dU/dt)/C$；$C\lt0$ 使分子分母同號，溫度上升。</p>
+      <p>(b) <b>因為</b>「能維持多久」的量級就是「現有能量的大小 ÷ 消耗速率」，<b>所以</b>時標 $\sim|U|/\mathcal L$，和 (a) 的相對變化率是同一個量。(c) <b>因為</b>熱只會從高溫流向低溫（熱平衡的定義，第 1 節），<b>所以</b>先判斷熱流方向，再用 $C\lt0$ 判斷溫差是變大還是變小。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-06b-s1" data-sym="U,T">
+        <span class="step-title">(a) 溫度變化率</span>
+        $$\frac{dU}{dt}=\frac{dU}{dT}\frac{dT}{dt}=C\,\frac{dT}{dt}=-\mathcal L$$
+        <p class="sub">代入 $C=-\tfrac32Nk$：</p>
+        $$\frac{dT}{dt}=\frac{-\mathcal L}{-\tfrac32Nk}=\frac{\mathcal L}{\tfrac32Nk}\gt0$$
+        <p>再除以 $T$，分母 $\tfrac32NkT=|U|$：</p>
+        $$\frac1T\frac{dT}{dt}=\frac{\mathcal L}{\tfrac32NkT}=\frac{\mathcal L}{|U|}$$
+      </div>
+      <div class="step" data-step="t1-self-06b-s2" data-sym="G">
+        <span class="step-title">(b) 太陽的總能量</span>
+        $$|U|=\frac{GM^2}{2R}$$
+        <p class="sub">代入 $G=6.674\times10^{-11}$、$M=2\times10^{30}\ \text{kg}$、$R=7\times10^8\ \text{m}$（題目）：</p>
+        $$|U|=\frac{(6.674\times10^{-11})(4\times10^{60})}{2(7\times10^8)}\ \text{J}=1.91\times10^{41}\ \text{J}$$
+      </div>
+      <div class="step" data-step="t1-self-06b-s3">
+        <span class="step-title">(b) Kelvin–Helmholtz 時標</span>
+        $$t_{\text{KH}}\sim\frac{|U|}{\mathcal L}$$
+        <p class="sub">代入步驟 2 的 $|U|$、$\mathcal L=3.9\times10^{26}\ \text{W}$（題目），一年 $3.156\times10^7$ s：</p>
+        $$t_{\text{KH}}=\frac{1.91\times10^{41}}{3.9\times10^{26}}\ \text{s}=4.9\times10^{14}\ \text{s}=1.5\times10^7\ \text{年}$$
+        <p>（若用均勻球的 $-\tfrac35GM^2/R$，約 $9\times10^6$ 年，同一量級。）</p>
+      </div>
+      <div class="step" data-step="t1-self-06b-s4" data-sym="N,k">
+        <span class="step-title">(b) 每年升溫多少</span>
+        <p class="sub">代入 (a) 的 $dT/dt=\mathcal L/(\tfrac32Nk)$，$N=2.39\times10^{57}$、$k=1.381\times10^{-23}\ \text{J/K}$：</p>
+        $$\tfrac32Nk=1.5(2.39\times10^{57})(1.381\times10^{-23})=4.95\times10^{34}\ \text{J/K}$$
+        $$\frac{dT}{dt}=\frac{3.9\times10^{26}\ \text{W}}{4.95\times10^{34}\ \text{J/K}}=7.9\times10^{-9}\ \text{K/s}=0.25\ \text{K/年}$$
+        <p>平均溫度 $3.9\times10^6$ K（習題 1.55）每年升 0.25 K，相對速率 $6\times10^{-8}$/年，倒數正是約 $1.5\times10^7$ 年。</p>
+      </div>
+      <div class="step" data-step="t1-self-06b-s5">
+        <span class="step-title">(b) 比較與結論</span>
+        <p>重力收縮可撐約 $10^7$ 年，是化學燃燒（約 1600 年）的 $10^4$ 倍，但只有太陽年齡 $4.6\times10^9$ 年的 $0.3\%$。所以太陽的能源既不是化學能、也不是重力收縮，必須是核融合；而重力收縮「越放光越熱」正是恆星核心被加熱到能點燃核融合的機制。</p>
+      </div>
+      <div class="step" data-step="t1-self-06b-s6" data-sym="Q">
+        <span class="step-title">(c) 與熱庫接觸：溫差自己變大</span>
+        <p>$T\gt T_r$：熱從恆星流向熱庫，$dU=dQ\lt0$。因為 $C\lt0$，$dT=dU/C\gt0$——恆星<b>變得更熱</b>，而熱庫太大、$T_r$ 幾乎不變，溫差擴大，熱流更強，越跑越遠。$T\lt T_r$ 時反過來：吸熱後變冷，溫差也擴大。</p>
+        <p>穩定的熱平衡要求「溫差產生的熱流會把溫差縮小」，也就是 $C\gt0$。負熱容量的系統偏離平衡後只會越偏越遠，所以不可能和熱庫達到穩定平衡；它只能孤立存在（例如在寒冷的太空中）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\dfrac{dT}{dt}=\dfrac{\mathcal L}{\frac32Nk}\gt0$（放光變熱），$\dfrac1T\dfrac{dT}{dt}=\dfrac{\mathcal L}{|U|}$。(b) $|U|\approx1.9\times10^{41}$ J，時標約 $1.5\times10^7$ 年，平均溫度每年升約 0.25 K；遠長於化學燃燒、遠短於太陽年齡，所以太陽靠核融合。(c) 溫度高於熱庫時放熱反而升溫，溫差擴大；負熱容量使平衡不穩定。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$\text{W}/(\text{J/K})=\text{K/s}$ ✔。$T=3.9\times10^6$ K 乘上相對速率 $\mathcal L/|U|=2.0\times10^{-15}\ \text{s}^{-1}$ 得 $7.9\times10^{-9}$ K/s，與步驟 4 相同 ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$C=Q/\Delta T=(\Delta U-W)/\Delta T$ 有歧義，要說明條件；比熱 $c=C/m$，水 $4.186$ J/(g·K)。</li>
+    <li>$C_V=(\partial U/\partial T)_V$；$C_P=(\partial U/\partial T)_P+P(\partial V/\partial T)_P=(\partial H/\partial T)_P$。</li>
+    <li>均分定理：$C_V=\tfrac f2Nk$；單原子每莫耳 $\tfrac32R$、雙原子 $\tfrac52R$、固體 $3R$（Dulong–Petit）；低溫自由度凍結。</li>
+    <li>理想氣體 $C_P=C_V+Nk$（每莫耳多 $R$），$\gamma=(f+2)/f$。</li>
+    <li>潛熱：相變時溫度不變，$l=L/m$；冰 333 J/g（80 cal/g）、水沸騰 2260 J/g（540 cal/g）。加冰題分三段：升到 0°C、熔化、升到末溫。</li>
+    <li>焓 $H=U+PV$；定壓下 $\Delta H=\Delta U+P\Delta V=Q+W_{\text{other}}$；反應焓＝生成物 $\sum\Delta_fH$ − 反應物 $\sum\Delta_fH$；$\Delta U=\Delta H-(\Delta n_{\text{氣}})RT$。</li>
+    <li>重力束縛系統：$U_{\text{pot}}=-2U_{\text{kin}}$，$U=-\tfrac32NkT$，$C=-\tfrac32Nk\lt0$；均勻球 $U_{\text{pot}}=-\tfrac35GM^2/R$。</li>
+  </ol>
+</div>

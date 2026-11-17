@@ -1,0 +1,631 @@
+<h2>相對論綜合難題 <span class="pg">網站自編 · 綜合第 2–9 節與附錄 I、II</span></h2>
+
+<p class="lead">這一節的 10 題是網站自編的綜合難題（不是課本或考卷題目），每一題都要把兩三個效應串起來：飛船來回、加速航程、從飛船再發射更快的東西、火箭燃料、粒子反應、三種效應一起對帳。建議用法：先只看題目，自己畫時空圖、列出條件，想好「在哪個座標系算最簡單、誰是固有量」；再打開「為什麼這樣解」對照思路，最後看詳解。每題的「驗算」都用另一種方法（勞倫茲轉換、數訊號、不變量、數值積分）重算一次，數值也由網站的驗算腳本獨立核對過。</p>
+
+<h3 id="cx-tools">工具箱：這一節反覆用到的四個工具</h3>
+
+<p>下面四個工具在前面各節都出現過，這裡集中寫一次，詳解中直接引用。</p>
+
+<div class="step" data-step="cx-tool-rapidity" data-sym="beta,gamma">
+  <span class="step-title">快速度 $\phi$（第 11 節自編難題）</span>
+  <p>定義 $\beta=\tanh\phi$，則 $\gamma=\cosh\phi$、$\gamma\beta=\sinh\phi$。同一直線上的速度合成就是快速度相加：$\phi=\phi_1+\phi_2$。也常用 $\phi=\tanh^{-1}\beta=\tfrac12\ln\dfrac{1+\beta}{1-\beta}$。</p>
+</div>
+
+<div class="step" data-step="cx-tool-k">
+  <span class="step-title">都卜勒因子 $k$（第 3、5 節）</span>
+  <p>相對速率 $\beta$ 時 $k=\sqrt{\dfrac{1+\beta}{1-\beta}}=e^{\phi}$。互相遠離時，對方每隔 $T$ 發一次訊號，自己每隔 $kT$ 收到一次（頻率變成 $1/k$ 倍）；互相接近時每隔 $T/k$ 收到一次。若兩人從同一事件分開，對方在自己錶上 $T$ 時發的訊號，自己在錶上 $kT$ 時收到。</p>
+</div>
+
+<div class="step" data-step="cx-tool-inv" data-sym="E,p">
+  <span class="step-title">四維動量的不變量（第 9 節、附錄 II）</span>
+  <p>任何系統 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2=(Mc^2)^2$，在所有慣性座標系相同、反應前後也相同。$(p_x,\ E/c)$ 和 $(x,\ ct)$ 用同樣的勞倫茲轉換：$E=\gamma(E'+vp'_x)$，$p_x=\gamma(p'_x+vE'/c^2)$。</p>
+</div>
+
+<div class="step" data-step="cx-tool-tau" data-sym="ds">
+  <span class="step-title">固有時間與固有加速度</span>
+  <p>等速的一段：$\tau=\sqrt{\Delta t^2-\Delta x^2/c^2}$（附錄 II）。固有加速度 $g$ 固定（船上的人一直感到同樣的「重量」）：每一小段船上時間 $\mathrm d\tau$，在船當時的靜止座標系中速度增加 $g\,\mathrm d\tau$，快速度增加 $g\,\mathrm d\tau/c$。</p>
+</div>
+
+<h3 id="cx-time">A　航程與時間</h3>
+
+<div class="problem" data-kind="self" id="cx-01">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>0.96c 往返 24 光年：各過幾年、各收到幾個生日訊號、掉頭時地球「現在」幾年</h4>
+    <button type="button" class="exam-btn" data-exam="cx-01">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>太空人 A 從地球出發，以 $0.96c$ 飛向地球座標系中 $24$ 光年外的恆星，到達後立刻掉頭（掉頭時間不計），再以 $0.96c$ 飛回；雙胞胎 B 留在地球。兩人約好：各依自己的錶，每過一年發一次「生日」無線電訊號給對方。(a) 地球的錶和 A 的錶各記錄這趟旅程多久？A 自己量到地球到恆星的距離是多少？(b) 用都卜勒效應算：A 在去程、回程各收到 B 的幾個訊號？B 在什麼時候看到 A 掉頭、在那之前和之後各收到 A 的幾個訊號？兩人收到的總數和 (a) 一致嗎？為什麼兩人的情況不對稱？(c) A 在掉頭前一瞬間，用去程的座標系判斷「地球上現在是第幾年」；掉頭後一瞬間，用回程的座標系再判斷一次。各是多少？兩者的差怎麼解釋？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：去程、回程速率 $v=0.96c$（$\beta=0.96$）；地球到恆星 $D=24\ \text{ly}$（地球座標系的固有長度）；掉頭瞬間完成，只有那一刻 A 換了慣性座標系；兩人各依自己的錶每年發一個訊號；用 $c=1\ \text{ly/y}$。</p>
+<h4>(a) 兩人的錶與 A 量到的距離</h4>
+<p><strong>① 先算 $\gamma$：</strong> 地球一直是慣性座標系、$D$ 也是在地球座標系給的，所以先在地球座標系算，再換到 A。</p>
+<div class="math-block">$$\gamma=\frac{1}{\sqrt{1-0.96^2}}=\frac{1}{\sqrt{0.0784}}=\frac{1}{0.28}=3.571$$</div>
+<p><strong>② 地球的錶：</strong> 來回 $2D$、速率 $v$：</p>
+<div class="math-block">$$T_B=\frac{2D}{v}=\frac{48\ \text{ly}}{0.96c}=50\ \text{y}$$</div>
+<p><strong>③ A 的錶：</strong> A 的錶走的是固有時間。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$\tau=\dfrac{T}{\gamma}$，其中 $T$ 為慣性座標系中量到的時間、$\tau$ 為以 $v$ 運動的鐘走的固有時間；本題 $T=T_B$、$1/\gamma=0.28$。</p>
+<div class="math-block">$$\tau_A=\frac{T_B}{\gamma}=50\ \text{y}\times0.28=14\ \text{y}$$</div>
+<p>A 的去程、回程各 $7\ \text{y}$。</p>
+<p><strong>④ A 量到的距離：</strong> A 看地球與恆星在動，兩者的距離收縮。</p>
+<p class="fnote"><b>公式（長度收縮）：</b>$L=\dfrac{L_0}{\gamma}$，其中 $L_0$ 為靜止系中量的固有長度、$L$ 為運動中量到的長度；本題 $L_0=D=24\ \text{ly}$。</p>
+<div class="math-block">$$L=\frac{D}{\gamma}=24\ \text{ly}\times0.28=6.72\ \text{ly}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{地球 }50\ \text{y}\text{，A }14\ \text{y}\text{（去回各 }7\ \text{y}\text{）}\\ \text{A 量到的距離 }6.72\ \text{ly}\end{gathered}}$$</div>
+<h4>(b) 生日訊號與不對稱</h4>
+<p><strong>① 都卜勒因子：</strong> 收到的快慢由訊號在路上時兩人在遠離還是接近決定，關鍵是什麼時候從遠離變成接近：A 掉頭那一刻就換，B 要等掉頭的消息以光速傳回地球才換。</p>
+<p class="fnote"><b>公式（相對論都卜勒效應）：</b>$k=\sqrt{\dfrac{1+\beta}{1-\beta}}$，其中 $\beta=v/c$；遠離時接收頻率為發射頻率的 $1/k$（每 $k$ 年收到一個），接近時為 $k$ 倍（每年收到 $k$ 個）；本題 $\beta=0.96$。</p>
+<div class="math-block">$$k=\sqrt{\frac{1.96}{0.04}}=\sqrt{49}=7$$</div>
+<p><strong>② A 收到 B 的訊號：</strong> 去程遠離，每 $7$ 年（A 的錶）收到一個；回程接近，每年收到 $7$ 個。代入 (a) 的去程、回程各 $7\ \text{y}$：</p>
+<div class="math-block">$$N_{\text{去}}=\frac{7\ \text{y}}{7\ \text{y}}=1$$</div>
+<div class="math-block">$$N_{\text{回}}=7\ \text{y}\times\frac{7}{\text{y}}=49$$</div>
+<div class="math-block">$$N_A=50$$</div>
+<p>50 正是 B 這段時間發出的訊號數（$T_B=50\ \text{y}$）。去程那唯一一個（B 的第 1 年）剛好在掉頭那一刻收到。</p>
+<p><strong>③ B 什麼時候看到 A 掉頭：</strong> 掉頭事件在地球座標系發生於 $t=D/v=25\ \text{y}$、$x=24\ \text{ly}$，那裡發出的光再走 $24\ \text{y}$ 才回到地球：</p>
+<div class="math-block">$$t_{\text{看到}}=\frac{D}{v}+\frac{D}{c}=25\ \text{y}+24\ \text{y}=49\ \text{y}$$</div>
+<p><strong>④ B 收到 A 的訊號：</strong> 49 年之前 B 收到的都是去程的訊號（遠離，每 7 年一個）；最後 $50-49=1\ \text{y}$ 收到回程的訊號（接近，每年 7 個）：</p>
+<div class="math-block">$$N_{\text{前}}=\frac{49\ \text{y}}{7\ \text{y}}=7$$</div>
+<div class="math-block">$$N_{\text{後}}=1\ \text{y}\times\frac{7}{\text{y}}=7$$</div>
+<div class="math-block">$$N_B=14$$</div>
+<p>14 正是 A 的旅程年數（$\tau_A=14\ \text{y}$），兩人收到的總數都和 (a) 一致。</p>
+<p><strong>⑤ 為什麼不對稱：</strong> A 在自己旅程的<strong>一半</strong>（第 7 年）就從「少收」切換成「多收」，因為掉頭是發生在他身上的事；B 要到第 49 年（旅程的 $98\%$）才切換，因為掉頭的消息以光速走了 24 年才傳到地球。只有 A 換了慣性座標系，兩人的處境本來就不對等。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{A：去程 1 個、回程 49 個，共 50}\\ \text{B：第 49 年看到掉頭，之前 7、之後 7，共 14}\\ \text{各等於對方的年數；A 在中點切換，}\\ \text{B 要等光把消息帶回來}\end{gathered}}$$</div>
+<h4>(c) 掉頭前後的「地球現在」</h4>
+<p><strong>① 掉頭前（去程座標系）：</strong> 「地球上現在幾年」是在問和掉頭事件同時的地球事件，同時性取決於座標系，所以在去程座標系 $S'$（以 $v=+0.96c$ 運動）中令兩事件的 $t'$ 相等。</p>
+<p class="fnote"><b>公式（勞倫茲轉換的時間式）：</b>$t'=\gamma\left(t-\dfrac{vx}{c^2}\right)$，其中 $(x,t)$ 為事件在地球座標系的座標、$t'$ 為在以 $v$ 沿 $+x$ 運動的座標系中的時刻；本題掉頭事件 $(24\ \text{ly},\ 25\ \text{y})$、地球事件 $(0,\ t_E)$。</p>
+<div class="math-block">$$\gamma t_E=\gamma\left(25\ \text{y}-\frac{(0.96c)(24\ \text{ly})}{c^2}\right)$$</div>
+<p>其中 $vD/c^2=0.96\times24\ \text{y}=23.04\ \text{y}$，所以</p>
+<div class="math-block">$$t_E=25-23.04=1.96\ \text{y}$$</div>
+<p><strong>② 掉頭後（回程座標系）：</strong> 回程座標系 $S''$ 以 $-0.96c$ 運動，轉換式的 $v$ 變號：$t''=\gamma\left(t+\dfrac{vx}{c^2}\right)$（$v=0.96c$）。同樣令掉頭事件和地球事件的 $t''$ 相等：</p>
+<div class="math-block">$$t_E=25\ \text{y}+23.04\ \text{y}=48.04\ \text{y}$$</div>
+<p><strong>③ 兩者的差：</strong> 掉頭的一瞬間，A 認定的「地球現在」從 $1.96$ 年跳到 $48.04$ 年，跳了 $2vD/c^2=46.08\ \text{y}$。這不是 A 看到什麼（他只收到 1 個生日訊號），而是換座標系時「同時」的定義改了。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{掉頭前：第 }1.96\text{ 年；掉頭後：第 }48.04\text{ 年}\\ \text{差 }46.08\text{ 年，來自同時性的改變}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="cx-02">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>以 1g 加速、減速往返 10 光年：雙曲運動與快速度</h4>
+    <button type="button" class="exam-btn" data-exam="cx-02">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>太空船從地球出發，以固有加速度 $g=9.80\ \text{m/s}^2$（船上的人一直感覺到 1 倍重力）加速，到地球座標系中的中點（$5.00$ 光年處）後掉轉推進方向，以同樣大小的固有加速度減速，剛好停在 $10.0$ 光年外的恆星；回程用同樣方式（加速到中點、減速停在地球）。用 $1\ \text{y}=3.156\times10^7\ \text{s}$、$c=2.998\times10^8\ \text{m/s}$。(a) 證明固有加速度固定時，快速度隨船上時間線性增加 $\phi=g\tau/c$，並推出地球座標系中 $t=\dfrac cg\sinh\dfrac{g\tau}c$、$x=\dfrac{c^2}g\left(\cosh\dfrac{g\tau}c-1\right)$。(b) 四段中的每一段，船上和地球上各花多久？最高速率多少？(c) 整趟來回，船上的人和地球各過了幾年？(d) 若用牛頓力學算第一段，會得到多大的最高速率？說明錯在哪裡。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：固有加速度 $g=9.80\ \text{m/s}^2$（在船當時的靜止座標系中量）；每一段在地球座標系走 $d=5.00\ \text{ly}$，每段一端靜止；共 4 段（加速、減速、加速、減速）；$1\ \text{y}=3.156\times10^7\ \text{s}$、$c=2.998\times10^8\ \text{m/s}$；$\tau$ 為船上時間，$t$、$x$ 為地球座標系的時間與位置。</p>
+<h4>(a) 快速度與雙曲運動</h4>
+<p><strong>① 快速度隨船上時間線性增加：</strong> 固有加速度是在一直在換的瞬時靜止座標系中說的，不能在地球座標系直接用 $v=gt$；改用快速度，因為同一直線上的速度合成就是快速度相加。在船當時的靜止座標系中，經過 $\mathrm d\tau$ 速度變成 $g\,\mathrm d\tau$，對應的快速度 $\tanh^{-1}(g\,\mathrm d\tau/c)\approx g\,\mathrm d\tau/c$（小量時 $\tanh^{-1}x\approx x$）。快速度相加：</p>
+<div class="math-block">$$\phi(\tau+\mathrm d\tau)=\phi(\tau)+\frac{g\,\mathrm d\tau}{c}\ \Longrightarrow\ \frac{\mathrm d\phi}{\mathrm d\tau}=\frac gc$$</div>
+<p>從靜止出發 $\phi(0)=0$，積分：</p>
+<div class="math-block">$$\phi=\frac{g\tau}{c}$$</div>
+<p><strong>② 換成地球座標系的 $t$ 和 $x$：</strong> 用時間膨脹與 $\mathrm dx=v\,\mathrm dt$ 積分。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$\mathrm dt=\gamma\,\mathrm d\tau$，其中 $\mathrm d\tau$ 為船上鐘走的固有時間、$\mathrm dt$ 為地球座標系中的時間；本題 $\gamma=\cosh\phi$、$\beta=\tanh\phi$。</p>
+<div class="math-block">$$\mathrm dt=\cosh\phi\,\mathrm d\tau,\qquad \mathrm dx=v\,\mathrm dt=c\tanh\phi\cosh\phi\,\mathrm d\tau=c\sinh\phi\,\mathrm d\tau$$</div>
+<p>代入 $\phi=g\tau/c$ 從 0 積分：</p>
+<div class="math-block">$$t=\int_0^\tau\cosh\frac{g\tau'}c\,\mathrm d\tau'=\frac cg\sinh\frac{g\tau}c$$</div>
+<div class="math-block">$$x=\int_0^\tau c\sinh\frac{g\tau'}c\,\mathrm d\tau'=\frac{c^2}g\left(\cosh\frac{g\tau}c-1\right)$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\phi=\frac{g\tau}{c},\quad t=\frac cg\sinh\frac{g\tau}c\\ x=\frac{c^2}g\left(\cosh\frac{g\tau}c-1\right)\end{gathered}}$$</div>
+<h4>(b) 每一段的時間與最高速率</h4>
+<p><strong>① 把 $g$ 換成光年、年的單位：</strong> 代入 $g=9.80\ \text{m/s}^2$、$1\ \text{y}=3.156\times10^7\ \text{s}$、$c=2.998\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\frac gc=\frac{(9.80)(3.156\times10^7)}{2.998\times10^8}\ \frac1{\text{y}}=1.032\ \text{y}^{-1}$$</div>
+<div class="math-block">$$\frac cg=0.9693\ \text{y}$$</div>
+<div class="math-block">$$\frac{c^2}g=0.9693\ \text{ly}$$</div>
+<p>1g 加速大約一年就能接近光速，這是很巧的數字。</p>
+<p><strong>② 由距離解出 $\phi_m$：</strong> 題目給的是距離，所以先由 (a) 的 $x$ 式令 $x=d$ 解出 $\cosh\phi_m$：</p>
+<div class="math-block">$$\cosh\phi_m=1+\frac{d}{c^2/g}$$</div>
+<p>代入 $d=5.00\ \text{ly}$、$c^2/g=0.9693\ \text{ly}$：</p>
+<div class="math-block">$$\cosh\phi_m=1+\frac{5.00}{0.9693}=6.158$$</div>
+<div class="math-block">$$\phi_m=\cosh^{-1}6.158=2.504$$</div>
+<div class="math-block">$$\sinh\phi_m=\sqrt{\cosh^2\phi_m-1}=\sqrt{37.92-1}=6.076$$</div>
+<p><strong>③ 第一段的時間與最高速率：</strong> 代入 $c/g=0.9693\ \text{y}$、$\phi_m=2.504$、$\sinh\phi_m=6.076$、$\cosh\phi_m=6.158$：</p>
+<div class="math-block">$$\tau_1=\frac cg\phi_m=0.9693\times2.504=2.427\ \text{y}$$</div>
+<div class="math-block">$$t_1=\frac cg\sinh\phi_m=0.9693\times6.076=5.890\ \text{y}$$</div>
+<div class="math-block">$$\beta_{\max}=\tanh\phi_m=\frac{6.076}{6.158}=0.9867$$</div>
+<div class="math-block">$$\gamma_{\max}=\cosh\phi_m=6.158$$</div>
+<p><strong>④ 其他三段：</strong> 減速段是加速段在時間上倒過來（快速度從 $\phi_m$ 線性減到 0），走同樣 $5.00\ \text{ly}$、花同樣的時間；回程兩段同理。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{每段船上 }2.43\ \text{y}\text{、地球 }5.89\ \text{y}\\ \text{最高速率 }0.987c\ (\gamma=6.16)\text{，在中點}\end{gathered}}$$</div>
+<h4>(c) 整趟來回</h4>
+<p><strong>① 四段合計：</strong></p>
+<div class="math-block">$$\tau_{\text{船}}=4\tau_1=4(2.427\ \text{y})=9.71\ \text{y}$$</div>
+<div class="math-block">$$t_{\text{地}}=4t_1=4(5.890\ \text{y})=23.56\ \text{y}$$</div>
+<div class="math-block">$$\boxed{\tau_{\text{船}}=9.71\ \text{y},\quad t_{\text{地}}=23.56\ \text{y}}$$</div>
+<h4>(d) 牛頓力學的答案</h4>
+<p><strong>① 用牛頓公式算第一段：</strong> 牛頓：$d=\tfrac12gt^2$、$v=gt$。在光年、年的單位中 $g=1.032\ \text{ly/y}^2$（$c=1$）：</p>
+<div class="math-block">$$t=\sqrt{\frac{2d}{g}}=\sqrt{\frac{2(5.00)}{1.032}}\ \text{y}=3.11\ \text{y}$$</div>
+<div class="math-block">$$v=gt=1.032\times3.11\,c=3.21c$$</div>
+<p><strong>② 錯在哪裡：</strong> 超過光速，不可能。錯在把「船上量的固定加速度」當成「地球座標系中的固定加速度」：地球看船的加速度是 $\mathrm dv/\mathrm dt=g/\gamma^3$，越接近光速越小。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{牛頓給 }3.21c\text{（超光速）}\\ \text{地球看到的加速度其實是 }g/\gamma^3\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="cx-velocity">B　速度合成</h3>
+
+<div class="problem" data-kind="self" id="cx-03">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>從 0.8c 的母船向前、向後、側向發射 0.9c 的探測器，地球看多快、往哪</h4>
+    <button type="button" class="exam-btn" data-exam="cx-03">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>母船相對地球以 $v=0.80c$ 沿 $+x$ 飛行。母船上的人用同一具發射器，以「相對母船」$0.90c$ 的速率發射探測器。求地球看到的探測器速度大小與方向（和 $+x$ 的夾角）：(a) 向正前方發射；(b) 向正後方發射；(c) 在母船上看垂直於航線（$+y$）發射。(d) 在母船上要往哪個角度 $\theta'$（從 $+x$ 量起）發射，地球才會看到探測器垂直於航線飛行？那時地球看到它多快？(e) 母船上往 $+y$ 打出的雷射光，地球看到它往哪個方向？（光行差）最後用 $\gamma_V=\gamma_v\gamma_{u'}\left(1+\dfrac{vu'_x}{c^2}\right)$ 驗算 (c)(d) 的速率。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：地球為 $S$、母船為 $S'$；母船相對地球 $v=0.80c$ 沿 $+x$，$\gamma_v=\tfrac53$、$\sqrt{1-v^2/c^2}=0.60$；探測器相對母船速率 $u'=0.90c$；(a)(b)(c) 的 $(u'_x,u'_y)$ 分別為 $(+0.90c,0)$、$(-0.90c,0)$、$(0,+0.90c)$；(e) 雷射光 $(u'_x,u'_y)=(0,\ c)$。</p>
+<h4>(a) 向正前方</h4>
+<p><strong>① 速度轉換：</strong> 探測器的速度是在母船座標系 $S'$ 給的、要求地球座標系 $S$ 的，每一小題都用速度轉換。</p>
+<p class="fnote"><b>公式（相對論速度轉換 (1.49)–(1.50)）：</b>$V_x=\dfrac{u'_x+v}{1+vu'_x/c^2}$、$V_y=\dfrac{u'_y\sqrt{1-v^2/c^2}}{1+vu'_x/c^2}$，其中 $u'_x$、$u'_y$ 為探測器在 $S'$ 中的速度分量、$v$ 為 $S'$ 相對 $S$ 的速度、$V_x$、$V_y$ 為探測器在 $S$ 中的速度分量；本題 $v=0.80c$。</p>
+<p>沿航線發射只有 $x$ 分量。代入 $u'_x=+0.90c$，分母 $1+(0.80)(0.90)=1.72$：</p>
+<div class="math-block">$$V_x=\frac{0.90c+0.80c}{1.72}=\frac{1.70c}{1.72}=0.988c$$</div>
+<p>沿 $+x$。伽利略會說 $1.70c$。</p>
+<div class="math-block">$$\boxed{V=0.988c\text{，往前（}+x\text{）}}$$</div>
+<h4>(b) 向正後方</h4>
+<p><strong>① 代入：</strong> 代入 $u'_x=-0.90c$，分母 $1+(0.80)(-0.90)=0.28$：</p>
+<div class="math-block">$$V_x=\frac{-0.90c+0.80c}{0.28}=\frac{-0.10c}{0.28}=-0.357c$$</div>
+<p>負號：探測器在地球看來是往後（朝 $-x$）飛，速率 $0.357c$，因為它相對母船的 $0.90c$ 比母船的 $0.80c$ 快。伽利略會說只有 $0.10c$。</p>
+<div class="math-block">$$\boxed{V=0.357c\text{，往後（}-x\text{）}}$$</div>
+<h4>(c) 在母船上看垂直發射</h4>
+<p><strong>① 兩個分量：</strong> 垂直分量也會變（同樣的 $\mathrm dy$、不同的 $\mathrm dt$），所以不能把 $0.80c$、$0.90c$ 用畢氏定理合成。代入 $u'_x=0$、$u'_y=0.90c$，分母 $1+0=1$、$\sqrt{1-v^2/c^2}=0.60$：</p>
+<div class="math-block">$$V_x=0.80c$$</div>
+<div class="math-block">$$V_y=0.90c\times0.60=0.54c$$</div>
+<p><strong>② 大小與方向：</strong></p>
+<div class="math-block">$$|V|=c\sqrt{0.80^2+0.54^2}=c\sqrt{0.9316}=0.965c$$</div>
+<div class="math-block">$$\tan^{-1}\frac{0.54}{0.80}=34.0^\circ$$</div>
+<p>在地球看，探測器不是垂直於航線，而是往前斜 $34.0^\circ$（從 $+x$ 量起）。</p>
+<div class="math-block">$$\boxed{V=0.965c\text{，和 }+x\text{ 夾 }34.0^\circ}$$</div>
+<h4>(d) 要地球看到垂直於航線</h4>
+<p><strong>① 解發射角：</strong> 反過來的問題，先令 $V_x=0$，分子為零：</p>
+<div class="math-block">$$u'_x+v=0\ \Longrightarrow\ u'_x=-0.80c$$</div>
+<div class="math-block">$$\cos\theta'=\frac{u'_x}{u'}=\frac{-0.80}{0.90}=-0.889$$</div>
+<div class="math-block">$$\theta'=152.7^\circ$$</div>
+<p>也就是在母船上看要往<strong>斜後方</strong>打（偏離正後方 $27.3^\circ$）。</p>
+<p><strong>② 地球看到的速率：</strong> 由 $u'^2_x+u'^2_y=(0.90c)^2$：$u'_y=\sqrt{u'^2-u'^2_x}=c\sqrt{0.81-0.64}=0.412c$；分母 $1+(0.80)(-0.80)=0.36$：</p>
+<div class="math-block">$$V_y=\frac{0.412c\times0.60}{0.36}=0.687c$$</div>
+<p>地球看探測器以 $0.687c$ 垂直於航線飛。$V_y$ 比母船裡的 $u'_y=0.412c$ 還大：分母 $0.36$ 來自同時性的修正。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\theta'=152.7^\circ\text{（斜後方）}\\ \text{地球看到 }0.687c\text{，垂直於航線}\end{gathered}}$$</div>
+<h4>(e) 側向雷射：光行差</h4>
+<p><strong>① 代入光速：</strong> 代入 $u'_x=0$、$u'_y=c$：</p>
+<div class="math-block">$$V_x=0.80c$$</div>
+<div class="math-block">$$V_y=c\times0.60=0.60c$$</div>
+<div class="math-block">$$|V|=c\sqrt{0.64+0.36}=c$$</div>
+<p>光速仍是 $c$，方向和 $+x$ 夾 $\tan^{-1}(0.60/0.80)=36.9^\circ$（$\cos\theta=\beta$）：母船上「往側邊」打的光，地球看是往前斜射。這就是習題 1-53 光行差的反過程。</p>
+<div class="math-block">$$\boxed{\text{速率仍是 }c\text{，和航線夾 }36.9^\circ\text{ 往前}}$$</div>
+<h4>用 $\gamma$ 的合成式驗算 (c)(d) 的速率</h4>
+<p><strong>① 獨立的算法：</strong> 這是能量轉換給的另一條路，和速度轉換互相獨立。</p>
+<p class="fnote"><b>公式（$\gamma$ 的合成式）：</b>$\gamma_V=\gamma_v\gamma_{u'}\left(1+\dfrac{vu'_x}{c^2}\right)$，其中 $\gamma_v$ 為母船相對地球的 $\gamma$、$\gamma_{u'}$ 為探測器相對母船的 $\gamma$、$\gamma_V$ 為探測器相對地球的 $\gamma$；由能量轉換 $E=\gamma_v(E'+vp'_x)$ 代入 $E'=\gamma_{u'}mc^2$、$p'_x=\gamma_{u'}mu'_x$ 再除以 $mc^2$ 得到；本題 $\gamma_v=\tfrac53$。</p>
+<div class="math-block">$$\gamma_{u'}=\frac1{\sqrt{1-0.81}}=2.294$$</div>
+<p><strong>② (c)：</strong> $u'_x=0$：</p>
+<div class="math-block">$$\gamma_V=\tfrac53(2.294)(1)=3.824$$</div>
+<div class="math-block">$$\frac Vc=\sqrt{1-\frac{1}{3.824^2}}=0.965$$</div>
+<p><strong>③ (d)：</strong> $u'_x=-0.80c$，括號為 $0.36$：</p>
+<div class="math-block">$$\gamma_V=\tfrac53(2.294)(0.36)=1.376$$</div>
+<div class="math-block">$$\frac Vc=\sqrt{1-\frac{1}{1.376^2}}=0.687$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{(c) }0.965c\text{、(d) }0.687c\\ \text{和速度轉換的結果一致}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="cx-04">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>三級發射 0.5c → 0.7c → 0.9c：快速度相加、時鐘與都卜勒因子相乘</h4>
+    <button type="button" class="exam-btn" data-exam="cx-04">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>母船相對地球 $0.50c$；母船向前發射一號探測器，相對母船 $0.70c$；一號再向前發射二號，相對一號 $0.90c$（全部在同一直線上）。(a) 用速度相加公式逐級求一號、二號相對地球的速度，以及二號相對母船的速度。(b) 用快速度 $\phi=\tanh^{-1}\beta$ 一次算出二號相對地球的速度，驗證 (a)，並說明為什麼把發射順序互換（先 $0.90c$ 再 $0.70c$），結果不變。(c) 二號上的鐘走 $1.00\ \text{h}$，地球認為過了多久？(d) 二號朝地球發回頻率 $f_0=10.0\ \text{GHz}$ 的訊號，地球收到的頻率是多少？證明它等於三段的都卜勒因子相乘，也等於 $e^{-\phi}f_0$。(e) 二號的靜止質量 $1.00\ \text{kg}$：地球量到的動能，是一號量到的動能的幾倍？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\beta_1=0.50$（母船對地球）、$\beta_2=0.70$（一號對母船）、$\beta_3=0.90$（二號對一號），全部同向、只有 $x$ 分量；(c) 二號的錶 $\tau=1.00\ \text{h}$ 是固有時間；(d) $f_0=10.0\ \text{GHz}$，二號往後（朝地球）發；(e) $m=1.00\ \text{kg}$，$c=3.00\times10^8\ \text{m/s}$。</p>
+<h4>(a) 逐級速度相加</h4>
+<p><strong>① 一號對地球：</strong> 每一級的速度都是相對上一級給的，所以每次把上一級當 $S'$，用速度相加公式合成一次，一級一級往外算。</p>
+<p class="fnote"><b>公式（相對論速度相加，(1.49)）：</b>$\beta=\dfrac{\beta'+\beta_v}{1+\beta'\beta_v}$，其中 $\beta_v$ 為 $S'$ 相對 $S$ 的速度、$\beta'$ 為物體在 $S'$ 中的速度、$\beta$ 為物體在 $S$ 中的速度（都以 $c$ 為單位）；第一級 $S'$ 是母船，$\beta_v=0.50$、$\beta'=0.70$。</p>
+<p>代入 $0.70c$（相對母船）、$0.50c$（母船）：</p>
+<div class="math-block">$$\beta_{12}=\frac{0.50+0.70}{1+0.35}=\frac{1.20}{1.35}=0.8889$$</div>
+<p><strong>② 二號對地球：</strong> 改以一號為 $S'$，代入 $0.90c$（相對一號）與上一步的 $0.8889c$：</p>
+<div class="math-block">$$\beta_{123}=\frac{0.8889+0.90}{1+0.80}=\frac{1.7889}{1.80}=0.9938$$</div>
+<p><strong>③ 二號對母船：</strong> 以母船為 $S$、一號為 $S'$，代入 $0.90c$、$0.70c$：</p>
+<div class="math-block">$$\beta_{23}=\frac{0.70+0.90}{1+0.63}=\frac{1.60}{1.63}=0.9816$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{一號 }0.889c\text{，二號 }0.9938c\ \left(=\tfrac{161}{162}c\right)\\ \text{二號相對母船 }0.982c\end{gathered}}$$</div>
+<h4>(b) 快速度一次算與順序無關</h4>
+<p><strong>① 三段的快速度：</strong> 同一直線上的速度合成等於快速度相加，所以先把每段的 $\beta$ 換成快速度。</p>
+<p class="fnote"><b>公式（快速度）：</b>$\phi=\tanh^{-1}\beta=\tfrac12\ln\dfrac{1+\beta}{1-\beta}$，其中 $\beta=v/c$；同一直線上的合成滿足 $\phi=\phi_1+\phi_2+\phi_3$；本題 $\beta_1=0.50$、$\beta_2=0.70$、$\beta_3=0.90$。</p>
+<div class="math-block">$$\phi_1=\tfrac12\ln3=0.5493$$</div>
+<div class="math-block">$$\phi_2=\tfrac12\ln\frac{1.7}{0.3}=0.8673$$</div>
+<div class="math-block">$$\phi_3=\tfrac12\ln19=1.4722$$</div>
+<p><strong>② 相加再換回速度：</strong></p>
+<div class="math-block">$$\phi=\phi_1+\phi_2+\phi_3=2.8888$$</div>
+<div class="math-block">$$\beta=\tanh2.8888=0.9938$$</div>
+<p>和 (a) 的 $\beta_{123}$ 一致。</p>
+<p><strong>③ 順序無關的理由：</strong> 加法可交換，$\phi_1+\phi_3+\phi_2=\phi_1+\phi_2+\phi_3$，所以先 $0.90c$ 再 $0.70c$ 結果相同（只限同一直線；不同方向的合成就和順序有關了）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\phi=0.549+0.867+1.472=2.889\text{，}\tanh\phi=0.9938\\ \text{快速度相加可交換，順序無關}\end{gathered}}$$</div>
+<h4>(c) 地球時間</h4>
+<p><strong>① 二號的 $\gamma$：</strong> 因為 $\gamma=\cosh\phi$，直接用 (b) 的 $\phi$。</p>
+<p class="fnote"><b>公式（快速度與 $\gamma$）：</b>$\gamma=\cosh\phi$、$\gamma\beta=\sinh\phi$，其中 $\phi$ 為快速度；本題 $\phi=2.8888$。</p>
+<div class="math-block">$$\gamma=\cosh\phi=\cosh2.8888=9.01$$</div>
+<p>（精確地，$\dfrac{1+\beta}{1-\beta}=3\times\dfrac{17}{3}\times19=323$，$\beta=\dfrac{161}{162}$，$\gamma=\dfrac{162}{\sqrt{323}}=9.014$。）</p>
+<p><strong>② 地球量到的時間：</strong> 二號的 $1.00\ \text{h}$ 是固有時間，地球量到的時間要乘 $\gamma$。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma\tau$，其中 $\tau$ 為運動時鐘自己記錄的固有時間、$t$ 為另一座標系量到的時間；本題 $\tau=1.00\ \text{h}$、$\gamma=9.01$。</p>
+<div class="math-block">$$t=9.01\times1.00\ \text{h}=9.01\ \text{h}$$</div>
+<div class="math-block">$$\boxed{\gamma=9.01\text{，地球過 }9.01\ \text{h}}$$</div>
+<h4>(d) 收到的頻率</h4>
+<p><strong>① 三段都卜勒因子相乘：</strong> 頻率可以一個座標系一個座標系地轉換：同一個往 $-x$ 走的光子，在相鄰兩個座標系間差一個都卜勒因子（發射者遠離）。</p>
+<p class="fnote"><b>公式（相對論都卜勒，光源遠離）：</b>$f=f_0\sqrt{\dfrac{1-\beta}{1+\beta}}$，其中 $f_0$ 為光源靜止系中的頻率、$f$ 為觀察者收到的頻率、$\beta$ 為兩者的相對遠離速率；本題從二號 → 一號 → 母船 → 地球，依序 $\beta_3=0.90$、$\beta_2=0.70$、$\beta_1=0.50$。</p>
+<div class="math-block">$$\frac{f}{f_0}=\sqrt{\frac13}\sqrt{\frac{3}{17}}\sqrt{\frac1{19}}=\sqrt{\frac{1}{323}}=0.0556$$</div>
+<p><strong>② 收到的頻率：</strong> 代入 $f_0=10.0\ \text{GHz}$：</p>
+<div class="math-block">$$f=0.0556\times10.0\ \text{GHz}=0.556\ \text{GHz}$$</div>
+<p><strong>③ 證明等於 $e^{-\phi}$：</strong> 用 $\tanh\phi=\sinh\phi/\cosh\phi$，以及 $\cosh\phi-\sinh\phi=e^{-\phi}$、$\cosh\phi+\sinh\phi=e^{\phi}$：</p>
+<div class="math-block">$$\sqrt{\frac{1-\tanh\phi}{1+\tanh\phi}}=\sqrt{\frac{\cosh\phi-\sinh\phi}{\cosh\phi+\sinh\phi}}=\sqrt{\frac{e^{-\phi}}{e^{\phi}}}=e^{-\phi}$$</div>
+<p>代入 (b) 的 $\phi=2.8888$：$e^{-2.8888}=0.0556$，和 ① 相同。所以三段因子相乘 $=e^{-\phi_1}e^{-\phi_2}e^{-\phi_3}=e^{-\phi}$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}f=0.556\ \text{GHz}\\ =f_0\prod\sqrt{\tfrac{1-\beta_i}{1+\beta_i}}=f_0e^{-\phi}\end{gathered}}$$</div>
+<h4>(e) 兩個座標系的動能比</h4>
+<p><strong>① 兩個觀察者的 $\gamma$：</strong> 動能不是不變量，兩個觀察者要用各自量到的速率：地球用 (c) 的 $\gamma=9.014$，一號用題目的 $0.90c$。</p>
+<div class="math-block">$$\gamma(0.90c)=\frac1{\sqrt{0.19}}=2.294$$</div>
+<p><strong>② 靜能：</strong> 代入 $m=1.00\ \text{kg}$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$mc^2=(1.00\ \text{kg})(3.00\times10^8\ \text{m/s})^2=9.00\times10^{16}\ \text{J}$$</div>
+<p><strong>③ 兩個動能與比值：</strong></p>
+<p class="fnote"><b>公式（相對論動能）：</b>$KE=(\gamma-1)mc^2$，其中 $\gamma$ 為該觀察者量到的勞侖茲因子、$m$ 為靜止質量；本題地球 $\gamma=9.014$、一號 $\gamma=2.294$。</p>
+<div class="math-block">$$KE_{\text{地}}=(9.014-1)(9.00\times10^{16}\ \text{J})=7.21\times10^{17}\ \text{J}$$</div>
+<div class="math-block">$$KE_{\text{一號}}=(2.294-1)(9.00\times10^{16}\ \text{J})=1.16\times10^{17}\ \text{J}$$</div>
+<div class="math-block">$$\frac{KE_{\text{地}}}{KE_{\text{一號}}}=\frac{8.014}{1.294}=6.19$$</div>
+<div class="math-block">$$\boxed{6.19\text{ 倍}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="cx-05">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩艘飛船對向而行：何時相遇、各自的錶、A 看到的距離與訊號</h4>
+    <button type="button" class="exam-btn" data-exam="cx-05">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在地球座標系中，$t=0$ 時飛船 A 從地球（$x=0$）以 $0.80c$ 往 $+x$ 出發；同一時刻（地球座標系中同時），飛船 B 在 $x=14.0$ 光年處以 $0.60c$ 往 $-x$ 飛來。(a) 地球座標系中兩船何時、何地相遇？地球上的人實際「看到」相遇（光傳回地球）是哪一年？兩船的距離以 $1.40c$ 在縮短，違反相對論嗎？(b) A 量到 B 接近的速率？(c) 從各自的出發事件（地球座標系 $t=0$）到相遇，A、B 的錶各走多久？(d) 用勞倫茲轉換求：在 A 的座標系中，A 從地球出發那一刻，B 離 A 多遠？用 (b)(c) 驗證，並解釋為什麼不是 $14.0$ 光年，也不是 $14.0/\gamma_A$。(e) B 從地球座標系 $t=0$ 那一刻起，依自己的錶每年發一個訊號給 A（$t=0$ 那一刻發第 0 個）。A 收到的頻率是 B 發出頻率的幾倍？A 的錶讀多少時收到第 0 個？到相遇為止共收到幾個？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：地球座標系中 A 的世界線 $x_A=0.80t$（ly、y），$\gamma_A=\tfrac53$；B 的世界線 $x_B=14.0-0.60t$，$\gamma_B=1.25$；「同一時刻」只在地球座標系成立；取 $c=1\ \text{ly/y}$。(e) B 的錶 $\tau_B=0,1,2,\dots$ 各發一個訊號。</p>
+<h4>(a) 相遇的時刻、地點與意義</h4>
+<p><strong>① 解 $x_A=x_B$：</strong> 兩條世界線都在地球座標系給定，相遇就是兩者相等。</p>
+<div class="math-block">$$0.80t=14.0-0.60t\ \Longrightarrow\ 1.40t=14.0\ \Longrightarrow\ t=10.0\ \text{y}$$</div>
+<div class="math-block">$$x=8.00\ \text{ly}$$</div>
+<p><strong>② 地球看到的年份：</strong> 「看到」還要加上光從 $x=8.00\ \text{ly}$ 傳回地球的 $8.00\ \text{y}$：</p>
+<div class="math-block">$$10.0+8.00=18.0\ \text{年}$$</div>
+<p><strong>③ $1.40c$ 的意義：</strong> 距離以 $1.40c$ 縮短是「第三者看兩個物體的距離變化率」，不是任何物體或訊號的速度，不違反相對論。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{地球系第 }10.0\text{ 年在 }x=8.00\ \text{ly}\text{ 相遇}\\ \text{地球第 }18.0\text{ 年看到}\\ 1.40c\text{ 不是任何物體的速度，不違反}\end{gathered}}$$</div>
+<h4>(b) A 量到 B 的速率</h4>
+<p><strong>① 以 A 為 $S'$：</strong> 問的是 A 的觀點，令 A 為 $S'$，$v=+0.80c$；B 在地球系 $V_x=-0.60c$。</p>
+<p class="fnote"><b>公式（相對論速度轉換）：</b>$V'_x=\dfrac{V_x-v}{1-vV_x/c^2}$，其中 $v$ 為 $S'$ 相對 $S$ 的速度、$V_x$ 為物體在 $S$ 中的速度、$V'_x$ 為物體在 $S'$ 中的速度；本題 $S$ 為地球、$S'$ 為 A。</p>
+<div class="math-block">$$V'_x=\frac{V_x-v}{1-vV_x/c^2}=\frac{-0.60c-0.80c}{1+0.48}=\frac{-1.40c}{1.48}=-0.946c$$</div>
+<div class="math-block">$$\boxed{0.946c}$$</div>
+<h4>(c) 兩船的錶</h4>
+<p><strong>① 固有時間：</strong> 各自的錶走的是固有時間；地球系中兩船都飛了 (a) 的 $t=10.0\ \text{y}$，各除以自己的 $\gamma$。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$\tau=\dfrac t\gamma=t\sqrt{1-\beta^2}$，其中 $t$ 為地球系經過的時間、$\tau$ 為運動者自己的錶走的固有時間；本題 A 的 $\beta=0.80$、B 的 $\beta=0.60$。</p>
+<div class="math-block">$$\tau_A=10.0\ \text{y}\times\sqrt{1-0.64}=6.00\ \text{y}$$</div>
+<div class="math-block">$$\tau_B=10.0\ \text{y}\times\sqrt{1-0.36}=8.00\ \text{y}$$</div>
+<div class="math-block">$$\boxed{\text{A }6.00\ \text{y}\text{、B }8.00\ \text{y}}$$</div>
+<h4>(d) A 系中 A 出發時 B 的距離</h4>
+<p><strong>① A 系中與出發同時的 B 事件：</strong> 陷阱在這裡：「A 出發那一刻」在 A 系中對應的 B 事件，不是地球系 $t=0$ 時的 B，要用 $t'=0$ 的條件在 B 的世界線上找事件，再轉換位置。A 的出發事件是 $(0,0)$，$t'=0$。</p>
+<p class="fnote"><b>公式（勞侖茲轉換）：</b>$x'=\gamma(x-vt)$、$t'=\gamma\left(t-\dfrac{vx}{c^2}\right)$，其中 $(x,t)$ 為事件在地球系的座標、$(x',t')$ 為在 A 系的座標、$v$ 為 A 相對地球的速度；本題 $v=0.80c$、$\gamma=\tfrac53$、$c=1$。</p>
+<p>與出發同時的事件滿足 $t'=\gamma(t-vx/c^2)=0$，即 $t=0.80x$。代入 B 的世界線 $x=14.0-0.60t$：</p>
+<div class="math-block">$$x=14.0-0.48x\ \Longrightarrow\ x=\frac{14.0}{1.48}=9.459\ \text{ly}$$</div>
+<div class="math-block">$$t=0.80x=7.568\ \text{y}$$</div>
+<p><strong>② 轉換位置：</strong> 代入 $\gamma_A=\tfrac53$、$x=9.459$、$t=7.568$：</p>
+<div class="math-block">$$x'=\tfrac53(9.459-0.80\times7.568)=\tfrac53(3.405)=5.676\ \text{ly}$$</div>
+<p><strong>③ 用 (b)(c) 驗證：</strong> 在 A 系中 B 以 (b) 的 $0.946c$ 接近，經過 (c) 的 $6.00\ \text{y}$ 相遇：</p>
+<div class="math-block">$$0.946c\times6.00\ \text{y}=5.68\ \text{ly}$$</div>
+<p>和 ② 一致。</p>
+<p><strong>④ 為什麼不是 $14.0$ 或 $14.0/\gamma_A$：</strong> 不是 $14.0\ \text{ly}$：A 系的「現在」對應的是 B 在地球系第 $7.57$ 年的位置，B 已經飛近到 $9.46\ \text{ly}$ 處（同時性的相對性）。也不是 $14.0/\gamma_A=8.40\ \text{ly}$：長度收縮適用於地球系中靜止的兩點，而 B 在動；把收縮用在地球系的 $9.459\ \text{ly}$ 那一點上，$9.459/\gamma_A=5.676\ \text{ly}$ 才對。</p>
+<div class="math-block">$$\boxed{\begin{gathered}5.68\ \text{ly}\ (=0.946c\times6.00\ \text{y})\\ \text{A 系的「同時」挑到 B 較晚、較近的事件}\end{gathered}}$$</div>
+<h4>(e) 收到的訊號</h4>
+<p><strong>① 頻率倍數：</strong> 兩船互相接近，用都卜勒因子 $k$；用快速度最簡單：接近速率的 $k$ 等於兩船各自對地球的 $k$ 相乘（快速度相加 ⟹ 因子相乘）。</p>
+<p class="fnote"><b>公式（都卜勒因子）：</b>$k=\sqrt{\dfrac{1+\beta}{1-\beta}}$，其中 $\beta$ 為兩者的接近速率，收到的頻率是發出頻率的 $k$ 倍；本題 A 對地球 $\beta=0.80$、B 對地球 $\beta=0.60$。</p>
+<div class="math-block">$$k_A=\sqrt{\frac{1.8}{0.2}}=3,\qquad k_B=\sqrt{\frac{1.6}{0.4}}=2$$</div>
+<div class="math-block">$$k=k_Ak_B=6$$</div>
+<p><strong>② 第 0 個訊號何時收到：</strong> 在地球座標系中追光。第 0 個在地球系 $(14.0\ \text{ly},\ 0)$ 發出，光往 $-x$：$x=14.0-t$，追到 A（$x=0.80t$）：</p>
+<div class="math-block">$$1.80t=14.0\ \Longrightarrow\ t=7.78\ \text{y}$$</div>
+<div class="math-block">$$\tau_A=0.60\times7.78=4.67\ \text{y}$$</div>
+<p><strong>③ 到相遇共收到幾個：</strong> 之後到相遇（(c) 的 A 錶 $6.00\ \text{y}$）還有 $1.33\ \text{y}$，以每年 6 個的速率：</p>
+<div class="math-block">$$1.33\times6=8$$</div>
+<p>正是 B 的第 1～8 個（B 到相遇共 $8.00\ \text{y}$）。連第 0 個共收到 9 個。</p>
+<div class="math-block">$$\boxed{\begin{gathered}6\text{ 倍；A 在自己的 }4.67\ \text{y}\text{ 收到第 0 個}\\ \text{到相遇共收到 9 個（第 0～8 個）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="cx-energy">C　能量、火箭與粒子</h3>
+
+<div class="problem" data-kind="self" id="cx-06">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>把 1000 噸的飛船加速到 0.8c：要多少能量、光子火箭要帶多少燃料</h4>
+    <button type="button" class="exam-btn" data-exam="cx-06">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一艘最後（酬載）質量 $M_f=1.00\times10^6\ \text{kg}$ 的飛船，要從靜止加速到 $0.80c$。用 $c=3.00\times10^8\ \text{m/s}$。(a) 最少要給它多少動能？和古典的 $\tfrac12M_fv^2$ 比較。全世界一年使用的能源約 $6\times10^{20}\ \text{J}$，這相當於幾年？(b) 若用「光子火箭」：把燃料的質量全部轉成光、向後射出來推進。只用能量守恆和動量守恆，證明出發時的總質量 $M_i$ 滿足 $\dfrac{M_i}{M_f}=\sqrt{\dfrac{1+\beta}{1-\beta}}$，並求 $M_i$、射出的光帶走的能量，以及「效率」（飛船得到的動能 ÷ 燃料消耗的質能）。(c) 若要在 $10.0$ 光年外的恆星停下、再回地球停下（加速、減速、加速、減速，每段都是 $0\leftrightarrow0.80c$），出發質量是酬載的幾倍？若改走 cx-02 的 1g 航程呢？(d) 對照：只算 (b) 的單段 $0\to0.80c$，化學火箭噴氣速率 $u=4.5\ \text{km/s}$，相對論火箭方程 $\dfrac{M_i}{M_f}=\left(\dfrac{1+\beta}{1-\beta}\right)^{c/2u}$ 給多大的質量比（只要數量級）？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：酬載質量 $M_f=1.00\times10^6\ \text{kg}$，速度 $0\to0.80c$，$\gamma=\tfrac53$，$c=3.00\times10^8\ \text{m/s}$；世界年能源約 $6\times10^{20}\ \text{J}$；光子火箭射出的光能量 $E_\gamma$、動量 $-E_\gamma/c$（向後）；(c) 每段 $0\leftrightarrow0.80c$，cx-02 每段快速度變化 $2.504$；(d) $u=4.5\ \text{km/s}$。</p>
+<h4>(a) 需要的動能</h4>
+<p><strong>① 相對論動能：</strong> 從靜止加速，給的能量至少等於動能（功能定理），而 $0.80c$ 是相對論速率，所以用 $(\gamma-1)M_fc^2$。</p>
+<p class="fnote"><b>公式（相對論動能）：</b>$KE=(\gamma-1)mc^2$，其中 $m$ 為靜止質量、$\gamma=1/\sqrt{1-\beta^2}$；本題 $m=M_f$、$\gamma=\tfrac53$。</p>
+<p>代入 $\gamma=\tfrac53$、$M_f=1.00\times10^6\ \text{kg}$、$c^2=9.00\times10^{16}\ \text{m}^2/\text{s}^2$：</p>
+<div class="math-block">$$\begin{aligned}KE&amp;=(\gamma-1)M_fc^2\\&amp;=\tfrac23(1.00\times10^6)(9.00\times10^{16})\ \text{J}=6.00\times10^{22}\ \text{J}\end{aligned}$$</div>
+<p><strong>② 古典動能：</strong> 代入 $v=2.40\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\tfrac12M_fv^2=\tfrac12(1.00\times10^6)(2.40\times10^8)^2\ \text{J}=2.88\times10^{22}\ \text{J}$$</div>
+<p>相對論值是古典的 $2.08$ 倍。</p>
+<p><strong>③ 相當幾年能源：</strong></p>
+<div class="math-block">$$\frac{6.00\times10^{22}}{6\times10^{20}}=100\ \text{年}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}KE=6.00\times10^{22}\ \text{J}\\ \text{是古典 }2.88\times10^{22}\ \text{J}\text{ 的 2.08 倍}\\ \text{約全世界 100 年的能源}\end{gathered}}$$</div>
+<h4>(b) 光子火箭</h4>
+<p><strong>① 兩條守恆律：</strong> 飛船＋燃料＋射出的光是孤立系統，只比較「出發前」和「全部燒完後」就夠了，不必管中間怎麼燒；燃料的靜止質量不守恆，全部變成光的能量。出發前 $E=M_ic^2$、$p=0$；燒完後飛船 $\gamma M_fc^2$、$\gamma M_fv$，光 $E_\gamma$、$-E_\gamma/c$。</p>
+<p class="fnote"><b>公式（相對論能量、動量守恆）：</b>$E=\gamma mc^2$、$p=\gamma mv$，光的動量 $p=E/c$；孤立系統的總能量與總動量守恆；本題比較出發前與燒完後。</p>
+<div class="math-block">$$\text{能量：}\ M_ic^2=\gamma M_fc^2+E_\gamma$$</div>
+<div class="math-block">$$\text{動量：}\ 0=\gamma M_fv-\frac{E_\gamma}{c}\ \Longrightarrow\ E_\gamma=\gamma M_fvc$$</div>
+<p><strong>② 消去 $E_\gamma$ 得質量比：</strong> 把上一步的 $E_\gamma=\gamma M_fvc$ 代回能量式：</p>
+<div class="math-block">$$M_ic^2=\gamma M_fc^2(1+\beta)$$</div>
+<div class="math-block">$$\frac{M_i}{M_f}=\gamma(1+\beta)=\frac{1+\beta}{\sqrt{(1-\beta)(1+\beta)}}=\sqrt{\frac{1+\beta}{1-\beta}}$$</div>
+<p>代入 $\beta=0.80$：</p>
+<div class="math-block">$$\frac{M_i}{M_f}=\sqrt{\frac{1.8}{0.2}}=3$$</div>
+<div class="math-block">$$M_i=3.00\times10^6\ \text{kg}$$</div>
+<p><strong>③ 光帶走的能量：</strong> 代入 $\gamma\beta=\tfrac53(0.80)=\tfrac43$：</p>
+<div class="math-block">$$E_\gamma=\gamma\beta M_fc^2=\tfrac43(9.00\times10^{22}\ \text{J})=1.20\times10^{23}\ \text{J}$$</div>
+<p><strong>④ 效率：</strong> 燃料消耗的質能是 $(M_i-M_f)c^2$：</p>
+<div class="math-block">$$(M_i-M_f)c^2=(2.00\times10^6)(9.00\times10^{16})\ \text{J}=1.80\times10^{23}\ \text{J}$$</div>
+<div class="math-block">$$\frac{KE}{(M_i-M_f)c^2}=\frac{6.00\times10^{22}}{1.80\times10^{23}}=\frac13$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\frac{M_i}{M_f}=\gamma(1+\beta)=\sqrt{\frac{1+\beta}{1-\beta}}=3\text{，}M_i=3.00\times10^6\ \text{kg}\\ E_\gamma=1.20\times10^{23}\ \text{J}\text{，效率 }\tfrac13\end{gathered}}$$</div>
+<h4>(c) 往返四段</h4>
+<p><strong>① 減速段的質量比：</strong> 前一段的「酬載」包含後面各段要用的燃料，所以各段的質量比相乘；先求減速段。在目的地座標系中：開始 $M_a$ 以 $0.80c$ 運動、最後 $M_b$ 靜止，光往前射：</p>
+<div class="math-block">$$\gamma M_ac^2=M_bc^2+E_\gamma,\qquad \gamma M_av=\frac{E_\gamma}{c}$$</div>
+<p>消去 $E_\gamma$：</p>
+<div class="math-block">$$\frac{M_a}{M_b}=\frac{1}{\gamma(1-\beta)}=\sqrt{\frac{1+\beta}{1-\beta}}=3$$</div>
+<p>和加速段相同。</p>
+<p><strong>② 四段相乘：</strong></p>
+<div class="math-block">$$\frac{M_i}{M_f}=3^4=81$$</div>
+<div class="math-block">$$M_i=8.1\times10^7\ \text{kg}$$</div>
+<p>中間滑行多遠（10 光年）不影響燃料。</p>
+<p><strong>③ 改走 1g 航程：</strong> (b) 的比值 $\sqrt{(1+\beta)/(1-\beta)}=e^{\phi}$（cx-04），所以光子火箭的質量比只看快速度的變化量 $e^{|\Delta\phi|}$；cx-02 每段 $\phi_m=2.504$：</p>
+<div class="math-block">$$\frac{M_i}{M_f}=e^{4\phi_m}=e^{10.02}=2.2\times10^4$$</div>
+<div class="math-block">$$\boxed{81\text{ 倍；1g 航程約 }2.2\times10^4\text{ 倍}}$$</div>
+<h4>(d) 化學火箭（單段 $0\to0.80c$）</h4>
+<p><strong>① 代入相對論火箭方程：</strong> 題目說只算 (b) 那一段，代入 $\dfrac{1+\beta}{1-\beta}=9$、$\dfrac{c}{2u}=\dfrac{3.00\times10^8}{2(4.5\times10^3)}=3.33\times10^4$：</p>
+<div class="math-block">$$\frac{M_i}{M_f}=9^{3.33\times10^4}=10^{(3.33\times10^4)(0.954)}=10^{3.2\times10^4}$$</div>
+<p><strong>② 對照：</strong> 古典的齊奧爾科夫斯基 $e^{v/u}=e^{5.33\times10^4}=10^{2.3\times10^4}$ 也一樣荒謬。可觀測宇宙的原子總數約 $10^{80}$，化學火箭根本不可能接近光速。若要 (c) 的往返四段，還要再取 4 次方：$10^{4\times3.2\times10^4}\sim10^{1.3\times10^5}$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{單段約 }10^{32000}\text{ 倍}\\ \text{（往返四段約 }10^{1.3\times10^5}\text{），不可能}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="cx-07">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>光子打質子產生 π⁰，π⁰ 再衰變成兩個光子：門檻、產物、衰變光子的能量與夾角</h4>
+    <button type="button" class="exam-btn" data-exam="cx-07">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>高能光子撞上靜止的質子，產生 $\gamma+p\to p+\pi^0$（$m_pc^2=938.27\ \text{MeV}$、$m_\pi c^2=134.98\ \text{MeV}$）。(a) 用不變量 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 求光子的門檻能量。(b) 剛好在門檻時，產物以同一速度前進：求這個速度、$\pi^0$ 的能量與動量、質子的動能。(c) 接著 $\pi^0$ 衰變成兩個光子（$\pi^0\to\gamma\gamma$）。在 $\pi^0$ 的靜止座標系中，兩光子各帶多少能量？在實驗室中，衰變光子的能量最大、最小各是多少？(d) 實驗室中兩個衰變光子的夾角最小是多少？（提示：兩光子系統的質量是 $m_\pi$，寫出 $m_\pi^2c^4=2E_1E_2(1-\cos\theta)$。）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：入射光子能量 $E_\gamma$、動量 $E_\gamma/c$；靶質子靜止，$E=m_pc^2$、$p=0$；$m_pc^2=938.27\ \text{MeV}$、$m_\pi c^2=134.98\ \text{MeV}$；產物總質量 $M=m_p+m_\pi$。</p>
+<h4>(a) 門檻能量</h4>
+<p><strong>① 不變量兩邊相等：</strong> 門檻條件在質心系最簡單（產物全靜止，總能量 $(m_p+m_\pi)c^2$），已知量卻在實驗室，所以用兩邊都一樣的不變量接起來。</p>
+<p class="fnote"><b>公式（能量動量不變量）：</b>$E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 在任何座標系都相同，其中 $E_{\text{tot}}$、$p_{\text{tot}}$ 為系統總能量與總動量；本題實驗室 $E_{\text{tot}}=E_\gamma+m_pc^2$、$p_{\text{tot}}c=E_\gamma$，門檻時質心系 $E_{\text{tot}}=(m_p+m_\pi)c^2$、$p=0$。</p>
+<div class="math-block">$$(E_\gamma+m_pc^2)^2-E_\gamma^2=(m_p+m_\pi)^2c^4$$</div>
+<p><strong>② 解出門檻能量：</strong> 左邊 $E_\gamma^2$ 消掉，剩 $(m_pc^2)^2+2E_\gamma m_pc^2$：</p>
+<div class="math-block">$$E_{\text{th}}=\frac{(m_p+m_\pi)^2-m_p^2}{2m_p}c^2=\frac{m_\pi(2m_p+m_\pi)}{2m_p}c^2$$</div>
+<p><strong>③ 數值：</strong> 代入 $m_\pi c^2=134.98\ \text{MeV}$、$m_pc^2=938.27\ \text{MeV}$：</p>
+<div class="math-block">$$E_{\text{th}}=\frac{(134.98)(2011.52)}{1876.54}\ \text{MeV}=144.7\ \text{MeV}$$</div>
+<div class="math-block">$$\boxed{E_{\text{th}}=\frac{m_\pi(2m_p+m_\pi)}{2m_p}c^2=144.7\ \text{MeV}}$$</div>
+<h4>(b) 門檻時的產物</h4>
+<p><strong>① 產物的共同速度：</strong> 門檻時產物黏在一起像一個質量 $M$ 的物體，速度由總動量與總能量決定。</p>
+<p class="fnote"><b>公式（由能量、動量求速度）：</b>$\beta=\dfrac{pc}{E}$、$\gamma=\dfrac{E}{Mc^2}$，其中 $E$、$p$ 為物體的能量與動量、$M$ 為其質量；本題 $E_{\text{tot}}=144.69+938.27=1082.96\ \text{MeV}$、$p_{\text{tot}}c=144.69\ \text{MeV}$（(a) 的光子能量）、$Mc^2=1073.25\ \text{MeV}$。</p>
+<div class="math-block">$$\beta=\frac{p_{\text{tot}}c}{E_{\text{tot}}}=\frac{144.69}{1082.96}=0.1336$$</div>
+<div class="math-block">$$\gamma=\frac{E_{\text{tot}}}{Mc^2}=\frac{1082.96}{1073.25}=1.00905$$</div>
+<p><strong>② 分給 $\pi^0$ 和質子：</strong> 兩個產物都以這個 $\gamma$ 前進，代入 $\gamma=1.00905$、$\gamma\beta=0.13482$：</p>
+<div class="math-block">$$E_\pi=\gamma m_\pi c^2=136.20\ \text{MeV}$$</div>
+<div class="math-block">$$p_\pi c=\gamma\beta\,m_\pi c^2=18.20\ \text{MeV}$$</div>
+<div class="math-block">$$KE_p=(\gamma-1)m_pc^2=(0.00905)(938.27)\ \text{MeV}=8.49\ \text{MeV}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{產物速度 }0.134c\text{；}\pi^0\text{：}E=136.2\ \text{MeV}\text{、}p=18.2\ \text{MeV}/c\\ \text{質子動能 }8.49\ \text{MeV}\end{gathered}}$$</div>
+<h4>(c) 衰變光子的能量</h4>
+<p><strong>① $\pi^0$ 靜止系：</strong> 兩體衰變，兩光子反向、能量相等：</p>
+<div class="math-block">$$E^*=\tfrac12m_\pi c^2=67.49\ \text{MeV}$$</div>
+<p><strong>② 轉回實驗室：</strong> 沿前進方向射出的最大、往後的最小。</p>
+<p class="fnote"><b>公式（能量的勞侖茲轉換）：</b>$E=\gamma(E^*+vp^*_x)$，其中 $E^*$、$p^*_x$ 為 $\pi^0$ 靜止系中光子的能量與 $x$ 動量、$v$ 為 $\pi^0$ 在實驗室的速度、$E$ 為實驗室中的能量；本題往前 $p^*_xc=+E^*$、往後 $-E^*$。</p>
+<div class="math-block">$$E=\gamma E^*(1\pm\beta)$$</div>
+<p>代入 (b) 的 $\gamma=1.00905$、$\beta=0.1336$，以及 $E^*=67.49\ \text{MeV}$：</p>
+<div class="math-block">$$E_{\max}=1.00905\times67.49\times1.1336=77.20\ \text{MeV}$$</div>
+<div class="math-block">$$E_{\min}=\gamma E^*(1-\beta)=59.00\ \text{MeV}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{靜止系各 }67.5\ \text{MeV}\\ \text{實驗室最大 }77.2\ \text{MeV}\text{、最小 }59.0\ \text{MeV}\end{gathered}}$$</div>
+<h4>(d) 最小夾角</h4>
+<p><strong>① 兩光子系統的質量：</strong> 兩光子系統的質量就是 $m_\pi$（不變量），所以寫出系統質量，固定 $E_1+E_2$ 求夾角的極小值。</p>
+<div class="math-block">$$m_\pi^2c^4=(E_1+E_2)^2-|\vec p_1+\vec p_2|^2c^2=2E_1E_2(1-\cos\theta)=4E_1E_2\sin^2\tfrac\theta2$$</div>
+<p><strong>② 用算幾不等式：</strong> $E_1+E_2=E_\pi$ 固定時 $E_1E_2\le(E_\pi/2)^2$，所以</p>
+<div class="math-block">$$\sin^2\frac\theta2=\frac{m_\pi^2c^4}{4E_1E_2}\ge\frac{m_\pi^2c^4}{E_\pi^2}\ \Longrightarrow\ \sin\frac\theta2\ge\frac{m_\pi c^2}{E_\pi}$$</div>
+<p><strong>③ 數值：</strong> 代入 $m_\pi c^2=134.98\ \text{MeV}$、(b) 的 $E_\pi=136.20\ \text{MeV}$：</p>
+<div class="math-block">$$\sin\frac\theta2\ge0.9910\ \Longrightarrow\ \frac\theta2\ge82.3^\circ$$</div>
+<div class="math-block">$$\theta_{\min}=164.6^\circ$$</div>
+<p>發生在兩光子各 $68.10\ \text{MeV}$ 的對稱衰變。$\pi^0$ 很慢，兩光子幾乎還是背對背。</p>
+<div class="math-block">$$\boxed{\theta_{\min}=164.6^\circ}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="cx-combo">D　三種效應一起對帳</h3>
+
+<div class="problem" data-kind="self" id="cx-08">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>緲子穿過 12 km 大氣層：時間膨脹、長度收縮、同時性三方對帳</h4>
+    <button type="button" class="exam-btn" data-exam="cx-08">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>宇宙射線在高度 $h=12.0\ \text{km}$ 處產生一個緲子，以 $\gamma=10.0$（$v=0.99499c$）垂直往下飛；緲子靜止時的平均壽命 $\tau_0=2.197\ \mu\text{s}$。在地面座標系中，$12.0\ \text{km}$ 高處（假想的高塔頂）和地面各有一個時鐘，兩鐘已在地面座標系中對好；緲子經過塔頂時塔頂鐘讀 $0$。用 $c=3.00\times10^8\ \text{m/s}$。(a) 地面座標系：緲子飛到地面要多久？那時地面鐘讀多少？緲子自己的錶走了多久？能活到地面的比例是多少？(b) 緲子座標系：大氣層多厚？地面迎面飛來要多久？和 (a) 的緲子錶讀數一致嗎？(c) 在緲子座標系中，地面的兩個鐘都在運動、慢了 $\gamma$ 倍：緲子飛行期間地面鐘只走了多少？但緲子到地面時地面鐘明明讀 (a) 的數字——用同時性的相對性說明：緲子經過塔頂的那一刻，在緲子座標系中地面鐘讀多少？三個數字怎麼對上？(d) 若不考慮相對論，存活比例是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：高度 $h=12.0\ \text{km}$（地面系的固有長度），緲子 $\gamma=10.0$、$v=0.99499c=2.985\times10^8\ \text{m/s}$；固有平均壽命 $\tau_0=2.197\ \mu\text{s}$；塔頂鐘與地面鐘在地面系同步，緲子經過塔頂時塔頂鐘讀 $0$；$c=3.00\times10^8\ \text{m/s}$。</p>
+<h4>(a) 地面座標系</h4>
+<p><strong>① 飛行時間與地面鐘讀數：</strong> 地面系中大氣厚 $h$，緲子等速飛下；代入 $h=1.20\times10^4\ \text{m}$、$v=2.985\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$t=\frac hv=\frac{1.20\times10^4\ \text{m}}{2.985\times10^8\ \text{m/s}}=4.020\times10^{-5}\ \text{s}=40.20\ \mu\text{s}$$</div>
+<p>地面鐘和塔頂鐘同步、塔頂鐘從 0 開始，所以緲子到達時地面鐘讀 $40.20\ \mu\text{s}$。</p>
+<p><strong>② 緲子的錶：</strong> 地面系用時間膨脹，緲子的錶走固有時間。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$\tau=\dfrac t\gamma$，其中 $t$ 為地面系經過的時間、$\tau$ 為緲子自己的固有時間；本題 $t=40.20\ \mu\text{s}$、$\gamma=10.0$。</p>
+<div class="math-block">$$\tau=\frac t\gamma=\frac{40.20\ \mu\text{s}}{10.0}=4.020\ \mu\text{s}$$</div>
+<p><strong>③ 存活比例：</strong> 用緲子自己的時間做指數衰變。</p>
+<p class="fnote"><b>公式（指數衰變）：</b>$\dfrac{N}{N_0}=e^{-\tau/\tau_0}$，其中 $\tau$ 為緲子自己經過的時間、$\tau_0$ 為固有平均壽命；本題 $\tau=4.020\ \mu\text{s}$、$\tau_0=2.197\ \mu\text{s}$。</p>
+<div class="math-block">$$\frac{N}{N_0}=e^{-\tau/\tau_0}=e^{-4.020/2.197}=e^{-1.830}=0.160$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{飛行 }40.20\ \mu\text{s}\text{，地面鐘讀 }40.20\ \mu\text{s}\\ \text{緲子錶 }4.020\ \mu\text{s}\text{，存活 }16.0\%\end{gathered}}$$</div>
+<h4>(b) 緲子座標系</h4>
+<p><strong>① 大氣層多厚：</strong> 緲子系中大氣層（塔頂到地面）以 $v$ 往上運動，用長度收縮。</p>
+<p class="fnote"><b>公式（長度收縮）：</b>$L=\dfrac{L_0}{\gamma}$，其中 $L_0$ 為物體靜止系中的固有長度、$L$ 為相對運動的座標系量到的長度；本題 $L_0=h=12.0\ \text{km}$、$\gamma=10.0$。</p>
+<div class="math-block">$$L=\frac h\gamma=\frac{12.0\ \text{km}}{10.0}=1.20\ \text{km}$$</div>
+<p><strong>② 地面迎面飛來的時間：</strong> 地面以 $v$ 迎面飛來，代入 $L=1.20\times10^3\ \text{m}$、$v=2.985\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\tau=\frac Lv=\frac{1.20\times10^3}{2.985\times10^8}\ \text{s}=4.020\ \mu\text{s}$$</div>
+<p>和 (a) 的緲子錶讀數相同：「緲子到地面時自己的錶讀多少」是同一個事件上的讀數，所有人都同意。</p>
+<div class="math-block">$$\boxed{\text{大氣厚 }1.20\ \text{km}\text{，}4.020\ \mu\text{s}\text{，與 (a) 一致}}$$</div>
+<h4>(c) 地面鐘在緲子系中的對帳</h4>
+<p><strong>① 飛行期間地面鐘走了多少：</strong> 緲子系中地面鐘在動，慢 $\gamma$ 倍；代入 (b) 的 $\tau=4.020\ \mu\text{s}$：</p>
+<div class="math-block">$$\Delta t_{\text{地面鐘}}=\frac{\tau}{\gamma}=\frac{4.020\ \mu\text{s}}{10.0}=0.402\ \mu\text{s}$$</div>
+<p><strong>② 起點時地面鐘已經讀多少：</strong> 地面系「對好」的兩個鐘在緲子系中不同步，所以要用勞侖茲轉換，找和「緲子經過塔頂」同時（緲子系）的地面鐘事件。取 $z$ 軸向下、塔頂 $z=0$、地面 $z=h$；緲子經過塔頂是事件 $(z,t)=(0,0)$，緲子系中 $t'=0$。</p>
+<p class="fnote"><b>公式（勞侖茲轉換的時間）：</b>$t'=\gamma\left(t-\dfrac{vz}{c^2}\right)$，其中 $(z,t)$ 為事件在地面系的座標、$t'$ 為緲子系的時刻、$v$ 為緲子相對地面的速度；本題地面鐘在 $z=h$。</p>
+<div class="math-block">$$t'=\gamma\left(t-\frac{vh}{c^2}\right)=0\ \Longrightarrow\ t=\frac{vh}{c^2}$$</div>
+<p>代入 $v=0.99499c$、$h=1.20\times10^4\ \text{m}$：</p>
+<div class="math-block">$$t=\frac{0.99499\times1.20\times10^4\ \text{m}}{3.00\times10^8\ \text{m/s}}=39.80\ \mu\text{s}$$</div>
+<p>在緲子系中，緲子出發時地面鐘已經讀 $39.80\ \mu\text{s}$（地面系「對好」的鐘，在緲子系看是後方的鐘超前 $hv/c^2$）。</p>
+<p><strong>③ 三個數字對上：</strong> 起始讀數加上飛行期間走的：</p>
+<div class="math-block">$$39.80\ \mu\text{s}+0.402\ \mu\text{s}=40.20\ \mu\text{s}$$</div>
+<p>正是 (a) 中地面鐘在到達時的讀數。地面系用「時間膨脹」、緲子系用「長度收縮＋地面鐘慢＋鐘不同步」，三個效應合起來兩邊完全一致。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{地面鐘只走 }0.402\ \mu\text{s}\text{，起點時已讀 }39.80\ \mu\text{s}\\ 39.80+0.40=40.20\ \mu\text{s}\end{gathered}}$$</div>
+<h4>(d) 不考慮相對論</h4>
+<p><strong>① 用地面時間當年齡：</strong> 把 (a) 的地面時間 $40.20\ \mu\text{s}$ 當作緲子的年齡：</p>
+<div class="math-block">$$e^{-40.20/2.197}=e^{-18.30}=1.1\times10^{-8}$$</div>
+<div class="math-block">$$\boxed{\frac{N}{N_0}\approx1.1\times10^{-8}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="cx-more">E　再進一步</h3>
+
+<div class="problem" data-kind="self" id="cx-09">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>雷達追蹤遠離的探測器：只用兩個時刻求出距離、速率與探測器的錶</h4>
+    <button type="button" class="exam-btn" data-exam="cx-09">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>探測器在地球時間 $t=0$ 從地球出發（探測器的錶同時歸零），之後等速遠離。地球在 $t_1=1.00\ \text{h}$ 發出一個雷達脈衝，被探測器反射，在 $t_2=9.00\ \text{h}$ 收到回波。(a) 只用光速不變，求地球座標系中反射發生的時刻、探測器當時的距離和速率。(b) 反射那一刻探測器上的錶讀多少？(c) 用都卜勒（Bondi）因子 $k$：探測器在自己的時間 $kt_1$ 收到脈衝，地球在 $k(kt_1)$ 收到回波。由 $t_2/t_1$ 求 $k$，再求速率，驗證 (a)(b)。(d) 雷達頻率 $f_0=10.0\ \text{GHz}$，回波頻率是多少？(e) 在探測器的座標系中，反射那一刻「地球上現在幾點」？那時地球離探測器多遠？在探測器座標系中重算脈衝從地球發出、追上探測器的過程，確認探測器在自己的 $3.00\ \text{h}$ 收到脈衝。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：出發事件 $(x,t)=(0,0)$，探測器錶 $\tau=0$，之後等速遠離（速率未知）；地球 $t_1=1.00\ \text{h}$ 發出脈衝、$t_2=9.00\ \text{h}$ 收到回波；$f_0=10.0\ \text{GHz}$；距離用光時，$c=1$。</p>
+<h4>(a) 反射的時刻、距離與速率</h4>
+<p><strong>① 反射的時刻與距離：</strong> 光去、回的速率都是 $c$、走的距離相同，所以反射發生在兩個時刻的正中間，距離是來回時間的一半乘 $c$（附錄 I 定義遠處事件時刻的方法）。代入 $t_1=1.00\ \text{h}$、$t_2=9.00\ \text{h}$：</p>
+<div class="math-block">$$t_R=\frac{t_1+t_2}{2}=5.00\ \text{h}$$</div>
+<div class="math-block">$$x_R=\frac{c(t_2-t_1)}{2}=4.00\ \text{光時}$$</div>
+<p><strong>② 速率：</strong> 從 $(0,0)$ 等速到 $(x_R,t_R)$：</p>
+<div class="math-block">$$v=\frac{x_R}{t_R}=\frac{4.00\ \text{光時}}{5.00\ \text{h}}=0.800c$$</div>
+<div class="math-block">$$\boxed{t_R=5.00\ \text{h}\text{，}x_R=4.00\text{ 光時，}v=0.800c}$$</div>
+<h4>(b) 探測器的錶</h4>
+<p><strong>① 固有時間：</strong> $\gamma=1/\sqrt{1-0.64}=\tfrac53$，探測器的錶走固有時間。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$\tau=\dfrac t\gamma$，其中 $t$ 為地球系經過的時間、$\tau$ 為探測器自己的固有時間；本題 $t=t_R=5.00\ \text{h}$、$\gamma=\tfrac53$。</p>
+<div class="math-block">$$\tau_R=\frac{t_R}{\gamma}=5.00\ \text{h}\times0.600=3.00\ \text{h}$$</div>
+<div class="math-block">$$\boxed{\tau_R=3.00\ \text{h}}$$</div>
+<h4>(c) 用 $k$ 驗證</h4>
+<p><strong>① 由 $t_2/t_1$ 求 $k$：</strong> 探測器和地球從同一事件分開，所以都卜勒因子可以直接作用在時刻上，完全不用 $\gamma$：探測器收到脈衝 $\tau_R=kt_1$，地球收到回波 $t_2=k\tau_R=k^2t_1$。</p>
+<div class="math-block">$$k=\sqrt{\frac{t_2}{t_1}}=\sqrt{\frac{9.00}{1.00}}=3$$</div>
+<div class="math-block">$$\tau_R=kt_1=3.00\ \text{h}$$</div>
+<p>和 (b) 一致。</p>
+<p><strong>② 求速率：</strong> 由 $k$ 反解 $\beta$。</p>
+<p class="fnote"><b>公式（都卜勒因子）：</b>$k^2=\dfrac{1+\beta}{1-\beta}$，其中 $\beta$ 為兩者的相對遠離速率、$k$ 為收發時間間隔的比；本題 $k=3$。</p>
+<div class="math-block">$$\beta=\frac{k^2-1}{k^2+1}=\frac{9-1}{9+1}=0.800$$</div>
+<p>和 (a) 一致。</p>
+<div class="math-block">$$\boxed{k=3\text{，}\beta=\frac{k^2-1}{k^2+1}=0.800\text{，}\tau=kt_1=3.00\ \text{h}}$$</div>
+<h4>(d) 回波頻率</h4>
+<p><strong>① 兩次都卜勒：</strong> 探測器收到 $f_0/k$，反射（在它自己的座標系中頻率不變）後地球再收到 $1/k$ 倍。代入 $f_0=10.0\ \text{GHz}$、(c) 的 $k=3$：</p>
+<div class="math-block">$$f=\frac{f_0}{k^2}=\frac{10.0\ \text{GHz}}{9}=1.11\ \text{GHz}$$</div>
+<div class="math-block">$$\boxed{f=1.11\ \text{GHz}}$$</div>
+<h4>(e) 探測器座標系</h4>
+<p><strong>① 反射時「地球現在」：</strong> 探測器系的「現在」和地球系不同，所以在探測器系中把地球當成以 $0.80c$ 遠離、慢 $\gamma$ 倍的鐘。反射時探測器錶是 (b) 的 $3.00\ \text{h}$：</p>
+<div class="math-block">$$t_{E,\text{現在}}=\frac{3.00\ \text{h}}{\gamma}=1.80\ \text{h}$$</div>
+<p><strong>② 當時的距離：</strong></p>
+<div class="math-block">$$d=0.80c\times3.00\ \text{h}=2.40\ \text{光時}$$</div>
+<p>地球系說反射時地球是 $5.00\ \text{h}$，探測器系說是 $1.80\ \text{h}$：同時性的相對性。</p>
+<p><strong>③ 在探測器系追脈衝：</strong> 脈衝在地球鐘 $1.00\ \text{h}$ 時發出，探測器系中那是 $t'=\gamma(1.00\ \text{h})=1.667\ \text{h}$，地球當時在 $0.80\times1.667=1.333$ 光時外：</p>
+<div class="math-block">$$t'_{\text{收到}}=1.667\ \text{h}+\frac{1.333\ \text{光時}}{c}=3.00\ \text{h}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{反射時地球鐘讀 }1.80\ \text{h}\text{、地球在 }2.40\text{ 光時外}\\ \text{脈衝在 }1.667\ \text{h}\text{ 從 }1.333\text{ 光時外發出，}3.00\ \text{h}\text{ 追到}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="cx-10">
+  <header>
+    <div class="meta"><span class="chip">自編綜合題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>相對論彈性碰撞：兩顆質子散開的夾角為什麼小於 90°</h4>
+    <button type="button" class="exam-btn" data-exam="cx-10">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>動能 $K_1=2.00\ \text{GeV}$ 的質子打中靜止的質子（$m_pc^2=0.938\ \text{GeV}$），發生彈性碰撞（沒有產生新粒子），兩顆質子散開，動能分別為 $K_3$、$K_4$，動量大小 $p_3$、$p_4$，兩者夾角 $\theta$。(a) 由能量與動量守恆證明 $\cos\theta=\dfrac{K_3K_4}{p_3p_4c^2}$，所以相對論的夾角一定小於 $90^\circ$；並說明古典極限為什麼回到 $90^\circ$。(b) 若兩顆質子對稱散開（動能相同），求每顆的動能、動量、兩者的夾角，以及各自和入射方向的夾角。(c) 用質心座標系驗證 (b)：質心系中對稱散射是兩顆質子各轉 $90^\circ$，把它轉回實驗室，證明每顆和入射方向的夾角滿足 $\tan\alpha=1/\gamma_{\text{cm}}$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：入射質子 $K_1=2.00\ \text{GeV}$，$E_1=K_1+mc^2=2.938\ \text{GeV}$；靶質子靜止（$E=mc^2$、$p=0$）；$mc^2=0.938\ \text{GeV}$；彈性碰撞，產物仍是兩顆質子，動能 $K_3$、$K_4$，動量 $p_3$、$p_4$，夾角 $\theta$。</p>
+<h4>(a) 證明 $\cos\theta=\dfrac{K_3K_4}{p_3p_4c^2}$</h4>
+<p><strong>① 守恆律換成動能：</strong> 夾角只出現在動量的向量和裡，所以把動量守恆兩邊平方（餘弦定理），再把動量全換成動能。以下取 $c=1$。能量守恆中四個都是質子、靜能抵消：</p>
+<div class="math-block">$$K_1+2m=K_3+K_4+2m\ \Longrightarrow\ K_1=K_3+K_4$$</div>
+<p>動量（向量）$\vec p_1=\vec p_3+\vec p_4$，平方：</p>
+<div class="math-block">$$p_1^2=p_3^2+p_4^2+2p_3p_4\cos\theta$$</div>
+<p class="fnote"><b>公式（相對論能量動量關係）：</b>$E^2=p^2c^2+m^2c^4$、$E=K+mc^2$，其中 $E$ 為總能量、$K$ 為動能、$p$ 為動量、$m$ 為靜止質量；本題 $c=1$，每顆質子 $p^2=E^2-m^2=(K+m)^2-m^2=K^2+2Km$。</p>
+<p>代入：</p>
+<div class="math-block">$$K_1^2+2K_1m=K_3^2+2K_3m+K_4^2+2K_4m+2p_3p_4\cos\theta$$</div>
+<p><strong>② 化簡：</strong> 代入 $K_1=K_3+K_4$：左邊 $=K_3^2+2K_3K_4+K_4^2+2m(K_3+K_4)$，和右邊相減，所有含 $m$ 的項抵消：</p>
+<div class="math-block">$$2K_3K_4=2p_3p_4\cos\theta\ \Longrightarrow\ \cos\theta=\frac{K_3K_4}{p_3p_4c^2}$$</div>
+<p>兩顆都有動能時右邊 $\gt0$，所以 $\theta\lt90^\circ$。</p>
+<p><strong>③ 古典極限：</strong> 低速時 $p^2\approx2mK$：</p>
+<div class="math-block">$$\cos\theta\approx\frac{K_3K_4}{2m\sqrt{K_3K_4}}=\frac{\sqrt{K_3K_4}}{2mc^2}\to0\quad(K\ll mc^2)$$</div>
+<p>回到古典的 $90^\circ$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\cos\theta=\frac{K_3K_4}{p_3p_4c^2}\gt0\text{，所以 }\theta\lt90^\circ\\ \text{低速時 }\cos\theta\approx\frac{\sqrt{K_3K_4}}{2mc^2}\to0\text{，回到 }90^\circ\end{gathered}}$$</div>
+<h4>(b) 對稱散開</h4>
+<p><strong>① 每顆的動能與動量：</strong> 對稱時 $K_3=K_4=K_1/2=1.00\ \text{GeV}$；代入 $mc^2=0.938\ \text{GeV}$：</p>
+<div class="math-block">$$p_3c=\sqrt{K_3^2+2K_3mc^2}=\sqrt{1.00+1.876}\ \text{GeV}=1.696\ \text{GeV}$$</div>
+<p><strong>② 兩者的夾角：</strong> 代入 (a) 的公式：</p>
+<div class="math-block">$$\cos\theta=\frac{(1.00)^2}{2.876}=0.3477\ \Longrightarrow\ \theta=69.7^\circ$$</div>
+<p><strong>③ 各自和入射方向的夾角：</strong> 對稱時兩顆各偏離入射方向一半：</p>
+<div class="math-block">$$\alpha=\frac\theta2=34.8^\circ$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{每顆 }K=1.00\ \text{GeV}\text{、}p=1.70\ \text{GeV}/c\\ \theta=69.7^\circ\text{，各偏離入射方向 }34.8^\circ\end{gathered}}$$</div>
+<h4>(c) 質心系驗證</h4>
+<p><strong>① 求 $\gamma_{\text{cm}}$：</strong> 質心系中兩顆質子以相同速率對撞，它們的 $\gamma$ 就是 $\gamma_{\text{cm}}$；用不變量把實驗室和質心系接起來。</p>
+<p class="fnote"><b>公式（不變質量）：</b>$s=E_{\text{tot}}^2-p_{\text{tot}}^2$ 在任何座標系都相同（$c=1$），其中 $E_{\text{tot}}$、$p_{\text{tot}}$ 為系統總能量與總動量；本題實驗室 $E_{\text{tot}}=E_1+m$、$p_{\text{tot}}=p_1$，質心系 $E_{\text{tot}}=2\gamma_{\text{cm}}m$、$p_{\text{tot}}=0$。</p>
+<div class="math-block">$$s=(E_1+m)^2-p_1^2=2m^2+2E_1m=(2\gamma_{\text{cm}}m)^2$$</div>
+<div class="math-block">$$\gamma_{\text{cm}}^2=\frac{2m^2+2E_1m}{4m^2}=\frac{E_1+m}{2m}$$</div>
+<p>代入 $E_1=2.938\ \text{GeV}$、$m=0.938\ \text{GeV}$：</p>
+<div class="math-block">$$\gamma_{\text{cm}}^2=\frac{3.876}{1.876}=2.066$$</div>
+<div class="math-block">$$\gamma_{\text{cm}}=1.437$$</div>
+<p><strong>② 轉回實驗室：</strong> 質心系中彈性碰撞只轉方向、不改大小，對稱散射後一顆的動量 $(p^*_x,p^*_y)=(0,\ p^*)$、能量 $E^*$，速率 $p^*/E^*=\beta_{\text{cm}}$（質心系中每顆質子的速率就是質心相對實驗室的速率）。</p>
+<p class="fnote"><b>公式（動量、能量的勞侖茲轉換）：</b>$p_x=\gamma(p^*_x+\beta E^*)$、$p_y=p^*_y$（$c=1$），其中帶 $*$ 的是質心系的量、$\beta$ 與 $\gamma$ 為質心相對實驗室的速率與勞侖茲因子；本題 $\beta=\beta_{\text{cm}}$、$\gamma=\gamma_{\text{cm}}$。</p>
+<div class="math-block">$$\tan\alpha=\frac{p_y}{p_x}=\frac{p^*}{\gamma_{\text{cm}}\beta_{\text{cm}}E^*}=\frac{1}{\gamma_{\text{cm}}}$$</div>
+<p>代入上一步的 $\gamma_{\text{cm}}=1.437$：</p>
+<div class="math-block">$$\tan\alpha=0.6957\ \Longrightarrow\ \alpha=34.8^\circ$$</div>
+<div class="math-block">$$\theta=2\alpha=69.7^\circ$$</div>
+<p>和 (b) 一致。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\gamma_{\text{cm}}=\sqrt{\frac{E_1+mc^2}{2mc^2}}=1.437\\ \tan\alpha=\frac1{\gamma_{\text{cm}}}\text{，}\alpha=34.8^\circ\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>同一直線的合成都用快速度：$\phi$ 相加、$\gamma=\cosh\phi$、都卜勒因子 $k=e^\phi$ 相乘、光子火箭質量比 $e^{\Delta\phi}$；固有加速度固定時 $\phi=g\tau/c$。</li>
+    <li>雙生子、雷達、對向飛船：先在一個慣性座標系寫好世界線，數訊號用 $k$，「現在幾點」用勞倫茲轉換的 $t'$ 相等；換座標系的瞬間「同時」會跳。</li>
+    <li>側向速度也會變：$V_y=u'_y\sqrt{1-\beta^2}/(1+vu'_x/c^2)$；$\gamma_V=\gamma_v\gamma_{u'}(1+vu'_x/c^2)$ 是好用的驗算。</li>
+    <li>反應門檻、衰變、彈性碰撞：用 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 連接實驗室與質心系；能量用 $E=\gamma(E'+vp'_x)$ 轉換。</li>
+    <li>兩個座標系描述同一件事時，時間膨脹、長度收縮、同時性三個效應要一起用，才會對上同一個事件讀數。</li>
+  </ol>
+</div>

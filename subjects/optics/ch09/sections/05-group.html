@@ -1,0 +1,176 @@
+<h2>五、拍頻、相位速度與群速度 <span class="pg">課本 p.123–128</span> <span class="must exam">考古 1/5</span></h2>
+
+<p class="lead">兩個頻率稍微不同的波疊在一起，會出現一個快速振盪的「載波」被一個慢慢變化的「包絡」調制——這就是拍。載波前進的速度叫相位速度，包絡（也就是能量、訊號）前進的速度叫群速度。在色散介質裡兩者不相等，這一節推出它們的關係。</p>
+
+<p class="small muted">（逐字稿 04:06：「相位速度跟群速度這邊也注意一下。相位速度跟群速度，〔？多看一些習題〕。相位速度跟群速度，注意一下。」老師的語氣是「注意一下」，沒有說一定會考。李孟恩課程資料夾的 5 份期中考中有 1 份（2020）考海浪的群速度（物理考古資料夾的 2007 期中考、2011 平時考也是同一題，合在同一張卡），依考古題統計推論，不是老師說的。）</p>
+
+<h3 id="o9-beat">5.1 拍：兩個頻率相近的波 <span class="pg-tag">p.123–124</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (27)–(34)</span>
+  $$E_1=E_0\cos(k_1x-\omega_1t),\qquad E_2=E_0\cos(k_2x-\omega_2t)$$
+  $$E_R=2E_0\cos(k_px-\omega_pt)\cos(k_gx-\omega_gt)$$
+  $$\omega_p=\tfrac{\omega_1+\omega_2}{2},\quad k_p=\tfrac{k_1+k_2}{2},\qquad \omega_g=\tfrac{\omega_1-\omega_2}{2},\quad k_g=\tfrac{k_1-k_2}{2},\qquad \omega_b=2\omega_g=\omega_1-\omega_2$$
+</div>
+
+<div class="step" data-step="o9-beat-s1" data-sym="omega,k">
+  <span class="step-title">和差化積得到「載波 × 包絡」</span>
+  <p>用 $\cos\alpha+\cos\beta=2\cos\tfrac12(\alpha+\beta)\cos\tfrac12(\alpha-\beta)$，$\alpha=k_1x-\omega_1t$、$\beta=k_2x-\omega_2t$：第一個因子的頻率是平均值 $\omega_p$（快，載波），第二個因子的頻率是差的一半 $\omega_g$（慢，包絡）。照度和 $E^2$ 成正比，包絡的平方每半個包絡週期就重複一次，所以聽到（或量到）的<strong>拍頻是 $\omega_1-\omega_2$</strong>，不是 $\omega_g$。</p>
+</div>
+
+<h3 id="o9-vpvg">5.2 相位速度與群速度 <span class="pg-tag">p.124–127</span> <span class="must teacher maybe">老師：注意一下</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (35)–(40)</span>
+  $$v_p=\frac{\omega_p}{k_p}=\frac{\omega_1+\omega_2}{k_1+k_2}\cong\frac{\omega}{k},\qquad v_g=\frac{\omega_g}{k_g}=\frac{\omega_1-\omega_2}{k_1-k_2}\cong\frac{d\omega}{dk}$$
+  $$v_g=v_p+k\frac{dv_p}{dk}=v_p\left[1-\frac{k}{n}\frac{dn}{dk}\right]=v_p\left[1+\frac{\lambda}{n}\frac{dn}{d\lambda}\right]$$
+</div>
+
+<div class="step" data-step="o9-vg-s1" data-sym="vp,vg,k">
+  <span class="step-title">由 $\omega=kv_p$ 推 $v_g$</span>
+  <p>相位速度 $v_p=\omega/k$，所以 $\omega=kv_p$。對 $k$ 微分（乘積法則）：</p>
+  $$v_g=\frac{d\omega}{dk}=\frac{d}{dk}(kv_p)=v_p+k\frac{dv_p}{dk}$$
+  <p>介質不色散（$v_p$ 與波長無關）時 $dv_p/dk=0$，$v_g=v_p$；真空中兩者都是 $c$。</p>
+</div>
+
+<div class="step" data-step="o9-vg-s2" data-sym="vp,vg,lambda">
+  <span class="step-title">改用波長：$v_g=v_p-\lambda\,dv_p/d\lambda$</span>
+  <p>$k=2\pi/\lambda$，$dk=-\tfrac{2\pi}{\lambda^2}d\lambda$，所以 $k\dfrac{dv_p}{dk}=\dfrac{2\pi}{\lambda}\cdot\dfrac{dv_p}{-\tfrac{2\pi}{\lambda^2}d\lambda}=-\lambda\dfrac{dv_p}{d\lambda}$：</p>
+  $$v_g=v_p-\lambda\frac{dv_p}{d\lambda}$$
+  <p>這就是習題 5-8 給的起點，也是海浪題用的公式。</p>
+</div>
+
+<div class="step" data-step="o9-vg-s3" data-sym="vp,vg,n">
+  <span class="step-title">光在介質中：用折射率表示</span>
+  <p>$v_p=c/n$，$\dfrac{dv_p}{dk}=-\dfrac{c}{n^2}\dfrac{dn}{dk}$，代入步驟 1 得式 (39)；再把 $k$ 換成 $\lambda$ 得式 (40)：</p>
+  $$v_g=v_p\left[1+\frac{\lambda}{n}\frac{dn}{d\lambda}\right]$$
+  <p><strong>正常色散</strong>（大多數透明材料在可見光：波長越長折射率越小，$dn/d\lambda\lt0$）時 $v_g\lt v_p$。式 (40) 是一階近似；計算題課本都直接用它，$\lambda$ 代真空波長。</p>
+</div>
+
+<p>群速度才是能量和訊號前進的速度（AM 廣播的訊號速度、電子波包的速度）。如果各個成分的相位速度差太多，脈衝會散開，就沒有單一的群速度可言。</p>
+
+<div class="problem" data-kind="textbook" id="o9-5-8">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 5-8（作業）· p.129</span></div>
+    <h4>把 $v_g=v_p-\lambda\,dv_p/d\lambda$ 改寫成 $n$ 與 $\omega$；正常色散時誰比較快 <span class="must teacher maybe">老師：注意一下</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-5-8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-5-8"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><strong>8</strong> Beginning with the relation between group velocity and phase velocity in the form $v_g=v_p-\lambda(dv_p/d\lambda)$ (a) express the relation in terms of $n$ and $\omega$ and (b) determine whether the group velocity is greater or less than the phase velocity in a medium having a normal dispersion.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>從群速度與相位速度的關係 $v_g=v_p-\lambda(dv_p/d\lambda)$ 出發，(a) 把這個關係改寫成用 $n$ 與 $\omega$ 表示；(b) 判斷在正常色散的介質中，群速度比相位速度大還是小。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>起點</td><td>$v_g=v_p-\lambda\,\dfrac{dv_p}{d\lambda}$</td><td>題目「Beginning with the relation …」；$\lambda$ 是介質中的波長（$k=2\pi/\lambda$）</td></tr>
+          <tr><td>相位速度</td><td>$v_p=c/n(\omega)$</td><td>題目要用 $n$ 表示：光在折射率 $n$ 的介質中（題目沒寫，用定義）</td></tr>
+          <tr><td>波長與頻率</td><td>$\lambda=\dfrac{2\pi v_p}{\omega}=\dfrac{2\pi c}{n\omega}$</td><td>$v_p=\nu\lambda=\omega\lambda/2\pi$（定義）</td></tr>
+          <tr><td>正常色散</td><td>$\dfrac{dn}{d\lambda}\lt0$</td><td>(b)「normal dispersion」：波長越長折射率越小（課本 p.127）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $v_g$ 用 $v_p$、$n$、$\omega$、$dn/d\omega$ 表示；(b) 正常色散時 $v_g$ 與 $v_p$ 的大小關係。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目要把對 $\lambda$ 的微分換成對 $\omega$ 的微分，而 $v_p$ 和 $\lambda$ 都可以寫成 $\omega$ 的函數，<b>所以</b>用連鎖律 $\dfrac{dv_p}{d\lambda}=\dfrac{dv_p/d\omega}{d\lambda/d\omega}$，把兩個導數分別算出來再相除。</p>
+      <p><b>因為</b>最後的式子含 $dn/d\omega$，而正常色散的條件是用 $dn/d\lambda$ 給的，<b>所以</b> (b) 要先判斷 $dn/d\omega$ 的正負：頻率越高、波長越短，兩者正負相反。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-5-8-s1" data-sym="vp,n">
+        <span class="step-title">$v_p$ 對 $\omega$ 的導數</span>
+        <p>$v_p=c/n$，$n$ 是 $\omega$ 的函數，記 $n'=dn/d\omega$：</p>
+        $$\frac{dv_p}{d\omega}=\frac{d}{d\omega}\left(\frac{c}{n}\right)=-\frac{c}{n^2}\,n'$$
+      </div>
+      <div class="step" data-step="o9-5-8-s2" data-sym="lambda">
+        <span class="step-title">$\lambda$ 對 $\omega$ 的導數</span>
+        <p>$\lambda=\dfrac{2\pi c}{n\omega}=2\pi c\,(n\omega)^{-1}$，對 $\omega$ 微分（$n\omega$ 的導數是 $n+\omega n'$）：</p>
+        $$\frac{d\lambda}{d\omega}=-2\pi c\,\frac{n+\omega n'}{(n\omega)^2}$$
+      </div>
+      <div class="step" data-step="o9-5-8-s3">
+        <span class="step-title">連鎖律求 $\lambda\,dv_p/d\lambda$</span>
+        <p class="sub">把步驟 1 除以步驟 2：</p>
+        $$\frac{dv_p}{d\lambda}=\frac{-\dfrac{c}{n^2}n'}{-2\pi c\dfrac{n+\omega n'}{n^2\omega^2}}=\frac{\omega^2n'}{2\pi\,(n+\omega n')}$$
+        <p class="sub">乘上 $\lambda=\dfrac{2\pi c}{n\omega}$（條件表）：</p>
+        $$\lambda\frac{dv_p}{d\lambda}=\frac{2\pi c}{n\omega}\cdot\frac{\omega^2n'}{2\pi(n+\omega n')}=\frac{c}{n}\cdot\frac{\omega n'}{n+\omega n'}$$
+      </div>
+      <div class="step" data-step="o9-5-8-s4" data-sym="vg,vp">
+        <span class="step-title">(a) 代回起點</span>
+        $$v_g=\frac{c}{n}-\frac{c}{n}\cdot\frac{\omega n'}{n+\omega n'}=\frac{c}{n}\cdot\frac{n}{n+\omega n'}=\frac{v_p}{1+\dfrac{\omega}{n}\dfrac{dn}{d\omega}}$$
+        <p>色散很弱（$\tfrac{\omega}{n}\tfrac{dn}{d\omega}\ll1$）時用 $\tfrac{1}{1+\varepsilon}\approx1-\varepsilon$：</p>
+        $$v_g\approx v_p\left[1-\frac{\omega}{n}\frac{dn}{d\omega}\right]$$
+        <p>精確式也等於 $v_g=\dfrac{c}{n+\omega\,dn/d\omega}$，和直接算 $v_g=d\omega/dk$、$k=n\omega/c$ 的結果一樣。</p>
+      </div>
+      <div class="step" data-step="o9-5-8-s5" data-sym="n">
+        <span class="step-title">(b) 正常色散：判斷 $dn/d\omega$ 的正負</span>
+        $$\frac{dn}{d\omega}=\frac{dn}{d\lambda}\cdot\frac{d\lambda}{d\omega}$$
+        <p>正常色散 $\tfrac{dn}{d\lambda}\lt0$（條件表）；頻率越高波長越短，$\tfrac{d\lambda}{d\omega}\lt0$（步驟 2 的結果，分子分母都正、前面有負號）。兩個負數相乘，$\tfrac{dn}{d\omega}>0$，所以 (a) 的方括號小於 1：</p>
+        $$v_g\lt v_p$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $v_g=\dfrac{v_p}{1+(\omega/n)(dn/d\omega)}\approx v_p\left[1-\dfrac{\omega}{n}\dfrac{dn}{d\omega}\right]$；(b) 正常色散時 $dn/d\omega>0$，<strong>群速度小於相位速度</strong>。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>不色散（$dn/d\omega=0$）時 $v_g=v_p$ ✔。和課本式 (40) 一致：式 (40) 在正常色散也給 $v_g\lt v_p$ ✔；書末答案 (a) $v_g=v_p[1-(\omega/n)(dn/d\omega)]$、(b) $v_g\lt v_p$ ✔。<strong>解答本 (b) 寫「$v_g>v_p$」是錯的</strong>：它自己推出的式子在 $dn/d\omega>0$ 時明明給 $v_g\lt v_p$，和書末答案、課本 p.127 都矛盾。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2007m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2020-04-21）第 3 題（108下，只問長波長）；下學期近代光學期中考（2007-04-24）第 3 題（95下）；下學期近代光學平時考（2011-04-06）第 4 題（99下，只問長波長）· 改自 Pedrotti 5-13</span></div>
+    <h4>海浪長波長與短波長的群速度是相位速度的幾倍 <span class="must teacher maybe">老師：注意一下</span> <span class="must exam">考古 1/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2007m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2007m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p><strong>2007-04-24 期中考</strong> 3. (20%) 海水中長波長的波動之相位速度可近似為 $v_p=\left(\frac{g\lambda}{2\pi}\right)^{1/2}$，其中 $g$ 為重力加速度。短波長之波動的相位速度則可近似為 $v_p=\left(\frac{2\pi T}{\lambda\rho}\right)^{1/2}$，其中 $\rho$ 為密度，$T$ 為表面張力，試求</p><p>(a) 長波長波動的群速度大小對相位速度大小的比值</p><p>(b) 短波長波動的群速度大小對相位速度大小的比值</p><p><strong>2011-04-06 平時考</strong> 4. (10%) 海水中長波長的波動之相位速度大小可近似為 $v_p=\left(\frac{g\cdot\lambda}{2\pi}\right)^{1/2}$，其中 $g$ 為重力加速度。試求其群速度大小為相位速度大小的多少倍？</p><p><strong>2020-04-21 期中考</strong> 3. (10%) 一液體中的波動之相位速度大小為 $v_p=\left(\frac{g\cdot\lambda}{2\cdot\pi}\right)^{\frac12}$，其中 $g$ 為重力加速度。試求其群速度大小為相位速度大小的多少倍？</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>海水中長波長的波動，相位速度可近似為 $v_p=\left(\dfrac{g\lambda}{2\pi}\right)^{1/2}$，$g$ 為重力加速度；短波長的波動，相位速度可近似為 $v_p=\left(\dfrac{2\pi T}{\lambda\rho}\right)^{1/2}$，$\rho$ 為密度、$T$ 為表面張力。求 (a) 長波長波動的群速度大小對相位速度大小的比值；(b) 短波長波動的群速度大小對相位速度大小的比值。（2007：20%；2011 平時考與 2020 期中考只問 (a)，各 10%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>長波長相位速度</td><td>$v_p=\left(\dfrac{g\lambda}{2\pi}\right)^{1/2}\propto\lambda^{1/2}$</td><td>「長波長的波動之相位速度可近似為…」；$g$ 是常數</td></tr>
+          <tr><td>短波長相位速度</td><td>$v_p=\left(\dfrac{2\pi T}{\lambda\rho}\right)^{1/2}\propto\lambda^{-1/2}$</td><td>「短波長之波動的相位速度則可近似為…」；$T$、$\rho$ 是常數</td></tr>
+          <tr><td>群速度公式</td><td>$v_g=v_p-\lambda\dfrac{dv_p}{d\lambda}$</td><td>題目沒給，用第 5.2 節（課本習題 5-12）的結果</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 長波長 $v_g/v_p$；(b) 短波長 $v_g/v_p$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目給的是 $v_p(\lambda)$，<b>所以</b>用以波長表示的群速度公式 $v_g=v_p-\lambda\,dv_p/d\lambda$，只要對 $\lambda$ 微分一次。</p>
+      <p><b>因為</b>兩種 $v_p$ 都是 $\lambda$ 的冪次（$\lambda^{1/2}$ 與 $\lambda^{-1/2}$），而冪次函數有 $\lambda\dfrac{d}{d\lambda}(C\lambda^m)=m\,C\lambda^m$，<b>所以</b> $\lambda\,dv_p/d\lambda=m\,v_p$，比值就是 $1-m$，常數 $g$、$T$、$\rho$ 都會消掉，答案是純數字。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2007m3-s1" data-sym="vp,vg,lambda">
+        <span class="step-title">冪次型 $v_p$ 的通式</span>
+        <p>設 $v_p=C\lambda^m$（$C$ 為常數），則</p>
+        $$\lambda\frac{dv_p}{d\lambda}=\lambda\cdot mC\lambda^{m-1}=m\,v_p\qquad\Longrightarrow\qquad v_g=v_p-m\,v_p=(1-m)\,v_p$$
+      </div>
+      <div class="step" data-step="o9-2007m3-s2" data-sym="vg">
+        <span class="step-title">(a) 長波長：$m=\tfrac12$</span>
+        <p class="sub">$v_p=\left(\tfrac{g}{2\pi}\right)^{1/2}\lambda^{1/2}$（題目第一式），$C=\left(\tfrac{g}{2\pi}\right)^{1/2}$、$m=\tfrac12$：</p>
+        $$\frac{dv_p}{d\lambda}=\frac12\left(\frac{g}{2\pi}\right)^{1/2}\lambda^{-1/2}=\frac{v_p}{2\lambda},\qquad v_g=v_p-\lambda\cdot\frac{v_p}{2\lambda}=\frac12v_p$$
+      </div>
+      <div class="step" data-step="o9-2007m3-s3" data-sym="vg">
+        <span class="step-title">(b) 短波長：$m=-\tfrac12$</span>
+        <p class="sub">$v_p=\left(\tfrac{2\pi T}{\rho}\right)^{1/2}\lambda^{-1/2}$（題目第二式），$m=-\tfrac12$：</p>
+        $$\frac{dv_p}{d\lambda}=-\frac12\left(\frac{2\pi T}{\rho}\right)^{1/2}\lambda^{-3/2}=-\frac{v_p}{2\lambda},\qquad v_g=v_p+\lambda\cdot\frac{v_p}{2\lambda}=\frac32v_p$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 長波長 $v_g/v_p=\tfrac12$（群速度是相位速度的一半）；(b) 短波長 $v_g/v_p=\tfrac32$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>改用 $v_g=d\omega/dk$：長波長 $\omega=kv_p=\sqrt{gk}$，$v_g=\tfrac12\sqrt{g/k}=\tfrac12v_p$ ✔；短波長 $\omega=\sqrt{Tk^3/\rho}$，$v_g=\tfrac32\sqrt{Tk/\rho}=\tfrac32v_p$ ✔。這就是課本習題 5-13 要證的結果（不是作業題，但考過三次）。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>拍頻 $=\omega_1-\omega_2$；載波頻率是平均值，包絡頻率是差的一半。</li>
+    <li>$v_p=\omega/k$，$v_g=d\omega/dk=v_p+k\,dv_p/dk=v_p-\lambda\,dv_p/d\lambda$。</li>
+    <li>$v_p\propto\lambda^m$ ⟹ $v_g=(1-m)v_p$：海浪長波長 $\tfrac12$、短波長 $\tfrac32$。</li>
+    <li>光：$v_g=v_p[1+(\lambda/n)dn/d\lambda]$；正常色散 $v_g\lt v_p$。</li>
+  </ol>
+</div>

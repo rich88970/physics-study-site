@@ -1,0 +1,227 @@
+<h2>七、考前衝刺 <span class="pg">板書 9/30 全部</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式和猜測對照表，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>110 上～114 上的五份期中考<strong>每年都有一題待定係數法</strong>，配分 5～25 分：110 上（$2e^x\cos x$，右邊就是齊次解，要修正）、111 上（一次多項式加初始條件）、112 上（$60e^{-4x}\sin5x$，分齊次解／特解／唯一解三小題）、113 上（多項式＋指數＋三角函數三塊加總，只求特解）、114 上（三角函數加初始條件）。113 上和 114 上的左邊與三角部分完全相同。準備方式：先求特徵根、<strong>再</strong>決定猜測（判斷要不要乘 $x$）；比較係數的聯立要寫清楚；有初始條件時代入完整的 $y=y_c+y_p$。</p>
+</div>
+
+<h3 id="a3x-formulas">7.1 必背公式與對照表</h3>
+
+<div class="sheet">
+  <section>
+    <h4>三步驟</h4>
+    <ul>
+      <li>Step 1：$\lambda^2+a\lambda+b=0$ → $y_c=c_1y_1+c_2y_2$</li>
+      <li>Step 2：依 $g$ 猜 $y_p$（先檢查修正）→ 代回、比較係數</li>
+      <li>Step 3：$y=y_c+y_p$ 代初始條件</li>
+    </ul>
+  </section>
+  <section>
+    <h4>修正規則</h4>
+    <ul>
+      <li>$g$ 對應的 $k$（或 $k\pm i\omega$；多項式 $k=0$）是 $s$ 重特徵根 ⟹ 猜測乘 $x^s$（$s=0,1,2$）</li>
+      <li>乘整組；加總拆開的各塊各自判斷</li>
+    </ul>
+  </section>
+  <section>
+    <h4>捷徑 $y=e^{kx}u$</h4>
+    <ul>
+      <li>$L[e^{kx}u]=e^{kx}\left[u''+(2k+a)u'+(k^2+ak+b)u\right]$</li>
+      <li>$(p\cos\omega x)''+\omega^2p\cos\omega x=p''\cos\omega x-2\omega p'\sin\omega x$</li>
+      <li>$(q\sin\omega x)''+\omega^2q\sin\omega x=q''\sin\omega x+2\omega q'\cos\omega x$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>受迫阻尼振盪</h4>
+    <ul>
+      <li>$\ddot x+2\gamma\dot x+\omega_0^2x=F_0\sin\omega t$，$D=(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2$</li>
+      <li>$K_1=-2\gamma\omega F_0/D$、$K_2=(\omega_0^2-\omega^2)F_0/D$</li>
+      <li>$A=F_0/\sqrt D$，$\tan\phi=\dfrac{-2\gamma\omega}{\omega_0^2-\omega^2}$，$\phi\in(-\pi,0)$</li>
+      <li>$\omega_r=\sqrt{\omega_0^2-2\gamma^2}$，$A_{\max}=\dfrac{F_0}{2\gamma\sqrt{\omega_0^2-\gamma^2}}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>參數變換法</h4>
+    <ul>
+      <li>標準式 $y''+Py'+Qy=g$</li>
+      <li>$u_1'=-y_2g/W$、$u_2'=y_1g/W$，$y_p=u_1y_1+u_2y_2$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>猜 $y_p$ 的完整對照表（修正前）</h4>
+    <div class="symbol-table-wrap"><table>
+      <thead><tr><th>$g(x)$</th><th>猜 $y_p$</th></tr></thead>
+      <tbody>
+        <tr><td>$P_n(x)$（$n$ 次多項式）</td><td>$K_0+K_1x+\cdots+K_nx^n$</td></tr>
+        <tr><td>$e^{kx}$</td><td>$Ae^{kx}$</td></tr>
+        <tr><td>$\cos\omega x$ 或 $\sin\omega x$</td><td>$A\cos\omega x+B\sin\omega x$</td></tr>
+        <tr><td>$P_n(x)e^{kx}$</td><td>$(K_0+\cdots+K_nx^n)e^{kx}$</td></tr>
+        <tr><td>$P_n(x)\cos\omega x$ 或 $\sin$</td><td>$Q_n(x)\cos\omega x+R_n(x)\sin\omega x$</td></tr>
+        <tr><td>$e^{kx}\cos\omega x$ 或 $\sin$</td><td>$e^{kx}(A\cos\omega x+B\sin\omega x)$</td></tr>
+        <tr><td>$P_n(x)e^{kx}\cos\omega x$</td><td>$e^{kx}[Q_n\cos\omega x+R_n\sin\omega x]$</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+</div>
+
+<h3 id="a3x-types">7.2 題型總表</h3>
+
+<p class="type-jump"><a href="#a3type-1">① 多項式</a><a href="#a3type-2">② 三角函數</a><a href="#a3type-3">③ 加總</a><a href="#a3type-4">④ 乘法</a><a href="#a3type-5">⑤ 修正</a><a href="#a3type-6">⑥ 只寫形式</a><a href="#a3type-7">⑦ 受迫振盪</a><a href="#a3type-8">⑧ 參數變換法</a></p>
+
+<div class="drill" id="a3type-1">
+  <h4>① 多項式右邊</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$g(x)$ 是多項式（$4x^2$、$2(x-1)$），係數 $b\neq0$。</dd>
+    <dt>做法</dt><dd>猜同次的完整多項式，依次方收集，從最高次往下解。</dd>
+    <dt>常錯</dt><dd>只猜 $Kx^2$ 漏掉低次項；$b=0$ 時沒有升次（見 ⑤）。</dd>
+    <dt>代表題</dt><dd><a href="#a3-b1">板書 Basic rule</a>　<a href="#a3-111a-m3">111 上第 3 題</a>　<a href="#a3-s01-1">自編：多項式解</a>　<a href="#a3var-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a3type-2">
+  <h4>② 三角函數右邊</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$g$ 只有 $\cos\omega x$、$\sin\omega x$，$\pm i\omega$ 不是特徵根。</dd>
+    <dt>做法</dt><dd>猜 $A\cos\omega x+B\sin\omega x$，分別比較 $\cos$、$\sin$，解二元一次。</dd>
+    <dt>常錯</dt><dd>只猜 $\cos$（右邊只有 $\cos$ 時）；$y''$ 要乘 $-\omega^2$ 不是 $-1$。</dd>
+    <dt>代表題</dt><dd><a href="#a3-114a-m3">114 上第 3 題</a>　<a href="#a3-108b-1b">108 級下 1(b)</a>　<a href="#a3-s01-2">自編：反推方程</a>　<a href="#a3var-7">變化題 7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a3type-3">
+  <h4>③ 加總規則</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>右邊是幾種不同類函數相加（多項式 + 指數 + 三角）。</dd>
+    <dt>做法</dt><dd>拆成幾個小方程各自找特解再相加；$\sin^2x$、$\cosh x$ 先改寫。</dd>
+    <dt>常錯</dt><dd>只檢查一塊有沒有撞齊次解；不同頻率的三角函數當成同一塊。</dd>
+    <dt>代表題</dt><dd><a href="#a3-b2">板書 Sum rule</a>　<a href="#a3-hw1">作業第 1 題</a>　<a href="#a3-113a-m4">113 上第 4 題</a>　<a href="#a3-s02-1">自編：$\sin^2x$</a>　<a href="#a3-s02-2">自編：$\cosh x$</a>　<a href="#a3var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a3type-4">
+  <h4>④ 乘法規則</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>右邊是乘積：$x\cos x$、$xe^{-4x}$、$e^{-4x}\sin5x$。</dd>
+    <dt>做法</dt><dd>兩個因子的家族相乘；有 $e^{kx}$ 就令 $y=e^{kx}u$ 先拿掉指數；多項式 × 三角可用複數指數。</dd>
+    <dt>常錯</dt><dd>$x\cos x$ 只猜 $Ax\cos x$；$e^{-4x}\sin5x$ 誤以為 $-4$ 要和特徵根的實部比（要比整個 $-4\pm5i$）。</dd>
+    <dt>代表題</dt><dd><a href="#a3-b3">板書 Multiplication</a>　<a href="#a3-hw2">作業第 2 題</a>　<a href="#a3-112a-m3">112 上第 3 題</a>　<a href="#a3-s03-1">自編：複數法</a>　<a href="#a3-s03-2">自編：何時失效</a>　<a href="#a3var-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a3type-5">
+  <h4>⑤ 修正規則</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>右邊（或它的某一塊）就是齊次解：$2e^{2x}$ 配重根 2、$2e^x\cos x$ 配 $1\pm i$、$x\sin x$ 配 $\pm i$、多項式配 $b=0$。</dd>
+    <dt>做法</dt><dd>單根乘 $x$、重根乘 $x^2$；整組乘。用捷徑 $y=e^{kx}u$ 時 $u$ 的方程會缺項，自動告訴你要升幾次。</dd>
+    <dt>常錯</dt><dd>沒先求特徵根就猜；只把撞到的那一項乘 $x$；修正後只放 $\sin$ 或只放 $\cos$。</dd>
+    <dt>代表題</dt><dd><a href="#a3-b4">板書 Modification</a>　<a href="#a3-hw3">作業第 3 題</a>　<a href="#a3-110a-m4">110 上第 4 題</a>　<a href="#a3-108b-1c">108 級下 1(c)（邊界條件）</a>　<a href="#a3-s04-1">自編：$\cosh x$</a>　<a href="#a3-s04-2">自編：$b=0$</a>　<a href="#a3var-2">變化題 2</a>　<a href="#a3var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a3type-6">
+  <h4>⑥ 只寫 $y_p$ 的形式</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「Write the form of $y_p$, do not solve for the coefficients」。</dd>
+    <dt>做法</dt><dd>求特徵根 → 每一塊查表 → 每一塊各自判斷乘 $x^s$ → 合併。</dd>
+    <dt>常錯</dt><dd>多項式次數寫錯、$\cos$ 與 $\sin$ 用同一組係數。</dd>
+    <dt>代表題</dt><dd><a href="#a3var-6">變化題 6</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a3type-7">
+  <h4>⑦ 受迫振盪與共振</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>彈簧 + 阻尼 + 週期外力；問穩態振幅、相位、共振頻率。</dd>
+    <dt>做法</dt><dd>猜 $K_1\cos\omega t+K_2\sin\omega t$，克拉瑪解 $K_1,K_2$；$A=F_0/\sqrt D$；極大值對 $D$ 微分。</dd>
+    <dt>常錯</dt><dd>相位只用 $\tan^{-1}$ 不看象限；以為峰一定在 $\omega_0$；無阻尼共振忘了修正。</dd>
+    <dt>代表題</dt><dd><a href="#a3-b5">板書：$K_1,K_2,A,\phi$</a>　<a href="#a3-108b-2">108 級下 2（LRC）</a>　<a href="#a3-108a-x5">108 級上 Euler 5（$\gamma\dot x$ 寫法）</a>　<a href="#a3-s05-1">自編：$\omega_r$</a>　<a href="#a3-s05-2">自編：無阻尼共振</a>　<a href="#a3var-7">變化題 7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="a3type-8">
+  <h4>⑧ 參數變換法</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>右邊是 $\sec x$、$\tan x$、$\ln x$、$1/x$ 等不在表裡的函數；或變係數方程、題目已給 $y_1,y_2$。</dd>
+    <dt>做法</dt><dd>標準式 → $W$ → $u_1'=-y_2g/W$、$u_2'=y_1g/W$ → 積分 → 組合。</dd>
+    <dt>常錯</dt><dd>$g$ 沒有先除以 $y''$ 的係數；$u_1'$ 的負號。</dd>
+    <dt>代表題</dt><dd><a href="#a3-s06-1">自編：變係數 $x^2\ln x$</a>　<a href="#a3-s06-2">自編：$\sec x$ 初值與存在區間</a>　<a href="#a3var-8">變化題 8</a></dd>
+  </dl>
+</div>
+
+<h3 id="a3x-var">7.3 變化題</h3>
+
+<div class="drill-q" id="a3var-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#a3-b1">板書 Basic rule</a></p>
+  <p>求 $y''-5y'+6y=6x^2-10x+2$ 的特解。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>根 $2,3$，猜 $K_0+K_1x+K_2x^2$：$6K_2x^2+(6K_1-10K_2)x+(2K_2-5K_1+6K_0)$。$K_2=1$；$6K_1-10=-10$ ⟹ $K_1=0$；$2+6K_0=2$ ⟹ $K_0=0$：</p>
+    $$y_p=x^2$$
+  </details>
+</div>
+
+<div class="drill-q" id="a3var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#a3-hw3">作業第 3 題</a></p>
+  <p>求 $y''+4y=8\sin2x$ 的特解。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>根 $\pm2i$，右邊頻率 2：要修正，猜 $x(A\cos2x+B\sin2x)$。$y''+4y=-4A\sin2x+4B\cos2x=8\sin2x$ ⟹ $A=-2$、$B=0$：</p>
+    $$y_p=-2x\cos2x$$
+  </details>
+</div>
+
+<div class="drill-q" id="a3var-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#a3-113a-m4">113 上第 4 題</a></p>
+  <p>求 $y''-3y'+2y=e^x+e^{3x}$ 的特解。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>根 $1,2$。$e^x$ 那塊撞到單根 1，猜 $Axe^x$：捷徑 $k=1$ 得 $u''-u'$，$u=Ax$ 給 $-A=1$，$A=-1$。$e^{3x}$ 不撞：$(9-9+2)B=1$，$B=\tfrac12$：</p>
+    $$y_p=-xe^x+\tfrac12e^{3x}$$
+  </details>
+</div>
+
+<div class="drill-q" id="a3var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#a3-b4">板書 Modification</a></p>
+  <p>求 $y''+2y'+y=e^{-x}$ 的特解。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>重根 $-1$，右邊 $k=-1$：乘 $x^2$。捷徑得 $u''=1$，$u=\tfrac12x^2$：</p>
+    $$y_p=\tfrac12x^2e^{-x}$$
+  </details>
+</div>
+
+<div class="drill-q" id="a3var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#a3-hw2">作業第 2 題</a></p>
+  <p>求 $y''+y=xe^x$ 的特解。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$1$ 不是根（根 $\pm i$），猜 $(A+Bx)e^x$。捷徑 $k=1$：$u''+2u'+2u=x$；$u=A+Bx$：$2B+2A+2Bx=x$ ⟹ $B=\tfrac12$、$A=-\tfrac12$：</p>
+    $$y_p=\tfrac12(x-1)e^x$$
+  </details>
+</div>
+
+<div class="drill-q" id="a3var-6">
+  <p class="q-src">變化題 6 · 只寫形式</p>
+  <p>寫出 $y''-2y'+5y=e^x\sin2x+x^2e^x$ 的 $y_p$ 形式（不必求係數），再用捷徑求出係數。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>根 $1\pm2i$。第一塊 $e^x\sin2x$ 對應 $1\pm2i$：撞到，乘 $x$；第二塊 $x^2e^x$ 對應 $k=1$：不是根（根是複數），不乘：</p>
+    $$y_p=xe^x(A\cos2x+B\sin2x)+(Cx^2+Dx+E)e^x$$
+    <p>捷徑 $y=e^xu$：$u''+4u=\sin2x+x^2$。得 $A=-\tfrac14$、$B=0$、$C=\tfrac14$、$D=0$、$E=-\tfrac18$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="a3var-7">
+  <p class="q-src">變化題 7 · 改自 <a href="#a3-b5">板書受迫振盪</a></p>
+  <p>$\ddot x+4\dot x+20x=10\sin2t$。求穩態解與振幅。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\gamma=2$、$\omega_0^2=20$、$\omega=2$、$F_0=10$。$D=(20-4)^2+4\cdot4\cdot4=320$：</p>
+    $$K_1=\frac{-2\cdot2\cdot2\cdot10}{320}=-\frac14,\quad K_2=\frac{16\cdot10}{320}=\frac12$$
+    <p>$x_p=-\tfrac14\cos2t+\tfrac12\sin2t$，$A=10/\sqrt{320}=0.559$（$=\sqrt{\tfrac1{16}+\tfrac14}$ ✔）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="a3var-8">
+  <p class="q-src">變化題 8 · 改自 <a href="#a3-s06-1">自編參數變換法題</a></p>
+  <p>求 $y''+y=\tan x$（$|x|\lt\tfrac\pi2$）的特解。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$W=1$。$u_1'=-\sin x\tan x=\cos x-\sec x$ ⟹ $u_1=\sin x-\ln|\sec x+\tan x|$；$u_2'=\cos x\tan x=\sin x$ ⟹ $u_2=-\cos x$：</p>
+    $$y_p=\cos x(\sin x-\ln|\sec x+\tan x|)-\sin x\cos x=-\cos x\ln|\sec x+\tan x|$$
+  </details>
+</div>

@@ -1,0 +1,397 @@
+<h2>七、理想氣體的多重度 <span class="pg">課本 §2.5 · p.68–74</span></h2>
+
+<p class="lead">「只有極少數巨觀態有可觀的機率」不只對愛因斯坦固體成立。這一節數單原子理想氣體的微觀態：位置空間的體積乘動量空間的體積，用測不準原理把連續的狀態切成有限格，再除以 $N!$。結果 $\Omega\propto V^NU^{3N/2}$，和固體一樣有很大的指數，所以峰一樣尖。</p>
+
+<h3 id="tq-one">7.1 一個分子：位置空間乘動量空間 <span class="pg-tag">p.68–70</span></h3>
+
+<p>一個單原子分子，動能 $U$、容器體積 $V$。體積加倍，可待的地方加倍，所以 $\Omega_1\propto V$；可選的動量向量越多，狀態也越多，所以 $\Omega_1$ 也正比於可用的動量空間體積 $V_p$。動量受能量限制：</p>
+$$U=\frac1{2m}\left(p_x^2+p_y^2+p_z^2\right)\quad\Longleftrightarrow\quad p_x^2+p_y^2+p_z^2=2mU$$
+<p>這是動量空間中半徑 $\sqrt{2mU}$ 的球面（Fig. 2.8），所以「動量空間體積」其實是這個球的<strong>表面積</strong>（乘上一點厚度，代表 $U$ 允許的小擾動）。</p>
+
+<p>比例常數要靠量子力學。測不準原理 $(\Delta x)(\Delta p_x)\approx h$：波函數在位置上越窄，在動量上就越寬。長度 $L$、動量範圍 $L_p$ 的一維空間裡，互相獨立的狀態數是</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.70 Eq. (2.33)–(2.34) 數格子</span>
+  $$\frac L{\Delta x}\cdot\frac{L_p}{\Delta p_x}=\frac{LL_p}h,\qquad\Omega_1=\frac{VV_p}{h^3}$$
+  <p>三維時長度變體積，有三個 $h$。這不是嚴格證明（可能還差 2 或 $\pi$ 的因子），但從因次看也合理：$\Omega$ 沒有單位，$h^3$ 正好消掉 $V$ 與 $V_p$ 的單位。</p>
+</div>
+
+<div class="anim" data-anim="t2-cells"></div>
+
+<p>圖解的重點是：$\Delta x$ 取多大是任意的，但 $\Delta x$ 變小時 $\Delta p_x$ 一定變大，格子的「位置格數乘動量格數」不變，永遠是 $LL_p/h$。所以這個計數是有意義的——它是相空間面積除以每個量子態佔的面積 $h$。</p>
+
+<h3 id="tq-n">7.2 $N$ 個分子：超球面與 $1/N!$ <span class="pg-tag">p.70–72</span></h3>
+
+<div class="step" data-step="tq-a" data-sym="V,Vp,h">
+  <span class="step-title">兩個分子</span>
+  <p>每個分子各給一個 $V/h^3$；但只有<strong>總能量</strong>受限制：$p_{1x}^2+p_{1y}^2+p_{1z}^2+p_{2x}^2+p_{2y}^2+p_{2z}^2=2mU$，是六維動量空間中的「超球面」。</p>
+  $$\Omega_2=\frac12\,\frac{V^2}{h^6}\times(\text{超球面面積})\qquad(2.37)$$
+  <p>$\tfrac12$：兩個分子不可分辨，對調它們的狀態不是新的微觀態（Fig. 2.10），否則每個狀態被算兩次。</p>
+</div>
+<div class="step" data-step="tq-b" data-sym="N">
+  <span class="step-title">$N$ 個分子</span>
+  <p>$N$ 個 $V$、$3N$ 個 $h$，多算的次數是 $N$ 個分子互換的方式 $N!$，動量空間是 $3N$ 維、半徑仍為 $\sqrt{2mU}$ 的超球面：</p>
+  $$\Omega_N=\frac1{N!}\frac{V^N}{h^{3N}}\times(\text{3N 維超球面面積})\qquad(2.38)$$
+</div>
+<div class="step" data-step="tq-c" data-sym="d">
+  <span class="step-title">$d$ 維超球面面積（附錄 B）</span>
+  $$\text{面積}=\frac{2\pi^{d/2}}{\left(\frac d2-1\right)!}\,r^{d-1}\qquad(2.39)$$
+</div>
+
+<details class="supp">
+  <summary>檢查 (2.39)：$d=2$ 是圓周、$d=3$ 是球面</summary>
+  <div class="supp-body">
+    <p>$d=2$：$\dfrac{2\pi}{0!}r=2\pi r$ ✔。$d=3$：要用 $(\tfrac12)!=\Gamma(\tfrac32)=\tfrac{\sqrt\pi}2$：</p>
+    $$\frac{2\pi^{3/2}}{(1/2)!}r^2=\frac{2\pi^{3/2}}{\sqrt\pi/2}r^2=4\pi r^2\ ✔$$
+  </div>
+</details>
+
+<div class="box lecture book">
+  <span class="box-title">p.71 Eq. (2.40)–(2.41) 單原子理想氣體的多重度</span>
+  $$\Omega_N=\frac1{N!}\frac{V^N}{h^{3N}}\frac{2\pi^{3N/2}}{\left(\frac{3N}2-1\right)!}\left(\sqrt{2mU}\right)^{3N-1}\approx\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N}$$
+  $$\Omega(U,V,N)=f(N)\,V^NU^{3N/2}$$
+</div>
+
+<p>從第一式到第二式丟掉的是 $\frac{3N}{2}\cdot\frac2{\sqrt{2mU}}$ 這類「只是大」的因子（分子分母各乘 $\frac{3N}2$ 把 $(\frac{3N}2-1)!$ 補成 $(\frac{3N}2)!$）。$U$ 的指數 $\tfrac{3N}2$ 是自由度數 $3N$ 的一半；高溫愛因斯坦固體 $(eq/N)^N\propto U^N$，$N$ 個振子有 $2N$ 個二次自由度，指數也是一半。這是一般定理的特例：只有二次自由度、能量量子化看不出來時，$\Omega\propto U^{N_f/2}$。</p>
+
+<h3 id="tq-two">7.3 兩團氣體的交互作用 <span class="pg-tag">p.72–74</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.72–73 Eq. (2.42)–(2.44) 交換能量或體積</span>
+  $$\Omega_{\text{total}}=[f(N)]^2(V_AV_B)^N(U_AU_B)^{3N/2}$$
+  $$\text{交換能量：峰寬}=\frac{U_{\text{total}}}{\sqrt{3N/2}},\qquad\text{交換體積：峰寬}=\frac{V_{\text{total}}}{\sqrt N}$$
+</div>
+
+<p>和兩個固體的 (2.22) 一模一樣的形狀——能量被拉到很大的指數 $3N/2$，所以對 $U_A$ 作圖是一個相對寬度 $\sim1/\sqrt N$ 的尖峰。隔板可以移動時，同樣的論證用在體積上（Fig. 2.12）；隔板打洞讓分子交換時，平衡巨觀態是兩邊密度相同。$N=10^{20}$ 時，整個尺度縮進一頁，尖峰比一個原子還窄。</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-half">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.5 Fig. 2.13 · p.73–74</span></div>
+    <h4>所有分子都擠在左半邊</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-half">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>容器裡的氣體分子全部出現在左半邊（Fig. 2.13）的機率是多少？算 $N=100$ 的數值。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>分子數</td><td>$N$；數值算 $N=100$</td><td>「算 $N=100$ 的數值」</td></tr>
+          <tr><td>「全在左半邊」</td><td>可用體積 $V\to V/2$</td><td>「全部出現在<b>左半邊</b>」：所有分子能待的空間只剩一半</td></tr>
+          <tr><td>能量、分子數</td><td>$U$、$N$ 不變</td><td>只是分子的位置不同，題目沒有改變能量或分子數</td></tr>
+          <tr><td>多重度對 $V$ 的依賴</td><td>$\Omega\propto V^N$</td><td>課文 (2.41) $\Omega=f(N)V^NU^{3N/2}$</td></tr>
+          <tr><td>等機率</td><td>每個微觀態機率相同</td><td>統計力學的基本假設（題目沒寫）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：所有分子都在左半邊的機率（一般 $N$，以及 $N=100$ 的數值）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每個可及的微觀態機率相同，<b>所以</b>某種排列出現的機率＝（符合條件的微觀態數）÷（全部微觀態數），要求的是兩個多重度的比。</p>
+      <p><b>因為</b>「全在左半邊」的微觀態，正好就是「同樣 $U$、$N$ 的氣體裝在體積 $V/2$ 的盒子」的所有微觀態，<b>所以</b>比值是 $\Omega(U,V/2,N)/\Omega(U,V,N)$；(2.41) 中只有 $V^N$ 這個因子不同，$f(N)$ 與 $U^{3N/2}$ 都約掉，不必知道它們的值。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-half-s1">
+        <span class="step-title">機率＝多重度的比</span>
+        $$P=\frac{\Omega(U,V/2,N)}{\Omega(U,V,N)}$$
+        <p>分子：只用左半邊空間的微觀態數；分母：全部可及的微觀態數。</p>
+      </div>
+      <div class="step" data-step="thfa" data-sym="V,N">
+        <span class="step-title">體積減半</span>
+        <p>代入 (2.41) $\Omega=f(N)V^NU^{3N/2}$，$f(N)$ 和 $U^{3N/2}$ 上下相同、約掉：</p>
+        $$P=\frac{f(N)(V/2)^NU^{3N/2}}{f(N)V^NU^{3N/2}}=\left(\frac{V/2}V\right)^N=2^{-N}$$
+        <p>也可以這樣想：每個分子各自有 ½ 的機會在左邊，$N$ 個分子互不影響，機率相乘得 $(\tfrac12)^N$。</p>
+      </div>
+      <div class="step" data-step="thfb">
+        <span class="step-title">$N=100$</span>
+        <p class="sub">代入 $N=100$（題目）。很小的數換成 10 的次方，$\log_{10}2=0.301$：</p>
+        $$2^{-100}=10^{-100\times0.301}=10^{-30.1}=7.9\times10^{-31}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$P=2^{-N}$；$N=100$ 時 $\approx8\times10^{-31}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>等於「每個分子各自有 ½ 機率在左邊」再相乘，和直覺一致 ✔。每秒檢查一兆次、檢查一整個宇宙年齡，才可能看到一次；$N=10^{23}$ 時是很小的數。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk-115-7">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 7 題 · 即 Schroeder Problem 2.26 · p.72</span></div>
+    <h4>二維理想氣體的多重度</h4>
+    <button type="button" class="exam-btn" data-exam="tk-115-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-7"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[10pts] The multiplicity of monatomic ideal gas in three dimension is $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}(\sqrt{2mU})^{3N}.$$ Now consider an ideal monatomic gas that lives in a two dimensional universe, occupying an area $A$ instead of a volume $V$. By following the same logic as you derive the multiplicity in three dimension, find a formula for the multiplicity of the ideal monatomic gas in two dimension (in terms of $U$, $m$, $N$, $A$).</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.26）</strong></p><p>Consider an ideal monatomic gas that lives in a two-dimensional universe (“flatland”), occupying an area $A$ instead of a volume $V$. By following the same logic as above, find a formula for the multiplicity of this gas, analogous to equation 2.40.</p></div>
+<p class="original-caption">115 級上學期期中 第 7 題 · 即 Schroeder Problem 2.26 · p.72</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（10 分）三維單原子理想氣體的多重度是
+    $$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}\left(\sqrt{2mU}\right)^{3N}.$$
+    現在考慮住在二維宇宙裡的單原子理想氣體，佔據面積 $A$ 而不是體積 $V$。依照你推導三維多重度的同樣邏輯，求二維單原子理想氣體多重度的公式（以 $U$、$m$、$N$、$A$ 表示）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>三維的範本</td><td>$\Omega_N\simeq\frac1{N!}\frac{V^N}{h^{3N}}\frac{\pi^{3N/2}}{(3N/2)!}(\sqrt{2mU})^{3N}$</td><td>題目給，要「依照同樣邏輯」改寫</td></tr>
+          <tr><td>二維</td><td>面積 $A$ 取代 $V$；動量只有 $p_x,p_y$</td><td>「住在<b>二維</b>宇宙裡……佔據面積 $A$」</td></tr>
+          <tr><td>單原子、理想</td><td>$U=\sum_i\frac{p_{ix}^2+p_{iy}^2}{2m}$</td><td>「單原子理想氣體」：只有平移動能，沒有交互作用位能</td></tr>
+          <tr><td>不可分辨</td><td>除以 $N!$</td><td>同三維的推導（題目沒另外說）</td></tr>
+          <tr><td>一個量子態</td><td>每個方向佔 $h$</td><td>測不準原理 $\Delta x\,\Delta p_x\approx h$（課本 (2.33)）</td></tr>
+          <tr><td>$d$ 維超球面面積</td><td>$\frac{2\pi^{d/2}}{(d/2-1)!}r^{d-1}$</td><td>考卷第一頁給的公式（課本 (2.39)）</td></tr>
+          <tr><td>以什麼表示</td><td>$U,\ m,\ N,\ A$</td><td>「以 $U$、$m$、$N$、$A$ 表示」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：二維單原子理想氣體的多重度公式。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目要「依照推導三維多重度的同樣邏輯」，<b>所以</b>逐項把三維推導翻成二維：位置空間由體積 $V$ 變成面積 $A$；每個分子的動量只有兩個分量，每個方向貢獻一個 $1/h$，一個分子是 $1/h^2$（三維是 $1/h^3$）。</p>
+      <p><b>因為</b>只有總能量受限，$N$ 個分子共 $2N$ 個動量分量的平方和固定，<b>所以</b>動量空間是 $2N$ 維、半徑 $\sqrt{2mU}$ 的超球面，代入題目給的面積公式，$d=2N$。</p>
+      <p>最後<b>因為</b>三維時丟掉了「只是大的」因子 $3N/\sqrt{2mU}$，二維也丟掉同類的 $2N/\sqrt{2mU}$，<b>所以</b>結果是乾淨的 $U^N$ 形式（指數＝自由度數的一半）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="k1157a" data-sym="h">
+        <span class="step-title">一個分子</span>
+        <p>一維時，長度 $L$、動量範圍 $L_p$ 的獨立狀態數是 $LL_p/h$（課本 (2.33)）；二維有 $x$、$y$ 兩個方向，各給一個 $h$：</p>
+        $$\Omega_1=\frac{A\,A_p}{h^2}$$
+        <p>$A_p$ 是動量空間中可用的「面積」：能量 $U=\frac{p_x^2+p_y^2}{2m}$ 固定，就是動量平面上 $p_x^2+p_y^2=2mU$ 這個半徑 $\sqrt{2mU}$ 的圓周。</p>
+      </div>
+      <div class="step" data-step="k1157b" data-sym="N,d">
+        <span class="step-title">$N$ 個不可分辨的分子</span>
+        <p>每個分子各給一個 $A/h^2$，$N$ 個是 $A^N/h^{2N}$；不可分辨，互換的 $N!$ 種只算一次；只有總能量受限：</p>
+        $$p_{1x}^2+p_{1y}^2+\cdots+p_{Nx}^2+p_{Ny}^2=2mU$$
+        <p>這是 $2N$ 個平方和，即 $2N$ 維動量空間中半徑 $\sqrt{2mU}$ 的超球面：</p>
+        $$\Omega_N=\frac1{N!}\frac{A^N}{h^{2N}}\times(2N\text{ 維超球面面積})$$
+      </div>
+      <div class="step" data-step="k1157c">
+        <span class="step-title">代 $d=2N$、$r=\sqrt{2mU}$</span>
+        <p class="sub">代入題目給的面積公式，$d=2N$（步驟 2）、$r=\sqrt{2mU}$；$d/2-1=N-1$：</p>
+        $$\text{面積}=\frac{2\pi^N}{(N-1)!}\left(\sqrt{2mU}\right)^{2N-1}$$
+        <p>和三維一樣，把階乘補成 $N!$、次方補成 $2N$：用 $(N-1)!=N!/N$ 與 $r^{2N-1}=r^{2N}/r$：</p>
+        $$\text{面積}=\frac{2N}{\sqrt{2mU}}\cdot\frac{\pi^N}{N!}\left(\sqrt{2mU}\right)^{2N}$$
+        <p>前面的 $2N/\sqrt{2mU}$ 只是「大的數」，和後面「很大的數」相比可以丟掉（三維時丟掉的是同類的 $3N/\sqrt{2mU}$）：</p>
+        $$\text{面積}\approx\frac{\pi^N}{N!}(2mU)^N$$
+      </div>
+      <div class="step" data-step="k1157d">
+        <span class="step-title">結果</span>
+        <p class="sub">把步驟 3 的面積代回步驟 2：</p>
+        $$\Omega_N\approx\frac1{N!}\frac{A^N}{h^{2N}}\frac{\pi^N}{N!}(2mU)^N$$
+        <p>$A^N$、$\pi^N$、$(2mU)^N$、$h^{-2N}$ 都是 $N$ 次方，可以合併：</p>
+        $$\Omega_N\approx\frac{1}{(N!)^2}\left(\frac{2\pi mUA}{h^2}\right)^N$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\Omega_N\approx\dfrac1{N!}\dfrac{A^N}{h^{2N}}\dfrac{\pi^N}{N!}(2mU)^N=\dfrac1{(N!)^2}\left(\dfrac{2\pi mUA}{h^2}\right)^N$</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$U$ 的指數 $N=\tfrac12\times(2N\text{ 個自由度})$ ✔；因次：$mUA/h^2$ 是 $\text{kg}\cdot\text{J}\cdot\text{m}^2/(\text{J}^2\text{s}^2)$，無因次 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-27">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-27（Problem 2.27）· p.74 · 熱學小考（上）作業題</span></div>
+    <h4>最右邊 1% 是空的</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-27">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-27"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Rather than insisting that all the molecules be in the left half of a container, suppose we only require that they be in the leftmost 99% (leaving the remaining 1% completely empty). What is the probability of finding such an arrangement if there are 100 molecules in the container? What if there are 10,000 molecules? What if there are 10<sup>23</sup>?</p></div>
+<p class="original-caption">Schroeder 習題 2-27（Problem 2.27）· p.74 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>不要求所有分子都在容器左半邊，只要求它們都在最左邊的 99%（最右邊 1% 完全是空的）。容器裡有 100 個分子時，這種排列的機率是多少？10 000 個呢？$10^{23}$ 個呢？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>可用體積</td><td>$V\to0.99V$</td><td>「都在最左邊的 <b>99%</b>」（最右邊 1% 完全是空的）</td></tr>
+          <tr><td>分子數</td><td>$N=100$、$10\,000$、$10^{23}$</td><td>題目的三種情況</td></tr>
+          <tr><td>能量、分子數</td><td>不變</td><td>只看位置</td></tr>
+          <tr><td>多重度</td><td>$\Omega\propto V^N$</td><td>課文 (2.41)，同上面「全在左半邊」的例題</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：三種 $N$ 下，最右邊 1% 是空的機率。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這題和上面的例題完全同型，只是可用體積從 $\tfrac12V$ 改成 $0.99V$，<b>所以</b>機率是 $\left(\frac{0.99V}V\right)^N=0.99^N$。</p>
+      <p><b>因為</b> $N$ 很大時 $0.99^N$ 小到計算機會直接顯示 0，<b>所以</b>改用對數：$0.99^N=e^{N\ln0.99}$，再換成 10 的次方。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-27-s1">
+        <span class="step-title">一般式</span>
+        <p>同上例題，$f(N)$ 與 $U^{3N/2}$ 約掉，只剩體積比的 $N$ 次方：</p>
+        $$P=\frac{\Omega(U,0.99V,N)}{\Omega(U,V,N)}=\left(\frac{0.99V}V\right)^N=0.99^N$$
+        <p>$\ln0.99=-0.01005$，所以 $P=e^{-0.01005N}$。</p>
+      </div>
+      <div class="step" data-step="t227a" data-sym="N">
+        <span class="step-title">$N=100$</span>
+        <p class="sub">代入 $N=100$（題目）：</p>
+        $$0.99^{100}=e^{-0.01005\times100}=e^{-1.005}=0.366$$
+      </div>
+      <div class="step" data-step="sc-2-27-s3">
+        <span class="step-title">$N=10\,000$</span>
+        <p class="sub">代入 $N=10^4$（題目）：</p>
+        $$0.99^{10\,000}=e^{-100.5}$$
+        <p>換成 10 的次方（指數除以 $\ln10=2.303$）：$100.5/2.303=43.65$，</p>
+        $$e^{-100.5}=10^{-43.65}=2.2\times10^{-44}$$
+      </div>
+      <div class="step" data-step="sc-2-27-s4">
+        <span class="step-title">$N=10^{23}$</span>
+        <p class="sub">代入 $N=10^{23}$（題目），$\log_{10}0.99=-0.004365$：</p>
+        $$0.99^{10^{23}}=10^{10^{23}\times(-0.004365)}=10^{-4.4\times10^{20}}$$
+        <p>這是「很大的數」的倒數：小數點後要先寫約 $4.4\times10^{20}$ 個 0 才出現第一個非零數字。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$N=100$：0.37；$N=10^4$：$2\times10^{-44}$；$N=10^{23}$：$10^{-4.4\times10^{20}}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>100 個分子時，三分之一的時間最右邊 1% 是空的——小系統的擾動很明顯；$N$ 大到一萬就「永遠」不會發生 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-07a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>一小塊空氣裡的分子數擾動</h4>
+    <button type="button" class="exam-btn" data-exam="sf-07a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>體積 $V$ 的容器內有 $N$ 個理想氣體分子。(a) 由 $\Omega\propto V^N$（(2.41)）論證：一個小體積 $v$ 內剛好有 $n$ 個分子的機率是 $\binom Nn p^n(1-p)^{N-n}$，$p=v/V$。(b) 求 $n$ 的平均值與相對擾動 $\sigma_n/\langle n\rangle$（$v\ll V$）。(c) 300 K、一大氣壓的空氣中，邊長 $L$ 的小立方體裡分子數的相對擾動是 1%，$L$ 是多少？(d) 1 mm³ 的空氣呢？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>容器</td><td>體積 $V$、$N$ 個分子</td><td>題目</td></tr>
+          <tr><td>小體積</td><td>$v$，$p=v/V$</td><td>題目定義 $p=v/V$</td></tr>
+          <tr><td>多重度</td><td>$\Omega\propto V^N$</td><td>(a)「由 $\Omega\propto V^N$（(2.41)）論證」</td></tr>
+          <tr><td>小體積條件</td><td>$v\ll V$，$p\ll1$</td><td>(b) 題目給</td></tr>
+          <tr><td>溫度、壓力</td><td>$T=300\ \text{K}$、$P=1.013\times10^5\ \text{Pa}$</td><td>(c)「300 K、一大氣壓的空氣」</td></tr>
+          <tr><td>相對擾動</td><td>$\sigma_n/\langle n\rangle=0.01$</td><td>(c)「相對擾動是 1%」</td></tr>
+          <tr><td>(d) 的體積</td><td>$v=1\ \text{mm}^3=10^{-9}\ \text{m}^3$</td><td>(d)</td></tr>
+          <tr><td>理想氣體定律</td><td>$PV=NkT$，$k=1.38\times10^{-23}\ \text{J/K}$</td><td>題目沒寫：室溫常壓的空氣可當理想氣體；$k$ 用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明 $P(n)$ 是二項分布；(b) $\langle n\rangle$ 與相對擾動；(c) 相對擾動 1% 的立方體邊長 $L$；(d) 1 mm³ 空氣的相對擾動。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b> $V^N$ 其實是「每個分子各有一個位置因子 $V$」的乘積（分子之間沒有交互作用，位置互不影響），<b>所以</b>可以把每個分子的位置分成「在 $v$ 內」（因子 $v$）與「在外面」（因子 $V-v$）兩類來數；動量部分只和總能量有關，對每個 $n$ 都一樣，在機率的比值中約掉。</p>
+      <p>(b) <b>因為</b> (a) 證明了每個分子獨立地以機率 $p$ 落在 $v$ 內，<b>所以</b>直接用二項分布的平均 $Np$ 與變異數 $Np(1-p)$。</p>
+      <p>(c)(d) <b>因為</b>相對擾動只由 $\langle n\rangle$ 決定（$1/\sqrt{\langle n\rangle}$），而 $\langle n\rangle$＝數密度 × 體積，<b>所以</b>先用理想氣體定律求數密度 $N/V=P/kT$，再在數密度和體積之間換算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf07a1" data-sym="V,N">
+        <span class="step-title">(a) 數微觀態</span>
+        <p>固定「哪 $n$ 個分子在 $v$ 內」：這 $n$ 個的位置因子各是 $v$，其餘 $N-n$ 個各是 $V-v$；選哪 $n$ 個有 $\binom Nn$ 種。除以全部的 $V^N$：</p>
+        $$P(n)=\frac{\binom Nn v^n(V-v)^{N-n}}{V^N}$$
+        <p>分子分母同除，換成比例 $p=v/V$、$1-p=(V-v)/V$：</p>
+        $$P(n)=\binom Nn p^n(1-p)^{N-n}$$
+        <p>這是二項分布。總和由二項式定理 $\sum_n\binom Nn p^n(1-p)^{N-n}=(p+1-p)^N=1$ ✔。$p=\tfrac12$ 就是丟硬幣；$n=N$ 給 $2^{-N}$，正是 Fig. 2.13「全部在左半邊」的例題。</p>
+      </div>
+      <div class="step" data-step="sf07a2">
+        <span class="step-title">(b) 平均與擾動</span>
+        <p>把 $n$ 看成 $N$ 個分子各自「在 $v$ 內記 1、不在記 0」的總和。每一個的平均是 $p$、變異數是 $p-p^2=p(1-p)$；$N$ 個互相獨立，平均與變異數直接相加：</p>
+        $$\langle n\rangle=Np,\qquad\sigma_n^2=Np(1-p)$$
+        <p>$v\ll V$ 時 $p\ll1$，$1-p\approx1$：</p>
+        $$\sigma_n\approx\sqrt{Np}=\sqrt{\langle n\rangle},\qquad\frac{\sigma_n}{\langle n\rangle}\approx\frac1{\sqrt{\langle n\rangle}}$$
+      </div>
+      <div class="step" data-step="sf07a3">
+        <span class="step-title">(c) 空氣的數密度</span>
+        $$\frac NV=\frac P{kT}$$
+        <p class="sub">代入 $P=1.013\times10^5\ \text{Pa}$、$T=300\ \text{K}$（題目「300 K、一大氣壓」）、$k=1.38\times10^{-23}\ \text{J/K}$：</p>
+        $$\frac NV=\frac{1.013\times10^5\ \text{Pa}}{(1.38\times10^{-23}\ \text{J/K})(300\ \text{K})}=2.45\times10^{25}\ \text{m}^{-3}$$
+      </div>
+      <div class="step" data-step="sf-07a-s4">
+        <span class="step-title">(c) 需要的分子數與邊長</span>
+        <p>相對擾動 1%（題目）：</p>
+        $$\frac1{\sqrt{\langle n\rangle}}=0.01\ \Longrightarrow\ \langle n\rangle=\frac1{0.01^2}=10^4$$
+        <p class="sub">體積＝分子數 ÷ 數密度（步驟 3）：</p>
+        $$v=\frac{10^4}{2.45\times10^{25}\ \text{m}^{-3}}=4.1\times10^{-22}\ \text{m}^3$$
+        $$L=v^{1/3}=7.4\times10^{-8}\ \text{m}=74\ \text{nm}$$
+      </div>
+      <div class="step" data-step="sf07a4">
+        <span class="step-title">(d) 1 mm³</span>
+        <p class="sub">代入 $v=10^{-9}\ \text{m}^3$（題目 1 mm³）、數密度 $2.45\times10^{25}\ \text{m}^{-3}$（步驟 3）：</p>
+        $$\langle n\rangle=2.45\times10^{25}\times10^{-9}=2.45\times10^{16}$$
+        $$\frac{\sigma_n}{\langle n\rangle}=\frac1{\sqrt{2.45\times10^{16}}}=6.4\times10^{-9}$$
+        <p>肉眼尺度的氣體密度可以當成完全均勻；只有到比光的波長（約 500 nm）還小的尺度，擾動才有百分之一的量級（這種密度擾動會散射光）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 二項分布；(b) $\langle n\rangle=Np$，相對擾動 $\approx1/\sqrt{\langle n\rangle}$；(c) $L\approx74$ nm；(d) $6\times10^{-9}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(c) 的立方體約有 $10^4$ 個分子，$1/\sqrt{10^4}=1\%$ ✔；(a) 的機率對 $n$ 加總為 $(p+1-p)^N=1$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-07b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>氣體和固體分能量：均分定理的雛形</h4>
+    <button type="button" class="exam-btn" data-exam="sf-07b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>1 莫耳單原子理想氣體（$N$ 個原子）和一塊含 $N$ 個原子的高溫愛因斯坦固體（每個原子 3 個振子，共 $3N$ 個振子）可以交換能量，總能量 $U_{\text{tot}}$ 固定，兩者體積都不變。(a) 用 $\Omega_{\text{gas}}\propto U_A^{3N/2}$、$\Omega_{\text{solid}}\propto U_B^{3N}$（(2.21)）寫出 $\Omega_{\text{total}}(U_A)$，求最可能的 $U_A/U_B$。(b) 用「每個二次自由度分到的能量」解釋 (a)。(c) 求峰的 $1/e$ 半寬與 $U_{\text{tot}}$ 的比值（$N=6.02\times10^{23}$）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氣體</td><td>單原子理想氣體，$N$ 個原子</td><td>「1 莫耳單原子理想氣體（$N$ 個原子）」</td></tr>
+          <tr><td>固體</td><td>$N$ 個原子、$3N$ 個振子</td><td>「每個原子 3 個振子，共 $3N$ 個振子」</td></tr>
+          <tr><td>氣體多重度</td><td>$\Omega_{\text{gas}}\propto U_A^{3N/2}$</td><td>題目給（(2.41)，體積固定）</td></tr>
+          <tr><td>固體多重度</td><td>$\Omega_{\text{solid}}\propto U_B^{3N}$</td><td>題目給（(2.21) $(eq/3N)^{3N}$，$q\propto U$）</td></tr>
+          <tr><td>總能量</td><td>$U_A+U_B=U_{\text{tot}}$</td><td>「總能量 $U_{\text{tot}}$ 固定」</td></tr>
+          <tr><td>體積</td><td>都不變</td><td>「兩者體積都不變」：只交換能量</td></tr>
+          <tr><td>原子數</td><td>$N=6.02\times10^{23}$</td><td>(c) 題目給</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $\Omega_{\text{total}}(U_A)$ 與最可能的 $U_A/U_B$；(b) 用「每個二次自由度分到的能量」解釋；(c) 峰的 $1/e$ 半寬與 $U_{\text{tot}}$ 的比值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>氣體與固體只交換能量，複合系統的多重度是兩者相乘 $\Omega\propto U_A^{3N/2}U_B^{3N}$，和兩個固體的 $q_A^{N_A}q_B^{N_B}$ 同一型、只是指數換成 $a=3N/2$、$b=3N$，<b>所以</b>照自編難題 6-A 的方法：取 $\ln$、一階導數為 0 求峰、二階導數求寬度。</p>
+      <p>(b) <b>因為</b>課本 p.72 說只含二次自由度時 $\Omega\propto U^{N_f/2}$，指數就是「二次自由度數的一半」，<b>所以</b>峰的條件 $a/U_A=b/U_B$ 可以翻成「每個自由度分到的能量相等」。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf07b1" data-sym="U,N">
+        <span class="step-title">(a) 峰的位置</span>
+        <p>兩者相乘取對數，$U_B=U_{\text{tot}}-U_A$：</p>
+        $$\ln\Omega_{\text{total}}=\frac{3N}2\ln U_A+3N\ln U_B+\text{常數}$$
+        <p>對 $U_A$ 微分（$dU_B/dU_A=-1$）令為 0：</p>
+        $$\frac{3N}{2U_A}-\frac{3N}{U_B}=0\ \Longrightarrow\ \frac{U_A}{U_B}=\frac12$$
+        <p>氣體拿到總能量的 $1/3$，固體拿 $2/3$。</p>
+      </div>
+      <div class="step" data-step="sf07b2">
+        <span class="step-title">(b) 每個二次自由度分到一樣多</span>
+        <p>氣體每個原子有 3 個二次自由度（三個方向的動能），共 $N_{fA}=3N$；固體每個振子有動能與位能 2 個，$3N$ 個振子共 $N_{fB}=6N$。$\Omega\propto U^{N_f/2}$（課本 p.72），所以峰的條件 $\frac{N_{fA}/2}{U_A}=\frac{N_{fB}/2}{U_B}$ 可以改寫成</p>
+        $$\frac{U_A}{N_{fA}}=\frac{U_B}{N_{fB}}:\qquad\frac{U_A}{3N}=\frac{U_B}{6N}$$
+        <p>每個二次自由度平均分到相同的能量——這就是均分定理（每個 $\tfrac12kT$）在多重度語言下的樣子。</p>
+      </div>
+      <div class="step" data-step="sf07b3">
+        <span class="step-title">(c) 二階導數與半寬的一般式</span>
+        <p>令 $a=\frac{3N}2$、$b=3N$，$\ln\Omega=a\ln U_A+b\ln U_B$。峰在 $U_A^*=\frac a{a+b}U_{\text{tot}}$、$U_B^*=\frac b{a+b}U_{\text{tot}}$，二階導數：</p>
+        $$-\frac a{U_A^{*2}}-\frac b{U_B^{*2}}=-\frac{(a+b)^2}{U_{\text{tot}}^2}\left(\frac1a+\frac1b\right)=-\frac{(a+b)^3}{abU_{\text{tot}}^2}$$
+        <p>所以 $\Omega\approx\Omega_{\max}\exp\left[-\frac{(a+b)^3}{2abU_{\text{tot}}^2}x^2\right]$，指數 $=-1$ 時：</p>
+        $$x_{1/e}=U_{\text{tot}}\sqrt{\frac{2ab}{(a+b)^3}}$$
+        <p>（和自編難題 6-A (c) 同一式，$N_A,N_B\to a,b$。）</p>
+      </div>
+      <div class="step" data-step="sf-07b-s4">
+        <span class="step-title">(c) 代入數字</span>
+        <p class="sub">代入 $a=3N/2$、$b=3N$（題目的兩個指數），$a+b=9N/2$：</p>
+        $$2ab=2\cdot\frac{3N}2\cdot3N=9N^2,\qquad(a+b)^3=\frac{729N^3}8=91.1N^3$$
+        $$\frac{x_{1/e}}{U_{\text{tot}}}=\sqrt{\frac{9N^2}{91.1N^3}}=\frac{0.314}{\sqrt N}$$
+        <p class="sub">代入 $N=6.02\times10^{23}$（題目），$\sqrt N=7.76\times10^{11}$：</p>
+        $$\frac{x_{1/e}}{U_{\text{tot}}}=\frac{0.314}{7.76\times10^{11}}=4.0\times10^{-13}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $U_A/U_B=1/2$；(b) 每個二次自由度能量相同（氣體 $3N$ 個、固體 $6N$ 個）；(c) $\approx4\times10^{-13}\,U_{\text{tot}}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>兩團相同的氣體（$a=b=3N/2$）時一般式給半寬 $\frac{U_{\text{tot}}}{2\sqrt{3N/2}}$，全寬 $U_{\text{tot}}/\sqrt{3N/2}$，正是課本 (2.43) ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>一個分子 $\Omega_1=VV_p/h^3$：相空間體積 ÷ 每個量子態佔的 $h^3$；$V_p$ 是半徑 $\sqrt{2mU}$ 的球面。</li>
+    <li>$N$ 個分子：$V^N/h^{3N}$、$3N$ 維超球面、除以 $N!$（不可分辨）；$\Omega=f(N)V^NU^{3N/2}$。</li>
+    <li>大指數 ⟹ 交換能量或體積的峰寬都 $\sim1/\sqrt N$；某一部分空間全空的機率 $=(\text{剩下比例})^N$。</li>
+  </ol>
+</div>

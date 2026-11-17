@@ -1,0 +1,268 @@
+<h2>二、重根：用降階法求第二解 <span class="pg">板書 10/14 照片 1–5</span></h2>
+
+<p class="lead">10/14 第一題的指標方程式是 $-\gamma^2=0$：只有一個根 $\gamma=0$，Frobenius 級數只給得出一個解。老師的辦法是第 2 章學過的<strong>降階法</strong>：令 $y_2=u\,y_1$，推出 $u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}dx$。結果第二解帶著 $\ln x$——這正是重根時第二解的一般長相。</p>
+
+<h3 id="am5-rep-setup">2.1 判斷與代入：這次對齊到較高的次方 <span class="pg-tag">照片 1–2</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 1）</span>
+  <p>ex　$(x^2-x)y''+(3x-1)y'+y=0$　$(0\lt x\lt1)$</p>
+  <p>與標準式比較：$P(x)=\dfrac{3x-1}{x^2-x}$，$Q(x)=\dfrac{1}{x^2-x}$</p>
+  <p>∵ $\displaystyle\lim_{x\to0}xP(x)$ 和 $\displaystyle\lim_{x\to0}x^2Q(x)$ 不發散　∴ 可以使用 Frobenius method 求解</p>
+  <p>令 $y=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+\gamma}$，其中 $a_0\ne0$，$\gamma$＝常數</p>
+  <p>$x^2y''=\displaystyle\sum_{n=0}^{\infty}(n+\gamma)(n+\gamma-1)a_nx^{n+\gamma}$</p>
+  <p>$-xy''=\displaystyle\sum_{n=0}^{\infty}-(n+\gamma)(n+\gamma-1)a_nx^{n+\gamma-1}\ \to\ \sum_{n=-1}^{\infty}-(n+1+\gamma)(n+\gamma)a_{n+1}x^{n+\gamma}$</p>
+  <p>$3xy'=\displaystyle\sum_{n=0}^{\infty}3(n+\gamma)a_nx^{n+\gamma}$</p>
+  <p>$-y'=\displaystyle\sum_{n=0}^{\infty}-(n+\gamma)a_nx^{n+\gamma-1}\ \to\ \sum_{n=-1}^{\infty}-(n+1+\gamma)a_{n+1}x^{n+\gamma}$</p>
+  <p>$y=\displaystyle\sum a_nx^{n+\gamma}$</p>
+</div>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 2）</span>
+  $$\underset{\overset{\shortparallel}{0}}{(n=-1)}\,x^{\gamma-1}+\sum_{n=0}^{\infty}\Big(\underset{\overset{\shortparallel}{0}}{\cdots\cdots}\Big)x^{n+\gamma}=0$$
+</div>
+
+<p>判斷：$xP=\dfrac{3x-1}{x-1}\to\dfrac{-1}{-1}=1$、$x^2Q=\dfrac{x}{x-1}\to0$，都有限，$x=0$ 是正則奇點（$p_0=1$、$q_0=0$）。另一個奇點是 $x^2-x=0$ 的 $x=1$，所以板書寫明範圍 $0\lt x\lt1$。</p>
+
+<p>這次老師的對齊方式和 10/7 相反：把 $x^{n+\gamma-1}$ 型的兩項（$-xy''$、$-y'$）<b>往上</b>平移成 $x^{n+\gamma}$，令 $n\to n+1$，下限變成 $n=-1$。於是 $n=-1$（$x^{\gamma-1}$）這一項只有這兩個和有貢獻，它就是最低次方，給出指標方程式；$n\ge0$ 給遞迴。兩種對齊方式結果完全一樣，挑順手的就好：原則是<b>最低次方的那一項要單獨寫出來</b>。</p>
+
+<h3 id="am5-rep-ind">2.2 重根 $\gamma=0$ 與第一個解 $y_1=\frac1{1-x}$ <span class="pg-tag">照片 3</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 3）</span>
+  <p>$-\gamma(\gamma-1)a_0x^{\gamma-1}-\gamma a_0x^{\gamma-1}=0$，$\big[-\gamma(\gamma-1)-\gamma\big]a_0=0$，$-\gamma^2+\gamma-\gamma=0\ \to\ \gamma=0$（重根）</p>
+  <p>$\big[(n+\gamma)(n+\gamma-1)a_n-(n+1+\gamma)(n+\gamma)a_{n+1}+3(n+\gamma)a_n-(n+1+\gamma)a_{n+1}+a_n\big]=0\quad(n=0,1,2,\dots)$　Recurrence Relation</p>
+  <p>$\big[(n+\gamma)^2-(n+\gamma)+3(n+\gamma)+1\big]a_n=(n+\gamma+1)^2a_n$</p>
+  <p>$=\big[(n+1+\gamma)(n+\gamma)+(n+1+\gamma)\big]a_{n+1}=(n+1+\gamma)^2a_{n+1}$　⟹　$a_{n+1}=a_n$</p>
+  <p>$a_0=$ 待定，$a_1=a_0$，$a_2=a_1=a_0$，⋯，$a_0=a_1=a_2=a_3=\cdots$</p>
+  <p>第一個可能解　$y_1=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+0}=a_0\Big(\frac{1}{1-x}\Big)=a_0+a_0x+a_0x^2+\cdots=a_0(1+x+x^2+\cdots)$</p>
+  <p>只要找出 $y_2$，$y=c_1y_1+c_2y_2$</p>
+</div>
+
+<div class="step" data-step="am5-rep-s1" data-sym="gam,p0q0">
+  <span class="step-title">指標方程式是完全平方</span>
+  <p>$-\gamma(\gamma-1)-\gamma=-\gamma^2$，所以 $\gamma^2=0$，$\gamma=0$ 是二重根。用公式驗算：$\gamma(\gamma-1)+p_0\gamma+q_0=\gamma^2-\gamma+\gamma+0=\gamma^2$ ✓。只有一個 $\gamma$，Frobenius 級數只能給一個解。</p>
+</div>
+
+<div class="step" data-step="am5-rep-s2" data-sym="an">
+  <span class="step-title">遞迴約成 $a_{n+1}=a_n$</span>
+  <p>$\gamma=0$ 時兩邊的係數都是 $(n+1)^2$，約掉得 $a_{n+1}=a_n$：所有係數都等於 $a_0$，$y_1=\sum x^n$ 正好是幾何級數 $\dfrac1{1-x}$（$|x|\lt1$，所以板書限定 $0\lt x\lt1$）。可以直接驗算：$y=\dfrac1{1-x}$，$y'=\dfrac1{(1-x)^2}$，$y''=\dfrac2{(1-x)^3}$，$(x^2-x)y''=\dfrac{-2x}{(1-x)^2}$，加上 $(3x-1)y'+y=\dfrac{3x-1+1-x}{(1-x)^2}=\dfrac{2x}{(1-x)^2}$，總和為 0 ✓。</p>
+</div>
+
+<h3 id="am5-rep-red">2.3 降階法：$y_2=u\,y_1$ <span class="pg-tag">照片 4–5</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 4、5）</span>
+  <p>只要找出 $\boxed{y_2=u\,y_1}$，使用 Reduction of Order</p>
+  <p>$y_1u''+(2y_1'+Py_1)u'=0$，$P(x)=\dfrac{3x-1}{x^2-x}$</p>
+  <p>令 $w=u'$：$y_1w'+(2y_1'+Py_1)w=0$，separable eq.</p>
+  <p>$\displaystyle\int\frac{dw}{w}=\int-\frac{2y_1'+Py_1}{y_1}dx$，$\ln w=\displaystyle\int\Big(-\frac{2y_1'}{y_1}-P\Big)dx$，$\ln w=-2\ln y_1-\displaystyle\int P(x)\,dx$</p>
+  <p>$\ln(wy_1^2)=-\displaystyle\int P(x)\,dx$，$wy_1^2=e^{-\int P(x)dx}$，$w=\dfrac{e^{-\int P(x)dx}}{y_1^2}$</p>
+  <p>$u'=\dfrac{e^{-\int P(x)dx}}{y_1^2}$　★ $\boxed{u=\displaystyle\int\Big[\frac{e^{-\int P(x)dx}}{y_1^2}\Big]dx}$</p>
+  <p>$P(x)=\dfrac{3x-1}{x^2-x}=\dfrac1x+\dfrac2{x-1}$，$y_1=\dfrac1{1-x}$；$\displaystyle\int P(x)\,dx=\ln x+2\ln(1-x)=\ln x(1-x)^2$</p>
+  <p>$e^{-\int Pdx}=e^{-\ln x(1-x)^2}=\dfrac{1}{x(1-x)^2}$，$\dfrac{e^{-\int Pdx}}{y_1^2}=\dfrac{1}{x(1-x)^2}\cdot\dfrac{1}{\big(\frac1{1-x}\big)^2}=\dfrac1x$</p>
+  <p>$u=\displaystyle\int\frac1x\,dx=\ln x$，$\quad y_2=uy_1=\ln x\cdot\dfrac{1}{1-x}$</p>
+</div>
+
+<div class="step" data-step="am5-rep-s3" data-sym="uu">
+  <span class="step-title">$y_1u''+(2y_1'+Py_1)u'=0$ 是怎麼來的 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>照片 4 拍攝時老師站在板前，這一行的由來沒拍到（第 2 章第 4 節有同一個推導）。把 $y=uy_1$ 代入 $y''+Py'+Qy=0$：</p>
+  $$y'=u'y_1+uy_1',\qquad y''=u''y_1+2u'y_1'+uy_1''$$
+  $$u''y_1+2u'y_1'+uy_1''+P(u'y_1+uy_1')+Quy_1=y_1u''+(2y_1'+Py_1)u'+u\underbrace{(y_1''+Py_1'+Qy_1)}_{=0}$$
+  <p>最後一個括號因為 $y_1$ 是解而等於 0，$u$ 本身消失，只剩 $u'$、$u''$——令 $w=u'$ 就降成一階的可分離方程式。</p>
+</div>
+
+<div class="step" data-step="am5-rep-s4">
+  <span class="step-title">部分分式與 $0\lt x\lt1$ 的絕對值</span>
+  <p>$\dfrac{3x-1}{x(x-1)}=\dfrac{A}{x}+\dfrac{B}{x-1}$：令 $x=0$ 得 $A=\dfrac{-1}{-1}=1$，令 $x=1$ 得 $B=\dfrac{2}{1}=2$。積分 $\displaystyle\int\frac{2}{x-1}dx=2\ln|x-1|$，在 $0\lt x\lt1$ 裡 $|x-1|=1-x$，所以板書寫 $2\ln(1-x)$。積分常數不寫：它只會讓 $u$ 多一個常數，$y_2$ 多一個 $y_1$ 的倍數，不影響「找一個線性獨立的解」。</p>
+</div>
+
+<div class="step" data-step="am5-rep-s5" data-sym="y12">
+  <span class="step-title">一般解，以及為什麼一定出現 $\ln x$ <span class="added">網站補充</span></span>
+  <p>一般解 $y=\dfrac{c_1+c_2\ln x}{1-x}$，$0\lt x\lt1$。$\ln x$ 不是偶然：重根時指標方程式 $\gamma^2+(p_0-1)\gamma+q_0=0$ 的重根是 $\gamma=\tfrac{1-p_0}{2}$。降階公式的被積函數在 $x\to0$ 時</p>
+  $$\frac{e^{-\int P\,dx}}{y_1^2}\approx\frac{x^{-p_0}}{x^{2\gamma}}=x^{-p_0-(1-p_0)}=\frac1x\ \ (\times\text{一個 }x=0\text{ 附近平滑、首項為 1 的函數})$$
+  <p>積分出 $\ln x$ 加一個冪級數，所以重根時一定是 $y_2=y_1\ln x+x^{\gamma}\sum b_nx^n$。本題剛好被積函數就等於 $\tfrac1x$，$y_2=y_1\ln x$ 沒有多餘的項。</p>
+</div>
+
+<div class="problem" data-kind="example" id="am5-ex-2">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/14 板書（照片 1–5）</span></div>
+    <h4>$(x^2-x)y''+(3x-1)y'+y=0$：重根 $\gamma=0$，$y_2=\frac{\ln x}{1-x}$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-ex-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-2"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　$(x^2-x)y''+(3x-1)y'+y=0\quad(0\lt x\lt1)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在 $0\lt x\lt1$ 解 $(x^2-x)y''+(3x-1)y'+y=0$：用 Frobenius 法求第一個解，再用降階法求第二個解，寫出一般解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac{3x-1}{x^2-x}$、$Q=\dfrac1{x^2-x}$</td><td>除以 $x^2-x$（板書「與標準式比較」）</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$1$、$0$</td><td>$xP=\tfrac{3x-1}{x-1}\to1$；$x^2Q=\tfrac{x}{x-1}\to0$</td></tr>
+          <tr><td>範圍</td><td>$0\lt x\lt1$</td><td>板書「$(0\lt x\lt1)$」：另一個奇點在 $x=1$</td></tr>
+          <tr><td>降階公式</td><td>$y_2=uy_1$，$u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}dx$</td><td>板書照片 4 的 ★（第 2 章學過）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\gamma$、遞迴、$y_1$（closed form）、$y_2$、一般解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $x=0$ 是正則奇點，<b>所以</b>先用 Frobenius；把 $x^{n+\gamma-1}$ 型的 $-xy''$、$-y'$ 平移到 $x^{n+\gamma}$，$n=-1$ 那一項是最低次方，給指標方程式。</p>
+      <p><b>因為</b>指標方程式是 $\gamma^2=0$ 的重根，只得到一個級數解，<b>所以</b>第二解用降階法 $y_2=uy_1$。$y_1=\tfrac1{1-x}$ 有 closed form，$P$ 可以部分分式積分，$u$ 能算到底。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-ex-2-s1" data-sym="gam">
+        <span class="step-title">指標方程式（$n=-1$ 的係數）</span>
+        <p>只有 $-xy''$、$-y'$ 平移後在 $n=-1$ 有項：$-(\gamma)(\gamma-1)a_0-\gamma a_0$。</p>
+        $$\big[-\gamma(\gamma-1)-\gamma\big]a_0=-\gamma^2a_0=0\ \xrightarrow{\ a_0\ne0\ }\ \gamma=0\ \text{（重根）}$$
+      </div>
+      <div class="step" data-step="am5-ex-2-s2" data-sym="an">
+        <span class="step-title">遞迴（$n\ge0$）</span>
+        <p>$a_n$ 的係數：$(n+\gamma)(n+\gamma-1)+3(n+\gamma)+1=(n+\gamma+1)^2$；$a_{n+1}$ 的係數：$-(n+1+\gamma)(n+\gamma)-(n+1+\gamma)=-(n+1+\gamma)^2$。</p>
+        $$(n+\gamma+1)^2a_n=(n+\gamma+1)^2a_{n+1}\ \xrightarrow{\ \gamma=0\ }\ a_{n+1}=a_n$$
+      </div>
+      <div class="step" data-step="am5-ex-2-s3" data-sym="y12">
+        <span class="step-title">第一個解</span>
+        $$y_1=\sum_{n=0}^{\infty}x^n=\frac{1}{1-x}\qquad(a_0=1,\ |x|\lt1)$$
+      </div>
+      <div class="step" data-step="am5-ex-2-s4" data-sym="uu">
+        <span class="step-title">降階法：先算 $e^{-\int P\,dx}$</span>
+        <p class="sub">部分分式 $P=\dfrac1x+\dfrac2{x-1}$（$x=0$、$x=1$ 代入求 $A=1$、$B=2$），在 $0\lt x\lt1$ 積分：</p>
+        $$\int P\,dx=\ln x+2\ln(1-x)=\ln\big[x(1-x)^2\big]\ \Longrightarrow\ e^{-\int P\,dx}=\frac{1}{x(1-x)^2}$$
+      </div>
+      <div class="step" data-step="am5-ex-2-s5">
+        <span class="step-title">代入降階公式</span>
+        <p class="sub">代入 $y_1^2=\dfrac1{(1-x)^2}$（步驟 3）：</p>
+        $$u=\int\frac{e^{-\int P\,dx}}{y_1^2}dx=\int\frac{1}{x(1-x)^2}\cdot(1-x)^2\,dx=\int\frac{dx}{x}=\ln x$$
+        $$y_2=u\,y_1=\frac{\ln x}{1-x}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\gamma=0$（重根），$a_{n+1}=a_n$；$y_1=\dfrac1{1-x}$，$y_2=\dfrac{\ln x}{1-x}$；一般解 $y=\dfrac{c_1+c_2\ln x}{1-x}$，$0\lt x\lt1$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>原方程式是正合的：$\dfrac{d}{dx}\big[(x^2-x)y'+xy\big]=(x^2-x)y''+(2x-1)y'+y+xy'$，正好是左邊。積分一次得 $(x^2-x)y'+xy=C$，即 $\big[(x-1)y\big]'=\dfrac Cx$，$(x-1)y=C\ln x+D$，正是 $\dfrac{c_1+c_2\ln x}{1-x}$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am5-sf-02a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$xy''+(1-x)y'-y=0$：$y_1=e^x$，第二解的被積函數要展開</h4>
+    <button type="button" class="exam-btn" data-exam="am5-sf-02a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $xy''+(1-x)y'-y=0$。(a) 求指標方程式。(b) 用 Frobenius 法求 $y_1$ 並認出 closed form。(c) 用降階公式求 $y_2$：寫出它的 $\ln x$ 項，以及其餘部分到 $x^3$。(d) 如果要求解在 $x\to0^+$ 時有界，一般解剩下什麼？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac{1-x}{x}=\dfrac1x-1$、$Q=-\dfrac1x$</td><td>除以 $x$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$1$、$0$</td><td>$xP=1-x\to1$；$x^2Q=-x\to0$</td></tr>
+          <tr><td>降階公式</td><td>$u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}dx$</td><td>2.3 節板書 ★</td></tr>
+          <tr><td>有界條件</td><td>$x\to0^+$ 時 $|y|$ 有限</td><td>(d)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 指標方程式；(b) $y_1$；(c) $y_2$ 的 $\ln$ 項與到 $x^3$ 的其餘部分；(d) 有界的解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $p_0=1$、$q_0=0$，指標多項式是 $\gamma^2$，<b>所以</b>是重根，Frobenius 只給一個解；第二解照 10/14 板書用降階法。</p>
+      <p><b>因為</b>這次 $e^{-\int P\,dx}/y_1^2=\dfrac{e^{-x}}{x}$ 不能直接積分，<b>所以</b>先把 $e^{-x}$ 展開成冪級數再逐項積分（10/14 下一題老師用的「長除法」也是同一個想法）：$\dfrac1x$ 那一項積出 $\ln x$，其餘積出冪級數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-sf-02a-s1" data-sym="p0q0,gam">
+        <span class="step-title">(a) 指標方程式</span>
+        $$\gamma(\gamma-1)+p_0\gamma+q_0=\gamma(\gamma-1)+\gamma=\gamma^2=0\ \Longrightarrow\ \gamma=0\ \text{（重根）}$$
+      </div>
+      <div class="step" data-step="am5-sf-02a-s2" data-sym="an">
+        <span class="step-title">(b) 遞迴與 $y_1$</span>
+        <p>對齊到 $x^{s-1}$（$s=n+\gamma$）：$xy''+y'$ 給 $\big[s(s-1)+s\big]a_n=s^2a_n$；$-xy'-y$ 平移後給 $-\big[(s-1)+1\big]a_{n-1}=-s\,a_{n-1}$：</p>
+        $$s^2a_n=s\,a_{n-1}\ \xrightarrow{\ \gamma=0,\ s=n\ }\ a_n=\frac{a_{n-1}}{n}\ \Longrightarrow\ a_n=\frac{a_0}{n!},\quad y_1=e^x$$
+      </div>
+      <div class="step" data-step="am5-sf-02a-s3" data-sym="uu">
+        <span class="step-title">(c) 降階公式的被積函數</span>
+        <p class="sub">$\displaystyle\int P\,dx=\ln x-x$，所以 $e^{-\int P\,dx}=\dfrac{e^x}{x}$；代入 $y_1^2=e^{2x}$（步驟 2）：</p>
+        $$u'=\frac{e^{x}/x}{e^{2x}}=\frac{e^{-x}}{x}=\frac1x-1+\frac{x}{2}-\frac{x^2}{6}+\frac{x^3}{24}-\cdots$$
+      </div>
+      <div class="step" data-step="am5-sf-02a-s4">
+        <span class="step-title">(c) 逐項積分並乘回 $y_1$</span>
+        $$u=\ln x-x+\frac{x^2}{4}-\frac{x^3}{18}+\frac{x^4}{96}-\cdots$$
+        <p class="sub">$y_2=e^xu$；$\ln x$ 項是 $e^x\ln x=y_1\ln x$，其餘部分把 $e^x=1+x+\tfrac{x^2}2+\cdots$ 乘上 $-x+\tfrac{x^2}4-\tfrac{x^3}{18}$：</p>
+        $$y_2=e^x\ln x-x+\Big(\tfrac14-1\Big)x^2+\Big(-\tfrac1{18}+\tfrac14-\tfrac12\Big)x^3+\cdots=e^x\ln x-x-\frac34x^2-\frac{11}{36}x^3-\cdots$$
+      </div>
+      <div class="step" data-step="am5-sf-02a-s5" data-sym="y12">
+        <span class="step-title">(d) 有界的解</span>
+        <p>一般解 $y=c_1e^x+c_2y_2$。$x\to0^+$ 時 $y_2\approx\ln x\to-\infty$，其他項都有限，所以有界要求 $c_2=0$：只剩 $y=c_1e^x$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\gamma^2=0$，重根 $\gamma=0$；(b) $y_1=e^x$；(c) $y_2=e^x\ln x-x-\tfrac34x^2-\tfrac{11}{36}x^3-\cdots$（$=e^x\int\frac{e^{-x}}{x}dx$）；(d) 有界的解只有 $c_1e^x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>重根的第二解形式 $y_1\ln x+x^0\sum b_nx^n$ ✔（$b_0=0$、$b_1=-1$、$b_2=-\tfrac34$）。把 $y_2$ 代回方程式，殘差到 $x^3$ 都是 0（驗算腳本檢查）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am5-sf-02b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>不用降階：直接代入 $y_2=y_1\ln x+x^{-1}\sum b_nx^n$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-sf-02b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $x^2y''+3xy'+(1+x)y=0$。(a) 求指標方程式。(b) 求 $y_1$ 的一般項與前四項。(c) 已知重根時第二解的形式是 $y_2=y_1\ln x+x^{\gamma}\sum_{n\ge1}b_nx^n$，代入方程式求 $b_1$、$b_2$、$b_3$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac3x$、$Q=\dfrac{1+x}{x^2}$</td><td>除以 $x^2$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$3$、$1$</td><td>$xP=3$；$x^2Q=1+x\to1$</td></tr>
+          <tr><td>第二解的形式</td><td>$y_1\ln x+x^\gamma\sum_{n\ge1}b_nx^n$</td><td>(c) 題目給（2.3 節的結論）；$b_0$ 項只會多一個 $y_1$，取 0</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 指標；(b) $y_1$；(c) $b_1,b_2,b_3$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $p_0=3$、$q_0=1$ 給 $\gamma^2+2\gamma+1=(\gamma+1)^2$，<b>所以</b>是重根 $\gamma=-1$，$y_1$ 照 Frobenius 算。</p>
+      <p><b>因為</b> $y_1$ 沒有 closed form，降階公式的 $\int\frac{e^{-\int P}}{y_1^2}$ 要做很長的長除法，<b>所以</b>改用「已知形式代入」：$L[y_1\ln x]$ 裡含 $\ln x$ 的部分是 $\ln x\cdot L[y_1]=0$，剩下的是由 $\ln x$ 微分產生的、不含 $\ln x$ 的項，它必須和 $L\big[\sum b_nx^{n-1}\big]$ 抵消——得到 $b_n$ 的遞迴。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-sf-02b-s1" data-sym="p0q0,gam">
+        <span class="step-title">(a) 指標方程式</span>
+        $$\gamma(\gamma-1)+3\gamma+1=\gamma^2+2\gamma+1=(\gamma+1)^2=0\ \Longrightarrow\ \gamma=-1\ \text{（重根）}$$
+      </div>
+      <div class="step" data-step="am5-sf-02b-s2" data-sym="an">
+        <span class="step-title">(b) $y_1$</span>
+        <p>$L[x^m]=x^2\cdot m(m-1)x^{m-2}+3x\cdot mx^{m-1}+(1+x)x^m=(m+1)^2x^m+x^{m+1}$。令 $y_1=\sum c_nx^{n-1}$（$m=n-1$），$x^{n-1}$ 的係數：</p>
+        $$n^2c_n+c_{n-1}=0\ \Longrightarrow\ c_n=-\frac{c_{n-1}}{n^2}=\frac{(-1)^n}{(n!)^2}$$
+        $$y_1=\frac1x\Big(1-x+\frac{x^2}{4}-\frac{x^3}{36}+\cdots\Big)$$
+      </div>
+      <div class="step" data-step="am5-sf-02b-s3">
+        <span class="step-title">(c) 算 $L[y_1\ln x]$</span>
+        <p>$(y_1\ln x)'=y_1'\ln x+\dfrac{y_1}{x}$，$(y_1\ln x)''=y_1''\ln x+\dfrac{2y_1'}{x}-\dfrac{y_1}{x^2}$，代入：</p>
+        $$L[y_1\ln x]=\ln x\cdot\underbrace{L[y_1]}_{0}+x^2\Big(\frac{2y_1'}{x}-\frac{y_1}{x^2}\Big)+3x\cdot\frac{y_1}{x}=2xy_1'+2y_1$$
+        <p class="sub">代入 $y_1=\sum c_nx^{n-1}$：$2xy_1'+2y_1=\sum\big[2(n-1)+2\big]c_nx^{n-1}=\sum2n\,c_nx^{n-1}$。</p>
+      </div>
+      <div class="step" data-step="am5-sf-02b-s4">
+        <span class="step-title">(c) 求 $b_n$</span>
+        <p>令 $v=\sum_{n\ge1}b_nx^{n-1}$，$L[v]=\sum\big(n^2b_n+b_{n-1}\big)x^{n-1}$（同步驟 2），要求 $L[y_1\ln x]+L[v]=0$：</p>
+        $$n^2b_n+b_{n-1}=-2n\,c_n,\qquad b_0=0$$
+        <p class="sub">代入 $c_1=-1$、$c_2=\tfrac14$、$c_3=-\tfrac1{36}$（步驟 2）：</p>
+        $$b_1=-2c_1=2,\qquad 4b_2=-4c_2-b_1=-1-2\Rightarrow b_2=-\frac34,\qquad 9b_3=-6c_3-b_2=\frac16+\frac34\Rightarrow b_3=\frac{11}{108}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $(\gamma+1)^2=0$，$\gamma=-1$；(b) $y_1=x^{-1}\sum\dfrac{(-1)^nx^n}{(n!)^2}=\dfrac1x\big(1-x+\tfrac{x^2}4-\tfrac{x^3}{36}+\cdots\big)$；(c) $b_1=2$、$b_2=-\tfrac34$、$b_3=\tfrac{11}{108}$，$y_2=y_1\ln x+2-\tfrac34x+\tfrac{11}{108}x^2-\cdots$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$n=1$ 時 $1\cdot b_1+b_0=-2c_1$：$2+0=2$ ✔。下一個 $b_4=-\tfrac{25}{3456}$，驗算腳本把整個 $y_2$ 代回原式到 $x^3$ 檢查過。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>對齊次方可以往上（下限 $n=-1$）或往下（下限 $n=1$）；最低次方的係數就是指標方程式。</li>
+    <li>指標方程式重根 → 只有一個級數解 $y_1$；第二解 $y_2=uy_1$，$u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}dx$（由 $y_1u''+(2y_1'+Py_1)u'=0$ 分離變數）。</li>
+    <li>重根時被積函數 $\approx\tfrac1x$，所以 $y_2=y_1\ln x+x^\gamma\sum b_nx^n$；$y_2$ 在 $x\to0^+$ 發散。</li>
+    <li>被積函數積不出來時，展開成級數逐項積分；或直接代入已知形式求 $b_n$。</li>
+  </ol>
+</div>

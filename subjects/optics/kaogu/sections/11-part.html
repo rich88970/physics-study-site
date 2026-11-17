@@ -1,0 +1,68 @@
+<h2 id="kp-11">H-4. 2018 年期中第 3 題：干涉條紋對比度（20 分）</h2>
+<p><strong>來源</strong>：2018 年 4 月 25 日期中考第 3 題。</p>
+<p><strong>中文：</strong> 兩道光發生干涉，形成干涉條紋：</p>
+<ul>
+<li>(a) 若其中一束照度為另一束的 $N$ 倍（$N&gt;1$），求條紋<strong>對比度（contrast / fringe visibility）</strong>，以 $N$ 表示。</li>
+<li>(b) 若條紋對比度為 $3/4$，求照度較大的那道光是照度較小的幾倍。</li>
+</ul>
+<p><strong>① 寫出對比度與亮暗照度：</strong> $I_{\max}$ 為亮條紋最大照度、$I_{\min}$ 為暗條紋最小照度，對比度定義為：</p>
+<div class="math-block">$$
+\boxed{V=\frac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}}.
+$$</div>
+<p>亮暗差異大時 $V$ 接近 1，幾乎分不出時接近 0。兩束相干、<strong>平行偏振</strong>、完全重疊的光（照度 $I_1,I_2$），在總相位差 $\delta$ 處的總照度（第三項來自展開 $|E_1+E_2|^2$ 的交叉項）：</p>
+<div class="math-block">$$
+\boxed{I(\delta)=I_1+I_2+2\sqrt{I_1I_2}\cos\delta}.
+$$</div>
+<p>$\cos\delta=+1$ 時最亮：</p>
+<div class="math-block">$$\boxed{I_{\max}=I_1+I_2+2\sqrt{I_1I_2}=(\sqrt{I_1}+\sqrt{I_2})^2}.$$</div>
+<p>$\cos\delta=-1$ 時最暗：</p>
+<div class="math-block">$$\boxed{I_{\min}=I_1+I_2-2\sqrt{I_1I_2}=(\sqrt{I_1}-\sqrt{I_2})^2}.$$</div>
+<h4>(a) 由照度比 $N$ 推導可見度</h4>
+<p><strong>① 設照度比：</strong> 設照度較小的一束為 $I_2$：</p>
+<div class="math-block">$$I_1=NI_2.$$</div>
+<p><strong>② 代入亮暗照度：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+I_{\max}&amp;=(N+1+2\sqrt N)I_2,\\
+I_{\min}&amp;=(N+1-2\sqrt N)I_2.
+\end{aligned}
+$$</div>
+<p><strong>③ 代入對比度定義：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+V&amp;=\frac{(N+1+2\sqrt N)I_2-(N+1-2\sqrt N)I_2}
+{(N+1+2\sqrt N)I_2+(N+1-2\sqrt N)I_2}\\
+&amp;=\frac{4\sqrt NI_2}{2(N+1)I_2}.
+\end{aligned}
+$$</div>
+<p>分子分母約去 $2I_2$：</p>
+<div class="math-block">$$\boxed{V=\frac{2\sqrt N}{N+1}}.$$</div>
+<h4>(b) 已知 $V=3/4$，反求照度比</h4>
+<p><strong>① 列方程：</strong></p>
+<div class="math-block">$$\frac{2\sqrt N}{N+1}=\frac34.$$</div>
+<p>交叉相乘：</p>
+<div class="math-block">$$8\sqrt N=3(N+1).$$</div>
+<p><strong>② 換元：</strong> 同時有 $N$ 與 $\sqrt N$，令</p>
+<div class="math-block">$$x=\sqrt N\quad\Rightarrow\quad N=x^2,\quad x&gt;1.$$</div>
+<p>代入：</p>
+<div class="math-block">$$8x=3(x^2+1).$$</div>
+<p>移到同一側：</p>
+<div class="math-block">$$3x^2-8x+3=0.$$</div>
+<p><strong>③ 二次公式求 $x$：</strong></p>
+<p class="fnote"><b>公式（二次公式）：</b>$ax^2+bx+c=0\ (a\ne0)\ \Rightarrow\ x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$，其中 $a,b,c$ 為實係數、$x$ 為未知數；本題 $a=3$、$b=-8$、$c=3$。</p>
+<div class="math-block">$$
+\begin{aligned}
+x&amp;=\frac{8\pm\sqrt{(-8)^2-4(3)(3)}}{2(3)}\\
+&amp;=\frac{8\pm\sqrt{28}}6
+=\frac{4\pm\sqrt7}{3}.
+\end{aligned}
+$$</div>
+<p>因 $x=\sqrt N&gt;1$，取正號：</p>
+<div class="math-block">$$x=\frac{4+\sqrt7}{3}\approx2.21525.$$</div>
+<p><strong>④ 換回 $N$：</strong> 題目問的是照度比 $N$，不能停在 $x$：</p>
+<div class="math-block">$$
+\boxed{N=x^2=\left(\frac{4+\sqrt7}{3}\right)^2\approx4.90733}.
+$$</div>
+<p><strong>2018 第 3 題最終答案：</strong></p>
+<div class="math-block">$$\boxed{\text{(a) }V=\frac{2\sqrt N}{N+1}\qquad
+\text{(b) }N\approx4.90733.}$$</div>

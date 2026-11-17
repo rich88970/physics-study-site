@@ -1,0 +1,13 @@
+{
+  "title": "第 X 章｜章名",
+  "shortTitle": "科目 第 X 章",
+  "range": "講義 p.?–? · 課本 ○○ 第 X 章",
+  "overview": "s00",
+  "sections": [
+    { "id": "s00", "file": "00-intro.html", "title": "本章總覽" },
+    { "id": "s01", "file": "01-example.html", "title": "第一個小節", "pages": "p.1–5", "desc": "這一節在做什麼（一句話）。" }
+  ],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": ["figures.js"]
+}

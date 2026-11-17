@@ -1,0 +1,257 @@
+<h2>七、指數阻力與由速度求力 <span class="pg">講義 p.63–73 · 課本習題 2-37～2-39、2-50</span></h2>
+
+<p class="lead">講義用三題課本習題練習上一節的兩個積分技巧：習題 2-39 是「已知力、求運動」（指數形式的阻力，船在有限時間內停下）；習題 2-37、2-38 反過來「已知速度與位置的關係、求力」，關鍵是 $F=\tfrac12m\,\mathrm d(\dot x^2)/\mathrm dx$。最後一題是力為常數但動量用相對論形式的情況。</p>
+
+<h3 id="c2v-exp">7.1 指數阻力：船多久、多遠會停 <span class="pg-tag">p.63–68</span></h3>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-39">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-39 · p.96 · 講義 p.63–68</span></div>
+    <h4>阻力 $-\alpha e^{\beta v}$ 的船：$v(t)$、停止時間與距離</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-39">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一艘船以初速 $v_0$ 在湖面上出發，水對船的阻力為 $F=-\alpha e^{\beta v}$（$\alpha$、$\beta$ 為正常數）。(a) 求速率 $v(t)$ 的表示式。(b) 求船停下所需的時間；(c) 求船停下前走的距離。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：初速 $\dot x(0)=v_0$，取出發點 $x(0)=0$；阻力 $F=-\alpha e^{\beta v}$（$\alpha,\beta\gt0$），沒有其他水平力；停下即 $\dot x=0$。</p>
+<h4>(a) 速率 $v(t)$</h4>
+<p><strong>① 分離變數：</strong> 阻力只和速度有關，所以把運動方程式分離變數積分。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$F=m\dfrac{\mathrm d\dot x}{\mathrm dt}$，其中 $F$ 為合力、$m$ 為質量、$\dot x$ 為速度；本題 $F=-\alpha e^{\beta\dot x}$。</p>
+<p>兩邊乘 $e^{-\beta\dot x}\,\mathrm dt/m$，把指數移到 $\mathrm d\dot x$ 那一邊：</p>
+<div class="math-block">$$-\alpha e^{\beta\dot x}=m\frac{\mathrm d\dot x}{\mathrm dt}\ \Longrightarrow\ e^{-\beta\dot x}\,\mathrm d\dot x=-\frac\alpha m\,\mathrm dt$$</div>
+<p>左邊湊微分：$\mathrm d\!\left(e^{-\beta\dot x}\right)=-\beta e^{-\beta\dot x}\,\mathrm d\dot x$，所以 $e^{-\beta\dot x}\,\mathrm d\dot x=-\frac1\beta\,\mathrm d\!\left(e^{-\beta\dot x}\right)$：</p>
+<div class="math-block">$$\mathrm d\!\left(e^{-\beta\dot x}\right)=\frac{\alpha\beta}{m}\,\mathrm dt$$</div>
+<p><strong>② 積分並用 $\dot x(0)=v_0$：</strong> 從 $t=0$（$\dot x=v_0$）積到 $t$：</p>
+<div class="math-block">$$e^{-\beta\dot x}-e^{-\beta v_0}=\frac{\alpha\beta}{m}t\ \Longrightarrow\ e^{-\beta\dot x}=\frac{\alpha\beta}{m}t+e^{-\beta v_0}$$</div>
+<p>兩邊取 $\ln$、除以 $-\beta$：</p>
+<div class="math-block">$$\boxed{v(t)=\dot x(t)=-\frac1\beta\ln\!\left[\frac{\alpha\beta}{m}t+e^{-\beta v_0}\right]}$$</div>
+<h4>(b) 停下所需的時間</h4>
+<p><strong>① 令 $\dot x=0$：</strong> $v\to0$ 時阻力趨近 $\alpha$ 而不是零，所以船會在有限時間停下。$\dot x=0$ 表示 $\ln[\cdots]=0$，也就是中括號等於 $1$：</p>
+<div class="math-block">$$\frac{\alpha\beta}{m}t_{\text{end}}+e^{-\beta v_0}=1$$</div>
+<div class="math-block">$$\boxed{t_{\text{end}}=\frac{m}{\alpha\beta}\left[1-e^{-\beta v_0}\right]}$$</div>
+<p>這是有限的正數：船在有限時間內停下。</p>
+<h4>(c) 停下前走的距離</h4>
+<p><strong>① 乘 $\dot x$ 換成 $\mathrm dx$：</strong> 題目只要距離、用不到時間，所以乘 $\dot x$ 直接求 $x(v)$，代價是一次分部積分。回到 (a) 的 $e^{-\beta\dot x}\,\mathrm d\dot x=-\frac\alpha m\,\mathrm dt$，兩邊乘 $\dot x$；右邊 $\dot x\,\mathrm dt=\mathrm dx$：</p>
+<div class="math-block">$$\dot x\,e^{-\beta\dot x}\,\mathrm d\dot x=-\frac\alpha m\,\mathrm dx$$</div>
+<p><strong>② 分部積分：</strong> 取 $u=\dot x$、$\mathrm dw=e^{-\beta\dot x}\mathrm d\dot x$，則 $\mathrm du=\mathrm d\dot x$、$w=-e^{-\beta\dot x}/\beta$：</p>
+<p class="fnote"><b>公式（分部積分）：</b>$\int u\,\mathrm dw=uw-\int w\,\mathrm du$，其中 $u$、$w$ 為兩個函數；本題 $u=\dot x$、$w=-e^{-\beta\dot x}/\beta$。</p>
+<div class="math-block">$$\begin{aligned}\int\dot x\,e^{-\beta\dot x}\,\mathrm d\dot x&amp;=-\frac{\dot x}{\beta}e^{-\beta\dot x}+\frac1\beta\int e^{-\beta\dot x}\,\mathrm d\dot x\\ &amp;=-\frac1\beta\left[\dot x\,e^{-\beta\dot x}+\frac1\beta e^{-\beta\dot x}\right]\end{aligned}$$</div>
+<p><strong>③ 代上下限：</strong> $\dot x$ 從 $v_0$ 到 $0$，$x$ 從 $0$ 到 $d$。反導函數在 $\dot x=0$ 時是 $-\frac1{\beta^2}$，在 $\dot x=v_0$ 時是 $-\frac1\beta\left[v_0e^{-\beta v_0}+\frac1\beta e^{-\beta v_0}\right]$：</p>
+<div class="math-block">$$-\frac\alpha m\,d=-\frac1{\beta^2}+\frac1\beta\left[v_0e^{-\beta v_0}+\frac1\beta e^{-\beta v_0}\right]$$</div>
+<p>兩邊乘 $-m/\alpha$，提出 $1/\beta^2$：</p>
+<div class="math-block">$$\begin{aligned}d&amp;=\frac{m}{\alpha\beta}\left[\frac1\beta-v_0e^{-\beta v_0}-\frac1\beta e^{-\beta v_0}\right]\\ &amp;=\frac{m}{\alpha\beta^2}\left[1-(1+\beta v_0)e^{-\beta v_0}\right]\end{aligned}$$</div>
+<div class="math-block">$$\boxed{d=\frac{m}{\alpha\beta^2}\left[1-(1+\beta v_0)e^{-\beta v_0}\right]}$$</div>
+    </div>
+  </div>
+</div>
+
+<p>和線性阻力不同，這艘船在<strong>有限時間</strong>內停下。原因是速度趨近零時阻力趨近 $\alpha$，不會跟著變小；而線性阻力 $kmv$ 在 $v\to0$ 時也趨近零，越慢越推不動，只能指數地逼近零。</p>
+
+<div class="anim" data-anim="c2-boat"></div>
+
+<h3 id="c2v-force">7.2 已知 $v(x)$，求力 <span class="pg-tag">p.69–73</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.69 Problem 2-37（通式）</span>
+  $$F(x)=m\frac{\mathrm d\dot x}{\mathrm dt}\ \Rightarrow\ F(x)\,\dot x\,\mathrm dt=m\dot x\,\mathrm d\dot x\ \Rightarrow\ F(x)\,\mathrm dx=\tfrac12m\,\mathrm d(\dot x^2)\ \Rightarrow\ F(x)=\frac12m\frac{\mathrm d(\dot x^2)}{\mathrm dx}$$
+</div>
+
+<p>這是「乘 $\dot x$」技巧倒過來用：給的是速度和位置的關係 $v(x)$，就不要想辦法先求 $x(t)$，直接把 $v^2$ 對 $x$ 微分。它其實就是功能定理的微分形式 $F\,\mathrm dx=\mathrm dT$（第 12 節）。</p>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-37">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-37 · p.96 · 講義 p.69–70</span></div>
+    <h4>速率 $v=\alpha/x$：求產生它的力</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-37">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-37"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A particle of mass $m$ has speed $v=\alpha/x$, where $x$ is its displacement. Find the force $F(x)$ responsible.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-37 · p.96 · 講義 p.69–70</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的質點速率為 $v=\alpha/x$，$x$ 是它的位移。求造成這個運動的力 $F(x)$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：質量 $m$，給的是速度和位置的關係 $v=\alpha/x$（不是 $v(t)$），要求只和位置有關的力 $F(x)$。</p>
+<p><strong>① 通式從哪來：</strong> 已知 $v(x)$、要的力也是位置的函數，所以不先解 $x(t)$，而用連鎖律把對時間的微分換成對位置的微分（功能定理的微分形式）。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$F=m\dfrac{\mathrm dv}{\mathrm dt}$，其中 $F$ 為力、$m$ 為質量、$v$ 為速度；本題 $v$ 是 $x$ 的函數。</p>
+<div class="math-block">$$F=m\frac{\mathrm dv}{\mathrm dt}=m\frac{\mathrm dv}{\mathrm dx}\frac{\mathrm dx}{\mathrm dt}=mv\frac{\mathrm dv}{\mathrm dx}=\frac12m\frac{\mathrm d(v^2)}{\mathrm dx}$$</div>
+<p>最後一步用 $\frac{\mathrm d(v^2)}{\mathrm dx}=2v\frac{\mathrm dv}{\mathrm dx}$。</p>
+<p><strong>② 寫出 $v^2$，代入通式：</strong> 由 $v=\alpha/x$，平方得 $v^2=\alpha^2/x^2=\alpha^2x^{-2}$：</p>
+<div class="math-block">$$F(x)=\frac12m\frac{\mathrm d}{\mathrm dx}\left(\frac{\alpha^2}{x^2}\right)=\frac{\alpha^2}{2}m\frac{\mathrm d}{\mathrm dx}\left(x^{-2}\right)$$</div>
+<p><strong>③ 微分並化簡：</strong> 冪次法則 $\dfrac{\mathrm d}{\mathrm dx}x^{-2}=-2x^{-3}$：</p>
+<div class="math-block">$$F(x)=\frac12m\left(-\frac{2\alpha^2}{x^3}\right)=-\frac{m\alpha^2}{x^3}$$</div>
+<p>負號表示力指向 $-x$；大小正比於 $x^{-3}$。</p>
+<div class="math-block">$$\boxed{F(x)=-\frac{m\alpha^2}{x^3}\quad(\text{指向 }-x\text{，大小}\propto x^{-3})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-38">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-38 · p.96 · 講義 p.71–73</span></div>
+    <h4>$v(x)=\alpha x^{-n}$：求 $F(x)$、$x(t)$、$F(t)$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-38">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的質點速率隨距離 $x$ 變化為 $v(x)=\alpha x^{-n}$。設 $t=0$ 時 $v(x=0)=0$。(a) 求造成此運動的力 $F(x)$；(b) 求 $x(t)$；(c) 求 $F(t)$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：質量 $m$，$v(x)=\alpha x^{-n}$；初始條件「$t=0$ 時 $v(x=0)=0$」在 $n\gt0$ 時和 $v=\alpha x^{-n}$ 矛盾（$x=0$ 處發散），能用的意思是 $x(t=0)=0$。</p>
+<h4>(a) $F(x)$</h4>
+<p><strong>① 代入通式：</strong> 給的是 $v(x)$、要的是 $F(x)$，和 2-37 一樣直接用通式。</p>
+<p class="fnote"><b>公式（$v(x)$ 求力的通式，講義 p.69）：</b>$F(x)=\tfrac12m\dfrac{\mathrm d(v^2)}{\mathrm dx}$，其中 $m$ 為質量、$v$ 為速率、$x$ 為位置；本題 $v^2=\alpha^2x^{-2n}$。</p>
+<p>由 $v=\alpha x^{-n}$，平方得 $v^2=\alpha^2x^{-2n}$；冪次法則 $\frac{\mathrm d}{\mathrm dx}x^{-2n}=-2nx^{-2n-1}$：</p>
+<div class="math-block">$$\begin{aligned}F(x)&amp;=\frac12m\frac{\mathrm d}{\mathrm dx}\left(\alpha^2x^{-2n}\right)=\frac12m\left(-2n\alpha^2x^{-2n-1}\right)\\ &amp;=-mn\alpha^2x^{-2n-1}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{F(x)=-mn\alpha^2x^{-2n-1}}$$</div>
+<h4>(b) $x(t)$</h4>
+<p><strong>① 分離變數積分：</strong> $v=\mathrm dx/\mathrm dt=\alpha x^{-n}$ 本身就是只含 $x$ 和 $t$ 的一階方程式，直接分離積分；不要把 $v=0$ 代進 $v=\alpha x^{-n}$ 去解，那會得到矛盾。兩邊乘 $x^n\,\mathrm dt$：</p>
+<div class="math-block">$$\frac{\mathrm dx}{\mathrm dt}=\alpha x^{-n}\ \Longrightarrow\ x^n\,\mathrm dx=\alpha\,\mathrm dt\ \Longrightarrow\ \frac{x^{n+1}}{n+1}=\alpha t+C$$</div>
+<p><strong>② 用 $x(0)=0$ 定常數：</strong> 代入 $t=0$ 時 $x=0$：$0=0+C$，所以 $C=0$。</p>
+<div class="math-block">$$x^{n+1}=(n+1)\alpha t$$</div>
+<div class="math-block">$$\boxed{x(t)=\big[(n+1)\alpha t\big]^{1/(n+1)}}$$</div>
+<p><strong>注意：</strong> 講義 p.72–73 把 $x(t)$ 寫成 $[(n+1)\alpha t]^{-(n+1)}$，指數應為 $1/(n+1)$；p.73 的 $F(t)$ 指數 $-(2n+1)/(n+1)$ 是對的（式中 $\alpha$ 印成 $a$）。</p>
+<h4>(c) $F(t)$</h4>
+<p><strong>① 把 $x(t)$ 代入 (a)：</strong> (a) 需要 $x^{-(2n+1)}$；由 (b)，指數相乘：</p>
+<div class="math-block">$$x^{-(2n+1)}=\big[(n+1)\alpha t\big]^{-(2n+1)/(n+1)}$$</div>
+<div class="math-block">$$\boxed{F(t)=-mn\alpha^2\big[(n+1)\alpha t\big]^{-(2n+1)/(n+1)}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">$n>0$ 時「$v(x=0)=0$」和 $v=\alpha x^{-n}$ 矛盾</span>
+  <p>$n>0$ 時 $v=\alpha x^{-n}$ 在 $x\to0$ 發散，題目的條件其實是 $x(t=0)=0$。用它定積分常數即可，不要把 $v=0$ 代進 $v=\alpha x^{-n}$ 去解。</p>
+</div>
+
+<h3 id="c2v-rel">7.3 動量不是 $mv$ 時：相對論的定力 <span class="pg-tag">課本 p.97</span></h3>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-50">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-50 · p.97</span></div>
+    <h4>相對論動量下的定力加速：多久到 $c/2$、$0.99c$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-50">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>根據狹義相對論，靜止質量 $m_0$ 的質點在一維中受力 $F$ 時，運動方程式為 $\mathrm dp/\mathrm dt=F$，其中 $p=m_0v/(1-v^2/c^2)^{1/2}$ 是相對論動量，$v^2/c^2\ll1$ 時退化成 $m_0v$。(a) 力 $F$ 為常數、初始條件 $x(0)=0=v(0)$，求 $x(t)$ 與 $v(t)$。(b) 畫出 $v(t)$。(c) 設 $F/m_0=10\ \text{m/s}^2$（約地表的 $g$），質點要多久才達到光速的一半、光速的 99%？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：靜止質量 $m_0$，定力 $F$，$p=m_0v/\sqrt{1-v^2/c^2}$；初始 $x(0)=0$、$v(0)=0$（所以 $p(0)=0$）；(c) $F/m_0=10\ \text{m/s}^2$，$\beta\equiv v/c=0.5$、$0.99$；用標準值 $c=3.00\times10^8\ \text{m/s}$、$1\ \text{年}=3.156\times10^7\ \text{s}$。</p>
+<h4>(a) $x(t)$ 與 $v(t)$</h4>
+<p><strong>① 積分 $\mathrm dp/\mathrm dt=F$：</strong> 動量不是 $m_0v$，$F=m_0a$ 不成立，要回到第二定律的原始形式；$F$ 是常數，積一次就得到 $p$，不用碰 $v$。</p>
+<p class="fnote"><b>公式（牛頓第二定律，動量形式）：</b>$\dfrac{\mathrm dp}{\mathrm dt}=F$，其中 $p$ 為動量、$F$ 為合力；本題 $p$ 用相對論動量 $p=\dfrac{m_0v}{\sqrt{1-v^2/c^2}}$。</p>
+<p>從 $0$ 積到 $t$，代入 $p(0)=0$：</p>
+<div class="math-block">$$p(t)=Ft$$</div>
+<p><strong>② 從 $p$ 反解 $v(t)$：</strong> 代入 $p$ 的定義，兩邊平方去根號，再把 $v^2$ 集中。</p>
+<div class="math-block">$$\begin{aligned}\frac{m_0v}{\sqrt{1-v^2/c^2}}=Ft\ &amp;\Longrightarrow\ m_0^2v^2=F^2t^2\left(1-\frac{v^2}{c^2}\right)\\&amp;\Longrightarrow\ v^2\left[m_0^2+\frac{F^2t^2}{c^2}\right]=F^2t^2\end{aligned}$$</div>
+<p>開根號（$v\ge0$），分子分母同除 $m_0$：</p>
+<div class="math-block">$$v(t)=\frac{Ft/m_0}{\sqrt{1+(Ft/m_0c)^2}}$$</div>
+<p><strong>③ 換變數積分求 $x(t)$：</strong> $x$ 是 $v$ 再積一次，被積函數是「$t$ 除以根號」，令根號裡的東西為 $u$。</p>
+<div class="math-block">$$x(t)=\int_0^t\frac{(F/m_0)t'\,\mathrm dt'}{\sqrt{1+(Ft'/m_0c)^2}}$$</div>
+<p>令 $u=1+(Ft'/m_0c)^2$，$\mathrm du=2(F/m_0c)^2t'\,\mathrm dt'$，所以 $(F/m_0)t'\,\mathrm dt'=\dfrac{m_0c^2}{2F}\,\mathrm du$；$\int u^{-1/2}\mathrm du=2\sqrt u$：</p>
+<div class="math-block">$$\begin{aligned}x(t)&amp;=\frac{m_0c^2}{2F}\Big[2\sqrt u\Big]_{1}^{1+(Ft/m_0c)^2}\\&amp;=\frac{m_0c^2}{F}\left[\sqrt{1+\left(\frac{Ft}{m_0c}\right)^2}-1\right]\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}v=\frac{Ft/m_0}{\sqrt{1+(Ft/m_0c)^2}}\\ x=\frac{m_0c^2}{F}\left[\sqrt{1+(Ft/m_0c)^2}-1\right]\end{gathered}}$$</div>
+<h4>(b) $v(t)$ 的圖形</h4>
+<p><strong>① 看兩端的行為：</strong> 小 $t$ 時分母 $\approx1$，$v\approx(F/m_0)t$，直線上升（牛頓）；大 $t$ 時分母 $\approx Ft/m_0c$，$v\to c$，是水平漸近線。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{由原點直線上升，逐漸彎平}\\ \text{以 }v=c\text{ 為漸近線，永遠在 }c\text{ 之下}\end{gathered}}$$</div>
+<h4>(c) 到達 $0.5c$、$0.99c$ 的時間</h4>
+<p><strong>① 用 $\beta$ 表示時間：</strong> 只要時間，把 $v(t)$ 反過來寫成 $u\equiv Ft/m_0c$ 和 $\beta$ 的關係最省事。</p>
+<p>由 $v(t)$：$\beta=\dfrac{u}{\sqrt{1+u^2}}$，平方後整理反解：</p>
+<div class="math-block">$$u=\frac{\beta}{\sqrt{1-\beta^2}},\qquad t=\frac{uc}{F/m_0}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $F/m_0=10\ \text{m/s}^2$、$c=3.00\times10^8\ \text{m/s}$，得 $c/(F/m_0)=3.00\times10^7\ \text{s}$；換成年就除以 $3.156\times10^7\ \text{s}$。</p>
+<div class="math-block">$$\begin{aligned}\beta=\tfrac12:\ u&amp;=\frac{0.5}{\sqrt{0.75}}=0.577\\ t&amp;=0.577(3.00\times10^7\ \text{s})=1.73\times10^{7}\ \text{s}\approx0.55\ \text{年}\end{aligned}$$</div>
+<div class="math-block">$$\begin{aligned}\beta=0.99:\ u&amp;=\frac{0.99}{\sqrt{1-0.9801}}=7.02\\ t&amp;=7.02(3.00\times10^7\ \text{s})=2.1\times10^{8}\ \text{s}\approx6.7\ \text{年}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}c/2:\ t\approx1.7\times10^7\ \text{s}\ (0.55\ \text{年})\\ 0.99c:\ t\approx2.1\times10^8\ \text{s}\ (6.7\ \text{年})\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-07a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>速度隨距離指數遞減 $v=v_0e^{-x/L}$：這是什麼阻力</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-07a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>測得一艘滑行的船速度隨位置變化為 $v(x)=v_0e^{-x/L}$（$L$ 為常數）。(a) 求作用力 $F(x)$，並把它改寫成速度的函數，指出這是哪一種阻力。(b) 求 $x(t)$ 與 $v(t)$。(c) 船會不會停下？會不會在有限距離內停住？和例題 2.4 的線性阻力（$v$ 隨 $x$ 線性遞減）對照說明。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$v(x)=v_0e^{-x/L}$（$L$ 為常數）；取 $x=0$ 那一刻為 $t=0$，此時 $v=v_0$；船的質量 $m$。</p>
+<h4>(a) 作用力 $F(x)$ 與阻力型式</h4>
+<p><strong>① 求 $F(x)$：</strong> 給的是 $v(x)$，直接用習題 2-37 的通式。</p>
+<p class="fnote"><b>公式（以位置表示的第二定律）：</b>$F=\tfrac12m\,\dfrac{\mathrm d(v^2)}{\mathrm dx}$，其中 $m$ 為質量、$v$ 為速率、$x$ 為位置；本題 $v^2=v_0^2e^{-2x/L}$。</p>
+<p>由 $\frac{\mathrm d}{\mathrm dx}e^{-2x/L}=-\frac2Le^{-2x/L}$：</p>
+<div class="math-block">$$\begin{aligned}F(x)&amp;=\frac12m\frac{\mathrm d}{\mathrm dx}\left(v_0^2e^{-2x/L}\right)=\frac12m\,v_0^2\left(-\frac2L\right)e^{-2x/L}\\&amp;=-\frac{mv_0^2}{L}e^{-2x/L}\end{aligned}$$</div>
+<p><strong>② 改寫成速度的函數：</strong> $v_0^2e^{-2x/L}$ 正是 $v^2$，代回：</p>
+<div class="math-block">$$F=-\frac mL\,v^2$$</div>
+<p>這是 $v^2$ 型阻力 $-bv^2$，$b=m/L$；反過來說，習題 2-51 的 $bv^2$ 阻力會給出 $v=v_0e^{-bx/m}$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}F=-\frac{mv_0^2}{L}e^{-2x/L}=-\frac mL v^2\\ v^2\text{ 型阻力，}b=m/L\end{gathered}}$$</div>
+<h4>(b) $x(t)$ 與 $v(t)$</h4>
+<p><strong>① 分離變數求 $x(t)$：</strong> $\dot x=v_0e^{-x/L}$ 只含 $x$，兩邊乘 $e^{x/L}\,\mathrm dt$；$x$ 從 $0$ 到 $x$、$t$ 從 $0$ 到 $t$ 積分。</p>
+<div class="math-block">$$\begin{aligned}e^{x/L}\,\mathrm dx=v_0\,\mathrm dt\ &amp;\Longrightarrow\ L\left(e^{x/L}-1\right)=v_0t\\&amp;\Longrightarrow\ x(t)=L\ln\!\left(1+\frac{v_0t}{L}\right)\end{aligned}$$</div>
+<p><strong>② 代回得 $v(t)$：</strong> 由上一步 $e^{x/L}=1+v_0t/L$，所以 $e^{-x/L}=\dfrac{1}{1+v_0t/L}$：</p>
+<div class="math-block">$$v(t)=v_0e^{-x/L}=\frac{v_0}{1+v_0t/L}$$</div>
+<div class="math-block">$$\boxed{x=L\ln\!\left(1+\frac{v_0t}{L}\right),\quad v=\frac{v_0}{1+v_0t/L}}$$</div>
+<h4>(c) 停不停得下</h4>
+<p><strong>① 看 $t\to\infty$ 的極限：</strong> $v$ 永遠大於零，只在 $t\to\infty$ 趨近零；但 $x=L\ln(1+v_0t/L)$ 沒有上限，船會一直（越來越慢地）走下去。</p>
+<p><strong>② 和線性阻力對照：</strong> 線性阻力的 $v=v_0-kx$ 在 $x=v_0/k$ 變成零，總距離有限。差別在低速時：$v^2$ 阻力在 $v\to0$ 時比 $v$ 阻力弱得多，煞不住最後那一段。</p>
+<div class="math-block">$$\boxed{\text{速度只漸近於零，不會在有限距離內停住，距離無上限}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-07b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>相對論定力加速：世界線是一條雙曲線</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-07b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>沿用習題 2-50：靜止質量 $m_0$ 的質點在定力 $F$ 下由靜止出發，$\mathrm dp/\mathrm dt=F$、$p=m_0v/\sqrt{1-v^2/c^2}$，得 $x(t)=\dfrac{m_0c^2}{F}\left[\sqrt{1+(Ft/m_0c)^2}-1\right]$。令 $X\equiv m_0c^2/F$。(a) 證明 $(x+X)^2-(ct)^2=X^2$。(b) 證明 $t$ 很小時回到牛頓的 $x\approx\tfrac12(F/m_0)t^2$。(c) 證明 $ct-x\to X$：一道在 $t=0$ 從原點出發、追著質點跑的光，永遠追不上、最後落後的距離趨近定值 $X$。(d) $F/m_0=10\ \text{m/s}^2$ 時 $X$ 是幾光年？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：沿用習題 2-50，$x(t)=\dfrac{m_0c^2}{F}\left[\sqrt{1+(Ft/m_0c)^2}-1\right]$；$X\equiv m_0c^2/F$，因此 $\dfrac{F}{m_0c}=\dfrac cX$、$\dfrac{F}{m_0}=\dfrac{c^2}{X}$；(c) 光訊號 $x_{\text{光}}=ct$；(d) $F/m_0=10\ \text{m/s}^2$，用 $c=2.998\times10^8\ \text{m/s}$、$1\ \text{光年}=9.461\times10^{15}\ \text{m}$。</p>
+<h4>(a) 證明 $(x+X)^2-(ct)^2=X^2$</h4>
+<p><strong>① 用 $X$ 改寫 $x(t)$：</strong> 根號裡的 $Ft/m_0c$ 用 $X$ 寫就是 $ct/X$：$\dfrac{Ft}{m_0c}=\dfrac{Ft}{m_0c^2}\cdot c=\dfrac{ct}{X}$，而前面的係數 $\dfrac{m_0c^2}{F}=X$。</p>
+<div class="math-block">$$\begin{aligned}x&amp;=X\left[\sqrt{1+\left(\frac{ct}X\right)^2}-1\right]\\ \Longrightarrow\ x+X&amp;=X\sqrt{1+\left(\frac{ct}X\right)^2}=\sqrt{X^2+(ct)^2}\end{aligned}$$</div>
+<p><strong>② 平方得雙曲線：</strong></p>
+<div class="math-block">$$(x+X)^2=X^2+(ct)^2\ \Longrightarrow\ (x+X)^2-(ct)^2=X^2$$</div>
+<p>在 $(x,ct)$ 平面上，這是以 $(-X,0)$ 為中心的雙曲線，漸近線斜率 $1$（光速）。</p>
+<div class="math-block">$$\boxed{(x+X)^2-(ct)^2=X^2\ \text{（雙曲線）}}$$</div>
+<h4>(b) 牛頓極限</h4>
+<p><strong>① 一階近似：</strong> 「$t$ 很小」就是 $ct\ll X$，令 $\varepsilon=(ct/X)^2\ll1$。</p>
+<p class="fnote"><b>公式（二項式近似）：</b>$\sqrt{1+\varepsilon}\approx1+\dfrac\varepsilon2$，其中 $\varepsilon\ll1$；本題 $\varepsilon=(ct/X)^2$。</p>
+<div class="math-block">$$x=X\left[\sqrt{1+(ct/X)^2}-1\right]\approx X\cdot\frac12\left(\frac{ct}X\right)^2=\frac{c^2t^2}{2X}$$</div>
+<p><strong>② 換回 $F/m_0$：</strong> 代入 $c^2/X=F/m_0$（由 $X=m_0c^2/F$）：</p>
+<div class="math-block">$$\boxed{x\approx\frac12\frac F{m_0}t^2}$$</div>
+<h4>(c) 證明 $ct-x\to X$</h4>
+<p><strong>① 寫出差距：</strong> 由 (a)，$x=\sqrt{X^2+c^2t^2}-X$，所以 $ct-x=X+ct-\sqrt{X^2+c^2t^2}$，是「$\infty-\infty$」型，要先分子有理化。</p>
+<p><strong>② 分子有理化：</strong> 後兩項乘、除 $ct+\sqrt{X^2+c^2t^2}$，分子用平方差：</p>
+<div class="math-block">$$\begin{aligned}ct-\sqrt{X^2+c^2t^2}&amp;=\frac{c^2t^2-(X^2+c^2t^2)}{ct+\sqrt{X^2+c^2t^2}}\\&amp;=-\frac{X^2}{ct+\sqrt{X^2+c^2t^2}}\end{aligned}$$</div>
+<p><strong>③ 取極限：</strong></p>
+<div class="math-block">$$ct-x=X-\frac{X^2}{ct+\sqrt{X^2+c^2t^2}}\ \xrightarrow{t\to\infty}\ X$$</div>
+<p>分母隨 $t$ 增加而變大，差距從 $0$ 單調增加到 $X$：光一直在前面，但質點越來越接近光速，兩者的距離收斂。反過來說，從 $x\lt-X$ 的地方在 $t=0$ 之後發出的光，永遠追不上這個質點——它有一個「視界」。</p>
+<div class="math-block">$$\boxed{ct-x\to X=\frac{m_0c^2}{F}}$$</div>
+<h4>(d) $X$ 的數值</h4>
+<p><strong>① 代入數值：</strong> $X=m_0c^2/F=c^2/(F/m_0)$，代入 $F/m_0=10\ \text{m/s}^2$、$c=2.998\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\begin{aligned}X&amp;=\frac{(2.998\times10^8)^2}{10}\ \text{m}=8.99\times10^{15}\ \text{m}\\&amp;=\frac{8.99\times10^{15}}{9.461\times10^{15}}\ \text{光年}=0.95\ \text{光年}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{X\approx9.0\times10^{15}\ \text{m}\approx0.95\ \text{光年}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>阻力在 $v\to0$ 不趨近零（如 $\alpha e^{\beta v}$、常數摩擦）時，物體在有限時間停下；線性阻力則永遠不停。</li>
+    <li>已知 $v(x)$ 求力：$F(x)=\tfrac12m\,\mathrm d(v^2)/\mathrm dx$；求 $x(t)$ 則解 $\mathrm dx/\mathrm dt=v(x)$。</li>
+    <li>質量或動量形式改變時回到 $\mathrm dp/\mathrm dt=F$：定力下 $p=Ft$，再由 $p$ 反解 $v$。</li>
+  </ol>
+</div>

@@ -1,0 +1,152 @@
+<h2>五、牛頓環（一）：亮環、暗環的半徑 <span class="pg">課本 p.181–183</span> <span class="must exam">考古高頻 3/5</span></h2>
+
+<p class="lead">凸透鏡放在平板玻璃上，中間夾著一層從中心往外越來越厚的空氣膜；等厚度的地方是同心圓，所以等厚條紋是一圈一圈的環。題目幾乎都是：已知（或由焦距算出）曲率半徑 $R$，求第幾個亮環或暗環的半徑；或反過來由環的半徑求 $R$、$f$。</p>
+
+<p class="small muted">（老師考前錄音沒有點名牛頓環，但李孟恩課程資料夾的 5 份期中考中有 3 份考牛頓環（本節 2025 單一波長、下一節 2020 與 2024 兩個波長），是本章考古題最高頻的題型（物理考古資料夾的舊考卷 16 份中也有 10 份，那 10 題收在<a href="#o10-old-nr1">第 9 節</a>）；依考古題統計推論，不是老師說的。逐字稿的「虛擬光源」重點不包含牛頓環，準備時兩者都要會。）</p>
+
+<h3 id="o10-nr-geo">5.1 幾何：$R\approx r^2/2t$ <span class="pg-tag">p.181</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti Figure 17、式 (39)</span>
+  $$R^2=r_m^2+(R-t_m)^2\quad\Longrightarrow\quad R=\frac{r_m^2+t_m^2}{2t_m}$$
+</div>
+
+<div class="step" data-step="o10-nr-s1" data-sym="R,rm,t">
+  <span class="step-title">展開並丟掉 $t^2$</span>
+  <p>距離接觸點水平 $r$ 處，透鏡表面比平板高 $t$。以曲率中心畫直角三角形：斜邊 $R$、一股 $r$、另一股 $R-t$。</p>
+  $$R^2=r^2+R^2-2Rt+t^2\ \Longrightarrow\ r^2=2Rt-t^2\approx2Rt$$
+  <p>$t$ 是微米等級、$R$ 是公尺等級，$t^2/(2Rt)=t/2R\sim10^{-6}$，可以忽略。</p>
+</div>
+
+<h3 id="o10-nr-cond">5.2 亮環與暗環的條件（數級數要小心）<span class="pg-tag">p.181–182</span></h3>
+
+<div class="step" data-step="o10-nr-s2" data-sym="Dr,m">
+  <span class="step-title">空氣膜：$\Delta_r=\lambda/2$</span>
+  <p>上面是透鏡玻璃→空氣（內反射），下面是空氣→平板玻璃（外反射），差 $\pi$。空氣 $n_f=1$、正向入射：</p>
+  $$2t+\frac{\lambda}{2}=\begin{cases}m\lambda & \text{亮}\\[2pt] (m+\tfrac12)\lambda & \text{暗}\end{cases}$$
+</div>
+
+<div class="step" data-step="o10-nr-s3" data-sym="rm">
+  <span class="step-title">代入 $r^2=2Rt$，用「第幾個」編號</span>
+  <p>接觸點 $t=0$ 時 $\Delta=\lambda/2$：<strong>中心是暗點</strong>（$m=0$ 的暗紋）。所以</p>
+  $$\text{第 }m\text{ 個暗環：}2t_m=m\lambda,\qquad r_m^2=m\lambda R\qquad(m=1,2,\ldots)$$
+  $$\text{第 }m\text{ 個亮環：}2t_m=\left(m-\tfrac12\right)\lambda,\qquad r_m^2=\left(m-\tfrac12\right)\lambda R\qquad(m=1,2,\ldots)$$
+</div>
+
+<p>「第一個暗環」不是中心暗點，而是外面第一圈（$r_1^2=\lambda R$）；課本例題 3 和老師考卷的手寫解答都這樣數。亮環第 1 個在 $2t=\lambda/2$，所以要減 $\tfrac12$。若中間填了折射率 $n$ 的液體，$\lambda$ 換成 $\lambda/n$，環半徑縮小 $\sqrt n$ 倍（課本 7-24）。透射光的環與反射光互補，中心是亮的。</p>
+
+<h3 id="o10-nr-lens">5.3 平凸透鏡：由焦距求 $R$ <span class="pg-tag">p.182 例題 3</span></h3>
+
+<p>考題常給透鏡的焦距和折射率，不直接給 $R$。平凸透鏡一面是平面（$R=\infty$），造鏡者公式：</p>
+
+$$\frac1f=(n-1)\left(\frac1{R_1}-\frac1{R_2}\right)\ \Longrightarrow\ |R|=(n-1)f$$
+
+<p>注意這裡的 $n$ 是<strong>透鏡</strong>的折射率，只用來求 $R$；干涉發生在<strong>空氣膜</strong>裡，$n_f=1$。課本例題 3：$f=8\ \text{m}$、$n=1.523$ → $R=4.184\ \text{m}$；鈉光 589.3 nm 第 1、第 10 暗環 $r_1=\sqrt{\lambda R}=1.57\ \text{mm}$、$r_{10}=\sqrt{10\lambda R}=4.97\ \text{mm}$。</p>
+
+<div class="box pitfall">
+  <span class="box-title">最常見的錯誤</span>
+  <p>把透鏡的 $n$ 當成膜的折射率代進 $2n_ft$（舊考卷 2007 平時考的同學筆記就這樣算，$R$ 多了 1.5 倍）；亮環用 $m\lambda R$（忘了 $-\tfrac12$）；把中心暗點算成第一暗環；直徑和半徑搞混（7-23 給的是直徑）。</p>
+</div>
+
+<h3 id="o10-nr-hw">5.4 作業與考古題</h3>
+
+<div class="problem" data-kind="textbook" id="o10-7-23">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 7-23（作業）· p.190</span></div>
+    <h4>第 10 亮環直徑 7.89 mm，求透鏡曲率半徑 <span class="must exam">考古高頻 3/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-7-23">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>23</b> Newton’s rings are formed between a spherical lens surface and an optical flat. If the tenth bright ring of green light (546.1 nm) is 7.89 mm in diameter, what is the radius of curvature of the lens surface?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>球面透鏡與光學平板之間形成牛頓環。若綠光（546.1 nm）的第 10 個亮環直徑為 7.89 mm，透鏡表面的曲率半徑是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>波長</td><td>$\lambda=546.1\ \text{nm}$</td><td>「green light (546.1 nm)」</td></tr>
+          <tr><td>環</td><td>第 10 亮環，$m=10$</td><td>「the <b>tenth bright ring</b>」</td></tr>
+          <tr><td>半徑</td><td>$r=7.89/2=3.945\ \text{mm}$</td><td>「7.89 mm in <b>diameter</b>」：給的是直徑</td></tr>
+          <tr><td>膜</td><td>空氣，$n_f=1$，$\Delta_r=\lambda/2$</td><td>「between a spherical lens surface and an optical flat」；正向觀察（題目沒寫，牛頓環的標準裝置）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：曲率半徑 $R$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>亮環的位置由空氣膜厚度決定（$2t=(m-\tfrac12)\lambda$），而厚度和半徑之間有幾何關係 $r^2=2Rt$，<b>所以</b>合併成 $r_m^2=(m-\tfrac12)\lambda R$，只剩 $R$ 未知。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-7-23-s1" data-sym="rm,R">
+        <span class="step-title">第 $m$ 亮環公式</span>
+        $$2t_m+\frac\lambda2=m\lambda,\quad r_m^2=2Rt_m\ \Longrightarrow\ r_m^2=\left(m-\tfrac12\right)\lambda R$$
+      </div>
+      <div class="step" data-step="o10-7-23-s2">
+        <span class="step-title">解出 $R$</span>
+        $$R=\frac{r_m^2}{(m-\tfrac12)\lambda}$$
+        <p class="sub">代入 $r=3.945\times10^{-3}\ \text{m}$（題目直徑的一半）、$m=10$、$\lambda=546.1\times10^{-9}\ \text{m}$：</p>
+        $$R=\frac{(3.945\times10^{-3})^2}{9.5(546.1\times10^{-9})}=\frac{1.556\times10^{-5}}{5.188\times10^{-6}}\ \text{m}=3.00\ \text{m}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$R\approx3.00\ \text{m}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>與書末答案 3 m 一致 ✔。若忘了 $-\tfrac12$（用 $10\lambda R$）會得 2.85 m；用直徑當半徑會得 12 m。此處 $t=r^2/2R=2.59\ \mu\text{m}$，$t\ll R$ 近似成立。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o10-k25m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2025-04-22）第 3 題（113下）</span></div>
+    <h4>$f=6.00$ m、$n=1.7328$、486.1 nm：第 2 亮環與第 4 暗環半徑 <span class="must exam">考古高頻 3/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-k25m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k25m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/22/2025</p><p>3. (20%) 一焦距為 6.00 m 的平凸透鏡 (n=1.7328)，被用來進行牛頓環的實驗。若使用的波長為 486.1 nm，試求：</p><p>(a) 第 2 亮環的的半徑為多少 mm；</p><p>(b) 第 4 暗環的的半徑為多少 mm 。</p><p>（「的的」為原卷重複字，照原樣保留 [sic]）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（20%）焦距 6.00 m 的平凸透鏡（$n=1.7328$）用來做牛頓環實驗，波長 486.1 nm。求 (a) 第 2 亮環的半徑（mm）；(b) 第 4 暗環的半徑（mm）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>透鏡</td><td>$f=6.00\ \text{m}$、$n=1.7328$</td><td>「焦距為 6.00 m 的平凸透鏡(n=1.7328)」</td></tr>
+          <tr><td>波長</td><td>$\lambda=486.1\ \text{nm}$</td><td>「波長為 486.1 nm」（氫的 Hβ 線）</td></tr>
+          <tr><td>環</td><td>第 2 亮環、第 4 暗環</td><td>(a)(b)；一亮一暗，公式不同</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $r_{2,\text{亮}}$；(b) $r_{4,\text{暗}}$（mm）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>只給焦距，<b>所以</b>先 $R=(n-1)f$。<b>因為</b>一問亮環、一問暗環，<b>所以</b>分別用 $(m-\tfrac12)\lambda R$ 與 $m\lambda R$——這題就是在考會不會分清楚。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-k25m3-s1" data-sym="R,f">
+        <span class="step-title">曲率半徑</span>
+        <p class="sub">代入 $n=1.7328$、$f=6.00\ \text{m}$（題目）：</p>
+        $$R=(0.7328)(6.00\ \text{m})=4.397\ \text{m}$$
+      </div>
+      <div class="step" data-step="o10-k25m3-s2" data-sym="rm">
+        <span class="step-title">(a) 第 2 亮環</span>
+        $$r_2=\sqrt{1.5\lambda R}=\sqrt{1.5(486.1\times10^{-9})(4.397)}\ \text{m}=\sqrt{3.206\times10^{-6}}\ \text{m}=1.79\ \text{mm}$$
+      </div>
+      <div class="step" data-step="o10-k25m3-s3">
+        <span class="step-title">(b) 第 4 暗環</span>
+        $$r_4=\sqrt{4\lambda R}=\sqrt{4(486.1\times10^{-9})(4.397)}\ \text{m}=\sqrt{8.549\times10^{-6}}\ \text{m}=2.92\ \text{mm}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 約 $1.79\ \text{mm}$；(b) 約 $2.92\ \text{mm}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>用精確式 $r^2=2Rt-t^2$（$t=2\lambda=0.97\ \mu\text{m}$）只差 $10^{-7}$ 相對，近似可用 ✔。順序檢查：第 2 亮環（$1.5\lambda R$）在第 1 暗環（$\lambda R$）與第 2 暗環（$2\lambda R$）之間 ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$r^2\approx2Rt$；空氣膜 $\Delta_r=\lambda/2$，中心暗。</li>
+    <li>第 m 暗環 $r_m^2=m\lambda R$、第 m 亮環 $r_m^2=(m-\tfrac12)\lambda R$。</li>
+    <li>平凸透鏡 $R=(n-1)f$；透鏡的 $n$ 不進干涉條件。</li>
+  </ol>
+</div>

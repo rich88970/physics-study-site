@@ -1,0 +1,635 @@
+<h2>三、共軛複根：Euler 公式與實數形式 <span class="pg">板書 9/23 照片 4–5</span></h2>
+
+<p class="lead">判別式 $a^2-4b\lt0$ 時，特徵根是一對共軛複數 $\alpha\pm i\beta$，解 $e^{(\alpha\pm i\beta)x}$ 是複數值函數。物理量（位移、電流）是實數，所以要用 Euler 公式把它化成 $e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)$，再合成「衰減振幅 × 餘弦」。考卷常寫「Express your answer in terms of real functions」，就是要這一步。這一節也處理第二種條件——邊界條件。</p>
+
+<h3 id="a2-cx-euler">3.1 板書例題：$y''+y'+y=0$ <span class="pg-tag">照片 4–5</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 4，右半）</span>
+  <p>ex.　$y''+y'+y=0$　let $y=e^{\lambda x}$，代入原式</p>
+  $$\lambda^2+\lambda+1=0,\qquad\lambda=\frac{-1\pm\sqrt3\,i}{2}$$
+  <p>possible sol：$e^{(-\frac12+\frac{\sqrt3}2i)x}$，$e^{(-\frac12-\frac{\sqrt3}2i)x}$</p>
+  $$\text{general sol}\quad y=c_1e^{(-\frac12+\frac{\sqrt3}2i)x}+c_2e^{(-\frac12-\frac{\sqrt3}2i)x}$$
+  $$e^{i\theta}=\cos\theta+i\sin\theta$$
+  $$=c_1e^{-\frac12x}e^{i\frac{\sqrt3}2x}+c_2e^{-\frac12x}e^{-i\frac{\sqrt3}2x}$$
+  $$\begin{aligned}=e^{-\frac x2}\Big[&c_1\cos\tfrac{\sqrt3}2x+ic_1\sin\tfrac{\sqrt3}2x\\&+c_2\cos\!\left(-\tfrac{\sqrt3}2x\right)+\cdots\Big]\end{aligned}$$
+  <p><span class="added">網站補充（照片缺漏）</span>老師站在黑板前，擋住了第二個指數因子與最後一項；依 Euler 公式補上：第二項是 $c_2e^{-\frac12x}e^{-i\frac{\sqrt3}2x}$，括號最後一項是 $+ic_2\sin\!\left(-\tfrac{\sqrt3}2x\right)$。</p>
+</div>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 5）</span>
+  $$y=e^{-\frac x2}\left[(c_1+c_2)\cos\tfrac{\sqrt3}2x+i(c_1-c_2)\sin\tfrac{\sqrt3}2x\right]$$
+  $$=e^{-\frac x2}\left[K_1\cos\tfrac{\sqrt3}2x+K_2\sin\tfrac{\sqrt3}2x\right]$$
+  $$=\boxed{e^{-\frac x2}A}\cos\!\left(\tfrac{\sqrt3}2x+\phi\right)$$
+  <p>$e^{-x/2}$：衰減；$A$：振幅；$\phi$：相位</p>
+</div>
+
+<p><strong>一般的共軛複根 $\lambda=\alpha\pm i\beta$。</strong>照板書的步驟，$e^{(\alpha\pm i\beta)x}=e^{\alpha x}e^{\pm i\beta x}$，再用 $e^{\pm i\beta x}=\cos\beta x\pm i\sin\beta x$（$\cos$ 是偶函數、$\sin$ 是奇函數，所以 $\cos(-\theta)=\cos\theta$、$\sin(-\theta)=-\sin\theta$）：</p>
+$$\begin{aligned}y&=e^{\alpha x}\left[(c_1+c_2)\cos\beta x+i(c_1-c_2)\sin\beta x\right]\\&=e^{\alpha x}\left(K_1\cos\beta x+K_2\sin\beta x\right)\end{aligned}$$
+<p>其中 $K_1=c_1+c_2$、$K_2=i(c_1-c_2)$。$c_1,c_2$ 本來就可以是任意複數；取 $c_2=\overline{c_1}$（共軛）時 $K_1,K_2$ 都是實數，$y$ 就是實函數。所以考試直接寫 $e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)$，$K_1,K_2$ 當實數常數，用初始條件去定。</p>
+
+<p><strong>振幅相位形式。</strong>用和角公式 $A\cos(\theta+\phi)=A\cos\phi\cos\theta-A\sin\phi\sin\theta$ 和 $K_1\cos\theta+K_2\sin\theta$ 比較：</p>
+$$K_1=A\cos\phi,\quad K_2=-A\sin\phi\quad\Rightarrow\quad A=\sqrt{K_1^2+K_2^2},\quad\tan\phi=-\frac{K_2}{K_1}$$
+<p>$\phi$ 的象限要用 $\cos\phi=K_1/A$、$\sin\phi=-K_2/A$ 兩個的正負號一起判斷，不能只看 $\tan$。$e^{\alpha x}A$ 是「包絡線」：$\alpha\lt0$ 時振幅衰減（阻尼振盪，第 5 節），$\alpha=0$ 時是等幅振盪（例如 $y''+y=0$）。</p>
+
+<details class="supp">
+  <summary>不經過複數，直接驗證 $e^{\alpha x}\cos\beta x$ 是解</summary>
+  <div class="supp-body">
+    <p>$y=e^{\alpha x}\cos\beta x$：$y'=e^{\alpha x}(\alpha\cos\beta x-\beta\sin\beta x)$，$y''=e^{\alpha x}\left[(\alpha^2-\beta^2)\cos\beta x-2\alpha\beta\sin\beta x\right]$。代入 $y''+ay'+by$：</p>
+    $$\begin{aligned}e^{\alpha x}\big[&(\alpha^2-\beta^2+a\alpha+b)\cos\beta x\\&-(2\alpha\beta+a\beta)\sin\beta x\big]\end{aligned}$$
+    <p>$\alpha\pm i\beta$ 是 $\lambda^2+a\lambda+b=0$ 的根，表示 $\alpha=-a/2$、$\alpha^2+\beta^2=b$。代入後兩個括號都是 0：$2\alpha\beta+a\beta=\beta(2\alpha+a)=0$，$\alpha^2-\beta^2+a\alpha+b=\alpha^2-\beta^2-2\alpha^2+\alpha^2+\beta^2=0$ ✔。</p>
+  </div>
+</details>
+
+<div class="problem" data-kind="example" id="a2-b3">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/23 板書 · 照片 4–5</span></div>
+    <h4>共軛複根化成實數形式：$y''+y'+y=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-b3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-b3"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.　$y''+y'+y=0$　let $y=e^{\lambda x}$，代入原式</p><p>（照片 5：化成 $e^{-\frac x2}\left[K_1\cos(\frac{\sqrt3}2x)+K_2\sin(\frac{\sqrt3}2x)\right]=e^{-\frac x2}A\cos(\frac{\sqrt3}2x+\phi)$）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $y''+y'+y=0$ 的一般解，寫成實數形式 $e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)$，再寫成振幅相位形式 $Ae^{\alpha x}\cos(\beta x+\phi)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=1$、$b=1$</td><td>「$y''+y'+y=0$」：三項係數都是 1</td></tr>
+          <tr><td>條件</td><td>沒有初始條件</td><td>「求⋯⋯<b>一般解</b>」：答案保留兩個任意常數</td></tr>
+          <tr><td>形式</td><td>實數函數</td><td>「寫成實數形式」：不能停在 $e^{(\cdots)i x}$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一般解的實數形式，以及 $A$、$\phi$ 與 $K_1,K_2$ 的關係。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>判別式 $1-4=-3\lt0$，特徵根是共軛複數，<b>所以</b>兩個解 $e^{\lambda x}$ 是複數值。<b>因為</b>題目要實數形式，<b>所以</b>把 $e^{(\alpha\pm i\beta)x}$ 拆成 $e^{\alpha x}e^{\pm i\beta x}$，用 Euler 公式展開，再把含 $i$ 的組合併進新常數 $K_1,K_2$。最後用和角公式合成單一餘弦。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-b3-s1" data-sym="lam,ab2">
+        <span class="step-title">特徵根</span>
+        <p class="sub">代入 $a=1$、$b=1$ 到求根公式：</p>
+        $$\lambda=\frac{-1\pm\sqrt{1-4}}{2}=\frac{-1\pm\sqrt3\,i}{2}$$
+        <p>實部 $\alpha=-\tfrac12$、虛部 $\beta=\tfrac{\sqrt3}2$。</p>
+      </div>
+      <div class="step" data-step="a2-b3-s2">
+        <span class="step-title">複數形式的一般解</span>
+        $$y=c_1e^{(-\frac12+\frac{\sqrt3}2i)x}+c_2e^{(-\frac12-\frac{\sqrt3}2i)x}=e^{-\frac x2}\left[c_1e^{i\frac{\sqrt3}2x}+c_2e^{-i\frac{\sqrt3}2x}\right]$$
+      </div>
+      <div class="step" data-step="a2-b3-s3">
+        <span class="step-title">Euler 公式展開</span>
+        <p>記 $\theta=\tfrac{\sqrt3}2x$。$e^{i\theta}=\cos\theta+i\sin\theta$，$e^{-i\theta}=\cos\theta-i\sin\theta$：</p>
+        $$\begin{aligned}c_1e^{i\theta}+c_2e^{-i\theta}&=(c_1+c_2)\cos\theta\\&\quad+i(c_1-c_2)\sin\theta\end{aligned}$$
+      </div>
+      <div class="step" data-step="a2-b3-s4" data-sym="c12">
+        <span class="step-title">併成實數常數</span>
+        <p>令 $K_1=c_1+c_2$、$K_2=i(c_1-c_2)$（取 $c_2=\overline{c_1}$ 時兩者都是實數）：</p>
+        $$y=e^{-\frac x2}\left[K_1\cos\tfrac{\sqrt3}2x+K_2\sin\tfrac{\sqrt3}2x\right]$$
+      </div>
+      <div class="step" data-step="a2-b3-s5" data-sym="Aphi">
+        <span class="step-title">合成振幅相位形式</span>
+        <p>展開 $A\cos(\theta+\phi)=A\cos\phi\cos\theta-A\sin\phi\sin\theta$，和 $K_1\cos\theta+K_2\sin\theta$ 逐項比較：</p>
+        $$K_1=A\cos\phi,\qquad K_2=-A\sin\phi$$
+        <p>兩式平方相加得 $A=\sqrt{K_1^2+K_2^2}$，相除得 $\tan\phi=-K_2/K_1$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=e^{-x/2}\left[K_1\cos\tfrac{\sqrt3}2x+K_2\sin\tfrac{\sqrt3}2x\right]=Ae^{-x/2}\cos\!\left(\tfrac{\sqrt3}2x+\phi\right)$，其中 $A=\sqrt{K_1^2+K_2^2}$、$\tan\phi=-K_2/K_1$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>用上面補充的公式：$2\alpha+a=-1+1=0$ ✔，$\alpha^2-\beta^2+a\alpha+b=\tfrac14-\tfrac34-\tfrac12+1=0$ ✔。$x\to\infty$ 時 $e^{-x/2}\to0$，振盪衰減，符合「衰減振幅」。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a2-111a-m2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2022.Nov. 第 2 題（111上） · 114級上學期應數(期中) 第 2 題（學生手抄同卷）</span></div>
+    <h4>純虛根：$y''+y=0$，$y(0)=1$、$y'(0)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-111a-m2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-111a-m2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2022.Nov.)</p><p>2. (5 points) Solve $y''+y=0$ for $y(0)=1$ and $y'(0)=1$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（5 分）解 $y''+y=0$，$y(0)=1$、$y'(0)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=0$、$b=1$</td><td>「$y''+y=0$」：沒有 $y'$ 項</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=1$、$y'(0)=1$</td><td>「for $y(0)=1$ and $y'(0)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解（寫成實函數）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>特徵方程式 $\lambda^2+1=0$ 沒有實根（判別式 $-4\lt0$），根是 $\pm i$（$\alpha=0$、$\beta=1$），<b>所以</b>解是 $\cos x$、$\sin x$ 的組合，沒有指數衰減。<b>因為</b> $\cos0=1$、$\sin0=0$，<b>所以</b>代 $x=0$ 時兩個常數直接分開，不用解聯立。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-111a-m2-s1" data-sym="ab2">
+        <span class="step-title">特徵根與實數形式</span>
+        $$\lambda^2+1=0\ \Rightarrow\ \lambda=\pm i\ (\alpha=0,\ \beta=1)$$
+        $$y=K_1\cos x+K_2\sin x,\qquad y'=-K_1\sin x+K_2\cos x$$
+      </div>
+      <div class="step" data-step="a2-111a-m2-s2" data-sym="c12">
+        <span class="step-title">代入初始條件</span>
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=1$、$y'(0)=1$：</p>
+        $$y(0)=K_1=1,\qquad y'(0)=K_2=1$$
+      </div>
+      <div class="step" data-step="a2-111a-m2-s3" data-sym="Aphi">
+        <span class="step-title">（可選）合成單一正弦</span>
+        <p>$A=\sqrt{1^2+1^2}=\sqrt2$，$\cos x+\sin x=\sqrt2\left(\tfrac1{\sqrt2}\sin x+\tfrac1{\sqrt2}\cos x\right)=\sqrt2\sin\!\left(x+\tfrac\pi4\right)$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\cos x+\sin x=\sqrt2\sin\!\left(x+\tfrac\pi4\right)$。</p><p>雲端「114級上學期應數(期中)」是這份考卷的學生手抄本，第 2 題抄成 $y(0)=0$、$y'(0)=1$；那樣的話 $K_1=0$、$K_2=1$，$y=\sin x$。以打字原卷的 $y(0)=1$ 為準。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y''=-\cos x-\sin x=-y$ ✔；$y(0)=1$、$y'(0)=-0+1=1$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a2-113a-m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2024.Nov. 第 3 題（113上）</span></div>
+    <h4>共軛複根加初始條件：$4y''+4y'+17y=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-113a-m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-113a-m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2024. Nov.)　25 points for each problem</p><p>3. Solve $4y''+4y'+17y=0$ for $y(0)=4$ and $y'(0)=-6$. Express your answer in terms of real functions.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（25 分）解 $4y''+4y'+17y=0$，$y(0)=4$、$y'(0)=-6$。答案要用實函數表示。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$4,\ 4,\ 17$（除以 4：$a=1$、$b=\tfrac{17}4$）</td><td>「$4y''+4y'+17y=0$」：$y''$ 前有係數 4</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=4$、$y'(0)=-6$</td><td>「for $y(0)=4$ and $y'(0)=-6$」</td></tr>
+          <tr><td>答案形式</td><td>$\cos$、$\sin$ 的實函數</td><td>「Express your answer in terms of real functions」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解，用 $e^{\alpha x}\cos$、$e^{\alpha x}\sin$ 表示。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>是常係數齊次，<b>所以</b>特徵方程式直接用原係數 $4\lambda^2+4\lambda+17=0$。<b>因為</b>判別式 $16-272=-256\lt0$，<b>所以</b>是共軛複根，題目又要求實函數，<b>所以</b>直接寫 $e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)$。</p>
+      <p>$y'(0)$ 的代入要用乘積法則：$e^{\alpha x}$ 和 $\cos\beta x$ 都要微分，這是這題最容易錯的地方。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-113a-m3-s1" data-sym="lam,ab2">
+        <span class="step-title">特徵根</span>
+        <p class="sub">代入 $A=4$、$B=4$、$C=17$ 到 $\lambda=\dfrac{-B\pm\sqrt{B^2-4AC}}{2A}$：</p>
+        $$\lambda=\frac{-4\pm\sqrt{16-272}}{8}=\frac{-4\pm16i}{8}=-\frac12\pm2i$$
+        <p>$\alpha=-\tfrac12$、$\beta=2$。</p>
+      </div>
+      <div class="step" data-step="a2-113a-m3-s2" data-sym="c12">
+        <span class="step-title">實數形式的一般解</span>
+        $$y=e^{-x/2}\left(K_1\cos2x+K_2\sin2x\right)$$
+      </div>
+      <div class="step" data-step="a2-113a-m3-s3">
+        <span class="step-title">代入 $y(0)=4$</span>
+        <p class="sub">$x=0$：$e^0=1$、$\cos0=1$、$\sin0=0$，用題目的 $y(0)=4$：</p>
+        $$K_1=4$$
+      </div>
+      <div class="step" data-step="a2-113a-m3-s4">
+        <span class="step-title">微分後代入 $y'(0)=-6$</span>
+        <p>乘積法則：$(e^{-x/2})'=-\tfrac12e^{-x/2}$，$(\cos2x)'=-2\sin2x$，$(\sin2x)'=2\cos2x$：</p>
+        $$\begin{aligned}y'&=e^{-x/2}\Big[\left(-\tfrac12K_1+2K_2\right)\cos2x\\&\qquad\quad+\left(-\tfrac12K_2-2K_1\right)\sin2x\Big]\end{aligned}$$
+        <p class="sub">代入 $x=0$、$K_1=4$（步驟 3）與題目的 $y'(0)=-6$：</p>
+        $$-\tfrac12(4)+2K_2=-6\ \Rightarrow\ 2K_2=-4\ \Rightarrow\ K_2=-2$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=e^{-x/2}\left(4\cos2x-2\sin2x\right)$（也可寫成 $2\sqrt5\,e^{-x/2}\cos(2x+\phi)$，$\cos\phi=\tfrac2{\sqrt5}$、$\sin\phi=\tfrac1{\sqrt5}$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=4$ ✔；$y'(0)=-2+2(-2)=-6$ ✔。代回特徵方程式：$4(\alpha^2-\beta^2)+4\alpha+17=4(\tfrac14-4)-2+17=0$ ✔，虛部 $8\alpha\beta+4\beta=-8+8=0$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a2-s03-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>衰減振盪的零點與極大值比</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s03-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$y''+2y'+5y=0$，$y(0)=1$、$y'(0)=1$。(a) 求解，並寫成板書的形式 $Ae^{\alpha x}\cos(\beta x+\phi)$；(b) 求 $x\gt0$ 的第一個零點；(c) 相鄰兩個極大值的比是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=2$、$b=5$</td><td>「$y''+2y'+5y=0$」</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=1$、$y'(0)=1$</td><td>「$y(0)=1$、$y'(0)=1$」</td></tr>
+          <tr><td>「相鄰極大值」</td><td>$y'=0$ 且是極大的相鄰兩點</td><td>(c)：振盪函數的極大值隔一個週期出現一次（自己讀出來的）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $y(x)$ 與 $A,\phi$；(b) 第一個正零點；(c) $y(x_{k+1})/y(x_k)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>判別式 $4-20\lt0$，<b>所以</b>是衰減振盪，先照 3.1 寫成 $e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)$ 代初始條件。<b>因為</b>單一餘弦 $\cos(\beta x+\phi)$ 的零點和週期一眼就看得出來，<b>所以</b>(b)(c) 都用振幅相位形式做，不要在 $K_1\cos+K_2\sin$ 的形式裡硬解。</p>
+      <p>(c) 的關鍵：$\cos(\beta x+\phi)$ 的部分每隔週期 $2\pi/\beta$ 重複，只有包絡 $e^{\alpha x}$ 變小，所以比值就是包絡在一個週期內縮小的倍數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s03-2-s1" data-sym="ab2">
+        <span class="step-title">特徵根與一般解</span>
+        $$\lambda=\frac{-2\pm\sqrt{4-20}}{2}=-1\pm2i,\qquad y=e^{-x}(K_1\cos2x+K_2\sin2x)$$
+      </div>
+      <div class="step" data-step="a2-s03-2-s2" data-sym="c12">
+        <span class="step-title">代入初始條件</span>
+        <p class="sub">代入 $x=0$ 與 $y(0)=1$：$K_1=1$。微分 $y'=e^{-x}[(-K_1+2K_2)\cos2x+(-K_2-2K_1)\sin2x]$，代入 $y'(0)=1$：</p>
+        $$-K_1+2K_2=1\ \Rightarrow\ -1+2K_2=1\ \Rightarrow\ K_2=1$$
+      </div>
+      <div class="step" data-step="a2-s03-2-s3" data-sym="Aphi">
+        <span class="step-title">(a) 振幅相位形式</span>
+        <p class="sub">代入 $K_1=1$、$K_2=1$ 到 $A=\sqrt{K_1^2+K_2^2}$、$\cos\phi=K_1/A$、$\sin\phi=-K_2/A$：</p>
+        $$A=\sqrt2,\quad\cos\phi=\tfrac1{\sqrt2},\quad\sin\phi=-\tfrac1{\sqrt2}\ \Rightarrow\ \phi=-\frac\pi4$$
+        $$y=\sqrt2\,e^{-x}\cos\!\left(2x-\frac\pi4\right)$$
+      </div>
+      <div class="step" data-step="a2-s03-2-s4">
+        <span class="step-title">(b) 第一個零點</span>
+        <p>$e^{-x}\neq0$，零點只來自 $\cos(2x-\tfrac\pi4)=0$，即 $2x-\tfrac\pi4=\tfrac\pi2+n\pi$。$x\gt0$ 的第一個是 $n=0$：</p>
+        $$2x=\frac{3\pi}4\quad\Rightarrow\quad x=\frac{3\pi}8=1.178$$
+      </div>
+      <div class="step" data-step="a2-s03-2-s5">
+        <span class="step-title">(c) 相鄰極大值的比</span>
+        <p>$y'=\sqrt2e^{-x}\left[-\cos(2x-\tfrac\pi4)-2\sin(2x-\tfrac\pi4)\right]=0$ ⟺ $\tan(2x-\tfrac\pi4)=-\tfrac12$。這個條件每隔 $\Delta(2x)=\pi$ 重複一次，極大、極小交替，所以相鄰兩個<b>極大</b>相隔 $\Delta(2x)=2\pi$，即 $\Delta x=\pi$。</p>
+        <p class="sub">相隔 $\Delta x=\pi$ 時餘弦部分相同，只剩包絡 $e^{-x}$ 的比：</p>
+        $$\frac{y(x+\pi)}{y(x)}=\frac{e^{-(x+\pi)}}{e^{-x}}=e^{-\pi}=0.0432$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $y=e^{-x}(\cos2x+\sin2x)=\sqrt2e^{-x}\cos(2x-\tfrac\pi4)$；(b) $x=\tfrac{3\pi}8\approx1.178$；(c) $e^{-\pi}\approx0.0432$（每個週期振幅剩 4.3%）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\sqrt2\cos(2x-\tfrac\pi4)=\sqrt2(\cos2x\cdot\tfrac{1}{\sqrt2}+\sin2x\cdot\tfrac{1}{\sqrt2})=\cos2x+\sin2x$ ✔；$x=\tfrac{3\pi}8$：$\cos\tfrac{3\pi}4+\sin\tfrac{3\pi}4=-\tfrac{1}{\sqrt2}+\tfrac1{\sqrt2}=0$ ✔</p></div>
+  </div>
+</div>
+
+<h3 id="a2-cx-bvp">3.2 初始條件與邊界條件 <span class="pg-tag">作業第 1 題</span></h3>
+
+<p>到目前為止的條件都是<strong>初始條件</strong>（I.C.）：$y$ 和 $y'$ 給在同一點。作業第 1 題改成 $y(0)$ 和 $y(\pi/2)$——兩個條件給在<strong>不同的點</strong>，叫<strong>邊界條件</strong>（boundary condition）。做法完全一樣：把兩個條件代入一般解，解兩個常數。差別在於：</p>
+<ul>
+  <li>初始值問題的係數行列式是 Wronskian $W(x_0)\neq0$，永遠有唯一解（第 1 節）。</li>
+  <li>邊界值問題的行列式可能是 0，這時要嘛<strong>無解</strong>、要嘛<strong>無限多解</strong>。共軛複根（振盪解）特別容易出現這種情形，因為 $\sin$ 會在很多點等於 0。這就是 113 下期中「特徵值問題」（第 6 節）的來源。</li>
+</ul>
+
+<div class="problem" data-kind="textbook" id="a2-hw1">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">9/23 作業 第 1 題</span></div>
+    <h4>邊界條件：$y''-2y'+2y=0$，$y(0)=-3$、$y(\pi/2)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-hw1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-hw1"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p><b>Homework</b></p><p>1. $y''-2y'+2y=0$ with $y(0)=-3$ and $y(\pi/2)=0$.</p><p>Ans : $y=-3e^{x}\cos(x)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''-2y'+2y=0$，$y(0)=-3$、$y(\pi/2)=0$。（老師給的答案：$y=-3e^x\cos x$）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-2$、$b=2$</td><td>「$y''-2y'+2y=0$」</td></tr>
+          <tr><td>條件</td><td>$y(0)=-3$、$y(\pi/2)=0$</td><td>「with $y(0)=-3$ and $y(\pi/2)=0$」：兩點都給 $y$，沒有給 $y'$——<b>邊界條件</b></td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足兩個邊界條件的解，並驗證老師的答案。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>判別式 $4-8\lt0$，<b>所以</b>是共軛複根，寫成 $e^{x}(K_1\cos x+K_2\sin x)$。<b>因為</b>兩個條件都只給 $y$，<b>所以</b>不必微分，直接把 $x=0$ 和 $x=\pi/2$ 代入一般解；在這兩點 $\cos$、$\sin$ 有一個是 0，兩個常數會各自分開。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-hw1-s1" data-sym="ab2">
+        <span class="step-title">特徵根</span>
+        $$\lambda^2-2\lambda+2=0\ \Rightarrow\ \lambda=\frac{2\pm\sqrt{4-8}}{2}=1\pm i$$
+        $$y=e^{x}(K_1\cos x+K_2\sin x)$$
+      </div>
+      <div class="step" data-step="a2-hw1-s2" data-sym="c12">
+        <span class="step-title">代入 $x=0$</span>
+        <p class="sub">$e^0=1$、$\cos0=1$、$\sin0=0$，用題目的 $y(0)=-3$：</p>
+        $$K_1=-3$$
+      </div>
+      <div class="step" data-step="a2-hw1-s3">
+        <span class="step-title">代入 $x=\pi/2$</span>
+        <p class="sub">$\cos\tfrac\pi2=0$、$\sin\tfrac\pi2=1$，用題目的 $y(\pi/2)=0$：</p>
+        $$e^{\pi/2}(K_1\cdot0+K_2\cdot1)=0\ \Rightarrow\ K_2=0\quad(e^{\pi/2}\neq0)$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=-3e^{x}\cos x$，與老師的答案相同。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y'=-3e^x(\cos x-\sin x)$，$y''=-3e^x(-2\sin x)=6e^x\sin x$；$y''-2y'+2y=6e^x\sin x+6e^x\cos x-6e^x\sin x-6e^x\cos x=0$ ✔；$y(0)=-3$、$y(\pi/2)=-3e^{\pi/2}\cdot0=0$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a2-s03-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>邊界值問題什麼時候無解或無限多解</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s03-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $y''+4y=0$。(a) 邊界條件 $y(0)=1$、$y(\pi/2)=B$：$B$ 是多少時有解？那時有幾個解？(b) 改成 $y(0)=1$、$y(\pi/4)=B$：說明對任何 $B$ 都恰有一個解，並求出來。(c) 一般地，條件 $y(0)$、$y(L)$ 什麼時候會出問題？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=0$、$b=4$</td><td>「$y''+4y=0$」</td></tr>
+          <tr><td>(a) 條件</td><td>$y(0)=1$、$y(\pi/2)=B$</td><td>(a)：$B$ 是參數</td></tr>
+          <tr><td>(b) 條件</td><td>$y(0)=1$、$y(\pi/4)=B$</td><td>(b)：只把第二個點換成 $\pi/4$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 有解的 $B$ 與解的個數；(b) 唯一解；(c) 一般的判斷條件。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>特徵根 $\pm2i$，<b>所以</b>一般解 $K_1\cos2x+K_2\sin2x$。<b>因為</b>邊界值問題就是解 $K_1,K_2$ 的二元一次聯立，<b>所以</b>有沒有唯一解要看係數行列式；行列式為 0 時，再看右邊相不相容（無解或無限多解）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s03-1-s1">
+        <span class="step-title">一般解與 $y(0)=1$</span>
+        $$\lambda^2+4=0\ \Rightarrow\ \lambda=\pm2i,\qquad y=K_1\cos2x+K_2\sin2x$$
+        <p class="sub">代入 $x=0$ 與 $y(0)=1$：$K_1=1$。</p>
+      </div>
+      <div class="step" data-step="a2-s03-1-s2">
+        <span class="step-title">(a) 第二點 $x=\pi/2$</span>
+        <p class="sub">代入 $x=\pi/2$：$\cos\pi=-1$、$\sin\pi=0$：</p>
+        $$y(\pi/2)=K_1(-1)+K_2\cdot0=-1$$
+        <p>不論 $K_2$ 是多少，$y(\pi/2)$ 都是 $-1$。所以 $B\neq-1$ 時<b>無解</b>；$B=-1$ 時條件自動成立，$K_2$ 任意，<b>無限多解</b> $y=\cos2x+K_2\sin2x$。</p>
+      </div>
+      <div class="step" data-step="a2-s03-1-s3">
+        <span class="step-title">(b) 第二點 $x=\pi/4$</span>
+        <p class="sub">代入 $x=\pi/4$：$\cos\tfrac\pi2=0$、$\sin\tfrac\pi2=1$：</p>
+        $$y(\pi/4)=K_2=B$$
+        <p>任何 $B$ 都恰好定出一個 $K_2$：$y=\cos2x+B\sin2x$。</p>
+      </div>
+      <div class="step" data-step="a2-s03-1-s4">
+        <span class="step-title">(c) 行列式判斷</span>
+        <p>條件 $y(0)=y_0$、$y(L)=y_L$ 寫成矩陣：</p>
+        $$\begin{pmatrix}1&0\\\cos2L&\sin2L\end{pmatrix}\begin{pmatrix}K_1\\K_2\end{pmatrix}=\begin{pmatrix}y_0\\y_L\end{pmatrix}$$
+        <p>行列式 $\sin2L$。$\sin2L=0$（$L=\tfrac{n\pi}2$）時第二點正好落在 $\sin2x$ 的零點，$K_2$ 管不到那一點：要嘛矛盾（無解）、要嘛 $K_2$ 自由（無限多解）。$L\neq\tfrac{n\pi}2$ 時永遠唯一。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 只有 $B=-1$ 有解，而且有無限多個：$y=\cos2x+K_2\sin2x$；(b) 唯一解 $y=\cos2x+B\sin2x$；(c) $L=n\pi/2$ 時（行列式 $\sin2L=0$）不唯一。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>(a) 例如 $K_2=5$：$y=\cos2x+5\sin2x$，$y(0)=1$、$y(\pi/2)=-1$ ✔。對照：相異實根的 $y''-k^2y=0$ 行列式是 $\sinh kL$，只有 $L=0$ 才為 0，所以第 2 節的邊界值問題永遠唯一。</p></div>
+  </div>
+</div>
+
+<h3 id="a2-cx-old">3.3 更早年級的考古題 <span class="pg-tag">109 級下第 1 次期中 · 108 級下 ODE2 · 108 級上 Calculus</span></h3>
+
+<p>前兩題是標準的「複根＋初始條件」。後三題出自 108 級上的 Single Variable Calculus 卷（109 級上第 1 次期中也考了其中一題），題目只要求微分、代回驗證——但內容正是這一節的事實：$e^{\alpha x}\cos\beta x$、$e^{\alpha x}\sin\beta x$ 是特徵根 $\alpha\pm i\beta$ 的解。每題都附上「用特徵方程式一眼看出」的對照。</p>
+
+<div class="problem" data-kind="exam" id="a2-109b-3b">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 3(b) 題</span></div>
+    <h4>共軛複根：$y''-8y'+17y=0$，$y(0)=-4$、$y'(0)=-1$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-109b-3b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-109b-3b"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>3. Solve the 2nd-order homogeneous ODEs.</p><p>(b) $y''-8y'+17y=0$ for $y(0)=-4$ and $y'(0)=-1$.　Ans: $y(t)=e^{4t}\left(-4\cos t+15\sin t\right)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''-8y'+17y=0$，$y(0)=-4$、$y'(0)=-1$。（考卷附的答案：$y(t)=e^{4t}(-4\cos t+15\sin t)$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-8$、$b=17$</td><td>「$y''-8y'+17y=0$」</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=-4$、$y'(0)=-1$</td><td>「for $y(0)=-4$ and $y'(0)=-1$」</td></tr>
+          <tr><td>答案形式</td><td>實函數</td><td>考卷答案用 $\cos$、$\sin$（題目沒明說，習慣上寫實數形式）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(t)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>特徵方程式 $\lambda^2-8\lambda+17=0$ 的判別式 $64-68=-4\lt0$，<b>所以</b>是共軛複根 $\alpha\pm i\beta$，一般解直接寫實數形式 $e^{\alpha t}(K_1\cos\beta t+K_2\sin\beta t)$。</p>
+      <p><b>因為</b> $t=0$ 時 $\sin0=0$，<b>所以</b> $y(0)$ 直接給出 $K_1$；$y'(0)=\alpha K_1+\beta K_2$（3.1 節的公式，來自乘積法則）給出 $K_2$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-109b-3b-s1" data-sym="lam,ab2">
+        <span class="step-title">特徵根</span>
+        <p class="sub">代入 $a=-8$、$b=17$（題目）到 $\lambda=\dfrac{-a\pm\sqrt{a^2-4b}}{2}$：</p>
+        $$\lambda=\frac{8\pm\sqrt{64-68}}{2}=\frac{8\pm2i}{2}=4\pm i\qquad(\alpha=4,\ \beta=1)$$
+      </div>
+      <div class="step" data-step="a2-109b-3b-s2" data-sym="c12">
+        <span class="step-title">實數形式的一般解</span>
+        $$y=e^{4t}\big(K_1\cos t+K_2\sin t\big)$$
+      </div>
+      <div class="step" data-step="a2-109b-3b-s3">
+        <span class="step-title">代 $y(0)=-4$</span>
+        <p class="sub">$t=0$：$e^0=1$、$\cos0=1$、$\sin0=0$，用題目的 $y(0)=-4$：</p>
+        $$K_1=-4$$
+      </div>
+      <div class="step" data-step="a2-109b-3b-s4">
+        <span class="step-title">代 $y'(0)=-1$</span>
+        <p>乘積法則 $y'=e^{4t}\big[(4K_1+K_2)\cos t+(4K_2-K_1)\sin t\big]$，所以 $y'(0)=\alpha K_1+\beta K_2=4K_1+K_2$。</p>
+        <p class="sub">代入 $K_1=-4$（步驟 3）與題目的 $y'(0)=-1$：</p>
+        $$4(-4)+K_2=-1\ \Longrightarrow\ K_2=15$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y(t)=e^{4t}\big(-4\cos t+15\sin t\big)$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=-4$ ✔；$y'(0)=4(-4)+15=-1$ ✔。代回特徵方程式：實部 $\alpha^2-\beta^2-8\alpha+17=16-1-32+17=0$ ✔，虛部 $2\alpha\beta-8\beta=8-8=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a2-108b-1a">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級下學期 2nd Order ODE and Fourier Series 第 1(a) 題</span></div>
+    <h4>共軛複根：$y''-4y'+13y=0$，$y(0)=-1$、$y'(0)=2$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-108b-1a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-108b-1a"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2nd Order ODE and Fourier Series</p><p>1. Solve the differential equations.</p><p>(a) Solve $y''-4y'+13y=0$ for $y(0)=-1$, $y'(0)=2$.</p><p>Ans: $y=e^{2x}\left(-\cos3x+\frac43\sin3x\right)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''-4y'+13y=0$，$y(0)=-1$、$y'(0)=2$。（考卷附的答案：$y=e^{2x}\big(-\cos3x+\frac43\sin3x\big)$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-4$、$b=13$</td><td>「$y''-4y'+13y=0$」</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=-1$、$y'(0)=2$</td><td>「for $y(0)=-1$, $y'(0)=2$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(x)$（實函數）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>判別式 $16-52=-36\lt0$，<b>所以</b>共軛複根，用 $e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)$；<b>因為</b> $\beta=3$ 不是 1，<b>所以</b> $y'(0)=\alpha K_1+\beta K_2$ 裡的 $\beta$ 要乘上去（漏乘 3 會得到 $K_2=4$ 的錯誤答案）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-108b-1a-s1" data-sym="lam,ab2">
+        <span class="step-title">特徵根</span>
+        <p class="sub">代入 $a=-4$、$b=13$（題目）：</p>
+        $$\lambda=\frac{4\pm\sqrt{16-52}}{2}=\frac{4\pm6i}{2}=2\pm3i\qquad(\alpha=2,\ \beta=3)$$
+      </div>
+      <div class="step" data-step="a2-108b-1a-s2" data-sym="c12">
+        <span class="step-title">一般解</span>
+        $$y=e^{2x}\big(K_1\cos3x+K_2\sin3x\big),\qquad y'(0)=\alpha K_1+\beta K_2=2K_1+3K_2$$
+      </div>
+      <div class="step" data-step="a2-108b-1a-s3">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">$x=0$，題目 $y(0)=-1$：$K_1=-1$。</p>
+        <p class="sub">題目 $y'(0)=2$，代入 $K_1=-1$：</p>
+        $$2(-1)+3K_2=2\ \Longrightarrow\ 3K_2=4\ \Longrightarrow\ K_2=\frac43$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=e^{2x}\Big(-\cos3x+\dfrac43\sin3x\Big)$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=-1$ ✔；$y'(0)=2(-1)+3\cdot\frac43=2$ ✔。特徵方程式：實部 $4-9-8+13=0$ ✔，虛部 $2\cdot2\cdot3-4\cdot3=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a2-108a-c4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級上學期 Single Variable Calculus 第 4 題</span></div>
+    <h4>驗證 $x=A\cos kt+B\sin kt$ 滿足 $\ddot x+k^2x=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-108a-c4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-108a-c4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Single Variable Calculus</p><p>4. If $x(t)=A\cos(kt)+B\sin(kt)$, show that $\dfrac{d^2x}{dt^2}+k^2x=0$. Here, $A,B,k$ are constants. $\dfrac{d^2x}{dt^2}=\dfrac{d}{dt}\left(\dfrac{dx}{dt}\right)$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>若 $x(t)=A\cos(kt)+B\sin(kt)$，證明 $\dfrac{d^2x}{dt^2}+k^2x=0$。$A$、$B$、$k$ 是常數，$\dfrac{d^2x}{dt^2}=\dfrac{d}{dt}\Big(\dfrac{dx}{dt}\Big)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>函數</td><td>$x(t)=A\cos kt+B\sin kt$</td><td>題目給定</td></tr>
+          <tr><td>常數</td><td>$A$、$B$、$k$ 與 $t$ 無關</td><td>「Here, $A,B,k$ are constants」</td></tr>
+          <tr><td>微分規則</td><td>$(\cos kt)'=-k\sin kt$，$(\sin kt)'=k\cos kt$</td><td>連鎖律（題目沒寫，自己用）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：證明 $\ddot x+k^2x=0$ 對所有 $t$ 成立。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>要證明的是「代進方程式恆為 0」，<b>所以</b>直接把 $x$ 微分兩次、代回。<b>因為</b> $\cos$、$\sin$ 各微分兩次都回到自己乘上 $-k^2$，<b>所以</b> $\ddot x=-k^2x$。</p>
+      <p>和本節的關係：$\ddot x+k^2x=0$ 的特徵方程式 $\lambda^2+k^2=0$ 給 $\lambda=\pm ik$（$\alpha=0$、$\beta=k$），一般解就是 $K_1\cos kt+K_2\sin kt$——本題證明的正是這個一般解（3.1 節「純虛根」）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-108a-c4-s1">
+        <span class="step-title">一次微分</span>
+        <p class="sub">用連鎖律，$A$、$B$、$k$ 是常數（題目）：</p>
+        $$\dot x=-Ak\sin kt+Bk\cos kt$$
+      </div>
+      <div class="step" data-step="a2-108a-c4-s2">
+        <span class="step-title">二次微分</span>
+        $$\ddot x=-Ak^2\cos kt-Bk^2\sin kt=-k^2\big(A\cos kt+B\sin kt\big)=-k^2x$$
+      </div>
+      <div class="step" data-step="a2-108a-c4-s3">
+        <span class="step-title">代回方程式</span>
+        $$\ddot x+k^2x=-k^2x+k^2x=0\qquad\blacksquare$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\ddot x=-k^2x$，所以 $\ddot x+k^2x=0$ 對所有 $t$ 成立；它就是特徵根 $\pm ik$ 的一般解。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>特例 $A=1$、$B=0$、$k=2$：$x=\cos2t$，$\ddot x=-4\cos2t$，$\ddot x+4x=0$ ✔。物理：這是彈簧簡諧運動 $m\ddot x=-kx$ 的解，題目的 $k$ 對應 $\omega_0=\sqrt{k_{\text{spring}}/m}$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a2-108a-c5">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級上學期 Single Variable Calculus 第 5 題 · 109級上學期第 1 次期中 第 4 題</span></div>
+    <h4>驗證 $y=e^x(\cos x+\sin x)$ 滿足 $y''-2y'+2y=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-108a-c5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-108a-c5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Single Variable Calculus</p><p>5. Show that $y(x)=e^x(\cos x+\sin x)$ satisfies the equation $y''-2y'+2y=0$, where $y'=\dfrac{dy}{dx}$, $y''=\dfrac{d}{dx}\left(\dfrac{dy}{dx}\right)$.</p><p>（109級上學期應數(第1次期中) 第 4 題同題同字。）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 $y(x)=e^x(\cos x+\sin x)$ 滿足方程式 $y''-2y'+2y=0$，其中 $y'=\dfrac{dy}{dx}$、$y''=\dfrac{d}{dx}\Big(\dfrac{dy}{dx}\Big)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>函數</td><td>$y=e^x(\cos x+\sin x)$</td><td>題目給定：$e^x$ 乘上三角函數，要用乘積法則</td></tr>
+          <tr><td>方程</td><td>$y''-2y'+2y=0$（$a=-2$、$b=2$）</td><td>題目給定</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：證明代回後恆為 0。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目要的是「驗證」，<b>所以</b>用乘積法則把 $y$ 微分兩次、代回化簡；先算出 $y'$ 的簡單形式（$\sin$ 項會抵消），二次微分就輕鬆。</p>
+      <p>對照：特徵方程式 $\lambda^2-2\lambda+2=0$ 給 $\lambda=1\pm i$，一般解 $e^x(K_1\cos x+K_2\sin x)$；題目的函數是 $K_1=K_2=1$ 的那一個，所以一定滿足。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-108a-c5-s1">
+        <span class="step-title">$y'$</span>
+        <p>乘積法則 $(uv)'=u'v+uv'$，$u=e^x$、$v=\cos x+\sin x$：</p>
+        $$y'=e^x(\cos x+\sin x)+e^x(-\sin x+\cos x)=2e^x\cos x$$
+      </div>
+      <div class="step" data-step="a2-108a-c5-s2">
+        <span class="step-title">$y''$</span>
+        $$y''=\big(2e^x\cos x\big)'=2e^x\cos x-2e^x\sin x$$
+      </div>
+      <div class="step" data-step="a2-108a-c5-s3">
+        <span class="step-title">代回</span>
+        <p class="sub">代入步驟 1、2 與題目的 $y$：</p>
+        $$\begin{aligned}y''-2y'+2y&=(2e^x\cos x-2e^x\sin x)\\&\quad-2(2e^x\cos x)\\&\quad+2e^x(\cos x+\sin x)\\&=e^x\cos x\,(2-4+2)\\&\quad+e^x\sin x\,(-2+2)\\&=0\quad\blacksquare\end{aligned}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y'=2e^x\cos x$、$y''=2e^x(\cos x-\sin x)$，代回得 $0$，得證；它是特徵根 $1\pm i$ 的解（$K_1=K_2=1$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>在 $x=0$：$y=1$、$y'=2$、$y''=2$，$2-4+2=0$ ✔。用 3.1 節公式：$y'(0)=\alpha K_1+\beta K_2=1+1=2$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a2-108a-c6">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級上學期 Single Variable Calculus 第 6 題</span></div>
+    <h4>$x=e^t\cos\omega t$ 滿足 $\ddot x-2\dot x+10x=0$：求 $\omega$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-108a-c6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-108a-c6"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Single Variable Calculus</p><p>6. If $x(t)=e^t\cos(\omega t)$ satisfies the equation $\ddot x-2\dot x+10x=0$, find the value of $\omega$, where $\dot x=\dfrac{dx}{dt}$, $\ddot x=\dfrac{d}{dt}\left(\dfrac{dx}{dt}\right)$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>若 $x(t)=e^t\cos(\omega t)$ 滿足方程式 $\ddot x-2\dot x+10x=0$，求 $\omega$ 的值，其中 $\dot x=\dfrac{dx}{dt}$、$\ddot x=\dfrac{d}{dt}\Big(\dfrac{dx}{dt}\Big)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>試探解</td><td>$x=e^t\cos\omega t$，$\omega$ 未知</td><td>題目給定；指數部分已固定為 $e^{t}$</td></tr>
+          <tr><td>方程</td><td>$\ddot x-2\dot x+10x=0$（$a=-2$、$b=10$）</td><td>題目給定</td></tr>
+          <tr><td>條件</td><td>對所有 $t$ 都要成立</td><td>「satisfies the equation」：是恆等式，不是只在某個 $t$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\omega$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>要找參數讓函數滿足方程，<b>所以</b>把 $x$ 微分兩次代回，整理成 $(\cdots)\cos\omega t+(\cdots)\sin\omega t=0$；<b>因為</b>要對所有 $t$ 成立，$\cos$、$\sin$ 的係數都必須是 0，由此解 $\omega$。</p>
+      <p>捷徑對照：特徵方程式 $\lambda^2-2\lambda+10=0$ 給 $\lambda=1\pm3i$，所以解是 $e^{t}\cos3t$、$e^t\sin3t$——指數部分 $e^{t}$ 剛好對上 $\alpha=1$，$\omega=\beta=3$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-108a-c6-s1">
+        <span class="step-title">$\dot x$、$\ddot x$</span>
+        $$\dot x=e^t\cos\omega t-\omega e^t\sin\omega t=e^t\big(\cos\omega t-\omega\sin\omega t\big)$$
+        $$\ddot x=e^t\big(\cos\omega t-\omega\sin\omega t\big)+e^t\big(-\omega\sin\omega t-\omega^2\cos\omega t\big)=e^t\big[(1-\omega^2)\cos\omega t-2\omega\sin\omega t\big]$$
+      </div>
+      <div class="step" data-step="a2-108a-c6-s2">
+        <span class="step-title">代回、合併</span>
+        <p class="sub">代入步驟 1 與題目係數 $-2$、$10$：</p>
+        $$\ddot x-2\dot x+10x=e^t\Big[(1-\omega^2-2+10)\cos\omega t+(-2\omega+2\omega)\sin\omega t\Big]=e^t\,(9-\omega^2)\cos\omega t$$
+      </div>
+      <div class="step" data-step="a2-108a-c6-s3">
+        <span class="step-title">對所有 $t$ 為 0</span>
+        <p>$e^t\ne0$，$\cos\omega t$ 不恆為 0，所以 $9-\omega^2=0$，$\omega=\pm3$。因為 $\cos(-3t)=\cos3t$，兩者是同一個函數，取 $\omega=3$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\omega=3$（$\omega=-3$ 給同一個函數）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>特徵根 $\lambda=\dfrac{2\pm\sqrt{4-40}}{2}=1\pm3i$：$\beta=3$ ✔。直接代 $t=0$：$x=1$、$\dot x=1$、$\ddot x=1-9=-8$，$-8-2+10=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\lambda=\alpha\pm i\beta$ ⟹ $y=e^{\alpha x}(K_1\cos\beta x+K_2\sin\beta x)=Ae^{\alpha x}\cos(\beta x+\phi)$，$K_1=A\cos\phi$、$K_2=-A\sin\phi$。</li>
+    <li>代 $y'(0)$ 時 $e^{\alpha x}$ 也要微分：$y'(0)=\alpha K_1+\beta K_2$。</li>
+    <li>邊界條件（兩點給 $y$）照樣代入，但行列式可能為 0 ⟹ 無解或無限多解。</li>
+  </ol>
+</div>

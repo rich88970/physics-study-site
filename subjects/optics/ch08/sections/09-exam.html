@@ -1,0 +1,159 @@
+<h2>九、考前衝刺 <span class="pg">講義 chp8 全部</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表（老師說一定會考的放最前面），每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。考試閉書、不能用手機，計算機要帶工程用的。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式（逐字稿＋考古題）</span>
+  <p>老師考前點名：<span class="must teacher">老師：一定會考</span>平面波、球面波、圓柱波的指數表示，電場、磁場振幅與照度，瞬時與時間平均坡印廷向量（逐字稿 01:01–02:05）；都卜勒效應「注意一下，公式自己要記」（02:13），而且 02:30 說第八章「主要就是這兩個部分」：三種波的表示，跟都卜勒效應。李孟恩課程資料夾的 5 份下學期近代光學期中考（2018、2020、2022、2024、2025），第 2 題全部是 30–40 分的「完整表示」題（4 份平面波、2020 是球面波）<span class="must exam">考古高頻 4/5</span>（依考古題統計推論）：給 $n$、$\nu$、一個場的振幅或照度、方向圖，寫 $\vec E$、$\vec B$、瞬時 $\vec S$、照度。題目常附「π 不必展開」，答案保留 $\pi$、$\sqrt{\ }$ 即可。</p>
+</div>
+
+<h3 id="o8x-formulas">9.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>讀波的式子</h4>
+    <ul>
+      <li>行進波 $f(x\mp vt)$：$-$ 往 $+x$</li>
+      <li>$\lambda=2\pi/k$、$T=2\pi/\omega$、$\nu=1/T$、$v=\omega/k=\nu\lambda$</li>
+      <li>定相位：$v=-\dfrac{\partial\varphi/\partial t}{\partial\varphi/\partial x}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>三種波的指數表示</h4>
+    <ul>
+      <li>平面波 $Ae^{i(\vec k\cdot\vec r-\omega t)}$</li>
+      <li>球面波 $\dfrac Ar e^{i(kr-\omega t)}$，照度 $\propto1/r^2$</li>
+      <li>圓柱波 $\dfrac{A}{\sqrt\rho}e^{i(k\rho-\omega t)}$，照度 $\propto1/\rho$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>介質中的電磁波（$\mu_r=1$）</h4>
+    <ul>
+      <li>$v=c_0/n$、$k=2\pi n\nu/c_0$、$\lambda=\lambda_0/n$、$\nu$ 不變</li>
+      <li>$B_0=E_0/v=nE_0/c_0$</li>
+      <li>$\hat e\times\hat b=\hat k$；$\hat b=\hat k\times\hat e$、$\hat e=\hat b\times\hat k$</li>
+      <li>$c_0=1/\sqrt{\epsilon_0\mu_0}$，$\epsilon_0=8.8542\times10^{-12}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>能量</h4>
+    <ul>
+      <li>$u=\epsilon_0E^2=B^2/\mu_0$（真空，瞬時）；$\langle u\rangle=\tfrac12\epsilon_0E_0^2$</li>
+      <li>$E_e=\tfrac12n\epsilon_0c_0E_0^2$ ⟺ $E_0=\sqrt{2E_e/(n\epsilon_0c_0)}$</li>
+      <li>$E_e=\Phi_e/A$（光束）、$\Phi_e/4\pi r^2$（點源）；光子數 $E_e\lambda/hc$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>坡印廷向量</h4>
+    <ul>
+      <li>$\vec S=\epsilon_0c^2\vec E\times\vec B$（介質中 $\epsilon c^2=\epsilon_0c_0^2$）</li>
+      <li>物理值：$\vec S=\epsilon_0c_0^2E_0B_0\cos^2(\vec k\cdot\vec r-\omega t)\,\hat k$</li><li>指數型態（歷屆詳解與滿分卷）：$\epsilon_0c_0^2E_0B_0\,\hat k\,e^{2i(\vec k\cdot\vec r-\omega t)}$，兩行都寫</li>
+      <li>時間平均＝照度＝$\tfrac12\epsilon_0c_0^2E_0B_0$（振幅的一半）</li>
+    </ul>
+  </section>
+  <section>
+    <h4>都卜勒（要自己背）</h4>
+    <ul>
+      <li>$\dfrac{\lambda'}{\lambda}=\sqrt{\dfrac{1-v/c}{1+v/c}}$，$v$ 接近為正</li>
+      <li>$v\ll c$：$\lambda'/\lambda\approx1-v/c$；反解 $\beta=\dfrac{1-r^2}{1+r^2}$</li>
+      <li>增寬 $\approx2\lambda v/c$，$v_{rms}=\sqrt{3RT/M}$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="o8x-types">9.2 題型總表</h3>
+
+<p class="type-jump"><a href="#o8type-1">① 平面波完整表示</a><a href="#o8type-2">② 瞬時／平均 $\vec S$</a><a href="#o8type-3">③ 球面波、圓柱波</a><a href="#o8type-4">④ 照度↔振幅</a><a href="#o8type-5">⑤ 讀波函數</a><a href="#o8type-6">⑥ 都卜勒</a></p>
+
+<div class="drill" id="o8type-1">
+  <h4>① 平面波 $\vec E$、$\vec B$ 的完整表示 <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 4/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「試求電場 $\vec E(x,y,z;t)$ 的完整表示（包含振幅、偏振方向、平面波的指數表示及單位）」＋一張方向圖。</dd>
+    <dt>做法</dt><dd>$\omega=2\pi\nu$、$k=2\pi n\nu/c_0$ → 圖讀 $\hat k$（換成從 $+x$ 量起的角度）→ $E_0$（給照度就反解，給 $B_0$ 就 $E_0=vB_0$）、$B_0=nE_0/c_0$ → $\hat b=\hat k\times\hat e$ 或 $\hat e=\hat b\times\hat k$ → 振幅 × 方向 × $e^{i(\vec k\cdot\vec r-\omega t)}$ × 單位。</dd>
+    <dt>常錯</dt><dd>$B_0$ 漏掉 $n$；$k$ 用真空波長；讀圖角度錯（檢查 $\hat k\cdot\hat e=0$）；$\hat b$ 正負號（檢查 $\hat e\times\hat b=\hat k$）；忘了單位。</dd>
+    <dt>代表題</dt><dd><a href="#o8-x25">2025 期中</a><a href="#o8-x24">2024 期中</a><a href="#o8-x22">2022 期中</a><a href="#o8-x18">2018 期中</a><a href="#o8var-1">變化題 1</a><a href="#o8-x17">舊考卷 2017 期中</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o8type-2">
+  <h4>② 瞬時與時間平均坡印廷向量 <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 5/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「瞬時 Poynting 向量 $\vec S(x,y,z;t)$ 的完整表示」「輻射照度 $\langle\|\vec S\|\rangle$」。</dd>
+    <dt>做法</dt><dd>先寫物理值 $\epsilon_0c_0^2E_0B_0\cos^2(\vec k\cdot\vec r-\omega t)\hat k$，再寫指數型態 $\epsilon_0c_0^2E_0B_0\hat k\,e^{2i(\vec k\cdot\vec r-\omega t)}$，單位 W/m²；照度＝振幅的一半＝$\tfrac12n\epsilon_0c_0E_0^2$。</dd>
+    <dt>常錯</dt><dd>照度沒除 2；介質中用 $\epsilon_0c_0^2$ 卻又多乘 $n^2$；方向寫成 $\hat e$ 或 $\hat b$；用 $e^{2i(\cdots)}$ 去取時間平均得到 0。</dd>
+    <dt>代表題</dt><dd><a href="#o8-x24">2024 期中</a><a href="#o8-x18">2018 期中</a><a href="#o8-x20">2020 球面波</a><a href="#o8var-1">變化題 1</a><a href="#o8-q17">舊考卷 2017 平時考</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o8type-3">
+  <h4>③ 球面波、圓柱波的表示 <span class="must teacher">老師：一定會考</span><span class="must exam">考古 1/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>點波源／線光源、「球面波的指數表示」、給某一點的照度。</dd>
+    <dt>做法</dt><dd>振幅 $A/r$（或 $A/\sqrt\rho$）；由參考點 $E_e=\tfrac12\epsilon_0c_0(A/r_0)^2$ 定 $A$；方向 $\hat r=(x,y,z)/r$，$\hat\phi=(-y,x,0)/\sqrt{x^2+y^2}$；$\vec S$ 振幅 $=2E_e r_0^2/r^2$。</dd>
+    <dt>常錯</dt><dd>把球面波振幅寫成常數；$r$ 沒寫成 $\sqrt{x^2+y^2+z^2}$；$\vec B$ 的方向（$\hat\phi$ 配 $-\hat\theta$）。</dd>
+    <dt>代表題</dt><dd><a href="#o8-x20">2020 期中</a><a href="#o8-4-18">作業 4-18a</a><a href="#o8var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o8type-4">
+  <h4>④ 照度、能量密度與振幅互換（「以前考古題都考過」） <span class="must exam">考古高頻 5/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給功率、截面積、距離、照度，問 $E_0$、$B_0$、光子數；或給振幅問照度。</dd>
+    <dt>做法</dt><dd>$E_e=\Phi_e/A$ 或 $\Phi_e/4\pi r^2$ → $E_0=\sqrt{2E_e/(n\epsilon_0c_0)}$ → $B_0=nE_0/c_0$；光子數 $E_e\lambda/hc$；$\langle u\rangle=E_e/v$。</dd>
+    <dt>常錯</dt><dd>cm² 換 m²；只算「轉成光」的那部分功率；介質中忘了 $n$；「最大值」與方均根值混淆。</dd>
+    <dt>代表題</dt><dd><a href="#o8-4-15">作業 4-15</a><a href="#o8-4-17">作業 4-17</a><a href="#o8-4-18">作業 4-18</a><a href="#o8var-2">變化題 2</a><a href="#o8-q11c">舊考卷 2011 He-Ne 雷射</a><a href="#o8-x13b">舊考卷 2013 手電筒</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o8type-5">
+  <h4>⑤ 從式子讀出 $\lambda$、$\nu$、$k$、$v$、方向 <span class="must exam">考古 0/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>直接給一條波的式子（實數或指數），問波長、頻率、速度、$\vec k$。</dd>
+    <dt>做法</dt><dd>整理成 $A\sin(kx-\omega t+\varphi_0)$ 或 $e^{i(\vec k\cdot\vec r-\omega t)}$，逐項比較；非簡諧的行進波就配方成 $f(x-vt)$。</dd>
+    <dt>常錯</dt><dd>指數裡是 $+\omega t$ 時方向要反過來；$k$ 和 $1/\lambda$ 搞混。</dd>
+    <dt>代表題</dt><dd><a href="#o8-4-7">作業 4-7</a><a href="#o8-4-4">作業 4-4</a><a href="#o8-x08">舊考卷 2008 期中</a><a href="#o8-x13a">舊考卷 2013 期中</a><a href="#o8-x12">舊考卷 2012 期中</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o8type-6">
+  <h4>⑥ 都卜勒效應 <span class="must teacher maybe">老師：注意一下</span><span class="must exam">考古 0/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>紅移、藍移、譜線增寬、「看到的波長」。老師 02:30：「大概第八章主要就是這兩個部分：平面波、球面波、圓柱波的表示，跟都卜勒效應。」課程資料夾考卷 0/5（舊考卷也沒有），但它是第八章兩大部分之一，公式要自己背（02:13）。</dd>
+    <dt>做法</dt><dd>$v\ll c$ 用 $\Delta\lambda/\lambda=-v/c$；速度大用精確式 $\beta=(1-r^2)/(1+r^2)$；增寬取 $2\Delta\lambda$。</dd>
+    <dt>常錯</dt><dd>符號（接近為正）；$M$ 用 g/mol 代入 SI 公式。</dd>
+    <dt>代表題</dt><dd><a href="#o8-4-23">作業 4-23</a><a href="#o8-ex3">講義 Example</a><a href="#o8var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<h3 id="o8x-var">9.3 變化題</h3>
+
+<div class="drill-q" id="o8var-1">
+  <p><strong>變化題 1</strong>（題型 ①②）折射率 2 的介質中，平面電磁波的 $\hat k$ 在 x-y 平面、從 $+x$ 軸逆時針 $120^\circ$；磁場朝 $-\hat z$，電場振幅 6 V/m，頻率 $3\times10^{14}$ Hz，初始相位 0。寫出 $\vec E$、$\vec B$、瞬時 $\vec S$ 與照度（π 不必展開）。</p>
+  <p class="q-src">把 2022 期中考的方向與數字換掉；做法完全相同。</p>
+  <details class="reveal"><summary>看答案</summary>
+    <p>$k=2\pi(2)(3\times10^{14})/(3\times10^8)=4\pi\times10^6\ \text{m}^{-1}$、$\omega=6\pi\times10^{14}$；$\hat k=(-\tfrac12,\tfrac{\sqrt3}{2},0)$；$\hat e=\hat b\times\hat k=(-\hat z)\times\hat k=(\tfrac{\sqrt3}{2},\tfrac12,0)$；$B_0=2(6)/(3\times10^8)=4\times10^{-8}$ T。</p>
+    $$\vec E=6\left(\tfrac{\sqrt3}{2}\hat x+\tfrac12\hat y\right)e^{i\varphi}\ \text{V/m},\quad\vec B=4\times10^{-8}(-\hat z)e^{i\varphi}\ \text{T},\quad\vec S=0.191\left(-\tfrac12\hat x+\tfrac{\sqrt3}{2}\hat y\right)e^{2i\varphi}\ \text{W/m}^2$$
+    <p>$\varphi=4\pi\times10^6(-\tfrac12x+\tfrac{\sqrt3}{2}y)-6\pi\times10^{14}t$；照度 $E_e=0.0956\ \text{W/m}^2$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o8var-2">
+  <p><strong>變化題 2</strong>（題型 ④）一道光在折射率 1.5 的玻璃中，照度 300 W/m²。電場與磁場振幅各是多少？</p>
+  <details class="reveal"><summary>看答案</summary>
+    <p>$E_0=\sqrt{2(300)/[1.5(8.8542\times10^{-12})(3\times10^8)]}=388\ \text{V/m}$；$B_0=nE_0/c_0=1.5(388)/(3\times10^8)=1.94\times10^{-6}\ \text{T}$。若忘了 $n$ 會得到 475 V/m、$1.58\times10^{-6}$ T。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o8var-3">
+  <p><strong>變化題 3</strong>（題型 ③）真空中 100 W 的點光源均勻發光。求 2 m 處的照度、電場振幅，以及球面波 $\dfrac Ar e^{i(kr-\omega t)}$ 的 $A$。</p>
+  <details class="reveal"><summary>看答案</summary>
+    <p>$E_e=100/(4\pi\cdot2^2)=1.99\ \text{W/m}^2$；$E_0=\sqrt{2E_e/\epsilon_0c_0}=38.7\ \text{V/m}$；$A=E_0r=77.4\ \text{V}$（任何距離 $r$ 的振幅都是 $77.4/r$ V/m）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o8var-4">
+  <p><strong>變化題 4</strong>（題型 ⑥）某星系的氫譜線（實驗室 656.3 nm）觀測到 700.0 nm。求星系的速度（精確式與近似式）。</p>
+  <details class="reveal"><summary>看答案</summary>
+    <p>$r=700/656.3=1.0666$，$r^2=1.1376$；精確 $\beta=(1-r^2)/(1+r^2)=-0.0644$，$v=-1.93\times10^7\ \text{m/s}$（遠離、紅移）；近似 $\beta\approx1-r=-0.0666$，差約 3%。</p>
+  </details>
+</div>

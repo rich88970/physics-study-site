@@ -1,0 +1,334 @@
+<h2>十四、考前衝刺 <span class="pg">課本第 1 章 · p.1–51</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea">
+  <span class="box-title">做完這頁還想挑戰？</span>
+  <p>上一節「相對論綜合難題」有 10 題多步綜合題（網站自編）：<a href="#cx-01">飛船來回與訊號</a>、<a href="#cx-02">1g 加速航程</a>、<a href="#cx-03">從飛船發射更快的探測器</a>、<a href="#cx-04">多級發射</a>、<a href="#cx-05">對向飛船</a>、<a href="#cx-06">光子火箭</a>、<a href="#cx-07">粒子門檻與衰變</a>、<a href="#cx-08">緲子三方對帳</a>、<a href="#cx-09">雷達測距</a>、<a href="#cx-10">相對論彈性碰撞</a>。</p>
+</div>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>兩份期中考中屬於第 1 章的 8 題：Example 1.3 原題、Example 1.6 改質量、習題 49 原題、習題 50 原題多問動能、Example 1.5 改成「$F=\gamma ma$ 對不對」的觀念題，加上三題延伸：同時的相對性（平板車閃光）、垂直方向的速度相加（兩台機車）、證明正負電子不能湮滅成一個光子。另外，109 學年上學期的手寫考古解答（題目卷未保存）顯示也考過課本 §1.7 的推導「由對稱碰撞推出 $p=\gamma mv$」（<a href="#kg-109-1">考古 109-1</a>）和習題 1-38「產生電子對的最低動能 $6mc^2$」（<a href="#bz-1-38">課本 1-38</a>）。配分 10–15%，一題大多只用一兩條公式，關鍵是<strong>認對固有量、設好座標系、守恆和不變量一起用</strong>。</p>
+</div>
+
+<h3 id="mx-formulas">14.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>$\gamma$ 與常用值</h4>
+    <ul>
+      <li>$\beta=v/c$，$\gamma=\dfrac1{\sqrt{1-\beta^2}}\ge1$</li>
+      <li>$0.6c\to\gamma=\tfrac54$；$0.8c\to\tfrac53$；$0.866c\to2$；$0.9c\to2.29$；$0.99c\to7.09$</li>
+      <li>$v\ll c$：$\gamma\approx1+\dfrac{\beta^2}2$，$\sqrt{1-\beta^2}\approx1-\dfrac{\beta^2}2$</li>
+      <li>$\gamma=\sqrt{1+(p/mc)^2}=E/mc^2$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>時間與長度</h4>
+    <ul>
+      <li>$t=\gamma t_0$（$t_0$：兩事件同地點的座標系）</li>
+      <li>$L=L_0/\gamma$（$L_0$：物體靜止的座標系；只縮運動方向）</li>
+      <li>雙生子：旅行者時間 $=$ 地球時間 $/\gamma$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>都卜勒（光）</h4>
+    <ul>
+      <li>接近 $\nu=\nu_0\sqrt{\dfrac{1+\beta}{1-\beta}}$，反解 $\beta=\dfrac{\nu^2-\nu_0^2}{\nu^2+\nu_0^2}$；遠離 $\beta\to-\beta$（反解得負值，取絕對值就是遠離速率）</li>
+      <li>波長：遠離 $\lambda=\lambda_0\sqrt{\dfrac{1+\beta}{1-\beta}}$</li>
+      <li>橫向 $\nu=\nu_0\sqrt{1-\beta^2}$；低速 $\Delta\nu/\nu\approx\pm\beta$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>動量、能量</h4>
+    <ul>
+      <li>$p=\gamma mv$；$F=\dfrac{\mathrm dp}{\mathrm dt}$；$F\parallel v$：$F=\gamma^3ma$</li>
+      <li>$E=\gamma mc^2=mc^2+KE$；$KE=(\gamma-1)mc^2$；$E_0=mc^2$</li>
+      <li>$E^2=(mc^2)^2+(pc)^2$；$\dfrac vc=\dfrac{pc}E$；光子 $E=pc$</li>
+      <li>由 $KE$、$p$：$mc^2=\dfrac{(pc)^2-KE^2}{2KE}$；$(pc)^2=KE^2+2KE\,mc^2$</li>
+      <li>$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$；$m_ec^2=0.511\ \text{MeV}$，$m_pc^2=938\ \text{MeV}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>勞倫茲轉換</h4>
+    <ul>
+      <li>$x'=\gamma(x-vt)$，$t'=\gamma\left(t-\dfrac{vx}{c^2}\right)$，$y'=y$，$z'=z$</li>
+      <li>逆：$x=\gamma(x'+vt')$，$t=\gamma\left(t'+\dfrac{vx'}{c^2}\right)$</li>
+      <li>差量：$\Delta t=\gamma\left(\Delta t'+\dfrac{v\Delta x'}{c^2}\right)$；同時性差 $\gamma v\Delta x'/c^2$，後方先發生</li>
+    </ul>
+  </section>
+  <section>
+    <h4>速度相加</h4>
+    <ul>
+      <li>$V_x=\dfrac{V'_x+v}{1+vV'_x/c^2}$，$V_y=\dfrac{V'_y\sqrt{1-v^2/c^2}}{1+vV'_x/c^2}$</li>
+      <li>反向：$V'_x=\dfrac{V_x-v}{1-vV_x/c^2}$，$V'_y=\dfrac{V_y\sqrt{1-v^2/c^2}}{1-vV_x/c^2}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>不變量</h4>
+    <ul>
+      <li>$(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2$：$>0$ 類時、$<0$ 類空、$=0$ 類光</li>
+      <li>系統：$E_{\text{tot}}^2-(p_{\text{tot}}c)^2=(Mc^2)^2$，碰撞前後相同</li>
+      <li>不變：$c$、電荷、靜止質量 $m$；不是不變量：$E$、$p$、$KE$、$\Delta t$、$\Delta x$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="mx-types">14.2 題型總表</h3>
+
+<p class="type-jump"><a href="#mtype-1">① 時間膨脹</a><a href="#mtype-2">② 長度收縮</a><a href="#mtype-3">③ 雙生子</a><a href="#mtype-4">④ 都卜勒</a><a href="#mtype-5">⑤ 動量與力</a><a href="#mtype-6">⑥ 動能與爆炸</a><a href="#mtype-7">⑦ $E$–$p$ 關係</a><a href="#mtype-8">⑧ 不變量證明</a><a href="#mtype-9">⑨ 共線速度</a><a href="#mtype-10">⑩ 垂直速度</a><a href="#mtype-11">⑪ 同時性</a><a href="#mtype-12">⑫ 時空間隔</a><a href="#mtype-13">⑬ 推導</a><a href="#mtype-14">⑭ 觀念</a></p>
+
+<div class="drill" id="mtype-1">
+  <h4>① 時間膨脹</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>壽命、鐘差幾秒、某人量到多久。</dd>
+    <dt>做法</dt><dd>先問「哪個座標系裡兩事件在同一地點」→ 那是 $t_0$ → $t=\gamma t_0$。速度很小用二項式近似。</dd>
+    <dt>常錯</dt><dd>以為「靜止的人」量到的就是 $t_0$；算出 $t\lt t_0$ 就是認反了。</dd>
+    <dt>代表題</dt><dd><a href="#bz-ex1-1">例題 1.1</a>　<a href="#bz-1-4">課本 1-4</a>　<a href="#bz-1-5">1-5</a>　<a href="#bz-1-6">1-6</a>　<a href="#bz-1-9">1-9</a>　<a href="#mvar-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-2">
+  <h4>② 長度收縮</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>運動中的尺、太空船、身高、距離（從運動者看）。</dd>
+    <dt>做法</dt><dd>$L_0$ 在物體靜止的座標系 → $L=L_0/\gamma$。斜的東西分解：沿運動方向縮、垂直不變。</dd>
+    <dt>常錯</dt><dd>通過時間要用觀察者看到的長度 $L$ 除以 $v$。</dd>
+    <dt>代表題</dt><dd><a href="#bz-1-17">課本 1-17</a>　<a href="#bz-1-20">1-20</a>　<a href="#bz-1-21">1-21</a>　<a href="#lc-muon">緲子</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-3">
+  <h4>③ 雙生子與數訊號</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>往返星際旅行、誰比較年輕、每年發訊號各收到幾個。</dd>
+    <dt>做法</dt><dd>地球時間 $=2L_0/v$，旅行者 $=$ 地球時間$/\gamma$。收訊間隔：分開 $\sqrt{\frac{1+\beta}{1-\beta}}$ 年、靠近倒數；地球要多等最後一個去程訊號傳回（$L_0/c$）。</dd>
+    <dt>常錯</dt><dd>以為兩人對稱；收到的數目應等於對方發出的數目，可用來驗算。</dd>
+    <dt>代表題</dt><dd><a href="#bz-ex1-4">例題 1.4</a>　<a href="#bz-1-22">課本 1-22</a>　<a href="#bz-1-23">1-23</a>　<a href="#mvar-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-4">
+  <h4>④ 光的都卜勒效應</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>星系紅移、譜線、雷達、脈衝率。</dd>
+    <dt>做法</dt><dd>先判斷接近（頻率升、波長短）或遠離，再選根號裡的分子分母；求速度用 $\beta=\frac{\nu^2-\nu_0^2}{\nu^2+\nu_0^2}$（遠離時改用 $\frac{\nu_0^2-\nu^2}{\nu_0^2+\nu^2}$）。反射（雷達）要算兩次。</dd>
+    <dt>常錯</dt><dd>波長和頻率的根號相反；問「移動多少」要答 $\lambda-\lambda_0$。</dd>
+    <dt>代表題</dt><dd><a href="#kg-107-1">考古 107-1</a>　<a href="#bz-ex1-2">例題 1.2</a>　<a href="#bz-1-10">課本 1-10</a>　<a href="#bz-1-11">1-11</a>　<a href="#bz-1-12">1-12</a>　<a href="#bz-1-14">1-14</a>　<a href="#bz-1-16">1-16</a>　<a href="#mvar-2">變化題 2</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-5">
+  <h4>⑤ 相對論動量與第二定律</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>動量比值、定力下的加速度、「$F=\gamma ma$ 對嗎」。</dd>
+    <dt>做法</dt><dd>$p=\gamma mv$；$F=\frac{\mathrm d}{\mathrm dt}(\gamma mv)$，用乘積律＋連鎖律微分 $\gamma$。</dd>
+    <dt>常錯</dt><dd>直線運動是 $\gamma^3ma$；只有力垂直於速度時才是 $\gamma ma$。</dd>
+    <dt>代表題</dt><dd><a href="#kg-115-1">考古 115-1</a>　<a href="#kg-109-1">考古 109-1（推導 $p=\gamma mv$）</a>　<a href="#bz-1-24">課本 1-24</a>　<a href="#bz-1-25">1-25</a>　<a href="#mvar-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-6">
+  <h4>⑥ 動能、靜能與爆炸</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給速度求動能、做功、靜止物體爆炸求原質量、太陽每秒少多少質量。</dd>
+    <dt>做法</dt><dd>$KE=(\gamma-1)mc^2$；功 $=\Delta KE$。爆炸：$Mc^2=\sum\gamma_im_ic^2$（能量），不等質量時再加 $\sum\gamma_im_iv_i=0$（動量）。</dd>
+    <dt>常錯</dt><dd>用 $\tfrac12mv^2$ 或 $\tfrac12\gamma mv^2$；以為 $M=m_1+m_2$。</dd>
+    <dt>代表題</dt><dd><a href="#kg-107-2">考古 107-2</a>　<a href="#bz-ex1-7">例題 1.7</a>　<a href="#bz-1-29">課本 1-29</a>　<a href="#bz-1-31">1-31</a>　<a href="#bz-1-33">1-33</a>　<a href="#bz-1-34">1-34</a>　<a href="#bz-1-35">1-35</a>　<a href="#bz-1-36">1-36</a>　<a href="#mvar-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-7">
+  <h4>⑦ $E$–$p$–$m$ 給兩個求其餘</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>單位是 MeV、GeV/$c$、GeV/$c^2$；給 $E,p$ 或 $KE,p$ 或 $p,m$。</dd>
+    <dt>做法</dt><dd>一律從 $E^2=(mc^2)^2+(pc)^2$ 和 $E=mc^2+KE$ 出發；速度 $v/c=pc/E$。換座標系：$m$ 不變，用新的 $p$ 再代一次。</dd>
+    <dt>常錯</dt><dd>把 $E$ 和 $KE$ 混用；換座標系時以為 $E$ 不變。</dd>
+    <dt>代表題</dt><dd><a href="#kg-107-3">考古 107-3</a>　<a href="#kg-115-3">考古 115-3</a>　<a href="#bz-ex1-8">例題 1.8</a>　<a href="#bz-1-42">課本 1-42</a>　<a href="#bz-1-47">1-47</a>　<a href="#bz-1-41">1-41</a>　<a href="#mvar-6">變化題 6</a>　<a href="#mvar-8">8</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-8">
+  <h4>⑧ 守恆＋不變量：門檻能量、「證明不可能」</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>產生新粒子的最小動能、證明某反應不可能。</dd>
+    <dt>做法</dt><dd>用系統的 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$：前後相同、所有座標系相同。門檻時產物一起運動，右邊 $=(\sum m\,c^2)^2$。證明題選總動量為零的座標系最直接。</dd>
+    <dt>常錯</dt><dd>只用能量守恆（門檻會算成 $2mc^2$）；忘了光子的 $E^2-p^2c^2=0$。</dd>
+    <dt>代表題</dt><dd><a href="#kg-115-4">考古 115-4</a>　<a href="#bz-1-38">課本 1-38（109上考古第 5 題）</a>　<a href="#mvar-7">變化題 7</a>　<a href="#mvar-11">11</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-9">
+  <h4>⑨ 共線的速度相加</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>太空船上發射、超越、迎面而來、碎片飛出、「A 看 B 多快」。</dd>
+    <dt>做法</dt><dd>令「要用誰的眼睛看」為 $S'$，$v$ 是它相對 $S$ 的速度；方向一律帶正負號，代 $V'_x=\frac{V_x-v}{1-vV_x/c^2}$ 或 $V_x=\frac{V'_x+v}{1+vV'_x/c^2}$。</dd>
+    <dt>常錯</dt><dd>迎面的速度沒帶負號；算出 $>c$ 一定錯。</dd>
+    <dt>代表題</dt><dd><a href="#bz-ex1-11">例題 1.11</a>　<a href="#bz-1-54">課本 1-54</a>　<a href="#bz-1-55">1-55</a>　<a href="#bz-1-56">1-56</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-10">
+  <h4>⑩ 垂直方向的速度相加</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>兩物體沿互相垂直的方向運動，問相對速率。</dd>
+    <dt>做法</dt><dd>$S'$＝其中一個，$x$ 沿它的運動方向。另一個 $V_x=0$ ⟹ $V'_x=-v$、$V'_y=V_y\sqrt{1-v^2/c^2}$，再合成。</dd>
+    <dt>常錯</dt><dd>直接畢氏 $\sqrt{v_1^2+v_2^2}$（會超過 $c$）；忘了垂直分量也要乘 $\sqrt{1-v^2/c^2}$。</dd>
+    <dt>代表題</dt><dd><a href="#kg-107-5">考古 107-5</a>　<a href="#mvar-10">變化題 10</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-11">
+  <h4>⑪ 同時性與事件轉換</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「同時」「誰先」「另一人看在同一地點／相距多遠」。</dd>
+    <dt>做法</dt><dd>列出兩事件在已知座標系的 $\Delta x,\Delta t$，用差量式 $\Delta t'=\gamma(\Delta t-v\Delta x/c^2)$、$\Delta x'=\gamma(\Delta x-v\Delta t)$。同地點 ⟹ $v=\Delta x/\Delta t$；同時 ⟹ $v=c^2\Delta t/\Delta x$。</dd>
+    <dt>常錯</dt><dd>正逆轉換用反；「誰先」要看正負號，運動系中同時的事件，<strong>後方</strong>先發生。</dd>
+    <dt>代表題</dt><dd><a href="#kg-107-4">考古 107-4</a>　<a href="#bz-1-51">課本 1-51</a>　<a href="#bz-1-52">1-52</a>　<a href="#mvar-9">變化題 9</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-12">
+  <h4>⑫ 時空間隔</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>能否有因果、找讓兩事件同時或同地點的座標系、快速驗算 ⑪。</dd>
+    <dt>做法</dt><dd>$(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2$：類時 → 固有時間 $\Delta s/c$；類空 → 固有距離 $\sqrt{-(\Delta s)^2}$。</dd>
+    <dt>常錯</dt><dd>單位要一致（$c\Delta t$ 和 $\Delta x$ 都用公尺）。</dd>
+    <dt>代表題</dt><dd><a href="#st-ex1">練習</a>　<a href="#bz-1-51">課本 1-51</a>　<a href="#bz-1-52">1-52</a>　<a href="#mvar-12">變化題 12</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-13">
+  <h4>⑬ 課本推導</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「推導」「證明」「Show that」。</dd>
+    <dt>做法</dt><dd>光鐘 → $t=\gamma t_0$；碰撞 → $p=\gamma mv$；$\int v\,\mathrm d(\gamma mv)$ 分部積分 → $KE$；消去 $v$ → $E^2-p^2c^2$；線性猜測＋光速不變 → 勞倫茲轉換；微分逆轉換 → 速度相加。</dd>
+    <dt>常錯</dt><dd>推導要寫出假設（光速不變、相對性原理、守恆律）用在哪一步。</dd>
+    <dt>代表題</dt><dd><a href="#td-clock">光鐘</a>　<a href="#mo-derive">動量</a>　<a href="#en-ke">動能</a>　<a href="#ep-relation">$E^2$</a>　<a href="#lt-derive">勞倫茲</a>　<a href="#bz-ex1-9">例題 1.9</a>　<a href="#bz-ex1-10">1.10</a>　<a href="#bz-1-15">課本 1-15</a>　<a href="#bz-1-26">1-26</a>　<a href="#bz-1-39">1-39</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="mtype-14">
+  <h4>⑭ 觀念題</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>沒有數字的「為什麼」。</dd>
+    <dt>做法</dt><dd>用一兩句話抓住關鍵：相對性原理、光速不變、誰換過慣性座標系、訊號／能量才不能超光速、電荷不變＋長度收縮、等效原理。</dd>
+    <dt>常錯</dt><dd>說「因為相對論」不算答案，要指出是哪一個原理。</dd>
+    <dt>代表題</dt><dd><a href="#bz-1-1">課本 1-1</a>　<a href="#bz-1-2">1-2</a>　<a href="#tw-story">雙生子</a>　<a href="#em-wires">平行電流</a>　<a href="#gr-equiv">等效原理</a></dd>
+  </dl>
+</div>
+
+<h3 id="mx-vars">14.3 變化題：老師可能的改法</h3>
+
+<p>每題都是把考古題或課本題換條件。先自己寫，再打開解答對照。</p>
+
+<div class="drill-q" id="mvar-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#bz-ex1-1">例題 1.1</a></p>
+  <p>地球上的觀察者發現，每過地球的一天（$86400\ \text{s}$），太空船的鐘就比她的鐘少走 $1.00\ \text{s}$。太空船多快？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>地球時間 $t=86400\ \text{s}$，太空船鐘走 $t_0=86399\ \text{s}$。$t-t_0=t\big(1-\sqrt{1-\beta^2}\big)\approx t\,\beta^2/2$：</p>
+    $$\beta^2=\frac{2(1.00)}{86400}\ \Longrightarrow\ v=c\sqrt{2.31\times10^{-5}}=(3.00\times10^8)(4.81\times10^{-3})=1.44\times10^{6}\ \text{m/s}$$
+    <p>驗算：精確解 $c\sqrt{1-(86399/86400)^2}$ 也是 $1.44\times10^6\ \text{m/s}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-2">
+  <p class="q-src">變化題 2 · 改自考古 <a href="#kg-107-1">107-1</a></p>
+  <p>星系發出 $500\ \text{nm}$ 的譜線，在地球量到 $600\ \text{nm}$。星系的遠離速率是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\frac{\lambda^2}{\lambda_0^2}=\frac{1+\beta}{1-\beta}\ \Longrightarrow\ \beta=\frac{\lambda^2-\lambda_0^2}{\lambda^2+\lambda_0^2}=\frac{1.44-1}{1.44+1}=0.180$$
+    <p>$v=0.180c=5.41\times10^7\ \text{m/s}$。驗算：$500\sqrt{1.18/0.82}=600\ \text{nm}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#bz-1-22">課本 1-22</a></p>
+  <p>A 以 $0.6c$ 往返 6 光年外的恆星，B 留在地球，兩人都每年發一次訊號。各發出幾個？各收到幾個？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>B 的時間 $12/0.6=20\ \text{y}$，發 20 個；A 的時間 $20\times0.8=16\ \text{y}$，發 16 個。收訊間隔：分開 2 y、靠近 $\tfrac12$ y。</p>
+    <p>A 收到：去程 8 y 收 4 個、回程 8 y 收 16 個，共 20 個。B 收到：前 $10+6=16\ \text{y}$ 收 8 個、後 4 y 收 8 個，共 16 個。各等於對方發出的數目 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-4">
+  <p class="q-src">變化題 4 · 改自考古 <a href="#kg-107-2">107-2</a></p>
+  <p>靜止的物體炸成兩塊：一塊 $1.00\ \text{kg}$、以 $0.80c$ 飛出；另一塊以 $0.60c$ 往反方向飛。求另一塊的質量和原物體的質量。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>不等質量要再用動量守恆：$\gamma_1m_1v_1=\gamma_2m_2v_2$：</p>
+    $$\left(\tfrac53\right)(1.00)(0.80c)=\left(\tfrac54\right)m_2(0.60c)\ \Longrightarrow\ m_2=\frac{1.333}{0.75}=1.78\ \text{kg}$$
+    <p>能量：$M=\gamma_1m_1+\gamma_2m_2=1.667+1.25(1.78)=3.89\ \text{kg}$。驗算：$M>m_1+m_2=2.78\ \text{kg}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-5">
+  <p class="q-src">變化題 5 · 改自考古 <a href="#kg-115-1">115-1</a></p>
+  <p>粒子受到始終垂直於速度的力（例如磁場中的圓周運動）。$F$、$m$、$a$ 的關係是什麼？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>力垂直於速度不做功，速率 $v$ 不變，所以 $\gamma$ 是常數：</p>
+    $$\vec F=\frac{\mathrm d}{\mathrm dt}(\gamma m\vec v)=\gamma m\frac{\mathrm d\vec v}{\mathrm dt}=\gamma m\vec a$$
+    <p>這時才是 $F=\gamma ma$。和 115-1 對比：平行時 $\gamma^3ma$、垂直時 $\gamma ma$，所以相對論中 $\vec F$ 和 $\vec a$ 一般不同方向。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-6">
+  <p class="q-src">變化題 6 · 改自考古 <a href="#kg-115-3">115-3</a></p>
+  <p>粒子總能量 $5.00\ \text{GeV}$、動量 $4.00\ \text{GeV}/c$。求質量、動能、速率，以及在它靜止的座標系中的總能量。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$mc^2=\sqrt{25.0-16.0}=3.00\ \text{GeV},\quad KE=2.00\ \text{GeV},\quad\frac vc=\frac{pc}E=\frac{4.00}{5.00}=0.800$$
+    <p>靜止的座標系 $p'=0$：$E'=mc^2=3.00\ \text{GeV}$。驗算：$\gamma=5/3$ 對應 $0.8c$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-7">
+  <p class="q-src">變化題 7 · 改自考古 <a href="#kg-115-4">115-4</a></p>
+  <p>證明一個光子在真空中不能變成一對正負電子。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>系統不變量 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 前後相等。反應前只有一個光子：$E^2-(pc)^2=0$。反應後兩粒子有質量：在它們的質心系 $p_{\text{tot}}=0$、$E_{\text{tot}}\ge2mc^2$，所以不變量 $\ge(2mc^2)^2>0$。$0\neq$ 正數，矛盾。成對產生需要附近有原子核吸收動量（第 2 章）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-8">
+  <p class="q-src">變化題 8 · 改自考古 <a href="#kg-107-3">107-3</a></p>
+  <p>粒子動能 $0.50\ \text{GeV}$、動量 $1.20\ \text{GeV}/c$。求質量和速率。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$mc^2=\frac{(pc)^2-KE^2}{2KE}=\frac{1.44-0.25}{1.00}=1.19\ \text{GeV},\qquad\frac vc=\frac{1.20}{1.19+0.50}=0.710$$
+    <p>驗算：$\sqrt{1.19^2+1.20^2}=1.69=1.19+0.50$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-9">
+  <p class="q-src">變化題 9 · 改自考古 <a href="#kg-107-4">107-4</a></p>
+  <p>平板車以 $0.8c$ 往<strong>西</strong>開，車上的人兩手相距 $3.0\ \text{m}$（東西向）同時閃光。地面看哪一個先閃？早多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\gamma=\tfrac53$，時間差 $\gamma v\Delta x'/c^2=\dfrac{(5/3)(0.8)(3.0\ \text{m})}{3.00\times10^8\ \text{m/s}}=1.33\times10^{-8}\ \text{s}$。車往西開，後方是東邊，所以<strong>東邊</strong>先閃，早 $13\ \text{ns}$。</p>
+    <p>用公式驗算：$x$ 朝東，$v=-0.8c$，$t_E-t_W=\gamma v(x'_E-x'_W)/c^2<0$，東先 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-10">
+  <p class="q-src">變化題 10 · 改自考古 <a href="#kg-107-5">107-5</a></p>
+  <p>警察看 Alpha 以 $0.60c$ 往東、Beta 以 $0.80c$ 往北。Alpha 看 Beta 多快？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$S'$＝Alpha，$v=0.60c$：$V'_x=-0.60c$，$V'_y=(0.80c)\sqrt{1-0.36}=0.64c$。</p>
+    $$V'=c\sqrt{0.36+0.4096}=0.877c$$
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-11">
+  <p class="q-src">變化題 11 · 改自 <a href="#bz-1-38">課本 1-38</a></p>
+  <p>運動的質子撞上靜止的質子，產生一對質子–反質子（$p+p\to p+p+p+\bar p$）。最小動能是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>和 1-38 完全相同的結構（兩個粒子變四個同質量的粒子），所以 $KE_{\min}=6m_pc^2=6(0.938\ \text{GeV})=5.63\ \text{GeV}$。1955 年發現反質子的 Bevatron 加速器，就是依這個門檻把質子加速到約 $6\ \text{GeV}$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="mvar-12">
+  <p class="q-src">變化題 12 · 改自 <a href="#bz-1-51">課本 1-51</a></p>
+  <p>兩事件相隔 $5.00\ \mu\text{s}$、相距 $1.20\ \text{km}$。可能有因果關係嗎？在兩事件同地點的座標系，它們相隔多久？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$c\Delta t=1500\ \text{m}>1200\ \text{m}$：類時，可能有因果。該座標系速度 $v=\Delta x/\Delta t=2.40\times10^8\ \text{m/s}=0.8c$。</p>
+    $$\Delta t'=\frac{\Delta s}{c}=\frac{\sqrt{1500^2-1200^2}\ \text{m}}{3.00\times10^8\ \text{m/s}}=\frac{900\ \text{m}}{3.00\times10^8\ \text{m/s}}=3.00\ \mu\text{s}$$
+    <p>驗算：$\Delta t/\gamma=5.00\times0.6=3.00\ \mu\text{s}$ ✔</p>
+  </details>
+</div>

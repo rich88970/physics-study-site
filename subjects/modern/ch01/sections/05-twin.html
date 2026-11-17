@@ -1,0 +1,230 @@
+<h2>五、雙生子弔詭 <span class="pg">課本 §1.5 · p.17–19</span></h2>
+
+<p class="lead">時間膨脹是相互的，那麼出遠門回來的那一位到底比較年輕，還是比較老？答案是出遠門的比較年輕，因為兩人的處境不對稱：只有他換過慣性座標系。</p>
+
+<h3 id="tw-story">5.1 Dick 與 Jane <span class="pg-tag">p.17–18</span></h3>
+
+<p>Dick 20 歲時以 $0.80c$ 飛到 20 光年外的恆星再回來，雙胞胎 Jane 留在地球。</p>
+
+<div class="step" data-step="tw-jane" data-sym="gamma">
+  <span class="step-title">Jane 的計算</span>
+  <p>來回 40 光年，以 $0.80c$ 要 $\dfrac{40\ \text{ly}}{0.80c}=50\ \text{y}$（Jane 的時間）。Dick 的生命步調在 Jane 看來只有她的 $\sqrt{1-0.80^2}=0.60$ 倍（Jane 心跳 5 下，Dick 只跳 3 下），只過了 $50\times0.60=30\ \text{y}$。Dick 回來時 50 歲，Jane 70 歲。</p>
+</div>
+
+<div class="step" data-step="tw-paradox">
+  <span class="step-title">弔詭在哪</span>
+  <p>從 Dick 看，是 Jane 以 $0.80c$ 在動，照樣用時間膨脹，應該是 Jane 比較年輕？</p>
+</div>
+
+<div class="step" data-step="tw-asym">
+  <span class="step-title">兩人不對稱</span>
+  <p>Dick 出發、在恆星處掉頭、降落時都換了慣性座標系；Jane 一直在同一個慣性座標系。時間膨脹公式適用於 Jane 看 Dick，不適用於 Dick 看 Jane 的整趟旅程。</p>
+</div>
+
+<div class="step" data-step="tw-dick" data-sym="L0,L">
+  <span class="step-title">Dick 自己怎麼算</span>
+  <p>對 Dick 來說，地球到恆星的距離因長度收縮變成</p>
+  $$L=L_0\sqrt{1-v^2/c^2}=(20\ \text{ly})(0.60)=12\ \text{ly}$$
+  <p>去程 $12/0.80=15\ \text{y}$，回程也 15 y，共 30 y。和 Jane 算出的 Dick 年齡一致。</p>
+</div>
+
+<p>用飛機帶精準原子鐘繞地球一圈再和地面的鐘比較，實驗也證實了這種不對稱的老化：離開一個慣性系統再回來的觀察者，鐘一定比留在系統裡的鐘慢。</p>
+
+<div class="anim" data-anim="twin"></div>
+
+<div class="problem" data-kind="tbexample" id="bz-ex1-4">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 1.4 · p.19</span></div>
+    <h4>每年發一次訊號，各收到幾次</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex1-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex1-4"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Dick and Jane each send out a radio signal once a year while Dick is away. How many signals does Dick receive? How many does Jane receive?</p></div>
+<p class="original-caption">Beiser Example 1.4 · p.19</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>Dick 外出期間，Dick 和 Jane 都按自己的時間每年發一次無線電訊號。Dick 收到幾個？Jane 收到幾個？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：Dick 以 $v=0.80c$（$\beta=0.80$）飛到地球座標系中 $L_0=20\ \text{ly}$ 外的恆星再回來；兩人都按自己的錶每 $t_0=1\ \text{y}$ 發一次訊號，訊號以 $c$ 傳播。</p>
+<p><strong>① 兩種收訊間隔：</strong> 每隔固定固有時間發一個訊號、以光速傳到對方，就是都卜勒效應的情境；收訊間隔＝發訊間隔 ÷ 頻率因子。</p>
+<p class="fnote"><b>公式（光的都卜勒效應 (1.8)）：</b>分開時 $\nu=\nu_0\sqrt{\dfrac{1-\beta}{1+\beta}}$、靠近時根號上下對調，其中 $\nu_0$ 為發出頻率、$\nu$ 為收到頻率、$\beta=v/c$；間隔是頻率的倒數，本題 $t_0=1\ \text{y}$、$\beta=0.80$。</p>
+<div class="math-block">$$T_1=t_0\sqrt{\frac{1+\beta}{1-\beta}}=(1\ \text{y})\sqrt{\frac{1.80}{0.20}}=(1\ \text{y})\sqrt9=3\ \text{y}\ (\text{分開})$$</div>
+<div class="math-block">$$T_2=t_0\sqrt{\frac{1-\beta}{1+\beta}}=(1\ \text{y})\sqrt{\frac{0.20}{1.80}}=\tfrac13\ \text{y}\ (\text{靠近})$$</div>
+<p><strong>② 兩人各段經過的時間：</strong> Jane（地球座標系）用單程距離 $20\ \text{ly}$ 除以速率 $0.80c$：</p>
+<div class="math-block">$$t_{\text{Jane，單程}}=\frac{20\ \text{ly}}{0.80c}=25\ \text{y}$$</div>
+<p class="fnote"><b>公式（時間膨脹）：</b>運動者的固有時間 $t_0=t\sqrt{1-v^2/c^2}$，其中 $t$ 為地球座標系量到的時間；本題 $\sqrt{1-0.80^2}=\sqrt{0.36}=0.60$。</p>
+<div class="math-block">$$t_{\text{Dick，單程}}=25\ \text{y}\times0.60=15\ \text{y}$$</div>
+<p><strong>③ Dick 收到的：</strong> 兩人處境不對稱，要分開數。Dick 一掉頭，和 Jane 的關係立刻從「分開」變成「靠近」，所以去程 15 y 都是慢訊號、回程 15 y 都是快訊號（都是 Dick 自己的時間）：</p>
+<div class="math-block">$$N_{\text{Dick}}=\frac{15\ \text{y}}{3\ \text{y}}+\frac{15\ \text{y}}{1/3\ \text{y}}=5+45=50\ \text{個}$$</div>
+<p>Jane 每年發一個，所以他推斷 Jane 老了 50 歲。</p>
+<p><strong>④ Jane 收到的：</strong> Dick 在 Jane 的第 $25\ \text{y}$ 掉頭（上一步），他掉頭時發的訊號還要走 $20\ \text{ly}$，即 $20\ \text{y}$ 才到地球，所以 Jane 到第</p>
+<div class="math-block">$$25\ \text{y}+20\ \text{y}=45\ \text{y}$$</div>
+<p>才開始收到快訊號。前 $45\ \text{y}$ 每 3 y 一個，最後 $50-45=5\ \text{y}$ 每 $\tfrac13$ y 一個：</p>
+<div class="math-block">$$N_{\text{Jane}}=\frac{45\ \text{y}}{3\ \text{y}}+\frac{5\ \text{y}}{1/3\ \text{y}}=15+15=30\ \text{個}$$</div>
+<p>她推斷 Dick 老了 30 歲。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{Dick 收到 50 個，Jane 收到 30 個}\\ \text{兩人都同意 Dick 比 Jane 年輕 20 歲}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-22">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-22 · p.50</span></div>
+    <h4>0.6c 往返 12 光年</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-22">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-22"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Twin A makes a round trip at 0.6c to a star 12 light-years away, while twin B stays on the earth. Each twin sends the other a signal once a year by his own reckoning.</p><p>(a) How many signals does A send during the trip? How many does B send?</p><p>(b) How many signals does A receive? How many does B receive?</p></div>
+<p class="original-caption">Beiser 習題 1-22 · p.50</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>雙胞胎 A 以 $0.6c$ 往返 12 光年外的恆星，B 留在地球。兩人都按自己的時間每年發一次訊號。(a) A 在旅途中發出幾個？B 發出幾個？(b) A 收到幾個？B 收到幾個？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：A 的速率 $v=0.6c$、$\beta=0.6$（去回相同）；恆星距離 $L_0=12\ \text{ly}$（地球座標系）；兩人各依自己的錶每 $t_0=1\ \text{y}$ 發一個訊號，訊號以 $c$ 傳遞；B 一直在地球的慣性座標系。</p>
+<h4>(a) 兩人發出的訊號數</h4>
+<p><strong>① B 經過的時間：</strong> 每人每年發一個，發出的訊號數就等於自己經過的年數；B 的時間用「來回距離 ÷ 速率」。</p>
+<p>代入來回距離 $2\times12\ \text{ly}$、速率 $0.6c$：</p>
+<div class="math-block">$$t_B=\frac{2\times12\ \text{ly}}{0.6c}=\frac{24}{0.6}\ \text{y}=40\ \text{y}$$</div>
+<p>B 每年發一個，共發 40 個。</p>
+<p><strong>② A 經過的時間：</strong> A 的錶量到的是固有時間，用時間膨脹換算。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t_0=t\sqrt{1-\beta^2}$，其中 $t$ 為地球座標系量到的時間、$t_0$ 為運動者自己的錶走的固有時間、$\beta=v/c$；本題 $t=t_B$、$t_0=t_A$。</p>
+<p>代入上一步的 $t_B=40\ \text{y}$、$\beta=0.6$：</p>
+<div class="math-block">$$t_A=40\ \text{y}\times\sqrt{1-0.36}=40\ \text{y}\times0.8=32\ \text{y}$$</div>
+<p>A 共發 32 個；去程、回程各 $16\ \text{y}$。</p>
+<div class="math-block">$$\boxed{\text{A 發 }32\text{ 個、B 發 }40\text{ 個}}$$</div>
+<h4>(b) 兩人收到的訊號數</h4>
+<p><strong>① 收訊間隔：</strong> 收到的間隔由相對運動決定，用相對論都卜勒算：分開時拉長、靠近時縮短。</p>
+<p class="fnote"><b>公式（相對論都卜勒）：</b>分開時收訊間隔 $T=t_0\sqrt{\dfrac{1+\beta}{1-\beta}}$，靠近時 $T=t_0\sqrt{\dfrac{1-\beta}{1+\beta}}$，其中 $t_0$ 為發訊者自己的發訊間隔、$\beta$ 為相對速率；本題 $t_0=1\ \text{y}$、$\beta=0.6$。</p>
+<p>代入 $\beta=0.6$、$t_0=1\ \text{y}$：</p>
+<div class="math-block">$$\begin{aligned}T_{\text{分開}}&amp;=(1\ \text{y})\sqrt{\frac{1.6}{0.4}}=(1\ \text{y})\sqrt4=2\ \text{y}\\ T_{\text{靠近}}&amp;=(1\ \text{y})\sqrt{\frac{0.4}{1.6}}=\tfrac12\ \text{y}\end{aligned}$$</div>
+<p><strong>② A 收到的訊號：</strong> A 一掉頭就從分開變成靠近，所以去程 16 y 收慢訊號、回程 16 y 收快訊號。</p>
+<div class="math-block">$$N_A=\frac{16\ \text{y}}{2\ \text{y}}+\frac{16\ \text{y}}{1/2\ \text{y}}=8+32=40\ \text{個}$$</div>
+<p><strong>③ B 收到的訊號：</strong> B 要等 A 掉頭時發的訊號走 12 年回來，才開始收快訊號，這是兩人數目不同的原因。A 去程花（B 的時間）$12\ \text{ly}/0.6c=20\ \text{y}$，掉頭時的訊號再走 $12\ \text{y}$ 回地球，所以 B 到第 $20+12=32\ \text{y}$ 才看到 A 掉頭。前 $32\ \text{y}$ 收慢訊號，最後 $40-32=8\ \text{y}$ 收快訊號：</p>
+<div class="math-block">$$N_B=\frac{32\ \text{y}}{2\ \text{y}}+\frac{8\ \text{y}}{1/2\ \text{y}}=16+16=32\ \text{個}$$</div>
+<div class="math-block">$$\boxed{\text{A 收到 }40\text{ 個、B 收到 }32\text{ 個}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-23">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-23 · p.50</span></div>
+    <h4>往返最近的恆星</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-23">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A woman leaves the earth in a spacecraft that makes a round trip to the nearest star, 4 light-years distant, at a speed of 0.9c. How much younger is she upon her return than her twin sister who remained behind?</p></div>
+<p class="original-caption">Beiser 習題 1-23 · p.50</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一位女士以 $0.9c$ 往返 4 光年外最近的恆星。回來時她比留在地球的雙胞胎姊妹年輕多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：恆星距離 $L_0=4\ \text{ly}$（地球座標系）；速率 $v=0.9c$、$\beta=0.9$（去回相同）；掉頭瞬間完成。姊妹一直在地球的慣性座標系，所以從地球座標系算。</p>
+<p><strong>① 地球上經過的時間：</strong> 留守的姊妹一直在同一個慣性座標系（旅行者掉頭時換了座標系，兩人不對稱），地球時間＝來回距離 ÷ 速率。</p>
+<p>代入來回距離 $2\times4\ \text{ly}$、速率 $0.9c$：</p>
+<div class="math-block">$$t=\frac{2(4\ \text{ly})}{0.9c}=\frac{8}{0.9}\ \text{y}=8.89\ \text{y}$$</div>
+<p><strong>② 旅行者的錶走的時間：</strong> 旅行者的錶走的是固有時間。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t_0=t\sqrt{1-\beta^2}$，其中 $t$ 為地球座標系量到的時間、$t_0$ 為旅行者自己的錶走的固有時間、$\beta=v/c$；本題 $\beta=0.9$。</p>
+<p>代入 $\beta=0.9$ 與上一步的 $t=8.89\ \text{y}$：</p>
+<div class="math-block">$$\sqrt{1-0.81}=\sqrt{0.19}=0.436,\qquad t_0=(8.89\ \text{y})(0.436)=3.87\ \text{y}$$</div>
+<p><strong>③ 年齡差：</strong> 兩人經過的時間相減。</p>
+<div class="math-block">$$\Delta t=t-t_0=8.89\ \text{y}-3.87\ \text{y}=5.0\ \text{y}$$</div>
+<div class="math-block">$$\boxed{\text{年輕 }8.89-3.87=5.0\text{ 歲}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-05-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>去程 0.6c、回程 0.8c：年齡差與訊號數</h4>
+    <button type="button" class="exam-btn" data-exam="sf-05-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>A 以 $0.60c$ 飛到地球座標系中 $4.8$ 光年外的星球，立刻以 $0.80c$ 飛回；B 留在地球。兩人各依自己的錶每年發一次訊號給對方。(a) 旅程在 B、A 的錶上各多久？(b) A 共收到 B 的幾個訊號？分去程、回程算。(c) B 在什麼時候看到 A 掉頭？B 共收到幾個訊號？說明 (b)(c) 和 (a) 一致。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：星球距離 $L_0=4.8\ \text{ly}$（地球座標系）；去程 $\beta_1=0.60$、回程 $\beta_2=0.80$，掉頭不花時間；兩人各依自己的錶每 $t_0=1\ \text{y}$ 發一個訊號，訊號是光，$4.8\ \text{ly}$ 要走 $4.8\ \text{y}$。</p>
+<h4>(a) 旅程在 B、A 的錶上各多久</h4>
+<p><strong>① 去程的時間：</strong> 去程和回程速率不同，兩段要分開算：B 的時間＝距離 ÷ 該段速率，A 的時間再乘該段的 $\sqrt{1-\beta^2}$。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t_A=t_B\sqrt{1-\beta^2}$，其中 $t_B$ 為地球座標系（B）量到的時間、$t_A$ 為 A 的錶走的固有時間、$\beta=v/c$；本題兩段分別用 $\beta_1$、$\beta_2$。</p>
+<p>代入 $L_0=4.8\ \text{ly}$、$\beta_1=0.60$：</p>
+<div class="math-block">$$t_{B1}=\frac{4.8\ \text{ly}}{0.60c}=8.0\ \text{y},\qquad \sqrt{1-0.60^2}=0.80,\qquad t_{A1}=8.0\ \text{y}\times0.80=6.4\ \text{y}$$</div>
+<p><strong>② 回程的時間與總和：</strong> 回程同樣算，再把兩段相加。</p>
+<p>代入 $L_0=4.8\ \text{ly}$、$\beta_2=0.80$：</p>
+<div class="math-block">$$t_{B2}=\frac{4.8\ \text{ly}}{0.80c}=6.0\ \text{y},\qquad \sqrt{1-0.80^2}=0.60,\qquad t_{A2}=6.0\ \text{y}\times0.60=3.6\ \text{y}$$</div>
+<p>兩段相加：</p>
+<div class="math-block">$$T_B=8.0+6.0=14.0\ \text{y},\qquad T_A=6.4+3.6=10.0\ \text{y}$$</div>
+<div class="math-block">$$\boxed{\text{B 過 }14.0\text{ 年、A 過 }10.0\text{ 年（A 年輕 4.0 歲）}}$$</div>
+<h4>(b) A 收到的訊號</h4>
+<p><strong>① 去程（分開）：</strong> 訊號每隔 1 年（固有時間）發出、以光速傳遞，用都卜勒「數訊號」；兩段速率不同，$k$ 也不同。</p>
+<p class="fnote"><b>公式（相對論都卜勒）：</b>分開時收訊間隔是發訊間隔的 $k=\sqrt{\dfrac{1+\beta}{1-\beta}}$ 倍，靠近時是 $1/k$ 倍，其中 $\beta$ 為相對速率；本題去程用 $\beta_1=0.60$、回程用 $\beta_2=0.80$，發訊間隔 $1\ \text{y}$。</p>
+<p>去程 $\beta_1=0.60$：收訊間隔 $k_1=\sqrt{\tfrac{1.60}{0.40}}=2$ 年。代入 (a) 的 A 去程時間 $6.4\ \text{y}$：</p>
+<div class="math-block">$$N_{A1}=\frac{6.4\ \text{y}}{2\ \text{y}}=3.2\ \text{個}$$</div>
+<p><strong>② 回程（靠近）與總數：</strong> 回程 $\beta_2=0.80$：收訊間隔 $1/k_2=\sqrt{\tfrac{0.20}{1.80}}=\tfrac13$ 年。代入 (a) 的 A 回程時間 $3.6\ \text{y}$：</p>
+<div class="math-block">$$N_{A2}=\frac{3.6\ \text{y}}{1/3\ \text{y}}=10.8\ \text{個}$$</div>
+<div class="math-block">$$N_A=3.2+10.8=14.0\ \text{個}=T_B$$</div>
+<p>等於 B 的經過時間（B 每年發一個），和 (a) 一致。</p>
+<div class="math-block">$$\boxed{N_A=14\text{ 個（去 3.2、回 10.8）}}$$</div>
+<h4>(c) B 看到掉頭的時刻與收到的訊號</h4>
+<p><strong>① 看到掉頭的時刻：</strong> B 看到掉頭要多等光從星球傳回的 $4.8$ 年，所以 B 的「慢訊號」時段比 A 長很多，這是不對稱的關鍵。A 在 B 的 $t=8.0\ \text{y}$ 掉頭（(a) 的 $t_{B1}$），那一刻的光再走 $4.8\ \text{y}$：</p>
+<div class="math-block">$$t_{\text{看到掉頭}}=8.0\ \text{y}+4.8\ \text{y}=12.8\ \text{y}$$</div>
+<p><strong>② B 收到的訊號：</strong> 之前的 $12.8\ \text{y}$ 收到 A 去程的訊號（間隔 $2$ 年），之後的 $14.0-12.8=1.2\ \text{y}$ 收到回程的訊號（間隔 $\tfrac13$ 年）：</p>
+<div class="math-block">$$N_B=\frac{12.8\ \text{y}}{2\ \text{y}}+\frac{1.2\ \text{y}}{1/3\ \text{y}}=6.4+3.6=10.0\ \text{個}=T_A$$</div>
+<p>等於 A 的經過時間，和 (a) 一致：兩人數到的訊號都等於對方的經過時間。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{B 在第 }12.8\text{ 年看到掉頭}\\ \text{共收到 }10\text{ 個（}6.4+3.6\text{）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-05-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>證明「數訊號」對任何速率都給出 $T=\gamma\tau$</h4>
+    <button type="button" class="exam-btn" data-exam="sf-05-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>旅行者以速率 $\beta c$ 去、以同樣速率回，自己的錶共走 $\tau$；留守者每隔（自己的）$1$ 單位時間發一個訊號。(a) 只用都卜勒因子 $k=\sqrt{\frac{1+\beta}{1-\beta}}$，求旅行者收到的訊號總數 $N$。(b) 證明 $\dfrac12\left(k+\dfrac1k\right)=\gamma$，因此 $N=\gamma\tau$ 正是時間膨脹的結果。(c) 留守者的錶在旅程中走了多少？要怎麼由「留守者在哪一刻看到掉頭」得到同樣結果？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：旅行者去、回速率都是 $\beta c$，兩段對稱，各占旅行者時間 $\tau/2$；$\tau$ 為旅行者的固有時間；留守者每 1 單位（自己的）時間發一個訊號；都卜勒因子 $k=\sqrt{\dfrac{1+\beta}{1-\beta}}$。</p>
+<h4>(a) 旅行者收到的訊號總數</h4>
+<p><strong>① 數訊號：</strong> 留守者一單位時間發一個，所以旅行者收到的訊號數＝留守者的經過時間，不必討論換座標系時的「同時」；旅行者一掉頭就從分開變成靠近，他的時間剛好對半分。</p>
+<p class="fnote"><b>公式（都卜勒數訊號）：</b>分開時收訊間隔是發訊間隔的 $k=\sqrt{\dfrac{1+\beta}{1-\beta}}$ 倍、靠近時是 $1/k$ 倍，訊號數＝經過時間 ÷ 收訊間隔；本題發訊間隔 1 單位。</p>
+<p>去程旅行者經過 $\tau/2$，每 $k$ 單位收一個；回程經過 $\tau/2$，每 $1/k$ 單位收一個：</p>
+<div class="math-block">$$N=\frac{\tau/2}{k}+\frac{\tau/2}{1/k}=\frac{\tau}{2k}+\frac{k\tau}{2}=\frac\tau2\left(k+\frac1k\right)$$</div>
+<div class="math-block">$$\boxed{N=\frac\tau2\left(k+\frac1k\right)}$$</div>
+<h4>(b) 證明 $\tfrac12(k+1/k)=\gamma$</h4>
+<p><strong>① 化簡 $k+1/k$：</strong> 把 $k$ 和 $1/k$ 都寫成分母 $\sqrt{(1+\beta)(1-\beta)}$（上下同乘 $\sqrt{1+\beta}$ 或 $\sqrt{1-\beta}$）：</p>
+<div class="math-block">$$k=\frac{1+\beta}{\sqrt{(1+\beta)(1-\beta)}},\qquad \frac1k=\frac{1-\beta}{\sqrt{(1+\beta)(1-\beta)}}$$</div>
+<p>相加：</p>
+<div class="math-block">$$k+\frac1k=\frac{(1+\beta)+(1-\beta)}{\sqrt{(1+\beta)(1-\beta)}}=\frac{2}{\sqrt{1-\beta^2}}=2\gamma$$</div>
+<p><strong>② 代回 (a)：</strong></p>
+<div class="math-block">$$N=\frac\tau2\cdot2\gamma=\gamma\tau$$</div>
+<div class="math-block">$$\boxed{\tfrac12\left(k+\tfrac1k\right)=\gamma,\quad N=\gamma\tau}$$</div>
+<h4>(c) 從留守者的角度</h4>
+<p><strong>① 看到掉頭的時刻：</strong> 由 (b)，留守者的錶走了 $N=\gamma\tau$。改從留守者收到的訊號來得到：旅行者也每單位（自己的錶）發一個，去程發 $\tau/2$ 個、回程發 $\tau/2$ 個。掉頭的訊息要晚一段才傳到，兩段時間不再對半，但總和必須相同。留守者收去程訊號時兩人在分開，每 $k$ 單位收一個，所以收完去程最後一個（也就是「看到掉頭」）的時刻是</p>
+<div class="math-block">$$t_1=k\cdot\frac\tau2$$</div>
+<p><strong>② 回程訊號與總時間：</strong> 之後收回程的 $\tau/2$ 個，每 $1/k$ 單位一個，最後一個（旅行者到家時發的）正好在旅行者到家時收到：</p>
+<div class="math-block">$$t_2=\frac1k\cdot\frac\tau2,\qquad T=t_1+t_2=\frac\tau2\left(k+\frac1k\right)=\gamma\tau$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}T=\gamma\tau\\ \text{由 }k\tau/2\text{ 時看到掉頭、再 }\tau/(2k)\text{ 回家得到}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>不對稱：只有旅行者換過慣性座標系，所以旅行者比較年輕。</li>
+    <li>地球算：$t_{\text{旅}}=t_{\text{地}}/\gamma$；旅行者算：距離縮成 $L_0/\gamma$，結果相同。</li>
+    <li>數訊號：分開時間隔 $\sqrt{\frac{1+\beta}{1-\beta}}$ 倍、靠近時倒數；留守者要多等訊號傳回的時間。</li>
+  </ol>
+</div>

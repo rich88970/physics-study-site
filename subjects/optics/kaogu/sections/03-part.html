@@ -1,0 +1,294 @@
+<h2 id="kp-03">C 組：第 3 題｜干涉（每份 20 分）</h2>
+<p>112 級是雙稜鏡虛光源；114、115 級是兩種不同情況的牛頓環。三題共同點都是<strong>兩束相干光的光程差</strong>。</p>
+<h3 id="k03-1">C-1. 112 級第 3 題｜菲涅耳雙稜鏡（20 分）</h3>
+<p><strong>中文：</strong> 一道波長 $\lambda=632.8\ \mathrm{nm}$ 的光經過狹縫 S，再入射菲涅耳（Fresnel）雙稜鏡。已知：</p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>條件</th>
+<th>數值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>波長 $\lambda$</td>
+<td>632.8 nm</td>
+</tr>
+<tr>
+<td>稜鏡折射率 $n$</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>狹縫到雙稜鏡距離 $d$</td>
+<td>20 cm</td>
+</tr>
+<tr>
+<td>稜鏡到屏幕距離</td>
+<td>$3d=60$ cm</td>
+</tr>
+<tr>
+<td>屏幕相鄰亮紋間距 $\Delta y$</td>
+<td>0.04 cm</td>
+</tr>
+</tbody>
+</table></div>
+<p>求：(a) 雙稜鏡的小角度 $\alpha$（rad）；(b) 兩虛光源間距 $a$（cm）。題目提示：$\alpha$ 很小時單側偏折角 $\delta\approx\alpha(n-1)$，且 $\tan\delta\approx\delta$。</p>
+<p><strong>① 看出兩個虛光源：</strong> 光穿過雙稜鏡上下兩側往不同方向偏折，把折射光往回延長得到兩個相干虛光源 S₁、S₂。做法是由亮紋間距先求虛光源間距 $a$，再由 $a$ 求稜鏡角 $\alpha$。</p>
+<p class="symnote">符號：$a$：兩虛光源間距；$D$：虛光源平面到屏幕的有效距離；$d$：狹縫到稜鏡距離；$\delta$：單側偏折角；$\alpha$：稜鏡小頂角；$y_m$：第 $m$ 條亮紋離中央的距離；$\Delta L$：兩束光的光程差。</p>
+<p><strong>② 有效屏幕距離：</strong> 虛光源約在真光源的平面上：</p>
+<div class="math-block">$$
+D=d+3d=4d=4(20)=\boxed{80\ \mathrm{cm}}.
+$$</div>
+<p><strong>③ 推條紋間距 $\lambda D/a$：</strong> $a\ll D$、條紋靠近中軸時，屏幕上距中央 $y$ 處的光程差：</p>
+<div class="math-block">$$\boxed{\Delta L\approx\frac{ay}{D}}.$$</div>
+<p>亮紋條件是光程差為整數個波長：</p>
+<div class="math-block">$$\Delta L=m\lambda.$$</div>
+<p>合併：</p>
+<div class="math-block">$$
+\frac{ay_m}{D}=m\lambda.
+$$</div>
+<div class="math-block">$$
+\boxed{y_m=\frac{m\lambda D}{a}}.
+$$</div>
+<p>相鄰兩亮紋相減：</p>
+<div class="math-block">$$
+\begin{aligned}
+\Delta y&amp;=\frac{(m+1)\lambda D}{a}-\frac{m\lambda D}{a}\\
+&amp;=\frac{[(m+1)-m]\lambda D}{a}\\
+&amp;=\boxed{\frac{\lambda D}{a}}.
+\end{aligned}
+$$</div>
+<h4>(b) 虛光源間距 a（先算，因為 (a) 要用到 $a$）</h4>
+<p><strong>① 解出 $a$：</strong></p>
+<div class="math-block">$$\boxed{a=\frac{\lambda D}{\Delta y}}.$$</div>
+<p><strong>② 統一單位：</strong></p>
+<div class="math-block">$$
+\lambda=632.8\ \mathrm{nm}
+=632.8\times10^{-7}\ \mathrm{cm}
+=6.328\times10^{-5}\ \mathrm{cm}.
+$$</div>
+<p><strong>③ 代入</strong> $D=80\ \mathrm{cm}$、$\Delta y=0.04\ \mathrm{cm}$：</p>
+<div class="math-block">$$
+\begin{aligned}
+a&amp;=\frac{(6.328\times10^{-5})(80)}{0.04}\ \mathrm{cm}\\
+&amp;=\frac{0.0050624}{0.04}\ \mathrm{cm}\\
+&amp;=\boxed{0.12656\ \mathrm{cm}}.
+\end{aligned}
+$$</div>
+<h4>(a) 稜鏡小角度 α</h4>
+<p><strong>① 虛光源幾何：</strong> 單側虛光源偏離原軸 $d\tan\delta$，兩側對稱：</p>
+<div class="math-block">$$a=2d\tan\delta.$$</div>
+<p><strong>② 小角度近似：</strong> $\tan\delta\approx\delta$：</p>
+<div class="math-block">$$a\approx2d\delta.$$</div>
+<p><strong>③ 代入偏折角</strong> $\delta\approx(n-1)\alpha$：</p>
+<div class="math-block">$$
+\begin{aligned}
+a&amp;\approx2d\delta\\
+&amp;\approx2d(n-1)\alpha.
+\end{aligned}
+$$</div>
+<div class="math-block">$$\boxed{\alpha\approx\frac{a}{2d(n-1)}}.$$</div>
+<p><strong>④ 代數值</strong> $a=0.12656$ cm、$d=20$ cm、$n=1.6$：</p>
+<div class="math-block">$$
+\begin{aligned}
+\alpha&amp;=\frac{0.12656}{2(20)(1.6-1)}\\
+&amp;=\frac{0.12656}{2(20)(0.6)}\\
+&amp;=\frac{0.12656}{24}\\
+&amp;=\boxed{0.00527333\ \mathrm{rad}}.
+\end{aligned}
+$$</div>
+<p><strong>最終答案：</strong></p>
+<div class="math-block">$$
+\boxed{\text{(a) }\alpha=0.00527333\ \mathrm{rad}},\qquad
+\boxed{\text{(b) }a=0.12656\ \mathrm{cm}}.
+$$</div>
+
+<h3 id="k03-2">C-2. 牛頓環共同觀念（114、115 級都要會）</h3>
+<p><strong>① 同心圓的來源：</strong> 平凸透鏡凸面放在平玻璃上，中間是中央最薄、向外漸厚的空氣膜；膜上下兩界面的反射光互相干涉，同半徑處膜厚相同，所以形成同心亮暗環。</p>
+<p><strong>② 中央是暗點：</strong> 空氣到玻璃的那次反射多一個 $\pi$ 相位反轉，所以反射光觀察時，中心膜厚接近 0 也會相消。</p>
+<p><strong>③ 環半徑與膜厚的幾何關係：</strong></p>
+<p class="symnote">符號：$R$：凸面曲率半徑；$r$：離環中心的半徑；$t_f$：半徑 $r$ 處的空氣膜厚（寫成 $t_f$ 避免與時間混淆）；$\lambda$：空氣中波長；$m$：環的階數（中心暗點 $m=0$）；單位皆為 m。</p>
+<p class="fnote"><b>公式（畢氏定理）：</b>$c^2=a^2+b^2$，其中 $c$ 為直角三角形的斜邊長、$a,b$ 為兩股長（三者同單位，m）；本題以透鏡球心、球面上離中心軸 $r$ 的點、與該點同高度的中心軸上一點構成直角三角形，斜邊 $c=R$，兩股 $a=R-t_f$（沿中心軸）、$b=r$（水平）。</p>
+<div class="math-block">$$R^2=(R-t_f)^2+r^2.$$</div>
+<p>展開平方：</p>
+<div class="math-block">$$R^2=R^2-2Rt_f+t_f^2+r^2.$$</div>
+<p>兩邊減 $R^2$：</p>
+<div class="math-block">$$0=-2Rt_f+t_f^2+r^2.$$</div>
+<div class="math-block">$$r^2=2Rt_f-t_f^2.$$</div>
+<p>膜很薄（$t_f\ll R$），忽略 $t_f^2$：</p>
+<div class="math-block">$$\boxed{r^2\approx2Rt_f}.$$</div>
+<p><strong>④ 亮環用 $m-1/2$、暗環用 $m$：</strong></p>
+<p class="fnote"><b>公式（薄膜反射干涉條件）：</b>$\Delta L=2n_ft_f\cos\theta_t+\dfrac{\lambda}{2}$，亮紋 $\Delta L=m\lambda$、暗紋 $\Delta L=\left(m+\dfrac12\right)\lambda$，其中 $\Delta L$ 為兩束反射光的光程差（m）、$n_f$ 為薄膜折射率（無單位）、$t_f$ 為膜厚（m）、$\theta_t$ 為膜內光線與法線的夾角（rad）、$\lambda$ 為入射光在空氣中的波長（m）、$\dfrac{\lambda}{2}$ 是兩個反射界面中只有一個發生 $\pi$ 相位反轉所附加的光程、$m$ 為使 $t_f\ge0$ 的整數；本題空氣膜 $n_f=1$、近正向入射 $\theta_t=0$，得 $\Delta L=2t_f+\dfrac{\lambda}{2}$，代入亮暗條件即得下表。</p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>反射光條件</th>
+<th>薄膜光程差</th>
+<th>第幾圈的 $m$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>亮環</td>
+<td>$2t_f=(m-\frac12)\lambda$</td>
+<td>$m=1,2,3,\ldots$</td>
+</tr>
+<tr>
+<td>暗環</td>
+<td>$2t_f=m\lambda$</td>
+<td>$m=0,1,2,\ldots$</td>
+</tr>
+</tbody>
+</table></div>
+<p>把 $r^2\approx2Rt_f$ 代入亮環條件：</p>
+<div class="math-block">$$r^2=R\left(m-\frac12\right)\lambda.$$</div>
+<div class="math-block">$$\boxed{r_{m,\mathrm{亮}}=\sqrt{\left(m-\frac12\right)\lambda R}}.$$</div>
+<p>暗環同理：</p>
+<div class="math-block">$$\boxed{r_{m,\mathrm{暗}}=\sqrt{m\lambda R}}.$$</div>
+<p><strong>注意：</strong> 暗中心是 $m=0$，第一圈暗環才是 $m=1$，別讓圈數整個偏一格。</p>
+
+<h3 id="k03-3">C-3. 114 級第 3 題｜兩種波長亮環重合（20 分）</h3>
+<p><strong>中文：</strong> 兩種波長的光照射同一個牛頓環裝置。第一種光 $\lambda_1=589.2\ \mathrm{nm}$，它的<strong>第 6 道亮環</strong>與第二種光的<strong>第 8 道亮環</strong>重合；透鏡凸面曲率半徑 $R=50\ \mathrm{cm}$。求：(a) 第二種波長 $\lambda_2$（nm）；(b) 重合處的半徑 $r$（mm）。</p>
+<p><strong>① 「重合」就是半徑相等：</strong></p>
+<div class="math-block">$$\boxed{r_{6,\lambda_1}=r_{8,\lambda_2}}.$$</div>
+<p class="symnote">符號：$r_{6,\lambda_1}$、$r_{8,\lambda_2}$：第一種光第 6 道、第二種光第 8 道亮環的半徑。</p>
+<p><strong>② 兩邊都用亮環公式</strong>（推導見 C-2 ④）：</p>
+<div class="math-block">$$r_m^2=\left(m-\frac12\right)\lambda R.$$</div>
+<p>第 6 亮環：</p>
+<div class="math-block">$$
+\begin{aligned}
+r_{6,\lambda_1}^2
+&amp;=\left(6-\frac12\right)\lambda_1R\\
+&amp;=5.5\lambda_1R.
+\end{aligned}
+$$</div>
+<p>第 8 亮環：</p>
+<div class="math-block">$$
+\begin{aligned}
+r_{8,\lambda_2}^2
+&amp;=\left(8-\frac12\right)\lambda_2R\\
+&amp;=7.5\lambda_2R.
+\end{aligned}
+$$</div>
+<p><strong>③ 令兩者相等、約掉同一個 $R$：</strong></p>
+<div class="math-block">$$5.5\lambda_1R=7.5\lambda_2R.$$</div>
+<div class="math-block">$$\boxed{5.5\lambda_1=7.5\lambda_2}.$$</div>
+<h4>(a) 第二種波長</h4>
+<p><strong>① 解出 $\lambda_2$ 並代入：</strong></p>
+<div class="math-block">$$\lambda_2=\frac{5.5\lambda_1}{7.5}.$$</div>
+<div class="math-block">$$
+\begin{aligned}
+\lambda_2&amp;=\frac{5.5(589.2)}{7.5}\ \mathrm{nm}\\
+&amp;=\frac{3240.6}{7.5}\ \mathrm{nm}\\
+&amp;=\boxed{432.08\ \mathrm{nm}}.
+\end{aligned}
+$$</div>
+<h4>(b) 共同半徑</h4>
+<p><strong>① 用已知的第一種光算第 6 亮環：</strong></p>
+<div class="math-block">$$r=\sqrt{5.5\lambda_1R}.$$</div>
+<p><strong>② 換成公尺：</strong></p>
+<div class="math-block">$$
+\lambda_1=589.2\times10^{-9}\ \mathrm m,
+\qquad R=50\ \mathrm{cm}=0.50\ \mathrm m.
+$$</div>
+<p><strong>③ 代入：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+r&amp;=\sqrt{5.5(589.2\times10^{-9})(0.50)}\ \mathrm m\\
+&amp;=\sqrt{1.6203\times10^{-6}}\ \mathrm m\\
+&amp;=1.272910\times10^{-3}\ \mathrm m\\
+&amp;=\boxed{1.27291\ \mathrm{mm}}.
+\end{aligned}
+$$</div>
+<p><strong>最終答案：</strong></p>
+<div class="math-block">$$
+\boxed{\text{(a) }\lambda_2=432.08\ \mathrm{nm}},\qquad
+\boxed{\text{(b) }r=1.27291\ \mathrm{mm}}.
+$$</div>
+
+<h3 id="k03-4">C-4. 115 級第 3 題｜第 2 亮環、第 4 暗環（20 分）</h3>
+<p><strong>中文：</strong> 以平凸透鏡做牛頓環實驗，焦距 $f=6.00\ \mathrm m$、折射率 $n=1.7328$、波長 $\lambda=486.1\ \mathrm{nm}$。求：(a) 第 2 亮環半徑（mm）；(b) 第 4 暗環半徑（mm）。</p>
+<p><strong>① 先把焦距換成曲率半徑：</strong> 牛頓環公式要的是凸面曲率半徑 $R$，題目給的是焦距 $f$，兩者不同，不能直接拿 6.00 m 當 $R$。</p>
+<p><strong>② 薄透鏡製鏡公式：</strong> 空氣中、薄透鏡近似：</p>
+<div class="math-block">$$\frac1f=(n-1)\left(\frac1{R_1}-\frac1{R_2}\right).$$</div>
+<p>$R_1,R_2$ 是前後表面的帶符號曲率半徑；平面那側 $1/R_2=0$，凸面取 $R\gt0$：</p>
+<div class="math-block">$$\frac1f=\frac{n-1}{R}.$$</div>
+<div class="math-block">$$\boxed{R=(n-1)f}.$$</div>
+<div class="math-block">$$
+\begin{aligned}
+R&amp;=(1.7328-1)(6.00)\\
+&amp;=0.7328\times6.00\\
+&amp;=\boxed{4.3968\ \mathrm m}.
+\end{aligned}
+$$</div>
+<h4>(a) 第 2 亮環半徑</h4>
+<p><strong>① 亮環公式取 $m=2$：</strong></p>
+<div class="math-block">$$r_{m,\mathrm{亮}}=\sqrt{\left(m-\frac12\right)\lambda R}.$$</div>
+<div class="math-block">$$
+\begin{aligned}
+r_{2,\mathrm{亮}}
+&amp;=\sqrt{\left(2-\frac12\right)\lambda R}\\
+&amp;=\sqrt{\frac32\lambda R}.
+\end{aligned}
+$$</div>
+<p><strong>② 換單位：</strong></p>
+<div class="math-block">$$\lambda=486.1\ \mathrm{nm}=486.1\times10^{-9}\ \mathrm m.$$</div>
+<p><strong>③ 代入：</strong></p>
+<div class="math-block">$$
+\begin{aligned}
+r_{2,\mathrm{亮}}
+&amp;=\sqrt{\frac32(486.1\times10^{-9})(4.3968)}\ \mathrm m\\
+&amp;=\sqrt{3.20592672\times10^{-6}}\ \mathrm m\\
+&amp;=1.790510\times10^{-3}\ \mathrm m\\
+&amp;=\boxed{1.79051\ \mathrm{mm}}.
+\end{aligned}
+$$</div>
+<h4>(b) 第 4 暗環半徑</h4>
+<p><strong>① 暗環公式取 $m=4$</strong>（中心暗點為 $m=0$）：</p>
+<div class="math-block">$$r_{m,\mathrm{暗}}=\sqrt{m\lambda R}.$$</div>
+<div class="math-block">$$
+\begin{aligned}
+r_{4,\mathrm{暗}}
+&amp;=\sqrt{4\lambda R}\\
+&amp;=\sqrt{4(486.1\times10^{-9})(4.3968)}\ \mathrm m\\
+&amp;=\sqrt{8.54913792\times10^{-6}}\ \mathrm m\\
+&amp;=2.923891\times10^{-3}\ \mathrm m\\
+&amp;=\boxed{2.92389\ \mathrm{mm}}.
+\end{aligned}
+$$</div>
+<p><strong>最終答案：</strong></p>
+<div class="math-block">$$
+\boxed{\text{(a) 第 2 亮環 }r=1.79051\ \mathrm{mm}},\qquad
+\boxed{\text{(b) 第 4 暗環 }r=2.92389\ \mathrm{mm}}.
+$$</div>
+<h4>C 組三年比較</h4>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>變化</th>
+<th>112 級</th>
+<th>114 級</th>
+<th>115 級</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>干涉裝置</td>
+<td>菲涅耳雙稜鏡</td>
+<td>牛頓環</td>
+<td>牛頓環</td>
+</tr>
+<tr>
+<td>主要條件</td>
+<td>屏幕條紋間距、狹縫稜鏡距離</td>
+<td>第 6 和第 8 亮環重合、曲率半徑</td>
+<td>焦距、折射率、第 2 亮環／第 4 暗環</td>
+</tr>
+<tr>
+<td>解題核心</td>
+<td>$\Delta y=\lambda D/a$；$a\approx2d(n-1)\alpha$</td>
+<td>$r^2=(m-1/2)\lambda R$，兩半徑相等</td>
+<td>先求 $R=(n-1)f$，再分亮環暗環</td>
+</tr>
+</tbody>
+</table></div>

@@ -1,0 +1,366 @@
+<h2>五、應用：受迫阻尼振盪與共振 <span class="pg">板書 9/30 照片 8–10</span></h2>
+
+<p class="lead">第 2 章的阻尼振盪再加上一個週期性外力 $f_0\sin\omega t$，方程式就變成非齊次的 $\ddot x+2\gamma\dot x+\omega_0^2x=F_0\sin\omega t$。右邊是三角函數，用第 1 節的基本規則猜 $K_1\cos\omega t+K_2\sin\omega t$。算出來的振幅 $A(\omega)$ 在 $\omega\approx\omega_0$ 時特別大——這就是共振。</p>
+
+<h3 id="a3-fo-eom">5.1 運動方程式 <span class="pg-tag">照片 8–9</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/30（照片 8–9）</span>
+  <p><strong>應用例：Driving Damped Oscillations</strong>　（圖：天花板—彈簧 $k$—質量 $m$，friction，外力 $f_{\text{ext}}$ 上下）</p>
+  <p>Eq. of Motion　$\sum F_x=ma$</p>
+  $$-kx-\beta\dot x+f_{\text{ext}}=ma\ \to\ m\ddot x+\beta\dot x+kx=f_{\text{ext}}$$
+  $$\to\ \boxed{\ddot x+\frac\beta m\dot x+\frac kmx=\frac{f_{\text{ext}}}m}$$
+  <p>external force，periodic：$f_{\text{ext}}=f_0\sin(\omega t)$，$\omega$：是操縱變因</p>
+  $$\ddot x+\frac\beta m\dot x+\frac kmx=\frac{f_0\sin(\omega t)}m$$
+  <p>為簡化運算，引入 $2\gamma=\dfrac\beta m$，$\omega_0^2=\dfrac km$，$F_0=\dfrac{f_0}m$</p>
+  $$\ddot x+2\gamma\dot x+\omega_0^2x=F_0\sin(\omega t)\qquad\text{Basic rule}$$
+  <p>step 1.　$x=c_1x_1+c_2x_2\propto e^{-\gamma t}(\cdots)$（$\gamma\gt\omega_0$、$\gamma=\omega_0$、$\gamma\lt\omega_0$）</p>
+  <p>step 2.　猜 $y_p=K_1\cos\omega t+K_2\sin\omega t$，將 $y_p,y_p',y_p''$ 代回 EOM，比較係數</p>
+  $$K_1=\frac{-2\gamma\omega F_0}{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2},\quad K_2=\frac{(\omega_0^2-\omega^2)F_0}{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2}$$
+  <p><span class="added">網站補充（照片缺漏）</span>照片 8 和照片 9 是同一塊黑板（相隔 1 秒），照片 8 被老師擋住的「$\to m\ddot x+\beta\dot x+kx=f_{\text{ext}}$」在照片 9 看得到。$K_1,K_2$ 的推導照片裡沒有，補在下面的例題卡。</p>
+  <p><span class="added">板書誤植，網站更正</span>step 2 的猜測與代回寫成 $y_p,y_p',y_p''$，但這裡的未知函數是 $x(t)$，應為 $x_p=K_1\cos\omega t+K_2\sin\omega t$ 與 $\dot x_p,\ddot x_p$（照片 10 也改回 $x_p$）。</p>
+</div>
+
+<p><strong>記號。</strong>這裡阻力常數寫成 $\beta$（第 2 章寫 $b$），$2\gamma=\beta/m$ 不變。$\omega$ 是<strong>外力</strong>的角頻率，由實驗者決定（老師說「操縱變因」）；$\omega_0=\sqrt{k/m}$ 是彈簧本身的自然頻率。兩者不要混。</p>
+
+<p><strong>為什麼不用修正。</strong>有阻尼時（$\gamma\gt0$）特徵根的實部是 $-\gamma\neq0$，不可能等於 $\pm i\omega$，所以 $\cos\omega t$、$\sin\omega t$ 永遠不是齊次解，照基本規則猜就好。只有 $\gamma=0$ 且 $\omega=\omega_0$ 時才要修正（自編難題 2）。</p>
+
+<h3 id="a3-fo-amp">5.2 振幅、相位與共振 <span class="pg-tag">照片 10</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/30（照片 10）</span>
+  $$\begin{aligned}x_p&=K_1\cos\omega t+K_2\sin\omega t=A\sin(\omega t+\phi)\\&=A\sin(\omega t)\cos\phi+A\cos(\omega t)\sin\phi\end{aligned}$$
+  <p>$\begin{cases}K_1=A\sin\phi\\K_2=A\cos\phi\end{cases}$</p>
+  $$A=\frac{F_0}{\sqrt{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2}},\qquad\phi=\tan^{-1}\!\left(\frac{-2\gamma\omega}{\omega_0^2-\omega^2}\right)$$
+  <p>（圖：Response 反應 $A(\omega)$ 對 $\omega$，在 $\omega_0$ 附近有尖峰：Resonance 共振；$\gamma$ 小的尖峰高而窄，$\gamma$ 大的低而寬）</p>
+</div>
+
+<p><strong>讀這條振幅公式。</strong>分母 $\sqrt{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2}$ 由兩項組成：</p>
+<ul>
+  <li>$\omega\to0$（外力很慢）：$A\to F_0/\omega_0^2=f_0/k$，就是彈簧在定力下的靜伸長。</li>
+  <li>$\omega\to\infty$（外力很快）：$A\approx F_0/\omega^2\to0$，質量來不及反應。</li>
+  <li>$\omega=\omega_0$：第一項為 0，只剩阻尼項，$A=\dfrac{F_0}{2\gamma\omega_0}$——阻尼越小越大。真正的最大值在 $\omega_r=\sqrt{\omega_0^2-2\gamma^2}$，比 $\omega_0$ 略小（自編難題 1）；板書的圖把尖峰畫在 $\omega_0$，是 $\gamma$ 很小時的近似。</li>
+</ul>
+
+<p><strong>相位的象限。</strong>$K_1=A\sin\phi$ 永遠為負（$K_1$ 的分子是 $-2\gamma\omega F_0$），所以 $\phi$ 在 $(-\pi,0)$：位移永遠<strong>落後</strong>外力。$\omega\lt\omega_0$ 時 $K_2\gt0$，$\phi\in(-\tfrac\pi2,0)$，用 $\tan^{-1}$ 的主值就對；$\omega\gt\omega_0$ 時 $K_2\lt0$，$\phi\in(-\pi,-\tfrac\pi2)$，要把 $\tan^{-1}$ 的結果再減 $\pi$。共振時 $\phi=-\tfrac\pi2$，落後四分之一週期。</p>
+
+<p><strong>暫態與穩態。</strong>完整的解是 $x=x_h+x_p$。齊次部分 $x_h$ 帶著 $e^{-\gamma t}$（第 2 章第 5 節的三種情況），過一陣子就消失，叫<strong>暫態</strong>；$x_p$ 一直跟著外力振盪，叫<strong>穩態</strong>。初始條件只影響暫態，所以實驗上量到的長時間振幅與 $x(0)$、$v(0)$ 無關。</p>
+
+<div class="anim" data-anim="a3-resonance"></div>
+
+<div class="problem" data-kind="example" id="a3-b5">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/30 板書 · 照片 8–10</span></div>
+    <h4>受迫阻尼振盪的穩態解：$K_1$、$K_2$、振幅與相位</h4>
+    <button type="button" class="exam-btn" data-exam="a3-b5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-b5"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例：Driving Damped Oscillations（彈簧 $k$、質量 $m$、friction、外力 $f_{\text{ext}}=f_0\sin(\omega t)$）</p><p>$-kx-\beta\dot x+f_{\text{ext}}=ma$ → $\ddot x+2\gamma\dot x+\omega_0^2x=F_0\sin(\omega t)$，$2\gamma=\frac{\beta}{m}$，$\omega_0^2=\frac km$，$F_0=\frac{f_0}{m}$</p><p>step 2. 猜 $y_p=K_1\cos\omega t+K_2\sin\omega t$，將 $y_p,y_p',y_p''$ 代回 EOM，比較係數；$x_p=A\sin(\omega t+\phi)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\ddot x+2\gamma\dot x+\omega_0^2x=F_0\sin\omega t$（$\gamma\gt0$）。用待定係數法求特解 $x_p=K_1\cos\omega t+K_2\sin\omega t$ 的 $K_1,K_2$，再寫成 $A\sin(\omega t+\phi)$，求 $A$ 與 $\phi$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$a=2\gamma$、$b=\omega_0^2$</td><td>板書照片 8 的 EOM</td></tr>
+          <tr><td>外力</td><td>$F_0\sin\omega t$</td><td>「$f_{\text{ext}}=f_0\sin(\omega t)$」除以 $m$</td></tr>
+          <tr><td>阻尼</td><td>$\gamma\gt0$</td><td>「Damped」：所以 $\pm i\omega$ 不是特徵根，不必修正</td></tr>
+          <tr><td>形式</td><td>$A\sin(\omega t+\phi)$</td><td>照片 10</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$K_1,K_2$；$A(\omega)$、$\phi(\omega)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是 $\sin\omega t$，<b>所以</b>照基本規則猜 $\cos$、$\sin$ 兩項（只猜 $\sin$ 不夠，阻尼項 $2\gamma\dot x$ 會產生 $\cos$）。代入後比較 $\cos\omega t$、$\sin\omega t$ 的係數得到 $K_1,K_2$ 的二元一次聯立，用克拉瑪公式解。</p>
+      <p>最後用和角公式 $A\sin(\omega t+\phi)=A\sin\phi\cos\omega t+A\cos\phi\sin\omega t$ 對應出 $A$ 和 $\phi$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-b5-s1" data-sym="w,K">
+        <span class="step-title">猜測與導數</span>
+        $$\begin{aligned}x_p&=K_1\cos\omega t+K_2\sin\omega t\\\dot x_p&=-\omega K_1\sin\omega t+\omega K_2\cos\omega t\\\ddot x_p&=-\omega^2x_p\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-b5-s2" data-sym="gam,w0">
+        <span class="step-title">代入 EOM，比較係數</span>
+        <p>$\ddot x_p+\omega_0^2x_p=(\omega_0^2-\omega^2)x_p$，加上 $2\gamma\dot x_p$，分別收集：</p>
+        $$\begin{aligned}\cos\omega t&:\ (\omega_0^2-\omega^2)K_1+2\gamma\omega K_2=0\\\sin\omega t&:\ -2\gamma\omega K_1+(\omega_0^2-\omega^2)K_2=F_0\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-b5-s3">
+        <span class="step-title">解聯立（克拉瑪）</span>
+        <p>係數行列式 $D=(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2$（$\gamma\gt0$ 時恆正）：</p>
+        $$K_1=\frac{0\cdot(\omega_0^2-\omega^2)-2\gamma\omega F_0}{D}=\frac{-2\gamma\omega F_0}{D}$$
+        $$K_2=\frac{(\omega_0^2-\omega^2)F_0-0}{D}=\frac{(\omega_0^2-\omega^2)F_0}{D}$$
+      </div>
+      <div class="step" data-step="a3-b5-s4" data-sym="Aphi">
+        <span class="step-title">振幅與相位</span>
+        <p>由 $K_1=A\sin\phi$、$K_2=A\cos\phi$：</p>
+        $$A=\sqrt{K_1^2+K_2^2}=\frac{F_0\sqrt{4\gamma^2\omega^2+(\omega_0^2-\omega^2)^2}}{D}=\frac{F_0}{\sqrt D}$$
+        $$\tan\phi=\frac{K_1}{K_2}=\frac{-2\gamma\omega}{\omega_0^2-\omega^2}$$
+      </div>
+      <div class="step" data-step="a3-b5-s5">
+        <span class="step-title">三個極限檢查</span>
+        <p class="sub">代入 $\omega=0$、$\omega=\omega_0$、$\omega\to\infty$：</p>
+        $$A(0)=\frac{F_0}{\omega_0^2},\qquad A(\omega_0)=\frac{F_0}{2\gamma\omega_0},\qquad A(\infty)\to0$$
+        <p>$\omega=\omega_0$ 時 $K_2=0$、$K_1=-A$，$\phi=-\tfrac\pi2$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$K_1=\dfrac{-2\gamma\omega F_0}{D}$、$K_2=\dfrac{(\omega_0^2-\omega^2)F_0}{D}$，$D=(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2$；$A=\dfrac{F_0}{\sqrt D}$，$\tan\phi=\dfrac{-2\gamma\omega}{\omega_0^2-\omega^2}$，$\phi\in(-\pi,0)$（和板書一致）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代回 $\cos$ 式：$(\omega_0^2-\omega^2)(-2\gamma\omega F_0)+2\gamma\omega(\omega_0^2-\omega^2)F_0=0$ ✔；$A(0)=f_0/k$ 是靜伸長 ✔；單位：$F_0$ 是 m/s²、$\sqrt D$ 是 s⁻²，$A$ 是 m ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a3-s05-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>共振峰真正在哪裡：$\omega_r=\sqrt{\omega_0^2-2\gamma^2}$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s05-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 求使穩態振幅 $A(\omega)=F_0/\sqrt{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2}$ 最大的 $\omega_r$ 與最大振幅 $A_{\max}$；$\gamma$ 滿足什麼條件時才有峰？(b) 以 $\omega_0=10\ \text{rad/s}$、$\gamma=1\ \text{s}^{-1}$、$F_0=5\ \text{m/s}^2$ 代入，比較 $A_{\max}$、$A(\omega_0)$ 與靜態振幅 $A(0)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振幅公式</td><td>$A=F_0/\sqrt{D(\omega)}$</td><td>板書照片 10</td></tr>
+          <tr><td>數值</td><td>$\omega_0=10\ \text{rad/s}$、$\gamma=1\ \text{s}^{-1}$、$F_0=5\ \text{m/s}^2$</td><td>(b)</td></tr>
+          <tr><td>「峰」</td><td>$\omega\gt0$ 處有極大值</td><td>(a)：$\omega_r$ 必須是正實數（自己讀出來的）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $\omega_r$、$A_{\max}$、有峰的條件；(b) 三個振幅的數值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $F_0$ 是常數，<b>所以</b> $A$ 最大 ⟺ 分母裡的 $D(\omega)$ 最小，對 $D$ 微分比對 $A$ 微分簡單得多。再令 $s=\omega^2$，$D$ 是 $s$ 的二次函數，配方就能看出最小值。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s05-1-s1">
+        <span class="step-title">(a) 把 $D$ 寫成 $s=\omega^2$ 的二次式</span>
+        $$D=(\omega_0^2-s)^2+4\gamma^2s=s^2-2(\omega_0^2-2\gamma^2)s+\omega_0^4$$
+        <p>開口向上的拋物線，頂點在 $s=\omega_0^2-2\gamma^2$。這個 $s$ 必須為正（$\omega$ 是實數），所以有峰的條件是 $\omega_0^2\gt2\gamma^2$，即 $\gamma\lt\omega_0/\sqrt2$：</p>
+        $$\omega_r=\sqrt{\omega_0^2-2\gamma^2}$$
+      </div>
+      <div class="step" data-step="a3-s05-1-s2">
+        <span class="step-title">(a) 最大振幅</span>
+        <p class="sub">代入 $s=\omega_0^2-2\gamma^2$：$\omega_0^2-s=2\gamma^2$，</p>
+        $$D_{\min}=4\gamma^4+4\gamma^2(\omega_0^2-2\gamma^2)=4\gamma^2(\omega_0^2-\gamma^2)$$
+        $$A_{\max}=\frac{F_0}{2\gamma\sqrt{\omega_0^2-\gamma^2}}$$
+      </div>
+      <div class="step" data-step="a3-s05-1-s3">
+        <span class="step-title">(b) 代入數值</span>
+        <p class="sub">代入 $\omega_0=10$、$\gamma=1$、$F_0=5$（題目 (b)）：</p>
+        $$\omega_r=\sqrt{100-2}=9.899\ \text{rad/s}$$
+        $$A_{\max}=\frac{5}{2\sqrt{99}}=0.2513\ \text{m}$$
+        $$A(\omega_0)=\frac{F_0}{2\gamma\omega_0}=\frac{5}{20}=0.25\ \text{m},\qquad A(0)=\frac{F_0}{\omega_0^2}=0.05\ \text{m}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\omega_r=\sqrt{\omega_0^2-2\gamma^2}$（需 $\gamma\lt\omega_0/\sqrt2$），$A_{\max}=\dfrac{F_0}{2\gamma\sqrt{\omega_0^2-\gamma^2}}$；(b) $\omega_r=9.90\ \text{rad/s}$，$A_{\max}=0.2513\ \text{m}$，$A(\omega_0)=0.25\ \text{m}$，$A(0)=0.05\ \text{m}$：共振把振幅放大約 5 倍，而且峰值和 $\omega_0$ 處只差 0.5%。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\gamma\to0$：$\omega_r\to\omega_0$、$A_{\max}\to\dfrac{F_0}{2\gamma\omega_0}\to\infty$，和板書「$\gamma$ 越小峰越高、越靠近 $\omega_0$」一致 ✔；$\gamma\ge\omega_0/\sqrt2$ 時 $A$ 從 $\omega=0$ 開始一路遞減，沒有峰。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a3-s05-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>沒有阻尼的共振：振幅線性成長</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s05-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>沒有阻尼、外力頻率剛好等於自然頻率：$\ddot x+\omega_0^2x=F_0\sin\omega_0t$，$x(0)=0$、$\dot x(0)=0$。(a) 求 $x(t)$；(b) 若 $\omega_0=2\ \text{rad/s}$，多久之後振盪的包絡會達到靜態位移 $F_0/\omega_0^2$ 的 10 倍？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>阻尼</td><td>$\gamma=0$</td><td>「沒有阻尼」：特徵根 $\pm i\omega_0$</td></tr>
+          <tr><td>外力頻率</td><td>$\omega=\omega_0$</td><td>「剛好等於自然頻率」：右邊 $\sin\omega_0t$ 是齊次解 → 修正規則</td></tr>
+          <tr><td>初始條件</td><td>$x(0)=0$、$\dot x(0)=0$</td><td>題目</td></tr>
+          <tr><td>(b) 數值</td><td>$\omega_0=2\ \text{rad/s}$</td><td>(b)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $x(t)$；(b) 包絡 $=10F_0/\omega_0^2$ 的時刻。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $\gamma=0$ 時 5.2 的公式分母 $D=(\omega_0^2-\omega^2)^2$ 在 $\omega=\omega_0$ 變成 0，公式失效；<b>因為</b>這時右邊 $\sin\omega_0t$ 正好是齊次解，<b>所以</b>用第 4 節的修正規則：猜 $t(A\cos\omega_0t+B\sin\omega_0t)$。乘上的 $t$ 就是「振幅隨時間長大」。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s05-2-s1" data-sym="K">
+        <span class="step-title">修正後的猜測</span>
+        <p>令 $x_p=t(A\cos\omega_0t+B\sin\omega_0t)$。用第 4 節的公式（$\omega=\omega_0$ 版本）$(p\cos\omega_0t)''+\omega_0^2p\cos\omega_0t=p''\cos\omega_0t-2\omega_0p'\sin\omega_0t$，$p=At$、$q=Bt$：</p>
+        $$\ddot x_p+\omega_0^2x_p=-2\omega_0A\sin\omega_0t+2\omega_0B\cos\omega_0t$$
+        <p class="sub">和 $F_0\sin\omega_0t$ 比較：$-2\omega_0A=F_0$、$2\omega_0B=0$：</p>
+        $$A=-\frac{F_0}{2\omega_0},\quad B=0,\qquad x_p=-\frac{F_0}{2\omega_0}t\cos\omega_0t$$
+      </div>
+      <div class="step" data-step="a3-s05-2-s2" data-sym="c12">
+        <span class="step-title">代入初始條件</span>
+        <p>$x=c_1\cos\omega_0t+c_2\sin\omega_0t-\dfrac{F_0}{2\omega_0}t\cos\omega_0t$。$x(0)=c_1=0$。</p>
+        <p class="sub">$\dot x(0)=c_2\omega_0-\dfrac{F_0}{2\omega_0}=0$：</p>
+        $$c_2=\frac{F_0}{2\omega_0^2},\qquad x=\frac{F_0}{2\omega_0^2}\sin\omega_0t-\frac{F_0}{2\omega_0}t\cos\omega_0t$$
+      </div>
+      <div class="step" data-step="a3-s05-2-s3">
+        <span class="step-title">(b) 包絡</span>
+        <p>$t$ 大時第二項主導，包絡是 $\dfrac{F_0t}{2\omega_0}$。令它等於 $10\dfrac{F_0}{\omega_0^2}$：</p>
+        $$\frac{F_0t}{2\omega_0}=\frac{10F_0}{\omega_0^2}\ \Rightarrow\ t=\frac{20}{\omega_0}$$
+        <p class="sub">代入 $\omega_0=2\ \text{rad/s}$：$t=10\ \text{s}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $x=\dfrac{F_0}{2\omega_0^2}\sin\omega_0t-\dfrac{F_0}{2\omega_0}t\cos\omega_0t$；(b) $t=20/\omega_0=10\ \text{s}$（與 $F_0$ 無關）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\ddot x_p=\tfrac{F_0}{2\omega_0}(2\omega_0\sin\omega_0t+\omega_0^2t\cos\omega_0t)$，$\ddot x_p+\omega_0^2x_p=F_0\sin\omega_0t$ ✔。振幅無限長大是因為沒有阻尼；實際上一定有 $\gamma\gt0$，振幅停在自編難題 1 的 $A_{\max}$。</p></div>
+  </div>
+</div>
+
+<h3 id="a3-fo-old">5.3 更早年級的考古題 <span class="pg-tag">108 級下 2nd Order ODE 第 2 題 · 108 級上 Euler 卷第 5 題</span></h3>
+
+<p>兩題都是本節的穩態解，換了外衣：LRC 串聯電路的電荷（電感像質量、電阻像阻尼、$1/C$ 像彈簧常數），以及阻尼項寫成 $\gamma\dot x$（不是板書的 $2\gamma\dot x$）的受迫振盪。後者出自 108 級上的「複數指數」卷，所以用複數指數法解，再和板書的 $K_1,K_2$ 對照。</p>
+
+<div class="problem" data-kind="exam" id="a3-108b-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級下學期 2nd Order ODE and Fourier Series 第 2 題</span></div>
+    <h4>LRC 串聯接 $V_0\sin\omega t$：用電抗 $X$ 與阻抗 $Z$ 寫出穩態電荷</h4>
+    <button type="button" class="exam-btn" data-exam="a3-108b-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-108b-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2nd Order ODE and Fourier Series</p><p>2. Find a steady-state solutions of the charge in an $L-R-C$ series circuit when the voltage is $V_0\sin\omega t$. Express your solution in terms of the reactance $X=\omega L-\frac{1}{\omega C}$ and impedance $Z=\sqrt{X^2+R^2}$ of the circuit.</p><p>Answer: $q(t)=-\dfrac{RV_0}{\omega Z^2}\cos\omega t-\dfrac{XV_0}{\omega Z^2}\sin\omega t$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $L$–$R$–$C$ 串聯電路在電壓 $V_0\sin\omega t$ 下電荷的穩態解。用電抗 $X=\omega L-\dfrac1{\omega C}$ 與阻抗 $Z=\sqrt{X^2+R^2}$ 表示。（考卷附的答案：$q(t)=-\dfrac{RV_0}{\omega Z^2}\cos\omega t-\dfrac{XV_0}{\omega Z^2}\sin\omega t$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>電路</td><td>$L$、$R$、$C$ 串聯，單一迴路</td><td>「an $L-R-C$ series circuit」</td></tr>
+          <tr><td>電源</td><td>$V_0\sin\omega t$</td><td>「the voltage is $V_0\sin\omega t$」</td></tr>
+          <tr><td>迴路定則</td><td>$V-L\dfrac{di}{dt}-iR-\dfrac qC=0$，$i=\dot q$</td><td>題目沒寫；電感壓降 $L\,di/dt$（自己補）</td></tr>
+          <tr><td>只要穩態</td><td>不含暫態、不需初始條件</td><td>「steady-state solutions」</td></tr>
+          <tr><td>記號</td><td>$X=\omega L-\frac1{\omega C}$，$Z^2=X^2+R^2$</td><td>題目指定</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：穩態 $q(t)$，用 $X$、$Z$ 表示。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>迴路定則給 $L\ddot q+R\dot q+\frac qC=V_0\sin\omega t$，和本節的 $m\ddot x+\beta\dot x+kx=f_0\sin\omega t$ 同型（$L\leftrightarrow m$、$R\leftrightarrow\beta$、$\frac1C\leftrightarrow k$），<b>所以</b>穩態用基本規則猜 $K_1\cos\omega t+K_2\sin\omega t$；<b>因為</b> $R>0$，特徵根實部為負，不會撞上 $\pm i\omega$，不必修正。</p>
+      <p><b>因為</b>題目要用 $X$ 表示，<b>所以</b>比較係數時把 $\frac1C-L\omega^2$ 改寫成 $-\omega X$，聯立方程就變得很乾淨。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-108b-2-s1">
+        <span class="step-title">運動方程式</span>
+        <p class="sub">迴路定則，$i=\dot q$、$\frac{di}{dt}=\ddot q$，電源 $V_0\sin\omega t$（題目）：</p>
+        $$L\ddot q+R\dot q+\frac qC=V_0\sin\omega t$$
+      </div>
+      <div class="step" data-step="a3-108b-2-s2" data-sym="K">
+        <span class="step-title">猜穩態、代回</span>
+        $$q_p=K_1\cos\omega t+K_2\sin\omega t,\quad\dot q_p=-\omega K_1\sin\omega t+\omega K_2\cos\omega t,\quad\ddot q_p=-\omega^2q_p$$
+        <p>收集 $\cos\omega t$ 與 $\sin\omega t$：</p>
+        $$\cos:\ \Big(\frac1C-L\omega^2\Big)K_1+R\omega K_2=0,\qquad\sin:\ \Big(\frac1C-L\omega^2\Big)K_2-R\omega K_1=V_0$$
+      </div>
+      <div class="step" data-step="a3-108b-2-s3">
+        <span class="step-title">換成電抗 $X$</span>
+        <p class="sub">$\dfrac1C-L\omega^2=-\omega\Big(\omega L-\dfrac1{\omega C}\Big)=-\omega X$（題目的 $X$），兩式變成：</p>
+        $$-\omega XK_1+R\omega K_2=0\ \Rightarrow\ K_2=\frac XRK_1;\qquad-\omega XK_2-R\omega K_1=V_0$$
+      </div>
+      <div class="step" data-step="a3-108b-2-s4">
+        <span class="step-title">解出 $K_1$、$K_2$</span>
+        <p>把 $K_2=\frac XRK_1$ 代入第二式：</p>
+        $$-\omega K_1\Big(\frac{X^2}{R}+R\Big)=-\frac{\omega K_1}{R}\big(X^2+R^2\big)=-\frac{\omega Z^2}{R}K_1=V_0$$
+        $$K_1=-\frac{RV_0}{\omega Z^2},\qquad K_2=\frac XRK_1=-\frac{XV_0}{\omega Z^2}$$
+      </div>
+      <div class="step" data-step="a3-108b-2-s5" data-sym="Aphi">
+        <span class="step-title">電荷振幅與電流</span>
+        <p>振幅 $\sqrt{K_1^2+K_2^2}=\dfrac{V_0}{\omega Z^2}\sqrt{R^2+X^2}=\dfrac{V_0}{\omega Z}$。電流</p>
+        $$i=\dot q=\frac{V_0}{Z^2}\big(R\sin\omega t-X\cos\omega t\big)=\frac{V_0}{Z}\sin(\omega t-\delta),\quad\tan\delta=\frac XR$$
+        <p>這就是「電流振幅 $=V_0/Z$」：$Z$ 叫阻抗的原因。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$q(t)=-\dfrac{RV_0}{\omega Z^2}\cos\omega t-\dfrac{XV_0}{\omega Z^2}\sin\omega t$（和考卷答案相同）；電流 $i=\dfrac{V_0}{Z}\sin(\omega t-\delta)$，$\tan\delta=X/R$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>共振 $X=0$（$\omega=1/\sqrt{LC}$）：$q=-\frac{V_0}{\omega R}\cos\omega t$，$i=\frac{V_0}{R}\sin\omega t$，電流與電壓同相、只受 $R$ 限制 ✔。$L\to0$、$X\to-\frac1{\omega C}$：電流領先（電容性），和第 1 章交流 RC 的結果一致 ✔。sympy 代回 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a3-108a-x5">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級上學期 Exponential Function with Complex Exponents 第 5 題</span></div>
+    <h4>$\ddot x+\gamma\dot x+\omega_0^2x=F_d\sin\omega_dt$：振幅、相位與 $\gamma$ 對共振曲線的影響</h4>
+    <button type="button" class="exam-btn" data-exam="a3-108a-x5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-108a-x5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Exponential Function with Complex Exponents</p><p>5. Consider a damped oscillator subjected to a sinusoidal driving force. The equation of motion is</p><p>$$\ddot x+\gamma\dot x+\omega_0^2x=F_d\sin\omega_dt,$$</p><p>where $x$ is the displacement from the equilibrium position, $\gamma$ is the damping parameter, and $\omega_0$ is the natural frequency. $F_d$ and $\omega_d$ are the amplitude and the frequency of the sinusoidal driving force respectively.</p><p>(a) Assume the steady state is $x=A\sin(\omega_dt+\phi)$, determine $A$ and $\phi$.</p><p>(b) Plot the figure of $A$ versus $\omega_d$.</p><p>(c) How do the damping paramter $\gamma$ affect the $A-\omega_d$ curve?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>受正弦外力驅動的阻尼振子，運動方程式 $\ddot x+\gamma\dot x+\omega_0^2x=F_d\sin\omega_dt$（$x$ 是離平衡位置的位移、$\gamma$ 是阻尼參數、$\omega_0$ 是自然頻率，$F_d$、$\omega_d$ 是外力的振幅與頻率）。(a) 設穩態為 $x=A\sin(\omega_dt+\phi)$，求 $A$ 與 $\phi$。(b) 畫出 $A$ 對 $\omega_d$ 的圖。(c) 阻尼參數 $\gamma$ 如何影響 $A$–$\omega_d$ 曲線？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$\ddot x+\gamma\dot x+\omega_0^2x=F_d\sin\omega_dt$</td><td>題目；阻尼係數是 $\gamma$（板書是 $2\gamma$）</td></tr>
+          <tr><td>穩態形式</td><td>$x=A\sin(\omega_dt+\phi)$</td><td>「Assume the steady state is …」</td></tr>
+          <tr><td>參數範圍</td><td>$\gamma>0$、$\omega_0>0$、$F_d>0$</td><td>「damped」⟹ $\gamma>0$（自己讀出）</td></tr>
+          <tr><td>方法</td><td>複數指數</td><td>考卷標題「Exponential Function with Complex Exponents」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $A(\omega_d)$、$\phi(\omega_d)$；(b) 曲線的形狀與關鍵點；(c) $\gamma$ 改變時曲線怎麼變。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $\sin\omega_dt=\operatorname{Im}e^{i\omega_dt}$，而方程係數是實數，<b>所以</b>可以先解複數方程 $\ddot z+\gamma\dot z+\omega_0^2z=F_de^{i\omega_dt}$，取虛部就是 $x$。<b>因為</b> $e^{i\omega_dt}$ 微分只乘上 $i\omega_d$，<b>所以</b>代入後只剩一條代數方程，振幅與相位直接是複數的絕對值與輻角——比比較 $\cos$、$\sin$ 係數快。</p>
+      <p><b>因為</b> (b)(c) 問的是曲線，<b>所以</b>分析 $A^2$ 分母 $D=(\omega_0^2-\omega_d^2)^2+\gamma^2\omega_d^2$ 對 $\omega_d^2$ 的極小值，找出峰的位置與高度，再看 $\gamma$ 怎麼改變它們。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-108a-x5-s1">
+        <span class="step-title">複數化</span>
+        <p>令 $z=\tilde Ae^{i\omega_dt}$（$\tilde A$ 是複數），$x=\operatorname{Im}z$。$\dot z=i\omega_dz$、$\ddot z=-\omega_d^2z$，代入：</p>
+        $$\big(-\omega_d^2+i\gamma\omega_d+\omega_0^2\big)\tilde A=F_d\ \Longrightarrow\ \tilde A=\frac{F_d}{(\omega_0^2-\omega_d^2)+i\gamma\omega_d}$$
+      </div>
+      <div class="step" data-step="a3-108a-x5-s2" data-sym="Aphi">
+        <span class="step-title">(a) 絕對值與輻角</span>
+        <p>寫成 $\tilde A=Ae^{i\phi}$，則 $x=\operatorname{Im}\big(Ae^{i(\omega_dt+\phi)}\big)=A\sin(\omega_dt+\phi)$，正是題目要的形式：</p>
+        $$A=|\tilde A|=\frac{F_d}{\sqrt{(\omega_0^2-\omega_d^2)^2+\gamma^2\omega_d^2}},\qquad\phi=-\arg\!\big[(\omega_0^2-\omega_d^2)+i\gamma\omega_d\big]$$
+        $$\tan\phi=\frac{-\gamma\omega_d}{\omega_0^2-\omega_d^2},\qquad-\pi\lt\phi\lt0$$
+        <p>分母的虛部 $\gamma\omega_d>0$，輻角在 $(0,\pi)$，所以 $\phi\in(-\pi,0)$：位移永遠落後外力。$\omega_d\lt\omega_0$ 時 $\phi\in(-\frac\pi2,0)$，$\omega_d=\omega_0$ 時 $\phi=-\frac\pi2$，$\omega_d>\omega_0$ 時 $\phi\in(-\pi,-\frac\pi2)$。</p>
+        <p>和板書對照：板書 $\ddot x+2\gamma_{\text{板}}\dot x+\cdots$，把 $2\gamma_{\text{板}}$ 換成本題的 $\gamma$，板書的 $A=F_0/\sqrt{(\omega_0^2-\omega^2)^2+4\gamma_{\text{板}}^2\omega^2}$ 就是上式。</p>
+      </div>
+      <div class="step" data-step="a3-108a-x5-s3">
+        <span class="step-title">(b) 曲線的關鍵點</span>
+        <p>令 $u=\omega_d^2$，$D(u)=(\omega_0^2-u)^2+\gamma^2u$。$A$ 最大 ⟺ $D$ 最小：</p>
+        $$D'(u)=-2(\omega_0^2-u)+\gamma^2=0\ \Longrightarrow\ \omega_r^2=\omega_0^2-\frac{\gamma^2}{2}\quad(\text{需 }\gamma\lt\sqrt2\,\omega_0)$$
+        $$A_{\max}=\frac{F_d}{\sqrt{D(\omega_r^2)}}=\frac{F_d}{\gamma\sqrt{\omega_0^2-\gamma^2/4}}$$
+        <p>兩端：$\omega_d\to0$ 時 $A\to F_d/\omega_0^2$（靜態伸長）；$\omega_d\to\infty$ 時 $A\approx F_d/\omega_d^2\to0$（外力太快，質量跟不上）。所以圖形是：從 $F_d/\omega_0^2$ 出發，在略低於 $\omega_0$ 的 $\omega_r$ 升到峰值，之後一路降到 0。形狀和 5.2 節的共振圖相同。</p>
+        <p class="sub">數值例（$\omega_0=1$、$F_d=1$，代入上兩式）：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$\gamma$</th><th>$\omega_r$</th><th>$A_{\max}$</th><th>$A(0)$</th></tr></thead>
+          <tbody>
+            <tr><td>0.2</td><td>0.990</td><td>5.03</td><td>1</td></tr>
+            <tr><td>0.5</td><td>0.935</td><td>2.07</td><td>1</td></tr>
+            <tr><td>1.0</td><td>0.707</td><td>1.15</td><td>1</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="a3-108a-x5-s4">
+        <span class="step-title">(c) $\gamma$ 的影響</span>
+        <ul>
+          <li><b>峰變低</b>：$\gamma\ll\omega_0$ 時 $A_{\max}\approx\dfrac{F_d}{\gamma\omega_0}$，和 $\gamma$ 成反比；$\gamma\to0$ 時峰趨於無限大（無阻尼共振，見自編難題）。</li>
+          <li><b>峰變寬</b>：$\gamma\ll\omega_0$ 時 $A^2$ 降到峰值一半的兩個頻率相距約 $\gamma$（半高全寬 $\approx\gamma$）。</li>
+          <li><b>峰往左移</b>：$\omega_r=\sqrt{\omega_0^2-\gamma^2/2}$ 隨 $\gamma$ 增加而變小。</li>
+          <li><b>峰消失</b>：$\gamma\ge\sqrt2\,\omega_0$ 時 $D'(u)>0$ 對所有 $u>0$，$A$ 從 $F_d/\omega_0^2$ 單調遞減，沒有共振峰。</li>
+          <li>不變的：兩端 $A(0)=F_d/\omega_0^2$ 與高頻行為 $F_d/\omega_d^2$ 不受 $\gamma$ 影響；$\omega_d=\omega_0$ 時的相位永遠是 $-\frac\pi2$。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $A=\dfrac{F_d}{\sqrt{(\omega_0^2-\omega_d^2)^2+\gamma^2\omega_d^2}}$，$\tan\phi=\dfrac{-\gamma\omega_d}{\omega_0^2-\omega_d^2}$，$-\pi\lt\phi\lt0$。(b) 從 $F_d/\omega_0^2$ 起，峰在 $\omega_r=\sqrt{\omega_0^2-\gamma^2/2}$、高 $\dfrac{F_d}{\gamma\sqrt{\omega_0^2-\gamma^2/4}}$，高頻趨近 0。(c) $\gamma$ 越大峰越低、越寬、越往低頻移；$\gamma\ge\sqrt2\omega_0$ 時沒有峰。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\gamma\to0$：$A\to\dfrac{F_d}{|\omega_0^2-\omega_d^2|}$，無阻尼受迫振盪的振幅 ✔。sympy：$K_1=A\sin\phi=\dfrac{-\gamma\omega_dF_d}{D}$、$K_2=A\cos\phi=\dfrac{(\omega_0^2-\omega_d^2)F_d}{D}$ 代回原方程為 0 ✔；表中三組 $\omega_r$、$A_{\max}$ 由公式直接重算 ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\ddot x+2\gamma\dot x+\omega_0^2x=F_0\sin\omega t$：猜 $K_1\cos\omega t+K_2\sin\omega t$（$\gamma\gt0$ 不必修正）。</li>
+    <li>$A=\dfrac{F_0}{\sqrt{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2}}$，$\tan\phi=\dfrac{-2\gamma\omega}{\omega_0^2-\omega^2}$，$\phi\in(-\pi,0)$（落後）。</li>
+    <li>峰在 $\omega_r=\sqrt{\omega_0^2-2\gamma^2}$；$\gamma=0$、$\omega=\omega_0$ 時要修正，振幅 $\propto t$。</li>
+  </ol>
+</div>

@@ -1,0 +1,202 @@
+<h2 id="kp-09">九、Fourier 級數：實數、複數 Fourier 與功率頻譜</h2>
+<h3 id="k09-1">2025 年 10 月期中第 4 題｜Fourier 級數、複數 Fourier 級數與功率頻譜（25 分）</h3>
+<p><strong>原題：</strong> Consider the $2\pi$-periodic function $f(t)=t+\pi/2$ for $-\pi&lt;t&lt;0$, and $f(t)=-t+\pi/2$ for $0&lt;t&lt;\pi$. (a) Expand it in a Fourier series. (b) Expand it in a complex Fourier series. (c) Plot the power spectrum for the three lowest-frequency components.</p>
+<p><strong>中文：</strong> 將題目給出的分段週期函數展開成實數、複數 Fourier 級數，並畫最低三個頻率的功率頻譜。</p>
+<p class="symnote">符號：$t$：自變數；$n$：整數諧波索引；$a_0,a_n,b_n$：實 Fourier 係數；$c_n$：複數係數；$i^2=-1$；功率採 $|c_n|^2$（不是 $|c_n|$）。</p>
+<h4>(a) 實數 Fourier 級數</h4>
+<p><strong>① 看出對稱性：</strong> 原函數等價於 $f(t)=\pi/2-|t|$（$-\pi&lt;t&lt;\pi$），是偶函數，所以 $b_n=0$。</p>
+<div class="math-block">$$
+f(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}[a_n\cos(nt)+b_n\sin(nt)].
+$$</div>
+<p><strong>② 常數項 $a_0$：</strong> 偶函數積分只算半區間再乘 2。</p>
+<p class="fnote"><b>公式（Fourier 係數）：</b>週期 $2\pi$ 時 $a_n=\dfrac1\pi\int_{-\pi}^{\pi}f(t)\cos(nt)\,dt\ (n=0,1,2,\dots)$、$b_n=\dfrac1\pi\int_{-\pi}^{\pi}f(t)\sin(nt)\,dt\ (n=1,2,\dots)$，其中 $f(t)$ 為週期 $2\pi$ 的函數、$n$ 為諧波序號，$a_0$ 是 $n=0$ 的情形（級數常數項為 $a_0/2$）；本題 $f(t)=\dfrac\pi2-|t|$。</p>
+<p class="fnote"><b>公式（奇偶函數積分）：</b>若 $g(-t)=g(t)$（偶函數）則 $\int_{-a}^{a}g(t)\,dt=2\int_0^{a}g(t)\,dt$，若 $g(-t)=-g(t)$（奇函數）則 $\int_{-a}^{a}g(t)\,dt=0$，其中 $a\gt0$ 為積分半區間長；本題 $a=\pi$，$f(t)$ 與 $f(t)\cos(nt)$ 為偶函數、$f(t)\sin(nt)$ 為奇函數。</p>
+<div class="math-block">$$
+a_0=\frac2\pi\int_0^{\pi}\left(\frac\pi2-t\right)dt
+=\frac2\pi\left[\frac{\pi t}{2}-\frac{t^2}{2}\right]_0^\pi=0.
+$$</div>
+<p><strong>③ 餘弦係數 $a_n$：</strong> 分部積分，$u=\pi/2-t$、$dv=\cos(nt)dt$，得 $du=-dt$、$v=\sin(nt)/n$。</p>
+<div class="math-block">$$
+a_n=\frac2\pi\int_0^\pi\left(\frac\pi2-t\right)\cos(nt)dt.
+$$</div>
+<p class="fnote"><b>公式（分部積分）：</b>$\int_a^b u\,dv=\left[uv\right]_a^b-\int_a^b v\,du$，其中 $u,v$ 為積分變數的函數、$du,dv$ 為其微分、$a,b$ 為積分下、上限；本題 $u=\dfrac\pi2-t$、$v=\dfrac{\sin(nt)}n$、$a=0$、$b=\pi$。</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\cos(nt)\,dt=\dfrac{\sin(nt)}{n}+C$、$\int\sin(nt)\,dt=-\dfrac{\cos(nt)}{n}+C$，其中 $n\ne0$ 為常數、$C$ 為積分常數；本題用前者求 $v$，用後者算餘項 $\dfrac1n\int_0^\pi\sin(nt)dt$。</p>
+<div class="math-block">$$
+\int_0^\pi\left(\frac\pi2-t\right)\cos(nt)dt
+=\left[\left(\frac\pi2-t\right)\frac{\sin(nt)}n\right]_0^\pi
++\frac1n\int_0^\pi\sin(nt)dt.
+$$</div>
+<p>邊界項為零，餘項積分為 $[ -\cos(nt)/n]_0^\pi=(1-(-1)^n)/n$，所以</p>
+<p class="fnote"><b>公式（整數倍角三角值）：</b>$\sin(n\pi)=0$、$\cos(n\pi)=(-1)^n$，其中 $n$ 為整數；本題邊界項因 $\sin(n\pi)=\sin0=0$ 為零，餘項 $\left[-\dfrac{\cos(nt)}{n}\right]_0^\pi=\dfrac{1-(-1)^n}{n}$。</p>
+<div class="math-block">$$
+a_n=\frac{2[1-(-1)^n]}{\pi n^2}
+=\begin{cases}4/(\pi n^2),&amp;n\text{ 奇數},\\0,&amp;n\text{ 偶數}.\end{cases}
+$$</div>
+<div class="math-block">$$
+\boxed{f(t)=\frac4\pi\sum_{n=1,3,5,\dots}^{\infty}\frac{\cos(nt)}{n^2}.}
+$$</div>
+<h4>(b) 複數 Fourier 級數</h4>
+<p><strong>① 由實係數換算：</strong> 定義 $f(t)=\sum_{n=-\infty}^{\infty}c_ne^{int}$，$c_n=(2\pi)^{-1}\int_{-\pi}^{\pi}f(t)e^{-int}dt$；偶函數 $b_n=0$，所以 $c_0=a_0/2=0$、非零 $n$ 有 $c_n=a_{|n|}/2$。</p>
+<p class="fnote"><b>公式（實、複 Fourier 係數關係）：</b>由 Euler 公式 $e^{i\theta}=\cos\theta+i\sin\theta$ 得 $c_0=\dfrac{a_0}2$、$c_n=\dfrac{a_n-ib_n}2$、$c_{-n}=\dfrac{a_n+ib_n}2\ (n\ge1)$，其中 $a_n,b_n$ 為實 Fourier 係數、$c_n$ 為複數係數、$\theta$ 為任意實數；本題 $b_n=0$，故 $c_{\pm n}=\dfrac{a_n}2$，即 $c_n=\dfrac{a_{|n|}}2$。</p>
+<div class="math-block">$$
+\boxed{c_n=\frac{1-(-1)^n}{\pi n^2}\quad(n\neq0),\qquad c_0=0.}
+$$</div>
+<p><strong>② 寫成級數：</strong> 把 $(-1)^n$ 換成 $\cos(n\pi)$。</p>
+<p class="fnote"><b>公式（整數倍角三角值）：</b>$\cos(n\pi)=(-1)^n$，其中 $n$ 為整數；本題用它把 $1-(-1)^n$ 寫成 $1-\cos(n\pi)$。</p>
+<div class="math-block">$$
+\boxed{f(t)=\sum_{\substack{n=-\infty\\n\neq0}}^{\infty}\frac{1-\cos(n\pi)}{\pi n^2}e^{int}.}
+$$</div>
+<h4>(c) 功率頻譜</h4>
+<p><strong>① 列出 $|c_n|^2$：</strong> 最低三個正頻率如下（負頻率對稱）。</p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">頻率索引 $n$</th>
+<th style="text-align: right;">$c_n$</th>
+<th style="text-align: right;">$|c_n|^2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$2/\pi$</td>
+<td style="text-align: right;">$4/\pi^2$</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$0$</td>
+<td style="text-align: right;">$0$</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">$2/(9\pi)$</td>
+<td style="text-align: right;">$4/(81\pi^2)$</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>② 畫圖：</strong> 橫軸取離散的 $n=\pm1,\pm2,\pm3$，縱軸 $|c_n|^2$：$\pm1$ 柱高 $4/\pi^2$、$\pm2$ 為零、$\pm3$ 為 $4/(81\pi^2)$；$n=0$ 的 DC 為零。</p>
+<p class="symnote">符號：DC：直流分量，即 $n=0$ 的常數項 $c_0$；$\pm n$：正、負頻率索引。</p>
+<p><strong>注意：</strong> 原卷附答印成 $|c_1|^2=4/\pi$、$|c_3|^2=4/(9\pi)$，與同頁的 $c_n=(1-\cos n\pi)/(n^2\pi)$ 不一致；照 $|c_n|^2$ 的定義平方，正確值是上表。</p>
+<h3 id="k09-2">2023 年 11 月期中第 4 題｜Fourier 級數（6 分）</h3>
+<p><strong>原題：</strong> Let $f(t)=t$ for $-\pi\le t\le\pi$, with $f(t+2\pi)=f(t)$. Find its Fourier series.</p>
+<p><strong>中文：</strong> 將鋸齒型週期函數 $f(t)=t$ 展開成 Fourier 級數。</p>
+<p class="symnote">符號：$a_n$：餘弦係數；$b_n$：正弦係數，$n=1,2,\ldots$。</p>
+<p><strong>① 看出對稱性：</strong> $f(t)=t$ 是奇函數，所以 $a_0=a_n=0$，只需算 $b_n$。</p>
+<p class="fnote"><b>公式（Fourier 係數）：</b>週期 $2\pi$ 時 $a_n=\dfrac1\pi\int_{-\pi}^{\pi}f(t)\cos(nt)\,dt\ (n=0,1,2,\dots)$、$b_n=\dfrac1\pi\int_{-\pi}^{\pi}f(t)\sin(nt)\,dt\ (n=1,2,\dots)$，其中 $f(t)$ 為週期 $2\pi$ 的函數、$n$ 為諧波序號，$a_0$ 是 $n=0$ 的情形（級數常數項為 $a_0/2$）；本題 $f(t)=t$。</p>
+<p class="fnote"><b>公式（奇偶函數積分）：</b>若 $g(-t)=g(t)$（偶函數）則 $\int_{-a}^{a}g(t)\,dt=2\int_0^{a}g(t)\,dt$，若 $g(-t)=-g(t)$（奇函數）則 $\int_{-a}^{a}g(t)\,dt=0$，其中 $a\gt0$ 為積分半區間長；本題 $a=\pi$，$t$ 與 $t\cos(nt)$ 為奇函數（故 $a_0=a_n=0$）、$t\sin(nt)$ 為偶函數。</p>
+<div class="math-block">$$
+b_n=\frac1\pi\int_{-\pi}^{\pi}t\sin(nt)dt
+=\frac2\pi\int_0^\pi t\sin(nt)dt.
+$$</div>
+<p><strong>② 分部積分求 $b_n$：</strong> 令 $u=t$、$dv=\sin(nt)dt$，則 $du=dt$、$v=-\cos(nt)/n$。</p>
+<p class="fnote"><b>公式（分部積分）：</b>$\int_a^b u\,dv=\left[uv\right]_a^b-\int_a^b v\,du$，其中 $u,v$ 為積分變數的函數、$du,dv$ 為其微分、$a,b$ 為積分下、上限；本題 $u=t$、$v=-\dfrac{\cos(nt)}n$、$a=0$、$b=\pi$。</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\cos(nt)\,dt=\dfrac{\sin(nt)}{n}+C$、$\int\sin(nt)\,dt=-\dfrac{\cos(nt)}{n}+C$，其中 $n\ne0$ 為常數、$C$ 為積分常數；本題用後者求 $v$，用前者算餘項 $\dfrac1n\int_0^\pi\cos(nt)dt$。</p>
+<p class="fnote"><b>公式（整數倍角三角值）：</b>$\sin(n\pi)=0$、$\cos(n\pi)=(-1)^n$，其中 $n$ 為整數；本題上限代入得 $-\dfrac{\pi\cos(n\pi)}{n}=-\dfrac{\pi(-1)^n}{n}$，而 $\sin(n\pi)=\sin0=0$ 使第二項為零。</p>
+<div class="math-block">$$
+\int_0^\pi t\sin(nt)dt
+=\left[-\frac{t\cos(nt)}n\right]_0^\pi
++\frac1n\left[\frac{\sin(nt)}n\right]_0^\pi
+=-\frac{\pi(-1)^n}{n}.
+$$</div>
+<p><strong>③ 寫出級數：</strong> $b_n=2(-1)^{n+1}/n$。</p>
+<div class="math-block">$$
+\boxed{f(t)=2\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}\sin(nt),\qquad -\pi&lt;t&lt;\pi.}
+$$</div>
+<p><strong>④ 端點收斂值：</strong> 週期延拓在 $t=\pm\pi$ 有跳躍。</p>
+<p class="fnote"><b>公式（Dirichlet 收斂定理）：</b>$f$ 分段平滑時，Fourier 級數在 $t_0$ 收斂到 $\dfrac{f(t_0^+)+f(t_0^-)}{2}$，其中 $f(t_0^+)$、$f(t_0^-)$ 為週期延拓後在 $t_0$ 的右、左極限，連續點即等於 $f(t_0)$；本題 $t_0=\pi$ 時 $f(\pi^-)=\pi$、$f(\pi^+)=f(-\pi^+)=-\pi$，平均為 $0$。</p>
+<p><strong>條件：</strong> 級數在 $t=\pm\pi$ 收斂到左右極限平均 $0$，不是 $\pm\pi$。</p>
+<h3 id="k09-3">2022 年 11 月期中第 4 題｜Fourier、複數 Fourier 與功率頻譜（4+4+2 分）</h3>
+<p><strong>原題：</strong> Let $f(t)=1+t$, $-\pi\le t\le\pi$, with period $2\pi$. (1) Expand in a Fourier series. (2) Expand in a complex Fourier series. (3) Plot the power spectrum.</p>
+<p><strong>中文：</strong> 將 $1+t$ 作週期延拓，求實 Fourier、複數 Fourier 係數及頻譜。</p>
+<p class="symnote">符號：$a_n,b_n$：餘弦、正弦係數；$c_n$：複數係數；$n$：整數諧波序號。</p>
+<h4>(1) 實 Fourier 級數</h4>
+<p><strong>① 拆成偶＋奇：</strong> $f$ 由偶函數常數 $1$ 與奇函數 $t$ 組成，$1$ 只貢獻 $a_0$，$t$ 只貢獻 $b_n$。</p>
+<p class="fnote"><b>公式（Fourier 係數）：</b>週期 $2\pi$ 時 $a_n=\dfrac1\pi\int_{-\pi}^{\pi}f(t)\cos(nt)\,dt\ (n=0,1,2,\dots)$、$b_n=\dfrac1\pi\int_{-\pi}^{\pi}f(t)\sin(nt)\,dt\ (n=1,2,\dots)$，其中 $f(t)$ 為週期 $2\pi$ 的函數、$n$ 為諧波序號，$a_0$ 是 $n=0$ 的情形（級數常數項為 $a_0/2$）；本題 $f(t)=1+t$。</p>
+<p class="fnote"><b>公式（奇偶函數積分）：</b>若 $g(-t)=g(t)$（偶函數）則 $\int_{-a}^{a}g(t)\,dt=2\int_0^{a}g(t)\,dt$，若 $g(-t)=-g(t)$（奇函數）則 $\int_{-a}^{a}g(t)\,dt=0$，其中 $a\gt0$ 為積分半區間長；本題 $a=\pi$，$t$、$t\cos nt$、$\sin nt$ 為奇函數，$1$、$\cos nt$、$t\sin nt$ 為偶函數（且 $n\ge1$ 時 $\int_0^\pi\cos nt\,dt=0$）。</p>
+<div class="math-block">$$
+a_0=\frac1\pi\int_{-\pi}^{\pi}(1+t)dt=2,
+\quad a_n=\frac1\pi\int_{-\pi}^{\pi}(1+t)\cos nt\,dt=0.
+$$</div>
+<p><strong>② 分部積分求 $b_n$：</strong> 只剩 $t\sin nt$ 這一項。</p>
+<div class="math-block">$$
+b_n=\frac1\pi\int_{-\pi}^{\pi}(1+t)\sin nt\,dt
+=\frac2\pi\int_0^\pi t\sin nt\,dt.
+$$</div>
+<p class="fnote"><b>公式（分部積分）：</b>$\int_a^b u\,dv=\left[uv\right]_a^b-\int_a^b v\,du$，其中 $u,v$ 為積分變數的函數、$du,dv$ 為其微分、$a,b$ 為積分下、上限；本題 $u=t$、$v=-\dfrac{\cos nt}{n}$、$a=0$、$b=\pi$。</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\cos nt\,dt=\dfrac{\sin nt}{n}+C$、$\int\sin nt\,dt=-\dfrac{\cos nt}{n}+C$，其中 $n\ne0$ 為常數、$C$ 為積分常數；本題用後者求 $v$，用前者算 $-\int v\,du$ 得 $\dfrac{\sin nt}{n^2}$ 項。</p>
+<p class="fnote"><b>公式（整數倍角三角值）：</b>$\sin(n\pi)=0$、$\cos(n\pi)=(-1)^n$，其中 $n$ 為整數；本題上限 $\pi$ 代入得 $-\dfrac{\pi(-1)^n}{n}$，下限 $0$ 兩項皆為零。</p>
+<div class="math-block">$$
+\int_0^\pi t\sin nt\,dt=\left[-\frac{t\cos nt}{n}+\frac{\sin nt}{n^2}\right]_0^\pi=-\frac{\pi(-1)^n}{n}.
+$$</div>
+<p><strong>③ 寫出級數：</strong> $b_n=2(-1)^{n+1}/n$，常數項 $a_0/2=1$。</p>
+<div class="math-block">$$
+\boxed{f(t)=1+2\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}n\sin nt,\quad -\pi&lt;t&lt;\pi.}
+$$</div>
+<h4>(2) 複數 Fourier 級數</h4>
+<p><strong>① 由實係數換算：</strong> 定義 $f(t)=\sum_{n\in\mathbb Z}c_ne^{int}$，則 $c_0=a_0/2=1$；$n&gt;0$ 時用 $c_n=(a_n-ib_n)/2$。</p>
+<div class="math-block">$$
+c_n=-i\frac{(-1)^{n+1}}n=i\frac{(-1)^n}{n}\quad(n&gt;0).
+$$</div>
+<p class="symnote">符號：$\mathbb Z$：全體整數；$i$：虛數單位（$i^2=-1$）；$\overline{c_n}$：$c_n$ 的共軛複數。</p>
+<p><strong>② 負頻率：</strong> 實值函數滿足 $c_{-n}=\overline{c_n}$，同一式 $c_n=i(-1)^n/n$ 對 $n&lt;0$ 仍成立。</p>
+<div class="math-block">$$
+\boxed{f(t)=1+\sum_{\substack{n=-\infty\\n\ne0}}^{\infty}\frac{i(-1)^n}{n}e^{int}.}
+$$</div>
+<h4>(3) 功率頻譜</h4>
+<p><strong>① 取模平方：</strong> $c_n$ 是純虛數，$|i(-1)^n/n|^2=1/n^2$。</p>
+<p class="fnote"><b>公式（複數模平方）：</b>$|z|^2=z\bar z=x^2+y^2$，其中 $z=x+iy$ 為複數、$x,y$ 為其實部與虛部、$\bar z$ 為共軛複數；本題 $z=c_n=\dfrac{i(-1)^n}{n}$ 實部為 0、虛部為 $\dfrac{(-1)^n}{n}$，又 $c_0=1$。</p>
+<div class="math-block">$$
+\boxed{|c_0|^2=1,\qquad |c_n|^2=\frac1{n^2}\quad(n\neq0).}
+$$</div>
+<p><strong>② 畫圖：</strong> $n=\pm1$ 為 1、$\pm2$ 為 $1/4$、$\pm3$ 為 $1/9$，是對稱的離散梳狀頻譜，每個諧波畫一根柱；本題用雙側 $|c_n|^2$（若畫單側譜要註明是否把 $n,-n$ 合併）。</p>
+<p><strong>③ 端點收斂值：</strong> 週期延拓在 $t=\pm\pi$ 有跳躍。</p>
+<p class="fnote"><b>公式（Dirichlet 收斂定理）：</b>$f$ 分段平滑時，Fourier 級數在 $t_0$ 收斂到 $\dfrac{f(t_0^+)+f(t_0^-)}{2}$，其中 $f(t_0^+)$、$f(t_0^-)$ 為週期延拓後在 $t_0$ 的右、左極限，連續點即等於 $f(t_0)$；本題 $t_0=\pi$ 時 $f(\pi^-)=1+\pi$、$f(\pi^+)=f(-\pi^+)=1-\pi$，平均為 $1$。</p>
+<p><strong>條件：</strong> 級數在 $t=\pm\pi$ 收斂到左右平均值 1。</p>
+<h3 id="k09-4">2021 年 11 月期中第 5 題｜週期二次函數的 Fourier 級數（20 分）</h3>
+<p><strong>原題：</strong> Find the Fourier series of the periodic function $f(x)=(x-1)(x-3)$ for $1\le x\le3$, with $f(x+2)=f(x)$.</p>
+<p><strong>中文：</strong> 求週期為 2、基本區間 $[1,3]$ 的二次函數的 Fourier 級數。</p>
+<p><strong>① 中心化：</strong> 令 $u=x-2$，則 $-1\le u\le1$ 且 $f=u^2-1$ 是偶函數；半週期 $L=1$，基底為 $\cos(n\pi u)$，$b_n=0$。</p>
+<div class="math-block">$$
+f(u)=\frac{a_0}2+\sum_{n=1}^\infty[a_n\cos(n\pi u)+b_n\sin(n\pi u)].
+$$</div>
+<p class="symnote">符號：$a_0$：常數項係數（級數常數項是 $a_0/2$）；$a_n$：餘弦係數；$b_n$：正弦係數；$n=1,2,\ldots$：諧波序號。</p>
+<p><strong>② 常數項 $a_0$：</strong> 偶函數只積半區間再乘 2。</p>
+<p class="fnote"><b>公式（Fourier 係數）：</b>週期 $2L$ 時 $a_n=\dfrac1L\int_{-L}^{L}f(u)\cos\dfrac{n\pi u}{L}\,du\ (n=0,1,2,\dots)$、$b_n=\dfrac1L\int_{-L}^{L}f(u)\sin\dfrac{n\pi u}{L}\,du\ (n=1,2,\dots)$，其中 $L$ 為半週期、$f(u)$ 為週期 $2L$ 的函數、$n$ 為諧波序號；本題 $L=1$、$f(u)=u^2-1$。</p>
+<p class="fnote"><b>公式（奇偶函數積分）：</b>若 $g(-u)=g(u)$（偶函數）則 $\int_{-a}^{a}g(u)\,du=2\int_0^{a}g(u)\,du$，若 $g(-u)=-g(u)$（奇函數）則 $\int_{-a}^{a}g(u)\,du=0$，其中 $a\gt0$ 為積分半區間長；本題 $a=1$，$u^2-1$ 與 $(u^2-1)\cos(n\pi u)$ 為偶函數、$(u^2-1)\sin(n\pi u)$ 為奇函數。</p>
+<div class="math-block">$$
+a_0=\int_{-1}^{1}(u^2-1)du
+=2\left[\frac{u^3}{3}-u\right]_0^1=-\frac43,
+\qquad \frac{a_0}{2}=-\frac23.
+$$</div>
+<p><strong>③ 第一次分部積分：</strong> 令 $\omega=n\pi$，取 $U=u^2-1$、$dV=\cos(\omega u)du$；邊界項 $[(u^2-1)\sin(\omega u)/\omega]_0^1=0$。</p>
+<div class="math-block">$$
+a_n=2\int_0^1(u^2-1)\cos(n\pi u)du.
+$$</div>
+<p class="fnote"><b>公式（分部積分）：</b>$\int_a^b U\,dV=\left[UV\right]_a^b-\int_a^b V\,dU$，其中 $U,V$ 為 $u$ 的函數、$dU,dV$ 為其微分、$a,b$ 為積分下、上限；本題第一次取 $U=u^2-1$、$V=\dfrac{\sin(\omega u)}{\omega}$、$dU=2u\,du$、$a=0$、$b=1$。</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\cos(\omega u)\,du=\dfrac{\sin(\omega u)}{\omega}+C$、$\int\sin(\omega u)\,du=-\dfrac{\cos(\omega u)}{\omega}+C$，其中 $\omega\ne0$ 為常數、$C$ 為積分常數；本題 $\omega=n\pi$，前者用於第一次求 $V$，兩者都用於第二次分部積分。</p>
+<div class="math-block">$$
+a_n=-\frac4\omega\int_0^1u\sin(\omega u)du.
+$$</div>
+<p><strong>④ 第二次分部積分：</strong> 對 $u\sin(\omega u)$ 再做一次。</p>
+<p class="fnote"><b>公式（整數倍角三角值）：</b>$\sin(n\pi)=0$、$\cos(n\pi)=(-1)^n$，其中 $n$ 為整數；本題 $\omega=n\pi$，上限代入得 $-\dfrac{\cos(n\pi)}{n\pi}+\dfrac{\sin(n\pi)}{(n\pi)^2}=-\dfrac{(-1)^n}{\omega}$。</p>
+<div class="math-block">$$
+\int_0^1u\sin(\omega u)du
+=\left[-\frac{u\cos(\omega u)}\omega+\frac{\sin(\omega u)}{\omega^2}\right]_0^1
+=-\frac{(-1)^n}{\omega}.
+$$</div>
+<p>因此</p>
+<div class="math-block">$$
+a_n=\frac{4(-1)^n}{n^2\pi^2}.
+$$</div>
+<p><strong>⑤ 寫出級數：</strong> 代回 $u=x-2$。</p>
+<div class="math-block">$$
+\boxed{f(x)=-\frac23+\frac4{\pi^2}\sum_{n=1}^\infty\frac{(-1)^n}{n^2}\cos[n\pi(x-2)].}
+$$</div>
+<p>再用 $\cos[n\pi(x-2)]=\cos(n\pi x)$ 化簡：</p>
+<p class="fnote"><b>公式（餘弦週期性）：</b>$\cos(\theta-2k\pi)=\cos\theta$，其中 $\theta$ 為任意角、$k$ 為整數；本題 $\theta=n\pi x$、$k=n$，因 $n\pi(x-2)=n\pi x-2n\pi$。</p>
+<div class="math-block">$$
+\boxed{f(x)=-\frac23+\frac4{\pi^2}\sum_{n=1}^\infty\frac{(-1)^n}{n^2}\cos(n\pi x).}
+$$</div>
+<p><strong>⑥ 收斂性：</strong> 兩端值相同，延拓後沒有跳躍。</p>
+<p class="fnote"><b>公式（Dirichlet 收斂定理）：</b>$f$ 分段平滑時，Fourier 級數在 $x_0$ 收斂到 $\dfrac{f(x_0^+)+f(x_0^-)}{2}$，其中 $f(x_0^+)$、$f(x_0^-)$ 為週期延拓後在 $x_0$ 的右、左極限，連續點即等於 $f(x_0)$；本題 $f(1)=f(3)=0$ 使週期延拓處處連續，故級數在每點收斂到 $f(x)$。</p>
+<p><strong>條件：</strong> $f(1)=f(3)=0$，週期延拓連續，級數在每點收斂到 $f$。</p>

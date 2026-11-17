@@ -1,0 +1,39 @@
+{
+  "_說明": "symbols 是本章符號總表；groups 決定總表分組；步驟用 data-sym 指定要提醒的符號（每頁只提醒第一次）。",
+  "symbols": {
+    "F":     { "tex": "\\vec F,\\ F_x", "zh": "作用在質點上的（淨）力與它的分量", "en": "force", "unit": "N", "note": "$1\\ \\text{N}=1\\ \\text{kg·m/s}^2$" },
+    "p":     { "tex": "\\vec p=m\\vec v", "zh": "線動量", "en": "linear momentum", "unit": "kg·m/s" },
+    "m":     { "tex": "m", "zh": "慣性質量：抵抗加速的程度", "en": "inertial mass", "unit": "kg", "note": "實驗上和重力質量相同（等效原理）" },
+    "xdot":  { "tex": "\\dot x,\\ \\ddot x", "zh": "對時間的一階、二階導數：速度、加速度", "unit": "m/s、m/s²", "note": "講義的 $\\dot q$、$\\ddot q$ 也可以是角度" },
+    "xi":    { "tex": "x_i", "zh": "第 $i$ 個座標分量（$x_1,x_2,x_3=x,y,z$）", "unit": "m" },
+    "v0":    { "tex": "v_0", "zh": "初速（$t=0$ 的速度）", "en": "initial speed", "unit": "m/s", "note": "例題 2.5 中 $v_0$ 帶正負號（向上為正）" },
+    "g":     { "tex": "g", "zh": "重力加速度", "unit": "m/s²", "note": "$9.8$" },
+    "theta": { "tex": "\\theta", "zh": "斜面傾角，或拋體的仰角", "unit": "rad、°" },
+    "Nn":    { "tex": "N", "zh": "正向力（垂直接觸面）", "en": "normal force", "unit": "N", "note": "第 11 節起的 $\\vec N$ 是力矩，不要混" },
+    "fric":  { "tex": "f_s,\\ f_k", "zh": "靜摩擦力、動摩擦力", "unit": "N", "note": "$f_s\\le\\mu_sN$；$f_k=\\mu_kN$" },
+    "mu":    { "tex": "\\mu_s,\\ \\mu_k", "zh": "靜、動摩擦係數", "unit": "無", "note": "通常 $\\mu_s>\\mu_k$" },
+    "k":     { "tex": "k", "zh": "阻力常數：$F_r=kmv$ 或 $kmv^2$", "en": "retarding-force constant", "unit": "s⁻¹（$kmv$）、m⁻¹（$kmv^2$）", "note": "課本把 $m$ 寫在外面只是為了式子好看" },
+    "vt":    { "tex": "v_t", "zh": "終端速度：阻力和重力抵消時的速率", "en": "terminal speed", "unit": "m/s", "note": "線性阻力 $g/k$；$v^2$ 阻力 $\\sqrt{g/k}$" },
+    "R":     { "tex": "R", "zh": "拋體的射程（第 8–9 節）；圓軌道半徑（第 14 節）", "en": "range", "unit": "m" },
+    "UV":    { "tex": "U,\\ V", "zh": "例題 2.7 的初速分量 $v_0\\cos\\theta$、$v_0\\sin\\theta$", "unit": "m/s", "note": "只在第 9 節這樣用；別和位能 $U$ 混" },
+    "Tt":    { "tex": "T", "zh": "繩子張力（第 10 節）", "en": "tension", "unit": "N", "note": "第 12 節起的 $T$ 是動能" },
+    "alpha": { "tex": "\\alpha", "zh": "電梯的向下加速度（例題 2.9）", "unit": "m/s²", "note": "例題 2.10 的 $\\alpha=qB_0/m$ 是角頻率" },
+    "qB":    { "tex": "q,\\ \\vec B,\\ \\vec E", "zh": "電荷、磁場、電場", "unit": "C、T、V/m" },
+    "wc":    { "tex": "\\omega_c=qB/m", "zh": "迴旋頻率", "en": "cyclotron frequency", "unit": "rad/s" },
+    "L":     { "tex": "\\vec L=\\vec r\\times\\vec p", "zh": "對原點的角動量", "en": "angular momentum", "unit": "kg·m²/s" },
+    "N":     { "tex": "\\vec N=\\vec r\\times\\vec F", "zh": "對同一原點的力矩", "en": "torque", "unit": "N·m", "note": "課本用 $\\vec N$，不是 $\\vec\\tau$" },
+    "I":     { "tex": "I=\\sum m_ir_i^2", "zh": "轉動慣量（$r_i$ 是到轉軸的距離）", "en": "moment of inertia", "unit": "kg·m²" },
+    "omega": { "tex": "\\omega", "zh": "角速度", "unit": "rad/s" },
+    "W":     { "tex": "W_{12}", "zh": "力從位置 1 到 2 做的功", "en": "work", "unit": "J" },
+    "T":     { "tex": "T=\\tfrac12mv^2", "zh": "動能", "en": "kinetic energy", "unit": "J", "note": "課本與講義都用 $T$" },
+    "U":     { "tex": "U(\\vec r)", "zh": "位能：只差一個常數", "en": "potential energy", "unit": "J", "note": "$\\vec F=-\\nabla U$" },
+    "E":     { "tex": "E=T+U", "zh": "總（力學）能", "en": "total energy", "unit": "J", "note": "力保守且 $\\partial U/\\partial t=0$ 時守恆" }
+  },
+  "groups": [
+    { "title": "牛頓定律（第 1–4 節）", "keys": ["F", "p", "m", "xdot", "xi"] },
+    { "title": "一維運動與阻力（第 5–7 節）", "keys": ["v0", "g", "theta", "Nn", "fric", "mu", "k", "vt"] },
+    { "title": "拋體、Atwood 機、帶電粒子（第 8–10 節）", "keys": ["R", "UV", "Tt", "alpha", "qB", "wc"] },
+    { "title": "守恆定律與能量（第 11–15 節）", "keys": ["L", "N", "I", "omega", "W", "T", "U", "E"] }
+  ],
+  "steps": {}
+}

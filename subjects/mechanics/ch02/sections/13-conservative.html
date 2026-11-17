@@ -1,0 +1,263 @@
+<h2>十三、保守力、位能與能量守恆 <span class="pg">講義 p.128–142 · 課本 §2.5 p.78–81</span></h2>
+
+<p class="lead">有些力做的功只和起點、終點有關，和路徑無關——這種力叫保守力，它的功可以寫成某個函數（位能）的差。這一節由重力和摩擦的對比開始，推出 $\vec F=-\nabla U$、$\nabla\times\vec F=0$ 這些等價的判別法，最後證明力學能守恆，並看清楚它需要哪兩個條件。</p>
+
+<h3 id="c2c-path">13.1 重力的功與摩擦的功 <span class="pg-tag">p.128–130</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.128 Work done by Conservative Force</span>
+  <p>若一個力是保守的，它做的功和所走的路徑無關：從 1 到 2 沿路徑 $a$、$b$、$c$ 做的功相同（課本 Fig. 2-13）。</p>
+  $$W_{12}\equiv\int_1^2\vec F\cdot\mathrm d\vec r=\int_a\vec F\cdot\mathrm d\vec r=\int_b\vec F\cdot\mathrm d\vec r=\int_c\vec F\cdot\mathrm d\vec r$$
+</div>
+
+<div class="step" data-step="c2c-grav" data-sym="W">
+  <span class="step-title">重力沿任意路徑 $S$ 從 A 到 B（講義 p.129）</span>
+  <p>路徑上每一小段 $\mathrm d\vec s$ 與水平的夾角 $\theta(s)$，重力向下，兩者夾角 $\theta(s)+\tfrac\pi2$：</p>
+  $$W_{AB}=\int_A^B\vec F_g\cdot\mathrm d\vec s=\int_A^B|\vec F_g|\cos\!\Big(\theta(s)+\frac\pi2\Big)\,\mathrm ds=-mg\int_A^B\sin\theta(s)\,\mathrm ds=-mg\int_A^B\mathrm dz=-mg(z_B-z_A)$$
+  <p>$\sin\theta\,\mathrm ds$ 正是這一小段上升的高度 $\mathrm dz$。結果只和高度差 $\Delta h$ 有關：重力是保守力。</p>
+</div>
+
+<div class="step" data-step="c2c-fric">
+  <span class="step-title">固定大小的動摩擦（講義 p.130）</span>
+  <p>摩擦永遠和運動方向相反，夾角 $180^\circ$：</p>
+  $$W_{AB}=\int_A^B\vec F_k\cdot\mathrm d\vec s=\int_A^BF_k\cos180^\circ\,\mathrm ds=-F_k\int_A^B\mathrm ds=-F_kS$$
+  <p>$S$ 是路徑長度：走得越彎，摩擦做的負功越多，$W\propto S$ 和路徑有關。摩擦不是保守力。</p>
+</div>
+
+<div class="anim" data-anim="c2-work-path"></div>
+
+<h3 id="c2c-pot">13.2 位能 <span class="pg-tag">p.131–132</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.131–132 Potential Energy</span>
+  <p>保守力的功只和起點、終點有關，所以 $W_{ab}$ 可以寫成某個位置函數的差，這個函數就是質點的<strong>位能</strong> $U(\vec r)$：</p>
+  $$\int_a^b\vec F\cdot\mathrm d\vec r\equiv U_a-U_b\qquad(\text{保守力})$$
+  <p>沿任何封閉路徑做的功為零：$\oint\vec F\cdot\mathrm d\vec r=U_a-U_a=0$。一小段位移時：$\vec F\cdot\mathrm d\vec r=-[U(\vec r+\mathrm d\vec r)-U(\vec r)]=-\mathrm dU$。</p>
+</div>
+
+<p>符號的意思：保守力做正功時位能<strong>減少</strong>。課本 p.78–79 的例子：把行李從地面提進後車廂，重力做負功（$\vec F\cdot\mathrm d\vec r\lt 0$），所以 $U_1-U_2\lt 0$，車廂裡的位能較高；我們作為外力，對抗重力做了等量的正功。</p>
+
+<p>位能只定義到差一個常數：$-\nabla(U+\text{常數})=-\nabla U$，力完全一樣。所以位能沒有絕對的意義，只有差值有物理意義。課本 p.80 指出動能也一樣：選不同的慣性座標系速度就不同（上一節的火車），兩者都源自座標原點的選擇是任意的。Maxwell 的說法大意是：我們能確定的只是系統從一個狀態到另一個狀態時能量的增減，能量的絕對值既無從得知、也沒有用處。</p>
+
+<h3 id="c2c-grad">13.3 $\vec F=-\nabla U$ <span class="pg-tag">p.133–134</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.133–134 Force and Potential Energy</span>
+  $$\mathrm dU(x,y,z)=\frac{\partial U}{\partial x}\mathrm dx+\frac{\partial U}{\partial y}\mathrm dy+\frac{\partial U}{\partial z}\mathrm dz=\left(\frac{\partial U}{\partial x}\hat i+\frac{\partial U}{\partial y}\hat j+\frac{\partial U}{\partial z}\hat k\right)\cdot(\mathrm dx\,\hat i+\mathrm dy\,\hat j+\mathrm dz\,\hat k)=\nabla U\cdot\mathrm d\vec r$$
+  $$\vec F\cdot\mathrm d\vec r=-\mathrm dU=-\nabla U\cdot\mathrm d\vec r\quad\Longrightarrow\quad\vec F=-\nabla U$$
+  <p>梯度 $\nabla U$ 指向 $U$ 增加最快的方向；位能場中某點的力，方向和 $U$ 增加最快的方向相反，也就是 $-\nabla U$。</p>
+</div>
+
+<p>從 $\vec F\cdot\mathrm d\vec r=-\nabla U\cdot\mathrm d\vec r$ 到 $\vec F=-\nabla U$ 這一步，靠的是「對<strong>任意</strong> $\mathrm d\vec r$ 都成立」：分別取 $\mathrm d\vec r$ 沿 $\hat i$、$\hat j$、$\hat k$，就得到三個分量相等。這和 Lecture 1 第 12 節的地形圖完全對應：等高線越密，坡越陡，力越大；球沿最陡的下坡方向滾。</p>
+
+<h3 id="c2c-curl">13.4 判斷一個力是不是保守力 <span class="pg-tag">p.135–138</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.135 若 $\vec F$ 是保守力，則 $\nabla\times\vec F=0$</span>
+  $$\nabla\times\vec F=\begin{vmatrix}\hat i&\hat j&\hat k\\ \partial_x&\partial_y&\partial_z\\ -\partial_xU&-\partial_yU&-\partial_zU\end{vmatrix}=\left(\frac{\partial^2U}{\partial z\partial y}-\frac{\partial^2U}{\partial y\partial z}\right)\hat i+\left(\frac{\partial^2U}{\partial x\partial z}-\frac{\partial^2U}{\partial z\partial x}\right)\hat j+\left(\frac{\partial^2U}{\partial y\partial x}-\frac{\partial^2U}{\partial x\partial y}\right)\hat k=0$$
+</div>
+
+<p>（最後一行的負號已經吸收在每一對的前後順序裡：例如 $(\nabla\times\vec F)_x=\partial_yF_z-\partial_zF_y=-\partial_y\partial_zU+\partial_z\partial_yU$，正是講義寫的 $\frac{\partial^2U}{\partial z\partial y}-\frac{\partial^2U}{\partial y\partial z}$。）每一對都是同樣兩個偏微分換了順序，只要 $U$ 的二階偏導數連續，它們就相等（混合偏導數可交換）。反方向（$\nabla\times\vec F=0$ 推出保守）靠 Stokes 定理：</p>
+
+<div class="box lecture">
+  <span class="box-title">p.136–138 Conservative Force：三種等價說法</span>
+  $$\oint\vec F\cdot\mathrm d\vec r=\iint(\nabla\times\vec F)\cdot\mathrm d\vec\sigma=0\qquad(\text{Stokes})$$
+  <p>封閉路徑積分為零 ⟺ 兩固定點之間的功與路徑無關。等價的三種說法：$\vec F=-\nabla\phi$，$\nabla\times\vec F=0$，$\oint\vec F\cdot\mathrm d\vec r=0$。</p>
+</div>
+
+<p>考試最實用的是旋度：算三個分量，全為零就是保守力，再用逐項積分找 $U$。（嚴格來說，Stokes 定理要求曲面上處處 $\nabla\times\vec F=0$，所以區域不能有「洞」；這學期的題目都不會碰到這個例外。）</p>
+
+<div class="problem" data-kind="example" id="c2-p139">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.139</span></div>
+    <h4>常數 $a,b,c$ 為何值時力是保守力</h4>
+    <button type="button" class="exam-btn" data-exam="c2-p139">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>力 $\vec F=(ax+by^2)\,\hat i+cxy\,\hat j$。常數 $a$、$b$、$c$ 為何值時，$\vec F$ 是保守力？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$F_x=ax+by^2$，$F_y=cxy$，$F_z=0$（各分量都不含 $z$）；$a$、$b$、$c$ 為待定常數；$\vec F$ 在整個平面都有定義、沒有奇點。</p>
+<p><strong>① 算旋度：</strong> 力處處平滑、區域沒有洞時，$\nabla\times\vec F=0$ 和「功與路徑無關」等價，所以直接算旋度。$F_z=0$ 且 $F_x$、$F_y$ 不含 $z$，$\hat i$、$\hat j$ 分量裡每一項都含 $F_z$ 或 $\partial_z$，都是 0，只需要算 $\hat k$ 分量。</p>
+<p class="fnote"><b>公式（保守力判別）：</b>$\vec F$ 為保守力 $\iff\nabla\times\vec F=0$（處處成立），其中 $\nabla\times\vec F$ 為力的旋度；本題只剩 $\hat k$ 分量 $\partial_xF_y-\partial_yF_x$。</p>
+<div class="math-block">$$\nabla\times\vec F=\begin{vmatrix}\hat i&amp;\hat j&amp;\hat k\\ \partial_x&amp;\partial_y&amp;\partial_z\\ ax+by^2&amp;cxy&amp;0\end{vmatrix}=\left[\frac{\partial F_y}{\partial x}-\frac{\partial F_x}{\partial y}\right]\hat k$$</div>
+<p>代入 $F_y=cxy$、$F_x=ax+by^2$：$\dfrac{\partial(cxy)}{\partial x}=cy$，$\dfrac{\partial(ax+by^2)}{\partial y}=2by$：</p>
+<div class="math-block">$$\nabla\times\vec F=(cy-2by)\,\hat k=(c-2b)\,y\,\hat k$$</div>
+<p><strong>② 令旋度對所有 $y$ 為零：</strong> $(c-2b)y=0$ 要對所有 $y$ 成立，取 $y=1$ 就得到係數必須為零：</p>
+<div class="math-block">$$c-2b=0\quad\Longrightarrow\quad c=2b$$</div>
+<p>$a$ 在旋度裡沒有出現，可以是任意值（$ax\,\hat i$ 這一項本身就是 $-\nabla(-\tfrac12ax^2)$，一定保守）。</p>
+<p><strong>③（補充）求位能：</strong> </p>
+<p class="fnote"><b>公式（力與位能）：</b>$\vec F=-\nabla U$，其中 $U$ 為位能；本題逐分量積分。</p>
+<p>先用 $x$ 分量：$-\partial_xU=ax+by^2$，對 $x$ 積分（$y$ 當常數），積分「常數」可以是 $y$ 的函數：</p>
+<div class="math-block">$$U=-\tfrac12ax^2-bxy^2+g(y)$$</div>
+<p>再代入 $y$ 分量的要求 $-\partial_yU=F_y=2bxy$（用上一步的 $c=2b$）：$-\partial_yU=2bxy-g'(y)$，所以 $g'(y)=0$，$g$ 是常數：</p>
+<div class="math-block">$$U=-\tfrac12ax^2-bxy^2+\text{常數}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}c=2b,\ a\text{ 任意}\\ U=-\tfrac12ax^2-bxy^2+\text{常數}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-53">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-53 · p.97</span></div>
+    <h4>哪些力是保守力？求位能</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-53">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>下列哪些力是保守力？若是，求位能 $U(\vec r)$。(a) $F_x=ayz+bx+c$，$F_y=axz+bz$，$F_z=axy+by$；(b) $F_x=-ze^{-x}$，$F_y=\ln z$，$F_z=e^{-x}+y/z$；(c) $\vec F=\hat e_r\,a/r$（$a$、$b$、$c$ 為常數）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$a$、$b$、$c$ 為常數；(b) 的 $\ln z$、$y/z$ 只在 $z\gt0$ 有定義；(c) 是沿徑向、大小只和 $r$ 有關的連心力。</p>
+<h4>(a) $F_x=ayz+bx+c$，$F_y=axz+bz$，$F_z=axy+by$</h4>
+<p><strong>① 旋度：</strong> 力用直角座標分量給，判斷保守最直接的是算旋度三個分量，全為零就保守。</p>
+<p class="fnote"><b>公式（保守力判別）：</b>$\nabla\times\vec F=0$ ⟹ $\vec F$ 為保守力，可寫成 $\vec F=-\nabla U$，其中 $U(\vec r)$ 為位能；旋度三分量依序為 $\partial_yF_z-\partial_zF_y$、$\partial_zF_x-\partial_xF_z$、$\partial_xF_y-\partial_yF_x$。</p>
+<p>代入 (a) 的分量：$\partial_yF_z=ax+b$、$\partial_zF_y=ax+b$；$\partial_zF_x=ay$、$\partial_xF_z=ay$；$\partial_xF_y=az$、$\partial_yF_x=az$：</p>
+<div class="math-block">$$\begin{aligned}(\nabla\times\vec F)_x&amp;=(ax+b)-(ax+b)=0\\(\nabla\times\vec F)_y&amp;=ay-ay=0\\(\nabla\times\vec F)_z&amp;=az-az=0\end{aligned}$$</div>
+<p>三個分量都是零，保守。</p>
+<p><strong>② 逐項積分求 $U$：</strong> $\vec F=-\nabla U$ 給出三條偏微分方程式，先對 $x$ 積分（積分「常數」可以是 $f(y,z)$），再用 $y$、$z$ 分量依序定出 $f$。</p>
+<p>$x$ 分量 $-\partial_xU=ayz+bx+c$，對 $x$ 積分：</p>
+<div class="math-block">$$U=-axyz-\tfrac12bx^2-cx+f(y,z)$$</div>
+<p>代入 $y$ 分量 $-\partial_yU=F_y=axz+bz$：$-\partial_yU=axz-\partial_yf$，所以 $\partial_yf=-bz$，$f=-byz+h(z)$。</p>
+<p>代入 $z$ 分量 $-\partial_zU=F_z=axy+by$：$-\partial_zU=axy+by-h'(z)$，所以 $h'(z)=0$，$h$ 是常數。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{保守}\\ U=-\left(axyz+\tfrac12bx^2+cx+byz\right)+\text{常數}\end{gathered}}$$</div>
+<h4>(b) $F_x=-ze^{-x}$，$F_y=\ln z$，$F_z=e^{-x}+y/z$</h4>
+<p><strong>① 旋度：</strong> 同 (a) 算三個分量。</p>
+<p>代入 (b) 的分量：$\partial_yF_z=\dfrac1z$、$\partial_zF_y=\dfrac1z$；$\partial_zF_x=-e^{-x}$、$\partial_xF_z=-e^{-x}$；$\partial_xF_y=0$、$\partial_yF_x=0$：</p>
+<div class="math-block">$$\begin{aligned}(\nabla\times\vec F)_x&amp;=\frac1z-\frac1z=0\\(\nabla\times\vec F)_y&amp;=-e^{-x}-(-e^{-x})=0\\(\nabla\times\vec F)_z&amp;=0-0=0\end{aligned}$$</div>
+<p>保守（在 $z\gt0$ 的半空間，那裡沒有洞）。</p>
+<p><strong>② 逐項積分求 $U$：</strong> $-\partial_xU=-ze^{-x}$，用 $\int e^{-x}\mathrm dx=-e^{-x}$：</p>
+<div class="math-block">$$U=-ze^{-x}+f(y,z)$$</div>
+<p>代入 $-\partial_yU=\ln z$：$-\partial_yf=\ln z$ ⟹ $f=-y\ln z+h(z)$。</p>
+<p>代入 $z$ 分量：$-\partial_zU=e^{-x}+\dfrac yz-h'(z)$，要等於 $F_z=e^{-x}+\dfrac yz$ ⟹ $h'=0$：</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{保守}\\ U=-\left(ze^{-x}+y\ln z\right)+\text{常數}\quad(z\gt0)\end{gathered}}$$</div>
+<h4>(c) $\vec F=\hat e_r\,a/r$</h4>
+<p><strong>① 判斷保守：</strong> 力用球座標給、只和 $r$ 有關，直接引用 Lecture 1 的結果：第 14 節證明 $f(r)\hat e_r$ 形式的力旋度為零，所以保守。</p>
+<p><strong>② 求 $U$：</strong> Lecture 1 第 12 節證明 $\nabla U(r)=U'(r)\hat e_r$，比較 $\vec F=-\nabla U$ 的 $\hat e_r$ 分量：</p>
+<div class="math-block">$$-U'(r)=\frac ar\quad\Longrightarrow\quad U=-\int\frac ar\,\mathrm dr=-a\ln r+\text{常數}$$</div>
+<p>把常數寫成 $a\ln r_0$（$r_0$ 是任選的參考半徑，$U(r_0)=0$）：</p>
+<div class="math-block">$$\boxed{\text{保守，}U=-a\ln\frac r{r_0}}$$</div>
+<p>三個都是保守力（各加任意常數）。</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="c2c-energy">13.5 力學能守恆 <span class="pg-tag">p.140–142 · 課本 p.80–81</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.140–142 Work / Kinetic Energy / Potential Energy</span>
+  <p>功 $W=\int\vec F\cdot\mathrm d\vec r$ 轉成動能：$\int_1^2\vec F\cdot\mathrm d\vec r=T_2-T_1$（$\mathrm dT=\vec F\cdot\mathrm d\vec r$）；若 $\vec F$ 是保守力（$\vec F=-\nabla U$、$\nabla\times\vec F=0$），功也可以轉成位能：$\int_1^2\vec F\cdot\mathrm d\vec r=U_1-U_2$。力學能守恆：$E=T+U=$ 常數（只對保守力成立）。驗證：</p>
+  $$\frac{\mathrm dE}{\mathrm dt}=\frac{\mathrm dT}{\mathrm dt}+\frac{\mathrm dU}{\mathrm dt}=\frac{\vec F\cdot\mathrm d\vec r}{\mathrm dt}+\frac{\nabla U\cdot\mathrm d\vec r}{\mathrm dt}=(\vec F+\nabla U)\cdot\dot{\vec r}=(\vec F-\vec F)\cdot\dot{\vec r}=0$$
+</div>
+
+<p>把兩個式子合起來最直接：$T_2-T_1=U_1-U_2$，移項就是 $T_1+U_1=T_2+U_2$。課本 p.80–81 的推導多考慮了一種情況：位能可能<strong>明顯地</strong>隨時間變化，$U=U(\vec r,t)$。</p>
+
+<div class="step" data-step="c2c-dEdt" data-sym="E,U">
+  <span class="step-title">一般情況：$\mathrm dE/\mathrm dt=\partial U/\partial t$</span>
+  <p>$U(\vec r,t)$ 對時間的全微分有兩部分：質點移動造成的變化，加上 $U$ 本身隨時間的變化。</p>
+  $$\frac{\mathrm dU}{\mathrm dt}=\sum_i\frac{\partial U}{\partial x_i}\frac{\mathrm dx_i}{\mathrm dt}+\frac{\partial U}{\partial t}=(\nabla U)\cdot\dot{\vec r}+\frac{\partial U}{\partial t}$$
+  $$\frac{\mathrm dE}{\mathrm dt}=\vec F\cdot\dot{\vec r}+(\nabla U)\cdot\dot{\vec r}+\frac{\partial U}{\partial t}=(\vec F+\nabla U)\cdot\dot{\vec r}+\frac{\partial U}{\partial t}=\frac{\partial U}{\partial t}\qquad(2.95)$$
+  <p>（總力 $\vec F=-\nabla U$，括號為零。）所以 $E$ 守恆需要<strong>兩個</strong>條件：力可寫成 $-\nabla U$，且 $U$ 不明顯依賴時間。課本把這樣的力場稱為保守力場，得到第三個守恆定理：在保守力場中，質點的總能 $E$ 不隨時間改變。</p>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">「有位能」不等於「能量守恆」</span>
+  <p>$U(\vec r,t)$ 會隨時間變（例如強度逐漸增加的場）時，$\vec F=-\nabla U$ 仍成立，但 $\mathrm dE/\mathrm dt=\partial U/\partial t\neq0$。考試證明能量守恆時，兩個條件都要寫出來。</p>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-13a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>旋度處處為零，繞一圈的功卻不是零</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-13a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>平面上的力 $\vec F=\dfrac{k(-y\,\hat i+x\,\hat j)}{x^2+y^2}$（$k$ 為常數，原點除外）。(a) 證明在原點以外 $\nabla\times\vec F=0$。(b) 計算沿單位圓逆時針繞一圈的功 $\oint\vec F\cdot\mathrm d\vec r$。(c) 計算沿圓心 $(3,0)$、半徑 $1$ 的圓繞一圈的功。(d) $\vec F$ 是不是保守力？講義 p.136–138 的三個等價條件為什麼在這裡「不等價」？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$F_x=\dfrac{-ky}{x^2+y^2}$、$F_y=\dfrac{kx}{x^2+y^2}$、$F_z=0$，$k$ 為常數；定義域是平面去掉原點（原點分母為零）——這是本題關鍵。</p>
+<h4>(a) 原點外旋度為零</h4>
+<p><strong>① 只剩 $z$ 分量：</strong> 力在 $xy$ 平面、$F_z=0$ 且與 $z$ 無關，旋度只剩 $\partial_xF_y-\partial_yF_x$，用商的微分法則算。</p>
+<p class="fnote"><b>公式（商的微分）：</b>$\left(\dfrac uv\right)'=\dfrac{u'v-uv'}{v^2}$，其中 $u$ 為分子、$v$ 為分母；本題 $v=x^2+y^2$。</p>
+<p><strong>② $\partial_xF_y$：</strong> $u=kx$、$\partial_xv=2x$：</p>
+<div class="math-block">$$\frac{\partial F_y}{\partial x}=k\frac{(x^2+y^2)-x(2x)}{(x^2+y^2)^2}=k\frac{y^2-x^2}{(x^2+y^2)^2}$$</div>
+<p><strong>③ $\partial_yF_x$：</strong> $u=-ky$、$\partial_yv=2y$：</p>
+<div class="math-block">$$\frac{\partial F_x}{\partial y}=-k\frac{(x^2+y^2)-y(2y)}{(x^2+y^2)^2}=k\frac{y^2-x^2}{(x^2+y^2)^2}$$</div>
+<p>兩者相等，相減為零：</p>
+<div class="math-block">$$\boxed{(\nabla\times\vec F)_z=0\quad(\text{原點除外})}$$</div>
+<h4>(b) 沿單位圓逆時針一圈</h4>
+<p><strong>① 參數化：</strong> 路徑是圓，用 $x=\cos\theta$、$y=\sin\theta$ 把線積分化成對 $\theta$ 的積分；單位圓上 $x^2+y^2=1$，逆時針是 $\theta$ 從 $0$ 到 $2\pi$：</p>
+<div class="math-block">$$\vec F=k(-\sin\theta,\ \cos\theta),\qquad\mathrm d\vec r=(-\sin\theta,\ \cos\theta)\,\mathrm d\theta$$</div>
+<p><strong>② 積分：</strong> 內積 $\vec F\cdot\mathrm d\vec r=k(\sin^2\theta+\cos^2\theta)\,\mathrm d\theta=k\,\mathrm d\theta$（力和路徑處處同方向）：</p>
+<div class="math-block">$$\boxed{\oint\vec F\cdot\mathrm d\vec r=k\int_0^{2\pi}\mathrm d\theta=2\pi k\neq0}$$</div>
+<h4>(c) 圓心 $(3,0)$、半徑 1 的圓</h4>
+<p><strong>① 原點不在圈內：</strong> 這個圓上參數化很麻煩，但圓上與圓內的點離原點至少 $3-1=2$，原點不在被圍住的區域裡。</p>
+<p><strong>② 用 Stokes 定理：</strong> 被圍住的整個圓盤上 $\vec F$ 都平滑、旋度為零（(a) 的結果）。</p>
+<p class="fnote"><b>公式（Stokes 定理）：</b>$\oint_C\vec F\cdot\mathrm d\vec r=\iint_S(\nabla\times\vec F)\cdot\mathrm d\vec\sigma$，其中 $C$ 為封閉路徑、$S$ 為 $C$ 圍住的面、$\mathrm d\vec\sigma$ 為面積元；前提是 $\vec F$ 在整個 $S$ 上沒有奇點。本題 $S$ 是不含原點的圓盤。</p>
+<div class="math-block">$$\boxed{\oint\vec F\cdot\mathrm d\vec r=\iint0\,\mathrm d\sigma=0}$$</div>
+<p>一般地，繞原點 $n$ 圈的功是 $2\pi nk$，不繞原點的封閉路徑功為零。</p>
+<h4>(d) 是不是保守力</h4>
+<p><strong>① 找「位能」：</strong> 極角 $\theta=\tan^{-1}(y/x)$ 的偏導數是 $\partial_x\theta=\dfrac{-y}{x^2+y^2}$、$\partial_y\theta=\dfrac{x}{x^2+y^2}$，和題目的力比較：</p>
+<div class="math-block">$$\vec F=k\nabla\theta=-\nabla(-k\theta)$$</div>
+<p><strong>② 為什麼不保守：</strong> 在原點以外像是有位能 $U=-k\theta$；但 $\theta$ 繞一圈增加 $2\pi$（正好是 (b) 的 $2\pi k$ 除以 $k$），不是單值函數，所以不存在單值的 $U$。</p>
+<p><strong>③ 三條件為何不等價：</strong> Stokes 定理要求 $\vec F$ 在整個被圍住的面上沒有奇點，(b) 的圓圍住了原點，前提不成立。整個平面去掉原點不是「單連通」（有個洞），$\nabla\times\vec F=0$ 不足以推出 $\oint=0$。三個條件等價的前提是：力在整個區域都有定義且可微、區域沒有洞。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{在含原點的區域不是保守力}\\ U=-k\theta\text{ 多值；旋度為零只在單連通區域才保證保守}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-13b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>拖著彈簧走：位能明顯依時間變化，能量不守恆</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-13b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的木塊在光滑水平面上，接在彈簧（$k$）的一端；另一端被手以固定速度 $v$ 拉著走，手的位置 $X=vt$。木塊受的力 $F=-k(x-vt)$ 可寫成 $F=-\partial U/\partial x$，其中 $U(x,t)=\tfrac12k(x-vt)^2$。(a) 證明 $E=\tfrac12m\dot x^2+U$ 不守恆，且 $\dfrac{\mathrm dE}{\mathrm dt}=\dfrac{\partial U}{\partial t}$。(b) 說明 $\partial U/\partial t$ 的物理意義（誰在做功）。(c) 在跟著手走的座標系 $x'=x-vt$ 中，證明 $E'=\tfrac12m\dot x'^2+\tfrac12kx'^2$ 守恆，並說明這和 (a) 不矛盾。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：木塊質量 $m$、光滑水平面；輕彈簧常數 $k$；手的位置 $X=vt$，$v$ 固定；$F=-k(x-vt)=-\partial U/\partial x$，$U(x,t)=\tfrac12k(x-vt)^2$ 明顯含 $t$。</p>
+<h4>(a) $E$ 不守恆且 $\dot E=\partial U/\partial t$</h4>
+<p><strong>① 對時間微分：</strong> 直接對 $t$ 微分 $E$，再用運動方程式消掉 $\ddot x$。關鍵是 $U(x,t)$ 同時隨 $x$ 和 $t$ 變，全微分要用連鎖律寫兩項（講義 p.142 只寫第一項，那只在 $U$ 不顯含時間時成立）。</p>
+<p class="fnote"><b>公式（多變數連鎖律）：</b>$\dfrac{\mathrm dU}{\mathrm dt}=\dfrac{\partial U}{\partial x}\dot x+\dfrac{\partial U}{\partial t}$，其中 $\dot x$ 為速度；本題 $U=U(x,t)$。</p>
+<p>動能項 $\tfrac12m\dot x^2$ 對 $t$ 微分得 $m\dot x\ddot x$：</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm dE}{\mathrm dt}&amp;=m\dot x\ddot x+\frac{\partial U}{\partial x}\dot x+\frac{\partial U}{\partial t}\\&amp;=\dot x\left(m\ddot x+\frac{\partial U}{\partial x}\right)+\frac{\partial U}{\partial t}\end{aligned}$$</div>
+<p><strong>② 用運動方程式：</strong> </p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\ddot x=F$，其中 $m$ 為質量、$\ddot x$ 為加速度、$F$ 為合力；本題 $F=-\partial U/\partial x$。</p>
+<p>所以括號為零（課本 (2.95)）：</p>
+<div class="math-block">$$\frac{\mathrm dE}{\mathrm dt}=\frac{\partial U}{\partial t}$$</div>
+<p><strong>③ 算 $\partial U/\partial t$：</strong> 代入 $U=\tfrac12k(x-vt)^2$，把 $x$ 當常數對 $t$ 偏微分，連鎖律帶出 $-v$：</p>
+<div class="math-block">$$\frac{\partial U}{\partial t}=k(x-vt)(-v)=-kv(x-vt)$$</div>
+<p>只要彈簧有伸縮（$x\ne vt$）就不為零，所以 $E$ 不守恆。</p>
+<div class="math-block">$$\boxed{\frac{\mathrm dE}{\mathrm dt}=\frac{\partial U}{\partial t}=-kv(x-vt)}$$</div>
+<h4>(b) $\partial U/\partial t$ 的物理意義</h4>
+<p><strong>① 手拉彈簧的力：</strong> 能量變化一定來自某個力做功，去算手的功率。彈簧無質量，所受合力必須為零：木塊拉彈簧的力是 $-k(vt-x)$（彈簧拉木塊 $k(vt-x)$ 的反作用），所以手拉彈簧的力是 $+k(vt-x)$（沿 $+x$）。</p>
+<p><strong>② 手的功率：</strong> 手施力 $k(vt-x)$、以速度 $v$ 移動，功率 = 力 × 速度：</p>
+<div class="math-block">$$P_{\text{手}}=k(vt-x)\,v=-kv(x-vt)=\frac{\partial U}{\partial t}$$</div>
+<p>$E$ 不守恆，是因為系統（木塊＋彈簧）有外力在做功；「位能顯含時間」就是「有外界在改變位能曲線」。</p>
+<div class="math-block">$$\boxed{\frac{\partial U}{\partial t}=P_{\text{手}}\text{：手拉彈簧的功率}}$$</div>
+<h4>(c) 跟著手走的座標系</h4>
+<p><strong>① 換座標：</strong> 手等速，跟著手走的座標系仍是慣性系，可在那裡重寫運動方程式。由 $x'=x-vt$ 微分：$\dot x'=\dot x-v$、$\ddot x'=\ddot x$：</p>
+<div class="math-block">$$m\ddot x'=m\ddot x=-k(x-vt)=-kx'$$</div>
+<p><strong>② 證明 $E'$ 守恆：</strong> 這是普通的彈簧振子，位能 $\tfrac12kx'^2$ 不含時間。對 $E'$ 微分：</p>
+<div class="math-block">$$\frac{\mathrm dE'}{\mathrm dt}=m\dot x'\ddot x'+kx'\dot x'=\dot x'(m\ddot x'+kx')=0$$</div>
+<p>在這個座標系手不動、不做功，能量守恆。</p>
+<p><strong>③ 為何不矛盾：</strong> 兩個座標系的「能量」不是同一個量。把 $\dot x=\dot x'+v$ 代入 $E$ 展開：</p>
+<div class="math-block">$$E=\tfrac12m(\dot x'+v)^2+\tfrac12kx'^2=E'+mv\dot x'+\tfrac12mv^2$$</div>
+<p>$mv\dot x'$ 會隨時間變，所以 $E'$ 守恆時 $E$ 不守恆，不矛盾：能不能守恆，取決於在那個座標系裡外力有沒有做功。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\frac{\mathrm dE'}{\mathrm dt}=0\text{，}E'\text{ 守恆}\\ E=E'+mv\dot x'+\tfrac12mv^2\text{ 不守恆，不矛盾}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>保守力：功與路徑無關 ⟺ $\oint\vec F\cdot\mathrm d\vec r=0$ ⟺ $\nabla\times\vec F=0$ ⟺ $\vec F=-\nabla U$；重力是、摩擦不是。</li>
+    <li>$\int_1^2\vec F\cdot\mathrm d\vec r=U_1-U_2$；位能只差一個常數。找 $U$：旋度為零後逐項積分。</li>
+    <li>$\mathrm dE/\mathrm dt=\partial U/\partial t$：$\vec F=-\nabla U$ 且 $\partial U/\partial t=0$ 時 $E=T+U$ 守恆。</li>
+  </ol>
+</div>

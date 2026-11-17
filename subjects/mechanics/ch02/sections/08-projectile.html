@@ -1,0 +1,526 @@
+<h2>八、二、三維運動與拋體 <span class="pg">講義 p.74–84 · 課本 §2.4 p.63–65</span></h2>
+
+<p class="lead">二維、三維運動的關鍵只有一句：互相垂直的方向彼此獨立，所以一個二維問題就是兩個一維問題。這一節用最典型的拋體（例題 2.6）示範，再做五題課本習題：斜線交點、最大射程時兩點的距離、斜坡上的射程、距離一直增加的條件、戰機拉起的最小半徑。</p>
+
+<h3 id="c2p-comp">8.1 各方向分開處理 <span class="pg-tag">p.74–78</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.74–78 Motion in Two/Three Dimensions</span>
+  <p>把一維的 $v=\Delta r/\Delta t$ 推廣成 $\vec v=\Delta\vec r/\Delta t$。直角座標中 $\vec r=r_x\hat x+r_y\hat y+r_z\hat z$，$\Delta\vec r=\Delta r_x\hat x+\Delta r_y\hat y+\Delta r_z\hat z$，所以</p>
+  $$v_x=\frac{\Delta r_x}{\Delta t},\quad v_y=\frac{\Delta r_y}{\Delta t},\quad v_z=\frac{\Delta r_z}{\Delta t};\qquad a_x=\frac{\Delta v_x}{\Delta t},\quad a_y=\frac{\Delta v_y}{\Delta t},\quad a_z=\frac{\Delta v_z}{\Delta t}$$
+  <p>某方向的速度分量等於該方向位置的變化率。兩個互相垂直方向的運動分量彼此獨立，二維、三維的問題因此化成一組一維問題。</p>
+</div>
+
+<p>講義 p.78 用一張頻閃照片說明這件事：同時釋放兩顆球，一顆直接落下、一顆水平射出，每一個閃光時刻兩顆球的<strong>高度都一樣</strong>；水平射出的那顆在水平方向等間隔前進。水平速度完全不影響鉛直方向的落下。</p>
+
+<p>這和第 3 節「各軸分開寫 $F=ma$」是同一件事：$\hat x$、$\hat y$、$\hat z$ 是固定不動的單位向量，微分時不會產生額外的項（Lecture 1 的極座標就不是這樣，$\hat r$、$\hat\theta$ 會轉）。所以只要力的分量 $F_x$ 只和 $x$ 方向的量有關，每一軸都能獨立積分。有空氣阻力時這不一定成立（第 9 節）。</p>
+
+<div class="problem" data-kind="example" id="c2-ex26">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.79–84 · Example 2.6（課本 p.63–65）</span></div>
+    <h4>拋體的位移、速度、射程與最佳仰角</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex26">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>不考慮空氣阻力。拋體的砲口初速為 $v_0$、仰角 $\theta$。求拋體的位移、速度與射程；仰角多少時射程最大？（課本另代入德軍「大貝莎」砲：$v_0=1450\ \text{m/s}$、$\theta=55^\circ$，求射程、最大高度與飛行時間。）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：初速 $v_0$、仰角 $\theta$，從原點 $t=0$ 出發（忽略砲身高度）；只受重力 $-mg\,\hat y$；射程指回到 $y=0$ 時的水平距離；大貝莎 $v_0=1450\ \text{m/s}$、$\theta=55^\circ$，$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 位移與速度</h4>
+<p><strong>① $x$ 方向等速：</strong> 不計空氣阻力，唯一的力是鉛直重力，運動拆成水平、鉛直兩個獨立的一維問題；水平不受力，速度保持初速的水平分量，$x(0)=0$。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\vec F=m\vec a$，其中 $\vec F$ 為合力、$m$ 為質量、$\vec a$ 為加速度；本題水平 $F_x=0$、鉛直 $F_y=-mg$。</p>
+<div class="math-block">$$m\ddot x=0\ \Rightarrow\ \dot x=v_0\cos\theta,\qquad x=v_0\cos\theta\,t$$</div>
+<p><strong>② $y$ 方向等加速：</strong> 鉛直只有重力，初速 $v_0\sin\theta$，$y(0)=0$：</p>
+<div class="math-block">$$m\ddot y=-mg\ \Rightarrow\ \dot y=v_0\sin\theta-gt,\qquad y=v_0\sin\theta\,t-\tfrac12gt^2$$</div>
+<p><strong>③ 速率：</strong> 平方相加，用 $\cos^2\theta+\sin^2\theta=1$ 合併：</p>
+<div class="math-block">$$\begin{aligned}v^2&amp;=\dot x^2+\dot y^2=v_0^2\cos^2\theta+v_0^2\sin^2\theta-2v_0gt\sin\theta+g^2t^2\\&amp;=v_0^2+g^2t^2-2v_0gt\sin\theta\end{aligned}$$</div>
+<p><strong>④ 位移大小：</strong> 同樣展開 $y^2$，交叉項 $-2(v_0\sin\theta\,t)(\tfrac12gt^2)=-v_0gt^3\sin\theta$（課本 Eq. (2.35) 把 $g^2t^4/4$ 誤印成 $g^2t^2/4$）：</p>
+<div class="math-block">$$r^2=x^2+y^2=v_0^2t^2+\frac{g^2t^4}{4}-v_0gt^3\sin\theta$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}x=v_0\cos\theta\,t,\quad y=v_0\sin\theta\,t-\tfrac12gt^2\\ v^2=v_0^2+g^2t^2-2v_0gt\sin\theta\\ r^2=v_0^2t^2+\tfrac14g^2t^4-v_0gt^3\sin\theta\end{gathered}}$$</div>
+<h4>(b) 射程與最佳仰角</h4>
+<p><strong>① 飛行時間：</strong> 射程是「回到 $y=0$ 時的 $x$」，先由鉛直方向求落地時間。令 $y=0$，提出 $t$：</p>
+<div class="math-block">$$y=t\left(v_0\sin\theta-\tfrac12gt\right)=0\ \Rightarrow\ t=0\ \text{或}\ T=\frac{2v_0\sin\theta}{g}$$</div>
+<p><strong>② 射程：</strong> $t=0$ 是發射那一刻。把 $T$ 代入 $x(t)$，再用 $2\sin\theta\cos\theta=\sin2\theta$：</p>
+<div class="math-block">$$R=x(T)=v_0\cos\theta\cdot\frac{2v_0\sin\theta}{g}=\frac{v_0^2\sin2\theta}{g}$$</div>
+<p><strong>③ 最佳仰角：</strong> $v_0$ 固定，$R$ 只透過 $\sin2\theta$ 依賴角度；微分令為零：</p>
+<div class="math-block">$$\frac{\mathrm dR}{\mathrm d\theta}=\frac{2v_0^2\cos2\theta}{g}=0\ \Rightarrow\ \cos2\theta=0\ \Rightarrow\ \theta=45^\circ$$</div>
+<p>這時 $\sin2\theta=1$ 取到最大值，所以是最大而不是最小。</p>
+<div class="math-block">$$\boxed{R=\frac{v_0^2\sin2\theta}{g},\quad \theta=45^\circ\text{ 時最大}}$$</div>
+<h4>(c) 大貝莎的射程、飛行時間、最大高度</h4>
+<p><strong>① 射程與飛行時間：</strong> 代入 $v_0=1450\ \text{m/s}$、$\theta=55^\circ$、$g=9.8\ \text{m/s}^2$，$\sin110^\circ=0.940$、$\sin55^\circ=0.819$：</p>
+<div class="math-block">$$R=\frac{(1450)^2(0.940)}{9.8}\ \text{m}=2.02\times10^5\ \text{m}=202\ \text{km}$$</div>
+<div class="math-block">$$T=\frac{2(1450)(0.819)}{9.8}\ \text{s}=242\ \text{s}$$</div>
+<p><strong>② 最大高度：</strong> 上升和下降對稱，最高點在 $T/2=v_0\sin\theta/g$，代入 $y(t)$：</p>
+<div class="math-block">$$y_{\max}=v_0\sin\theta\cdot\frac{v_0\sin\theta}{g}-\frac12g\left(\frac{v_0\sin\theta}{g}\right)^2=\frac{(v_0\sin\theta)^2}{2g}$$</div>
+<p>代入 $v_0\sin\theta=1450(0.819)=1188\ \text{m/s}$：</p>
+<div class="math-block">$$y_{\max}=\frac{(1188\ \text{m/s})^2}{2(9.8\ \text{m/s}^2)}=7.2\times10^4\ \text{m}=72\ \text{km}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}R=202\ \text{km},\quad y_{\max}=72\ \text{km}\\ T=242\ \text{s}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="anim" data-anim="c2-projectile"></div>
+
+<h3 id="c2p-more">8.2 課本習題 <span class="pg-tag">課本 p.90–92</span></h3>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-3">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-3 · p.90</span></div>
+    <h4>多久穿過一條仰角 $\beta$ 的直線</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>拋體從座標原點以初速 $v_0$、仰角 $\alpha$ 射出。另有一條通過原點、與水平夾角 $\beta\lt \alpha$ 的直線。求拋體穿過這條直線所需的時間。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：拋體從原點以初速 $v_0$、仰角 $\alpha$ 射出，不計空氣阻力，$x=v_0\cos\alpha\,t$、$y=v_0\sin\alpha\,t-\tfrac12gt^2$；直線過原點、與水平夾 $\beta\lt\alpha$：$y=x\tan\beta$。</p>
+<p><strong>① 代入直線方程式：</strong> 「穿過直線」就是拋體座標剛好滿足 $y=x\tan\beta$，左邊放拋體的 $y(t)$、右邊放 $x(t)\tan\beta$。</p>
+<p class="fnote"><b>公式（拋體運動，例題 2.6）：</b>$x=v_0\cos\alpha\,t$，$y=v_0\sin\alpha\,t-\tfrac12gt^2$，其中 $v_0$ 為初速、$\alpha$ 為仰角、$g$ 為重力加速度、$t$ 為時間；本題從原點出發。</p>
+<div class="math-block">$$v_0\sin\alpha\,t-\tfrac12gt^2=v_0\cos\alpha\,t\tan\beta$$</div>
+<p><strong>② 除以 $t$，解出時間：</strong> $t=0$ 是出發點，排除後兩邊除以 $t$，再把 $\tfrac12gt$ 移到一邊：</p>
+<div class="math-block">$$v_0\sin\alpha-v_0\cos\alpha\tan\beta=\tfrac12gt\ \Longrightarrow\ t=\frac{2v_0(\sin\alpha-\cos\alpha\tan\beta)}{g}$$</div>
+<p><strong>③ 用差角公式化簡：</strong> $\tan\beta=\sin\beta/\cos\beta$，括號通分，分子是 $\sin(\alpha-\beta)$：</p>
+<div class="math-block">$$\sin\alpha-\cos\alpha\frac{\sin\beta}{\cos\beta}=\frac{\sin\alpha\cos\beta-\cos\alpha\sin\beta}{\cos\beta}=\frac{\sin(\alpha-\beta)}{\cos\beta}$$</div>
+<p>$\beta\lt\alpha$ 保證 $\sin(\alpha-\beta)\gt0$，時間為正。</p>
+<div class="math-block">$$\boxed{t=\frac{2v_0\sin(\alpha-\beta)}{g\cos\beta}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-8">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-8 · p.91</span></div>
+    <h4>最大射程時，高度 $h$ 的兩點相距多遠</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>以初速 $v_0$ 發射的拋體，會通過兩個高度都是 $h$ 的點。證明若砲的仰角調成最大射程，這兩點的距離為 $d=\dfrac{v_0}{g}\sqrt{v_0^2-4gh}$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：初速 $v_0$，不計空氣阻力；兩點高度都是 $h$（上升、下降各一次）；「最大射程」即 $\theta=45^\circ$（例題 2.6）。</p>
+<p><strong>① 軌跡方程式：</strong> 要的是兩點的水平距離，跟時間無關，先消去 $t$。由 $x=v_0\cos\theta\,t$ 得 $t=x/(v_0\cos\theta)$，代入 $y=v_0\sin\theta\,t-\tfrac12gt^2$。</p>
+<p class="fnote"><b>公式（拋體運動，例題 2.6）：</b>$x=v_0\cos\theta\,t$，$y=v_0\sin\theta\,t-\tfrac12gt^2$，其中 $v_0$ 為初速、$\theta$ 為仰角、$g$ 為重力加速度；本題 $\theta=45^\circ$。</p>
+<div class="math-block">$$y=x\tan\theta-\frac{gx^2}{2v_0^2\cos^2\theta}$$</div>
+<p>代入 $\theta=45^\circ$：$\tan45^\circ=1$、$\cos^245^\circ=\tfrac12$：</p>
+<div class="math-block">$$y=x-\frac{gx^2}{v_0^2}$$</div>
+<p><strong>② 令 $y=h$，解二次方程式：</strong> 兩邊乘 $v_0^2$、移項：</p>
+<div class="math-block">$$x-\frac{gx^2}{v_0^2}=h\ \Longrightarrow\ gx^2-v_0^2x+v_0^2h=0$$</div>
+<p>公式解：</p>
+<div class="math-block">$$x_\pm=\frac{v_0^2\pm\sqrt{v_0^4-4gv_0^2h}}{2g}$$</div>
+<p><strong>③ 兩根相減：</strong> $v_0^2/2g$ 抵消，剩兩倍根號項除以 $2g$；根號內提出 $v_0^2$：</p>
+<div class="math-block">$$d=x_+-x_-=\frac{\sqrt{v_0^4-4gv_0^2h}}{g}=\frac{\sqrt{v_0^2\left(v_0^2-4gh\right)}}{g}=\frac{v_0}g\sqrt{v_0^2-4gh}$$</div>
+<div class="math-block">$$\boxed{d=\frac{v_0}g\sqrt{v_0^2-4gh}\ \text{（得證）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-14">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-14 · p.92</span></div>
+    <h4>往山坡上射：落點、最佳仰角、最大射程</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-14">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>拋體以初速 $v_0$、仰角 $\alpha$ 向坡度 $\beta$ 的山坡上方射出（$\alpha>\beta$）。(a) 拋體落在山坡上多遠的地方？(b) 仰角 $\alpha$ 多少時這個距離最大？(c) 最大射程是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：初速 $v_0$、仰角 $\alpha$（對水平），坡度 $\beta$，$\alpha\gt\beta$；$d$ 為沿坡面量的距離，坡面上的點為 $(d\cos\beta,\,d\sin\beta)$；不計空氣阻力。</p>
+<h4>(a) 落點距離</h4>
+<p><strong>① 落點在軌跡上：</strong> 落點同時在拋物線軌跡和坡面直線上，把坡面上的點代入軌跡方程式解出 $d$。</p>
+<p class="fnote"><b>公式（拋體軌跡方程式，例題 2.6 消去 $t$）：</b>$y=x\tan\alpha-\dfrac{gx^2}{2v_0^2\cos^2\alpha}$，其中 $v_0$ 為初速、$\alpha$ 為仰角、$g$ 為重力加速度；本題 $x=d\cos\beta$、$y=d\sin\beta$。</p>
+<div class="math-block">$$d\sin\beta=d\cos\beta\tan\alpha-\frac{g\,d^2\cos^2\beta}{2v_0^2\cos^2\alpha}$$</div>
+<p><strong>② 除以 $d$，解出 $d$：</strong> $d=0$ 是出發點；除以 $d$ 後把含 $d$ 的項單獨留在一邊：</p>
+<div class="math-block">$$\frac{g\,d\cos^2\beta}{2v_0^2\cos^2\alpha}=\cos\beta\tan\alpha-\sin\beta$$</div>
+<p>右邊通分：$\dfrac{\sin\alpha\cos\beta-\cos\alpha\sin\beta}{\cos\alpha}=\dfrac{\sin(\alpha-\beta)}{\cos\alpha}$。兩邊乘 $\dfrac{2v_0^2\cos^2\alpha}{g\cos^2\beta}$：</p>
+<div class="math-block">$$\boxed{d=\frac{2v_0^2\cos\alpha\,\sin(\alpha-\beta)}{g\cos^2\beta}}$$</div>
+<h4>(b) 最佳仰角</h4>
+<p><strong>① 對 $\alpha$ 求極值：</strong> 只有 $\cos\alpha\sin(\alpha-\beta)$ 和 $\alpha$ 有關；乘積法則微分，再用 $\cos A\cos B-\sin A\sin B=\cos(A+B)$ 合成一個 $\cos$。</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm d}{\mathrm d\alpha}\big[\cos\alpha\sin(\alpha-\beta)\big]&amp;=-\sin\alpha\sin(\alpha-\beta)+\cos\alpha\cos(\alpha-\beta)\\&amp;=\cos(2\alpha-\beta)\end{aligned}$$</div>
+<p>令它為零：$2\alpha-\beta=\pi/2$，</p>
+<div class="math-block">$$\boxed{\alpha=\frac\pi4+\frac\beta2}$$</div>
+<h4>(c) 最大射程</h4>
+<p><strong>① 積化和差：</strong> 取 $A=\alpha$、$B=\alpha-\beta$，用 $2\cos A\sin B=\sin(A+B)-\sin(A-B)$：</p>
+<div class="math-block">$$2\cos\alpha\sin(\alpha-\beta)=\sin(2\alpha-\beta)-\sin\beta$$</div>
+<p><strong>② 代回：</strong> 最佳仰角時 $2\alpha-\beta=\pi/2$（(b) 的結果），$\sin(2\alpha-\beta)=1$；分母 $\cos^2\beta=(1-\sin\beta)(1+\sin\beta)$：</p>
+<div class="math-block">$$\begin{aligned}d_{\max}&amp;=\frac{v_0^2(1-\sin\beta)}{g\cos^2\beta}=\frac{v_0^2(1-\sin\beta)}{g(1-\sin\beta)(1+\sin\beta)}\\&amp;=\frac{v_0^2}{g(1+\sin\beta)}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{d_{\max}=\frac{v_0^2}{g(1+\sin\beta)}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-19">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-19 · p.92</span></div>
+    <h4>離出發點的距離一直增加：仰角最大多少</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-19">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-19"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>If a projectile moves such that its distance from the point of projection is always increasing, find the maximum angle above the horizontal with which the particle could have been projected. (Assume no air resistance.)</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-19 · p.92</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>若拋體離出發點的距離始終在增加，它被射出時的仰角最大可以是多少？（不計空氣阻力）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：初速 $v_0$、仰角 $\theta$，不計空氣阻力；條件為距離 $r(t)$ 對所有 $t\gt0$ 遞增；由例題 2.6，$r^2=v_0^2t^2-v_0gt^3\sin\theta+\tfrac14g^2t^4$。</p>
+<p><strong>① $r^2$ 的導數：</strong> 「距離一直增加」就是 $\mathrm dr/\mathrm dt\gt0$，而 $\mathrm d(r^2)/\mathrm dt=2r\,\mathrm dr/\mathrm dt$ 和它同號，改看 $r^2$ 的導數避開根號。逐項對 $t$ 微分，再提出 $t$：</p>
+<div class="math-block">$$\frac{\mathrm d(r^2)}{\mathrm dt}=2v_0^2t-3v_0gt^2\sin\theta+g^2t^3=t\left(g^2t^2-3v_0g\sin\theta\,t+2v_0^2\right)$$</div>
+<p>$t\gt0$，所以 $r$ 一直增加 ⟺ 括號對所有 $t\gt0$ 都大於零。</p>
+<p><strong>② 什麼時候括號會變負：</strong> 括號是 $t$ 的二次式，開口向上（$g^2\gt0$）。若它有兩個實根，根的和 $3v_0\sin\theta/g\gt0$、積 $2v_0^2/g^2\gt0$，兩根都是正的；在兩根之間的 $t\gt0$ 它就是負的，距離會先減少一段。所以必須沒有實根：判別式 $\lt0$。</p>
+<p><strong>③ 判別式小於零：</strong> 判別式 $b^2-4ac$，代入 $a=g^2$、$b=-3v_0g\sin\theta$、$c=2v_0^2$：</p>
+<div class="math-block">$$9v_0^2g^2\sin^2\theta-8g^2v_0^2\lt 0\ \Longrightarrow\ \sin^2\theta\lt\frac89$$</div>
+<div class="math-block">$$\sin\theta\lt \sqrt{\frac89}=0.943\ \Longrightarrow\ \theta\lt 70.5^\circ$$</div>
+<div class="math-block">$$\boxed{\theta_{\max}=\sin^{-1}\sqrt{8/9}\approx70.5^\circ}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-5">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-5 · p.90</span></div>
+    <h4>戰機俯衝拉起：最大加速度在哪、最小半徑多少</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>戰機飛行員知道自己最多承受 $9g$ 的加速度才不會昏厥。他以 3 馬赫的速度垂直向下俯衝，打算在撞地之前以圓周運動拉起。(a) 拉起的過程中，最大加速度出現在哪裡？(b) 他能採取的最小半徑是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：承受上限 $N/m\le9g$（飛行員感覺到的是座椅支撐力 $N$ 除以 $m$）；速率 $v=3\times330\ \text{m/s}=990\ \text{m/s}$（音速取 $330\ \text{m/s}$），拉起過程速率不變；從垂直向下轉成水平，走半徑 $R$ 的圓弧；$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 最大加速度的位置</h4>
+<p><strong>① 任一位置的徑向方程式：</strong> 飛行員感覺到的加速度來自座椅的力 $N$，所以要找 $N/m$ 最大處，而不是處處相同的 $v^2/R$；速率固定走圓弧，對飛行員寫指向圓心的 $F=ma$。設飛行員與圓心的連線和鉛直線夾 $\phi$（最低點 $\phi=0$；剛開始拉起、還在鉛直俯衝時 $\phi=90^\circ$），重力沿背離圓心方向的分量是 $mg\cos\phi$。</p>
+<p class="fnote"><b>公式（等速圓周運動的徑向第二定律）：</b>$\sum F_{\text{向心}}=\dfrac{mv^2}{R}$，其中 $m$ 為質量、$v$ 為速率、$R$ 為半徑；本題向心方向的合力為 $N-mg\cos\phi$。</p>
+<div class="math-block">$$N-mg\cos\phi=\frac{mv^2}{R}\ \Longrightarrow\ N=m\left(\frac{v^2}{R}+g\cos\phi\right)$$</div>
+<p>$v$、$R$ 固定，$N$ 只隨 $\cos\phi$ 變；$\cos\phi$ 在最低點 $\phi=0$ 時最大。</p>
+<p><strong>② 最低點的視加速度：</strong></p>
+<div class="math-block">$$\left.\frac Nm\right|_{\max}=\frac{v^2}R+g$$</div>
+<div class="math-block">$$\boxed{\text{在拉起圓弧的最低點（飛機剛轉成水平的那一刻）}}$$</div>
+<h4>(b) 最小半徑</h4>
+<p><strong>① 限制 $N/m\le9g$：</strong> 移項後兩邊乘 $R/(8g)$：</p>
+<div class="math-block">$$\frac{v^2}{R}+g\le9g\ \Longrightarrow\ \frac{v^2}{R}\le8g\ \Longrightarrow\ R\ge\frac{v^2}{8g}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $v=990\ \text{m/s}$、$g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$R_{\min}=\frac{(990\ \text{m/s})^2}{8(9.8\ \text{m/s}^2)}=\frac{9.80\times10^5}{78.4}\ \text{m}=1.25\times10^{4}\ \text{m}$$</div>
+<div class="math-block">$$\boxed{R_{\min}=\frac{v^2}{8g}\approx12.5\ \text{km}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">「射程最大在 $45^\circ$」只限同一水平面</span>
+  <p>落點比出發點高或低（山坡、懸崖、2-14）時最佳角度會改變。遇到不同高度一律重做：寫出落點條件，再對角度求極值。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-4">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-4 · p.90</span></div>
+    <h4>小丑同時丟四顆球：每顆至少要以多快往上丟</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-4"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A clown is juggling four balls simultaneously. Students use a video tape to determine that it takes the clown 0.9 s to cycle each ball through his hands (including catching, transferring, and throwing) and to be ready to catch the next ball. What is the minimum vertical speed the clown must throw up each ball?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>小丑同時拋接四顆球。學生用錄影判斷：每顆球在他手中「接、換手、拋出」一輪，並準備好接下一顆，要花 $0.9\ \text{s}$。小丑每顆球至少要以多大的鉛直速度往上拋？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：4 顆球輪流拋接，每顆在手上（接、換手、拋出）佔 $0.9\ \text{s}$；鉛直上拋並落回手的高度；不計空氣阻力，$g=9.8\ \text{m/s}^2$；「至少」表示空中時間取剛好夠排班的最短值。</p>
+<p><strong>① 每顆球的空中時間：</strong> 這題難在排班：手一次只處理一顆，一顆球拋出後，要等另外三顆各處理完才輪到它被接，這段時間它必須在空中。代入「每顆 $0.9\ \text{s}$」「四顆」：同一顆球每 $4\times0.9=3.6\ \text{s}$ 回到手上一次，其中 $0.9\ \text{s}$ 在手上：</p>
+<div class="math-block">$$t_{\text{空中}}=3.6\ \text{s}-0.9\ \text{s}=3(0.9\ \text{s})=2.7\ \text{s}$$</div>
+<p><strong>② 需要的初速：</strong> 上拋又落回同一高度，上升和下降時間相等；令空中時間等於排班要求的時間。</p>
+<p class="fnote"><b>公式（鉛直上拋）：</b>$v=v_0-gt$，其中 $v_0$ 為上拋初速、$g$ 為重力加速度、$t$ 為時間；上升到最高點（$v=0$）要 $v_0/g$，落回同一高度再花 $v_0/g$。</p>
+<div class="math-block">$$t_{\text{空中}}=\frac{2v_0}g\ \Longrightarrow\ v_0=\frac{g\,t_{\text{空中}}}{2}$$</div>
+<p>代入上一步的 $t_{\text{空中}}=2.7\ \text{s}$、$g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$v_0=\frac{(9.8\ \text{m/s}^2)(2.7\ \text{s})}{2}=13.2\ \text{m/s}$$</div>
+<p><strong>③ 對應的拋高：</strong> 最高點速度為零。</p>
+<p class="fnote"><b>公式（等加速度的速度–位移關係）：</b>$v^2=v_0^2-2gH$，其中 $v$ 為末速、$H$ 為上升高度；本題最高點 $v=0$。</p>
+<div class="math-block">$$H=\frac{v_0^2}{2g}=\frac{(13.2\ \text{m/s})^2}{2(9.8\ \text{m/s}^2)}=8.9\ \text{m}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}v_0\ge13.2\ \text{m/s}\\ \text{（空中 }2.7\ \text{s，升高約 }8.9\ \text{m）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-6">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-6 · p.91</span></div>
+    <h4>飛機空投乾草：在哪裡推出去、時間能差多少</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In the blizzard of ’88, a rancher was forced to drop hay bales from an airplane to feed her cattle. The plane flew horizontally at 160 km/hr and dropped the bales from a height of 80 m above the flat range. <strong>(a)</strong> She wanted the bales of hay to land 30 m behind the cattle so as to not hit them. Where should she push the bales out of the airplane? <strong>(b)</strong> To not hit the cattle, what is the largest time error she could make while pushing the bales out of the airplane? Ignore air resistance.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>1988 年的暴風雪中，一位牧場主人必須從飛機上空投乾草捆餵牛。飛機以 $160\ \text{km/h}$ 水平飛行，在平坦草原上方 $80\ \text{m}$ 投下草捆。(a) 她希望草捆落在牛群後方（飛機飛來的那一側）$30\ \text{m}$，以免砸到牛。應該在什麼位置把草捆推出去？(b) 為了不砸到牛，推出的時間最多能誤差多少？忽略空氣阻力。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：飛機水平速度 $v=160\ \text{km/h}$，也是草捆離手時的水平速度；水平飛行所以鉛直初速 $v_{y0}=0$；落下高度 $h=80\ \text{m}$，地面平坦；落點要在牛群「飛機飛來的那一側」$d=30\ \text{m}$；$g=9.8\ \text{m/s}^2$，不計空氣阻力。</p>
+<h4>(a) 推出的位置</h4>
+<p><strong>① 先把速度換成 m/s：</strong> 離手後只受鉛直向下的重力，所以拆成水平等速、鉛直自由落體兩個獨立方向來算；高度用公尺、$g$ 用 m/s²，速度也要換成 m/s。$1\ \text{km}=1000\ \text{m}$、$1\ \text{h}=3600\ \text{s}$：</p>
+<div class="math-block">$$v=160\ \frac{\text{km}}{\text{h}}=\frac{160\times1000\ \text{m}}{3600\ \text{s}}=44.4\ \text{m/s}$$</div>
+<p><strong>② 鉛直方向：落地要幾秒：</strong> 鉛直初速為零，是單純的自由落體，落地時間只由高度決定，和飛機多快無關。</p>
+<p class="fnote"><b>公式（等加速度位移）：</b>$\Delta y=v_{y0}t+\tfrac12gt^2$，其中 $v_{y0}$ 為鉛直初速、$g$ 為重力加速度、$t$ 為時間；本題 $v_{y0}=0$、$\Delta y=h$。</p>
+<div class="math-block">$$h=\tfrac12gt^2\quad\Longrightarrow\quad t=\sqrt{\frac{2h}{g}}$$</div>
+<p>代入 $h=80\ \text{m}$、$g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$t=\sqrt{\frac{2\times80\ \text{m}}{9.8\ \text{m/s}^2}}=\sqrt{16.33\ \text{s}^2}=4.04\ \text{s}$$</div>
+<p><strong>③ 水平方向：這 4.04 s 裡往前飛多遠：</strong> 水平方向不受力，速度一直是離手時的 $v$。代入 ① 的 $v=44.4\ \text{m/s}$、② 的 $t=4.04\ \text{s}$：</p>
+<div class="math-block">$$x=vt=44.4\ \text{m/s}\times4.04\ \text{s}=179.6\ \text{m}$$</div>
+<p>草捆從離手到落地一路往前跑 $179.6\ \text{m}$，落地瞬間飛機正好在它正上方（兩者水平速度相同）。</p>
+<p><strong>④ 推出點：</strong> 設牛群在 $x=0$、飛機往 $+x$ 飛來，落點要在 $x=-30\ \text{m}$；草捆離手後還會往前飛 $179.6\ \text{m}$，所以要在落點再往後 $179.6\ \text{m}$ 推出：</p>
+<div class="math-block">$$x_{\text{推出}}=x_{\text{落點}}-x=-30\ \text{m}-179.6\ \text{m}=-209.6\ \text{m}$$</div>
+<p>負號表示在牛群前方（飛機還沒飛到牛群上空）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{飛到牛群上空之前、離牛群水平}\\ 179.6+30=209.6\approx210\ \text{m}\text{ 處推出}\end{gathered}}$$</div>
+<h4>(b) 推出時間最多能晚多少</h4>
+<p><strong>① 晚推出的影響：</strong> 晚了 $\Delta t$ 才推出，飛機又往前飛了 $v\Delta t$，推出點和落點都往前移 $v\Delta t$；落點原本在牛群前 $30\ \text{m}$，往前移超過 $30\ \text{m}$ 就會砸到牛。提早推出只會落得離牛更遠，所以只有「晚」有限制。</p>
+<div class="math-block">$$v\,\Delta t\le d\quad\Longrightarrow\quad\Delta t\le\frac{d}{v}$$</div>
+<p>代入 $d=30\ \text{m}$、(a) 的 $v=44.4\ \text{m/s}$：</p>
+<div class="math-block">$$\boxed{\Delta t_{\max}=\frac{30\ \text{m}}{44.4\ \text{m/s}}=0.68\ \text{s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-17">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-17 · p.92</span></div>
+    <h4>壘球要多快才飛得過中外野的牆</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-17">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-17"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A strong softball player smacks the ball at a height of 0.7 m above home plate. The ball leaves the player’s bat at an elevation angle of 35° and travels toward a fence 2 m high and 60 m away in center field. What must the initial speed of the softball be to clear the center field fence? Ignore air resistance.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>強打者在本壘板上方 $0.7\ \text{m}$ 處擊中壘球，球以仰角 $35^\circ$ 飛出，朝向中外野一道高 $2\ \text{m}$、距離 $60\ \text{m}$ 的牆。壘球的初速至少要多大才能飛過牆？忽略空氣阻力。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：擊球高度 $y_0=0.7\ \text{m}$，仰角 $\theta=35^\circ$；牆在 $x=60\ \text{m}$、高 $2\ \text{m}$，飛過牆 ⟺ $x=60\ \text{m}$ 時 $y\ge2\ \text{m}$；不計空氣阻力，$g=9.8\ \text{m/s}^2$；求最小初速 $v_0$。</p>
+<p><strong>① 軌跡方程式（出發點高 $y_0$）：</strong> 條件是「在給定 $x$ 處的高度」，和時間無關，所以消去 $t$ 得 $y(x)$；初速越大同一 $x$ 處越高，「至少多快」就是令 $y(60)=2\ \text{m}$ 剛好擦過牆。</p>
+<p class="fnote"><b>公式（無阻力拋體運動）：</b>$x=v_0\cos\theta\,t$，$y=y_0+v_0\sin\theta\,t-\tfrac12gt^2$，其中 $v_0$ 為初速、$\theta$ 為仰角、$y_0$ 為出發高度、$g$ 為重力加速度。</p>
+<p>由 $x$ 式得 $t=x/(v_0\cos\theta)$，代入 $y$ 式：</p>
+<div class="math-block">$$y=y_0+x\tan\theta-\frac{gx^2}{2v_0^2\cos^2\theta}$$</div>
+<p><strong>② 代入牆的位置，把 $v_0^2$ 單獨留下：</strong> 代入 $y=2\ \text{m}$、$y_0=0.7\ \text{m}$、$x=60\ \text{m}$、$\theta=35^\circ$：</p>
+<div class="math-block">$$2=0.7+60\tan35^\circ-\frac{9.8(60)^2}{2v_0^2\cos^235^\circ}$$</div>
+<p>把重力那一項移到左邊，其他移到右邊：</p>
+<div class="math-block">$$\begin{aligned}\frac{9.8(3600)}{2v_0^2\cos^235^\circ}&amp;=0.7+60\tan35^\circ-2\\ \Longrightarrow\ v_0^2&amp;=\frac{9.8(3600)}{2\cos^235^\circ\,(60\tan35^\circ-1.3)}\end{aligned}$$</div>
+<p><strong>③ 代入三角函數值：</strong> $\tan35^\circ=0.7002$，$60\tan35^\circ-1.3=42.01-1.3=40.71\ \text{m}$；$\cos^235^\circ=0.6710$：</p>
+<div class="math-block">$$v_0^2=\frac{35\,280}{2(0.6710)(40.71)}\ \text{m}^2/\text{s}^2=645.7\ \text{m}^2/\text{s}^2$$</div>
+<div class="math-block">$$\boxed{v_0=25.4\ \text{m/s}\ (\approx91\ \text{km/h})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-36">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-36 · p.95</span></div>
+    <h4>懸崖上的砲：射程對仰角的函數與最大射程</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-36">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-36"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A gun is located on a bluff of height $h$ overlooking a river valley. If the muzzle velocity is $v_0$, find the expression for the range as a function of the elevation angle of the gun. Solve numerically for the maximum range out into the valley for a given $h$ and $v_0$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一門砲架在高 $h$ 的懸崖上，俯瞰河谷。砲口速率 $v_0$，求射程（落到谷底時的水平距離）對仰角的函數；並對給定的 $h$、$v_0$ 用數值方法求打進河谷的最大射程。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：崖高 $h$，砲口取 $y=0$、谷底 $y=-h$；砲口速率 $v_0$，仰角 $\theta$（自變數）；射程 $R$ 為落到 $y=-h$ 時的水平距離；不計空氣阻力，$g=9.8\ \text{m/s}^2$；數值例由網站自取 $(v_0,h)=(100,100)$、$(50,100)$、$(30,200)$（m/s、m）。</p>
+<p><strong>① 落到 $y=-h$ 的時間：</strong> 運動還是無阻力拋體，只是落地條件從 $y=0$ 改成 $y=-h$，所以飛行時間 $T$ 是二次方程式的正根。</p>
+<p class="fnote"><b>公式（無阻力拋體運動）：</b>$x=v_0\cos\theta\,t$，$y=v_0\sin\theta\,t-\tfrac12gt^2$，其中 $v_0$ 為初速、$\theta$ 為仰角、$g$ 為重力加速度、$t$ 為時間。</p>
+<p>令 $y(T)=-h$，整理成標準的二次方程式：</p>
+<div class="math-block">$$-h=v_0\sin\theta\,T-\tfrac12gT^2\ \Longrightarrow\ \tfrac12gT^2-v_0\sin\theta\,T-h=0$$</div>
+<p>兩根之積 $=-2h/g\lt0$，一正一負；負根是「發射前」，不合。取正根：</p>
+<div class="math-block">$$T=\frac{v_0\sin\theta+\sqrt{v_0^2\sin^2\theta+2gh}}{g}$$</div>
+<p><strong>② 射程 $R(\theta)$：</strong> 水平等速，把 $T$ 代入 $x=v_0\cos\theta\,t$：</p>
+<div class="math-block">$$\boxed{R(\theta)=\frac{v_0\cos\theta}{g}\left[v_0\sin\theta+\sqrt{v_0^2\sin^2\theta+2gh}\right]}$$</div>
+<p><strong>③ 數值最大化：</strong> $R(\theta)$ 含根號，$R'(\theta)=0$ 很繁，題目也指定數值解，所以對 $\theta\in(0,\pi/2)$ 掃描（或用黃金分割搜尋）找 $R$ 的最大值：</p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>$v_0$ (m/s)</th>
+<th>$h$ (m)</th>
+<th>最佳仰角</th>
+<th>$R_{\max}$ (m)</th>
+<th>平地射程 $v_0^2/g$ (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>100</td>
+<td>$42.4^\circ$</td>
+<td>1116</td>
+<td>1020</td>
+</tr>
+<tr>
+<td>50</td>
+<td>100</td>
+<td>$36.8^\circ$</td>
+<td>341</td>
+<td>255</td>
+</tr>
+<tr>
+<td>30</td>
+<td>200</td>
+<td>$23.4^\circ$</td>
+<td>213</td>
+<td>92</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>④ 解析對照：</strong> 自編難題 c2-self-08a (c) 由安全拋物線得到：</p>
+<div class="math-block">$$\sin\theta^*=\frac{v_0}{\sqrt{2(v_0^2+gh)}},\qquad R_{\max}=\frac{v_0}g\sqrt{v_0^2+2gh}$$</div>
+<p>例如代入 $v_0=100\ \text{m/s}$、$h=100\ \text{m}$：</p>
+<div class="math-block">$$\sin\theta^*=\frac{100}{\sqrt{2(10\,000+980)}}=0.6748,\qquad\theta^*=42.4^\circ$$</div>
+<div class="math-block">$$R_{\max}=\frac{100}{9.8}\sqrt{10\,000+1960}=1116\ \text{m}$$</div>
+<p>上表三組數值都和這兩個式子吻合到四位有效數字；崖越高，最佳仰角越低（小於 $45^\circ$）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}R_{\max}=\frac{v_0}g\sqrt{v_0^2+2gh},\quad\sin\theta^*=\frac{v_0}{\sqrt{2(v_0^2+gh)}}\\ v_0=100\ \text{m/s},\ h=100\ \text{m}:\ \theta^*=42.4^\circ,\ R_{\max}=1116\ \text{m}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-40">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-40 · p.96</span></div>
+    <h4>擺線形軌道的切向與法向加速度</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-40">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-40"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A particle moves in a two-dimensional orbit defined by</p>$$x(t) = A(2\alpha t - \sin\alpha t)$$$$y(t) = A(1 - \cos\alpha t)$$<p><strong>(a)</strong> Find the tangential acceleration $a_t$ and normal acceleration $a_n$ as a function of time where the tangential and normal components are taken with respect to the velocity.<br><strong>(b)</strong> Determine at what times in the orbit $a_n$ has a maximum.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-40 · p.96</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點在平面上沿 $x(t)=A(2\alpha t-\sin\alpha t)$、$y(t)=A(1-\cos\alpha t)$ 運動。(a) 求切向加速度 $a_t$ 與法向加速度 $a_n$（相對於速度方向）隨時間的函數。(b) 在軌道上哪些時刻 $a_n$ 最大？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：軌道 $x=A(2\alpha t-\sin\alpha t)$、$y=A(1-\cos\alpha t)$，取 $A\gt0$、$\alpha\gt0$；切向、法向都相對於速度方向。</p>
+<h4>(a) 切向與法向加速度</h4>
+<p><strong>① 速度與速率：</strong> 軌道已給成 $x(t)$、$y(t)$，直接微分兩次得速度、加速度的直角分量。對 $t$ 微分（連鎖律帶出 $\alpha$）：</p>
+<div class="math-block">$$\dot x=A\alpha(2-\cos\alpha t),\qquad\dot y=A\alpha\sin\alpha t$$</div>
+<p>速率平方展開，用 $\cos^2+\sin^2=1$：</p>
+<div class="math-block">$$\begin{aligned}v^2&amp;=A^2\alpha^2\left[(2-\cos\alpha t)^2+\sin^2\alpha t\right]\\&amp;=A^2\alpha^2(5-4\cos\alpha t)\end{aligned}$$</div>
+<div class="math-block">$$v=A\alpha\sqrt{5-4\cos\alpha t}$$</div>
+<p><strong>② 加速度：大小是常數：</strong> 再微分一次。</p>
+<div class="math-block">$$\ddot x=A\alpha^2\sin\alpha t,\qquad\ddot y=A\alpha^2\cos\alpha t$$</div>
+<div class="math-block">$$|\vec a|=A\alpha^2\sqrt{\sin^2\alpha t+\cos^2\alpha t}=A\alpha^2$$</div>
+<p><strong>③ 切向加速度：</strong> 切向加速度是速率的變化率。</p>
+<p class="fnote"><b>公式（切向加速度）：</b>$a_t=\dfrac{\mathrm dv}{\mathrm dt}$，其中 $v=|\vec v|$ 為速率。</p>
+<p>對 $v=A\alpha(5-4\cos\alpha t)^{1/2}$ 微分，內層 $\frac{\mathrm d}{\mathrm dt}(5-4\cos\alpha t)=4\alpha\sin\alpha t$：</p>
+<div class="math-block">$$a_t=\frac{\mathrm dv}{\mathrm dt}=A\alpha\cdot\frac{4\alpha\sin\alpha t}{2\sqrt{5-4\cos\alpha t}}=\frac{2A\alpha^2\sin\alpha t}{\sqrt{5-4\cos\alpha t}}$$</div>
+<p><strong>④ 法向加速度：</strong> 法向加速度是 $\vec a$ 垂直 $\vec v$ 的分量，用二維外積除以 $v$。</p>
+<p class="fnote"><b>公式（法向加速度）：</b>$a_n=\dfrac{|\vec v\times\vec a|}{v}=\dfrac{|\dot x\ddot y-\dot y\ddot x|}{v}$，其中 $\dot x,\dot y$ 為速度分量、$\ddot x,\ddot y$ 為加速度分量；因為 $|\vec v\times\vec a|=va\sin(\text{夾角})=v\,a_n$。</p>
+<p>先算外積，括號裡 $-\cos^2-\sin^2=-1$：</p>
+<div class="math-block">$$\begin{aligned}\dot x\ddot y-\dot y\ddot x&amp;=A^2\alpha^3\left[(2-\cos\alpha t)\cos\alpha t-\sin^2\alpha t\right]\\&amp;=A^2\alpha^3(2\cos\alpha t-1)\end{aligned}$$</div>
+<p>除以 $v$：</p>
+<div class="math-block">$$a_n=\frac{A^2\alpha^3(2\cos\alpha t-1)}{A\alpha\sqrt{5-4\cos\alpha t}}=\frac{A\alpha^2(2\cos\alpha t-1)}{\sqrt{5-4\cos\alpha t}}$$</div>
+<p>正負號表示轉向，大小取絕對值。</p>
+<div class="math-block">$$\boxed{\begin{gathered}a_t=\frac{2A\alpha^2\sin\alpha t}{\sqrt{5-4\cos\alpha t}}\\ a_n=\frac{A\alpha^2|2\cos\alpha t-1|}{\sqrt{5-4\cos\alpha t}}\end{gathered}}$$</div>
+<h4>(b) $a_n$ 最大的時刻</h4>
+<p><strong>① 寫成 $\cos\alpha t$ 的函數找最大值：</strong> 令 $c=\cos\alpha t\in[-1,1]$，$a_n^2=A^2\alpha^4f(c)$，$f(c)=\dfrac{(2c-1)^2}{5-4c}$。用商的微分法則：</p>
+<div class="math-block">$$f'(c)=\frac{4(2c-1)(5-4c)+4(2c-1)^2}{(5-4c)^2}=\frac{4(2c-1)(4-2c)}{(5-4c)^2}$$</div>
+<p>$4-2c\gt0$，所以 $f'$ 的正負由 $2c-1$ 決定：$c=\tfrac12$ 是最小值（$a_n=0$，軌道的反曲點）；$c\gt\tfrac12$ 時遞增、$c\lt\tfrac12$ 時遞減，最大值在端點：</p>
+<div class="math-block">$$f(1)=\frac11=1,\qquad f(-1)=\frac99=1\ \Longrightarrow\ |a_n|_{\max}=A\alpha^2$$</div>
+<p>這時 $\sin\alpha t=0$，$a_t=0$，整個加速度都是法向的：</p>
+<div class="math-block">$$\cos\alpha t=\pm1\ \Longrightarrow\ t=\frac{n\pi}{\alpha},\quad n=0,1,2,\dots$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}t=\frac{n\pi}{\alpha}\text{ 時 }a_n\text{ 最大，}a_n=A\alpha^2\\ \text{（軌道最低點 }y=0\text{ 與最高點 }y=2A\text{）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-08a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>安全拋物線：速率 $v_0$ 打得到哪些點</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-08a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>從原點以固定速率 $v_0$、任意仰角拋出物體（無空氣阻力）。(a) 證明它能到達的點 $(x,y)$ 恰好是滿足 $y\le\dfrac{v_0^2}{2g}-\dfrac{gx^2}{2v_0^2}$ 的區域（邊界叫「安全拋物線」）。(b) $v_0=20\ \text{m/s}$，能不能打中 $(30\ \text{m},8\ \text{m})$ 的窗戶？能的話，兩個仰角各是多少？(c) 用 (a) 一步求出習題 2-36 懸崖上的最大射程。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：從原點以固定速率 $v_0$、任意仰角 $\theta$ 拋出，不計空氣阻力，$g=9.8\ \text{m/s}^2$；(b) $v_0=20\ \text{m/s}$，目標 $(30\ \text{m},8\ \text{m})$；(c) 谷底 $y=-h$，砲在崖頂原點。</p>
+<h4>(a) 證明可達區域是 $y\le\dfrac{v_0^2}{2g}-\dfrac{gx^2}{2v_0^2}$</h4>
+<p><strong>① 軌跡寫成 $u=\tan\theta$ 的二次式：</strong> 把目標點 $(x,y)$ 固定、仰角當未知數；用 $1/\cos^2\theta=1+\tan^2\theta$，令 $u=\tan\theta$ 後軌跡變成 $u$ 的二次式，「有沒有仰角打得到」就是「判別式是否 $\ge0$」。</p>
+<p class="fnote"><b>公式（無阻力拋體軌跡）：</b>$y=x\tan\theta-\dfrac{gx^2}{2v_0^2\cos^2\theta}$，其中 $v_0$ 為初速、$\theta$ 為仰角、$g$ 為重力加速度。</p>
+<p>用 $\dfrac1{\cos^2\theta}=1+u^2$：</p>
+<div class="math-block">$$y=xu-\frac{gx^2}{2v_0^2}(1+u^2)$$</div>
+<p>全部移到一邊，按 $u$ 的次方排：</p>
+<div class="math-block">$$\frac{gx^2}{2v_0^2}u^2-xu+\left(y+\frac{gx^2}{2v_0^2}\right)=0$$</div>
+<p><strong>② 判別式 $\ge0$：</strong> 有實數仰角 ⟺ 判別式非負。</p>
+<p class="fnote"><b>公式（二次方程式有實根的條件）：</b>$au^2+bu+c=0$ 有實根 ⟺ $\Delta=b^2-4ac\ge0$，其中 $a,b,c$ 為係數；本題 $a=\dfrac{gx^2}{2v_0^2}$、$b=-x$、$c=y+\dfrac{gx^2}{2v_0^2}$。</p>
+<div class="math-block">$$\Delta=x^2-4\cdot\frac{gx^2}{2v_0^2}\left(y+\frac{gx^2}{2v_0^2}\right)\ge0$$</div>
+<p>除以 $x^2$（$x\neq0$），再乘 $\dfrac{v_0^2}{2g}$ 整理：</p>
+<div class="math-block">$$1-\frac{2g}{v_0^2}\left(y+\frac{gx^2}{2v_0^2}\right)\ge0\ \Longleftrightarrow\ y\le\frac{v_0^2}{2g}-\frac{gx^2}{2v_0^2}$$</div>
+<p>邊界上 $\Delta=0$，每條軌跡和它只有一個交點（相切），所以邊界是所有軌跡的包絡線。判別式 $\gt0$ 有兩個仰角（高拋、低拋），$=0$ 只有一個。</p>
+<div class="math-block">$$\boxed{\text{可達區域：}y\le\frac{v_0^2}{2g}-\frac{gx^2}{2v_0^2}}$$</div>
+<h4>(b) 能否打中 $(30\ \text{m},8\ \text{m})$</h4>
+<p><strong>① 窗戶在可達區域內嗎：</strong> 代入 $v_0=20\ \text{m/s}$、$x=30\ \text{m}$、$g=9.8\ \text{m/s}^2$，算邊界在 $x=30$ 的高度：</p>
+<div class="math-block">$$\frac{v_0^2}{2g}-\frac{gx^2}{2v_0^2}=\frac{400}{19.6}-\frac{9.8(900)}{800}=20.41-11.03=9.38\ \text{m}\gt8\ \text{m}$$</div>
+<p>窗戶在邊界下方，打得到，而且有兩個仰角。</p>
+<p><strong>② 解出兩個仰角：</strong> 記 $a\equiv\dfrac{gx^2}{2v_0^2}=11.025\ \text{m}$（上一步），二次式是 $au^2-xu+(y+a)=0$。代入 $x=30$、$y=8$：$4a(y+a)=4(11.025)(19.025)=839.0$，</p>
+<div class="math-block">$$u=\frac{x\pm\sqrt{x^2-4a(y+a)}}{2a}=\frac{30\pm\sqrt{900-839.0}}{22.05}=\frac{30\pm7.81}{22.05}=1.715\ \text{或}\ 1.006$$</div>
+<div class="math-block">$$\theta=\tan^{-1}1.715=59.8^\circ\ \text{（高拋）}\quad\text{或}\quad\theta=\tan^{-1}1.006=45.2^\circ\ \text{（低拋）}$$</div>
+<div class="math-block">$$\boxed{\text{打得到，仰角 }59.8^\circ\text{ 或 }45.2^\circ}$$</div>
+<h4>(c) 懸崖上的最大射程</h4>
+<p><strong>① 安全拋物線與 $y=-h$ 的交點：</strong> 最遠的落點一定在可達區域的邊界上，所以邊界和谷底 $y=-h$ 的交點就是最大射程：</p>
+<div class="math-block">$$-h=\frac{v_0^2}{2g}-\frac{gx^2}{2v_0^2}\ \Longrightarrow\ x^2=\frac{v_0^2}{g^2}\left(v_0^2+2gh\right)\ \Longrightarrow\ x_{\max}=\frac{v_0}{g}\sqrt{v_0^2+2gh}$$</div>
+<p>那一點 $\Delta=0$，只有一個仰角 $u=x/(2a)=v_0^2/(gx_{\max})$，即：</p>
+<div class="math-block">$$\tan\theta^*=\frac{v_0}{\sqrt{v_0^2+2gh}}$$</div>
+<div class="math-block">$$\boxed{R_{\max}=\frac{v_0}g\sqrt{v_0^2+2gh},\quad\tan\theta^*=\frac{v_0}{\sqrt{v_0^2+2gh}}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-08b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>獵人與猴子：瞄準就會中，連空氣阻力都不怕</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-08b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>猴子掛在水平距離 $D$、高 $H$ 的樹枝上。獵人把麻醉槍直接瞄準猴子，扣扳機的同一瞬間猴子鬆手落下。(a) 不計空氣阻力，證明飛鏢一定打中猴子（只要飛鏢在落地前到達）。(b) $D=20\ \text{m}$、$H=10\ \text{m}$，飛鏢初速至少要多大？(c) 若飛鏢和猴子都受同樣的線性阻力 $-km\vec v$（同一個 $k$），還會打中嗎？證明你的答案。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：猴子在水平距離 $D$、高 $H$ 處；直接瞄準，所以 $\tan\theta=H/D$；扣扳機同一瞬間猴子從靜止落下；飛鏢初速 $v_0$；(b) $D=20\ \text{m}$、$H=10\ \text{m}$，$g=9.8\ \text{m/s}^2$，落地前打中 ⟺ 猴子落下距離 $\le H$；(c) 兩者都受 $-km\vec v$（同一個 $k$）。</p>
+<div class="anim" data-anim="c2-hunter-monkey"></div>
+<h4>(a) 無阻力時必中</h4>
+<p><strong>① 飛鏢到 $x=D$ 時兩者等高：</strong> 兩者同時開始、受同樣的重力，比較飛鏢到達猴子那條鉛直線時兩者的高度：兩者都比「沒有重力時的位置」多掉了同樣的 $\tfrac12gt^2$。</p>
+<p class="fnote"><b>公式（無阻力拋體運動）：</b>$x=v_0\cos\theta\,t$，$y=v_0\sin\theta\,t-\tfrac12gt^2$，其中 $v_0$ 為初速、$\theta$ 為仰角、$g$ 為重力加速度；猴子自由落下 $y_{\text{猴}}=H-\tfrac12gt^2$。</p>
+<p>飛鏢到達 $x=D$ 的時刻 $t_1=D/(v_0\cos\theta)$，代入 $y$：</p>
+<div class="math-block">$$y_{\text{鏢}}(t_1)=v_0\sin\theta\cdot\frac{D}{v_0\cos\theta}-\tfrac12gt_1^2=D\tan\theta-\tfrac12gt_1^2$$</div>
+<p>代入瞄準條件 $\tan\theta=H/D$，得 $D\tan\theta=H$：</p>
+<div class="math-block">$$y_{\text{鏢}}(t_1)=H-\tfrac12gt_1^2=y_{\text{猴}}(t_1)$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}y_{\text{鏢}}(t_1)=y_{\text{猴}}(t_1)\text{：兩者都比各自的}\\ \text{「無重力位置」低 }\tfrac12gt^2\text{，必中}\end{gathered}}$$</div>
+<h4>(b) 落地前打中的最小初速</h4>
+<p><strong>① 猴子落下不能超過 $H$：</strong> $\cos\theta=D/\sqrt{D^2+H^2}$，所以 $t_1=\sqrt{D^2+H^2}/v_0$；猴子在 $t_1$ 內落下 $\tfrac12gt_1^2$，不能超過 $H$：</p>
+<div class="math-block">$$\tfrac12g\frac{D^2+H^2}{v_0^2}\le H\ \Longrightarrow\ v_0\ge\sqrt{\frac{g(D^2+H^2)}{2H}}$$</div>
+<p>代入 $D=20\ \text{m}$、$H=10\ \text{m}$、$g=9.8\ \text{m/s}^2$，$D^2+H^2=500\ \text{m}^2$：</p>
+<div class="math-block">$$v_0\ge\sqrt{\frac{9.8(500)}{2(10)}}\ \text{m/s}=\sqrt{245}\ \text{m/s}$$</div>
+<div class="math-block">$$\boxed{v_0\ge15.7\ \text{m/s}}$$</div>
+<h4>(c) 同樣的線性阻力還會打中嗎</h4>
+<p><strong>① 看相對運動：</strong> 兩者受同樣的 $\vec g$ 和同樣形式的線性阻力，看相對位置 $\vec r=\vec r_{\text{鏢}}-\vec r_{\text{猴}}$：重力相減消去，阻力相減後只剩相對速度。</p>
+<p class="fnote"><b>公式（牛頓第二定律，含線性阻力）：</b>$m\ddot{\vec r}_i=m\vec g-km\dot{\vec r}_i$，其中 $\vec r_i$ 為第 $i$ 個物體的位置、$k$ 為阻力係數；消去 $m$ 得 $\ddot{\vec r}_i=\vec g-k\dot{\vec r}_i$。</p>
+<p>兩式相減，$\vec g$ 消去：</p>
+<div class="math-block">$$\ddot{\vec r}=-k\dot{\vec r},\qquad\vec r(0)=(-D,-H),\qquad\dot{\vec r}(0)=v_0(\cos\theta,\sin\theta)\parallel(D,H)$$</div>
+<p><strong>② 解相對運動：</strong> 這是例題 2.4 的方程式（每個分量各自），解為</p>
+<div class="math-block">$$\vec r(t)=\vec r(0)+\frac{\dot{\vec r}(0)}{k}\left(1-e^{-kt}\right)$$</div>
+<p>相對位置沿著「從飛鏢指向猴子」的直線前進，最多走 $v_0/k$。只要 $v_0/k\gt\sqrt{D^2+H^2}$（而且猴子還沒落地），$\vec r$ 必定經過零，還是會打中。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{會打中：相對運動 }\ddot{\vec r}=-k\dot{\vec r}\text{ 沿瞄準線直進}\\ \text{條件 }v_0\gt k\sqrt{D^2+H^2}\text{ 且落地前到達}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>直角座標各方向獨立：$x=v_0\cos\theta\,t$，$y=v_0\sin\theta\,t-\tfrac12gt^2$。</li>
+    <li>$T=2v_0\sin\theta/g$，$R=v_0^2\sin2\theta/g$，同高度時 $45^\circ$ 最遠；軌跡 $y=x\tan\theta-\dfrac{gx^2}{2v_0^2\cos^2\theta}$。</li>
+    <li>落點在斜線上：把 $(d\cos\beta,d\sin\beta)$ 代入軌跡；「恆增加」「恆正」類條件用判別式。</li>
+  </ol>
+</div>

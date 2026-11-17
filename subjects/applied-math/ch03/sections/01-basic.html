@@ -1,0 +1,404 @@
+<h2>一、待定係數法的架構與基本規則 <span class="pg">板書 9/30 照片 1–3</span></h2>
+
+<p class="lead">第 2 章解決了右邊為 0 的齊次方程；這一章處理右邊不為 0 的非齊次方程（老師叫 Type II）。第 2 章第 1 節已經說過一般解是「齊次解 + 一個特解」，所以剩下的問題只有一個：<strong>怎麼找特解 $y_p$</strong>。待定係數法的想法是「看右邊長什麼樣子，就猜同一類的函數，係數先留空，代回去比較係數」。這一節講架構、對照表與最基本的猜法。</p>
+
+<h3 id="a3-bs-steps">1.1 Type II 與三個步驟 <span class="pg-tag">照片 1–2</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/30（照片 1–2）</span>
+  <p>Type II.　$y''+ay'+by=g(x)$　nonhomogeneous，$g(x)\neq0$</p>
+  <p>method：未定係數法（undetermined coefficient method）</p>
+  <p>一般解 $y=\underbrace{c_1y_1+c_2y_2}_{g(x)=0}+\text{“}y_p\text{”}$　　* $y_1,y_2,y_p$ 彼此線性獨立</p>
+  <p>⊛ 根據 $g(x)$ 的形式，猜 $y_p$　　$\{\cdots\}$：線性組合</p>
+  <div class="symbol-table-wrap"><table>
+    <thead><tr><th>$g(x)$</th><th>$y_p$</th></tr></thead>
+    <tbody>
+      <tr><td>$\{x^n,x^{n-1},\ldots,x^0\}$</td><td>$K_0+K_1x+K_2x^2+\cdots+K_nx^n$</td></tr>
+      <tr><td>$\{\sin\omega x,\cos\omega x\}$</td><td>$K_1\cos\omega x+K_2\sin\omega x$</td></tr>
+      <tr><td>$e^{kx}$</td><td>$Ae^{kx}$</td></tr>
+    </tbody>
+  </table></div>
+  <p>$\{x^0,x^1,x^2,\ldots,x^n\}$：$g(x)=K_0+K_1x+K_2x^2+\cdots+K_nx^n$</p>
+  <p><strong>Short Note</strong>　step 1. 求解 $y_1,y_2$（solve $y''+ay'+by=0$）　step 2. 猜 $y_p$　step 3. 利用 I.C. 決定唯一解</p>
+</div>
+
+<p><strong>名詞。</strong>老師寫「未定係數法」，一般課本叫「待定係數法」，同一個方法。$y_p$ 加了引號，是在強調它是「猜」出來的。</p>
+
+<p><strong>為什麼可以猜。</strong>表中三類函數有一個共同性質：<strong>微分之後還留在同一類</strong>。$n$ 次多項式微分後是更低次的多項式；$\sin\omega x$、$\cos\omega x$ 微分後互相變換；$e^{kx}$ 微分後還是 $e^{kx}$。所以把同類的猜測代進 $y''+ay'+by$，左邊也會是同類的組合，和右邊 $g(x)$ 逐項比較係數，就得到係數的聯立方程。</p>
+
+<p><strong>猜的時候要「整組」放進去。</strong>表格左欄寫的是一個集合 $\{\cdots\}$：</p>
+<ul>
+  <li>右邊只有 $4x^2$，也要猜 $K_0+K_1x+K_2x^2$——因為 $y'$、$y''$ 會產生 $x$ 和常數項，需要 $K_1$、$K_0$ 去抵消。</li>
+  <li>右邊只有 $\cos x$，也要猜 $K_1\cos x+K_2\sin x$——因為 $ay'$ 會把 $\cos$ 變成 $\sin$。</li>
+</ul>
+<p>右邊不是這三類（例如 $\tan x$、$\ln x$、$1/x$）時，微分會產生越來越多新函數，猜不完，要改用第 6 節的參數變換法。</p>
+
+<div class="box pitfall">
+  <span class="box-title">先做 Step 1</span>
+  <p>一定先解齊次方程。原因有二：Step 3 需要 $y_1,y_2$；更重要的是，猜的 $y_p$ 如果剛好是齊次解，代進去會得到 0，比較係數會出現 $0=1$ 的矛盾（第 4 節的修正規則）。先知道齊次解，才看得出要不要修正。</p>
+</div>
+
+<h3 id="a3-bs-ex">1.2 板書例題：Basic rule <span class="pg-tag">照片 3</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/30（照片 3）</span>
+  <p>ex.（Basic rule）　Solve $y''-y'-2y=\boxed{4x^2}$，$\begin{cases}y(0)=1\\y'(0)=1\end{cases}$</p>
+  <p>因為 $y_p$ 滿足 $y_p''-y_p'-2y_p=4x^2$，所以引進 $y_p$，$y_p'=K_1+2K_2x$，$y_p''=2K_2$</p>
+  $$2K_2-(2K_2x+K_1)-2(K_0+K_1x+K_2x^2)=4x^2$$
+  <p>比較係數：$x^0$：$2K_2-K_1-2K_0=0$；$x^1$：$-2K_2-2K_1=0$；$x^2$：$-2K_2=4$ → $K_2=-2$，$K_1=2$，$K_0=-3$</p>
+  <p>$y_p=-3+2x-2x^2$</p>
+  <p>step 3.　$y=c_1e^{-x}+c_2e^{2x}-3+2x-2x^2$</p>
+  <p>$y(0)=1\to c_1+c_2-3+0-0=1$；$y'=-c_1e^{-x}+2c_2e^{2x}+2-4x$；$y'(0)=1\to-c_1+2c_2+2-0=1$ → $c_1=3$，$c_2=1$</p>
+  <p><span class="added">網站補充（照片缺漏）</span>照片沒有 step 1（齊次方程的根）——應是寫在已擦掉的地方；由 step 3 的 $e^{-x}$、$e^{2x}$ 可知根是 $-1$、$2$，補在下面的例題卡。</p>
+</div>
+
+<div class="problem" data-kind="example" id="a3-b1">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/30 板書 · 照片 3</span></div>
+    <h4>Basic rule：$y''-y'-2y=4x^2$，$y(0)=1$、$y'(0)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-b1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-b1"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.（Basic rule）　Solve $y''-y'-2y=4x^2$，$y(0)=1$，$y'(0)=1$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''-y'-2y=4x^2$，$y(0)=1$、$y'(0)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-1$、$b=-2$</td><td>「$y''-y'-2y$」</td></tr>
+          <tr><td>非齊次項</td><td>$g(x)=4x^2$，二次多項式</td><td>「$=4x^2$」（板書框起來）：查表第一列</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=1$、$y'(0)=1$</td><td>「$y(0)=1$、$y'(0)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊不為 0，<b>所以</b>照三步驟：先解齊次、再找特解、最後代初始條件。<b>因為</b> $g=4x^2$ 是二次多項式，<b>所以</b>查表猜「完整的」二次多項式 $K_0+K_1x+K_2x^2$；即使右邊沒有 $x$ 項和常數項，$y'$、$y''$ 會產生它們，必須留 $K_1$、$K_0$ 去抵消。</p>
+      <p>比較係數時從最高次 $x^2$ 開始解，每一條只多一個未知數，一路往下代就好。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-b1-s1" data-sym="y12,lam">
+        <span class="step-title">Step 1：齊次解</span>
+        $$\lambda^2-\lambda-2=(\lambda-2)(\lambda+1)=0\ \Rightarrow\ \lambda=-1,\ 2$$
+        <p>$y_1=e^{-x}$、$y_2=e^{2x}$。$\lambda=0$ 不是根，所以多項式的猜法不會和齊次解重複。</p>
+      </div>
+      <div class="step" data-step="a3-b1-s2" data-sym="yp,K">
+        <span class="step-title">Step 2：猜 $y_p$ 並求導</span>
+        $$y_p=K_0+K_1x+K_2x^2,\quad y_p'=K_1+2K_2x,\quad y_p''=2K_2$$
+      </div>
+      <div class="step" data-step="a3-b1-s3">
+        <span class="step-title">代回原式，依次方整理</span>
+        <p class="sub">代入 $y''-y'-2y=4x^2$（題目）：</p>
+        $$2K_2-(K_1+2K_2x)-2(K_0+K_1x+K_2x^2)=4x^2$$
+        <p>左邊依 $x$ 的次方合併：</p>
+        $$\begin{aligned}&-2K_2x^2+(-2K_2-2K_1)x\\&\quad+(2K_2-K_1-2K_0)=4x^2+0x+0\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-b1-s4">
+        <span class="step-title">比較係數，從最高次解起</span>
+        $$x^2:\ -2K_2=4\ \Rightarrow\ K_2=-2$$
+        <p class="sub">代入 $K_2=-2$：</p>
+        $$x^1:\ -2K_2-2K_1=0\ \Rightarrow\ 4-2K_1=0\ \Rightarrow\ K_1=2$$
+        $$x^0:\ 2K_2-K_1-2K_0=0\ \Rightarrow\ -4-2-2K_0=0\ \Rightarrow\ K_0=-3$$
+        <p>$y_p=-3+2x-2x^2$。</p>
+      </div>
+      <div class="step" data-step="a3-b1-s5" data-sym="c12">
+        <span class="step-title">Step 3：代入初始條件</span>
+        $$y=c_1e^{-x}+c_2e^{2x}-3+2x-2x^2,\quad y'=-c_1e^{-x}+2c_2e^{2x}+2-4x$$
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=1$、$y'(0)=1$：</p>
+        $$\begin{aligned}c_1+c_2-3&=1\\-c_1+2c_2+2&=1\end{aligned}$$
+        <p>兩式相加：$3c_2-1=2$，$c_2=1$；代回：$c_1=4-1=3$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=3e^{-x}+e^{2x}-3+2x-2x^2$（和板書的 $c_1=3$、$c_2=1$ 一致）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_p''-y_p'-2y_p=-4-(2-4x)-2(-3+2x-2x^2)=4x^2$ ✔；$y(0)=3+1-3=1$ ✔；$y'(0)=-3+2+2=1$ ✔</p></div>
+  </div>
+</div>
+
+<h3 id="a3-bs-exam">1.3 考古題：多項式與三角函數的基本猜法</h3>
+
+<p>111 上和 114 上的期中考都是基本規則加初始條件。114 上的右邊 $-9\cos x-2\sin x$ 和 113 上第 4 題的最後兩項完全一樣（左邊也一樣），算一次可以用兩次。</p>
+
+<div class="problem" data-kind="exam" id="a3-111a-m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2022.Nov. 第 3 題（111上） · 114級上學期應數(期中) 第 3 題（學生手抄同卷）</span></div>
+    <h4>多項式右邊加初始條件：$y''-2y'+2y=2(x-1)$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-111a-m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-111a-m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2022.Nov.)</p><p>3. (5 points) Solve $y''-2y'+2y=2(x-1)$ for $y(0)=0$ and $y'(0)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（5 分）解 $y''-2y'+2y=2(x-1)$，$y(0)=0$、$y'(0)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-2$、$b=2$</td><td>「$y''-2y'+2y$」</td></tr>
+          <tr><td>非齊次項</td><td>$g=2x-2$，一次多項式</td><td>「$=2(x-1)$」：展開成 $2x-2$</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=0$、$y'(0)=1$</td><td>「for $y(0)=0$ and $y'(0)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是一次多項式、$\lambda=0$ 不是特徵根（$b=2\neq0$），<b>所以</b>猜 $K_0+K_1x$。<b>因為</b>齊次部分是共軛複根，<b>所以</b>寫成 $e^{x}(c_1\cos x+c_2\sin x)$，代 $y'(0)$ 時記得乘積法則。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-111a-m3-s1" data-sym="y12">
+        <span class="step-title">Step 1：齊次解</span>
+        $$\lambda^2-2\lambda+2=0\ \Rightarrow\ \lambda=1\pm i,\qquad y_c=e^{x}(c_1\cos x+c_2\sin x)$$
+      </div>
+      <div class="step" data-step="a3-111a-m3-s2" data-sym="yp,K">
+        <span class="step-title">Step 2：猜 $y_p=K_0+K_1x$</span>
+        <p>$y_p'=K_1$、$y_p''=0$。</p>
+        <p class="sub">代入 $y''-2y'+2y=2x-2$（題目）：</p>
+        $$0-2K_1+2(K_0+K_1x)=2x-2$$
+        $$x^1:\ 2K_1=2\Rightarrow K_1=1;\qquad x^0:\ -2K_1+2K_0=-2\Rightarrow K_0=0$$
+        <p>$y_p=x$。</p>
+      </div>
+      <div class="step" data-step="a3-111a-m3-s3" data-sym="c12">
+        <span class="step-title">Step 3：代入初始條件</span>
+        $$y=e^{x}(c_1\cos x+c_2\sin x)+x$$
+        $$y'=e^{x}\left[(c_1+c_2)\cos x+(c_2-c_1)\sin x\right]+1$$
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=0$、$y'(0)=1$：</p>
+        $$c_1=0,\qquad c_1+c_2+1=1\ \Rightarrow\ c_2=0$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=x$（齊次部分的係數都是 0）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=x$：$0-2+2x=2(x-1)$ ✔；$y(0)=0$、$y'(0)=1$ ✔。這題的初始條件正好就是 $y_p=x$ 在 $x=0$ 的值與斜率，所以齊次部分不必出現——別因為答案「太簡單」而懷疑自己。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a3-114a-m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2025 Oct. 第 3 題（114上）</span></div>
+    <h4>三角函數右邊加初始條件：$y''+2y'-8y=-9\cos x-2\sin x$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-114a-m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-114a-m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2025 Oct.)　25 points for each problem</p><p>3. Solve $y''+2y'-8y=-9\cos x-2\sin x$ with $y(0)=4$, $y'(0)=-6$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（25 分）解 $y''+2y'-8y=-9\cos x-2\sin x$，$y(0)=4$、$y'(0)=-6$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=2$、$b=-8$</td><td>「$y''+2y'-8y$」</td></tr>
+          <tr><td>非齊次項</td><td>$\cos x$、$\sin x$，$\omega=1$</td><td>「$=-9\cos x-2\sin x$」：查表第二列</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=4$、$y'(0)=-6$</td><td>「with $y(0)=4$, $y'(0)=-6$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是 $\omega=1$ 的 $\cos$、$\sin$，而 $\pm i$ 不是特徵根（特徵根是實數 $2,-4$），<b>所以</b>猜 $A\cos x+B\sin x$。代回後分別比較 $\cos x$ 和 $\sin x$ 的係數，得兩條聯立方程。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-114a-m3-s1" data-sym="y12">
+        <span class="step-title">Step 1：齊次解</span>
+        $$\lambda^2+2\lambda-8=(\lambda+4)(\lambda-2)=0\ \Rightarrow\ y_c=c_1e^{2x}+c_2e^{-4x}$$
+      </div>
+      <div class="step" data-step="a3-114a-m3-s2" data-sym="yp,K">
+        <span class="step-title">Step 2：猜 $y_p=A\cos x+B\sin x$</span>
+        $$y_p'=-A\sin x+B\cos x,\qquad y_p''=-A\cos x-B\sin x$$
+        <p class="sub">代入 $y''+2y'-8y$，分別收集 $\cos x$ 與 $\sin x$：</p>
+        $$\begin{aligned}\cos x&:\ -A+2B-8A=-9A+2B\\\sin x&:\ -B-2A-8B=-2A-9B\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-114a-m3-s3">
+        <span class="step-title">比較係數</span>
+        <p class="sub">和右邊的 $-9\cos x-2\sin x$（題目）比較：</p>
+        $$-9A+2B=-9,\qquad -2A-9B=-2$$
+        <p>第一式乘 2、第二式乘 9 後相減消去 $A$：$4B+81B=-18+18$，$85B=0$，所以 $B=0$、$A=1$。$y_p=\cos x$。</p>
+      </div>
+      <div class="step" data-step="a3-114a-m3-s4" data-sym="c12">
+        <span class="step-title">Step 3：代入初始條件</span>
+        $$y=c_1e^{2x}+c_2e^{-4x}+\cos x,\quad y'=2c_1e^{2x}-4c_2e^{-4x}-\sin x$$
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=4$、$y'(0)=-6$：</p>
+        $$\begin{aligned}c_1+c_2+1&=4\\2c_1-4c_2&=-6\end{aligned}$$
+        <p>第一式 $c_1=3-c_2$ 代入第二式：$6-6c_2=-6$，$c_2=2$，$c_1=1$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=e^{2x}+2e^{-4x}+\cos x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$L[\cos x]=-\cos x-2\sin x-8\cos x=-9\cos x-2\sin x$ ✔；$y(0)=1+2+1=4$ ✔；$y'(0)=2-8-0=-6$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a3-s01-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>什麼初始條件讓解只剩多項式</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s01-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>板書例題 $y''-y'-2y=4x^2$ 改成初始條件 $y(0)=-3$、$y'(0)=\beta$。(a) 用 $\beta$ 表示 $c_1,c_2$；(b) $\beta$ 是多少時，解是純多項式？(c) 分別說明 $\beta\gt2$、$\beta\lt2$、$\beta=2$ 時 $x\to+\infty$ 的行為。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$y''-y'-2y=4x^2$</td><td>「板書例題」：齊次解與 $y_p=-3+2x-2x^2$ 已在上面求出</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=-3$、$y'(0)=\beta$</td><td>「改成初始條件 $y(0)=-3$、$y'(0)=\beta$」</td></tr>
+          <tr><td>「純多項式」</td><td>$c_1=c_2=0$</td><td>(b)：$e^{-x}$、$e^{2x}$ 都不能出現（自己讀出來的條件）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $c_1(\beta)$、$c_2(\beta)$；(b) $\beta$；(c) 三種情況的趨勢。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>一般解是 $c_1e^{-x}+c_2e^{2x}+y_p$，而 $y_p$ 本身是多項式，<b>所以</b>「解是多項式」⟺ 齊次部分的兩個係數都是 0。<b>因為</b> $y_p(0)=-3$、$y_p'(0)=2$，<b>所以</b>只有初始條件剛好等於這兩個值時才會如此。</p>
+      <p>(c) <b>因為</b> $x\to+\infty$ 時 $e^{2x}$ 比任何多項式長得快，<b>所以</b>只要 $c_2\neq0$，$c_2$ 的正負就決定趨勢。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s01-1-s1" data-sym="c12">
+        <span class="step-title">(a) 代入初始條件</span>
+        <p class="sub">用 $y=c_1e^{-x}+c_2e^{2x}-3+2x-2x^2$（板書例題），代入 $y(0)=-3$、$y'(0)=\beta$：</p>
+        $$\begin{aligned}c_1+c_2-3&=-3\\-c_1+2c_2+2&=\beta\end{aligned}$$
+        <p>第一式 $c_1=-c_2$，代入第二式：$3c_2=\beta-2$。</p>
+        $$c_2=\frac{\beta-2}3,\qquad c_1=-\frac{\beta-2}3$$
+      </div>
+      <div class="step" data-step="a3-s01-1-s2">
+        <span class="step-title">(b) 純多項式</span>
+        <p>$c_1=c_2=0\iff\beta=2$。此時 $y=y_p=-2x^2+2x-3$。對照：$y_p'(0)=2$，正是這個值。</p>
+      </div>
+      <div class="step" data-step="a3-s01-1-s3">
+        <span class="step-title">(c) $x\to+\infty$ 的趨勢</span>
+        <p>$e^{-x}\to0$；$e^{2x}$ 主導一切多項式。</p>
+        <p>$\beta\gt2$：$c_2\gt0$，$y\to+\infty$（指數成長）。$\beta\lt2$：$c_2\lt0$，$y\to-\infty$（指數）。$\beta=2$：$y=-2x^2+2x-3\to-\infty$（只是多項式速度）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $c_1=-\dfrac{\beta-2}3$、$c_2=\dfrac{\beta-2}3$；(b) $\beta=2$，$y=-2x^2+2x-3$；(c) $\beta\gt2$ 時 $\to+\infty$、$\beta\lt2$ 時 $\to-\infty$（指數），$\beta=2$ 時 $\to-\infty$（二次）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\beta=1$（原板書例題的 $y'(0)$，但 $y(0)$ 不同）：$c_2=-\tfrac13$，代入 $-c_1+2c_2+2=-\tfrac13-\tfrac23+2=1$ ✔。$\beta=2$ 時 $y(0)=-3$、$y'(0)=2$ 都由 $y_p$ 自己滿足 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a3-s01-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>由特解反推方程式</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s01-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>已知 $y_p=\cos x+3\sin x$ 是 $y''+ay'+by=10\cos x$ 的一個特解（$a,b$ 是常數）。(a) 求 $a$、$b$；(b) 解 $y(0)=0$、$y'(0)=0$ 的初始值問題。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>已知特解</td><td>$y_p=\cos x+3\sin x$</td><td>「已知 $y_p=\cos x+3\sin x$ 是⋯⋯的一個特解」</td></tr>
+          <tr><td>右邊</td><td>$10\cos x$</td><td>「$=10\cos x$」：沒有 $\sin x$ 項，係數是 0</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=0$、$y'(0)=0$</td><td>(b)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $a,b$；(b) 唯一解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>這是待定係數法的反向操作：這次係數 $A=1$、$B=3$ 已知，未知的是方程式的 $a,b$。<b>因為</b>「$y_p$ 是特解」就是代入後兩邊相等，<b>所以</b>比較 $\cos x$、$\sin x$ 的係數同樣得到兩條方程——只是未知數換成 $a,b$。右邊沒有 $\sin x$，那一條的右邊是 0。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s01-2-s1" data-sym="yp">
+        <span class="step-title">代入 $y_p$</span>
+        <p>$y_p''=-y_p$，所以 $y_p''+by_p=(b-1)y_p$；$y_p'=-\sin x+3\cos x$：</p>
+        $$\begin{aligned}&(b-1)(\cos x+3\sin x)+a(-\sin x+3\cos x)\\&=\left[(b-1)+3a\right]\cos x\\&\quad+\left[3(b-1)-a\right]\sin x\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-s01-2-s2" data-sym="ab">
+        <span class="step-title">(a) 比較係數</span>
+        <p class="sub">和右邊 $10\cos x+0\sin x$（題目）比較：</p>
+        $$(b-1)+3a=10,\qquad 3(b-1)-a=0$$
+        <p>由第二式 $a=3(b-1)$，代入第一式：$10(b-1)=10$，$b=2$，$a=3$。</p>
+      </div>
+      <div class="step" data-step="a3-s01-2-s3" data-sym="y12">
+        <span class="step-title">(b) Step 1：齊次解</span>
+        $$\lambda^2+3\lambda+2=(\lambda+1)(\lambda+2)\ \Rightarrow\ y=c_1e^{-x}+c_2e^{-2x}+\cos x+3\sin x$$
+      </div>
+      <div class="step" data-step="a3-s01-2-s4" data-sym="c12">
+        <span class="step-title">(b) Step 3：代入初始條件</span>
+        <p>$y'=-c_1e^{-x}-2c_2e^{-2x}-\sin x+3\cos x$。</p>
+        <p class="sub">代入 $x=0$ 與 $y(0)=0$、$y'(0)=0$：</p>
+        $$\begin{aligned}c_1+c_2+1&=0\\-c_1-2c_2+3&=0\end{aligned}$$
+        <p>相加：$-c_2+4=0$，$c_2=4$，$c_1=-5$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $a=3$、$b=2$；(b) $y=-5e^{-x}+4e^{-2x}+\cos x+3\sin x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$L[\cos x+3\sin x]=(2-1)(\cos x+3\sin x)+3(-\sin x+3\cos x)=10\cos x$ ✔；$y(0)=-5+4+1=0$ ✔；$y'(0)=5-8+3=0$ ✔。$x\to\infty$ 時只剩 $\cos x+3\sin x$：齊次部分是「暫態」，特解是「穩態」（第 5 節）。</p></div>
+  </div>
+</div>
+
+<h3 id="a3-bs-old">1.4 更早年級的考古題 <span class="pg-tag">108 級下 2nd Order ODE 第 1(b) 題</span></h3>
+
+<div class="problem" data-kind="exam" id="a3-108b-1b">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級下學期 2nd Order ODE and Fourier Series 第 1(b) 題</span></div>
+    <h4>三角函數右邊：$y''+y'-2y=4\sin2x$，$y(0)=-\tfrac45$、$y'(0)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-108b-1b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-108b-1b"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2nd Order ODE and Fourier Series</p><p>1. Solve the differential equations.</p><p>(b) Solve $y''+y'-2y=4\sin2x$ for $y(0)=-\frac45$, $y'(0)=0$.</p><p>Ans: $y=-\frac35e^{-2x}-\frac15\cos2x-\frac35\sin2x$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''+y'-2y=4\sin2x$，$y(0)=-\dfrac45$、$y'(0)=0$。（考卷附的答案：$y=-\frac35e^{-2x}-\frac15\cos2x-\frac35\sin2x$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=1$、$b=-2$</td><td>左邊「$y''+y'-2y$」</td></tr>
+          <tr><td>$g(x)$</td><td>$4\sin2x$（$\omega=2$）</td><td>右邊「$4\sin2x$」</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=-\tfrac45$、$y'(0)=0$</td><td>「for $y(0)=-\frac45$, $y'(0)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是 $\sin2x$，<b>所以</b>照基本規則猜整組 $K_1\cos2x+K_2\sin2x$（只猜 $\sin$ 不夠：$y'$ 項會產生 $\cos$）。<b>因為</b>齊次的特徵根是實數 $1$、$-2$，不是 $\pm2i$，<b>所以</b>不必修正。</p>
+      <p><b>因為</b>初始條件要代進<strong>完整的</strong> $y=y_h+y_p$，<b>所以</b>先求出 $K_1,K_2$ 再定 $c_1,c_2$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-108b-1b-s1" data-sym="lam,y12">
+        <span class="step-title">Step 1 齊次解</span>
+        <p class="sub">代入 $a=1$、$b=-2$（題目左邊）：</p>
+        $$\lambda^2+\lambda-2=(\lambda+2)(\lambda-1)=0\ \Longrightarrow\ y_h=c_1e^{x}+c_2e^{-2x}$$
+      </div>
+      <div class="step" data-step="a3-108b-1b-s2" data-sym="yp,K">
+        <span class="step-title">Step 2 猜 $y_p$、代回</span>
+        $$y_p=K_1\cos2x+K_2\sin2x,\quad y_p'=-2K_1\sin2x+2K_2\cos2x,\quad y_p''=-4K_1\cos2x-4K_2\sin2x$$
+        <p class="sub">代入 $y''+y'-2y=4\sin2x$（題目），分別收集 $\cos2x$、$\sin2x$：</p>
+        $$\cos2x:\ -4K_1+2K_2-2K_1=-6K_1+2K_2=0$$
+        $$\sin2x:\ -4K_2-2K_1-2K_2=-2K_1-6K_2=4$$
+      </div>
+      <div class="step" data-step="a3-108b-1b-s3">
+        <span class="step-title">解係數</span>
+        <p>第一式 $K_2=3K_1$，代入第二式：$-2K_1-18K_1=4$ ⟹ $K_1=-\dfrac15$，$K_2=-\dfrac35$：</p>
+        $$y_p=-\frac15\cos2x-\frac35\sin2x$$
+      </div>
+      <div class="step" data-step="a3-108b-1b-s4" data-sym="c12">
+        <span class="step-title">Step 3 初始條件</span>
+        $$y=c_1e^x+c_2e^{-2x}-\frac15\cos2x-\frac35\sin2x,\qquad y'=c_1e^x-2c_2e^{-2x}+\frac25\sin2x-\frac65\cos2x$$
+        <p class="sub">代入 $x=0$ 與題目 $y(0)=-\frac45$、$y'(0)=0$：</p>
+        $$c_1+c_2-\frac15=-\frac45\ \Rightarrow\ c_1+c_2=-\frac35;\qquad c_1-2c_2-\frac65=0\ \Rightarrow\ c_1-2c_2=\frac65$$
+        <p>兩式相減：$3c_2=-\frac35-\frac65=-\frac95$，$c_2=-\frac35$；$c_1=-\frac35-c_2=0$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=-\dfrac35e^{-2x}-\dfrac15\cos2x-\dfrac35\sin2x$（和考卷答案相同）。$c_1=0$：題目的初始條件剛好讓會長大的 $e^{x}$ 消失，解保持有界。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=-\frac35-\frac15=-\frac45$ ✔；$y'(0)=\frac65-\frac65=0$ ✔。$y_p$ 代回：$\cos$ 係數 $-6(-\frac15)+2(-\frac35)=0$ ✔，$\sin$ 係數 $-2(-\frac15)-6(-\frac35)=\frac25+\frac{18}5=4$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>三步驟：齊次解 → 猜 $y_p$ 代回比較係數 → 初始條件代入<strong>完整的</strong> $y$。</li>
+    <li>猜整組：$x^n$ → $K_0+\cdots+K_nx^n$；$\cos\omega x$ 或 $\sin\omega x$ → $K_1\cos\omega x+K_2\sin\omega x$；$e^{kx}$ → $Ae^{kx}$。</li>
+    <li>多項式比較係數從最高次往下解；三角函數分別比較 $\cos$、$\sin$。</li>
+  </ol>
+</div>

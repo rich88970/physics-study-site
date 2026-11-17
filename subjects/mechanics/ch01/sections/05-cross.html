@@ -1,0 +1,696 @@
+<h2>五、外積 <span class="pg">講義 p.30–32</span></h2>
+
+<p class="lead">外積把兩個向量變成一個新的向量：大小是兩者張成的平行四邊形面積，方向垂直兩者、由右手定則決定。</p>
+
+<h3 id="cr-def">5.1 外積的定義 <span class="pg-tag">p.31</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.31 Vector Product</span>
+  $$\vec C=\vec A\times\vec B=|\vec A||\vec B|\sin\theta_{AB}\,\hat C\qquad\text{（右手定則）}$$
+  $$\vec A\times\vec B=-\vec B\times\vec A,\qquad \vec A\times(\vec B+\vec C)=\vec A\times\vec B+\vec A\times\vec C$$
+  <p>外積的結果仍是<strong>向量</strong>。</p>
+</div>
+
+<p><strong>大小</strong>：平行四邊形的底是 $|\vec A|$、高是 $|\vec B|\sin\theta$，面積就是 $|\vec A||\vec B|\sin\theta$；兩向量平行時被壓扁，外積為 0。<strong>方向</strong>：垂直於兩向量所在的平面，右手四指從 $\vec A$ 彎向 $\vec B$，拇指就是 $\hat C$。從 $\vec B$ 彎向 $\vec A$ 時拇指反過來，所以 $\vec B\times\vec A=-\vec A\times\vec B$——外積的次序就是方向。</p>
+
+<div class="anim" data-anim="cross-area"></div>
+
+<h3 id="cr-comp">5.2 用分量算外積 <span class="pg-tag">p.32</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.32</span>
+  $$\hat i\times\hat i=\hat j\times\hat j=\hat k\times\hat k=0,\qquad \hat i\times\hat j=\hat k$$
+  $$\vec A\times\vec B=\begin{vmatrix}\hat i&\hat j&\hat k\\ A_1&A_2&A_3\\ B_1&B_2&B_3\end{vmatrix}$$
+  $$=(A_2B_3-A_3B_2)\hat i-(A_1B_3-A_3B_1)\hat j+(A_1B_2-A_2B_1)\hat k$$
+</div>
+
+<div class="step" data-step="cr-basis">
+  <span class="step-title">基底的外積照 $\hat i\to\hat j\to\hat k\to\hat i$ 循環</span>
+  <p>順著循環是正號：$\hat i\times\hat j=\hat k$、$\hat j\times\hat k=\hat i$、$\hat k\times\hat i=\hat j$；逆著循環是負號；自己叉自己是 0。行列式只是把展開後的 6 項收好的記法：第 1 分量用下標 2、3，第 2 分量用 3、1，第 3 分量用 1、2。</p>
+</div>
+
+<div class="anim" data-anim="right-hand"></div>
+
+<details class="supp">
+  <summary>行列式公式的由來（展開 9 項）</summary>
+  <div class="supp-body">
+    <p>分配律展開 $(A_1\hat i+A_2\hat j+A_3\hat k)\times(B_1\hat i+B_2\hat j+B_3\hat k)$：同方向的 3 項為 0，其餘 6 項用基底外積換掉，再把同一個基底收在一起：</p>
+    $$\begin{aligned}
+    \vec A\times\vec B&=(A_2B_3-A_3B_2)\,\hat i\\
+    &\quad+(A_3B_1-A_1B_3)\,\hat j\\
+    &\quad+(A_1B_2-A_2B_1)\,\hat k
+    \end{aligned}$$
+  </div>
+</details>
+
+<div class="box pitfall">
+  <span class="box-title">算完要檢查</span>
+  <p>$\vec A\times\vec B$ 必須和 $\vec A$、$\vec B$ 都垂直：兩個內積都要是 0。這一步能抓到大部分的正負號錯誤。</p>
+</div>
+
+<h3 id="cr-eps">5.3 $\varepsilon_{ijk}$ 記號 <span class="pg-tag">課本 §1.12</span></h3>
+
+<p>講義的外積只用行列式，課本則用 $\varepsilon_{ijk}$（排列符號）寫成求和。考題照課本出時（例如 1-23 指定「用 $\varepsilon_{ijk}$」），就要用這套寫法。</p>
+
+<div class="box idea">
+  <span class="box-title">課本式 (1.66)、(1.67)、(1.78)</span>
+  $$\varepsilon_{ijk}=\begin{cases}+1&ijk=123,\ 231,\ 312\ (\text{偶排列})\\-1&ijk=132,\ 213,\ 321\ (\text{奇排列})\\0&\text{有任兩個下標相同}\end{cases}$$
+  $$(\vec A\times\vec B)_i=\sum_{j,k}\varepsilon_{ijk}A_jB_k,\qquad \sum_k\varepsilon_{ijk}\varepsilon_{lmk}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$$
+</div>
+
+<div class="step" data-step="eps-a" data-sym="eps,delta">
+  <span class="step-title">確認它就是外積</span>
+  <p>第 1 分量：$i=1$ 時只有 $(j,k)=(2,3)$、$(3,2)$ 不為 0，$(\vec A\times\vec B)_1=\varepsilon_{123}A_2B_3+\varepsilon_{132}A_3B_2=A_2B_3-A_3B_2$，和行列式展開一樣。</p>
+</div>
+
+<div class="step" data-step="eps-b">
+  <span class="step-title">三個常用性質</span>
+  <p>(1) 交換任兩個下標變號：$\varepsilon_{jik}=-\varepsilon_{ijk}$。(2) 循環輪換不變：$\varepsilon_{jki}=\varepsilon_{kij}=\varepsilon_{ijk}$。(3) 和「對兩個下標對稱」的量相乘再求和得 0，例如 $\sum_{i,j}\varepsilon_{ijk}A_iA_j=0$（交換 $i,j$ 後等於自己的負號）。</p>
+</div>
+
+<div class="problem" data-kind="tbexample" id="tb-ex16">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Thornton &amp; Marion Example 1.6 · p.26–27</span></div>
+    <h4>用 $\varepsilon_{ijk}$ 證明 $\vec A\cdot(\vec B\times\vec D)=\vec D\cdot(\vec A\times\vec B)$</h4>
+    <button type="button" class="exam-btn" data-exam="tb-ex16">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tb-ex16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show by using Equations 1.52 and 1.66 that</p>$$\mathbf A\cdot(\mathbf B\times\mathbf D)=\mathbf D\cdot(\mathbf A\times\mathbf B)\qquad(1.72)$$</div>
+<p class="original-caption">Thornton &amp; Marion Example 1.6 · p.26–27</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 $\vec A\cdot\vec B=\sum_iA_iB_i$ 和 $(\vec B\times\vec D)_i=\sum_{j,k}\varepsilon_{ijk}B_jD_k$ 證明 $\vec A\cdot(\vec B\times\vec D)=\vec D\cdot(\vec A\times\vec B)$，並推論 $\vec A\times\vec D$ 垂直 $\vec A$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\varepsilon_{ijk}$ 循環輪換不變（$\varepsilon_{kij}=\varepsilon_{ijk}$），交換兩個下標變號；被加總的下標（啞指標）可以整批改名。</p>
+<h4>(a) 證明 $\vec A\cdot(\vec B\times\vec D)=\vec D\cdot(\vec A\times\vec B)$</h4>
+<p><strong>① 兩邊寫開：</strong> 題目指定用兩個分量公式，把兩邊都寫成 $\varepsilon_{ijk}$ 的三重求和再比較。</p>
+<p class="fnote"><b>公式（內積的分量式）：</b>$\vec A\cdot\vec B=\sum_iA_iB_i$，其中 $A_i$、$B_i$ 為第 $i$ 個分量；本題外層內積的第二個向量是外積 $\vec B\times\vec D$ 或 $\vec A\times\vec B$。</p>
+<p class="fnote"><b>公式（外積的分量式）：</b>$(\vec B\times\vec D)_i=\sum_{j,k}\varepsilon_{ijk}B_jD_k$，其中 $\varepsilon_{ijk}$ 為 Levi-Civita 符號；本題兩邊各用一次。</p>
+<p>左邊先用 $\sum_iA_i(\ )_i$，再把外積分量換成 $\varepsilon$ 求和；$A_i$ 和 $j,k$ 無關，可以搬進內層：</p>
+<div class="math-block">$$\begin{aligned}\vec A\cdot(\vec B\times\vec D)&amp;=\sum_iA_i\sum_{j,k}\varepsilon_{ijk}B_jD_k\\&amp;=\sum_{i,j,k}\varepsilon_{ijk}A_iB_jD_k\end{aligned}$$</div>
+<p>右邊同樣做，外層是 $\vec D$、內層是 $\vec A\times\vec B$：</p>
+<div class="math-block">$$\begin{aligned}\vec D\cdot(\vec A\times\vec B)&amp;=\sum_iD_i\sum_{j,k}\varepsilon_{ijk}A_jB_k\\&amp;=\sum_{i,j,k}\varepsilon_{ijk}D_iA_jB_k\end{aligned}$$</div>
+<p><strong>② 右邊的啞指標改名 $i\to k,\ j\to i,\ k\to j$：</strong> 兩邊下標掛在不同向量上，改名讓右邊也變成 $A_iB_jD_k$（三個都是被加總的，改名不改變總和），再把因子排成 $A,B,D$ 的順序：</p>
+<div class="math-block">$$\begin{aligned}\sum_{i,j,k}\varepsilon_{ijk}D_iA_jB_k&amp;=\sum_{i,j,k}\varepsilon_{kij}D_kA_iB_j\\&amp;=\sum_{i,j,k}\varepsilon_{kij}A_iB_jD_k\end{aligned}$$</div>
+<p>$kij$ 是 $ijk$ 輪換一次，用循環輪換不變 $\varepsilon_{kij}=\varepsilon_{ijk}$：</p>
+<div class="math-block">$$=\sum_{i,j,k}\varepsilon_{ijk}A_iB_jD_k$$</div>
+<p>和左邊完全相同。</p>
+<div class="math-block">$$\boxed{\vec A\cdot(\vec B\times\vec D)=\vec D\cdot(\vec A\times\vec B)}$$</div>
+<h4>(b) 推論 $\vec A\times\vec D$ 垂直 $\vec A$</h4>
+<p><strong>① 取 $\vec B=\vec A$：</strong> 恆等式對任意 $\vec B$ 成立，代入 $\vec B=\vec A$；右邊出現 $\vec A\times\vec A=0$：</p>
+<div class="math-block">$$\vec A\cdot(\vec A\times\vec D)=\vec D\cdot(\vec A\times\vec A)=\vec D\cdot\vec 0=0$$</div>
+<p>也可以直接看求和式 $S=\sum_{i,j,k}\varepsilon_{ijk}A_iA_jD_k$：把 $i,j$ 兩個名字互換，$A_iA_j$ 不變、$\varepsilon_{jik}=-\varepsilon_{ijk}$，所以 $S=-S$，$S=0$。</p>
+<p>內積為 0，所以 $\vec A\times\vec D\perp\vec A$（兩者非零時）。</p>
+<div class="math-block">$$\boxed{\vec A\cdot(\vec A\times\vec D)=0\ \blacksquare}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-20">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-20 · p.45</span></div>
+    <h4>$\varepsilon_{ijk}$ 的三個求和</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-20">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 (a) $\sum_{i,j}\varepsilon_{ijk}\delta_{ij}=0$；(b) $\sum_{j,k}\varepsilon_{ijk}\varepsilon_{ljk}=2\delta_{il}$；(c) $\sum_{i,j,k}\varepsilon_{ijk}\varepsilon_{ijk}=6$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\varepsilon_{ijk}$ 偶排列 $+1$、奇排列 $-1$、有兩個下標相同為 $0$；$\delta_{ij}$ 在 $i=j$ 時為 1，否則為 0；每個下標取 $1,2,3$。</p>
+<h4>(a) $\sum_{i,j}\varepsilon_{ijk}\delta_{ij}=0$</h4>
+<p><strong>① $\delta_{ij}$ 只留下 $j=i$：</strong> $\varepsilon_{ijk}$ 只有三個下標全不同時才非零，直接數非零項即可。對 $j$ 求和時，$\delta_{ij}$ 只有 $j=i$ 那一項是 1，所以等於把 $j$ 換成 $i$：</p>
+<div class="math-block">$$\begin{aligned}\sum_{i,j}\varepsilon_{ijk}\delta_{ij}&amp;=\sum_i\varepsilon_{iik}\\&amp;=\varepsilon_{11k}+\varepsilon_{22k}+\varepsilon_{33k}\end{aligned}$$</div>
+<p>每一項都有兩個相同的下標，依定義都是 0（對每個 $k$ 都成立）。</p>
+<div class="math-block">$$\boxed{\sum_{i,j}\varepsilon_{ijk}\delta_{ij}=0}$$</div>
+<h4>(b) $\sum_{j,k}\varepsilon_{ijk}\varepsilon_{ljk}=2\delta_{il}$</h4>
+<p><strong>① $i\neq l$：</strong> $i,l$ 是自由下標，分相等與不相等兩種情形。要 $\varepsilon_{ijk}\neq0$，$j,k$ 必須和 $i$ 不同；要 $\varepsilon_{ljk}\neq0$，$j,k$ 也必須和 $l$ 不同。$1,2,3$ 扣掉 $i$ 和 $l$ 只剩一個值，$j$ 和 $k$ 都只能取它，於是 $j=k$，$\varepsilon_{ijj}=0$。每一項都是 0，和為 $0=2\delta_{il}$。</p>
+<p><strong>② $i=l$：</strong> 和變成 $\sum_{j,k}\varepsilon_{ijk}^2$。不為 0 的項只有 $(j,k)$ 是另外兩個下標的兩種排法，每項 $(\pm1)^2=1$。例如 $i=l=1$：</p>
+<div class="math-block">$$\sum_{j,k}\varepsilon_{1jk}^2=\varepsilon_{123}^2+\varepsilon_{132}^2=1+1=2=2\delta_{11}$$</div>
+<p>兩種情形合起來就是 $2\delta_{il}$。</p>
+<div class="math-block">$$\boxed{\sum_{j,k}\varepsilon_{ijk}\varepsilon_{ljk}=2\delta_{il}}$$</div>
+<h4>(c) $\sum_{i,j,k}\varepsilon_{ijk}\varepsilon_{ijk}=6$</h4>
+<p><strong>① 令 $l=i$，再對 $i$ 求和：</strong> (c) 的被加總式是 (b) 取 $l=i$；用 (b) 的結果 $2\delta_{ii}$：</p>
+<div class="math-block">$$\begin{aligned}\sum_{i,j,k}\varepsilon_{ijk}\varepsilon_{ijk}&amp;=\sum_i2\delta_{ii}=2(\delta_{11}+\delta_{22}+\delta_{33})\\&amp;=2\times3=6\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\sum_{i,j,k}\varepsilon_{ijk}\varepsilon_{ijk}=6\ \blacksquare}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-21">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-21 · p.45</span></div>
+    <h4>純量三重積 $\vec A\vec B\vec C=\sum\varepsilon_{ijk}A_iB_jC_k$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-21">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 $\vec A\vec B\vec C=\sum_{i,j,k}\varepsilon_{ijk}A_iB_jC_k$（參考 1-11）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A\vec B\vec C\equiv\vec A\cdot(\vec B\times\vec C)$（1-11 定義的純量三重積）。</p>
+<p><strong>① 外層：內積的分量式：</strong> 三重積是「內積包著外積」，由外而內代入分量公式。把 $\vec B\times\vec C$ 當成一個向量，和 $\vec A$ 做內積：</p>
+<p class="fnote"><b>公式（內積的分量式）：</b>$\vec A\cdot\vec D=\sum_iA_iD_i$，其中 $A_i$、$D_i$ 為第 $i$ 個分量；本題 $\vec D=\vec B\times\vec C$。</p>
+<div class="math-block">$$\vec A\cdot(\vec B\times\vec C)=\sum_iA_i(\vec B\times\vec C)_i$$</div>
+<p><strong>② 內層：外積分量換成 $\varepsilon$ 求和：</strong></p>
+<p class="fnote"><b>公式（外積的分量式）：</b>$(\vec B\times\vec C)_i=\sum_{j,k}\varepsilon_{ijk}B_jC_k$，其中 $\varepsilon_{ijk}$ 為 Levi-Civita 符號；本題直接代入外積的第 $i$ 分量。</p>
+<div class="math-block">$$\vec A\cdot(\vec B\times\vec C)=\sum_iA_i\sum_{j,k}\varepsilon_{ijk}B_jC_k$$</div>
+<p>$A_i$ 不含 $j,k$，對 $j,k$ 求和時是常數，可以乘進去：</p>
+<div class="math-block">$$=\sum_{i,j,k}\varepsilon_{ijk}A_iB_jC_k$$</div>
+<p><strong>③ 列出不為 0 的 6 項：</strong> 27 項中只有 $(i,j,k)$ 是 $1,2,3$ 的排列時不為 0。偶排列 $123,231,312$ 取 $+$、奇排列 $132,213,321$ 取 $-$：</p>
+<div class="math-block">$$\begin{aligned}&amp;A_1B_2C_3+A_2B_3C_1+A_3B_1C_2\\&amp;-A_1B_3C_2-A_2B_1C_3-A_3B_2C_1\end{aligned}$$</div>
+<p>這正是三階行列式 $\det[\vec A;\vec B;\vec C]$ 的 6 項，和 1-11 一致。</p>
+<div class="math-block">$$\boxed{\vec A\vec B\vec C=\sum_{i,j,k}\varepsilon_{ijk}A_iB_jC_k\ \blacksquare}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-22">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-22 · p.45</span></div>
+    <h4>$\sum_k\varepsilon_{ijk}\varepsilon_{lmk}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$，再證 BAC–CAB</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-22">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>就 $i,j,l,m$ 的各種情形（$i=j$、$l=m$、$i=l$、$i=m$、$j=l$、$j=m$、$i$ 不等於 $l$ 也不等於 $m$ 等）計算 $\sum_k\varepsilon_{ijk}\varepsilon_{lmk}$（只有 3 項），證明它等於 $\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$；再用它證明 $\vec A\times(\vec B\times\vec C)=(\vec A\cdot\vec C)\vec B-(\vec A\cdot\vec B)\vec C$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$i,j,l,m$ 各取 $1,2,3$；$\varepsilon\in\{0,\pm1\}$、$\delta\in\{0,1\}$；左邊 $\sum_k\varepsilon_{ijk}\varepsilon_{lmk}$ 只有 $k=1,2,3$ 三項。</p>
+<h4>(a) 證明 $\sum_k\varepsilon_{ijk}\varepsilon_{lmk}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$</h4>
+<p><strong>① 情形 1：$i=j$ 或 $l=m$：</strong> 81 種組合太多，兩邊的值只取決於「哪些下標相等」，所以分成三類（不重疊、合起來是全部）逐類比較。左邊：$i=j$ 時每一項都含 $\varepsilon_{iik}=0$（$l=m$ 時含 $\varepsilon_{llk}=0$），和為 0。右邊代入 $j=i$：</p>
+<div class="math-block">$$\delta_{il}\delta_{im}-\delta_{im}\delta_{il}=0$$</div>
+<p>$l=m$ 時同理 $\delta_{il}\delta_{jl}-\delta_{il}\delta_{jl}=0$。兩邊都是 0。</p>
+<p><strong>② 情形 2：$i\neq j$、$l\neq m$，且 $\{i,j\}=\{l,m\}$：</strong> 左邊：$\varepsilon_{ijk}\neq0$ 要求 $k$ 是 $i,j$ 以外的第三個下標，所以三項中只剩這一項。</p>
+<p>若 $i=l$、$j=m$：</p>
+<div class="math-block">$$\begin{aligned}\text{左邊}&amp;=\varepsilon_{ijk}\varepsilon_{ijk}=(\pm1)^2=1\\ \text{右邊}&amp;=\delta_{ii}\delta_{jj}-\delta_{ij}\delta_{ji}=1\cdot1-0=1\end{aligned}$$</div>
+<p>若 $i=m$、$j=l$：</p>
+<div class="math-block">$$\begin{aligned}\text{左邊}&amp;=\varepsilon_{ijk}\varepsilon_{jik}=\varepsilon_{ijk}(-\varepsilon_{ijk})=-1\\ \text{右邊}&amp;=\delta_{ij}\delta_{ji}-\delta_{ii}\delta_{jj}=0-1=-1\end{aligned}$$</div>
+<p><strong>③ 情形 3：$i\neq j$、$l\neq m$，但 $\{i,j\}\neq\{l,m\}$：</strong> 左邊：要 $\varepsilon_{ijk}\neq0$，$k$ 必須是 $\{i,j\}$ 以外的那個；要 $\varepsilon_{lmk}\neq0$，$k$ 必須是 $\{l,m\}$ 以外的那個。兩個二元集合不同，扣掉後剩下的那個也不同，同一個 $k$ 不可能同時滿足，所以每一項都是 0。</p>
+<p>右邊：$\delta_{il}\delta_{jm}=1$ 需要 $i=l$ 且 $j=m$，$\delta_{im}\delta_{jl}=1$ 需要 $i=m$ 且 $j=l$，兩者都會使 $\{i,j\}=\{l,m\}$，和這一類的假設矛盾，所以右邊也是 0。三類都成立，恆等式得證。</p>
+<div class="math-block">$$\boxed{\sum_k\varepsilon_{ijk}\varepsilon_{lmk}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}}$$</div>
+<h4>(b) 證明 BAC–CAB</h4>
+<p><strong>① 寫出第 $i$ 分量：</strong> 兩層外積各用一個 $\varepsilon$，相乘再對共同下標求和，正好是 (a) 的恆等式。令 $\vec D=\vec B\times\vec C$，外層外積的第 $i$ 分量：</p>
+<p class="fnote"><b>公式（外積的分量式）：</b>$(\vec X\times\vec Y)_i=\sum_{j,k}\varepsilon_{ijk}X_jY_k$，其中 $\varepsilon_{ijk}$ 為 Levi-Civita 符號；本題外層 $\vec X=\vec A$、$\vec Y=\vec D$，內層 $\vec X=\vec B$、$\vec Y=\vec C$。</p>
+<div class="math-block">$$\big[\vec A\times\vec D\big]_i=\sum_{j,k}\varepsilon_{ijk}A_jD_k$$</div>
+<p>代入內層 $D_k=(\vec B\times\vec C)_k=\sum_{l,m}\varepsilon_{klm}B_lC_m$：</p>
+<div class="math-block">$$\big[\vec A\times(\vec B\times\vec C)\big]_i=\sum_{j,k,l,m}\varepsilon_{ijk}\varepsilon_{klm}A_jB_lC_m$$</div>
+<p><strong>② 循環輪換對齊下標：</strong> 要套恆等式，兩個 $\varepsilon$ 的最後一個下標都必須是被加總的 $k$。$klm\to lmk$ 是循環輪換，$\varepsilon_{klm}=\varepsilon_{lmk}$：</p>
+<div class="math-block">$$=\sum_{j,l,m}\Big(\sum_k\varepsilon_{ijk}\varepsilon_{lmk}\Big)A_jB_lC_m$$</div>
+<p><strong>③ 代入恆等式，$\delta$ 把求和收掉：</strong> 括號換成 (a) 證明的 $\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$：</p>
+<div class="math-block">$$=\sum_{j,l,m}(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})A_jB_lC_m$$</div>
+<p>第一項：$\delta_{il}$ 把 $l$ 換成 $i$、$\delta_{jm}$ 把 $m$ 換成 $j$；第二項：$\delta_{im}$ 把 $m$ 換成 $i$、$\delta_{jl}$ 把 $l$ 換成 $j$：</p>
+<div class="math-block">$$=\sum_jA_jB_iC_j-\sum_jA_jB_jC_i$$</div>
+<p>$B_i$、$C_i$ 和 $j$ 無關可以提出，剩下的 $\sum_jA_jC_j$、$\sum_jA_jB_j$ 就是內積：</p>
+<div class="math-block">$$=B_i(\vec A\cdot\vec C)-C_i(\vec A\cdot\vec B)$$</div>
+<p><strong>④ 三個分量合起來：</strong> 上式對 $i=1,2,3$ 都成立，左邊是 $\vec A\times(\vec B\times\vec C)$ 的第 $i$ 分量、右邊是 $(\vec A\cdot\vec C)\vec B-(\vec A\cdot\vec B)\vec C$ 的第 $i$ 分量，所以兩個向量相等。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec A\times(\vec B\times\vec C)\\ =(\vec A\cdot\vec C)\vec B-(\vec A\cdot\vec B)\vec C\ \blacksquare\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="cr-tm">5.4 課本題</h3>
+
+<div class="problem" data-kind="textbook" id="tm-1-9">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-9 · p.44</span></div>
+    <h4>一組向量的全套運算</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec A=\hat i+2\hat j-\hat k$，$\vec B=-2\hat i+3\hat j+\hat k$。求 (a) $\vec A-\vec B$ 與其長度；(b) $\vec B$ 沿 $\vec A$ 的分量；(c) 夾角；(d) $\vec A\times\vec B$；(e) $(\vec A-\vec B)\times(\vec A+\vec B)$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=\hat i+2\hat j-\hat k=(1,2,-1)$，$\vec B=-2\hat i+3\hat j+\hat k=(-2,3,1)$。</p>
+<h4>(a) $\vec A-\vec B$ 與其長度</h4>
+<p><strong>① 逐分量相減：</strong> 兩向量都給了分量，直接逐分量相減再取長度。代入 $\vec A=(1,2,-1)$、$\vec B=(-2,3,1)$：</p>
+<div class="math-block">$$\begin{aligned}\vec A-\vec B&amp;=(1-(-2),\ 2-3,\ -1-1)\\&amp;=(3,\,-1,\,-2)\end{aligned}$$</div>
+<p><strong>② 長度：</strong></p>
+<div class="math-block">$$|\vec A-\vec B|=\sqrt{3^2+(-1)^2+(-2)^2}=\sqrt{14}\approx3.74$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\vec A-\vec B=3\hat i-\hat j-2\hat k\\ |\vec A-\vec B|=\sqrt{14}\end{gathered}}$$</div>
+<h4>(b) $\vec B$ 沿 $\vec A$ 的分量</h4>
+<p><strong>① 內積與 $|\vec A|$：</strong> 沿 $\vec A$ 的分量要除以 $|\vec A|$，先算內積和 $|\vec A|$。</p>
+<p class="fnote"><b>公式（沿某方向的分量）：</b>$B_A=\dfrac{\vec A\cdot\vec B}{|\vec A|}$，其中 $\vec A\cdot\vec B=A_1B_1+A_2B_2+A_3B_3$、$|\vec A|$ 為 $\vec A$ 的長度；本題 $\vec A=(1,2,-1)$、$\vec B=(-2,3,1)$。</p>
+<div class="math-block">$$\begin{aligned}\vec A\cdot\vec B&amp;=(1)(-2)+(2)(3)+(-1)(1)\\&amp;=-2+6-1=3\\ |\vec A|&amp;=\sqrt{1+4+1}=\sqrt6\end{aligned}$$</div>
+<p><strong>② 代入：</strong></p>
+<div class="math-block">$$B_A=\frac{3}{\sqrt6}=\frac{3\sqrt6}{6}=\frac{\sqrt6}{2}\approx1.22$$</div>
+<div class="math-block">$$\boxed{B_A=\frac{\sqrt6}{2}}$$</div>
+<h4>(c) 夾角</h4>
+<p><strong>① $|\vec B|$：</strong> (b) 的內積和 $|\vec A|$ 直接重用，還需要 $|\vec B|$：</p>
+<div class="math-block">$$|\vec B|=\sqrt{4+9+1}=\sqrt{14}$$</div>
+<p><strong>② 夾角：</strong> 代入 (b) 的 $\vec A\cdot\vec B=3$、$|\vec A|=\sqrt6$：</p>
+<p class="fnote"><b>公式（內積求夾角）：</b>$\cos\theta=\dfrac{\vec A\cdot\vec B}{|\vec A||\vec B|}$，其中 $\theta$ 為兩向量夾角；本題 $\vec A\cdot\vec B=3$、$|\vec A|=\sqrt6$、$|\vec B|=\sqrt{14}$。</p>
+<div class="math-block">$$\cos\theta=\frac{3}{\sqrt6\,\sqrt{14}}=\frac{3}{\sqrt{84}}\approx0.327$$</div>
+<div class="math-block">$$\theta=\cos^{-1}0.327\approx70.9^\circ$$</div>
+<div class="math-block">$$\boxed{\theta\approx70.9^\circ}$$</div>
+<h4>(d) $\vec A\times\vec B$</h4>
+<p><strong>① 逐分量：</strong> 第 1、2、3 分量依序用下標 $(2,3)$、$(3,1)$、$(1,2)$。代入 $A_1,A_2,A_3=1,2,-1$、$B_1,B_2,B_3=-2,3,1$：</p>
+<p class="fnote"><b>公式（外積的分量式）：</b>$(\vec A\times\vec B)_1=A_2B_3-A_3B_2$、$(\vec A\times\vec B)_2=A_3B_1-A_1B_3$、$(\vec A\times\vec B)_3=A_1B_2-A_2B_1$，其中 $A_i$、$B_i$ 為兩向量的分量；本題 $\vec A=(1,2,-1)$、$\vec B=(-2,3,1)$。</p>
+<div class="math-block">$$\begin{aligned}
+(\vec A\times\vec B)_1&amp;=A_2B_3-A_3B_2\\&amp;=(2)(1)-(-1)(3)=5\\[3pt]
+(\vec A\times\vec B)_2&amp;=A_3B_1-A_1B_3\\&amp;=(-1)(-2)-(1)(1)=1\\[3pt]
+(\vec A\times\vec B)_3&amp;=A_1B_2-A_2B_1\\&amp;=(1)(3)-(2)(-2)=7
+\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\vec A\times\vec B=5\hat i+\hat j+7\hat k}$$</div>
+<h4>(e) $(\vec A-\vec B)\times(\vec A+\vec B)$</h4>
+<p><strong>① 先展開化簡：</strong> 硬算要多做一次外積，改用分配律與 $\vec X\times\vec X=0$ 先化簡。展開成四項：</p>
+<div class="math-block">$$\begin{aligned}&amp;(\vec A-\vec B)\times(\vec A+\vec B)\\&amp;=\vec A\times\vec A+\vec A\times\vec B-\vec B\times\vec A-\vec B\times\vec B\end{aligned}$$</div>
+<p>$\vec A\times\vec A=\vec B\times\vec B=0$，$-\vec B\times\vec A=+\vec A\times\vec B$：</p>
+<div class="math-block">$$=2\,\vec A\times\vec B$$</div>
+<p><strong>② 代入 (d)：</strong> 代入 $\vec A\times\vec B=(5,1,7)$：</p>
+<div class="math-block">$$2(5,1,7)=(10,\,2,\,14)=10\hat i+2\hat j+14\hat k$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}(\vec A-\vec B)\times(\vec A+\vec B)\\ =10\hat i+2\hat j+14\hat k\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-11">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-11 · p.44</span></div>
+    <h4>純量三重積 = 行列式 = 體積</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 $(\vec A\times\vec B)\cdot\vec C$ 等於以三向量分量為三列的行列式；證明點叉互換或循環輪換結果不變；並以平行六面體體積解釋。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=(A_1,A_2,A_3)$、$\vec B=(B_1,B_2,B_3)$、$\vec C=(C_1,C_2,C_3)$；$D$ 為列依序是 $\vec A,\vec B,\vec C$ 的三階行列式。</p>
+<div class="anim" data-anim="triple"></div>
+<p><strong>① 寫成行列式：</strong> 外積分量已知，代入後和 $\vec C$ 做內積得 6 項，再把行列式沿第三列展開逐項比對。</p>
+<p class="fnote"><b>公式（外積分量式）：</b>$\vec A\times\vec B=(A_2B_3-A_3B_2,\ A_3B_1-A_1B_3,\ A_1B_2-A_2B_1)$，其中 $A_i,B_i$ 為兩向量的分量；本題再和 $\vec C$ 的分量相乘相加。</p>
+<div class="math-block">$$\begin{aligned}(\vec A\times\vec B)\cdot\vec C&amp;=C_1(A_2B_3-A_3B_2)\\&amp;\quad+C_2(A_3B_1-A_1B_3)\\&amp;\quad+C_3(A_1B_2-A_2B_1)\end{aligned}$$</div>
+<p>另一方面，</p>
+<div class="math-block">$$D=\begin{vmatrix}A_1&amp;A_2&amp;A_3\\B_1&amp;B_2&amp;B_3\\C_1&amp;C_2&amp;C_3\end{vmatrix}$$</div>
+<p class="fnote"><b>公式（行列式沿一列展開）：</b>$D=\sum_j(-1)^{i+j}a_{ij}M_{ij}$，其中 $a_{ij}$ 為第 $i$ 列第 $j$ 行元素、$M_{ij}$ 為刪去該列該行的子行列式；本題沿第三列展開，正負號依序 $+,-,+$。</p>
+<div class="math-block">$$\begin{aligned}D&amp;=C_1\begin{vmatrix}A_2&amp;A_3\\B_2&amp;B_3\end{vmatrix}-C_2\begin{vmatrix}A_1&amp;A_3\\B_1&amp;B_3\end{vmatrix}\\&amp;\quad+C_3\begin{vmatrix}A_1&amp;A_2\\B_1&amp;B_2\end{vmatrix}\end{aligned}$$</div>
+<p>三個 $2\times2$ 行列式依序是 $A_2B_3-A_3B_2$、$A_1B_3-A_3B_1$、$A_1B_2-A_2B_1$；第二項前面的負號把 $A_1B_3-A_3B_1$ 變成 $A_3B_1-A_1B_3$，和上一式逐項相同：</p>
+<div class="math-block">$$(\vec A\times\vec B)\cdot\vec C=\begin{vmatrix}A_1&amp;A_2&amp;A_3\\B_1&amp;B_2&amp;B_3\\C_1&amp;C_2&amp;C_3\end{vmatrix}$$</div>
+<p><strong>② 循環輪換、點叉互換：</strong> 循環輪換就是把行列式的列交換兩次，每次變號、兩次抵消。</p>
+<p>由 ①，$(\vec B\times\vec C)\cdot\vec A$ 是列依序為 $\vec B,\vec C,\vec A$ 的行列式。從 $[\vec A;\vec B;\vec C]$ 出發：交換第 1、2 列得 $[\vec B;\vec A;\vec C]$（變號），再交換第 2、3 列得 $[\vec B;\vec C;\vec A]$（再變號）：</p>
+<div class="math-block">$$(\vec A\times\vec B)\cdot\vec C=(\vec B\times\vec C)\cdot\vec A=(\vec C\times\vec A)\cdot\vec B$$</div>
+<p>再用內積可交換 $(\vec B\times\vec C)\cdot\vec A=\vec A\cdot(\vec B\times\vec C)$：</p>
+<div class="math-block">$$(\vec A\times\vec B)\cdot\vec C=\vec A\cdot(\vec B\times\vec C)$$</div>
+<p>點和叉可以互換，所以可簡記為 $\vec A\vec B\vec C$。</p>
+<p><strong>③ 體積：</strong> 以 $\vec A,\vec B$ 張成的平行四邊形為底，底面積 $|\vec A\times\vec B|$；高是 $\vec C$ 在底面單位法向量 $\hat n=\dfrac{\vec A\times\vec B}{|\vec A\times\vec B|}$ 方向的分量 $\vec C\cdot\hat n$。</p>
+<p class="fnote"><b>公式（平行六面體體積）：</b>$V=\text{底面積}\times\text{高}$。</p>
+<div class="math-block">$$\begin{aligned}V&amp;=|\vec A\times\vec B|\cdot\frac{(\vec A\times\vec B)\cdot\vec C}{|\vec A\times\vec B|}\\&amp;=(\vec A\times\vec B)\cdot\vec C\end{aligned}$$</div>
+<p>$\vec C$ 和 $\vec A\times\vec B$ 在底面同側時為正，否則為負，所以 $|\vec A\vec B\vec C|$ 才是體積；三向量共平面時高為 0，三重積為 0。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec A\vec B\vec C=\det[\vec A;\vec B;\vec C]\text{，輪換、點叉互換不變}\\ |\vec A\vec B\vec C|=\text{平行六面體體積（為 0 表示共平面）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-12">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-12 · p.44</span></div>
+    <h4>原點到平面 $ABC$ 的距離、三角形 $ABC$ 的面積</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-12">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-12"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Let $\mathbf a$, $\mathbf b$, $\mathbf c$ be three constant vectors drawn from the origin to the points $A$, $B$, $C$. What is the distance from the origin to the plane defined by the points $A$, $B$, $C$? What is the area of the triangle $ABC$?</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-12 · p.44</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec a,\vec b,\vec c$ 由原點指向點 $A,B,C$。求原點到平面 $ABC$ 的距離，以及三角形 $ABC$ 的面積。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec a,\vec b,\vec c$ 為原點指向 $A,B,C$ 的常向量（三點不共線）；$d$ 為原點到平面 $ABC$ 的距離，$S$ 為三角形 $ABC$ 的面積。</p>
+<div class="video" data-video="tm-1-12"></div>
+<div class="anim" data-anim="plane-abc"></div>
+<p><strong>① 法向量：</strong> 兩條邊 $\vec b-\vec a$、$\vec c-\vec a$ 都躺在平面上，它們的外積垂直整個平面，長度又是平行四邊形面積，面積和距離都要用它。</p>
+<div class="math-block">$$\vec n=(\vec b-\vec a)\times(\vec c-\vec a)$$</div>
+<p>用分配律展開成四項：</p>
+<div class="math-block">$$\vec n=\vec b\times\vec c-\vec b\times\vec a-\vec a\times\vec c+\vec a\times\vec a$$</div>
+<p>$\vec a\times\vec a=0$，並用反交換 $-\vec b\times\vec a=\vec a\times\vec b$、$-\vec a\times\vec c=\vec c\times\vec a$：</p>
+<div class="math-block">$$\vec n=\vec a\times\vec b+\vec b\times\vec c+\vec c\times\vec a$$</div>
+<p><strong>② 面積：</strong> $|\vec n|$ 是兩邊張成的平行四邊形面積，三角形是它的一半。</p>
+<p class="fnote"><b>公式（外積的大小）：</b>$|\vec X\times\vec Y|=XY\sin\theta$，等於 $\vec X,\vec Y$ 張成的平行四邊形面積，其中 $\theta$ 為兩者夾角；本題 $\vec X=\vec b-\vec a$、$\vec Y=\vec c-\vec a$。</p>
+<div class="math-block">$$S=\tfrac12|\vec n|=\tfrac12\,|\vec a\times\vec b+\vec b\times\vec c+\vec c\times\vec a|$$</div>
+<p><strong>③ 距離：</strong> 原點到平面的最短路徑沿法線，$\vec a$ 在單位法向量 $\hat n=\vec n/|\vec n|$ 上的投影長就是距離（取絕對值，因為 $\vec n$ 可能指向原點那一側）。</p>
+<p class="fnote"><b>公式（投影長）：</b>$\vec X$ 在單位向量 $\hat n$ 方向的分量為 $\vec X\cdot\hat n$；本題 $\vec X=\vec a$。</p>
+<div class="math-block">$$d=|\vec a\cdot\hat n|=\frac{|\vec a\cdot\vec n|}{|\vec n|}$$</div>
+<p>代入 ① 的 $\vec n$，分子拆成三個三重積：</p>
+<div class="math-block">$$\begin{aligned}\vec a\cdot\vec n&amp;=\vec a\cdot(\vec a\times\vec b)+\vec a\cdot(\vec b\times\vec c)\\&amp;\quad+\vec a\cdot(\vec c\times\vec a)\end{aligned}$$</div>
+<p>第一、三項有重複的向量，是共平面的三重積，等於 0；只剩中間一項：</p>
+<div class="math-block">$$d=\frac{|\vec a\cdot(\vec b\times\vec c)|}{|\vec a\times\vec b+\vec b\times\vec c+\vec c\times\vec a|}$$</div>
+<p><strong>④ 數值例子：</strong> 網站自選 $\vec a=(1,0,0)$、$\vec b=(0,2,0)$、$\vec c=(0,0,3)$ 代入。</p>
+<div class="math-block">$$\vec b-\vec a=(-1,2,0),\qquad \vec c-\vec a=(-1,0,3)$$</div>
+<p>外積逐分量（下標 $(2,3)$、$(3,1)$、$(1,2)$）：</p>
+<div class="math-block">$$\begin{aligned}n_1&amp;=(2)(3)-(0)(0)=6\\ n_2&amp;=(0)(-1)-(-1)(3)=3\\ n_3&amp;=(-1)(0)-(2)(-1)=2\end{aligned}$$</div>
+<div class="math-block">$$|\vec n|=\sqrt{36+9+4}=7$$</div>
+<p>代入 ②、③ 的公式（$\vec a\cdot\vec n=1\times6=6$）：</p>
+<div class="math-block">$$S=\tfrac72=3.5,\qquad d=\frac{\vec a\cdot\vec n}{|\vec n|}=\frac67\approx0.857$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}d=\frac{|\vec a\cdot(\vec b\times\vec c)|}{|\vec a\times\vec b+\vec b\times\vec c+\vec c\times\vec a|}\\ S=\tfrac12|\vec a\times\vec b+\vec b\times\vec c+\vec c\times\vec a|\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-39">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-39 · p.47</span></div>
+    <h4>平面的單位法向量、點到平面的最近點</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-39">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>平面通過 $(1,0,0)$、$(0,2,0)$、$(0,0,3)$。(a) 求垂直平面的單位向量；(b) 求點 $(1,1,1)$ 到平面的距離，以及平面上離它最近的點。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：平面上三點 $\vec a=(1,0,0)$、$\vec b=(0,2,0)$、$\vec c=(0,0,3)$；平面外的點 $(1,1,1)$；$\vec n$ 為法向量，$\hat n$ 為單位法向量。</p>
+<h4>(a) 垂直平面的單位向量</h4>
+<p><strong>① 法向量：</strong> 從 $\vec a$ 出發的兩條邊都躺在平面裡，外積就垂直平面（和 1-12 同一招），再除以長度。</p>
+<div class="math-block">$$\vec b-\vec a=(-1,2,0),\qquad \vec c-\vec a=(-1,0,3)$$</div>
+<p class="fnote"><b>公式（外積分量式）：</b>$\vec X\times\vec Y=(X_2Y_3-X_3Y_2,\ X_3Y_1-X_1Y_3,\ X_1Y_2-X_2Y_1)$；本題 $\vec X=\vec b-\vec a$、$\vec Y=\vec c-\vec a$。</p>
+<div class="math-block">$$\begin{aligned}n_1&amp;=(2)(3)-(0)(0)=6\\ n_2&amp;=(0)(-1)-(-1)(3)=3\\ n_3&amp;=(-1)(0)-(2)(-1)=2\end{aligned}$$</div>
+<p><strong>② 單位法向量：</strong> $\vec n=(6,3,2)$，反方向也垂直平面。</p>
+<div class="math-block">$$\begin{aligned}|\vec n|&amp;=\sqrt{36+9+4}=7\\ \hat n&amp;=\pm\tfrac17(6,3,2)\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\hat n=\pm\tfrac17(6,3,2)}$$</div>
+<h4>(b) 距離與最近點</h4>
+<p><strong>① 平面方程式：</strong> 平面上任一點 $\vec r$ 都使 $\vec r-\vec a$ 垂直 $\vec n$（1-16 的形式）。</p>
+<div class="math-block">$$\vec n\cdot(\vec r-\vec a)=0$$</div>
+<p>代入 $\vec n=(6,3,2)$、$\vec a=(1,0,0)$：</p>
+<div class="math-block">$$\begin{aligned}6(x-1)+3y+2z&amp;=0\\ 6x+3y+2z&amp;=6\end{aligned}$$</div>
+<p><strong>② 距離：</strong> 從平面上的 $(1,0,0)$ 指向 $(1,1,1)$ 的向量，在 $\hat n$ 方向的投影長就是距離（沿平面的部分不影響距離）。</p>
+<div class="math-block">$$\vec w=(1,1,1)-(1,0,0)=(0,1,1)$$</div>
+<p class="fnote"><b>公式（投影長）：</b>$\vec w$ 在單位向量 $\hat n$ 方向的分量為 $\vec w\cdot\hat n$；本題 $\hat n=\frac17(6,3,2)$。</p>
+<div class="math-block">$$d=\vec w\cdot\hat n=\frac{0\times6+1\times3+1\times2}{7}=\frac57\approx0.714$$</div>
+<p><strong>③ 最近點：</strong> 最短路徑沿法線，先判斷點在哪一側。把 $(1,1,1)$ 代入平面方程式左邊得 $6+3+2=11\gt6$，在 $+\hat n$ 那一側（和 $d\gt0$ 一致），所以往 $-\hat n$ 走距離 $d$ 就到平面。</p>
+<div class="math-block">$$\vec r_0=(1,1,1)-d\,\hat n$$</div>
+<p>代入 $d=\frac57$、$\hat n=\frac17(6,3,2)$：</p>
+<div class="math-block">$$\begin{aligned}\vec r_0&amp;=(1,1,1)-\tfrac{5}{49}(6,3,2)\\&amp;=\Big(1-\tfrac{30}{49},\ 1-\tfrac{15}{49},\ 1-\tfrac{10}{49}\Big)\\&amp;=\Big(\tfrac{19}{49},\ \tfrac{34}{49},\ \tfrac{39}{49}\Big)\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}d=\tfrac57\approx0.714\\ \text{最近點 }\Big(\tfrac{19}{49},\tfrac{34}{49},\tfrac{39}{49}\Big)\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-13">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-13 · p.44</span></div>
+    <h4>由 $\vec A\times\vec X=\vec B$、$\vec A\cdot\vec X=\phi$ 解出 $\vec X$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-13">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>未知向量 $\vec X$ 滿足 $\vec A\times\vec X=\vec B$、$\vec A\cdot\vec X=\phi$（$\vec A,\vec B,\phi$ 已知）。以 $\vec A,\vec B,\phi,|\vec A|$ 表示 $\vec X$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：未知向量 $\vec X$ 滿足 $\vec A\times\vec X=\vec B$、$\vec A\cdot\vec X=\phi$；$\vec A,\vec B,\phi$ 已知，$\vec A\neq0$，$A=|\vec A|$。</p>
+<div class="video" data-video="tm-1-13"></div>
+<div class="anim" data-anim="solve-x"></div>
+<details class="supp" id="bac-cab">
+      <summary>先備：$\vec A\times(\vec B\times\vec C)=\vec B(\vec A\cdot\vec C)-\vec C(\vec A\cdot\vec B)$（BAC–CAB）</summary>
+      <div class="supp-body">
+        <p>檢查第 1 分量（其餘依循環同理）。令 $\vec D=\vec B\times\vec C$：</p>
+        $$\begin{aligned}
+        [\vec A\times\vec D]_1&=A_2D_3-A_3D_2\\
+        &=A_2(B_1C_2-B_2C_1)\\&\quad-A_3(B_3C_1-B_1C_3)\\
+        &=B_1(A_2C_2+A_3C_3)\\&\quad-C_1(A_2B_2+A_3B_3)\\
+        &=B_1(\vec A\cdot\vec C)-C_1(\vec A\cdot\vec B)
+        \end{aligned}$$
+        <p>最後一步同時加減 $A_1B_1C_1$，湊出完整的內積。</p>
+      </div>
+    </details>
+<p><strong>① 必要條件：</strong> 向量不能相除，先檢查能不能有解。外積一定垂直它的兩個因子，所以 $\vec B=\vec A\times\vec X$ 一定垂直 $\vec A$（三重積有重複向量為 0）：</p>
+<div class="math-block">$$\vec A\cdot\vec B=\vec A\cdot(\vec A\times\vec X)=0$$</div>
+<p>若題目給的 $\vec A\cdot\vec B\neq0$，就沒有 $\vec X$ 滿足條件。</p>
+<p><strong>② 兩邊左外積 $\vec A$：</strong> 內積只看得到 $\vec X$ 平行 $\vec A$ 的部分、外積只看得到垂直部分，兩個條件合起來才決定 $\vec X$；BAC–CAB 展開 $\vec A\times(\vec A\times\vec X)$ 時會同時出現 $\vec X$ 和 $\vec A\cdot\vec X$。</p>
+<div class="math-block">$$\vec A\times(\vec A\times\vec X)=\vec A\times\vec B$$</div>
+<p class="fnote"><b>公式（BAC–CAB）：</b>$\vec A\times(\vec B\times\vec C)=\vec B(\vec A\cdot\vec C)-\vec C(\vec A\cdot\vec B)$，其中 $\vec A,\vec B,\vec C$ 為任意向量；本題依序換成 $\vec A,\vec A,\vec X$。</p>
+<p>代入 $\vec A\cdot\vec X=\phi$、$\vec A\cdot\vec A=A^2$：</p>
+<div class="math-block">$$\begin{aligned}\vec A\times(\vec A\times\vec X)&amp;=\vec A(\vec A\cdot\vec X)-\vec X(\vec A\cdot\vec A)\\&amp;=\phi\vec A-A^2\vec X\end{aligned}$$</div>
+<p>所以</p>
+<div class="math-block">$$\phi\vec A-A^2\vec X=\vec A\times\vec B$$</div>
+<p><strong>③ 解出 $\vec X$：</strong> 移項得 $A^2\vec X=\phi\vec A-\vec A\times\vec B$，兩邊除以純量 $A^2$，並用 $-\vec A\times\vec B=\vec B\times\vec A$：</p>
+<div class="math-block">$$\vec X=\frac{\phi\,\vec A-\vec A\times\vec B}{A^2}=\frac{\phi}{A^2}\vec A+\frac{\vec B\times\vec A}{A^2}$$</div>
+<p>第一項沿 $\vec A$，是平行部分（長度 $\phi/A$，由內積條件決定）；第二項 $\vec B\times\vec A$ 垂直 $\vec A$，是垂直部分（由外積條件決定）。</p>
+<div class="math-block">$$\boxed{\vec X=\dfrac{\phi\,\vec A+\vec B\times\vec A}{|\vec A|^2}\quad(\text{需 }\vec A\cdot\vec B=0)}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="cr-proof">5.5 課本例題與證明題</h3>
+
+<p>考試常見的證明題只靠兩招：<strong>同一個量算兩次</strong>（三角公式），以及<strong>點叉互換 + BAC–CAB</strong>（向量恆等式）。</p>
+
+<div class="problem" data-kind="textbook" id="tm-1-18">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-18 · p.45</span></div>
+    <h4>用外積推出正弦定律</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-18">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解讀 $\vec A\times\vec B$ 以及它的另一種寫法 $(\vec A-\vec B)\times\vec B$，推出平面三角學的正弦定律。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：三角形 $OPQ$，$\vec A=\overrightarrow{OP}$、$\vec B=\overrightarrow{OQ}$、$\vec C=\vec A-\vec B=\overrightarrow{QP}$；內角 $\theta_O,\theta_P,\theta_Q$ 的對邊依序是 $C,B,A$。</p>
+<div class="anim" data-anim="sine-law"></div>
+<p><strong>① 三個外積一樣長：</strong> 任挑兩條邊做外積，長度都是三角形面積的 2 倍；題目提示的 $(\vec A-\vec B)\times\vec B$ 用分配律展開、$\vec B\times\vec B=0$ 來證明。</p>
+<div class="math-block">$$\begin{aligned}\vec C\times\vec B&amp;=(\vec A-\vec B)\times\vec B\\&amp;=\vec A\times\vec B-\vec B\times\vec B=\vec A\times\vec B\end{aligned}$$</div>
+<p>同樣，$\vec A\times\vec A=0$：</p>
+<div class="math-block">$$\begin{aligned}\vec A\times\vec C&amp;=\vec A\times(\vec A-\vec B)\\&amp;=\vec A\times\vec A-\vec A\times\vec B=-\vec A\times\vec B\end{aligned}$$</div>
+<p>差一個負號不影響長度，所以 $|\vec A\times\vec B|=|\vec C\times\vec B|=|\vec A\times\vec C|$。</p>
+<p><strong>② 每個長度寫成「邊 × 邊 × sin（內角）」：</strong> 向量尾對尾的夾角可能是內角的補角，但補角的 sin 相同。</p>
+<p class="fnote"><b>公式（外積的大小）：</b>$|\vec X\times\vec Y|=XY\sin\theta$，其中 $\theta$ 為 $\vec X,\vec Y$ 的夾角；另用 $\sin(180^\circ-\theta)=\sin\theta$。</p>
+<p>$\vec A,\vec B$ 都從 $O$ 出發，夾角就是 $\theta_O$：$|\vec A\times\vec B|=AB\sin\theta_O$。</p>
+<p>在頂點 $Q$，兩條邊是 $\overrightarrow{QP}=\vec C$ 和 $\overrightarrow{QO}=-\vec B$，$\vec C$ 和 $\vec B$ 的夾角是補角 $180^\circ-\theta_Q$，sin 相同：$|\vec C\times\vec B|=CB\sin\theta_Q$。</p>
+<p>在頂點 $P$，兩條邊是 $\overrightarrow{PO}=-\vec A$ 和 $\overrightarrow{PQ}=-\vec C$，兩個都反向時夾角不變，所以 $\vec A,\vec C$ 的夾角就是 $\theta_P$：$|\vec A\times\vec C|=AC\sin\theta_P$。</p>
+<p>代入 ① 的「三個長度相等」：</p>
+<div class="math-block">$$AB\sin\theta_O=CB\sin\theta_Q=AC\sin\theta_P$$</div>
+<p><strong>③ 同除以 $ABC$：</strong> 第一式約掉 $AB$ 剩 $\frac{\sin\theta_O}{C}$，第二式約掉 $CB$ 剩 $\frac{\sin\theta_Q}{A}$，第三式約掉 $AC$ 剩 $\frac{\sin\theta_P}{B}$：</p>
+<div class="math-block">$$\frac{\sin\theta_O}{C}=\frac{\sin\theta_Q}{A}=\frac{\sin\theta_P}{B}$$</div>
+<p>每個角都除以它的對邊，正是正弦定律。∎</p>
+<div class="math-block">$$\boxed{\text{每個內角的 sin 除以它的對邊都相等（正弦定律）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-19">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-19 · p.45</span></div>
+    <h4>用向量推出 $\cos(\alpha-\beta)$、$\sin(\alpha-\beta)$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-19">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用向量代數推出 (a) $\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta$；(b) $\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\hat a,\hat b$ 為 $xy$ 平面上和 $+x$ 軸夾 $\alpha$、$\beta$ 的單位向量（自己構造，讓夾角正好是 $\alpha-\beta$）。</p>
+<div class="anim" data-anim="angle-diff"></div>
+<p><strong>① 兩個單位向量：</strong> 內積的幾何公式含 cos（夾角）、外積含 sin（夾角），分量公式只含各自方向角的 cos、sin，所以構造夾角為 $\alpha-\beta$ 的兩向量，各算兩次。</p>
+<div class="math-block">$$\begin{aligned}\hat a&amp;=(\cos\alpha,\ \sin\alpha,\ 0)\\ \hat b&amp;=(\cos\beta,\ \sin\beta,\ 0)\end{aligned}$$</div>
+<p>設 $\alpha\gt\beta$：從 $\hat b$ 逆時針轉 $\alpha-\beta$ 就到 $\hat a$，兩者夾角是 $\alpha-\beta$。</p>
+<h4>(a) $\cos(\alpha-\beta)$</h4>
+<p><strong>① 內積算兩次：</strong> 同一個內積用幾何公式和分量公式各算一次。</p>
+<p class="fnote"><b>公式（內積）：</b>$\vec X\cdot\vec Y=|\vec X||\vec Y|\cos\theta=\sum_i X_iY_i$，其中 $\theta$ 為夾角；本題 $|\hat a|=|\hat b|=1$、$\theta=\alpha-\beta$。</p>
+<div class="math-block">$$\hat a\cdot\hat b=1\cdot1\cdot\cos(\alpha-\beta)=\cos(\alpha-\beta)$$</div>
+<p>代入兩向量的分量：</p>
+<div class="math-block">$$\hat a\cdot\hat b=\cos\alpha\cos\beta+\sin\alpha\sin\beta+0$$</div>
+<p>兩式相等：</p>
+<div class="math-block">$$\boxed{\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta}$$</div>
+<h4>(b) $\sin(\alpha-\beta)$</h4>
+<p><strong>① 外積算兩次：</strong> 外積大小不帶正負，正負藏在方向裡，所以用右手定則判斷方向，取有號的第 3 分量比較。</p>
+<p class="fnote"><b>公式（外積）：</b>大小 $|\vec X\times\vec Y|=|\vec X||\vec Y|\sin\theta$、方向由右手定則決定；第 3 分量 $(\vec X\times\vec Y)_3=X_1Y_2-X_2Y_1$。本題 $\vec X=\hat b$、$\vec Y=\hat a$。</p>
+<p>右手四指從 $\hat b$ 逆時針彎向 $\hat a$，拇指指 $+\hat k$；大小 $1\cdot1\cdot\sin(\alpha-\beta)$：</p>
+<div class="math-block">$$\hat b\times\hat a=\sin(\alpha-\beta)\,\hat k$$</div>
+<p>代入兩向量的分量：</p>
+<div class="math-block">$$\begin{aligned}(\hat b\times\hat a)_3&amp;=b_1a_2-b_2a_1\\&amp;=\cos\beta\sin\alpha-\sin\beta\cos\alpha\end{aligned}$$</div>
+<p>兩者是同一個第 3 分量：</p>
+<div class="math-block">$$\boxed{\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="tbexample" id="tb-ex17">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Thornton &amp; Marion Example 1.7 · p.27</span></div>
+    <h4>$(\vec A\times\vec B)\cdot(\vec C\times\vec D)$ 化成內積</h4>
+    <button type="button" class="exam-btn" data-exam="tb-ex17">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 $(\vec A\times\vec B)\cdot(\vec C\times\vec D)=(\vec A\cdot\vec C)(\vec B\cdot\vec D)-(\vec B\cdot\vec C)(\vec A\cdot\vec D)$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A,\vec B,\vec C,\vec D$ 為任意向量。</p>
+<p><strong>① 點叉互換：</strong> BAC–CAB 需要「向量叉（另一個外積）」的形狀，所以把 $\vec C\times\vec D$ 當成單一向量 $\vec Z$，用 1-11 的點叉互換。</p>
+<p class="fnote"><b>公式（點叉互換）：</b>$(\vec X\times\vec Y)\cdot\vec Z=\vec X\cdot(\vec Y\times\vec Z)$；本題 $\vec X=\vec A$、$\vec Y=\vec B$、$\vec Z=\vec C\times\vec D$。</p>
+<div class="math-block">$$(\vec A\times\vec B)\cdot(\vec C\times\vec D)=\vec A\cdot\big[\vec B\times(\vec C\times\vec D)\big]$$</div>
+<p><strong>② BAC–CAB 展開中括號：</strong></p>
+<p class="fnote"><b>公式（BAC–CAB）：</b>$\vec X\times(\vec Y\times\vec Z)=\vec Y(\vec X\cdot\vec Z)-\vec Z(\vec X\cdot\vec Y)$；本題 $\vec X,\vec Y,\vec Z$ 依序換成 $\vec B,\vec C,\vec D$。</p>
+<div class="math-block">$$\vec B\times(\vec C\times\vec D)=\vec C(\vec B\cdot\vec D)-\vec D(\vec B\cdot\vec C)$$</div>
+<p><strong>③ 和 $\vec A$ 內積：</strong> 把上一步代回 ①，括號裡的係數都是純量，用內積分配律提出來。</p>
+<div class="math-block">$$\begin{aligned}&amp;\vec A\cdot\big[\vec C(\vec B\cdot\vec D)-\vec D(\vec B\cdot\vec C)\big]\\&amp;=(\vec A\cdot\vec C)(\vec B\cdot\vec D)-(\vec A\cdot\vec D)(\vec B\cdot\vec C)\end{aligned}$$</div>
+<p>這就是題目右邊（兩個乘積的次序可交換）。∎</p>
+<details class="supp">
+        <summary>課本的 $\varepsilon_{ijk}$ 寫法</summary>
+        <div class="supp-body">
+          $$\begin{aligned}&(\vec A\times\vec B)\cdot(\vec C\times\vec D)\\&=\sum_i\Big(\sum_{j,k}\varepsilon_{ijk}A_jB_k\Big)\Big(\sum_{l,m}\varepsilon_{ilm}C_lD_m\Big)\\&=\sum_{j,k,l,m}\Big(\sum_i\varepsilon_{jki}\varepsilon_{lmi}\Big)A_jB_kC_lD_m\\&=\sum_{j,k,l,m}(\delta_{jl}\delta_{km}-\delta_{jm}\delta_{kl})A_jB_kC_lD_m\\&=(\vec A\cdot\vec C)(\vec B\cdot\vec D)-(\vec A\cdot\vec D)(\vec B\cdot\vec C)\end{aligned}$$
+          <p>第二行用循環輪換把 $\varepsilon_{ijk}$ 寫成 $\varepsilon_{jki}$、$\varepsilon_{ilm}$ 寫成 $\varepsilon_{lmi}$，讓求和的下標 $i$ 都在最後，才能套 1-22 的恆等式。</p>
+        </div>
+      </details>
+<div class="math-block">$$\boxed{\begin{gathered}(\vec A\times\vec B)\cdot(\vec C\times\vec D)\\=(\vec A\cdot\vec C)(\vec B\cdot\vec D)-(\vec B\cdot\vec C)(\vec A\cdot\vec D)\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-23">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-23 · p.46</span></div>
+    <h4>$(\vec A\times\vec B)\times(\vec C\times\vec D)$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-23">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>推導 $(\vec A\times\vec B)\times(\vec C\times\vec D)=(\vec A\vec B\vec D)\vec C-(\vec A\vec B\vec C)\vec D$（$\vec A\vec B\vec C$ 是純量三重積）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A\vec B\vec C=\vec A\cdot(\vec B\times\vec C)=(\vec A\times\vec B)\cdot\vec C$ 為純量三重積。</p>
+<p><strong>① 令 $\vec E=\vec A\times\vec B$，套 BAC–CAB：</strong> 左邊是「某個向量 × $(\vec C\times\vec D)$」，把 $\vec A\times\vec B$ 當成單一向量就是 BAC–CAB 的形狀。</p>
+<p class="fnote"><b>公式（BAC–CAB）：</b>$\vec X\times(\vec Y\times\vec Z)=\vec Y(\vec X\cdot\vec Z)-\vec Z(\vec X\cdot\vec Y)$；本題 $\vec X,\vec Y,\vec Z$ 依序換成 $\vec E,\vec C,\vec D$。</p>
+<div class="math-block">$$\vec E\times(\vec C\times\vec D)=\vec C(\vec E\cdot\vec D)-\vec D(\vec E\cdot\vec C)$$</div>
+<p><strong>② 代回 $\vec E$，認出三重積：</strong> 兩個內積正是三重積（1-11）。</p>
+<div class="math-block">$$\begin{aligned}\vec E\cdot\vec D&amp;=(\vec A\times\vec B)\cdot\vec D=\vec A\vec B\vec D\\ \vec E\cdot\vec C&amp;=(\vec A\times\vec B)\cdot\vec C=\vec A\vec B\vec C\end{aligned}$$</div>
+<p>代回上一步：</p>
+<div class="math-block">$$\begin{aligned}&amp;(\vec A\times\vec B)\times(\vec C\times\vec D)\\&amp;=(\vec A\vec B\vec D)\vec C-(\vec A\vec B\vec C)\vec D\end{aligned}$$</div>
+<p><strong>③ 另一種形式：令 $\vec F=\vec C\times\vec D$：</strong> BAC–CAB 要外積在右邊，先用反交換把 $\vec F$ 移到左邊再套（$\vec X,\vec Y,\vec Z\to\vec F,\vec A,\vec B$）。</p>
+<p class="fnote"><b>公式（反交換）：</b>$\vec X\times\vec Y=-\vec Y\times\vec X$。</p>
+<div class="math-block">$$\begin{aligned}(\vec A\times\vec B)\times\vec F&amp;=-\vec F\times(\vec A\times\vec B)\\&amp;=-\big[\vec A(\vec F\cdot\vec B)-\vec B(\vec F\cdot\vec A)\big]\\&amp;=(\vec F\cdot\vec A)\vec B-(\vec F\cdot\vec B)\vec A\end{aligned}$$</div>
+<p>由三重積的定義，$\vec F\cdot\vec A=\vec A\cdot(\vec C\times\vec D)=\vec A\vec C\vec D$、$\vec F\cdot\vec B=\vec B\vec C\vec D$：</p>
+<div class="math-block">$$\begin{aligned}&amp;(\vec A\times\vec B)\times(\vec C\times\vec D)\\&amp;=(\vec A\vec C\vec D)\vec B-(\vec B\vec C\vec D)\vec A\end{aligned}$$</div>
+<details class="supp">
+        <summary>課本要求的 $\varepsilon_{ijk}$ 寫法</summary>
+        <div class="supp-body">
+          <p>令 $\vec E=\vec A\times\vec B$。第 $i$ 分量：</p>
+          $$\begin{aligned}\big[\vec E\times(\vec C\times\vec D)\big]_i&=\sum_{j,k}\varepsilon_{ijk}E_j\sum_{l,m}\varepsilon_{klm}C_lD_m\\&=\sum_{j,l,m}(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})E_jC_lD_m\\&=C_i(\vec E\cdot\vec D)-D_i(\vec E\cdot\vec C)\end{aligned}$$
+          <p>再用 1-21：$\vec E\cdot\vec D=\sum\varepsilon_{ijk}A_iB_jD_k=\vec A\vec B\vec D$、$\vec E\cdot\vec C=\vec A\vec B\vec C$。</p>
+        </div>
+      </details>
+<div class="math-block">$$\boxed{\begin{gathered}(\vec A\times\vec B)\times(\vec C\times\vec D)\\=(\vec A\vec B\vec D)\vec C-(\vec A\vec B\vec C)\vec D\\=(\vec A\vec C\vec D)\vec B-(\vec B\vec C\vec D)\vec A\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-24">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-24 · p.46</span></div>
+    <h4>$\vec A=\hat e(\vec A\cdot\hat e)+\hat e\times(\vec A\times\hat e)$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-24">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec A$ 為任意向量，$\hat e$ 為固定方向的單位向量。證明 $\vec A=\hat e(\vec A\cdot\hat e)+\hat e\times(\vec A\times\hat e)$，並說明兩項的幾何意義。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A$ 為任意向量，$\hat e$ 為固定方向的單位向量（$\hat e\cdot\hat e=1$），$\theta$ 為 $\vec A$ 和 $\hat e$ 的夾角。</p>
+<div class="anim" data-anim="decompose-e"></div>
+<p><strong>① BAC–CAB 展開第二項：</strong> 第二項正是「向量叉（向量叉向量）」的形狀，展開後剛好是「$\vec A$ 減掉第一項」。</p>
+<p class="fnote"><b>公式（BAC–CAB）：</b>$\vec X\times(\vec Y\times\vec Z)=\vec Y(\vec X\cdot\vec Z)-\vec Z(\vec X\cdot\vec Y)$；本題 $\vec X,\vec Y,\vec Z$ 依序換成 $\hat e,\vec A,\hat e$。</p>
+<div class="math-block">$$\hat e\times(\vec A\times\hat e)=\vec A(\hat e\cdot\hat e)-\hat e(\hat e\cdot\vec A)$$</div>
+<p>代入 $\hat e\cdot\hat e=1$、$\hat e\cdot\vec A=\vec A\cdot\hat e$：</p>
+<div class="math-block">$$\hat e\times(\vec A\times\hat e)=\vec A-\hat e(\vec A\cdot\hat e)$$</div>
+<p><strong>② 加上第一項：</strong> 把上一步的結果代入題目右邊，第一項和減掉的那一項正好抵消。</p>
+<div class="math-block">$$\hat e(\vec A\cdot\hat e)+\big[\vec A-\hat e(\vec A\cdot\hat e)\big]=\vec A$$</div>
+<p>∎</p>
+<p><strong>③ 幾何意義：</strong> 第一項沿 $\hat e$，係數 $\vec A\cdot\hat e=A\cos\theta$，是 $\vec A$ 在 $\hat e$ 方向的投影（平行部分 $\vec A_\parallel$）。第二項是「$\hat e$ 叉某個向量」，和 $\hat e$ 的內積是有重複向量的三重積：</p>
+<div class="math-block">$$\hat e\cdot\big[\hat e\times(\vec A\times\hat e)\big]=0$$</div>
+<p>所以它垂直 $\hat e$（垂直部分 $\vec A_\perp$）；由 ① 它等於 $\vec A-\vec A_\parallel$，長度 $\sqrt{A^2-A^2\cos^2\theta}=A\sin\theta$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec A=\vec A_\parallel+\vec A_\perp\\ \text{第一項平行 }\hat e\text{，第二項垂直 }\hat e\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s05">5.6 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s05-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩條歪斜線的最短距離</h4>
+    <button type="button" class="exam-btn" data-exam="self-s05-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>直線 $L_1$ 過原點、方向 $\vec u_1=(1,0,0)$；直線 $L_2$ 過 $(0,1,1)$、方向 $\vec u_2=(0,1,-1)$。兩線不平行也不相交。求兩線的最短距離與達到最短距離的兩個點。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$L_1$ 過 $P_1=(0,0,0)$、方向 $\vec u_1=(1,0,0)$；$L_2$ 過 $P_2=(0,1,1)$、方向 $\vec u_2=(0,1,-1)$；兩線上的一般點 $\vec Q_1=\vec P_1+s\vec u_1$、$\vec Q_2=\vec P_2+t\vec u_2$。</p>
+<p><strong>① 公垂線方向：</strong> 最短的連線必須同時垂直兩條線（不垂直 $L_1$ 的話，沿 $L_1$ 移動端點就能更短），同時垂直 $\vec u_1$、$\vec u_2$ 的方向就是外積。</p>
+<p class="fnote"><b>公式（外積的分量）：</b>$\vec A\times\vec B=(A_2B_3-A_3B_2,\ A_3B_1-A_1B_3,\ A_1B_2-A_2B_1)$，其中 $A_i$、$B_i$ 是兩向量的第 $i$ 個分量；本題 $\vec A=\vec u_1=(1,0,0)$、$\vec B=\vec u_2=(0,1,-1)$。</p>
+<div class="math-block">$$\begin{aligned}n_1&amp;=(0)(-1)-(0)(1)=0\\ n_2&amp;=(0)(0)-(1)(-1)=1\\ n_3&amp;=(1)(1)-(0)(0)=1\end{aligned}$$</div>
+<div class="math-block">$$\vec n=(0,1,1),\qquad |\vec n|=\sqrt2$$</div>
+<p><strong>② 投影到 $\hat n$：</strong> 連線向量沿 $\vec u_1$、$\vec u_2$ 的部分可以靠移動兩點消掉，沿 $\hat n$ 的部分怎麼移都不變，所以最短距離是任取的連線向量 $\vec P_2-\vec P_1$ 在 $\hat n$ 上的投影長。</p>
+<div class="math-block">$$\vec P_2-\vec P_1=(0,1,1)$$</div>
+<p class="fnote"><b>公式（歪斜線距離）：</b>$d=\dfrac{|(\vec P_2-\vec P_1)\cdot\vec n|}{|\vec n|}$，其中 $\vec P_1$、$\vec P_2$ 是兩線上各取的一點，$\vec n$ 是公垂線方向；本題用上一步的 $\vec n=(0,1,1)$、$|\vec n|=\sqrt2$。</p>
+<div class="math-block">$$\begin{aligned}d&amp;=\frac{|(\vec P_2-\vec P_1)\cdot\vec n|}{|\vec n|}\\&amp;=\frac{0+1+1}{\sqrt2}=\frac{2}{\sqrt2}=\sqrt2\end{aligned}$$</div>
+<p><strong>③ 為什麼這是最短：</strong> 兩線上任意兩點的差：</p>
+<div class="math-block">$$\vec Q_2-\vec Q_1=(\vec P_2-\vec P_1)+t\vec u_2-s\vec u_1$$</div>
+<p>和 $\hat n$ 內積時 $\vec u_1\cdot\hat n=\vec u_2\cdot\hat n=0$，後兩項消失，所以不論 $s,t$ 是多少，沿 $\hat n$ 的分量永遠是 $\sqrt2$。向量長度不小於它任一方向的分量，所以 $|\vec Q_2-\vec Q_1|\ge\sqrt2$。</p>
+<p><strong>④ 找出那兩點：</strong> 寫出一般點 $\vec Q_1=(s,0,0)$、$\vec Q_2=(0,\,1+t,\,1-t)$ 的距離平方：</p>
+<div class="math-block">$$\begin{aligned}|\vec Q_2-\vec Q_1|^2&amp;=s^2+(1+t)^2+(1-t)^2\\&amp;=s^2+2+2t^2\end{aligned}$$</div>
+<p>$s^2\ge0$、$2t^2\ge0$，只有 $s=t=0$ 時等於最小值 $2$（距離 $\sqrt2$），兩點是 $L_1$ 上的 $(0,0,0)$ 與 $L_2$ 上的 $(0,1,1)$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{最短距離 }d=\sqrt2\\ \text{在 }L_1\text{ 的 }(0,0,0)\text{ 與 }L_2\text{ 的 }(0,1,1)\text{ 之間}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s05-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>面積的畢氏定理：三個投影面積</h4>
+    <button type="button" class="exam-btn" data-exam="self-s05-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>三角形頂點 $P(1,0,1)$、$Q(2,2,1)$、$R(0,1,3)$。(a) 求面積 $S$。(b) 求它投影到 $yz$、$zx$、$xy$ 三個座標平面的面積 $S_x,S_y,S_z$。(c) 證明對任何三角形都有 $S^2=S_x^2+S_y^2+S_z^2$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：頂點 $P(1,0,1)$、$Q(2,2,1)$、$R(0,1,3)$；$S_x,S_y,S_z$ 是投影到 $yz$、$zx$、$xy$ 平面的面積（下標是該平面的法向軸）；投影到 $xy$ 平面就是把 $z$ 座標改成 0，其餘類推。</p>
+<h4>(a) 三角形面積</h4>
+<p><strong>① 邊向量：</strong> 三角形面積是兩條邊外積長度的一半，先從 $P$ 出發取兩邊（終點減起點）：</p>
+<div class="math-block">$$\begin{aligned}\overrightarrow{PQ}&amp;=(2-1,\ 2-0,\ 1-1)=(1,2,0)\\ \overrightarrow{PR}&amp;=(0-1,\ 1-0,\ 3-1)=(-1,1,2)\end{aligned}$$</div>
+<p><strong>② 外積：</strong></p>
+<p class="fnote"><b>公式（外積的分量）：</b>$\vec A\times\vec B=(A_2B_3-A_3B_2,\ A_3B_1-A_1B_3,\ A_1B_2-A_2B_1)$，其中 $A_i$、$B_i$ 是兩向量的分量；本題 $\vec A=\overrightarrow{PQ}$、$\vec B=\overrightarrow{PR}$。</p>
+<div class="math-block">$$\begin{aligned}n_x&amp;=(2)(2)-(0)(1)=4\\ n_y&amp;=(0)(-1)-(1)(2)=-2\\ n_z&amp;=(1)(1)-(2)(-1)=3\end{aligned}$$</div>
+<div class="math-block">$$\vec n=(4,-2,3)$$</div>
+<p><strong>③ 面積：</strong></p>
+<p class="fnote"><b>公式（三角形面積）：</b>$S=\tfrac12|\overrightarrow{PQ}\times\overrightarrow{PR}|$，即兩邊外積長度的一半；本題外積為 $\vec n=(4,-2,3)$。</p>
+<div class="math-block">$$S=\tfrac12\sqrt{16+4+9}=\tfrac{\sqrt{29}}{2}\approx2.69$$</div>
+<div class="math-block">$$\boxed{S=\frac{\sqrt{29}}2\approx2.69}$$</div>
+<h4>(b) 三個投影面積</h4>
+<p><strong>① 投影到 $xy$：</strong> 把 (a) 兩條邊向量的 $z$ 分量改成 0 再做外積：</p>
+<div class="math-block">$$\begin{aligned}&amp;(1,2,0)\times(-1,1,0)\\&amp;=(0,\ 0,\ 1\cdot1-2\cdot(-1))=(0,0,3)\end{aligned}$$</div>
+<div class="math-block">$$S_z=\tfrac12\times3=\tfrac32$$</div>
+<p><strong>② 投影到 $yz$：</strong> $x$ 分量改成 0：</p>
+<div class="math-block">$$\begin{aligned}&amp;(0,2,0)\times(0,1,2)\\&amp;=(2\cdot2-0\cdot1,\ 0,\ 0)=(4,0,0)\end{aligned}$$</div>
+<div class="math-block">$$S_x=\tfrac12\times4=2$$</div>
+<p><strong>③ 投影到 $zx$：</strong> $y$ 分量改成 0：</p>
+<div class="math-block">$$\begin{aligned}&amp;(1,0,0)\times(-1,0,2)\\&amp;=(0,\ 0\cdot(-1)-1\cdot2,\ 0)=(0,-2,0)\end{aligned}$$</div>
+<div class="math-block">$$S_y=\tfrac12\times|-2|=1$$</div>
+<p>正好 $S_x=\tfrac12|n_x|$、$S_y=\tfrac12|n_y|$、$S_z=\tfrac12|n_z|$。</p>
+<div class="math-block">$$\boxed{S_x=2,\quad S_y=1,\quad S_z=\tfrac32}$$</div>
+<h4>(c) 證明 $S^2=S_x^2+S_y^2+S_z^2$</h4>
+<p><strong>① 投影面積是外積分量的一半：</strong> 設兩邊為 $\vec A,\vec B$，外積的 $z$ 分量 $n_z=A_1B_2-A_2B_1$ 只含 $x,y$ 分量；把邊投影到 $xy$ 平面（$A_3,B_3$ 改成 0）不改變它，而投影後的外積只剩這個 $z$ 分量，所以 $S_z=\tfrac12|n_z|$。同理 $S_x=\tfrac12|n_x|$、$S_y=\tfrac12|n_y|$。</p>
+<p><strong>② 長度平方等於分量平方和：</strong></p>
+<div class="math-block">$$\begin{aligned}S^2&amp;=\tfrac14|\vec n|^2=\tfrac14(n_x^2+n_y^2+n_z^2)\\&amp;=S_x^2+S_y^2+S_z^2\end{aligned}$$</div>
+<div class="math-block">$$\boxed{S^2=S_x^2+S_y^2+S_z^2}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$|\vec A\times\vec B|$ 是平行四邊形面積，方向用右手定則；$\vec B\times\vec A=-\vec A\times\vec B$。</li>
+    <li>分量公式算完，用「和兩原向量內積為 0」檢查。</li>
+    <li>$\vec A\cdot(\vec B\times\vec C)$ = 行列式 = 有號體積；$\vec A\times(\vec B\times\vec C)=\vec B(\vec A\cdot\vec C)-\vec C(\vec A\cdot\vec B)$。</li>
+    <li>證明恆等式：先點叉互換，把一個括號當成單一向量，再套 BAC–CAB。</li>
+  </ol>
+</div>

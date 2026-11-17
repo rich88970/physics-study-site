@@ -1,0 +1,205 @@
+<h2>一、兩光束干涉：照度極大、極小與對比度 <span class="pg">課本 p.163–169</span> <span class="must teacher maybe">老師：第十章著重</span> <span class="must exam">考古 1/5</span></h2>
+
+<p class="lead">兩道同頻率、同調的光疊在一起，照度不是單純相加，而是多了一個會隨位置正負變化的干涉項。這一節把照度寫成 $I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$，求出亮紋的極大值、暗紋的極小值，再定義條紋有多「清楚」的對比度。</p>
+
+<p class="small muted">（逐字稿 04:37：「第十章我們著重在干涉」；04:56：「去求干涉之後的對比度這樣的例子。也就是你要去求干涉之後的極大值——照度的極大值、照度的極小值——求出照度的這個對比度。」老師說的是「著重」，沒有說「一定會考」；李孟恩課程資料夾的 5 份期中考中有 1 份（2018）考對比度（物理考古資料夾的舊考卷另有 5 份，收在<a href="#o10-old-v">第 9 節</a>），依考古題統計推論，不是老師說的。）</p>
+
+<h3 id="o10-tb-sum">1.1 兩道光疊加後的照度 <span class="pg-tag">p.163–166</span></h3>
+
+<p>老師的講義檔案沒有第十章，本節照課本 Pedrotti §1 Two-Beam Interference。兩道同頻率的平面波在觀察點 P 的電場（課本式 (1)(2)）：</p>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (1)(2)(8)(14)</span>
+  $$\vec E_1=\vec E_{01}\cos(ks_1-\omega t+\phi_1),\qquad \vec E_2=\vec E_{02}\cos(ks_2-\omega t+\phi_2)$$
+  $$\delta=k(s_2-s_1)+(\phi_2-\phi_1),\qquad I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$$
+</div>
+
+<p>照度是電場平方的時間平均乘上 $\varepsilon_0c$（第八章學過）：$I=\varepsilon_0c\langle\vec E\cdot\vec E\rangle$。把 $\vec E=\vec E_1+\vec E_2$ 代進去展開，會得到三項：</p>
+
+<div class="step" data-step="o10-tb-s1" data-sym="I,I12">
+  <span class="step-title">展開平方：兩個自己的照度＋一個交叉項</span>
+  $$I=\varepsilon_0c\langle\vec E_1\cdot\vec E_1\rangle+\varepsilon_0c\langle\vec E_2\cdot\vec E_2\rangle+2\varepsilon_0c\langle\vec E_1\cdot\vec E_2\rangle\equiv I_1+I_2+I_{12}$$
+  <p>$\cos^2$ 的時間平均是 $\tfrac12$，所以 $I_1=\tfrac12\varepsilon_0cE_{01}^2$、$I_2=\tfrac12\varepsilon_0cE_{02}^2$。</p>
+</div>
+
+<div class="step" data-step="o10-tb-s2" data-sym="delta">
+  <span class="step-title">交叉項：積化和差後只剩相位差</span>
+  <p>令 $\alpha=ks_1+\phi_1$、$\beta=ks_2+\phi_2$，用 $2\cos A\cos B=\cos(A+B)+\cos(B-A)$：</p>
+  $$2\langle\vec E_1\cdot\vec E_2\rangle=\vec E_{01}\cdot\vec E_{02}\left[\langle\cos(\alpha+\beta-2\omega t)\rangle+\cos(\beta-\alpha)\right]=\vec E_{01}\cdot\vec E_{02}\cos\delta$$
+  <p>第一項以 $2\omega$ 快速振盪，平均為 0。兩電場平行時 $\vec E_{01}\cdot\vec E_{02}=E_{01}E_{02}$，再用 $I_1,I_2$ 換掉振幅：</p>
+  $$I_{12}=\varepsilon_0cE_{01}E_{02}\cos\delta=2\sqrt{I_1I_2}\cos\delta$$
+</div>
+
+<p>三個前提要記住：(1) <strong>電場互相垂直</strong>時 $\vec E_{01}\cdot\vec E_{02}=0$，完全沒有干涉；(2) 兩道光來自<strong>不同的光源</strong>（互不同調）時，$\phi_2-\phi_1$ 隨時間亂跳，$\langle\cos\delta\rangle=0$，只剩 $I=I_1+I_2$；(3) 同一個光源分成兩道、光程差小於同調長度時，$\delta$ 固定，才看得到穩定的條紋。所以本章所有裝置（雙狹縫、鏡子、稜鏡、薄膜）都是把<strong>同一道光分成兩道</strong>再讓它們相遇。</p>
+
+<h3 id="o10-tb-max">1.2 照度的極大值與極小值 <span class="pg-tag">p.167</span> <span class="must teacher maybe">老師：著重</span></h3>
+
+<p>$\cos\delta$ 在 $+1$ 和 $-1$ 之間變化，觀察點換位置 $\delta$ 就跟著變，所以照度在兩個極端之間來回，形成亮暗相間的條紋：</p>
+
+$$I_{\max}=I_1+I_2+2\sqrt{I_1I_2}=\left(\sqrt{I_1}+\sqrt{I_2}\right)^2\quad(\delta=2m\pi)$$
+$$I_{\min}=I_1+I_2-2\sqrt{I_1I_2}=\left(\sqrt{I_1}-\sqrt{I_2}\right)^2\quad(\delta=(2m+1)\pi)$$
+
+<p>寫成完全平方很好用：照度的平方根就像「振幅」，同相時相加、反相時相減。兩道光一樣亮（$I_1=I_2=I_0$）時 $I_{\max}=4I_0$、$I_{\min}=0$，並且</p>
+
+$$I=2I_0(1+\cos\delta)=4I_0\cos^2\frac{\delta}{2}\qquad(\text{課本式 (18)})$$
+
+<p>注意 $4I_0$ 不是能量變多：暗的地方少掉的能量跑到亮的地方去，一個條紋週期平均起來仍是 $2I_0$。</p>
+
+<h3 id="o10-tb-v">1.3 對比度（visibility、fringe contrast）<span class="pg-tag">p.168</span> <span class="must teacher maybe">老師：著重</span> <span class="must exam">考古 1/5</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (17)</span>
+  $$\text{visibility}=\frac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}$$
+</div>
+
+<div class="step" data-step="o10-tb-s3" data-sym="V,N">
+  <span class="step-title">代入極大、極小，再用照度比 $N$ 表示</span>
+  $$V=\frac{(I_1+I_2+2\sqrt{I_1I_2})-(I_1+I_2-2\sqrt{I_1I_2})}{(I_1+I_2+2\sqrt{I_1I_2})+(I_1+I_2-2\sqrt{I_1I_2})}=\frac{4\sqrt{I_1I_2}}{2(I_1+I_2)}=\frac{2\sqrt{I_1I_2}}{I_1+I_2}$$
+  <p>令 $I_1=NI_2$，分子分母同除 $I_2$：</p>
+  $$V=\frac{2\sqrt{N}\,I_2}{(N+1)I_2}=\frac{2\sqrt N}{N+1}$$
+  <p>用振幅表示（$I\propto E_0^2$）：$V=\dfrac{2E_{01}E_{02}}{E_{01}^2+E_{02}^2}$。</p>
+</div>
+
+<div class="step" data-step="o10-tb-s4" data-sym="V,N">
+  <span class="step-title">反過來：已知 $V$ 求照度比 $N$</span>
+  <p>令 $x=\sqrt N$，$V(x^2+1)=2x$ 是 $x$ 的一元二次方程式：</p>
+  $$Vx^2-2x+V=0\quad\Longrightarrow\quad x=\frac{2\pm\sqrt{4-4V^2}}{2V}=\frac{1\pm\sqrt{1-V^2}}{V}$$
+  <p>兩個根相乘等於 1（常數項／首項 $=V/V$），也就是 $N$ 和 $1/N$：同一個對比度只決定「亮的是暗的幾倍」，不決定哪一道比較亮。題目問「照度較大的是較小的多少倍」就取大的根：</p>
+  $$N=\left(\frac{1+\sqrt{1-V^2}}{V}\right)^2$$
+</div>
+
+<p>幾個值要有感覺：$N=1$ 時 $V=1$（最清楚）；$N=4$ 時 $V=0.8$；$N=9$ 時 $V=0.6$；兩道光差 34 倍時還有 $V=\tfrac13$。所以實驗上要條紋清楚，就要讓兩道光一樣亮。</p>
+
+<p><strong>課本例題 1</strong>（p.168–169，題材摘錄）：$E_{01}=2\ \text{kV/m}$、$E_{02}=5\ \text{kV/m}$，$k(s_2-s_1)=\pi/12$。$I_1=\tfrac12\varepsilon_0c(2000)^2=5309\ \text{W/m}^2$、$I_2=33\,180\ \text{W/m}^2$，$I_{12}=2\sqrt{5309\times33\,180}\cos(\pi/12)=25\,640\ \text{W/m}^2$；$I_{\max}=65\,034$、$I_{\min}=11\,945\ \text{W/m}^2$，對比度 $0.690$（用 $2\sqrt{I_1I_2}/(I_1+I_2)=2(2)(5)/(4+25)=0.690$ 一步就到）。作業 7-1 就是同一個題型。</p>
+
+<div class="box pitfall">
+  <span class="box-title">最常見的錯誤</span>
+  <p>把對比度寫成 $I_{\max}/I_{\min}$，或用振幅比直接代 $2\sqrt N/(N+1)$（$N$ 是<strong>照度</strong>比；振幅比 2 倍等於照度比 4 倍）。反解時忘了兩個根，或沒說明為什麼取大於 1 的那個。</p>
+</div>
+
+<h3 id="o10-tb-hw">1.4 作業與考古題</h3>
+
+<div class="problem" data-kind="textbook" id="o10-7-1">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 7-1（作業）· p.189</span></div>
+    <h4>兩道同調光：各自照度、干涉項、淨照度與對比度 <span class="must teacher maybe">老師：著重</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-7-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>1</b> Two mutually coherent beams having parallel electric fields are described by</p>$$E_1=3\cos\left(ks_1-\omega t+\frac{\pi}{5}\right)$$$$E_2=4\cos\left(ks_2-\omega t+\frac{\pi}{6}\right)$$<p>with amplitudes in kV/m. The beams interfere at a point $P$ where the phase difference due to path is $\pi/3$ (the first beam having the longer path). At the point of superposition, calculate (a) the irradiances $I_1$ and $I_2$ of the individual beams; (b) the irradiance $I_{12}$ due to their interference; (c) the net irradiance; (d) the fringe visibility.</p></div>
+<p class="original-caption">Pedrotti Problem 7-1</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩道互相同調、電場平行的光 $E_1=3\cos(ks_1-\omega t+\pi/5)$、$E_2=4\cos(ks_2-\omega t+\pi/6)$，振幅單位 kV/m。兩道光在 P 點干涉，路徑造成的相位差為 $\pi/3$（第一道光的路徑較長）。在疊加點求 (a) 各自的照度 $I_1$、$I_2$；(b) 干涉項 $I_{12}$；(c) 淨照度；(d) 條紋對比度。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振幅</td><td>$E_{01}=3\ \text{kV/m}=3000\ \text{V/m}$、$E_{02}=4000\ \text{V/m}$</td><td>「$E_1=3\cos(\cdots)$、$E_2=4\cos(\cdots)$，<b>amplitudes in kV/m</b>」</td></tr>
+          <tr><td>初相位</td><td>$\phi_1=\pi/5$、$\phi_2=\pi/6$</td><td>兩個 cos 括號裡的常數</td></tr>
+          <tr><td>路徑相位差</td><td>$k(s_1-s_2)=+\pi/3$</td><td>「phase difference due to path is $\pi/3$（<b>the first beam having the longer path</b>）」：$s_1>s_2$</td></tr>
+          <tr><td>電場方向</td><td>平行</td><td>「parallel electric fields」：干涉項取最大的 $E_{01}E_{02}$</td></tr>
+          <tr><td>同調</td><td>相位差不隨時間變</td><td>「mutually coherent」</td></tr>
+          <tr><td>常數</td><td>$\varepsilon_0=8.854\times10^{-12}\ \text{F/m}$、$c=3\times10^8\ \text{m/s}$</td><td>題目沒給，用標準值；在空氣中 $n\approx1$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $I_1$、$I_2$；(b) $I_{12}$；(c) $I=I_1+I_2+I_{12}$；(d) 對比度 $V$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每道光單獨看就是一道平面波，<b>所以</b>各自的照度用第八章的 $I=\tfrac12\varepsilon_0cE_0^2$。<b>因為</b>兩道光同調且電場平行，<b>所以</b>疊加後多出干涉項 $2\sqrt{I_1I_2}\cos\delta$，關鍵是把<b>總</b>相位差 $\delta$ 算對：它包含路徑造成的 $\pi/3$ 和兩道光初相位的差 $\pi/5-\pi/6$。</p>
+      <p>(d) 的「對比度」是指在 P 點附近形成的條紋：位置稍微移動時 $\delta$ 會跑遍所有值，<b>所以</b>用 $I_{\max}$、$I_{\min}$ 的定義，和 P 點本身的 $\delta$ 無關。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-7-1-s1" data-sym="I">
+        <span class="step-title">(a) 各自的照度</span>
+        $$I=\tfrac12\varepsilon_0cE_0^2,\qquad \tfrac12\varepsilon_0c=\tfrac12(8.854\times10^{-12})(3\times10^8)=1.328\times10^{-3}\ \text{A/V}$$
+        <p class="sub">代入 $E_{01}=3000\ \text{V/m}$、$E_{02}=4000\ \text{V/m}$（題目，kV/m 換成 V/m）：</p>
+        $$I_1=(1.328\times10^{-3})(3000)^2=1.195\times10^4\ \text{W/m}^2,\qquad I_2=(1.328\times10^{-3})(4000)^2=2.125\times10^4\ \text{W/m}^2$$
+      </div>
+      <div class="step" data-step="o10-7-1-s2" data-sym="delta">
+        <span class="step-title">總相位差：路徑部分＋初相位部分</span>
+        <p>兩道光在 P 點的相位分別是 $ks_1+\phi_1$ 和 $ks_2+\phi_2$（$-\omega t$ 相同，相減消掉）：</p>
+        $$\delta=(ks_1+\phi_1)-(ks_2+\phi_2)=k(s_1-s_2)+(\phi_1-\phi_2)$$
+        <p class="sub">代入 $k(s_1-s_2)=\pi/3$（題目「第一道光路徑較長」）、$\phi_1-\phi_2=\pi/5-\pi/6=\pi/30$：</p>
+        $$\delta=\frac{\pi}{3}+\frac{\pi}{30}=\frac{11\pi}{30}=66^\circ$$
+        <p>$\cos\delta$ 是偶函數，用 $\phi_2-\phi_1$ 的寫法得到 $-66^\circ$，結果一樣；但若把兩部分寫成相減（$\pi/3-\pi/30$）就錯了。</p>
+      </div>
+      <div class="step" data-step="o10-7-1-s3" data-sym="I12">
+        <span class="step-title">(b) 干涉項</span>
+        $$I_{12}=2\sqrt{I_1I_2}\cos\delta$$
+        <p class="sub">代入步驟 1 的 $I_1,I_2$ 與步驟 2 的 $\delta=66^\circ$：</p>
+        $$I_{12}=2\sqrt{(1.195\times10^4)(2.125\times10^4)}\cos66^\circ=2(1.594\times10^4)(0.4067)=1.296\times10^4\ \text{W/m}^2$$
+      </div>
+      <div class="step" data-step="o10-7-1-s4">
+        <span class="step-title">(c) 淨照度</span>
+        $$I=I_1+I_2+I_{12}=(1.195+2.125+1.296)\times10^4=4.62\times10^4\ \text{W/m}^2$$
+      </div>
+      <div class="step" data-step="o10-7-1-s5" data-sym="V">
+        <span class="step-title">(d) 對比度</span>
+        $$V=\frac{2\sqrt{I_1I_2}}{I_1+I_2}=\frac{2E_{01}E_{02}}{E_{01}^2+E_{02}^2}$$
+        <p class="sub">代入振幅 3、4（題目；比值與單位無關）：</p>
+        $$V=\frac{2(3)(4)}{9+16}=\frac{24}{25}=0.96$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $I_1\approx11\,950\ \text{W/m}^2$、$I_2\approx21\,250\ \text{W/m}^2$；(b) $I_{12}\approx12\,960\ \text{W/m}^2$；(c) $I\approx46\,170\ \text{W/m}^2$；(d) $V=0.96$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>直接把 $E_1+E_2$ 的平方做時間平均（數值積分，見 <code>tools/verify_optics_ch10.py</code>）得到同樣的 $4.62\times10^4\ \text{W/m}^2$ ✔。和書末答案對照：(a)(b) 與書末一致；書末 (c) 寫 $33\,200$，那只是 $I_1+I_2$（沒有加干涉項），(d) 寫 $0.95$，精確值是 $24/25=0.96$。解答本 (b) 用 $\pi/3-(\pi/5-\pi/6)=54^\circ$ 得 $18\,720$，是把初相位差的正負號弄反；本站依「第一道光路徑較長、相位 $ks_1+\pi/5$ 較大」取 $66^\circ$，與書末 (b) 相同。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o10-k18m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2018-04-25）第 3 題（106下）</span></div>
+    <h4>對比度 $\tfrac34$ 時照度比是多少 <span class="must teacher maybe">老師：著重</span> <span class="must exam">考古 1/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-k18m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k18m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/25/2018</p><p>3. (20%) 兩道光進行干涉實驗，形成干涉條紋。</p><p>(a) 若一道光之照度恰為另一道光照度的 N 倍 (N&gt;1)，試求此時干涉條紋之對比度 (contrast 或 fringe visibility) 為多少（以 N 表示）？</p><p>(b) 若干涉條紋之對比度恰為 3/4，試求照度較大的那道光之照度為另一道光之照度的多少倍？</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（20%）兩道光干涉。(a) 一道光的照度是另一道的 $N$ 倍（$N>1$），求對比度（以 $N$ 表示）；(b) 若對比度為 $\tfrac34$，照度較大的那道光是另一道的幾倍？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>照度比</td><td>$I_1=NI_2$，$N>1$</td><td>「N 倍 (N&gt;1)」：已經指定 $I_1$ 較亮，(b) 只取 $N>1$ 的根</td></tr>
+          <tr><td>對比度</td><td>$V=\tfrac34$</td><td>(b)「對比度恰為 3/4」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $V(N)$；(b) $V=\tfrac34$ 時的 $N$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) 和 <a href="#o10-k09m3">2009／2012 那題</a>一樣，由 $I_{\max},I_{\min}$ 推出 $V=2\sqrt N/(N+1)$。(b) <b>因為</b>式子裡有 $\sqrt N$，<b>所以</b>令 $x=\sqrt N$ 解二次方程式；<b>因為</b>題目規定 $N>1$，<b>所以</b>只留 $x>1$ 的根。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-k18m3-s1" data-sym="V,N">
+        <span class="step-title">(a) 對比度</span>
+        $$I_{\max,\min}=(N+1\pm2\sqrt N)I_2\ \Longrightarrow\ V=\frac{4\sqrt N}{2(N+1)}=\frac{2\sqrt N}{N+1}$$
+      </div>
+      <div class="step" data-step="o10-k18m3-s2">
+        <span class="step-title">(b) 列方程式</span>
+        <p class="sub">代入 $V=\tfrac34$（題目），兩邊乘 $4(N+1)$：</p>
+        $$8\sqrt N=3(N+1)\ \Longrightarrow\ 3x^2-8x+3=0\quad(x=\sqrt N)$$
+      </div>
+      <div class="step" data-step="o10-k18m3-s3">
+        <span class="step-title">解出並取 $x>1$</span>
+        $$x=\frac{8\pm\sqrt{64-36}}{6}=\frac{8\pm2\sqrt7}{6}=\frac{4\pm\sqrt7}{3}=2.215\ \text{或}\ 0.451$$
+        $$N=x^2=\left(\frac{4+\sqrt7}{3}\right)^2=\frac{23+8\sqrt7}{9}=4.91$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $V=\dfrac{2\sqrt N}{N+1}$；(b) $N=\dfrac{23+8\sqrt7}{9}\approx4.91$ 倍。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$2\sqrt{4.907}/5.907=4.430/5.907=0.750$ ✔；另一根 $0.451^2=0.204=1/4.91$，正是倒數 ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$；$\delta$ 要包含路徑與初相位（之後還有反射相位）。</li>
+    <li>$I_{\max}=(\sqrt{I_1}+\sqrt{I_2})^2$、$I_{\min}=(\sqrt{I_1}-\sqrt{I_2})^2$。</li>
+    <li>$V=\dfrac{2\sqrt N}{N+1}=\dfrac{2E_{01}E_{02}}{E_{01}^2+E_{02}^2}$；反解 $\sqrt N=\dfrac{1+\sqrt{1-V^2}}{V}$，兩根互為倒數。</li>
+  </ol>
+</div>

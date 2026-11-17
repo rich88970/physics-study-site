@@ -1,0 +1,100 @@
+<h2>四、梯度、散度、旋度與積分定理 <span class="pg">Lecture 1 §12–15</span></h2>
+
+<h3 id="fx-grad">4.1 梯度</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">$\nabla$ 運算子</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#gr-del" title="12.1 ">L1 §12.1</a></span></div>
+  <div class="math-block">$$\nabla=\hat i\frac{\partial}{\partial x}+\hat j\frac{\partial}{\partial y}+\hat k\frac{\partial}{\partial z}$$</div>
+  <p>本身不是數，要作用在函數上：作用在純量是梯度 $\nabla\phi$、和向量內積是散度 $\nabla\cdot\vec A$、和向量外積是旋度 $\nabla\times\vec A$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">梯度與全微分</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#gr-def" title="12.2 梯度的意義">L1 §12.2</a></span></div>
+  <div class="math-block">$$\nabla\phi=\Big(\frac{\partial\phi}{\partial x},\frac{\partial\phi}{\partial y},\frac{\partial\phi}{\partial z}\Big),\qquad \mathrm d\phi=\nabla\phi\cdot\mathrm d\vec s$$</div>
+  <p>梯度指向 $\phi$ 增加最快的方向，大小是最大變化率，並且垂直等值面（等高線）。求曲面的法向量：把曲面寫成 $\phi(x,y,z)=$ 常數，$\nabla\phi$ 就是法向量。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">方向導數</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#gr-def" title="12.2 梯度的意義">L1 §12.2</a></span></div>
+  <div class="math-block">$$\frac{\mathrm d\phi}{\mathrm ds}\Big|_{\hat n}=\hat n\cdot\nabla\phi$$</div>
+  <p>沿單位向量 $\hat n$ 走時 $\phi$ 的變化率。題目給的方向不是單位向量時要先除以長度。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">位能與力</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#gr-force" title="12.3 位能與力">L1 §12.3</a></span></div>
+  <div class="math-block">$$\vec F=-\nabla V$$</div>
+  <p>力指向位能下降最快的方向。只對保守力成立（見 4.4）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">只和 $r$ 有關的函數</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#dv-r" title="13.3 ">L1 §13.3</a></span></div>
+  <div class="math-block">$$\nabla f(r)=f'(r)\,\hat r,\qquad \nabla r=\hat r,\qquad \nabla\frac1r=-\frac{\hat r}{r^2}$$</div>
+  <p>連心力、萬有引力都屬於這一型：梯度一定沿徑向。</p>
+  <p class="symnote">符號：$r=\sqrt{x^2+y^2+z^2}$，$\hat r=\vec r/r$。</p>
+</div>
+
+<h3 id="fx-div">4.2 散度</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">散度的定義與意義</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#dv-def" title="13.1 散度 = 淨通量 ÷ 體積">L1 §13.1</a><a class="fx-src" data-chapter="mechanics/ch01" href="#dv-sign" title="13.2 散度的正負">L1 §13.2</a></span></div>
+  <div class="math-block">$$\nabla\cdot\vec f=\frac{\partial f_x}{\partial x}+\frac{\partial f_y}{\partial y}+\frac{\partial f_z}{\partial z}=\frac{\text{淨流出通量}}{\text{體積}}$$</div>
+  <p>結果是純量。正的是「源」（往外流出）、負的是「匯」（往內流入）、零表示流進等於流出。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">$\nabla$ 作用在 $\vec r$ 上</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#dv-r" title="13.3 ">L1 §13.3</a></span></div>
+  <div class="math-block">$$\nabla\cdot\vec r=3,\qquad \nabla\cdot\big(g(r)\,\vec r\big)=3g+rg',\qquad \nabla\cdot\frac{\hat r}{r^2}=0\ (r\neq0)$$</div>
+  <p>$\nabla^2=\nabla\cdot\nabla=\partial_x^2+\partial_y^2+\partial_z^2$ 是拉普拉斯算子。平方反比場在原點以外散度為零，所以通量只由原點的「源」決定。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">Gauss 散度定理</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#dv-gauss" title="13.4 Gauss 定理（課本 §1.17）">L1 §13.4</a></span></div>
+  <div class="math-block">$$\oint_S\vec A\cdot\mathrm d\vec a=\int_V\nabla\cdot\vec A\,\mathrm dv$$</div>
+  <p>封閉曲面的總通量＝裡面散度的體積分。哪邊好算就算哪邊：散度簡單（例如常數）就算體積分。$\mathrm d\vec a$ 指向曲面外側。</p>
+</div>
+
+<h3 id="fx-curl">4.3 旋度</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">旋度的行列式</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cu-def" title="14.1 定義">L1 §14.1</a></span></div>
+  <div class="math-block">$$\nabla\times\vec V=\begin{vmatrix}\hat i&\hat j&\hat k\\ \partial_x&\partial_y&\partial_z\\ V_x&V_y&V_z\end{vmatrix},\qquad (\nabla\times\vec V)_z=\frac{\partial V_y}{\partial x}-\frac{\partial V_x}{\partial y}$$</div>
+  <p>展開方式和外積一樣，中間項同樣要小心負號。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">旋度的意義</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cu-meaning" title="14.2 旋度的直觀">L1 §14.2</a></span></div>
+  <div class="math-block">$$\oint_C\vec V\cdot\mathrm d\vec\lambda\approx(\nabla\times\vec V)\cdot\hat n\,\Delta\sigma$$</div>
+  <p>在那一點放一個小槳輪，旋度描述它會不會轉、繞哪個軸轉。剛體轉動的速度場 $\vec v=\vec\omega\times\vec r$ 的旋度是 $2\vec\omega$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">一定為零的兩個組合</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cu-cons" title="14.3 保守力">L1 §14.3</a></span></div>
+  <div class="math-block">$$\nabla\times(\nabla\phi)=0,\qquad \nabla\cdot(\nabla\times\vec A)=0,\qquad \nabla\times\big[\vec r\,f(r)\big]=0$$</div>
+  <p>梯度場沒有旋度（所以 $\vec F=-\nabla U$ 的力旋度為零）；旋度場沒有散度。連心力 $f(r)\vec r$ 旋度為零 ⟹ 連心力都是保守力。</p>
+</div>
+
+<h3 id="fx-stokes">4.4 Stokes 定理與保守力</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">Stokes 定理</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#st-thm" title="15.1 Stokes 定理">L1 §15.1</a></span></div>
+  <div class="math-block">$$\oint_C\vec V\cdot\mathrm d\vec\lambda=\int_S(\nabla\times\vec V)\cdot\mathrm d\vec\sigma$$</div>
+  <p>封閉曲線的環量＝曲線圍起來的曲面上旋度的通量。方向用右手定則：四指沿 $C$ 走的方向，拇指是 $\mathrm d\vec\sigma$ 的方向。曲面可以任選（只要邊界是 $C$），選最好積的那個。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">用線積分求面積</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#st-thm" title="15.1 Stokes 定理">L1 §15.1</a></span></div>
+  <div class="math-block">$$A=\frac12\oint_C(x\,\mathrm dy-y\,\mathrm dx)$$</div>
+  <p>Stokes 定理在平面上的應用（取 $\vec V=\tfrac12(-y,x,0)$，旋度為 $\hat k$）。曲線要逆時針走。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">純量位能</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#st-pot" title="15.2 純量位能">L1 §15.2</a></span></div>
+  <div class="math-block">$$\vec F=-\nabla\phi\iff\phi(\vec r)=-\int_{\vec r_0}^{\vec r}\vec F\cdot\mathrm d\vec r$$</div>
+  <p>給力求位能：沿任一條路徑積分（通常選沿座標軸的折線），加負號；參考點 $\vec r_0$ 任選，只差一個常數。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">保守力的三種等價說法</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#st-equiv" title="15.3 保守力的三種等價說法">L1 §15.3</a><a class="fx-src" data-chapter="mechanics/ch02" href="#c2c-curl" title="13.4 判斷一個力是不是保守力">L2 §13.4</a></span></div>
+  <div class="math-block">$$\vec F=-\nabla\phi\iff\nabla\times\vec F=0\iff\oint\vec F\cdot\mathrm d\vec r=0$$</div>
+  <p>三者任一成立就是保守力，功和路徑無關。考試判斷保守力最快的方法是算旋度。條件：區域要單連通（中間沒有挖洞）。</p>
+</div>

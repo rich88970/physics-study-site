@@ -1,0 +1,237 @@
+<h2>五、X 射線 <span class="pg">課本 §2.5 · p.68–72</span></h2>
+
+<p class="lead">光電效應是光子把能量交給電子；反過來，高速電子撞上靶時把動能變成光子，就是 X 射線。X 光連續譜有一個和靶材料無關的最短波長 $\lambda_{\min}=hc/eV$，古典電磁學解釋不了，量子理論一行就推出來。</p>
+
+<h3 id="m2-xr-what">5.1 X 射線與制動輻射 <span class="pg-tag">p.68–69</span></h3>
+
+<p>1895 年 Roentgen 發現快速電子撞擊物質時會產生一種穿透力很強、性質不明的輻射，叫 <strong>X 射線</strong>：直線前進、不受電場和磁場偏折、能穿過不透明的物質、讓螢光物質發光、使底片感光。原始電子越快，X 光穿透力越強；電子越多，X 光越強。</p>
+
+<p>不久就確定 X 光是電磁波。電磁理論預測加速的電荷會輻射電磁波，而高速電子突然停下當然是劇烈的加速度。這種輻射叫<strong>制動輻射</strong>（bremsstrahlung，德文「煞車輻射」）。電子比重粒子更容易因制動輻射損失能量，因為電子經過原子核附近時被加速得更劇烈；電子能量越大、遇到的原子核原子序越大，制動輻射越強。</p>
+
+<p>1912 年 von Laue 想到：X 光的波長和晶體中原子的間距差不多，可以把晶體當成三維光柵來繞射 X 光（第 6 節），量到的波長約 $0.013$–$0.048\ \text{nm}$，是可見光的 $10^{-4}$，量子能量是 $10^{4}$ 倍。一般把波長約 $0.01$ 到 $10\ \text{nm}$ 的電磁波稱為 X 射線，短波端和 $\gamma$ 射線重疊，長波端和紫外線重疊。</p>
+
+<h3 id="m2-xr-tube">5.2 X 光管與兩個古典解釋不了的特徵 <span class="pg-tag">p.69–71</span></h3>
+
+<p>X 光管（Fig. 2.15）：燈絲加熱陰極，以熱游離提供電子；陰極和金屬靶之間的高電壓 $V$ 把電子加速撞向靶。靶面斜放，X 光從管壁側面射出；管內抽真空讓電子暢行無阻。$V$ 越高，電子越快，X 光波長越短。</p>
+
+<p>鎢和鉬靶在不同加速電壓下的 X 光譜（Fig. 2.16、2.17）有兩個電磁理論無法解釋的特徵：</p>
+<ol>
+  <li><strong>特性譜線</strong>：鉬的光譜在某些特定波長有尖峰。峰的波長由靶材料決定，來自被撞擊後靶原子電子結構的重新排列（課本 §7.9）。重點是除了連續譜之外，還有特定波長的 X 光——明顯的非古典效應。</li>
+  <li><strong>截止波長</strong>：同一加速電壓 $V$ 產生的 X 光波長有長有短，但沒有一個短於某個值 $\lambda_{\min}$；$V$ 越大 $\lambda_{\min}$ 越小；同一個 $V$ 下鎢和鉬的 $\lambda_{\min}$ 相同。Duane 和 Hunt 量到 $\lambda_{\min}$ 和 $V$ 成反比。</li>
+</ol>
+
+<div class="box lecture book">
+  <span class="box-title">p.71 Eq. (2.12) X-ray production (Duane–Hunt)</span>
+  $$\lambda_{\min}=\frac{1.24\times10^{-6}}{V}\ \text{V·m}$$
+</div>
+
+<div class="anim" data-anim="m2-xray"></div>
+
+<h3 id="m2-xr-inverse">5.3 逆光電效應 <span class="pg-tag">p.71–72</span></h3>
+
+<p>大部分撞上靶的電子經過許多次擦撞，能量變成熱（所以靶要用鎢這種高熔點金屬，而且要冷卻）。少數電子在一次碰撞中失去大部分或全部能量，這些能量就變成 X 光。所以除了特性譜線之外，X 光的產生是<strong>逆光電效應</strong>：不是光子能量變成電子動能，而是電子動能變成光子能量。波長短＝頻率高＝光子能量 $h\nu$ 大。</p>
+
+<div class="step" data-step="m2-xr-dh" data-sym="V,lmin">
+  <span class="step-title">推出 Duane–Hunt 公式</span>
+  <p>功函數只有幾 eV，加速電壓卻有幾萬到幾十萬伏特，可以忽略。最短波長對應電子把全部動能 $KE=Ve$ 交給<strong>單一個</strong>光子：</p>
+  $$Ve=h\nu_{\max}=\frac{hc}{\lambda_{\min}}$$
+  $$\lambda_{\min}=\frac{hc}{Ve}=\frac{1.240\times10^{-6}\ \text{eV·m}}{e\,V}=\frac{1.240\times10^{-6}}{V}\ \text{V·m}$$
+</div>
+
+<p>這正是實驗的 (2.12)，而且和光子能量公式 (2.11) 是同一件事、只差單位。$\lambda_{\min}$ 只由 $V$ 決定、和靶的材料無關，因為它只看電子帶進來多少能量。古典理論中電子可以連續地放出任意頻率的輻射，沒有理由出現這個鋒利的截止。</p>
+
+<div class="problem" data-kind="tbexample" id="bz-ex2-3">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 2.3 · p.72</span></div>
+    <h4>$50\ \text{kV}$ X 光機的最短波長</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex2-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-3"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Find the shortest wavelength present in the radiation from an x-ray machine whose accelerating potential is 50,000 V.</p></div>
+<p class="original-caption">Beiser Example 2.3 · p.72</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>加速電壓 $50{,}000\ \text{V}$ 的 X 光機，產生的輻射中最短的波長是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：加速電壓 $V=50\,000\ \text{V}=5.00\times10^{4}\ \text{V}$，電子從近乎靜止加速，撞靶時動能 $eV=50\ \text{keV}$；用 $hc/e=1.24\times10^{-6}\ \text{V·m}$、$c=3.00\times10^{8}\ \text{m/s}$。</p>
+<p><strong>① 電子全部動能給一個光子：</strong> X 光的產生是逆光電效應，一個電子最多把全部動能 $eV$ 交給一個光子，這時光子能量最大、波長最短（靶的功函數只有幾 eV，可忽略）。</p>
+<div class="math-block">$$eV=h\nu_{\max}=\frac{hc}{\lambda_{\min}}$$</div>
+<p class="fnote"><b>公式（Duane–Hunt 公式）：</b>$\lambda_{\min}=\dfrac{hc}{eV}=\dfrac{1.24\times10^{-6}\ \text{V·m}}{V}$，其中 $\lambda_{\min}$ 為 X 光的最短波長、$V$ 為加速電壓、$e$ 為電子電荷量；本題 $V=5.00\times10^{4}\ \text{V}$。</p>
+<p><strong>② 最短波長：</strong> 代入 $V=5.00\times10^{4}\ \text{V}$：</p>
+<div class="math-block">$$\begin{aligned}\lambda_{\min}&amp;=\frac{1.24\times10^{-6}\ \text{V·m}}{5.00\times10^{4}\ \text{V}}\\&amp;=2.48\times10^{-11}\ \text{m}\\&amp;=0.0248\ \text{nm}\end{aligned}$$</div>
+<p><strong>③ 最高頻率：</strong> 最高頻率和最短波長是同一個光子，用 $\nu=c/\lambda$ 換算。</p>
+<div class="math-block">$$\nu_{\max}=\frac{c}{\lambda_{\min}}$$</div>
+<p>代入 $c=3.00\times10^{8}\ \text{m/s}$ 與上一步的 $\lambda_{\min}=2.48\times10^{-11}\ \text{m}$：</p>
+<div class="math-block">$$\begin{aligned}\nu_{\max}&amp;=\frac{3.00\times10^{8}\ \text{m/s}}{2.48\times10^{-11}\ \text{m}}\\&amp;=1.21\times10^{19}\ \text{Hz}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\lambda_{\min}=2.48\times10^{-11}\ \text{m}=0.0248\ \text{nm}\\ (\nu_{\max}=1.21\times10^{19}\ \text{Hz})\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-20">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-20 · p.90</span></div>
+    <h4>要 $30\ \text{pm}$ 的最短波長需要多少電壓</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-20">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What voltage must be applied to an x-ray tube for it to emit x-rays with a minimum wavelength of 30 pm?</p></div>
+<p class="original-caption">Beiser 習題 2-20 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>X 光管要加多少電壓，才能發出最短波長 $30\ \text{pm}$ 的 X 光？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：最短波長 $\lambda_{\min}=30\ \text{pm}=3.0\times10^{-11}\ \text{m}$（$1\ \text{pm}=10^{-12}\ \text{m}$）；用 $hc/e=1.24\times10^{-6}\ \text{V·m}$。</p>
+<p><strong>① 反解 Duane–Hunt 公式：</strong> 最短波長的光子帶走一個電子的全部動能 $eV$，$\lambda_{\min}$ 只由加速電壓決定，所以把公式反過來解 $V$。</p>
+<p class="fnote"><b>公式（Duane–Hunt 公式）：</b>$eV=\dfrac{hc}{\lambda_{\min}}$，其中 $V$ 為加速電壓、$e$ 為電子電荷量、$\lambda_{\min}$ 為最短波長；本題 $\lambda_{\min}=30\ \text{pm}$。</p>
+<div class="math-block">$$V=\frac{hc}{e\,\lambda_{\min}}=\frac{1.24\times10^{-6}\ \text{V·m}}{\lambda_{\min}}$$</div>
+<p><strong>② 代入數字：</strong> pm 要先換成公尺，才能和 V·m 的係數相除。代入 $\lambda_{\min}=30\times10^{-12}\ \text{m}$：</p>
+<div class="math-block">$$\begin{aligned}V&amp;=\frac{1.24\times10^{-6}\ \text{V·m}}{30\times10^{-12}\ \text{m}}\\&amp;=4.1\times10^{4}\ \text{V}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{V\approx4.1\times10^{4}\ \text{V}=41\ \text{kV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-21">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-21 · p.90</span></div>
+    <h4>映像管會發出什麼波</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-21">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-21"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Electrons are accelerated in television tubes through potential differences of about 10 kV. Find the highest frequency of the electromagnetic waves emitted when these electrons strike the screen of the tube. What kind of waves are these?</p></div>
+<p class="original-caption">Beiser 習題 2-21 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>電視映像管中的電子約經過 $10\ \text{kV}$ 的電位差加速。這些電子打到螢幕時發出的電磁波最高頻率是多少？這是哪一種波？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：加速電壓 $V=10\ \text{kV}=1.0\times10^{4}\ \text{V}$，電子從靜止加速，動能 $eV=1.0\times10^{4}\ \text{eV}$；用 $h=4.136\times10^{-15}\ \text{eV·s}$、$hc=1240\ \text{eV·nm}$。</p>
+<p><strong>① 光子能量的上限：</strong> 電子打到螢幕突然減速，和 X 光管的電子撞靶是同一件事（制動輻射），一個電子最多把全部動能交給一個光子。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E=h\nu$，其中 $h$ 為 Planck 常數、$\nu$ 為光子頻率；本題最大光子能量等於電子動能 $eV$。</p>
+<div class="math-block">$$h\nu_{\max}=eV=1.0\times10^{4}\ \text{eV}$$</div>
+<p><strong>② 最高頻率：</strong> 能量用 eV 表示，直接除以 eV·s 的 $h$。代入 $eV=1.0\times10^{4}\ \text{eV}$、$h=4.136\times10^{-15}\ \text{eV·s}$：</p>
+<div class="math-block">$$\begin{aligned}\nu_{\max}=\frac{eV}{h}&amp;=\frac{1.0\times10^{4}\ \text{eV}}{4.136\times10^{-15}\ \text{eV·s}}\\&amp;=2.4\times10^{18}\ \text{Hz}\end{aligned}$$</div>
+<p><strong>③ 對應波長，判斷種類：</strong> 電磁波譜通常用波長分區，所以換成波長再比對。$\lambda=hc/h\nu_{\max}$，代入 $hc=1240\ \text{eV·nm}$、$h\nu_{\max}=1.0\times10^{4}\ \text{eV}$：</p>
+<div class="math-block">$$\lambda=\frac{1240\ \text{eV·nm}}{1.0\times10^{4}\ \text{eV}}=0.124\ \text{nm}$$</div>
+<p>落在 X 射線的範圍（約 $0.01$–$10\ \text{nm}$），所以映像管的玻璃要加鉛防護。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\nu_{\max}\approx2.4\times10^{18}\ \text{Hz}\ (\lambda\approx0.12\ \text{nm})\\ \text{屬於 X 射線}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-05a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>制動輻射：電子停下時動量交給誰</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-05a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$50\ \text{kV}$ X 光管中，一個電子在一次碰撞裡把全部動能變成一個光子（截止波長的那種光子）。(a) 用第 1 章的相對論求電子撞靶前的速率，並和古典 $\tfrac12mv^2=KE$ 的結果比較。(b) 比較電子的動量和產生的光子的動量。光子帶不走的動量到哪裡去了？(c) 鎢原子核（$Mc^2\approx1.71\times10^{5}\ \text{MeV}$）分走的動能最多約多少？會不會影響 $\lambda_{\min}=hc/Ve$？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：電子動能 $KE=50\ \text{keV}$，一次碰撞全部變成一個光子，$E_\gamma=50\ \text{keV}$，電子停下；電子靜能 $mc^2=511\ \text{keV}$；鎢原子核 $Mc^2\approx1.71\times10^{5}\ \text{MeV}$，起初靜止（熱運動約 $0.03\ \text{eV}$，可忽略）。</p>
+<h4>(a) 電子撞靶前的速率</h4>
+<p><strong>① 求 $\gamma$：</strong> $50\ \text{keV}$ 是電子靜能的十分之一，不算「遠小於」，要用相對論動能。</p>
+<p class="fnote"><b>公式（相對論動能）：</b>$KE=(\gamma-1)mc^2$，$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}$，其中 $m$ 為電子靜止質量、$v$ 為速率、$c$ 為光速；本題 $KE=50\ \text{keV}$、$mc^2=511\ \text{keV}$。</p>
+<div class="math-block">$$\gamma=1+\frac{KE}{mc^2}$$</div>
+<p>代入 $KE=50\ \text{keV}$、$mc^2=511\ \text{keV}$：</p>
+<div class="math-block">$$\gamma=1+\frac{50}{511}=1.098$$</div>
+<p><strong>② 速率：</strong> 由 $\gamma=1/\sqrt{1-v^2/c^2}$ 解出 $v/c$：</p>
+<div class="math-block">$$\begin{aligned}\frac vc&amp;=\sqrt{1-\frac1{\gamma^2}}=\sqrt{1-\frac1{1.098^2}}\\&amp;=\sqrt{0.170}=0.413\end{aligned}$$</div>
+<p><strong>③ 和古典結果比較：</strong> 古典 $\tfrac12mv^2=KE$，兩邊除以 $\tfrac12mc^2$：</p>
+<div class="math-block">$$\frac vc=\sqrt{\frac{2KE}{mc^2}}=\sqrt{\frac{100}{511}}=0.442$$</div>
+<p>$0.442/0.413=1.07$：古典公式高估約 $7\%$。</p>
+<div class="math-block">$$\boxed{v=0.413c\quad(\text{古典 }0.442c\text{，高估約 }7\%)}$$</div>
+<h4>(b) 電子與光子的動量</h4>
+<p><strong>① 電子的動量：</strong> 動量必須守恆，先算電子原有多少動量。</p>
+<p class="fnote"><b>公式（相對論能量動量關係）：</b>$E^2=(pc)^2+(mc^2)^2$，其中 $E=KE+mc^2$ 為總能量、$p$ 為動量；本題 $KE=50\ \text{keV}$、$mc^2=511\ \text{keV}$。</p>
+<p>把 $E=KE+mc^2$ 代入，$(mc^2)^2$ 消掉：</p>
+<div class="math-block">$$(pc)^2=(KE+mc^2)^2-(mc^2)^2=KE^2+2KE\,mc^2$$</div>
+<p>代入 $KE=50\ \text{keV}$、$mc^2=511\ \text{keV}$：</p>
+<div class="math-block">$$\begin{aligned}pc&amp;=\sqrt{50^2+2(50)(511)}\ \text{keV}\\&amp;=\sqrt{53\,600}\ \text{keV}=232\ \text{keV}\end{aligned}$$</div>
+<p><strong>② 光子帶得走多少：</strong></p>
+<p class="fnote"><b>公式（光子動量）：</b>$p_\gamma=\dfrac{E_\gamma}{c}$，其中 $E_\gamma$ 為光子能量；本題 $E_\gamma=50\ \text{keV}$。</p>
+<div class="math-block">$$p_\gamma c=E_\gamma=50\ \text{keV},\qquad\frac{p_\gamma}{p}=\frac{50}{232}=0.22$$</div>
+<p>光子最多只能帶走電子動量的 $22\%$。</p>
+<p><strong>③ 剩下的動量給誰：</strong> 電子停下後，剩下的動量只能由靶原子核承受，大小在兩個極端之間：</p>
+<div class="math-block">$$\begin{aligned}\text{光子往前射：}&amp;\ (232-50)\ \text{keV}/c=182\ \text{keV}/c\\\text{光子往回射：}&amp;\ (232+50)\ \text{keV}/c=282\ \text{keV}/c\end{aligned}$$</div>
+<p>這和光電效應需要束縛電子（習題 2-19）、成對產生需要原子核（例題 2.5）是同一個道理：光子和自由電子之間無法同時守恆能量與動量。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{電子 }232\ \text{keV}/c\text{，光子只有 }50\ \text{keV}/c\\ \text{其餘動量由原子核承受}\end{gathered}}$$</div>
+<h4>(c) 原子核分走的動能</h4>
+<p><strong>① 動能上限：</strong> 原子核的動量 $pc\le282\ \text{keV}\ll Mc^2$，反衝非常慢，用古典的 $KE_M=p^2/2M=(pc)^2/2Mc^2$，取最大動量估上限。代入 (b) 的最大值 $pc=0.282\ \text{MeV}$ 與 $Mc^2=1.71\times10^{5}\ \text{MeV}$：</p>
+<div class="math-block">$$\begin{aligned}KE_M&amp;\le\frac{(0.282\ \text{MeV})^2}{2(1.71\times10^{5}\ \text{MeV})}\\&amp;=2.3\times10^{-7}\ \text{MeV}=0.23\ \text{eV}\end{aligned}$$</div>
+<p><strong>② 對 $\lambda_{\min}$ 的影響：</strong> 只有 $50\ \text{keV}$ 的 $0.23/50\,000\approx5\times10^{-6}$，光子能量和 $\lambda_{\min}$ 只變百萬分之幾，完全可以忽略：$\lambda_{\min}=hc/Ve$ 仍然成立。</p>
+<div class="math-block">$$\boxed{\begin{gathered}KE_M\le0.23\ \text{eV}\ (\text{約 }0.2\ \text{eV})\\ \text{不影響 }\lambda_{\min}=hc/Ve\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-05b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>X 光管每秒放出幾個光子：答案取決於低能截止</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-05b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>X 光管以 $30\ \text{kV}$、$10\ \text{mA}$ 運作，電子束能量有 $0.30\%$ 變成 X 光。厚靶的連續譜可以用 Kramers 近似描述：單位頻率的輻射功率 $I(\nu)\propto\nu_{\max}-\nu$（$0\lt\nu\lt\nu_{\max}$）。(a) 求電子束功率與 X 光總功率；只用 Duane–Hunt 能得到每秒光子數的什麼界限？(b) 證明在這個模型中，若不設低能截止，每秒光子數是無限大，而總功率卻有限。物理上是什麼讓光子數變成有限？(c) 管窗吸收掉所有 $h\nu\lt3.0\ \text{keV}$ 的光子。求穿出管窗的功率、平均光子能量與每秒光子數，並和 (a) 的界限比較。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：管電壓 $V=3.0\times10^{4}\ \text{V}$、管電流 $I=1.0\times10^{-2}\ \text{A}$，轉成 X 光的比例 $0.0030$；Kramers 譜 $I(\nu)=K(\nu_{\max}-\nu)$（單位頻率的功率，$0\lt\nu\lt\nu_{\max}$），由 Duane–Hunt 得 $h\nu_{\max}=eV=30\ \text{keV}$；(c) 低能截止 $h\nu_c=3.0\ \text{keV}$；$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$。</p>
+<h4>(a) 功率與 Duane–Hunt 給的界限</h4>
+<p><strong>① 電子束功率：</strong> 電流 $\times$ 電壓＝每秒的電荷 $\times$ 每單位電荷得到的能量。</p>
+<p class="fnote"><b>公式（電功率）：</b>$P=IV$，其中 $I$ 為電流、$V$ 為電壓；本題 $I=1.0\times10^{-2}\ \text{A}$、$V=3.0\times10^{4}\ \text{V}$。</p>
+<div class="math-block">$$P=(1.0\times10^{-2}\ \text{A})(3.0\times10^{4}\ \text{V})=300\ \text{W}$$</div>
+<p><strong>② X 光功率：</strong> 乘上轉換比例 $0.0030$：</p>
+<div class="math-block">$$P_X=0.0030\times300\ \text{W}=0.90\ \text{W}$$</div>
+<p><strong>③ 光子數的界限：</strong> Duane–Hunt 只說每個光子 $h\nu\le eV$，所以光子數至少是「每個都取最大能量」時的個數：</p>
+<div class="math-block">$$N\ge\frac{P_X}{eV}$$</div>
+<p>代入 $P_X=0.90\ \text{W}$、$eV=3.0\times10^{4}\ \text{eV}=(3.0\times10^{4})(1.602\times10^{-19})\ \text{J}$：</p>
+<div class="math-block">$$N\ge\frac{0.90\ \text{J/s}}{4.81\times10^{-15}\ \text{J}}=1.9\times10^{14}\ \text{s}^{-1}$$</div>
+<p>只有下限：光子能量可以很小，個數就可以很多。</p>
+<div class="math-block">$$\boxed{\begin{gathered}P=300\ \text{W},\quad P_X=0.90\ \text{W}\\ N\ge1.9\times10^{14}\ \text{s}^{-1}\ (\text{只有下限})\end{gathered}}$$</div>
+<h4>(b) 沒有截止時光子數發散、功率有限</h4>
+<p><strong>① 寫出兩個積分：</strong> $I(\nu)$ 是單位頻率的功率，頻率 $\nu$ 附近每個光子能量 $h\nu$，所以單位頻率的光子數是 $I(\nu)/h\nu$。令 $u=\nu/\nu_{\max}$（$\mathrm d\nu=\nu_{\max}\mathrm du$），功率與每秒光子數分別是</p>
+<div class="math-block">$$P_X=\int I\,\mathrm d\nu=K\nu_{\max}^2\int(1-u)\,\mathrm du$$</div>
+<div class="math-block">$$N=\int\frac{I}{h\nu}\,\mathrm d\nu=\frac{K\nu_{\max}}{h}\int\frac{1-u}{u}\,\mathrm du$$</div>
+<p>兩式只差在被積函數多了 $1/u$（每個光子的能量 $h\nu\propto u$）。</p>
+<p><strong>② 功率有限：</strong> 功率從 $u=0$ 積到 $1$：</p>
+<div class="math-block">$$\int_0^1(1-u)\,\mathrm du=\Big[u-\frac{u^2}{2}\Big]_0^1=\frac12\quad(\text{有限})$$</div>
+<p><strong>③ 光子數發散：</strong> 光子數從下限 $u_c$ 積到 $1$，先把被積函數拆成 $(1-u)/u=1/u-1$：</p>
+<div class="math-block">$$\begin{aligned}\int_{u_c}^1\Big(\frac1u-1\Big)\mathrm du&amp;=\Big[\ln u-u\Big]_{u_c}^1\\&amp;=\ln\frac1{u_c}-(1-u_c)\end{aligned}$$</div>
+<p>$u_c\to0$ 時 $\ln(1/u_c)\to\infty$。功率在低頻端很小，但每個低頻光子的能量更小，個數以 $\ln(1/u_c)$ 發散。</p>
+<p><strong>④ 什麼讓光子數有限：</strong> 低能的軟 X 光在靶本身、管窗和空氣中就被吸收（光電效應的吸收在低能很強，第 9 節），所以「每秒幾個光子」一定要說明低能截止在哪裡，功率則幾乎不受影響。</p>
+<div class="math-block">$$\boxed{\begin{gathered}N\propto\ln(1/u_c)\to\infty\text{，功率有限}\\ \text{靶、管窗、空氣對軟 X 光的吸收決定截止}\end{gathered}}$$</div>
+<h4>(c) 管窗截止 $3.0\ \text{keV}$</h4>
+<p><strong>① 穿出管窗的功率：</strong> 截止 $u_c=h\nu_c/h\nu_{\max}=3.0\ \text{keV}/30\ \text{keV}=0.10$。穿出的功率占全部的比例：</p>
+<div class="math-block">$$\begin{aligned}\int_{0.1}^1(1-u)\,\mathrm du&amp;=\Big(1-\frac12\Big)-\Big(0.1-\frac{0.01}{2}\Big)\\&amp;=0.405\end{aligned}$$</div>
+<div class="math-block">$$\frac{P_{\text{out}}}{P_X}=\frac{0.405}{1/2}=0.81$$</div>
+<div class="math-block">$$P_{\text{out}}=0.81\times0.90\ \text{W}=0.729\ \text{W}$$</div>
+<p><strong>② 平均光子能量：</strong> 平均能量＝功率 $\div$ 光子數，把 (b) 的兩個積分相除，$K$ 約掉：</p>
+<div class="math-block">$$\frac{\bar E}{h\nu_{\max}}=\frac{\int_{u_c}^1(1-u)\,\mathrm du}{\int_{u_c}^1\frac{1-u}{u}\,\mathrm du}$$</div>
+<p>代入 $u_c=0.10$：分子是上一步的 $0.405$，分母用 (b) 的式子得 $\ln10-0.9=2.303-0.9=1.403$：</p>
+<div class="math-block">$$\frac{\bar E}{h\nu_{\max}}=\frac{0.405}{1.403}=0.289$$</div>
+<div class="math-block">$$\bar E=0.289\times30\ \text{keV}=8.66\ \text{keV}\approx8.7\ \text{keV}$$</div>
+<p><strong>③ 每秒光子數：</strong> $N=P_{\text{out}}/\bar E$，代入上面的 $P_{\text{out}}$ 與 $\bar E=8.66\times10^{3}\times1.602\times10^{-19}\ \text{J}$：</p>
+<div class="math-block">$$N=\frac{0.729\ \text{J/s}}{1.39\times10^{-15}\ \text{J}}=5.3\times10^{14}\ \text{s}^{-1}$$</div>
+<p>是 (a) 下限的 $5.3/1.9=2.8$ 倍。其餘約 $299\ \text{W}$ 在靶上變成熱，所以靶要用鎢並且冷卻。</p>
+<div class="math-block">$$\boxed{\begin{gathered}P_{\text{out}}\approx0.73\ \text{W},\quad\bar E\approx8.7\ \text{keV}\\ N\approx5.3\times10^{14}\ \text{s}^{-1}\text{，約 (a) 下限的 }2.8\text{ 倍}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>X 光：高速電子撞靶的制動輻射（連續譜）＋靶材料的特性譜線。</li>
+    <li>X 光產生是逆光電效應；電子全部動能給一個光子：$eV=hc/\lambda_{\min}$。</li>
+    <li>$\lambda_{\min}=1.24\times10^{-6}/V\ \text{(m)}$，只由電壓決定，和靶無關。</li>
+  </ol>
+</div>

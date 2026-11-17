@@ -1,0 +1,193 @@
+<h2>五、考前衝刺 <span class="pg">板書 10/21 照片 1–7</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後的變化題刻意比考古題難一級（多一步代換、多一步分部積分、多一個要排除的情況），會做這些，考卷上的題目就沒問題。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>Bessel 函數在 110–114 學年的考卷出現四次：111 上期末「$\int_0^1(r-r^3)J_0(2r)dr$」（遞迴恆等式＋分部積分，5 分）、113 上期末「$x^2y''+xy'+\lambda^2x^2y=0$，$y(0)=1$、$y(3)=0$，求 $\lambda$」（化成 $J_0(\lambda x)$、零點，25 分）、113 下期中「圓柱腔基態能量」（分離變數＋$j_{01}$，15%）、114 上期末「$x^2y''+xy'+(x^2-\frac14)y=0$ 用 Frobenius」（$m=\frac12$，25%）。<strong>分數在判斷</strong>：認出是 Bessel 方程（寫出 $a$、$m$）、說明為什麼丟掉 $Y_m$、寫出用的是哪一條恆等式。</p>
+</div>
+
+<h3 id="am6x-formulas">5.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>方程式與解</h4>
+    <ul>
+      <li>$x^2y''+xy'+(x^2-m^2)y=0$；$\gamma=\pm m$、$a_1=0$、$(n+\gamma+m)(n+\gamma-m)a_n+a_{n-2}=0$</li>
+      <li>$J_m=\sum\frac{(-1)^k}{k!\,(m+k)!}(\frac x2)^{2k+m}$（非整數用 $\Gamma(m+k+1)$）</li>
+      <li>$J_0=1-\frac{x^2}4+\frac{x^4}{64}-\cdots$、$J_1=\frac x2-\frac{x^3}{16}+\cdots$</li>
+      <li>整數 $m$：$J_{-m}=(-1)^mJ_m$，$y=AJ_m+BY_m$；非整數：$y=AJ_m+BJ_{-m}$</li>
+      <li>$Y_m(0^+)=-\infty$；$Y_0\approx\frac2\pi\big(\ln\frac x2+\gamma_E\big)$（$x\to0^+$，$\gamma_E=0.5772$）</li>
+    </ul>
+  </section>
+  <section>
+    <h4>常見變形</h4>
+    <ul>
+      <li>$x^2y''+xy'+(a^2x^2-m^2)y=0$ ⇒ $J_m(ax)$、$Y_m(ax)$</li>
+      <li>$y''+(e^{2x}-m^2)y=0$ ⇒ $J_m(e^x)$</li>
+      <li>$y''+xy=0$ ⇒ $\sqrt x\,J_{\pm1/3}(\frac23x^{3/2})$</li>
+      <li>換變數 $t=cx^p$：$x\frac{d}{dx}=p\,t\frac{d}{dt}$，$x^2y''+xy'=(x\frac{d}{dx})^2y$</li>
+      <li>$J_{1/2}=\sqrt{\frac2{\pi x}}\sin x$、$J_{-1/2}=\sqrt{\frac2{\pi x}}\cos x$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>遞迴恆等式</h4>
+    <ul>
+      <li>① $\frac{d}{dx}(x^mJ_m)=x^mJ_{m-1}$　③ $\frac{d}{dx}(x^{-m}J_m)=-x^{-m}J_{m+1}$</li>
+      <li>② $J_m'=J_{m-1}-\frac mxJ_m=\frac mxJ_m-J_{m+1}$</li>
+      <li>④ $J_{m-1}+J_{m+1}=\frac{2m}xJ_m$　⑤ $J_{m-1}-J_{m+1}=2J_m'$</li>
+      <li>$J_0'=-J_1$、$(xJ_1)'=xJ_0$、$J_2=\frac2xJ_1-J_0$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>積分</h4>
+    <ul>
+      <li>$\int x^mJ_{m-1}=x^mJ_m$；$\int x^{-m}J_{m+1}=-x^{-m}J_m$</li>
+      <li>$\int x^3J_0=x^3J_1-2x^2J_2$；$\int x^4J_1=x^4J_2-2x^3J_3$</li>
+      <li>$\int J_3=-J_0-2J_2$；$\int J_0$、$\int J_2$ 化不完</li>
+    </ul>
+  </section>
+  <section>
+    <h4>零點與邊界值</h4>
+    <ul>
+      <li>$j_{0n}$：2.405、5.520、8.654；$j_{1n}$：3.832、7.016、10.17；$j_{21}=5.136$</li>
+      <li>$Y_0$：0.894、3.958、7.086；$Y_1$：2.197、5.430、8.596</li>
+      <li>圓心有限 ⇒ 丟 $Y_m$；$J_m(kR)=0$ ⇒ $k=j_{mn}/R$</li>
+      <li>$\int_0^RrJ_m(\frac{j_{mn}r}R)J_m(\frac{j_{mk}r}R)dr=\frac{R^2}2J_{m+1}(j_{mn})^2\delta_{nk}$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="am6x-types">5.2 題型總表</h3>
+
+<p class="type-jump"><a href="#am6type-1">① Frobenius 解 Bessel 方程</a><a href="#am6type-2">② 第二個解</a><a href="#am6type-3">③ 變數代換</a><a href="#am6type-4">④ 零點與本徵值</a><a href="#am6type-5">⑤ 恆等式求積分</a><a href="#am6type-6">⑥ 正交與展開</a><a href="#am6type-7">⑦ 證明題</a></p>
+
+<div class="drill" id="am6type-1">
+  <h4>① 用 Frobenius 法解 Bessel 方程</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$x^2y''+xy'+(x^2-m^2)y=0$ 並指定「by Frobenius method」或「前三個非零項」；114 上期末的 $m=\frac12$。</dd>
+    <dt>做法</dt><dd>$xP=1$、$x^2Q=x^2-m^2$ ⇒ 正則奇點；$\gamma=\pm m$；寫 $n=1$ 那格 ⇒ $a_1=0$；遞迴跳兩格；小根算到 $n=2m$ 那格判斷成敗；認 closed form。</dd>
+    <dt>常錯</dt><dd>漏寫 $n=1$ 那格（$a_1$ 為何為 0 或為何自由）；$\gamma=-\frac12$ 時以為「差整數就失敗」；把 $a_{2k}$ 的分母 $4k(k+m)$ 算成 $k(k+m)$。</dd>
+    <dt>代表題</dt><dd><a href="#am6-ex-1">板書例題 1</a>　<a href="#am6-k114-2">114 上期末 2</a>　<a href="#am6-sf-01c">自編 1-c</a>　<a href="#am6var-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am6type-2">
+  <h4>② 第二個解：$J_{-m}$、$Y_m$、Wronskian</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「求一般解」「證明 $J_{-m}=(-1)^mJ_m$」「用降階法求第二解」「判斷線性獨立」。</dd>
+    <dt>做法</dt><dd>整數 $m$：$\frac1{(-k)!}=0$ 刪項、平移；降階法 $y_2=J_m\int\frac{dx}{xJ_m^2}$，被積函數有 $\frac1x$ 項就有 $\ln x$；非整數：$J_{-m}$；Wronskian $-\frac{2\sin m\pi}{\pi x}$。</dd>
+    <dt>常錯</dt><dd>平移後下限寫 $n=m$（板書誤植）；把 $Y_m$ 當成在 0 有限；$\frac1{J_0^2}$ 展開時漏掉 $s^2$ 項。</dd>
+    <dt>代表題</dt><dd><a href="#am6-ex-2">板書例題 2</a>　<a href="#am6-ex-3">板書例題 3</a>　<a href="#am6-sf-02a">自編 2-a</a>　<a href="#am6-sf-02b">自編 2-b</a>　<a href="#am6-sf-02c">自編 2-c</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am6type-3">
+  <h4>③ 變數代換化成 Bessel 方程</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>方程式像 Bessel 但係數不對：$\lambda^2x^2$、$e^{2x}$、$x^3$、$x^4$、缺 $y'$ 項。</dd>
+    <dt>做法</dt><dd>先湊出 $x^2y''+xy'$（缺 $y'$ 時令 $y=x^{1/2}w$）；令 $t=cx^p$ 或 $t=ce^x$，用 $x\frac{d}{dx}=pt\frac{d}{dt}$；讀出新的 $m$。</dd>
+    <dt>常錯</dt><dd>二階導數的連鎖律漏掉一項（$\frac{d^2y}{dx^2}=t^2y_{tt}+ty_t$）；忘了把 $\sqrt x$ 乘回答案；$m$ 讀成 $m^2$。</dd>
+    <dt>代表題</dt><dd><a href="#am6-k113-3">113 上期末 3</a>　<a href="#am6-sf-01a">自編 1-a</a>　<a href="#am6-sf-01b">自編 1-b</a>　<a href="#am6var-1">變化題 1</a>　<a href="#am6var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am6type-4">
+  <h4>④ 零點與本徵值（圓盤、圓柱）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「$y(0)$ 有限／給值、$y(a)=0$ 求 $\lambda$」「圓形邊界」「基態能量」「鼓膜頻率」。</dd>
+    <dt>做法</dt><dd>一般解 $AJ_m+BY_m$ → 中心有限 ⇒ $B=0$ → 邊界 $J_m(ka)=0$ ⇒ $k=j_{mn}/a$ → 加上其他方向（$z$ 的 $\frac{n\pi}L$）→ 取最小或排序。</dd>
+    <dt>常錯</dt><dd>沒說明為什麼丟 $Y_m$（圓環不含圓心時不能丟，見自編 3-a(e)）；只看 $m=0$ 就排序（$j_{11}\lt j_{02}$、$j_{21}\lt j_{02}$）；圓柱高度 $z\in[-1,1]$ 的長度是 2；漏了 $\lambda=0$ 的檢查。</dd>
+    <dt>代表題</dt><dd><a href="#am6-k113-3">113 上期末 3</a>　<a href="#am6-k113b-2">113 下期中 2</a>　<a href="#am6-sf-03a">自編 3-a</a>　<a href="#am6-sf-01a">自編 1-a</a>　<a href="#am6var-4">變化題 4</a>　<a href="#am6var-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am6type-5">
+  <h4>⑤ 用遞迴恆等式求積分</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$\int x^pJ_q\,dx$，題目給幾個 $J$ 的表值（給哪幾個值就是提示）。</dd>
+    <dt>做法</dt><dd>$x^mJ_{m-1}$ 用 ①、$x^{-m}J_{m+1}$ 用 ③；次方多 2 就分部積分 $u=x^2$；最後用 ④ 把高階換成表上的值。</dd>
+    <dt>常錯</dt><dd>①③ 的正負號與 $m$ 對錯（$x^{-3}J_4$ 是 $m=3$）；換變數 $x=2r$ 忘了 $dr=\frac{dx}2$ 與上下限；以為 $\int J_0$ 有封閉形式。</dd>
+    <dt>代表題</dt><dd><a href="#am6-ex-4">板書例題 4</a>　<a href="#am6-k111-4">111 上期末 4</a>　<a href="#am6-sf-04b">自編 4-b</a>　<a href="#am6var-2">變化題 2</a>　<a href="#am6var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am6type-6">
+  <h4>⑥ 正交性與 Fourier–Bessel 展開（熱傳導、振動）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>圓柱或圓盤的 PDE 加上初始條件 $f(r)$；「展開成 $J_0(j_nr)$ 的級數」。</dd>
+    <dt>做法</dt><dd>分離變數 → $J_0(\frac{j_nr}R)$ → $c_n=\frac{2}{R^2J_1(j_n)^2}\int_0^Rrf\,J_0\,dr$ → 積分用 ⑤ 型手法；在零點上 $J_2(j)=\frac2jJ_1(j)$。</dd>
+    <dt>常錯</dt><dd>漏了權重 $r$；分母用 $J_0(j_n)^2$（是 0）而不是 $J_1(j_n)^2$；$c_n$ 的正負號（$J_1(j_n)$ 交替變號）。</dd>
+    <dt>代表題</dt><dd><a href="#am6-sf-03b">自編 3-b</a>　<a href="#am6-sf-04c">自編 4-c</a>　<a href="#am6var-6">變化題 6</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am6type-7">
+  <h4>⑦ 證明題：恆等式、零點、生成函數</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「由級數證明」「證明零點交錯」「由生成函數推導」。</dd>
+    <dt>做法</dt><dd>乘 $x^{\pm m}$ 後逐項微分、約一格 $\Gamma$、平移指標；Rolle 定理配 $J_0'=-J_1$、$(xJ_1)'=xJ_0$；生成函數比較 $t^n$ 係數。</dd>
+    <dt>常錯</dt><dd>③ 的證明忘了 $n=0$ 的常數項微分後消失、要平移；生成函數比較係數時次方對錯一格。</dd>
+    <dt>代表題</dt><dd><a href="#am6-sf-04a">自編 4-a</a>　<a href="#am6-sf-03c">自編 3-c</a>　<a href="#am6-sf-04d">自編 4-d</a></dd>
+  </dl>
+</div>
+
+<h3 id="am6x-vars">5.3 變化題：比考古題再難一級</h3>
+
+<p>每題都是把考古題或板書例題換條件、多加一步。先自己寫，再打開解答對照。</p>
+
+<div class="drill-q" id="am6var-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#am6-k114-2">114 上期末 2</a>、<a href="#am6-sf-01b">自編 1-b</a></p>
+  <p>求 $x^2y''+xy'+(4x^4-1)y=0$（$x\gt0$）的一般解，用初等函數表示。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>令 $t=x^2$：$x\frac{d}{dx}=2t\frac{d}{dt}$，$x^2y''+xy'=\big(x\frac{d}{dx}\big)^2y=4\big(t^2y_{tt}+ty_t\big)$；$4x^4=4t^2$。除以 4：$t^2y_{tt}+ty_t+(t^2-\frac14)y=0$，是 $m=\frac12$ 的 Bessel 方程。</p>
+    <p>$y=AJ_{1/2}(t)+BJ_{-1/2}(t)\propto\frac{A'\sin t+B'\cos t}{\sqrt t}$，$\sqrt t=x$：</p>
+    <p>$y=\dfrac{A\sin x^2+B\cos x^2}{x}$。驗算腳本用 checkodesol 確認 ✔。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am6var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#am6-k111-4">111 上期末 4</a></p>
+  <p>設 $a$ 是 $J_0$ 的正零點。證明 $\int_0^ax^3J_0(x)\,dx=a(a^2-4)J_1(a)$，並以 $a=j_{01}$ 求數值。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>分部積分（同 111 上）：$\int_0^ax^3J_0=a^3J_1(a)-2a^2J_2(a)$。用 ④：$J_2(a)=\frac2aJ_1(a)-J_0(a)=\frac2aJ_1(a)$（因為 $J_0(a)=0$）。</p>
+    <p>代回：$a^3J_1-4aJ_1=a(a^2-4)J_1(a)$。$a=2.4048$、$J_1(a)=0.5191$：$2.4048\times1.7832\times0.5191=2.226$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am6var-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#am6-ex-4">板書例題 4</a></p>
+  <p>已知 $J_2(1)=0.1149$、$J_2(2)=0.3528$、$J_3(1)=0.0196$、$J_3(2)=0.1289$，求 $\displaystyle\int_1^2x^{-1}J_4(x)\,dx$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$x^{-1}J_4$ 不是 ③ 的形式（③ 要 $x^{-3}J_4$）。寫成 $x^2\cdot x^{-3}J_4$，分部積分 $u=x^2$、$dv=x^{-3}J_4dx$、$v=-x^{-3}J_3$（③，$m=3$）：</p>
+    <p>$\int x^{-1}J_4=-\frac{J_3}{x}+2\int x^{-2}J_3\,dx=-\frac{J_3}x-\frac{2J_2}{x^2}$（第二個積分用 ③，$m=2$）。</p>
+    <p>代入：$\big(-\frac{0.1289}2-\frac{2(0.3528)}4\big)-\big(-0.0196-0.2298\big)=-0.24085+0.2494=0.0086$（精確值 $0.00848$，差異來自表值的四捨五入）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am6var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#am6-k113-3">113 上期末 3</a></p>
+  <p>$x^2y''+xy'+(\lambda^2x^2-1)y=0$，要求 $y$ 在 $x=0$ 有界、$y(2)=0$、$y'(0)=1$。求所有 $\lambda\gt0$ 與 $y$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$t=\lambda x$：$m=1$ 的 Bessel 方程，$y=AJ_1(\lambda x)+BY_1(\lambda x)$；有界 ⇒ $B=0$。注意 $J_1(0)=0$，所以不能用 $y(0)$ 定 $A$——題目改給 $y'(0)$：$y'=A\lambda J_1'(\lambda x)$，$J_1'(0)=\frac12$ ⇒ $A=\frac{2}{\lambda}$。</p>
+    <p>$y(2)=0$ ⇒ $J_1(2\lambda)=0$ ⇒ $\lambda=\frac{j_{1n}}2=1.916,\ 3.508,\ 5.087,\dots$；$y=\frac2\lambda J_1(\lambda x)$。（$\lambda=0$：$y=c_1x+\frac{c_2}x$，有界 ⇒ $c_2=0$，$y(2)=0$ ⇒ $y\equiv0$，與 $y'(0)=1$ 矛盾。）</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am6var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#am6-k113b-2">113 下期中 2</a>、<a href="#am6-sf-03a">自編 3-a</a></p>
+  <p>半徑 $R$ 的圓盤上 $\nabla^2u+k^2u=0$、$u(R,\theta)=0$、圓心有限。求第三小的 $k$，它對應幾個線性獨立的本徵函數？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$u=J_p(kr)(\cos p\theta,\ \sin p\theta)$，$k=j_{pn}/R$。所有零點排序：$j_{01}=2.405\lt j_{11}=3.832\lt j_{21}=5.136\lt j_{02}=5.520\lt\cdots$。</p>
+    <p>第三小：$k=\frac{5.136}{R}$（$p=2$，不是 $p=0$ 的第二個零點！）。$p\ge1$ 有 $\cos2\theta$、$\sin2\theta$ 兩個獨立函數：$J_2(\frac{5.136r}R)\cos2\theta$、$J_2(\frac{5.136r}R)\sin2\theta$，二重簡併。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am6var-6">
+  <p class="q-src">變化題 6 · 改自 <a href="#am6-sf-04c">自編 4-c</a></p>
+  <p>把 $f(r)=1$（$0\le r\lt1$）展開成 $\sum c_nJ_0(j_nr)$，求 $c_n$ 的公式與 $c_1,c_2,c_3$；說明為什麼這個級數在 $r=1$ 收斂到 0 而不是 1。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$c_n=\frac{2}{J_1(j_n)^2}\int_0^1rJ_0(j_nr)dr$；$x=j_nr$：$\int_0^1rJ_0(j_nr)dr=\frac1{j_n^2}\int_0^{j_n}xJ_0dx=\frac{J_1(j_n)}{j_n}$（①）。</p>
+    <p>$c_n=\dfrac{2}{j_nJ_1(j_n)}$：$c_1=1.602$、$c_2=-1.065$、$c_3=0.851$。每一項 $J_0(j_n\cdot1)=0$，所以級數在 $r=1$ 等於 0；$f$ 在邊界跳到 0（邊界條件），像 Fourier 級數在不連續點附近收斂慢（$c_n$ 只像 $n^{-1/2}$ 遞減，比自編 4-c 的 $n^{-5/2}$ 慢得多）。</p>
+  </details>
+</div>

@@ -1,0 +1,317 @@
+<h2 id="kp-06">六、二階非齊次：未定係數法與初值問題</h2>
+<h3 id="k06-1">作業三｜共用符號</h3>
+<p>$x$：自變數；$y$：待求函數；$y_h$：齊次解；$y_p$：非齊次特解；$D=d/dx$：微分算子；$L(D)$：常係數微分多項式；$A,B,C,D_0$：待定係數（$D_0$ 和微分算子 $D$ 不同）；$C_1,C_2$：齊次通解常數。</p>
+<h3 id="k06-2">作業三第 1 題｜加總規則 sum rule</h3>
+<p><strong>原題：</strong> Solve $y''+2y'+y=\sin x+3\cos2x$ with $y(0)=0$, $y'(0)=0$. Hint: sum rule.</p>
+<p><strong>中文：</strong> 求二階非齊次 ODE 的初值解；分開求右側兩項的特解再相加。</p>
+<p class="symnote">符號：$y_{p1},y_{p2}$：分別對應 $\sin x$、$3\cos2x$ 的特解；$L[y]=y''+2y'+y$。</p>
+<p><strong>① 齊次解：</strong> 特徵方程 $r^2+2r+1=(r+1)^2=0$，重根 $r=-1$。</p>
+<p class="fnote"><b>公式（重根通解）：</b>常係數方程 $ay''+by'+cy=0$ 的特徵方程為 $ar^2+br+c=0$，若有二重根 $r=r_0$，則齊次通解為 $y_h=(C_1+C_2x)e^{r_0x}$，其中 $a,b,c$ 為常數係數、$C_1,C_2$ 為齊次通解常數；本題 $a=1,b=2,c=1$，$r_0=-1$。</p>
+<div class="math-block">$$
+\boxed{y_h=(C_1+C_2x)e^{-x}.}
+$$</div>
+<p><strong>② 第一組右側 $\sin x$：</strong> 特徵根 $-1$ 不是 $\pm i$，用一般三角試探解。</p>
+<p class="fnote"><b>公式（三角試探解）：</b>若右側為 $k_1\cos\omega x+k_2\sin\omega x$ 且 $\pm i\omega$ 不是左側算子的特徵根，設特解 $y_p=A\cos\omega x+B\sin\omega x$，其中 $k_1,k_2$ 為已知常數、$\omega\gt0$ 為常數、$A,B$ 為待定係數；本題 第一組 $\omega=1$（係數 $A,B$），第二組 $\omega=2$（係數 $C,D_0$），特徵根 $-1$ 不等於 $\pm i$、$\pm2i$。</p>
+<p>設 $y_{p1}=A\cos x+B\sin x$：
+$$
+y_{p1}'=-A\sin x+B\cos x,\qquad y_{p1}''=-A\cos x-B\sin x.
+$$
+$$
+L[y_{p1}]=(-A\cos x-B\sin x)+2(-A\sin x+B\cos x)+(A\cos x+B\sin x)
+=2B\cos x-2A\sin x.
+$$
+與 $\sin x$ 比較：$2B=0$、$-2A=1$，得 $B=0,A=-1/2$：
+$$
+\boxed{y_{p1}=-\frac12\cos x.}
+$$</p>
+<p><strong>③ 第二組右側 $3\cos2x$：</strong> 設 $y_{p2}=C\cos2x+D_0\sin2x$。</p>
+<p>$$
+y_{p2}'=-2C\sin2x+2D_0\cos2x,
+$$
+$$
+y_{p2}''=-4C\cos2x-4D_0\sin2x.
+$$
+$$
+L[y_{p2}]=(-3C+4D_0)\cos2x+(-4C-3D_0)\sin2x.
+$$
+比較係數：
+$$
+-3C+4D_0=3,\qquad -4C-3D_0=0.
+$$
+由第二式 $C=-3D_0/4$，代入第一式：
+$$
+\frac94D_0+4D_0=3
+\Rightarrow \frac{25}4D_0=3
+\Rightarrow D_0=\frac{12}{25},
+$$
+$$
+C=-\frac34\frac{12}{25}=-\frac9{25}.
+$$
+$$
+\boxed{y_{p2}=-\frac9{25}\cos2x+\frac{12}{25}\sin2x.}
+$$</p>
+<p><strong>④ 加總得通解：</strong></p>
+<p class="fnote"><b>公式（疊加原理）：</b>若 $L[y_{p1}]=f_1$、$L[y_{p2}]=f_2$，則 $L[y_{p1}+y_{p2}]=f_1+f_2$，其中 $L$ 為線性微分算子、$f_1,f_2$ 為右側各部分、$y_{p1},y_{p2}$ 為各自的特解；本題 $L[y]=y''+2y'+y$，$f_1=\sin x$、$f_2=3\cos2x$。</p>
+<p class="fnote"><b>公式（非齊次通解）：</b>$y=y_h+y_p$，其中 $y_h$ 為齊次方程的通解（含兩個常數）、$y_p$ 為非齊次方程的任一特解；本題 $y_h=(C_1+C_2x)e^{-x}$，$y_p=y_{p1}+y_{p2}$。</p>
+<div class="math-block">$$
+y=(C_1+C_2x)e^{-x}-\frac12\cos x-\frac9{25}\cos2x+\frac{12}{25}\sin2x.
+$$</div>
+<p><strong>⑤ 代 $y(0)=0$：</strong> $C_1-1/2-9/25=0$，通分後 $C_1=25/50+18/50=43/50$。</p>
+<p><strong>⑥ 微分並代 $y'(0)=0$：</strong> 重根項用乘積律。</p>
+<p class="fnote"><b>公式（乘積律）：</b>$(fg)'=f'g+fg'$，其中 $f=f(x),g=g(x)$ 為可微函數；本題 $f=C_1+C_2x$、$g=e^{-x}$，且 $(e^{-x})'=-e^{-x}$。</p>
+<p>$$
+y'=(C_2-C_1-C_2x)e^{-x}+\frac12\sin x+\frac{18}{25}\sin2x+\frac{24}{25}\cos2x.
+$$
+由 $y'(0)=0$：$0=C_2-C_1+24/25$，所以
+$$
+C_2=\frac{43}{50}-\frac{48}{50}=-\frac1{10}.
+$$</p>
+<div class="math-block">$$
+\boxed{y=\frac{43}{50}e^{-x}-\frac1{10}xe^{-x}-\frac12\cos x-\frac9{25}\cos2x+\frac{12}{25}\sin2x.}
+$$</div>
+<h3 id="k06-3">作業三第 2 題｜乘法規則 multiplication rule</h3>
+<p><strong>原題：</strong> Find a particular solution of $y''-4y'-12y=xe^{-4x}$. Hint: multiplication rule.</p>
+<p><strong>中文：</strong> 使用乘法規則求一個非齊次特解（不要求初值或齊次通解）。</p>
+<p><strong>① 用乘法規則去掉指數：</strong> 左側寫成 $L(D)y$，$L(D)=D^2-4D-12$；forcing 是多項式乘 $e^{-4x}$，令 $y_p=e^{-4x}v(x)$。</p>
+<p>$$
+y_p=e^{-4x}v(x).
+$$
+$$
+L(D)[e^{ax}v]=e^{ax}L(D+a)v.
+$$</p>
+<p class="symnote">符號：$a$：指數 $e^{ax}$ 裡的常數；$L(D+a)$：把 $L(D)$ 每個 $D$ 換成 $D+a$ 的算子；$A,B$：待定係數。</p>
+<p>本題 $a=-4$：
+$$
+e^{-4x}L(D-4)v=xe^{-4x}\Rightarrow L(D-4)v=x.
+$$</p>
+<p><strong>② 展開平移後的算子：</strong></p>
+<div class="math-block">$$
+L(D-4)=(D-4)^2-4(D-4)-12
+=D^2-8D+16-4D+16-12
+=D^2-12D+20.
+$$</div>
+<p><strong>③ 多項式試探解：</strong> 得 $v''-12v'+20v=x$，右側一次，設 $v=Ax+B$，則 $v'=A$、$v''=0$。</p>
+<p class="fnote"><b>公式（多項式試探解）：</b>若右側為 $n$ 次多項式 $p_n(x)$ 且 $0$ 不是左側算子的特徵根（算子常數項不為零），設特解為 $n$ 次多項式 $A_nx^n+\dots+A_1x+A_0$，其中 $A_0,\dots,A_n$ 為待定係數；本題 算子為 $L(D-4)=D^2-12D+20$，常數項 $20\ne0$，右側 $x$ 為 $n=1$ 次，係數記為 $A,B$。</p>
+<p>$$
+-12A+20(Ax+B)=20Ax+(20B-12A)=x.
+$$
+比較 $x^1$、常數項：
+$$
+20A=1\Rightarrow A=\frac1{20};\qquad
+20B-12A=0\Rightarrow B=\frac{12}{20}\frac1{20}=\frac3{100}.
+$$</p>
+<div class="math-block">$$
+\boxed{y_p=e^{-4x}\left(\frac3{100}+\frac1{20}x\right).}
+$$</div>
+<h3 id="k06-4">作業三第 3 題｜修正規則 modification rule</h3>
+<p><strong>原題：</strong> Find a particular solution of $y''+y=2x\sin x$. Hint: modification rule.</p>
+<p><strong>中文：</strong> 先判斷齊次解與試解的重合，再用修正規則求非齊次特解。</p>
+<p><strong>① 齊次解：</strong> 特徵方程 $r^2+1=0$，根 $r=\pm i$。</p>
+<p class="fnote"><b>公式（複根通解）：</b>常係數方程 $ay''+by'+cy=0$ 的特徵方程為 $ar^2+br+c=0$，若其根為 $r=\alpha\pm i\beta$（$\beta\gt0$），則齊次實通解為 $y_h=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$，其中 $a,b,c$ 為常數係數、$\alpha,\beta$ 為根的實部與虛部、$C_1,C_2$ 為齊次通解常數；本題 $a=1,b=0,c=1$，$\alpha=0,\beta=1$。</p>
+<div class="math-block">$$
+y_h=C_1\cos x+C_2\sin x.
+$$</div>
+<p><strong>② 修正試探解：</strong> 正常試解 $(Ax+B)\cos x+(Cx+D_0)\sin x$ 和齊次解重疊，$i$ 是一重根，整體乘 $x$。</p>
+<p class="fnote"><b>公式（修正規則）：</b>右側為 $e^{\alpha x}p_n(x)\cos\beta x$ 或 $e^{\alpha x}p_n(x)\sin\beta x$ 時，正常試解為 $e^{\alpha x}[P_n(x)\cos\beta x+Q_n(x)\sin\beta x]$；若 $\alpha+i\beta$ 是 $s$ 重特徵根，整個試解再乘 $x^s$，其中 $p_n$ 為已知 $n$ 次多項式、$P_n,Q_n$ 為係數待定的 $n$ 次多項式、$s$ 為重數（不是根時 $s=0$）；本題 右側 $2x\sin x$ 對應 $\alpha=0,\beta=1,n=1$，$i$ 是一重特徵根，$s=1$。</p>
+<div class="math-block">$$
+y_p=x[(Ax+B)\cos x+(Cx+D_0)\sin x].
+$$</div>
+<p><strong>③ 微分代入：</strong> 令 $u=Ax^2+Bx$、$v=Cx^2+D_0x$，則 $y_p=u\cos x+v\sin x$，用乘積律微分兩次。</p>
+<p class="fnote"><b>公式（乘積律）：</b>$(fg)'=f'g+fg'$，再微分一次得 $(fg)''=f''g+2f'g'+fg''$，其中 $f=f(x),g=g(x)$ 為二次可微函數；本題 $f=u$ 或 $v$、$g=\cos x$ 或 $\sin x$。</p>
+<p>$$
+y_p'= (u'+v)\cos x+(v'-u)\sin x,
+$$
+$$
+y_p''+y_p=(u''+2v')\cos x+(v''-2u')\sin x.
+$$
+$$
+u'=2Ax+B,\quad u''=2A;
+\qquad v'=2Cx+D_0,\quad v''=2C.
+$$
+$$
+y_p''+y_p=(2A+4Cx+2D_0)\cos x+(2C-4Ax-2B)\sin x.
+$$</p>
+<p><strong>④ 比較係數：</strong> 與 $0\cos x+2x\sin x$ 比較。</p>
+<p>$$
+4C=0,\quad 2A+2D_0=0,\quad -4A=2,\quad 2C-2B=0.
+$$
+依次解得 $C=0,A=-1/2,D_0=1/2,B=0$：
+$$
+\boxed{y_p=-\frac12x^2\cos x+\frac12x\sin x.}
+$$</p>
+<h3 id="k06-5">2025 年 10 月期中第 3 題｜二階非齊次初值題（25 分）</h3>
+<p><strong>原題：</strong> Solve $y''+2y'-8y=-9\cos x-2\sin x$, with $y(0)=4$ and $y'(0)=-6$.</p>
+<p><strong>中文：</strong> 求二階非齊次方程的特定初值解。</p>
+<p><strong>① 齊次解：</strong> 特徵方程兩相異實根 $2,-4$。</p>
+<p class="fnote"><b>公式（特徵方程）：</b>常係數齊次方程 $ay''+by'+cy=0$ 代入試探解 $y=e^{rx}$ 得 $(ar^2+br+c)e^{rx}=0$，因 $e^{rx}\ne0$ 故 $ar^2+br+c=0$，其中 $a,b,c$ 為實常數係數（$a\ne0$）、$r$ 為特徵根；本題 $a=1,b=2,c=-8$。</p>
+<p class="fnote"><b>公式（相異實根通解）：</b>若特徵方程 $ar^2+br+c=0$ 有兩相異實根 $r_1\ne r_2$，則齊次通解為 $y=C_1e^{r_1x}+C_2e^{r_2x}$，其中 $r_1,r_2$ 為兩個特徵根、$C_1,C_2$ 為由初值決定的常數；本題 $r_1=2,r_2=-4$。</p>
+<div class="math-block">$$
+r^2+2r-8=(r-2)(r+4)=0,
+\quad y_h=C_1e^{2x}+C_2e^{-4x}.
+$$</div>
+<p><strong>② 特解：</strong> 右側是正弦與餘弦，設 $y_p=A\cos x+B\sin x$。</p>
+<p class="fnote"><b>公式（三角試探解）：</b>若右側為 $k_1\cos\omega x+k_2\sin\omega x$ 且 $\pm i\omega$ 不是左側算子的特徵根，設特解 $y_p=A\cos\omega x+B\sin\omega x$，其中 $k_1,k_2$ 為已知常數、$\omega\gt0$ 為常數、$A,B$ 為待定係數；本題 $\omega=1$，特徵根 $2,-4$ 不等於 $\pm i$。</p>
+<p>$$
+y_p'=-A\sin x+B\cos x,\qquad y_p''=-A\cos x-B\sin x.
+$$
+代入 $y_p''+2y_p'-8y_p$ 並比較係數：
+$$
+(-9A+2B)\cos x+(-2A-9B)\sin x=-9\cos x-2\sin x,
+$$
+$$
+-9A+2B=-9,\quad -2A-9B=-2.
+$$
+解得 $A=1,B=0$，所以 $y_p=\cos x$。</p>
+<p><strong>③ 通解：</strong></p>
+<p class="fnote"><b>公式（非齊次通解）：</b>$y=y_h+y_p$，其中 $y_h$ 為齊次方程的通解（含兩個常數）、$y_p$ 為非齊次方程的任一特解；本題 $y_h=C_1e^{2x}+C_2e^{-4x}$，$y_p=\cos x$。</p>
+<div class="math-block">$$
+y=C_1e^{2x}+C_2e^{-4x}+\cos x.
+$$</div>
+<p><strong>④ 代初值：</strong> $y(0)=4$ 給 $C_1+C_2+1=4$，即 $C_1+C_2=3$；再用</p>
+<div class="math-block">$$
+y'=2C_1e^{2x}-4C_2e^{-4x}-\sin x
+$$</div>
+<p>及 $y'(0)=-6$ 給 $2C_1-4C_2=-6$。解聯立得 $C_1=1,C_2=2$：</p>
+<div class="math-block">$$
+\boxed{y=e^{2x}+2e^{-4x}+\cos x.}
+$$</div>
+<h3 id="k06-6">2024 年 11 月期中第 4 題｜未定係數法：sum rule（25 分）</h3>
+<p><strong>原題：</strong> Find the particular solution $y_p$ of $y''+2y'-8y=(x-1)^2+e^{-2x}-9\cos x-2\sin x$.</p>
+<p><strong>中文：</strong> 求一個特解。右側有多項式、指數函數與三角函數，可由線性加總規則拆成三組。</p>
+<p><strong>① 拆成三組：</strong> 設 $L[y]=y''+2y'-8y$，分別求 $L[y_{p1}]=(x-1)^2$、$L[y_{p2}]=e^{-2x}$、$L[y_{p3}]=-9\cos x-2\sin x$。</p>
+<p class="fnote"><b>公式（疊加原理）：</b>若 $L[y_{pk}]=f_k$（$k=1,2,3$），則 $L[y_{p1}+y_{p2}+y_{p3}]=f_1+f_2+f_3$，其中 $L$ 為線性微分算子、$f_k$ 為右側第 $k$ 部分、$y_{pk}$ 為其特解；本題 $f_1=(x-1)^2$、$f_2=e^{-2x}$、$f_3=-9\cos x-2\sin x$。</p>
+<p class="symnote">符號：$A,B,C,D,E,F$：待定係數。</p>
+<p><strong>② 第一組，多項式：</strong> $(x-1)^2=x^2-2x+1$，設 $y_{p1}=Ax^2+Bx+C$，則 $y_{p1}'=2Ax+B$、$y_{p1}''=2A$，代入並按 $x$ 次數整理。</p>
+<p class="fnote"><b>公式（多項式試探解）：</b>若右側為 $n$ 次多項式 $p_n(x)$ 且 $0$ 不是左側算子的特徵根（算子常數項不為零），設特解為 $n$ 次多項式 $A_nx^n+\dots+A_1x+A_0$，其中 $A_0,\dots,A_n$ 為待定係數；本題 $L[y]=y''+2y'-8y$ 的常數項 $-8\ne0$（特徵根 $2,-4$），右側 $(x-1)^2$ 為 $n=2$ 次，係數記為 $A,B,C$。</p>
+<p>$$
+L[y_{p1}]=-8Ax^2+(4A-8B)x+(2A+2B-8C).
+$$
+比較係數：
+$$
+-8A=1,\quad 4A-8B=-2,\quad 2A+2B-8C=1.
+$$
+解得 $A=-1/8$、$B=3/16$、$C=-7/64$：
+$$
+y_{p1}=-\frac18x^2+\frac3{16}x-\frac7{64}.
+$$</p>
+<p><strong>③ 第二組，指數：</strong> 設 $y_{p2}=De^{-2x}$，導數為 $-2De^{-2x}$、$4De^{-2x}$。</p>
+<p class="fnote"><b>公式（指數試探解）：</b>若右側為 $qe^{\alpha x}$ 且 $\alpha$ 不是特徵根，設特解 $y_p=Ke^{\alpha x}$，其中 $q$ 為已知常數、$\alpha$ 為常數、$K$ 為待定係數；本題 $q=1,\alpha=-2$，$-2$ 不是特徵根 $2,-4$，係數記為 $D$。</p>
+<p>$$
+L[y_{p2}]=(4D-4D-8D)e^{-2x}=-8De^{-2x}=e^{-2x},
+$$
+故 $D=-1/8$。</p>
+<p><strong>④ 第三組，三角：</strong> 設 $y_{p3}=E\cos x+F\sin x$。</p>
+<p class="fnote"><b>公式（三角試探解）：</b>若右側為 $k_1\cos\omega x+k_2\sin\omega x$ 且 $\pm i\omega$ 不是左側算子的特徵根，設特解 $y_p=A\cos\omega x+B\sin\omega x$，其中 $k_1,k_2$ 為已知常數、$\omega\gt0$ 為常數、$A,B$ 為待定係數；本題 $\omega=1$，特徵根 $2,-4$ 不等於 $\pm i$，係數記為 $E,F$。</p>
+<p>$$
+L[y_{p3}]=(-9E+2F)\cos x+(-2E-9F)\sin x.
+$$
+令之等於 $-9\cos x-2\sin x$，得 $E=1,F=0$，故 $y_{p3}=\cos x$。</p>
+<p><strong>⑤ 加總：</strong></p>
+<div class="math-block">$$
+\boxed{y_p=-\frac18x^2+\frac3{16}x-\frac7{64}-\frac18e^{-2x}+\cos x.}
+$$</div>
+<h3 id="k06-7">2023 年 11 月期中第 3 題｜二階非齊次方程（總 18 分，三小題）</h3>
+<p><strong>原題：</strong> Consider $y''+2y'+17y=60e^{-4x}\sin(5x)$. (1) Find the complementary solution. (2) Find the particular solution. (3) Find the unique solution for $y(0)=0$, $y'(0)=2$.</p>
+<p><strong>中文：</strong> 依序求齊次解、非齊次特解、滿足初值的完整解。</p>
+<h4>(1) Complementary solution（齊次解）</h4>
+<p><strong>① 特徵方程求根：</strong> 設 $y_h=e^{rx}$。</p>
+<p class="fnote"><b>公式（特徵方程）：</b>常係數齊次方程 $ay''+by'+cy=0$ 代入試探解 $y=e^{rx}$ 得 $(ar^2+br+c)e^{rx}=0$，因 $e^{rx}\ne0$ 故 $ar^2+br+c=0$，其中 $a,b,c$ 為實常數係數（$a\ne0$）、$r$ 為特徵根；本題 $a=1,b=2,c=17$。</p>
+<p class="fnote"><b>公式（二次公式）：</b>$ar^2+br+c=0$（$a\ne0$）的根為 $r=\dfrac{-b\pm\sqrt{\Delta}}{2a}$，$\Delta=b^2-4ac$，當 $\Delta\lt0$ 時 $\sqrt{\Delta}=i\sqrt{-\Delta}$，其中 $a,b,c$ 為係數、$\Delta$ 為判別式、$i$ 為虛數單位；本題 $a=1,b=2,c=17$，$\Delta=-64$，$\sqrt{-64}=8i$。</p>
+<div class="math-block">$$
+r^2+2r+17=0\Rightarrow r=-1\pm4i.
+$$</div>
+<p><strong>② 寫齊次解：</strong></p>
+<p class="fnote"><b>公式（複根通解）：</b>若特徵方程 $ar^2+br+c=0$ 的根為 $r=\alpha\pm i\beta$（$\beta\gt0$），則實通解為 $y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$，其中 $\alpha,\beta$ 為根的實部與虛部、$C_1,C_2$ 為實常數；本題 $\alpha=-1,\beta=4$，所得 $y$ 即齊次解 $y_h$。</p>
+<div class="math-block">$$
+\boxed{y_h=e^{-x}(C_1\cos4x+C_2\sin4x).}
+$$</div>
+<h4>(2) Particular solution（特解）</h4>
+<p><strong>① 乘法規則：</strong> 右側含 $e^{-4x}$，設 $y_p=e^{-4x}v(x)$，$D=d/dx$。</p>
+<p class="fnote"><b>公式（乘法規則）：</b>$L(D)[e^{ax}v]=e^{ax}L(D+a)v$，其中 $D=d/dx$、$a$ 為常數、$v=v(x)$ 為待求函數、$L(D+a)$ 是把 $L(D)$ 中每個 $D$ 換成 $D+a$ 的算子；本題 $L(D)=D^2+2D+17$、$a=-4$。</p>
+<p>$$
+(D^2+2D+17)[e^{-4x}v]=e^{-4x}[(D-4)^2+2(D-4)+17]v.
+$$
+展開 $(D-4)^2+2(D-4)+17=D^2-6D+25$，因此
+$$
+v''-6v'+25v=60\sin5x.
+$$</p>
+<p><strong>② 三角試探解：</strong> 試 $v=A\cos5x+B\sin5x$，則 $v''+25v=0$，只剩 $-6v'=30A\sin5x-30B\cos5x$。</p>
+<p class="fnote"><b>公式（三角試探解）：</b>若右側為 $k_1\cos\omega x+k_2\sin\omega x$ 且 $\pm i\omega$ 不是左側算子的特徵根，設特解 $y_p=A\cos\omega x+B\sin\omega x$，其中 $k_1,k_2$ 為已知常數、$\omega\gt0$ 為常數、$A,B$ 為待定係數；本題 對 $v$ 的方程 $\omega=5$，平移後算子 $D^2-6D+25$ 的特徵根 $3\pm4i$ 不等於 $\pm5i$。</p>
+<p>$$
+30A=60,\qquad -30B=0
+\quad\Rightarrow A=2,\ B=0.
+$$
+$$
+\boxed{y_p=2e^{-4x}\cos5x.}
+$$
+<strong>注意：</strong> $D^2+25$ 的抵消不代表要額外乘 $x$；齊次根 $-1\pm4i$ 和右側的 $-4\pm5i$ 不重合。</p>
+<h4>(3) Unique solution（初值解）</h4>
+<p><strong>① 通解：</strong></p>
+<p class="fnote"><b>公式（非齊次通解）：</b>$y=y_h+y_p$，其中 $y_h$ 為齊次方程的通解（含兩個常數）、$y_p$ 為非齊次方程的任一特解；本題 $y_h=e^{-x}(C_1\cos4x+C_2\sin4x)$，$y_p=2e^{-4x}\cos5x$。</p>
+<div class="math-block">$$
+y=e^{-x}(C_1\cos4x+C_2\sin4x)+2e^{-4x}\cos5x.
+$$</div>
+<p><strong>② 代 $y(0)=0$：</strong> $C_1+2=0$，故 $C_1=-2$。</p>
+<p><strong>③ 微分並代 $y'(0)=2$：</strong></p>
+<p class="fnote"><b>公式（乘積律）：</b>$(fg)'=f'g+fg'$，其中 $f=f(x),g=g(x)$ 為可微函數；本題 $f=e^{-x}$、$g=C_1\cos4x+C_2\sin4x$，以及 $f=2e^{-4x}$、$g=\cos5x$，並用 $(e^{ax})'=ae^{ax}$、$(\cos\beta x)'=-\beta\sin\beta x$、$(\sin\beta x)'=\beta\cos\beta x$。</p>
+<p>$$
+y'=e^{-x}\left[-C_1\cos4x-C_2\sin4x-4C_1\sin4x+4C_2\cos4x\right]
++2e^{-4x}[-4\cos5x-5\sin5x].
+$$
+代 $x=0$：$y'(0)=-C_1+4C_2-8=2$；代 $C_1=-2$ 得 $2+4C_2-8=2$，所以 $C_2=2$。</p>
+<div class="math-block">$$
+\boxed{y=e^{-x}(-2\cos4x+2\sin4x)+2e^{-4x}\cos5x.}
+$$</div>
+<h3 id="k06-8">2022 年 11 月期中第 3 題｜二階非齊次初值問題（5 分）</h3>
+<p><strong>原題：</strong> Solve $y''-2y'+2y=2(x-1)$ with $y(0)=0$, $y'(0)=1$.</p>
+<p><strong>中文：</strong> 求二階非齊次方程的指定初值解。</p>
+<p><strong>① 齊次解：</strong> 特徵方程 $r^2-2r+2=0$，根 $r=1\pm i$。</p>
+<p class="fnote"><b>公式（複根通解）：</b>常係數方程 $ay''+by'+cy=0$ 的特徵方程為 $ar^2+br+c=0$，若其根為 $r=\alpha\pm i\beta$（$\beta\gt0$），則齊次實通解為 $y_h=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$，其中 $a,b,c$ 為常數係數、$\alpha,\beta$ 為根的實部與虛部、$C_1,C_2$ 為齊次通解常數；本題 $a=1,b=-2,c=2$，$\alpha=1,\beta=1$。</p>
+<div class="math-block">$$
+y_h=e^x(C_1\cos x+C_2\sin x).
+$$</div>
+<p><strong>② 特解：</strong> 右側是一次多項式 $2x-2$，試 $y_p=Ax+B$，$y_p'=A$、$y_p''=0$。</p>
+<p class="fnote"><b>公式（多項式試探解）：</b>若右側為 $n$ 次多項式 $p_n(x)$ 且 $0$ 不是左側算子的特徵根（算子常數項不為零），設特解為 $n$ 次多項式 $A_nx^n+\dots+A_1x+A_0$，其中 $A_0,\dots,A_n$ 為待定係數；本題 左側常數項 $2\ne0$（特徵根 $1\pm i$），右側 $2x-2$ 為 $n=1$ 次，係數記為 $A,B$。</p>
+<p>$$
+0-2A+2(Ax+B)=2x-2,
+$$
+比較係數 $2A=2\Rightarrow A=1$，常數 $-2A+2B=-2\Rightarrow B=0$，所以 $y_p=x$。</p>
+<p><strong>③ 通解：</strong></p>
+<p class="fnote"><b>公式（非齊次通解）：</b>$y=y_h+y_p$，其中 $y_h$ 為齊次方程的通解（含兩個常數）、$y_p$ 為非齊次方程的任一特解；本題 $y_h=e^x(C_1\cos x+C_2\sin x)$，$y_p=x$。</p>
+<div class="math-block">$$
+y=e^x(C_1\cos x+C_2\sin x)+x.
+$$</div>
+<p><strong>④ 代初值：</strong> $y(0)=0$ 給 $C_1=0$；再微分。</p>
+<p class="fnote"><b>公式（乘積律）：</b>$(fg)'=f'g+fg'$，其中 $f=f(x),g=g(x)$ 為可微函數；本題 $f=e^x$、$g=C_1\cos x+C_2\sin x$，且 $(e^x)'=e^x$。</p>
+<p>$$
+y'=e^x\left[(C_1+C_2)\cos x+(C_2-C_1)\sin x\right]+1.
+$$
+代 $y'(0)=1$：$C_1+C_2+1=1$，所以 $C_2=0$。</p>
+<div class="math-block">$$
+\boxed{y(x)=x.}
+$$</div>
+<h3 id="k06-9">2021 年 11 月期中第 4 題｜修正規則：共振特解（20 分）</h3>
+<p><strong>原題：</strong> Find a particular solution of $y''-2y'+2y=2e^x\cos x$.</p>
+<p><strong>中文：</strong> 求一個二階非齊次方程的特解。</p>
+<p><strong>① 檢查共振：</strong> 特徵方程 $r^2-2r+2=0$ 有根 $1\pm i$，$e^x\cos x$ 已是齊次解，直接猜 $e^x(A\cos x+B\sin x)$ 會重疊。</p>
+<p class="fnote"><b>公式（複根通解）：</b>常係數方程 $ay''+by'+cy=0$ 的特徵方程為 $ar^2+br+c=0$，若其根為 $r=\alpha\pm i\beta$（$\beta\gt0$），則齊次實通解為 $y_h=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$，其中 $a,b,c$ 為常數係數、$\alpha,\beta$ 為根的實部與虛部、$C_1,C_2$ 為齊次通解常數；本題 $a=1,b=-2,c=2$，$\alpha=1,\beta=1$，故 $e^x\cos x$、$e^x\sin x$ 為齊次解。</p>
+<p><strong>② 修正試探解：</strong> 乘上 $x$。</p>
+<p class="fnote"><b>公式（修正規則）：</b>右側為 $e^{\alpha x}p_n(x)\cos\beta x$ 或 $e^{\alpha x}p_n(x)\sin\beta x$ 時，正常試解為 $e^{\alpha x}[P_n(x)\cos\beta x+Q_n(x)\sin\beta x]$；若 $\alpha+i\beta$ 是 $s$ 重特徵根，整個試解再乘 $x^s$，其中 $p_n$ 為已知 $n$ 次多項式、$P_n,Q_n$ 為係數待定的 $n$ 次多項式、$s$ 為重數（不是根時 $s=0$）；本題 右側 $2e^x\cos x$ 對應 $\alpha=1,\beta=1,n=0$，$1+i$ 是一重特徵根，$s=1$。</p>
+<div class="math-block">$$
+y_p=xe^x(A\cos x+B\sin x).
+$$</div>
+<p><strong>③ 用乘法規則簡化：</strong> 令 $y_p=e^xv$，$v=x(A\cos x+B\sin x)$。</p>
+<p class="fnote"><b>公式（乘法規則）：</b>$L(D)[e^{ax}v]=e^{ax}L(D+a)v$，其中 $D=d/dx$、$a$ 為常數、$v=v(x)$ 為待求函數、$L(D+a)$ 是把 $L(D)$ 中每個 $D$ 換成 $D+a$ 的算子；本題 $L(D)=D^2-2D+2$、$a=1$，$L(D+1)=(D+1)^2-2(D+1)+2=D^2+1$。</p>
+<p>$(D^2-2D+2)[e^xv]=e^x(D^2+1)v$，所以
+$$
+v''+v=2\cos x.
+$$</p>
+<p><strong>④ 微分 $v$ 並比較係數：</strong></p>
+<p class="fnote"><b>公式（乘積律）：</b>$(fg)'=f'g+fg'$，再微分一次得 $(fg)''=f''g+2f'g'+fg''$，其中 $f=f(x),g=g(x)$ 為二次可微函數；本題 $f=x$、$g=A\cos x+B\sin x$。</p>
+<p>$$
+v''+v=-2A\sin x+2B\cos x.
+$$
+比較係數 $-2A=0$、$2B=2$，得 $A=0,B=1$：
+$$
+\boxed{y_p=xe^x\sin x.}
+$$</p>

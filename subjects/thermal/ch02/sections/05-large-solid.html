@@ -1,0 +1,456 @@
+<h2>五、大愛因斯坦固體的多重度 <span class="pg">課本 §2.4 · p.63–64</span></h2>
+
+<p class="lead">用 Stirling 近似把 $\binom{q+N-1}{q}$ 化成簡單的式子。高溫極限（$q\gg N$）得到 $(eq/N)^N$，低溫極限（$q\ll N$）得到 $(eN/q)^q$。這是115 級與某級期中都考的推導題，每一步的近似理由都要寫出來。</p>
+
+<h3 id="tg-derive">5.1 高溫極限的推導 <span class="pg-tag">p.63–64</span></h3>
+
+<div class="step" data-step="tg-a" data-sym="N,q,Omega">
+  <span class="step-title">丟掉「只是大」的因子</span>
+  $$\Omega(N,q)=\frac{(q+N-1)!}{q!\,(N-1)!}\approx\frac{(q+N)!}{q!\,N!}\qquad(2.17)$$
+  <p>$\dfrac{(q+N)!}{(q+N-1)!}=q+N$、$\dfrac{N!}{(N-1)!}=N$，兩者的比只是大的數，相對於很大的 $\Omega$ 可以忽略。</p>
+</div>
+<div class="step" data-step="tg-b">
+  <span class="step-title">取對數、用 $\ln n!\approx n\ln n-n$</span>
+  $$\ln\Omega\approx(q+N)\ln(q+N)-(q+N)-q\ln q+q-N\ln N+N=(q+N)\ln(q+N)-q\ln q-N\ln N\qquad(2.18)$$
+  <p>到這裡只假設 $q$、$N$ 都很大，還沒用 $q\gg N$。</p>
+</div>
+<div class="step" data-step="tg-c">
+  <span class="step-title">高溫：$q\gg N$，展開第一個對數</span>
+  $$\ln(q+N)=\ln\left[q\left(1+\frac Nq\right)\right]=\ln q+\ln\left(1+\frac Nq\right)\approx\ln q+\frac Nq\qquad(2.19)$$
+</div>
+<div class="step" data-step="tg-d">
+  <span class="step-title">代回，$q\ln q$ 消掉</span>
+  $$\ln\Omega\approx(q+N)\left(\ln q+\frac Nq\right)-q\ln q-N\ln N=N\ln\frac qN+N+\frac{N^2}q\qquad(2.20)$$
+  <p>$q\gg N$ 時最後一項 $N^2/q\ll N$，丟掉。</p>
+  <p class="small muted">（這裡照課本寫 $N^2/q$；嚴格展開到同一階，這一項應為 $N^2/(2q)$，見本節<a href="#sf-05a">自編難題 5-A</a>。它反正會被丟掉，不影響 (2.21)。）</p>
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.64 Eq. (2.21) 高溫極限的多重度</span>
+  $$\Omega(N,q)\approx e^{N\ln(q/N)}e^N=\left(\frac{eq}N\right)^N\qquad(q\gg N)$$
+</div>
+
+<p>這個式子簡單但「怪」：指數 $N$ 是大的數，所以 $\Omega$ 是很大的數；而且 $N$ 或 $q$ 只要增加一點點，$\Omega$ 就增加很多。$q\gg N$ 為什麼叫「高溫」？它表示平均每個振子有很多份能量，$U/N\gg hf$：能量單位比每個振子的平均能量小得多，量子化不明顯——這正是高溫時的情形（第 3 章會證明此時 $U=NkT$，即 $kT\gg hf$）。反過來 $q\ll N$ 時大多數振子沒有能量，是低溫極限。</p>
+
+<div class="anim" data-anim="t2-limits"></div>
+
+<details class="supp">
+  <summary>精確值和近似差多少：$N=50$、$q=5000$</summary>
+  <div class="supp-body">
+    <div class="symbol-table-wrap"><table>
+      <thead><tr><th>算法</th><th>$\ln\Omega$</th></tr></thead>
+      <tbody>
+        <tr><td>精確 $\ln\binom{5049}{5000}$</td><td>273.02</td></tr>
+        <tr><td>習題 2.18 公式（含根號）</td><td>273.02</td></tr>
+        <tr><td>(2.18) 式（丟掉根號）</td><td>280.51</td></tr>
+        <tr><td>(2.20) 式</td><td>280.76</td></tr>
+        <tr><td>$N\ln(eq/N)$，即 (2.21)</td><td>280.26</td></tr>
+      </tbody>
+    </table></div>
+    <p>差的 7.5 就是丟掉的 $\tfrac12\ln\frac{2\pi q(q+N)}N$。$N=50$ 時它還佔 3%；$N=10^{23}$ 時 $\ln\Omega\sim10^{23}$，而這一項只有幾十，完全看不出來。所以 Stirling 公式不是「近似得剛好」，而是「丟掉的東西相對越來越小」。</p>
+  </div>
+</details>
+
+<div class="problem" data-kind="exam" id="tk-115-4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 4 題 · 即 Schroeder Problem 2.18、2.17 · p.64 · 2.18 也是熱學小考（上）作業題</span></div>
+    <h4>用 Stirling 推愛因斯坦固體的多重度與熵</h4>
+    <button type="button" class="exam-btn" data-exam="tk-115-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-4"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[20pts] Consider an Einstein solid (a model description of the solid, imaging all elements of a solid are connected by some ”springs” in three spatial dimensions. Possible energy state for one oscillation mode is $E_q\equiv(q+\frac12)\hbar\omega$ where $\hbar$ and $\omega$ are Planck constant and some material specific angular frequency.) for which both $N$ (oscillator’s number) and $q$ (energy quantum number) are much greater than 1. Here we simplify the expression for energy mode $E_q\simeq q\epsilon$ with $\epsilon$ as some given energy unit.</p><p>(a) Use Stirling’s approximation (i.e. $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$) to show the multiplicity of an Einstein’s solid is approximately given by: (5pts)$$\Omega(N,q)\simeq\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}$$</p><p>(b)Find the entropy of an Einstein solid as a function of $N$ and $q$ using $\Omega(N,q)\simeq\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N$. (4pts) Explain why the factors omitted in (a) have no effect on the entropy when $N$ and $q$ are large. (1pt)</p><p>(c) Show that when $q\gg N$ this multiplicity can be simplified as $$\Omega(N,q)\simeq\left(\frac{eq}{N}\right)^N$$ This limit is called ”high temperature limit”. (3pts) Explain why this condition is called ”high temperature limit”. (2pt)</p><p>(d) For $q\ll N$ (the ”low temperature limit”), what should be the simplified form of multiplicity function? Derive it <em>or</em> give your answer and argument. (5pts)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.18）</strong></p><p>Use Stirling’s approximation to show that the multiplicity of an Einstein solid, for any large values of $N$ and $q$, is approximately $$\Omega(N,q)\approx\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}.$$ The square root in the denominator is merely large, and can often be neglected. However, it is needed in Problem 2.22. (Hint: First show that $\Omega=\frac{N}{q+N}\frac{(q+N)!}{q!\,N!}$. Do not neglect the $\sqrt{2\pi N}$ in Stirling’s approximation.)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.17）</strong></p><p>Use the methods of this section to derive a formula, similar to equation 2.21, for the multiplicity of an Einstein solid in the “low-temperature” limit, $q\ll N$.</p></div>
+<p class="original-caption">115 級上學期期中 第 4 題 · 即 Schroeder Problem 2.18、2.17 · p.64 · 2.18 也是熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（20 分）考慮一個愛因斯坦固體（固體的一種模型：想像固體的所有組成單元在三個空間方向上由「彈簧」連接。一個振動模式可能的能量狀態是 $E_q\equiv(q+\tfrac12)\hbar\omega$，其中 $\hbar$ 是普朗克常數、$\omega$ 是某個與材料有關的角頻率），其中 $N$（振子數）與 $q$（能量量子數）都遠大於 1。這裡把能量模式簡化成 $E_q\simeq q\epsilon$，$\epsilon$ 是某個給定的能量單位。(a) 用 Stirling 近似（即 $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$）證明愛因斯坦固體的多重度近似為（5 分）
+    $$\Omega(N,q)\simeq\frac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$$
+    (b) 用 $\Omega(N,q)\simeq\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N$ 求愛因斯坦固體的熵，表示成 $N$ 與 $q$ 的函數。（4 分）說明為什麼當 $N$、$q$ 很大時，(a) 中被省略的因子對熵沒有影響。（1 分）(c) 證明當 $q\gg N$ 時這個多重度可以化簡為
+    $$\Omega(N,q)\simeq\left(\frac{eq}N\right)^N$$
+    這個極限稱為「高溫極限」。（3 分）說明為什麼這個條件叫「高溫極限」。（2 分）(d) 當 $q\ll N$（「低溫極限」）時，多重度函數的化簡形式應該是什麼？推導出來，或者寫出答案並給出論證。（5 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>精確多重度</td><td>$\Omega(N,q)=\dfrac{(q+N-1)!}{q!\,(N-1)!}$</td><td>愛因斯坦固體 (2.9)；題目「$E_q\simeq q\epsilon$」：每份能量 $\epsilon$，從基態算起</td></tr>
+          <tr><td>$N$、$q$ 都很大</td><td>$N\gg1$，$q\gg1$</td><td>「$N$（振子數）與 $q$（能量量子數）都<b>遠大於 1</b>」：可以用 Stirling</td></tr>
+          <tr><td>Stirling 近似</td><td>$n!\simeq n^ne^{-n}\sqrt{2\pi n}$（含根號）</td><td>(a)「即 $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$」</td></tr>
+          <tr><td>熵的定義</td><td>$S=k\ln\Omega$</td><td>(b) 求熵；題目沒寫定義，用波茲曼的定義（§2.6），$k$ 為波茲曼常數</td></tr>
+          <tr><td>(b) 用的多重度</td><td>$\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N$</td><td>(b)「用 $\Omega(N,q)\simeq\dots$ 求」：已去掉根號</td></tr>
+          <tr><td>兩個極限</td><td>(c) $q\gg N$；(d) $q\ll N$</td><td>(c)(d) 題目</td></tr>
+          <tr><td>可用的近似</td><td>$\ln(1+x)\approx x$（$|x|\ll1$）</td><td>習題 2.12(d)；題目沒寫，(c)(d) 要用</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明含根號的多重度近似式；(b) 寫出 $S(N,q)$，說明 (a) 省略的因子為何不影響熵；(c) 證明 $q\gg N$ 時 $\Omega\simeq(eq/N)^N$，並說明為何叫高溫極限；(d) 求 $q\ll N$ 時的化簡形式。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b> Stirling 公式只能代入完整的 $n!$，而 (2.9) 裡是 $(q+N-1)!$ 與 $(N-1)!$，<b>所以</b>先照課本提示改寫成 $\frac N{q+N}\cdot\frac{(q+N)!}{q!\,N!}$，三個階乘再一起代入。<b>因為</b>題目要的式子含根號，<b>所以</b>這裡 $\sqrt{2\pi n}$ 一個都不能丟。</p>
+      <p>(b) <b>因為</b> $S=k\ln\Omega$，對數把乘積變成和、冪次變成係數，<b>所以</b>直接展開；省略的根號取對數後只是 $\ln$ 等級的數，和正比於 $N$、$q$ 的項比起來可以忽略。</p>
+      <p>(c)(d) <b>因為</b>極限中 $N/q$（或 $q/N$）是小數，<b>所以</b>把 $\left(1+\frac Nq\right)^q$ 寫成 $e^{q\ln(1+N/q)}$，再用 $\ln(1+x)\approx x$；另一個因子直接丟掉小的那一項。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="k1154a" data-sym="Omega,N,q">
+        <span class="step-title">(a) 改寫成完整的階乘</span>
+        <p>由 $N!=N\cdot(N-1)!$ 得 $(N-1)!=\dfrac{N!}N$；同理 $(q+N-1)!=\dfrac{(q+N)!}{q+N}$。代入 (2.9)：</p>
+        $$\Omega=\frac{(q+N-1)!}{q!\,(N-1)!}=\frac{(q+N)!/(q+N)}{q!\,N!/N}=\frac N{q+N}\cdot\frac{(q+N)!}{q!\,N!}$$
+      </div>
+      <div class="step" data-step="k1154b">
+        <span class="step-title">(a) 代入 Stirling：冪次與 $e$</span>
+        <p>三個階乘各用 $n!\simeq n^ne^{-n}\sqrt{2\pi n}$，$n$ 分別取 $q+N$、$q$、$N$：</p>
+        $$\Omega\approx\frac N{q+N}\cdot\frac{(q+N)^{q+N}e^{-(q+N)}\sqrt{2\pi(q+N)}}{q^qe^{-q}\sqrt{2\pi q}\cdot N^Ne^{-N}\sqrt{2\pi N}}$$
+        <p>$e$ 的次方：$-(q+N)-(-q)-(-N)=0$，完全抵消。冪次部分把 $(q+N)^{q+N}=(q+N)^q(q+N)^N$ 分給兩個分母：</p>
+        $$\frac{(q+N)^{q+N}}{q^q\,N^N}=\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N$$
+      </div>
+      <div class="step" data-step="tk-115-4-s3">
+        <span class="step-title">(a) 根號部分化簡</span>
+        <p>剩下的是前面的 $\frac N{q+N}$ 乘上三個根號：</p>
+        $$\frac N{q+N}\cdot\frac{\sqrt{2\pi(q+N)}}{\sqrt{2\pi q}\sqrt{2\pi N}}=\sqrt{\frac{N^2}{(q+N)^2}\cdot\frac{q+N}{2\pi qN}}=\sqrt{\frac{N}{2\pi q(q+N)}}$$
+        <p>和步驟 2 的冪次部分合起來：</p>
+        $$\Omega(N,q)\approx\frac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$$
+      </div>
+      <div class="step" data-step="k1154c" data-sym="S,k">
+        <span class="step-title">(b) 熵 $S=k\ln\Omega$</span>
+        <p>用題目指定的（無根號）多重度，$\ln$ 把乘積變和、冪次變係數：</p>
+        $$S=k\left[q\ln\frac{q+N}q+N\ln\frac{q+N}N\right]$$
+        <p>把 $\ln\frac{a}{b}=\ln a-\ln b$ 展開，兩個 $\ln(q+N)$ 合併：</p>
+        $$S=k\Big[(q+N)\ln(q+N)-q\ln q-N\ln N\Big]$$
+        <p>被省略的是 $-\tfrac k2\ln\frac{2\pi q(q+N)}N$。以 $N\sim q\sim10^{23}$ 估計，$\tfrac12\ln(2\pi\cdot2\times10^{23})\approx28$；保留的項卻是 $10^{23}$ 等級。所以在熵裡完全可以忽略——「只是大」的因子取對數後變成「小」的數。</p>
+      </div>
+      <div class="step" data-step="k1154d">
+        <span class="step-title">(c) $q\gg N$：兩個因子分別化簡</span>
+        <p>第一個因子：寫成指數，用 $\ln(1+x)\approx x$（$x=N/q\ll1$，題目 (c) 的條件）：</p>
+        $$\left(1+\frac Nq\right)^q=e^{q\ln(1+N/q)}\approx e^{q\cdot N/q}=e^N$$
+        <p>第二個因子：$q+N\approx q$（$N$ 相對 $q$ 可忽略），$\frac{q+N}N\approx\frac qN$。兩個合起來：</p>
+        $$\Omega\approx e^N\left(\frac qN\right)^N=\left(\frac{eq}N\right)^N$$
+      </div>
+      <div class="step" data-step="tk-115-4-s6">
+        <span class="step-title">(c) 為什麼叫「高溫」極限</span>
+        <p>$q\gg N$ 表示平均每個振子有 $q/N\gg1$ 份能量，$U/N=(q/N)\epsilon\gg\epsilon$：能階間隔 $\epsilon$ 相對於每個振子的平均能量很小，能量量子化看不出來。溫度越高、能量越多才會這樣，對應 $kT\gg\epsilon$（第 3 章會證明此時 $U=NkT$）。</p>
+      </div>
+      <div class="step" data-step="k1154e">
+        <span class="step-title">(d) $q\ll N$：角色對調</span>
+        <p>這次 $x=q/N\ll1$（題目 (d) 的條件）。第一個因子 $q+N\approx N$：</p>
+        $$\left(\frac{q+N}q\right)^q\approx\left(\frac Nq\right)^q$$
+        <p>第二個因子寫成指數再近似：</p>
+        $$\left(1+\frac qN\right)^N=e^{N\ln(1+q/N)}\approx e^{N\cdot q/N}=e^q$$
+        <p>兩個合起來：</p>
+        $$\Omega\approx\left(\frac Nq\right)^qe^q=\left(\frac{eN}q\right)^q\qquad(q\ll N)$$
+        <p>論證：(a) 的式子對 $q\leftrightarrow N$ 對稱（除了根號），所以把 (c) 的 $q$、$N$ 對調即得。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 得證；(b) $S=k[(q+N)\ln(q+N)-q\ln q-N\ln N]$，省略的根號只貢獻 $\ln$ 等級的小量；(c) $\Omega\simeq(eq/N)^N$，每個振子平均很多份能量（$kT\gg\epsilon$）故稱高溫；(d) $\Omega\simeq(eN/q)^q$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$N=50,q=5000$：(a) 的公式 $\ln\Omega=273.02$，和精確值 273.02 相同 ✔；(c) 給 280.26，比精確值大 7.24：丟掉的根號 $\tfrac12\ln\frac{2\pi q(q+N)}N=7.49$，再扣掉 (c) 沒算到的 $N^2/(2q)=0.25$（自編難題 5-A）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tkx-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">某級上學期期中（範圍第 1–4.1 章）第 2 題 · (a)(c)(d) 即 Schroeder Problem 2.18、2.17 · p.64</span></div>
+    <h4>愛因斯坦固體：多重度、化學勢、高低溫熱容量</h4>
+    <button type="button" class="exam-btn" data-exam="tkx-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tkx-2"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>Consider an Einstein solid (a model description of the solid, imaging all elements of a solid are connected by some ”springs” in three spatial dimensions. Possible energy state for one oscillation mode is $E_q\equiv(q+\frac12)\hbar\omega$ where $\hbar$ and $\omega$ are Planck constant and some material specific angular frequency.) for which both $N$ (particle number) and $q$ (energy quantum number) are much greater than 1. Here we simplify the expression for energy mode $E_q\simeq q\epsilon$ with $\epsilon$ as some given energy unit.</p><p>(a) Use Stirling’s approximation (i.e. $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$) to show the multiplicity of an Einstein’s solid is approximately given by: (5 pts)$$\Omega(N,q)\simeq\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}$$</p><p>(b) Find the chemical potential $\mu$ at some temperature T. Express it in terms of $T$, $N$, Boltzmann constant $k$, and $q$. (4 pts)</p><p>(c) Show that when $q\gg N$ this multiplicity can be simplified as $$\Omega(N,q)\simeq\left(\frac{eq}{N}\right)^N$$ This limit is called ”high temperature limit”. (3 pts) Explain why this condition is called ”high temperature limit”. (1pt)</p><p>(d) For $q\ll N$ (the ”low temperature limit”), what should be the simplified form of multiplicity function? Derive it <em>or</em> give your answer and argument. (3pts)</p><p>(e) Use the thermodynamical definition of temperature and the result in 2(c) to find relation between temperature and internal energy $U$ in terms of Boltzmann constant $k$, $\epsilon$, $N$, and temperature $T$. (3pts) Use this result to find the constant volume heat capacity $C_V$ of this Einstein solid in the high temperature limit.(3pts) Does it consistent with what you expect from energy equipartition theorem? Explain.(1pt)</p><p>(f) Use the thermodynamical definition of temperature and the result in 2(d) to find relation between temperature and internal energy $U$ in terms of Boltzmann constant $k$, $\epsilon$, $N$, and temperature $T$. (3pts) Use this result to find the constant volume heat capacity $C_V$ of this Einstein solid in the low temperature limit. (3pts) Does it consistent with what you expect from energy equipartition theorem? Explain.(1pt)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.18）</strong></p><p>Use Stirling’s approximation to show that the multiplicity of an Einstein solid, for any large values of $N$ and $q$, is approximately $$\Omega(N,q)\approx\frac{\left(\frac{q+N}{q}\right)^q\left(\frac{q+N}{N}\right)^N}{\sqrt{2\pi q(q+N)/N}}.$$ The square root in the denominator is merely large, and can often be neglected. However, it is needed in Problem 2.22. (Hint: First show that $\Omega=\frac{N}{q+N}\frac{(q+N)!}{q!\,N!}$. Do not neglect the $\sqrt{2\pi N}$ in Stirling’s approximation.)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.17）</strong></p><p>Use the methods of this section to derive a formula, similar to equation 2.21, for the multiplicity of an Einstein solid in the “low-temperature” limit, $q\ll N$.</p></div>
+<p class="original-caption">某級上學期期中（範圍第 1–4.1 章）第 2 題 · (a)(c)(d) 即 Schroeder Problem 2.18、2.17 · p.64</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（30 分）考慮一個愛因斯坦固體（固體的一種模型：想像固體的所有組成單元在三個空間方向上由「彈簧」連接。一個振動模式可能的能量狀態是 $E_q\equiv(q+\tfrac12)\hbar\omega$，其中 $\hbar$ 與 $\omega$ 是普朗克常數與某個與材料有關的角頻率），其中 $N$（粒子數）與 $q$（能量量子數）都遠大於 1。這裡把能量模式簡化成 $E_q\simeq q\epsilon$，$\epsilon$ 是某個給定的能量單位。(a) 用 Stirling 近似（即 $N!\simeq N^Ne^{-N}\sqrt{2\pi N}$）證明愛因斯坦固體的多重度近似為（5 分）
+    $$\Omega(N,q)\simeq\frac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$$
+    (b) 求某溫度 $T$ 下的化學勢 $\mu$，用 $T$、$N$、波茲曼常數 $k$ 與 $q$ 表示。（4 分）(c) 證明當 $q\gg N$ 時這個多重度可以化簡為 $\Omega(N,q)\simeq\left(\frac{eq}N\right)^N$。這個極限稱為「高溫極限」。（3 分）說明為什麼這個條件叫「高溫極限」。（1 分）(d) 當 $q\ll N$（「低溫極限」）時，多重度函數的化簡形式應該是什麼？推導出來，或者寫出答案並給出論證。（3 分）(e) 用溫度的熱力學定義與 2(c) 的結果，求溫度與內能 $U$ 的關係，以波茲曼常數 $k$、$\epsilon$、$N$ 與溫度 $T$ 表示。（3 分）用這個結果求這個愛因斯坦固體在高溫極限下的定容熱容量 $C_V$。（3 分）它和你從能量均分定理預期的一致嗎？說明。（1 分）(f) 用溫度的熱力學定義與 2(d) 的結果，求溫度與內能 $U$ 的關係，以波茲曼常數 $k$、$\epsilon$、$N$ 與溫度 $T$ 表示。（3 分）用這個結果求這個愛因斯坦固體在低溫極限下的定容熱容量 $C_V$。（3 分）它和你從能量均分定理預期的一致嗎？說明。（1 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>精確多重度</td><td>$\Omega(N,q)=\dfrac{(q+N-1)!}{q!\,(N-1)!}$</td><td>愛因斯坦固體 (2.9)</td></tr>
+          <tr><td>能量</td><td>$U=q\epsilon$</td><td>「把能量模式簡化成 $E_q\simeq q\epsilon$」：總能量 $q$ 份，每份 $\epsilon$</td></tr>
+          <tr><td>$N$、$q$ 都很大</td><td>$N,q\gg1$</td><td>「$N$（粒子數）與 $q$（能量量子數）都<b>遠大於 1</b>」</td></tr>
+          <tr><td>Stirling 近似</td><td>$n!\simeq n^ne^{-n}\sqrt{2\pi n}$</td><td>(a)「即 $N!\simeq\dots$」</td></tr>
+          <tr><td>熵</td><td>$S=k\ln\Omega$</td><td>題目沒寫，用波茲曼的定義（§2.6）</td></tr>
+          <tr><td>溫度的定義</td><td>$\dfrac1T=\left(\dfrac{\partial S}{\partial U}\right)_{N,V}$</td><td>(e)(f)「用溫度的<b>熱力學定義</b>」（第 3 章）</td></tr>
+          <tr><td>化學勢的定義</td><td>$\mu=-T\left(\dfrac{\partial S}{\partial N}\right)_{U,V}$</td><td>(b)「求化學勢 $\mu$」；題目沒給定義，用第 3 章的定義</td></tr>
+          <tr><td>均分定理</td><td>每個二次自由度平均 $\tfrac12kT$</td><td>(e)(f)「和能量均分定理預期的一致嗎」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明含根號的多重度近似；(b) $\mu(T,N,q)$；(c) 高溫極限與名稱由來；(d) 低溫極限；(e) 高溫的 $U(T)$、$C_V$，並和均分定理比較；(f) 低溫的 $U(T)$、$C_V$，並和均分定理比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>這份考卷範圍到第 4.1 節，(a)(c)(d) 和考古 115-4 完全相同：<b>因為</b> Stirling 只能代入完整的階乘，<b>所以</b>先改寫 $(N-1)!$、$(q+N-1)!$；<b>因為</b>極限中 $N/q$ 或 $q/N$ 是小數，<b>所以</b>用 $\ln(1+x)\approx x$。</p>
+      <p>(b)(e)(f) 要用第 3 章的定義。<b>因為</b> $S$ 是 $N$、$q$ 的函數，而 $U=q\epsilon$，<b>所以</b> $\partial/\partial U=\frac1\epsilon\,\partial/\partial q$；化學勢要在 $U$ 固定（也就是 $q$ 固定）時對 $N$ 微分。熵用 (2.18) 的 $S=k[(q+N)\ln(q+N)-q\ln q-N\ln N]$：<b>因為</b>根號因子只是 $\ln$ 等級，對熵和它的微分都沒有影響。</p>
+      <p>(e)(f) <b>因為</b>高溫與低溫的 $S$ 形式不同，<b>所以</b>分別代入 2(c)、2(d) 的多重度求 $1/T$，解出 $U(T)$ 再對 $T$ 微分得 $C_V$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="kx2a" data-sym="Omega">
+        <span class="step-title">(a) 改寫成完整階乘、代入 Stirling（同考古 115-4）</span>
+        <p>$(N-1)!=\dfrac{N!}N$、$(q+N-1)!=\dfrac{(q+N)!}{q+N}$，所以 $\Omega=\dfrac N{q+N}\cdot\dfrac{(q+N)!}{q!\,N!}$。三個階乘代入 Stirling：</p>
+        $$\begin{aligned}\Omega&\approx\frac N{q+N}\cdot\frac{(q+N)^{q+N}e^{-(q+N)}\sqrt{2\pi(q+N)}}{q^qe^{-q}\sqrt{2\pi q}\cdot N^Ne^{-N}\sqrt{2\pi N}}\\&=\frac{(q+N)^{q+N}}{q^q\,N^N}\sqrt{\frac N{2\pi q(q+N)}}\end{aligned}$$
+        <p>$e$ 的次方 $-(q+N)+q+N=0$ 抵消；根號是 $\frac N{q+N}\sqrt{\frac{q+N}{2\pi qN}}=\sqrt{\frac{N}{2\pi q(q+N)}}$。再把 $(q+N)^{q+N}=(q+N)^q(q+N)^N$ 分給兩個分母：</p>
+        $$\Omega\approx\frac{\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N}{\sqrt{2\pi q(q+N)/N}}$$
+      </div>
+      <div class="step" data-step="kx2a2">
+        <span class="step-title">(c) 高溫極限 $q\gg N$</span>
+        <p>$x=N/q\ll1$：$\left(1+\frac Nq\right)^q=e^{q\ln(1+N/q)}\approx e^{q\cdot N/q}=e^N$；$\frac{q+N}N\approx\frac qN$；根號只是大的因子，可丟：</p>
+        $$\Omega\approx e^N\left(\frac qN\right)^N=\left(\frac{eq}N\right)^N$$
+        <p>叫高溫是因為每個振子平均 $q/N\gg1$ 份能量，$U/N\gg\epsilon$，能階間隔相對很小、量子化看不出來（$kT\gg\epsilon$）。</p>
+      </div>
+      <div class="step" data-step="tkx-2-s3">
+        <span class="step-title">(d) 低溫極限 $q\ll N$</span>
+        <p>$x=q/N\ll1$：$\left(1+\frac qN\right)^N=e^{N\ln(1+q/N)}\approx e^q$；$\frac{q+N}q\approx\frac Nq$：</p>
+        $$\Omega\approx\left(\frac Nq\right)^qe^q=\left(\frac{eN}q\right)^q$$
+        <p>（(a) 對 $q\leftrightarrow N$ 對稱，等於把 (c) 的 $q$、$N$ 對調。）</p>
+      </div>
+      <div class="step" data-step="kx2b" data-sym="mu,T">
+        <span class="step-title">(b) 化學勢：$U$（即 $q$）固定，對 $N$ 微分</span>
+        <p>$S=k[(q+N)\ln(q+N)-q\ln q-N\ln N]$。$q$ 固定時 $-q\ln q$ 是常數；用 $\frac{d}{dx}(x\ln x)=\ln x+1$：</p>
+        $$\frac{\partial S}{\partial N}=k\Big[\ln(q+N)+1-\ln N-1\Big]=k\ln\frac{q+N}N$$
+        <p class="sub">代入定義 $\mu=-T\,\partial S/\partial N$：</p>
+        $$\mu=-T\frac{\partial S}{\partial N}=-kT\ln\left(1+\frac qN\right)$$
+      </div>
+      <div class="step" data-step="kx2c" data-sym="U,eps">
+        <span class="step-title">(e) 高溫：由 $1/T$ 求 $U$</span>
+        <p>由 (c)，$S=k\ln\left(\frac{eq}N\right)^N=Nk\left[\ln q-\ln N+1\right]$。$U=q\epsilon$，所以 $\partial/\partial U=\frac1\epsilon\,\partial/\partial q$：</p>
+        $$\frac1T=\frac{\partial S}{\partial U}=\frac1\epsilon\frac{\partial S}{\partial q}=\frac1\epsilon\cdot\frac{Nk}q=\frac{Nk}{q\epsilon}=\frac{Nk}U$$
+        <p class="sub">兩邊取倒數再乘 $Nk$，對 $T$ 微分：</p>
+        $$U=NkT,\qquad C_V=\frac{\partial U}{\partial T}=Nk$$
+        <p>與均分定理一致：每個一維振子有動能、位能兩個二次自由度，各 $\tfrac12kT$，共 $kT$；$N$ 個振子 $U=NkT$。</p>
+      </div>
+      <div class="step" data-step="kx2d">
+        <span class="step-title">(f) 低溫：由 $1/T$ 求 $U$</span>
+        <p>由 (d)，$S=k\,q\ln\frac{eN}q=k[q\ln N-q\ln q+q]$。對 $q$ 微分（$\frac{d}{dq}q\ln q=\ln q+1$）：</p>
+        $$\frac{\partial S}{\partial q}=k\big[\ln N-(\ln q+1)+1\big]=k\ln\frac Nq$$
+        $$\frac1T=\frac1\epsilon\frac{\partial S}{\partial q}=\frac k\epsilon\ln\frac Nq\quad\Longrightarrow\quad\frac Nq=e^{\epsilon/kT}$$
+        <p class="sub">解出 $q=Ne^{-\epsilon/kT}$，乘上 $\epsilon$：</p>
+        $$U=q\epsilon=N\epsilon\,e^{-\epsilon/kT}$$
+      </div>
+      <div class="step" data-step="tkx-2-s7">
+        <span class="step-title">(f) 熱容量與均分定理</span>
+        <p>對 $T$ 微分，連鎖律 $\frac{d}{dT}\left(-\frac\epsilon{kT}\right)=\frac\epsilon{kT^2}$：</p>
+        $$C_V=\frac{\mathrm dU}{\mathrm dT}=N\epsilon\,e^{-\epsilon/kT}\cdot\frac\epsilon{kT^2}=Nk\left(\frac\epsilon{kT}\right)^2e^{-\epsilon/kT}$$
+        <p>與均分定理不一致：$T\to0$ 時 $C_V\to0$（指數式地），遠小於 $Nk$。原因是 $kT\ll\epsilon$，熱擾動連一份能量都給不起，振動自由度被「凍結」；均分定理只在能量單位遠小於 $kT$（古典極限）時成立。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a)(c)(d) 同考古 115-4：$\Omega\simeq(eq/N)^N$（$q\gg N$）、$(eN/q)^q$（$q\ll N$）；(b) $\mu=-kT\ln(1+q/N)$；(e) $U=NkT$，$C_V=Nk$，符合均分；(f) $U=N\epsilon e^{-\epsilon/kT}$，$C_V=Nk(\epsilon/kT)^2e^{-\epsilon/kT}$，不符合（量子效應使自由度凍結）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(f) 的 $q=Ne^{-\epsilon/kT}\ll N$ 確實滿足低溫條件 ✔；(b) $\mu\lt0$：多加一個振子（$U$ 不變）讓熵增加 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-19">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-19（Problem 2.19）· p.64</span></div>
+    <h4>順磁體多重度的近似式</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-19">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 Stirling 近似求兩態順磁體多重度的近似公式。在 $N_\downarrow\ll N$ 的極限下化簡，得到 $\Omega\approx(Ne/N_\downarrow)^{N_\downarrow}$。這個結果應該和習題 2.17 的答案很像；說明為什麼這兩個系統在這些極限下本質上是一樣的。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>精確多重度</td><td>$\Omega=\dfrac{N!}{N_\downarrow!\,N_\uparrow!}$，$N_\uparrow=N-N_\downarrow$</td><td>「兩態順磁體多重度」：§2.1 的 (2.7)</td></tr>
+          <tr><td>近似工具</td><td>Stirling：$n!\approx(n/e)^n$</td><td>「用 Stirling 近似」；只求近似式，根號這種「只是大」的因子可丟</td></tr>
+          <tr><td>數都很大</td><td>$N,\ N_\downarrow\gg1$</td><td>題目沒寫，用 Stirling 的前提</td></tr>
+          <tr><td>極限</td><td>$N_\downarrow\ll N$</td><td>「在 $N_\downarrow\ll N$ 的極限下化簡」</td></tr>
+          <tr><td>對照的結果</td><td>低溫愛因斯坦固體 $\Omega\approx(eN/q)^q$</td><td>「應該和習題 2.17 的答案很像」（考古 115-4 (d)）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：順磁體多重度的 Stirling 近似式；$N_\downarrow\ll N$ 時化簡成 $(Ne/N_\downarrow)^{N_\downarrow}$；說明為什麼它和低溫愛因斯坦固體本質上一樣。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>多重度是三個大階乘的比，<b>所以</b>每個階乘用 $n!\approx(n/e)^n$ 代入，$e$ 的次方會抵消（$N=N_\downarrow+N_\uparrow$）；取對數比較好處理。</p>
+      <p><b>因為</b> $N_\downarrow\ll N$，$N_\downarrow/N$ 是小數，<b>所以</b>像 (2.19) 一樣把 $\ln(N-N_\downarrow)$ 拆成 $\ln N+\ln(1-N_\downarrow/N)$ 再展開。展開要留到「乘上係數 $N$ 之後仍同階」的項（自編難題 5-A 的教訓），最後丟掉相對 $N_\downarrow$ 很小的 $N_\downarrow^2/N$ 項。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t219a" data-sym="Nud">
+        <span class="step-title">Stirling 代入</span>
+        <p>三個階乘都換成 $(n/e)^n$；$e$ 的次方 $-N+N_\downarrow+(N-N_\downarrow)=0$ 抵消：</p>
+        $$\Omega\approx\frac{(N/e)^N}{(N_\downarrow/e)^{N_\downarrow}\big((N-N_\downarrow)/e\big)^{N-N_\downarrow}}=\frac{N^N}{N_\downarrow^{N_\downarrow}(N-N_\downarrow)^{N-N_\downarrow}}$$
+        <p>取對數：</p>
+        $$\ln\Omega\approx N\ln N-N_\downarrow\ln N_\downarrow-(N-N_\downarrow)\ln(N-N_\downarrow)$$
+      </div>
+      <div class="step" data-step="t219b">
+        <span class="step-title">$N_\downarrow\ll N$：展開最後一項</span>
+        <p>令 $x=N_\downarrow/N\ll1$，$\ln(N-N_\downarrow)=\ln N+\ln(1-x)$，$\ln(1-x)\approx-x-\tfrac{x^2}2$：</p>
+        $$(N-N_\downarrow)\ln(N-N_\downarrow)=N(1-x)\ln N+N(1-x)\ln(1-x)$$
+        <p class="sub">第二項：$(1-x)\left(-x-\tfrac{x^2}2\right)=-x+\tfrac{x^2}2+O(x^3)$，乘上 $N$、代回 $x=N_\downarrow/N$：</p>
+        $$(N-N_\downarrow)\ln(N-N_\downarrow)\approx N\ln N-N_\downarrow\ln N-N_\downarrow+\frac{N_\downarrow^2}{2N}$$
+      </div>
+      <div class="step" data-step="sc-2-19-s3">
+        <span class="step-title">代回 $\ln\Omega$</span>
+        <p>$N\ln N$ 消掉，$N_\downarrow\ln N-N_\downarrow\ln N_\downarrow=N_\downarrow\ln\frac N{N_\downarrow}$：</p>
+        $$\ln\Omega\approx N_\downarrow\ln\frac N{N_\downarrow}+N_\downarrow-\frac{N_\downarrow^2}{2N}$$
+        <p>$N_\downarrow\ll N$ 時最後一項 $\frac{N_\downarrow^2}{2N}=N_\downarrow\cdot\frac x2\ll N_\downarrow$，丟掉；$N_\downarrow=N_\downarrow\ln e$ 併進對數：</p>
+        $$\ln\Omega\approx N_\downarrow\ln\frac{Ne}{N_\downarrow}\quad\Longrightarrow\quad\Omega\approx\left(\frac{Ne}{N_\downarrow}\right)^{N_\downarrow}$$
+      </div>
+      <div class="step" data-step="t219c">
+        <span class="step-title">為什麼和低溫愛因斯坦固體一樣</span>
+        <p>把 $N_\downarrow$ 看成 $q$，就是 $(eN/q)^q$。順磁體每個偶極最多存一份能量；愛因斯坦固體可以存很多份。但 $q\ll N$ 時能量份數遠少於振子，「某個振子拿到兩份以上」的排法極少，只貢獻一個「只是大」的因子，兩個系統就幾乎沒有差別。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\Omega\approx N^N/[N_\downarrow^{N_\downarrow}N_\uparrow^{N_\uparrow}]$；$N_\downarrow\ll N$ 時 $\Omega\approx(Ne/N_\downarrow)^{N_\downarrow}$，和低溫愛因斯坦固體 $(eN/q)^q$ 相同（$N_\downarrow\leftrightarrow q$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$N=10^6$、$N_\downarrow=100$：$\ln\binom{10^6}{100}=1017.8$，$100\ln(10^6e/100)=1021.0$，差 3.2，正是被丟掉的 $\tfrac12\ln(2\pi\cdot100)+N_\downarrow^2/(2N)=3.2$ ✔</p></div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">推導要寫出每個近似用在哪裡</span>
+  <p>考卷要求「show all your steps」。(2.17) 丟 $N/(q+N)$、(2.16) 丟 $\sqrt{2\pi N}$、(2.19) 用 $\ln(1+x)\approx x$、(2.20) 丟 $N^2/q$——每一步都要註明理由（「只是大的因子」「$x\ll1$」「$q\gg N$」）。只寫結果通常只拿一半分數。</p>
+</div>
+
+<div class="problem" data-kind="self" id="sf-05a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>(2.20) 的 $N^2/q$ 應為 $N^2/(2q)$</h4>
+    <button type="button" class="exam-btn" data-exam="sf-05a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>課本 (2.19) 用 $\ln(1+N/q)\approx N/q$ 得到 (2.20)：$\ln\Omega\approx N\ln\frac qN+N+\frac{N^2}q$。(a) 令 $r=q/N$，由 (2.18) 證明 $\dfrac{\ln\Omega}N=(1+r)\ln(1+r)-r\ln r$，並對大 $r$ 展開到 $1/r$ 項。(b) 說明 (2.20) 的 $N^2/q$ 為什麼係數不對、正確的是多少。(c) 用本節表格（$N=50$、$q=5000$：(2.18) 給 280.51、(2.20) 給 280.76、(2.21) 給 280.26）檢查。(d) $q/N$ 至少要多大，高溫公式 (2.21) 的 $\ln\Omega$ 誤差才小於 1%？$q=N$ 時誤差多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>(2.18)</td><td>$\ln\Omega\approx(q+N)\ln(q+N)-q\ln q-N\ln N$</td><td>(a)「由 (2.18) 證明」；本節 5.1</td></tr>
+          <tr><td>課本的 (2.20)</td><td>$\ln\Omega\approx N\ln\frac qN+N+\frac{N^2}q$</td><td>題目引述</td></tr>
+          <tr><td>變數</td><td>$r=q/N$，大 $r$ ＝ 高溫</td><td>(a)「令 $r=q/N$」「對大 $r$ 展開到 $1/r$ 項」</td></tr>
+          <tr><td>展開式</td><td>$\ln(1+u)=u-\frac{u^2}2+\frac{u^3}3-\cdots$</td><td>題目沒給；泰勒展開（習題 2.12 只用到第一項）</td></tr>
+          <tr><td>(c) 的數值</td><td>$N=50$，$q=5000$；280.51、280.76、280.26</td><td>(c)「用本節表格…檢查」</td></tr>
+          <tr><td>(d) 的門檻</td><td>誤差 $\lt1\%$；以及 $q=N$</td><td>(d)「誤差才小於 1%」「$q=N$ 時誤差多少」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明 $\ln\Omega/N=(1+r)\ln(1+r)-r\ln r$ 並展開到 $1/r$；(b) (2.20) 的係數錯在哪、正確值；(c) 用表格數值檢查；(d) 高溫公式誤差小於 1% 需要的 $q/N$，以及 $q=N$ 時的誤差。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>每個振子的 $\ln\Omega$ 只會是 $r=q/N$ 的函數（$\ln N$ 會互相抵消），<b>所以</b>把 (2.18) 除以 $N$、代 $q=rN$，就得到只含 $r$ 的式子，再令 $u=1/r$ 對小 $u$ 展開。</p>
+      <p>(b) <b>因為</b> (2.19) 只把 $\ln(1+N/q)$ 展開到一次方，之後又乘上很大的係數 $(q+N)$，被丟掉的 $-\frac12(N/q)^2$ 乘上 $q$ 會和保留下來的 $N^2/q$ <b>同一個數量級</b>，<b>所以</b>要把二次項也留下來重算。原則：展開要保留「乘上係數後仍同階」的所有項。</p>
+      <p>(c) 用數字代入比較；(d) <b>因為</b>相對誤差＝丟掉的部分 ÷ 正確值，<b>所以</b>用 (a) 的展開式寫出誤差，再解不等式。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf05a1" data-sym="N,q">
+        <span class="step-title">(a) 每個振子的 $\ln\Omega$</span>
+        <p>(2.18) 除以 $N$，代 $q=rN$、$q+N=N(1+r)$：</p>
+        $$\frac{\ln\Omega}N=(1+r)\ln\big[N(1+r)\big]-r\ln(Nr)-\ln N$$
+        <p>把 $\ln[N(1+r)]=\ln N+\ln(1+r)$、$\ln(Nr)=\ln N+\ln r$ 拆開，$\ln N$ 的係數 $(1+r)-r-1=0$：</p>
+        $$\frac{\ln\Omega}N=(1+r)\ln(1+r)-r\ln r$$
+      </div>
+      <div class="step" data-step="sf-05a-s2">
+        <span class="step-title">(a) 對大 $r$ 展開</span>
+        <p>令 $u=1/r\ll1$。$\ln(1+r)=\ln\big[r(1+u)\big]=\ln r+\ln(1+u)$，代入後 $r\ln r$ 消掉：</p>
+        $$\frac{\ln\Omega}N=\ln r+(1+r)\ln(1+u)$$
+        <p class="sub">$1+r=\frac{1+u}u$，用 $\ln(1+u)=u-\frac{u^2}2+\frac{u^3}3-\cdots$：</p>
+        $$\begin{aligned}(1+r)\ln(1+u)&=(1+u)\Big(1-\frac u2+\frac{u^2}3-\cdots\Big)\\&=1+\frac u2-\frac{u^2}6+\cdots\end{aligned}$$
+        $$\frac{\ln\Omega}N=\ln r+1+\frac1{2r}-\frac1{6r^2}+\cdots$$
+      </div>
+      <div class="step" data-step="sf05a2">
+        <span class="step-title">(b) 錯在哪裡</span>
+        <p>(2.19) 只留 $\ln(1+N/q)\approx N/q$，乘上 $(q+N)$ 得 $N+N^2/q$；但被丟掉的 $-\tfrac12(N/q)^2$ 乘上 $q$ 也給出 $-N^2/(2q)$，同一階：</p>
+        $$\begin{aligned}&(q+N)\left[\frac Nq-\frac12\left(\frac Nq\right)^2\right]\\&\quad=N+\frac{N^2}q-\frac{N^2}{2q}+O\!\left(\frac{N^3}{q^2}\right)\\&\quad=N+\frac{N^2}{2q}\end{aligned}$$
+        <p>正確的修正是 $N^2/(2q)$，和 (a) 的 $N\cdot\frac1{2r}=\frac{N^2}{2q}$ 一致。課本只是要說明這一項在 $q\gg N$ 時可以忽略，結論 (2.21) 不受影響。</p>
+      </div>
+      <div class="step" data-step="sf05a3">
+        <span class="step-title">(c) 用表格檢查</span>
+        <p class="sub">代入 $N=50$、$q=5000$（題目），$r=100$：</p>
+        $$N\left(\ln\tfrac qN+1\right)=50(\ln100+1)=50\times5.6052=280.26$$
+        $$\frac{N^2}{2q}=\frac{2500}{10000}=0.25\ \Rightarrow\ 280.26+0.25=280.51=(2.18)$$
+        <p>與 (2.18) 相同 ✔</p>
+        <p>(2.20) 加的是 $N^2/q=+0.5$，得 280.76，偏大。</p>
+      </div>
+      <div class="step" data-step="sf05a4">
+        <span class="step-title">(d) 高溫公式何時夠準</span>
+        <p>高溫公式 (2.21) 只留 $\ln r+1$，丟掉的主要是 $\frac1{2r}$，相對誤差：</p>
+        $$\frac{1/(2r)}{\ln r+1}\lt0.01\quad\Longleftrightarrow\quad r(\ln r+1)\gt50$$
+        <p class="sub">試 $r=13.8$：$13.8\times(2.625+1)=50.0$，所以 $r\approx13.8$；改用完整的 $(1+r)\ln(1+r)-r\ln r$ 數值求解得 $r\approx13.4$。所以要 $q/N\gtrsim13.4$。</p>
+        <p class="sub">代入 $q=N$（$r=1$）：正確值 $2\ln2-0=1.386$，高溫公式給 $\ln1+1=1$：</p>
+        $$\frac{1.386-1}{1.386}=28\%\ (\text{低估})$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\ln\Omega/N=\ln r+1+\frac1{2r}-\cdots$；(b) 正確是 $N^2/(2q)$；(c) $280.26+0.25=280.51$ 與 (2.18) 相符；(d) $q/N\gtrsim13.4$，$q=N$ 時差 28%。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(c) 三個數完全吻合：(2.18) 與 (2.21) 差 0.25 正是 $N/(2r)$ ✔；(d) 與第 5 節圖解「$q=N$ 低估 28%」一致 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-05b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>加一份能量，冷熱兩塊固體的多重度各變幾倍</h4>
+    <button type="button" class="exam-btn" data-exam="sf-05b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩個愛因斯坦固體各有 $N=10^{22}$ 個振子。A 有 $q_A=10^{20}$ 份能量（$q\ll N$），B 有 $q_B=10^{24}$ 份（$q\gg N$）。(a) 給 A 多一份能量，$\Omega_A$ 變成幾倍？用精確比值與低溫公式 $(eN/q)^q$ 各算一次。(b) 給 B 多一份，$\Omega_B$ 變成幾倍？(c) 兩者接觸，一份能量從 B 移到 A，總多重度變成幾倍？熱往哪裡流？(d) 第 3 章會定義 $\dfrac\epsilon{kT}=\dfrac{\partial\ln\Omega}{\partial q}$。由 (a)(b) 估計 A、B 的 $kT/\epsilon$，並與高溫的 $U=NkT$ 比較。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振子數</td><td>$N_A=N_B=N=10^{22}$</td><td>「兩個愛因斯坦固體<b>各有</b> $N=10^{22}$ 個振子」</td></tr>
+          <tr><td>A 的能量</td><td>$q_A=10^{20}$（$q\ll N$，冷）</td><td>「A 有 $q_A=10^{20}$ 份能量（$q\ll N$）」</td></tr>
+          <tr><td>B 的能量</td><td>$q_B=10^{24}$（$q\gg N$，熱）</td><td>「B 有 $q_B=10^{24}$ 份（$q\gg N$）」</td></tr>
+          <tr><td>近似公式</td><td>低溫 $(eN/q)^q$；高溫 $(eq/N)^N$</td><td>(a) 指定低溫公式；(b) 對應用高溫公式（本節 (2.21)、習題 2.17）</td></tr>
+          <tr><td>溫度的定義</td><td>$\dfrac\epsilon{kT}=\dfrac{\partial\ln\Omega}{\partial q}$</td><td>(d)「第 3 章會定義」</td></tr>
+          <tr><td>對照公式</td><td>高溫 $U=NkT$；低溫 $q=Ne^{-\epsilon/kT}$</td><td>(d)「與高溫的 $U=NkT$ 比較」；低溫式見考古 tkx-2 (f)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) A 多一份時 $\Omega_A$ 變幾倍（精確與低溫公式）；(b) B 多一份時 $\Omega_B$ 變幾倍；(c) 一份能量 B→A 時總多重度變幾倍、熱往哪流；(d) 估計 $kT_A/\epsilon$、$kT_B/\epsilon$ 並與 $U(T)$ 比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>只問「多一份變幾倍」，<b>所以</b>用相鄰兩項的比 $\frac{\Omega(N,q+1)}{\Omega(N,q)}=\frac{q+N}{q+1}$（自編難題 3-A），不必算出 $10^{20}$ 位數的多重度；再用近似公式各驗算一次。</p>
+      <p>(c) <b>因為</b>兩固體獨立、$\Omega_{\text{total}}=\Omega_A\Omega_B$，<b>所以</b>移一份能量時總多重度的倍數＝A 的倍數 × B 的倍數的倒數。熱流方向由「誰多拿一份、排法增加得多」決定，不是由誰的能量多決定。</p>
+      <p>(d) <b>因為</b> $q$ 增加 1 相對於 $10^{20}$ 是無窮小的變化，<b>所以</b> $\partial\ln\Omega/\partial q\approx\ln\frac{\Omega(q+1)}{\Omega(q)}$，直接用 (a)(b) 的倍數取對數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf05b1" data-sym="q,N">
+        <span class="step-title">(a) 冷固體 A：精確比值</span>
+        $$\frac{\Omega_A(q_A+1)}{\Omega_A(q_A)}=\frac{q_A+N}{q_A+1}$$
+        <p class="sub">代入 $q_A=10^{20}$、$N=10^{22}$（題目）：</p>
+        $$\frac{10^{20}+10^{22}}{10^{20}+1}=\frac{1.01\times10^{22}}{10^{20}}=101$$
+      </div>
+      <div class="step" data-step="sf-05b-s2">
+        <span class="step-title">(a) 冷固體 A：低溫公式</span>
+        <p>把 $q+1$ 與 $q$ 代入 $(eN/q)^q$ 相除，$(eN)^q$ 約掉：</p>
+        $$\frac{(eN/(q+1))^{q+1}}{(eN/q)^q}=\frac{eN}q\left(\frac q{q+1}\right)^{q+1}$$
+        <p class="sub">$q$ 很大時 $\left(1+\frac1q\right)^{-(q+1)}\to e^{-1}$；代入 $N/q=100$：</p>
+        $$\approx\frac{eN}q\,e^{-1}=\frac Nq=100$$
+        <p>兩者只差那個 $+1$（$q\ll N$ 公式本來就丟了 $q/N$ 階的項）。</p>
+      </div>
+      <div class="step" data-step="sf05b2">
+        <span class="step-title">(b) 熱固體 B</span>
+        <p class="sub">精確比值，代入 $q_B=10^{24}$、$N=10^{22}$（題目）：</p>
+        $$\frac{\Omega_B(q_B+1)}{\Omega_B(q_B)}=\frac{10^{24}+10^{22}}{10^{24}+1}=1.01$$
+        <p class="sub">高溫公式 $(eq/N)^N$：$q+1$ 與 $q$ 相除，$(e/N)^N$ 約掉：</p>
+        $$\left(\frac{q+1}q\right)^N=\left(1+10^{-24}\right)^{10^{22}}=e^{10^{22}\times10^{-24}}=e^{0.01}=1.01$$
+      </div>
+      <div class="step" data-step="sf05b3">
+        <span class="step-title">(c) 移一份 B → A</span>
+        <p>A 多一份（×101，步驟 1），B 少一份（÷1.01，步驟 3）：</p>
+        $$\frac{\Omega_{\text{total}}'}{\Omega_{\text{total}}}=101\times\frac1{1.01}=100$$
+        <p>反方向（A → B）是 $1/100$。所以能量壓倒性地從 B 流向 A：B 的能量是 A 的一萬倍，B 少一份幾乎沒損失排法，A 多一份排法卻變成一百倍。</p>
+      </div>
+      <div class="step" data-step="sf05b4">
+        <span class="step-title">(d) 溫度的雛形</span>
+        <p>$\frac{\partial\ln\Omega}{\partial q}\approx\ln\frac{\Omega(q+1)}{\Omega(q)}$，代入 101（步驟 1）與 1.01（步驟 3）：</p>
+        $$\frac\epsilon{kT_A}\approx\ln101=4.62\ \Rightarrow\ kT_A\approx0.22\epsilon$$
+        $$\frac\epsilon{kT_B}\approx\ln1.01=0.00995\ \Rightarrow\ kT_B\approx100\epsilon$$
+        <p class="sub">對照高溫 $U=NkT$，代入 $q_B=10^{24}$、$N=10^{22}$：</p>
+        $$kT_B=\frac{q_B\epsilon}N=100\epsilon\quad\checkmark$$
+        <p class="sub">對照低溫 $q=Ne^{-\epsilon/kT}$（<a href="#tkx-2">考古 tkx-2（某級期中第 2 題）(f)</a> 的結果），代入 $N/q_A=100$：</p>
+        $$\frac\epsilon{kT_A}=\ln\frac N{q_A}=\ln100=4.61\quad\checkmark$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 101 倍（低溫公式 100 倍）；(b) 1.01 倍；(c) 100 倍，熱從 B（熱）流向 A（冷）；(d) $kT_A\approx0.22\epsilon$、$kT_B\approx100\epsilon$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(d) 兩種獨立的估計（相鄰比的對數、第 3 章的 $U(T)$ 結果）對兩塊固體都一致 ✔；B 的能量多一萬倍，熱卻往 A 流——「熱」不是「能量多的往能量少的流」，而是多重度決定。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\ln\Omega\approx(q+N)\ln(q+N)-q\ln q-N\ln N$（只需 $q,N$ 大）；含根號的完整式是習題 2.18。</li>
+    <li>高溫 $q\gg N$：$\Omega\approx(eq/N)^N$；低溫 $q\ll N$：$\Omega\approx(eN/q)^q$（$q\leftrightarrow N$ 對稱）。</li>
+    <li>「高溫」＝每個振子平均很多份能量；順磁體在 $N_\downarrow\ll N$ 時和低溫愛因斯坦固體相同。</li>
+  </ol>
+</div>

@@ -1,0 +1,408 @@
+<h2>四、遞迴恆等式與積分 <span class="pg">板書 10/21 照片 6–7</span></h2>
+
+<p class="lead">10/21 最後老師列了 Bessel 函數的五條遞迴關係（recurrence relation），並用一題積分示範它們的用途：含 $x^pJ_q$ 的積分，只要把被積函數認成某個 $\frac{d}{dx}(x^{\pm m}J_m)$，就能直接寫出答案。111 上期末的 $\int_0^1(r-r^3)J_0(2r)dr$ 也是這招，只是要多一步分部積分。</p>
+
+<h3 id="am6-rc-list">4.1 五條遞迴關係 <span class="pg-tag">照片 6 右</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 6 右）</span>
+  <p>◎ Bessel's functions：Recurrence relation</p>
+  <p>1.　$x^mJ_{m-1}=\dfrac{d}{dx}\big(x^mJ_m\big)$</p>
+  <p>2.　$\dfrac{dJ_m(x)}{dx}=-\dfrac mxJ_m+J_{m-1}=\dfrac mxJ_m-J_{m+1}$</p>
+  <p>3.　$x^{-m}J_{m+1}=-\dfrac{d}{dx}\big(x^{-m}J_m\big)$</p>
+  <p>4.　$J_m=\dfrac{xJ_{m-1}+xJ_{m+1}}{2m}$　　5.　$\dfrac{dJ_m}{dx}=\dfrac{J_{m-1}-J_{m+1}}{2}$</p>
+</div>
+
+<div class="step" data-step="am6-rc-s1" data-sym="Jm">
+  <span class="step-title">它們之間的關係與積分形式 <span class="added">網站補充</span></span>
+  <p>1 和 3 是基本的（由級數直接證明，自編 4-a）；把 1、3 的左邊用乘積法則展開就是 2 的兩種寫法；2 的兩式相減得 4、相加得 5。所以只要記 1、3，其餘都能當場推出來。</p>
+  <p>反過來讀 1、3 就是積分公式（考試最常用）：</p>
+  $$\int x^mJ_{m-1}\,dx=x^mJ_m+C,\qquad\int x^{-m}J_{m+1}\,dx=-x^{-m}J_m+C$$
+  <p class="sub">常用特例：1 取 $m=1$、3 取 $m=0$：</p>
+  $$\int xJ_0\,dx=xJ_1+C,\qquad\int J_1\,dx=-J_0+C\ (\text{即 }J_0'=-J_1)$$
+  <p>4 的用途是「降階」：$J_{m+1}=\frac{2m}{x}J_m-J_{m-1}$，例如 $J_2(x)=\frac2xJ_1(x)-J_0(x)$，把高階函數值換成 $J_0$、$J_1$ 的表值。注意板書的 4 要 $m\ne0$。</p>
+</div>
+
+<h3 id="am6-rc-ex">4.2 板書例題：$\int_1^2x^{-3}J_4\,dx$ <span class="pg-tag">照片 7</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 7）</span>
+  <p>ex　已知 $J_3(1)=0.0196$，$J_3(2)=0.1289$</p>
+  $$\text{計算}\int_1^2x^{-3}J_4(x)\,dx=\int_1^2-\frac{d}{dx}\big(x^{-3}J_3\big)=-\frac{J_3(x)}{x^3}\bigg|_{x=1}^{2}=-\frac{J_3(2)}{8}+\frac{J_3(1)}{1}=\cdots$$
+</div>
+
+<p>板書寫到「$=\cdots$」就停了（照片缺漏：最後的數值）。完整的數值與驗算見下面的板書例題卡。</p>
+
+<h3 id="am6-rc-strat">4.3 怎麼選恆等式 <span class="added">網站補充</span></h3>
+
+<ul>
+  <li><b>$x$ 的次方 $=$ 階數 $+1$</b>（$x^mJ_{m-1}$）→ 用 1：$\int x^mJ_{m-1}=x^mJ_m$。例：$xJ_0$、$x^2J_1$、$x^3J_2$。</li>
+  <li><b>$x$ 的次方 $=-($階數$-1)$</b>（$x^{-m}J_{m+1}$）→ 用 3：$\int x^{-m}J_{m+1}=-x^{-m}J_m$。例：$J_1$、$x^{-1}J_2$、$x^{-3}J_4$（板書例題）。</li>
+  <li><b>次方比 1 的形式多 2</b>（例如 $x^3J_0=x^2\cdot xJ_0$）→ 分部積分：$u=x^2$、$dv=xJ_0dx$、$v=xJ_1$，降成 $\int x^2J_1$，再用 1。</li>
+  <li><b>最後只剩 $\int J_0\,dx$ 就停住</b>：$\int J_0$ 沒有用 Bessel 函數表示的封閉形式，只能留著（或數值積分）。例如 $\int x^2J_0\,dx$ 分部積分（$u=x$、$dv=xJ_0dx$）得 $x^2J_1-\int xJ_1\,dx$，而 $\int xJ_1=-xJ_0+\int J_0$，所以 $\int x^2J_0=x^2J_1+xJ_0-\int J_0\,dx$——能化的部分都化掉了，只剩 $\int J_0$。判斷能不能完全化完，看分部積分後是否還留下 $\int J_0$。</li>
+</ul>
+
+<div class="problem" data-kind="example" id="am6-ex-4">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/21 板書（照片 7）</span></div>
+    <h4>已知 $J_3(1)$、$J_3(2)$，求 $\int_1^2x^{-3}J_4(x)\,dx$</h4>
+    <button type="button" class="exam-btn" data-exam="am6-ex-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-ex-4"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　已知 $J_3(1)=0.0196$，$J_3(2)=0.1289$</p><p>計算 $\int_1^2x^{-3}J_4(x)\,dx$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>已知 $J_3(1)=0.0196$、$J_3(2)=0.1289$，計算 $\displaystyle\int_1^2x^{-3}J_4(x)\,dx$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$J_3(1)$</td><td>$0.0196$</td><td>「已知 $J_3(1)=0.0196$」</td></tr>
+          <tr><td>$J_3(2)$</td><td>$0.1289$</td><td>「$J_3(2)=0.1289$」</td></tr>
+          <tr><td>被積函數</td><td>$x^{-3}J_4$：次方 $-3$，階數 $4=3+1$</td><td>「$\int_1^2x^{-3}J_4(x)dx$」</td></tr>
+          <tr><td>恆等式</td><td>3：$x^{-m}J_{m+1}=-\frac{d}{dx}(x^{-m}J_m)$</td><td>板書照片 6</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：積分的數值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>被積函數是 $x^{-m}J_{m+1}$ 的形式（$m=3$），<b>所以</b>用恆等式 3 把它寫成全微分 $-\frac{d}{dx}(x^{-3}J_3)$，微積分基本定理直接給答案，只要兩個端點的 $J_3$ 值——題目正好給了這兩個值，這也是「選對恆等式」的提示。</p>
+      <p><b>因為</b>題目給的 $J_3(1)$ 只有三位有效數字，<b>所以</b>答案也只能信到大約兩位；驗算時和精確值比較，看誤差從哪來。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-ex-4-s1" data-sym="Jm">
+        <span class="step-title">認出全微分</span>
+        <p class="sub">恆等式 3 代入 $m=3$：</p>
+        $$x^{-3}J_4(x)=-\frac{d}{dx}\Big(x^{-3}J_3(x)\Big)$$
+      </div>
+      <div class="step" data-step="am6-ex-4-s2">
+        <span class="step-title">微積分基本定理</span>
+        $$\int_1^2x^{-3}J_4\,dx=-\Big[\frac{J_3(x)}{x^3}\Big]_1^2=-\frac{J_3(2)}{8}+\frac{J_3(1)}{1}$$
+      </div>
+      <div class="step" data-step="am6-ex-4-s3">
+        <span class="step-title">代入數值 <span class="added">網站補充（照片缺漏）</span></span>
+        <p class="sub">代入 $J_3(2)=0.1289$、$J_3(1)=0.0196$（題目）：</p>
+        $$-\frac{0.1289}{8}+0.0196=-0.0161125+0.0196=0.0034875\approx0.00349$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\displaystyle\int_1^2x^{-3}J_4\,dx=J_3(1)-\frac{J_3(2)}8\approx0.00349$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>反過來微分：$\frac{d}{dx}(x^{-3}J_3)=x^{-3}J_3'-3x^{-4}J_3$，用 2 的第二式 $J_3'=\frac3xJ_3-J_4$ 代入得 $-x^{-3}J_4$ ✔。精確值 $J_3(1)=0.019563$、$J_3(2)=0.128943$ 給 $0.003445$；和 $0.00349$ 差 1%，來自題目把 $J_3(1)$ 四捨五入到 $0.0196$（差 $3.7\times10^{-5}$）。驗算腳本直接數值積分得 $0.0034454$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am6-k111-4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2022.Dec. 第 4 題（111上）</span></div>
+    <h4>$\int_0^1(r-r^3)J_0(2r)\,dr$</h4>
+    <button type="button" class="exam-btn" data-exam="am6-k111-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-k111-4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>4. (5 pts) $\displaystyle\int_0^1(r-r^3)J_0(2r)dr=?$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（5 分）計算 $\displaystyle\int_0^1(r-r^3)J_0(2r)\,dr$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>被積函數</td><td>$(r-r^3)J_0(2r)$</td><td>題目；兩項：$rJ_0$（用 1）、$r^3J_0$（要分部積分）</td></tr>
+          <tr><td>引數</td><td>$2r$，$r\in[0,1]$ ⇒ $x=2r\in[0,2]$</td><td>「$J_0(2r)$」「$\int_0^1$」</td></tr>
+          <tr><td>恆等式</td><td>1：$\frac{d}{dx}(xJ_1)=xJ_0$、$\frac{d}{dx}(x^2J_2)=x^2J_1$；4：$J_2=\frac2xJ_1-J_0$</td><td>板書照片 6</td></tr>
+          <tr><td>表值</td><td>$J_0(2)=0.2239$、$J_1(2)=0.5767$</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>配分</td><td>5 分</td><td>「(5 pts)」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：積分值（用 Bessel 函數值表示，並給數值）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>恆等式是用 $J(x)$ 寫的，<b>所以</b>先令 $x=2r$ 把 $J_0(2r)$ 變成 $J_0(x)$。<b>因為</b> $xJ_0$ 正好是 $(xJ_1)'$，<b>所以</b>第一項直接積；$x^3J_0$ 次方多了 2，<b>所以</b>分部積分取 $u=x^2$、$dv=xJ_0\,dx$（$v=xJ_1$），降成 $x^2J_1=(x^2J_2)'$。</p>
+      <p><b>因為</b>最後會剩 $J_1(2)$ 與 $J_2(2)$，而 $J_1(2)$ 的項恰好抵消，<b>所以</b>答案很乾淨：$\frac12J_2(2)$；再用 4 換成表上的 $J_0(2)$、$J_1(2)$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-k111-4-s1">
+        <span class="step-title">換變數 $x=2r$</span>
+        <p class="sub">$r=\frac x2$、$dr=\frac{dx}2$，$r:0\to1$ ⇒ $x:0\to2$：</p>
+        $$I=\int_0^2\Big(\frac x2-\frac{x^3}8\Big)J_0(x)\frac{dx}2=\frac14\int_0^2xJ_0\,dx-\frac1{16}\int_0^2x^3J_0\,dx$$
+      </div>
+      <div class="step" data-step="am6-k111-4-s2" data-sym="Jm">
+        <span class="step-title">第一項：恆等式 1（$m=1$）</span>
+        $$\int_0^2xJ_0\,dx=\Big[xJ_1\Big]_0^2=2J_1(2)$$
+      </div>
+      <div class="step" data-step="am6-k111-4-s3">
+        <span class="step-title">第二項：分部積分</span>
+        <p class="sub">$u=x^2$、$dv=xJ_0dx$ ⇒ $du=2x\,dx$、$v=xJ_1$；再用 1（$m=2$）：$\int x^2J_1=x^2J_2$：</p>
+        $$\int x^3J_0\,dx=x^3J_1-\int2x^2J_1\,dx=x^3J_1-2x^2J_2$$
+        $$\int_0^2x^3J_0\,dx=8J_1(2)-8J_2(2)$$
+      </div>
+      <div class="step" data-step="am6-k111-4-s4">
+        <span class="step-title">合併</span>
+        <p class="sub">代回步驟 1：</p>
+        $$I=\frac14\cdot2J_1(2)-\frac1{16}\big(8J_1(2)-8J_2(2)\big)=\frac{J_1(2)}2-\frac{J_1(2)}2+\frac{J_2(2)}2=\frac12J_2(2)$$
+      </div>
+      <div class="step" data-step="am6-k111-4-s5">
+        <span class="step-title">換成表值</span>
+        <p class="sub">恆等式 4（$m=1$）：$J_2(x)=\frac2xJ_1(x)-J_0(x)$，$x=2$ 代入 $J_1(2)=0.5767$、$J_0(2)=0.2239$：</p>
+        $$J_2(2)=J_1(2)-J_0(2)=0.3528,\qquad I=\frac{J_1(2)-J_0(2)}{2}=0.1764$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\displaystyle\int_0^1(r-r^3)J_0(2r)\,dr=\frac12J_2(2)=\frac{J_1(2)-J_0(2)}{2}\approx0.176$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>合理範圍：$2r\le2\lt2.405$，$J_0(2r)$ 在 $[0,1]$ 上介於 $0.22$ 與 1、為正；$\int_0^1(r-r^3)dr=\frac14$，所以答案應在 $(0.056,0.25)$ ✔。驗算腳本數值積分得 $0.176417$，與 $\frac12J_2(2)=0.176417$ 相同 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-04a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>由級數證明恆等式 1、3，再推出 2、4、5</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-04a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 $J_m(x)=\sum_{n\ge0}\frac{(-1)^n}{n!\,\Gamma(n+m+1)}\big(\frac x2\big)^{2n+m}$（$m$ 可以不是整數）：(a) 證明 $\frac{d}{dx}(x^mJ_m)=x^mJ_{m-1}$；(b) 證明 $\frac{d}{dx}(x^{-m}J_m)=-x^{-m}J_{m+1}$；(c) 由 (a)(b) 推出板書的 2、4、5；(d) 用 4 由 $J_{\pm1/2}$ 求 $J_{3/2}$ 的封閉形式。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>級數</td><td>$J_m=\sum\frac{(-1)^n}{n!\Gamma(n+m+1)}(\frac x2)^{2n+m}$</td><td>題目</td></tr>
+          <tr><td>Gamma</td><td>$\Gamma(z+1)=z\Gamma(z)$</td><td>題目沒寫，要用到</td></tr>
+          <tr><td>要證的式子</td><td>板書 1–5</td><td>照片 6</td></tr>
+          <tr><td>半整數</td><td>$J_{\pm1/2}=\sqrt{\frac2{\pi x}}\sin x,\cos x$</td><td>自編 2-a</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)(b) 兩個基本恆等式；(c) 2、4、5；(d) $J_{3/2}$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>乘上 $x^{\pm m}$ 後級數的次方變成 $x^{2n+2m}$ 或 $x^{2n}$，微分時拉下來的係數 $(2n+2m)$ 或 $2n$ 剛好能和分母的 $\Gamma(n+m+1)$ 或 $n!$ 約掉一格，<b>所以</b>結果自動變成相鄰階的級數。(b) 要多一步平移指標（$n=0$ 的常數項微分後消失）。</p>
+      <p><b>因為</b> (a)(b) 用乘積法則展開後都是「$J_m'$ ＝ 某式」，<b>所以</b>兩式就是 2；相減、相加得 4、5。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-04a-s1" data-sym="Gam">
+        <span class="step-title">(a) 證明 1</span>
+        <p class="sub">$x^mJ_m=\sum\frac{(-1)^n\,x^{2n+2m}}{2^{2n+m}\,n!\,\Gamma(n+m+1)}$；微分，並用 $\frac{2(n+m)}{\Gamma(n+m+1)}=\frac{2}{\Gamma(n+m)}$：</p>
+        $$\frac{d}{dx}(x^mJ_m)=\sum\frac{(-1)^n\,2(n+m)\,x^{2n+2m-1}}{2^{2n+m}\,n!\,\Gamma(n+m+1)}=x^m\sum\frac{(-1)^n\,x^{2n+m-1}}{2^{2n+m-1}\,n!\,\Gamma(n+m)}=x^mJ_{m-1}$$
+        <p>（最後一個級數就是 $J_{m-1}$：$\Gamma(n+(m-1)+1)$、$(\frac x2)^{2n+m-1}$。）</p>
+      </div>
+      <div class="step" data-step="am6-sf-04a-s2">
+        <span class="step-title">(b) 證明 3</span>
+        <p class="sub">$x^{-m}J_m=\sum\frac{(-1)^nx^{2n}}{2^{2n+m}n!\Gamma(n+m+1)}$；$n=0$ 是常數，微分後消失；$\frac{2n}{n!}=\frac{2}{(n-1)!}$，再令 $n=k+1$：</p>
+        $$\frac{d}{dx}(x^{-m}J_m)=\sum_{n\ge1}\frac{(-1)^nx^{2n-1}}{2^{2n+m-1}(n-1)!\,\Gamma(n+m+1)}=-x^{-m}\sum_{k\ge0}\frac{(-1)^k\,x^{2k+m+1}}{2^{2k+m+1}\,k!\,\Gamma(k+m+2)}=-x^{-m}J_{m+1}$$
+      </div>
+      <div class="step" data-step="am6-sf-04a-s3">
+        <span class="step-title">(c) 推出 2</span>
+        <p class="sub">(a) 左邊展開 $mx^{m-1}J_m+x^mJ_m'=x^mJ_{m-1}$，除以 $x^m$；(b) 左邊展開 $-mx^{-m-1}J_m+x^{-m}J_m'=-x^{-m}J_{m+1}$，乘 $x^m$：</p>
+        $$J_m'=J_{m-1}-\frac mxJ_m,\qquad J_m'=\frac mxJ_m-J_{m+1}\qquad(\text{板書 2})$$
+      </div>
+      <div class="step" data-step="am6-sf-04a-s4">
+        <span class="step-title">(c) 推出 4、5</span>
+        <p class="sub">2 的兩式相減（左邊都是 $J_m'$）與相加：</p>
+        $$0=J_{m-1}+J_{m+1}-\frac{2m}{x}J_m\ \Rightarrow\ J_m=\frac{x(J_{m-1}+J_{m+1})}{2m}\ (4);\qquad2J_m'=J_{m-1}-J_{m+1}\ (5)$$
+      </div>
+      <div class="step" data-step="am6-sf-04a-s5">
+        <span class="step-title">(d) $J_{3/2}$</span>
+        <p class="sub">4 改寫成 $J_{m+1}=\frac{2m}{x}J_m-J_{m-1}$，代 $m=\frac12$、$J_{\pm1/2}=\sqrt{\frac2{\pi x}}\sin x,\cos x$：</p>
+        $$J_{3/2}=\frac1xJ_{1/2}-J_{-1/2}=\sqrt{\frac{2}{\pi x}}\Big(\frac{\sin x}{x}-\cos x\Big)$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a)(b) 如上，逐項微分後約掉一格 $\Gamma$ 或階乘；(c) 展開得 2 的兩式，相減得 4、相加得 5；(d) $J_{3/2}=\sqrt{\frac2{\pi x}}\big(\frac{\sin x}x-\cos x\big)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$m=0$ 時 (b) 給 $J_0'=-J_1$（自編 3-c 已直接驗證）✔。$J_{3/2}$ 在 $x\to0$：$\frac{\sin x}x-\cos x\approx\frac{x^2}3$，所以 $J_{3/2}\approx\sqrt{\frac2\pi}\frac{x^{3/2}}{3}$，與級數首項 $\frac{(x/2)^{3/2}}{\Gamma(5/2)}=\frac{x^{3/2}}{2^{3/2}}\cdot\frac{4}{3\sqrt\pi}$ 相同 ✔。驗算腳本用 sympy 的 <code>besselj</code> 在多個 $m$（含 $\frac13$）與 $x$ 檢查 1–5。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-04b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>哪些 $\int x^pJ_q\,dx$ 化得完？$\int J_3$、$\int x^4J_1$、$\int J_2$</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-04b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 求 $\int J_3(x)\,dx$，用 $J_0$、$J_1$ 表示。(b) 求 $\int x^4J_1(x)\,dx$。(c) 說明 $\int J_2(x)\,dx$ 為什麼化不完，並把它寫成 $\int J_0\,dx$ 加上封閉項。(d) 已知 $J_0(2)=0.2239$、$J_1(2)=0.5767$、$J_2(2)=0.3528$、$J_3(2)=0.1289$，求 $\int_0^2x^4J_1\,dx$ 與 $\int_0^2J_3\,dx$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>恆等式</td><td>1、3、4、5</td><td>板書照片 6</td></tr>
+          <tr><td>表值</td><td>$J_0(2)=0.2239$、$J_1(2)=0.5767$、$J_2(2)=0.3528$、$J_3(2)=0.1289$</td><td>(d) 題目給</td></tr>
+          <tr><td>$x=0$ 的值</td><td>$J_0(0)=1$，$J_m(0)=0$（$m\ge1$）</td><td>級數首項（題目沒寫）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)(b) 不定積分；(c) 判斷與改寫；(d) 兩個定積分的數值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $J_3$ 不是 $x^{\pm m}J_{m\pm1}$ 的形式（次方 0 對不上 1 或 3），<b>所以</b>先用 5 把它拆成「導數＋低階」：$J_3=J_1-2J_2'$，而 $J_1=-J_0'$ 可以直接積。</p>
+      <p><b>因為</b> $x^4J_1$ 的次方比 1 的形式（$x^2J_1$）多 2，<b>所以</b>分部積分 $u=x^2$、$dv=x^2J_1dx$，降成 $x^3J_2$，再用 1。<b>因為</b> $J_2$ 用 5 拆會留下 $J_0$，而 $\int J_0$ 不是任何 $\frac{d}{dx}(x^{\pm m}J_m)$，<b>所以</b>化不完。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-04b-s1">
+        <span class="step-title">(a) 用 5 拆 $J_3$</span>
+        <p class="sub">5 取 $m=2$：$2J_2'=J_1-J_3$ ⇒ $J_3=J_1-2J_2'$；積分，$\int J_1=-J_0$（3 取 $m=0$）：</p>
+        $$\int J_3\,dx=-J_0-2J_2+C$$
+        <p class="sub">再用 4（$m=1$）：$J_2=\frac2xJ_1-J_0$：</p>
+        $$\int J_3\,dx=J_0-\frac{4}{x}J_1+C$$
+      </div>
+      <div class="step" data-step="am6-sf-04b-s2">
+        <span class="step-title">(b) $\int x^4J_1$：分部積分</span>
+        <p class="sub">$u=x^2$、$dv=x^2J_1dx$，由 1（$m=2$）$v=x^2J_2$；剩下的 $\int2x^3J_2$ 用 1（$m=3$）：$\int x^3J_2=x^3J_3$：</p>
+        $$\int x^4J_1\,dx=x^4J_2-\int2x\cdot x^2J_2\,dx=x^4J_2-2x^3J_3+C$$
+      </div>
+      <div class="step" data-step="am6-sf-04b-s3">
+        <span class="step-title">(c) $\int J_2$ 為什麼化不完</span>
+        <p class="sub">5 取 $m=1$：$2J_1'=J_0-J_2$ ⇒ $J_2=J_0-2J_1'$：</p>
+        $$\int J_2\,dx=\int J_0\,dx-2J_1+C$$
+        <p>$J_0$ 的次方 0、階數 0，既不是 $x^mJ_{m-1}$（需要 $x^1J_0$）也不是 $x^{-m}J_{m+1}$（需要 $J_1$ 或更高）；換別的拆法也一定回到 $\int J_0$。$\int J_0\,dx$ 只能留著（數值或查表，$\int_0^\infty J_0=1$ 是少數能算的定積分）。</p>
+      </div>
+      <div class="step" data-step="am6-sf-04b-s4">
+        <span class="step-title">(d) 代數值</span>
+        <p class="sub">$\int_0^2x^4J_1$：下限 $x=0$ 兩項為 0；代入 $J_2(2)=0.3528$、$J_3(2)=0.1289$：</p>
+        $$\int_0^2x^4J_1\,dx=16(0.3528)-16(0.1289)=16\times0.2239=3.582$$
+        <p class="sub">$\int_0^2J_3$：用 (a) 的第一式，$x=0$ 時 $-J_0(0)-2J_2(0)=-1$：</p>
+        $$\int_0^2J_3\,dx=\big(-0.2239-2\times0.3528\big)-(-1)=0.0705$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\int J_3=-J_0-2J_2+C=J_0-\frac4xJ_1+C$；(b) $\int x^4J_1=x^4J_2-2x^3J_3+C$；(c) $\int J_2=\int J_0-2J_1$，$\int J_0$ 沒有封閉形式；(d) $\int_0^2x^4J_1\approx3.58$、$\int_0^2J_3\approx0.0705$（精確值 $0.0704$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>(b) 的數值巧合：$J_2(2)-J_3(2)=J_0(2)$？由 4（$m=2$，$x=2$）$J_3(2)=2J_2(2)-J_1(2)$，而 $J_2(2)=J_1(2)-J_0(2)$，所以 $J_2-J_3=J_1-J_2=J_0$ ✔，答案也可寫 $16J_0(2)$。驗算腳本以 sympy 微分 (a)(b) 的結果回到被積函數，並數值積分 (d)：$3.5823$、$0.07044$ ✔（$0.0705$ 與 $0.0704$ 的差來自表值四捨五入）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-04c">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>圓柱熱傳導：初溫 $u_0(1-r^2/R^2)$ 的 Fourier–Bessel 解</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-04c">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>很長的圓柱（半徑 $R$）溫度只和 $r$、$t$ 有關，滿足 $u_t=\kappa\big(u_{rr}+\frac1ru_r\big)$，表面 $u(R,t)=0$，初溫 $u(r,0)=u_0\big(1-\frac{r^2}{R^2}\big)$。(a) 分離變數，寫出 $u=\sum c_nJ_0\big(\frac{j_nr}R\big)e^{-\kappa j_n^2t/R^2}$（$j_n=j_{0n}$）。(b) 證明 $c_n=\dfrac{8u_0}{j_n^3J_1(j_n)}$，並求 $c_1,c_2,c_3$。(c) 用第一項估計中心溫度降到 $\frac{u_0}2$ 的時間，並估計忽略第二項的誤差。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$u_t=\kappa(u_{rr}+\frac1ru_r)$</td><td>題目（軸對稱熱方程，$m=0$）</td></tr>
+          <tr><td>邊界</td><td>$u(R,t)=0$；中心有限</td><td>「表面 $u(R,t)=0$」；中心有限題目沒寫</td></tr>
+          <tr><td>初溫</td><td>$f(r)=u_0(1-r^2/R^2)$</td><td>「初溫」</td></tr>
+          <tr><td>正交性</td><td>$\int_0^RrJ_0(\frac{j_nr}R)^2dr=\frac{R^2}2J_1(j_n)^2$</td><td>3.3 節、自編 3-b</td></tr>
+          <tr><td>零點與 $J_1$</td><td>$j_n=2.4048,5.5201,8.6537$；$J_1(j_n)=0.5191,-0.3403,0.2715$</td><td>表值（題目沒給，用標準值）</td></tr>
+          <tr><td>中心溫度目標</td><td>$u(0,t)=\frac{u_0}2$</td><td>(c)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 級數解的形式；(b) $c_n$ 公式與數值；(c) 時間與誤差。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>邊界是 $r=R$ 的圓、中心要有限，<b>所以</b>徑向函數是 $J_0(kr)$、$k=j_n/R$（第 3 節）；初溫要展開成這些 $J_0$ 的疊加，係數用帶權重 $r$ 的正交性求。</p>
+      <p><b>因為</b>係數的分子 $\int_0^1s(1-s^2)J_0(j_ns)ds$ 和 111 上期末的積分同型，<b>所以</b>同樣用恆等式 1 加分部積分；最後用 $J_0(j_n)=0$ 和 4 把 $J_2$ 換成 $J_1$。<b>因為</b>高階項衰減因子 $e^{-j_n^2\tau}$ 很快變小，<b>所以</b>中心溫度降到一半時，第一項就夠準。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-04c-s1">
+        <span class="step-title">(a) 分離變數</span>
+        <p class="sub">$u=F(r)T(t)$ 代入、除以 $\kappa FT$：$\frac{T'}{\kappa T}=\frac{F''+F'/r}{F}=-k^2$：</p>
+        $$T=e^{-\kappa k^2t},\qquad r^2F''+rF'+k^2r^2F=0\Rightarrow F=J_0(kr)\ (\text{丟 }Y_0),\qquad J_0(kR)=0\Rightarrow k=\frac{j_n}{R}$$
+        $$u(r,t)=\sum_{n\ge1}c_nJ_0\Big(\frac{j_nr}{R}\Big)e^{-\kappa j_n^2t/R^2}$$
+      </div>
+      <div class="step" data-step="am6-sf-04c-s2">
+        <span class="step-title">(b) 係數公式</span>
+        <p class="sub">$t=0$ 兩邊乘 $rJ_0(\frac{j_kr}R)$ 積分，正交性只留 $n=k$；令 $s=r/R$：</p>
+        $$c_n=\frac{\int_0^Rr f(r)J_0(\frac{j_nr}R)dr}{\frac{R^2}{2}J_1(j_n)^2}=\frac{2u_0}{J_1(j_n)^2}\int_0^1s(1-s^2)J_0(j_ns)\,ds$$
+      </div>
+      <div class="step" data-step="am6-sf-04c-s3" data-sym="Jm">
+        <span class="step-title">(b) 算積分（同 111 上期末的手法）</span>
+        <p class="sub">令 $x=j_ns$（記 $j=j_n$），用步驟同 111 上：$\int_0^jxJ_0=jJ_1(j)$、$\int_0^jx^3J_0=j^3J_1(j)-2j^2J_2(j)$：</p>
+        $$\int_0^1s(1-s^2)J_0(js)ds=\frac{1}{j^2}\,jJ_1(j)-\frac1{j^4}\big(j^3J_1(j)-2j^2J_2(j)\big)=\frac{2J_2(j)}{j^2}$$
+        <p class="sub">$J_0(j)=0$，用 4：$J_2(j)=\frac2jJ_1(j)-J_0(j)=\frac2jJ_1(j)$：</p>
+        $$\int_0^1s(1-s^2)J_0(js)ds=\frac{4J_1(j)}{j^3}\quad\Longrightarrow\quad c_n=\frac{2u_0}{J_1^2}\cdot\frac{4J_1}{j_n^3}=\frac{8u_0}{j_n^3J_1(j_n)}$$
+      </div>
+      <div class="step" data-step="am6-sf-04c-s4">
+        <span class="step-title">(b) 數值</span>
+        <p class="sub">代入 $j_1=2.4048$、$J_1(j_1)=0.5191$ 等：</p>
+        $$c_1=\frac{8u_0}{13.907\times0.5191}=1.108u_0,\qquad c_2=-0.1398u_0,\qquad c_3=0.0455u_0$$
+        <p>（$c_n$ 正負交替，因為 $J_1(j_n)$ 正負交替；$t=0$、$r=0$ 時 $\sum c_n$ 應趨近 $u_0$：前三項和 $1.014u_0$。）</p>
+      </div>
+      <div class="step" data-step="am6-sf-04c-s5">
+        <span class="step-title">(c) 中心溫度降到一半</span>
+        <p class="sub">$J_0(0)=1$；只留第一項，令 $\tau=\frac{\kappa t}{R^2}$：$1.108\,e^{-5.783\tau}=\frac12$：</p>
+        $$\tau=\frac{\ln(2\times1.108)}{j_1^2}=\frac{0.7957}{5.783}=0.1376\quad\Longrightarrow\quad t\approx0.138\,\frac{R^2}{\kappa}$$
+        <p class="sub">第二項此時 $c_2e^{-j_2^2\tau}=-0.1398\,e^{-30.47\times0.1376}=-0.0021u_0$（第三項 $\sim10^{-6}$）：</p>
+        <p>誤差約 $0.4\%$，第一項近似可靠。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $u=\sum c_nJ_0(\frac{j_nr}R)e^{-\kappa j_n^2t/R^2}$；(b) $c_n=\frac{8u_0}{j_n^3J_1(j_n)}$：$c_1=1.108u_0$、$c_2=-0.140u_0$、$c_3=0.0455u_0$；(c) $t\approx0.138R^2/\kappa$，忽略第二項的誤差約 $0.002u_0$（0.4%）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>驗算腳本數值積分 $\frac{2}{J_1^2}\int_0^1s(1-s^2)J_0(j_ns)ds$ 與 $\frac8{j_n^3J_1(j_n)}$ 比較（$n=1,2,3$）✔；三項和在 $\tau=0.1376$ 時給 $0.4979u_0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-04d">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>生成函數 $e^{\frac x2(t-\frac1t)}$：推出遞迴與積分表示</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-04d">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>已知生成函數 $g(x,t)=e^{\frac x2\left(t-\frac1t\right)}=\sum_{n=-\infty}^{\infty}J_n(x)\,t^n$。(a) 把 $e^{xt/2}$ 與 $e^{-x/(2t)}$ 的級數相乘，求 $t^n$（$n\ge0$）的係數，確認它就是 $J_n$ 的級數。(b) 對 $t$ 偏微分，推出遞迴 4。(c) 對 $x$ 偏微分，推出遞迴 5。(d) 令 $t=e^{i\theta}$，推出 $J_n(x)=\frac1\pi\int_0^\pi\cos(n\theta-x\sin\theta)\,d\theta$，並證明 $|J_n(x)|\le1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>生成函數</td><td>$g=e^{\frac x2(t-\frac1t)}=\sum J_nt^n$</td><td>題目</td></tr>
+          <tr><td>指數級數</td><td>$e^z=\sum\frac{z^k}{k!}$</td><td>微積分</td></tr>
+          <tr><td>代換</td><td>$t=e^{i\theta}$ ⇒ $t-\frac1t=2i\sin\theta$</td><td>(d)；$e^{i\theta}-e^{-i\theta}=2i\sin\theta$</td></tr>
+          <tr><td>正交</td><td>$\int_0^{2\pi}e^{i(k-n)\theta}d\theta=2\pi\delta_{kn}$</td><td>Fourier 級數（題目沒寫）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 係數；(b)(c) 遞迴 4、5；(d) 積分表示與 $|J_n|\le1$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>生成函數把所有 $J_n$ 包在一個函數裡，<b>所以</b>對 $g$ 做的任何運算（微分、代換）在兩邊比較 $t^n$ 係數，就得到所有 $J_n$ 共同滿足的關係——不必逐一處理級數。</p>
+      <p><b>因為</b> $t=e^{i\theta}$ 讓 $\sum J_nt^n$ 變成 Fourier 級數 $\sum J_ne^{in\theta}$，<b>所以</b>係數可以用 Fourier 係數公式（乘 $e^{-in\theta}$ 積分）取出，得到積分表示；被積函數絕對值 $\le1$ 給出上界。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-04d-s1">
+        <span class="step-title">(a) 兩個級數相乘</span>
+        <p class="sub">$e^{xt/2}=\sum_j\frac{(x/2)^j}{j!}t^j$，$e^{-x/(2t)}=\sum_k\frac{(-1)^k(x/2)^k}{k!}t^{-k}$；$t^n$ 需要 $j-k=n$，即 $j=n+k$：</p>
+        $$[t^n]\,g=\sum_{k\ge0}\frac{(x/2)^{n+k}}{(n+k)!}\cdot\frac{(-1)^k(x/2)^k}{k!}=\sum_{k\ge0}\frac{(-1)^k}{k!\,(n+k)!}\Big(\frac x2\Big)^{n+2k}=J_n(x)$$
+      </div>
+      <div class="step" data-step="am6-sf-04d-s2">
+        <span class="step-title">(b) 對 $t$ 微分 → 遞迴 4</span>
+        <p class="sub">$\frac{\partial g}{\partial t}=\frac x2\big(1+\frac1{t^2}\big)g$；兩邊代入級數：</p>
+        $$\sum nJ_nt^{n-1}=\frac x2\sum J_n\big(t^n+t^{n-2}\big)$$
+        <p class="sub">比較 $t^{n-1}$ 的係數：左邊 $nJ_n$；右邊來自 $t^n$ 項的 $J_{n-1}$ 與 $t^{n-2}$ 項的 $J_{n+1}$：</p>
+        $$nJ_n=\frac x2\big(J_{n-1}+J_{n+1}\big)\iff J_n=\frac{x(J_{n-1}+J_{n+1})}{2n}\quad(4)$$
+      </div>
+      <div class="step" data-step="am6-sf-04d-s3">
+        <span class="step-title">(c) 對 $x$ 微分 → 遞迴 5</span>
+        <p class="sub">$\frac{\partial g}{\partial x}=\frac12\big(t-\frac1t\big)g$：$\sum J_n't^n=\frac12\sum J_n(t^{n+1}-t^{n-1})$，比較 $t^n$：</p>
+        $$J_n'=\frac12\big(J_{n-1}-J_{n+1}\big)\quad(5)$$
+      </div>
+      <div class="step" data-step="am6-sf-04d-s4">
+        <span class="step-title">(d) $t=e^{i\theta}$</span>
+        <p class="sub">$\frac x2(t-\frac1t)=ix\sin\theta$：$e^{ix\sin\theta}=\sum_kJ_k(x)e^{ik\theta}$；兩邊乘 $e^{-in\theta}$ 從 0 積到 $2\pi$，只剩 $k=n$：</p>
+        $$J_n(x)=\frac{1}{2\pi}\int_0^{2\pi}e^{i(x\sin\theta-n\theta)}d\theta=\frac1{2\pi}\int_0^{2\pi}\cos(x\sin\theta-n\theta)\,d\theta$$
+        <p>（$J_n$ 是實數，虛部 $\int\sin(\cdots)$ 必為 0。）</p>
+      </div>
+      <div class="step" data-step="am6-sf-04d-s5">
+        <span class="step-title">(d) 化成 $[0,\pi]$ 與上界</span>
+        <p class="sub">把 $[\pi,2\pi]$ 那半段令 $\theta=2\pi-\phi$：$\cos\big(-x\sin\phi-2n\pi+n\phi\big)=\cos(n\phi-x\sin\phi)$，和前半段相同：</p>
+        $$J_n(x)=\frac1\pi\int_0^\pi\cos(n\theta-x\sin\theta)\,d\theta,\qquad|J_n(x)|\le\frac1\pi\int_0^\pi1\,d\theta=1$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $[t^n]g=\sum\frac{(-1)^k}{k!(n+k)!}(\frac x2)^{n+2k}=J_n$；(b) $nJ_n=\frac x2(J_{n-1}+J_{n+1})$；(c) $J_n'=\frac12(J_{n-1}-J_{n+1})$；(d) $J_n(x)=\frac1\pi\int_0^\pi\cos(n\theta-x\sin\theta)d\theta$，$|J_n|\le1$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$x=0$：$\frac1\pi\int_0^\pi\cos n\theta\,d\theta=\delta_{n0}$，與 $J_0(0)=1$、$J_{n\ge1}(0)=0$ 一致 ✔。驗算腳本數值積分 $n=0,1,3$、$x=2.4048,5$ 與 <code>besselj</code> 比較 ✔，並把 $g$ 展開到 $t^{\pm4}$、$x^8$ 比對係數。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>基本兩條：$\frac{d}{dx}(x^mJ_m)=x^mJ_{m-1}$、$\frac{d}{dx}(x^{-m}J_m)=-x^{-m}J_{m+1}$；展開得 2，相減得 4、相加得 5。</li>
+    <li>積分：$\int x^mJ_{m-1}=x^mJ_m$、$\int x^{-m}J_{m+1}=-x^{-m}J_m$；特例 $\int xJ_0=xJ_1$、$\int J_1=-J_0$。次方多 2 就分部積分；落到 $\int J_0$ 停住。</li>
+    <li>板書例題 $\int_1^2x^{-3}J_4=J_3(1)-\frac{J_3(2)}8\approx0.00349$；111 上 $\int_0^1(r-r^3)J_0(2r)dr=\frac12J_2(2)\approx0.176$。</li>
+    <li>4 把 $J_2$ 換成 $\frac2xJ_1-J_0$；在 $J_0$ 的零點 $j$ 上 $J_2(j)=\frac2jJ_1(j)$。Fourier–Bessel：$1-r^2$ 的係數 $\frac{8}{j_n^3J_1(j_n)}$。</li>
+  </ol>
+</div>

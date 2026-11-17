@@ -1,0 +1,37 @@
+<p class="lead">第 2 章解出了齊次方程 $y''+ay'+by=0$ 的通解；這一章處理右邊有外力 $g(x)$ 的非齊次方程（老師叫 Type II）。一般解是「齊次解 + 一個特解」，所以整章只在回答一件事：<strong>怎麼找特解 $y_p$</strong>。9/30 這堂課教待定係數法：看 $g(x)$ 的形式猜同類函數、代回比較係數；再依右邊的樣子分成加總、乘法、修正三條規則，最後應用到受迫阻尼振盪與共振。右邊不在對照表裡時要用的參數變換法，照片裡沒有，由網站補充。</p>
+
+<p>每一節是一頁，照 9/30 板書照片的順序（共 10 張，檔名就是拍攝時間 14:14–16:20）。板書原文放在淡棕色框裡，照片拍不完整、被擋住或沒寫完的地方由網站補上，並用紅色虛線框「網站補充（照片缺漏）」標示。照片本身不放上網站。題目右上角可以開「考試寫法」。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">考古題怎麼出</span>
+  <p>翻過雲端的 18 份考卷（110 上～114 上）：待定係數法每年上學期期中都有一題——110 上第 4 題（$2e^x\cos x$，要用修正規則）、111 上第 3 題（一次多項式加初始條件）、112 上第 3 題（$60e^{-4x}\sin5x$，三小題）、113 上第 4 題（三塊加總）、114 上第 3 題（三角函數加初始條件），5 題全部收在對應的節裡。下學期的聯立方程（112 下期中第 2 題 $\dot x=-3x+y+3t$、$\dot y=2x-4y+e^{-t}$）雖然右邊也有非齊次項，但屬於矩陣／聯立方程的範圍；110 上期末第 3 題 $y''-x^2y'+(x+2)y=x$ 是冪級數解（第 4 章）；Laplace 轉換的題目也不在本學期範圍，這些本章都不收。考卷裡沒有指定用參數變換法的題目。本章另收板書例題 5 題、9/30 作業 3 題，每個講解節 2 題標示「自編難題」的網站自編題（共 12 題，不是上課、作業或考卷題目）；考前衝刺頁有 8 題變化題。</p>
+  <p><strong>更早年級的考古卷（2026-10 補收）。</strong>108 級下 2nd Order ODE and Fourier Series 卷的 1(b)（$4\sin2x$，第 1 節）、1(c)（$8e^x\sin2x$ 要修正，而且給的是兩點邊界條件，第 4 節）、第 2 題（LRC 電路穩態電荷，用電抗與阻抗表示，第 5 節），以及 108 級上 Euler 卷第 5 題（阻尼項寫成 $\gamma\dot x$ 的受迫振盪、畫共振曲線，第 5 節），共 4 張新卡，答案都和考卷相同。同卷其餘題目是 Fourier 級數（含用 Fourier 級數求週期外力的穩態），不在本學期範圍。</p>
+</div>
+
+<p class="exam-entry"><strong>準備考試？</strong>先看<a href="#a3x-formulas">第 7 節「考前衝刺」</a>：必背公式、猜測對照表、題型總表和變化題。各節頁面上方的「考試模式」會把解說收起來，只留公式、題目和思路。</p>
+
+<div data-section-list></div>
+
+<details class="supp" id="symbols">
+  <summary>符號總表</summary>
+  <div class="supp-body">
+    <p class="small muted">板書的待定係數有時寫 $K_0,K_1,\ldots$、有時寫 $A,B,C,D$，意思相同。第 5 節的自變數是時間 $t$，點代表對時間微分；阻力常數 9/30 寫成 $\beta$（第 2 章寫 $b$）。</p>
+    <div data-symbol-table></div>
+  </div>
+</details>
+
+<details class="supp" id="photo-notes">
+  <summary>照片缺漏與板書小筆誤（本章）</summary>
+  <div class="supp-body">
+    <ol>
+      <li><strong>照片 3</strong>：Basic rule 例題沒有 step 1（齊次方程的根），由 step 3 的 $e^{-x}$、$e^{2x}$ 補回 $\lambda=-1,2$（<a href="#a3-b1">第 1 節例題</a>）。</li>
+      <li><strong>照片 4</strong>：Sum rule 例題只寫 ① 的結果 $y_{p1}=\tfrac32-2x+x^2$ 與 $A=\tfrac23$，係數推導與一般解由網站補完（<a href="#a3-b2">第 2 節例題</a>）。</li>
+      <li><strong>照片 5</strong>：上方「$g(x)=4x^2+6e^x=K_0+K_1x+K_2x+K_3e^x$」的 $K_2x$ 應為 $K_2x^2$。$y_p''$ 的計算沒有寫出，網站補上（<a href="#a3-b3">第 3 節例題</a>）。</li>
+      <li><strong>照片 7</strong>：比較係數時未知數從 $A$ 改寫成 $K$（$2K=2$），是同一個係數（<a href="#a3-b4">第 4 節例題</a>）。</li>
+      <li><strong>照片 8–9</strong>：同一塊黑板相隔 1 秒的兩張，照片 8 被擋住的「$m\ddot x+\beta\dot x+kx=f_{\text{ext}}$」在照片 9 可見。step 2 的猜測寫成 $y_p$，此處未知函數是 $x$。$K_1,K_2$ 只寫結果，推導由網站補上（<a href="#a3-b5">第 5 節例題</a>）。</li>
+      <li><strong>照片 10</strong>：共振圖把尖峰畫在 $\omega_0$；嚴格的極大值在 $\omega_r=\sqrt{\omega_0^2-2\gamma^2}$（<a href="#a3-s05-1">第 5 節自編難題</a>）。$\phi=\tan^{-1}(\cdots)$ 在 $\omega\gt\omega_0$ 時要再減 $\pi$（<a href="#a3-fo-amp">第 5 節說明</a>）。</li>
+      <li><strong>10/7 第一張照片</strong>（14:15）已經是 Type III 冪級數解，不屬於本章。</li>
+      <li><strong>參數變換法</strong>：9/30 照片裡沒有，依 9/23 板書提到的名稱由網站補成<a href="#a3-vp-derive">第 6 節</a>。</li>
+    </ol>
+  </div>
+</details>

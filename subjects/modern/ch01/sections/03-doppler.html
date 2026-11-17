@@ -1,0 +1,436 @@
+<h2>三、都卜勒效應 <span class="pg">課本 §1.3 · p.10–15</span></h2>
+
+<p class="lead">把光源當成一個「每滴答一次就發出一個波」的鐘，時間膨脹加上「波要多走（或少走）一段路」，就得到光的都卜勒公式。它和聲音的公式不同，因為光沒有介質。</p>
+
+<h3 id="dp-sound">3.1 聲音的都卜勒效應 <span class="pg-tag">p.10–11</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.11 Eq. (1.4) Doppler effect in sound</span>
+  $$\nu=\nu_0\left(\frac{1+v/c}{1-V/c}\right)$$
+  <p>$c$：聲速；$v$：觀察者速率（朝聲源取 $+$）；$V$：聲源速率（朝觀察者取 $+$）。</p>
+</div>
+
+<p>聲音的結果要看「是聲源在動還是觀察者在動」，好像違反了「只有相對運動才有意義」。其實不矛盾：聲波存在於空氣中，空氣本身就是一個特殊的座標系，可以相對它量出誰在動。光不需要介質，只有光源和觀察者的<strong>相對</strong>運動有意義，所以光的公式一定和聲音不同。</p>
+
+<h3 id="dp-light">3.2 光的三種情況 <span class="pg-tag">p.11–12</span></h3>
+
+<p>光源每秒滴答 $\nu_0$ 次、每滴答發出一個波，所以在光源座標系中兩次滴答相隔固有時間 $t_0=1/\nu_0$。觀察者以相對速率 $v$ 運動（Fig. 1.7）：</p>
+
+<div class="step" data-step="dp-trans" data-sym="nu0,nu,gamma">
+  <span class="step-title">① 橫向：觀察者的運動垂直於他和光源的連線</span>
+  <p>波到達的距離不變，只剩時間膨脹：在觀察者座標系中兩次滴答相隔 $t=\gamma t_0$。</p>
+  $$\nu(\text{transverse})=\frac1t=\frac{1}{\gamma t_0}=\nu_0\sqrt{1-v^2/c^2}\qquad(1.5)$$
+  <p>頻率一定變低。這是純粹的相對論效應，聲音沒有。</p>
+</div>
+
+<div class="step" data-step="dp-rec" data-sym="beta">
+  <span class="step-title">② 遠離</span>
+  <p>兩次滴答之間（時間 $t=\gamma t_0$）觀察者又遠離了 $vt$，下一個波要多走這段路，多花 $vt/c$。所以相鄰兩波到達的間隔</p>
+  $$T=t+\frac{vt}{c}=t_0\frac{1+v/c}{\sqrt{1-v^2/c^2}}=t_0\frac{1+v/c}{\sqrt{(1+v/c)(1-v/c)}}=t_0\sqrt{\frac{1+v/c}{1-v/c}}$$
+  $$\nu(\text{receding})=\frac1T=\nu_0\sqrt{\frac{1-v/c}{1+v/c}}\qquad(1.6)$$
+</div>
+
+<div class="step" data-step="dp-app">
+  <span class="step-title">③ 接近</span>
+  <p>每個波少走 $vt$，$T=t-vt/c$，同樣的化簡得到</p>
+  $$\nu(\text{approaching})=\nu_0\sqrt{\frac{1+v/c}{1-v/c}}\qquad(1.7)$$
+</div>
+
+<p>和聲音不同，「觀察者遠離光源」和「光源遠離觀察者」結果完全一樣。②③合寫成</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.12 Eq. (1.8) Longitudinal doppler effect in light</span>
+  $$\nu=\nu_0\sqrt{\frac{1+v/c}{1-v/c}}$$
+  <p>互相接近時 $v$ 取正，互相遠離時 $v$ 取負。</p>
+</div>
+
+<p>題目常給波長。因為 $\lambda=c/\nu$，波長的公式是頻率公式倒過來：遠離時 $\lambda=\lambda_0\sqrt{\dfrac{1+v/c}{1-v/c}}$，波長變長（紅移）。</p>
+
+<div class="anim" data-anim="doppler-light"></div>
+
+<details class="supp">
+  <summary>反解速度：$\nu$、$\nu_0$ 已知求 $v$</summary>
+  <div class="supp-body">
+    <p>接近時把 (1.8) 平方：$\dfrac{\nu^2}{\nu_0^2}=\dfrac{1+\beta}{1-\beta}$，$\beta=v/c$。交叉相乘 $\nu^2-\nu^2\beta=\nu_0^2+\nu_0^2\beta$：</p>
+    $$\beta=\frac{\nu^2-\nu_0^2}{\nu^2+\nu_0^2}$$
+    <p>遠離時把 $\nu,\nu_0$ 對調（或用波長：$\beta=\dfrac{\lambda^2-\lambda_0^2}{\lambda^2+\lambda_0^2}$）。</p>
+  </div>
+</details>
+
+<h3 id="dp-universe">3.3 紅移與宇宙膨脹 <span class="pg-tag">p.13–14</span></h3>
+
+<p>恆星發出特定頻率的譜線。遙遠星系的譜線全部往低頻（紅色）那端移動，叫「紅移」，表示它們都在遠離我們。Hubble 發現遠離速度和距離成正比（Hubble 定律，Fig. 1.8，大約每百萬光年 $21\ \text{km/s}$）：越遠的星系退得越快，就像吹氣球時氣球上每個點看其他點都在遠離——整個宇宙在均勻膨脹。往回推，約 130 億年前宇宙從一個極小、極熱的狀態開始膨脹，稱為大霹靂。</p>
+
+<div class="problem" data-kind="tbexample" id="bz-ex1-2">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 1.2 · p.13</span></div>
+    <h4>把紅燈看成綠燈要開多快</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex1-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex1-2"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>A driver is caught going through a red light. The driver claims to the judge that the color she actually saw was green ($\nu=5.60\times10^{14}\ \mathrm{Hz}$) and not red ($\nu_0=4.80\times10^{14}\ \mathrm{Hz}$) because of the doppler effect. The judge accepts this explanation and instead fines her for speeding at the rate of &#36;1 for each km/h she exceeded the speed limit of 80 km/h. What was the fine?</p></div>
+<p class="original-caption">Beiser Example 1.2 · p.13</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>駕駛闖紅燈被抓，辯稱因為都卜勒效應，她看到的是綠光（$\nu=5.60\times10^{14}\ \text{Hz}$），不是紅光（$\nu_0=4.80\times10^{14}\ \text{Hz}$）。法官接受了，改以超速開罰：超過速限 $80\ \text{km/h}$ 每 1 km/h 罰 1 美元。罰款多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：紅燈發出的頻率 $\nu_0=4.80\times10^{14}\ \text{Hz}$；駕駛看到的頻率 $\nu=5.60\times10^{14}\ \text{Hz}$；駕駛接近號誌（$\nu\gt\nu_0$ 也表示接近）；速限 $80\ \text{km/h}$，每超 $1\ \text{km/h}$ 罰 1 美元；$c=3.00\times10^8\ \text{m/s}$；$\beta=v/c$。</p>
+<p><strong>① 把 (1.8) 反解成 $\beta$：</strong> 光源與觀察者在同一直線上互相接近，用光的縱向都卜勒公式取接近的形式（不能用聲音的公式，光沒有介質，只看相對速度），已知 $\nu$、$\nu_0$ 反解 $\beta$。</p>
+<p class="fnote"><b>公式（相對論縱向都卜勒效應，接近）：</b>$\nu=\nu_0\sqrt{\dfrac{1+\beta}{1-\beta}}$，其中 $\nu_0$ 為光源座標系中發出的頻率、$\nu$ 為觀察者收到的頻率、$\beta=v/c$ 為相對速率與光速之比；本題 $\nu_0$ 為紅光、$\nu$ 為綠光。</p>
+<p>兩邊平方去根號，再交叉相乘：</p>
+<div class="math-block">$$\begin{aligned}\frac{\nu^2}{\nu_0^2}=\frac{1+\beta}{1-\beta}\ &amp;\Longrightarrow\ \nu^2(1-\beta)=\nu_0^2(1+\beta)\\&amp;\Longrightarrow\ \nu^2-\nu_0^2=\beta(\nu^2+\nu_0^2)\end{aligned}$$</div>
+<div class="math-block">$$\beta=\frac{\nu^2-\nu_0^2}{\nu^2+\nu_0^2}$$</div>
+<p><strong>② 代入兩個頻率：</strong> 代入 $\nu=5.60\times10^{14}\ \text{Hz}$、$\nu_0=4.80\times10^{14}\ \text{Hz}$，$10^{14}$ 上下約掉：</p>
+<div class="math-block">$$\beta=\frac{5.60^2-4.80^2}{5.60^2+4.80^2}=\frac{31.36-23.04}{31.36+23.04}=\frac{8.32}{54.40}=0.153$$</div>
+<p>乘上 $c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$v=\beta c=0.153\times(3.00\times10^8\ \text{m/s})=4.59\times10^{7}\ \text{m/s}$$</div>
+<p><strong>③ 換成 km/h、算罰款：</strong> $1\ \text{m/s}=\dfrac{3600}{1000}\ \text{km/h}=3.6\ \text{km/h}$：</p>
+<div class="math-block">$$v=(4.59\times10^7)(3.6)\ \text{km/h}=1.65\times10^{8}\ \text{km/h}$$</div>
+<p>減掉速限 $80\ \text{km/h}$，每 km/h 罰 1 美元；速限 80 和 $1.65\times10^8$ 比起來完全可以忽略：</p>
+<div class="math-block">$$\text{罰款}=(1.65\times10^8-80)\times\$1\approx\$165\,000\,000$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}v=4.59\times10^7\ \text{m/s}\approx0.15c\\ \text{罰款約 1.65 億美元}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="kg-107-1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">107 學年期中（2018/10/30）第 1 題 · 即 Beiser Example 1.3 · p.14–15</span></div>
+    <h4>遠離星系的譜線紅移多少</h4>
+    <button type="button" class="exam-btn" data-exam="kg-107-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-1"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>A distant galaxy in is receding form the earth at $6.12\times10^7\ \mathrm{m/s}$. By how much is a green spectral line of wavelength 500 nm emitted by this galaxy shift toward the red end of the spectrum?(10%)</p><p class="original-note"><strong>課本原文（Beiser Example 1.3 · p.14）</strong></p><p>A distant galaxy in the constellation Hydra is receding from the earth at 6.12 × 10<sup>7</sup> m/s. By how much is a green spectral line of wavelength 500 nm (1 nm = 10<sup>−9</sup> m) emitted by this galaxy shifted toward the red end of the spectrum?</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 1 題 · 即 Beiser Example 1.3 · p.14–15</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>一個遙遠星系以 $6.12\times10^{7}\ \text{m/s}$ 遠離地球。它發出波長 $500\ \text{nm}$ 的綠色譜線，往紅端移動了多少？（10%）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：星系沿視線遠離地球，$v=6.12\times10^{7}\ \text{m/s}$；星系發出的波長 $\lambda_0=500\ \text{nm}$；$c=3.00\times10^8\ \text{m/s}$；$\beta=v/c$；要求的是位移 $\Delta\lambda=\lambda-\lambda_0$。</p>
+<p><strong>① 由頻率公式換成波長：</strong> 星系沿視線遠離，用遠離的縱向都卜勒公式 (1.6)；題目給波長，所以用 $\lambda=c/\nu$ 換成波長的形式。$\beta=0.204$ 不算小，不能用低速近似。</p>
+<p class="fnote"><b>公式（相對論縱向都卜勒效應，遠離）：</b>$\nu=\nu_0\sqrt{\dfrac{1-\beta}{1+\beta}}$，其中 $\nu_0$ 為光源座標系中發出的頻率、$\nu$ 為觀察者收到的頻率、$\beta=v/c$；本題光源是星系、觀察者在地球。</p>
+<p>$\nu=c/\lambda$、$\nu_0=c/\lambda_0$ 代入 (1.6)，兩邊的 $c$ 約掉後取倒數：</p>
+<div class="math-block">$$\begin{aligned}\frac{c}{\lambda}=\frac{c}{\lambda_0}\sqrt{\frac{1-\beta}{1+\beta}}\ &amp;\Longrightarrow\ \frac{1}{\lambda}=\frac{1}{\lambda_0}\sqrt{\frac{1-\beta}{1+\beta}}\\&amp;\Longrightarrow\ \lambda=\lambda_0\sqrt{\frac{1+\beta}{1-\beta}}\end{aligned}$$</div>
+<p><strong>② 算 $\beta$ 與根號因子：</strong> 代入 $v=6.12\times10^7\ \text{m/s}$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\beta=\frac{6.12\times10^7}{3.00\times10^8}=0.204$$</div>
+<div class="math-block">$$\sqrt{\frac{1+\beta}{1-\beta}}=\sqrt{\frac{1.204}{0.796}}=\sqrt{1.513}=1.230$$</div>
+<p><strong>③ 觀測波長與位移：</strong> 代入 $\lambda_0=500\ \text{nm}$、上一步的根號因子 $1.230$：</p>
+<div class="math-block">$$\lambda=(500\ \text{nm})(1.230)=615\ \text{nm}$$</div>
+<p>題目問「移動多少」，要減掉 $\lambda_0$：</p>
+<div class="math-block">$$\Delta\lambda=\lambda-\lambda_0=615\ \text{nm}-500\ \text{nm}=115\ \text{nm}$$</div>
+<div class="math-block">$$\boxed{\Delta\lambda=115\ \text{nm}\text{（移到橙色）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-10">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-10 · p.49</span></div>
+    <h4>遠離的太空船傳資料</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-10">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A spacecraft receding from the earth at 0.97c transmits data at the rate of 1.00 × 10<sup>4</sup> pulses/s. At what rate are they received?</p></div>
+<p class="original-caption">Beiser 習題 1-10 · p.49</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>以 $0.97c$ 遠離地球的太空船，以每秒 $1.00\times10^{4}$ 個脈衝傳送資料。地球每秒收到幾個脈衝？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：太空船以 $\beta=0.97$ 遠離地球；船上發送的脈衝率 $\nu_0=1.00\times10^4\ \text{s}^{-1}$；求地球每秒收到的脈衝數 $\nu$。</p>
+<p><strong>① 寫出遠離的公式並算根號：</strong> 都卜勒公式只用到「光源每隔一段固定時間發出一個訊號」，脈衝和波峰一樣，所以脈衝率可以直接當頻率用。</p>
+<p class="fnote"><b>公式（相對論縱向都卜勒效應，遠離）：</b>$\nu=\nu_0\sqrt{\dfrac{1-\beta}{1+\beta}}$，其中 $\nu_0$ 為光源座標系中的發射頻率、$\nu$ 為觀察者收到的頻率、$\beta=v/c$；本題 $\nu_0$ 為船上的脈衝率、$\nu$ 為地球收到的脈衝率。</p>
+<p>代入 $\beta=0.97$：</p>
+<div class="math-block">$$\sqrt{\frac{1-0.97}{1+0.97}}=\sqrt{\frac{0.03}{1.97}}=\sqrt{0.01523}=0.1234$$</div>
+<p><strong>② 收到的脈衝率：</strong> 代入 $\nu_0=1.00\times10^4\ \text{s}^{-1}$、上一步的根號因子 $0.1234$：</p>
+<div class="math-block">$$\nu=(1.00\times10^4\ \text{s}^{-1})(0.1234)=1.23\times10^{3}\ \text{s}^{-1}$$</div>
+<div class="math-block">$$\boxed{\nu\approx1.2\times10^3\ \text{個脈衝/s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-11">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-11 · p.49</span></div>
+    <h4>大熊座星系的譜線</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-11"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A galaxy in the constellation Ursa Major is receding from the earth at 15,000 km/s. If one of the characteristic wavelengths of the light the galaxy emits is 550 nm, what is the corresponding wavelength measured by astronomers on the earth?</p></div>
+<p class="original-caption">Beiser 習題 1-11 · p.49</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>大熊座的一個星系以 $15\,000\ \text{km/s}$ 遠離地球。它發出的一條特徵譜線波長 $550\ \text{nm}$，地球上的天文學家量到的波長是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：星系遠離速率 $v=15\,000\ \text{km/s}=1.5\times10^7\ \text{m/s}$；發出的波長 $\lambda_0=550\ \text{nm}$；$c=3.00\times10^8\ \text{m/s}$；求地球量到的波長 $\lambda$。</p>
+<p><strong>① 算 $\beta$：</strong> 情境和考古 107-1 一樣（星系沿視線遠離、給發出的波長），直接用遠離的波長公式；速度先換成 m/s 才能和 $c$ 相除。代入 $v=1.5\times10^7\ \text{m/s}$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\beta=\frac{1.5\times10^{7}\ \text{m/s}}{3.00\times10^{8}\ \text{m/s}}=0.050$$</div>
+<p><strong>② 代入遠離的波長公式：</strong></p>
+<p class="fnote"><b>公式（相對論都卜勒效應，遠離，波長形式）：</b>$\lambda=\lambda_0\sqrt{\dfrac{1+\beta}{1-\beta}}$（由 (1.6) 和 $\lambda=c/\nu$ 得到），其中 $\lambda_0$ 為光源發出的波長、$\lambda$ 為觀察者量到的波長、$\beta=v/c$；本題光源是星系、觀察者在地球。</p>
+<div class="math-block">$$\sqrt{\frac{1+\beta}{1-\beta}}=\sqrt{\frac{1.050}{0.950}}=\sqrt{1.105}=1.051$$</div>
+<p>代入 $\lambda_0=550\ \text{nm}$：</p>
+<div class="math-block">$$\lambda=(550\ \text{nm})(1.051)=578\ \text{nm}$$</div>
+<div class="math-block">$$\boxed{\lambda=578\ \text{nm}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-12">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-12 · p.49</span></div>
+    <h4>頻率剩三分之二</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-12">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-12"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The frequencies of the spectral lines in light from a distant galaxy are found to be two-thirds as great as those of the same lines in light from nearby stars. Find the recession speed of the distant galaxy.</p></div>
+<p class="original-caption">Beiser 習題 1-12 · p.49</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>遙遠星系光中的譜線頻率，只有鄰近恆星同一條譜線頻率的 $\tfrac23$。求星系的遠離速率。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：頻率比 $\nu/\nu_0=\tfrac23$，$\nu_0$ 用鄰近恆星（幾乎不動）的頻率代表；星系遠離（$\nu\lt\nu_0$）；$c=3.00\times10^8\ \text{m/s}$；$\beta=v/c$。</p>
+<p><strong>① 寫出比值並平方：</strong> 題目只給頻率比值，遠離的公式 (1.6) 正好可以寫成比值形式，代入後平方去根號就得到 $\beta$ 的一次方程。</p>
+<p class="fnote"><b>公式（相對論縱向都卜勒效應，遠離）：</b>$\nu=\nu_0\sqrt{\dfrac{1-\beta}{1+\beta}}$，其中 $\nu_0$ 為光源發出的頻率、$\nu$ 為觀察者收到的頻率、$\beta=v/c$；本題 $\nu$ 為星系譜線、$\nu_0$ 為鄰近恆星同一條譜線。</p>
+<p>(1.6) 兩邊除以 $\nu_0$：</p>
+<div class="math-block">$$\frac{\nu}{\nu_0}=\sqrt{\frac{1-\beta}{1+\beta}}$$</div>
+<p>代入 $\nu/\nu_0=\tfrac23$，兩邊平方：</p>
+<div class="math-block">$$\frac{1-\beta}{1+\beta}=\left(\frac23\right)^2=\frac49$$</div>
+<p><strong>② 交叉相乘解一次方程：</strong></p>
+<div class="math-block">$$\begin{aligned}9(1-\beta)=4(1+\beta)\ &amp;\Longrightarrow\ 9-9\beta=4+4\beta\\&amp;\Longrightarrow\ 5=13\beta\ \Longrightarrow\ \beta=\frac5{13}=0.385\end{aligned}$$</div>
+<p><strong>③ 換成 m/s：</strong> 代入上一步的 $\beta=\tfrac5{13}$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$v=\beta c=\frac{5}{13}\times(3.00\times10^8\ \text{m/s})=1.15\times10^{8}\ \text{m/s}$$</div>
+<div class="math-block">$$\boxed{v=\tfrac{5}{13}c=0.385c=1.15\times10^{8}\ \text{m/s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-13">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-13 · p.50</span></div>
+    <h4>多快才分得出相對論和古典都卜勒</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-13">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-13"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A spacecraft receding from the earth emits radio waves at a constant frequency of 10<sup>9</sup> Hz. If the receiver on earth can measure frequencies to the nearest hertz, at what spacecraft speed can the difference between the relativistic and classical doppler effects be detected? For the classical effect, assume the earth is stationary.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>遠離地球的太空船以固定頻率 $10^9\ \text{Hz}$ 發射無線電波。若地球上的接收器能把頻率量到 $1\ \text{Hz}$ 的精度，太空船速率多大時，才能測出相對論與古典都卜勒效應的差別？古典效應請假設地球靜止。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：發射頻率 $\nu_0=10^9\ \text{Hz}$；太空船遠離地球；可分辨的最小頻率差 $1\ \text{Hz}$；古典公式假設地球（觀察者）靜止、波源以 $v$ 遠離；$c=3.00\times10^8\ \text{m/s}$；$\beta=v/c$。</p>
+<p><strong>① 兩個公式的差：</strong> 要比較相對論和古典兩個預測，所以兩式都寫出來相減，令差 $=1\ \text{Hz}$。</p>
+<p class="fnote"><b>公式（古典都卜勒效應 (1.4)）：</b>$\nu=\nu_0\dfrac{1+v_{\text{觀察者}}/c}{1-V/c}$，其中 $v_{\text{觀察者}}$ 為觀察者速率、$V$ 為波源速率（接近取正、遠離取負）；本題 $v_{\text{觀察者}}=0$、$V=-v$。</p>
+<div class="math-block">$$\nu_{\text{cl}}=\nu_0\frac{1+0}{1-(-v)/c}=\frac{\nu_0}{1+\beta}$$</div>
+<p class="fnote"><b>公式（相對論縱向都卜勒效應，遠離 (1.6)）：</b>$\nu=\nu_0\sqrt{\dfrac{1-\beta}{1+\beta}}$，其中 $\nu_0$ 為發射頻率、$\nu$ 為收到的頻率、$\beta=v/c$。</p>
+<p>根號上下同乘 $\sqrt{1+\beta}$，寫成和古典同分母：</p>
+<div class="math-block">$$\nu=\nu_0\sqrt{\frac{1-\beta}{1+\beta}}=\nu_0\frac{\sqrt{(1-\beta)(1+\beta)}}{1+\beta}=\nu_0\frac{\sqrt{1-\beta^2}}{1+\beta}$$</div>
+<p>相減，提出公因式：</p>
+<div class="math-block">$$\begin{aligned}\nu_{\text{cl}}-\nu&amp;=\frac{\nu_0}{1+\beta}-\nu_0\frac{\sqrt{1-\beta^2}}{1+\beta}\\&amp;=\frac{\nu_0}{1+\beta}\left(1-\sqrt{1-\beta^2}\right)\end{aligned}$$</div>
+<p><strong>② 二項式近似（$\beta\ll1$）：</strong> 兩式的一階項相同，差別只在 $\beta^2$ 階，用二項式展開只留最低階的差。</p>
+<p class="fnote"><b>公式（二項式近似）：</b>$|x|\ll1$ 時 $(1+x)^n\approx1+nx$，其中 $x$ 為小量、$n$ 為指數；本題 $\sqrt{1-\beta^2}$ 取 $x=-\beta^2$、$n=\tfrac12$，$\dfrac1{1+\beta}$ 取 $x=\beta$、$n=-1$。</p>
+<p>$\sqrt{1-\beta^2}\approx1-\tfrac12\beta^2$，所以括號 $\approx\tfrac12\beta^2$；前面的 $\dfrac{1}{1+\beta}\approx1-\beta$，乘上 $\beta^2$ 後修正是 $\beta^3$ 階，丟掉：</p>
+<div class="math-block">$$1-\sqrt{1-\beta^2}\approx\frac{\beta^2}{2},\qquad \frac{1}{1+\beta}\approx1\quad\Longrightarrow\quad \nu_{\text{cl}}-\nu\approx\frac{\nu_0\beta^2}{2}$$</div>
+<p><strong>③ 令差 $=1\ \text{Hz}$ 解 $\beta$：</strong></p>
+<div class="math-block">$$\frac{\nu_0\beta^2}{2}=1\ \text{Hz}\quad\Longrightarrow\quad\beta^2=\frac{2(1\ \text{Hz})}{\nu_0}$$</div>
+<p>代入 $\nu_0=10^9\ \text{Hz}$：</p>
+<div class="math-block">$$\beta^2=\frac{2(1\ \text{Hz})}{10^9\ \text{Hz}}=2\times10^{-9},\qquad \beta=\sqrt{2\times10^{-9}}=4.47\times10^{-5}$$</div>
+<p><strong>④ 換成 m/s：</strong> 代入上一步的 $\beta=4.47\times10^{-5}$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$v=\beta c=(4.47\times10^{-5})(3.00\times10^8\ \text{m/s})=1.34\times10^4\ \text{m/s}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}v\approx1.34\times10^4\ \text{m/s}\text{（約 }13\ \text{km/s）}\\ \text{以上就測得出來}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-14">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-14 · p.50</span></div>
+    <h4>警察雷達測速</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-14">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-14"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A car moving at 150 km/h (93 mi/h) is approaching a stationary police car whose radar speed detector operates at a frequency of 15 GHz. What frequency change is found by the speed detector?</p></div>
+<p class="original-caption">Beiser 習題 1-14 · p.50</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一輛車以 $150\ \text{km/h}$ 接近靜止的警車，警車雷達的頻率是 $15\ \text{GHz}$。測速器量到的頻率變化是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：車速 $v=150\ \text{km/h}$，接近靜止的警車；雷達頻率 $\nu_0=15\ \text{GHz}=1.5\times10^{10}\ \text{Hz}$；雷達波打到車再反射回警車；$c=3.00\times10^8\ \text{m/s}$；$\beta=v/c$。</p>
+<p><strong>① 兩次都卜勒：</strong> 雷達波要打到車、反射回來才被收到：車先當「接近的觀察者」收到 $\nu_1$，車上的反射面再當「接近的光源」把 $\nu_1$ 發回警車，兩次都用接近的公式 (1.7)。</p>
+<p class="fnote"><b>公式（相對論縱向都卜勒效應，接近）：</b>$\nu=\nu_0\sqrt{\dfrac{1+\beta}{1-\beta}}$，其中 $\nu_0$ 為發出的頻率、$\nu$ 為收到的頻率、$\beta=v/c$ 為兩者相對接近的速率比；本題第一次 $\nu_0\to\nu_1$、第二次 $\nu_1\to\nu_2$。</p>
+<p>第一次（車收到）：$\nu_1=\nu_0\sqrt{\dfrac{1+\beta}{1-\beta}}$。第二次（車發回、警車收到）同一個因子再乘一次，根號相乘就去掉了：</p>
+<div class="math-block">$$\nu_2=\nu_1\sqrt{\frac{1+\beta}{1-\beta}}=\nu_0\,\frac{1+\beta}{1-\beta}$$</div>
+<p><strong>② 二項式近似：</strong> $\beta\sim10^{-7}$ 極小，$\Delta\nu$ 是兩個幾乎相同的大數相減，先化成近似式再代數字。</p>
+<p class="fnote"><b>公式（二項式近似）：</b>$|x|\ll1$ 時 $(1+x)^n\approx1+nx$，其中 $x$ 為小量、$n$ 為指數；本題 $\dfrac1{1-\beta}$ 取 $x=-\beta$、$n=-1$。</p>
+<p>$\dfrac{1}{1-\beta}\approx1+\beta$，再展開乘積、丟掉 $\beta^2$：</p>
+<div class="math-block">$$\nu_2\approx\nu_0(1+\beta)(1+\beta)=\nu_0(1+2\beta+\beta^2)\approx\nu_0(1+2\beta)$$</div>
+<div class="math-block">$$\Delta\nu=\nu_2-\nu_0\approx2\beta\nu_0$$</div>
+<p><strong>③ 代入數值：</strong> 代入 $v=150\ \text{km/h}$，換成 m/s 再除以 $c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$v=\frac{150\ \text{km/h}}{3.6}=41.7\ \text{m/s},\qquad \beta=\frac{41.7\ \text{m/s}}{3.00\times10^8\ \text{m/s}}=1.39\times10^{-7}$$</div>
+<p>代入 $\nu_0=15\times10^9\ \text{Hz}$：</p>
+<div class="math-block">$$\Delta\nu=2\beta\nu_0=2(1.39\times10^{-7})(15\times10^{9}\ \text{Hz})=4.2\times10^{3}\ \text{Hz}$$</div>
+<div class="math-block">$$\boxed{\Delta\nu\approx4.2\ \text{kHz}\text{（頻率升高）}}$$</div>
+<p>若只算單程會少一半，是 $2.1\ \text{kHz}$。</p>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-15">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-15 · p.50</span></div>
+    <h4>任意角度的都卜勒公式</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-15">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>若光源運動方向和「光源到觀察者的方向」夾角為 $\theta$，觀察到的頻率為</p>
+      $$\nu=\nu_0\,\frac{\sqrt{1-v^2/c^2}}{1-(v/c)\cos\theta}$$
+      <p>證明它包含 (1.5)–(1.7) 三個特例。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\theta$ 為光源速度和「光源→觀察者」方向的夾角；$\beta=v/c$；三個特例：(1.5) 橫向、(1.6) 遠離、(1.7) 接近，分別對應 $\theta=\pi/2$、$\theta=\pi$、$\theta=0$。</p>
+<p><strong>① $\theta=0$：光源朝觀察者。</strong> 三個特例只差在光源怎麼相對觀察者運動，一般公式裡描述方向的只有 $\cos\theta$，所以把每個特例翻成一個角度代進去；分子 $\sqrt{1-\beta^2}$ 拆成 $\sqrt{(1-\beta)(1+\beta)}$ 和分母約分最快。</p>
+<p>$\cos0=1$，分母是 $1-\beta$。分母寫成 $\sqrt{1-\beta}\sqrt{1-\beta}$，約掉一個 $\sqrt{1-\beta}$：</p>
+<div class="math-block">$$\begin{aligned}\nu&amp;=\nu_0\frac{\sqrt{(1-\beta)(1+\beta)}}{1-\beta}=\nu_0\frac{\sqrt{1-\beta}\,\sqrt{1+\beta}}{\sqrt{1-\beta}\,\sqrt{1-\beta}}\\&amp;=\nu_0\sqrt{\frac{1+\beta}{1-\beta}}\quad(1.7)\end{aligned}$$</div>
+<p><strong>② $\theta=\pi$：光源背離觀察者。</strong> $\cos\pi=-1$，分母是 $1-\beta(-1)=1+\beta$，同樣約掉一個 $\sqrt{1+\beta}$：</p>
+<div class="math-block">$$\begin{aligned}\nu&amp;=\nu_0\frac{\sqrt{(1-\beta)(1+\beta)}}{1+\beta}=\nu_0\frac{\sqrt{1-\beta}\,\sqrt{1+\beta}}{\sqrt{1+\beta}\,\sqrt{1+\beta}}\\&amp;=\nu_0\sqrt{\frac{1-\beta}{1+\beta}}\quad(1.6)\end{aligned}$$</div>
+<p><strong>③ $\theta=\pi/2$：橫向。</strong> $\cos\tfrac\pi2=0$，分母變成 1，只剩分子的時間膨脹因子：</p>
+<div class="math-block">$$\nu=\nu_0\frac{\sqrt{1-\beta^2}}{1-0}=\nu_0\sqrt{1-\beta^2}\quad(1.5)$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{三個特例都由同一公式得到，}\\ \text{故 (1.5)–(1.7) 是它的特例}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-16">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-16 · p.50</span></div>
+    <h4>低速時聲音和光的公式都變成 $\nu\approx\nu_0(1\pm v/c)$</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-16">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 證明 $v\ll c$ 時，觀察者接近波源、或波源接近觀察者，光和聲音的都卜勒公式都化成 $\nu\approx\nu_0(1+v/c)$，即 $\Delta\nu/\nu\approx v/c$。［提示：$x\ll1$ 時 $\dfrac1{1-x}\approx1+x$］(b) 互相遠離時化成什麼？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$x=v/c\ll1$（聲音公式裡 $c$ 是聲速，光的公式裡是光速）；聲音 (1.4) 中 $v$ 為觀察者朝聲源的速率、$V$ 為聲源朝觀察者的速率。</p>
+<h4>(a) 接近時的三種情況</h4>
+<p><strong>① 聲音：觀察者接近、聲源接近：</strong> $v\ll c$，每個公式都展開成 $v/c$ 的冪級數，只留一次項；三種接近情況分別化簡後比較。</p>
+<p class="fnote"><b>公式（聲音的都卜勒效應 (1.4)）：</b>$\nu=\nu_0\dfrac{1+v/c}{1-V/c}$，其中 $\nu_0$ 為聲源頻率、$\nu$ 為觀察者收到的頻率、$c$ 為聲速；本題分別取 $V=0$（觀察者以 $v$ 接近）與觀察者速率 $0$、$V=v$（聲源以 $v$ 接近）。</p>
+<p>觀察者以 $v$ 接近、聲源不動（$V=0$）：$\nu=\nu_0(1+v/c)$，本來就是這個形式。</p>
+<p>聲源以 $v$ 接近、觀察者不動：$\nu=\dfrac{\nu_0}{1-v/c}$，用提示 $\dfrac1{1-x}\approx1+x$，取 $x=v/c$：</p>
+<div class="math-block">$$\nu=\frac{\nu_0}{1-v/c}\approx\nu_0\left(1+\frac vc\right)$$</div>
+<p><strong>② 光：</strong> 把根號拆成兩個冪次，各用二項式展開。</p>
+<p class="fnote"><b>公式（光的都卜勒效應，接近 (1.7)）：</b>$\nu=\nu_0\sqrt{\dfrac{1+v/c}{1-v/c}}$，其中 $\nu_0$ 為光源頻率、$v$ 為光源與觀察者的相對接近速率、$c$ 為光速。</p>
+<p class="fnote"><b>公式（二項式近似）：</b>$x\ll1$ 時 $(1+x)^n\approx1+nx$，其中 $n$ 為任意實數次方；本題 $(1+x)^{1/2}\approx1+\tfrac x2$、$(1-x)^{-1/2}\approx1+\tfrac x2$。</p>
+<div class="math-block">$$\begin{aligned}\nu&amp;=\nu_0\left(1+\frac vc\right)^{1/2}\left(1-\frac vc\right)^{-1/2}\\&amp;\approx\nu_0\left(1+\frac{v}{2c}\right)\left(1+\frac{v}{2c}\right)\end{aligned}$$</div>
+<p>乘開得 $1+\dfrac vc+\dfrac{v^2}{4c^2}$，丟掉二次項：</p>
+<div class="math-block">$$\nu\approx\nu_0\left(1+\frac vc\right)$$</div>
+<p><strong>③ 相對頻率變化：</strong> 三種情況一次項都相同，分母用 $\nu$ 或 $\nu_0$ 只差二次項：</p>
+<div class="math-block">$$\frac{\Delta\nu}{\nu}\approx\frac{\nu-\nu_0}{\nu_0}=\frac vc$$</div>
+<div class="math-block">$$\boxed{\nu\approx\nu_0\left(1+\frac vc\right),\quad \frac{\Delta\nu}{\nu}\approx\frac vc}$$</div>
+<h4>(b) 互相遠離</h4>
+<p><strong>① 把 $v$ 換成 $-v$：</strong> 遠離只是速度方向反過來，不必重算。</p>
+<p>聲音觀察者遠離：$\nu=\nu_0(1-v/c)$；聲源遠離：$\nu=\dfrac{\nu_0}{1+v/c}\approx\nu_0(1-v/c)$；光（遠離 (1.6)）：$\nu\approx\nu_0\left(1-\tfrac{v}{2c}\right)\left(1-\tfrac{v}{2c}\right)\approx\nu_0(1-v/c)$。</p>
+<div class="math-block">$$\boxed{\nu\approx\nu_0\left(1-\frac vc\right),\quad \frac{\Delta\nu}{\nu}\approx-\frac vc}$$</div>
+<p>低速時聲音與光、誰在動都沒有差別，差別只在 $(v/c)^2$ 項。</p>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-03-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>雷射打在遠離的鏡子上：回來的頻率</h4>
+    <button type="button" class="exam-btn" data-exam="sf-03-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>地面以頻率 $\nu_0$ 的雷射照射一艘以速率 $v$ 直線遠離的太空船，船尾的鏡子把光原路反射回來。(a) 推導地面收到的反射光頻率 $\nu''$。(b) 若量到 $\nu''=0.810\,\nu_0$，求 $v/c$。(c) 若誤用低速公式 $\Delta\nu/\nu_0\approx2v/c$，會得到多少？誤差多大？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：地面雷射頻率 $\nu_0$；太空船以 $v$ 沿光線方向遠離，$\beta=v/c$；鏡子把光原路反射回地面，地面收到 $\nu''$。</p>
+<h4>(a) 反射光頻率</h4>
+<p><strong>① 第一段：鏡子是遠離的觀察者：</strong> 光先到鏡子、再回地面，中間換了「誰是光源、誰是觀察者」，所以分兩段；光的都卜勒只看相對速度，兩段都是以 $v$ 遠離。</p>
+<p class="fnote"><b>公式（光的都卜勒效應，遠離 (1.6)）：</b>$\nu=\nu_0\sqrt{\dfrac{1-\beta}{1+\beta}}$，其中 $\nu_0$ 為光源座標系的頻率、$\nu$ 為觀察者收到的頻率、$\beta=v/c$ 為相對遠離速率；本題兩段都用這個因子。</p>
+<div class="math-block">$$\nu'=\nu_0\sqrt{\frac{1-\beta}{1+\beta}}$$</div>
+<p><strong>② 第二段：鏡子是遠離的光源：</strong> 鏡子以 $\nu'$ 反射，地面收到同一個因子再乘一次，兩個根號相乘去掉根號：</p>
+<div class="math-block">$$\begin{aligned}\nu''&amp;=\nu'\sqrt{\frac{1-\beta}{1+\beta}}\\&amp;=\nu_0\sqrt{\frac{1-\beta}{1+\beta}}\sqrt{\frac{1-\beta}{1+\beta}}\\&amp;=\nu_0\,\frac{1-\beta}{1+\beta}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\nu''=\nu_0\,\frac{1-\beta}{1+\beta}}$$</div>
+<h4>(b) 由 $\nu''=0.810\,\nu_0$ 求 $v/c$</h4>
+<p><strong>① 反解 $\beta$：</strong> 設 $r=\nu''/\nu_0$，交叉相乘、把 $\beta$ 移到同一邊：</p>
+<div class="math-block">$$\begin{aligned}\frac{1-\beta}{1+\beta}=r\ &amp;\Longrightarrow\ 1-\beta=r+r\beta\\&amp;\Longrightarrow\ 1-r=\beta(1+r)\\&amp;\Longrightarrow\ \beta=\frac{1-r}{1+r}\end{aligned}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $r=0.810$：</p>
+<div class="math-block">$$\beta=\frac{1-0.810}{1+0.810}=\frac{0.190}{1.810}=0.105$$</div>
+<div class="math-block">$$\boxed{v=0.105c}$$</div>
+<h4>(c) 誤用低速公式</h4>
+<p><strong>① 展開到一次項：</strong> 把正確式用 $\dfrac{1}{1+\beta}\approx1-\beta$ 展開：$\dfrac{1-\beta}{1+\beta}\approx(1-\beta)(1-\beta)\approx1-2\beta$，所以頻率的相對減少量</p>
+<div class="math-block">$$\frac{\nu_0-\nu''}{\nu_0}\approx2\beta\quad\Longrightarrow\quad\beta\approx\frac12\cdot\frac{\nu_0-\nu''}{\nu_0}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $\dfrac{\nu_0-\nu''}{\nu_0}=1-0.810=0.190$：</p>
+<div class="math-block">$$\beta\approx\frac{0.190}{2}=0.095$$</div>
+<p><strong>③ 誤差：</strong> 和 (b) 的正確值比：</p>
+<div class="math-block">$$\frac{0.105-0.095}{0.105}=9.5\%\approx10\%$$</div>
+<p>$\beta=0.1$ 時被丟掉的二次項 $2\beta^2$ 已經是一次項 $2\beta$ 的 $10\%$，所以近似不夠準。</p>
+<div class="math-block">$$\boxed{\text{近似得 }0.095c\text{，低估約 }10\%}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-03-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>前後兩條譜線的平均：Ives–Stilwell 實驗</h4>
+    <button type="button" class="exam-btn" data-exam="sf-03-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>氫離子束以 $\beta=0.0050$ 運動，發出靜止波長 $\lambda_0=486.1\ \text{nm}$ 的譜線。在束的正前方看到波長 $\lambda_f$，正後方（用鏡子反射）看到 $\lambda_b$。(a) 用相對論公式求 $\lambda_f$、$\lambda_b$。(b) 證明平均值 $\bar\lambda=\tfrac12(\lambda_f+\lambda_b)=\gamma\lambda_0$，並求 $\bar\lambda-\lambda_0$。(c) 古典「光源在以太中運動」的公式 $\lambda=\lambda_0(1\mp\beta)$ 預測的平均位移是多少？這個實驗量的是什麼？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：離子束 $\beta=0.0050$，靜止波長 $\lambda_0=486.1\ \text{nm}$；正前方（光源接近）看到 $\lambda_f$，正後方（光源遠離，鏡子只改方向不改波長）看到 $\lambda_b$。</p>
+<h4>(a) 前、後的波長</h4>
+<p><strong>① 前、後的根號因子：</strong> 正前方用波長形式的接近公式（波長變短），正後方用遠離公式（根號上下對調）。</p>
+<p class="fnote"><b>公式（光的都卜勒效應，波長形式）：</b>接近 $\lambda=\lambda_0\sqrt{\dfrac{1-\beta}{1+\beta}}$、遠離 $\lambda=\lambda_0\sqrt{\dfrac{1+\beta}{1-\beta}}$，其中 $\lambda_0$ 為光源座標系的波長、$\beta=v/c$ 為光源的相對速率。</p>
+<p>代入 $\beta=0.0050$（保留六位數，因為 (b) 要看的差只有 $10^{-5}$ 的比例）：</p>
+<div class="math-block">$$\begin{aligned}\sqrt{\frac{1-\beta}{1+\beta}}&amp;=\sqrt{\frac{0.9950}{1.0050}}=0.995012\\ \sqrt{\frac{1+\beta}{1-\beta}}&amp;=\sqrt{\frac{1.0050}{0.9950}}=1.005013\end{aligned}$$</div>
+<p><strong>② 前、後的波長：</strong> 代入 $\lambda_0=486.1\ \text{nm}$ 與上一步的根號因子：</p>
+<div class="math-block">$$\begin{aligned}\lambda_f&amp;=(486.1\ \text{nm})(0.995012)=483.68\ \text{nm}\\ \lambda_b&amp;=(486.1\ \text{nm})(1.005013)=488.54\ \text{nm}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\lambda_f=483.68\ \text{nm},\quad \lambda_b=488.54\ \text{nm}}$$</div>
+<h4>(b) 證明 $\bar\lambda=\gamma\lambda_0$ 並求平均位移</h4>
+<p><strong>① 兩個根號相加：</strong> 一階位移 $\pm\beta\lambda_0$ 前後大小相同、方向相反，平均時抵消，只剩來自時間膨脹的 $\beta^2$ 階。通分，公分母是 $\sqrt{(1+\beta)(1-\beta)}$：</p>
+<div class="math-block">$$\begin{aligned}\sqrt{\frac{1-\beta}{1+\beta}}+\sqrt{\frac{1+\beta}{1-\beta}}&amp;=\frac{(1-\beta)+(1+\beta)}{\sqrt{(1+\beta)(1-\beta)}}\\&amp;=\frac{2}{\sqrt{1-\beta^2}}\end{aligned}$$</div>
+<p><strong>② 乘上 $\lambda_0/2$：</strong></p>
+<p class="fnote"><b>公式（勞侖茲因子）：</b>$\gamma=\dfrac{1}{\sqrt{1-\beta^2}}$，其中 $\beta=v/c$ 為光源的速率。</p>
+<div class="math-block">$$\begin{aligned}\bar\lambda=\frac{\lambda_f+\lambda_b}{2}&amp;=\frac{\lambda_0}{2}\cdot\frac{2}{\sqrt{1-\beta^2}}\\&amp;=\frac{\lambda_0}{\sqrt{1-\beta^2}}=\gamma\lambda_0\end{aligned}$$</div>
+<p><strong>③ 平均位移的數值：</strong> $\bar\lambda-\lambda_0=(\gamma-1)\lambda_0$，$\beta$ 很小，用 $\gamma-1\approx\tfrac12\beta^2$：</p>
+<div class="math-block">$$\bar\lambda-\lambda_0=(\gamma-1)\lambda_0\approx\frac{\beta^2}{2}\lambda_0$$</div>
+<p>代入 $\beta=0.0050$、$\lambda_0=486.1\ \text{nm}$：</p>
+<div class="math-block">$$\begin{aligned}\bar\lambda-\lambda_0&amp;\approx\frac{(0.0050)^2}{2}(486.1\ \text{nm})\\&amp;=(1.25\times10^{-5})(486.1\ \text{nm})\\&amp;=6.1\times10^{-3}\ \text{nm}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\bar\lambda=\gamma\lambda_0\\ \text{平均往紅端移 }0.0061\ \text{nm}\end{gathered}}$$</div>
+<h4>(c) 古典預測</h4>
+<p><strong>① 古典公式取平均：</strong> 古典公式沒有時間膨脹，前方 $\lambda_0(1-\beta)$、後方 $\lambda_0(1+\beta)$，平均：</p>
+<div class="math-block">$$\frac12\left[\lambda_0(1-\beta)+\lambda_0(1+\beta)\right]=\lambda_0$$</div>
+<p>平均位移為零，所以量到 $\bar\lambda-\lambda_0\neq0$ 就是直接量到運動光源的時間膨脹。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{古典平均位移為 }0\\ \text{實驗量的是時間膨脹因子 }\gamma\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>聲音看誰在動（有介質）；光只看相對速度，接近 $\nu=\nu_0\sqrt{\frac{1+\beta}{1-\beta}}$、遠離 $\beta$ 變號。</li>
+    <li>橫向 $\nu=\nu_0\sqrt{1-\beta^2}$ 是純時間膨脹；波長公式與頻率公式根號內相反。</li>
+    <li>反解：$\beta=\dfrac{\nu^2-\nu_0^2}{\nu^2+\nu_0^2}$；遠方星系紅移 ⟹ 宇宙膨脹。</li>
+  </ol>
+</div>

@@ -1,0 +1,284 @@
+<h2>六、考前衝刺 <span class="pg">板書 9/16 全部</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>110 上～114 上五次上學期期中考，第 1、2 題幾乎都是本章：正合 3 次、線性 2 次、可分離 2 次（其中一次是 $v^2$ 阻力落體）、非正合 1 次；配分 5～25 分，幾乎都附初始條件。題目不會說「用哪個方法」，第一步一定是<strong>判斷型</strong>：看到 $M\,dx+N\,dy$ 先算 $M_y$、$N_x$；看到 $y'$ 先試分離、再看是不是線性。作業第 4 題就是 110 上期中原題，作業五題請當考古題練。</p>
+</div>
+
+<h3 id="am1x-formulas">6.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>判斷順序</h4>
+    <ul>
+      <li>能寫成 $y'=M(x)N(y)$ → 可分離</li>
+      <li>$y,y'$ 一次方、係數只含 $x$ → 線性（先除 $y'$ 的係數）</li>
+      <li>$M\,dx+N\,dy$：$M_y=N_x$ → 正合；否則看 $\Delta/N$、$\Delta/M$</li>
+      <li>對 $y$ 不線性但對 $x$ 線性 → 改解 $x(y)$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>可分離</h4>
+    <ul>
+      <li>$\displaystyle\int\frac{dy}{N(y)}=\int M(x)\,dx+C$</li>
+      <li>$\ln|u|=g+C\Rightarrow u=Ke^{g}$（常數乘在外）</li>
+      <li>$N(y_0)=0$ 的 $y\equiv y_0$ 會被除掉</li>
+      <li>$\displaystyle\int\frac{dy}{a^2-y^2}=\frac1{2a}\ln\left|\frac{a+y}{a-y}\right|$，$\displaystyle\int\frac{dy}{a^2+y^2}=\frac1a\tan^{-1}\frac ya$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>線性 $y'+p\,y=q$</h4>
+    <ul>
+      <li>$F=e^{\int p\,dx}$，$(Fy)'=Fq$</li>
+      <li>$y=\dfrac1F\left[\displaystyle\int Fq\,dx+C\right]$</li>
+      <li>$\displaystyle\int e^{ax}\sin bx\,dx=\frac{e^{ax}(a\sin bx-b\cos bx)}{a^2+b^2}$</li>
+      <li>$\displaystyle\int e^{ax}\cos bx\,dx=\frac{e^{ax}(a\cos bx+b\sin bx)}{a^2+b^2}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>正合 $M\,dx+N\,dy=0$</h4>
+    <ul>
+      <li>條件 $\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$</li>
+      <li>$f=\displaystyle\int M\,dx+h(y)$，$f_y=N$ 定 $h$</li>
+      <li>解 $f(x,y)=C$；驗算 $df=M\,dx+N\,dy$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>積分因子（非正合）</h4>
+    <ul>
+      <li>$\Delta=M_y-N_x$</li>
+      <li>$\Delta/N$ 只含 $x$：$F=e^{\int\Delta/N\,dx}$</li>
+      <li>$\Delta/M$ 只含 $y$：$F=e^{-\int\Delta/M\,dy}$</li>
+      <li>單項式方程：試 $F=x^ay^b$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>代換</h4>
+    <ul>
+      <li>$y'=f(ax+by+c)$：$u=ax+by+c$</li>
+      <li>Bernoulli $y'+py=qy^n$：$v=y^{1-n}$，$v'+(1-n)pv=(1-n)q$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>RC 電路</h4>
+    <ul>
+      <li>$R\,q'+q/C=V(t)$，$i=q'$，$\tau=RC$</li>
+      <li>放電 $q=C\varepsilon e^{-t/RC}$；充電 $q=C\varepsilon(1-e^{-t/RC})$</li>
+      <li>交流：$q=\dfrac{CV_0\sin(\omega t-\phi)}{\sqrt{1+\omega^2R^2C^2}}+Ke^{-t/RC}$，$\tan\phi=\omega RC$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>$v^2$ 阻力</h4>
+    <ul>
+      <li>$v_t=\sqrt{mg/k}$</li>
+      <li>由靜止落下 $v=v_t\tanh\!\big(\sqrt{gk/m}\,t\big)$</li>
+      <li>上拋 $t_{\text{top}}=\dfrac{v_t}g\tan^{-1}\dfrac{v_0}{v_t}$，$h=\dfrac{v_t^2}{2g}\ln\!\Big(1+\dfrac{v_0^2}{v_t^2}\Big)$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="am1x-types">6.2 題型總表</h3>
+
+<p class="type-jump"><a href="#am1type-1">① 可分離</a><a href="#am1type-2">② 代換成可分離</a><a href="#am1type-3">③ 線性</a><a href="#am1type-4">④ 換 $x$ 當未知、Bernoulli</a><a href="#am1type-5">⑤ 正合</a><a href="#am1type-6">⑥ 積分因子 $F(x)$</a><a href="#am1type-7">⑦ 積分因子 $F(y)$</a><a href="#am1type-8">⑧ 其他積分因子</a><a href="#am1type-9">⑨ RC 電路</a><a href="#am1type-10">⑩ 阻力、混合、冷卻</a></p>
+
+<div class="drill" id="am1type-1">
+  <h4>① 可分離</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$y'$ 等於「只含 $x$」×「只含 $y$」；或右邊只含 $y$（如 $y'=9-y^2$）。分子能提出公因式時常藏著這一型。</dd>
+    <dt>做法</dt><dd>$\int dy/N(y)=\int M(x)\,dx$；部分分式積對數；合併對數、取指數；最後代初始條件。</dd>
+    <dt>常錯</dt><dd>忘記絕對值與常數的正負；取指數寫成 $e^{g}+C$；除以 $N(y)$ 丟掉平衡解，初始值剛好在那裡時找不到常數。</dd>
+    <dt>代表題</dt><dd><a href="#am1-ex-sep">板書例題</a>　<a href="#am1-hw-1">作業 1</a>　<a href="#am1-113a-m2">113 上期中 2</a>　<a href="#am1-109b-1a">109 級下 1(a)</a>　<a href="#am1-109b-1g">109 級下 1(g)</a>　<a href="#am1-self-01b">自編 1b</a>　<a href="#am1var-1">變化題 1</a>　<a href="#am1var-2">變化題 2</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am1type-2">
+  <h4>② 代換成可分離</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>右邊拆不成乘積，但 $x$、$y$ 只以 $ax+by+c$ 的組合出現。</dd>
+    <dt>做法</dt><dd>令 $u=ax+by+c$，$u'=a+by'$，得到只含 $u$ 的方程再分離；最後換回 $y$，注意 $\tan$ 之類的爆點。</dd>
+    <dt>常錯</dt><dd>$u'$ 忘了加 $a$；初始條件忘了換成 $u(x_0)$。</dd>
+    <dt>代表題</dt><dd><a href="#am1-self-01a">自編 1a</a>　<a href="#am1-109b-1d">109 級下 1(d)（齊次型 $y=vx$）</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am1type-3">
+  <h4>③ 線性</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$y$、$y'$ 都只有一次方，係數只含 $x$；題目寫成 $dy+(\ldots)dx=0$ 時除以 $dx$ 看看。</dd>
+    <dt>做法</dt><dd>先除 $y'$ 的係數化成標準式；$F=e^{\int p\,dx}$；$(Fy)'=Fq$ 積一次；$C$ 也除以 $F$；有奇異點時寫出解的區間。</dd>
+    <dt>常錯</dt><dd>沒先除 $y'$ 的係數就讀 $p$；$y=\frac1F\int Fq\,dx+C$；$e^{x}\sin x$ 的分部積分符號。</dd>
+    <dt>代表題</dt><dd><a href="#am1-ex-lin">板書例題</a>　<a href="#am1-hw-3">作業 3</a>　<a href="#am1-112a-m1">112 上期中 1</a>　<a href="#am1-114a-m1">114 上期中 1</a>　<a href="#am1-109b-1b">109 級下 1(b)</a>　<a href="#am1-108b-1c">108 級下 1(c)</a>　<a href="#am1-self-02b">自編 2b</a>　<a href="#am1var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am1type-4">
+  <h4>④ 換 $x$ 當未知函數、Bernoulli</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$y'=\dfrac{1}{(\text{對 }x\text{ 一次的式子})}$；或線性方程右邊多了 $y^n$。</dd>
+    <dt>做法</dt><dd>取倒數寫成 $\dfrac{dx}{dy}+P(y)x=Q(y)$ 解 $x(y)$；Bernoulli 令 $v=y^{1-n}$ 化成線性。</dd>
+    <dt>常錯</dt><dd>換變數後初始條件沒跟著換（$y(1)=0$ 變成 $x(0)=1$）；Bernoulli 的 $(1-n)$ 倍數漏乘。</dd>
+    <dt>代表題</dt><dd><a href="#am1-hw-2">作業 2</a>　<a href="#am1-109b-1c">109 級下 1(c)</a>　<a href="#am1-self-02a">自編 2a</a>　<a href="#am1-self-04b">自編 4b</a>　<a href="#am1var-4">變化題 4</a>　<a href="#am1var-10">變化題 10</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am1type-5">
+  <h4>⑤ 正合</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$M\,dx+N\,dy=0$（或 $Ny'+M=0$），$x$、$y$ 纏在 $e^{xy}$、$\cos xy$、$x^2e^{3y}$ 裡；$M_y=N_x$。</dd>
+    <dt>做法</dt><dd>$f=\int M\,dx+h(y)$；$f_y=N$ 得 $h'$（只含 $y$）；$f=C$；代初始點。</dd>
+    <dt>常錯</dt><dd>$M$、$N$ 對調；$h(y)$ 寫成常數；$\partial(y\cos xy)/\partial y$ 漏了乘積法則那一項。</dd>
+    <dt>代表題</dt><dd><a href="#am1-ex-exact">板書例題</a>　<a href="#am1-110a-m1">110 上期中 1／作業 4</a>　<a href="#am1-112a-m2">112 上期中 2</a>　<a href="#am1-113a-m1">113 上期中 1</a>　<a href="#am1-109b-1e">109 級下 1(e)</a>　<a href="#am1-self-03a">自編 3a</a>　<a href="#am1-self-03b">自編 3b</a>　<a href="#am1var-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am1type-6">
+  <h4>⑥ 積分因子 $F(x)$</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$M_y\ne N_x$，而且 $\Delta$ 和 $N$ 差一個只含 $x$ 的因子（$\Delta/N$ 約分後沒有 $y$）。</dd>
+    <dt>做法</dt><dd>$F=e^{\int\Delta/N\,dx}$；乘上後<strong>再檢查一次正合</strong>；照正合的步驟求 $f$。</dd>
+    <dt>常錯</dt><dd>$\Delta$ 寫成 $N_x-M_y$（順序反了，$F$ 變倒數）；忘記乘完再驗。</dd>
+    <dt>代表題</dt><dd><a href="#am1-ex-nonexact">板書例題</a>　<a href="#am1-112a-m1">112 上期中 1（另一種看法）</a>　<a href="#am1-108b-1f">108 級下 1(f)</a>　<a href="#am1var-6">變化題 6</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am1type-7">
+  <h4>⑦ 積分因子 $F(y)$</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$\Delta/N$ 含 $y$ 不能用，但 $\Delta$ 和 $M$ 有共同因子、$\Delta/M$ 只含 $y$（111 上：$M=y^2(1+xy)$、$\Delta=3y(1+xy)$）。</dd>
+    <dt>做法</dt><dd>$F=e^{-\int\Delta/M\,dy}$（負號！）；乘上、驗正合、求 $f$。</dd>
+    <dt>常錯</dt><dd>漏負號；$\int\tan y\,dy=-\ln|\cos y|$ 的符號；乘 $y^{-3}$ 時沒注意丟掉 $y\equiv0$。</dd>
+    <dt>代表題</dt><dd><a href="#am1-hw-5">作業 5</a>　<a href="#am1-111a-m1">111 上期中 1</a>　<a href="#am1-109b-1f">109 級下 1(f)</a>　<a href="#am1var-7">變化題 7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am1type-8">
+  <h4>⑧ 其他積分因子</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>兩個比值都同時含 $x$、$y$；方程每項都是 $x^my^n$。</dd>
+    <dt>做法</dt><dd>設 $F=x^ay^b$，比較 $(FM)_y$ 與 $(FN)_x$ 同類項係數，解 $a$、$b$。</dd>
+    <dt>常錯</dt><dd>次方算錯；只比較一組係數。</dd>
+    <dt>代表題</dt><dd><a href="#am1-109b-1h">109 級下 1(h)</a>　<a href="#am1-self-04a">自編 4a</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am1type-9">
+  <h4>⑨ RC 電路</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>電阻、電容、電池或交流電源；問 $q(t)$、$i(t)$、充放電時間。</dd>
+    <dt>做法</dt><dd>迴路定則 $V(t)-q/C-iR=0$，$i=q'$；直流可分離或積分因子 $e^{t/RC}$；交流用 $\int e^{at}\sin bt$ 公式。</dd>
+    <dt>常錯</dt><dd>常數用 $C$ 和電容撞名；$i$ 的負號意義；交流解忘了暫態 $Ke^{-t/RC}$。</dd>
+    <dt>代表題</dt><dd><a href="#am1-ex-rc">板書 RC 放電</a>　<a href="#am1-ex-ac">板書交流 RC</a>　<a href="#am1-108b-3">108 級下 3</a>　<a href="#am1-109a-e4">109 級上 Euler 4</a>　<a href="#am1var-9">變化題 9</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am1type-10">
+  <h4>⑩ 阻力、混合、冷卻</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「resistance proportional to …」、「從靜止」、鹽水流入流出、溫度趨近環境。</dd>
+    <dt>做法</dt><dd>先寫物理定律（$m\dot v=\sum F$、變化率＝進－出、$T'=-k(T-T_s)$），題目沒命名的比例常數自己設；再判斷型。</dd>
+    <dt>常錯</dt><dd>$v^2$ 阻力上下用同一式；混合槽把體積當常數；忘了「from rest」就是 $v(0)=0$。</dd>
+    <dt>代表題</dt><dd><a href="#am1-110a-m2">110 上期中 2／109 級下 2</a>　<a href="#am1-108b-2">108 級下 2（冷卻）</a>　<a href="#am1-self-05a">自編 5a</a>　<a href="#am1-self-05b">自編 5b</a>　<a href="#am1var-8">變化題 8</a></dd>
+  </dl>
+</div>
+
+<h3 id="am1x-var">6.3 變化題</h3>
+
+<div class="drill-q" id="am1var-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#am1-hw-1">作業 1</a></p>
+  <p>解 $y'=\dfrac{y\cos x}{1+2y^2}$，$y(0)=1$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>右邊是 $\cos x\cdot\dfrac{y}{1+2y^2}$，可分離：</p>
+    $$\int\frac{1+2y^2}{y}\,dy=\int\cos x\,dx\ \Longrightarrow\ \ln|y|+y^2=\sin x+C$$
+    <p>代 $(0,1)$：$0+1=0+C$，$C=1$。答：$\ln y+y^2=\sin x+1$。驗算：隱微分 $\left(\frac1y+2y\right)y'=\cos x$ ⟹ $y'=\dfrac{y\cos x}{1+2y^2}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am1var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#am1-113a-m2">113 上期中 2</a></p>
+  <p>解 $y'=\dfrac{1+y^2}{1+x^2}$，$y(0)=1$，並寫成顯式。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\int\frac{dy}{1+y^2}=\int\frac{dx}{1+x^2}\ \Longrightarrow\ \tan^{-1}y=\tan^{-1}x+\frac\pi4$$
+    <p>（代 $(0,1)$：$\frac\pi4=0+C$。）取 $\tan$，用 $\tan(A+B)=\dfrac{\tan A+\tan B}{1-\tan A\tan B}$：$y=\dfrac{x+1}{1-x}$，$x\lt1$。驗算：$y'=\dfrac{2}{(1-x)^2}$，$\dfrac{1+y^2}{1+x^2}=\dfrac{(1-x)^2+(1+x)^2}{(1-x)^2(1+x^2)}=\dfrac{2}{(1-x)^2}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am1var-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#am1-hw-3">作業 3</a></p>
+  <p>解 $xy'-2y=x^3\cos x$，$y(\pi/2)=0$（$x>0$）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>除以 $x$：$y'-\dfrac2xy=x^2\cos x$，$F=e^{-2\ln x}=x^{-2}$：</p>
+    $$\left(\frac{y}{x^2}\right)'=\cos x\ \Longrightarrow\ \frac{y}{x^2}=\sin x+C$$
+    <p>代 $x=\frac\pi2$、$y=0$：$0=1+C$，$C=-1$。答：$y=x^2(\sin x-1)$。驗算：$y'=2x(\sin x-1)+x^2\cos x$，$xy'-2y=x^3\cos x$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am1var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#am1-hw-2">作業 2</a></p>
+  <p>解 $y'=\dfrac{y}{2x+y^3e^y}$（通解）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>取倒數：$\dfrac{dx}{dy}=\dfrac{2x}{y}+y^2e^y$，對 $x$ 線性：$x'-\dfrac2yx=y^2e^y$，$F=y^{-2}$：</p>
+    $$\left(\frac{x}{y^2}\right)'=e^y\ \Longrightarrow\ x=y^2\left(e^y+C\right)$$
+    <p>驗算：$\dfrac{dx}{dy}=2y(e^y+C)+y^2e^y=\dfrac{2x}{y}+y^2e^y$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am1var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#am1-112a-m2">112 上期中 2</a></p>
+  <p>解 $(x+y)^2\,dx+(2xy+x^2-1)\,dy=0$，$y(1)=1$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$M_y=2(x+y)$、$N_x=2y+2x$，正合。$f=\int(x^2+2xy+y^2)dx+h=\dfrac{x^3}3+x^2y+xy^2+h(y)$；$f_y=x^2+2xy+h'=2xy+x^2-1$ ⟹ $h=-y$。</p>
+    $$\frac{x^3}{3}+x^2y+xy^2-y=C,\qquad C=\frac13+1+1-1=\frac43$$
+    <p>驗算：$f_x=x^2+2xy+y^2=(x+y)^2$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am1var-6">
+  <p class="q-src">變化題 6 · 改自 <a href="#am1-ex-nonexact">板書非正合例題</a></p>
+  <p>解 $(x^2+y^2+x)\,dx+xy\,dy=0$（通解）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$M_y=2y$、$N_x=y$，$\Delta=y$，$\Delta/N=\dfrac{y}{xy}=\dfrac1x$ ⟹ $F=x$。乘上：$(x^3+xy^2+x^2)dx+x^2y\,dy=0$（$\partial_y=2xy=\partial_x$ ✔）。</p>
+    $$f=\frac{x^4}{4}+\frac{x^2y^2}{2}+\frac{x^3}{3}=C\quad(\text{或 }3x^4+6x^2y^2+4x^3=K)$$
+    <p>驗算：$f_y=x^2y=xN$、$f_x=x^3+xy^2+x^2=xM$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am1var-7">
+  <p class="q-src">變化題 7 · 改自 <a href="#am1-111a-m1">111 上期中 1</a></p>
+  <p>解 $2xy\,dx+(y^2-3x^2)\,dy=0$（通解）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$M_y=2x$、$N_x=-6x$，$\Delta=8x$；$\Delta/M=\dfrac{8x}{2xy}=\dfrac4y$ ⟹ $F=e^{-\int4/y\,dy}=y^{-4}$。乘上：$2xy^{-3}dx+(y^{-2}-3x^2y^{-4})dy=0$。</p>
+    $$f=x^2y^{-3}+h,\quad f_y=-3x^2y^{-4}+h'=y^{-2}-3x^2y^{-4}\Rightarrow h=-\frac1y,\qquad \frac{x^2}{y^3}-\frac1y=C\ \Longleftrightarrow\ x^2-y^2=Cy^3$$
+    <p>驗算：$f_x=\dfrac{2x}{y^3}=y^{-4}\cdot2xy$、$f_y=-\dfrac{3x^2}{y^4}+\dfrac1{y^2}=y^{-4}(y^2-3x^2)$，正好是 $F\cdot M$、$F\cdot N$ ✔。負號若漏掉會得 $F=y^4$，乘完不正合。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am1var-8">
+  <p class="q-src">變化題 8 · 改自 <a href="#am1-110a-m2">110 上期中 2</a>（同為「物理定律→可分離」）</p>
+  <p>熱咖啡 $90^\circ\text{C}$ 放在 $20^\circ\text{C}$ 的房間，牛頓冷卻 $T'=-k(T-20)$。10 分鐘後 $60^\circ\text{C}$，何時降到 $30^\circ\text{C}$？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\dfrac{dT}{T-20}=-k\,dt$ ⟹ $T=20+70e^{-kt}$。$60=20+70e^{-10k}$ ⟹ $e^{-10k}=\tfrac47$，$k=\tfrac{1}{10}\ln\tfrac74=0.0560\ \text{min}^{-1}$。</p>
+    $$30=20+70e^{-kt}\ \Longrightarrow\ t=\frac{\ln7}{k}=\frac{10\ln7}{\ln(7/4)}=34.8\ \text{min}$$
+    <p>驗算：$t=34.8$ 時 $70e^{-1.946}=70/7=10$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am1var-9">
+  <p class="q-src">變化題 9 · 改自 <a href="#am1-ex-rc">板書 RC 電路</a></p>
+  <p>$R=10\ \text{k}\Omega$、$C=100\ \mu\text{F}$、$\varepsilon=12\ \text{V}$，電容從 0 開始充電。求時間常數、最大電荷、充到 90% 的時間與一開始的電流。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\tau=RC=(10^4)(10^{-4})=1.0\ \text{s}$；$q_{\max}=C\varepsilon=1.2\times10^{-3}\ \text{C}$。$1-e^{-t/\tau}=0.9$ ⟹ $t=\tau\ln10=2.30\ \text{s}$。$i(0)=\varepsilon/R=1.2\ \text{mA}$。</p>
+    <p>驗算：$t=\tau$ 時 $1-e^{-1}=63.2\%$，90% 要更久 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am1var-10">
+  <p class="q-src">變化題 10 · 改自 <a href="#am1-self-02a">自編 2a</a></p>
+  <p>解 Bernoulli 方程 $y'+y=y^3$，$y(0)=\tfrac12$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$n=3$，$v=y^{-2}$，$v'=-2y^{-3}y'$；原式乘 $-2y^{-3}$：$v'-2v=-2$。$F=e^{-2x}$：$(e^{-2x}v)'=-2e^{-2x}$ ⟹ $v=1+Ce^{2x}$。$v(0)=4$ ⟹ $C=3$。</p>
+    $$y=\frac{1}{\sqrt{1+3e^{2x}}}$$
+    <p>（取正根，因為 $y(0)>0$。）驗算：$y(0)=\frac1{\sqrt4}=\frac12$ ✔；$x\to-\infty$ 時 $y\to1$（平衡解），$x\to\infty$ 時 $y\to0$ ✔</p>
+  </details>
+</div>

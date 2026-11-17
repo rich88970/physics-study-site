@@ -1,0 +1,1173 @@
+<article class="exam-item" data-exam-id="a3-b1" data-group="一、待定係數法的架構與基本規則（9/30 照片 1–3）" data-title="板書 Basic rule：$y''-y'-2y=4x^2$">
+  <h3>板書例題（照片 3）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-b1"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.（Basic rule）　Solve $y''-y'-2y=4x^2$，$y(0)=1$，$y'(0)=1$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$y''-y'-2y=4x^2$，$y(0)=1$、$y'(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「常係數非齊次」＋「右邊是多項式 $4x^2$」＋「兩個初始條件」⟹ 題型：<b>待定係數法（基本規則）：$y=y_c+y_p$ 再代初始條件</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>唯一解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        先解齊次部分，$a=-1$、$b=-2$。<br>
+        $\lambda^2-\lambda-2=(\lambda-2)(\lambda+1)=0$ ⟹ $\lambda=2,\ -1$ ⟹ $y_c=c_1e^{-x}+c_2e^{2x}$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊是二次多項式 ⟹ 猜 $y_p=K_0+K_1x+K_2x^2$</span>
+        <span class="syms">$y_p$：特解；$K_0,K_1,K_2$：待定係數</span>
+        微分兩次代進左邊。<br>
+        $y_p'=K_1+2K_2x$，$y_p''=2K_2$<br>
+        $2K_2-(K_1+2K_2x)-2(K_0+K_1x+K_2x^2)=4x^2$</p>
+      <p class="wq-step"><span class="memo">背：比較係數：兩邊 $x^2$、$x$、常數項的係數各自相等</span>
+        <span class="syms">$K_0,K_1,K_2$：待定係數；$4x^2$：右邊（$x^2$ 係數 4、$x$ 係數 0、常數 0）</span>
+        從最高次往下解。<br>
+        $x^2$：$-2K_2=4$ ⟹ $K_2=-2$<br>
+        $x$：$-2K_2-2K_1=0$ ⟹ $K_1=2$<br>
+        常數：$2K_2-K_1-2K_0=0$ ⟹ $-4-2-2K_0=0$ ⟹ $K_0=-3$<br>
+        $y_p=-3+2x-2x^2$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_p$，初始條件代 $x=0$</span>
+        <span class="syms">$y_c$：齊次解；$y_p$：特解；$y(0)=1$、$y'(0)=1$：題目給；$c_1,c_2$：要解的常數</span>
+        先微分再代 $x=0$。<br>
+        $y=c_1e^{-x}+c_2e^{2x}-3+2x-2x^2$，$y'=-c_1e^{-x}+2c_2e^{2x}+2-4x$<br>
+        $c_1+c_2-3=1$，$-c_1+2c_2+2=1$ ⟹ $c_1+c_2=4$、$-c_1+2c_2=-1$ ⟹ $c_2=1$、$c_1=3$<br>
+        $y=3e^{-x}+e^{2x}-3+2x-2x^2$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=3e^{-x}+e^{2x}-3+2x-2x^2$。</div>
+  <p class="small"><a href="#a3-b1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-111a-m3" data-group="一、待定係數法的架構與基本規則（9/30 照片 1–3）" data-title="111 上期中第 3 題">
+  <h3>111 上期中第 3 題（5 分）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-111a-m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2022.Nov.)</p><p>3. (5 points) Solve $y''-2y'+2y=2(x-1)$ for $y(0)=0$ and $y'(0)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''-2y'+2y=2(x-1)$，$y(0)=0$、$y'(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「常係數非齊次」＋「右邊是一次多項式 $2(x-1)$」＋「兩個初始條件」⟹ 題型：<b>待定係數法（基本規則）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>唯一解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$a\lambda^2+b\lambda+c=0$ ⟹ $\lambda=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$\lambda$：特徵根；$a$：$y''$ 的係數；$b$：$y'$ 的係數；$c$：$y$ 的係數；$b^2-4ac$：判別式</span>
+        齊次部分 $\lambda^2-2\lambda+2=0$。<br>
+        $\lambda=\dfrac{2\pm\sqrt{4-8}}2=1\pm i$ ⟹ $y_c=e^{x}(c_1\cos x+c_2\sin x)$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊是一次多項式 ⟹ 猜 $y_p=K_0+K_1x$</span>
+        <span class="syms">$y_p$：特解；$K_0,K_1$：待定係數</span>
+        $y_p'=K_1$、$y_p''=0$，代入後比較 $x$ 與常數項。<br>
+        $0-2K_1+2(K_0+K_1x)=2x-2$<br>
+        $x$：$2K_1=2$ ⟹ $K_1=1$；常數：$-2K_1+2K_0=-2$ ⟹ $K_0=0$ ⟹ $y_p=x$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_p$，初始條件代 $x=0$</span>
+        <span class="syms">$y_c$：齊次解；$y_p=x$：特解；$y(0)=0$、$y'(0)=1$：題目給；$c_1,c_2$：要解的常數</span>
+        乘積法則微分後代 $x=0$。<br>
+        $y=e^x(c_1\cos x+c_2\sin x)+x$<br>
+        $y'=e^x\left[(c_1+c_2)\cos x+(c_2-c_1)\sin x\right]+1$<br>
+        $y(0)=c_1=0$；$y'(0)=c_1+c_2+1=1$ ⟹ $c_2=0$ ⟹ $y=x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=x$。</div>
+  <p class="small"><a href="#a3-111a-m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-114a-m3" data-group="一、待定係數法的架構與基本規則（9/30 照片 1–3）" data-title="114 上期中第 3 題">
+  <h3>114 上期中第 3 題（25 分）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-114a-m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2025 Oct.)　25 points for each problem</p><p>3. Solve $y''+2y'-8y=-9\cos x-2\sin x$ with $y(0)=4$, $y'(0)=-6$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''+2y'-8y=-9\cos x-2\sin x$，$y(0)=4$、$y'(0)=-6$。</div>
+  <div class="rote">
+    <p><b>看到</b>「常係數非齊次」＋「右邊是 $\cos x$、$\sin x$」＋「兩個初始條件」⟹ 題型：<b>待定係數法（基本規則：三角函數）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>唯一解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=2$、$b=-8$。<br>
+        $\lambda^2+2\lambda-8=(\lambda+4)(\lambda-2)=0$ ⟹ $y_c=c_1e^{2x}+c_2e^{-4x}$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊有 $\cos\omega x$ 或 $\sin\omega x$ ⟹ 猜 $y_p=A\cos\omega x+B\sin\omega x$</span>
+        <span class="syms">$y_p$：特解；$A,B$：待定係數；$\omega$：右邊的角頻率（這裡 $\omega=1$）</span>
+        $y_p'=-A\sin x+B\cos x$，$y_p''=-A\cos x-B\sin x$，代入後分 $\cos$、$\sin$ 比較。<br>
+        $\cos x$：$-A+2B-8A=-9A+2B=-9$<br>
+        $\sin x$：$-B-2A-8B=-2A-9B=-2$<br>
+        ⟹ $A=1$、$B=0$，$y_p=\cos x$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_p$，初始條件代 $x=0$</span>
+        <span class="syms">$y_c$：齊次解；$y_p=\cos x$：特解；$y(0)=4$、$y'(0)=-6$：題目給；$c_1,c_2$：要解的常數</span>
+        第一式得 $c_1=3-c_2$，代入第二式。<br>
+        $y=c_1e^{2x}+c_2e^{-4x}+\cos x$，$y'=2c_1e^{2x}-4c_2e^{-4x}-\sin x$<br>
+        $c_1+c_2+1=4$，$2c_1-4c_2=-6$ ⟹ $6-6c_2=-6$ ⟹ $c_2=2$、$c_1=1$<br>
+        $y=e^{2x}+2e^{-4x}+\cos x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=e^{2x}+2e^{-4x}+\cos x$。</div>
+  <p class="small"><a href="#a3-114a-m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s01-1" data-group="一、待定係數法的架構與基本規則（9/30 照片 1–3）" data-title="自編：讓解只剩多項式">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''-y'-2y=4x^2$，初始條件改成 $y(0)=-3$、$y'(0)=\beta$。(a) 用 $\beta$ 表示 $c_1,c_2$；(b) $\beta$ 是多少時解是純多項式？(c) 分別說明 $\beta\gt2$、$\beta\lt2$、$\beta=2$ 時 $x\to+\infty$ 的行為。</div>
+  <div class="rote">
+    <p><b>看到</b>「初始條件含參數 $\beta$」＋「解是純多項式、$x\to\infty$ 的行為」⟹ 題型：<b>待定係數法後，看指數項係數何時為 0</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（各小題共用）</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=-1$、$b=-2$。<br>
+        $\lambda^2-\lambda-2=(\lambda-2)(\lambda+1)=0$ ⟹ $y_c=c_1e^{-x}+c_2e^{2x}$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊是二次多項式 ⟹ 猜 $y_p=K_0+K_1x+K_2x^2$</span>
+        <span class="syms">$y_p$：特解；$K_0,K_1,K_2$：待定係數</span>
+        代入 $2K_2-(K_1+2K_2x)-2(K_0+K_1x+K_2x^2)=4x^2$，比較係數。<br>
+        $x^2$：$-2K_2=4$ ⟹ $K_2=-2$；$x$：$-2K_2-2K_1=0$ ⟹ $K_1=2$；常數：$2K_2-K_1-2K_0=0$ ⟹ $K_0=-3$<br>
+        $y=c_1e^{-x}+c_2e^{2x}-3+2x-2x^2$，$y'=-c_1e^{-x}+2c_2e^{2x}+2-4x$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 用 $\beta$ 表示 $c_1,c_2$</h5>
+      <p class="wq-step"><span class="memo">背：初始條件代 $x=0$：$y(0)$ 給第一式、$y'(0)$ 給第二式</span>
+        <span class="syms">$y(0)=-3$：題目給；$y'(0)=\beta$：題目給的參數；$c_1,c_2$：要解的常數</span>
+        兩式相加先消 $c_1$。<br>
+        $c_1+c_2-3=-3$ ⟹ $c_1+c_2=0$；$-c_1+2c_2+2=\beta$<br>
+        相加：$3c_2=\beta-2$ ⟹ $c_2=\dfrac{\beta-2}3$、$c_1=-\dfrac{\beta-2}3$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 解是純多項式的 $\beta$</h5>
+      <p class="wq-step"><span class="memo">背：純多項式 ⟺ 指數項的係數全為 0</span>
+        <span class="syms">$c_1$：$e^{-x}$ 的係數；$c_2$：$e^{2x}$ 的係數；$\beta$：參數</span>
+        (a) 的 $c_1,c_2$ 都含因子 $\beta-2$。<br>
+        $c_1=c_2=0$ ⟺ $\beta=2$ ⟹ $y=-2x^2+2x-3$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $x\to+\infty$ 的行為</h5>
+      <p class="wq-step"><span class="memo">背：$x\to+\infty$ 時 $e^{2x}$ 比任何多項式長得快，$e^{-x}\to0$</span>
+        <span class="syms">$c_2=\dfrac{\beta-2}3$：$e^{2x}$ 的係數；$-2x^2$：多項式的最高次項</span>
+        有 $e^{2x}$ 時看 $c_2$ 的正負，沒有時看 $-2x^2$。<br>
+        $\beta\gt2$：$c_2\gt0$ ⟹ $y\to+\infty$<br>
+        $\beta\lt2$：$c_2\lt0$ ⟹ $y\to-\infty$<br>
+        $\beta=2$：只剩 $-2x^2+2x-3$ ⟹ $y\to-\infty$（二次）</p>
+    </div>
+  </div>
+  <div class="final">答：$\beta=2$。</div>
+  <p class="small"><a href="#a3-s01-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s01-2" data-group="一、待定係數法的架構與基本規則（9/30 照片 1–3）" data-title="自編：由特解反推方程">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　已知 $y_p=\cos x+3\sin x$ 是 $y''+ay'+by=10\cos x$ 的一個特解（$a,b$ 是常數）。(a) 求 $a$、$b$；(b) 解 $y(0)=0$、$y'(0)=0$ 的初始值問題。</div>
+  <div class="rote">
+    <p><b>看到</b>「已知特解」＋「求方程式的係數 $a,b$」⟹ 題型：<b>特解代回方程，比較 $\cos$、$\sin$ 係數</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 求 $a$、$b$</h5>
+      <p class="wq-step"><span class="memo">背：$y_p$ 是特解 ⟹ $y_p''+ay_p'+by_p=g(x)$，兩邊 $\cos x$、$\sin x$ 係數各自相等</span>
+        <span class="syms">$y_p=\cos x+3\sin x$：題目給的特解；$a,b$：要求的係數；$g(x)=10\cos x$：右邊</span>
+        先微分，再分 $\cos$、$\sin$ 整理。<br>
+        $y_p'=-\sin x+3\cos x$，$y_p''=-\cos x-3\sin x$<br>
+        $\cos x$：$-1+3a+b=10$；$\sin x$：$-3-a+3b=0$<br>
+        第二式 $a=3b-3$ 代入第一式：$-1+9b-9+b=10$ ⟹ $b=2$、$a=3$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 初始值問題</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a=3$：$y'$ 的係數；$b=2$：$y$ 的係數；$\lambda$：特徵根</span>
+        用 (a) 求出的 $a,b$。<br>
+        $\lambda^2+3\lambda+2=(\lambda+1)(\lambda+2)=0$ ⟹ $y_c=c_1e^{-x}+c_2e^{-2x}$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_p$，初始條件代 $x=0$</span>
+        <span class="syms">$y_c$：齊次解；$y_p=\cos x+3\sin x$：特解；$y(0)=0$、$y'(0)=0$：題目給；$c_1,c_2$：要解的常數</span>
+        $y_p(0)=1$、$y_p'(0)=3$。<br>
+        $c_1+c_2+1=0$，$-c_1-2c_2+3=0$ ⟹ $c_1+c_2=-1$、$c_1+2c_2=3$ ⟹ $c_2=4$、$c_1=-5$<br>
+        $y=-5e^{-x}+4e^{-2x}+\cos x+3\sin x$</p>
+    </div>
+  </div>
+  <div class="final">答：$a=3$、$b=2$；$y=-5e^{-x}+4e^{-2x}+\cos x+3\sin x$。</div>
+  <p class="small"><a href="#a3-s01-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-108b-1b" data-group="一、待定係數法的架構與基本規則（9/30 照片 1–3）" data-title="108 級下 ODE2 1(b)：y″+y′−2y=4 sin 2x">
+  <h3>108 級下 2nd Order ODE 1(b)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-108b-1b"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2nd Order ODE and Fourier Series</p><p>1. Solve the differential equations.</p><p>(b) Solve $y''+y'-2y=4\sin2x$ for $y(0)=-\frac45$, $y'(0)=0$.</p><p>Ans: $y=-\frac35e^{-2x}-\frac15\cos2x-\frac35\sin2x$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''+y'-2y=4\sin2x$，$y(0)=-\frac45$、$y'(0)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「常係數非齊次」＋「右邊是 $\sin2x$」＋「兩個初始條件」⟹ 題型：<b>待定係數法（基本規則：三角函數）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>唯一解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=1$、$b=-2$。<br>
+        $\lambda^2+\lambda-2=(\lambda-1)(\lambda+2)=0$ ⟹ $y_h=c_1e^{x}+c_2e^{-2x}$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊有 $\cos\omega x$ 或 $\sin\omega x$ ⟹ 猜 $y_p=K_1\cos\omega x+K_2\sin\omega x$</span>
+        <span class="syms">$y_p$：特解；$K_1,K_2$：待定係數；$\omega=2$：右邊的角頻率</span>
+        $y_p''=-4y_p$，$y_p'=-2K_1\sin2x+2K_2\cos2x$，代入分 $\cos$、$\sin$ 比較。<br>
+        $\cos2x$：$-4K_1+2K_2-2K_1=-6K_1+2K_2=0$<br>
+        $\sin2x$：$-4K_2-2K_1-2K_2=-2K_1-6K_2=4$<br>
+        第一式 $K_2=3K_1$ 代入：$-20K_1=4$ ⟹ $K_1=-\tfrac15$、$K_2=-\tfrac35$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_h+y_p$，初始條件代 $x=0$</span>
+        <span class="syms">$y_h$：齊次解；$y_p$：特解；$y(0)=-\tfrac45$、$y'(0)=0$：題目給；$c_1,c_2$：要解的常數</span>
+        $y_p(0)=K_1=-\tfrac15$，$y_p'(0)=2K_2=-\tfrac65$。<br>
+        $c_1+c_2-\tfrac15=-\tfrac45$ ⟹ $c_1+c_2=-\tfrac35$<br>
+        $c_1-2c_2-\tfrac65=0$ ⟹ $c_1-2c_2=\tfrac65$<br>
+        相減：$3c_2=-\tfrac95$ ⟹ $c_2=-\tfrac35$、$c_1=0$<br>
+        $y=-\tfrac35e^{-2x}-\tfrac15\cos2x-\tfrac35\sin2x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=-\frac35e^{-2x}-\frac15\cos2x-\frac35\sin2x$。</div>
+  <p class="small"><a href="#a3-108b-1b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-b2" data-group="二、加總規則（9/30 照片 4）" data-title="板書 Sum rule：$y''+4y'+4y=4x^2+6e^x$">
+  <h3>板書例題（照片 4）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-b2"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.　Sum Rule　Solve $y''+4y'+4y=4x^2+6e^x\equiv g_1(x)+g_2(x)$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $y''+4y'+4y=4x^2+6e^x$ 的一般解。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊是兩種不同函數相加 $4x^2+6e^x$」⟹ 題型：<b>待定係數法（加總規則）：每一塊各自猜再相加</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>一般解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=4$、$b=4$。<br>
+        $\lambda^2+4\lambda+4=(\lambda+2)^2=0$ ⟹ 重根 $-2$，$y_c=(c_1+c_2x)e^{-2x}$</p>
+      <p class="wq-step"><span class="memo">背：加總規則：$g=g_1+g_2$ ⟹ $y_p=y_{p1}+y_{p2}$，$y_{p1}$ 對 $g_1$、$y_{p2}$ 對 $g_2$ 各自求</span>
+        <span class="syms">$g_1=4x^2$：第一塊右邊；$g_2=6e^x$：第二塊右邊；$y_{p1},y_{p2}$：各自的特解</span>
+        兩塊分開算。</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊是二次多項式 ⟹ 猜 $y_{p1}=K_0+K_1x+K_2x^2$</span>
+        <span class="syms">$y_{p1}$：第一塊特解；$K_0,K_1,K_2$：待定係數</span>
+        $y_{p1}'=K_1+2K_2x$、$y_{p1}''=2K_2$，代入 $y''+4y'+4y=4x^2$ 比較係數。<br>
+        $x^2$：$4K_2=4$ ⟹ $K_2=1$<br>
+        $x$：$8K_2+4K_1=0$ ⟹ $K_1=-2$<br>
+        常數：$2K_2+4K_1+4K_0=0$ ⟹ $2-8+4K_0=0$ ⟹ $K_0=\tfrac32$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊 $Ce^{\gamma x}$ ⟹ 猜 $Ae^{\gamma x}$，代入得 $(\gamma^2+a\gamma+b)A=C$</span>
+        <span class="syms">$y_{p2}=Ae^{x}$：第二塊特解；$C=6$、$\gamma=1$：右邊 $6e^x$ 的係數與指數；$a=4$、$b=4$：方程式係數</span>
+        代數字。<br>
+        $(1+4+4)A=6$ ⟹ $A=\tfrac23$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_{p1}+y_{p2}$</span>
+        <span class="syms">$y_c$：齊次解；$y_{p1}$：多項式那塊的特解；$y_{p2}$：指數那塊的特解</span>
+        三部分相加。<br>
+        $y=(c_1+c_2x)e^{-2x}+x^2-2x+\tfrac32+\tfrac23e^{x}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=(c_1+c_2x)e^{-2x}+x^2-2x+\tfrac32+\tfrac23e^x$。</div>
+  <p class="small"><a href="#a3-b2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-hw1" data-group="二、加總規則（9/30 照片 4）" data-title="作業 1：$\sin x+3\cos2x$">
+  <h3>9/30 作業第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-hw1"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p><b>Homework</b></p><p>1. $y''+2y'+y=\sin(x)+3\cos(2x)$ with $y(0)=0$ and $y'(0)=0$.</p><p>Hint: 加總規則.</p><p>Ans : $y=\dfrac{43}{50}e^{-x}-\dfrac{1}{10}xe^{-x}-\dfrac12\cos(x)-\dfrac{9}{25}\cos(2x)+\dfrac{12}{25}\sin(2x)$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$y''+2y'+y=\sin x+3\cos2x$，$y(0)=0$、$y'(0)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $\sin x+3\cos2x$ 兩種頻率相加」＋「兩個初始條件」⟹ 題型：<b>待定係數法（加總規則）＋代初始條件</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>唯一解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=2$、$b=1$。<br>
+        $\lambda^2+2\lambda+1=(\lambda+1)^2=0$ ⟹ 重根 $-1$，$y_c=(c_1+c_2x)e^{-x}$</p>
+      <p class="wq-step"><span class="memo">背：加總規則：$g=g_1+g_2$ ⟹ $y_p=y_{p1}+y_{p2}$，各自求</span>
+        <span class="syms">$g_1=\sin x$：第一塊右邊；$g_2=3\cos2x$：第二塊右邊；$y_{p1},y_{p2}$：各自的特解</span>
+        頻率不同（1 和 2），要分開猜。</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊 $\sin\omega x$ ⟹ 猜 $A\cos\omega x+B\sin\omega x$</span>
+        <span class="syms">$y_{p1}=A\cos x+B\sin x$：第一塊特解；$A,B$：待定係數；$\omega=1$</span>
+        $y_{p1}''=-y_{p1}$，所以左邊只剩 $2y_{p1}'$。<br>
+        $2(-A\sin x+B\cos x)=\sin x$ ⟹ $A=-\tfrac12$、$B=0$，$y_{p1}=-\tfrac12\cos x$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊 $\cos\omega x$ ⟹ 猜 $C\cos\omega x+D\sin\omega x$</span>
+        <span class="syms">$y_{p2}=C\cos2x+D\sin2x$：第二塊特解；$C,D$：待定係數；$\omega=2$</span>
+        $y_{p2}''=-4y_{p2}$，左邊 $=-3y_{p2}+2y_{p2}'$，分 $\cos$、$\sin$ 比較。<br>
+        $\cos2x$：$-3C+4D=3$；$\sin2x$：$-3D-4C=0$<br>
+        $D=-\tfrac43C$ 代入：$-3C-\tfrac{16}3C=3$ ⟹ $C=-\tfrac9{25}$、$D=\tfrac{12}{25}$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_{p1}+y_{p2}$，初始條件代 $x=0$</span>
+        <span class="syms">$y(0)=0$、$y'(0)=0$：題目給；$c_1,c_2$：要解的常數</span>
+        先微分再代 $x=0$。<br>
+        $y=(c_1+c_2x)e^{-x}-\tfrac12\cos x-\tfrac9{25}\cos2x+\tfrac{12}{25}\sin2x$<br>
+        $y'=(c_2-c_1-c_2x)e^{-x}+\tfrac12\sin x+\tfrac{18}{25}\sin2x+\tfrac{24}{25}\cos2x$<br>
+        $y(0)=c_1-\tfrac12-\tfrac9{25}=0$ ⟹ $c_1=\tfrac{43}{50}$<br>
+        $y'(0)=c_2-c_1+\tfrac{24}{25}=0$ ⟹ $c_2=\tfrac{43}{50}-\tfrac{48}{50}=-\tfrac1{10}$<br>
+        $y=\tfrac{43}{50}e^{-x}-\tfrac1{10}xe^{-x}-\tfrac12\cos x-\tfrac9{25}\cos2x+\tfrac{12}{25}\sin2x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\tfrac{43}{50}e^{-x}-\tfrac1{10}xe^{-x}-\tfrac12\cos x-\tfrac9{25}\cos2x+\tfrac{12}{25}\sin2x$（與老師答案相同）。</div>
+  <p class="small"><a href="#a3-hw1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-113a-m4" data-group="二、加總規則（9/30 照片 4）" data-title="113 上期中第 4 題">
+  <h3>113 上期中第 4 題（25 分）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-113a-m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2024. Nov.)　25 points for each problem</p><p>4. Find the particular solution $y_p$ of</p>$$y''+2y'-8y=(x-1)^2+e^{-2x}-9\cos x-2\sin x.$$</div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $y''+2y'-8y=(x-1)^2+e^{-2x}-9\cos x-2\sin x$ 的特解。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊三種函數相加：多項式＋指數＋三角」＋「只求特解」⟹ 題型：<b>待定係數法（加總規則），三塊各自猜</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>特解 $y_p$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        先求特徵根，確認右邊三塊的猜測都不會和齊次解重複。<br>
+        $\lambda^2+2\lambda-8=(\lambda-2)(\lambda+4)=0$ ⟹ $\lambda=2,\ -4$（右邊的 $0$、$-2$、$\pm i$ 都不是根）</p>
+      <p class="wq-step"><span class="memo">背：加總規則：$g=g_1+g_2+g_3$ ⟹ $y_p=y_{p1}+y_{p2}+y_{p3}$，各自求</span>
+        <span class="syms">$g_1=(x-1)^2=x^2-2x+1$；$g_2=e^{-2x}$；$g_3=-9\cos x-2\sin x$；$y_{p1},y_{p2},y_{p3}$：各自的特解</span>
+        三塊分開算。</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊是二次多項式 ⟹ 猜 $y_{p1}=K_0+K_1x+K_2x^2$</span>
+        <span class="syms">$y_{p1}$：多項式那塊的特解；$K_0,K_1,K_2$：待定係數</span>
+        代入 $2K_2+2(K_1+2K_2x)-8(K_0+K_1x+K_2x^2)=x^2-2x+1$ 比較係數。<br>
+        $x^2$：$-8K_2=1$ ⟹ $K_2=-\tfrac18$<br>
+        $x$：$4K_2-8K_1=-2$ ⟹ $-\tfrac12-8K_1=-2$ ⟹ $K_1=\tfrac3{16}$<br>
+        常數：$2K_2+2K_1-8K_0=1$ ⟹ $\tfrac18-8K_0=1$ ⟹ $K_0=-\tfrac7{64}$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊 $Ce^{\gamma x}$ ⟹ 猜 $Ae^{\gamma x}$，代入得 $(\gamma^2+a\gamma+b)A=C$</span>
+        <span class="syms">$y_{p2}=Ae^{-2x}$：指數那塊的特解；$C=1$、$\gamma=-2$：右邊 $e^{-2x}$ 的係數與指數；$a=2$、$b=-8$：方程式係數</span>
+        代數字。<br>
+        $(4-4-8)A=1$ ⟹ $A=-\tfrac18$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊有 $\cos\omega x$、$\sin\omega x$ ⟹ 猜 $B\cos\omega x+C\sin\omega x$</span>
+        <span class="syms">$y_{p3}=B\cos x+C\sin x$：三角那塊的特解；$B,C$：待定係數；$\omega=1$</span>
+        $y_{p3}''=-y_{p3}$，代入分 $\cos$、$\sin$ 比較。<br>
+        $\cos x$：$-B+2C-8B=-9B+2C=-9$<br>
+        $\sin x$：$-C-2B-8C=-2B-9C=-2$<br>
+        ⟹ $B=1$、$C=0$</p>
+      <p class="wq-step"><span class="memo">背：$y_p=y_{p1}+y_{p2}+y_{p3}$</span>
+        <span class="syms">$y_{p1}$：多項式那塊；$y_{p2}$：指數那塊；$y_{p3}$：三角那塊</span>
+        三塊相加。<br>
+        $y_p=-\tfrac18x^2+\tfrac3{16}x-\tfrac7{64}-\tfrac18e^{-2x}+\cos x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_p=-\tfrac18x^2+\tfrac3{16}x-\tfrac7{64}-\tfrac18e^{-2x}+\cos x$。</div>
+  <p class="small"><a href="#a3-113a-m4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s02-1" data-group="二、加總規則（9/30 照片 4）" data-title="自編：$y''+y=\sin^2x$">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''+y=\sin^2x$，$y(0)=y'(0)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $\sin^2x$ 不在對照表裡」⟹ 題型：<b>先用半角公式拆成常數＋$\cos2x$，再用加總規則</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>唯一解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=0$、$b=1$。<br>
+        $\lambda^2+1=0$ ⟹ $\lambda=\pm i$，$y_c=c_1\cos x+c_2\sin x$</p>
+      <p class="wq-step"><span class="memo">背：半角公式 $\sin^2x=\tfrac12-\tfrac12\cos2x$</span>
+        <span class="syms">$\sin^2x$：題目的右邊；$\cos2x$：兩倍角的餘弦</span>
+        拆成常數塊與 $\cos2x$ 塊，用加總規則。<br>
+        $y''+y=\tfrac12-\tfrac12\cos2x$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊是常數 ⟹ 猜常數 $K$</span>
+        <span class="syms">$y_{p1}=K$：常數塊的特解；$\tfrac12$：常數塊右邊</span>
+        $K''=0$，代入只剩 $K$。<br>
+        $K=\tfrac12$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊 $\cos\omega x$ ⟹ 猜 $C\cos\omega x+D\sin\omega x$</span>
+        <span class="syms">$y_{p2}=C\cos2x+D\sin2x$：$\cos2x$ 塊的特解；$C,D$：待定係數；$\omega=2$</span>
+        $y_{p2}''=-4y_{p2}$，左邊 $=-3y_{p2}$。<br>
+        $-3C=-\tfrac12$ ⟹ $C=\tfrac16$；$-3D=0$ ⟹ $D=0$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_{p1}+y_{p2}$，初始條件代 $x=0$</span>
+        <span class="syms">$y(0)=0$、$y'(0)=0$：題目給；$c_1,c_2$：要解的常數</span>
+        先微分再代 $x=0$。<br>
+        $y=c_1\cos x+c_2\sin x+\tfrac12+\tfrac16\cos2x$，$y'=-c_1\sin x+c_2\cos x-\tfrac13\sin2x$<br>
+        $y(0)=c_1+\tfrac12+\tfrac16=0$ ⟹ $c_1=-\tfrac23$；$y'(0)=c_2=0$<br>
+        $y=\tfrac12-\tfrac23\cos x+\tfrac16\cos2x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\tfrac12-\tfrac23\cos x+\tfrac16\cos2x$。</div>
+  <p class="small"><a href="#a3-s02-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s02-2" data-group="二、加總規則（9/30 照片 4）" data-title="自編：$\cosh x$ 拆兩塊">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''+2y'+5y=\cosh x$，$y(0)=y'(0)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $\cosh x$」⟹ 題型：<b>拆成 $\tfrac12e^x+\tfrac12e^{-x}$，加總規則兩塊指數各自猜</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>唯一解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$a\lambda^2+b\lambda+c=0$ ⟹ $\lambda=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$\lambda$：特徵根；$a$：$y''$ 的係數；$b$：$y'$ 的係數；$c$：$y$ 的係數；$b^2-4ac$：判別式</span>
+        齊次部分 $\lambda^2+2\lambda+5=0$。<br>
+        $\lambda=\dfrac{-2\pm\sqrt{4-20}}2=-1\pm2i$ ⟹ $y_c=e^{-x}(c_1\cos2x+c_2\sin2x)$</p>
+      <p class="wq-step"><span class="memo">背：$\cosh x=\tfrac12e^{x}+\tfrac12e^{-x}$；加總規則各自求</span>
+        <span class="syms">$\cosh$：雙曲餘弦；$\tfrac12e^{x}$、$\tfrac12e^{-x}$：拆開後的兩塊右邊</span>
+        $\pm1$ 都不是特徵根，兩塊各猜一個指數。</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊 $Ce^{\gamma x}$ ⟹ 猜 $Ae^{\gamma x}$，代入得 $(\gamma^2+a\gamma+b)A=C$</span>
+        <span class="syms">$C=\tfrac12$：每塊的係數；$\gamma=\pm1$：兩塊的指數；$a=2$、$b=5$：方程式係數；$A,B$：兩塊的待定係數</span>
+        兩塊分別代。<br>
+        $e^{x}$ 塊：$(1+2+5)A=\tfrac12$ ⟹ $A=\tfrac1{16}$<br>
+        $e^{-x}$ 塊：$(1-2+5)B=\tfrac12$ ⟹ $B=\tfrac18$<br>
+        $y_p=\tfrac1{16}e^{x}+\tfrac18e^{-x}$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_p$，初始條件代 $x=0$</span>
+        <span class="syms">$y(0)=0$、$y'(0)=0$：題目給；$c_1,c_2$：要解的常數</span>
+        $y_c'(0)=-c_1+2c_2$，$y_p(0)=\tfrac3{16}$，$y_p'(0)=\tfrac1{16}-\tfrac18$。<br>
+        $y(0)=c_1+\tfrac1{16}+\tfrac18=0$ ⟹ $c_1=-\tfrac3{16}$<br>
+        $y'(0)=-c_1+2c_2+\tfrac1{16}-\tfrac18=0$ ⟹ $\tfrac3{16}+2c_2-\tfrac1{16}=0$ ⟹ $c_2=-\tfrac1{16}$<br>
+        $y=-\tfrac1{16}e^{-x}(3\cos2x+\sin2x)+\tfrac1{16}e^{x}+\tfrac18e^{-x}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=-\tfrac1{16}e^{-x}(3\cos2x+\sin2x)+\tfrac1{16}e^x+\tfrac18e^{-x}$。</div>
+  <p class="small"><a href="#a3-s02-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-b3" data-group="三、乘法規則（9/30 照片 5）" data-title="板書 Multiplication：$y''+9y=x\cos x$">
+  <h3>板書例題（照片 5）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-b3"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.（Multiplication）　Solve $y''+9y=x\cos x$　Ⓐ</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $y''+9y=x\cos x$ 的一般解。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊是多項式乘三角函數 $x\cos x$」⟹ 題型：<b>待定係數法（乘法規則）：$\{1,x\}\times\{\cos x,\sin x\}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>一般解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=0$、$b=9$。<br>
+        $\lambda^2+9=0$ ⟹ $\lambda=\pm3i$，$y_c=c_1\cos3x+c_2\sin3x$</p>
+      <p class="wq-step"><span class="memo">背：乘法規則：$g=$（多項式）×（三角）⟹ 兩邊的猜測形式相乘</span>
+        <span class="syms">$\{1,x\}$：一次多項式要的項；$\{\cos x,\sin x\}$：三角要的項；$A,B,C,D$：待定係數</span>
+        兩組相乘得四項（$\pm i$ 不是特徵根）。<br>
+        $y_p=A\cos x+B\sin x+Cx\cos x+Dx\sin x$</p>
+      <p class="wq-step"><span class="memo">背：$(x\cos x)''=-2\sin x-x\cos x$，$(x\sin x)''=2\cos x-x\sin x$</span>
+        <span class="syms">$x\cos x$、$x\sin x$：$y_p$ 裡含 $x$ 的兩項；$A,B,C,D$：待定係數</span>
+        代進 $y''+9y=x\cos x$，四種項分別比較。<br>
+        $\cos x$：$8A+2D=0$；$\sin x$：$8B-2C=0$<br>
+        $x\cos x$：$8C=1$；$x\sin x$：$8D=0$<br>
+        ⟹ $C=\tfrac18$、$D=0$、$A=0$、$B=\tfrac1{32}$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_p$</span>
+        <span class="syms">$y_c$：齊次解；$y_p$：特解</span>
+        相加。<br>
+        $y=c_1\cos3x+c_2\sin3x+\tfrac1{32}\sin x+\tfrac18x\cos x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=c_1\cos3x+c_2\sin3x+\tfrac1{32}\sin x+\tfrac18x\cos x$。</div>
+  <p class="small"><a href="#a3-b3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-hw2" data-group="三、乘法規則（9/30 照片 5）" data-title="作業 2：$xe^{-4x}$">
+  <h3>9/30 作業第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-hw2"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>2. Find the particular solution of $y''-4y'-12y=xe^{-4x}$.</p><p>Hint: 乘法規則.</p><p>Ans : $y_p=\left(\dfrac{3}{100}+\dfrac{1}{20}x\right)e^{-4x}$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $y''-4y'-12y=xe^{-4x}$ 的特解。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊是多項式乘指數 $xe^{-4x}$」⟹ 題型：<b>待定係數法（乘法規則）：猜 $(A+Bx)e^{-4x}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>特解 $y_p$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        先確認 $-4$ 是不是特徵根。<br>
+        $\lambda^2-4\lambda-12=(\lambda-6)(\lambda+2)=0$ ⟹ $\lambda=6,\ -2$（$-4$ 不是根）</p>
+      <p class="wq-step"><span class="memo">背：乘法規則：$g=$（一次多項式）×$e^{\gamma x}$ ⟹ 猜 $y_p=(A+Bx)e^{\gamma x}$</span>
+        <span class="syms">$y_p$：特解；$A,B$：待定係數；$\gamma=-4$：右邊的指數</span>
+        照乘法規則寫出形式。<br>
+        $y_p=(A+Bx)e^{-4x}$</p>
+      <p class="wq-step"><span class="memo">背：令 $y=e^{\gamma x}u$ ⟹ $y'=e^{\gamma x}(u'+\gamma u)$，$y''=e^{\gamma x}(u''+2\gamma u'+\gamma^2u)$</span>
+        <span class="syms">$u(x)$：新的未知函數（這裡 $u=A+Bx$）；$\gamma=-4$：右邊的指數</span>
+        代進方程後兩邊約掉 $e^{-4x}$。<br>
+        $(u''-8u'+16u)-4(u'-4u)-12u=x$ ⟹ $u''-12u'+20u=x$<br>
+        $u=A+Bx$：$-12B+20(A+Bx)=x$<br>
+        $x$：$20B=1$ ⟹ $B=\tfrac1{20}$；常數：$20A-12B=0$ ⟹ $A=\tfrac3{100}$<br>
+        $y_p=\left(\tfrac3{100}+\tfrac1{20}x\right)e^{-4x}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_p=\left(\tfrac3{100}+\tfrac1{20}x\right)e^{-4x}$（與老師答案相同）。</div>
+  <p class="small"><a href="#a3-hw2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-112a-m3" data-group="三、乘法規則（9/30 照片 5）" data-title="112 上期中第 3 題">
+  <h3>112 上期中第 3 題（6+6+6 分）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-112a-m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2023.Nov.)</p><p>3. Consider a nonhomogeneous differential equation $y''+2y'+17y=60e^{-4x}\sin(5x)$,</p><p>(1) (6 points) find the complementary solution,</p><p>(2) (6 points) find the particular solution,</p><p>(3) (6 points) find the unique solution for $y(0)=0$ and $y'(0)=2$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$y''+2y'+17y=60e^{-4x}\sin5x$：(1) 齊次解；(2) 特解；(3) $y(0)=0$、$y'(0)=2$ 的唯一解。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊是指數乘正弦 $e^{-4x}\sin5x$」＋「分三步：齊次解、特解、唯一解」⟹ 題型：<b>待定係數法（乘法規則），用 $y=e^{-4x}u$ 平移</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(1) 齊次解</h5>
+      <p class="wq-step"><span class="memo">背：$a\lambda^2+b\lambda+c=0$ ⟹ $\lambda=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$\lambda$：特徵根；$a$：$y''$ 的係數；$b$：$y'$ 的係數；$c$：$y$ 的係數；$b^2-4ac$：判別式</span>
+        $\lambda^2+2\lambda+17=0$。<br>
+        $\lambda=\dfrac{-2\pm\sqrt{4-68}}2=-1\pm4i$</p>
+      <p class="wq-step"><span class="memo">背：$\lambda=\alpha\pm i\beta$ ⟹ $y_c=e^{\alpha x}(c_1\cos\beta x+c_2\sin\beta x)$</span>
+        <span class="syms">$\alpha=-1$：根的實部；$\beta=4$：根的虛部；$c_1,c_2$：待定常數</span>
+        代入。<br>
+        $y_c=e^{-x}(c_1\cos4x+c_2\sin4x)$</p>
+    </div>
+    <div class="wq">
+      <h5>(2) 特解</h5>
+      <p class="wq-step"><span class="memo">背：乘法規則：$g=e^{\gamma x}\sin\omega x$ ⟹ 猜 $e^{\gamma x}(A\cos\omega x+B\sin\omega x)$</span>
+        <span class="syms">$\gamma=-4$：右邊的指數；$\omega=5$：右邊的角頻率；$A,B$：待定係數</span>
+        $-4\pm5i$ 不是特徵根（根是 $-1\pm4i$），直接用這個形式。</p>
+      <p class="wq-step"><span class="memo">背：令 $y=e^{\gamma x}u$ ⟹ $y'=e^{\gamma x}(u'+\gamma u)$，$y''=e^{\gamma x}(u''+2\gamma u'+\gamma^2u)$</span>
+        <span class="syms">$u(x)=A\cos5x+B\sin5x$：新的未知函數；$\gamma=-4$</span>
+        代進方程約掉 $e^{-4x}$；$u''+25u=0$，只剩 $-6u'$。<br>
+        $(u''-8u'+16u)+2(u'-4u)+17u=60\sin5x$ ⟹ $u''-6u'+25u=60\sin5x$<br>
+        $-6u'=-6(-5A\sin5x+5B\cos5x)=30A\sin5x-30B\cos5x=60\sin5x$<br>
+        ⟹ $A=2$、$B=0$，$y_p=2e^{-4x}\cos5x$</p>
+    </div>
+    <div class="wq">
+      <h5>(3) $y(0)=0$、$y'(0)=2$ 的唯一解</h5>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_p$，初始條件代 $x=0$</span>
+        <span class="syms">$y_c$：(1) 的齊次解；$y_p$：(2) 的特解；$y(0)=0$、$y'(0)=2$：題目給；$c_1,c_2$：要解的常數</span>
+        $y_c'(0)=-c_1+4c_2$，$y_p'=2e^{-4x}(-4\cos5x-5\sin5x)$，$y_p'(0)=-8$。<br>
+        $y(0)=c_1+2=0$ ⟹ $c_1=-2$<br>
+        $y'(0)=-c_1+4c_2-8=2$ ⟹ $2+4c_2-8=2$ ⟹ $c_2=2$<br>
+        $y=e^{-x}(2\sin4x-2\cos4x)+2e^{-4x}\cos5x$</p>
+    </div>
+  </div>
+  <div class="final">答：(1) $e^{-x}(c_1\cos4x+c_2\sin4x)$；(2) $y_p=2e^{-4x}\cos5x$；(3) $y=e^{-x}(2\sin4x-2\cos4x)+2e^{-4x}\cos5x$。</div>
+  <p class="small"><a href="#a3-112a-m3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s03-1" data-group="三、乘法規則（9/30 照片 5）" data-title="自編：複數法 $x^2\sin x$">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $y''+4y=x^2\sin x$ 的特解。(a) 照乘法規則寫出 $y_p$ 的形式，有幾個未知係數？(b) 利用 $\sin x=\operatorname{Im}e^{ix}$，先解 $Y''+4Y=x^2e^{ix}$，再取虛部求出 $y_p$。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $x^2\sin x$（二次多項式×三角）」＋「指定用 $\operatorname{Im}e^{ix}$」⟹ 題型：<b>乘法規則＋複數法（$Y=e^{ix}u$ 平移）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $y_p$ 的形式與未知係數個數</h5>
+      <p class="wq-step"><span class="memo">背：乘法規則：$g=$（多項式）×（三角）⟹ 兩邊的猜測形式相乘</span>
+        <span class="syms">$\{1,x,x^2\}$：二次多項式要的項；$\{\cos x,\sin x\}$：三角要的項；$A,B,C,D,E,F$：六個待定係數</span>
+        特徵根 $\pm2i$，$\pm i$ 不是根，直接相乘。<br>
+        $y_p=(Ax^2+Bx+C)\cos x+(Dx^2+Ex+F)\sin x$，共 6 個係數</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 用 $\operatorname{Im}e^{ix}$ 求 $y_p$</h5>
+      <p class="wq-step"><span class="memo">背：令 $Y=e^{ix}u$ ⟹ $Y''=e^{ix}(u''+2iu'-u)$</span>
+        <span class="syms">$Y$：複數方程 $Y''+4Y=x^2e^{ix}$ 的解；$u(x)$：新的未知函數；$i$：虛數單位</span>
+        代進去約掉 $e^{ix}$。<br>
+        $u''+2iu'-u+4u=x^2$ ⟹ $u''+2iu'+3u=x^2$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊是二次多項式 ⟹ 猜 $u=ax^2+bx+c$，比較係數</span>
+        <span class="syms">$a,b,c$：待定的（複數）係數；$x^2$：右邊</span>
+        $u'=2ax+b$、$u''=2a$，代入：$2a+2i(2ax+b)+3(ax^2+bx+c)=x^2$。<br>
+        $x^2$：$3a=1$ ⟹ $a=\tfrac13$<br>
+        $x$：$4ia+3b=0$ ⟹ $b=-\tfrac{4i}9$<br>
+        常數：$2a+2ib+3c=0$ ⟹ $\tfrac23+\tfrac89+3c=0$ ⟹ $c=-\tfrac{14}{27}$<br>
+        $u=\tfrac13x^2-\tfrac{4i}9x-\tfrac{14}{27}$</p>
+      <p class="wq-step"><span class="memo">背：$y_p=\operatorname{Im}(Y)=\operatorname{Im}\left[u(\cos x+i\sin x)\right]$</span>
+        <span class="syms">$\operatorname{Im}$：取虛部；$u$：上一步的複數多項式；$\cos x+i\sin x=e^{ix}$</span>
+        $u$ 的實部 $\tfrac13x^2-\tfrac{14}{27}$ 乘 $\sin x$，虛部 $-\tfrac49x$ 乘 $\cos x$。<br>
+        $y_p=\left(\tfrac{x^2}3-\tfrac{14}{27}\right)\sin x-\tfrac49x\cos x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_p=\left(\tfrac{x^2}3-\tfrac{14}{27}\right)\sin x-\tfrac49x\cos x$。</div>
+  <p class="small"><a href="#a3-s03-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s03-2" data-group="三、乘法規則（9/30 照片 5）" data-title="自編：乘法規則何時失效">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''+2y'+ky=e^{-x}\cos3x$（$k$ 是常數）。(a) $k$ 是多少時，乘法規則的猜測 $e^{-x}(A\cos3x+B\sin3x)$ 會失敗？(b) $k=5$ 時求 $y_p$；(c) $k=10$ 時求 $y_p$。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $e^{-x}\cos3x$」＋「參數 $k$ 讓猜測失敗」⟹ 題型：<b>乘法規則 vs 修正規則：看 $-1\pm3i$ 是不是特徵根</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>先做（各小題共用）</h5>
+      <p class="wq-step"><span class="memo">背：令 $y=e^{\gamma x}u$ ⟹ $y'=e^{\gamma x}(u'+\gamma u)$，$y''=e^{\gamma x}(u''+2\gamma u'+\gamma^2u)$</span>
+        <span class="syms">$u(x)$：新的未知函數；$\gamma=-1$：右邊的指數；$k$：題目的參數</span>
+        代進方程約掉 $e^{-x}$，$u'$ 項正好消掉。<br>
+        $(u''-2u'+u)+2(u'-u)+ku=\cos3x$ ⟹ $u''+(k-1)u=\cos3x$</p>
+    </div>
+    <div class="wq">
+      <h5>(a) 猜測失敗的 $k$</h5>
+      <p class="wq-step"><span class="memo">背：猜測 $e^{\gamma x}(A\cos\omega x+B\sin\omega x)$ 失敗 ⟺ $\gamma\pm i\omega$ 是特徵根</span>
+        <span class="syms">$\gamma=-1$、$\omega=3$：右邊的指數與角頻率；$\lambda$：特徵根；$k$：參數</span>
+        特徵方程 $\lambda^2+2\lambda+k=0$。<br>
+        $\lambda=-1\pm\sqrt{1-k}$；要等於 $-1\pm3i$ ⟹ $1-k=-9$ ⟹ $k=10$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $k=5$ 的 $y_p$</h5>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊 $\cos\omega x$ ⟹ 猜 $u=A\cos\omega x+B\sin\omega x$</span>
+        <span class="syms">$u$：平移後的未知函數；$A,B$：待定係數；$\omega=3$</span>
+        $k=5$：$u''+4u=\cos3x$，$u''=-9u$。<br>
+        $(-9+4)A=1$ ⟹ $A=-\tfrac15$，$B=0$<br>
+        $y_p=e^{-x}u=-\tfrac15e^{-x}\cos3x$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $k=10$ 的 $y_p$</h5>
+      <p class="wq-step"><span class="memo">背：修正規則：猜測和齊次解重複 ⟹ 乘 $x$</span>
+        <span class="syms">$u$：平移後的未知函數；$A,B$：待定係數；$\cos3x$、$\sin3x$：$u''+9u=0$ 的解</span>
+        $k=10$：$u''+9u=\cos3x$，$\cos3x$、$\sin3x$ 本身就是齊次解。這裡要多乘 $x$，因為原本的猜測代進去會得 0。<br>
+        $u=x(A\cos3x+B\sin3x)$ ⟹ $u''+9u=2(-3A\sin3x+3B\cos3x)$<br>
+        $6B=1$、$-6A=0$ ⟹ $B=\tfrac16$、$A=0$<br>
+        $y_p=e^{-x}u=\tfrac x6e^{-x}\sin3x$</p>
+    </div>
+  </div>
+  <div class="final">答：$k=10$；$y_p=-\tfrac15e^{-x}\cos3x$；$y_p=\tfrac x6e^{-x}\sin3x$。</div>
+  <p class="small"><a href="#a3-s03-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-b4" data-group="四、修正規則（9/30 照片 6–7）" data-title="板書 Modification：$y''-4y'+4y=2e^{2x}$">
+  <h3>板書例題（照片 6–7）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-b4"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.（Modification rule）　Solve $y''-4y'+4y=2e^{2x}$　Ⓐ</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $y''-4y'+4y=2e^{2x}$ 的一般解。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $2e^{2x}$」＋「$2$ 是特徵方程的重根」⟹ 題型：<b>待定係數法（修正規則）：重根要乘 $x^2$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>一般解，並說明 $Ae^{2x}$、$Axe^{2x}$ 為何不行</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=-4$、$b=4$。<br>
+        $\lambda^2-4\lambda+4=(\lambda-2)^2=0$ ⟹ 重根 $2$，$y_1=e^{2x}$、$y_2=xe^{2x}$，$y_c=(c_1+c_2x)e^{2x}$</p>
+      <p class="wq-step"><span class="memo">背：齊次解代進左邊一定得 $0$</span>
+        <span class="syms">$Ae^{2x}$、$Axe^{2x}$：兩個想猜的形式；$A$：待定係數；$2e^{2x}$：右邊</span>
+        這兩個都是齊次解，代進去左邊是 0，不可能等於 $2e^{2x}$。<br>
+        $Ae^{2x}$：$A(4-8+4)e^{2x}=0$；$Axe^{2x}$ 是 $y_2$ 的倍數，代入也得 $0$</p>
+      <p class="wq-step"><span class="memo">背：修正規則：猜測和齊次解重複就乘 $x$，還重複就再乘 $x$</span>
+        <span class="syms">$y_p$：特解；$A$：待定係數；$x^2$：修正用的因子</span>
+        這裡要多乘 $x^2$，因為 $e^{2x}$ 和 $xe^{2x}$ 都已經是齊次解（$2$ 是重根）。<br>
+        $y_p=Ax^2e^{2x}$</p>
+      <p class="wq-step"><span class="memo">背：令 $y=e^{\gamma x}u$ ⟹ $y'=e^{\gamma x}(u'+\gamma u)$，$y''=e^{\gamma x}(u''+2\gamma u'+\gamma^2u)$</span>
+        <span class="syms">$u(x)=Ax^2$：新的未知函數；$\gamma=2$：右邊的指數</span>
+        代進方程約掉 $e^{2x}$，只剩 $u''$。<br>
+        $(u''+4u'+4u)-4(u'+2u)+4u=u''=2$ ⟹ $2A=2$ ⟹ $A=1$<br>
+        $y=(c_1+c_2x+x^2)e^{2x}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=(c_1+c_2x+x^2)e^{2x}$。</div>
+  <p class="small"><a href="#a3-b4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-hw3" data-group="四、修正規則（9/30 照片 6–7）" data-title="作業 3：$2x\sin x$">
+  <h3>9/30 作業第 3 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-hw3"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>3. Find the particular solution of $y''+y=2x\sin(x)$.</p><p>Hint: 修正規則.</p><p>Ans : $y_p=-\dfrac12x^2\cos(x)+\dfrac12x\sin(x)$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $y''+y=2x\sin x$ 的特解。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $2x\sin x$」＋「$\pm i$ 是特徵根」⟹ 題型：<b>乘法規則＋修正規則：整組乘 $x$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>特解 $y_p$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=0$、$b=1$。<br>
+        $\lambda^2+1=0$ ⟹ $\lambda=\pm i$，$y_c=c_1\cos x+c_2\sin x$</p>
+      <p class="wq-step"><span class="memo">背：乘法規則：$\{1,x\}\times\{\cos x,\sin x\}$；修正規則：和齊次解重複就乘 $x$</span>
+        <span class="syms">$A,B,C,D$：待定係數；$\cos x$、$\sin x$：齊次解</span>
+        乘法規則的猜測 $(A+Bx)\cos x+(C+Dx)\sin x$ 裡含有齊次解 $\cos x$、$\sin x$。這裡要整組多乘 $x$，因為 $\pm i$ 是特徵根。<br>
+        $y_p=(Ax^2+Bx)\cos x+(Cx^2+Dx)\sin x$</p>
+      <p class="wq-step"><span class="memo">背：$(P\cos x+Q\sin x)''+(P\cos x+Q\sin x)=(P''+2Q')\cos x+(Q''-2P')\sin x$</span>
+        <span class="syms">$P=Ax^2+Bx$：$\cos x$ 前面的多項式；$Q=Cx^2+Dx$：$\sin x$ 前面的多項式；$P',P'',Q',Q''$：它們的導數</span>
+        （乘積法則微分兩次整理得到的式子。）$P'=2Ax+B$、$P''=2A$、$Q'=2Cx+D$、$Q''=2C$。<br>
+        $y_p''+y_p=(2A+2D+4Cx)\cos x+(2C-2B-4Ax)\sin x$</p>
+      <p class="wq-step"><span class="memo">背：比較係數：$\cos x$、$x\cos x$、$\sin x$、$x\sin x$ 各自相等</span>
+        <span class="syms">$A,B,C,D$：待定係數；$2x\sin x$：右邊（只有 $x\sin x$ 係數 2）</span>
+        四條方程。<br>
+        $x\cos x$：$4C=0$；$\cos x$：$2A+2D=0$；$x\sin x$：$-4A=2$；$\sin x$：$2C-2B=0$<br>
+        ⟹ $A=-\tfrac12$、$D=\tfrac12$、$B=C=0$<br>
+        $y_p=-\tfrac12x^2\cos x+\tfrac12x\sin x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_p=-\tfrac12x^2\cos x+\tfrac12x\sin x$（與老師答案相同）。</div>
+  <p class="small"><a href="#a3-hw3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-110a-m4" data-group="四、修正規則（9/30 照片 6–7）" data-title="110 上期中第 4 題">
+  <h3>110 上期中第 4 題（20 分）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-110a-m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2021.11.09)　20 points for each problem</p><p>4. Find the particular solution of $y''-2y'+2y=2e^x\cos x$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $y''-2y'+2y=2e^x\cos x$ 的特解。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $2e^x\cos x$」＋「$1\pm i$ 是特徵根」⟹ 題型：<b>乘法規則＋修正規則：乘 $x$，用 $y=e^xu$ 平移</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>特解 $y_p$</h5>
+      <p class="wq-step"><span class="memo">背：$a\lambda^2+b\lambda+c=0$ ⟹ $\lambda=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$\lambda$：特徵根；$a$：$y''$ 的係數；$b$：$y'$ 的係數；$c$：$y$ 的係數；$b^2-4ac$：判別式</span>
+        齊次部分 $\lambda^2-2\lambda+2=0$。<br>
+        $\lambda=\dfrac{2\pm\sqrt{4-8}}2=1\pm i$ ⟹ $y_c=e^{x}(c_1\cos x+c_2\sin x)$</p>
+      <p class="wq-step"><span class="memo">背：乘法規則猜 $e^{\gamma x}(A\cos\omega x+B\sin\omega x)$；修正規則：$\gamma\pm i\omega$ 是根就乘 $x$</span>
+        <span class="syms">$\gamma=1$、$\omega=1$：右邊的指數與角頻率；$A,B$：待定係數</span>
+        這裡要多乘 $x$，因為 $e^x\cos x$ 本身就是齊次解（$1\pm i$ 是根）。<br>
+        $y_p=xe^{x}(A\cos x+B\sin x)$</p>
+      <p class="wq-step"><span class="memo">背：令 $y=e^{\gamma x}u$ ⟹ $y'=e^{\gamma x}(u'+\gamma u)$，$y''=e^{\gamma x}(u''+2\gamma u'+\gamma^2u)$</span>
+        <span class="syms">$u(x)=x(A\cos x+B\sin x)$：新的未知函數；$\gamma=1$</span>
+        代進方程約掉 $e^{x}$；$(xf)''+xf=2f'$（$f=A\cos x+B\sin x$）。<br>
+        $(u''+2u'+u)-2(u'+u)+2u=u''+u=2\cos x$<br>
+        $u''+u=2(-A\sin x+B\cos x)=2\cos x$ ⟹ $B=1$、$A=0$<br>
+        $y_p=xe^{x}\sin x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_p=xe^x\sin x$。</div>
+  <p class="small"><a href="#a3-110a-m4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s04-1" data-group="四、修正規則（9/30 照片 6–7）" data-title="自編：$y''-y=\cosh x$">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''-y=\cosh x$，$y(0)=y'(0)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $\cosh x$」＋「$\pm1$ 都是特徵根」⟹ 題型：<b>拆成兩塊指數，兩塊都用修正規則乘 $x$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>唯一解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=0$、$b=-1$。<br>
+        $\lambda^2-1=0$ ⟹ $\lambda=\pm1$，$y_c=c_1e^{x}+c_2e^{-x}$</p>
+      <p class="wq-step"><span class="memo">背：$\cosh x=\tfrac12e^{x}+\tfrac12e^{-x}$；修正規則：和齊次解重複就乘 $x$</span>
+        <span class="syms">$\cosh$：雙曲餘弦；$A,B$：兩塊的待定係數</span>
+        這裡兩塊都要多乘 $x$，因為 $e^{x}$、$e^{-x}$ 都是齊次解。<br>
+        $y_p=Axe^{x}+Bxe^{-x}$</p>
+      <p class="wq-step"><span class="memo">背：令 $y=e^{\gamma x}u$ ⟹ $y''=e^{\gamma x}(u''+2\gamma u'+\gamma^2u)$</span>
+        <span class="syms">$u=x$：新的未知函數；$\gamma=\pm1$：兩塊的指數（$\gamma^2=1$）</span>
+        $y''-y=e^{\gamma x}(u''+2\gamma u')=2\gamma e^{\gamma x}$，兩塊分別比較。<br>
+        $e^{x}$ 塊：$2A=\tfrac12$ ⟹ $A=\tfrac14$<br>
+        $e^{-x}$ 塊：$-2B=\tfrac12$ ⟹ $B=-\tfrac14$<br>
+        $y_p=\tfrac x4\left(e^{x}-e^{-x}\right)=\tfrac x2\sinh x$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_p$，初始條件代 $x=0$</span>
+        <span class="syms">$y(0)=0$、$y'(0)=0$：題目給；$c_1,c_2$：要解的常數</span>
+        $y_p(0)=0$，$y_p'=\tfrac12\sinh x+\tfrac x2\cosh x$，$y_p'(0)=0$。<br>
+        $c_1+c_2=0$，$c_1-c_2=0$ ⟹ $c_1=c_2=0$<br>
+        $y=\tfrac x2\sinh x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\tfrac x2\sinh x$。</div>
+  <p class="small"><a href="#a3-s04-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s04-2" data-group="四、修正規則（9/30 照片 6–7）" data-title="自編：$b=0$ 的多項式">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''+3y'=6x+2+9e^{-3x}$，$y(0)=y'(0)=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「沒有 $y$ 項（$0$ 是特徵根）」＋「右邊多項式＋$e^{-3x}$（$-3$ 也是根）」⟹ 題型：<b>加總規則，兩塊都用修正規則乘 $x$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>唯一解 $y(x)$</h5>
+      <p class="wq-step"><span class="memo">背：$y''+ay'+by=0$，令 $y=e^{\lambda x}$ ⟹ $\lambda^2+a\lambda+b=0$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a$：$y'$ 的係數；$b$：$y$ 的係數；$\lambda$：特徵根</span>
+        齊次部分 $a=3$、$b=0$。<br>
+        $\lambda^2+3\lambda=\lambda(\lambda+3)=0$ ⟹ $\lambda=0,\ -3$，$y_c=c_1+c_2e^{-3x}$</p>
+      <p class="wq-step"><span class="memo">背：加總規則：$g=g_1+g_2$ ⟹ $y_p=y_{p1}+y_{p2}$；修正規則：和齊次解重複就乘 $x$</span>
+        <span class="syms">$g_1=6x+2$：多項式塊；$g_2=9e^{-3x}$：指數塊；$y_{p1},y_{p2}$：各自的特解</span>
+        兩塊分開算。</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊是一次多項式 ⟹ 猜 $K_0+K_1x$</span>
+        <span class="syms">$y_{p1}$：多項式塊的特解；$K_0,K_1$：待定係數</span>
+        這裡要多乘 $x$，因為常數 $K_0$ 是齊次解（$0$ 是根）。<br>
+        $y_{p1}=x(K_0+K_1x)$，$y_{p1}'=K_0+2K_1x$，$y_{p1}''=2K_1$<br>
+        $2K_1+3(K_0+2K_1x)=6x+2$ ⟹ $6K_1=6$、$2K_1+3K_0=2$ ⟹ $K_1=1$、$K_0=0$，$y_{p1}=x^2$</p>
+      <p class="wq-step"><span class="memo">背：基本規則：右邊 $Ce^{\gamma x}$ ⟹ 猜 $Ae^{\gamma x}$</span>
+        <span class="syms">$y_{p2}$：指數塊的特解；$A$：待定係數；$\gamma=-3$：右邊的指數；$C=9$</span>
+        這裡要多乘 $x$，因為 $e^{-3x}$ 是齊次解（$-3$ 是根）。令 $y=e^{-3x}u$、$u=Ax$ 代入。<br>
+        $y_{p2}=Axe^{-3x}$；$(u''-6u'+9u)+3(u'-3u)=u''-3u'=9$ ⟹ $-3A=9$ ⟹ $A=-3$</p>
+      <p class="wq-step"><span class="memo">背：$y=y_c+y_{p1}+y_{p2}$，初始條件代 $x=0$</span>
+        <span class="syms">$y(0)=0$、$y'(0)=0$：題目給；$c_1,c_2$：要解的常數</span>
+        先微分再代 $x=0$。<br>
+        $y=c_1+c_2e^{-3x}+x^2-3xe^{-3x}$<br>
+        $y'=-3c_2e^{-3x}+2x-3e^{-3x}+9xe^{-3x}$<br>
+        $c_1+c_2=0$，$-3c_2-3=0$ ⟹ $c_2=-1$、$c_1=1$<br>
+        $y=1-e^{-3x}+x^2-3xe^{-3x}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=1-e^{-3x}+x^2-3xe^{-3x}$。</div>
+  <p class="small"><a href="#a3-s04-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-108b-1c" data-group="四、修正規則（9/30 照片 6–7）" data-title="108 級下 ODE2 1(c)：y″−2y′+5y=8eˣ sin 2x">
+  <h3>108 級下 2nd Order ODE 1(c)</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-108b-1c"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2nd Order ODE and Fourier Series</p><p>1. Solve the differential equations.</p><p>(c) Solve $y''-2y'+5y=8e^x\sin2x$ for $y(0)=0$, $y\left(\frac{\pi}{4}\right)=1$.</p><p>$y=e^{-\frac{\pi}{4}}e^x\sin2x-2xe^x\cos2x$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''-2y'+5y=8e^x\sin2x$，$y(0)=0$、$y(\frac\pi4)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $8e^x\sin2x$」＋「$1\pm2i$ 是特徵根」＋「條件給在 $x=0$ 和 $x=\pi/4$」⟹ 題型：<b>修正規則（乘 $x$）＋代邊界條件</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>滿足 $y(0)=0$、$y(\pi/4)=1$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$a\lambda^2+b\lambda+c=0$ ⟹ $\lambda=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$\lambda$：特徵根；$a$：$y''$ 的係數；$b$：$y'$ 的係數；$c$：$y$ 的係數；$b^2-4ac$：判別式</span>
+        齊次部分 $\lambda^2-2\lambda+5=0$。<br>
+        $\lambda=\dfrac{2\pm\sqrt{4-20}}2=1\pm2i$ ⟹ $y_h=e^{x}(A\cos2x+B\sin2x)$</p>
+      <p class="wq-step"><span class="memo">背：乘法規則猜 $e^{\gamma x}(K_1\cos\omega x+K_2\sin\omega x)$；修正規則：$\gamma\pm i\omega$ 是根就乘 $x$</span>
+        <span class="syms">$\gamma=1$、$\omega=2$：右邊的指數與角頻率；$K_1,K_2$：待定係數</span>
+        這裡要多乘 $x$，因為 $e^x\sin2x$ 本身就是齊次解。<br>
+        $y_p=e^{x}u$，$u=x(K_1\cos2x+K_2\sin2x)$</p>
+      <p class="wq-step"><span class="memo">背：令 $y=e^{\gamma x}u$ ⟹ $y'=e^{\gamma x}(u'+\gamma u)$，$y''=e^{\gamma x}(u''+2\gamma u'+\gamma^2u)$</span>
+        <span class="syms">$u(x)$：新的未知函數；$\gamma=1$</span>
+        代進方程約掉 $e^{x}$。<br>
+        $(u''+2u'+u)-2(u'+u)+5u=u''+4u=8\sin2x$<br>
+        $u''+4u=2(-2K_1\sin2x+2K_2\cos2x)=-4K_1\sin2x+4K_2\cos2x$<br>
+        $-4K_1=8$、$4K_2=0$ ⟹ $K_1=-2$、$K_2=0$，$y_p=-2xe^{x}\cos2x$</p>
+      <p class="wq-step"><span class="memo">背：邊界條件：分別代 $x=0$ 與 $x=\tfrac\pi4$</span>
+        <span class="syms">$y(0)=0$、$y(\tfrac\pi4)=1$：題目給；$A,B$：要解的常數</span>
+        $\cos\tfrac\pi2=0$、$\sin\tfrac\pi2=1$，所以 $y_p(\tfrac\pi4)=0$。<br>
+        $y(0)=A=0$；$y(\tfrac\pi4)=e^{\pi/4}B=1$ ⟹ $B=e^{-\pi/4}$<br>
+        $y=e^{-\pi/4}e^{x}\sin2x-2xe^{x}\cos2x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=e^{-\pi/4}e^x\sin2x-2xe^x\cos2x$。</div>
+  <p class="small"><a href="#a3-108b-1c">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-b5" data-group="五、應用：受迫阻尼振盪與共振（9/30 照片 8–10）" data-title="板書：受迫阻尼振盪">
+  <h3>板書例題（照片 8–10）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-b5"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例：Driving Damped Oscillations（彈簧 $k$、質量 $m$、friction、外力 $f_{\text{ext}}=f_0\sin(\omega t)$）</p><p>$-kx-\beta\dot x+f_{\text{ext}}=ma$ → $\ddot x+2\gamma\dot x+\omega_0^2x=F_0\sin(\omega t)$，$2\gamma=\frac{\beta}{m}$，$\omega_0^2=\frac km$，$F_0=\frac{f_0}{m}$</p><p>step 2. 猜 $y_p=K_1\cos\omega t+K_2\sin\omega t$，將 $y_p,y_p',y_p''$ 代回 EOM，比較係數；$x_p=A\sin(\omega t+\phi)$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$\ddot x+2\gamma\dot x+\omega_0^2x=F_0\sin\omega t$（$\gamma\gt0$）。用待定係數法求特解 $x_p=K_1\cos\omega t+K_2\sin\omega t$ 的 $K_1,K_2$，再寫成 $A\sin(\omega t+\phi)$，求 $A$ 與 $\phi$。</div>
+  <div class="rote">
+    <p><b>看到</b>「受迫阻尼振盪 $\ddot x+2\gamma\dot x+\omega_0^2x=F_0\sin\omega t$」＋「求 $A$、$\phi$」⟹ 題型：<b>穩態解：猜 $K_1\cos+K_2\sin$，再合成 $A\sin(\omega t+\phi)$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>$K_1,K_2$、$A$、$\phi$</h5>
+      <p class="wq-step"><span class="memo">背：右邊 $\sin\omega t$ ⟹ 猜 $x_p=K_1\cos\omega t+K_2\sin\omega t$，$\ddot x_p=-\omega^2x_p$</span>
+        <span class="syms">$x_p$：特解（穩態位移，m）；$K_1,K_2$：待定係數（m）；$\omega$：外力角頻率（rad/s）；$t$：時間（s）</span>
+        先寫出一階導數。<br>
+        $\dot x_p=-\omega K_1\sin\omega t+\omega K_2\cos\omega t$</p>
+      <p class="wq-step"><span class="memo">背：比較係數：$\cos\omega t$、$\sin\omega t$ 的係數各自相等</span>
+        <span class="syms">$\gamma$：阻尼係數（s⁻¹）；$\omega_0$：自然角頻率（rad/s）；$F_0=f_0/m$：外力振幅除以質量（m/s²）；$K_1,K_2$：待定係數</span>
+        代入方程，分 $\cos$、$\sin$。<br>
+        $\cos\omega t$：$(\omega_0^2-\omega^2)K_1+2\gamma\omega K_2=0$<br>
+        $\sin\omega t$：$-2\gamma\omega K_1+(\omega_0^2-\omega^2)K_2=F_0$</p>
+      <p class="wq-step"><span class="memo">背：克拉瑪公式：$K_1=\dfrac{D_1}D$，$K_2=\dfrac{D_2}D$</span>
+        <span class="syms">$D$：係數行列式；$D_1$、$D_2$：把右邊 $(0,F_0)$ 換進第 1、2 行的行列式</span>
+        係數行列式是兩個平方和。<br>
+        $D=(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2$<br>
+        $K_1=\dfrac{-2\gamma\omega F_0}D$，$K_2=\dfrac{(\omega_0^2-\omega^2)F_0}D$</p>
+      <p class="wq-step"><span class="memo">背：$A\sin(\omega t+\phi)=A\sin\phi\cos\omega t+A\cos\phi\sin\omega t$ ⟹ $K_1=A\sin\phi$、$K_2=A\cos\phi$</span>
+        <span class="syms">$A$：穩態振幅（m）；$\phi$：相位；$K_1,K_2$：上一步求出</span>
+        平方相加得 $A$，相除得 $\tan\phi$。<br>
+        $A=\sqrt{K_1^2+K_2^2}=\dfrac{F_0\sqrt D}D=\dfrac{F_0}{\sqrt{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2}}$<br>
+        $\tan\phi=\dfrac{K_1}{K_2}=\dfrac{-2\gamma\omega}{\omega_0^2-\omega^2}$；$\sin\phi=\dfrac{K_1}A\lt0$ ⟹ $\phi\in(-\pi,0)$</p>
+    </div>
+  </div>
+  <div class="final">答：$A=\dfrac{F_0}{\sqrt{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2}}$，$\phi=\tan^{-1}\dfrac{-2\gamma\omega}{\omega_0^2-\omega^2}\in(-\pi,0)$。</div>
+  <p class="small"><a href="#a3-b5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s05-1" data-group="五、應用：受迫阻尼振盪與共振（9/30 照片 8–10）" data-title="自編：共振頻率 $\omega_r$">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　穩態振幅 $A(\omega)=\dfrac{F_0}{\sqrt{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2}}$。(a) 求使 $A$ 最大的 $\omega_r$ 與最大振幅 $A_{\max}$；$\gamma$ 滿足什麼條件時才有峰？(b) 以 $\omega_0=10\ \text{rad/s}$、$\gamma=1\ \text{s}^{-1}$、$F_0=5\ \text{m/s}^2$ 代入，比較 $A_{\max}$、$A(\omega_0)$ 與靜態振幅 $A(0)$。</div>
+  <div class="rote">
+    <p><b>看到</b>「穩態振幅 $A(\omega)$ 求最大」⟹ 題型：<b>共振頻率：令 $s=\omega^2$，根號內是二次函數求頂點</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) $\omega_r$、$A_{\max}$ 與有峰的條件</h5>
+      <p class="wq-step"><span class="memo">背：$A$ 最大 ⟺ 根號內 $D$ 最小；$D(s)=ps^2+qs+r$ 的頂點在 $s=-\dfrac q{2p}$</span>
+        <span class="syms">$s=\omega^2$：外力角頻率的平方；$D=(\omega_0^2-s)^2+4\gamma^2s$：根號內；$p,q,r$：二次式的係數；$\omega_0$：自然角頻率；$\gamma$：阻尼係數</span>
+        展開後 $p=1$、$q=-2(\omega_0^2-2\gamma^2)$。<br>
+        $D=s^2-2(\omega_0^2-2\gamma^2)s+\omega_0^4$ ⟹ 頂點 $s=\omega_0^2-2\gamma^2$<br>
+        $\omega_r=\sqrt{\omega_0^2-2\gamma^2}$；要 $s\gt0$ ⟹ $\gamma\lt\dfrac{\omega_0}{\sqrt2}$ 才有峰</p>
+      <p class="wq-step"><span class="memo">背：$A_{\max}=\dfrac{F_0}{\sqrt{D_{\min}}}$</span>
+        <span class="syms">$F_0$：外力振幅除以質量（m/s²）；$D_{\min}$：$D$ 在頂點的值</span>
+        把頂點代回 $D$。<br>
+        $D_{\min}=\omega_0^4-(\omega_0^2-2\gamma^2)^2=4\gamma^2(\omega_0^2-\gamma^2)$<br>
+        $A_{\max}=\dfrac{F_0}{2\gamma\sqrt{\omega_0^2-\gamma^2}}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 代數字比較 $A_{\max}$、$A(\omega_0)$、$A(0)$</h5>
+      <p class="wq-step"><span class="memo">背：$\omega_r=\sqrt{\omega_0^2-2\gamma^2}$，$A_{\max}=\dfrac{F_0}{2\gamma\sqrt{\omega_0^2-\gamma^2}}$</span>
+        <span class="syms">$\omega_0=10$ rad/s、$\gamma=1\ \text{s}^{-1}$、$F_0=5$ m/s²：題目給；$\omega_r$：共振角頻率；$A_{\max}$：最大振幅（m）</span>
+        代數字。<br>
+        $\omega_r=\sqrt{100-2}=\sqrt{98}=9.90\ \text{rad/s}$<br>
+        $A_{\max}=\dfrac5{2(1)\sqrt{99}}=0.2513\ \text{m}$</p>
+      <p class="wq-step"><span class="memo">背：$A(\omega)=\dfrac{F_0}{\sqrt{(\omega_0^2-\omega^2)^2+4\gamma^2\omega^2}}$</span>
+        <span class="syms">$\omega$：外力角頻率；$\omega_0,\gamma,F_0$：題目給</span>
+        代 $\omega=\omega_0$ 和 $\omega=0$。<br>
+        $A(\omega_0)=\dfrac{F_0}{2\gamma\omega_0}=\dfrac5{20}=0.25\ \text{m}$<br>
+        $A(0)=\dfrac{F_0}{\omega_0^2}=\dfrac5{100}=0.05\ \text{m}$<br>
+        共振把振幅放大約 5 倍，峰值和 $\omega_0$ 處只差約 0.5%</p>
+    </div>
+  </div>
+  <div class="final">答：$\omega_r=\sqrt{\omega_0^2-2\gamma^2}$；$A_{\max}=0.2513\ \text{m}$。</div>
+  <p class="small"><a href="#a3-s05-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s05-2" data-group="五、應用：受迫阻尼振盪與共振（9/30 照片 8–10）" data-title="自編：無阻尼共振">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　沒有阻尼、外力頻率等於自然頻率：$\ddot x+\omega_0^2x=F_0\sin\omega_0t$，$x(0)=0$、$\dot x(0)=0$。(a) 求 $x(t)$；(b) 若 $\omega_0=2\ \text{rad/s}$，多久之後振盪的包絡會達到靜態位移 $F_0/\omega_0^2$ 的 10 倍？</div>
+  <div class="rote">
+    <p><b>看到</b>「沒有阻尼」＋「外力頻率 $=$ 自然頻率」⟹ 題型：<b>無阻尼共振：修正規則乘 $t$，振幅隨 $t$ 線性變大</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 求 $x(t)$</h5>
+      <p class="wq-step"><span class="memo">背：$\ddot x+\omega_0^2x=0$ ⟹ $x_c=c_1\cos\omega_0t+c_2\sin\omega_0t$</span>
+        <span class="syms">$x$：位移（m）；$t$：時間（s）；$\omega_0$：自然角頻率（rad/s）；$c_1,c_2$：待定常數（m）</span>
+        特徵根 $\pm i\omega_0$。</p>
+      <p class="wq-step"><span class="memo">背：修正規則：右邊 $\sin\omega_0t$ 是齊次解 ⟹ 猜 $x_p=t(A\cos\omega_0t+B\sin\omega_0t)$</span>
+        <span class="syms">$x_p$：特解（m）；$A,B$：待定係數（m/s）；$F_0$：外力振幅除以質量（m/s²）</span>
+        這裡要多乘 $t$，因為 $\sin\omega_0t$ 本身就是齊次解。$(tf)''+\omega_0^2tf=2\dot f$（$f=A\cos\omega_0t+B\sin\omega_0t$）。<br>
+        $2(-\omega_0A\sin\omega_0t+\omega_0B\cos\omega_0t)=F_0\sin\omega_0t$<br>
+        ⟹ $A=-\dfrac{F_0}{2\omega_0}$、$B=0$，$x_p=-\dfrac{F_0t}{2\omega_0}\cos\omega_0t$</p>
+      <p class="wq-step"><span class="memo">背：$x=x_c+x_p$，初始條件代 $t=0$</span>
+        <span class="syms">$x(0)=0$、$\dot x(0)=0$：題目給；$c_1,c_2$：要解的常數</span>
+        $\dot x_p(0)=A=-\dfrac{F_0}{2\omega_0}$。<br>
+        $x(0)=c_1=0$；$\dot x(0)=c_2\omega_0-\dfrac{F_0}{2\omega_0}=0$ ⟹ $c_2=\dfrac{F_0}{2\omega_0^2}$<br>
+        $x=\dfrac{F_0}{2\omega_0^2}\sin\omega_0t-\dfrac{F_0t}{2\omega_0}\cos\omega_0t$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 包絡達到靜態位移 10 倍的時間</h5>
+      <p class="wq-step"><span class="memo">背：包絡 ≈ $t\cos$ 那一項的振幅 $\dfrac{F_0t}{2\omega_0}$；靜態位移 $\dfrac{F_0}{\omega_0^2}$</span>
+        <span class="syms">$F_0$：外力振幅除以質量（m/s²）；$\omega_0=2$ rad/s：題目給；$t$：時間（s）</span>
+        令包絡等於 10 倍靜態位移，$F_0$ 消掉。<br>
+        $\dfrac{F_0t}{2\omega_0}=\dfrac{10F_0}{\omega_0^2}$ ⟹ $t=\dfrac{20}{\omega_0}=\dfrac{20}2=10\ \text{s}$</p>
+    </div>
+  </div>
+  <div class="final">答：$x=\dfrac{F_0}{2\omega_0^2}\sin\omega_0t-\dfrac{F_0t}{2\omega_0}\cos\omega_0t$；$t=10\ \text{s}$。</div>
+  <p class="small"><a href="#a3-s05-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-108b-2" data-group="五、應用：受迫阻尼振盪與共振（9/30 照片 8–10）" data-title="108 級下 ODE2 2：LRC 穩態電荷">
+  <h3>108 級下 2nd Order ODE 第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-108b-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2nd Order ODE and Fourier Series</p><p>2. Find a steady-state solutions of the charge in an $L-R-C$ series circuit when the voltage is $V_0\sin\omega t$. Express your solution in terms of the reactance $X=\omega L-\frac{1}{\omega C}$ and impedance $Z=\sqrt{X^2+R^2}$ of the circuit.</p><p>Answer: $q(t)=-\dfrac{RV_0}{\omega Z^2}\cos\omega t-\dfrac{XV_0}{\omega Z^2}\sin\omega t$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　LRC 串聯、電壓 $V_0\sin\omega t$，求穩態電荷，用 $X=\omega L-\frac1{\omega C}$、$Z=\sqrt{X^2+R^2}$ 表示。</div>
+  <div class="rote">
+    <p><b>看到</b>「LRC 串聯」＋「電壓 $V_0\sin\omega t$」＋「穩態電荷，用 $X$、$Z$ 表示」⟹ 題型：<b>受迫振盪的穩態解（待定係數法，$\cos$、$\sin$ 兩式聯立）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>穩態電荷 $q(t)$</h5>
+      <p class="wq-step"><span class="memo">背：克希荷夫電壓定律 $L\ddot q+R\dot q+\dfrac qC=V(t)$</span>
+        <span class="syms">$q$：電容上的電荷（C）；$L$：電感（H）；$R$：電阻（Ω）；$C$：電容（F）；$V(t)=V_0\sin\omega t$：外加電壓（V）；$\omega$：角頻率（rad/s）</span>
+        穩態就是特解，照右邊 $\sin\omega t$ 猜。<br>
+        $q_p=K_1\cos\omega t+K_2\sin\omega t$，$\ddot q_p=-\omega^2q_p$</p>
+      <p class="wq-step"><span class="memo">背：比較係數：$\cos\omega t$、$\sin\omega t$ 的係數各自相等</span>
+        <span class="syms">$K_1,K_2$：待定係數（C）；$X=\omega L-\dfrac1{\omega C}$：電抗（Ω）</span>
+        先把 $\dfrac1C-L\omega^2$ 寫成 $-\omega X$，式子會變乾淨。<br>
+        $\dfrac1C-L\omega^2=-\omega\left(\omega L-\dfrac1{\omega C}\right)=-\omega X$<br>
+        $\cos\omega t$：$-\omega XK_1+R\omega K_2=0$<br>
+        $\sin\omega t$：$-\omega XK_2-R\omega K_1=V_0$</p>
+      <p class="wq-step"><span class="memo">背：$Z^2=X^2+R^2$</span>
+        <span class="syms">$Z$：阻抗（Ω）；$X$：電抗（Ω）；$R$：電阻（Ω）；$V_0$：電壓振幅（V）</span>
+        第一式得 $K_2=\dfrac XRK_1$，代入第二式。<br>
+        $-\omega K_1\dfrac{X^2+R^2}R=V_0$ ⟹ $K_1=-\dfrac{RV_0}{\omega Z^2}$，$K_2=-\dfrac{XV_0}{\omega Z^2}$<br>
+        $q=-\dfrac{RV_0}{\omega Z^2}\cos\omega t-\dfrac{XV_0}{\omega Z^2}\sin\omega t$</p>
+    </div>
+  </div>
+  <div class="final">答：$q=-\dfrac{RV_0}{\omega Z^2}\cos\omega t-\dfrac{XV_0}{\omega Z^2}\sin\omega t$。</div>
+  <p class="small"><a href="#a3-108b-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-108a-x5" data-group="五、應用：受迫阻尼振盪與共振（9/30 照片 8–10）" data-title="108 級上 Euler 卷 5：受迫阻尼振盪 A、φ">
+  <h3>108 級上 Exponential Function with Complex Exponents 第 5 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-108a-x5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Exponential Function with Complex Exponents</p><p>5. Consider a damped oscillator subjected to a sinusoidal driving force. The equation of motion is</p><p>$$\ddot x+\gamma\dot x+\omega_0^2x=F_d\sin\omega_dt,$$</p><p>where $x$ is the displacement from the equilibrium position, $\gamma$ is the damping parameter, and $\omega_0$ is the natural frequency. $F_d$ and $\omega_d$ are the amplitude and the frequency of the sinusoidal driving force respectively.</p><p>(a) Assume the steady state is $x=A\sin(\omega_dt+\phi)$, determine $A$ and $\phi$.</p><p>(b) Plot the figure of $A$ versus $\omega_d$.</p><p>(c) How do the damping paramter $\gamma$ affect the $A-\omega_d$ curve?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$\ddot x+\gamma\dot x+\omega_0^2x=F_d\sin\omega_dt$，設 $x=A\sin(\omega_dt+\phi)$：(a) 求 $A$、$\phi$；(b) 畫 $A$–$\omega_d$；(c) $\gamma$ 的影響。</div>
+  <div class="rote">
+    <p><b>看到</b>「受正弦外力的阻尼振子 $\ddot x+\gamma\dot x+\omega_0^2x=F_d\sin\omega_dt$」＋「設 $x=A\sin(\omega_dt+\phi)$」＋「畫 $A$–$\omega_d$」⟹ 題型：<b>複數法求穩態振幅與相位，再看共振曲線</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 求 $A$ 與 $\phi$</h5>
+      <p class="wq-step"><span class="memo">背：複數法：把 $\sin\omega_dt$ 換成 $e^{i\omega_dt}$，解 $\ddot z+\gamma\dot z+\omega_0^2z=F_de^{i\omega_dt}$，$x=\operatorname{Im}z$</span>
+        <span class="syms">$z$：複數位移；$x$：位移；$\gamma$：阻尼參數（注意這題沒有 2）；$\omega_0$：自然頻率；$F_d$：外力振幅；$\omega_d$：外力頻率；$\operatorname{Im}$：取虛部</span>
+        猜 $z=\tilde Ae^{i\omega_dt}$，每微分一次乘 $i\omega_d$。<br>
+        $(-\omega_d^2+i\gamma\omega_d+\omega_0^2)\tilde A=F_d$ ⟹ $\tilde A=\dfrac{F_d}{(\omega_0^2-\omega_d^2)+i\gamma\omega_d}$</p>
+      <p class="wq-step"><span class="memo">背：$\tilde A=Ae^{i\phi}$ ⟹ $x=\operatorname{Im}\left(Ae^{i(\omega_dt+\phi)}\right)=A\sin(\omega_dt+\phi)$</span>
+        <span class="syms">$\tilde A$：複數振幅；$A=|\tilde A|$：振幅；$\phi$：$\tilde A$ 的幅角（相位）</span>
+        取絕對值和幅角；分母虛部 $\gamma\omega_d\gt0$，所以分母幅角在 $(0,\pi)$，$\phi$ 是它的負值。<br>
+        $A=\dfrac{F_d}{\sqrt{(\omega_0^2-\omega_d^2)^2+\gamma^2\omega_d^2}}$<br>
+        $\tan\phi=\dfrac{-\gamma\omega_d}{\omega_0^2-\omega_d^2}$，$-\pi\lt\phi\lt0$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 畫 $A$ 對 $\omega_d$ 的圖</h5>
+      <p class="wq-step"><span class="memo">背：畫圖找三個特徵：$\omega_d=0$ 的值、極大值、$\omega_d\to\infty$ 的趨勢</span>
+        <span class="syms">$A(\omega_d)$：(a) 的振幅；$s=\omega_d^2$；$D(s)=(\omega_0^2-s)^2+\gamma^2s$：根號內；$\omega_r$：峰的位置</span>
+        起點代 $\omega_d=0$；峰在 $D(s)$ 的頂點 $s=\omega_0^2-\tfrac{\gamma^2}2$；高頻時 $A\approx F_d/\omega_d^2$。<br>
+        $A(0)=\dfrac{F_d}{\omega_0^2}$<br>
+        $\omega_r=\sqrt{\omega_0^2-\dfrac{\gamma^2}2}$，$D_{\min}=\gamma^2\left(\omega_0^2-\dfrac{\gamma^2}4\right)$ ⟹ $A_{\max}=\dfrac{F_d}{\gamma\sqrt{\omega_0^2-\gamma^2/4}}$<br>
+        $\omega_d\to\infty$：$A\to0$。圖形從 $F_d/\omega_0^2$ 升到 $\omega_r$ 的峰，再降到 0。</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $\gamma$ 對 $A$–$\omega_d$ 曲線的影響</h5>
+      <p class="wq-step"><span class="memo">背：$\omega_r=\sqrt{\omega_0^2-\dfrac{\gamma^2}2}$，$A_{\max}=\dfrac{F_d}{\gamma\sqrt{\omega_0^2-\gamma^2/4}}$</span>
+        <span class="syms">$\gamma$：阻尼參數；$\omega_r$：峰的位置；$A_{\max}$：峰高；$\omega_0$：自然頻率；$F_d$：外力振幅</span>
+        看兩個式子隨 $\gamma$ 怎麼變。<br>
+        $\gamma$ 越大：$A_{\max}$ 越小（峰越低、越寬），$\omega_r$ 越小（峰往低頻移）<br>
+        $\gamma\ge\sqrt2\omega_0$ 時 $\omega_0^2-\tfrac{\gamma^2}2\le0$，沒有峰，$A$ 從 $\omega_d=0$ 一路遞減</p>
+    </div>
+  </div>
+  <div class="final">答：(a) $A=\dfrac{F_d}{\sqrt{(\omega_0^2-\omega_d^2)^2+\gamma^2\omega_d^2}}$，$\tan\phi=\dfrac{-\gamma\omega_d}{\omega_0^2-\omega_d^2}$（$-\pi\lt\phi\lt0$）；(b) 從 $F_d/\omega_0^2$ 升到 $\omega_r=\sqrt{\omega_0^2-\gamma^2/2}$ 的峰 $A_{\max}=\dfrac{F_d}{\gamma\sqrt{\omega_0^2-\gamma^2/4}}$，再降到 0；(c) $\gamma$ 越大峰越低、越寬、往低頻移，$\gamma\ge\sqrt2\,\omega_0$ 時沒有峰。</div>
+  <p class="small"><a href="#a3-108a-x5">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="a3-s06-1" data-group="六、參數變換法（網站補充）" data-title="自編：$x^2y''+xy'-y=x^2\ln x$">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　已知 $y_1=x$、$y_2=x^{-1}$ 是 $x^2y''+xy'-y=0$（$x\gt0$）的解。(a) 用參數變換法求 $x^2y''+xy'-y=x^2\ln x$ 的特解；(b) 求滿足 $y(1)=0$、$y'(1)=0$ 的解；(c) 用代換 $x=e^t$ 加待定係數法檢查 (a)。</div>
+  <div class="rote">
+    <p><b>看到</b>「變係數方程，已知兩個齊次解」＋「右邊 $x^2\ln x$」⟹ 題型：<b>參數變換法：$u_1'=-\frac{y_2g}W$、$u_2'=\frac{y_1g}W$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 參數變換法求特解</h5>
+      <p class="wq-step"><span class="memo">背：標準式 $y''+P(x)y'+Q(x)y=g(x)$（$y''$ 的係數除成 1）</span>
+        <span class="syms">$P(x)$：$y'$ 的係數；$Q(x)$：$y$ 的係數；$g(x)$：標準式的右邊</span>
+        整條除以 $x^2$，右邊跟著除。<br>
+        $y''+\dfrac1xy'-\dfrac1{x^2}y=\ln x$ ⟹ $g=\ln x$（不是 $x^2\ln x$）</p>
+      <p class="wq-step"><span class="memo">背：$W=y_1y_2'-y_1'y_2$</span>
+        <span class="syms">$W$：Wronskian；$y_1=x$、$y_2=x^{-1}$：題目給的齊次解；$y_1'=1$、$y_2'=-x^{-2}$</span>
+        代入。<br>
+        $W=x(-x^{-2})-1\cdot x^{-1}=-\dfrac2x$</p>
+      <p class="wq-step"><span class="memo">背：$u_1'=-\dfrac{y_2g}W$，$u_2'=\dfrac{y_1g}W$，$y_p=u_1y_1+u_2y_2$</span>
+        <span class="syms">$u_1,u_2$：待求的函數；$y_1,y_2$：齊次解；$g=\ln x$：標準式右邊；$W=-\tfrac2x$</span>
+        代入後積分（$\int x^2\ln x\,dx$ 用分部積分）。<br>
+        $u_1'=-\dfrac{x^{-1}\ln x}{-2/x}=\tfrac12\ln x$ ⟹ $u_1=\tfrac12(x\ln x-x)$<br>
+        $u_2'=\dfrac{x\ln x}{-2/x}=-\tfrac12x^2\ln x$ ⟹ $u_2=-\tfrac16x^3\ln x+\tfrac1{18}x^3$</p>
+      <p class="wq-step"><span class="memo">背：$y_p=u_1y_1+u_2y_2$</span>
+        <span class="syms">$u_1,u_2$：上一步求出；$y_1=x$、$y_2=x^{-1}$</span>
+        相乘後合併 $x^2\ln x$ 和 $x^2$ 兩種項。<br>
+        $u_1x=\tfrac12x^2\ln x-\tfrac12x^2$，$u_2x^{-1}=-\tfrac16x^2\ln x+\tfrac1{18}x^2$<br>
+        $y_p=\tfrac13x^2\ln x-\tfrac49x^2$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 滿足 $y(1)=0$、$y'(1)=0$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$y=c_1y_1+c_2y_2+y_p$，初始條件代 $x=1$</span>
+        <span class="syms">$c_1,c_2$：要解的常數；$y_p$：(a) 的特解；$y(1)=0$、$y'(1)=0$：題目給</span>
+        $\ln1=0$：$y_p(1)=-\tfrac49$；$y_p'=\tfrac23x\ln x+\tfrac13x-\tfrac89x$，$y_p'(1)=-\tfrac59$。<br>
+        $c_1+c_2-\tfrac49=0$，$c_1-c_2-\tfrac59=0$ ⟹ $c_1=\tfrac12$、$c_2=-\tfrac1{18}$<br>
+        $y=\tfrac12x-\dfrac1{18x}+\tfrac13x^2\ln x-\tfrac49x^2$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 用 $x=e^t$ 檢查 (a)</h5>
+      <p class="wq-step"><span class="memo">背：$x=e^t$ ⟹ $xy'=\dot Y$，$x^2y''=\ddot Y-\dot Y$</span>
+        <span class="syms">$t=\ln x$：新的自變數；$Y(t)=y(e^t)$；$\dot Y,\ddot Y$：對 $t$ 的導數</span>
+        右邊 $x^2\ln x=e^{2t}t$。<br>
+        $(\ddot Y-\dot Y)+\dot Y-Y=te^{2t}$ ⟹ $\ddot Y-Y=te^{2t}$</p>
+      <p class="wq-step"><span class="memo">背：乘法規則猜 $(at+b)e^{2t}$；令 $Y=e^{2t}u$ ⟹ $\ddot Y=e^{2t}(\ddot u+4\dot u+4u)$</span>
+        <span class="syms">$u=at+b$：新的未知函數；$a,b$：待定係數</span>
+        $2$ 不是特徵根（根是 $\pm1$），代入約掉 $e^{2t}$。<br>
+        $\ddot u+4\dot u+3u=t$ ⟹ $4a+3(at+b)=t$ ⟹ $a=\tfrac13$、$b=-\tfrac49$<br>
+        $Y_p=e^{2t}\left(\tfrac13t-\tfrac49\right)=\tfrac13x^2\ln x-\tfrac49x^2$，和 (a) 一致 ✔</p>
+    </div>
+  </div>
+  <div class="final">答：$y_p=\tfrac13x^2\ln x-\tfrac49x^2$；$y=\tfrac12x-\dfrac1{18x}+\tfrac13x^2\ln x-\tfrac49x^2$。</div>
+  <p class="small"><a href="#a3-s06-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="a3-s06-2" data-group="六、參數變換法（網站補充）" data-title="自編：$y''+y=\sec x$ 初值問題">
+  <h3>自編難題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''+y=\sec x$，$y(0)=1$、$y'(0)=0$。(a) 說明為什麼不能用待定係數法；(b) 用參數變換法求解；(c) 這個解在包含 $x=0$ 的哪個最大區間上成立？在區間端點 $y$ 和 $y''$ 會怎樣？</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $\sec x$（不在待定係數的對照表裡）」⟹ 題型：<b>參數變換法</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 為什麼不能用待定係數法</h5>
+      <p class="wq-step"><span class="memo">背：待定係數法只適用於導數封閉的右邊：多項式、指數、$\cos$、$\sin$ 及它們的乘積</span>
+        <span class="syms">$\sec x=\dfrac1{\cos x}$：題目的右邊；$\tan x=\dfrac{\sin x}{\cos x}$</span>
+        $\sec x$ 一直微分會不斷產生新函數，猜不出有限項的組合。<br>
+        $(\sec x)'=\sec x\tan x$，$(\sec x\tan x)'=\sec x\tan^2x+\sec^3x$，越來越多種</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 參數變換法求解</h5>
+      <p class="wq-step"><span class="memo">背：$W=y_1y_2'-y_1'y_2$</span>
+        <span class="syms">$W$：Wronskian；$y_1=\cos x$、$y_2=\sin x$：$y''+y=0$ 的兩個解（特徵根 $\pm i$）</span>
+        代入。<br>
+        $W=\cos x\cos x-(-\sin x)\sin x=1$</p>
+      <p class="wq-step"><span class="memo">背：$u_1'=-\dfrac{y_2g}W$，$u_2'=\dfrac{y_1g}W$，$y_p=u_1y_1+u_2y_2$</span>
+        <span class="syms">$u_1,u_2$：待求的函數；$g=\sec x$：標準式右邊；$W=1$</span>
+        $\int-\tan x\,dx=\ln|\cos x|$，在 $x=0$ 附近 $\cos x\gt0$。<br>
+        $u_1'=-\sin x\sec x=-\tan x$ ⟹ $u_1=\ln(\cos x)$<br>
+        $u_2'=\cos x\sec x=1$ ⟹ $u_2=x$<br>
+        $y_p=\cos x\ln(\cos x)+x\sin x$</p>
+      <p class="wq-step"><span class="memo">背：$y=c_1y_1+c_2y_2+y_p$，初始條件代 $x=0$</span>
+        <span class="syms">$c_1,c_2$：要解的常數；$y(0)=1$、$y'(0)=0$：題目給</span>
+        $y_p(0)=0$；$y_p'=-\sin x\ln(\cos x)+x\cos x$，$y_p'(0)=0$。<br>
+        $y(0)=c_1=1$；$y'(0)=c_2=0$<br>
+        $y=\cos x+\cos x\ln(\cos x)+x\sin x$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 成立的最大區間與端點行為</h5>
+      <p class="wq-step"><span class="memo">背：線性方程的解在「係數與右邊 $g$ 都連續、且包含初始點」的最大區間上存在</span>
+        <span class="syms">$g=\sec x$：在 $x=\pm\tfrac\pi2$ 不連續；$x=0$：初始點</span>
+        包含 $0$ 的最大連續區間。<br>
+        $|x|\lt\tfrac\pi2$</p>
+      <p class="wq-step"><span class="memo">背：$u\to0^+$ 時 $u\ln u\to0$</span>
+        <span class="syms">$u=\cos x$：$x\to\pm\tfrac\pi2$ 時 $\to0^+$；$y''=\sec x-y$：由方程式移項</span>
+        端點處各項分別取極限。<br>
+        $y\to0+0+\tfrac\pi2\cdot1=\tfrac\pi2$（有限）；$y''=\sec x-y\to+\infty$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\cos x+\cos x\ln(\cos x)+x\sin x$，$|x|\lt\tfrac\pi2$。</div>
+  <p class="small"><a href="#a3-s06-2">回到正文詳解</a></p>
+</article>

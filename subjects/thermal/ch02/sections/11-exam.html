@@ -1,0 +1,277 @@
+<h2>十一、考前衝刺 <span class="pg">課本第 2 章 · p.49–84</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>三份上學期期中考中屬於第 2 章的 12 題：115 級期中範圍只到第 2 章，100 分裡 80 分是本章（硬幣 10、Stirling 推多重度 20、兩固體分能量 20、順磁體高斯峰 20、二維氣體多重度 10）；114 級期中有小固體列表畫長條圖（20 分）、20 枚硬幣（10 分）、理想氣體的熵與溫度（10 分）、一公升空氣定壓加熱到兩倍體積的熵增加（10 分，$V$、$U$ 都變）；某級期中（到第 4.1 章）把本章的推導接上第 3 章的溫度、化學勢與熱容量。幾乎都是<strong>課本習題原題或換數字</strong>，作業（小考）題號就是考題來源。題目卷會給 Stirling 公式、超球面面積與 $S=k\ln\Omega$，要求「show all your steps」，推導題每一步的近似理由都會被計分；組合數題允許只寫 $\binom{n}{k}$ 不算數值。</p>
+</div>
+
+<h3 id="tx-formulas">11.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>兩態系統</h4>
+    <ul>
+      <li>$P(\text{巨觀態})=\Omega/\Omega(\text{all})$，$N$ 枚硬幣 $\Omega(\text{all})=2^N$</li>
+      <li>$\Omega(N,n)=\binom Nn=\dfrac{N!}{n!(N-n)!}$；順磁體 $\Omega=\binom N{N_\uparrow}$</li>
+      <li>巨觀態數 $N+1$；指定序列的機率 $2^{-N}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>愛因斯坦固體</h4>
+    <ul>
+      <li>$\Omega(N,q)=\binom{q+N-1}{q}=\dfrac{(q+N-1)!}{q!(N-1)!}$（點與線）</li>
+      <li>一般大 $N,q$：$\Omega\approx\dfrac{(\frac{q+N}q)^q(\frac{q+N}N)^N}{\sqrt{2\pi q(q+N)/N}}$</li>
+      <li>高溫 $q\gg N$：$(eq/N)^N$；低溫 $q\ll N$：$(eN/q)^q$</li>
+      <li>$S=k[(q+N)\ln(q+N)-q\ln q-N\ln N]$；高溫 $S=Nk[\ln\frac qN+1]$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>兩個系統</h4>
+    <ul>
+      <li>$\Omega_{\text{total}}=\Omega_A\Omega_B$；總數 $=\binom{q+N_A+N_B-1}{q}$</li>
+      <li>最可能：比較相鄰項 $\dfrac{(q_A+N_A)\,q_B}{(q_A+1)(q_B+N_B-1)}\ge1$；大系統 $\dfrac{q_A}{N_A}=\dfrac{q_B}{N_B}$</li>
+      <li>兩大固體：$\Omega=\Omega_{\max}e^{-N(2x/q)^2}$，半寬 $\dfrac q{2\sqrt N}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>Stirling 與大數</h4>
+    <ul>
+      <li>$N!\approx N^Ne^{-N}\sqrt{2\pi N}$，$\ln N!\approx N\ln N-N$</li>
+      <li>$\ln(1+x)\approx x$；$\ln(a+b)\approx\ln a+\frac ba$（$b\ll a$）</li>
+      <li>$\binom N{N/2}\approx2^N\sqrt{\frac2{\pi N}}$；順磁體 $\Omega\approx2^N\sqrt{\frac2{\pi N}}e^{-2x^2/N}$，半寬 $\sqrt{N/2}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>理想氣體</h4>
+    <ul>
+      <li>$\Omega_1=VV_p/h^3$；$d$ 維超球面面積 $\dfrac{2\pi^{d/2}}{(\frac d2-1)!}r^{d-1}$</li>
+      <li>$\Omega_N\approx\dfrac1{N!}\dfrac{V^N}{h^{3N}}\dfrac{\pi^{3N/2}}{(3N/2)!}(2mU)^{3N/2}\propto V^NU^{3N/2}$</li>
+      <li>二維：$\dfrac1{N!}\dfrac{A^N}{h^{2N}}\dfrac{\pi^N}{N!}(2mU)^N$</li>
+      <li>某部分體積全空的機率 $=(V'/V)^N$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>熵</h4>
+    <ul>
+      <li>$S=k\ln\Omega$；$S_{A+B}=S_A+S_B$；$S\sim Nk$</li>
+      <li>Sackur–Tetrode：$S=Nk\left[\ln\left(\frac VN\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\frac52\right]$；一莫耳氦 $126\ \text{J/K}$</li>
+      <li>$U,N$ 固定：$\Delta S=Nk\ln\frac{V_f}{V_i}$（等溫、自由膨脹都適用）</li>
+      <li>混合：$\Delta S=-Nk[x\ln x+(1-x)\ln(1-x)]$，各半 $2Nk\ln2$（只限不同氣體）</li>
+      <li>接第 3 章：$\frac1T=\frac{\partial S}{\partial U}$ ⟹ 理想氣體 $U=\frac32NkT$、高溫固體 $U=NkT$；$\mu=-T\frac{\partial S}{\partial N}$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="tx-types">11.2 題型總表</h3>
+
+<p class="type-jump"><a href="#ttype-1">① 硬幣與機率</a><a href="#ttype-2">② 數微觀態</a><a href="#ttype-3">③ 兩固體分能量</a><a href="#ttype-4">④ Stirling</a><a href="#ttype-5">⑤ 多重度推導</a><a href="#ttype-6">⑥ 高斯峰與寬度</a><a href="#ttype-7">⑦ 理想氣體多重度</a><a href="#ttype-8">⑧ 算熵</a><a href="#ttype-9">⑨ 膨脹與混合</a><a href="#ttype-10">⑩ 觀念</a></p>
+
+<div class="drill" id="ttype-1">
+  <h4>① 硬幣與巨觀態機率</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>丟 $N$ 枚硬幣、微觀態／巨觀態幾個、指定序列或「$n$ 正」的機率。</dd>
+    <dt>做法</dt><dd>微觀態 $2^N$，巨觀態 $N+1$；序列 $=1/2^N$；$n$ 正 $=\binom Nn/2^N$。</dd>
+    <dt>常錯</dt><dd>把巨觀態數答成 $2^N$；「$n$ 正」忘了乘 $\binom Nn$。</dd>
+    <dt>代表題</dt><dd><a href="#tk-115-3">考古 115-3</a>　<a href="#tk-114-6">考古 114-6</a>　<a href="#sc-ex-3coins">三枚</a>　<a href="#sc-ex-100coins">一百枚</a>　<a href="#sc-2-1">課本 2-1</a>　<a href="#sc-2-3">2-3</a>　<a href="#tvar-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="ttype-2">
+  <h4>② 數愛因斯坦固體的微觀態</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$N$ 個振子、$q$ 份能量；「用圖說明」「列出所有微觀態」。</dd>
+    <dt>做法</dt><dd>$\binom{q+N-1}{q}$；圖示用 $q$ 個點（圓圈）、$N-1$ 條隔線。列舉時先分型態再數排列。</dd>
+    <dt>常錯</dt><dd>寫成 $N^q$；隔線畫成 $N$ 條；把原子數當振子數。</dd>
+    <dt>代表題</dt><dd><a href="#tk-114-4">考古 114-4(a)</a>　<a href="#sc-ex-ein3">三振子</a>　<a href="#sc-2-5">課本 2-5</a>　<a href="#sc-2-6">2-6</a>　<a href="#sc-2-7">2-7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="ttype-3">
+  <h4>③ 兩個固體分能量</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$N_A$、$N_B$、$q_{\text{total}}$；巨觀態數、微觀態數、全在 A 的機率、最可能巨觀態。</dd>
+    <dt>做法</dt><dd>巨觀態 $q+1$；微觀態 $\binom{q+N_A+N_B-1}{q}$；全在 A $=\Omega_A(q)/\Omega(\text{all})$；最可能：比較相鄰項（小系統）或 $q_A/N_A=q_B/N_B$（大系統）。小系統要列表＋長條圖＋解釋。</dd>
+    <dt>常錯</dt><dd>巨觀態當等機率（$1/(q+1)$）；直接用比例得 20 而精確答案是 19（考古 115-5）。</dd>
+    <dt>代表題</dt><dd><a href="#tk-115-5">考古 115-5</a>　<a href="#tk-114-4">考古 114-4</a>　<a href="#sc-ex-fig24">Fig. 2.4</a>　<a href="#sc-ex-fig25">Fig. 2.5</a>　<a href="#sc-2-8">課本 2-8</a>　<a href="#sc-2-9">2-9</a>　<a href="#sc-2-10">2-10</a>　<a href="#sc-2-11">2-11</a>　<a href="#tvar-2">變化題 2</a>　<a href="#tvar-3">3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="ttype-4">
+  <h4>④ Stirling 近似與大數</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$N!$、$\ln N!$ 的精確度；1000 枚硬幣剛好一半的機率；$e^{10^{23}}$ 換底。</dd>
+    <dt>做法</dt><dd>求機率用完整 $N^Ne^{-N}\sqrt{2\pi N}$；求對數用 $N\ln N-N$；換底 $x=\ln(\cdot)/\ln10$。</dd>
+    <dt>常錯</dt><dd>機率題丟掉 $\sqrt{2\pi N}$（會得到 1）。</dd>
+    <dt>代表題</dt><dd><a href="#sc-ex-stirling">Table 2.3</a>　<a href="#sc-2-13">課本 2-13</a>　<a href="#sc-2-14">2-14</a>　<a href="#sc-2-15">2-15</a>　<a href="#sc-2-16">2-16</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="ttype-5">
+  <h4>⑤ 多重度推導：一般式、高溫、低溫</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「Use Stirling's approximation to show」、high/low temperature limit、為什麼叫高溫。</dd>
+    <dt>做法</dt><dd>先把 $(N-1)!$ 寫成 $N!/N$；代完整 Stirling，$e$ 的次方抵消；高溫 $(1+\frac Nq)^q\to e^N$，低溫 $(1+\frac qN)^N\to e^q$。熵：根號因子只貢獻 $\ln$ 級的量，可忽略。</dd>
+    <dt>常錯</dt><dd>沒說明丟掉的是「只是大的因子」；「高溫」答成「$q$ 大」而沒說每個振子平均很多份能量（$U/N\gg\epsilon$）。</dd>
+    <dt>代表題</dt><dd><a href="#tk-115-4">考古 115-4</a>　<a href="#tkx-2">考古 某級-2</a>　<a href="#tg-derive">課文推導</a>　<a href="#sc-2-19">課本 2-19</a>　<a href="#tvar-9">變化題 9</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="ttype-6">
+  <h4>⑥ 高斯峰與寬度</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>sharply peaked、in the vicinity of the peak、Gaussian、How wide。</dd>
+    <dt>做法</dt><dd>令偏離量 $x$；取對數，$\ln(1-\delta)\approx-\delta$。順磁體要重排成 $\frac N2\ln[(\frac N2)^2-x^2]+x\ln\frac{N/2+x}{N/2-x}$。寬度：令指數 $=-1$。</dd>
+    <dt>常錯</dt><dd>各自一次展開得錯的 $e^{-4x^2/N}$；忘了驗算 $x=0$ 回到峰高。</dd>
+    <dt>代表題</dt><dd><a href="#tk-115-6">考古 115-6</a>　<a href="#tkx-3">考古 某級-3</a>　<a href="#tw-gauss">課文推導</a>　<a href="#sc-2-20">課本 2-20</a>　<a href="#sc-2-22">2-22</a>　<a href="#sc-2-23">2-23</a>　<a href="#sc-2-25">2-25</a>　<a href="#tvar-4">變化題 4</a>　<a href="#tvar-10">10</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="ttype-7">
+  <h4>⑦ 理想氣體的多重度（換維度）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>flatland、two/one dimensional universe、面積 $A$ 或長度 $L$。</dd>
+    <dt>做法</dt><dd>逐項換：$V\to A$（或 $L$）、$h^{3N}\to h^{dN}$、$dN$ 維超球面、$1/N!$；面積公式丟掉 $dN/r$ 這種大因子。</dd>
+    <dt>常錯</dt><dd>忘了 $1/N!$；超球面用 $3N$ 維；$U$ 的次方應是 $dN/2$。</dd>
+    <dt>代表題</dt><dd><a href="#tk-115-7">考古 115-7</a>　<a href="#tq-n">課文推導</a>　<a href="#sc-ex-half">左半邊</a>　<a href="#sc-2-27">課本 2-27</a>　<a href="#tvar-5">變化題 5</a>　<a href="#tvar-8">8</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="ttype-8">
+  <h4>⑧ 由多重度算熵（再求溫度）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>Compute the entropy、Sackur–Tetrode、接著問 $T$ 或 $C_V$。</dd>
+    <dt>做法</dt><dd>$\ln$ 拆成每一項，兩個階乘各用一次 Stirling，常數湊成 $\tfrac52$。溫度只要找含 $U$ 的項微分。</dd>
+    <dt>常錯</dt><dd>$(3N/2)!$ 的 Stirling 漏掉；把 $\tfrac52$ 寫成 $\tfrac32$（那是可分辨的錯式）。</dd>
+    <dt>代表題</dt><dd><a href="#tk-114-3">考古 114-3</a>　<a href="#tkx-1j">考古 某級-1(j)</a>　<a href="#sc-2-31">課本 2-31</a>　<a href="#sc-ex-helium">一莫耳氦</a>　<a href="#sc-ex-sein">固體的熵</a>　<a href="#sc-2-29">2-29</a>　<a href="#sc-2-30">2-30</a>　<a href="#sc-2-32">2-32</a>　<a href="#sc-2-33">2-33</a>　<a href="#sc-2-35">2-35</a>　<a href="#tvar-11">變化題 11</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="ttype-9">
+  <h4>⑨ 體積改變與混合熵</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>free expansion、isothermal、remove the partition、mixing；heated at constant pressure until it doubles in volume。</dd>
+    <dt>做法</dt><dd>$U,N$ 不變：$\Delta S=Nk\ln(V_f/V_i)$；$U$ 也變：再加 $\frac f2Nk\ln(U_f/U_i)$（空氣 $f=5$）；混合：每種氣體各自膨脹再相加。</dd>
+    <dt>常錯</dt><dd>自由膨脹寫 $\Delta S=Q/T=0$；同種氣體也算混合熵。</dd>
+    <dt>代表題</dt><dd><a href="#tk-114-5">考古 114-5</a>　<a href="#sc-2-34">課本 2-34</a>　<a href="#sc-ex-mix">混合例題</a>　<a href="#sc-2-37">2-37</a>　<a href="#sc-2-38">2-38</a>　<a href="#sc-2-39">2-39</a>　<a href="#tvar-6">變化題 6</a>　<a href="#tvar-7">7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="ttype-10">
+  <h4>⑩ 觀念題</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>何時不可逆、「可及」的意義、為什麼熵可以忽略某因子、Gibbs 弔詭、黑洞。</dd>
+    <dt>做法</dt><dd>回到多重度：不可逆＝反向的巨觀態多重度小到看不到；可及＝允許且無法排除；大因子取對數後變小。</dd>
+    <dt>常錯</dt><dd>說「因為熵增加」卻沒指出哪裡排列方式變多。</dd>
+    <dt>代表題</dt><dd><a href="#sc-2-8">課本 2-8(e)</a>　<a href="#sc-2-23">2-23(c)</a>　<a href="#sc-2-40">2-40</a>　<a href="#sc-2-42">2-42</a>　<a href="#tm-gibbs">Gibbs 弔詭</a>　<a href="#tm-rev">可逆</a></dd>
+  </dl>
+</div>
+
+<h3 id="tx-vars">11.3 變化題：老師可能的改法</h3>
+
+<p>每題都是把考古題或課本題換條件。先自己寫，再打開解答對照。</p>
+
+<div class="drill-q" id="tvar-1">
+  <p class="q-src">變化題 1 · 改自考古 <a href="#tk-115-3">115-3</a></p>
+  <p>丟 12 枚公正硬幣。微觀態、巨觀態各幾個？得到 8 正 4 反的機率？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>微觀態 $2^{12}=4096$，巨觀態 13 個。</p>
+    $$P(8)=\frac{\binom{12}8}{2^{12}}=\frac{495}{4096}=0.121$$
+    <p>驗算：$\binom{12}{8}=\binom{12}{4}=\frac{12\cdot11\cdot10\cdot9}{24}=495$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-2">
+  <p class="q-src">變化題 2 · 改自考古 <a href="#tk-114-4">114-4</a></p>
+  <p>兩個各 4 個振子的愛因斯坦固體共享 4 份能量。列出 $\Omega_A$、$\Omega_B$、$\Omega_{\text{total}}$，求最可能巨觀態的機率。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\Omega(4,q)=\binom{q+3}3$：$q=0..4$ 為 1、4、10、20、35。</p>
+    <p>$q_A=0,1,2,3,4$：$\Omega_{\text{total}}=35,\ 80,\ 100,\ 80,\ 35$，總和 $330=\binom{11}4$。</p>
+    $$P(q_A=2)=\frac{100}{330}=30.3\%$$
+    <p>驗算：兩邊一樣大，對稱於 $q_A=2$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-3">
+  <p class="q-src">變化題 3 · 改自考古 <a href="#tk-115-5">115-5</a></p>
+  <p>$N_A=20$、$N_B=10$、$q=30$。最可能的巨觀態是哪個？全在 A 的機率？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>相鄰項比較：$(q_A+20)(30-q_A)\ge(q_A+1)(39-q_A)\iff561\ge28q_A\iff q_A\le20.04$。所以 $20\to21$ 仍增加，最可能 $q_A=21$、$q_B=9$，$P=6.38\times10^{15}/5.91\times10^{16}=10.8\%$。</p>
+    $$P(\text{全在 A})=\frac{\binom{49}{30}}{\binom{59}{30}}=3.2\times10^{-4}$$
+    <p>驗算：$q_A/(N_A-1)\approx q_B/(N_B-1)$：$30\times\frac{19}{28}=20.4$，離散最大值落在 21 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-4">
+  <p class="q-src">變化題 4 · 改自考古 <a href="#tk-115-6">115-6</a>（即習題 2.24(d)）</p>
+  <p>丟一百萬枚硬幣。得到 501 000 正、499 000 反會驚訝嗎？510 000 正、490 000 反呢？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\Omega\propto e^{-2x^2/N}$，$1/e$ 半寬 $\sqrt{N/2}=707$。</p>
+    <p>$x=1000$：$e^{-2(10^6)/10^6}=e^{-2}=0.14$，只比半寬多一點，不意外。$x=10\,000$：$e^{-200}\approx10^{-87}$，若真的發生，幾乎可以確定硬幣不公正。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-5">
+  <p class="q-src">變化題 5 · 改自考古 <a href="#tk-115-7">115-7</a></p>
+  <p>一維宇宙裡（長度 $L$）的 $N$ 個單原子理想氣體分子，多重度與熵是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>每個分子 $LL_p/h$；$N$ 維超球面面積 $\frac{2\pi^{N/2}}{(N/2-1)!}r^{N-1}\approx\frac{\pi^{N/2}}{(N/2)!}r^N$：</p>
+    $$\Omega\approx\frac1{N!}\frac{L^N}{h^N}\frac{\pi^{N/2}}{(N/2)!}(2mU)^{N/2},\qquad S=Nk\left[\ln\left(\frac LN\left(\frac{4\pi mU}{Nh^2}\right)^{1/2}\right)+\frac32\right]$$
+    <p>驗算：$U$ 的次方 $N/2$（$N$ 個自由度的一半）；一般 $d$ 維常數為 $1+\frac d2$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-6">
+  <p class="q-src">變化題 6 · 改自 <a href="#sc-2-34">課本 2-34</a></p>
+  <p>一莫耳理想氣體自由膨脹到原體積的 3 倍。$Q$、$W$、$\Delta U$、$\Delta S$ 各是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$Q=W=\Delta U=0$；$\Delta S=R\ln3=9.13\ \text{J/K}$。驗算：若改為等溫準靜態膨脹，$\Delta S$ 相同但 $Q=T\Delta S=RT\ln3$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-7">
+  <p class="q-src">變化題 7 · 改自 <a href="#sc-2-37">課本 2-37</a></p>
+  <p>同溫同壓下 $1\ \text{mol}$ 氦和 $3\ \text{mol}$ 氬原本隔開，拿掉隔板後熵增加多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$x=\tfrac14:\quad\Delta S=-4R\left[\tfrac14\ln\tfrac14+\tfrac34\ln\tfrac34\right]=4R(0.562)=18.7\ \text{J/K}$$
+    <p>驗算：氦體積變 4 倍 $R\ln4=11.5$，氬變 $\tfrac43$ 倍 $3R\ln\tfrac43=7.2$，合計 18.7 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-8">
+  <p class="q-src">變化題 8 · 改自 <a href="#sc-2-27">課本 2-27</a></p>
+  <p>容器中 1000 個分子全部在最左邊 90% 的機率是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\Omega\propto V^N$ ⟹ $P=0.9^{1000}=1.7\times10^{-46}$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-9">
+  <p class="q-src">變化題 9 · 改自考古 <a href="#tk-115-4">115-4</a></p>
+  <p>$N=10^{23}$ 個振子、$q=N$ 份能量的愛因斯坦固體，熵是多少？能用高溫公式嗎？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$q=N$ 不滿足 $q\gg N$，要用一般式：</p>
+    $$\frac Sk=(2N)\ln(2N)-N\ln N-N\ln N=2N\ln2,\qquad S=2Nk\ln2=1.9\ \text{J/K}$$
+    <p>高溫公式 $Nk[\ln1+1]=Nk$ 會低估 28%（$2\ln2=1.39$）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-10">
+  <p class="q-src">變化題 10 · 改自 <a href="#sc-2-20">課本 2-20</a></p>
+  <p>兩個各 $N=10^4$ 個振子的固體共享 $q=10^6$ 份能量。$q_A$ 的 $1/e$ 半寬多大？佔總範圍多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$x=\frac q{2\sqrt N}=\frac{10^6}{200}=5000,\qquad\frac x q=0.5\%$$
+    <p>$N$ 只有一萬時擾動還量得到；$N=10^{20}$ 時降到 $5\times10^{-11}$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="tvar-11">
+  <p class="q-src">變化題 11 · 改自 <a href="#sc-2-33">課本 2-33</a></p>
+  <p>壓力不變，把一莫耳氬從 $300\ \text{K}$ 加熱到 $600\ \text{K}$，熵變成多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>定壓時 $V/N\propto T$、$U/N\propto T$，對數裡 $\propto T\cdot T^{3/2}=T^{5/2}$：</p>
+    $$\Delta S=\tfrac52R\ln2=14.4\ \text{J/K},\qquad S=155+14=169\ \text{J/K}$$
+    <p>驗算：和第 3 章 $\Delta S=C_P\ln(T_f/T_i)$、$C_P=\tfrac52R$ 一致 ✔</p>
+  </details>
+</div>

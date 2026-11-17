@@ -1,0 +1,329 @@
+<h2>三、乘法規則 <span class="pg">板書 9/30 照片 5</span></h2>
+
+<p class="lead">右邊是兩種函數<strong>相乘</strong>（例如 $x\cos x$、$xe^{-4x}$、$e^{-4x}\sin5x$）時，猜法是把兩個因子各自的「家族」相乘：老師寫成 $\{1,x\}\otimes\{\cos x,\sin x\}$。這一節講這條規則，再補一個很好用的捷徑：右邊有 $e^{kx}$ 因子時，令 $y=e^{kx}u$ 把指數先拿掉。</p>
+
+<h3 id="a3-pr-rule">3.1 板書：Multiplication <span class="pg-tag">照片 5</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/30（照片 5）</span>
+  <p>ex.（Multiplication）　Solve $y''+9y=x\cos x$　Ⓐ</p>
+  <p>step 1.　solve $y''+9y=0$ → $e^{(\pm3i)x}$，$y_1=\cos(3x)$，$y_2=\sin(3x)$</p>
+  <p>step 2.　$g(x)=x\cos x$，猜 $y_p$？</p>
+  $$y_p=A\cos x+B\sin x+C\,x\cos x+D\,x\sin x$$
+  <p>⊛ $g(x)=\underline{x}\cdot\underline{\cos x}$ → $\{1,x\}\otimes\{\cos x,\sin x\}=\{\cos x,\ \sin x,\ x\cos x,\ x\sin x\}$</p>
+  <p>將 $y_p$、$y_p''$ 代回原式 Ⓐ，比較係數：</p>
+  $$\begin{aligned}\cos x&:\ -A+2D+9A=0\\\sin x&:\ -B-2C+9B=0\\x\cos x&:\ -C+9C=1\\x\sin x&:\ -D+9D=0\end{aligned}$$
+  <p>→ $A=0$，$B=\tfrac1{32}$，$C=\tfrac18$，$D=0$；$y_p=\tfrac1{32}\sin x+\tfrac18x\cos x$</p>
+  <p>step 3.　$y=c_1\cos(3x)+c_2\sin(3x)+y_p$</p>
+  <p><span class="added">網站補充（照片缺漏）</span>$y_p''$ 怎麼算、四條係數式怎麼來的，照片裡沒有寫出，補在下面的例題卡。</p>
+</div>
+
+<p><strong>$\otimes$ 是什麼意思。</strong>$x$ 屬於「一次多項式」家族 $\{1,x\}$，$\cos x$ 屬於 $\{\cos x,\sin x\}$。乘積微分（乘積法則）會產生兩個家族各取一個相乘的所有組合，所以猜測要包含全部 $2\times2=4$ 種乘積。一般規則：</p>
+<ul>
+  <li>$n$ 次多項式 $\times\cos\omega x$（或 $\sin$）→ $(n$ 次多項式$)\cos\omega x+(n$ 次多項式$)\sin\omega x$，共 $2(n+1)$ 個係數。</li>
+  <li>$n$ 次多項式 $\times e^{kx}$ → $(n$ 次多項式$)e^{kx}$，共 $n+1$ 個係數。</li>
+  <li>$e^{kx}\times\cos\omega x$（或 $\sin$）→ $e^{kx}(A\cos\omega x+B\sin\omega x)$。</li>
+</ul>
+
+<h3 id="a3-pr-shift">3.2 捷徑：令 $y=e^{kx}u$ <span class="pg-tag">網站補充</span></h3>
+
+<p>右邊有 $e^{kx}$ 因子時，與其直接對 $(\cdots)e^{kx}$ 微分兩次，不如先令 $y=e^{kx}u$：</p>
+$$y'=e^{kx}(u'+ku),\qquad y''=e^{kx}(u''+2ku'+k^2u)$$
+$$y''+ay'+by=e^{kx}\left[u''+(2k+a)u'+(k^2+ak+b)u\right]$$
+<p>兩邊的 $e^{kx}$ 約掉，就變成右邊沒有指數的新方程。注意 $k^2+ak+b$ 正是特徵多項式 $p(k)$，$2k+a=p'(k)$：</p>
+<ul>
+  <li>$k$ 不是特徵根：$u$ 的係數 $p(k)\neq0$，照常猜。</li>
+  <li>$k$ 是單根：$p(k)=0$，$u$ 項消失，要猜的多項式升一次（第 4 節修正規則乘 $x$）。</li>
+  <li>$k$ 是重根：$p(k)=p'(k)=0$，只剩 $u''$，升兩次（乘 $x^2$）。</li>
+</ul>
+<p>所以這個捷徑也順便解釋了修正規則為什麼是乘 $x$ 或 $x^2$。</p>
+
+<div class="problem" data-kind="example" id="a3-b3">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/30 板書 · 照片 5</span></div>
+    <h4>Multiplication：$y''+9y=x\cos x$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-b3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-b3"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.（Multiplication）　Solve $y''+9y=x\cos x$　Ⓐ</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $y''+9y=x\cos x$ 的一般解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=0$、$b=9$</td><td>「$y''+9y$」：特徵根 $\pm3i$</td></tr>
+          <tr><td>非齊次項</td><td>$x\cos x$：一次多項式 × 頻率 1 的餘弦</td><td>「$=x\cos x$」：兩個因子相乘</td></tr>
+          <tr><td>條件</td><td>沒有初始條件</td><td>只要一般解</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$y_p$ 的四個係數與一般解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是 $x$ 乘 $\cos x$，<b>所以</b>用乘法規則猜 $\{1,x\}\otimes\{\cos x,\sin x\}$ 的四項。<b>因為</b>特徵根是 $\pm3i$（頻率 3），而右邊的頻率是 1，<b>所以</b>沒有一項是齊次解，不必修正。</p>
+      <p>要算 $y_p''$，先把 $x\cos x$、$x\sin x$ 的二階導數各算一次，再用線性組合。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-b3-s1" data-sym="y12">
+        <span class="step-title">Step 1：齊次解</span>
+        $$\lambda^2+9=0\ \Rightarrow\ \lambda=\pm3i,\qquad y_c=c_1\cos3x+c_2\sin3x$$
+      </div>
+      <div class="step" data-step="a3-b3-s2" data-sym="yp,K">
+        <span class="step-title">Step 2：猜四項</span>
+        $$y_p=A\cos x+B\sin x+Cx\cos x+Dx\sin x$$
+      </div>
+      <div class="step" data-step="a3-b3-s3">
+        <span class="step-title">兩個乘積的二階導數</span>
+        <p>乘積法則：</p>
+        $$\begin{aligned}(x\cos x)'&=\cos x-x\sin x\\(x\cos x)''&=-2\sin x-x\cos x\\(x\sin x)''&=2\cos x-x\sin x\end{aligned}$$
+        <p>所以</p>
+        $$\begin{aligned}y_p''=&-A\cos x-B\sin x\\&+C(-2\sin x-x\cos x)\\&+D(2\cos x-x\sin x)\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-b3-s4">
+        <span class="step-title">代入 $y''+9y$，按四種函數收集</span>
+        <p class="sub">加上 $9y_p$，和右邊 $x\cos x$（題目）逐項比較：</p>
+        $$\begin{aligned}\cos x&:\ -A+2D+9A=0\\\sin x&:\ -B-2C+9B=0\\x\cos x&:\ -C+9C=1\\x\sin x&:\ -D+9D=0\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-b3-s5">
+        <span class="step-title">由下往上解</span>
+        <p>$8C=1$ ⟹ $C=\tfrac18$；$8D=0$ ⟹ $D=0$；$8A+2D=0$ ⟹ $A=0$；$8B-2C=0$ ⟹ $B=\tfrac{C}{4}=\tfrac1{32}$。</p>
+        $$y_p=\frac1{32}\sin x+\frac18x\cos x$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=c_1\cos3x+c_2\sin3x+\tfrac1{32}\sin x+\tfrac18x\cos x$（和板書一致）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_p''=\tfrac1{32}(-\sin x)+\tfrac18(-2\sin x-x\cos x)$，$y_p''+9y_p=\left(-\tfrac1{32}-\tfrac14+\tfrac9{32}\right)\sin x+\left(-\tfrac18+\tfrac98\right)x\cos x=0+x\cos x$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="a3-hw2">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">9/30 作業 第 2 題</span></div>
+    <h4>多項式乘指數：$y''-4y'-12y=xe^{-4x}$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-hw2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-hw2"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>2. Find the particular solution of $y''-4y'-12y=xe^{-4x}$.</p><p>Hint: 乘法規則.</p><p>Ans : $y_p=\left(\dfrac{3}{100}+\dfrac{1}{20}x\right)e^{-4x}$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $y''-4y'-12y=xe^{-4x}$ 的特解。提示：乘法規則。（老師給的答案：$y_p=\left(\tfrac3{100}+\tfrac1{20}x\right)e^{-4x}$）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-4$、$b=-12$</td><td>「$y''-4y'-12y$」</td></tr>
+          <tr><td>非齊次項</td><td>$x\cdot e^{-4x}$，$k=-4$</td><td>「$=xe^{-4x}$」：一次多項式 × 指數</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：特解 $y_p$，並驗證老師的答案。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是 $\{1,x\}\otimes\{e^{-4x}\}$，<b>所以</b>猜 $(A+Bx)e^{-4x}$。<b>因為</b>特徵根是 $6,-2$，$-4$ 不是根，<b>所以</b>不必修正。<b>因為</b>右邊有 $e^{-4x}$ 因子，<b>所以</b>用 3.2 的捷徑 $y=e^{-4x}u$，把問題變成「$u$ 的方程、右邊是 $x$」，只要猜一次多項式。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-hw2-s1" data-sym="lam">
+        <span class="step-title">特徵根（檢查要不要修正）</span>
+        $$\lambda^2-4\lambda-12=(\lambda-6)(\lambda+2)\ \Rightarrow\ \lambda=6,\ -2$$
+        <p>$k=-4$ 不是根，猜 $(A+Bx)e^{-4x}$ 即可。</p>
+      </div>
+      <div class="step" data-step="a3-hw2-s2">
+        <span class="step-title">令 $y=e^{-4x}u$</span>
+        <p class="sub">代入 $k=-4$、$a=-4$、$b=-12$ 到 $2k+a$ 與 $k^2+ak+b$：</p>
+        $$2k+a=-12,\qquad k^2+ak+b=16+16-12=20$$
+        $$u''-12u'+20u=x$$
+      </div>
+      <div class="step" data-step="a3-hw2-s3" data-sym="K">
+        <span class="step-title">猜 $u=A+Bx$，比較係數</span>
+        <p>$u'=B$、$u''=0$：</p>
+        $$-12B+20A+20Bx=x$$
+        $$x^1:\ 20B=1\Rightarrow B=\tfrac1{20};\qquad x^0:\ 20A-12B=0\Rightarrow A=\tfrac{12}{400}=\tfrac3{100}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_p=\left(\tfrac3{100}+\tfrac1{20}x\right)e^{-4x}$，與老師的答案相同；一般解再加 $c_1e^{6x}+c_2e^{-2x}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>不用捷徑直接驗：$y_p=(A+Bx)e^{-4x}$，$y_p'=(B-4A-4Bx)e^{-4x}$，$y_p''=(-8B+16A+16Bx)e^{-4x}$；$y_p''-4y_p'-12y_p=e^{-4x}[(16+16-12)Bx+(-8B+16A-4B+16A-12A)]=e^{-4x}[20Bx+20A-12B]$，和步驟 3 相同 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a3-112a-m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2023.Nov. 第 3 題（112上） · 115級上學期應數(期中) 第 3 題（同卷）</span></div>
+    <h4>指數乘三角：$y''+2y'+17y=60e^{-4x}\sin5x$（三小題）</h4>
+    <button type="button" class="exam-btn" data-exam="a3-112a-m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-112a-m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2023.Nov.)</p><p>3. Consider a nonhomogeneous differential equation $y''+2y'+17y=60e^{-4x}\sin(5x)$,</p><p>(1) (6 points) find the complementary solution,</p><p>(2) (6 points) find the particular solution,</p><p>(3) (6 points) find the unique solution for $y(0)=0$ and $y'(0)=2$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮非齊次方程 $y''+2y'+17y=60e^{-4x}\sin(5x)$。(1)（6 分）求齊次解（complementary solution）；(2)（6 分）求特解；(3)（6 分）求滿足 $y(0)=0$、$y'(0)=2$ 的唯一解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=2$、$b=17$</td><td>「$y''+2y'+17y$」</td></tr>
+          <tr><td>非齊次項</td><td>$60e^{-4x}\sin5x$：$k=-4$、$\omega=5$</td><td>「$=60e^{-4x}\sin(5x)$」：指數 × 正弦，對應複數 $-4\pm5i$</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=0$、$y'(0)=2$</td><td>(3)「for y(0)=0 and y’(0)=2」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(1) $y_c$；(2) $y_p$；(3) 唯一解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是 $e^{-4x}\times\sin5x$，<b>所以</b>乘法規則猜 $e^{-4x}(A\cos5x+B\sin5x)$。修正檢查：右邊對應 $-4\pm5i$，特徵根是 $-1\pm4i$，不同，不必修正。</p>
+      <p><b>因為</b>有 $e^{-4x}$ 因子，<b>所以</b>用捷徑 $y=e^{-4x}u$ 把指數拿掉，$u$ 的方程只剩三角函數，計算量少很多。(3) 的 $y'(0)$ 要把 $y_c'$ 和 $y_p'$ 都算進去。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-112a-m3-s1" data-sym="y12">
+        <span class="step-title">(1) 齊次解</span>
+        $$\lambda^2+2\lambda+17=0\ \Rightarrow\ \lambda=\frac{-2\pm\sqrt{4-68}}2=-1\pm4i$$
+        $$y_c=e^{-x}(c_1\cos4x+c_2\sin4x)$$
+      </div>
+      <div class="step" data-step="a3-112a-m3-s2">
+        <span class="step-title">(2) 令 $y=e^{-4x}u$</span>
+        <p class="sub">代入 $k=-4$、$a=2$、$b=17$：</p>
+        $$2k+a=-6,\qquad k^2+ak+b=16-8+17=25$$
+        $$u''-6u'+25u=60\sin5x$$
+      </div>
+      <div class="step" data-step="a3-112a-m3-s3" data-sym="K">
+        <span class="step-title">(2) 猜 $u=A\cos5x+B\sin5x$</span>
+        <p>$u''=-25u$，所以 $u''+25u=0$，只剩 $-6u'$：</p>
+        $$-6u'=-6(-5A\sin5x+5B\cos5x)=30A\sin5x-30B\cos5x$$
+        <p class="sub">和 $60\sin5x$（題目）比較：$\sin5x$：$30A=60$；$\cos5x$：$-30B=0$：</p>
+        $$A=2,\ B=0,\qquad y_p=2e^{-4x}\cos5x$$
+      </div>
+      <div class="step" data-step="a3-112a-m3-s4" data-sym="c12">
+        <span class="step-title">(3) 代入 $y(0)=0$</span>
+        $$y=e^{-x}(c_1\cos4x+c_2\sin4x)+2e^{-4x}\cos5x$$
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=0$：$c_1+2=0$，$c_1=-2$。</p>
+      </div>
+      <div class="step" data-step="a3-112a-m3-s5">
+        <span class="step-title">(3) 代入 $y'(0)=2$</span>
+        <p>$y_c'(0)=-c_1+4c_2$（$\alpha K_1+\beta K_2$，$\alpha=-1$、$\beta=4$）；$y_p'=2e^{-4x}(-4\cos5x-5\sin5x)$，$y_p'(0)=-8$。</p>
+        <p class="sub">代入 $c_1=-2$（步驟 4）與題目的 $y'(0)=2$：</p>
+        $$2+4c_2-8=2\ \Rightarrow\ c_2=2$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(1) $y_c=e^{-x}(c_1\cos4x+c_2\sin4x)$；(2) $y_p=2e^{-4x}\cos5x$；(3) $y=e^{-x}(2\sin4x-2\cos4x)+2e^{-4x}\cos5x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$u=2\cos5x$：$u''-6u'+25u=-50\cos5x+60\sin5x+50\cos5x=60\sin5x$ ✔；$y(0)=-2+2=0$ ✔；$y'(0)=2+8-8=2$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a3-s03-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>六個係數太多：用複數指數求 $y''+4y=x^2\sin x$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s03-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $y''+4y=x^2\sin x$ 的特解。(a) 照乘法規則寫出 $y_p$ 的形式，有幾個未知係數？(b) 利用 $\sin x=\operatorname{Im}e^{ix}$，先解 $Y''+4Y=x^2e^{ix}$，再取虛部求出 $y_p$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=0$、$b=4$</td><td>「$y''+4y$」：特徵根 $\pm2i$</td></tr>
+          <tr><td>非齊次項</td><td>$x^2\sin x$：二次多項式 × 頻率 1</td><td>「$=x^2\sin x$」</td></tr>
+          <tr><td>方法</td><td>$\sin x=\operatorname{Im}e^{ix}$</td><td>(b) 指定：係數都是實數，所以「解的虛部」就是「右邊取虛部」的解</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 形式與係數個數；(b) $y_p$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $\{1,x,x^2\}\otimes\{\cos x,\sin x\}$ 有 6 項，直接代入要解 6 元聯立，很容易算錯。<b>因為</b>方程式係數是實數，$L[\operatorname{Im}Y]=\operatorname{Im}L[Y]$，<b>所以</b>改解右邊是 $x^2e^{ix}$ 的複數方程：$e^{ix}$ 是指數，可以用 3.2 的捷徑（$k=i$）拿掉，剩下的只是二次多項式，3 個（複數）係數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s03-1-s1" data-sym="yp">
+        <span class="step-title">(a) 乘法規則的形式</span>
+        $$y_p=(Ax^2+Bx+C)\cos x+(Dx^2+Ex+F)\sin x$$
+        <p>6 個未知係數。$\pm i$ 不是特徵根（$\pm2i$），不必修正。</p>
+      </div>
+      <div class="step" data-step="a3-s03-1-s2">
+        <span class="step-title">(b) 令 $Y=e^{ix}u$</span>
+        <p class="sub">代入 $k=i$、$a=0$、$b=4$：$2k+a=2i$，$k^2+ak+b=-1+4=3$：</p>
+        $$u''+2iu'+3u=x^2$$
+      </div>
+      <div class="step" data-step="a3-s03-1-s3" data-sym="K">
+        <span class="step-title">猜 $u=\alpha x^2+\beta x+\gamma$（複數係數）</span>
+        $$2\alpha+2i(2\alpha x+\beta)+3(\alpha x^2+\beta x+\gamma)=x^2$$
+        $$\begin{aligned}x^2&:\ 3\alpha=1\ \Rightarrow\ \alpha=\tfrac13\\x^1&:\ 4i\alpha+3\beta=0\ \Rightarrow\ \beta=-\tfrac{4i}9\\x^0&:\ 2\alpha+2i\beta+3\gamma=0\end{aligned}$$
+        <p class="sub">代入 $\alpha=\tfrac13$、$\beta=-\tfrac{4i}9$（$2i\beta=\tfrac89$）：</p>
+        $$\tfrac23+\tfrac89+3\gamma=0\ \Rightarrow\ \gamma=-\tfrac{14}{27}$$
+      </div>
+      <div class="step" data-step="a3-s03-1-s4">
+        <span class="step-title">取虛部</span>
+        $$Y=\left(\tfrac{x^2}3-\tfrac{14}{27}-\tfrac{4i}9x\right)(\cos x+i\sin x)$$
+        <p>虛部 $=$（實部係數）$\times\sin x$ $+$（虛部係數）$\times\cos x$：</p>
+        $$y_p=\left(\frac{x^2}3-\frac{14}{27}\right)\sin x-\frac49x\cos x$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 6 個係數；(b) $y_p=\left(\dfrac{x^2}3-\dfrac{14}{27}\right)\sin x-\dfrac49x\cos x$（即 $A=0$、$B=-\tfrac49$、$C=0$、$D=\tfrac13$、$E=0$、$F=-\tfrac{14}{27}$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>最高次檢查：$\tfrac{x^2}3\sin x$ 代入 $y''+4y$ 的 $x^2\sin x$ 係數是 $-\tfrac13+\tfrac43=1$ ✔。同一個 $Y$ 的實部就是 $y''+4y=x^2\cos x$ 的特解，一次算兩題。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a3-s03-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>乘法規則什麼時候會失效：$y''+2y'+ky=e^{-x}\cos3x$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s03-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $y''+2y'+ky=e^{-x}\cos3x$（$k$ 是常數）。(a) $k$ 是多少時，乘法規則的猜測 $e^{-x}(A\cos3x+B\sin3x)$ 會失敗？(b) $k=5$ 時求 $y_p$；(c) $k=10$ 時求 $y_p$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=2$、$b=k$（參數）</td><td>「$y''+2y'+ky$」</td></tr>
+          <tr><td>非齊次項</td><td>$e^{-x}\cos3x$，對應 $-1\pm3i$</td><td>「$=e^{-x}\cos3x$」</td></tr>
+          <tr><td>「失敗」</td><td>猜測是齊次解，代入得 0</td><td>(a)：第 1 節的陷阱（自己讀出來的）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 使猜測失敗的 $k$；(b)(c) 兩種 $k$ 的 $y_p$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>猜測 $e^{-x}\cos3x$ 是齊次解 ⟺ $-1\pm3i$ 是特徵根，<b>所以</b>(a) 就是解「特徵方程式的根是 $-1\pm3i$」。<b>因為</b>右邊有 $e^{-x}$，<b>所以</b>用捷徑 $y=e^{-x}u$：$2k'+a=2(-1)+2=0$，$u'$ 項正好消失，方程式變成 $u''+(k-1)u=\cos3x$，(b)(c) 都在這個簡單方程上做。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s03-2-s1" data-sym="lam">
+        <span class="step-title">(a) 特徵根</span>
+        $$\lambda^2+2\lambda+k=0\ \Rightarrow\ \lambda=-1\pm\sqrt{1-k}$$
+        <p>要等於 $-1\pm3i$：$\sqrt{1-k}=3i$，$1-k=-9$，$k=10$。</p>
+      </div>
+      <div class="step" data-step="a3-s03-2-s2">
+        <span class="step-title">捷徑 $y=e^{-x}u$</span>
+        <p class="sub">代入指數 $-1$、$a=2$、$b=k$：$2(-1)+2=0$，$(-1)^2+2(-1)+k=k-1$：</p>
+        $$u''+(k-1)u=\cos3x$$
+      </div>
+      <div class="step" data-step="a3-s03-2-s3" data-sym="K">
+        <span class="step-title">(b) $k=5$：$u''+4u=\cos3x$</span>
+        <p>猜 $u=A\cos3x+B\sin3x$：$(4-9)(A\cos3x+B\sin3x)=\cos3x$ ⟹ $A=-\tfrac15$、$B=0$。</p>
+        $$y_p=-\frac15e^{-x}\cos3x$$
+      </div>
+      <div class="step" data-step="a3-s03-2-s4">
+        <span class="step-title">(c) $k=10$：$u''+9u=\cos3x$</span>
+        <p>$\cos3x$ 本身滿足 $u''+9u=0$，要乘 $x$：猜 $u=x(A\cos3x+B\sin3x)$。$(p\cos3x)''+9p\cos3x=p''\cos3x-6p'\sin3x$，$p=Ax$；$\sin$ 那項同理：</p>
+        $$u''+9u=-6A\sin3x+6B\cos3x=\cos3x$$
+        <p>$A=0$、$B=\tfrac16$：</p>
+        $$y_p=\frac x6e^{-x}\sin3x$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $k=10$；(b) $y_p=-\tfrac15e^{-x}\cos3x$；(c) $y_p=\tfrac x6e^{-x}\sin3x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>(c)：$u=\tfrac x6\sin3x$，$u''=\cos3x-\tfrac{3x}2\sin3x$，$u''+9u=\cos3x$ ✔。(c) 的特解前面多了 $x$，振幅隨 $x$ 線性成長——這就是第 5 節「共振」的數學根源。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>乘積的猜法：兩個因子的家族相乘（$\{1,x\}\otimes\{\cos x,\sin x\}$ 四項）；多項式要從 0 次寫到最高次。</li>
+    <li>有 $e^{kx}$ 因子就令 $y=e^{kx}u$：$L[y]=e^{kx}[u''+(2k+a)u'+(k^2+ak+b)u]$。</li>
+    <li>多項式 × 三角函數係數太多時，用 $\cos x=\operatorname{Re}e^{ix}$、$\sin x=\operatorname{Im}e^{ix}$ 化成指數再處理。</li>
+  </ol>
+</div>

@@ -1,0 +1,527 @@
+<h2>四、很大的數與 Stirling 近似 <span class="pg">課本 §2.4 · p.60–63</span></h2>
+
+<p class="lead">上一節的系統只有幾百個振子，就已經有約 20% 的巨觀態「還算可能」。真實系統有 $10^{20}$ 個以上的粒子，要分析它們得先學會處理大到電腦也算不出來的數：取對數、用 Stirling 近似算階乘。</p>
+
+<h3 id="tl-big">4.1 小的數、大的數、很大的數 <span class="pg-tag">p.61</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.61 Eq. (2.12)–(2.13) 大數的運算規則</span>
+  $$10^{23}+23=10^{23},\qquad 10^{10^{23}}\times10^{23}=10^{(10^{23}+23)}=10^{10^{23}}$$
+  <p><strong>大的數</strong>（如 $10^{23}$）加上小的數不變；<strong>很大的數</strong>（如 $10^{10^{23}}$）乘上大的數不變。例外：之後要減掉（或除掉）同一個數時，要保留剩下的部分。</p>
+</div>
+
+<p>第二條規則看起來荒謬，其實是第一條的直接結果：乘 $10^{23}$ 只是在指數上加 23，而指數本身是個大的數，加 23 等於沒加。這給了我們一個實用的權利——<strong>多重度是很大的數，它前面乘上 $\sqrt{2\pi N}$、$N$ 這類「只是大」的因子都可以丟掉</strong>，只要最後不會拿兩個幾乎相等的很大的數相除（第 6 節習題 2.22 就是例外）。最常用的工具是取對數：$\ln$ 把很大的數變成普通的大數，算完再取指數回去。</p>
+
+<h3 id="tl-stirling">4.2 Stirling 近似 <span class="pg-tag">p.62</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.62 Eq. (2.14)–(2.16) Stirling's approximation</span>
+  $$N!\approx N^Ne^{-N}\sqrt{2\pi N},\qquad N!\approx\left(\frac Ne\right)^N,\qquad \ln N!\approx N\ln N-N$$
+  <p>$N\gg1$ 時成立。只在乎 $\ln N!$ 時第三式通常就夠了。推導見附錄 B。</p>
+</div>
+
+<p>怎麼理解？$N!$ 是 $N$ 個因子 $1\cdot2\cdots N$ 的乘積。粗暴地把每個因子都換成 $N$，得 $N^N$，嚴重高估；平均來說每個因子大約「小了 $e$ 倍」，於是 $N!\approx(N/e)^N$。還差的 $\sqrt{2\pi N}$ 只是個大的數，在 $N!$ 這種很大的數面前通常可以忽略；取對數後它只貢獻 $\tfrac12\ln(2\pi N)$，相對於 $N\ln N$ 微不足道。</p>
+
+<details class="supp">
+  <summary>為什麼 $\ln N!\approx N\ln N-N$：用積分估計</summary>
+  <div class="supp-body">
+    <p>$\ln N!=\ln1+\ln2+\cdots+\ln N=\sum_{k=1}^N\ln k$。每一項是寬 1 的長條，總面積接近曲線 $\ln x$ 下的面積：</p>
+    $$\ln N!\approx\int_1^N\ln x\,\mathrm dx=\Big[x\ln x-x\Big]_1^N=N\ln N-N+1\approx N\ln N-N$$
+    <p>這就是 (2.16)。$\sqrt{2\pi N}$ 那個修正要用附錄 B 的 $\Gamma$ 函數與鞍點近似才得到。</p>
+  </div>
+</details>
+
+<div class="anim" data-anim="t2-stirling"></div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-stirling">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.4 Table 2.3 · p.62</span></div>
+    <h4>Stirling 近似有多準</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-stirling">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>對 $N=1,10,100$，比較 $N!$ 與 $N^Ne^{-N}\sqrt{2\pi N}$，以及 $\ln N!$ 與 $N\ln N-N$ 的誤差。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>要比較的 $N$</td><td>$N=1,\ 10,\ 100$</td><td>「對 $N=1,10,100$」</td></tr>
+          <tr><td>完整形式 (2.14)</td><td>$N!\approx N^Ne^{-N}\sqrt{2\pi N}$</td><td>「比較 $N!$ 與 $N^Ne^{-N}\sqrt{2\pi N}$」</td></tr>
+          <tr><td>對數形式 (2.16)</td><td>$\ln N!\approx N\ln N-N$</td><td>「以及 $\ln N!$ 與 $N\ln N-N$」</td></tr>
+          <tr><td>誤差的定義</td><td>相對誤差 $=\dfrac{\text{精確}-\text{近似}}{\text{精確}}$</td><td>題目只說「誤差」；照課本 Table 2.3 用相對誤差</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：三個 $N$ 下，(2.14) 對 $N!$ 的相對誤差，以及 (2.16) 對 $\ln N!$ 的相對誤差。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>要判斷近似好不好，<b>所以</b>把同一個 $N$ 代入精確值與近似式，算相對誤差。$N=100$ 時 $100!$ 有 158 位數，<b>所以</b>用對數算：先算 $\ln$ 再取指數。</p>
+      <p>要注意<b>兩種形式的誤差意義不同</b>：(2.14) 看的是 $N!$ 本身差幾 %；(2.16) 看的是<b>指數</b>（對數）差幾 %。<b>因為</b> (2.16) 丟掉了 $\tfrac12\ln(2\pi N)$，這一項相對 $N\ln N$ 要 $N$ 很大才可忽略，<b>所以</b>預期 (2.16) 收斂得比較慢。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-stirling-s1" data-sym="N">
+        <span class="step-title">代入一個例子：$N=10$</span>
+        <p>完整形式三個因子分開算：</p>
+        <p class="sub">代入 $N=10$：$10^{10}$、$e^{-10}=4.540\times10^{-5}$、$\sqrt{20\pi}=7.927$：</p>
+        $$10^{10}\times4.540\times10^{-5}\times7.927=3\,598\,696$$
+        $$\text{相對誤差}=\frac{3\,628\,800-3\,598\,696}{3\,628\,800}=0.83\%$$
+        <p class="sub">對數形式：$\ln10!=15.104$，近似 $10\ln10-10=23.026-10=13.026$：</p>
+        $$\text{相對誤差}=\frac{15.104-13.026}{15.104}=13.8\%$$
+      </div>
+      <div class="step" data-step="tsta">
+        <span class="step-title">完整形式 (2.14) 的表</span>
+        <p>同樣的算法做 $N=1$（$1\cdot e^{-1}\sqrt{2\pi}=0.3679\times2.507=0.922$）與 $N=100$（用 $\ln$ 計算）：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$N$</th><th>$N!$</th><th>$N^Ne^{-N}\sqrt{2\pi N}$</th><th>誤差</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>1</td><td>0.922</td><td>7.8%（課本表寫 7.7%）</td></tr>
+            <tr><td>10</td><td>3 628 800</td><td>3 598 696</td><td>0.83%</td></tr>
+            <tr><td>100</td><td>$9.33\times10^{157}$</td><td>$9.32\times10^{157}$</td><td>0.083%</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="tstb">
+        <span class="step-title">對數形式 (2.16) 的表</span>
+        <p>$N=1$：$\ln1!=0$，近似 $1\cdot\ln1-1=-1$，精確值是 0，相對誤差沒有意義；$N=100$：$100\ln100-100=460.5-100=360.5$。</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$N$</th><th>$\ln N!$</th><th>$N\ln N-N$</th><th>誤差</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>0</td><td>$-1$</td><td>—</td></tr>
+            <tr><td>10</td><td>15.1</td><td>13.0</td><td>13.8%</td></tr>
+            <tr><td>100</td><td>363.7</td><td>360.5</td><td>0.89%</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(2.14) 的誤差 7.8%、0.83%、0.083%，在 $N=10$ 就準到 1%；(2.16) 的誤差 —、13.8%、0.89%，在 $N=100$ 才準到 1%。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(2.14) 的誤差約 $1/(12N)$：$N=10$ 是 0.83%、$N=100$ 是 0.083% ✔；(2.16) 少的是 $\tfrac12\ln(2\pi N)$，$N=100$ 時 $=3.2$，正是 363.7−360.5 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-12">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-12（Problem 2.12）· p.61</span></div>
+    <h4>自然對數的基本性質</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-12">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-12"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The natural logarithm function, ln, is defined so that $e^{\ln x}=x$ for any positive number $x$.</p><p>(a) Sketch a graph of the natural logarithm function.</p><p>(b) Prove the identities $$\ln ab=\ln a+\ln b\qquad\text{and}\qquad\ln a^b=b\ln a.$$</p><p>(c) Prove that $\dfrac{d}{dx}\ln x=\dfrac1x$.</p><p>(d) Derive the useful approximation $$\ln(1+x)\approx x,$$ which is valid when $|x|\ll1$. Use a calculator to check the accuracy of this approximation for $x=0.1$ and $x=0.01$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>自然對數 $\ln$ 的定義是：對任何正數 $x$，$e^{\ln x}=x$。(a) 畫出自然對數函數的草圖。(b) 證明 $\ln ab=\ln a+\ln b$ 與 $\ln a^b=b\ln a$。(c) 證明 $\dfrac{d}{dx}\ln x=\dfrac1x$。(d) 推導 $|x|\ll1$ 時很好用的近似 $\ln(1+x)\approx x$，並用計算機檢查 $x=0.1$ 與 $x=0.01$ 時這個近似有多準。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>$\ln$ 的定義</td><td>$e^{\ln x}=x$，$x\gt0$</td><td>「定義是：對任何正數 $x$，$e^{\ln x}=x$」：$\ln$ 是 $e^x$ 的反函數</td></tr>
+          <tr><td>指數律</td><td>$e^ue^v=e^{u+v}$，$(e^u)^b=e^{ub}$</td><td>題目沒寫，(b) 要用的已知性質</td></tr>
+          <tr><td>指數函數的導數</td><td>$\dfrac{d}{dy}e^y=e^y$</td><td>題目沒寫，(c) 要用的已知性質</td></tr>
+          <tr><td>(d) 的條件</td><td>$|x|\ll1$；檢查 $x=0.1$、$0.01$</td><td>(d)「$|x|\ll1$ 時」「檢查 $x=0.1$ 與 $x=0.01$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 畫 $\ln x$ 草圖；(b) 證明 $\ln ab=\ln a+\ln b$、$\ln a^b=b\ln a$；(c) 證明 $\frac{d}{dx}\ln x=\frac1x$；(d) 推導 $\ln(1+x)\approx x$，並檢查 $x=0.1$、$0.01$ 的準確度。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目只給了定義 $e^{\ln x}=x$，<b>所以</b>每個性質都要從它和指數律推出。(b) 的技巧是：<b>因為</b> $e^y$ 是一對一函數（不同的 $y$ 給不同的 $e^y$），<b>所以</b>只要證明兩邊取 $e$ 的次方後相等，指數就相等。</p>
+      <p>(c) <b>因為</b> $\ln$ 是 $e^y$ 的反函數，<b>所以</b>用「反函數的導數＝原函數導數的倒數」。(d) <b>因為</b> $x$ 很小時函數可以用 $x=0$ 處的切線代替，<b>所以</b>用 (c) 的導數求切線斜率；誤差看下一項 $-x^2/2$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t212a">
+        <span class="step-title">(a) 草圖的要點</span>
+        <p>定義域：$e^{\ln x}=x$ 而 $e^{\text{任何數}}\gt0$，所以只定義在 $x\gt0$。幾個點：$e^0=1$ ⟹ $\ln1=0$；$e^1=e$ ⟹ $\ln e=1$；$\ln(1/e)=-1$。</p>
+        <p>形狀：遞增；$x\to0^+$ 時 $\to-\infty$，$x$ 很大時增加得很慢（$\ln10^{23}=53$）；$\frac{d^2}{dx^2}\ln x=-\frac1{x^2}\lt0$，曲線向下彎。</p>
+      </div>
+      <div class="step" data-step="t212b">
+        <span class="step-title">(b) 兩個恆等式</span>
+        <p>第一式：左邊取 $e$ 的次方，用定義得 $ab$；把 $a$、$b$ 各寫成 $e^{\ln a}$、$e^{\ln b}$，再用指數律 $e^ue^v=e^{u+v}$：</p>
+        $$e^{\ln ab}=ab=e^{\ln a}e^{\ln b}=e^{\ln a+\ln b}\ \Longrightarrow\ \ln ab=\ln a+\ln b$$
+        <p>第二式：同樣把 $a$ 寫成 $e^{\ln a}$，用 $(e^u)^b=e^{ub}$：</p>
+        $$e^{\ln a^b}=a^b=\left(e^{\ln a}\right)^b=e^{b\ln a}\ \Longrightarrow\ \ln a^b=b\ln a$$
+        <p>最後一步用 $e^y$ 一對一：次方相等 ⟹ 指數相等。</p>
+      </div>
+      <div class="step" data-step="t212c">
+        <span class="step-title">(c) 反函數的導數</span>
+        <p>令 $y=\ln x$，由定義 $x=e^y$。對 $y$ 微分：</p>
+        $$\frac{dx}{dy}=e^y=x$$
+        <p>反函數的導數是倒數：</p>
+        $$\frac{d}{dx}\ln x=\frac{dy}{dx}=\frac1{dx/dy}=\frac1x$$
+      </div>
+      <div class="step" data-step="t212d">
+        <span class="step-title">(d) 切線近似</span>
+        <p>令 $f(x)=\ln(1+x)$。在 $x=0$：$f(0)=\ln1=0$；由 (c) 加連鎖律，斜率 $f'(0)=\frac1{1+x}\Big|_{x=0}=1$。切線就是 $y=0+1\cdot x$：</p>
+        $$\ln(1+x)\approx x\qquad(|x|\ll1)$$
+        <p>再微一次 $f''(0)=-1$，泰勒展開的下一項是 $-x^2/2$，所以近似值 $x$ 比真值大，相對誤差約 $\dfrac{x^2/2}{x}=\dfrac x2$。</p>
+      </div>
+      <div class="step" data-step="sc-2-12-s5">
+        <span class="step-title">(d) 用計算機檢查</span>
+        <p class="sub">代入 $x=0.1$（題目）：$\ln1.1=0.0953$，近似給 0.1：</p>
+        $$\frac{0.1-0.0953}{0.0953}=4.9\%\ (\text{高估})$$
+        <p class="sub">代入 $x=0.01$（題目）：$\ln1.01=0.00995$，近似給 0.01：</p>
+        $$\frac{0.01-0.00995}{0.00995}=0.50\%\ (\text{高估})$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 只在 $x\gt0$、過 $(1,0)$、遞增且向下彎；(b)(c) 得證；(d) $\ln(1+x)\approx x$，$x=0.1$ 誤差約 5%，$x=0.01$ 誤差約 0.5%。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>誤差 $\approx x/2$：$0.1\to5\%$、$0.01\to0.5\%$ 與計算機一致 ✔。這個近似在 (2.19)、(2.26) 都用到，丟掉的 $-x^2/2$ 何時不能丟，見第 5 節自編難題 5-A。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-13">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-13（Problem 2.13）· p.62 · 熱學小考（上）作業題</span></div>
+    <h4>對數的兩個技巧</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-13">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 化簡 $e^{a\ln b}$（寫成不含對數的形式）。(b) 假設 $b\ll a$，證明 $\ln(a+b)\approx(\ln a)+(b/a)$。（提示：把 $a$ 從對數裡提出來，再用上一題 (d) 的近似 $\ln(1+x)\approx x$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>$\ln$ 的定義</td><td>$e^{\ln b}=b$</td><td>習題 2.12 的定義</td></tr>
+          <tr><td>對數的性質</td><td>$\ln(xy)=\ln x+\ln y$，$(e^u)^a=e^{ua}$</td><td>習題 2.12(b)</td></tr>
+          <tr><td>(b) 的條件</td><td>$b\ll a$，所以 $b/a\ll1$</td><td>(b)「假設 $b\ll a$」</td></tr>
+          <tr><td>可用的近似</td><td>$\ln(1+x)\approx x$，$|x|\ll1$</td><td>(b) 提示「再用上一題 (d) 的近似」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 把 $e^{a\ln b}$ 寫成不含對數的形式；(b) 證明 $b\ll a$ 時 $\ln(a+b)\approx\ln a+b/a$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>次方裡有 $\ln b$，而 $e^{\ln b}=b$，<b>所以</b>用指數律把 $e^{a\ln b}$ 拆成 $\left(e^{\ln b}\right)^a$。</p>
+      <p>(b) <b>因為</b> $\ln(1+x)\approx x$ 只能用在「1 加一個小數」，而 $a+b$ 不是這個形式，<b>所以</b>依提示先把大的 $a$ 提出來，變成 $a(1+b/a)$；<b>因為</b> $b\ll a$，$b/a$ 正是那個小數，就能用近似。這一步之後推高溫極限 (2.19) 會直接用到。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t213a">
+        <span class="step-title">(a) 把次方拆開</span>
+        <p>用 $(e^u)^a=e^{ua}$（取 $u=\ln b$），再用定義 $e^{\ln b}=b$：</p>
+        $$e^{a\ln b}=\left(e^{\ln b}\right)^a=b^a$$
+      </div>
+      <div class="step" data-step="t213b">
+        <span class="step-title">(b) 把 $a$ 從對數裡提出來</span>
+        <p>先寫 $a+b=a\left(1+\frac ba\right)$，再用 $\ln(xy)=\ln x+\ln y$：</p>
+        $$\ln(a+b)=\ln\left[a\left(1+\frac ba\right)\right]=\ln a+\ln\left(1+\frac ba\right)$$
+      </div>
+      <div class="step" data-step="t213c">
+        <span class="step-title">泰勒展開 $\ln(1+x)\approx x$（$|x|\ll1$）</span>
+        <p class="sub">代入 $x=b/a$：題目「$b\ll a$」保證 $b/a\ll1$，所以 $\ln(1+b/a)\approx b/a$：</p>
+        $$\ln(a+b)\approx\ln a+\frac ba$$
+        <p>丟掉的下一項是 $-\frac12(b/a)^2$，比保留的 $b/a$ 小一個 $b/a$ 的倍數。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $e^{a\ln b}=b^a$；(b) 得證：$\ln(a+b)\approx\ln a+b/a$（$b\ll a$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$a=100,b=1$：$\ln101=4.6151$，$\ln100+0.01=4.6152$ ✔（$\ln(1+x)\approx x$ 在 $x=0.1$ 誤差約 5%、$x=0.01$ 約 0.5%，習題 2.12）</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-14">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-14（Problem 2.14）· p.62</span></div>
+    <h4>把 $e^{10^{23}}$ 寫成 $10^x$</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-14">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>把 $e^{10^{23}}$ 寫成 $10^x$ 的形式，求 $x$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>要換底的數</td><td>$e^{10^{23}}$</td><td>「把 $e^{10^{23}}$ 寫成 $10^x$ 的形式」</td></tr>
+          <tr><td>常數</td><td>$\ln10=2.303$</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>對數性質</td><td>$\ln e^y=y$，$\ln a^b=b\ln a$</td><td>習題 2.12</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：使 $e^{10^{23}}=10^x$ 的 $x$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>未知的 $x$ 在指數上，<b>所以</b>兩邊同取自然對數，把指數「拿下來」變成一般的乘法，再解一次方程式。<b>因為</b> $\ln$ 是一對一函數，兩數相等 ⟺ 它們的對數相等，這樣做不會多出或少掉解。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t214a">
+        <span class="step-title">兩邊取 $\ln$</span>
+        <p>左邊用 $\ln e^y=y$，右邊用 $\ln a^b=b\ln a$：</p>
+        $$\ln e^{10^{23}}=\ln10^x\quad\Longrightarrow\quad10^{23}=x\ln10$$
+      </div>
+      <div class="step" data-step="sc-2-14-s2">
+        <span class="step-title">解出 $x$</span>
+        $$x=\frac{10^{23}}{\ln10}$$
+        <p class="sub">代入 $\ln10=2.303$（標準值）：</p>
+        $$x=\frac{10^{23}}{2.303}=4.34\times10^{22}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$x=4.34\times10^{22}$，即 $e^{10^{23}}=10^{4.34\times10^{22}}$</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>換底只把指數乘上常數 $1/\ln10=0.434$：很大的數不管用哪個底，都還是很大的數 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-15">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-15（Problem 2.15）· p.63</span></div>
+    <h4>$N=50$ 時的 Stirling 近似</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-15">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-15"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a pocket calculator to check the accuracy of Stirling’s approximation for N = 50. Also check the accuracy of equation 2.16 for ln N!.</p></div>
+<p class="original-caption">Schroeder 習題 2-15（Problem 2.15）· p.63</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用計算機檢查 $N=50$ 時 Stirling 近似的準確度，也檢查 $\ln N!$ 的 (2.16) 式。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$N$</td><td>$N=50$</td><td>「檢查 $N=50$ 時」</td></tr>
+          <tr><td>Stirling 近似 (2.14)</td><td>$N!\approx N^Ne^{-N}\sqrt{2\pi N}$</td><td>「Stirling 近似的準確度」：完整形式</td></tr>
+          <tr><td>對數形式 (2.16)</td><td>$\ln N!\approx N\ln N-N$</td><td>「也檢查 $\ln N!$ 的 (2.16) 式」</td></tr>
+          <tr><td>誤差</td><td>相對誤差</td><td>「準確度」：用 (精確−近似)/精確</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$N=50$ 時 (2.14) 對 $50!$ 的相對誤差，以及 (2.16) 對 $\ln50!$ 的相對誤差。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>要判斷準確度，<b>所以</b>分別算精確值與近似值再比。<b>因為</b> $50^{50}$ 有 85 位數、一般計算機會溢位，<b>所以</b>用 $\log_{10}$ 把三個因子的乘積變成指數相加，最後再換回來。</p>
+      <p>(2.16) 和 (2.14) 差在丟掉的 $\tfrac12\ln(2\pi N)$，<b>所以</b>可以預期兩者的差就是這一項，拿它來驗算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t215a" data-sym="N">
+        <span class="step-title">完整形式：用 $\log_{10}$ 算近似值</span>
+        $$\log_{10}\!\left(N^Ne^{-N}\sqrt{2\pi N}\right)=N\log_{10}N-N\log_{10}e+\tfrac12\log_{10}(2\pi N)$$
+        <p class="sub">代入 $N=50$（題目），$\log_{10}50=1.69897$、$\log_{10}e=0.434294$：</p>
+        $$84.9485-21.7147+1.2486=64.4824$$
+        $$50^{50}e^{-50}\sqrt{100\pi}=10^{64.4824}=3.0363\times10^{64}$$
+      </div>
+      <div class="step" data-step="sc-2-15-s2">
+        <span class="step-title">完整形式：和精確值比較</span>
+        <p class="sub">精確值用計算機的階乘：$50!=3.0414\times10^{64}$；相對誤差：</p>
+        $$\frac{3.0414-3.0363}{3.0414}=0.17\%\quad(\text{近似偏低})$$
+      </div>
+      <div class="step" data-step="t215b">
+        <span class="step-title">對數形式</span>
+        $$\ln N!\approx N\ln N-N$$
+        <p class="sub">代入 $N=50$：$50\ln50=50\times3.91202=195.601$；精確值 $\ln50!=\ln(3.0414\times10^{64})=148.478$：</p>
+        $$50\ln50-50=145.601$$
+        $$\frac{148.478-145.601}{148.478}=1.9\%\quad(\text{近似偏低})$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(2.14) 給 $3.0363\times10^{64}$，誤差 0.17%；(2.16) 給 145.60（精確 148.48），誤差 1.9%。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$1/(12\times50)=0.17\%$ ✔；差 $148.48-145.60=2.88\approx\tfrac12\ln(100\pi)=2.88$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-16">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-16（Problem 2.16）· p.63</span></div>
+    <h4>一千枚硬幣剛好一半正面</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-16">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you flip 1000 coins.</p><p>(a) What is the probability of getting exactly 500 heads and 500 tails? (Hint: First write down a formula for the total number of possible outcomes. Then, to determine the “multiplicity” of the 500-500 “macrostate,” use Stirling’s approximation. If you have a fancy calculator that makes Stirling’s approximation unnecessary, multiply all the numbers in this problem by 10, or 100, or 1000, until Stirling’s approximation becomes necessary.)</p><p>(b) What is the probability of getting exactly 600 heads and 400 tails?</p></div>
+<p class="original-caption">Schroeder 習題 2-16（Problem 2.16）· p.63</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>丟 1000 枚硬幣。(a) 剛好 500 正 500 反的機率是多少？（提示：先寫出所有可能結果的總數，再用 Stirling 近似求 500–500 這個巨觀態的多重度。如果你的計算機厲害到不需要 Stirling 近似，就把題目所有數字乘以 10、100 或 1000，直到需要為止。）(b) 剛好 600 正 400 反的機率是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>硬幣數</td><td>$N=1000$</td><td>「丟 <b>1000 枚</b>硬幣」</td></tr>
+          <tr><td>每枚的機率</td><td>正反各 $\tfrac12$，互相獨立</td><td>題目沒寫「公正」，照前面習題視為公正硬幣</td></tr>
+          <tr><td>(a) 的巨觀態</td><td>$n=500$</td><td>(a)「剛好 500 正 500 反」</td></tr>
+          <tr><td>(b) 的巨觀態</td><td>$n=600$</td><td>(b)「剛好 600 正 400 反」</td></tr>
+          <tr><td>作法</td><td>多重度用 Stirling 近似</td><td>提示「再用 Stirling 近似求 500–500 這個巨觀態的多重度」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $P(500)$；(b) $P(600)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>硬幣公正、微觀態等機率，<b>所以</b> $P(n)=\binom{1000}n/2^{1000}$；<b>因為</b> $1000!$ 有 2568 位數，<b>所以</b>依提示用 Stirling 近似把階乘換成冪次。</p>
+      <p>關鍵：這裡是拿 $\Omega$ 去<b>除以</b> $2^{1000}$，兩個很大的數幾乎一樣大（分子已經是 $2^{1000}$ 的同一等級），<b>所以</b> $\sqrt{2\pi N}$ 這種「只是大」的因子<b>不能丟</b>——它正是答案的主體。<b>因為</b>同一個原因，$e^{-N}$ 的因子會剛好互相抵消（$e^{-1000}\div(e^{-500})^2=1$），不用算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-16-s1" data-sym="N,n">
+        <span class="step-title">寫出要算的式子</span>
+        <p>微觀態總數 $2^{1000}$；剛好 $n$ 個正面的多重度 $\binom{1000}n$：</p>
+        $$P(n)=\frac{1}{2^{1000}}\cdot\frac{1000!}{n!\,(1000-n)!}$$
+      </div>
+      <div class="step" data-step="t216a">
+        <span class="step-title">(a) 完整 Stirling 代入 $n=500$</span>
+        <p>每個階乘都換成 $m^me^{-m}\sqrt{2\pi m}$：</p>
+        $$\Omega(500)=\frac{1000!}{(500!)^2}\approx\frac{1000^{1000}e^{-1000}\sqrt{2\pi\cdot1000}}{\left(500^{500}e^{-500}\sqrt{2\pi\cdot500}\right)^2}$$
+        <p>分母的平方：$500^{1000}e^{-1000}\cdot(2\pi\cdot500)$。$e$ 的次方抵消；$\frac{1000^{1000}}{500^{1000}}=2^{1000}$；根號部分 $\frac{\sqrt{2000\pi}}{1000\pi}=\frac1{\sqrt{500\pi}}$：</p>
+        $$\Omega(500)\approx\frac{2^{1000}}{\sqrt{500\pi}}$$
+        <p class="sub">除以總數 $2^{1000}$，$2^{1000}$ 約掉：</p>
+        $$P(500)=\frac{\Omega(500)}{2^{1000}}=\frac1{\sqrt{500\pi}}=\frac1{39.63}=0.0252$$
+      </div>
+      <div class="step" data-step="t216b">
+        <span class="step-title">(b) 代入 $n=600$</span>
+        <p>同樣代入，$e$ 的次方 $-1000+600+400=0$ 抵消；根號 $\dfrac{\sqrt{2000\pi}}{\sqrt{1200\pi}\sqrt{800\pi}}=\dfrac1{\sqrt{480\pi}}$：</p>
+        $$\Omega(600)\approx\frac{1000^{1000}}{600^{600}\,400^{400}\sqrt{480\pi}}$$
+        <p class="sub">除以 $2^{1000}$：$\frac{1000^{1000}}{2^{1000}}=500^{1000}=500^{600}\cdot500^{400}$，分給兩個分母：</p>
+        $$P(600)=\left(\frac{500}{600}\right)^{600}\left(\frac{500}{400}\right)^{400}\frac1{\sqrt{480\pi}}=\left(\frac56\right)^{600}\left(\frac54\right)^{400}\frac1{\sqrt{480\pi}}$$
+      </div>
+      <div class="step" data-step="sc-2-16-s4">
+        <span class="step-title">(b) 用對數算出數值</span>
+        <p>三個因子取 $\ln$ 相加：</p>
+        $$\ln P=600\ln\tfrac56+400\ln\tfrac54-\tfrac12\ln(480\pi)$$
+        <p class="sub">代入 $\ln\tfrac56=-0.18232$、$\ln\tfrac54=0.22314$、$\ln(480\pi)=7.3185$：</p>
+        $$\ln P=-109.393+89.257-3.659=-23.795$$
+        $$P(600)=e^{-23.795}=4.6\times10^{-11}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $P(500)=1/\sqrt{500\pi}\approx0.0252=2.5\%$；(b) $P(600)\approx4.6\times10^{-11}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>精確值 $\binom{1000}{500}/2^{1000}=0.02523$、$\binom{1000}{600}/2^{1000}=4.63\times10^{-11}$，近似到三位數都對 ✔。若丟掉 $\sqrt{2\pi N}$，(a) 會得到 1，明顯錯。</p></div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">什麼時候 $\sqrt{2\pi N}$ 不能丟</span>
+  <p>求 $\ln\Omega$、熵、峰的位置時可以丟；求<strong>機率</strong>（兩個很大的數相除，例如 $\Omega(n)/2^N$）或峰的寬度時不能丟，否則答案差一個大的因子。</p>
+</div>
+
+<div class="problem" data-kind="self" id="sf-04a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>擲 $2N$ 枚硬幣剛好平手</h4>
+    <button type="button" class="exam-btn" data-exam="sf-04a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 用完整的 Stirling 公式 $N!\approx N^Ne^{-N}\sqrt{2\pi N}$ 證明 $\dbinom{2N}N\approx\dfrac{4^N}{\sqrt{\pi N}}$。(b) 擲 $2N$ 枚公正硬幣，剛好 $N$ 正 $N$ 反的機率是多少？用 100 枚（$N=50$）和精確值比較。(c) 至少要擲多少枚，剛好一半正面的機率才會低於 1%？(d) 為什麼這題 Stirling 的 $\sqrt{2\pi N}$ 不能丟？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>近似式</td><td>$N!\approx N^Ne^{-N}\sqrt{2\pi N}$（含根號）</td><td>(a)「用<b>完整的</b> Stirling 公式」</td></tr>
+          <tr><td>硬幣</td><td>$2N$ 枚，公正、獨立</td><td>(b)「擲 $2N$ 枚<b>公正</b>硬幣」</td></tr>
+          <tr><td>事件</td><td>剛好 $N$ 正 $N$ 反</td><td>(b)「剛好 $N$ 正 $N$ 反」：巨觀態 $n=N$</td></tr>
+          <tr><td>(b) 的對照</td><td>100 枚，即 $N=50$</td><td>(b)「用 100 枚（$N=50$）和精確值比較」</td></tr>
+          <tr><td>(c) 的門檻</td><td>$P\lt1\%=0.01$</td><td>(c)「機率才會低於 1%」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明 $\binom{2N}N\approx4^N/\sqrt{\pi N}$；(b) 平手機率，$N=50$ 時和精確值比較；(c) 平手機率低於 1% 至少要擲幾枚；(d) 為什麼不能丟 $\sqrt{2\pi N}$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>要把階乘化成冪次，<b>所以</b>三個階乘各代入完整的 Stirling，$e$ 的次方會抵消，剩下 $2$ 的冪次和根號。(b) <b>因為</b> $2^{2N}$ 個微觀態等機率，<b>所以</b> $P=\binom{2N}N/2^{2N}$，(a) 的 $4^N$ 剛好約掉。</p>
+      <p>(c) <b>因為</b> (b) 給出簡單的 $1/\sqrt{\pi N}$，<b>所以</b>解不等式就能估計；再用精確計算確認邊界那一兩個整數。(d) <b>因為</b>機率是兩個很大的數 $\binom{2N}N$ 與 $2^{2N}$ 相除、答案只是 $1/\sqrt N$ 等級的數，<b>所以</b>「只是大」的根號因子就是答案的主體——正是第 4.1 節說的例外。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf04a1" data-sym="N">
+        <span class="step-title">(a) 代入 Stirling</span>
+        <p>分子 $(2N)!$ 用 $m=2N$，分母兩個 $N!$：</p>
+        $$\begin{aligned}\binom{2N}N=\frac{(2N)!}{(N!)^2}&\approx\frac{(2N)^{2N}e^{-2N}\sqrt{4\pi N}}{\left(N^Ne^{-N}\sqrt{2\pi N}\right)^2}\\&=\frac{(2N)^{2N}e^{-2N}\sqrt{4\pi N}}{N^{2N}e^{-2N}\cdot2\pi N}\end{aligned}$$
+        <p>$e^{-2N}$ 約掉；$\frac{(2N)^{2N}}{N^{2N}}=2^{2N}=4^N$；$\sqrt{4\pi N}=2\sqrt{\pi N}$：</p>
+        $$\binom{2N}N\approx\frac{4^N\cdot2\sqrt{\pi N}}{2\pi N}=\frac{4^N}{\sqrt{\pi N}}$$
+      </div>
+      <div class="step" data-step="sf04a2">
+        <span class="step-title">(b) 平手的機率</span>
+        <p>總數 $2^{2N}=4^N$，與 (a) 的 $4^N$ 約掉：</p>
+        $$P=\frac{\binom{2N}N}{2^{2N}}\approx\frac1{\sqrt{\pi N}}$$
+        <p class="sub">代入 $N=50$（題目「100 枚」）：</p>
+        $$P\approx\frac1{\sqrt{50\pi}}=\frac1{12.53}=0.0798$$
+        <p class="sub">精確值（計算機）$\binom{100}{50}/2^{100}=0.0796$；差 0.25%，大約是 Stirling 的下一個修正 $1/(8N)=1/400$。</p>
+      </div>
+      <div class="step" data-step="sf04a3">
+        <span class="step-title">(c) 反解 $N$</span>
+        <p>要求 (b) 的機率低於 0.01（題目「低於 1%」），兩邊平方再移項：</p>
+        $$\frac1{\sqrt{\pi N}}\lt0.01\ \Longrightarrow\ \pi N\gt10^4\ \Longrightarrow\ N\gt\frac{10^4}\pi=3183.1$$
+        <p>Stirling 估計要擲約 $2N\approx6370$ 枚。邊界附近改用精確值 $\binom{2N}N/4^N$：$N=3183$（6366 枚）是 $0.0099998$，剛好低於 1%；$N=3182$ 時是 $0.0100013$，還高於 1%。所以答案是 <strong>6366 枚</strong>；Stirling 在 $N=3183$ 給 $0.0100002$，差別只在第六位。</p>
+      </div>
+      <div class="step" data-step="sf04a4">
+        <span class="step-title">(d) 丟掉根號會怎樣</span>
+        <p>若用 $N!\approx N^Ne^{-N}$，(a) 會變成 $\binom{2N}N\approx4^N$，於是 $P\approx1$——完全錯。兩個很大的數幾乎相等時，相除的結果正是被丟掉的那些「大的」因子。反過來，若只求 $\ln\binom{2N}N=2N\ln2-\tfrac12\ln(\pi N)$（熵），根號項只是 $\ln$ 的修正，和 $2N\ln2$ 相比可以忽略。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 得證；(b) $P\approx1/\sqrt{\pi N}$，100 枚為 0.0798（精確 0.0796）；(c) 至少 6366 枚（$N=3183$，精確值 $0.0099998$；Stirling 估計約 6370 枚）；(d) 機率是兩個很大的數的比，根號因子就是答案的主體。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$N=1000$：$\binom{2000}{1000}\sqrt{1000\pi}/4^{1000}=0.99988\approx1-\frac1{8N}$ ✔；$N$ 每乘 100，平手機率只降為 $1/10$——巨觀態本身的機率衰減得很慢，但「全部正面」之類的極端巨觀態衰減得像 $2^{-2N}$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-04b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>比較三個很大的數</h4>
+    <button type="button" class="exam-btn" data-exam="sf-04b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>比較 $A=(10^{23})!$、$B=10^{10^{24}}$、$C=(10^{24})^{10^{23}}$。(a) 把每個數寫成 $10^x$（$x$ 取四位有效數字）。(b) 依大小排列。(c) 求 $A/C$，並說明它小得驚人的來源。(d) 第 4.1 節說「很大的數乘上大的數不變」。那 $A\times10^{10^{23}}$ 等於 $A$ 嗎？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>三個數</td><td>$A=(10^{23})!$，$B=10^{10^{24}}$，$C=(10^{24})^{10^{23}}$</td><td>「比較 $A$、$B$、$C$」</td></tr>
+          <tr><td>精度</td><td>指數取四位有效數字</td><td>(a)「$x$ 取<b>四位</b>有效數字」</td></tr>
+          <tr><td>階乘的近似</td><td>$\ln N!\approx N\ln N-N+\tfrac12\ln(2\pi N)$</td><td>題目沒給；$N=10^{23}$ 的階乘只能用 Stirling</td></tr>
+          <tr><td>常數</td><td>$\log_{10}e=0.4343$</td><td>題目沒給，用標準值（$=1/\ln10$）</td></tr>
+          <tr><td>(d) 的規則</td><td>很大的數乘上大的數不變</td><td>(d)「第 4.1 節說…」(2.13)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 三個數寫成 $10^x$；(b) 排大小；(c) $A/C$ 及它很小的原因；(d) $A\times10^{10^{23}}$ 是否等於 $A$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這三個是「很大的數」，連寫出位數都不可能，<b>所以</b>取 $\log_{10}$ 把它們變成「大的數」（指數），比較指數就好。$B$、$C$ 是冪次，直接用 $\log_{10}a^b=b\log_{10}a$；<b>因為</b> $A$ 是階乘，<b>所以</b>用 Stirling 的 $\ln N!\approx N\ln N-N$，再用 $\log_{10}x=\ln x/\ln10$ 換底。</p>
+      <p>比較時要看指數的<strong>數值</strong>（例如 $2.257\times10^{24}$ 對 $1.000\times10^{24}$），不是看「次方疊了幾層」；(d) 則是檢查「乘上一個數」在指數上加了多少。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf04b1">
+        <span class="step-title">(a) $\log_{10}A$：Stirling 換底</span>
+        <p>$\ln N!\approx N\ln N-N$ 兩邊除以 $\ln10$，$\frac{\ln N}{\ln10}=\log_{10}N$、$\frac1{\ln10}=\log_{10}e$：</p>
+        $$\log_{10}A\approx\frac{N\ln N-N}{\ln10}=N\left(\log_{10}N-\log_{10}e\right)$$
+        <p class="sub">代入 $N=10^{23}$（題目），$\log_{10}N=23$、$\log_{10}e=0.4343$：</p>
+        $$\log_{10}A=10^{23}(23-0.4343)=2.257\times10^{24}$$
+        <p>（被丟掉的 $\tfrac12\log_{10}(2\pi\cdot10^{23})\approx12$，加在 $10^{24}$ 等級的數上完全看不出來。）</p>
+      </div>
+      <div class="step" data-step="sf-04b-s2">
+        <span class="step-title">(a) $\log_{10}B$ 與 $\log_{10}C$</span>
+        <p>$B=10^{10^{24}}$ 的指數直接讀出；$C$ 用 $\log_{10}a^b=b\log_{10}a$：</p>
+        $$\log_{10}B=10^{24}=1.000\times10^{24}$$
+        <p class="sub">代入 $a=10^{24}$、$b=10^{23}$（題目的 $C$）：</p>
+        $$\log_{10}C=10^{23}\cdot\log_{10}10^{24}=10^{23}\times24=2.400\times10^{24}$$
+      </div>
+      <div class="step" data-step="sf04b2">
+        <span class="step-title">(b) 排列</span>
+        <p>比較三個指數 $1.000\times10^{24}\lt2.257\times10^{24}\lt2.400\times10^{24}$：</p>
+        $$B\lt A\lt C$$
+        <p>注意 $B$ 寫成 $10^{10^{24}}$ 看起來「次方比較多」，其實最小。</p>
+      </div>
+      <div class="step" data-step="sf04b3">
+        <span class="step-title">(c) $A/C$</span>
+        <p>相除＝指數相減：</p>
+        $$\log_{10}\frac AC=\log_{10}A-\log_{10}C=10^{23}(23-0.434-24)$$
+        <p class="sub">代入步驟 1、2 的指數：</p>
+        $$\log_{10}\frac AC=-1.434\times10^{23}\quad\Longrightarrow\quad\frac AC=10^{-1.434\times10^{23}}$$
+        <p>來源：$C=(10\,N)^N=N^N\cdot10^N$（每個因子多一個 10），而 $A\approx N^Ne^{-N}$。所以 $C/A\approx10^Ne^N=10^{N(1+0.434)}$：Stirling 的「每個因子平均小 $e$ 倍」累積 $N$ 次。</p>
+      </div>
+      <div class="step" data-step="sf04b4">
+        <span class="step-title">(d) 很大的數乘很大的數</span>
+        <p>相乘＝指數相加；$10^{10^{23}}$ 的指數是 $10^{23}$：</p>
+        $$\log_{10}\left(A\times10^{10^{23}}\right)=\log_{10}A+10^{23}$$
+        <p class="sub">代入 $\log_{10}A=2.257\times10^{24}$（步驟 1）：</p>
+        $$2.257\times10^{24}+0.100\times10^{24}=2.357\times10^{24}\ne\log_{10}A$$
+        <p>乘上一個<strong>大的</strong>數（如 $10^{23}$）只在指數上加 23，可以忽略；乘上一個<strong>很大的</strong>數是在指數上加一個大的數，會改變結果。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $A=10^{2.257\times10^{24}}$、$B=10^{1.000\times10^{24}}$、$C=10^{2.400\times10^{24}}$；(b) $B\lt A\lt C$；(c) $A/C=10^{-1.434\times10^{23}}$；(d) 不等於，指數變成 $2.357\times10^{24}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>小數字試一次同樣的推理：$N=10$ 時 $\log_{10}10!=6.56$，$N(\log_{10}N-\log_{10}e)=5.66$，差的 0.90 就是 $\tfrac12\log_{10}(20\pi)$；$N=10^{23}$ 時這一項仍然只有約 12 ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>大數加小數不變；很大的數乘大數不變——多重度前面「只是大」的因子可以丟（相除時例外）。</li>
+    <li>$N!\approx N^Ne^{-N}\sqrt{2\pi N}$，$\ln N!\approx N\ln N-N$；前者 $N=10$ 準到 1%，後者 $N=100$ 準到 1%。</li>
+    <li>常用：$\ln(1+x)\approx x$、$\ln(a+b)\approx\ln a+b/a$（$b\ll a$）。</li>
+  </ol>
+</div>

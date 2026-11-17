@@ -1,0 +1,46 @@
+<h2 id="kp-16">H-9. 老師額外點名：電磁波能量密度、時間平均 Poynting 向量</h2>
+<div class="box idea"><p>這是老師逐字稿第八章（約 00:44、01:25～02:05）點名的內容，不是八題中某一題的原文。</p>
+</div>
+<h3 id="k16-1">H-9.1 能量密度和照度到底有什麼不同？</h3>
+<ul>
+<li><strong>能量密度 $u$（J/m³）</strong>：每<strong>單位體積</strong>包含多少電磁能量。</li>
+<li><strong>Poynting 向量 $\vec S$（W/m²）</strong>：瞬間每<strong>單位面積、單位時間</strong>向哪個方向輸送多少能量。</li>
+<li><strong>照度 $I$（W/m²）</strong>：沿傳播方向的 Poynting 向量大小經過<strong>時間平均</strong>。</li>
+</ul>
+<p>$u$ 和 $I$ 單位不同，要乘上傳播速度才能連結。</p>
+<h3 id="k16-2">H-9.2 從電場、磁場分別算能量密度</h3>
+<p class="symnote">符號：$\varepsilon$ 為介質介電常數、$\mu$ 為介質磁導率，$E=|\vec E|$、$B=|\vec B|$ 為瞬時電場與磁通密度大小。</p>
+<p><strong>① 電、磁能量密度：</strong> 瞬時<strong>電場</strong>能量密度：</p>
+<div class="math-block">$$\boxed{u_E=\frac12\varepsilon E^2}.$$</div>
+<p>瞬時<strong>磁場</strong>能量密度：</p>
+<div class="math-block">$$\boxed{u_B=\frac{B^2}{2\mu}}.$$</div>
+<p>相加得總瞬時能量密度：</p>
+<div class="math-block">$$\boxed{u=u_E+u_B=\frac12\varepsilon E^2+\frac{B^2}{2\mu}}.$$</div>
+<p><strong>② 平面波中兩者相等：</strong> 理想、非色散、均勻介質中的平面正弦波：</p>
+<div class="math-block">$$v=\frac1{\sqrt{\varepsilon\mu}},\qquad B=\frac Ev.$$</div>
+<p>把 $B=E/v$ 代入 $u_B$，並用 $1/(\mu v^2)=\varepsilon$：</p>
+<div class="math-block">$$
+\begin{aligned}
+u_B&amp;=\frac{(E/v)^2}{2\mu}\\
+&amp;=\frac{E^2}{2\mu v^2}\\
+&amp;=\frac12\varepsilon E^2=u_E,
+\end{aligned}
+$$</div>
+<p>所以總能量密度簡化為：</p>
+<div class="math-block">$$\boxed{u=\varepsilon E^2}.$$</div>
+<p><strong>③ 時間平均：</strong> 若 $E=E_0\cos\Phi$：</p>
+<div class="math-block">$$\boxed{u(t)=\varepsilon E_0^2\cos^2\Phi}.$$</div>
+<p>$\overline{\cos^2\Phi}=1/2$：</p>
+<div class="math-block">$$\boxed{\overline u=\frac12\varepsilon E_0^2}.$$</div>
+<p><strong>④ 乘傳播速度得照度：</strong></p>
+<div class="math-block">$$\boxed{I=v\overline u=\frac12\varepsilon v E_0^2}.$$</div>
+<p>在 $\mu_r=1$ 的非磁性介質中，它就是 $I=\varepsilon_0nc_0E_0^2/2$：</p>
+<div class="math-block">$$\varepsilon=n^2\varepsilon_0,\qquad v=\frac{c_0}{n},\quad \varepsilon v=n\varepsilon_0c_0.$$</div>
+<h3 id="k16-3">H-9.4 套用到球面波與圓柱波</h3>
+<p>$I=v\overline u$ 是局部關係，所以 $\overline u$ 與 $I$ 隨距離的比例相同：</p>
+<ul>
+<li><strong>球面波</strong>：$I\propto r^{-2}$，平均能量密度同樣 $\overline u\propto r^{-2}$。</li>
+<li><strong>圓柱波</strong>：$I\propto r^{-1}$，平均能量密度同樣 $\overline u\propto r^{-1}$。</li>
+</ul>
+<p>2020 年第 2 題在觀察點給 $I=2\ \mathrm{W/m^2}$，當地平均能量密度：</p>
+<div class="math-block">$$\boxed{\overline u=\frac I{c_0}=\frac2{3\times10^8}=6.66667\times10^{-9}\ \mathrm{J/m^3}}.$$</div>

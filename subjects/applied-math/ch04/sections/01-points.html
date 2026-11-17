@@ -1,0 +1,199 @@
+<h2>一、常點、奇點與收斂半徑 <span class="pg">板書 10/7 照片 1</span></h2>
+
+<p class="lead">二階變係數線性方程式沒有現成的解可以猜。10/7 一開始老師先畫了一張表：看 $p(x)$、$q(x)$ 在展開點的行為，決定用「冪級數解」還是「Frobenius 法」。這一節把那張表講清楚，並補上板書只寫了問號的兩件事——級數在哪裡收斂、奇點是什麼。</p>
+
+<h3 id="am4-type3">1.1 Type III：$y''+p(x)y'+q(x)y=0$ 的兩種級數解 <span class="pg-tag">照片 1</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/7（照片 1）</span>
+  <p>Type Ⅲ　$y''+p(x)y'+q(x)y=0$</p>
+  <p>power series solution：$\underset{\sim\sim}{x=0}$（convergence？singularity？）、$x=x_0$；Frobenius method</p>
+  <p><b>左欄</b>：$p(x)$、$q(x)$ 在 $x=0$ 處不發散 → 令 $y=\displaystyle\sum_{n=0}^{\infty}a_nx^n$，多項式級數解（power series solution）→ Find $a_0,a_1,a_2,\dots$</p>
+  <p><b>右欄</b>：$p(x)$、$q(x)$ 在 $x=0$ 處發散，但 $\displaystyle\lim_{x\to0}x\,p(x)$ and $\displaystyle\lim_{x\to0}x^2q(x)$ 不發散 → 令 $y=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+\gamma}$，$\gamma$：常數，$a_0\ne0$，Frobenius method → Find $\gamma$；$a_0,a_1,a_2,\dots$</p>
+</div>
+
+<p>「Type III」接在前兩型之後：Type I 是常係數（猜 $e^{\lambda x}$，第 2 章）、Type II 是 Cauchy–Euler（猜 $x^m$，第 2 章）。這兩型的係數都很特殊，所以猜得到解的形式。係數是一般的 $x$ 函數時，老師的辦法是把解寫成<strong>無窮級數</strong>，再讓方程式決定每一個係數。板書把它叫「多項式級數解」，意思是「無窮多項的多項式」，也就是冪級數；只有少數情況級數會在某一項之後全為 0，真的變成多項式（第 3、4 節會看到）。</p>
+
+<p>表格的兩欄就是兩種判斷結果：</p>
+
+<div class="step" data-step="am4-type3-s1" data-sym="pq">
+  <span class="step-title">第一步永遠是「化成標準式」</span>
+  <p>題目常寫成 $P(x)y''+Q(x)y'+R(x)y=0$。表格用的是 $y''$ 係數為 1 的<strong>標準式</strong>，所以要先整式除以 $P(x)$：</p>
+  $$p(x)=\frac{Q(x)}{P(x)},\qquad q(x)=\frac{R(x)}{P(x)}.$$
+  <p>例如 111 上期末的 $(x^2+1)y''-2xy'+2y=0$，標準式是 $p=\dfrac{-2x}{x^2+1}$、$q=\dfrac{2}{x^2+1}$。$P(x)$ 的零點就是可能出問題的點，10/14 的板書每一題都先寫「與標準式比較」，就是在做這件事。</p>
+</div>
+
+<div class="step" data-step="am4-type3-s2" data-sym="x0">
+  <span class="step-title">常點（左欄）：用冪級數</span>
+  <p>$p$、$q$ 在 $x_0$ 都「不發散」（嚴格說是可以在 $x_0$ 展開成泰勒級數，稱為在 $x_0$ <b>解析</b>）時，$x_0$ 叫做<b>常點</b>（ordinary point）。題目的係數幾乎都是多項式或多項式相除，這時「不發散」和「解析」是同一件事：約分後分母在 $x_0$ 不為零就行。常點附近的解本身也解析，所以可以令 $y=\sum a_n(x-x_0)^n$。</p>
+</div>
+
+<div class="step" data-step="am4-type3-s3">
+  <span class="step-title">正則奇點（右欄）與不正則奇點</span>
+  <p>不是常點的點叫<b>奇點</b>（singular point）。奇點又分兩種：</p>
+  <ul>
+    <li><b>正則奇點</b>（regular singular point）：$p$、$q$ 會發散，但 $(x-x_0)p(x)$ 與 $(x-x_0)^2q(x)$ 不發散。$p$ 最多像 $1/x$、$q$ 最多像 $1/x^2$ 那麼壞——正好是 Cauchy–Euler $x^2y''+axy'+by=0$ 的程度。解會像 $x^\gamma$ 乘一個冪級數，所以右欄令 $y=\sum a_nx^{n+\gamma}$，多一個要決定的 $\gamma$（第 5 章）。</li>
+    <li><b>不正則奇點</b>（irregular）：連 $xp$ 或 $x^2q$ 都發散。兩種級數都不保證有用，這門課不處理。</li>
+  </ul>
+</div>
+
+<div class="step" data-step="am4-type3-s4" data-sym="tvar">
+  <span class="step-title">板書的「$x=x_0$」：換變數就回到 $x=0$</span>
+  <p>要在 $x_0\ne0$ 展開時，令 $t=x-x_0$。因為 $\dfrac{dy}{dx}=\dfrac{dy}{dt}$，方程式的導數部分完全不變，只要把係數裡的 $x$ 換成 $t+x_0$，就變成在 $t=0$ 展開的問題，表格的判斷也照用。初始條件給在 $x_0$（例如 $y(1)$、$y'(1)$）時特別方便：$a_0=y(x_0)$、$a_1=y'(x_0)$。第 4 節的自編 4-a 是例子。</p>
+</div>
+
+<h3 id="am4-conv">1.2 板書的問號：級數在哪裡收斂？ <span class="pg-tag">照片 1</span> <span class="added">網站補充</span></h3>
+
+<p>板書在「$x=0$」旁邊寫了 convergence？singularity？但照片中沒有展開。這兩個問號是同一個問題的兩面，答案是一個定理：</p>
+
+<div class="step" data-step="am4-conv-s1" data-sym="Rc">
+  <span class="step-title">收斂半徑的定理</span>
+  <p>若 $x_0$ 是 $y''+p(x)y'+q(x)y=0$ 的常點，則有兩個線性獨立的冪級數解 $y=\sum a_n(x-x_0)^n$，而且它們<strong>至少</strong>在</p>
+  $$|x-x_0|\lt R,\qquad R=x_0\text{ 到 }p\text{、}q\text{ 最近奇點的距離}$$
+  <p>內收斂。這裡的「最近奇點」要在<strong>複數平面</strong>上找：分母的複數根也算。</p>
+</div>
+
+<p>為什麼要看複數平面？冪級數的收斂範圍永遠是一個以 $x_0$ 為圓心的圓盤 $|x-x_0|\lt R$（實數線上看到的是這個圓盤和實數軸的交集，一個區間）。圓盤往外擴大時，只要碰到一個讓函數出問題的點就停，不管這個點在不在實數軸上。最有名的例子是 $\dfrac{1}{1+x^2}=1-x^2+x^4-\cdots$：這個函數在整條實數線上都很平滑，級數卻只在 $|x|\lt1$ 收斂，因為 $1+x^2$ 在 $x=\pm i$ 為零，距離原點剛好是 1。</p>
+
+<div class="anim" data-anim="am4-radius"></div>
+
+<p>定理給的是<strong>下限</strong>。實際的半徑可以更大：作業 3 的 $(x-1)y''-xy'+y=0$ 在 $x=1$ 有奇點，保證 $|x|\lt1$；但它的解 $8x-2e^x$ 對所有 $x$ 都收斂。考試問「收斂半徑至少多少」時用定理；問「這個級數的收斂半徑」時，要從係數用比值審斂法 $R=\lim\left|a_n/a_{n+1}\right|$（跳格的遞迴用 $\lim|a_n/a_{n+2}|^{1/2}$ 之類的形式）或認出 closed form 來判斷。</p>
+
+<div class="box pitfall">
+  <span class="box-title">最常見的錯誤</span>
+  <p>沒有先化成標準式就判斷（$P(x)$ 的零點才是候選奇點）；忘了約分（$\dfrac{x-2}{x^2(x-2)^2}$ 約分後 $x-2$ 的次方變少，判斷正則與否會不同）；只看實數根，把 $x^2-2x+5$ 這種恆正的分母當成「沒有奇點」。</p>
+</div>
+
+<div class="problem" data-kind="self" id="am4-sf-01a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>分母恆正，收斂半徑卻是有限的</h4>
+    <button type="button" class="exam-btn" data-exam="am4-sf-01a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>方程式 $(x^2-2x+5)\,y''+x\,y'-y=0$。(a) 化成標準式，找出所有奇點。(b) 在 $x=0$ 用冪級數法求解，理論保證的收斂半徑至少是多少？(c) 改在 $x=1$、$x=3$ 展開呢？(d) 有人說：「係數都是實數多項式，$x^2-2x+5$ 在實數線上恆正、永遠不為零，所以級數對所有實數 $x$ 都收斂。」錯在哪裡？(e) 驗證 $y=x$ 是一個解，並說明它和 (b) 的結論有沒有矛盾。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$y''$ 的係數</td><td>$P(x)=x^2-2x+5$</td><td>「$(x^2-2x+5)\,y''$」：要先除掉它才是標準式</td></tr>
+          <tr><td>$y'$、$y$ 的係數</td><td>$x$、$-1$</td><td>「$+x\,y'-y=0$」</td></tr>
+          <tr><td>展開點</td><td>$x_0=0$；$1$；$3$</td><td>(b)「在 $x=0$」、(c)「改在 $x=1$、$x=3$」</td></tr>
+          <tr><td>判斷依據</td><td>$R\ge$ 到最近奇點（含複數）的距離</td><td>題目沒寫，要自己想到 1.2 節的定理</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 標準式與奇點；(b)(c) 三個展開點的保證半徑；(d) 指出錯誤；(e) 代入驗證 $y=x$ 並解釋。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>係數是多項式相除，$p$、$q$ 只會在分母 $x^2-2x+5$ 為零的地方發散，<b>所以</b>奇點就是這個二次式的根，不管它是實數還是複數。</p>
+      <p><b>因為</b>收斂定理的半徑是「展開點到最近奇點的距離」，而冪級數的收斂範圍是複數平面上的圓盤，<b>所以</b>要用複數的絕對值 $|x_0-x_s|$ 算距離；不能因為實數線上沒有根就說半徑無限大。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-sf-01a-s1" data-sym="pq">
+        <span class="step-title">(a) 化成標準式</span>
+        <p>整式除以 $y''$ 的係數 $P(x)$：</p>
+        $$y''+\underbrace{\frac{x}{x^2-2x+5}}_{p(x)}\,y'+\underbrace{\frac{-1}{x^2-2x+5}}_{q(x)}\,y=0$$
+        <p>分子和分母沒有公因式可以約，所以 $p$、$q$ 只在 $x^2-2x+5=0$ 處發散。</p>
+      </div>
+      <div class="step" data-step="am4-sf-01a-s2">
+        <span class="step-title">(a) 解出奇點</span>
+        <p>二次方程式 $x^2-2x+5=0$ 用公式解 $x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$：</p>
+        <p class="sub">代入 $a=1$、$b=-2$、$c=5$（題目「$x^2-2x+5$」）：</p>
+        $$x=\frac{2\pm\sqrt{4-20}}{2}=\frac{2\pm\sqrt{-16}}{2}=1\pm2i$$
+        <p>判別式 $-16\lt0$，實數線上沒有奇點，<b>每一個實數點都是常點</b>；奇點是一對共軛複數 $1\pm2i$。</p>
+      </div>
+      <div class="step" data-step="am4-sf-01a-s3" data-sym="Rc">
+        <span class="step-title">(b)(c) 三個展開點到奇點的距離</span>
+        <p>複數 $a+bi$ 到 $c+di$ 的距離是 $\sqrt{(a-c)^2+(b-d)^2}$。兩個奇點對實數軸對稱，到實數點的距離相同，算一個就好：</p>
+        <p class="sub">$x_0=0$（題目 (b)）：</p>
+        $$R_0=|0-(1+2i)|=\sqrt{1^2+2^2}=\sqrt5\approx2.24$$
+        <p class="sub">$x_0=1$（題目 (c)）：</p>
+        $$R_1=|1-(1+2i)|=|{-2i}|=2$$
+        <p class="sub">$x_0=3$（題目 (c)）：</p>
+        $$R_3=|3-(1+2i)|=\sqrt{2^2+2^2}=2\sqrt2\approx2.83$$
+        <p>所以在 $x=0$ 展開的兩個冪級數解至少在 $|x|\lt\sqrt5$（實數上 $-2.24\lt x\lt2.24$）收斂；在 $x=1$ 展開至少 $|x-1|\lt2$；在 $x=3$ 展開至少 $|x-3|\lt2\sqrt2$。</p>
+      </div>
+      <div class="step" data-step="am4-sf-01a-s4">
+        <span class="step-title">(d) 錯在哪裡</span>
+        <p>冪級數 $\sum a_nx^n$ 的收斂範圍是複數平面上的圓盤 $|x|\lt R$。圓盤從原點往外長，碰到 $1\pm2i$ 時解就可能出問題（這裡的解在那裡確實有奇異性，見下一步），圓盤就停在半徑 $\sqrt5$；實數線上看到的只是這個圓盤的一條直徑 $(-\sqrt5,\sqrt5)$。「實數線上沒有奇點」只保證每個實數點附近都能展開，不保證同一個級數能一路用到無限遠。同樣的道理 $\dfrac1{1+x^2}=\sum(-1)^nx^{2n}$ 只在 $|x|\lt1$ 收斂。</p>
+      </div>
+      <div class="step" data-step="am4-sf-01a-s5" data-sym="y12">
+        <span class="step-title">(e) $y=x$ 是解，和定理不矛盾</span>
+        <p>代入 $y=x$、$y'=1$、$y''=0$：</p>
+        $$(x^2-2x+5)\cdot0+x\cdot1-x=0\ \checkmark$$
+        <p>它的級數只有一項（$a_1=1$、其餘為 0），對所有 $x$ 都收斂，比 $\sqrt5$ 大。這不矛盾：定理說的是「<b>至少</b> $\sqrt5$」，個別的解可以更好。另一個線性獨立解用降階法 $y_2=x\displaystyle\int\frac{e^{-\int p\,dx}}{x^2}dx$ 求，其中 $\displaystyle\int p\,dx=\tfrac12\ln(x^2-2x+5)+\tfrac12\tan^{-1}\tfrac{x-1}{2}$，被積函數含 $(x^2-2x+5)^{-1/2}$，在 $1\pm2i$ 真的有奇異性，所以一般解的級數半徑就是 $\sqrt5$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $p=\dfrac{x}{x^2-2x+5}$、$q=\dfrac{-1}{x^2-2x+5}$，奇點只有 $x=1\pm2i$（實數點全是常點）；(b) $R\ge\sqrt5\approx2.24$；(c) 在 $x=1$ 展開 $R\ge2$，在 $x=3$ 展開 $R\ge2\sqrt2\approx2.83$；(d) 收斂範圍是複數平面上的圓盤，會被複數奇點擋住；(e) $y=x$ 代入成立，它處處收斂，定理只給下限，不矛盾。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>兩個奇點的實部都是 1，所以從 $x_0=1$ 出發距離最短（正好等於虛部 2），離 1 越遠半徑越大：$R_0^2=1+4$、$R_3^2=4+4$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am4-sf-01b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>同一個方程式：哪裡用冪級數、哪裡用 Frobenius、哪裡都不行</h4>
+    <button type="button" class="exam-btn" data-exam="am4-sf-01b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>方程式 $x^2(x-2)^2\,y''+3x\,y'+(x-2)\,y=0$。(a) 找出所有奇點，並判斷各是正則還是不正則。(b) 在 $x=0$、$x=2$、$x=1$ 附近分別應該用冪級數法、Frobenius 法，還是兩者都不保證？(c) 在 $x=1$ 與 $x=-1$ 展開的冪級數解，保證的收斂半徑各是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$y''$ 的係數</td><td>$x^2(x-2)^2$，零點 $x=0,2$</td><td>「$x^2(x-2)^2\,y''$」</td></tr>
+          <tr><td>$y'$、$y$ 的係數</td><td>$3x$、$x-2$</td><td>「$+3x\,y'+(x-2)\,y$」：兩個都和分母有公因式，要約分</td></tr>
+          <tr><td>正則奇點的判斷</td><td>$(x-x_0)p$、$(x-x_0)^2q$ 在 $x_0$ 不發散</td><td>板書照片 1 右欄（以 $x_0=0$ 寫成 $xp$、$x^2q$）</td></tr>
+          <tr><td>半徑的判斷</td><td>到最近奇點的距離</td><td>題目沒寫，用 1.2 節的定理</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 奇點與分類；(b) 三個點各用什麼方法；(c) 在 $x=\pm1$ 展開的保證半徑。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>板書的判斷表是用標準式 $y''+py'+qy=0$ 寫的，<b>所以</b>先除以 $x^2(x-2)^2$ 並<b>約分</b>：約分後 $p$、$q$ 分母裡 $x$ 與 $x-2$ 剩下的次方，直接決定是常點、正則還是不正則（$p$ 的分母最多一次、$q$ 的分母最多二次才算正則）。</p>
+      <p><b>因為</b>正則與否要對每個奇點分開看，<b>所以</b>對 $x=0$ 算 $\lim xp$、$\lim x^2q$，對 $x=2$ 算 $\lim(x-2)p$、$\lim(x-2)^2q$；任何一個發散就是不正則。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-sf-01b-s1" data-sym="pq">
+        <span class="step-title">化成標準式並約分</span>
+        $$p(x)=\frac{3x}{x^2(x-2)^2}=\frac{3}{x(x-2)^2},\qquad q(x)=\frac{x-2}{x^2(x-2)^2}=\frac{1}{x^2(x-2)}$$
+        <p>約分後分母的零點仍是 $x=0$ 與 $x=2$，其他點都是常點。注意 $q$ 的 $(x-2)^2$ 被約成一次——不約分會以為 $q$ 在 $x=2$ 壞到二次。</p>
+      </div>
+      <div class="step" data-step="am4-sf-01b-s2">
+        <span class="step-title">$x=0$：算 $xp$ 與 $x^2q$ 的極限</span>
+        $$\lim_{x\to0}x\,p(x)=\lim_{x\to0}\frac{3}{(x-2)^2}=\frac34,\qquad \lim_{x\to0}x^2q(x)=\lim_{x\to0}\frac{1}{x-2}=-\frac12$$
+        <p>兩個都不發散 → $x=0$ 是<b>正則奇點</b>，用 Frobenius 法，令 $y=\sum a_nx^{n+\gamma}$（第 5 章；這兩個極限值 $\tfrac34$、$-\tfrac12$ 正好會決定 $\gamma$）。</p>
+      </div>
+      <div class="step" data-step="am4-sf-01b-s3">
+        <span class="step-title">$x=2$：算 $(x-2)p$ 與 $(x-2)^2q$ 的極限</span>
+        $$\lim_{x\to2}(x-2)\,p(x)=\lim_{x\to2}\frac{3}{x(x-2)}\to\infty,\qquad \lim_{x\to2}(x-2)^2q(x)=\lim_{x\to2}\frac{x-2}{x^2}=0$$
+        <p>第二個沒問題，但第一個發散（$p$ 的分母有 $(x-2)^2$，比正則允許的一次多）→ $x=2$ 是<b>不正則奇點</b>，冪級數和 Frobenius 都不保證有解的級數形式。</p>
+      </div>
+      <div class="step" data-step="am4-sf-01b-s4" data-sym="Rc">
+        <span class="step-title">$x=\pm1$：常點，算到最近奇點的距離</span>
+        <p>$x=1$ 不是 0 也不是 2，是常點，用冪級數法。奇點只有 $0$ 與 $2$（都在實數線上）：</p>
+        <p class="sub">$x_0=1$（題目 (c)）：到 0 是 1，到 2 也是 1：</p>
+        $$R\ge\min(|1-0|,\,|1-2|)=1$$
+        <p class="sub">$x_0=-1$（題目 (c)）：到 0 是 1，到 2 是 3：</p>
+        $$R\ge\min(|-1-0|,\,|-1-2|)=\min(1,3)=1$$
+        <p>兩個都保證 $R\ge1$，但原因不同：$x=1$ 被兩邊夾住，$x=-1$ 只被 $x=0$ 擋住。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 奇點 $x=0$（正則，$xp\to\tfrac34$、$x^2q\to-\tfrac12$）與 $x=2$（不正則，$(x-2)p\to\infty$）。(b) $x=0$ 用 Frobenius；$x=2$ 兩種方法都不保證；$x=1$ 是常點，用冪級數。(c) 在 $x=1$ 與 $x=-1$ 展開都保證 $R\ge1$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>正則的條件等價於「約分後 $p$ 的分母裡 $(x-x_0)$ 最多一次、$q$ 的分母裡最多二次」：$p=\dfrac{3}{x(x-2)^2}$ 對 $x=0$ 是一次 ✔、對 $x=2$ 是二次 ✘；$q=\dfrac1{x^2(x-2)}$ 對 $x=0$ 二次 ✔、對 $x=2$ 一次 ✔，和逐點算極限的結論一致。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>先化成標準式 $y''+py'+qy=0$ 並約分，$y''$ 係數的零點才是候選奇點。</li>
+    <li>$p$、$q$ 在 $x_0$ 不發散 → 常點，令 $y=\sum a_n(x-x_0)^n$；$xp$、$x^2q$ 不發散 → 正則奇點，用 Frobenius（第 5 章）；再更壞 → 不正則，兩者都不保證。</li>
+    <li>常點的冪級數解至少在 $|x-x_0|\lt R$ 收斂，$R$ 是到最近奇點的距離，<b>複數奇點也算</b>；個別的解可能收斂得更遠。</li>
+    <li>在 $x_0\ne0$ 展開：令 $t=x-x_0$，導數不變，係數裡的 $x$ 換成 $t+x_0$。</li>
+  </ol>
+</div>

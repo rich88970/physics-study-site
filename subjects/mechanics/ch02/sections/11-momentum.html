@@ -1,0 +1,399 @@
+<h2>十一、守恆定律：動量與角動量 <span class="pg">講義 p.107–118 · 課本 §2.5 p.76–78、82</span></h2>
+
+<p class="lead">守恆定律不是新的假設，而是牛頓定律的推論：只要某個方向沒有力，那個方向的動量就不變；只要沒有力矩，角動量就不變。這一節把兩個推導寫清楚，再用轉動慣量把角動量寫成 $I\vec\omega$，解老鼠跳上吊扇的例題。</p>
+
+<h3 id="c2m-def">11.1 什麼叫守恆 <span class="pg-tag">p.107–108</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.107–108 Conservation Theorems</span>
+  <p>守恆的定義：某個量 $Q$ 不隨時間改變，$\dfrac{\mathrm dQ}{\mathrm dt}=0\Rightarrow Q=$ 常數。古典力學的三個主要守恆律：線動量 $\dfrac{\mathrm d\vec p}{\mathrm dt}=0$、角動量 $\dfrac{\mathrm d\vec L}{\mathrm dt}=0$、能量 $\dfrac{\mathrm dE}{\mathrm dt}=0$。</p>
+</div>
+
+<p>課本 p.76、81 特別強調：這些定理<strong>不是</strong>在證明守恆律，只是推出「如果牛頓定律成立，則這些量守恆」。守恆律被實驗廣泛驗證，反過來支持了牛頓定律；後來人們甚至堅持在牛頓力學不適用的地方也要守恆——Pauli 在 1930 年為了保住 $\beta$ 衰變的能量與動量守恆，預言了微中子，1953 年才被實驗觀測到。</p>
+
+<h3 id="c2m-lin">11.2 線動量：沒有力的方向守恆 <span class="pg-tag">p.109–110</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.109–110 Conservation of Linear Momentum</span>
+  $$\vec F\cdot\hat s=\frac{\mathrm d\vec p}{\mathrm dt}\cdot\hat s=\frac{\mathrm d(\vec p\cdot\hat s)}{\mathrm dt}-\vec p\cdot\frac{\mathrm d\hat s}{\mathrm dt}=\frac{\mathrm d(\vec p\cdot\hat s)}{\mathrm dt}\quad\Longrightarrow\quad F_s=\frac{\mathrm dp_s}{\mathrm dt}$$
+  <p>直角座標的單位向量不隨時間改變，$\mathrm d\hat s/\mathrm dt=0$（用到 Lecture 1 的 Eq. 1.86c 內積微分）。若沿 $\hat s$ 的淨力為零，$F_s=0$，則 $p_s$ 為常數：某方向的線動量分量，在該方向淨力為零時守恆。</p>
+</div>
+
+<p>整個向量的版本（課本 p.77 第 I 定理）：質點所受總力為零時，總線動量 $\vec p$ 守恆。分量版本更有用，因為很多問題只有某些方向沒有力：拋體的水平動量守恆（$F_x=0$），垂直方向則不守恆。$\hat s$ 必須是<strong>固定</strong>方向；若用隨質點轉動的單位向量（例如 $\hat\theta$），$\vec p\cdot\mathrm d\hat s/\mathrm dt$ 不為零，這個結論就不成立。</p>
+
+<h3 id="c2m-ang">11.3 角動量與力矩 <span class="pg-tag">p.111–114</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.111–113 Conservation of Angular Momentum</span>
+  $$\vec r\times\vec F=\vec r\times\frac{\mathrm d\vec p}{\mathrm dt}=\frac{\mathrm d(\vec r\times\vec p)}{\mathrm dt}-\frac{\mathrm d\vec r}{\mathrm dt}\times\left(m\frac{\mathrm d\vec r}{\mathrm dt}\right)=\frac{\mathrm d(\vec r\times\vec p)}{\mathrm dt}$$
+  <p>（Eq. 1.86d 外積微分；向量和自己的外積為零，因為 $\sin0=0$。）定義對原點 $O$ 的角動量 $\vec L\equiv\vec r\times\vec p$、對同一原點的力矩 $\vec N\equiv\vec r\times\vec F$，則 $\vec N=\dfrac{\mathrm d\vec L}{\mathrm dt}=\dot{\vec L}$。若外力矩為零，$\dot{\vec L}=0$，角動量為常數。</p>
+</div>
+
+<p>推導中唯一的物理只有 $\vec F=\dot{\vec p}$；其餘是外積的乘積律，以及 $\dot{\vec r}\times m\dot{\vec r}=0$（速度和動量同方向）。$\vec L$、$\vec N$ 都和原點的選擇有關，兩者必須對<strong>同一個</strong>原點。課本 p.77 提醒：聰明地選原點常常讓問題變簡單，例如原點放在力的作用線上，力矩就是零。</p>
+
+<div class="box lecture">
+  <span class="box-title">p.114 例：地球繞太陽</span>
+  <p>太陽對地球的重力沒有力矩：$\vec N=\vec r\times\vec F$，$|\vec N|=|\vec r||\vec F|\sin\theta=0$（因為 $\theta$ 是 $0^\circ$）。所以地球繞太陽的角動量守恆。不受力矩的質點，角動量守恆。</p>
+</div>
+
+<p>嚴格說，重力指向太陽、和以太陽為原點的位置向量 $\vec r$ 反平行，夾角是 $180^\circ$ 而不是 $0^\circ$；兩者 $\sin\theta$ 都是零，結論不變。</p>
+
+<p>任何<strong>連心力</strong>（$\vec F\parallel\vec r$）都是這樣，這就是行星軌道在一個固定平面上、而且掃過面積的速率不變（克卜勒第二定律）的原因，課本第 8 章會詳細推導。</p>
+
+<h3 id="c2m-inertia">11.4 轉動慣量 <span class="pg-tag">p.115–117</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.115–117 Moment of Inertia</span>
+  <p>形狀不規則的剛體，總角動量是所有質量元角動量的和。用 $\vec v_i=\vec\omega\times\vec r_i$（Eq. 1.105）與 $\vec A\times(\vec B\times\vec C)=\vec B(\vec A\cdot\vec C)-\vec C(\vec A\cdot\vec B)$（Eq. 1.83）：</p>
+  $$\vec L=\sum m_i\big(\vec r_i\times(\vec\omega\times\vec r_i)\big)=\sum m_i\big[\vec\omega(\vec r_i\cdot\vec r_i)-\vec r_i(\vec r_i\cdot\vec\omega)\big]=\Big(\sum m_ir_i^2\Big)\vec\omega$$
+  <p>其中 $\vec r_i\perp\vec\omega$，$\vec r_i\cdot\vec\omega=0$。$\vec L=I\vec\omega$，$I\equiv\sum m_ir_i^2$ 是<strong>轉動慣量</strong>；$\vec N=\dot{\vec L}=I\dot{\vec\omega}=I\ddot{\vec\theta}$。</p>
+</div>
+
+<p>「$\vec r_i\perp\vec\omega$」是這個簡化的前提：所有質點都在通過原點、垂直轉軸的平面上（像吊扇葉片）。一般的三維剛體 $\vec r_i\cdot\vec\omega\neq0$，$\vec L$ 和 $\vec\omega$ 不一定同方向，要用慣性張量（課本第 11 章）。在這個前提下，$r_i$ 就是質點到轉軸的距離，轉動的每個量都和直線運動一一對應：</p>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>直線</th><th>轉動</th></tr></thead>
+  <tbody>
+    <tr><td>$\vec F$</td><td>$\vec N=\vec r\times\vec F$</td></tr>
+    <tr><td>$p=m\dot x$</td><td>$L=I\dot\theta$</td></tr>
+    <tr><td>$F=m\ddot x$</td><td>$N=I\ddot\theta$</td></tr>
+    <tr><td>$F=\dot p$</td><td>$N=\dot L$</td></tr>
+  </tbody>
+</table></div>
+<p class="small muted">講義 p.117 Linear vs Angular Equations。</p>
+
+<div class="problem" data-kind="example" id="c2-ex211">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.118 · Example 2.11（課本 p.82）</span></div>
+    <h4>老鼠跳上轉動的吊扇：角速度變成幾倍</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex211">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的老鼠跳到一台自由轉動的吊扇外緣。吊扇的轉動慣量為 $I$（講義記為 $I_0$）、半徑 $R$。角速度改變為原來的幾倍？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：老鼠質量 $m$（質點），吊扇轉動慣量 $I$（講義記為 $I_0$）、半徑 $R$；老鼠落在外緣（離軸 $R$）；吊扇自由轉動，原角速度 $\omega_0$；假設老鼠鉛直跳上，跳上前對軸沒有角動量。</p>
+<p><strong>① 對轉軸的外力矩為零：</strong> 老鼠落上葉片的力是系統內力、又短又複雜，所以不算力、改用守恆律比較前後；軸承施力讓線動量不守恆，黏上去是完全非彈性碰撞、動能也不守恆，只剩對轉軸的角動量可用。外力只有重力（鉛直向下，平行轉軸）和軸承的力（作用在軸上）：平行轉軸的力對轉軸沒有力矩，作用點在軸上的力力臂為 0，也沒有力矩。</p>
+<div class="math-block">$$N_z=0\quad\Longrightarrow\quad L_z=\text{常數}$$</div>
+<p><strong>② 之前的角動量：</strong> 吊扇以 $\omega_0$ 轉，老鼠跳上前沒有繞軸的角動量。</p>
+<p class="fnote"><b>公式（剛體角動量）：</b>$L=I\omega$，其中 $I$ 為對轉軸的轉動慣量、$\omega$ 為角速度；本題吊扇 $I$、$\omega_0$。</p>
+<div class="math-block">$$L_0=I\omega_0+0$$</div>
+<p><strong>③ 之後的角動量：</strong> 老鼠黏在外緣、和葉片一起轉，速率 $v=\omega R$，方向沿切線、和 $\vec r$ 垂直。</p>
+<p class="fnote"><b>公式（質點角動量）：</b>$\vec L=\vec r\times m\vec v$，$\vec v\perp\vec r$ 時大小為 $rmv$，其中 $r$ 為到轉軸的距離、$m$ 為質量、$v$ 為速率；本題 $r=R$、$v=\omega R$。</p>
+<p>代入 $r=R$、$v=\omega R$：</p>
+<div class="math-block">$$L=I\omega+mvR=I\omega+mR^2\omega=(I+mR^2)\,\omega$$</div>
+<p>（老鼠在外緣，對轉動慣量的貢獻就是質點的 $mR^2$。）</p>
+<p><strong>④ 令前後相等：</strong></p>
+<div class="math-block">$$(I+mR^2)\,\omega=I\omega_0$$</div>
+<p>兩邊除以 $\omega_0(I+mR^2)$：</p>
+<div class="math-block">$$\frac{\omega}{\omega_0}=\frac{I}{I+mR^2}$$</div>
+<p>分母比分子大，所以吊扇變慢；外緣速率 $\omega R$ 也按同一比例變小。</p>
+<div class="math-block">$$\boxed{\frac{\omega}{\omega_0}=\frac{I}{I+mR^2}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-21">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-21 · p.92</span></div>
+    <h4>直接驗證拋體的 $\mathrm d\vec L/\mathrm dt=\vec N$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-21">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-21"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show directly that the time rate of change of the angular momentum about the origin for a projectile fired from the origin (constant $g$) is equal to the moment of force (or torque) about the origin.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-21 · p.92</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>拋體從原點射出，$g$ 為常數。直接證明拋體對原點的角動量的時間變化率，等於對原點的力矩。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：拋體從原點射出，只受重力 $\vec F=-mg\hat j$（$g$ 為常數，不計空氣阻力）；初速大小 $v_0$、仰角 $\alpha$，運動在 $xy$ 平面（$y$ 向上）。角動量與力矩都對原點算。</p>
+<p><strong>① 位置與速度：</strong> 題目要「直接」證明，所以兩邊各自算出來比較：左邊由 $\vec r(t)$、$\vec v(t)$ 算 $\vec L$ 再微分，右邊直接算 $\vec r\times\vec F$。照例題 2.6，從原點出發，初速分量 $v_0\cos\alpha$、$v_0\sin\alpha$，加速度只有 $-g\hat j$：</p>
+<div class="math-block">$$\begin{aligned}x&amp;=v_0\cos\alpha\,t,\quad&amp;\dot x&amp;=v_0\cos\alpha\\y&amp;=v_0\sin\alpha\,t-\tfrac12gt^2,\quad&amp;\dot y&amp;=v_0\sin\alpha-gt\end{aligned}$$</div>
+<p><strong>② 角動量：</strong> $\vec r$、$\vec v$ 都在 $xy$ 平面上，外積只有 $z$ 分量。</p>
+<p class="fnote"><b>公式（角動量）：</b>$\vec L=\vec r\times m\vec v$，其中 $\vec r$ 為對原點的位置、$m$ 為質量、$\vec v$ 為速度；本題 $\vec r=x\hat i+y\hat j$、$\vec v=\dot x\hat i+\dot y\hat j$。</p>
+<p>用 $\hat i\times\hat j=\hat k$、$\hat j\times\hat i=-\hat k$：</p>
+<div class="math-block">$$\vec L=m(x\dot y-y\dot x)\,\hat k$$</div>
+<p>代入上一步的 $x,y,\dot x,\dot y$，兩個乘積分開算：</p>
+<div class="math-block">$$\begin{aligned}x\dot y&amp;=v_0\cos\alpha\,t\,(v_0\sin\alpha-gt)\\&amp;=v_0^2\sin\alpha\cos\alpha\,t-gv_0\cos\alpha\,t^2\\ y\dot x&amp;=\left(v_0\sin\alpha\,t-\tfrac12gt^2\right)v_0\cos\alpha\\&amp;=v_0^2\sin\alpha\cos\alpha\,t-\tfrac12gv_0\cos\alpha\,t^2\end{aligned}$$</div>
+<p>相減，$v_0^2\sin\alpha\cos\alpha\,t$ 抵消：</p>
+<div class="math-block">$$L_z=m(x\dot y-y\dot x)=-\tfrac12mgv_0\cos\alpha\,t^2$$</div>
+<p><strong>③ 左邊：角動量的變化率：</strong> 對 $t$ 微分（$t^2\to2t$）：</p>
+<div class="math-block">$$\frac{\mathrm dL_z}{\mathrm dt}=-mgv_0\cos\alpha\,t$$</div>
+<p><strong>④ 右邊：力矩：</strong></p>
+<p class="fnote"><b>公式（力矩）：</b>$\vec N=\vec r\times\vec F$，其中 $\vec r$ 為對原點的位置、$\vec F$ 為作用力；本題 $\vec F=-mg\hat j$。</p>
+<p>用 $\hat j\times\hat j=0$：</p>
+<div class="math-block">$$\vec N=(x\hat i+y\hat j)\times(-mg\hat j)=-mgx\,\hat k$$</div>
+<p>代入 $x=v_0\cos\alpha\,t$：</p>
+<div class="math-block">$$\vec N=-mgv_0\cos\alpha\,t\,\hat k$$</div>
+<p>兩邊相同，$\dot{\vec L}=\vec N$。</p>
+<div class="math-block">$$\boxed{\dot{\vec L}=\vec N=-mgv_0\cos\alpha\,t\,\hat k\ \ (\text{得證})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-28">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-28 · p.94</span></div>
+    <h4>超級球上的彈珠能彈多高</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-28">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-28"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A superball of mass $M$ and a marble of mass $m$ are dropped from a height $h$ with the marble just on top of the superball. A superball has a coefficient of restitution of nearly 1 (i.e., its collision is essentially elastic). Ignore the sizes of the superball and marble. The superball collides with the floor, rebounds, and smacks the marble, which moves back up. How high does the marble go if all the motion is vertical? How high does the superball go?</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-28 · p.94</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $M$ 的超級球和質量 $m$ 的彈珠從高度 $h$ 一起落下，彈珠就疊在超級球正上方。超級球的恢復係數接近 1（碰撞基本上是彈性的）。忽略兩球的大小。超級球撞地反彈後撞上彈珠，彈珠往上飛。若全部運動都是鉛直的，彈珠能上升多高？超級球又上升多高？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：超級球 $M$、彈珠 $m$（彈珠疊在上方），從高度 $h$ 由靜止一起落下；撞地與兩球互撞都當彈性；忽略大小（碰撞時兩球都已落下 $h$）；一維鉛直運動，取向上為正；$\alpha\equiv m/M$。</p>
+<p><strong>① 落地速度：</strong> 過程分段處理：落下、上升用能量守恆，兩次碰撞用碰撞的守恆律。</p>
+<p class="fnote"><b>公式（力學能守恆）：</b>$\tfrac12mv^2=mgh$，其中 $v$ 為落下 $h$ 後的速率、$g$ 為重力加速度；本題兩球都從靜止落下 $h$。</p>
+<p>與質量無關：</p>
+<div class="math-block">$$v=\sqrt{2gh}$$</div>
+<p>超級球撞地是彈性的、地面不動，所以它以同樣速率 $v$ 反彈向上；這一瞬間彈珠還沒被撞，仍以 $v$ 向下。</p>
+<p><strong>② 兩球相撞的兩條式子：</strong> 碰撞極短、重力衝量可忽略，總動量守恆；又是彈性碰撞，動能也守恆。直接聯立要解二次式，所以改用等價的「相對速度反向」，兩條都是一次式。碰前：超級球 $v_1=+v$，彈珠 $v_2=-v$；碰後：超級球 $v_3$、彈珠 $v_4$。</p>
+<p class="fnote"><b>公式（動量守恆）：</b>$Mv_1+mv_2=Mv_3+mv_4$，其中 $v_1,v_2$ 為碰前速度、$v_3,v_4$ 為碰後速度；本題 $M$ 為超級球、$m$ 為彈珠。</p>
+<p>把動量式寫成 $M(v_1-v_3)=m(v_4-v_2)$，動能式寫成 $M(v_1^2-v_3^2)=m(v_4^2-v_2^2)$，後者除以前者（平方差公式）得 $v_1+v_3=v_2+v_4$，也就是碰後相對速度＝碰前相對速度反向：</p>
+<div class="math-block">$$v_4-v_3=-(v_2-v_1)$$</div>
+<p>代入 $v_1=+v$、$v_2=-v$：</p>
+<div class="math-block">$$Mv-mv=Mv_3+mv_4,\qquad v_4-v_3=-(-v-v)=2v$$</div>
+<p><strong>③ 解出碰後速度：</strong> 由第二式 $v_4=v_3+2v$，代入第一式：</p>
+<div class="math-block">$$Mv-mv=Mv_3+mv_3+2mv\quad\Longrightarrow\quad(M+m)v_3=(M-3m)v$$</div>
+<p>分子分母同除以 $M$，令 $\alpha\equiv m/M$：</p>
+<div class="math-block">$$v_3=\frac{1-3\alpha}{1+\alpha}\,v$$</div>
+<p>再代回 $v_4=v_3+2v=\dfrac{(1-3\alpha)+2(1+\alpha)}{1+\alpha}v$：</p>
+<div class="math-block">$$v_4=\frac{3-\alpha}{1+\alpha}\,v$$</div>
+<p><strong>④ 上升高度：</strong> 碰後各自鉛直上拋，上升高度 $h'=\dfrac{v'^2}{2g}$；用 $v^2=2gh$ 寫成 $h'=\left(\dfrac{v'}{v}\right)^2h$。代入上一步的 $v_4/v$、$v_3/v$：</p>
+<div class="math-block">$$\begin{aligned}h_{\text{彈珠}}&amp;=\left(\frac{3-\alpha}{1+\alpha}\right)^2h\\h_{\text{超級球}}&amp;=\left(\frac{1-3\alpha}{1+\alpha}\right)^2h\end{aligned}$$</div>
+<p>彈珠很輕（$\alpha\to0$）時，$v_4\to3v$，彈珠升到 $9h$，超級球幾乎回到 $h$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}h_{\text{彈珠}}=\left(\frac{3-\alpha}{1+\alpha}\right)^2h,\quad h_{\text{超級球}}=\left(\frac{1-3\alpha}{1+\alpha}\right)^2h\\ \alpha=m/M\text{；}m\ll M\text{ 時彈珠約 }9h\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">守恆要看「哪個方向沒有外力／外力矩」</span>
+  <p>拋體只有水平動量守恆；老鼠跳上吊扇時軸承施了力（動量不守恆），但對轉軸沒有力矩（角動量守恆）。先判斷外力、外力矩，再決定用哪個守恆量。</p>
+</div>
+
+<div class="problem" data-kind="exam" id="c2-exam8-1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">力學 Exam Chapter-08（2025/06/12）第 1 題（113下・116 級下學期）</span></div>
+    <h4>證明任何連心力下克卜勒第二定律成立</h4>
+    <button type="button" class="exam-btn" data-exam="c2-exam8-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-exam8-1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Classical Mechanics - Exam Chapter-08 (2025/06/12)</p><p>1. (20 points) Show that Kepler's second law — which states that a particle sweeps out equal areas in equal times — holds for any central attractive force $F(r)$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（20 分）證明克卜勒第二定律——質點在相等的時間內掃過相等的面積——對任何連心吸引力 $F(r)$ 都成立。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：原點放在力心，連心力 $\vec F=F(r)\,\hat r$（吸引時 $F(r)\lt0$），$F(r)$ 為任意函數；要證掃面積速率 $\mathrm dA/\mathrm dt$ 為常數。</p>
+<p><strong>① 連心力的力矩是零：</strong> 連心力和 $\vec r$ 平行，力矩一定為零，接著用 $\vec N=\dot{\vec L}$ 得角動量守恆；這只用到力的方向，所以對任何 $F(r)$ 都成立。</p>
+<p class="fnote"><b>公式（力矩）：</b>$\vec N=\vec r\times\vec F$，其中 $\vec r$ 為對原點（力心）的位置、$\vec F$ 為作用力；本題 $\vec F=F(r)\,\hat r$、$\vec r=r\,\hat r$。</p>
+<div class="math-block">$$\vec N=\vec r\times\vec F$$</div>
+<p>代入 $\vec F=F(r)\,\hat r$、$\vec r=r\,\hat r$：</p>
+<div class="math-block">$$\vec N=r\,\hat r\times F(r)\,\hat r=rF(r)\,(\hat r\times\hat r)=0$$</div>
+<p>因為任何向量和自己的外積為零。這一步沒有用到 $F(r)$ 是什麼函數，也不管吸引或排斥。</p>
+<p><strong>② 角動量守恆：</strong></p>
+<p class="fnote"><b>公式（角動量定理，11.3 節）：</b>$\vec N=\dfrac{\mathrm d\vec L}{\mathrm dt}$，其中 $\vec L=\vec r\times m\vec v$ 為角動量、$\vec N$ 為力矩，兩者對同一原點；本題原點在力心。</p>
+<div class="math-block">$$\frac{\mathrm d\vec L}{\mathrm dt}=\vec N$$</div>
+<p>代入上一步的 $\vec N=0$：</p>
+<div class="math-block">$$\frac{\mathrm d\vec L}{\mathrm dt}=0\quad\Longrightarrow\quad\vec L=\vec r\times m\vec v=\text{常向量}$$</div>
+<p><strong>③ 運動在一個平面上：</strong> 外積垂直於兩個因子，所以任何時刻都有</p>
+<div class="math-block">$$\vec r\cdot\vec L=\vec r\cdot(\vec r\times m\vec v)=0$$</div>
+<p>$\vec L$ 是固定的向量，所以 $\vec r$ 永遠在「通過原點、垂直 $\vec L$」的那個平面上：軌道是平面曲線，掃過的面積是這個平面上的面積。（$\vec L=0$ 時質點沿直線進出力心，掃過面積為零，定律也平凡地成立。）</p>
+<p><strong>④ $\mathrm dt$ 內掃過的面積：</strong> $\mathrm dt$ 時間內質點從 $\vec r$ 走到 $\vec r+\mathrm d\vec r$，位置向量掃過以 $\vec r$、$\mathrm d\vec r$ 為兩邊的細長三角形，面積是外積長度的一半：</p>
+<div class="math-block">$$\mathrm dA=\tfrac12\,|\vec r\times\mathrm d\vec r|$$</div>
+<p>代入 $\mathrm d\vec r=\vec v\,\mathrm dt$，再乘除 $m$ 湊出 $\vec L$：</p>
+<div class="math-block">$$\begin{aligned}\mathrm dA&amp;=\tfrac12\,|\vec r\times\vec v|\,\mathrm dt=\frac{1}{2m}\,|\vec r\times m\vec v|\,\mathrm dt\\&amp;=\frac{|\vec L|}{2m}\,\mathrm dt\end{aligned}$$</div>
+<p><strong>⑤ 掃面積速率是常數 ⟹ 等時間等面積：</strong> 兩邊除以 $\mathrm dt$：</p>
+<div class="math-block">$$\frac{\mathrm dA}{\mathrm dt}=\frac{|\vec L|}{2m}$$</div>
+<p>$|\vec L|$ 是常數（②）、$m$ 是常數，所以右邊是常數。從 $t_1$ 積分到 $t_1+\Delta t$：</p>
+<div class="math-block">$$\begin{aligned}A(t_1+\Delta t)-A(t_1)&amp;=\int_{t_1}^{t_1+\Delta t}\frac{|\vec L|}{2m}\,\mathrm dt\\&amp;=\frac{|\vec L|}{2m}\,\Delta t\end{aligned}$$</div>
+<p>結果只和時間長度 $\Delta t$ 有關、和從哪個時刻 $t_1$ 開始無關：相等的時間掃過相等的面積。在平面極座標中 $|\vec L|=mr^2\dot\theta$，同一式就是 $\frac{\mathrm dA}{\mathrm dt}=\frac12r^2\dot\theta$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec r\times\vec F=0\ \Rightarrow\ \vec L\text{ 守恆，軌道在垂直 }\vec L\text{ 的平面上}\\ \frac{\mathrm dA}{\mathrm dt}=\frac{|\vec L|}{2m}=\text{常數，與 }F(r)\text{ 的形式無關}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-11a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>穿過桌面小洞往下拉繩：角動量守恆，但動能從哪來</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-11a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>光滑水平桌面上，質量 $m$ 的冰球繫在一條穿過桌面小洞的繩子上，以半徑 $r_0$、速率 $v_0$ 繞洞做圓周運動。有人在桌下慢慢把繩子往下拉，使半徑變成 $r$。(a) 說明冰球對洞的角動量守恆，求新的速率 $v$。(b) 求繩子張力 $F(r)$，並直接積分算出拉繩做的功，證明它等於動能的增加。(c) $m=0.20\ \text{kg}$、$v_0=1.0\ \text{m/s}$、$r_0=0.50\ \text{m}$ 拉到 $r=0.25\ \text{m}$ 的數值。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：光滑水平桌面，冰球質量 $m$，繩穿過小洞（拉力永遠指向洞）；起始半徑 $r_0$、速率 $v_0$；慢慢拉（準靜態，每一刻近似圓周運動）到半徑 $r$。(c) $m=0.20\ \text{kg}$、$v_0=1.0\ \text{m/s}$、$r_0=0.50\ \text{m}$、$r=0.25\ \text{m}$。</p>
+<h4>(a) 角動量守恆與新速率</h4>
+<p><strong>① 連心力，力矩為零：</strong> 繩的拉力沿冰球指向洞，以洞為原點時 $\vec F$ 和 $\vec r$ 反平行，$\sin180^\circ=0$。</p>
+<p class="fnote"><b>公式（力矩與角動量定理）：</b>$\vec N=\vec r\times\vec F=\dfrac{\mathrm d\vec L}{\mathrm dt}$，其中 $\vec r$ 為對洞的位置、$\vec F$ 為拉力、$\vec L$ 為角動量；本題 $\vec F\parallel-\vec r$。</p>
+<div class="math-block">$$\vec N=\vec r\times\vec F=0\quad\Longrightarrow\quad L=\text{常數}$$</div>
+<p><strong>② 求新速率：</strong> 近似圓周運動時速度垂直 $\vec r$，角動量大小 $L=mrv$。代入起始的 $r_0$、$v_0$：</p>
+<div class="math-block">$$mrv=mr_0v_0\quad\Longrightarrow\quad v=\frac{r_0}{r}v_0$$</div>
+<div class="math-block">$$\boxed{v=\frac{r_0}{r}v_0}$$</div>
+<h4>(b) 張力、拉繩做的功、與動能增加比較</h4>
+<p><strong>① 張力：</strong> 慢慢拉表示每一瞬間近似圓周運動，張力就是當下的向心力；再用 (a) 的 $v(r)$ 寫成只含 $r$ 的函數。注意拉力沿 $-\hat r$、冰球也往內移，拉力做正功，角動量守恆不代表能量守恆。</p>
+<p class="fnote"><b>公式（向心力）：</b>$F=\dfrac{mv^2}{r}$，其中 $m$ 為質量、$v$ 為速率、$r$ 為半徑；本題 $v=r_0v_0/r$。</p>
+<p>代入 (a) 的 $v=r_0v_0/r$：</p>
+<div class="math-block">$$F=\frac{mv^2}{r}=\frac m r\cdot\frac{r_0^2v_0^2}{r^2}=\frac{mv_0^2r_0^2}{r^3}$$</div>
+<p><strong>② 積分算功：</strong></p>
+<p class="fnote"><b>公式（功）：</b>$W=\int\vec F\cdot\mathrm d\vec r$，其中 $\vec F$ 為力、$\mathrm d\vec r$ 為位移；本題 $\vec F=-F\hat r$、$\mathrm d\vec r=\mathrm dr\,\hat r$（往內走 $\mathrm dr\lt0$）。</p>
+<p>$\vec F\cdot\mathrm d\vec r=-F\,\mathrm dr$，從 $r_0$ 積到 $r$：</p>
+<div class="math-block">$$W=-\int_{r_0}^{r}F\,\mathrm dr'=\int_r^{r_0}\frac{mv_0^2r_0^2}{r'^3}\,\mathrm dr'$$</div>
+<p>$\displaystyle\int r'^{-3}\,\mathrm dr'=-\frac{1}{2r'^2}$，代上下限：</p>
+<div class="math-block">$$\begin{aligned}W&amp;=mv_0^2r_0^2\left[-\frac1{2r'^2}\right]_r^{r_0}=\frac{mv_0^2r_0^2}{2}\left(\frac1{r^2}-\frac1{r_0^2}\right)\\&amp;=\frac12mv_0^2\left(\frac{r_0^2}{r^2}-1\right)\end{aligned}$$</div>
+<p><strong>③ 和動能增加比較：</strong> 代入 $v=r_0v_0/r$：</p>
+<div class="math-block">$$\begin{aligned}\Delta T&amp;=\frac12mv^2-\frac12mv_0^2=\frac12mv_0^2\frac{r_0^2}{r^2}-\frac12mv_0^2\\&amp;=\frac12mv_0^2\left(\frac{r_0^2}{r^2}-1\right)\end{aligned}$$</div>
+<p>和上一步的 $W$ 完全相同，$W=\Delta T$（功能定理）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}F=\frac{mv_0^2r_0^2}{r^3}\\ W=\frac12mv_0^2\left(\frac{r_0^2}{r^2}-1\right)=\Delta T\end{gathered}}$$</div>
+<h4>(c) 數值</h4>
+<p><strong>① 速率與功：</strong> 代入 $r_0=0.50\ \text{m}$、$r=0.25\ \text{m}$、$v_0=1.0\ \text{m/s}$、$m=0.20\ \text{kg}$；$r_0/r=2$：</p>
+<div class="math-block">$$\begin{aligned}v&amp;=\frac{0.50}{0.25}(1.0\ \text{m/s})=2.0\ \text{m/s}\\W&amp;=\tfrac12(0.20)(1.0)^2(2^2-1)\ \text{J}=0.30\ \text{J}\end{aligned}$$</div>
+<p>（動能從 $0.10\ \text{J}$ 變成 $0.40\ \text{J}$。）</p>
+<p><strong>② 張力：</strong> 代入 $F=mv_0^2r_0^2/r^3$：</p>
+<div class="math-block">$$\begin{aligned}F(0.50)&amp;=\frac{0.20(1.0)^2}{0.50}\ \text{N}=0.40\ \text{N}\\F(0.25)&amp;=0.40(2^3)\ \text{N}=3.2\ \text{N}\end{aligned}$$</div>
+<p>（$\propto r^{-3}$，半徑減半張力變 8 倍。）</p>
+<div class="math-block">$$\boxed{\begin{gathered}v=2.0\ \text{m/s},\quad W=0.30\ \text{J}\\ F:0.40\ \text{N}\to3.2\ \text{N}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-11b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>三顆球疊在一起落下：最上面那顆彈多高</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-11b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>推廣習題 2-28：三顆球由下而上 $m_1\gg m_2\gg m_3$，上下疊著（之間有極小的空隙），從高度 $h$ 一起落下。所有碰撞都是彈性的、一維的，而且依序發生（先地面與 $m_1$、再 $m_1$ 與 $m_2$、再 $m_2$ 與 $m_3$）。(a) 最上面的球彈起的速度是落地速度 $v$ 的幾倍？能彈多高？(b) 推廣到 $n$ 顆球。(c) 這和能量守恆矛盾嗎？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：三顆球由下而上 $m_1\gg m_2\gg m_3$，間隙極小，從高度 $h$ 由靜止一起落下；碰撞彈性、一維、依序（地面與 $m_1$ → $m_1$ 與 $m_2$ → $m_2$ 與 $m_3$）；地面當質量無限大、不動；取向上為正，落地速率 $v$。</p>
+<h4>(a) 頂球彈起的速度與高度</h4>
+<p><strong>① 輕撞重的極限公式：</strong> 碰撞依序、每次只有兩個物體，可一層一層往上算；每次都是輕球撞極重球，先推出質量比 $\to0$ 的極限。</p>
+<p class="fnote"><b>公式（一維彈性碰撞）：</b>由動量守恆與相對速度反向兩式解出 $v_m'=\dfrac{(m-M)v_m+2Mv_M}{m+M}$、$v_M'=\dfrac{(M-m)v_M+2mv_m}{m+M}$，其中 $m$、$M$ 為輕、重球質量，$v_m,v_M$ 為碰前速度、$v_m',v_M'$ 為碰後速度；本題每次碰撞都取 $m/M\to0$。</p>
+<p>分子分母同除以 $M$，再令 $m/M\to0$：</p>
+<div class="math-block">$$\begin{aligned}v_m'&amp;=\frac{(m/M-1)v_m+2v_M}{m/M+1}\ \longrightarrow\ 2v_M-v_m\\v_M'&amp;\ \longrightarrow\ v_M\end{aligned}$$</div>
+<p><strong>② 落地速度：</strong> 三顆都已落下 $h$，三顆的速度都是 $-v$。</p>
+<p class="fnote"><b>公式（力學能守恆）：</b>$\tfrac12mv^2=mgh$，其中 $v$ 為落下 $h$ 後的速率、$g$ 為重力加速度；本題每顆都落下 $h$。</p>
+<div class="math-block">$$v=\sqrt{2gh}$$</div>
+<p><strong>③ 逐層碰撞：</strong> 第 1 次，$m_1$ 撞地面（地面 $V=0$ 當重球）：</p>
+<div class="math-block">$$v_1'=2(0)-(-v)=+v$$</div>
+<p>第 2 次，$m_2$（$-v$）撞 $m_1$（$+v$，重球速度不變）：</p>
+<div class="math-block">$$v_2'=2(v)-(-v)=3v$$</div>
+<p>第 3 次，$m_3$（$-v$）撞 $m_2$（$3v$）：</p>
+<div class="math-block">$$v_3'=2(3v)-(-v)=7v$$</div>
+<p><strong>④ 上升高度：</strong> 上升高度 $h'=v'^2/2g$，用 $v^2=2gh$：</p>
+<div class="math-block">$$h_3=\frac{(7v)^2}{2g}=49\cdot\frac{v^2}{2g}=49h$$</div>
+<div class="math-block">$$\boxed{v_3'=7v,\qquad h_3=49h}$$</div>
+<h4>(b) 推廣到 $n$ 顆球</h4>
+<p><strong>① 遞迴式：</strong> 每一層的計算一模一樣，寫成遞迴再解通式。以 $v$ 為單位，設第 $k$ 顆彈起的速度為 $u_k$；它以 $-1$ 撞上速度 $u_{k-1}$ 的下一層，代入 (a) 的極限公式：</p>
+<div class="math-block">$$u_k=2u_{k-1}-(-1)=2u_{k-1}+1,\qquad u_0=0\ (\text{地面})$$</div>
+<p><strong>② 解遞迴：</strong> 兩邊加 1：$u_k+1=2(u_{k-1}+1)$，所以 $u_k+1$ 每層乘 2：</p>
+<div class="math-block">$$u_k+1=2^k(u_0+1)=2^k\quad\Longrightarrow\quad u_k=2^k-1$$</div>
+<p>最上面的球速度 $(2^n-1)v$，高度 $(2^n-1)^2h$。</p>
+<div class="math-block">$$\boxed{v_n'=(2^n-1)v,\qquad h_n=(2^n-1)^2h}$$</div>
+<h4>(c) 是否和能量守恆矛盾</h4>
+<p><strong>① 比較能量：</strong> 總能量 $(m_1+m_2+m_3)gh\approx m_1gh$；上面那顆拿到</p>
+<div class="math-block">$$m_3g(49h)=49m_3gh$$</div>
+<p>只要 $49m_3\lt m_1$ 就沒問題——下面的重球把一點點能量傳上去，對它幾乎沒影響，對很輕的頂球卻是巨大的速度。$m_1\gg m_2\gg m_3$ 保證了這點。</p>
+<div class="math-block">$$\boxed{\text{不矛盾：頂球能量 }49m_3gh\ll m_1gh}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-11c">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>球鑽孔後的環：質量只看高度，轉動慣量卻不是——再用離合器把兩個環接起來</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-11c">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>均勻實心金屬球（半徑 $R$、密度 $\rho$），沿著一條直徑鑽穿一個半徑 $a$ 的圓柱孔（孔軸取 $z$ 軸），剩下的部分像一個餐巾環，孔壁的長度（環的高度）為 $h$。</p>
+<p>(a) 用柱座標積分求剩下部分的質量 $M$，證明 $M$ 只和 $h$ 有關、和 $R$ 無關。<br>(b) 求環對孔軸的轉動慣量 $I$，用 $M$、$R$、$a$ 表示，並檢查 $a\to0$ 與 $a\to R$ 兩個極限。<br>(c) 用同一種金屬，從 $R_1=5.0\ \text{cm}$ 和 $R_2=10.0\ \text{cm}$ 的兩顆球各鑽出一個高 $h=6.0\ \text{cm}$ 的環，小環質量 $0.50\ \text{kg}$。兩環同軸裝在一根鉛直軸上（軸承無摩擦），小環以 $\omega_0=30\ \text{rad/s}$ 轉、大環靜止；接上兩環之間的離合器，最後兩環一起轉。求共同角速度，以及損失的動能佔原來動能的比例。<br>(d) 離合器打滑時的摩擦力矩固定為 $0.010\ \text{N·m}$。多久之後兩環一起轉？再用「摩擦力矩 × 兩環的相對轉角」驗算 (c) 的動能損失。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：球半徑 $R$、密度 $\rho$，孔半徑 $a$（孔軸為 $z$ 軸），環高 $h$；$r$ 是柱座標中到 $z$ 軸的距離。剩下的區域為 $a\le r\le R$、$|z|\le\sqrt{R^2-r^2}$；畫剖面看，孔壁上緣 $(a,b)$ 在球面上，所以 $b\equiv\tfrac h2=\sqrt{R^2-a^2}$。</p>
+<p>(c)(d) 的數據：同一種金屬，$h=6.0\ \text{cm}$，$R_1=5.0\ \text{cm}$、$R_2=10.0\ \text{cm}$，小環 $M_1=0.50\ \text{kg}$（大環質量沒給），小環 $\omega_0=30\ \text{rad/s}$、大環靜止，對軸無外力矩；打滑時摩擦力矩 $N=0.010\ \text{N·m}$。</p>
+<div class="anim" data-anim="c2-napkin-ring"></div>
+<h4>(a) 環的質量</h4>
+<p><strong>① 寫出質量的積分：</strong> 孔的邊界是圓柱面 $r=a$，用柱座標最省事；先積 $z$，等於把環切成一層層半徑 $r$、高 $2\sqrt{R^2-r^2}$ 的薄圓柱殼。</p>
+<p class="fnote"><b>公式（柱座標體積元）：</b>$\mathrm dV=r\,\mathrm dr\,\mathrm d\phi\,\mathrm dz$，其中 $r$ 為到 $z$ 軸的距離、$\phi$ 為方位角、$z$ 為沿軸座標；本題 $M=\int\rho\,\mathrm dV$，上下限 $r$ 從 $a$ 到 $R$、$z$ 從 $-\sqrt{R^2-r^2}$ 到 $\sqrt{R^2-r^2}$。</p>
+<div class="math-block">$$M=\rho\int_0^{2\pi}\!\mathrm d\phi\int_a^R\!r\,\mathrm dr\int_{-\sqrt{R^2-r^2}}^{\sqrt{R^2-r^2}}\!\mathrm dz$$</div>
+<p>$\phi$ 積分給 $2\pi$；$z$ 積分給這層圓柱殼的高度 $2\sqrt{R^2-r^2}$：</p>
+<div class="math-block">$$M=4\pi\rho\int_a^R r\sqrt{R^2-r^2}\,\mathrm dr$$</div>
+<p><strong>② 換元 $u=R^2-r^2$：</strong> $\mathrm du=-2r\,\mathrm dr$，所以 $r\,\mathrm dr=-\tfrac12\mathrm du$。上下限 $r=a\Rightarrow u=R^2-a^2=b^2$，$r=R\Rightarrow u=0$，負號用來把上下限對調：</p>
+<div class="math-block">$$\begin{aligned}M&amp;=4\pi\rho\cdot\frac12\int_0^{b^2}u^{1/2}\,\mathrm du\\&amp;=2\pi\rho\cdot\frac23\big(b^2\big)^{3/2}=\frac43\pi\rho b^3\end{aligned}$$</div>
+<p>代入 $b=h/2$：</p>
+<div class="math-block">$$M=\frac43\pi\rho\Big(\frac h2\Big)^3=\frac{\pi\rho h^3}{6}$$</div>
+<p>式子裡完全沒有 $R$：同材料、同高度的環，不管用多大的球鑽出來，質量都一樣，剛好等於半徑 $h/2$ 的實心球。大球的環比較寬，但壁也比較薄，兩者剛好抵消。</p>
+<div class="math-block">$$\boxed{M=\frac43\pi\rho b^3=\frac{\pi\rho h^3}{6}\text{，與 }R\text{ 無關}}$$</div>
+<h4>(b) 對孔軸的轉動慣量</h4>
+<p><strong>① 寫出轉動慣量的積分：</strong> 柱座標的 $r$ 剛好就是到孔軸的距離，被積函數比 (a) 多一個 $r^2$，上下限完全一樣。</p>
+<p class="fnote"><b>公式（轉動慣量）：</b>$I=\int r^2\,\mathrm dm$，其中 $r$ 為質量元 $\mathrm dm$ 到轉軸的距離；本題 $\mathrm dm=\rho\,\mathrm dV$，轉軸為 $z$ 軸。</p>
+<div class="math-block">$$I=4\pi\rho\int_a^R r^3\sqrt{R^2-r^2}\,\mathrm dr$$</div>
+<p><strong>② 同樣令 $u=R^2-r^2$：</strong> 把 $r^3\,\mathrm dr$ 拆成 $r^2\cdot r\,\mathrm dr=(R^2-u)\cdot(-\tfrac12\mathrm du)$：</p>
+<div class="math-block">$$\begin{aligned}I&amp;=2\pi\rho\int_0^{b^2}\big(R^2u^{1/2}-u^{3/2}\big)\mathrm du\\&amp;=2\pi\rho\Big(\frac23R^2b^3-\frac25b^5\Big)\end{aligned}$$</div>
+<p><strong>③ 用 $M$ 表示：</strong> 提出 $\tfrac43\pi\rho b^3$，它就是 (a) 的 $M$：</p>
+<div class="math-block">$$I=\frac43\pi\rho b^3\Big(R^2-\frac35b^2\Big)=M\Big(R^2-\frac35b^2\Big)$$</div>
+<p>代入 $b^2=R^2-a^2$：</p>
+<div class="math-block">$$I=M\Big(R^2-\frac35R^2+\frac35a^2\Big)=\frac15M\big(2R^2+3a^2\big)$$</div>
+<p><strong>④ 兩個極限：</strong> $a\to0$（孔細到沒有）：$I\to\tfrac25MR^2$，正是均勻實心球。$a\to R$（孔粗到只剩赤道一圈）：所有質量都在離軸 $R$ 的地方，就是細圓環：</p>
+<div class="math-block">$$I\to\tfrac15M(2R^2+3R^2)=MR^2$$</div>
+<p>$I/MR^2$ 在 $\tfrac25$ 到 $1$ 之間：孔越大，剩下的質量越集中在外面。</p>
+<div class="math-block">$$\boxed{\begin{gathered}I=M\Big(R^2-\frac35b^2\Big)=\frac15M\big(2R^2+3a^2\big)\\ a\to0:\ \tfrac25MR^2,\qquad a\to R:\ MR^2\end{gathered}}$$</div>
+<h4>(c) 共同角速度與動能損失</h4>
+<p><strong>① 兩環的質量與轉動慣量：</strong> 由 (a)，同材料、同 $h$ 就同質量，所以 $M_2=M_1=0.50\ \text{kg}$；但同質量不代表同 $I$，要用 (b) 分別算。$b=h/2=3.0\ \text{cm}=0.030\ \text{m}$，$b^2=9.0\times10^{-4}\ \text{m}^2$，$\tfrac35b^2=5.4\times10^{-4}\ \text{m}^2$：</p>
+<div class="math-block">$$\begin{aligned}I_1&amp;=0.50\big(0.050^2-5.4\times10^{-4}\big)\\&amp;=0.50\,(1.96\times10^{-3})=9.8\times10^{-4}\ \text{kg·m}^2\\I_2&amp;=0.50\big(0.100^2-5.4\times10^{-4}\big)\\&amp;=0.50\,(9.46\times10^{-3})=4.73\times10^{-3}\ \text{kg·m}^2\end{aligned}$$</div>
+<p>（孔徑 $a_1=\sqrt{25-9}=4.0\ \text{cm}$，$a_2=\sqrt{100-9}\approx9.54\ \text{cm}$，大環只是一圈薄壁。）同質量，$I_2\approx4.8I_1$。</p>
+<p><strong>② 角動量守恆求共同角速度：</strong> 對 $z$ 軸沒有外力矩（重力平行於軸、軸承無摩擦），離合器的摩擦是兩環之間的內力矩，所以總角動量守恆；但摩擦生熱，動能不守恆。</p>
+<p class="fnote"><b>公式（角動量守恆）：</b>對某軸外力矩為零時，$\sum I_i\omega_i$ 不變，其中 $I_i$ 為各物體對該軸的轉動慣量、$\omega_i$ 為角速度；本題接合前 $\omega_1=\omega_0$、$\omega_2=0$，接合後兩環同為 $\omega_f$。</p>
+<div class="math-block">$$I_1\omega_0+I_2\cdot0=(I_1+I_2)\,\omega_f\quad\Longrightarrow\quad\omega_f=\frac{I_1}{I_1+I_2}\,\omega_0$$</div>
+<p>代入 $I_1=9.8\times10^{-4}$、$I_2=4.73\times10^{-3}$，$I_1+I_2=5.71\times10^{-3}\ \text{kg·m}^2$，$\omega_0=30\ \text{rad/s}$：</p>
+<div class="math-block">$$\omega_f=\frac{9.8\times10^{-4}}{5.71\times10^{-3}}(30)\approx5.15\ \text{rad/s}$$</div>
+<p><strong>③ 動能損失比例：</strong> </p>
+<p class="fnote"><b>公式（轉動動能）：</b>$T=\tfrac12I\omega^2$，其中 $I$ 為轉動慣量、$\omega$ 為角速度；本題接合前只有小環在轉，接合後兩環以 $\omega_f$ 一起轉。</p>
+<div class="math-block">$$\begin{aligned}T_i&amp;=\tfrac12I_1\omega_0^2=\tfrac12(9.8\times10^{-4})(30)^2=0.441\ \text{J}\\T_f&amp;=\tfrac12(I_1+I_2)\omega_f^2=\tfrac12(5.71\times10^{-3})(5.149)^2\approx0.0757\ \text{J}\end{aligned}$$</div>
+<p>損失 $\Delta T\approx0.365\ \text{J}$。用 $\omega_f$ 的式子化簡比例：</p>
+<div class="math-block">$$\begin{aligned}\frac{\Delta T}{T_i}&amp;=1-\frac{(I_1+I_2)\omega_f^2}{I_1\omega_0^2}=1-\frac{I_1}{I_1+I_2}\\&amp;=\frac{I_2}{I_1+I_2}=\frac{4.73}{5.71}\approx0.828\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\omega_f\approx5.15\ \text{rad/s}\\ \text{動能損失 }\frac{I_2}{I_1+I_2}\approx83\%\ (0.365\ \text{J})\end{gathered}}$$</div>
+<h4>(d) 接合時間與摩擦生熱</h4>
+<p><strong>① 打滑期間兩環各自等角加速度：</strong> 摩擦力矩固定，讓小環減速、大環加速（大小同為 $N$、方向相反），$\omega$ 對 $t$ 是直線。</p>
+<p class="fnote"><b>公式（轉動的牛頓第二定律）：</b>$N=I\dot\omega$，其中 $N$ 為對軸的力矩、$I$ 為轉動慣量、$\dot\omega$ 為角加速度；本題小環受 $-N$、大環受 $+N$。</p>
+<div class="math-block">$$\omega_1(t)=\omega_0-\frac{N}{I_1}t,\qquad\omega_2(t)=\frac{N}{I_2}t$$</div>
+<p>令 $\omega_1(t^*)=\omega_2(t^*)$：</p>
+<div class="math-block">$$t^*=\frac{\omega_0}{N\big(\frac1{I_1}+\frac1{I_2}\big)}$$</div>
+<p>代入 $1/I_1=1020.4$、$1/I_2=211.4\ \text{(kg·m}^2)^{-1}$（(c) 的 $I_1$、$I_2$），$N=0.010\ \text{N·m}$：</p>
+<div class="math-block">$$t^*=\frac{30}{0.010\,(1020.4+211.4)}=\frac{30}{12.32}\approx2.44\ \text{s}$$</div>
+<p><strong>② 摩擦生熱＝力矩 × 相對轉角：</strong> 生的熱是摩擦力矩乘以兩個接觸面相對滑過的角度，而不是任一個環自己轉過的角度。</p>
+<p class="fnote"><b>公式（力矩做功）：</b>$\mathrm dW=N\,\mathrm d\phi$，其中 $N$ 為力矩、$\mathrm d\phi$ 為受力物體轉過的角度；本題對小環做功 $-N\,\mathrm d\phi_1$、對大環做功 $+N\,\mathrm d\phi_2$，合計 $-N(\mathrm d\phi_1-\mathrm d\phi_2)$，只跟相對轉角有關。</p>
+<p>相對角速度 $\omega_1-\omega_2$ 從 $30$ 直線降到 $0$，相對轉角是 $\omega$–$t$ 圖上兩條線之間的三角形面積：</p>
+<div class="math-block">$$\Delta\phi_{\text{相對}}=\int_0^{t^*}(\omega_1-\omega_2)\,\mathrm dt=\tfrac12\omega_0t^*=\tfrac12(30)(2.435)\approx36.5\ \text{rad}$$</div>
+<div class="math-block">$$Q=N\,\Delta\phi_{\text{相對}}=0.010\times36.5\approx0.365\ \text{J}$$</div>
+<p>和 (c) 用動能算出的損失 $0.365\ \text{J}$ 相同。</p>
+<div class="math-block">$$\boxed{\begin{gathered}t^*\approx2.44\ \text{s}\\ N\Delta\phi_{\text{相對}}=0.010\times36.5\approx0.365\ \text{J}\text{，與 (c) 相同}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$F_s=\mathrm dp_s/\mathrm dt$（$\hat s$ 固定）：某方向淨力為零，該方向動量守恆。</li>
+    <li>$\vec L=\vec r\times\vec p$，$\vec N=\vec r\times\vec F$，$\vec N=\dot{\vec L}$（同一原點）；連心力力矩為零，角動量守恆。</li>
+    <li>平面剛體 $\vec L=I\vec\omega$，$I=\sum m_ir_i^2$；吊扇問題 $\omega/\omega_0=I/(I+mR^2)$。</li>
+  </ol>
+</div>

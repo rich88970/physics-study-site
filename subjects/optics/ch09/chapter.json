@@ -1,0 +1,22 @@
+{
+  "title": "講義第九章｜波的疊加",
+  "shortTitle": "光學 第九章",
+  "range": "老師講義第九章（檔案缺，依逐字稿＋課本 Pedrotti 第 5 章 Superposition of Waves p.113–130）· 作業 5-2、5-8、5-9、5-10、5-11 · 考古題：李孟恩課程資料夾的下學期近代光學期中考（2018、2020、2022、2024、2025）；物理考古資料夾的舊考卷（2007–2017、2021）另收第 8 節",
+  "pageLabel": "講義",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備「光學」（李孟恩老師，115 學年上學期）的考試。這一章是老師講義第九章「波的疊加」，對應課本 Pedrotti《Introduction to Optics》3rd ed. 第 5 章 Superposition of Waves（老師的講義檔案這一章沒有拿到：雲端的 chap5.ppt 是像差理論、chp8.ppt 是第八章，所以網站以考前錄音逐字稿和課本為準）。內容：疊加原理；同頻率弦波的疊加，寫成 $E_0\\cos(\\alpha-\\omega t)$，用相量（phasor）求合成振幅 $E_0=\\sqrt{(\\sum E_{0i}\\cos\\alpha_i)^2+(\\sum E_{0i}\\sin\\alpha_i)^2}$ 與相位 $\\tan\\alpha=\\sum E_{0i}\\sin\\alpha_i/\\sum E_{0i}\\cos\\alpha_i$（象限要看分量正負號）；改寫規則 $\\sin x=\\cos(\\tfrac{\\pi}{2}-x)$、$\\cos(\\theta+\\omega t)=\\cos(-\\theta-\\omega t)$、$-\\cos x=\\cos(x+\\pi)$；隨機與同調光源（$NE_{01}^2$ 與 $N^2E_{01}^2$）；駐波 $2E_0\\sin kx\\cos\\omega t$、節點間距 $\\lambda/2$、雷射共振腔模態 $\\nu_m=mc/2d$；拍頻 $\\omega_b=\\omega_1-\\omega_2$；相位速度 $v_p=\\omega/k$、群速度 $v_g=d\\omega/dk=v_p+k\\,dv_p/dk=v_p-\\lambda\\,dv_p/d\\lambda=v_p[1+(\\lambda/n)dn/d\\lambda]$，正常色散 $v_g\\lt v_p$，海浪長波長 $v_g=v_p/2$、短波長 $v_g=\\tfrac32v_p$。老師考前說第九章「一定會考」的是好幾個同頻率弦波（cos、sin 不同寫法）的疊加，寫成 $\\cos(\\alpha-\\omega t)$、用相量求合成波的振幅與相位角（講了好幾次）；相位速度與群速度「注意一下」。往年這一章是下學期「近代光學」的範圍，李孟恩課程資料夾的 5 份下學期期中考（2018、2020、2022、2024、2025）第 1 題全部是相量疊加（各 20%）。回答時用老師考卷的記號（$E=E_0\\cos(\\alpha-\\omega t)$、題目指定的 $\\alpha$ 範圍），並提醒學生每一項先改寫成正振幅的 $\\cos(\\alpha_i-\\omega t)$、列表加分量、最後依分量正負判斷象限。",
+  "overview": "s00",
+  "sections": [
+    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pageLabel": "課本", "pages": "p.113–130" },
+    { "id": "s01", "file": "01-phasor.html", "title": "同頻率弦波的疊加與相量", "pageLabel": "課本", "pages": "p.113–119", "desc": "疊加原理、$E_0\\cos(\\alpha-\\omega t)$ 形式、相量（複數向量）相加、四條改寫規則與象限判斷、課本 Example 1；老師說「一定會考」；作業 5-2。" },
+    { "id": "s02", "file": "02-phasor-three.html", "title": "相量疊加考古題（一）：三個波", "pageLabel": "課本", "pages": "p.116–119", "desc": "三項疊加：2018 期中考第 1 題（$\\sin$、$\\cos$、負係數、$\\pm\\omega t$ 混在一起，相位範圍 $[0,2\\pi)$）；2007–2017 舊考卷的另外 9 題在第 8 節。" },
+    { "id": "s03", "file": "03-phasor-four.html", "title": "相量疊加考古題（二）：四個波", "pageLabel": "課本", "pages": "p.116–119", "desc": "2020、2022、2024、2025 的四項疊加 4 題（課程資料夾 5 份期中考第 1 題全是相量疊加）；2010、2021 兩題在第 8 節。" },
+    { "id": "s04", "file": "04-standing.html", "title": "隨機與同調光源、駐波", "pageLabel": "課本", "pages": "p.119–123", "desc": "$N$ 個隨機相位光源照度相加、同調光源 $N^2$ 倍；駐波 $2E_0\\sin kx\\cos\\omega t$、節點與波腹、雷射共振腔模態；駐波拆成兩個行進波的考古題（2018 期中考）。" },
+    { "id": "s05", "file": "05-group.html", "title": "拍頻、相位速度與群速度", "pageLabel": "課本", "pages": "p.123–128", "desc": "拍頻 $\\omega_1-\\omega_2$、包絡與載波、$v_p=\\omega/k$、$v_g=d\\omega/dk$、$v_g=v_p-\\lambda\\,dv_p/d\\lambda$；老師說「注意一下」；作業 5-8、海浪群速度考古題（2020 期中考；同一題也出現在 2007、2011 舊考卷）。" },
+    { "id": "s06", "file": "06-dispersion.html", "title": "色散介質中的群速度計算", "pageLabel": "課本", "pages": "p.127–130", "desc": "$v_g=v_p[1+(\\lambda/n)dn/d\\lambda]$ 的數值計算：色散本領（作業 5-9）、Cauchy 公式（作業 5-10、課本 Example 3）、氣體的介電常數（作業 5-11）。" },
+    { "id": "s07", "file": "07-exam.html", "title": "考前衝刺", "pageLabel": "課本", "pages": "p.113–130", "desc": "必背公式、題型總表（老師說一定會考的相量疊加放最前面：怎麼認、做法、常錯、代表題）與變化題。" },
+    { "id": "s08", "file": "08-old-exams.html", "title": "物理考古資料夾題目", "pageLabel": "課本", "pages": "p.116–123", "desc": "雲端「物理考古／光學」資料夾裡的舊考卷（2007–2017、2021 等），不是李孟恩課程資料夾的考卷，另外收在這裡：三個波、四個波的相量疊加與駐波共 13 題；不算進出題頻率。" }
+  ],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": []
+}

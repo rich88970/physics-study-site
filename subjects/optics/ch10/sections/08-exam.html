@@ -1,0 +1,202 @@
+<h2>八、考前衝刺 <span class="pg">課本 p.163–191</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。老師點名的兩型（對比度、楊氏＋虛擬光源）放最前面，接著是考古題最常出的牛頓環。點代表題的題號會跳到完整詳解，最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>老師考前說第十章「著重」干涉後照度的極大、極小與對比度（04:37–05:17），楊氏干涉與含虛擬光源的干涉「可能會考 1 題」。李孟恩課程資料夾的 5 份下學期近代光學期中考（2018、2020、2022、2024、2025）：每份都有干涉題，配分 15–20%（2018 有兩題）；最常見的是牛頓環（3/5，含兩個波長重合 2 次），其餘是對比度與楊氏（2018，對比度是「(a) 以 N 表示 (b) 已知對比度反求倍數」）、雙稜鏡（2022，附提示 $\delta\approx(n-1)\alpha$）各 1 次。物理考古資料夾的舊考卷（2007–2017、2021）收在第 9 節，只當練習、不算進統計。上學期考卷 0 題（往年上學期教幾何光學）。考試閉書、帶工程用計算機，不能用手機（逐字稿 05:43–06:25）。</p>
+</div>
+
+<h3 id="o10x-formulas">8.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>兩光束干涉 <span class="must teacher maybe">老師：著重</span></h4>
+    <ul>
+      <li>$I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$，$I=\tfrac12\varepsilon_0cE_0^2$</li>
+      <li>$I_{\max}=(\sqrt{I_1}+\sqrt{I_2})^2$、$I_{\min}=(\sqrt{I_1}-\sqrt{I_2})^2$</li>
+      <li>$V=\dfrac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}=\dfrac{2\sqrt N}{N+1}=\dfrac{2E_{01}E_{02}}{E_{01}^2+E_{02}^2}$</li>
+      <li>反解：$\sqrt N=\dfrac{1+\sqrt{1-V^2}}{V}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>楊氏 <span class="must teacher maybe">老師：可能會考 1 題</span></h4>
+    <ul>
+      <li>亮 $a\sin\theta=m\lambda$、暗 $(m+\tfrac12)\lambda$</li>
+      <li>$\Delta y=\lambda L/a$，$I=4I_0\cos^2(\pi ay/\lambda L)$</li>
+      <li>玻璃片：平移 $(n-1)tL/a$，即 $(n-1)t/\lambda$ 條</li>
+    </ul>
+  </section>
+  <section>
+    <h4>虛擬光源 <span class="must teacher maybe">老師：可能會考 1 題</span></h4>
+    <ul>
+      <li>洛埃鏡 $a=2h$，鏡面處暗紋</li>
+      <li>雙面鏡 $a=2d\theta$，$L=d+D$</li>
+      <li>雙稜鏡 $\delta_m=(n-1)\alpha$，$a=2d(n-1)\alpha$，$L=d+s$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>薄膜</h4>
+    <ul>
+      <li>$\Delta_p=2n_ft\cos\theta_t$；亮 $\Delta_p+\Delta_r=m\lambda$、暗 $(m+\tfrac12)\lambda$</li>
+      <li>$\Delta_r=\lambda/2$（一外一內）或 0（同類）</li>
+      <li>抗反射 $n_f=\sqrt{n_0n_s}$、$t=\lambda/4n_f$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>牛頓環 <span class="must exam">考古高頻 3/5</span></h4>
+    <ul>
+      <li>$r^2\approx2Rt$；平凸透鏡 $R=(n-1)f$</li>
+      <li>第 m 暗環 $r_m^2=m\lambda R$；第 m 亮環 $r_m^2=(m-\tfrac12)\lambda R$</li>
+      <li>重合：$2t$ 相同，例如 $(m_1-\tfrac12)\lambda_1=(m_2-\tfrac12)\lambda_2$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>膜厚量測與 Stokes</h4>
+    <ul>
+      <li>$d=(\Delta x/x)(\lambda/2)$</li>
+      <li>$r'=-r$，$tt'=1-r^2$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="o10x-types">8.2 題型總表</h3>
+
+<p class="type-jump"><a href="#o10type-1">① 對比度</a><a href="#o10type-2">② 楊氏</a><a href="#o10type-3">③ 雙稜鏡等虛擬光源</a><a href="#o10type-4">④ 牛頓環半徑</a><a href="#o10type-5">⑤ 牛頓環兩波長</a><a href="#o10type-6">⑥ 薄膜</a><a href="#o10type-7">⑦ 膜厚量測</a></p>
+
+<div class="drill" id="o10type-1">
+  <h4>① 照度極大、極小與對比度 <span class="must teacher maybe">老師：著重</span> <span class="must exam">考古 1/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「一道光的照度是另一道的 N 倍」「對比度（contrast、fringe visibility、對比值）」「$I_{\max}$、$I_{\min}$」；或給兩個電場式子要 $I_1,I_2,I_{12}$。</dd>
+    <dt>做法</dt><dd>寫 $I_{\max,\min}=I_1+I_2\pm2\sqrt{I_1I_2}$ → $V=2\sqrt N/(N+1)$；反求時令 $x=\sqrt N$ 解 $Vx^2-2x+V=0$，取 $x>1$。給電場時先算總相位差 $\delta$（路徑＋初相位）。</dd>
+    <dt>常錯</dt><dd>$N$ 用振幅比；寫成 $I_{\max}/I_{\min}$；忘了兩根互為倒數；$\delta$ 的初相位差正負號弄反。</dd>
+    <dt>代表題</dt><dd><a href="#o10-7-1">作業 7-1</a> <a href="#o10-k18m3">2018 期中</a> <a href="#o10var-1">變化題 1</a> <a href="#o10-k09m3">舊考卷 2009／2012 期中</a> <a href="#o10-k13m5">舊考卷 2013 期中</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o10type-2">
+  <h4>② 楊氏雙狹縫 <span class="must teacher maybe">老師：可能會考 1 題</span> <span class="must exam">考古 1/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>兩狹縫間距 $a$、屏幕距離 $L$、條紋間距；兩個波長的條紋重合；一縫蓋玻璃片。</dd>
+    <dt>做法</dt><dd>$\Delta y=\lambda L/a$ 反解；重合題令兩個 $a\sin\theta$ 相等；玻璃片光程多 $(n-1)t$，平移 $(n-1)tL/a$。</dd>
+    <dt>常錯</dt><dd>第 k 個暗紋寫成 $(k+\tfrac12)\lambda$（應為 $(k-\tfrac12)\lambda$）；玻璃片用 $nt$ 而不是 $(n-1)t$。</dd>
+    <dt>代表題</dt><dd><a href="#o10-7-6">作業 7-6</a> <a href="#o10-k18m4">2018 期中第 4 題</a> <a href="#o10var-2">變化題 2</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o10type-3">
+  <h4>③ 虛擬光源：雙稜鏡、雙面鏡、洛埃鏡 <span class="must teacher maybe">老師：可能會考 1 題</span> <span class="must exam">考古 1/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「Fresnel 雙稜鏡」「稜鏡到屏幕是到狹縫的 k 倍」「兩虛擬光源之間的距離」；平面鏡上方的狹縫；兩面夾小角的鏡子。</dd>
+    <dt>做法</dt><dd>先找 $a$ 與 $L$：雙稜鏡 $a=2d(n-1)\alpha$、$L=d+s$；再 $\Delta y=\lambda L/a$。比例給定時 $\alpha=(k+1)\lambda/[2(n-1)\Delta y]$，$d$ 約掉；問 $a$ 時才用 $d$。</dd>
+    <dt>常錯</dt><dd>$L$ 只算稜鏡到屏幕；$a$ 漏了 2；角度單位；洛埃鏡忘了反射多 $\pi$（鏡面處是暗紋）；cm 與 m 換算。</dd>
+    <dt>代表題</dt><dd><a href="#o10-7-11">作業 7-11</a> <a href="#o10-k22m3">2022 期中</a> <a href="#o10-k17m3">舊考卷 2017 期中</a> <a href="#o10var-3">變化題 3</a> <a href="#o10var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o10type-4">
+  <h4>④ 牛頓環：亮環、暗環半徑 <span class="must exam">考古高頻 3/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「平凸透鏡（n=…）焦距 … m，用來做牛頓環實驗」「第 k 亮環／暗環的半徑」「第一暗環半徑 … mm，求曲率半徑、焦距」。</dd>
+    <dt>做法</dt><dd>$R=(n-1)f$；暗 $r^2=m\lambda R$、亮 $r^2=(m-\tfrac12)\lambda R$；反求 $R=r^2/(m\lambda)$，再 $f=R/(n-1)$，標正負號。</dd>
+    <dt>常錯</dt><dd>透鏡 $n$ 放進干涉條件；亮暗用錯；中心暗點當第一暗環；直徑當半徑；答案單位（mm 或 m）。</dd>
+    <dt>代表題</dt><dd><a href="#o10-7-23">作業 7-23</a> <a href="#o10-k25m3">2025</a> <a href="#o10var-5">變化題 5</a> 舊考卷：<a href="#o10-k21m5">2021</a> <a href="#o10-k10m5">2010</a> <a href="#o10-k11m4">2011</a> <a href="#o10-k08m4">2008</a> <a href="#o10-k07q2">2007 平時</a> <a href="#o10-k12q3">2012 平時</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o10type-5">
+  <h4>⑤ 牛頓環：兩個波長的環重合 <span class="must exam">考古 2/5（含在 3 次內）</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「兩道不同波長」「第 a 道亮環位置恰與另一波長的第 b 道亮環重合」，問另一波長、重合半徑、空氣膜厚度。</dd>
+    <dt>做法</dt><dd>令兩個 $2t$ 相等求 $\lambda_2$；$t=2t/2$；$r=\sqrt{2Rt}$。</dd>
+    <dt>常錯</dt><dd>暗環配亮環時暗環也減 $\tfrac12$；把 $t$ 寫成 $2t$；忘了級數多者波長短的檢查。</dd>
+    <dt>代表題</dt><dd><a href="#o10-k24m3">2024</a> <a href="#o10-k20m4">2020</a> <a href="#o10var-6">變化題 6</a> 舊考卷：<a href="#o10-k17q3">2017 平時（暗－亮）</a> <a href="#o10-k14m3">2014</a> <a href="#o10-k13q3">2013 平時</a> <a href="#o10-k09m4">2009</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o10type-6">
+  <h4>⑥ 薄膜干涉 <span class="must exam">考古 0/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>膜的上下各一種介質、問哪些波長反射加強或消失、膜厚、級數；空氣楔數條紋；TM 斜射要討論 $\Delta_r$。</dd>
+    <dt>做法</dt><dd>先判斷 $\Delta_r$（一外一內 $\lambda/2$），再 $2n_ft\cos\theta_t+\Delta_r=m\lambda$ 或 $(m+\tfrac12)\lambda$；兩個消光波長用相鄰級數聯立。TM 時看兩面 $r_{TM}$ 的正負號，上下同介質時永遠差 $\pi$。</dd>
+    <dt>常錯</dt><dd>$\Delta_r$ 判斷錯（玻璃上的油膜是 0）；用入射角代 $\cos$；用膜中波長混用真空波長。</dd>
+    <dt>代表題</dt><dd><a href="#o10-7-14">作業 7-14</a> <a href="#o10-7-20">作業 7-20</a> <a href="#o10var-7">變化題 7</a> <a href="#o10-k07q1">舊考卷 2007 平時</a> <a href="#o10-k07m2">舊考卷 2007 期中</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o10type-7">
+  <h4>⑦ 膜厚量測 <span class="must exam">考古 0/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>干涉條紋照片，條紋在膜邊緣錯開 $\Delta x$、條紋間距 $x$。</dd>
+    <dt>做法</dt><dd>$d=(\Delta x/x)(\lambda/2)$。</dd>
+    <dt>常錯</dt><dd>寫成 $(\Delta x/x)\lambda$（漏了反射來回兩次）。</dd>
+    <dt>代表題</dt><dd><a href="#o10-k17m4">舊考卷 2017 期中第 4 題</a></dd>
+  </dl>
+</div>
+
+<h3 id="o10x-var">8.3 變化題</h3>
+
+<div class="drill-q" id="o10var-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#o10-k09m3">2009／2012 期中</a>（物理考古資料夾舊考卷）</p>
+  <p>兩道干涉光的電場振幅比為 3：1，求對比度。另一實驗的對比度為 0.8，兩道光的照度比是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>照度比 $N=9$：$V=2\sqrt9/(9+1)=0.6$（振幅比 3 不能直接當 $N$ 代：$2\sqrt3/4=0.866$ 是錯的）。$V=0.8$：$\sqrt N=(1+\sqrt{1-0.64})/0.8=(1+0.6)/0.8=2$，$N=4$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o10var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#o10-k18m4">2018 期中第 4 題</a></p>
+  <p>楊氏干涉 $a=0.5\ \text{mm}$、$L=1\ \text{m}$、$\lambda=600\ \text{nm}$。在一縫前放 $n=1.6$ 的雲母片，條紋移動了 10 條，雲母片多厚？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$(n-1)t=10\lambda$：$t=10(600\ \text{nm})/0.6=10\ \mu\text{m}$；平移距離 $10\times\lambda L/a=10\times1.2\ \text{mm}=12\ \text{mm}$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o10var-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#o10-k17m3">2017 期中第 3 題</a>（物理考古資料夾舊考卷）</p>
+  <p>雙稜鏡 $n=1.5$、$\alpha=0.01\ \text{rad}$，狹縫到稜鏡 5 cm、稜鏡到屏幕 95 cm，$\lambda=500\ \text{nm}$。求條紋間距。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$a=2d(n-1)\alpha=2(0.05)(0.5)(0.01)=5\times10^{-4}\ \text{m}$，$L=1.00\ \text{m}$：$\Delta y=\lambda L/a=1.0\ \text{mm}$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o10var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#o10-vs-lloyd">洛埃鏡</a>（課本習題 7-5）</p>
+  <p>洛埃鏡：狹縫在鏡面上方 0.5 mm，屏幕在 2 m 外，$\lambda=600\ \text{nm}$。條紋間距多少？屏幕緊貼鏡面處是亮還是暗？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$a=2h=1\ \text{mm}$：$\Delta y=\lambda L/a=1.2\ \text{mm}$。鏡面處光程差 0，但反射光多了 $\pi$，所以是暗紋。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o10var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#o10-k25m3">2025 期中第 3 題</a></p>
+  <p>平凸透鏡 $n=1.5$、$f=2\ \text{m}$，$\lambda=500\ \text{nm}$。第 3 亮環與第 3 暗環的半徑各多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$R=(0.5)(2)=1\ \text{m}$。亮：$\sqrt{2.5(500\times10^{-9})(1)}=1.12\ \text{mm}$；暗：$\sqrt{3(500\times10^{-9})(1)}=1.22\ \text{mm}$。第 3 亮環在第 2、第 3 暗環之間 ✔。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o10var-6">
+  <p class="q-src">變化題 6 · 改自 <a href="#o10-k17q3">2017 平時考第 3 題</a>（物理考古資料夾舊考卷）</p>
+  <p>600 nm 的第 5 暗環與另一波長的第 6 亮環重合，$R=1\ \text{m}$。求另一波長與重合處空氣膜厚度。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$2t=5(600)=5.5\lambda_2$：$\lambda_2=545.5\ \text{nm}$；$t=1500\ \text{nm}$；$r=\sqrt{2(1)(1.5\times10^{-6})}=1.73\ \text{mm}$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o10var-7">
+  <p class="q-src">變化題 7 · 改自 <a href="#o10-7-14">作業 7-14</a></p>
+  <p>空氣中的肥皂膜 $n=1.33$，正向白光照射，反射光在 630 nm 和 450 nm 最亮（兩者之間沒有其他極大）。求膜厚與級數。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>一外一內，$\Delta_r=\lambda/2$，亮：$2nt=(m-\tfrac12)\lambda$。630 nm 為第 $m$ 級、450 nm 為第 $m+1$ 級：$(m-\tfrac12)630=(m+\tfrac12)450$ ⟹ $180m=540$，$m=3$。$t=2.5(630\ \text{nm})/(2\times1.33)=592\ \text{nm}$；驗算 $3.5(450)/2.66=592$ ✔。和作業 7-14 的差別是這裡 $\Delta_r=\lambda/2$。</p>
+  </details>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>先判斷題型：兩道光比照度 → 對比度；兩個光源（真的或虛擬）→ $\Delta y=\lambda L/a$；膜 → $\Delta_p+\Delta_r$；牛頓環 → $r^2=2Rt$。</li>
+    <li>每一型都先寫一般式、再代數字並寫出數字從哪裡來，最後換成題目要的單位。</li>
+    <li>亮暗與級數的編號（中心、第一條）是最容易失分的地方。</li>
+  </ol>
+</div>

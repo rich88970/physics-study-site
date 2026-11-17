@@ -1,0 +1,625 @@
+<h2>一、兩態系統 <span class="pg">課本 §2.1 · p.49–53</span></h2>
+
+<p class="lead">第二定律的答案先講在前面：不可逆過程不是「一定會發生」，而是「機率壓倒性地大」。要把這句話變成數字，得先學會數「能量有幾種排法」。這一節從丟硬幣開始，定義微觀態、巨觀態與多重度。</p>
+
+<h3 id="ts-micro">1.1 微觀態、巨觀態、多重度 <span class="pg-tag">p.49–50</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.50 Eq. (2.1) 巨觀態的機率</span>
+  <p><strong>微觀態</strong>（microstate）：每一個粒子的狀態都指定（例如三枚硬幣 HHT）。<strong>巨觀態</strong>（macrostate）：只指定整體的量（例如「兩個正面」）。一個巨觀態對應的微觀態數目叫<strong>多重度</strong>（multiplicity）$\Omega$。所有微觀態等機率時：</p>
+  $$\text{probability of } n \text{ heads}=\frac{\Omega(n)}{\Omega(\text{all})}$$
+</div>
+
+<p>為什麼要分兩層？因為我們量得到的只有巨觀量（幾個正面、總能量多少），而機率卻是在微觀態的層次上「平分」的。知道微觀態 HHT 就知道巨觀態是兩個正面；反過來，知道「兩個正面」不能告訴你是哪三種排法中的哪一種。所以一個巨觀態出現的機率，正比於它「包含幾個微觀態」——這就是多重度的意義。三枚硬幣的 8 個微觀態平均分給 4 個巨觀態，結果是 $1,3,3,1$：正反混在一起的巨觀態比較容易出現，只因為排法比較多。</p>
+
+<h3 id="ts-binom">1.2 $N$ 枚硬幣：二項式係數 <span class="pg-tag">p.50–51</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.51 Eq. (2.6) $N$ 枚硬幣中 $n$ 個正面的多重度</span>
+  $$\Omega(N,n)=\frac{N!}{n!\,(N-n)!}=\binom Nn$$
+  <p>「從 $N$ 個裡選 $n$ 個」的組合數（$N$ choose $n$）。</p>
+</div>
+
+<p>想成「一開始全部反面，要選哪 $n$ 枚翻成正面」。第一枚有 $N$ 種選法，第二枚 $N-1$ 種……第 $n$ 枚 $N-n+1$ 種，乘起來是 $N!/(N-n)!$；但同一組 $n$ 枚硬幣用不同順序翻，結果一樣，被重複算了 $n!$ 次，所以要再除以 $n!$。這個「先依序選、再除掉順序」的論證，之後算愛因斯坦固體、理想氣體的 $1/N!$ 都會再用到。</p>
+
+<div class="anim" data-anim="t2-coins"></div>
+
+<p>圖中 $N$ 越大，機率越集中在 $n\approx N/2$ 附近（以 $n/N$ 為橫軸看）：雖然最可能的巨觀態本身的機率在變小，但「離一半很遠」的巨觀態機率掉得更快。第 6 節會證明峰的相對寬度 $\propto1/\sqrt N$。</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-3coins">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.1 Table 2.1 · p.49–50</span></div>
+    <h4>三枚硬幣的微觀態</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-3coins">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>丟一元、五元、十元三枚公正硬幣。列出所有微觀態，求每個巨觀態（正面個數）的多重度與機率。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>硬幣數</td><td>$N=3$</td><td>「一元、五元、十元<b>三枚</b>」；面額不同，所以<b>分辨得出</b>是哪一枚正面</td></tr>
+          <tr><td>每枚的結果</td><td>正面 H 或反面 T，2 種</td><td>「硬幣」只有兩面</td></tr>
+          <tr><td>每種結果的機率</td><td>正、反各 $\tfrac12$，三枚互不影響</td><td>「<b>公正</b>硬幣」：正反機率相同；三枚各丟各的，題目沒寫但視為獨立</td></tr>
+          <tr><td>巨觀態怎麼分</td><td>正面個數 $n=0,1,2,3$</td><td>「每個巨觀態（<b>正面個數</b>）」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：列出所有微觀態；求每個巨觀態 $n$ 的多重度 $\Omega(n)$ 與機率 $P(n)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>三枚硬幣面額不同、分辨得出，「一元正、五元反」和「一元反、五元正」是不同的結果，<b>所以</b>一個微觀態就是「三枚依序各是正或反」；每枚 2 種、彼此獨立，用乘法原理數總數。</p>
+      <p><b>因為</b>硬幣公正又互相獨立，每一個微觀態的機率都是 $\left(\tfrac12\right)^3$，全部<b>等機率</b>；<b>所以</b>一個巨觀態的機率只看它包含幾個微觀態，就是課本 (2.1) 的 $P(n)=\Omega(n)/\Omega(\text{all})$。做法是先窮舉 8 個微觀態，再依正面數分組計數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-3coins-s1" data-sym="N">
+        <span class="step-title">微觀態總數：乘法原理</span>
+        <p>第一枚有 2 種、第二枚 2 種、第三枚 2 種，彼此可以任意搭配，所以總數是 2 自乘 $N$ 次：</p>
+        $$\Omega(\text{all})=\underbrace{2\times2\times\cdots\times2}_{N\text{ 個}}=2^N$$
+        <p class="sub">代入 $N=3$（題目「三枚」）：</p>
+        $$\Omega(\text{all})=2^3=8$$
+        <p>每個微觀態要三枚都剛好是指定的那一面，機率 $\left(\tfrac12\right)^3=\tfrac18$，8 個微觀態等機率。</p>
+      </div>
+      <div class="step" data-step="t3ca" data-sym="Omega">
+        <span class="step-title">列出 8 個微觀態並依正面數分組</span>
+        <p>每個微觀態依「一元、五元、十元」的順序寫三個字母。為了不漏，按正面數由多到少列：</p>
+        <p>3 正：HHH；2 正：HHT、HTH、THH（反面是十元、五元或一元）；1 正：HTT、THT、TTH（正面是一元、五元或十元）；0 正：TTT。</p>
+        <p>數每一組有幾個，就是該巨觀態的多重度：</p>
+        $$\Omega(3)=1,\quad\Omega(2)=3,\quad\Omega(1)=3,\quad\Omega(0)=1$$
+        <p>合計 $1+3+3+1=8$，和步驟 1 的總數相同，沒有漏也沒有重複。</p>
+      </div>
+      <div class="step" data-step="t3cb">
+        <span class="step-title">機率 $=\Omega(n)/\Omega(\text{all})$</span>
+        <p>每個微觀態機率都是 $\tfrac18$，巨觀態的機率就是「包含幾個微觀態」乘上 $\tfrac18$：</p>
+        $$P(n)=\frac{\Omega(n)}{\Omega(\text{all})}$$
+        <p class="sub">代入 $\Omega(n)$（步驟 2）與 $\Omega(\text{all})=8$（步驟 1）：</p>
+        $$P(3)=P(0)=\frac18,\qquad P(2)=P(1)=\frac38$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>多重度 $\Omega(3),\Omega(2),\Omega(1),\Omega(0)=1,3,3,1$；機率依序 $\tfrac18,\tfrac38,\tfrac38,\tfrac18$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$\binom3n=1,3,3,1$ 與窮舉一致；機率總和 $\tfrac{1+3+3+1}8=1$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-100coins">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.1 Eq. (2.2)–(2.5) · p.50–51</span></div>
+    <h4>一百枚硬幣的多重度</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-100coins">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>丟 100 枚公正硬幣。共有幾個微觀態、幾個巨觀態？求 $\Omega(0)$、$\Omega(1)$、$\Omega(2)$、$\Omega(3)$，以及剛好 50 個正面的機率。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>硬幣數</td><td>$N=100$</td><td>「丟 <b>100 枚</b>公正硬幣」</td></tr>
+          <tr><td>每枚的結果與機率</td><td>H 或 T，各 $\tfrac12$，互相獨立</td><td>「<b>公正</b>硬幣」；各枚互不影響（題目沒寫，視為獨立）</td></tr>
+          <tr><td>巨觀態怎麼分</td><td>正面個數 $n$</td><td>題目問 $\Omega(0)$、$\Omega(1)$…和「剛好 50 個<b>正面</b>」：只看正面數</td></tr>
+          <tr><td>要算的正面數</td><td>$n=0,1,2,3$ 與 $n=50$</td><td>「求 $\Omega(0)$、$\Omega(1)$、$\Omega(2)$、$\Omega(3)$，以及剛好 50 個正面」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：微觀態總數、巨觀態個數；$\Omega(0)$～$\Omega(3)$；剛好 50 個正面的機率 $P(50)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每枚硬幣 2 種結果、彼此獨立，<b>所以</b>微觀態總數用乘法原理得 $2^N$；而巨觀態只看正面數 $n$，$n$ 只能是 $0$ 到 $N$ 的整數，所以巨觀態有 $N+1$ 個（不是 $2^N$ 個）。</p>
+      <p><b>因為</b> $\Omega(n)$ 是「從 100 枚裡挑出哪 $n$ 枚是正面」，挑的先後順序不影響結果，<b>所以</b>先依序挑（第一枚 $N$ 種、第二枚 $N-1$ 種……），再除以 $n!$ 把同一組硬幣的不同挑法去掉，這就是 (2.6) 的 $\binom Nn$。</p>
+      <p><b>因為</b>硬幣公正，$2^{100}$ 個微觀態等機率，<b>所以</b> $P(50)=\Omega(50)/2^{100}$。$\Omega(50)$ 有 30 位數，用計算機算（第 4 節會改用 Stirling 近似）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t100a" data-sym="N,n">
+        <span class="step-title">微觀態與巨觀態的個數</span>
+        <p>每枚 2 種、獨立，總數 $2^N$；正面數 $n=0,1,\dots,N$，共 $N+1$ 個巨觀態。</p>
+        <p class="sub">代入 $N=100$（題目「100 枚」）。手算 $2^{100}$ 可以用 $2^{10}=1024=1.024\times10^3$：</p>
+        $$\begin{aligned}\Omega(\text{all})&=2^{100}=\left(2^{10}\right)^{10}\\&=(1.024)^{10}\times10^{30}=1.27\times10^{30}\end{aligned}$$
+        $$\text{巨觀態 }n=0,1,\dots,100\ \Longrightarrow\ 101\text{ 個}$$
+      </div>
+      <div class="step" data-step="t100b">
+        <span class="step-title">$\Omega(0)$～$\Omega(3)$：依序挑、再除以順序</span>
+        <p>依序挑 $n$ 枚翻成正面有 $N(N-1)\cdots(N-n+1)$ 種挑法；同一組 $n$ 枚被挑的順序有 $n!$ 種，都算成同一個微觀態，所以要除掉：</p>
+        $$\Omega(n)=\frac{N(N-1)\cdots(N-n+1)}{n!}$$
+        <p class="sub">代入 $N=100$（題目）與 $n=0,1,2,3$：</p>
+        $$\begin{aligned}\Omega(0)&=1\quad(\text{只有全部反面一種})\\\Omega(1)&=\frac{100}{1}=100\\\Omega(2)&=\frac{100\cdot99}{2!}=\frac{9900}{2}=4950\\\Omega(3)&=\frac{100\cdot99\cdot98}{3!}=\frac{970\,200}{6}=161\,700\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-ex-100coins-s3">
+        <span class="step-title">$\Omega(50)$：用完整的組合公式</span>
+        <p>$n=50$ 時分子有 50 個因子，改用階乘形式 (2.6)：</p>
+        $$\Omega(50)=\binom{100}{50}=\frac{100!}{50!\,50!}$$
+        <p class="sub">用計算機（或 Python 的 <code>comb(100,50)</code>）：</p>
+        $$\Omega(50)=1.01\times10^{29}$$
+      </div>
+      <div class="step" data-step="t100c">
+        <span class="step-title">剛好 50 個正面的機率</span>
+        <p>所有微觀態等機率，巨觀態的機率＝它的多重度 ÷ 微觀態總數：</p>
+        $$P(50)=\frac{\Omega(50)}{\Omega(\text{all})}$$
+        <p class="sub">代入 $\Omega(50)=1.01\times10^{29}$（步驟 3）、$\Omega(\text{all})=1.27\times10^{30}$（步驟 1）：</p>
+        $$P(50)=\frac{1.01\times10^{29}}{1.27\times10^{30}}=0.080$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>微觀態 $2^{100}\approx1.27\times10^{30}$ 個、巨觀態 101 個；$\Omega(0),\Omega(1),\Omega(2),\Omega(3)=1,\ 100,\ 4950,\ 161\,700$；$P(50)\approx0.080=8\%$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>最可能的巨觀態也只有 8%：多重度最大不代表機率接近 1，是「附近一整群」加起來才佔大多數 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-1">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-1（Problem 2.1）· p.51 · 熱學小考（上）作業題</span></div>
+    <h4>四枚硬幣</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you flip four fair coins.</p><p>(a) Make a list of all the possible outcomes, as in Table 2.1.</p><p>(b) Make a list of all the different “macrostates” and their probabilities.</p><p>(c) Compute the multiplicity of each macrostate using the combinatorial formula 2.6, and check that these results agree with what you got by brute-force counting.</p></div>
+<p class="original-caption">Schroeder 習題 2-1（Problem 2.1）· p.51 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>丟四枚公正硬幣。(a) 像 Table 2.1 那樣列出所有可能結果。(b) 列出所有巨觀態與它們的機率。(c) 用組合公式 (2.6) 算每個巨觀態的多重度，確認和 (b) 窮舉的結果一致。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>硬幣數</td><td>$N=4$</td><td>「丟<b>四枚</b>公正硬幣」</td></tr>
+          <tr><td>每枚的結果與機率</td><td>H 或 T，各 $\tfrac12$，互相獨立</td><td>「<b>公正</b>」硬幣；各丟各的（題目沒寫，視為獨立）</td></tr>
+          <tr><td>巨觀態怎麼分</td><td>正面個數 $n=0,\dots,4$</td><td>「像 <b>Table 2.1</b> 那樣」：課本表格就是依正面數分組</td></tr>
+          <tr><td>要用的公式</td><td>$\Omega(N,n)=\dfrac{N!}{n!\,(N-n)!}$</td><td>(c)「用組合公式 <b>(2.6)</b>」</td></tr>
+          <tr><td>階乘的約定</td><td>$0!=1$</td><td>題目沒寫；算 $\binom40$、$\binom44$ 時要用</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 列出全部微觀態；(b) 每個巨觀態與它的機率；(c) 用 (2.6) 算多重度，和 (b) 的窮舉比對。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每枚 2 種、彼此獨立，<b>所以</b>微觀態共有 $2^4$ 個；窮舉時<b>先固定正面數、再排正面的位置</b>，比隨意列更不容易漏。</p>
+      <p><b>因為</b>硬幣公正，16 個微觀態等機率，<b>所以</b>巨觀態的機率＝多重度 ÷ 16（課本 (2.1)）。(c) 要用 (2.6) 驗證，就把 $N=4$、$n=0,\dots,4$ 逐一代入，看是否等於 (b) 數出來的個數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-1-s1" data-sym="N">
+        <span class="step-title">先算總共有幾個微觀態</span>
+        $$\Omega(\text{all})=2^N$$
+        <p class="sub">代入 $N=4$（題目「四枚」）：</p>
+        $$\Omega(\text{all})=2^4=16,\qquad\text{每個微觀態機率 }\tfrac1{16}$$
+      </div>
+      <div class="step" data-step="t21a">
+        <span class="step-title">(a) 依正面數列出 16 個微觀態</span>
+        <p>4 正：HHHH（1 個）。</p>
+        <p>3 正：反面放在第 4、3、2、1 枚：HHHT、HHTH、HTHH、THHH（4 個）。</p>
+        <p>2 正：兩個正面的位置 (1,2)(1,3)(1,4)(2,3)(2,4)(3,4)：HHTT、HTHT、HTTH、THHT、THTH、TTHH（6 個）。</p>
+        <p>1 正：正面放在第 1、2、3、4 枚：HTTT、THTT、TTHT、TTTH（4 個）。0 正：TTTT（1 個）。</p>
+        <p>合計 $1+4+6+4+1=16$，與步驟 1 相同。</p>
+      </div>
+      <div class="step" data-step="t21b" data-sym="Omega">
+        <span class="step-title">(b) 巨觀態與機率</span>
+        <p>巨觀態是 $n=4,3,2,1,0$ 五個；機率＝該組的個數 ÷ 總數：</p>
+        $$P(n)=\frac{\Omega(n)}{\Omega(\text{all})}$$
+        <p class="sub">代入 (a) 數出的個數 $1,4,6,4,1$ 與 $\Omega(\text{all})=16$（步驟 1）：</p>
+        $$P(4)=\tfrac1{16},\quad P(3)=\tfrac4{16}=\tfrac14,\quad P(2)=\tfrac6{16}=\tfrac38,\quad P(1)=\tfrac14,\quad P(0)=\tfrac1{16}$$
+      </div>
+      <div class="step" data-step="t21c">
+        <span class="step-title">(c) 用 (2.6) 算多重度</span>
+        $$\Omega(N,n)=\binom Nn=\frac{N!}{n!\,(N-n)!}$$
+        <p class="sub">代入 $N=4$（題目），$4!=24$，並用 $0!=1$：</p>
+        $$\begin{aligned}\binom40&=\frac{24}{0!\,4!}=\frac{24}{1\cdot24}=1\\\binom41&=\frac{24}{1!\,3!}=\frac{24}{6}=4\\\binom42&=\frac{24}{2!\,2!}=\frac{24}{4}=6\\\binom43&=\frac{24}{3!\,1!}=\frac{24}{6}=4\\\binom44&=\frac{24}{4!\,0!}=1\end{aligned}$$
+        <p>五個數 $1,4,6,4,1$ 和 (a)(b) 窮舉的個數完全相同。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 16 個微觀態如上；(b)(c) 巨觀態 $n=0,1,2,3,4$ 的多重度 $1,4,6,4,1$，機率 $\tfrac1{16},\tfrac14,\tfrac38,\tfrac14,\tfrac1{16}$，公式與窮舉一致。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$1+4+6+4+1=16=2^4$ ✔（記得 $0!=1$）</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk-114-6">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">114 級上學期期中 第 6 題 · 即 Schroeder Problem 2.2 · p.51</span></div>
+    <h4>二十枚硬幣</h4>
+    <button type="button" class="exam-btn" data-exam="tk-114-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-114-6"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[10pts] Suppose you flip 20 fair coins.</p><p>(a) How many possible outcomes (microstates) are there? (3pts)</p><p>(b) What is the probability of getting the sequence HTHHTTTHTHHHTHHHHTHT (in exactly that order)? (3pts)</p><p>(c) What is the probability of getting 12 heads and 8 tails (in any order)? (4pts)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.2）</strong></p><p>Suppose you flip 20 fair coins.</p><p>(a) How many possible outcomes (microstates) are there?</p><p>(b) What is the probability of getting the sequence HTHHTTTHTHHHTHHHHTHT (in exactly that order)?</p><p>(c) What is the probability of getting 12 heads and 8 tails (in any order)?</p></div>
+<p class="original-caption">114 級上學期期中 第 6 題 · 即 Schroeder Problem 2.2 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（10 分）假設你丟 20 枚公正硬幣。(a) 共有多少種可能結果（微觀態）？（3 分）(b) 得到序列 HTHHTTTHTHHHTHHHHTHT（完全照這個順序）的機率是多少？（3 分）(c) 得到 12 個正面、8 個反面（任意順序）的機率是多少？（4 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>硬幣數</td><td>$N=20$</td><td>「丟 <b>20 枚</b>公正硬幣」</td></tr>
+          <tr><td>每枚的結果與機率</td><td>H 或 T，各 $\tfrac12$，互相獨立</td><td>「<b>公正</b>」(fair)；各枚互不影響（題目沒寫，視為獨立）</td></tr>
+          <tr><td>(b) 的事件</td><td>一個指定序列＝<b>一個微觀態</b></td><td>「HTHHTTTHTHHHTHHHHTHT（<b>完全照這個順序</b>）」：20 枚每一枚都指定了</td></tr>
+          <tr><td>(c) 的事件</td><td>$n=12$ 個正面＝<b>一個巨觀態</b></td><td>「12 個正面、8 個反面（<b>任意順序</b>）」：只指定正面個數</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 微觀態總數；(b) 得到那一個特定序列的機率；(c) 得到 12 正 8 反（不論順序）的機率。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>每枚 2 種結果、彼此獨立，<b>所以</b>用乘法原理，總數 $2^{20}$。</p>
+      <p>(b) <b>因為</b>「完全照這個順序」把每一枚都指定了，這是<b>一個微觀態</b>；公正硬幣讓所有微觀態等機率，<b>所以</b>機率就是 $1/\Omega(\text{all})$。</p>
+      <p>(c) <b>因為</b>「任意順序」只指定了正面個數，這是<b>一個巨觀態</b>，裡面包含很多種排法，<b>所以</b>要先用 (2.6) 數出排法數 $\Omega(12)=\binom{20}{12}$，再除以總數。常見錯誤是 (c) 也答 $1/2^{20}$（忘了乘多重度），或答 $1/21$（以為 21 個巨觀態等機率）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="k1146a" data-sym="N">
+        <span class="step-title">(a) 每枚 2 種、互相獨立</span>
+        $$\Omega(\text{all})=2^N$$
+        <p class="sub">代入 $N=20$（題目「20 枚」），$2^{10}=1024$：</p>
+        $$\Omega(\text{all})=2^{20}=\left(2^{10}\right)^2=1024^2=1\,048\,576$$
+      </div>
+      <div class="step" data-step="k1146b">
+        <span class="step-title">(b) 一個特定微觀態</span>
+        <p>這個序列只是 $1\,048\,576$ 個等機率微觀態中的一個；也可以想成每一枚都要剛好對，機率各 $\tfrac12$，20 枚相乘：</p>
+        $$P(\text{序列})=\frac{1}{\Omega(\text{all})}=\left(\frac12\right)^{20}$$
+        <p class="sub">代入 $\Omega(\text{all})=1\,048\,576$（步驟 1）：</p>
+        $$P(\text{序列})=\frac1{1\,048\,576}=9.54\times10^{-7}$$
+      </div>
+      <div class="step" data-step="k1146c" data-sym="Omega">
+        <span class="step-title">(c) 先數「12 正 8 反」有幾種排法</span>
+        <p>從 20 個位置中選 12 個放正面，用 (2.6)：</p>
+        $$\Omega(12)=\binom{20}{12}=\frac{20!}{12!\,8!}$$
+        <p class="sub">代入 $N=20$、$n=12$（題目「12 個正面」）。分子分母約掉 $12!$，剩下 8 個因子除以 $8!=40\,320$：</p>
+        $$\Omega(12)=\frac{20\cdot19\cdot18\cdot17\cdot16\cdot15\cdot14\cdot13}{8!}=\frac{5\,079\,110\,400}{40\,320}=125\,970$$
+      </div>
+      <div class="step" data-step="tk-114-6-s4">
+        <span class="step-title">(c) 巨觀態的機率</span>
+        $$P(12)=\frac{\Omega(12)}{\Omega(\text{all})}$$
+        <p class="sub">代入 $\Omega(12)=125\,970$（步驟 3）、$\Omega(\text{all})=1\,048\,576$（步驟 1）：</p>
+        $$P(12)=\frac{125\,970}{1\,048\,576}=0.120$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $2^{20}=1\,048\,576$ 個；(b) $1/2^{20}\approx9.5\times10^{-7}$；(c) $125\,970/2^{20}\approx0.120=12.0\%$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>題目那串序列剛好也是 12 正 8 反，它只是那 125 970 種排法中的一種，所以 (c) 是 (b) 的 125 970 倍 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk-115-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 3 題 · 改自 Schroeder Problem 2.2 · p.51</span></div>
+    <h4>十枚硬幣：微觀態、巨觀態與機率</h4>
+    <button type="button" class="exam-btn" data-exam="tk-115-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-3"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>[10pts] Suppose you flip 10 fair coins.</p><p>(a) How many possible microstates are there? (2pts)</p><p>(a) How many possible macrostates are there? (2pts)</p><p>(b) What is the probability of getting the sequence HTHHTTTHTH (in exactly that order)? (3pts)</p><p>(c) What is the probability of getting 7 heads and 3 tails (in any order)? (3pts)</p></div>
+<p class="original-caption">115 級上學期期中 第 3 題 · 改自 Schroeder Problem 2.2 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（10 分）假設你丟 10 枚公正硬幣。(a) 共有多少個可能的微觀態？（2 分）(a) 共有多少個可能的巨觀態？（2 分）(b) 得到序列 HTHHTTTHTH（完全照這個順序）的機率是多少？（3 分）(c) 得到 7 個正面、3 個反面（任意順序）的機率是多少？（3 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>硬幣數</td><td>$N=10$</td><td>「丟 <b>10 枚</b>公正硬幣」</td></tr>
+          <tr><td>每枚的結果與機率</td><td>H 或 T，各 $\tfrac12$，互相獨立</td><td>「<b>公正</b>」(fair)；各枚互不影響（題目沒寫，視為獨立）</td></tr>
+          <tr><td>巨觀態怎麼分</td><td>正面個數 $n$</td><td>第二個 (a) 問「巨觀態」；(c) 用「7 個正面、3 個反面」描述，課本也以正面數分巨觀態</td></tr>
+          <tr><td>(b) 的事件</td><td>一個微觀態</td><td>「HTHHTTTHTH（<b>完全照這個順序</b>）」</td></tr>
+          <tr><td>(c) 的事件</td><td>巨觀態 $n=7$</td><td>「7 個正面、3 個反面（<b>任意順序</b>）」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：微觀態個數、巨觀態個數；(b) 特定序列的機率；(c) 7 正 3 反的機率。（原卷前兩小題都標成 (a)。）</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每枚 2 種、獨立，<b>所以</b>微觀態有 $2^{10}$ 個；<b>因為</b>巨觀態只看正面數，而正面數只能是 0 到 10 的整數，<b>所以</b>巨觀態有 11 個——這和課本 2.2 的差別就是多問了這一題，常見錯誤是把它也答成 $2^{10}$。</p>
+      <p>(b) <b>因為</b>序列把每一枚都指定了，是一個微觀態，<b>所以</b>機率 $1/2^{10}$。(c) <b>因為</b>「任意順序」是一個巨觀態，<b>所以</b>要乘上它的多重度 $\binom{10}7$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="k1153a" data-sym="N,n">
+        <span class="step-title">微觀態與巨觀態的個數</span>
+        <p>微觀態用乘法原理；巨觀態是正面數 $n=0,1,\dots,N$，共 $N+1$ 個：</p>
+        $$\Omega(\text{all})=2^N,\qquad\text{巨觀態數}=N+1$$
+        <p class="sub">代入 $N=10$（題目「10 枚」）：</p>
+        $$\Omega(\text{all})=2^{10}=1024$$
+        $$\text{巨觀態數}=10+1=11$$
+      </div>
+      <div class="step" data-step="k1153b">
+        <span class="step-title">(b) 一個特定序列</span>
+        <p>指定序列是 1024 個等機率微觀態中的一個：</p>
+        $$P(\text{序列})=\frac1{\Omega(\text{all})}$$
+        <p class="sub">代入 $\Omega(\text{all})=1024$（步驟 1）：</p>
+        $$P(\text{序列})=\frac1{1024}=9.77\times10^{-4}$$
+      </div>
+      <div class="step" data-step="k1153c" data-sym="Omega">
+        <span class="step-title">(c) 數「7 正 3 反」的排法</span>
+        <p>選哪 7 枚是正面，用 (2.6)；選 7 個正面等於選 3 個反面，$\binom{10}7=\binom{10}3$，分子只剩 3 個因子比較好算：</p>
+        $$\Omega(7)=\binom{10}{7}=\frac{10!}{7!\,3!}=\frac{10\cdot9\cdot8}{3\cdot2\cdot1}$$
+        <p class="sub">代入 $N=10$、$n=7$（題目「7 個正面」）：</p>
+        $$\Omega(7)=\frac{720}{6}=120$$
+      </div>
+      <div class="step" data-step="tk-115-3-s4">
+        <span class="step-title">(c) 巨觀態的機率</span>
+        $$P(7)=\frac{\Omega(7)}{\Omega(\text{all})}$$
+        <p class="sub">代入 $\Omega(7)=120$（步驟 3）、$\Omega(\text{all})=1024$（步驟 1）：</p>
+        $$P(7)=\frac{120}{1024}=0.117$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>微觀態 1024 個、巨觀態 11 個；(b) $1/1024\approx9.77\times10^{-4}$；(c) $120/1024\approx0.117=11.7\%$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$\binom{10}{7}=\binom{10}{3}$（選 7 個正面＝選 3 個反面）✔。常見錯誤：把巨觀態數答成 $2^{10}$，或 (c) 忘了乘多重度。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-3">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-3（Problem 2.3）· p.52</span></div>
+    <h4>五十枚硬幣的機率分布</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-3"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you flip 50 fair coins.</p><p>(a) How many possible outcomes (microstates) are there?</p><p>(b) How many ways are there of getting exactly 25 heads and 25 tails?</p><p>(c) What is the probability of getting exactly 25 heads and 25 tails?</p><p>(d) What is the probability of getting exactly 30 heads and 20 tails?</p><p>(e) What is the probability of getting exactly 40 heads and 10 tails?</p><p>(f) What is the probability of getting 50 heads and no tails?</p><p>(g) Plot a graph of the probability of getting n heads, as a function of n.</p></div>
+<p class="original-caption">Schroeder 習題 2-3（Problem 2.3）· p.52</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>丟 50 枚公正硬幣。(a) 共有幾個微觀態？(b) 剛好 25 正 25 反有幾種方式？(c) 剛好 25 正 25 反的機率？(d) 30 正 20 反的機率？(e) 40 正 10 反的機率？(f) 50 正 0 反的機率？(g) 畫出得到 $n$ 個正面的機率對 $n$ 的圖。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>硬幣數</td><td>$N=50$</td><td>「丟 <b>50 枚</b>公正硬幣」</td></tr>
+          <tr><td>每枚的結果與機率</td><td>H 或 T，各 $\tfrac12$，互相獨立</td><td>「<b>公正</b>」；各枚互不影響（題目沒寫，視為獨立）</td></tr>
+          <tr><td>要算的正面數</td><td>$n=25,\ 30,\ 40,\ 50$</td><td>(b)(c)「25 正 25 反」、(d)「30 正 20 反」、(e)「40 正 10 反」、(f)「50 正 0 反」</td></tr>
+          <tr><td>「剛好」</td><td>指定正面數、不管順序</td><td>「<b>剛好</b> 25 正 25 反」：是一個巨觀態，要乘多重度</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 微觀態總數；(b) $\Omega(25)$；(c)–(f) $P(25)$、$P(30)$、$P(40)$、$P(50)$；(g) 畫 $P(n)$ 對 $n$ 的圖。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>硬幣公正，$2^{50}$ 個微觀態全部等機率，<b>所以</b>每個巨觀態的機率都是同一個式子 $P(n)=\binom{50}n/2^{50}$，只是代入不同的 $n$；這題的重點是比較 $n$ 離 25 越遠時機率掉得多快。</p>
+      <p><b>因為</b>數字有十幾位，手算不實際，<b>所以</b>用計算機算組合數；可以利用 $\binom{50}n=\binom{50}{50-n}$（選 $n$ 個正面＝選 $50-n$ 個反面）讓分子的因子少一些。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t23a" data-sym="N,n">
+        <span class="step-title">(a)(b) 總數與 $\Omega(25)$</span>
+        <p>總數照乘法原理 $2^N$；25 正 25 反的排法用 (2.6)：</p>
+        $$\Omega(\text{all})=2^N,\qquad\Omega(n)=\frac{N!}{n!\,(N-n)!}$$
+        <p class="sub">代入 $N=50$（題目「50 枚」）、$n=25$（(b)「25 正」），用計算機：</p>
+        $$\Omega(\text{all})=2^{50}=1.13\times10^{15}$$
+        $$\Omega(25)=\frac{50!}{25!\,25!}=1.26\times10^{14}$$
+      </div>
+      <div class="step" data-step="sc-2-3-s2">
+        <span class="step-title">(c) 25 正 25 反的機率</span>
+        $$P(n)=\frac{\Omega(n)}{2^{N}}$$
+        <p class="sub">代入 $\Omega(25)=1.264\times10^{14}$、$2^{50}=1.126\times10^{15}$（步驟 1）：</p>
+        $$P(25)=\frac{1.264\times10^{14}}{1.126\times10^{15}}=0.112$$
+      </div>
+      <div class="step" data-step="t23b">
+        <span class="step-title">(d)–(f) 其他三個巨觀態</span>
+        <p>同一個式子 $P(n)=\binom{50}n/2^{50}$，分母都是 $1.126\times10^{15}$（步驟 1）。先用 $\binom{50}{30}=\binom{50}{20}$、$\binom{50}{40}=\binom{50}{10}$ 算出多重度：</p>
+        <p class="sub">代入 $n=30$（(d)）、$n=40$（(e)）、$n=50$（(f)；只有全部正面一種排法，$\Omega=1$）：</p>
+        $$\begin{aligned}P(30)&=\frac{\binom{50}{20}}{2^{50}}=\frac{4.71\times10^{13}}{1.126\times10^{15}}=0.042\\P(40)&=\frac{\binom{50}{10}}{2^{50}}=\frac{1.03\times10^{10}}{1.126\times10^{15}}=9.1\times10^{-6}\\P(50)&=\frac{1}{2^{50}}=8.9\times10^{-16}\end{aligned}$$
+      </div>
+      <div class="step" data-step="t23c">
+        <span class="step-title">(g) 圖形</span>
+        <p>因為 $\binom{50}n=\binom{50}{50-n}$，圖對 $n=25$ 左右對稱。以 (c)–(f) 的數字描點：峰值在 $n=25$ 約 0.11，$n=30$（離峰 5）已降到 0.042，$n=40$（離峰 15）只剩 $10^{-5}$。整體是鐘形，主要寬度大約 $n=20$ 到 $30$（上面圖解 $N=50$ 那一步）；$n\lt 10$ 或 $n\gt 40$ 在圖上幾乎看不到。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $2^{50}\approx1.13\times10^{15}$；(b) $1.26\times10^{14}$；(c) 0.112；(d) 0.042；(e) $9.1\times10^{-6}$；(f) $8.9\times10^{-16}$；(g) 以 $n=25$ 為中心的對稱鐘形。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(e) 比 (c) 小一萬倍以上，(f) 小 $10^{14}$ 倍——同一個系統，巨觀態的機率可以差這麼多 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-4">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-4（Problem 2.4）· p.52</span></div>
+    <h4>撲克牌的同花大順</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-4"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the number of possible five-card poker hands, dealt from a deck of 52 cards. (The order of cards in a hand does not matter.) A royal flush consists of the five highest-ranking cards (ace, king, queen, jack, 10) of any one of the four suits. What is the probability of being dealt a royal flush (on the first deal)?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>從一副 52 張的牌發出五張牌，共有幾種可能的牌組（一手牌裡牌的順序不重要）？同花大順（royal flush）是任一花色中最大的五張（A、K、Q、J、10），共有四種花色。第一次發牌就拿到同花大順的機率是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>整副牌</td><td>52 張，各不相同</td><td>「一副 <b>52 張</b>的牌」</td></tr>
+          <tr><td>一手牌</td><td>5 張，<b>不計順序</b></td><td>「發出<b>五張</b>牌」「一手牌裡牌的<b>順序不重要</b>」</td></tr>
+          <tr><td>同花大順</td><td>同一花色的 A、K、Q、J、10，共 4 種</td><td>「任一花色中最大的五張（A、K、Q、J、10），共有<b>四種花色</b>」</td></tr>
+          <tr><td>每手牌的機率</td><td>全部相等</td><td>「第一次發牌」：洗好的牌隨機發，題目沒寫但每一手牌一樣可能</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：五張牌一共有幾種可能的牌組；第一次發牌就拿到同花大順的機率。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>「順序不重要」，一手牌只看拿到哪 5 張，<b>所以</b>和「100 枚硬幣選 3 枚翻成正面」是同一種計數：先依序發（52 種、51 種……），再除以 $5!$ 把同一手牌的不同發牌順序去掉，就是 $\binom{52}5$。</p>
+      <p><b>因為</b>每一手牌等機率（相當於微觀態），而「同花大順」這個條件（相當於巨觀態）只包含 4 手牌——每個花色的那五張是固定的，<b>所以</b>機率＝$4\div$ 總手數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t204a" data-sym="Omega">
+        <span class="step-title">依序發牌，再除掉順序</span>
+        <p>依序發 5 張：第一張 52 種、第二張剩 51 種……第五張 48 種；同一手 5 張牌可以有 $5!$ 種發出的順序，要除掉：</p>
+        $$\binom{52}5=\frac{52\cdot51\cdot50\cdot49\cdot48}{5!}$$
+        <p class="sub">代入 $5!=5\cdot4\cdot3\cdot2\cdot1=120$，分子先乘出來：</p>
+        $$\binom{52}5=\frac{311\,875\,200}{120}=2\,598\,960$$
+      </div>
+      <div class="step" data-step="sc-2-4-s2">
+        <span class="step-title">同花大順有幾手</span>
+        <p>同花大順的 5 張牌完全指定（某一花色的 A、K、Q、J、10），每個花色恰好 1 手；題目說有 4 種花色：</p>
+        $$\Omega(\text{同花大順})=4\times1=4$$
+      </div>
+      <div class="step" data-step="t204b">
+        <span class="step-title">機率＝符合條件的手數 ÷ 總手數</span>
+        $$P=\frac{\Omega(\text{同花大順})}{\binom{52}5}$$
+        <p class="sub">代入 4（步驟 2）與 $2\,598\,960$（步驟 1）：</p>
+        $$P=\frac{4}{2\,598\,960}=\frac1{649\,740}=1.54\times10^{-6}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>共 $2\,598\,960$（約 260 萬）手；拿到同花大順的機率 $1/649\,740\approx1.54\times10^{-6}$，比百萬分之一稍大。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>改成「依序」算：第一張是任一花色的 A、K、Q、J、10 之一（20/52），之後只能是同花色剩下的牌：$\frac{20}{52}\cdot\frac4{51}\cdot\frac3{50}\cdot\frac2{49}\cdot\frac1{48}=1.54\times10^{-6}$ ✔（算不算順序，分子分母同乘 $5!$，機率不變）</p></div>
+  </div>
+</div>
+
+<h3 id="ts-para">1.3 兩態順磁體 <span class="pg-tag">p.52–53</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.53 Eq. (2.7) 兩態順磁體的多重度</span>
+  $$\Omega(N_\uparrow)=\binom N{N_\uparrow}=\frac{N!}{N_\uparrow!\,N_\downarrow!},\qquad N=N_\uparrow+N_\downarrow$$
+  <p>每個磁偶極只能平行（向上）或反平行（向下）於外加磁場；忽略偶極之間的交互作用。</p>
+</div>
+
+<p>硬幣例子聽起來和物理無關，但自旋 ½ 的粒子（電子、某些原子核）在磁場中正好只有兩個狀態，組合數學和硬幣一模一樣：「向上」就是正面。差別在<strong>能量</strong>：磁場朝上時，向上的偶極能量比較低，把一個偶極翻成向下要花固定的能量。所以「有幾個向下」就決定了總能量，指定巨觀態等於指定總能量。這是之後所有系統的共同點：巨觀態主要由總能量決定，多重度是「能量的函數」。（第 3 章會用這個 $\Omega(U)$ 定義溫度，並看到順磁體可以有負溫度。）</p>
+
+<div class="problem" data-kind="self" id="sf-01a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>固定總能量時，兩個偶極不是獨立的</h4>
+    <button type="button" class="exam-btn" data-exam="sf-01a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>6 個兩態偶極放在向上的磁場中，向上的偶極能量 $-\mu B$、向下的 $+\mu B$，彼此沒有交互作用。系統孤立，總能量固定為 $U=-2\mu B$，所有可及的微觀態等機率。(a) 這個巨觀態有幾個微觀態？(b) 1 號偶極向上的機率是多少？(c) 1 號和 2 號<strong>都</strong>向上的機率是多少？和 (b) 的平方比較，解釋差異。(d) 改成 $N=600$、$N_\uparrow=400$，(c) 和 (b) 的平方還差多少？這說明什麼？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>偶極數</td><td>$N=6$</td><td>「<b>6 個</b>兩態偶極」</td></tr>
+          <tr><td>單一偶極的能量</td><td>向上 $-\mu B$，向下 $+\mu B$</td><td>「向上的偶極能量 $-\mu B$、向下的 $+\mu B$」</td></tr>
+          <tr><td>總能量</td><td>$U=-2\mu B$，固定</td><td>「系統<b>孤立</b>，總能量固定為 $U=-2\mu B$」</td></tr>
+          <tr><td>偶極之間</td><td>沒有交互作用能</td><td>「彼此沒有交互作用」：總能量就是各偶極能量相加</td></tr>
+          <tr><td>機率假設</td><td>可及微觀態等機率</td><td>「所有可及的微觀態<b>等機率</b>」</td></tr>
+          <tr><td>(d) 的大系統</td><td>$N=600$，$N_\uparrow=400$</td><td>(d)「改成 $N=600$、$N_\uparrow=400$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 這個巨觀態的微觀態數；(b) 1 號向上的機率；(c) 1、2 號都向上的機率，並和 (b) 的平方比較；(d) 大系統中同樣的比較，以及它的意義。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>偶極之間沒有交互作用，總能量只由「幾個向上、幾個向下」決定，<b>所以</b>先把「$U=-2\mu B$」翻譯成 $N_\uparrow$ 的條件，可及的微觀態就是「6 個中哪幾個向上」的組合。</p>
+      <p><b>因為</b>所有可及微觀態等機率，<b>所以</b>任何事件的機率＝符合事件的微觀態數 ÷ 總數。固定 1 號向上之後，其餘 5 個仍然要湊出同樣的總能量，向上的名額少了一個，要重新數組合，不能直接說「每個偶極向上的機率 $\tfrac12$」。</p>
+      <p>(c) <b>因為</b>「總能量固定」讓 1 號用掉的名額影響 2 號，兩者不獨立，<b>所以</b>不能把 (b) 直接平方，要實際數；(d) 用一般式看這個差別隨 $N$ 怎麼變。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf01a1" data-sym="Nud,Omega">
+        <span class="step-title">(a) 由總能量求 $N_\uparrow$，再數微觀態</span>
+        <p>沒有交互作用，總能量是各偶極能量的和：</p>
+        $$U=N_\uparrow(-\mu B)+N_\downarrow(+\mu B)=\mu B\,(N_\downarrow-N_\uparrow)$$
+        <p class="sub">代入 $U=-2\mu B$（題目），兩邊除以 $\mu B$；再配上 $N_\uparrow+N_\downarrow=6$（題目「6 個」）：</p>
+        $$N_\downarrow-N_\uparrow=-2,\qquad N_\uparrow+N_\downarrow=6$$
+        <p>兩式相加得 $2N_\downarrow=4$，所以 $N_\downarrow=2$、$N_\uparrow=4$。微觀態＝6 個中選哪 4 個向上：</p>
+        $$\Omega=\binom64=\frac{6!}{4!\,2!}=\frac{720}{24\cdot2}=15$$
+      </div>
+      <div class="step" data-step="sf01a2">
+        <span class="step-title">(b) 固定 1 號向上：其餘 5 個中還要 3 個向上</span>
+        <p>1 號已向上，總共要 4 個向上，所以其餘 5 個中要剩下的 $4-1=3$ 個向上：</p>
+        $$P(1\uparrow)=\frac{\binom{N-1}{N_\uparrow-1}}{\binom N{N_\uparrow}}$$
+        <p class="sub">代入 $N=6$、$N_\uparrow=4$（步驟 1），$\binom53=10$、$\binom64=15$（步驟 1）：</p>
+        $$P(1\uparrow)=\frac{\binom53}{\binom64}=\frac{10}{15}=\frac23=\frac{N_\uparrow}N$$
+      </div>
+      <div class="step" data-step="sf01a3">
+        <span class="step-title">(c) 1、2 號都向上：其餘 4 個中要 2 個向上</span>
+        <p>1、2 號都向上後，其餘 4 個中還要 $4-2=2$ 個向上，排法 $\binom42=6$：</p>
+        $$P(1\uparrow,2\uparrow)=\frac{\binom42}{\binom64}=\frac6{15}=0.400$$
+        <p class="sub">和 (b) 的平方比較，(b) 的值 $\tfrac23$ 來自步驟 2：</p>
+        $$\left(\tfrac23\right)^2=\tfrac49=0.444\ \gt\ 0.400$$
+        <p>寫成條件機率看得更清楚：$P=\frac46\cdot\frac35$。1 號用掉一個「向上名額」後，剩下 5 個裡只有 3 個名額，2 號向上的機率變成 $3/5$ 而不是 $4/6$。偶極之間沒有力，但「總能量固定」這個限制讓它們在統計上互相牽連。</p>
+      </div>
+      <div class="step" data-step="sf01a4">
+        <span class="step-title">(d) 大系統：先寫一般式</span>
+        <p>同樣的數法，兩個指定的偶極都向上時，其餘 $N-2$ 個中要 $N_\uparrow-2$ 個向上。把組合數寫開、階乘約分：</p>
+        $$\frac{\binom{N-2}{N_\uparrow-2}}{\binom N{N_\uparrow}}=\frac{(N-2)!}{(N_\uparrow-2)!\,N_\downarrow!}\cdot\frac{N_\uparrow!\,N_\downarrow!}{N!}=\frac{N_\uparrow(N_\uparrow-1)}{N(N-1)}$$
+        <p class="sub">代入 $N=600$、$N_\uparrow=400$（題目 (d)）：</p>
+        $$P(1\uparrow,2\uparrow)=\frac{400\cdot399}{600\cdot599}=\frac{159\,600}{359\,400}=0.4441$$
+        <p class="sub">對照「各自獨立」的猜測 $(N_\uparrow/N)^2$：</p>
+        $$\left(\frac{400}{600}\right)^2=0.4444$$
+      </div>
+      <div class="step" data-step="sf-01a-s5">
+        <span class="step-title">(d) 差多少、代表什麼</span>
+        <p>相對差＝$1-\dfrac{N_\uparrow(N_\uparrow-1)/[N(N-1)]}{(N_\uparrow/N)^2}$，通分化簡：</p>
+        $$\begin{aligned}1-\frac{N(N_\uparrow-1)}{N_\uparrow(N-1)}&=\frac{N_\uparrow(N-1)-N(N_\uparrow-1)}{N_\uparrow(N-1)}\\&=\frac{N-N_\uparrow}{N_\uparrow(N-1)}=\frac{N_\downarrow}{N_\uparrow(N-1)}\end{aligned}$$
+        <p class="sub">代入 $N_\downarrow=200$、$N_\uparrow=400$、$N=600$（題目 (d)）：</p>
+        $$\frac{200}{400\cdot599}=8.3\times10^{-4}\approx0.08\%$$
+        <p>差別 $\propto1/N$。大系統裡每個粒子幾乎可以當成獨立、以機率 $N_\uparrow/N$ 向上——之後把「一個粒子」當成小系統、其餘當成熱庫的想法（第 6 章波茲曼因子）就是這樣來的。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 15；(b) $2/3$；(c) $2/5=0.400$，小於 $(2/3)^2=4/9$；(d) $0.4441$ 對 $0.4444$，只差約 0.08%，大系統中幾乎獨立。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>窮舉：15 個微觀態就是「6 個中選 2 個向下」。1 號向下的有 $\binom51=5$ 個，所以 1 號向上的有 10 個 ✔；1、2 號都向上＝兩個向下都在 3–6 號：$\binom42=6$ 個 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-01b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>巨觀態由儀器的解析度決定</h4>
+    <button type="button" class="exam-btn" data-exam="sf-01b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$N=100$ 個兩態偶極，總磁化量 $M=\mu(N_\uparrow-N_\downarrow)$。沒有外加磁場時所有 $2^{100}$ 個微觀態等機率。(a) $M$ 可能有哪些值？量得到 $M=\mu$ 嗎？(b) $\Omega(M=0)$ 是 $\Omega(M=2\mu)$ 的幾倍？(c) 你的磁力計只能分辨「$|M|\le5\mu$」和「其他」。量到 $|M|\le5\mu$ 的機率是多少？和「$M$ 剛好是 0」比較。(d) 解析度變差成「$|M|\le10\mu$」呢？由此說明「巨觀態」是由什麼決定的。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>偶極數</td><td>$N=100$</td><td>「$N=100$ 個兩態偶極」</td></tr>
+          <tr><td>總磁化量</td><td>$M=\mu(N_\uparrow-N_\downarrow)$</td><td>題目給的定義</td></tr>
+          <tr><td>機率假設</td><td>$2^{100}$ 個微觀態等機率</td><td>「<b>沒有外加磁場</b>時所有 $2^{100}$ 個微觀態等機率」：沒有磁場，上下能量相同，沒有偏好</td></tr>
+          <tr><td>(c) 的解析度</td><td>只分辨 $|M|\le5\mu$ 或「其他」</td><td>(c)「磁力計只能分辨…」</td></tr>
+          <tr><td>(d) 的解析度</td><td>$|M|\le10\mu$</td><td>(d)「解析度變差成…」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $M$ 的可能值、$M=\mu$ 可不可能；(b) $\Omega(M=0)/\Omega(M=2\mu)$；(c) $P(|M|\le5\mu)$，和 $P(M=0)$ 比較；(d) $P(|M|\le10\mu)$，以及巨觀態由什麼決定。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $N_\downarrow=N-N_\uparrow$，$M$ 只由 $N_\uparrow$ 決定，<b>所以</b>先把 $M$ 換成 $N_\uparrow$：每個 $M$ 值對應一個 $N_\uparrow$，多重度就是 $\binom{100}{N_\uparrow}$。</p>
+      <p>(b) <b>因為</b>只要比值，<b>所以</b>把兩個組合數寫成階乘直接約分，不必算出 30 位數。</p>
+      <p>(c)(d) <b>因為</b>儀器只分辨一個範圍，「量到 $|M|\le5\mu$」這個巨觀態包含好幾個 $N_\uparrow$ 值，<b>所以</b>機率要把這些 $N_\uparrow$ 的多重度<b>加起來</b>再除以 $2^{100}$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf01b1" data-sym="Nud">
+        <span class="step-title">(a) 把 $M$ 換成 $N_\uparrow$</span>
+        <p>用 $N_\downarrow=N-N_\uparrow$ 消去 $N_\downarrow$：</p>
+        $$M=\mu\big(N_\uparrow-(N-N_\uparrow)\big)=\mu(2N_\uparrow-N)$$
+        <p class="sub">代入 $N=100$（題目），$N_\uparrow$ 只能是整數 $0,1,\dots,100$：</p>
+        $$M=\mu(2N_\uparrow-100)=-100\mu,\,-98\mu,\,\dots,\,100\mu\quad(101\text{ 個值})$$
+        <p>$M=\mu$ 需要 $2N_\uparrow-100=1$，即 $N_\uparrow=50.5$，不是整數，不可能量到。</p>
+      </div>
+      <div class="step" data-step="sf01b2" data-sym="Omega">
+        <span class="step-title">(b) 相鄰兩個巨觀態的多重度比</span>
+        <p>$M=0$ ⟺ $2N_\uparrow-100=0$ ⟺ $N_\uparrow=50$；$M=2\mu$ ⟺ $N_\uparrow=51$（步驟 1 的式子）。$100!$ 約掉：</p>
+        $$\frac{\Omega(50)}{\Omega(51)}=\frac{100!/(50!\,50!)}{100!/(51!\,49!)}=\frac{51!\,49!}{50!\,50!}$$
+        <p class="sub">用 $51!=51\cdot50!$、$50!=50\cdot49!$ 約分：</p>
+        $$\frac{\Omega(50)}{\Omega(51)}=\frac{51\cdot50!\cdot49!}{50!\cdot50\cdot49!}=\frac{51}{50}=1.02$$
+        <p>峰頂附近相鄰巨觀態的多重度幾乎一樣，所以「剛好 $M=0$」不會特別突出。</p>
+      </div>
+      <div class="step" data-step="sf01b3">
+        <span class="step-title">(c) $|M|\le5\mu$ 包含哪些 $N_\uparrow$</span>
+        <p>把 $|M|\le5\mu$ 換成 $N_\uparrow$ 的範圍：$-5\le2N_\uparrow-100\le5$ ⟺ $47.5\le N_\uparrow\le52.5$，整數只有 $48,\dots,52$（$M=-4\mu,\dots,4\mu$）。機率是這 5 個巨觀態的多重度和：</p>
+        $$P(|M|\le5\mu)=\frac{1}{2^{100}}\sum_{n=48}^{52}\binom{100}n$$
+        <p class="sub">代入（計算機）$\binom{100}{50}=1.0089\times10^{29}$、$\binom{100}{49}=\binom{100}{51}=9.891\times10^{28}$、$\binom{100}{48}=\binom{100}{52}=9.321\times10^{28}$，$2^{100}=1.2677\times10^{30}$：</p>
+        $$P=\frac{(1.0089+2\times0.9891+2\times0.9321)\times10^{29}}{1.2677\times10^{30}}=\frac{4.851\times10^{29}}{1.2677\times10^{30}}=0.383$$
+        <p class="sub">剛好 $M=0$ 只有 $N_\uparrow=50$ 一項：</p>
+        $$P(M=0)=\frac{1.0089\times10^{29}}{1.2677\times10^{30}}=0.0796$$
+      </div>
+      <div class="step" data-step="sf01b4">
+        <span class="step-title">(d) $|M|\le10\mu$：範圍變大</span>
+        <p>$-10\le2N_\uparrow-100\le10$ ⟺ $45\le N_\uparrow\le55$，共 11 個巨觀態：</p>
+        $$P(|M|\le10\mu)=\frac{1}{2^{100}}\sum_{n=45}^{55}\binom{100}n$$
+        <p class="sub">代入（計算機）多出來的三對（45/55、46/54、47/53） $\binom{100}{47}=8.441\times10^{28}$、$\binom{100}{46}=7.347\times10^{28}$、$\binom{100}{45}=6.145\times10^{28}$（對稱的 53–55 相同），加上 (c) 的 $4.851\times10^{29}$：</p>
+        $$2\times(0.8441+0.7347+0.6145)\times10^{29}=4.387\times10^{29}$$
+        $$\sum_{n=45}^{55}\binom{100}n=4.851\times10^{29}+4.387\times10^{29}=9.238\times10^{29}$$
+        $$P(|M|\le10\mu)=\frac{9.238\times10^{29}}{1.2677\times10^{30}}=0.729$$
+      </div>
+      <div class="step" data-step="sf-01b-s5">
+        <span class="step-title">結論：巨觀態由「量得到什麼」決定</span>
+        <p>同一組 $2^{100}$ 個微觀態，巨觀態怎麼分是看<strong>我們量得到什麼</strong>。儀器越粗，每個巨觀態包含越多微觀態，「最可能的巨觀態」的機率越接近 1：剛好 $M=0$ 是 8%，$|M|\le5\mu$ 是 38%，$|M|\le10\mu$ 是 73%。這和第 3 節「巨觀態依時間尺度定義」是同一個想法。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $-100\mu$ 到 $100\mu$ 間隔 $2\mu$ 共 101 個，$M=\mu$ 不可能；(b) 1.02 倍；(c) 38.3%（剛好 0 只有 8.0%）；(d) 72.9%；巨觀態由儀器能分辨的範圍決定。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>用第 6 節的高斯形 $\Omega\propto e^{-2x^2/N}$：$\sigma=\sqrt N/2=5$。(c) 的 $N_\uparrow\in[47.5,52.5]$ 是 $\pm0.5\sigma$，$\operatorname{erf}(0.5/\sqrt2)=0.383$ ✔；(d) 是 $\pm1.1\sigma$，$\operatorname{erf}(1.1/\sqrt2)=0.729$ ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>微觀態：每個粒子都指定；巨觀態：只指定整體量；多重度 $\Omega$＝一個巨觀態包含的微觀態數。</li>
+    <li>微觀態等機率 ⟹ 巨觀態機率 $=\Omega(n)/\Omega(\text{all})$；$N$ 枚硬幣 $\Omega(N,n)=\binom Nn$，總數 $2^N$。</li>
+    <li>兩態順磁體的組合和硬幣相同，而且「向下的個數」決定總能量。</li>
+  </ol>
+</div>

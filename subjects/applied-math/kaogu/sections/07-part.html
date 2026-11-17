@@ -1,0 +1,358 @@
+<h2 id="kp-07">七、冪級數解</h2>
+<h3 id="k07-1">作業四｜逐步解答（冪級數的指標平移與遞迴式）：共用符號</h3>
+<p class="symnote">符號：$x$：自變數；$y=y(x)$：待求函數；$a_n$：冪級數中 $x^n$ 的係數；$n$：非負整數索引；$y_1,y_2$：兩個線性獨立解。</p>
+<p>統一設</p>
+<div class="math-block">$$
+y=\sum_{n=0}^{\infty}a_nx^n,
+$$</div>
+<p>則</p>
+<p class="fnote"><b>公式（逐項微分）：</b>$\dfrac{d}{dx}\sum_{n=0}^{\infty}a_nx^n=\sum_{n=1}^{\infty}na_nx^{n-1}=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n$，其中 $a_n$ 為 $x^n$ 的係數、$n$ 為非負整數索引，第二個等號是把 $n-1$ 改記為 $n$ 的指標平移；此處對 $y$ 用一次得 $y'$，對 $y'$ 再用一次（係數換成 $(n+1)a_{n+1}$）得 $y''$。</p>
+<div class="math-block">$$
+y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n,
+$$</div>
+<div class="math-block">$$
+y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n.
+$$</div>
+<h3 id="k07-2">作業四第 1 題｜冪級數解：求兩個線性獨立解</h3>
+<p><strong>原題：</strong> Solve $y''+x^2y'+xy=0$.</p>
+<p><strong>中文：</strong> 利用冪級數法解此方程，並找兩個線性獨立解。</p>
+<p><strong>① 代入冪級數：</strong> 寫出 $y,y',y''$ 的級數，再把 $x^2y'$、$xy$ 平移成 $x^n$ 的形式，三個級數才能逐項合併。</p>
+<p class="fnote"><b>公式（逐項微分）：</b>$\dfrac{d}{dx}\sum_{n=0}^{\infty}a_nx^n=\sum_{n=1}^{\infty}na_nx^{n-1}=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n$，其中 $a_n$ 為 $x^n$ 的係數、$n$ 為非負整數索引，第二個等號是把 $n-1$ 改記為 $n$ 的指標平移；本題對 $y$ 用一次得 $y'$，對 $y'$ 再用一次得 $y''$。</p>
+<div class="math-block">$$
+y=\sum_{n=0}^{\infty}a_nx^n,
+\quad
+y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n,
+\quad
+y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n.
+$$</div>
+<p class="symnote">符號：$a_n$：冪級數中 $x^n$ 的係數；$n$：非負整數索引；下文 $k$：另一個索引，$k=n-1$。</p>
+<p>對 $x^2y'$：</p>
+<div class="math-block">$$
+x^2y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^{n+2}.
+$$</div>
+<p>令 $n+2\to n$，得</p>
+<p class="fnote"><b>公式（指標平移）：</b>$\sum_{n=0}^{\infty}c_nx^{n+m}=\sum_{n=m}^{\infty}c_{n-m}x^n$，其中 $c_n$ 為第 $n$ 項的係數、$m$ 為正整數，做法是把 $n+m$ 改記為 $n$；本題 $c_n=(n+1)a_{n+1}$、$m=2$，故 $c_{n-2}=(n-1)a_{n-1}$；下方 $xy$ 同理取 $c_n=a_n$、$m=1$。</p>
+<div class="math-block">$$
+\boxed{x^2y'=\sum_{n=2}^{\infty}(n-1)a_{n-1}x^n}.
+$$</div>
+<p>另外</p>
+<div class="math-block">$$
+xy=\sum_{n=0}^{\infty}a_nx^{n+1}
+=\boxed{\sum_{n=1}^{\infty}a_{n-1}x^n}.
+$$</div>
+<p>代回原方程：</p>
+<div class="math-block">$$
+\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n
++\sum_{n=2}^{\infty}(n-1)a_{n-1}x^n
++\sum_{n=1}^{\infty}a_{n-1}x^n=0.
+$$</div>
+<p><strong>② 比較低次項：</strong> 三個級數起點不同（$n=0,2,1$），$x^0$、$x^1$ 要先單獨處理。</p>
+<p>$x^0$ 項：</p>
+<p class="fnote"><b>公式（係數比較）：</b>若 $\sum_{n=0}^{\infty}c_nx^n=0$ 對 $x=0$ 附近所有 $x$ 都成立，則每個 $c_n=0$，其中 $c_n$ 為所有級數合併後 $x^n$ 的總係數；本題取 $n=0,1$ 得低次項條件，一般 $n$ 得下一步的遞迴式。</p>
+<div class="math-block">$$
+2a_2=0
+\Rightarrow
+\boxed{a_2=0}.
+$$</div>
+<p>$x^1$ 項：</p>
+<div class="math-block">$$
+6a_3+a_0=0
+\Rightarrow
+\boxed{a_3=-\frac16a_0}.
+$$</div>
+<p><strong>③ 一般遞迴式：</strong> 對 $n\ge1$ 合併 $x^n$ 的係數並解出 $a_{n+2}$。</p>
+<div class="math-block">$$
+(n+2)(n+1)a_{n+2}+(n-1)a_{n-1}+a_{n-1}=0.
+$$</div>
+<p>所以</p>
+<div class="math-block">$$
+(n+2)(n+1)a_{n+2}+na_{n-1}=0,
+$$</div>
+<div class="math-block">$$
+\boxed{a_{n+2}=-\frac{n}{(n+2)(n+1)}a_{n-1}}.
+$$</div>
+<p>亦可令 $k=n-1$：</p>
+<div class="math-block">$$
+\boxed{a_{k+3}=-\frac{k+1}{(k+3)(k+2)}a_k}.
+$$</div>
+<p><strong>④ 第一個解：</strong> 取 $a_0=1,a_1=0$，遞迴式每次跳 3 格，只剩 $a_0,a_3,a_6,\dots$。</p>
+<div class="math-block">$$
+a_0=1,\qquad a_1=0,\qquad a_2=0.
+$$</div>
+<div class="math-block">$$
+a_3=-\frac{1}{3\cdot2}a_0=-\frac16,
+$$</div>
+<div class="math-block">$$
+a_6=-\frac{4}{6\cdot5}a_3
+=-\frac4{30}\left(-\frac16\right)
+=\frac1{45}.
+$$</div>
+<div class="math-block">$$
+\boxed{y_1(x)=1-\frac16x^3+\frac1{45}x^6-\cdots}.
+$$</div>
+<p><strong>⑤ 第二個解：</strong> 取 $a_0=0,a_1=1$，只剩 $a_1,a_4,a_7,\dots$。</p>
+<div class="math-block">$$
+a_0=0,\qquad a_1=1,\qquad a_2=0.
+$$</div>
+<div class="math-block">$$
+a_4=-\frac{2}{4\cdot3}a_1=-\frac16,
+$$</div>
+<div class="math-block">$$
+a_7=-\frac{5}{7\cdot6}a_4
+=-\frac5{42}\left(-\frac16\right)
+=\frac5{252}.
+$$</div>
+<div class="math-block">$$
+\boxed{y_2(x)=x-\frac16x^4+\frac5{252}x^7-\cdots}.
+$$</div>
+<p><strong>⑥ 說明線性獨立並寫通解：</strong> 用 $x=0$ 的初值算 Wronskian。</p>
+<p class="fnote"><b>公式（Wronskian 判別）：</b>$W(y_1,y_2)(x)=y_1y_2'-y_1'y_2$，若在某點 $x_0$ 有 $W(x_0)\ne0$，則 $y_1,y_2$ 線性獨立，其中 $y_1,y_2$ 為方程的兩個解、$y_1',y_2'$ 為其導數；本題取 $x_0=0$，$W(0)=1\cdot1-0\cdot0=1\ne0$。</p>
+<div class="math-block">$$
+y_1(0)=1,\ y_1'(0)=0,
+\qquad
+y_2(0)=0,\ y_2'(0)=1,
+$$</div>
+<p>故兩者線性獨立，通解為</p>
+<div class="math-block">$$
+\boxed{y=C_1y_1+C_2y_2}.
+$$</div>
+<p class="symnote">符號：$C_1,C_2$：任意常數。</p>
+<h3 id="k07-3">作業四第 2 題｜冪級數解：依提示取兩組初值</h3>
+<p><strong>原題：</strong> Solve $y''+(x^3+1)y'-y=0$.</p>
+<p><strong>中文：</strong> 利用冪級數法解此方程，並依題目提示取兩組 $(a_0,a_1)$ 求兩個線性獨立解。</p>
+<p><strong>① 代入冪級數：</strong> 把方程拆成 $y''+x^3y'+y'-y=0$，只有 $x^3y'$ 需要平移。</p>
+<p class="fnote"><b>公式（逐項微分）：</b>$\dfrac{d}{dx}\sum_{n=0}^{\infty}a_nx^n=\sum_{n=1}^{\infty}na_nx^{n-1}=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n$，其中 $a_n$ 為 $x^n$ 的係數、$n$ 為非負整數索引，第二個等號是把 $n-1$ 改記為 $n$ 的指標平移；本題對 $y$ 用一次得 $y'$，對 $y'$ 再用一次得 $y''$。</p>
+<div class="math-block">$$
+y=\sum_{n=0}^{\infty}a_nx^n,
+\quad
+y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n,
+\quad
+y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n.
+$$</div>
+<p class="symnote">符號：$y_1,y_2$：兩個線性獨立解（分別取 $a_0=1,a_1=0$ 與 $a_0=0,a_1=1$）。</p>
+<div class="math-block">$$
+y''+x^3y'+y'-y=0.
+$$</div>
+<div class="math-block">$$
+x^3y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^{n+3}.
+$$</div>
+<p>令 $n+3\to n$：</p>
+<p class="fnote"><b>公式（指標平移）：</b>$\sum_{n=0}^{\infty}c_nx^{n+m}=\sum_{n=m}^{\infty}c_{n-m}x^n$，其中 $c_n$ 為第 $n$ 項的係數、$m$ 為正整數，做法是把 $n+m$ 改記為 $n$；本題 $c_n=(n+1)a_{n+1}$、$m=3$，故 $c_{n-3}=(n-2)a_{n-2}$。</p>
+<div class="math-block">$$
+\boxed{x^3y'=\sum_{n=3}^{\infty}(n-2)a_{n-2}x^n}.
+$$</div>
+<p>所以</p>
+<div class="math-block">$$
+\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n
++\sum_{n=3}^{\infty}(n-2)a_{n-2}x^n
++\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n
+-\sum_{n=0}^{\infty}a_nx^n=0.
+$$</div>
+<p><strong>② 比較低次項：</strong> $x^3y'$ 從 $x^3$ 才開始，所以 $x^0,x^1,x^2$ 要先分開比較。</p>
+<p>$x^0$：</p>
+<p class="fnote"><b>公式（係數比較）：</b>若 $\sum_{n=0}^{\infty}c_nx^n=0$ 對 $x=0$ 附近所有 $x$ 都成立，則每個 $c_n=0$，其中 $c_n$ 為所有級數合併後 $x^n$ 的總係數；本題取 $n=0,1,2$ 得低次項條件，$n\ge3$ 得下一步的遞迴式。</p>
+<div class="math-block">$$
+2a_2+a_1-a_0=0
+\Rightarrow
+\boxed{a_2=\frac{a_0-a_1}{2}}.
+$$</div>
+<p>$x^1$：</p>
+<div class="math-block">$$
+6a_3+2a_2-a_1=0
+\Rightarrow
+\boxed{a_3=\frac{a_1-2a_2}{6}}.
+$$</div>
+<p>$x^2$：</p>
+<div class="math-block">$$
+12a_4+3a_3-a_2=0
+\Rightarrow
+\boxed{a_4=\frac{a_2-3a_3}{12}}.
+$$</div>
+<p><strong>③ 一般遞迴式：</strong> 對 $n\ge3$ 四個級數都有項，合併後解出 $a_{n+2}$。</p>
+<div class="math-block">$$
+(n+2)(n+1)a_{n+2}
++(n-2)a_{n-2}
++(n+1)a_{n+1}
+-a_n=0.
+$$</div>
+<div class="math-block">$$
+\boxed{
+a_{n+2}
+=
+\frac{a_n-(n+1)a_{n+1}-(n-2)a_{n-2}}
+{(n+2)(n+1)}
+}.
+$$</div>
+<p><strong>④ 第一組 $a_0=1,a_1=0$：</strong> 依序代入低次項公式。</p>
+<div class="math-block">$$
+a_2=\frac{1-0}{2}=\frac12.
+$$</div>
+<div class="math-block">$$
+a_3=\frac{0-2(1/2)}6=-\frac16.
+$$</div>
+<div class="math-block">$$
+a_4=\frac{\frac12-3(-\frac16)}{12}
+=\frac{1}{12}.
+$$</div>
+<div class="math-block">$$
+\boxed{y_1(x)=1+\frac12x^2-\frac16x^3+\frac1{12}x^4-\cdots}.
+$$</div>
+<p><strong>⑤ 第二組 $a_0=0,a_1=1$：</strong> 同樣代入。</p>
+<div class="math-block">$$
+a_2=\frac{0-1}{2}=-\frac12.
+$$</div>
+<div class="math-block">$$
+a_3=\frac{1-2(-1/2)}6=\frac13.
+$$</div>
+<div class="math-block">$$
+a_4=\frac{-\frac12-3(\frac13)}{12}=-\frac18.
+$$</div>
+<div class="math-block">$$
+\boxed{y_2(x)=x-\frac12x^2+\frac13x^3-\frac18x^4-\cdots}.
+$$</div>
+<p><strong>⑥ 說明線性獨立：</strong> 用 $x=0$ 的初值算 Wronskian。</p>
+<p class="fnote"><b>公式（Wronskian 判別）：</b>$W(y_1,y_2)(x)=y_1y_2'-y_1'y_2$，若在某點 $x_0$ 有 $W(x_0)\ne0$，則 $y_1,y_2$ 線性獨立，其中 $y_1,y_2$ 為方程的兩個解、$y_1',y_2'$ 為其導數；本題取 $x_0=0$，$W(0)=1\cdot1-0\cdot0=1\ne0$。</p>
+<div class="math-block">$$
+y_1(0)=1,\ y_1'(0)=0,
+\qquad
+y_2(0)=0,\ y_2'(0)=1,
+$$</div>
+<p>所以兩解線性獨立。</p>
+<h3 id="k07-4">作業四第 3 題｜冪級數解：初值問題</h3>
+<p><strong>原題：</strong> Solve $(x-1)y''-xy'+y=0$, with $y(0)=-2$, $y'(0)=6$.</p>
+<p><strong>中文：</strong> 利用冪級數法求滿足給定初始條件的解。</p>
+<p><strong>① 初始條件先決定 $a_0,a_1$：</strong> 冪級數在 $x=0$ 的前兩個係數就是 $y(0)$、$y'(0)$。</p>
+<div class="math-block">$$
+y=\sum_{n=0}^{\infty}a_nx^n.
+$$</div>
+<p class="symnote">符號：$y(0)$、$y'(0)$：$x=0$ 時的函數值與導數值。</p>
+<p class="fnote"><b>公式（Taylor 係數）：</b>$y=\sum_{n=0}^{\infty}a_nx^n$ 時 $a_n=\dfrac{y^{(n)}(0)}{n!}$，其中 $y^{(n)}(0)$ 為 $y$ 在 $x=0$ 的第 $n$ 階導數、$n!$ 為 $n$ 的階乘（$0!=1$）；本題 $n=0$ 得 $a_0=y(0)$，$n=1$ 得 $a_1=y'(0)$。</p>
+<div class="math-block">$$
+y(0)=a_0,
+$$</div>
+<div class="math-block">$$
+\boxed{a_0=-2}.
+$$</div>
+<p class="fnote"><b>公式（逐項微分）：</b>$\dfrac{d}{dx}\sum_{n=0}^{\infty}a_nx^n=\sum_{n=1}^{\infty}na_nx^{n-1}=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n$，其中 $a_n$ 為 $x^n$ 的係數、$n$ 為非負整數索引，第二個等號是把 $n-1$ 改記為 $n$ 的指標平移；本題用一次得 $y'$，再用一次得下文的 $y''$。</p>
+<div class="math-block">$$
+y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n,
+$$</div>
+<div class="math-block">$$
+y'(0)=a_1
+\Rightarrow
+\boxed{a_1=6}.
+$$</div>
+<p><strong>② 改寫原方程：</strong> 把 $(x-1)y''$ 拆開，$xy''$ 與 $xy'$ 各平移一格。</p>
+<div class="math-block">$$
+(x-1)y''-xy'+y=0
+$$</div>
+<p>寫成</p>
+<div class="math-block">$$
+xy''-y''-xy'+y=0.
+$$</div>
+<p>其中</p>
+<div class="math-block">$$
+y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n.
+$$</div>
+<p class="fnote"><b>公式（指標平移）：</b>$\sum_{n=0}^{\infty}c_nx^{n+m}=\sum_{n=m}^{\infty}c_{n-m}x^n$，其中 $c_n$ 為第 $n$ 項的係數、$m$ 為正整數，做法是把 $n+m$ 改記為 $n$；本題 $c_n=(n+2)(n+1)a_{n+2}$、$m=1$，故 $c_{n-1}=(n+1)na_{n+1}$；下方 $xy'$ 同理取 $c_n=(n+1)a_{n+1}$、$m=1$。</p>
+<div class="math-block">$$
+xy''
+=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^{n+1}
+=\boxed{\sum_{n=1}^{\infty}n(n+1)a_{n+1}x^n}.
+$$</div>
+<div class="math-block">$$
+xy'
+=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^{n+1}
+=\boxed{\sum_{n=1}^{\infty}na_nx^n}.
+$$</div>
+<p>代回：</p>
+<div class="math-block">$$
+\sum_{n=1}^{\infty}n(n+1)a_{n+1}x^n
+-\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n
+-\sum_{n=1}^{\infty}na_nx^n
++\sum_{n=0}^{\infty}a_nx^n
+=0.
+$$</div>
+<p><strong>③ 比較 $x^0$：</strong> 只有 $-y''$ 與 $y$ 兩個級數有常數項。</p>
+<p class="fnote"><b>公式（係數比較）：</b>若 $\sum_{n=0}^{\infty}c_nx^n=0$ 對 $x=0$ 附近所有 $x$ 都成立，則每個 $c_n=0$，其中 $c_n$ 為所有級數合併後 $x^n$ 的總係數；本題取 $n=0$ 得 $a_2$，$n\ge1$ 得下一步的遞迴式。</p>
+<div class="math-block">$$
+-2a_2+a_0=0.
+$$</div>
+<div class="math-block">$$
+a_2=\frac{a_0}{2}=-1.
+$$</div>
+<div class="math-block">$$
+\boxed{a_2=-1}.
+$$</div>
+<p><strong>④ 一般遞迴式：</strong> 對 $n\ge1$ 合併 $x^n$ 係數，再解出 $a_{n+2}$。</p>
+<div class="math-block">$$
+n(n+1)a_{n+1}
+-(n+2)(n+1)a_{n+2}
+-na_n+a_n=0.
+$$</div>
+<p>整理：</p>
+<div class="math-block">$$
+n(n+1)a_{n+1}
+-(n+2)(n+1)a_{n+2}
++(1-n)a_n=0.
+$$</div>
+<p>移項：</p>
+<div class="math-block">$$
+(n+2)(n+1)a_{n+2}
+=n(n+1)a_{n+1}-(n-1)a_n.
+$$</div>
+<div class="math-block">$$
+\boxed{
+a_{n+2}
+=
+\frac{n}{n+2}a_{n+1}
+-
+\frac{n-1}{(n+2)(n+1)}a_n
+}.
+$$</div>
+<p><strong>⑤ 算出前幾個係數：</strong> 依序令 $n=1,2$。</p>
+<p>令 $n=1$：</p>
+<div class="math-block">$$
+a_3
+=\frac13a_2-\frac0{6}a_1
+=\frac13(-1)
+=-\frac13.
+$$</div>
+<div class="math-block">$$
+\boxed{a_3=-\frac13}.
+$$</div>
+<p>令 $n=2$：</p>
+<div class="math-block">$$
+a_4
+=\frac24a_3-\frac1{12}a_2
+=\frac12\left(-\frac13\right)-\frac1{12}(-1).
+$$</div>
+<div class="math-block">$$
+a_4=-\frac16+\frac1{12}=-\frac1{12}.
+$$</div>
+<div class="math-block">$$
+\boxed{a_4=-\frac1{12}}.
+$$</div>
+<p><strong>⑥ 寫出級數解：</strong> 代回係數，並提出 $-2$ 整理成題目附答形式。</p>
+<div class="math-block">$$
+y=-2+6x-x^2-\frac13x^3-\frac1{12}x^4-\cdots.
+$$</div>
+<p>提出 $-2$：</p>
+<div class="math-block">$$
+y=-2\left(1+\frac12x^2+\frac16x^3+\frac1{24}x^4+\cdots\right)+6x.
+$$</div>
+<div class="math-block">$$
+\boxed{
+y=-2\left(1+\frac12x^2+\frac16x^3+\cdots\right)+6x
+}.
+$$</div>
+<p><strong>⑦ 辨認閉式（補充）：</strong> 括號內的係數是 $1/n!$，正好是 $e^x$ 少了 $x$ 項。</p>
+<p class="fnote"><b>公式（指數函數 Maclaurin 級數）：</b>$e^x=\sum_{n=0}^{\infty}\dfrac{x^n}{n!}$，對所有實數 $x$ 收斂，其中 $n!$ 為 $n$ 的階乘（$0!=1$）；本題對照 $\dfrac1{2!}=\dfrac12$、$\dfrac1{3!}=\dfrac16$、$\dfrac1{4!}=\dfrac1{24}$，括號內正是 $e^x$ 少了 $x$ 項。</p>
+<div class="math-block">$$
+e^x=1+x+\frac12x^2+\frac16x^3+\frac1{24}x^4+\cdots,
+$$</div>
+<p>括號內為 $e^x-x$，所以也可寫成</p>
+<div class="math-block">$$
+\boxed{y=-2e^x+8x}.
+$$</div>
+<p><strong>注意：</strong> 這個閉式是由級數辨認出的補充形式；題目本身列的是冪級數答案。</p>

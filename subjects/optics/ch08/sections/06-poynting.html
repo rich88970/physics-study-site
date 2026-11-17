@@ -1,0 +1,180 @@
+<h2>六、瞬時與時間平均坡印廷向量 <span class="must teacher">老師：一定會考</span> <span class="pg">講義 chp8 第 10 頁</span></h2>
+
+<p class="lead">坡印廷向量 $\vec S$ 描述能量往哪裡流、流多快。逐字稿 01:25：「它的坡印廷向量：<strong>瞬時坡印廷向量</strong>是多少，平均——<strong>時間平均的坡印廷向量</strong>是多少」，02:05「這是一個重點，一定會考。我跟你講，一定會考。」考古題：李孟恩課程資料夾的 5 份期中考每一份都要寫瞬時 $\vec S$ 的完整表示<span class="must exam">考古高頻 5/5</span>。</p>
+
+<h3 id="o8-s06-def">6.1 講義：坡印廷向量 <span class="pg-tag">第 10 頁</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">講義 · chp8 第 10 頁（Poynting vector）</span>
+  <p>Figure 8-8 Energy flow of an electromagnetic wave. In time $\Delta t$, the energy enclosed in the rectangular volume flows across the surface $A$. … The power transferred per unit area,</p>
+  $$S=uc=\sqrt u\sqrt u\,c=\left(\sqrt{\epsilon_0}E\right)\left(\frac{1}{\sqrt{\mu_0}}B\right)c=\frac{\epsilon_0E}{\sqrt{\epsilon_0}}\cdot\frac{1}{\sqrt{\mu_0}}B\cdot c=\epsilon_0c^2EB$$
+  <p>The power per unit area, $S$, when assigned the direction of propagation, is called the Poynting vector.</p>
+  $$\vec S=\epsilon_0c^2\,\vec E\times\vec B\qquad\text{— a rapidly varying function of time}$$
+  <p>In most cases a time average of the power delivered per unit area is all that required. This quantity is called the irradiance, $E_e$: $E_e=\langle\|\vec S\|\rangle=\tfrac12\epsilon_0c^2E_0B_0$.</p>
+</div>
+
+<div class="step" data-step="o8-s06-real" data-sym="S,phi">
+  <span class="step-title">瞬時值：物理上的 $\vec S$</span>
+  <p>真正的場是實部：$\vec E=E_0\hat e\cos\varphi$、$\vec B=B_0\hat b\cos\varphi$，$\varphi=\vec k\cdot\vec r-\omega t$。因為 $\hat e\times\hat b=\hat k$：</p>
+  $$\vec S(\vec r,t)=\epsilon_0c_0^2E_0B_0\cos^2(\vec k\cdot\vec r-\omega t)\,\hat k=\tfrac12\epsilon_0c_0^2E_0B_0\left[1+\cos2(\vec k\cdot\vec r-\omega t)\right]\hat k$$
+  <p>它在 $0$ 到 $\epsilon_0c_0^2E_0B_0$ 之間以 $2\omega$ 振盪（講義說的 rapidly varying），方向永遠是 $\hat k$。介質中 $\epsilon c^2=(n^2\epsilon_0)(c_0/n)^2=\epsilon_0c_0^2$，所以係數不變。</p>
+</div>
+
+<div class="step" data-step="o8-s06-avg" data-sym="Ee">
+  <span class="step-title">時間平均：照度</span>
+  <p>$\langle\cos^2\varphi\rangle=\tfrac12$，所以</p>
+  $$\langle\vec S\rangle=\tfrac12\epsilon_0c_0^2E_0B_0\,\hat k=E_e\,\hat k,\qquad E_e=\tfrac12\epsilon_0c_0^2E_0B_0=\tfrac12n\epsilon_0c_0E_0^2$$
+  <p>記法：<strong>照度 = 瞬時 $\vec S$ 振幅的一半</strong>。</p>
+</div>
+
+<div class="box idea exam-style">
+  <span class="box-title">考卷要的「瞬時 Poynting 向量的指數型態」怎麼寫</span>
+  <p>題目問的是「瞬時 Poynting 向量的<strong>指數型態</strong>表示式」。建議兩行並寫：</p>
+  $$\vec S(\vec r,t)=\epsilon_0c_0^2E_0B_0\cos^2(\vec k\cdot\vec r-\omega t)\,\hat k\ \ \text{W/m}^2\quad(\text{物理值})$$
+  $$\text{指數型態：}\ \vec S=\epsilon_0c_0^2E_0B_0\;\hat k\;e^{2i(\vec k\cdot\vec r-\omega t)}\ \ \text{W/m}^2$$
+  <p>第一行是真正的瞬時能流，和老師講義第 10 頁的寫法 $\epsilon_0c^2E_0B_0\sin^2(\vec k\cdot\vec r\pm\omega t)$ 一致（講義用 $\sin$ 波，本站用 $\cos$ 波，只差一個相位）。第二行是 2022 年期中考詳解和一份 2024 年滿分答案卷的寫法：振幅 $\epsilon_0c_0^2E_0B_0$ × 方向 $\hat k$ × 把 $\vec E$、$\vec B$ 的兩個指數相乘。歷屆看起來老師接受第二行，但證據只有這兩份，所以最好兩行都寫。</p>
+  <p>要知道第二行<strong>不是</strong>物理上的瞬時值：它的實部是 $\epsilon_0c_0^2E_0B_0\cos2\varphi$，在正負之間振盪，等於說有一半時間能量往回流；真正的瞬時值是 $\epsilon_0c_0^2E_0B_0\cos^2\varphi=\tfrac12\epsilon_0c_0^2E_0B_0(1+\cos2\varphi)$，永遠 $\ge0$。兩者除了常數項，振盪部分的振幅也差 2 倍。所以<strong>不要用指數式去算時間平均</strong>（$\langle\cos2\varphi\rangle=0$）；時間平均一律用「振幅的一半」。第 7 節各題的答案只寫指數型態以免太長，考試時請在前面補上 $\cos^2$ 那一行。</p>
+</div>
+
+<div class="step" data-step="o8-s06-recipe" data-sym="E0,B0,k,w">
+  <span class="step-title">完整表示題的固定六步（第 7 節每題都照這個順序）</span>
+  <ol>
+    <li>$\omega=2\pi\nu$，$k=2\pi n\nu/c_0$（或 $2\pi/\lambda$）。</li>
+    <li>從圖讀 $\hat k$（先換成從 $+x$ 量起的角度）。</li>
+    <li>$E_0$：題目給就用；給照度用 $\sqrt{2E_e/n\epsilon_0c_0}$；給 $B_0$ 用 $E_0=(c_0/n)B_0$。$B_0=nE_0/c_0$。</li>
+    <li>方向：給 $\hat e$ 用 $\hat b=\hat k\times\hat e$；給 $\hat b$ 用 $\hat e=\hat b\times\hat k$。檢查 $\hat k\cdot\hat e=0$。</li>
+    <li>寫 $\vec E$、$\vec B$：振幅 × 方向 × $e^{i(\vec k\cdot\vec r-\omega t)}$ × 單位。</li>
+    <li>$\vec S=\epsilon_0c_0^2E_0B_0\cos^2(\cdots)\,\hat k$（物理值），指數型態 $\epsilon_0c_0^2E_0B_0\hat k\,e^{2i(\cdots)}$；照度 $=\tfrac12\epsilon_0c_0^2E_0B_0$。</li>
+  </ol>
+</div>
+
+<p>課程資料夾的考古題（2018、2022、2024、2025 期中考）在<a href="#o8-x18">第 7 節</a>，2020 球面波的 $\vec S$ 在<a href="#o8-x20">第 3 節</a>。物理考古資料夾另外還有 <a href="#o8-q12">2012</a>、<a href="#o8-q13">2013</a>、<a href="#o8-q14">2014</a> 平時考收在第 10 節，可以再多練這六步。</p>
+
+<p class="small muted">下面兩題是物理考古資料夾的舊考卷（2017 平時考、2014 期中考），不是李孟恩課程資料夾的考卷，放在這裡當本節的練習；不算進出題頻率。</p>
+
+<div class="problem" data-kind="exam" id="o8-q17">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學平時考（2017-04-12）第 2 題（105下）</span></div>
+    <h4>給介質中波長 1 mm、照度 60 W/m²、$\vec E$ 沿 $+z$ <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-q17">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-q17"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">手抄考卷照片（IMG_5542）。右圖：$\vec k$ 在 −x 軸下方 30°、指向左下；原點標 ⊙（$\vec E$ 指出紙面，+z）。</p>
+<div class="original-text" lang="en"><p>2.（30%）一平面電磁波之波向量位於 x-y 平面上，其行進方向如右圖所示。折射率為 3，$\vec E$ 方向沿 +z 方向。若傳播介質之中的波長為 1 mm，在介質其輻射照度為 60 W/m²，初始相位角為 0 rad，試求：</p><p>① 電場 $\vec E(t)$ 的完整表示（包含振幅、偏振方向、平面波的指數表示及單位）</p><p>② 磁場 $\vec B(t)$ 的完整表示（包含振幅、振動方向、平面波的指數表示及單位）</p><p>③ 瞬時 Poynting 向量的完整表示（包含振幅、方向、指數的表示及單位）</p><p>（$\epsilon_0=8.8542\times10^{-12}\ (\text{C}\cdot\text{s})^2/(\text{kg}\cdot\text{m}^3)$，$\mu_r=1$，π 不必展開）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（30%）平面電磁波的波向量在 x-y 平面（圖：$\vec k$ 在 $-x$ 軸下方 30°、向左下），折射率 3，$\vec E$ 沿 $+z$，介質中的波長 1 mm，照度 60 W/m²，初始相位 0。求 ① $\vec E(t)$；② $\vec B(t)$；③ 瞬時 Poynting 向量的完整表示。（$\epsilon_0=8.8542\times10^{-12}$、$\mu_r=1$、π 不必展開）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>傳播方向</td><td>$210^\circ$：$\hat k=(-\tfrac{\sqrt3}{2},-\tfrac12,0)$</td><td>圖：$\vec k$ 在 $-x$ 下方 30°</td></tr>
+          <tr><td>電場方向</td><td>$\hat e=+\hat z$</td><td>「$\vec E$ 方向沿 +z 方向」（圖原點的 ⊙）</td></tr>
+          <tr><td>介質中的波長</td><td>$\lambda=1\ \text{mm}=10^{-3}\ \text{m}$</td><td>「傳播介質之中的波長為 1 mm」：已是介質中的值，<b>不要再除 $n$</b></td></tr>
+          <tr><td>折射率</td><td>$n=3$</td><td>「折射率為 3」</td></tr>
+          <tr><td>照度</td><td>$E_e=60\ \text{W/m}^2$</td><td>「其輻射照度為 60 W/m²」</td></tr>
+          <tr><td>常數</td><td>$\epsilon_0=8.8542\times10^{-12}$、$c_0=3\times10^8$</td><td>題目括號；光速用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\vec E$、$\vec B$、瞬時 $\vec S$ 的完整表示。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這題給的是波長而不是頻率，<b>所以</b>$k=2\pi/\lambda$ 直接算，頻率要用 $\nu=v/\lambda=c_0/(n\lambda)$ 反推，才寫得出 $\omega t$。<b>因為</b>$\hat e=\hat z$，依 4.2 節 $\hat b=\hat k\times\hat z$＝$\hat k$ 順時針轉 90°。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-q17-s1" data-sym="k,nu,w">
+        <span class="step-title">$k$、頻率、$\omega$</span>
+        $$k=\frac{2\pi}{\lambda}=\frac{2\pi}{10^{-3}}=2000\pi\ \text{m}^{-1},\qquad\nu=\frac{c_0}{n\lambda}=\frac{3\times10^8}{3\times10^{-3}}=10^{11}\ \text{Hz},\qquad\omega=2\pi\times10^{11}\ \text{rad/s}$$
+      </div>
+      <div class="step" data-step="o8-q17-s2" data-sym="E0,Ee">
+        <span class="step-title">① 電場</span>
+        $$E_0=\sqrt{\frac{2(60)}{3(8.8542\times10^{-12})(3\times10^8)}}=\sqrt{1.506\times10^4}=122.7\ \text{V/m}$$
+        $$\begin{aligned}&\vec E=122.7\,\hat z\;\\&\quad\times e^{i\left[2000\pi\left(-\frac{\sqrt3}{2}x-\frac12y\right)-2\pi\times10^{11}t\right]}\ \text{V/m}\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-q17-s3" data-sym="B0">
+        <span class="step-title">② 磁場</span>
+        $$\hat b=\hat k\times\hat z=\left(-\tfrac12,\ \tfrac{\sqrt3}{2},\ 0\right),\qquad B_0=\frac{3(122.7)}{3\times10^8}=1.227\times10^{-6}\ \text{T}$$
+        <p>（$(a,b,0)\times\hat z=(b,-a,0)$，代入 $a=-\tfrac{\sqrt3}{2}$、$b=-\tfrac12$。）</p>
+        $$\begin{aligned}&\vec B=1.227\times10^{-6}\left(-\tfrac12\hat x+\tfrac{\sqrt3}{2}\hat y\right)\\&\quad\times e^{i\left[2000\pi\left(-\frac{\sqrt3}{2}x-\frac12y\right)-2\pi\times10^{11}t\right]}\ \text{T}\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-q17-s4" data-sym="S">
+        <span class="step-title">③ 瞬時 $\vec S$</span>
+        $$\epsilon_0c_0^2E_0B_0=(8.8542\times10^{-12})(9\times10^{16})(122.7)(1.227\times10^{-6})=120\ \text{W/m}^2$$
+        $$\begin{aligned}&\vec S=120\left(-\tfrac{\sqrt3}{2}\hat x-\tfrac12\hat y\right)\\&\quad\times e^{2i\left[2000\pi\left(-\frac{\sqrt3}{2}x-\frac12y\right)-2\pi\times10^{11}t\right]}\ \text{W/m}^2\end{aligned}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>① $\vec E=122.7\hat z\,e^{i\varphi}$ V/m；② $\vec B=1.227\times10^{-6}(-\tfrac12\hat x+\tfrac{\sqrt3}{2}\hat y)e^{i\varphi}$ T；③ $\vec S=120(-\tfrac{\sqrt3}{2}\hat x-\tfrac12\hat y)e^{2i\varphi}$ W/m²；$\varphi=2000\pi(-\tfrac{\sqrt3}{2}x-\tfrac12y)-2\pi\times10^{11}t$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$120/2=60$＝題目照度 ✔；$\hat e\times\hat b=\hat z\times(-\tfrac12,\tfrac{\sqrt3}{2},0)=(-\tfrac{\sqrt3}{2},-\tfrac12,0)=\hat k$ ✔。考卷原圖旁學生寫的 $\vec B$ 方向（左上、$\tfrac12$ 與 $\tfrac{\sqrt3}{2}$）與此相同。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o8-x14">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2014-04-23）第 1 題（102下）</span></div>
+    <h4>給 $\vec B$ 沿 $+z$ 與照度：由 $\hat e=\hat b\times\hat k$ 定電場方向 <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-x14">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-x14"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">手抄考卷照片（IMG_5579）。右圖：$\vec k$ 與 +y 軸夾 60°、指向左上；$\vec E$ 與 −y 軸夾 30°、指向左下。</p>
+<div class="original-text" lang="en"><p>1.（40%）一平面電磁波傳播方向如右圖所示，其頻率為 $5\times10^{14}$ Hz。若磁場 $\vec B$ 指向 +z 方向，介質之折射率為 2，照度為 $10^4$ W/m²，試求：</p><p>（5%）(a) 電場振幅大小（註明單位）</p><p>（5%）(b) 磁場（$\vec B$）振幅大小（註明單位）</p><p>（10%）(c) $\vec E$ 之指數型態平面波的數學表示（註明單位）</p><p>（10%）(d) $\vec B$ 之指數型態平面波的數學表示（註明單位）</p><p>（10%）(e) 瞬時 Poynting 向量之指數型態的數學表示（註明單位）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（40%）平面電磁波傳播方向如圖（$\vec k$ 與 $+y$ 軸夾 60°、向左上；$\vec E$ 與 $-y$ 軸夾 30°、向左下），頻率 $5\times10^{14}$ Hz，磁場指向 $+z$，折射率 2，照度 $10^4\ \text{W/m}^2$。求 (a) 電場振幅（5%）；(b) 磁場振幅（5%）；(c) $\vec E$ 的指數式（10%）；(d) $\vec B$ 的指數式（10%）；(e) 瞬時 Poynting 向量的指數式（10%），都要註明單位。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>傳播方向</td><td>$150^\circ$：$\hat k=(-\tfrac{\sqrt3}{2},\tfrac12,0)$</td><td>圖：$\vec k$ 從 $+y$ 往左 60°</td></tr>
+          <tr><td>磁場方向</td><td>$\hat b=+\hat z$</td><td>「磁場 $\vec B$ 指向 +z 方向」</td></tr>
+          <tr><td>電場方向</td><td>$240^\circ$：$\hat e=(-\tfrac12,-\tfrac{\sqrt3}{2},0)$</td><td>圖：$\vec E$ 從 $-y$ 往左 30°；也可由 $\hat b\times\hat k$ 算出</td></tr>
+          <tr><td>頻率、折射率、照度</td><td>$5\times10^{14}$ Hz、$n=2$、$10^4$ W/m²</td><td>題目</td></tr>
+          <tr><td>常數</td><td>$\epsilon_0=8.854\times10^{-12}$、$c_0=3\times10^8$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$E_0$、$B_0$、$\vec E$、$\vec B$、瞬時 $\vec S$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目給的是 $\hat b$，<b>所以</b>電場方向用 $\hat e=\hat b\times\hat k$ 算，再和圖比對；兩者一致才放心。振幅和 2012 平時考同一組數字（$n=2$、照度 $10^4$），所以 $E_0$、$B_0$ 相同。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-x14-s1" data-sym="E0,B0">
+        <span class="step-title">(a)(b) 振幅</span>
+        $$E_0=\sqrt{\frac{2(10^4)}{2(8.854\times10^{-12})(3\times10^8)}}=1940\ \text{V/m},\qquad B_0=\frac{2(1940)}{3\times10^8}=1.29\times10^{-5}\ \text{T}$$
+      </div>
+      <div class="step" data-step="o8-x14-s2">
+        <span class="step-title">電場方向</span>
+        $$\hat e=\hat b\times\hat k=\hat z\times\left(-\tfrac{\sqrt3}{2},\tfrac12,0\right)=\left(-\tfrac12,-\tfrac{\sqrt3}{2},0\right)$$
+        <p>（$\hat z\times(a,b,0)=(-b,a,0)$。）指向左下、和 $-y$ 夾 30°，和圖一致。</p>
+      </div>
+      <div class="step" data-step="o8-x14-s3" data-sym="k,w">
+        <span class="step-title">$k$、$\omega$、相位</span>
+        $$k=\frac{2\pi(2)(5\times10^{14})}{3\times10^8}=\frac{2\pi}{3}\times10^7\ \text{m}^{-1},\qquad\omega=2\pi(5\times10^{14})=\pi\times10^{15}$$
+        $$\varphi=\frac{2\pi}{3}\times10^7\left(-\tfrac{\sqrt3}{2}x+\tfrac12y\right)-\pi\times10^{15}t$$
+      </div>
+      <div class="step" data-step="o8-x14-s4">
+        <span class="step-title">(c)(d)(e) 三個場</span>
+        $$\vec E=1940\left(-\tfrac12\hat x-\tfrac{\sqrt3}{2}\hat y\right)e^{i\varphi}\ \text{V/m}$$
+        $$\vec B=1.29\times10^{-5}\,\hat z\,e^{i\varphi}\ \text{T}$$
+        $$\vec S=2.0\times10^4\left(-\tfrac{\sqrt3}{2}\hat x+\tfrac12\hat y\right)e^{2i\varphi}\ \text{W/m}^2$$
+        <p>（振幅 $\epsilon_0c_0^2E_0B_0=2E_e=2\times10^4$。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $1.94\times10^3$ V/m；(b) $1.29\times10^{-5}$ T；(c) $\vec E=1940(-\tfrac12\hat x-\tfrac{\sqrt3}{2}\hat y)e^{i\varphi}$ V/m；(d) $\vec B=1.29\times10^{-5}\hat z\,e^{i\varphi}$ T；(e) $\vec S=2.0\times10^4(-\tfrac{\sqrt3}{2}\hat x+\tfrac12\hat y)e^{2i\varphi}$ W/m²，$\varphi=\frac{2\pi}{3}\times10^7(-\frac{\sqrt3}{2}x+\frac12y)-\pi\times10^{15}t$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\hat e\times\hat b=(-\tfrac12,-\tfrac{\sqrt3}{2},0)\times\hat z=(-\tfrac{\sqrt3}{2},\tfrac12,0)=\hat k$ ✔；$\hat k\cdot\hat e=\tfrac{\sqrt3}{4}-\tfrac{\sqrt3}{4}=0$ ✔。</p></div>
+  </div>
+</div>
+
+
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\vec S=\epsilon_0c^2\vec E\times\vec B$，方向 $\hat k$；介質中 $\epsilon c^2=\epsilon_0c_0^2$。</li>
+    <li>瞬時：物理值 $\epsilon_0c_0^2E_0B_0\cos^2(\vec k\cdot\vec r-\omega t)\hat k$；指數型態（歷屆詳解與滿分卷）$\epsilon_0c_0^2E_0B_0\,\hat k\,e^{2i(\vec k\cdot\vec r-\omega t)}$；兩行都寫。指數式的實部會變負，不是真正的能流。</li>
+    <li>時間平均＝照度＝振幅的一半；寫完 $\vec S$ 用它檢查照度。</li>
+  </ol>
+</div>

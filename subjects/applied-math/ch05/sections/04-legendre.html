@@ -1,0 +1,399 @@
+<h2>四、應用例：Legendre 方程式與 Legendre 多項式 <span class="pg">板書 10/14 照片 8–12</span></h2>
+
+<p class="lead">10/14 最後老師講了一個「應用例」：Legendre 方程式 $(1-x^2)y''-2xy'+l(l+1)y=0$。它在 $x=0$ 是常點，直接用第 4 章的冪級數法；真正的新東西是<strong>物理條件</strong>——解在 $x=\pm1$ 不能發散。這個條件把兩串無窮級數裡的一串整個刪掉，留下的是多項式，歸一化後就是 Legendre 多項式 $P_l(x)$。114 上期末第 3 題要畫 $P_0$ 到 $P_3$ 的圖。</p>
+
+<h3 id="am5-leg-eq">4.1 方程式從哪裡來、為什麼可以用冪級數 <span class="pg-tag">照片 8</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 8 左半）</span>
+  <p>應用例：Legendre's Eq（Legendre's poly）</p>
+  $$(1-x^2)y''-2xy'+l(l+1)y=0,\qquad l=0,1,2,\dots,\qquad -1\le x\le1$$
+  <p>PDE ⟶ 聯立 ODE：$(x,y,z,t)$ → $x$、$y$、$z$、$t$；球 $(r,\theta,\phi,t)$ → $r$、$\theta$ ✓、$\phi$、$t$</p>
+  <p>與標準式比較：$P(x)=\dfrac{-2x}{1-x^2}$，$Q(x)=\dfrac{l(l+1)}{1-x^2}$；$\displaystyle\lim_{x\to0}P(x)$、$\displaystyle\lim_{x\to0}Q(x)$ 皆收斂</p>
+</div>
+
+<div class="step" data-step="am5-leg-s1" data-sym="ll">
+  <span class="step-title">「PDE → 聯立 ODE」在說什麼 <span class="added">網站補充</span></span>
+  <p>板書左下角是預告：之後要解的偏微分方程式（例如 Laplace 方程式 $\nabla^2u=0$）用分離變數法會拆成好幾個常微分方程式，每個座標一個。直角座標拆出來的都是常係數方程式；球座標 $(r,\theta,\phi)$ 拆出的 $\theta$ 方程式，令 $x=\cos\theta$ 後就是 Legendre 方程式（板書在 $\theta$ 旁打勾）。$\theta$ 從 $0$ 到 $\pi$，所以 $x=\cos\theta$ 從 $1$ 到 $-1$，這就是 $-1\le x\le1$ 的由來；$x=\pm1$ 是球的北極與南極，物理量在那裡必須有限。</p>
+</div>
+
+<p>判斷：$P$、$Q$ 的分母 $1-x^2$ 在 $x=0$ 等於 1，$x=0$ 是<b>常點</b>（板書「皆收斂」），所以不用 Frobenius，令 $y=\sum a_nx^n$ 就好。奇點在 $x=\pm1$，冪級數保證在 $|x|\lt1$ 收斂——端點 $x=\pm1$ 正好落在邊界上，收不收斂要另外看，這就是 4.3 節的重點。</p>
+
+<h3 id="am5-leg-rec">4.2 遞迴關係與兩串級數 <span class="pg-tag">照片 8–9</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 8 右半）</span>
+  <p>此是可用 power series solution 求解，let $y=\displaystyle\sum_{n=0}^{\infty}a_nx^n$，得 Recurrence Relation</p>
+  $$\boxed{(n+2)(n+1)a_{n+2}=(n+l+1)(n-l)\,a_n}$$
+  <p>$a_0=$ 待定，$a_1=$ 待定，$a_2=-\dfrac{(l+1)l}{2!}a_0$，$a_3=-\dfrac{(l+2)(l-1)}{3!}a_1$，$a_4=\dfrac{(l+3)(l-2)(l+1)l}{4!}a_0$，$a_5=\dfrac{(l+4)(l-3)(l+2)(l-1)}{5!}a_1$，⋯</p>
+</div>
+
+<div class="step" data-step="am5-leg-s2" data-sym="an">
+  <span class="step-title">遞迴怎麼來的 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>板書只寫「得 Recurrence Relation」。代入 $y=\sum a_nx^n$：$y''$ 平移成 $\sum(n+2)(n+1)a_{n+2}x^n$；$-x^2y''=-\sum n(n-1)a_nx^n$、$-2xy'=-\sum2na_nx^n$、$l(l+1)y=\sum l(l+1)a_nx^n$ 都已經是 $x^n$：</p>
+  $$(n+2)(n+1)a_{n+2}-\big[n(n-1)+2n-l(l+1)\big]a_n=0,\qquad n(n+1)-l(l+1)=(n-l)(n+l+1)$$
+  <p>最後一步是平方差式的因式分解：$n^2-l^2+n-l=(n-l)(n+l)+(n-l)=(n-l)(n+l+1)$。</p>
+</div>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 9 左半）</span>
+  <p>$y=\displaystyle\sum_{n=0}^{\infty}a_nx^n=a_0+a_1x+a_2x^2+a_3x^3+\cdots$，$l=0,1,2,\dots$</p>
+  $$\begin{aligned}y&=a_0\Big[1-\frac{(l+1)l}{2!}x^2\\&\quad+\frac{(l+3)(l-2)(l+1)l}{4!}x^4-+\cdots\Big]\\&+a_1\Big[x-\frac{(l+2)(l-1)}{3!}x^3\\&\quad+\frac{(l+4)(l-3)(l+2)(l-1)}{5!}x^5-+\cdots\Big]\end{aligned}$$
+  <p>（$a_0$ 的中括號標 even，$a_1$ 的中括號標 odd）</p>
+  <p>$y$ 是否滿足物理的邊界條件　$\underline{x=\pm1}$，$y$ 不能發散！</p>
+</div>
+
+<p>分子的因子 $(n-l)$ 是關鍵：當 $l$ 是非負整數，和 $l$ 同奇偶的那一串走到 $n=l$ 時 $a_{l+2}=0$，之後全為零——<b>截斷成 $l$ 次多項式</b>；另一串的 $(n-l)$ 永遠不為零，是無窮級數。</p>
+
+<h3 id="am5-leg-phys">4.3 物理解：$x=\pm1$ 不能發散 <span class="pg-tag">照片 9–10</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 9 右半、照片 10）</span>
+  <p>※以 $l=0$ 為例：$y_{l=0}=a_0+a_1\Big[x-\dfrac13x^3+\dfrac15x^5-+\cdots\Big]$　Ratio test：$|x|\lt1$</p>
+  <p>$x=1$：$S=1-\dfrac13+\dfrac15-\dfrac17+\cdots$　comparison test　$S\to\infty$</p>
+  <p>要求 $a_1=0$，讓 $y$ 成為物理解；$y_{l=0}=a_0$ 可滿足 $-1\le x\le1$ 內的物理解</p>
+  <p>考慮 $l=1$，$y_{l=1}$ 的物理解？$y_{l=1}=a_0\Big[1-x^2+\dfrac13x^4-\dfrac15x^6+\cdots\Big]+a_1x$</p>
+  <p>∵ even 部分在 $x=\pm1$ 發散　∴ 選擇 $a_0=0$，使得 $y_{l=1}$ 在 $-1\le x\le1$ 有物理解：$y_{l=1}=a_1x$</p>
+</div>
+
+<div class="step" data-step="am5-leg-s3">
+  <span class="step-title">板書的正負號誤植 <span class="added">板書誤植，網站更正</span></span>
+  <p>照片 9、10 的兩串級數都寫成正負交錯，但用板書自己的遞迴算，<b>它們全是同號</b>：</p>
+  <p class="sub">$l=0$ 的奇數串：$a_{n+2}=\dfrac{n(n+1)}{(n+2)(n+1)}a_n=\dfrac{n}{n+2}a_n$（$n=1,3,5$）：</p>
+  $$a_3=\tfrac13a_1,\ a_5=\tfrac35a_3=\tfrac15a_1,\ a_7=\tfrac17a_1\quad\Longrightarrow\quad x+\frac{x^3}3+\frac{x^5}5+\cdots=\frac12\ln\frac{1+x}{1-x}$$
+  <p class="sub">$l=1$ 的偶數串：$a_{n+2}=\dfrac{(n-1)(n+2)}{(n+2)(n+1)}a_n=\dfrac{n-1}{n+1}a_n$（$n=0,2,4$）：</p>
+  $$a_2=-a_0,\ a_4=\tfrac13a_2=-\tfrac13a_0,\ a_6=\tfrac35a_4=-\tfrac15a_0\quad\Longrightarrow\quad1-x^2-\frac{x^4}3-\frac{x^6}5-\cdots=1-\frac x2\ln\frac{1+x}{1-x}$$
+  <p>板書的結論（$S\to\infty$、必須刪掉那一串）是對的，但寫成交錯號會自相矛盾：$1-\tfrac13+\tfrac15-\cdots=\tfrac\pi4$ 是<b>收斂</b>的交錯級數。正確的 $S=1+\tfrac13+\tfrac15+\tfrac17+\cdots$ 每一項都 $\ge\tfrac12\cdot\tfrac1n$，和調和級數比較（comparison test）才得到發散。$\tfrac12\ln\tfrac{1+x}{1-x}$ 在 $x\to1$ 趨近無限大，和這個結論一致。</p>
+</div>
+
+<div class="step" data-step="am5-leg-s4">
+  <span class="step-title">一般的 $l$ <span class="added">網站補充</span></span>
+  <p>不截斷的那一串，$n$ 很大時 $\dfrac{a_{n+2}}{a_n}=\dfrac{(n-l)(n+l+1)}{(n+2)(n+1)}\approx1-\dfrac2n$，係數大約像 $\tfrac{C}{n}$，在 $x=\pm1$ 就像 $\sum\tfrac1n$ 一樣發散。所以對每個非負整數 $l$：<b>物理解只能是截斷的那串多項式</b>，另一串的待定係數必須取 0。</p>
+</div>
+
+<h3 id="am5-leg-poly">4.4 Legendre 多項式：歸一化 $P_l(1)=1$ <span class="pg-tag">照片 11</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 11）</span>
+  <p>物理解：$l=0$：$y_{l=0}\propto1$；$l=1$：$y_{l=1}\propto x$；$l=2$：$y_{l=2}\propto(1-3x^2)$；$l=3$：$y_{l=3}\propto(3x-5x^3)$；⋮</p>
+  <p>要求 $y_l(x=1)=\underline{1}$ → Legendre's Polynomials</p>
+  <p>$l=0$：$P_0(x)=1$（0 階）；$l=1$：$P_1(x)=x$（1 階）；$l=2$：$P_2(x)=\tfrac12(3x^2-1)$；$l=3$：$P_3(x)=\tfrac12(5x^3-3x)$；⋮</p>
+  <p>（圖 ※：$P_0$、$P_1$、$P_2$、$P_3$ 在 $-1\le x\le1$ 的圖形）</p>
+</div>
+
+<p>板書的表直接寫出 $l=2$、$l=3$ 的物理解；推導見下面的板書例題 2。歸一化就是把截斷的多項式除以它在 $x=1$ 的值，讓每個 $P_l$ 都通過 $(1,1)$。</p>
+
+<div class="anim" data-anim="am5-legendre"></div>
+
+<h3 id="am5-leg-rel">4.5 遞迴關係與奇偶性 <span class="pg-tag">照片 12</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 12）</span>
+  <p>① $lP_l=(2l-1)xP_{l-1}-(l-1)P_{l-2}$</p>
+  <p>② $xP_l'-P_{l-1}'=lP_l$</p>
+  <p>③ $P_l'-xP_{l-1}'=lP_{l-1}$</p>
+  <p>④ $(1-x^2)P_l'=lP_{l-1}-lxP_l$</p>
+  <p>⑤ $(2l+1)P_l=P_{l+1}'-P_{l-1}'$</p>
+  <p>even/odd：$P_l(-x)=(-1)^lP_l(x)$</p>
+  <p>Recurrence Relation：利用低階的 Legendre's poly 推導出高階</p>
+</div>
+
+<p>① 是最常用的：知道 $P_0=1$、$P_1=x$ 就能一路算出所有 $P_l$，不必每次解級數。例如 $l=2$：$2P_2=3xP_1-P_0=3x^2-1$；$l=3$：$3P_3=5xP_2-2P_1=\tfrac52x(3x^2-1)-2x=\tfrac{15x^3-9x}{2}$，$P_3=\tfrac12(5x^3-3x)$，和表一致。⑤ 可以把 $P_l$ 的積分化成端點值（自編 4-b）。奇偶性來自截斷的那串只有偶次或只有奇次：$l$ 偶時 $P_l$ 是偶函數、$l$ 奇時是奇函數，所以 $P_l(-1)=(-1)^l$。五條關係網站都用 $l=2$ 到 $5$ 驗算過（驗算腳本）。</p>
+
+<div class="problem" data-kind="example" id="am5-ex-4">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/14 板書（照片 8–10）</span></div>
+    <h4>Legendre 方程式的冪級數解：$l=0$、$l=1$ 的物理解</h4>
+    <button type="button" class="exam-btn" data-exam="am5-ex-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-4"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例：Legendre's Eq（Legendre's poly）</p><p>$(1-x^2)y''-2xy'+l(l+1)y=0$，$l=0,1,2,\dots$，$-1\le x\le1$</p><p>y 是否滿足物理的邊界條件　$x=\pm1$，y 不能發散！　※以 $l=0$ 為例；考慮 $l=1$，$y_{l=1}$ 的物理解？</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>Legendre 方程式 $(1-x^2)y''-2xy'+l(l+1)y=0$，$-1\le x\le1$。(a) 說明為什麼在 $x=0$ 可以用冪級數。(b) 求遞迴關係與 $a_2$ 到 $a_5$。(c) $l=0$ 與 $l=1$ 時，哪一串在 $x=\pm1$ 發散？物理上可以接受的解是什麼？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac{-2x}{1-x^2}$、$Q=\dfrac{l(l+1)}{1-x^2}$</td><td>板書「與標準式比較」；奇點 $x=\pm1$</td></tr>
+          <tr><td>參數</td><td>$l=0,1,2,\dots$</td><td>板書「$l=0,1,2,\dots$」</td></tr>
+          <tr><td>範圍</td><td>$-1\le x\le1$</td><td>板書；$x=\cos\theta$</td></tr>
+          <tr><td>物理條件</td><td>$y(\pm1)$ 有限</td><td>板書「$x=\pm1$，$y$ 不能發散！」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 常點的理由；(b) 遞迴與 $a_2$–$a_5$；(c) $l=0,1$ 的發散串與物理解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $P$、$Q$ 的分母 $1-x^2$ 在 $x=0$ 不為零，<b>所以</b> $x=0$ 是常點，用 $\sum a_nx^n$；遞迴跳兩格，偶、奇兩串分開。</p>
+      <p><b>因為</b>奇點 $\pm1$ 正好是收斂半徑 1 的邊界，<b>所以</b>每一串在 $x=\pm1$ 是否收斂要個別檢查：截斷的那串是多項式，沒問題；沒截斷的那串在 $x=1$ 變成正項級數，用比較審斂法判斷發散，再令它的待定係數為 0。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-ex-4-s1" data-sym="ll,an">
+        <span class="step-title">(b) 遞迴關係</span>
+        <p>同 4.2 節的代入：$x^n$ 的係數 $(n+2)(n+1)a_{n+2}-\big[n(n+1)-l(l+1)\big]a_n=0$：</p>
+        $$a_{n+2}=\frac{(n-l)(n+l+1)}{(n+2)(n+1)}\,a_n$$
+      </div>
+      <div class="step" data-step="am5-ex-4-s2">
+        <span class="step-title">(b) $a_2$ 到 $a_5$</span>
+        <p class="sub">$n=0,1$ 直接代；$n=2,3$ 代入上一個結果：</p>
+        $$a_2=-\frac{l(l+1)}{2!}a_0,\quad a_3=-\frac{(l-1)(l+2)}{3!}a_1,\quad a_4=\frac{(2-l)(l+3)}{4\cdot3}a_2=\frac{(l-2)l(l+1)(l+3)}{4!}a_0$$
+        $$a_5=\frac{(3-l)(l+4)}{5\cdot4}a_3=\frac{(l-3)(l-1)(l+2)(l+4)}{5!}a_1$$
+      </div>
+      <div class="step" data-step="am5-ex-4-s3">
+        <span class="step-title">(c) $l=0$：偶串截斷、奇串發散</span>
+        <p class="sub">$l=0$：$a_2=0$，偶串只剩 $a_0$；奇串 $a_{n+2}=\dfrac{n}{n+2}a_n$：</p>
+        $$y_{l=0}=a_0+a_1\Big(x+\frac{x^3}3+\frac{x^5}5+\cdots\Big)$$
+        <p>$x=1$ 時奇串 $=1+\tfrac13+\tfrac15+\cdots\ge\tfrac12\big(1+\tfrac12+\tfrac13+\cdots\big)$，和調和級數比較發散。所以要 $a_1=0$：$y_{l=0}=a_0$。</p>
+      </div>
+      <div class="step" data-step="am5-ex-4-s4" data-sym="y12">
+        <span class="step-title">(c) $l=1$：奇串截斷、偶串發散</span>
+        <p class="sub">$l=1$：$a_3=0$，奇串只剩 $a_1x$；偶串 $a_{n+2}=\dfrac{n-1}{n+1}a_n$：</p>
+        $$y_{l=1}=a_0\Big(1-x^2-\frac{x^4}3-\frac{x^6}5-\cdots\Big)+a_1x$$
+        <p>$x=\pm1$ 時偶串 $=1-\big(1+\tfrac13+\tfrac15+\cdots\big)\to-\infty$，發散。所以 $a_0=0$：$y_{l=1}=a_1x$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $1-x^2\ne0$ 在 $x=0$，常點；(b) $a_{n+2}=\dfrac{(n-l)(n+l+1)}{(n+2)(n+1)}a_n$，$a_2$–$a_5$ 如上；(c) $l=0$ 時奇串 $x+\tfrac{x^3}3+\cdots$ 在 $\pm1$ 發散，物理解 $y=a_0$；$l=1$ 時偶串 $1-x^2-\tfrac{x^4}3-\cdots$ 發散，物理解 $y=a_1x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=1$ 代入 $l=0$：$0-0+0=0$ ✔；$y=x$ 代入 $l=1$：$0-2x+2x=0$ ✔。奇串 $=\tfrac12\ln\tfrac{1+x}{1-x}$（$=\tanh^{-1}x$）在 $x\to1$ 發散，和比較審斂法的結論一致。（板書把這兩串寫成正負交錯，是誤植，見 4.3 節。）</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="am5-ex-5">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/14 板書（照片 11）</span></div>
+    <h4>由截斷求 $l=2$、$l=3$ 的物理解，歸一化成 $P_2$、$P_3$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-ex-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-5"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>物理解：$l=0$：$y_{l=0}\propto1$；$l=1$：$y_{l=1}\propto x$；$l=2$：$y_{l=2}\propto(1-3x^2)$；$l=3$：$y_{l=3}\propto(3x-5x^3)$</p><p>要求 $y_l(x=1)=1$ → Legendre's Polynomials</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 Legendre 方程式的遞迴關係求 $l=2$ 與 $l=3$ 的物理解（在 $x=\pm1$ 不發散），再依 $y_l(1)=1$ 歸一化，得到 $P_2(x)$、$P_3(x)$；並用遞迴關係 ① 驗算。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>遞迴</td><td>$a_{n+2}=\dfrac{(n-l)(n+l+1)}{(n+2)(n+1)}a_n$</td><td>板書照片 8 的框</td></tr>
+          <tr><td>參數</td><td>$l=2$、$l=3$</td><td>板書照片 11 的表</td></tr>
+          <tr><td>物理條件</td><td>只留截斷的那串</td><td>4.3 節：另一串在 $\pm1$ 發散</td></tr>
+          <tr><td>歸一化</td><td>$y_l(1)=1$</td><td>板書「要求 $y_l(x=1)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$l=2,3$ 的物理解、$P_2$、$P_3$，以及用 ① 驗算。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>遞迴分子有 $(n-l)$，和 $l$ 同奇偶的那串在 $n=l$ 之後為零，<b>所以</b> $l=2$ 取偶串（$a_1=0$）、$l=3$ 取奇串（$a_0=0$），算到截斷為止。</p>
+      <p><b>因為</b>物理解只確定到一個常數倍，<b>所以</b>用 $x=1$ 的值把它除掉；最後用 ① 從 $P_0$、$P_1$ 獨立推一次，兩種方法一致才算對。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-ex-5-s1" data-sym="ll">
+        <span class="step-title">$l=2$：偶串截斷</span>
+        <p class="sub">代入 $l=2$，$n=0$ 再 $n=2$：</p>
+        $$a_2=\frac{(0-2)(0+3)}{2\cdot1}a_0=-3a_0,\qquad a_4=\frac{(2-2)(2+3)}{4\cdot3}a_2=0$$
+        <p>物理解 $y_{l=2}=a_0(1-3x^2)$（板書表中的 $1-3x^2$）。</p>
+      </div>
+      <div class="step" data-step="am5-ex-5-s2" data-sym="Pl">
+        <span class="step-title">歸一化 $P_2$</span>
+        <p class="sub">$x=1$ 代入：$1-3=-2$，所以除以 $-2$：</p>
+        $$P_2(x)=\frac{1-3x^2}{-2}=\frac12(3x^2-1)$$
+      </div>
+      <div class="step" data-step="am5-ex-5-s3">
+        <span class="step-title">$l=3$：奇串截斷</span>
+        <p class="sub">代入 $l=3$，$n=1$ 再 $n=3$：</p>
+        $$a_3=\frac{(1-3)(1+4)}{3\cdot2}a_1=-\frac53a_1,\qquad a_5=\frac{(3-3)(3+4)}{5\cdot4}a_3=0$$
+        <p>物理解 $y_{l=3}=a_1\big(x-\tfrac53x^3\big)\propto3x-5x^3$（板書表中的形式）。</p>
+      </div>
+      <div class="step" data-step="am5-ex-5-s4">
+        <span class="step-title">歸一化 $P_3$</span>
+        <p class="sub">$3x-5x^3$ 在 $x=1$ 是 $-2$：</p>
+        $$P_3(x)=\frac{3x-5x^3}{-2}=\frac12(5x^3-3x)$$
+      </div>
+      <div class="step" data-step="am5-ex-5-s5">
+        <span class="step-title">用 ① 驗算</span>
+        <p class="sub">① $lP_l=(2l-1)xP_{l-1}-(l-1)P_{l-2}$，$l=2$ 代入 $P_1=x$、$P_0=1$；$l=3$ 代入剛算的 $P_2$：</p>
+        $$2P_2=3x\cdot x-1\Rightarrow P_2=\tfrac12(3x^2-1),\qquad 3P_3=5x\cdot\tfrac12(3x^2-1)-2x=\tfrac{15x^3-9x}{2}\Rightarrow P_3=\tfrac12(5x^3-3x)$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$l=2$：物理解 $\propto1-3x^2$，$P_2=\tfrac12(3x^2-1)$；$l=3$：物理解 $\propto3x-5x^3$，$P_3=\tfrac12(5x^3-3x)$。與 ① 的結果相同。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$P_2$ 代入 $l=2$：$(1-x^2)\cdot3-2x\cdot3x+6\cdot\tfrac12(3x^2-1)=3-3x^2-6x^2+9x^2-3=0$ ✔。$P_3(1)=\tfrac12(5-3)=1$ ✔，$P_3(-1)=-1=(-1)^3$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am5-k114-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2025.Dec. 第 3 題（114上）</span></div>
+    <h4>畫出 $P_0$、$P_1$、$P_2$、$P_3$ 在 $[-1,1]$ 的圖形</h4>
+    <button type="button" class="exam-btn" data-exam="am5-k114-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-k114-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>3. (20%) Sketch graphs of Legendre polynomials $P_0(x),P_1(x),P_2(x)$, and, $P_3(x)$ for $x\in[-1,1]$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（20%）畫出 Legendre 多項式 $P_0(x)$、$P_1(x)$、$P_2(x)$、$P_3(x)$ 在 $x\in[-1,1]$ 的圖形。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>要畫的函數</td><td>$P_0$ 到 $P_3$</td><td>「Sketch graphs of Legendre polynomials $P_0(x),\dots,P_3(x)$」：題目沒給式子，要自己寫出來</td></tr>
+          <tr><td>範圍</td><td>$-1\le x\le1$</td><td>「for $x\in[-1,1]$」</td></tr>
+          <tr><td>已知性質</td><td>$P_l(1)=1$、$P_l(-x)=(-1)^lP_l(x)$</td><td>板書照片 11、12</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：四條曲線的草圖，標出端點、零點、極值等特徵。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>「sketch」只要求形狀正確，<b>所以</b>不必描很多點，抓住四種特徵就夠：端點值 $P_l(\pm1)=(\pm1)^l$（歸一化與奇偶性）、奇偶對稱、零點（$P_l$ 在 $(-1,1)$ 內剛好 $l$ 個）、極值的位置與高度（令導數為零）。</p>
+      <p><b>因為</b>題目沒給式子，<b>所以</b>先用板書的表或遞迴 ① 寫出 $P_0$–$P_3$（這一步也要寫在考卷上）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-k114-3-s1" data-sym="Pl">
+        <span class="step-title">寫出四個多項式</span>
+        $$P_0=1,\quad P_1=x,\quad P_2=\tfrac12(3x^2-1),\quad P_3=\tfrac12(5x^3-3x)$$
+        <p>（由 ① $lP_l=(2l-1)xP_{l-1}-(l-1)P_{l-2}$ 從 $P_0$、$P_1$ 推出。）</p>
+      </div>
+      <div class="step" data-step="am5-k114-3-s2">
+        <span class="step-title">端點與對稱</span>
+        <p>全部 $P_l(1)=1$；$P_l(-1)=(-1)^l$：$P_0(-1)=1$、$P_1(-1)=-1$、$P_2(-1)=1$、$P_3(-1)=-1$。$P_0$、$P_2$ 對 $y$ 軸對稱，$P_1$、$P_3$ 對原點對稱。</p>
+      </div>
+      <div class="step" data-step="am5-k114-3-s3">
+        <span class="step-title">$P_2$：拋物線</span>
+        <p class="sub">頂點在 $x=0$：$P_2(0)=-\tfrac12$；零點 $3x^2-1=0$：</p>
+        $$x=\pm\frac{1}{\sqrt3}\approx\pm0.577$$
+      </div>
+      <div class="step" data-step="am5-k114-3-s4">
+        <span class="step-title">$P_3$：零點與極值</span>
+        <p class="sub">零點 $x(5x^2-3)=0$；極值 $P_3'=\tfrac12(15x^2-3)=0$：</p>
+        $$x=0,\ \pm\sqrt{\tfrac35}\approx\pm0.775;\qquad x=\pm\frac1{\sqrt5}\approx\pm0.447,\quad P_3\Big(\pm\frac1{\sqrt5}\Big)=\frac{1}{2}\Big(\frac{5}{5\sqrt5}-\frac{3}{\sqrt5}\Big)\cdot(\pm1)=\mp\frac{1}{\sqrt5}\approx\mp0.447$$
+        <p>所以 $P_3$ 從 $(-1,-1)$ 上升到 $x=-0.447$ 的極大 $0.447$，經過原點下降到 $x=0.447$ 的極小 $-0.447$，再上升到 $(1,1)$。</p>
+      </div>
+      <div class="step" data-step="am5-k114-3-s5">
+        <span class="step-title">畫圖</span>
+        <p>$P_0$ 是 $y=1$ 的水平線；$P_1$ 是從 $(-1,-1)$ 到 $(1,1)$ 的直線；$P_2$、$P_3$ 照上面的特徵點描出。四條線都通過 $(1,1)$。4.4 節的圖解依序畫出四條曲線，考試書寫版附一張可以照著畫的靜態草圖。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$P_0=1$（水平線）、$P_1=x$（直線）、$P_2=\tfrac12(3x^2-1)$（偶函數，底部 $(0,-\tfrac12)$，零點 $\pm0.577$）、$P_3=\tfrac12(5x^3-3x)$（奇函數，零點 $0,\pm0.775$，極值 $(\mp0.447,\pm0.447)$）；全部通過 $(1,1)$，$P_l(-1)=(-1)^l$。（與老師參考解答的圖 1 相同。）</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$P_l$ 在 $(-1,1)$ 內的零點數：$P_1$ 一個、$P_2$ 兩個、$P_3$ 三個 ✔；所有 $|P_l(x)|\le1$（$-1\le x\le1$）✔，圖上沒有任何曲線超出 $[-1,1]\times[-1,1]$ 的方框。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am5-sf-04a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩種方法求 $P_4$，再推到 $P_5$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-sf-04a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 用遞迴關係 ① 由 $P_2$、$P_3$ 求 $P_4$，再求 $P_5$。(b) 用 Legendre 方程式的級數截斷（$l=4$）加上歸一化，獨立求一次 $P_4$ 比對。(c) 求 $P_4$ 在 $(-1,1)$ 內的零點，確認有 4 個，並求 $P_4(0)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>遞迴 ①</td><td>$lP_l=(2l-1)xP_{l-1}-(l-1)P_{l-2}$</td><td>板書照片 12</td></tr>
+          <tr><td>已知</td><td>$P_2=\tfrac12(3x^2-1)$、$P_3=\tfrac12(5x^3-3x)$</td><td>板書照片 11</td></tr>
+          <tr><td>級數遞迴</td><td>$a_{n+2}=\dfrac{(n-l)(n+l+1)}{(n+2)(n+1)}a_n$，$l=4$</td><td>板書照片 8</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $P_4$、$P_5$；(b) 截斷法的 $P_4$；(c) 零點與 $P_4(0)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> ① 只用到前兩個多項式，<b>所以</b>代 $l=4$ 用 $P_3$、$P_2$，代 $l=5$ 用 $P_4$、$P_3$，每次只做多項式的乘法和通分。</p>
+      <p><b>因為</b>截斷法完全不依賴 ①，兩種方法得到同一個多項式就是很強的驗算；$P_4$ 是 $x^2$ 的二次式，零點用一元二次公式解 $x^2$ 再開根號。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-sf-04a-s1" data-sym="Pl">
+        <span class="step-title">(a) $l=4$</span>
+        <p class="sub">代入 $P_3$、$P_2$：</p>
+        $$4P_4=7x\cdot\tfrac12(5x^3-3x)-3\cdot\tfrac12(3x^2-1)=\tfrac12\big(35x^4-21x^2-9x^2+3\big)\ \Rightarrow\ P_4=\frac{35x^4-30x^2+3}{8}$$
+      </div>
+      <div class="step" data-step="am5-sf-04a-s2">
+        <span class="step-title">(a) $l=5$</span>
+        <p class="sub">代入剛算的 $P_4$ 與 $P_3$，通分成分母 8：</p>
+        $$5P_5=9x\cdot\frac{35x^4-30x^2+3}{8}-4\cdot\frac{5x^3-3x}{2}=\frac{315x^5-270x^3+27x-80x^3+48x}{8}$$
+        $$P_5=\frac{315x^5-350x^3+75x}{40}=\frac{63x^5-70x^3+15x}{8}$$
+      </div>
+      <div class="step" data-step="am5-sf-04a-s3" data-sym="ll">
+        <span class="step-title">(b) 截斷法</span>
+        <p class="sub">$l=4$ 取偶串，$n=0,2,4$：</p>
+        $$a_2=\frac{(-4)(5)}{2}a_0=-10a_0,\quad a_4=\frac{(2-4)(7)}{12}a_2=\frac{35}{3}a_0,\quad a_6=\frac{(4-4)(9)}{30}a_4=0$$
+        <p class="sub">$y=a_0\big(1-10x^2+\tfrac{35}{3}x^4\big)$，在 $x=1$ 的值 $1-10+\tfrac{35}3=\tfrac83$，歸一化：</p>
+        $$P_4=\frac38\Big(1-10x^2+\frac{35}{3}x^4\Big)=\frac{35x^4-30x^2+3}{8}\ \checkmark$$
+      </div>
+      <div class="step" data-step="am5-sf-04a-s4">
+        <span class="step-title">(c) 零點與 $P_4(0)$</span>
+        <p class="sub">令 $u=x^2$：$35u^2-30u+3=0$，$u=\dfrac{30\pm\sqrt{900-420}}{70}=\dfrac{30\pm21.91}{70}$：</p>
+        $$u=0.7416\ \text{或}\ 0.1156\ \Longrightarrow\ x=\pm0.861,\ \pm0.340$$
+        <p>四個零點都在 $(-1,1)$ 內 ✓。$P_4(0)=\tfrac38$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $P_4=\tfrac18(35x^4-30x^2+3)$，$P_5=\tfrac18(63x^5-70x^3+15x)$；(b) 截斷法得到同一個 $P_4$；(c) 零點 $\pm0.340$、$\pm0.861$（4 個），$P_4(0)=\tfrac38$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$P_4(1)=\tfrac{35-30+3}{8}=1$ ✔，$P_5(1)=\tfrac{63-70+15}{8}=1$ ✔；$P_5$ 只有奇次項 ✔。$P_4$ 代入 $l=4$ 的 Legendre 方程式成立（驗算腳本）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am5-sf-04b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>用關係式 ⑤ 算 $\int_0^1P_l(x)\,dx$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-sf-04b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 由板書的關係式 ⑤ 證明 $\displaystyle\int_0^1P_l(x)\,dx=\frac{P_{l-1}(0)-P_{l+1}(0)}{2l+1}$（$l\ge1$）。(b) 求 $l=1,2,3,4$ 的值。(c) 直接積分驗算 $l=3$。(d) 說明為什麼偶數 $l\ge2$ 的積分都是 0。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>關係式 ⑤</td><td>$(2l+1)P_l=P_{l+1}'-P_{l-1}'$</td><td>板書照片 12</td></tr>
+          <tr><td>端點值</td><td>$P_l(1)=1$</td><td>板書照片 11 的歸一化</td></tr>
+          <tr><td>原點的值</td><td>$P_0(0)=1$、$P_2(0)=-\tfrac12$、$P_4(0)=\tfrac38$；奇數 $l$ 為 0</td><td>由 $P_l$ 的式子（自編 4-a）；奇函數在 0 為 0</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 公式；(b) 四個積分值；(c) 驗算；(d) 解釋。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> ⑤ 把 $P_l$ 寫成另一個函數 $\dfrac{P_{l+1}-P_{l-1}}{2l+1}$ 的導數，<b>所以</b>由微積分基本定理，積分只要看這個函數在兩端的值；上端 $x=1$ 用歸一化 $P_l(1)=1$ 會互相抵消。</p>
+      <p><b>因為</b>奇數階的 $P$ 是奇函數、在 0 為零，<b>所以</b> $l$ 偶時 $l\pm1$ 都是奇數，公式的分子是 $0-0$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-sf-04b-s1" data-sym="Pl">
+        <span class="step-title">(a) 推導</span>
+        <p>⑤ 兩邊從 0 積到 1：</p>
+        $$(2l+1)\int_0^1P_l\,dx=\Big[P_{l+1}-P_{l-1}\Big]_0^1=\big(\underbrace{P_{l+1}(1)}_{1}-\underbrace{P_{l-1}(1)}_{1}\big)-\big(P_{l+1}(0)-P_{l-1}(0)\big)$$
+        $$\Longrightarrow\quad\int_0^1P_l\,dx=\frac{P_{l-1}(0)-P_{l+1}(0)}{2l+1}$$
+      </div>
+      <div class="step" data-step="am5-sf-04b-s2">
+        <span class="step-title">(b) 代入各個 $l$</span>
+        <p class="sub">代入 $P_0(0)=1$、$P_2(0)=-\tfrac12$、$P_4(0)=\tfrac38$、奇數階在 0 為 0：</p>
+        $$l=1:\ \frac{1-(-\frac12)}{3}=\frac12,\qquad l=2:\ \frac{0-0}{5}=0,\qquad l=3:\ \frac{-\frac12-\frac38}{7}=-\frac18,\qquad l=4:\ \frac{0-0}{9}=0$$
+      </div>
+      <div class="step" data-step="am5-sf-04b-s3">
+        <span class="step-title">(c) 直接積分 $l=3$</span>
+        $$\int_0^1\frac{5x^3-3x}{2}dx=\frac12\Big[\frac{5x^4}{4}-\frac{3x^2}{2}\Big]_0^1=\frac12\Big(\frac54-\frac32\Big)=-\frac18\ \checkmark$$
+      </div>
+      <div class="step" data-step="am5-sf-04b-s4">
+        <span class="step-title">(d) 偶數 $l$ 為什麼是 0</span>
+        <p>$l$ 偶 ⇒ $l\pm1$ 奇 ⇒ $P_{l\pm1}$ 是奇函數（$P_l(-x)=(-1)^lP_l(x)$），$P_{l\pm1}(0)=0$，分子為 0。幾何上：$\int_{-1}^1P_l=0$（$l\ge1$，因為 $P_l$ 和 $P_0$ 正交——之後會學），偶函數兩半相等，所以每半都是 0。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\displaystyle\int_0^1P_l\,dx=\frac{P_{l-1}(0)-P_{l+1}(0)}{2l+1}$；(b) $l=1,2,3,4$：$\tfrac12$、$0$、$-\tfrac18$、$0$；(c) 直接積分得 $-\tfrac18$ ✔；(d) $P_{l\pm1}$ 為奇函數，在 0 為 0。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$l=1$：$\int_0^1x\,dx=\tfrac12$ ✔；$l=2$：$\tfrac12\big[x^3-x\big]_0^1=0$ ✔。$l=5$ 用同一公式得 $\tfrac{P_4(0)-P_6(0)}{11}=\tfrac{\frac38+\frac5{16}}{11}=\tfrac1{16}$，驗算腳本直接積分確認。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>Legendre 方程式在 $x=0$ 是常點，遞迴 $(n+2)(n+1)a_{n+2}=(n+l+1)(n-l)a_n$，偶、奇兩串。</li>
+    <li>$l$ 為非負整數時，和 $l$ 同奇偶的那串截斷成 $l$ 次多項式；另一串在 $x=\pm1$ 發散（係數 $\sim1/n$），物理上必須刪掉。</li>
+    <li>歸一化 $P_l(1)=1$：$P_0=1$、$P_1=x$、$P_2=\tfrac12(3x^2-1)$、$P_3=\tfrac12(5x^3-3x)$；$P_l(-x)=(-1)^lP_l(x)$，$(-1,1)$ 內有 $l$ 個零點。</li>
+    <li>遞迴 ① 由低階推高階；⑤ 把積分化成端點值。板書照片 9、10 的級數正負號是誤植（應全為同號）。</li>
+  </ol>
+</div>

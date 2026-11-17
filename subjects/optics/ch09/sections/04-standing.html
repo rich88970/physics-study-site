@@ -1,0 +1,106 @@
+<h2>四、隨機與同調光源、駐波 <span class="pg">課本 p.119–123</span> <span class="must exam">考古 1/5</span></h2>
+
+<p class="lead">第一節的公式 (16) 有兩個立刻能用的特例：$N$ 個相位亂跳的光源，照度直接相加；$N$ 個同相位的光源，振幅相加、照度變成 $N^2$ 倍。接著看另一種疊加——同一個波和它的反射波疊在一起，形成不會前進的駐波，以及雷射共振腔裡只允許哪些波長。</p>
+
+<p class="small muted">（老師的考前提示沒有提到駐波；李孟恩課程資料夾的 5 份期中考中有 1 份（2018）考「駐波和兩個反向行進波互換」（物理考古資料夾的 2012 期中考、2014 平時考也考過，收在<a href="#o9-old-sw">第 8 節</a>），依考古題統計推論，不是老師說的。）</p>
+
+<h3 id="o9-random">4.1 隨機相位與同調光源 <span class="pg-tag">p.119–120</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (17)(18)</span>
+  $$\text{隨機相位：}\ E_0^2=\sum_{i=1}^{N}E_{0i}^2=NE_{01}^2,\qquad \text{同調同相位：}\ E_0^2=\left(\sum_{i=1}^{N}E_{0i}\right)^2=N^2E_{01}^2$$
+</div>
+
+<p>從式 (16) 看：相位隨機時，交叉項裡的 $\cos(\alpha_j-\alpha_i)$ 一半正一半負，$N$ 很大時平均為 0，只剩各自平方的和；照度和 $E_0^2$ 成正比，所以<strong>隨機相位光源的總照度＝各照度之和</strong>（一般燈泡就是這樣）。如果 $N$ 個光源同調而且同相位，所有 $\cos$ 都是 1，振幅直接相加成 $NE_{01}$，<strong>照度是單一光源的 $N^2$ 倍</strong>。例如 100 個同調同相位的光源，照度是 100 個隨機光源的 100 倍。</p>
+
+<h3 id="o9-sw">4.2 駐波 <span class="pg-tag">p.120–121</span></h3>
+
+<p>一個往 $-x$ 走的波碰到鏡面反射回來，兩個方向相反、振幅相同的波疊在一起：</p>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (19)–(24)</span>
+  $$E_1=E_0\sin(\omega t+kx),\qquad E_2=E_0\sin(\omega t-kx-\varphi_R)$$
+  $$E_R=2E_0\cos\!\left(kx+\tfrac{\varphi_R}{2}\right)\sin\!\left(\omega t-\tfrac{\varphi_R}{2}\right)$$
+  $$\varphi_R=\pi\ \text{（金屬鏡面）}:\quad E_R=(2E_0\sin kx)\cos\omega t,\qquad \text{節點 } x=m\tfrac{\lambda}{2}$$
+</div>
+
+<div class="step" data-step="o9-sw-s1" data-sym="k,omega">
+  <span class="step-title">和差化積：空間與時間分開</span>
+  <p>令 $\beta_+=\omega t+kx$、$\beta_-=\omega t-kx-\varphi_R$，用 $\sin\beta_++\sin\beta_-=2\sin\tfrac12(\beta_++\beta_-)\cos\tfrac12(\beta_+-\beta_-)$，結果變成「只和 $x$ 有關的振幅」×「只和 $t$ 有關的振盪」。$A(x)=2E_0\sin kx$ 為 0 的地方（$kx=m\pi$，$x=0,\tfrac{\lambda}{2},\lambda,\ldots$）永遠不動，叫<strong>節點</strong>；$|A(x)|=2E_0$ 的地方振幅最大，叫<strong>波腹</strong>，在兩個節點的正中間。相鄰節點相距 $\tfrac{\lambda}{2}$。</p>
+</div>
+
+<p>反過來用（考古題最常考的方向）：給一個駐波 $A\sin(kx)\cos(\omega t)$，用積化和差拆回兩個方向相反的行進波，每一個的振幅是 $A/2$、波數 $k$、角頻率 $\omega$、波速 $\omega/k$：</p>
+$$\sin A\cos B=\tfrac12\left[\sin(A+B)+\sin(A-B)\right],\qquad \cos A\cos B=\tfrac12\left[\cos(A+B)+\cos(A-B)\right]$$
+
+<h3 id="o9-cavity">4.3 雷射共振腔的駐波模態 <span class="pg-tag">p.121–123</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (25)(26)</span>
+  $$d=m\frac{\lambda_m}{2},\qquad \nu_m=\frac{c}{\lambda_m}=m\frac{c}{2d},\qquad \nu_{m+1}-\nu_m=\frac{c}{2d}$$
+</div>
+
+<p>兩面鏡子都必須是節點，所以腔長 $d$ 要剛好放進整數個半波長。課本 Example 2：He-Ne 雷射 $d=30\ \text{cm}$、增益介質支援 $632.800$–$632.802\ \text{nm}$：</p>
+<ul>
+  <li>半波長個數 $m=2d/\lambda_1=2(0.3)/(632.8\times10^{-9})=948{,}166$；</li>
+  <li>增益頻寬 $\Delta\nu=c/\lambda_1-c/\lambda_2=1.50\times10^{9}\ \text{Hz}$；</li>
+  <li>相鄰模態間隔 $c/2d=(3\times10^8)/(0.6)=5\times10^8\ \text{Hz}$；</li>
+  <li>可能出現的模態數 $1.5\times10^9/5\times10^8=3$ 個。</li>
+</ul>
+<p>駐波本身不傳送能量：能量都在節點之間來回振盪。</p>
+
+<h3 id="o9-sw-exam">4.4 考古題：駐波與兩個行進波</h3>
+
+<div class="problem" data-kind="exam" id="o9-2018m5">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2018-04-25）第 5 題（106下）</span></div>
+    <h4>駐波 $100\sin(\tfrac{\pi}{3}x)\cos(6\pi t)$ 拆成兩個平面波 <span class="must exam">考古 1/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2018m5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2018m5"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>5. (10%) 一道由兩個振幅相等、行進方向相反的平面波疊加而形成的駐波可表示為 $$100\sin(\tfrac{\pi}{3}x)\cos(6\pi t)$$ 試寫出此二個平面波的數學表示（以實函數 sin 或 cos 表示）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一道由兩個振幅相等、行進方向相反的平面波疊加而形成的駐波可表示為 $100\sin(\tfrac{\pi}{3}x)\cos(6\pi t)$。試寫出這兩個平面波的數學表示（以實函數 sin 或 cos 表示）。（10%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>駐波振幅</td><td>$100$</td><td>「$100\sin(\tfrac{\pi}{3}x)\cos(6\pi t)$」的係數</td></tr>
+          <tr><td>波數</td><td>$k=\tfrac{\pi}{3}$</td><td>$\sin(\tfrac{\pi}{3}x)$（題目沒給單位，答案也不寫單位）</td></tr>
+          <tr><td>角頻率</td><td>$\omega=6\pi$</td><td>$\cos(6\pi t)$</td></tr>
+          <tr><td>兩個波的關係</td><td>振幅相等、方向相反</td><td>「兩個振幅相等、行進方向相反的平面波」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：兩個平面波的實函數表示式。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>駐波是兩個反向行進波和差化積的結果，<b>所以</b>反過來用積化和差 $\sin A\cos B=\tfrac12[\sin(A+B)+\sin(A-B)]$，$A$ 取空間部分、$B$ 取時間部分，就直接得到 $\sin(kx\pm\omega t)$ 兩個行進波，各自振幅是駐波振幅的一半。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2018m5-s1" data-sym="k,omega">
+        <span class="step-title">積化和差</span>
+        $$\sin A\cos B=\tfrac12\left[\sin(A+B)+\sin(A-B)\right]$$
+        <p class="sub">代入 $A=\tfrac{\pi}{3}x$、$B=6\pi t$（題目的兩個因子）：</p>
+        $$100\sin\!\left(\tfrac{\pi}{3}x\right)\cos(6\pi t)=50\sin\!\left(\tfrac{\pi}{3}x+6\pi t\right)+50\sin\!\left(\tfrac{\pi}{3}x-6\pi t\right)$$
+      </div>
+      <div class="step" data-step="o9-2018m5-s2">
+        <span class="step-title">確認方向與參數</span>
+        <p>$\tfrac{\pi}{3}x+6\pi t$ 固定時 $x$ 隨時間減少：往 $-x$ 走；$\tfrac{\pi}{3}x-6\pi t$ 往 $+x$ 走。兩個波的振幅都是 50、$k=\tfrac{\pi}{3}$（$\lambda=6$）、$\omega=6\pi$（$\nu=3$），波速 $\omega/k=18$（題目單位未給）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$E_1=50\sin(\tfrac{\pi}{3}x-6\pi t)$（往 $+x$）、$E_2=50\sin(\tfrac{\pi}{3}x+6\pi t)$（往 $-x$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>相加：$\sin(a+b)+\sin(a-b)=2\sin a\cos b$，$50\times2=100$ ✔。$x=0$ 時兩波和為 0，駐波在 $x=0$ 是節點，和原式 $\sin0=0$ 一致 ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>隨機相位：照度相加（$NE_{01}^2$）；同調同相位：振幅相加，照度 $N^2$ 倍。</li>
+    <li>兩個反向行進波 → 駐波 $2E_0\sin kx\cos\omega t$；節點間距 $\lambda/2$，波腹在節點中間。</li>
+    <li>駐波 → 行進波：積化和差，每個波振幅減半，$k$、$\omega$ 不變。</li>
+    <li>雷射腔 $d=m\lambda/2$，模態間隔 $c/2d$。</li>
+  </ol>
+</div>

@@ -1,0 +1,145 @@
+<h2 id="kp-05">五、降階法</h2>
+<h3 id="k05-1">作業二第 3 題｜用已知解降階，找另一個線性獨立解</h3>
+<p><strong>原題：</strong> Given that $y_1=\dfrac1{\sqrt{x}}$ is a solution of a Cauchy–Euler equation $4x^2y''+8xy'+y=0$, find the second linearly independent solution $y_2$.</p>
+<p><strong>中文：</strong> 已知 $y_1=1/\sqrt{x}$ 是此 Cauchy–Euler（柯西—尤拉）方程的一個解，求另一個與它線性獨立的解 $y_2$。因為 $1/\sqrt{x}$ 要是實值，全題在 $x&gt;0$ 上處理。</p>
+<p><strong>① 降階代換：</strong> 已知解乘常數不會產生新解，所以改乘一個未知函數 $v(x)$；$x&gt;0$ 時 $y_1\ne0$，代換合法。</p>
+<div class="math-block">$$
+\boxed{y=v(x)y_1(x)=vx^{-1/2}}.
+$$</div>
+<p><strong>② 算一階、二階導數：</strong> 先微分 $x^{-1/2}$，再用乘積律。</p>
+<p class="fnote"><b>公式（冪函數導數）：</b>$\dfrac{d}{dx}x^n=nx^{n-1}$，其中 $n$ 為實常數、$x\gt0$；本題 $n=-\dfrac12$，第二次微分時再用 $n=-\dfrac32$。</p>
+<div class="math-block">$$
+\frac{d}{dx}x^{-1/2}=-\frac12x^{-3/2}.
+$$</div>
+<p class="fnote"><b>公式（乘積律）：</b>$(fg)'=f'g+fg'$，其中 $f=f(x),g=g(x)$ 為可微函數；本題 $f=v$、$g=x^{-1/2}$；求 $y''$ 時對 $v'x^{-1/2}$ 與 $vx^{-3/2}$ 各用一次。</p>
+<p>$$
+\boxed{y'=v'x^{-1/2}-\frac12vx^{-3/2}}.
+$$
+$$
+\begin{aligned}
+y''
+&amp;=\frac{d}{dx}(v'x^{-1/2})
+ -\frac12\frac{d}{dx}(vx^{-3/2})\\
+&amp;=v''x^{-1/2}-\frac12v'x^{-3/2}
+ -\frac12v'x^{-3/2}+\frac34vx^{-5/2}.
+\end{aligned}
+$$
+合併兩個 $-\frac12v'x^{-3/2}$：
+$$
+\boxed{y''=v''x^{-1/2}-v'x^{-3/2}+\frac34vx^{-5/2}}.
+$$</p>
+<p><strong>③ 代回原方程：</strong> 三部分分開算再相加，含 $v$ 本身的項係數 $3-4+1=0$ 消失。</p>
+<p>$$
+4x^2y''
+=4x^{3/2}v''-4x^{1/2}v'+3x^{-1/2}v,
+$$
+$$
+8xy'=8x^{1/2}v'-4x^{-1/2}v,
+$$
+$$
+y=x^{-1/2}v.
+$$
+$$
+4x^{3/2}v''+(-4+8)x^{1/2}v'
+ +(3-4+1)x^{-1/2}v=0.
+$$
+$$
+4x^{3/2}v''+4x^{1/2}v'=0.
+$$
+$x&gt;0$，除以非零的 $4x^{1/2}$：
+$$
+\boxed{xv''+v'=0}.
+$$</p>
+<p><strong>④ 積分兩次求 $v$：</strong> 左邊正是 $(xv')'$；$k_1,k_2$ 為兩次積分的常數。</p>
+<p>$$
+\frac{d}{dx}(xv')=v'+xv''.
+$$
+$$
+\frac{d}{dx}(xv')=0.
+$$
+$$
+xv'=k_1.
+$$
+$$
+v'=\frac{k_1}{x}.
+$$</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\dfrac{1}{x}\,dx=\ln|x|+C$，其中 $C$ 為積分常數；本題 $x\gt0$ 故 $|x|=x$，被積函數多一個常數因子 $k_1$，積分常數記為 $k_2$。</p>
+<p>$$
+\begin{aligned}
+v&amp;=\int\frac{k_1}{x}\,dx+k_2\\
+ &amp;=k_1\ln x+k_2.
+\end{aligned}
+$$
+$$
+\boxed{v=k_1\ln x+k_2}.
+$$</p>
+<p><strong>⑤ 取出新的解：</strong> 代回 $y=vx^{-1/2}$，第二項只是 $y_1$ 的常數倍，第一項才是新形狀；取 $k_1=1$、$k_2=0$。</p>
+<div class="math-block">$$
+\begin{aligned}
+y
+&amp;=(k_1\ln x+k_2)x^{-1/2}\\
+&amp;=k_1\frac{\ln x}{\sqrt{x}}+k_2\frac1{\sqrt{x}}.
+\end{aligned}
+$$</div>
+<div class="math-block">$$
+\boxed{y_2(x)=\frac{\ln x}{\sqrt{x}},\qquad x&gt;0}.
+$$</div>
+<p><strong>⑥ 說明線性獨立並寫通解：</strong> 兩函數的比值不是常數就線性獨立。</p>
+<p>$$
+\frac{y_2}{y_1}
+=\frac{(\ln x)/\sqrt{x}}{1/\sqrt{x}}
+=\ln x.
+$$
+$$
+\frac{d}{dx}\ln x=\frac1x\neq0
+\qquad(x&gt;0).
+$$
+比值不是常數，兩解線性獨立。通解（無初始條件，$C_1,C_2$ 不定值）：
+$$
+\boxed{
+ y=C_1\frac1{\sqrt{x}}+C_2\frac{\ln x}{\sqrt{x}},\qquad x&gt;0
+}.
+$$</p>
+<h3 id="k05-2">2025 年 10 月期中第 2 題｜降階法公式證明（25 分）</h3>
+<p><strong>原題：</strong> Consider $y''+P(x)y'+Q(x)y=0$ with one known solution $y_1$. Using reduction of order, show that a second linearly independent solution can be written as $y_2=y_1\int e^{-\int P(x)dx}/y_1^2\,dx$.</p>
+<p><strong>中文：</strong> 已知二階齊次線性方程的一個解 $y_1$，利用降階法推導另一個線性獨立解的公式。</p>
+<p class="symnote">符號：$P,Q$ 是給定的係數函數；$v(x)$ 是要找的新函數；以下在 $y_1\neq0$ 的區間操作。</p>
+<p><strong>① 設 $y_2=vy_1$ 並微分：</strong></p>
+<p class="fnote"><b>公式（乘積律）：</b>$(fg)'=f'g+fg'$，再微分一次得 $(fg)''=f''g+2f'g'+fg''$，其中 $f=f(x),g=g(x)$ 為二次可微函數；本題 $f=v$、$g=y_1$。</p>
+<div class="math-block">$$
+y_2'=v'y_1+vy_1',\qquad y_2''=v''y_1+2v'y_1'+vy_1''.
+$$</div>
+<p><strong>② 代回原方程：</strong> $y_1$ 本身是解，所以 $v$ 的係數括號為零；再除以非零的 $y_1$。</p>
+<p>$$
+y_1v''+(2y_1'+Py_1)v'+(y_1''+Py_1'+Qy_1)v=0.
+$$
+$$
+v''+\left(2\frac{y_1'}{y_1}+P\right)v'=0.
+$$</p>
+<p><strong>③ 令 $w=v'$ 降成一階：</strong></p>
+<div class="math-block">$$
+w'+\left(2\frac{y_1'}{y_1}+P\right)w=0.
+$$</div>
+<p><strong>④ 分離變數積分：</strong> 取 $w\neq0$ 的非平凡解。</p>
+<p class="fnote"><b>公式（可分離變數）：</b>$\dfrac{dw}{dx}=-g(x)w$ 在 $w\ne0$ 時可寫成 $\dfrac{dw}{w}=-g(x)\,dx$ 再兩邊積分，其中 $w=w(x)$ 為未知函數、$g(x)$ 為已知函數；本題 $g=2\dfrac{y_1'}{y_1}+P$。</p>
+<div class="math-block">$$
+\frac{dw}{w}=-\left(2\frac{y_1'}{y_1}+P\right)dx,
+$$</div>
+<p class="fnote"><b>公式（對數積分）：</b>$\int\dfrac{f'(x)}{f(x)}\,dx=\ln|f(x)|+C$，其中 $f$ 為可微且 $f\ne0$ 的函數、$C$ 為積分常數；本題左邊 $\int\dfrac{dw}{w}=\ln|w|$，右邊 $\int2\dfrac{y_1'}{y_1}\,dx=2\ln|y_1|$。</p>
+<div class="math-block">$$
+\ln|w|=-2\ln|y_1|-\int P(x)dx+C.
+$$</div>
+<p><strong>⑤ 指數化、再積分一次：</strong> 非零乘法常數 $e^C$ 併入正規化。</p>
+<p class="fnote"><b>公式（指數與對數）：</b>$e^{A+B}=e^Ae^B$，$e^{k\ln|u|}=|u|^k$，其中 $A,B,k$ 為實數、$u\ne0$；本題 $e^{-2\ln|y_1|}=\dfrac{1}{y_1^2}$，$e^{C}$ 為非零常數。</p>
+<div class="math-block">$$
+w=v'=\frac{e^{-\int P(x)dx}}{y_1^2}.
+$$</div>
+<p>再積分得 $v=\int e^{-\int P}/y_1^2\,dx$，因此
+$$
+\boxed{y_2=y_1\int\frac{e^{-\int P(x)dx}}{y_1(x)^2}\,dx.}
+$$</p>
+<p><strong>⑥ 線性獨立：</strong> Wronskian $W=y_1y_2'-y_1'y_2$，代入 $y_2=vy_1$：</p>
+<div class="math-block">$$
+W=y_1^2v'=e^{-\int P(x)dx}\neq0.
+$$</div>
+<p>所以兩解線性獨立；積分常數造成的 $Cy_1$ 項可被齊次解吸收。</p>

@@ -1,0 +1,360 @@
+<h2>一、Bessel 方程：用 Frobenius 法求 Bessel 函數 <span class="pg">板書 10/21 照片 1–2</span></h2>
+
+<p class="lead">10/21 老師把上一章的 Frobenius 法用在一個物理上最重要的例子：<strong>Bessel 方程</strong> $x^2y''+xy'+(x^2-m^2)y=0$。它是圓柱座標偏微分方程分離變數後「徑向」的那條方程式，圓形鼓膜、圓柱導熱、圓柱波導都會遇到。這一節照板書走一遍：判斷 $x=0$ 是正則奇點 → 指標根 $\gamma=\pm m$ → 遞迴跳兩格 → $\gamma=m$ 的解整理成 $J_m(x)$。</p>
+
+<h3 id="am6-eq-origin">1.1 方程式從哪裡來 <span class="pg-tag">照片 1</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 1 左）</span>
+  <p>應用例：Bessel's diff. Eq &amp; Bessel's function</p>
+  $$x^2y''+xy'+(x^2-m^2)y=0,\qquad m=0,\pm1,\pm2,\dots$$
+  <p>圓柱座標 PDE，徑⋯⋯（「徑」之後被老師擋住；推測是「徑向方程式」）</p>
+  <p>極 〃 〃 ⋯⋯（同上符號：極座標 PDE，徑向⋯⋯）</p>
+</div>
+
+<div class="step" data-step="am6-eq-s1" data-sym="mm">
+  <span class="step-title">圓柱座標 PDE 為什麼會變成 Bessel 方程 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>照片 1 左下第一行在「徑」字之後被老師擋住；第二行是「極 〃 〃 ⋯⋯」，〃 是同上符號，意思是「極座標 PDE，徑向⋯⋯」同一件事（平面圓盤就是極座標）。由上下文推回去，第一行應該是「圓柱座標 PDE 的徑向方程式」，被擋住的確切用字不確定。內容補在這裡：</p>
+  <p>例如圓柱座標的 Helmholtz 方程 $\nabla^2u+k^2u=0$（波動、熱傳導、Schrödinger 方程分離時間後都是這個形式）：</p>
+  $$\frac{\partial^2u}{\partial r^2}+\frac1r\frac{\partial u}{\partial r}+\frac1{r^2}\frac{\partial^2u}{\partial\theta^2}+\frac{\partial^2u}{\partial z^2}+k^2u=0$$
+  <p>令 $u=R(r)\Theta(\theta)Z(z)$，代入後除以 $u$：$\Theta''=-m^2\Theta$、$Z''=-k_z^2Z$，剩下 $r$ 的部分乘以 $r^2$：</p>
+  $$r^2R''+rR'+\big(k_r^2r^2-m^2\big)R=0,\qquad k_r^2=k^2-k_z^2$$
+  <p class="sub">令 $x=k_rr$（$\tfrac{d}{dr}=k_r\tfrac{d}{dx}$，所以 $r^2\tfrac{d^2}{dr^2}=x^2\tfrac{d^2}{dx^2}$、$r\tfrac{d}{dr}=x\tfrac{d}{dx}$）：</p>
+  $$x^2R''+xR'+(x^2-m^2)R=0$$
+  <p>這就是 Bessel 方程。$\Theta(\theta)=e^{\pm im\theta}$ 必須繞一圈回到原值 $\Theta(\theta+2\pi)=\Theta(\theta)$，所以 <b>$m$ 是整數</b>——這是板書寫「$m=0,\pm1,\pm2,\dots$」的原因。方程式只含 $m^2$，$m$ 與 $-m$ 是同一條方程式。</p>
+</div>
+
+<h3 id="am6-eq-frob">1.2 判斷：正則奇點，用 Frobenius 法 <span class="pg-tag">照片 1 中</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 1 中）</span>
+  <p>與標準式比較：$P(x)=\dfrac1x$，$Q(x)=\dfrac{x^2-m^2}{x^2}$</p>
+  <p>$xP(x)=1$，$x^2Q=x^2-m^2$　選 Frobenius method</p>
+  <p>let $y=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+\gamma}$（$a_0\ne0$），代入原式</p>
+</div>
+
+<p>除以 $x^2$ 得標準式 $y''+\tfrac1xy'+\tfrac{x^2-m^2}{x^2}y=0$。$P$、$Q$ 在 $x=0$ 發散，但 $xP=1$、$x^2Q=x^2-m^2$ 都是多項式（不發散），所以 $x=0$ 是<b>正則奇點</b>，照第 5 章用 Frobenius 法。指標方程式的 $p_0=\lim xP=1$、$q_0=\lim x^2Q=-m^2$：</p>
+$$\gamma(\gamma-1)+p_0\gamma+q_0=\gamma(\gamma-1)+\gamma-m^2=\gamma^2-m^2=0\quad\Longrightarrow\quad\gamma=\pm m$$
+
+<h3 id="am6-eq-rec">1.3 指標根與遞迴關係 <span class="pg-tag">照片 1 右、照片 2 右</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 1 右、照片 2 右上）</span>
+  <p>找 $\gamma$，遞迴關係</p>
+  <p>$\gamma=m,\ -m$</p>
+  <p>$a_0=$ 待定，$a_1=0$</p>
+  $$(n+\gamma+m)(n+\gamma-m)\,a_n+a_{n-2}=0\qquad(n\ge2)$$
+</div>
+
+<div class="step" data-step="am6-eq-s2" data-sym="gam,an">
+  <span class="step-title">代入與對齊次方 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>板書只寫「代入原式」就跳到結果。四項分別是：</p>
+  $$x^2y''=\sum_{n\ge0}(n+\gamma)(n+\gamma-1)a_nx^{n+\gamma},\quad xy'=\sum_{n\ge0}(n+\gamma)a_nx^{n+\gamma},\quad -m^2y=\sum_{n\ge0}(-m^2)a_nx^{n+\gamma}$$
+  <p>只有 $x^2y=\sum a_nx^{n+\gamma+2}$ 高了兩次方，令新指標 $n\to n-2$ 變成 $\sum_{n\ge2}a_{n-2}x^{n+\gamma}$。前三項合併：$(n+\gamma)(n+\gamma-1)+(n+\gamma)-m^2=(n+\gamma)^2-m^2=(n+\gamma+m)(n+\gamma-m)$。所以</p>
+  $$\underbrace{(\gamma^2-m^2)a_0}_{n=0}x^{\gamma}+\underbrace{\big[(1+\gamma)^2-m^2\big]a_1}_{n=1}x^{1+\gamma}+\sum_{n\ge2}\Big[(n+\gamma+m)(n+\gamma-m)a_n+a_{n-2}\Big]x^{n+\gamma}=0$$
+  <p>$n=0$：$a_0\ne0$ ⇒ $\gamma=\pm m$（指標方程式）。$n=1$：取 $\gamma=m$ 時係數是 $(1+2m)\cdot1\ne0$（$m\ge0$），所以 $a_1=0$；$n\ge2$：板書的遞迴關係。遞迴一次跳兩格，$a_1=0$ 讓所有奇數項都是 0。</p>
+</div>
+
+<h3 id="am6-eq-jm">1.4 $\gamma=m$ 的解與 Bessel 函數 $J_m$ 的定義 <span class="pg-tag">照片 2</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 2 右下、照片 2 左）</span>
+  <p>考慮 $\gamma=m$ 的解，Recurrence relation：$\boxed{(n+2m)(n)\,a_n+a_{n-2}=0}$</p>
+  <p>$n=2$：$(2+2m)(2)\,a_2+a_0=0$</p>
+  $$y_{\gamma=m}=\sum_{n=0}^{\infty}a_nx^{n+m}=a_0\,2^m\,m!\sum_{n=0}^{\infty}\frac{(-1)^n}{(m+n)!\,n!}\Big(\frac x2\Big)^{m+2n}$$
+  <p>define Bessel func.</p>
+  $$J_m(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(m+n)!\,n!}\Big(\frac x2\Big)^{m+2n},\qquad y_{\gamma=m}\propto J_m(x)$$
+</div>
+
+<div class="step" data-step="am6-eq-s3" data-sym="an,Jm">
+  <span class="step-title">從遞迴到一般項 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>板書從 $n=2$ 那一行直接跳到求和式。注意板書求和式裡的 $n$ 是「第幾個非零項」，和遞迴裡的 $n$（次方）不同；這裡把非零項編號成 $k$，$a_{2k}$ 是第 $k$ 個：</p>
+  <p class="sub">遞迴代入 $n=2k$：$(2k+2m)(2k)a_{2k}=-a_{2k-2}$，即</p>
+  $$a_{2k}=-\frac{a_{2k-2}}{4k(k+m)}$$
+  <p class="sub">連乘 $k=1,2,\dots$（$k=1$ 就是板書 $n=2$ 那一行：$a_2=-\tfrac{a_0}{4(m+1)}$）：</p>
+  $$a_{2k}=\frac{(-1)^ka_0}{4^k\,k!\,(m+1)(m+2)\cdots(m+k)}=\frac{(-1)^k\,m!\,a_0}{4^k\,k!\,(m+k)!}$$
+  <p class="sub">代回 $y=\sum a_{2k}x^{2k+m}$，用 $\dfrac{x^{2k+m}}{4^k}=2^m\Big(\dfrac x2\Big)^{2k+m}$：</p>
+  $$y_{\gamma=m}=a_0\,2^m\,m!\sum_{k\ge0}\frac{(-1)^k}{k!\,(m+k)!}\Big(\frac x2\Big)^{2k+m}$$
+  <p>取 $a_0=\dfrac1{2^m\,m!}$ 就是 $J_m(x)$。前幾項：</p>
+  $$J_0(x)=1-\frac{x^2}{4}+\frac{x^4}{64}-\frac{x^6}{2304}+\cdots,\qquad J_1(x)=\frac x2-\frac{x^3}{16}+\frac{x^5}{384}-\cdots$$
+  <p>$m$ 不是整數時，把 $(m+k)!$ 換成 Gamma 函數 $\Gamma(m+k+1)$（$\Gamma(z+1)=z\Gamma(z)$，整數時 $\Gamma(n+1)=n!$），定義完全一樣。比值 $\left|\dfrac{a_{2k}x^2}{a_{2k-2}}\right|=\dfrac{x^2}{4k(k+m)}\to0$，級數對所有 $x$ 收斂。</p>
+</div>
+
+<div class="step" data-step="am6-eq-s4" data-sym="mm">
+  <span class="step-title">常見變形：$J_m(ax)$ <span class="added">網站補充</span></span>
+  <p>考題常常不是標準形式。最常見的是 $x^2y''+xy'+(a^2x^2-m^2)y=0$：令 $t=ax$，$x\tfrac{d}{dx}=t\tfrac{d}{dt}$、$x^2\tfrac{d^2}{dx^2}=t^2\tfrac{d^2}{dt^2}$，方程式變成 $t^2y_{tt}+ty_t+(t^2-m^2)y=0$，所以</p>
+  $$x^2y''+xy'+(a^2x^2-m^2)y=0\ \Longrightarrow\ y=AJ_m(ax)+BY_m(ax)$$
+  <p>（$Y_m$ 是第二個解，下一節）。113 上期末就是 $m=0$、$a=\lambda$ 的情形（第 3 節）。更一般的代換（$t=e^x$、$t=\tfrac23x^{3/2}$）見自編 1-a、1-b。</p>
+</div>
+
+<div class="problem" data-kind="example" id="am6-ex-1">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/21 板書（照片 1–2）· (a)–(c) 是板書推導，(d) 由網站補</span></div>
+    <h4>Bessel 方程的 Frobenius 解：指標根、遞迴與 $J_m$</h4>
+    <button type="button" class="exam-btn" data-exam="am6-ex-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-ex-1"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例：Bessel's diff. Eq &amp; Bessel's function　$x^2y''+xy'+(x^2-m^2)y=0$，$m=0,\pm1,\pm2,\dots$</p><p>與標準式比較 $P(x)=\frac1x$，$Q(x)=\frac{x^2-m^2}{x^2}$；$xP(x)=1$，$x^2Q=x^2-m^2$　選 Frobenius method</p><p>let $y=\sum_{n=0}^{\infty}a_nx^{n+\gamma}$（$a_0\ne0$），代入原式；找 $\gamma$，遞迴關係</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 Frobenius 法解 Bessel 方程 $x^2y''+xy'+(x^2-m^2)y=0$（$m\ge0$）：(a) 判斷 $x=0$ 的類型並求指標根；(b) 求遞迴關係，說明為什麼 $a_1=0$；(c) 求 $\gamma=m$ 的解，選 $a_0$ 使它等於 $J_m(x)$；(d) 寫出 $J_0$、$J_1$ 的前三個非零項。<span class=\"added\">(a)–(c) 是板書的推導；(d) 板書沒有，由網站補</span></p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$x^2y''+xy'+(x^2-m^2)y=0$</td><td>板書照片 1「Bessel's diff. Eq」</td></tr>
+          <tr><td>標準式係數</td><td>$P=\dfrac1x$、$Q=\dfrac{x^2-m^2}{x^2}$</td><td>除以 $x^2$；板書「與標準式比較」</td></tr>
+          <tr><td>階數</td><td>$m\ge0$（$m$ 與 $-m$ 是同一條方程式）</td><td>方程式只含 $m^2$；板書「$m=0,\pm1,\pm2,\dots$」</td></tr>
+          <tr><td>Frobenius 假設</td><td>$y=\sum a_nx^{n+\gamma}$，$a_0\ne0$</td><td>板書「let $y=\sum a_nx^{n+\gamma}$（$a_0\ne0$）」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 類型與 $\gamma$；(b) 遞迴與 $a_1=0$ 的理由；(c) $\gamma=m$ 的解與 $a_0$；(d) $J_0$、$J_1$ 前三項。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $P$、$Q$ 在 $x=0$ 發散，但 $xP=1$、$x^2Q=x^2-m^2$ 不發散，<b>所以</b> $x=0$ 是正則奇點，冪級數 $\sum a_nx^n$ 不夠用，要用 Frobenius 的 $x^\gamma\sum a_nx^n$。</p>
+      <p><b>因為</b> $x^2y''$、$xy'$、$-m^2y$ 都和 $y$ 同次（$x^{n+\gamma}$），只有 $x^2y$ 高兩次，<b>所以</b>平移兩格，遞迴關係連接 $a_n$ 與 $a_{n-2}$，偶數項、奇數項各自一串；$n=1$ 那一格決定奇數串是否全為零。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-ex-1-s1" data-sym="PQ,gam">
+        <span class="step-title">(a) 正則奇點與指標根</span>
+        <p>指標方程式 $\gamma(\gamma-1)+p_0\gamma+q_0=0$，$p_0=\lim_{x\to0}xP$、$q_0=\lim_{x\to0}x^2Q$：</p>
+        <p class="sub">代入 $xP=1$、$x^2Q=x^2-m^2$（題目的方程式除以 $x^2$）：$p_0=1$、$q_0=-m^2$：</p>
+        $$\gamma(\gamma-1)+\gamma-m^2=\gamma^2-m^2=0\ \Longrightarrow\ \gamma=m,\ -m$$
+      </div>
+      <div class="step" data-step="am6-ex-1-s2" data-sym="an">
+        <span class="step-title">(b) 代入、對齊次方</span>
+        <p>前三項都是 $x^{n+\gamma}$；$x^2y$ 平移成 $\sum_{n\ge2}a_{n-2}x^{n+\gamma}$。合併係數 $(n+\gamma)(n+\gamma-1)+(n+\gamma)-m^2=(n+\gamma)^2-m^2$：</p>
+        $$(\gamma^2-m^2)a_0x^\gamma+\big[(1+\gamma)^2-m^2\big]a_1x^{1+\gamma}+\sum_{n\ge2}\big[(n+\gamma+m)(n+\gamma-m)a_n+a_{n-2}\big]x^{n+\gamma}=0$$
+        <p>每個次方的係數都要為 0，得遞迴 $(n+\gamma+m)(n+\gamma-m)a_n+a_{n-2}=0$（$n\ge2$）。</p>
+      </div>
+      <div class="step" data-step="am6-ex-1-s3">
+        <span class="step-title">(b) 為什麼 $a_1=0$</span>
+        <p class="sub">$n=1$ 的係數代入 $\gamma=m$：</p>
+        $$\big[(1+m)^2-m^2\big]a_1=(1+2m)\,a_1=0$$
+        <p>$m\ge0$ 時 $1+2m\ge1\ne0$，所以 $a_1=0$；遞迴跳兩格，$a_3=a_5=\cdots=0$。</p>
+      </div>
+      <div class="step" data-step="am6-ex-1-s4" data-sym="an">
+        <span class="step-title">(c) 偶數項的一般式</span>
+        <p class="sub">$\gamma=m$ 代入遞迴：$(n+2m)\,n\,a_n=-a_{n-2}$；令 $n=2k$：</p>
+        $$a_{2k}=-\frac{a_{2k-2}}{2k(2k+2m)}=-\frac{a_{2k-2}}{4k(k+m)}$$
+        <p class="sub">連乘 $k=1$ 到 $k$，分子 $(-1)^k$，分母 $4^k\cdot k!\cdot(m+1)\cdots(m+k)=4^k\,k!\,\dfrac{(m+k)!}{m!}$：</p>
+        $$a_{2k}=\frac{(-1)^k\,m!}{4^k\,k!\,(m+k)!}\,a_0\qquad\Big(k=1:\ a_2=-\frac{a_0}{4(m+1)}\Big)$$
+      </div>
+      <div class="step" data-step="am6-ex-1-s5" data-sym="Jm">
+        <span class="step-title">(c) 整理成 $J_m$</span>
+        <p class="sub">代回 $y=\sum_k a_{2k}x^{2k+m}$，用 $x^{2k+m}/4^k=2^m(x/2)^{2k+m}$：</p>
+        $$y=a_0\,2^m\,m!\sum_{k\ge0}\frac{(-1)^k}{k!\,(m+k)!}\Big(\frac x2\Big)^{2k+m}$$
+        <p class="sub">取 $a_0=\dfrac{1}{2^m\,m!}$，前面的係數變成 1：</p>
+        $$y=J_m(x)=\sum_{k\ge0}\frac{(-1)^k}{k!\,(m+k)!}\Big(\frac x2\Big)^{2k+m}$$
+      </div>
+      <div class="step" data-step="am6-ex-1-s6">
+        <span class="step-title">(d) $J_0$、$J_1$ 前三項</span>
+        <p class="sub">$m=0$：$k=0,1,2$ 的係數 $\tfrac{1}{0!0!}$、$-\tfrac{1}{1!1!}\cdot\tfrac14$、$\tfrac{1}{2!2!}\cdot\tfrac1{16}$；$m=1$：$\tfrac{1}{0!1!}\cdot\tfrac12$、$-\tfrac{1}{1!2!}\cdot\tfrac18$、$\tfrac{1}{2!3!}\cdot\tfrac1{32}$：</p>
+        $$J_0=1-\frac{x^2}{4}+\frac{x^4}{64}-\cdots,\qquad J_1=\frac x2-\frac{x^3}{16}+\frac{x^5}{384}-\cdots$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 正則奇點，$\gamma=\pm m$；(b) $(n+\gamma+m)(n+\gamma-m)a_n+a_{n-2}=0$（$n\ge2$），$n=1$ 給 $(1+2m)a_1=0$ ⇒ $a_1=0$；(c) $y=a_0\,2^m m!\sum\frac{(-1)^k}{k!(m+k)!}(\frac x2)^{2k+m}$，$a_0=\frac1{2^mm!}$ 時就是 $J_m$；(d) $J_0=1-\frac{x^2}4+\frac{x^4}{64}-\cdots$，$J_1=\frac x2-\frac{x^3}{16}+\frac{x^5}{384}-\cdots$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$J_0$ 代入 $m=0$ 的方程式到 $x^4$：$x^2J_0''=-\tfrac{x^2}2+\tfrac{3x^4}{16}$、$xJ_0'=-\tfrac{x^2}2+\tfrac{x^4}{16}$、$x^2J_0=x^2-\tfrac{x^4}4$，相加 $0\cdot x^2+0\cdot x^4$ ✔。驗算腳本把 $J_m$ 的級數代入方程式到 $x^{12}$，$m=0,1,2,3$ 都為零。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-01a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$y''+\lambda^2e^{2x}y=0$：代換 $t=\lambda e^x$ 與本徵值</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-01a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $y''+\lambda^2e^{2x}y=0$，$-\infty\lt x\le0$，$\lambda\gt0$。(a) 令 $t=\lambda e^x$，證明 $y$ 對 $t$ 滿足 Bessel 方程，寫出一般解。(b) 若要求 $x\to-\infty$ 時 $y$ 有界、而且 $y(0)=0$，求所有可能的 $\lambda$（用板書的零點表）與對應的解。(c) 第二小的 $\lambda$ 對應的解在 $(-\infty,0)$ 內哪裡為零？(d) 推廣：寫出 $y''+(e^{2x}-m^2)y=0$ 的一般解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$y''+\lambda^2e^{2x}y=0$</td><td>題目；係數 $e^{2x}$ 不是多項式，不能直接用冪級數或 Frobenius</td></tr>
+          <tr><td>代換</td><td>$t=\lambda e^x$，$\dfrac{dt}{dx}=\lambda e^x=t$</td><td>「令 $t=\lambda e^x$」</td></tr>
+          <tr><td>範圍</td><td>$x\in(-\infty,0]$ ⇔ $t\in(0,\lambda]$</td><td>$e^x$ 在 $x\to-\infty$ 時趨近 0</td></tr>
+          <tr><td>條件</td><td>$x\to-\infty$ 有界；$y(0)=0$</td><td>「有界」「$y(0)=0$」</td></tr>
+          <tr><td>$J_0$ 的零點</td><td>2.4、5.5、8.7（精確 2.4048、5.5201、8.6537）</td><td>板書照片 6 零點表；精確值題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 方程式與一般解；(b) $\lambda$ 與解；(c) 零點位置；(d) 推廣的一般解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $e^{2x}$ 讓方程式變係數、又不是多項式，<b>所以</b>要找一個代換把 $e^{2x}$ 變成 $t^2$：$t=\lambda e^x$ 使 $\lambda^2e^{2x}=t^2$，而且 $\tfrac{d}{dx}=t\tfrac{d}{dt}$ 正好產生 Bessel 方程需要的 $t^2y''+ty'$ 結構。</p>
+      <p><b>因為</b> $x\to-\infty$ 對應 $t\to0^+$，而第二解 $Y_0(t)$ 在 $t\to0$ 像 $\tfrac2\pi\ln t\to-\infty$，<b>所以</b>「有界」刪掉 $Y_0$；剩下 $J_0(\lambda e^x)$，$y(0)=0$ 變成 $J_0(\lambda)=0$，$\lambda$ 只能是 $J_0$ 的零點——這是本徵值問題。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-01a-s1">
+        <span class="step-title">(a) 連鎖律換變數</span>
+        <p>$\dfrac{dy}{dx}=\dfrac{dy}{dt}\dfrac{dt}{dx}$，再微一次要對乘積微分：</p>
+        <p class="sub">代入 $\dfrac{dt}{dx}=t$（題目的代換）：</p>
+        $$\frac{dy}{dx}=t\frac{dy}{dt},\qquad\frac{d^2y}{dx^2}=t\frac{d}{dt}\Big(t\frac{dy}{dt}\Big)=t^2\frac{d^2y}{dt^2}+t\frac{dy}{dt}$$
+      </div>
+      <div class="step" data-step="am6-sf-01a-s2" data-sym="Jm,Ym">
+        <span class="step-title">(a) 化成 Bessel 方程</span>
+        <p class="sub">代入原式，$\lambda^2e^{2x}=t^2$：</p>
+        $$t^2y_{tt}+ty_t+t^2y=0$$
+        <p>這是 $m=0$ 的 Bessel 方程，一般解 $y=AJ_0(\lambda e^x)+BY_0(\lambda e^x)$。</p>
+      </div>
+      <div class="step" data-step="am6-sf-01a-s3" data-sym="jmn">
+        <span class="step-title">(b) 有界條件與 $y(0)=0$</span>
+        <p>$x\to-\infty$ ⇒ $t\to0^+$：$J_0(t)\to1$ 有界，$Y_0(t)\to-\infty$，所以 $B=0$。$y(0)$ 對應 $t=\lambda e^0=\lambda$：</p>
+        <p class="sub">$y(0)=AJ_0(\lambda)=0$，$A\ne0$（否則 $y\equiv0$）：</p>
+        $$J_0(\lambda)=0\ \Longrightarrow\ \lambda=j_{0n}\approx2.405,\ 5.520,\ 8.654,\dots\qquad y_n(x)=A\,J_0\big(j_{0n}e^x\big)$$
+      </div>
+      <div class="step" data-step="am6-sf-01a-s4">
+        <span class="step-title">(c) 第二個解的內部零點</span>
+        <p>$y_2=J_0(j_{02}e^x)$，$x\lt0$ 時 $t=j_{02}e^x$ 從 0 增加到 $j_{02}$，中間只經過 $J_0$ 的一個零點 $j_{01}$：</p>
+        <p class="sub">令 $j_{02}e^x=j_{01}$，代入 $j_{01}=2.4048$、$j_{02}=5.5201$：</p>
+        $$x=\ln\frac{j_{01}}{j_{02}}=\ln0.43565=-0.831$$
+      </div>
+      <div class="step" data-step="am6-sf-01a-s5" data-sym="mm">
+        <span class="step-title">(d) 推廣到 $y''+(e^{2x}-m^2)y=0$</span>
+        <p class="sub">同樣令 $t=e^x$（$\lambda=1$），$y''=t^2y_{tt}+ty_t$，$e^{2x}=t^2$：</p>
+        $$t^2y_{tt}+ty_t+(t^2-m^2)y=0\ \Longrightarrow\ y=AJ_m(e^x)+BY_m(e^x)$$
+        <p>（$m$ 不是整數時也可以寫 $AJ_m(e^x)+BJ_{-m}(e^x)$，見第 2 節。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $t^2y_{tt}+ty_t+t^2y=0$，$y=AJ_0(\lambda e^x)+BY_0(\lambda e^x)$；(b) $\lambda=j_{0n}\approx2.40,\,5.52,\,8.65,\dots$，$y_n=AJ_0(j_{0n}e^x)$；(c) $x=\ln(j_{01}/j_{02})\approx-0.831$；(d) $y=AJ_m(e^x)+BY_m(e^x)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=J_0(\lambda e^x)$：$y'=\lambda e^xJ_0'$，$y''=\lambda e^xJ_0'+\lambda^2e^{2x}J_0''$；代入得 $t J_0'+t^2J_0''+t^2J_0=0$ ✔（$t=\lambda e^x$）。第 $n$ 個解在 $(-\infty,0)$ 內有 $n-1$ 個零點（$y_1$ 沒有、$y_2$ 一個），和弦振動「第 $n$ 個模態有 $n-1$ 個節點」的規律一樣。驗算腳本用 sympy 代入確認。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-01b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$y''+xy=0$ 也是 Bessel 方程：兩步代換</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-01b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$y''+xy=0$（$x\gt0$）。(a) 令 $y=\sqrt x\,w(x)$，證明 $x^2w''+xw'+\big(x^3-\tfrac14\big)w=0$。(b) 再令 $t=\tfrac23x^{3/2}$，證明 $w$ 對 $t$ 滿足 $m=\tfrac13$ 的 Bessel 方程，寫出 $y$ 的一般解。(c) 用 $J_{\pm1/3}$ 的首項說明兩個解在 $x\to0$ 分別像 $x$ 與 $1$，並和第 4 章冪級數法 $y=a_0\big(1-\tfrac{x^3}{6}+\cdots\big)+a_1\big(x-\tfrac{x^4}{12}+\cdots\big)$ 對照。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$y''+xy=0$</td><td>題目（Airy 型方程式）</td></tr>
+          <tr><td>第一個代換</td><td>$y=x^{1/2}w$</td><td>(a)「令 $y=\sqrt x\,w$」</td></tr>
+          <tr><td>第二個代換</td><td>$t=\tfrac23x^{3/2}$，$\dfrac{dt}{dx}=x^{1/2}$</td><td>(b)</td></tr>
+          <tr><td>$J_\nu$ 首項</td><td>$J_\nu(t)\approx\dfrac{(t/2)^\nu}{\Gamma(\nu+1)}$</td><td>1.4 節 $J_m$ 級數 $k=0$ 那一項（非整數用 $\Gamma$）</td></tr>
+          <tr><td>冪級數解</td><td>$(n+2)(n+1)a_{n+2}+a_{n-1}=0$，$a_2=0$</td><td>第 4 章的做法（(c) 題目給的對照式）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)(b) 兩個代換後的方程式與一般解；(c) 首項行為與冪級數對照。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> Bessel 方程的特徵是「$x^2y''+xy'$」配上「$x$ 的某次方 $\cdot y$」，而 $y''+xy=0$ 缺了 $y'$ 項、也不是 $x^2$ 的形式，<b>所以</b>先乘 $\sqrt x$ 製造出 $x^2w''+xw'$（(a)），再用 $t\propto x^{3/2}$ 把 $x^3$ 變成 $t^2$（(b)）。</p>
+      <p><b>因為</b> $x\dfrac{d}{dx}$（Euler 算子）在冪次代換 $t=cx^p$ 下只變成常數倍 $p\,t\dfrac{d}{dt}$，<b>所以</b>把 $x^2w''+xw'$ 寫成 $x\dfrac{d}{dx}\Big(x\dfrac{dw}{dx}\Big)$ 來換變數最快、不容易錯。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-01b-s1">
+        <span class="step-title">(a) 代入 $y=x^{1/2}w$</span>
+        <p>乘積微分兩次：</p>
+        $$y'=\tfrac12x^{-1/2}w+x^{1/2}w',\qquad y''=-\tfrac14x^{-3/2}w+x^{-1/2}w'+x^{1/2}w''$$
+        <p class="sub">代入 $y''+xy=0$，再乘 $x^{3/2}$（讓 $w''$ 的係數變成 $x^2$）：</p>
+        $$x^2w''+xw'-\tfrac14w+x^3w=0\quad\Longrightarrow\quad x^2w''+xw'+\big(x^3-\tfrac14\big)w=0$$
+      </div>
+      <div class="step" data-step="am6-sf-01b-s2">
+        <span class="step-title">(b) Euler 算子換變數</span>
+        <p>$x^2w''+xw'=x\dfrac{d}{dx}\Big(x\dfrac{dw}{dx}\Big)$。由 $\dfrac{dt}{dx}=x^{1/2}$：</p>
+        <p class="sub">$x\dfrac{d}{dx}=x\cdot x^{1/2}\dfrac{d}{dt}=x^{3/2}\dfrac{d}{dt}$，再代入 $x^{3/2}=\tfrac32t$：</p>
+        $$x\frac{d}{dx}=\frac32\,t\frac{d}{dt}\quad\Longrightarrow\quad x^2w''+xw'=\frac94\Big(t^2w_{tt}+tw_t\Big)$$
+      </div>
+      <div class="step" data-step="am6-sf-01b-s3" data-sym="mm">
+        <span class="step-title">(b) 得到 $m=\tfrac13$ 的 Bessel 方程</span>
+        <p class="sub">$x^3=\big(\tfrac32t\big)^2=\tfrac94t^2$，代入 (a) 的結果再除以 $\tfrac94$：</p>
+        $$\frac94\big(t^2w_{tt}+tw_t+t^2w\big)-\frac14w=0\ \Longrightarrow\ t^2w_{tt}+tw_t+\Big(t^2-\frac19\Big)w=0$$
+        <p>$m^2=\tfrac19$，$m=\tfrac13$ 不是整數，$J_{1/3}$ 與 $J_{-1/3}$ 線性獨立（自編 1-c）：</p>
+        $$y=\sqrt x\Big[A\,J_{1/3}\big(\tfrac23x^{3/2}\big)+B\,J_{-1/3}\big(\tfrac23x^{3/2}\big)\Big]$$
+      </div>
+      <div class="step" data-step="am6-sf-01b-s4" data-sym="Gam">
+        <span class="step-title">(c) $x\to0$ 的首項</span>
+        <p class="sub">$J_{\pm1/3}(t)\approx\dfrac{(t/2)^{\pm1/3}}{\Gamma(1\pm\frac13)}$，代入 $t=\tfrac23x^{3/2}$：$t^{1/3}\propto x^{1/2}$、$t^{-1/3}\propto x^{-1/2}$：</p>
+        $$\sqrt x\,J_{1/3}\propto\sqrt x\cdot x^{1/2}=x,\qquad\sqrt x\,J_{-1/3}\propto\sqrt x\cdot x^{-1/2}=1$$
+        <p>所以 $J_{1/3}$ 那個解對應冪級數的奇串 $a_1\big(x-\tfrac{x^4}{12}+\cdots\big)$，$J_{-1/3}$ 那個解對應 $a_0\big(1-\tfrac{x^3}{6}+\cdots\big)$。</p>
+      </div>
+      <div class="step" data-step="am6-sf-01b-s5">
+        <span class="step-title">(c) 冪級數對照</span>
+        <p class="sub">第 4 章：$y=\sum a_nx^n$ 代入，$x^n$ 係數 $(n+2)(n+1)a_{n+2}+a_{n-1}=0$，$n=0$ 給 $a_2=0$；$n=1$、$n=2$：</p>
+        $$a_3=-\frac{a_0}{3\cdot2}=-\frac{a_0}{6},\qquad a_4=-\frac{a_1}{4\cdot3}=-\frac{a_1}{12}$$
+        <p>遞迴跳三格（$x^3$ 的週期），正好對應 $t^2\propto x^3$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $x^2w''+xw'+(x^3-\tfrac14)w=0$；(b) $t^2w''+tw'+(t^2-\tfrac19)w=0$，$y=\sqrt x\big[AJ_{1/3}(\tfrac23x^{3/2})+BJ_{-1/3}(\tfrac23x^{3/2})\big]$；(c) 兩個解分別 $\propto x$ 與 $\propto1$，對應冪級數的 $a_1$ 串與 $a_0$ 串。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>驗算腳本用 sympy 把 $\sqrt x\,J_{\pm1/3}(\tfrac23x^{3/2})$ 代入 $y''+xy$，在多個 $x$ 點數值為 0（誤差 $\lt10^{-12}$）；並把 $\sqrt x J_{1/3}(\tfrac23x^{3/2})$ 展開，確認比例 $x-\tfrac{x^4}{12}+\cdots$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-01c">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>小根 $\gamma=-m$ 什麼時候給出第二個解？</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-01c">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>Bessel 方程取小根 $\gamma=-m$（$m\gt0$）時，遞迴是 $n(n-2m)a_n=-a_{n-2}$（$n\ge2$），$n=1$ 那一格是 $(1-2m)a_1=0$。(a) $m$ 不是整數也不是半整數（例如 $m=\tfrac13$）：說明 $\gamma=-m$ 一定給出第二個獨立解。(b) $m=\tfrac12$、$m=\tfrac32$：兩根差 $2m$ 是奇數，算到 $n=2m$ 那一格，說明為什麼小根仍然成功。(c) $m=1,2,3,\dots$：說明在 $n=2m$ 出現矛盾，並說明這和板書「$J_{-m}=(-1)^mJ_m$、線性相依」是同一件事。(d) $m=0$ 呢？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>小根遞迴</td><td>$n(n-2m)a_n=-a_{n-2}$</td><td>題目；也是板書照片 2「$(n)(n-2m)a_n+a_{n-2}=0$」</td></tr>
+          <tr><td>$n=1$</td><td>$(1-2m)a_1=0$</td><td>1.3 節的 $n=1$ 係數代 $\gamma=-m$</td></tr>
+          <tr><td>兩根差</td><td>$\gamma_1-\gamma_2=2m$</td><td>$m-(-m)$</td></tr>
+          <tr><td>判斷規則</td><td>在 $n=N$ 得 $0\cdot a_N=$ 右邊：右邊 $=0$ 成功、$\ne0$ 失敗</td><td>第 5 章第 3 節</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)–(d) 四種 $m$ 的判斷與理由。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>遞迴要「除以 $n(n-2m)$」才能算 $a_n$，<b>所以</b>唯一可能出問題的是 $n=2m$（係數為 0）——只有 $2m$ 是正整數時才會碰到。再看那一格的右邊 $-a_{2m-2}$ 是不是 0。</p>
+      <p><b>因為</b>遞迴跳兩格，<b>所以</b> $2m$ 是奇數時出問題的格子在奇數串，奇數串一開始就被 $n=1$ 那格控制；$2m$ 是偶數時在偶數串，偶數串從 $a_0\ne0$ 開始，一路都不為零。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-01c-s1" data-sym="gam">
+        <span class="step-title">(a) $2m$ 不是整數</span>
+        <p>$n-2m\ne0$ 對所有正整數 $n$ 成立，$(1-2m)\ne0$ 給 $a_1=0$，偶數項 $a_{2k}=-\dfrac{a_{2k-2}}{4k(k-m)}$ 都能算。解的首項是 $x^{-m}$，而 $J_m$ 的首項是 $x^{m}$，兩者比值 $\sim x^{-2m}$ 不是常數，所以<b>線性獨立</b>：一般解 $AJ_m+BJ_{-m}$。</p>
+      </div>
+      <div class="step" data-step="am6-sf-01c-s2">
+        <span class="step-title">(b) $m=\tfrac12$</span>
+        <p class="sub">$2m=1$，問題格是 $n=1$：$(1-2\cdot\tfrac12)a_1=0\cdot a_1=0$：</p>
+        <p>右邊是 0，等式恆成立，$a_1$ <b>自由</b>（取 0；取非零只是加上 $\gamma=\tfrac12$ 的解）。偶數串 $a_{2k}=-\dfrac{a_{2k-2}}{2k(2k-1)}$ 分母都不為零，小根成功，得 $J_{-1/2}\propto x^{-1/2}\big(1-\tfrac{x^2}{2}+\tfrac{x^4}{24}-\cdots\big)$（114 上期末，第 2 節）。</p>
+      </div>
+      <div class="step" data-step="am6-sf-01c-s3">
+        <span class="step-title">(b) $m=\tfrac32$</span>
+        <p class="sub">$n=1$：$(1-3)a_1=0$ ⇒ $a_1=0$；問題格 $n=3$：$3\cdot(3-3)a_3=-a_1$：</p>
+        $$0\cdot a_3=-a_1=0$$
+        <p>又是 $0=0$，$a_3$ 自由，小根成功。一般地，$2m$ 是奇數時問題格在奇數串，而奇數串在問題格之前全是 0（$n=1$ 那格的係數 $1-2m\ne0$，除非 $m=\tfrac12$），右邊一定是 0。</p>
+      </div>
+      <div class="step" data-step="am6-sf-01c-s4" data-sym="Jm">
+        <span class="step-title">(c) $m$ 是正整數</span>
+        <p class="sub">問題格 $n=2m$（偶數）：$2m\cdot0\cdot a_{2m}=-a_{2m-2}$，而偶數串從 $a_0\ne0$ 起每一步都乘非零數：</p>
+        $$a_{2m-2}=\frac{(-1)^{m-1}a_0}{\prod_{k=1}^{m-1}4k(k-m)}\ne0\quad\Longrightarrow\quad0=-a_{2m-2}\ne0\ \ \text{矛盾}$$
+        <p>例如 $m=1$：$n=2$ 那格 $2\cdot0\cdot a_2=-a_0\ne0$。所以 $x^{-m}\sum a_nx^n$ 形式的解<b>不存在</b>，第二解必須含 $\ln x$（第 5 章「小根失敗」）。板書的 $J_{-m}$ 用 $\tfrac1{(-k)!}=0$ 把 $n\lt m$ 的項全部刪掉，等於強迫 $a_0=\cdots=a_{2m-2}=0$，級數從 $x^{m}$ 才開始——那就只是 $J_m$ 的倍數，所以 $J_{-m}=(-1)^mJ_m$ 線性相依。</p>
+      </div>
+      <div class="step" data-step="am6-sf-01c-s5">
+        <span class="step-title">(d) $m=0$</span>
+        <p>$\gamma=\pm0$ 是重根，小根和大根是同一個，只給出 $J_0$；第二解含 $J_0\ln x$（第 2 節板書例題 3 實際算出）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $2m\notin\mathbb Z$：$J_{-m}$ 存在且與 $J_m$ 獨立；(b) $m$ 為半奇數：問題格在奇數串、右邊為 0，小根成功，$J_{-m}$ 仍是第二解；(c) $m$ 為正整數：$n=2m$ 得 $0=-a_{2m-2}\ne0$，小根失敗，需 $Y_m$（含 $\ln x$），這就是 $J_{-m}=(-1)^mJ_m$ 相依的原因；(d) $m=0$ 重根，也需 $\ln x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$m=\tfrac12$ 的小根解 $\propto\frac{\cos x}{\sqrt x}$，與 $J_{1/2}\propto\frac{\sin x}{\sqrt x}$ 顯然獨立 ✔；$m=1$ 時驗算腳本解 $n=2$ 那格的方程式無解 ✔；第 2 節自編 2-b 用 Wronskian $W(J_m,J_{-m})=-\frac{2\sin m\pi}{\pi x}$ 得到同樣的結論（整數 $m$ 才為 0）。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>Bessel 方程 $x^2y''+xy'+(x^2-m^2)y=0$ 是圓柱座標 PDE 的徑向方程式，$m$ 由角度週期性決定，是整數。</li>
+    <li>$xP=1$、$x^2Q=x^2-m^2$ ⇒ 正則奇點；指標根 $\gamma=\pm m$；$a_1=0$；遞迴 $(n+\gamma+m)(n+\gamma-m)a_n+a_{n-2}=0$ 跳兩格。</li>
+    <li>$\gamma=m$：$a_{2k}=-\frac{a_{2k-2}}{4k(k+m)}$，歸一化 $a_0=\frac1{2^mm!}$ 得 $J_m(x)=\sum\frac{(-1)^k}{k!(m+k)!}(\frac x2)^{2k+m}$；非整數 $m$ 用 $\Gamma(m+k+1)$。</li>
+    <li>$x^2y''+xy'+(a^2x^2-m^2)y=0$ 的解是 $J_m(ax)$、$Y_m(ax)$；其他代換（$e^x$、$x^{3/2}$）先用 Euler 算子 $x\frac{d}{dx}$ 換變數。</li>
+    <li>小根 $\gamma=-m$：$2m$ 非整數或為奇數都成功（$J_{-m}$ 是第二解）；$m$ 為整數時失敗，第二解要用 $Y_m$。</li>
+  </ol>
+</div>

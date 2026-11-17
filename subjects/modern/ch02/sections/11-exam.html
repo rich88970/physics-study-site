@@ -1,0 +1,331 @@
+<h2>十一、考前衝刺 <span class="pg">課本第 2 章 · p.52–91</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box pitfall">
+  <span class="box-title">老師指定必考：光電效應與康普頓效應的差異</span>
+  <p>老師上課提示這題<strong>一定會考</strong>，而且可能不只考觀念、還會有應用計算。考前務必看完第 7 節的 <a href="#m2-cp-must">7.4 老師指定必考</a>：</p>
+  <ul>
+    <li>觀念（標準答案＋考試精簡版）：<a href="#pe-cp-1">光電效應與康普頓效應的差異</a></li>
+    <li>證明：<a href="#pe-cp-2">自由電子為什麼不能吸收光子（光電效應要束縛電子）</a></li>
+    <li>應用：<a href="#pe-cp-3">同一光子的兩種命運（$\Delta\lambda/\lambda$）</a>　<a href="#pe-cp-4">康普頓電子 vs 光電子</a>　<a href="#pe-cp-5">先散射再打金屬</a>　<a href="#pe-cp-6">看數據判斷是哪種效應</a></li>
+  </ul>
+  <p>三十秒版：光電效應＝光子被<strong>束縛</strong>電子<strong>吸收</strong>，只用能量守恆 $K_{\max}=h\nu-\phi$，可見光／紫外線，證明 $E=h\nu$；康普頓效應＝光子被<strong>自由</strong>電子<strong>散射</strong>，能量＋動量守恆 $\Delta\lambda=(h/m_ec)(1-\cos\theta)$，X 光／$\gamma$ 射線，證明 $p=h/\lambda$。</p>
+</div>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>兩份期中考中屬於第 2 章的 5 題：習題 30 原題（康普頓反衝動能）、習題 45 原題（鉛的半值厚度）、習題 40 刪掉光子方向的版本（正子湮滅，照課本題意「一前一後」作答）、習題 13 改成鈉 $2.28\ \text{eV}$ 和兩個波長（要先判斷會不會發射），以及看 Fig. 2.27 的觀念比較題。109 學年上學期的手寫解答和 104 級作答卷（題目卷都沒有保存）顯示也考過：列舉光的粒子性現象（<a href="#kg-109-2">考古 109-2</a>）、例題 2.5 成對產生不能在真空發生（<a href="#bz-ex2-5">例題 2.5</a>）、湮滅換成 $3\ \text{MeV}$（<a href="#kg-109-4">考古 109-4</a>）、質子的康普頓散射（<a href="#kg-104-4">考古 104-4</a>）；同一張解答也做了習題 2-3、2-20。配分 10–15%，一題大多一兩條公式：<strong>單位換對（$hc=1240\ \text{eV·nm}$）、先判斷物理過程、能量和動量守恆一起寫</strong>。</p>
+</div>
+
+<h3 id="m2x-formulas">11.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>光子</h4>
+    <ul>
+      <li>$E=h\nu=\dfrac{hc}{\lambda}$，$p=\dfrac{h\nu}c=\dfrac h\lambda$，$E=pc$</li>
+      <li>$h=6.626\times10^{-34}\ \text{J·s}=4.136\times10^{-15}\ \text{eV·s}$</li>
+      <li>$hc=1.240\times10^{-6}\ \text{eV·m}=1240\ \text{eV·nm}$</li>
+      <li>每秒光子數 $=P/h\nu$；光電流 $I=\eta e\,P/h\nu$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>黑體輻射</h4>
+    <ul>
+      <li>$G(\nu)=\dfrac{8\pi\nu^2}{c^3}$；古典 $\bar\epsilon=kT$ ⟹ $u=\dfrac{8\pi kT}{c^3}\nu^2$（紫外災變）</li>
+      <li>$\epsilon_n=nh\nu$，$\bar\epsilon=\dfrac{h\nu}{e^{h\nu/kT}-1}$</li>
+      <li>$u(\nu)=\dfrac{8\pi h}{c^3}\dfrac{\nu^3}{e^{h\nu/kT}-1}$；$u(\lambda)=\dfrac{8\pi hc}{\lambda^5}\dfrac1{e^{hc/\lambda kT}-1}$</li>
+      <li>補充：$\nu_{\max}=2.821kT/h$，$\lambda_{\max}T=2.898\times10^{-3}\ \text{m·K}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>光電效應</h4>
+    <ul>
+      <li>$h\nu=KE_{\max}+\phi$，$\phi=h\nu_0=hc/\lambda_0$</li>
+      <li>$KE_{\max}=eV_0=h(\nu-\nu_0)$；$h\nu<\phi$ 沒有光電子</li>
+      <li>兩組數據：$h=\dfrac{KE_2-KE_1}{\nu_2-\nu_1}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>X 射線與繞射</h4>
+    <ul>
+      <li>$eV=\dfrac{hc}{\lambda_{\min}}$，$\lambda_{\min}=\dfrac{1.24\times10^{-6}}{V}\ \text{m}$</li>
+      <li>Bragg：$2d\sin\theta=n\lambda$（$\theta$ 與晶面夾角），需 $\lambda\le2d$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>康普頓效應</h4>
+    <ul>
+      <li>$\lambda'-\lambda=\lambda_C(1-\cos\phi)$，$\lambda_C=\dfrac h{mc}=2.426\ \text{pm}$</li>
+      <li>能量形式 $\dfrac1{E'}-\dfrac1E=\dfrac{1-\cos\phi}{mc^2}$</li>
+      <li>$KE=h\nu-h\nu'$；$KE_{\max}=\dfrac{2E^2}{mc^2+2E}$（$\phi=180^\circ$）</li>
+      <li>反衝角 $\tan\theta=\dfrac{\sin\phi}{\lambda'/\lambda-\cos\phi}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>成對產生與湮滅</h4>
+    <ul>
+      <li>門檻 $h\nu\ge2mc^2=1.022\ \text{MeV}$（$\lambda\le1.2\ \text{pm}$），要有原子核；精確 $2mc^2(1+m/M)$</li>
+      <li>湮滅（光子共線）：$E_1+E_2=E_{\text{tot}}$，$E_1-E_2=p_{\text{tot}}c$</li>
+      <li>$pc=\sqrt{KE^2+2KE\,mc^2}$；$m_ec^2=0.511\ \text{MeV}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>吸收</h4>
+    <ul>
+      <li>$I=I_0e^{-\mu x}$，$x=\dfrac{\ln(I_0/I)}\mu$</li>
+      <li>$x_{1/2}=\dfrac{0.693}\mu$，$x_{1/10}=\dfrac{2.30}\mu$；同屏蔽 ⟺ $\mu_1x_1=\mu_2x_2$</li>
+      <li>低能光電、中能康普頓、高能成對產生</li>
+    </ul>
+  </section>
+  <section>
+    <h4>光子與重力</h4>
+    <ul>
+      <li>「質量」$h\nu/c^2$；$h\nu'=h\nu\left(1+\dfrac{gH}{c^2}\right)$</li>
+      <li>重力紅移 $\dfrac{\Delta\nu}\nu=\dfrac{GM}{c^2R}\approx\dfrac{\Delta\lambda}\lambda$</li>
+      <li>$R_S=\dfrac{2GM}{c^2}$；$v_e=\sqrt{2GM/R}$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="m2x-types">11.2 題型總表</h3>
+
+<p class="type-jump"><a href="#m2type-1">① 光子能量與數目</a><a href="#m2type-2">② 光電效應</a><a href="#m2type-3">③ 由數據求 $h$</a><a href="#m2type-4">④ 黑體輻射</a><a href="#m2type-5">⑤ X 光截止</a><a href="#m2type-6">⑥ Bragg</a><a href="#m2type-7">⑦ 康普頓 $\Delta\lambda$</a><a href="#m2type-8">⑧ 康普頓反衝</a><a href="#m2type-9">⑨ 湮滅</a><a href="#m2type-10">⑩ 證明不可能</a><a href="#m2type-11">⑪ 衰減</a><a href="#m2type-12">⑫ 光子與重力</a><a href="#m2type-13">⑬ 觀念比較</a></p>
+
+<div class="drill" id="m2type-1">
+  <h4>① 光子能量與光子數</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給波長或頻率求光子能量；給功率求每秒幾個光子、電流、光子密度。</dd>
+    <dt>做法</dt><dd>能量用 $1240/\lambda(\text{nm})$ eV；數目＝功率 ÷ 一個光子的能量（要換成焦耳）；電流再乘效率和 $e$。</dd>
+    <dt>常錯</dt><dd>eV 和 J 混用；功率密度忘了乘面積。</dd>
+    <dt>代表題</dt><dd><a href="#bz-2-5">課本 2-5</a>　<a href="#bz-2-7">2-7</a>　<a href="#bz-2-9">2-9</a>　<a href="#bz-2-15">2-15</a>　<a href="#bz-ex2-2">例題 2.2</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-2">
+  <h4>② 光電效應：會不會發射、最大動能、截止電壓</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>功函數、截止頻率／截止波長、截止電壓、金屬表面照光。</dd>
+    <dt>做法</dt><dd>先算 $h\nu$，和 $\phi$ 比大小；$KE_{\max}=h\nu-\phi=eV_0$。給截止波長就 $\phi=hc/\lambda_0$。</dd>
+    <dt>常錯</dt><dd>$h\nu<\phi$ 寫出負的動能；以為強度會影響 $KE_{\max}$。</dd>
+    <dt>代表題</dt><dd><a href="#kg-107-6">考古 107-6</a>　<a href="#bz-ex2-2">例題 2.2</a>　<a href="#bz-2-11">課本 2-11</a>　<a href="#bz-2-13">2-13</a>　<a href="#bz-2-14">2-14</a>　<a href="#bz-2-16">2-16</a>　<a href="#m2var-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-3">
+  <h4>③ 由實驗數據求 Planck 常數與功函數</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>兩組（頻率、最大動能）或（波長、截止電壓）。</dd>
+    <dt>做法</dt><dd>兩式相減消去 $\phi$ 得斜率 $h$，代回任一式求 $\phi$；最後用另一組驗算。</dd>
+    <dt>常錯</dt><dd>給波長時要先換成 $1/\lambda$ 或 $\nu=c/\lambda$ 再相減。</dd>
+    <dt>代表題</dt><dd><a href="#bz-2-17">課本 2-17</a>　<a href="#m2var-2">變化題 2</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-4">
+  <h4>④ 黑體輻射與能量量子</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>紫外災變、Planck 公式的極限、改寫成波長、巨觀振子的量子。</dd>
+    <dt>做法</dt><dd>古典＝駐波數乘上 $kT$；Planck＝駐波數乘上 $h\nu/(e^{h\nu/kT}-1)$；低頻用 $e^x\approx1+x$ 回到古典。換成波長要乘 $|\mathrm d\nu/\mathrm d\lambda|=c/\lambda^2$。</dd>
+    <dt>常錯</dt><dd>改寫成波長時只把 $\nu$ 換成 $c/\lambda$，漏了 $\mathrm d\nu$ 的轉換。</dd>
+    <dt>代表題</dt><dd><a href="#bz-ex2-1">例題 2.1</a>　<a href="#bz-2-1">課本 2-1</a>　<a href="#bz-2-2">2-2</a>　<a href="#m2-bb-planck">Planck 公式</a>　<a href="#m2var-12">變化題 12</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-5">
+  <h4>⑤ X 光的截止波長</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>X 光管、加速電壓、最短波長、最高頻率。</dd>
+    <dt>做法</dt><dd>電子全部動能 $eV$ 給一個光子：$\lambda_{\min}=1.24\times10^{-6}/V$（m），$\nu_{\max}=eV/h$。</dd>
+    <dt>常錯</dt><dd>以為和靶材料有關；忘了這是「逆光電效應」（觀念題會問）。</dd>
+    <dt>代表題</dt><dd><a href="#bz-ex2-3">例題 2.3</a>　<a href="#bz-2-20">課本 2-20</a>　<a href="#bz-2-21">2-21</a>　<a href="#m2var-8">變化題 8</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-6">
+  <h4>⑥ Bragg 繞射</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>晶體、原子平面間距、最小散射角、第幾階。</dd>
+    <dt>做法</dt><dd>$2d\sin\theta=n\lambda$；「最小角」用 $n=1$；最多幾階 $n\le2d/\lambda$。由密度求間距：每個原子占 $a^3$。</dd>
+    <dt>常錯</dt><dd>把 $\theta$ 當成和法線的夾角；偏折角是 $2\theta$。</dd>
+    <dt>代表題</dt><dd><a href="#bz-2-22">課本 2-22</a>　<a href="#bz-2-23">2-23</a>　<a href="#bz-2-24">2-24</a>　<a href="#m2var-9">變化題 9</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-7">
+  <h4>⑦ 康普頓：波長、頻率、角度</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>X 光或 $\gamma$ 射線被電子（或其他粒子）散射，給角度求新波長，或給能量求角度。</dd>
+    <dt>做法</dt><dd>$\lambda'=\lambda+\lambda_C(1-\cos\phi)$；給頻率或能量就用 $1/\nu'$、$1/E'$ 形式；散射粒子不是電子時 $\lambda_C=h/Mc$。</dd>
+    <dt>常錯</dt><dd>把 $\Delta\lambda$ 當成 $\lambda'$；用電子的反衝角代 $\phi$。</dd>
+    <dt>代表題</dt><dd><a href="#bz-ex2-4">例題 2.4</a>　<a href="#bz-2-29">課本 2-29</a>　<a href="#bz-2-31">2-31</a>　<a href="#bz-2-33">2-33</a>　<a href="#bz-2-27">2-27</a>　<a href="#m2var-3">變化題 3</a>　<a href="#m2var-4">4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-8">
+  <h4>⑧ 康普頓：反衝電子的動能、方向、動量</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「傳給電子多少動能」「最大動能」「電子的方向」「推導 $KE_{\max}$」。</dd>
+    <dt>做法</dt><dd>$KE=h\nu-h\nu'$（只要能量守恆）；最大值在 $\phi=180^\circ$；方向用兩個動量分量或 $\tan\theta=\sin\phi/(\lambda'/\lambda-\cos\phi)$；推導照課本 (2.16)–(2.20) 消去 $\theta$。</dd>
+    <dt>常錯</dt><dd>電子動量用古典 $\sqrt{2mKE}$（能量高時要用 $pc=\sqrt{KE^2+2KE\,mc^2}$）。</dd>
+    <dt>代表題</dt><dd><a href="#kg-107-7">考古 107-7</a>　<a href="#kg-104-4">考古 104-4（質子）</a>　<a href="#bz-2-32">課本 2-32</a>　<a href="#bz-2-34">2-34</a>　<a href="#bz-2-35">2-35</a>　<a href="#bz-2-36">2-36</a>　<a href="#bz-2-37">2-37</a>　<a href="#bz-2-38">2-38</a>　<a href="#m2-cp-derive">推導</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-9">
+  <h4>⑨ 正負電子湮滅</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>正子撞電子、兩個光子的能量或波長。</dd>
+    <dt>做法</dt><dd>總能量含兩份靜能；動量 $pc=\sqrt{KE^2+2KE\,mc^2}$；光子共線時 $E_1+E_2=E_{\text{tot}}$、$E_1-E_2=p_{\text{tot}}c$。總動量為零（迎面等能量）時兩光子相同。</dd>
+    <dt>常錯</dt><dd>忘了加靜止電子的 $0.511\ \text{MeV}$；以為兩個光子能量一定相等。</dd>
+    <dt>代表題</dt><dd><a href="#kg-107-8">考古 107-8</a>　<a href="#kg-109-4">考古 109-4</a>　<a href="#bz-ex2-6">例題 2.6</a>　<a href="#bz-2-39">課本 2-39</a>　<a href="#m2var-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-10">
+  <h4>⑩ 「證明不可能」與門檻能量</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>真空中成對產生、自由電子吸收光子、散射後還能不能成對產生、考慮原子核的門檻。</dd>
+    <dt>做法</dt><dd>能量守恆＋動量守恆同時寫，或用不變量 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$；門檻時產物一起運動。</dd>
+    <dt>常錯</dt><dd>只寫能量守恆就說「能量夠所以可以」。</dd>
+    <dt>代表題</dt><dd><a href="#bz-ex2-5">例題 2.5（109上考古第 3 題）</a>　<a href="#pe-cp-2">老師指定：自由電子不能吸收光子</a>　<a href="#bz-2-19">課本 2-19</a>　<a href="#bz-2-41">2-41</a>　<a href="#bz-2-42">2-42</a>　<a href="#m2var-6">變化題 6</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-11">
+  <h4>⑪ 衰減與屏蔽</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>線性吸收（衰減）係數、半值厚度、剩幾 %、多厚的 A 等於多厚的 B。</dd>
+    <dt>做法</dt><dd>$I/I_0=e^{-\mu x}$；$x=\ln(I_0/I)/\mu$；減半 $0.693/\mu$；同屏蔽 $\mu_1x_1=\mu_2x_2$。</dd>
+    <dt>常錯</dt><dd>單位（$\text{m}^{-1}$ 配 m，cm 要換）；把指數衰減當成線性。</dd>
+    <dt>代表題</dt><dd><a href="#kg-107-9">考古 107-9</a>　<a href="#bz-ex2-7">例題 2.7</a>　<a href="#bz-2-43">課本 2-43</a>　<a href="#bz-2-44">2-44</a>　<a href="#bz-2-46">2-46</a>　<a href="#bz-2-47">2-47</a>　<a href="#bz-2-50">2-50</a>　<a href="#m2var-7">變化題 7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-12">
+  <h4>⑫ 光子與重力</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>光子落下、重力紅移、白矮星、黑洞、史瓦西半徑。</dd>
+    <dt>做法</dt><dd>落下 $\Delta\nu/\nu=gH/c^2$；離開星球 $\Delta\nu/\nu=GM/c^2R$，小量時 $\Delta\lambda\approx\lambda GM/c^2R$；$R_S=2GM/c^2$。</dd>
+    <dt>常錯</dt><dd>落下是頻率變高（藍移）、離開是變低（紅移）；黑洞判據課本簡單推法是 1，正確是 $\tfrac12$。</dd>
+    <dt>代表題</dt><dd><a href="#bz-ex2-8">例題 2.8</a>　<a href="#bz-2-51">課本 2-51</a>　<a href="#bz-2-52">2-52</a>　<a href="#bz-2-53">2-53</a>　<a href="#bz-2-54">2-54</a>　<a href="#bz-2-55">2-55</a>　<a href="#m2var-10">變化題 10</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="m2type-13">
+  <h4>⑬ 觀念與比較題</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>沒有數字的「為什麼」「比較」「看圖判斷」。</dd>
+    <dt>做法</dt><dd>抓住關鍵：光電效應的三個事實與光子解釋；三種作用的光子下場、能量範圍、門檻；波粒互補；康普頓為什麼用 X 光。比較題分點寫（相同點＋相異點），能附公式就附。</dd>
+    <dt>常錯</dt><dd>只寫名稱不寫理由；「(b) 為什麼」要寫出 $2mc^2$ 門檻。</dd>
+    <dt>代表題</dt><dd><a href="#pe-cp-1">老師指定必考：光電 vs 康普頓</a>　<a href="#kg-115-2">考古 115-2</a>　<a href="#kg-109-2">考古 109-2</a>　<a href="#bz-2-3">課本 2-3</a>　<a href="#bz-2-4">2-4</a>　<a href="#m2-pe-exp">光電效應三事實</a>　<a href="#m2var-11">變化題 11</a></dd>
+  </dl>
+</div>
+
+<h3 id="m2x-vars">11.3 變化題：老師可能的改法</h3>
+
+<p>每題都是把考古題或課本題換條件。先自己寫，再打開解答對照。</p>
+
+<div class="drill-q" id="m2var-1">
+  <p class="q-src">變化題 1 · 改自考古 <a href="#kg-107-6">107-6</a></p>
+  <p>鉀的功函數 $2.2\ \text{eV}$。分別以 $400\ \text{nm}$ 和 $600\ \text{nm}$ 的光照射，是否有光電子？若有，求最大動能和截止電壓。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>截止波長 $1240/2.2=564\ \text{nm}$。$400\ \text{nm}$：$h\nu=3.10\ \text{eV}$，$KE_{\max}=0.90\ \text{eV}$，$V_0=0.90\ \text{V}$。$600\ \text{nm}$：$h\nu=2.07\ \text{eV}<2.2\ \text{eV}$，沒有光電子。</p>
+    <p>驗算：$400<564<600\ \text{nm}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#bz-2-17">課本 2-17</a></p>
+  <p>以 $300\ \text{nm}$ 的光照射某金屬，截止電壓 $1.83\ \text{V}$；改用 $400\ \text{nm}$，截止電壓 $0.80\ \text{V}$。求 Planck 常數和功函數。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$h=\frac{e(V_1-V_2)}{c\,(1/\lambda_1-1/\lambda_2)}=\frac{1.03\ \text{eV}}{(3.00\times10^{8})(3.333-2.500)\times10^{6}\ \text{s}^{-1}}=4.12\times10^{-15}\ \text{eV·s}$$
+    <p>$\phi=hc/\lambda_1-eV_1=(4.12\times10^{-15})(1.00\times10^{15})-1.83=2.29\ \text{eV}$（大約是鈉）。驗算：$hc/400\ \text{nm}=3.09\ \text{eV}$，$3.09-2.29=0.80\ \text{eV}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-3">
+  <p class="q-src">變化題 3 · 改自考古 <a href="#kg-107-7">107-7</a></p>
+  <p>頻率 $1.5\times10^{19}\ \text{Hz}$ 的光子被靜止電子散射 $90^\circ$。求散射光子的頻率和電子的動能。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\nu'=\left(\frac1\nu+\frac{\lambda_C}{c}\right)^{-1}=\left(6.667\times10^{-20}+8.09\times10^{-21}\right)^{-1}\text{Hz}=1.34\times10^{19}\ \text{Hz}$$
+    <p>$KE=h(\nu-\nu')=(4.136\times10^{-15}\ \text{eV·s})(1.62\times10^{18}\ \text{Hz})=6.7\ \text{keV}$。驗算：$\lambda=20.0\ \text{pm}\to\lambda'=22.4\ \text{pm}$，$c/\lambda'=1.34\times10^{19}\ \text{Hz}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-4">
+  <p class="q-src">變化題 4 · 同 <a href="#kg-104-4">考古 104-4</a>（104 級作答卷，題目卷沒有留下）與 <a href="#bz-2-38">課本 2-38</a></p>
+  <p>$1.0\ \text{MeV}$ 的光子被靜止的<strong>質子</strong>（$938\ \text{MeV}$）散射 $45^\circ$。求散射光子的能量和質子的反衝動能。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>推導只用到靜止質量，把 $mc^2$ 換成 $938\ \text{MeV}$：</p>
+    $$\frac1{E'}=\frac1{1.0}+\frac{1-\cos45^\circ}{938}=1+3.12\times10^{-4}\ \Longrightarrow\ E'=0.99969\ \text{MeV}$$
+    <p>$KE=E-E'=3.1\times10^{-4}\ \text{MeV}=0.31\ \text{keV}$。驗算：$\lambda_{C,p}=1.32\ \text{fm}$，$\Delta\lambda=0.39\ \text{fm}$，和 $\lambda=1.24\ \text{pm}$ 比起來只有 $3\times10^{-4}$ ✔——所以用電子才看得到康普頓效應。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-5">
+  <p class="q-src">變化題 5 · 改自考古 <a href="#kg-107-8">107-8</a>，即 <a href="#kg-109-4">考古 109-4</a>（雲端 109 學年上學期的手寫解答用的就是這個數字）</p>
+  <p>動能 $3.0\ \text{MeV}$ 的正子撞上靜止電子後湮滅，產生兩個光子，一個沿正子原方向、一個反向。求兩個光子的能量。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$E_{\text{tot}}=3.0+1.022=4.022\ \text{MeV}$；$pc=\sqrt{3.0^2+2(3.0)(0.511)}=3.474\ \text{MeV}$。</p>
+    $$E_1=\frac{4.022+3.474}{2}=3.75\ \text{MeV},\qquad E_2=\frac{4.022-3.474}{2}=0.27\ \text{MeV}$$
+    <p>驗算：$4E_1E_2=4.11=4.022^2-3.474^2$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-6">
+  <p class="q-src">變化題 6 · 改自 <a href="#bz-2-19">課本 2-19</a>、<a href="#bz-ex2-5">例題 2.5</a></p>
+  <p>證明一個等速運動的自由電子不能自己放出一個光子。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>換到電子原本靜止的慣性座標系：放出前總能量 $mc^2$。放出後電子必須反衝（動量守恆，光子帶走動量 $h\nu/c>0$），所以電子能量 $\ge mc^2$，再加上光子能量 $h\nu>0$，總能量 $>mc^2$，違反能量守恆。所以自由電子不能發光；制動輻射需要原子核的電場讓電子減速、分擔動量。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-7">
+  <p class="q-src">變化題 7 · 改自考古 <a href="#kg-107-9">107-9</a></p>
+  <p>同樣 $\mu=78\ \text{m}^{-1}$ 的鉛：要讓強度剩 $\tfrac18$ 需要多厚？剩 $1\%$ 呢？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\tfrac18=(\tfrac12)^3$：三個半值厚度 $3(8.9\ \text{mm})=26.7\ \text{mm}$。$1\%$：$x=\ln100/78=0.059\ \text{m}=59\ \text{mm}$。驗算：$e^{-78\times0.0267}=e^{-2.08}=0.125$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-8">
+  <p class="q-src">變化題 8 · 改自 <a href="#bz-ex2-3">例題 2.3</a></p>
+  <p>X 光管加速電壓 $30\ \text{kV}$，求最短波長與最大光子能量。電壓加倍時最短波長變多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\lambda_{\min}=1.24\times10^{-6}/3.0\times10^{4}=4.13\times10^{-11}\ \text{m}=41\ \text{pm}$，最大光子能量 $30\ \text{keV}$。電壓加倍：$\lambda_{\min}\propto1/V$，變成 $21\ \text{pm}$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-9">
+  <p class="q-src">變化題 9 · 改自 <a href="#bz-2-22">課本 2-22</a>、<a href="#bz-2-24">2-24</a></p>
+  <p>$0.154\ \text{nm}$ 的 X 光射向岩鹽（$d=0.282\ \text{nm}$）。求一階、二階 Bragg 角；最多能看到幾階？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\sin\theta_n=n\lambda/2d=0.273n$：$\theta_1=15.8^\circ$、$\theta_2=33.1^\circ$、$\theta_3=55.0^\circ$；$n=4$ 時 $\sin\theta=1.09>1$ 不可能，所以最多 3 階（$n\le2d/\lambda=3.66$）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-10">
+  <p class="q-src">變化題 10 · 改自 <a href="#bz-2-52">課本 2-52</a></p>
+  <p>質量 $1.0\times10^{30}\ \text{kg}$、半徑 $5.0\times10^{6}\ \text{m}$ 的白矮星發出 $600\ \text{nm}$ 的光，重力紅移多少？它的史瓦西半徑是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$GM/c^2R=\dfrac{(6.67\times10^{-11})(1.0\times10^{30})}{(9.0\times10^{16})(5.0\times10^{6})}=1.48\times10^{-4}$，$\Delta\lambda=(600)(1.48\times10^{-4})=0.089\ \text{nm}$。$R_S=2GM/c^2=1.5\ \text{km}$，遠小於 $5000\ \text{km}$，不是黑洞。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-11">
+  <p class="q-src">變化題 11 · 改自考古 <a href="#kg-115-2">115-2</a></p>
+  <p>為什麼康普頓效應要用 X 光觀察，而不用可見光？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\Delta\lambda\le2\lambda_C=4.85\ \text{pm}$，和入射波長無關。對 $500\ \text{nm}$ 的可見光，相對變化不到 $10^{-5}$，測不出來；對 $0.1\ \text{nm}$ 的 X 光約 $5\%$，很明顯。另外可見光光子只有幾 eV，和電子的束縛能相當，電子不能看成自由電子，主要發生的是光電效應（或整個原子反衝的不位移散射）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="m2var-12">
+  <p class="q-src">變化題 12 · 改自 <a href="#m2-bb-planck">§2.2 Planck 公式</a>（Wien 位移定律是補充）</p>
+  <p>把太陽表面看成 $6000\ \text{K}$ 的黑體，$u(\nu)$ 的峰值頻率和 $u(\lambda)$ 的峰值波長各是多少？兩者是否對應同一個光子？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\nu_{\max}=2.821kT/h=\dfrac{2.821(1.381\times10^{-23})(6000)}{6.626\times10^{-34}}=3.53\times10^{14}\ \text{Hz}$（$c/\nu_{\max}=850\ \text{nm}$）；$\lambda_{\max}=2.898\times10^{-3}/6000=483\ \text{nm}$。不對應同一個光子：$u(\nu)$ 和 $u(\lambda)$ 是對不同的區間寬度算的密度，換變數時多了 $c/\lambda^2$ 的因子（習題 2-2），峰值位置跟著移動。</p>
+  </details>
+</div>

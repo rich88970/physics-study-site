@@ -1,0 +1,1177 @@
+<h2>二、理想氣體 <span class="pg">課本 §1.2 p.6–14</span></h2>
+
+<p class="lead">低密度氣體的性質可以濃縮成一條式子 $PV=nRT=NkT$。這一節先把單位與常數弄熟、用它做一連串估計（莫耳體積、分子間距、熱氣球、指數大氣、維里修正），再用「分子撞活塞」的力學模型推出壓力，配合理想氣體定律得到本章最重要的結果：<strong>溫度就是分子平均平移動能的量度</strong>，$\overline{K}_{\text{trans}}=\tfrac32kT$。</p>
+
+<h3 id="t2-law">2.1 理想氣體定律與單位 <span class="pg-tag">p.6–7</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.6 (1.1)–(1.2) 理想氣體定律</span>
+  $$PV=nRT,\qquad R=8.31\ \frac{\text{J}}{\text{mol}\cdot\text{K}}$$
+  <p>$P$ 壓力、$V$ 體積、$n$ 莫耳數、$T$ 是 <strong>kelvin</strong> 溫度。</p>
+</div>
+
+<p>如果把攝氏溫度代進去會得到荒謬的結果：氣體的體積或壓力在水的冰點變成零、再低就變負。$R$ 的數值 8.31 是 SI 單位：壓力用 $\text{N/m}^2=\text{Pa}$（pascal）、體積用 $\text{m}^3$。化學上常用的單位要小心換算：</p>
+
+$$1\ \text{atm}=1.013\times10^5\ \text{Pa},\qquad 1\ \text{bar}=10^5\ \text{Pa}\ (\text{恰好}),\qquad 1\ \text{L}=(0.1\ \text{m})^3=10^{-3}\ \text{m}^3$$
+
+<p>撇開單位，這條定律濃縮了幾個物理事實：一定量氣體在定溫下，壓力加倍體積就剛好減半（Boyle）；定容下溫度加倍壓力也加倍；等等。</p>
+
+<h3 id="t2-k">2.2 分子數與波茲曼常數 <span class="pg-tag">p.7</span></h3>
+
+<p>一莫耳是 <strong>Avogadro 數</strong>個分子，$N_A=6.02\times10^{23}$。物理上通常直接用分子數 $N=nN_A$。把 $n=N/N_A$ 代入理想氣體定律，並把 $R/N_A$ 合成一個新常數 $k$：</p>
+
+$$PV=\frac{N}{N_A}RT=N\left(\frac R{N_A}\right)T=NkT,\qquad k=\frac R{N_A}=1.381\times10^{-23}\ \text{J/K}$$
+
+<p>$k$ 叫<strong>波茲曼常數</strong>（Boltzmann's constant），因為 $N_A$ 很大，它在 SI 單位下很小。課本建議記住 $nR=Nk$，所有常數的關係都在裡面。</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-k">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.2 (1.2)–(1.7) · p.7</span></div>
+    <h4>由 $R$ 與 $N_A$ 求 $k$，換算 L·atm</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-k">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-k"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>A mole of molecules is Avogadro’s number of them, $$N_A=6.02\times10^{23}.\qquad(1.3)$$ This is another “unit” that’s more useful in chemistry than in physics. More often we will want to simply discuss the number of molecules, denoted by capital $N$: $$N=n\times N_A.\qquad(1.4)$$ If you plug in $N/N_A$ for $n$ in the ideal gas law, then group together the combination $R/N_A$ and call it a new constant $k$, you get $$PV=NkT.\qquad(1.5)$$ This is the form of the ideal gas law that we’ll usually use. The constant $k$ is called <strong>Boltzmann’s constant</strong>, and is tiny when expressed in SI units (since Avogadro’s number is so huge): $$k=\frac{R}{N_A}=1.381\times10^{-23}\ \text{J/K}.\qquad(1.6)$$ In order to remember how all the constants are related, I recommend memorizing $$nR=Nk.\qquad(1.7)$$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 由 $R=8.31\ \text{J}/(\text{mol}\cdot\text{K})$ 與 $N_A=6.02\times10^{23}$ 算出波茲曼常數 $k$，並對 1 mol 驗證 $nR=Nk$。(b) 化學家常把 $PV$ 寫成 L·atm，1 L·atm 是多少焦耳？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氣體常數</td><td>$R=8.31\ \text{J}/(\text{mol}\cdot\text{K})$</td><td>題目、課本 (1.2)</td></tr>
+          <tr><td>Avogadro 數</td><td>$N_A=6.02\times10^{23}\ \text{mol}^{-1}$</td><td>題目、課本 (1.3)</td></tr>
+          <tr><td>1 mol</td><td>$n=1$，$N=N_A$</td><td>(a)「對 1 mol 驗證」；$N=nN_A$（1.4）</td></tr>
+          <tr><td>單位</td><td>$1\ \text{atm}=1.013\times10^5\ \text{Pa}$，$1\ \text{L}=10^{-3}\ \text{m}^3$</td><td>課本 p.7</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $k$ 的數值、$nR=Nk$；(b) 1 L·atm 的焦耳數。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b> $PV=nRT$ 與 $PV=NkT$ 描述同一團氣體，兩式右邊必須相等，<b>所以</b> $nR=Nk$，再用 $N=nN_A$ 消去 $n$ 就得 $k=R/N_A$。(b) <b>因為</b> $\text{Pa}\cdot\text{m}^3=(\text{N/m}^2)\cdot\text{m}^3=\text{N}\cdot\text{m}=\text{J}$，<b>所以</b>把 atm 換成 Pa、L 換成 $\text{m}^3$ 相乘即可。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-k-s1" data-sym="k,R,NA">
+        <span class="step-title">(a) 兩種寫法相等</span>
+        $$nRT=NkT\ \Longrightarrow\ nR=Nk\ \Longrightarrow\ k=\frac{nR}{N}=\frac{R}{N_A}$$
+        <p class="sub">代入 $R=8.31\ \text{J}/(\text{mol}\cdot\text{K})$、$N_A=6.02\times10^{23}\ \text{mol}^{-1}$（題目）：</p>
+        $$k=\frac{8.31\ \text{J}/(\text{mol}\cdot\text{K})}{6.02\times10^{23}\ \text{mol}^{-1}}=1.38\times10^{-23}\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sc-ex-k-s2" data-sym="N,n">
+        <span class="step-title">(a) 1 mol 驗證</span>
+        <p class="sub">代入 $n=1\ \text{mol}$、$N=6.02\times10^{23}$、$k=1.381\times10^{-23}\ \text{J/K}$（課本 (1.6) 的值）：</p>
+        $$nR=8.31\ \text{J/K},\qquad Nk=(6.02\times10^{23})(1.381\times10^{-23}\ \text{J/K})=8.31\ \text{J/K}\ ✔$$
+      </div>
+      <div class="step" data-step="sc-ex-k-s3" data-sym="P,V">
+        <span class="step-title">(b) 1 L·atm</span>
+        <p class="sub">代入 $1\ \text{atm}=1.013\times10^5\ \text{Pa}$、$1\ \text{L}=10^{-3}\ \text{m}^3$（課本 p.7）：</p>
+        $$1\ \text{L}\cdot\text{atm}=(1.013\times10^5\ \text{N/m}^2)(10^{-3}\ \text{m}^3)=101.3\ \text{J}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $k=R/N_A=1.38\times10^{-23}\ \text{J/K}$，1 mol 時 $nR=Nk=8.31\ \text{J/K}$；(b) $1\ \text{L}\cdot\text{atm}=101.3\ \text{J}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$\text{J}/(\text{mol}\cdot\text{K})\div\text{mol}^{-1}=\text{J/K}$ ✔。用 L·atm 時 $R=8.31/101.3=0.0820\ \text{L}\cdot\text{atm}/(\text{mol}\cdot\text{K})$，正是化學課的值 ✔</p></div>
+  </div>
+</div>
+
+<h3 id="t2-valid">2.3 理想氣體定律何時成立 <span class="pg-tag">p.7</span></h3>
+
+<p>和幾乎所有物理定律一樣，理想氣體定律是近似，對真實氣體從來不嚴格成立。它在<strong>低密度極限</strong>下成立：分子之間的平均距離遠大於分子本身的大小。室溫、一大氣壓的空氣，分子間平均距離大約是分子大小的十倍（習題 1.12 會算），所以大多數用途已經夠準。更精確的修正見 2.5 節的維里展開。下面的習題用這條定律做一連串估計。</p>
+
+<div class="problem" data-kind="textbook" id="sc-1-9">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-9（Problem 1.9）· p.7</span></div>
+    <h4>一莫耳空氣的體積</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What is the volume of one mole of air, at room temperature and 1 atm pressure?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>室溫、1 atm 下，一莫耳空氣的體積是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>莫耳數</td><td>$n=1\ \text{mol}$</td><td>「一莫耳空氣」</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>「室溫」：本章用 300 K</td></tr>
+          <tr><td>壓力</td><td>$P=1\ \text{atm}=1.013\times10^5\ \text{Pa}$</td><td>「1 atm」，換成 SI（課本 p.7）</td></tr>
+          <tr><td>氣體模型</td><td>理想氣體</td><td>題目沒寫；室溫一大氣壓的空氣夠稀薄（本節 2.3）</td></tr>
+          <tr><td>常數</td><td>$R=8.31\ \text{J}/(\text{mol}\cdot\text{K})$</td><td>題目沒給，用課本 (1.2)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$V$（用 $\text{m}^3$ 與 L 表示）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>給了 $n$、$T$、$P$ 求 $V$，而空氣在室溫一大氣壓下可當理想氣體，<b>所以</b>直接用 $PV=nRT$ 解 $V$。要注意 $P$ 用 Pa、$T$ 用 K，答案才是 $\text{m}^3$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-9-s1" data-sym="P,V,n,R,T">
+        <span class="step-title">解 $V$</span>
+        $$V=\frac{nRT}{P}$$
+        <p class="sub">代入 $n=1\ \text{mol}$、$R=8.31\ \text{J}/(\text{mol}\cdot\text{K})$、$T=300\ \text{K}$、$P=1.013\times10^5\ \text{Pa}$（上表）：</p>
+        $$V=\frac{(1\ \text{mol})(8.31\ \text{J}/(\text{mol}\cdot\text{K}))(300\ \text{K})}{1.013\times10^5\ \text{N/m}^2}=0.0246\ \text{m}^3$$
+      </div>
+      <div class="step" data-step="sc-1-9-s2">
+        <span class="step-title">換成公升</span>
+        <p class="sub">代入 $1\ \text{L}=10^{-3}\ \text{m}^3$：</p>
+        $$V=0.0246\ \text{m}^3\times\frac{1\ \text{L}}{10^{-3}\ \text{m}^3}=24.6\ \text{L}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$V\approx0.0246\ \text{m}^3=24.6\ \text{L}$（約 25 L）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>化學課的「STP 下 22.4 L」是 $0^\circ\text{C}$；$24.6/22.4=1.10\approx300/273$ ✔（$V\propto T$）。解答手冊取 $P=10^5\ \text{Pa}$ 得 25 L，一致。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-10">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-10（Problem 1.10）· p.8</span></div>
+    <h4>一間房間有多少空氣分子</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-10">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Estimate the number of air molecules in an average-sized room.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>估計一間普通大小的房間裡空氣分子的數目。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>房間大小</td><td>$4\ \text{m}\times4\ \text{m}\times3\ \text{m}$，$V=48\ \text{m}^3$</td><td>「普通大小的房間」：自己估計</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>題目沒寫，室內取室溫</td></tr>
+          <tr><td>壓力</td><td>$P=1.013\times10^5\ \text{Pa}$</td><td>題目沒寫，室內是一大氣壓</td></tr>
+          <tr><td>常數</td><td>$k=1.381\times10^{-23}\ \text{J/K}$，$N_A=6.02\times10^{23}$</td><td>題目沒給，用課本 (1.3)、(1.6)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：分子數 $N$（數量級）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>要求的是分子數而不是莫耳數，<b>所以</b>用 $PV=NkT$ 的形式直接解 $N$，省一步換算。房間大小是估計，答案只需要數量級。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-10-s1" data-sym="N,k">
+        <span class="step-title">解 $N$</span>
+        $$N=\frac{PV}{kT}$$
+        <p class="sub">代入 $P=1.013\times10^5\ \text{Pa}$、$V=48\ \text{m}^3$（估計）、$k=1.381\times10^{-23}\ \text{J/K}$、$T=300\ \text{K}$：</p>
+        $$N=\frac{(1.013\times10^5\ \text{N/m}^2)(48\ \text{m}^3)}{(1.381\times10^{-23}\ \text{J/K})(300\ \text{K})}=\frac{4.86\times10^6\ \text{J}}{4.14\times10^{-21}\ \text{J}}=1.2\times10^{27}$$
+      </div>
+      <div class="step" data-step="sc-1-10-s2" data-sym="NA">
+        <span class="step-title">換成莫耳（直觀）</span>
+        <p class="sub">代入 $N_A=6.02\times10^{23}$：</p>
+        $$n=\frac{N}{N_A}=\frac{1.17\times10^{27}}{6.02\times10^{23}}\approx1950\ \text{mol}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$N\approx1\times10^{27}$ 個分子（約 2000 mol）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>用習題 1.9：每莫耳 24.6 L，$48\ \text{m}^3/0.0246\ \text{m}^3=1950\ \text{mol}$ ✔。空氣質量約 $1950\times29\ \text{g}\approx57\ \text{kg}$——一間房的空氣差不多一個人重。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-11">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-11（Problem 1.11）· p.8</span></div>
+    <h4>兩間相通的房間，哪間空氣多？</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-11"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Rooms A and B are the same size, and are connected by an open door. Room A, however, is warmer (perhaps because its windows face the sun). Which room contains the greater mass of air? Explain carefully.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>房間 A 與 B 一樣大，中間的門開著。但 A 比較暖（也許窗戶朝陽）。哪一間的空氣質量較大？仔細說明。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>體積</td><td>$V_A=V_B$</td><td>「房間 A 與 B <b>一樣大</b>」</td></tr>
+          <tr><td>壓力</td><td>$P_A=P_B$</td><td>題目沒直接說：「門<b>開著</b>」——壓力不同空氣會流動，平衡時相等（力學平衡）</td></tr>
+          <tr><td>溫度</td><td>$T_A\gt T_B$</td><td>「A 比較暖」</td></tr>
+          <tr><td>空氣成分</td><td>兩邊相同，每個分子平均質量 $m$ 相同</td><td>兩間都是同樣的空氣</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：比較兩間的空氣質量 $M_A$、$M_B$，並說明理由。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>空氣質量＝分子數 × 每個分子的質量，而 $m$ 兩邊相同，<b>所以</b>只要比較 $N$。<b>因為</b>門開著，兩間的壓力必須相等（否則空氣會從高壓流向低壓），體積也相同，<b>所以</b>用 $PV=NkT$ 寫出 $N=PV/kT$，$PV$ 相同時 $N\propto1/T$。常見錯誤是以為「暖的房間空氣能量多所以空氣多」——溫度高是每個分子動得快，不是分子多。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-11-s1" data-sym="N,P,V,T">
+        <span class="step-title">寫出分子數</span>
+        $$N_A=\frac{P_AV_A}{kT_A},\qquad N_B=\frac{P_BV_B}{kT_B}$$
+        <p class="sub">代入 $P_A=P_B$（門開著）、$V_A=V_B$（題目），相除：</p>
+        $$\frac{N_A}{N_B}=\frac{T_B}{T_A}\lt1\qquad(\text{因為 }T_A\gt T_B)$$
+      </div>
+      <div class="step" data-step="sc-1-11-s2" data-sym="m">
+        <span class="step-title">換成質量</span>
+        $$\frac{M_A}{M_B}=\frac{N_Am}{N_Bm}=\frac{T_B}{T_A}\lt1$$
+        <p>例如 $T_A=303\ \text{K}$、$T_B=293\ \text{K}$（差 10°C），$M_A/M_B=0.967$：暖房間的空氣少約 3%。物理上：暖房間的分子跑得快、每次撞牆力道大又頻繁，只要較少的分子就能撐住同樣的壓力，多出來的空氣被擠到冷房間去了。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>較冷的房間 B 空氣質量較大：兩間壓力（門開著）與體積相同，$N=PV/kT\propto1/T$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>同一個道理：熱空氣密度比冷空氣小，所以會上升——熱氣球（習題 1.15）就是靠這個 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-12">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-12（Problem 1.12）· p.8</span></div>
+    <h4>分子之間的平均距離</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-12">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-12"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the average volume per molecule for an ideal gas at room temperature and atmospheric pressure. Then take the cube root to get an estimate of the average distance between molecules. How does this distance compare to the size of a small molecule like N<sub>2</sub> or H<sub>2</sub>O?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>計算室溫、一大氣壓下理想氣體每個分子平均佔的體積。再開立方根，估計分子之間的平均距離。這個距離和 $\text{N}_2$、$\text{H}_2\text{O}$ 這種小分子的大小相比如何？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>「室溫」</td></tr>
+          <tr><td>壓力</td><td>$P=1.013\times10^5\ \text{Pa}$</td><td>「一大氣壓」</td></tr>
+          <tr><td>模型</td><td>理想氣體</td><td>「理想氣體」</td></tr>
+          <tr><td>小分子的大小</td><td>約 $0.3\ \text{nm}$（幾個 Å）</td><td>題目沒給，用常識值（$\text{N}_2$ 約 0.36 nm，$\text{H}_2\text{O}$ 約 0.28 nm）</td></tr>
+          <tr><td>常數</td><td>$k=1.381\times10^{-23}\ \text{J/K}$</td><td>課本 (1.6)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$V/N$、平均間距 $(V/N)^{1/3}$，與分子大小的比。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>「每個分子佔的體積」就是 $V/N$，而 $PV=NkT$ 正好給 $V/N=kT/P$，<b>所以</b>不需要知道氣體總量。<b>因為</b>把每個分子想成待在一個邊長 $d$ 的小立方體裡、相鄰分子相距約 $d$，<b>所以</b>平均間距 $d\approx(V/N)^{1/3}$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-12-s1" data-sym="V,N,k,T,P">
+        <span class="step-title">每個分子的體積</span>
+        $$\frac VN=\frac{kT}{P}$$
+        <p class="sub">代入 $k=1.381\times10^{-23}\ \text{J/K}$、$T=300\ \text{K}$、$P=1.013\times10^5\ \text{Pa}$：</p>
+        $$\frac VN=\frac{(1.381\times10^{-23}\ \text{J/K})(300\ \text{K})}{1.013\times10^5\ \text{N/m}^2}=4.09\times10^{-26}\ \text{m}^3=40.9\ \text{nm}^3$$
+      </div>
+      <div class="step" data-step="sc-1-12-s2">
+        <span class="step-title">開立方根得間距</span>
+        <p class="sub">代入步驟 1 的 $40.9\ \text{nm}^3$：</p>
+        $$d=\left(\frac VN\right)^{1/3}=(40.9\ \text{nm}^3)^{1/3}=3.4\ \text{nm}$$
+      </div>
+      <div class="step" data-step="sc-1-12-s3">
+        <span class="step-title">與分子大小比較</span>
+        <p class="sub">代入分子大小約 $0.3\ \text{nm}$（常識值）：</p>
+        $$\frac{d}{\text{分子大小}}\approx\frac{3.4\ \text{nm}}{0.3\ \text{nm}}\approx11$$
+        <p>間距約是分子大小的十倍，分子本身只佔體積的約 $(1/11)^3\approx10^{-3}$，符合 2.3 節「低密度」的條件，理想氣體定律可用。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$V/N\approx4.1\times10^{-26}\ \text{m}^3=41\ \text{nm}^3$；平均間距約 3.4 nm，大約是 $\text{N}_2$、$\text{H}_2\text{O}$ 大小（約 0.3 nm）的十倍。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>與課本 p.7 的說法「分子平均間距大約是分子大小的十倍」一致 ✔；液態水每分子約 $0.03\ \text{nm}^3$，氣體大一千多倍，合理 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-13">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-13（Problem 1.13）· p.8</span></div>
+    <h4>一莫耳的質量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-13">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-13"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A mole is approximately the number of protons in a gram of protons. The mass of a neutron is about the same as the mass of a proton, while the mass of an electron is usually negligible in comparison, so if you know the total number of protons and neutrons in a molecule (i.e., its “atomic mass”), you know the approximate mass (in grams) of a mole of these molecules. Referring to the periodic table at the back of this book, find the mass of a mole of each of the following: water, nitrogen (N<sub>2</sub>), lead, quartz (SiO<sub>2</sub>).</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一莫耳大約是一克質子裡的質子數。中子質量與質子差不多，電子質量通常可忽略，所以知道一個分子裡質子與中子的總數（它的「原子量」），就知道一莫耳這種分子大約幾克。參考書末的週期表，求下列各物質一莫耳的質量：水、氮（$\text{N}_2$）、鉛、石英（$\text{SiO}_2$）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>核子與質量</td><td>1 mol 核子（質子或中子）約 1 g</td><td>「一莫耳大約是一克質子裡的質子數」「中子質量與質子差不多」</td></tr>
+          <tr><td>電子</td><td>忽略</td><td>「電子質量通常可忽略」</td></tr>
+          <tr><td>原子量（週期表）</td><td>H 1、N 14、O 16、Si 28、Pb 207</td><td>「參考書末的週期表」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\text{H}_2\text{O}$、$\text{N}_2$、Pb、$\text{SiO}_2$ 各一莫耳的質量（g）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每個核子約 1 u、一莫耳核子約 1 g，<b>所以</b>一個分子有幾個核子，一莫耳分子就約幾克——把化學式裡各原子的原子量相加即可。鉛、石英是固體，沒有「分子」，以一個原子（Pb）或一個 $\text{SiO}_2$ 單元當「分子」。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-13-s1" data-sym="M">
+        <span class="step-title">相加原子量</span>
+        $$M=\sum_{\text{原子}}(\text{原子量})\ \text{g/mol}$$
+        <p class="sub">代入週期表的原子量（H 1、N 14、O 16、Si 28、Pb 207）：</p>
+        $$\begin{aligned}\text{H}_2\text{O}:&\ 2(1)+16=18\ \text{g}\\\text{N}_2:&\ 2(14)=28\ \text{g}\\\text{Pb}:&\ 207\ \text{g}\\\text{SiO}_2:&\ 28+2(16)=60\ \text{g}\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-13-s2">
+        <span class="step-title">說明</span>
+        <p>H 只有 1 個質子；O 有 8 質子 8 中子；N 有 7 質子 7 中子；Si 14+14；鉛的 207 是幾種同位素的加權平均，所以不是整數核子數也無妨。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>水 18 g、氮 28 g、鉛 207 g、石英 60 g。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>18 g 水約 18 mL——一莫耳水大約一湯匙，合理 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-14">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-14（Problem 1.14）· p.8</span></div>
+    <h4>一莫耳乾空氣的質量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-14">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-14"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the mass of a mole of dry air, which is a mixture of N<sub>2</sub> (78% by volume), O<sub>2</sub> (21%), and argon (1%).</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>計算一莫耳乾空氣的質量。乾空氣是 $\text{N}_2$（體積佔 78%）、$\text{O}_2$（21%）與氬（1%）的混合物。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>體積比例</td><td>$\text{N}_2$ 0.78、$\text{O}_2$ 0.21、Ar 0.01</td><td>「78% by volume、21%、1%」</td></tr>
+          <tr><td>體積比＝分子數比</td><td>同溫同壓下 $V\propto N$</td><td>題目沒寫；由 $PV=NkT$ 讀出</td></tr>
+          <tr><td>莫耳質量</td><td>$\text{N}_2$ 28、$\text{O}_2$ 32、Ar 40 g/mol</td><td>習題 1.13 的方法：N 14、O 16、Ar 40</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：乾空氣的莫耳質量 $M_{\text{air}}$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>同溫同壓下理想氣體的體積正比於分子數（$V=NkT/P$），<b>所以</b>「體積百分比」就是「分子數（莫耳）百分比」。一莫耳空氣裡有 0.78 mol 的 $\text{N}_2$、0.21 mol 的 $\text{O}_2$、0.01 mol 的 Ar，質量是三者相加——也就是以莫耳分率加權平均。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-14-s1" data-sym="M">
+        <span class="step-title">莫耳分率加權平均</span>
+        $$M_{\text{air}}=\sum_i x_iM_i$$
+        <p class="sub">代入 $x_i=0.78,\ 0.21,\ 0.01$（題目）、$M_i=28,\ 32,\ 40\ \text{g/mol}$（習題 1.13 的方法）：</p>
+        $$M_{\text{air}}=0.78(28)+0.21(32)+0.01(40)=21.84+6.72+0.40=28.96\ \text{g}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$M_{\text{air}}\approx29\ \text{g/mol}$（28.96 g）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>介於 $\text{N}_2$（28）與 $\text{O}_2$（32）之間、偏向 28，因為氮佔大多數 ✔。一個空氣分子平均質量 $m=0.029/N_A=4.8\times10^{-26}\ \text{kg}$，習題 1.16 會用到。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-15">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-15（Problem 1.15）· p.8</span></div>
+    <h4>熱氣球裡的空氣有多熱？</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-15">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-15"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Estimate the average temperature of the air inside a hot-air balloon (see Figure 1.1). Assume that the total mass of the unfilled balloon and payload is 500 kg. What is the mass of the air inside the balloon?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>估計熱氣球（Fig. 1.1）內空氣的平均溫度。假設未充氣的氣球與載重的總質量是 500 kg。氣球內空氣的質量是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氣球＋載重質量</td><td>$M_0=500\ \text{kg}$</td><td>「總質量是 500 kg」</td></tr>
+          <tr><td>氣球大小</td><td>直徑約 15 m 的球，$V=\tfrac43\pi(7.5\ \text{m})^3=1767\ \text{m}^3$</td><td>題目沒給；從 Fig. 1.1 與底下的人比較估計</td></tr>
+          <tr><td>外面空氣</td><td>$T_0=300\ \text{K}$，$P=1.013\times10^5\ \text{Pa}$</td><td>題目沒給；地面附近、室溫</td></tr>
+          <tr><td>內外壓力</td><td>相同（氣球底部開口）</td><td>熱氣球下方開口與大氣相通（力學平衡）</td></tr>
+          <tr><td>受力</td><td>浮力＝總重（懸浮、不加速）</td><td>「估計」：取剛好浮起的情況</td></tr>
+          <tr><td>空氣莫耳質量</td><td>$M=0.029\ \text{kg/mol}$</td><td>習題 1.14</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：氣球內空氣溫度 $T$ 與內部空氣質量 $M_{\text{in}}$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>氣球懸浮，浮力（排開外面空氣的重量）等於氣球＋載重＋裡面熱空氣的重量，<b>所以</b>寫 $\rho_0Vg=(M_0+\rho V)g$，得到內外密度差 $\rho_0-\rho=M_0/V$。</p>
+      <p><b>因為</b>內外壓力相同、只有溫度不同，<b>所以</b>用理想氣體把密度寫成 $\rho=MP/(RT)$（$M$ 是莫耳質量），密度差就變成 $1/T_0-1/T$ 的式子，可解出 $T$。最後用 $\rho V$ 求裡面的空氣質量。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-15-s1" data-sym="rho,V,g">
+        <span class="step-title">力平衡</span>
+        $$\rho_0Vg=(M_0+\rho V)g\ \Longrightarrow\ \rho_0-\rho=\frac{M_0}{V}$$
+      </div>
+      <div class="step" data-step="sc-1-15-s2" data-sym="M,R">
+        <span class="step-title">用理想氣體寫密度</span>
+        <p>$n$ 莫耳的質量是 $nM$，$n/V=P/RT$：</p>
+        $$\rho=\frac{nM}{V}=\frac{MP}{RT}$$
+        <p>內外 $P$ 相同，代入步驟 1：</p>
+        $$\frac{MP}{R}\left(\frac1{T_0}-\frac1T\right)=\frac{M_0}{V}\ \Longrightarrow\ \frac1T=\frac1{T_0}-\frac{M_0R}{MPV}$$
+      </div>
+      <div class="step" data-step="sc-1-15-s3">
+        <span class="step-title">代入數值解 $T$</span>
+        <p class="sub">代入 $M_0=500\ \text{kg}$（題目）、$R=8.31$、$M=0.029\ \text{kg/mol}$、$P=1.013\times10^5\ \text{Pa}$、$V=1767\ \text{m}^3$（估計）：</p>
+        $$\frac{M_0R}{MPV}=\frac{(500)(8.31)}{(0.029)(1.013\times10^5)(1767)}\ \text{K}^{-1}=\frac{4155}{5.19\times10^6}\ \text{K}^{-1}=8.00\times10^{-4}\ \text{K}^{-1}$$
+        <p class="sub">再代 $T_0=300\ \text{K}$：</p>
+        $$\frac1T=\frac1{300\ \text{K}}-8.00\times10^{-4}\ \text{K}^{-1}=2.53\times10^{-3}\ \text{K}^{-1}\ \Longrightarrow\ T=395\ \text{K}$$
+      </div>
+      <div class="step" data-step="sc-1-15-s4">
+        <span class="step-title">裡面空氣的質量</span>
+        $$M_{\text{in}}=\rho V=\frac{MPV}{RT}$$
+        <p class="sub">代入同樣的 $M,P,V,R$ 與 $T=395\ \text{K}$（步驟 3）：</p>
+        $$M_{\text{in}}=\frac{(0.029)(1.013\times10^5)(1767)}{(8.31)(395)}\ \text{kg}=1.58\times10^3\ \text{kg}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$T\approx395\ \text{K}$（約 $120^\circ\text{C}$）；裡面空氣約 1600 kg，是氣球加載重的三倍多。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>代回：外面空氣 $\rho_0V=0.029(1.013\times10^5)(1767)/(8.31\times300)=2082\ \text{kg}$，減去裡面 1582 kg 剛好 500 kg ✔。解答手冊取 $T_0=290\ \text{K}$ 得 379 K，與實際熱氣球的工作溫度約 $100^\circ\text{C}$ 相符；答案對 $V$ 的估計敏感。</p></div>
+  </div>
+</div>
+
+<h3 id="t2-atmos">2.4 靜止的大氣：氣壓公式 <span class="pg-tag">p.8–9（習題 1.16）</span></h3>
+
+<p>理想氣體定律加上力學平衡，可以推出大氣壓力隨高度的變化。取一片厚 $dz$ 的水平空氣層：靜止時，下方的壓力要同時撐住上方的壓力與這片空氣的重量，所以 $dP/dz=-\rho g$；再用理想氣體把 $\rho$ 換成 $P$，得到<strong>氣壓公式</strong>（barometric equation）$dP/dz=-\frac{mg}{kT}P$，等溫時是指數衰減 $P(z)=P(0)e^{-z/H}$，標高 $H=kT/mg\approx8\ \text{km}$。指數的意義：每升高 $H$，壓力乘 $1/e$；$mgz$ 是把一個分子舉高 $z$ 的位能，與熱能 $kT$ 比較——這是第 6 章 Boltzmann 因子 $e^{-E/kT}$ 的第一個例子。</p>
+
+<div class="anim" data-anim="t1-atmosphere"></div>
+
+<div class="problem" data-kind="textbook" id="sc-1-16">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-16（Problem 1.16）· p.8–9</span></div>
+    <h4>指數大氣</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-16">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><em>The exponential atmosphere.</em></p><p>(a) Consider a horizontal slab of air whose thickness (height) is $dz$. If this slab is at rest, the pressure holding it up from below must balance both the pressure from above and the weight of the slab. Use this fact to find an expression for $dP/dz$, the variation of pressure with altitude, in terms of the density of air.</p><p>(b) Use the ideal gas law to write the density of air in terms of pressure, temperature, and the average mass $m$ of the air molecules. (The information needed to calculate $m$ is given in Problem 1.14.) Show, then, that the pressure obeys the differential equation $$\frac{dP}{dz}=-\frac{mg}{kT}P,$$ called the <strong>barometric equation</strong>.</p><p>(c) Assuming that the temperature of the atmosphere is independent of height (not a great assumption but not terrible either), solve the barometric equation to obtain the pressure as a function of height: $P(z)=P(0)e^{-mgz/kT}$. Show also that the density obeys a similar equation.</p><p>(d) Estimate the pressure, in atmospheres, at the following locations: Ogden, Utah (4700 ft or 1430 m above sea level); Leadville, Colorado (10,150 ft, 3090 m); Mt. Whitney, California (14,500 ft, 4420 m); Mt. Everest, Nepal/Tibet (29,000 ft, 8850 m). (Assume that the pressure at sea level is 1 atm.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p><b>指數大氣</b>。(a) 考慮一片厚度（高度）$dz$ 的水平空氣層。若它靜止，下方撐住它的壓力必須平衡上方的壓力與這片空氣的重量。用這件事求 $dP/dz$（壓力隨高度的變化）以空氣密度表示的式子。(b) 用理想氣體定律把空氣密度寫成壓力、溫度與空氣分子平均質量 $m$ 的函數（計算 $m$ 所需的資料在習題 1.14）。由此證明壓力滿足微分方程式 $\dfrac{dP}{dz}=-\dfrac{mg}{kT}P$，稱為氣壓公式。(c) 假設大氣溫度與高度無關（不是很好、但也不算太差的假設），解氣壓公式得到壓力隨高度的函數 $P(z)=P(0)e^{-mgz/kT}$。並證明密度滿足類似的式子。(d) 估計下列地點的氣壓（atm）：Ogden, Utah（4700 ft，海拔 1430 m）；Leadville, Colorado（10,150 ft，3090 m）；Mt. Whitney, California（14,500 ft，4420 m）；Mt. Everest（29,000 ft，8850 m）。（假設海平面氣壓為 1 atm。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>空氣層</td><td>截面積 $A$、厚 $dz$、質量 $\rho A\,dz$</td><td>(a)「厚度 $dz$ 的水平空氣層」；面積自己設，最後會消掉</td></tr>
+          <tr><td>平衡</td><td>合力為零</td><td>(a)「若它<b>靜止</b>」</td></tr>
+          <tr><td>分子平均質量</td><td>$m=M/N_A$，$M=0.029\ \text{kg/mol}$</td><td>(b)「資料在習題 1.14」</td></tr>
+          <tr><td>溫度</td><td>與高度無關；取 $T=280\ \text{K}$</td><td>(c)「溫度與高度無關」；數值題目沒給，取高處較冷的平均值</td></tr>
+          <tr><td>海平面氣壓</td><td>$P(0)=1\ \text{atm}$</td><td>(d)「假設海平面氣壓為 1 atm」</td></tr>
+          <tr><td>高度</td><td>1430、3090、4420、8850 m</td><td>(d) 題目</td></tr>
+          <tr><td>常數</td><td>$g=9.8\ \text{m/s}^2$，$R=8.31$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $dP/dz$ 與 $\rho$ 的關係；(b) 證明氣壓公式；(c) $P(z)$ 與 $\rho(z)$；(d) 四個地點的氣壓。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>空氣層靜止，<b>所以</b>對它寫鉛直方向的力平衡：向上的 $P(z)A$ ＝ 向下的 $P(z+dz)A$ ＋ 重量。(b) <b>因為</b>理想氣體 $P=NkT/V$，而密度 $\rho=Nm/V$，<b>所以</b> $\rho=mP/kT$，代入 (a) 得只含 $P$ 的微分方程。</p>
+      <p>(c) <b>因為</b>方程式說「$P$ 的導數＝常數 × $P$」，而 $T$ 固定時這個常數 $-mg/kT$ 不隨 $z$ 變，<b>所以</b>分離變數積分得指數函數。(d) 先算標高 $H=kT/mg=RT/Mg$，再代 $P=e^{-z/H}$ atm。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-16-s1" data-sym="P,z,rho,g">
+        <span class="step-title">(a) 空氣層的力平衡</span>
+        <p>向上：下表面的壓力 $P(z)A$；向下：上表面的壓力 $P(z+dz)A$ 與重量 $(\rho A\,dz)g$：</p>
+        $$P(z)A=P(z+dz)A+\rho A\,dz\,g$$
+        <p>移項、兩邊除以 $A\,dz$：</p>
+        $$\frac{P(z+dz)-P(z)}{dz}=-\rho g\ \Longrightarrow\ \frac{dP}{dz}=-\rho g$$
+      </div>
+      <div class="step" data-step="sc-1-16-s2" data-sym="m,k,T">
+        <span class="step-title">(b) 用理想氣體寫密度</span>
+        $$\rho=\frac{Nm}{V}=m\cdot\frac{N}{V}=m\cdot\frac{P}{kT}\qquad\Big(PV=NkT\Rightarrow\tfrac NV=\tfrac P{kT}\Big)$$
+        <p>代入 (a)：</p>
+        $$\frac{dP}{dz}=-\frac{mg}{kT}\,P$$
+      </div>
+      <div class="step" data-step="sc-1-16-s3">
+        <span class="step-title">(c) 等溫時積分</span>
+        <p>分離變數，$T$ 固定所以 $mg/kT$ 是常數：</p>
+        $$\int_{P(0)}^{P(z)}\frac{dP}{P}=-\frac{mg}{kT}\int_0^z dz'\ \Longrightarrow\ \ln\frac{P(z)}{P(0)}=-\frac{mgz}{kT}$$
+        $$P(z)=P(0)\,e^{-mgz/kT}$$
+        <p>密度 $\rho=mP/kT$ 只差一個常數因子（$T$ 固定）：</p>
+        $$\rho(z)=\frac{m}{kT}P(0)e^{-mgz/kT}=\rho(0)\,e^{-mgz/kT}$$
+        <p>（$z=0$ 時指數為 1，所以前面的常數就是 $\rho(0)$。）</p>
+      </div>
+      <div class="step" data-step="sc-1-16-s4" data-sym="M">
+        <span class="step-title">(d) 標高</span>
+        <p>上下同乘 $N_A$：$m/k=M/R$，</p>
+        $$H\equiv\frac{kT}{mg}=\frac{RT}{Mg}$$
+        <p class="sub">代入 $R=8.31$、$T=280\ \text{K}$、$M=0.029\ \text{kg/mol}$、$g=9.8\ \text{m/s}^2$：</p>
+        $$H=\frac{(8.31)(280)}{(0.029)(9.8)}\ \text{m}=8.19\times10^3\ \text{m}$$
+      </div>
+      <div class="step" data-step="sc-1-16-s5">
+        <span class="step-title">(d) 四個地點</span>
+        $$P=(1\ \text{atm})\,e^{-z/H}$$
+        <p class="sub">代入 $H=8190\ \text{m}$（步驟 4）與題目的海拔：</p>
+        $$\begin{aligned}\text{Ogden}&:\ e^{-1430/8190}=e^{-0.175}=0.84\ \text{atm}\\\text{Leadville}&:\ e^{-3090/8190}=e^{-0.377}=0.69\ \text{atm}\\\text{Whitney}&:\ e^{-4420/8190}=e^{-0.540}=0.58\ \text{atm}\\\text{Everest}&:\ e^{-8850/8190}=e^{-1.081}=0.34\ \text{atm}\end{aligned}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $dP/dz=-\rho g$；(b) $\rho=mP/kT$ ⟹ $dP/dz=-\frac{mg}{kT}P$；(c) $P(z)=P(0)e^{-mgz/kT}$，$\rho(z)=\rho(0)e^{-mgz/kT}$；(d) 約 0.84、0.69、0.58、0.34 atm。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>聖母峰實測約 0.33 atm ✔。解答手冊用 $\text{N}_2$（$M=0.028$）得 $H\approx8500\ \text{m}$，四個值 0.84、0.69、0.59、0.35，與這裡差在第二位 ✔</p></div>
+  </div>
+</div>
+
+<h3 id="t2-virial">2.5 偏離理想：維里展開與凡得瓦方程式 <span class="pg-tag">p.9（習題 1.17）</span></h3>
+
+<p>即使低密度，真實氣體也不完全遵守理想氣體定律。系統化的修正是<strong>維里展開</strong>（virial expansion）：把 $PV/nRT$ 寫成莫耳體積倒數 $n/V$ 的冪級數，</p>
+
+$$PV=nRT\left(1+\frac{B(T)}{V/n}+\frac{C(T)}{(V/n)^2}+\cdots\right)$$
+
+<p>$B(T)$、$C(T)$ 叫<strong>維里係數</strong>（virial coefficients）。密度低時每一項都比前一項小很多，通常只保留第二項，$B(T)$ 叫第二維里係數。$B\lt0$ 表示分子間吸引為主（壓力比理想小），$B\gt0$ 表示排斥為主。另一個有名的狀態方程式是凡得瓦方程式（van der Waals）$\big(P+\frac{an^2}{V^2}\big)(V-nb)=nRT$：$b$ 是分子本身佔的體積（排斥），$a$ 代表分子間的吸引。習題 1.17 把兩者連起來，第 5.3 節會再深入。</p>
+
+<div class="anim" data-anim="t1-n2-virial"></div>
+
+<div class="problem" data-kind="textbook" id="sc-1-17">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-17（Problem 1.17）· p.9 · 熱學小考（上）作業題 · (c) 即某級上學期期中 第 1(i) 題</span></div>
+    <h4>氮的第二維里係數與凡得瓦方程式</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-17">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-17"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>課本原文（Schroeder Problem 1.17）</strong></p><p>Even at low density, real gases don’t quite obey the ideal gas law. A systematic way to account for deviations from ideal behavior is the <strong>virial expansion</strong>, $$PV=nRT\left(1+\frac{B(T)}{(V/n)}+\frac{C(T)}{(V/n)^2}+\cdots\right),$$ where the functions $B(T)$, $C(T)$, and so on are called the <strong>virial coefficients</strong>. When the density of the gas is fairly low, so that the volume per mole is large, each term in the series is much smaller than the one before. In many situations it’s sufficient to omit the third term and concentrate on the second, whose coefficient $B(T)$ is called the second virial coefficient (the first coefficient being 1). Here are some measured values of the second virial coefficient for nitrogen (N<sub>2</sub>):</p><table><thead><tr><th>$T$ (K)</th><th>$B$ (cm<sup>3</sup>/mol)</th></tr></thead><tbody><tr><td>100</td><td>−160</td></tr><tr><td>200</td><td>−35</td></tr><tr><td>300</td><td>−4.2</td></tr><tr><td>400</td><td>9.0</td></tr><tr><td>500</td><td>16.9</td></tr><tr><td>600</td><td>21.3</td></tr></tbody></table><p>(a) For each temperature in the table, compute the second term in the virial equation, $B(T)/(V/n)$, for nitrogen at atmospheric pressure. Discuss the validity of the ideal gas law under these conditions.</p><p>(b) Think about the forces between molecules, and explain why we might expect $B(T)$ to be negative at low temperatures but positive at high temperatures.</p><p>(c) Any proposed relation between $P$, $V$, and $T$, like the ideal gas law or the virial equation, is called an <strong>equation of state</strong>. Another famous equation of state, which is qualitatively accurate even for dense fluids, is the <strong>van der Waals equation</strong>, $$\left(P+\frac{an^2}{V^2}\right)(V-nb)=nRT,$$ where $a$ and $b$ are constants that depend on the type of gas. Calculate the second and third virial coefficients ($B$ and $C$) for a gas obeying the van der Waals equation, in terms of $a$ and $b$. (Hint: The binomial expansion says that $(1+x)^p\approx1+px+\frac12p(p-1)x^2$, provided that $|px|\ll1$. Apply this approximation to the quantity $[1-(nb/V)]^{-1}$.)</p><p>(d) Plot a graph of the van der Waals prediction for $B(T)$, choosing $a$ and $b$ so as to approximately match the data given above for nitrogen. Discuss the accuracy of the van der Waals equation over this range of conditions. (The van der Waals equation is discussed much further in Section 5.3.)</p><p class="original-subhead"><strong>考卷原文（某級上學期期中第 1(i) 題）</strong></p><p>(i) The correction to ideal gas law comes in various different form. One of them is to use volume density as an expansion parameter, and this approach is called the <em>virial expansion</em>. The form is given as: $$PV=nRT\left(1+\frac{B(T)}{(V/n)}+\frac{C(T)}{(V/n)^2}+\dots\right)$$ Another famous form of correction to ideal gas law is the van der Waals equation expressed as: $$\left(P+\frac{an^2}{V^2}\right)(V-nb)=nRT,$$ where $a$ and $b$ are constants that depend on the type of gas. Calculate the second and third virial coefficients ($B$ and $C$) for a gas obeying the van der Waals equation, in terms of $a$ and $b$. (6pts)</p></div>
+<p class="original-caption">Schroeder 習題 1-17（Problem 1.17）· p.9 · 熱學小考（上）作業題 · (c) 即某級上學期期中 第 1(i) 題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>即使在低密度，真實氣體也不完全遵守理想氣體定律。系統化描述偏差的方法是維里展開 $PV=nRT\big(1+\frac{B(T)}{(V/n)}+\frac{C(T)}{(V/n)^2}+\cdots\big)$，$B(T)$、$C(T)$ 等叫維里係數。密度低時每一項都比前一項小很多，常只保留第二項，其係數 $B(T)$ 叫第二維里係數。氮（$\text{N}_2$）的第二維里係數實測值如下：</p>
+    <div class="symbol-table-wrap"><table><thead><tr><th>$T$ (K)</th><th>100</th><th>200</th><th>300</th><th>400</th><th>500</th><th>600</th></tr></thead><tbody><tr><td>$B$ (cm³/mol)</td><td>$-160$</td><td>$-35$</td><td>$-4.2$</td><td>9.0</td><td>16.9</td><td>21.3</td></tr></tbody></table></div>
+    <p>(a) 對表中每個溫度，計算一大氣壓下氮的維里展開第二項 $B(T)/(V/n)$，並討論理想氣體定律在這些條件下的準確度。(b) 想想分子之間的力，說明為什麼 $B(T)$ 在低溫為負、高溫為正。(c) 任何 $P,V,T$ 的關係（如理想氣體定律或維里展開）都叫狀態方程式。另一個有名、即使對稠密流體也定性正確的狀態方程式是凡得瓦方程式 $\big(P+\frac{an^2}{V^2}\big)(V-nb)=nRT$，$a$、$b$ 是依氣體而定的常數。以 $a$、$b$ 表示遵守凡得瓦方程式的氣體的第二與第三維里係數（$B$ 與 $C$）。（提示：二項式展開 $(1+x)^p\approx1+px+\frac12p(p-1)x^2$，條件 $|px|\ll1$；把它用在 $[1-(nb/V)]^{-1}$。）(d) 選 $a$、$b$ 大致符合上面氮的數據，畫出凡得瓦方程式預測的 $B(T)$，討論凡得瓦方程式在這個範圍內的準確度。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$B(T)$ 數據</td><td>表中 6 個值，單位 $\text{cm}^3/\text{mol}=10^{-6}\ \text{m}^3/\text{mol}$</td><td>題目的表</td></tr>
+          <tr><td>壓力</td><td>$P=1\ \text{atm}=1.013\times10^5\ \text{Pa}$</td><td>(a)「一大氣壓下」</td></tr>
+          <tr><td>莫耳體積的近似</td><td>$V/n\approx RT/P$</td><td>題目沒寫；第二項是小修正，分母用理想氣體值即可（自己判斷，算完驗證 $\ll1$）</td></tr>
+          <tr><td>凡得瓦方程式</td><td>$\big(P+\frac{an^2}{V^2}\big)(V-nb)=nRT$</td><td>(c) 題目</td></tr>
+          <tr><td>展開條件</td><td>$nb/V\ll1$（低密度）</td><td>(c) 提示「$|px|\ll1$」</td></tr>
+          <tr><td>常數</td><td>$R=8.31\ \text{J}/(\text{mol}\cdot\text{K})$</td><td>課本 (1.2)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 六個溫度的 $B/(V/n)$ 與討論；(b) $B$ 變號的原因；(c) 凡得瓦的 $B(T)$、$C(T)$；(d) 擬合 $a,b$、畫圖並討論。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>第二項本身就是一個小修正，分母 $V/n$ 只要準到百分之一，<b>所以</b>用理想氣體的 $RT/P$ 代入即可，不必解二次方程式。(b) 從「吸引使壓力變小、排斥使壓力變大」與「低溫分子慢、高溫分子快」兩件事判斷。</p>
+      <p>(c) <b>因為</b>維里展開是「$PV/nRT$ 對 $n/V$ 的冪級數」，<b>所以</b>先把凡得瓦方程式解出 $P$、寫成 $PV=nRT\times[\cdots]$ 的形式，再把 $[\cdots]$ 對 $x=n/V$ 展開到 $x^2$，對照係數。(d) <b>因為</b> $B=b-a/RT$ 對 $1/T$ 是直線，<b>所以</b>用最小平方法對六個點擬合 $a$、$b$，再比較曲線與數據。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-17-s1" data-sym="Bvir,V,n">
+        <span class="step-title">(a) 100 K 的第二項</span>
+        $$\frac{V}{n}\approx\frac{RT}{P},\qquad \frac{B}{V/n}=\frac{BP}{RT}$$
+        <p class="sub">代入 $R=8.31$、$T=100\ \text{K}$、$P=1.013\times10^5\ \text{Pa}$ 與表中 $B=-160\ \text{cm}^3/\text{mol}=-1.60\times10^{-4}\ \text{m}^3/\text{mol}$：</p>
+        $$\frac Vn=\frac{(8.31)(100)}{1.013\times10^5}\ \frac{\text{m}^3}{\text{mol}}=8.20\times10^{-3}\ \frac{\text{m}^3}{\text{mol}},\qquad \frac{B}{V/n}=\frac{-1.60\times10^{-4}}{8.20\times10^{-3}}=-0.0195$$
+      </div>
+      <div class="step" data-step="sc-1-17-s2">
+        <span class="step-title">(a) 全部溫度</span>
+        <p class="sub">$V/n=RT/P$ 隨 $T$ 正比增加（200 K 為 $0.0164$、300 K 為 $0.0246$……$\text{m}^3/\text{mol}$），逐一代入表中的 $B$：</p>
+        <div class="symbol-table-wrap"><table><thead><tr><th>$T$ (K)</th><th>100</th><th>200</th><th>300</th><th>400</th><th>500</th><th>600</th></tr></thead><tbody><tr><td>$B/(V/n)$</td><td>$-0.0195$</td><td>$-0.0021$</td><td>$-0.00017$</td><td>$+0.00027$</td><td>$+0.00041$</td><td>$+0.00043$</td></tr></tbody></table></div>
+        <p>100 K（接近氮的沸點 77 K）時修正約 2%：同溫同壓下真實體積比理想值小 2%。200 K 以上修正小於 0.2%；300 K 以上小於千分之一。一大氣壓下理想氣體定律對氮非常準，只有接近液化溫度時才有百分之幾的誤差。</p>
+      </div>
+      <div class="step" data-step="sc-1-17-s3">
+        <span class="step-title">(b) 為什麼 $B$ 低溫負、高溫正</span>
+        <p>分子在稍有距離時互相吸引、正面碰撞時強烈排斥。吸引讓撞牆的分子被往回拉，壓力比理想小 ⟹ $B\lt0$；排斥（分子本身有體積）讓可用空間變小，壓力比理想大 ⟹ $B\gt0$。低溫時分子慢，經過彼此附近時有足夠時間被吸引，吸引為主；高溫時分子快，吸引來不及起作用，主要效果是硬碰硬的排斥。</p>
+      </div>
+      <div class="step" data-step="sc-1-17-s4" data-sym="avdw,bvdw">
+        <span class="step-title">(c) 把凡得瓦方程式寫成維里形式</span>
+        <p>解出 $P$，再提出 $nRT/V$：</p>
+        $$P=\frac{nRT}{V-nb}-\frac{an^2}{V^2}\ \Longrightarrow\ PV=nRT\left[\frac{1}{1-nb/V}-\frac{an}{RTV}\right]$$
+      </div>
+      <div class="step" data-step="sc-1-17-s5">
+        <span class="step-title">(c) 二項式展開、對照係數</span>
+        <p class="sub">用提示的二項式展開，代入 $x=-nb/V$、$p=-1$：</p>
+        $$\Big[1-\frac{nb}{V}\Big]^{-1}\approx1+(-1)\Big(-\frac{nb}V\Big)+\frac12(-1)(-2)\Big(\frac{nb}V\Big)^2=1+\frac{b}{V/n}+\frac{b^2}{(V/n)^2}$$
+        <p>代回，並把 $\dfrac{an}{RTV}$ 寫成 $\dfrac{a/RT}{V/n}$：</p>
+        $$PV\approx nRT\left[1+\frac{b-a/RT}{V/n}+\frac{b^2}{(V/n)^2}\right]$$
+        <p>對照維里展開的各項：</p>
+        $$B(T)=b-\frac{a}{RT},\qquad C(T)=b^2$$
+        <p>$a,b\gt0$：低溫 $a/RT$ 大，$B\lt0$；高溫 $B\to b\gt0$——正好是 (b) 的定性結論。</p>
+      </div>
+      <div class="step" data-step="sc-1-17-s6">
+        <span class="step-title">(d) 擬合 $a$、$b$</span>
+        <p>$B=b-a\cdot\dfrac{1}{RT}$ 對變數 $1/(RT)$ 是直線（截距 $b$、斜率 $-a$）。先粗估：高溫 $B$ 趨於約 $30\ \text{cm}^3/\text{mol}$，在 300 K 附近過零，$a\approx bRT=(30\times10^{-6})(8.31)(300)=0.075$——但這樣 100 K 只得 $-60$，遠不夠負。改用六個點的最小平方擬合：</p>
+        $$b=6.42\times10^{-5}\ \text{m}^3/\text{mol}=64\ \text{cm}^3/\text{mol},\qquad a=0.182\ \text{J}\cdot\text{m}^3/\text{mol}^2$$
+        <p class="sub">代回 $B=b-a/RT$，與數據比較（cm³/mol）：</p>
+        <div class="symbol-table-wrap"><table><thead><tr><th>$T$ (K)</th><th>100</th><th>200</th><th>300</th><th>400</th><th>500</th><th>600</th></tr></thead><tbody><tr><td>數據</td><td>$-160$</td><td>$-35$</td><td>$-4.2$</td><td>9.0</td><td>16.9</td><td>21.3</td></tr><tr><td>凡得瓦</td><td>$-155$</td><td>$-45$</td><td>$-8.9$</td><td>9.4</td><td>20.3</td><td>27.7</td></tr></tbody></table></div>
+        <p>圖見本小節開頭的圖解（氮的 $B(T)$ 與凡得瓦預測）。</p>
+      </div>
+      <div class="step" data-step="sc-1-17-s7">
+        <span class="step-title">(d) 討論準確度</span>
+        <p>兩個參數無法同時對好全部點：曲線在中溫偏負約 $5$–$10\ \text{cm}^3/\text{mol}$，高溫又上升太快（凡得瓦預測 $B$ 單調趨近 $b=64$，實測約 21 就趨緩）。凡得瓦方程式抓到了「低溫吸引、高溫排斥、$B$ 由負變正」的定性特徵，但定量上只是粗略近似。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $B/(V/n)=-0.0195,\ -0.0021,\ -0.00017,\ +0.00027,\ +0.00041,\ +0.00043$；只有 100 K 有約 2% 偏差，其餘小於 0.2%；(b) 低溫吸引為主、高溫排斥為主；(c) $B=b-\dfrac a{RT}$，$C=b^2$；(d) 最小平方 $a\approx0.18\ \text{J}\cdot\text{m}^3/\text{mol}^2$、$b\approx6.4\times10^{-5}\ \text{m}^3/\text{mol}$，定性正確、定量粗略。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(a) 與解答手冊的表一致 ✔（熱學小考的一份學生答案 200–600 K 的值約大一倍，是每個溫度都用了 100 K 的 $V/n$）。(d) 解答手冊用試誤法得 $a=0.16$、$b=6\times10^{-5}$，與最小平方相近 ✔；擬合的 $B=0$ 溫度 $a/(bR)=342\ \text{K}$（Boyle 溫度），實測約 327 K。</p></div>
+  </div>
+</div>
+
+<h3 id="t2-micro">2.6 理想氣體的微觀模型：壓力從哪裡來 <span class="pg-tag">p.10–12</span></h3>
+
+<p>第 1 節說熱平衡靠能量交換，但溫度和能量到底什麼關係？一般情況很難，對理想氣體卻很簡單。計畫是：<strong>先用牛頓定律算出壓力和分子動能的關係，再用理想氣體定律把壓力換成溫度</strong>。這個模型可追溯到 Daniel Bernoulli 1738 年的著作。</p>
+
+<p><b>模型（Fig. 1.4）</b>：長 $L$、活塞面積 $A$ 的圓筒，$V=LA$，裡面先只有一個分子，速度 $\vec v$、水平分量 $v_x$。假設碰撞完全彈性（動能不變）、器壁完全光滑（像光反射一樣對稱）。分子平常沒碰到活塞，壓力是零；偶爾撞上去時短暫施加很大的力。我們要的是<strong>長時間平均</strong>壓力 $\overline P$：</p>
+
+<ol>
+  <li>壓力＝活塞受的力 ÷ 面積；由牛頓第三定律，活塞受的力＝負的「活塞對分子的力」；由第二定律，後者＝$m\,\Delta v_x/\Delta t$：$\overline P=-m\,\overline{(\Delta v_x/\Delta t)}/A$。</li>
+  <li>時間取<strong>一個來回</strong> $\Delta t=2L/v_x$：剛好撞活塞一次、不把對面牆的撞擊算進去（側壁不影響 $x$ 方向）。這一次碰撞 $\Delta v_x=(-v_x)-v_x=-2v_x$。</li>
+  <li>代入：$\overline P=\dfrac{mv_x^2}{V}$。兩個 $v_x$ 一個來自「每次撞得多用力」（$\Delta v_x$），一個來自「多常撞」（$\Delta t$）。</li>
+  <li>$N$ 個互不碰撞的分子各自貢獻一項：$PV=mv_{1x}^2+mv_{2x}^2+\cdots=Nm\overline{v_x^2}$。$N$ 很大時壓力幾乎連續，可拿掉平均符號。</li>
+  <li>到這裡只用了牛頓定律。現在引入實驗事實 $PV=NkT$：$kT=m\overline{v_x^2}$，即 $\tfrac12m\overline{v_x^2}=\tfrac12kT$。$y$、$z$ 方向同理，相加得</li>
+</ol>
+
+<div class="box lecture book">
+  <span class="box-title">p.12 (1.17) 平均平移動能</span>
+  $$\overline{K}_{\text{trans}}=\tfrac12m\overline{v^2}=\tfrac12m\big(\overline{v_x^2}+\overline{v_y^2}+\overline{v_z^2}\big)=\tfrac32kT$$
+  <p>（和的平均＝平均的和。）</p>
+</div>
+
+<div class="anim" data-anim="t1-piston"></div>
+
+<p>完整的考試寫法見下面的考古題（某級期中 1(a) 就是要你寫出這個推導）。</p>
+
+<div class="problem" data-kind="exam" id="tk1x-1a">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">某級上學期期中 第 1(a) 題 · 即 Schroeder §1.2 課文 (1.8)–(1.17) · p.10–12</span></div>
+    <h4>由壓力的微觀模型推 $\tfrac12m\langle v^2\rangle=\tfrac32kT$</h4>
+    <button type="button" class="exam-btn" data-exam="tk1x-1a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1a"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is $$PV=NkT$$ (gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>(a) Assuming this ideal gas law is valid, use this law and the microscopic model (hint: gas molecules colliding with walls of chamber causing pressure) to show for a monoatomic ideal gas confined in three spatial dimensions: (6pts) $$\frac12m\langle\vec v^2\rangle=\frac32kT$$</p></div>
+<p class="original-caption">某級上學期期中 第 1(a) 題 · 即 Schroeder §1.2 課文 (1.8)–(1.17) · p.10–12</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>理想氣體遵守的狀態方程式（理想氣體定律）是 $PV=NkT$（氣體壓力 $P$、體積 $V$、粒子數 $N$、波茲曼常數 $k$、溫度 $T$）。當原子間交互作用可以忽略、原子密度很低時，這條定律成立。(a) 假設理想氣體定律成立，用這條定律與微觀模型（提示：氣體分子撞擊容器壁產生壓力）證明：侷限在三維空間的單原子理想氣體滿足 $\tfrac12m\langle v^2\rangle=\tfrac32kT$。（6 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知的關係／前提</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>狀態方程式</td><td>$PV=NkT$，可當實驗事實使用</td><td>「假設理想氣體定律成立，用這條定律」</td></tr>
+          <tr><td>壓力的來源</td><td>分子撞牆的動量變化</td><td>「提示：氣體分子撞擊容器壁產生壓力」</td></tr>
+          <tr><td>分子間無交互作用</td><td>分子只和牆碰撞，彼此不碰</td><td>「原子間交互作用可以忽略」</td></tr>
+          <tr><td>單原子、三維</td><td>只有平移動能 $\tfrac12m(v_x^2+v_y^2+v_z^2)$，三個方向對等</td><td>「單原子理想氣體」「侷限在三維空間」</td></tr>
+          <tr><td>碰撞</td><td>彈性、器壁光滑：撞後 $v_x\to-v_x$，$v_y,v_z$ 不變</td><td>題目沒寫；微觀模型的標準假設（課本 p.10）</td></tr>
+          <tr><td>容器</td><td>長 $L$、活塞面積 $A$ 的圓筒，$V=LA$</td><td>自己設的幾何（任何形狀結果相同）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：證明 $\tfrac12m\langle v^2\rangle=\tfrac32kT$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目只給了巨觀的 $PV=NkT$，而我們要的是微觀的動能，<b>所以</b>中間要一座橋：用牛頓定律把 $PV$ 寫成分子速度的函數，再和 $NkT$ 相等。</p>
+      <p><b>因為</b>單一分子的力是一陣一陣的脈衝，<b>所以</b>算的是<strong>時間平均</strong>力；<b>因為</b>只想算活塞（而非對面牆）給的力，<b>所以</b>平均的時間取「一個來回」$2L/v_x$——剛好撞活塞一次。最後<b>因為</b>三個方向沒有差別（各向同性），<b>所以</b> $\overline{v_x^2}=\overline{v_y^2}=\overline{v_z^2}=\tfrac13\overline{v^2}$，把一個方向的結果乘 3。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk1x-1a-s1" data-sym="P,A,vx">
+        <span class="step-title">一個分子對活塞的平均壓力</span>
+        <p>壓力＝分子施於活塞的 $x$ 方向力 ÷ 面積；用牛頓第三定律換成活塞施於分子的力（變號），再用第二定律寫成 $m\,\Delta v_x/\Delta t$：</p>
+        $$\overline P=\frac{\overline F_{x,\text{活塞受}}}{A}=\frac{-\overline F_{x,\text{分子受}}}{A}=-\frac{m\,\overline{\left(\Delta v_x/\Delta t\right)}}{A}$$
+      </div>
+      <div class="step" data-step="tk1x-1a-s2">
+        <span class="step-title">取一個來回當平均時間</span>
+        <p>分子往返一次走 $2L$，$x$ 方向速率 $v_x$：</p>
+        $$\Delta t=\frac{2L}{v_x}$$
+        <p>這段時間剛好撞活塞一次（彈性碰撞 $v_x\to-v_x$，撞側壁不改變 $v_x$）：</p>
+        $$\Delta v_x=v_{x,\text{末}}-v_{x,\text{初}}=(-v_x)-v_x=-2v_x$$
+      </div>
+      <div class="step" data-step="tk1x-1a-s3" data-sym="V">
+        <span class="step-title">代回，得一個分子的 $\overline P$</span>
+        <p class="sub">代入 $\Delta v_x=-2v_x$、$\Delta t=2L/v_x$（步驟 2）與 $V=LA$：</p>
+        $$\overline P=-\frac mA\cdot\frac{(-2v_x)}{(2L/v_x)}=\frac{mv_x^2}{AL}=\frac{mv_x^2}{V}$$
+      </div>
+      <div class="step" data-step="tk1x-1a-s4" data-sym="N">
+        <span class="step-title">$N$ 個分子相加</span>
+        <p>分子彼此不交互作用（題目），每個分子各自貢獻一項，總壓力是相加；$N$ 很大時碰撞極頻繁，壓力近似連續，不必再寫平均符號：</p>
+        $$PV=mv_{1x}^2+mv_{2x}^2+\cdots+mv_{Nx}^2=Nm\,\overline{v_x^2}$$
+        <p>（$\overline{v_x^2}$ 是對所有分子的平均：$\sum_iv_{ix}^2=N\overline{v_x^2}$。）</p>
+      </div>
+      <div class="step" data-step="tk1x-1a-s5" data-sym="k,T">
+        <span class="step-title">代入理想氣體定律</span>
+        <p class="sub">代入題目給的 $PV=NkT$，兩邊消去 $N$：</p>
+        $$NkT=Nm\overline{v_x^2}\ \Longrightarrow\ \frac12m\overline{v_x^2}=\frac12kT$$
+      </div>
+      <div class="step" data-step="tk1x-1a-s6" data-sym="Ktr">
+        <span class="step-title">三個方向相加</span>
+        <p>分子運動方向隨機，三個方向對等：$\tfrac12m\overline{v_y^2}=\tfrac12m\overline{v_z^2}=\tfrac12kT$。和的平均等於平均的和：</p>
+        $$\frac12m\langle v^2\rangle=\frac12m\left(\overline{v_x^2}+\overline{v_y^2}+\overline{v_z^2}\right)=\frac12kT+\frac12kT+\frac12kT=\frac32kT\qquad\blacksquare$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>由一個來回 $\Delta t=2L/v_x$、$\Delta v_x=-2v_x$ 得 $PV=Nm\overline{v_x^2}$；與 $PV=NkT$ 比較得 $\tfrac12m\overline{v_x^2}=\tfrac12kT$，三方向相加 $\tfrac12m\langle v^2\rangle=\tfrac32kT$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單位：$m\overline{v_x^2}/V$ 是 $\text{kg}\cdot\text{m}^2/\text{s}^2/\text{m}^3=\text{N/m}^2$ ✔。這個結果正是下一小題（1(b)）要你推廣的均分定理：每個二次自由度 $\tfrac12kT$，單原子有 3 個（§1.3）。</p></div>
+  </div>
+</div>
+
+<h3 id="t2-kT">2.7 溫度＝平均平移動能，$kT$ 有多大 <span class="pg-tag">p.12–13</span></h3>
+
+<p>停下來想想剛剛發生了什麼：從一個天真的模型（分子在圓筒裡彈來彈去）加上理想氣體定律這個實驗事實，得到結論——<strong>氣體分子的平均平移動能只是溫度乘上一個常數</strong>。若模型正確，氣體的溫度就是分子平均平移動能的直接量度。這也給了波茲曼常數一個好解釋：$k$ 的單位 J/K 正好把溫度換成能量，它本質上就是「溫度與分子能量之間的換算因子」。</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-kT">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.2 (1.18)–(1.19) · p.12–13</span></div>
+    <h4>室溫的 $kT$：焦耳與電子伏特</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-kT">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-kT"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>This result gives us a nice interpretation of Boltzmann’s constant, $k$. Recall that $k$ has just the right units, J/K, to convert a temperature into an energy. Indeed, we now see that $k$ is essentially a conversion factor between temperature and molecular energy, at least for this simple system. Think about the numbers, though: For an air molecule at room temperature (300 K), the quantity $kT$ is $$(1.38\times10^{-23}\ \text{J/K})(300\ \text{K})=4.14\times10^{-21}\ \text{J},\qquad(1.18)$$ and the average translational energy is 3/2 times as much. … we often use the <strong>electron-volt</strong> (eV), which is the kinetic energy of an electron that has been accelerated through a voltage difference of one volt: $1\ \text{eV}=1.6\times10^{-19}\ \text{J}$. Boltzmann’s constant is $8.62\times10^{-5}\ \text{eV/K}$, so at room temperature, $$kT=(8.62\times10^{-5}\ \text{eV/K})(300\ \text{K})=0.026\ \text{eV}\approx\frac1{40}\ \text{eV}.\qquad(1.19)$$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>室溫（300 K）下的空氣分子：(a) $kT$ 是多少焦耳？平均平移動能是多少？(b) 以電子伏特（$1\ \text{eV}=1.6\times10^{-19}\ \text{J}$）表示，$k$ 是多少 eV/K？室溫的 $kT$ 是多少 eV？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>「室溫（300 K）」</td></tr>
+          <tr><td>波茲曼常數</td><td>$k=1.38\times10^{-23}\ \text{J/K}$</td><td>課本 (1.6)，(1.18) 用三位數</td></tr>
+          <tr><td>電子伏特</td><td>$1\ \text{eV}=1.6\times10^{-19}\ \text{J}$</td><td>題目（電子經過 1 V 加速得到的動能）</td></tr>
+          <tr><td>平均平移動能</td><td>$\overline K_{\text{trans}}=\tfrac32kT$</td><td>本節 (1.17)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $kT$ 與 $\overline K_{\text{trans}}$（J）；(b) $k$（eV/K）、$kT$（eV）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> (1.17) 說 $\overline K_{\text{trans}}=\tfrac32kT$，<b>所以</b>先算 $kT$ 再乘 1.5。<b>因為</b>分子能量以 J 表示太小、不好讀，<b>所以</b>改用 eV：把 $k$ 除以每 eV 的焦耳數，就是 eV/K 的值。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-kT-s1" data-sym="k,T">
+        <span class="step-title">(a) $kT$（焦耳）</span>
+        <p class="sub">代入 $k=1.38\times10^{-23}\ \text{J/K}$、$T=300\ \text{K}$：</p>
+        $$kT=(1.38\times10^{-23}\ \text{J/K})(300\ \text{K})=4.14\times10^{-21}\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-ex-kT-s2" data-sym="Ktr">
+        <span class="step-title">(a) 平均平移動能</span>
+        <p class="sub">代入 (1.17) 與步驟 1：</p>
+        $$\overline K_{\text{trans}}=\frac32kT=1.5\times4.14\times10^{-21}\ \text{J}=6.2\times10^{-21}\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-ex-kT-s3">
+        <span class="step-title">(b) 換成 eV</span>
+        <p class="sub">代入 $1\ \text{eV}=1.6\times10^{-19}\ \text{J}$（題目）：</p>
+        $$k=\frac{1.38\times10^{-23}\ \text{J/K}}{1.6\times10^{-19}\ \text{J/eV}}=8.62\times10^{-5}\ \text{eV/K}$$
+        <p class="sub">再代 $T=300\ \text{K}$：</p>
+        $$kT=(8.62\times10^{-5}\ \text{eV/K})(300\ \text{K})=0.026\ \text{eV}\approx\frac1{40}\ \text{eV}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $kT=4.14\times10^{-21}\ \text{J}$，$\overline K_{\text{trans}}=6.2\times10^{-21}\ \text{J}$；(b) $k=8.62\times10^{-5}\ \text{eV/K}$，室溫 $kT=0.026\ \text{eV}\approx\tfrac1{40}\ \text{eV}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>化學鍵約數 eV，是 $kT$ 的百倍以上：所以室溫下分子碰撞打不斷化學鍵，空氣不會自己分解 ✔。值得背：「室溫 $kT\approx1/40$ eV」。</p></div>
+  </div>
+</div>
+
+<h3 id="t2-vrms">2.8 方均根速率 <span class="pg-tag">p.13</span></h3>
+
+<p>由 (1.17) 解 $\overline{v^2}=3kT/m$，開根號得到的不是平均速率，而是<strong>方均根</strong>（root-mean-square）速率：</p>
+
+$$v_{\text{rms}}\equiv\sqrt{\overline{v^2}}=\sqrt{\frac{3kT}{m}}=\sqrt{\frac{3RT}{M}}$$
+
+<p>（第二個等號把 $k/m$ 上下同乘 $N_A$，$M$ 是莫耳質量，計算時常比較方便。）第 6.4 節會看到 $v_{\text{rms}}$ 只比平均速率 $\bar v$ 大一點，不講究精度時可當平均速率的估計。同溫下輕分子跑得比重分子快；代數字會發現，常溫下小分子以每秒數百公尺的速率亂竄。</p>
+
+<h3 id="t2-limits">2.9 推導的假設何時失效 <span class="pg-tag">p.13</span></h3>
+
+<p>嚴格說，若分子之間有力、與器壁的碰撞不是彈性、或理想氣體定律本身不成立，推導就不成立。短暫的分子間碰撞通常無妨——它們不改變平均速度。真正的問題是氣體密度大到分子本身佔了容器相當比例的體積，「分子在真空中直線飛行」的圖像不再適用。但此時理想氣體定律也會失效，而且恰好以保持 (1.17) 的方式失效：$\overline K_{\text{trans}}=\tfrac32kT$ 不只對稠密氣體成立，對大多數液體、有時甚至固體都成立（第 6.3 節證明）。</p>
+
+<div class="problem" data-kind="textbook" id="sc-1-18">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-18（Problem 1.18）· p.13</span></div>
+    <h4>室溫氮分子的方均根速率</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-18">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-18"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Calculate the rms speed of a nitrogen molecule at room temperature.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>計算室溫下氮分子的方均根速率。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>分子</td><td>$\text{N}_2$，$M=28\ \text{g/mol}=0.028\ \text{kg/mol}$</td><td>「氮分子」；莫耳質量由習題 1.13</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$</td><td>「室溫」</td></tr>
+          <tr><td>常數</td><td>$R=8.31\ \text{J}/(\text{mol}\cdot\text{K})$</td><td>課本 (1.2)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$v_{\text{rms}}$（m/s）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $v_{\text{rms}}$ 的定義正是 $\sqrt{\overline{v^2}}$，而 (1.17) 給 $\overline{v^2}=3kT/m$，<b>所以</b>直接用 (1.21)。<b>因為</b>題目給的是「氮」而不是分子質量，<b>所以</b>用 $k/m=R/M$ 的形式，代莫耳質量（記得換成 kg/mol）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-18-s1" data-sym="vrms,M,R">
+        <span class="step-title">把 $k/m$ 換成 $R/M$</span>
+        $$v_{\text{rms}}=\sqrt{\frac{3kT}{m}}=\sqrt{\frac{3(kN_A)T}{(mN_A)}}=\sqrt{\frac{3RT}{M}}$$
+      </div>
+      <div class="step" data-step="sc-1-18-s2">
+        <span class="step-title">代入</span>
+        <p class="sub">代入 $R=8.31$、$T=300\ \text{K}$（室溫）、$M=0.028\ \text{kg/mol}$（氮）：</p>
+        $$v_{\text{rms}}=\sqrt{\frac{3(8.31\ \text{J}/(\text{mol}\cdot\text{K}))(300\ \text{K})}{0.028\ \text{kg/mol}}}=\sqrt{2.67\times10^5\ \text{m}^2/\text{s}^2}=517\ \text{m/s}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$v_{\text{rms}}\approx517\ \text{m/s}$（約 $1860\ \text{km/h}$，比音速 343 m/s 快）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>直接用 $m=28\times1.66\times10^{-27}\ \text{kg}$ 與 $k$ 算也得 517 m/s ✔。比音速快合理：聲音靠分子碰撞傳遞，速率和分子速率同數量級（習題 1.39 的 $\sqrt{\gamma kT/m}$）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-19">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-19（Problem 1.19）· p.13</span></div>
+    <h4>氫與氧誰跑得快？快幾倍？</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-19">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-19"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you have a gas containing hydrogen molecules and oxygen molecules, in thermal equilibrium. Which molecules are moving faster, on average? By what factor?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一團氣體含氫分子與氧分子，處於熱平衡。平均而言哪一種分子跑得較快？快幾倍？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>溫度</td><td>$T_{\text{H}_2}=T_{\text{O}_2}$</td><td>「處於<b>熱平衡</b>」：同溫（本章 §1.1）</td></tr>
+          <tr><td>分子質量比</td><td>$m_{\text{O}_2}/m_{\text{H}_2}=32/2=16$</td><td>「氫分子」$\text{H}_2$、「氧分子」$\text{O}_2$；核子數 2 與 32（習題 1.13 的方法）</td></tr>
+          <tr><td>「平均速率」</td><td>用 $v_{\text{rms}}$ 代表</td><td>本節 2.8：$v_{\text{rms}}$ 是平均速率的好估計（比值相同）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：哪種較快、$v_{\text{rms}}$ 的比值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>熱平衡時兩種分子溫度相同，而 $\overline K_{\text{trans}}=\tfrac32kT$ 和質量無關，<b>所以</b>兩種分子的平均平移動能相同；動能相同時質量小的速率大，$v_{\text{rms}}=\sqrt{3kT/m}\propto1/\sqrt m$。取比值時 $3kT$ 全部消掉，只剩質量比。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-19-s1" data-sym="vrms,m">
+        <span class="step-title">同溫下取比值</span>
+        $$\frac{v_{\text{rms}}(\text{H}_2)}{v_{\text{rms}}(\text{O}_2)}=\frac{\sqrt{3kT/m_{\text{H}_2}}}{\sqrt{3kT/m_{\text{O}_2}}}=\sqrt{\frac{m_{\text{O}_2}}{m_{\text{H}_2}}}$$
+        <p class="sub">代入質量比 $32/2=16$（上表）：</p>
+        $$\frac{v_{\text{rms}}(\text{H}_2)}{v_{\text{rms}}(\text{O}_2)}=\sqrt{16}=4$$
+      </div>
+      <div class="step" data-step="sc-1-19-s2">
+        <span class="step-title">室溫的數值（參考）</span>
+        <p class="sub">用 $v_{\text{rms}}=\sqrt{3RT/M}$，代入 $T=300\ \text{K}$、$M=0.002$ 與 $0.032\ \text{kg/mol}$：</p>
+        $$v_{\text{rms}}(\text{H}_2)=1934\ \text{m/s},\qquad v_{\text{rms}}(\text{O}_2)=483\ \text{m/s}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>氫分子較快，平均速率約為氧分子的 $\sqrt{16}=4$ 倍（兩者平均動能相同）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$1934/483=4.00$ ✔。這也解釋了為什麼地球大氣留不住氫：它的速率尾端更容易超過脫離速度。（本題也是 114 級期中第 2(c) 題，該題卡在 §1.3。）</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-20">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-20（Problem 1.20）· p.13 · 熱學小考（上）作業題</span></div>
+    <h4>$\text{UF}_6$ 分離鈾同位素</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-20">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Uranium has two common isotopes, with atomic masses of 238 and 235. One way to separate these isotopes is to combine the uranium with fluorine to make uranium hexafluoride gas, UF<sub>6</sub>, then exploit the difference in the average thermal speeds of molecules containing the different isotopes. Calculate the rms speed of each type of molecule at room temperature, and compare them.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>鈾有兩種常見同位素，原子量 238 與 235。分離它們的一種方法是讓鈾與氟結合成六氟化鈾氣體 $\text{UF}_6$，再利用含不同同位素的分子平均熱運動速率的差異。計算室溫下兩種分子的方均根速率並比較。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>鈾的原子量</td><td>238、235</td><td>「原子量 238 與 235」</td></tr>
+          <tr><td>氟的原子量</td><td>19</td><td>題目沒給，查週期表</td></tr>
+          <tr><td>分子</td><td>$\text{UF}_6$：一個 U、六個 F</td><td>「六氟化鈾氣體 $\text{UF}_6$」</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$，兩種分子同溫</td><td>「室溫」；同一團氣體</td></tr>
+          <tr><td>常數</td><td>$R=8.31\ \text{J}/(\text{mol}\cdot\text{K})$</td><td>課本 (1.2)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：兩種 $\text{UF}_6$ 的 $v_{\text{rms}}$ 與比值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩種分子同溫，<b>所以</b>平均動能相同，速率只差在質量：先求兩種分子的莫耳質量，再代 $v_{\text{rms}}=\sqrt{3RT/M}$。<b>因為</b>差別很小（千分之幾），<b>所以</b>比值最好直接用 $\sqrt{M_1/M_2}$ 算，避免兩個近似值相除損失精度。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-20-s1" data-sym="M">
+        <span class="step-title">兩種分子的莫耳質量</span>
+        <p class="sub">代入 U 的 238、235 與 F 的 19（週期表）：</p>
+        $$M(^{238}\text{UF}_6)=238+6(19)=352\ \text{g/mol},\qquad M(^{235}\text{UF}_6)=235+114=349\ \text{g/mol}$$
+      </div>
+      <div class="step" data-step="sc-1-20-s2" data-sym="vrms">
+        <span class="step-title">各自的 $v_{\text{rms}}$</span>
+        $$v_{\text{rms}}=\sqrt{\frac{3RT}{M}}$$
+        <p class="sub">代入 $R=8.31$、$T=300\ \text{K}$、$M=0.352$ 與 $0.349\ \text{kg/mol}$（步驟 1）：</p>
+        $$v_{\text{rms}}(238)=\sqrt{\frac{3(8.31)(300)}{0.352}}\ \text{m/s}=145.8\ \text{m/s},\qquad v_{\text{rms}}(235)=\sqrt{\frac{3(8.31)(300)}{0.349}}\ \text{m/s}=146.4\ \text{m/s}$$
+      </div>
+      <div class="step" data-step="sc-1-20-s3">
+        <span class="step-title">比值</span>
+        $$\frac{v_{\text{rms}}(235)}{v_{\text{rms}}(238)}=\sqrt{\frac{352}{349}}=1.0043$$
+        <p>只差 0.43%。實際的氣體擴散法要讓 $\text{UF}_6$ 穿過多孔膜上千次（串成上千級），才能把 $^{235}\text{U}$ 從 0.7% 濃縮到約 3%（自編難題 2-A 比較離心機法）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$^{238}\text{UF}_6$：145.8 m/s；$^{235}\text{UF}_6$：146.4 m/s；輕的快 0.43%（比值 1.0043）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>熱學小考的學生答案 145.764、146.389 m/s，比值 1.0043，與這裡一致 ✔；與解答手冊相同 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-21">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-21（Problem 1.21）· p.14</span></div>
+    <h4>冰雹打在窗上的壓力</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-21">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-21"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>During a hailstorm, hailstones with an average mass of 2 g and a speed of 15 m/s strike a window pane at a 45° angle. The area of the window is 0.5 m<sup>2</sup> and the hailstones hit it at a rate of 30 per second. What average pressure do they exert on the window? How does this compare to the pressure of the atmosphere?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一場冰雹中，平均質量 2 g、速率 15 m/s 的冰雹以 $45^\circ$ 角打在窗玻璃上。窗戶面積 $0.5\ \text{m}^2$，冰雹每秒打中 30 顆。它們對窗戶施加的平均壓力是多少？和大氣壓力相比如何？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>冰雹質量</td><td>$m=2\ \text{g}=0.002\ \text{kg}$</td><td>「平均質量 2 g」</td></tr>
+          <tr><td>速率</td><td>$v=15\ \text{m/s}$</td><td>「速率 15 m/s」</td></tr>
+          <tr><td>角度</td><td>與窗面法線夾 $45^\circ$，法向分量 $v\cos45^\circ$</td><td>「以 $45^\circ$ 角打在窗玻璃上」</td></tr>
+          <tr><td>面積</td><td>$A=0.5\ \text{m}^2$</td><td>「窗戶面積 $0.5\ \text{m}^2$」</td></tr>
+          <tr><td>撞擊頻率</td><td>每秒 30 顆 ⟹ 平均間隔 $\Delta t=\tfrac1{30}\ \text{s}$</td><td>「每秒打中 30 顆」</td></tr>
+          <tr><td>碰撞</td><td>彈性：法向速度反向，平行分量不變</td><td>題目沒寫；仿照本節微觀模型（反彈）</td></tr>
+          <tr><td>大氣壓</td><td>$1.013\times10^5\ \text{Pa}$</td><td>課本 p.7</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：平均壓力 $\overline P$，與大氣壓的比。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>這就是本節推導壓力的同一套方法，只是把「分子」換成「冰雹」。<b>因為</b>壓力只來自垂直窗面的力，<b>所以</b>只看法向速度分量的變化 $\Delta v_\perp$；<b>因為</b>要的是平均力，<b>所以</b>用「每顆冰雹的動量變化 ÷ 兩顆之間的平均時間」，或等價地「每秒的總動量變化」。最後除以窗面積得平均壓力。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-21-s1" data-sym="vx">
+        <span class="step-title">每顆冰雹的法向速度變化</span>
+        <p>法向分量 $v\cos45^\circ$，彈性反彈後反向：</p>
+        $$|\Delta v_\perp|=2v\cos45^\circ$$
+        <p class="sub">代入 $v=15\ \text{m/s}$（題目）：</p>
+        $$|\Delta v_\perp|=2(15\ \text{m/s})(0.707)=21.2\ \text{m/s}$$
+      </div>
+      <div class="step" data-step="sc-1-21-s2">
+        <span class="step-title">平均力</span>
+        $$\overline F=\frac{m\,|\Delta v_\perp|}{\Delta t}=m\,|\Delta v_\perp|\times(\text{每秒顆數})$$
+        <p class="sub">代入 $m=0.002\ \text{kg}$、每秒 30 顆（題目）、$|\Delta v_\perp|=21.2\ \text{m/s}$（步驟 1）：</p>
+        $$\overline F=(0.002\ \text{kg})(21.2\ \text{m/s})(30\ \text{s}^{-1})=1.27\ \text{N}$$
+      </div>
+      <div class="step" data-step="sc-1-21-s3" data-sym="A,P">
+        <span class="step-title">平均壓力與比較</span>
+        $$\overline P=\frac{\overline F}{A}$$
+        <p class="sub">代入 $\overline F=1.27\ \text{N}$（步驟 2）、$A=0.5\ \text{m}^2$（題目）：</p>
+        $$\overline P=\frac{1.27\ \text{N}}{0.5\ \text{m}^2}=2.5\ \text{Pa}$$
+        <p class="sub">與大氣壓 $1.013\times10^5\ \text{Pa}$ 相比：</p>
+        $$\frac{1.013\times10^5\ \text{Pa}}{2.5\ \text{Pa}}\approx4\times10^4$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>平均壓力約 $2.5\ \text{Pa}$，只有大氣壓的四萬分之一。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>但瞬間壓力大得多：每顆冰雹只在約毫秒內、指甲大的面積上施力，所以會打破玻璃——平均壓力小不代表無害 ✔。若冰雹不反彈而黏住（完全非彈性），$\Delta v_\perp$ 減半，壓力 1.3 Pa。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-22">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-22（Problem 1.22）· p.14 · 熱學小考（上）作業題</span></div>
+    <h4>瀉流：氣體從小洞漏出的速率</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-22">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-22"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>If you poke a hole in a container full of gas, the gas will start leaking out. In this problem you will make a rough estimate of the rate at which gas escapes through a hole. (This process is called <strong>effusion</strong>, at least when the hole is sufficiently small.)</p><p>(a) Consider a small portion (area $=A$) of the inside wall of a container full of gas. Show that the number of molecules colliding with this surface in a time interval $\Delta t$ is $PA\,\Delta t/(2m\bar v_x)$, where $P$ is the pressure, $m$ is the average molecular mass, and $\bar v_x$ is the average $x$ velocity of those molecules that collide with the wall.</p><p>(b) It’s not easy to calculate $\bar v_x$, but a good enough approximation is $(\overline{v_x^2})^{1/2}$, where the bar now represents an average over all molecules in the gas. Show that $(\overline{v_x^2})^{1/2}=\sqrt{kT/m}$.</p><p>(c) If we now take away this small part of the wall of the container, the molecules that would have collided with it will instead escape through the hole. Assuming that nothing enters through the hole, show that the number $N$ of molecules inside the container as a function of time is governed by the differential equation $$\frac{dN}{dt}=-\frac{A}{2V}\sqrt{\frac{kT}{m}}\,N.$$ Solve this equation (assuming constant temperature) to obtain a formula of the form $N(t)=N(0)e^{-t/\tau}$, where $\tau$ is the “characteristic time” for $N$ (and $P$) to drop by a factor of $e$.</p><p>(d) Calculate the characteristic time for air at room temperature to escape from a 1-liter container punctured by a 1-mm<sup>2</sup> hole.</p><p>(e) Your bicycle tire has a slow leak, so that it goes flat within about an hour after being inflated. Roughly how big is the hole? (Use any reasonable estimate for the volume of the tire.)</p><p>(f) In Jules Verne’s <em>Round the Moon</em>, the space travelers dispose of a dog’s corpse by quickly opening a window, tossing it out, and closing the window. Do you think they can do this quickly enough to prevent a significant amount of air from escaping? Justify your answer with some rough estimates and calculations.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在裝滿氣體的容器上戳一個洞，氣體會開始漏出。本題粗略估計氣體從洞漏出的速率（洞夠小時這個過程叫<strong>瀉流</strong>，effusion）。(a) 考慮容器內壁一小塊面積 $A$。證明在時間 $\Delta t$ 內撞到這塊表面的分子數是 $PA\,\Delta t/(2m\bar v_x)$，$P$ 是壓力、$m$ 是分子平均質量、$\bar v_x$ 是撞到牆的那些分子的平均 $x$ 速度。(b) $\bar v_x$ 不好算，夠好的近似是 $(\overline{v_x^2})^{1/2}$，此處的平均對氣體中所有分子。證明 $(\overline{v_x^2})^{1/2}=\sqrt{kT/m}$。(c) 現在拿掉這一小塊牆，原本會撞上它的分子就從洞跑出去。假設沒有東西從洞進來，證明容器內分子數 $N$ 隨時間的變化滿足微分方程式 $\dfrac{dN}{dt}=-\dfrac{A}{2V}\sqrt{\dfrac{kT}{m}}\,N$。解這個方程式（假設溫度固定），得到 $N(t)=N(0)e^{-t/\tau}$ 的形式，$\tau$ 是 $N$（與 $P$）降為 $1/e$ 的「特徵時間」。(d) 計算室溫空氣從一個 1 公升、被戳了 $1\ \text{mm}^2$ 洞的容器漏出的特徵時間。(e) 你的腳踏車胎慢漏氣，打飽氣後約一小時就扁了。洞大約多大？（輪胎體積用任何合理的估計。）(f) 在凡爾納的《環月旅行》中，太空旅行者處理狗的屍體的方法是：快速打開窗、丟出去、關窗。你認為他們能快到不讓大量空氣漏掉嗎？用粗略的估計與計算支持你的答案。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>(a) 每次碰撞</td><td>$\Delta v_x=-2v_x$（彈性）</td><td>同本節 (1.11)；題目「撞到這塊表面」</td></tr>
+          <tr><td>(b) 平均平移動能</td><td>$\tfrac12m\overline{v_x^2}=\tfrac12kT$</td><td>本節 (1.15)</td></tr>
+          <tr><td>(c) 漏出條件</td><td>只出不進、$T$ 固定</td><td>「假設沒有東西從洞進來」「假設溫度固定」</td></tr>
+          <tr><td>(d) 容器與洞</td><td>$V=1\ \text{L}=10^{-3}\ \text{m}^3$，$A=1\ \text{mm}^2=10^{-6}\ \text{m}^2$</td><td>(d)「1 公升」「$1\ \text{mm}^2$ 洞」</td></tr>
+          <tr><td>(d) 空氣</td><td>$T=300\ \text{K}$，$M=0.029\ \text{kg/mol}$</td><td>「室溫空氣」；$M$ 由習題 1.14</td></tr>
+          <tr><td>(e) 輪胎</td><td>內管半徑 1.2 cm、周長 2.1 m，$V=\pi(0.012)^2(2.1)=9.5\times10^{-4}\ \text{m}^3$；$\tau\approx1\ \text{h}$</td><td>「任何合理的估計」：自己估；「約一小時就扁了」</td></tr>
+          <tr><td>(f) 太空艙</td><td>$V\approx20\ \text{m}^3$，窗 $A\approx0.1\ \text{m}^2$，開窗約 1 s</td><td>「粗略的估計」：自己估</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)(b) 證明；(c) 推導並解微分方程式、寫出 $\tau$；(d) $\tau$ 的數值；(e) 洞的大小；(f) 判斷漏氣多不多。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>壓力就是撞牆分子動量變化率除以面積（本節推導的第一步），<b>所以</b>反過來由已知的 $P$ 解出撞牆的分子數。(b) 直接由 (1.15) $m\overline{v_x^2}=kT$ 開根號。(c) <b>因為</b>原本撞牆的分子現在都從洞跑掉，<b>所以</b> (a) 的數目就是 $-\Delta N$；再用 $P=NkT/V$ 把 $P$ 換成 $N$，得「$dN/dt\propto-N$」，解是指數衰減。</p>
+      <p>(d)(e)(f) 都是代 $\tau=\dfrac{2V}{A}\sqrt{\dfrac mkT}$：<b>因為</b> $\tau$ 正比於 $V/A$，<b>所以</b>大容器小洞漏得慢。(e) 反解 $A$；(f) 用 $1-e^{-t/\tau}$ 估計開窗 $t$ 秒漏掉的比例。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-22-s1" data-sym="P,A,vx">
+        <span class="step-title">(a) 由壓力反推撞牆分子數</span>
+        <p>同 (1.9)：每個撞牆分子給牆的 $x$ 方向衝量是 $-m\Delta v_x=2mv_x$。$\Delta t$ 內有 $\mathcal N$ 個分子撞上這塊面積，總衝量 $\mathcal N\cdot2m\bar v_x$（$\bar v_x$ 是這些分子的平均）＝平均力 × 時間 ＝ $PA\,\Delta t$：</p>
+        $$PA\,\Delta t=\mathcal N\cdot2m\bar v_x\ \Longrightarrow\ \mathcal N=\frac{PA\,\Delta t}{2m\bar v_x}$$
+      </div>
+      <div class="step" data-step="sc-1-22-s2" data-sym="k,T,m">
+        <span class="step-title">(b) $(\overline{v_x^2})^{1/2}$</span>
+        <p class="sub">由 (1.15) $kT=m\overline{v_x^2}$，兩邊除以 $m$ 開根號：</p>
+        $$(\overline{v_x^2})^{1/2}=\sqrt{\frac{kT}m}$$
+      </div>
+      <div class="step" data-step="sc-1-22-s3" data-sym="N,V,tau">
+        <span class="step-title">(c) 微分方程式</span>
+        <p>拿掉那塊牆，$\mathcal N$ 就是容器減少的分子數 $-\Delta N$。代入 (b) 的 $\bar v_x\approx\sqrt{kT/m}$ 與 $P=NkT/V$：</p>
+        $$-\Delta N=\frac{PA\,\Delta t}{2m}\sqrt{\frac{m}{kT}}=\frac{NkT}{V}\cdot\frac{A\,\Delta t}{2\sqrt{mkT}}=\frac{A}{2V}\sqrt{\frac{kT}{m}}\,N\,\Delta t$$
+        <p>除以 $\Delta t$ 並取 $\Delta t\to0$：</p>
+        $$\frac{dN}{dt}=-\frac{A}{2V}\sqrt{\frac{kT}{m}}\,N\equiv-\frac N\tau,\qquad \tau=\frac{2V}{A}\sqrt{\frac mkT}$$
+      </div>
+      <div class="step" data-step="sc-1-22-s4">
+        <span class="step-title">(c) 解方程式</span>
+        <p>$T$ 固定時 $\tau$ 是常數，分離變數：</p>
+        $$\int_{N(0)}^{N(t)}\frac{dN}{N}=-\frac1\tau\int_0^tdt'\ \Longrightarrow\ N(t)=N(0)\,e^{-t/\tau}$$
+        <p>$P=NkT/V$ 正比於 $N$，所以壓力也以同樣的 $\tau$ 指數衰減。</p>
+      </div>
+      <div class="step" data-step="sc-1-22-s5" data-sym="M">
+        <span class="step-title">(d) 1 L 容器、1 mm² 洞</span>
+        <p class="sub">先算 $\sqrt{kT/m}=\sqrt{RT/M}$，代入 $R=8.31$、$T=300\ \text{K}$、$M=0.029\ \text{kg/mol}$：</p>
+        $$\sqrt{\frac{RT}{M}}=\sqrt{\frac{(8.31)(300)}{0.029}}\ \text{m/s}=293\ \text{m/s}$$
+        <p class="sub">代入 $V=10^{-3}\ \text{m}^3$、$A=10^{-6}\ \text{m}^2$（題目）：</p>
+        $$\tau=\frac{2V}{A\sqrt{kT/m}}=\frac{2(10^{-3}\ \text{m}^3)}{(10^{-6}\ \text{m}^2)(293\ \text{m/s})}=6.8\ \text{s}$$
+      </div>
+      <div class="step" data-step="sc-1-22-s6">
+        <span class="step-title">(e) 腳踏車胎的洞</span>
+        <p>反解 $A$：</p>
+        $$A=\frac{2V}{\tau\sqrt{kT/m}}$$
+        <p class="sub">代入 $V=9.5\times10^{-4}\ \text{m}^3$、$\tau=3600\ \text{s}$（估計）、$293\ \text{m/s}$（步驟 5）：</p>
+        $$A=\frac{2(9.5\times10^{-4})}{(3600)(293)}\ \text{m}^2=1.8\times10^{-9}\ \text{m}^2,\qquad d=2\sqrt{\frac A\pi}=4.8\times10^{-5}\ \text{m}\approx0.05\ \text{mm}$$
+        <p>洞的直徑約 0.05 mm，比頭髮還細，難怪找不到。（胎內是數個大氣壓、外面不是真空，模型只能給數量級。）</p>
+      </div>
+      <div class="step" data-step="sc-1-22-s7">
+        <span class="step-title">(f) 太空艙開窗</span>
+        <p class="sub">代入 $V=20\ \text{m}^3$、$A=0.1\ \text{m}^2$（估計）與 $293\ \text{m/s}$：</p>
+        $$\tau=\frac{2(20)}{(0.1)(293)}\ \text{s}=1.4\ \text{s}$$
+        <p class="sub">開窗 $t=1\ \text{s}$（丟狗的時間，估計），漏掉的比例：</p>
+        $$1-e^{-t/\tau}=1-e^{-1/1.36}=0.52$$
+        <p>即使手腳快到 0.5 s，也漏掉 $1-e^{-0.5/1.36}=31\%$。對這麼大的洞，「瀉流」模型（假設洞遠小於平均自由徑）其實不成立，真實是以約音速的整體流動噴出，但數量級相同。結論：他們會損失大量空氣，小說的情節不可行。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\mathcal N=PA\Delta t/(2m\bar v_x)$；(b) $\sqrt{kT/m}$；(c) $\dfrac{dN}{dt}=-\dfrac{A}{2V}\sqrt{\dfrac{kT}m}N$，$N(t)=N(0)e^{-t/\tau}$，$\tau=\dfrac{2V}{A}\sqrt{\dfrac m{kT}}$；(d) $\tau\approx6.8\ \text{s}$；(e) 洞面積約 $2\times10^{-9}\ \text{m}^2$，直徑約 0.05 mm；(f) $\tau\approx1.4\ \text{s}$，開窗 1 秒漏掉約一半空氣，不可行。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(d) 熱學小考的學生答案 6.82 s、(e) $5.6\times10^{-9}\ \text{m}^2$（用了較大的輪胎體積），與解答手冊 6.7 s、$5\times10^{-9}\ \text{m}^2$ 數量級一致 ✔。單位：$\text{m}^3/(\text{m}^2\cdot\text{m/s})=\text{s}$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-02a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>離心機裡的「大氣」：分離鈾同位素</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-02a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>半徑 $a=10\ \text{cm}$ 的圓筒裝 $\text{UF}_6$ 氣體，以角速度 $\omega$ 繞軸旋轉，壁的速率 $\omega a=500\ \text{m/s}$，氣體溫度均勻 300 K，與圓筒一起轉（在旋轉座標中靜止）。(a) 仿照習題 1.16，在旋轉座標中對一薄層氣體寫力平衡，證明數密度 $n(r)=n(0)\exp\!\big(\frac{m\omega^2r^2}{2kT}\big)$。(b) $^{238}\text{UF}_6$（352 u）在壁與軸的壓力比是多少？(c) 兩種同位素的濃度比 $n_{235}/n_{238}$ 在軸上比壁上大幾倍（分離因子）？(d) 這一級的效果相當於習題 1.20 的擴散法（每級 1.0043）幾級？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>壁速</td><td>$\omega a=500\ \text{m/s}$</td><td>「壁的速率 $\omega a=500\ \text{m/s}$」</td></tr>
+          <tr><td>溫度</td><td>$T=300\ \text{K}$，與 $r$ 無關</td><td>「氣體溫度均勻 300 K」</td></tr>
+          <tr><td>平衡</td><td>旋轉座標中靜止：壓力梯度提供向心力</td><td>「與圓筒一起轉（在旋轉座標中靜止）」</td></tr>
+          <tr><td>分子質量</td><td>$m_{238}=352\ \text{u}$，$m_{235}=349\ \text{u}$，差 $\Delta m=3\ \text{u}$</td><td>(b)「352 u」；習題 1.20</td></tr>
+          <tr><td>混合氣體</td><td>每種分子各自滿足 (a)（分壓獨立）</td><td>題目沒寫；理想氣體的各成分互不影響（自己判斷）</td></tr>
+          <tr><td>常數</td><td>$1\ \text{u}=1.66\times10^{-27}\ \text{kg}$，$k=1.381\times10^{-23}\ \text{J/K}$</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>擴散法每級</td><td>1.0043</td><td>(d)；習題 1.20 的比值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明 $n(r)$；(b) 壁/軸壓力比；(c) 分離因子；(d) 等效擴散級數。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>在旋轉座標中氣體靜止，每一小塊氣體受的淨力必須提供向心加速度 $\omega^2r$（或說平衡離心力），<b>所以</b>和習題 1.16 一模一樣，只是把重力 $-\rho g$ 換成離心力 $+\rho\omega^2r$：$dP/dr=\rho\omega^2r$。再用 $P=nkT$、$\rho=mn$ 得只含 $n$ 的微分方程。</p>
+      <p><b>因為</b>結果的指數正比於分子質量 $m$，<b>所以</b>重的分子被甩向壁的程度比輕的大，兩種同位素的比值會隨 $r$ 變；分離因子就是兩個指數相除，只剩 $\Delta m$。(d) <b>因為</b>多級串聯時分離因子相乘，<b>所以</b>級數＝兩者取對數相除。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-02a-s1" data-sym="P,rho">
+        <span class="step-title">(a) 薄層的力平衡</span>
+        <p>取半徑 $r$ 到 $r+dr$、面積 $A$ 的薄層，質量 $\rho A\,dr$。外側壓力向內推 $P(r+dr)A$、內側向外推 $P(r)A$，淨向內的力要提供向心力 $(\rho A\,dr)\omega^2r$：</p>
+        $$P(r+dr)A-P(r)A=\rho A\,dr\,\omega^2r\ \Longrightarrow\ \frac{dP}{dr}=\rho\,\omega^2r$$
+      </div>
+      <div class="step" data-step="t1-self-02a-s2" data-sym="k,T,m">
+        <span class="step-title">(a) 換成數密度並積分</span>
+        <p>理想氣體 $P=nkT$、$\rho=mn$，$T$ 固定：</p>
+        $$kT\frac{dn}{dr}=mn\,\omega^2r\ \Longrightarrow\ \int_{n(0)}^{n(r)}\frac{dn}{n}=\frac{m\omega^2}{kT}\int_0^rr'\,dr'$$
+        $$\ln\frac{n(r)}{n(0)}=\frac{m\omega^2r^2}{2kT}\ \Longrightarrow\ n(r)=n(0)\exp\!\left(\frac{m\omega^2r^2}{2kT}\right)$$
+        <p>對照習題 1.16：$mgz$ 換成 $-\tfrac12m\omega^2r^2$（離心位能），一樣是「位能／$kT$」的指數。</p>
+      </div>
+      <div class="step" data-step="t1-self-02a-s3">
+        <span class="step-title">(b) 壁與軸的壓力比</span>
+        $$\frac{P(a)}{P(0)}=\frac{n(a)}{n(0)}=\exp\!\left(\frac{m(\omega a)^2}{2kT}\right)$$
+        <p class="sub">代入 $m=352\times1.66\times10^{-27}=5.84\times10^{-25}\ \text{kg}$、$\omega a=500\ \text{m/s}$、$kT=4.14\times10^{-21}\ \text{J}$：</p>
+        $$\frac{m(\omega a)^2}{2kT}=\frac{(5.84\times10^{-25})(2.5\times10^5)}{2(4.14\times10^{-21})}=17.6,\qquad \frac{P(a)}{P(0)}=e^{17.6}=4.6\times10^7$$
+        <p>幾乎所有氣體都被甩到壁附近，軸心接近真空。</p>
+      </div>
+      <div class="step" data-step="t1-self-02a-s4">
+        <span class="step-title">(c) 分離因子</span>
+        <p>兩種分子各自滿足 (a)，比值：</p>
+        $$\frac{(n_{235}/n_{238})_{\text{軸}}}{(n_{235}/n_{238})_{\text{壁}}}=\frac{e^{0}/e^{m_{235}\omega^2a^2/2kT}}{e^{0}/e^{m_{238}\omega^2a^2/2kT}}=\exp\!\left(\frac{\Delta m\,(\omega a)^2}{2kT}\right)$$
+        <p class="sub">代入 $\Delta m=3\ \text{u}=4.98\times10^{-27}\ \text{kg}$、$\omega a=500\ \text{m/s}$、$kT=4.14\times10^{-21}\ \text{J}$：</p>
+        $$\frac{\Delta m(\omega a)^2}{2kT}=\frac{(4.98\times10^{-27})(2.5\times10^5)}{8.29\times10^{-21}}=0.150,\qquad e^{0.150}=1.16$$
+      </div>
+      <div class="step" data-step="t1-self-02a-s5">
+        <span class="step-title">(d) 相當於幾級擴散</span>
+        <p>$n$ 級擴散的總分離因子是 $1.0043^n$，令它等於 1.16：</p>
+        $$n=\frac{\ln1.16}{\ln1.0043}=\frac{0.150}{0.00429}\approx35$$
+        <p>一台離心機相當於約 35 級擴散——這就是現代鈾濃縮改用離心機的原因。關鍵差別：離心法的效果正比於 $\Delta m$（質量差），擴散法只正比於 $\sqrt{m}$ 的相對差 $\Delta m/2m$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $dP/dr=\rho\omega^2r$ ⟹ $n(r)=n(0)e^{m\omega^2r^2/2kT}$；(b) 壁/軸壓力比 $e^{17.6}\approx5\times10^7$；(c) 分離因子 $e^{0.150}=1.16$；(d) 約 35 級擴散。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>把 $n(r)$ 代回 $kT\,dn/dr=mn\omega^2r$：左邊 $kT\cdot n\cdot\frac{m\omega^2r}{kT}$，等於右邊 ✔。$\omega\to0$ 時分離因子 →1（不轉就不分離）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-02b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>熱流逸：細孔兩側壓力不相等</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-02b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩個容器以一個極小的孔相連（孔遠小於分子平均自由徑，氣體只能「一個一個」瀉流過去，不會整團流動）。容器 1 保持 300 K、容器 2 保持 600 K，裡面都是同一種稀薄氣體。(a) 用習題 1.22 的結果寫出每單位時間、單位面積從一側穿過孔的分子數。(b) 達到穩定（淨分子流為零）時，$P_2/P_1$ 是多少？若 $P_1=100\ \text{Pa}$，$P_2=$？(c) 兩邊的數密度比 $n_2/n_1$？(d) 和習題 1.11（兩房間開著門，壓力相等）比較，為什麼結果不同？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>溫度</td><td>$T_1=300\ \text{K}$，$T_2=600\ \text{K}$（固定）</td><td>「保持 300 K」「保持 600 K」</td></tr>
+          <tr><td>孔</td><td>瀉流：兩側分子各自獨立穿孔</td><td>「孔遠小於分子平均自由徑」「一個一個瀉流過去」</td></tr>
+          <tr><td>氣體</td><td>同一種，分子質量 $m$ 相同</td><td>「同一種稀薄氣體」</td></tr>
+          <tr><td>穩定條件</td><td>$1\to2$ 與 $2\to1$ 的分子流相等</td><td>「淨分子流為零」</td></tr>
+          <tr><td>(b) 數值</td><td>$P_1=100\ \text{Pa}$</td><td>「若 $P_1=100\ \text{Pa}$」</td></tr>
+          <tr><td>穿孔速率</td><td>每秒每單位面積 $\Phi=\dfrac{P}{2m\bar v_x}$，$\bar v_x\approx\sqrt{kT/m}$</td><td>習題 1.22 (a)(b)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 通量 $\Phi(P,T)$；(b) $P_2/P_1$ 與 $P_2$；(c) $n_2/n_1$；(d) 與大開口的差別。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>孔很小、分子互不干擾，<b>所以</b>從每一側穿過孔的分子數只由那一側的 $P$、$T$ 決定，就是習題 1.22 撞到那塊面積的分子數。<b>因為</b>穩定時兩個方向的分子數相等，<b>所以</b>令 $\Phi_1=\Phi_2$ 解壓力比。最常見的錯誤是直接寫「平衡時壓力相等」——那是力學平衡的條件，只在分子能整團流動（大開口）時才成立。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-02b-s1" data-sym="P,A,vx">
+        <span class="step-title">(a) 通量</span>
+        <p class="sub">由習題 1.22(a)，$\Delta t$ 內撞上面積 $A$（現在是孔）的分子數 $PA\Delta t/(2m\bar v_x)$，代入 (b) 的 $\bar v_x\approx\sqrt{kT/m}$：</p>
+        $$\Phi=\frac{\mathcal N}{A\,\Delta t}=\frac{P}{2m\sqrt{kT/m}}=\frac{P}{2\sqrt{mkT}}$$
+      </div>
+      <div class="step" data-step="t1-self-02b-s2" data-sym="T">
+        <span class="step-title">(b) 令兩方向通量相等</span>
+        $$\frac{P_1}{2\sqrt{mkT_1}}=\frac{P_2}{2\sqrt{mkT_2}}\ \Longrightarrow\ \frac{P_2}{P_1}=\sqrt{\frac{T_2}{T_1}}$$
+        <p class="sub">代入 $T_2/T_1=600/300=2$、$P_1=100\ \text{Pa}$（題目）：</p>
+        $$\frac{P_2}{P_1}=\sqrt2=1.414,\qquad P_2=141\ \text{Pa}$$
+      </div>
+      <div class="step" data-step="t1-self-02b-s3" data-sym="k">
+        <span class="step-title">(c) 數密度比</span>
+        $$n=\frac{N}{V}=\frac{P}{kT}\ \Longrightarrow\ \frac{n_2}{n_1}=\frac{P_2}{P_1}\cdot\frac{T_1}{T_2}=\sqrt{\frac{T_2}{T_1}}\cdot\frac{T_1}{T_2}=\sqrt{\frac{T_1}{T_2}}$$
+        <p class="sub">代入 $T_1/T_2=\tfrac12$：</p>
+        $$\frac{n_2}{n_1}=\frac1{\sqrt2}=0.707$$
+        <p>熱的一側分子較少（每個跑得快 $\sqrt2$ 倍，穿孔機會多），但壓力反而較高。</p>
+      </div>
+      <div class="step" data-step="t1-self-02b-s4">
+        <span class="step-title">(d) 為什麼和開著門的房間不同</span>
+        <p>大開口時氣體可以整團流動，只要兩側壓力不同就有整體的推力讓氣流衝過去，平衡條件是力學平衡 $P_1=P_2$（習題 1.11）。小孔時分子彼此不相碰、無法傳遞「推力」，每個方向的分子流各自只看自己這側的 $n\bar v$；平衡條件變成「分子流量相等」$P/\sqrt T$ 相同。兩種情況的條件不同，是因為交換粒子的機制不同（集體流 vs. 個別分子），這種現象叫<strong>熱流逸</strong>（thermal transpiration，Knudsen 效應）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\Phi=P/(2\sqrt{mkT})$；(b) $P_2/P_1=\sqrt{T_2/T_1}=\sqrt2$，$P_2=141\ \text{Pa}$；(c) $n_2/n_1=\sqrt{T_1/T_2}=0.707$；(d) 小孔時平衡條件是兩向分子流相等（$P/\sqrt T$ 相同），不是力學平衡的壓力相等。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>用 Maxwell 分布的精確通量 $\Phi=P/\sqrt{2\pi mkT}$（第 6 章）重做：常數因子不同，但兩邊相同而消掉，$P_2/P_1=\sqrt2$ 不變 ✔。$T_2=T_1$ 時回到 $P_2=P_1$ ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$PV=nRT=NkT$，$nR=Nk$，$k=R/N_A=1.381\times10^{-23}\ \text{J/K}=8.62\times10^{-5}\ \text{eV/K}$；$T$ 用 K、$P$ 用 Pa、$V$ 用 $\text{m}^3$（1 atm $=1.013\times10^5$ Pa、1 L $=10^{-3}\ \text{m}^3$）。</li>
+    <li>室溫一大氣壓：一莫耳 24.6 L、每分子 41 nm³、間距約 3.4 nm（分子大小的十倍）；空氣 $M\approx29$ g/mol。</li>
+    <li>靜止大氣 $dP/dz=-\rho g=-\frac{mg}{kT}P$，等溫 $P=P_0e^{-mgz/kT}$，標高約 8 km。</li>
+    <li>維里展開 $PV=nRT(1+\frac{B}{V/n}+\frac{C}{(V/n)^2})$；凡得瓦 $B=b-\frac a{RT}$、$C=b^2$（考古某級 1(i)）。</li>
+    <li>微觀模型：$\Delta t=2L/v_x$、$\Delta v_x=-2v_x$ ⟹ $PV=Nm\overline{v_x^2}$ ⟹ $\overline K_{\text{trans}}=\tfrac32kT$（考古某級 1(a)）；室溫 $kT\approx\tfrac1{40}$ eV。</li>
+    <li>$v_{\text{rms}}=\sqrt{3kT/m}=\sqrt{3RT/M}$：氮 517 m/s；同溫下速率比 $=\sqrt{\text{質量反比}}$（氫：氧＝4）。</li>
+    <li>瀉流：$\dfrac{dN}{dt}=-\dfrac{A}{2V}\sqrt{\dfrac{kT}{m}}N$，$\tau=\dfrac{2V}{A}\sqrt{\dfrac m{kT}}$。</li>
+  </ol>
+</div>

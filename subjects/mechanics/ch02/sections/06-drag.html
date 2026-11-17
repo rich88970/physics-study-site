@@ -1,0 +1,589 @@
+<h2>六、阻力與終端速度 <span class="pg">講義 p.54–62 · 課本 §2.4 p.58–63</span></h2>
+
+<p class="lead">空氣、水對運動物體的阻力和速度有關，所以 $F=m\ddot x$ 變成真正要積分的微分方程式。這一節先看阻力的經驗公式，再做三個基本題：水平線性阻力（例題 2.4）、鉛直線性阻力與終端速度（例題 2.5）、$v^2$ 阻力下落的距離（習題 2-11），最後是六題課本習題。</p>
+
+<h3 id="c2d-law">6.1 阻力的形式 <span class="pg-tag">課本 p.58–60</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">課本 p.58–59 Eq. (2.19)–(2.21) Retarding Forces</span>
+  $$\vec F=m\vec g+\vec F_r(v),\qquad\vec F=m\vec g-mkv^n\frac{\vec v}{v}\qquad(2.20)$$
+  <p>$k$ 是正的常數，$\vec v/v$ 是速度方向的單位向量。小物體在空氣中：速度低於約 $24\ \text{m/s}$ 時 $n\approx1$；更快但低於音速（約 $330\ \text{m/s}$）時阻力約正比於 $v^2$。Prandtl 的空氣阻力式：$W=\tfrac12c_W\rho Av^2$（$c_W$ 阻力係數、$\rho$ 空氣密度、$A$ 截面積）。</p>
+</div>
+
+<p>負號加上 $\vec v/v$ 表示阻力永遠和速度反向。$F_r\propto v^n$ 只是近似：真實的阻力係數 $c_W$ 在接近音速（馬赫數 $M\approx1$）時突然變大（課本 Fig. 2-3），砲彈的阻力曲線在那裡有反曲點。用冪次近似的好處是方程式通常可以直接積分；用真實曲線就只能數值計算（第 9 節例題 2.8）。課本寫 $kmv$ 而不是 $kv$，只是讓 $m$ 在方程式兩邊約掉，並不表示阻力和質量有關。</p>
+
+<h3 id="c2d-hor">6.2 水平運動的線性阻力 <span class="pg-tag">p.54–56</span></h3>
+
+<div class="problem" data-kind="example" id="c2-ex24">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.54–56 · Example 2.4（課本 p.60–62）</span></div>
+    <h4>線性阻力下的水平運動：$v(t)$、$x(t)$、$v(x)$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex24">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>物體以初速 $v_0$ 在介質中水平運動，阻力正比於速度（$F=kmv$，方向與運動相反）。求速度與位移隨時間的變化，以及速度與位移的關係。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：初速 $\dot x(0)=v_0$，取出發點為原點 $x(0)=0$；阻力 $F=-km\dot x$（$k\gt0$，負號表示和運動反向）；水平方向沒有其他力。</p>
+<p><strong>① 運動方程式並分離變數：</strong> 力只和 $\dot x$ 有關，所以把 $\dot x$ 和 $t$ 分到兩邊直接積分。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$F=m\dfrac{\mathrm d\dot x}{\mathrm dt}$，其中 $F$ 為合力、$m$ 為質量、$\dot x$ 為速度；本題水平方向只有阻力 $F=-km\dot x$。</p>
+<div class="math-block">$$F=-km\dot x=m\frac{\mathrm d\dot x}{\mathrm dt}$$</div>
+<p>兩邊除以 $m\dot x$、乘 $\mathrm dt$：</p>
+<div class="math-block">$$\frac{\mathrm d\dot x}{\dot x}=-k\,\mathrm dt$$</div>
+<p><strong>② $v(t)$：積分並用 $v(0)=v_0$：</strong> $\int\mathrm d\dot x/\dot x=\ln\dot x$。</p>
+<div class="math-block">$$\ln\dot x=-kt+C\ \Longrightarrow\ \dot x=e^{C}e^{-kt}\equiv C'e^{-kt}$$</div>
+<p>代入 $t=0$ 時 $\dot x=v_0$：$v_0=C'e^0$，所以 $C'=v_0$。</p>
+<div class="math-block">$$\boxed{v(t)=v_0e^{-kt}}$$</div>
+<p><strong>③ $x(t)$：再積一次並用 $x(0)=0$：</strong> $e^{-kt}$ 的反導函數是 $-e^{-kt}/k$。</p>
+<div class="math-block">$$x(t)=\int v_0e^{-kt}\,\mathrm dt=-\frac{v_0}{k}e^{-kt}+C_2$$</div>
+<p>代入 $x(0)=0$：$0=-\dfrac{v_0}{k}+C_2$，所以 $C_2=\dfrac{v_0}{k}$。</p>
+<div class="math-block">$$\boxed{x(t)=\frac{v_0}{k}\left(1-e^{-kt}\right)}$$</div>
+<p><strong>④ $v(x)$：兩邊乘 $\dot x$：</strong> 問的是速度和位置的關係、不需要時間，所以從 ① 的分離式兩邊乘 $\dot x$，右邊的 $\dot x\,\mathrm dt$ 就是 $\mathrm dx$（講義 p.56）。</p>
+<div class="math-block">$$\begin{aligned}-k\,\mathrm dt&amp;=\frac{\mathrm d\dot x}{\dot x}\ \Rightarrow\ -k\dot x\,\mathrm dt=\mathrm d\dot x\\ &amp;\Rightarrow\ -k\,\mathrm dx=\mathrm d\dot x\ \Rightarrow\ -kx=\dot x+C\end{aligned}$$</div>
+<p>代入位置形式的初始條件「$x=0$ 時 $\dot x=v_0$」：$0=v_0+C$，$C=-v_0$。</p>
+<div class="math-block">$$\boxed{v=\dot x=v_0-kx}$$</div>
+<p>（課本 p.61 用 $\dfrac{\mathrm dv}{\mathrm dx}=\dfrac{\mathrm dv}{\mathrm dt}\dfrac1v=-k$，同一件事。）</p>
+    </div>
+  </div>
+</div>
+
+<div class="anim" data-anim="c2-linear-drag"></div>
+
+<h3 id="c2d-vert">6.3 鉛直運動與終端速度 <span class="pg-tag">p.57–60</span></h3>
+
+<div class="problem" data-kind="example" id="c2-ex25">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.57–60 · Example 2.5（課本 p.62–63）</span></div>
+    <h4>線性阻力下的鉛直運動與終端速度</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex25">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點在重力場中鉛直運動，介質的阻力正比於速度（$kmv$）。質點從高度 $h$ 以初速 $v_0$ 出發（課本取向下拋出），求速度與位移隨時間的變化，以及終端速度。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$z$ 軸向上、地面 $z=0$；$z(0)=h$，$\dot z(0)=v_0$（課本向下拋，$v_0\lt0$，公式對任何正負號都成立）；重力 $-mg$，阻力 $-km\dot z$（$k\gt0$）。</p>
+<p><strong>① 運動方程式並分離變數：</strong> 阻力寫成 $-km\dot z$、讓 $\dot z$ 帶正負號，方向自動和運動相反，不必分上升、下降；總力只和 $\dot z$ 有關，可以分離變數。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\ddot z=\sum F$，其中 $m$ 為質量、$\ddot z$ 為加速度、$\sum F$ 為合力；本題 $\sum F=-km\dot z-mg$。</p>
+<p>兩邊除以 $m$，提出負號：</p>
+<div class="math-block">$$m\ddot z=-km\dot z-mg\ \Longrightarrow\ \frac{\mathrm d\dot z}{\mathrm dt}=-(k\dot z+g)$$</div>
+<p>把含 $\dot z$ 的放左邊：</p>
+<div class="math-block">$$\frac{\mathrm d\dot z}{k\dot z+g}=-\mathrm dt$$</div>
+<p><strong>② $\dot z(t)$：積分並用 $\dot z(0)=v_0$：</strong> 左邊湊微分 $\mathrm d(k\dot z+g)=k\,\mathrm d\dot z$，所以 $\int\frac{\mathrm d\dot z}{k\dot z+g}=\frac1k\ln(k\dot z+g)$。</p>
+<div class="math-block">$$\frac1k\ln(k\dot z+g)=-t+C\ \Longrightarrow\ k\dot z+g=C'e^{-kt}$$</div>
+<p>代入 $t=0$ 時 $\dot z=v_0$：$C'=kv_0+g$。解出 $\dot z$：</p>
+<div class="math-block">$$\boxed{\dot z(t)=-\frac gk+\frac{kv_0+g}{k}e^{-kt}}\qquad(2.29)$$</div>
+<p><strong>③ 終端速度：</strong> 終端速度是 $t\to\infty$ 的極限，此時 $e^{-kt}\to0$，第二項消失。</p>
+<div class="math-block">$$\dot z(t\to\infty)=-\frac gk\quad\Longrightarrow\quad\boxed{v_t=\frac gk\ (\text{向下})}$$</div>
+<p>直接由方程式也看得出來：$\dot z=-g/k$ 時 $-km\dot z-mg=mg-mg=0$，合力為零、不再加速。</p>
+<p><strong>④ $z(t)$：再積一次並用 $z(0)=h$：</strong> 逐項積分（$\int e^{-kt}\mathrm dt=-e^{-kt}/k$）。</p>
+<div class="math-block">$$z=\int\dot z\,\mathrm dt=-\frac{gt}{k}-\frac{kv_0+g}{k^2}e^{-kt}+C$$</div>
+<p>代入 $z(0)=h$：$h=-\dfrac{kv_0+g}{k^2}+C$，所以 $C=h+\dfrac{kv_0+g}{k^2}$。</p>
+<div class="math-block">$$\boxed{z(t)=h-\frac{gt}{k}+\frac{kv_0+g}{k^2}\left(1-e^{-kt}\right)}\qquad(2.30)$$</div>
+    </div>
+  </div>
+</div>
+
+<p>課本 Fig. 2-6 把結果畫成「向下的速率對時間」：從靜止出發的速率由 0 往上爬到 $g/k$；初速比 $g/k$ 小的也是往上接近；初速比 $g/k$ 大的則一開始就<strong>減速</strong>，從上方接近 $g/k$。不論起點，最後都趨近同一個終端速度，接近的速度由 $e^{-kt}$ 控制，時間尺度是 $1/k$。</p>
+
+<div class="anim" data-anim="c2-terminal"></div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-11">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-11 · p.91 · 講義 p.61–62</span></div>
+    <h4>$v^2$ 阻力下，從 $v_0$ 加速到 $v_1$ 落下多遠</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的質點在均勻重力場中由靜止開始下落，受到正比於速度平方的阻力 $kmv^2$。證明質點從速率 $v_0$ 加速到 $v_1$ 所落下的距離為</p>$$s(v_0\to v_1)=\frac1{2k}\ln\!\left[\frac{g-kv_0^2}{g-kv_1^2}\right]$$</div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：取向下為正，下落中 $\dot z\gt0$；重力 $mg$ 向下（$g$ 為常數），阻力 $km\dot z^2$ 向上；$v_0\lt v_1\lt\sqrt{g/k}$。</p>
+<p><strong>① 運動方程式（向下為正）：</strong> 題目只要距離和速度的關係，所以之後要乘 $\dot z$ 把 $\mathrm dt$ 換成 $\mathrm dz$；$\dot z^2$ 永遠為正、不能自動處理方向，因此先確定只有下落，阻力固定向上。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\dfrac{\mathrm d\dot z}{\mathrm dt}=\sum F$，其中 $m$ 為質量、$\dot z$ 為速度、$\sum F$ 為合力；本題 $\sum F=mg-km\dot z^2$。</p>
+<p>兩邊除以 $m$ 再分離：</p>
+<div class="math-block">$$m\frac{\mathrm d\dot z}{\mathrm dt}=mg-km\dot z^2\quad\Longrightarrow\quad\mathrm dt=\frac{\mathrm d\dot z}{g-k\dot z^2}$$</div>
+<p><strong>② 乘 $\dot z$，把 $\mathrm dt$ 換成 $\mathrm dz$：</strong> 左邊 $\dot z\,\mathrm dt=\mathrm dz$；右邊分子用 $\dot z\,\mathrm d\dot z=\tfrac12\mathrm d(\dot z^2)$。</p>
+<div class="math-block">$$\dot z\,\mathrm dt=\frac{\dot z\,\mathrm d\dot z}{g-k\dot z^2}=\frac12\frac{\mathrm d(\dot z^2)}{g-k\dot z^2}\quad\Longrightarrow\quad\mathrm dz=\frac12\frac{\mathrm d(\dot z^2)}{g-k\dot z^2}$$</div>
+<p><strong>③ 從 $v_0$ 積到 $v_1$：</strong> 令 $u=g-k\dot z^2$，則 $\mathrm du=-k\,\mathrm d(\dot z^2)$，即 $\mathrm d(\dot z^2)=-\mathrm du/k$，積分變成 $\int\mathrm du/u=\ln u$。</p>
+<div class="math-block">$$s=\int_{v_0}^{v_1}\frac12\frac{\mathrm d(\dot z^2)}{g-k\dot z^2}=-\frac1{2k}\Big[\ln\big(g-k\dot z^2\big)\Big]_{v_0}^{v_1}$$</div>
+<p>代上下限，$-[\ln A-\ln B]=\ln(B/A)$：</p>
+<div class="math-block">$$s=-\frac1{2k}\left[\ln(g-kv_1^2)-\ln(g-kv_0^2)\right]=\frac1{2k}\ln\frac{g-kv_0^2}{g-kv_1^2}$$</div>
+<div class="math-block">$$\boxed{s(v_0\to v_1)=\frac1{2k}\ln\frac{g-kv_0^2}{g-kv_1^2}\quad\text{（得證）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="c2d-more">6.4 課本習題 <span class="pg-tag">課本 p.91–98</span></h3>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-9">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-9 · p.91</span></div>
+    <h4>鉛直上拋：有阻力時比較快到最高點</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a projectile fired vertically in a constant gravitational field. For the same initial velocities, compare the times required for the projectile to reach its maximum height</p><p>(a) for zero resisting force,</p><p>(b) for a resisting force proportional to the instantaneous velocity of the projectile.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-9 · p.91</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在均勻重力場中鉛直向上射出拋體。初速相同時，比較到達最高點所需的時間：(a) 沒有阻力；(b) 阻力正比於瞬時速度。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：向上為正，兩種情況初速都是 $v_0\gt0$；重力加速度 $g$ 為常數；(b) 阻力 $-km\dot z$（同例題 2.5）；最高點即速度 $=0$ 的時刻。</p>
+<h4>(a) 無阻力</h4>
+<p><strong>① 令速度為零：</strong> 最高點是速度為零的時刻；無阻力時是等加速度 $-g$，速度 $v=v_0-gt$。</p>
+<p class="fnote"><b>公式（等加速度運動）：</b>$v=v_0+at$，其中 $v_0$ 為初速、$a$ 為加速度、$t$ 為時間；本題 $a=-g$。</p>
+<div class="math-block">$$v_0-gt_m=0\ \Longrightarrow\ \boxed{t_m=\frac{v_0}{g}}$$</div>
+<h4>(b) 線性阻力</h4>
+<p><strong>① 令 (2.29) 為零：</strong> 方程式和例題 2.5 完全相同，直接用它的速度結果，取 $v_0\gt0$（向上）。</p>
+<div class="math-block">$$v(t)=-\frac gk+\frac{kv_0+g}{k}e^{-kt}$$</div>
+<p>令 $v=0$：$\dfrac{kv_0+g}{k}e^{-kt_m'}=\dfrac gk$，兩邊乘 $k$、取倒數：</p>
+<div class="math-block">$$e^{kt_m'}=\frac{kv_0+g}{g}=1+\frac{kv_0}{g}\ \Longrightarrow\ t_m'=\frac1k\ln\!\left(1+\frac{kv_0}{g}\right)$$</div>
+<p><strong>② 和 (a) 比較：</strong> (b) 是 $\ln$、(a) 是一次式，用泰勒展開比大小。令 $z=kv_0/g\gt0$，則 $t_m'=\dfrac1k\ln(1+z)$、$t_m=\dfrac{v_0}{g}=\dfrac zk$。</p>
+<p class="fnote"><b>公式（$\ln$ 的泰勒展開）：</b>$\ln(1+z)=z-\dfrac{z^2}2+\dfrac{z^3}3-\cdots$，其中 $z$ 為展開變數，$z\gt0$ 時 $\ln(1+z)\lt z$；本題 $z=kv_0/g$。</p>
+<div class="math-block">$$t_m'=\frac{v_0}{g}\left(1-\frac{kv_0}{2g}+\frac{k^2v_0^2}{3g^2}-\cdots\right)\lt \frac{v_0}g=t_m$$</div>
+<p>上升時阻力和重力同向（都向下），減速得更快。</p>
+<div class="math-block">$$\boxed{\begin{gathered}t_m'=\frac1k\ln\!\left(1+\frac{kv_0}g\right)\\ t_m'\lt t_m\text{：有阻力時比較快到最高點}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-34">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-34 · p.95</span></div>
+    <h4>由靜止落下：速度和落下距離的關係</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-34">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點從靜止（$y=0$）在重力與空氣阻力作用下落下。求速度 $v$ 和落下距離 $y$ 的關係，空氣阻力為 (a) $\alpha v$；(b) $\beta v^2$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$y$ 向下為正（落下距離）；$y=0$ 時 $v=0$；重力 $mg$ 向下、阻力向上；(a) 阻力 $\alpha v$、(b) 阻力 $\beta v^2$（常數沒有乘 $m$）。</p>
+<h4>(a) 阻力 $\alpha v$</h4>
+<p><strong>① 運動方程式並拆成帶分式：</strong> 要的是 $v$ 和 $y$ 的關係、沒有時間，所以左邊用連鎖律換成 $mv\,\mathrm dv/\mathrm dy$；分離後分子分母都有 $v$，先化成帶分式再積分。</p>
+<p class="fnote"><b>公式（牛頓第二定律＋連鎖律）：</b>$m\ddot y=mv\dfrac{\mathrm dv}{\mathrm dy}=\sum F$，其中 $m$ 為質量、$v$ 為速度、$y$ 為位置、$\sum F$ 為合力；本題 $\sum F=mg-\alpha v$。</p>
+<div class="math-block">$$mv\,\frac{\mathrm dv}{\mathrm dy}=mg-\alpha v\ \Longrightarrow\ \mathrm dy=\frac{mv\,\mathrm dv}{mg-\alpha v}$$</div>
+<p>把 $\dfrac{v}{mg-\alpha v}$ 拆成 $-\dfrac1\alpha+\dfrac{mg/\alpha}{mg-\alpha v}$（通分後分子 $-(mg-\alpha v)+mg=\alpha v$）：</p>
+<div class="math-block">$$\mathrm dy=\frac m\alpha\left[-1+\frac{mg}{mg-\alpha v}\right]\mathrm dv$$</div>
+<p><strong>② 從 $v=0$ 積到 $v$：</strong> 第一項積成 $-v$；第二項湊微分 $\mathrm d(mg-\alpha v)=-\alpha\,\mathrm dv$。</p>
+<div class="math-block">$$\int_0^v\frac{\mathrm dv'}{mg-\alpha v'}=-\frac1\alpha\ln\frac{mg-\alpha v}{mg}=-\frac1\alpha\ln\!\left(1-\frac{\alpha v}{mg}\right)$$</div>
+<p>代回上一步的 $\mathrm dy$：</p>
+<div class="math-block">$$y=\frac m\alpha\left[-v+mg\cdot\left(-\frac1\alpha\right)\ln\!\left(1-\frac{\alpha v}{mg}\right)\right]$$</div>
+<p>展開括號：</p>
+<div class="math-block">$$\boxed{y=-\frac m\alpha v-\frac{m^2g}{\alpha^2}\ln\!\left(1-\frac{\alpha v}{mg}\right)}$$</div>
+<h4>(b) 阻力 $\beta v^2$</h4>
+<p><strong>① 用 $v\,\mathrm dv=\tfrac12\mathrm d(v^2)$：</strong> 分子剛好是 $v\,\mathrm dv$，把 $v^2$ 當變數直接湊微分；只有下落、方向固定，$v^2$ 阻力不必擔心正負號。向下為正：重力 $mg$、阻力 $-\beta v^2$。</p>
+<div class="math-block">$$\frac m2\frac{\mathrm d(v^2)}{\mathrm dy}=mg-\beta v^2\ \Longrightarrow\ \mathrm dy=\frac m2\frac{\mathrm d(v^2)}{mg-\beta v^2}$$</div>
+<p>令 $u=mg-\beta v^2$，$\mathrm du=-\beta\,\mathrm d(v^2)$；$v$ 從 $0$ 到 $v$ 時 $u$ 從 $mg$ 到 $mg-\beta v^2$：</p>
+<div class="math-block">$$y=-\frac m{2\beta}\ln\!\left(\frac{mg-\beta v^2}{mg}\right)$$</div>
+<p><strong>② 反解成 $v^2(y)$：</strong> 兩邊乘 $-2\beta/m$、取指數。</p>
+<div class="math-block">$$\frac{mg-\beta v^2}{mg}=e^{-2\beta y/m}\ \Longrightarrow\ \boxed{v^2=\frac{mg}{\beta}\left(1-e^{-2\beta y/m}\right)}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-15">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-15 · p.92</span></div>
+    <h4>斜面上的 $v^2$ 阻力：證明 $t=\cosh^{-1}(e^{kd})/\sqrt{kg\sin\theta}$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-15">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m$ 的質點在重力作用下沿傾角 $\theta$ 的斜面滑下，運動受到阻力 $f=kmv^2$。證明從靜止開始滑下距離 $d$ 所需的時間為 $t=\dfrac{\cosh^{-1}(e^{kd})}{\sqrt{kg\sin\theta}}$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：沿斜面向下為正，傾角 $\theta$，重力沿斜面分量 $mg\sin\theta$；阻力 $f=kmv^2$ 沿斜面向上（沒有滑動摩擦）；$t=0$ 時 $v=0$、$x=0$；滑下距離 $d$。</p>
+<p><strong>① 運動方程式並分離變數：</strong> 要的是走到 $d$ 的時間，所以先求 $v(t)$、再積成 $x(t)$、最後令 $x=d$ 反解；沿斜面的力只和 $v$ 有關，可以分離變數。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\dot v=\sum F$，其中 $m$ 為質量、$\dot v$ 為加速度、$\sum F$ 為沿斜面合力；本題 $\sum F=mg\sin\theta-kmv^2$。</p>
+<p>除以 $m$：</p>
+<div class="math-block">$$\dot v=g\sin\theta-kv^2$$</div>
+<p>令 $a^2\equiv g\sin\theta/k$（$a$ 是終端速率），提出 $k$：$\dot v=k(a^2-v^2)$，分離：</p>
+<div class="math-block">$$\frac{\mathrm dv}{a^2-v^2}=k\,\mathrm dt$$</div>
+<p><strong>② 積分得 $v(t)$：</strong> 令 $v=au$，$\int\frac{\mathrm dv}{a^2-v^2}=\frac1a\int\frac{\mathrm du}{1-u^2}=\frac1a\tanh^{-1}u$（$\tanh^{-1}$ 的導數是 $1/(1-u^2)$）。從 $v=0$、$t=0$ 積起：</p>
+<div class="math-block">$$\frac1a\tanh^{-1}\frac va=kt\ \Longrightarrow\ v=a\tanh(akt)$$</div>
+<p>代回 $a=\sqrt{g\sin\theta/k}$，$ak=\sqrt{kg\sin\theta}$：</p>
+<div class="math-block">$$v=\sqrt{\frac{g\sin\theta}{k}}\tanh\!\left(\sqrt{kg\sin\theta}\,t\right)$$</div>
+<p><strong>③ 積分得 $x(t)$：</strong> 令 $\lambda\equiv\sqrt{kg\sin\theta}$，則 $a=\lambda/k$、$v=\frac\lambda k\tanh(\lambda t)$。用 $\int\tanh u\,\mathrm du=\ln\cosh u$ 和 $x(0)=0$：</p>
+<div class="math-block">$$x=\int_0^t\frac\lambda k\tanh(\lambda t')\,\mathrm dt'=\frac\lambda k\cdot\frac1\lambda\ln\cosh(\lambda t)=\frac1k\ln\cosh(\lambda t)$$</div>
+<p><strong>④ 令 $x=d$ 反解 $t$：</strong> 乘 $k$、兩邊取指數，再取 $\cosh^{-1}$。</p>
+<div class="math-block">$$\begin{aligned}kd&amp;=\ln\cosh(\lambda t)\ \Longrightarrow\ \cosh(\lambda t)=e^{kd}\\ t&amp;=\frac{\cosh^{-1}(e^{kd})}{\lambda}=\frac{\cosh^{-1}(e^{kd})}{\sqrt{kg\sin\theta}}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{t=\frac{\cosh^{-1}(e^{kd})}{\sqrt{kg\sin\theta}}\quad\text{（得證）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-13">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-13 · p.91–92</span></div>
+    <h4>阻力 $mk(v^3+a^2v)$：再快也走不過 $\pi/2ka$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-13">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點在介質中運動，受到大小為 $mk(v^3+a^2v)$ 的阻力，$k$、$a$ 為常數。證明不論初速多大，質點移動的距離都不會超過 $\pi/2ka$，而且只有在 $t\to\infty$ 時才會停下。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：運動方向取正，阻力大小 $mk(v^3+a^2v)$、和運動反向；$k\gt0$、$a\gt0$；沒有其他力；初速 $v_0$ 任意大，出發點 $x=0$。</p>
+<h4>(1) 移動距離不超過 $\pi/2ka$</h4>
+<p><strong>① 用 $v\,\mathrm dv/\mathrm dx$，約掉一個 $v$：</strong> 問的是距離，所以用 $v\,\mathrm dv/\mathrm dx$ 消掉時間；阻力每一項都含 $v$，約掉一次後剩 $\int\mathrm dv/(v^2+a^2)$，正好是 $\tan^{-1}$，而 $\tan^{-1}$ 有上限 $\pi/2$。</p>
+<p class="fnote"><b>公式（牛頓第二定律＋連鎖律）：</b>$m\dfrac{\mathrm dv}{\mathrm dt}=mv\dfrac{\mathrm dv}{\mathrm dx}=\sum F$，其中 $m$ 為質量、$v$ 為速度、$x$ 為位置、$\sum F$ 為合力；本題 $\sum F=-mk(v^3+a^2v)$。</p>
+<div class="math-block">$$mv\frac{\mathrm dv}{\mathrm dx}=-mk(v^3+a^2v)=-mkv(v^2+a^2)$$</div>
+<p>運動中 $v\gt0$，兩邊除以 $mv$ 再分離：</p>
+<div class="math-block">$$\frac{\mathrm dv}{v^2+a^2}=-k\,\mathrm dx$$</div>
+<p><strong>② 積分得 $x(v)$：</strong> $\int\frac{\mathrm dv}{v^2+a^2}=\frac1a\tan^{-1}\frac va$；速度從 $v_0$ 到 $v$、位置從 $0$ 到 $x$。</p>
+<div class="math-block">$$\frac1a\left[\tan^{-1}\frac va\right]_{v_0}^{v}=-kx\ \Longrightarrow\ x=\frac1{ka}\left(\tan^{-1}\frac{v_0}a-\tan^{-1}\frac va\right)$$</div>
+<p><strong>③ 總距離的上限：</strong> 停下時 $v\to0$，$\tan^{-1}0=0$。</p>
+<div class="math-block">$$x_{\text{tot}}=\frac1{ka}\tan^{-1}\frac{v_0}a$$</div>
+<p>$\tan^{-1}$ 的值永遠小於 $\pi/2$，只有 $v_0\to\infty$ 時才逼近它：</p>
+<div class="math-block">$$\boxed{x_{\text{tot}}=\frac1{ka}\tan^{-1}\frac{v_0}a\lt \frac{\pi}{2ka}}$$</div>
+<h4>(2) 只有 $t\to\infty$ 才停下</h4>
+<p><strong>① 用 $\mathrm dv/\mathrm dt$，部分分式：</strong> 問的是什麼時間停，所以改寫成對時間；分母是 $v(v^2+a^2)$，先用部分分式拆開。</p>
+<div class="math-block">$$\frac{\mathrm dv}{v(v^2+a^2)}=-k\,\mathrm dt$$</div>
+<p>拆成部分分式（通分後分子是 $(v^2+a^2)-v^2=a^2$）：</p>
+<div class="math-block">$$\frac{1}{v(v^2+a^2)}=\frac1{a^2}\left[\frac1v-\frac{v}{v^2+a^2}\right]$$</div>
+<p>逐項積分：$\int\frac{\mathrm dv}{v}=\ln v$、$\int\frac{v\,\mathrm dv}{v^2+a^2}=\tfrac12\ln(v^2+a^2)$：</p>
+<div class="math-block">$$\frac1{a^2}\left[\ln v-\tfrac12\ln(v^2+a^2)\right]=\frac1{2a^2}\ln\frac{v^2}{v^2+a^2}=-kt+C$$</div>
+<p><strong>② 有限時間內 $v\neq0$：</strong> 乘 $2a^2$、取指數；用 $t=0$ 時 $v=v_0$ 定出常數。</p>
+<div class="math-block">$$\frac{v^2}{v^2+a^2}=C'e^{-2a^2kt},\qquad C'=\frac{v_0^2}{v_0^2+a^2}\gt0$$</div>
+<p>左邊在 $v\to0$ 時才 $\to0$；右邊是正數乘指數，只有 $t\to\infty$ 才趨近零。所以有限時間內 $v$ 永遠不為零。</p>
+<div class="math-block">$$\boxed{\text{質點只在 }t\to\infty\text{ 時停下（得證）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-51">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-51 · p.97</span></div>
+    <h4>$bv^2$ 阻力的船：降到 $v_0/1000$ 要多久、走多遠</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-51">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（不太真實的）假設：質量 $m$ 的船以初速 $v_0$ 在水中滑行，受到大小 $bv^2$ 的黏滯阻力，$b$ 為常數。(a) 求 $v(t)$ 並畫圖；速度降到 $v_0/1000$ 要多久？(b) 求 $x(t)$；這段時間船走了多遠？取 $m=200\ \text{kg}$、$v_0=2\ \text{m/s}$、$b=0.2\ \text{N·m}^{-2}\text{s}^2$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m=200\ \text{kg}$，$v_0=2\ \text{m/s}$，阻力 $-bv^2$（$b=0.2\ \text{N·m}^{-2}\text{s}^2$，滑行、沒有推力），目標速度 $v_0/1000$，取出發點 $x(0)=0$。</p>
+<h4>(a) $v(t)$ 與降到 $v_0/1000$ 的時間</h4>
+<p><strong>① 分離變數求 $v(t)$：</strong> 阻力只和速度有關，直接分離變數，用 $\int v^{-2}\mathrm dv=-1/v$。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\dfrac{\mathrm dv}{\mathrm dt}=\sum F$，其中 $m$ 為質量、$v$ 為速度、$\sum F$ 為合力；本題 $\sum F=-bv^2$。</p>
+<div class="math-block">$$m\frac{\mathrm dv}{\mathrm dt}=-bv^2\ \Longrightarrow\ \frac{\mathrm dv}{v^2}=-\frac bm\,\mathrm dt$$</div>
+<p>左邊從 $v_0$ 積到 $v$，右邊從 $0$ 積到 $t$：</p>
+<div class="math-block">$$-\frac1v+\frac1{v_0}=-\frac bmt\ \Longrightarrow\ \frac1v=\frac1{v_0}+\frac bmt\ \Longrightarrow\ v(t)=\frac{v_0}{1+bv_0t/m}$$</div>
+<p>圖形是雙曲線：$t=0$ 時 $v_0$，之後按 $1/t$ 緩慢衰減，永不為零。</p>
+<p><strong>② 降到 $v_0/1000$ 的時間：</strong> 令 $v=v_0/1000$，分母要等於 $1000$。</p>
+<div class="math-block">$$1+\frac{bv_0t}{m}=1000\ \Longrightarrow\ t=\frac{999\,m}{bv_0}$$</div>
+<p>代入 $m=200\ \text{kg}$、$b=0.2\ \text{N·s}^2/\text{m}^2$、$v_0=2\ \text{m/s}$：</p>
+<div class="math-block">$$\begin{aligned}t&amp;=\frac{999(200)}{(0.2)(2)}\ \text{s}=4.995\times10^{5}\ \text{s}\\ &amp;=\frac{4.995\times10^5}{86400}\ \text{天}\approx5.8\ \text{天}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}v(t)=\frac{v_0}{1+bv_0t/m}\ \text{（雙曲線衰減）}\\ t\approx5.0\times10^5\ \text{s}\ (\approx5.8\ \text{天})\end{gathered}}$$</div>
+<h4>(b) $x(t)$ 與這段時間走的距離</h4>
+<p><strong>① 積分得 $x(t)$：</strong> 令 $u=1+bv_0t'/m$，$\mathrm du=(bv_0/m)\,\mathrm dt'$，積分變成 $\frac mb\int\mathrm du/u$。</p>
+<div class="math-block">$$x(t)=\int_0^t\frac{v_0\,\mathrm dt'}{1+bv_0t'/m}=\frac mb\ln\!\left(1+\frac{bv_0t}{m}\right)$$</div>
+<p><strong>② 這段時間走的距離：</strong> 在 (a) 的時刻 $1+bv_0t/m=1000$，且 $m/b=200/0.2=1000\ \text{m}$：</p>
+<div class="math-block">$$x=(1000\ \text{m})\ln1000=1000(6.908)\ \text{m}=6.9\times10^{3}\ \text{m}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}x(t)=\frac mb\ln\!\left(1+\frac{bv_0t}{m}\right)\\ x\approx6.9\times10^3\ \text{m}=6.9\ \text{km}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-54">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-54 · p.97–98</span></div>
+    <h4>馬鈴薯：終端速度與上拋的最大高度</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-54">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$0.5\ \text{kg}$ 的馬鈴薯在地球重力下運動，空氣阻力 $-kmv$。(a) 由靜止釋放、$k=0.01\ \text{s}^{-1}$ 時的終端速度是多少？(b) $k$ 相同，但用學生自製的馬鈴薯槍以初速 $120\ \text{m/s}$ 鉛直上射，最大高度是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m=0.5\ \text{kg}$（會約掉），阻力 $-kmv$、$k=0.01\ \text{s}^{-1}$，$g=9.8\ \text{m/s}^2$（題目沒給，用標準值）；(a) 由靜止釋放；(b) 初速 $v_0=120\ \text{m/s}$ 鉛直上射，最高點 $v=0$。</p>
+<h4>(a) 終端速度</h4>
+<p><strong>① 合力為零：</strong> 終端速度是合力為零、不再加速的速度，令 $mg=kmv_t$，$m$ 約掉（同例題 2.5）。</p>
+<div class="math-block">$$v_t=\frac gk$$</div>
+<p>代入 $g=9.8\ \text{m/s}^2$、$k=0.01\ \text{s}^{-1}$：</p>
+<div class="math-block">$$v_t=\frac{9.8\ \text{m/s}^2}{0.01\ \text{s}^{-1}}=980\ \text{m/s}$$</div>
+<div class="math-block">$$\boxed{v_t=980\ \text{m/s}}$$</div>
+<h4>(b) 上射的最大高度</h4>
+<p><strong>① 寫成 $y(v)$ 並拆帶分式：</strong> 只要高度、不要時間，所以用 $mv\,\mathrm dv/\mathrm dy$ 消去時間。上升時阻力和重力都向下，向上取正。</p>
+<p class="fnote"><b>公式（牛頓第二定律＋連鎖律）：</b>$m\dfrac{\mathrm dv}{\mathrm dt}=mv\dfrac{\mathrm dv}{\mathrm dy}=\sum F$，其中 $m$ 為質量、$v$ 為速度、$y$ 為高度、$\sum F$ 為合力；本題 $\sum F=-mg-kmv$。</p>
+<p>兩邊除以 $m$ 並分離：</p>
+<div class="math-block">$$v\frac{\mathrm dv}{\mathrm dy}=-g-kv\ \Longrightarrow\ \mathrm dy=-\frac{v\,\mathrm dv}{g+kv}$$</div>
+<p>把 $\dfrac{v}{g+kv}$ 拆成 $\dfrac1k\left[1-\dfrac{g}{g+kv}\right]$（通分後分子是 $(g+kv)-g=kv$）：</p>
+<div class="math-block">$$\mathrm dy=-\frac1k\left[1-\frac{g}{g+kv}\right]\mathrm dv$$</div>
+<p><strong>② 從 $v_0$ 積到 $0$：</strong> 上下限對調把負號吸掉；第二項湊微分 $\mathrm d(g+kv)=k\,\mathrm dv$。</p>
+<div class="math-block">$$y_{\max}=\frac1k\int_0^{v_0}\left[1-\frac{g}{g+kv}\right]\mathrm dv=\frac1k\left[v_0-\frac gk\ln\frac{g+kv_0}{g}\right]$$</div>
+<div class="math-block">$$y_{\max}=\frac{v_0}{k}-\frac{g}{k^2}\ln\!\left(1+\frac{kv_0}g\right)$$</div>
+<p><strong>③ 代入數值：</strong> 代入 $v_0=120\ \text{m/s}$、$k=0.01\ \text{s}^{-1}$、$g=9.8\ \text{m/s}^2$：$\dfrac{v_0}{k}=12\,000\ \text{m}$，$\dfrac{g}{k^2}=98\,000\ \text{m}$，$\dfrac{kv_0}{g}=\dfrac{1.2}{9.8}=0.12245$。兩個大數相減只剩幾百，$\ln$ 要算到五、六位有效數字。</p>
+<div class="math-block">$$\ln(1.12245)=0.115513$$</div>
+<div class="math-block">$$\begin{aligned}y_{\max}&amp;=12\,000\ \text{m}-98\,000(0.115513)\ \text{m}\\ &amp;=12\,000\ \text{m}-11\,320\ \text{m}\approx680\ \text{m}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{y_{\max}\approx680\ \text{m}}$$</div>
+<p>（無阻力時為 $v_0^2/2g=735\ \text{m}$。）</p>
+    </div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">線性阻力的符號會自己處理方向</span>
+  <p>寫成 $-km\dot z$、讓 $\dot z$ 帶正負號，上升、下降都用同一條方程式（例題 2.5）。如果寫成 $-kmv$ 卻又把 $v$ 當速率（恆正），下降段的阻力方向就錯了。$v^2$ 阻力沒有這個便利（第 9 節）。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-10">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-10 · p.91</span></div>
+    <h4>用電腦重做例題 2.4：數值解和解析解比一比</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-10">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Repeat Example 2.4 by performing a calculation using a computer to solve Equation 2.22. Use the following values: $m = 1$ kg, $v_0 = 10$ m/s, $x_0 = 0$, and $k = 0.1\ \text{s}^{-1}$. Make plots of $v$ versus $t$, $x$ versus $t$, and $v$ versus $x$. Compare with the results of Example 2.4 to see if your results are reasonable.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用電腦解 Eq. (2.22)（$m\ddot x=-km\dot x$）重做例題 2.4。取 $m=1\ \text{kg}$、$v_0=10\ \text{m/s}$、$x_0=0$、$k=0.1\ \text{s}^{-1}$。畫出 $v$ 對 $t$、$x$ 對 $t$、$v$ 對 $x$ 的圖，並和例題 2.4 的結果比較，看看是否合理。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：方程式 Eq. (2.22) $m\ddot x=-km\dot x$（水平線性阻力），令 $v=\dot x$；題給 $m=1\ \text{kg}$（會約掉）、$v_0=10\ \text{m/s}$、$x_0=0$、$k=0.1\ \text{s}^{-1}$。</p>
+<p><strong>① 拆成一階方程組：</strong> 電腦逐步法處理的是一階方程式，所以把二階的 $\ddot x=-k\dot x$ 拆成兩條一階方程式，從初始條件一小步一小步往前算（和例題 2.8 的做法一樣；本站用四階 Runge–Kutta，相對誤差 $10^{-10}$）。</p>
+<p class="fnote"><b>公式（Euler 法）：</b>$y_{n+1}=y_n+f(y_n)\,\Delta t$，其中 $y_n$ 為第 $n$ 步的值、$f$ 為這一刻的變化率、$\Delta t$ 為步長；本題 $y$ 對應 $x$ 與 $v$，變化率分別是 $v$ 與 $-kv$。</p>
+<div class="math-block">$$\dot x=v,\qquad\dot v=-kv$$</div>
+<div class="math-block">$$v_{n+1}=v_n-kv_n\,\Delta t,\qquad x_{n+1}=x_n+v_n\,\Delta t$$</div>
+<p>Euler 法的誤差 $\propto\Delta t$；正式計算改用 Runge–Kutta，或把 $\Delta t$ 取得很小。</p>
+<p><strong>② 解析解代入數值（拿來對照）：</strong> 例題 2.4 已有解析解，把同一組參數代進去，在幾個時刻逐點對照。</p>
+<p class="fnote"><b>公式（例題 2.4 的解析解）：</b>$v=v_0e^{-kt}$、$x=\dfrac{v_0}{k}\left(1-e^{-kt}\right)$、$v=v_0-kx$，其中 $v_0$ 為初速、$k$ 為阻力常數；本題 $v_0=10\ \text{m/s}$、$k=0.1\ \text{s}^{-1}$，$v_0/k=100\ \text{m}$。</p>
+<div class="math-block">$$\begin{aligned}v&amp;=10e^{-0.1t}\ \text{m/s}\\ x&amp;=100\left(1-e^{-0.1t}\right)\ \text{m}\\ v&amp;=10-0.1x\end{aligned}$$</div>
+<p>例如 $t=10\ \text{s}$：</p>
+<div class="math-block">$$v=10e^{-1}=3.679\ \text{m/s},\qquad x=100(1-0.3679)=63.21\ \text{m}$$</div>
+<p><strong>③ 數值結果與解析解並排：</strong></p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>$t$ (s)</th>
+<th>0</th>
+<th>5</th>
+<th>10</th>
+<th>20</th>
+<th>30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>數值 $v$ (m/s)</td>
+<td>10.00</td>
+<td>6.065</td>
+<td>3.679</td>
+<td>1.353</td>
+<td>0.498</td>
+</tr>
+<tr>
+<td>$v_0e^{-kt}$</td>
+<td>10.00</td>
+<td>6.065</td>
+<td>3.679</td>
+<td>1.353</td>
+<td>0.498</td>
+</tr>
+<tr>
+<td>數值 $x$ (m)</td>
+<td>0</td>
+<td>39.35</td>
+<td>63.21</td>
+<td>86.47</td>
+<td>95.02</td>
+</tr>
+<tr>
+<td>$\frac{v_0}{k}(1-e^{-kt})$</td>
+<td>0</td>
+<td>39.35</td>
+<td>63.21</td>
+<td>86.47</td>
+<td>95.02</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>④ 三張圖長什麼樣：</strong> $v$–$t$：指數衰減，每 $\ln2/k=0.693/0.1=6.9\ \text{s}$ 減半，永不為零。$x$–$t$：一開始斜率 $v_0=10\ \text{m/s}$，逐漸平緩，趨近水平漸近線 $x=v_0/k=100\ \text{m}$。$v$–$x$：一條直線 $v=10-0.1x$，在 $x=100\ \text{m}$ 處 $v=0$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{數值解與例題 2.4 的}\\ v=v_0e^{-kt},\ x=\tfrac{v_0}{k}\left(1-e^{-kt}\right),\ v=v_0-kx\\ \text{在列出的有效位數內完全一致}\\ \text{船最多走 }100\ \text{m}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-33">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-33 · p.95</span></div>
+    <h4>棒球、乒乓球、雨滴從 100 m 落下：誰到得了終端速度</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-33">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-33"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Perform a computer calculation for an object moving vertically in air under gravity and experiencing a retarding force proportional to the square of the object’s speed (see Equation 2.21). Use variables $m$ for mass and $r$ for the object’s radius: All the objects are dropped from rest from the top of a 100-m-tall building. Use a value of $c_W = 0.5$ and make computer plots of height $y$, speed $v$, and acceleration $a$ versus $t$ for the following conditions and answer the questions:</p><p><strong>(a)</strong> A baseball of $m = 0.145$ kg and $r = 0.0366$ m.<br><strong>(b)</strong> A ping-pong ball of $m = 0.0024$ kg and $r = 0.019$ m.<br><strong>(c)</strong> A raindrop of $r = 0.003$ m.<br><strong>(d)</strong> Do all the objects reach their terminal speeds? Discuss the values of the terminal velocities and explain their differences.<br><strong>(e)</strong> Why can a baseball be thrown farther than a ping-pong ball even though the baseball is so much more massive?<br><strong>(f)</strong> Discuss the terminal speeds of big and small raindrops. What are the terminal speeds of raindrops having radii 0.002 m and 0.004 m?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>物體在空氣中鉛直下落，受重力與正比於速率平方的阻力（Eq. 2.21：$W=\tfrac12c_W\rho Av^2$）。以 $m$ 表質量、$r$ 表半徑；都從 $100\ \text{m}$ 高的樓頂由靜止放下，$c_W=0.5$，畫出高度 $y$、速率 $v$、加速度 $a$ 對時間的圖，並回答：(a) 棒球 $m=0.145\ \text{kg}$、$r=0.0366\ \text{m}$；(b) 乒乓球 $m=0.0024\ \text{kg}$、$r=0.019\ \text{m}$；(c) 雨滴 $r=0.003\ \text{m}$。(d) 它們都達到終端速度了嗎？討論終端速度的大小並解釋差異。(e) 棒球重得多，為什麼卻能丟得比乒乓球遠？(f) 討論大、小雨滴的終端速度；半徑 $0.002\ \text{m}$ 與 $0.004\ \text{m}$ 的雨滴終端速度各是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：向下為正；阻力 $W=\tfrac12c_W\rho Av^2$（Eq. 2.21，向上），$c_W=0.5$，截面積 $A=\pi r^2$；都從 $H=100\ \text{m}$ 由靜止放下。題目沒給的用標準值：空氣 $\rho=1.3\ \text{kg/m}^3$、水 $\rho_{\text{水}}=1000\ \text{kg/m}^3$、$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 棒球</h4>
+<p><strong>① 解析解：</strong> 只有下落、阻力 $\propto v^2$，有解析解，課本要的電腦圖就是把解析式畫出來；所有量都由終端速度 $v_t$ 決定。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\dot v=F_{\text{合}}$，其中 $m$ 為質量、$\dot v$ 為加速度、$F_{\text{合}}$ 為合力；本題 $F_{\text{合}}=mg-\tfrac12c_W\rho Av^2$。</p>
+<div class="math-block">$$m\dot v=mg-\tfrac12c_W\rho Av^2$$</div>
+<p>合力為零的速率就是終端速度：</p>
+<div class="math-block">$$mg=\tfrac12c_W\rho Av_t^2\ \Longrightarrow\ v_t^2=\frac{2mg}{c_W\rho A},\qquad\dot v=g\left(1-\frac{v^2}{v_t^2}\right)$$</div>
+<p>這和習題 2-15（取 $g\sin\theta\to g$、$k=g/v_t^2$）同一個方程式，從靜止出發的解：</p>
+<div class="math-block">$$v(t)=v_t\tanh\frac{gt}{v_t},\qquad a(t)=g\,\mathrm{sech}^2\frac{gt}{v_t}$$</div>
+<div class="math-block">$$y_{\text{落下}}(t)=\frac{v_t^2}{g}\ln\cosh\frac{gt}{v_t}$$</div>
+<div class="math-block">$$v^2(y)=v_t^2\left(1-e^{-2gy/v_t^2}\right)$$</div>
+<p>令 $y_{\text{落下}}=H$ 反解落地時間：</p>
+<div class="math-block">$$t_H=\frac{v_t}{g}\cosh^{-1}\!\left(e^{gH/v_t^2}\right)$$</div>
+<p>圖形：$a$ 從 $g$ 單調降到 $0$；$v$ 從 $0$ 升到 $v_t$；高度先像 $\tfrac12gt^2$ 下降，之後變成斜率 $-v_t$ 的直線。$v^2(y)$ 指數裡的長度尺度是 $v_t^2/g$，樓高比它大很多倍才算到達終端速度。</p>
+<p><strong>② 終端速度：</strong> 代入 $r=0.0366\ \text{m}$、$m=0.145\ \text{kg}$、$c_W=0.5$、$\rho=1.3$：</p>
+<div class="math-block">$$A=\pi(0.0366)^2=4.208\times10^{-3}\ \text{m}^2$$</div>
+<div class="math-block">$$c_W\rho A=0.5(1.3)(4.208\times10^{-3})=2.735\times10^{-3}\ \text{kg/m}$$</div>
+<div class="math-block">$$v_t=\sqrt{\frac{2(0.145)(9.8)}{2.735\times10^{-3}}}\ \text{m/s}=32.23\ \text{m/s},\qquad\frac{v_t^2}{g}=106\ \text{m}$$</div>
+<p><strong>③ 落地速率與時間：</strong> 落地時 $y=H=100\ \text{m}$，$2gH/v_t^2=200/106=1.887$，$e^{-1.887}=0.152$：</p>
+<div class="math-block">$$v_H=v_t\sqrt{1-0.152}=29.7\ \text{m/s}\ (92\%\,v_t)$$</div>
+<div class="math-block">$$t_H=\frac{32.23}{9.8}\cosh^{-1}\!\left(e^{0.9433}\right)\ \text{s}=5.25\ \text{s}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}v_t=32.2\ \text{m/s},\quad v_t^2/g=106\ \text{m}\\ \text{落地速率 }29.7\ \text{m/s}\ (92\%\,v_t)\\ \text{落地時間 }5.25\ \text{s}\end{gathered}}$$</div>
+<h4>(b) 乒乓球</h4>
+<p><strong>① 終端速度：</strong> 代入 $r=0.019\ \text{m}$、$m=0.0024\ \text{kg}$，用 (a) 的 $v_t^2=2mg/(c_W\rho A)$：</p>
+<div class="math-block">$$A=\pi(0.019)^2=1.134\times10^{-3}\ \text{m}^2,\qquad c_W\rho A=7.372\times10^{-4}\ \text{kg/m}$$</div>
+<div class="math-block">$$v_t=\sqrt{\frac{2(0.0024)(9.8)}{7.372\times10^{-4}}}\ \text{m/s}=7.99\ \text{m/s},\qquad\frac{v_t^2}{g}=6.5\ \text{m}$$</div>
+<p><strong>② 落地速率與時間：</strong> $H/(v_t^2/g)=15.4$，$e^{-2(15.4)}$ 小到可以忽略，落地速率就是 $v_t$。$u$ 很大時 $\cosh^{-1}(e^{u})\approx u+\ln2$，代入 (a) 的 $t_H$：</p>
+<div class="math-block">$$t_H\approx\frac{v_t}{g}(15.36+0.69)=13.1\ \text{s}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}v_t=7.99\ \text{m/s},\quad v_t^2/g=6.5\ \text{m}\\ \text{落地速率 }7.99\ \text{m/s}\text{，落地時間 }13.1\ \text{s}\end{gathered}}$$</div>
+<h4>(c) 雨滴（3 mm）</h4>
+<p><strong>① 質量與截面積：</strong> 只給半徑，雨滴是水球，質量要自己算：代入 $r=0.003\ \text{m}$、$\rho_{\text{水}}=1000\ \text{kg/m}^3$：</p>
+<div class="math-block">$$m=\tfrac43\pi(0.003)^3(1000)\ \text{kg}=1.131\times10^{-4}\ \text{kg}$$</div>
+<div class="math-block">$$A=\pi(0.003)^2=2.827\times10^{-5}\ \text{m}^2$$</div>
+<p><strong>② 終端速度：</strong></p>
+<div class="math-block">$$v_t=\sqrt{\frac{2(1.131\times10^{-4})(9.8)}{0.5(1.3)(2.827\times10^{-5})}}\ \text{m/s}=11.0\ \text{m/s},\qquad\frac{v_t^2}{g}=12.3\ \text{m}$$</div>
+<p><strong>③ 落地時間：</strong> $H/(v_t^2/g)=8.13$，也達到終端速度；用更精確的 $v_t=10.98\ \text{m/s}$ 代入 (b) 的近似式：</p>
+<div class="math-block">$$t_H\approx\frac{10.98}{9.8}(8.125+0.693)\ \text{s}=9.88\ \text{s}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}v_t=11.0\ \text{m/s},\quad v_t^2/g=12.3\ \text{m}\\ \text{落地速率 }11.0\ \text{m/s}\text{，落地時間 }9.88\ \text{s}\end{gathered}}$$</div>
+<h4>(d) 有沒有到終端速度</h4>
+<p><strong>① 比較樓高與 $v_t^2/g$：</strong> 乒乓球和雨滴的 $v_t^2/g$ 只有幾公尺到十幾公尺，$100\ \text{m}$ 是它的好幾倍，都達到終端速度。棒球的 $v_t^2/g=106\ \text{m}$ 和樓高相當，落地時只有 $v_t$ 的 $92\%$，還沒到。</p>
+<p><strong>② 終端速度差在哪：</strong> 差別來自</p>
+<div class="math-block">$$v_t=\sqrt{\frac{2mg}{c_W\rho A}}\propto\sqrt{\frac mA}$$</div>
+<p>棒球每單位截面積的質量最大。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{乒乓球、雨滴達到終端速度}\\ \text{棒球落地只有 }29.7\ \text{m/s}\ (92\%\,v_t)\text{，未達到}\\ v_t\propto\sqrt{m/A}\end{gathered}}$$</div>
+<h4>(e) 為什麼棒球丟得遠</h4>
+<p><strong>① 比較減速度係數：</strong> 減速度是阻力除以質量，$W/m=\dfrac{c_W\rho A}{2m}v^2$，所以比較係數 $c_W\rho A/2m$。代入 (a)(b) 的 $c_W\rho A$：</p>
+<div class="math-block">$$\text{棒球：}\ \frac{2.735\times10^{-3}}{2(0.145)}=9.4\times10^{-3}\ \text{m}^{-1}$$</div>
+<div class="math-block">$$\text{乒乓球：}\ \frac{7.372\times10^{-4}}{2(0.0024)}=0.154\ \text{m}^{-1}$$</div>
+<p><strong>② 解釋：</strong> 乒乓球大了 16 倍。用同樣速率丟出，乒乓球被空氣減速快得多；質量大反而讓同樣的阻力「推不動」棒球。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{棒球的「阻力／質量」係數小 16 倍}\\ \text{被空氣減速得慢，所以丟得遠}\end{gathered}}$$</div>
+<h4>(f) 大雨滴與小雨滴</h4>
+<p><strong>① 終端速度對半徑的關係：</strong> 球形水滴 $m=\tfrac43\pi r^3\rho_{\text{水}}$、$A=\pi r^2$，代入 $v_t^2=2mg/(c_W\rho A)$，$\pi r^2$ 約掉一部分：</p>
+<div class="math-block">$$v_t=\sqrt{\frac{8\rho_{\text{水}}gr}{3c_W\rho}}\propto\sqrt r$$</div>
+<p><strong>② 代入兩個半徑：</strong> 係數</p>
+<div class="math-block">$$\frac{8(1000)(9.8)}{3(0.5)(1.3)}=4.02\times10^4\ \text{m}^{-1}\text{s}^{-2}$$</div>
+<p>乘 $r=0.002\ \text{m}$、$0.004\ \text{m}$ 再開根號：</p>
+<div class="math-block">$$v_t(2\ \text{mm})=\sqrt{80.4}=8.97\ \text{m/s},\qquad v_t(4\ \text{mm})=\sqrt{160.8}=12.7\ \text{m/s}$$</div>
+<p>大雨滴掉得快。（真實的大雨滴會被壓扁、$c_W$ 變大，終端速度在約 $9\ \text{m/s}$ 飽和；這個模型高估了 $4\ \text{mm}$ 的情況。）</p>
+<div class="math-block">$$\boxed{\begin{gathered}v_t\propto\sqrt r\\ v_t(2\ \text{mm})=8.97\ \text{m/s},\quad v_t(4\ \text{mm})=12.7\ \text{m/s}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-06a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>跳傘打開降落傘：從 55 m/s 減速，問題出在哪</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-06a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>跳傘者以 $v_1=55\ \text{m/s}$ 落下時瞬間打開降落傘，之後阻力為 $kmv^2$，對應的終端速度 $v_t=\sqrt{g/k}=5.0\ \text{m/s}$。(a) 求打開後 $v(t)$（注意 $v_1\gt v_t$）。(b) 速度降到 $6.0\ \text{m/s}$ 需要多久、落下多遠？(c) 求開傘瞬間的減速度是 $g$ 的幾倍，並判斷「瞬間打開」這個假設在物理上合不合理。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：向下為正；開傘時 $v_1=55\ \text{m/s}$，之後阻力 $kmv^2$（向上），終端速度 $v_t=\sqrt{g/k}=5.0\ \text{m/s}$，即 $k=g/v_t^2$；$v_1\gt v_t$，開傘後是減速；$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 開傘後的 $v(t)$</h4>
+<p><strong>① 方程式與分離變數：</strong> 方程式和習題 2-11、2-33 相同，但這次 $v\gt v_t$、右邊是負的，分離變數要用 $u\gt1$ 的反函數 $\coth^{-1}$，不是只定義在 $|u|\lt1$ 的 $\tanh^{-1}$。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\dot v=F_{\text{合}}$，其中 $m$ 為質量、$\dot v$ 為加速度、$F_{\text{合}}$ 為合力；本題 $F_{\text{合}}=mg-kmv^2$。</p>
+<p>代入 $k=g/v_t^2$：</p>
+<div class="math-block">$$\dot v=g-kv^2=g\left(1-\frac{v^2}{v_t^2}\right)\ \Longrightarrow\ \frac{\mathrm dv}{1-v^2/v_t^2}=g\,\mathrm dt$$</div>
+<p>令 $u=v/v_t\gt1$，$\mathrm dv=v_t\,\mathrm du$；$u\gt1$ 時 $\int\frac{\mathrm du}{1-u^2}=\coth^{-1}u$。從開傘（$t=0$、$v=v_1$）積起：</p>
+<div class="math-block">$$v_t\left[\coth^{-1}\frac{v}{v_t}\right]_{v_1}^{v}=gt\quad(v\gt v_t)$$</div>
+<p><strong>② 解出 $v(t)$：</strong> 移項後兩邊取 $\coth$：</p>
+<div class="math-block">$$\coth^{-1}\frac{v}{v_t}=\frac{gt}{v_t}+\coth^{-1}\frac{v_1}{v_t}$$</div>
+<div class="math-block">$$v(t)=v_t\coth\!\left(\frac{gt}{v_t}+\coth^{-1}\frac{v_1}{v_t}\right)$$</div>
+<p>其中 $\coth^{-1}u=\tfrac12\ln\dfrac{u+1}{u-1}$。$t\to\infty$ 時 $\coth\to1$，$v$ 由上方逼近 $v_t$。</p>
+<div class="math-block">$$\boxed{v(t)=v_t\coth\!\left(\frac{gt}{v_t}+\coth^{-1}\frac{v_1}{v_t}\right)}$$</div>
+<h4>(b) 降到 $6.0\ \text{m/s}$ 的時間與距離</h4>
+<p><strong>① 時間：</strong> 由 (a) 的積分結果：</p>
+<div class="math-block">$$t=\frac{v_t}{g}\left[\coth^{-1}\frac{v}{v_t}-\coth^{-1}\frac{v_1}{v_t}\right]$$</div>
+<p>代入 $v=6.0$、$v_1=55$、$v_t=5.0\ \text{m/s}$：$\coth^{-1}\tfrac65=\tfrac12\ln\tfrac{2.2}{0.2}=\tfrac12\ln11=1.199$，$\coth^{-1}11=\tfrac12\ln\tfrac{12}{10}=\tfrac12\ln1.2=0.091$：</p>
+<div class="math-block">$$t=\frac{5.0}{9.8}\left(1.199-0.091\right)\ \text{s}=0.510(1.108)\ \text{s}=0.565\ \text{s}$$</div>
+<p><strong>② 距離：</strong> 距離只和速度有關、不需要時間，所以用 $v\,\mathrm dv/\mathrm dy$ 直接算，不必把 $v(t)$ 再積一次。</p>
+<div class="math-block">$$v\,\frac{\mathrm dv}{\mathrm dy}=g\left(1-\frac{v^2}{v_t^2}\right)$$</div>
+<p>令 $w=v^2$（$v\,\mathrm dv=\tfrac12\mathrm dw$）：</p>
+<div class="math-block">$$g\,y=\frac12\int_{v_1^2}^{v^2}\frac{\mathrm dw}{1-w/v_t^2}=-\frac{v_t^2}{2}\ln\frac{v^2-v_t^2}{v_1^2-v_t^2}$$</div>
+<div class="math-block">$$y=\frac{v_t^2}{2g}\ln\frac{v_1^2-v_t^2}{v^2-v_t^2}$$</div>
+<p>代入 $v_1=55$、$v=6.0$、$v_t=5.0\ \text{m/s}$：$v_1^2-v_t^2=3025-25=3000$，$v^2-v_t^2=36-25=11$：</p>
+<div class="math-block">$$\begin{aligned}y&amp;=\frac{25}{19.6}\ln\frac{3000}{11}\ \text{m}=1.276\ln272.7\ \text{m}\\ &amp;=1.276(5.608)\ \text{m}=7.15\ \text{m}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{t=0.565\ \text{s},\qquad y=7.15\ \text{m}}$$</div>
+<h4>(c) 開傘瞬間的減速度</h4>
+<p><strong>① 代入 $v=v_1$：</strong> 把 $v=v_1$ 代入 (a) 的 $\dot v$，取大小：</p>
+<div class="math-block">$$|\dot v|=g\left(\frac{v_1^2}{v_t^2}-1\right)=g\left(\frac{55^2}{5^2}-1\right)=g(121-1)=120\,g$$</div>
+<p><strong>② 判斷假設：</strong> 人體只能短暫承受約 $10g$ 上下，$120g$ 必死無疑。真實降落傘要花一兩秒才完全張開（等效的 $k$ 從小慢慢變大），把減速分散開來。錯的是「瞬間全開」這個假設，不是 $v^2$ 阻力。</p>
+<div class="math-block">$$\boxed{\begin{gathered}|\dot v|=120\,g\\ \text{降落傘不能瞬間全開，「瞬間打開」不合理}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-06b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>有阻力的上拋：為什麼下降一定比上升久</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-06b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>小球以 $v_0$ 鉛直上拋，受線性阻力 $-kmv$。(a) 不解出下降的時間，證明 $t_{\text{下}}\gt t_{\text{上}}$。(b) 取 $v_0=20\ \text{m/s}$、$k=0.2\ \text{s}^{-1}$，算出上升時間、最大高度、下降時間、回到原處的速率。(c) 回到原處的速率比 $v_0$ 小，少掉的動能去了哪裡？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：小球以 $v_0$ 鉛直上拋，線性阻力 $-kmv$（永遠和速度反向），最大高度 $H$；(b) 取 $v_0=20\ \text{m/s}$、$k=0.2\ \text{s}^{-1}$、$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 證明 $t_{\text{下}}\gt t_{\text{上}}$</h4>
+<p><strong>① 同一高度，下降的速率比較小：</strong> 不准解出下降時間，所以先證明每一個高度下降時的速率都比上升時小。設上升時在高度 $y$ 的速率 $v_\uparrow(y)$、下降時 $v_\downarrow(y)$。從「上升經過 $y$」到「下降經過 $y$」這一段，重力做功為零（起點終點同高），阻力做功 $W_r\lt0$（阻力和速度永遠反向）。</p>
+<p class="fnote"><b>公式（功能定理）：</b>$K_2=K_1+W$，其中 $K_1$、$K_2$ 為前後的動能、$W$ 為這段過程所有力做的總功；本題 $W=W_r$（重力功為零）。</p>
+<div class="math-block">$$\tfrac12mv_\downarrow^2(y)=\tfrac12mv_\uparrow^2(y)+W_r\lt\tfrac12mv_\uparrow^2(y)$$</div>
+<div class="math-block">$$\Longrightarrow\ v_\downarrow(y)\lt v_\uparrow(y)\quad(0\le y\lt H)$$</div>
+<p><strong>② 把時間寫成對高度的積分：</strong> 在每一小段高度 $\mathrm dy$ 上花的時間是 $\mathrm dy/|v|$；上升、下降都走過 $0$ 到 $H$：</p>
+<div class="math-block">$$t_{\text{上}}=\int_0^H\frac{\mathrm dy}{v_\uparrow(y)}\ \lt\ \int_0^H\frac{\mathrm dy}{v_\downarrow(y)}=t_{\text{下}}$$</div>
+<p>被積函數處處 $1/v_\downarrow\gt1/v_\uparrow$，所以積分也比較大。這個論證對任何和速度反向的阻力（$kv$、$kv^2$……）都成立。</p>
+<div class="math-block">$$\boxed{\text{同高度 }v_\downarrow\lt v_\uparrow\ \Longrightarrow\ t_{\text{下}}\gt t_{\text{上}}}$$</div>
+<h4>(b) 數值</h4>
+<p><strong>① 上升時間與最大高度：</strong> 上升段是例題 2.5 的方程式，用習題 2-9、2-54 已推出的結果。</p>
+<p class="fnote"><b>公式（線性阻力上拋，習題 2-9、2-54）：</b>$t_{\text{上}}=\dfrac1k\ln\!\left(1+\dfrac{kv_0}{g}\right)$、$H=\dfrac{v_0}{k}-\dfrac{g}{k^2}\ln\!\left(1+\dfrac{kv_0}{g}\right)$，其中 $v_0$ 為初速、$k$ 為阻力常數；本題 $v_0=20\ \text{m/s}$、$k=0.2\ \text{s}^{-1}$。</p>
+<p>代入得 $kv_0/g=4/9.8=0.4082$，$\ln1.4082=0.3423$；$1/k=5\ \text{s}$、$v_0/k=100\ \text{m}$、$g/k^2=245\ \text{m}$：</p>
+<div class="math-block">$$t_{\text{上}}=5(0.3423)\ \text{s}=1.711\ \text{s}$$</div>
+<div class="math-block">$$H=100-245(0.34229)\ \text{m}=16.14\ \text{m}$$</div>
+<p><strong>② 下降時間（數值解）：</strong> 下降段從最高點靜止落下 $H$。</p>
+<p class="fnote"><b>公式（例題 2.5，從靜止落下、向下為正）：</b>$z=\dfrac gkt-\dfrac g{k^2}\left(1-e^{-kt}\right)$、$v=\dfrac gk\left(1-e^{-kt}\right)$，其中 $z$ 為落下距離、$t$ 為時間；本題 $z=H=16.14\ \text{m}$、$g/k=49\ \text{m/s}$、$g/k^2=245\ \text{m}$。</p>
+<div class="math-block">$$16.14=49t-245\left(1-e^{-0.2t}\right)$$</div>
+<p>$t$ 同時在指數裡外，代數解不出來，用試誤：$t=1.90$ 時右邊 $=15.65$（不夠）、$t=1.95$ 時 $=16.43$（太多），夾逼到</p>
+<div class="math-block">$$t_{\text{下}}=1.932\ \text{s}$$</div>
+<p><strong>③ 回到原處的速率：</strong> 代入 $g/k=49\ \text{m/s}$ 與上一步的 $t_{\text{下}}=1.932\ \text{s}$：$e^{-0.2(1.932)}=e^{-0.3864}=0.6795$，</p>
+<div class="math-block">$$v_{\text{回}}=49(1-0.6795)\ \text{m/s}=15.70\ \text{m/s}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}t_{\text{上}}=1.71\ \text{s},\quad H=16.1\ \text{m}\\ t_{\text{下}}=1.93\ \text{s},\quad v_{\text{回}}=15.7\ \text{m/s}\end{gathered}}$$</div>
+<h4>(c) 少掉的動能去了哪裡</h4>
+<p><strong>① 每公斤少掉的動能：</strong> 用 (b) 的 $v_{\text{回}}=15.70\ \text{m/s}$：</p>
+<div class="math-block">$$\tfrac12\left(20^2-15.70^2\right)=\tfrac12(400-246.5)=76.7\ \text{J/kg}$$</div>
+<p>占初動能 $\tfrac12(20^2)=200\ \text{J/kg}$ 的 $38\%$。</p>
+<p><strong>② 去向：</strong> 這 $38\%$ 的初動能被阻力轉成空氣與球的內能（熱）。阻力做的功和路徑長度有關，不是保守力，第 13 節的位能無法描述它；上下不對稱正是這個「不可逆」的表現。</p>
+<div class="math-block">$$\boxed{\text{約 }38\%\text{ 的動能被阻力耗散成熱}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>線性阻力：水平 $v=v_0e^{-kt}$、$x\to v_0/k$、$v=v_0-kx$；鉛直 $v_t=g/k$。</li>
+    <li>$v^2$ 阻力下落：$s=\dfrac1{2k}\ln\dfrac{g-kv_0^2}{g-kv_1^2}$，$v_t=\sqrt{g/k}$。</li>
+    <li>要時間用 $\mathrm dv/\mathrm dt$，要距離用 $v\,\mathrm dv/\mathrm dx$；結果一定拿 $k\to0$ 檢查是否回到無阻力公式。</li>
+  </ol>
+</div>

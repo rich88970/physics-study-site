@@ -1,0 +1,96 @@
+{
+  "title": "第 1 章｜熱物理中的能量",
+  "shortTitle": "熱學 第 1 章",
+  "range": "課本 Schroeder, An Introduction to Thermal Physics 第 1 章 Energy in Thermal Physics p.1–48（§1.1–1.7）",
+  "pageLabel": "課本",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備熱物理學（趙松柏老師）考試：課本是 Schroeder《An Introduction to Thermal Physics》第 1 章 Energy in Thermal Physics（熱平衡與溫度、熱膨脹、理想氣體與壓力的微觀模型、能量均分、熱與功、壓縮功與絕熱過程、熱容量與潛熱、焓、熱傳導與平均自由徑、黏滯與擴散），沒有講義；考試大多是課本習題原題或換數字（熱膨脹係數、咖啡加冰、均分定理求 $v_{\\text{rms}}$、$P\\propto V$ 的膨脹功、$PV^\\gamma$、凡得瓦的維里係數、重力束縛系統的負熱容量），要求寫出完整推導。",
+  "overview": "s00",
+  "sections": [
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "本章總覽",
+      "pages": "p.1"
+    },
+    {
+      "id": "s01",
+      "file": "01-equilibrium.html",
+      "title": "熱平衡與溫度",
+      "pages": "p.1–6",
+      "desc": "溫度是「趨向平衡」的指標、鬆弛時間、溫標與絕對零度、熱膨脹係數。"
+    },
+    {
+      "id": "s02",
+      "file": "02-ideal-gas.html",
+      "title": "理想氣體",
+      "pages": "p.6–13",
+      "desc": "$PV=nRT=NkT$、壓力的微觀模型、$\\tfrac12m\\overline{v^2}=\\tfrac32kT$、$v_{\\text{rms}}$、維里展開。"
+    },
+    {
+      "id": "s03",
+      "file": "03-equipartition.html",
+      "title": "能量均分",
+      "pages": "p.14–16",
+      "desc": "每個二次自由度 $\\tfrac12kT$、平移／轉動／振動自由度、$U_{\\text{thermal}}=\\tfrac f2NkT$。"
+    },
+    {
+      "id": "s04",
+      "file": "04-heat-work.html",
+      "title": "熱與功",
+      "pages": "p.17–19",
+      "desc": "熱與功的定義、第一定律 $\\Delta U=Q+W$、熱傳的三種方式。"
+    },
+    {
+      "id": "s05",
+      "file": "05-compression.html",
+      "title": "壓縮功",
+      "pages": "p.20–28",
+      "desc": "準靜態 $W=-\\int P\\,dV$、PV 圖與循環、等溫與絕熱壓縮、$VT^{f/2}$ 與 $PV^\\gamma$ 守恆。"
+    },
+    {
+      "id": "s06",
+      "file": "06-heat-capacity.html",
+      "title": "熱容量",
+      "pages": "p.28–37",
+      "desc": "$C_V$、$C_P$、$C_P=C_V+Nk$、潛熱、焓 $H=U+PV$、生成焓。"
+    },
+    {
+      "id": "s07",
+      "file": "07-rates.html",
+      "title": "過程的速率",
+      "pages": "p.37–48",
+      "desc": "熱傳導與 Fourier 定律、平均自由徑、黏滯係數、擴散與 Fick 定律。"
+    },
+    {
+      "id": "s08",
+      "file": "08-exam.html",
+      "title": "考前衝刺",
+      "pages": "p.1–48",
+      "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。"
+    }
+  ],
+  "sources": [
+    {
+      "match": "115 級上學期期中",
+      "label": "開原卷",
+      "url": "https://drive.google.com/file/d/1CtH73UAU-G1BIisA2QOOHzrvFe7ytFaO/view"
+    },
+    {
+      "match": "某級上學期期中",
+      "label": "開原卷",
+      "url": "https://drive.google.com/file/d/1Lpc51d_fetgMt0kIfMtWO0JSI0X05mYT/view"
+    },
+    {
+      "match": "Schroeder",
+      "label": "開課本原文",
+      "url": "https://drive.google.com/file/d/1Fh2YKWsXhi8u96VNGhJ4CGbApB6mG0uS/view",
+      "pageOffset": 13,
+      "local": "C:/Users/jaiia/Downloads/熱學.pdf"
+    }
+  ],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": [
+    "figures.js"
+  ]
+}

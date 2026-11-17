@@ -1,0 +1,183 @@
+<h2 id="kp-08">H-1. 2020 年期中第 2 題：球面電磁波（30 分）</h2>
+<h3 id="k08-1">題目（依原卷）</h3>
+<p><strong>中文：</strong> 真空中，原點的<strong>點波源</strong>發出球面電磁波；波長 $\lambda=2\ \mathrm m$，<strong>電場沿球座標 $\hat\phi$ 方向</strong>。在直角座標 $(x,y,z)=(2,1,3)\ \mathrm m$ 處測到輻射照度 $I=2\ \mathrm{W/m^2}$。以 $x,y,z$ 及 $\hat x,\hat y,\hat z$ 寫出：</p>
+<ul>
+<li>(a) 球面波<strong>瞬時 Poynting 向量</strong>的完整表示（振幅、方向、指數形式、單位）。</li>
+<li>(b) <strong>電場向量</strong>的完整表示（振幅、偏振方向、指數形式、單位）。</li>
+<li>(c) <strong>磁場向量</strong>的完整表示（振幅、偏振方向、指數形式、單位）。</li>
+</ul>
+<p><strong>注意：</strong> 題目未指定初相位，以下用 $\phi_0$ 保留（需要具體式子時可取 $\phi_0=0$），這是解題約定。</p>
+<p><strong>① 觀察點與傳播方向：</strong> 球面波從原點向外擴散，觀察點的傳播方向是原點指向觀察點的徑向。設 $\vec r_0=2\hat x+\hat y+3\hat z$：</p>
+<div class="math-block">$$
+\begin{aligned}
+r_0&amp;=\sqrt{x_0^2+y_0^2+z_0^2}\\
+&amp;=\sqrt{2^2+1^2+3^2}\\
+&amp;=\boxed{\sqrt{14}\ \mathrm m}.
+\end{aligned}
+$$</div>
+<p>位置向量除以長度得單位傳播方向（只對觀察點成立，換位置 $\hat r$ 就變）：</p>
+<div class="math-block">$$
+\boxed{\hat r_0=\frac{2\hat x+\hat y+3\hat z}{\sqrt{14}}}.
+$$</div>
+<p><strong>② 把 $\hat\phi$ 換成直角座標：</strong> 方位角在 $xy$ 平面內從 +x 轉向 +y：</p>
+<div class="math-block">$$
+\hat\phi=-\sin\phi\,\hat x+\cos\phi\,\hat y.
+$$</div>
+<p>令 $\rho=\sqrt{x^2+y^2}$：</p>
+<div class="math-block">$$
+\sin\phi=\frac y\rho,\qquad \cos\phi=\frac x\rho,
+$$</div>
+<div class="math-block">$$
+\boxed{\hat\phi=\frac{-y\hat x+x\hat y}{\sqrt{x^2+y^2}}}.
+$$</div>
+<p>觀察點 $\rho_0=\sqrt{2^2+1^2}=\sqrt5$，電場偏振方向：</p>
+<div class="math-block">$$
+\boxed{\hat e_0=\hat\phi_0=\frac{-\hat x+2\hat y}{\sqrt5}}.
+$$</div>
+<p><strong>③ 由平均照度反推振幅：</strong> 題目給的是平均照度，真空中：</p>
+<div class="math-block">$$
+\boxed{I=\frac12\varepsilon_0c_0E_0^2}.
+$$</div>
+<p>解出 $E_0$：</p>
+<div class="math-block">$$
+E_0^2=\frac{2I}{\varepsilon_0c_0}
+\quad\Rightarrow\quad
+E_0=\sqrt{\frac{2I}{\varepsilon_0c_0}}.
+$$</div>
+<p>代入 $I=2\ \mathrm{W/m^2}$：</p>
+<div class="math-block">$$
+\begin{aligned}
+E_0(r_0)
+&amp;=\sqrt{\frac{2(2)}{(8.8542\times10^{-12})(3.00\times10^8)}}\\
+&amp;=\boxed{38.8056\ \mathrm{V/m}}.
+\end{aligned}
+$$</div>
+<p>真空中 $E_0=c_0B_0$：</p>
+<div class="math-block">$$
+B_0(r_0)=\frac{E_0(r_0)}{c_0}
+=\frac{38.8056}{3.00\times10^8}
+=\boxed{1.29352\times10^{-7}\ \mathrm T}.
+$$</div>
+<p>這兩個值只是 $r=r_0$ 處的振幅，離開觀察點還要再乘 $1/r$ 的衰減（見 ⑤）。</p>
+<p><strong>④ 波數、角頻率與相位：</strong></p>
+<div class="math-block">$$k=\frac{2\pi}{2}=\boxed{\pi\ \mathrm{rad/m}}.$$</div>
+<p>真空中 $\omega=c_0k$：</p>
+<div class="math-block">$$\omega=(3\times10^8)\pi
+=\boxed{3\pi\times10^8\ \mathrm{rad/s}}.$$</div>
+<p class="fnote"><b>公式（球面波相位）：</b>$\Phi(r,t)=kr-\omega t+\phi_0$，其中 $k$ 為波數（rad/m）、$r$ 為離點波源的距離（m）、$\omega$ 為角頻率（rad/s）、$t$ 為時間（s）、$\phi_0$ 為初相位（rad），$kr-\omega t$ 的寫法代表波往 $r$ 增加的方向（向外）傳播；本題 $k=\pi\ \mathrm{rad/m}$、$\omega=3\pi\times10^8\ \mathrm{rad/s}$。</p>
+<p>相位裡的空間座標是離原點的距離 $r$：</p>
+<div class="math-block">$$
+\boxed{\Phi(r,t)=\pi r-3\pi\times10^8 t+\phi_0},\qquad
+r=\sqrt{x^2+y^2+z^2}.
+$$</div>
+<p><strong>⑤ 振幅隨 $1/r$ 衰減：</strong> 忽略吸收時，總功率 $P$ 穿過任意半徑球面都相同：</p>
+<div class="math-block">$$I(r)=\frac{P}{4\pi r^2}\propto\frac1{r^2}.$$</div>
+<p>又 $I\propto E_0^2$：</p>
+<div class="math-block">$$\boxed{E_0(r)\propto\frac1r,\qquad B_0(r)\propto\frac1r}.$$</div>
+<p>用 $r_0=\sqrt{14}$ 處的已知振幅寫成（$r_0/r$ 無單位，長度皆以 m 計）：</p>
+<div class="math-block">$$
+\boxed{E_0(r)=38.8056\frac{\sqrt{14}}r\ \mathrm{V/m}},
+$$</div>
+<div class="math-block">$$
+\boxed{B_0(r)=1.29352\times10^{-7}\frac{\sqrt{14}}r\ \mathrm T}.
+$$</div>
+<h4>(a) 瞬時 Poynting 向量</h4>
+<p class="fnote"><b>公式（Poynting 向量）：</b>$\vec S=\dfrac{1}{\mu_0}\vec E\times\vec B$，對 $\vec E=E_0\hat e\cos\Phi$、$\vec B=B_0\hat b\cos\Phi$（$\hat e\times\hat b=\hat k$、$B_0=E_0/c_0$）得 $\vec S=\varepsilon_0c_0E_0^2\cos^2\Phi\,\hat k$，其中 $\mu_0$ 為真空磁導率（H/m）、$\varepsilon_0$ 為真空介電常數（F/m）、$c_0$ 為真空光速（m/s）、$E_0,B_0$ 為電場（V/m）與磁場（T）振幅、$\hat e,\hat b,\hat k$ 為電場、磁場、傳播方向的單位向量、$\Phi$ 為完整相位（rad）；本題 $\hat k=\hat r$，最大瞬時能流 $S_0=\varepsilon_0c_0E_0^2$。</p>
+<p><strong>① 最大瞬時能流：</strong> $\overline{\cos^2\Phi}=1/2$，所以最大值是平均照度的兩倍：</p>
+<div class="math-block">$$S_0(r_0)=2I(r_0)=\boxed{4\ \mathrm{W/m^2}}.$$</div>
+<p><strong>② 觀察點的瞬時 Poynting 向量：</strong></p>
+<div class="math-block">$$
+\boxed{\begin{aligned}
+\vec S(2,1,3;t)
+&amp;=4\frac{2\hat x+\hat y+3\hat z}{\sqrt{14}}\\
+&amp;\quad\times\cos^2\!\left(\pi\sqrt{14}-3\pi\times10^8t+\phi_0\right)
+\ \mathrm{W/m^2}
+\end{aligned}}.
+$$</div>
+<p><strong>③ 任意位置：</strong> 把球面擴散放進去：</p>
+<div class="math-block">$$
+\boxed{\begin{aligned}
+\vec S(x,y,z;t)
+&amp;=4\left(\frac{\sqrt{14}}r\right)^2
+\frac{x\hat x+y\hat y+z\hat z}{r}\\
+&amp;\quad\times\cos^2\Phi(r,t)\ \mathrm{W/m^2}
+\end{aligned}}.
+$$</div>
+<p><strong>④ 指數表示：</strong> 把 $\cos^2\Phi$ 換成 $(e^{2i\Phi}+2+e^{-2i\Phi})/4$。$\vec S$ 來自真實場的叉積，不能把單一複數場 $e^{i\Phi}$ 直接平方當成瞬時能流。</p>
+<h4>(b) 電場向量</h4>
+<p class="fnote"><b>公式（電場向量表示）：</b>$\vec E=E_0\hat e\cos\Phi=\operatorname{Re}\{E_0\hat e\,e^{i\Phi}\}$，第二個等號來自 Euler 公式 $e^{i\Phi}=\cos\Phi+i\sin\Phi$，其中 $E_0$ 為電場振幅（V/m）、$\hat e$ 為偏振方向單位向量、$\Phi$ 為完整相位（rad）、$\operatorname{Re}\{\cdots\}$ 為取實部；本題 $E_0=38.8056\dfrac{\sqrt{14}}{r}$ V/m、$\hat e=\hat\phi$、$\Phi=\pi r-3\pi\times10^8t+\phi_0$。</p>
+<p><strong>① 觀察點代入振幅與方向：</strong></p>
+<div class="math-block">$$
+\boxed{\begin{aligned}
+\vec E(2,1,3;t)&amp;=38.8056\frac{-\hat x+2\hat y}{\sqrt5}\\
+&amp;\quad\times\cos(\pi\sqrt{14}-3\pi\times10^8t+\phi_0)\ \mathrm{V/m}
+\end{aligned}}.
+$$</div>
+<p><strong>② 指數表示：</strong></p>
+<div class="math-block">$$
+\boxed{\begin{aligned}
+\vec E(2,1,3;t)
+&amp;=\operatorname{Re}\!\Big\{
+38.8056\frac{-\hat x+2\hat y}{\sqrt5}\\
+&amp;\qquad\times e^{i(\pi\sqrt{14}-3\pi\times10^8t+\phi_0)}
+\Big\}\ \mathrm{V/m}
+\end{aligned}}.
+$$</div>
+<p><strong>③ 任意位置：</strong> 振幅隨 $1/r$（排除 $x=y=0$，該處 $\hat\phi$ 未定義）：</p>
+<div class="math-block">$$
+\boxed{
+\vec E(x,y,z;t)
+=38.8056\frac{\sqrt{14}}r
+\frac{-y\hat x+x\hat y}{\sqrt{x^2+y^2}}
+\cos\Phi(r,t)\ \mathrm{V/m}
+}.
+$$</div>
+<h4>(c) 磁場向量</h4>
+<p><strong>① 磁場方向：</strong> $\hat b$ 須與 $\hat e$、$\hat r$ 垂直且 $\hat e\times\hat b=\hat r$：</p>
+<div class="math-block">$$\boxed{\hat b=\hat r\times\hat e=\hat r\times\hat\phi}.$$</div>
+<p class="fnote"><b>公式（外積）：</b>$\vec a\times\vec b=(a_yb_z-a_zb_y)\hat x+(a_zb_x-a_xb_z)\hat y+(a_xb_y-a_yb_x)\hat z$，其中 $a_x,a_y,a_z$ 與 $b_x,b_y,b_z$ 為兩向量的直角座標分量；本題 $\vec a=\hat r_0=\dfrac{(2,1,3)}{\sqrt{14}}$、$\vec b=\hat e_0=\dfrac{(-1,2,0)}{\sqrt5}$，分子算得 $(-6,-3,5)$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\hat b_0
+&amp;=\frac{2\hat x+\hat y+3\hat z}{\sqrt{14}}
+\times\frac{-\hat x+2\hat y}{\sqrt5}\\
+&amp;=\boxed{\frac{-6\hat x-3\hat y+5\hat z}{\sqrt{70}}}.
+\end{aligned}
+$$</div>
+<p><strong>② 觀察點的磁場：</strong></p>
+<p class="fnote"><b>公式（磁場向量表示）：</b>$\vec B=B_0\hat b\cos\Phi=\operatorname{Re}\{B_0\hat b\,e^{i\Phi}\}$，且真空中 $B_0=\dfrac{E_0}{c_0}$，其中 $B_0$ 為磁場振幅（T）、$\hat b$ 為磁場方向單位向量、$\Phi$ 為與電場相同的完整相位（rad）、$c_0$ 為真空光速（m/s）；本題 $B_0=1.29352\times10^{-7}\dfrac{\sqrt{14}}{r}$ T、$\hat b=\hat r\times\hat\phi$。</p>
+<div class="math-block">$$
+\boxed{\begin{aligned}
+\vec B(2,1,3;t)
+&amp;=1.29352\times10^{-7}
+\frac{-6\hat x-3\hat y+5\hat z}{\sqrt{70}}\\
+&amp;\quad\times\cos(\pi\sqrt{14}-3\pi\times10^8t+\phi_0)\ \mathrm T
+\end{aligned}}.
+$$</div>
+<p><strong>③ 指數表示：</strong></p>
+<div class="math-block">$$
+\boxed{\begin{aligned}
+\vec B(2,1,3;t)
+&amp;=\operatorname{Re}\!\Big\{
+1.29352\times10^{-7}
+\frac{-6\hat x-3\hat y+5\hat z}{\sqrt{70}}\\
+&amp;\qquad\times e^{i(\pi\sqrt{14}-3\pi\times10^8t+\phi_0)}
+\Big\}\ \mathrm T
+\end{aligned}}.
+$$</div>
+<p><strong>④ 任意位置：</strong> 磁場方向展成直角座標：</p>
+<div class="math-block">$$
+\hat b(x,y,z)=
+-\frac{zx}{r\rho}\hat x
+-\frac{zy}{r\rho}\hat y
++\frac{\rho}{r}\hat z,
+\qquad \rho=\sqrt{x^2+y^2}.
+$$</div>
+<div class="math-block">$$
+\boxed{\begin{aligned}
+\vec B(x,y,z;t)
+&amp;=1.29352\times10^{-7}\frac{\sqrt{14}}r\\
+&amp;\quad\times\left(-\frac{zx}{r\rho}\hat x-\frac{zy}{r\rho}\hat y+\frac\rho r\hat z\right)
+\cos\Phi(r,t)\ \mathrm T
+\end{aligned}}.
+$$</div>

@@ -1,0 +1,458 @@
+<h2>十六、考前衝刺 <span class="pg">講義 p.1–114 · 課本第 1 章</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>從 116 級第 5–8 章的考卷看：每章一份考卷，約 6–8 題。大約一半是課本例題原題，其餘是課本習題改條件（例如把均勻密度改成 $\rho=k/r$），或直接要求證明、推導。第一章沒有留下考卷，所以這一頁照這種方式準備：課本例題要會寫，課本習題要會變化。</p>
+</div>
+
+<h3 id="ex-formulas">16.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>內積</h4>
+    <ul>
+      <li>$\vec A\cdot\vec B=\sum_iA_iB_i=AB\cos\theta$</li>
+      <li>$\vec B$ 沿 $\vec A$ 的分量 $B_A=\dfrac{\vec A\cdot\vec B}{A}$</li>
+      <li>垂直 ⟺ $\vec A\cdot\vec B=0$；$\vec A\cdot\vec A=A^2$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>外積</h4>
+    <ul>
+      <li>$\vec A\times\vec B=(A_2B_3-A_3B_2,\ A_3B_1-A_1B_3,\ A_1B_2-A_2B_1)$</li>
+      <li>$|\vec A\times\vec B|=AB\sin\theta$ = 平行四邊形面積</li>
+      <li>$\vec B\times\vec A=-\vec A\times\vec B$；結果垂直 $\vec A$ 和 $\vec B$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>三重積</h4>
+    <ul>
+      <li>$\vec A\cdot(\vec B\times\vec C)=(\vec A\times\vec B)\cdot\vec C$ = 行列式 = 有號體積，可循環輪換</li>
+      <li>$\vec A\times(\vec B\times\vec C)=\vec B(\vec A\cdot\vec C)-\vec C(\vec A\cdot\vec B)$</li>
+      <li>$(\vec A\times\vec B)_i=\sum_{j,k}\varepsilon_{ijk}A_jB_k$；$\sum_k\varepsilon_{ijk}\varepsilon_{lmk}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$</li>
+      <li>$(\vec A\times\vec B)\cdot(\vec C\times\vec D)=(\vec A\cdot\vec C)(\vec B\cdot\vec D)-(\vec A\cdot\vec D)(\vec B\cdot\vec C)$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>平面</h4>
+    <ul>
+      <li>過 $\vec a,\vec b,\vec c$：法向量 $\vec n=(\vec b-\vec a)\times(\vec c-\vec a)$</li>
+      <li>三角形面積 $\tfrac12|\vec n|$；原點到平面距離 $\dfrac{|\vec a\cdot\vec n|}{|\vec n|}$</li>
+      <li>過點 $\vec p$、法向量 $\vec n$ 的平面：$\vec n\cdot(\vec r-\vec p)=0$（1-8 是 $\vec n=\vec p=\vec A$ 的特例）</li>
+    </ul>
+  </section>
+  <section>
+    <h4>微分與角速度</h4>
+    <ul>
+      <li>$\dfrac{\mathrm d}{\mathrm dt}(\vec A\cdot\vec B)=\dot{\vec A}\cdot\vec B+\vec A\cdot\dot{\vec B}$</li>
+      <li>$\dfrac{\mathrm d}{\mathrm dt}(\vec A\times\vec B)=\dot{\vec A}\times\vec B+\vec A\times\dot{\vec B}$（次序不能換）</li>
+      <li>$|\vec A|$ 固定 ⟹ $\vec A\cdot\dot{\vec A}=0$；$\vec v=\vec\omega\times\vec r$，$v=R\omega$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>曲線座標</h4>
+    <ul>
+      <li>極：$\dot{\hat r}=\dot\theta\hat\theta$，$\dot{\hat\theta}=-\dot\theta\hat r$，$\mathrm dA=r\,\mathrm dr\,\mathrm d\theta$</li>
+      <li>$\vec v=\dot r\hat r+r\dot\theta\hat\theta$，$\vec a=(\ddot r-r\dot\theta^2)\hat r+(2\dot r\dot\theta+r\ddot\theta)\hat\theta$</li>
+      <li>柱：$\mathrm dV=r\,\mathrm dr\,\mathrm d\phi\,\mathrm dz$，$\vec a$ 再加 $\ddot z\hat z$</li>
+      <li>球：$\mathrm dV=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$，$\vec v=\dot r\hat r+r\dot\theta\hat\theta+r\sin\theta\,\dot\phi\hat\phi$</li>
+      <li>$I=\int(\text{到轉軸距離})^2\,\mathrm dm$：圓盤 $\frac12MR^2$、實心球 $\frac25MR^2$、圓管 $\frac M2(R_1^2+R_2^2)$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>梯度、散度、旋度</h4>
+    <ul>
+      <li>$\nabla\phi$ 垂直等高面、指向增加最快；$\mathrm d\phi=\nabla\phi\cdot\mathrm d\vec s$；$\vec F=-\nabla V$</li>
+      <li>方向導數 $\hat n\cdot\nabla\phi$；$\nabla^2=\partial_x^2+\partial_y^2+\partial_z^2$</li>
+      <li>$\nabla f(r)=f'(r)\,\hat r$；$\nabla\cdot\vec r=3$；$\nabla\cdot(g(r)\vec r)=3g+rg'$</li>
+      <li>$\nabla\cdot\vec f=\partial_xf_x+\partial_yf_y+\partial_zf_z$（淨流出 ÷ 體積）</li>
+      <li>$(\nabla\times\vec V)_z=\partial_xV_y-\partial_yV_x$；$\nabla\times\nabla\phi=0$；$\nabla\times[\vec rf(r)]=0$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>積分定理與保守力</h4>
+    <ul>
+      <li>Gauss：$\oint_S\vec A\cdot\mathrm d\vec a=\int_V\nabla\cdot\vec A\,\mathrm dv$</li>
+      <li>Stokes：$\oint_C\vec V\cdot\mathrm d\vec\lambda=\int_S(\nabla\times\vec V)\cdot\mathrm d\vec\sigma$（右手定則定方向）</li>
+      <li>面積 $=\frac12\oint(x\,\mathrm dy-y\,\mathrm dx)$</li>
+      <li>保守 ⟺ $\vec F=-\nabla\phi$ ⟺ $\nabla\times\vec F=0$ ⟺ $\oint\vec F\cdot\mathrm d\vec r=0$（區域單連通）</li>
+    </ul>
+  </section>
+  <section>
+    <h4>矩陣與旋轉</h4>
+    <ul>
+      <li>$(AB)_{ij}=\sum_kA_{ik}B_{kj}$；$AB\neq BA$</li>
+      <li>$(AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}$，$(AB)^{-1}=B^{-1}A^{-1}$，$\det(AB)=\det A\det B$</li>
+      <li>$\vec x'=\lambda\vec x$，第 $i$ 個 row = $\hat x_i'$ 在舊座標的分量</li>
+      <li>正交：$\lambda^{\mathsf T}\lambda=I$，$\sum_i\lambda_{ij}\lambda_{ik}=\delta_{jk}$；$\det=+1$ 旋轉、$-1$ 含鏡射</li>
+      <li>先 $\lambda_1$ 再 $\lambda_2$：$\vec x''=\lambda_2\lambda_1\vec x$</li>
+    </ul>
+    $$\lambda_x=\begin{bmatrix}1&0&0\\0&\cos\theta&\sin\theta\\0&-\sin\theta&\cos\theta\end{bmatrix}\quad \lambda_y=\begin{bmatrix}\cos\theta&0&-\sin\theta\\0&1&0\\\sin\theta&0&\cos\theta\end{bmatrix}$$
+    $$\lambda_z=\begin{bmatrix}\cos\theta&\sin\theta&0\\-\sin\theta&\cos\theta&0\\0&0&1\end{bmatrix}$$
+  </section>
+</div>
+
+<h3 id="ex-types">16.2 題型總表</h3>
+
+<p class="type-jump"><a href="#type-1">① 夾角</a><a href="#type-2">② 三角公式</a><a href="#type-3">③ 平面</a><a href="#type-4">④ 恆等式</a><a href="#type-5">⑤ 向量方程</a><a href="#type-6">⑥ 微分積分</a><a href="#type-7">⑦ 角速度</a><a href="#type-8">⑧ 矩陣</a><a href="#type-9">⑨ 旋轉矩陣</a><a href="#type-10">⑩ 正交證明</a><a href="#type-11">⑪ 曲線座標</a><a href="#type-12">⑫ 體積慣量</a><a href="#type-13">⑬ 梯度</a><a href="#type-14">⑭ 散度</a><a href="#type-15">⑮ 旋度</a><a href="#type-16">⑯ Stokes</a><a href="#type-17">⑰ ε 記號</a><a href="#type-18">⑱ 課本推導</a></p>
+
+<div class="drill" id="type-1">
+  <h4>① 夾角、垂直、投影</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>問「夾角」「是否垂直」「沿某方向的分量」。</dd>
+    <dt>做法</dt><dd>寫出分量 → $\cos\theta=\dfrac{\vec A\cdot\vec B}{AB}$；分量 $B_A=\dfrac{\vec A\cdot\vec B}{A}$。</dd>
+    <dt>常錯</dt><dd>「沿 $\vec A$」要除以 $A$，不是除以 $B$。</dd>
+    <dt>代表題</dt><dd><a href="#ex-p29">例題 1.5</a>　<a href="#tm-1-9">課本 1-9</a>　<a href="#tm-1-7">1-7</a>　<a href="#tm-1-41">1-41</a>　<a href="#var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-2">
+  <h4>② 用向量證三角公式</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>要你推出餘弦定律、正弦定律、和差角公式、方向餘弦公式。</dd>
+    <dt>做法</dt><dd>同一個量算兩次：幾何上（長度、面積、夾角）一次，代數上（分量或分配律展開）一次，兩者相等。</dd>
+    <dt>常錯</dt><dd>外積、內積裡的角是「兩向量的夾角」，可能是三角形內角的補角：sin 不變、cos 變號。</dd>
+    <dt>代表題</dt><dd><a href="#tm-1-17">課本 1-17</a>　<a href="#tm-1-18">1-18</a>　<a href="#tm-1-19">1-19</a>　<a href="#tm-1-2">1-2</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-3">
+  <h4>③ 平面、距離、面積</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給三個點或一個方程式，問平面、點到平面的距離、三角形面積。</dd>
+    <dt>做法</dt><dd>法向量 $\vec n=(\vec b-\vec a)\times(\vec c-\vec a)$ → 面積 $\tfrac12|\vec n|$ → 距離 = 位置向量在 $\hat n$ 的投影 $|\vec a\cdot\vec n|/|\vec n|$。</dd>
+    <dt>常錯</dt><dd>距離忘了除以 $|\vec n|$；面積忘了 $\tfrac12$。</dd>
+    <dt>代表題</dt><dd><a href="#tm-1-8">課本 1-8</a>　<a href="#tm-1-12">1-12</a>　<a href="#tm-1-39">1-39</a>　<a href="#var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-4">
+  <h4>④ 三重積與向量恆等式</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>要你證明或化簡含兩個以上外積的式子。</dd>
+    <dt>做法</dt><dd>$\vec A\cdot(\vec B\times\vec C)$：行列式、輪換、點叉互換。兩層外積：把一個括號當成單一向量，套 BAC–CAB。最後代一個簡單例子驗算。</dd>
+    <dt>常錯</dt><dd>$(\vec A\times\vec B)\times\vec C\neq\vec A\times(\vec B\times\vec C)$；外積在左邊時先用 $\vec X\times\vec Y=-\vec Y\times\vec X$ 換成 BAC–CAB 的形狀。</dd>
+    <dt>代表題</dt><dd><a href="#tm-1-11">課本 1-11</a>　<a href="#tb-ex17">例題 1.7</a>　<a href="#tm-1-23">1-23</a>　<a href="#tm-1-24">1-24</a>　<a href="#tm-1-27">1-27</a>　<a href="#var-18">變化題 18</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-5">
+  <h4>⑤ 解向量方程式</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>未知向量出現在外積、內積裡，例如 $\vec A\times\vec X=\vec B$、$\vec A\cdot\vec X=\phi$。</dd>
+    <dt>做法</dt><dd>向量不能相除。先檢查相容條件 $\vec A\cdot\vec B=0$，兩邊再叉一次 $\vec A$，用 BAC–CAB 把 $\vec X$ 拉出來。</dd>
+    <dt>常錯</dt><dd>最後一定要代回兩個條件驗算。</dd>
+    <dt>代表題</dt><dd><a href="#tm-1-13">課本 1-13</a>　<a href="#var-7">變化題 7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-6">
+  <h4>⑥ 向量函數的微分與積分</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給 $\vec r(t)$ 求 $\vec v$、$\vec a$、速率、夾角；或要你算 $\int(\cdots)\,\mathrm dt$。</dd>
+    <dt>做法</dt><dd>逐分量微分；夾角用內積。積分題反過來認「這是誰的導數」（乘積律、商數律倒著用）。</dd>
+    <dt>常錯</dt><dd>外積的乘積律次序不能換；$\dot r=\frac{\mathrm d}{\mathrm dt}|\vec r|$ 一般不等於 $|\dot{\vec r}|$。</dd>
+    <dt>代表題</dt><dd><a href="#tm-1-10">課本 1-10</a>　<a href="#tm-1-32">1-32</a>　<a href="#tm-1-33">1-33</a>　<a href="#tm-1-34">1-34</a>　<a href="#var-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-7">
+  <h4>⑦ 角速度</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>剛體或質點繞軸轉，問速度向量。</dd>
+    <dt>做法</dt><dd>$\vec\omega$ 沿轉軸（右手定則）→ $\vec v=\vec\omega\times\vec r$ → 用 $v=r\omega\sin\alpha=R\omega$ 驗算。</dd>
+    <dt>常錯</dt><dd>寫成 $\vec r\times\vec\omega$ 方向會反；$\omega$ 要用 rad/s。</dd>
+    <dt>代表題</dt><dd><a href="#ex-ang">練習：$\vec\omega\times\vec r$</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-8">
+  <h4>⑧ 矩陣運算</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給幾個矩陣，求乘積、轉置、行列式，或證明 $(AB)^{\mathsf T}$、$(AB)^{-1}$ 的性質。</dd>
+    <dt>做法</dt><dd>先對尺寸：$(m\times n)(n\times p)$；$(AB)_{ij}$ = $A$ 的 row $i$ 內積 $B$ 的 column $j$；轉置、反矩陣都要反序。</dd>
+    <dt>常錯</dt><dd>$AB\neq BA$；可用 $\det(AB)=\det A\det B$ 驗算。</dd>
+    <dt>代表題</dt><dd><a href="#ex-p39">例題 1.2</a>　<a href="#ex-p40">例題 1.3</a>　<a href="#tm-1-14">課本 1-14</a>　<a href="#tm-1-4">1-4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-9">
+  <h4>⑨ 求旋轉（變換）矩陣</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「座標系繞某軸轉某角度，求變換矩陣」或「求某點在新座標的分量」。</dd>
+    <dt>做法</dt><dd>寫出每個新軸在舊座標中的分量 → 依序排成 row → 驗算：row 長度 1、兩兩垂直、$\det=+1$。連續旋轉後做的乘在左邊。</dd>
+    <dt>常錯</dt><dd>繞 $y$ 軸時 $-\sin\theta$ 在右上角；「軸轉」與「點轉」差一個轉置。</dd>
+    <dt>代表題</dt><dd><a href="#ex-p49">例題 1.1</a>　<a href="#tm-1-1">課本 1-1</a>　<a href="#tm-1-3">1-3</a>　<a href="#tb-rot2">連續兩次旋轉</a>　<a href="#var-1">變化題 1</a>　<a href="#var-2">2</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-10">
+  <h4>⑩ 正交矩陣的條件與證明</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「求參數使矩陣正交」「證明乘積正交」「證明某量在旋轉下不變」「$\det=\pm1$」。</dd>
+    <dt>做法</dt><dd>正交 ⟺ $\lambda^{\mathsf T}\lambda=I$ ⟺ row（或 column）是互相垂直的單位向量 ⟺ 保長度。證明題用 $\sum$ 寫分量、對調求和次序、用 $\delta_{jk}$。</dd>
+    <dt>常錯</dt><dd>兩個求和要用不同的啞指標（$j$ 和 $k$），共用同一個字母會算錯。</dd>
+    <dt>代表題</dt><dd><a href="#tm-1-15">課本 1-15</a>　<a href="#tm-1-5">1-5</a>　<a href="#tm-1-6">1-6</a>　<a href="#tb-orth">正交矩陣的乘積</a>　<a href="#tb-ex14">例題 1.4</a>　<a href="#tb-inv">內積不變</a>　<a href="#tb-grad">梯度是向量</a>　<a href="#var-6">變化題 6</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-11">
+  <h4>⑪ 曲線座標的速度與加速度</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給 $r(t),\theta(t)$（或軌道 $r(\theta)$），問速度、加速度分量；或要你推導某座標的 $\vec a$。</dd>
+    <dt>做法</dt><dd>位置寫成 $r\hat r$（柱座標再加 $z\hat z$）→ 每次微分都用乘積律 → 代入單位向量的導數 → 依單位向量收集。給軌道時用速率條件解出 $\dot\theta$。</dd>
+    <dt>常錯</dt><dd>忘了單位向量會轉；把 $\ddot r$ 當成加速度大小；$2\dot r\dot\theta$ 的 2 漏掉。</dd>
+    <dt>代表題</dt><dd><a href="#ex-p63">例題 p.63</a>　<a href="#ex-p66">例題 1.8</a>　<a href="#tm-1-25">課本 1-25</a>　<a href="#tm-1-26">1-26</a>　<a href="#var-12">變化題 12</a>　<a href="#var-17">17</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-12">
+  <h4>⑫ 用 $\mathrm dV$ 積分：體積、質量、轉動慣量</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>求體積、質量，或對某軸的轉動慣量。</dd>
+    <dt>做法</dt><dd>依形狀選座標（圓 → 極／柱，球 → 球座標，兩個不同軸的圓柱 → 切片）→ 寫 $\mathrm dV$ → 範圍是常數時三個積分分開算。只給質量時先算 $\rho=M/V$。</dd>
+    <dt>常錯</dt><dd>$\mathrm dV$ 少了 $r$ 或 $r^2\sin\theta$；轉動慣量用到原點的距離 $r$ 而不是到轉軸的距離（球座標是 $r\sin\theta$）。</dd>
+    <dt>代表題</dt><dd><a href="#ex-p57">例題 p.57</a>　<a href="#ex-p69">p.69</a>　<a href="#ex-p70">p.70</a>　<a href="#ex-p71">p.71</a>　<a href="#tm-1-35">課本 1-35</a>　<a href="#var-8">變化題 8</a>　<a href="#var-14">14</a>　<a href="#var-15">15</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-13">
+  <h4>⑬ 梯度：法向量、最陡方向、方向導數、極值</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>問「垂直曲面的向量」「兩曲面夾角」「哪個方向變化最快」「沿某方向的變化率」「山頂」。</dd>
+    <dt>做法</dt><dd>曲面寫成 $\phi=$ 常數 → $\nabla\phi$ 是法向量；最快方向 $\nabla\phi$、最大變化率 $|\nabla\phi|$；方向導數 $\hat n\cdot\nabla\phi$（$\hat n$ 要是單位向量）；極值令 $\nabla\phi=0$。</dd>
+    <dt>常錯</dt><dd>方向導數忘了把方向向量單位化；$z=h(x,y)$ 的法向量是 $(-h_x,-h_y,1)$，不是 $(h_x,h_y)$。</dd>
+    <dt>代表題</dt><dd><a href="#ex-p81">例題 p.81–83</a>　<a href="#ex-p86">p.86</a>　<a href="#tm-1-29">課本 1-29</a>　<a href="#tm-1-40">1-40</a>　<a href="#tm-1-28">1-28</a>　<a href="#tm-1-30">1-30</a>　<a href="#tm-1-31">1-31</a>　<a href="#var-13">變化題 13</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-14">
+  <h4>⑭ 散度與 Gauss 定理</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>求 $\nabla\cdot\vec A$，或封閉曲面的通量 $\oint\vec A\cdot\mathrm d\vec a$。</dd>
+    <dt>做法</dt><dd>先算散度；散度簡單（常數或只和 $r$ 有關）就用 Gauss 換成體積分。題目要求「直接算」時，每個面分開算法向量 $\hat n$ 與 $\vec A\cdot\hat n$。</dd>
+    <dt>常錯</dt><dd>封閉曲面的法向量一律朝外（底面是 $-\hat k$）；Gauss 只適用封閉曲面。</dd>
+    <dt>代表題</dt><dd><a href="#tm-1-36">課本 1-36</a>　<a href="#tm-1-37">1-37</a>　<a href="#var-9">變化題 9</a>　<a href="#var-16">16</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-15">
+  <h4>⑮ 旋度、保守力、求位能</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「求 $\nabla\times\vec F$」「是否為保守力」「求位能 $\phi$」。</dd>
+    <dt>做法</dt><dd>用行列式算旋度（平面場只算 $\hat k$ 分量）；為 0 且區域單連通 ⟹ 保守。求位能：由 $-\partial_x\phi=F_x$ 積分，「常數」留成其他變數的函數，再用 $F_y,F_z$ 決定，最後驗算 $-\nabla\phi=\vec F$。</dd>
+    <dt>常錯</dt><dd>渦旋場 $\frac{(-y,x)}{x^2+y^2}$ 旋度為 0 但繞原點做功 $2\pi$；位能的負號。</dd>
+    <dt>代表題</dt><dd><a href="#ex-p99">例題 p.99</a>　<a href="#ex-p101">p.101–105</a>　<a href="#var-10">變化題 10</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-16">
+  <h4>⑯ Stokes 定理</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>曲面上旋度的通量，或沿封閉曲線的線積分（環流量）。</dd>
+    <dt>做法</dt><dd>挑比較好算的一邊：曲面很彎就改算邊界的線積分，或換成同一邊界的平面；旋度是常數時直接「旋度 × 面積」。方向用右手定則。</dd>
+    <dt>常錯</dt><dd>邊界的繞行方向和法向量不一致，答案差一個負號。</dd>
+    <dt>代表題</dt><dd><a href="#ex-p108">例題 p.108</a>　<a href="#tm-1-38">課本 1-38</a>　<a href="#var-11">變化題 11</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-17">
+  <h4>⑰ 用 $\varepsilon_{ijk}$ 證明</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>題目寫「use the $\varepsilon_{ijk}$ notation」，或要證 $\varepsilon$、$\delta$ 的求和式。</dd>
+    <dt>做法</dt><dd>外積寫成 $(\vec A\times\vec B)_i=\sum_{j,k}\varepsilon_{ijk}A_jB_k$ → 循環輪換讓兩個 $\varepsilon$ 的求和下標都在最後 → 套 $\sum_k\varepsilon_{ijk}\varepsilon_{lmk}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$ → 用 $\delta$ 把求和收掉。</dd>
+    <dt>常錯</dt><dd>不同的求和要用不同的啞指標；交換兩個下標要變號，循環輪換不變號。</dd>
+    <dt>代表題</dt><dd><a href="#tb-ex16">例題 1.6</a>　<a href="#tm-1-20">課本 1-20</a>　<a href="#tm-1-21">1-21</a>　<a href="#tm-1-22">1-22</a>　<a href="#tb-ex17">例題 1.7</a>　<a href="#tm-1-23">1-23</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="type-18">
+  <h4>⑱ 課本正文的推導</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「推導極座標的加速度」「證明梯度垂直等高面」「說明散度的意義」「證明三種保守力的說法等價」。</dd>
+    <dt>做法</dt><dd>照正文的推導順序寫：先寫定義，每一步寫出用到的性質（乘積律、單位向量的導數、連鎖律、Stokes 定理）。考試模式下這些推導收成標題，點開就能複習。</dd>
+    <dt>常錯</dt><dd>只寫結果不寫理由；極座標忘了 $\hat r,\hat\theta$ 也要微分。</dd>
+    <dt>代表題</dt><dd><a href="#po-cart">$\dot{\hat r},\dot{\hat\theta}$</a>　<a href="#po-a">極座標 $\vec a$</a>　<a href="#gr-why">梯度的方向</a>　<a href="#dvx-a">散度＝淨通量</a>　<a href="#st-e1">保守力等價</a>　<a href="#tm-1-6">正交條件</a>　<a href="#tb-grad">梯度是向量</a></dd>
+  </dl>
+</div>
+
+<h3 id="ex-vars">16.3 變化題：老師可能的改法</h3>
+
+<p>每題都是把課本題換條件。先自己寫，再打開解答對照。</p>
+
+<div class="drill-q" id="var-1">
+  <p class="q-src">變化題 1 · 改自課本 <a href="#tm-1-3">1-3</a></p>
+  <p>座標系繞與三軸夾角相等的軸旋轉 $240^\circ$，求變換矩陣。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$240^\circ$ 是兩次 $120^\circ$，所以用 1-3 的 $\lambda$ 乘兩次：$\lambda$ 的 row 1 $(0,1,0)$ 取 $\lambda$ 的 row 2，row 2 $(0,0,1)$ 取 row 3，row 3 $(1,0,0)$ 取 row 1：</p>
+    $$\lambda^2=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}=\lambda^{\mathsf T}:\quad x_1'=x_3,\ x_2'=x_1,\ x_3'=x_2$$
+    <p>也等於反方向轉 $120^\circ$。驗算：對角線和 $0=1+2\cos240^\circ$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-2">
+  <p class="q-src">變化題 2 · 改自課本 <a href="#tm-1-1">1-1</a></p>
+  <p>把 $x_3$ 軸繞 $x_2$ 軸、朝 $x_1$ 方向旋轉任意角 $\theta$，求變換矩陣。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\hat x_2'=(0,1,0)$；$\hat x_3'=(\sin\theta,0,\cos\theta)$；$\hat x_1'=\hat x_2'\times\hat x_3'=(\cos\theta,\ 0,\ -\sin\theta)$。排成 row：</p>
+    $$\lambda=\begin{bmatrix}\cos\theta&0&-\sin\theta\\0&1&0\\\sin\theta&0&\cos\theta\end{bmatrix}=\lambda_y(\theta)$$
+    <p>驗算：$\theta=45^\circ$ 時就是 1-1 的答案 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-3">
+  <p class="q-src">變化題 3 · 改自課本 <a href="#tm-1-12">1-12</a></p>
+  <p>$A(2,0,0)$、$B(0,3,0)$、$C(0,0,6)$。求原點到平面 $ABC$ 的距離與三角形 $ABC$ 的面積。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\vec n=(\vec b-\vec a)\times(\vec c-\vec a)=(-2,3,0)\times(-2,0,6)=(18,\ 12,\ 6)$$
+    <p>$|\vec n|=\sqrt{324+144+36}=\sqrt{504}=6\sqrt{14}$。面積 $S=\tfrac12|\vec n|=3\sqrt{14}\approx11.2$；距離 $d=\dfrac{\vec a\cdot\vec n}{|\vec n|}=\dfrac{36}{6\sqrt{14}}=\dfrac{6}{\sqrt{14}}\approx1.60$。</p>
+    <p>驗算：平面是 $\frac x2+\frac y3+\frac z6=1$，即 $3x+2y+z=6$，點到平面距離 $\frac{6}{\sqrt{9+4+1}}=\frac6{\sqrt{14}}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-4">
+  <p class="q-src">變化題 4 · 改自課本 <a href="#tm-1-7">1-7</a></p>
+  <p>單位立方體的一條體對角線和一條面對角線之間的夾角是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>體對角線 $(1,1,1)$、底面的面對角線 $(1,1,0)$：$\cos\theta=\dfrac{1+1+0}{\sqrt3\sqrt2}=\sqrt{\tfrac23}$，$\theta\approx35.3^\circ$。</p>
+    <p>要注意：同一面上的另一條對角線 $(1,-1,0)$ 和 $(1,1,1)$ 的內積是 $0$，夾角 $90^\circ$。答案取決於挑哪一條，考試要寫清楚用的是哪兩個向量。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-5">
+  <p class="q-src">變化題 5 · 改自課本 <a href="#tm-1-10">1-10</a></p>
+  <p>$\vec r=b\cos\omega t\,\hat i+2b\sin\omega t\,\hat j$。求 $t=\dfrac{\pi}{4\omega}$ 時 $\vec v$ 與 $\vec a$ 的夾角。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\vec v=(-b\omega\sin\omega t,\ 2b\omega\cos\omega t)$，$\vec a=(-b\omega^2\cos\omega t,\ -2b\omega^2\sin\omega t)=-\omega^2\vec r$。$\omega t=\frac\pi4$ 時 $\sin=\cos=\frac1{\sqrt2}$：</p>
+    $$\vec v=\tfrac{b\omega}{\sqrt2}(-1,\ 2),\qquad \vec a=-\tfrac{b\omega^2}{\sqrt2}(1,\ 2)$$
+    $$\begin{aligned}\cos\theta&=\frac{\vec v\cdot\vec a}{va}=\frac{-\frac{b^2\omega^3}{2}\big[(-1)(1)+(2)(2)\big]}{\frac{b\omega}{\sqrt2}\sqrt5\cdot\frac{b\omega^2}{\sqrt2}\sqrt5}\\&=\frac{-\frac32b^2\omega^3}{\frac52b^2\omega^3}=-\frac35\end{aligned}$$
+    <p>$\theta\approx126.9^\circ$（鈍角：這時質點正在變慢）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-6">
+  <p class="q-src">變化題 6 · 改自課本 <a href="#tm-1-15">1-15</a></p>
+  <p>求 $\alpha$、$\beta$，使 $\begin{bmatrix}\frac12&\alpha&0\\\beta&\frac12&0\\0&0&1\end{bmatrix}$ 是旋轉矩陣（正交且 $\det=+1$）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>row 1 長度 1：$\frac14+\alpha^2=1$，$\alpha=\pm\frac{\sqrt3}{2}$。row 2 長度 1：$\beta^2=\frac34$。row 1 ⟂ row 2：$\frac\beta2+\frac\alpha2=0$，$\beta=-\alpha$。$\det=\frac14-\alpha\beta=\frac14+\alpha^2=1$ ✔</p>
+    <p>答：$(\alpha,\beta)=\big(\frac{\sqrt3}{2},-\frac{\sqrt3}{2}\big)$ 或 $\big(-\frac{\sqrt3}{2},\frac{\sqrt3}{2}\big)$，即繞 $x_3$ 轉 $\pm60^\circ$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-7">
+  <p class="q-src">變化題 7 · 改自課本 <a href="#tm-1-13">1-13</a></p>
+  <p>$\vec A=(1,1,0)$、$\vec B=(0,0,2)$、$\phi=2$。解 $\vec A\times\vec X=\vec B$、$\vec A\cdot\vec X=\phi$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>相容：$\vec A\cdot\vec B=0$ ✔。$\vec B\times\vec A=(0\cdot0-2\cdot1,\ 2\cdot1-0\cdot0,\ 0)=(-2,2,0)$，$A^2=2$：</p>
+    $$\vec X=\frac{\phi\vec A+\vec B\times\vec A}{A^2}=\frac{(2,2,0)+(-2,2,0)}{2}=(0,\ 2,\ 0)$$
+    <p>驗算：$\vec A\cdot\vec X=2$ ✔；$\vec A\times\vec X=(1,1,0)\times(0,2,0)=(0,0,2)=\vec B$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-8">
+  <p class="q-src">變化題 8 · 改自講義 <a href="#ex-p70">p.70</a></p>
+  <p>質量 $M$、半徑 $R$ 的均勻<strong>薄球殼</strong>，求對通過球心的軸的轉動慣量。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>面密度 $\sigma=\frac{M}{4\pi R^2}$，球面面積元 $\mathrm dA=R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi$，到 $z$ 軸距離 $R\sin\theta$：</p>
+    $$I=\sigma\int_0^{2\pi}\!\!\int_0^\pi(R\sin\theta)^2R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi=\sigma R^4\cdot\frac43\cdot2\pi=\frac{M}{4\pi R^2}\cdot\frac{8\pi R^4}{3}=\frac23MR^2$$
+    <p>比實心球的 $\frac25MR^2$ 大：質量全在外圈。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-9">
+  <p class="q-src">變化題 9 · 改自課本 <a href="#tm-1-36">1-36</a></p>
+  <p>$\vec A=2x\,\hat i-y\,\hat j+3z\,\hat k$，求穿出單位立方體 $0\le x,y,z\le1$ 表面的總通量。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\nabla\cdot\vec A=2-1+3=4$，Gauss 定理：通量 $=4\times(\text{體積 }1)=4$。</p>
+    <p>直接驗算：$x=1$ 面 $A_x=2$、$x=0$ 面 $A_x=0$，淨 $2$；$y$ 方向 $-1-0=-1$；$z$ 方向 $3-0=3$；合計 $4$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-10">
+  <p class="q-src">變化題 10 · 改自講義 <a href="#st-equiv">p.110–114</a></p>
+  <p>$\vec F=(2xy+z)\,\hat i+x^2\,\hat j+x\,\hat k$。證明 $\vec F$ 是保守力，並求位能 $\phi$（$\vec F=-\nabla\phi$）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\nabla\times\vec F=\big(0-0,\ 1-1,\ 2x-2x\big)=\vec 0$$
+    <p>處處有定義，所以保守。$-\partial_x\phi=2xy+z$ ⟹ $\phi=-x^2y-xz+g(y,z)$。$-\partial_y\phi=x^2-\partial_yg=x^2$ ⟹ $\partial_yg=0$；$-\partial_z\phi=x-\partial_zg=x$ ⟹ $\partial_zg=0$。</p>
+    <p>答：$\phi=-x^2y-xz+C$。驗算：$-\nabla\phi=(2xy+z,\ x^2,\ x)$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-11">
+  <p class="q-src">變化題 11 · 改自講義 <a href="#ex-p108">p.108</a></p>
+  <p>用 $\frac12\oint(x\,\mathrm dy-y\,\mathrm dx)$ 求橢圓 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 的面積。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>逆時針參數化 $x=a\cos t$、$y=b\sin t$：$x\,\mathrm dy-y\,\mathrm dx=ab\cos^2t\,\mathrm dt+ab\sin^2t\,\mathrm dt=ab\,\mathrm dt$。</p>
+    $$A=\frac12\int_0^{2\pi}ab\,\mathrm dt=\pi ab$$
+    <p>$a=b$ 時變回圓面積 $\pi a^2$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-12">
+  <p class="q-src">變化題 12 · 改自講義 <a href="#ex-p63">p.63</a></p>
+  <p>質點沿阿基米德螺線運動：$r=bt$、$\theta=\omega t$（$b,\omega$ 為常數）。求加速度的徑向（$\hat r$）、橫向（$\hat\theta$）分量與大小。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\dot r=b$、$\ddot r=0$、$\dot\theta=\omega$、$\ddot\theta=0$：</p>
+    $$a_r=\ddot r-r\dot\theta^2=-bt\omega^2,\qquad a_\theta=2\dot r\dot\theta+r\ddot\theta=2b\omega$$
+    <p>$|\vec a|=b\omega\sqrt{\omega^2t^2+4}$。$\dot\theta$ 固定，$\hat\theta$ 分量卻不是 0：$2\dot r\dot\theta=2b\omega$ 一半來自橫向速度 $r\dot\theta$ 隨 $r$ 變大（$\frac{\mathrm d}{\mathrm dt}(r\dot\theta)=b\omega$），另一半來自徑向速度 $\dot r\hat r$ 跟著轉向。注意 $\hat\theta$ 不是軌跡的切線方向。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-13">
+  <p class="q-src">變化題 13 · 改自講義 <a href="#gr-def">p.79–80</a></p>
+  <p>$\phi=x^2y+yz$。求在 $(1,2,-1)$ 沿方向 $(2,-1,2)$ 的變化率，以及該點最大的變化率。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\nabla\phi=(2xy,\ x^2+z,\ y)=(4,\ 0,\ 2)$。方向要單位化：$\hat n=\frac13(2,-1,2)$。</p>
+    $$\hat n\cdot\nabla\phi=\frac{8+0+4}{3}=4,\qquad |\nabla\phi|_{\max}=\sqrt{16+0+4}=2\sqrt5\approx4.47$$
+    <p>沿 $\hat n$ 的變化率比最大值小，因為 $\hat n$ 不完全沿著 $\nabla\phi$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-14">
+  <p class="q-src">變化題 14 · 改自講義 <a href="#ex-p70">p.70</a>（改密度）</p>
+  <p>半徑 $R$ 的實心球，密度 $\rho=kr$（$k$ 為常數）。求總質量 $M$，以及對通過球心之軸的轉動慣量（用 $M,R$ 表示）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$M=\int_0^R kr\cdot4\pi r^2\,\mathrm dr=\pi kR^4$$
+    $$I=\int kr\,(r\sin\theta)^2\,r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi=k\cdot\frac{R^6}{6}\cdot\frac43\cdot2\pi=\frac{4\pi kR^6}{9}=\frac49MR^2$$
+    <p>比均勻球的 $\frac25MR^2$ 大：質量偏向外圈。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-15">
+  <p class="q-src">變化題 15 · 改自講義 <a href="#ex-p57">p.57</a>（改密度）</p>
+  <p>半徑 $R$ 的圓盤，面密度 $\sigma=k/r$。求 $M$ 與對中心垂直軸的轉動慣量。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$M=\int_0^{2\pi}\!\!\int_0^R\frac kr\,r\,\mathrm dr\,\mathrm d\theta=2\pi kR,\qquad I=\int_0^{2\pi}\!\!\int_0^R\frac kr\,r^2\,r\,\mathrm dr\,\mathrm d\theta=\frac{2\pi kR^3}{3}=\frac13MR^2$$
+    <p>比均勻圓盤的 $\frac12MR^2$ 小：質量偏向中心。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-16">
+  <p class="q-src">變化題 16 · 改自課本 <a href="#tm-1-37">1-37</a></p>
+  <p>$\vec A=r^n\vec r$（$n\gt-3$），$S$ 是半徑 $R$ 的球面。直接計算 $\oint_S\vec A\cdot\mathrm d\vec a$，並用 Gauss 定理驗證。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>直接：球面上 $\vec A\cdot\hat r=R^{n+1}$，乘面積 $4\pi R^2$ 得 $4\pi R^{n+3}$。</p>
+    <p>Gauss：$\nabla\cdot(r^n\vec r)=3r^n+r\cdot nr^{n-1}=(n+3)r^n$，$\int_0^R(n+3)r^n\cdot4\pi r^2\,\mathrm dr=4\pi R^{n+3}$ ✔（$n=2$ 就是 1-37）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-17">
+  <p class="q-src">變化題 17 · 改自課本 <a href="#tm-1-26">1-26</a></p>
+  <p>質點以固定速率 $v$ 沿 $r=k(1-\cos\theta)$ 運動，求 $\vec a\cdot\hat e_r$、$|\vec a|$ 與 $\dot\theta$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$1-\cos\theta=1+\cos(\theta-\pi)$：這條心臟線是原題轉了 $180^\circ$，令 $\theta'=\theta-\pi$ 就回到原題，結果把 $\cos\theta$ 換成 $-\cos\theta$：</p>
+    $$\vec a\cdot\hat e_r=-\frac{3v^2}{4k},\qquad |\vec a|=\frac{3v^2}{4k}\sqrt{\frac{2}{1-\cos\theta}},\qquad \dot\theta=\frac{v}{\sqrt{2kr}}$$
+    <p>也可以照原題重做一次：$v^2=k^2\dot\theta^2[\sin^2\theta+(1-\cos\theta)^2]=2k^2\dot\theta^2(1-\cos\theta)$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="var-18">
+  <p class="q-src">變化題 18 · 改自課本 <a href="#tm-1-30">1-30</a>（證明題）</p>
+  <p>證明 $\nabla\cdot(\phi\vec A)=\phi\,\nabla\cdot\vec A+\vec A\cdot\nabla\phi$ 與 $\nabla\times(\phi\vec A)=\phi\,\nabla\times\vec A+(\nabla\phi)\times\vec A$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>散度：$\sum_i\frac{\partial(\phi A_i)}{\partial x_i}=\phi\sum_i\frac{\partial A_i}{\partial x_i}+\sum_iA_i\frac{\partial\phi}{\partial x_i}$。</p>
+    <p>旋度的 $x$ 分量：$\frac{\partial(\phi A_z)}{\partial y}-\frac{\partial(\phi A_y)}{\partial z}=\phi\Big(\frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z}\Big)+\Big(\frac{\partial\phi}{\partial y}A_z-\frac{\partial\phi}{\partial z}A_y\Big)$，括號依序是 $(\nabla\times\vec A)_x$ 與 $(\nabla\phi\times\vec A)_x$；$y,z$ 分量同理（講義 p.99 用的就是這個式子）。</p>
+  </details>
+</div>

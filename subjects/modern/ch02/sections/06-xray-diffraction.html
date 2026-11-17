@@ -1,0 +1,219 @@
+<h2>六、X 射線繞射 <span class="pg">課本 §2.6 · p.72–75</span></h2>
+
+<p class="lead">晶體中規則排列的原子像一組三維光柵：每個原子把 X 光向四面八方散射，只有在特定方向上各層散射波同相、互相加強。這個條件就是 Bragg 定律 $2d\sin\theta=n\lambda$，用它可以由晶格間距量 X 光波長，或反過來由波長量晶格。</p>
+
+<h3 id="m2-bg-scatter">6.1 原子怎麼散射電磁波 <span class="pg-tag">p.72–73</span></h3>
+
+<p>原子放在固定的電場中會被極化：帶負電的電子和帶正電的原子核受到方向相反的力，電荷分布稍微錯開，等效成一個電偶極。這些力比原子內部的結合力小得多，所以只是輕微變形。</p>
+
+<p>在頻率 $\nu$ 的電磁波交變電場中，極化方向以同樣的頻率來回變化，原子就成了一個<strong>振盪的電偶極</strong>，以入射波的部分能量為代價，向偶極軸以外的所有方向放出頻率 $\nu$ 的次波（一堆原子受非偏振光照射時，各原子的貢獻方向是隨機的，「沿偶極軸不輻射」這個限制就不適用）。換成波動的說法：原子吸收入射的平面波，再放出同頻率的球面波（Fig. 2.18）。</p>
+
+<h3 id="m2-bg-law">6.2 Bragg 平面與 Bragg 條件 <span class="pg-tag">p.73–74</span></h3>
+
+<p>單色 X 光射進晶體，會被散射到各個方向。但因為原子規則排列，某些方向上散射波互相建設性干涉，其他方向破壞性干涉。晶體中的原子可以看成一族族平行平面（Fig. 2.19），每一族有自己的間距，這些平面叫 <strong>Bragg 平面</strong>（W. L. Bragg，1913）。</p>
+
+<div class="step" data-step="m2-bg-derive" data-sym="d,thB,n">
+  <span class="step-title">兩個條件（Fig. 2.20）</span>
+  <p>波長 $\lambda$ 的 X 光以 $\theta$ 角射向間距 $d$ 的 Bragg 平面（$\theta$ 是和<strong>平面</strong>的夾角）。光線 I 經過第一層的原子 A，光線 II 經過下一層的原子 B，兩者都往各方向散射。要互相加強，散射出去的兩條光線必須平行，而且路程差是波長的整數倍 $n\lambda$。</p>
+  <p><strong>條件一</strong>：散射角等於入射角 $\theta$，和光學的鏡面反射相同（與波長無關）。</p>
+  <p><strong>條件二</strong>：從 A 對兩條光線作垂線，光線 II 在射入時多走 $d\sin\theta$、射出時又多走 $d\sin\theta$，總共多走 $2d\sin\theta$：</p>
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.74 Eq. (2.13) Bragg condition</span>
+  $$2d\sin\theta=n\lambda,\qquad n=1,2,3,\dots$$
+  <p>整數 $n$ 是散射光束的<strong>階數</strong>（order）。</p>
+</div>
+
+<div class="anim" data-anim="m2-bragg"></div>
+
+<p>因為 $\sin\theta\le1$，必須 $\lambda\le2d$ 才可能有繞射；可見光波長比原子間距（約 $0.1$–$0.3\ \text{nm}$）大數千倍，所以晶體不繞射可見光，而光柵也刻不出 X 光所需的細縫——這就是 von Laue 要用晶體的原因。</p>
+
+<div class="box pitfall">
+  <span class="box-title">$\theta$ 是和晶面的夾角</span>
+  <p>Bragg 角不是和法線的夾角，入射光與散射光之間的偏折是 $2\theta$。「最小的 Bragg 散射角」指 $n=1$。</p>
+</div>
+
+<h3 id="m2-bg-spec">6.3 X 光光譜儀 <span class="pg-tag">p.74–75</span></h3>
+
+<p>Fig. 2.21：細的 X 光束以 $\theta$ 角射向晶體，偵測器放在散射角也是 $\theta$ 的位置，所以收到的 X 光都滿足條件一。轉動晶體改變 $\theta$，偵測器會在滿足 (2.13) 的各階位置記錄到強度峰值。已知晶體的 Bragg 平面間距 $d$，就能算出 X 光波長 $\lambda$。</p>
+
+<div class="problem" data-kind="textbook" id="bz-2-22">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-22 · p.90</span></div>
+    <h4>氯化鉀的原子平面間距</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-22">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-22"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The smallest angle of Bragg scattering in potassium chloride (KCl) is 28.4° for 0.30-nm x-rays. Find the distance between atomic planes in potassium chloride.</p></div>
+<p class="original-caption">Beiser 習題 2-22 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$0.30\ \text{nm}$ 的 X 光在氯化鉀（KCl）中最小的 Bragg 散射角是 $28.4^\circ$。求氯化鉀中原子平面的間距。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：X 光波長 $\lambda=0.30\ \text{nm}$，Bragg 角 $\theta=28.4^\circ$（和晶面的夾角），$n$ 為繞射階數，$d$ 為原子平面間距。</p>
+<p><strong>① 最小角對應 $n=1$：</strong> 各層原子平面的散射波要互相加強，路程差 $2d\sin\theta$ 必須是波長的整數倍。</p>
+<p class="fnote"><b>公式（Bragg 條件）：</b>$2d\sin\theta=n\lambda$，其中 $d$ 為晶面間距、$\theta$ 為入射線與晶面的夾角、$n$ 為正整數階數、$\lambda$ 為波長；本題 $\lambda=0.30\ \text{nm}$、$\theta=28.4^\circ$。</p>
+<p>改寫成</p>
+<div class="math-block">$$\sin\theta_n=\frac{n\lambda}{2d}$$</div>
+<p>$n$ 越大 $\sin\theta$ 越大、角度越大，所以最小的散射角對應 $n=1$。</p>
+<p><strong>② 解出 $d$：</strong></p>
+<div class="math-block">$$2d\sin\theta=n\lambda\ \Longrightarrow\ d=\frac{n\lambda}{2\sin\theta}$$</div>
+<p>代入 $n=1$、$\lambda=0.30\ \text{nm}$、$\theta=28.4^\circ$，$\sin28.4^\circ=0.476$：</p>
+<div class="math-block">$$\begin{aligned}d&amp;=\frac{(1)(0.30\ \text{nm})}{2\sin28.4^\circ}=\frac{0.30\ \text{nm}}{2(0.476)}\\&amp;=0.32\ \text{nm}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{d\approx0.32\ \text{nm}\ (0.315\ \text{nm})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-23">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-23 · p.90</span></div>
+    <h4>方解石的最小 Bragg 角</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-23">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The distance between adjacent atomic planes in calcite (CaCO<sub>3</sub>) is 0.300 nm. Find the smallest angle of Bragg scattering for 0.030-nm x-rays.</p></div>
+<p class="original-caption">Beiser 習題 2-23 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>方解石（CaCO₃）中相鄰原子平面的距離是 $0.300\ \text{nm}$。求 $0.030\ \text{nm}$ 的 X 光最小的 Bragg 散射角。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：晶面間距 $d=0.300\ \text{nm}$，X 光波長 $\lambda=0.030\ \text{nm}$，$n$ 為繞射階數，$\theta$ 為和晶面的夾角。</p>
+<p><strong>① 解出 $\sin\theta$：</strong> 繞射峰出現在各層散射波同相的方向；同一組晶面的散射角隨 $n$ 增大，所以最小角取 $n=1$。</p>
+<p class="fnote"><b>公式（Bragg 條件）：</b>$2d\sin\theta=n\lambda$，其中 $d$ 為晶面間距、$\theta$ 為入射線與晶面的夾角、$n$ 為正整數階數、$\lambda$ 為波長；本題 $d=0.300\ \text{nm}$、$\lambda=0.030\ \text{nm}$、$n=1$。</p>
+<div class="math-block">$$2d\sin\theta=n\lambda\ \Longrightarrow\ \sin\theta=\frac{n\lambda}{2d}$$</div>
+<p>代入 $n=1$、$\lambda=0.030\ \text{nm}$、$d=0.300\ \text{nm}$：</p>
+<div class="math-block">$$\sin\theta=\frac{(1)(0.030\ \text{nm})}{2(0.300\ \text{nm})}=\frac{0.030}{0.600}=0.050$$</div>
+<p><strong>② 反正弦：</strong></p>
+<div class="math-block">$$\theta=\sin^{-1}0.050=2.9^\circ$$</div>
+<div class="math-block">$$\boxed{\theta\approx2.9^\circ}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-24">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-24 · p.90</span></div>
+    <h4>由密度求岩鹽的原子間距</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-24">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-24"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the atomic spacing in a crystal of rock salt (NaCl), whose structure is shown in Fig. 2.19. The density of rock salt is 2.16 × 10<sup>3</sup> kg/m<sup>3</sup> and the average masses of the Na and Cl atoms are respectively 3.82 × 10<sup>−26</sup> kg and 5.89 × 10<sup>−26</sup> kg.</p></div>
+<p class="original-caption">Beiser 習題 2-24 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求岩鹽（NaCl）晶體的原子間距，結構如 Fig. 2.19。岩鹽密度 $2.16\times10^{3}\ \text{kg/m}^3$，Na 和 Cl 原子的平均質量分別是 $3.82\times10^{-26}\ \text{kg}$ 和 $5.89\times10^{-26}\ \text{kg}$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：密度 $\rho=2.16\times10^{3}\ \text{kg/m}^3$，$m_{\text{Na}}=3.82\times10^{-26}\ \text{kg}$、$m_{\text{Cl}}=5.89\times10^{-26}\ \text{kg}$；依 Fig. 2.19，Na 與 Cl 交替排在邊長 $a$ 的小立方體頂點上，數目比 $1:1$；$a$ 為相鄰 Na 與 Cl 的距離。</p>
+<p><strong>① 每個原子占 $a^3$：</strong> 密度是巨觀量、原子質量是微觀量，兩者的橋樑是「每個原子平均占多少體積」。每個小立方體有 8 個頂點，每個頂點上的原子由周圍 8 個小立方體共用：</p>
+<div class="math-block">$$\text{每個小立方體的原子數}=8\times\frac18=1$$</div>
+<p>所以平均每個原子占體積 $a^3$。Na、Cl 數目相等，平均每個原子的質量</p>
+<div class="math-block">$$\bar m=\tfrac12(m_{\text{Na}}+m_{\text{Cl}})$$</div>
+<p><strong>② 密度關係，解出 $a$：</strong></p>
+<p class="fnote"><b>公式（密度）：</b>$\rho=\dfrac{m}{V}$，其中 $m$ 為質量、$V$ 為體積；本題取一個原子：$m=\bar m$、$V=a^3$。</p>
+<div class="math-block">$$\rho=\frac{\bar m}{a^3}\ \Longrightarrow\ a^3=\frac{m_{\text{Na}}+m_{\text{Cl}}}{2\rho}$$</div>
+<p><strong>③ 代入數字：</strong> 代入 $m_{\text{Na}}=3.82\times10^{-26}\ \text{kg}$、$m_{\text{Cl}}=5.89\times10^{-26}\ \text{kg}$、$\rho=2.16\times10^{3}\ \text{kg/m}^3$：</p>
+<div class="math-block">$$\begin{aligned}a^3&amp;=\frac{(3.82+5.89)\times10^{-26}\ \text{kg}}{2(2.16\times10^{3}\ \text{kg/m}^3)}\\&amp;=\frac{9.71\times10^{-26}}{4.32\times10^{3}}\ \text{m}^3\end{aligned}$$</div>
+<div class="math-block">$$a^3=2.25\times10^{-29}\ \text{m}^3=22.5\times10^{-30}\ \text{m}^3$$</div>
+<p>寫成 $10^{-30}$ 的倍數，開立方才方便（$(10^{-30})^{1/3}=10^{-10}$）：</p>
+<div class="math-block">$$a=(22.5)^{1/3}\times10^{-10}\ \text{m}=2.82\times10^{-10}\ \text{m}$$</div>
+<div class="math-block">$$\boxed{a\approx2.82\times10^{-10}\ \text{m}=0.282\ \text{nm}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-06a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>固定 Bragg 角同時反射幾個波長</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-06a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 NaCl 晶體（$d=0.282\ \text{nm}$）當 X 光光譜儀，入射光是 $30\ \text{kV}$ X 光管發出的連續譜。(a) 偵測器固定在掠射角 $\theta=10.0^\circ$，哪些波長會被 Bragg 反射進偵測器（考慮所有的 $n$）？(b) 管電壓要在什麼範圍內，偵測器在這個角度才會收到 X 光、而且只收到第一階？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$d=0.282\ \text{nm}$ 為 NaCl 晶面間距，$\theta=10.0^\circ$ 為掠射角，$n$ 為繞射階數；入射光是 $V=3.0\times10^{4}\ \text{V}$ X 光管的連續譜，只含 $\lambda\ge\lambda_{\min}$ 的成分。</p>
+<h4>(a) 被反射進偵測器的波長</h4>
+<p><strong>① 各階會被反射的波長：</strong> $d$、$\theta$ 都固定，Bragg 條件對每個整數 $n$ 給出一個波長，偵測器原則上收到一整串。</p>
+<p class="fnote"><b>公式（Bragg 條件）：</b>$2d\sin\theta=n\lambda$，其中 $d$ 為晶面間距、$\theta$ 為入射光和晶面的掠射角、$n=1,2,3,\dots$ 為階數、$\lambda$ 為被反射的波長；本題 $d=0.282\ \text{nm}$、$\theta=10.0^\circ$。</p>
+<div class="math-block">$$\lambda_n=\frac{2d\sin\theta}{n}$$</div>
+<p>代入 $d=0.282\ \text{nm}$、$\sin10.0^\circ=0.1736$：</p>
+<div class="math-block">$$\lambda_n=\frac{2(0.282\ \text{nm})(0.1736)}{n}=\frac{97.9\ \text{pm}}{n}$$</div>
+<p>$n=1,2,3,4$ 依序為 $97.9$、$49.0$、$32.6$、$24.5\ \text{pm}$……</p>
+<p><strong>② X 光管的截止波長：</strong> 連續譜只有不短於截止波長的成分，要用它把太短的波長篩掉。</p>
+<p class="fnote"><b>公式（Duane–Hunt 定律）：</b>$\lambda_{\min}=\dfrac{hc}{eV}=\dfrac{1.24\times10^{-6}\ \text{V·m}}{V}$，其中 $\lambda_{\min}$ 為 X 光管連續譜的最短波長、$V$ 為管電壓；本題 $V=3.0\times10^{4}\ \text{V}$。</p>
+<div class="math-block">$$\begin{aligned}\lambda_{\min}&amp;=\frac{1.24\times10^{-6}\ \text{V·m}}{3.0\times10^{4}\ \text{V}}\\&amp;=4.13\times10^{-11}\ \text{m}\\&amp;=41.3\ \text{pm}\end{aligned}$$</div>
+<p><strong>③ 用截止波長篩選：</strong> 把 ① 的各階和 $\lambda_{\min}=41.3\ \text{pm}$ 比較：</p>
+<div class="math-block">$$\begin{aligned}n=1:&amp;\ 97.9\ \text{pm}\gt41.3\ (\text{有})\\n=2:&amp;\ 49.0\ \text{pm}\gt41.3\ (\text{有})\\n=3:&amp;\ 32.6\ \text{pm}\lt41.3\ (\text{沒有})\end{aligned}$$</div>
+<p>$n\ge3$ 的波長都比 $\lambda_{\min}$ 短，X 光管根本沒有發出。</p>
+<div class="math-block">$$\boxed{\begin{gathered}97.9\ \text{pm}\ (\text{第一階})\\ 49.0\ \text{pm}\ (\text{第二階})\end{gathered}}$$</div>
+<h4>(b) 只收到第一階的電壓範圍</h4>
+<p><strong>① 第二階不能出現：電壓上限：</strong> 「只收到第一階」要兩個條件同時成立，各換成一個電壓界限。先要 $\lambda_2=49.0\ \text{pm}$ 不在譜中，需要 $\lambda_{\min}\gt\lambda_2$，也就是 $1.24\times10^{-6}/V\gt\lambda_2$。</p>
+<p>代入 (a) 的 $\lambda_2=49.0\times10^{-12}\ \text{m}$：</p>
+<div class="math-block">$$V\lt\frac{1.24\times10^{-6}\ \text{V·m}}{49.0\times10^{-12}\ \text{m}}=25.3\ \text{kV}$$</div>
+<p><strong>② 第一階要出現：電壓下限：</strong> 要 $\lambda_1=97.9\ \text{pm}$ 在譜中，需要 $\lambda_{\min}\le\lambda_1$。</p>
+<p>代入 (a) 的 $\lambda_1=97.9\times10^{-12}\ \text{m}$：</p>
+<div class="math-block">$$V\ge\frac{1.24\times10^{-6}\ \text{V·m}}{97.9\times10^{-12}\ \text{m}}=12.7\ \text{kV}$$</div>
+<p>電壓低於 $12.7\ \text{kV}$ 時這個角度什麼都收不到；兩個條件合起來：</p>
+<div class="math-block">$$\boxed{12.7\ \text{kV}\le V\lt25.3\ \text{kV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-06b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>鉬 K$\alpha$ 雙線分得開嗎</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-06b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>鉬的 K$\alpha$ 特性譜線其實是兩條很接近的線：$70.93\ \text{pm}$ 和 $71.36\ \text{pm}$。用方解石（$d=0.300\ \text{nm}$）晶體光譜儀觀察。(a) 由 Bragg 條件推出波長差 $\Delta\lambda$ 和角度差 $\Delta\theta$ 的關係。(b) 第一階時兩線的角距是多少度？用精確的 $\arcsin$ 驗算。(c) 改用第二階，角距變多少？為什麼高階比較容易分開？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：兩條線 $\lambda_a=70.93\ \text{pm}$、$\lambda_b=71.36\ \text{pm}$，波長差 $\Delta\lambda=0.43\ \text{pm}$；方解石 $d=0.300\ \text{nm}=300\ \text{pm}$，$2d=600\ \text{pm}$（統一用 pm 計算）。</p>
+<h4>(a) $\Delta\lambda$ 與 $\Delta\theta$ 的關係</h4>
+<p><strong>① 微分 Bragg 條件：</strong> 兩線波長只差 $0.6\%$，Bragg 角也只差一點點，所以對 Bragg 條件取微分（$d$、$n$ 固定）得到小變化之間的線性關係。</p>
+<p class="fnote"><b>公式（Bragg 條件）：</b>$n\lambda=2d\sin\theta$，其中 $n$ 為階數、$\lambda$ 為波長、$d$ 為晶面間距、$\theta$ 為掠射角；本題 $2d=600\ \text{pm}$。</p>
+<p>左邊 $\mathrm d(n\lambda)=n\,\mathrm d\lambda$，右邊 $\mathrm d(2d\sin\theta)=2d\cos\theta\,\mathrm d\theta$：</p>
+<div class="math-block">$$n\,\Delta\lambda=2d\cos\theta\,\Delta\theta\ \Rightarrow\ \Delta\theta=\frac{n\,\Delta\lambda}{2d\cos\theta}$$</div>
+<div class="math-block">$$\boxed{\Delta\theta=\frac{n\,\Delta\lambda}{2d\cos\theta}\ (\text{弧度})}$$</div>
+<h4>(b) 第一階的角距</h4>
+<p><strong>① 第一階的 Bragg 角：</strong> 由 $\sin\theta=n\lambda/2d$，代入 $n=1$、$\lambda_a=70.93\ \text{pm}$、$2d=600\ \text{pm}$：</p>
+<div class="math-block">$$\sin\theta_1=\frac{70.93}{600}=0.1182,\qquad\theta_1=6.789^\circ$$</div>
+<p><strong>② 第一階的角距：</strong> 代入 $n=1$、$\Delta\lambda=0.43\ \text{pm}$、$2d=600\ \text{pm}$、上一步的 $\cos6.79^\circ=0.9930$：</p>
+<div class="math-block">$$\begin{aligned}\Delta\theta&amp;=\frac{0.43\ \text{pm}}{(600\ \text{pm})(0.9930)}\\&amp;=7.22\times10^{-4}\ \text{rad}\end{aligned}$$</div>
+<p>換成度，乘 $180^\circ/\pi=57.30^\circ$：</p>
+<div class="math-block">$$\Delta\theta=7.22\times10^{-4}\times57.30^\circ=0.0414^\circ$$</div>
+<p><strong>③ 精確 $\arcsin$ 驗算（題目要求）：</strong> 直接算第二條線的 Bragg 角再相減：</p>
+<div class="math-block">$$\arcsin\frac{71.36}{600}=6.831^\circ,\qquad6.831^\circ-6.789^\circ=0.0414^\circ$$</div>
+<p>和微分結果一致，因為 $\Delta\lambda/\lambda=0.6\%$ 很小。</p>
+<div class="math-block">$$\boxed{\Delta\theta\approx0.041^\circ\ (0.0414^\circ)}$$</div>
+<h4>(c) 第二階的角距與高階較易分開的原因</h4>
+<p><strong>① 第二階的 Bragg 角：</strong> 代入 $n=2$：</p>
+<div class="math-block">$$\sin\theta=\frac{2(70.93)}{600}=0.2364,\qquad\theta=13.68^\circ$$</div>
+<p><strong>② 第二階的角距：</strong> 代入 $n=2$、$\Delta\lambda=0.43\ \text{pm}$、$\cos13.68^\circ=0.9716$：</p>
+<div class="math-block">$$\begin{aligned}\Delta\theta&amp;=\frac{2(0.43)}{600\,(0.9716)}\ \text{rad}\\&amp;=1.48\times10^{-3}\ \text{rad}\\&amp;=0.0845^\circ\end{aligned}$$</div>
+<p>角距約變兩倍（再乘上 $\cos6.79^\circ/\cos13.68^\circ=1.02$）。</p>
+<p><strong>③ 為什麼高階比較容易分開：</strong> 由 (a)，$\Delta\theta\propto n/\cos\theta$：同樣的 $\Delta\lambda$ 在第 $n$ 階被放大成 $n$ 倍的路程差（$n\,\Delta\lambda$），而且高階角度大、$\cos\theta$ 小，又再放大一點。所以高階的色散比較大、比較容易分開；代價是高階反射比較弱。</p>
+<div class="math-block">$$\boxed{\Delta\theta\approx0.085^\circ\ (0.0845^\circ)\text{，約為第一階的兩倍}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>原子在交變電場中成為振盪偶極，放出同頻率的球面次波。</li>
+    <li>Bragg：散射角＝入射角，且 $2d\sin\theta=n\lambda$（$\theta$ 是和晶面的夾角）。</li>
+    <li>需 $\lambda\le2d$；光譜儀轉晶體找峰值，已知 $d$ 求 $\lambda$。</li>
+  </ol>
+</div>

@@ -1,0 +1,81 @@
+<h2 id="kp-10">H-3. 課本第 4 章第 18 題：由功率求照度，再求電場／磁場</h2>
+<p><strong>來源</strong>：Pedrotti 第 4 章 Problem 18，印刷第 112 頁。</p>
+<p><strong>中文：</strong></p>
+<p><strong>(a)</strong> 一盞<strong>電功率 220 W</strong> 的燈，假設只有 <strong>5%</strong> 轉為光，且光均勻向各方向傳播。求離燈 <strong>10 m</strong> 處的輻射照度與<strong>電場振幅</strong>。</p>
+<p><strong>(b)</strong> 一束 <strong>2000 W</strong> 的雷射光經透鏡集中到截面積約 <strong>$1\times10^{-6}\ \mathrm{cm^2}$</strong>，求照度和<strong>電場、磁場振幅</strong>。</p>
+<p><strong>注意：</strong> 題目未給介質折射率，以下以空氣近似真空、忽略損耗與聚焦的非理想效應，依課本標準估算。</p>
+<h4>H-3(a) 燈泡：功率不等於全部光功率</h4>
+<p class="symnote">符號：$P_\mathrm{in}=220\ \mathrm W$ 為耗電功率、$\eta=0.05$ 為光轉換效率、$P_\mathrm{light}$ 為向外輻射的光功率。</p>
+<p><strong>① 先算真正變成光的功率：</strong></p>
+<div class="math-block">$$P_\mathrm{light}=\eta P_\mathrm{in}=0.05(220)=\boxed{11\ \mathrm W}.$$</div>
+<p><strong>② 球面面積與照度：</strong> 光均勻向四周傳播，$r=10\ \mathrm m$ 處的球面面積：</p>
+<div class="math-block">$$A=4\pi r^2=4\pi(10)^2=400\pi\ \mathrm{m^2}.$$</div>
+<p>照度是單位面積上的平均功率：</p>
+<div class="math-block">$$
+\begin{aligned}
+I&amp;=\frac{P_\mathrm{light}}{A}=\frac{11}{400\pi}\\
+&amp;=\boxed{8.75352\times10^{-3}\ \mathrm{W/m^2}}.
+\end{aligned}
+$$</div>
+<p><strong>③ 照度轉電場振幅：</strong> 由 $I=\tfrac12\varepsilon_0c_0E_0^2$ 移項：</p>
+<div class="math-block">$$E_0=\sqrt{\frac{2I}{\varepsilon_0c_0}}.$$</div>
+<p>代入：</p>
+<div class="math-block">$$
+\begin{aligned}
+E_0&amp;=\sqrt{\frac{2(8.75352\times10^{-3})}{(8.8542\times10^{-12})(3\times10^8)}}\\
+&amp;=\boxed{2.56727\ \mathrm{V/m}}.
+\end{aligned}
+$$</div>
+<h4>H-3(b) 雷射：聚焦面積特別小，要先換單位</h4>
+<p><strong>① 換算截面積：</strong> $1\ \mathrm{cm}=10^{-2}\ \mathrm m$，面積要<strong>平方</strong>：</p>
+<div class="math-block">$$1\ \mathrm{cm^2}=(10^{-2}\ \mathrm m)^2=10^{-4}\ \mathrm{m^2}.$$</div>
+<p>因此：</p>
+<div class="math-block">$$A=10^{-6}\times10^{-4}=\boxed{10^{-10}\ \mathrm{m^2}}.$$</div>
+<p><strong>② 求雷射照度：</strong></p>
+<div class="math-block">$$
+I=\frac PA=\frac{2000}{10^{-10}}
+=\boxed{2.00\times10^{13}\ \mathrm{W/m^2}}.
+$$</div>
+<p><strong>③ 求電場振幅：</strong></p>
+<p class="fnote"><b>公式（照度與振幅）：</b>$I=\dfrac12\varepsilon_0c_0E_0^2\ \Rightarrow\ E_0=\sqrt{\dfrac{2I}{\varepsilon_0c_0}}$，其中 $I$ 為平均照度（W/m²）、$\varepsilon_0$ 為真空介電常數（F/m）、$c_0$ 為真空光速（m/s）、$E_0$ 為電場振幅（V/m）；本題 $I=2.00\times10^{13}\ \mathrm{W/m^2}$。</p>
+<div class="math-block">$$
+\begin{aligned}
+E_0&amp;=\sqrt{\frac{2I}{\varepsilon_0c_0}}\\
+&amp;=\sqrt{\frac{2(2\times10^{13})}{(8.8542\times10^{-12})(3\times10^8)}}\\
+&amp;=\boxed{1.22714\times10^8\ \mathrm{V/m}}.
+\end{aligned}
+$$</div>
+<p><strong>④ 求磁場振幅：</strong> 用 $B_0=E_0/c_0$：</p>
+<div class="math-block">$$
+\begin{aligned}
+B_0&amp;=\frac{E_0}{c_0}\\
+&amp;=\frac{1.22714\times10^8}{3.00\times10^8}\\
+&amp;=\boxed{0.409047\ \mathrm T}.
+\end{aligned}
+$$</div>
+<p><strong>4-18 答案小結：</strong></p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>小題</th>
+<th>輻射照度 $I$</th>
+<th>電場振幅 $E_0$</th>
+<th>磁場振幅 $B_0$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(a) 燈泡 10 m 處</td>
+<td>$8.75352\times10^{-3}$ W/m²</td>
+<td>$2.56727$ V/m</td>
+<td>非原題要求</td>
+</tr>
+<tr>
+<td>(b) 聚焦雷射</td>
+<td>$2.00\times10^{13}$ W/m²</td>
+<td>$1.22714\times10^8$ V/m</td>
+<td>$0.409047$ T</td>
+</tr>
+</tbody>
+</table></div>
+<p>解題主線：電功率還是光功率？→ 光通過哪個面積？→ $I=P/A$ → $I=\varepsilon_0c_0E_0^2/2$ → $B_0=E_0/c_0$。</p>

@@ -1,0 +1,56 @@
+<h2>五、牛頓定律與解運動方程 <span class="pg">Lecture 2 §1–4</span></h2>
+
+<h3 id="fx-laws">5.1 牛頓三定律</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">第二定律</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2s-second" title="3.1 第二定律">L2 §3.1</a></span></div>
+  <div class="math-block">$$\vec F=\frac{\mathrm d\vec p}{\mathrm dt},\qquad \vec p=m\vec v;\qquad m\text{ 不變時 }\vec F=m\ddot{\vec r}$$</div>
+  <p>$\vec F$ 是所有外力的合力。向量式要拆成各軸分別寫：$F_x=m\ddot x$、$F_y=m\ddot y$、$F_z=m\ddot z$。質量會變（火箭、繩子）或相對論時要回到 $\mathrm d\vec p/\mathrm dt$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">第三定律與動量守恆</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2s-third" title="3.2 第三定律與動量守恆">L2 §3.2</a></span></div>
+  <div class="math-block">$$\vec F_{12}=-\vec F_{21}\ \Longrightarrow\ \frac{\mathrm d}{\mathrm dt}(\vec p_1+\vec p_2)=0$$</div>
+  <p>作用力與反作用力作用在<strong>不同</strong>物體上，所以不會互相抵消；兩個物體合起來看，內力抵消，總動量守恆（沒有外力時）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">用第三定律定義質量</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2s-mass" title="3.3 用第三定律定義質量 課本">L2 §3.3</a></span></div>
+  <div class="math-block">$$m_1\vec a_1=-m_2\vec a_2\ \Longrightarrow\ \frac{m_2}{m_1}=-\frac{a_1}{a_2}$$</div>
+  <p>兩物體只互相作用時，量加速度的比就能得到質量比（選一個當標準質量），不必先知道力。</p>
+</div>
+
+<h3 id="fx-frames">5.2 座標系</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">伽利略轉換</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2l-sym" title="1.4 對稱性與伽利略對稱">L2 §1.4</a></span></div>
+  <div class="math-block">$$\vec r\,'=\vec r-\vec Vt\ \Longrightarrow\ \dot{\vec r}\,'=\dot{\vec r}-\vec V,\qquad \ddot{\vec r}\,'=\ddot{\vec r}$$</div>
+  <p>等速度相對運動的兩個座標系量到的加速度相同，所以 $F=ma$ 在兩邊形式一樣（伽利略不變性）。只要座標系有加速度，就不再是慣性座標系。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">地球自轉的向心加速度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2f-earth" title="2.3 地球是慣性座標系嗎">L2 §2.3</a></span></div>
+  <div class="math-block">$$a=\omega^2R\cos\lambda,\qquad \text{赤道 }a=\frac{v^2}R\approx3.4\times10^{-2}\ \text{m/s}^2$$</div>
+  <p>約為 $g$ 的 0.3%，所以一般問題把地面當慣性座標系。赤道上體重計讀數 $F_{\text{scale}}=mg-mv^2/R$，比真正的重力小一點。</p>
+  <p class="symnote">符號：$\lambda$＝緯度，$R$＝地球半徑，$\omega=2\pi/(1\ \text{天})$。</p>
+</div>
+
+<h3 id="fx-strategy">5.3 解 $F=m\ddot x$ 的策略</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">$\ddot x$ 的三種寫法</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2st-tips" title="4.2 依照題目要的量整理方程式">L2 §4.2</a></span></div>
+  <div class="math-block">$$\ddot x=\frac{\mathrm dv}{\mathrm dt}=v\frac{\mathrm dv}{\mathrm dx}=\frac12\frac{\mathrm d(v^2)}{\mathrm dx}$$</div>
+  <p>題目要 $v(t)$ 就用第一種；要 $v(x)$（距離、速率和位置的關係）就用後兩種，時間會消失。這是本章最重要的一條。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">依力的形式選寫法</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2st-form" title="4.1 力可以和什麼有關">L2 §4.1</a></span></div>
+  <div class="math-block">$$F(t):\ v=v_0+\frac1m\int_0^tF\,\mathrm dt;\qquad F(v):\ t=\int\frac{m\,\mathrm dv}{F(v)},\ \ x=\int\frac{mv\,\mathrm dv}{F(v)};\qquad F(x):\ \tfrac12mv^2=\int F\,\mathrm dx+C$$</div>
+  <p>原則：讓方程式一邊只有一個變數就能積分。力和兩個以上的量有關（例如 $F(x,v)$）一般不能直接分離變數。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">等加速度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch02" href="#c2i-friction" title="5.2 靜摩擦與動摩擦">L2 §5.2</a></span></div>
+  <div class="math-block">$$v=v_0+at,\qquad x=x_0+v_0t+\tfrac12at^2,\qquad v^2=v_0^2+2a(x-x_0)$$</div>
+  <p>只有加速度是常數時才能用（斜面、無阻力拋體）；有阻力時加速度隨速度變，不能用。</p>
+</div>

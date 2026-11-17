@@ -1,0 +1,629 @@
+<h2>十、混合熵與可逆過程 <span class="pg">課本 §2.6 · p.79–84</span></h2>
+
+<p class="lead">兩種不同的氣體混合會產生熵；同一種氣體「混合」卻不會。這個差別完全來自多重度裡的 $1/N!$。最後用熵定義可逆與不可逆：產生新熵的過程不能反向。</p>
+
+<h3 id="tm-mix">10.1 混合熵 <span class="pg-tag">p.79–80</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.79–80 Eq. (2.53)–(2.54) 混合熵（entropy of mixing）</span>
+  $$\Delta S_A=Nk\ln\frac{V_f}{V_i}=Nk\ln2,\qquad\Delta S_{\text{total}}=\Delta S_A+\Delta S_B=2Nk\ln2$$
+  <p>兩種不同的單原子理想氣體 A、B，能量、體積、分子數都相同，各佔隔板兩邊（Fig. 2.15）。拿掉隔板後，每種氣體都膨脹成兩倍體積；可以把兩種氣體當成各自獨立的系統來算。只適用於<strong>不同</strong>的氣體（例如氦和氬）。</p>
+</div>
+
+<p>為什麼可以「各算各的」？理想氣體分子之間沒有交互作用，A 分子不在乎有沒有 B 分子在旁邊；對 A 而言，拿掉隔板就是一次自由膨脹，$U$、$N$ 不變、$V$ 加倍。B 也一樣。如果兩邊是同一種氣體，拿掉隔板後巨觀上什麼都沒變（同溫、同密度），熵不增加。嚴格說總多重度確實變大了（兩邊的分子數分配可以擾動），但只大了一個「大的」因子，對熵沒有影響。</p>
+
+<div class="anim" data-anim="t2-mixing"></div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-mix">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.6 Eq. (2.54)–(2.56) · p.80</span></div>
+    <h4>加一莫耳氬和加一莫耳氦有什麼不同</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-mix">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>容器（體積 $V$）裡有一莫耳氦，熵由 Sackur–Tetrode 公式給出。(a) 再加入一莫耳熱能也是 $U$ 的氬，總熵是多少？(b) 改成再加入一莫耳氦（總能量 $2U$），總熵是多少？兩者差在哪？(c) 一莫耳氦和一莫耳氬原本各佔一半容器、同溫同壓，拿掉隔板後熵增加多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氦</td><td>1 mol，體積 $V$、能量 $U$，熵 $S_{\text{He}}$</td><td>「一莫耳氦，熵由 Sackur–Tetrode 公式給出」</td></tr>
+          <tr><td>(a) 加入</td><td>1 mol 氬，能量 $U$，同一個 $V$</td><td>「再加入一莫耳熱能也是 $U$ 的氬」</td></tr>
+          <tr><td>(b) 加入</td><td>再 1 mol 氦：$N\to2N$、$U\to2U$、$V$ 不變</td><td>「改成再加入一莫耳氦（總能量 $2U$）」</td></tr>
+          <tr><td>(c) 起始</td><td>各 1 mol 氦、氬，各佔一半，同溫同壓</td><td>「原本各佔一半容器、同溫同壓」</td></tr>
+          <tr><td>理想氣體</td><td>不同種分子互不影響</td><td>理想氣體分子之間沒有交互作用</td></tr>
+          <tr><td>數值例的 $V$、$U$</td><td>$V=0.025\ \text{m}^3$、$U=3700\ \text{J}$</td><td>題目只寫 $V$、$U$；要算數字時沿用第 9 節「一莫耳氦的熵」例題（室溫一大氣壓）</td></tr>
+          <tr><td>氦的熵</td><td>$S_{\text{He}}=126\ \text{J/K}$</td><td>第 9 節例題用 Sackur–Tetrode 算出（同一組 $V$、$U$）</td></tr>
+          <tr><td>原子質量</td><td>$m_{\text{He}}=4\ \text{u}$、$m_{\text{Ar}}=40\ \text{u}$</td><td>題目沒給，用標準值（只有兩者的比值 10 會用到）</td></tr>
+          <tr><td>氣體常數</td><td>$Nk=R=8.31\ \text{J/K}$</td><td>1 mol</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 氦＋氬的總熵；(b) 氦＋氦的總熵，以及兩者差在哪；(c) 拿掉隔板後熵增加多少。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>理想氣體分子之間沒有交互作用，氬原子在不在旁邊都不影響氦原子可用的狀態，<b>所以</b>不同種氣體的總多重度是各自相乘，總熵是各自的 Sackur–Tetrode 相加。</p>
+      <p>同一種氣體就不能分開算：<b>因為</b> $2N$ 個氦原子彼此不可分辨，<b>所以</b>要把整團當成一個系統，$N\to2N$、$U\to2U$ 代入同一個公式；關鍵是 $V$ 底下的 $N$（來自 $1/N!$）。</p>
+      <p>(c) <b>因為</b>對每種氣體而言，拿掉隔板就是一次自由膨脹（$U$、$N$ 不變，$V$ 加倍），<b>所以</b>用 (2.51) 各算一次再相加。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tmxa" data-sym="S">
+        <span class="step-title">(a) 不同種：各算各的</span>
+        $$S_{\text{total}}=S_{\text{He}}+S_{\text{Ar}}$$
+        <p>兩者的 $V$、$U$、$N$ 相同，Sackur–Tetrode 中唯一不同的是對數裡的 $m^{3/2}$。兩式相減，其他項全部消掉：</p>
+        $$S_{\text{Ar}}-S_{\text{He}}=Nk\ln\left(\frac{m_{\text{Ar}}}{m_{\text{He}}}\right)^{3/2}=\frac32Nk\ln\frac{m_{\text{Ar}}}{m_{\text{He}}}$$
+        <p class="sub">代入 $Nk=R=8.31\ \text{J/K}$（1 mol）、$m_{\text{Ar}}/m_{\text{He}}=40\ \text{u}/4\ \text{u}=10$（標準值）：</p>
+        $$S_{\text{Ar}}-S_{\text{He}}=1.5\times8.31\ \text{J/K}\times\ln10=28.7\ \text{J/K}$$
+        <p class="sub">代入 $S_{\text{He}}=126\ \text{J/K}$（第 9 節例題，$V=0.025\ \text{m}^3$、$U=3700\ \text{J}$）：</p>
+        $$S_{\text{Ar}}=126+28.7\approx155\ \text{J/K},\qquad S_{\text{total}}=126+155=281\ \text{J/K}$$
+        <p>（和習題 2.33 直接算出的氬 155 J/K 相符。）若忽略質量差，$S_{\text{total}}\approx2S_{\text{He}}$。</p>
+      </div>
+      <div class="step" data-step="tmxb" data-sym="N,V">
+        <span class="step-title">(b) 同一種：$N\to2N$、$U\to2U$、$V$ 不變</span>
+        <p>代入同一個 Sackur–Tetrode：</p>
+        $$S=2Nk\left[\ln\left(\frac V{2N}\left(\frac{4\pi m(2U)}{3(2N)h^2}\right)^{3/2}\right)+\frac52\right]$$
+        <p>$\frac{2U}{2N}=\frac UN$ 不變；$\frac V{2N}=\frac12\cdot\frac VN$，對數多出 $\ln\frac12=-\ln2$：</p>
+        $$S=2Nk\left[\ln\left(\frac VN\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\frac52-\ln2\right]$$
+        $$S=2S_{\text{He}}-2Nk\ln2$$
+      </div>
+      <div class="step" data-step="sc-ex-mix-s3">
+        <span class="step-title">(a)(b) 差在哪</span>
+        <p>(a) 減 (b)（忽略質量差）：</p>
+        $$2S_{\text{He}}-\left(2S_{\text{He}}-2Nk\ln2\right)=2Nk\ln2$$
+        <p>加入不同的氣體，每種氣體都有整個 $V$ 可用；加入同樣的氣體，$2N$ 個不可分辨的原子共用同一個 $V$，每個原子分到的體積 $V/N$ 減半。差值正好是 (c) 的混合熵。</p>
+      </div>
+      <div class="step" data-step="tmxc">
+        <span class="step-title">(c) 數值</span>
+        <p>對氦：拿掉隔板是 $V/2\to V$ 的自由膨脹，$\Delta S_{\text{He}}=Nk\ln2$；氬也一樣：</p>
+        $$\Delta S_{\text{mix}}=2Nk\ln2=2R\ln2$$
+        <p class="sub">代入 $R=8.31\ \text{J/K}$（1 mol）：</p>
+        $$\Delta S_{\text{mix}}=2(8.31)(0.693)\ \text{J/K}=11.5\ \text{J/K}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $S_{\text{He}}+S_{\text{Ar}}\approx2S_{\text{He}}$；(b) $2S_{\text{He}}-2Nk\ln2$；(c) $2R\ln2=11.5\ \text{J/K}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(a) 減 (b) $=2Nk\ln2$（加上質量差）：「混合不同的東西」和「加更多同樣的東西」的差就是混合熵 ✔</p></div>
+  </div>
+</div>
+
+<h3 id="tm-gibbs">10.2 Gibbs 弔詭與 $1/N!$ <span class="pg-tag">p.80–81</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.81 Eq. (2.57) 若分子可分辨</span>
+  $$S=Nk\left[\ln\left(V\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\frac32\right]$$
+  <p>（distinguishable molecules：分子可分辨時）</p>
+</div>
+
+<p>$V$ 底下的 $N$ 從哪來？來自 (2.38) 的 $1/N!$：$\ln N!\approx N\ln N-N$ 把 $V$ 變成 $V/N$，也把常數從 $\tfrac32$ 變成 $\tfrac52$。如果分子可分辨（沒有 $1/N!$），就得到 (2.57)——它不是廣延量：把一桶氦用隔板分成兩半，每一半的熵會<strong>明顯小於</strong>原來的一半，光是插一片隔板就讓熵減少，違反第二定律。這叫 Gibbs 弔詭（Gibbs paradox）。真實的氣體分子不可分辨（第 7 章），所以沒有弔詭；但它提醒我們：「可不可分辨」決定了熵怎麼算。</p>
+
+<div class="box pitfall">
+  <span class="box-title">混合熵只發生在「不同」的氣體</span>
+  <p>同一種氣體拿掉隔板 $\Delta S=0$。用 Sackur–Tetrode 驗算時，要把整體當成 $2N$ 個分子放在 $2V$ 裡：$V/N$ 不變，熵剛好是兩半相加。若忘了 $1/N!$（用 (2.57)），就會算出假的 $2Nk\ln2$。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-37">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-37（Problem 2.37）· p.81</span></div>
+    <h4>任意比例的混合熵</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-37">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用課文的方法，計算兩種單原子理想氣體 A、B 的混合熵，兩者比例任意。令 $N$ 為分子總數，$x$ 為其中 B 的比例。你應該得到
+    $$\Delta S_{\text{mixing}}=-Nk\left[x\ln x+(1-x)\ln(1-x)\right].$$
+    檢查 $x=1/2$ 時它化簡成課文的結果。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氣體</td><td>兩種不同的單原子理想氣體 A、B</td><td>題目</td></tr>
+          <tr><td>分子總數</td><td>$N$</td><td>「令 $N$ 為分子總數」</td></tr>
+          <tr><td>B 的比例</td><td>$N_B=xN$，$N_A=(1-x)N$</td><td>「$x$ 為其中 B 的比例」</td></tr>
+          <tr><td>混合前</td><td>隔板分開、同溫同壓，總體積 $V$</td><td>「用課文的方法」：課文 Fig. 2.15 的設定（同溫同壓才只有混合造成的熵變）</td></tr>
+          <tr><td>混合後</td><td>兩種都佔整個 $V$，溫度不變</td><td>理想氣體互不影響</td></tr>
+          <tr><td>熵變（$U,N$ 固定）</td><td>$\Delta S=Nk\ln(V_f/V_i)$</td><td>課本 (2.51)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：推導 $\Delta S_{\text{mixing}}=-Nk[x\ln x+(1-x)\ln(1-x)]$，並檢查 $x=\frac12$ 時回到課文。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>「課文的方法」是把兩種氣體當成各自獨立的系統、各自做一次自由膨脹，<b>所以</b>只要知道每種氣體混合前佔多少體積。</p>
+      <p><b>因為</b>混合前同溫同壓，$PV=NkT$ 給 $V\propto N$，<b>所以</b>每種氣體佔的體積比例＝分子數比例。混合後每種氣體都擴散到整個 $V$，$U$、$N$ 不變，用 (2.51)，最後相加。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-37-s1">
+        <span class="step-title">混合前各佔多少體積</span>
+        <p>同 $P$、同 $T$：$V_B=\frac{N_BkT}P$、$V=\frac{NkT}P$，相除：</p>
+        $$\frac{V_B}V=\frac{N_B}N=x\ \Longrightarrow\ V_B=xV,\quad V_A=(1-x)V$$
+      </div>
+      <div class="step" data-step="t237a" data-sym="xmix">
+        <span class="step-title">各自自由膨脹</span>
+        <p class="sub">B：$N_B=xN$，$V_i=xV\to V_f=V$，代入 (2.51)：</p>
+        $$\Delta S_B=(xN)k\ln\frac V{xV}=xNk\ln\frac1x=-Nk\,x\ln x$$
+        <p class="sub">A：$N_A=(1-x)N$，$V_i=(1-x)V\to V$：</p>
+        $$\Delta S_A=(1-x)Nk\ln\frac1{1-x}=-Nk(1-x)\ln(1-x)$$
+      </div>
+      <div class="step" data-step="t237b">
+        <span class="step-title">相加</span>
+        $$\Delta S_{\text{mixing}}=\Delta S_A+\Delta S_B=-Nk\left[x\ln x+(1-x)\ln(1-x)\right]$$
+      </div>
+      <div class="step" data-step="t237c">
+        <span class="step-title">$x=\tfrac12$</span>
+        <p class="sub">代入 $x=\tfrac12$：</p>
+        $$-Nk\left[\tfrac12\ln\tfrac12+\tfrac12\ln\tfrac12\right]=-Nk\ln\tfrac12=Nk\ln2$$
+        <p>這裡 $N$ 是總數，課文的「每種 $N$」對應這裡的 $N/2$：課文的 $2Nk\ln2$ 寫成這裡的符號是 $2(N/2)k\ln2=Nk\ln2$ ✔</p>
+      </div>
+      <div class="step" data-step="sc-2-37-s5">
+        <span class="step-title">最大值在 $x=\tfrac12$</span>
+        <p>對 $x$ 微分（$\frac d{dx}(x\ln x)=\ln x+1$）：</p>
+        $$\frac{d}{dx}\frac{\Delta S}{Nk}=-\ln x-1+\ln(1-x)+1=\ln\frac{1-x}x$$
+        <p>令為 0 得 $x=\tfrac12$：兩種氣體各半時混合熵最大，$Nk\ln2$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\Delta S_{\text{mixing}}=-Nk[x\ln x+(1-x)\ln(1-x)]$，$x=\tfrac12$ 時 $=Nk\ln2$（最大值）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$0\lt x\lt1$ 時 $\ln x\lt0$，所以 $\Delta S\gt0$ ✔；$x\to0$ 或 1（只有一種氣體）時 $\to0$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-38">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-38（Problem 2.38）· p.81 · 熱學小考（上）作業題</span></div>
+    <h4>理想混合物的混合熵 $k\ln\binom N{N_A}$</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-38">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>上題的混合熵公式其實適用於任何理想氣體，也適用於某些稠密氣體、液體和固體。對較稠密的系統，要假設兩種分子大小相同，而且不同種分子之間的交互作用和同種分子之間一樣（同樣的力等等）。這種系統叫理想混合物。說明為什麼理想混合物的混合熵是
+    $$\Delta S_{\text{mixing}}=k\ln\binom N{N_A},$$
+    其中 $N$ 是分子總數、$N_A$ 是 A 分子數。用 Stirling 近似證明 $N$ 與 $N_A$ 都很大時，這個式子和上一題的結果相同。</p></div>
+    <div class="part givens"><span class="part-label">已知的關係與前提</span>
+      <table>
+        <thead><tr><th>項目</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>理想混合物</td><td>兩種分子大小相同，A–B 間的力和 A–A、B–B 一樣</td><td>「要假設兩種分子大小相同……同樣的力等等」</td></tr>
+          <tr><td>分子數</td><td>總數 $N$；A 有 $N_A$，B 有 $N_B=N-N_A$</td><td>「$N$ 是分子總數、$N_A$ 是 A 分子數」</td></tr>
+          <tr><td>要證的式子</td><td>$\Delta S_{\text{mixing}}=k\ln\binom N{N_A}$</td><td>題目</td></tr>
+          <tr><td>大數</td><td>$\ln n!\approx n\ln n-n$</td><td>「$N$ 與 $N_A$ 都很大時」用 Stirling</td></tr>
+          <tr><td>上一題的結果</td><td>$-Nk[x\ln x+(1-x)\ln(1-x)]$，$x=N_B/N$</td><td>習題 2.37</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：說明為什麼理想混合物的混合熵是 $k\ln\binom N{N_A}$；用 Stirling 證明它和習題 2.37 相同。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>理想混合物中把一個 A 換成一個 B 不改變能量、體積或任何其他東西，混合前後「能量怎麼分配、分子怎麼振動」這部分的多重度完全一樣，在熵差中抵消，<b>所以</b>只要數混合唯一新增的自由：哪些位置放 A、哪些放 B。</p>
+      <p>證明等價時，<b>因為</b> $\binom N{N_A}$ 是三個階乘的組合，<b>所以</b>用 Stirling 後 $\ln N$ 的係數會抵消，剩下的就是 $x\ln x$ 型的項。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t238a" data-sym="Omega">
+        <span class="step-title">為什麼是 $\binom N{N_A}$</span>
+        <p>想像 $N$ 個分子佔著 $N$ 個位置（稠密系統裡每個分子都有自己的位置）。混合前 A 都在一邊、B 都在另一邊：位置分配只有 1 種。混合後分子隨機換位置；因為 A、B 大小相同、受力相同，換位置不改變能量，所以每一種「哪 $N_A$ 個位置放 A」的分配都同樣可及，共 $\binom N{N_A}$ 種。其他部分（能量在分子間的分配等）混合前後一樣：</p>
+        $$\Omega_{\text{後}}=\binom N{N_A}\Omega_{\text{前}}\ \Longrightarrow\ \Delta S=k\ln\binom N{N_A}$$
+      </div>
+      <div class="step" data-step="t238b">
+        <span class="step-title">Stirling</span>
+        <p>$\binom N{N_A}=\frac{N!}{N_A!\,N_B!}$，三個階乘都用 $\ln n!\approx n\ln n-n$；線性項 $-N+N_A+N_B=0$ 抵消：</p>
+        $$\frac{\Delta S}k\approx N\ln N-N_A\ln N_A-N_B\ln N_B$$
+      </div>
+      <div class="step" data-step="sc-2-38-s3">
+        <span class="step-title">代 $N_A=(1-x)N$、$N_B=xN$</span>
+        <p>$\ln N_A=\ln(1-x)+\ln N$，$\ln N_B=\ln x+\ln N$：</p>
+        $$\begin{aligned}\frac{\Delta S}k\approx{}&N\ln N-(1-x)N\big[\ln(1-x)+\ln N\big]\\&-xN\big[\ln x+\ln N\big]\end{aligned}$$
+        <p>$\ln N$ 的係數 $N[1-(1-x)-x]=0$ 抵消，剩下</p>
+        $$\frac{\Delta S}k\approx-N\big[x\ln x+(1-x)\ln(1-x)\big]$$
+        <p>和習題 2.37 相同 ✔。（2.37 是理想氣體各自膨脹，這裡是格子上的排列，兩種想法得到同一個混合熵。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>混合熵 $=k\ln\binom N{N_A}$；$N$、$N_A$ 很大時 $\approx-Nk[x\ln x+(1-x)\ln(1-x)]$，與習題 2.37 相同。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$N=1000$、$N_A=250$：$\ln\binom{1000}{250}/1000=0.559$，公式 $-[0.25\ln0.25+0.75\ln0.75]=0.562$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-39">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-39（Problem 2.39）· p.81</span></div>
+    <h4>假裝氦原子可分辨</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-39">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-39"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Compute the entropy of a mole of helium at room temperature and atmospheric pressure, pretending that all the atoms are distinguishable. Compare to the actual entropy, for indistinguishable atoms, computed in the text.</p></div>
+<p class="original-caption">Schroeder 習題 2-39（Problem 2.39）· p.81</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>假裝所有原子都可分辨，計算室溫、一大氣壓下一莫耳氦的熵。和課文算出的實際熵（不可分辨的原子）比較。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>氣體</td><td>一莫耳氦，室溫一大氣壓</td><td>題目</td></tr>
+          <tr><td>課文的結果</td><td>$\frac VN\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}=3.2\times10^5$，$S=126\ \text{J/K}$</td><td>「和課文算出的實際熵比較」：第 9 節「一莫耳氦的熵」</td></tr>
+          <tr><td>可分辨</td><td>多重度沒有 $1/N!$ ⟹ 用 (2.57)</td><td>「假裝所有原子都<b>可分辨</b>」</td></tr>
+          <tr><td>(2.57)</td><td>$S=Nk\left[\ln\left(V\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right)+\frac32\right]$</td><td>課本 p.81</td></tr>
+          <tr><td>粒子數</td><td>$N=6.02\times10^{23}$，$Nk=R=8.31\ \text{J/K}$</td><td>一莫耳</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：可分辨時的熵，並和實際（不可分辨）的熵比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>可分辨就是多重度少了 $1/N!$，<b>所以</b>用對應的 (2.57)：對數裡是 $V$ 而不是 $V/N$，常數是 $\frac32$ 而不是 $\frac52$。</p>
+      <p><b>因為</b> (2.57) 的對數引數＝Sackur–Tetrode 的引數 $\times N$，而課文已經算出 Sackur–Tetrode 的引數 $3.2\times10^5$，<b>所以</b>只要再乘 $N$ 取對數。比較時，兩者的差應該正好是 $k\ln N!$（被拿掉的那個因子），可以用來驗算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-39-s1">
+        <span class="step-title">(2.57) 的引數</span>
+        <p>把 $V$ 寫成 $N\cdot\frac VN$：</p>
+        $$V\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}=N\times\left[\frac VN\left(\frac{4\pi mU}{3Nh^2}\right)^{3/2}\right]$$
+        <p>方括號正是課文算過的 $3.2\times10^5$。</p>
+      </div>
+      <div class="step" data-step="t239a" data-sym="S">
+        <span class="step-title">對數</span>
+        <p class="sub">代入 $N=6.02\times10^{23}$、方括號 $3.2\times10^5$（課文例題）；$\ln(6.02\times10^{23})=54.8$、$\ln(3.2\times10^5)=12.7$：</p>
+        $$\ln\left[(6.02\times10^{23})(3.2\times10^5)\right]=54.8+12.7=67.4$$
+      </div>
+      <div class="step" data-step="t239b">
+        <span class="step-title">熵</span>
+        <p class="sub">加上 (2.57) 的常數 $\frac32$，乘 $Nk=R=8.31\ \text{J/K}$：</p>
+        $$S=Nk(67.4+1.5)=68.9\,R=573\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sc-2-39-s4">
+        <span class="step-title">和實際值比較</span>
+        <p>實際（不可分辨）$S=126\ \text{J/K}$，比值 $573/126=4.5$。差值</p>
+        $$573-126=447\ \text{J/K}$$
+        <p>理論上差值是 $k\ln N!\approx Nk(\ln N-1)=R(54.8-1)=447\ \text{J/K}$，相符。可分辨時把原子互換也算成新狀態，多數了 $N!$ 倍的微觀態。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\approx573\ \text{J/K}$，是實際值 $126\ \text{J/K}$ 的 4.5 倍。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>兩公式的差：對數差 $\ln N$、常數差 $1$，合計 $Nk(\ln N-1)$，正是 Stirling 的 $k\ln N!$ ✔</p></div>
+  </div>
+</div>
+
+<h3 id="tm-rev">10.3 可逆與不可逆過程 <span class="pg-tag">p.82–83</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.82 可逆／不可逆的定義</span>
+  <p>使宇宙總熵增加的過程不能反向發生（否則違反第二定律），叫<strong>不可逆</strong>；使宇宙總熵不變的過程是<strong>可逆</strong>的。也可以定義：可逆過程是只要把條件改變無窮小量就能反向的過程。</p>
+</div>
+
+<p>三個典型情況：(1) <strong>非常突然的膨脹</strong>（例如自由膨脹）產生新熵，不可逆。(2) <strong>緩慢的壓縮或膨脹</strong>本身不改變熵：把分子想成住在盒子裡的量子波函數，能階很密但離散；慢慢壓縮時每個能階的能量上升，但分子不會被踢到更高的能階，第 $n$ 階的分子留在第 $n$ 階，排列方式數不變，熵也不變。壓縮太猛，分子被踢上去，排列方式變多，熵就增加。（第 3 章會證明可逆的體積變化一定是準靜態的，$W=-P\Delta V$；但準靜態過程如果同時有熱流或其他產生熵的機制，仍可能不可逆。）(3) <strong>熱從熱的物體流向冷的物體</strong>：第 3 節已說明這讓總多重度增加，所以總是不可逆。只有溫差趨近於零時熵的增加才趨近於零——所謂「可逆熱流」其實是溫差極小、非常緩慢的熱流，此時只要把一邊的溫度改一點點，熱就會反向流。</p>
+
+<p>生活中大多數過程熵都大量增加，高度不可逆：陽光加熱地球、壁爐燒木頭、身體代謝養分、廚房裡混合食材。宇宙的熵不斷增加，有人擔心最終會變成沒有溫度、密度差異的「熱寂」；但太陽至少還會亮五十億年。也許更值得問的是開頭：宇宙為什麼一開始處在這麼不可能的低熵狀態，以至於一百多億年後還離平衡那麼遠？</p>
+
+<div class="problem" data-kind="textbook" id="sc-2-40">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-40（Problem 2.40）· p.83</span></div>
+    <h4>怎麼看出熵增加了</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-40">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-40"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>For each of the following irreversible processes, explain how you can tell that the total entropy of the universe has increased.</p><p>(a) Stirring salt into a pot of soup.</p><p>(b) Scrambling an egg.</p><p>(c) Humpty Dumpty having a great fall.</p><p>(d) A wave hitting a sand castle.</p><p>(e) Cutting down a tree.</p><p>(f) Burning gasoline in an automobile.</p></div>
+<p class="original-caption">Schroeder 習題 2-40（Problem 2.40）· p.83</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>對下列每個不可逆過程，說明你怎麼知道宇宙的總熵增加了。(a) 把鹽攪進一鍋湯。(b) 炒蛋。(c) 蛋頭先生（Humpty Dumpty）重重摔一跤。(d) 海浪打上沙堡。(e) 砍倒一棵樹。(f) 汽車裡燃燒汽油。</p></div>
+    <div class="part givens"><span class="part-label">已知的關係與判斷方法</span>
+      <table>
+        <thead><tr><th>項目</th><th>內容</th><th>出處</th></tr></thead>
+        <tbody>
+          <tr><td>熵</td><td>$S=k\ln\Omega$：可及的微觀態越多，熵越大</td><td>課本 (2.45)</td></tr>
+          <tr><td>不可逆</td><td>使宇宙總熵增加的過程不能反向發生</td><td>課本 p.82</td></tr>
+          <tr><td>熵增加的典型來源</td><td>混合、拆散／碎裂、有序能量變成熱、熱從熱流到冷</td><td>課文 p.75–76、p.82</td></tr>
+          <tr><td>怎麼「看出來」</td><td>反向過程從沒看過 ⟹ 正向使總熵增加</td><td>題目「說明你怎麼知道」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)–(f) 每個過程，說明怎麼看出宇宙總熵增加了。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>不可逆過程就是「反過來會讓宇宙的熵減少、所以從不發生」的過程，<b>所以</b>每一題都要找出「排列方式變多」的具體地方。</p>
+      <p>可以用三種線索：(1) 物質混合或散開（混合熵、可用體積變大）；(2) 一個大的有序結構變成很多小碎片或亂的排法；(3) 巨觀有序的能量（動能、化學能）變成分子的熱運動散到環境——同樣的能量分給大量分子的方式極多，$\Delta S\approx Q/T$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t240a" data-sym="Omega">
+        <span class="step-title">(a) 把鹽攪進湯</span>
+        <p>鹽晶體裡鈉、氯離子排在固定的晶格位置，排法很少；溶解後離子可以在整鍋湯裡到處跑，可用的位置多了許多——就像自由膨脹加上混合（混合熵）。攪拌的功也變成熱。從沒看過鹽自己從湯裡結晶回原來那一撮。</p>
+      </div>
+      <div class="step" data-step="sc-2-40-s2">
+        <span class="step-title">(b) 炒蛋</span>
+        <p>蛋黃和蛋白攪在一起：兩種物質混合。加熱又讓蛋白質變性：原本摺成特定形狀的長鏈攤開、互相纏結，可能的構形遠多於原本那一種摺法；爐火的熱也流進蛋與空氣。炒蛋不會自己分回蛋黃與蛋白。</p>
+      </div>
+      <div class="step" data-step="t240b">
+        <span class="step-title">(c) 蛋頭先生摔一跤</span>
+        <p>下落時重力位能變成動能，這一段（忽略空氣阻力）近似可逆；落地時動能變成碎片的動能、聲音與熱，最後散成地面和空氣的熱運動。而且「碎成很多片、散在各處」的方式遠多於「完整一顆」。碎片不會自己跳回牆上拼好。</p>
+      </div>
+      <div class="step" data-step="sc-2-40-s4">
+        <span class="step-title">(d)(e) 沙堡、砍樹</span>
+        <p>(d) 海浪把沙粒沖散：沙粒散在海灘上的排法遠多於堆成特定形狀的沙堡；浪的動能也變成水和沙的熱。(e) 樹可以在很多位置、角度被砍斷、往很多方向倒，倒下的排法遠多於直立的那一種；鋸木的功和倒地的動能都變成熱散到環境。</p>
+      </div>
+      <div class="step" data-step="t240c">
+        <span class="step-title">(f) 燃燒汽油</span>
+        <p>化學反應把較大的碳氫分子和氧變成更多較小的分子：$2\,\mathrm{C_8H_{18}}+25\,\mathrm{O_2}\to16\,\mathrm{CO_2}+18\,\mathrm{H_2O}$，27 個分子變 34 個，排法更多。更重要的是大量化學能變成熱能，一部分做功推車、最後也經摩擦變成熱，散到環境；這些能量在周圍原子間的分配方式極多，環境的熵大幅增加（$\Delta S\approx Q/T$）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>見各小題：混合、碎裂／散開、把有序能量轉成散到環境的熱能，都使可及的微觀態數增加。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>每個例子都難以反向（鹽撈不回來、蛋炒不回去），正是不可逆＝熵增加 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-41">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-41（Problem 2.41）· p.83</span></div>
+    <h4>自己喜歡與不喜歡的不可逆過程</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-41">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-41"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Describe a few of your favorite, and least favorite, irreversible processes. In each case, explain how you can tell that the entropy of the universe increases.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>描述幾個你最喜歡、和最不喜歡的不可逆過程。每一個都說明你怎麼知道宇宙的熵增加了。</p></div>
+    <div class="part givens"><span class="part-label">已知的關係與自己假設的數字</span>
+      <table>
+        <thead><tr><th>項目</th><th>內容</th><th>出處</th></tr></thead>
+        <tbody>
+          <tr><td>判斷原則</td><td>反向從不發生 ⟺ 正向使宇宙總熵增加</td><td>課本 p.82；方法同習題 2.40</td></tr>
+          <tr><td>熵的估計</td><td>熱流進大的環境 $\Delta S\approx Q/T$；$S\sim Nk$</td><td>習題 2.34、2.36</td></tr>
+          <tr><td>冰的熔化熱</td><td>$L=334\ \text{J/g}$</td><td>題目沒給，用標準值（例子 2）</td></tr>
+          <tr><td>例子的數字</td><td>10 g 冰、300 K 溫水；1000 kg 的車、20 m/s、環境 300 K</td><td>開放題，自己假設的典型值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：舉幾個喜歡、不喜歡的不可逆過程，各自說明怎麼知道宇宙的熵增加。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這是開放題、沒有標準答案，重點在判斷理由，<b>所以</b>每個例子都用習題 2.40 的方法：找出「排列方式變多」的地方——有序的能量（巨觀動能、化學能、電能）變成分子熱運動、熱從高溫流向低溫、物質混合或擴散、少數大的東西變成很多小碎片。</p>
+      <p>能估就估一個數量級，讓「熵增加」變成具體的數字：熱流進大的環境用 $\Delta S\approx Q/T$（環境溫度幾乎不變）；熱在兩個不同溫度之間流動時，兩邊各算 $Q/T$ 再相加。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t241a" data-sym="S">
+        <span class="step-title">喜歡的 (1)：咖啡加牛奶</span>
+        <p>兩種液體混合，可能的分子排列大增（理想混合物的混合熵 $k\ln\binom N{N_A}$，習題 2.38）；從沒看過牛奶自己從咖啡裡分離出來。</p>
+      </div>
+      <div class="step" data-step="sc-2-41-s2">
+        <span class="step-title">喜歡的 (2)：冰塊在溫水裡融化</span>
+        <p class="sub">融化 10 g 冰（自己假設），熔化熱 $L=334\ \text{J/g}$（標準值）：</p>
+        $$Q=mL=10\ \text{g}\times334\ \text{J/g}=3340\ \text{J}$$
+        <p>冰在 273 K 吸熱，溫水（近似 300 K 的大熱庫）放熱，各用 $Q/T$：</p>
+        $$\Delta S_{\text{冰}}=\frac{3340}{273}=+12.2\ \text{J/K},\qquad\Delta S_{\text{水}}=-\frac{3340}{300}=-11.1\ \text{J/K}$$
+        $$\Delta S=Q\left(\frac1{273}-\frac1{300}\right)\approx+1.1\ \text{J/K}$$
+        <p>冰得到的 12.2 J/K 就是相變熵，量化了「液態水分子的排列方式比冰多」。</p>
+      </div>
+      <div class="step" data-step="t241b">
+        <span class="step-title">不喜歡的 (3)：緊急煞車</span>
+        <p class="sub">1000 kg 的車以 20 m/s 煞停（自己假設的典型值）：</p>
+        $$K=\tfrac12mv^2=\tfrac12(1000\ \text{kg})(20\ \text{m/s})^2=2\times10^5\ \text{J}$$
+        <p>這些巨觀動能變成煞車與空氣的熱，散到約 300 K 的環境：</p>
+        $$\Delta S\approx\frac QT=\frac{2\times10^5\ \text{J}}{300\ \text{K}}\approx670\ \text{J/K}$$
+        <p>反過來（空氣的熱自己聚集起來把車推走）需要熵減少 670 J/K，從來不發生。</p>
+      </div>
+      <div class="step" data-step="sc-2-41-s4">
+        <span class="step-title">不喜歡的 (4)(5)：摔破螢幕、電池發燙</span>
+        <p>(4) <strong>手機摔破螢幕</strong>：碎片的排列方式遠多於完整的一片，斷鍵的能量也變成熱與聲音；碎片不會自己黏回。(5) <strong>電池放電發燙</strong>：化學能經電流變成熱散到環境。</p>
+      </div>
+      <div class="step" data-step="t241c">
+        <span class="step-title">共同的判斷原則</span>
+        <p>每一個過程的反向都需要宇宙總熵減少，所以觀察不到；不可逆的程度就是產生的熵 $\Delta S_{\text{universe}}\gt0$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>開放題；每個例子都要指出「能量變成熱」「熱由熱流向冷」「混合或碎裂使排列變多」其中之一，並說明反向會使總熵減少。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>每個估計的 $\Delta S$ 都為正；冰塊的例子中冰得到的熵 $Q/273$ 大於溫水失去的 $Q/300$，因為 $273\lt300$，總熵 $\gt0$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-42">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-42（Problem 2.42）· p.83–84 · 熱學小考（上）作業題</span></div>
+    <h4>黑洞的熵</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-42">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>黑洞是重力強到連光都逃不出來的區域，所以把東西丟進黑洞是不可逆的過程（至少在日常意義上）；在熱力學意義上也是：加質量到黑洞會增加黑洞的熵。事實上（至少從外面）無法分辨黑洞是用什麼物質做成的，所以黑洞的熵必須大於任何可能用來做成它的物質的熵。知道這點，就不難估計黑洞的熵。(a) 用因次分析證明質量 $M$ 的黑洞半徑的數量級應為 $GM/c^2$（$G$ 是牛頓重力常數、$c$ 是光速）。算出一個太陽質量（$M=2\times10^{30}\ \text{kg}$）黑洞的大約半徑。(b) 依習題 2.36 的精神，說明為什麼黑洞以基本單位表示的熵，應該和「可能用來做成它的最大粒子數」同數量級。(c) 要用最多的粒子做黑洞，應該用能量最低的粒子：長波長的光子（或其他無質量粒子）。但波長不能比黑洞的大小還長。令光子的總能量等於 $Mc^2$，估計能做成質量 $M$ 黑洞的最大光子數。除了一個 $8\pi^2$ 的因子，你的結果應該和（經過困難得多的計算得到的）黑洞熵的精確公式一致：$S_{\text{b.h.}}=\dfrac{8\pi^2GM^2}{hc}k$。(d) 計算一個太陽質量黑洞的熵，並評論這個結果。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>黑洞質量</td><td>$M$；數值 $M=2\times10^{30}\ \text{kg}$</td><td>「一個太陽質量（$M=2\times10^{30}$ kg）」</td></tr>
+          <tr><td>可用的常數</td><td>$G=6.67\times10^{-11}\ \text{m}^3/(\text{kg·s}^2)$、$c=3.00\times10^8\ \text{m/s}$</td><td>(a)「用因次分析……$G$、$c$」；數值題目沒給</td></tr>
+          <tr><td>熵的估計</td><td>$S\sim Nk$</td><td>(b)「依習題 2.36 的精神」</td></tr>
+          <tr><td>光子能量</td><td>$\epsilon=hc/\lambda$</td><td>(c)「長波長的光子」；公式題目沒寫</td></tr>
+          <tr><td>最長波長</td><td>$\lambda\approx R\sim GM/c^2$</td><td>(c)「波長不能比黑洞的大小還長」</td></tr>
+          <tr><td>總能量</td><td>$N\epsilon=Mc^2$</td><td>(c)「令光子的總能量等於 $Mc^2$」</td></tr>
+          <tr><td>精確公式</td><td>$S_{\text{b.h.}}=\dfrac{8\pi^2GM^2}{hc}k$</td><td>(c) 題目給</td></tr>
+          <tr><td>其他常數</td><td>$h=6.63\times10^{-34}\ \text{J·s}$、$k=1.38\times10^{-23}\ \text{J/K}$</td><td>標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明 $R\sim GM/c^2$，算太陽質量黑洞的半徑；(b) 說明熵 $\sim$ 可能用來做成它的最大粒子數；(c) 估計最大光子數並和精確公式比；(d) 太陽質量黑洞的熵與評論。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>黑洞的大小只可能由 $G$（重力）、$c$（光逃不出來）、$M$ 決定，<b>所以</b>設 $R=G^ac^bM^d$，要求單位是公尺，解出三個指數。</p>
+      <p>(b) <b>因為</b>一般系統 $S\sim Nk$，而從外面分不出黑洞是用什麼做的，第二定律要求黑洞的熵不小於任何一種做法的原料熵，<b>所以</b>要找「原料粒子最多」的做法。</p>
+      <p>(c) <b>因為</b>總能量固定為 $Mc^2$，粒子越多每個粒子的能量就越低；能量最低的是長波長光子，但波長最長只到黑洞大小 $GM/c^2$，<b>所以</b>用這個波長算每個光子的能量，再用總能量去除。(d) 代入精確公式（含 $8\pi^2$）算數值，再和太陽本身的熵（習題 2.36）比較。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t242a">
+        <span class="step-title">(a) 因次分析</span>
+        <p>設 $R=G^ac^bM^d$。單位：$[G]=\text{m}^3\,\text{kg}^{-1}\,\text{s}^{-2}$、$[c]=\text{m}\,\text{s}^{-1}$、$[M]=\text{kg}$。要求 $R$ 的單位是 m，比較 m、kg、s 的次方：</p>
+        $$\begin{aligned}\text{m}&:\ 3a+b=1\\\text{kg}&:\ -a+d=0\\\text{s}&:\ -2a-b=0\end{aligned}$$
+        <p>由 s 式 $b=-2a$，代入 m 式 $3a-2a=1$，得 $a=1$、$b=-2$、$d=1$：</p>
+        $$R\sim\frac{GM}{c^2}$$
+      </div>
+      <div class="step" data-step="sc-2-42-s2">
+        <span class="step-title">(a) 太陽質量的黑洞</span>
+        <p class="sub">代入 $G=6.67\times10^{-11}$、$M=2\times10^{30}\ \text{kg}$（題目）、$c=3.00\times10^8\ \text{m/s}$：</p>
+        $$R\sim\frac{(6.67\times10^{-11})(2\times10^{30})}{(3.00\times10^8)^2}\ \text{m}=1.5\times10^3\ \text{m}$$
+        <p>約 1.5 km（精確的史瓦西半徑是 $2GM/c^2\approx3\ \text{km}$，差的是因次分析看不到的數值因子）。</p>
+      </div>
+      <div class="step" data-step="t242b" data-sym="S">
+        <span class="step-title">(b) 熵 $\sim$ 最大粒子數</span>
+        <p>一般系統 $S\sim Nk$。把 $N$ 個粒子壓成黑洞，第二定律要求黑洞的熵至少 $\sim Nk$；但不管用什麼、用多少粒子做，結果都是同一個黑洞（外面分不出來），所以它的熵必須至少是「所有可能做法中最大的 $N$」乘 $k$。</p>
+      </div>
+      <div class="step" data-step="t242c">
+        <span class="step-title">(c) 最大光子數</span>
+        <p>每個光子能量 $\epsilon=hc/\lambda$，取最長的 $\lambda\approx GM/c^2$（步驟 1）：</p>
+        $$\epsilon=\frac{hc}{GM/c^2}=\frac{hc^3}{GM}$$
+        <p>總能量 $N\epsilon=Mc^2$：</p>
+        $$N=\frac{Mc^2}{hc^3/GM}=\frac{GM^2}{hc}$$
+        <p>由 (b)，$S\sim Nk=\frac{GM^2}{hc}k$；和精確公式 $\frac{8\pi^2GM^2}{hc}k$ 只差 $8\pi^2\approx79$ 倍 ✔</p>
+      </div>
+      <div class="step" data-step="t242d">
+        <span class="step-title">(d) 太陽質量</span>
+        <p class="sub">代入 $M=2\times10^{30}\ \text{kg}$、$G$、$h=6.63\times10^{-34}\ \text{J·s}$、$c$：</p>
+        $$\frac{GM^2}{hc}=\frac{(6.67\times10^{-11})(2\times10^{30})^2}{(6.63\times10^{-34})(3.00\times10^8)}=1.3\times10^{75}$$
+        $$\frac Sk=8\pi^2\times1.3\times10^{75}=1.1\times10^{77}$$
+        $$S=1.1\times10^{77}\times1.38\times10^{-23}\ \text{J/K}=1.5\times10^{54}\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sc-2-42-s6">
+        <span class="step-title">(d) 評論</span>
+        <p>太陽本身約 $2.4\times10^{57}$ 個粒子，熵約 $10^{57}$–$10^{58}k$（習題 2.36）。同樣質量做成黑洞，熵大了約 $10^{19}$–$10^{20}$ 倍，相當於 $10^{8}$–$10^{9}$ 個銀河系（每個約 $10^{11}$ 顆恆星）所有恆星的熵。$S\propto M^2$：百萬太陽質量的黑洞，熵再大 $10^{12}$ 倍。黑洞是宇宙中熵最大的東西。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $R\sim GM/c^2\approx1.5\ \text{km}$；(c) $N\sim GM^2/(hc)$；(d) $S/k\approx10^{77}$，$S\approx1.5\times10^{54}\ \text{J/K}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$GM^2/(hc)=1.3\times10^{75}$，乘 $8\pi^2=79$ 得 $1.1\times10^{77}$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-10a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>同一種氣體、不同密度相混</h4>
+    <button type="button" class="exam-btn" data-exam="sf-10a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>隔板兩邊各 10 L，溫度都是 300 K。左邊 1 mol 氦，右邊 2 mol 氦（兩邊壓力不同）。抽掉隔板達到平衡。(a) 溫度會變嗎？(b) 用 Sackur–Tetrode 求 $\Delta S$。(c) 若右邊改成 2 mol 氬，$\Delta S=$？(d) 兩者差多少？證明差值正是習題 2.37 的混合熵 $-Nk[x\ln x+(1-x)\ln(1-x)]$。課文說「同一種氣體抽掉隔板熵不變」，和 (b) 矛盾嗎？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>體積</td><td>兩邊各 $10\ \text{L}$，抽板後 $20\ \text{L}$</td><td>「隔板兩邊各 10 L」</td></tr>
+          <tr><td>溫度</td><td>兩邊都 $300\ \text{K}$</td><td>「溫度都是 300 K」</td></tr>
+          <tr><td>(b) 粒子</td><td>左 1 mol 氦、右 2 mol 氦</td><td>題目（兩邊壓力不同）</td></tr>
+          <tr><td>(c) 粒子</td><td>左 1 mol 氦、右 2 mol 氬</td><td>(c)「右邊改成 2 mol 氬」</td></tr>
+          <tr><td>容器</td><td>隔絕、不做功：總 $U$ 不變</td><td>題目沒寫，「抽掉隔板達到平衡」的標準設定</td></tr>
+          <tr><td>單原子</td><td>$U=\frac32NkT$</td><td>氦、氬都是單原子</td></tr>
+          <tr><td>熵</td><td>Sackur–Tetrode；$R=8.314\ \text{J/K}$</td><td>(b)「用 Sackur–Tetrode」</td></tr>
+          <tr><td>混合熵</td><td>$-Nk[x\ln x+(1-x)\ln(1-x)]$</td><td>(d) 習題 2.37</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 溫度會不會變；(b) 氦＋氦的 $\Delta S$；(c) 氦＋氬的 $\Delta S$；(d) 兩者的差是否等於混合熵，以及和課文說法矛不矛盾。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>容器隔絕、抽隔板不做功，總能量守恆，而單原子氣體 $U=\frac32NkT$ 只看粒子數與溫度、不分種類，<b>所以</b>末溫度可以直接解出。</p>
+      <p>(b) <b>因為</b>溫度不變，每個原子的能量 $U/N$ 不變，Sackur–Tetrode 裡只有 $Nk\ln\frac VN$ 會變；<b>因為</b>同一種氣體不可分辨，<b>所以</b>要把 3 mol 當成一團放在 20 L 裡，和抽板前兩團各自的熵相減。</p>
+      <p>(c) <b>因為</b>不同種氣體互不影響，<b>所以</b>各自當成一次自由膨脹（10 L → 20 L），用 (2.51)。(d) 相減後和習題 2.37 的公式比，再想清楚 (b) 的熵是從哪來的。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf10a1" data-sym="T">
+        <span class="step-title">(a) 溫度</span>
+        <p>總能量守恆，抽板前後（$n$ 以 mol 計）：</p>
+        $$\tfrac32(1)RT_0+\tfrac32(2)RT_0=\tfrac32(3)RT$$
+        <p>$T_0=300\ \text{K}$，所以 $T=300\ \text{K}$，不變。單原子氣體的 $U$ 只看 $N$、$T$，不分種類，(c) 也一樣。</p>
+      </div>
+      <div class="step" data-step="sf-10a-s2">
+        <span class="step-title">(b) 只剩 $Nk\ln\frac VN$ 會變</span>
+        <p>$T$ 不變 ⟹ $U/N$ 不變，Sackur–Tetrode 寫成 $S=Nk\ln\frac VN+N\times(\text{同一個常數})$。抽板前後總共都是 3 mol，常數項相減消掉：</p>
+        $$\frac{\Delta S}R=n_f\ln\frac{V_f}{n_f}-n_1\ln\frac{V_1}{n_1}-n_2\ln\frac{V_2}{n_2}$$
+        <p>（$n$ 以 mol、$V$ 以 L 計即可：因為 $n_f=n_1+n_2$，換單位產生的常數在相減時抵消。）</p>
+      </div>
+      <div class="step" data-step="sf10a2" data-sym="S,V">
+        <span class="step-title">(b) 氦＋氦</span>
+        <p class="sub">代入抽板後 $n_f=3$、$V_f=20$；抽板前 $n_1=1$、$V_1=10$，$n_2=2$、$V_2=10$（題目）：</p>
+        $$\frac{\Delta S}R=3\ln\frac{20}3-1\cdot\ln\frac{10}1-2\ln\frac{10}2$$
+        $$=\ln\frac{(20/3)^3}{10\cdot5^2}=\ln\frac{32}{27}=0.170$$
+        $$\Delta S=0.170\times8.314\ \text{J/K}=1.41\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sf10a3">
+        <span class="step-title">(c) 氦＋氬：各自由 10 L 膨脹到 20 L</span>
+        <p>不同種氣體各自膨脹，$U$、$N$ 不變，用 (2.51)：</p>
+        $$\Delta S=R\big[1\cdot\ln2+2\ln2\big]=3R\ln2$$
+        $$=3\times8.314\times0.693\ \text{J/K}=17.29\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sf10a4" data-sym="xmix">
+        <span class="step-title">(d) 差值＝混合熵</span>
+        $$3R\ln2-R\ln\frac{32}{27}=R\ln\frac{8\cdot27}{32}=R\ln\frac{27}4$$
+        $$=1.910R=15.88\ \text{J/K}$$
+        <p class="sub">習題 2.37 代入 $N=3$ mol、氬的比例 $x=\tfrac23$：</p>
+        $$-3R\big[\tfrac23\ln\tfrac23+\tfrac13\ln\tfrac13\big]=3R\times0.6365=1.910R\ ✔$$
+        <p>不矛盾：課文說的是兩邊 $U$、$V$、$N$ 都相同（同密度）的情形。這裡兩邊密度不同，(b) 的 1.41 J/K 來自<strong>壓力（密度）趨於一致</strong>這個不可逆過程，不是「混合」；(c) 則是兩者都有。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 不變，300 K；(b) $R\ln\frac{32}{27}=1.41$ J/K；(c) $3R\ln2=17.3$ J/K；(d) 差 $R\ln\frac{27}4=15.9$ J/K，等於混合熵。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>若右邊也是 1 mol 氦（同密度），(b) 的算法給 $R[2\ln\frac{20}2-2\ln10]=0$，回到課文的結論 ✔；直接把兩個狀態代入完整 Sackur–Tetrode 數值計算，也得 1.41 J/K ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-10b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>溫差越小，熱流越接近可逆</h4>
+    <button type="button" class="exam-btn" data-exam="sf-10b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩團相同的單原子理想氣體（各 $N$ 個原子、體積固定），起初能量 $U_A=U(1+\delta)$、$U_B=U(1-\delta)$，$0\lt\delta\ll1$。讓它們隔著導熱壁交換能量到平衡。(a) 平衡時各有多少能量？(b) 求總熵變，展開到 $\delta$ 的最低階。(c) 傳過去的熱 $Q$ 是多少？證明 $\Delta S/(Q/T)=\delta$（$T$ 為平均溫度），所以 $\delta\to0$ 時趨於 0。(d) 1 mol、平均 300 K、$\delta=0.01$：$\Delta S$ 與 $Q/T$ 各是多少？由此說明課本所說「可逆熱流」的意思。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>兩團氣體</td><td>相同的單原子理想氣體，各 $N$ 個原子，體積固定</td><td>題目</td></tr>
+          <tr><td>起始能量</td><td>$U_A=U(1+\delta)$、$U_B=U(1-\delta)$</td><td>題目</td></tr>
+          <tr><td>小參數</td><td>$0\lt\delta\ll1$</td><td>題目：可以展開到最低階</td></tr>
+          <tr><td>總能量</td><td>$U_A+U_B=2U$ 不變</td><td>「隔著導熱壁交換能量」：只彼此交換</td></tr>
+          <tr><td>平均溫度</td><td>$U=\frac32NkT$</td><td>(c)「$T$ 為平均溫度」</td></tr>
+          <tr><td>(d) 數值</td><td>1 mol（$Nk=R$）、$T=300\ \text{K}$、$\delta=0.01$</td><td>(d)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 平衡時各多少能量；(b) 總熵變（最低階）；(c) 傳過去的熱 $Q$，並證明 $\Delta S/(Q/T)=\delta$；(d) 數值與「可逆熱流」的意義。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩團氣體完全相同（$N$、$V$ 一樣），多重度 $\Omega\propto(U_AU_B)^{3N/2}$ 的峰在能量平分，<b>所以</b>平衡時各 $U$（和兩個相同固體一樣）。</p>
+      <p><b>因為</b> $V$、$N$ 不變，Sackur–Tetrode 中只有 $\frac32Nk\ln U$ 會變，<b>所以</b>熵變只要算 $\ln U$ 的差；$\delta\ll1$ 時用 $\ln(1-\delta^2)\approx-\delta^2$。</p>
+      <p><b>因為</b>把 A、B 對調（$\delta\to-\delta$）物理不變，熵變是 $\delta$ 的偶函數，<b>所以</b>展開從 $\delta^2$ 開始；而熱 $Q$ 是 $\delta$ 的一次，比值自然 $\propto\delta$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf10b1" data-sym="U">
+        <span class="step-title">(a) 平衡</span>
+        <p>總能量 $U(1+\delta)+U(1-\delta)=2U$；兩團相同，平衡時平分：</p>
+        $$U_A=U_B=U$$
+      </div>
+      <div class="step" data-step="sf10b2" data-sym="S,k">
+        <span class="step-title">(b) 熵變</span>
+        <p>只有 $\frac32Nk\ln U$ 項會變，末減初：</p>
+        $$\Delta S=\frac32Nk\Big[2\ln U-\ln U(1+\delta)-\ln U(1-\delta)\Big]$$
+        <p>$\ln U$ 全部抵消，剩 $-\ln(1+\delta)-\ln(1-\delta)=-\ln(1-\delta^2)$；再用 $\ln(1-\epsilon)\approx-\epsilon$（$\epsilon=\delta^2$）：</p>
+        $$\Delta S=-\frac32Nk\ln(1-\delta^2)\approx\frac32Nk\,\delta^2$$
+      </div>
+      <div class="step" data-step="sf10b3" data-sym="T">
+        <span class="step-title">(c) 熱與熵的比</span>
+        <p>A 失去的能量就是傳過去的熱：$Q=U_A-U=U\delta$；$U=\tfrac32NkT$，所以 $Q/T=\tfrac32Nk\,\delta$：</p>
+        $$\frac{\Delta S}{Q/T}=\frac{\tfrac32Nk\delta^2}{\tfrac32Nk\delta}=\delta\ \xrightarrow{\ \delta\to0\ }\ 0$$
+        <p>熱帶走的熵是 $\delta$ 的一階，<strong>新產生</strong>的熵是 $\delta$ 的二階。</p>
+      </div>
+      <div class="step" data-step="sf10b4">
+        <span class="step-title">(d) 數值與意義</span>
+        <p class="sub">代入 $Nk=R=8.314\ \text{J/K}$（1 mol）、$\delta=0.01$（題目）：</p>
+        $$\Delta S=\tfrac32R\delta^2=1.5\times8.314\times10^{-4}\ \text{J/K}=1.25\times10^{-3}\ \text{J/K}$$
+        <p class="sub">$Q=U\delta=\tfrac32RT\delta$，$T=300\ \text{K}$：</p>
+        $$Q=\tfrac32(8.314)(300)(0.01)\ \text{J}=37.4\ \text{J},\qquad\frac QT=0.125\ \text{J/K}$$
+        <p>產生的熵只有隨熱移動的熵的 1%（就是 $\delta$）。溫差趨於 0 時熱流產生的熵趨於 0，這就是課本 p.82 所說的「可逆熱流」：在溫度幾乎相同的物體之間慢慢傳熱，而且只要把其中一邊的溫度改一點點，熱流方向就會反過來。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 各 $U$；(b) $\Delta S\approx\tfrac32Nk\delta^2$；(c) $Q=U\delta$，$\Delta S/(Q/T)=\delta$；(d) $\Delta S=1.25\times10^{-3}$ J/K，$Q/T=0.125$ J/K。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>精確值 $-\tfrac32R\ln(1-10^{-4})=1.2471\times10^{-3}$ J/K，與二階近似相同到 0.005% ✔；與自編難題 8-A 的算幾不等式一致：$\delta\ne0$ 時 $\Delta S\gt0$ ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>不同氣體混合：$\Delta S=-Nk[x\ln x+(1-x)\ln(1-x)]$，各半時 $2Nk\ln2$；同種氣體 $\Delta S=0$。</li>
+    <li>差別來自 $1/N!$（$V$ 底下的 $N$）；去掉它就出現 Gibbs 弔詭。</li>
+    <li>不可逆＝產生新熵（自由膨脹、有溫差的熱流、混合）；可逆＝熵不變、條件改無窮小就能反向。</li>
+  </ol>
+</div>

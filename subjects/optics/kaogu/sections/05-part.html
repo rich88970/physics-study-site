@@ -1,0 +1,70 @@
+<h2 id="kp-05">F 組：考試書寫版（讀完詳細教學後再看）</h2>
+<p>考卷上的必要步驟（D 組與第 4 題骨架不在此次範圍，已刪除）。</p>
+<h3 id="k05-1">第 1 題：三年通用作答骨架</h3>
+<p class="fnote"><b>公式（和角公式）：</b>$\cos(a\pm b)=\cos a\cos b\mp\sin a\sin b$，$\sin(a\pm b)=\sin a\cos b\pm\cos a\sin b$，其中 $a,b$ 為任意角（rad）；本題 $a$ 取各波的初相位常數（如 $\dfrac\pi6$）、$b$ 取 $\omega t$，展開後收集 $\cos\omega t$、$\sin\omega t$ 的係數。</p>
+<ol>
+<li>以 $\cos(a\pm b)$、$\sin(a\pm b)$ 展開所有波，逐項列出 cos、sin 係數。</li>
+<li>設 $E=A\cos\omega t+B\sin\omega t$，求 A、B。</li>
+<li>比較 $E=E_0\cos(\alpha-\omega t)$ 得 $A=E_0\cos\alpha$、$B=E_0\sin\alpha$。</li>
+<li>算 $E_0=\sqrt{A^2+B^2}$。依 A、B 正負判斷象限再求 $\alpha$。</li>
+<li>確認相位在題目要求的區間，並將最後的 $E$ 寫完整。</li>
+</ol>
+<p class="fnote"><b>公式（合成振幅與相位）：</b>由 $A=E_0\cos\alpha$、$B=E_0\sin\alpha$ 得 $E_0=\sqrt{A^2+B^2}$、$\tan\alpha=\dfrac{B}{A}$，其中 $A,B$ 為 $\cos\omega t$、$\sin\omega t$ 的係數加總（與 $E$ 同單位）、$E_0$ 為合成振幅、$\alpha$ 為合成相位（rad），象限由 $A,B$ 的正負決定，$A\lt0$、$B\gt0$ 時 $\alpha=\pi-\arctan\left|\dfrac{B}{A}\right|$；本題三年的 $A,B$ 都是 $A\lt0$、$B\gt0$（第二象限），數值見下。</p>
+<p><strong>三年數值代入重點：</strong></p>
+<ul>
+<li>112 級：$A=(\sqrt2-\sqrt3)/2$、$B=(1+\sqrt2)/2$，所以 $E_0=1.217523$、$\alpha=1.701696$ rad。</li>
+<li>114 級：$A=2-(5\sqrt3+\sqrt2)/2$、$B=2\sqrt3-1/2-\sqrt2/2$，所以 $E_0=3.784021$、$\alpha=2.502517$ rad。</li>
+<li>115 級：$A=-2+(\sqrt3+\sqrt2)/2$、$B=2\sqrt3-5/2-\sqrt2/2$，所以 $E_0=0.498259$、$\alpha=2.599669$ rad。</li>
+</ul>
+<h3 id="k05-2">第 2 題：三年通用作答骨架</h3>
+<p class="fnote"><b>公式（外積）：</b>$\vec a\times\vec b=(a_yb_z-a_zb_y)\hat x+(a_zb_x-a_xb_z)\hat y+(a_xb_y-a_yb_x)\hat z$，其中 $a_x,a_y,a_z$ 與 $b_x,b_y,b_z$ 為兩向量的直角座標分量；本題第 1 步取 $\vec a=\hat e$、$\vec b=\hat b$，外積必須等於傳播方向 $\hat k$。</p>
+<p class="fnote"><b>公式（cos² 的指數式）：</b>$\cos^2\Phi=\dfrac{e^{2i\Phi}+2+e^{-2i\Phi}}{4}$，由 Euler 公式 $\cos\Phi=\dfrac{e^{i\Phi}+e^{-i\Phi}}{2}$ 平方而得，其中 $\Phi$ 為完整相位（rad）、$i$ 為虛數單位；本題用在第 6 步把 $\vec S$ 改寫成指數式。</p>
+<ol>
+<li>依圖寫 $\hat k,\hat b$，利用 $\hat e\times\hat b=\hat k$ 求電場方向。</li>
+<li>列出 $v=c_0/n$、$\lambda=v/f$、$\omega=2\pi f$、$k=2\pi/\lambda$。</li>
+<li>已知 $E_0$ 就求 $B_0=E_0/v$；已知 $B_0$ 就求 $E_0=vB_0$。</li>
+<li>寫 $\Phi=\vec k\cdot\vec r-\omega t$，包含所有座標、正負號。</li>
+<li>(a) $\vec E=E_0\hat e\cos\Phi$；(b) $\vec B=B_0\hat b\cos\Phi$；兩者各附 $\operatorname{Re}\{\cdots e^{i\Phi}\}$。</li>
+<li>(c) $\vec S=\varepsilon_0nc_0E_0^2\cos^2\Phi\hat k$，若需指數式再替換 $\cos^2\Phi$。</li>
+<li>(d) $I=\frac12\varepsilon_0nc_0E_0^2$；寫 W/m²。</li>
+</ol>
+<p class="symnote">符號：$\hat k,\hat e,\hat b$：傳播、電場、磁場方向的單位向量；$c_0$：真空光速；$\Phi$：完整相位；$\vec r$：位置向量；$\operatorname{Re}\{\cdots\}$：取實部（實際的場是實數，指數式只是計算工具）；$\vec S$：瞬時 Poynting 向量；$\varepsilon_0$：真空介電常數 $8.8542\times10^{-12}$ F/m；$I$：輻射照度（瞬時能流的時間平均）。</p>
+<p><strong>必須寫出方向</strong>，例如 112 級電場是 $\frac12\hat x-\frac{\sqrt3}2\hat y$，不是只寫 $2\ \mathrm{V/m}$。</p>
+<h3 id="k05-3">第 3 題：三年分別作答</h3>
+<h4>112 級雙稜鏡</h4>
+<div class="math-block">$$
+D=d+3d=4d=80\ \mathrm{cm},\qquad
+\Delta y=\frac{\lambda D}{a}.
+$$</div>
+<div class="math-block">$$
+\begin{aligned}
+a&amp;=\frac{(6.328\times10^{-5})(80)}{0.04}=0.12656\ \mathrm{cm},\\
+\alpha&amp;=\frac{a}{2d(n-1)}
+=\frac{0.12656}{2(20)(0.6)}=0.00527333\ \mathrm{rad}.
+\end{aligned}
+$$</div>
+<p class="symnote">符號：$d$：狹縫到雙稜鏡的距離（20 cm）；$D$：虛光源到屏幕的有效距離；$\Delta y$：相鄰亮紋間距（0.04 cm）；$\lambda$：波長（$632.8\ \mathrm{nm}=6.328\times10^{-5}$ cm）；$a$：兩虛光源間距；$\alpha$：稜鏡小頂角；$n$：稜鏡折射率（1.6）。</p>
+<h4>114 級牛頓亮環重合</h4>
+<p class="fnote"><b>公式（牛頓環亮環半徑）：</b>$r_m^2=\left(m-\dfrac12\right)\lambda R$，其中 $r_m$ 為第 $m$ 道亮環的半徑（m）、$m=1,2,3,\ldots$ 為亮環階數、$\lambda$ 為波長（m）、$R$ 為透鏡凸面的曲率半徑（m）；本題 $\lambda_1$ 的 $m=6$ 亮環與 $\lambda_2$ 的 $m=8$ 亮環半徑相等。</p>
+<div class="math-block">$$
+\begin{aligned}
+(6-\tfrac12)\lambda_1R&amp;=(8-\tfrac12)\lambda_2R,\\
+\lambda_2&amp;=\frac{5.5}{7.5}(589.2)=432.08\ \mathrm{nm},\\
+r&amp;=\sqrt{5.5(589.2\times10^{-9})(0.50)}=1.27291\ \mathrm{mm}.
+\end{aligned}
+$$</div>
+<p class="symnote">符號：$\lambda_1$：第一種光的波長（589.2 nm）；$\lambda_2$：第二種光的波長；$R$：凸面曲率半徑（0.50 m）；$r$：兩道亮環重合處的半徑；$\tfrac12$ 來自亮環條件 $2t_f=(m-\frac12)\lambda$。</p>
+<h4>115 級牛頓亮暗環</h4>
+<p class="fnote"><b>公式（薄透鏡製鏡公式）：</b>$\dfrac1f=(n-1)\left(\dfrac1{R_1}-\dfrac1{R_2}\right)$，其中 $f$ 為透鏡在空氣中的焦距（m）、$n$ 為透鏡折射率（無單位）、$R_1,R_2$ 為前、後表面的帶符號曲率半徑（m）；本題平凸透鏡取凸面 $R_1=R\gt0$、平面 $R_2\to\infty$，得 $R=(n-1)f$。</p>
+<div class="math-block">$$R=(n-1)f=(1.7328-1)(6.00)=4.3968\ \mathrm m.$$</div>
+<p class="fnote"><b>公式（牛頓環亮環半徑）：</b>$r_{m,\mathrm{亮}}=\sqrt{\left(m-\dfrac12\right)\lambda R}$，其中 $r_{m,\mathrm{亮}}$ 為第 $m$ 道亮環的半徑（m）、$m=1,2,3,\ldots$ 為亮環階數、$\lambda$ 為波長（m）、$R$ 為透鏡凸面的曲率半徑（m）；本題 $m=2$、$\lambda=486.1\times10^{-9}$ m、$R=4.3968$ m。</p>
+<p class="fnote"><b>公式（牛頓環暗環半徑）：</b>$r_{m,\mathrm{暗}}=\sqrt{m\lambda R}$，其中 $r_{m,\mathrm{暗}}$ 為第 $m$ 道暗環的半徑（m）、$m=0,1,2,\ldots$ 為暗環階數（中心暗點 $m=0$）、$\lambda,R$ 同上；本題 $m=4$。</p>
+<div class="math-block">$$
+\begin{aligned}
+r_{2,\mathrm{亮}}&amp;=\sqrt{(2-\tfrac12)(486.1\times10^{-9})(4.3968)}
+=1.79051\ \mathrm{mm},\\
+r_{4,\mathrm{暗}}&amp;=\sqrt{4(486.1\times10^{-9})(4.3968)}
+=2.92389\ \mathrm{mm}.
+\end{aligned}
+$$</div>
+<p class="symnote">符號：$f$：焦距（6.00 m）；$n$：透鏡折射率（1.7328）；$R$：凸面曲率半徑，由 $R=(n-1)f$ 求得；$r_{2,\mathrm{亮}}$：第 2 道亮環半徑；$r_{4,\mathrm{暗}}$：第 4 道暗環半徑（中心暗點算 $m=0$）；$486.1\times10^{-9}$ m 是波長 $\lambda$。</p>

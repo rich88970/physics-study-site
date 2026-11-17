@@ -1,0 +1,1573 @@
+<!-- 考試書寫版：每份先列完整題目，再列可直接寫在考卷上的完整作答。側欄依 data-exam-id 開啟。 -->
+
+<!-- ===== 一、微積分基礎 ===== -->
+<article class="exam-item" data-exam-id="ex-p7a" data-group="一、微積分基礎（p.2–9）" data-title="講義 p.7 例題：$\mathrm d(x\sin x)$">
+  <h3>講義 p.7 例題（一）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $x\sin x$ 的微分。</div>
+  <ol class="write">
+    <li>令 $f=x$、$g=\sin x$，則 $\mathrm df=\mathrm dx$，$\mathrm dg=\cos x\,\mathrm dx$。</li>
+    <li>乘積律 $\mathrm d(fg)=g\,\mathrm df+f\,\mathrm dg$：
+      $$\mathrm d(x\sin x)=\sin x\,\mathrm dx+x\cos x\,\mathrm dx=(\sin x+x\cos x)\,\mathrm dx$$</li>
+  </ol>
+  <div class="final">答：$\mathrm d(x\sin x)=(\sin x+x\cos x)\,\mathrm dx$，即 $\dfrac{\mathrm d}{\mathrm dx}(x\sin x)=\sin x+x\cos x$。</div>
+  <p class="small"><a href="#ex-p7a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p7b" data-group="一、微積分基礎（p.2–9）" data-title="講義 p.7 例題：$\mathrm d(\sin x/x)$">
+  <h3>講義 p.7 例題（二）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $\dfrac{\sin x}{x}$ 的微分（$x\neq0$）。</div>
+  <ol class="write">
+    <li>令 $f=\sin x$、$g=x$：$\mathrm df=\cos x\,\mathrm dx$，$\mathrm dg=\mathrm dx$。</li>
+    <li>商數律 $\mathrm d\!\left(\dfrac fg\right)=\dfrac{g\,\mathrm df-f\,\mathrm dg}{g^2}$：
+      $$\mathrm d\!\left(\frac{\sin x}{x}\right)=\frac{x\cos x\,\mathrm dx-\sin x\,\mathrm dx}{x^2}$$</li>
+  </ol>
+  <div class="final">答：$\mathrm d\!\left(\dfrac{\sin x}{x}\right)=\dfrac{x\cos x-\sin x}{x^2}\,\mathrm dx$。</div>
+  <p class="small"><a href="#ex-p7b">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p8" data-group="一、微積分基礎（p.2–9）" data-title="講義 p.8 例題：$\int\frac{\mathrm dx}{kx+b}$">
+  <h3>講義 p.8 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $\displaystyle\int\frac{1}{kx+b}\,\mathrm dx$（$k\neq0$，$k,b$ 為常數）。</div>
+  <ol class="write">
+    <li>$\mathrm d(kx+b)=k\,\mathrm dx\ \Rightarrow\ \mathrm dx=\dfrac1k\,\mathrm d(kx+b)$。</li>
+    <li>$$\int\frac{\mathrm dx}{kx+b}=\frac1k\int\frac{\mathrm d(kx+b)}{kx+b}=\frac1k\int\frac{\mathrm dy}{y}\quad(y\equiv kx+b)$$</li>
+    <li>$$=\frac1k\ln y+C=\frac1k\ln(kx+b)+C$$</li>
+    <li>驗算：$\mathrm d\!\left[\frac1k\ln(kx+b)\right]=\frac1k\cdot\frac{k\,\mathrm dx}{kx+b}=\frac{\mathrm dx}{kx+b}$ ✔</li>
+  </ol>
+  <div class="final">答：$\dfrac1k\ln|kx+b|+C$（$kx+b\gt0$ 時即 $\dfrac1k\ln(kx+b)+C$）。</div>
+  <p class="small"><a href="#ex-p8">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p9" data-group="一、微積分基礎（p.2–9）" data-title="講義 p.9 例題：$\int\frac{x}{1+x^2}\mathrm dx$">
+  <h3>講義 p.9 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $\displaystyle\int\frac{x}{1+x^2}\,\mathrm dx$。</div>
+  <ol class="write">
+    <li>$x\,\mathrm dx=\mathrm d\!\left(\dfrac{x^2}{2}\right)=\dfrac12\,\mathrm d(x^2)=\dfrac12\,\mathrm d(1+x^2)$。</li>
+    <li>$$\int\frac{x}{1+x^2}\,\mathrm dx=\frac12\int\frac{\mathrm d(1+x^2)}{1+x^2}=\frac12\int\frac{\mathrm du}{u}\quad(u\equiv1+x^2)$$</li>
+    <li>$$=\frac12\ln u+C=\frac12\ln(1+x^2)+C$$</li>
+    <li>驗算：$\mathrm d\!\left[\frac12\ln(1+x^2)\right]=\frac12\cdot\frac{2x\,\mathrm dx}{1+x^2}=\frac{x\,\mathrm dx}{1+x^2}$ ✔</li>
+  </ol>
+  <div class="final">答：$\dfrac12\ln(1+x^2)+C$。</div>
+  <p class="small"><a href="#ex-p9">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 四、內積 ===== -->
+
+<article class="exam-item" data-exam-id="ex-p26" data-group="四、內積（p.24–29）" data-title="講義 p.26：沿 $\hat i$、沿 $\vec B$ 的分量">
+  <h3>講義 p.26 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="ex-p26"><span class="part-label original-label">講義英文原文</span>
+<div class="original-text" lang="en"><p><strong>Projection of a Vector</strong> (Applications of the Inner Product)</p><p>The inner product is useful for finding the component of one vector along the direction of another vector.</p><p>Examples:</p><ul><li>Find the component of $\vec A$ along the direction of $\hat i$</li><li>Find the component of $\vec A$ along another vector $\vec B$</li></ul></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $\vec A$ 沿 $\hat i$ 的分量與沿 $\vec B$ 的分量；並以 $\vec A=(2,1,-2)$、$\vec B=(3,0,4)$ 計算。</div>
+  <ol class="write">
+    <li>沿 $\hat i$：$\vec A\cdot\hat i=|\vec A||\hat i|\cos\theta=|\vec A|\cos\theta$；又 $\vec A\cdot\hat i=A_1$，故 $A_1=\vec A\cdot\hat i$。</li>
+    <li>沿 $\vec B$：$A_B=|\vec A|\cos\theta=|\vec A|\dfrac{\vec A\cdot\vec B}{|\vec A||\vec B|}=\dfrac{\vec A\cdot\vec B}{|\vec B|}$。</li>
+    <li>數值：$A_1=2$；$\vec A\cdot\vec B=6+0-8=-2$，$|\vec B|=5$，$A_B=-\tfrac25$。</li>
+  </ol>
+  <div class="final">答：$A_i=\vec A\cdot\hat i=|\vec A|\cos\theta$，$A_B=\dfrac{\vec A\cdot\vec B}{|\vec B|}$；$A_1=2$、$A_B=-0.4$。</div>
+  <p class="small"><a href="#ex-p26">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s01-1" data-group="一、微積分基礎（p.2–9）" data-title="自編：線性與平方阻力的滑行距離">
+  <h3>自編難題：有阻力的滑行</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$x(0)=0$、$\dot x(0)=v_0$。(a) $\ddot x=-k\dot x$，求 $\dot x$、$x$ 與最終位置（$v_0=20\ \text{m/s}$、$k=0.5\ \text{s}^{-1}$）；(b) $\ddot x=-c\dot x^2$，求 $\dot x$、$x$，是否停在有限距離？</div>
+  <ol class="write">
+    <li>(a) $\frac{\mathrm dv}{v}=-k\,\mathrm dt$，$v=v_0e^{-kt}$；$x=\frac{v_0}{k}(1-e^{-kt})\to\frac{v_0}{k}=40\ \text{m}$。</li>
+    <li>(b) $\frac{\mathrm dv}{v^2}=-c\,\mathrm dt$，$v=\frac{v_0}{1+cv_0t}$；$x=\frac1c\ln(1+cv_0t)\to\infty$。</li>
+    <li>差別：停止距離 $\int_0^\infty v\,\mathrm dt$；(a) 指數衰減收斂，(b) $v\sim1/t$ 發散。</li>
+  </ol>
+  <div class="final">答：(a) $40\ \text{m}$；(b) 不會停在有限距離（$x\to\infty$）。</div>
+  <p class="small"><a href="#self-s01-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s01-2" data-group="一、微積分基礎（p.2–9）" data-title="自編：$\ddot x=-\omega^2x$ 用 $v\,\mathrm dv=a\,\mathrm dx$">
+  <h3>自編難題：彈簧振動的振幅</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\ddot x=-\omega^2x$，$x=x_0$ 時速度 $v_0$。求 $v(x)$、振幅，及 $x=0.04\ \text{m}$ 的速率（$x_0=0.03\ \text{m}$、$v_0=0.4\ \text{m/s}$、$\omega=10\ \text{s}^{-1}$）。</div>
+  <ol class="write">
+    <li>$\ddot x=v\dfrac{\mathrm dv}{\mathrm dx}$，故 $v\,\mathrm dv=-\omega^2x\,\mathrm dx$。</li>
+    <li>積分：$v^2=v_0^2+\omega^2(x_0^2-x^2)$。</li>
+    <li>$v=0$ 得 $A=\sqrt{x_0^2+v_0^2/\omega^2}=\sqrt{0.0009+0.0016}=0.05\ \text{m}$。</li>
+    <li>$x=0.04$：$v^2=0.16-0.07=0.09$，$|v|=0.3\ \text{m/s}$。</li>
+  </ol>
+  <div class="final">答：$A=0.05\ \text{m}$，$|v|=0.3\ \text{m/s}$。</div>
+  <p class="small"><a href="#self-s01-2">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 二、純量與向量 ===== -->
+<article class="exam-item" data-exam-id="self-s02-1" data-group="二、純量與向量（p.10–16）" data-title="自編：判斷 $A_1B_1$、$A_1B_1+A_2B_2$、$A_1B_2-A_2B_1$ 是否為純量">
+  <h3>自編難題：換座標不變的組合</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　座標轉 $\theta$：$A_1'=A_1c+A_2s$、$A_2'=-A_1s+A_2c$。判斷 (a) $A_1B_1$、(b) $A_1B_1+A_2B_2$、(c) $A_1B_2-A_2B_1$ 是否為純量（以 $\vec A=(3,1)$、$\vec B=(1,2)$ 說明）。</div>
+  <ol class="write">
+    <li>(a) $\theta=90^\circ$：$\vec A'=(1,-3)$、$\vec B'=(2,-1)$，$A_1'B_1'=2\neq3$，不是純量。</li>
+    <li>(b) 展開：$A_1'B_1'+A_2'B_2'=A_1B_1(c^2+s^2)+A_2B_2(c^2+s^2)+(A_1B_2+A_2B_1)(cs-sc)=A_1B_1+A_2B_2$。</li>
+    <li>(c) 展開：$A_1'B_2'-A_2'B_1'=(A_1B_2-A_2B_1)(c^2+s^2)=A_1B_2-A_2B_1$（交叉項抵消）。</li>
+    <li>數值：(b) $1\cdot2+3=5$、(c) $-1+6=5$，與轉前相同。</li>
+  </ol>
+  <div class="final">答：(a) 不是；(b)、(c) 是純量。</div>
+  <p class="small"><a href="#self-s02-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s02-2" data-group="二、純量與向量（p.10–16）" data-title="自編：長度 8、與 $z$ 夾 $30^\circ$ 且垂直某向量">
+  <h3>自編難題：三個條件幾個解</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$|\vec A|=8$、與 $+z$ 夾 $30^\circ$。(a) 又 $\vec A\perp(1,1,0)$，求所有 $\vec A$；(b) 若改為 $\vec A\perp(1,1,1)$，有沒有解？</div>
+  <ol class="write">
+    <li>$A_3=4\sqrt3$，影子 $A_1^2+A_2^2=16$。</li>
+    <li>(a) $A_2=-A_1$：$A_1=\pm2\sqrt2$，$\vec A=(\pm2\sqrt2,\mp2\sqrt2,4\sqrt3)$，方位角 $-45^\circ$、$135^\circ$。</li>
+    <li>(b) 需 $A_1+A_2=-4\sqrt3$，但圓上 $|A_1+A_2|\le4\sqrt2\lt4\sqrt3$，無解。</li>
+    <li>幾何：$(1,1,1)$ 與 $z$ 夾 $54.7^\circ$，$\vec A$ 與它的夾角在 $24.7^\circ$～$84.7^\circ$，不可能 $90^\circ$。</li>
+  </ol>
+  <div class="final">答：(a) $(\pm2\sqrt2,\mp2\sqrt2,4\sqrt3)$ 兩解；(b) 無解。</div>
+  <p class="small"><a href="#self-s02-2">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 三、向量加減與純量乘法 ===== -->
+<article class="exam-item" data-exam-id="self-s03-1" data-group="三、向量加減與純量乘法（p.17–23）" data-title="自編：三中線交於 $(\vec a+\vec b+\vec c)/3$">
+  <h3>自編難題：重心</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明三角形三中線交於 $\vec g=\frac13(\vec a+\vec b+\vec c)$ 並分中線為 $2:1$；求 $A(0,0,0)$、$B(6,0,0)$、$C(0,3,3)$ 的 $G$。</div>
+  <ol class="write">
+    <li>$BC$ 中點 $\vec m_a=\frac12(\vec b+\vec c)$。</li>
+    <li>$\vec a+\frac23(\vec m_a-\vec a)=\frac13(\vec a+\vec b+\vec c)$。</li>
+    <li>結果對三頂點對稱，故三條中線都過此點，且分成 $2:1$。</li>
+    <li>$G=\frac13(6,3,3)=(2,1,1)$；$\vec{GA}+\vec{GB}+\vec{GC}=(-2,-1,-1)+(4,-1,-1)+(-2,2,2)=0$。</li>
+  </ol>
+  <div class="final">答：$\vec g=\frac13(\vec a+\vec b+\vec c)$，$G(2,1,1)$。</div>
+  <p class="small"><a href="#self-s03-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s03-2" data-group="三、向量加減與純量乘法（p.17–23）" data-title="自編：渡河的航向、時間與最短漂移">
+  <h3>自編難題：渡河</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　河寬 $120\ \text{m}$、水流東向 $3\ \text{m/s}$。(a)(b) 船對水 $5\ \text{m/s}$：直直過河與最快過河；(c) 船對水 $2\ \text{m/s}$：使漂移最小的航向與最小漂移。</div>
+  <ol class="write">
+    <li>船頭偏西 $\varphi$：$\vec v_{\text{地}}=(3-u\sin\varphi,\ u\cos\varphi)$。</li>
+    <li>(a) $\sin\varphi=0.6$，$\varphi=36.9^\circ$，$t=30\ \text{s}$；(b) $\varphi=0$，$t=24\ \text{s}$，漂 $72\ \text{m}$。</li>
+    <li>(c) $D=\frac{120(3-2\sin\varphi)}{2\cos\varphi}$，$D'\propto3\sin\varphi-2=0$，$\sin\varphi=\frac23$。</li>
+    <li>$D_{\min}=\frac{120\cdot\frac53}{2\sqrt5/3}=60\sqrt5\approx134\ \text{m}$。</li>
+  </ol>
+  <div class="final">答：(a) $36.9^\circ$、$30\ \text{s}$；(b) $24\ \text{s}$、$72\ \text{m}$；(c) $\varphi=41.8^\circ$、$60\sqrt5\approx134\ \text{m}$。</div>
+  <p class="small"><a href="#self-s03-2">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="ex-p27" data-group="四、內積（p.24–29）" data-title="講義 p.27：$(3,-1,2)$ 與 $(-1,-1,1)$ 是否正交">
+  <h3>講義 p.27 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec A=(3,-1,2)$、$\vec B=(-1,-1,1)$ 是否正交？</div>
+  <ol class="write">
+    <li>$\vec A\cdot\vec B=(3)(-1)+(-1)(-1)+(2)(1)=-3+1+2=0$。</li>
+    <li>$|\vec A|=\sqrt{14}\neq0$，$|\vec B|=\sqrt3\neq0$，故 $\cos\theta=\dfrac{\vec A\cdot\vec B}{|\vec A||\vec B|}=0$，$\theta=90^\circ$。</li>
+  </ol>
+  <div class="final">答：是，兩向量正交。</div>
+  <p class="small"><a href="#ex-p27">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p28" data-group="四、內積（p.24–29）" data-title="講義 p.28：$(1,1)$ 與 $(2,0)$ 的夾角">
+  <h3>講義 p.28 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $\vec A=(1,1)$ 與 $\vec B=(2,0)$ 的夾角。</div>
+  <ol class="write">
+    <li>$\vec A\cdot\vec B=(1)(2)+(1)(0)=2$，$|\vec A|=\sqrt2$，$|\vec B|=2$。</li>
+    <li>$$\theta=\cos^{-1}\!\left(\frac{\vec A\cdot\vec B}{|\vec A||\vec B|}\right)=\cos^{-1}\!\left(\frac{2}{\sqrt2\times2}\right)=\cos^{-1}\!\left(\frac1{\sqrt2}\right)$$</li>
+  </ol>
+  <div class="final">答：$\theta=45^\circ$。</div>
+  <p class="small"><a href="#ex-p28">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p29" data-group="四、內積（p.24–29）" data-title="講義 p.29 Example 1.5：距離、夾角、分量">
+  <h3>講義 p.29 Example 1.5</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec A=\hat i+2\hat j-2\hat k$、$\vec B=4\hat i+2\hat j-3\hat k$。求 (a) 從點 $B$ 到點 $A$ 的向量大小；(b) $\vec A$、$\vec B$ 的夾角；(c) $\vec B$ 沿 $\vec A$ 方向的分量。</div>
+  <ol class="write">
+    <li id="ex15-a"><strong>(a)</strong> $\vec C=\vec A-\vec B=-3\hat i+0\hat j+\hat k$，$|\vec C|=\sqrt{9+0+1}=\sqrt{10}\approx3.16$。</li>
+    <li id="ex15-b"><strong>(b)</strong> $\vec A\cdot\vec B=4+4+6=14$；$|\vec A|=\sqrt{1+4+4}=3$；$|\vec B|=\sqrt{16+4+9}=\sqrt{29}$。
+      $$\cos\theta=\frac{14}{3\sqrt{29}}\approx0.867,\qquad \theta=\cos^{-1}\!\left(\frac{14}{3\sqrt{29}}\right)\approx29.9^\circ$$</li>
+    <li id="ex15-c"><strong>(c)</strong> $$B_A=\frac{\vec B\cdot\vec A}{|\vec A|}=\frac{14}{3}\approx4.67$$</li>
+  </ol>
+  <div class="final">答：(a) $\sqrt{10}$；(b) $\cos^{-1}\!\big(14/(3\sqrt{29})\big)\approx29.9^\circ$；(c) $14/3$。</div>
+  <p class="small"><a href="#ex-p29">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-2" data-group="四、內積（p.24–29）" data-title="課本 1-2：方向餘弦的兩個公式">
+  <h3>課本 1-2</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-2"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Prove Equations 1.10 and 1.11 from trigonometric considerations.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-2 · p.43</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　一直線與三軸夾角 $\alpha,\beta,\gamma$，另一直線為 $\alpha',\beta',\gamma'$，兩線夾 $\theta$。以三角方法證明 $\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1$ 與 $\cos\theta=\cos\alpha\cos\alpha'+\cos\beta\cos\beta'+\cos\gamma\cos\gamma'$。</div>
+  <ol class="write">
+    <li>取第一線上離原點 $r$ 的點：由直角三角形，$x_1=r\cos\alpha$、$x_2=r\cos\beta$、$x_3=r\cos\gamma$。</li>
+    <li>畢氏定理：$r^2=x_1^2+x_2^2+x_3^2=r^2(\cos^2\alpha+\cos^2\beta+\cos^2\gamma)$，故 $\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1$。</li>
+    <li>兩線各取離原點 1 的點 $P(\cos\alpha,\cos\beta,\cos\gamma)$、$P'(\cos\alpha',\cos\beta',\cos\gamma')$。餘弦定律：$|PP'|^2=1+1-2\cos\theta$。</li>
+    <li>座標：$|PP'|^2=\sum(\cos\alpha-\cos\alpha')^2=1+1-2(\cos\alpha\cos\alpha'+\cos\beta\cos\beta'+\cos\gamma\cos\gamma')$（用第 2 步兩次）。</li>
+    <li>比較第 3、4 步即得 $\cos\theta=\cos\alpha\cos\alpha'+\cos\beta\cos\beta'+\cos\gamma\cos\gamma'$。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-7" data-group="四、內積（p.24–29）" data-title="課本 1-7：立方體體對角線的夾角">
+  <h3>課本 1-7</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a unit cube with one corner at the origin and three adjacent sides lying along the three axes of a rectangular coordinate system. Find the vectors describing the diagonals of the cube. What is the angle between any pair of diagonals?</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-7 · p.44</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　邊長 1 的立方體，一頂點在原點，三邊沿座標軸。寫出各（體）對角線的向量，並求任兩條對角線的夾角。</div>
+  <ol class="write">
+    <li>四條體對角線（終點 − 起點）：$\vec d_1=(1,1,1)$，$\vec d_2=(0,1,1)-(1,0,0)=(-1,1,1)$，$\vec d_3=(1,-1,1)$，$\vec d_4=(1,1,-1)$；每條長 $\sqrt3$。</li>
+    <li>任兩條內積為 $\pm1$，例：$\vec d_1\cdot\vec d_2=-1+1+1=1$。</li>
+    <li>$$\cos\theta=\frac{\vec d_1\cdot\vec d_2}{|\vec d_1||\vec d_2|}=\frac{1}{\sqrt3\sqrt3}=\frac13\ \Rightarrow\ \theta=\cos^{-1}\tfrac13\approx70.5^\circ$$</li>
+    <li>內積為 $-1$ 的配對對應補角 $180^\circ-70.5^\circ=109.5^\circ$（兩直線相交的另一個角）。</li>
+  </ol>
+  <div class="final">答：對角線 $(\pm1,\pm1,\pm1)$ 型（如上四條）；任兩條夾角 $\cos^{-1}(1/3)\approx70.5^\circ$（或 $109.5^\circ$）。</div>
+  <p class="small"><a href="#tm-1-7">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-17" data-group="四、內積（p.24–29）" data-title="課本 1-17：由內積推餘弦定律">
+  <h3>課本 1-17</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　解讀並展開 $(\vec A-\vec B)\cdot(\vec A-\vec B)$，得到平面三角學的餘弦定律。</div>
+  <ol class="write">
+    <li>令 $\vec C=\vec A-\vec B$；$\vec A,\vec B,\vec C$ 圍成三角形，$\theta$ 為 $\vec A,\vec B$ 夾角（邊 $C$ 的對角）。</li>
+    <li>幾何：$(\vec A-\vec B)\cdot(\vec A-\vec B)=\vec C\cdot\vec C=C^2$。</li>
+    <li>展開（分配律，$\vec A\cdot\vec B=\vec B\cdot\vec A$）：
+      $$(\vec A-\vec B)\cdot(\vec A-\vec B)=A^2-2\vec A\cdot\vec B+B^2=A^2+B^2-2AB\cos\theta$$</li>
+    <li>兩者相等。</li>
+  </ol>
+  <div class="final">$C^2=A^2+B^2-2AB\cos\theta$（餘弦定律）。∎</div>
+  <p class="small"><a href="#tm-1-17">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-8" data-group="四、內積（p.24–29）" data-title="課本 1-8：$\vec A\cdot\vec r=A^2$ 是平面">
+  <h3>課本 1-8</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec A$ 由原點指向定點 $P$，$\vec r$ 由原點指向動點 $Q(x_1,x_2,x_3)$。證明 $\vec A\cdot\vec r=A^2$ 是通過 $P$ 且垂直於 $\vec A$ 的平面方程式。</div>
+  <ol class="write">
+    <li>$\vec A\cdot\vec r=A^2=\vec A\cdot\vec A\iff\vec A\cdot(\vec r-\vec A)=0$。</li>
+    <li>$\vec r-\vec A=\overrightarrow{PQ}$，故方程式 $\iff\vec A\cdot\overrightarrow{PQ}=0\iff\overrightarrow{PQ}\perp\vec A$（或 $Q=P$）。</li>
+    <li>所有滿足 $\overrightarrow{PQ}\perp\vec A$ 的點 $Q$ 正是通過 $P$、法向量為 $\vec A$ 的平面；反之平面上任一點都滿足之。</li>
+    <li>$Q=P$ 時 $\vec r=\vec A$，$\vec A\cdot\vec A=A^2$ 成立，平面通過 $P$。</li>
+  </ol>
+  <div class="final">得證：$\vec A\cdot\vec r=A^2$（即 $A_1x_1+A_2x_2+A_3x_3=A^2$）是過 $P$ 且 $\perp\vec A$ 的平面。∎</div>
+  <p class="small"><a href="#tm-1-8">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-16" data-group="四、內積（p.24–29）" data-title="課本 1-16：$\vec r\cdot\vec a=$ 常數">
+  <h3>課本 1-16</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What surface is represented by $\mathbf r\cdot\mathbf a=$ const. that is described if $\mathbf a$ is a vector of constant magnitude and direction from the origin and $\mathbf r$ is the position vector to the point $P(x_1,x_2,x_3)$ on the surface?</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-16 · p.45</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec a$ 為固定向量，$\vec r$ 為曲面上點 $P$ 的位置向量。$\vec r\cdot\vec a=c$（常數）是什麼曲面？</div>
+  <ol class="write">
+    <li>取 $\vec r_0=\dfrac{c}{a^2}\vec a$，則 $\vec r_0\cdot\vec a=c$，$\vec r_0$ 在曲面上。</li>
+    <li>對曲面上任一點：$(\vec r-\vec r_0)\cdot\vec a=c-c=0$，故 $\vec r-\vec r_0\perp\vec a$；反之亦然。</li>
+    <li>所以曲面是過 $\vec r_0$、法向量為 $\vec a$ 的平面，分量式 $a_1x_1+a_2x_2+a_3x_3=c$。</li>
+    <li>$\vec r_0\parallel\vec a$，是平面上離原點最近的點：距離 $|\vec r_0|=|c|/a$。</li>
+  </ol>
+  <div class="final">答：垂直 $\vec a$ 的平面，距原點 $|c|/|\vec a|$。</div>
+  <p class="small"><a href="#tm-1-16">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-41" data-group="四、內積（p.24–29）" data-title="課本 1-41：使兩向量垂直的 $a$">
+  <h3>課本 1-41</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$a$ 為何值時 $\vec A=2a\hat i-2\hat j+a\hat k$ 與 $\vec B=a\hat i+2a\hat j+2\hat k$ 垂直？</div>
+  <ol class="write">
+    <li>垂直 ⟺ $\vec A\cdot\vec B=0$。</li>
+    <li>$\vec A\cdot\vec B=2a^2-4a+2a=2a^2-2a=2a(a-1)$。</li>
+    <li>$2a(a-1)=0$ ⟹ $a=0$ 或 $a=1$。</li>
+  </ol>
+  <div class="final">答：$a=0$ 或 $a=1$。</div>
+  <p class="small"><a href="#tm-1-41">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s04-1" data-group="四、內積（p.24–29）" data-title="自編：$P(1,2,3)$ 到直線 $t(1,1,1)$ 的距離">
+  <h3>自編難題：點到直線距離</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　點 $P(1,2,3)$，直線過原點、方向 $(1,1,1)$。用投影求距離與最近點。</div>
+  <ol class="write">
+    <li>$\hat u=\frac1{\sqrt3}(1,1,1)$，$\vec P\cdot\hat u=2\sqrt3$，$\vec P_\parallel=(2,2,2)$。</li>
+    <li>$\vec P_\perp=(-1,0,1)$，$\vec P_\perp\cdot\vec u=0$。</li>
+    <li>$|\vec P-t\hat u|^2=|\vec P_\perp|^2+(2\sqrt3-t)^2\ge2$，最小在 $(2,2,2)$。</li>
+  </ol>
+  <div class="final">答：距離 $\sqrt2$，最近點 $(2,2,2)$。</div>
+  <p class="small"><a href="#self-s04-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s04-2" data-group="四、內積（p.24–29）" data-title="自編：用內積證明直徑所對的圓周角為直角">
+  <h3>自編難題：圓周角</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$AB$ 為半徑 $R$ 的圓的直徑，$P$ 在圓上。證明 $\angle APB=90^\circ$，並以 $R=5$、$P(3,4)$ 驗證。</div>
+  <ol class="write">
+    <li>取圓心為原點，$\vec A=-R\hat e$、$\vec B=R\hat e$、$|\vec P|=R$。</li>
+    <li>$\vec{PA}\cdot\vec{PB}=(-R\hat e-\vec P)\cdot(R\hat e-\vec P)=|\vec P|^2-R^2=0$。</li>
+    <li>兩向量非零 ⟹ 垂直，$\angle APB=90^\circ$。</li>
+    <li>數值：$(-8,-4)\cdot(2,-4)=0$。</li>
+  </ol>
+  <div class="final">答：$\angle APB=90^\circ$。</div>
+  <p class="small"><a href="#self-s04-2">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 五、外積 ===== -->
+<article class="exam-item" data-exam-id="tb-ex16" data-group="五、外積（p.30–32）" data-title="課本例題 1.6：$\vec A\cdot(\vec B\times\vec D)=\vec D\cdot(\vec A\times\vec B)$">
+  <h3>課本例題 1.6</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tb-ex16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show by using Equations 1.52 and 1.66 that</p>$$\mathbf A\cdot(\mathbf B\times\mathbf D)=\mathbf D\cdot(\mathbf A\times\mathbf B)\qquad(1.72)$$</div>
+<p class="original-caption">Thornton &amp; Marion Example 1.6 · p.26–27</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用 $\varepsilon_{ijk}$ 證明 $\vec A\cdot(\vec B\times\vec D)=\vec D\cdot(\vec A\times\vec B)$，並推論 $\vec A\times\vec D\perp\vec A$。</div>
+  <ol class="write">
+    <li>$\vec A\cdot(\vec B\times\vec D)=\sum_{i,j,k}\varepsilon_{ijk}A_iB_jD_k$；$\vec D\cdot(\vec A\times\vec B)=\sum_{i,j,k}\varepsilon_{ijk}D_iA_jB_k$。</li>
+    <li>後者啞指標改名 $i\to k,\ j\to i,\ k\to j$：$\sum\varepsilon_{kij}D_kA_iB_j=\sum\varepsilon_{ijk}A_iB_jD_k$（$\varepsilon_{kij}=\varepsilon_{ijk}$），與前者相同。</li>
+    <li>取 $\vec B=\vec A$：$\sum\varepsilon_{ijk}A_iA_jD_k=0$（$\varepsilon$ 對 $i,j$ 反對稱、$A_iA_j$ 對稱），故 $\vec A\cdot(\vec A\times\vec D)=0$。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tb-ex16">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-20" data-group="五、外積（p.30–32）" data-title="課本 1-20：$\varepsilon_{ijk}$ 的三個求和">
+  <h3>課本 1-20</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 (a) $\sum_{i,j}\varepsilon_{ijk}\delta_{ij}=0$；(b) $\sum_{j,k}\varepsilon_{ijk}\varepsilon_{ljk}=2\delta_{il}$；(c) $\sum_{i,j,k}\varepsilon_{ijk}\varepsilon_{ijk}=6$。</div>
+  <ol class="write">
+    <li>(a) $\sum_{i,j}\varepsilon_{ijk}\delta_{ij}=\sum_i\varepsilon_{iik}=0$。</li>
+    <li>(b) $i\neq l$：$j,k$ 須異於 $i$ 與 $l$，只能 $j=k$，項皆為 0；$i=l$：$\sum_{j,k}\varepsilon_{ijk}^2$ 有 2 項非零，各為 1。故 $=2\delta_{il}$。</li>
+    <li>(c) $\sum_i2\delta_{ii}=6$。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-20">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-21" data-group="五、外積（p.30–32）" data-title="課本 1-21：$\vec A\vec B\vec C=\sum\varepsilon_{ijk}A_iB_jC_k$">
+  <h3>課本 1-21</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\vec A\vec B\vec C=\sum_{i,j,k}\varepsilon_{ijk}A_iB_jC_k$。</div>
+  <ol class="write">
+    <li>$\vec A\vec B\vec C=\vec A\cdot(\vec B\times\vec C)=\sum_iA_i(\vec B\times\vec C)_i$。</li>
+    <li>$(\vec B\times\vec C)_i=\sum_{j,k}\varepsilon_{ijk}B_jC_k$，代入得 $\sum_{i,j,k}\varepsilon_{ijk}A_iB_jC_k$。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-21">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-22" data-group="五、外積（p.30–32）" data-title="課本 1-22：$\varepsilon$–$\delta$ 恆等式與 BAC–CAB">
+  <h3>課本 1-22</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　分情形證明 $\sum_k\varepsilon_{ijk}\varepsilon_{lmk}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$，並用它證明 $\vec A\times(\vec B\times\vec C)=(\vec A\cdot\vec C)\vec B-(\vec A\cdot\vec B)\vec C$。</div>
+  <ol class="write">
+    <li>$i=j$ 或 $l=m$：左邊 $\varepsilon_{iik}=0$；右邊 $\delta_{il}\delta_{im}-\delta_{im}\delta_{il}=0$。</li>
+    <li>$i\neq j$、$l\neq m$、$\{i,j\}=\{l,m\}$：只剩 $k$ 為第三下標一項。$i=l,j=m$：左 $=1$、右 $=1$；$i=m,j=l$：左 $=-1$、右 $=-1$。</li>
+    <li>$\{i,j\}\neq\{l,m\}$：兩個 $\varepsilon$ 要求的 $k$ 不同，左邊為 0；右邊兩項都要求 $\{i,j\}=\{l,m\}$，亦為 0。</li>
+    <li>$[\vec A\times(\vec B\times\vec C)]_i=\sum_{j,k}\varepsilon_{ijk}A_j\sum_{l,m}\varepsilon_{klm}B_lC_m=\sum_{j,l,m}\big(\sum_k\varepsilon_{ijk}\varepsilon_{lmk}\big)A_jB_lC_m$（$\varepsilon_{klm}=\varepsilon_{lmk}$）。</li>
+    <li>$=\sum_{j,l,m}(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})A_jB_lC_m=B_i(\vec A\cdot\vec C)-C_i(\vec A\cdot\vec B)$。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-22">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-9" data-group="五、外積（p.30–32）" data-title="課本 1-9：$\vec A=\hat i+2\hat j-\hat k$、$\vec B=-2\hat i+3\hat j+\hat k$ 全套運算">
+  <h3>課本 1-9</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec A=\hat i+2\hat j-\hat k$，$\vec B=-2\hat i+3\hat j+\hat k$。求 (a) $\vec A-\vec B$、$|\vec A-\vec B|$；(b) $\vec B$ 沿 $\vec A$ 的分量；(c) $\vec A,\vec B$ 夾角；(d) $\vec A\times\vec B$；(e) $(\vec A-\vec B)\times(\vec A+\vec B)$。</div>
+  <ol class="write">
+    <li><strong>(a)</strong> $\vec A-\vec B=3\hat i-\hat j-2\hat k$，$|\vec A-\vec B|=\sqrt{9+1+4}=\sqrt{14}$。</li>
+    <li><strong>(b)</strong> $\vec A\cdot\vec B=-2+6-1=3$，$|\vec A|=\sqrt6$；$B_A=\dfrac{\vec A\cdot\vec B}{|\vec A|}=\dfrac{3}{\sqrt6}=\dfrac{\sqrt6}{2}\approx1.22$。</li>
+    <li><strong>(c)</strong> $|\vec B|=\sqrt{14}$；$\cos\theta=\dfrac{3}{\sqrt6\sqrt{14}}=\dfrac{3}{\sqrt{84}}\approx0.327$，$\theta\approx70.9^\circ$。</li>
+    <li id="tm19-d"><strong>(d)</strong> $$\vec A\times\vec B=\begin{vmatrix}\hat i&\hat j&\hat k\\1&2&-1\\-2&3&1\end{vmatrix}=(2+3)\hat i-(1-2)\hat j+(3+4)\hat k=5\hat i+\hat j+7\hat k$$
+      檢查：$(5,1,7)\cdot(1,2,-1)=0$，$(5,1,7)\cdot(-2,3,1)=0$ ✔</li>
+    <li><strong>(e)</strong> $(\vec A-\vec B)\times(\vec A+\vec B)=\vec A\times\vec B-\vec B\times\vec A=2\,\vec A\times\vec B=10\hat i+2\hat j+14\hat k$（用 <a href="#tm19-d">(d)</a>）。</li>
+  </ol>
+  <div class="final">答：(a) $3\hat i-\hat j-2\hat k$，$\sqrt{14}$；(b) $\sqrt6/2$；(c) $\cos^{-1}(3/\sqrt{84})\approx70.9^\circ$；(d) $5\hat i+\hat j+7\hat k$；(e) $10\hat i+2\hat j+14\hat k$。</div>
+  <p class="small"><a href="#tm-1-9">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-11" data-group="五、外積（p.30–32）" data-title="課本 1-11：純量三重積">
+  <h3>課本 1-11</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $(\vec A\times\vec B)\cdot\vec C$ 等於以 $\vec A,\vec B,\vec C$ 分量為三列的行列式；證明點、叉互換或循環輪換不改變其值；並以平行六面體體積解釋。</div>
+  <ol class="write">
+    <li>$\vec A\times\vec B=(A_2B_3-A_3B_2,\ A_3B_1-A_1B_3,\ A_1B_2-A_2B_1)$，故
+      $$(\vec A\times\vec B)\cdot\vec C=C_1(A_2B_3-A_3B_2)+C_2(A_3B_1-A_1B_3)+C_3(A_1B_2-A_2B_1)=\begin{vmatrix}A_1&A_2&A_3\\B_1&B_2&B_3\\C_1&C_2&C_3\end{vmatrix}$$
+      （依第三列展開即得左式。）</li>
+    <li>循環輪換列＝兩次列交換，行列式不變：$(\vec A\times\vec B)\cdot\vec C=(\vec B\times\vec C)\cdot\vec A=(\vec C\times\vec A)\cdot\vec B$；內積可交換，故 $=\vec A\cdot(\vec B\times\vec C)=\vec B\cdot(\vec C\times\vec A)$。</li>
+    <li>體積：底面積 $|\vec A\times\vec B|$，高 $h=\vec C\cdot\dfrac{\vec A\times\vec B}{|\vec A\times\vec B|}$，$V=|\vec A\times\vec B|\,h=(\vec A\times\vec B)\cdot\vec C$（取絕對值）。</li>
+  </ol>
+  <div class="final">$\vec A\vec B\vec C=\det[\vec A;\vec B;\vec C]$，循環不變；$|\vec A\vec B\vec C|$ = 平行六面體體積。∎</div>
+  <p class="small"><a href="#tm-1-11">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-12" data-group="五、外積（p.30–32）" data-title="課本 1-12：原點到平面 $ABC$ 的距離、三角形面積">
+  <h3>課本 1-12</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-12"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Let $\mathbf a$, $\mathbf b$, $\mathbf c$ be three constant vectors drawn from the origin to the points $A$, $B$, $C$. What is the distance from the origin to the plane defined by the points $A$, $B$, $C$? What is the area of the triangle $ABC$?</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-12 · p.44</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec a,\vec b,\vec c$ 由原點指向點 $A,B,C$。求原點到平面 $ABC$ 的距離，及三角形 $ABC$ 的面積。</div>
+  <ol class="write">
+    <li id="tm112-n">法向量：$\vec n=(\vec b-\vec a)\times(\vec c-\vec a)=\vec a\times\vec b+\vec b\times\vec c+\vec c\times\vec a$。</li>
+    <li>面積：$S=\tfrac12|\vec n|=\tfrac12|\vec a\times\vec b+\vec b\times\vec c+\vec c\times\vec a|$。</li>
+    <li>距離：$\vec a$ 在 $\hat n$ 方向的分量，$d=\dfrac{|\vec a\cdot\vec n|}{|\vec n|}$；其中 $\vec a\cdot(\vec a\times\vec b)=\vec a\cdot(\vec c\times\vec a)=0$，故 $\vec a\cdot\vec n=\vec a\cdot(\vec b\times\vec c)$。</li>
+  </ol>
+  <div class="final">答：$d=\dfrac{|\vec a\cdot(\vec b\times\vec c)|}{|\vec a\times\vec b+\vec b\times\vec c+\vec c\times\vec a|}$，$S=\tfrac12|\vec a\times\vec b+\vec b\times\vec c+\vec c\times\vec a|$。</div>
+  <p class="small muted">驗算例：$\vec a=(1,0,0),\vec b=(0,2,0),\vec c=(0,0,3)$：$\vec n=(6,3,2)$，$|\vec n|=7$，$d=6/7$，$S=7/2$。</p>
+  <p class="small"><a href="#tm-1-12">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-39" data-group="五、外積（p.30–32）" data-title="課本 1-39：平面的單位法向量、最近點">
+  <h3>課本 1-39</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　平面過 $(1,0,0),(0,2,0),(0,0,3)$。(a) 求單位法向量；(b) 求 $(1,1,1)$ 到平面的距離與最近點。</div>
+  <ol class="write">
+    <li>$\vec n=(-1,2,0)\times(-1,0,3)=(6,3,2)$，$|\vec n|=7$，$\hat n=\frac17(6,3,2)$。</li>
+    <li>平面：$6x+3y+2z=6$。</li>
+    <li>距離：$d=\big[(1,1,1)-(1,0,0)\big]\cdot\hat n=\frac{3+2}{7}=\frac57$。</li>
+    <li>$(1,1,1)$ 在 $+\hat n$ 側（$11\gt6$），最近點 $=(1,1,1)-\frac57\hat n=\big(\frac{19}{49},\frac{34}{49},\frac{39}{49}\big)$。</li>
+  </ol>
+  <div class="final">答：(a) $\pm\frac17(6,3,2)$；(b) $\frac57$，$\big(\frac{19}{49},\frac{34}{49},\frac{39}{49}\big)$。</div>
+  <p class="small"><a href="#tm-1-39">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-13" data-group="五、外積（p.30–32）" data-title="課本 1-13：由 $\vec A\times\vec X=\vec B$、$\vec A\cdot\vec X=\phi$ 解 $\vec X$">
+  <h3>課本 1-13</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　未知向量 $\vec X$ 滿足 $\vec A\times\vec X=\vec B$、$\vec A\cdot\vec X=\phi$（$\vec A,\vec B,\phi$ 已知）。以 $\vec A,\vec B,\phi,|\vec A|$ 表示 $\vec X$。</div>
+  <ol class="write">
+    <li>必要條件：$\vec B=\vec A\times\vec X\perp\vec A$，故 $\vec A\cdot\vec B=0$。</li>
+    <li id="tm113-bac">兩邊左外積 $\vec A$：$\vec A\times(\vec A\times\vec X)=\vec A\times\vec B$。由 $\vec A\times(\vec B\times\vec C)=\vec B(\vec A\cdot\vec C)-\vec C(\vec A\cdot\vec B)$：
+      $$\vec A(\vec A\cdot\vec X)-\vec X(\vec A\cdot\vec A)=\phi\vec A-A^2\vec X=\vec A\times\vec B$$</li>
+    <li>$$\vec X=\frac{\phi\vec A-\vec A\times\vec B}{A^2}$$</li>
+    <li>驗算：$\vec A\cdot\vec X=\dfrac{\phi A^2-0}{A^2}=\phi$ ✔；$\vec A\times\vec X=-\dfrac{\vec A\times(\vec A\times\vec B)}{A^2}=-\dfrac{\vec A(\vec A\cdot\vec B)-A^2\vec B}{A^2}=\vec B$ ✔（用 $\vec A\cdot\vec B=0$）。</li>
+  </ol>
+  <div class="final">答：$\vec X=\dfrac{\phi\,\vec A+\vec B\times\vec A}{|\vec A|^2}$（需 $\vec A\cdot\vec B=0$）。</div>
+  <p class="small"><a href="#tm-1-13">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-18" data-group="五、外積（p.30–32）" data-title="課本 1-18：用外積推正弦定律">
+  <h3>課本 1-18</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　解讀 $\vec A\times\vec B$ 與 $(\vec A-\vec B)\times\vec B$，推出正弦定律。</div>
+  <ol class="write">
+    <li>三角形 $OPQ$：$\vec A=\overrightarrow{OP}$，$\vec B=\overrightarrow{OQ}$，$\vec C=\vec A-\vec B=\overrightarrow{QP}$；內角 $\theta_O,\theta_P,\theta_Q$ 的對邊為 $C,B,A$。</li>
+    <li>$\vec C\times\vec B=\vec A\times\vec B-\vec B\times\vec B=\vec A\times\vec B$；$\vec A\times\vec C=\vec A\times\vec A-\vec A\times\vec B=-\vec A\times\vec B$。故 $|\vec A\times\vec B|=|\vec C\times\vec B|=|\vec A\times\vec C|$。</li>
+    <li>$|\vec A\times\vec B|=AB\sin\theta_O$；$\vec C$ 與 $\vec B$ 夾 $180^\circ-\theta_Q$，$|\vec C\times\vec B|=CB\sin\theta_Q$；$\vec A$ 與 $\vec C$ 夾 $\theta_P$，$|\vec A\times\vec C|=AC\sin\theta_P$。</li>
+    <li>$AB\sin\theta_O=CB\sin\theta_Q=AC\sin\theta_P$，同除以 $ABC$：
+      $$\frac{\sin\theta_O}{C}=\frac{\sin\theta_Q}{A}=\frac{\sin\theta_P}{B}$$</li>
+  </ol>
+  <div class="final">得證（正弦定律）。∎</div>
+  <p class="small"><a href="#tm-1-18">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-19" data-group="五、外積（p.30–32）" data-title="課本 1-19：$\cos(\alpha-\beta)$、$\sin(\alpha-\beta)$">
+  <h3>課本 1-19</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　以向量代數推出 (a) $\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta$；(b) $\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta$。</div>
+  <ol class="write">
+    <li>令 $\hat a=(\cos\alpha,\sin\alpha,0)$、$\hat b=(\cos\beta,\sin\beta,0)$，兩者夾角 $\alpha-\beta$（$\hat b$ 逆時針轉到 $\hat a$）。</li>
+    <li><strong>(a)</strong> $\hat a\cdot\hat b=\cos(\alpha-\beta)$；又 $\hat a\cdot\hat b=\cos\alpha\cos\beta+\sin\alpha\sin\beta$。</li>
+    <li><strong>(b)</strong> 右手定則：$\hat b\times\hat a=\sin(\alpha-\beta)\,\hat k$；又 $(\hat b\times\hat a)_3=\cos\beta\sin\alpha-\sin\beta\cos\alpha$。</li>
+  </ol>
+  <div class="final">兩式得證。∎</div>
+  <p class="small"><a href="#tm-1-19">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tb-ex17" data-group="五、外積（p.30–32）" data-title="課本例題 1.7：$(\vec A\times\vec B)\cdot(\vec C\times\vec D)$">
+  <h3>課本例題 1.7</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $(\vec A\times\vec B)\cdot(\vec C\times\vec D)=(\vec A\cdot\vec C)(\vec B\cdot\vec D)-(\vec B\cdot\vec C)(\vec A\cdot\vec D)$。</div>
+  <ol class="write">
+    <li>點叉互換：$(\vec A\times\vec B)\cdot(\vec C\times\vec D)=\vec A\cdot[\vec B\times(\vec C\times\vec D)]$。</li>
+    <li>BAC–CAB：$\vec B\times(\vec C\times\vec D)=\vec C(\vec B\cdot\vec D)-\vec D(\vec B\cdot\vec C)$。</li>
+    <li>與 $\vec A$ 內積：$=(\vec A\cdot\vec C)(\vec B\cdot\vec D)-(\vec A\cdot\vec D)(\vec B\cdot\vec C)$。</li>
+  </ol>
+  <div class="final">得證。∎（特例 $\vec C=\vec A,\vec D=\vec B$：$|\vec A\times\vec B|^2=A^2B^2-(\vec A\cdot\vec B)^2$）</div>
+  <p class="small"><a href="#tb-ex17">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-23" data-group="五、外積（p.30–32）" data-title="課本 1-23：$(\vec A\times\vec B)\times(\vec C\times\vec D)$">
+  <h3>課本 1-23</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　推導 $(\vec A\times\vec B)\times(\vec C\times\vec D)=(\vec A\vec B\vec D)\vec C-(\vec A\vec B\vec C)\vec D$。</div>
+  <ol class="write">
+    <li>令 $\vec E=\vec A\times\vec B$，由 BAC–CAB：$\vec E\times(\vec C\times\vec D)=\vec C(\vec E\cdot\vec D)-\vec D(\vec E\cdot\vec C)$。</li>
+    <li>$\vec E\cdot\vec D=(\vec A\times\vec B)\cdot\vec D=\vec A\vec B\vec D$，$\vec E\cdot\vec C=\vec A\vec B\vec C$，代回即得。</li>
+    <li>（另式）令 $\vec F=\vec C\times\vec D$：$(\vec A\times\vec B)\times\vec F=-\vec F\times(\vec A\times\vec B)=-[\vec A(\vec F\cdot\vec B)-\vec B(\vec F\cdot\vec A)]=(\vec A\vec C\vec D)\vec B-(\vec B\vec C\vec D)\vec A$。</li>
+  </ol>
+  <div class="final">$(\vec A\times\vec B)\times(\vec C\times\vec D)=(\vec A\vec B\vec D)\vec C-(\vec A\vec B\vec C)\vec D=(\vec A\vec C\vec D)\vec B-(\vec B\vec C\vec D)\vec A$ ∎</div>
+  <p class="small"><a href="#tm-1-23">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-24" data-group="五、外積（p.30–32）" data-title="課本 1-24：$\vec A=\hat e(\vec A\cdot\hat e)+\hat e\times(\vec A\times\hat e)$">
+  <h3>課本 1-24</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\hat e$ 為固定方向的單位向量。證明 $\vec A=\hat e(\vec A\cdot\hat e)+\hat e\times(\vec A\times\hat e)$，並說明兩項的幾何意義。</div>
+  <ol class="write">
+    <li>BAC–CAB：$\hat e\times(\vec A\times\hat e)=\vec A(\hat e\cdot\hat e)-\hat e(\hat e\cdot\vec A)=\vec A-\hat e(\vec A\cdot\hat e)$（$\hat e\cdot\hat e=1$）。</li>
+    <li>故 $\hat e(\vec A\cdot\hat e)+\hat e\times(\vec A\times\hat e)=\vec A$。</li>
+    <li>第一項：$\vec A$ 在 $\hat e$ 方向的投影（平行分量）；第二項：$\hat e\cdot[\hat e\times(\cdots)]=0$，為垂直 $\hat e$ 的分量。</li>
+  </ol>
+  <div class="final">$\vec A=\vec A_\parallel+\vec A_\perp$ ∎</div>
+  <p class="small"><a href="#tm-1-24">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 六、角速度 ===== -->
+
+<article class="exam-item" data-exam-id="ex-p33" data-group="六、角速度（p.33–34）" data-title="講義 p.33–34：$v=R\omega$、$\vec v=\vec\omega\times\vec r$">
+  <h3>講義 p.33–34 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="ex-p33"><span class="part-label original-label">講義英文原文</span>
+<div class="original-text" lang="en"><p><strong>Example: Angular Velocity</strong></p><p>As a particle moves in a circular path, the rate of change of the angular position is called the angular velocity: $\omega=\dfrac{\mathrm d\theta}{\mathrm dt}=\dot\theta$</p><p>For the motion in a circle of radius $R$, the instantaneous magnitude of the linear velocity is given by: $v=R\dfrac{\mathrm d\theta}{\mathrm dt}=R\omega$</p><p>Angular velocity, with respect to a coordinate system centered at the origin $O$, can be expressed in a more general form using vector notation: $\vec v=\vec\omega\times\vec r$ $(\neq\vec r\times\vec\omega)$, $v=r\omega\sin\alpha$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 證明圓周運動 $v=R\omega$；(b) 原點在轉軸上，證明 $\vec v=\vec\omega\times\vec r$、$v=r\omega\sin\alpha$，並說明不能寫 $\vec r\times\vec\omega$。</div>
+  <ol class="write">
+    <li>(a) $s=R\theta$，$v=\dfrac{\mathrm ds}{\mathrm dt}=R\dot\theta=R\omega$。</li>
+    <li>(b) $\vec r=(r\cos\alpha)\hat\omega+\vec R$，$|\vec R|=r\sin\alpha=$ 圓半徑。$\vec\omega\times\vec r=\vec\omega\times\vec R$（平行部分外積為 0）。</li>
+    <li>$|\vec\omega\times\vec R|=\omega R=r\omega\sin\alpha$，方向垂直軸與 $\vec R$＝切線，右手定則指向前進方向，故 $\vec v=\vec\omega\times\vec r$。</li>
+    <li>$\vec r\times\vec\omega=-\vec v$，方向相反，所以次序不能交換。</li>
+  </ol>
+  <div class="final">答：$v=R\omega$；$\vec v=\vec\omega\times\vec r$，$v=r\omega\sin\alpha$。</div>
+  <p class="small"><a href="#ex-p33">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s05-1" data-group="五、外積（p.30–32）" data-title="自編：兩歪斜線的距離">
+  <h3>自編難題：歪斜線距離</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$L_1$：過原點、方向 $(1,0,0)$；$L_2$：過 $(0,1,1)$、方向 $(0,1,-1)$。求最短距離。</div>
+  <ol class="write">
+    <li>$\vec n=\vec u_1\times\vec u_2=(0,1,1)$。</li>
+    <li>$d=\dfrac{|(\vec P_2-\vec P_1)\cdot\vec n|}{|\vec n|}=\dfrac{(0,1,1)\cdot(0,1,1)}{\sqrt2}=\sqrt2$。</li>
+    <li>理由：$\vec Q_2-\vec Q_1$ 沿 $\hat n$ 的分量與 $s,t$ 無關，恆為 $\sqrt2$。</li>
+  </ol>
+  <div class="final">答：$\sqrt2$（兩點 $(0,0,0)$、$(0,1,1)$）。</div>
+  <p class="small"><a href="#self-s05-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s05-2" data-group="五、外積（p.30–32）" data-title="自編：三角形面積與三個投影面積">
+  <h3>自編難題：投影面積</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$P(1,0,1)$、$Q(2,2,1)$、$R(0,1,3)$。求面積 $S$、三個座標平面上的投影面積，並證明 $S^2=S_x^2+S_y^2+S_z^2$。</div>
+  <ol class="write">
+    <li>$\vec n=\vec{PQ}\times\vec{PR}=(1,2,0)\times(-1,1,2)=(4,-2,3)$，$S=\frac12\sqrt{29}$。</li>
+    <li>$n_z=A_1B_2-A_2B_1$ 只用 $x,y$ 分量，投影到 $xy$ 平面不變，故 $S_z=\frac12|n_z|=\frac32$；同理 $S_x=2$、$S_y=1$。</li>
+    <li>$S^2=\frac14(n_x^2+n_y^2+n_z^2)=S_x^2+S_y^2+S_z^2$；數值 $4+1+\frac94=\frac{29}4$。</li>
+  </ol>
+  <div class="final">答：$S=\frac{\sqrt{29}}2$，$(S_x,S_y,S_z)=(2,1,\frac32)$。</div>
+  <p class="small"><a href="#self-s05-2">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="ex-ang" data-group="六、角速度（p.33–34）" data-title="自編：$\vec\omega=2\hat k$、$\vec r=(1,0,1)$ 求 $\vec v$">
+  <h3>自編練習（非課本題）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　剛體繞 $z$ 軸以 $\vec\omega=2\hat k\ \text{rad/s}$ 轉動，其上一點 $\vec r=(1,0,1)\ \text{m}$（原點在軸上）。求 $\vec v$，並以 $v=r\omega\sin\alpha$ 驗算。</div>
+  <ol class="write">
+    <li>$$\vec v=\vec\omega\times\vec r=\begin{vmatrix}\hat i&\hat j&\hat k\\0&0&2\\1&0&1\end{vmatrix}=(0-0)\hat i-(0-2)\hat j+(0-0)\hat k=2\hat j\ \text{m/s}$$</li>
+    <li>$r=\sqrt2$，$\cos\alpha=\dfrac{\vec r\cdot\hat k}{r}=\dfrac1{\sqrt2}\Rightarrow\alpha=45^\circ$；$v=r\omega\sin\alpha=\sqrt2\times2\times\dfrac{\sqrt2}{2}=2\ \text{m/s}$ ✔</li>
+  </ol>
+  <div class="final">答：$\vec v=2\hat j\ \text{m/s}$，$|\vec v|=2\ \text{m/s}$。</div>
+  <p class="small"><a href="#ex-ang">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s06-1" data-group="六、角速度（p.33–34）" data-title="自編：北緯 $22.6^\circ$ 的自轉速度">
+  <h3>自編難題：地球自轉速度</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$T=86164\ \text{s}$、$R_E=6.37\times10^6\ \text{m}$、緯度 $22.6^\circ$。用 $\vec v=\vec\omega\times\vec r$ 求速度。</div>
+  <ol class="write">
+    <li>$\omega=2\pi/T=7.292\times10^{-5}\ \text{rad/s}$，沿地軸向北。</li>
+    <li>$\vec r$ 與軸夾 $\alpha=90^\circ-\lambda$，$v=R_E\omega\sin\alpha=R_E\omega\cos\lambda\approx429\ \text{m/s}$。</li>
+    <li>$\vec r=R_E(\cos\lambda,0,\sin\lambda)$，$\vec\omega\times\vec r=(0,\omega R_E\cos\lambda,0)$，朝東。</li>
+  </ol>
+  <div class="final">答：$\approx429\ \text{m/s}$，向東。</div>
+  <p class="small"><a href="#self-s06-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s06-2" data-group="六、角速度（p.33–34）" data-title="自編：由兩點速度求 $\vec\omega$">
+  <h3>自編難題：反推角速度</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec r_1=(1,0,0)$ 處 $\vec v_1=(0,3,-2)$，$\vec r_2=(0,1,0)$ 處 $\vec v_2=(-3,0,1)$。求 $\vec\omega$ 及 $(1,1,1)$ 處速度。</div>
+  <ol class="write">
+    <li>設 $\vec\omega=(a,b,c)$：$\vec\omega\times\vec r_1=(0,c,-b)=(0,3,-2)$，$c=3$、$b=2$。</li>
+    <li>$\vec\omega\times\vec r_2=(-c,0,a)=(-3,0,1)$，$a=1$。</li>
+    <li>$\vec v_3=(1,2,3)\times(1,1,1)=(-1,2,-1)$。</li>
+    <li>只有 $\vec v_1$ 時 $\vec\omega+\lambda\vec r_1$ 給出相同 $\vec v_1$，故需兩點。</li>
+  </ol>
+  <div class="final">答：$\vec\omega=(1,2,3)\ \text{rad/s}$，$\vec v=(-1,2,-1)\ \text{m/s}$。</div>
+  <p class="small"><a href="#self-s06-2">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 七、向量的微分 ===== -->
+<article class="exam-item" data-exam-id="tm-1-10" data-group="七、向量的微分（p.35）" data-title="課本 1-10：橢圓軌道的 $\vec v$、$\vec a$、速率與夾角">
+  <h3>課本 1-10</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec r=2b\sin\omega t\,\hat i+b\cos\omega t\,\hat j$。(a) 求 $\vec v$、$\vec a$ 與速率；(b) $t=\pi/2\omega$ 時 $\vec v$ 與 $\vec a$ 的夾角。</div>
+  <ol class="write">
+    <li>$\vec v=\dot{\vec r}=2b\omega\cos\omega t\,\hat i-b\omega\sin\omega t\,\hat j$</li>
+    <li>$\vec a=\dot{\vec v}=-2b\omega^2\sin\omega t\,\hat i-b\omega^2\cos\omega t\,\hat j=-\omega^2\vec r$</li>
+    <li>$v=|\vec v|=b\omega\sqrt{4\cos^2\omega t+\sin^2\omega t}=b\omega\sqrt{1+3\cos^2\omega t}$</li>
+    <li><strong>(b)</strong> $\omega t=\pi/2$：$\vec v=-b\omega\,\hat j$，$\vec a=-2b\omega^2\,\hat i$，$\vec v\cdot\vec a=0\Rightarrow\theta=90^\circ$。</li>
+  </ol>
+  <div class="final">答：(a) $\vec v=2b\omega\cos\omega t\,\hat i-b\omega\sin\omega t\,\hat j$，$\vec a=-\omega^2\vec r$，$v=b\omega\sqrt{1+3\cos^2\omega t}$；(b) $90^\circ$。</div>
+  <p class="small"><a href="#tm-1-10">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-32" data-group="七、向量的微分（p.35）" data-title="課本 1-32：$\int(2a\vec r\cdot\dot{\vec r}+2b\dot{\vec r}\cdot\ddot{\vec r})\mathrm dt$">
+  <h3>課本 1-32</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\displaystyle\int(2a\,\vec r\cdot\dot{\vec r}+2b\,\dot{\vec r}\cdot\ddot{\vec r})\,\mathrm dt=ar^2+b\dot r^2+\text{const.}$，其中 $r=|\vec r|$、$\dot r=|\dot{\vec r}|$，$a,b$ 為常數。</div>
+  <ol class="write">
+    <li>$\dfrac{\mathrm d}{\mathrm dt}(r^2)=\dfrac{\mathrm d}{\mathrm dt}(\vec r\cdot\vec r)=2\,\vec r\cdot\dot{\vec r}$；$\dfrac{\mathrm d}{\mathrm dt}(\dot r^2)=\dfrac{\mathrm d}{\mathrm dt}(\dot{\vec r}\cdot\dot{\vec r})=2\,\dot{\vec r}\cdot\ddot{\vec r}$。</li>
+    <li>故被積式 $=\dfrac{\mathrm d}{\mathrm dt}\big(ar^2+b\dot r^2\big)$，積分得 $ar^2+b\dot r^2+\text{const.}$</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-32">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-33" data-group="七、向量的微分（p.35）" data-title="課本 1-33：$\int(\dot{\vec r}/r-\vec r\dot r/r^2)\mathrm dt=\vec r/r+\vec C$">
+  <h3>課本 1-33</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\displaystyle\int\left(\frac{\dot{\vec r}}{r}-\frac{\vec r\,\dot r}{r^2}\right)\mathrm dt=\frac{\vec r}{r}+\vec C$，$\vec C$ 為常向量。（此處 $\dot r=\mathrm dr/\mathrm dt$，$r=|\vec r|$。）</div>
+  <ol class="write">
+    <li>$$\frac{\mathrm d}{\mathrm dt}\left(\frac{\vec r}{r}\right)=\frac1r\dot{\vec r}+\frac{\mathrm d}{\mathrm dt}\!\left(\frac1r\right)\vec r=\frac{\dot{\vec r}}{r}-\frac{\dot r}{r^2}\vec r$$</li>
+    <li>故被積式為 $\dfrac{\mathrm d}{\mathrm dt}(\vec r/r)$，積分得 $\dfrac{\vec r}{r}+\vec C$。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-33">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-27" data-group="七、向量的微分（p.35）" data-title="課本 1-27：$\frac{\mathrm d}{\mathrm dt}[\vec r\times(\vec v\times\vec r)]$">
+  <h3>課本 1-27</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec r$、$\vec v=\dot{\vec r}$ 為時間的顯函數，證明 $\dfrac{\mathrm d}{\mathrm dt}[\vec r\times(\vec v\times\vec r)]=r^2\vec a+(\vec r\cdot\vec v)\vec v-(v^2+\vec r\cdot\vec a)\vec r$。</div>
+  <ol class="write">
+    <li>外積乘積律：$\dfrac{\mathrm d}{\mathrm dt}[\vec r\times(\vec v\times\vec r)]=\vec v\times(\vec v\times\vec r)+\vec r\times(\vec a\times\vec r+\vec v\times\vec v)=\vec v\times(\vec v\times\vec r)+\vec r\times(\vec a\times\vec r)$。</li>
+    <li>BAC–CAB：$\vec v\times(\vec v\times\vec r)=(\vec r\cdot\vec v)\vec v-v^2\vec r$；$\vec r\times(\vec a\times\vec r)=r^2\vec a-(\vec r\cdot\vec a)\vec r$。</li>
+    <li>相加：$r^2\vec a+(\vec r\cdot\vec v)\vec v-(v^2+\vec r\cdot\vec a)\vec r$。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-27">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-34" data-group="七、向量的微分（p.35）" data-title="課本 1-34：$\int\vec A\times\ddot{\vec A}\,\mathrm dt$">
+  <h3>課本 1-34</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　計算 $\int\vec A\times\ddot{\vec A}\,\mathrm dt$。</div>
+  <ol class="write">
+    <li>$\frac{\mathrm d}{\mathrm dt}(\vec A\times\dot{\vec A})=\dot{\vec A}\times\dot{\vec A}+\vec A\times\ddot{\vec A}=\vec A\times\ddot{\vec A}$。</li>
+    <li>故被積式是 $\vec A\times\dot{\vec A}$ 的導數。</li>
+  </ol>
+  <div class="final">答：$\int\vec A\times\ddot{\vec A}\,\mathrm dt=\vec A\times\dot{\vec A}+\vec C$（$\vec C$ 為常數向量）。</div>
+  <p class="small"><a href="#tm-1-34">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s07-1" data-group="七、向量的微分（p.35）" data-title="自編：螺旋線的 $\vec v$、$\vec a$">
+  <h3>自編難題：螺旋線</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec r=R\cos\omega t\,\hat i+R\sin\omega t\,\hat j+bt\,\hat k$。證明速率固定、$\vec a\perp\vec v$，求 $|\vec a|$ 與方向。</div>
+  <ol class="write">
+    <li>$\vec v=(-R\omega\sin\omega t,R\omega\cos\omega t,b)$，$v^2=R^2\omega^2+b^2$ 為常數。</li>
+    <li>$\vec a=-R\omega^2(\cos\omega t,\sin\omega t,0)$，$\vec a\cdot\vec v=0$。</li>
+    <li>$\frac{\mathrm d}{\mathrm dt}(v^2)=2\vec v\cdot\vec a=0$，與「長度固定 ⟹ 導數垂直」相同。</li>
+    <li>$|\vec a|=R\omega^2$，$\vec a=-\omega^2(x,y,0)$ 水平指向 $z$ 軸。</li>
+  </ol>
+  <div class="final">答：$v=\sqrt{R^2\omega^2+b^2}$，$|\vec a|=R\omega^2$ 指向軸。</div>
+  <p class="small"><a href="#self-s07-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s07-2" data-group="七、向量的微分（p.35）" data-title="自編：$\vec r\times\vec v$ 守恆與掃過面積">
+  <h3>自編難題：角動量守恆</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec r=2b\sin\omega t\,\hat i+b\cos\omega t\,\hat j$。證明 $\frac{\mathrm d}{\mathrm dt}(\vec r\times\vec v)=\vec r\times\vec a$，求 $\vec r\times\vec v$ 與掃過面積的速率。</div>
+  <ol class="write">
+    <li>$\frac{\mathrm d}{\mathrm dt}(\vec r\times\vec v)=\vec v\times\vec v+\vec r\times\vec a=\vec r\times\vec a$。</li>
+    <li>$\vec a=-\omega^2\vec r$，$\vec r\times\vec a=0$，故 $\vec r\times\vec v$ 為常數。</li>
+    <li>$(\vec r\times\vec v)_z=xv_y-yv_x=-2b^2\omega(\sin^2+\cos^2)=-2b^2\omega$。</li>
+    <li>$\frac{\mathrm dA}{\mathrm dt}=\frac12|\vec r\times\vec v|=b^2\omega$，一週 $2\pi b^2=\pi(2b)(b)$。</li>
+  </ol>
+  <div class="final">答：$\vec r\times\vec v=-2b^2\omega\,\hat k$，$\dot A=b^2\omega$。</div>
+  <p class="small"><a href="#self-s07-2">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 八、矩陣 ===== -->
+<article class="exam-item" data-exam-id="ex-p39" data-group="八、座標系與矩陣（p.36–40）" data-title="講義 p.39 Example 1.2：求 $AB$">
+  <h3>講義 p.39 Example 1.2</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$A=\begin{bmatrix}2&1&3\\-2&2&4\\-1&-3&-4\end{bmatrix}$，$B=\begin{bmatrix}-1&-2\\1&2\\3&4\end{bmatrix}$，求 $AB$。</div>
+  <ol class="write">
+    <li>$(3\times3)(3\times2)\Rightarrow AB$ 為 $3\times2$；$(AB)_{ij}=\sum_kA_{ik}B_{kj}$。</li>
+    <li>$$AB=\begin{bmatrix}-2+1+9&-4+2+12\\2+2+12&4+4+16\\1-3-12&2-6-16\end{bmatrix}$$</li>
+  </ol>
+  <div class="final">答：$AB=\begin{bmatrix}8&10\\16&24\\-14&-20\end{bmatrix}$。</div>
+  <p class="small"><a href="#ex-p39">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p40" data-group="八、座標系與矩陣（p.36–40）" data-title="講義 p.40 Example 1.3：$AB\neq BA$">
+  <h3>講義 p.40 Example 1.3</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$A=\begin{bmatrix}2&1\\-1&3\end{bmatrix}$，$B=\begin{bmatrix}-1&2\\4&-2\end{bmatrix}$，比較 $AB$ 與 $BA$。</div>
+  <ol class="write">
+    <li>$$AB=\begin{bmatrix}-2+4&4-2\\1+12&-2-6\end{bmatrix}=\begin{bmatrix}2&2\\13&-8\end{bmatrix}$$</li>
+    <li>$$BA=\begin{bmatrix}-2-2&-1+6\\8+2&4-6\end{bmatrix}=\begin{bmatrix}-4&5\\10&-2\end{bmatrix}$$</li>
+  </ol>
+  <div class="final">答：$AB\neq BA$，矩陣乘法不可交換。</div>
+  <p class="small"><a href="#ex-p40">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-14" data-group="八、座標系與矩陣（p.36–40）" data-title="課本 1-14：$|AB|$、$AC$、$ABC$、$AB-B^{\mathsf T}A^{\mathsf T}$">
+  <h3>課本 1-14</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\mathsf A=\begin{bmatrix}1&2&-1\\0&3&1\\2&0&1\end{bmatrix}$，$\mathsf B=\begin{bmatrix}2&1&0\\0&-1&2\\1&1&3\end{bmatrix}$，$\mathsf C=\begin{bmatrix}2&1\\4&3\\1&0\end{bmatrix}$。求 (a) $|\mathsf{AB}|$；(b) $\mathsf{AC}$；(c) $\mathsf{ABC}$；(d) $\mathsf{AB}-\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}$。</div>
+  <ol class="write">
+    <li id="tm114-ab">$\mathsf{AB}=\begin{bmatrix}1&-2&1\\1&-2&9\\5&3&3\end{bmatrix}$</li>
+    <li><strong>(a)</strong> $|\mathsf{AB}|=1(-6-27)+2(3-45)+1(3+10)=-33-84+13=-104$（驗算：$|\mathsf A||\mathsf B|=13\times(-8)=-104$ ✔）</li>
+    <li><strong>(b)</strong> $\mathsf{AC}=\begin{bmatrix}2+8-1&1+6+0\\0+12+1&0+9+0\\4+0+1&2+0+0\end{bmatrix}=\begin{bmatrix}9&7\\13&9\\5&2\end{bmatrix}$</li>
+    <li><strong>(c)</strong> $\mathsf{ABC}=(\mathsf{AB})\mathsf C=\begin{bmatrix}2-8+1&1-6\\2-8+9&1-6\\10+12+3&5+9\end{bmatrix}=\begin{bmatrix}-5&-5\\3&-5\\25&14\end{bmatrix}$</li>
+    <li><strong>(d)</strong> $\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}=(\mathsf{AB})^{\mathsf T}$（<button type="button" class="exam-link" data-exam="tm-1-4">見 1-4(a)</button>），故
+      $$\mathsf{AB}-(\mathsf{AB})^{\mathsf T}=\begin{bmatrix}1&-2&1\\1&-2&9\\5&3&3\end{bmatrix}-\begin{bmatrix}1&1&5\\-2&-2&3\\1&9&3\end{bmatrix}=\begin{bmatrix}0&-3&-4\\3&0&6\\4&-6&0\end{bmatrix}$$</li>
+  </ol>
+  <div class="final">答：(a) $-104$；(b) $\begin{bmatrix}9&7\\13&9\\5&2\end{bmatrix}$；(c) $\begin{bmatrix}-5&-5\\3&-5\\25&14\end{bmatrix}$；(d) $\begin{bmatrix}0&-3&-4\\3&0&6\\4&-6&0\end{bmatrix}$。</div>
+  <p class="small"><a href="#tm-1-14">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-4" data-group="八、座標系與矩陣（p.36–40）" data-title="課本 1-4：$(AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}$、$(AB)^{-1}=B^{-1}A^{-1}$">
+  <h3>課本 1-4</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 (a) $(\mathsf{AB})^{\mathsf T}=\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}$；(b) $(\mathsf{AB})^{-1}=\mathsf B^{-1}\mathsf A^{-1}$。</div>
+  <ol class="write">
+    <li id="tm14-a"><strong>(a)</strong> $$\big[(\mathsf{AB})^{\mathsf T}\big]_{ij}=(\mathsf{AB})_{ji}=\sum_kA_{jk}B_{ki}=\sum_k(\mathsf B^{\mathsf T})_{ik}(\mathsf A^{\mathsf T})_{kj}=(\mathsf B^{\mathsf T}\mathsf A^{\mathsf T})_{ij}$$ 對所有 $i,j$ 成立。</li>
+    <li><strong>(b)</strong> $(\mathsf{AB})(\mathsf B^{-1}\mathsf A^{-1})=\mathsf A(\mathsf B\mathsf B^{-1})\mathsf A^{-1}=\mathsf A\mathsf A^{-1}=I$；$(\mathsf B^{-1}\mathsf A^{-1})(\mathsf{AB})=\mathsf B^{-1}(\mathsf A^{-1}\mathsf A)\mathsf B=I$。故 $\mathsf B^{-1}\mathsf A^{-1}$ 為 $\mathsf{AB}$ 的反矩陣。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-4">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s08-1" data-group="八、座標系與矩陣（p.36–40）" data-title="自編：與上三角矩陣 $A$ 可交換的 $B$">
+  <h3>自編難題：可交換的矩陣</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$A=\begin{bmatrix}1&1\\0&1\end{bmatrix}$，求所有滿足 $AB=BA$ 的 $2\times2$ 矩陣 $B$。</div>
+  <ol class="write">
+    <li>$A=\mathbf 1+N$，$N=\begin{bmatrix}0&1\\0&0\end{bmatrix}$，條件 $\Leftrightarrow NB=BN$。</li>
+    <li>$B=\begin{bmatrix}a&b\\c&d\end{bmatrix}$：$NB=\begin{bmatrix}c&d\\0&0\end{bmatrix}$，$BN=\begin{bmatrix}0&a\\0&c\end{bmatrix}$。</li>
+    <li>比較得 $c=0$、$d=a$。</li>
+  </ol>
+  <div class="final">答：$B=\begin{bmatrix}a&b\\0&a\end{bmatrix}$。</div>
+  <p class="small"><a href="#self-s08-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s08-2" data-group="八、座標系與矩陣（p.36–40）" data-title="自編：$\lambda(\theta)^n=\mathbf 1$ 的條件">
+  <h3>自編難題：旋轉幾次回原位</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\lambda(\theta)^n=\lambda(n\theta)$；求使 $\lambda(72^\circ)^n=\mathbf 1$ 的最小 $n$；證明 $\lambda(1\ \text{rad})^n\neq\mathbf 1$；一般條件為何？</div>
+  <ol class="write">
+    <li>相乘並用和角公式：$\lambda(\theta)\lambda(\phi)=\lambda(\theta+\phi)$；歸納得 $\lambda(\theta)^n=\lambda(n\theta)$。</li>
+    <li>$\lambda(\alpha)=\mathbf 1\Leftrightarrow\cos\alpha=1,\sin\alpha=0\Leftrightarrow\alpha=2\pi k$。</li>
+    <li>$72^\circ n=360^\circ k$，最小 $n=5$。</li>
+    <li>$\lambda(1)^n=\mathbf 1\Rightarrow n=2\pi k\Rightarrow\pi=\frac n{2k}$ 有理，矛盾。</li>
+    <li>一般：$\frac\theta{2\pi}=\frac kn$ 為有理數；最小 $n$ 為最簡分母。</li>
+  </ol>
+  <div class="final">答：$n=5$；$\lambda(1)^n\neq\mathbf 1$；條件 $\theta/2\pi\in\mathbb Q$。</div>
+  <p class="small"><a href="#self-s08-2">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 九、座標旋轉 ===== -->
+<article class="exam-item" data-exam-id="ex-p43" data-group="九、座標旋轉（p.41–50）" data-title="講義 p.43：$\theta=0$、$\theta=\pi/2$ 的旋轉">
+  <h3>講義 p.43</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　二維座標軸旋轉 $\theta$：$x'=x\cos\theta+y\sin\theta$，$y'=-x\sin\theta+y\cos\theta$。求 $\theta=0$ 與 $\theta=\pi/2$ 時的 $(x',y')$。</div>
+  <ol class="write">
+    <li>$\theta=0$：$\cos0=1,\ \sin0=0\Rightarrow(x',y')=(x,y)$。</li>
+    <li>$\theta=\pi/2$：$\cos\frac\pi2=0,\ \sin\frac\pi2=1\Rightarrow x'=y,\ y'=-x$。</li>
+  </ol>
+  <div class="final">答：$\theta=0$：$(x,y)$；$\theta=\pi/2$：$(y,-x)$。</div>
+  <p class="small"><a href="#ex-p43">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p49" data-group="九、座標旋轉（p.41–50）" data-title="講義 p.49 Example 1.1：$P(2,1,3)$ 繞 $\hat x_1$ 轉 $30^\circ$">
+  <h3>講義 p.49 Example 1.1</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec P(2,1,3)$。座標系繞 $\hat x_1$ 旋轉 $30^\circ$ 後，求 $\vec P$ 在新座標系的分量。</div>
+  <ol class="write">
+    <li>繞 $\hat x_1$ 的旋轉矩陣：
+      $$\begin{bmatrix}x_1'\\x_2'\\x_3'\end{bmatrix}=\begin{bmatrix}1&0&0\\0&\cos30^\circ&\sin30^\circ\\0&-\sin30^\circ&\cos30^\circ\end{bmatrix}\begin{bmatrix}2\\1\\3\end{bmatrix}$$</li>
+    <li>$x_1'=2$</li>
+    <li>$x_2'=\cos30^\circ\times1+\sin30^\circ\times3=\tfrac{\sqrt3}{2}+\tfrac32=\tfrac{3+\sqrt3}{2}\approx2.366$</li>
+    <li>$x_3'=-\sin30^\circ\times1+\cos30^\circ\times3=-\tfrac12+\tfrac{3\sqrt3}{2}=\tfrac{3\sqrt3-1}{2}\approx2.098$</li>
+    <li>驗算：$2^2+2.366^2+2.098^2=14.00=2^2+1^2+3^2$ ✔</li>
+  </ol>
+  <div class="final">答：$\vec P'=\left(2,\ \tfrac{3+\sqrt3}{2},\ \tfrac{3\sqrt3-1}{2}\right)\approx(2,\ 2.366,\ 2.098)$。</div>
+  <p class="small"><a href="#ex-p49">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tb-rot2" data-group="九、座標旋轉（p.41–50）" data-title="課本 §1.7：連續兩次 $90^\circ$ 旋轉">
+  <h3>課本 §1.7 連續旋轉</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　座標系先繞 $x_3$ 逆時針轉 $90^\circ$（$\lambda_1$），再繞新的 $x_1'$ 逆時針轉 $90^\circ$（$\lambda_2$）。求合成矩陣；對調次序結果是否相同？</div>
+  <ol class="write">
+    <li>$\lambda_1$：$x_1'=x_2$、$x_2'=-x_1$、$x_3'=x_3$，$\lambda_1=\begin{bmatrix}0&1&0\\-1&0&0\\0&0&1\end{bmatrix}$。</li>
+    <li>$\lambda_2$（繞 $x_1'$）：$x_1''=x_1'$、$x_2''=x_3'$、$x_3''=-x_2'$，$\lambda_2=\begin{bmatrix}1&0&0\\0&0&1\\0&-1&0\end{bmatrix}$。</li>
+    <li>$\vec x''=\lambda_2\vec x'=\lambda_2\lambda_1\vec x$：$\lambda_3=\lambda_2\lambda_1=\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}$，即 $x_1''=x_2,\ x_2''=x_3,\ x_3''=x_1$。</li>
+    <li>對調：$\lambda_4=\lambda_1\lambda_2=\begin{bmatrix}0&0&1\\-1&0&0\\0&-1&0\end{bmatrix}\neq\lambda_3$。</li>
+  </ol>
+  <div class="final">答：$\lambda_3=\lambda_2\lambda_1$ 如上；次序對調得 $\lambda_4\neq\lambda_3$，旋轉不可交換。</div>
+  <p class="small"><a href="#tb-rot2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p50" data-group="九、座標旋轉（p.41–50）" data-title="講義 p.50：$\lambda_2(\phi)\lambda_1(\theta)$">
+  <h3>講義 p.50 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="ex-p50"><span class="part-label original-label">講義英文原文</span>
+<p class="original-note">標題照講義原文拼作 Miltiple（講義筆誤，原文照錄不更正）。</p>
+<div class="original-text" lang="en"><p><strong>Miltiple Rotational Operations</strong></p><p>What’s the rotation matrix of the following operations:</p><p>First, rotate the $x$-coordinate about $\hat x_3$ by $\theta$ to $x'$-coordinate (rotation matrix: $\lambda_1(\theta)$).</p><p>Then, rotate the $x'$-coordinate about $\hat x_1'$ by $\phi$ to $x''$-coordinate (rotation matrix: $\lambda_2(\phi)$).</p><p>$x''=\lambda_1(\theta)\,\lambda_2(\phi)\,x$ or $\lambda_2(\phi)\,\lambda_1(\theta)\,x$ ?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　先繞 $\hat x_3$ 轉 $\theta$（$\lambda_1$），再繞 $\hat x_1'$ 轉 $\phi$（$\lambda_2$）。$x''=\lambda_1\lambda_2x$ 還是 $\lambda_2\lambda_1x$？求合成矩陣。</div>
+  <ol class="write">
+    <li>$x'=\lambda_1x$，$x''=\lambda_2x'=\lambda_2\lambda_1x$，後做的在左。</li>
+    <li>$\lambda_1=\begin{bmatrix}c_\theta&s_\theta&0\\-s_\theta&c_\theta&0\\0&0&1\end{bmatrix}$，$\lambda_2=\begin{bmatrix}1&0&0\\0&c_\phi&s_\phi\\0&-s_\phi&c_\phi\end{bmatrix}$。</li>
+    <li>$\lambda_2\lambda_1=\begin{bmatrix}c_\theta&s_\theta&0\\-c_\phi s_\theta&c_\phi c_\theta&s_\phi\\s_\phi s_\theta&-s_\phi c_\theta&c_\phi\end{bmatrix}$。</li>
+    <li>$\theta=\phi=90^\circ$：$\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}$，與課本 $\lambda_3$ 相同。</li>
+  </ol>
+  <div class="final">答：$x''=\lambda_2(\phi)\lambda_1(\theta)x$。</div>
+  <p class="small"><a href="#ex-p50">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-1" data-group="九、座標旋轉（p.41–50）" data-title="課本 1-1：$x_3$ 繞 $x_2$ 朝 $x_1$ 轉 $45^\circ$">
+  <h3>課本 1-1</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the transformation matrix that rotates the axis $x_3$ of a rectangular coordinate system $45^\circ$ toward $x_1$ around the $x_2$-axis.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-1 · p.43</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求變換矩陣：將直角座標系的 $x_3$ 軸繞 $x_2$ 軸、朝 $x_1$ 旋轉 $45^\circ$。</div>
+  <ol class="write">
+    <li>新軸（以舊座標表示）：$\hat x_2'=(0,1,0)$；$\hat x_3'=(\sin45^\circ,0,\cos45^\circ)=\left(\tfrac1{\sqrt2},0,\tfrac1{\sqrt2}\right)$；$\hat x_1'=\hat x_2'\times\hat x_3'=\left(\tfrac1{\sqrt2},0,-\tfrac1{\sqrt2}\right)$。</li>
+    <li>$\lambda_{ij}=\hat x_i'\cdot\hat x_j$，各 row 為新軸分量：
+      $$\lambda=\begin{bmatrix}\tfrac1{\sqrt2}&0&-\tfrac1{\sqrt2}\\0&1&0\\\tfrac1{\sqrt2}&0&\tfrac1{\sqrt2}\end{bmatrix}$$</li>
+    <li>檢查：各 row 長度 1、兩兩正交，$\det\lambda=\tfrac12+\tfrac12=1$ ✔</li>
+  </ol>
+  <div class="final">答：$\lambda=\begin{bmatrix}\tfrac1{\sqrt2}&0&-\tfrac1{\sqrt2}\\0&1&0\\\tfrac1{\sqrt2}&0&\tfrac1{\sqrt2}\end{bmatrix}$（即繞 $x_2$ 軸、$\theta=45^\circ$ 的 $\lambda_y$）。</div>
+  <p class="small"><a href="#tm-1-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-5" data-group="九、座標旋轉（p.41–50）" data-title="課本 1-5：$|\lambda|^2=1$">
+  <h3>課本 1-5</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-5"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show by direct expansion that $|\lambda|^2=1$. For simplicity, take $\lambda$ to be a two-dimensional orthogonal transformation matrix.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-5 · p.43</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　以直接展開證明 $|\lambda|^2=1$，$\lambda$ 取二維正交變換矩陣。</div>
+  <ol class="write">
+    <li>$\lambda=\begin{bmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{bmatrix}$，$|\lambda|=\cos^2\theta+\sin^2\theta=1$。</li>
+    <li>含鏡射的正交矩陣 $\begin{bmatrix}\cos\theta&\sin\theta\\\sin\theta&-\cos\theta\end{bmatrix}$：$|\lambda|=-1$。</li>
+  </ol>
+  <div class="final">兩種情況皆 $|\lambda|^2=1$。∎</div>
+  <p class="small"><a href="#tm-1-5">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-15" data-group="九、座標旋轉（p.41–50）" data-title="課本 1-15：使變換正交的 $\alpha$">
+  <h3>課本 1-15</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $\alpha$ 使 $\begin{bmatrix}1&0&0\\0&\alpha&-\alpha\\0&\alpha&\alpha\end{bmatrix}$ 為正交變換。</div>
+  <ol class="write">
+    <li>正交 $\iff\lambda\lambda^{\mathsf T}=I\iff$ 各 row 為單位向量且兩兩正交。</li>
+    <li>row 2、row 3：$\alpha^2+\alpha^2=2\alpha^2=1\Rightarrow\alpha=\pm\tfrac1{\sqrt2}$。</li>
+    <li>row 2 · row 3 $=\alpha^2-\alpha^2=0$；row 1 與 row 2、3 正交，恆成立。</li>
+    <li>$\det=2\alpha^2=1$，為純旋轉。</li>
+  </ol>
+  <div class="final">答：$\alpha=\pm\dfrac1{\sqrt2}$。</div>
+  <p class="small"><a href="#tm-1-15">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-3" data-group="九、座標旋轉（p.41–50）" data-title="課本 1-3：繞與三軸等角的軸轉 $120^\circ$">
+  <h3>課本 1-3</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-3"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the transformation matrix that rotates a rectangular coordinate system through an angle of $120^\circ$ about an axis making equal angles with the original three coordinate axes.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-3 · p.43</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求變換矩陣：將直角座標系繞一根與原三軸夾角相等的軸旋轉 $120^\circ$。</div>
+  <ol class="write">
+    <li>轉軸 $\hat n=\tfrac1{\sqrt3}(1,1,1)$（$n_1=n_2=n_3$ 且長度 1）。</li>
+    <li>由三重對稱，繞 $\hat n$ 轉 $120^\circ$：$\hat x_1'=\hat x_2$，$\hat x_2'=\hat x_3$，$\hat x_3'=\hat x_1$。<br>（驗證：$\vec u\cos\phi+(\hat n\times\vec u)\sin\phi+\hat n(\hat n\cdot\vec u)(1-\cos\phi)$，$\vec u=\hat x_1$、$\phi=120^\circ$ 得 $(0,1,0)$。）</li>
+    <li>$\lambda_{ij}=\hat x_i'\cdot\hat x_j$：
+      $$\lambda=\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}$$</li>
+    <li>檢查：$\lambda(1,1,1)^{\mathsf T}=(1,1,1)^{\mathsf T}$（軸不動）；$\det\lambda=1$；跡 $0=1+2\cos\phi\Rightarrow\phi=120^\circ$ ✔</li>
+  </ol>
+  <div class="final">答：$\lambda=\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}$（反方向轉則為其轉置 $\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}$）。</div>
+  <p class="small"><a href="#tm-1-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tb-orth" data-group="九、座標旋轉（p.41–50）" data-title="課本 §1.7：正交矩陣的乘積仍正交">
+  <h3>課本 §1.7 正交矩陣的乘積</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\lambda,\mu$ 為正交矩陣，證明 $\mu\lambda$ 也是正交矩陣。</div>
+  <ol class="write">
+    <li>正交：$\lambda^{\mathsf T}\lambda=I$、$\mu^{\mathsf T}\mu=I$。由 $(AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}$：$(\mu\lambda)^{\mathsf T}=\lambda^{\mathsf T}\mu^{\mathsf T}$。</li>
+    <li>$(\mu\lambda)^{\mathsf T}(\mu\lambda)=\lambda^{\mathsf T}(\mu^{\mathsf T}\mu)\lambda=\lambda^{\mathsf T}\lambda=I$。</li>
+    <li>故 $(\mu\lambda)^{\mathsf T}=(\mu\lambda)^{-1}$，$\mu\lambda$ 正交。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tb-orth">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tb-ex14" data-group="九、座標旋轉（p.41–50）" data-title="課本例題 1.4：$|\lambda_2|=1$、$|\lambda_6|=-1$">
+  <h3>課本例題 1.4</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $|\lambda_2|=1$（繞 $x_1$ 轉 $90^\circ$）與 $|\lambda_6|=-1$（反演），並說明反演不能由旋轉組成。</div>
+  <ol class="write">
+    <li>$|\lambda_2|=\begin{vmatrix}1&0&0\\0&0&1\\0&-1&0\end{vmatrix}=1\cdot\begin{vmatrix}0&1\\-1&0\end{vmatrix}=1\cdot(0+1)=1$。</li>
+    <li>$|\lambda_6|=\begin{vmatrix}-1&0&0\\0&-1&0\\0&0&-1\end{vmatrix}=-1\cdot\begin{vmatrix}-1&0\\0&-1\end{vmatrix}=-1\cdot1=-1$。</li>
+    <li>$\det(AB)=\det A\det B$，每個旋轉 $\det=+1$，任意多個旋轉相乘仍為 $+1\neq-1$，故反演不能由旋轉組成。</li>
+  </ol>
+  <div class="final">$|\lambda_2|=1$、$|\lambda_6|=-1$；$\det=+1$ 為真旋轉，$\det=-1$ 為非真旋轉。∎</div>
+  <p class="small"><a href="#tb-ex14">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-6" data-group="九、座標旋轉（p.41–50）" data-title="課本 1-6：由長度不變推出正交條件">
+  <h3>課本 1-6</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show that Equation 1.15 can be obtained by using the requirement that the transformation leaves unchanged the length of a line segment.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-6 · p.44</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\sum_i\lambda_{ij}\lambda_{ik}=\delta_{jk}$ 可由「變換不改變線段長度」得到。</div>
+  <ol class="write">
+    <li>$x_i'=\sum_j\lambda_{ij}x_j$，故 $\sum_ix_i'^2=\sum_i\big(\sum_j\lambda_{ij}x_j\big)\big(\sum_k\lambda_{ik}x_k\big)=\sum_{j,k}M_{jk}x_jx_k$，$M_{jk}\equiv\sum_i\lambda_{ij}\lambda_{ik}=M_{kj}$。</li>
+    <li>長度不變：$\sum_{j,k}M_{jk}x_jx_k=\sum_jx_j^2$ 對所有 $\vec x$ 成立。</li>
+    <li>取 $x_j=1$、其餘 $0$：$M_{jj}=1$。</li>
+    <li>取 $x_j=x_k=1$（$j\neq k$）、其餘 $0$：$M_{jj}+M_{kk}+2M_{jk}=2$，得 $M_{jk}=0$。</li>
+  </ol>
+  <div class="final">故 $\sum_i\lambda_{ij}\lambda_{ik}=\delta_{jk}$。∎</div>
+  <p class="small"><a href="#tm-1-6">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tb-inv" data-group="九、座標旋轉（p.41–50）" data-title="課本 §1.10：內積在旋轉下不變">
+  <h3>課本 §1.10 內積不變</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\vec A\cdot\vec B=\sum_iA_iB_i$ 在正交變換下不變。</div>
+  <ol class="write">
+    <li>$A_i'=\sum_j\lambda_{ij}A_j$，$B_i'=\sum_k\lambda_{ik}B_k$。</li>
+    <li>$\vec A'\cdot\vec B'=\sum_iA_i'B_i'=\sum_{j,k}\big(\sum_i\lambda_{ij}\lambda_{ik}\big)A_jB_k$。</li>
+    <li>正交條件 $\sum_i\lambda_{ij}\lambda_{ik}=\delta_{jk}$：$=\sum_{j,k}\delta_{jk}A_jB_k=\sum_jA_jB_j=\vec A\cdot\vec B$。</li>
+  </ol>
+  <div class="final">$\vec A'\cdot\vec B'=\vec A\cdot\vec B$，內積是純量。∎</div>
+  <p class="small"><a href="#tb-inv">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s09-1" data-group="九、座標旋轉（p.41–50）" data-title="自編：由 $\lambda(\phi)\lambda(\theta)=\lambda(\theta+\phi)$ 推和角公式">
+  <h3>自編難題：和角公式</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　由 $\lambda(\phi)\lambda(\theta)=\lambda(\theta+\phi)$ 推 $\cos(\theta+\phi)$、$\sin(\theta+\phi)$；證明 $\lambda^{\mathsf T}=\lambda(-\theta)=\lambda^{-1}$。</div>
+  <ol class="write">
+    <li>乘開 $\lambda(\phi)\lambda(\theta)$ 的 $(1,1)$ 元素 $\cos\phi\cos\theta-\sin\phi\sin\theta$，$(1,2)$ 元素 $\cos\phi\sin\theta+\sin\phi\cos\theta$。</li>
+    <li>同軸旋轉角度相加，與 $\lambda(\theta+\phi)$ 的 $\cos(\theta+\phi)$、$\sin(\theta+\phi)$ 比較即得和角公式。</li>
+    <li>$\lambda^{\mathsf T}=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}=\lambda(-\theta)$，且 $\lambda(-\theta)\lambda(\theta)=\lambda(0)=\mathbf 1$。</li>
+  </ol>
+  <div class="final">答：和角公式得證；$\lambda^{\mathsf T}=\lambda(-\theta)=\lambda^{-1}$。</div>
+  <p class="small"><a href="#self-s09-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s09-2" data-group="九、座標旋轉（p.41–50）" data-title="自編：無窮小旋轉與 $-\delta\vec\theta\times\vec x$">
+  <h3>自編難題：無窮小旋轉</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　繞 $x_3$ 轉小角 $\delta\theta$。寫出 $\lambda\approx\mathbf 1+\varepsilon$，驗證正交到一次，並證明 $\vec x'-\vec x=-\delta\vec\theta\times\vec x$。</div>
+  <ol class="write">
+    <li>$\cos\delta\theta\approx1$、$\sin\delta\theta\approx\delta\theta$：$\varepsilon=\begin{bmatrix}0&\delta\theta&0\\-\delta\theta&0&0\\0&0&0\end{bmatrix}$，$\varepsilon^{\mathsf T}=-\varepsilon$。</li>
+    <li>$\lambda\lambda^{\mathsf T}=(\mathbf 1+\varepsilon)(\mathbf 1-\varepsilon)=\mathbf 1-\varepsilon^2=\mathbf 1+O(\delta\theta^2)$。</li>
+    <li>$\varepsilon\vec x=(\delta\theta x_2,-\delta\theta x_1,0)$，$\delta\vec\theta\times\vec x=(-\delta\theta x_2,\delta\theta x_1,0)$，故 $\vec x'-\vec x=-\delta\vec\theta\times\vec x$。</li>
+    <li>負號：轉的是軸，點相對新軸反向轉。</li>
+  </ol>
+  <div class="final">答：$\vec x'-\vec x=-\delta\vec\theta\times\vec x$。</div>
+  <p class="small"><a href="#self-s09-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p57" data-group="十、直角座標與極座標（p.51–63）" data-title="講義 p.57：圓盤的轉動慣量">
+  <h3>講義 p.57 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　半徑 $R$、面密度 $\rho$ 的均勻圓盤，對中心垂直軸的轉動慣量。</div>
+  <ol class="write">
+    <li>$I=\int r^2\rho\,\mathrm dA$，$\mathrm dA=r\,\mathrm dr\,\mathrm d\theta$。</li>
+    <li>$I=\rho\int_0^Rr^3\,\mathrm dr\int_0^{2\pi}\mathrm d\theta=\rho\frac{R^4}{4}\cdot2\pi=\frac12\rho\pi R^4$。</li>
+    <li>$M=\rho\pi R^2$ ⟹ $I=\frac12MR^2$。</li>
+  </ol>
+  <div class="final">答：$I=\frac12\rho\pi R^4=\frac12MR^2$。</div>
+  <p class="small"><a href="#ex-p57">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p63" data-group="十、直角座標與極座標（p.51–63）" data-title="講義 p.63：等速圓周運動 $a=v^2/r$">
+  <h3>講義 p.63 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明等速圓周運動 $\vec a=-\frac{v^2}{r}\hat r$。</div>
+  <ol class="write">
+    <li>$\vec a=(\ddot r-r\dot\theta^2)\hat r+(2\dot r\dot\theta+r\ddot\theta)\hat\theta$。</li>
+    <li>$r$ 固定 ⟹ $\dot r=\ddot r=0$；$\dot\theta=\omega$ 固定 ⟹ $\ddot\theta=0$。</li>
+    <li>$\vec a=-r\dot\theta^2\hat r$，又 $v=r\dot\theta$ ⟹ $\vec a=-\frac{v^2}{r}\hat r$。</li>
+  </ol>
+  <div class="final">得證：大小 $v^2/r$，指向圓心。∎</div>
+  <p class="small"><a href="#ex-p63">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-26" data-group="十、直角座標與極座標（p.51–63）" data-title="課本 1-26：心臟線上等速率運動">
+  <h3>課本 1-26</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　質點以等速率 $v$ 沿 $r=k(1+\cos\theta)$ 運動，求 $\vec a\cdot\hat e_r$、$|\vec a|$、$\dot\theta$。</div>
+  <ol class="write">
+    <li>$\dot r=-k\sin\theta\,\dot\theta$；$v^2=\dot r^2+r^2\dot\theta^2=2k^2\dot\theta^2(1+\cos\theta)$ ⟹ $\dot\theta=\frac{v}{\sqrt{2kr}}$。</li>
+    <li>$\dot\theta^2=\frac{v^2}{2k^2(1+\cos\theta)}$ 對 $t$ 微分：$\ddot\theta=\frac{v^2\sin\theta}{4k^2(1+\cos\theta)^2}$。</li>
+    <li>$\ddot r=-k\cos\theta\,\dot\theta^2-k\sin\theta\,\ddot\theta=-\frac{v^2}{4k(1+\cos\theta)^2}\big[2\cos\theta(1+\cos\theta)+\sin^2\theta\big]=-\frac{v^2}{4k}$。</li>
+    <li>$a_r=\ddot r-r\dot\theta^2=-\frac{v^2}{4k}-\frac{v^2}{2k}=-\frac{3v^2}{4k}$。</li>
+    <li>$a_\theta=r\ddot\theta+2\dot r\dot\theta=-\frac{3v^2\sin\theta}{4k(1+\cos\theta)}$；$|\vec a|^2=a_r^2+a_\theta^2=\frac{9v^4}{16k^2}\cdot\frac{2}{1+\cos\theta}$。</li>
+  </ol>
+  <div class="final">答：$\vec a\cdot\hat e_r=-\frac{3v^2}{4k}$，$|\vec a|=\frac{3v^2}{4k}\sqrt{\frac{2}{1+\cos\theta}}$，$\dot\theta=\frac{v}{\sqrt{2kr}}$。</div>
+  <p class="small"><a href="#tm-1-26">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s11-1" data-group="十、直角座標與極座標（p.51–63）" data-title="自編：轉動光滑桿上的珠子">
+  <h3>自編難題：轉動桿上的珠子</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　光滑桿以 $\omega$ 在水平面轉動，珠子 $m$ 在 $t=0$ 時位於 $r_0$、相對桿靜止。求 $r(t)$ 與桿的力。</div>
+  <ol class="write">
+    <li>$\theta=\omega t$：$\vec a=(\ddot r-r\omega^2)\hat r+2\dot r\omega\,\hat\theta$。</li>
+    <li>沿桿無力：$\ddot r=\omega^2r$，配合 $r(0)=r_0$、$\dot r(0)=0$ 得 $r=r_0\cosh\omega t$。</li>
+    <li>$N=m(2\dot r\omega)=2mr_0\omega^2\sinh\omega t$，沿 $\hat\theta$。</li>
+  </ol>
+  <div class="final">答：$r=r_0\cosh\omega t$，$N=2mr_0\omega^2\sinh\omega t$。</div>
+  <p class="small"><a href="#self-s11-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s11-2" data-group="十、直角座標與極座標（p.51–63）" data-title="自編：心臟線 $r=a(1+\cos\theta)$ 與圓 $r=a$ 之間的面積">
+  <h3>自編難題：心臟線與圓</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 (a) 心臟線 $r=a(1+\cos\theta)$ 內、圓 $r=a$ 外的面積；(b) 圓內、心臟線外的面積。</div>
+  <ol class="write">
+    <li>交點 $\theta=\pm\frac\pi2$；$|\theta|\lt\frac\pi2$ 心臟線在外。</li>
+    <li>(a) $\int_{-\pi/2}^{\pi/2}\int_a^{a(1+\cos\theta)}r\,\mathrm dr\,\mathrm d\theta=\frac{a^2}2(4+\frac\pi2)=(2+\frac\pi4)a^2$。</li>
+    <li>(b) $\int_{\pi/2}^{3\pi/2}\int_{a(1+\cos\theta)}^a r\,\mathrm dr\,\mathrm d\theta=\frac{a^2}2(4-\frac\pi2)=(2-\frac\pi4)a^2$。</li>
+    <li>檢查：$\frac32\pi a^2-(2+\frac\pi4)a^2=\pi a^2-(2-\frac\pi4)a^2$。</li>
+  </ol>
+  <div class="final">答：(a) $(2+\frac\pi4)a^2$；(b) $(2-\frac\pi4)a^2$。</div>
+  <p class="small"><a href="#self-s11-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p66" data-group="十一、柱座標與球座標（p.64–74）" data-title="講義 p.66 Example 1.8：柱座標的加速度">
+  <h3>講義 p.66 Example 1.8</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求柱座標中加速度的分量。</div>
+  <ol class="write">
+    <li>$\vec r=r\hat r+z\hat z$；$\dot{\hat r}=\dot\phi\hat\phi$，$\dot{\hat\phi}=-\dot\phi\hat r$，$\dot{\hat z}=0$。</li>
+    <li>$\vec v=\dot r\hat r+r\dot\phi\hat\phi+\dot z\hat z$。</li>
+    <li>$\vec a=(\ddot r\hat r+\dot r\dot\phi\hat\phi)+(\dot r\dot\phi\hat\phi+r\ddot\phi\hat\phi-r\dot\phi^2\hat r)+\ddot z\hat z$。</li>
+  </ol>
+  <div class="final">答：$\vec a=(\ddot r-r\dot\phi^2)\hat r+(2\dot r\dot\phi+r\ddot\phi)\hat\phi+\ddot z\hat z$。</div>
+  <p class="small"><a href="#ex-p66">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p69" data-group="十一、柱座標與球座標（p.64–74）" data-title="講義 p.69：球的體積">
+  <h3>講義 p.69 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求半徑 $R$ 的球體積。</div>
+  <ol class="write">
+    <li>$\mathrm dV=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$。</li>
+    <li>$V=\int_0^Rr^2\mathrm dr\int_0^\pi\sin\theta\,\mathrm d\theta\int_0^{2\pi}\mathrm d\phi=\frac{R^3}{3}\cdot2\cdot2\pi$。</li>
+  </ol>
+  <div class="final">答：$V=\frac43\pi R^3$。</div>
+  <p class="small"><a href="#ex-p69">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p70" data-group="十一、柱座標與球座標（p.64–74）" data-title="講義 p.70：實心球的轉動慣量">
+  <h3>講義 p.70 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　半徑 $R$、密度 $\rho$ 的均勻實心球，對通過球心之軸的轉動慣量。</div>
+  <ol class="write">
+    <li>到 $z$ 軸距離 $r\sin\theta$：$I=\rho\int(r\sin\theta)^2r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$。</li>
+    <li>$\int_0^\pi\sin^3\theta\,\mathrm d\theta=\int_{-1}^{1}(1-u^2)\,\mathrm du=\frac43$（$u=\cos\theta$）。</li>
+    <li>$I=\rho\cdot\frac{R^5}{5}\cdot\frac43\cdot2\pi=\frac{8}{15}\rho\pi R^5$；$M=\frac43\pi R^3\rho$ ⟹ $I=\frac25MR^2$。</li>
+  </ol>
+  <div class="final">答：$I=\frac{8}{15}\rho\pi R^5=\frac25MR^2$。</div>
+  <p class="small"><a href="#ex-p70">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p71" data-group="十一、柱座標與球座標（p.64–74）" data-title="講義 p.71–72：空心圓管的轉動慣量">
+  <h3>講義 p.71–72 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　內半徑 $R_1$、外半徑 $R_2$、長 $L$、質量 $M$ 的均勻圓管，對中心軸的轉動慣量。</div>
+  <ol class="write">
+    <li>$V=\int_{R_1}^{R_2}r\,\mathrm dr\int_0^{2\pi}\mathrm d\theta\int_0^L\mathrm dz=\pi L(R_2^2-R_1^2)$，$\rho=\frac{M}{\pi L(R_2^2-R_1^2)}$。</li>
+    <li>$I=\rho\int_{R_1}^{R_2}r^3\,\mathrm dr\cdot2\pi L=\rho\frac{R_2^4-R_1^4}{4}\cdot2\pi L$。</li>
+    <li>代入 $\rho$，$R_2^4-R_1^4=(R_2^2-R_1^2)(R_2^2+R_1^2)$。</li>
+  </ol>
+  <div class="final">答：$I=\frac M2(R_1^2+R_2^2)$。</div>
+  <p class="small"><a href="#ex-p71">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-25" data-group="十一、柱座標與球座標（p.64–74）" data-title="課本 1-25：球座標的加速度">
+  <h3>課本 1-25</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-25"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the components of the acceleration vector in spherical coordinates.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-25 · p.46</p>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求球座標中加速度的三個分量。</div>
+  <ol class="write">
+    <li>$\dot{\hat r}=\dot\theta\hat\theta+\dot\phi\sin\theta\,\hat\phi$；$\dot{\hat\theta}=-\dot\theta\hat r+\dot\phi\cos\theta\,\hat\phi$；$\dot{\hat\phi}=-\dot\phi(\sin\theta\,\hat r+\cos\theta\,\hat\theta)$。</li>
+    <li>$\vec v=\dot r\hat r+r\dot\theta\hat\theta+r\sin\theta\,\dot\phi\hat\phi$，逐項用乘積律：<br>$\frac{\mathrm d}{\mathrm dt}(\dot r\hat r)=\ddot r\hat r+\dot r\dot\theta\hat\theta+\dot r\dot\phi\sin\theta\,\hat\phi$；<br>$\frac{\mathrm d}{\mathrm dt}(r\dot\theta\hat\theta)=(\dot r\dot\theta+r\ddot\theta)\hat\theta-r\dot\theta^2\hat r+r\dot\theta\dot\phi\cos\theta\,\hat\phi$；<br>$\frac{\mathrm d}{\mathrm dt}(r\sin\theta\dot\phi\hat\phi)=(\dot r\dot\phi\sin\theta+r\dot\theta\dot\phi\cos\theta+r\ddot\phi\sin\theta)\hat\phi-r\dot\phi^2\sin\theta(\sin\theta\,\hat r+\cos\theta\,\hat\theta)$。</li>
+    <li>依 $\hat r,\hat\theta,\hat\phi$ 收集各項。</li>
+  </ol>
+  <div class="final">答：$a_r=\ddot r-r\dot\theta^2-r\dot\phi^2\sin^2\theta$；$a_\theta=r\ddot\theta+2\dot r\dot\theta-r\dot\phi^2\sin\theta\cos\theta$；$a_\phi=r\ddot\phi\sin\theta+2\dot r\dot\phi\sin\theta+2r\dot\theta\dot\phi\cos\theta$。</div>
+  <p class="small"><a href="#tm-1-25">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-35" data-group="十一、柱座標與球座標（p.64–74）" data-title="課本 1-35：兩垂直圓柱的共同體積">
+  <h3>課本 1-35</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $x^2+y^2=a^2$ 與 $x^2+z^2=a^2$ 的共同體積為 $\frac{16a^3}{3}$。</div>
+  <ol class="write">
+    <li>固定 $x$：$|y|\le\sqrt{a^2-x^2}$、$|z|\le\sqrt{a^2-x^2}$，截面為正方形，$A(x)=4(a^2-x^2)$。</li>
+    <li>$V=\int_{-a}^{a}4(a^2-x^2)\,\mathrm dx=4\big(2a^3-\frac{2a^3}{3}\big)$。</li>
+  </ol>
+  <div class="final">得 $V=\frac{16a^3}{3}$。∎</div>
+  <p class="small"><a href="#tm-1-35">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s12-1" data-group="十一、柱座標與球座標（p.64–74）" data-title="自編：實心半球與薄半球殼的質心">
+  <h3>自編難題：半球質心</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　(a) 均勻實心半球的 $z_{\text{cm}}$；(b) 均勻薄半球殼的 $z_{\text{cm}}$；(c) 用 (b) 疊出 (a)。</div>
+  <ol class="write">
+    <li>(a) $V=\frac{2\pi R^3}3$，$\int z\,\mathrm dV=\frac{\pi R^4}4$，$z_{\text{cm}}=\frac38R$。</li>
+    <li>(b) $\frac{\int(R\cos\theta)R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi}{2\pi R^2}=\frac{\pi R^3}{2\pi R^2}=\frac R2$。</li>
+    <li>(c) $\frac{\int_0^R\frac r2\,2\pi r^2\mathrm dr}{\int_0^R2\pi r^2\mathrm dr}=\frac38R$。</li>
+  </ol>
+  <div class="final">答：實心 $\frac38R$，薄殼 $\frac12R$。</div>
+  <p class="small"><a href="#self-s12-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s12-2" data-group="十一、柱座標與球座標（p.64–74）" data-title="自編：冰淇淋筒 $r\le R$、$\theta\le\alpha$ 的體積">
+  <h3>自編難題：冰淇淋筒體積</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求球 $r\le R$ 內、$\theta\le\alpha$ 部分的體積；$R=1$、$\alpha=60^\circ$ 時為多少？</div>
+  <ol class="write">
+    <li>$V=\int_0^R r^2\mathrm dr\int_0^\alpha\sin\theta\,\mathrm d\theta\int_0^{2\pi}\mathrm d\phi=\frac{2\pi}{3}R^3(1-\cos\alpha)$。</li>
+    <li>檢查：$\alpha=\pi/2$ 半球、$\alpha=\pi$ 整球。</li>
+    <li>$R=1$、$\alpha=60^\circ$：$\frac{2\pi}3\cdot\frac12=\frac\pi3$；圓錐 $\frac\pi8$ + 球冠 $\frac{5\pi}{24}$ 相同。</li>
+  </ol>
+  <div class="final">答：$V=\frac{2\pi}{3}R^3(1-\cos\alpha)$，$\frac\pi3$。</div>
+  <p class="small"><a href="#self-s12-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p81" data-group="十二、∇ 與梯度（p.75–87）" data-title="講義 p.81–83：三個函數的梯度">
+  <h3>講義 p.81–83 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 (a) $\phi=x$；(b) $\phi=-(x-3)^2-(y-3)^2$；(c) $\phi=y^2\sin x$ 的梯度，並求 (a)(b) 在 $(1,1),(3,3),(1,3)$、(c) 在 $(1,1),(\frac\pi2,1),(\pi,3)$ 的值。</div>
+  <ol class="write">
+    <li>(a) $\nabla\phi=\hat i$（各點相同）。</li>
+    <li>(b) $\nabla\phi=-2(x-3)\hat i-2(y-3)\hat j$：$(1,1)$ 為 $4\hat i+4\hat j$，$(3,3)$ 為 $\vec 0$，$(1,3)$ 為 $4\hat i$。</li>
+    <li>(c) $\nabla\phi=y^2\cos x\,\hat i+2y\sin x\,\hat j$：$(1,1)$ 為 $0.54\hat i+1.68\hat j$，$(\frac\pi2,1)$ 為 $2\hat j$，$(\pi,3)$ 為 $-9\hat i$。</li>
+  </ol>
+  <div class="final">答：(a) $\hat i$（三點皆同）；(b) $-2(x-3)\hat i-2(y-3)\hat j$，依序 $4\hat i+4\hat j$、$\vec 0$、$4\hat i$；(c) $y^2\cos x\,\hat i+2y\sin x\,\hat j$，依序 $0.54\hat i+1.68\hat j$、$2\hat j$、$-9\hat i$。</div>
+  <p class="small"><a href="#ex-p81">回到正文詳解</a></p>
+</article>
+
+
+<article class="exam-item" data-exam-id="ex-p84" data-group="十二、∇ 與梯度（p.75–87）" data-title="講義 p.84–85：$\vec F=-\nabla V$">
+  <h3>講義 p.84–85 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="ex-p84"><span class="part-label original-label">講義英文原文</span>
+<div class="original-text" lang="en"><p><strong>Potential Energy and Force</strong></p><p>Suppose the scalar function $V$ represents the gravitational potential as a function of altitude ($V(x,y)\propto$ altitude). If a particle of mass $m$ is placed at a certain point on $V$, try to relate the force acting on the particle to $V$.</p><p>Which direction would it go?</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　$V(x,y)$ 為重力位能（$\propto$ 高度），質點 $m$ 放在 $V$ 上。力和 $V$ 的關係為何？質點往哪走？</div>
+  <ol class="write">
+    <li>移動 $\mathrm d\vec s$：$\mathrm dW=\vec F\cdot\mathrm d\vec s=-\mathrm dV$。</li>
+    <li>$\mathrm dV=\nabla V\cdot\mathrm d\vec s$，故 $(\vec F+\nabla V)\cdot\mathrm d\vec s=0$ 對所有 $\mathrm d\vec s$ 成立，$\vec F=-\nabla V$。</li>
+    <li>$\nabla V$ 指向上坡最陡且垂直等高線，故 $\vec F$ 指向下坡最陡、垂直等高線。</li>
+  </ol>
+  <div class="final">答：$\vec F=-\nabla V$，往下坡最陡處（垂直等高線）走。</div>
+  <p class="small"><a href="#ex-p84">回到正文詳解</a></p>
+</article>
+<article class="exam-item" data-exam-id="ex-p86" data-group="十二、∇ 與梯度（p.75–87）" data-title="講義 p.86–87：$\nabla V(r)$">
+  <h3>講義 p.86–87 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$V(r)$ 只和 $r$ 有關，求 $\nabla V(r)$。</div>
+  <ol class="write">
+    <li>$\frac{\partial r}{\partial x}=\frac{x}{\sqrt{x^2+y^2+z^2}}=\frac xr$，同理 $y,z$。</li>
+    <li>$\frac{\partial V}{\partial x}=\frac{\mathrm dV}{\mathrm dr}\frac xr$，三個分量合起來 $\nabla V=\frac{\mathrm dV}{\mathrm dr}\frac{\vec r}{r}$。</li>
+  </ol>
+  <div class="final">答：$\nabla V(r)=\frac{\mathrm dV}{\mathrm dr}\hat r$。</div>
+  <p class="small"><a href="#ex-p86">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tb-grad" data-group="十二、∇ 與梯度（p.75–87）" data-title="課本 §1.16：梯度是向量">
+  <h3>課本 §1.16 梯度是向量</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\partial\phi/\partial x_j$ 依向量的規則變換。</div>
+  <ol class="write">
+    <li>$\phi'(\vec x')=\phi(\vec x)$；連鎖律 $\frac{\partial\phi'}{\partial x_i'}=\sum_j\frac{\partial\phi}{\partial x_j}\frac{\partial x_j}{\partial x_i'}$。</li>
+    <li>反變換 $x_j=\sum_k\lambda_{kj}x_k'$ ⟹ $\frac{\partial x_j}{\partial x_i'}=\lambda_{ij}$。</li>
+    <li>$\frac{\partial\phi'}{\partial x_i'}=\sum_j\lambda_{ij}\frac{\partial\phi}{\partial x_j}$，與 $A_i'=\sum_j\lambda_{ij}A_j$ 相同。</li>
+  </ol>
+  <div class="final">故 $\nabla\phi$ 是向量。∎</div>
+  <p class="small"><a href="#tb-grad">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-28" data-group="十二、∇ 與梯度（p.75–87）" data-title="課本 1-28：$\nabla\ln|\vec r|=\vec r/r^2$">
+  <h3>課本 1-28</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\nabla(\ln|\vec r|)=\vec r/r^2$。</div>
+  <ol class="write">
+    <li>$\nabla f(r)=f'(r)\hat r$，$f=\ln r$，$f'=\frac1r$。</li>
+    <li>$\nabla\ln r=\frac1r\cdot\frac{\vec r}{r}=\frac{\vec r}{r^2}$。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-28">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-30" data-group="十二、∇ 與梯度（p.75–87）" data-title="課本 1-30：梯度的乘積律">
+  <h3>課本 1-30</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 $\nabla(\phi\psi)=\phi\nabla\psi+\psi\nabla\phi$。</div>
+  <ol class="write">
+    <li>第 $i$ 分量：$\frac{\partial(\phi\psi)}{\partial x_i}=\phi\frac{\partial\psi}{\partial x_i}+\psi\frac{\partial\phi}{\partial x_i}$。</li>
+    <li>三個分量皆成立。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-30">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-29" data-group="十二、∇ 與梯度（p.75–87）" data-title="課本 1-29：兩曲面在交點的夾角">
+  <h3>課本 1-29</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $r^2=9$ 與 $x+y+z^2=1$ 在 $(2,-2,1)$ 的夾角。</div>
+  <ol class="write">
+    <li>法向量：$\nabla(x^2+y^2+z^2)=(4,-4,2)$，$\nabla(x+y+z^2)=(1,1,2)$。</li>
+    <li>$\cos\theta=\frac{4-4+4}{6\sqrt6}=\frac{2}{3\sqrt6}$。</li>
+  </ol>
+  <div class="final">答：$\theta=\cos^{-1}\frac{2}{3\sqrt6}\approx74.2^\circ$。</div>
+  <p class="small"><a href="#tm-1-29">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-40" data-group="十二、∇ 與梯度（p.75–87）" data-title="課本 1-40：山頂、坡度、最陡方向">
+  <h3>課本 1-40</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　山高 $z=2xy-3x^2-4y^2-18x+28y+12$（$x$ 東、$y$ 北）。(a) 山頂位置與高度；(b) $(1,1)$ 的坡度與法向量和 $z$ 軸夾角；(c) $(1,1)$ 最陡方位。</div>
+  <ol class="write">
+    <li>(a) $z_x=2y-6x-18=0$、$z_y=2x-8y+28=0$ ⟹ $(x,y)=(-2,3)$，$z=72$ m。</li>
+    <li>(b) $\nabla h(1,1)=(-22,22)$，坡度 $22\sqrt2\approx31.1$；法向量 $(22,-22,1)$，$\cos\alpha=\frac1{\sqrt{969}}$，$\alpha\approx88.2^\circ$。</li>
+    <li>(c) $\nabla h$ 指向 $(-1,1)$ 方向：往西北上坡最陡（坡面朝東南，課本答案 SE）。</li>
+  </ol>
+  <div class="final">答：(a) $(-2,3)$、72 m；(b) $22\sqrt2$、$88.2^\circ$；(c) 往西北上坡最陡（下坡最陡朝東南）。</div>
+  <p class="small"><a href="#tm-1-40">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s13-1" data-group="十二、∇ 與梯度（p.75–87）" data-title="自編：沿 $\nabla T$ 爬行的路徑">
+  <h3>自編難題：沿梯度的路徑</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$T=100-x^2-2y^2$，蟲從 $(1,1)$ 每刻沿升溫最快方向爬。求起點方向、最大升溫率、路徑與終點。</div>
+  <ol class="write">
+    <li>$\nabla T=(-2x,-4y)$，$(1,1)$ 處 $(-2,-4)$，最大升溫率 $2\sqrt5$。</li>
+    <li>$\frac{\mathrm dy}{\mathrm dx}=\frac{2y}{x}$，$\frac{\mathrm dy}{y}=\frac{2\,\mathrm dx}{x}$，$y=Kx^2$，過 $(1,1)$：$y=x^2$。</li>
+    <li>$\nabla T=0$ 只在原點，蟲沿 $y=x^2$ 爬到原點。</li>
+  </ol>
+  <div class="final">答：$y=x^2$，終點原點；起點升溫率 $2\sqrt5$。</div>
+  <p class="small"><a href="#self-s13-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s13-2" data-group="十二、∇ 與梯度（p.75–87）" data-title="自編：$V=\frac12k(x^2+4y^2)$ 的力">
+  <h3>自編難題：非等向彈簧</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$V=\frac12k(x^2+4y^2)$。求 $\vec F$；$(2,1)$ 處 $\vec F$ 與 $-\vec r$ 的夾角；何處 $\vec F\parallel\vec r$？</div>
+  <ol class="write">
+    <li>$\vec F=-\nabla V=-(kx,4ky)$。</li>
+    <li>$(2,1)$：$\vec F=-k(2,4)$，$\cos\beta=\frac{(-2,-4)\cdot(-2,-1)}{\sqrt{20}\sqrt5}=0.8$，$\beta=36.9^\circ$。</li>
+    <li>$(\vec F\times\vec r)_z=3kxy=0\Leftrightarrow x=0$ 或 $y=0$；其餘位置不指向原點，非連心力。</li>
+  </ol>
+  <div class="final">答：$\vec F=-k(x,4y)$，$36.9^\circ$，只在座標軸上指向原點。</div>
+  <p class="small"><a href="#self-s13-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-31" data-group="十三、散度（p.88–93）" data-title="課本 1-31：$\nabla r^n$、$\nabla f(r)$、$\nabla^2\ln r$">
+  <h3>課本 1-31</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　證明 (a) $\nabla r^n=nr^{n-2}\vec r$；(b) $\nabla f(r)=\frac{\vec r}{r}f'$；(c) $\nabla^2\ln r=\frac1{r^2}$。</div>
+  <ol class="write">
+    <li>(b) $\frac{\partial f}{\partial x_i}=f'\frac{x_i}{r}$ ⟹ $\nabla f=f'\frac{\vec r}{r}$。</li>
+    <li>(a) $f=r^n$：$\nabla r^n=nr^{n-1}\frac{\vec r}{r}=nr^{n-2}\vec r$。</li>
+    <li>$\nabla\cdot(g\vec r)=\sum_i\big(g+x_ig'\frac{x_i}{r}\big)=3g+rg'$。</li>
+    <li>(c) $\nabla\ln r=\frac{\vec r}{r^2}$，$g=r^{-2}$：$\nabla^2\ln r=\frac{3}{r^2}-\frac{2}{r^2}=\frac1{r^2}$。</li>
+  </ol>
+  <div class="final">得證。∎</div>
+  <p class="small"><a href="#tm-1-31">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-36" data-group="十三、散度（p.88–93）" data-title="課本 1-36：圓柱表面的通量">
+  <h3>課本 1-36</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec A=x\hat i-y\hat j+z\hat k$，$S$ 為圓柱 $x^2+y^2=c^2$（$0\le z\le d$）的封閉表面，求 $\oint_S\vec A\cdot\mathrm d\vec a$。</div>
+  <ol class="write">
+    <li>$\nabla\cdot\vec A=1-1+1=1$。</li>
+    <li>Gauss：$\oint_S\vec A\cdot\mathrm d\vec a=\int_V1\,\mathrm dv=\pi c^2d$。</li>
+    <li>（驗證：側面 $\int c\cos2\phi\cdot c\,\mathrm d\phi\,\mathrm dz=0$，頂面 $d\cdot\pi c^2$，底面 $0$。）</li>
+  </ol>
+  <div class="final">答：$\pi c^2d$。</div>
+  <p class="small"><a href="#tm-1-36">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-37" data-group="十三、散度（p.88–93）" data-title="課本 1-37：球面的通量">
+  <h3>課本 1-37</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec A=r^2\vec r$，$S$ 為球面 $r=R$。直接計算 $\oint_S\vec A\cdot\mathrm d\vec a$，並以 Gauss 定理驗證。</div>
+  <ol class="write">
+    <li>直接：$\vec A\cdot\hat r=R^3$，$\oint=R^3\cdot4\pi R^2=4\pi R^5$。</li>
+    <li>$\nabla\cdot(r^2\vec r)=3r^2+2r^2=5r^2$。</li>
+    <li>$\int_V5r^2\,\mathrm dv=\int_0^R5r^2\cdot4\pi r^2\,\mathrm dr=4\pi R^5$。</li>
+  </ol>
+  <div class="final">答：$4\pi R^5$（兩法相同）。</div>
+  <p class="small"><a href="#tm-1-37">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s14-1" data-group="十三、散度（p.88–93）" data-title="自編：$\nabla\cdot(r^n\vec r)=0$ 與 $4\pi$ 通量">
+  <h3>自編難題：點源的通量</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求使 $\nabla\cdot(r^n\vec r)=0$ 的 $n$；求穿出半徑 $R$ 球面的通量，並解釋與 Gauss 定理的關係。</div>
+  <ol class="write">
+    <li>$\nabla\cdot(r^n\vec r)=3r^n+nr^n=(n+3)r^n$，$n=-3$。</li>
+    <li>球面：$\oint\frac{1}{R^2}R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi=4\pi$，與 $R$ 無關。</li>
+    <li>原點場不可微，Gauss 定理不適用；殼層內散度 0，淨通量 $4\pi-4\pi=0$，一致。</li>
+    <li>不包含原點的封閉曲面：通量 0。</li>
+  </ol>
+  <div class="final">答：$n=-3$，通量 $4\pi$（不含原點則為 0）。</div>
+  <p class="small"><a href="#self-s14-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s14-2" data-group="十三、散度（p.88–93）" data-title="自編：$(x^3,y^3,z^3)$ 穿出球面">
+  <h3>自編難題：Gauss 定理驗證</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec A=(x^3,y^3,z^3)$，求穿出半徑 $R$ 球面的通量（Gauss 定理與直接計算）。</div>
+  <ol class="write">
+    <li>$\nabla\cdot\vec A=3r^2$，$\int_0^R3r^2\cdot4\pi r^2\mathrm dr=\frac{12\pi R^5}5$。</li>
+    <li>直接：$\vec A\cdot\hat n=\frac{x^4+y^4+z^4}{R}$，對稱性 $\Rightarrow\frac3R\oint z^4\mathrm dA$。</li>
+    <li>$\oint z^4\mathrm dA=2\pi R^6\int_{-1}^1u^4\mathrm du=\frac{4\pi R^6}{5}$，乘 $\frac3R$ 得 $\frac{12\pi R^5}{5}$。</li>
+  </ol>
+  <div class="final">答：$\dfrac{12\pi R^5}{5}$。</div>
+  <p class="small"><a href="#self-s14-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p99" data-group="十四、旋度（p.94–105）" data-title="講義 p.99：$\nabla\times[\vec rf(r)]=0$">
+  <h3>講義 p.99 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $\nabla\times[\vec rf(r)]$。</div>
+  <ol class="write">
+    <li>$\nabla\times(f\vec A)=f\nabla\times\vec A+(\nabla f)\times\vec A$。</li>
+    <li>$\nabla\times\vec r=0$（行列式中每一項都是不同座標的偏微分）。</li>
+    <li>$\nabla f=f'(r)\hat r$ ⟹ $(\nabla f)\times\vec r=f'(\hat r\times\vec r)=0$。</li>
+  </ol>
+  <div class="final">答：$\nabla\times[\vec rf(r)]=0$，大小只和 $r$ 有關的連心力旋度為零。∎</div>
+  <p class="small"><a href="#ex-p99">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p101" data-group="十四、旋度（p.94–105）" data-title="講義 p.101–105：三個力場的旋度">
+  <h3>講義 p.101–105 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　求 $\nabla\times\vec F$ 並判斷是否保守：(a) $-c\hat j$；(b) $-y\hat i+x\hat j$；(c) $\frac{-y\hat i+x\hat j}{x^2+y^2}$。</div>
+  <ol class="write">
+    <li>(a) 常數場，$\nabla\times\vec F=0$，保守（如地表重力）。</li>
+    <li>(b) $(\nabla\times\vec F)_z=\partial_x(x)-\partial_y(-y)=2$，$\nabla\times\vec F=2\hat k$，非保守。</li>
+    <li>(c) $\partial_xF_y=\partial_yF_x=\frac{y^2-x^2}{(x^2+y^2)^2}$，原點外 $\nabla\times\vec F=0$；但單位圓上 $\oint\vec F\cdot\mathrm d\vec r=2\pi$（$\vec F$ 在 $z$ 軸上無定義，區域不是單連通）。</li>
+  </ol>
+  <div class="final">答：(a) $0$，保守；(b) $2\hat k$，非保守；(c) 原點外為 $0$；在不繞 $z$ 軸的區域內（如 $x\gt0$）保守，繞原點一圈做功 $2\pi$，整個平面上不保守。</div>
+  <p class="small"><a href="#ex-p101">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s15-1" data-group="十四、旋度（p.94–105）" data-title="自編：$\nabla\times(\vec\omega\times\vec r)=2\vec\omega$">
+  <h3>自編難題：剛體轉動的旋度</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec v=\vec\omega\times\vec r$（$\vec\omega$ 常數）。求 $\nabla\times\vec v$、$\nabla\cdot\vec v$，並以半徑 $a$ 的圓的環流解釋。</div>
+  <ol class="write">
+    <li>$\vec v=(\omega_2z-\omega_3y,\ \omega_3x-\omega_1z,\ \omega_1y-\omega_2x)$。</li>
+    <li>$(\nabla\times\vec v)_x=\omega_1+\omega_1=2\omega_1$，同理得 $2\vec\omega$；$\nabla\cdot\vec v=0$。</li>
+    <li>環流 $=\omega a\cdot2\pi a=2\pi a^2\omega$，除以 $\pi a^2$ 得 $2\omega$。</li>
+  </ol>
+  <div class="final">答：$\nabla\times\vec v=2\vec\omega$，$\nabla\cdot\vec v=0$。</div>
+  <p class="small"><a href="#self-s15-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s15-2" data-group="十四、旋度（p.94–105）" data-title="自編：粗導線磁場的旋度與環流">
+  <h3>自編難題：導線的磁場</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\rho\lt R$：$\vec F=(-y,x,0)$；$\rho\gt R$：$\vec F=\frac{R^2(-y,x,0)}{x^2+y^2}$。求旋度、$\rho\gt R$ 圓的環流，及不繞軸路徑的環流。</div>
+  <ol class="write">
+    <li>內部旋度 $2\hat k$（p.103）；外部旋度 0（p.105 乘 $R^2$）。</li>
+    <li>$\rho\gt R$：$|\vec F|=R^2/\rho$，環流 $=\frac{R^2}{\rho}\cdot2\pi\rho=2\pi R^2$。</li>
+    <li>Stokes：$\int(\nabla\times\vec F)\cdot\mathrm d\vec\sigma=2\cdot\pi R^2+0=2\pi R^2$，與 $\rho$ 無關。</li>
+    <li>不繞軸的路徑：曲面全在外部，環流 0。</li>
+  </ol>
+  <div class="final">答：內 $2\hat k$、外 0；環流 $2\pi R^2$；不繞軸為 0。</div>
+  <p class="small"><a href="#self-s15-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="ex-p108" data-group="十五、Stokes 定理與保守力（p.106–114）" data-title="講義 p.108：$\frac12\oint(x\,\mathrm dy-y\,\mathrm dx)=A$">
+  <h3>講義 p.108 例題</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec t=-y\hat i+x\hat j$，用 Stokes 定理證明 $\frac12\oint\vec t\cdot\mathrm d\vec\lambda=\frac12\oint(x\,\mathrm dy-y\,\mathrm dx)=A$。</div>
+  <ol class="write">
+    <li>$\vec t\cdot\mathrm d\vec\lambda=-y\,\mathrm dx+x\,\mathrm dy$。</li>
+    <li>$\nabla\times\vec t=2\hat k$。</li>
+    <li>Stokes：$\oint\vec t\cdot\mathrm d\vec\lambda=\int_S2\hat k\cdot\hat k\,\mathrm d\sigma=2A$。</li>
+  </ol>
+  <div class="final">得 $\frac12\oint(x\,\mathrm dy-y\,\mathrm dx)=A$。∎</div>
+  <p class="small"><a href="#ex-p108">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="tm-1-38" data-group="十五、Stokes 定理與保守力（p.106–114）" data-title="課本 1-38：拋物面上的旋度通量">
+  <h3>課本 1-38</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec A=y\hat i+z\hat j+x\hat k$，$S$：$z=1-x^2-y^2$（$z\ge0$），求 $\int_S(\nabla\times\vec A)\cdot\mathrm d\vec a$。</div>
+  <ol class="write">
+    <li>$\nabla\times\vec A=(-1,-1,-1)$。</li>
+    <li>Stokes：邊界 $x=\cos\phi,y=\sin\phi,z=0$，$\oint y\,\mathrm dx=\int_0^{2\pi}-\sin^2\phi\,\mathrm d\phi=-\pi$。</li>
+    <li>（驗證：$\mathrm d\vec a=(2x,2y,1)\mathrm dx\mathrm dy$，$\iint(-2x-2y-1)=-\pi$。）</li>
+  </ol>
+  <div class="final">答：$-\pi$（法向量朝上、邊界由上往下看逆時針；反向取則為 $+\pi$）。</div>
+  <p class="small"><a href="#tm-1-38">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s16-1" data-group="十五、Stokes 定理與保守力（p.106–114）" data-title="自編：使 $\oint$ 最大的封閉曲線">
+  <h3>自編難題：線積分的最大值</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$I(C)=\oint_C[(\frac{y^3}3-y)\,\mathrm dx-\frac{x^3}3\,\mathrm dy]$，$C$ 為逆時針簡單封閉曲線。哪一條 $C$ 使 $I$ 最大？最大值？</div>
+  <ol class="write">
+    <li>$(\nabla\times\vec F)_z=-x^2-(y^2-1)=1-x^2-y^2$。</li>
+    <li>Stokes：$I=\iint_D(1-x^2-y^2)\,\mathrm dA$；被積函數圓內正、圓外負，故 $D$ 取單位圓盤最大。</li>
+    <li>$I_{\max}=2\pi\int_0^1(1-r^2)r\,\mathrm dr=\frac\pi2$。</li>
+    <li>驗證：沿單位圓 $-\frac\pi4+\pi-\frac\pi4=\frac\pi2$；正方形只有 $\frac43$。</li>
+  </ol>
+  <div class="final">答：$C$ 為單位圓，$I_{\max}=\dfrac\pi2$。</div>
+  <p class="small"><a href="#self-s16-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="self-s16-2" data-group="十五、Stokes 定理與保守力（p.106–114）" data-title="自編：圓盤與半球面的旋度通量">
+  <h3>自編難題：同邊界的兩個曲面</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$\vec F=(z,x,y)$，$C$ 為 $xy$ 平面單位圓（逆時針）。以圓盤及上半球面計算 $\int_S(\nabla\times\vec F)\cdot\mathrm d\vec\sigma$，並直接算線積分。</div>
+  <ol class="write">
+    <li>$\nabla\times\vec F=(1,1,1)$。</li>
+    <li>圓盤（$+\hat k$）：$\pi$。</li>
+    <li>半球面：$\int[\sin\theta(\cos\phi+\sin\phi)+\cos\theta]\sin\theta\,\mathrm d\theta\,\mathrm d\phi=2\pi\cdot\frac12=\pi$。</li>
+    <li>線積分：$\int_0^{2\pi}\cos^2t\,\mathrm dt=\pi$。</li>
+  </ol>
+  <div class="final">答：三者皆為 $\pi$。</div>
+  <p class="small"><a href="#self-s16-2">回到正文詳解</a></p>
+</article>

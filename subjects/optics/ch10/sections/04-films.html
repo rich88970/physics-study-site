@@ -1,0 +1,151 @@
+<h2>四、薄膜干涉與空氣楔 <span class="pg">課本 p.175–181</span> <span class="must exam">考古 0/5</span></h2>
+
+<p class="lead">光照到一層薄膜，上表面反射一道、下表面反射一道，這兩道光來自同一道入射光（振幅分割），會互相干涉。要判斷亮或暗，必須同時算兩件事：路徑造成的光程差 $\Delta_p$，和兩次反射的相位變化造成的 $\Delta_r$。牛頓環（下兩節）就是空氣膜的特例。</p>
+
+<p class="small muted">（逐字稿沒有特別點名薄膜；李孟恩課程資料夾的 5 份期中考沒有考一般薄膜（0/5）；只有物理考古資料夾的舊考卷考過 2 次（2007 平時考三層膜、2007 期中考 TM 薄膜，收在<a href="#o10-old-film">第 9 節</a>），牛頓環另計。）</p>
+
+<h3 id="o10-fm-dp">4.1 光程差 $\Delta_p=2n_ft\cos\theta_t$ <span class="pg-tag">p.175–179</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (26)(35)–(38)</span>
+  $$\Delta_p=2n_ft\cos\theta_t,\qquad \text{亮（建設性）：}\Delta_p+\Delta_r=m\lambda,\qquad \text{暗（破壞性）：}\Delta_p+\Delta_r=\left(m+\tfrac12\right)\lambda$$
+  <p>正向入射 $\theta_t=0$：$2n_ft+\Delta_r$。</p>
+</div>
+
+<p>正向入射時，進到膜裡的那道光多走了下去再上來的 $2t$，在折射率 $n_f$ 的介質裡光程是 $2n_ft$。斜射時課本用幾何證明（Figure 12）：膜裡多走的 $AB+BC$ 減掉外面那道光走的 $AD$，剛好剩下 $2n_ft\cos\theta_t$——注意是<strong>折射角</strong> $\theta_t$，入射角要先用 $n_0\sin\theta_i=n_f\sin\theta_t$ 換掉。這裡的 $\lambda$ 一律是真空波長。</p>
+
+<h3 id="o10-fm-dr">4.2 反射相位 $\Delta_r$：外反射多 $\lambda/2$ <span class="pg-tag">p.176</span></h3>
+
+<p>正向（或小角度）入射時：從低折射率往高折射率反射（<strong>外反射</strong>）相位變 $\pi$，等效多走 $\lambda/2$；從高往低（<strong>內反射</strong>）不變。所以只要看兩次反射是不是同一類：</p>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>情況</th><th>例子</th><th>$\Delta_r$</th></tr></thead>
+  <tbody>
+    <tr><td>一次外反射、一次內反射</td><td>空氣中的肥皂膜 $1\lt n_f\gt1$；兩片玻璃間的空氣膜；中間層最大的三層膜</td><td>$\lambda/2$</td></tr>
+    <tr><td>兩次都是外反射（或都是內反射）</td><td>玻璃上的油膜 $1\lt1.30\lt1.5$；抗反射膜 $n_0\lt n_f\lt n_s$</td><td>$0$</td></tr>
+  </tbody>
+</table></div>
+
+<p>斜射且是 TM（p）偏振時，外反射的相位在布魯斯特角兩側會改變（第二十章 Fresnel 方程式），要另外討論，見第 9 節舊考卷 <a href="#o10-k07m2">2007 期中考</a>那張卡。</p>
+
+<p><strong>抗反射膜</strong>：$n_0\lt n_f\lt n_s$，$\Delta_r=0$，膜厚 $t=\lambda/(4n_f)$ 讓 $\Delta_p=\lambda/2$ 破壞性干涉；兩道反射光振幅相等（完全消光）的條件是 $n_f=\sqrt{n_0n_s}$（課本式 (28)），玻璃 1.50 需要 1.22，實際用 MgF₂（1.38）。</p>
+
+<h3 id="o10-fm-wedge">4.3 等傾條紋與等厚條紋、空氣楔 <span class="pg-tag">p.179–181</span></h3>
+
+<p>厚度均勻的膜配上延展光源：條紋由入射角決定，叫等傾條紋（Haidinger fringes），要用透鏡（眼睛）聚焦。厚度不均勻、正向入射：條紋沿著等厚度線，叫等厚條紋（Fizeau fringes），看起來就在膜上。</p>
+
+<p>兩片玻片一端接觸、一端墊東西形成空氣楔：上面是玻璃→空氣（內反射）、下面是空氣→玻璃（外反射），$\Delta_r=\lambda/2$，所以條件是</p>
+
+$$2t+\frac{\lambda}{2}=\begin{cases}m\lambda&\text{亮}\\(m+\tfrac12)\lambda&\text{暗}\end{cases}\qquad\Longrightarrow\qquad \text{接觸處 }t=0\text{ 是暗紋，每多一條條紋 }t\text{ 增加 }\lambda/2$$
+
+<h3 id="o10-fm-hw">4.4 作業</h3>
+
+<p class="small muted">課程資料夾的考卷沒有一般薄膜題；物理考古資料夾的 <a href="#o10-k07q1">2007 平時考三層膜</a>與 <a href="#o10-k07m2">2007 期中考 TM 薄膜</a>收在第 9 節。</p>
+
+<div class="problem" data-kind="textbook" id="o10-7-14">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 7-14（作業）· p.190</span></div>
+    <h4>玻璃上的油膜：525 與 675 nm 反射消光，求膜厚與級數</h4>
+    <button type="button" class="exam-btn" data-exam="o10-7-14">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-14"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>14</b> Light of continuously variable wavelength illuminates normally a thin oil (index of 1.30) film on a glass surface. Extinction of the reflected light is observed to occur at wavelengths of 525 and 675 nm in the visible spectrum. Determine the thickness of the oil film and the orders of the interference.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>波長可連續改變的光正向照射玻璃表面上一層薄油膜（折射率 1.30）。在可見光範圍內，反射光在 525 nm 和 675 nm 兩個波長消失。求油膜厚度與干涉級數。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>膜折射率</td><td>$n_f=1.30$</td><td>「thin oil (index of 1.30) film」</td></tr>
+          <tr><td>基板</td><td>玻璃，$n_s\approx1.5>1.30$</td><td>「on a glass surface」：題目沒給數字，玻璃約 1.5，只需知道比油大</td></tr>
+          <tr><td>入射</td><td>正向，$\cos\theta_t=1$</td><td>「illuminates normally」</td></tr>
+          <tr><td>消光波長</td><td>$\lambda_1=525\ \text{nm}$、$\lambda_2=675\ \text{nm}$</td><td>「Extinction of the reflected light … at 525 and 675 nm」：反射光的<b>破壞性</b>干涉</td></tr>
+          <tr><td>級數關係</td><td>相鄰兩級（中間沒有別的消光）</td><td>只報告兩個波長，取最薄的解（題目沒寫，要自己判斷）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：膜厚 $t$；兩個波長各是第幾級。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>空氣→油（1→1.30）和油→玻璃（1.30→1.5）兩次都是低到高的外反射，<b>所以</b>相位變化抵消，$\Delta_r=0$，破壞性條件就是 $2n_ft=(m+\tfrac12)\lambda$。</p>
+      <p><b>因為</b>同一個厚度要同時讓兩個波長消光，而較長的波長級數較低，<b>所以</b>設 675 nm 是第 $m$ 級、525 nm 是第 $m+1$ 級，令兩個 $2n_ft$ 相等解出整數 $m$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-7-14-s1" data-sym="Dp,Dr">
+        <span class="step-title">寫出破壞性條件</span>
+        $$\Delta_p+\Delta_r=2n_ft+0=\left(m+\tfrac12\right)\lambda$$
+      </div>
+      <div class="step" data-step="o10-7-14-s2" data-sym="m">
+        <span class="step-title">兩個波長共用同一個 $2n_ft$</span>
+        $$\left(m+\tfrac12\right)(675)=\left(m+\tfrac32\right)(525)$$
+        <p>展開移項：$675m+337.5=525m+787.5$，$150m=450$：</p>
+        $$m=3\ (\text{675 nm})\qquad m+1=4\ (\text{525 nm})$$
+      </div>
+      <div class="step" data-step="o10-7-14-s3" data-sym="t">
+        <span class="step-title">求厚度</span>
+        $$t=\frac{(m+\tfrac12)\lambda}{2n_f}$$
+        <p class="sub">代入 $m=3$、$\lambda=675\ \text{nm}$（步驟 2、題目）、$n_f=1.30$：</p>
+        $$t=\frac{3.5(675\ \text{nm})}{2(1.30)}=908.7\ \text{nm}$$
+        <p>用 525 nm、$m=4$：$4.5(525)/2.6=908.7\ \text{nm}$，相同 ✔。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$t\approx909\ \text{nm}=9.09\times10^{-5}\ \text{cm}$；525 nm 是第 4 級、675 nm 是第 3 級（$2n_ft=(m+\tfrac12)\lambda$ 的 $m$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>與書末答案（$9.09\times10^{-5}$ cm，orders 4 and 3）一致 ✔。下一級 $m=5$ 會在 $2362.5/5.5=430\ \text{nm}$ 再消光，在紫光邊緣；若題目的「可見光」從 450 nm 起算就看不到。若不是相鄰級，下一個整數解是 $m=10$（膜厚約 2.8 μm），那時 525–675 之間還會有別的消光，與題意不合。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="o10-7-20">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 7-20（作業）· p.190</span></div>
+    <h4>兩片玻片夾錫箔：40 條亮紋，求錫箔厚度</h4>
+    <button type="button" class="exam-btn" data-exam="o10-7-20">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>20</b> Two microscope slides are placed together but held apart at one end by a thin piece of tin foil. Under sodium light (589 nm) normally incident on the air film formed between the slides, one observes exactly 40 bright fringes from the edges in contact to the edge of the tin foil. Determine the thickness of the foil.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩片顯微鏡玻片疊在一起，一端用薄錫箔墊開。鈉光（589 nm）正向照到玻片間的空氣膜，從接觸的邊到錫箔邊恰好看到 40 條亮紋。求錫箔厚度。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>波長</td><td>$\lambda=589\ \text{nm}$</td><td>「sodium light (589 nm)」</td></tr>
+          <tr><td>膜</td><td>空氣楔，$n_f=1$</td><td>「the air film formed between the slides」</td></tr>
+          <tr><td>入射</td><td>正向</td><td>「normally incident」</td></tr>
+          <tr><td>反射相位</td><td>$\Delta_r=\lambda/2$</td><td>上面玻璃→空氣（內反射）、下面空氣→玻璃（外反射）：題目沒寫，要自己判斷</td></tr>
+          <tr><td>亮紋數</td><td>40 條，錫箔邊緣在第 40 條亮紋上</td><td>「exactly 40 bright fringes from the edges in contact to the edge of the tin foil」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：錫箔厚度 $t_{\max}$（＝錫箔處的空氣膜厚度）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>空氣楔的厚度從接觸處 0 線性增加到錫箔處，每條亮紋對應一個固定厚度，<b>所以</b>只要知道錫箔處是第幾條亮紋，用亮紋條件 $2t+\lambda/2=m\lambda$ 就得到厚度。<b>因為</b>接觸處 $t=0$ 時 $\Delta=\lambda/2$ 是暗紋，第 1 條亮紋是 $m=1$（$2t=\tfrac12\lambda$），<b>所以</b>第 40 條亮紋是 $2t=39.5\lambda$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-7-20-s1" data-sym="Dp,Dr">
+        <span class="step-title">亮紋條件</span>
+        $$2n_ft+\frac{\lambda}{2}=m\lambda\ \Longrightarrow\ 2t=\left(m-\tfrac12\right)\lambda\qquad(m=1,2,\ldots)$$
+      </div>
+      <div class="step" data-step="o10-7-20-s2" data-sym="t">
+        <span class="step-title">第 40 條亮紋</span>
+        <p class="sub">代入 $m=40$（題目「40 bright fringes」，錫箔邊在第 40 條上）、$\lambda=589\ \text{nm}$：</p>
+        $$t=\frac{39.5\lambda}{2}=\frac{39.5(589\ \text{nm})}{2}=1.163\times10^4\ \text{nm}=11.6\ \mu\text{m}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>錫箔厚約 $11.6\ \mu\text{m}=1.16\times10^{-3}\ \text{cm}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>與書末答案 $1.16\times10^{-3}$ cm 一致 ✔。若把「40 條」理解成 40 個條紋間距（$t=40\lambda/2=11.8\ \mu\text{m}$），差約 1%；寫考卷時要說明自己用哪一種數法。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\Delta_p=2n_ft\cos\theta_t$（折射角、真空波長）；$\Delta_r$ 看兩次反射是否同類：一外一內 $\lambda/2$，同類 0。</li>
+    <li>亮 $\Delta_p+\Delta_r=m\lambda$、暗 $(m+\tfrac12)\lambda$；反射亮的波長在透射是暗的（互補）。</li>
+    <li>空氣楔：接觸處暗，第 k 條亮紋 $2t=(k-\tfrac12)\lambda$，相鄰條紋厚度差 $\lambda/2$。</li>
+  </ol>
+</div>

@@ -1,0 +1,849 @@
+<h2>六、多重度函數的尖銳程度 <span class="pg">課本 §2.4 · p.64–67</span></h2>
+
+<p class="lead">兩個大固體交換能量時，$\Omega_{\text{total}}(q_A)$ 是一個高斯峰，寬度只有全範圍的 $1/\sqrt N$。$N=10^{20}$ 時，偏離最可能巨觀態的擾動要量到第十位有效數字才看得到——這就是「熱力學極限」，也是熱力學可以只講平衡值的原因。</p>
+
+<h3 id="tw-gauss">6.1 兩個大固體：高斯峰 <span class="pg-tag">p.64–65</span></h3>
+
+<p>取兩個各 $N$ 個振子的固體，共 $q$ 份能量，$q\gg N$，用高溫公式 (2.21)：</p>
+
+<div class="step" data-step="tw-a" data-sym="qAB,N,Omega">
+  <span class="step-title">複合系統的多重度</span>
+  $$\Omega=\left(\frac{eq_A}N\right)^N\left(\frac{eq_B}N\right)^N=\left(\frac eN\right)^{2N}(q_Aq_B)^N\qquad(2.22)$$
+  <p>在 $q_A=q_B=q/2$ 有尖峰，高度 $\Omega_{\max}=\left(\frac eN\right)^{2N}\left(\frac q2\right)^{2N}$。</p>
+</div>
+<div class="step" data-step="tw-b" data-sym="x">
+  <span class="step-title">在峰附近：$q_A=\frac q2+x$，$q_B=\frac q2-x$</span>
+  $$q_Aq_B=\left(\frac q2\right)^2-x^2\quad\Longrightarrow\quad\Omega=\left(\frac eN\right)^{2N}\left[\left(\frac q2\right)^2-x^2\right]^N\qquad(2.25)$$
+</div>
+<div class="step" data-step="tw-c">
+  <span class="step-title">取第二個因子的對數，$x\ll q$</span>
+  $$N\ln\left[\left(\frac q2\right)^2\left(1-\left(\frac{2x}q\right)^2\right)\right]=N\left[\ln\left(\frac q2\right)^2+\ln\left(1-\left(\frac{2x}q\right)^2\right)\right]\approx N\left[\ln\left(\frac q2\right)^2-\left(\frac{2x}q\right)^2\right]$$
+</div>
+<div class="step" data-step="tw-d">
+  <span class="step-title">取指數</span>
+  $$\Omega=\left(\frac eN\right)^{2N}e^{N\ln(q/2)^2}e^{-N(2x/q)^2}=\Omega_{\max}\,e^{-N(2x/q)^2}\qquad(2.27)$$
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.65 Eq. (2.28) 峰的寬度</span>
+  <p>多重度降到最大值的 $1/e$ 時：</p>
+  $$N\left(\frac{2x}q\right)^2=1\quad\Longrightarrow\quad x=\frac q{2\sqrt N}$$
+  <p>Fig. 2.7 標示的全寬是 $q/\sqrt N$。$N=10^{20}$ 時只佔整個橫軸的百億分之一；若峰寬畫成 $1\ \text{cm}$，整張圖要長 $10^{10}\ \text{cm}=10^5\ \text{km}$。</p>
+</div>
+
+<div class="anim" data-anim="t2-sharp"></div>
+
+<p>為什麼峰會變尖？$\Omega$ 的形狀是「$q_Aq_B$ 的 $N$ 次方」。$q_Aq_B$ 本身是一個平緩的拋物線，在中間最大；但取 $N$ 次方後，中間比旁邊大一點點的差距被放大成指數 $N$ 倍。$x$ 只要大到 $(2x/q)^2\sim1/N$，就已經掉到 $1/e$。這裡 $x=q/(2\sqrt N)$ 本身其實是很大的數，但相對於 $q$ 只是 $1/(2\sqrt N)$，所以<strong>絕對擾動變大、相對擾動變小</strong>。離峰十倍寬度的地方，多重度只剩 $e^{-100}\approx10^{-44}$。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.66 熱力學極限（thermodynamic limit）</span>
+  <p>兩個大固體達到熱平衡後，偏離最可能巨觀態的隨機擾動完全量不到；我們不妨就說它在最可能的巨觀態。系統變成無限大、使得可量測的擾動永不出現的極限，叫熱力學極限。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-20">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-20（Problem 2.20）· p.66</span></div>
+    <h4>整張圖縮進一頁，峰有多寬</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-20">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Suppose you were to shrink Figure 2.7 until the entire horizontal scale fits on the page. How wide would the peak be?</p></div>
+<p class="original-caption">Schroeder 習題 2-20（Problem 2.20）· p.66</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>假設把 Fig. 2.7 縮小到整個橫軸都放得進一頁，峰會有多寬？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>圖的振子數</td><td>$N=10^{20}$</td><td>題目說「把 <b>Fig. 2.7</b> 縮小」，所以沿用課文 p.65 畫那張圖的例子</td></tr>
+          <tr><td>原圖的峰寬</td><td>$1\ \text{cm}$</td><td>課文 p.65：「若峰寬畫成 $1\ \text{cm}$」</td></tr>
+          <tr><td>原圖整個橫軸</td><td>$10^{10}\ \text{cm}=10^5\ \text{km}$</td><td>課文 p.65：整張圖要長 $10^{10}\ \text{cm}$（就是峰寬的 $\sqrt N=10^{10}$ 倍）</td></tr>
+          <tr><td>一頁的寬度</td><td>約 $20\ \text{cm}$</td><td>題目「整個橫軸都放得進<b>一頁</b>」沒給數字，取一般書頁的寬度（自己估計）</td></tr>
+          <tr><td>原子大小</td><td>約 $1\ \text{Å}=10^{-10}\ \text{m}$</td><td>題目沒給，最後比較用的常識值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：把 $10^5\ \text{km}$ 長的橫軸縮成一頁寬時，峰的寬度是多少（並和原子大小比較）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>「縮小圖」是把整張圖<b>等比例</b>縮小，峰寬和全長縮小同樣的倍數，<b>所以</b>先算縮小倍數＝原全長 ÷ 新全長，再把原峰寬除以同一個倍數。</p>
+      <p>也可以換個角度：<b>因為</b>峰寬佔全長的比例只由 $N$ 決定（相對寬度 $\sim1/\sqrt N=10^{-10}$），和圖畫多大無關，<b>所以</b>新峰寬＝頁寬 $\times10^{-10}$。兩種算法應該一致，可以互相驗算。</p>
+      <p>題目沒說一頁多寬，必須自己取一個合理值；答案只要數量級，取 $20\ \text{cm}$ 或 $25\ \text{cm}$ 都不影響結論。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t220a">
+        <span class="step-title">縮小倍數</span>
+        <p>兩個長度單位要一樣才能相除，先都換成公尺：$1\ \text{km}=10^3\ \text{m}$、$1\ \text{cm}=10^{-2}\ \text{m}$。</p>
+        $$\text{縮小倍數}=\frac{\text{原全長}}{\text{新全長}}$$
+        <p class="sub">代入原全長 $10^5\ \text{km}$（課文 p.65）、新全長 $20\ \text{cm}$（一頁，自己估計）：</p>
+        $$\frac{10^5\times10^3\ \text{m}}{20\times10^{-2}\ \text{m}}=\frac{10^8\ \text{m}}{0.2\ \text{m}}=5\times10^8$$
+      </div>
+      <div class="step" data-step="t220b">
+        <span class="step-title">峰寬</span>
+        <p>峰寬跟著整張圖縮小同樣倍數：</p>
+        $$\text{新峰寬}=\frac{\text{原峰寬}}{\text{縮小倍數}}$$
+        <p class="sub">代入原峰寬 $1\ \text{cm}=10^{-2}\ \text{m}$（課文 p.65）、縮小倍數 $5\times10^8$（步驟 1）：</p>
+        $$\frac{10^{-2}\ \text{m}}{5\times10^8}=2\times10^{-11}\ \text{m}$$
+        <p>換成埃（$1\ \text{Å}=10^{-10}\ \text{m}$）：$2\times10^{-11}\ \text{m}=0.2\ \text{Å}$。</p>
+      </div>
+      <div class="step" data-step="sc-2-20-s3">
+        <span class="step-title">用相對寬度再算一次</span>
+        <p>峰寬佔全長的比例：</p>
+        $$\frac{1\ \text{cm}}{10^{10}\ \text{cm}}=10^{-10}=\frac1{\sqrt{10^{20}}}$$
+        <p class="sub">乘上新全長 $0.2\ \text{m}$（一頁）：</p>
+        $$0.2\ \text{m}\times10^{-10}=2\times10^{-11}\ \text{m}$$
+        <p>和步驟 2 相同。一個原子的直徑約 $1\text{–}3\ \text{Å}$，所以縮小後的峰比一個原子還窄，任何印刷都畫不出它的寬度。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約 $2\times10^{-11}\ \text{m}=0.2\ \text{Å}$，比一個原子（約 $1\ \text{Å}$）還窄。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>相對寬度 $\frac{2\times10^{-11}}{0.2}=10^{-10}=1/\sqrt{10^{20}}$ ✔；頁寬改取 $25\ \text{cm}$，峰寬變成 $2.5\times10^{-11}\ \text{m}$，結論不變。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-21">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-21（Problem 2.21）· p.66</span></div>
+    <h4>直接畫 $[4z(1-z)]^N$</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-21">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-21"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a computer to plot formula 2.22 directly, as follows. Define $z=q_A/q$, so that $(1-z)=q_B/q$. Then, aside from an overall constant that we’ll ignore, the multiplicity function is $[4z(1-z)]^N$, where $z$ ranges from 0 to 1 and the factor of 4 ensures that the height of the peak is equal to 1 for any $N$. Plot this function for $N=1$, 10, 100, 1000, and 10,000. Observe how the width of the peak decreases as $N$ increases.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用電腦直接畫 (2.22)：定義 $z=q_A/q$，所以 $1-z=q_B/q$。除了一個我們忽略的整體常數，多重度函數是 $[4z(1-z)]^N$，$z$ 從 0 到 1，因子 4 讓峰高對任何 $N$ 都等於 1。畫出 $N=1$、10、100、1000、10 000 的圖，觀察峰寬如何隨 $N$ 變小。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>出發的公式</td><td>(2.22) $\Omega=\left(\frac eN\right)^{2N}(q_Aq_B)^N$</td><td>「直接畫 <b>(2.22)</b>」：兩個各 $N$ 個振子的高溫（$q\gg N$）愛因斯坦固體</td></tr>
+          <tr><td>新變數</td><td>$z=q_A/q$，$1-z=q_B/q$</td><td>「定義 $z=q_A/q$，所以 $1-z=q_B/q$」</td></tr>
+          <tr><td>要畫的函數</td><td>$[4z(1-z)]^N$</td><td>「多重度函數是 $[4z(1-z)]^N$」，整體常數忽略</td></tr>
+          <tr><td>$z$ 的範圍</td><td>$0\le z\le1$</td><td>「$z$ 從 0 到 1」：$q_A$ 從 0 到全部能量</td></tr>
+          <tr><td>峰高</td><td>1</td><td>「因子 4 讓峰高對任何 $N$ 都等於 1」</td></tr>
+          <tr><td>要畫的 $N$</td><td>$1,\ 10,\ 100,\ 1000,\ 10\,000$</td><td>題目列出的五個值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：畫出五個 $N$ 的 $[4z(1-z)]^N$，觀察峰寬怎麼隨 $N$ 變小（這裡把「觀察」量化成每個 $N$ 的 $1/e$ 半寬）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目是用電腦畫圖、要我們「觀察」，<b>所以</b>這裡把觀察量化：先確認 (2.22) 真的可以寫成「常數 $\times[4z(1-z)]^N$」，再精確解出函數降到峰高 $1/e$ 的位置，得到每個 $N$ 的半寬，和 (2.28) 的近似 $1/(2\sqrt N)$ 比較。</p>
+      <p><b>因為</b>五條曲線的峰高都是 1、橫軸都是 0 到 1，<b>所以</b>畫在同一張圖上，差別只剩寬度（見本節上方「$[4z(1-z)]^N$：峰隨 $N$ 變尖」的圖解）。寬度用 $1/e$ 定義，是<b>因為</b>課文 (2.28) 用的就是這個定義，用同一個定義才能比。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t221a" data-sym="qAB,N">
+        <span class="step-title">把 (2.22) 換成 $z$</span>
+        <p>把 $q_A=qz$、$q_B=q(1-z)$ 代入，乘積是</p>
+        $$q_Aq_B=q^2z(1-z)=\left(\frac q2\right)^2\cdot4z(1-z)$$
+        <p>（$q^2$ 寫成 $(q/2)^2\times4$，就湊出因子 4。）取 $N$ 次方，乘上 $(e/N)^{2N}$：</p>
+        $$\Omega=\left(\frac eN\right)^{2N}\left(\frac q2\right)^{2N}\big[4z(1-z)\big]^N$$
+        $$\Omega=\left(\frac{eq}{2N}\right)^{2N}\big[4z(1-z)\big]^N$$
+        <p>前面的 $\left(\frac{eq}{2N}\right)^{2N}$ 和 $z$ 無關，就是題目說要忽略的整體常數。</p>
+      </div>
+      <div class="step" data-step="sc-2-21-s2">
+        <span class="step-title">峰的位置與高度</span>
+        <p>$[\cdots]^N$ 在 $4z(1-z)$ 最大時最大。對 $z$ 微分令為 0：</p>
+        $$\frac{d}{dz}\big[4z(1-z)\big]=4(1-2z)=0\ \Longrightarrow\ z=\frac12$$
+        <p class="sub">代回 $z=\tfrac12$：</p>
+        $$4\cdot\tfrac12\cdot\tfrac12=1\ \Longrightarrow\ [4z(1-z)]^N=1$$
+        <p>峰在 $q_A=q_B$（能量平分），峰高對任何 $N$ 都是 1；所以前面的常數 $\left(\frac{eq}{2N}\right)^{2N}$ 就是 $\Omega_{\max}$ (2.23)。</p>
+      </div>
+      <div class="step" data-step="t221b">
+        <span class="step-title">$1/e$ 半寬：解二次方程</span>
+        <p>令函數等於峰高的 $1/e$，兩邊開 $N$ 次方：</p>
+        $$\big[4z(1-z)\big]^N=e^{-1}\ \Longrightarrow\ 4z(1-z)=e^{-1/N}$$
+        <p>整理成 $4z^2-4z+e^{-1/N}=0$，用公式解：</p>
+        $$z=\frac{4\pm\sqrt{16-16e^{-1/N}}}{8}=\frac12\pm\frac12\sqrt{1-e^{-1/N}}$$
+        <p>兩個解對稱地落在 $z=\tfrac12$ 兩側，到中心的距離就是半寬：</p>
+        $$w=\frac12\sqrt{1-e^{-1/N}}$$
+      </div>
+      <div class="step" data-step="sc-2-21-s4">
+        <span class="step-title">大 $N$ 的近似與數值</span>
+        <p>$N$ 大時 $u=1/N\ll1$，用 $e^{-u}\approx1-u$：</p>
+        $$1-e^{-1/N}\approx\frac1N\ \Longrightarrow\ w\approx\frac1{2\sqrt N}$$
+        <p class="sub">代入題目的五個 $N$（例如 $N=10$：$e^{-0.1}=0.9048$，$w=\tfrac12\sqrt{0.0952}=0.154$）：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$N$</th><th>1</th><th>10</th><th>100</th><th>1000</th><th>10 000</th></tr></thead>
+          <tbody>
+            <tr><td>$w$（精確）</td><td>0.398</td><td>0.154</td><td>0.0499</td><td>0.0158</td><td>0.0050</td></tr>
+            <tr><td>$1/(2\sqrt N)$</td><td>0.5</td><td>0.158</td><td>0.050</td><td>0.0158</td><td>0.0050</td></tr>
+          </tbody>
+        </table></div>
+        <p>$N=1$ 時 $1/N=1$ 並不小，近似差了 25%；$N\ge100$ 後兩列已看不出差別。</p>
+      </div>
+      <div class="step" data-step="t221c">
+        <span class="step-title">圖形與觀察</span>
+        <p>$N=1$ 是平緩的拋物線 $4z(1-z)$；之後 $N$ 每乘 100，半寬縮成 $1/10$（因為 $w\propto1/\sqrt N$）。$N=10^4$ 時半寬 0.005，峰只佔橫軸約 1%，兩側幾乎貼在 0 上。</p>
+        <p>原因：$4z(1-z)$ 只要比 1 小一點點，取 $N$ 次方就變得極小。例如 $z=0.6$ 時 $4z(1-z)=0.96$，但 $0.96^{1000}=1.9\times10^{-18}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>峰都在 $z=\tfrac12$、高度都是 1；$1/e$ 半寬依序 $0.40,\ 0.15,\ 0.050,\ 0.016,\ 0.005$，大 $N$ 時 $\approx1/(2\sqrt N)$——$N$ 越大峰越尖。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$w$ 乘上 $q$ 就是 (2.28) 的 $x=q/(2\sqrt N)$ ✔；$N=1$ 時近似差 25%，$N\ge100$ 時已看不出差別。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-22">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-22（Problem 2.22）· p.66 · 熱學小考（上）作業題</span></div>
+    <h4>用峰高和面積估計峰寬</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-22">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>另一種估計兩個大愛因斯坦固體多重度峰寬的方法。(a) 兩個相同的愛因斯坦固體，各有 $N$ 個振子，熱接觸；複合系統的總能量剛好是 $2N$ 份。這個複合系統有多少個不同的巨觀態（第一個固體的能量的可能值）？(b) 用習題 2.18 的結果，求複合系統微觀態總數的近似式。（提示：把複合系統當成一個愛因斯坦固體。不要丟掉「大」的因子，因為最後要拿兩個幾乎相等的「很大」的數相除。答案：$2^{4N}/\sqrt{8\pi N}$。）(c) 最可能的巨觀態當然是能量平分。用習題 2.18 的結果求這個巨觀態的多重度。（答案：$2^{4N}/(4\pi N)$。）(d) 比較 (b) 與 (c) 可粗略知道多重度函數有多「尖」：(c) 是峰高、(b) 是整個圖形下的面積。很粗略地假裝峰是長方形，它有多寬？所有巨觀態中，有多少比例的機率夠大？對 $N=10^{23}$ 算出這個比例。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>每個固體的振子數</td><td>$N_A=N_B=N$</td><td>「兩個<b>相同</b>的愛因斯坦固體，各有 $N$ 個振子」</td></tr>
+          <tr><td>總能量</td><td>$q_{\text{total}}=2N$</td><td>「總能量剛好是 $2N$ 份」</td></tr>
+          <tr><td>「大」</td><td>$N\gg1$</td><td>「兩個<b>大</b>愛因斯坦固體」：可以用 Stirling</td></tr>
+          <tr><td>習題 2.18 的公式</td><td>$\Omega(N,q)\approx\left(\frac{q+N}q\right)^q\left(\frac{q+N}N\right)^N\sqrt{\frac N{2\pi q(q+N)}}$</td><td>(b)(c)「用習題 2.18 的結果」；題目沒抄出公式，這是 2.18 用含根號的 Stirling 得到的式子</td></tr>
+          <tr><td>最可能巨觀態</td><td>$q_A=q_B=N$</td><td>(c)「最可能的巨觀態當然是能量平分」</td></tr>
+          <tr><td>(d) 的振子數</td><td>$N=10^{23}$</td><td>(d)「對 $N=10^{23}$ 算出這個比例」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 巨觀態個數；(b) 微觀態總數；(c) 最可能巨觀態的多重度；(d) 把峰當長方形時的寬度，以及「機率夠大」的巨觀態佔全部的比例（$N=10^{23}$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>巨觀態由「第一個固體有幾份能量」決定，<b>所以</b>只要數 $q_A$ 能取幾個整數值。</p>
+      <p>(b) <b>因為</b>「所有巨觀態的微觀態加起來」就是不管能量怎麼分、整個系統的微觀態總數，而「$2N$ 個振子共享 $2N$ 份能量」和「一個有 $2N$ 個振子的愛因斯坦固體」完全一樣，<b>所以</b>把複合系統當成一個固體，代入 2.18 的公式。(c) <b>因為</b>能量平分時兩個固體各自是 $(N,q)=(N,N)$，複合系統的多重度是兩者相乘，<b>所以</b>代 $(N,N)$ 再平方。</p>
+      <p>(d) <b>因為</b> (b) 是曲線下的總面積、(c) 是峰高，假裝峰是長方形時面積＝高×寬，<b>所以</b>寬＝(b)÷(c)。這是兩個「很大的數」相除，$2^{4N}$ 會完全約掉，留下的就是根號裡的「大的數」——這就是提示說「不要丟掉大的因子」的原因：若像 (2.21) 那樣丟掉根號，(b)÷(c) 會等於 1，什麼都算不出來。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t222a" data-sym="qAB">
+        <span class="step-title">(a) 數巨觀態</span>
+        <p>$q_A$ 可以是 $0,1,2,\dots,2N$（$q_B=2N-q_A$ 跟著決定），從 0 數到 $2N$：</p>
+        $$\text{巨觀態數}=2N+1$$
+      </div>
+      <div class="step" data-step="sc-2-22-s2">
+        <span class="step-title">準備：2.18 的公式在 $q=N$ 時</span>
+        <p>(b)(c) 用到的固體都是「能量份數＝振子數」，先把 2.18 的公式在 $q=N$ 時化簡，之後直接套用：</p>
+        $$\frac{q+N}q=\frac{2N}N=2,\qquad\frac{q+N}N=2$$
+        $$\sqrt{\frac N{2\pi q(q+N)}}=\sqrt{\frac N{2\pi N\cdot2N}}=\frac1{\sqrt{4\pi N}}$$
+        $$\Omega(N,N)\approx2^N\cdot2^N\cdot\frac1{\sqrt{4\pi N}}=\frac{2^{2N}}{\sqrt{4\pi N}}$$
+      </div>
+      <div class="step" data-step="t222b" data-sym="Omega">
+        <span class="step-title">(b) 微觀態總數</span>
+        <p>複合系統＝一個有 $2N$ 個振子、$2N$ 份能量的固體，把步驟 2 的 $N$ 換成 $2N$。</p>
+        <p class="sub">代入振子數 $2N$、能量 $2N$ 份（題目「各 $N$ 個振子」「總能量 $2N$ 份」）：</p>
+        $$\Omega_{\text{total}}\approx\frac{2^{2(2N)}}{\sqrt{4\pi(2N)}}=\frac{2^{4N}}{\sqrt{8\pi N}}$$
+        <p>和題目給的答案相同。</p>
+      </div>
+      <div class="step" data-step="t222c">
+        <span class="step-title">(c) 峰高：每個固體 $q=N$</span>
+        <p>能量平分時每個固體都是 $N$ 個振子、$N$ 份能量，正好是步驟 2：</p>
+        $$\Omega_A=\Omega_B=\frac{2^{2N}}{\sqrt{4\pi N}}$$
+        <p>兩個固體各自獨立地選微觀態，多重度相乘：</p>
+        $$\Omega_{\text{peak}}=\Omega_A\Omega_B=\frac{2^{2N}\cdot2^{2N}}{\left(\sqrt{4\pi N}\right)^2}=\frac{2^{4N}}{4\pi N}$$
+      </div>
+      <div class="step" data-step="t222d">
+        <span class="step-title">(d) 寬度 約 面積 ÷ 高</span>
+        <p>橫軸是 $q_A$（每格一個巨觀態），所有巨觀態的多重度加起來＝曲線下面積＝(b)；峰高＝(c)：</p>
+        $$\text{寬}\approx\frac{\Omega_{\text{total}}}{\Omega_{\text{peak}}}=\frac{2^{4N}/\sqrt{8\pi N}}{2^{4N}/(4\pi N)}=\frac{4\pi N}{\sqrt{8\pi N}}$$
+        <p>$2^{4N}$ 約掉了。分子寫成 $\sqrt{16\pi^2N^2}$ 再合併根號：</p>
+        $$\frac{\sqrt{16\pi^2N^2}}{\sqrt{8\pi N}}=\sqrt{\frac{16\pi^2N^2}{8\pi N}}=\sqrt{2\pi N}$$
+      </div>
+      <div class="step" data-step="sc-2-22-s6">
+        <span class="step-title">(d) 「機率夠大」的巨觀態佔多少</span>
+        <p>寬度內的巨觀態才有可觀的機率，除以巨觀態總數 $2N+1\approx2N$（步驟 1；$N$ 很大，+1 可忽略）：</p>
+        $$\frac{\sqrt{2\pi N}}{2N}=\sqrt{\frac{2\pi N}{4N^2}}=\sqrt{\frac{\pi}{2N}}$$
+        <p class="sub">代入 $N=10^{23}$（題目 (d)）：</p>
+        $$\sqrt{\frac{\pi}{2\times10^{23}}}=\sqrt{1.57\times10^{-23}}=4.0\times10^{-12}$$
+        <p>只有約一兆分之四的巨觀態有可觀的機率；比例 $\propto1/\sqrt N$，和 (2.28) 高斯峰的相對寬度同一個規律。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $2N+1$；(b) $2^{4N}/\sqrt{8\pi N}$；(c) $2^{4N}/(4\pi N)$；(d) 寬 $\sqrt{2\pi N}$，比例 $\sqrt{\pi/(2N)}\sim1/\sqrt N$，$N=10^{23}$ 時約 $4\times10^{-12}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$N=50$ 精確驗算：$\binom{199}{100}/\binom{99}{50}^2=17.8\approx\sqrt{100\pi}=17.7$ ✔。這題 $2^{4N}$ 互相約掉，所以根號因子不能丟。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-23">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-23（Problem 2.23）· p.67</span></div>
+    <h4>宇宙年齡也看不完的微觀態</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-23">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-23"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a two-state paramagnet with 10<sup>23</sup> elementary dipoles, with the total energy fixed at zero so that exactly half the dipoles point up and half point down.</p><p>(a) How many microstates are “accessible” to this system?</p><p>(b) Suppose that the microstate of this system changes a billion times per second. How many microstates will it explore in ten billion years (the age of the universe)?</p><p>(c) Is it correct to say that, if you wait long enough, a system will eventually be found in every “accessible” microstate? Explain your answer, and discuss the meaning of the word “accessible.”</p></div>
+<p class="original-caption">Schroeder 習題 2-23（Problem 2.23）· p.67</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一個有 $10^{23}$ 個偶極的兩態順磁體，總能量固定為零，所以剛好一半向上、一半向下。(a) 這個系統有多少個「可及」的微觀態？(b) 假設微觀態每秒改變十億次，在一百億年（宇宙年齡）裡會經歷多少個微觀態？(c) 說「只要等得夠久，系統終究會出現在每一個可及的微觀態」對嗎？說明，並討論「可及」這個詞的意思。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>偶極數</td><td>$N=10^{23}$</td><td>「有 $10^{23}$ 個偶極的兩態順磁體」</td></tr>
+          <tr><td>向上、向下的個數</td><td>$N_\uparrow=N_\downarrow=N/2$</td><td>「總能量固定為零，所以剛好一半向上、一半向下」：$U=\mu B(N_\downarrow-N_\uparrow)=0$</td></tr>
+          <tr><td>微觀態改變的速率</td><td>$10^9\ \text{s}^{-1}$</td><td>(b)「每秒改變<b>十億</b>次」</td></tr>
+          <tr><td>經過的時間</td><td>$10^{10}$ 年</td><td>(b)「一百億年（宇宙年齡）」</td></tr>
+          <tr><td>一年的秒數</td><td>$3.16\times10^7\ \text{s}$</td><td>題目沒給：$365.25\times24\times3600$</td></tr>
+          <tr><td>Stirling（含根號）</td><td>$n!\approx n^ne^{-n}\sqrt{2\pi n}$</td><td>題目沒寫；$N$ 太大不能直接算階乘，用課本 (2.14)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 可及的微觀態數；(b) 一百億年內經歷的微觀態數；(c) 判斷「等得夠久就會到每一個可及微觀態」對不對，並解釋「可及」。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>能量固定為零就固定了 $N_\uparrow=N/2$，可及的微觀態就是「從 $N$ 個偶極裡選哪 $N/2$ 個向上」，<b>所以</b> $\Omega=\binom N{N/2}$；$N=10^{23}$ 的階乘只能用 Stirling，做法和考古 115-6 (a) 求峰高完全相同。</p>
+      <p>(b) <b>因為</b>每秒最多換十億個微觀態（就算每次都換到沒去過的），<b>所以</b>經歷的個數最多是「速率 × 時間」，把一百億年換成秒再相乘。</p>
+      <p>(c) 比較 (a) 的「很大的數」和 (b) 的「大的數」：<b>因為</b> (b) 相對於 (a) 等於零，<b>所以</b>「可及」不能理解成「真的會去到」。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t223a" data-sym="Omega,N">
+        <span class="step-title">(a) 可及微觀態數</span>
+        <p>分子分母都用含根號的 Stirling；分母 $(N/2)!\approx(N/2)^{N/2}e^{-N/2}\sqrt{\pi N}$，平方後是 $(N/2)^Ne^{-N}\pi N$：</p>
+        $$\Omega=\frac{N!}{[(N/2)!]^2}\approx\frac{N^Ne^{-N}\sqrt{2\pi N}}{(N/2)^Ne^{-N}\,\pi N}$$
+        <p>$e^{-N}$ 約掉；$N^N/(N/2)^N=2^N$；$\sqrt{2\pi N}/(\pi N)=\sqrt{2/(\pi N)}$：</p>
+        $$\Omega\approx2^N\sqrt{\frac2{\pi N}}$$
+      </div>
+      <div class="step" data-step="sc-2-23-s2">
+        <span class="step-title">(a) 代入 $N=10^{23}$</span>
+        <p class="sub">代入 $N=10^{23}$（題目），先算根號因子：</p>
+        $$\sqrt{\frac2{\pi\times10^{23}}}=2.5\times10^{-12}=\frac1{4\times10^{11}}$$
+        <p>它只是「大的數」，乘在「很大的數」$2^{10^{23}}$ 前面，只讓 10 的指數少了 $\log_{10}(4\times10^{11})=11.6$，和 $3\times10^{22}$ 相比可以忽略。換成 10 的次方用 $\log_{10}2=0.301$：</p>
+        $$\Omega\approx2^{10^{23}}=10^{0.301\times10^{23}}=10^{3.0\times10^{22}}$$
+      </div>
+      <div class="step" data-step="t223b">
+        <span class="step-title">(b) 一百億年經歷幾個微觀態</span>
+        $$\text{個數}=\text{速率}\times\text{時間}$$
+        <p class="sub">時間：$10^{10}$ 年（題目）$\times3.16\times10^7\ \text{s/年}=3.16\times10^{17}\ \text{s}$；速率 $10^9\ \text{s}^{-1}$（題目「每秒十億次」）：</p>
+        $$10^9\ \text{s}^{-1}\times3.16\times10^{17}\ \text{s}=3\times10^{26}$$
+      </div>
+      <div class="step" data-step="t223c">
+        <span class="step-title">(c) 比較並解釋「可及」</span>
+        <p>經歷過的比例＝(b) ÷ (a)：</p>
+        $$\frac{3\times10^{26}}{10^{3\times10^{22}}}=10^{26.5-3\times10^{22}}\approx10^{-3\times10^{22}}$$
+        <p>實際上等於零：就算等上宇宙年齡，系統走過的微觀態也只佔可及微觀態中微不足道的一小撮，所以這句話<strong>不對</strong>。</p>
+        <p>「可及」不是說系統真的會去到那些狀態，而是說：就我們所知，它<strong>可能</strong>出現在其中任何一個（能量、粒子數等條件都允許，也沒有別的限制排除它），我們沒有理由偏好哪一個，所以給它們相同的機率。它描述的是我們對下一刻微觀態的無知。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\approx2^{10^{23}}=10^{3\times10^{22}}$；(b) 約 $3\times10^{26}$ 個；(c) 不對：可及＝條件允許而且無從排除，不是「真的會去到」。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$\sqrt{2/(\pi N)}$ 只是大的數（$1/(4\times10^{11})$），乘在很大的數前面可以忽略 ✔</p></div>
+  </div>
+</div>
+
+<h3 id="tw-para">6.2 單一順磁體的高斯峰 <span class="pg-tag">p.67</span></h3>
+
+<p>同樣的方法也適用於單一個兩態順磁體：$\Omega(N_\uparrow)=\binom N{N_\uparrow}$ 在 $N_\uparrow=N/2$ 有尖峰。這是課本習題 2.24，也是 115 級期中 20 分的大題；和上面兩固體的推導相比，關鍵差別是這次<strong>要保留 Stirling 的根號</strong>（因為 (a) 要求峰的高度），而且 $x\ln\frac{N/2+x}{N/2-x}$ 這一項也會貢獻 $x^2$。</p>
+
+<div class="problem" data-kind="exam" id="tk-115-6">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 6 題 · 即 Schroeder Problem 2.24(a)–(c) · p.67</span></div>
+    <h4>大順磁體多重度的高斯峰</h4>
+    <button type="button" class="exam-btn" data-exam="tk-115-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-6"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>[20pts] For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function. (5pts)</p><p>(b) Use the methods similar to what you learned in the textbook to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$, and show that the distribution is a Gaussian function. (10pts) Check that your formula agrees with your answer to part (a) when $x=0$. (1pt)</p><p>(c) How wide is the peak of the Gaussian in the multiplicity function? Remember to derive it, not just write down the answer!(4pts)</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.24）</strong></p><p>For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function.</p><p>(b) Use the methods of this section to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$. Check that your formula agrees with your answer to part (a) when $x=0$.</p><p>(c) How wide is the peak in the multiplicity function?</p><p>(d) Suppose you flip 1,000,000 coins. Would you be surprised to obtain 501,000 heads and 499,000 tails? Would you be surprised to obtain 510,000 heads and 490,000 tails? Explain.</p><p class="small">（(d) 不在這份考卷裡，見<a href="#sc-2-24">課本 2-24</a>。）</p></div>
+<p class="original-caption">115 級上學期期中 第 6 題 · 即 Schroeder Problem 2.24(a)–(c) · p.67</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（20 分）單一個大的兩態順磁體，其多重度函數在 $N_\uparrow=N/2$ 附近有非常尖的峰。(a) 用 Stirling 近似估計多重度函數峰的高度。（5 分）(b) 用和課本類似的方法，推導峰附近多重度函數的公式，以 $x\equiv N_\uparrow-(N/2)$ 表示，並證明這個分布是高斯函數。（10 分）檢查當 $x=0$ 時你的公式與 (a) 的答案一致。（1 分）(c) 多重度函數的高斯峰有多寬？記得要推導，不能只寫答案！（4 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>系統</td><td>兩態順磁體，$N$ 個偶極，$N\gg1$</td><td>「單一個<b>大的</b>兩態順磁體」：$N$ 很大，可以用 Stirling</td></tr>
+          <tr><td>多重度</td><td>$\Omega=\dfrac{N!}{N_\uparrow!\,N_\downarrow!}$，$N_\downarrow=N-N_\uparrow$</td><td>兩態順磁體的多重度（第 1 節；題目沒寫出來）</td></tr>
+          <tr><td>峰的位置</td><td>$N_\uparrow=N/2$</td><td>「在 $N_\uparrow=N/2$ 附近有非常尖的峰」</td></tr>
+          <tr><td>新變數</td><td>$x\equiv N_\uparrow-N/2$：$N_{\uparrow,\downarrow}=\frac N2\pm x$</td><td>(b)「以 $x\equiv N_\uparrow-(N/2)$ 表示」</td></tr>
+          <tr><td>峰附近</td><td>$|x|\ll N$</td><td>(b)「峰<b>附近</b>」：對數可以展開</td></tr>
+          <tr><td>Stirling（含根號）</td><td>$n!\approx n^ne^{-n}\sqrt{2\pi n}$</td><td>(a)「用 Stirling 近似估計峰的<b>高度</b>」：要高度就必須保留根號</td></tr>
+          <tr><td>寬度的定義</td><td>降到峰值的 $1/e$</td><td>(c) 題目沒指定，用課文 (2.28) 的定義</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 峰高；(b) 峰附近 $\Omega(x)$ 的公式、證明是高斯函數、檢查 $x=0$ 時等於 (a)；(c) 推導峰寬。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> (a) 問的是峰的<b>高度</b>（一個具體的數），而 $2^N$ 前面的根號因子會影響高度，<b>所以</b>必須用含根號的 Stirling $n!\approx n^ne^{-n}\sqrt{2\pi n}$；只用 $\ln n!\approx n\ln n-n$ 會丟掉這個因子。</p>
+      <p><b>因為</b> (b) 要在峰附近找形狀，而 $\Omega$ 是很大的數、不好直接展開，<b>所以</b>照課文 (2.25)–(2.27) 的做法：先取 $\ln\Omega$，代 $N_{\uparrow,\downarrow}=\frac N2\pm x$，在 $x\ll N$ 時展開到 $x^2$，再取指數；得到 $e^{-(\text{正常數})x^2}$ 就證明了是高斯函數。</p>
+      <p>最容易錯的地方：$(\frac N2+x)\ln(\frac N2+x)$ 的係數本身也含 $x$，如果把對數只展開到一次，會漏掉一半的 $x^2$。<b>所以</b>先把它重排成「對稱部分＋反對稱部分」再展開（步驟 4–5）。(c) <b>因為</b>高斯函數沒有明確的邊界，用課文的 $1/e$ 定義寬度。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk-115-6-s1">
+        <span class="step-title">準備：多重度代入 Stirling</span>
+        <p>三個階乘都用 $n!\approx n^ne^{-n}\sqrt{2\pi n}$。指數部分：分子 $e^{-N}$，分母 $e^{-N_\uparrow}e^{-N_\downarrow}=e^{-N}$，約掉。剩下</p>
+        $$\Omega\approx\frac{N^N}{N_\uparrow^{N_\uparrow}N_\downarrow^{N_\downarrow}}\sqrt{\frac{2\pi N}{2\pi N_\uparrow\cdot2\pi N_\downarrow}}$$
+        $$\Omega\approx\frac{N^N}{N_\uparrow^{N_\uparrow}N_\downarrow^{N_\downarrow}}\sqrt{\frac N{2\pi N_\uparrow N_\downarrow}}$$
+      </div>
+      <div class="step" data-step="k1156a" data-sym="Nud,Omega">
+        <span class="step-title">(a) 峰高：$N_\uparrow=N_\downarrow=N/2$</span>
+        <p class="sub">代入峰的位置 $N_\uparrow=N_\downarrow=N/2$（題目）。主要部分：</p>
+        $$\frac{N^N}{(N/2)^{N/2}(N/2)^{N/2}}=\frac{N^N}{(N/2)^N}=2^N$$
+        <p>根號部分：</p>
+        $$\sqrt{\frac N{2\pi(N/2)(N/2)}}=\sqrt{\frac N{\pi N^2/2}}=\sqrt{\frac2{\pi N}}$$
+        $$\Omega_{\max}\approx2^N\sqrt{\frac2{\pi N}}$$
+      </div>
+      <div class="step" data-step="k1156b" data-sym="x">
+        <span class="step-title">(b) 取對數，代 $N_{\uparrow,\downarrow}=\frac N2\pm x$</span>
+        <p>對步驟 1 的結果取 $\ln$，把兩個含 $x$ 的對數項合稱 $f(x)$：</p>
+        $$\ln\Omega=N\ln N-f(x)+\frac12\ln\frac N{2\pi N_\uparrow N_\downarrow}$$
+        $$f(x)=\left(\tfrac N2+x\right)\ln\left(\tfrac N2+x\right)+\left(\tfrac N2-x\right)\ln\left(\tfrac N2-x\right)$$
+        <p>根號裡 $N_\uparrow N_\downarrow=(\frac N2+x)(\frac N2-x)=(\frac N2)^2-x^2$。</p>
+      </div>
+      <div class="step" data-step="k1156c">
+        <span class="step-title">(b) 把 $f(x)$ 重排</span>
+        <p>把係數拆成 $\frac N2$ 與 $\pm x$ 兩部分分別收集：</p>
+        $$\begin{aligned}f={}&\tfrac N2\Big[\ln\left(\tfrac N2+x\right)+\ln\left(\tfrac N2-x\right)\Big]\\&+x\Big[\ln\left(\tfrac N2+x\right)-\ln\left(\tfrac N2-x\right)\Big]\end{aligned}$$
+        <p>對數相加變乘、相減變除：</p>
+        $$f=\frac N2\ln\left[\left(\tfrac N2\right)^2-x^2\right]+x\ln\frac{N/2+x}{N/2-x}$$
+      </div>
+      <div class="step" data-step="tk-115-6-s5">
+        <span class="step-title">(b) 兩項各自展開到 $x^2$</span>
+        <p>第一項：提出 $(N/2)^2$，用 $\ln(1-\epsilon)\approx-\epsilon$（$\epsilon=(2x/N)^2\ll1$）：</p>
+        $$\ln\left[\left(\tfrac N2\right)^2\left(1-\tfrac{4x^2}{N^2}\right)\right]\approx2\ln\frac N2-\frac{4x^2}{N^2}$$
+        <p>乘上 $\frac N2$：$N\ln\frac N2-\frac{2x^2}N$。</p>
+        <p>第二項：分子分母各除以 $N/2$，用 $\ln(1\pm\delta)\approx\pm\delta$（$\delta=2x/N\ll1$）：</p>
+        $$\ln\frac{1+2x/N}{1-2x/N}\approx\frac{2x}N-\left(-\frac{2x}N\right)=\frac{4x}N$$
+        <p>乘上 $x$：$\frac{4x^2}N$。兩項相加：</p>
+        $$f(x)\approx N\ln\frac N2-\frac{2x^2}N+\frac{4x^2}N=N\ln\frac N2+\frac{2x^2}N$$
+        <p>（第二項前面已經乘了 $x$，對數展開到一次就給出 $x^2$；兩項的下一階都是 $x^4/N^3$，可忽略。）</p>
+      </div>
+      <div class="step" data-step="tk-115-6-s6">
+        <span class="step-title">(b) 根號那一項</span>
+        <p>$(\frac N2)^2-x^2=(\frac N2)^2[1-(2x/N)^2]$，修正是 $x^2/N^2$ 的量級，比指數裡的 $2x^2/N$ 小了 $N$ 倍，丟掉：</p>
+        $$\frac12\ln\frac N{2\pi[(N/2)^2-x^2]}\approx\frac12\ln\frac N{2\pi N^2/4}=\ln\sqrt{\frac2{\pi N}}$$
+      </div>
+      <div class="step" data-step="k1156d">
+        <span class="step-title">(b) 合起來：高斯函數</span>
+        <p class="sub">把 $f(x)$（步驟 5）和根號項（步驟 6）代回步驟 3 的 $\ln\Omega$：</p>
+        $$\ln\Omega\approx N\ln N-N\ln\frac N2-\frac{2x^2}N+\ln\sqrt{\frac2{\pi N}}$$
+        <p>$N\ln N-N\ln\frac N2=N\ln2$。取指數：</p>
+        $$\Omega(x)\approx2^N\sqrt{\frac2{\pi N}}\;e^{-2x^2/N}$$
+        <p>指數是 $-(\text{正常數})\times x^2$，所以是以 $x=0$ 為中心的高斯函數。$x=0$ 時 $e^0=1$，回到 (a) 的 $2^N\sqrt{2/(\pi N)}$ ✔</p>
+      </div>
+      <div class="step" data-step="k1156e">
+        <span class="step-title">(c) 寬度</span>
+        <p>令 $\Omega$ 降到峰值的 $1/e$：</p>
+        $$e^{-2x^2/N}=e^{-1}\ \Longrightarrow\ \frac{2x^2}N=1\ \Longrightarrow\ x=\pm\sqrt{\frac N2}$$
+        $$\text{全寬}=2\sqrt{\frac N2}=\sqrt{2N}$$
+        <p>相對於整個範圍 $N$（$N_\uparrow$ 從 0 到 $N$），寬度只佔 $\sqrt{2N}/N=\sqrt{2/N}$；例如 $N=10^{20}$ 時是 $1.4\times10^{-10}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\Omega_{\max}\approx2^N\sqrt{2/(\pi N)}$；(b) $\Omega\approx2^N\sqrt{2/(\pi N)}\,e^{-2x^2/N}$（高斯函數，$x=0$ 時回到 (a)）；(c) $1/e$ 半寬 $\sqrt{N/2}$（全寬 $\sqrt{2N}$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$N=1000$：$x=0,10,22$ 時公式和精確 $\binom{1000}{500+x}$ 相差都不到 1% ✔。若不重排、直接把兩個 $\ln(\frac N2\pm x)$ 各自只展開到一次方，$f$ 會變成 $N\ln\frac N2+\frac{4x^2}N$，得到錯的 $e^{-4x^2/N}$——必須用上面的重排，或把每個對數展開到二次。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tkx-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">某級上學期期中（範圍第 1–4.1 章）第 3 題 · 即 Schroeder Problem 2.19、2.24 · p.64–67</span></div>
+    <h4>兩態順磁體的多重度、熵與負溫度</h4>
+    <button type="button" class="exam-btn" data-exam="tkx-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tkx-3"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>考卷原文</strong></p><p>The two-state paramagnetism is composed of spin up/down magnetic dipoles, with $N_\uparrow$ denoting number of particles with spin up and $N-N_\uparrow$ denoting number of particles with spin down. The total energy of the system is given by $$U=\mu B(N-2N_\uparrow),$$ where $\mu$ is called the magnetic moment and $B$ is the external magnetic field. The magnetization, $M$, is defined to be the total magnetic moment of the system expressed as: $$M=\mu(2N_\uparrow-N)$$</p><p>(a) Find the multiplicity function $\Omega(N,N_\uparrow)$ in terms of $N$ and $N_\uparrow$. (3pts)</p><p>(b) Use the Stirling’s approximation to show that the entropy $S$ of the system can be written as: (4pts) $$S\simeq N\ln N-N_\uparrow\ln N_\uparrow-(N-N_\uparrow)\ln(N-N_\uparrow)$$</p><p>(c) Take $N_\uparrow=N/2+x$ and $N_\downarrow=N/2-x$ with $x\ll N$ to show that the multiplicity function plotted as a function of $N_\uparrow$ is a Gaussian function peaked at $N_\uparrow=N/2$. (9pts)</p><p>(d) Sketch entropy $S$ as a function of internal energy $U$ (3pts). Identify the region where the temperature is negative (1pt).</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.19）</strong></p><p>Use Stirling’s approximation to find an approximate formula for the multiplicity of a two-state paramagnet. Simplify this formula in the limit $N_\downarrow\ll N$ to obtain $\Omega\approx(Ne/N_\downarrow)^{N_\downarrow}$. This result should look very similar to your answer to Problem 2.17; explain why these two systems, in the limits considered, are essentially the same.</p><p class="original-subhead"><strong>課本原文（Schroeder Problem 2.24）</strong></p><p>For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function.</p><p>(b) Use the methods of this section to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$. Check that your formula agrees with your answer to part (a) when $x=0$.</p><p>(c) How wide is the peak in the multiplicity function?</p><p>(d) Suppose you flip 1,000,000 coins. Would you be surprised to obtain 501,000 heads and 499,000 tails? Would you be surprised to obtain 510,000 heads and 490,000 tails? Explain.</p><p class="small">（(d) 不在這份考卷裡，見<a href="#sc-2-24">課本 2-24</a>。）</p></div>
+<p class="original-caption">某級上學期期中（範圍第 1–4.1 章）第 3 題 · 即 Schroeder Problem 2.19、2.24 · p.64–67</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（20 分）兩態順磁體由自旋向上／向下的磁偶極組成，$N_\uparrow$ 表示自旋向上的粒子數，$N-N_\uparrow$ 表示自旋向下的粒子數。系統的總能量為
+    $$U=\mu B(N-2N_\uparrow),$$
+    其中 $\mu$ 稱為磁矩，$B$ 是外加磁場。磁化量 $M$ 定義為系統的總磁矩：
+    $$M=\mu(2N_\uparrow-N).$$
+    (a) 求多重度函數 $\Omega(N,N_\uparrow)$，以 $N$ 與 $N_\uparrow$ 表示。（3 分）(b) 用 Stirling 近似證明系統的熵 $S$ 可以寫成（4 分）
+    $$S\simeq N\ln N-N_\uparrow\ln N_\uparrow-(N-N_\uparrow)\ln(N-N_\uparrow)$$
+    (c) 取 $N_\uparrow=N/2+x$、$N_\downarrow=N/2-x$，$x\ll N$，證明多重度函數對 $N_\uparrow$ 作圖是峰值在 $N_\uparrow=N/2$ 的高斯函數。（9 分）(d) 畫出熵 $S$ 對內能 $U$ 的圖（3 分），並標出溫度為負的區域（1 分）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>向上、向下的個數</td><td>$N_\uparrow$、$N_\downarrow=N-N_\uparrow$</td><td>「$N_\uparrow$ 表示自旋向上的粒子數，$N-N_\uparrow$ 表示自旋向下的粒子數」</td></tr>
+          <tr><td>能量</td><td>$U=\mu B(N-2N_\uparrow)$</td><td>題目給的式子</td></tr>
+          <tr><td>磁化量</td><td>$M=\mu(2N_\uparrow-N)=-U/B$</td><td>題目給的式子；各小題用不到</td></tr>
+          <tr><td>熵</td><td>$S=k\ln\Omega$</td><td>課本 (2.45)；原卷 (b) 的式子沒有 $k$，其實是 $S/k$</td></tr>
+          <tr><td>Stirling</td><td>$\ln n!\approx n\ln n-n$</td><td>(b)「用 Stirling 近似」；要證的式子沒有根號項，用這個版本就夠</td></tr>
+          <tr><td>峰附近</td><td>$N_{\uparrow,\downarrow}=\frac N2\pm x$，$x\ll N$</td><td>(c) 題目給</td></tr>
+          <tr><td>溫度的定義</td><td>$\dfrac1T=\dfrac{\partial S}{\partial U}$</td><td>(d)「溫度為負的區域」：題目沒寫定義，用第 3 章的 $S(U)$ 斜率</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $\Omega(N,N_\uparrow)$；(b) 證明 $S$ 的式子；(c) 證明 $\Omega(N_\uparrow)$ 是峰在 $N/2$ 的高斯函數；(d) 畫 $S(U)$，標出 $T\lt0$ 的區域。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>每個偶極只有上、下兩態，微觀態由「哪些偶極向上」決定，<b>所以</b>是從 $N$ 個選 $N_\uparrow$ 個的組合數。(b) <b>因為</b>要證的式子沒有 $\sqrt{2\pi n}$ 項，<b>所以</b>只需要 $\ln n!\approx n\ln n-n$。</p>
+      <p>(c) 和考古 115-6 (b) 是同一個展開；<b>因為</b>這裡只要求證明<b>形狀</b>是高斯，<b>所以</b>直接從 (b) 的 $\ln\Omega$ 出發（少了根號項只影響峰高，不影響形狀）。</p>
+      <p>(d) <b>因為</b>題目給了 $U$ 和 $N_\uparrow$ 的一次關係，<b>所以</b>可以把 $N_\uparrow$ 換成 $U$，(b) 就變成 $S(U)$；<b>因為</b> $1/T=\partial S/\partial U$，溫度的正負就是 $S(U)$ 斜率的正負，<b>所以</b>算出斜率的符號即可判斷。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="kx3a" data-sym="Nud,Omega">
+        <span class="step-title">(a) 多重度</span>
+        <p>一個微觀態就是「哪 $N_\uparrow$ 個偶極向上」的一種選法：</p>
+        $$\Omega(N,N_\uparrow)=\binom N{N_\uparrow}=\frac{N!}{N_\uparrow!\,(N-N_\uparrow)!}$$
+      </div>
+      <div class="step" data-step="kx3b" data-sym="S,k">
+        <span class="step-title">(b) 取對數，三個階乘用 Stirling</span>
+        <p>$S=k\ln\Omega$，對數把除法變減法：</p>
+        $$\frac Sk=\ln N!-\ln N_\uparrow!-\ln(N-N_\uparrow)!$$
+        <p>每一項用 $\ln n!\approx n\ln n-n$（$n$ 依序是 $N$、$N_\uparrow$、$N-N_\uparrow$）：</p>
+        $$\begin{aligned}\frac Sk\approx{}&(N\ln N-N)-(N_\uparrow\ln N_\uparrow-N_\uparrow)\\&-\big[(N-N_\uparrow)\ln(N-N_\uparrow)-(N-N_\uparrow)\big]\end{aligned}$$
+        <p>三個線性項 $-N+N_\uparrow+(N-N_\uparrow)=0$ 抵消：</p>
+        $$\frac Sk\simeq N\ln N-N_\uparrow\ln N_\uparrow-(N-N_\uparrow)\ln(N-N_\uparrow)$$
+        <p>就是原卷要證的式子（原卷的 $S$ 以 $k$ 為單位）。</p>
+      </div>
+      <div class="step" data-step="kx3c" data-sym="x">
+        <span class="step-title">(c) 代 $N_{\uparrow,\downarrow}=\frac N2\pm x$ 並展開</span>
+        <p>由 (b)，$\ln\Omega=S/k\approx N\ln N-f(x)$，其中</p>
+        $$f(x)=\left(\tfrac N2+x\right)\ln\left(\tfrac N2+x\right)+\left(\tfrac N2-x\right)\ln\left(\tfrac N2-x\right)$$
+        <p>重排成對稱與反對稱兩部分，在 $x\ll N$ 時用 $\ln(1+\delta)\approx\delta$ 展開（每一步見考古 115-6 步驟 4–5）：</p>
+        $$\begin{aligned}f(x)&=\frac N2\ln\left[\left(\tfrac N2\right)^2-x^2\right]+x\ln\frac{N/2+x}{N/2-x}\\&\approx\left(N\ln\frac N2-\frac{2x^2}N\right)+\frac{4x^2}N\end{aligned}$$
+      </div>
+      <div class="step" data-step="tkx-3-s4">
+        <span class="step-title">(c) 取指數：高斯函數</span>
+        <p class="sub">把 $f(x)\approx N\ln\frac N2+\frac{2x^2}N$（步驟 3）代回 $\ln\Omega$：</p>
+        $$\ln\Omega\approx N\ln N-N\ln\frac N2-\frac{2x^2}N=N\ln2-\frac{2x^2}N$$
+        $$\Omega\approx2^Ne^{-2x^2/N}=2^N\exp\left[-\frac{2(N_\uparrow-N/2)^2}N\right]$$
+        <p>這是以 $N_\uparrow=N/2$ 為中心、$1/e$ 半寬 $\sqrt{N/2}$ 的高斯函數。（峰高少了 $\sqrt{2/(\pi N)}$，因為 (b) 的 Stirling 沒有根號項；題目只問形狀，不影響。）</p>
+      </div>
+      <div class="step" data-step="kx3d" data-sym="U,T">
+        <span class="step-title">(d) 把 $S$ 寫成 $U$ 的函數，畫圖</span>
+        <p>由題目的 $U=\mu B(N-2N_\uparrow)$ 解出 $N_\uparrow=\frac12\left(N-\frac U{\mu B}\right)$，$U$ 和 $N_\uparrow$ 一一對應。看三個點：</p>
+        <ul>
+          <li>$N_\uparrow=N$（全部向上）：$U=-N\mu B$，只有 1 個微觀態，$S=0$。</li>
+          <li>$N_\uparrow=0$（全部向下）：$U=+N\mu B$，$S=0$。</li>
+          <li>$N_\uparrow=N/2$：$U=0$，(b) 給 $S/k=N\ln N-2\cdot\frac N2\ln\frac N2=N\ln2$，最大。</li>
+        </ul>
+        <p>所以 $S(U)$ 是 $-N\mu B\le U\le N\mu B$ 上、對 $U=0$ 對稱的拱形（第 8 節「$S(U)$」圖解的順磁體曲線）。</p>
+      </div>
+      <div class="step" data-step="tkx-3-s6">
+        <span class="step-title">(d) 斜率的正負＝溫度的正負</span>
+        <p>連鎖律 $\frac{\partial S}{\partial U}=\frac{\partial S}{\partial N_\uparrow}\frac{dN_\uparrow}{dU}$。對 (b) 微分（$\frac d{dn}(n\ln n)=\ln n+1$）：</p>
+        $$\frac1k\frac{\partial S}{\partial N_\uparrow}=-\ln N_\uparrow-1+\ln(N-N_\uparrow)+1=\ln\frac{N_\downarrow}{N_\uparrow}$$
+        <p>而 $dN_\uparrow/dU=-1/(2\mu B)$，相乘：</p>
+        $$\frac1T=\frac{\partial S}{\partial U}=\frac k{2\mu B}\ln\frac{N_\uparrow}{N_\downarrow}$$
+        <ul>
+          <li>$U\lt0$：$N_\uparrow\gt N_\downarrow$，對數為正，$T\gt0$。</li>
+          <li><strong>$U\gt0$：$N_\uparrow\lt N_\downarrow$（多數偶極反平行於磁場），對數為負，$T\lt0$</strong>——圖的右半邊。</li>
+          <li>$U=0$：$1/T=0$，$T=\pm\infty$。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\binom N{N_\uparrow}$；(b) 得證；(c) $\Omega\approx2^Ne^{-2x^2/N}$，以 $N_\uparrow=N/2$ 為中心的高斯；(d) 對 $U=0$ 對稱的拱形，$0\lt U\le N\mu B$ 為負溫度區（$1/T=\frac k{2\mu B}\ln\frac{N_\uparrow}{N_\downarrow}\lt0$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(b) 在 $N_\uparrow=N/2$ 時給 $S/k=N\ln2$，等於 $\ln2^N$（所有 $2^N$ 個微觀態都在峰附近）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-24">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-24（Problem 2.24）· p.67</span></div>
+    <h4>一百萬枚硬幣：501 000 與 510 000 個正面</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-24">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-24"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>For a single large two-state paramagnet, the multiplicity function is very sharply peaked about $N_\uparrow=N/2$.</p><p>(a) Use Stirling’s approximation to estimate the height of the peak in the multiplicity function.</p><p>(b) Use the methods of this section to derive a formula for the multiplicity function in the vicinity of the peak, in terms of $x\equiv N_\uparrow-(N/2)$. Check that your formula agrees with your answer to part (a) when $x=0$.</p><p>(c) How wide is the peak in the multiplicity function?</p><p>(d) Suppose you flip 1,000,000 coins. Would you be surprised to obtain 501,000 heads and 499,000 tails? Would you be surprised to obtain 510,000 heads and 490,000 tails? Explain.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>單一個大的兩態順磁體，多重度函數在 $N_\uparrow=N/2$ 附近非常尖。(a) 用 Stirling 近似估計峰的高度。(b) 用本節的方法推導峰附近的多重度公式，以 $x\equiv N_\uparrow-(N/2)$ 表示；檢查 $x=0$ 時和 (a) 一致。(c) 峰有多寬？(d) 假設你丟 1 000 000 枚硬幣，得到 501 000 正、499 000 反你會驚訝嗎？得到 510 000 正、490 000 反呢？說明。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>(a)–(c)</td><td>同考古 115-6</td><td>題目 (a)–(c) 和考古 115-6 是同一題</td></tr>
+          <tr><td>硬幣數</td><td>$N=10^6$</td><td>(d)「丟 <b>1 000 000</b> 枚硬幣」：正面 ↔ 向上的偶極</td></tr>
+          <tr><td>第一種結果</td><td>$N_\uparrow=501\,000$，$x=1000$</td><td>「501 000 正、499 000 反」：$x=501\,000-500\,000$</td></tr>
+          <tr><td>第二種結果</td><td>$N_\uparrow=510\,000$，$x=10\,000$</td><td>「510 000 正、490 000 反」</td></tr>
+          <tr><td>公正硬幣</td><td>每種正反序列機率 $2^{-N}$</td><td>題目沒寫；判斷「會不會驚訝」的前提</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)–(c) 同考古 115-6；(d) 判斷兩種結果會不會令人驚訝，並說明。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> (a)–(c) 和考古 115-6 是同一題，<b>所以</b>直接用它的結果 $\Omega(x)\approx\Omega_{\max}e^{-2x^2/N}$。</p>
+      <p>(d) <b>因為</b>公正硬幣每種正反序列的機率都是 $2^{-N}$，得到某個 $N_\uparrow$ 的機率就正比於 $\Omega(N_\uparrow)$，<b>所以</b>這個高斯形狀就是機率分布；把它和標準形式 $e^{-x^2/2\sigma^2}$ 對照，讀出標準差 $\sigma$，再看 $x$ 是幾個 $\sigma$。</p>
+      <p>「驚不驚訝」要比的是「<b>至少</b>偏這麼多」的機率，不是「剛好」等於某個值的機率——任何一個特定值的機率都很小（連剛好 500 000 也只有 $8\times10^{-4}$）。<b>所以</b>用高斯尾巴的誤差函數 $\operatorname{erfc}$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t224a" data-sym="x,Nud">
+        <span class="step-title">(a)–(c) 結果（推導見考古 115-6）</span>
+        $$\Omega(x)\approx\Omega_{\max}\,e^{-2x^2/N},\qquad\Omega_{\max}\approx2^N\sqrt{\frac2{\pi N}}$$
+        <p>峰的 $1/e$ 半寬 $\sqrt{N/2}$，全寬 $\sqrt{2N}$。</p>
+      </div>
+      <div class="step" data-step="sc-2-24-s2">
+        <span class="step-title">(d) 把多重度變成機率，讀出 $\sigma$</span>
+        <p>$P(N_\uparrow)=\Omega/2^N$，形狀就是步驟 1 的高斯。和 $e^{-x^2/(2\sigma^2)}$ 對照指數：</p>
+        $$\frac{2x^2}N=\frac{x^2}{2\sigma^2}\ \Longrightarrow\ \sigma^2=\frac N4,\quad\sigma=\frac{\sqrt N}2$$
+        <p class="sub">代入 $N=10^6$（題目「1 000 000 枚」）：</p>
+        $$\sigma=\frac{\sqrt{10^6}}2=\frac{1000}2=500$$
+        <p>（$1/e$ 半寬 $\sqrt{N/2}=707=\sqrt2\,\sigma$。）</p>
+      </div>
+      <div class="step" data-step="t224b">
+        <span class="step-title">(d) 501 000 正：$x=1000=2\sigma$</span>
+        <p class="sub">代入 $x=1000$（題目 501 000 正）、$N=10^6$：多重度降到峰值的</p>
+        $$\frac{\Omega}{\Omega_{\max}}=e^{-2(1000)^2/10^6}=e^{-2}=0.135$$
+        <p>「至少這麼多正面」是右側尾巴，$P(x\ge x_0)=\tfrac12\operatorname{erfc}\!\big(x_0/(\sqrt2\sigma)\big)$：</p>
+        $$\frac{x_0}{\sqrt2\,\sigma}=\frac{1000}{\sqrt2\times500}=\sqrt2$$
+        $$P(N_\uparrow\ge501\,000)\approx\tfrac12\operatorname{erfc}(\sqrt2)=\tfrac12(0.0455)=2.3\%$$
+        <p>不意外：大約每 44 次（$1/0.023$）實驗就有一次偏到這麼多。（「剛好」501 000 的機率 $\sqrt{2/(\pi N)}\,e^{-2}=1.1\times10^{-4}$ 看起來很小，但任何特定值都很小，連剛好 500 000 也只有 $\sqrt{2/(\pi N)}=8.0\times10^{-4}$。）</p>
+      </div>
+      <div class="step" data-step="t224c">
+        <span class="step-title">(d) 510 000 正：$x=10\,000=20\sigma$</span>
+        <p class="sub">代入 $x=10\,000$（題目 510 000 正）：</p>
+        $$\frac{\Omega}{\Omega_{\max}}=e^{-2(10^4)^2/10^6}=e^{-200}=1.4\times10^{-87}$$
+        <p>$z=x_0/(\sqrt2\sigma)=10^4/707=14.1$ 很大，用尾巴近似 $\operatorname{erfc}(z)\approx e^{-z^2}/(z\sqrt\pi)$（$z^2=200$）：</p>
+        $$P\approx\frac12\cdot\frac{e^{-200}}{14.1\sqrt\pi}=2.8\times10^{-89}$$
+        <p>非常驚訝：這種結果幾乎不可能來自公正硬幣，應該懷疑硬幣或丟法有偏差。</p>
+      </div>
+      <div class="step" data-step="sc-2-24-s5">
+        <span class="step-title">為什麼比例都「接近一半」卻差這麼多</span>
+        <p>以比例看，0.501 和 0.510 都很接近 0.5；但判斷要用的是偏差和 $\sigma=\sqrt N/2$ 的比，不是和 $N$ 的比。$N$ 越大，$\sigma/N=1/(2\sqrt N)$ 越小，同樣的百分比偏差就是越多個 $\sigma$——這就是「相對寬度 $\propto1/\sqrt N$」的意思。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a)–(c) 見考古 115-6；(d) 501 000 不意外（偏 $2\sigma$，至少這麼多正面的機率 2.3%）；510 000 極意外（偏 $20\sigma$，$e^{-200}\approx10^{-87}$，機率約 $3\times10^{-89}$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>精確二項式加總 $P(N_\uparrow\ge501\,000)=0.0228$，與高斯估計相同 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-25">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-25（Problem 2.25）· p.67 · 熱學小考（上）作業題</span></div>
+    <h4>一維隨機漫步</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-25">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-25"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The mathematics of the previous problem can also be applied to a one-dimensional random walk: a journey consisting of N steps, all the same size, each chosen randomly to be either forward or backward. (The usual mental image is that of a drunk stumbling along an alley.)</p><p>(a) Where are you most likely to find yourself, after the end of a long random walk?</p><p>(b) Suppose you take a random walk of 10,000 steps (say each a yard long). About how far from your starting point would you expect to be at the end?</p><p>(c) A good example of a random walk in nature is the diffusion of a molecule through a gas; the average step length is then the mean free path, as computed in Section 1.7. Using this model, and neglecting any small numerical factors that might arise from the varying step size and the multidimensional nature of the path, estimate the expected net displacement of an air molecule (or perhaps a carbon monoxide molecule traveling through air) in one second, at room temperature and atmospheric pressure. Discuss how your estimate would differ if the elapsed time or the temperature were different. Check that your estimate is consistent with the treatment of diffusion in Section 1.7.</p></div>
+<p class="original-caption">Schroeder 習題 2-25（Problem 2.25）· p.67 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>上一題的數學也可用在一維隨機漫步：走 $N$ 步、每步一樣長，每步隨機向前或向後（常見的畫面是醉漢在巷子裡踉蹌）。(a) 走完一段長的隨機漫步後，你最可能在哪裡？(b) 假設你隨機走 10 000 步（每步一碼），預期離起點多遠？(c) 自然界中隨機漫步的好例子是分子在氣體中的擴散，平均步長就是 1.7 節算的平均自由徑。用這個模型（忽略步長不同和多維路徑造成的小數值因子），估計室溫、一大氣壓下一個空氣分子（或在空氣中運動的一氧化碳分子）一秒內的淨位移。討論經過的時間或溫度不同時，估計會怎麼變。檢查這個估計和 1.7 節的擴散處理一致。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>步數</td><td>$N$；(b) $N=10^4$</td><td>「走 $N$ 步」；(b)「隨機走 <b>10 000</b> 步」</td></tr>
+          <tr><td>步長</td><td>$\ell$；(b) $\ell=1$ 碼</td><td>「每步一樣長」；(b)「每步一碼」</td></tr>
+          <tr><td>每步方向</td><td>前、後機率各 $\tfrac12$</td><td>「每步<b>隨機</b>向前或向後」：就像丟硬幣</td></tr>
+          <tr><td>(c) 步長</td><td>$\ell\approx1.5\times10^{-7}\ \text{m}$</td><td>「平均步長就是 1.7 節算的平均自由徑」（室溫一大氣壓空氣約 150 nm）</td></tr>
+          <tr><td>(c) 每步的時間</td><td>$\Delta t\approx3\times10^{-10}\ \text{s}$</td><td>題目沒寫：1.7 節的碰撞間隔 $\ell/\bar v$，$\bar v\approx500\ \text{m/s}$</td></tr>
+          <tr><td>(c) 經過時間</td><td>$t=1\ \text{s}$</td><td>「一秒內的淨位移」</td></tr>
+          <tr><td>小因子</td><td>忽略</td><td>「忽略步長不同和多維路徑造成的小數值因子」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 最可能的位置；(b) 10 000 步後預期離起點多遠；(c) 空氣分子一秒的淨位移、它隨時間和溫度怎麼變，並和 1.7 節的擴散對照。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每一步隨機向前或向後、機率各半，「$N$ 步中有幾步向前」和「$N$ 枚硬幣中有幾個正面」（上一題的 $N_\uparrow$）是同一個數學問題，<b>所以</b>直接用上一題的高斯 $e^{-2x^2/N}$，只要把 $x$（多出來的向前步數）換成淨位移。</p>
+      <p><b>因為</b>淨位移的分布以 0 為中心、正負對稱，平均位移是 0，沒有意義，<b>所以</b>用分布的寬度（方均根或 $1/e$ 半寬）當作「預期離起點多遠」。</p>
+      <p>(c) <b>因為</b>分子每次碰撞就隨機換方向、兩次碰撞之間平均走一個平均自由徑，<b>所以</b>一步＝一個平均自由徑、步數＝時間 ÷ 碰撞間隔；溫度的影響透過 $\ell$ 與 $\bar v$ 對 $T$ 的依賴。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t225a" data-sym="x">
+        <span class="step-title">(a) 最可能的位置</span>
+        <p>設向前 $N_f$ 步、向後 $N_b=N-N_f$ 步。走法數 $\binom N{N_f}$ 在 $N_f=N/2$ 最大（上一題的峰），此時前後步數相等、淨位移為 0：最可能回到起點。</p>
+      </div>
+      <div class="step" data-step="sc-2-25-s2">
+        <span class="step-title">把分布換成淨位移 $X$</span>
+        <p>令 $x=N_f-N/2$，淨位移＝（向前步數 − 向後步數）× 步長：</p>
+        $$X=(N_f-N_b)\ell=\left[\left(\tfrac N2+x\right)-\left(\tfrac N2-x\right)\right]\ell=2x\ell$$
+        <p>把 $x=X/(2\ell)$ 代入上一題的高斯：</p>
+        $$e^{-2x^2/N}=e^{-2X^2/(4\ell^2N)}=e^{-X^2/(2N\ell^2)}$$
+        <p>和 $e^{-X^2/(2\sigma^2)}$ 對照：方均根位移 $\sigma_X=\sqrt N\ell$；$1/e$ 半寬 $X_{1/e}=\sqrt{2N}\ell$。</p>
+      </div>
+      <div class="step" data-step="t225b">
+        <span class="step-title">(b) 10 000 步</span>
+        <p class="sub">代入 $N=10^4$、$\ell=1$ 碼（題目）：</p>
+        $$\sigma_X=\sqrt{10^4}\times1\ \text{碼}=100\ \text{碼}$$
+        $$X_{1/e}=\sqrt{2\times10^4}\times1\ \text{碼}\approx141\ \text{碼}$$
+        <p>預期大約離起點 100 碼的數量級（往前或往後都可能）。總共走了 10 000 碼，淨位移只有它的 1%。</p>
+      </div>
+      <div class="step" data-step="sc-2-25-s4">
+        <span class="step-title">(c) 一秒走幾步</span>
+        $$N=\frac t{\Delta t}$$
+        <p class="sub">代入 $t=1\ \text{s}$（題目）、$\Delta t=3\times10^{-10}\ \text{s}$（1.7 節的碰撞間隔）：</p>
+        $$N=\frac{1\ \text{s}}{3\times10^{-10}\ \text{s}}=3.3\times10^9$$
+      </div>
+      <div class="step" data-step="t225c">
+        <span class="step-title">(c) 一秒的淨位移</span>
+        <p class="sub">代入 $N=3.3\times10^9$（步驟 4）、$\ell=1.5\times10^{-7}\ \text{m}$（1.7 節平均自由徑）：</p>
+        $$X_{1/e}=\sqrt{2N}\,\ell=\sqrt{6.7\times10^9}\times1.5\times10^{-7}\ \text{m}$$
+        $$X_{1/e}=(8.2\times10^4)(1.5\times10^{-7}\ \text{m})\approx1.2\ \text{cm}$$
+        <p>（方均根 $\sqrt N\ell=0.87\ \text{cm}$，同樣約 1 cm。）</p>
+      </div>
+      <div class="step" data-step="sc-2-25-s6">
+        <span class="step-title">(c) 時間、溫度改變時</span>
+        <p>時間：$N\propto t$，而 $X\propto\sqrt N$，所以 $X\propto\sqrt t$——時間加倍，位移只乘 $\sqrt2$。</p>
+        <p>溫度（壓力固定）：平均自由徑 $\ell\propto V/N=kT/P\propto T$；平均速率 $\bar v\propto\sqrt T$；碰撞間隔 $\Delta t=\ell/\bar v\propto\sqrt T$；同樣 1 秒的步數 $N=t/\Delta t\propto T^{-1/2}$。合起來：</p>
+        $$X\propto\ell\sqrt N\propto T\cdot T^{-1/4}=T^{3/4}$$
+      </div>
+      <div class="step" data-step="sc-2-25-s7">
+        <span class="step-title">(c) 和 1.7 節的擴散對照</span>
+        <p>1.7 節：一維擴散的濃度分布 $\propto e^{-x^2/(4Dt)}$，擴散係數 $D\approx\tfrac12\ell\bar v$。代入 $\bar v=\ell/\Delta t$：</p>
+        $$4Dt=2\ell\bar vt=2\ell^2\frac t{\Delta t}=2N\ell^2$$
+        <p>所以 $e^{-x^2/(4Dt)}=e^{-x^2/(2N\ell^2)}$，和步驟 2 完全相同。差別只是 1.7 節講一大群分子同時散開的濃度，這裡講單一分子位置的機率分布。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 起點（淨位移 0）；(b) 約 100（方均根）～140（$1/e$ 半寬）碼；(c) 約 $1\ \text{cm}$，$\propto\sqrt t$、定壓下 $\propto T^{3/4}$，和 1.7 節的擴散分布一致。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>走了 $3\times10^9$ 步、總路程 $500\ \text{m}$，淨位移只有 $1\ \text{cm}$：擴散在大尺度上很慢，所以食用色素主要靠對流混合（1.7 節）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-06a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>大小不同的兩個固體：峰在哪裡、多寬</h4>
+    <button type="button" class="exam-btn" data-exam="sf-06a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩個高溫愛因斯坦固體：A 有 $N$ 個振子、B 有 $2N$ 個振子，共 $q$ 份能量（$q\gg3N$）。(a) 用 (2.21) 寫出 $\Omega_{\text{total}}(q_A)$，求峰的位置。(b) 在峰附近令 $q_A=q/3+x$，證明 $\Omega$ 是高斯函數並求 $1/e$ 半寬。(c) 推廣到任意 $N_A$、$N_B$；檢查 $N_A=N_B$ 時回到 (2.28)。(d) 哪一個固體的能量相對擾動比較大？$N=10^{20}$ 時各是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>A 的振子數</td><td>$N_A=N$</td><td>「A 有 $N$ 個振子」</td></tr>
+          <tr><td>B 的振子數</td><td>$N_B=2N$</td><td>「B 有 $2N$ 個振子」</td></tr>
+          <tr><td>總能量</td><td>$q$ 份，$q_B=q-q_A$</td><td>「共 $q$ 份能量」：兩者只彼此交換，能量守恆</td></tr>
+          <tr><td>高溫</td><td>$q\gg3N$</td><td>題目給：兩個都能用高溫公式 (2.21) $\Omega=(eq/N)^N$</td></tr>
+          <tr><td>峰附近</td><td>$q_A=\frac q3+x$，$|x|\ll q$</td><td>(b) 題目給</td></tr>
+          <tr><td>寬度定義</td><td>降到峰值的 $1/e$</td><td>(b)「$1/e$ 半寬」</td></tr>
+          <tr><td>(d) 的振子數</td><td>$N=10^{20}$</td><td>(d)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $\Omega_{\text{total}}(q_A)$ 與峰的位置；(b) 證明峰附近是高斯並求半寬；(c) 任意 $N_A,N_B$ 的半寬，並檢查 $N_A=N_B$；(d) 哪個固體的能量相對擾動較大，$N=10^{20}$ 時各多少。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目說 $q\gg3N$，兩個固體都在高溫，<b>所以</b>各自用 (2.21) $\Omega=(eq/N)^N$，複合系統的多重度是兩者相乘。</p>
+      <p><b>因為</b>取對數後變成 $N\ln q_A+2N\ln q_B$ 這種好微分的形式，而且 $\ln$ 是遞增函數（$\Omega$ 最大處就是 $\ln\Omega$ 最大處），<b>所以</b>峰的位置用「$\ln\Omega$ 對 $q_A$ 的一階導數為 0」求。</p>
+      <p>寬度：<b>因為</b>在峰上一階導數為 0，把 $\ln\Omega$ 在峰附近泰勒展開時一次項自動消失、只剩 $x^2$ 項，<b>所以</b>取指數就是高斯，$x^2$ 的係數（二階導數）決定寬度。這是課文 (2.25)–(2.27) 的一般化：課文的兩固體一樣大，這裡不一樣大，用導數寫才好推廣到 (c)。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf06a1" data-sym="qAB,NAB">
+        <span class="step-title">(a) 多重度與峰的位置</span>
+        <p>兩個固體各用 (2.21)，相乘：</p>
+        $$\Omega=\left(\frac{eq_A}N\right)^N\left(\frac{eq_B}{2N}\right)^{2N}\propto q_A^N\,q_B^{2N}$$
+        <p>取對數（和 $q_A$ 無關的併成常數），代 $q_B=q-q_A$：</p>
+        $$\ln\Omega=N\ln q_A+2N\ln(q-q_A)+\text{常數}$$
+        <p>對 $q_A$ 微分令為 0（$\frac d{dq_A}\ln(q-q_A)=-\frac1{q-q_A}$）：</p>
+        $$\frac N{q_A}-\frac{2N}{q-q_A}=0\ \Longrightarrow\ q-q_A=2q_A\ \Longrightarrow\ q_A=\frac q3$$
+        <p>此時 $q_B=2q/3$，每個振子平均能量相同（$q_A/N=q_B/2N=q/3N$）。</p>
+      </div>
+      <div class="step" data-step="sf06a2" data-sym="x">
+        <span class="step-title">(b) 展開到 $x^2$</span>
+        <p>令 $q_A=\frac q3+x$、$q_B=\frac{2q}3-x$，各自提出峰值，再用 $\ln(1+\epsilon)\approx\epsilon-\frac{\epsilon^2}2$。A 的部分（$\epsilon=3x/q$）：</p>
+        $$N\ln\!\left(\tfrac q3+x\right)\approx N\ln\tfrac q3+\frac{3N}qx-\frac{9N}{2q^2}x^2$$
+        <p>B 的部分（$\epsilon=-3x/2q$，乘 $2N$）：</p>
+        $$2N\ln\!\left(\tfrac{2q}3-x\right)\approx2N\ln\tfrac{2q}3-\frac{3N}qx-\frac{9N}{4q^2}x^2$$
+        <p>相加：一次項 $\frac{3N}qx-\frac{3N}qx=0$ 抵消（展開點就是峰）；二次項 $\frac{9N}{2q^2}+\frac{9N}{4q^2}=\frac{27N}{4q^2}$。</p>
+      </div>
+      <div class="step" data-step="sf-06a-s3">
+        <span class="step-title">(b) 取指數、求半寬</span>
+        $$\Omega\approx\Omega_{\max}\exp\!\left(-\frac{27N}{4q^2}x^2\right)$$
+        <p>指數是 $-(\text{正常數})x^2$，所以是高斯函數。令指數 $=-1$：</p>
+        $$\frac{27N}{4q^2}x^2=1\ \Longrightarrow\ x_{1/e}=\frac{2q}{\sqrt{27N}}=0.385\,\frac q{\sqrt N}$$
+      </div>
+      <div class="step" data-step="sf06a3">
+        <span class="step-title">(c) 一般的 $N_A$、$N_B$</span>
+        <p>$\ln\Omega=N_A\ln q_A+N_B\ln q_B+$常數。一階導數 $\frac{N_A}{q_A}-\frac{N_B}{q_B}=0$，峰在每個振子能量相同處（$N_{\text{tot}}=N_A+N_B$）：</p>
+        $$q_A^*=\frac{N_A}{N_{\text{tot}}}q,\qquad q_B^*=\frac{N_B}{N_{\text{tot}}}q$$
+        <p>二階導數（$\frac{d^2}{dq^2}\ln q=-\frac1{q^2}$）在峰上：</p>
+        $$-\frac{N_A}{q_A^{*2}}-\frac{N_B}{q_B^{*2}}=-\frac{N_{\text{tot}}^2}{q^2}\left(\frac1{N_A}+\frac1{N_B}\right)=-\frac{N_{\text{tot}}^3}{q^2N_AN_B}$$
+        <p>泰勒展開 $\ln\Omega\approx\ln\Omega_{\max}+\tfrac12(\text{二階導數})x^2$，再令指數 $=-1$：</p>
+        $$\Omega\approx\Omega_{\max}\exp\!\left(-\frac{N_{\text{tot}}^3x^2}{2q^2N_AN_B}\right),\qquad x_{1/e}=q\sqrt{\frac{2N_AN_B}{N_{\text{tot}}^3}}$$
+      </div>
+      <div class="step" data-step="sf-06a-s5">
+        <span class="step-title">(c) 檢查兩個特例</span>
+        <p class="sub">代入 $N_A=N_B=N$、$N_{\text{tot}}=2N$：</p>
+        $$x_{1/e}=q\sqrt{\frac{2N^2}{8N^3}}=q\sqrt{\frac1{4N}}=\frac q{2\sqrt N}$$
+        <p>正是 (2.28) ✔。</p>
+        <p class="sub">代入 $N_A=N$、$N_B=2N$、$N_{\text{tot}}=3N$：</p>
+        $$x_{1/e}=q\sqrt{\frac{4N^2}{27N^3}}=\frac{2q}{\sqrt{27N}}$$
+        <p>回到 (b) ✔。</p>
+      </div>
+      <div class="step" data-step="sf06a4">
+        <span class="step-title">(d) 相對擾動</span>
+        <p>兩個固體交換的是同一份能量：$q_A$ 多 $x$ 就是 $q_B$ 少 $x$，絕對擾動一樣大；相對擾動要除以各自的平均能量（$q/3$、$2q/3$）：</p>
+        $$\frac{x_{1/e}}{q_A^*}=\frac{2q/\sqrt{27N}}{q/3}=\frac6{\sqrt{27N}}=\frac{1.155}{\sqrt N}$$
+        $$\frac{x_{1/e}}{q_B^*}=\frac{2q/\sqrt{27N}}{2q/3}=\frac3{\sqrt{27N}}=\frac{0.577}{\sqrt N}$$
+        <p class="sub">代入 $N=10^{20}$（題目 (d)），$\sqrt N=10^{10}$：A 約 $1.2\times10^{-10}$、B 約 $5.8\times10^{-11}$。</p>
+        <p><strong>小的系統相對擾動較大</strong>（剛好 2 倍，因為它的平均能量只有 B 的一半），但兩者都量不到。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\Omega\propto q_A^N(q-q_A)^{2N}$，峰在 $q_A=q/3$；(b) $\Omega\approx\Omega_{\max}e^{-27Nx^2/4q^2}$，半寬 $0.385\,q/\sqrt N$；(c) $q\sqrt{2N_AN_B/N_{\text{tot}}^3}$；(d) A 較大：$1.2\times10^{-10}$ 對 $5.8\times10^{-11}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>數值檢查：$N_A=2000$、$N_B=4000$、$q=10^6$ 用精確組合數，$x=x_{1/e}$ 時 $\Omega/\Omega_{\max}=0.37\approx1/e$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-06b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>量到十億分之一的擾動有多難</h4>
+    <button type="button" class="exam-btn" data-exam="sf-06b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩個各有 $N=10^{20}$ 個振子的高溫愛因斯坦固體共享 $q$ 份能量，$\Omega=\Omega_{\max}e^{-N(2x/q)^2}$（(2.27)，$x=q_A-q/2$）。(a) 把 $\Omega(x)$ 當成機率分布，求 $x$ 的標準差 $\sigma$。(b) 量到相對偏差 $\delta\equiv|q_A-q/2|/(q/2)$ 大於 $10^{-9}$ 的機率是多少？（可用 $\operatorname{erfc}(z)\approx e^{-z^2}/(z\sqrt\pi)$。）(c) 相對偏差的門檻要低到多少，才有 50% 的機會看到比它大的偏差？這需要幾位有效數字的能量量測？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>每個固體的振子數</td><td>$N=10^{20}$</td><td>「兩個各有 $N=10^{20}$ 個振子」</td></tr>
+          <tr><td>多重度</td><td>$\Omega=\Omega_{\max}e^{-N(2x/q)^2}$，$x=q_A-q/2$</td><td>題目給（課文 (2.27)）</td></tr>
+          <tr><td>相對偏差</td><td>$\delta=\dfrac{|x|}{q/2}$</td><td>(b) 題目的定義 $\delta\equiv|q_A-q/2|/(q/2)$</td></tr>
+          <tr><td>(b) 的門檻</td><td>$\delta\gt10^{-9}$</td><td>(b)「大於 $10^{-9}$ 的機率」</td></tr>
+          <tr><td>尾巴近似</td><td>$\operatorname{erfc}(z)\approx\dfrac{e^{-z^2}}{z\sqrt\pi}$</td><td>(b) 題目給（$z$ 大時才準）</td></tr>
+          <tr><td>(c) 的機會</td><td>50%</td><td>(c)「才有 50% 的機會」</td></tr>
+          <tr><td>等機率</td><td>$P(x)\propto\Omega(x)$</td><td>「把 $\Omega(x)$ 當成機率分布」：每個微觀態機率相同</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $x$ 的標準差 $\sigma$；(b) $\delta\gt10^{-9}$ 的機率；(c) 50% 機會對應的門檻 $\delta$，以及需要幾位有效數字。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>所有微觀態等機率，巨觀態 $x$ 的機率正比於它的多重度 $\Omega(x)$，而 $\Omega(x)$ 是高斯，<b>所以</b> $x$ 服從常態分布；把指數和標準形式 $e^{-x^2/(2\sigma^2)}$ 對照就讀出 $\sigma$。</p>
+      <p><b>因為</b>「相對偏差大於 $\delta$」就是「$|x|$ 大於 $\delta q/2$」，包含左右兩側，<b>所以</b>機率是兩側尾巴之和，常態分布的兩側尾巴是 $\operatorname{erfc}\big(x_0/(\sqrt2\sigma)\big)$。(c) 反過來：給定機率 50%，解 $\operatorname{erfc}(z)=0.5$ 得 $z$，再換回 $\delta$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf06b1" data-sym="x,N">
+        <span class="step-title">(a) 標準差</span>
+        <p>兩個指數對照：</p>
+        $$N\left(\frac{2x}q\right)^2=\frac{x^2}{2\sigma^2}$$
+        <p>左邊 $=\frac{4N}{q^2}x^2$，兩邊消去 $x^2$：</p>
+        $$\frac{4N}{q^2}=\frac1{2\sigma^2}\ \Longrightarrow\ \sigma^2=\frac{q^2}{8N},\qquad\sigma=\frac q{2\sqrt{2N}}$$
+      </div>
+      <div class="step" data-step="sf06b2">
+        <span class="step-title">(b) 把門檻換成標準化的 $z$</span>
+        <p>$\delta\gt10^{-9}$ ⟺ $|x|\gt x_0=\delta q/2$。兩側尾巴機率 $P(|x|\gt x_0)=\operatorname{erfc}(z)$，$z=x_0/(\sqrt2\sigma)$；代入步驟 1 的 $\sigma$：</p>
+        $$z=\frac{\delta q}2\cdot\frac{2\sqrt{2N}}{\sqrt2\,q}=\delta\sqrt N$$
+        <p class="sub">代入 $\delta=10^{-9}$（題目 (b)）、$\sqrt N=\sqrt{10^{20}}=10^{10}$：</p>
+        $$z=10^{-9}\times10^{10}=10$$
+      </div>
+      <div class="step" data-step="sf-06b-s3">
+        <span class="step-title">(b) 尾巴機率</span>
+        <p class="sub">$z=10$ 很大，用題目給的近似：</p>
+        $$P=\operatorname{erfc}(10)\approx\frac{e^{-100}}{10\sqrt\pi}=\frac{3.7\times10^{-44}}{17.7}=2.1\times10^{-45}$$
+        <p>即使每秒量一兆次、量一整個宇宙年齡（約 $4\times10^{29}$ 次），也幾乎不可能看到一次。</p>
+      </div>
+      <div class="step" data-step="sf06b3">
+        <span class="step-title">(c) 50% 的門檻</span>
+        <p>要 $P=0.5$，解 $\operatorname{erfc}(z)=0.5$（這時 $z$ 不大，不能用尾巴近似，查表或數值解）：</p>
+        $$\operatorname{erfc}(z)=0.5\ \Longrightarrow\ z=0.477$$
+        <p class="sub">由步驟 2 的 $z=\delta\sqrt N$，代入 $\sqrt N=10^{10}$：</p>
+        $$\delta=\frac{0.477}{10^{10}}=4.8\times10^{-11}$$
+        <p>相對精確度 $\sim5\times10^{-11}$：能量要量到約 10 位有效數字，才有一半的機會看到平衡附近的擾動。這就是熱力學極限：可以直接把系統當成在最可能的巨觀態。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\sigma=q/(2\sqrt{2N})$；(b) $\operatorname{erfc}(10)\approx2.1\times10^{-45}$；(c) $\delta\approx4.8\times10^{-11}$，約 10 位有效數字。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$\operatorname{erfc}(10)$ 精確值 $2.088\times10^{-45}$，與近似式相同 ✔；$\delta\sim5\times10^{-11}$ 對應約 10 位有效數字，與課本 p.66「要量到十位有效數字」一致 ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>兩個大固體：$\Omega=\Omega_{\max}e^{-N(2x/q)^2}$，$1/e$ 半寬 $q/(2\sqrt N)$，相對寬度 $\sim1/\sqrt N$。</li>
+    <li>單一順磁體：$\Omega\approx2^N\sqrt{2/(\pi N)}\,e^{-2x^2/N}$，$1/e$ 半寬 $\sqrt{N/2}$；展開時要保留到 $x^2$。</li>
+    <li>熱力學極限：大系統的擾動量不到，平衡＝最可能的巨觀態。</li>
+  </ol>
+</div>

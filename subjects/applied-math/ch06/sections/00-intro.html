@@ -1,0 +1,39 @@
+<p class="lead">第 5 章的 Frobenius 法最重要的應用就是 <strong>Bessel 方程</strong> $x^2y''+xy'+(x^2-m^2)y=0$。只要問題有圓形或圓柱形的邊界——圓形鼓膜、圓柱導線的熱傳導、圓柱波導、圓柱腔裡的量子粒子——分離變數後的徑向方程式就是它。它的解 $J_m(x)$（Bessel 函數）和 $Y_m(x)$（Neumann 函數）在圓柱問題裡的角色，就像 $\sin$、$\cos$ 在直角座標問題裡的角色。</p>
+
+<p>這一章照 10/21 的板書順序：用 Frobenius 法推出 $J_m$（第 1 節）；整數階時 $J_{-m}=(-1)^mJ_m$，第二解要用降階法得到 $Y_m$（第 2 節）；圖形、零點表與圓盤邊界條件（第 3 節）；五條遞迴恆等式與積分（第 4 節）。</p>
+
+<p>每一節先講板書，再做板書例題與考古題，最後是至少三題網站自編難題。依使用者的要求，自編題刻意比板書例題難：要自己選代換、選恆等式、證明性質或處理完整的 PDE 問題。照片拍不完整、或板書只寫到一半的地方，網站補上推導並標「網站補充（照片缺漏）」；板書的誤植也標出並更正。這次沒有作業。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">考古題怎麼出</span>
+  <p>110–114 學年的考卷中與 Bessel 函數有關的有四題，全部收在本章：</p>
+  <ul>
+    <li>111 上期末第 4 題「$\int_0^1(r-r^3)J_0(2r)\,dr$」：遞迴恆等式 ① 加分部積分，答案 $\frac12J_2(2)\approx0.176$（第 4 節）。</li>
+    <li>113 上期末第 3 題「$x^2y''+xy'+\lambda^2x^2y=0$，$y(0)=1$、$y(3)=0$，求 $\lambda$」：$y=J_0(\lambda x)$，$\lambda=j_{0n}/3$（第 3 節）。</li>
+    <li>113 下期中第 2 題「圓柱腔 Schrödinger 方程的基態能量」：$E_0=\frac{\hbar^2}{2m}(j_{01}^2+\frac{\pi^2}4)$（第 3 節）。</li>
+    <li>114 上期末第 2 題「$x^2y''+xy'+(x^2-\frac14)y=0$ by Frobenius」：$m=\frac12$，$\frac{\sin x}{\sqrt x}$、$\frac{\cos x}{\sqrt x}$（第 2 節；第 5 章第 3 節有逐步的 Frobenius 版本）。</li>
+  </ul>
+</div>
+
+<p class="exam-entry"><strong>準備考試？</strong>先看<a href="#am6x-formulas">第 5 節「考前衝刺」</a>：必背公式、題型總表和變化題。各節頁面上方的「考試模式」會把解說收起來，只留公式、題目和思路。</p>
+
+<div data-section-list></div>
+
+<details class="supp" id="symbols">
+  <summary>符號總表</summary>
+  <div class="supp-body">
+    <p class="small muted">老師用 $m$ 表示 Bessel 函數的階數（很多課本寫 $\nu$ 或 $n$），本站照板書用 $m$；Frobenius 的指標照第 5 章用 $\gamma$。113 下期中的題目裡 $m$ 是粒子質量，那張卡把階數改寫成 $p$。$j_{mn}$ 是 $J_m$ 的第 $n$ 個正零點。</p>
+    <div data-symbol-table></div>
+  </div>
+</details>
+
+<details class="supp" id="confusions">
+  <summary>三個最常錯的地方</summary>
+  <div class="supp-body">
+    <ol>
+      <li><strong>為什麼丟掉 $Y_m$</strong>：只有區域包含圓心（$r=0$）時才能丟，理由是 $Y_m(0^+)=-\infty$。圓環、或題目給的是 $x\ge a\gt0$ 的區間，$Y_m$ 要留著。</li>
+      <li><strong>遞迴恆等式的 $m$</strong>：$x^{-3}J_4$ 用 ③ 時 $m=3$（$J_{m+1}=J_4$），不是 $m=4$；$x^2J_1$ 用 ① 時 $m=2$（$J_{m-1}=J_1$）。先對下標，再對 $x$ 的次方。</li>
+      <li><strong>零點排序</strong>：「最小的 $k$」「基態」「第三個頻率」要把所有 $J_m$ 的零點混在一起排：$2.405\ (j_{01})\lt3.832\ (j_{11})\lt5.136\ (j_{21})\lt5.520\ (j_{02})$，不能只看 $J_0$。</li>
+    </ol>
+  </div>
+</details>

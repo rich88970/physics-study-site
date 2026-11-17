@@ -1,0 +1,551 @@
+<h2>九、能量與動量 <span class="pg">課本 §1.9 · p.30–33</span></h2>
+
+<p class="lead">總能量和動量在孤立系統中守恆，靜能在所有座標系相同，所以它們比速度、動能更基本。這一節把三者連成一條式子 $E^2=(mc^2)^2+(pc)^2$——這一章的考題大半靠它。</p>
+
+<h3 id="ep-relation">9.1 $E^2=(mc^2)^2+(pc)^2$ <span class="pg-tag">p.30–31</span></h3>
+
+<div class="step" data-step="ep-derive" data-sym="E,p">
+  <span class="step-title">由 $E=\gamma mc^2$、$p=\gamma mv$ 消去 $v$</span>
+  $$E^2=\frac{m^2c^4}{1-v^2/c^2},\qquad p^2c^2=\frac{m^2v^2c^2}{1-v^2/c^2}$$
+  $$E^2-p^2c^2=\frac{m^2c^4-m^2v^2c^2}{1-v^2/c^2}=\frac{m^2c^4(1-v^2/c^2)}{1-v^2/c^2}=(mc^2)^2$$
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.31 Eq. (1.24) Energy and momentum</span>
+  $$E^2=(mc^2)^2+p^2c^2$$
+  <p>$mc^2$ 是不變量，所以 $E^2-p^2c^2$ 對同一個粒子在所有座標系都一樣，雖然 $E$、$p$ 各自會變。</p>
+</div>
+
+<p>把它看成直角三角形最好記：斜邊 $E$、兩股 $mc^2$ 和 $pc$。再把 $E=\gamma mc^2$、$p=\gamma mv$ 相除，得到一個很好用的式子（習題 1-46）：</p>
+$$\frac vc=\frac{pc}{E}$$
+<p>已知 $E$、$p$ 求速度，直接用它，不必先求 $\gamma$。</p>
+
+<div class="anim" data-anim="ep-triangle"></div>
+
+<h3 id="ep-system">9.2 系統的質量 <span class="pg-tag">p.31</span></h3>
+
+<p>對多粒子系統，(1.24) 仍成立，但 $m$ 要用<strong>整個系統</strong>的質量，$E$、$p$ 是總能量、總動量。系統的靜能不一定等於各成員靜能的和：</p>
+<ul>
+  <li><strong>可以比較大</strong>：例題 1.6 的 $2.5\ \text{kg}$ 物體炸成兩塊 $1.0\ \text{kg}$。從裡面看，$0.5\ \text{kg}$ 變成了碎片動能；但把整個系統看成一體，它爆炸前後都靜止，所以系統質量始終是 $2.5\ \text{kg}$——內部運動的動能也算在系統的靜能裡。</li>
+  <li><strong>可以比較小</strong>：靠吸引力結合的系統，例如原子核的靜能比組成它的質子、中子靜能總和小，差額叫<strong>束縛能</strong>，要拆開原子核至少要給這麼多能量。核的束縛能約 $10^{12}\ \text{kJ/kg}$，而水汽化只需 $2260\ \text{kJ/kg}$。</li>
+</ul>
+
+<h3 id="ep-massless">9.3 無質量粒子 <span class="pg-tag">p.31–32</span></h3>
+
+<p>古典力學中沒有質量就沒有能量和動量。相對論中：$m=0$ 且 $v\lt c$ 時 $E=p=0$；但 $m=0$ 且 $v=c$ 時 $E=\gamma mc^2=0/0$、$p=0/0$ 是不定式，可以是任何值。所以相對論允許無質量、但有能量和動量的粒子存在，條件是它以光速運動。由 (1.24)：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.31 Eq. (1.25) Massless particle</span>
+  $$E=pc$$
+</div>
+
+<p>光子就是這種粒子（第 2 章）。</p>
+
+<h3 id="ep-units">9.4 電子伏特 <span class="pg-tag">p.32</span></h3>
+
+<p>$1\ \text{eV}$ 是電子經過 $1\ \text{V}$ 電位差得到的能量：$1\ \text{eV}=(1.602\times10^{-19}\ \text{C})(1\ \text{V})=1.602\times10^{-19}\ \text{J}$；$1\ \text{keV}=10^3\ \text{eV}$、$1\ \text{MeV}=10^6\ \text{eV}$、$1\ \text{GeV}=10^9\ \text{eV}$。質量用 $\text{MeV}/c^2$、動量用 $\text{MeV}/c$，計算時 $c$ 會自動消掉：</p>
+<ul>
+  <li>質子 $m=0.938\ \text{GeV}/c^2$，靜能就是 $0.938\ \text{GeV}$；動能 $5.000\ \text{GeV}$ 時 $E=5.938\ \text{GeV}$。</li>
+  <li>質子以 $0.800c$ 運動：$p=\dfrac{(0.938\ \text{GeV}/c^2)(0.800c)}{\sqrt{1-0.800^2}}=\dfrac{0.750}{0.600}\ \text{GeV}/c=1.25\ \text{GeV}/c$。</li>
+  <li>電子 $mc^2=0.511\ \text{MeV}$。</li>
+</ul>
+
+<div class="problem" data-kind="tbexample" id="bz-ex1-8">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 1.8 · p.32–33</span></div>
+    <h4>同樣動量的電子和光子</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex1-8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex1-8"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>An electron ($m=0.511\ \mathrm{MeV}/c^2$) and a photon ($m=0$) both have momenta of 2.000 MeV/c. Find the total energy of each.</p></div>
+<p class="original-caption">Beiser Example 1.8 · p.32–33</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>電子（$m=0.511\ \text{MeV}/c^2$）和光子（$m=0$）的動量都是 $2.000\ \text{MeV}/c$。求兩者的總能量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：電子 $mc^2=0.511\ \text{MeV}$；光子 $m=0$；兩者動量 $p=2.000\ \text{MeV}/c$，即 $pc=2.000\ \text{MeV}$。</p>
+<p><strong>① 電子：</strong> 已知質量和動量、沒有速度，直接用不含速度的能量動量關係；單位用 MeV，$c$ 自動消掉。</p>
+<p class="fnote"><b>公式（相對論能量動量關係）：</b>$E^2=(mc^2)^2+(pc)^2$，其中 $E$ 為總能量、$m$ 為靜止質量、$p$ 為動量；本題 $mc^2=0.511\ \text{MeV}$、$pc=2.000\ \text{MeV}$。</p>
+<div class="math-block">$$E=\sqrt{(mc^2)^2+(pc)^2}$$</div>
+<p>代入 $mc^2=0.511\ \text{MeV}$、$pc=2.000\ \text{MeV}$：</p>
+<div class="math-block">$$E=\sqrt{(0.511)^2+(2.000)^2}\ \text{MeV}=\sqrt{0.261+4.000}\ \text{MeV}=2.064\ \text{MeV}$$</div>
+<p><strong>② 光子：</strong> $m=0$ 代入同一條式子：$E^2=(pc)^2$，取正根 $E=pc$。代入 $p=2.000\ \text{MeV}/c$：</p>
+<div class="math-block">$$E=(2.000\ \text{MeV}/c)\,c=2.000\ \text{MeV}$$</div>
+<div class="math-block">$$\boxed{\text{電子 }2.064\ \text{MeV；光子 }2.000\ \text{MeV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="kg-107-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">107 學年期中（2018/10/30）第 3 題 · 即 Beiser 習題 1-49 · p.51</span></div>
+    <h4>由動能和動量求質量與速度</h4>
+    <button type="button" class="exam-btn" data-exam="kg-107-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-3"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>A particle has a kinetic energy of 62 MeV and a momentum of 335 MeV/c. Find its rest mass (in MeV/c$^2$) and speed (as a fraction of $c$) (10%)</p><p class="original-note"><strong>課本原文（Beiser 習題 1-49 · p.51）</strong></p><p>A particle has a kinetic energy of 62 MeV and a momentum of 335 MeV/c. Find its mass (in MeV/c<sup>2</sup>) and speed (as a fraction of c).</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 3 題 · 即 Beiser 習題 1-49 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>粒子動能 $62\ \text{MeV}$、動量 $335\ \text{MeV}/c$。求它的靜止質量（$\text{MeV}/c^2$）和速率（$c$ 的倍數）。（10%）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：動能 $KE=62\ \text{MeV}$；動量 $p=335\ \text{MeV}/c$，即 $pc=335\ \text{MeV}$；粒子種類未知，求靜止質量 $m$ 與 $v/c$。</p>
+<p><strong>① 代入並消去 $(mc^2)^2$：</strong> 唯一同時連起 $E$、$p$、$m$ 的是能量動量關係，把 $E=KE+mc^2$ 代進去，$(mc^2)^2$ 消掉後剩一次方程。</p>
+<p class="fnote"><b>公式（相對論能量動量關係）：</b>$E^2=(mc^2)^2+(pc)^2$，其中 $E=KE+mc^2$ 為總能量、$m$ 為靜止質量、$p$ 為動量；本題 $KE$、$pc$ 已知、$mc^2$ 未知。</p>
+<div class="math-block">$$(KE+mc^2)^2=(mc^2)^2+(pc)^2$$</div>
+<p>左邊展開成 $KE^2+2KE\,mc^2+(mc^2)^2$，和右邊的 $(mc^2)^2$ 消掉：</p>
+<div class="math-block">$$KE^2+2KE\,mc^2=(pc)^2\ \Longrightarrow\ mc^2=\frac{(pc)^2-KE^2}{2KE}$$</div>
+<p><strong>② 代入數值求質量：</strong> 代入 $pc=335\ \text{MeV}$、$KE=62\ \text{MeV}$：</p>
+<div class="math-block">$$mc^2=\frac{335^2-62^2}{2(62)}\ \text{MeV}=\frac{112225-3844}{124}\ \text{MeV}=874\ \text{MeV}$$</div>
+<p><strong>③ 速率：</strong> 求出 $m$ 後 $E$、$p$ 都已知，用 $v/c=pc/E$ 一步得到，不必先算 $\gamma$。總能量 $E=KE+mc^2$，代入 $62\ \text{MeV}$ 與上一步的 $874\ \text{MeV}$：</p>
+<div class="math-block">$$E=62+874=936\ \text{MeV}$$</div>
+<p>再代入 $pc=335\ \text{MeV}$：</p>
+<div class="math-block">$$\frac vc=\frac{pc}{E}=\frac{335}{936}=0.358$$</div>
+<div class="math-block">$$\boxed{m=874\ \text{MeV}/c^2,\quad v=0.358c}$$</div>
+<p><strong>注意：</strong> 課本書末答案寫 $0.37c$，但 $pc/E=335/936=0.358$，用 $\gamma$ 另算也是 $0.358c$，書末答案有誤。</p>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="kg-115-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 3 題 · 即 Beiser 習題 1-50（多問動能）· p.51</span></div>
+    <h4>由 $E$、$p$ 求質量；換座標系求 $E$</h4>
+    <button type="button" class="exam-btn" data-exam="kg-115-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-115-3"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>(a) Find the rest mass (in GeV/c$^2$) of a particle whose total energy is 4.00 GeV and whose momentum is 1.45 GeV/c. How about the kinetic energy (also in GeV)?</p><p>(b) Now, calculate the total energy of this particle in a reference frame, in which its momentum is 2.00 GeV/c.</p><p class="original-note"><strong>課本原文（Beiser 習題 1-50 · p.51）</strong></p><p>(a) Find the mass (in GeV/c<sup>2</sup>) of a particle whose total energy is 4.00 GeV and whose momentum is 1.45 GeV/c.</p><p>(b) Find the total energy of this particle in a reference frame in which its momentum is 2.00 GeV/c.</p></div>
+<p class="original-caption">115 級上學期期中 第 3 題 · 即 Beiser 習題 1-50（多問動能）· p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>(a) 粒子總能量 $4.00\ \text{GeV}$、動量 $1.45\ \text{GeV}/c$，求靜止質量（$\text{GeV}/c^2$）。動能是多少（GeV）？(b) 在另一個參考座標系中，它的動量是 $2.00\ \text{GeV}/c$，求這個座標系中的總能量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：(a) $E=4.00\ \text{GeV}$、$pc=1.45\ \text{GeV}$；(b) 另一座標系中 $p'c=2.00\ \text{GeV}$；同一個粒子，靜止質量在各座標系相同。</p>
+<h4>(a) 靜止質量與動能</h4>
+<p><strong>① 靜止質量：</strong> 已知 $E$ 和 $p$，由能量動量關係移項直接得 $m$。</p>
+<p class="fnote"><b>公式（相對論能量動量關係）：</b>$E^2=(mc^2)^2+(pc)^2$，其中 $E$ 為總能量、$m$ 為靜止質量、$p$ 為動量；本題移項成 $mc^2=\sqrt{E^2-(pc)^2}$。</p>
+<div class="math-block">$$mc^2=\sqrt{E^2-(pc)^2}$$</div>
+<p>代入 $E=4.00\ \text{GeV}$、$pc=1.45\ \text{GeV}$：</p>
+<div class="math-block">$$\begin{aligned}mc^2&amp;=\sqrt{4.00^2-1.45^2}\ \text{GeV}=\sqrt{16.00-2.10}\ \text{GeV}\\&amp;=\sqrt{13.90}\ \text{GeV}=3.73\ \text{GeV}\end{aligned}$$</div>
+<p><strong>② 動能：</strong> 總能量＝靜能＋動能，所以 $KE=E-mc^2$。代入 $E=4.00\ \text{GeV}$、上一步的 $mc^2=3.728\ \text{GeV}$（多留一位）：</p>
+<div class="math-block">$$KE=4.00-3.728=0.272\ \text{GeV}$$</div>
+<div class="math-block">$$\boxed{m=3.73\ \text{GeV}/c^2,\quad KE=0.272\ \text{GeV}}$$</div>
+<h4>(b) 新座標系的總能量</h4>
+<p><strong>① 用不變的靜止質量：</strong> 靜止質量在所有座標系都相同，同一個 $(mc^2)^2=13.90\ \text{GeV}^2$ 配新的 $p'$，不需要知道新座標系的速度：</p>
+<div class="math-block">$$E'=\sqrt{(mc^2)^2+(p'c)^2}$$</div>
+<p>代入 (a) 的 $(mc^2)^2=13.90\ \text{GeV}^2$、$p'c=2.00\ \text{GeV}$：</p>
+<div class="math-block">$$E'=\sqrt{13.90+2.00^2}\ \text{GeV}=\sqrt{17.90}\ \text{GeV}=4.23\ \text{GeV}$$</div>
+<div class="math-block">$$\boxed{E'=4.23\ \text{GeV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="kg-115-4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 4 題 · 證明題</span></div>
+    <h4>正負電子不能只湮滅成一個光子</h4>
+    <button type="button" class="exam-btn" data-exam="kg-115-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-115-4"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>Show an electron $e^-$ and a positron $e^+$ cannot annihilate into only one photon in empty space.</p></div>
+<p class="original-caption">115 級上學期期中 第 4 題 · 證明題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>證明在真空中，電子 $e^-$ 和正電子 $e^+$ 不能湮滅成只有一個光子。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：反應 $e^-+e^+\to\gamma$（只有一個光子），在真空中（沒有其他物體分擔動量或能量）；電子、正電子質量 $m\gt0$、速率 $\lt c$、$E\ge mc^2$；光子 $m=0$、$E_\gamma=p_\gamma c$；總能量、總動量守恆。</p>
+<p><strong>① 選質心座標系：</strong> 要證明不可能，只要找到守恆律被破壞；能量和動量必須同時守恆，所以兩條一起用，並選動量最簡單的座標系。兩個粒子都有質量、速率小於 $c$，一定存在一個總動量為零的慣性座標系（質心座標系）。在這個座標系：湮滅前 $\vec p_{\text{tot}}=0$，而每個粒子 $E\ge mc^2$，所以 $E_{\text{tot}}\ge2mc^2\gt0$。</p>
+<p><strong>② 只有一個光子會矛盾：</strong> 能量守恆：光子能量 $E_\gamma=E_{\text{tot}}\ge2mc^2\gt0$。</p>
+<p class="fnote"><b>公式（光子的能量動量關係）：</b>$E=pc$，由 $E^2=(mc^2)^2+(pc)^2$ 令 $m=0$ 得到，其中 $E$ 為光子能量、$p$ 為光子動量；本題 $E_\gamma=p_\gamma c$。</p>
+<p>光子動量：</p>
+<div class="math-block">$$p_\gamma=\frac{E_\gamma}{c}\ge\frac{2mc^2}{c}=2mc\gt0$$</div>
+<p>但動量守恆要求 $p_\gamma=p_{\text{tot}}=0$。兩者不能同時成立。</p>
+<p><strong>③ 另一種寫法：不變量：</strong> $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$ 在所有座標系相同、且守恆。湮滅前在質心系它等於 $E_{\text{tot}}^2\ge(2mc^2)^2\gt0$；一個光子的 $E^2-(pc)^2=0$。不相等，所以不可能。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{單一光子無法同時滿足能量與動量守恆}\\ \text{至少要產生兩個光子（質心系中反向、各帶}\ge mc^2\text{）}\end{gathered}}$$</div>
+<p>題目說「真空」：旁邊若有原子核可以吸收動量，就不受此限制。反過來，一個光子在真空中也不能變成正負電子對（<a href="#mvar-7">變化題 7</a>）。</p>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-38">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-38 · p.50 · 也是 109上 考古第 5 題（手寫解答標作 Q1.37）</span></div>
+    <h4>產生正負電子對的最低動能 $6mc^2$</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-38">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-38"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A moving electron collides with a stationary electron and an electron-positron pair comes into being as a result (a positron is a positively charged electron). When all four particles have the same velocity after the collision, the kinetic energy required for this process is a minimum. Use a relativistic calculation to show that $\mathrm{KE}_{\min}=6mc^2$, where m is the rest mass of the electron.</p></div>
+<p class="original-caption">Beiser 習題 1-38 · p.50 · 也是 109上 考古第 5 題（手寫解答標作 Q1.37）</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>運動的電子撞上靜止的電子，產生一對正負電子（$e^-+e^-\to e^-+e^-+e^-+e^+$）。碰撞後四個粒子速度相同時，所需動能最小。用相對論計算證明 $KE_{\min}=6mc^2$（$m$ 為電子質量）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m$ 為電子質量；入射電子總能量 $E_1=KE+mc^2$、動量 $p$；靶電子靜止（$E=mc^2$、$p=0$）；產物 $e^-+e^-+e^-+e^+$ 四個粒子質量都是 $m$，碰撞後速度相同時 $KE$ 最小。</p>
+<p><strong>① 碰撞前：</strong> 碰撞後四粒子速度相同，整群像一個質量 $4m$ 的物體，所以只要用守恆量算系統的 $E_{\text{tot}}^2-(p_{\text{tot}}c)^2$，不必解出末速。先寫碰撞前的總能量與總動量。</p>
+<p class="fnote"><b>公式（相對論能量—動量關係）：</b>$E^2-(pc)^2=(mc^2)^2$，其中 $E$ 為總能量、$p$ 為動量、$m$ 為質量；本題入射電子滿足 $E_1^2-p^2c^2=(mc^2)^2$。</p>
+<div class="math-block">$$E_{\text{tot}}=E_1+mc^2,\qquad p_{\text{tot}}=p$$</div>
+<p><strong>② 碰撞後：</strong> 四個粒子速度相同，系統質量為 $4m$。</p>
+<p class="fnote"><b>公式（系統質量）：</b>$E_{\text{tot}}^2-(p_{\text{tot}}c)^2=(Mc^2)^2$，其中 $E_{\text{tot}}$、$p_{\text{tot}}$ 為系統總能量與總動量、$M$ 為系統質量；本題碰撞後 $M=4m$。</p>
+<div class="math-block">$$E_{\text{tot}}^2-(p_{\text{tot}}c)^2=(4mc^2)^2$$</div>
+<p><strong>③ 守恆量代入：</strong> 總能量、總動量守恆，把碰撞前的 $E_{\text{tot}}=E_1+mc^2$、$p_{\text{tot}}=p$ 代入碰撞後的關係：</p>
+<div class="math-block">$$(E_1+mc^2)^2-p^2c^2=16(mc^2)^2$$</div>
+<p>展開左邊，把 $E_1^2-p^2c^2$ 換成 $(mc^2)^2$：</p>
+<div class="math-block">$$\underbrace{E_1^2-p^2c^2}_{(mc^2)^2}+2E_1mc^2+(mc^2)^2=16(mc^2)^2$$</div>
+<div class="math-block">$$2E_1mc^2=14(mc^2)^2\ \Longrightarrow\ E_1=7mc^2$$</div>
+<p><strong>④ 換成動能：</strong> 減去入射電子的靜能。</p>
+<div class="math-block">$$KE_{\min}=E_1-mc^2=7mc^2-mc^2=6mc^2$$</div>
+<p>代入電子 $mc^2=0.511\ \text{MeV}$：</p>
+<div class="math-block">$$KE_{\min}=6(0.511\ \text{MeV})=3.07\ \text{MeV}$$</div>
+<div class="math-block">$$\boxed{KE_{\min}=6mc^2\approx3.07\ \text{MeV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-40">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-40 · p.51</span></div>
+    <h4>MeV/$c^2$ 和 MeV/$c$ 換成 SI</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-40">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-40"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the SI equivalents of the mass unit MeV/c<sup>2</sup> and the momentum unit MeV/c.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求質量單位 $\text{MeV}/c^2$ 和動量單位 $\text{MeV}/c$ 的 SI 等值。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$，$c=2.998\times10^8\ \text{m/s}$（要四位有效數字）。$\text{MeV}/c^2$ 照字面就是「1 MeV 的能量除以 $c^2$」。</p>
+<p><strong>① MeV 換成焦耳：</strong> 先把能量換成 SI，再照字面除以 $c^2$ 或 $c$。</p>
+<div class="math-block">$$1\ \text{MeV}=10^6\times1.602\times10^{-19}\ \text{J}=1.602\times10^{-13}\ \text{J}$$</div>
+<p><strong>② 質量單位：</strong> 代入 $1.602\times10^{-13}\ \text{J}$、$c=2.998\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\begin{aligned}1\ \frac{\text{MeV}}{c^2}&amp;=\frac{1.602\times10^{-13}\ \text{J}}{(2.998\times10^8\ \text{m/s})^2}\\&amp;=\frac{1.602\times10^{-13}}{8.988\times10^{16}}\ \text{kg}=1.783\times10^{-30}\ \text{kg}\end{aligned}$$</div>
+<p><strong>③ 動量單位：</strong> 同樣代入 $1.602\times10^{-13}\ \text{J}$、$c=2.998\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$1\ \frac{\text{MeV}}{c}=\frac{1.602\times10^{-13}\ \text{J}}{2.998\times10^8\ \text{m/s}}=5.344\times10^{-22}\ \text{kg·m/s}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}1\ \text{MeV}/c^2=1.783\times10^{-30}\ \text{kg}\\ 1\ \text{MeV}/c=5.344\times10^{-22}\ \text{kg·m/s}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-41">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-41 · p.51</span></div>
+    <h4>五分鐘穿過銀河系的質子</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-41">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-41"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In its own frame of reference, a proton takes 5 min to cross the Milky Way galaxy, which is about 10<sup>5</sup> light-years in diameter.</p><p>(a) What is the approximate energy of the proton in electronvolts?</p><p>(b) About how long would the proton take to cross the galaxy as measured by an observer in the galaxy’s reference frame?</p></div>
+<p class="original-caption">Beiser 習題 1-41 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在質子自己的座標系中，它用 $5\ \text{min}$ 穿過直徑約 $10^5$ 光年的銀河系。(a) 質子能量大約多少 eV？(b) 在銀河系座標系中要多久？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$t_0=5\ \text{min}$ 為質子自己量的穿越時間（固有時間），$L_0=10^5\ \text{ly}$ 為銀河系直徑（固有長度）；質子靜能 $mc^2=0.938\times10^9\ \text{eV}$；$1\ \text{y}=5.26\times10^5\ \text{min}$。題目問「大約」，只要數量級。</p>
+<h4>(a) 質子的能量</h4>
+<p><strong>① 估 $\gamma$：</strong> $10^5$ 光年只用 5 分鐘，速率非常接近 $c$；在質子座標系中銀河系以約 $c$ 掠過，長度縮短，通過所需時間就是 $t_0$。</p>
+<p class="fnote"><b>公式（長度收縮）：</b>$L=L_0/\gamma$，其中 $L_0$ 為固有長度、$L$ 為運動方向上量到的長度、$\gamma=1/\sqrt{1-v^2/c^2}$；本題 $L_0$ 為銀河系直徑。</p>
+<div class="math-block">$$t_0=\frac Lv\approx\frac{L_0/\gamma}{c}\ \Longrightarrow\ \gamma\approx\frac{L_0}{ct_0}$$</div>
+<p>代入 $L_0=10^5\ \text{ly}=c\times10^5\ \text{y}$、$t_0=5\ \text{min}$，並用 $1\ \text{y}=5.26\times10^5\ \text{min}$：</p>
+<div class="math-block">$$\gamma\approx\frac{10^5\ \text{y}}{5\ \text{min}}=\frac{10^5\times5.26\times10^5\ \text{min}}{5\ \text{min}}\approx1.1\times10^{10}$$</div>
+<p><strong>② 能量：</strong> 有了 $\gamma$ 就有總能量。</p>
+<p class="fnote"><b>公式（相對論總能量）：</b>$E=\gamma mc^2$，其中 $m$ 為靜質量；本題 $mc^2=0.938\times10^9\ \text{eV}$。</p>
+<p>代入 $\gamma\approx1.1\times10^{10}$：</p>
+<div class="math-block">$$E\approx(1.1\times10^{10})(0.938\times10^{9}\ \text{eV})\approx1\times10^{19}\ \text{eV}$$</div>
+<div class="math-block">$$\boxed{E\approx10^{19}\ \text{eV}}$$</div>
+<h4>(b) 銀河系座標系中的穿越時間</h4>
+<p><strong>① 以約 $c$ 走 $L_0$：</strong> 在銀河系座標系中質子以 $v\approx c$ 走過 $L_0=10^5\ \text{ly}$。</p>
+<div class="math-block">$$t\approx\frac{L_0}{c}=10^5\ \text{y}$$</div>
+<p>也可用時間膨脹，得到相同結果。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma t_0$，其中 $t_0$ 為固有時間、$t$ 為另一座標系量到的時間；本題 $t_0=5\ \text{min}$。</p>
+<div class="math-block">$$t=\gamma t_0=(1.1\times10^{10})(5\ \text{min})\approx10^5\ \text{y}$$</div>
+<div class="math-block">$$\boxed{t\approx10^5\ \text{年}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-42">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-42 · p.51</span></div>
+    <h4>和 10 MeV 質子同動量的光子</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-42">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-42"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What is the energy of a photon whose momentum is the same as that of a proton whose kinetic energy is 10.0 MeV?</p></div>
+<p class="original-caption">Beiser 習題 1-42 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>光子的動量和動能 $10.0\ \text{MeV}$ 的質子相同。光子能量是多少？（$m_pc^2=938\ \text{MeV}$）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：質子動能 $KE=10.0\ \text{MeV}$、靜能 $mc^2=938\ \text{MeV}$；光子動量 $p_\gamma$ 等於質子動量 $p$。</p>
+<p><strong>① 質子的 $pc$：</strong> 光子能量只由動量決定，所以問題變成「由質子動能求它的 $pc$」。</p>
+<p class="fnote"><b>公式（相對論能量—動量關係）：</b>$E^2=(mc^2)^2+(pc)^2$，其中 $E=KE+mc^2$ 為總能量、$m$ 為靜質量、$p$ 為動量；本題用於質子。</p>
+<p>把 $E=KE+mc^2$ 代入展開，$(mc^2)^2$ 消掉：</p>
+<div class="math-block">$$(pc)^2=KE^2+2KE\,mc^2$$</div>
+<p>代入 $KE=10.0\ \text{MeV}$、$mc^2=938\ \text{MeV}$：</p>
+<div class="math-block">$$(pc)^2=10.0^2+2(10.0)(938)=100+18760=18860\ \text{MeV}^2$$</div>
+<div class="math-block">$$pc=\sqrt{18860}\ \text{MeV}=137\ \text{MeV}$$</div>
+<p><strong>② 光子能量：</strong> 光子動量等於質子動量。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E_\gamma=p_\gamma c$，其中 $p_\gamma$ 為光子動量（無質量粒子）；本題 $p_\gamma=p$。</p>
+<div class="math-block">$$E_\gamma=pc=137\ \text{MeV}$$</div>
+<div class="math-block">$$\boxed{E_\gamma=137\ \text{MeV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-43">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-43 · p.51</span></div>
+    <h4>0.600c 電子的動量</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-43">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-43"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the momentum (in MeV/c) of an electron whose speed is 0.600c.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求速率 $0.600c$ 的電子的動量（以 $\text{MeV}/c$ 表示）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：電子速率 $v=0.600c$，質量 $m=0.511\ \text{MeV}/c^2$（答案要 $\text{MeV}/c$，所以用這個單位）。</p>
+<p><strong>① 算 $\gamma$：</strong> 已知速度求動量，直接用相對論動量；$0.6c$ 的 $\gamma$ 偏離 1 有 25%，不能用古典 $mv$。</p>
+<p class="fnote"><b>公式（勞侖茲因子）：</b>$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}$，其中 $v$ 為速率；本題 $v/c=0.600$。</p>
+<div class="math-block">$$\gamma=\frac{1}{\sqrt{1-0.600^2}}=\frac{1}{\sqrt{0.64}}=1.25$$</div>
+<p><strong>② $p=\gamma mv$：</strong> 質量用 $\text{MeV}/c^2$、速度寫成 $c$ 的倍數，$c^2$ 和 $c$ 約成 $1/c$。</p>
+<p class="fnote"><b>公式（相對論動量）：</b>$p=\gamma mv$，其中 $m$ 為靜質量、$v$ 為速率；本題用電子。</p>
+<p>代入 $\gamma=1.25$、$m=0.511\ \text{MeV}/c^2$、$v=0.600c$：</p>
+<div class="math-block">$$p=(1.25)\left(0.511\ \frac{\text{MeV}}{c^2}\right)(0.600c)=0.383\ \text{MeV}/c$$</div>
+<div class="math-block">$$\boxed{p=0.383\ \text{MeV}/c}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-44">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-44 · p.51</span></div>
+    <h4>0.900c 質子的總能量、動能與動量</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-44">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-44"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the total energy and kinetic energy (in GeV) and the momentum (in GeV/c) of a proton whose speed is 0.900c. The mass of the proton is 0.938 GeV/c<sup>2</sup>.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求速率 $0.900c$ 的質子的總能量、動能（GeV）和動量（GeV/$c$）。質子質量 $0.938\ \text{GeV}/c^2$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：質子速率 $v=0.900c$，$mc^2=0.938\ \text{GeV}$。</p>
+<p><strong>① $\gamma$：</strong> $E$、$KE$、$p$ 都是「$\gamma$ 乘上已知量」，先算一次 $\gamma$。</p>
+<p class="fnote"><b>公式（勞侖茲因子）：</b>$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}$，其中 $v$ 為速率；本題 $v/c=0.900$。</p>
+<div class="math-block">$$\gamma=\frac{1}{\sqrt{1-0.900^2}}=\frac{1}{\sqrt{0.19}}=\frac{1}{0.4359}=2.294$$</div>
+<p><strong>② 總能量與動能：</strong> 用 GeV 表示，$c$ 自動消掉。</p>
+<p class="fnote"><b>公式（相對論總能量與動能）：</b>$E=\gamma mc^2$、$KE=E-mc^2$，其中 $m$ 為靜質量；本題用質子。</p>
+<p>代入 $\gamma=2.294$、$mc^2=0.938\ \text{GeV}$：</p>
+<div class="math-block">$$E=\gamma mc^2=(2.294)(0.938\ \text{GeV})=2.15\ \text{GeV}$$</div>
+<div class="math-block">$$KE=E-mc^2=2.152-0.938=1.21\ \text{GeV}$$</div>
+<p><strong>③ 動量：</strong> 同一個 $\gamma$ 乘上 $mv$。</p>
+<p class="fnote"><b>公式（相對論動量）：</b>$p=\gamma mv$，其中 $m$ 為靜質量、$v$ 為速率；本題用質子。</p>
+<p>代入 $\gamma=2.294$、$m=0.938\ \text{GeV}/c^2$、$v=0.900c$：</p>
+<div class="math-block">$$p=\gamma mv=(2.294)\left(0.938\ \frac{\text{GeV}}{c^2}\right)(0.900c)=1.94\ \text{GeV}/c$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}E=2.15\ \text{GeV},\quad KE=1.21\ \text{GeV}\\ p=1.94\ \text{GeV}/c\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-45">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-45 · p.51</span></div>
+    <h4>動能等於靜能的電子，動量多大</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-45">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-45"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the momentum of an electron whose kinetic energy equals its rest energy of 511 keV.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>電子的動能等於它的靜能 $511\ \text{keV}$。求它的動量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：電子靜能 $E_0=511\ \text{keV}$，動能 $KE=E_0$。</p>
+<p><strong>① 總能量：</strong> 動能等於靜能，總能量馬上就是 $2E_0$，之後已知 $E$、$E_0$ 直接求 $p$，不必先求速度。</p>
+<div class="math-block">$$E=E_0+KE=E_0+E_0=2E_0$$</div>
+<p><strong>② 由能量求動量：</strong> 把能量—動量關係移項。</p>
+<p class="fnote"><b>公式（相對論能量—動量關係）：</b>$E^2=E_0^2+(pc)^2$，其中 $E$ 為總能量、$E_0=mc^2$ 為靜能、$p$ 為動量；本題移項成 $pc=\sqrt{E^2-E_0^2}$。</p>
+<p>代入 $E=2E_0$、$E_0=511\ \text{keV}$：</p>
+<div class="math-block">$$pc=\sqrt{(2E_0)^2-E_0^2}=\sqrt3\,E_0=\sqrt3\,(511\ \text{keV})=885\ \text{keV}$$</div>
+<div class="math-block">$$\boxed{p=885\ \text{keV}/c\ (=4.73\times10^{-22}\ \text{kg·m/s})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-46">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-46 · p.51</span></div>
+    <h4>驗證 $v/c=pc/E$</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-46">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-46"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Verify that $v/c=pc/E$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>驗證 $v/c=pc/E$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p><strong>① 代入定義：</strong> 右邊的 $p$ 和 $E$ 都含同一個因子 $\gamma m$，代進去直接約掉。</p>
+<p class="fnote"><b>公式（相對論動量與總能量）：</b>$p=\gamma mv$、$E=\gamma mc^2$，其中 $m$ 為靜質量、$v$ 為速率、$\gamma=1/\sqrt{1-v^2/c^2}$；本題代入右邊 $pc/E$。</p>
+<div class="math-block">$$\frac{pc}{E}=\frac{(\gamma mv)c}{\gamma mc^2}$$</div>
+<p><strong>② 約分：</strong> 分子分母約去 $\gamma m$，再約去一個 $c$：</p>
+<div class="math-block">$$\frac{pc}{E}=\frac{vc}{c^2}=\frac vc$$</div>
+<div class="math-block">$$\boxed{\frac vc=\frac{pc}{E}\ \text{得證}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-47">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-47 · p.51</span></div>
+    <h4>總能量 3.500 GeV 的質子</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-47">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-47"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the speed and momentum (in GeV/c) of a proton whose total energy is 3.500 GeV.</p></div>
+<p class="original-caption">Beiser 習題 1-47 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質子（$0.938\ \text{GeV}/c^2$）總能量 $3.500\ \text{GeV}$，求它的速率和動量（GeV/$c$）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：質子總能量 $E=3.500\ \text{GeV}$，靜能 $mc^2=0.938\ \text{GeV}$。</p>
+<p><strong>① 速率：</strong> $E$ 和 $mc^2$ 相除直接得 $\gamma$，再反解速率。</p>
+<p class="fnote"><b>公式（相對論總能量）：</b>$E=\gamma mc^2$，其中 $\gamma=1/\sqrt{1-v^2/c^2}$；本題移項成 $\gamma=E/(mc^2)$、$v/c=\sqrt{1-1/\gamma^2}$。</p>
+<div class="math-block">$$\gamma=\frac{E}{mc^2},\qquad\frac vc=\sqrt{1-\frac1{\gamma^2}}$$</div>
+<p>代入 $E=3.500\ \text{GeV}$、$mc^2=0.938\ \text{GeV}$：</p>
+<div class="math-block">$$\gamma=\frac{3.500}{0.938}=3.731$$</div>
+<div class="math-block">$$\frac vc=\sqrt{1-\frac1{3.731^2}}=\sqrt{1-0.0718}=0.963$$</div>
+<p><strong>② 動量：</strong> 由 $E$、$mc^2$ 直接求 $pc$，不需要速率。</p>
+<p class="fnote"><b>公式（相對論能量—動量關係）：</b>$E^2=(mc^2)^2+(pc)^2$，其中 $p$ 為動量；本題移項成 $pc=\sqrt{E^2-(mc^2)^2}$。</p>
+<p>代入 $E=3.500\ \text{GeV}$、$mc^2=0.938\ \text{GeV}$：</p>
+<div class="math-block">$$\begin{aligned}pc&amp;=\sqrt{3.500^2-0.938^2}\ \text{GeV}\\&amp;=\sqrt{12.250-0.880}\ \text{GeV}=3.372\ \text{GeV}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{v=0.963c,\quad p=3.37\ \text{GeV}/c}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-48">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-48 · p.51</span></div>
+    <h4>動量 1.200 GeV/$c$ 的中子，總能量多少</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-48">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-48"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the total energy of a neutron (m = 0.940 GeV/c<sup>2</sup>) whose momentum is 1.200 GeV/c.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求動量 $1.200\ \text{GeV}/c$ 的中子（$m=0.940\ \text{GeV}/c^2$）的總能量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：中子動量 $pc=1.200\ \text{GeV}$，靜能 $mc^2=0.940\ \text{GeV}$。</p>
+<p><strong>① 能量—動量關係：</strong> 已知 $m$、$p$ 求 $E$，直接用能量—動量關係，不必經過速度。</p>
+<p class="fnote"><b>公式（相對論能量—動量關係）：</b>$E=\sqrt{(mc^2)^2+(pc)^2}$，其中 $E$ 為總能量、$m$ 為靜質量、$p$ 為動量；本題用中子。</p>
+<p>代入 $mc^2=0.940\ \text{GeV}$、$pc=1.200\ \text{GeV}$：</p>
+<div class="math-block">$$\begin{aligned}E&amp;=\sqrt{(0.940)^2+(1.200)^2}\ \text{GeV}=\sqrt{0.8836+1.4400}\ \text{GeV}\\&amp;=\sqrt{2.3236}\ \text{GeV}=1.524\ \text{GeV}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{E=1.524\ \text{GeV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-09-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>靜止的 π 介子衰變成 μ 子和微中子</h4>
+    <button type="button" class="exam-btn" data-exam="sf-09-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>靜止的 $\pi^+$（$m_\pi c^2=139.57\ \text{MeV}$）衰變成 $\mu^+$（$m_\mu c^2=105.66\ \text{MeV}$）和一個微中子（質量視為 0）。(a) 推導 $\mu^+$ 的總能量 $E_\mu=\dfrac{(m_\pi^2+m_\mu^2)c^2}{2m_\pi}$ 與微中子能量 $E_\nu=\dfrac{(m_\pi^2-m_\mu^2)c^2}{2m_\pi}$。(b) 求 $\mu^+$ 的動能、動量與速率。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\pi^+$ 靜止，$m_\pi c^2=139.57\ \text{MeV}$；$m_\mu c^2=105.66\ \text{MeV}$；微中子 $m_\nu=0$、$E_\nu=pc$。兩體衰變，兩產物動量大小相同，記為 $p$。</p>
+<h4>(a) 推導 $E_\mu$ 與 $E_\nu$</h4>
+<p><strong>① 兩條守恆：</strong> π 靜止、總動量為零，兩產物共用同一個 $p$；把兩條能量—動量關係相減，$p$ 就消掉。</p>
+<p class="fnote"><b>公式（能量守恆）：</b>衰變前後總能量相等；本題衰變前只有靜止 π 的 $m_\pi c^2$。</p>
+<p class="fnote"><b>公式（相對論能量—動量關係）：</b>$E^2=(mc^2)^2+(pc)^2$，其中 $E$ 為總能量、$m$ 為質量、$p$ 為動量；本題 μ 子 $E_\mu^2=(m_\mu c^2)^2+(pc)^2$，微中子 $E_\nu^2=(pc)^2$。</p>
+<div class="math-block">$$E_\mu+E_\nu=m_\pi c^2$$</div>
+<div class="math-block">$$E_\mu^2-E_\nu^2=\big[(m_\mu c^2)^2+(pc)^2\big]-(pc)^2=(m_\mu c^2)^2$$</div>
+<p><strong>② 平方差：</strong> 把 $E_\mu^2-E_\nu^2$ 因式分解成 $(E_\mu-E_\nu)(E_\mu+E_\nu)$，代入 $E_\mu+E_\nu=m_\pi c^2$：</p>
+<div class="math-block">$$(E_\mu-E_\nu)\,m_\pi c^2=(m_\mu c^2)^2\ \Longrightarrow\ E_\mu-E_\nu=\frac{m_\mu^2c^2}{m_\pi}$$</div>
+<p>和 $E_\mu+E_\nu=m_\pi c^2$ 相加除以 2、相減除以 2：</p>
+<div class="math-block">$$\boxed{E_\mu=\frac{(m_\pi^2+m_\mu^2)c^2}{2m_\pi},\qquad E_\nu=\frac{(m_\pi^2-m_\mu^2)c^2}{2m_\pi}}$$</div>
+<h4>(b) μ 子的動能、動量、速率</h4>
+<p><strong>① 兩個能量的數值：</strong> 代入 $m_\pi c^2=139.57\ \text{MeV}$、$m_\mu c^2=105.66\ \text{MeV}$：</p>
+<div class="math-block">$$E_\mu=\frac{139.57^2+105.66^2}{2(139.57)}\ \text{MeV}=\frac{30643.8}{279.14}\ \text{MeV}=109.78\ \text{MeV}$$</div>
+<div class="math-block">$$E_\nu=\frac{139.57^2-105.66^2}{2(139.57)}\ \text{MeV}=\frac{8315.7}{279.14}\ \text{MeV}=29.79\ \text{MeV}$$</div>
+<p><strong>② 動能、動量、速率：</strong> 動能是 $E_\mu$ 減靜能；動量和微中子相同 $p=E_\nu/c$；速率用上一步的數值。</p>
+<p class="fnote"><b>公式（速率與動量、能量的關係）：</b>$v/c=pc/E$，其中 $p$ 為動量、$E$ 為總能量；本題用 μ 子的 $p$ 與 $E_\mu$。</p>
+<div class="math-block">$$KE_\mu=E_\mu-m_\mu c^2=109.78-105.66=4.12\ \text{MeV}$$</div>
+<div class="math-block">$$p=\frac{E_\nu}{c}=29.79\ \text{MeV}/c$$</div>
+<div class="math-block">$$\frac vc=\frac{pc}{E_\mu}=\frac{29.79}{109.78}=0.271$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}KE_\mu=4.12\ \text{MeV},\quad p=29.8\ \text{MeV}/c\\ v=0.271c；\text{微中子帶走 }29.8\ \text{MeV}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-09-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩個光子的系統質量：夾角多大才能產生電子對</h4>
+    <button type="button" class="exam-btn" data-exam="sf-09-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩個能量都是 $E$ 的光子，行進方向夾角 $\theta$。(a) 證明這兩個光子組成的系統，質量為 $M=\dfrac{2E}{c^2}\sin\dfrac\theta2$。(b) 兩光子要湮滅成電子—正子對，系統質量至少要 $2m_e$。若 $E=1.00\ \text{MeV}$，$\theta$ 最小多少？(c) 為什麼單一光子（或兩個同方向的光子）不管能量多大都不能產生電子對？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：兩光子能量都是 $E$，動量大小 $|\vec p|=E/c$，方向夾角 $\theta$；(b) $E=1.00\ \text{MeV}$，$m_ec^2=0.511\ \text{MeV}$，產生電子對需系統質量 $M\ge2m_e$。</p>
+<h4>(a) 證明 $M=\dfrac{2E}{c^2}\sin\dfrac\theta2$</h4>
+<p><strong>① 總能量與總動量：</strong> 系統質量由總能量和總動量決定；能量是純量直接相加，動量是向量，用餘弦定理。</p>
+<p class="fnote"><b>公式（餘弦定理）：</b>$|\vec p_1+\vec p_2|^2=p_1^2+p_2^2+2p_1p_2\cos\theta$，其中 $\theta$ 為兩向量夾角；本題每個 $p_ic=E$。</p>
+<div class="math-block">$$E_{\text{tot}}=2E,\qquad |\vec p_{\text{tot}}|^2c^2=E^2+E^2+2E^2\cos\theta=2E^2(1+\cos\theta)$$</div>
+<p><strong>② 系統質量：</strong> 代入上一步的兩個量。</p>
+<p class="fnote"><b>公式（系統質量）：</b>$(Mc^2)^2=E_{\text{tot}}^2-|\vec p_{\text{tot}}|^2c^2$，其中 $E_{\text{tot}}$、$\vec p_{\text{tot}}$ 為系統總能量與總動量、$M$ 為系統質量；本題為兩光子系統。</p>
+<div class="math-block">$$(Mc^2)^2=4E^2-2E^2(1+\cos\theta)=2E^2(1-\cos\theta)$$</div>
+<p>用半角公式 $1-\cos\theta=2\sin^2\tfrac\theta2$：</p>
+<div class="math-block">$$(Mc^2)^2=4E^2\sin^2\frac\theta2\ \Longrightarrow\ M=\frac{2E}{c^2}\sin\frac\theta2$$</div>
+<div class="math-block">$$\boxed{M=\frac{2E}{c^2}\sin\frac\theta2}$$</div>
+<h4>(b) 門檻角度</h4>
+<p><strong>① 系統質量至少 $2m_e$：</strong> 系統質量在反應中守恆，產物至少要 $2m_e$，得到 $\theta$ 的下限。</p>
+<div class="math-block">$$\frac{2E}{c^2}\sin\frac\theta2\ge2m_e\ \Longrightarrow\ \sin\frac\theta2\ge\frac{m_ec^2}{E}$$</div>
+<p>代入 $m_ec^2=0.511\ \text{MeV}$、$E=1.00\ \text{MeV}$：</p>
+<div class="math-block">$$\sin\frac\theta2\ge\frac{0.511}{1.00}=0.511\ \Longrightarrow\ \frac\theta2\ge30.7^\circ,\qquad \theta\ge61.5^\circ$$</div>
+<div class="math-block">$$\boxed{\theta\ge61.5^\circ}$$</div>
+<h4>(c) 單一或同方向光子為何不行</h4>
+<p><strong>① 同方向的系統質量：</strong> $\theta=0$ 時 $M=0$，同方向光子的系統質量永遠是零；單一光子也是 $M=0$。產物至少要有 $2m_e$ 的系統質量，而系統質量在反應中守恆，所以不管能量多大都不行。光子要在原子核附近（由原子核吸收動量，第 2 章的成對產生），或和另一個方向不同的光子相撞才行。</p>
+<div class="math-block">$$\boxed{\text{同方向（或單一）光子 }M=0\lt2m_e}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$E^2=(mc^2)^2+(pc)^2$：直角三角形；$E^2-p^2c^2$ 對所有座標系相同；$v/c=pc/E$。</li>
+    <li>系統質量由總 $E$、總 $p$ 決定，可大於（內部動能）或小於（束縛能）成員質量和。</li>
+    <li>無質量粒子 $E=pc$、$v=c$；用 MeV、MeV/$c$、MeV/$c^2$ 時 $c$ 自動消掉。</li>
+  </ol>
+</div>

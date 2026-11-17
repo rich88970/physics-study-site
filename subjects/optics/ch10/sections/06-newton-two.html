@@ -1,0 +1,124 @@
+<h2>六、牛頓環（二）：兩個波長的環重合 <span class="pg">課本 p.181–183、p.191</span> <span class="must exam">考古高頻 3/5</span></h2>
+
+<p class="lead">用兩種波長同時照牛頓環，兩套環的半徑不同，但在某個半徑上兩者的環會疊在一起。考卷最常見的問法：已知一個波長和「它的第幾環與另一波長的第幾環重合」，求另一波長、重合處的半徑、那裡的空氣膜厚度。這一型在課程資料夾的考卷出了 2 次（2020、2024 期中考）；物理考古資料夾的 2009–2017 舊考卷另有 4 次，收在<a href="#o10-old-nr2">第 9 節</a>。</p>
+
+<h3 id="o10-n2-key">6.1 重合 ⟺ 空氣膜厚度相同</h3>
+
+<div class="step" data-step="o10-n2-s1" data-sym="t,m">
+  <span class="step-title">同一個半徑就是同一個厚度</span>
+  <p>兩個波長看的是同一片空氣膜，半徑 $r$ 處的厚度 $t=r^2/2R$ 對兩者相同。所以「重合」不需要 $R$：只要兩個條件給出同一個 $2t$。</p>
+  $$\text{亮－亮：}\ 2t=\left(m_1-\tfrac12\right)\lambda_1=\left(m_2-\tfrac12\right)\lambda_2$$
+  $$\text{暗－亮：}\ 2t=m_1\lambda_1=\left(m_2-\tfrac12\right)\lambda_2$$
+</div>
+
+<div class="step" data-step="o10-n2-s2" data-sym="rm,R">
+  <span class="step-title">有了 $2t$，半徑才需要 $R$</span>
+  $$t=\frac{2t}{2},\qquad r=\sqrt{2Rt}$$
+  <p>所以三個小題的依賴關係是：另一波長、膜厚只靠級數和已知波長；重合半徑才用到 $R$。舊考卷 2013 平時考沒給 $R$（見<a href="#o10-k13q3">該題</a>說明）。</p>
+</div>
+
+<p>判斷合理性：同一半徑上級數多的那個波長比較短。例如 532 nm 的第 10 亮環與另一光的第 8 亮環重合，另一光一定比 532 長。這也提供一個快速檢查。</p>
+
+<h3 id="o10-n2-hw">6.2 考古題（兩題）</h3>
+
+<div class="problem" data-kind="exam" id="o10-k20m4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2020-04-21）第 4 題（108下）</span></div>
+    <h4>532 nm 第 4 亮環＝另一波長第 3 亮環（$R=80$ cm） <span class="must exam">考古高頻 3/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-k20m4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k20m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/21/2020</p><p>4. (15%) 一牛頓環的實驗使用兩道不同的波長來進行，其中一道光的波長為 532 nm。若此波長的光產生的第 4 道亮環的位置恰與另一波長的第 3 道亮環的位置重合。若透鏡球面的曲率半徑為 80 cm，試求：</p><p>a. 另一道光的波長為多少 nm；</p><p>b. 上述亮環重合處的半徑為多少 mm；</p><p>c. 上述亮環重合處的空氣薄膜之厚度為多少 nm 。</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（15%）牛頓環用兩道不同的波長，其中一道 532 nm。它的第 4 道亮環與另一波長的第 3 道亮環重合，透鏡球面曲率半徑 80 cm。求 a. 另一道光的波長（nm）；b. 重合處的半徑（mm）；c. 重合處的空氣薄膜厚度（nm）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>已知波長</td><td>$\lambda_1=532\ \text{nm}$</td><td>「其中一道光的波長為 532 nm」</td></tr>
+          <tr><td>級數</td><td>$\lambda_1$ 第 4 亮環、$\lambda_2$ 第 3 亮環</td><td>「第 4 道亮環的位置恰與另一波長的第 3 道亮環的位置重合」</td></tr>
+          <tr><td>曲率半徑</td><td>$R=0.80\ \text{m}$</td><td>「曲率半徑為 80 cm」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：a. $\lambda_2$；b. $r$（mm）；c. $t$（nm）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>同一半徑 ⟺ 同一厚度，<b>所以</b> $(4-\tfrac12)\lambda_1=(3-\tfrac12)\lambda_2$；厚度由 $2t$ 得到，半徑再用 $r=\sqrt{2Rt}$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-k20m4-s1" data-sym="m,lam">
+        <span class="step-title">a. 另一波長</span>
+        <p class="sub">代入 $m_1=4$、$\lambda_1=532\ \text{nm}$、$m_2=3$（題目）：</p>
+        $$3.5(532)=2.5\lambda_2\ \Longrightarrow\ \lambda_2=\frac{3.5}{2.5}(532\ \text{nm})=744.8\ \text{nm}$$
+      </div>
+      <div class="step" data-step="o10-k20m4-s2" data-sym="t">
+        <span class="step-title">c. 空氣膜厚度</span>
+        $$t=\frac{3.5(532\ \text{nm})}{2}=931\ \text{nm}$$
+      </div>
+      <div class="step" data-step="o10-k20m4-s3" data-sym="rm,R">
+        <span class="step-title">b. 重合半徑</span>
+        <p class="sub">代入 $R=0.80\ \text{m}$（題目）、$t=931\times10^{-9}\ \text{m}$（步驟 2）：</p>
+        $$r=\sqrt{2(0.80)(931\times10^{-9})}\ \text{m}=\sqrt{1.490\times10^{-6}}\ \text{m}=1.22\ \text{mm}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>a. $744.8\ \text{nm}$；b. 約 $1.22\ \text{mm}$；c. $931\ \text{nm}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>與雲端 2020 手寫解答（744.8 nm、931 nm、$1.22\times10^{-3}$ m）一致 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o10-k24m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2024-04-23）第 3 題（112下）</span></div>
+    <h4>589.2 nm 第 6 亮環＝另一波長第 8 亮環（$R=50$ cm） <span class="must exam">考古高頻 3/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-k24m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k24m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/23/2024</p><p>3. (20%) 一牛頓環的實驗使用兩道不同的波長來進行，其中一道光的波長為 589.2 nm。若此波長的光產生的第 6 道亮環的位置恰與另一波長的第 8 道亮環的位置重合。若透鏡球面的曲率半徑為 50 cm，試求：</p><p>(a) 另一道光的波長為多少 nm？</p><p>(b) 上述亮環重合處的半徑為多少 mm？</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（20%）牛頓環用兩道不同的波長，其中一道 589.2 nm。它的第 6 道亮環與另一波長的第 8 道亮環重合，透鏡球面曲率半徑 50 cm。求 (a) 另一道光的波長（nm）；(b) 重合處的半徑（mm）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>已知波長</td><td>$\lambda_1=589.2\ \text{nm}$</td><td>「其中一道光的波長為 589.2 nm」</td></tr>
+          <tr><td>級數</td><td>$\lambda_1$ 第 6 亮環、$\lambda_2$ 第 8 亮環</td><td>「第 6 道亮環的位置恰與另一波長的第 8 道亮環的位置重合」：這次另一波長級數<b>較多</b></td></tr>
+          <tr><td>曲率半徑</td><td>$R=0.50\ \text{m}$</td><td>「曲率半徑為 50 cm」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $\lambda_2$；(b) $r$（mm）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>同一半徑 ⟺ 同一厚度，<b>所以</b> $(6-\tfrac12)\lambda_1=(8-\tfrac12)\lambda_2$。<b>因為</b>另一波長在同一處已經到第 8 環，<b>所以</b>它應該比 589.2 nm 短（藍紫光），可用來檢查。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-k24m3-s1" data-sym="m,lam">
+        <span class="step-title">(a) 另一波長</span>
+        <p class="sub">代入 $m_1=6$、$\lambda_1=589.2\ \text{nm}$、$m_2=8$（題目）：</p>
+        $$5.5(589.2)=7.5\lambda_2\ \Longrightarrow\ \lambda_2=\frac{5.5}{7.5}(589.2\ \text{nm})=432.1\ \text{nm}$$
+      </div>
+      <div class="step" data-step="o10-k24m3-s2" data-sym="rm,R">
+        <span class="step-title">(b) 重合半徑</span>
+        $$r^2=\left(m_1-\tfrac12\right)\lambda_1R$$
+        <p class="sub">代入 $m_1=6$、$\lambda_1=589.2\times10^{-9}\ \text{m}$、$R=0.50\ \text{m}$（題目）：</p>
+        $$r=\sqrt{5.5(589.2\times10^{-9})(0.50)}\ \text{m}=\sqrt{1.620\times10^{-6}}\ \text{m}=1.27\ \text{mm}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\lambda_2\approx432.1\ \text{nm}$；(b) $r\approx1.27\ \text{mm}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>級數多者波長短 ✔；與 114 級詳解（432.08 nm、1.273 mm）一致 ✔。空氣膜厚 $t=5.5(589.2)/2=1620\ \text{nm}$，考卷沒問，但若問就是這個。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>重合 ⟺ 同一個 $2t$：亮 $(m-\tfrac12)\lambda$、暗 $m\lambda$，先看清楚題目是亮環還是暗環。</li>
+    <li>另一波長與膜厚不需要 $R$；半徑 $r=\sqrt{2Rt}$ 才需要。</li>
+    <li>級數多的波長短；用另一波長再算一次半徑當驗算。</li>
+  </ol>
+</div>

@@ -1,0 +1,442 @@
+<h2>二、第二個解：Neumann 函數與一般解 <span class="pg">板書 10/21 照片 2–4</span></h2>
+
+<p class="lead">二階方程要兩個線性獨立解。大根 $\gamma=m$ 給了 $J_m$；老師接著試小根 $\gamma=-m$，得到 $J_{-m}$，卻發現 $m$ 是整數時 $J_{-m}=(-1)^mJ_m$——同一個解。所以第二解改用降階法 $y_2=J_m\int\frac{dx}{xJ_m^2}$，得到 Neumann 函數 $Y_m$，一般解 $y=AJ_m+BY_m$。網站另外補上 $m$ 不是整數（特別是半整數 $m=\tfrac12$，114 上期末）的情況。</p>
+
+<h3 id="am6-sec-neg">2.1 小根 $\gamma=-m$ 與 $J_{-m}$ <span class="pg-tag">照片 2 中、照片 3</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 2 中、照片 3 中）</span>
+  <p>考慮 $\gamma=-m$：$a_0=$ 待定，$a_1=0$</p>
+  $$(n)(n-2m)\,a_n+a_{n-2}=0$$
+  <p>$y_{\gamma=-m}\propto J_{-m}(x)$</p>
+  $$J_{-m}(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(-m+n)!\,n!}\Big(\frac x2\Big)^{-m+2n}$$
+  <p>$n\to n+m$：</p>
+  $$=\sum_{n=m}^{\infty}\frac{(-1)^{n+m}}{n!\,(n+m)!}\Big(\frac x2\Big)^{2n+m}$$
+</div>
+
+<div class="step" data-step="am6-sec-s1" data-sym="Gam">
+  <span class="step-title">平移後的下限應該是 $n=0$ <span class="added">板書誤植，網站更正</span></span>
+  <p>照片 3 平移後的求和下限寫成 $n=m$，應該是 $n=0$。理由分兩步：</p>
+  <p class="sub">① 原式裡 $n=0,1,\dots,m-1$ 的分母有 $(-m+n)!$ = 負整數的階乘。把階乘看成 $\Gamma(n-m+1)$，Gamma 函數在 $0,-1,-2,\dots$ 是極點，所以 $\tfrac{1}{(-k)!}=\tfrac1{\Gamma(1-k)}=0$（$k\ge1$）：</p>
+  $$J_{-m}(x)=\sum_{n=m}^{\infty}\frac{(-1)^n}{(n-m)!\,n!}\Big(\frac x2\Big)^{2n-m}\qquad(\text{前 }m\text{ 項為 0，從 }n=m\text{ 開始})$$
+  <p class="sub">② 再把 $n$ 換成 $n+m$（新的 $n$ 從 $m-m=0$ 開始）：</p>
+  $$J_{-m}(x)=\sum_{n=0}^{\infty}\frac{(-1)^{n+m}}{n!\,(n+m)!}\Big(\frac x2\Big)^{2n+m}=(-1)^mJ_m(x)$$
+  <p>板書把「先刪項、從 $n=m$ 開始」和「再平移」兩步混在一起，所以下限留成了 $m$；如果真的從 $n=m$ 開始，會少掉 $J_m$ 的前 $m$ 項，等式就不成立。結論 $J_{-m}=(-1)^mJ_m$（照片 4）是對的。</p>
+</div>
+
+<h3 id="am6-sec-ym">2.2 線性相依、降階法與 Neumann 函數 $Y_m$ <span class="pg-tag">照片 4</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 4 右）</span>
+  $$J_{-m}(x)=(-1)^mJ_m(x)$$
+  <p>$y_{\gamma=-m}$ 和 $y_{\gamma=m}$ 線性相依，$y_{\gamma=-m}$ 不是第二個線性獨立解</p>
+  <p>但可利用降階法，找第二個解　$y_2=y_1u$</p>
+</div>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 4 左、中）</span>
+  $$y_2=y_1\int\frac{e^{-\int P(x)dx}}{y_1^2}dx\qquad\Big(e^{-\int P\,dx}\to\frac1x\Big)$$
+  $$=J_m(x)\int\frac{1}{x\,[J_m(x)]^2}dx=\text{多項式級數}\ \propto\ \text{Neumann function }Y_m(x)$$
+  <p>① $J_m(x)$、$Y_m(x)$ 是 Bessel's diff. eq 的兩個線性獨立解</p>
+  <p>② general solution：$y(x)=A\,J_m(x)+B\,Y_m(x)$</p>
+</div>
+
+<div class="step" data-step="am6-sec-s2" data-sym="Ym">
+  <span class="step-title">板書省略的細節 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>$P=\tfrac1x$，$\int P\,dx=\ln x$，$e^{-\ln x}=\tfrac1x$，這是板書「$\to\tfrac1x$」的意思。板書寫「多項式級數」，嚴格說：$\dfrac1{xJ_m^2}$ 展開後有一項 $\tfrac{c}{x}$（$m=0$ 時 $c=1$，見板書例題 3），積分得 $c\ln x$，所以 $y_2$ 是「$J_m\ln x$ ＋ 一個（可能含負次方的）級數」，不是單純的冪級數。$\ln x$ 與負次方讓 $Y_m$ 在 $x\to0$ 發散到 $-\infty$（照片 5 的圖）。</p>
+  <p>標準的 $Y_m$ 是把 $y_2$ 再加上一個 $J_m$ 的倍數、乘一個常數，例如 $m=0$：</p>
+  $$Y_0(x)=\frac2\pi\Big[J_0(x)\Big(\ln\frac x2+\gamma_E\Big)+\frac{x^2}{4}-\frac{3x^4}{128}+\cdots\Big],\qquad\gamma_E=0.5772\ (\text{Euler 常數})$$
+  <p>加上 $J_m$ 的倍數不影響「是解、與 $J_m$ 獨立」，所以一般解寫 $AJ_m+BY_m$ 或 $AJ_m+By_2$ 都對；考卷上寫 $Y_m$ 即可。</p>
+</div>
+
+<h3 id="am6-sec-half">2.3 $m$ 不是整數：$J_{-m}$ 就是第二解 <span class="added">網站補充</span></h3>
+
+<p>板書只講整數 $m$（圓柱問題的情形）。$m$ 不是整數時，$J_{-m}$ 的分母 $\Gamma(n-m+1)$ 永遠不是極點，級數從 $x^{-m}$ 開始，和 $J_m$（從 $x^{m}$ 開始）不成比例，所以</p>
+$$m\notin\mathbb Z:\quad y=AJ_m(x)+BJ_{-m}(x)$$
+<p>標準定義 $Y_m=\dfrac{J_m\cos m\pi-J_{-m}}{\sin m\pi}$ 對非整數 $m$ 也是一個解；整數 $m$ 時分子、分母都趨近 0，取極限就得到板書的 Neumann 函數。最重要的特例是<b>半整數</b>：</p>
+$$J_{1/2}(x)=\sqrt{\frac{2}{\pi x}}\,\sin x,\qquad J_{-1/2}(x)=\sqrt{\frac{2}{\pi x}}\,\cos x$$
+<p>（推導見自編 2-a。）所以 114 上期末的 $x^2y''+xy'+(x^2-\tfrac14)y=0$ 就是 $m=\tfrac12$ 的 Bessel 方程，一般解 $\dfrac{A\sin x+B\cos x}{\sqrt x}$。</p>
+
+<div class="problem" data-kind="example" id="am6-ex-2">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/21 板書（照片 2–4）· (a)(b) 是板書內容，(c) 由網站補</span></div>
+    <h4>證明 $J_{-m}=(-1)^mJ_m$，並說明為什麼小根不給第二個解</h4>
+    <button type="button" class="exam-btn" data-exam="am6-ex-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-ex-2"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>考慮 $\gamma=-m$，$a_0=$ 待定，$a_1=0$；$(n)(n-2m)a_n+a_{n-2}=0$；$y_{\gamma=-m}\propto J_{-m}(x)$</p><p>$J_{-m}(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(-m+n)!\,n!}\left(\frac x2\right)^{-m+2n}$　$n\to n+m$　$=\sum_{n=m}^{\infty}\frac{(-1)^{n+m}}{n!\,(n+m)!}\left(\frac x2\right)^{2n+m}$</p><p>$J_{-m}(x)=(-1)^mJ_m(x)$；$y_{\gamma=-m}$ 和 $y_{\gamma=m}$ 線性相依，$y_{\gamma=-m}$ 不是第二個線性獨立解</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$m$ 為正整數。由定義 $J_{-m}(x)=\sum_{n\ge0}\frac{(-1)^n}{(n-m)!\,n!}\big(\frac x2\big)^{2n-m}$：(a) 證明 $J_{-m}(x)=(-1)^mJ_m(x)$；(b) 說明為什麼 $\gamma=-m$ 得不到第二個線性獨立解；(c) 以 $m=1$ 寫出 $J_{-1}$ 的前兩個非零項驗證。<span class=\"added\">(a)(b) 是板書照片 3–4 的內容；(c) 由網站補</span></p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$J_{-m}$ 的定義</td><td>$\sum\frac{(-1)^n}{(n-m)!\,n!}(\frac x2)^{2n-m}$</td><td>板書照片 2「$J_{-m}(x)=\sum\cdots$」</td></tr>
+          <tr><td>$m$</td><td>正整數</td><td>題目；板書 $m=0,\pm1,\pm2,\dots$</td></tr>
+          <tr><td>負整數階乘</td><td>$\frac1{(-k)!}=\frac1{\Gamma(1-k)}=0$（$k\ge1$）</td><td>題目沒寫，要自己知道：$\Gamma$ 在非正整數是極點</td></tr>
+          <tr><td>$J_m$</td><td>$\sum\frac{(-1)^n}{n!(n+m)!}(\frac x2)^{2n+m}$</td><td>第 1 節</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明；(b) 線性相依的說明；(c) $J_{-1}$ 前兩項。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>前 $m$ 項的分母是負整數的階乘，<b>所以</b>先把它們刪掉，求和實際上從 $n=m$ 開始；<b>因為</b>剩下的式子和 $J_m$ 只差一個平移，<b>所以</b>令 $n=k+m$ 讓下限回到 0，逐項和 $J_m$ 比對。</p>
+      <p><b>因為</b>兩個解成比例（Wronskian 為 0），<b>所以</b>小根沒有提供新的解，要另外用降階法。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-ex-2-s1" data-sym="Gam">
+        <span class="step-title">(a) 刪掉前 $m$ 項</span>
+        <p class="sub">$n=0,\dots,m-1$ 時 $n-m=-m,\dots,-1$，代入 $\frac1{(-k)!}=0$：</p>
+        $$J_{-m}(x)=\sum_{n=m}^{\infty}\frac{(-1)^n}{(n-m)!\,n!}\Big(\frac x2\Big)^{2n-m}$$
+      </div>
+      <div class="step" data-step="am6-ex-2-s2" data-sym="Jm">
+        <span class="step-title">(a) 平移 $n=k+m$</span>
+        <p class="sub">$n=m$ 對應 $k=0$；$(n-m)!=k!$、$n!=(k+m)!$、$2n-m=2k+m$、$(-1)^n=(-1)^m(-1)^k$：</p>
+        $$J_{-m}(x)=(-1)^m\sum_{k=0}^{\infty}\frac{(-1)^k}{k!\,(k+m)!}\Big(\frac x2\Big)^{2k+m}=(-1)^mJ_m(x)$$
+      </div>
+      <div class="step" data-step="am6-ex-2-s3">
+        <span class="step-title">(b) 為什麼不是第二個解</span>
+        <p>$J_{-m}$ 是 $J_m$ 的常數倍，Wronskian $W(J_m,J_{-m})=(-1)^mW(J_m,J_m)=0$，線性相依。一般解需要兩個獨立解，所以要用降階法另找 $y_2$（板書「但可利用降階法」）。自編 1-c 從遞迴的角度看同一件事：小根在 $n=2m$ 那一格出現 $0=-a_{2m-2}\ne0$。</p>
+      </div>
+      <div class="step" data-step="am6-ex-2-s4">
+        <span class="step-title">(c) $m=1$ 驗證</span>
+        <p class="sub">代入 $m=1$，$n=0$ 那項是 $\frac1{(-1)!}=0$；$n=1,2$：</p>
+        $$J_{-1}=\frac{(-1)^1}{0!\,1!}\Big(\frac x2\Big)^1+\frac{(-1)^2}{1!\,2!}\Big(\frac x2\Big)^3+\cdots=-\frac x2+\frac{x^3}{16}-\cdots$$
+        <p>$J_1=\frac x2-\frac{x^3}{16}+\cdots$，所以 $J_{-1}=-J_1=(-1)^1J_1$ ✔。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 前 $m$ 項分母含 $\frac1{(-k)!}=0$，刪去後令 $n=k+m$，得 $J_{-m}=(-1)^mJ_m$（平移後下限是 $0$，板書寫 $n=m$ 是誤植）；(b) 兩者成比例、線性相依，需用降階法求 $Y_m$；(c) $J_{-1}=-\frac x2+\frac{x^3}{16}-\cdots=-J_1$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>驗算腳本用 sympy 的 <code>besselj(-m,x)</code> 與 <code>besselj(m,x)</code> 在 $m=1,2,3$、多個 $x$ 點比較，$J_{-m}-(-1)^mJ_m=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="am6-ex-3">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/21 板書（照片 4）· 板書只有一般公式，m=0 的 (a)(b)(c) 由網站依板書公式設計</span></div>
+    <h4>照板書的降階法，以 $m=0$ 實際算出第二解</h4>
+    <button type="button" class="exam-btn" data-exam="am6-ex-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-ex-3"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>但可利用降階法，找第二個解 $y_2=y_1u$</p><p>$y_2=y_1\int\frac{e^{-\int P(x)dx}}{y_1^2}dx$（$e^{-\int P dx}\to\frac1x$）$=J_m(x)\int\frac{1}{x[J_m(x)]^2}dx=$ 多項式級數 $\propto$ Neumann function $Y_m(x)$</p><p>① $J_m(x)$、$Y_m(x)$ 是 Bessel's diff. eq 的兩個線性獨立解　② general solution $y(x)=AJ_m(x)+BY_m(x)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>板書：$y_2=y_1\int\frac{e^{-\int P\,dx}}{y_1^2}dx=J_m\int\frac{dx}{x[J_m]^2}$。取 $m=0$、$y_1=J_0=1-\frac{x^2}4+\frac{x^4}{64}-\cdots$：(a) 求 $\frac{1}{xJ_0^2}$ 到 $x^3$ 項；(b) 求 $y_2$ 到 $x^4$ 項；(c) 說明 $y_2$ 在 $x\to0$ 的行為，並和 Neumann 函數 $Y_0$ 對照。<span class=\"added\">板書照片 4 只寫了一般公式 $y_2=J_m\int\frac{dx}{xJ_m^2}\propto Y_m$；取 $m=0$ 的 (a)(b)(c) 三小題是網站依這個公式設計的</span></p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>降階公式</td><td>$y_2=y_1\int\frac{e^{-\int P\,dx}}{y_1^2}dx$</td><td>板書照片 4 左</td></tr>
+          <tr><td>$P$</td><td>$\frac1x$ ⇒ $e^{-\int P}=\frac1x$</td><td>標準式；板書「$\to\frac1x$」</td></tr>
+          <tr><td>$y_1$</td><td>$J_0=1-\frac{x^2}4+\frac{x^4}{64}-\cdots$</td><td>第 1 節（$m=0$）</td></tr>
+          <tr><td>$Y_0$</td><td>$\frac2\pi\big[y_2+(\gamma_E-\ln2)J_0\big]$</td><td>2.2 節的標準形式（題目沒給，用標準定義）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 被積函數展開；(b) $y_2$ 到 $x^4$；(c) $x\to0$ 的行為與 $Y_0$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $J_0$ 沒有封閉形式，<b>所以</b> $\frac1{J_0^2}$ 只能用級數：先算 $J_0^2$，再用 $\frac1{1-s}=1+s+s^2+\cdots$ 展開（$s$ 是小量）。</p>
+      <p><b>因為</b>被積函數的首項是 $\frac1x$，<b>所以</b>積分一定出現 $\ln x$；這就是 $Y_0$ 在 0 發散、不能和 $J_0$ 成比例的原因。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-ex-3-s1">
+        <span class="step-title">(a) 先算 $J_0^2$</span>
+        <p class="sub">$(1-\frac{x^2}4+\frac{x^4}{64})^2$，保留到 $x^4$：交叉項 $2\cdot(-\frac{x^2}4)=-\frac{x^2}2$；$x^4$ 項 $\frac{x^4}{16}+2\cdot\frac{x^4}{64}=\frac{3x^4}{32}$：</p>
+        $$J_0^2=1-\frac{x^2}{2}+\frac{3x^4}{32}-\cdots$$
+      </div>
+      <div class="step" data-step="am6-ex-3-s2">
+        <span class="step-title">(a) 倒數展開</span>
+        <p class="sub">令 $s=\frac{x^2}2-\frac{3x^4}{32}$，$\frac1{J_0^2}=\frac1{1-s}=1+s+s^2+\cdots$，$s^2=\frac{x^4}4+\cdots$：</p>
+        $$\frac1{J_0^2}=1+\frac{x^2}2+\Big(-\frac3{32}+\frac14\Big)x^4=1+\frac{x^2}{2}+\frac{5x^4}{32}+\cdots$$
+        $$\frac{1}{xJ_0^2}=\frac1x+\frac x2+\frac{5x^3}{32}+\cdots$$
+      </div>
+      <div class="step" data-step="am6-ex-3-s3">
+        <span class="step-title">(b) 逐項積分</span>
+        $$u=\int\frac{dx}{xJ_0^2}=\ln x+\frac{x^2}{4}+\frac{5x^4}{128}+\cdots$$
+        <p>（積分常數只會加上 $J_0$ 的倍數，取 0。）</p>
+      </div>
+      <div class="step" data-step="am6-ex-3-s4">
+        <span class="step-title">(b) $y_2=uJ_0$</span>
+        <p class="sub">非對數部分 $(1-\frac{x^2}4)(\frac{x^2}4+\frac{5x^4}{128})$ 到 $x^4$：$\frac{x^2}4+\big(\frac5{128}-\frac1{16}\big)x^4=\frac{x^2}4-\frac{3x^4}{128}$：</p>
+        $$y_2=J_0(x)\ln x+\frac{x^2}{4}-\frac{3x^4}{128}+\cdots$$
+      </div>
+      <div class="step" data-step="am6-ex-3-s5" data-sym="Ym">
+        <span class="step-title">(c) $x\to0$ 的行為與 $Y_0$</span>
+        <p>$x\to0^+$ 時 $J_0\to1$、$\ln x\to-\infty$，所以 $y_2\approx\ln x\to-\infty$。標準的 Neumann 函數是 $Y_0=\frac2\pi\big[y_2+(\gamma_E-\ln2)J_0\big]=\frac2\pi\big[J_0(\ln\frac x2+\gamma_E)+\frac{x^2}4-\frac{3x^4}{128}+\cdots\big]$，同樣在 0 發散（照片 5 的 $Y_0$ 從 $-\infty$ 上來）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\frac1{xJ_0^2}=\frac1x+\frac x2+\frac{5x^3}{32}+\cdots$；(b) $y_2=J_0\ln x+\frac{x^2}4-\frac{3x^4}{128}+\cdots$；(c) $y_2\sim\ln x\to-\infty$，$Y_0=\frac2\pi[y_2+(\gamma_E-\ln2)J_0]$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>令 $L[y]=x^2y''+xy'+x^2y$。$L[J_0\ln x]=\ln x\,L[J_0]+2xJ_0'=2xJ_0'=-x^2+\frac{x^4}8$；$v=\frac{x^2}4-\frac{3x^4}{128}$ 時 $L[v]=x^2-\frac{x^4}8$（$x^2v''=\frac{x^2}2-\frac{9x^4}{32}$、$xv'=\frac{x^2}2-\frac{3x^4}{32}$、$x^2v=\frac{x^4}4$），兩者相加為 0 ✔。驗算腳本代入到 $x^8$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am6-k114-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2025.Dec. 第 2 題（114上）</span></div>
+    <h4>$x^2y''+xy'+(x^2-\tfrac14)y=0$：用 Bessel 函數的角度重看</h4>
+    <button type="button" class="exam-btn" data-exam="am6-k114-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-k114-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. (25%) Solve $x^2y''+xy'+\left(x^2-\frac{1}{4}\right)y=0$ by the Frobenius method. You only need to find the first three nonzero terms of each of the two linearly independent series solutions.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（25%）用 Frobenius 法解 $x^2y''+xy'+\big(x^2-\tfrac14\big)y=0$，兩個線性獨立的級數解各寫出前三個非零項。（本題在第 5 章第 3 節有逐步的 Frobenius 詳解；這裡從 Bessel 方程 $m=\tfrac12$ 的角度做，並寫出封閉形式。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$x^2y''+xy'+(x^2-\frac14)y=0$</td><td>題目；和 Bessel 方程比較 $m^2=\frac14$</td></tr>
+          <tr><td>階數</td><td>$m=\frac12$（半整數）</td><td>$m^2=\frac14$ 自己讀出</td></tr>
+          <tr><td>方法</td><td>Frobenius</td><td>「by the Frobenius method」</td></tr>
+          <tr><td>要寫的項數</td><td>每個解 3 個非零項</td><td>「first three nonzero terms of each」</td></tr>
+          <tr><td>配分</td><td>25%</td><td>「(25%)」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：兩個線性獨立解，各前三個非零項。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這就是 $m=\tfrac12$ 的 Bessel 方程，<b>所以</b>第 1 節的推導可以直接套：$\gamma=\pm\tfrac12$、$a_1$ 那一格、遞迴 $(n+\gamma+\tfrac12)(n+\gamma-\tfrac12)a_n=-a_{n-2}$。</p>
+      <p><b>因為</b>兩根差 $2m=1$ 是奇數，<b>所以</b>依自編 1-c，小根在 $n=1$ 得到 $0\cdot a_1=0$，仍然成功——不需要降階法，兩個解就是 $J_{1/2}$、$J_{-1/2}$。考卷上還是要把 Frobenius 的過程寫出來（題目指定方法）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-k114-2-s1" data-sym="gam">
+        <span class="step-title">指標方程式與遞迴</span>
+        <p class="sub">第 1 節的結果代入 $m=\tfrac12$：</p>
+        $$\big(\gamma^2-\tfrac14\big)a_0=0\Rightarrow\gamma=\pm\tfrac12;\qquad\big(\gamma+\tfrac32\big)\big(\gamma+\tfrac12\big)a_1=0;\qquad\big(n+\gamma+\tfrac12\big)\big(n+\gamma-\tfrac12\big)a_n=-a_{n-2}$$
+      </div>
+      <div class="step" data-step="am6-k114-2-s2" data-sym="an">
+        <span class="step-title">$\gamma=\tfrac12$</span>
+        <p class="sub">$n=1$：$2\cdot1\cdot a_1=0\Rightarrow a_1=0$；遞迴 $(n+1)n\,a_n=-a_{n-2}$，$n=2,4$：</p>
+        $$a_2=-\frac{a_0}{3\cdot2}=-\frac{a_0}{6},\qquad a_4=-\frac{a_2}{5\cdot4}=\frac{a_0}{120}$$
+        $$y_1=x^{1/2}\Big(1-\frac{x^2}{6}+\frac{x^4}{120}-\cdots\Big)$$
+      </div>
+      <div class="step" data-step="am6-k114-2-s3">
+        <span class="step-title">$\gamma=-\tfrac12$：$n=1$ 那一格</span>
+        <p class="sub">$n=1$：$\big(1-\tfrac12+\tfrac12\big)\big(1-\tfrac12-\tfrac12\big)a_1=1\cdot0\cdot a_1=0$：</p>
+        <p>右邊是 0，$a_1$ 自由（取 0；非零只會加回 $y_1$）。小根成功。</p>
+      </div>
+      <div class="step" data-step="am6-k114-2-s4" data-sym="an">
+        <span class="step-title">$\gamma=-\tfrac12$ 的級數</span>
+        <p class="sub">遞迴 $n(n-1)a_n=-a_{n-2}$，$n=2,4$：</p>
+        $$a_2=-\frac{a_0}{2\cdot1}=-\frac{a_0}{2},\qquad a_4=-\frac{a_2}{4\cdot3}=\frac{a_0}{24}$$
+        $$y_2=x^{-1/2}\Big(1-\frac{x^2}{2}+\frac{x^4}{24}-\cdots\Big)$$
+      </div>
+      <div class="step" data-step="am6-k114-2-s5" data-sym="Jm">
+        <span class="step-title">認出封閉形式</span>
+        <p>$1-\frac{x^2}{6}+\frac{x^4}{120}=\frac{\sin x}{x}$ 的前三項、$1-\frac{x^2}2+\frac{x^4}{24}=\cos x$ 的前三項：</p>
+        $$y_1=\frac{\sin x}{\sqrt x}=\sqrt{\tfrac\pi2}\,J_{1/2}(x),\qquad y_2=\frac{\cos x}{\sqrt x}=\sqrt{\tfrac\pi2}\,J_{-1/2}(x)$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_1=x^{1/2}\big(1-\frac{x^2}6+\frac{x^4}{120}-\cdots\big)$、$y_2=x^{-1/2}\big(1-\frac{x^2}2+\frac{x^4}{24}-\cdots\big)$；即 $\frac{\sin x}{\sqrt x}$、$\frac{\cos x}{\sqrt x}$（$\propto J_{\pm1/2}$），一般解 $y=\frac{A\sin x+B\cos x}{\sqrt x}$。（與老師參考解答一致；參考解答中 $a_4$ 那一行的下標誤植見第 5 章第 3 節。）</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=\frac{\sin x}{\sqrt x}$：$y'=\frac{\cos x}{\sqrt x}-\frac{\sin x}{2x^{3/2}}$，$y''=-\frac{\sin x}{\sqrt x}-\frac{\cos x}{x^{3/2}}+\frac{3\sin x}{4x^{5/2}}$；$x^2y''+xy'=-x^{3/2}\sin x+\frac{\sin x}{4\sqrt x}$，加上 $(x^2-\frac14)y=x^{3/2}\sin x-\frac{\sin x}{4\sqrt x}$ 得 0 ✔。驗算腳本用 checkodesol 確認兩個解。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-02a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>由 Gamma 函數級數推出 $J_{\pm1/2}$ 的封閉形式</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-02a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$J_\nu(x)=\sum_{n\ge0}\frac{(-1)^n}{n!\,\Gamma(n+\nu+1)}\big(\frac x2\big)^{2n+\nu}$，$\Gamma(\tfrac12)=\sqrt\pi$。(a) 用 $\Gamma(z+1)=z\Gamma(z)$ 證明 $n!\,\Gamma(n+\tfrac32)=\frac{\sqrt\pi\,(2n+1)!}{2^{2n+1}}$、$n!\,\Gamma(n+\tfrac12)=\frac{\sqrt\pi\,(2n)!}{2^{2n}}$。(b) 由此證明 $J_{1/2}=\sqrt{\frac2{\pi x}}\sin x$、$J_{-1/2}=\sqrt{\frac2{\pi x}}\cos x$。(c) 求 $J_{1/2}$ 的全部正零點，並和板書 $J_0$ 零點表的間距比較。(d) 證明 $J_{1/2}^2+J_{-1/2}^2=\frac2{\pi x}$。(e) 求 $x^2y''+xy'+\big(\lambda^2x^2-\frac14\big)y=0$ 在 $x\to0^+$ 有界、且 $y(1)=0$ 的所有 $\lambda\gt0$ 與對應的解；說明為什麼這裡的本徵值不用查零點表（對照 113 上期末），以及為什麼條件要寫「有界」而不能寫成 $y(0)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>級數定義</td><td>$J_\nu=\sum\frac{(-1)^n}{n!\Gamma(n+\nu+1)}(\frac x2)^{2n+\nu}$</td><td>題目（1.4 節把 $(m+n)!$ 換成 $\Gamma$）</td></tr>
+          <tr><td>Gamma 性質</td><td>$\Gamma(z+1)=z\Gamma(z)$、$\Gamma(\tfrac12)=\sqrt\pi$</td><td>題目</td></tr>
+          <tr><td>$\nu$</td><td>$\pm\frac12$</td><td>(b)</td></tr>
+          <tr><td>$J_0$ 零點</td><td>2.4、5.5、8.7</td><td>板書照片 6</td></tr>
+          <tr><td>(e) 的條件</td><td>$x\to0^+$ 有界；$y(1)=0$</td><td>(e)「有界」「$y(1)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 兩個 Gamma 恆等式；(b) 封閉形式；(c) 零點與比較；(d) 平方和；(e) 本徵值 $\lambda$ 與解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>半整數的 $\Gamma$ 一路用 $\Gamma(z+1)=z\Gamma(z)$ 降到 $\Gamma(\tfrac12)=\sqrt\pi$，會得到奇數連乘 $1\cdot3\cdot5\cdots$，<b>所以</b>先把它和 $n!$ 合併成階乘 $(2n+1)!$（偶數連乘 $2\cdot4\cdots2n=2^nn!$ 補進去），級數係數就變成 $\sin$、$\cos$ 的 $\frac{1}{(2n+1)!}$、$\frac1{(2n)!}$。</p>
+      <p><b>因為</b>封閉形式只含 $\sin x$，<b>所以</b>零點可以精確求；比較間距可以看出 Bessel 函數在 $x$ 大時「像衰減的正弦」。</p>
+      <p><b>因為</b> (e) 是 $a=\lambda$、$m=\frac12$ 的 Bessel 方程（1.4 節的變形），<b>所以</b>一般解直接用 (b) 的封閉形式寫成 $\frac{A\sin\lambda x+B\cos\lambda x}{\sqrt x}$；有界條件刪 $\cos$ 那一項，$y(1)=0$ 變成 $\sin\lambda=0$——和 113 上期末的 $J_0(3\lambda)=0$ 是同一個結構，只是這裡的零點有精確值。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-02a-s1" data-sym="Gam">
+        <span class="step-title">(a) $\Gamma(n+\tfrac32)$</span>
+        <p class="sub">連用 $\Gamma(z+1)=z\Gamma(z)$ 降 $n+1$ 次到 $\Gamma(\frac12)=\sqrt\pi$：</p>
+        $$\Gamma\big(n+\tfrac32\big)=\tfrac{2n+1}{2}\cdot\tfrac{2n-1}{2}\cdots\tfrac12\,\sqrt\pi=\frac{1\cdot3\cdots(2n+1)}{2^{n+1}}\sqrt\pi$$
+        <p class="sub">乘 $n!$，並用 $2^nn!=2\cdot4\cdots2n$ 把偶數補進奇數連乘：</p>
+        $$n!\,\Gamma\big(n+\tfrac32\big)=\frac{(2\cdot4\cdots2n)\,(1\cdot3\cdots(2n+1))}{2^n\cdot2^{n+1}}\sqrt\pi=\frac{\sqrt\pi\,(2n+1)!}{2^{2n+1}}$$
+        <p>同理 $\Gamma(n+\frac12)=\frac{1\cdot3\cdots(2n-1)}{2^n}\sqrt\pi$，$n!\,\Gamma(n+\frac12)=\frac{\sqrt\pi\,(2n)!}{2^{2n}}$。（$n=0$：$\Gamma(\frac32)=\frac{\sqrt\pi}2$ ✔）</p>
+      </div>
+      <div class="step" data-step="am6-sf-02a-s2" data-sym="Jm">
+        <span class="step-title">(b) $J_{1/2}$</span>
+        <p class="sub">代入 (a)，$(\frac x2)^{2n+1/2}=\frac{x^{2n+1/2}}{2^{2n+1/2}}$：</p>
+        $$J_{1/2}=\sum\frac{(-1)^n\,2^{2n+1}}{\sqrt\pi\,(2n+1)!}\cdot\frac{x^{2n+1/2}}{2^{2n+1/2}}=\sqrt{\frac2\pi}\,x^{-1/2}\sum\frac{(-1)^nx^{2n+1}}{(2n+1)!}=\sqrt{\frac{2}{\pi x}}\sin x$$
+      </div>
+      <div class="step" data-step="am6-sf-02a-s3">
+        <span class="step-title">(b) $J_{-1/2}$</span>
+        <p class="sub">$\nu=-\frac12$：分母 $n!\,\Gamma(n+\frac12)$，$(\frac x2)^{2n-1/2}=\frac{x^{2n-1/2}}{2^{2n-1/2}}$：</p>
+        $$J_{-1/2}=\sum\frac{(-1)^n\,2^{2n}}{\sqrt\pi\,(2n)!}\cdot\frac{x^{2n-1/2}}{2^{2n-1/2}}=\sqrt{\frac2\pi}\,x^{-1/2}\sum\frac{(-1)^nx^{2n}}{(2n)!}=\sqrt{\frac{2}{\pi x}}\cos x$$
+      </div>
+      <div class="step" data-step="am6-sf-02a-s4" data-sym="jmn">
+        <span class="step-title">(c) 零點與比較</span>
+        <p>$\sqrt{2/(\pi x)}\ne0$，所以 $J_{1/2}=0\iff\sin x=0$：$x=n\pi=3.14,\ 6.28,\ 9.42,\dots$，間距正好 $\pi$。</p>
+        <p class="sub">板書 $J_0$ 零點 2.4、5.5、8.7 的間距：$5.5-2.4=3.1$、$8.7-5.5=3.2$，也接近 $\pi$：</p>
+        <p>所有 Bessel 函數在 $x$ 大時都像 $\sqrt{\frac2{\pi x}}\cos(x-\frac{\nu\pi}2-\frac\pi4)$，零點間距趨近 $\pi$；半整數階的這個近似剛好是精確的。</p>
+      </div>
+      <div class="step" data-step="am6-sf-02a-s5">
+        <span class="step-title">(d) 平方和</span>
+        $$J_{1/2}^2+J_{-1/2}^2=\frac2{\pi x}\big(\sin^2x+\cos^2x\big)=\frac{2}{\pi x}$$
+        <p>所以兩者不會同時為零（零點交錯），振幅包絡是 $\sqrt{2/(\pi x)}$。</p>
+      </div>
+      <div class="step" data-step="am6-sf-02a-s6" data-sym="mm">
+        <span class="step-title">(e) 一般解與有界條件</span>
+        <p class="sub">令 $t=\lambda x$，方程式變成 $t^2y_{tt}+ty_t+(t^2-\frac14)y=0$，$m=\frac12$；代入 (b)，$\frac1{\sqrt{\lambda x}}$ 的常數併進係數：</p>
+        $$y=AJ_{1/2}(\lambda x)+BJ_{-1/2}(\lambda x)=\frac{A'\sin\lambda x+B'\cos\lambda x}{\sqrt x}$$
+        <p>$x\to0^+$：$\frac{\cos\lambda x}{\sqrt x}\to\infty$，所以 $B'=0$；$\frac{\sin\lambda x}{\sqrt x}\approx\lambda\sqrt x\to0$，有界 ✓。注意它在 0 的值是 <b>0</b>（$J_{1/2}(0)=0$），所以題目若寫「$y(0)=1$」就無解——這是要寫「有界」的原因（113 上期末是 $m=0$，$J_0(0)=1$ 才能給 $y(0)=1$）。</p>
+      </div>
+      <div class="step" data-step="am6-sf-02a-s7" data-sym="jmn">
+        <span class="step-title">(e) $y(1)=0$ 決定 $\lambda$</span>
+        <p class="sub">代入 $x=1$：$A'\sin\lambda=0$，$A'\ne0$：</p>
+        $$\lambda=n\pi\ (n=1,2,3,\dots),\qquad y_n=\frac{\sin n\pi x}{\sqrt x}\propto J_{1/2}(n\pi x)$$
+        <p>本徵值就是 $J_{1/2}$ 的零點 $j_{1/2,n}=n\pi$（(c)），所以是精確值，不必查表。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $n!\Gamma(n+\frac32)=\frac{\sqrt\pi(2n+1)!}{2^{2n+1}}$、$n!\Gamma(n+\frac12)=\frac{\sqrt\pi(2n)!}{2^{2n}}$；(b) $J_{1/2}=\sqrt{\frac2{\pi x}}\sin x$、$J_{-1/2}=\sqrt{\frac2{\pi x}}\cos x$；(c) 零點 $n\pi$，間距 $\pi$，與 $J_0$ 零點間距約 3.1–3.2 相近；(d) $\frac{2}{\pi x}$；(e) $\lambda=n\pi$，$y_n=\frac{\sin n\pi x}{\sqrt x}$（$y(0^+)=0$，所以只能要求「有界」）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$x=1$：$\sqrt{2/\pi}\sin1=0.7979\times0.8415=0.6714$，sympy 的 $J_{1/2}(1)=0.6714$ ✔。驗算腳本以 sympy 的 <code>besselj(±1/2,x)</code> 比較封閉形式，並驗證 (a) 的兩個 Gamma 恆等式 $n=0$–$6$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-02b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>Wronskian：$W(J_m,J_{-m})=-\frac{2\sin m\pi}{\pi x}$</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-02b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 由 Abel 公式說明 Bessel 方程任兩個解的 Wronskian 一定是 $W=\frac{C}{x}$。(b) 用 $J_{\pm m}$ 在 $x\to0$ 的首項求 $C$，證明 $W(J_m,J_{-m})=J_mJ_{-m}'-J_m'J_{-m}=-\frac{2\sin m\pi}{\pi x}$（可用 $\Gamma(1+m)\Gamma(1-m)=\frac{m\pi}{\sin m\pi}$）。(c) 由此說明「$J_m$、$J_{-m}$ 線性相依 $\iff$ $m$ 是整數」。(d) 用自編 2-a 的封閉形式直接算 $m=\frac12$ 的 Wronskian 驗證。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式</td><td>$P=\frac1x$</td><td>第 1 節</td></tr>
+          <tr><td>Abel 公式</td><td>$W'=-PW$</td><td>題目「由 Abel 公式」；第 2 章（降階法的同一個推導）</td></tr>
+          <tr><td>首項</td><td>$J_{\pm m}\approx\frac{(x/2)^{\pm m}}{\Gamma(1\pm m)}$</td><td>級數 $n=0$ 項</td></tr>
+          <tr><td>反射公式</td><td>$\Gamma(1+m)\Gamma(1-m)=\frac{m\pi}{\sin m\pi}$</td><td>題目給的提示</td></tr>
+          <tr><td>半整數封閉形式</td><td>$J_{\pm1/2}=\sqrt{\frac2{\pi x}}\sin x,\cos x$</td><td>自編 2-a</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $W=C/x$；(b) $C=-\frac{2\sin m\pi}{\pi}$；(c) 相依的條件；(d) $m=\frac12$ 驗證。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $W$ 對任何兩解都滿足一階方程 $W'=-PW$，<b>所以</b>形式 $C/x$ 先由方程式決定，只剩一個常數；<b>因為</b>常數不隨 $x$ 改變，<b>所以</b>可以在最好算的地方（$x\to0$，只看首項）把它求出來——這比把整個級數相乘簡單得多。</p>
+      <p><b>因為</b> $W\equiv0$ 正是線性相依的判準，<b>所以</b>只要看 $\sin m\pi$ 何時為 0。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-02b-s1" data-sym="WW">
+        <span class="step-title">(a) Abel 公式</span>
+        <p>$W=y_1y_2'-y_1'y_2$，$W'=y_1y_2''-y_1''y_2$，把 $y''=-Py'-Qy$ 代入兩個解，$Q$ 的項抵消：$W'=-PW$。</p>
+        <p class="sub">代入 $P=\frac1x$：</p>
+        $$\frac{dW}{W}=-\frac{dx}{x}\ \Longrightarrow\ W=\frac{C}{x}$$
+      </div>
+      <div class="step" data-step="am6-sf-02b-s2" data-sym="Gam">
+        <span class="step-title">(b) 首項代入</span>
+        <p class="sub">記 $a=\frac{1}{\Gamma(1+m)}$、$b=\frac1{\Gamma(1-m)}$；$J_m\approx a(\frac x2)^m$、$J_m'\approx\frac{am}{x}(\frac x2)^m$，$J_{-m}\approx b(\frac x2)^{-m}$、$J_{-m}'\approx-\frac{bm}{x}(\frac x2)^{-m}$：</p>
+        $$W\approx a(\tfrac x2)^m\cdot\Big(-\frac{bm}{x}\Big)(\tfrac x2)^{-m}-\frac{am}{x}(\tfrac x2)^m\cdot b(\tfrac x2)^{-m}=-\frac{2m\,ab}{x}$$
+        <p>（高次項的貢獻帶有額外的 $x^2$，$x\to0$ 時消失；因為 $xW=C$ 是常數，首項就是精確值。）</p>
+      </div>
+      <div class="step" data-step="am6-sf-02b-s3">
+        <span class="step-title">(b) 反射公式</span>
+        <p class="sub">$ab=\frac1{\Gamma(1+m)\Gamma(1-m)}=\frac{\sin m\pi}{m\pi}$（題目的提示）：</p>
+        $$W(J_m,J_{-m})=-\frac{2m}{x}\cdot\frac{\sin m\pi}{m\pi}=-\frac{2\sin m\pi}{\pi x}$$
+      </div>
+      <div class="step" data-step="am6-sf-02b-s4">
+        <span class="step-title">(c) 何時相依</span>
+        <p>$W\equiv0\iff\sin m\pi=0\iff m\in\mathbb Z$。整數 $m$：$W=0$，相依（和板書例題 2 的 $J_{-m}=(-1)^mJ_m$ 一致）；非整數 $m$：$W\ne0$，$AJ_m+BJ_{-m}$ 是一般解。</p>
+      </div>
+      <div class="step" data-step="am6-sf-02b-s5">
+        <span class="step-title">(d) $m=\tfrac12$ 直接驗證</span>
+        <p class="sub">令 $f=\sqrt{2/\pi}\,x^{-1/2}$，$J_{1/2}=f\sin x$、$J_{-1/2}=f\cos x$；乘積法則中 $ff'$ 的項互相抵消：</p>
+        $$W=f\sin x\,(f\cos x)'-(f\sin x)'f\cos x=f^2(-\sin^2x-\cos^2x)=-\frac{2}{\pi x}$$
+        <p>公式給 $-\frac{2\sin(\pi/2)}{\pi x}=-\frac2{\pi x}$ ✔。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $W'=-\frac Wx$ ⇒ $W=\frac Cx$；(b) $C=-2m\cdot\frac{1}{\Gamma(1+m)\Gamma(1-m)}=-\frac{2\sin m\pi}{\pi}$；(c) $m$ 為整數時 $W=0$ 相依，否則獨立；(d) $m=\frac12$：$-\frac2{\pi x}$ 與公式一致。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>驗算腳本對 $m=\frac13,\frac12,0.7$ 用 sympy 數值計算 $J_mJ_{-m}'-J_m'J_{-m}$ 在 $x=0.5,2,7$ 的值，與 $-\frac{2\sin m\pi}{\pi x}$ 相符；$m=1$ 時為 0 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-02c">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>降階法什麼時候會出現 $\ln x$？比較 $m=\tfrac12$ 與 $m=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-02c">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用板書的降階法 $y_2=y_1\int\frac{dx}{xy_1^2}$：(a) $m=\tfrac12$，$y_1=\frac{\sin x}{\sqrt x}$，求 $y_2$ 的封閉形式，說明它就是 $J_{-1/2}$ 的倍數、沒有 $\ln x$。(b) $m=1$，$y_1=J_1=\frac x2-\frac{x^3}{16}+\frac{x^5}{384}-\cdots$，求 $\frac1{xJ_1^2}$ 到 $x^1$ 項，並寫出 $y_2$ 到 $x^3$ 項（含 $\ln x$ 的係數）。(c) 用「被積函數 $\frac1{xy_1^2}$ 有沒有 $\frac1x$ 項」說明兩種情況為什麼不同。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>降階公式</td><td>$y_2=y_1\int\frac{dx}{xy_1^2}$</td><td>板書照片 4（$e^{-\int P}=\frac1x$）</td></tr>
+          <tr><td>(a) 的 $y_1$</td><td>$\frac{\sin x}{\sqrt x}$</td><td>題目；$\propto J_{1/2}$</td></tr>
+          <tr><td>(b) 的 $y_1$</td><td>$J_1=\frac x2-\frac{x^3}{16}+\frac{x^5}{384}$</td><td>題目；板書例題 1</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 封閉形式；(b) $\frac1{xJ_1^2}$ 與 $y_2$；(c) 判斷準則。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>降階法的 $\ln x$ 只可能從 $\int\frac{dx}x$ 來，<b>所以</b>關鍵是把 $\frac{1}{xy_1^2}$ 展成 Laurent 級數，看 $\frac1x$ 項的係數 $c$：$c\ne0$ 就有 $c\,y_1\ln x$。</p>
+      <p><b>因為</b> (a) 的 $\frac1{xy_1^2}=\frac1{\sin^2x}$ 是偶函數，<b>所以</b>展開只有偶次方，不可能有 $\frac1x$；(b) 的 $\frac1{xJ_1^2}$ 是奇函數，奇次方裡就可能有 $\frac1x$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-02c-s1">
+        <span class="step-title">(a) $m=\tfrac12$ 的被積函數</span>
+        <p class="sub">$y_1^2=\frac{\sin^2x}{x}$，所以 $\frac{1}{xy_1^2}=\frac{1}{\sin^2x}=\csc^2x$：</p>
+        $$u=\int\csc^2x\,dx=-\cot x\quad\Longrightarrow\quad y_2=\frac{\sin x}{\sqrt x}\cdot(-\cot x)=-\frac{\cos x}{\sqrt x}$$
+        <p>$y_2=-\sqrt{\frac\pi2}\,J_{-1/2}$，沒有 $\ln x$，和自編 1-c「半整數時小根成功」一致。</p>
+      </div>
+      <div class="step" data-step="am6-sf-02c-s2">
+        <span class="step-title">(b) $J_1^2$ 與倒數</span>
+        <p class="sub">$J_1=\frac x2\big(1-\frac{x^2}8+\frac{x^4}{192}\big)$，平方：$J_1^2=\frac{x^2}4\big(1-\frac{x^2}4+\frac{5x^4}{192}\big)$（$x^4$ 係數 $\frac1{64}+\frac{2}{192}=\frac{5}{192}$）；倒數用 $\frac1{1-s}=1+s+s^2$，$s=\frac{x^2}4-\frac{5x^4}{192}$：</p>
+        $$\frac1{J_1^2}=\frac4{x^2}\Big(1+\frac{x^2}4+\Big(\frac1{16}-\frac5{192}\Big)x^4\Big)=\frac4{x^2}\Big(1+\frac{x^2}4+\frac{7x^4}{192}\Big)$$
+        $$\frac{1}{xJ_1^2}=\frac4{x^3}+\frac1x+\frac{7x}{48}+\cdots$$
+      </div>
+      <div class="step" data-step="am6-sf-02c-s3">
+        <span class="step-title">(b) 積分與 $y_2$</span>
+        <p class="sub">逐項積分：$\int\frac4{x^3}=-\frac2{x^2}$、$\int\frac1x=\ln x$、$\int\frac{7x}{48}=\frac{7x^2}{96}$：</p>
+        $$u=-\frac2{x^2}+\ln x+\frac{7x^2}{96}+\cdots$$
+        <p class="sub">$y_2=uJ_1$：$-\frac2{x^2}J_1=-\frac1x+\frac x8-\frac{x^3}{192}$，$\frac{7x^2}{96}J_1=\frac{7x^3}{192}$，$x^3$ 項合計 $\frac{6}{192}=\frac1{32}$：</p>
+        $$y_2=J_1\ln x-\frac1x+\frac x8+\frac{x^3}{32}+\cdots$$
+        <p>$\ln x$ 的係數是 1（就是 $\frac1x$ 項的係數）。</p>
+      </div>
+      <div class="step" data-step="am6-sf-02c-s4">
+        <span class="step-title">(c) 判斷準則</span>
+        <p>$y_1\approx cx^{m}$ 時 $\frac1{xy_1^2}\approx\frac{1}{c^2x^{2m+1}}\big(1+b_2x^2+b_4x^4+\cdots\big)$（$J_m/x^m$ 只含偶次方）。要出現 $\frac1x$ 項，需要某個 $2k-(2m+1)=-1$，即 $k=m$ ——<b>$m$ 必須是非負整數</b>。$m=\tfrac12$ 時次方全是偶數 $x^{-2},x^0,\dots$，沒有 $\frac1x$；$m=0,1,2,\dots$ 時一般都有，於是第二解 $Y_m$ 含 $\ln x$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $y_2=-\frac{\cos x}{\sqrt x}\propto J_{-1/2}$，無 $\ln x$；(b) $\frac1{xJ_1^2}=\frac4{x^3}+\frac1x+\frac{7x}{48}+\cdots$，$y_2=J_1\ln x-\frac1x+\frac x8+\frac{x^3}{32}+\cdots$；(c) 只有 $m$ 為整數時 $\frac1{xy_1^2}$ 會有 $\frac1x$ 項，才出現 $\ln x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>(a) $-\frac{\cos x}{\sqrt x}$ 代入 $x^2y''+xy'+(x^2-\frac14)y$ 為 0（同 114 上的驗算）✔。(b) 驗算腳本把 $J_1\ln x-\frac1x+\frac x8+\frac{x^3}{32}$ 代入 $m=1$ 的方程式，殘差從 $x^5$ 才開始（截斷誤差）✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\frac{1}{(-k)!}=0$ ⇒ $J_{-m}=(-1)^mJ_m$（$m$ 整數）；平移後下限是 $n=0$（板書寫 $n=m$ 是誤植）。</li>
+    <li>整數 $m$：小根不給新解，用降階法 $y_2=J_m\int\frac{dx}{xJ_m^2}$ → Neumann 函數 $Y_m$（含 $J_m\ln x$，在 0 發散），一般解 $AJ_m+BY_m$。</li>
+    <li>非整數 $m$：$J_{-m}$ 獨立，一般解 $AJ_m+BJ_{-m}$；$W(J_m,J_{-m})=-\frac{2\sin m\pi}{\pi x}$。</li>
+    <li>半整數：$J_{1/2}=\sqrt{\frac2{\pi x}}\sin x$、$J_{-1/2}=\sqrt{\frac2{\pi x}}\cos x$（114 上期末）。</li>
+  </ol>
+</div>

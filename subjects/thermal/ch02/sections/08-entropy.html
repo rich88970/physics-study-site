@@ -1,0 +1,480 @@
+<h2>八、熵與第二定律 <span class="pg">課本 §2.6 · p.74–77</span></h2>
+
+<p class="lead">前幾節的結論可以一般化：任何大系統在平衡時都會處在多重度最大的巨觀態。多重度太大不好用，取對數再乘上 $k$，就是熵。從此第二定律可以簡單地說成「熵傾向增加」。</p>
+
+<h3 id="tn-def">8.1 熵的定義 <span class="pg-tag">p.74–75</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.74 第二定律的一般形式</span>
+  <p>任何處於平衡的大系統，都會出現在多重度最大的巨觀態（除了通常小到量不到的擾動）。更簡短地說：多重度傾向增加。</p>
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.75 Eq. (2.45) 熵（entropy）</span>
+  $$S\equiv k\ln\Omega$$
+  <p>熵就是「系統裡東西排列方式數」的對數（乘上波茲曼常數）。單位是能量／溫度，J/K。</p>
+</div>
+
+<p>為什麼取對數？$\Omega$ 是很大的數（$10^{10^{23}}$ 這種），$\ln\Omega$ 只是大的數（$10^{23}$），好處理多了；而且 $\ln$ 是遞增函數，「$\Omega$ 最大」和「$S$ 最大」是同一件事。乘 $k$ 只是歷史因素，讓熵和第 3 章的溫度單位接得上。課本建議：<strong>想理解熵時忽略 $k$，把 $S/k=\ln\Omega$ 當成一個純數</strong>。</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-sein">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.6 Eq. (2.46)–(2.47) · p.75</span></div>
+    <h4>大愛因斯坦固體的熵</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-sein">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$N$ 個振子、$q$ 份能量、$q\gg N$ 的愛因斯坦固體，熵是多少？代入 $N=10^{22}$、$q=10^{24}$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振子數</td><td>$N=10^{22}$</td><td>「代入 $N=10^{22}$」</td></tr>
+          <tr><td>能量份數</td><td>$q=10^{24}$</td><td>「$q=10^{24}$」</td></tr>
+          <tr><td>高溫</td><td>$q\gg N$（$q/N=100$）</td><td>「$q\gg N$ 的愛因斯坦固體」：可以用高溫多重度</td></tr>
+          <tr><td>高溫多重度</td><td>$\Omega=(eq/N)^N$</td><td>課本 (2.21)，題目沒寫出</td></tr>
+          <tr><td>熵的定義</td><td>$S=k\ln\Omega$</td><td>課本 (2.45)</td></tr>
+          <tr><td>波茲曼常數</td><td>$k=1.38\times10^{-23}\ \text{J/K}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：熵的一般式，以及代入數值後的 $S$（純數 $S/k$ 與 J/K）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $q\gg N$，愛因斯坦固體的多重度可以用高溫公式 $(eq/N)^N$；<b>因為</b>熵是多重度的對數，而對數會把 $N$ 次方拉下來變成「乘 $N$」，<b>所以</b>結果是 $N$ 乘上一個不大的對數。</p>
+      <p>先求一般式再代數字：<b>因為</b> $q/N$ 只出現在對數裡，<b>所以</b> $S$ 主要由 $Nk$ 決定，$q/N=100$ 只貢獻一個約 5 的因子。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tsea" data-sym="S,k">
+        <span class="step-title">取對數</span>
+        <p>$\ln(a^N)=N\ln a$；$\ln(eq/N)=\ln e+\ln(q/N)=1+\ln(q/N)$：</p>
+        $$S=k\ln\left(\frac{eq}N\right)^N=Nk\ln\frac{eq}N=Nk\left[\ln\frac qN+1\right]\qquad(2.46)$$
+      </div>
+      <div class="step" data-step="tseb">
+        <span class="step-title">代入 $q/N=100$</span>
+        <p class="sub">代入 $q=10^{24}$、$N=10^{22}$（題目）：</p>
+        $$\frac qN=\frac{10^{24}}{10^{22}}=100,\qquad\ln100+1=4.61+1=5.61$$
+        $$\frac Sk=N\times5.61=5.6\times10^{22}$$
+        <p class="sub">乘 $k=1.38\times10^{-23}\ \text{J/K}$ 換成 SI：</p>
+        $$S=(5.6\times10^{22})(1.38\times10^{-23}\ \text{J/K})=0.77\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sc-ex-sein-s3">
+        <span class="step-title">和多重度本身比一比</span>
+        <p>反過來看多重度：$\Omega=e^{S/k}=e^{5.6\times10^{22}}$；換成 10 的次方，指數除以 $\ln10=2.303$：</p>
+        $$\Omega=10^{5.6\times10^{22}/2.303}=10^{2.4\times10^{22}}$$
+        <p>多重度是「很大的數」，熵只是「大的數」：取對數就是為了讓它好處理。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$S=Nk[\ln(q/N)+1]=5.6\times10^{22}k\approx0.77\ \text{J/K}$</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$S/Nk=5.6$ 是不大的數，符合 $S\sim Nk$ ✔。$q$ 增為 10 倍（$q/N=1000$），$S/Nk$ 只從 5.6 變成 7.9：$q$ 或 $N$ 增加都讓 $S$ 增加，但不成正比。</p></div>
+  </div>
+</div>
+
+<p>一般而言，粒子越多、能量越多，多重度與熵就越大。此外，讓系統擴張到更大的空間、把大分子拆成小分子、把原本分開的物質混合，也都會增加排列的方式數，增加熵。熵常被說成「亂度」，但要小心：一杯碎冰看起來比一杯水亂，可是水的熵大得多——水分子的排列方式、以及把較多能量分給分子的方式都多得多。熵數的是排列方式，不是看起來亂不亂。</p>
+
+<h3 id="tn-add">8.2 熵可以相加；第二定律 <span class="pg-tag">p.76</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.76 Eq. (2.48) 複合系統的熵</span>
+  $$S_{\text{total}}=k\ln\Omega_{\text{total}}=k\ln(\Omega_A\Omega_B)=k\ln\Omega_A+k\ln\Omega_B=S_A+S_B$$
+  <p>前提是 A、B 的巨觀態分別指定。</p>
+</div>
+
+<p>如果 A、B 可以交互作用，它們的巨觀態會隨時間變動，長時間的熵應該把所有巨觀態加總：$S=k\ln\sum\Omega_{\text{total}}$。熵和多重度一樣，取決於考慮的時間尺度。實際上幾乎沒差：大系統假設在最可能巨觀態，和把所有巨觀態加總，得到的熵幾乎一樣（習題 2.29、2.30）——因為加總最多讓 $\Omega$ 乘上「巨觀態個數」這種只是大的數。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.76 第二定律（熵的說法）</span>
+  <p>任何處於平衡的大系統，都會出現在熵最大的巨觀態（除了通常小到量不到的擾動）。更簡短地說：熵傾向增加。</p>
+</div>
+
+<div class="anim" data-anim="t2-logpeak"></div>
+
+<p>注意：熵對 $U_A$ 或 $V_A$ 作圖<strong>不會</strong>有尖峰——取對數把多重度的尖峰抹平了（圖解第二步）。這不影響結論：峰的位置一樣，偏離最大熵巨觀態的擾動對大系統仍然量不到。</p>
+
+<div class="anim" data-anim="t2-s-vs-u"></div>
+
+<p>熵對能量的形狀因系統而異：愛因斯坦固體的 $S(U)$ 一直往上、越來越平；順磁體的 $S(U)$ 在 $U=0$ 有最大值，再加能量反而變小。第 3 章會用斜率 $\partial S/\partial U$ 定義溫度——斜率越平，溫度越高；順磁體右半邊斜率為負，就是負溫度（某級考古第 3 題 (d)）。</p>
+
+<p>人能不能讓熵減少？把硬幣全翻正面、把洗亂的牌排好、整理房間，看似可以；但那些熵的減少極小，而我們身體代謝食物（把化學能變成熱能排到環境）產生的熵大得多。在別處減少熵，一定在另一處產生至少一樣多。1867 年 Maxwell 問：一個觀察入微、手指靈巧的生物能不能把快分子和慢分子分開，讓熱從冷流到熱？後人稱它「Maxwell 惡魔」；結論是連惡魔在處理分辨分子所需的資訊時也必須產生熵，無法違反第二定律。</p>
+
+<div class="problem" data-kind="textbook" id="sc-2-28">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-28（Problem 2.28）· p.77</span></div>
+    <h4>洗牌產生多少熵</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-28">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-28"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>How many possible arrangements are there for a deck of 52 playing cards? (For simplicity, consider only the order of the cards, not whether they are turned upside-down, etc.) Suppose you start with a sorted deck and shuffle it repeatedly, so that all arrangements become “accessible.” How much entropy do you create in the process? Express your answer both as a pure number (neglecting the factor of k) and in SI units. Is this entropy significant compared to the entropy associated with arranging thermal energy among the molecules in the cards?</p></div>
+<p class="original-caption">Schroeder 習題 2-28（Problem 2.28）· p.77</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一副 52 張的撲克牌有多少種可能的排列？（為簡單起見只考慮順序，不管牌有沒有倒過來等等。）假設你從排好的一副牌開始反覆洗牌，使所有排列都變成「可及」。這個過程產生多少熵？分別用純數（忽略 $k$）和 SI 單位表示。和牌裡分子之間熱能排列的熵相比，這個熵重要嗎？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>牌數</td><td>52 張，彼此都不同</td><td>「一副 52 張的撲克牌」</td></tr>
+          <tr><td>只看順序</td><td>一種排列＝一種順序</td><td>「只考慮順序，不管牌有沒有倒過來」</td></tr>
+          <tr><td>洗牌前</td><td>只有 1 種排列</td><td>「從<b>排好</b>的一副牌開始」</td></tr>
+          <tr><td>洗牌後</td><td>所有排列都可及</td><td>「反覆洗牌，使所有排列都變成可及」</td></tr>
+          <tr><td>熵</td><td>$S=k\ln\Omega$；純數 $S/k$</td><td>「用純數（忽略 $k$）和 SI 單位表示」</td></tr>
+          <tr><td>波茲曼常數</td><td>$k=1.38\times10^{-23}\ \text{J/K}$</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>一副牌的質量</td><td>約 $100\ \text{g}$</td><td>題目沒給，比較熱運動的熵時自己估計</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：排列數；洗牌產生的熵（純數與 J/K）；和牌裡分子熱運動的熵相比重不重要。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每張牌都不同、只看順序，<b>所以</b>排列數就是 52 個不同東西的排列數 $52!$。</p>
+      <p><b>因為</b>熵只由可及的排列數決定，「產生的熵」＝洗牌後的熵 − 洗牌前的熵，<b>所以</b>先寫出兩個狀態的熵：洗牌前只有 1 種（$S=k\ln1=0$），洗牌後 $52!$ 種都可及。</p>
+      <p>比較時<b>因為</b>只要數量級，<b>所以</b>用習題 2.36 的估計：熱運動的熵 $S\sim Nk$，$N$ 是牌裡的粒子數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t228a" data-sym="Omega,S">
+        <span class="step-title">排列數</span>
+        <p>第 1 個位置有 52 種選法，第 2 個位置剩 51 種……最後一個位置 1 種，相乘：</p>
+        $$\Omega=52\times51\times\cdots\times1=52!=8.07\times10^{67}$$
+      </div>
+      <div class="step" data-step="sc-2-28-s2">
+        <span class="step-title">洗牌前後的熵</span>
+        $$\Delta S=S_{\text{後}}-S_{\text{前}}=k\ln52!-k\ln1=k\ln52!$$
+        <p>（$\ln1=0$：排好的牌只有一種排列，排列的熵是 0。）</p>
+      </div>
+      <div class="step" data-step="t228b">
+        <span class="step-title">熵的數值</span>
+        <p>直接取對數：$\ln(8.07\times10^{67})=\ln8.07+67\ln10=2.09+154.27=156.4$。也可以用 Stirling 驗算，$\ln n!\approx n\ln n-n+\tfrac12\ln(2\pi n)$：</p>
+        $$\ln52!\approx52\ln52-52+\tfrac12\ln(104\pi)=205.5-52+2.9=156.4$$
+        <p class="sub">純數 $S/k=156$；乘 $k=1.38\times10^{-23}\ \text{J/K}$：</p>
+        $$S=156\times1.38\times10^{-23}\ \text{J/K}=2.2\times10^{-21}\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sc-2-28-s4">
+        <span class="step-title">和熱運動的熵比較</span>
+        <p class="sub">一副牌約 $100\ \text{g}$（估計）；紙是纖維素 $\mathrm{C_6H_{10}O_5}$，162 g/mol 裡有 21 個原子，平均每個原子約 $8\ \text{g/mol}$：</p>
+        $$N\approx\frac{100\ \text{g}}{8\ \text{g/mol}}\times6\times10^{23}\approx10^{25}$$
+        $$S_{\text{熱}}\sim Nk\approx10^{25}\times1.4\times10^{-23}\ \text{J/K}\sim100\ \text{J/K}$$
+        <p>比洗牌的 $2\times10^{-21}\ \text{J/K}$ 大 $10^{22}$ 倍以上：洗牌產生的熵完全不重要。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$52!\approx8\times10^{67}$；$S/k=156$，$S\approx2\times10^{-21}\ \text{J/K}$；和牌本身熱運動的熵（$\sim100\ \text{J/K}$）相比完全不重要。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>直接取對數與 Stirling 都給 $\ln52!=156.4$ ✔；$S/k=156$ 只是「大的數」，牌本身的 $S/k\sim10^{25}$，差 $10^{22}$ 倍以上 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-29">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-29（Problem 2.29）· p.77</span></div>
+    <h4>最可能、最不可能與長時間的熵</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-29">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-29"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a system of two Einstein solids, with N<sub>A</sub> = 300, N<sub>B</sub> = 200, and q<sub>total</sub> = 100 (as discussed in Section 2.3). Compute the entropy of the most likely macrostate and of the least likely macrostate. Also compute the entropy over long time scales, assuming that all microstates are accessible. (Neglect the factor of Boltzmann’s constant in the definition of entropy; for systems this small it is best to think of entropy as a pure number.)</p></div>
+<p class="original-caption">Schroeder 習題 2-29（Problem 2.29）· p.77</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮兩個愛因斯坦固體，$N_A=300$、$N_B=200$、$q_{\text{total}}=100$（第 2.3 節討論過）。計算最可能巨觀態與最不可能巨觀態的熵。再計算長時間的熵（假設所有微觀態都可及）。（定義熵時忽略波茲曼常數；這麼小的系統最好把熵想成純數。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>A 的振子數</td><td>$N_A=300$</td><td>題目</td></tr>
+          <tr><td>B 的振子數</td><td>$N_B=200$</td><td>題目</td></tr>
+          <tr><td>總能量</td><td>$q_{\text{total}}=100$</td><td>題目</td></tr>
+          <tr><td>多重度表</td><td>Fig. 2.5</td><td>「（第 2.3 節討論過）」：每個巨觀態 $q_A$ 的 $\Omega_A\Omega_B$ 都列在表中</td></tr>
+          <tr><td>最可能</td><td>$q_A=60$：$\Omega=6.87\times10^{114}$</td><td>Fig. 2.5（峰：每個振子能量相同）</td></tr>
+          <tr><td>最不可能</td><td>$q_A=0$：$\Omega=2.77\times10^{81}$</td><td>Fig. 2.5 表的第一列</td></tr>
+          <tr><td>全部微觀態</td><td>$9.26\times10^{115}$</td><td>Fig. 2.5 表的總和</td></tr>
+          <tr><td>熵</td><td>$S/k=\ln\Omega$（純數）</td><td>「定義熵時忽略波茲曼常數」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：最可能與最不可能巨觀態的熵；長時間（所有微觀態都可及）的熵。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>熵（忽略 $k$）就是 $\ln\Omega$，而各巨觀態的多重度在 2.3 節 Fig. 2.5 的表裡都有，<b>所以</b>只要把那些「很大的數」取對數，技巧是 $\ln(a\times10^b)=\ln a+b\ln10$。</p>
+      <p>最可能是 $q_A=60$，<b>因為</b>峰在每個振子能量相同處（$q_A/300=q_B/200$）；最不可能是 $q_A=0$，<b>因為</b>能量全擠在振子較少的 B 時排法最少（比全擠在 A 還少）。</p>
+      <p>「長時間的熵」：<b>因為</b>所有微觀態都可及，<b>所以</b>要把所有巨觀態的多重度加起來；這個總和也等於「500 個振子、100 份能量」的單一固體的多重度。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-29-s1">
+        <span class="step-title">多重度從哪裡來</span>
+        <p>愛因斯坦固體 $\Omega(N,q)=\binom{q+N-1}q$；兩固體的巨觀態由 $q_A$ 決定：</p>
+        $$\Omega_{\text{total}}(q_A)=\binom{q_A+299}{q_A}\binom{299-q_A}{100-q_A}$$
+        <p>最可能：$q_A/300=q_B/200$ 且 $q_A+q_B=100$ ⟹ $q_A=60$。最不可能：$q_A=0$，$\Omega_A=1$。這些值就是 Fig. 2.5 的表。</p>
+      </div>
+      <div class="step" data-step="t229a" data-sym="S">
+        <span class="step-title">最可能巨觀態（$q_A=60$）</span>
+        <p class="sub">代入 $\Omega_{\text{total}}(60)=6.87\times10^{114}$（Fig. 2.5）：</p>
+        $$\frac Sk=\ln6.87+114\ln10=1.93+262.5=264.4$$
+      </div>
+      <div class="step" data-step="sc-2-29-s3">
+        <span class="step-title">最不可能巨觀態（$q_A=0$）</span>
+        <p class="sub">代入 $\Omega_{\text{total}}(0)=1\times\binom{299}{100}=2.77\times10^{81}$（Fig. 2.5）：</p>
+        $$\frac Sk=\ln2.77+81\ln10=1.02+186.5=187.5$$
+      </div>
+      <div class="step" data-step="t229b">
+        <span class="step-title">長時間：所有巨觀態</span>
+        <p>所有微觀態都可及時，把每個巨觀態的多重度加起來；這等於 500 個振子共享 100 份能量：</p>
+        $$\Omega_{\text{all}}=\sum_{q_A=0}^{100}\Omega_{\text{total}}(q_A)=\binom{599}{100}=9.26\times10^{115}$$
+        $$\frac Sk=\ln9.26+115\ln10=2.23+264.8=267.0$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>最可能 $S/k=264.4$；最不可能 $187.5$；長時間 $267.0$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>機率差 $10^{33}$ 倍，熵只差 77；長時間的熵只比最可能巨觀態多 2.6（$\approx\ln$ 有效巨觀態數）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-30">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-30（Problem 2.30）· p.77 · 熱學小考（上）作業題</span></div>
+    <h4>插入隔板算不算違反第二定律</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-30">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-30"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider again the system of two large, identical Einstein solids treated in Problem 2.22.</p><p>(a) For the case N = 10<sup>23</sup>, compute the entropy of this system (in terms of Boltzmann’s constant), assuming that all of the microstates are allowed. (This is the system’s entropy over long time scales.)</p><p>(b) Compute the entropy again, assuming that the system is in its most likely macrostate. (This is the system’s entropy over short time scales, except when there is a large and unlikely fluctuation away from the most likely macrostate.)</p><p>(c) Is the issue of time scales really relevant to the entropy of this system?</p><p>(d) Suppose that, at a moment when the system is near its most likely macrostate, you suddenly insert a partition between the solids so that they can no longer exchange energy. Now, even over long time scales, the entropy is given by your answer to part</p><p>(b). Since this number is less than your answer to part</p><p>(a), you have, in a sense, caused a violation of the second law of thermodynamics. Is this violation significant? Should we lose any sleep over it?</p></div>
+<p class="original-caption">Schroeder 習題 2-30（Problem 2.30）· p.77 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>再考慮習題 2.22 的兩個大的相同愛因斯坦固體。(a) 對 $N=10^{23}$，假設所有微觀態都允許，計算系統的熵（以波茲曼常數為單位）。（這是長時間的熵。）(b) 假設系統在最可能巨觀態，再算一次熵。（這是短時間的熵，除非發生罕見的大擾動。）(c) 時間尺度的問題對這個系統的熵真的重要嗎？(d) 假設在系統接近最可能巨觀態的瞬間，你突然在兩固體間插入隔板，使它們不能再交換能量。現在即使長時間，熵也是 (b) 的答案。這個數比 (a) 小，所以某種意義上你造成了違反第二定律的事。這個違反顯著嗎？我們該為此失眠嗎？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>系統</td><td>兩個相同的大愛因斯坦固體，各 $N$ 個振子、共 $2N$ 份能量</td><td>「再考慮<b>習題 2.22</b> 的兩個大的相同愛因斯坦固體」</td></tr>
+          <tr><td>振子數</td><td>$N=10^{23}$</td><td>(a)「對 $N=10^{23}$」</td></tr>
+          <tr><td>全部微觀態</td><td>$\Omega_{\text{total}}=2^{4N}/\sqrt{8\pi N}$</td><td>習題 2.22 (b)</td></tr>
+          <tr><td>最可能巨觀態</td><td>$\Omega_{\text{peak}}=2^{4N}/(4\pi N)$</td><td>習題 2.22 (c)</td></tr>
+          <tr><td>熵</td><td>$S/k=\ln\Omega$</td><td>「以波茲曼常數為單位」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 長時間的熵；(b) 最可能巨觀態的熵；(c) 時間尺度重不重要；(d) 插隔板造成的「違反第二定律」顯不顯著。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> (a)(b) 的多重度在習題 2.22 都算好了，<b>所以</b>只要取對數：$\ln$ 把乘除變加減，$2^{4N}$ 變成 $4N\ln2\sim10^{23}$，根號因子變成只有幾十的數。</p>
+      <p>(c)(d) <b>因為</b>兩個熵的差只來自根號因子（「大的數」的對數），而主項 $4N\ln2$ 大了 $10^{22}$ 倍，<b>所以</b>比較「差值」和「主項」的相對大小，就知道時間尺度、隔板造成的熵減少量不量得到。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t230a" data-sym="S,N">
+        <span class="step-title">(a) 長時間的熵</span>
+        <p>$\ln2^{4N}=4N\ln2$、$\ln\sqrt y=\tfrac12\ln y$：</p>
+        $$\frac Sk=\ln\frac{2^{4N}}{\sqrt{8\pi N}}=4N\ln2-\tfrac12\ln(8\pi N)$$
+        <p class="sub">代入 $N=10^{23}$（題目）：$4N\ln2=2.77\times10^{23}$；$8\pi N=2.51\times10^{24}$，$\ln=56.2$：</p>
+        $$\frac Sk=2.77\times10^{23}-28.1$$
+      </div>
+      <div class="step" data-step="t230b">
+        <span class="step-title">(b) 最可能巨觀態的熵</span>
+        $$\frac Sk=\ln\frac{2^{4N}}{4\pi N}=4N\ln2-\ln(4\pi N)$$
+        <p class="sub">代入 $N=10^{23}$：$4\pi N=1.26\times10^{24}$，$\ln=55.5$：</p>
+        $$\frac Sk=2.77\times10^{23}-55.5$$
+      </div>
+      <div class="step" data-step="t230c">
+        <span class="step-title">(c) 時間尺度重要嗎</span>
+        <p>兩者的差：</p>
+        $$55.5-28.1=27.4$$
+        <p>相對於主項：$27.4/(2.77\times10^{23})=10^{-22}$。熵要量到第 22 位有效數字才分得出長時間與短時間，所以時間尺度的問題<strong>不重要</strong>。</p>
+      </div>
+      <div class="step" data-step="sc-2-30-s4">
+        <span class="step-title">(d) 插隔板「違反」第二定律？</span>
+        <p>插入隔板後，系統被鎖在插板當時的巨觀態（接近最可能巨觀態），熵從 (a) 變成 (b)，減少 27.4（純數），換成 SI：</p>
+        $$27.4\,k=27.4\times1.38\times10^{-23}\ \text{J/K}=3.8\times10^{-22}\ \text{J/K}$$
+        <p>相對大小 $10^{-22}$，完全量不到，不必失眠；而且插隔板這個動作本身（手的代謝、摩擦生熱）產生的熵遠大於此。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $2.77\times10^{23}-28.1$；(b) $2.77\times10^{23}-55.5$；(c) 不重要（差 27.4，相對 $10^{-22}$）；(d) 不顯著（減少約 $27k\approx4\times10^{-22}\ \text{J/K}$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>差值 $\ln\frac{4\pi N}{\sqrt{8\pi N}}=\ln\sqrt{2\pi N}$，正是習題 2.22 的峰寬取對數 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-36">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-36（Problem 2.36）· p.79</span></div>
+    <h4>熵的數量級：$S\sim Nk$</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-36">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>單原子理想氣體或高溫愛因斯坦固體的熵都是 $Nk$ 乘上某個對數。對數從來不大，所以只要數量級時可以忽略它，說 $S\sim Nk$：以基本單位表示的熵，和系統的粒子數同數量級。（大多數系統都對，重要的例外是低溫下粒子很有秩序的情形。）好玩地粗估下列物體的熵：這本書（一公斤碳化合物）；一隻麋鹿（$400\ \text{kg}$ 的水）；太陽（$2\times10^{30}\ \text{kg}$ 的游離氫）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>熵的數量級</td><td>$S\sim Nk$</td><td>題目：對數「從來不大」，只要數量級時可以忽略</td></tr>
+          <tr><td>書</td><td>$1\ \text{kg}$ 碳化合物</td><td>「這本書（一公斤碳化合物）」</td></tr>
+          <tr><td>碳的莫耳質量</td><td>$12\ \text{g/mol}$</td><td>題目沒給，用標準值（化合物裡的 H、O 只改變幾倍）</td></tr>
+          <tr><td>麋鹿</td><td>$400\ \text{kg}$ 水，$18\ \text{g/mol}$</td><td>「一隻麋鹿（400 kg 的水）」；莫耳質量用標準值</td></tr>
+          <tr><td>太陽</td><td>$2\times10^{30}\ \text{kg}$ 游離氫</td><td>「太陽（$2\times10^{30}$ kg 的游離氫）」</td></tr>
+          <tr><td>質子質量</td><td>$1.67\times10^{-27}\ \text{kg}$</td><td>題目沒給；「游離」：每個 H 變成質子＋電子兩個粒子</td></tr>
+          <tr><td>常數</td><td>$N_A=6.02\times10^{23}$、$k=1.38\times10^{-23}\ \text{J/K}$</td><td>標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：書、麋鹿、太陽的熵（數量級，J/K）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $S\sim Nk$，熵的數量級只需要粒子數 $N$，<b>所以</b>每個物體都是「質量 ÷ 每個粒子的質量（或莫耳質量）」算出 $N$，再乘 $k$。</p>
+      <p><b>因為</b>只要數量級，粒子數用原子或分子都可以（差幾倍不改變數量級）。太陽溫度很高，對數那一項可能有 10–20，另外說明。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t236a" data-sym="S,k">
+        <span class="step-title">書：$1\ \text{kg}$ 碳 約 $80\text{–}100\ \text{mol}$</span>
+        <p class="sub">莫耳數＝$1000\ \text{g}$（題目）÷ $12\ \text{g/mol}$，再乘 $N_A$：</p>
+        $$\frac{1000\ \text{g}}{12\ \text{g/mol}}=83\ \text{mol},\qquad N=83\times6.02\times10^{23}=5\times10^{25}$$
+        $$S\sim Nk=(5\times10^{25})(1.38\times10^{-23}\ \text{J/K})\approx700\ \text{J/K}\sim10^3\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="t236b">
+        <span class="step-title">麋鹿：$400\ \text{kg}$ 水約 $2\times10^4\ \text{mol}$</span>
+        <p class="sub">$4\times10^5\ \text{g}$（題目）÷ $18\ \text{g/mol}$：</p>
+        $$\frac{4\times10^5\ \text{g}}{18\ \text{g/mol}}=2.2\times10^4\ \text{mol},\qquad N\approx1.3\times10^{28}\ \text{個分子}$$
+        <p>（數原子要再乘 3，約 $4\times10^{28}$。）</p>
+        $$S\sim(10^{28}\text{–}10^{29})k\sim10^5\text{–}10^6\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="t236c">
+        <span class="step-title">太陽：游離氫，每個氫原子變成質子＋電子兩個粒子</span>
+        <p class="sub">氫原子數＝$2\times10^{30}\ \text{kg}$（題目）÷ 質子質量，再乘 2：</p>
+        $$N=2\times\frac{2\times10^{30}\ \text{kg}}{1.67\times10^{-27}\ \text{kg}}=2.4\times10^{57}$$
+        $$Nk=(2.4\times10^{57})(1.38\times10^{-23}\ \text{J/K})=3.3\times10^{34}\ \text{J/K}$$
+        <p>太陽溫度很高、每個粒子可用的相空間大，對數那一項可能有 10–20：</p>
+        $$S\sim(10\text{–}20)Nk\sim10^{58}k\sim10^{35}\text{–}10^{36}\ \text{J/K}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>書 $\sim10^3\ \text{J/K}$；麋鹿 $\sim10^5$–$10^6\ \text{J/K}$；太陽 $\sim10^{35}$–$10^{36}\ \text{J/K}$（只算 $Nk$ 是 $3\times10^{34}\ \text{J/K}$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>一莫耳氦 $S=15.2Nk$（第 9 節），對數因子 15 確實「不大」✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-08a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩塊固體熱接觸產生多少熵</h4>
+    <button type="button" class="exam-btn" data-exam="sf-08a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩個高溫愛因斯坦固體各有 $N$ 個振子。起初隔開：A 有 $q_{A0}=3000N$ 份能量，B 有 $q_{B0}=1000N$ 份。接觸後達到平衡（最可能的巨觀態）。(a) 平衡時各有幾份能量？(b) 熵增加多少（以 $Nk$ 為單位）？$N=10^{22}$ 時是多少 J/K？(c) 證明對任何 $q_{A0}\ne q_{B0}$ 熵一定增加，只有 $q_{A0}=q_{B0}$ 時不變。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振子數</td><td>兩個都是 $N$</td><td>「兩個高溫愛因斯坦固體各有 $N$ 個振子」</td></tr>
+          <tr><td>起始能量</td><td>$q_{A0}=3000N$、$q_{B0}=1000N$</td><td>題目</td></tr>
+          <tr><td>總能量</td><td>$q=4000N$，接觸後不變</td><td>兩固體只彼此交換能量</td></tr>
+          <tr><td>高溫</td><td>$q/N\ge1000\gg1$</td><td>「高溫」：可用 (2.46) $S=Nk[\ln(q/N)+1]$</td></tr>
+          <tr><td>平衡</td><td>最可能的巨觀態</td><td>「達到平衡（最可能的巨觀態）」</td></tr>
+          <tr><td>(b) 的 $N$</td><td>$N=10^{22}$，$k=1.38\times10^{-23}\ \text{J/K}$</td><td>題目給 $N$；$k$ 用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 平衡時各幾份能量；(b) 熵增加多少（$Nk$ 為單位、$N=10^{22}$ 時的 J/K）；(c) 證明 $q_{A0}\ne q_{B0}$ 時熵一定增加。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩個固體振子數相同，最可能巨觀態是每個振子能量相同（第 6 節的峰），<b>所以</b>平衡就是能量平分。</p>
+      <p><b>因為</b>熵可以相加（各自的巨觀態指定時 $S_{\text{total}}=S_A+S_B$），<b>所以</b>熵變＝平衡後兩者之和 − 接觸前兩者之和；每個固體 $q/N\ge1000$，遠大於自編難題 5-A 的門檻 13.4，可用高溫公式 (2.46)。</p>
+      <p><b>因為</b> (2.46) 裡的 $+1$ 與 $-\ln N$ 對每個固體都一樣，相減時抵消，<b>所以</b>熵變只剩 $\ln q$ 的差；(c) 化成「算術平均 ≥ 幾何平均」。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf08a1" data-sym="qAB">
+        <span class="step-title">(a) 平衡</span>
+        <p>總能量 $q=3000N+1000N=4000N$；兩個固體 $N$ 相同，每個振子能量相同 ⟹ 平分：</p>
+        $$q_A=q_B=\frac{4000N}2=2000N$$
+      </div>
+      <div class="step" data-step="sf-08a-s2">
+        <span class="step-title">(b) 用 (2.46) 寫出前後的熵</span>
+        <p>(2.46)：$S=Nk[\ln q-\ln N+1]$。接觸前、後的總熵：</p>
+        $$\frac{S_{\text{前}}}{Nk}=[\ln(3000N)-\ln N+1]+[\ln(1000N)-\ln N+1]$$
+        $$\frac{S_{\text{後}}}{Nk}=2[\ln(2000N)-\ln N+1]$$
+        <p>$\ln(cN)-\ln N=\ln c$，$N$ 完全消失：前 $=\ln3000+\ln1000+2$，後 $=2\ln2000+2$。</p>
+      </div>
+      <div class="step" data-step="sf08a2" data-sym="S,k">
+        <span class="step-title">(b) 熵變</span>
+        $$\frac{\Delta S}{Nk}=2\ln2000-\ln3000-\ln1000=\ln\frac{2000^2}{3000\times1000}$$
+        $$\frac{\Delta S}{Nk}=\ln\frac43=0.288$$
+        <p class="sub">代入 $N=10^{22}$（題目）、$k=1.38\times10^{-23}\ \text{J/K}$：</p>
+        $$\Delta S=0.288\times10^{22}\times1.38\times10^{-23}\ \text{J/K}=0.040\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sf08a3">
+        <span class="step-title">(c) 一定增加</span>
+        <p>把 $3000N$、$1000N$ 換成一般的 $q_{A0}$、$q_{B0}$，平衡時各 $\frac{q_{A0}+q_{B0}}2$，同樣的步驟給</p>
+        $$\frac{\Delta S}{Nk}=\ln\frac{\left(\frac{q_{A0}+q_{B0}}2\right)^2}{q_{A0}\,q_{B0}}$$
+        <p>對數裡 $\ge1$ 嗎？$(q_{A0}+q_{B0})^2-4q_{A0}q_{B0}=(q_{A0}-q_{B0})^2\ge0$，所以 $\left(\frac{q_{A0}+q_{B0}}2\right)^2\ge q_{A0}q_{B0}$（算術平均 $\ge$ 幾何平均），$\Delta S\ge0$；等號只在 $q_{A0}=q_{B0}$。</p>
+        <p>能量從「每個振子能量多」的一邊流到「少」的一邊，熵一定增加；反方向的流動會讓熵減少，所以不會發生。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 各 $2000N$；(b) $\Delta S=Nk\ln\frac43=0.288Nk$，$N=10^{22}$ 時 $0.040$ J/K；(c) 由算幾不等式，$\Delta S\ge0$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>中等大小的精確計算：$N=200$、$q_{A0}=6\times10^5$、$q_{B0}=2\times10^5$，用精確組合數得 $\Delta S/k=57.2$，公式 $200\ln\frac43=57.5$，差 0.5%（被丟掉的根號因子，$N$ 大時可忽略）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-08b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>把 100 枚硬幣排成全部正面</h4>
+    <button type="button" class="exam-btn" data-exam="sf-08b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>桌上 100 枚硬幣隨機正反，所有 $2^{100}$ 種排列都「可及」。你把它們全部翻成正面。(a) 只算正反排列，硬幣的熵減少多少（純數與 J/K）？(b) 翻硬幣時你的身體大約消耗並以熱的形式散出 10 J 到 310 K 的環境。用 $\Delta S=Q/T$（習題 2.34）估計環境的熵增加，和 (a) 比較。(c) 一枚 5 g 的銅幣本身（原子振動等）的熵大約是多少（用 $S\sim Nk$，習題 2.36）？「正反」那部分佔多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>硬幣數</td><td>100 枚</td><td>題目</td></tr>
+          <tr><td>起始</td><td>$2^{100}$ 種排列都可及</td><td>「隨機正反，所有 $2^{100}$ 種排列都可及」</td></tr>
+          <tr><td>結束</td><td>只有 1 種排列</td><td>「全部翻成正面」</td></tr>
+          <tr><td>身體散熱</td><td>$Q=10\ \text{J}$，$T=310\ \text{K}$</td><td>(b)「散出 10 J 到 310 K 的環境」</td></tr>
+          <tr><td>環境的熵變</td><td>$\Delta S=Q/T$</td><td>(b)「用 $\Delta S=Q/T$（習題 2.34）」：環境很大，溫度不變</td></tr>
+          <tr><td>銅幣</td><td>$5\ \text{g}$，銅 $63.5\ \text{g/mol}$</td><td>(c) 題目給 5 g；莫耳質量用標準值</td></tr>
+          <tr><td>熵的數量級</td><td>$S\sim Nk$</td><td>(c)「用 $S\sim Nk$（習題 2.36）」</td></tr>
+          <tr><td>常數</td><td>$k=1.38\times10^{-23}\ \text{J/K}$、$N_A=6.02\times10^{23}$</td><td>標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 硬幣排列的熵減少多少；(b) 環境的熵增加多少，並比較；(c) 一枚銅幣本身的熵，以及「正反」那部分佔多少。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>只算正反排列時熵只看可及的排列數，從 $2^{100}$ 種變成 1 種，<b>所以</b> $\Delta S=k\ln1-k\ln2^{100}$。</p>
+      <p>(b) <b>因為</b>整理硬幣的「秩序」是靠身體消耗化學能換來的，那些能量最後變成熱散到環境，而環境很大、溫度幾乎不變，<b>所以</b>環境的熵變用 $Q/T$；判斷第二定律要看宇宙（硬幣＋環境）的總熵。</p>
+      <p>(c) <b>因為</b>一枚硬幣本身有 $10^{22}$ 量級的原子，每個原子都有熱運動，<b>所以</b> $S\sim Nk$；「正反」只是每枚硬幣多一個二選一。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf08b1" data-sym="S,k">
+        <span class="step-title">(a) 硬幣排列的熵</span>
+        $$\Delta S_{\text{coins}}=k\ln1-k\ln2^{100}=-100\,k\ln2$$
+        <p class="sub">$\ln2=0.693$，乘 $k=1.38\times10^{-23}\ \text{J/K}$：</p>
+        $$\Delta S_{\text{coins}}=-69.3\,k=-9.6\times10^{-22}\ \text{J/K}$$
+      </div>
+      <div class="step" data-step="sf08b2">
+        <span class="step-title">(b) 身體散熱</span>
+        <p class="sub">代入 $Q=10\ \text{J}$、$T=310\ \text{K}$（題目）：</p>
+        $$\Delta S_{\text{env}}\approx\frac QT=\frac{10\ \text{J}}{310\ \text{K}}=0.032\ \text{J/K}$$
+        <p>和 (a) 的大小比：</p>
+        $$\frac{0.032}{9.6\times10^{-22}}=3\times10^{19}$$
+        <p>宇宙的總熵 $-9.6\times10^{-22}+0.032\gt0$，仍然增加，沒有違反第二定律——課本 p.76「人可以整理房間」的說法，量化之後就是這個比例。</p>
+      </div>
+      <div class="step" data-step="sf08b3">
+        <span class="step-title">(c) 和硬幣本身的熵比較</span>
+        <p class="sub">原子數＝$5\ \text{g}$（題目）÷ $63.5\ \text{g/mol}$ × $N_A$：</p>
+        $$N=\frac5{63.5}\times6.02\times10^{23}=4.7\times10^{22}$$
+        $$S\sim Nk=4.7\times10^{22}k\approx0.65\ \text{J/K}$$
+        <p>正反只貢獻每枚 $k\ln2$，佔的比例：</p>
+        $$\frac{\ln2}{4.7\times10^{22}}\approx1.5\times10^{-23}$$
+        <p>排列巨觀物體所改變的熵，和物體內部熱運動的熵相比完全可以忽略；這也是課本註腳說「洗牌的熵有爭議，但無關緊要」的原因。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $-69.3k=-9.6\times10^{-22}$ J/K；(b) $+0.032$ J/K，約 $3\times10^{19}$ 倍；(c) $\sim5\times10^{22}k$（約 0.6 J/K），正反只佔約 $10^{-23}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>和習題 2.28 洗牌同一個結論：$\ln52!=156$，對比牌本身 $S/k\sim10^{25}$ 也微不足道 ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$S=k\ln\Omega$；高溫愛因斯坦固體 $S=Nk[\ln(q/N)+1]$；數量級 $S\sim Nk$。</li>
+    <li>熵可相加 $S_A+S_B$；長時間（加總所有巨觀態）與最可能巨觀態的熵對大系統幾乎相同。</li>
+    <li>第二定律：熵傾向增加；$S$ 對 $U_A$ 作圖沒有尖峰，但峰的位置與結論不變。</li>
+  </ol>
+</div>

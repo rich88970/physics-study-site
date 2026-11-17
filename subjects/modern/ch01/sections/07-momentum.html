@@ -1,0 +1,327 @@
+<h2>七、相對論動量 <span class="pg">課本 §1.7 · p.22–26</span></h2>
+
+<p class="lead">若沿用古典動量 $p=mv$，在一個座標系守恆的碰撞，換到另一個座標系就不守恆。要讓動量守恆對所有慣性觀察者都成立、又在低速時回到 $mv$，動量必須改成 $p=\gamma mv$。牛頓第二定律也跟著變成 $F=\mathrm dp/\mathrm dt$。</p>
+
+<h3 id="mo-derive">7.1 由一個碰撞推出 $p=\gamma mv$ <span class="pg-tag">p.22–24 · Fig. 1.13</span></h3>
+
+<p>兩個完全相同的球 A、B（靜止時性質相同）。座標系 $S'$ 相對 $S$ 以 $v$ 沿 $+x$ 運動。A 原本靜止在 $S$、B 原本靜止在 $S'$；兩球相距 $Y$（垂直於 $v$，兩座標系量到一樣），同時被拋出：</p>
+
+<div class="step" data-step="mo-setup" data-sym="T0">
+  <span class="step-title">對稱的設定</span>
+  <p>A 在 $S$ 中以 $V_A$ 沿 $+y$ 拋出，B 在 $S'$ 中以 $V'_B=V_A$ 沿 $-y'$ 拋出（1.10）。兩球在 $y=\tfrac12Y$ 相撞後各自彈回。A 在 $S$ 中往返的時間和 B 在 $S'$ 中往返的時間一樣：</p>
+  $$T_0=\frac{Y}{V_A}=\frac{Y}{V'_B}\qquad(1.11)$$
+</div>
+
+<div class="step" data-step="mo-dilate" data-sym="gamma">
+  <span class="step-title">從 $S$ 看 B</span>
+  <p>B 的往返在 $S'$ 是固有時間 $T_0$，從 $S$ 看被拉長成 $T=\gamma T_0$。B 在 $y$ 方向走同樣的 $Y$，所以 $S$ 量到 B 的 $y$ 方向速率比較小：</p>
+  $$V_B=\frac{Y}{T}=\frac{Y\sqrt{1-v^2/c^2}}{T_0},\qquad V_A=\frac{Y}{T_0}$$
+</div>
+
+<div class="step" data-step="mo-conserve" data-sym="m">
+  <span class="step-title">古典動量不守恆</span>
+  <p>碰撞時兩球的 $y$ 動量各自反向。要在 $S$ 中守恆，需要 $m_AV_A=m_BV_B$：</p>
+  $$m_A\frac{Y}{T_0}=m_B\frac{Y\sqrt{1-v^2/c^2}}{T_0}\quad\Longrightarrow\quad m_B=\frac{m_A}{\sqrt{1-v^2/c^2}}\qquad(1.14)$$
+  <p>若 $m_A=m_B$（$p=mv$），動量就不守恆。</p>
+</div>
+
+<div class="step" data-step="mo-limit">
+  <span class="step-title">取 $V_A,V'_B\to0$ 的極限</span>
+  <p>此時 A 在 $S$ 中靜止，$m_A=m$；B 在 $S$ 中以 $v$ 運動，$m_B=m(v)$。(1.14) 變成 $m(v)=\dfrac{m}{\sqrt{1-v^2/c^2}}$（1.15）。也就是說，只要把動量定義成</p>
+  $$p=\frac{mv}{\sqrt{1-v^2/c^2}}=\gamma mv\qquad(1.16),(1.17)$$
+  <p>動量守恆在狹義相對論中就成立，而且 $v\ll c$ 時 $\gamma\to1$，回到 $p=mv$。</p>
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.24 Eqs. (1.17)(1.18) Relativistic momentum</span>
+  $$p=\gamma mv,\qquad\gamma=\frac1{\sqrt{1-v^2/c^2}}$$
+  <p>$m$ 是固有質量（靜止質量）：相對觀察者靜止時量到的質量，在所有座標系都相同。</p>
+</div>
+
+<p>Fig. 1.14：$v/c$ 小時 $\gamma mv$ 和 $mv$ 幾乎一樣（$0.1c$ 只差 0.5%），接近 $c$ 時 $\gamma mv$ 急速上升（$0.9c$ 時 $\gamma mv$ 是 $mv$ 的 2.29 倍），$v=c$ 時 $p\to\infty$。所以有質量的物體不可能達到光速。即使太空船以 $0.5c$ 往前再發射一顆相對它 $0.5c$ 的砲彈，地球看砲彈也只有 $0.8c$（第 11 節速度相加）。</p>
+
+<div class="anim" data-anim="momentum-curve"></div>
+
+<div class="problem" data-kind="exam" id="kg-109-1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">109 學年上學期考古 第 1 題（只有手寫解答，題目卷未保存）· 即課本 §1.7 的推導 · p.22–24</span></div>
+    <h4>由對稱碰撞推出相對論動量 $p=\gamma mv$</h4>
+    <button type="button" class="exam-btn" data-exam="kg-109-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-109-1"><span class="part-label original-label">考卷原文（題目卷未保存，以考古解答代替）</span>
+<p class="original-note">原卷題目沒有保存；雲端只有「109上近物考古解答」一張手寫解答。下面是解答中這一題的逐字轉寫，截圖只保留這一題。</p>
+<div class="original-text" lang="en"><p>1. $V_A=V_B'$, $V_B'=\frac{L}{T_0}$ （圖：$m_BV_B'$、$m_AV_A$，距離 $L$）</p><p>$V_A=\frac{L}{T_0}$, $V_B=\frac{L}{T}=\frac{L}{T_0}\sqrt{1-\frac{v^2}{c^2}}$</p><p>$P_A=m_A\frac{L}{T_0}$, $P_B=m_B\frac{L}{T_0}\sqrt{1-\frac{v^2}{c^2}}$</p><p>$m_B=m_A/\sqrt{1-\frac{v^2}{c^2}}$</p></div>
+<p class="original-caption">109 學年上學期考古 第 1 題（只有手寫解答，題目卷未保存）· 即課本 §1.7 的推導 · p.22–24</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題意（原卷未保存，由手寫解答推回）</span><p>雲端只有這一題的手寫解答，沒有題目卷。解答畫的是課本 §1.7 的對稱碰撞（Fig. 1.13）：兩個完全相同的球 A、B，A 原本靜止在座標系 $S$、B 原本靜止在 $S'$（$S'$ 相對 $S$ 以速率 $v$ 沿 $x$ 方向運動）。A 在 $S$ 中、B 在 $S'$ 中以相同速率沿 $y$ 方向相向拋出，兩球在中點相撞後各自彈回，往返的距離是 $L$。<br>請由 $y$ 方向的動量守恆推出 $m_B=\dfrac{m_A}{\sqrt{1-v^2/c^2}}$，並說明為什麼相對論動量要定義成 $p=\gamma mv$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：兩個完全相同的球 A、B；$S'$ 相對 $S$ 以 $v$ 沿 $x$ 運動；拋出速率 $V_A=V'_B$（$V_A$ 在 $S$ 量、$V'_B$ 在 $S'$ 量）；往返距離 $L$ 沿 $y$ 方向，垂直於 $v$，兩座標系量到的一樣。</p>
+<p><strong>① 兩球各自的固有往返時間：</strong> 碰撞只改變 $y$ 方向的動量，所以只要在 $S$ 裡比較兩球的 $y$ 動量。先寫出對稱的設定：每個球在自己原本靜止的座標系中走完往返距離 $L$，花的時間相同：</p>
+<div class="math-block">$$T_0=\frac{L}{V_A}=\frac{L}{V'_B}$$</div>
+<p>由 $V_A=V'_B$（題目「相同速率」），兩式的 $T_0$ 確實相等，這就是設定的對稱性。</p>
+<p><strong>② 從 $S$ 看 B：</strong> B 的往返在 $S'$ 中是同一地點開始和結束的固有時間 $T_0$，從 $S$ 看要用時間膨脹。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$T=\gamma T_0=\dfrac{T_0}{\sqrt{1-v^2/c^2}}$，其中 $T_0$ 為同地兩事件間的固有時間、$T$ 為相對運動座標系量到的時間、$v$ 為兩座標系的相對速率；本題 $T_0$ 為 B 在 $S'$ 中的往返時間。</p>
+<div class="math-block">$$T=\gamma T_0=\frac{T_0}{\sqrt{1-v^2/c^2}}$$</div>
+<p>B 在 $y$ 方向走的距離仍是 $L$（垂直於 $v$ 不收縮），所以 $S$ 量到 B 的 $y$ 速率</p>
+<div class="math-block">$$V_B=\frac{L}{T}=\frac{L}{T_0}\sqrt{1-\frac{v^2}{c^2}}$$</div>
+<p>對照上一步的 $V_A=\dfrac{L}{T_0}$，所以 $V_B=V_A\sqrt{1-v^2/c^2}\lt V_A$。</p>
+<p><strong>③ 兩球的 $y$ 動量與守恆：</strong> 暫時讓兩球的「質量」可以不同，記為 $m_A$、$m_B$（都在 $S$ 中量）：</p>
+<div class="math-block">$$p_A=m_AV_A=m_A\frac{L}{T_0},\qquad p_B=m_BV_B=m_B\frac{L}{T_0}\sqrt{1-\frac{v^2}{c^2}}$$</div>
+<p>碰撞前 A 往 $+y$、B 往 $-y$，總 $y$ 動量 $p_A-p_B$；碰撞後兩者都反向，總 $y$ 動量 $-(p_A-p_B)$。</p>
+<p class="fnote"><b>公式（動量守恆）：</b>碰撞前後總動量相同；本題只看 $y$ 分量。</p>
+<div class="math-block">$$p_A-p_B=-(p_A-p_B)\ \Longrightarrow\ p_A=p_B$$</div>
+<p><strong>④ 解出 $m_B$：</strong> 把上一步的 $p_A$、$p_B$ 代入 $p_A=p_B$：</p>
+<div class="math-block">$$m_A\frac{L}{T_0}=m_B\frac{L}{T_0}\sqrt{1-\frac{v^2}{c^2}}$$</div>
+<p>兩邊消去 $L/T_0$，移項：</p>
+<div class="math-block">$$m_B=\frac{m_A}{\sqrt{1-v^2/c^2}}$$</div>
+<p>若照古典力學取 $m_A=m_B$，上式不成立，$y$ 動量就不守恆。</p>
+<p><strong>⑤ 取拋出速率 $\to0$：</strong> 讓 $V_A=V'_B\to0$。此時 A 在 $S$ 中靜止，$m_A$ 就是靜止質量 $m$；B 在 $S$ 中幾乎只以 $v$ 沿 $x$ 運動，$m_B$ 是「以 $v$ 運動時」的係數：</p>
+<div class="math-block">$$m_B=\frac{m}{\sqrt{1-v^2/c^2}}=\gamma m$$</div>
+<p>所以只要把動量定義成</p>
+<div class="math-block">$$p=\frac{mv}{\sqrt{1-v^2/c^2}}=\gamma mv$$</div>
+<p>（$m$ 是不變的靜止質量，$\gamma$ 寫進動量的定義），動量守恆在每個慣性座標系都成立；$v\ll c$ 時 $\gamma\to1$，回到 $p=mv$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}m_B=\frac{m_A}{\sqrt{1-v^2/c^2}}\\ p=\gamma mv=\frac{mv}{\sqrt{1-v^2/c^2}}\ \text{（}m\text{ 為靜止質量）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<details class="supp">
+  <summary>為什麼本書不用「相對論質量」</summary>
+  <div class="supp-body">
+    <p>舊的說法把 $\gamma m$ 叫「相對論質量」，好讓 $p=(\gamma m)v$ 看起來像古典公式。Einstein 後來認為這個概念「不好」，因為沒有清楚的定義。課本和本站的 $m$ 一律是靜止質量，它是相對論不變量。下面的例題就會看到，把古典公式的 $m$ 換成 $\gamma m$ 不一定對。</p>
+  </div>
+</details>
+
+<h3 id="mo-newton">7.2 相對論第二定律 <span class="pg-tag">p.25</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.25 Eq. (1.19) Relativistic second law</span>
+  $$F=\frac{\mathrm dp}{\mathrm dt}=\frac{\mathrm d}{\mathrm dt}(\gamma mv)$$
+</div>
+
+<p>因為 $\gamma$ 本身隨 $v$ 改變，所以不等於 $ma$；$v\ll c$ 時 $\gamma\approx1$，才回到 $F=ma$。</p>
+
+<div class="problem" data-kind="exam" id="kg-115-1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 1 題 · 即 Beiser Example 1.5 · p.26</span></div>
+    <h4>$F=\gamma ma$ 對不對？</h4>
+    <button type="button" class="exam-btn" data-exam="kg-115-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-115-1"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>For one dimensional system, a particle with rest mass $m$ is acted upon by a constant force $F$. Is the relation of its acceleration $a$, $m$, and $F$ relativistically corrected as</p>$$F=\gamma ma$$<p>where $\gamma=\frac{1}{\sqrt{1-v^2/c^2}}$ and $v$ is the speed of the particle. Give your answer quantitatively.</p><p class="original-note"><strong>課本原文（Beiser Example 1.5 · p.26）</strong></p><p>Find the acceleration of a particle of mass $m$ and velocity $\mathbf v$ when it is acted upon by the constant force $\mathbf F$, where $\mathbf F$ is parallel to $\mathbf v$.</p></div>
+<p class="original-caption">115 級上學期期中 第 1 題 · 即 Beiser Example 1.5 · p.26</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>一維系統中，靜止質量 $m$ 的粒子受定力 $F$ 作用。加速度 $a$、$m$、$F$ 的相對論正確關係是 $F=\gamma ma$ 嗎（$\gamma=1/\sqrt{1-v^2/c^2}$，$v$ 為粒子速率）？請定量回答。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：一維運動，$F$ 和 $v$ 在同一直線上；靜止質量 $m$（不隨速度變）；定力 $F$；$a=\mathrm dv/\mathrm dt$；要檢驗 $F=\gamma ma$，$\gamma=1/\sqrt{1-v^2/c^2}$。</p>
+<p><strong>① 連鎖律：寫成對 $v$ 微分：</strong> $F=\gamma ma$ 只是把 $m$ 換成 $\gamma m$ 的猜測，要從 $F=\mathrm dp/\mathrm dt$ 真的微分一次；$\gamma$ 也隨 $v$ 變，不能當常數提出來。</p>
+<p class="fnote"><b>公式（相對論牛頓第二定律與動量）：</b>$F=\dfrac{\mathrm dp}{\mathrm dt}$、$p=\gamma mv=\dfrac{mv}{\sqrt{1-v^2/c^2}}$，其中 $m$ 為靜止質量、$v$ 為粒子速率。</p>
+<p>$m$ 是常數提出來；括號裡只依賴 $v$，而 $v$ 依賴 $t$，所以 $\dfrac{\mathrm d}{\mathrm dt}=\dfrac{\mathrm d}{\mathrm dv}\dfrac{\mathrm dv}{\mathrm dt}$，其中 $\dfrac{\mathrm dv}{\mathrm dt}=a$：</p>
+<div class="math-block">$$\begin{aligned}F&amp;=\frac{\mathrm d}{\mathrm dt}\left(\frac{mv}{\sqrt{1-v^2/c^2}}\right)=m\,\frac{\mathrm d}{\mathrm dv}\left(\frac{v}{\sqrt{1-v^2/c^2}}\right)\frac{\mathrm dv}{\mathrm dt}\\ &amp;=m\,a\,\frac{\mathrm d}{\mathrm dv}\left(\frac{v}{\sqrt{1-v^2/c^2}}\right)\end{aligned}$$</div>
+<p><strong>② 乘積律求導數：</strong> 把函數寫成 $v\cdot\left(1-\dfrac{v^2}{c^2}\right)^{-1/2}$：第一項對 $v$ 微分得 1；第二項用連鎖律，外層 $(\ )^{-1/2}$ 微分得 $-\tfrac12(\ )^{-3/2}$，內層 $1-\tfrac{v^2}{c^2}$ 微分得 $-\tfrac{2v}{c^2}$：</p>
+<div class="math-block">$$\begin{aligned}\frac{\mathrm d}{\mathrm dv}\left[v\left(1-\frac{v^2}{c^2}\right)^{-1/2}\right]&amp;=\left(1-\frac{v^2}{c^2}\right)^{-1/2}\\&amp;\quad+v\cdot\left(-\frac12\right)\left(1-\frac{v^2}{c^2}\right)^{-3/2}\left(-\frac{2v}{c^2}\right)\\ &amp;=\left(1-\frac{v^2}{c^2}\right)^{-1/2}+\frac{v^2}{c^2}\left(1-\frac{v^2}{c^2}\right)^{-3/2}\end{aligned}$$</div>
+<p>通分，公分母 $(1-v^2/c^2)^{3/2}$（第一項上下乘 $1-v^2/c^2$）：</p>
+<div class="math-block">$$=\frac{(1-v^2/c^2)+v^2/c^2}{(1-v^2/c^2)^{3/2}}=\frac{1}{(1-v^2/c^2)^{3/2}}=\gamma^3$$</div>
+<p><strong>③ 結果：</strong> 代回第 ① 步：</p>
+<div class="math-block">$$F=\gamma^3ma=\frac{ma}{(1-v^2/c^2)^{3/2}}\qquad\Longrightarrow\qquad a=\frac{F}{m}\left(1-\frac{v^2}{c^2}\right)^{3/2}$$</div>
+<p><strong>④ 定量比較 $\gamma^3ma$ 和 $\gamma ma$：</strong> 兩式的比值是 $\gamma^3/\gamma=\gamma^2$。舉 $v=0.8c$：</p>
+<div class="math-block">$$\gamma=\frac{1}{\sqrt{1-0.64}}=\frac{1}{0.6}=1.67,\qquad \gamma^3=4.63,\qquad \gamma^2=2.78$$</div>
+<p>同樣的加速度 $a$，正確所需的力是 $4.63\,ma$，$F=\gamma ma$ 只給 $1.67\,ma$，低估成 $1/2.78$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{不對：一維時 }F=\gamma^3ma\text{，差 }\gamma^2\text{ 倍}\\ v=0.8c\text{ 時 }\gamma^3=4.63\text{，而 }\gamma=1.67\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-24">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-24 · p.50</span></div>
+    <h4>速度加倍，動量變幾倍</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-24">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-24"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>(a) An electron’s speed is doubled from 0.2c to 0.4c. By what ratio does its momentum increase?</p><p>(b) What happens to the momentum ratio when the electron’s speed is doubled again from 0.4c to 0.8c?</p></div>
+<p class="original-caption">Beiser 習題 1-24 · p.50</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 電子速率從 $0.2c$ 加倍到 $0.4c$，動量變幾倍？(b) 再從 $0.4c$ 加倍到 $0.8c$ 呢？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：(a) 速率 $0.2c\to0.4c$；(b) $0.4c\to0.8c$；同一顆電子，質量 $m$ 會約掉。</p>
+<p><strong>① 動量比的一般式：</strong> 問的是同一顆電子的比值，$m$ 約掉、速率比是 2，剩下 $\gamma$ 的比值（古典答案永遠是 2）。</p>
+<p class="fnote"><b>公式（相對論動量）：</b>$p=\gamma mv$，其中 $m$ 為靜止質量、$v$ 為速率、$\gamma=1/\sqrt{1-\beta^2}$。</p>
+<div class="math-block">$$\frac{p_2}{p_1}=\frac{\gamma_2mv_2}{\gamma_1mv_1}=\frac{v_2}{v_1}\cdot\frac{\gamma_2}{\gamma_1}=2\,\frac{\gamma_2}{\gamma_1}\qquad(v_2=2v_1)$$</div>
+<p><strong>② 各速率的 $\gamma$：</strong> 代入 $\beta=0.2,\ 0.4,\ 0.8$：</p>
+<div class="math-block">$$\gamma(0.2c)=\frac{1}{\sqrt{1-0.04}}=\frac{1}{\sqrt{0.96}}=1.0206$$</div>
+<div class="math-block">$$\gamma(0.4c)=\frac{1}{\sqrt{1-0.16}}=\frac{1}{\sqrt{0.84}}=1.0911$$</div>
+<div class="math-block">$$\gamma(0.8c)=\frac{1}{\sqrt{1-0.64}}=\frac{1}{\sqrt{0.36}}=1.6667$$</div>
+<p><strong>③ 比值：</strong> (a) 代入 $\gamma_2=\gamma(0.4c)$、$\gamma_1=\gamma(0.2c)$；(b) 代入 $\gamma_2=\gamma(0.8c)$、$\gamma_1=\gamma(0.4c)$：</p>
+<div class="math-block">$$\text{(a)}\ 2\times\frac{1.0911}{1.0206}=2\times1.069=2.14$$</div>
+<div class="math-block">$$\text{(b)}\ 2\times\frac{1.6667}{1.0911}=2\times1.528=3.06$$</div>
+<div class="math-block">$$\boxed{\text{(a) }2.14\text{ 倍；(b) }3.06\text{ 倍}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-25">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-25 · p.50</span></div>
+    <h4>為什麼不把動量定義成 $mv$</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-25">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-25"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>All definitions are arbitrary, but some are more useful than others. What is the objection to defining linear momentum as $p=mv$ instead of the more complicated $p=\gamma mv$?</p></div>
+<p class="original-caption">Beiser 習題 1-25 · p.50</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>定義都是人訂的，但有些比較有用。把動量定義成 $p=mv$，而不是較複雜的 $p=\gamma mv$，問題在哪裡？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：沿用 7.1 節的對稱碰撞，A、B 兩球質量都是 $m$，在 $S$ 中的 $y$ 方向速率為 $V_A$、$V_B$；B 所在的座標系相對 $S$ 以 $v$ 運動，時間膨脹給 $V_B=V_A\sqrt{1-v^2/c^2}=V_A/\gamma$。</p>
+<p><strong>① 拿守恆來判斷：</strong> 動量有用是因為碰撞前後它守恆，而依相對性原理，守恆律必須在所有慣性座標系都成立；所以把 $p=mv$ 代進 7.1 節的對稱碰撞檢查。兩球的 $y$ 動量碰撞後各自反向，在 $S$ 中用 $p=mv$：</p>
+<div class="math-block">$$p_{y,\text{前}}=mV_A-mV_B,\qquad p_{y,\text{後}}=-(mV_A-mV_B)$$</div>
+<p>要守恆必須 $V_A=V_B$，但時間膨脹給 $V_B=V_A/\gamma\neq V_A$，所以 $mv$ 在 $S$ 中不守恆；在 $S'$ 中角色對調，同樣不守恆。</p>
+<p><strong>② 數值例子：</strong> 取 $v=0.6c$。</p>
+<p class="fnote"><b>公式（勞侖茲因子）：</b>$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}$，其中 $v$ 為兩座標系的相對速率、$c$ 為光速；本題 $v=0.6c$。</p>
+<div class="math-block">$$\gamma=\frac{1}{\sqrt{1-0.36}}=1.25,\qquad V_B=\frac{V_A}{1.25}=0.8V_A$$</div>
+<p>用 $p=mv$：</p>
+<div class="math-block">$$p_{y,\text{前}}=mV_A-0.8mV_A=0.2mV_A,\qquad p_{y,\text{後}}=-0.2mV_A$$</div>
+<p>碰撞讓總動量改變了 $0.4mV_A$，什麼外力都沒有，卻「不守恆」。</p>
+<p><strong>③ 改用 $p=\gamma mv$：</strong> 取 $V_A\ll v$，B 的速率約為 $v$，它的 $\gamma$ 就是 $\gamma(v)=1.25$。</p>
+<p class="fnote"><b>公式（相對論動量）：</b>$p=\gamma mv$，其中 $m$ 為靜止質量、$v$ 為粒子速率、$\gamma=1/\sqrt{1-v^2/c^2}$；本題 B 的 $\gamma=1.25$、$y$ 方向速率 $V_B=0.8V_A$。</p>
+<div class="math-block">$$\gamma mV_B=1.25\times0.8mV_A=mV_A$$</div>
+<p>剛好和 A 的 $y$ 動量 $mV_A$ 抵消，守恆。</p>
+<p><strong>④ 結論：</strong> 一個只在某些慣性座標系才守恆的量，違反相對性原理，也就失去用處。定義成 $\gamma mv$ 後，動量守恆對所有慣性觀察者都成立；$v\ll c$ 時 $\gamma\approx1$，日常經驗的 $mv$ 仍然對。</p>
+<div class="math-block">$$\boxed{\begin{gathered}p=mv\text{ 在相對論中不守恆（守恆與否隨座標系改變）}\\ p=\gamma mv\text{ 才守恆，而且低速時回到 }mv\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-26">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-26 · p.50</span></div>
+    <h4>證明 $\gamma=\sqrt{1+p^2/m^2c^2}$</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-26">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>驗證 $\dfrac{1}{\sqrt{1-v^2/c^2}}=\sqrt{1+\dfrac{p^2}{m^2c^2}}$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m$ 為靜止質量，動量 $p=\gamma mv$，$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}\gt0$；要證的式子左邊就是 $\gamma$。</p>
+<p><strong>① 代入 $p=\gamma mv$：</strong> 左邊就是 $\gamma$，右邊只多了 $p$，所以把 $p$ 換成 $v$ 的式子，先證根號裡面等於 $\gamma^2$。</p>
+<p class="fnote"><b>公式（相對論動量）：</b>$p=\gamma mv$，其中 $m$ 為靜止質量、$v$ 為速率、$\gamma=1/\sqrt{1-v^2/c^2}$；本題代進右邊的 $p^2$。</p>
+<p>$p^2=\gamma^2m^2v^2$，除以 $m^2c^2$ 時 $m^2$ 約掉：</p>
+<div class="math-block">$$\frac{p^2}{m^2c^2}=\frac{\gamma^2m^2v^2}{m^2c^2}=\frac{\gamma^2v^2}{c^2}=\frac{v^2/c^2}{1-v^2/c^2}$$</div>
+<p><strong>② 加 1、通分：</strong> 公分母是 $1-v^2/c^2$：</p>
+<div class="math-block">$$1+\frac{p^2}{m^2c^2}=\frac{(1-v^2/c^2)+v^2/c^2}{1-v^2/c^2}=\frac{1}{1-v^2/c^2}=\gamma^2$$</div>
+<p><strong>③ 開根號：</strong> $\gamma\gt0$，取正根：</p>
+<div class="math-block">$$\sqrt{1+\frac{p^2}{m^2c^2}}=\gamma=\frac{1}{\sqrt{1-v^2/c^2}}$$</div>
+<p>得證。乘上 $mc^2$ 就是第 9 節的 $E=\sqrt{(mc^2)^2+(pc)^2}$。</p>
+<p><strong>④ 用法：</strong> 題目給動量時可以直接求 $\gamma$，不必先解出 $v$。例如 $p=mc$：</p>
+<div class="math-block">$$\gamma=\sqrt{1+1}=\sqrt2=1.414,\qquad \beta=\sqrt{1-1/\gamma^2}=\sqrt{1/2}=0.707$$</div>
+<div class="math-block">$$\boxed{\frac{1}{\sqrt{1-v^2/c^2}}=\sqrt{1+\frac{p^2}{m^2c^2}}\ \text{（得證）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-07-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>定力加速電子：多久、多遠才到 0.99c</h4>
+    <button type="button" class="exam-btn" data-exam="sf-07-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>電子（$m=9.11\times10^{-31}\ \text{kg}$）從靜止起在均勻電場 $E=1.00\times10^{6}\ \text{V/m}$ 中受定力 $F=eE$ 加速。(a) 由 $F=\mathrm dp/\mathrm dt$ 求 $v(t)$，並說明 $v$ 永遠小於 $c$。(b) 多久才到 $0.99c$？用 $F=ma$ 的古典答案是多少？(c) 這段時間電子走了多遠？（提示：$\displaystyle\int\frac{u\,\mathrm du}{\sqrt{1+u^2}}=\sqrt{1+u^2}$。）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：電子 $m=9.11\times10^{-31}\ \text{kg}$，從靜止（$p(0)=0$）受定力 $F=eE$，$E=1.00\times10^{6}\ \text{V/m}$；標準值 $e=1.60\times10^{-19}\ \text{C}$、$c=3.00\times10^8\ \text{m/s}$、$mc^2=0.511\ \text{MeV}$，$eE=1.00\ \text{MeV/m}$；$\beta=v/c$。</p>
+<h4>(a) 速度 $v(t)$，並說明 $v\lt c$</h4>
+<p><strong>① 動量隨時間線性增加：</strong> 力是常數，直接把相對論第二定律對時間積分。不能用等加速度公式 $v=at$，因為 $a=F/(\gamma^3m)$ 會隨速度變小，不是常數。</p>
+<p class="fnote"><b>公式（相對論牛頓第二定律）：</b>$F=\dfrac{\mathrm dp}{\mathrm dt}$，其中 $F$ 為合力、$p=\gamma mv$ 為相對論動量；本題 $F=eE$ 為常數、$p(0)=0$。</p>
+<div class="math-block">$$p(t)=p(0)+\int_0^tF\,\mathrm dt=Ft$$</div>
+<p><strong>② 解出 $v(t)$：</strong> $p=\gamma mv$ 代入，兩邊平方去根號，再把 $v^2$ 集中：</p>
+<div class="math-block">$$\begin{aligned}\frac{mv}{\sqrt{1-v^2/c^2}}&amp;=Ft\\ m^2v^2&amp;=F^2t^2\left(1-\frac{v^2}{c^2}\right)\\ v^2\left(m^2+\frac{F^2t^2}{c^2}\right)&amp;=F^2t^2\end{aligned}$$</div>
+<p>開根號，分子分母同除以 $m$：</p>
+<div class="math-block">$$v(t)=\frac{Ft}{\sqrt{m^2+F^2t^2/c^2}}=\frac{Ft/m}{\sqrt{1+(Ft/mc)^2}}$$</div>
+<p><strong>③ 說明 $v\lt c$：</strong> 令 $u=Ft/mc$，把 $v/c$ 寫成 $\dfrac{u}{\sqrt{1+u^2}}$：分母永遠大於分子，所以 $v\lt c$；$t\to\infty$ 時 $v\to c$。$t$ 很小時 $(Ft/mc)^2\ll1$，$v\approx Ft/m$（回到古典）。</p>
+<div class="math-block">$$\boxed{v(t)=\frac{Ft/m}{\sqrt{1+(Ft/mc)^2}}\lt c}$$</div>
+<h4>(b) 到 $0.99c$ 的時間與古典答案</h4>
+<p><strong>① 時間的式子：</strong> 由 (a) 的 $p=Ft$，$Ft=p=\gamma mv=\gamma\beta\,mc$：</p>
+<div class="math-block">$$t=\frac{\gamma\beta\,mc}{F}$$</div>
+<p><strong>② 算 $\gamma\beta$：</strong> 代入 $\beta=0.99$：</p>
+<div class="math-block">$$\gamma\beta=\frac{0.99}{\sqrt{1-0.99^2}}=\frac{0.99}{\sqrt{0.0199}}=\frac{0.99}{0.1411}=7.02$$</div>
+<p><strong>③ 代入求 $t$：</strong> 代入 $m=9.11\times10^{-31}\ \text{kg}$、$E=1.00\times10^6\ \text{V/m}$，以及 $e$、$c$ 的標準值：</p>
+<div class="math-block">$$\begin{aligned}t&amp;=\frac{\gamma\beta\,mc}{eE}=\frac{(7.02)(9.11\times10^{-31}\ \text{kg})(3.00\times10^8\ \text{m/s})}{(1.60\times10^{-19}\ \text{C})(1.00\times10^6\ \text{V/m})}\\&amp;=\frac{1.92\times10^{-21}}{1.60\times10^{-13}}\ \text{s}=1.20\times10^{-8}\ \text{s}\end{aligned}$$</div>
+<p><strong>④ 古典答案：</strong> 古典 $a=F/m$ 為常數，$v=at$，到 $0.99c$ 要 $t=\dfrac{0.99c}{F/m}=\dfrac{0.99\,mc}{eE}$：</p>
+<div class="math-block">$$t_{\text{古典}}=\frac{(0.99)(9.11\times10^{-31})(3.00\times10^8)}{(1.60\times10^{-19})(1.00\times10^6)}\ \text{s}=1.69\times10^{-9}\ \text{s}$$</div>
+<p>只有正確值的 $0.99/7.02=1/7$：古典公式少了 $\gamma$，以為電子很快就能加速到接近光速。</p>
+<div class="math-block">$$\boxed{t\approx1.2\times10^{-8}\ \text{s}\quad(\text{古典 }1.7\times10^{-9}\ \text{s})}$$</div>
+<h4>(c) 這段時間走的距離</h4>
+<p><strong>① 換變數積分：</strong> 速度隨時間變，距離要把 $v(t)$ 對時間積分。令 $u=Ft/(mc)$，則 $t=\dfrac{mc}{F}u$、$\mathrm dt=\dfrac{mc}{F}\mathrm du$，由 (a) $v=\dfrac{cu}{\sqrt{1+u^2}}$：</p>
+<div class="math-block">$$\begin{aligned}x&amp;=\int_0^t v\,\mathrm dt=\int_0^{u_1}\frac{cu}{\sqrt{1+u^2}}\cdot\frac{mc}{F}\,\mathrm du\\&amp;=\frac{mc^2}{F}\int_0^{u_1}\frac{u\,\mathrm du}{\sqrt{1+u^2}}\end{aligned}$$</div>
+<p><strong>② 用提示的積分：</strong> 上限 $u_1=\gamma\beta$，而 $\gamma^2-\gamma^2\beta^2=1$，所以 $\sqrt{1+(\gamma\beta)^2}=\gamma$：</p>
+<div class="math-block">$$x=\frac{mc^2}{F}\left(\sqrt{1+u_1^2}-1\right)=\frac{mc^2}{F}(\gamma-1)$$</div>
+<p><strong>③ 代入數值：</strong> 代入 $mc^2=0.511\ \text{MeV}$、$F=eE=1.00\ \text{MeV/m}$：</p>
+<div class="math-block">$$\frac{mc^2}{eE}=\frac{0.511\ \text{MeV}}{1.00\ \text{MeV/m}}=0.511\ \text{m}$$</div>
+<p>再代入 $\gamma(0.99c)=\dfrac{1}{0.1411}=7.09$（(b) 算過的根號 $\sqrt{0.0199}=0.1411$）：</p>
+<div class="math-block">$$x=(0.511\ \text{m})(7.09-1)=(0.511\ \text{m})(6.09)=3.1\ \text{m}$$</div>
+<div class="math-block">$$\boxed{x\approx3.1\ \text{m}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-07-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>等速圓周運動的力 $\gamma mv^2/r$ 與 LHC 的磁場</h4>
+    <button type="button" class="exam-btn" data-exam="sf-07-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 粒子以固定速率 $v$ 做半徑 $r$ 的圓周運動。由 $\vec F=\mathrm d\vec p/\mathrm dt$ 證明所需的向心力是 $F=\gamma mv^2/r$，並說明為什麼這裡是 $\gamma$ 而不是一維加速時的 $\gamma^3$。(b) 帶電 $q$ 的粒子在磁場 $B$ 中，$F=qvB$。證明軌道半徑 $r=p/(qB)$ 在相對論中仍然成立。(c) LHC 中質子的 $\gamma=7.46\times10^3$（質子 $m=1.673\times10^{-27}\ \text{kg}$），彎曲段的曲率半徑 $r=2804\ \text{m}$。需要多強的磁場？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：粒子質量 $m$、電荷 $q$，以固定速率 $v$ 做半徑 $r$ 的圓周運動，$\gamma=1/\sqrt{1-v^2/c^2}$；(c) 質子 $\gamma=7.46\times10^3$、$m=1.673\times10^{-27}\ \text{kg}$、$r=2804\ \text{m}$，標準值 $q=e=1.60\times10^{-19}\ \text{C}$、$c=3.00\times10^8\ \text{m/s}$。</p>
+<h4>(a) 向心力 $F=\gamma mv^2/r$</h4>
+<p><strong>① $\gamma$ 是常數：</strong> 速率固定，$\gamma$ 也固定，所以 $\gamma m$ 可以提到微分外面。</p>
+<p class="fnote"><b>公式（相對論牛頓第二定律）：</b>$\vec F=\dfrac{\mathrm d\vec p}{\mathrm dt}$，其中 $\vec p=\gamma m\vec v$ 為相對論動量；本題 $\gamma$ 不隨時間變。</p>
+<div class="math-block">$$\vec F=\frac{\mathrm d}{\mathrm dt}(\gamma m\vec v)=\gamma m\frac{\mathrm d\vec v}{\mathrm dt}$$</div>
+<p><strong>② 代入向心加速度：</strong> 速度只轉方向，$\mathrm d\vec v/\mathrm dt$ 就是等速率圓周運動的向心加速度。</p>
+<p class="fnote"><b>公式（向心加速度）：</b>等速率圓周運動的加速度指向圓心，大小 $a=v^2/r$，其中 $v$ 為速率、$r$ 為半徑。</p>
+<div class="math-block">$$F=\gamma m\frac{v^2}{r}$$</div>
+<p><strong>③ 為什麼是 $\gamma$ 不是 $\gamma^3$：</strong> 力垂直於速度時只改方向不改速率，$\gamma$ 不變；力平行於速度時 $\mathrm d\gamma/\mathrm dt\neq0$，乘積律多出 $mv\,\mathrm d\gamma/\mathrm dt$ 一項，合起來是 $\gamma^3$（例題 1.5）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}F=\frac{\gamma mv^2}{r}\\ \text{（}\gamma\text{ 不變，所以只有一個 }\gamma\text{）}\end{gathered}}$$</div>
+<h4>(b) 磁場中的軌道半徑</h4>
+<p><strong>① 磁力提供向心力：</strong> 磁力 $qvB$ 永遠垂直於速度，令它等於 (a) 的結果，兩邊約掉一個 $v$：</p>
+<div class="math-block">$$\begin{aligned}qvB&amp;=\frac{\gamma mv^2}{r}\\ qB&amp;=\frac{\gamma mv}{r}\\ r&amp;=\frac{\gamma mv}{qB}=\frac{p}{qB}\end{aligned}$$</div>
+<p>和古典公式形式相同，只是 $p$ 要用相對論動量 $\gamma mv$。</p>
+<div class="math-block">$$\boxed{r=\frac{p}{qB}}$$</div>
+<h4>(c) LHC 所需的磁場</h4>
+<p><strong>① 質子幾乎以光速運動：</strong> $\gamma$ 極大，用 $\beta=\sqrt{1-1/\gamma^2}\approx1-\dfrac{1}{2\gamma^2}$，代入 $\gamma=7.46\times10^3$：</p>
+<div class="math-block">$$1-\beta\approx\frac{1}{2(7.46\times10^3)^2}=9.0\times10^{-9}$$</div>
+<p><strong>② 質子的動量：</strong> 所以 $v\approx c$，$p=\gamma mv\approx\gamma mc$。代入 $\gamma=7.46\times10^3$、$m=1.673\times10^{-27}\ \text{kg}$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$p=(7.46\times10^3)(1.673\times10^{-27}\ \text{kg})(3.00\times10^8\ \text{m/s})=3.74\times10^{-15}\ \text{kg·m/s}$$</div>
+<p><strong>③ 所需磁場：</strong> 由 (b)，$B=\dfrac{p}{qr}$。代入上一步的 $p$、$q=e=1.60\times10^{-19}\ \text{C}$、$r=2804\ \text{m}$：</p>
+<div class="math-block">$$\begin{aligned}B&amp;=\frac{3.74\times10^{-15}\ \text{kg·m/s}}{(1.60\times10^{-19}\ \text{C})(2804\ \text{m})}\\&amp;=\frac{3.74\times10^{-15}}{4.49\times10^{-16}}\ \text{T}=8.3\ \text{T}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{B\approx8.3\ \text{T}\quad(\text{LHC 設計值 }8.33\ \text{T})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>要讓動量守恆對所有慣性觀察者成立：$p=\gamma mv$，$m$ 是靜止質量。</li>
+    <li>$p\to\infty$ 當 $v\to c$：有質量的物體達不到光速。</li>
+    <li>$F=\mathrm dp/\mathrm dt$；一維 $F\parallel v$ 時 $F=\gamma^3ma$，不是 $\gamma ma$。</li>
+  </ol>
+</div>

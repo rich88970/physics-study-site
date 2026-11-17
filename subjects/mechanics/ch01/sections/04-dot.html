@@ -1,0 +1,468 @@
+<h2>四、內積 <span class="pg">講義 p.24–29</span></h2>
+
+<p class="lead">內積把兩個向量變成一個數。它有兩個公式：分量公式用來算，幾何公式用來解讀；靠它可以求投影、判斷垂直、求夾角。</p>
+
+<h3 id="dot-def">4.1 內積的定義 <span class="pg-tag">p.25</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.25 Scalar Product</span>
+  $$\vec A\cdot\vec B=A_1B_1+A_2B_2+A_3B_3=\sum_i A_iB_i=|\vec A|\,|\vec B|\cos\theta_{AB}$$
+  $$\vec A\cdot(\vec B+\vec C)=\vec A\cdot\vec B+\vec A\cdot\vec C,\qquad |\vec A|=\sqrt{\vec A\cdot\vec A}$$
+  <p>內積的結果是<strong>純量</strong>。</p>
+</div>
+
+<p>兩個公式算出同一個數。解題時通常用 $\sum A_iB_i$ 算出數字，再用 $|\vec A||\vec B|\cos\theta$ 解讀它。幾何上，$|\vec B|\cos\theta$ 是 $\vec B$ 在 $\vec A$ 方向的影子（有正負），所以內積就是 $|\vec A|$ 乘上這個影子：夾角小於 $90^\circ$ 為正，等於 $90^\circ$ 為 0，大於 $90^\circ$ 為負。</p>
+
+<div class="anim" data-anim="dot-proj"></div>
+
+<details class="supp">
+  <summary>為什麼 $\sum A_iB_i=|\vec A||\vec B|\cos\theta$</summary>
+  <div class="supp-body">
+    <p>由幾何定義，$\hat i\cdot\hat i=\hat j\cdot\hat j=\hat k\cdot\hat k=1$，不同基底互相垂直、內積為 0。把 $\vec A\cdot\vec B$ 用分配律展開成 9 項：</p>
+    $$\vec A\cdot\vec B=\sum_{i}\sum_{j}A_iB_j\,(\hat e_i\cdot\hat e_j)$$
+    <p>只有 $i=j$ 的 3 項留下來，得到 $A_1B_1+A_2B_2+A_3B_3$。</p>
+  </div>
+</details>
+
+<h3 id="dot-proj">4.2 投影：沿某方向的分量 <span class="pg-tag">p.26</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.26 Projection</span>
+  $$A_i=\vec A\cdot\hat i=|\vec A|\cos\theta,\qquad A_B=\frac{\vec A\cdot\vec B}{|\vec B|}$$
+</div>
+
+<div class="step" data-step="dot-comp">
+  <span class="step-title">為什麼除以 $|\vec B|$</span>
+  <p>要的是影子長 $|\vec A|\cos\theta$，而 $\vec A\cdot\vec B=|\vec A||\vec B|\cos\theta$ 多乘了 $|\vec B|$，所以除掉：$A_B=\vec A\cdot\hat B$。也就是說，<strong>跟單位向量做內積，就是取那個方向的分量</strong>；直角分量 $A_1=\vec A\cdot\hat i$ 是它的特例。</p>
+</div>
+
+<details class="supp">
+  <summary>分量（一個數）和投影向量（一支箭頭）的差別</summary>
+  <div class="supp-body">
+    <p>$A_B=\vec A\cdot\hat B$ 是有號的數。乘上方向 $\hat B$ 才是影子那支箭頭：$\vec A_{\parallel}=(\vec A\cdot\hat B)\,\hat B$。剩下的 $\vec A-\vec A_{\parallel}$ 與 $\vec B$ 垂直；第五節課本 1-13 會用到這種「平行 + 垂直」的拆法。</p>
+  </div>
+</details>
+
+<div class="problem" data-kind="example" id="ex-p26">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.26</span></div>
+    <h4>沿 $\hat i$ 與沿 $\vec B$ 的分量</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p26">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="ex-p26"><span class="part-label original-label">講義英文原文</span>
+<div class="original-text" lang="en"><p><strong>Projection of a Vector</strong> (Applications of the Inner Product)</p><p>The inner product is useful for finding the component of one vector along the direction of another vector.</p><p>Examples:</p><ul><li>Find the component of $\vec A$ along the direction of $\hat i$</li><li>Find the component of $\vec A$ along another vector $\vec B$</li></ul></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>講義 p.26 的兩個例子：(1) 求 $\vec A$ 沿 $\hat i$ 方向的分量；(2) 求 $\vec A$ 沿另一個向量 $\vec B$ 方向的分量 $A_B$。再以 $\vec A=(2,1,-2)$、$\vec B=(3,0,4)$ 算出兩個數值。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=(2,1,-2)$、$\vec B=(3,0,4)$；$\theta$ 為 $\vec A$ 與所沿方向的夾角；「沿某方向的分量」是影子長 $|\vec A|\cos\theta$（可正可負）。</p>
+<p><strong>① 沿 $\hat i$：內積的兩個公式各算一次：</strong> 影子長 $|\vec A|\cos\theta$ 正好藏在內積的幾何公式裡，用內積就不必先求角度。</p>
+<p class="fnote"><b>公式（內積）：</b>幾何式 $\vec A\cdot\vec B=|\vec A||\vec B|\cos\theta$，分量式 $\vec A\cdot\vec B=A_1B_1+A_2B_2+A_3B_3$，其中 $\theta$ 為兩向量夾角、$A_k,B_k$ 為分量；本題先取 $\vec B=\hat i=(1,0,0)$，$|\hat i|=1$。</p>
+<div class="math-block">$$\vec A\cdot\hat i=|\vec A|\,|\hat i|\cos\theta=|\vec A|\cos\theta$$</div>
+<div class="math-block">$$\vec A\cdot\hat i=A_1\cdot1+A_2\cdot0+A_3\cdot0=A_1$$</div>
+<p>兩者是同一個數，所以直角分量就是跟單位向量做內積：</p>
+<div class="math-block">$$A_1=\vec A\cdot\hat i=|\vec A|\cos\theta$$</div>
+<p><strong>② 沿任意 $\vec B$：把 $\cos\theta$ 換成內積：</strong> 內積多乘了 $|\vec B|$，要除掉，因為只要 $\vec B$ 的方向。由幾何公式解出 $\cos\theta$：</p>
+<div class="math-block">$$\cos\theta=\frac{\vec A\cdot\vec B}{|\vec A||\vec B|}$$</div>
+<p>代入影子長 $A_B=|\vec A|\cos\theta$，$|\vec A|$ 上下約掉：</p>
+<div class="math-block">$$A_B=|\vec A|\cdot\frac{\vec A\cdot\vec B}{|\vec A||\vec B|}=\frac{\vec A\cdot\vec B}{|\vec B|}=\vec A\cdot\hat B$$</div>
+<p><strong>③ 代入數值：</strong> 沿 $\hat i$ 的分量就是 $\vec A=(2,1,-2)$ 的第一個分量：</p>
+<div class="math-block">$$A_1=2$$</div>
+<p>沿 $\vec B$：代入 $\vec A=(2,1,-2)$、$\vec B=(3,0,4)$，先算內積和 $|\vec B|$：</p>
+<div class="math-block">$$\begin{aligned}\vec A\cdot\vec B&amp;=2\times3+1\times0+(-2)\times4\\&amp;=6+0-8=-2\\ |\vec B|&amp;=\sqrt{3^2+0^2+4^2}=\sqrt{25}=5\end{aligned}$$</div>
+<p>代入上一步的 $A_B=\vec A\cdot\vec B/|\vec B|$：</p>
+<div class="math-block">$$A_B=\frac{-2}{5}=-0.4$$</div>
+<p>$A_B\lt0$：$\vec A$ 和 $\vec B$ 夾角大於 $90^\circ$，影子落在 $-\hat B$ 那一側。</p>
+<div class="math-block">$$\boxed{\begin{gathered}A_i=\vec A\cdot\hat i=|\vec A|\cos\theta,\quad A_B=\frac{\vec A\cdot\vec B}{|\vec B|}\\ A_1=2,\quad A_B=-0.4\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="dot-orth">4.3 判斷垂直 <span class="pg-tag">p.27</span></h3>
+
+<p>兩個非零向量垂直時 $\cos90^\circ=0$，所以內積為 0；反過來，非零向量內積為 0 就表示垂直。用分量算內積只要幾秒，不必畫圖。</p>
+
+<div class="problem" data-kind="example" id="ex-p27">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.27</span></div>
+    <h4>$(3,-1,2)$ 與 $(-1,-1,1)$ 是否垂直</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p27">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec A=(3,-1,2)$、$\vec B=(-1,-1,1)$ 是否正交？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=(3,-1,2)$、$\vec B=(-1,-1,1)$；正交就是夾角 $90^\circ$。</p>
+<p><strong>① 算內積：</strong> 兩個都是分量，用分量公式最快；非零向量內積為 0 就表示 $\cos\theta=0$。</p>
+<p class="fnote"><b>公式（內積的分量式）：</b>$\vec A\cdot\vec B=A_1B_1+A_2B_2+A_3B_3$，其中 $A_k,B_k$ 為兩向量的分量；本題 $\vec A=(3,-1,2)$、$\vec B=(-1,-1,1)$。</p>
+<div class="math-block">$$\begin{aligned}\vec A\cdot\vec B&amp;=(3)(-1)+(-1)(-1)+(2)(1)\\&amp;=-3+1+2=0\end{aligned}$$</div>
+<p><strong>② 確認不是零向量，得到夾角：</strong> 內積為 0 也可能是有一個向量是零向量，所以要確認長度：</p>
+<div class="math-block">$$\begin{aligned}|\vec A|&amp;=\sqrt{9+1+4}=\sqrt{14}\\ |\vec B|&amp;=\sqrt{1+1+1}=\sqrt3\end{aligned}$$</div>
+<p>兩者都不為 0，把上一步的內積代入夾角公式。</p>
+<p class="fnote"><b>公式（內積求夾角）：</b>$\cos\theta=\dfrac{\vec A\cdot\vec B}{|\vec A||\vec B|}$，其中 $\theta$ 為兩向量夾角；本題 $\vec A\cdot\vec B=0$、$|\vec A|=\sqrt{14}$、$|\vec B|=\sqrt3$。</p>
+<div class="math-block">$$\cos\theta=\frac{0}{\sqrt{14}\sqrt3}=0\ \Longrightarrow\ \theta=90^\circ$$</div>
+<div class="math-block">$$\boxed{\text{正交}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="dot-angle">4.4 求夾角 <span class="pg-tag">p.28–29</span></h3>
+
+<div class="step" data-step="dot-angle">
+  <span class="step-title">把幾何公式解出 $\cos\theta$</span>
+  $$\cos\theta=\frac{\vec A\cdot\vec B}{|\vec A||\vec B|},\qquad \theta=\cos^{-1}\!\left(\frac{\vec A\cdot\vec B}{|\vec A||\vec B|}\right)$$
+  <p>$\cos^{-1}$ 的值域是 $0^\circ$–$180^\circ$，正好是夾角的範圍，不會有象限問題。</p>
+</div>
+
+<div class="problem" data-kind="example" id="ex-p28">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.28</span></div>
+    <h4>$(1,1)$ 與 $(2,0)$ 的夾角</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p28">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $\vec A=(1,1)$ 與 $\vec B=(2,0)$ 的夾角。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=(1,1)$、$\vec B=(2,0)$（二維），$\theta$ 為兩者夾角，$0^\circ\le\theta\le180^\circ$。</p>
+<p><strong>① 內積：</strong> 同一個內積用分量公式算出數值、再用幾何公式解出 $\cos\theta$；$\cos^{-1}$ 的值域剛好是夾角範圍，不用擔心象限。</p>
+<p class="fnote"><b>公式（內積的分量式）：</b>$\vec A\cdot\vec B=A_1B_1+A_2B_2$，其中 $A_k,B_k$ 為分量；本題 $\vec A=(1,1)$、$\vec B=(2,0)$。</p>
+<div class="math-block">$$\vec A\cdot\vec B=1\times2+1\times0=2$$</div>
+<p><strong>② 兩個長度：</strong> 長度 $|\vec A|=\sqrt{A_1^2+A_2^2}$，代入題目的分量：</p>
+<div class="math-block">$$\begin{aligned}|\vec A|&amp;=\sqrt{1^2+1^2}=\sqrt2\\ |\vec B|&amp;=\sqrt{2^2+0^2}=2\end{aligned}$$</div>
+<p><strong>③ 代入 $\cos\theta$ 公式：</strong> 代入 $\vec A\cdot\vec B=2$、$|\vec A|=\sqrt2$、$|\vec B|=2$。</p>
+<p class="fnote"><b>公式（內積求夾角）：</b>$\cos\theta=\dfrac{\vec A\cdot\vec B}{|\vec A||\vec B|}$，由幾何式 $\vec A\cdot\vec B=|\vec A||\vec B|\cos\theta$ 解出，其中 $\theta$ 為兩向量夾角；本題用前兩步的三個數。</p>
+<div class="math-block">$$\cos\theta=\frac{2}{\sqrt2\times2}=\frac1{\sqrt2}$$</div>
+<div class="math-block">$$\theta=\cos^{-1}\!\left(\frac1{\sqrt2}\right)=45^\circ$$</div>
+<div class="math-block">$$\boxed{\theta=45^\circ}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="ex-p29">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.29 · Example 1.5</span></div>
+    <h4>兩個位置向量的距離、夾角與分量</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p29">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span>
+      <p>$\vec A=\hat i+2\hat j-2\hat k$、$\vec B=4\hat i+2\hat j-3\hat k$。求 (a) 從點 $B$ 到點 $A$ 的向量大小；(b) $\vec A$、$\vec B$ 的夾角；(c) $\vec B$ 沿 $\vec A$ 方向的分量。</p>
+    </div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=\hat i+2\hat j-2\hat k=(1,2,-2)$、$\vec B=4\hat i+2\hat j-3\hat k=(4,2,-3)$，當作從原點出發的位置向量，點 $A$、$B$ 是它們的尖端。</p>
+<div class="anim" data-anim="ex15"></div>
+<h4>(a) 從 $B$ 到 $A$ 的向量大小</h4>
+<p><strong>① 終點減起點：</strong> 「從 $B$ 到 $A$」是終點 $A$ 減起點 $B$，令 $\vec C=\vec A-\vec B$，逐分量相減：</p>
+<div class="math-block">$$\begin{aligned}\vec C&amp;=\vec A-\vec B\\&amp;=(1-4,\ 2-2,\ -2-(-3))\\&amp;=(-3,\,0,\,1)\end{aligned}$$</div>
+<p><strong>② 長度：</strong> 用 $|\vec C|=\sqrt{C_1^2+C_2^2+C_3^2}$：</p>
+<div class="math-block">$$|\vec C|=\sqrt{(-3)^2+0^2+1^2}=\sqrt{10}\approx3.16$$</div>
+<div class="math-block">$$\boxed{|\vec A-\vec B|=\sqrt{10}\approx3.16}$$</div>
+<h4>(b) $\vec A$、$\vec B$ 的夾角</h4>
+<p><strong>① 內積與兩個長度：</strong> 兩個向量都給了分量，內積用分量公式算出數值，再用幾何公式解出 $\cos\theta$。</p>
+<p class="fnote"><b>公式（內積）：</b>分量式 $\vec A\cdot\vec B=A_1B_1+A_2B_2+A_3B_3$，幾何式 $\vec A\cdot\vec B=|\vec A||\vec B|\cos\theta$，其中 $\theta$ 為夾角；本題代入題目的 $\vec A$、$\vec B$。</p>
+<div class="math-block">$$\begin{aligned}\vec A\cdot\vec B&amp;=(1)(4)+(2)(2)+(-2)(-3)\\&amp;=4+4+6=14\end{aligned}$$</div>
+<div class="math-block">$$\begin{aligned}|\vec A|&amp;=\sqrt{1+4+4}=\sqrt9=3\\ |\vec B|&amp;=\sqrt{16+4+9}=\sqrt{29}\approx5.385\end{aligned}$$</div>
+<p><strong>② 解出夾角：</strong> 代入 $\cos\theta=\dfrac{\vec A\cdot\vec B}{|\vec A||\vec B|}$：</p>
+<div class="math-block">$$\cos\theta=\frac{14}{3\sqrt{29}}=\frac{14}{16.155}\approx0.867$$</div>
+<div class="math-block">$$\theta=\cos^{-1}0.867\approx29.9^\circ$$</div>
+<div class="math-block">$$\boxed{\theta=\cos^{-1}\!\Big(\frac{14}{3\sqrt{29}}\Big)\approx29.9^\circ}$$</div>
+<h4>(c) $\vec B$ 沿 $\vec A$ 的分量</h4>
+<p><strong>① 沿誰就除以誰的長度：</strong> 只要 $\vec A$ 的方向，所以用 $\hat A$：</p>
+<div class="math-block">$$B_A=\vec B\cdot\hat A=\frac{\vec A\cdot\vec B}{|\vec A|}$$</div>
+<p>代入 (b) 的 $\vec A\cdot\vec B=14$、$|\vec A|=3$：</p>
+<div class="math-block">$$B_A=\frac{14}{3}\approx4.67$$</div>
+<div class="math-block">$$\boxed{B_A=\frac{14}{3}\approx4.67}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="dot-tm">4.5 課本題</h3>
+
+<div class="problem" data-kind="textbook" id="tm-1-2">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-2 · p.43</span></div>
+    <h4>方向餘弦的兩個公式</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-2"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Prove Equations 1.10 and 1.11 from trigonometric considerations.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-2 · p.43</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一條過原點的直線與 $x_1,x_2,x_3$ 軸的夾角為 $\alpha,\beta,\gamma$，另一條為 $\alpha',\beta',\gamma'$，兩直線夾 $\theta$。用三角的方法證明課本式 (1.10)、(1.11)：</p>
+      $$\begin{gathered}\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1\\ \cos\theta=\cos\alpha\cos\alpha'+\cos\beta\cos\beta'+\cos\gamma\cos\gamma'\end{gathered}$$</div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：第一條過原點直線與 $x_1,x_2,x_3$ 軸夾 $\alpha,\beta,\gamma$，第二條夾 $\alpha',\beta',\gamma'$，兩線夾 $\theta$。題目指定用三角（直角三角形、畢氏定理、餘弦定律），不能用內積——課本正是用 (1.11) 推出內積公式，反用會循環論證。</p>
+<p><strong>① 直線上一點的座標：</strong> 在第一條直線上取離原點 $r$ 的點 $P$，從 $P$ 往 $x_1$ 軸作垂線，$O$、$P$ 和垂足圍成直角三角形：斜邊 $OP=r$ 和 $x_1$ 軸夾 $\alpha$，鄰邊就是 $P$ 的 $x_1$ 座標。</p>
+<div class="math-block">$$x_1=r\cos\alpha$$</div>
+<p>對 $x_2$、$x_3$ 軸做同樣的事：</p>
+<div class="math-block">$$x_2=r\cos\beta,\qquad x_3=r\cos\gamma$$</div>
+<p><strong>② 三維畢氏定理推出 (1.10)：</strong> $P$ 到原點的距離平方等於三個座標的平方和。</p>
+<p class="fnote"><b>公式（三維畢氏定理）：</b>$r^2=x_1^2+x_2^2+x_3^2$，其中 $r$ 為點到原點的距離、$x_k$ 為點的座標；本題 $x_k$ 用上一步的結果。</p>
+<p>代入 $x_1=r\cos\alpha$、$x_2=r\cos\beta$、$x_3=r\cos\gamma$：</p>
+<div class="math-block">$$r^2=r^2\cos^2\alpha+r^2\cos^2\beta+r^2\cos^2\gamma$$</div>
+<p>$r\neq0$，兩邊除以 $r^2$：</p>
+<div class="math-block">$$\boxed{\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1\quad(1.10)}$$</div>
+<p><strong>③ 兩條線各取離原點 1 的點，用餘弦定律：</strong> 第 ① 步取 $r=1$，兩條線上各取一點：</p>
+<div class="math-block">$$\begin{aligned}P&amp;=(\cos\alpha,\cos\beta,\cos\gamma)\\ P'&amp;=(\cos\alpha',\cos\beta',\cos\gamma')\end{aligned}$$</div>
+<p>三角形 $OPP'$ 中 $OP=OP'=1$，兩邊的夾角是兩直線的夾角 $\theta$。</p>
+<p class="fnote"><b>公式（餘弦定律）：</b>$c^2=a^2+b^2-2ab\cos\theta$，其中 $a,b$ 為兩邊長、$\theta$ 為其夾角、$c$ 為對邊長；本題 $a=b=1$、$c=|PP'|$。</p>
+<div class="math-block">$$\begin{aligned}|PP'|^2&amp;=1^2+1^2-2(1)(1)\cos\theta\\&amp;=2-2\cos\theta\end{aligned}$$</div>
+<p><strong>④ 同一段距離用座標算：</strong> 兩點距離平方是座標差的平方和：</p>
+<div class="math-block">$$\begin{aligned}|PP'|^2&amp;=(\cos\alpha-\cos\alpha')^2\\&amp;\quad+(\cos\beta-\cos\beta')^2\\&amp;\quad+(\cos\gamma-\cos\gamma')^2\end{aligned}$$</div>
+<p>每一項用 $(a-b)^2=a^2-2ab+b^2$ 展開，平方項、交叉項各自收在一起：</p>
+<div class="math-block">$$\begin{aligned}|PP'|^2&amp;=(\cos^2\alpha+\cos^2\beta+\cos^2\gamma)\\&amp;\quad+(\cos^2\alpha'+\cos^2\beta'+\cos^2\gamma')\\&amp;\quad-2(\cos\alpha\cos\alpha'+\cos\beta\cos\beta'\\&amp;\qquad+\cos\gamma\cos\gamma')\end{aligned}$$</div>
+<p>前兩個括號各用一次 (1.10)（兩條線都成立），各等於 1；最後的括號記作 $\Sigma\equiv\cos\alpha\cos\alpha'+\cos\beta\cos\beta'+\cos\gamma\cos\gamma'$：</p>
+<div class="math-block">$$|PP'|^2=1+1-2\Sigma=2-2\Sigma$$</div>
+<p><strong>⑤ 比較兩個結果推出 (1.11)：</strong> 第 ③、④ 步算的是同一段 $|PP'|^2$，令兩者相等：</p>
+<div class="math-block">$$2-2\cos\theta=2-2\Sigma$$</div>
+<p>兩邊減 2、再除以 $-2$，得 $\cos\theta=\Sigma$，把 $\Sigma$ 寫回來：</p>
+<div class="math-block">$$\boxed{\begin{gathered}\cos\theta=\cos\alpha\cos\alpha'+\cos\beta\cos\beta'\\ +\cos\gamma\cos\gamma'\qquad(1.11)\ \blacksquare\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-7">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-7 · p.44</span></div>
+    <h4>單位立方體的對角線夾角</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a unit cube with one corner at the origin and three adjacent sides lying along the three axes of a rectangular coordinate system. Find the vectors describing the diagonals of the cube. What is the angle between any pair of diagonals?</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-7 · p.44</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>邊長 1 的立方體，一頂點在原點、三邊沿座標軸。寫出各條（體）對角線的向量，並求任兩條之間的夾角。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：邊長 1 的立方體，一頂點在原點、三邊沿 $x,y,z$ 軸，8 個頂點的座標都是 0 或 1；體對角線連接三個座標都相反的兩個頂點。</p>
+<div class="anim" data-anim="cube-diag"></div>
+<p><strong>① 四條體對角線：</strong> 8 個頂點兩兩配成 4 對，用終點減起點直接寫出分量：</p>
+<div class="math-block">$$\begin{aligned}
+\vec d_1&amp;=(1,1,1)-(0,0,0)=(1,1,1)\\
+\vec d_2&amp;=(0,1,1)-(1,0,0)=(-1,1,1)\\
+\vec d_3&amp;=(1,0,1)-(0,1,0)=(1,-1,1)\\
+\vec d_4&amp;=(1,1,0)-(0,0,1)=(1,1,-1)
+\end{aligned}$$</div>
+<p>每條的長度：</p>
+<div class="math-block">$$|\vec d_k|=\sqrt{1^2+1^2+1^2}=\sqrt3$$</div>
+<p><strong>② 任兩條的內積：</strong> 要夾角、向量又有分量，所以用內積。</p>
+<p class="fnote"><b>公式（內積的分量式）：</b>$\vec d\cdot\vec d'=d_1d_1'+d_2d_2'+d_3d_3'$，其中 $d_k,d_k'$ 為兩向量的分量；本題代入上一步的對角線向量，例如 $\vec d_1\cdot\vec d_2$：</p>
+<div class="math-block">$$\vec d_1\cdot\vec d_2=(1)(-1)+(1)(1)+(1)(1)=1$$</div>
+<p>其餘 5 對同樣算：$\vec d_1\cdot\vec d_3=\vec d_1\cdot\vec d_4=1$，$\vec d_2\cdot\vec d_3=\vec d_2\cdot\vec d_4=\vec d_3\cdot\vec d_4=-1$。每一對都是兩個分量同號、一個異號，所以內積不是 $+1$ 就是 $-1$。</p>
+<p><strong>③ 夾角：</strong> 代入 $\vec d\cdot\vec d'=1$、$|\vec d|=|\vec d'|=\sqrt3$。</p>
+<p class="fnote"><b>公式（內積求夾角）：</b>$\cos\theta=\dfrac{\vec d\cdot\vec d'}{|\vec d||\vec d'|}$，其中 $\theta$ 為兩向量夾角；本題用前兩步的內積與長度。</p>
+<div class="math-block">$$\cos\theta=\frac{1}{\sqrt3\cdot\sqrt3}=\frac13$$</div>
+<div class="math-block">$$\theta=\cos^{-1}\tfrac13\approx70.5^\circ$$</div>
+<p>內積為 $-1$ 的那幾對得到 $\cos\theta=-\frac13$，$\theta\approx109.5^\circ=180^\circ-70.5^\circ$，只是箭頭方向選反了，是同一對直線相交的另一個角（補角）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}(1,1,1),\ (-1,1,1),\ (1,-1,1),\ (1,1,-1)\\ \theta=\cos^{-1}\tfrac13\approx70.5^\circ\ (\text{或補角 }109.5^\circ)\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-17">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-17 · p.45</span></div>
+    <h4>用內積推出餘弦定律</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-17">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解讀並展開 $(\vec A-\vec B)\cdot(\vec A-\vec B)$，得到平面三角學的餘弦定律。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec C=\vec A-\vec B$；$A,B,C$ 為三邊長；$\theta$ 為 $\vec A$、$\vec B$ 的夾角。</p>
+<div class="anim" data-anim="cosine-law"></div>
+<p><strong>① 命名：</strong> 同一個量 $(\vec A-\vec B)\cdot(\vec A-\vec B)$ 幾何上讀、代數上展開，各算一次再相等。$\vec A$、$\vec B$ 從同一點出發，$\vec C$ 連接兩個尖端，三者圍成三角形；$\theta$ 在兩邊 $A,B$ 之間，是邊 $C$ 的對角。</p>
+<p><strong>② 幾何：自己內積自己等於長度平方：</strong> 任何向量和自己的夾角是 0，$\cos0=1$。</p>
+<p class="fnote"><b>公式（內積的幾何式）：</b>$\vec A\cdot\vec B=AB\cos\theta$，其中 $A,B$ 為長度、$\theta$ 為夾角；本題先用在 $\vec C\cdot\vec C$，夾角為 0。</p>
+<div class="math-block">$$\begin{aligned}(\vec A-\vec B)\cdot(\vec A-\vec B)&amp;=\vec C\cdot\vec C\\&amp;=C\,C\cos0=C^2\end{aligned}$$</div>
+<p><strong>③ 代數：分配律展開：</strong> 像 $(a-b)^2$ 一樣逐項展開，共四項：</p>
+<div class="math-block">$$\begin{aligned}&amp;(\vec A-\vec B)\cdot(\vec A-\vec B)\\&amp;=\vec A\cdot\vec A-\vec A\cdot\vec B-\vec B\cdot\vec A+\vec B\cdot\vec B\end{aligned}$$</div>
+<p>用 $\vec A\cdot\vec A=A^2$、$\vec B\cdot\vec B=B^2$、$\vec B\cdot\vec A=\vec A\cdot\vec B$，再代入 $\vec A\cdot\vec B=AB\cos\theta$：</p>
+<div class="math-block">$$\begin{aligned}&amp;=A^2-2\,\vec A\cdot\vec B+B^2\\&amp;=A^2+B^2-2AB\cos\theta\end{aligned}$$</div>
+<p><strong>④ 兩個結果相等：</strong> 第 ②、③ 步算的是同一個量，得到平面三角學的餘弦定律。∎</p>
+<div class="math-block">$$\boxed{C^2=A^2+B^2-2AB\cos\theta}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-8">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-8 · p.44</span></div>
+    <h4>$\vec A\cdot\vec r=A^2$ 是一個平面</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec A$ 由原點指向定點 $P$，$\vec r$ 由原點指向動點 $Q(x_1,x_2,x_3)$。證明 $\vec A\cdot\vec r=A^2$ 是通過 $P$、垂直於 $\vec A$ 的平面。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=\overrightarrow{OP}$（$P$ 為定點，$A^2=\vec A\cdot\vec A$），$\vec r=\overrightarrow{OQ}$（$Q(x_1,x_2,x_3)$ 為動點）；過 $P$、法向量 $\vec A$ 的平面是所有使 $\overrightarrow{PQ}\perp\vec A$ 的點 $Q$。</p>
+<div class="anim" data-anim="plane18"></div>
+<p><strong>① 把 $A^2$ 寫成內積、移項：</strong> 垂直可以寫成內積為 0，所以目標是把方程式改寫成 $\vec A\cdot(\text{某向量})=0$。右邊用 $A^2=\vec A\cdot\vec A$ 改寫：</p>
+<div class="math-block">$$\vec A\cdot\vec r=\vec A\cdot\vec A$$</div>
+<p>移到同一邊，再用分配律把 $\vec A$ 提出來：</p>
+<div class="math-block">$$\vec A\cdot\vec r-\vec A\cdot\vec A=0\iff \vec A\cdot(\vec r-\vec A)=0$$</div>
+<p><strong>② 認出 $\overrightarrow{PQ}$：</strong> $\vec r$ 指向 $Q$、$\vec A$ 指向 $P$，兩者相減是終點 $Q$ 減起點 $P$：</p>
+<div class="math-block">$$\vec r-\vec A=\overrightarrow{OQ}-\overrightarrow{OP}=\overrightarrow{PQ}$$</div>
+<p>代回上一步：</p>
+<div class="math-block">$$\vec A\cdot\vec r=A^2\iff\vec A\cdot\overrightarrow{PQ}=0$$</div>
+<p>$\vec A\neq0$，內積為 0 表示 $\overrightarrow{PQ}\perp\vec A$，或 $\overrightarrow{PQ}=0$（即 $Q=P$）。</p>
+<p><strong>③ 兩個方向都成立：</strong> (⇒) 滿足方程式的 $Q$，$\overrightarrow{PQ}$ 都垂直 $\vec A$，所以都在「過 $P$、法向量 $\vec A$」的平面上。(⇐) 平面上任一點 $Q$ 都使 $\overrightarrow{PQ}\perp\vec A$，倒推回去就滿足方程式。$Q=P$ 時 $\vec A\cdot\vec A=A^2$ 成立，所以平面通過 $P$。∎ 換個角度看：兩邊除以 $A$ 得 $\vec r\cdot\hat A=A$，平面上每一點在 $\hat A$ 方向的影子都一樣長。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec A\cdot\vec r=A^2\iff\overrightarrow{PQ}\perp\vec A\\ \text{過 }P\text{、垂直 }\vec A\text{ 的平面：}A_1x_1+A_2x_2+A_3x_3=A^2\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-16">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-16 · p.45</span></div>
+    <h4>$\vec r\cdot\vec a=$ 常數 是什麼曲面</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-16">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What surface is represented by $\mathbf r\cdot\mathbf a=$ const. that is described if $\mathbf a$ is a vector of constant magnitude and direction from the origin and $\mathbf r$ is the position vector to the point $P(x_1,x_2,x_3)$ on the surface?</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-16 · p.45</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec a$ 是從原點出發、大小和方向都固定的向量，$\vec r$ 是從原點到曲面上一點 $P(x_1,x_2,x_3)$ 的位置向量。$\vec r\cdot\vec a=c$（常數）描述的是什麼曲面？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec a$ 為從原點出發的固定向量（$\vec a\neq0$），$a=|\vec a|$；$\vec r$ 為曲面上一點的位置向量；$c$ 為常數。</p>
+<p><strong>① 改寫成投影：</strong> 內積等於 $|\vec a|$ 乘上 $\vec r$ 在 $\hat a$ 方向的分量，所以「內積為常數」就是「每一點在 $\hat a$ 方向的高度都一樣」。代入 $\vec a=a\hat a$，兩邊除以 $a$：</p>
+<div class="math-block">$$\vec r\cdot\vec a=c\ \Longleftrightarrow\ \vec r\cdot\hat a=\frac ca\equiv d$$</div>
+<p><strong>② 找一個點，證明是平面：</strong> 沿 $\vec a$ 方向找一點 $\vec r_0=k\vec a$，要求它滿足方程式：$k\vec a\cdot\vec a=ka^2=c$，所以 $k=c/a^2$：</p>
+<div class="math-block">$$\vec r_0=\frac{c}{a^2}\vec a,\qquad \vec r_0\cdot\vec a=\frac{c}{a^2}\,a^2=c$$</div>
+<p>對曲面上任一點 $\vec r$（滿足 $\vec r\cdot\vec a=c$），用分配律：</p>
+<div class="math-block">$$(\vec r-\vec r_0)\cdot\vec a=\vec r\cdot\vec a-\vec r_0\cdot\vec a=c-c=0$$</div>
+<p>所以 $\vec r-\vec r_0$ 永遠垂直 $\vec a$：所有點都在「過 $\vec r_0$、法向量 $\vec a$」的平面上；反過來，這個平面上每一點都有 $(\vec r-\vec r_0)\cdot\vec a=0$，即 $\vec r\cdot\vec a=c$。</p>
+<p><strong>③ 分量形式與離原點的距離：</strong> 用分量寫內積，就是平面的標準形式：</p>
+<p class="fnote"><b>公式（內積的分量式）：</b>$\vec a\cdot\vec r=a_1x_1+a_2x_2+a_3x_3$，其中 $a_i$、$x_i$ 為兩向量的第 $i$ 個分量；本題 $\vec r=(x_1,x_2,x_3)$。</p>
+<div class="math-block">$$a_1x_1+a_2x_2+a_3x_3=c$$</div>
+<p>$\vec r_0$ 沿法向量，所以是平面上離原點最近的點，距離是它的長度：</p>
+<div class="math-block">$$|\vec r_0|=\frac{|c|}{a^2}\,a=\frac{|c|}{a}$$</div>
+<p>$c\gt0$ 時平面在 $\vec a$ 指的那一側，$c\lt0$ 在另一側，$c=0$ 時過原點。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{垂直於 }\vec a\text{ 的平面，離原點 }\frac{|c|}{|\vec a|}\\ \text{最近點 }\vec r_0=\frac{c\,\vec a}{|\vec a|^2}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-41">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-41 · p.47</span></div>
+    <h4>使兩向量垂直的 $a$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-41">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$a$ 為何值時，$\vec A=2a\,\hat i-2\hat j+a\,\hat k$ 與 $\vec B=a\,\hat i+2a\,\hat j+2\hat k$ 垂直？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=(2a,-2,a)$、$\vec B=(a,2a,2)$；$\vec A$ 的 $y$ 分量 $-2$、$\vec B$ 的 $z$ 分量 $2$ 永不為 0，兩向量恆非零。</p>
+<p><strong>① 內積：</strong> 非零向量垂直 ⟺ 內積為 0，內積是 $a$ 的二次式，令它為 0 解出 $a$ 即可。</p>
+<p class="fnote"><b>公式（內積的分量式）：</b>$\vec A\cdot\vec B=A_1B_1+A_2B_2+A_3B_3$，其中 $A_i$、$B_i$ 為兩向量的第 $i$ 個分量；本題 $\vec A=(2a,-2,a)$、$\vec B=(a,2a,2)$。</p>
+<div class="math-block">$$\begin{aligned}\vec A\cdot\vec B&amp;=(2a)(a)+(-2)(2a)+(a)(2)\\&amp;=2a^2-4a+2a\\&amp;=2a^2-2a=2a(a-1)\end{aligned}$$</div>
+<p><strong>② 令內積為 0：</strong> 用上一步的因式分解：</p>
+<div class="math-block">$$2a(a-1)=0\ \Longrightarrow\ a=0\ \text{或}\ a=1$$</div>
+<p>兩個值都讓兩向量非零，所以都是答案。</p>
+<div class="math-block">$$\boxed{a=0\ \text{或}\ a=1}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s04">4.6 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s04-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>點到直線的距離：用投影拆向量</h4>
+    <button type="button" class="exam-btn" data-exam="self-s04-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>點 $P(1,2,3)$；直線過原點、方向 $\vec u=(1,1,1)$。用內積把 $\vec P$ 拆成「平行直線」和「垂直直線」兩部分，求 $P$ 到直線的距離與直線上離 $P$ 最近的點，並說明為什麼垂直那段就是最短距離。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：點 $P(1,2,3)$，位置向量 $\vec P$；直線過原點、方向 $\vec u=(1,1,1)$，直線上的點為 $t\hat u$（$t$ 為任意實數）。</p>
+<h4>(a) 平行、垂直兩部分與距離</h4>
+<p><strong>① 平行部分：</strong> 直線過原點，$\vec P$ 正好是從直線上一點指向 $P$ 的向量，用投影拆成沿直線和垂直直線兩部分。先把方向變成單位向量，$|\vec u|=\sqrt{1+1+1}=\sqrt3$：</p>
+<div class="math-block">$$\hat u=\frac{\vec u}{|\vec u|}=\tfrac{1}{\sqrt3}(1,1,1)$$</div>
+<p class="fnote"><b>公式（向量投影）：</b>$\vec P_\parallel=(\vec P\cdot\hat u)\hat u$，其中 $\hat u$ 為直線方向的單位向量、$\vec P\cdot\hat u$ 為 $\vec P$ 沿 $\hat u$ 的分量；本題 $\vec P=(1,2,3)$、$\hat u=\tfrac1{\sqrt3}(1,1,1)$。</p>
+<p>代入 $\vec P=(1,2,3)$ 算分量：</p>
+<div class="math-block">$$\vec P\cdot\hat u=\frac{1+2+3}{\sqrt3}=\frac{6}{\sqrt3}=2\sqrt3$$</div>
+<p>分量乘上方向得到平行部分：</p>
+<div class="math-block">$$\begin{aligned}\vec P_\parallel&amp;=(\vec P\cdot\hat u)\hat u\\&amp;=2\sqrt3\cdot\tfrac{1}{\sqrt3}(1,1,1)=(2,2,2)\end{aligned}$$</div>
+<p><strong>② 垂直部分與距離：</strong> 剩下的部分 $=\vec P-\vec P_\parallel$，代入 $\vec P=(1,2,3)$ 與上一步的 $(2,2,2)$：</p>
+<div class="math-block">$$\vec P_\perp=(1-2,\ 2-2,\ 3-2)=(-1,0,1)$$</div>
+<p>它的長度：</p>
+<div class="math-block">$$|\vec P_\perp|=\sqrt{1+0+1}=\sqrt2$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\vec P_\parallel=(2,2,2),\ \vec P_\perp=(-1,0,1)\\ \text{距離 }\sqrt2\end{gathered}}$$</div>
+<h4>(b) 為什麼垂直段最短、最近點</h4>
+<p><strong>① 拆開任一點的差向量：</strong> 直線上任一點 $Q=t\hat u$。用 $\vec P=\vec P_\parallel+\vec P_\perp=2\sqrt3\,\hat u+\vec P_\perp$（(a) 的結果）：</p>
+<div class="math-block">$$\vec P-\vec Q=\vec P_\perp+(2\sqrt3-t)\hat u$$</div>
+<p><strong>② 畢氏定理：</strong> 兩項互相垂直（$\vec P_\perp\cdot\hat u=0$），所以距離平方是兩個平方的和：</p>
+<div class="math-block">$$\begin{aligned}|\vec P-\vec Q|^2&amp;=|\vec P_\perp|^2+(2\sqrt3-t)^2\\&amp;\ge|\vec P_\perp|^2=2\end{aligned}$$</div>
+<p>只有 $t=2\sqrt3$ 時取等號，這時 $Q=2\sqrt3\,\hat u=(2,2,2)$，正好是 $\vec P_\parallel$ 的尖端。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{距離 }|\vec P_\perp|=\sqrt2\\ \text{最近點 }(2,2,2)\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s04-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>半圓上的圓周角是直角</h4>
+    <button type="button" class="exam-btn" data-exam="self-s04-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$AB$ 是半徑 $R$ 的圓（或球）的直徑，$P$ 是圓上任一點（$P\neq A,B$）。用內積證明 $\angle APB=90^\circ$，並以 $R=5$、$P=(3,4)$ 驗證；如果 $P$ 在圓內，角度比 $90^\circ$ 大還是小？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：圓心放原點，$\hat e$ 為直徑方向的單位向量，$\vec A=-R\hat e$、$\vec B=R\hat e$；$P$ 在圓上即 $|\vec P|=R$（$P\neq A,B$）；$\angle APB$ 是 $\vec{PA}$ 與 $\vec{PB}$ 的夾角。</p>
+<h4>(a) 證明 $\angle APB=90^\circ$</h4>
+<p><strong>① 設向量：</strong> 判斷是否為 $90^\circ$ 最快的方法是看 $\vec{PA}\cdot\vec{PB}$ 是否為 0；圓心放原點，「在圓上」就只剩 $|\vec P|=R$。從 $P$ 出發的兩個向量是終點減起點：</p>
+<div class="math-block">$$\begin{aligned}\vec{PA}&amp;=\vec A-\vec P=-R\hat e-\vec P\\ \vec{PB}&amp;=\vec B-\vec P=R\hat e-\vec P\end{aligned}$$</div>
+<p><strong>② 內積：</strong> 用分配律展開成四項，再用 $\hat e\cdot\hat e=1$、$\hat e\cdot\vec P=\vec P\cdot\hat e$：</p>
+<div class="math-block">$$\begin{aligned}\vec{PA}\cdot\vec{PB}&amp;=(-R\hat e-\vec P)\cdot(R\hat e-\vec P)\\&amp;=-R^2\,\hat e\cdot\hat e+R\,\hat e\cdot\vec P\\&amp;\quad-R\,\vec P\cdot\hat e+\vec P\cdot\vec P\\&amp;=|\vec P|^2-R^2\end{aligned}$$</div>
+<p>代入 $|\vec P|=R$（$P$ 在圓上）：</p>
+<div class="math-block">$$\vec{PA}\cdot\vec{PB}=R^2-R^2=0$$</div>
+<p><strong>③ 結論：</strong> $P\neq A,B$ 時 $\vec{PA}$、$\vec{PB}$ 都不是零向量，內積為 0 ⟹ 垂直。推導沒有用到「在平面上」，所以球面上也成立。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec{PA}\cdot\vec{PB}=|\vec P|^2-R^2=0\\ \angle APB=90^\circ\end{gathered}}$$</div>
+<h4>(b) 數值驗證</h4>
+<p><strong>① 確認 $P$ 在圓上：</strong> 代入 $R=5$、$P=(3,4)$：</p>
+<div class="math-block">$$|\vec P|=\sqrt{9+16}=5=R$$</div>
+<p><strong>② 算兩個向量與內積：</strong> 取 $\hat e=\hat i$，$A(-5,0)$、$B(5,0)$：</p>
+<div class="math-block">$$\begin{aligned}\vec{PA}&amp;=(-5-3,\ 0-4)=(-8,-4)\\ \vec{PB}&amp;=(5-3,\ 0-4)=(2,-4)\end{aligned}$$</div>
+<div class="math-block">$$\vec{PA}\cdot\vec{PB}=(-8)(2)+(-4)(-4)=-16+16=0$$</div>
+<div class="math-block">$$\boxed{\vec{PA}\cdot\vec{PB}=0,\ \angle APB=90^\circ}$$</div>
+<h4>(c) $P$ 在圓內</h4>
+<p><strong>① 看內積的正負：</strong> 若 $P$ 在圓內，$|\vec P|\lt R$，(a) 的內積 $|\vec P|^2-R^2\lt0$，所以 $\cos\angle APB\lt0$。</p>
+<div class="math-block">$$\boxed{\angle APB\gt90^\circ\text{（鈍角）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\vec A\cdot\vec B=\sum A_iB_i=|\vec A||\vec B|\cos\theta$：左邊用來算、右邊用來解讀。</li>
+    <li>$\vec A\cdot\hat B$ 是沿 $\hat B$ 的分量；「沿誰」就除以誰的長度。</li>
+    <li>內積為 0 ⟺ 垂直；自己內積自己 = 長度平方。</li>
+  </ol>
+</div>

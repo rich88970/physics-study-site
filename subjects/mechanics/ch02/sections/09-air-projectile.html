@@ -1,0 +1,548 @@
+<h2>九、有空氣阻力的拋體 <span class="pg">講義 p.85–99 · 課本 §2.4 p.65–71</span></h2>
+
+<p class="lead">加上線性阻力後，水平、鉛直仍然各自獨立，兩條都是第 6 節解過的方程式；困難在最後一步：飛行時間滿足一條超越方程式，沒有解析解。課本示範兩種處理法——微擾展開與數值計算。講義接著討論阻力換成 $v^2$ 時，上升和下降為什麼必須分開解（習題 2-12）。</p>
+
+<h3 id="c2a-linear">9.1 線性阻力的拋體 <span class="pg-tag">p.85–89</span></h3>
+
+<div class="problem" data-kind="example" id="c2-ex27">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.85–92 · Example 2.7（課本 p.65–68）</span></div>
+    <h4>線性空氣阻力讓射程減少多少</h4>
+    <button type="button" class="exam-btn" data-exam="c2-ex27">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在例題 2.6 的拋體中加入空氣阻力，假設阻力正比於拋體的速度（$-km\vec v$）。初始條件不變：$x(0)=y(0)=0$，$\dot x(0)=v_0\cos\theta\equiv U$，$\dot y(0)=v_0\sin\theta\equiv V$。求軌跡，並計算射程減少多少。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：阻力 $\vec f=-km\vec v$（$k$ 單位 $\text{s}^{-1}$），另有重力 $-mg\,\hat y$；$x(0)=y(0)=0$，$\dot x(0)=v_0\cos\theta\equiv U$，$\dot y(0)=v_0\sin\theta\equiv V$；射程是回到 $y=0$ 時的水平距離；$k$ 當作小量（$kV/g\ll1$）。</p>
+<p><strong>① $x$ 方向（講義 p.85–86）：</strong> 阻力的 $x$ 分量只含 $\dot x$、$y$ 分量只含 $\dot y$，兩個方向互不牽連，可以分開解；每條都是速度的一階線性方程式，分離變數先積速度、再積位置。水平方向只有阻力 $-km\dot x$：</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\ddot{\vec r}=\vec F$，其中 $m$ 為質量、$\ddot{\vec r}$ 為加速度、$\vec F$ 為合力；本題 $\vec F=-km\dot{\vec r}-mg\,\hat y$。</p>
+<div class="math-block">$$m\ddot x=-km\dot x\quad\Longrightarrow\quad\frac{\mathrm d\dot x}{\mathrm dt}=-k\dot x$$</div>
+<p>分離變數，左邊從 $\dot x(0)$ 積到 $\dot x$，右邊從 $0$ 積到 $t$：</p>
+<div class="math-block">$$\int_{\dot x(0)}^{\dot x}\frac{\mathrm d\dot x'}{\dot x'}=-k\int_0^t\mathrm dt'\quad\Longrightarrow\quad\ln\frac{\dot x}{\dot x(0)}=-kt$$</div>
+<p>代入 $\dot x(0)=U$：</p>
+<div class="math-block">$$\dot x=Ue^{-kt}$$</div>
+<p>再積分一次得位置，下限用 $x(0)=0$：</p>
+<div class="math-block">$$x=\int_0^tUe^{-kt'}\,\mathrm dt'=\frac Uk\left(1-e^{-kt}\right)\qquad(2.43)$$</div>
+<p><strong>② $y$ 方向（講義 p.87–88）：</strong> 鉛直方向有阻力 $-km\dot y$ 和重力 $-mg$（向上為正）：</p>
+<div class="math-block">$$m\ddot y=-km\dot y-mg\quad\Longrightarrow\quad\frac{\mathrm d\dot y}{\mathrm dt}=-(k\dot y+g)$$</div>
+<p>令 $u\equiv k\dot y+g$，則 $\dfrac{\mathrm du}{\mathrm dt}=k\dfrac{\mathrm d\dot y}{\mathrm dt}=-ku$，和 $x$ 方向同一種方程式，解是 $u=u(0)e^{-kt}$。代入 $\dot y(0)=V$，所以 $u(0)=kV+g$：</p>
+<div class="math-block">$$k\dot y+g=(kV+g)e^{-kt}\quad\Longrightarrow\quad\dot y=\frac{(kV+g)e^{-kt}-g}{k}$$</div>
+<p>從 $0$ 積到 $t$，用 $y(0)=0$：</p>
+<div class="math-block">$$\begin{aligned}y&amp;=\int_0^t\left[\frac{kV+g}{k}e^{-kt'}-\frac gk\right]\mathrm dt'\\&amp;=-\frac{gt}{k}+\frac{kV+g}{k^2}\left(1-e^{-kt}\right)\qquad(2.44)\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}x=\frac Uk\left(1-e^{-kt}\right)\\ y=-\frac{gt}k+\frac{kV+g}{k^2}\left(1-e^{-kt}\right)\end{gathered}}$$</div>
+<p><strong>③ 飛行時間：超越方程式（講義 p.89）：</strong> 落地就是 $y$ 回到 $0$。在 (2.44) 令 $t=T$、$y=0$：</p>
+<div class="math-block">$$-\frac{gT}{k}+\frac{kV+g}{k^2}\left(1-e^{-kT}\right)=0$$</div>
+<p>兩邊乘 $k^2$、把 $gkT$ 移到右邊，再除以 $gk$：</p>
+<div class="math-block">$$T=\frac{kV+g}{gk}\left(1-e^{-kT}\right)\qquad(2.45)$$</div>
+<p>$T$ 同時出現在多項式和指數裡，沒有解析解（講義寫「Unsolvable」），所以照課本 p.67–68 把 $k$ 當小參數展開，只留一次項。</p>
+<p><strong>④ 微擾：$k$ 當作小參數（課本 p.67）：</strong> $kT$ 很小時把指數展開到三次。</p>
+<p class="fnote"><b>公式（指數的泰勒展開）：</b>$e^{-z}=1-z+\tfrac12z^2-\tfrac16z^3+\cdots$，其中 $z$ 為小量；本題 $z=kT$，所以 $1-e^{-kT}=kT-\tfrac12k^2T^2+\tfrac16k^3T^3-\cdots$。</p>
+<p>代入 (2.45)，並把 $\dfrac{kV+g}{gk}$ 寫成 $\dfrac1k\left(1+\dfrac{kV}g\right)$：</p>
+<div class="math-block">$$T=\left(1+\frac{kV}g\right)\left(T-\tfrac12kT^2+\tfrac16k^2T^3\right)$$</div>
+<p>兩邊除以 $T$（$T\ne0$），再除以 $\left(1+\frac{kV}g\right)$：</p>
+<div class="math-block">$$1-\tfrac12kT+\tfrac16k^2T^2=\frac{1}{1+kV/g}$$</div>
+<p>移項：$\tfrac12kT-\tfrac16k^2T^2=1-\dfrac1{1+kV/g}=\dfrac{kV/g}{1+kV/g}$。兩邊乘 $\dfrac2k$：</p>
+<div class="math-block">$$T-\tfrac13kT^2=\frac{2V/g}{1+kV/g}\quad\Longrightarrow\quad T=\frac{2V/g}{1+kV/g}+\frac13kT^2\qquad(2.47)$$</div>
+<p>只留 $k$ 的一次項：$kV/g\ll1$，$\dfrac1{1+kV/g}\approx1-\dfrac{kV}g$；$\tfrac13kT^2$ 本身已帶一個 $k$，裡面的 $T$ 用零階值 $T_0=2V/g$（無阻力的飛行時間）：</p>
+<div class="math-block">$$\begin{aligned}T&amp;\approx\frac{2V}{g}\left(1-\frac{kV}g\right)+\frac{k}{3}\cdot\frac{4V^2}{g^2}\\&amp;=\frac{2V}{g}-\frac{2kV^2}{g^2}+\frac{4kV^2}{3g^2}\\&amp;=\frac{2V}{g}\left(1-\frac{kV}{3g}\right)\qquad(2.50)\end{aligned}$$</div>
+<p><strong>⑤ 射程：</strong> 射程是落地時的水平位置 $R'=x(T)$。把 (2.43) 的指數也展開到二次：</p>
+<div class="math-block">$$R'=\frac Uk\left(kT-\tfrac12k^2T^2+\cdots\right)\approx U\left(T-\tfrac12kT^2\right)$$</div>
+<p>代入上一步的 $T\approx\frac{2V}{g}\left(1-\frac{kV}{3g}\right)$；$\tfrac12kT^2$ 已帶一個 $k$，$T^2$ 用零階 $\frac{4V^2}{g^2}$：</p>
+<div class="math-block">$$\begin{aligned}R'&amp;\approx U\left[\frac{2V}g-\frac{2kV^2}{3g^2}-\frac{2kV^2}{g^2}\right]\\&amp;=\frac{2UV}{g}\left(1-\frac{kV}{3g}-\frac{kV}{g}\right)\\&amp;=\frac{2UV}{g}\left(1-\frac{4kV}{3g}\right)\end{aligned}$$</div>
+<p>其中 $\dfrac{2UV}{g}=\dfrac{2v_0^2\sin\theta\cos\theta}g=\dfrac{v_0^2\sin2\theta}g=R$ 是無阻力射程，所以減少量 $\Delta R=R-R'\approx\dfrac{4kV}{3g}R$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}R'\approx R\left(1-\frac{4kV}{3g}\right)\\ \Delta R\approx\frac{4kV}{3g}R\quad(k\ll g/V)\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="anim" data-anim="c2-drag-traj"></div>
+
+<p>課本 Fig. 2-9 把數值解出的射程和微擾的直線畫在一起：$k$ 很小時兩者重合，$k\gtrsim0.005\ \text{s}^{-1}$ 就開始分開，$k>0.01$ 時阻力已經是主角，軌跡明顯不對稱——上升較緩、下降較陡，最後幾乎垂直落下（水平速度 $Ue^{-kt}$ 已衰減殆盡，鉛直速度趨近終端速度 $g/k$）。</p>
+
+<h3 id="c2a-updown">9.2 上升和下降用不用分開寫 <span class="pg-tag">p.90–92</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.90–92 Discussions</span>
+  <p>鉛直方向有上升也有下降。重力方向不變，阻力卻會在上升、下降之間換方向，永遠和運動相反。阻力正比於 $\dot y$ 時，這個換向已經包含在方程式裡。改用向下的座標 $y'=-y$ 寫下降段：$-km\dot y'+mg=m\ddot y'$；代入 $\dot y=-\dot y'$、$\ddot y=-\ddot y'$ 得 $km\dot y+mg=-m\ddot y$，和上升的方程式相同。阻力正比於 $\dot y^2$ 時：上升 $-km\dot y^2-mg=m\ddot y$；下降 $-km\dot y'^2+mg=m\ddot y'$ 換回 $y$ 變成 $-km\dot y^2+mg=-m\ddot y$，和上升的不同，必須分開解（例如習題 2-12）。</p>
+</div>
+
+<p>原因很簡單：$\dot y$ 換號時 $-k\dot y$ 跟著換號，但 $\dot y^2$ 不會。若想只寫一條，$v^2$ 阻力要寫成 $-km|\dot y|\dot y$，代價是絕對值讓積分仍然要分段。所以 $v^2$ 阻力的上拋題，標準做法就是「上升一段、下降一段」，在最高點把兩段接起來。</p>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-12">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-12 · p.91 · 講義 p.93–99</span></div>
+    <h4>$v^2$ 阻力的上拋：回到原處的速率 $v_0v_t/\sqrt{v_0^2+v_t^2}$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-12">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點在均勻重力場中以初速 $v_0$ 鉛直上拋，受到正比於瞬時速率平方的阻力（$-kmv^2$）。證明質點回到出發點時的速率為</p>$$\frac{v_0v_t}{\sqrt{v_0^2+v_t^2}}$$<p>其中 $v_t$ 是終端速度。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：初速 $v_0$ 向上；重力 $mg$ 向下；阻力大小 $km\dot x^2$、方向永遠和速度相反；$v_t$ 為終端速度；下落距離等於上升的最大高度 $x_{\max}$。</p>
+<p><strong>① 上升段（向上為正）：</strong> 阻力方向在最高點會翻轉，一條 $-km\dot x^2$ 管不了兩段，所以上升、下降分開寫；題目只問速率和位置的關係，用連鎖律 $\dfrac{\mathrm d\dot x}{\mathrm dt}=\dot x\dfrac{\mathrm d\dot x}{\mathrm dx}$ 把 $t$ 消掉。上升時重力 $-mg$ 與阻力 $-km\dot x^2$ 都向下。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\ddot x=\sum F$，其中 $m$ 為質量、$\ddot x$ 為加速度、$\sum F$ 為合力；本題合力為重力 $-mg$ 加阻力 $-km\dot x^2$。</p>
+<div class="math-block">$$m\frac{\mathrm d\dot x}{\mathrm dt}=-mg-km\dot x^2\quad\Longrightarrow\quad\dot x\frac{\mathrm d\dot x}{\mathrm dx}=-(g+k\dot x^2)$$</div>
+<p>分離變數，並用 $\dot x\,\mathrm d\dot x=\tfrac12\mathrm d(\dot x^2)$：</p>
+<div class="math-block">$$-2\,\mathrm dx=\frac{\mathrm d(\dot x^2)}{g+k\dot x^2}$$</div>
+<p>把 $\dot x^2$ 當成變數 $u$，$\displaystyle\int\frac{\mathrm du}{g+ku}=\frac1k\ln(g+ku)$。兩邊積分、乘 $k$：</p>
+<div class="math-block">$$-2kx=\ln(g+k\dot x^2)+C$$</div>
+<p>代入出發點 $x=0$ 時 $\dot x=v_0$：$0=\ln(g+kv_0^2)+C$，所以 $C=-\ln(g+kv_0^2)$：</p>
+<div class="math-block">$$x=\frac1{2k}\ln\frac{g+kv_0^2}{g+k\dot x^2}$$</div>
+<p><strong>② 最大高度：</strong> 最高點速度為 0，在上式令 $\dot x=0$。</p>
+<div class="math-block">$$x_{\max}=\frac1{2k}\ln\frac{g+kv_0^2}{g}$$</div>
+<p><strong>③ 下降段（從最高點起算、向下為正）：</strong> 換新座標，原點放在最高點、向下為正，下降時 $\dot x\ge0$；重力 $+mg$ 向下、阻力 $-km\dot x^2$ 向上。</p>
+<div class="math-block">$$m\frac{\mathrm d\dot x}{\mathrm dt}=mg-km\dot x^2\quad\Longrightarrow\quad2\,\mathrm dx=\frac{\mathrm d(\dot x^2)}{g-k\dot x^2}$$</div>
+<p>$\displaystyle\int\frac{\mathrm du}{g-ku}=-\frac1k\ln(g-ku)$，兩邊積分、乘 $-k$：</p>
+<div class="math-block">$$-2kx+C'=\ln(g-k\dot x^2)$$</div>
+<p>代入最高點 $x=0$ 時 $\dot x=0$：$C'=\ln g$。所以 $\ln\dfrac{g-k\dot x^2}{g}=-2kx$，即 $g-k\dot x^2=ge^{-2kx}$：</p>
+<div class="math-block">$$\dot x^2=\frac gk\left(1-e^{-2kx}\right)$$</div>
+<p><strong>④ 終端速度：</strong> 掉得很遠（$x\to\infty$）時 $e^{-2kx}\to0$，速度趨近終端速度；也可直接由「重力＝阻力」$mg=kmv_t^2$ 得到。</p>
+<div class="math-block">$$v_t^2=\frac gk$$</div>
+<p><strong>⑤ 落下 $x_{\max}$ 時的速率：</strong> 回到出發點就是從最高點往下掉了 $x_{\max}$。代入 ② 的 $x_{\max}$，$2kx_{\max}=\ln\dfrac{g+kv_0^2}{g}$，所以</p>
+<div class="math-block">$$e^{-2kx_{\max}}=\frac{g}{g+kv_0^2}$$</div>
+<p>代回 ③ 的 $\dot x^2(x)$，括號通分：</p>
+<div class="math-block">$$\dot x^2=\frac gk\left[1-\frac{g}{g+kv_0^2}\right]=\frac gk\cdot\frac{kv_0^2}{g+kv_0^2}$$</div>
+<p>右邊分子分母同除以 $k$，再把 $g/k$ 換成 ④ 的 $v_t^2$：</p>
+<div class="math-block">$$\dot x^2=\frac gk\cdot\frac{v_0^2}{g/k+v_0^2}=\frac{v_t^2v_0^2}{v_t^2+v_0^2}$$</div>
+<p>開根號即得證：</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{回到出發點的速率}=\frac{v_0v_t}{\sqrt{v_0^2+v_t^2}}\\ v_t=\sqrt{g/k}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="anim" data-anim="c2-updown"></div>
+
+<h3 id="c2a-num">9.3 數值計算：真實的阻力曲線 <span class="pg-tag">課本 p.68–71</span></h3>
+
+<div class="problem" data-kind="tbexample" id="c2-tbex28">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Thornton &amp; Marion Example 2.8 · p.69–71</span></div>
+    <h4>用 Fig. 2-3 的阻力曲線算真實砲彈的軌跡</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tbex28">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 Fig. 2-3 的數據計算真實拋體的軌跡：砲口初速 $600\ \text{m/s}$、仰角 $45^\circ$、拋體質量 $30\ \text{kg}$。畫出有、無空氣阻力時的高度 $y$ 對水平距離 $x$，以及 $y$、$\dot x$、$\dot y$ 對時間的圖。只考慮空氣阻力與重力，忽略升力等其他力。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$v_0=600\ \text{m/s}$、$\theta_0=45^\circ$、$m=30\ \text{kg}$；阻力 $F(v)$ 只有 Fig. 2-3 的曲線、方向沿 $-\vec v$；只算阻力與重力，空氣密度先當作不隨高度變；$g=9.8\ \text{m/s}^2$；落地為 $y=0$。</p>
+<p><strong>① 建阻力表：</strong> 阻力只有實驗曲線、沒有可積分的公式，只能數值計算。從 Fig. 2-3(c) 每 $50\ \text{m/s}$、從 2-3(d) 每 $100\ \text{m/s}$ 讀一個阻力值，中間用直線內插，得到 $F(v)$。本站讀到的代表值（(c) 在 $400\ \text{m/s}$ 剛好通過 $300\ \text{N}$ 格線；(d) 的 $600\ \text{m/s}$ 夾在 $500\ \text{m/s}\approx460\ \text{N}$ 與 $1000\ \text{m/s}\approx1250\ \text{N}$ 之間）：</p>
+<div class="math-block">$$\begin{aligned}F(100)&amp;\approx15\ \text{N},\quad F(300)\approx95\ \text{N}\\F(400)&amp;\approx300\ \text{N},\quad F(600)\approx620\ \text{N}\end{aligned}$$</div>
+<p>$300\to400\ \text{m/s}$（跨過音速）阻力增加約 $300/95\approx3.2$ 倍，就是圖上的轉折。</p>
+<p><strong>② 初始條件與無阻力對照：</strong> 先把初速拆成分量，兩種情況共用。代入 $v_0=600\ \text{m/s}$、$\theta_0=45^\circ$：</p>
+<div class="math-block">$$\dot x_0=\dot y_0=600\cos45^\circ\ \text{m/s}=424.3\ \text{m/s}$$</div>
+<p class="fnote"><b>公式（無阻力拋體，例題 2.6）：</b>$R=\dfrac{v_0^2\sin2\theta_0}{g}$、$T=\dfrac{2\dot y_0}{g}$、$y_{\max}=\dfrac{\dot y_0^2}{2g}$，其中 $R$ 為射程、$T$ 為飛行時間、$y_{\max}$ 為最大高度；本題 $\sin2\theta_0=\sin90^\circ=1$。</p>
+<div class="math-block">$$\begin{aligned}R&amp;=\frac{(600)^2}{9.8}\ \text{m}=36.7\ \text{km}\\T&amp;=\frac{2(424.3)}{9.8}\ \text{s}=86.6\ \text{s}\\y_{\max}&amp;=\frac{(424.3)^2}{2(9.8)}\ \text{m}=9.18\ \text{km}\end{aligned}$$</div>
+<p><strong>③ 運動方程式：</strong> 阻力大小只由速率決定、方向沿 $-\vec v$，每一步要用瞬時仰角 $\theta$ 把阻力拆成分量，$x$、$y$ 互相牽連。</p>
+<p class="fnote"><b>公式（牛頓第二定律，分量式）：</b>$m\ddot x=\sum F_x$、$m\ddot y=\sum F_y$，其中 $\ddot x,\ddot y$ 為加速度分量；本題 $x$ 方向只有阻力 $-F_x$，$y$ 方向有阻力 $-F_y$ 與重力 $-mg$。</p>
+<div class="math-block">$$\begin{aligned}v&amp;=\sqrt{\dot x^2+\dot y^2},\quad\tan\theta=\frac{\dot y}{\dot x}\\F_x&amp;=F(v)\cos\theta,\quad F_y=F(v)\sin\theta\\\ddot x&amp;=-\frac{F_x}m,\quad\ddot y=-\frac{F_y}m-g\end{aligned}$$</div>
+<p>$F_x$ 永遠為正；$F_y$ 上升時為正、下降時為負（$\theta$ 變成負角），所以 $-F_y/m$ 自動與鉛直速度反向。出發瞬間 $v=600\ \text{m/s}$，代入 ① 讀到的 $F\approx620\ \text{N}$、$m=30\ \text{kg}$、$\theta=45^\circ$：</p>
+<div class="math-block">$$\begin{aligned}\frac Fm&amp;=\frac{620\ \text{N}}{30\ \text{kg}}=20.7\ \text{m/s}^2\ (\approx2.1g)\\\ddot x&amp;=-20.7\cos45^\circ=-14.6\ \text{m/s}^2\\\ddot y&amp;=-14.6-9.8=-24.4\ \text{m/s}^2\end{aligned}$$</div>
+<p>一開始阻力比重力還大，有阻力的軌跡一定差很多。</p>
+<p><strong>④ 逐步積分：</strong> 速度是加速度的積分、位置是速度的積分：</p>
+<div class="math-block">$$\begin{aligned}\dot x&amp;=v_0\cos\theta_0+\int_0^t\ddot x\,\mathrm dt,\quad x=\int_0^t\dot x\,\mathrm dt\\\dot y&amp;=v_0\sin\theta_0+\int_0^t\ddot y\,\mathrm dt,\quad y=\int_0^t\dot y\,\mathrm dt\end{aligned}$$</div>
+<p class="fnote"><b>公式（逐步積分，最簡單的歐拉法）：</b>把時間切成小段 $\Delta t$，每段內加速度當常數，$\dot x_{n+1}=\dot x_n+\ddot x_n\Delta t$、$x_{n+1}=x_n+\dot x_n\Delta t$，其中下標 $n$ 為第 $n$ 步；$y$ 方向同樣。</p>
+<div class="math-block">$$\begin{aligned}\dot x_{n+1}&amp;=\dot x_n+\ddot x_n\,\Delta t,\quad x_{n+1}=x_n+\dot x_n\,\Delta t\\\dot y_{n+1}&amp;=\dot y_n+\ddot y_n\,\Delta t,\quad y_{n+1}=y_n+\dot y_n\,\Delta t\end{aligned}$$</div>
+<p>第一步取 $\Delta t=0.05\ \text{s}$，加速度用 ③ 的出發值：</p>
+<div class="math-block">$$\begin{aligned}\dot x_1&amp;=424.3-14.6(0.05)=423.5\ \text{m/s}\\\dot y_1&amp;=424.3-24.4(0.05)=423.0\ \text{m/s}\end{aligned}$$</div>
+<p>每一步都重新算 $v$、查 $F(v)$、拆分量，直到 $y$ 回到 $0$；$\Delta t$ 減半結果不再改變就表示夠小（實際計算用更準的 Runge–Kutta 法）。</p>
+<p><strong>⑤ 結果（課本 Fig. 2-10）：</strong> 無阻力射程 $36.7\ \text{km}$；有阻力只有約 $16\ \text{km}$。若再考慮空氣密度隨高度遞減，射程增加到約 $18\ \text{km}$；加上升力會更遠。速度圖反映阻力曲線：速率在降到音速之前掉得很快（本站計算約 $15\ \text{s}$ 就從 $600$ 掉到 $330\ \text{m/s}$），之後減緩。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{有阻力射程}\approx16\ \text{km}\ (\text{無阻力 }37\ \text{km})\\ \text{計入密度隨高度變化}\approx18\ \text{km}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">$v^2$ 阻力不能一條式子管上下</span>
+  <p>$-km\dot y^2$ 在下降時方向錯了（仍然向下）。上拋題一定先寫上升段到最高點，再從最高點重新設座標寫下降段；或改寫成 $-km|\dot y|\dot y$。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-7">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-7 · p.91</span></div>
+    <h4>乾草捆加上 $v^2$ 空氣阻力：落點差多少</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Include air resistance for the bales of hay in the previous problem. A bale of hay has a mass of about 30 kg and an average area of about 0.2 m<sup>2</sup>. Let the resistance be proportional to the square of the speed and let $c_W = 0.8$. Plot the trajectories with a computer if the hay bales land 30 m behind the cattle for both including air resistance and not. If the bales of hay were released at the same time in the two cases, what is the distance between landing positions of the bales?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在上一題（2-6：$160\ \text{km/h}$、高 $80\ \text{m}$ 水平飛行投草捆）加入空氣阻力。草捆質量約 $30\ \text{kg}$、平均截面積約 $0.2\ \text{m}^2$，阻力正比於速率平方，$c_W=0.8$。用電腦畫出「有阻力」與「無阻力」兩種情況下、草捆都落在牛群前 $30\ \text{m}$ 時的軌跡。若兩種情況在同一時刻投下，兩個落點相距多遠？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：水平初速 $44.4\ \text{m/s}$（$160\ \text{km/h}$）、$\dot y_0=0$、投下高度 $80\ \text{m}$；$m=30\ \text{kg}$、$A=0.2\ \text{m}^2$、$c_W=0.8$；$\rho=1.3\ \text{kg/m}^3$、$g=9.8\ \text{m/s}^2$（題目沒給，用標準值）；落點要在牛群前 $30\ \text{m}$，兩種情況同時投下。</p>
+<p><strong>① 運動方程式：</strong> 阻力含 $v=\sqrt{\dot x^2+\dot y^2}$，兩方向互相牽連，不能像 2-6 那樣拆成水平等速＋自由落體，只能數值積分。</p>
+<p class="fnote"><b>公式（$v^2$ 阻力）：</b>$\vec W=-\tfrac12c_W\rho A\,v\,\vec v$，其中 $c_W$ 為阻力係數、$\rho$ 為空氣密度、$A$ 為截面積、$v$ 為速率；本題 $c_W=0.8$、$A=0.2\ \text{m}^2$、$\rho=1.3\ \text{kg/m}^3$。</p>
+<p>把 $\vec W$ 除以 $m$、加上重力，令 $c\equiv\dfrac{c_W\rho A}{2m}$：</p>
+<div class="math-block">$$\ddot x=-c\,v\,\dot x,\qquad\ddot y=-g-c\,v\,\dot y,\qquad v=\sqrt{\dot x^2+\dot y^2}$$</div>
+<p>代入 $c_W=0.8$、$A=0.2\ \text{m}^2$、$m=30\ \text{kg}$、$\rho=1.3\ \text{kg/m}^3$：</p>
+<div class="math-block">$$c=\frac{0.8(1.3\ \text{kg/m}^3)(0.2\ \text{m}^2)}{2(30\ \text{kg})}=3.47\times10^{-3}\ \text{m}^{-1}$$</div>
+<p>初始條件（2-6 的數據）：$x=0$、$y=80\ \text{m}$、$\dot x=\dfrac{160\times1000}{3600}=44.4\ \text{m/s}$、$\dot y=0$。出發瞬間阻力造成的減速 $cv^2=3.47\times10^{-3}(44.4)^2=6.85\ \text{m/s}^2$，約 $0.7g$，不能忽略。</p>
+<p><strong>② 數值結果：</strong> 用 Runge–Kutta 法從上面的初始條件積分到 $y=0$；無阻力的一列直接用 2-6 的 $x=44.4t$、$y=80-4.9t^2$。</p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>$t$ (s)</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>落地</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有阻力 $(x,y)$ (m)</td>
+<td>(41.3, 75.3)</td>
+<td>(77.3, 62.1)</td>
+<td>(108.9, 41.3)</td>
+<td>(136.5, 13.9)</td>
+<td>$t=4.44\ \text{s}$，$x=147.5$</td>
+</tr>
+<tr>
+<td>無阻力 $(x,y)$ (m)</td>
+<td>(44.4, 75.1)</td>
+<td>(88.9, 60.4)</td>
+<td>(133.3, 35.9)</td>
+<td>(177.8, 1.6)</td>
+<td>$t=4.04\ \text{s}$，$x=179.6$</td>
+</tr>
+</tbody>
+</table></div>
+<p>有阻力的軌跡較「短而陡」：水平速度從 $44.4$ 降到 $24.3\ \text{m/s}$，落地速率 $40.7\ \text{m/s}$；落地時間晚了 $0.4\ \text{s}$（鉛直方向也被阻擋）。</p>
+<p><strong>③ 投放位置：</strong> 要落在牛群前（飛機來的那一側）$30\ \text{m}$，投放點從落點再往回推一段水平飛行距離。代入上表的水平飛行距離（無阻力 $179.6\ \text{m}$、有阻力 $147.5\ \text{m}$）與 $30\ \text{m}$：</p>
+<div class="math-block">$$\begin{aligned}d_{\text{無阻力}}&amp;=179.6+30=209.6\ \text{m}\\d_{\text{有阻力}}&amp;=147.5+30=177.5\ \text{m}\end{aligned}$$</div>
+<p><strong>④ 同時投下的落點差：</strong> 起點相同，落點差就是兩個水平飛行距離之差。</p>
+<div class="math-block">$$\Delta x=179.6\ \text{m}-147.5\ \text{m}=32.0\ \text{m}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{水平飛行：有阻力 }147.5\ \text{m}\text{，無阻力 }179.6\ \text{m}\\ \text{投放點距牛群：}177.5\ \text{m}\ (\text{無阻力 }209.6\ \text{m})\\ \text{同時投下落點相距}\approx32\ \text{m}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-18">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-18 · p.92</span></div>
+    <h4>壘球加上 $v^2$ 阻力：初速與最佳仰角</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-18">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-18"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Include air resistance proportional to the square of the ball’s speed in the previous problem. Let the drag coefficient be $c_W = 0.5$, the softball radius be 5 cm and the mass be 200 g. <strong>(a)</strong> Find the initial speed of the softball needed now to clear the fence. <strong>(b)</strong> For this speed, find the initial elevation angle that allows the ball to most easily clear the fence. By how much does the ball now vertically clear the fence?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在上一題（2-17：$0.7\ \text{m}$ 高擊出、仰角 $35^\circ$、牆高 $2\ \text{m}$ 距 $60\ \text{m}$）加入正比於速率平方的空氣阻力：$c_W=0.5$、壘球半徑 $5\ \text{cm}$、質量 $200\ \text{g}$。(a) 現在需要多大的初速才能過牆？(b) 用這個初速，什麼仰角最容易過牆？這時球比牆高出多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：擊球高度 $y_0=0.7\ \text{m}$；牆在 $x=60\ \text{m}$、高 $2\ \text{m}$（過牆＝$x=60$ 時 $y\ge2$）；$c_W=0.5$、$r=0.05\ \text{m}$、$m=0.2\ \text{kg}$；$\rho=1.3\ \text{kg/m}^3$、$g=9.8\ \text{m/s}^2$；2-17 無阻力時的初速 $25.4\ \text{m/s}$。$y_{60}(v_0,\theta)$ 表示積分到 $x=60\ \text{m}$ 時的高度。</p>
+<h4>(a) 仰角 $35^\circ$ 時所需初速</h4>
+<p><strong>① 阻力常數：</strong> $v^2$ 阻力讓兩方向耦合，沒有軌跡方程式可用，要數值積分；和 2-7 一樣令 $c\equiv\dfrac{c_W\rho A}{2m}$，運動方程式 $\ddot x=-cv\dot x$、$\ddot y=-g-cv\dot y$。</p>
+<p class="fnote"><b>公式（$v^2$ 阻力）：</b>$W=\tfrac12c_W\rho Av^2$，其中 $c_W$ 為阻力係數、$\rho$ 為空氣密度、$A$ 為截面積、$v$ 為速率；本題迎風面是半徑 $r$ 的圓，$A=\pi r^2$。</p>
+<p>代入 $r=0.05\ \text{m}$：$A=\pi(0.05)^2=7.85\times10^{-3}\ \text{m}^2$。再代入 $c_W=0.5$、$m=0.2\ \text{kg}$、$\rho=1.3$：</p>
+<div class="math-block">$$c=\frac{0.5(1.3)(7.85\times10^{-3})}{2(0.2)}\ \text{m}^{-1}=1.28\times10^{-2}\ \text{m}^{-1}$$</div>
+<p><strong>② 終端速度：</strong> 重力＝阻力，$g=cv_t^2$：</p>
+<div class="math-block">$$v_t=\sqrt{\frac gc}=\sqrt{\frac{9.8}{0.0128}}\ \text{m/s}=27.7\ \text{m/s}$$</div>
+<p>終端速度比 2-17 的初速 $25.4\ \text{m/s}$ 還小，阻力是主角：用 $25.4\ \text{m/s}$ 時一開始的阻力減速 $cv^2=0.0128(25.4)^2=8.2\ \text{m/s}^2$，幾乎等於 $g$，只能飛約 $41\ \text{m}$ 就落地。</p>
+<p><strong>③ 每一次試算：</strong> 初始條件 $x=0$、$y=0.7\ \text{m}$，$\dot x=v_0\cos\theta$、$\dot y=v_0\sin\theta$；數值積分到 $x=60\ \text{m}$，記下那一刻的 $y$ 就是 $y_{60}(v_0,\theta)$。</p>
+<p><strong>④ 夾住答案：</strong> 仰角固定時 $y_{60}$ 隨 $v_0$ 單調增加，可用二分法。先找兩個夾住答案的初速（$\theta=35^\circ$）：</p>
+<div class="math-block">$$\begin{aligned}v_0=34\ \text{m/s}&amp;:\ \text{在 }x=59.3\ \text{m}\text{ 落地}\\v_0=36\ \text{m/s}&amp;:\ y_{60}=3.78\ \text{m}\end{aligned}$$</div>
+<p><strong>⑤ 二分法求解：</strong> 反覆取中點，解 $y_{60}(v_0,35^\circ)=2\ \text{m}$：</p>
+<div class="math-block">$$v_0=35.2\ \text{m/s}$$</div>
+<p>和 2-17 的無阻力值比：$\dfrac{35.2}{25.4}=1.39$，多了 $39\%$。這時到牆需 $3.27\ \text{s}$，到牆時速率只剩 $18.5\ \text{m/s}$。</p>
+<div class="math-block">$$\boxed{v_0\approx35.2\ \text{m/s}\quad(\rho=1.3\ \text{kg/m}^3)}$$</div>
+<h4>(b) 最佳仰角與高出牆的高度</h4>
+<p><strong>① 掃描仰角：</strong> 「最容易過牆」就是固定 $v_0$ 下讓 $y_{60}$ 最大。固定 (a) 的 $v_0=35.2\ \text{m/s}$，改變仰角：</p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>$\theta$</th>
+<th>$30^\circ$</th>
+<th>$35^\circ$</th>
+<th>$40^\circ$</th>
+<th>$45^\circ$</th>
+<th>$50^\circ$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$y_{60}$ (m)</td>
+<td>$-0.26$</td>
+<td>$2.00$</td>
+<td>$3.08$</td>
+<td>$2.20$</td>
+<td>$-2.23$</td>
+</tr>
+</tbody>
+</table></div>
+<p>（負值表示球在牆前已落地，這裡是把軌跡延伸到地面以下的高度，只用來比較。）</p>
+<p><strong>② 細找最大值：</strong> 最大值在 $40^\circ$ 與 $45^\circ$ 之間，用一維最佳化：</p>
+<div class="math-block">$$\theta^*\approx40.7^\circ,\qquad y_{60}=3.10\ \text{m}$$</div>
+<p><strong>③ 高出牆多少：</strong></p>
+<div class="math-block">$$3.10\ \text{m}-2\ \text{m}=1.1\ \text{m}$$</div>
+<p>仰角太低，球還沒飛到牆就掉太多；太高，水平速度被阻力耗盡。</p>
+<div class="math-block">$$\boxed{\theta^*\approx41^\circ\text{，比牆高約 }1.1\ \text{m}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-20">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-20 · p.92</span></div>
+    <h4>用 Fig. 2-3 的阻力：140 m/s 打 1000 m 外的目標</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-20">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A gun fires a projectile of mass 10 kg of the type to which the curves of Figure 2-3 apply. The muzzle velocity is 140 m/s. Through what angle must the barrel be elevated to hit a target on the same horizontal plane as the gun and 1000 m away? Compare the results with those for the case of no retardation.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-20 · p.92；所需 Fig. 2-3 見課本 p.60</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一門砲發射 $10\ \text{kg}$、適用 Fig. 2-3 阻力曲線的砲彈，砲口速率 $140\ \text{m/s}$。砲管要仰起多少度才能打中同一水平面上、$1000\ \text{m}$ 外的目標？和沒有阻力的情況比較。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m=10\ \text{kg}$、$v_0=140\ \text{m/s}$、目標射程 $R=1000\ \text{m}$（同高）；砲彈直徑 $10\ \text{cm}$，$A=\pi(0.05)^2$；Mach $=140/330=0.42$，在 Fig. 2-3(b) 平坦區，$c_W\approx0.2$；$\rho=1.3\ \text{kg/m}^3$、$g=9.8\ \text{m/s}^2$。</p>
+<p><strong>① 阻力的大小：</strong> 砲彈只會被減速，整段飛行都在 Mach 0.42 以下的平坦區，$c_W$ 可當常數，阻力就是簡單的 $v^2$ 型。</p>
+<p class="fnote"><b>公式（$v^2$ 阻力）：</b>$W=\tfrac12c_W\rho Av^2$，其中 $c_W$ 為阻力係數、$\rho$ 為空氣密度、$A$ 為截面積、$v$ 為速率；本題 $c_W=0.2$、$A=7.85\times10^{-3}\ \text{m}^2$。</p>
+<p>代入 $c_W=0.2$、$\rho=1.3$、$A=\pi(0.05)^2=7.85\times10^{-3}\ \text{m}^2$、$v=140\ \text{m/s}$：</p>
+<div class="math-block">$$W(140)=\tfrac12(0.2)(1.3)(7.85\times10^{-3})(140)^2\ \text{N}=20.0\ \text{N}$$</div>
+<p>和 Fig. 2-3(c) 在 $140\ \text{m/s}$ 的讀值（約 $20\ \text{N}$）一致；重量 $mg=10(9.8)=98\ \text{N}$，阻力約是它的五分之一。寫成 $\ddot{\vec r}=\vec g-cv\dot{\vec r}$ 的形式，阻力常數</p>
+<div class="math-block">$$c=\frac{W}{mv^2}=\frac{20.0}{10(140)^2}\ \text{m}^{-1}=1.02\times10^{-4}\ \text{m}^{-1}$$</div>
+<p><strong>② 無阻力：</strong> 由射程公式解出 $\sin2\theta$。</p>
+<p class="fnote"><b>公式（無阻力射程）：</b>$R=\dfrac{v_0^2\sin2\theta}{g}$，其中 $R$ 為射程、$v_0$ 為初速、$\theta$ 為仰角；本題 $R=1000\ \text{m}$、$v_0=140\ \text{m/s}$。</p>
+<div class="math-block">$$\sin2\theta=\frac{gR}{v_0^2}=\frac{9.8(1000)}{(140)^2}=0.5$$</div>
+<p>$\sin2\theta=0.5$ 在 $0\lt2\theta\lt180^\circ$ 有兩解 $2\theta=30^\circ$、$150^\circ$：</p>
+<div class="math-block">$$\theta=15.0^\circ\ \text{或}\ 75.0^\circ$$</div>
+<p><strong>③ 有阻力：先用無阻力角度試打：</strong> 數值積分 $\ddot x=-cv\dot x$、$\ddot y=-g-cv\dot y$ 到 $y=0$：</p>
+<div class="math-block">$$R(15^\circ)=936\ \text{m},\qquad R(75^\circ)=862\ \text{m}$$</div>
+<p>都不到 $1000\ \text{m}$。低角那一支 $R$ 隨 $\theta$ 增加，要再抬高；高角那一支 $R$ 隨 $\theta$ 減少，要再壓低。</p>
+<p><strong>④ 割線法求根：</strong> 已知射程求仰角，要解 $R(\theta)=1000\ \text{m}$，高低兩解分別找。</p>
+<p class="fnote"><b>公式（割線法）：</b>$\theta_{n+1}=\theta_n-\dfrac{f(\theta_n)(\theta_n-\theta_{n-1})}{f(\theta_n)-f(\theta_{n-1})}$，其中 $f(\theta)=R(\theta)-1000\ \text{m}$；本題低角取 $\theta_0=15^\circ$、$\theta_1=17^\circ$。</p>
+<p>代入 $R(15^\circ)=936.4$、$R(17^\circ)=1039.3\ \text{m}$：</p>
+<div class="math-block">$$\theta_2=17^\circ-\frac{(1039.3-1000)(17-15)^\circ}{1039.3-936.4}=16.24^\circ$$</div>
+<p>再迭代兩三次就收斂；高角同樣做：</p>
+<div class="math-block">$$\begin{aligned}\theta_{\text{低}}&amp;=16.2^\circ\ (\text{飛 }7.8\ \text{s})\\\theta_{\text{高}}&amp;=72.2^\circ\ (\text{飛 }26.0\ \text{s})\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{有阻力：}16.2^\circ\text{（或 }72.2^\circ\text{）}\\ \text{無阻力：}15.0^\circ\text{（或 }75.0^\circ\text{）}\\ \text{低角抬高約 }1.2^\circ\text{，高角壓低約 }2.8^\circ\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-35">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-35 · p.95</span></div>
+    <h4>自己算出 Fig. 2-8、2-9：線性阻力的軌跡與射程</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-35">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-35"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Perform the numerical calculations of Example 2.7 for the values given in Figure 2-8. Plot both Figures 2-8 and 2-9. Do not duplicate the solution in Appendix H; compose your own solution.</p></div>
+<p class="original-caption">Thornton &amp; Marion 2-35 · p.95；所需 Fig. 2-8 見課本 p.66</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 Fig. 2-8 給的數值（$v_0=600\ \text{m/s}$、$\theta=60^\circ$，$k=0$、$0.005$、$0.01$、$0.02$、$0.04$、$0.08\ \text{s}^{-1}$）做例題 2.7 的數值計算，畫出 Fig. 2-8（各 $k$ 的軌跡）與 Fig. 2-9（射程對 $k$，數值與微擾近似比較）。不要照抄附錄 H，自己寫解法。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$v_0=600\ \text{m/s}$、$\theta=60^\circ$；$k=0,\ 0.005,\ 0.01,\ 0.02,\ 0.04,\ 0.08\ \text{s}^{-1}$；線性阻力 $-km\vec v$（例題 2.7）；落地為 $y=0$；$g=9.8\ \text{m/s}^2$。$U$、$V$ 為初速的水平、鉛直分量。</p>
+<p><strong>① 初速分量：</strong> 線性阻力的軌跡已有解析式，Fig. 2-8 只要代 $k$ 畫出；射程則要數值解飛行時間。代入 $v_0=600\ \text{m/s}$、$\theta=60^\circ$：</p>
+<div class="math-block">$$U=600\cos60^\circ=300\ \text{m/s},\qquad V=600\sin60^\circ=519.6\ \text{m/s}$$</div>
+<p><strong>② 軌跡與最高點：</strong></p>
+<p class="fnote"><b>公式（線性阻力拋體，例題 2.7 (2.43)、(2.44)）：</b>$x=\dfrac Uk(1-e^{-kt})$、$y=-\dfrac{gt}k+\dfrac{kV+g}{k^2}(1-e^{-kt})$，其中 $k$ 為阻力常數、$U,V$ 為初速分量、$t$ 為時間。</p>
+<div class="math-block">$$x=\frac Uk(1-e^{-kt}),\quad y=-\frac{gt}k+\frac{kV+g}{k^2}(1-e^{-kt})$$</div>
+<p>最高點在 $\dot y=\dfrac{(kV+g)e^{-kt}-g}{k}=0$，即 $e^{-kt_{\text{top}}}=\dfrac{g}{kV+g}$、$t_{\text{top}}=\dfrac1k\ln\!\left(1+\dfrac{kV}g\right)$。代回 $y$：$\dfrac{kV+g}{k^2}\left(1-\dfrac{g}{kV+g}\right)=\dfrac Vk$，所以</p>
+<div class="math-block">$$y_{\max}=\frac Vk-\frac g{k^2}\ln\!\left(1+\frac{kV}g\right)$$</div>
+<p><strong>③ 解飛行時間 $T$（以 $k=0.01$ 示範）：</strong> $T$ 滿足超越方程式，只能數值求根，用牛頓法、以無阻力的 $T_0=2V/g$ 當起點。</p>
+<p class="fnote"><b>公式（飛行時間，例題 2.7 (2.45)）：</b>$T=\dfrac{kV+g}{gk}(1-e^{-kT})$，其中 $T$ 為落回 $y=0$ 的時間。</p>
+<p class="fnote"><b>公式（牛頓法）：</b>$T\leftarrow T-\dfrac{f(T)}{f'(T)}$；本題令 $a\equiv\dfrac{kV+g}{gk}$，$f(T)=T-a\left(1-e^{-kT}\right)$，$f'(T)=1-ak\,e^{-kT}$。</p>
+<p>代入 $k=0.01\ \text{s}^{-1}$、$V=519.6\ \text{m/s}$：$a=\dfrac{0.01(519.6)+9.8}{9.8(0.01)}=153.0\ \text{s}$；起點 $T_0=\dfrac{2V}{g}=106.0\ \text{s}$：</p>
+<div class="math-block">$$\begin{aligned}f(106.0)&amp;=106.0-153.0(1-e^{-1.060})=6.01\\f'(106.0)&amp;=1-1.530e^{-1.060}=0.470\\T_1&amp;=106.0-\frac{6.01}{0.470}=93.25\ \text{s}\end{aligned}$$</div>
+<p>再做一次得 $T_2=92.11$，第三次 $92.10\ \text{s}$ 就不再變。</p>
+<p><strong>④ 射程與微擾式：</strong> 把 $T$ 代入 $x(T)$：</p>
+<div class="math-block">$$R'=\frac{300}{0.01}\left(1-e^{-0.921}\right)\ \text{m}=30000(0.602)\ \text{m}=18.06\ \text{km}$$</div>
+<p class="fnote"><b>公式（線性阻力射程的微擾近似）：</b>$R'\approx R\left(1-\dfrac{4kV}{3g}\right)$，其中 $R=\dfrac{v_0^2\sin2\theta}{g}$ 為無阻力射程；本題 $\sin2\theta=\sin120^\circ$。</p>
+<div class="math-block">$$\begin{aligned}R&amp;=\frac{v_0^2\sin120^\circ}{g}=31.81\ \text{km}\\\frac{4kV}{3g}&amp;=\frac{4(0.01)(519.6)}{3(9.8)}=0.707\\R(1-0.707)&amp;=9.32\ \text{km}\end{aligned}$$</div>
+<p>其他 $k$ 照同樣步驟計算。</p>
+<p><strong>⑤ 數值結果：</strong></p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>$k$ (s⁻¹)</th>
+<th>0</th>
+<th>0.005</th>
+<th>0.01</th>
+<th>0.02</th>
+<th>0.04</th>
+<th>0.08</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$T$ (s)</td>
+<td>106.0</td>
+<td>98.1</td>
+<td>92.1</td>
+<td>83.7</td>
+<td>74.0</td>
+<td>65.2</td>
+</tr>
+<tr>
+<td>$y_{\max}$ (km)</td>
+<td>13.78</td>
+<td>11.74</td>
+<td>10.27</td>
+<td>8.27</td>
+<td>6.02</td>
+<td>3.96</td>
+</tr>
+<tr>
+<td>射程 $R'$ (km，數值)</td>
+<td>31.81</td>
+<td>23.25</td>
+<td>18.06</td>
+<td>12.19</td>
+<td>7.11</td>
+<td>3.73</td>
+</tr>
+<tr>
+<td>微擾 $R(1-\frac{4kV}{3g})$ (km)</td>
+<td>31.81</td>
+<td>20.57</td>
+<td>9.32</td>
+<td>$\lt0$</td>
+<td>$\lt0$</td>
+<td>$\lt0$</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>⑥ 兩張圖：</strong> Fig. 2-8：$k=0$ 是對稱拋物線；$k$ 越大軌跡越矮、越短、越不對稱，下降段越陡，$k\ge0.02$ 時最後幾乎垂直落下（水平速度 $Ue^{-kt}$ 已衰減殆盡，水平位置趨近漸近線 $x=U/k$）。Fig. 2-9：數值射程隨 $k$ 平滑遞減、永遠為正；微擾直線在 $k=3g/4V=0.0141\ \text{s}^{-1}$ 就掉到零，只在 $k\lesssim0.005$ 附近和數值解貼近。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{射程 (km)：}k=0:31.8;\ 0.005:23.3;\ 0.01:18.1\\ 0.02:12.2;\ 0.04:7.1;\ 0.08:3.7\\ \text{微擾式在 }k\gtrsim0.005\ \text{s}^{-1}\text{ 明顯低估，}k\gt0.0141\text{ 給負射程}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-55">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-55 · p.98</span></div>
+    <h4>南瓜砲：由射程反推線性阻力常數 $k$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-55">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="c2-tm-2-55"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A pumpkin of mass 5 kg shot out of a student-made cannon under air pressure at an elevation angle of 45° fell at a distance of 142 m from the cannon. The students used light beams and photocells to measure the initial velocity of 54 m/s. If the air resistive force was $F = -kmv$, what was the value of $k$?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>學生自製的氣壓砲以仰角 $45^\circ$ 射出 $5\ \text{kg}$ 的南瓜，南瓜落在 $142\ \text{m}$ 外。學生用光束與光電管量得初速 $54\ \text{m/s}$。若空氣阻力為 $F=-kmv$，$k$ 是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m=5\ \text{kg}$（加速度 $-kv$ 與 $m$ 無關，用不到）、$\theta=45^\circ$、射程 $R=142\ \text{m}$（落在與砲口同高的地面）、$v_0=54\ \text{m/s}$；線性阻力 $F=-kmv$（例題 2.7 的模型）；$g=9.8\ \text{m/s}^2$。$U$、$V$ 為初速的水平、鉛直分量。</p>
+<p><strong>① 估阻力有多強：</strong> 這題是反問題（已知射程求 $k$），先看能不能用微擾式。</p>
+<p class="fnote"><b>公式（無阻力射程）：</b>$R_0=\dfrac{v_0^2\sin2\theta}{g}$，其中 $v_0$ 為初速、$\theta$ 為仰角；本題 $\theta=45^\circ$，$\sin2\theta=1$。</p>
+<div class="math-block">$$R_0=\frac{(54)^2}{9.8}\ \text{m}=297.6\ \text{m},\qquad\frac{142}{297.6}=0.477$$</div>
+<p>實際射程不到無阻力的一半，阻力不是小修正，要用精確式做兩層求根。</p>
+<p><strong>② 方程組：</strong> 代入 $v_0=54\ \text{m/s}$、$\theta=45^\circ$：</p>
+<div class="math-block">$$U=V=54\cos45^\circ\ \text{m/s}=38.18\ \text{m/s}$$</div>
+<p class="fnote"><b>公式（線性阻力拋體，例題 2.7 (2.43)、(2.45)）：</b>$x=\dfrac Uk(1-e^{-kt})$，飛行時間 $T$ 滿足 $T=\dfrac{kV+g}{gk}(1-e^{-kT})$，其中 $k$ 為阻力常數；本題要求 $x(T)=142\ \text{m}$。</p>
+<div class="math-block">$$\begin{aligned}T&amp;=\frac{kV+g}{gk}\left(1-e^{-kT}\right)\\R(k)&amp;=\frac Uk\left(1-e^{-kT}\right)=142\ \text{m}\end{aligned}$$</div>
+<p><strong>③ 數值求根：</strong> 內層給一個 $k$，用牛頓法（同 2-35）解第一式得 $T$，再算 $R(k)$；外層 $R$ 隨 $k$ 單調遞減，用二分法。先找夾住答案的兩端：</p>
+<div class="math-block">$$\begin{aligned}k=0.1\ \text{s}^{-1}&amp;:\ T=6.99\ \text{s},\ R=192\ \text{m}\\k=0.3\ \text{s}^{-1}&amp;:\ T=6.05\ \text{s},\ R=107\ \text{m}\end{aligned}$$</div>
+<p>取中點 $k=0.2$：$R=138.3\ \text{m}$，太近，答案在 $0.1$ 到 $0.2$ 之間；再取 $0.15$：$R=161.3\ \text{m}$，太遠……反覆對半，收斂到</p>
+<div class="math-block">$$k=0.191\ \text{s}^{-1},\qquad T=6.49\ \text{s}$$</div>
+<p><strong>④ 對照微擾式：</strong> 若硬用 $R'=R_0\left(1-\dfrac{4kV}{3g}\right)$ 解 $k$，代入 $R'=142$、① 的 $R_0=297.6$、② 的 $V=38.18$：</p>
+<div class="math-block">$$1-\frac{142}{297.6}=\frac{4(38.18)}{3(9.8)}k\quad\Longrightarrow\quad0.523=5.195k$$</div>
+<div class="math-block">$$k=0.101\ \text{s}^{-1}$$</div>
+<p>差了將近一倍：$kV/g=0.191(38.18)/9.8=0.74$，遠不是「$\ll1$」，展開的高次項不能丟。</p>
+<div class="math-block">$$\boxed{\begin{gathered}k\approx0.19\ \text{s}^{-1}\ (\text{飛行時間 }6.5\ \text{s})\\ \text{微擾近似會錯給 }0.10\ \text{s}^{-1}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-09a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>有線性阻力時，最高點一定在一半飛行時間之前</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-09a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>線性阻力 $-km\vec v$ 的拋體（例題 2.7 的記號：$\dot y(0)=V$）。(a) 求到達最高點的時間 $t_{\text{top}}$。(b) <strong>不用近似</strong>，證明 $T\gt2t_{\text{top}}$（上升比下降快）。提示：令 $q=e^{-kt_{\text{top}}}$，算 $y(2t_{\text{top}})$。(c) 用微擾展開到 $k$ 的一次，比較 $t_{\text{top}}$ 與 $T/2$；並用 Fig. 2-8 的數據（$V=519.6\ \text{m/s}$、$k=0.005\ \text{s}^{-1}$）驗證。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：線性阻力 $-km\vec v$；沿用例題 2.7：$y(0)=0$、$\dot y(0)=V$，$T$ 為落地時間（$y(T)=0$）；(c) 用 $V=519.6\ \text{m/s}$、$k=0.005\ \text{s}^{-1}$、$g=9.8\ \text{m/s}^2$，以及 2-35 對同一組數據解出的 $T=98.06\ \text{s}$。</p>
+<h4>(a) 到達最高點的時間</h4>
+<p><strong>① 令鉛直速度為零：</strong> 最高點就是 $\dot y=0$ 的瞬間。例題 2.7 的鉛直速度為 $\dot y=\dfrac{(kV+g)e^{-kt}-g}{k}$，令它等於 0：</p>
+<div class="math-block">$$(kV+g)e^{-kt_{\text{top}}}=g\quad\Longrightarrow\quad q\equiv e^{-kt_{\text{top}}}=\frac{g}{kV+g}$$</div>
+<p><strong>② 解出 $t_{\text{top}}$：</strong> 兩邊取自然對數、除以 $-k$：</p>
+<div class="math-block">$$t_{\text{top}}=-\frac1k\ln q=\frac1k\ln\!\left(1+\frac{kV}g\right)$$</div>
+<div class="math-block">$$\boxed{t_{\text{top}}=\frac1k\ln\!\left(1+\frac{kV}g\right)}$$</div>
+<h4>(b) 證明 $T\gt2t_{\text{top}}$</h4>
+<p><strong>① 改證 $y(2t_{\text{top}})\gt0$：</strong> $T$ 滿足超越方程式解不出來，所以改證「到了 $2t_{\text{top}}$ 還沒落地」；最高點之後 $y$ 單調下降，$2t_{\text{top}}$ 時仍 $y\gt0$，落地一定更晚。把 $t=2t_{\text{top}}$ 代入 $y=-\dfrac{gt}k+\dfrac{kV+g}{k^2}(1-e^{-kt})$，每一項都換成 $q$。由 (a)：$kV+g=\dfrac gq$、$kt_{\text{top}}=-\ln q$，所以 $e^{-2kt_{\text{top}}}=q^2$：</p>
+<div class="math-block">$$\begin{aligned}-\frac{g(2t_{\text{top}})}{k}&amp;=-\frac{2g}{k^2}(kt_{\text{top}})=\frac{2g}{k^2}\ln q\\\frac{kV+g}{k^2}(1-q^2)&amp;=\frac{g}{k^2}\cdot\frac{1-q^2}{q}\end{aligned}$$</div>
+<p><strong>② 寫成單一變數的函數：</strong> 相加，再令 $w\equiv1/q=1+kV/g\gt1$（$\ln q=-\ln w$、$\frac{1-q^2}{q}=\frac1q-q=w-\frac1w$）：</p>
+<div class="math-block">$$y(2t_{\text{top}})=\frac g{k^2}\,f(w),\qquad f(w)\equiv w-\frac1w-2\ln w$$</div>
+<p><strong>③ 證明 $f(w)\gt0$：</strong> 先看起點與斜率：</p>
+<div class="math-block">$$f(1)=1-1-0=0,\qquad f'(w)=1+\frac1{w^2}-\frac2w=\left(1-\frac1w\right)^2$$</div>
+<p>$w\gt1$ 時 $f'(w)\gt0$：$f$ 從 $f(1)=0$ 開始一路嚴格遞增，所以 $f(w)\gt0$。因此 $y(2t_{\text{top}})\gt0$：飛了兩倍的上升時間還在空中。</p>
+<div class="math-block">$$\boxed{\begin{gathered}y(2t_{\text{top}})=\frac g{k^2}\left(w-\frac1w-2\ln w\right)\gt0,\ w=1+\frac{kV}g\\ \Longrightarrow\ T\gt2t_{\text{top}}\end{gathered}}$$</div>
+<h4>(c) 一次近似比較與數值</h4>
+<p><strong>① 展開 $t_{\text{top}}$：</strong> 題目要展開到 $k$ 的一次，令 $\varepsilon=kV/g$。</p>
+<p class="fnote"><b>公式（對數的泰勒展開）：</b>$\ln(1+\varepsilon)=\varepsilon-\tfrac12\varepsilon^2+\cdots$，其中 $\varepsilon$ 為小量；本題 $\varepsilon=kV/g$。</p>
+<p>除以 $k$：</p>
+<div class="math-block">$$t_{\text{top}}=\frac1k\left[\frac{kV}g-\frac12\left(\frac{kV}g\right)^2\right]=\frac Vg\left(1-\frac{kV}{2g}\right)$$</div>
+<p><strong>② 和 $T/2$ 比較：</strong> 例題 2.7 的 (2.50) 除以 2：</p>
+<div class="math-block">$$\frac T2\approx\frac Vg\left(1-\frac{kV}{3g}\right)$$</div>
+<p>兩者的修正項係數 $\tfrac12\gt\tfrac13$，所以 $t_{\text{top}}$ 縮短得比 $T/2$ 多：$t_{\text{top}}\lt T/2$。</p>
+<p><strong>③ 代數字：</strong> 代入 $k=0.005\ \text{s}^{-1}$、$V=519.6\ \text{m/s}$：$\dfrac{kV}{g}=\dfrac{0.005(519.6)}{9.8}=0.2651$，$\dfrac1k=200\ \text{s}$：</p>
+<div class="math-block">$$t_{\text{top}}=200\ln1.2651\ \text{s}=47.0\ \text{s}$$</div>
+<p>用 2-35 的數值 $T=98.06\ \text{s}$：</p>
+<div class="math-block">$$\frac T2=49.0\ \text{s}$$</div>
+<p>最高點早了 $2\ \text{s}$。（一次近似給 $46.0$ 與 $48.3\ \text{s}$，方向相同。）</p>
+<div class="math-block">$$\boxed{\begin{gathered}t_{\text{top}}\approx\frac Vg\left(1-\frac{kV}{2g}\right)\lt\frac T2\approx\frac Vg\left(1-\frac{kV}{3g}\right)\\ \text{數值 }47.0\ \text{s}\lt49.0\ \text{s}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-09b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>有阻力時最佳仰角小於 $45^\circ$：小多少</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-09b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>例題 2.7 的微擾結果 $R'\approx\dfrac{v_0^2\sin2\theta}{g}\left(1-\dfrac{4kv_0\sin\theta}{3g}\right)$。(a) 令 $\varepsilon=kv_0/g\ll1$，求使 $R'$ 最大的仰角 $\theta^*$，準確到 $\varepsilon$ 的一次。(b) 解釋為什麼阻力讓最佳仰角變小。(c) $v_0=50\ \text{m/s}$、$k=0.01\ \text{s}^{-1}$，算出 $\theta^*$，並和精確（數值）最佳化比較。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：例題 2.7 的微擾射程 $R'\approx\dfrac{v_0^2\sin2\theta}{g}\left(1-\dfrac{4kv_0\sin\theta}{3g}\right)$；小參數 $\varepsilon=kv_0/g\ll1$，只留一次項；(c) 用 $v_0=50\ \text{m/s}$、$k=0.01\ \text{s}^{-1}$、$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 最佳仰角到 $\varepsilon$ 的一次</h4>
+<p><strong>① 寫出導數：</strong> 找 $R'(\theta)$ 的最大值，令 $\mathrm dR'/\mathrm d\theta=0$。先把 $R'$ 除以常數 $v_0^2/g$，並用 $\dfrac{4kv_0\sin\theta}{3g}=\dfrac{4\varepsilon}{3}\sin\theta$：</p>
+<div class="math-block">$$\frac{g}{v_0^2}R'=\sin2\theta-\frac{4\varepsilon}3\sin2\theta\sin\theta$$</div>
+<p>對 $\theta$ 微分；第二項用乘積法則 $(\sin2\theta\sin\theta)'=2\cos2\theta\sin\theta+\sin2\theta\cos\theta$，令導數為 0：</p>
+<div class="math-block">$$2\cos2\theta-\frac{4\varepsilon}{3}\left(2\cos2\theta\sin\theta+\sin2\theta\cos\theta\right)=0$$</div>
+<p><strong>② 代入 $\theta=\frac\pi4+\delta$ 解 $\delta$：</strong> 這條方程式直接解不出來，但 $\varepsilon=0$ 時答案是 $45^\circ$，阻力小時只偏一點，所以令 $\theta=\pi/4+\delta$（$\delta$ 與 $\varepsilon$ 同階）只留一次項。$\cos2\theta=\cos(\tfrac\pi2+2\delta)=-\sin2\delta\approx-2\delta$ 本身就是一次量；乘在 $\varepsilon$ 前面的因子只取零階值：$\sin2\theta\approx1$、$\cos\theta\approx\frac1{\sqrt2}$，而 $2\cos2\theta\sin\theta\approx-2\sqrt2\,\delta$ 乘上 $\varepsilon$ 是二階，丟掉：</p>
+<div class="math-block">$$2(-2\delta)-\frac{4\varepsilon}3\left(0+1\cdot\frac1{\sqrt2}\right)=0$$</div>
+<p>整理：$-4\delta=\dfrac{4\varepsilon}{3\sqrt2}$，所以</p>
+<div class="math-block">$$\delta=-\frac{\varepsilon}{3\sqrt2}\quad\Longrightarrow\quad\theta^*\approx\frac\pi4-\frac{kv_0}{3\sqrt2\,g}$$</div>
+<div class="math-block">$$\boxed{\theta^*\approx\frac\pi4-\frac{kv_0}{3\sqrt2\,g}\ (\text{弧度})=45^\circ-\frac{180^\circ}{\pi}\cdot\frac{kv_0}{3\sqrt2\,g}}$$</div>
+<h4>(b) 為什麼阻力讓最佳仰角變小</h4>
+<p><strong>① 物理意義：</strong> 相對射程損失 $\dfrac{4kv_0\sin\theta}{3g}$ 隨仰角增加：拋得越高，在空中越久，被阻力「吃掉」的水平距離越多。所以把仰角壓低一點，用較少的滯空時間換取較少的損失，比 $45^\circ$ 划算。（$45^\circ$ 附近 $\sin2\theta$ 對 $\theta$ 的變化是零，壓低一點幾乎不損失無阻力的射程，卻能一次地減少阻力損失。）</p>
+<div class="math-block">$$\boxed{\text{阻力的相對損失隨仰角增加}}$$</div>
+<h4>(c) 數值與精確最佳化比較</h4>
+<p><strong>① 算 $\varepsilon$：</strong> 代入 $k=0.01\ \text{s}^{-1}$、$v_0=50\ \text{m/s}$、$g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$\varepsilon=\frac{0.01(50)}{9.8}=0.0510$$</div>
+<p><strong>② 算 $\theta^*$：</strong> 代入 (a) 的 $\delta=-\varepsilon/(3\sqrt2)$，$3\sqrt2=4.243$；弧度換度數乘 $180^\circ/\pi$：</p>
+<div class="math-block">$$\begin{aligned}\delta&amp;=-\frac{0.0510}{4.243}=-0.0120\ \text{rad}=-0.69^\circ\\\theta^*&amp;\approx45^\circ-0.69^\circ=44.31^\circ\end{aligned}$$</div>
+<p><strong>③ 和精確解比較：</strong> 用精確線性阻力解（解超越方程式求 $T$）數值最佳化，得 $44.33^\circ$，差 $0.02^\circ$。</p>
+<div class="math-block">$$\boxed{\theta^*\approx44.31^\circ\ (\text{精確 }44.33^\circ)}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>線性阻力拋體：$x=\dfrac Uk(1-e^{-kt})$，$y=-\dfrac{gt}k+\dfrac{kV+g}{k^2}(1-e^{-kt})$；飛行時間是超越方程式。</li>
+    <li>微擾到 $k$ 的一次：$T\approx\dfrac{2V}g\left(1-\dfrac{kV}{3g}\right)$，$R'\approx R\left(1-\dfrac{4kV}{3g}\right)$，只在 $k\ll g/V$ 時可信。</li>
+    <li>$v^2$ 阻力上下分開解；上拋回到原點的速率 $\dfrac{v_0v_t}{\sqrt{v_0^2+v_t^2}}$，$v_t=\sqrt{g/k}$。</li>
+  </ol>
+</div>

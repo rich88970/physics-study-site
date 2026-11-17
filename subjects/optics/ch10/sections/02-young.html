@@ -1,0 +1,153 @@
+<h2>二、楊氏雙狹縫干涉 <span class="pg">課本 p.169–173</span> <span class="must teacher maybe">老師：可能會考 1 題</span> <span class="must exam">考古 1/5</span></h2>
+
+<p class="lead">一道光經過兩個很靠近的狹縫，變成兩個同調光源；屏幕上每一點到兩縫的距離差決定相位差，形成等間距的亮暗條紋。這是所有「虛擬光源」題目（下一節）的母公式。</p>
+
+<p class="small muted">（逐字稿 05:17：「另外一個重點是楊氏干涉，包括這些虛擬光源之間的干涉，可能會考 1 題。楊氏干涉，包含虛擬光源的干涉，可能會考。這些是重點。」錄音開頭 00:00「楊氏干涉的結論」也表示考前最後一堂正在上這裡。考古題（李孟恩課程資料夾 5 份期中考）：直接考楊氏雙狹縫的只有 2018 期中第 4 題，考雙稜鏡（虛擬光源）的另有 2022 一份，合計 2/5，依考古題統計推論。）</p>
+
+<h3 id="o10-yg-geo">2.1 光程差與亮紋、暗紋條件 <span class="pg-tag">p.169–171</span></h3>
+
+<p>兩縫間距 $a$，屏幕距離 $L\gg a$。從兩縫到屏幕上 P 點的路徑差，用「以 P 為圓心畫弧」的近似，就是直角三角形的一股：</p>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (19)–(23)</span>
+  $$s_2-s_1=\Delta\approx a\sin\theta,\qquad \text{亮紋 }a\sin\theta=m\lambda,\qquad \text{暗紋 }a\sin\theta=\left(m+\tfrac12\right)\lambda$$
+  $$I=4I_0\cos^2\left(\frac{\pi a y}{\lambda L}\right),\qquad y_m=\frac{m\lambda L}{a},\qquad \Delta y=y_{m+1}-y_m=\frac{\lambda L}{a}$$
+</div>
+
+<div class="step" data-step="o10-yg-s1" data-sym="a,L,lam">
+  <span class="step-title">為什麼 $I=4I_0\cos^2(\pi ay/\lambda L)$</span>
+  <p>兩縫一樣大，照度都是 $I_0$，用上一節的 $I=4I_0\cos^2(\delta/2)$。相位差由光程差換算：$\delta=k\Delta=\dfrac{2\pi}{\lambda}a\sin\theta$。屏幕上靠近中央時 $\sin\theta\approx\tan\theta=y/L$：</p>
+  $$\frac{\delta}{2}=\frac{\pi a\sin\theta}{\lambda}\approx\frac{\pi ay}{\lambda L}$$
+</div>
+
+<div class="step" data-step="o10-yg-s2" data-sym="dy">
+  <span class="step-title">條紋間距</span>
+  <p>亮紋在 $\cos^2=1$，也就是 $\pi ay/\lambda L=m\pi$，$y_m=m\lambda L/a$；相鄰兩條相減就是 $\Delta y=\lambda L/a$。暗紋在相鄰兩亮紋正中間。</p>
+</div>
+
+<p>三個比例關係：間距和波長、屏幕距離成正比，和縫距成反比。白光的各顏色只有 $m=0$ 的中央亮紋重合在一起（白色），往外就彩色分開。課本例題 2：$a=0.2\ \text{mm}$、$L=1\ \text{m}$、$\Delta y=3.29\ \text{mm}$ → $\lambda=a\Delta y/L=658\ \text{nm}$，$I=4I_0\cos^2[(955\ \text{m}^{-1})y]$。</p>
+
+<p>第 m 個「暗紋」的編號要小心：課本暗紋寫 $(m+\tfrac12)\lambda$，$m=0$ 是中央亮紋旁邊的第一個暗紋，所以「第 4 個暗紋」是 $m=3$、光程差 $3.5\lambda$。</p>
+
+<h3 id="o10-yg-plate">2.2 一個縫蓋上玻璃片：條紋整片平移 <span class="pg-tag">p.189 習題 7-9</span></h3>
+
+<p>在其中一縫前放厚度 $t$、折射率 $n$ 的玻璃片，那一路的光程多了 $(n-1)t$（同樣的厚度 $t$ 原本是空氣，光程 $t$，換成玻璃變 $nt$）。中央亮紋原本在光程差為 0 的地方，現在要移到「幾何路徑差剛好補回 $(n-1)t$」的位置：</p>
+
+$$\frac{ay}{L}=(n-1)t\quad\Longrightarrow\quad y_{\text{shift}}=\frac{(n-1)tL}{a},\qquad\text{等於移動了 }\frac{(n-1)t}{\lambda}\text{ 條條紋}$$
+
+<p>條紋往<strong>蓋玻璃的那一縫</strong>那一側移（那邊的幾何路徑要比較短才能補償）。條紋間距不變，所以只看得出「整片移了多少」。</p>
+
+<h3 id="o10-yg-hw">2.3 作業與考古題</h3>
+
+<div class="problem" data-kind="textbook" id="o10-7-6">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 7-6（作業）· p.189</span></div>
+    <h4>兩個波長的雙狹縫：436 nm 的第 4 暗紋落在另一波長的第 3 亮紋上 <span class="must teacher maybe">老師：可能會考 1 題</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-7-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-7-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><b>6</b> Two slits are illuminated by light that consists of two wavelengths. One wavelength is known to be 436 nm. On a screen, the fourth minimum of the 436-nm light coincides with the third maximum of the other light. What is the wavelength of the other light?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩條狹縫用含有兩個波長的光照射，其中一個波長是 436 nm。屏幕上 436 nm 的第 4 個極小（暗紋）和另一個波長的第 3 個極大（亮紋）重合，求另一個波長。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>已知波長</td><td>$\lambda_1=436\ \text{nm}$</td><td>「One wavelength is known to be 436 nm」</td></tr>
+          <tr><td>$\lambda_1$ 的條紋</td><td>第 4 暗紋：$a\sin\theta=(3+\tfrac12)\lambda_1$</td><td>「the <b>fourth minimum</b> of the 436-nm light」：暗紋 $(m+\tfrac12)\lambda$，第 1 個是 $m=0$，第 4 個是 $m=3$</td></tr>
+          <tr><td>$\lambda_2$ 的條紋</td><td>第 3 亮紋：$a\sin\theta=3\lambda_2$</td><td>「the <b>third maximum</b> of the other light」：中央 $m=0$ 不算第幾個，第 3 個是 $m=3$</td></tr>
+          <tr><td>同一位置</td><td>同一個 $\theta$</td><td>「coincides」：兩條紋在屏幕同一點，縫距和角度都一樣</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：另一個波長 $\lambda_2$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩個波長通過同一對狹縫，屏幕上同一點的光程差 $a\sin\theta$ 對兩者相同，<b>所以</b>「重合」就是讓兩個波長各自的條紋條件等於同一個 $a\sin\theta$，不需要知道 $a$、$L$。</p>
+      <p>重點在數級數：暗紋的第 1 個是 $\tfrac12\lambda$，所以第 4 個是 $3.5\lambda$ 而不是 $4.5\lambda$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-7-6-s1" data-sym="a,lam">
+        <span class="step-title">寫出兩個條件</span>
+        $$\text{暗紋：}a\sin\theta=\left(m_1+\tfrac12\right)\lambda_1,\qquad \text{亮紋：}a\sin\theta=m_2\lambda_2$$
+        <p class="sub">代入 $m_1=3$（第 4 暗紋）、$m_2=3$（第 3 亮紋）：</p>
+        $$3.5\lambda_1=3\lambda_2$$
+      </div>
+      <div class="step" data-step="o10-7-6-s2">
+        <span class="step-title">解出 $\lambda_2$</span>
+        <p class="sub">代入 $\lambda_1=436\ \text{nm}$（題目）：</p>
+        $$\lambda_2=\frac{3.5}{3}(436\ \text{nm})=\frac76(436\ \text{nm})=508.7\ \text{nm}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\lambda_2\approx509\ \text{nm}$（綠光）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$3\times508.7=1526\ \text{nm}=3.5\times436$ ✔；與書末答案 509 nm 一致。若誤把第 4 暗紋當 $4.5\lambda$，會得到 654 nm。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o10-k18m4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2018-04-25）第 4 題（106下）</span></div>
+    <h4>楊氏干涉：屏幕要放多遠；蓋上玻璃片條紋平移多少 <span class="must teacher maybe">老師：可能會考 1 題</span> <span class="must exam">考古 2/5（楊氏＋虛擬光源）</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-k18m4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k18m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/25/2018</p><p>4. (20%) 利用楊氏干涉的架構進行實驗。若兩狹縫間距為 0.6 mm，波長為 550 nm。</p><p>(a) 欲使干涉條紋中兩亮紋之間距為 1 mm 時，試問屏幕應置放於距離狹縫多遠處？</p><p>(b) 若將一片厚度 200 μm，折射率為 1.5 的玻璃片放在其中一個狹縫上，試求條紋會平移多少距離（在 (a) 小題中的屏幕上）？</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（20%）楊氏干涉實驗：兩狹縫間距 0.6 mm，波長 550 nm。(a) 要使相鄰兩亮紋間距為 1 mm，屏幕應放在離狹縫多遠？(b) 把厚度 200 μm、折射率 1.5 的玻璃片放在其中一個狹縫上，條紋在 (a) 的屏幕上會平移多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>縫距</td><td>$a=0.6\ \text{mm}=6\times10^{-4}\ \text{m}$</td><td>「兩狹縫間距為 0.6 mm」</td></tr>
+          <tr><td>波長</td><td>$\lambda=550\ \text{nm}$</td><td>「波長為 550 nm」</td></tr>
+          <tr><td>亮紋間距</td><td>$\Delta y=1\ \text{mm}$</td><td>(a)「兩亮紋之間距為 1 mm」</td></tr>
+          <tr><td>玻璃片</td><td>$t=200\ \mu\text{m}$、$n=1.5$</td><td>(b)「厚度 200 μm，折射率為 1.5」</td></tr>
+          <tr><td>屏幕</td><td>$L$ 用 (a) 的結果</td><td>(b)「在 (a) 小題中的屏幕上」</td></tr>
+          <tr><td>周圍介質</td><td>空氣 $n=1$</td><td>題目沒寫，玻璃片取代的是同樣厚度的空氣</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 屏幕距離 $L$；(b) 條紋平移的距離。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>亮紋間距 $\Delta y=\lambda L/a$ 裡只有 $L$ 未知，<b>所以</b>直接反解。</p>
+      <p>(b) <b>因為</b>玻璃片讓那一路的光程增加 $(n-1)t$，整個相位圖樣跟著移動、間距不變，<b>所以</b>求「中央亮紋要移到哪裡，幾何路徑差才剛好補回 $(n-1)t$」：$ay/L=(n-1)t$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-k18m4-s1" data-sym="dy,L,a">
+        <span class="step-title">(a) 由條紋間距求 $L$</span>
+        $$\Delta y=\frac{\lambda L}{a}\ \Longrightarrow\ L=\frac{a\,\Delta y}{\lambda}$$
+        <p class="sub">代入 $a=6\times10^{-4}\ \text{m}$、$\Delta y=1\times10^{-3}\ \text{m}$、$\lambda=550\times10^{-9}\ \text{m}$（題目）：</p>
+        $$L=\frac{(6\times10^{-4})(1\times10^{-3})}{550\times10^{-9}}\ \text{m}=1.09\ \text{m}$$
+      </div>
+      <div class="step" data-step="o10-k18m4-s2" data-sym="n,t">
+        <span class="step-title">(b) 玻璃片多出來的光程</span>
+        $$\Delta_{\text{plate}}=nt-t=(n-1)t$$
+        <p class="sub">代入 $n=1.5$、$t=200\times10^{-6}\ \text{m}$（題目）：</p>
+        $$\Delta_{\text{plate}}=(0.5)(2\times10^{-4})=1\times10^{-4}\ \text{m}=\frac{1\times10^{-4}}{550\times10^{-9}}\lambda=181.8\lambda$$
+      </div>
+      <div class="step" data-step="o10-k18m4-s3">
+        <span class="step-title">中央亮紋移到幾何路徑差補回的位置</span>
+        $$\frac{ay}{L}=(n-1)t\ \Longrightarrow\ y=\frac{(n-1)tL}{a}$$
+        <p class="sub">代入 $(n-1)t=1\times10^{-4}\ \text{m}$（步驟 2）、$L=1.091\ \text{m}$（步驟 1）、$a=6\times10^{-4}\ \text{m}$：</p>
+        $$y=\frac{(1\times10^{-4})(1.091)}{6\times10^{-4}}\ \text{m}=0.182\ \text{m}=18.2\ \text{cm}$$
+        <p>等於移動 181.8 條條紋 × 每條 1 mm，方向朝蓋玻璃片的那一縫。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $L\approx1.09\ \text{m}$；(b) 條紋整片往蓋玻璃片那一側平移約 $18.2\ \text{cm}$（約 182 條條紋）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y/\Delta y=182\ \text{mm}/1\ \text{mm}=182=(n-1)t/\lambda$ ✔，兩種算法一致。平移量遠大於條紋間距，實際上只能用白光條紋（中央白色亮紋）才分辨得出移了幾條；這也是課本 7-9(b) 的題型（書末 83.3 條）。$y=18\ \text{cm}$ 時 $\theta\approx0.17\ \text{rad}$，$\sin\theta\approx\tan\theta$ 仍可用。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>光程差 $a\sin\theta\approx ay/L$；亮紋 $m\lambda$、暗紋 $(m+\tfrac12)\lambda$，第 k 個暗紋是 $m=k-1$。</li>
+    <li>$\Delta y=\lambda L/a$；$I=4I_0\cos^2(\pi ay/\lambda L)$。</li>
+    <li>玻璃片：光程多 $(n-1)t$，條紋平移 $(n-1)tL/a$，往蓋片那一側。</li>
+  </ol>
+</div>

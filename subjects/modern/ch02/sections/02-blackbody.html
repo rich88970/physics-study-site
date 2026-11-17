@@ -1,0 +1,300 @@
+<h2>二、黑體輻射 <span class="pg">課本 §2.2 · p.57–62</span></h2>
+
+<p class="lead">熱的物體會發光，而且顏色隨溫度改變。古典物理算出來的光譜在高頻發散（紫外災變）；Planck 假設振子的能量只能是 $h\nu$ 的整數倍，才得到和實驗完全吻合的公式——這是量子物理的第一步。</p>
+
+<h3 id="m2-bb-what">2.1 什麼是黑體 <span class="pg-tag">p.57–58</span></h3>
+
+<p>所有物體不論溫度都在持續發出電磁波，只是哪些頻率占多數由溫度決定：室溫的物體主要發紅外線（看不見），加熱的鐵棒先暗紅、再橙紅、最後「白熱」。</p>
+
+<p>物體發射的能力和吸收的能力密切相關：溫度固定的物體和周圍處於熱平衡，吸收能量的速率必須等於發射的速率。理想上能吸收<strong>所有</strong>入射輻射（不論頻率）的物體叫<strong>黑體</strong>。用黑體的好處是：所有黑體的輻射都一樣，只由溫度決定，不必管是什麼材料在發光。</p>
+
+<p>實驗室裡的黑體：一個中空物體開一個很小的洞（Fig. 2.5）。射進洞裡的光在腔壁之間來回反射，幾乎不可能再從小洞出來，最後一定被吸收——所以小洞就是近乎完美的吸收體。腔壁一直在發射和吸收輻射，從小洞漏出的就是<strong>黑體輻射</strong>。</p>
+
+<p>實驗結果（Fig. 2.6）：溫度越高，輻射的總量越多，光譜峰值的頻率也越高。這個峰值頻率和溫度成正比（Wien 位移定律，第 9 章）。</p>
+
+<div class="anim" data-anim="m2-blackbody"></div>
+
+<h3 id="m2-bb-rj">2.2 Rayleigh–Jeans 公式與紫外災變 <span class="pg-tag">p.58–59</span></h3>
+
+<p>Rayleigh 和 Jeans 用古典物理計算：把溫度 $T$、腔壁完全反射的空腔裡的輻射看成一組三維的電磁駐波（Fig. 2.7）。駐波的條件是從牆到牆的路程必須是半波長的整數倍，牆上是節點。分兩步：</p>
+
+<div class="step" data-step="m2-bb-modes" data-sym="Gnu,nu">
+  <span class="step-title">第一步：數駐波</span>
+  <p>單位體積中、頻率在 $\nu$ 到 $\nu+\mathrm d\nu$ 之間的獨立駐波數：</p>
+  $$G(\nu)\,\mathrm d\nu=\frac{8\pi\nu^2\,\mathrm d\nu}{c^3}\qquad(2.1)$$
+  <p>和空腔形狀無關。頻率越高，波長越短，塞得進去的駐波越多，而且多得很快（$\propto\nu^2$）。</p>
+</div>
+
+<div class="step" data-step="m2-bb-equip" data-sym="k,eps,T">
+  <span class="step-title">第二步：每個駐波分到多少能量</span>
+  <p>能量均分定理：熱平衡時每個自由度的平均能量是 $\tfrac12kT$，$k=1.381\times10^{-23}\ \text{J/K}$ 是 Boltzmann 常數。每個駐波來自腔壁上一個振盪的電荷，一維簡諧振子有動能和位能兩個自由度：</p>
+  $$\bar\epsilon=2\left(\tfrac12kT\right)=kT\qquad(2.2)$$
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.59 Eq. (2.3) Rayleigh–Jeans formula</span>
+  $$u(\nu)\,\mathrm d\nu=\bar\epsilon\,G(\nu)\,\mathrm d\nu=\frac{8\pi kT}{c^3}\,\nu^2\,\mathrm d\nu$$
+  <p>$u(\nu)\,\mathrm d\nu$：單位體積中頻率在 $\nu$ 到 $\nu+\mathrm d\nu$ 的輻射能量；小洞的輻射率和它成正比。</p>
+</div>
+
+<p>這是古典物理對黑體輻射能說的全部，而它一看就是錯的：$u\propto\nu^2$ 隨頻率一直增加，積分到 $\nu\to\infty$ 總能量是無限大；實際上能量密度在高頻趨近於零（Fig. 2.8）。這個矛盾叫<strong>紫外災變</strong>（高頻一端是紫外線）。問題出在第二步：古典物理讓每個駐波不論頻率都分到 $kT$，而高頻駐波的數目是無限多的。</p>
+
+<details class="supp">
+  <summary>$G(\nu)=8\pi\nu^2/c^3$ 是怎麼數出來的（第 9 章的推導）</summary>
+  <div class="supp-body">
+    <p>邊長 $L$ 的立方空腔，駐波要在三個方向都塞進整數個半波長：$k_x=\dfrac{n_x\pi}{L}$、$k_y=\dfrac{n_y\pi}{L}$、$k_z=\dfrac{n_z\pi}{L}$，$n_x,n_y,n_z=1,2,3,\dots$。由 $k=2\pi\nu/c$：</p>
+    $$n_x^2+n_y^2+n_z^2=\left(\frac{2L\nu}{c}\right)^2$$
+    <p>每一組正整數 $(n_x,n_y,n_z)$ 是一個駐波，在「$n$ 空間」中占體積 1。頻率小於 $\nu$ 的駐波，就是半徑 $2L\nu/c$ 的球在第一卦限（$\tfrac18$ 球）裡的點數；每個駐波有兩個偏振方向，再乘 2：</p>
+    $$N(\nu)=2\cdot\frac18\cdot\frac{4\pi}{3}\left(\frac{2L\nu}{c}\right)^3=\frac{8\pi L^3\nu^3}{3c^3}$$
+    <p>除以體積 $L^3$、對 $\nu$ 微分，得到 $G(\nu)=\dfrac{8\pi\nu^2}{c^3}$。</p>
+  </div>
+</details>
+
+<h3 id="m2-bb-planck">2.3 Planck 輻射公式 <span class="pg-tag">p.60–61</span></h3>
+
+<p>1900 年 Planck 先用他自己說的「幸運的猜測」寫出和實驗吻合的公式：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.60 Eq. (2.4) Planck radiation formula</span>
+  $$u(\nu)\,\mathrm d\nu=\frac{8\pi h}{c^3}\,\frac{\nu^3\,\mathrm d\nu}{e^{h\nu/kT}-1}$$
+  <p>Planck 常數 $h=6.626\times10^{-34}\ \text{J·s}$。</p>
+</div>
+
+<div class="step" data-step="m2-bb-limits" data-sym="h,u">
+  <span class="step-title">檢查兩個極限</span>
+  <p><strong>高頻</strong> $h\nu\gg kT$：$e^{h\nu/kT}\to\infty$，$u(\nu)\to0$，沒有紫外災變。</p>
+  <p><strong>低頻</strong> $h\nu\ll kT$：用 $e^x=1+x+\dfrac{x^2}{2!}+\cdots\approx1+x$（$x=h\nu/kT$ 很小）：</p>
+  $$\frac1{e^{h\nu/kT}-1}\approx\frac1{1+\dfrac{h\nu}{kT}-1}=\frac{kT}{h\nu}$$
+  $$u(\nu)\,\mathrm d\nu\approx\frac{8\pi h}{c^3}\nu^3\left(\frac{kT}{h\nu}\right)\mathrm d\nu=\frac{8\pi kT}{c^3}\nu^2\,\mathrm d\nu$$
+  <p>正好回到 Rayleigh–Jeans 公式。所以古典結果在低頻是對的，Planck 的公式把兩端都接上了。</p>
+</div>
+
+<p>接著 Planck 要找出公式背後的物理。經過「一生最辛苦的幾個星期」，他的答案是：腔壁的振子不能有任意連續的能量，只能有</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.61 Eq. (2.5)–(2.6) Quantized oscillator</span>
+  $$\epsilon_n=nh\nu,\qquad n=0,1,2,\dots$$
+  $$\bar\epsilon=\frac{h\nu}{e^{h\nu/kT}-1}$$
+  <p>振子從一個能階掉到下一個能階時發出頻率 $\nu$ 的輻射，吸收頻率 $\nu$ 的輻射時往上跳一階。每一份 $h\nu$ 叫一個<strong>量子</strong>（quantum，複數 quanta）。第二式是每個駐波實際的平均能量，取代古典的 $kT$。</p>
+</div>
+
+<p>為什麼這樣就治好了紫外災變：高頻的駐波要激發，至少要吸收一整份 $h\nu$。當 $h\nu\gg kT$，熱運動幾乎湊不出這麼大的一份，這些駐波大部分時間停在 $n=0$，平均能量 $\bar\epsilon\approx h\nu\,e^{-h\nu/kT}$ 指數地趨近零。駐波數雖然 $\propto\nu^2$ 增加，卻被指數壓下去。低頻時一份 $h\nu$ 很小，能量看起來幾乎連續，就回到古典的 $kT$。</p>
+
+<details class="supp">
+  <summary>由 $\epsilon_n=nh\nu$ 推出 $\bar\epsilon=h\nu/(e^{h\nu/kT}-1)$</summary>
+  <div class="supp-body">
+    <p>熱平衡時，振子處在能量 $\epsilon_n$ 的機率正比於 Boltzmann 因子 $e^{-\epsilon_n/kT}$。令 $x=h\nu/kT$：</p>
+    $$\bar\epsilon=\frac{\sum_{n=0}^{\infty}nh\nu\,e^{-nx}}{\sum_{n=0}^{\infty}e^{-nx}}$$
+    <p>分母是等比級數 $\dfrac1{1-e^{-x}}$；分子用 $\sum ne^{-nx}=-\dfrac{\mathrm d}{\mathrm dx}\sum e^{-nx}=\dfrac{e^{-x}}{(1-e^{-x})^2}$：</p>
+    $$\bar\epsilon=h\nu\,\frac{e^{-x}}{1-e^{-x}}=\frac{h\nu}{e^{x}-1}=\frac{h\nu}{e^{h\nu/kT}-1}$$
+    <p>乘上 $G(\nu)=8\pi\nu^2/c^3$ 就是 Planck 公式 (2.4)。若能量連續（把求和換成積分），得到的是 $\bar\epsilon=kT$。</p>
+  </div>
+</details>
+
+<p>從古典物理看，振子只能以 $h\nu$ 為單位和駐波交換能量是無法理解的。Planck 自己稱它為「絕望之舉」，很多年都認為只是能量的「交換」被量子化，電磁波本身仍是連續的古典波。把電磁波本身也看成一份份量子的是 Einstein（第 3 節）。</p>
+
+<details class="supp">
+  <summary>Wien 位移定律：峰值的位置（Fig. 2.6 說明，第 9 章）</summary>
+  <div class="supp-body">
+    <p>對 (2.4) 求 $u(\nu)$ 的極大：令 $x=h\nu/kT$，$\dfrac{\mathrm d}{\mathrm dx}\dfrac{x^3}{e^x-1}=0$ 化成 $3(1-e^{-x})=x$，數值解 $x=2.821$：</p>
+    $$\nu_{\max}=2.821\,\frac{kT}{h}\propto T$$
+    <p>以波長表示（習題 2-2 的 $u(\lambda)$）求極大，得 $5(1-e^{-x})=x$、$x=4.965$，也就是 $\lambda_{\max}T=\dfrac{hc}{4.965k}=2.898\times10^{-3}\ \text{m·K}$。注意兩個峰不是同一點：$\lambda_{\max}\neq c/\nu_{\max}$，因為 $u(\nu)$ 和 $u(\lambda)$ 是對不同的區間寬度算的密度。</p>
+  </div>
+</details>
+
+<div class="problem" data-kind="tbexample" id="bz-ex2-1">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 2.1 · p.61–62</span></div>
+    <h4>音叉與原子振子的能量量子</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex2-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-1"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Assume that a certain 660-Hz tuning fork can be considered as a harmonic oscillator whose vibrational energy is 0.04 J. Compare the energy quanta of this tuning fork with those of an atomic oscillator that emits and absorbs orange light whose frequency is $5.00\times10^{14}$ Hz.</p></div>
+<p class="original-caption">Beiser Example 2.1 · p.61–62</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>把一支 $660\ \text{Hz}$ 的音叉看成簡諧振子，它的振動能量是 $0.04\ \text{J}$。比較這支音叉的能量量子，和一個發射、吸收頻率 $5.00\times10^{14}\ \text{Hz}$ 橙光的原子振子的能量量子。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：音叉頻率 $\nu_1=660\ \text{Hz}$、振動能量 $E=0.04\ \text{J}$；原子振子頻率 $\nu_2=5.00\times10^{14}\ \text{Hz}$（等於它發出的橙光頻率）；$h=6.63\times10^{-34}\ \text{J·s}$、$1\ \text{eV}=1.60\times10^{-19}\ \text{J}$（標準值）。</p>
+<h4>(a) 音叉的能量量子</h4>
+<p><strong>① 一份能量量子：</strong> 音叉看成簡諧振子，能量只能一份 $h\nu$ 一份 $h\nu$ 地改變；比較的重點是一份量子占系統能量多少。</p>
+<p class="fnote"><b>公式（Planck 振子能量量子化）：</b>$\epsilon_n=nh\nu$，其中 $n=0,1,2,\dots$、$h$ 為 Planck 常數、$\nu$ 為振子頻率，一份能量量子是 $\epsilon=h\nu$；本題兩個振子各代入自己的頻率。</p>
+<p>代入 $h=6.63\times10^{-34}\ \text{J·s}$、$\nu_1=660\ \text{s}^{-1}$：</p>
+<div class="math-block">$$h\nu_1=(6.63\times10^{-34}\ \text{J·s})(660\ \text{s}^{-1})=4.38\times10^{-31}\ \text{J}$$</div>
+<p><strong>② 音叉的能量是幾份量子：</strong> $E=nh\nu_1$，所以 $n=E/h\nu_1$，代入 $E=0.04\ \text{J}$ 和上一步的 $h\nu_1$：</p>
+<div class="math-block">$$n=\frac{0.04\ \text{J}}{4.38\times10^{-31}\ \text{J}}=9\times10^{28}\approx10^{29}$$</div>
+<p>能量增減一份，只改變總能量的 $1/n\approx10^{-29}$，任何儀器都量不出來：音叉的能量看起來是連續的，服從古典物理。</p>
+<div class="math-block">$$\boxed{h\nu_1=4.38\times10^{-31}\ \text{J}\ (\text{只占其能量的 }10^{-29})}$$</div>
+<h4>(b) 原子振子的能量量子</h4>
+<p><strong>① 原子振子的 $h\nu$：</strong> 同一個公式，代入 $\nu_2=5.00\times10^{14}\ \text{s}^{-1}$：</p>
+<div class="math-block">$$\begin{aligned}h\nu_2&amp;=(6.63\times10^{-34}\ \text{J·s})(5.00\times10^{14}\ \text{s}^{-1})\\&amp;=3.32\times10^{-19}\ \text{J}\end{aligned}$$</div>
+<p>原子尺度習慣用 eV，代入 $1\ \text{eV}=1.60\times10^{-19}\ \text{J}$：</p>
+<div class="math-block">$$h\nu_2=\frac{3.32\times10^{-19}\ \text{J}}{1.60\times10^{-19}\ \text{J/eV}}=2.08\ \text{eV}$$</div>
+<p><strong>② 兩者比較：</strong> 兩個量子的比值就是頻率比（$h$ 約掉）：</p>
+<div class="math-block">$$\frac{h\nu_2}{h\nu_1}=\frac{\nu_2}{\nu_1}=\frac{5.00\times10^{14}\ \text{Hz}}{660\ \text{Hz}}=7.6\times10^{11}$$</div>
+<p>原子振子的一份量子比音叉的大近兆倍，而且約 $2\ \text{eV}$ 正好是原子本身典型的能量（游離能、化學鍵都是幾 eV）：原子放出或吸收一份，就是它能量的一大部分。所以音叉可以當古典振子，原子振子不行。</p>
+<div class="math-block">$$\boxed{h\nu_2=3.32\times10^{-19}\ \text{J}=2.08\ \text{eV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-1">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-1 · p.89</span></div>
+    <h4>Planck 常數如果更小</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>If Planck’s constant were smaller than it is, would quantum phenomena be more or less conspicuous than they are now?</p></div>
+<p class="original-caption">Beiser 習題 2-1 · p.89</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>如果 Planck 常數比現在小，量子現象會比現在更明顯還是更不明顯？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：只讓 $h$ 變小，$\nu$、$T$ 不變；一份量子 $h\nu$，熱運動能量尺度 $kT$。</p>
+<p><strong>① 判斷標準：</strong> Planck 公式在 $h\nu\ll kT$ 時回到古典的 Rayleigh–Jeans，$h\nu\gtrsim kT$ 時能量不連續才有影響，所以用比值 $x=h\nu/kT$ 判斷量子現象明不明顯：</p>
+<div class="math-block">$$x=\frac{h\nu}{kT}\ \begin{cases}\ll1:&amp;\text{能量看起來連續，古典}\\\gtrsim1:&amp;\text{量子化的效果明顯}\end{cases}$$</div>
+<p><strong>② $h$ 變小，什麼頻率才看得到量子效應：</strong> 量子效應開始明顯的頻率大約在 $x=1$：</p>
+<div class="math-block">$$\nu_c=\frac{kT}{h}$$</div>
+<p>舉室溫的例子，代入 $k=1.381\times10^{-23}\ \text{J/K}$、$T=300\ \text{K}$（自選的例子）、$h=6.626\times10^{-34}\ \text{J·s}$：</p>
+<div class="math-block">$$\begin{aligned}\nu_c&amp;=\frac{(1.381\times10^{-23})(300)}{6.626\times10^{-34}}\ \text{Hz}\\&amp;=6.3\times10^{12}\ \text{Hz}\end{aligned}$$</div>
+<p>$h$ 越小，$\nu_c$ 越高：例如 $h$ 變成一半，$\nu_c$ 加倍。同一個頻率的 $x$ 變小，更多頻率範圍落在「古典區」，要到更高的頻率（更短的波長）才看得到量子效應。</p>
+<p><strong>③ 極限 $h\to0$：</strong> 把振子平均能量用 $e^x\approx1+x$（$x\to0$）展開。</p>
+<p class="fnote"><b>公式（Planck 振子平均能量）：</b>$\bar\epsilon=\dfrac{h\nu}{e^{h\nu/kT}-1}$，其中 $\bar\epsilon$ 為頻率 $\nu$ 的振子在溫度 $T$ 的平均能量、$k$ 為 Boltzmann 常數；本題看 $h\to0$。</p>
+<div class="math-block">$$\bar\epsilon\approx\frac{h\nu}{1+\dfrac{h\nu}{kT}-1}=kT$$</div>
+<p>$h\to0$ 時對所有頻率都成立，Planck 公式完全變回 Rayleigh–Jeans：量子現象完全消失。所以 $h$ 越小，量子現象越不明顯。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{更不明顯}\\ \text{（只在更高頻率出現；}h\to0\text{ 時完全回到古典）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-2">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-2 · p.89</span></div>
+    <h4>把 Planck 公式改寫成波長</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-2"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Express the Planck radiation formula in terms of wavelength.</p></div>
+<p class="original-caption">Beiser 習題 2-2 · p.89</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>把 Planck 輻射公式改用波長表示。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$u(\nu)\,\mathrm d\nu$ 為單位體積、頻率 $\nu$ 到 $\nu+\mathrm d\nu$ 之間的輻射能量；$\nu=c/\lambda$。</p>
+<p><strong>① 同一段光譜，能量相同：</strong> 有物理意義的是 $u\,\mathrm d\nu$ 這一份能量，所以換成波長時要求同一段光譜的能量不變。波長在 $\lambda$ 到 $\lambda+\mathrm d\lambda$ 的光，對應頻率從 $c/\lambda$ 往下一小段 $|\mathrm d\nu|$：</p>
+<div class="math-block">$$u(\lambda)\,\mathrm d\lambda=u(\nu)\,|\mathrm d\nu|$$</div>
+<p><strong>② 換變數：</strong> 對 $\nu=c/\lambda=c\lambda^{-1}$ 微分：</p>
+<div class="math-block">$$\frac{\mathrm d\nu}{\mathrm d\lambda}=-\frac{c}{\lambda^2}\ \Longrightarrow\ |\mathrm d\nu|=\frac{c}{\lambda^2}\,\mathrm d\lambda$$</div>
+<p>負號只表示波長增加時頻率減少；能量是正的，取絕對值。</p>
+<p><strong>③ 代入 Planck 公式並整理：</strong> 把 $\nu=c/\lambda$ 代進 $\nu^3$ 和指數，$|\mathrm d\nu|$ 用上一步的結果。</p>
+<p class="fnote"><b>公式（Planck 輻射公式）：</b>$u(\nu)\,\mathrm d\nu=\dfrac{8\pi h}{c^3}\dfrac{\nu^3\,\mathrm d\nu}{e^{h\nu/kT}-1}$，其中 $h$ 為 Planck 常數、$c$ 為光速、$k$ 為 Boltzmann 常數、$T$ 為溫度；本題把 $\nu$ 換成 $c/\lambda$。</p>
+<div class="math-block">$$u(\lambda)\,\mathrm d\lambda=\frac{8\pi h}{c^3}\,\frac{(c/\lambda)^3}{e^{hc/\lambda kT}-1}\cdot\frac{c}{\lambda^2}\,\mathrm d\lambda$$</div>
+<p>係數合併：$c^3$ 上下約掉，$\lambda$ 的次方相加 $3+2=5$：</p>
+<div class="math-block">$$\frac{8\pi h}{c^3}\cdot\frac{c^3}{\lambda^3}\cdot\frac{c}{\lambda^2}=\frac{8\pi hc}{\lambda^5}$$</div>
+<p>指數裡 $h\nu/kT=hc/\lambda kT$。合起來：</p>
+<div class="math-block">$$\boxed{u(\lambda)\,\mathrm d\lambda=\frac{8\pi hc}{\lambda^5}\,\frac{\mathrm d\lambda}{e^{hc/\lambda kT}-1}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-02a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>Planck 平均能量的兩端與「只分到一半」的頻率</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-02a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>Planck 的振子平均能量 $\bar\epsilon=\dfrac{h\nu}{e^{h\nu/kT}-1}$，令 $x=h\nu/kT$。(a) 展開到 $x$ 的一次項，證明 $h\nu\ll kT$ 時 $\bar\epsilon\approx kT-\tfrac12h\nu$，並說明第二項的意義。(b) $h\nu\gg kT$ 時 $\bar\epsilon$ 近似成什麼？為什麼高頻的駐波幾乎分不到能量？(c) $T=1500\ \text{K}$ 時，頻率多高的駐波只分到古典值 $kT$ 的一半？對應的波長是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\bar\epsilon=\dfrac{h\nu}{e^{h\nu/kT}-1}$（題目給），$x=h\nu/kT$，所以 $\bar\epsilon/kT=\dfrac{x}{e^x-1}$ 只和 $x$ 有關；$k=1.381\times10^{-23}\ \text{J/K}$、$h=6.626\times10^{-34}\ \text{J·s}$、$c=2.998\times10^{8}\ \text{m/s}$（標準值）。</p>
+<h4>(a) 低頻展開</h4>
+<p><strong>① 展開分母：</strong> $x\ll1$，用泰勒展開；分母領頭項 $x$ 和分子約掉後，次一項才是修正，所以分母要展開到 $x^2$，再提出一個 $x$：</p>
+<div class="math-block">$$e^x-1=x+\frac{x^2}{2}+\cdots=x\Big(1+\frac x2+\cdots\Big)$$</div>
+<p>分子的 $x$ 和分母提出的 $x$ 約掉，剩下 $(1+u)^{-1}$ 的形式，$u=x/2$ 很小，用 $(1+u)^{-1}\approx1-u$：</p>
+<div class="math-block">$$\frac{\bar\epsilon}{kT}=\frac{x}{e^x-1}\approx\Big(1+\frac x2\Big)^{-1}\approx1-\frac x2$$</div>
+<p><strong>② 乘回 $kT$，解讀兩項：</strong> 兩邊乘 $kT$，並用 $x\,kT=h\nu$：</p>
+<div class="math-block">$$\bar\epsilon\approx kT-\frac x2\,kT=kT-\tfrac12h\nu$$</div>
+<p>首項就是古典能量均分的 $kT$（Rayleigh–Jeans）。$-\tfrac12h\nu$ 是量子化最先出現的修正：能量只能一份 $h\nu$、一份 $h\nu$ 地取，平均下來比連續分布少了約半份。</p>
+<div class="math-block">$$\boxed{\bar\epsilon\approx kT-\tfrac12h\nu}$$</div>
+<h4>(b) 高頻極限</h4>
+<p><strong>① 忽略分母的 $-1$：</strong> $x\gg1$ 時 $e^x\gg1$：</p>
+<div class="math-block">$$e^x-1\approx e^x\ \Rightarrow\ \bar\epsilon\approx\frac{h\nu}{e^{h\nu/kT}}=h\nu\,e^{-h\nu/kT}$$</div>
+<p>振子至少要有一整份 $h\nu$ 才算被激發，而熱運動湊出這麼大一份能量的機率約 $e^{-h\nu/kT}$，指數地小。這就是 Planck 公式在高頻趨近零、沒有紫外災變的原因。</p>
+<div class="math-block">$$\boxed{\bar\epsilon\approx h\nu\,e^{-h\nu/kT}\ (\text{指數地被壓低})}$$</div>
+<h4>(c) 只分到 $kT$ 一半的頻率與波長</h4>
+<p><strong>① 列出方程式：</strong> 這時 $x$ 約 1，(a)(b) 的近似都不準，要直接解。題目條件 $\bar\epsilon/kT=\tfrac12$：</p>
+<div class="math-block">$$\frac{x}{e^x-1}=\frac12\ \Longrightarrow\ e^x-1=2x$$</div>
+<p>這是超越方程，只能用數值方法解。</p>
+<p><strong>② 試根夾出 $x$：</strong> 令 $f(x)=e^x-1-2x$，找 $f$ 變號的地方：</p>
+<div class="math-block">$$\begin{aligned}x=1.2&amp;:\ e^{1.2}-1=2.320\lt2.400\\x=1.3&amp;:\ e^{1.3}-1=2.669\gt2.600\end{aligned}$$</div>
+<p>根在 $1.2$ 和 $1.3$ 之間。再縮小：$f(1.25)=-0.010$、$f(1.26)=+0.005$，線性內插：</p>
+<div class="math-block">$$x\approx1.25+0.01\times\frac{0.010}{0.010+0.005}=1.256$$</div>
+<p><strong>③ 換回頻率與波長：</strong> 由 $x=h\nu/kT$ 解出 $\nu=xkT/h$，代入 $x=1.256$、$T=1500\ \text{K}$：</p>
+<div class="math-block">$$\begin{aligned}\nu&amp;=\frac{(1.256)(1.381\times10^{-23})(1500)}{6.626\times10^{-34}}\ \text{Hz}\\&amp;=3.93\times10^{13}\ \text{Hz}\end{aligned}$$</div>
+<p>波長 $\lambda=c/\nu$，代入 $c=2.998\times10^{8}\ \text{m/s}$：</p>
+<div class="math-block">$$\begin{aligned}\lambda&amp;=\frac{2.998\times10^{8}\ \text{m/s}}{3.93\times10^{13}\ \text{Hz}}\\&amp;=7.6\times10^{-6}\ \text{m}=7.6\ \mu\text{m}\end{aligned}$$</div>
+<p>在紅外線區：$1500\ \text{K}$ 的物體，波長比 $7.6\ \mu\text{m}$ 短的駐波已經分不到古典的一半能量。</p>
+<div class="math-block">$$\boxed{\nu\approx3.9\times10^{13}\ \text{Hz},\quad\lambda\approx7.6\ \mu\text{m}\ (\text{紅外線})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-02b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>黑體溫度加倍，三個頻率區各變幾倍</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-02b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>黑體的溫度從 $T_1$ 升到 $2T_1$。(a) 不必算出積分，只用變數代換 $x=h\nu/kT$ 證明總能量密度 $\int_0^\infty u(\nu)\,\mathrm d\nu\propto T^4$，並求總能量變幾倍。(b) 在一個 $h\nu\ll kT_1$ 的固定低頻，$u(\nu)$ 變幾倍？(c) 在 $h\nu=10\,kT_1$ 的固定高頻，$u(\nu)$ 變幾倍？(d) 由 (b)(c) 說明溫度升高時，熱物體的顏色為什麼往高頻移。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：溫度 $T_1\to2T_1$；$x=h\nu/kT$；(b)(c) 的頻率 $\nu$ 固定，(b) $h\nu\ll kT_1$，(c) $h\nu=10\,kT_1$。</p>
+<h4>(a) 總能量密度 $\propto T^4$</h4>
+<p><strong>① 變數代換：</strong> 題目只要幾次方，所以用 $x$ 把積分裡的 $T$ 全趕到外面，剩下的積分是純數，不必算。</p>
+<p class="fnote"><b>公式（Planck 輻射公式）：</b>$u(\nu)=\dfrac{8\pi h}{c^3}\dfrac{\nu^3}{e^{h\nu/kT}-1}$，其中 $u(\nu)$ 為每單位頻率的能量密度、$h$ 為 Planck 常數、$c$ 為光速、$k$ 為 Boltzmann 常數、$T$ 為溫度；本題比較 $T_1$ 和 $2T_1$。</p>
+<p>由 $x=h\nu/kT$ 得 $\nu=\dfrac{kT}{h}x$，兩邊微分（$T$ 在積分時是常數）$\mathrm d\nu=\dfrac{kT}{h}\mathrm dx$，所以</p>
+<div class="math-block">$$\nu^3\,\mathrm d\nu=\Big(\frac{kT}{h}\Big)^3x^3\cdot\frac{kT}{h}\,\mathrm dx=\Big(\frac{kT}{h}\Big)^4x^3\,\mathrm dx$$</div>
+<p>積分範圍 $\nu:0\to\infty$ 對應 $x:0\to\infty$，分母 $e^{h\nu/kT}-1=e^x-1$：</p>
+<div class="math-block">$$\int_0^\infty u\,\mathrm d\nu=\frac{8\pi h}{c^3}\Big(\frac{kT}{h}\Big)^4\int_0^\infty\frac{x^3\,\mathrm dx}{e^x-1}$$</div>
+<p><strong>② 總能量 $\propto T^4$，求倍數：</strong> 右邊的積分裡已經沒有 $T$，是一個有限的純數（大 $x$ 時被 $e^{-x}$ 壓住；它其實等於 $\pi^4/15\approx6.49$，但這題用不到）。所以總能量密度 $\propto T^4$。代入 $T_1\to2T_1$：</p>
+<div class="math-block">$$\frac{U(2T_1)}{U(T_1)}=\Big(\frac{2T_1}{T_1}\Big)^4=2^4=16$$</div>
+<div class="math-block">$$\boxed{U\propto T^4,\ \text{變 }16\text{ 倍}}$$</div>
+<h4>(b) 固定低頻</h4>
+<p><strong>① Rayleigh–Jeans 極限：</strong> 頻率固定時隨溫度變的只有分母；$h\nu\ll kT$ 時 $e^{h\nu/kT}-1\approx h\nu/kT$：</p>
+<div class="math-block">$$u\approx\frac{8\pi h}{c^3}\,\nu^3\cdot\frac{kT}{h\nu}=\frac{8\pi kT}{c^3}\nu^2\ \propto T$$</div>
+<p>$\nu$ 固定，代入 $T_1\to2T_1$：</p>
+<div class="math-block">$$\boxed{\frac{u(2T_1)}{u(T_1)}=\frac{2T_1}{T_1}=2}$$</div>
+<h4>(c) 固定高頻 $h\nu=10kT_1$</h4>
+<p><strong>① 分母的反比：</strong> 這裡 $x$ 有確定的數值，直接代數字、不用近似。$\nu$ 固定，倍數是分母的反比：</p>
+<div class="math-block">$$\frac{u(2T_1)}{u(T_1)}=\frac{e^{h\nu/kT_1}-1}{e^{h\nu/2kT_1}-1}$$</div>
+<p>代入 $h\nu/kT_1=10$，所以 $h\nu/(k\cdot2T_1)=5$：</p>
+<div class="math-block">$$\frac{u(2T_1)}{u(T_1)}=\frac{e^{10}-1}{e^{5}-1}$$</div>
+<p><strong>② 化簡：</strong> 用平方差 $e^{10}-1=(e^5)^2-1=(e^5-1)(e^5+1)$，約掉 $e^5-1$：</p>
+<div class="math-block">$$\frac{e^{10}-1}{e^{5}-1}=e^5+1=148.4+1=149$$</div>
+<div class="math-block">$$\boxed{\frac{u(2T_1)}{u(T_1)}\approx149}$$</div>
+<h4>(d) 顏色往高頻移</h4>
+<p><strong>① 比較三個倍數：</strong> 低頻端只多 $2$ 倍、總量多 $16$ 倍、高頻端多 $149$ 倍。增加的能量集中在高頻，光譜峰值往高頻移（Wien 位移）。所以鐵棒加熱時從暗紅變橙紅，再變白熱。</p>
+<div class="math-block">$$\boxed{\text{頻率越高增加得越多，光譜往高頻移}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>黑體輻射只由溫度決定；古典的「駐波數 $8\pi\nu^2/c^3$ 乘上每個 $kT$」在高頻發散——紫外災變。</li>
+    <li>Planck：振子能量 $\epsilon_n=nh\nu$，平均能量 $h\nu/(e^{h\nu/kT}-1)$；高頻被指數壓低，低頻回到古典。</li>
+    <li>一份量子 $h\nu$ 對巨觀系統微不足道，對原子（幾 eV）就是全部。</li>
+  </ol>
+</div>

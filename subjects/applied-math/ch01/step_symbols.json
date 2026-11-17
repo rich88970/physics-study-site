@@ -1,0 +1,27 @@
+{
+  "_說明": "symbols 是本章符號總表；groups 決定總表分組；步驟用 data-sym 指定要提醒的符號（每頁只提醒第一次）。",
+  "symbols": {
+    "y":     { "tex": "y=y(x)", "zh": "未知函數（板書寫「目標」）", "unit": "—", "note": "$x$ 是自變數（板書寫「自變」）；作業第 2 題反過來把 $x$ 當未知函數" },
+    "yp":    { "tex": "y'=\\dfrac{dy}{dx}", "zh": "未知函數對自變數的一階導數", "unit": "—", "note": "一階方程：式中最高只到 $y'$" },
+    "sepMN": { "tex": "M(x)\\,N(y)", "zh": "可分離方程右邊的兩個因式（只含 $x$、只含 $y$）", "unit": "—", "note": "第 1 節用；第 3 節起 $M,N$ 是另一個意思" },
+    "pq":    { "tex": "p(x),\\ q(x)", "zh": "線性方程標準式 $y'+p(x)y=q(x)$ 的係數與右邊", "unit": "—", "note": "先把 $y'$ 的係數除成 1 才能讀 $p$；第 5 節的 $q$ 是電荷" },
+    "F":     { "tex": "F", "zh": "積分因子（integrating factor）", "unit": "—", "note": "線性：$F=e^{\\int p\\,dx}$；非正合：$F(x)=e^{\\int\\Delta/N\\,dx}$ 或 $F(y)=e^{-\\int\\Delta/M\\,dy}$" },
+    "MN":    { "tex": "M(x,y),\\ N(x,y)", "zh": "微分形式 $M\\,dx+N\\,dy=0$ 中 $dx$、$dy$ 的係數", "unit": "—", "note": "$M$ 跟著 $dx$、$N$ 跟著 $dy$，移項時符號要跟著" },
+    "f":     { "tex": "f(x,y)", "zh": "正合方程的「位能函數」：$f_x=M$、$f_y=N$", "unit": "—", "note": "解是 $f(x,y)=C$；小寫 $f$，別和積分因子大寫 $F$ 混" },
+    "h":     { "tex": "h(y)", "zh": "對 $x$ 積分時漏掉、只和 $y$ 有關的「積分常數」", "unit": "—", "note": "由 $f_y=N$ 決定" },
+    "Delta": { "tex": "\\Delta=\\dfrac{\\partial M}{\\partial y}-\\dfrac{\\partial N}{\\partial x}", "zh": "不正合的程度；$\\Delta=0$ 就是正合", "unit": "—" },
+    "Cst":   { "tex": "C,\\ K", "zh": "積分常數，由初始條件決定", "unit": "—", "note": "第 5 節的 $C$ 是電容，所以那裡常數改寫 $K$" },
+    "RC":    { "tex": "R,\\ C", "zh": "電阻、電容", "unit": "Ω、F", "note": "$C\\equiv Q/V$" },
+    "qi":    { "tex": "q(t),\\ i=\\dfrac{dq}{dt}", "zh": "電容上的電荷、迴路電流", "unit": "C、A" },
+    "eps":   { "tex": "\\varepsilon,\\ V_0\\sin\\omega t", "zh": "直流電動勢、交流電源電壓", "unit": "V" },
+    "tau":   { "tex": "\\tau=RC", "zh": "時間常數：電荷衰減到 $1/e$ 的時間", "unit": "s" },
+    "kdrag": { "tex": "k", "zh": "空氣阻力 $kv^2$ 的比例常數（題目沒給名字，自己設）", "unit": "kg/m" },
+    "vt":    { "tex": "v_t=\\sqrt{mg/k}", "zh": "終端速度：重力和阻力平衡時的速率", "unit": "m/s" }
+  },
+  "groups": [
+    { "title": "一階方程（第 1–2 節）", "keys": ["y", "yp", "sepMN", "pq", "F", "Cst"] },
+    { "title": "正合與非正合（第 3–4 節）", "keys": ["MN", "f", "h", "Delta"] },
+    { "title": "應用（第 5 節）", "keys": ["RC", "qi", "eps", "tau", "kdrag", "vt"] }
+  ],
+  "steps": {}
+}

@@ -1,0 +1,494 @@
+<h2>四、熱與功 <span class="pg">課本 §1.4 · p.17–20</span></h2>
+
+<p class="lead">溫度、能量、熱是熱力學最常被混在一起的三個詞。這一節把它們分開：溫度是「想把能量送出去的傾向」；能量是守恆的東西；熱和功則是能量<strong>進出系統的兩種方式</strong>——差別只在「是不是溫差自發造成的」。把兩者加起來就是熱力學第一定律 $\Delta U=Q+W$。</p>
+
+<h3 id="t14-def">4.1 熱與功的定義 <span class="pg-tag">p.17–18</span></h3>
+
+<p>先釐清溫度：第 1 節說過，溫度在根本上是「物體自發地把能量交出去的傾向」的量度。上一節看到能量增加時溫度常常也升高，但那只是「剛好成立的敘述」，不是溫度的定義（第 6 節會看到相變時加能量溫度不變）。</p>
+
+<p>能量本身沒辦法用更基本的東西定義——它是物理最基本的動力學概念。能做的是列出它的各種形式（動能、靜電能、重力位能、化學能、核能……），再加上一句：能量可以換形式，但宇宙的總量不變，這就是<strong>能量守恆</strong>（conservation of energy）。所以一個系統的能量增加了，一定是有能量從外面進來，不會憑空產生；減少了，一定是跑到別處去了。熱力學把所有「進出」的機制分成兩類：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.18 熱（heat）與功（work）</span>
+  <p><strong>熱</strong>：兩物體之間<strong>因溫差而自發</strong>的能量流動。例：暖氣片到冷房間、熱水到冰塊、太陽到地球——機制不同，但流過去的能量都叫熱。</p>
+  <p><strong>功</strong>：<strong>其他所有</strong>能量進出系統的方式。例：推活塞、攪拌咖啡、讓電流流過電阻。通常可以找到一個「主動」把能量送進去的施力者，它不會「自動」發生。</p>
+</div>
+
+<p>這兩個定義和日常用語很不一樣，要刻意記：<strong>搓手取暖、用微波爐熱茶都是「功」，不是「熱」</strong>——手和茶的溫度都升高了，但能量不是因為溫差而自發流進去的。判斷時只問一件事：<em>能量是因為「有東西比較熱」而流過來的嗎？</em>是 → 熱；否 → 功。</p>
+
+<div class="box pitfall">
+  <span class="box-title">「系統裡有多少熱」是沒有意義的問題</span>
+  <p>熱和功都是<strong>傳遞中的能量</strong>（energy in transit）。可以說一個系統的總能量 $U$ 是多少，但只能說「有多少熱<em>流進</em>系統」「對系統<em>做</em>了多少功」。同一個末狀態可以用加熱達到，也可以用做功達到（習題 1.29），系統本身不記得能量是怎麼進來的。</p>
+</div>
+
+<h3 id="t14-first">4.2 熱力學第一定律與能量單位 <span class="pg-tag">p.18–19</span></h3>
+
+<p>用 $U$ 表示系統的總能量，$Q$、$W$ 表示某段時間內以熱、以功的方式<strong>進入</strong>系統的能量（能量離開時為負）。能量守恆：進來的總量 $Q+W$ 等於系統能量的改變（Fig. 1.7）。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.18 Eq. (1.24) 熱力學第一定律（first law of thermodynamics）</span>
+  $$\Delta U=Q+W$$
+  <p>能量的改變＝加進來的熱＋對系統做的功。它其實就是能量守恆；只是當年「熱是一種能量」還有爭議，才給了一個比較神祕的名字沿用至今。</p>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">符號慣例：$Q+W$ 還是 $Q-W$？</span>
+  <p>Schroeder（和化學家）的 $W$ 是<strong>外界對系統</strong>做的功，所以 $\Delta U=Q+W$。很多物理、工程課本把 $W$ 定成<strong>系統對外</strong>做的功，式子變成 $\Delta U=Q-W$。兩者只差一個負號，但混用就會錯；考試先寫清楚自己用哪一個。</p>
+</div>
+
+<p>無限小的過程寫成 $dU=Q+W$，$Q$、$W$ 本身就代表很小的量。別的書寫成 $dQ$、$dW$（或加一槓的 $\bar dQ$），但千萬別讀成「$Q$ 的改變量」——系統裡沒有一個叫 $Q$ 的量可以改變。</p>
+
+<p>能量的 SI 單位是焦耳：$1\ \text{J}=1\ \text{kg·m}^2/\text{s}^2$。傳統上熱用卡路里：$1\ \text{cal}$ 是「不做功的情況下，讓 1 g 水升高 1°C 所需的熱」。Joule 等人證明用力攪拌水（做功）也能達到同樣的升溫，1 cal 約等於 4.2 J；現在的「熱化學卡」定義成剛好 $4.184\ \text{J}$。食品標示的「大卡」（Calorie）其實是千卡，4184 J。</p>
+
+<div class="anim" data-anim="t1-first-law"></div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-cal">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.4 · p.19</span></div>
+    <h4>焦耳、卡與大卡</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-cal">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-cal"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>The official SI unit of energy is the joule, defined as $1\ \text{kg·m}^2/\text{s}^2$. (So a 1-kg object traveling at 1 m/s has $\frac12$ J of kinetic energy, $\frac12mv^2$.) Traditionally, however, heat has been measured in calories, where 1 cal was defined as the amount of heat needed to raise the temperature of a gram of water by 1°C (while no work is being done on it).</p><p>Today the “thermochemical calorie” is defined to equal exactly 4.184 J, and many people still use this unit when dealing with thermal or chemical energy. The well-known food calorie (sometimes spelled with a capital C) is actually a kilocalorie, or 4184 J.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>課文舉了三個能量單位的例子：(a) 1 kg 的物體以 1 m/s 運動，動能是多少焦耳？(b) 讓 1 kg 的水升高 1°C 需要多少焦耳？這是多少「卡」、多少食品「大卡」？(c) 把 (b) 的能量拿來舉起 1 kg 的物體，可以舉多高（感受 Joule 實驗為什麼難做）？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>動能公式</td><td>$\frac12mv^2$，$m=1\ \text{kg}$、$v=1\ \text{m/s}$</td><td>(a)；課文 p.19</td></tr>
+          <tr><td>卡的定義</td><td>1 cal：1 g 水升 1°C 所需的熱</td><td>課文 p.19</td></tr>
+          <tr><td>換算</td><td>$1\ \text{cal}=4.184\ \text{J}$；$1\ \text{Cal}=1\ \text{kcal}=4184\ \text{J}$</td><td>課文 p.19「熱化學卡」與食品大卡</td></tr>
+          <tr><td>水的質量</td><td>$1\ \text{kg}=1000\ \text{g}$</td><td>(b)</td></tr>
+          <tr><td>重力加速度</td><td>$g=9.8\ \text{m/s}^2$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 動能（J）；(b) 1 kg 水升 1°C 的能量（J、cal、Cal）；(c) 同樣能量能把 1 kg 舉多高。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>卡的定義是「每克水每度」，<b>所以</b>所需熱量正比於水的質量與升溫，直接乘；再用 4.184 J/cal 換成焦耳。</p>
+      <p>(c) <b>因為</b>功與熱是同一種東西（能量）的兩種傳遞方式，<b>所以</b>可以把升溫所需的能量和重力位能 $mgh$ 直接比較，看出「一點點升溫」相當於多大的機械功。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-cal-s1">
+        <span class="step-title">(a) 動能</span>
+        <p class="sub">代入 $m=1\ \text{kg}$、$v=1\ \text{m/s}$（題目）：</p>
+        $$\tfrac12mv^2=\tfrac12(1\ \text{kg})(1\ \text{m/s})^2=\tfrac12\ \text{kg·m}^2/\text{s}^2=0.5\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-ex-cal-s2" data-sym="Q">
+        <span class="step-title">(b) 1 kg 水升 1°C</span>
+        <p>每克每度 1 cal，所以 1000 g × 1°C：</p>
+        $$Q=(1000\ \text{g})(1\ \text{cal/(g·°C)})(1\ \text{°C})=1000\ \text{cal}=1\ \text{kcal}=1\ \text{Cal}$$
+        <p class="sub">代入 $1\ \text{cal}=4.184\ \text{J}$（課文）：</p>
+        $$Q=1000\times4.184\ \text{J}=4184\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-ex-cal-s3">
+        <span class="step-title">(c) 同樣的能量換成舉高</span>
+        $$mgh=Q\quad\Longrightarrow\quad h=\frac Q{mg}$$
+        <p class="sub">代入 $Q=4184\ \text{J}$（步驟 2）、$m=1\ \text{kg}$、$g=9.8\ \text{m/s}^2$：</p>
+        $$h=\frac{4184\ \text{J}}{(1\ \text{kg})(9.8\ \text{m/s}^2)}=427\ \text{m}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 0.5 J；(b) 4184 J ＝ 1000 cal ＝ 1 大卡；(c) 約 427 m。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>讓 1 kg 水升溫 1°C 的能量足以把它舉高 400 多公尺：機械功換成內能時溫度升得極少，這就是 Joule 攪拌實驗要非常仔細量溫度的原因（自編難題 04a 會算一個例子）✔</p></div>
+  </div>
+</div>
+
+<h3 id="t14-transfer">4.3 熱傳的三種方式 <span class="pg-tag">p.19</span></h3>
+
+<p>熱再依機制分成三類（第 7 節會定量處理傳導）：</p>
+<ul>
+  <li><strong>傳導</strong>（conduction）：分子接觸——快的分子撞慢的分子，把部分能量交給它。</li>
+  <li><strong>對流</strong>（convection）：氣體或液體的整團流動，通常是因為較熱的物質膨脹、在重力場中上升。</li>
+  <li><strong>輻射</strong>（radiation）：發射電磁波。室溫物體主要發紅外線，燈絲、太陽表面這種很熱的物體也發可見光。</li>
+</ul>
+<p>三種都是「因溫差而自發」的能量流動，所以都歸類為熱。下面的習題全部在練同一件事：<strong>先決定系統是什麼，再看每一段能量流動是不是溫差驅動的</strong>。</p>
+
+<div class="problem" data-kind="textbook" id="sc-1-26">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-26（Problem 1.26）· p.19</span></div>
+    <h4>電池、電阻、一杯茶：哪段是熱、哪段是功</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-26">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-26"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A battery is connected in series to a resistor, which is immersed in water (to prepare a nice hot cup of tea). Would you classify the flow of energy from the battery to the resistor as “heat” or “work”? What about the flow of energy from the resistor to the water?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一個電池與一個電阻串聯，電阻泡在水裡（準備泡一杯熱茶）。從電池流到電阻的能量，你會歸類成「熱」還是「功」？從電阻流到水的能量呢？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第一段</td><td>電池 → 電阻：電流（電能）</td><td>「電池與電阻<b>串聯</b>」</td></tr>
+          <tr><td>第二段</td><td>電阻 → 水：熱電阻接觸冷水</td><td>「電阻<b>泡在水裡</b>」；電阻通電後比水熱</td></tr>
+          <tr><td>熱的定義</td><td>因溫差自發的能量流動</td><td>課文 p.18</td></tr>
+          <tr><td>功的定義</td><td>其他所有能量傳遞（例：電流流過電阻）</td><td>課文 p.18 明列「run current through a resistor」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：兩段能量流動各是熱還是功，並說理由。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>熱與功的分界只看「是不是溫差造成的自發流動」，<b>所以</b>對每一段問：如果兩邊溫度一樣（甚至反過來），能量還會這樣流嗎？會 → 不是溫差驅動 → 功；不會 → 熱。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-26-s1" data-sym="W">
+        <span class="step-title">電池 → 電阻：功</span>
+        <p>電池靠化學反應推動電荷、對電路做電功。即使電池比電阻冷，它照樣持續把能量送給電阻，所以這段流動<strong>不是</strong>溫差造成的 ⟹ 功。電阻變熱，是因為收到了功，不是因為「被加熱」。</p>
+      </div>
+      <div class="step" data-step="sc-1-26-s2" data-sym="Q">
+        <span class="step-title">電阻 → 水：熱</span>
+        <p>電阻溫度高於水，能量經由分子碰撞（傳導）自發地從電阻流到水；若兩者同溫，這段流動就停止 ⟹ 熱。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>電池到電阻是<strong>功</strong>（電功）；電阻到水是<strong>熱</strong>。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>若把「電阻＋水」當成一個系統，從電池進來的整段都是功、沒有熱——分類取決於系統邊界畫在哪（自編難題 04b）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-27">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-27（Problem 1.27）· p.19</span></div>
+    <h4>沒加熱卻升溫、加了熱卻不升溫</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-27">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-27"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Give an example of a process in which no heat is added to a system, but its temperature increases. Then give an example of the opposite: a process in which heat is added to a system but its temperature does not change.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>舉一個過程的例子：沒有熱加進系統，但系統的溫度升高。再舉相反的例子：有熱加進系統，但溫度不變。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>例一</td><td>$Q=0$，$\Delta T\gt0$</td><td>「沒有熱加進系統，溫度升高」</td></tr>
+          <tr><td>例二</td><td>$Q\gt0$，$\Delta T=0$</td><td>「有熱加進系統，溫度不變」</td></tr>
+          <tr><td>第一定律</td><td>$\Delta U=Q+W$</td><td>課文 (1.24)</td></tr>
+          <tr><td>能量與溫度</td><td>$U$ 不一定只隨 $T$ 變（相變時吸熱不升溫）</td><td>課文 p.17：「能量增加溫度也升高」只是常見現象，不是定義</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：兩類例子各至少一個，說明為什麼成立。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>例一：<b>因為</b> $Q=0$ 時 $\Delta U=W$，<b>所以</b>只要對系統做正功，能量（和溫度）就能上升——找「做功使升溫」的例子。</p>
+      <p>例二：<b>因為</b>溫度不變有兩種可能——吸進的能量沒有變成「動能型」的熱能（相變打斷分子間的鍵），或吸進的熱又以功的形式送出去（$W=-Q$，$\Delta U=0$）——<b>所以</b>各舉一例。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-27-s1" data-sym="W,U">
+        <span class="step-title">$Q=0$ 但升溫：做功</span>
+        <ul>
+          <li>快速打氣：活塞壓縮空氣（絕熱壓縮），$W\gt0$，空氣變熱（第 5 節）。</li>
+          <li>搓手、用微波爐熱茶、習題 1.26 的電阻：能量以功的形式進入。</li>
+        </ul>
+        <p>這些過程 $\Delta U=W\gt0$，溫度升高，但沒有任何比它更熱的東西把能量送進來。</p>
+      </div>
+      <div class="step" data-step="sc-1-27-s2" data-sym="Q">
+        <span class="step-title">$Q\gt0$ 但不升溫：相變</span>
+        <p>爐子上沸騰的水：熱不斷流入，水溫卻停在 100°C（在當地的沸點）。吸進的能量用來拆開液體分子間的鍵（潛熱，第 6 節），不是增加分子的動能。</p>
+      </div>
+      <div class="step" data-step="sc-1-27-s3">
+        <span class="step-title">$Q\gt0$ 但不升溫：同時對外做功</span>
+        <p>汽缸裡的理想氣體下方有火焰加熱，同時讓活塞慢慢往外退，使氣體對外做的功正好等於吸的熱：$W=-Q$，$\Delta U=0$，理想氣體的 $U\propto T$，所以溫度不變——這就是第 5 節的<strong>等溫膨脹</strong>。（退得更快甚至可以讓氣體一邊吸熱一邊降溫，自編難題 05b。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$Q=0$ 升溫：絕熱壓縮（打氣）、搓手、微波加熱、通電的電阻。$Q\gt0$ 不升溫：沸騰等相變；或理想氣體等溫膨脹（吸的熱全部變成對外的功）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>兩類例子都滿足 $\Delta U=Q+W$：例一 $Q=0$、$W\gt0$；等溫膨脹 $Q=-W\gt0$、$\Delta U=0$ ✔。溫度和熱是兩個不同的概念，這題正是要說這件事 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-28">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-28（Problem 1.28）· p.20</span></div>
+    <h4>600 W 微波爐把一杯水煮沸要多久</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-28">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-28"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Estimate how long it should take to bring a cup of water to boiling temperature in a typical 600-watt microwave oven, assuming that all the energy ends up in the water. (Assume any reasonable initial temperature for the water.) Explain why no heat is involved in this process.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>估計用一台一般的 600 W 微波爐把一杯水加熱到沸點要多久，假設所有能量最後都進了水裡。（初溫自己取一個合理的值。）說明為什麼這個過程中沒有「熱」。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>功率</td><td>$600\ \text{W}=600\ \text{J/s}$</td><td>「600 W 微波爐」</td></tr>
+          <tr><td>水量</td><td>$m=200\ \text{g}$（自己取）</td><td>「一杯水」：一般馬克杯約 200–250 mL</td></tr>
+          <tr><td>初溫</td><td>$T_i=20\ \text{°C}$（自己取）</td><td>「初溫自己取合理的值」：室溫</td></tr>
+          <tr><td>末溫</td><td>$T_f=100\ \text{°C}$</td><td>「加熱到<b>沸點</b>」（一大氣壓）</td></tr>
+          <tr><td>水的比熱</td><td>$c=4.186\ \text{J/(g·°C)}$（1 cal/(g·°C)）</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>效率</td><td>100%</td><td>「所有能量最後都進了水裡」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：加熱時間的估計；為什麼沒有熱。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>水的能量增加量只由質量、比熱、升溫決定（$\Delta U=mc\Delta T$，不必管能量怎麼進去），<b>所以</b>先算需要多少能量；<b>因為</b>題目假設微波的能量全部進水，<b>所以</b>時間＝能量 ÷ 功率。</p>
+      <p>「為什麼沒有熱」：<b>因為</b>熱的定義要求「有一個比較熱的物體因溫差把能量送過來」，<b>所以</b>檢查微波爐裡有沒有這樣的物體。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-28-s1" data-sym="U,c">
+        <span class="step-title">需要的能量</span>
+        $$\Delta U=mc\,\Delta T$$
+        <p class="sub">代入 $m=200\ \text{g}$、$c=4.186\ \text{J/(g·°C)}$、$\Delta T=100-20=80\ \text{°C}$（自己取的初溫）：</p>
+        $$\Delta U=(200\ \text{g})(4.186\ \text{J/(g·°C)})(80\ \text{°C})=6.7\times10^4\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-28-s2">
+        <span class="step-title">時間</span>
+        $$t=\frac{\Delta U}{P_{\text{微波}}}$$
+        <p class="sub">代入 $\Delta U=6.7\times10^4\ \text{J}$（步驟 1）、$P_{\text{微波}}=600\ \text{J/s}$（題目）：</p>
+        $$t=\frac{6.7\times10^4\ \text{J}}{600\ \text{J/s}}=112\ \text{s}\approx2\ \text{分鐘}$$
+      </div>
+      <div class="step" data-step="sc-1-28-s3" data-sym="Q,W">
+        <span class="step-title">為什麼沒有熱</span>
+        <p>微波爐的磁控管發出電磁波，驅動水分子轉動；磁控管並不是因為「比水熱」才把能量送過去，水裡也沒有任何更熱的東西——這是<strong>電磁功</strong>。反而是水變熱後會有熱從水流向杯子和空氣（$Q\lt0$）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>200 g 水由 20°C 加熱：約 $6.7\times10^4\ \text{J}$，約 110 s（2 分鐘）。能量以電磁功進入，沒有比水熱的物體送熱過來，所以不是熱。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>和生活經驗一致（一杯水微波 2 分鐘左右會滾）✔。實際上會更久一點：部分能量加熱杯子、水也會散熱 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-29">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-29（Problem 1.29）· p.20</span></div>
+    <h4>水溫升了 5°C，加了多少熱？（陷阱題）</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-29">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-29"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A cup containing 200 g of water is sitting on your dining room table. After carefully measuring its temperature to be 20°C, you leave the room. Returning ten minutes later, you measure its temperature again and find that it is now 25°C. What can you conclude about the amount of heat added to the water? (Hint: This is a trick question.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>餐桌上有一杯 200 g 的水。你仔細量了溫度是 20°C，然後離開房間。十分鐘後回來再量，變成 25°C。關於加進水裡的熱，你能得到什麼結論？（提示：這是陷阱題。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>水量</td><td>$m=200\ \text{g}$</td><td>題目</td></tr>
+          <tr><td>升溫</td><td>$\Delta T=25-20=5\ \text{°C}$</td><td>「20°C」「25°C」</td></tr>
+          <tr><td>比熱</td><td>$c=1\ \text{cal/(g·°C)}=4.186\ \text{J/(g·°C)}$</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>功</td><td>未知</td><td>「<b>離開房間</b>」：不知道這十分鐘發生什麼事</td></tr>
+          <tr><td>第一定律</td><td>$\Delta U=Q+W$</td><td>課文 (1.24)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：關於 $Q$ 能下什麼結論。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>溫度計只告訴我們末狀態，而能量是狀態量、熱是過程量，<b>所以</b>從溫度變化只能算出 $\Delta U$；要拆成 $Q$ 和 $W$ 必須知道過程，而題目刻意讓你不知道過程（你離開了）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-29-s1" data-sym="U">
+        <span class="step-title">能確定的：$\Delta U$</span>
+        $$\Delta U=mc\,\Delta T$$
+        <p class="sub">代入 $m=200\ \text{g}$、$c=1\ \text{cal/(g·°C)}$、$\Delta T=5\ \text{°C}$（題目）：</p>
+        $$\Delta U=(200)(1)(5)\ \text{cal}=1000\ \text{cal}=4186\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-29-s2" data-sym="Q,W">
+        <span class="step-title">不能確定的：$Q$</span>
+        <p>由第一定律 $Q=\Delta U-W=4186\ \text{J}-W$。$W$ 不知道：可能有人進來用力攪拌（$W\gt0$）、可能有陽光照射（那是輻射，算熱）、也可能都沒有。所以 $Q$ 可以是 4186 J，也可以更少、甚至是負的（一邊被大力攪拌一邊散熱給桌子）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>只能確定水的能量增加了約 1000 cal（4200 J）；加了多少<strong>熱</strong>無法得知，因為這些能量也可能是以功的形式進來的。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>合理的推測是 $Q\approx1000\ \text{cal}$（水很難對外做功，沒人攪拌時 $W\approx0$），但第一定律允許任何組合——這正是「系統裡沒有多少熱」的意思 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-30">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-30（Problem 1.30）· p.20</span></div>
+    <h4>用力搖一瓶水，水溫升多少</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-30">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-30"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Put a few spoonfuls of water into a bottle with a tight lid. Make sure everything is at room temperature, measuring the temperature of the water with a thermometer to make sure. Now close the bottle and shake it as hard as you can for several minutes. When you’re exhausted and ready to drop, shake it for several minutes more. Then measure the temperature again. Make a rough calculation of the expected temperature change, and compare.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>把幾湯匙的水裝進一個蓋得很緊的瓶子。確定所有東西都在室溫（用溫度計量水溫確認）。蓋好瓶子用最大的力氣搖幾分鐘；累到快倒下時再多搖幾分鐘。然後再量溫度。粗略計算預期的升溫，並和實驗比較。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>每半次搖動水移動的距離</td><td>約 $0.3\ \text{m}$（自己估）</td><td>「用最大的力氣搖」：手臂來回約一呎</td></tr>
+          <tr><td>搖動頻率</td><td>每秒來回 4 次 ⟹ 每秒 8 個半次，每半次 $0.125\ \text{s}$（自己估）</td><td>同上</td></tr>
+          <tr><td>水的比熱</td><td>$c=4186\ \text{J/(kg·K)}$</td><td>題目沒給，用標準值</td></tr>
+          <tr><td>能量轉換</td><td>每次停下、反向時，水的動能全部變成內能</td><td>題目沒寫：水撞瓶壁後亂流消散（最樂觀的假設）</td></tr>
+          <tr><td>搖動時間</td><td>約 10 分鐘</td><td>「幾分鐘」＋「再多搖幾分鐘」</td></tr>
+          <tr><td>水量</td><td>不用知道</td><td>「幾湯匙」：下面會看到質量消掉</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：預期升溫的粗略計算，並說明怎麼和實驗比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>搖瓶子是對水做功（手主動把能量送進去，不是溫差），水每次被甩到瓶底急停時，動能變成水的內能，<b>所以</b>每「半次」搖動：$mc\,\Delta T=\frac12mv^2$。</p>
+      <p><b>因為</b>兩邊都有 $m$，<b>所以</b>升溫與水量無關，只看速度與比熱——這也是題目不必說清楚水有多少的原因。再乘上每秒次數、總時間，得到上限估計。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-30-s1">
+        <span class="step-title">水的速度</span>
+        <p class="sub">代入每半次 0.3 m、0.125 s（自己估的搖法）：</p>
+        $$v\approx\frac{0.3\ \text{m}}{0.125\ \text{s}}=2.4\ \text{m/s}$$
+      </div>
+      <div class="step" data-step="sc-1-30-s2" data-sym="c">
+        <span class="step-title">每半次的升溫</span>
+        <p>動能全部變成內能，$m$ 消去：</p>
+        $$mc\,\Delta T_1=\tfrac12mv^2\quad\Longrightarrow\quad\Delta T_1=\frac{v^2}{2c}$$
+        <p class="sub">代入 $v=2.4\ \text{m/s}$（步驟 1）、$c=4186\ \text{J/(kg·K)}$：</p>
+        $$\Delta T_1=\frac{(2.4)^2}{2(4186)}\ \text{K}=6.9\times10^{-4}\ \text{K}$$
+      </div>
+      <div class="step" data-step="sc-1-30-s3">
+        <span class="step-title">累積</span>
+        <p class="sub">每秒 8 個半次（自己估）：每分鐘 $8\times60=480$ 次：</p>
+        $$\Delta T_{1\,\text{min}}=480\times6.9\times10^{-4}\ \text{K}=0.33\ \text{K}$$
+        <p class="sub">搖約 10 分鐘（題目「幾分鐘＋再幾分鐘」）：</p>
+        $$\Delta T\approx10\times0.33\ \text{K}\approx3\ \text{K}$$
+      </div>
+      <div class="step" data-step="sc-1-30-s4">
+        <span class="step-title">怎麼和實驗比較</span>
+        <p>3 K 是<strong>上限</strong>：水不一定每次都完全停下、瓶子也會散熱給空氣。反過來，手握瓶子時手的熱（約 35°C）會傳進去，讓量到的升溫偏大。做實驗時要加一組<strong>對照</strong>：只握不搖同樣久，兩者相減才是「功變成內能」的部分；戴手套或用毛巾包住瓶子可以減少這個誤差。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>每半次約 $7\times10^{-4}\ \text{K}$，每分鐘約 0.3 K，搖 10 分鐘預期升溫最多約 3 K（量級：零點幾到幾度）；比較時要扣掉手傳進去的熱。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>和 sc-ex-cal 一致：機械功變內能時升溫很小——$2.4\ \text{m/s}$ 的動能每公斤只有 2.9 J，不到讓水升 1 K 所需 4186 J 的千分之一 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-04a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>Joule 落錘攪拌：升溫多少、哪段是熱哪段是功</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-04a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>仿 Joule 的實驗：一個 2.0 kg 的重物經滑輪、繩子帶動槳葉攪拌絕熱容器裡的 0.50 kg 水。重物每次以等速慢慢落下 1.5 m，再把它捲回原位（捲回時槳葉不轉），共重複 20 次。槳葉與容器的熱容量可忽略。(a) 以「水」為系統，$W$、$Q$、$\Delta U$ 各是多少？水溫升高多少？(b) 實驗結束後把容器的絕熱外殼拿掉，水慢慢冷卻回室溫。這段過程以水為系統，$Q$、$W$、$\Delta U$ 的正負與大小？(c) 如果只看 (a)(b) 的初末狀態（水回到原溫度），能不能說「水什麼事都沒發生」？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>重物</td><td>$M=2.0\ \text{kg}$，每次落 $h=1.5\ \text{m}$，20 次</td><td>題目</td></tr>
+          <tr><td>落下方式</td><td>等速 ⟹ 重物動能不變，重力位能全部經繩子傳給槳葉</td><td>「以<b>等速</b>慢慢落下」</td></tr>
+          <tr><td>水</td><td>$m=0.50\ \text{kg}$，$c=4186\ \text{J/(kg·K)}$</td><td>題目；比熱用標準值</td></tr>
+          <tr><td>(a) 的熱</td><td>$Q=0$</td><td>「<b>絕熱</b>容器」</td></tr>
+          <tr><td>其他熱容量</td><td>忽略</td><td>「槳葉與容器的熱容量可忽略」</td></tr>
+          <tr><td>(b)</td><td>水冷卻回原溫度，不再攪拌</td><td>「拿掉絕熱外殼，水慢慢冷卻回室溫」</td></tr>
+          <tr><td>$g$</td><td>$9.8\ \text{m/s}^2$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $W$、$Q$、$\Delta U$、$\Delta T$；(b) 冷卻時的 $Q$、$W$、$\Delta U$；(c) 對「什麼都沒發生」的判斷。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>重物等速下降，動能不變，<b>所以</b>它失去的重力位能 $Mgh$ 全部經由繩子、槳葉傳給水；槳葉攪拌是一個「主動的施力者」，<b>所以</b>這是功、不是熱。又因絕熱 $Q=0$，第一定律 $\Delta U=W$，再由 $\Delta U=mc\Delta T$ 求升溫。</p>
+      <p>(b) <b>因為</b>水比周圍熱、能量自發地流出去，<b>所以</b>是熱（$Q\lt0$）；沒有攪拌，$W=0$。(c) <b>因為</b> $U$ 是狀態量、$Q$ 與 $W$ 是過程量，<b>所以</b>全程 $\Delta U=0$ 不代表 $Q$、$W$ 各為零——要分開看。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-04a-s1" data-sym="W">
+        <span class="step-title">(a) 對水做的功</span>
+        <p>20 次，每次重物位能減少 $Mgh$，等速 ⟹ 全部變成對水的功：</p>
+        $$W=20\,Mgh$$
+        <p class="sub">代入 $M=2.0\ \text{kg}$、$g=9.8\ \text{m/s}^2$、$h=1.5\ \text{m}$（題目）：</p>
+        $$W=20(2.0)(9.8)(1.5)\ \text{J}=588\ \text{J}$$
+      </div>
+      <div class="step" data-step="t1-self-04a-s2" data-sym="U,Q,c">
+        <span class="step-title">(a) 第一定律與升溫</span>
+        <p>絕熱 $Q=0$：</p>
+        $$\Delta U=Q+W=0+588\ \text{J}=588\ \text{J}$$
+        <p>水的能量增加全部表現為升溫 $\Delta U=mc\,\Delta T$：</p>
+        $$\Delta T=\frac{\Delta U}{mc}$$
+        <p class="sub">代入 $\Delta U=588\ \text{J}$、$m=0.50\ \text{kg}$、$c=4186\ \text{J/(kg·K)}$：</p>
+        $$\Delta T=\frac{588}{(0.50)(4186)}\ \text{K}=0.28\ \text{K}$$
+      </div>
+      <div class="step" data-step="t1-self-04a-s3">
+        <span class="step-title">(b) 冷卻</span>
+        <p>不攪拌 $W=0$；水回到原溫度 ⟹ $\Delta U=-588\ \text{J}$；第一定律：</p>
+        $$Q=\Delta U-W=-588\ \text{J}-0=-588\ \text{J}$$
+        <p>能量因水比周圍熱而自發流出：是熱，負號代表離開水。</p>
+      </div>
+      <div class="step" data-step="t1-self-04a-s4">
+        <span class="step-title">(c) 全程</span>
+        <p>全程：$W_{\text{總}}=+588\ \text{J}$、$Q_{\text{總}}=-588\ \text{J}$、$\Delta U_{\text{總}}=0$。水的狀態回到原點，但它其實是一條「把功轉成熱」的管道：重物的 588 J 位能最後以熱的形式散到房間。這和習題 1.33 的循環是同一件事——循環的 $\Delta U=0$，$W$ 和 $Q$ 卻可以都不為零。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $W=588\ \text{J}$、$Q=0$、$\Delta U=588\ \text{J}$，升溫約 0.28 K；(b) $W=0$、$Q=-588\ \text{J}$、$\Delta U=-588\ \text{J}$；(c) 不能：水把 588 J 的功轉成了 588 J 的熱送給環境。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>用卡驗算：$588/4.184=140.5\ \text{cal}$，除以 500 g 得 0.28°C ✔。重物落了總共 30 m 才換來 0.28 K——Joule 的溫度計必須能讀到百分之一度 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-04b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>系統邊界換了，熱與功就換了</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-04b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>汽缸裡的氣體中浸著一根電熱絲，外接電源。某段時間內：電源送給電熱絲 500 J 電能；氣體膨脹推動活塞，對外做了 200 J 的功；氣體經由較冷的缸壁傳出 100 J。電熱絲在這段時間的溫度與能量保持不變（穩態）。(a) 取「氣體」為系統（電熱絲在系統外），用 Schroeder 的符號寫出 $Q$、$W$、$\Delta U$。(b) 取「氣體＋電熱絲」為系統，再寫一次。(c) 用「$W$＝系統對外做的功」的慣例（$\Delta U=Q-W$）重寫 (a)。哪些量會因為選擇不同而改變，哪些不會？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>電源 → 電熱絲</td><td>500 J（電功）</td><td>「電源送給電熱絲 500 J 電能」</td></tr>
+          <tr><td>氣體對外</td><td>200 J（推活塞）</td><td>「對外做了 200 J 的功」</td></tr>
+          <tr><td>氣體 → 缸壁</td><td>100 J，溫差驅動</td><td>「經由<b>較冷</b>的缸壁傳出」</td></tr>
+          <tr><td>電熱絲</td><td>$\Delta U_{\text{絲}}=0$：收進多少就送出多少，500 J 全部給氣體</td><td>「溫度與能量保持不變（穩態）」</td></tr>
+          <tr><td>電熱絲 → 氣體</td><td>熱絲比氣體熱，溫差驅動</td><td>題目沒寫：通電的電熱絲溫度比周圍氣體高</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)(b) 兩種系統的 $Q$、$W$、$\Delta U$；(c) 另一種符號慣例下的 (a)；說明什麼會變、什麼不會。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>熱與功是「穿過系統邊界」的能量，分類要看穿過邊界的那一刻是不是溫差驅動，<b>所以</b>先畫邊界，再把每一股能量流標成熱或功、進或出。</p>
+      <p>(a) 邊界在電熱絲與氣體之間：<b>因為</b>穿過這條邊界的是「熱絲比氣體熱」造成的流動，<b>所以</b>電能到了這裡已經是<b>熱</b>。(b) 邊界在電線上：<b>因為</b>穿過邊界的是電流做的電功，<b>所以</b>是<b>功</b>。<b>因為</b>兩種系統的內能只差電熱絲的 $\Delta U_{\text{絲}}=0$，<b>所以</b> $\Delta U$ 應該相同——可以當驗算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-04b-s1" data-sym="Q,W,U">
+        <span class="step-title">(a) 系統＝氣體</span>
+        <p>進入氣體的熱：來自電熱絲 $+500\ \text{J}$，流向缸壁 $-100\ \text{J}$；功：氣體推活塞，外界對氣體做 $-200\ \text{J}$：</p>
+        $$Q=500-100=400\ \text{J},\qquad W=-200\ \text{J}$$
+        $$\Delta U=Q+W=400-200=200\ \text{J}$$
+      </div>
+      <div class="step" data-step="t1-self-04b-s2">
+        <span class="step-title">(b) 系統＝氣體＋電熱絲</span>
+        <p>電源送進來的 500 J 穿過邊界時是電流 ⟹ 功；推活塞也是功；只有缸壁那 100 J 是熱：</p>
+        $$W=500-200=300\ \text{J},\qquad Q=-100\ \text{J}$$
+        $$\Delta U=Q+W=-100+300=200\ \text{J}$$
+        <p>（$\Delta U_{\text{系統}}=\Delta U_{\text{氣}}+\Delta U_{\text{絲}}=200+0$，和 (a) 一致。）</p>
+      </div>
+      <div class="step" data-step="t1-self-04b-s3">
+        <span class="step-title">(c) 換成 $\Delta U=Q-W$ 的慣例</span>
+        <p>$W$ 改成「系統對外做的功」：氣體推活塞 $W_{\text{by}}=+200\ \text{J}$；$Q$ 的定義不變：</p>
+        $$\Delta U=Q-W_{\text{by}}=400-200=200\ \text{J}$$
+      </div>
+      <div class="step" data-step="t1-self-04b-s4">
+        <span class="step-title">比較</span>
+        <p><strong>會變</strong>：$Q$ 與 $W$ 的值（400/−200 → −100/300），以及 $W$ 的正負號（慣例不同）。<strong>不會變</strong>：$\Delta U=200\ \text{J}$——它是狀態量的改變，與怎麼分類、用哪個慣例都無關。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $Q=400\ \text{J}$、$W=-200\ \text{J}$、$\Delta U=200\ \text{J}$；(b) $Q=-100\ \text{J}$、$W=300\ \text{J}$、$\Delta U=200\ \text{J}$；(c) $Q=400$、$W_{\text{by}}=200$、$\Delta U=200\ \text{J}$。$Q$、$W$ 隨邊界與慣例改變，$\Delta U$ 不變。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>能量帳：進來 500 J，出去 200（活塞）＋100（缸壁）＝300 J，留下 200 J ✔。和習題 1.26 同理：電阻到水是熱，但若把電阻包進系統就沒有熱 ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>熱：因溫差而自發的能量流動；功：其他所有能量傳遞（推、攪、通電、微波）。判斷時先畫系統邊界。</li>
+    <li>熱與功都是「傳遞中的能量」，系統裡沒有「多少熱」；從初末狀態只能算 $\Delta U$，拆不出 $Q$、$W$（習題 1.29）。</li>
+    <li>第一定律 $\Delta U=Q+W$（$W$＝外界對系統做的功）；別的課本 $\Delta U=Q-W$（$W$＝系統對外）。</li>
+    <li>$1\ \text{cal}=4.184\ \text{J}$，食品 1 大卡＝4184 J；機械功變成內能時升溫很小（1 kg 水升 1 K 的能量能把它舉高 427 m）。</li>
+    <li>熱傳三方式：傳導、對流、輻射。</li>
+  </ol>
+</div>

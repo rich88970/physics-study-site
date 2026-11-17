@@ -1,0 +1,164 @@
+<h2>十四、能量守恆的應用：迴圈軌道 <span class="pg">講義 p.143–150 · 課本習題 2-25</span></h2>
+
+<p class="lead">一題用到本章幾乎所有工具：能量守恆求速率（不必知道軌道形狀）、圓周運動的徑向 $F=ma$ 求正向力、離開軌道後是拋體運動。講義把這一題拆成四小題逐步做完。</p>
+
+<p>分工很清楚：<strong>速率</strong>用能量守恆（光滑軌道，正向力垂直位移、不做功）；<strong>正向力</strong>把該點附近的運動看成半徑 $R$ 的圓周，寫指向圓心的 $F=ma$；<strong>落點</strong>是拋體，水平等速、鉛直等加速。</p>
+
+<div class="problem" data-kind="textbook" id="c2-tm-2-25">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 2-25 · p.94 · 講義 p.143–150</span></div>
+    <h4>從高度 $h$ 滑進圓弧軌道：正向力、離開速率、落點</h4>
+    <button type="button" class="exam-btn" data-exam="c2-tm-2-25">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質量 $m=1.62\ \text{kg}$ 的木塊沿無摩擦的軌道滑下（Fig. 2-A），從軌道最低點上方 $h=3.91\ \text{m}$ 處由靜止釋放。軌道底部是半徑 $R$ 的圓弧，最低點為 A，圓弧向上延伸到與鉛直線夾 $45^\circ$ 的 B 點為止。(a) 在最低點 A，軌道對木塊的力是多少？(b) 在 B 點軌道對木塊的力是多少？(c) 木塊以多快的速率離開軌道？(d) 木塊落在水平地面上離 A 點多遠的地方？(e) 畫出木塊的位能 $U(x)$，並在圖上標出總能量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$m=1.62\ \text{kg}$，軌道無摩擦；從 A 上方 $h=3.91\ \text{m}$ 由靜止釋放；圓弧半徑 $R$（沒給數值，答案保留 $R$）；A 是最低點、圓心在正上方；B 的半徑與鉛直線夾 $45^\circ$，過 B 就離開軌道；地面與 A 同高；$g=9.8\ \text{m/s}^2$。以 A 所在水平面為位能零點。</p>
+<h4>A 點速率</h4>
+<p><strong>① 能量守恆：</strong> 無摩擦，正向力垂直位移不做功，只有重力做功，任一點速率只和高度有關。</p>
+<p class="fnote"><b>公式（力學能守恆）：</b>$T_0+U_0=T+U$，其中 $T=\tfrac12mv^2$ 為動能、$U=mgy$ 為重力位能、$y$ 為離零點的高度；本題起點 $v_0=0$、$y=h$，A 點 $y=0$。</p>
+<div class="math-block">$$E_0=T_0+U_0=0+mgh,\qquad E_A=\tfrac12mv_A^2+0$$</div>
+<p>令 $E_0=E_A$，消去 $m$：</p>
+<div class="math-block">$$v_A=\sqrt{2gh}$$</div>
+<h4>(a) A 點的正向力</h4>
+<p><strong>① 徑向牛頓第二定律：</strong> 正向力不做功、能量式裡看不到它，要回到 $F=ma$。A 是最低點，圓心在正上方：$N$ 向上、重力向下，向心加速度向上。</p>
+<p class="fnote"><b>公式（牛頓第二定律，徑向）：</b>$\sum F_{\text{指向圓心}}=\dfrac{mv^2}{R}$，其中 $v$ 為該點速率、$R$ 為圓弧半徑；本題取向上（指向圓心）為正。</p>
+<div class="math-block">$$N_A-mg=\frac{mv_A^2}{R}$$</div>
+<p><strong>② 代入速率：</strong> 代入上一步的 $v_A^2=2gh$：</p>
+<div class="math-block">$$N_A=mg+\frac{m(2gh)}{R}=mg\left(1+\frac{2h}{R}\right)$$</div>
+<p><strong>③ 數值：</strong> 代入 $m=1.62\ \text{kg}$、$h=3.91\ \text{m}$：$mg=1.62(9.8)=15.9\ \text{N}$、$2h=7.82\ \text{m}$。</p>
+<p>（講義 p.144 印成 $mg\left[1-\tfrac{2h}R\right]$，應為 $1+\tfrac{2h}R$：$N_A$ 必須大於 $mg$ 才能提供向上的向心力。見總覽頁的講義勘誤。）</p>
+<div class="math-block">$$\boxed{\begin{gathered}N_A=mg\left(1+\frac{2h}{R}\right)\text{ 向上}\\ =15.9\left(1+\frac{7.82\ \text{m}}{R}\right)\ \text{N}\end{gathered}}$$</div>
+<h4>(c) B 點速率</h4>
+<p><strong>① 能量守恆（起點 vs. B）：</strong> B 和圓心連線與鉛直線夾 $45^\circ$，圓心在 A 上方 $R$，所以 B 的高度是 $R-R\cos45^\circ$：</p>
+<div class="math-block">$$mgh=\tfrac12mv_B^2+mg\big(R-R\cos45^\circ\big)$$</div>
+<p><strong>② 解 $v_B$：</strong> 消去 $m$、乘 2，用 $\cos45^\circ=\tfrac1{\sqrt2}$（$2R\cos45^\circ=\sqrt2R$）：</p>
+<div class="math-block">$$v_B^2=2gh-2gR+\sqrt2\,gR\quad\Longrightarrow\quad v_B=\sqrt{2gh-(2-\sqrt2)gR}$$</div>
+<p><strong>③ 數值：</strong> 代入 $h=3.91\ \text{m}$：$2gh=76.6\ \text{m}^2/\text{s}^2$、$(2-\sqrt2)g=5.74\ \text{m/s}^2$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}v_B=\sqrt{2gh-(2-\sqrt2)gR}\\ =\sqrt{76.6-5.74R}\ \text{m/s}\ (R\text{ 以公尺計})\end{gathered}}$$</div>
+<h4>(b) B 點的正向力</h4>
+<p><strong>① 徑向方程式：</strong> B 與圓心連線和鉛直線夾 $\theta=45^\circ$。沿半徑指向圓心：$N$ 指向圓心；重力在這方向的分量是 $-mg\cos\theta$（背離圓心）：</p>
+<div class="math-block">$$N_B-mg\cos45^\circ=\frac{mv_B^2}{R}$$</div>
+<p><strong>② 代入速率：</strong> 代入 $\cos45^\circ=\tfrac1{\sqrt2}$ 與 (c) 的 $v_B^2=2gh-2gR+\sqrt2\,gR$：</p>
+<div class="math-block">$$\begin{aligned}N_B&amp;=\frac{mg}{\sqrt2}+\frac{m}{R}\left(2gh-2gR+\sqrt2\,gR\right)\\&amp;=mg\left[\frac{2h}{R}-2+\sqrt2+\frac1{\sqrt2}\right]\end{aligned}$$</div>
+<p><strong>③ 化簡：</strong> $\sqrt2+\tfrac1{\sqrt2}=\tfrac{2+1}{\sqrt2}=\tfrac3{\sqrt2}$，數值 $\tfrac3{\sqrt2}-2=0.121$：</p>
+<div class="math-block">$$N_B=mg\left[\frac{2h}{R}+\left(\frac{3}{\sqrt2}-2\right)\right]$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}N_B=mg\left[\frac{2h}R+\frac3{\sqrt2}-2\right]\text{ 指向圓心}\\ =15.9\left(\frac{7.82\ \text{m}}{R}+0.121\right)\ \text{N}\end{gathered}}$$</div>
+<h4>(d) 落點離 A 的距離</h4>
+<p><strong>① 拋體方程式：</strong> 過了 B 只受重力，是拋體運動，初速 $v_B$ 沿 B 的切線（與水平夾 $45^\circ$ 向上），分量 $v_B\cos45^\circ=v_B\sin45^\circ=v_B/\sqrt2$。原點放在 A，B 的座標 $\left(R\sin45^\circ,\ R-R\cos45^\circ\right)=\left(\tfrac{R}{\sqrt2},\ h'\right)$，其中 $h'\equiv R-\tfrac{R}{\sqrt2}$。</p>
+<p class="fnote"><b>公式（拋體運動）：</b>$x=x_0+v_{0x}t$、$y=y_0+v_{0y}t-\tfrac12gt^2$，其中 $(x_0,y_0)$ 為初位置、$(v_{0x},v_{0y})$ 為初速分量；本題 $(x_0,y_0)=(R/\sqrt2,\ h')$、$v_{0x}=v_{0y}=v_B/\sqrt2$。</p>
+<div class="math-block">$$\begin{aligned}x&amp;=\frac{R}{\sqrt2}+\frac{v_B}{\sqrt2}t\\y&amp;=h'+\frac{v_B}{\sqrt2}t-\frac12gt^2\end{aligned}$$</div>
+<p><strong>② 落地時間：</strong> $y=0$ 整理成 $\tfrac12gt^2-\tfrac{v_B}{\sqrt2}t-h'=0$，用公式解，取正根（負根是過去的時間）：</p>
+<div class="math-block">$$t=\frac{1}{g}\left[\frac{v_B}{\sqrt2}+\sqrt{\frac{v_B^2}{2}+2gh'}\right]$$</div>
+<p>講義 p.147–150 把原點放在 B，得 $gt^2-\sqrt2v_Bt+(\sqrt2R-2R)=0$ 再加上 $R\sin\theta$，結果相同；講義 p.149–150 根號裡把 $4g(\sqrt2R-2R)$ 印成 $4g(\sqrt{R-2R})$，應改正（見總覽頁的講義勘誤）。</p>
+<p><strong>③ 水平距離：</strong> 由 (c) 的能量式 $mgh=\tfrac12mv_B^2+mgh'$ 得 $\dfrac{v_B^2}{2}=g(h-h')$。把上一步的 $t$ 乘上水平速度 $\dfrac{v_B}{\sqrt2}$：</p>
+<div class="math-block">$$\frac{v_B}{\sqrt2}t=\frac1g\left[\frac{v_B^2}2+\sqrt{\frac{v_B^2}2}\sqrt{\frac{v_B^2}2+2gh'}\right]$$</div>
+<p>代入 $\dfrac{v_B^2}{2}=g(h-h')$，根號裡 $g(h-h')+2gh'=g(h+h')$：</p>
+<div class="math-block">$$\begin{aligned}\frac{v_B}{\sqrt2}t&amp;=\frac1g\left[g(h-h')+g\sqrt{(h-h')(h+h')}\right]\\&amp;=(h-h')+\sqrt{h^2-h'^2}\end{aligned}$$</div>
+<p><strong>④ 加上 A 到 B 的水平距離 $R/\sqrt2$：</strong> </p>
+<div class="math-block">$$d=\frac{R}{\sqrt2}+(h-h')+\sqrt{h^2-h'^2},\qquad h'=R\left(1-\frac1{\sqrt2}\right)$$</div>
+<p>代入 $h=3.91\ \text{m}$；例如 $R=1\ \text{m}$ 時 $h'=0.293\ \text{m}$：</p>
+<div class="math-block">$$d=0.707+3.617+3.899=8.22\ \text{m}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}d=\frac R{\sqrt2}+(h-h')+\sqrt{h^2-h'^2}\\ h'=R(1-1/\sqrt2)\text{；}R=1\ \text{m}\text{ 時 }d=8.22\ \text{m}\end{gathered}}$$</div>
+<h4>(e) 位能圖</h4>
+<p><strong>① $U(x)$ 與軌道同形：</strong> $U(x)=mg\,y(x)$，$y(x)$ 是軌道高度，所以 $U(x)$ 的形狀就是軌道的形狀：從 $x=0$ 的 $mgh$ 下降到 A 的 $0$，再沿圓弧升到 B 的 $mgh'$。總能量是水平線 $E=mgh$；任一點 $E-U(x)$ 就是那裡的動能。離開軌道後木塊不再受軌道約束，$U$ 只隨高度變。</p>
+<div class="math-block">$$\boxed{U(x)\text{ 與軌道同形，}E=mgh\text{ 為水平線}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="anim" data-anim="c2-loop"></div>
+
+<div class="box pitfall">
+  <span class="box-title">重力的徑向分量要看夾角</span>
+  <p>在圓弧上任一點，徑向方程式是 $N-mg\cos\theta=mv^2/R$（$\theta$ 是半徑與鉛直向下方向的夾角）。只有在最低點 $\cos\theta=1$；在 B 點是 $\cos45^\circ$。</p>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-14a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>從光滑半球頂端滑下：在哪裡離開球面</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-14a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>小物塊從固定、光滑、半徑 $R$ 的半球頂端由（幾乎）靜止開始滑下。(a) 求它離開球面時與鉛直線的夾角 $\theta$，以及當時的速率。(b) 若頂端的初速為 $v_0$，離開角變成多少？$v_0$ 多大時一開始就離開？(c) 這和習題 2-25 的 B 點有什麼共同的判斷方法？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：半球半徑 $R$，固定、光滑；$\theta$ 為物塊與球心連線和鉛直線的夾角，頂端 $\theta=0$；(a) $v_0\to0$（「幾乎」是為了離開頂端的不穩定平衡），(b) 頂端初速 $v_0$；離開條件 $N=0$（球面只能推不能拉）。</p>
+<h4>速率與正向力（通式）</h4>
+<p><strong>① 能量守恆：</strong> 光滑球面，正向力不做功；角度 $\theta$ 時比頂端低 $R-R\cos\theta$。</p>
+<p class="fnote"><b>公式（力學能守恆）：</b>$\tfrac12mv_0^2+mgy_0=\tfrac12mv^2+mgy$，其中 $v_0$、$y_0$ 為起點速率與高度，$v$、$y$ 為終點速率與高度；本題 $y_0-y=R(1-\cos\theta)$。</p>
+<div class="math-block">$$\tfrac12mv^2=\tfrac12mv_0^2+mgR(1-\cos\theta)$$</div>
+<p><strong>② 徑向牛頓第二定律：</strong> 物塊貼著球面做圓周運動，沿半徑指向球心寫 $F=ma$；$N$ 降到零的瞬間就是離開點。</p>
+<p class="fnote"><b>公式（牛頓第二定律，徑向）：</b>$\sum F_{\text{指向圓心}}=\dfrac{mv^2}{R}$，其中 $v$ 為速率、$R$ 為半徑；本題重力分量 $mg\cos\theta$ 指向球心、$N$ 背離球心。</p>
+<div class="math-block">$$mg\cos\theta-N=\frac{mv^2}R$$</div>
+<p><strong>③ 消去 $v$：</strong> 代入能量式的 $\dfrac{mv^2}{R}=\dfrac{mv_0^2}{R}+2mg(1-\cos\theta)$：</p>
+<div class="math-block">$$\begin{aligned}N&amp;=mg\cos\theta-\frac{mv_0^2}{R}-2mg+2mg\cos\theta\\&amp;=mg(3\cos\theta-2)-\frac{mv_0^2}R\end{aligned}$$</div>
+<h4>(a) 由靜止滑下</h4>
+<p><strong>① 離開角：</strong> 令 $v_0=0$、$N=0$：$mg(3\cos\theta-2)=0$：</p>
+<div class="math-block">$$\cos\theta=\frac23,\qquad\theta=\cos^{-1}\frac23=48.2^\circ$$</div>
+<p><strong>② 離開速率：</strong> 代回能量式（$v_0=0$）：</p>
+<div class="math-block">$$v^2=2gR\left(1-\frac23\right)=\frac{2gR}3\quad\Longrightarrow\quad v=\sqrt{\frac{2gR}3}$$</div>
+<p>離開時的高度 $R\cos\theta=\tfrac23R$，也就是下降了 $R/3$。</p>
+<div class="math-block">$$\boxed{\cos\theta=\tfrac23\ (\theta=48.2^\circ),\quad v=\sqrt{2gR/3}}$$</div>
+<h4>(b) 頂端有初速 $v_0$</h4>
+<p><strong>① 離開角：</strong> 令通式的 $N=0$：$mg(3\cos\theta-2)=\dfrac{mv_0^2}{R}$，兩邊除以 $3mg$ 再移項：</p>
+<div class="math-block">$$\cos\theta=\frac{2}{3}+\frac{v_0^2}{3gR}$$</div>
+<p>初速越大，$\cos\theta$ 越大、$\theta$ 越小，越早離開。</p>
+<p><strong>② 一開始就離開：</strong> $\cos\theta$ 不能超過 1：$\dfrac{v_0^2}{3gR}\ge\dfrac13$ 即 $v_0^2\ge gR$ 時，在頂端（$\theta=0$）就已經 $N=mg-mv_0^2/R\le0$，一開始就飛離球面（頂端的重力不足以提供向心力）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\cos\theta=\tfrac23+\tfrac{v_0^2}{3gR}\\ v_0\ge\sqrt{gR}\text{ 時立即離開}\end{gathered}}$$</div>
+<h4>(c) 與 2-25 B 點的共同方法</h4>
+<p><strong>① 同一套步驟：</strong> 都是「能量守恆求 $v$ ＋ 徑向 $F=ma$ 求 $N$ ＋ 判斷 $N$ 的正負」。差別只是軌道彎曲的方向：在凸面（球頂）$N=mg\cos\theta-mv^2/R$ 會減到零；在凹面（迴圈內側底部）$N=mg\cos\theta+mv^2/R$ 只會更大，要到迴圈上半段才可能為零。</p>
+<div class="math-block">$$\boxed{\text{能量＋徑向牛頓第二定律，}N=0\text{ 為臨界}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-14b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>完整迴圈：最低點與最高點的正向力永遠差 $6mg$</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-14b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>把習題 2-25 的軌道改成完整的鉛直圓形迴圈（半徑 $R$，光滑，物塊在內側），物塊從高 $h$ 處由靜止滑下進入迴圈。(a) 證明不論 $h$ 多大，只要物塊能繞完一圈，最低點與最高點的正向力差 $N_{\text{底}}-N_{\text{頂}}=6mg$。(b) 要繞完一圈，$h$ 最少要多少？(c) 這時最低點的正向力是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：完整鉛直圓形迴圈，半徑 $R$、光滑，物塊在內側（$N$ 永遠指向圓心）；從高 $h$（由迴圈最低點量起）靜止滑下；最高點比最低點高 $2R$；繞完一圈的條件是 $N_{\text{頂}}\ge0$。</p>
+<h4>(a) 證明 $N_{\text{底}}-N_{\text{頂}}=6mg$</h4>
+<p><strong>① 兩點的向心方程式：</strong> 能量式裡沒有 $N$，要在最低點和最高點各寫一次指向圓心的 $F=ma$。底部重力背離圓心、頂部重力指向圓心。</p>
+<p class="fnote"><b>公式（牛頓第二定律，徑向）：</b>$\sum F_{\text{指向圓心}}=\dfrac{mv^2}{R}$，其中 $v$ 為該點速率、$R$ 為迴圈半徑；本題指向圓心為正。</p>
+<div class="math-block">$$\text{底}:\ N_{\text{底}}-mg=\frac{mv_{\text{底}}^2}R,\qquad\text{頂}:\ N_{\text{頂}}+mg=\frac{mv_{\text{頂}}^2}R$$</div>
+<p><strong>② 能量守恆連接兩點：</strong> 兩式各有一個未知 $v^2$，用能量守恆把它們連起來。</p>
+<p class="fnote"><b>公式（力學能守恆）：</b>$\tfrac12mv_1^2+mgy_1=\tfrac12mv_2^2+mgy_2$，其中 $v$、$y$ 為各點速率與高度；本題底部 $y=0$、頂部 $y=2R$。</p>
+<div class="math-block">$$\tfrac12mv_{\text{底}}^2=\tfrac12mv_{\text{頂}}^2+mg(2R)\quad\Longrightarrow\quad v_{\text{底}}^2-v_{\text{頂}}^2=4gR$$</div>
+<p><strong>③ 兩式相減：</strong> 代入 $v_{\text{底}}^2-v_{\text{頂}}^2=4gR$：</p>
+<div class="math-block">$$\begin{aligned}N_{\text{底}}-N_{\text{頂}}&amp;=2mg+\frac m R(v_{\text{底}}^2-v_{\text{頂}}^2)\\&amp;=2mg+\frac mR(4gR)=6mg\end{aligned}$$</div>
+<p>$h$、$R$ 都消掉了。</p>
+<div class="math-block">$$\boxed{N_{\text{底}}-N_{\text{頂}}=6mg\text{，與 }h\text{、}R\text{ 無關}}$$</div>
+<h4>(b) 繞完一圈的最小 $h$</h4>
+<p><strong>① 頂部條件：</strong> 由頂部方程式，$N_{\text{頂}}=\dfrac{mv_{\text{頂}}^2}{R}-mg\ge0$ ⟹ $v_{\text{頂}}^2\ge gR$。</p>
+<p><strong>② 能量守恆（起點 vs. 頂部）：</strong> 起點高 $h$、靜止，頂部高 $2R$：$mgh=\tfrac12mv_{\text{頂}}^2+mg(2R)$，所以 $v_{\text{頂}}^2=2g(h-2R)$。代入條件：</p>
+<div class="math-block">$$2g(h-2R)\ge gR\quad\Longrightarrow\quad h-2R\ge\frac R2\quad\Longrightarrow\quad h\ge\frac52R$$</div>
+<div class="math-block">$$\boxed{h_{\min}=\tfrac52R}$$</div>
+<h4>(c) 剛好繞完時的底部正向力</h4>
+<p><strong>① 代入 (a)：</strong> 剛好繞完時 $h=\tfrac52R$，頂部 $N_{\text{頂}}=0$（(b) 的等號）；代入 (a) 的 $N_{\text{底}}=N_{\text{頂}}+6mg$：</p>
+<div class="math-block">$$N_{\text{底}}=0+6mg=6mg$$</div>
+<p>也可以直接用 2-25 的 $N_A=mg(1+2h/R)$，代 $h=\tfrac52R$：$mg(1+5)=6mg$。</p>
+<div class="math-block">$$\boxed{N_{\text{底}}=6mg}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>光滑軌道：正向力不做功，速率只由高度決定 $v=\sqrt{2g(h-y)}$。</li>
+    <li>圓弧上的正向力：$N=mg\cos\theta+mv^2/R$（內側軌道、$\theta$ 從最低點量）。</li>
+    <li>離開軌道後是拋體；把 $v_B^2=2g(h-h')$ 代進去，落點式子可以化得很乾淨。</li>
+  </ol>
+</div>

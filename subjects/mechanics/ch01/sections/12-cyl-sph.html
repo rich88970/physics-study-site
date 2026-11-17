@@ -1,0 +1,347 @@
+<h2>十一、柱座標與球座標 <span class="pg">講義 p.64–74</span></h2>
+
+<p class="lead">柱座標是「極座標再加一個 $z$」；球座標用離原點的距離 $r$、和 $z$ 軸的夾角 $\theta$、繞 $z$ 軸的角度 $\phi$。考試最常用它們做兩件事：寫出 $\mathrm dV$ 求體積和轉動慣量，以及寫出速度、加速度。</p>
+
+<h3 id="cs-cyl">11.1 柱座標 <span class="pg-tag">p.64–66</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.64–65 Cylindrical Coordinates</span>
+  $$\begin{gathered}r\ge0,\quad 0\le\phi\le2\pi,\quad -\infty\le z\le\infty\\ \dot{\hat r}=\dot\phi\,\hat\phi,\qquad \dot{\hat\phi}=-\dot\phi\,\hat r,\qquad \dot{\hat z}=0\\ \mathrm d\vec s=\mathrm dr\,\hat r+r\,\mathrm d\phi\,\hat\phi+\mathrm dz\,\hat z\\ \mathrm dV=\mathrm dr\times r\,\mathrm d\phi\times\mathrm dz=r\,\mathrm dr\,\mathrm d\phi\,\mathrm dz\end{gathered}$$
+</div>
+
+<p>在 $xy$ 平面上，柱座標的 $(r,\phi)$ 就是上一節的極座標 $(r,\theta)$，所以 $\hat r$、$\hat\phi$ 的導數公式完全一樣。$\hat z$ 永遠朝上、不會轉，$\dot{\hat z}=0$。注意這裡的 $r$ 是<strong>到 $z$ 軸</strong>的距離，不是到原點的距離。</p>
+
+<div class="problem" data-kind="example" id="ex-p66">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.66 · Example 1.8</span></div>
+    <h4>柱座標的加速度</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p66">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求加速度 $\vec a$ 在柱座標中的分量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：柱座標位置 $\vec r=r\hat r+z\hat z$（$r$ 為到 $z$ 軸的距離，角度藏在 $\hat r$ 的方向裡）；$\dot{\hat r}=\dot\phi\,\hat\phi$、$\dot{\hat\phi}=-\dot\phi\,\hat r$、$\dot{\hat z}=0$（講義 p.65）。</p>
+<p><strong>① 速度：</strong> $\hat r$、$\hat\phi$ 會隨位置轉動，微分時每一項都要用乘積律，再把單位向量的導數換掉。</p>
+<p class="fnote"><b>公式（乘積律）：</b>$\frac{\mathrm d}{\mathrm dt}(f\hat e)=\dot f\hat e+f\dot{\hat e}$，其中 $f$ 為係數、$\hat e$ 為單位向量；本題 $\hat e$ 為 $\hat r$、$\hat\phi$、$\hat z$。</p>
+<div class="math-block">$$\vec v=\dot r\,\hat r+r\,\dot{\hat r}+\dot z\,\hat z+z\,\dot{\hat z}$$</div>
+<p>代入 $\dot{\hat r}=\dot\phi\,\hat\phi$、$\dot{\hat z}=0$：</p>
+<div class="math-block">$$\vec v=\dot r\,\hat r+r\dot\phi\,\hat\phi+\dot z\,\hat z$$</div>
+<p><strong>② 再微分一次：</strong> 中間那一項 $r\dot\phi\,\hat\phi$ 有三個隨時間變的因子（$r$、$\dot\phi$、$\hat\phi$），會展開成三項：</p>
+<div class="math-block">$$\tfrac{\mathrm d}{\mathrm dt}(\dot r\,\hat r)=\ddot r\,\hat r+\dot r\,\dot{\hat r}$$</div>
+<div class="math-block">$$\tfrac{\mathrm d}{\mathrm dt}(r\dot\phi\,\hat\phi)=\dot r\dot\phi\,\hat\phi+r\ddot\phi\,\hat\phi+r\dot\phi\,\dot{\hat\phi}$$</div>
+<div class="math-block">$$\tfrac{\mathrm d}{\mathrm dt}(\dot z\,\hat z)=\ddot z\,\hat z+\dot z\,\dot{\hat z}$$</div>
+<p>代入 $\dot{\hat r}=\dot\phi\,\hat\phi$、$\dot{\hat\phi}=-\dot\phi\,\hat r$、$\dot{\hat z}=0$：</p>
+<div class="math-block">$$\tfrac{\mathrm d}{\mathrm dt}(\dot r\,\hat r)=\ddot r\,\hat r+\dot r\dot\phi\,\hat\phi$$</div>
+<div class="math-block">$$\tfrac{\mathrm d}{\mathrm dt}(r\dot\phi\,\hat\phi)=\dot r\dot\phi\,\hat\phi+r\ddot\phi\,\hat\phi-r\dot\phi^2\,\hat r$$</div>
+<div class="math-block">$$\tfrac{\mathrm d}{\mathrm dt}(\dot z\,\hat z)=\ddot z\,\hat z$$</div>
+<p><strong>③ 依單位向量整理：</strong> 三行相加，$\hat r$ 有 $\ddot r$ 和 $-r\dot\phi^2$；$\hat\phi$ 有兩個 $\dot r\dot\phi$ 和 $r\ddot\phi$；$\hat z$ 只有 $\ddot z$：</p>
+<div class="math-block">$$\vec a=(\ddot r-r\dot\phi^2)\,\hat r+(2\dot r\dot\phi+r\ddot\phi)\,\hat\phi+\ddot z\,\hat z$$</div>
+<p>$-r\dot\phi^2$ 是繞 $z$ 軸轉的向心加速度；$2\dot r\dot\phi$ 的兩個 $\dot r\dot\phi$ 一個來自 $\hat r$ 轉向、一個來自 $r\dot\phi$ 變大。</p>
+<div class="math-block">$$\boxed{\begin{gathered}a_r=\ddot r-r\dot\phi^2,\quad a_\phi=2\dot r\dot\phi+r\ddot\phi\\ a_z=\ddot z\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="cs-sph">11.2 球座標 <span class="pg-tag">p.67–68、73</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.67–68、73 Spherical Coordinates</span>
+  $$\begin{gathered}r\ge0,\qquad 0\le\theta\le\pi,\qquad 0\le\phi\le2\pi\\ \mathrm d\vec s=\mathrm dr\,\hat r+r\,\mathrm d\theta\,\hat\theta+r\sin\theta\,\mathrm d\phi\,\hat\phi\\ \mathrm dA=r\,\mathrm d\theta\times r\sin\theta\,\mathrm d\phi=r^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi\\ \mathrm dV=r\,\mathrm d\theta\times r\sin\theta\,\mathrm d\phi\times\mathrm dr=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi\\ \vec v=\dot r\,\hat r+r\dot\theta\,\hat\theta+r\sin\theta\,\dot\phi\,\hat\phi\end{gathered}$$
+</div>
+
+<p>$\theta$ 從 $+z$ 軸量起（$0$ 到 $\pi$：北極 $0$、赤道 $\frac\pi2$，是「餘緯度」），$\phi$ 在 $xy$ 平面上從 $+x$ 軸量起（像經度）。小體積的三條邊：沿 $r$ 是 $\mathrm dr$；沿經線轉 $\mathrm d\theta$，半徑是 $r$，弧長 $r\,\mathrm d\theta$；沿緯線轉 $\mathrm d\phi$，但那個緯線圓的半徑是到 $z$ 軸的距離 $r\sin\theta$，弧長是 $r\sin\theta\,\mathrm d\phi$——<strong>$\sin\theta$ 就是從這裡來的</strong>。</p>
+
+<div class="anim" data-anim="sph-element"></div>
+
+<div class="problem" data-kind="example" id="ex-p69">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.69</span></div>
+    <h4>球的體積</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p69">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用球座標求半徑 $R$ 的球體積。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：整顆半徑 $R$ 的球：$0\le r\le R$、$0\le\theta\le\pi$、$0\le\phi\le2\pi$。</p>
+<p><strong>① 寫出積分並拆成三個：</strong> 球的邊界 $r=R$ 是常數上限，三個範圍互不相關，被積函數又可分離，三重積分拆成三個單變數積分相乘。</p>
+<p class="fnote"><b>公式（球座標體積元素）：</b>$\mathrm dV=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$，其中 $r$ 為到原點的距離、$\theta$ 為極角、$\phi$ 為方位角；本題範圍如上。</p>
+<div class="math-block">$$V=\int_0^{2\pi}\!\!\int_0^{\pi}\!\!\int_0^{R}r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$$</div>
+<div class="math-block">$$V=\int_0^Rr^2\,\mathrm dr\times\int_0^\pi\sin\theta\,\mathrm d\theta\times\int_0^{2\pi}\mathrm d\phi$$</div>
+<p><strong>② 逐個算：</strong></p>
+<div class="math-block">$$\int_0^Rr^2\,\mathrm dr=\Big[\frac{r^3}{3}\Big]_0^R=\frac{R^3}{3}$$</div>
+<div class="math-block">$$\int_0^\pi\sin\theta\,\mathrm d\theta=\big[-\cos\theta\big]_0^\pi=-\cos\pi+\cos0=1+1=2$$</div>
+<div class="math-block">$$\int_0^{2\pi}\mathrm d\phi=2\pi$$</div>
+<p>三者相乘：</p>
+<div class="math-block">$$V=\frac{R^3}{3}\times2\times2\pi=\frac43\pi R^3$$</div>
+<div class="math-block">$$\boxed{V=\frac43\pi R^3}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="ex-p70">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.70</span></div>
+    <h4>均勻實心球的轉動慣量</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p70">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>半徑 $R$、密度 $\rho$（均勻）的實心球，求對通過球心的轉軸（取 $z$ 軸）的轉動慣量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：實心均勻球，半徑 $R$、密度 $\rho$（講義原文 unit density，即 $\rho=1$）；轉軸取 $z$ 軸（過球心）；點到 $z$ 軸的距離 $d=r\sin\theta$；整球 $0\le\theta\le\pi$、$0\le\phi\le2\pi$。</p>
+<p><strong>① 寫出積分：</strong> 用球座標的 $\mathrm dV$，範圍全是常數可拆開；$d$ 是到轉軸的距離 $r\sin\theta$，不是到球心的 $r$。</p>
+<p class="fnote"><b>公式（轉動慣量）：</b>$I=\int d^2\,\mathrm dm=\int d^2\rho\,\mathrm dV$，其中 $d$ 為質量元素到轉軸的距離、$\rho$ 為密度；本題 $d=r\sin\theta$。</p>
+<p class="fnote"><b>公式（球座標體積元素）：</b>$\mathrm dV=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$，其中 $\theta$ 為極角、$\phi$ 為方位角；本題整顆球。</p>
+<p>代入 $d=r\sin\theta$ 與 $\mathrm dV$，$(r\sin\theta)^2$ 乘上 $r^2\sin\theta$ 變成 $r^4\sin^3\theta$：</p>
+<div class="math-block">$$I=\int(r\sin\theta)^2\rho\,r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi=\rho\iiint r^4\sin^3\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$$</div>
+<p>範圍是常數，拆開：</p>
+<div class="math-block">$$I=\rho\int_0^Rr^4\,\mathrm dr\int_0^\pi\sin^3\theta\,\mathrm d\theta\int_0^{2\pi}\mathrm d\phi$$</div>
+<p><strong>② 算 $\int_0^\pi\sin^3\theta\,\mathrm d\theta$：</strong> 拆成 $\sin^2\theta\cdot\sin\theta$，令 $u=\cos\theta$、$\mathrm du=-\sin\theta\,\mathrm d\theta$，$\sin^2\theta=1-u^2$；上下限 $\theta=0\to u=1$、$\theta=\pi\to u=-1$：</p>
+<div class="math-block">$$\int_0^\pi\sin^2\theta\,\sin\theta\,\mathrm d\theta=\int_{1}^{-1}(1-u^2)(-\mathrm du)=\int_{-1}^{1}(1-u^2)\,\mathrm du$$</div>
+<div class="math-block">$$=\Big[u-\frac{u^3}{3}\Big]_{-1}^{1}=\Big(1-\frac13\Big)-\Big(-1+\frac13\Big)=2-\frac23=\frac43$$</div>
+<p><strong>③ 合起來，再換成質量：</strong> 代入 $\int_0^Rr^4\,\mathrm dr=\frac{R^5}{5}$、上一步的 $\frac43$、$\int\mathrm d\phi=2\pi$：</p>
+<div class="math-block">$$I=\rho\cdot\frac{R^5}{5}\cdot\frac43\cdot2\pi=\frac{8}{15}\rho\pi R^5$$</div>
+<p>總質量 $M=\rho\cdot\frac43\pi R^3$（密度 × 球體積，<a href="#ex-p69">p.69</a>）。把 $\frac{8}{15}$ 拆成 $\frac25\cdot\frac43$：</p>
+<div class="math-block">$$I=\frac25\Big(\rho\cdot\tfrac43\pi R^3\Big)R^2=\frac25MR^2$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}I=\frac{8}{15}\rho\pi R^5=\frac25MR^2\\ \text{（unit density }\rho=1\text{：}I=\tfrac{8\pi}{15}R^5\text{）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="ex-p71">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.71–72</span></div>
+    <h4>空心圓管的轉動慣量</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p71">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>均勻空心圓管，內半徑 $R_1$、外半徑 $R_2$、長 $L$、質量 $M$。求對中心軸的轉動慣量。</p>
+      <p class="small muted">講義題目文字把內外半徑寫反了，但積分是從 $R_1$ 到 $R_2$，答案對兩者對稱，不受影響。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：均勻空心圓管 $R_1\le r\le R_2$、$0\le z\le L$、$0\le\theta\le2\pi$（講義把柱座標角度寫成 $\theta$）；給總質量 $M$、沒給密度；到中心軸的距離 $d=r$。</p>
+<p><strong>① 體積與密度：</strong> 內外壁在柱座標中是常數 $r=R_1$、$r=R_2$，範圍全是常數可拆開；題目給 $M$ 不給 $\rho$，先算 $V$ 求 $\rho=M/V$。</p>
+<p class="fnote"><b>公式（柱座標體積元素）：</b>$\mathrm dV=r\,\mathrm dr\,\mathrm d\theta\,\mathrm dz$，其中 $r$ 為到中心軸的距離、$\theta$ 為角度、$z$ 為沿軸座標；本題範圍如上。</p>
+<div class="math-block">$$V=\int_{R_1}^{R_2}r\,\mathrm dr\int_0^{2\pi}\mathrm d\theta\int_0^L\mathrm dz$$</div>
+<div class="math-block">$$\int_{R_1}^{R_2}r\,\mathrm dr=\Big[\frac{r^2}{2}\Big]_{R_1}^{R_2}=\frac12(R_2^2-R_1^2)$$</div>
+<div class="math-block">$$V=\frac12(R_2^2-R_1^2)\cdot2\pi\cdot L=\pi L(R_2^2-R_1^2)$$</div>
+<p>（就是「外圓柱 − 內圓柱」$\pi R_2^2L-\pi R_1^2L$。）均勻，所以</p>
+<div class="math-block">$$\rho=\frac MV=\frac{M}{\pi L(R_2^2-R_1^2)}$$</div>
+<p><strong>② 轉動慣量：</strong> 到轉軸的距離就是 $r$，被積函數 $r^2\cdot r=r^3$。</p>
+<p class="fnote"><b>公式（轉動慣量）：</b>$I=\int d^2\rho\,\mathrm dV$，其中 $d$ 為到轉軸的距離、$\rho$ 為密度；本題 $d=r$。</p>
+<div class="math-block">$$I=\rho\int_{R_1}^{R_2}r^3\,\mathrm dr\int_0^{2\pi}\mathrm d\theta\int_0^L\mathrm dz$$</div>
+<div class="math-block">$$\int_{R_1}^{R_2}r^3\,\mathrm dr=\Big[\frac{r^4}{4}\Big]_{R_1}^{R_2}=\frac{R_2^4-R_1^4}{4}$$</div>
+<div class="math-block">$$I=\rho\cdot\frac{R_2^4-R_1^4}{4}\cdot2\pi L=\frac{\rho\pi L(R_2^4-R_1^4)}{2}$$</div>
+<p><strong>③ 代入 $\rho$ 並化簡：</strong> 代入 ① 的 $\rho$，並用平方差 $R_2^4-R_1^4=(R_2^2-R_1^2)(R_2^2+R_1^2)$：</p>
+<div class="math-block">$$I=\frac{M}{\pi L(R_2^2-R_1^2)}\cdot\frac{\pi L(R_2^2-R_1^2)(R_2^2+R_1^2)}{2}$$</div>
+<p>$\pi L(R_2^2-R_1^2)$ 上下消掉：</p>
+<div class="math-block">$$\boxed{I=\frac M2(R_1^2+R_2^2)}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="cs-table">11.3 四種座標總整理 <span class="pg-tag">p.74</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.74</span>
+  <div class="symbol-table-wrap"><table>
+    <thead><tr><th>座標</th><th>$\mathrm d\vec s$</th><th>$\mathrm dA$</th><th>$\mathrm dV$</th></tr></thead>
+    <tbody>
+      <tr><td>直角</td><td>$\mathrm dx\,\hat i+\mathrm dy\,\hat j+\mathrm dz\,\hat k$</td><td>$\mathrm dx\,\mathrm dy$ 等</td><td>$\mathrm dx\,\mathrm dy\,\mathrm dz$</td></tr>
+      <tr><td>極</td><td>$\mathrm dr\,\hat r+r\,\mathrm d\theta\,\hat\theta$</td><td>$r\,\mathrm dr\,\mathrm d\theta$</td><td>—</td></tr>
+      <tr><td>柱</td><td>$\mathrm dr\,\hat r+r\,\mathrm d\phi\,\hat\phi+\mathrm dz\,\hat z$</td><td>$r\,\mathrm d\phi\,\mathrm dz$（側面）</td><td>$r\,\mathrm dr\,\mathrm d\phi\,\mathrm dz$</td></tr>
+      <tr><td>球</td><td>$\mathrm dr\,\hat r+r\,\mathrm d\theta\,\hat\theta+r\sin\theta\,\mathrm d\phi\,\hat\phi$</td><td>$r^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi$（球面）</td><td>$r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<p>記法：$\mathrm d\vec s$ 的每一項是「沿那個方向走的長度」，$\mathrm dV$ 就是三項長度相乘。角度前面一定乘上轉動的半徑（$r$ 或 $r\sin\theta$）。</p>
+
+<h3 id="cs-tm">11.4 課本題</h3>
+
+<div class="problem" data-kind="textbook" id="tm-1-25">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-25 · p.46</span></div>
+    <h4>球座標的加速度</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-25">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-25"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the components of the acceleration vector in spherical coordinates.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-25 · p.46</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求加速度 $\vec a$ 在球座標中的三個分量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：球座標 $x=r\sin\theta\cos\phi$、$y=r\sin\theta\sin\phi$、$z=r\cos\theta$（$\theta$ 從 $+z$ 軸量起、$\phi$ 從 $+x$ 軸量起）；$r,\theta,\phi$ 都是 $t$ 的函數；$\hat i,\hat j,\hat k$ 固定不動。速度 $\vec v=\dot r\,\hat r+r\dot\theta\,\hat\theta+r\sin\theta\,\dot\phi\,\hat\phi$（講義 p.73）。</p>
+<p><strong>① 單位向量的直角分量：</strong> $\vec a=\dot{\vec v}$，而 $\vec v$ 每一項都是「係數 × 會轉動的單位向量」，關鍵在 $\dot{\hat r}$、$\dot{\hat\theta}$、$\dot{\hat\phi}$；最可靠的做法是把它們寫成固定的 $\hat i,\hat j,\hat k$ 分量再直接微分。$\hat r$ 是位置方向 $(x,y,z)/r$，$\hat\theta$ 是 $\theta$ 增加的方向（$\partial\hat r/\partial\theta$），$\hat\phi$ 是繞 $z$ 軸轉的水平方向：</p>
+<div class="math-block">$$\begin{aligned}\hat r&amp;=(\sin\theta\cos\phi,\ \sin\theta\sin\phi,\ \cos\theta)\\ \hat\theta&amp;=(\cos\theta\cos\phi,\ \cos\theta\sin\phi,\ -\sin\theta)\\ \hat\phi&amp;=(-\sin\phi,\ \cos\phi,\ 0)\end{aligned}$$</div>
+<p><strong>② 求 $\dot{\hat r}$：</strong> 單位向量只透過 $\theta,\phi$ 隨時間變。</p>
+<p class="fnote"><b>公式（連鎖律）：</b>$\dfrac{\mathrm d\hat e}{\mathrm dt}=\dot\theta\dfrac{\partial\hat e}{\partial\theta}+\dot\phi\dfrac{\partial\hat e}{\partial\phi}$，其中 $\hat e$ 為任一隻依賴 $\theta,\phi$ 的單位向量；本題 $\hat e$ 依序為 $\hat r,\hat\theta,\hat\phi$。</p>
+<p>對上一步的 $\hat r$ 逐分量偏微分：</p>
+<div class="math-block">$$\frac{\partial\hat r}{\partial\theta}=(\cos\theta\cos\phi,\ \cos\theta\sin\phi,\ -\sin\theta)=\hat\theta$$</div>
+<div class="math-block">$$\frac{\partial\hat r}{\partial\phi}=(-\sin\theta\sin\phi,\ \sin\theta\cos\phi,\ 0)=\sin\theta\,\hat\phi$$</div>
+<div class="math-block">$$\dot{\hat r}=\dot\theta\,\hat\theta+\dot\phi\sin\theta\,\hat\phi$$</div>
+<p><strong>③ 求 $\dot{\hat\theta}$：</strong> 對 ① 的 $\hat\theta$ 逐分量偏微分：</p>
+<div class="math-block">$$\frac{\partial\hat\theta}{\partial\theta}=(-\sin\theta\cos\phi,\ -\sin\theta\sin\phi,\ -\cos\theta)=-\hat r$$</div>
+<div class="math-block">$$\frac{\partial\hat\theta}{\partial\phi}=(-\cos\theta\sin\phi,\ \cos\theta\cos\phi,\ 0)=\cos\theta\,\hat\phi$$</div>
+<div class="math-block">$$\dot{\hat\theta}=-\dot\theta\,\hat r+\dot\phi\cos\theta\,\hat\phi$$</div>
+<p><strong>④ 求 $\dot{\hat\phi}$：</strong> $\hat\phi$ 不含 $\theta$，只有 $\phi$ 的導數：</p>
+<div class="math-block">$$\dot{\hat\phi}=\dot\phi\,\frac{\partial\hat\phi}{\partial\phi}=\dot\phi(-\cos\phi,\ -\sin\phi,\ 0)=-\dot\phi(\cos\phi,\ \sin\phi,\ 0)$$</div>
+<p>$(\cos\phi,\sin\phi,0)$ 是水平向外的方向，用 ① 寫成 $\hat r$、$\hat\theta$ 的組合：</p>
+<div class="math-block">$$\begin{aligned}\sin\theta\,\hat r+\cos\theta\,\hat\theta&amp;=\big((\sin^2\theta+\cos^2\theta)\cos\phi,\\&amp;\qquad(\sin^2\theta+\cos^2\theta)\sin\phi,\ 0\big)\\&amp;=(\cos\phi,\sin\phi,0)\end{aligned}$$</div>
+<div class="math-block">$$\dot{\hat\phi}=-\dot\phi(\sin\theta\,\hat r+\cos\theta\,\hat\theta)$$</div>
+<p><strong>⑤ 對 $\vec v$ 逐項微分：</strong> 三項各用乘積律，再代入 ②–④ 的結果。（$\vec v$ 本身就是 $\frac{\mathrm d}{\mathrm dt}(r\hat r)=\dot r\hat r+r\dot{\hat r}$ 代入 ② 得到的。）</p>
+<p class="fnote"><b>公式（乘積律）：</b>$\dfrac{\mathrm d}{\mathrm dt}(f\,\hat e)=\dot f\,\hat e+f\,\dot{\hat e}$，其中 $f$ 為純量係數、$\hat e$ 為單位向量；本題 $f$ 依序為 $\dot r$、$r\dot\theta$、$r\sin\theta\,\dot\phi$。</p>
+<p>第一項，$\dot r$ 和 $\hat r$ 都變：</p>
+<div class="math-block">$$\tfrac{\mathrm d}{\mathrm dt}(\dot r\,\hat r)=\ddot r\,\hat r+\dot r\dot\theta\,\hat\theta+\dot r\dot\phi\sin\theta\,\hat\phi$$</div>
+<p>第二項，$r$、$\dot\theta$、$\hat\theta$ 三個因子都變：</p>
+<div class="math-block">$$\tfrac{\mathrm d}{\mathrm dt}(r\dot\theta\,\hat\theta)=(\dot r\dot\theta+r\ddot\theta)\,\hat\theta-r\dot\theta^2\,\hat r+r\dot\theta\dot\phi\cos\theta\,\hat\phi$$</div>
+<p>第三項，$r$、$\sin\theta$、$\dot\phi$、$\hat\phi$ 四個因子都變（$\frac{\mathrm d}{\mathrm dt}\sin\theta=\cos\theta\,\dot\theta$）：</p>
+<div class="math-block">$$\begin{aligned}\tfrac{\mathrm d}{\mathrm dt}(r\sin\theta\,\dot\phi\,\hat\phi)&amp;=(\dot r\dot\phi\sin\theta+r\dot\theta\dot\phi\cos\theta+r\ddot\phi\sin\theta)\,\hat\phi\\&amp;\quad-r\dot\phi^2\sin\theta(\sin\theta\,\hat r+\cos\theta\,\hat\theta)\end{aligned}$$</div>
+<p><strong>⑥ 依 $\hat r,\hat\theta,\hat\phi$ 收集：</strong></p>
+<ul>
+<li>$\hat r$：第一項 $\ddot r$、第二項 $-r\dot\theta^2$、第三項 $-r\dot\phi^2\sin^2\theta$。</li>
+<li>$\hat\theta$：第一項 $\dot r\dot\theta$、第二項 $\dot r\dot\theta+r\ddot\theta$、第三項 $-r\dot\phi^2\sin\theta\cos\theta$。</li>
+<li>$\hat\phi$：第一項 $\dot r\dot\phi\sin\theta$、第二項 $r\dot\theta\dot\phi\cos\theta$、第三項 $\dot r\dot\phi\sin\theta+r\dot\theta\dot\phi\cos\theta+r\ddot\phi\sin\theta$。</li>
+</ul>
+<p>相加：</p>
+<div class="math-block">$$\boxed{\begin{aligned}a_r&amp;=\ddot r-r\dot\theta^2-r\dot\phi^2\sin^2\theta\\ a_\theta&amp;=r\ddot\theta+2\dot r\dot\theta-r\dot\phi^2\sin\theta\cos\theta\\ a_\phi&amp;=r\ddot\phi\sin\theta+2\dot r\dot\phi\sin\theta\\&amp;\quad+2r\dot\theta\dot\phi\cos\theta\end{aligned}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-35">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-35 · p.47</span></div>
+    <h4>兩個垂直圓柱的共同體積</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-35">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明圓柱 $x^2+y^2=a^2$ 與 $x^2+z^2=a^2$ 所包圍的共同體積為 $V=\frac{16a^3}{3}$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：圓柱一 $x^2+y^2\le a^2$（軸沿 $z$）、圓柱二 $x^2+z^2\le a^2$（軸沿 $y$），半徑都是 $a$；要證共同體積 $V=\frac{16a^3}{3}$。</p>
+<div class="anim" data-anim="two-cylinders"></div>
+<p><strong>① 固定 $x$ 的截面：</strong> 兩軸不同，柱座標只能簡化其中一個，所以改用切片法 $V=\int A(x)\,\mathrm dx$；固定 $x$ 後兩個不等式一個只限制 $y$、一個只限制 $z$，截面是正方形。對 $|x|\le a$：</p>
+<div class="math-block">$$x^2+y^2\le a^2\ \Longrightarrow\ |y|\le\sqrt{a^2-x^2}$$</div>
+<div class="math-block">$$x^2+z^2\le a^2\ \Longrightarrow\ |z|\le\sqrt{a^2-x^2}$$</div>
+<p>$y$、$z$ 的範圍互不相干，截面是邊長 $2\sqrt{a^2-x^2}$ 的正方形：</p>
+<div class="math-block">$$A(x)=\big(2\sqrt{a^2-x^2}\big)^2=4(a^2-x^2)$$</div>
+<p><strong>② 對 $x$ 積分：</strong> $|x|\gt a$ 時兩個不等式都無解，所以 $x$ 從 $-a$ 積到 $a$：</p>
+<div class="math-block">$$V=\int_{-a}^{a}4(a^2-x^2)\,\mathrm dx=4\Big[a^2x-\frac{x^3}{3}\Big]_{-a}^{a}$$</div>
+<p>代入上下限：$x=a$ 時 $a^3-\frac{a^3}3=\frac{2a^3}3$；$x=-a$ 時 $-a^3+\frac{a^3}3=-\frac{2a^3}3$：</p>
+<div class="math-block">$$V=4\Big(\frac{2a^3}{3}+\frac{2a^3}{3}\Big)=4\cdot\frac{4a^3}{3}$$</div>
+<div class="math-block">$$\boxed{V=\frac{16a^3}{3}}\ \blacksquare$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s12">11.5 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s12-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>實心半球和薄半球殼的質心</h4>
+    <button type="button" class="exam-btn" data-exam="self-s12-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 半徑 $R$、密度均勻的實心半球（$z\ge0$）：用球座標求質心高度 $z_{\text{cm}}=\frac{\int z\,\mathrm dV}{\int\mathrm dV}$，並用「切成圓盤」交叉檢查。(b) 同半徑的均勻薄半球殼（只有曲面、面密度均勻）：質心在哪？(c) 用 (b) 的結果，不再做三重積分，重新得到 (a) 的答案。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：半徑 $R$、密度（或面密度）均勻，常數在分子分母消掉；高度 $z=r\cos\theta$；半球繞 $z$ 軸對稱，$x_{\text{cm}}=y_{\text{cm}}=0$，只求 $z_{\text{cm}}$。</p>
+<h4>(a) 實心半球的質心</h4>
+<p><strong>① 體積：</strong> 半球在球座標是 $0\le r\le R$、$0\le\theta\le\frac\pi2$、$0\le\phi\le2\pi$ 的「長方體」，被積函數又可分離，三重積分拆成三個單積分。</p>
+<p class="fnote"><b>公式（質心，均勻密度）：</b>$z_{\text{cm}}=\dfrac{\int z\,\mathrm dV}{\int\mathrm dV}$，其中 $\mathrm dV=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$ 為球座標體積元素；本題積分範圍為上半球。</p>
+<p>代入 $\mathrm dV$ 與半球範圍：</p>
+<div class="math-block">$$V=\int_0^Rr^2\,\mathrm dr\int_0^{\pi/2}\sin\theta\,\mathrm d\theta\int_0^{2\pi}\mathrm d\phi=\frac{R^3}{3}\cdot1\cdot2\pi=\frac{2\pi R^3}{3}$$</div>
+<p>其中 $\int_0^{\pi/2}\sin\theta\,\mathrm d\theta=[-\cos\theta]_0^{\pi/2}=0+1=1$。</p>
+<p><strong>② 分子 $\int z\,\mathrm dV$：</strong> 代入 $z=r\cos\theta$，被積函數 $r\cos\theta\cdot r^2\sin\theta=r^3\cos\theta\sin\theta$：</p>
+<div class="math-block">$$\int z\,\mathrm dV=\int_0^R r^3\mathrm dr\int_0^{\pi/2}\cos\theta\sin\theta\,\mathrm d\theta\int_0^{2\pi}\mathrm d\phi$$</div>
+<p>$\int_0^{\pi/2}\sin\theta\cos\theta\,\mathrm d\theta=\big[\frac{\sin^2\theta}{2}\big]_0^{\pi/2}=\frac12$，所以</p>
+<div class="math-block">$$\int z\,\mathrm dV=\frac{R^4}{4}\cdot\frac12\cdot2\pi=\frac{\pi R^4}{4}$$</div>
+<p><strong>③ 質心：</strong></p>
+<div class="math-block">$$z_{\text{cm}}=\frac{\pi R^4/4}{2\pi R^3/3}=\frac{\pi R^4}{4}\cdot\frac{3}{2\pi R^3}=\frac{3R}{8}$$</div>
+<p><strong>④ 切圓盤交叉檢查（題目要求）：</strong> 高度 $z$ 處截面是半徑 $\sqrt{R^2-z^2}$ 的圓盤，面積 $\pi(R^2-z^2)$、厚度 $\mathrm dz$，$z$ 從 0 到 $R$：</p>
+<div class="math-block">$$\int_0^R z\,\pi(R^2-z^2)\,\mathrm dz=\pi\Big[\frac{R^2z^2}{2}-\frac{z^4}{4}\Big]_0^R=\frac{\pi R^4}{4}$$</div>
+<div class="math-block">$$\int_0^R\pi(R^2-z^2)\,\mathrm dz=\pi\Big[R^2z-\frac{z^3}{3}\Big]_0^R=\frac{2\pi R^3}{3}$$</div>
+<p>兩個積分分別和 ② 的分子、① 的分母相同，比值同樣是 $\frac{3R}{8}$。</p>
+<div class="math-block">$$\boxed{z_{\text{cm}}=\frac38R}$$</div>
+<h4>(b) 薄半球殼的質心</h4>
+<p><strong>① 面積分：</strong> 薄殼沒有厚度，質量只在 $r=R$ 上，只對 $\theta,\phi$ 積分；面密度均勻，$z_{\text{cm}}=\frac{\int z\,\mathrm dA}{\int\mathrm dA}$，殼上 $z=R\cos\theta$。代入 $\mathrm dA=R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi$、$0\le\theta\le\frac\pi2$：</p>
+<div class="math-block">$$\int z\,\mathrm dA=\int_0^{2\pi}\!\!\int_0^{\pi/2}(R\cos\theta)\,R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi=R^3\cdot\frac12\cdot2\pi=\pi R^3$$</div>
+<div class="math-block">$$\int\mathrm dA=R^2\cdot1\cdot2\pi=2\pi R^2$$</div>
+<div class="math-block">$$z_{\text{cm}}=\frac{\pi R^3}{2\pi R^2}=\frac R2$$</div>
+<p>球面上每一段高度 $\mathrm dz$ 的環帶面積都是 $2\pi R\,\mathrm dz$（Archimedes），殼的質量沿高度均勻分布，所以質心在正中間。</p>
+<div class="math-block">$$\boxed{z_{\text{cm}}=\frac12R}$$</div>
+<h4>(c) 由薄殼疊出實心半球</h4>
+<p><strong>① 加權平均：</strong> 實心半球是很多半徑 $r$ 的同心薄殼。半徑 $r$ 到 $r+\mathrm dr$ 的薄半球殼面積 $2\pi r^2$（(b) 把 $R$ 換成 $r$）、厚度 $\mathrm dr$，質量 $\propto2\pi r^2\mathrm dr$，質心在 $r/2$（(b) 的結果）：</p>
+<div class="math-block">$$\begin{aligned}z_{\text{cm}}&amp;=\frac{\int_0^R\frac r2\cdot2\pi r^2\,\mathrm dr}{\int_0^R2\pi r^2\,\mathrm dr}=\frac12\cdot\frac{\int_0^Rr^3\,\mathrm dr}{\int_0^Rr^2\,\mathrm dr}\\&amp;=\frac12\cdot\frac{R^4/4}{R^3/3}=\frac12\cdot\frac{3R}{4}=\frac{3R}8\end{aligned}$$</div>
+<p>外層的殼比較重，所以結果偏向 $\frac R2$ 但比它低。</p>
+<div class="math-block">$$\boxed{z_{\text{cm}}=\frac38R}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s12-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>冰淇淋筒的體積</h4>
+    <button type="button" class="exam-btn" data-exam="self-s12-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>「冰淇淋筒」：球 $r\le R$ 之內、且和 $+z$ 軸夾角 $\theta\le\alpha$ 的部分（頂點在球心的圓錐，上面蓋著一塊球冠）。求體積；檢查 $\alpha=\pi/2$、$\alpha=\pi$ 兩個極端，並算 $R=1$、$\alpha=60^\circ$ 的值，再用柱座標（圓錐 + 球冠）交叉驗證。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：區域 $0\le r\le R$、$0\le\theta\le\alpha$、$0\le\phi\le2\pi$（$\theta$ 是和 $+z$ 軸的夾角）。</p>
+<h4>體積公式</h4>
+<p><strong>① 球座標積分：</strong> 球面 $r=R$ 和錐面 $\theta=\alpha$ 在球座標都是「座標＝常數」，區域是「長方體」，積分直接分離。</p>
+<p class="fnote"><b>公式（球座標體積元素）：</b>$\mathrm dV=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$，其中 $r$ 為到原點距離、$\theta$ 為極角、$\phi$ 為方位角；本題範圍見上方符號。</p>
+<div class="math-block">$$V=\int_0^R r^2\mathrm dr\int_0^\alpha\sin\theta\,\mathrm d\theta\int_0^{2\pi}\mathrm d\phi$$</div>
+<div class="math-block">$$\int_0^R r^2\mathrm dr=\frac{R^3}{3},\qquad\int_0^\alpha\sin\theta\,\mathrm d\theta=\big[-\cos\theta\big]_0^\alpha=1-\cos\alpha$$</div>
+<div class="math-block">$$V=\frac{R^3}{3}(1-\cos\alpha)(2\pi)$$</div>
+<div class="math-block">$$\boxed{V=\frac{2\pi}{3}R^3(1-\cos\alpha)}$$</div>
+<h4>兩個極端</h4>
+<p><strong>① $\alpha=\pi/2$：</strong> $\cos\frac\pi2=0$：</p>
+<div class="math-block">$$V=\frac{2\pi}{3}R^3(1-0)=\frac{2\pi R^3}{3}\quad\text{（半球）}$$</div>
+<p><strong>② $\alpha=\pi$：</strong> $\cos\pi=-1$：</p>
+<div class="math-block">$$V=\frac{2\pi}{3}R^3(1+1)=\frac{4\pi R^3}{3}\quad\text{（整球）}$$</div>
+<div class="math-block">$$\boxed{\alpha=\tfrac\pi2:\ \tfrac{2\pi R^3}{3}\ \text{（半球）};\quad\alpha=\pi:\ \tfrac{4\pi R^3}{3}\ \text{（整球）}}$$</div>
+<h4>$R=1$、$\alpha=60^\circ$ 的值</h4>
+<p><strong>① 代入：</strong> $R=1$、$\cos60^\circ=\frac12$：</p>
+<div class="math-block">$$V=\frac{2\pi}{3}\cdot1^3\cdot\Big(1-\frac12\Big)=\frac{2\pi}{3}\cdot\frac12$$</div>
+<div class="math-block">$$\boxed{V=\frac\pi3\approx1.047}$$</div>
+<h4>柱座標交叉驗證：圓錐 ＋ 球冠</h4>
+<p><strong>① 交線：</strong> 錐面 $\theta=60^\circ$ 和球面 $r=1$ 交在高度 $z=\cos60^\circ=\frac12$、到 $z$ 軸半徑 $\sin60^\circ=\frac{\sqrt3}2$。形狀在 $z=\frac12$ 以下是倒立圓錐、以上是球冠。</p>
+<p><strong>② 圓錐：</strong> 底半徑 $\frac{\sqrt3}2$（底面積 $\pi\cdot\frac34$）、高 $\frac12$。</p>
+<p class="fnote"><b>公式（圓錐體積）：</b>$V=\frac13Ah$，其中 $A$ 為底面積、$h$ 為高；本題 $A=\pi\cdot\frac34$、$h=\frac12$。</p>
+<div class="math-block">$$V_{\text{錐}}=\frac13\cdot\pi\cdot\frac34\cdot\frac12=\frac\pi8$$</div>
+<p><strong>③ 球冠：</strong> $z$ 從 $\frac12$ 到 1，每片圓盤面積 $\pi(1-z^2)$：</p>
+<div class="math-block">$$V_{\text{冠}}=\int_{1/2}^1\pi(1-z^2)\,\mathrm dz=\pi\Big[z-\frac{z^3}{3}\Big]_{1/2}^{1}=\pi\Big[\frac23-\frac{11}{24}\Big]=\frac{5\pi}{24}$$</div>
+<p><strong>④ 合計：</strong></p>
+<div class="math-block">$$V=\frac{\pi}{8}+\frac{5\pi}{24}=\frac{3\pi}{24}+\frac{5\pi}{24}=\frac{8\pi}{24}$$</div>
+<div class="math-block">$$\boxed{V=\frac\pi3\ \text{，和代值結果相同}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>柱座標 = 極座標 + $z$：$\mathrm dV=r\,\mathrm dr\,\mathrm d\phi\,\mathrm dz$，$\vec a$ 多一項 $\ddot z\hat z$。</li>
+    <li>球座標 $\mathrm dV=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$：$\sin\theta$ 來自緯線圓的半徑 $r\sin\theta$。</li>
+    <li>轉動慣量用「到轉軸的距離」：柱座標是 $r$，球座標是 $r\sin\theta$。</li>
+  </ol>
+</div>

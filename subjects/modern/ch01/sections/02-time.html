@@ -1,0 +1,412 @@
+<h2>二、時間膨脹 <span class="pg">課本 §1.2 · p.5–10</span></h2>
+
+<p class="lead">相對於觀察者運動的鐘走得比較慢。這一節用最簡單的「光鐘」推出 $t=\gamma t_0$，重點是分清楚哪一個時間是固有時間。</p>
+
+<h3 id="td-proper">2.1 固有時間 <span class="pg-tag">p.5</span></h3>
+
+<p>太空船裡的人量到船內兩個事件相隔 $t_0$，地面上的人量同樣兩個事件會得到比較長的 $t$。$t_0$ 叫<strong>固有時間</strong>（proper time）：在「兩個事件發生在同一地點」的座標系裡量到的時間間隔。從地面看，這兩個事件發生在不同地點（太空船移動了），量到的間隔比固有時間長，這叫<strong>時間膨脹</strong>（dilate＝變大）。</p>
+
+<div class="box pitfall">
+  <span class="box-title">認固有時間看「同一地點」</span>
+  <p>不是「誰在動」決定的。問自己：哪一個座標系裡，開始和結束這兩個事件在同一個地方發生？那個座標系的鐘量到的就是 $t_0$，而且它是所有觀察者量到的時間裡最短的。</p>
+</div>
+
+<h3 id="td-clock">2.2 用光鐘推導 <span class="pg-tag">p.5–7</span></h3>
+
+<p>光鐘：一個光脈衝在相距 $L_0$ 的兩面鏡子間來回反射，每碰到下面的鏡子就「滴答」一次。一個光鐘放在地面實驗室，另一個放在以速度 $v$ 前進的太空船裡，鏡面和運動方向平行（光脈衝垂直於運動方向來回）。地面的觀察者看兩個鐘：</p>
+
+<div class="step" data-step="td-rest" data-sym="L0,t0">
+  <span class="step-title">靜止的鐘（Fig. 1.4）</span>
+  <p>光從下鏡到上鏡走 $L_0$，花一半的週期：</p>
+  $$\frac{t_0}{2}=\frac{L_0}{c}\quad\Longrightarrow\quad t_0=\frac{2L_0}{c}\qquad(1.1)$$
+</div>
+
+<div class="step" data-step="td-moving" data-sym="t,v">
+  <span class="step-title">運動的鐘（Fig. 1.5）</span>
+  <p>地面上看，光從下鏡到上鏡的這段時間 $t/2$ 裡，鏡子往前移了 $v\,t/2$，所以光走的是斜邊。光速仍是 $c$（第二假設），斜邊長 $c\,t/2$。鏡子間的垂直距離和運動方向垂直，不收縮，仍是 $L_0$。畢氏定理：</p>
+  $$\left(\frac{ct}{2}\right)^2=L_0^2+\left(\frac{vt}{2}\right)^2$$
+  $$t^2\,(c^2-v^2)=4L_0^2\quad\Longrightarrow\quad t=\frac{2L_0}{\sqrt{c^2-v^2}}=\frac{2L_0/c}{\sqrt{1-v^2/c^2}}\qquad(1.2)$$
+</div>
+
+<div class="step" data-step="td-result" data-sym="gamma">
+  <span class="step-title">代回 $t_0=2L_0/c$</span>
+  $$t=\frac{t_0}{\sqrt{1-v^2/c^2}}=\gamma t_0,\qquad \gamma\equiv\frac{1}{\sqrt{1-v^2/c^2}}\ge1\qquad(1.3)$$
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.7 Eq. (1.3) Time dilation</span>
+  $$t=\frac{t_0}{\sqrt{1-v^2/c^2}}$$
+  <p>$t_0$：相對觀察者靜止的鐘量到的時間（固有時間）；$t$：相對觀察者運動的鐘，由觀察者量到的時間；$v$：相對速率。</p>
+</div>
+
+<div class="anim" data-anim="light-clock"></div>
+
+<p>$\gamma$ 要到 $v$ 接近 $c$ 才明顯：</p>
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>$v/c$</th><th>0.1</th><th>0.5</th><th>0.6</th><th>0.8</th><th>0.9</th><th>0.99</th></tr></thead>
+  <tbody><tr><td>$\gamma$</td><td>1.005</td><td>1.155</td><td>1.25</td><td>1.667</td><td>2.294</td><td>7.09</td></tr></tbody>
+</table></div>
+<p class="small muted">$0.6c$ 和 $0.8c$ 的 $\gamma$ 是整數比（$\tfrac54$、$\tfrac53$），考題很常用。</p>
+
+<h3 id="td-recip">2.3 效應是相互的，而且適用所有鐘 <span class="pg-tag">p.7</span></h3>
+
+<p>太空船的駕駛看地面上的光鐘，光也走鋸齒形路徑，他同樣得到 $t=\gamma t_0$：<strong>每個觀察者都看到相對自己運動的鐘變慢</strong>。這不矛盾，因為兩人比較的不是同一對事件：地面量的是太空船鐘的兩次滴答，太空船量的是地面鐘的兩次滴答，兩人都對。要讓兩個鐘回到同一地點直接比對，必須有一方掉頭，掉頭的一方換了慣性座標系，對稱就被打破（第 5 節雙生子）。</p>
+
+<p>結論也不限於光鐘。若太空船裡的光鐘和機械鐘在地面上對好、飛行中卻不同步，船裡的人就能不看外面而測出自己的速度，違反相對性原理。所以所有鐘、所有過程（包括心跳、老化）都一樣變慢。</p>
+
+<p>時間雖然是相對的，但不會倒流 <span class="pg-tag">p.10</span>：在同一地點依序發生的事件 $t_1,t_2,t_3,\dots$，所有觀察者看到的先後順序都一樣，只是間隔不同；訊號走過距離 $L$ 至少要 $L/c$，沒有觀察者能比在現場的人更早看到一個事件，也就沒有人能看到未來（附錄 II 會用光錐再說明一次）。</p>
+
+<details class="supp">
+  <summary>速度上限：為什麼沒有東西能比光快 <span class="pg-tag">p.8</span></summary>
+  <div class="supp-body">
+    <p>假設太空船相對地球的速度 $v>c$。船裡的燈熄了，你打開手電筒照向船頭去換保險絲（Fig. 1.6a）。從地面看，船跑得比光快，手電筒的光只會照到船尾（Fig. 1.6b）。兩個座標系看到的物理事件不同，違反相對性原理，所以 $v>c$ 不可能。</p>
+    <p>這裡的 $c$ 是<strong>真空</strong>光速。在折射率 $n$ 的介質中光速是 $c/n$，帶電粒子可以比它快，這時會發出錐形的契忍可夫輻射（Cerenkov radiation），門檻速率是 $c/n$（習題 1-36 會算門檻動能）。</p>
+  </div>
+</details>
+
+<div class="problem" data-kind="tbexample" id="bz-ex1-1">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 1.1 · p.9</span></div>
+    <h4>一小時裡太空船的鐘多走一秒</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex1-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex1-1"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>A spacecraft is moving relative to the earth. An observer on the earth finds that, between 1 P.M. and 2 P.M. according to her clock, 3601 s elapse on the spacecraft’s clock. What is the spacecraft’s speed relative to the earth?</p></div>
+<p class="original-caption">Beiser Example 1.1 · p.9</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>地球上的觀察者發現，她的鐘從下午 1 點到 2 點之間，太空船上的鐘經過了 $3601\ \text{s}$。太空船相對地球的速率是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：地球鐘 1 點到 2 點 $t_0=3600\ \text{s}$（兩事件在地球同一點，是固有時間），太空船座標系量到同一間隔 $t=3601\ \text{s}$；$c=2.998\times10^8\ \text{m/s}$（兩時間只差 1 s，用四位有效數字）。</p>
+<p><strong>① 把 $t=\gamma t_0$ 反解成 $v$：</strong> 同一段過程的兩個時間不同，只能來自相對運動，所以用時間膨脹把兩個時間和速率連起來。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma t_0=\dfrac{t_0}{\sqrt{1-v^2/c^2}}$，其中 $t_0$ 為固有時間（兩事件在同一點的座標系量到）、$t$ 為另一座標系量到的間隔、$v$ 為相對速率；本題 $t_0=3600\ \text{s}$、$t=3601\ \text{s}$。</p>
+<p>兩邊平方、移項，把 $v$ 單獨留在一邊：</p>
+<div class="math-block">$$t=\frac{t_0}{\sqrt{1-v^2/c^2}}\ \Longrightarrow\ \sqrt{1-\frac{v^2}{c^2}}=\frac{t_0}{t}\ \Longrightarrow\ 1-\frac{v^2}{c^2}=\left(\frac{t_0}{t}\right)^2$$</div>
+<div class="math-block">$$\frac{v^2}{c^2}=1-\left(\frac{t_0}{t}\right)^2\ \Longrightarrow\ v=c\sqrt{1-\left(\frac{t_0}{t}\right)^2}$$</div>
+<p><strong>② 先算根號裡的量：</strong> $t_0/t$ 非常接近 1，直接相減容易因為計算機位數不夠而算錯，先通分比較穩。代入 $t_0=3600\ \text{s}$、$t=3601\ \text{s}$：</p>
+<div class="math-block">$$\begin{aligned}1-\left(\frac{3600}{3601}\right)^2&amp;=\frac{3601^2-3600^2}{3601^2}=\frac{(3601-3600)(3601+3600)}{3601^2}\\&amp;=\frac{7201}{12\,967\,201}=5.553\times10^{-4}\end{aligned}$$</div>
+<div class="math-block">$$\sqrt{5.553\times10^{-4}}=0.02357$$</div>
+<p><strong>③ 代入數值求 $v$：</strong> 代入 $c=2.998\times10^8\ \text{m/s}$ 與上一步的根號值 $0.02357$：</p>
+<div class="math-block">$$v=(2.998\times10^8\ \text{m/s})(0.02357)=7.1\times10^{6}\ \text{m/s}$$</div>
+<p>換成光速的倍數：$v/c=0.02357\approx0.024$。</p>
+<div class="math-block">$$\boxed{v\approx7.1\times10^{6}\ \text{m/s}\approx0.024c}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-3">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-3 · p.49</span></div>
+    <h4>請太空船上的人幫百米賽跑計時</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-3"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An athlete has learned enough physics to know that if he measures from the earth a time interval on a moving spacecraft, what he finds will be greater than what somebody on the spacecraft would measure. He therefore proposes to set a world record for the 100-m dash by having his time taken by an observer on a moving spacecraft. Is this a good idea?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一位運動員學到：從地球上量運動中太空船上的時間間隔，結果會比太空船上的人量到的長。於是他提議：請一位在運動中太空船上的觀察者替他的百米賽跑計時，好創世界紀錄。這是好主意嗎？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：起跑、衝線兩事件相距 $100\ \text{m}$；運動員速率約 $u\approx10\ \text{m/s}\ll c$；計時的太空船相對地球以 $v$ 運動；$c=3.00\times10^8\ \text{m/s}$。</p>
+<p><strong>① 誰量到固有時間：</strong> 固有時間最短，所以先認兩事件在誰的座標系裡發生在同一地點。起跑、衝線都發生在運動員身上，所以他的錶量到固有時間 $t_0$。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma t_0$，其中 $t_0$ 為固有時間、$t$ 為相對運動的觀察者量到的間隔、$\gamma=1/\sqrt{1-v^2/c^2}$；低速時 $\gamma-1\approx\dfrac{v^2}{2c^2}$。本題地面相對運動員只有 $u\approx10\ \text{m/s}$：</p>
+<div class="math-block">$$\gamma_u-1\approx\frac{u^2}{2c^2}=\frac{(10\ \text{m/s})^2}{2(3.00\times10^8\ \text{m/s})^2}=5.6\times10^{-16}$$</div>
+<p>小到完全量不出來，所以地面計時員量到的就是 $t_0$。</p>
+<p><strong>② 太空船量到多少：</strong> 太空船相對地面（也就是相對運動員）以 $v$ 運動。對太空船來說，運動員才是「運動中的鐘」，太空船量到的間隔是膨脹後的</p>
+<div class="math-block">$$t=\gamma t_0,\qquad \gamma=\frac{1}{\sqrt{1-v^2/c^2}}\ge1$$</div>
+<p>舉例：若太空船速率 $v=0.6c$，$\gamma=\dfrac{1}{\sqrt{1-0.36}}=1.25$，地面量到 $10.00\ \text{s}$ 的成績，太空船量到 $12.5\ \text{s}$。</p>
+<p><strong>③ 結論：</strong> 運動員把方向弄反了：「運動的鐘變慢」是說<strong>觀察者看相對自己運動的過程變長</strong>。他讀到的「從地球量太空船上的過程比較長」，換到這題就是「從太空船量地球上的賽跑比較長」，成績變差。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{不是好主意}\\ \text{太空船量到的時間比地面長，成績只會變差}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-4">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-4 · p.49</span></div>
+    <h4>太空船上看汽車開 40 分鐘</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-4"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An observer on a spacecraft moving at 0.700c relative to the earth finds that a car takes 40.0 min to make a trip. How long does the trip take to the driver of the car?</p></div>
+<p class="original-caption">Beiser 習題 1-4 · p.49</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>相對地球以 $0.700c$ 飛行的太空船上，觀察者發現一輛車的一趟行程花了 $40.0\ \text{min}$。對車上的駕駛來說，這趟行程花多久？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：太空船相對地球（車速可忽略，≈相對車）$v=0.700c$；太空船量到行程 $t=40.0\ \text{min}$；出發、到達都在駕駛身邊，駕駛量到固有時間 $t_0$。</p>
+<p><strong>① 把 $t=\gamma t_0$ 改寫成求 $t_0$：</strong> 駕駛的錶量到固有時間，太空船量到的是膨脹後的 $t$，這次已知 $t$ 求 $t_0$。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma t_0=\dfrac{t_0}{\sqrt{1-v^2/c^2}}$，其中 $t_0$ 為固有時間、$t$ 為相對運動的觀察者量到的間隔、$v$ 為相對速率；本題 $t=40.0\ \text{min}$、$v=0.700c$。</p>
+<p>兩邊同除以 $\gamma$，也就是乘上 $\sqrt{1-v^2/c^2}$：</p>
+<div class="math-block">$$t=\frac{t_0}{\sqrt{1-v^2/c^2}}\quad\Longrightarrow\quad t_0=t\sqrt{1-\frac{v^2}{c^2}}$$</div>
+<p><strong>② 算根號因子：</strong> 代入 $v/c=0.700$：</p>
+<div class="math-block">$$\sqrt{1-0.700^2}=\sqrt{1-0.490}=\sqrt{0.510}=0.714$$</div>
+<p><strong>③ 求駕駛的時間：</strong> 代入 $t=40.0\ \text{min}$ 與上一步的根號因子 $0.714$：</p>
+<div class="math-block">$$t_0=(40.0\ \text{min})(0.714)=28.6\ \text{min}$$</div>
+<div class="math-block">$$\boxed{t_0=28.6\ \text{min}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-5">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-5 · p.49</span></div>
+    <h4>兩支錶差 1 秒要多久</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-5"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Two observers, A on earth and B in a spacecraft whose speed is 2.00 × 10<sup>8</sup> m/s, both set their watches to the same time when the ship is abreast of the earth.</p><p>(a) How much time must elapse by A’s reckoning before the watches differ by 1.00 s?</p><p>(b) To A, B’s watch seems to run slow. To B, does A’s watch seem to run fast, run slow, or keep the same time as his own watch?</p></div>
+<p class="original-caption">Beiser 習題 1-5 · p.49</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>地球上的 A 和速率 $2.00\times10^8\ \text{m/s}$ 的太空船上的 B，在太空船經過地球時把錶對到同一時刻。(a) 照 A 的計時，要經過多久兩支錶才相差 $1.00\ \text{s}$？(b) A 覺得 B 的錶走得慢。B 覺得 A 的錶走得快、慢，還是一樣？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：B 相對 A 的速率 $v=2.00\times10^8\ \text{m/s}$；太空船經過地球時兩錶從同一讀數（0）開始；A 的時間為 $t$，B 的錶讀數為 $t_0$；$c=3.00\times10^8\ \text{m/s}$。</p>
+<h4>(a) 兩錶相差 1.00 s 所需時間</h4>
+<p><strong>① 寫出條件：</strong> B 的錶一直跟著 B，讀數是 B 的固有時間；在 A 的座標系裡，A 的錶走 $t$ 時 B 的錶只走 $t_0=t/\gamma$。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma t_0$，即 $t_0=t\sqrt{1-v^2/c^2}$，其中 $t_0$ 為固有時間（B 的錶）、$t$ 為 A 量到的時間、$v$ 為相對速率。</p>
+<p>兩錶的差：</p>
+<div class="math-block">$$t-t_0=t-t\sqrt{1-v^2/c^2}=t\left(1-\sqrt{1-v^2/c^2}\right)=1.00\ \text{s}$$</div>
+<p>移項得一般式：</p>
+<div class="math-block">$$t=\frac{1.00\ \text{s}}{1-\sqrt{1-v^2/c^2}}$$</div>
+<p><strong>② 算根號因子：</strong> 代入 $v=2.00\times10^8\ \text{m/s}$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\frac vc=\frac{2.00}{3.00}=\frac23,\qquad \sqrt{1-\frac{v^2}{c^2}}=\sqrt{1-\frac49}=\sqrt{\frac59}=\frac{\sqrt5}{3}=0.7454$$</div>
+<p><strong>③ 解 $t$：</strong> 代入上一步的根號因子 $0.7454$：</p>
+<div class="math-block">$$t=\frac{1.00\ \text{s}}{1-0.7454}=\frac{1.00\ \text{s}}{0.2546}=3.93\ \text{s}$$</div>
+<p>此時 A 的錶讀 $3.93\ \text{s}$、B 的錶讀 $3.93\times0.7454=2.93\ \text{s}$，差 $1.00\ \text{s}$。</p>
+<div class="math-block">$$\boxed{t=3.93\ \text{s}}$$</div>
+<h4>(b) B 看 A 的錶</h4>
+<p><strong>① 效應是相互的：</strong> 相對性原理讓兩個慣性座標系地位平等。對 B 來說，自己靜止、A 以同樣的 $2.00\times10^8\ \text{m/s}$ 往反方向運動，套同一條 $t=\gamma t_0$，所以 B 也覺得 A 的錶走得慢。兩人不矛盾：他們比較的是不同的事件對（第 2.3 節）。</p>
+<div class="math-block">$$\boxed{\text{B 覺得 A 的錶走得慢}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-6">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-6 · p.49</span></div>
+    <h4>飛機上的鐘要飛多久才差 1 秒</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An airplane is flying at 300 m/s (672 mi/h). How much time must elapse before a clock in the airplane and one on the ground differ by 1.00 s?</p></div>
+<p class="original-caption">Beiser 習題 1-6 · p.49</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>飛機以 $300\ \text{m/s}$ 飛行。飛機上的鐘和地面的鐘要經過多久才相差 $1.00\ \text{s}$？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：飛機相對地面 $v=300\ \text{m/s}$；兩鐘一開始對好，要達到 $t-t_0=1.00\ \text{s}$（$t$ 為地面的鐘）；$c=3.00\times10^8\ \text{m/s}$；$1\ \text{y}=3.16\times10^7\ \text{s}$。</p>
+<p><strong>① 二項式近似：</strong> 和習題 1-5 同一條式子 $t=\dfrac{1.00\ \text{s}}{1-\sqrt{1-v^2/c^2}}$，但 $v^2/c^2=10^{-12}$，計算機會把 $\sqrt{1-10^{-12}}$ 顯示成 1、分母變 0，所以先用二項式近似把「1 減掉接近 1 的數」化成小量。</p>
+<p class="fnote"><b>公式（二項式近似）：</b>$|x|\ll1$ 時 $(1+x)^n\approx1+nx$；本題取 $x=-v^2/c^2$、$n=\tfrac12$。</p>
+<div class="math-block">$$\sqrt{1-v^2/c^2}\approx1-\frac{v^2}{2c^2}$$</div>
+<p>代回兩鐘的差：</p>
+<div class="math-block">$$t-t_0=t\left(1-\sqrt{1-v^2/c^2}\right)\approx t\left[1-\left(1-\frac{v^2}{2c^2}\right)\right]=t\,\frac{v^2}{2c^2}$$</div>
+<p><strong>② 算小量：</strong> 代入 $v=300\ \text{m/s}$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\frac vc=\frac{300}{3.00\times10^8}=1.00\times10^{-6},\qquad \frac{v^2}{2c^2}=\frac{(1.00\times10^{-6})^2}{2}=5.00\times10^{-13}$$</div>
+<p><strong>③ 解 $t$ 並換成年：</strong> 令 $t\,\dfrac{v^2}{2c^2}=1.00\ \text{s}$，移項：</p>
+<div class="math-block">$$t=\frac{2c^2}{v^2}(1.00\ \text{s})=\frac{1.00\ \text{s}}{5.00\times10^{-13}}=2.00\times10^{12}\ \text{s}$$</div>
+<p>換成年，用 $1\ \text{y}=3.16\times10^7\ \text{s}$：</p>
+<div class="math-block">$$\frac{2.00\times10^{12}\ \text{s}}{3.16\times10^{7}\ \text{s/y}}=6.3\times10^{4}\ \text{y}$$</div>
+<div class="math-block">$$\boxed{t\approx2.0\times10^{12}\ \text{s}\approx63\,000\ \text{年}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-7">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-7 · p.49</span></div>
+    <h4>船上一天＝地球兩天</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>How fast must a spacecraft travel relative to the earth for each day on the spacecraft to correspond to 2 d on the earth?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>太空船相對地球要多快，船上的每一天才會對應地球上的 $2$ 天？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：船上的一天 $t_0=1\ \text{d}$（在船上同一點開始、結束，是固有時間），地球量到 $t=2\ \text{d}$；$c=3.00\times10^8\ \text{m/s}$。</p>
+<p><strong>① 由時間比得到 $\gamma$：</strong> 題目給的是兩個時間的比值，而時間膨脹說這個比值就是 $\gamma$，所以不需要知道一天是幾秒。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma t_0$，$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}$，其中 $t_0$ 為固有時間、$t$ 為相對運動的觀察者量到的間隔、$v$ 為相對速率；本題 $t_0=1\ \text{d}$（船上）、$t=2\ \text{d}$（地球）。</p>
+<p>兩邊除以 $t_0$：</p>
+<div class="math-block">$$\gamma=\frac{t}{t_0}$$</div>
+<p>代入 $t=2\ \text{d}$、$t_0=1\ \text{d}$：</p>
+<div class="math-block">$$\gamma=\frac{2\ \text{d}}{1\ \text{d}}=2$$</div>
+<p><strong>② 由 $\gamma$ 反解 $v/c$：</strong> $\gamma$ 的定義取倒數再平方，一步一步移項：</p>
+<div class="math-block">$$\frac{1}{\sqrt{1-v^2/c^2}}=2\ \Longrightarrow\ \sqrt{1-\frac{v^2}{c^2}}=\frac12\ \Longrightarrow\ 1-\frac{v^2}{c^2}=\frac14$$</div>
+<div class="math-block">$$\frac{v^2}{c^2}=1-\frac14=\frac34\ \Longrightarrow\ \frac vc=\frac{\sqrt3}{2}=0.866$$</div>
+<p><strong>③ 換成 m/s：</strong> 代入上一步的 $v/c=0.866$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$v=0.866\times(3.00\times10^8\ \text{m/s})=2.60\times10^8\ \text{m/s}$$</div>
+<div class="math-block">$$\boxed{v=\tfrac{\sqrt3}{2}c=0.866c\approx2.6\times10^8\ \text{m/s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-8">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-8 · p.49</span></div>
+    <h4>阿波羅 11 號上的一天長了多少</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-8"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The Apollo 11 spacecraft that landed on the moon in 1969 traveled there at a speed relative to the earth of 1.08 × 10<sup>4</sup> m/s. To an observer on the earth, how much longer than his own day was a day on the spacecraft?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>1969 年登月的阿波羅 11 號太空船，前往月球時相對地球的速率是 $1.08\times10^4\ \text{m/s}$。對地球上的觀察者來說，太空船上的一天比他自己的一天長多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：太空船相對地球 $v=1.08\times10^4\ \text{m/s}$；船上的一天 $t_0=1\ \text{d}=86\,400\ \text{s}$（固有時間），地球量到 $t=\gamma t_0$；$c=3.00\times10^8\ \text{m/s}$。</p>
+<p><strong>① 多出來的時間：一般式與近似：</strong> 船上一天是固有時間，地球量到 $\gamma t_0$，多出的長度是 $(\gamma-1)t_0$；$v/c$ 很小，計算機會把 $\gamma-1$ 算成 0，所以先用二項式近似。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma t_0$，其中 $t_0$ 為固有時間、$t$ 為相對運動的觀察者量到的間隔、$\gamma=1/\sqrt{1-v^2/c^2}$。</p>
+<div class="math-block">$$t-t_0=\gamma t_0-t_0=(\gamma-1)t_0$$</div>
+<p class="fnote"><b>公式（二項式近似）：</b>$|x|\ll1$ 時 $(1-x)^{-1/2}\approx1+\tfrac12x$；本題取 $x=v^2/c^2$，得 $\gamma\approx1+\dfrac{v^2}{2c^2}$。</p>
+<div class="math-block">$$t-t_0\approx\frac{v^2}{2c^2}\,t_0$$</div>
+<p><strong>② 算 $v^2/2c^2$：</strong> 代入 $v=1.08\times10^4\ \text{m/s}$、$c=3.00\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\frac{v^2}{2c^2}=\frac{(1.08\times10^4\ \text{m/s})^2}{2(3.00\times10^8\ \text{m/s})^2}=\frac{1.166\times10^{8}}{1.80\times10^{17}}=6.48\times10^{-10}$$</div>
+<p><strong>③ 乘上一天的秒數：</strong> 代入 $t_0=86\,400\ \text{s}$ 與上一步的 $6.48\times10^{-10}$：</p>
+<div class="math-block">$$t-t_0=(6.48\times10^{-10})(86\,400\ \text{s})=5.6\times10^{-5}\ \text{s}$$</div>
+<div class="math-block">$$\boxed{t-t_0\approx5.6\times10^{-5}\ \text{s}=56\ \mu\text{s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-9">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-9 · p.49</span></div>
+    <h4>不穩定粒子能飛多遠</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A certain particle has a lifetime of 1.00 × 10<sup>−7</sup> s when measured at rest. How far does it go before decaying if its speed is 0.99c when it is created?</p></div>
+<p class="original-caption">Beiser 習題 1-9 · p.49</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>某粒子靜止時的壽命是 $1.00\times10^{-7}\ \text{s}$。若它產生時速率為 $0.99c$，衰變前飛了多遠？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：固有壽命 $t_0=1.00\times10^{-7}\ \text{s}$（靜止時量，粒子自己的時間）；粒子相對實驗室速率 $v=0.99c$，假設一路等速；$c=3.00\times10^8\ \text{m/s}$；求實驗室中衰變前飛行的距離 $d$。</p>
+<p><strong>① 算 $\gamma$：</strong> 距離在實驗室量，速率和時間都要用實驗室的值，所以先算時間膨脹的因子 $\gamma$。</p>
+<p class="fnote"><b>公式（勞倫茲因子）：</b>$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}$，其中 $v$ 為物體相對觀察者的速率、$c$ 為光速；本題 $v/c=0.99$。</p>
+<p>代入 $v/c=0.99$：</p>
+<div class="math-block">$$1-0.99^2=1-0.9801=0.0199,\qquad \gamma=\frac1{\sqrt{0.0199}}=\frac{1}{0.1411}=7.09$$</div>
+<p><strong>② 實驗室中的壽命：</strong> 實驗室看粒子在動，固有壽命膨脹成 $\gamma t_0$。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma t_0$，其中 $t_0$ 為在事件發生處同一地點量到的固有時間、$t$ 為相對它運動的觀察者量到的時間；本題 $t_0$ 為粒子靜止時的壽命、$t$ 為實驗室中的壽命。</p>
+<p>代入上一步的 $\gamma=7.09$、$t_0=1.00\times10^{-7}\ \text{s}$：</p>
+<div class="math-block">$$t=7.09\times(1.00\times10^{-7}\ \text{s})=7.09\times10^{-7}\ \text{s}$$</div>
+<p><strong>③ 距離＝實驗室速率 × 實驗室壽命：</strong></p>
+<div class="math-block">$$d=vt$$</div>
+<p>代入 $v=0.99\times3.00\times10^8\ \text{m/s}$、上一步的 $t=7.09\times10^{-7}\ \text{s}$：</p>
+<div class="math-block">$$d=(0.99)(3.00\times10^8\ \text{m/s})(7.09\times10^{-7}\ \text{s})=2.1\times10^{2}\ \text{m}$$</div>
+<div class="math-block">$$\boxed{d\approx210\ \text{m}}$$</div>
+<p>不考慮相對論、直接用 $v\,t_0$ 只有 $30\ \text{m}$。</p>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-02-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>緲子儲存環：一個壽命內繞幾圈</h4>
+    <button type="button" class="exam-btn" data-exam="sf-02-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>1977 年 CERN 把緲子（固有平均壽命 $\tau_0=2.197\ \mu\text{s}$）放進半徑 $R=7.0\ \text{m}$ 的儲存環，緲子的 $\gamma=29.3$。(a) 實驗室中看，緲子的平均壽命和平均飛行距離各多少？平均能繞幾圈？(b) 緲子的向心加速度是多少個 $g$？(c) 實驗量到的壽命和 $\gamma\tau_0$ 在 $0.1\%$ 內一致。這說明加速度對「運動的鐘變慢」有沒有額外影響？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：緲子固有平均壽命 $\tau_0=2.197\ \mu\text{s}$；儲存環半徑 $R=7.0\ \text{m}$；$\gamma=29.3$（速率要自己反解）；緲子在環中等速率圓周運動；$c=3.00\times10^8\ \text{m/s}$、$g=9.8\ \text{m/s}^2$。</p>
+<h4>(a) 實驗室中的壽命、飛行距離與圈數</h4>
+<p><strong>① 從 $\gamma$ 反解速率：</strong> $\tau_0$ 是緲子的固有時間，壽命、距離、圈數都在實驗室量；題目只給 $\gamma$，速率要從 $\gamma$ 的定義反解。</p>
+<p class="fnote"><b>公式（勞倫茲因子）：</b>$\gamma=\dfrac{1}{\sqrt{1-\beta^2}}$，其中 $\beta=v/c$ 為速率與光速之比；本題已知 $\gamma=29.3$，求 $\beta$。</p>
+<p>兩邊平方取倒數：$1-\beta^2=\dfrac1{\gamma^2}$，所以</p>
+<div class="math-block">$$\beta=\sqrt{1-\frac{1}{\gamma^2}}$$</div>
+<p>代入 $\gamma=29.3$：</p>
+<div class="math-block">$$\beta=\sqrt{1-\frac{1}{29.3^2}}=\sqrt{1-\frac{1}{858.5}}=\sqrt{1-0.001165}=0.99942$$</div>
+<p><strong>② 實驗室中的壽命：</strong></p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$\tau=\gamma\tau_0$，其中 $\tau_0$ 為緲子自己量的固有壽命、$\tau$ 為實驗室量到的壽命、$\gamma$ 為勞倫茲因子。</p>
+<p>代入 $\gamma=29.3$、$\tau_0=2.197\ \mu\text{s}$：</p>
+<div class="math-block">$$\tau=(29.3)(2.197\ \mu\text{s})=64.4\ \mu\text{s}$$</div>
+<p><strong>③ 飛行距離：</strong> 距離＝實驗室速率 × 實驗室壽命。</p>
+<div class="math-block">$$d=v\tau=\beta c\,\tau$$</div>
+<p>代入 ① 的 $\beta=0.99942$、$c=3.00\times10^8\ \text{m/s}$、② 的 $\tau=64.4\times10^{-6}\ \text{s}$：</p>
+<div class="math-block">$$d=(0.99942)(3.00\times10^8\ \text{m/s})(64.4\times10^{-6}\ \text{s})=1.93\times10^4\ \text{m}$$</div>
+<p><strong>④ 圈數：</strong> 一圈的長度是周長 $2\pi R$，圈數＝總距離 ÷ 周長。代入 $R=7.0\ \text{m}$：</p>
+<div class="math-block">$$\begin{aligned}N&amp;=\frac{d}{2\pi R}=\frac{1.93\times10^4\ \text{m}}{2\pi(7.0\ \text{m})}\\&amp;=\frac{1.93\times10^4\ \text{m}}{44.0\ \text{m}}=4.4\times10^2\ \text{圈}\end{aligned}$$</div>
+<p><strong>⑤ 對照不考慮相對論：</strong> 用固有壽命 $\tau_0$ 算：</p>
+<div class="math-block">$$v\tau_0=(0.99942)(3.00\times10^8)(2.197\times10^{-6})\ \text{m}=659\ \text{m},\qquad \frac{659}{44.0}=15\ \text{圈}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\tau=64.4\ \mu\text{s},\ d\approx19\ \text{km},\ \text{約 }440\text{ 圈}\\ \text{（不考慮相對論只有 }0.66\ \text{km、15 圈）}\end{gathered}}$$</div>
+<h4>(b) 向心加速度</h4>
+<p><strong>① 向心加速度：</strong> 等速率圓周運動的加速度指向圓心。</p>
+<p class="fnote"><b>公式（向心加速度）：</b>$a=\dfrac{v^2}{R}$，其中 $v$ 為速率、$R$ 為圓周半徑；本題 $v=\beta c$、$R=7.0\ \text{m}$。</p>
+<p>代入 $v=0.99942\times3.00\times10^8\ \text{m/s}=2.998\times10^8\ \text{m/s}$、$R=7.0\ \text{m}$：</p>
+<div class="math-block">$$a=\frac{v^2}{R}=\frac{(2.998\times10^8\ \text{m/s})^2}{7.0\ \text{m}}=1.3\times10^{16}\ \text{m/s}^2$$</div>
+<p><strong>② 換成幾個 $g$：</strong> 除以 $g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$\frac ag=\frac{1.3\times10^{16}}{9.8}=1.3\times10^{15}$$</div>
+<div class="math-block">$$\boxed{a\approx1.3\times10^{15}\,g}$$</div>
+<h4>(c) 加速度對時間膨脹的影響</h4>
+<p><strong>① 用實驗結果判斷：</strong> 圓周運動中的緲子不在慣性座標系裡，而 $t=\gamma t_0$ 是在等速運動下推出來的；如果加速度另有影響，量到的壽命就不會剛好等於 $\gamma\tau_0$。</p>
+<p>加速度大到 $10^{15}g$，量到的壽命仍然在 $0.1\%$ 內等於只用瞬時速率算出的 $\gamma\tau_0$。所以「時鐘變慢」只看速率，不看加速度（時鐘假設）；狹義相對論的公式可以一小段一小段地用在加速運動上。</p>
+<div class="math-block">$$\boxed{\text{加速度本身不影響鐘的快慢，只有速率有關}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-02-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>自己只過 10 年，飛到 100 光年外</h4>
+    <button type="button" class="exam-btn" data-exam="sf-02-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>太空人要等速飛到地球座標系中 $D=100$ 光年外的星球，而且希望自己的錶只走 $\tau=10.0$ 年。(a) 需要多大的速率？寫出 $1-\beta$。(b) 地球上量，這趟旅程要多久？(c) 證明一般情形下地球時間 $T$ 滿足 $T^2=\tau^2+(D/c)^2$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：地球座標系中的距離 $D=100\ \text{ly}$；太空人的錶走 $\tau=10.0\ \text{y}$（固有時間）；等速飛行；$1\ \text{ly}/c=1\ \text{y}$；$T$ 為地球上量的旅程時間。</p>
+<h4>(a) 需要的速率與 $1-\beta$</h4>
+<p><strong>① 建立方程：</strong> 地球時間 $T$ 有兩種寫法：從地球看 $T=D/v$；從時間膨脹看 $T=\gamma\tau$。兩式相等就消掉 $T$，只剩未知數 $\beta$。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$T=\gamma\tau$，其中 $\tau$ 為太空人自己量的固有時間、$T$ 為地球量到的時間、$\gamma=\dfrac{1}{\sqrt{1-\beta^2}}$、$\beta=v/c$。</p>
+<p>兩種寫法的 $T$ 相等，代 $v=\beta c$：</p>
+<div class="math-block">$$\frac{D}{\beta c}=\gamma\tau\quad\Longrightarrow\quad \gamma\beta=\frac{D}{c\tau}$$</div>
+<p>代入 $D=100\ \text{ly}$、$\tau=10.0\ \text{y}$，用 $1\ \text{ly}/c=1\ \text{y}$：</p>
+<div class="math-block">$$\gamma\beta=\frac{100\ \text{ly}}{c\,(10.0\ \text{y})}=\frac{100\ \text{y}}{10.0\ \text{y}}=10.0$$</div>
+<p><strong>② 解 $\beta$：</strong> 題目要 $1-\beta$ 這種很小的量，一定要真的解方程，不能先猜 $\gamma\approx10$。把 $\gamma$ 寫開、兩邊平方，移項：</p>
+<div class="math-block">$$\begin{aligned}\frac{\beta}{\sqrt{1-\beta^2}}=10\ &amp;\Longrightarrow\ \beta^2=100(1-\beta^2)\\&amp;\Longrightarrow\ 101\beta^2=100\ \Longrightarrow\ \beta=\frac{10}{\sqrt{101}}=0.99504\end{aligned}$$</div>
+<div class="math-block">$$1-\beta=1-0.99504=4.96\times10^{-3}$$</div>
+<p>對應的 $\gamma=\dfrac{\gamma\beta}{\beta}=\dfrac{10.0}{0.99504}=10.05$（也等於 $\sqrt{101}$）。</p>
+<div class="math-block">$$\boxed{v=0.99504c,\quad 1-\beta=0.0050,\quad \gamma=10.05}$$</div>
+<h4>(c) 證明 $T^2=\tau^2+(D/c)^2$</h4>
+<p><strong>① 用恆等式 $\gamma^2-(\gamma\beta)^2=1$：</strong> 先證恆等式：</p>
+<div class="math-block">$$\gamma^2-(\gamma\beta)^2=\gamma^2(1-\beta^2)=\frac{1-\beta^2}{1-\beta^2}=1$$</div>
+<p>所以 $\gamma^2=1+(\gamma\beta)^2$。</p>
+<p><strong>② 代進 $T=\gamma\tau$ 的平方：</strong> 再用 (a) 的 $\gamma\beta\tau=D/c$：</p>
+<div class="math-block">$$\begin{aligned}T^2&amp;=\gamma^2\tau^2=\left[1+(\gamma\beta)^2\right]\tau^2\\&amp;=\tau^2+(\gamma\beta\tau)^2=\tau^2+\left(\frac Dc\right)^2\end{aligned}$$</div>
+<div class="math-block">$$\boxed{T^2=\tau^2+(D/c)^2\text{，得證}}$$</div>
+<h4>(b) 地球上量的旅程時間</h4>
+<p><strong>① 用 (c) 的結果代數值：</strong> 代入 $\tau=10.0\ \text{y}$、$D/c=100\ \text{y}$：</p>
+<div class="math-block">$$T=\sqrt{(10.0\ \text{y})^2+(100\ \text{y})^2}=\sqrt{10\,100}\ \text{y}=100.5\ \text{y}$$</div>
+<div class="math-block">$$\boxed{T=100.5\ \text{年}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>固有時間 $t_0$：兩事件在同一地點的座標系量的，是最短的時間。</li>
+    <li>$t=\gamma t_0$，$\gamma=1/\sqrt{1-v^2/c^2}\ge1$；由光鐘的畢氏定理推出。</li>
+    <li>效應相互、適用所有鐘；$v\ll c$ 時用 $\gamma\approx1+\tfrac{v^2}{2c^2}$。</li>
+  </ol>
+</div>

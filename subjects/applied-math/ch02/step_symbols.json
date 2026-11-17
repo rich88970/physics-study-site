@@ -1,0 +1,28 @@
+{
+  "_說明": "symbols 是本章符號總表；groups 決定總表分組；步驟用 data-sym 指定要提醒的符號（每頁只提醒第一次）。",
+  "symbols": {
+    "y":     { "tex": "y=y(x)", "zh": "未知函數", "unit": "—", "note": "$y'=\\dfrac{dy}{dx}$、$y''=\\dfrac{d^2y}{dx^2}$；阻尼振盪一節改用 $x(t)$，點代表對時間微分" },
+    "ab":    { "tex": "a,\\ b", "zh": "常係數方程 $y''+ay'+by=g(x)$ 的係數", "unit": "—", "note": "先把 $y''$ 的係數除成 1 才能讀 $a,b$（例如 $4y''+4y'+17y=0$ 要除以 4）" },
+    "g":     { "tex": "g(x)", "zh": "右邊的非齊次項（外力）", "unit": "—", "note": "$g=0$ 齊次（homogeneous）；$g\\neq0$ 非齊次" },
+    "y12":   { "tex": "y_1,\\ y_2", "zh": "齊次方程的兩個線性獨立解", "unit": "—", "note": "線性獨立：$y_1/y_2\\neq$ 常數，或 Wronskian $W\\neq0$" },
+    "yp":    { "tex": "y_p", "zh": "特解（particular solution）：滿足非齊次方程的任何一個解", "unit": "—", "note": "第 3 章教怎麼找" },
+    "c12":   { "tex": "c_1,\\ c_2;\\ K_1,\\ K_2", "zh": "一般解裡的任意常數，由初始（或邊界）條件決定", "unit": "—", "note": "板書在化成實數形式後改用 $K_1,K_2$" },
+    "W":     { "tex": "W(y_1,y_2)=y_1y_2'-y_2y_1'", "zh": "Wronskian 行列式", "unit": "—", "note": "網站補充；$W\\neq0$ 就線性獨立" },
+    "lam":   { "tex": "\\lambda", "zh": "特徵根：令 $y=e^{\\lambda x}$ 代入得 $\\lambda^2+a\\lambda+b=0$", "unit": "—", "note": "板書稱 Euler's characteristic eq.（特徵方程式）" },
+    "ab2":   { "tex": "\\lambda=\\alpha\\pm i\\beta", "zh": "共軛複根的實部與虛部", "unit": "—", "note": "解寫成 $e^{\\alpha x}(K_1\\cos\\beta x+K_2\\sin\\beta x)$" },
+    "Aphi":  { "tex": "A,\\ \\phi", "zh": "振幅與相位：$K_1\\cos\\theta+K_2\\sin\\theta=A\\cos(\\theta+\\phi)$", "unit": "—", "note": "$A=\\sqrt{K_1^2+K_2^2}$" },
+    "u":     { "tex": "u(x),\\ w=u'", "zh": "降階法：令 $y_2=y_1u$，再令 $w=u'$ 把二階降成一階", "unit": "—", "note": "" },
+    "PQ":    { "tex": "P(x),\\ Q(x)", "zh": "變係數標準式 $y''+P(x)y'+Q(x)y=0$ 的係數", "unit": "—", "note": "降階公式 $y_2=y_1\\int\\dfrac{e^{-\\int P\\,dx}}{y_1^2}dx$" },
+    "gam":   { "tex": "\\gamma=\\dfrac{b}{2m}", "zh": "阻尼係數（$2\\gamma$ 是 $\\dot x$ 的係數，$b$ 是阻力常數）", "unit": "s⁻¹", "note": "9/30 的板書把阻力常數改寫成 $\\beta$" },
+    "w0":    { "tex": "\\omega_0=\\sqrt{k/m}", "zh": "沒有阻尼時的自然角頻率", "unit": "rad/s", "note": "" },
+    "wd":    { "tex": "\\omega=\\sqrt{\\omega_0^2-\\gamma^2}", "zh": "欠阻尼時實際振盪的角頻率", "unit": "rad/s", "note": "比 $\\omega_0$ 小" },
+    "m":     { "tex": "m", "zh": "Cauchy–Euler 的指數：令 $y=x^m$", "unit": "—", "note": "第 5 節的 $m$ 是質量，不要混" }
+  },
+  "groups": [
+    { "title": "方程與解", "keys": ["y", "ab", "g", "y12", "yp", "c12", "W"] },
+    { "title": "常係數與降階", "keys": ["lam", "ab2", "Aphi", "u", "PQ"] },
+    { "title": "阻尼振盪", "keys": ["gam", "w0", "wd"] },
+    { "title": "Cauchy–Euler", "keys": ["m"] }
+  ],
+  "steps": {}
+}

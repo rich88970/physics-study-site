@@ -1,0 +1,45 @@
+<p class="lead">Lecture 1 準備好了工具（向量、座標、梯度與旋度），這一章正式進入力學：整章其實只在解一個方程式 $\vec F=m\ddot{\vec r}$。前半（第 1–3 節）講清楚牛頓三定律在什麼座標系成立、質量和力怎麼定義；中段（第 4–10 節）是解題技術——力可以和位置、速度、時間有關，要會把方程式整理成可以積分的形式；後半（第 11–15 節）從牛頓定律推出動量、角動量、能量三個守恆定理，再用位能圖判斷運動範圍與平衡的穩定性。</p>
+
+<p>每一節是一頁，照講義頁碼排列（講義 Lecture 2 共 159 頁，大部分內容取自課本 Thornton &amp; Marion 第 2 章）。講義的例題放在用到它的那一節；講義沒做、但課本有的例題（2.8、2.10）和其餘課本習題也併入相關的節。題目右上角可以開「考試寫法」。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">考古題怎麼出</span>
+  <p>雲端「3.力學(董育宸)」資料夾裡共 5 份考卷、28 題，全部逐題看過：116 級下學期的單章考卷 Chapter-05 重力（2025/05/22，6 題）、Chapter-06 變分法（2025/03/20，8 題）、Chapter-07 Lagrange 力學（2025/05/01，5 題）、Chapter-08 連心力（2025/06/12，5 題），以及 117 級上學期期末 Exam-4（2025/12/18，4 題，第 9 章「質點系」）；上學期期中的資料夾是空的。<strong>沒有一份是第 2 章的考卷</strong>，但有四題只用本章的工具就能完整解，收成考古題卡：Exam-4 <a href="#c2-exam4-1">第 1 題 空中爆炸成三塊</a>（第 3 節，動量守恆）、Exam-4 <a href="#c2-exam4-3">第 3 題 從光滑桌面滑下的繩子</a>（第 12 節，功能定理）、第 5 章 <a href="#c2-exam5-2">第 2 題 由 $T^2\propto r^3$ 證明 $n=-2$</a>（第 3 節，圓周運動 $F=mv^2/r$，和課本 2-49 雙星週期同一套）、第 8 章 <a href="#c2-exam8-1">第 1 題 證明克卜勒第二定律</a>（第 11 節，連心力無力矩 ⟹ 角動量守恆）。其餘不收：Exam-4 第 2 題（繞在空心圓柱上的繩，要剛體轉動動能）與第 4 題（從桌上提起的繩，變質量 $\mathrm dp/\mathrm dt$）屬第 9 章；第 5–8 章其餘 22 題（重力場與重力位能、變分法、Lagrange 力學、軌道穩定性）屬下學期內容。和本章題目相關、可以順便練的：第 7 章第 4 題 (b) 的「光滑半球上何處離開」與<a href="#c2-self-14a">第 14 節自編難題</a>同結果（但考卷 (a) 要求用 Lagrange 乘子求約束力）；Exam-4 第 4 題 (b)（放手後繩子落回桌面時桌子受的力）要算落下的繩打在桌上的動量流，和<a href="#c2-self-03a">第 3 節自編難題「繩子落到秤上」</a>是同一種想法。照老師的出題方式準備：約一半是課本例題原題，其餘是課本習題改條件或要求證明、推導。本章 13 個課本例題與章末 55 題課本習題（2-1～2-55，其中 8 題是講義做過的）全部收錄；第 1–15 節每節另有 2 題標示「自編難題」的網站自編題（共 30 題，不是課本或講義題目）；考前衝刺頁有 14 題變化題。</p>
+</div>
+
+<p class="exam-entry"><strong>準備考試？</strong>先看<a href="#c2x-formulas">第 16 節「考前衝刺」</a>：必背公式、題型總表和變化題。各節頁面上方的「考試模式」會把解說收起來，只留公式、題目和思路。</p>
+
+<div data-section-list></div>
+
+<details class="supp" id="symbols">
+  <summary>符號總表</summary>
+  <div class="supp-body">
+    <p class="small muted">講義用箭頭 $\vec F$ 表示向量，課本用粗體 $\mathbf F$，意思相同。點表示對時間微分：$\dot x=\mathrm dx/\mathrm dt$，$\ddot x=\mathrm d^2x/\mathrm dt^2$。課本把力矩寫成 $\vec N$、動能寫成 $T$，本站照用。</p>
+    <div data-symbol-table></div>
+  </div>
+</details>
+
+<details class="supp" id="errata">
+  <summary>講義勘誤（本章）</summary>
+  <div class="supp-body">
+    <p class="small muted">對照課本、課本解答與重新推導後確認的幾處印刷錯誤。都不影響講義的解題方法，抄筆記時改正即可。</p>
+    <ol>
+      <li><strong>p.72–73（習題 2-38）</strong>：講義寫 $x=[(n+1)\alpha t]^{-(n+1)}$，應為 $x=[(n+1)\alpha t]^{1/(n+1)}$。p.73 的 $F(t)=-mn\alpha^2[(n+1)\alpha t]^{-(2n+1)/(n+1)}$ 是對的，只是式中的 $\alpha$ 印成 $a$。影響 (b) 的答案，不影響 (c)。（<a href="#c2-tm-2-38">第 7 節</a>）</li>
+      <li><strong>p.144（習題 2-25）</strong>：講義寫 $N=mg\left[1-\dfrac{2h}R\right]$，應為 $N_A=mg\left(1+\dfrac{2h}R\right)$——最低點的正向力必須大於 $mg$ 才能提供向上的向心力。影響 (a) 的答案。p.146 求 B 點的正向力時，內文寫「把 A 點附近的運動近似為圓周」，應為 B 點（$N_B$ 的結果本身正確）。（<a href="#c2-tm-2-25">第 14 節</a>）</li>
+      <li><strong>p.149–150（習題 2-25 落點）</strong>：上一行正確寫出 $gt^2-\sqrt2vt+(\sqrt2R-2R)=0$，但下一步求根公式與 p.150 的 $d$ 裡，根號內印成 $2v^2-4g(\sqrt{R-2R})$，應為 $2v^2-4g(\sqrt2R-2R)$。照印的式子根號裡 $R-2R<0$，無法代入，(d) 要用改正後的式子。（<a href="#c2-tm-2-25">第 14 節</a>）</li>
+      <li><strong>p.114（角動量守恆）</strong>：講義說重力與 $\vec r$ 的夾角是 $0^\circ$，嚴格說是 $180^\circ$（重力指向太陽、$\vec r$ 由太陽指出）。兩者 $\sin\theta=0$，結論不變。（<a href="#c2m-ang">第 11 節</a>）</li>
+    </ol>
+    <p class="small muted">幾個不影響答案的記號小筆誤：p.62 的 $\ln[g-k\dot x^2]$ 應寫 $\dot z$，積分下限的 $V_0$ 即 $v_0$；p.116 第二項的 $\vec r(\vec r_i\cdot\vec\omega)$ 應為 $\vec r_i(\vec r_i\cdot\vec\omega)$（反正這項為零）；p.142 的 $(\vec F+\nabla U)\cdot\mathrm d\dot{\vec r}$ 多了一個 $\mathrm d$，應為 $\cdot\,\dot{\vec r}$。另外講義 p.82 指出課本 Eq. (2.35) 的 $g^2t^2/4$ 應為 $g^2t^4/4$（課本的印刷錯誤，<a href="#c2-ex26">第 8 節</a>）。</p>
+  </div>
+</details>
+
+<details class="supp" id="confusions">
+  <summary>三個最常混淆的地方</summary>
+  <div class="supp-body">
+    <ol>
+      <li><strong>阻力的正負號</strong>：阻力永遠和速度反向。寫成 $-kmv$（$v$ 帶正負號）時，向上、向下運動都用同一條方程式；寫成 $kmv^2$ 時，$v^2$ 不會變號，上升和下降必須分開寫（第 9 節）。</li>
+      <li><strong>$\ddot x$ 的三種寫法</strong>：$\ddot x=\dfrac{\mathrm dv}{\mathrm dt}=v\dfrac{\mathrm dv}{\mathrm dx}=\dfrac12\dfrac{\mathrm d(v^2)}{\mathrm dx}$。題目要 $v(t)$ 用第一種，要 $v(x)$、距離或由 $v(x)$ 求力用後兩種（第 4、7 節）。</li>
+      <li><strong>同一個字母不同意思</strong>：$N$ 在第 5 節是正向力、第 11 節是力矩；$T$ 在第 10 節是張力、第 12 節起是動能；$U$ 在第 9 節是初速分量、第 13 節起是位能。</li>
+    </ol>
+  </div>
+</details>

@@ -1,0 +1,163 @@
+<h2>二、純量與向量 <span class="pg">講義 p.10–16</span></h2>
+
+<p class="lead">描述運動要用兩種量：純量和向量。這一節說清楚兩者怎麼分，以及向量怎麼用分量表示、怎麼算長度。</p>
+
+<h3 id="sv-def">2.1 純量與向量 <span class="pg-tag">p.11–13</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.12 Scalar vs. Vector</span>
+  <p><strong>純量</strong>：只有大小、沒有方向；座標變換下不變。例：質量、速率、時間、能量、長度、溫度。<br>
+  <strong>向量</strong>：有大小和方向；座標變換下（分量）會變。例：位置、速度、加速度、力矩。</p>
+</div>
+
+<p>判斷的關鍵是第二句：<strong>換一組座標軸，這個量變不變</strong>。質量 2 kg 怎麼換軸都是 2 kg；位置的分量換了軸就不同。純量也可以是負的（例如溫度、能量），「只有大小」不是指一定為正。</p>
+
+<p>p.13 的例子：同一群粒子用 (a)、(b) 兩組座標描述，第 4 號粒子的質量 $M_4=M_4'$ 不變，位置卻從 $(x,y)=(2,3)$ 變成 $(x',y')=(4,3.5)$。粒子沒動，箭頭也沒變，變的只是量它的座標軸。下圖把座標軸轉動：分量一直在變，長度 $|\vec P_4|=\sqrt{13}$ 和質量都不變——向量的長度本身就是純量。</p>
+
+<div class="anim" data-anim="scalar-vector"></div>
+
+<h3 id="sv-unit">2.2 單位向量 <span class="pg-tag">p.14</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.14 Unit Vectors</span>
+  <p>單位向量以帽子表示：$\hat i,\hat j,\hat k$，也寫作 $(\hat x_1,\hat x_2,\hat x_3)$ 或 $(\hat e_1,\hat e_2,\hat e_3)$。長度為 1、沒有單位：$|\hat i|=|\hat j|=|\hat k|=1$。例：$k\hat i$ 是大小 $|k|$、沿 $\hat i$ 方向的向量。</p>
+</div>
+
+<p>單位向量只負責方向，所以任何向量都能寫成「長度 × 單位向量」：$\vec A=|\vec A|\,\hat A$，其中 $\hat A=\vec A/|\vec A|$。講義寫大小是 $|k|$：$-3\hat i$ 的長度是 3，方向朝 $-x$。</p>
+
+<h3 id="sv-2d">2.3 二維：分量與極座標 <span class="pg-tag">p.15</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.15 Vectors in 2-D</span>
+  $$\vec A=A_1\hat i+A_2\hat j=(A_1,A_2)=(r,\theta)$$
+</div>
+
+<div class="step" data-step="sv-polar">
+  <span class="step-title">兩種寫法互換</span>
+  <p>從箭頭尖端往 $x$ 軸畫垂線，得到斜邊為 $r$ 的直角三角形：</p>
+  $$A_1=r\cos\theta,\quad A_2=r\sin\theta;\qquad r=\sqrt{A_1^2+A_2^2},\quad \tan\theta=\frac{A_2}{A_1}.$$
+</div>
+
+<div class="anim" data-anim="polar"></div>
+
+<div class="box pitfall">
+  <span class="box-title">$\tan^{-1}$ 可能給錯象限</span>
+  <p>$\vec A=(-1,\sqrt3)$：計算機給 $\tan^{-1}(-\sqrt3)=-60^\circ$（第四象限），但 $A_1\lt0$、$A_2\gt0$ 是第二象限，正確角度是 $-60^\circ+180^\circ=120^\circ$。驗算：$2\cos120^\circ=-1$、$2\sin120^\circ=\sqrt3$ ✔。</p>
+</div>
+
+<h3 id="sv-3d">2.4 三維與長度 <span class="pg-tag">p.16</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.16 Vectors in 3-D</span>
+  $$\vec A=A_1\hat i+A_2\hat j+A_3\hat k=(A_1,A_2,A_3)$$
+  $$|\vec A|=\sqrt{A_1^2+A_2^2+A_3^2}$$
+</div>
+
+<div class="step" data-step="sv-len">
+  <span class="step-title">長度公式 = 畢氏定理用兩次</span>
+  <p>先看 $\vec A$ 在 $xy$ 平面的影子，長 $\sqrt{A_1^2+A_2^2}$；影子和高度 $A_3$ 互相垂直，再用一次畢氏定理：</p>
+  $$|\vec A|^2=\big(\sqrt{A_1^2+A_2^2}\big)^2+A_3^2=A_1^2+A_2^2+A_3^2 .$$
+</div>
+
+<div class="anim" data-anim="vec3d"></div>
+
+<h3 id="self-s02">2.5 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s02-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>哪個組合換座標也不變？</h4>
+    <button type="button" class="exam-btn" data-exam="self-s02-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>二維座標系轉 $\theta$ 時，分量變成 $A_1'=A_1\cos\theta+A_2\sin\theta$、$A_2'=-A_1\sin\theta+A_2\cos\theta$（$\vec B$ 同理，第九節會推導）。判斷下列各量是不是純量（換座標不變）：(a) $A_1B_1$；(b) $A_1B_1+A_2B_2$；(c) $A_1B_2-A_2B_1$。並用 $\vec A=(3,1)$、$\vec B=(1,2)$ 說明。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：旋轉 $\theta$ 的變換 $A_1'=A_1\cos\theta+A_2\sin\theta$、$A_2'=-A_1\sin\theta+A_2\cos\theta$（$\vec B$ 同理）；純量＝對每一個 $\theta$ 都不變；數值例 $\vec A=(3,1)$、$\vec B=(1,2)$。</p>
+<h4>(a) $A_1B_1$</h4>
+<p><strong>① 用 $\theta=90^\circ$ 找反例：</strong> 證明「不是」純量只要一個讓它改變的角度；$90^\circ$ 時 $\cos\theta=0$、$\sin\theta=1$ 最好算，代進變換式：</p>
+<div class="math-block">$$A_1'=A_2,\qquad A_2'=-A_1$$</div>
+<p>代入 $\vec A=(3,1)$、$\vec B=(1,2)$：</p>
+<div class="math-block">$$\vec A'=(1,\,-3),\qquad \vec B'=(2,\,-1)$$</div>
+<p><strong>② 比較前後的 $A_1B_1$：</strong></p>
+<div class="math-block">$$A_1'B_1'=1\times2=2,\qquad A_1B_1=3\times1=3$$</div>
+<p>$2\neq3$，換了座標就變。</p>
+<div class="math-block">$$\boxed{A_1B_1\text{ 不是純量}}$$</div>
+<h4>(b) $A_1B_1+A_2B_2$</h4>
+<p><strong>① 對一般 $\theta$ 展開兩個乘積：</strong> 要證明「是」純量，只試幾個角度不夠，必須對一般 $\theta$ 展開。記 $c=\cos\theta$、$s=\sin\theta$，代入變換式：</p>
+<div class="math-block">$$\begin{aligned}A_1'B_1'&amp;=(A_1c+A_2s)(B_1c+B_2s)\\&amp;=A_1B_1c^2+A_1B_2cs\\&amp;\quad+A_2B_1sc+A_2B_2s^2\end{aligned}$$</div>
+<div class="math-block">$$\begin{aligned}A_2'B_2'&amp;=(-A_1s+A_2c)(-B_1s+B_2c)\\&amp;=A_1B_1s^2-A_1B_2sc\\&amp;\quad-A_2B_1cs+A_2B_2c^2\end{aligned}$$</div>
+<p><strong>② 相加、收同類項：</strong> 把同一組 $A_iB_j$ 收在一起。</p>
+<p class="fnote"><b>公式（三角恆等式）：</b>$\cos^2\theta+\sin^2\theta=1$，其中 $\theta$ 為旋轉角；本題即 $c^2+s^2=1$。</p>
+<div class="math-block">$$\begin{aligned}&amp;A_1'B_1'+A_2'B_2'\\&amp;=A_1B_1(c^2+s^2)+A_2B_2(s^2+c^2)\\&amp;\quad+A_1B_2(cs-sc)+A_2B_1(sc-cs)\\&amp;=A_1B_1+A_2B_2\end{aligned}$$</div>
+<p>交叉項 $cs-sc=0$ 互相抵消，對任何 $\theta$ 都不變。</p>
+<p><strong>③ 數值說明：</strong> 用 (a) 的 $\vec A'=(1,-3)$、$\vec B'=(2,-1)$：</p>
+<div class="math-block">$$1\times2+(-3)(-1)=5=3\times1+1\times2$$</div>
+<div class="math-block">$$\boxed{A_1B_1+A_2B_2\text{ 是純量（}=\vec A\cdot\vec B\text{）}}$$</div>
+<h4>(c) $A_1B_2-A_2B_1$</h4>
+<p><strong>① 對一般 $\theta$ 展開兩個乘積：</strong> 同樣代入變換式：</p>
+<div class="math-block">$$\begin{aligned}A_1'B_2'&amp;=(A_1c+A_2s)(-B_1s+B_2c)\\&amp;=-A_1B_1cs+A_1B_2c^2\\&amp;\quad-A_2B_1s^2+A_2B_2sc\end{aligned}$$</div>
+<div class="math-block">$$\begin{aligned}A_2'B_1'&amp;=(-A_1s+A_2c)(B_1c+B_2s)\\&amp;=-A_1B_1sc-A_1B_2s^2\\&amp;\quad+A_2B_1c^2+A_2B_2cs\end{aligned}$$</div>
+<p><strong>② 相減、收同類項：</strong> 第一式減第二式，再用 $c^2+s^2=1$：</p>
+<div class="math-block">$$\begin{aligned}&amp;A_1'B_2'-A_2'B_1'\\&amp;=A_1B_2(c^2+s^2)-A_2B_1(s^2+c^2)\\&amp;\quad+A_1B_1(sc-cs)+A_2B_2(sc-cs)\\&amp;=A_1B_2-A_2B_1\end{aligned}$$</div>
+<p>也和 $\theta$ 無關。</p>
+<p><strong>③ 數值說明：</strong> 用 (a) 的 $\vec A'$、$\vec B'$：</p>
+<div class="math-block">$$1\times(-1)-(-3)\times2=5=3\times2-1\times1$$</div>
+<p><strong>④ 為什麼 (b)、(c) 不變、(a) 會變：</strong> (b) 正是內積 $\vec A\cdot\vec B=|\vec A||\vec B|\cos\theta_{AB}$，(c) 是外積的 $z$ 分量 $|\vec A||\vec B|\sin\theta_{AB}$（平行四邊形的有號面積），兩者只由兩個長度和夾角 $\theta_{AB}$ 決定，轉座標軸不改變長度和夾角；單一分量的乘積 $A_1B_1$ 卻取決於 $x$ 軸擺在哪裡，所以會變。</p>
+<div class="math-block">$$\boxed{A_1B_2-A_2B_1\text{ 是純量（}=(\vec A\times\vec B)_z\text{）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s02-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>長度、仰角、垂直三個條件：有幾個解</h4>
+    <button type="button" class="exam-btn" data-exam="self-s02-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>向量 $\vec A$ 長 8、和 $+z$ 軸夾 $30^\circ$。(a) 若又知道 $\vec A$ 和 $\vec B=(1,1,0)$ 垂直（$A_1+A_2=0$），求所有可能的 $\vec A$，並寫出各自在 $xy$ 平面上的方位角。(b) 若改成和 $\vec C=(1,1,1)$ 垂直（$A_1+A_2+A_3=0$），還有解嗎？用幾何說明為什麼。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$|\vec A|=8$，和 $+z$ 軸夾 $30^\circ$；(a) $A_1+A_2=0$（垂直 $(1,1,0)$），(b) $A_1+A_2+A_3=0$（垂直 $\vec C=(1,1,1)$）；方位角 $\varphi$ 是影子 $(A_1,A_2)$ 從 $+x$ 軸量起的角度。</p>
+<h4>(a) 垂直 $(1,1,0)$ 的所有解</h4>
+<p><strong>① 高度和影子長：</strong> 長度和與 $z$ 軸的夾角一給定，$\vec A$、$z$ 軸和影子圍成斜邊 8 的直角三角形；高度 $A_3$ 是鄰邊、影子是對邊。剩下 $A_1,A_2$ 要同時落在影子圓和垂直條件的直線上，交點可能 2、1 或 0 個。</p>
+<div class="math-block">$$\begin{aligned}A_3&amp;=|\vec A|\cos30^\circ\\ \text{影子長}&amp;=|\vec A|\sin30^\circ\end{aligned}$$</div>
+<p>代入 $|\vec A|=8$：</p>
+<div class="math-block">$$\begin{aligned}A_3&amp;=8\times\tfrac{\sqrt3}{2}=4\sqrt3\\ \text{影子長}&amp;=8\times\tfrac12=4\end{aligned}$$</div>
+<p>影子長 4 表示 $A_1^2+A_2^2=4^2=16$：影子落在半徑 4 的圓上。</p>
+<p><strong>② 圓與直線 $A_1+A_2=0$ 的交點：</strong> 把 $A_2=-A_1$ 代進 $A_1^2+A_2^2=16$：</p>
+<div class="math-block">$$A_1^2+(-A_1)^2=2A_1^2=16$$</div>
+<div class="math-block">$$A_1^2=8\ \Longrightarrow\ A_1=\pm\sqrt8=\pm2\sqrt2$$</div>
+<p>對應 $A_2=-A_1=\mp2\sqrt2$，$A_3=4\sqrt3$，兩個解：</p>
+<div class="math-block">$$\begin{aligned}\vec A&amp;=(2\sqrt2,\,-2\sqrt2,\,4\sqrt3)\\ \vec A&amp;=(-2\sqrt2,\,2\sqrt2,\,4\sqrt3)\end{aligned}$$</div>
+<p><strong>③ 方位角：</strong> $\tan\varphi=\frac{A_2}{A_1}=-1$。第一個解 $A_1\gt0$、$A_2\lt0$ 在第四象限：$\varphi=-45^\circ$。第二個解 $A_1\lt0$、$A_2\gt0$ 在第二象限，計算機的 $\tan^{-1}(-1)=-45^\circ$ 要加 $180^\circ$：$\varphi=135^\circ$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}(2\sqrt2,-2\sqrt2,4\sqrt3),\ \varphi=-45^\circ\\ (-2\sqrt2,2\sqrt2,4\sqrt3),\ \varphi=135^\circ\end{gathered}}$$</div>
+<h4>(b) 垂直 $(1,1,1)$ 有沒有解</h4>
+<p><strong>① 圓與直線 $A_1+A_2=-4\sqrt3$：</strong> 垂直條件 $A_1+A_2+A_3=0$ 代入 (a) 的 $A_3=4\sqrt3$：</p>
+<div class="math-block">$$A_1+A_2=-4\sqrt3\approx-6.93$$</div>
+<p><strong>② $A_1+A_2$ 的範圍：</strong> 看影子在圓上時 $A_1+A_2$ 最多能多大，令 $A_1=4\cos\varphi$、$A_2=4\sin\varphi$。</p>
+<p class="fnote"><b>公式（疊角）：</b>$\cos\varphi+\sin\varphi=\sqrt2\sin(\varphi+45^\circ)$，其中 $\varphi$ 為方位角；本題乘上影子長 4。</p>
+<div class="math-block">$$A_1+A_2=4\sqrt2\,\sin(\varphi+45^\circ)$$</div>
+<p>所以 $A_1+A_2$ 只能在 $-4\sqrt2\approx-5.66$ 到 $4\sqrt2\approx5.66$ 之間，需要的 $-6.93$ 超出範圍：直線和圓不相交，無解。</p>
+<p><strong>③ 幾何原因：</strong> 先求 $\vec C$ 和 $z$ 軸的夾角。</p>
+<p class="fnote"><b>公式（夾角餘弦）：</b>$\cos\theta=\dfrac{\vec C\cdot\hat k}{|\vec C|}$，其中 $\theta$ 為 $\vec C$ 與 $z$ 軸夾角、$\hat k$ 為 $z$ 方向單位向量；本題 $\vec C=(1,1,1)$、$|\vec C|=\sqrt3$。</p>
+<div class="math-block">$$\cos\theta_C=\frac{1}{\sqrt3}\ \Longrightarrow\ \theta_C=54.7^\circ$$</div>
+<p>$\vec A$ 只能在以 $z$ 軸為中心、半頂角 $30^\circ$ 的圓錐上，它和 $\vec C$ 的夾角最小 $54.7^\circ-30^\circ=24.7^\circ$、最大 $54.7^\circ+30^\circ=84.7^\circ$，永遠到不了垂直需要的 $90^\circ$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{無解}\\ \vec A\text{ 與 }\vec C\text{ 的夾角最大只有 }84.7^\circ\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>換座標軸時不變的是純量；向量的分量會變，向量本身（箭頭、長度）不變。</li>
+    <li>向量 = 長度 × 單位向量；負的倍數使方向反轉。</li>
+    <li>$|\vec A|=\sqrt{A_1^2+A_2^2+A_3^2}$；由分量求角度要確認象限。</li>
+  </ol>
+</div>

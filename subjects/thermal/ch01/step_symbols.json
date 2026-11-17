@@ -1,0 +1,375 @@
+{
+ "_說明": "symbols 是本章符號總表；groups 決定總表分組；步驟用 data-sym 指定要提醒的符號（每頁只提醒第一次）。",
+ "symbols": {
+  "T": {
+   "tex": "T",
+   "zh": "溫度（絕對溫度）",
+   "unit": "K",
+   "note": "攝氏要加 273.15 才能代進 $PV=NkT$"
+  },
+  "P": {
+   "tex": "P",
+   "zh": "壓力",
+   "unit": "Pa＝N/m²",
+   "note": "1 atm＝$1.013\\times10^5$ Pa，1 bar＝$10^5$ Pa"
+  },
+  "V": {
+   "tex": "V",
+   "zh": "體積",
+   "unit": "m³",
+   "note": "1 L＝$10^{-3}$ m³"
+  },
+  "N": {
+   "tex": "N",
+   "zh": "分子（粒子）數",
+   "unit": "無"
+  },
+  "n": {
+   "tex": "n",
+   "zh": "莫耳數",
+   "unit": "mol",
+   "note": "$N=nN_A$"
+  },
+  "k": {
+   "tex": "k",
+   "zh": "波茲曼常數",
+   "unit": "J/K",
+   "note": "$1.381\\times10^{-23}$ J/K＝$8.617\\times10^{-5}$ eV/K"
+  },
+  "R": {
+   "tex": "R",
+   "zh": "氣體常數",
+   "unit": "J/(mol·K)",
+   "note": "$R=N_Ak=8.315$ J/(mol·K)"
+  },
+  "U": {
+   "tex": "U",
+   "zh": "內能（系統的總能量）",
+   "unit": "J"
+  },
+  "Q": {
+   "tex": "Q",
+   "zh": "熱：因溫差而流入系統的能量",
+   "unit": "J",
+   "note": "流入為正"
+  },
+  "W": {
+   "tex": "W",
+   "zh": "功：對系統做的功（Schroeder 的符號：外界對系統做功為正）",
+   "unit": "J",
+   "note": "第一定律 $\\Delta U=Q+W$；有些課本用系統對外做功，式子會變成 $Q-W$"
+  },
+  "m": {
+   "tex": "m",
+   "zh": "一個分子的質量（或物體質量）",
+   "unit": "kg"
+  },
+  "vrms": {
+   "tex": "v_{\\text{rms}}",
+   "zh": "方均根速率 $\\sqrt{\\overline{v^2}}$",
+   "unit": "m/s",
+   "note": "$v_{\\text{rms}}=\\sqrt{3kT/m}$"
+  },
+  "f": {
+   "tex": "f",
+   "zh": "每個分子的二次自由度數",
+   "unit": "無",
+   "note": "單原子 3、雙原子（室溫）5、固體每原子 6"
+  },
+  "gamma": {
+   "tex": "\\gamma",
+   "zh": "絕熱指數 $C_P/C_V=(f+2)/f$",
+   "unit": "無"
+  },
+  "CV": {
+   "tex": "C_V",
+   "zh": "定容熱容量 $(\\partial U/\\partial T)_V$",
+   "unit": "J/K"
+  },
+  "CP": {
+   "tex": "C_P",
+   "zh": "定壓熱容量 $(\\partial H/\\partial T)_P$",
+   "unit": "J/K"
+  },
+  "c": {
+   "tex": "c",
+   "zh": "比熱（每單位質量的熱容量）",
+   "unit": "J/(kg·K)",
+   "note": "水約 4186 J/(kg·K)＝1 cal/(g·°C)"
+  },
+  "L": {
+   "tex": "L",
+   "zh": "潛熱（相變所需的熱）",
+   "unit": "J",
+   "note": "比潛熱 $l=L/m$，冰的熔化熱 333 J/g"
+  },
+  "H": {
+   "tex": "H",
+   "zh": "焓 $H=U+PV$",
+   "unit": "J"
+  },
+  "beta": {
+   "tex": "\\beta",
+   "zh": "體膨脹係數 $\\frac{\\Delta V/V}{\\Delta T}$",
+   "unit": "K⁻¹"
+  },
+  "alpha": {
+   "tex": "\\alpha",
+   "zh": "線膨脹係數 $\\frac{\\Delta L/L}{\\Delta T}$",
+   "unit": "K⁻¹"
+  },
+  "ell": {
+   "tex": "\\ell",
+   "zh": "平均自由徑",
+   "unit": "m",
+   "note": "$\\ell\\approx\\dfrac{1}{4\\pi r^2}\\dfrac VN$"
+  },
+  "kt": {
+   "tex": "k_t",
+   "zh": "熱導率（Fourier 定律）",
+   "unit": "W/(m·K)"
+  },
+  "eta": {
+   "tex": "\\eta",
+   "zh": "黏滯係數",
+   "unit": "Pa·s"
+  },
+  "D": {
+   "tex": "D",
+   "zh": "擴散係數（Fick 定律）",
+   "unit": "m²/s"
+  },
+  "Llen": {
+   "tex": "L",
+   "zh": "長度（熱膨脹）；§1.2 的圓筒長度",
+   "unit": "m",
+   "note": "與潛熱 $L$ 同字母，看上下文"
+  },
+  "NA": {
+   "tex": "N_A",
+   "zh": "Avogadro 數（每莫耳的分子數）",
+   "unit": "mol⁻¹",
+   "note": "$6.02\\times10^{23}$"
+  },
+  "M": {
+   "tex": "M",
+   "zh": "莫耳質量（一莫耳的質量）",
+   "unit": "kg/mol",
+   "note": "空氣 0.029、$\\text{N}_2$ 0.028；$k/m=R/M$"
+  },
+  "rho": {
+   "tex": "\\rho",
+   "zh": "（質量）密度",
+   "unit": "kg/m³",
+   "note": "理想氣體 $\\rho=mP/kT=MP/RT$"
+  },
+  "g": {
+   "tex": "g",
+   "zh": "重力加速度",
+   "unit": "m/s²",
+   "note": "9.8 m/s²"
+  },
+  "z": {
+   "tex": "z",
+   "zh": "高度（海拔）",
+   "unit": "m"
+  },
+  "A": {
+   "tex": "A",
+   "zh": "面積（活塞、窗戶、洞）",
+   "unit": "m²"
+  },
+  "vx": {
+   "tex": "v_x",
+   "zh": "速度的 $x$ 分量（垂直於牆）",
+   "unit": "m/s",
+   "note": "$m\\overline{v_x^2}=kT$"
+  },
+  "Ktr": {
+   "tex": "\\overline{K}_{\\text{trans}}",
+   "zh": "分子的平均平移動能",
+   "unit": "J",
+   "note": "$\\tfrac32kT$"
+  },
+  "Bvir": {
+   "tex": "B(T)",
+   "zh": "第二維里係數",
+   "unit": "m³/mol",
+   "note": "1 cm³/mol＝$10^{-6}$ m³/mol"
+  },
+  "avdw": {
+   "tex": "a",
+   "zh": "凡得瓦常數：分子間吸引",
+   "unit": "J·m³/mol²"
+  },
+  "bvdw": {
+   "tex": "b",
+   "zh": "凡得瓦常數：每莫耳分子本身的體積",
+   "unit": "m³/mol"
+  },
+  "tau": {
+   "tex": "\\tau",
+   "zh": "特徵時間（降為 $1/e$ 所需時間）",
+   "unit": "s",
+   "note": "瀉流 $\\tau=\\frac{2V}{A}\\sqrt{m/kT}$"
+  },
+  "Bmod": {
+   "tex": "B",
+   "zh": "體積模數：$B=-V\\,dP/dV$",
+   "unit": "Pa",
+   "note": "理想氣體等溫 $B=P$、絕熱 $B=\\gamma P$（習題 1.39）"
+  },
+  "cs": {
+   "tex": "c_s",
+   "zh": "聲速 $\\sqrt{B/\\rho}$",
+   "unit": "m/s",
+   "note": "理想氣體 $c_s=\\sqrt{\\gamma kT/m}$，室溫空氣約 347 m/s"
+  },
+  "kappaT": {
+   "tex": "\\kappa_T",
+   "zh": "等溫壓縮係數 $-\\frac1V\\left(\\frac{\\partial V}{\\partial P}\\right)_T$",
+   "unit": "Pa⁻¹",
+   "note": "等溫體積模量的倒數；理想氣體 $\\kappa_T=1/P$"
+  },
+  "lsp": {
+   "tex": "l",
+   "zh": "比潛熱 $l=L/m$（每單位質量完成相變所需的熱）",
+   "unit": "J/g",
+   "note": "冰熔化 333 J/g＝80 cal/g；水沸騰 2260 J/g＝540 cal/g（1 atm）"
+  },
+  "DfH": {
+   "tex": "\\Delta_fH",
+   "zh": "生成焓：由最穩定的元素態生成一莫耳物質的焓變",
+   "unit": "kJ/mol",
+   "note": "元素態為 0；反應焓＝生成物總和 − 反應物總和"
+  },
+  "Wother": {
+   "tex": "W_{\\text{other}}",
+   "zh": "壓縮膨脹功以外的其他功（電功、攪拌等）",
+   "unit": "J",
+   "note": "定壓下 $\\Delta H=Q+W_{\\text{other}}$"
+  },
+  "G": {
+   "tex": "G",
+   "zh": "萬有引力常數",
+   "unit": "N·m²/kg²",
+   "note": "$6.674\\times10^{-11}$ N·m²/kg²"
+  },
+  "Rval": {
+   "tex": "R",
+   "zh": "R 值（熱阻）$R=\\Delta x/k_t$（§1.7，不是氣體常數）",
+   "unit": "K·m²/W",
+   "note": "英制 °F·ft²·hr/Btu，1 SI＝5.68 英制；串聯相加"
+  },
+  "Kdiff": {
+   "tex": "K",
+   "zh": "熱擴散率 $K=k_t/(\\rho c)$（熱方程的係數）",
+   "unit": "m²/s",
+   "note": "熱傳距離 $L$ 約需 $L^2/K$ 的時間"
+  },
+  "rhoD": {
+   "tex": "\\rho",
+   "zh": "密度（質量／體積）",
+   "unit": "kg/m³"
+  },
+  "vbar": {
+   "tex": "\\bar v",
+   "zh": "分子的平均熱運動速率（估計時用 $v_{\\text{rms}}$）",
+   "unit": "m/s",
+   "note": "室溫空氣約 500 m/s"
+  },
+  "rmol": {
+   "tex": "r",
+   "zh": "分子的有效半徑（碰撞時中心距 $2r$）",
+   "unit": "m",
+   "note": "空氣取 1.5 Å＝$1.5\\times10^{-10}$ m"
+  },
+  "ux": {
+   "tex": "u_x",
+   "zh": "流體的巨觀水平流速（不是分子的熱運動速度）",
+   "unit": "m/s"
+  },
+  "nconc": {
+   "tex": "n",
+   "zh": "粒子濃度 $N/V$（只在 §1.7 擴散這樣用；其他地方 $n$ 是莫耳數）",
+   "unit": "m⁻³"
+  },
+  "Jflux": {
+   "tex": "J",
+   "zh": "粒子通量：每單位時間、每單位面積淨穿過的粒子數",
+   "unit": "m⁻²·s⁻¹",
+   "note": "Fick 定律 $J_x=-D\\,dn/dx$"
+  }
+ },
+ "groups": [
+  {
+   "title": "狀態量（§1.1–1.3）",
+   "keys": [
+    "T",
+    "P",
+    "V",
+    "N",
+    "n",
+    "k",
+    "R",
+    "m",
+    "vrms",
+    "f",
+    "alpha",
+    "beta"
+   ]
+  },
+  {
+   "title": "能量、熱與功（§1.4–1.6）",
+   "keys": [
+    "U",
+    "Q",
+    "W",
+    "gamma",
+    "CV",
+    "CP",
+    "c",
+    "L",
+    "H"
+   ]
+  },
+  {
+   "title": "過程的速率（§1.7）與其他",
+   "keys": [
+    "ell",
+    "kt",
+    "eta",
+    "D",
+    "Llen",
+    "NA",
+    "M",
+    "rho",
+    "g",
+    "z",
+    "A",
+    "vx",
+    "Ktr",
+    "Bvir",
+    "avdw",
+    "bvdw",
+    "tau",
+    "Bmod",
+    "cs",
+    "kappaT",
+    "lsp",
+    "DfH",
+    "Wother",
+    "G",
+    "Rval",
+    "Kdiff",
+    "rhoD",
+    "vbar",
+    "rmol",
+    "ux",
+    "nconc",
+    "Jflux"
+   ]
+  }
+ ],
+ "steps": {}
+}

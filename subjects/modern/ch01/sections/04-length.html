@@ -1,0 +1,289 @@
+<h2>四、長度收縮 <span class="pg">課本 §1.4 · p.15–17</span></h2>
+
+<p class="lead">運動的物體在運動方向上變短。課本用宇宙射線的緲子說明：地面的人用時間膨脹解釋緲子為什麼到得了地面，緲子自己則必須看到「地面變近了」——兩個說法一致，就推出 $L=L_0/\gamma$。</p>
+
+<h3 id="lc-muon">4.1 緲子為什麼到得了地面 <span class="pg-tag">p.15–16</span></h3>
+
+<p>宇宙射線在 $6\ \text{km}$ 以上的高空撞擊大氣原子核，產生緲子（質量約電子的 207 倍，平均壽命 $t_0=2.2\ \mu\text{s}$），速率約 $0.998c$。</p>
+
+<div class="step" data-step="lc-classical" data-sym="t0">
+  <span class="step-title">不考慮相對論：飛不到</span>
+  $$vt_0=(2.994\times10^8\ \text{m/s})(2.2\times10^{-6}\ \text{s})=0.66\ \text{km}\ \ll\ 6\ \text{km}$$
+  <p>但地面上每平方公分大約每分鐘就有一個緲子穿過。</p>
+</div>
+
+<div class="step" data-step="lc-ground" data-sym="gamma">
+  <span class="step-title">地面的觀點：緲子的壽命被拉長</span>
+  <p>$2.2\ \mu\text{s}$ 是緲子靜止時的壽命（固有時間）。地面看它以 $0.998c$ 運動，壽命變成</p>
+  $$t=\gamma t_0=\frac{2.2\ \mu\text{s}}{\sqrt{1-0.998^2}}=34.8\ \mu\text{s},\qquad vt=10.4\ \text{km}$$
+</div>
+
+<div class="step" data-step="lc-muonframe" data-sym="L0,L">
+  <span class="step-title">緲子的觀點：地面變近了</span>
+  <p>跟著緲子一起飛的人看緲子是靜止的，壽命只有 $2.2\ \mu\text{s}$，只能飛 $0.66\ \text{km}$。緲子還是到了地面（兩個座標系對「緲子有沒有到地面」這個事件一定要一致），唯一的可能是：在緲子座標系中，地面量到的高度 $h_0$ 縮短成</p>
+  $$h=h_0\sqrt{1-v^2/c^2}=(10.4\ \text{km})\sqrt{1-0.998^2}=0.66\ \text{km}$$
+  <p>縮短的倍數必須和壽命拉長的倍數相同，否則兩個座標系的結論會不一樣。</p>
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.17 Eq. (1.9) Length contraction</span>
+  $$L=L_0\sqrt{1-v^2/c^2}=\frac{L_0}{\gamma}$$
+  <p>$L_0$：物體靜止的座標系量到的長度（固有長度）；$L$：相對物體以 $v$ 運動的觀察者量到的長度。只有運動方向的長度會收縮。</p>
+</div>
+
+<div class="anim" data-anim="muon"></div>
+
+<h3 id="lc-facts">4.2 收縮的性質 <span class="pg-tag">p.17</span></h3>
+
+<ul>
+  <li><strong>要接近 $c$ 才明顯</strong>（Fig. 1.10）：$1000\ \text{km/s}$ 只縮成 $99.9994\%$；$0.9c$ 縮成 $44\%$。</li>
+  <li><strong>相互的</strong>：太空船上的人看地球上的東西，也縮短同樣的倍數。</li>
+  <li><strong>固有長度最長</strong>：任何觀察者量到的長度都不會超過 $L_0$。</li>
+  <li><strong>只縮運動方向</strong>：太空船飛行時變短，但不會變窄。這也是光鐘推導中鏡子間距 $L_0$ 不變的原因。</li>
+</ul>
+
+<div class="box pitfall">
+  <span class="box-title">固有長度看「誰和物體一起靜止」</span>
+  <p>太空人身高 $6\ \text{ft}$ 是在他自己的座標系量的，就是 $L_0$。題目若說「地球上的人量到沿運動方向站著的太空人身高 $1.3\ \text{m}$」（習題 1-18，$v=0.60c$），那是 $L$，要乘 $\gamma$ 才是固有長度：$L_0=1.3\ \text{m}/0.80=1.6\ \text{m}$。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-17">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-17 · p.50</span></div>
+    <h4>躺著的太空人有多高</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-17">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-17"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An astronaut whose height on the earth is exactly 6 ft is lying parallel to the axis of a spacecraft moving at 0.90c relative to the earth. What is his height as measured by an observer in the same spacecraft? By an observer on the earth?</p></div>
+<p class="original-caption">Beiser 習題 1-17 · p.50</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在地球上身高正好 $6\ \text{ft}$ 的太空人，平躺在以 $0.90c$ 相對地球運動的太空船中，身體和船軸平行。同船的觀察者量他多高？地球上的觀察者呢？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：固有身高 $L_0=6\ \text{ft}$（在地球上靜止時量的）；太空船相對地球 $v=0.90c$；身體平行船軸，即沿運動方向。</p>
+<p><strong>① 同船觀察者：</strong> 同船觀察者和太空人沒有相對運動，量到的就是固有長度。</p>
+<div class="math-block">$$L_{\text{船}}=L_0=6\ \text{ft}$$</div>
+<p><strong>② 地球觀察者：算收縮因子：</strong> 地球看太空人以 $0.90c$ 運動，身長沿運動方向，要用長度收縮。</p>
+<p class="fnote"><b>公式（長度收縮）：</b>$L=L_0\sqrt{1-\dfrac{v^2}{c^2}}$，其中 $L_0$ 為物體靜止座標系中的固有長度、$L$ 為相對物體以 $v$ 運動的觀察者沿運動方向量到的長度；本題 $L_0=6\ \text{ft}$、$v=0.90c$。</p>
+<p>代入 $v/c=0.90$：</p>
+<div class="math-block">$$\sqrt{1-0.90^2}=\sqrt{1-0.81}=\sqrt{0.19}=0.436$$</div>
+<p><strong>③ 地球觀察者：收縮後的身高：</strong> 代入 $L_0=6\ \text{ft}$ 與上一步的收縮因子 $0.436$：</p>
+<div class="math-block">$$L=(6\ \text{ft})(0.436)=2.6\ \text{ft}$$</div>
+<div class="math-block">$$\boxed{\text{同船 }6\ \text{ft；地球上 }2.6\ \text{ft}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-18">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-18 · p.50</span></div>
+    <h4>地球上量到 1.3 m 的太空人，船上量多高</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-18">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-18"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An astronaut is standing in a spacecraft parallel to its direction of motion. An observer on the earth finds that the spacecraft speed is 0.60c and the astronaut is 1.3 m tall. What is the astronaut’s height as measured in the spacecraft?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>太空人在太空船內沿運動方向站著。地球上的觀察者發現太空船速率是 $0.60c$，太空人身高 $1.3\ \text{m}$。在太空船上量，太空人多高？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$v=0.60c$；地球量到的身高 $L=1.3\ \text{m}$ 是收縮後的長度（身高沿運動方向）；求船上量的固有長度 $L_0$。</p>
+<p><strong>① 反解固有長度：</strong> 太空人在船上靜止，船上量到的是固有長度 $L_0$，地球量到的是收縮後的 $L$。</p>
+<p class="fnote"><b>公式（長度收縮）：</b>$L=L_0\sqrt{1-v^2/c^2}$，其中 $L_0$ 為固有長度、$L$ 為相對以 $v$ 運動的觀察者沿運動方向量到的長度；本題已知 $L$、求 $L_0$。</p>
+<p>兩邊同除以 $\sqrt{1-v^2/c^2}$：</p>
+<div class="math-block">$$L_0=\frac{L}{\sqrt{1-v^2/c^2}}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $v/c=0.60$：</p>
+<div class="math-block">$$\sqrt{1-0.60^2}=\sqrt{1-0.36}=\sqrt{0.64}=0.80$$</div>
+<p>代入地球量到的 $L=1.3\ \text{m}$：</p>
+<div class="math-block">$$L_0=\frac{1.3\ \text{m}}{0.80}=1.6\ \text{m}$$</div>
+<div class="math-block">$$\boxed{L_0\approx1.6\ \text{m}\ (1.625\ \text{m})}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-19">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-19 · p.50</span></div>
+    <h4>以 0.100c 飛過的米尺要多久才通過</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-19">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-19"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>How much time does a meter stick moving at 0.100c relative to an observer take to pass the observer? The meter stick is parallel to its direction of motion.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一支米尺相對觀察者以 $0.100c$ 運動，米尺和運動方向平行。它要花多少時間才通過這位觀察者？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：米尺固有長度 $L_0=1.000\ \text{m}$（題目只說「米尺」）；$v=0.100c$，米尺平行運動方向；$c=3.00\times10^8\ \text{m/s}$。</p>
+<p><strong>① 觀察者量到的長度：</strong> 時間是觀察者用自己的鐘量的，所以長度也要用觀察者座標系中收縮後的長度。</p>
+<p class="fnote"><b>公式（長度收縮）：</b>$L=L_0\sqrt{1-\dfrac{v^2}{c^2}}$，其中 $L_0$ 為固有長度、$L$ 為觀察者沿運動方向量到的長度；本題 $L_0=1.000\ \text{m}$、$v/c=0.100$。</p>
+<div class="math-block">$$L=(1.000\ \text{m})\sqrt{1-0.100^2}=(1.000\ \text{m})\sqrt{0.99}=0.995\ \text{m}$$</div>
+<p><strong>② 通過時間：</strong> 前端經過到後端經過，米尺移動了自己一整個收縮後的長度：</p>
+<div class="math-block">$$t=\frac Lv$$</div>
+<p>代入上一步的 $L=0.995\ \text{m}$、$v=0.100\times3.00\times10^8\ \text{m/s}=3.00\times10^7\ \text{m/s}$：</p>
+<div class="math-block">$$t=\frac{0.995\ \text{m}}{3.00\times10^7\ \text{m/s}}=3.32\times10^{-8}\ \text{s}$$</div>
+<div class="math-block">$$\boxed{t=3.32\times10^{-8}\ \text{s}=33.2\ \text{ns}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-20">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-20 · p.50</span></div>
+    <h4>只剩 500 mm 的米尺</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-20">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-20"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A meter stick moving with respect to an observer appears only 500 mm long to her. What is its relative speed? How long does it take to pass her? The meter stick is parallel to its direction of motion.</p></div>
+<p class="original-caption">Beiser 習題 1-20 · p.50</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一支相對觀察者運動的米尺，在她看來只有 $500\ \text{mm}$ 長。相對速率是多少？米尺通過她要多久？（米尺和運動方向平行）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：米尺固有長度 $L_0=1.000\ \text{m}$；她量到 $L=500\ \text{mm}=0.500\ \text{m}$；米尺平行運動方向；$c=3.00\times10^8\ \text{m/s}$。</p>
+<p><strong>① 由長度比求速率：</strong> 固有長度和收縮後長度的比值就是 $\sqrt{1-\beta^2}$，直接解 $\beta$。</p>
+<p class="fnote"><b>公式（長度收縮）：</b>$\dfrac{L}{L_0}=\sqrt{1-\beta^2}$，其中 $L_0$ 為固有長度、$L$ 為觀察者沿運動方向量到的長度、$\beta=v/c$。</p>
+<div class="math-block">$$\frac{L}{L_0}=\sqrt{1-\beta^2}$$</div>
+<p>代入 $L=0.500\ \text{m}$、$L_0=1.000\ \text{m}$：</p>
+<div class="math-block">$$\begin{aligned}\sqrt{1-\beta^2}=\frac{0.500}{1.000}=0.500\ &amp;\Longrightarrow\ 1-\beta^2=0.25\\&amp;\Longrightarrow\ \beta=\sqrt{0.75}=0.866\end{aligned}$$</div>
+<div class="math-block">$$v=0.866\times(3.00\times10^8\ \text{m/s})=2.60\times10^8\ \text{m/s}$$</div>
+<p><strong>② 通過時間：</strong> 時間是她用自己的鐘量的，用她座標系裡的長度 $L=0.500\ \text{m}$（不是 $L_0$）除以速率：</p>
+<div class="math-block">$$t=\frac{L}{v}$$</div>
+<p>代入 $L=0.500\ \text{m}$ 與上一步的 $v=2.60\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$\begin{aligned}t&amp;=\frac{0.500\ \text{m}}{(0.866)(3.00\times10^8\ \text{m/s})}\\&amp;=\frac{0.500\ \text{m}}{2.60\times10^8\ \text{m/s}}=1.92\times10^{-9}\ \text{s}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{v=0.866c=2.60\times10^8\ \text{m/s},\quad t=1.92\ \text{ns}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-21">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-21 · p.50</span></div>
+    <h4>斜天線的角度變了</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-21">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-21"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A spacecraft antenna is at an angle of 10° relative to the axis of the spacecraft. If the spacecraft moves away from the earth at a speed of 0.70c, what is the angle of the antenna as seen from the earth?</p></div>
+<p class="original-caption">Beiser 習題 1-21 · p.50</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>太空船的天線和船軸夾 $10^\circ$。太空船以 $0.70c$ 遠離地球，從地球看天線和船軸夾多少度？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：船上量的天線角度 $\theta_0=10^\circ$；$\beta=0.70$，太空船沿船軸飛行（遠離或接近不影響收縮）；天線長設為 $\ell$，最後會約掉。</p>
+<p><strong>① 在船上分解天線：</strong> 長度收縮只發生在運動方向（船軸方向），垂直方向不變，所以先把天線分解成沿軸、垂直軸兩個分量。</p>
+<div class="math-block">$$\ell_x=\ell\cos10^\circ\ (\text{沿船軸}),\qquad \ell_y=\ell\sin10^\circ\ (\text{垂直船軸})$$</div>
+<p><strong>② 地球看：只有沿軸分量收縮：</strong></p>
+<p class="fnote"><b>公式（長度收縮）：</b>沿運動方向的長度 $\ell'=\ell\sqrt{1-\beta^2}$，垂直運動方向的長度不變，其中 $\ell$ 為靜止座標系中的長度、$\beta=v/c$；本題只作用在 $\ell_x$。</p>
+<div class="math-block">$$\ell_x'=\ell_x\sqrt{1-\beta^2}=\ell\cos10^\circ\sqrt{1-\beta^2},\qquad \ell_y'=\ell_y=\ell\sin10^\circ$$</div>
+<p>代入 $\beta=0.70$：</p>
+<div class="math-block">$$\sqrt{1-0.70^2}=\sqrt{1-0.49}=\sqrt{0.51}=0.714$$</div>
+<p><strong>③ 新角度：</strong> 夾角的正切＝垂直分量 ÷ 沿軸分量，$\ell$ 約掉：</p>
+<div class="math-block">$$\tan\theta'=\frac{\ell_y'}{\ell_x'}=\frac{\ell\sin10^\circ}{\ell\cos10^\circ\sqrt{1-\beta^2}}=\frac{\tan10^\circ}{\sqrt{1-\beta^2}}$$</div>
+<p>代入 $\tan10^\circ=0.176$ 與上一步的 $\sqrt{1-\beta^2}=0.714$：</p>
+<div class="math-block">$$\tan\theta'=\frac{0.176}{0.714}=0.247\quad\Longrightarrow\quad\theta'=\tan^{-1}(0.247)=13.9^\circ$$</div>
+<div class="math-block">$$\boxed{\theta'=13.9^\circ\approx14^\circ}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-04-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>太空船掠過太空站：兩邊各量到多久</h4>
+    <button type="button" class="exam-btn" data-exam="sf-04-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>固有長度 $120\ \text{m}$ 的太空船以 $0.80c$ 掠過太空站上的一個標記 P。事件 A：船頭經過 P；事件 B：船尾經過 P。(a) 太空站上量，A 到 B 隔多久？(b) 太空船上量，A 到 B 隔多久？(c) 哪一個是固有時間？兩個答案的比值應該是多少？驗證之。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：船的固有長度 $L_0=120\ \text{m}$；$v=0.80c=2.40\times10^8\ \text{m/s}$（$c=3.00\times10^8\ \text{m/s}$）；事件 A 船頭經過 P、事件 B 船尾經過 P。</p>
+<h4>(a) 太空站量的時間</h4>
+<p><strong>① $\gamma$ 與太空站看到的船長：</strong> 每個觀察者都用自己座標系的長度和速率算「時間＝長度 ÷ 速率」；太空站看船在動，船長收縮。</p>
+<p class="fnote"><b>公式（勞侖茲因子）：</b>$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}$，其中 $v$ 為相對速率；本題 $v/c=0.80$。</p>
+<div class="math-block">$$\gamma=\frac{1}{\sqrt{1-0.80^2}}=\frac{1}{\sqrt{0.36}}=\frac{1}{0.60}=\frac53$$</div>
+<p class="fnote"><b>公式（長度收縮）：</b>$L=\dfrac{L_0}{\gamma}$，其中 $L_0$ 為固有長度、$L$ 為相對運動的觀察者沿運動方向量到的長度；本題 $L_0=120\ \text{m}$。</p>
+<div class="math-block">$$L=\frac{L_0}{\gamma}=\frac{120\ \text{m}}{5/3}=72\ \text{m}$$</div>
+<p><strong>② 太空站量的時間：</strong> 從 A 到 B，船要移動自己整個（收縮後的）長度，P 才會從船頭換到船尾：</p>
+<div class="math-block">$$t_{\text{站}}=\frac{L}{v}$$</div>
+<p>代入上一步的 $L=72\ \text{m}$、$v=2.40\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$t_{\text{站}}=\frac{72\ \text{m}}{2.40\times10^8\ \text{m/s}}=3.0\times10^{-7}\ \text{s}$$</div>
+<div class="math-block">$$\boxed{t_{\text{站}}=0.30\ \mu\text{s}}$$</div>
+<h4>(b) 太空船量的時間</h4>
+<p><strong>① 船是原長，P 以 $0.80c$ 往後跑：</strong> 船上看船靜止、長 $L_0$，P 從船頭跑到船尾要走完 $L_0$：</p>
+<div class="math-block">$$t_{\text{船}}=\frac{L_0}{v}$$</div>
+<p>代入 $L_0=120\ \text{m}$、$v=2.40\times10^8\ \text{m/s}$：</p>
+<div class="math-block">$$t_{\text{船}}=\frac{120\ \text{m}}{2.40\times10^8\ \text{m/s}}=5.0\times10^{-7}\ \text{s}$$</div>
+<div class="math-block">$$\boxed{t_{\text{船}}=0.50\ \mu\text{s}}$$</div>
+<h4>(c) 固有時間與比值</h4>
+<p><strong>① 判斷固有時間：</strong> 固有時間是「兩事件在同一地點」的座標系量到的時間。A、B 都發生在 P 處，在太空站座標系中是同一地點，所以 $t_{\text{站}}$ 是固有時間 $t_0$；船上 A 在船頭、B 在船尾，不同地點。</p>
+<p><strong>② 驗證比值：</strong></p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$t=\gamma t_0$，其中 $t_0$ 為兩事件同地點的座標系量到的固有時間、$t$ 為另一個相對以 $v$ 運動的座標系量到的時間；本題預測 $t_{\text{船}}=\gamma t_{\text{站}}$。</p>
+<p>代入 (a) 的 $\gamma=\tfrac53$、$t_{\text{站}}=3.0\times10^{-7}\ \text{s}$：</p>
+<div class="math-block">$$\gamma t_{\text{站}}=\tfrac53(3.0\times10^{-7}\ \text{s})=5.0\times10^{-7}\ \text{s}=t_{\text{船}}$$</div>
+<p>和 (b) 直接算的相符，比值 $t_{\text{船}}/t_{\text{站}}=5.0/3.0=5/3=\gamma$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{太空站量到的是固有時間}\\ t_{\text{船}}/t_{\text{站}}=\gamma=5/3\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-04-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>沿對角線飛行的正方形板變成什麼形狀</h4>
+    <button type="button" class="exam-btn" data-exam="sf-04-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>邊長 $a$ 的正方形薄板（在自己座標系中），以 $0.60c$ 沿其中一條對角線的方向運動。地球上量：(a) 板是什麼形狀？(b) 前端（沿運動方向的頂點）的內角多少度？(c) 每邊多長？(d) 面積多少？為什麼面積只縮 $1/\gamma$ 而不是 $1/\gamma^2$？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：固有形狀為邊長 $a$ 的正方形；$v=0.60c$，沿一條對角線運動；正方形兩條對角線都長 $\sqrt2\,a$、互相垂直平分。</p>
+<h4>(a) 形狀</h4>
+<p><strong>① 兩條對角線：</strong> 四條邊都和運動方向斜交，改用對角線：一條平行運動方向（收縮），一條垂直（不變）。</p>
+<p class="fnote"><b>公式（勞侖茲因子）：</b>$\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}$，其中 $v$ 為板的速率；本題 $v/c=0.60$。</p>
+<div class="math-block">$$\gamma=\frac{1}{\sqrt{1-0.60^2}}=\frac{1}{0.80}=1.25$$</div>
+<p class="fnote"><b>公式（長度收縮）：</b>沿運動方向 $L=L_0/\gamma$，垂直運動方向不變，其中 $L_0$ 為固有長度；本題 $L_0=d=\sqrt2\,a=1.414a$。</p>
+<div class="math-block">$$d_\parallel=\frac{\sqrt2\,a}{\gamma}=\frac{1.414a}{1.25}=1.131a,\qquad d_\perp=\sqrt2\,a=1.414a\ (\text{不變})$$</div>
+<p><strong>② 判斷形狀：</strong> 收縮是沿同一方向均勻壓縮，中點還是中點、垂直線還是垂直，所以對角線仍互相垂直平分但不等長，這就是菱形。</p>
+<div class="math-block">$$\boxed{\text{菱形}}$$</div>
+<h4>(b) 前端頂角</h4>
+<p><strong>① 半個頂角：</strong> 從前端頂點看，半條平行對角線 $d_\parallel/2$ 是鄰邊、半條垂直對角線 $d_\perp/2$ 是對邊，前端頂角的一半 $\alpha$ 滿足</p>
+<div class="math-block">$$\tan\alpha=\frac{d_\perp/2}{d_\parallel/2}=\frac{\sqrt2a/2}{\sqrt2a/(2\gamma)}=\gamma$$</div>
+<p><strong>② 代入數值：</strong> 代入 (a) 的 $\gamma=1.25$：</p>
+<div class="math-block">$$\alpha=\tan^{-1}(1.25)=51.3^\circ,\qquad 2\alpha=102.7^\circ$$</div>
+<p>菱形相鄰兩角互補，另兩個頂角是 $180^\circ-102.7^\circ=77.3^\circ$。</p>
+<div class="math-block">$$\boxed{\text{前後頂角 }102.7^\circ\text{，左右頂角 }77.3^\circ}$$</div>
+<h4>(c) 邊長</h4>
+<p><strong>① 畢氏定理：</strong> 每條邊是兩個半條對角線組成的直角三角形的斜邊：</p>
+<div class="math-block">$$\begin{aligned}s&amp;=\sqrt{\left(\frac{d_\parallel}{2}\right)^2+\left(\frac{d_\perp}{2}\right)^2}\\&amp;=\sqrt{\frac{2a^2}{4\gamma^2}+\frac{2a^2}{4}}=a\sqrt{\frac{1+1/\gamma^2}{2}}\end{aligned}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $1/\gamma^2=0.80^2=0.64$：</p>
+<div class="math-block">$$s=a\sqrt{\frac{1+0.64}{2}}=a\sqrt{0.82}=0.906a$$</div>
+<div class="math-block">$$\boxed{s=0.906a}$$</div>
+<h4>(d) 面積</h4>
+<p><strong>① 菱形面積：</strong> 菱形面積＝兩對角線乘積的一半：</p>
+<div class="math-block">$$A=\frac{d_\parallel d_\perp}{2}=\frac{(\sqrt2a/\gamma)(\sqrt2a)}{2}=\frac{a^2}{\gamma}$$</div>
+<p>代入 $1/\gamma=0.80$：</p>
+<div class="math-block">$$A=0.80a^2$$</div>
+<p><strong>② 為什麼只縮 $1/\gamma$：</strong> 只有一個方向收縮，另一個方向不變，所以面積只乘一次 $1/\gamma$；$1/\gamma^2$ 是誤以為兩個方向都縮。</p>
+<div class="math-block">$$\boxed{A=\frac{a^2}{\gamma}=0.80a^2}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$L=L_0/\gamma$：固有長度 $L_0$ 在物體靜止的座標系量，是最長的長度。</li>
+    <li>只有運動方向收縮，垂直方向不變（斜的東西要分解）。</li>
+    <li>緲子：地面用時間膨脹、緲子用長度收縮，兩種說法的倍數都是 $\gamma$。</li>
+  </ol>
+</div>

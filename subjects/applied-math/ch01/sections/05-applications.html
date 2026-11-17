@@ -1,0 +1,582 @@
+<h2>五、應用：RC 電路與空氣阻力 <span class="pg">板書 9/16 照片 11–13</span></h2>
+
+<p class="lead">9/16 最後半小時是一階方程的物理應用：RC 電路放電（老師用分離變數、積分因子兩種方法各做一次）和交流電源驅動的 RC 電路。考古題的應用題則是 110 上期中的「$v^2$ 空氣阻力落體」。共同點：物理定律（迴路定則、牛頓第二定律）先給出一條一階方程，接下來就是前幾節的解法。</p>
+
+<p class="small muted">本節符號：$C$ 是電容，所以積分常數改用 $K$（板書也是）；$q$ 是電荷，不是第 2 節標準式右邊的 $q(x)$。</p>
+
+<h3 id="am1a-rc">5.1 RC 電路放電 <span class="pg-tag">照片 11–12</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 11）</span>
+  <p>應用例　RC-circuit: discharging（電路圖：電池 $\varepsilon$、開關 a／b、電容 $C$、電阻 $R$、電流 $i$；$q_0=C\varepsilon$）　$C\equiv\dfrac QV$　Kirchhoff's loop rule</p>
+  <p>[a] $\varepsilon-\dfrac qC-iR=0\ \to\ \dfrac qC+iR=\varepsilon$</p>
+  <p>[b] $\dfrac qC+iR=0\ \to\ R\dfrac{dq}{dt}+\dfrac qC=0$，$i=\dfrac{dq}{dt}$，$\dfrac{dq}{dt}=-\dfrac{q}{RC}$，$\displaystyle\int\frac{dq}{q}=\int-\frac{1}{RC}\,dt$</p>
+  <p>$\ln q=-\dfrac{1}{RC}t+K$，$q=e^{-\frac{1}{RC}t}\cdot K$；initial condi.：$q(0)=C\varepsilon$，$K=C\varepsilon$，$q(t)=C\varepsilon\,e^{-\frac{1}{RC}t}$</p>
+  <p>（$q$–$t$ 圖：從 $q_0$ 指數遞減）　$i=\dfrac{dq}{dt}=-\dfrac{C\varepsilon}{RC}\,e^{-\frac{1}{RC}t}$</p>
+</div>
+
+<div class="figure">
+  <div class="fig-head"><h4>板書的電路（網站重畫）</h4><span class="q">開關撥到 a：電池對電容充電；撥到 b：電池被切開，電容經電阻放電。</span></div>
+  <div class="fig-body"><div class="fig-stage"><div>
+    <svg viewBox="0 0 340 205" width="340" style="display:block;max-width:100%;height:auto;color:var(--ink)" role="img" aria-label="RC 電路：左邊電池迴路、中間開關 a 與 b、右邊電容 C 與電阻 R">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M131,60 L30,60 L30,170 L80,170"/>
+        <line x1="80" y1="156" x2="80" y2="184"/>
+        <line x1="90" y1="163" x2="90" y2="177" stroke-width="3"/>
+        <path d="M90,170 L300,170 L300,142"/>
+        <path d="M150,170 L150,95"/>
+        <path d="M178,60 L212,60"/>
+        <line x1="212" y1="44" x2="212" y2="76"/>
+        <line x1="224" y1="44" x2="224" y2="76"/>
+        <path d="M224,60 L300,60 L300,80 L310,86 L290,96 L310,106 L290,116 L310,126 L290,136 L300,142"/>
+        <line x1="175" y1="60" x2="152" y2="90" stroke-width="2.4"/>
+        <line x1="175" y1="60" x2="137" y2="60" stroke-dasharray="4 4"/>
+      </g>
+      <g fill="var(--paper)" stroke="currentColor" stroke-width="1.6">
+        <circle cx="134" cy="60" r="3.5"/><circle cx="150" cy="92" r="3.5"/><circle cx="175" cy="60" r="3.5"/>
+      </g>
+      <path d="M282,92 L282,122" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <polygon points="282,130 277,120 287,120" fill="currentColor"/>
+      <g fill="currentColor" font-size="15" font-family="serif" font-style="italic">
+        <text x="124" y="50">a</text><text x="134" y="112">b</text>
+        <text x="212" y="34">C</text><text x="318" y="116">R</text>
+        <text x="80" y="200">ε</text><text x="266" y="112">i</text>
+        <text x="236" y="40" font-size="13">q₀ = Cε</text>
+      </g>
+    </svg>
+  </div></div></div>
+</div>
+
+<p><b>迴路定則</b>（Kirchhoff's loop rule）：繞迴路一圈，電位的升降總和為零。沿電流方向，經過電池升 $\varepsilon$、經過電容降 $q/C$（由 $C\equiv Q/V$ 得 $V=q/C$）、經過電阻降 $iR$。開關在 a 時三者都在迴路裡，得 [a]；在 b 時電池不在迴路裡，得 [b]。再用 $i=\dfrac{dq}{dt}$ 把電流換成電荷，就是一條 $q(t)$ 的一階方程。</p>
+<p>[b] 的 $R\,q'+q/C=0$ 同時是<strong>可分離</strong>（右邊 $-q/RC$ 只含 $q$）與<strong>線性</strong>（$p=1/RC$、右邊 0）方程，所以老師示範了兩種方法；[a] 右邊多了常數 $\varepsilon$，仍然兩種都可以，板書沒有做，網站補在下面例題的最後一步。</p>
+
+<div class="problem" data-kind="example" id="am1-ex-rc">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/16 板書（照片 11–12）</span></div>
+    <h4>RC 電路放電：$q(t)$ 與 $i(t)$（兩種解法），並補上充電</h4>
+    <button type="button" class="exam-btn" data-exam="am1-ex-rc">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-rc"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例　RC-circuit: discharging（電路圖：電池 $\varepsilon$、開關 a／b、電容 $C$、電阻 $R$、電流 $i$；$q_0=C\varepsilon$）　$C\equiv\dfrac QV$　Kirchhoff's loop rule</p><p>[a] $\varepsilon-\dfrac qC-iR=0\to\dfrac qC+iR=\varepsilon$　[b] $\dfrac qC+iR=0\to R\dfrac{dq}{dt}+\dfrac qC=0$，$i=\dfrac{dq}{dt}$</p><p>方法二　引入 $F=e^{\int\frac{1}{RC}dt}$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>電容 $C$ 先由電動勢 $\varepsilon$ 的電池充飽（$q_0=C\varepsilon$），$t=0$ 時開關由 a 撥到 b，電容經電阻 $R$ 放電。求 $q(t)$ 與 $i(t)$。（板書用分離變數、積分因子兩種方法；網站另補：開關撥到 a、電容從 $q=0$ 開始充電時的 $q(t)$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>迴路方程</td><td>$\dfrac qC+iR=0$</td><td>板書 [b]：開關在 b，電池不在迴路</td></tr>
+          <tr><td>電流與電荷</td><td>$i=\dfrac{dq}{dt}$</td><td>板書；電流就是電容電荷的變化率</td></tr>
+          <tr><td>初始電荷</td><td>$q(0)=C\varepsilon$</td><td>圖旁的「$q_0=C\varepsilon$」：先充飽，電容電壓等於 $\varepsilon$</td></tr>
+          <tr><td>充電（補充）</td><td>$\dfrac qC+iR=\varepsilon$，$q(0)=0$</td><td>板書 [a]；「從 $q=0$ 開始」是網站假設的初始條件</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：放電的 $q(t)$、$i(t)$；充電的 $q(t)$（補充）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>迴路定則給的是 $q$ 和 $i=q'$ 的關係，<b>所以</b>代換後得到一階方程 $Rq'+q/C=0$。<b>因為</b>它的右邊 $-q/RC$ 只含 $q$，<b>所以</b>可以分離（方法一）；<b>又因為</b>它是 $q'+\frac{1}{RC}q=0$ 的線性標準式，<b>所以</b>也可以乘積分因子 $e^{t/RC}$（方法二）。兩種方法必須給同一個答案。</p>
+      <p>充電時右邊多了 $\varepsilon/R$，分離變數要先移項湊成 $q-C\varepsilon$，積分因子法則照做不誤，<b>所以</b>補充的部分用積分因子法。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-ex-rc-s1" data-sym="RC,qi">
+        <span class="step-title">寫出放電方程</span>
+        $$\frac qC+R\frac{dq}{dt}=0\ \Longrightarrow\ \frac{dq}{dt}=-\frac{q}{RC}$$
+      </div>
+      <div class="step" data-step="am1-ex-rc-s2" data-sym="Cst">
+        <span class="step-title">方法一：分離變數</span>
+        $$\int\frac{dq}{q}=\int-\frac{1}{RC}\,dt\ \Longrightarrow\ \ln q=-\frac{t}{RC}+K_1\ \Longrightarrow\ q=e^{K_1}e^{-t/RC}=K\,e^{-t/RC}$$
+        <p>板書直接寫 $q=e^{-\frac{1}{RC}t}\cdot K$：那個 $K$ 其實是 $e^{K_1}$，換了名字（第 1 節的「常數乘在外面」）。$q>0$，所以 $\ln q$ 不用絕對值。</p>
+      </div>
+      <div class="step" data-step="am1-ex-rc-s3" data-sym="eps">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $t=0$、$q=C\varepsilon$（圖旁「$q_0=C\varepsilon$」）：$C\varepsilon=K\,e^0$，$K=C\varepsilon$。</p>
+        $$q(t)=C\varepsilon\,e^{-t/RC}$$
+      </div>
+      <div class="step" data-step="am1-ex-rc-s4" data-sym="tau">
+        <span class="step-title">電流</span>
+        $$i=\frac{dq}{dt}=C\varepsilon\cdot\left(-\frac{1}{RC}\right)e^{-t/RC}=-\frac{C\varepsilon}{RC}e^{-t/RC}=-\frac{\varepsilon}{R}\,e^{-t/RC}$$
+        <p>負號表示電流方向和圖上假設的 $i$ 相反（電容的正電荷流出去）。$\tau=RC$ 叫時間常數：每過 $\tau$，電荷剩 $1/e\approx36.8\%$。</p>
+      </div>
+      <div class="step" data-step="am1-ex-rc-s5" data-sym="F">
+        <span class="step-title">方法二：積分因子（照片 12）</span>
+        <p>標準式 $\dfrac{dq}{dt}+\boxed{\dfrac{1}{RC}}\,q=0$，$p=\dfrac1{RC}$ 是常數：</p>
+        $$F=e^{\int\frac{1}{RC}dt}=e^{t/RC},\qquad e^{t/RC}\frac{dq}{dt}+\frac{1}{RC}e^{t/RC}q=\frac{d}{dt}\Big(e^{t/RC}q\Big)=0$$
+        $$e^{t/RC}q=\text{Const}=K\ \Longrightarrow\ q=K\,e^{-t/RC}$$
+        <p>和方法一相同，代初始條件同樣得 $K=C\varepsilon$。</p>
+      </div>
+      <div class="step" data-step="am1-ex-rc-s6">
+        <span class="step-title"><span class="added">網站補充</span>充電：開關在 a，$q(0)=0$</span>
+        <p>板書 [a]：$R\dfrac{dq}{dt}+\dfrac qC=\varepsilon$，即 $q'+\dfrac{1}{RC}q=\dfrac{\varepsilon}{R}$。同一個 $F=e^{t/RC}$：</p>
+        $$\frac{d}{dt}\Big(e^{t/RC}q\Big)=\frac{\varepsilon}{R}e^{t/RC}\ \Longrightarrow\ e^{t/RC}q=\frac{\varepsilon}{R}\cdot RC\,e^{t/RC}+K=C\varepsilon\,e^{t/RC}+K$$
+        <p class="sub">代入 $q(0)=0$（假設電容一開始沒電）：$0=C\varepsilon+K$，$K=-C\varepsilon$。</p>
+        $$q(t)=C\varepsilon\big(1-e^{-t/RC}\big),\qquad i=\frac{dq}{dt}=\frac{\varepsilon}{R}e^{-t/RC}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>放電：$q(t)=C\varepsilon\,e^{-t/RC}$，$i(t)=-\dfrac{\varepsilon}{R}e^{-t/RC}$；充電（補充）：$q(t)=C\varepsilon(1-e^{-t/RC})$，$i=\dfrac{\varepsilon}{R}e^{-t/RC}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>放電：$Rq'+q/C=-\varepsilon e^{-t/RC}+\varepsilon e^{-t/RC}=0$ ✔，$q(0)=C\varepsilon$ ✔。充電：$t\to\infty$ 時 $q\to C\varepsilon$（電容電壓等於電池），$t=0$ 時 $i=\varepsilon/R$（電容像短路）✔。單位：$RC$ 是 $\Omega\cdot\text{F}=\frac{\text V}{\text A}\cdot\frac{\text C}{\text V}=\text s$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="figure">
+  <div class="fig-head"><h4>放電與充電的 $q(t)$（網站補畫）</h4><span class="q">兩條曲線在 $t=\tau$ 分別是 $36.8\%$ 與 $63.2\%$ 的 $C\varepsilon$。</span></div>
+  <div class="fig-body"><div class="fig-stage"><div>
+    <svg viewBox="0 0 330 185" width="330" style="display:block;max-width:100%;height:auto;color:var(--ink)" role="img" aria-label="q 對 t 的圖：放電曲線從 Cε 指數遞減，充電曲線從 0 上升趨近 Cε">
+      <g fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M40,160 L40,25"/><path d="M30,150 L312,150"/>
+        <path d="M40,40 L305,40" stroke-dasharray="3 4" stroke-opacity="0.6"/>
+        <path d="M92,150 L92,36" stroke-dasharray="3 4" stroke-opacity="0.6"/>
+      </g>
+      <polygon points="40,20 36,30 44,30" fill="currentColor"/>
+      <polygon points="318,150 308,146 308,154" fill="currentColor"/>
+      <path d="M40.0,40.0 L53.0,64.3 L66.0,83.3 L79.0,98.0 L92.0,109.5 L105.0,118.5 L118.0,125.5 L131.0,130.9 L144.0,135.1 L157.0,138.4 L170.0,141.0 L183.0,143.0 L196.0,144.5 L209.0,145.7 L222.0,146.7 L235.0,147.4 L248.0,148.0 L261.0,148.4 L274.0,148.8 L287.0,149.0 L300.0,149.3" fill="none" stroke="var(--blue)" stroke-width="2.2"/>
+      <path d="M40.0,150.0 L53.0,125.7 L66.0,106.7 L79.0,92.0 L92.0,80.5 L105.0,71.5 L118.0,64.5 L131.0,59.1 L144.0,54.9 L157.0,51.6 L170.0,49.0 L183.0,47.0 L196.0,45.5 L209.0,44.3 L222.0,43.3 L235.0,42.6 L248.0,42.0 L261.0,41.6 L274.0,41.2 L287.0,41.0 L300.0,40.7" fill="none" stroke="var(--red)" stroke-width="2.2"/>
+      <circle cx="92" cy="109.5" r="3.5" fill="var(--blue)"/><circle cx="92" cy="80.5" r="3.5" fill="var(--red)"/>
+      <g fill="currentColor" font-size="13">
+        <text x="8" y="44">Cε</text><text x="34" y="18" font-style="italic">q</text><text x="314" y="168" font-style="italic">t</text>
+        <text x="86" y="168">τ</text><text x="36" y="168">0</text>
+        <text x="150" y="128" fill="var(--blue)">放電 Cε e^(−t/τ)</text>
+        <text x="150" y="66" fill="var(--red)">充電 Cε(1 − e^(−t/τ))</text>
+      </g>
+    </svg>
+  </div></div></div>
+</div>
+
+<h3 id="am1a-ac">5.2 交流電源驅動的 RC 電路 <span class="pg-tag">照片 12–13</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 12 右、照片 13）</span>
+  <p>應用例二　AC driving RC-circuit（電路圖：交流電源 ~、電容 $C$、電阻 $R$ 串聯）</p>
+  $$\frac{dq}{dt}+\frac{q}{RC}=\frac{V_0}{R}\sin\omega t,\qquad\text{引入 }F=e^{\frac{1}{RC}t}$$
+  $$\int\frac{d}{dt}\Big(e^{\frac{1}{RC}t}q\Big)dt=\int\frac{V_0}{R}\sin\omega t\;e^{\frac{1}{RC}t}\,dt$$
+  $$e^{\frac{1}{RC}t}q=\frac{CV_0\,e^{\frac{1}{RC}t}}{C^2R^2\omega^2+1}\sin(\omega t)-\frac{C^2RV_0\,\omega\,e^{\frac{1}{RC}t}}{C^2R^2\omega^2+1}\cos(\omega t)+K e^{-\frac{1}{RC}t}\ \ (\text{兩邊的 }e^{\frac{1}{RC}t}\text{ 劃掉})$$
+  <p>（旁註：前兩項可合成 $\sin(\omega t+\phi)$ or $\cos(\omega t+\phi)$）</p>
+</div>
+
+<p>板書最後一行是「同時」做了兩件事：把右邊積分的結果寫出來，再把兩邊的 $e^{t/RC}$ 劃掉（橘色）——所以積分常數 $K$ 除過 $e^{t/RC}$ 後變成 $Ke^{-t/RC}$。照片沒拍到電源電壓的式子，從方程右邊 $\dfrac{V_0}{R}\sin\omega t$ 推回來，電源是 $V(t)=V_0\sin\omega t$，迴路方程 $V(t)-\dfrac qC-iR=0$。</p>
+
+<div class="problem" data-kind="example" id="am1-ex-ac">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/16 板書（照片 12–13）</span></div>
+    <h4>交流驅動 RC：$\dfrac{dq}{dt}+\dfrac{q}{RC}=\dfrac{V_0}{R}\sin\omega t$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-ex-ac">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-ac"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>應用例二　AC driving RC-circuit（電路圖：交流電源、電容 $C$、電阻 $R$ 串聯）</p><p>$\dfrac{dq}{dt}+\dfrac{q}{RC}=\dfrac{V_0}{R}\sin\omega t$，引入 $F=e^{\frac{1}{RC}t}$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>電阻 $R$、電容 $C$ 與交流電源 $V_0\sin\omega t$ 串聯。解電荷 $q(t)$ 的方程 $\dfrac{dq}{dt}+\dfrac{q}{RC}=\dfrac{V_0}{R}\sin\omega t$。（網站另補：寫成振幅、相位的形式，以及 $q(0)=0$ 時的 $K$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式係數</td><td>$p=\dfrac{1}{RC}$（常數）</td><td>$q$ 前面的係數</td></tr>
+          <tr><td>右邊</td><td>$\dfrac{V_0}{R}\sin\omega t$</td><td>電源電壓除以 $R$（迴路定則除以 $R$）</td></tr>
+          <tr><td>積分因子</td><td>$F=e^{t/RC}$</td><td>板書「引入 $F=e^{\frac1{RC}t}$」</td></tr>
+          <tr><td>初始條件</td><td>板書沒給</td><td>答案留 $K$；補充時假設 $q(0)=0$（電容原本沒電）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：通解 $q(t)$；（補充）穩態的振幅與相位、$q(0)=0$ 的 $K$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $q$ 與 $q'$ 都是一次方、係數是常數，右邊只含 $t$，<b>所以</b>是線性方程，用積分因子 $e^{t/RC}$。不能分離：右邊是「$\sin\omega t$ 減 $q/RC$」，拆不成乘積。</p>
+      <p><b>因為</b>乘上 $F$ 後要積 $e^{t/RC}\sin\omega t$，<b>所以</b>用第 2 節的公式 $\int e^{at}\sin bt\,dt=\dfrac{e^{at}(a\sin bt-b\cos bt)}{a^2+b^2}$（分部積分兩次的結果），代 $a=\frac1{RC}$、$b=\omega$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-ex-ac-s1" data-sym="eps,F">
+        <span class="step-title">乘積分因子</span>
+        $$\frac{d}{dt}\Big(e^{t/RC}q\Big)=\frac{V_0}{R}\,e^{t/RC}\sin\omega t$$
+      </div>
+      <div class="step" data-step="am1-ex-ac-s2">
+        <span class="step-title">積右邊</span>
+        <p class="sub">代入 $a=\dfrac1{RC}$、$b=\omega$（步驟 1 的指數與頻率）：$a^2+b^2=\dfrac{1}{R^2C^2}+\omega^2=\dfrac{1+\omega^2R^2C^2}{R^2C^2}$。</p>
+        $$\int\frac{V_0}{R}e^{t/RC}\sin\omega t\,dt=\frac{V_0}{R}\cdot\frac{R^2C^2}{1+\omega^2R^2C^2}\,e^{t/RC}\left(\frac{\sin\omega t}{RC}-\omega\cos\omega t\right)$$
+        $$=\frac{e^{t/RC}}{1+\omega^2R^2C^2}\Big(CV_0\sin\omega t-\omega RC^2V_0\cos\omega t\Big)$$
+        <p>最後一步把 $\frac{V_0}{R}\cdot R^2C^2$ 乘進括號：$\frac{V_0R C^2}{RC}=CV_0$、$V_0RC^2\omega$，和板書的 $CV_0$、$C^2RV_0\omega$ 一致。</p>
+      </div>
+      <div class="step" data-step="am1-ex-ac-s3" data-sym="Cst">
+        <span class="step-title">加常數、除以 $e^{t/RC}$</span>
+        $$q(t)=\frac{CV_0}{1+\omega^2R^2C^2}\sin\omega t-\frac{\omega RC^2V_0}{1+\omega^2R^2C^2}\cos\omega t+K\,e^{-t/RC}$$
+        <p>前兩項是<b>穩態</b>（跟著電源以 $\omega$ 振盪），$Ke^{-t/RC}$ 是<b>暫態</b>，幾個 $\tau=RC$ 之後就消失，所以長時間後的行為與初始條件無關。</p>
+      </div>
+      <div class="step" data-step="am1-ex-ac-s4" data-sym="tau">
+        <span class="step-title"><span class="added">網站補充</span>合成一個正弦（板書旁註）</span>
+        <p>令 $\tan\phi=\omega RC$，則 $\cos\phi=\dfrac{1}{\sqrt{1+\omega^2R^2C^2}}$、$\sin\phi=\dfrac{\omega RC}{\sqrt{1+\omega^2R^2C^2}}$。用 $\sin(\omega t-\phi)=\sin\omega t\cos\phi-\cos\omega t\sin\phi$：</p>
+        $$q_{\text{穩態}}=\frac{CV_0}{\sqrt{1+\omega^2R^2C^2}}\,\sin(\omega t-\phi),\qquad\phi=\tan^{-1}(\omega RC)$$
+        <p>電荷比電源<b>落後</b>相位 $\phi$（$0\lt\phi\lt\frac\pi2$），所以板書旁註的 $\sin(\omega t+\phi)$ 中 $\phi$ 取負值。</p>
+      </div>
+      <div class="step" data-step="am1-ex-ac-s5">
+        <span class="step-title"><span class="added">網站補充</span>若 $q(0)=0$</span>
+        <p class="sub">代入 $t=0$、$q=0$（假設電容原本沒電）：$0=0-\dfrac{\omega RC^2V_0}{1+\omega^2R^2C^2}+K$。</p>
+        $$K=\frac{\omega RC^2V_0}{1+\omega^2R^2C^2}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$q(t)=\dfrac{CV_0(\sin\omega t-\omega RC\cos\omega t)}{1+\omega^2R^2C^2}+Ke^{-t/RC}=\dfrac{CV_0}{\sqrt{1+\omega^2R^2C^2}}\sin(\omega t-\phi)+Ke^{-t/RC}$，$\tan\phi=\omega RC$；$q(0)=0$ 時 $K=\dfrac{\omega RC^2V_0}{1+\omega^2R^2C^2}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\omega\to0$（電源變化很慢）：振幅 $\to CV_0$、$\phi\to0$，電容電壓跟得上電源 ✔。$\omega\to\infty$：振幅 $\approx\dfrac{V_0}{\omega R}\to0$、$\phi\to\frac\pi2$，電容來不及充電 ✔。把穩態兩項代回：$q'$ 的 $\cos$ 項 $\dfrac{\omega CV_0}{1+\omega^2R^2C^2}$ 與 $\dfrac{q}{RC}$ 的 $\cos$ 項 $-\dfrac{\omega CV_0}{1+\omega^2R^2C^2}$ 抵消；$\sin$ 項 $\dfrac{\omega^2RC^2V_0+V_0/R}{1+\omega^2R^2C^2}=\dfrac{V_0}{R}$ ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am1a-drag">5.3 考古題：$v^2$ 空氣阻力的落體 <span class="pg-tag">110 上期中第 2 題</span></h3>
+
+<p>板書這天沒有講力學應用，但 110 上期中考了一題：牛頓第二定律 $m\dfrac{dv}{dt}=\sum F$ 本身就是 $v(t)$ 的一階方程。和 113 上 $y'+y^2=9$（第 1 節）是同一個數學結構：右邊「常數減平方」，可分離，答案是 $\tanh$。</p>
+
+<div class="problem" data-kind="exam" id="am1-110a-m2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2021.11.09 第 2 題（110上）· 109級下學期第 1 次期中 第 2 題</span></div>
+    <h4>從靜止落下、阻力正比於 $v^2$：求 $v(t)$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-110a-m2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-110a-m2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2021.11.09)　20 points for each problem</p><p>2. An object of mass $m$ falls from rest under gravity subject to an air resistance proportional to the square of its velocity. Taking the $y$ axis as positive down, find $v$ as a function of $t$.</p><p>（109級下學期應數(第1次期中)：2. A body of mass $m$ falls vertically downward through a medium offering a resistance proportional to the square of the instantaneous velocity $v$. (a) Determine the differential equation for the velocity $v$ of the body. (b) If the initial condition is $v(0)=0$, find $v(t)$.　Ans: (a) $m\dfrac{dv}{dt}=-kv^2+mg$ $(k>0)$ (b) $v(t)=\sqrt{\dfrac{mg}{k}}\,\dfrac{e^{2\sqrt{\frac{kg}{m}}t}-1}{e^{2\sqrt{\frac{kg}{m}}t}+1}$）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(20 分) 質量 $m$ 的物體在重力下由靜止落下，空氣阻力正比於速度的平方。取 $y$ 軸向下為正，求 $v$ 對 $t$ 的函數。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>質量</td><td>$m$</td><td>「An object of mass $m$」</td></tr>
+          <tr><td>初速</td><td>$v(0)=0$</td><td>「falls <b>from rest</b>」（題目沒寫數字，要自己讀出來）</td></tr>
+          <tr><td>重力</td><td>$+mg$（向下為正）</td><td>「under gravity」＋「$y$ axis as positive down」；$g$ 題目沒給，保留符號</td></tr>
+          <tr><td>阻力</td><td>$-kv^2$，$k>0$</td><td>「proportional to the square of its velocity」：比例常數題目沒命名，自己設 $k$；阻力和運動方向（向下）相反，所以取負</td></tr>
+          <tr><td>配分</td><td>20 分</td><td>考卷「20 points for each problem」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$v(t)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目要的是速度對時間的關係，<b>所以</b>用牛頓第二定律寫 $m\dfrac{dv}{dt}=mg-kv^2$：這是 $v(t)$ 的一階方程，右邊<b>只含 $v$</b>，<b>所以</b>是可分離方程（它有 $v^2$，不是線性）。</p>
+      <p><b>因為</b>物體一直向下運動（$v\ge0$），阻力 $kv^2$ 的方向固定向上，一條方程管到底；而右邊 $mg-kv^2=0$ 給出平衡（終端）速度 $v_t=\sqrt{mg/k}$，<b>所以</b>先定義 $v_t$ 讓式子變乾淨，再用部分分式積分。由靜止出發，$v$ 從 0 增加、永遠不會超過 $v_t$，絕對值可以拿掉。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-110a-m2-s1" data-sym="kdrag">
+        <span class="step-title">牛頓第二定律</span>
+        $$m\frac{dv}{dt}=mg-kv^2$$
+      </div>
+      <div class="step" data-step="am1-110a-m2-s2" data-sym="vt">
+        <span class="step-title">引入終端速度，分離變數</span>
+        <p>令 $v_t=\sqrt{\dfrac{mg}{k}}$（右邊為 0 的速度），則 $mg=kv_t^2$，方程變成</p>
+        $$\frac{dv}{dt}=\frac km\big(v_t^2-v^2\big)\ \Longrightarrow\ \int\frac{dv}{v_t^2-v^2}=\int\frac km\,dt$$
+      </div>
+      <div class="step" data-step="am1-110a-m2-s3">
+        <span class="step-title">部分分式積分</span>
+        <p>$\dfrac{1}{v_t^2-v^2}=\dfrac{1}{2v_t}\left(\dfrac{1}{v_t-v}+\dfrac{1}{v_t+v}\right)$，在 $0\le v\lt v_t$：</p>
+        $$\frac{1}{2v_t}\ln\frac{v_t+v}{v_t-v}=\frac km\,t+C$$
+        <p class="sub">代入 $t=0$、$v=0$（題目「from rest」）：$\frac{1}{2v_t}\ln1=0=C$，所以 $C=0$。</p>
+      </div>
+      <div class="step" data-step="am1-110a-m2-s4">
+        <span class="step-title">解出 $v$</span>
+        <p>乘 $2v_t$、取指數。指數的係數 $\dfrac{2kv_t}{m}=\dfrac{2k}{m}\sqrt{\dfrac{mg}{k}}=2\sqrt{\dfrac{gk}{m}}$：</p>
+        $$\frac{v_t+v}{v_t-v}=e^{2\sqrt{gk/m}\,t}\ \Longrightarrow\ v=v_t\,\frac{e^{2\sqrt{gk/m}\,t}-1}{e^{2\sqrt{gk/m}\,t}+1}=v_t\tanh\!\left(\sqrt{\frac{gk}{m}}\,t\right)$$
+        <p>（和第 1 節 113 上期中的解法一模一樣：交叉相乘、再上下同除 $e^{\sqrt{gk/m}\,t}$。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$v(t)=\sqrt{\dfrac{mg}{k}}\tanh\!\left(\sqrt{\dfrac{gk}{m}}\,t\right)$，其中 $k$ 是阻力 $kv^2$ 的比例常數；$t\to\infty$ 時趨近終端速度 $\sqrt{mg/k}$。</p><p>109 級下第 1 次期中第 2 題是同一題分兩小題：(a) 寫出方程 $m\dfrac{dv}{dt}=-kv^2+mg$（$k>0$，即步驟 1）；(b) $v(0)=0$ 時的 $v(t)$，該卷答案寫成指數形式 $\sqrt{\dfrac{mg}{k}}\,\dfrac{e^{2\sqrt{kg/m}\,t}-1}{e^{2\sqrt{kg/m}\,t}+1}$，就是上面最後一步 tanh 之前的那個式子。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$t$ 很小時 $\tanh u\approx u$：$v\approx\sqrt{\frac{mg}{k}}\sqrt{\frac{gk}{m}}\,t=gt$，回到自由落體 ✔。$v(0)=0$ ✔。$m\dot v=mg\,\mathrm{sech}^2(\cdot)=mg(1-\tanh^2)=mg-kv^2$ ✔。單位：$k$ 是 kg/m，$\sqrt{gk/m}$ 是 1/s ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am1a-old">5.4 更早年級的考古題：冷卻與交流 RC <span class="pg-tag">108 級下 First Order ODE · 109 級上 Euler Formula</span></h3>
+
+<p>108 級下的 First Order ODE 卷有兩題應用（牛頓冷卻定律、交流 RC 電路的電流），109 級上第 2 次期中（Euler Formula 卷）也有一題交流 RC。後兩題和 5.2 節的板書例題是同一個電路，只是改問電流 $i$、電源改成 $\cos$ 或 $\sin$。（109 級下第 1 次期中第 2 題的 $v^2$ 阻力落體和 5.3 節的 110 上考古題同一題，收在那張卡。）</p>
+
+<div class="problem" data-kind="exam" id="am1-108b-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級下學期 First Order ODE 第 2 題</span></div>
+    <h4>牛頓冷卻定律：蛋糕從 $100^\circ$C 冷到 $50^\circ$C 要多久</h4>
+    <button type="button" class="exam-btn" data-exam="am1-108b-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-108b-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>First Order ODE</p><p>2. Newton's law of cooling states that the time rate at which a body cools is proportional to the difference between the temperature of the body and the temperature of the surrounding medium. If $T(t)$ denotes the temperature of the body at any time $t$, and $T_s$ is the constant temperature of the surrounding medium.</p><p>(a) Determine the differential equation for the temperature of the body.</p><p>(b) When a cake is removed from a baking oven, its temperature is $T(0)=100^\circ$C. Put the cake on a table in the room temperature $25^\circ$C. After 3 min., the temperature of the cake is $T(3)=90^\circ$C. How long will it take to cool off to $50^\circ$C?</p><p>Ans: (a) $\dfrac{dT}{dt}=-k(T-T_s)$, $(k>0)$ (b) $\dfrac{\ln3}{\frac13\ln\frac{15}{13}}$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>牛頓冷卻定律：物體冷卻的時間變化率正比於物體溫度與周圍介質溫度之差。$T(t)$ 是物體在時間 $t$ 的溫度，$T_s$ 是周圍介質的固定溫度。(a) 寫出物體溫度的微分方程。(b) 蛋糕剛從烤箱拿出來時 $T(0)=100^\circ$C，放在室溫 $25^\circ$C 的桌上，3 分鐘後 $T(3)=90^\circ$C。要多久才會冷到 $50^\circ$C？（考卷附的答案：(a) $\frac{dT}{dt}=-k(T-T_s)$，$k>0$；(b) $\dfrac{\ln3}{\frac13\ln\frac{15}{13}}$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>定律</td><td>$\dfrac{dT}{dt}\propto T-T_s$</td><td>「time rate … is proportional to the difference」</td></tr>
+          <tr><td>比例常數</td><td>$k>0$（未知，要用資料求）</td><td>題目沒給名字，自己設；「cools」⟹ $T>T_s$ 時 $T$ 下降，所以要加負號</td></tr>
+          <tr><td>初溫</td><td>$T(0)=100^\circ$C</td><td>「its temperature is $T(0)=100^\circ$C」</td></tr>
+          <tr><td>室溫</td><td>$T_s=25^\circ$C</td><td>「the room temperature $25^\circ$C」</td></tr>
+          <tr><td>量測值</td><td>$T(3)=90^\circ$C</td><td>「After 3 min., … $T(3)=90^\circ$C」：時間單位是分鐘</td></tr>
+          <tr><td>目標溫度</td><td>$50^\circ$C</td><td>「cool off to $50^\circ$C」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 微分方程；(b) $T(t^*)=50^\circ$C 的時間 $t^*$（分鐘）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目給的是「變化率正比於溫差」，<b>所以</b>直接翻成 $T'=-k(T-T_s)$；負號是因為物體比環境熱時溫度要往下掉，$k$ 才能取正的。</p>
+      <p><b>因為</b>右邊只含 $T$（$T_s$ 是常數），<b>所以</b>是可分離方程，解出 $T-T_s$ 的指數衰減。式子裡有兩個未知常數（積分常數與 $k$），<b>所以</b>用題目的兩個資料點 $T(0)$、$T(3)$ 各定一個，再解 $T=50$ 的時間。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-108b-2-s1">
+        <span class="step-title">(a) 微分方程</span>
+        $$\frac{dT}{dt}=-k\,(T-T_s),\qquad k>0$$
+      </div>
+      <div class="step" data-step="am1-108b-2-s2" data-sym="Cst">
+        <span class="step-title">分離變數求通解</span>
+        $$\int\frac{dT}{T-T_s}=\int-k\,dt\ \Longrightarrow\ \ln|T-T_s|=-kt+C_1\ \Longrightarrow\ T-T_s=Ke^{-kt}$$
+        <p class="sub">代入 $t=0$、$T=100$、$T_s=25$（題目）：$K=100-25=75$，</p>
+        $$T(t)=25+75\,e^{-kt}$$
+      </div>
+      <div class="step" data-step="am1-108b-2-s3">
+        <span class="step-title">用 $T(3)=90$ 求 $k$</span>
+        <p class="sub">代入 $t=3$、$T=90$（題目「After 3 min.」）：</p>
+        $$90=25+75e^{-3k}\ \Longrightarrow\ e^{-3k}=\frac{65}{75}=\frac{13}{15}\ \Longrightarrow\ k=\frac13\ln\frac{15}{13}\approx\frac{0.14310}{3}=0.04770\ \text{min}^{-1}$$
+      </div>
+      <div class="step" data-step="am1-108b-2-s4">
+        <span class="step-title">求冷到 $50^\circ$C 的時間</span>
+        <p class="sub">令 $T(t^*)=50$（題目），用步驟 3 的 $k$：</p>
+        $$50=25+75e^{-kt^*}\ \Longrightarrow\ e^{-kt^*}=\frac13\ \Longrightarrow\ t^*=\frac{\ln3}{k}=\frac{\ln3}{\frac13\ln\frac{15}{13}}=\frac{3\ln3}{\ln(15/13)}$$
+        $$t^*\approx\frac{3\times1.09861}{0.14310}\approx23.0\ \text{min}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\dfrac{dT}{dt}=-k(T-T_s)$，$k>0$；(b) $t^*=\dfrac{\ln3}{\frac13\ln\frac{15}{13}}=\dfrac{3\ln3}{\ln(15/13)}\approx23.0$ 分鐘（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$T(3)=25+75\cdot\frac{13}{15}=25+65=90$ ✔；$T(23.03)=25+75e^{-0.0477\times23.03}=25+75\times0.3333=50$ ✔。合理性：前 3 分鐘降 10 度（溫差 75 時降得快），之後溫差越來越小、降得越來越慢，從 90 降到 50 還要 20 分鐘。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-108b-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級下學期 First Order ODE 第 3 題</span></div>
+    <h4>RC 串聯接 $V=V_0\cos\omega t$：求電流 $i(t)$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-108b-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-108b-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>First Order ODE</p><p>3. Find the solutions of the current for an $RC$ series circuit with $V=V_0\cos\omega t$.</p><p>Ans: $i(t)=\dfrac{V_0}{R}\dfrac{1}{(\frac{1}{RC})^2+\omega^2}\left(\dfrac{-\omega\sin\omega t}{RC}+\omega^2\cos\omega t\right)+Ke^{-\frac{t}{RC}}$, where $K$ is constant.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $RC$ 串聯電路接上電源 $V=V_0\cos\omega t$ 時電流的解。（考卷附的答案：$i(t)=\dfrac{V_0}{R}\dfrac{1}{(\frac1{RC})^2+\omega^2}\Big(\dfrac{-\omega\sin\omega t}{RC}+\omega^2\cos\omega t\Big)+Ke^{-\frac{t}{RC}}$，$K$ 為常數。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>電路</td><td>電源、電阻 $R$、電容 $C$ 串成一圈</td><td>「an $RC$ series circuit」</td></tr>
+          <tr><td>電源</td><td>$V(t)=V_0\cos\omega t$</td><td>「with $V=V_0\cos\omega t$」</td></tr>
+          <tr><td>定律</td><td>迴路定則 $V-iR-\dfrac qC=0$，$i=\dfrac{dq}{dt}$</td><td>題目沒寫，用 5.1 節板書的 Kirchhoff loop rule</td></tr>
+          <tr><td>初始條件</td><td>沒給</td><td>只要「the solutions」：保留常數 $K$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$i(t)$ 的通解（穩態＋暫態）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>迴路定則同時含 $q$ 和 $i$，而題目要的是 $i$，<b>所以</b>把整條方程對 $t$ 微分：$\dfrac{dq}{dt}$ 變成 $i$，$q$ 就消失了，得到只含 $i$ 的一階線性方程。（也可以像 5.2 節先解 $q$ 再微分，結果一樣。）</p>
+      <p><b>因為</b>係數是常數 $\frac1{RC}$，<b>所以</b>積分因子 $e^{t/RC}$；右邊 $e^{t/RC}\sin\omega t$ 的積分用第 2 節的公式 $\int e^{at}\sin bt\,dt=\dfrac{e^{at}(a\sin bt-b\cos bt)}{a^2+b^2}$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-108b-3-s1" data-sym="RC,qi">
+        <span class="step-title">迴路定則，微分消去 $q$</span>
+        <p class="sub">代入 $V=V_0\cos\omega t$（題目）：</p>
+        $$iR+\frac qC=V_0\cos\omega t\ \xrightarrow{\ \frac{d}{dt}\ }\ R\frac{di}{dt}+\frac iC=-\omega V_0\sin\omega t$$
+        <p>除以 $R$：$\dfrac{di}{dt}+a\,i=-\dfrac{\omega V_0}{R}\sin\omega t$，其中 $a\equiv\dfrac1{RC}$。</p>
+      </div>
+      <div class="step" data-step="am1-108b-3-s2" data-sym="F">
+        <span class="step-title">積分因子</span>
+        $$F=e^{\int a\,dt}=e^{at},\qquad\frac{d}{dt}\big(e^{at}i\big)=-\frac{\omega V_0}{R}e^{at}\sin\omega t$$
+      </div>
+      <div class="step" data-step="am1-108b-3-s3">
+        <span class="step-title">積分</span>
+        <p class="sub">用 $\int e^{at}\sin bt\,dt$ 公式，$b=\omega$：</p>
+        $$e^{at}i=-\frac{\omega V_0}{R}\cdot\frac{e^{at}(a\sin\omega t-\omega\cos\omega t)}{a^2+\omega^2}+K$$
+        <p>兩邊除以 $e^{at}$（$K$ 也要除）：</p>
+        $$i=\frac{V_0}{R}\,\frac{1}{a^2+\omega^2}\big(-a\omega\sin\omega t+\omega^2\cos\omega t\big)+Ke^{-at}$$
+        <p>把 $a=\frac1{RC}$ 代回，就是考卷答案的形式。</p>
+      </div>
+      <div class="step" data-step="am1-108b-3-s4" data-sym="tau">
+        <span class="step-title">穩態寫成振幅與相位</span>
+        <p>$\omega^2\cos\omega t-a\omega\sin\omega t=\omega\sqrt{\omega^2+a^2}\cos(\omega t+\theta)$，$\tan\theta=\dfrac a\omega=\dfrac{1}{\omega RC}$。振幅：</p>
+        $$\frac{V_0}{R}\frac{\omega}{\sqrt{a^2+\omega^2}}=\frac{V_0}{\sqrt{R^2+\frac{1}{\omega^2C^2}}}$$
+        <p>暫態 $Ke^{-t/RC}$ 經過幾個時間常數 $RC$ 就消失。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$i(t)=\dfrac{V_0}{R}\dfrac{1}{(\frac1{RC})^2+\omega^2}\Big(-\dfrac{\omega\sin\omega t}{RC}+\omega^2\cos\omega t\Big)+Ke^{-t/RC}$（和考卷答案相同）；穩態部分 $=\dfrac{V_0}{\sqrt{R^2+1/(\omega C)^2}}\cos(\omega t+\theta)$，$\tan\theta=\dfrac1{\omega RC}$，電流領先電壓。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>極限：$C\to\infty$（電容等於短路）時 $\theta\to0$、振幅 $\to V_0/R$，就是純電阻 $i=\frac{V_0}{R}\cos\omega t$ ✔；$\omega\to0$（直流）時穩態電流 $\to0$（電容擋直流）✔。代回 $Ri'+i/C$：穩態項給 $-\omega V_0\sin\omega t$，暫態項 $R(-\frac{K}{RC})e^{-t/RC}+\frac KCe^{-t/RC}=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-109a-e4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級上學期第 2 次期中（Euler Formula）第 4 題</span></div>
+    <h4>RC 串聯接 $V_0\sin\omega t$：通過電阻的電流（考卷答案的相位有誤）</h4>
+    <button type="button" class="exam-btn" data-exam="am1-109a-e4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109a-e4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>Euler Formula</p><p>4. Find the current passes through the resistor $R$ of an AC circuit shown below.</p><p>［考卷附圖：電阻 R 與電容 C 串聯在上方導線，下方為交流電源 $V_0\sin(\omega t)$，三者構成單一迴路。］</p><p>Ans: $\dfrac{V_0}{\sqrt{R^2+\left(\frac{1}{\omega C}\right)^2}}\sin(\omega t+\phi)$,　$\phi=-\tan^{-1}(\omega RC)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求圖示交流電路中通過電阻 $R$ 的電流。電路：交流電源 $V_0\sin(\omega t)$、電阻 $R$、電容 $C$ 串成一圈。（考卷附的答案：$\dfrac{V_0}{\sqrt{R^2+(\frac1{\omega C})^2}}\sin(\omega t+\phi)$，$\phi=-\tan^{-1}(\omega RC)$；相位有誤植，見步驟 4。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>電路</td><td>$R$、$C$ 與電源串聯（只有一個迴路，電流處處相同）</td><td>考卷電路圖：上方 R 與 C 串在同一條線上，下方是電源</td></tr>
+          <tr><td>電源</td><td>$V(t)=V_0\sin\omega t$</td><td>圖中標示「$V_0\sin(\omega t)$」</td></tr>
+          <tr><td>要的解</td><td>穩態電流（不含暫態）</td><td>「AC circuit」的電流指長時間後的振盪；考卷答案也只有穩態</td></tr>
+          <tr><td>定律</td><td>$V-iR-\dfrac qC=0$，$i=\dfrac{dq}{dt}$</td><td>題目沒寫，用 5.1 節的迴路定則</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$i(t)$ 的振幅與相位。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>只有一個迴路，通過電阻的電流就是迴路電流 $i=\dot q$，<b>所以</b>和上一題一樣把迴路定則微分、消去 $q$，得到 $i$ 的一階線性方程；右邊變成 $\cos\omega t$。</p>
+      <p><b>因為</b>這份考卷是 Euler 公式卷，老師期望用相量（phasor）法：電容的阻抗 $\frac{1}{i\omega C}$。本站用第 2 節的積分因子法直接解，再和相量法的結論比對；兩者都顯示電容電路的電流<strong>領先</strong>電壓，這就是判斷考卷相位寫錯的依據。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-109a-e4-s1" data-sym="RC,qi">
+        <span class="step-title">電流的方程</span>
+        <p class="sub">代入 $V=V_0\sin\omega t$（題目圖）到 $iR+\dfrac qC=V$，對 $t$ 微分：</p>
+        $$R\frac{di}{dt}+\frac iC=\omega V_0\cos\omega t\ \Longrightarrow\ \frac{di}{dt}+a\,i=\frac{\omega V_0}{R}\cos\omega t,\quad a=\frac1{RC}$$
+      </div>
+      <div class="step" data-step="am1-109a-e4-s2" data-sym="F">
+        <span class="step-title">積分因子 $e^{at}$，取穩態</span>
+        <p>用 $\int e^{at}\cos bt\,dt=\dfrac{e^{at}(a\cos bt+b\sin bt)}{a^2+b^2}$，$b=\omega$：</p>
+        $$i=\frac{\omega V_0}{R}\,\frac{a\cos\omega t+\omega\sin\omega t}{a^2+\omega^2}+Ke^{-at}$$
+        <p>暫態 $Ke^{-t/RC}$ 衰減掉，留下穩態。</p>
+      </div>
+      <div class="step" data-step="am1-109a-e4-s3">
+        <span class="step-title">合成振幅與相位</span>
+        <p>$\omega\sin\omega t+a\cos\omega t=\sqrt{\omega^2+a^2}\,\sin(\omega t+\theta)$，其中 $\cos\theta=\dfrac{\omega}{\sqrt{\omega^2+a^2}}$、$\sin\theta=\dfrac{a}{\sqrt{\omega^2+a^2}}$，所以 $\tan\theta=\dfrac a\omega=\dfrac1{\omega RC}$，$0\lt\theta\lt\dfrac\pi2$：</p>
+        $$i_{\text{ss}}=\frac{\omega V_0}{R\sqrt{a^2+\omega^2}}\sin(\omega t+\theta)=\frac{V_0}{\sqrt{R^2+\frac{1}{\omega^2C^2}}}\,\sin\!\Big(\omega t+\tan^{-1}\frac{1}{\omega RC}\Big)$$
+        <p>相量法：$Z=R+\dfrac{1}{i\omega C}=R-\dfrac{i}{\omega C}$，$|Z|=\sqrt{R^2+\frac1{\omega^2C^2}}$，$\arg Z=-\tan^{-1}\frac1{\omega RC}$；電流 $=V/Z$ 的相位是 $+\tan^{-1}\frac1{\omega RC}$，一致。</p>
+      </div>
+      <div class="step" data-step="am1-109a-e4-s4">
+        <span class="step-title">考卷答案錯在哪裡</span>
+        <p>振幅正確。相位：因為 $\tan^{-1}\frac1{\omega RC}=\frac\pi2-\tan^{-1}(\omega RC)$，</p>
+        $$\sin\!\Big(\omega t+\frac\pi2-\tan^{-1}\omega RC\Big)=\cos\!\big(\omega t-\tan^{-1}\omega RC\big)$$
+        <p>所以 $\phi=-\tan^{-1}(\omega RC)$ 只有配 $\cos(\omega t+\phi)$ 才對；考卷寫成 $\sin(\omega t+\phi)$，等於說電流落後電壓，那是電感電路的行為。（5.2 節板書例題 $q=\frac{CV_0}{\sqrt{1+\omega^2R^2C^2}}\sin(\omega t-\phi)$ 微分得 $i\propto\cos(\omega t-\phi)$，也是 $\cos$。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$i(t)=\dfrac{V_0}{\sqrt{R^2+(\frac1{\omega C})^2}}\sin(\omega t+\theta)$，$\theta=\tan^{-1}\dfrac{1}{\omega RC}$；等價寫法 $\dfrac{V_0}{\sqrt{R^2+(\frac1{\omega C})^2}}\cos\big(\omega t-\tan^{-1}\omega RC\big)$。考卷的 $\sin(\omega t-\tan^{-1}\omega RC)$ 應改為 $\cos$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代回：$i=I\sin(\omega t+\theta)$，$I=V_0/|Z|$。$Ri'+\frac iC=I\omega\big[R\cos(\omega t+\theta)+\frac1{\omega C}\sin(\omega t+\theta)\big]$；因為 $R=|Z|\cos\theta$、$\frac1{\omega C}=|Z|\sin\theta$，括號 $=|Z|\cos(\omega t+\theta-\theta)=|Z|\cos\omega t$，所以結果 $=I|Z|\omega\cos\omega t=\omega V_0\cos\omega t$ ✔。極限：$C\to\infty$ 時 $\theta\to0$，回到純電阻 $i=\frac{V_0}{R}\sin\omega t$ ✔；考卷版在 $C\to\infty$ 時 $\phi\to-\frac\pi2$，純電阻電路卻落後 $90^\circ$，不合理 ✘。</p></div>
+  </div>
+</div>
+
+<h3 id="am1a-self">5.5 自編難題</h3>
+
+<div class="problem" data-kind="self" id="am1-self-05a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>體積會變的混合槽</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-05a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>槽內原有 $100\ \text{L}$ 純水，容量 $200\ \text{L}$。濃度 $2\ \text{g/L}$ 的鹽水以 $3\ \text{L/min}$ 流入，攪拌均勻後的溶液以 $2\ \text{L/min}$ 流出。求槽內鹽量 $Q(t)$，以及槽子剛裝滿時的鹽量與濃度。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>初始</td><td>$V(0)=100\ \text{L}$，$Q(0)=0$</td><td>「原有 $100\ \text{L}$ <b>純水</b>」：純水 ⟹ 沒有鹽</td></tr>
+          <tr><td>流入</td><td>$3\ \text{L/min}\times2\ \text{g/L}=6\ \text{g/min}$</td><td>「濃度 $2\ \text{g/L}$ 的鹽水以 $3\ \text{L/min}$ 流入」</td></tr>
+          <tr><td>流出</td><td>$2\ \text{L/min}$，濃度 $Q/V$</td><td>「攪拌均勻後」：流出的濃度就是槽內濃度</td></tr>
+          <tr><td>體積</td><td>$V(t)=100+(3-2)t=100+t$</td><td>流入比流出多 $1\ \text{L/min}$（自己算）</td></tr>
+          <tr><td>裝滿</td><td>$V=200\ \text{L}$ ⟹ $t=100\ \text{min}$</td><td>「容量 $200\ \text{L}$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$Q(t)$；$t=100\ \text{min}$ 時的 $Q$ 與濃度。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>鹽量的變化率 = 流入的鹽 − 流出的鹽，而流出的鹽 = 流出流量 × 槽內濃度 $Q/V$，<b>所以</b> $Q'=6-\dfrac{2Q}{100+t}$。<b>因為</b>體積隨時間變，$Q$ 的係數 $\frac{2}{100+t}$ 不是常數，不能分離，<b>所以</b>當線性方程用積分因子。</p>
+      <p>常見錯誤是把體積當成固定 $100\ \text{L}$：那樣會得到常係數方程，答案完全不同。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-05a-s1" data-sym="pq">
+        <span class="step-title">寫出方程</span>
+        $$\frac{dQ}{dt}=\underbrace{6}_{\text{流入}}-\underbrace{2\cdot\frac{Q}{100+t}}_{\text{流出}}\ \Longrightarrow\ Q'+\frac{2}{100+t}\,Q=6$$
+      </div>
+      <div class="step" data-step="am1-self-05a-s2" data-sym="F">
+        <span class="step-title">積分因子</span>
+        $$F=e^{\int\frac{2}{100+t}dt}=e^{2\ln(100+t)}=(100+t)^2$$
+        $$\frac{d}{dt}\Big[(100+t)^2Q\Big]=6(100+t)^2\ \Longrightarrow\ (100+t)^2Q=2(100+t)^3+K$$
+      </div>
+      <div class="step" data-step="am1-self-05a-s3" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $t=0$、$Q=0$（題目「純水」）：$0=2(100)^3+K$，$K=-2\times10^6$。</p>
+        $$Q(t)=2(100+t)-\frac{2\times10^6}{(100+t)^2}\ \ \text{(g)}$$
+      </div>
+      <div class="step" data-step="am1-self-05a-s4">
+        <span class="step-title">裝滿時</span>
+        <p class="sub">代入 $t=100\ \text{min}$（$V=200\ \text{L}$）：</p>
+        $$Q(100)=2(200)-\frac{2\times10^6}{(200)^2}=400-50=350\ \text{g},\qquad\frac{Q}{V}=\frac{350}{200}=1.75\ \text{g/L}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$Q(t)=2(100+t)-\dfrac{2\times10^6}{(100+t)^2}$ g；裝滿（$t=100$ min）時 $350\ \text{g}$、濃度 $1.75\ \text{g/L}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$Q(0)=200-200=0$ ✔。$t\to\infty$（若槽夠大）濃度 $Q/V\to2\ \text{g/L}$，等於流入的濃度 ✔。$t=100$ 時濃度 $1.75\lt2$，還沒追上流入濃度，合理 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am1-self-05b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>110 上考古題的反方向：$v^2$ 阻力下的上拋</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-05b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>同 110 上期中第 2 題的阻力 $kv^2$，物體以初速 $v_0$ 鉛直上拋，終端速度記為 $v_t=\sqrt{mg/k}$。(a) 求上升到最高點的時間；(b) 求最大高度；(c) $v_0=20\ \text{m/s}$、$v_t=30\ \text{m/s}$、$g=9.8\ \text{m/s}^2$ 時的數值，並和沒有空氣阻力比較。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方向</td><td>取向上為正</td><td>「鉛直上拋」：上升段 $v>0$</td></tr>
+          <tr><td>力</td><td>$-mg-kv^2$</td><td>重力向下；上升時阻力也向下（和運動方向相反）</td></tr>
+          <tr><td>初速</td><td>$v(0)=v_0=20\ \text{m/s}$</td><td>(c)</td></tr>
+          <tr><td>終端速度</td><td>$v_t=30\ \text{m/s}$，$k/m=g/v_t^2$</td><td>(c)；由 $v_t^2=mg/k$ 換出</td></tr>
+          <tr><td>最高點</td><td>$v=0$</td><td>「最高點」：速度為零（自己讀出）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$t_{\text{top}}$、$h$ 的公式與數值，和真空比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>上升時阻力向下、和重力同向，方程是 $m\dot v=-mg-kv^2$——和落體的 $mg-kv^2$ 不同（$v^2$ 不會變號，上升和下降必須分開寫），<b>所以</b>右邊是「常數加平方」，積分是 $\tan^{-1}$ 而不是 $\tanh$。</p>
+      <p><b>因為</b> (a) 要時間，<b>所以</b>用 $\dfrac{dv}{dt}$ 分離；<b>因為</b> (b) 要高度、不需要 $t$，<b>所以</b>用 $\dfrac{dv}{dt}=v\dfrac{dv}{dy}$ 直接得到 $v(y)$ 的可分離方程。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-05b-s1" data-sym="kdrag,vt">
+        <span class="step-title">上升段方程</span>
+        $$m\frac{dv}{dt}=-mg-kv^2\ \Longrightarrow\ \frac{dv}{dt}=-g\left(1+\frac{v^2}{v_t^2}\right)\qquad\left(\frac km=\frac{g}{v_t^2}\right)$$
+      </div>
+      <div class="step" data-step="am1-self-05b-s2">
+        <span class="step-title">(a) 上升時間</span>
+        $$\int_{v_0}^{0}\frac{dv}{1+v^2/v_t^2}=-g\,t_{\text{top}}\ \Longrightarrow\ -v_t\tan^{-1}\frac{v_0}{v_t}=-g\,t_{\text{top}}\ \Longrightarrow\ t_{\text{top}}=\frac{v_t}{g}\tan^{-1}\frac{v_0}{v_t}$$
+      </div>
+      <div class="step" data-step="am1-self-05b-s3">
+        <span class="step-title">(b) 最大高度：改用 $v\,dv/dy$</span>
+        $$v\frac{dv}{dy}=-g\left(1+\frac{v^2}{v_t^2}\right)\ \Longrightarrow\ \int_{v_0}^{0}\frac{v\,dv}{1+v^2/v_t^2}=-g\,h$$
+        <p>令 $u=1+v^2/v_t^2$，$du=2v\,dv/v_t^2$：左邊 $=\dfrac{v_t^2}{2}\Big[\ln u\Big]_{1+v_0^2/v_t^2}^{1}=-\dfrac{v_t^2}{2}\ln\!\left(1+\dfrac{v_0^2}{v_t^2}\right)$：</p>
+        $$h=\frac{v_t^2}{2g}\ln\!\left(1+\frac{v_0^2}{v_t^2}\right)$$
+      </div>
+      <div class="step" data-step="am1-self-05b-s4">
+        <span class="step-title">(c) 代數字</span>
+        <p class="sub">代入 $v_0=20\ \text{m/s}$、$v_t=30\ \text{m/s}$、$g=9.8\ \text{m/s}^2$（題目 (c)）：</p>
+        $$t_{\text{top}}=\frac{30}{9.8}\tan^{-1}\frac23=3.061\times0.5880=1.800\ \text{s},\qquad h=\frac{900}{19.6}\ln\frac{13}{9}=16.89\ \text{m}$$
+        <p>真空：$t=v_0/g=2.041\ \text{s}$、$h=v_0^2/2g=20.41\ \text{m}$。阻力讓上升時間少 12%、高度少 17%。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $t_{\text{top}}=\dfrac{v_t}{g}\tan^{-1}\dfrac{v_0}{v_t}$；(b) $h=\dfrac{v_t^2}{2g}\ln\!\left(1+\dfrac{v_0^2}{v_t^2}\right)$；(c) $1.800\ \text{s}$、$16.89\ \text{m}$（真空 $2.041\ \text{s}$、$20.41\ \text{m}$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$v_t\to\infty$（沒有阻力）：$\tan^{-1}u\approx u$ 給 $t\to v_0/g$；$\ln(1+u)\approx u$ 給 $h\to v_0^2/2g$ ✔。下降段要換回 110 上的 $mg-kv^2$ 另外解，不能沿用這條式子。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>RC：迴路定則 $\frac qC+iR=\varepsilon$（或 0），$i=q'$；放電 $q=C\varepsilon e^{-t/RC}$，充電 $q=C\varepsilon(1-e^{-t/RC})$，$\tau=RC$。</li>
+    <li>交流驅動：線性方程，$\int e^{at}\sin bt$ 公式；解 = 穩態正弦（振幅 $\frac{CV_0}{\sqrt{1+\omega^2R^2C^2}}$、落後 $\tan^{-1}\omega RC$）+ 暫態 $Ke^{-t/RC}$。</li>
+    <li>$v^2$ 阻力：落下 $mg-kv^2$ ⟹ $\tanh$；上升 $-mg-kv^2$ ⟹ $\tan^{-1}$；上下分開寫。要時間用 $dv/dt$，要距離用 $v\,dv/dy$。</li>
+  </ol>
+</div>

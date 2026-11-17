@@ -1,0 +1,379 @@
+<h2>四、初始條件、邊界條件與非齊次項 <span class="pg">作業 3 · 考古題（網站補充）</span></h2>
+
+<p class="lead">10/7 的板書只做了沒有條件的齊次方程式，但作業 3 和三份期末考都加了東西：初始條件、邊界條件，或右邊不為零。這一節由網站補上這三種變化的做法，以及在 $x_0\ne0$ 展開。方法本身不變，只是 $a_0$、$a_1$ 從「待定」變成「已知」，或遞迴多了一項右邊的係數。</p>
+
+<h3 id="am4-ivp-ic">4.1 初始條件：$a_0=y(0)$、$a_1=y'(0)$ <span class="added">網站補充</span></h3>
+
+<div class="step" data-step="am4-ivp-s1" data-sym="a01">
+  <span class="step-title">為什麼初始條件直接就是 $a_0$、$a_1$</span>
+  <p>$y=\sum a_nx^n$ 在 $x=0$ 只剩常數項：$y(0)=a_0$；$y'=\sum na_nx^{n-1}$ 在 $x=0$ 只剩 $a_1$：$y'(0)=a_1$。一般地 $a_n=\dfrac{y^{(n)}(0)}{n!}$——冪級數解就是解的泰勒級數。所以給了 $y(0)$、$y'(0)$，兩個「待定」就定了，遞迴直接吐出唯一的一串數字，不必先求一般解。</p>
+  <p>這也給了一個<b>驗算法</b>（泰勒法）：把方程式解出 $y''$，在 $x=0$ 代入得 $y''(0)$，對方程式微分再代入得 $y'''(0)$，⋯，$a_n=y^{(n)}(0)/n!$。考試時用來檢查前兩三個係數很快。</p>
+</div>
+
+<h3 id="am4-ivp-bc">4.2 邊界條件：先有一般解 <span class="added">網站補充</span></h3>
+
+<p>條件給在兩個不同的點（例如 $y(0)=1$、$y(1)=1$）時，$y(1)$ 不是任何一個 $a_n$，必須先寫出一般解 $y=a_0y_1+a_1y_2$，再把 $x=1$ 代入 $y_1(1)$、$y_2(1)$。這需要知道級數在 $x=1$ 的值，所以要注意兩件事：$x=1$ 必須在收斂範圍內；而且最好級數會截斷或能認出 closed form，否則 $y_1(1)$ 只能近似。111 上期末那題兩串都截斷成多項式，才變成可以手算的題目。</p>
+
+<h3 id="am4-ivp-nh">4.3 非齊次方程式：右邊也寫成冪級數 <span class="added">網站補充</span></h3>
+
+<p>$y''+p(x)y'+q(x)y=g(x)$ 時，把右邊也展開成 $g(x)=\sum g_nx^n$（多項式就是它自己；$e^x$、$\frac1{1-x}$ 用已知的級數），左右兩邊<b>同次方的係數相等</b>：$x^n$ 的方程式右邊多了 $g_n$。例如 $g=x$ 時只有 $x^1$ 的方程式右邊是 1，其他都是 0。不需要先找齊次解再找特解，初始條件一給，遞迴一路算下去就是答案。</p>
+
+<p>收斂半徑也要把 $g$ 考慮進去：解至少在「到 $p$、$q$、$g$ 最近奇點的距離」內收斂。自編 4-b 是 $g$ 造成有限半徑的例子。</p>
+
+<h3 id="am4-ivp-x0">4.4 在 $x_0\ne0$ 展開 <span class="added">網站補充</span></h3>
+
+<p>初始條件給在 $x_0\ne0$（例如 $y(1)$、$y'(1)$）時，在 $x_0$ 展開最省事：令 $t=x-x_0$，$\dfrac{dy}{dx}=\dfrac{dy}{dt}$，係數裡的 $x$ 換成 $t+x_0$，就回到在 $t=0$ 展開的問題，而且 $a_0=y(x_0)$、$a_1=y'(x_0)$。若硬在 $x=0$ 展開，就得用 $y_1(1)$、$y_2(1)$ 這種級數值去解 $a_0$、$a_1$，又麻煩又不精確。</p>
+
+<div class="problem" data-kind="textbook" id="am4-hw-3">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">10/7 作業 第 3 題</span></div>
+    <h4>$(x-1)y''-xy'+y=0$，$y(0)=-2$、$y'(0)=6$</h4>
+    <button type="button" class="exam-btn" data-exam="am4-hw-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-hw-3"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>3. Solve $(x-1)y''-xy'+y=0,\ y(0)=-2,\ y'(0)=6$.</p><p>Ans: $y=-2\left(1+\frac{1}{2}x^2+\frac{1}{6}x^3+\dots\right)+6x$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>解 $(x-1)y''-xy'+y=0$，$y(0)=-2$、$y'(0)=6$。老師給的答案：$y=-2\Big(1+\tfrac12x^2+\tfrac16x^3+\cdots\Big)+6x$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$y''$ 的係數</td><td>$x-1$，在 $x=0$ 為 $-1\ne0$</td><td>「$(x-1)y''$」：$x=0$ 是常點，奇點 $x=1$</td></tr>
+          <tr><td>保證的收斂半徑</td><td>$R\ge1$</td><td>$0$ 到奇點 $1$ 的距離（第 1 節）</td></tr>
+          <tr><td>$a_0$</td><td>$a_0=y(0)=-2$</td><td>「$y(0)=-2$」</td></tr>
+          <tr><td>$a_1$</td><td>$a_1=y'(0)=6$</td><td>「$y'(0)=6$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：級數解（驗證老師的答案），能的話寫出 closed form。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $y''$ 的係數 $x-1$ 在 $x=0$ 不為零，$x=0$ 是常點，<b>所以</b>可以令 $y=\sum a_nx^n$；初始條件給在 $x=0$，<b>所以</b>直接 $a_0=-2$、$a_1=6$。</p>
+      <p><b>因為</b> $(x-1)y''$ 拆成 $xy''-y''$，$xy''$ 只往下推一格（帶 $a_{k+1}$），遞迴會同時含 $a_{k+2}$、$a_{k+1}$、$a_k$，<b>所以</b>不是兩條獨立的鏈。先用一般的 $a_0$、$a_1$ 算出係數，看出規律，再代初始條件——這樣同時得到一般解和 closed form。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-hw-3-s1" data-sym="an">
+        <span class="step-title">四個和都寫成 $x^k$</span>
+        <p>$xy''=\sum n(n-1)a_nx^{n-1}$ 令 $k=n-1$ $\to(k+1)k\,a_{k+1}$；$-y''\to-(k+2)(k+1)a_{k+2}$；$-xy'\to-ka_k$；$y\to a_k$：</p>
+        $$(k+1)k\,a_{k+1}-(k+2)(k+1)a_{k+2}-(k-1)a_k=0$$
+        $$\Longrightarrow\quad a_{k+2}=\frac{k(k+1)a_{k+1}-(k-1)a_k}{(k+2)(k+1)},\qquad k\ge0$$
+      </div>
+      <div class="step" data-step="am4-hw-3-s2" data-sym="a01">
+        <span class="step-title">用一般的 $a_0$、$a_1$ 算前幾項</span>
+        <p class="sub">$k=0$、$1$、$2$ 依序代入：</p>
+        $$a_2=\frac{0+a_0}{2}=\frac{a_0}{2},\qquad a_3=\frac{2a_2-0}{6}=\frac{a_0}{6},\qquad a_4=\frac{6a_3-a_2}{12}=\frac{a_0-\frac{a_0}{2}}{12}=\frac{a_0}{24}$$
+        <p>$a_1$ 完全沒出現在 $a_2$ 以後的係數裡（$k=0$ 時 $a_1$ 乘上 $k(k+1)=0$），而 $a_2,a_3,a_4=\dfrac{a_0}{2!},\dfrac{a_0}{3!},\dfrac{a_0}{4!}$。</p>
+      </div>
+      <div class="step" data-step="am4-hw-3-s3">
+        <span class="step-title">證明 $a_k=a_0/k!$（$k\ge2$）</span>
+        <p>設 $a_k=\dfrac{a_0}{k!}$、$a_{k+1}=\dfrac{a_0}{(k+1)!}$（$k\ge2$ 時兩者都已成立），代入遞迴：</p>
+        $$a_{k+2}=\frac{k(k+1)\frac{a_0}{(k+1)!}-(k-1)\frac{a_0}{k!}}{(k+2)(k+1)}=\frac{\frac{a_0}{k!}\big[k-(k-1)\big]}{(k+2)(k+1)}=\frac{a_0}{(k+2)!}$$
+        <p>由歸納法對所有 $k\ge2$ 成立。所以</p>
+        $$y=a_0\Big(1+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots\Big)+a_1x=a_0\,(e^x-x)+a_1x$$
+      </div>
+      <div class="step" data-step="am4-hw-3-s4">
+        <span class="step-title">代入初始條件</span>
+        <p class="sub">$a_0=-2$、$a_1=6$（題目 $y(0)=-2$、$y'(0)=6$）：</p>
+        $$y=-2\Big(1+\frac12x^2+\frac16x^3+\frac1{24}x^4+\cdots\Big)+6x=-2(e^x-x)+6x=8x-2e^x$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=-2\Big(1+\tfrac12x^2+\tfrac16x^3+\cdots\Big)+6x=8x-2e^x$。老師的答案正確（括號裡的級數就是 $e^x-x$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=8x-2e^x$：$y'=8-2e^x$、$y''=-2e^x$；$(x-1)(-2e^x)-x(8-2e^x)+8x-2e^x=-2xe^x+2e^x-8x+2xe^x+8x-2e^x=0$ ✔；$y(0)=-2$、$y'(0)=6$ ✔。定理只保證 $|x|\lt1$，實際上 $e^x$ 處處收斂：奇點 $x=1$ 對這兩個解剛好沒有影響。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am4-k113-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2024.Dec. 第 2 題（113上）</span></div>
+    <h4>$y''-(1+x)y=0$，$y(0)=1$、$y'(0)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am4-k113-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k113-2"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">113 學年上學期期末考（掃描檔，網站依原卷轉寫）。</p>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>2. Find the power series solution of $y''-(1+x)y=0$ with $y(0)=1$ and $y'(0)=0$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（每題 25 分）求 $y''-(1+x)y=0$ 在 $y(0)=1$、$y'(0)=0$ 下的冪級數解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p=0$、$q=-(1+x)$</td><td>「$y''-(1+x)y=0$」</td></tr>
+          <tr><td>展開點</td><td>$x_0=0$，常點，$R=\infty$</td><td>「power series solution」；係數是多項式</td></tr>
+          <tr><td>$a_0$、$a_1$</td><td>$a_0=1$、$a_1=0$</td><td>「$y(0)=1$ and $y'(0)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一的級數解（寫到 $x^6$ 左右）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $(1+x)y=y+xy$，$y$ 帶 $a_n$、$xy$ 帶 $a_{n-1}$，<b>所以</b>遞迴是三項 $a_{n+2}=\dfrac{a_n+a_{n-1}}{(n+2)(n+1)}$，不會分成乾淨的鏈。</p>
+      <p><b>因為</b>初始條件已經給定 $a_0$、$a_1$，<b>所以</b>不必分兩個解，直接把數字代進遞迴一項一項算。最後用泰勒法（對方程式微分）驗算前幾個係數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-k113-2-s1" data-sym="an">
+        <span class="step-title">代入並寫成 $x^n$</span>
+        $$\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n-\sum_{n=0}^{\infty}a_nx^n-\sum_{n=1}^{\infty}a_{n-1}x^n=0$$
+        <p>（$xy=\sum a_nx^{n+1}$ 令 $n\to n-1$，從 $x^1$ 開始。）</p>
+      </div>
+      <div class="step" data-step="am4-k113-2-s2">
+        <span class="step-title">低次方與遞迴</span>
+        <p class="sub">$x^0$：</p>
+        $$2a_2-a_0=0\ \Longrightarrow\ a_2=\frac{a_0}{2}$$
+        <p class="sub">$x^n$，$n\ge1$：</p>
+        $$a_{n+2}=\frac{a_n+a_{n-1}}{(n+2)(n+1)}$$
+      </div>
+      <div class="step" data-step="am4-k113-2-s3" data-sym="a01">
+        <span class="step-title">代入 $a_0=1$、$a_1=0$ 逐項計算</span>
+        <p class="sub">每一行用前兩個已算出的係數：</p>
+        $$a_2=\tfrac12,\qquad a_3=\frac{a_1+a_0}{3\cdot2}=\frac16,\qquad a_4=\frac{a_2+a_1}{4\cdot3}=\frac{1/2}{12}=\frac1{24}$$
+        $$a_5=\frac{a_3+a_2}{5\cdot4}=\frac{\frac16+\frac12}{20}=\frac1{30},\qquad a_6=\frac{a_4+a_3}{6\cdot5}=\frac{\frac1{24}+\frac16}{30}=\frac{5/24}{30}=\frac1{144}$$
+      </div>
+      <div class="step" data-step="am4-k113-2-s4">
+        <span class="step-title">寫出級數解</span>
+        $$y=1+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+\frac{x^5}{30}+\frac{x^6}{144}+\cdots$$
+        <p>（下兩項 $a_7=\tfrac1{560}$、$a_8=\tfrac{29}{40320}$。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=1+\dfrac{x^2}{2}+\dfrac{x^3}{6}+\dfrac{x^4}{24}+\dfrac{x^5}{30}+\dfrac{x^6}{144}+\cdots$，遞迴 $a_{n+2}=\dfrac{a_n+a_{n-1}}{(n+2)(n+1)}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>泰勒法：$y''=(1+x)y$ ⇒ $y''(0)=1$，$a_2=\tfrac12$ ✔；$y'''=y+(1+x)y'$ ⇒ $y'''(0)=1+0=1$，$a_3=\tfrac16$ ✔；$y^{(4)}=2y'+(1+x)y''$ ⇒ $y^{(4)}(0)=0+1=1$，$a_4=\tfrac1{24}$ ✔。附帶一提，令 $t=1+x$ 方程式變成 $y_{tt}=ty$（自編 3-b 的方程式），所以這題的解沒有初等 closed form，級數就是答案。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am4-k110-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2022.Jan. 第 3 題（110上）</span></div>
+    <h4>非齊次 $y''-x^2y'+(x+2)y=x$，$y(0)=2$、$y'(0)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am4-k110-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k110-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>3. Solve $y''-x^2y'+(x+2)y=x$ with $y(0)=2,y'(0)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>解 $y''-x^2y'+(x+2)y=x$，$y(0)=2$、$y'(0)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p=-x^2$、$q=x+2$</td><td>「$y''-x^2y'+(x+2)y$」</td></tr>
+          <tr><td>右邊（非齊次項）</td><td>$g(x)=x$：只有 $g_1=1$</td><td>「$=x$」</td></tr>
+          <tr><td>方法</td><td>冪級數（題目沒指定）</td><td>係數含 $x$，不能用常係數的待定係數法；$x=0$ 是常點</td></tr>
+          <tr><td>$a_0$、$a_1$</td><td>$a_0=2$、$a_1=1$</td><td>「$y(0)=2,\ y'(0)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的級數解（寫到 $x^5$ 或 $x^6$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>係數 $-x^2$、$x+2$ 不是常數，第 3 章的待定係數法和第 2 章的特徵方程式都不能用；而 $x=0$ 是常點、初始條件也在 $x=0$，<b>所以</b>用冪級數法，$a_0=2$、$a_1=1$。</p>
+      <p><b>因為</b>右邊 $x$ 本身就是冪級數（只有 $x^1$ 一項），<b>所以</b>不必拆成齊次解加特解：左邊每個 $x^n$ 的係數等於右邊的係數——$x^1$ 的方程式右邊是 1，其他次方是 0。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-k110-3-s1" data-sym="an">
+        <span class="step-title">左邊每一項的 $x^k$ 係數</span>
+        <p>$y''\to(k+2)(k+1)a_{k+2}$；$-x^2y'=-\sum na_nx^{n+1}$ 令 $k=n+1$ $\to-(k-1)a_{k-1}$；$xy\to a_{k-1}$（$k\ge1$）；$2y\to2a_k$。合併 $-x^2y'$ 與 $xy$：$-(k-1)a_{k-1}+a_{k-1}=-(k-2)a_{k-1}$。</p>
+      </div>
+      <div class="step" data-step="am4-k110-3-s2">
+        <span class="step-title">與右邊比較係數</span>
+        <p class="sub">$x^0$（右邊 0）：</p>
+        $$2a_2+2a_0=0\ \Longrightarrow\ a_2=-a_0$$
+        <p class="sub">$x^k$，$k\ge1$（右邊只有 $k=1$ 是 1，記作 $\delta_{k1}$）：</p>
+        $$(k+2)(k+1)a_{k+2}-(k-2)a_{k-1}+2a_k=\delta_{k1}\ \Longrightarrow\ a_{k+2}=\frac{\delta_{k1}+(k-2)a_{k-1}-2a_k}{(k+2)(k+1)}$$
+      </div>
+      <div class="step" data-step="am4-k110-3-s3" data-sym="a01">
+        <span class="step-title">代入 $a_0=2$、$a_1=1$</span>
+        <p class="sub">$x^0$；$k=1$（右邊的 1 在這裡）：</p>
+        $$a_2=-2,\qquad a_3=\frac{1+(-1)a_0-2a_1}{6}=\frac{1-2-2}{6}=-\frac12$$
+        <p class="sub">$k=2,3,4$（右邊為 0）：</p>
+        $$a_4=\frac{0\cdot a_1-2a_2}{12}=\frac{4}{12}=\frac13,\qquad a_5=\frac{1\cdot a_2-2a_3}{20}=\frac{-2+1}{20}=-\frac1{20}$$
+        $$a_6=\frac{2a_3-2a_4}{30}=\frac{-1-\frac23}{30}=-\frac1{18}$$
+      </div>
+      <div class="step" data-step="am4-k110-3-s4">
+        <span class="step-title">寫出解</span>
+        $$y=2+x-2x^2-\frac12x^3+\frac13x^4-\frac1{20}x^5-\frac1{18}x^6+\cdots$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=2+x-2x^2-\dfrac12x^3+\dfrac13x^4-\dfrac1{20}x^5-\dfrac1{18}x^6+\cdots$</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>泰勒法：$y''=x+x^2y'-(x+2)y$ ⇒ $y''(0)=0+0-2\cdot2=-4$，$a_2=-4/2!=-2$ ✔；微分一次 $y'''=1+2xy'+x^2y''-y-(x+2)y'$ ⇒ $y'''(0)=1-2-2\cdot1=-3$，$a_3=-3/3!=-\tfrac12$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am4-k111-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2022.Dec. 第 3 題（111上）</span></div>
+    <h4>$(x^2+1)y''-2xy'+2y=0$，$y(0)=1$、$y(1)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am4-k111-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k111-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>3. (10 pts) Solve $(x^2+1)y''-2xy'+2y=0$ with $y(0)=1$ and $y(1)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（10 分）解 $(x^2+1)y''-2xy'+2y=0$，$y(0)=1$、$y(1)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式</td><td>$p=\dfrac{-2x}{x^2+1}$、$q=\dfrac{2}{x^2+1}$</td><td>「$(x^2+1)y''$」除掉；奇點 $\pm i$，$x=0$ 是常點</td></tr>
+          <tr><td>保證半徑</td><td>$R\ge1$</td><td>$0$ 到 $\pm i$ 的距離</td></tr>
+          <tr><td>條件</td><td>$y(0)=1$（$a_0=1$）；$y(1)=1$</td><td>「$y(0)=1$ and $y(1)=1$」：第二個是<b>邊界條件</b>，不是 $y'(0)$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一般解，再用兩個條件決定常數。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>第二個條件在 $x=1$，不能直接當 $a_1$，<b>所以</b>先求一般解 $a_0y_1+a_1y_2$，再代 $x=0$ 與 $x=1$。</p>
+      <p><b>因為</b> $x=1$ 剛好在保證半徑 $|x|\lt1$ 的邊界上，無窮級數在那裡不一定收斂，<b>所以</b>要看遞迴會不會截斷：$x^2y''$、$-2xy'$、$2y$ 都帶 $a_n$，係數合起來是 $n(n-1)-2n+2=(n-1)(n-2)$，在 $n=1,2$ 為零——兩條鏈都會截斷成多項式，在 $x=1$ 代值完全沒問題。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-k111-3-s1" data-sym="an">
+        <span class="step-title">代入並比較 $x^n$ 的係數</span>
+        <p>$x^2y''=\sum n(n-1)a_nx^n$、$y''\to(n+2)(n+1)a_{n+2}$、$-2xy'\to-2na_n$、$2y\to2a_n$：</p>
+        $$(n+2)(n+1)a_{n+2}+\big[n(n-1)-2n+2\big]a_n=0\ \Longrightarrow\ a_{n+2}=-\frac{(n-1)(n-2)}{(n+2)(n+1)}a_n$$
+      </div>
+      <div class="step" data-step="am4-k111-3-s2" data-sym="y12">
+        <span class="step-title">兩條鏈都截斷</span>
+        <p class="sub">偶次（$n=0$ 再 $n=2$）：</p>
+        $$a_2=-\frac{(-1)(-2)}{2\cdot1}a_0=-a_0,\qquad a_4=-\frac{(1)(0)}{4\cdot3}a_2=0\ \Rightarrow\ a_6=a_8=\cdots=0$$
+        <p class="sub">奇次（$n=1$）：</p>
+        $$a_3=-\frac{(0)(-1)}{3\cdot2}a_1=0\ \Rightarrow\ a_5=a_7=\cdots=0$$
+        <p>一般解：$y=a_0(1-x^2)+a_1x$，是處處成立的多項式。</p>
+      </div>
+      <div class="step" data-step="am4-k111-3-s3">
+        <span class="step-title">代入兩個條件</span>
+        <p class="sub">$y(0)=1$（題目）：</p>
+        $$a_0(1-0)+a_1\cdot0=1\ \Rightarrow\ a_0=1$$
+        <p class="sub">$y(1)=1$（題目）：</p>
+        $$a_0(1-1)+a_1\cdot1=1\ \Rightarrow\ a_1=1$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>一般解 $y=a_0(1-x^2)+a_1x$；滿足條件的解 $y=1+x-x^2$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=1+x-x^2$：$y'=1-2x$、$y''=-2$；$(x^2+1)(-2)-2x(1-2x)+2(1+x-x^2)=-2x^2-2-2x+4x^2+2+2x-2x^2=0$ ✔；$y(0)=1$、$y(1)=1+1-1=1$ ✔。另一種做法：看出 $y_1=x$ 是解（$0-2x+2x=0$），用第 2 章的降階法 $y_2=x\int\frac{e^{-\int p\,dx}}{x^2}dx=x\int\frac{x^2+1}{x^2}dx=x^2-1$，得到同一個一般解。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am4-sf-04a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>條件給在 $x=1$：在 $x=1$ 展開</h4>
+    <button type="button" class="exam-btn" data-exam="am4-sf-04a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''+(x-1)y'+y=0$，$y(1)=2$、$y'(1)=0$。(a) 說明為什麼在 $x=1$ 展開比在 $x=0$ 展開方便。(b) 令 $t=x-1$，求遞迴關係。(c) 寫出解的級數並認出 closed form。(d) 求 $y(1.5)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$p=x-1$、$q=1$</td><td>「$y''+(x-1)y'+y=0$」：處處是常點</td></tr>
+          <tr><td>條件的位置</td><td>$x_0=1$</td><td>「$y(1)=2$、$y'(1)=0$」</td></tr>
+          <tr><td>新變數</td><td>$t=x-1$，$\dfrac{d}{dx}=\dfrac{d}{dt}$</td><td>(b)</td></tr>
+          <tr><td>$a_0$、$a_1$（對 $t$）</td><td>$a_0=y(1)=2$、$a_1=y'(1)=0$</td><td>在 $t=0$（即 $x=1$）取值</td></tr>
+          <tr><td>求值的點</td><td>$x=1.5$，即 $t=0.5$</td><td>(d)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 理由；(b) 遞迴；(c) 級數與 closed form；(d) $y(1.5)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>條件給在 $x=1$，在 $x=1$ 展開時 $a_0=y(1)$、$a_1=y'(1)$ 直接已知，<b>所以</b>選 $x_0=1$；若在 $x=0$ 展開，要用 $y_1(1)$、$y_2(1)$、$y_1'(1)$、$y_2'(1)$ 四個無窮級數的值去解 $a_0$、$a_1$。</p>
+      <p><b>因為</b>係數 $x-1$ 換成 $t$ 之後方程式變成 $y''+ty'+y=0$，只有 $y''$、$ty'$、$y$，<b>所以</b>遞迴跳兩格；分子會是 $(n+1)$，可以約分成很簡單的形式，看得出 $e^{-t^2/2}$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-sf-04a-s1" data-sym="tvar">
+        <span class="step-title">(a)(b) 換變數並求遞迴</span>
+        <p>令 $t=x-1$，$y'$、$y''$ 對 $t$ 微分相同，方程式變成 $y''+t\,y'+y=0$。令 $y=\sum a_nt^n$：</p>
+        $$(n+2)(n+1)a_{n+2}+na_n+a_n=0\ \Longrightarrow\ a_{n+2}=-\frac{(n+1)a_n}{(n+2)(n+1)}=-\frac{a_n}{n+2}$$
+      </div>
+      <div class="step" data-step="am4-sf-04a-s2" data-sym="a01">
+        <span class="step-title">(c) 代入 $a_0=2$、$a_1=0$</span>
+        <p>$a_1=0$ 使奇次鏈全為零。偶次鏈：</p>
+        $$a_2=-\frac{a_0}{2}=-1,\qquad a_4=-\frac{a_2}{4}=\frac14,\qquad a_6=-\frac{a_4}{6}=-\frac1{24}$$
+        <p>一般式 $a_{2k}=\dfrac{(-1)^k}{2\cdot4\cdots(2k)}a_0=\dfrac{(-1)^k}{2^kk!}a_0$。</p>
+      </div>
+      <div class="step" data-step="am4-sf-04a-s3">
+        <span class="step-title">(c) 認出 closed form</span>
+        $$y=2\sum_{k=0}^{\infty}\frac{(-1)^k}{2^kk!}t^{2k}=2\sum_{k=0}^{\infty}\frac{1}{k!}\Big(-\frac{t^2}{2}\Big)^k=2e^{-t^2/2}=2e^{-(x-1)^2/2}$$
+      </div>
+      <div class="step" data-step="am4-sf-04a-s4">
+        <span class="step-title">(d) 求 $y(1.5)$</span>
+        <p class="sub">代入 $x=1.5$，$t=0.5$，$t^2/2=0.125$：</p>
+        $$y(1.5)=2e^{-0.125}=2\times0.8825=1.7650$$
+        <p class="sub">用級數前四項：$2\big(1-0.125+0.0078-0.0003\big)=1.7650$，一致。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 在 $x=1$ 展開，$a_0=y(1)=2$、$a_1=y'(1)=0$ 直接已知；(b) $a_{n+2}=-\dfrac{a_n}{n+2}$；(c) $y=2\Big[1-\tfrac{(x-1)^2}{2}+\tfrac{(x-1)^4}{8}-\tfrac{(x-1)^6}{48}+\cdots\Big]=2e^{-(x-1)^2/2}$；(d) $y(1.5)\approx1.7650$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=2e^{-t^2/2}$：$y'=-2te^{-t^2/2}$、$y''=2(t^2-1)e^{-t^2/2}$；$y''+ty'+y=2e^{-t^2/2}(t^2-1-t^2+1)=0$ ✔；$y(1)=2$、$y'(1)=0$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am4-sf-04b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>方程式沒有奇點，解的半徑卻只有 1</h4>
+    <button type="button" class="exam-btn" data-exam="am4-sf-04b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''-xy'-y=\dfrac{1}{1-x}$，$y(0)=0$、$y'(0)=0$。(a) 把右邊寫成冪級數，求遞迴關係。(b) 求到 $x^6$ 的係數。(c) 左邊的係數 $-x$、$-1$ 沒有任何奇點，這個級數解的收斂半徑是多少？為什麼？(d) 驗證 $e^{x^2/2}$ 是對應齊次方程式的解，並說明一般解的結構。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>左邊的係數</td><td>$p=-x$、$q=-1$，沒有奇點</td><td>「$y''-xy'-y$」</td></tr>
+          <tr><td>右邊</td><td>$g=\dfrac1{1-x}=\sum_{n\ge0}x^n$（$|x|\lt1$）</td><td>「$=\dfrac1{1-x}$」：幾何級數，每個 $g_n=1$；奇點 $x=1$</td></tr>
+          <tr><td>$a_0$、$a_1$</td><td>$0$、$0$</td><td>「$y(0)=0$、$y'(0)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 遞迴；(b) $a_2$–$a_6$；(c) 收斂半徑與理由；(d) 齊次解與一般解結構。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊不是多項式而是 $\dfrac1{1-x}$，<b>所以</b>先用幾何級數展開，每個 $x^n$ 的方程式右邊都是 1，再和平常一樣比較係數。</p>
+      <p><b>因為</b>第 1 節的定理只看 $p$、$q$，非齊次時還要看 $g$ 的奇點，<b>所以</b>半徑由 $g$ 在 $x=1$ 的奇點決定。用遞迴估計 $a_n$ 的大小（比值是否趨近 1）來確認。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am4-sf-04b-s1" data-sym="an">
+        <span class="step-title">(a) 比較係數</span>
+        <p>$-xy'\to-na_n$、$-y\to-a_n$，右邊每一項的係數都是 1：</p>
+        $$(n+2)(n+1)a_{n+2}-(n+1)a_n=1\ \Longrightarrow\ a_{n+2}=\frac{1}{(n+2)(n+1)}+\frac{a_n}{n+2}$$
+      </div>
+      <div class="step" data-step="am4-sf-04b-s2" data-sym="a01">
+        <span class="step-title">(b) 代入 $a_0=a_1=0$</span>
+        <p class="sub">代入 $a_0=a_1=0$（題目「$y(0)=0$、$y'(0)=0$」）到步驟 1 的遞迴，$n=0,1$：</p>
+        $$a_2=\frac{1}{2\cdot1}+\frac{a_0}{2}=\frac12,\qquad a_3=\frac{1}{3\cdot2}+\frac{a_1}{3}=\frac16$$
+        <p class="sub">$n=2,3,4$，每次用前面算出的 $a_2$、$a_3$、$a_4$：</p>
+        $$a_4=\frac1{12}+\frac{a_2}{4}=\frac1{12}+\frac18=\frac5{24},\qquad a_5=\frac1{20}+\frac{a_3}{5}=\frac1{20}+\frac1{30}=\frac1{12}$$
+        $$a_6=\frac1{30}+\frac{a_4}{6}=\frac1{30}+\frac5{144}=\frac{24+25}{720}=\frac{49}{720}$$
+        <p>$y=\tfrac12x^2+\tfrac16x^3+\tfrac5{24}x^4+\tfrac1{12}x^5+\tfrac{49}{720}x^6+\cdots$</p>
+      </div>
+      <div class="step" data-step="am4-sf-04b-s3" data-sym="Rc">
+        <span class="step-title">(c) 收斂半徑是 1</span>
+        <p>$n$ 很大時遞迴右邊兩項：$\dfrac{1}{(n+2)(n+1)}\approx\dfrac1{n^2}$，$\dfrac{a_n}{n+2}$ 比 $a_n$ 小 $n$ 倍。若 $a_n$ 衰減得比 $1/n^2$ 快，第一項就會主導、使 $a_{n+2}\approx1/n^2$，矛盾；所以 $a_n\approx\dfrac{1}{n^2}$（實際算到 $n=29$，$n^2a_n\approx1.08$）。於是</p>
+        $$\frac{a_{n+1}}{a_n}\approx\frac{n^2}{(n+1)^2}\ \xrightarrow{\ n\to\infty\ }\ 1\quad\Longrightarrow\quad R=1$$
+        <p>原因：$p$、$q$ 沒有奇點，可是右邊 $g=\dfrac1{1-x}$ 在 $x=1$ 發散，解在 $x=1$ 附近 $y''\sim\dfrac1{1-x}$，帶著同一個奇點。定理在非齊次時要改成「到 $p$、$q$、$g$ 最近奇點的距離」。</p>
+      </div>
+      <div class="step" data-step="am4-sf-04b-s4" data-sym="y12">
+        <span class="step-title">(d) 齊次解與一般解</span>
+        <p>$y=e^{x^2/2}$：$y'=xe^{x^2/2}$、$y''=(1+x^2)e^{x^2/2}$；$y''-xy'-y=(1+x^2-x^2-1)e^{x^2/2}=0$ ✓。一般解是「這一題的特解 + $c_1e^{x^2/2}+c_2y_2$」，$y_2$ 是另一個齊次解（奇次串）。齊次解都處處收斂，所以整個一般解的半徑仍是 1，由特解決定。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $a_{n+2}=\dfrac{1}{(n+2)(n+1)}+\dfrac{a_n}{n+2}$；(b) $y=\tfrac12x^2+\tfrac16x^3+\tfrac5{24}x^4+\tfrac1{12}x^5+\tfrac{49}{720}x^6+\cdots$；(c) $R=1$，因為右邊 $\dfrac1{1-x}$ 在 $x=1$ 有奇點（$a_n\approx1/n^2$）；(d) $e^{x^2/2}$ 是齊次解，一般解 $=$ 特解 $+c_1e^{x^2/2}+c_2y_2$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>泰勒法：$y''=\dfrac1{1-x}+xy'+y$ ⇒ $y''(0)=1$，$a_2=\tfrac12$ ✔；$y'''=\dfrac1{(1-x)^2}+2y'+xy''$ ⇒ $y'''(0)=1$，$a_3=\tfrac16$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>初始條件在 $x=0$：$a_0=y(0)$、$a_1=y'(0)$，直接代入遞迴；$a_n=y^{(n)}(0)/n!$ 可用來驗算（泰勒法）。</li>
+    <li>邊界條件在兩個點：先求一般解 $a_0y_1+a_1y_2$；要在收斂範圍內取值，最好級數截斷或認得出 closed form。</li>
+    <li>非齊次：右邊展開成 $\sum g_nx^n$，$x^n$ 的方程式右邊加 $g_n$；半徑也受 $g$ 的奇點限制。</li>
+    <li>條件在 $x_0\ne0$：令 $t=x-x_0$ 在 $x_0$ 展開，$a_0=y(x_0)$、$a_1=y'(x_0)$。</li>
+  </ol>
+</div>

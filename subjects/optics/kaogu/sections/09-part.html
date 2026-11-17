@@ -1,0 +1,90 @@
+<h2 id="kp-09">H-2. 課本第 4 章第 19 題：圓柱波為什麼是 $1/\sqrt r$？</h2>
+<p><strong>來源</strong>：Pedrotti 第 4 章 Problem 19，印刷第 112 頁。</p>
+<p><strong>中文：</strong> 由<strong>通量守恆（conservation of flux）</strong>證明圓柱波振幅必須隨<strong>距離平方根的倒數</strong>而減小。</p>
+<p class="symnote">符號：$r$ 為離圓柱軸的垂直距離（m）；$L$ 為選定的線狀波源長度（m）；$P_L$ 為這段長度穿過圓柱側面的總功率（W）；$I(r)$ 為半徑 $r$ 處的平均照度（W/m²）；$E_0(r),B_0(r)$ 為對應位置的電、磁場振幅。</p>
+<p><strong>① 取同軸圓柱側面：</strong> 球面波的能量攤在 $4\pi r^2$ 上，所以 $I\propto1/r^2$；圓柱波由一條長線狀波源向外擴散，要改用包圍波源的同軸圓柱側面，面積是圓周長乘長度：</p>
+<div class="math-block">$$A(r)=2\pi rL.$$</div>
+<p><strong>② 功率守恆求照度：</strong> 沒有吸收時，不管側面半徑選多大，通過側面的總功率 $P_L$ 都相同：</p>
+<div class="math-block">$$P_L=I(r)\,A(r)=I(r)(2\pi rL).$$</div>
+<p>把面積除過去：</p>
+<div class="math-block">$$
+\boxed{I(r)=\frac{P_L}{2\pi rL}}.
+$$</div>
+<p>固定 $P_L$ 和 $L$，分母只有 $r$ 會變：</p>
+<div class="math-block">$$\boxed{I(r)\propto\frac1r}.$$</div>
+<p><strong>③ 照度換成振幅：</strong> 真空中平均照度與電場振幅平方成正比：</p>
+<div class="math-block">$$I(r)=\frac12\varepsilon_0c_0\big[E_0(r)\big]^2.$$</div>
+<p>代入 ② 的 $I(r)=P_L/(2\pi rL)$：</p>
+<div class="math-block">$$\frac12\varepsilon_0c_0[E_0(r)]^2=\frac{P_L}{2\pi rL}.$$</div>
+<p>左右同乘 $2$：</p>
+<div class="math-block">$$\varepsilon_0c_0[E_0(r)]^2=\frac{P_L}{\pi rL}.$$</div>
+<p>除以 $\varepsilon_0c_0$：</p>
+<div class="math-block">$$[E_0(r)]^2=\frac{P_L}{\pi rL\varepsilon_0c_0}.$$</div>
+<p>開平方根：</p>
+<div class="math-block">$$
+\boxed{E_0(r)=\sqrt{\frac{P_L}{\pi L\varepsilon_0c_0}}\frac1{\sqrt r}}.
+$$</div>
+<p>根號內的因子與 $r$ 無關，因此得到題目要證明的結果：</p>
+<div class="math-block">$$\boxed{E_0(r)\propto\frac1{\sqrt r}}.$$</div>
+<p>又真空中 $B_0(r)=E_0(r)/c_0$：</p>
+<div class="math-block">$$\boxed{B_0(r)\propto\frac1{\sqrt r}}.$$</div>
+<p><strong>④ 指數表示（依老師逐字稿的延伸，非原題要求）：</strong> 以遠離軸的理想向外圓柱波示範，選電場沿 $z$ 軸偏振；$\hat\rho$ 為向外的徑向單位向量、$\hat\phi$ 為方位角單位向量。</p>
+<p class="fnote"><b>公式（Poynting 向量）：</b>$\vec S=\dfrac{1}{\mu_0}\vec E\times\vec B$，其中 $\vec S$ 為瞬時 Poynting 向量（W/m²，方向即能流方向）、$\mu_0$ 為真空磁導率（H/m）、$\vec E$ 為電場（V/m）、$\vec B$ 為磁場（T）；本題要求能流朝 $+\hat\rho$，所以 $\vec E\times\vec B$ 必須指向 $+\hat\rho$。</p>
+<p class="fnote"><b>公式（圓柱座標單位向量叉積）：</b>$\hat\rho\times\hat\phi=\hat z,\quad\hat\phi\times\hat z=\hat\rho,\quad\hat z\times\hat\rho=\hat\phi$，交換次序則變號，其中 $\hat\rho,\hat\phi,\hat z$ 依序為徑向、方位角、軸向單位向量（右手系）；本題 $\hat z\times\hat\phi=-\hat\rho$，所以 $\hat z\times(-\hat\phi)=\hat\rho$。</p>
+<p>電場 $\vec E\parallel\hat z$ 時，為讓能流朝 $+\hat\rho$，磁場要朝 $-\hat\phi$。設 $C$ 是決定振幅的常數、$\Phi=kr-\omega t+\phi_0$：</p>
+<p class="fnote"><b>公式（Euler 公式）：</b>$e^{i\Phi}=\cos\Phi+i\sin\Phi$，故對與相位無關的實振幅 $A$ 有 $\operatorname{Re}\{Ae^{i\Phi}\}=A\cos\Phi$，其中 $\Phi$ 為相位（rad）、$A$ 可含單位向量；本題 $A=\dfrac{C}{\sqrt r}\hat z$（電場）或 $-\dfrac{C}{c_0\sqrt r}\hat\phi$（磁場），$\Phi=kr-\omega t+\phi_0$。</p>
+<div class="math-block">$$
+\boxed{
+\vec E(r,t)=\frac{C}{\sqrt r}\hat z\cos\Phi
+=\operatorname{Re}\left\{\frac{C}{\sqrt r}\hat z e^{i\Phi}\right\}
+}.
+$$</div>
+<p class="fnote"><b>公式（電磁波 E、B 關係）：</b>$\vec B=\dfrac{1}{c_0}\hat k\times\vec E$，其中 $\hat k$ 為傳播方向單位向量、$c_0$ 為真空光速（m/s）、$\vec E$ 為電場（V/m）、$\vec B$ 為磁場（T）；本題 $\hat k=\hat\rho$、$\vec E\parallel\hat z$，因 $\hat\rho\times\hat z=-\hat\phi$，$\vec B$ 振幅為 $\dfrac{C}{c_0\sqrt r}$、方向為 $-\hat\phi$。</p>
+<div class="math-block">$$
+\boxed{
+\vec B(r,t)=-\frac{C}{c_0\sqrt r}\hat\phi\cos\Phi
+=\operatorname{Re}\left\{-\frac{C}{c_0\sqrt r}\hat\phi e^{i\Phi}\right\}
+}.
+$$</div>
+<p>再求瞬時 Poynting 向量：</p>
+<p class="fnote"><b>公式（真空光速）：</b>$c_0=\dfrac{1}{\sqrt{\varepsilon_0\mu_0}}$，故 $\dfrac{1}{\mu_0c_0}=\varepsilon_0c_0$，其中 $\varepsilon_0$ 為真空介電常數（F/m）、$\mu_0$ 為真空磁導率（H/m）、$c_0$ 為真空光速（m/s）；本題 $\dfrac{1}{\mu_0}\cdot\dfrac{C}{\sqrt r}\cdot\dfrac{C}{c_0\sqrt r}=\dfrac{\varepsilon_0c_0C^2}{r}$，方向 $\hat z\times(-\hat\phi)=\hat\rho$。</p>
+<div class="math-block">$$
+\boxed{\vec S(r,t)=\frac{\varepsilon_0c_0C^2}{r}\cos^2\Phi\ \hat\rho}.
+$$</div>
+<p>對一個完整週期取平均：</p>
+<p class="fnote"><b>公式（餘弦平方的時間平均）：</b>$\overline{\cos^2\Phi}=\dfrac{1}{T}\displaystyle\int_0^{T}\cos^2\Phi\,dt=\dfrac12$，其中 $T=2\pi/\omega$ 為週期（s）、$\Phi$ 為以角頻率 $\omega$ 隨時間變化的相位（rad）；本題 $\Phi=kr-\omega t+\phi_0$，固定 $r$ 對 $t$ 平均。</p>
+<div class="math-block">$$
+\boxed{\overline{\vec S}(r)=\frac{\varepsilon_0c_0C^2}{2r}\hat\rho}.
+$$</div>
+<p><strong>注意：</strong> 以上是圓柱波遠場的理想近似；嚴格解涉及 Hankel 函數，遠場相位可多一個與 $r$ 無關的常數，不影響 $1/\sqrt r$ 的振幅比例。</p>
+<p><strong>三種波一眼分辨：</strong></p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>波形（理想、無吸收）</th>
+<th>傳遞能量的幾何面積</th>
+<th>振幅 $E_0$</th>
+<th>平均照度 $I$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平面波</td>
+<td>不隨距離增加</td>
+<td>常數</td>
+<td>常數</td>
+</tr>
+<tr>
+<td><strong>圓柱波</strong></td>
+<td>$\propto r$</td>
+<td>$\propto r^{-1/2}$</td>
+<td>$\propto r^{-1}$</td>
+</tr>
+<tr>
+<td><strong>球面波</strong></td>
+<td>$\propto r^2$</td>
+<td>$\propto r^{-1}$</td>
+<td>$\propto r^{-2}$</td>
+</tr>
+</tbody>
+</table></div>

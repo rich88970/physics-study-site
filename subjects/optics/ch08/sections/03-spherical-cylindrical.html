@@ -1,0 +1,124 @@
+<h2>三、球面波與圓柱波 <span class="must teacher">老師：一定會考</span> <span class="pg">講義 chp8 第 8 頁 · 課本 §4-6–4-7</span></h2>
+
+<p class="lead">點光源發出的是球面波、線光源發出的是圓柱波。和平面波最大的不同是<strong>振幅會隨距離變小</strong>：球面波 $\propto1/r$、圓柱波 $\propto1/\sqrt\rho$。逐字稿 00:53「球面波跟圓柱波的表示也都要注意」，01:43「球面波、平面波、圓柱波的指數表示，怎麼寫出來……一定會考」。</p>
+
+<h3 id="o8-s03-sph">3.1 球面波 <span class="pg-tag">第 8 頁</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">講義 · chp8 第 8 頁（8.6 Spherical Waves）</span>
+  <p>Harmonic wave disturbances emanating from a point source in a homogeneous medium travel at equal rates in all directions. Surface of constant phase (wavefronts) are spherical surfaces centered at the source.</p>
+  $$\psi=\left(\frac Ar\right)e^{i(kr-\omega t)}$$
+  <p>(The amplitude is divided by the distance $r$)</p>
+  <p>The spherical wave, as it propagates further from the source, decreases in amplitude, in contrast to a plane wave for which amplitude is constant. If the amplitude at distance $r$ from the source is $A/r$, then the irradiance (W/m²) of the wave there is proportional to $(A/r)^2$ — inverse square law of propagation for spherical wave disturbances. We cannot allow the amplitude to become infinite at the source point, as $r$ approaches zero. The value of $A$ must correspond to the amplitude of the wave at unit distance ($r=1$) from the source.</p>
+</div>
+
+<div class="step" data-step="o8-s03-why" data-sym="A,Phi,Ee">
+  <span class="step-title">為什麼是 $1/r$：能量守恆</span>
+  <p>點光源每秒放出的能量 $\Phi_e$ 均勻穿過半徑 $r$ 的球面（面積 $4\pi r^2$），所以照度 $E_e=\Phi_e/4\pi r^2\propto1/r^2$。照度又正比於振幅平方，$(A/r)^2\propto1/r^2$ ⟹ 振幅 $\propto1/r$。</p>
+  <p>電磁球面波的照度（真空）：$E_e(r)=\tfrac12\epsilon_0c_0\left(\dfrac Ar\right)^2$。只要知道某一點的照度，就能定出 $A$。</p>
+</div>
+
+<p>球面波寫成直角座標時：$r=\sqrt{x^2+y^2+z^2}$，傳播方向是 $\hat r=(x\hat x+y\hat y+z\hat z)/r$；常用的球座標單位向量</p>
+$$\hat\phi=\frac{-y\,\hat x+x\,\hat y}{\sqrt{x^2+y^2}},\qquad \hat\theta=\frac{xz\,\hat x+yz\,\hat y-(x^2+y^2)\,\hat z}{r\sqrt{x^2+y^2}}$$
+<p>$(\hat r,\hat\theta,\hat\phi)$ 是右手系：$\hat r\times\hat\theta=\hat\phi$、$\hat\theta\times\hat\phi=\hat r$、$\hat\phi\times\hat r=\hat\theta$。這三條在 2020 期中考要用。</p>
+
+<h3 id="o8-s03-cyl">3.2 圓柱波 <span class="pg-tag">課本 §4-7</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">課本 · Pedrotti §4-7 Other Harmonic Waveforms（講義沒有這一段）</span>
+  <p>講義第 8 頁只寫了球面波；老師考前提到的圓柱波取自課本：由一條線光源（例如 $z$ 軸）發出的波，波前是以 $z$ 軸為中心的圓柱面，</p>
+  $$\psi=\left(\frac{A}{\sqrt\rho}\right)e^{i(k\rho-\omega t)},\qquad\rho=\sqrt{x^2+y^2}$$
+  <p>$\rho$ 是到對稱軸的垂直距離。課本也提醒：這個形式不是波動方程的嚴格解，只在離線光源夠遠時是很好的近似。</p>
+</div>
+
+<div class="step" data-step="o8-s03-cylwhy" data-sym="A,Ee">
+  <span class="step-title">為什麼是 $1/\sqrt\rho$（課本習題 4-19 的做法）</span>
+  <p>能量往外穿過半徑 $\rho$、長度 $L$ 的圓柱側面，面積 $2\pi\rho L$。每秒穿過的總能量 $\Phi_e=E_e\cdot2\pi\rho L$ 不能隨 $\rho$ 改變，所以</p>
+  $$E_e\propto\frac1\rho\quad\Longrightarrow\quad(\text{振幅})^2\propto\frac1\rho\quad\Longrightarrow\quad\text{振幅}\propto\frac{1}{\sqrt\rho}$$
+</div>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>波</th><th>指數表示</th><th>振幅</th><th>照度</th><th>波前</th></tr></thead>
+  <tbody>
+    <tr><td>平面波</td><td>$Ae^{i(\vec k\cdot\vec r-\omega t)}$</td><td>$A$（常數）</td><td>常數</td><td>垂直 $\vec k$ 的平面</td></tr>
+    <tr><td>球面波</td><td>$\dfrac Ar\,e^{i(kr-\omega t)}$</td><td>$\propto1/r$</td><td>$\propto1/r^2$</td><td>以點源為中心的球面</td></tr>
+    <tr><td>圓柱波</td><td>$\dfrac{A}{\sqrt\rho}\,e^{i(k\rho-\omega t)}$</td><td>$\propto1/\sqrt\rho$</td><td>$\propto1/\rho$</td><td>以線源為軸的圓柱面</td></tr>
+  </tbody>
+</table></div>
+
+<div class="problem" data-kind="exam" id="o8-x20">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2020-04-21）第 2 題（108下）</span></div>
+    <h4>球面電磁波的 $\vec S$、$\vec E$、$\vec B$ 寫成直角座標 <span class="must teacher">老師：一定會考</span><span class="must exam">考古 1/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-x20">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-x20"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">2018~2020 近代光學歷屆（掃描）；108 近代光學期中.jpg 是同一份。</p>
+<div class="original-text" lang="en"><p>2.（30%）一球面電磁波在真空中傳播，其點波源位於原點，波長為 2 m，且電場指向球座標的 $\hat\phi$ 方向。已知在座標位置 $(x,y,z)=(2,1,3)$（單位：m）所量測到的輻射照度為 2 W/m²，試以直角坐標系（x、y、z 與 $\hat x$、$\hat y$、$\hat z$），寫出</p><p>a. 此球面波瞬時 Poynting 向量的完整表示（包含振幅、方向、指數的表示、及單位）；</p><p>b. 此球面波電場 $\vec E$ 的完整表示（包含振幅、偏振方向、球面波的指數表示、及單位）；</p><p>c. 此球面波磁場 $\vec B$ 的完整表示（包含振幅、偏振方向、球面波的指數表示、及單位）。</p><p>（$\epsilon_o=8.8542\times10^{-12}\ \text{C}^2\text{s}^2/(\text{kg}\cdot\text{m}^3)$，$C\approx3\times10^8$ m/s，$\mu_r=1$，π 不必展開）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（30%）真空中點波源在原點的球面電磁波，波長 $2\ \text{m}$，電場指向球座標 $\hat\phi$ 方向。在 $(x,y,z)=(2,1,3)$ m 測得輻射照度 $2\ \text{W/m}^2$。以直角座標寫出 a. 瞬時 Poynting 向量；b. 電場 $\vec E$；c. 磁場 $\vec B$ 的完整表示（振幅、方向、指數、單位）。（$\epsilon_0=8.8542\times10^{-12}$、$c\approx3\times10^8\ \text{m/s}$、$\mu_r=1$，π 不必展開）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>波的種類</td><td>球面波 $\dfrac Ar e^{i(kr-\omega t)}$</td><td>「球面電磁波……點波源位於原點」</td></tr>
+          <tr><td>介質</td><td>真空：$n=1$、$v=c_0$</td><td>「在真空中傳播」</td></tr>
+          <tr><td>波長</td><td>$\lambda=2\ \text{m}$</td><td>「波長為 2 m」</td></tr>
+          <tr><td>電場方向</td><td>$\hat e=\hat\phi$</td><td>「電場指向球座標的 $\hat\phi$ 方向」</td></tr>
+          <tr><td>參考點與照度</td><td>$(2,1,3)$ m 處 $E_e=2\ \text{W/m}^2$</td><td>「在座標位置 (2,1,3)……輻射照度為 2 W/m²」；$r_0^2=4+1+9=14\ \text{m}^2$</td></tr>
+          <tr><td>常數</td><td>$\epsilon_0=8.8542\times10^{-12}$、$c_0=3\times10^8$</td><td>題目括號</td></tr>
+          <tr><td>初始相位</td><td>0</td><td>題目沒給，取 0</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\vec S$、$\vec E$、$\vec B$ 的直角座標完整表示。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>是點源的球面波，振幅是 $A/r$（講義 8.6），而照度 $E_e=\tfrac12\epsilon_0c_0(A/r)^2$，<b>所以</b>用參考點的照度反推 $A$。題目先問 $\vec S$：它的振幅 $\epsilon_0c_0^2E_0B_0=\epsilon_0c_0(A/r)^2=2E_e(r)$，用參考點的資料可以直接寫成 $\dfrac{2E_e r_0^2}{r^2}$，連 $A$ 都不用先算。</p>
+      <p>方向：<b>因為</b>能量從原點往外流，$\vec S\parallel\hat r$；$\vec E\parallel\hat\phi$；$\vec B$ 要讓 $\vec E\times\vec B\parallel\hat r$，由 $\hat\phi\times(-\hat\theta)=\hat r$ 得 $\hat b=-\hat\theta$。最後把 $\hat r,\hat\phi,\hat\theta$ 換成直角座標。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-x20-s1" data-sym="k,w">
+        <span class="step-title">$k$ 與 $\omega$</span>
+        <p class="sub">代入 $\lambda=2\ \text{m}$（題目）、$c_0=3\times10^8\ \text{m/s}$（真空）：</p>
+        $$k=\frac{2\pi}{\lambda}=\pi\ \text{m}^{-1},\qquad\omega=kc_0=3\pi\times10^8\ \text{rad/s}$$
+      </div>
+      <div class="step" data-step="o8-x20-s2" data-sym="A,Ee,eps">
+        <span class="step-title">由參考點的照度定 $A$</span>
+        $$E_e(r_0)=\tfrac12\epsilon_0c_0\frac{A^2}{r_0^2}\ \Longrightarrow\ \epsilon_0c_0A^2=2E_e(r_0)\,r_0^2$$
+        <p class="sub">代入 $E_e=2\ \text{W/m}^2$、$r_0^2=14\ \text{m}^2$（題目的點 (2,1,3)）：</p>
+        $$\epsilon_0c_0A^2=2(2)(14)=56\ \text{W},\qquad A=\sqrt{\frac{56}{(8.8542\times10^{-12})(3\times10^8)}}=145.2\ \text{V}$$
+        <p>$A$ 的單位是 V（V/m × m），代表離波源 1 m 處的電場振幅 145.2 V/m。</p>
+      </div>
+      <div class="step" data-step="o8-x20-s3" data-sym="S">
+        <span class="step-title">a. 瞬時 Poynting 向量</span>
+        <p>振幅 $\epsilon_0c_0^2E_0B_0=\epsilon_0c_0E_0^2=\epsilon_0c_0A^2/r^2=56/r^2$，方向 $\hat r=(x\hat x+y\hat y+z\hat z)/r$，指數照考卷寫法用 $e^{2i(kr-\omega t)}$（見第 6 節）：</p>
+        $$\begin{aligned}&\vec S=\frac{56\,(x\hat x+y\hat y+z\hat z)}{(x^2+y^2+z^2)^{3/2}}\;\\&\quad\times e^{2i\left[\pi\sqrt{x^2+y^2+z^2}-3\pi\times10^8t\right]}\ \ \text{W/m}^2\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x20-s4" data-sym="E0">
+        <span class="step-title">b. 電場</span>
+        <p>$\vec E=\dfrac Ar\hat\phi\,e^{i(kr-\omega t)}$，代入 $A=145.2$（步驟 2）、$\hat\phi=(-y\hat x+x\hat y)/\sqrt{x^2+y^2}$：</p>
+        $$\begin{aligned}&\vec E=\frac{145.2\,(-y\,\hat x+x\,\hat y)}{\sqrt{x^2+y^2+z^2}\,\sqrt{x^2+y^2}}\;\\&\quad\times e^{i\left[\pi\sqrt{x^2+y^2+z^2}-3\pi\times10^8t\right]}\ \ \text{V/m}\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x20-s5" data-sym="B0">
+        <span class="step-title">c. 磁場</span>
+        <p>真空 $B_0=E_0/c_0$，所以振幅 $\dfrac{A/c_0}{r}=\dfrac{4.84\times10^{-7}}{r}$ T；方向 $\hat b=-\hat\theta$（使 $\hat\phi\times\hat b=\hat\theta\times\hat\phi=\hat r$）：</p>
+        $$-\hat\theta=\frac{-xz\,\hat x-yz\,\hat y+(x^2+y^2)\,\hat z}{r\sqrt{x^2+y^2}}$$
+        $$\begin{aligned}&\vec B=\frac{4.84\times10^{-7}\,\left[-xz\,\hat x-yz\,\hat y+(x^2+y^2)\,\hat z\right]}{(x^2+y^2+z^2)\sqrt{x^2+y^2}}\;\\&\quad\times e^{i\left[\pi\sqrt{x^2+y^2+z^2}-3\pi\times10^8t\right]}\ \ \text{T}\end{aligned}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$k=\pi\ \text{m}^{-1}$、$\omega=3\pi\times10^8\ \text{rad/s}$、$A=145.2\ \text{V}$。a. $\vec S=\dfrac{56(x\hat x+y\hat y+z\hat z)}{(x^2+y^2+z^2)^{3/2}}e^{2i[\pi r-3\pi\times10^8t]}$ W/m²；b. $\vec E=\dfrac{145.2(-y\hat x+x\hat y)}{r\sqrt{x^2+y^2}}e^{i[\pi r-3\pi\times10^8t]}$ V/m；c. $\vec B=\dfrac{4.84\times10^{-7}[-xz\hat x-yz\hat y+(x^2+y^2)\hat z]}{r^2\sqrt{x^2+y^2}}e^{i[\pi r-3\pi\times10^8t]}$ T，其中 $r=\sqrt{x^2+y^2+z^2}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>在 $(2,1,3)$：$|\vec S|$ 振幅 $=56/14=4\ \text{W/m}^2$，時間平均一半 $=2\ \text{W/m}^2$，正好是題目給的照度 ✔。$\hat\phi\cdot\hat r=0$、$(-\hat\theta)\cdot\hat r=0$，電場與磁場都垂直傳播方向 ✔。（嚴格來說真實的電偶極輻射振幅還會隨 $\theta$ 變化；這題照講義的 $A/r$ 模型處理。）</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>球面波 $\dfrac Ar e^{i(kr-\omega t)}$、圓柱波 $\dfrac{A}{\sqrt\rho}e^{i(k\rho-\omega t)}$；$A$ 是單位距離處的振幅。</li>
+    <li>振幅律都來自「穿過整個波前的總功率不變」：球面 $4\pi r^2$、圓柱 $2\pi\rho L$。</li>
+    <li>給某點照度：$\epsilon_0c_0A^2=2E_e r_0^2$（球面），之後 $\vec S$ 振幅就是 $2E_e r_0^2/r^2$。</li>
+  </ol>
+</div>

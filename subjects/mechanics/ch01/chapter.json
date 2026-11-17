@@ -1,0 +1,135 @@
+{
+  "title": "Lecture 1｜矩陣、向量與向量微積分",
+  "shortTitle": "力學 Lecture 1",
+  "range": "講義 p.1–114 · 課本 Thornton & Marion 第 1 章",
+  "overview": "s00",
+  "sections": [
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "本章總覽",
+      "pages": "p.1"
+    },
+    {
+      "id": "s01",
+      "file": "01-calculus.html",
+      "title": "微積分基礎",
+      "pages": "p.2–9",
+      "desc": "$\\mathrm df=f'(x)\\,\\mathrm dx$、積分表、乘積律與商數律、換元積分。"
+    },
+    {
+      "id": "s02",
+      "file": "02-scalar-vector.html",
+      "title": "純量與向量",
+      "pages": "p.10–16",
+      "desc": "純量和向量怎麼分、單位向量、直角分量與極座標、三維長度。"
+    },
+    {
+      "id": "s03",
+      "file": "03-vector-arith.html",
+      "title": "向量加減與純量乘法",
+      "pages": "p.17–23",
+      "desc": "首尾相接的加法、減法的方向、純量乘法、用分量計算。"
+    },
+    {
+      "id": "s04",
+      "file": "04-dot.html",
+      "title": "內積",
+      "pages": "p.24–29",
+      "desc": "內積的兩個公式，以及求投影、判斷垂直、求夾角、方向餘弦。"
+    },
+    {
+      "id": "s05",
+      "file": "05-cross.html",
+      "title": "外積",
+      "pages": "p.30–32",
+      "desc": "外積的大小與方向、分量算法、三重積、平面問題，以及用向量證三角公式與恆等式。"
+    },
+    {
+      "id": "s06",
+      "file": "06-angular.html",
+      "title": "角速度向量",
+      "pages": "p.33–34",
+      "desc": "$v=R\\omega$ 與 $\\vec v=\\vec\\omega\\times\\vec r$。"
+    },
+    {
+      "id": "s07",
+      "file": "07-derivative.html",
+      "title": "向量的微分",
+      "pages": "p.35",
+      "desc": "向量的乘積律，以及「長度固定 ⇒ 導數垂直」。"
+    },
+    {
+      "id": "s08",
+      "file": "08-matrix.html",
+      "title": "座標系與矩陣乘法",
+      "pages": "p.36–40",
+      "desc": "矩陣尺寸、矩陣乘法、$AB\\neq BA$、轉置與反矩陣。"
+    },
+    {
+      "id": "s09",
+      "file": "09-rotation.html",
+      "title": "座標旋轉",
+      "pages": "p.41–50",
+      "desc": "旋轉公式從哪來、三維旋轉矩陣、繞任意軸旋轉、連續旋轉與正交矩陣的證明。"
+    },
+    {
+      "id": "s11",
+      "file": "11-polar.html",
+      "title": "直角座標與極座標",
+      "pages": "p.51–63",
+      "desc": "單位向量會轉、$\\mathrm dA=r\\,\\mathrm dr\\,\\mathrm d\\theta$、極座標的速度與加速度。"
+    },
+    {
+      "id": "s12",
+      "file": "12-cyl-sph.html",
+      "title": "柱座標與球座標",
+      "pages": "p.64–74",
+      "desc": "$\\mathrm dV$ 的寫法、體積與轉動慣量、柱座標與球座標的加速度。"
+    },
+    {
+      "id": "s13",
+      "file": "13-gradient.html",
+      "title": "∇ 與梯度",
+      "pages": "p.75–87",
+      "desc": "梯度指向增加最快的方向、$\\vec F=-\\nabla V$、$\\nabla f(r)=f'(r)\\,\\hat r$。"
+    },
+    {
+      "id": "s14",
+      "file": "14-divergence.html",
+      "title": "散度",
+      "pages": "p.88–93",
+      "desc": "散度＝淨通量÷體積、$\\nabla\\cdot(g\\vec r)=3g+rg'$、Gauss 定理。"
+    },
+    {
+      "id": "s15",
+      "file": "15-curl.html",
+      "title": "旋度",
+      "pages": "p.94–105",
+      "desc": "旋度的算法與直觀、連心力旋度為零、保守力的判斷。"
+    },
+    {
+      "id": "s16",
+      "file": "16-stokes.html",
+      "title": "Stokes 定理與保守力",
+      "pages": "p.106–114",
+      "desc": "Stokes 定理、純量位能、保守力的三種等價說法。"
+    },
+    {
+      "id": "s10",
+      "file": "10-exam.html",
+      "title": "考前衝刺",
+      "pages": "p.1–114",
+      "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。"
+    }
+  ],
+  "sources": [{"match": "Thornton", "label": "開課本原文", "url": "https://drive.google.com/file/d/1oQ1-ZUxXR-qQ42Rbaa9H-9KwU7fFJQgC/view", "pageOffset": 16, "local": "C:/Users/jaiia/Downloads/力學.pdf"}, {"match": "講義", "label": "開講義", "url": "https://drive.google.com/file/d/1YDQGgWaI4UzMXbk2NhZDKCGMYQlz_PsO/view", "pageOffset": 0, "local": "C:/Users/jaiia/Downloads/pdf_CM_chapter01.pdf"}],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": [
+    "figures.js",
+    "figures2.js",
+    "figures3.js",
+    "figures4.js"
+  ]
+}

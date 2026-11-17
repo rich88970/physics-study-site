@@ -1,0 +1,210 @@
+<h2>六、色散介質中的群速度計算 <span class="pg">課本 p.127–130</span></h2>
+
+<p class="lead">上一節得到 $v_g=v_p[1+(\lambda/n)dn/d\lambda]$。要用它算數字，關鍵是 $dn/d\lambda$ 從哪裡來：可能是一條經驗公式（Cauchy 公式），可能只給兩個波長的折射率差（色散本領），也可能給的是介電常數 $K(\omega)$。這一節的三題作業正好是這三種情況。</p>
+
+<p class="small muted">（逐字稿 04:06：「相位速度跟群速度，〔？多看一些習題〕……注意一下。」這一節三題都是作業題；課程資料夾的考卷沒有出過這三種計算（物理考古資料夾的舊考卷也沒有），考古題統計 0/5。）</p>
+
+<h3 id="o9-ex3">6.1 課本 Example 3：Cauchy 公式 <span class="pg-tag">p.128</span></h3>
+
+<p>某冕牌玻璃在可見光的折射率近似為 $n(\lambda)=1.5255+(4825\ \text{nm}^2)/\lambda^2$。</p>
+
+<div class="step" data-step="o9-ex3-s1" data-sym="n">
+  <span class="step-title">(a) 三個波長的折射率</span>
+  $$n_{400}=1.5255+\frac{4825}{400^2}=1.5557,\quad n_{500}=1.5255+\frac{4825}{500^2}=1.5448,\quad n_{700}=1.5255+\frac{4825}{700^2}=1.5353$$
+  <p>波長越長折射率越小：正常色散。</p>
+</div>
+
+<div class="step" data-step="o9-ex3-s2" data-sym="vp,vg">
+  <span class="step-title">(b)(c) 500 nm 附近脈衝的相位速度與群速度</span>
+  $$v_p=\frac{c}{n_{500}}=\frac{3\times10^8\ \text{m/s}}{1.5448}=1.942\times10^8\ \text{m/s}$$
+  <p>$\dfrac{dn}{d\lambda}=-\dfrac{2(4825\ \text{nm}^2)}{\lambda^3}$，代入式 (40)：</p>
+  $$v_g=v_p\left[1-\frac{9650\ \text{nm}^2}{n\lambda^2}\right]=(1.942\times10^8)\left[1-\frac{9650}{1.5448\times500^2}\right]=1.893\times10^8\ \text{m/s}$$
+  <p>只差 2.5%：玻璃在可見光的折射率變化很小，群速度和相位速度相差不多。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="o9-5-9">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 5-9（作業）· p.129</span></div>
+    <h4>由色散本領 $\tfrac{1}{30}$ 與 $n_D=1.50$ 估計玻璃中的群速度 <span class="must teacher maybe">老師：注意一下</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-5-9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-5-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><strong>9</strong> The <em>dispersive power</em> of glass is defined as the ratio $(n_F-n_C)/(n_D-1)$, where C, D, and F refer to the Fraunhofer wavelengths, $\lambda_c=6563$ Å, $\lambda_D=5890$ Å, and $\lambda_F=4861$ Å. Find the approximate group velocity in glass whose dispersive power is $1/30$ and for which $n_D=1.50$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>玻璃的色散本領（dispersive power）定義為 $(n_F-n_C)/(n_D-1)$，其中 C、D、F 是 Fraunhofer 譜線 $\lambda_c=6563\ \text{Å}$、$\lambda_D=5890\ \text{Å}$、$\lambda_F=4861\ \text{Å}$。某玻璃的色散本領為 $\tfrac{1}{30}$、$n_D=1.50$，求它的近似群速度。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>色散本領</td><td>$\Delta=\dfrac{n_F-n_C}{n_D-1}=\dfrac{1}{30}$</td><td>「dispersive power is 1/30」＋定義式</td></tr>
+          <tr><td>D 線折射率</td><td>$n_D=1.50$</td><td>「for which $n_D=1.50$」</td></tr>
+          <tr><td>三條譜線</td><td>$\lambda_c=6563\ \text{Å}$、$\lambda_D=5890\ \text{Å}$、$\lambda_F=4861\ \text{Å}$</td><td>題目給的 Fraunhofer 波長；F（藍）最短、C（紅）最長，D（黃）夾在中間</td></tr>
+          <tr><td>光速</td><td>$c=3.00\times10^8\ \text{m/s}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：D 線附近的群速度 $v_g$（「approximate」：可以用有限差分近似導數）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>群速度公式 $v_g=v_p[1+(\lambda/n)dn/d\lambda]$ 需要 $dn/d\lambda$，而題目沒有給 $n(\lambda)$ 的函數，只透過色散本領給了 F、C 兩條線的折射率差，<b>所以</b>用割線斜率近似導數：$\dfrac{dn}{d\lambda}\approx\dfrac{n_F-n_C}{\lambda_F-\lambda_c}$。D 線在 F、C 之間，所以這個斜率可以代表 D 線附近。</p>
+      <p><b>因為</b>題目只問 D 線附近（給的是 $n_D$），<b>所以</b> $\lambda$ 和 $n$ 都代 D 線的值。注意分母 $\lambda_F-\lambda_c$ 是負的，$n_F>n_C$，斜率是負的——正常色散。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-5-9-s1" data-sym="n">
+        <span class="step-title">由色散本領求 $n_F-n_C$</span>
+        $$n_F-n_C=\Delta\,(n_D-1)$$
+        <p class="sub">代入 $\Delta=\tfrac{1}{30}$、$n_D=1.50$（題目）：</p>
+        $$n_F-n_C=\frac{1}{30}(1.50-1)=\frac{1}{60}=0.01667$$
+      </div>
+      <div class="step" data-step="o9-5-9-s2" data-sym="n,lambda">
+        <span class="step-title">割線斜率近似 $dn/d\lambda$</span>
+        $$\frac{dn}{d\lambda}\approx\frac{n_F-n_C}{\lambda_F-\lambda_c}$$
+        <p class="sub">代入步驟 1 的 $0.01667$、$\lambda_F=4861\ \text{Å}$、$\lambda_c=6563\ \text{Å}$（題目）：</p>
+        $$\frac{dn}{d\lambda}\approx\frac{0.01667}{4861\ \text{Å}-6563\ \text{Å}}=\frac{0.01667}{-1702\ \text{Å}}=-9.79\times10^{-6}\ \text{Å}^{-1}$$
+      </div>
+      <div class="step" data-step="o9-5-9-s3" data-sym="vp">
+        <span class="step-title">D 線的相位速度</span>
+        $$v_p=\frac{c}{n_D}=\frac{3.00\times10^8\ \text{m/s}}{1.50}=2.00\times10^8\ \text{m/s}$$
+      </div>
+      <div class="step" data-step="o9-5-9-s4" data-sym="vg">
+        <span class="step-title">代入式 (40)</span>
+        $$v_g=v_p\left[1+\frac{\lambda}{n}\frac{dn}{d\lambda}\right]$$
+        <p class="sub">代入 $\lambda=\lambda_D=5890\ \text{Å}$、$n=n_D=1.50$（題目）、$dn/d\lambda=-9.79\times10^{-6}\ \text{Å}^{-1}$（步驟 2）、$v_p$（步驟 3）：</p>
+        $$\frac{\lambda}{n}\frac{dn}{d\lambda}=\frac{5890\ \text{Å}}{1.50}\times(-9.79\times10^{-6}\ \text{Å}^{-1})=-0.0385$$
+        $$v_g=(2.00\times10^8\ \text{m/s})(1-0.0385)=1.92\times10^8\ \text{m/s}=\frac{c}{1.56}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$v_g\approx1.92\times10^8\ \text{m/s}=c/1.56$（比相位速度 $c/1.50$ 慢約 4%）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>正常色散 $v_g\lt v_p$ ✔。用精確的群折射率 $n_g=n-\lambda\,dn/d\lambda=1.50+0.0577=1.558$ 也得 $c/1.56$ ✔。書末答案與解答本都是 $c/1.56$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="o9-5-10">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 5-10（作業）· p.129</span></div>
+    <h4>Cauchy 公式 $n=A+B/\lambda^2$：500 nm 的相位速度與群速度 <span class="must teacher maybe">老師：注意一下</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-5-10">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-5-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><strong>10</strong> The dispersion curve of glass can be represented approximately by Cauchy’s empirical equation, $n=A+B/\lambda^2$. Find the phase and group velocities for light of 500-nm wavelength in a particular glass for which $A=1.40$ and $B=2.5\times10^6$ Å$^2$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>玻璃的色散曲線可以用 Cauchy 經驗公式 $n=A+B/\lambda^2$ 近似。某玻璃 $A=1.40$、$B=2.5\times10^6\ \text{Å}^2$，求波長 $500\ \text{nm}$ 的光在其中的相位速度與群速度。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>色散公式</td><td>$n=A+\dfrac{B}{\lambda^2}$</td><td>「Cauchy’s empirical equation」</td></tr>
+          <tr><td>常數</td><td>$A=1.40$，$B=2.5\times10^6\ \text{Å}^2$</td><td>「$A=1.40$ and $B=2.5\times10^6$ Å²」</td></tr>
+          <tr><td>波長</td><td>$\lambda=500\ \text{nm}=5000\ \text{Å}$</td><td>「light of 500-nm wavelength」；換成 Å 才能和 $B$ 的單位配合</td></tr>
+          <tr><td>光速</td><td>$c=3.00\times10^8\ \text{m/s}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$v_p$ 與 $v_g$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>相位速度只需要折射率，<b>所以</b>先代公式求 $n$，$v_p=c/n$。<b>因為</b>群速度還需要 $dn/d\lambda$，而這次有 $n(\lambda)$ 的公式，<b>所以</b>直接微分 $dn/d\lambda=-2B/\lambda^3$，再代式 (40)。單位要統一：$B$ 用 Å²，$\lambda$ 也用 Å。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-5-10-s1" data-sym="n">
+        <span class="step-title">500 nm 的折射率</span>
+        <p class="sub">代入 $A=1.40$、$B=2.5\times10^6\ \text{Å}^2$、$\lambda=5000\ \text{Å}$（題目）：</p>
+        $$n=1.40+\frac{2.5\times10^6\ \text{Å}^2}{(5000\ \text{Å})^2}=1.40+\frac{2.5\times10^6}{2.5\times10^7}=1.40+0.10=1.50$$
+      </div>
+      <div class="step" data-step="o9-5-10-s2" data-sym="vp">
+        <span class="step-title">相位速度</span>
+        $$v_p=\frac{c}{n}=\frac{3.00\times10^8\ \text{m/s}}{1.50}=2.00\times10^8\ \text{m/s}=\frac{c}{1.50}$$
+      </div>
+      <div class="step" data-step="o9-5-10-s3" data-sym="n,lambda">
+        <span class="step-title">$dn/d\lambda$</span>
+        $$\frac{dn}{d\lambda}=\frac{d}{d\lambda}\left(A+B\lambda^{-2}\right)=-\frac{2B}{\lambda^3}$$
+        <p class="sub">代入 $B=2.5\times10^6\ \text{Å}^2$、$\lambda=5000\ \text{Å}$：</p>
+        $$\frac{dn}{d\lambda}=-\frac{2(2.5\times10^6\ \text{Å}^2)}{(5000\ \text{Å})^3}=-\frac{5\times10^6}{1.25\times10^{11}}\ \text{Å}^{-1}=-4.0\times10^{-5}\ \text{Å}^{-1}$$
+      </div>
+      <div class="step" data-step="o9-5-10-s4" data-sym="vg">
+        <span class="step-title">群速度</span>
+        $$v_g=v_p\left[1+\frac{\lambda}{n}\frac{dn}{d\lambda}\right]$$
+        <p class="sub">代入 $\lambda=5000\ \text{Å}$、$n=1.50$（步驟 1）、$dn/d\lambda=-4.0\times10^{-5}\ \text{Å}^{-1}$（步驟 3）、$v_p$（步驟 2）：</p>
+        $$v_g=(2.00\times10^8\ \text{m/s})\left[1+\frac{5000}{1.50}(-4.0\times10^{-5})\right]=(2.00\times10^8)(1-0.1333)=1.73\times10^8\ \text{m/s}$$
+        <p>寫成 $c$ 的倍數：$v_g=\dfrac{c}{1.50}\times0.8667=\dfrac{c}{1.73}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$v_p=2.00\times10^8\ \text{m/s}=c/1.50$；$v_g=1.73\times10^8\ \text{m/s}=c/1.73$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$dn/d\lambda\lt0$（正常色散）而 $v_g\lt v_p$ ✔。書末答案 $v_p=c/1.5$、$v_g=c/1.73$，解答本相同 ✔。補充：式 (40) 是一階近似，這題色散較強（修正 13%），精確的群折射率 $n-\lambda\,dn/d\lambda=1.50+0.20=1.70$ 會給 $c/1.70$；考試照課本用式 (40)，答 $c/1.73$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="o9-5-11">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 5-11（作業）· p.129</span></div>
+    <h4>氣體的群速度用介電常數 $K(\omega)$ 表示 <span class="must teacher maybe">老師：注意一下</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-5-11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-5-11"><span class="part-label original-label">英文原題</span>
+<p class="original-note">英文原題照課本第 3 版逐字轉寫：(b) 的結果課本印成 c[ω²A/(ω₀²−ω²)²]，括號裡漏了「1 −」；依推導與解答本，正確式是 c[1 − ω²A/(ω₀²−ω²)²]（中文題目與詳解用正確式）。</p>
+<div class="original-text" lang="en"><p><strong>11</strong> The dielectric constant $K$ of a gas is related to its index of refraction by the relation $K=n^2$.</p><p><strong>a.</strong> Show that the group velocity for waves traveling in the gas may be expressed in terms of the dielectric constant by $$v_g=\frac{c}{\sqrt K}\left[1-\frac{\omega}{2K}\frac{dK}{d\omega}\right]$$ where $c$ is the speed of light in vacuum.</p><p><strong>b.</strong> An empirical relation giving the variation of $K$ with frequency is $$K=1+[A/(\omega_0^2-\omega^2)]$$ where $A$ and $\omega_0$ are constants for the gas. If the second term is very small compared to the first, show that $$v_g\cong c\left[\frac{\omega^2A}{(\omega_0^2-\omega^2)^2}\right]$$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>氣體的介電常數 $K$ 與折射率的關係為 $K=n^2$。(a) 證明氣體中的群速度可以用介電常數表示為 $v_g=\dfrac{c}{\sqrt K}\left[1-\dfrac{\omega}{2K}\dfrac{dK}{d\omega}\right]$，$c$ 為真空光速。(b) 介電常數隨頻率變化的經驗式為 $K=1+\dfrac{A}{\omega_0^2-\omega^2}$，$A$、$\omega_0$ 是氣體的常數。若第二項比第一項小很多，證明 $v_g\cong c\left[1-\dfrac{\omega^2A}{(\omega_0^2-\omega^2)^2}\right]$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>折射率</td><td>$n=\sqrt K$</td><td>「$K=n^2$」</td></tr>
+          <tr><td>波數</td><td>$k=\dfrac{n\omega}{c}=\dfrac{\sqrt K\,\omega}{c}$</td><td>介質中 $v_p=c/n=\omega/k$（定義，題目沒寫）</td></tr>
+          <tr><td>群速度定義</td><td>$v_g=\dfrac{d\omega}{dk}$</td><td>課本式 (37)</td></tr>
+          <tr><td>$K(\omega)$</td><td>$K=1+\dfrac{A}{\omega_0^2-\omega^2}$</td><td>(b) 的經驗式</td></tr>
+          <tr><td>近似條件</td><td>$\dfrac{A}{\omega_0^2-\omega^2}\ll1$，$K\approx1$</td><td>(b)「the second term is very small compared to the first」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：證明 (a)、(b) 兩個式子。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目的 $K$ 是 $\omega$ 的函數，用 $v_g=d\omega/dk$ 最直接：把 $k$ 寫成 $\omega$ 的函數 $k=\sqrt{K(\omega)}\,\omega/c$，<b>所以</b>先求 $dk/d\omega$ 再取倒數。結果裡會出現 $1/(1+\varepsilon)$，色散弱時用 $1-\varepsilon$ 近似，正好是題目的方括號（也等於把習題 5-8 的 $v_p[1-(\omega/n)dn/d\omega]$ 換成 $K$）。</p>
+      <p><b>因為</b> (b) 給了 $K(\omega)$，<b>所以</b>微分代入 (a)，再用「第二項很小」把 $K$ 換成 1 保留最低階的修正。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-5-11-s1" data-sym="k,K">
+        <span class="step-title">(a) $k$ 對 $\omega$ 微分</span>
+        <p>$k=\dfrac{1}{c}\sqrt{K}\,\omega$，乘積法則；$\dfrac{d\sqrt K}{d\omega}=\dfrac{1}{2\sqrt K}\dfrac{dK}{d\omega}$：</p>
+        $$\frac{dk}{d\omega}=\frac{1}{c}\left[\sqrt K+\omega\frac{1}{2\sqrt K}\frac{dK}{d\omega}\right]=\frac{\sqrt K}{c}\left[1+\frac{\omega}{2K}\frac{dK}{d\omega}\right]$$
+        <p>（提出 $\sqrt K$ 時，$\tfrac{1}{2\sqrt K}=\sqrt K\cdot\tfrac{1}{2K}$。）</p>
+      </div>
+      <div class="step" data-step="o9-5-11-s2" data-sym="vg">
+        <span class="step-title">(a) 取倒數並做一階近似</span>
+        $$v_g=\frac{d\omega}{dk}=\frac{c}{\sqrt K}\cdot\frac{1}{1+\dfrac{\omega}{2K}\dfrac{dK}{d\omega}}\approx\frac{c}{\sqrt K}\left[1-\frac{\omega}{2K}\frac{dK}{d\omega}\right]$$
+        <p>氣體色散很弱，$\varepsilon=\tfrac{\omega}{2K}\tfrac{dK}{d\omega}\ll1$，用 $\tfrac{1}{1+\varepsilon}\approx1-\varepsilon$。得證 (a)。（和習題 5-8 一致：$\tfrac{\omega}{n}\tfrac{dn}{d\omega}=\tfrac{\omega}{\sqrt K}\cdot\tfrac{1}{2\sqrt K}\tfrac{dK}{d\omega}=\tfrac{\omega}{2K}\tfrac{dK}{d\omega}$。）</p>
+      </div>
+      <div class="step" data-step="o9-5-11-s3" data-sym="K">
+        <span class="step-title">(b) 微分經驗式</span>
+        $$K=1+A(\omega_0^2-\omega^2)^{-1}\quad\Longrightarrow\quad\frac{dK}{d\omega}=-A(\omega_0^2-\omega^2)^{-2}\cdot(-2\omega)=\frac{2A\omega}{(\omega_0^2-\omega^2)^2}$$
+      </div>
+      <div class="step" data-step="o9-5-11-s4" data-sym="vg,K">
+        <span class="step-title">(b) 代入 (a) 並取最低階</span>
+        <p class="sub">代入步驟 3 的 $dK/d\omega$：</p>
+        $$\frac{\omega}{2K}\frac{dK}{d\omega}=\frac{\omega}{2K}\cdot\frac{2A\omega}{(\omega_0^2-\omega^2)^2}=\frac{1}{K}\cdot\frac{A\omega^2}{(\omega_0^2-\omega^2)^2}$$
+        <p>第二項很小，$K=1+(\text{小量})\approx1$，所以 $\tfrac{1}{K}\approx1$、$\tfrac{1}{\sqrt K}\approx1$：</p>
+        $$v_g\cong c\left[1-\frac{\omega^2A}{(\omega_0^2-\omega^2)^2}\right]$$
+        <p>得證 (b)。嚴格說 $\tfrac{1}{\sqrt K}\approx1-\tfrac{A}{2(\omega_0^2-\omega^2)}$ 也是一階小量；它可以忽略是因為和保留的那項相比小了 $\tfrac{|\omega_0^2-\omega^2|}{2\omega^2}$ 倍，在吸收頻率 $\omega_0$ 附近（色散最明顯的地方）成立——解答本也是這樣說明的。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $v_g=\dfrac{c}{\sqrt K}\Big/\left[1+\dfrac{\omega}{2K}\dfrac{dK}{d\omega}\right]\approx\dfrac{c}{\sqrt K}\left[1-\dfrac{\omega}{2K}\dfrac{dK}{d\omega}\right]$；(b) $\dfrac{dK}{d\omega}=\dfrac{2A\omega}{(\omega_0^2-\omega^2)^2}$，$K\approx1$ 時 $v_g\cong c\left[1-\dfrac{\omega^2A}{(\omega_0^2-\omega^2)^2}\right]$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$A=0$（沒有色散）時 $v_g=c$ ✔。$\omega\lt\omega_0$ 時 $dK/d\omega>0$（正常色散），方括號小於 1，$v_g\lt c$ ✔。這題是證明題，書末沒有給答案；解答本的推導路線與結論相同。<strong>課本印刷錯誤</strong>：英文原題 (b) 的結果印成 $v_g\cong c\left[\dfrac{\omega^2A}{(\omega_0^2-\omega^2)^2}\right]$，括號裡漏了「$1-$」——那樣 $A\to0$ 時 $v_g\to0$，不合理；依上面的推導與解答本，正確式是 $c\left[1-\dfrac{\omega^2A}{(\omega_0^2-\omega^2)^2}\right]$，本站題目與答案都用正確式。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$v_g=v_p[1+(\lambda/n)dn/d\lambda]$，$\lambda$ 代真空波長，單位和 $dn/d\lambda$ 一致。</li>
+    <li>只有兩個波長的折射率：用割線斜率 $(n_F-n_C)/(\lambda_F-\lambda_c)$。</li>
+    <li>Cauchy 公式：$dn/d\lambda=-2B/\lambda^3$。</li>
+    <li>給 $K(\omega)$：$k=\sqrt K\omega/c$，$v_g=d\omega/dk$。</li>
+  </ol>
+</div>

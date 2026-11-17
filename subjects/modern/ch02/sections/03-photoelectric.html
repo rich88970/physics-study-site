@@ -1,0 +1,783 @@
+<h2>三、光電效應 <span class="pg">課本 §2.3 · p.62–67</span></h2>
+
+<p class="lead">光照到金屬上會打出電子。電子有沒有出來、出來時多快，取決於光的頻率而不是強度——波動理論完全無法解釋。Einstein 的答案是：光本身就是一份份能量 $h\nu$ 的光子，一個光子只把能量交給一個電子。</p>
+
+<h3 id="m2-pe-exp">3.1 實驗與三個古典解釋不了的事實 <span class="pg-tag">p.62–63</span></h3>
+
+<p>Hertz 做電磁波實驗時注意到：紫外光照在發射端的金屬球上，空隙比較容易跳火花。後來發現原因是頻率夠高的光會讓金屬放出電子，叫<strong>光電效應</strong>，放出的電子叫<strong>光電子</strong>。諷刺的是，證明光是電磁波的同一個實驗，也給了第一個「事情沒那麼簡單」的線索。</p>
+
+<p>實驗裝置（Fig. 2.9）：真空石英管裡兩個電極，受光照的金屬板是陽極，另一端是陰極（帶負電，會排斥電子）。夠快的光電子仍能抵達陰極形成電流；慢的被推回去。把反向電壓加大到某個值 $V_0$（幾伏特），連最快的光電子也到不了，電流變成零。這個<strong>截止電壓</strong>直接量出光電子的最大動能：</p>
+$$KE_{\max}=eV_0$$
+
+<p>光波帶有能量，金屬吸收後讓電子跑出來，這件事本身並不奇怪，就像水波把海灘上的石子沖走。奇怪的是以下三個實驗事實：</p>
+
+<div class="step" data-step="m2-pe-facts" data-sym="nu0,V0">
+  <span class="step-title">三個事實</span>
+  <ol>
+    <li><strong>沒有延遲</strong>：在實驗精度（約 $10^{-9}\ \text{s}$）內，光一到電子就出來。波動理論中能量均勻分布在波前上，單一電子要累積到幾 eV 需要時間。例如鈉表面吸收 $10^{-6}\ \text{W/m}^2$ 就測得到電流；表面一層原子每平方公尺約 $10^{19}$ 個，每個原子平均只分到 $10^{-25}\ \text{W}$，要累積一個月才夠。</li>
+    <li><strong>強度只影響數目</strong>：同頻率的強光比弱光打出更多電子，但截止電壓 $V_0$（最大動能）完全一樣（Fig. 2.10）。波動理論預測越強的光，電子越快。</li>
+    <li><strong>頻率決定能量，而且有門檻</strong>：頻率越高，光電子越快（藍光比紅光快）；低於金屬特有的<strong>截止頻率</strong> $\nu_0$，不論多強都沒有電子。高於 $\nu_0$ 時，最大動能隨頻率<strong>線性</strong>增加（Fig. 2.11、2.12）。這也是波動理論說明不了的。</li>
+  </ol>
+</div>
+
+<h3 id="m2-pe-photon">3.2 光的量子理論 <span class="pg-tag">p.63–64</span></h3>
+
+<p>Planck 的公式發表後，Einstein 是最早看出能量量子化有多激進的人之一（也許就是第一個）。1905 年他提出：光的能量不是分散在波前上，而是集中在一小包一小包裡，後來叫<strong>光子</strong>（photon，1926 年 Lewis 命名）。頻率 $\nu$ 的光，每個光子的能量是 $h\nu$。和 Planck 的差別在於：Planck 只說振子和電磁波交換能量時一份一份，Einstein 說電磁波本身就是一份一份地攜帶能量。</p>
+
+<p>三個事實立刻都說得通：(1) 能量集中在光子裡，一個光子被一個電子吸收，不用累積，沒有延遲；(2) 同頻率的光子能量都一樣，強度變大只是光子變多，所以電子變多但能量不變；(3) 頻率越高，每個光子的能量 $h\nu$ 越大，電子越快。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.64 Eq. (2.7) Work function</span>
+  $$\phi=h\nu_0$$
+  <p>電子要離開某一金屬表面所需的最小能量叫<strong>功函數</strong>；不然電子會一直自己跑出來。功函數越大，截止頻率越高。</p>
+</div>
+
+<p>常見金屬的功函數（Table 2.1，單位 eV）：銫 Cs 1.9、鉀 K 2.2、鈉 Na 2.3、鋰 Li 2.5、鈣 Ca 3.2、銅 Cu 4.7、銀 Ag 4.7、鉑 Pt 6.4。從金屬表面拉出一個電子，大約只需要從單一自由原子拉出電子的一半能量（例如銫的游離能 $3.9\ \text{eV}$，功函數 $1.9\ \text{eV}$）。可見光的頻率 $4.3$–$7.5\times10^{14}\ \text{Hz}$ 對應光子能量 $1.7$–$3.3\ \text{eV}$，所以光電效應發生在可見光和紫外線的範圍。</p>
+
+<h3 id="m2-pe-eq">3.3 Einstein 的光電方程式 <span class="pg-tag">p.65–66</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.65–66 Eq. (2.8)–(2.9) Photoelectric effect</span>
+  $$h\nu=KE_{\max}+\phi$$
+  $$KE_{\max}=h\nu-h\nu_0=h(\nu-\nu_0)$$
+  <p>光子能量 $h\nu$ ＝ 離開表面要付的最小能量 $\phi$ ＋ 剩下的動能。在表面以下的電子出來前還會損失能量，所以這是「最大」動能（Fig. 2.13）。</p>
+</div>
+
+<p>(2.9) 說 $KE_{\max}$ 對 $\nu$ 是直線、斜率是 $h$、和橫軸交在 $\nu_0$。Fig. 2.12 三種金屬的實驗直線平行，斜率都等於 Planck 常數——這就是 Einstein 正確的證據（Millikan 1916 年的精密測量）。</p>
+
+<div class="anim" data-anim="m2-photoelectric"></div>
+
+<p>用 eV 表示光子能量最方便：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.66 Eq. (2.10)–(2.11) Photon energy</span>
+  $$E=\left(\frac{6.626\times10^{-34}\ \text{J·s}}{1.602\times10^{-19}\ \text{J/eV}}\right)\nu=(4.136\times10^{-15}\ \text{eV·s})\,\nu$$
+  $$E=\frac{hc}{\lambda}=\frac{1.240\times10^{-6}\ \text{eV·m}}{\lambda}$$
+</div>
+
+<p>最常用的形式是 $hc=1240\ \text{eV·nm}$：$500\ \text{nm}$ 的光子 $1240/500=2.48\ \text{eV}$。</p>
+
+<details class="supp">
+  <summary>熱游離（thermionic emission）<span class="pg-tag">p.67</span></summary>
+  <div class="supp-body">
+    <p>很熱的物體會放出電子（以前映像管的燈絲就靠這個）。電子的能量來自金屬粒子的熱擾動，而它要逃出表面所需的最小能量，量起來總是很接近同一表面的光電功函數。兩者的差別只是誰提供能量：光電效應是光子，熱游離是熱。這支持了 Einstein 的解釋——功函數是表面本身的性質。</p>
+  </div>
+</details>
+
+<div class="box pitfall">
+  <span class="box-title">先判斷能不能發射</span>
+  <p>$h\nu<\phi$ 時答案是「沒有光電子」，不是負的動能；也不是「光弱一點、多等一下就會有」。題目給波長就先算 $1240/\lambda$（eV），和功函數比大小。</p>
+</div>
+
+<div class="problem" data-kind="tbexample" id="bz-ex2-2">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 2.2 · p.66–67</span></div>
+    <h4>$350\ \text{nm}$ 紫外光照在鉀上</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex2-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex2-2"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Ultraviolet light of wavelength 350 nm and intensity 1.00 W/m$^2$ is directed at a potassium surface.</p><p>(a) Find the maximum KE of the photoelectrons.</p><p>(b) If 0.50 percent of the incident photons produce photoelectrons, how many are emitted per second if the potassium surface has an area of 1.00 cm$^2$?</p></div>
+<p class="original-caption">Beiser Example 2.2 · p.66–67</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>波長 $350\ \text{nm}$、強度 $1.00\ \text{W/m}^2$ 的紫外光照在鉀的表面上。(a) 求光電子的最大動能。(b) 若入射光子中有 $0.50\%$ 產生光電子，鉀表面面積 $1.00\ \text{cm}^2$，每秒放出多少個光電子？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda=350\ \text{nm}$；強度 $I=1.00\ \text{W/m}^2$；鉀的功函數 $\phi=2.2\ \text{eV}$（Table 2.1）；產生光電子的比例 $\eta=0.50\%=0.0050$；面積 $A=1.00\ \text{cm}^2=1.00\times10^{-4}\ \text{m}^2$；$hc=1.24\times10^{-6}\ \text{eV·m}$、$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$。</p>
+<h4>(a) 光電子的最大動能</h4>
+<p><strong>① 光子能量：</strong> 一個光子只把能量交給一個電子，電子付掉功函數後剩下的就是最大動能；題目給波長，用 eV 單位的 $hc$ 最方便，可直接和功函數相減。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E_p=h\nu=\dfrac{hc}{\lambda}$，其中 $h$ 為 Planck 常數、$\nu$ 為頻率、$c$ 為光速、$\lambda$ 為波長；本題 $\lambda=350\ \text{nm}$。</p>
+<p>代入 $hc=1.24\times10^{-6}\ \text{eV·m}$、$\lambda=350\times10^{-9}\ \text{m}$：</p>
+<div class="math-block">$$E_p=\frac{1.24\times10^{-6}\ \text{eV·m}}{350\times10^{-9}\ \text{m}}=3.543\ \text{eV}\approx3.54\ \text{eV}$$</div>
+<p><strong>② 最大動能：</strong></p>
+<p class="fnote"><b>公式（Einstein 光電方程式）：</b>$KE_{\max}=h\nu-\phi$，其中 $KE_{\max}$ 為光電子最大動能、$h\nu$ 為光子能量、$\phi$ 為功函數；本題 $\phi=2.2\ \text{eV}$。</p>
+<p>代入上一步的 $h\nu=3.54\ \text{eV}$ 和 $\phi=2.2\ \text{eV}$：</p>
+<div class="math-block">$$KE_{\max}=3.54\ \text{eV}-2.2\ \text{eV}=1.3\ \text{eV}$$</div>
+<p>功函數只有兩位有效數字，答案也取兩位。</p>
+<div class="math-block">$$\boxed{KE_{\max}=1.3\ \text{eV}}$$</div>
+<h4>(b) 每秒放出的光電子數</h4>
+<p><strong>① 每秒落在表面上的能量：</strong> 強度是每秒每平方公尺的能量，乘以面積就是照到這塊表面的功率：</p>
+<div class="math-block">$$P=IA$$</div>
+<p>代入 $I=1.00\ \text{W/m}^2$、$A=1.00\times10^{-4}\ \text{m}^2$：</p>
+<div class="math-block">$$P=(1.00\ \text{W/m}^2)(1.00\times10^{-4}\ \text{m}^2)=1.00\times10^{-4}\ \text{J/s}$$</div>
+<p><strong>② 每秒光子數：</strong> 每秒光子數＝每秒能量 $\div$ 每個光子的能量；功率是焦耳，光子能量也要換成焦耳。代入 (a) 還沒四捨五入的 $E_p=3.543\ \text{eV}$：</p>
+<div class="math-block">$$\begin{aligned}E_p&amp;=3.543\times1.602\times10^{-19}\ \text{J}\\&amp;=5.68\times10^{-19}\ \text{J}\end{aligned}$$</div>
+<p>代入上一步的 $P=1.00\times10^{-4}\ \text{J/s}$：</p>
+<div class="math-block">$$\begin{aligned}n_p&amp;=\frac{P}{E_p}\\&amp;=\frac{1.00\times10^{-4}\ \text{J/s}}{5.68\times10^{-19}\ \text{J}}\\&amp;=1.76\times10^{14}\ \text{s}^{-1}\end{aligned}$$</div>
+<p><strong>③ 光電子數：</strong> 只有 $0.50\%$ 的光子打出電子，代入 $\eta=0.0050$ 和上一步的 $n_p$：</p>
+<div class="math-block">$$n_e=\eta\,n_p=(0.0050)(1.76\times10^{14}\ \text{s}^{-1})=8.8\times10^{11}\ \text{s}^{-1}$$</div>
+<div class="math-block">$$\boxed{n_e=8.8\times10^{11}\ \text{個/s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="kg-107-6">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">107 學年期中（2018/10/30）第 6 題 · 改自 Beiser 習題 2-13 · p.90</span></div>
+    <h4>鈉表面：$410\ \text{nm}$ 與 $560\ \text{nm}$ 的光</h4>
+    <button type="button" class="exam-btn" data-exam="kg-107-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-6"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>Sodium surface has a work function of 2.28eV. Determine whether the photoelectrons are ejected or not and if so, calculate their maximum kinetic energy, when the surface is illuminated by light of wavelength (a) 410 nm (b) 560 nm. (10%)</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 6 題 · 改自 Beiser 習題 2-13 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>鈉表面的功函數為 $2.28\ \text{eV}$。當表面分別以波長 (a) $410\ \text{nm}$、(b) $560\ \text{nm}$ 的光照射時，判斷是否有光電子射出；若有，計算其最大動能。（10%）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：鈉的功函數 $\phi=2.28\ \text{eV}$；(a) $\lambda_a=410\ \text{nm}$、(b) $\lambda_b=560\ \text{nm}$；用標準值 $hc=1240\ \text{eV·nm}$（波長是 nm、功函數是 eV，用這個單位最方便）。</p>
+<h4>(a) $410\ \text{nm}$ 的光</h4>
+<p><strong>① 截止波長：</strong> 一個光子只能把能量交給一個電子，所以有沒有光電子只看一個光子的能量是否大於 $\phi$，和光強無關；先求光子能量剛好等於 $\phi$ 的截止波長。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E=h\nu=\dfrac{hc}{\lambda}$，其中 $h$ 為普朗克常數、$\nu$ 為光的頻率、$c$ 為光速、$\lambda$ 為波長；本題令 $hc/\lambda_0=\phi$，解出截止波長 $\lambda_0$。</p>
+<div class="math-block">$$\lambda_0=\frac{hc}{\phi}$$</div>
+<p>代入 $hc=1240\ \text{eV·nm}$、$\phi=2.28\ \text{eV}$：</p>
+<div class="math-block">$$\lambda_0=\frac{1240\ \text{eV·nm}}{2.28\ \text{eV}}=544\ \text{nm}$$</div>
+<p>波長比 $544\ \text{nm}$ 短（光子能量比 $2.28\ \text{eV}$ 大）才打得出電子。</p>
+<p><strong>② 光子能量：</strong> 代入 $\lambda_a=410\ \text{nm}$：</p>
+<div class="math-block">$$h\nu=\frac{1240\ \text{eV·nm}}{410\ \text{nm}}=3.02\ \text{eV}\gt\phi=2.28\ \text{eV}$$</div>
+<p>能量夠，有光電子。</p>
+<p><strong>③ 最大動能：</strong> 光子能量扣掉功函數，剩下的就是最大動能。</p>
+<p class="fnote"><b>公式（光電方程式）：</b>$KE_{\max}=h\nu-\phi$，其中 $KE_{\max}$ 為光電子的最大動能、$h\nu$ 為一個光子的能量、$\phi$ 為金屬的功函數；本題 $h\nu=3.02\ \text{eV}$、$\phi=2.28\ \text{eV}$。</p>
+<div class="math-block">$$KE_{\max}=3.02\ \text{eV}-2.28\ \text{eV}=0.74\ \text{eV}$$</div>
+<p><strong>④ 換成焦耳：</strong> 代入 $1\ \text{eV}=1.602\times10^{-19}\ \text{J}$：</p>
+<div class="math-block">$$\begin{aligned}KE_{\max}&amp;=0.74\times1.602\times10^{-19}\ \text{J}\\&amp;=1.2\times10^{-19}\ \text{J}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{有光電子}\\ KE_{\max}=0.74\ \text{eV}=1.2\times10^{-19}\ \text{J}\end{gathered}}$$</div>
+<h4>(b) $560\ \text{nm}$ 的光</h4>
+<p><strong>① 光子能量：</strong> 代入 $\lambda_b=560\ \text{nm}$：</p>
+<div class="math-block">$$h\nu=\frac{1240\ \text{eV·nm}}{560\ \text{nm}}=2.21\ \text{eV}\lt\phi=2.28\ \text{eV}$$</div>
+<p>一個光子的能量不夠讓電子離開表面，不論光多強都沒有光電子（不是「動能為負」）。</p>
+<div class="math-block">$$\boxed{\text{沒有光電子射出}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-3">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-3 · p.89</span></div>
+    <h4>$KE_{\max}$ 和頻率成正比嗎</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-3"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Is it correct to say that the maximum photoelectron energy KE<sub>max</sub> is proportional to the frequency $\nu$ of the incident light? If not, what would a correct statement of the relationship between KE<sub>max</sub> and $\nu$ be?</p></div>
+<p class="original-caption">Beiser 習題 2-3 · p.89</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>說光電子的最大能量 $KE_{\max}$ 和入射光的頻率 $\nu$ 成正比，對嗎？若不對，$KE_{\max}$ 與 $\nu$ 的正確關係該怎麼說？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$KE_{\max}$ 為光電子最大動能，$\nu$ 為入射光頻率，$\phi=h\nu_0$ 為功函數（$\nu_0$ 為截止頻率，$\nu\lt\nu_0$ 時沒有光電子）。「成正比」的意思是 $y=ax$，直線通過原點。</p>
+<p><strong>① 把光電方程式看成 $\nu$ 的函數：</strong> 「成正比」要求直線過原點，所以看光電方程式有沒有截距。</p>
+<p class="fnote"><b>公式（光電方程式）：</b>$KE_{\max}=h\nu-\phi$，其中 $h$ 為普朗克常數、$\nu$ 為入射光頻率、$\phi$ 為功函數；本題用 $\phi=h\nu_0$ 改寫。</p>
+<div class="math-block">$$KE_{\max}=h\nu-\phi=h(\nu-\nu_0)$$</div>
+<p>這是 $\nu$ 的一次函數：斜率 $h$、縱軸截距 $-\phi$（不是 0），所以直線不過原點。</p>
+<p><strong>② 試一組數字：頻率加倍：</strong> 舉例用鈉 $\phi=2.3\ \text{eV}$（Table 2.1），光子能量取 $h\nu=3.0\ \text{eV}$：</p>
+<div class="math-block">$$KE_{\max}=3.0-2.3=0.7\ \text{eV}$$</div>
+<p>頻率加倍，$h\nu=6.0\ \text{eV}$：</p>
+<div class="math-block">$$\begin{aligned}KE_{\max}&amp;=6.0-2.3\\&amp;=3.7\ \text{eV}\ne2\times0.7\ \text{eV}\end{aligned}$$</div>
+<p>一般地 $h(2\nu)-\phi=2(h\nu-\phi)+\phi$，多出的正好是截距造成的 $\phi$。而且 $\nu\lt\nu_0$ 時根本沒有光電子，不是「動能很小」。</p>
+<p><strong>③ 正確的說法：</strong> $KE_{\max}$ 和 $\nu$ 是線性關係，和 $(\nu-\nu_0)$ 才是正比：</p>
+<div class="math-block">$$KE_{\max}\propto(\nu-\nu_0),\qquad\nu\gt\nu_0$$</div>
+<p>比例常數（直線斜率）就是 Planck 常數 $h$，對所有金屬都一樣（Fig. 2.12 的平行直線）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{不對：}KE_{\max}=h(\nu-\nu_0)\text{ 是 }\nu\text{ 的線性函數}\\ KE_{\max}\propto(\nu-\nu_0)\text{，斜率為 }h\text{，只在 }\nu\gt\nu_0\text{ 成立}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-5">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-5 · p.89</span></div>
+    <h4>$700\ \text{nm}$ 光子的能量</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-5"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the energy of a 700-nm photon.</p></div>
+<p class="original-caption">Beiser 習題 2-5 · p.89</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求波長 $700\ \text{nm}$ 的光子的能量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda=700\ \text{nm}=7.00\times10^{-7}\ \text{m}$；標準值 $hc=1.240\times10^{-6}\ \text{eV·m}$、$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$。</p>
+<p><strong>① 光子能量（eV）：</strong> 題目給波長，把 $E=h\nu$ 和 $\nu=c/\lambda$ 合起來一步算完；用 eV 單位的 $hc$，算出來直接是 eV。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E=h\nu$，其中 $E$ 為光子能量、$h$ 為普朗克常數、$\nu$ 為頻率；配合 $\nu=c/\lambda$（$c$ 為光速、$\lambda$ 為波長）得</p>
+<div class="math-block">$$E=\frac{hc}{\lambda}$$</div>
+<p>代入 $hc=1.240\times10^{-6}\ \text{eV·m}$、$\lambda=700\times10^{-9}\ \text{m}$：</p>
+<div class="math-block">$$E=\frac{1.240\times10^{-6}\ \text{eV·m}}{700\times10^{-9}\ \text{m}}=1.77\ \text{eV}$$</div>
+<p><strong>② 換成焦耳：</strong> 代入 $1\ \text{eV}=1.602\times10^{-19}\ \text{J}$：</p>
+<div class="math-block">$$\begin{aligned}E&amp;=1.771\times1.602\times10^{-19}\ \text{J}\\&amp;=2.84\times10^{-19}\ \text{J}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{E=1.77\ \text{eV}=2.84\times10^{-19}\ \text{J}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-6">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-6 · p.89</span></div>
+    <h4>$100\ \text{MeV}$ 光子的波長與頻率</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the wavelength and frequency of a 100-MeV photon.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $100\ \text{MeV}$ 光子的波長與頻率。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$E=100\ \text{MeV}$；標準值 $hc=1.240\times10^{-6}\ \text{eV·m}$、$h=4.136\times10^{-15}\ \text{eV·s}$（能量用 eV 給，選 eV 單位的常數就不必換焦耳）。</p>
+<p><strong>① 把 MeV 換成 eV：</strong> 由 $E=h\nu=hc/\lambda$ 分別反解波長和頻率；常數用 eV 表示，能量也要用 eV。</p>
+<div class="math-block">$$\begin{aligned}E&amp;=100\ \text{MeV}\\&amp;=100\times10^{6}\ \text{eV}\\&amp;=1.00\times10^{8}\ \text{eV}\end{aligned}$$</div>
+<p><strong>② 波長：</strong> 由 $E=hc/\lambda$ 解出 $\lambda$。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E=h\nu=\dfrac{hc}{\lambda}$，其中 $E$ 為光子能量、$h$ 為普朗克常數、$\nu$ 為頻率、$c$ 為光速、$\lambda$ 為波長；本題 $E=1.00\times10^{8}\ \text{eV}$。</p>
+<div class="math-block">$$\lambda=\frac{hc}{E}$$</div>
+<p>代入 $hc=1.240\times10^{-6}\ \text{eV·m}$ 與上一步的 $E$：</p>
+<div class="math-block">$$\lambda=\frac{1.240\times10^{-6}\ \text{eV·m}}{1.00\times10^{8}\ \text{eV}}=1.24\times10^{-14}\ \text{m}$$</div>
+<p><strong>③ 頻率：</strong> 由 $E=h\nu$ 解出 $\nu$：</p>
+<div class="math-block">$$\nu=\frac{E}{h}$$</div>
+<p>代入 $E=1.00\times10^{8}\ \text{eV}$、$h=4.136\times10^{-15}\ \text{eV·s}$：</p>
+<div class="math-block">$$\nu=\frac{1.00\times10^{8}\ \text{eV}}{4.136\times10^{-15}\ \text{eV·s}}=2.42\times10^{22}\ \text{Hz}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\lambda=1.24\times10^{-14}\ \text{m}=12.4\ \text{fm}\text{（原子核大小）}\\ \nu=2.42\times10^{22}\ \text{Hz}\text{，屬於 }\gamma\text{ 射線}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-7">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-7 · p.89</span></div>
+    <h4>電台每秒發出多少光子</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A 1.00-kW radio transmitter operates at a frequency of 880 kHz. How many photons per second does it emit?</p></div>
+<p class="original-caption">Beiser 習題 2-7 · p.89</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一座 $1.00\ \text{kW}$ 的無線電發射台以 $880\ \text{kHz}$ 的頻率發射。它每秒發出多少個光子？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$P=1.00\ \text{kW}=1.00\times10^{3}\ \text{J/s}$，$\nu=880\ \text{kHz}=8.80\times10^{5}\ \text{Hz}$；標準值 $h=6.626\times10^{-34}\ \text{J·s}$（功率是瓦特，用 J·s 的 $h$）。</p>
+<p><strong>① 一個光子的能量：</strong> 功率是每秒發出的能量，由一顆顆能量 $h\nu$ 的光子攜帶，所以每秒光子數＝功率 $\div$ 光子能量；題目直接給頻率，光子能量用 $h\nu$。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E=h\nu$，其中 $E$ 為一個光子的能量、$h$ 為普朗克常數、$\nu$ 為頻率；本題 $\nu=8.80\times10^{5}\ \text{Hz}$。</p>
+<div class="math-block">$$E=h\nu$$</div>
+<p>代入 $h=6.626\times10^{-34}\ \text{J·s}$、$\nu=8.80\times10^{5}\ \text{Hz}$：</p>
+<div class="math-block">$$\begin{aligned}E&amp;=(6.626\times10^{-34}\ \text{J·s})(8.80\times10^{5}\ \text{s}^{-1})\\&amp;=5.83\times10^{-28}\ \text{J}\end{aligned}$$</div>
+<p><strong>② 每秒光子數：</strong> 每秒發出的總能量 $P$ 平均分給一顆顆光子：</p>
+<div class="math-block">$$\frac{N}{t}=\frac{P}{h\nu}$$</div>
+<p>代入 $P=1.00\times10^{3}\ \text{J/s}$ 與上一步的 $h\nu=5.83\times10^{-28}\ \text{J}$：</p>
+<div class="math-block">$$\frac{N}{t}=\frac{1.00\times10^{3}\ \text{J/s}}{5.83\times10^{-28}\ \text{J}}=1.72\times10^{30}\ \text{s}^{-1}$$</div>
+<div class="math-block">$$\boxed{\frac{N}{t}\approx1.72\times10^{30}\ \text{個光子/s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-8">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-8 · p.89</span></div>
+    <h4>人眼能察覺幾個光子</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-8"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Under favorable circumstances the human eye can detect $1.0\times10^{-18}$ J of electromagnetic energy. How many 600-nm photons does this represent?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在有利的條件下，人眼能察覺 $1.0\times10^{-18}\ \text{J}$ 的電磁能量。這相當於幾個 $600\ \text{nm}$ 的光子？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$E_{\text{tot}}=1.0\times10^{-18}\ \text{J}$，$\lambda=600\ \text{nm}=6.00\times10^{-7}\ \text{m}$；標準值 $h=6.626\times10^{-34}\ \text{J·s}$、$c=3.00\times10^{8}\ \text{m/s}$（總能量是焦耳，用 SI）。</p>
+<p><strong>① 一個光子的能量：</strong> 同一波長每個光子能量都是 $hc/\lambda$，總能量除以它就是光子數。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E=\dfrac{hc}{\lambda}$，其中 $E$ 為一個光子的能量、$h$ 為普朗克常數、$c$ 為光速、$\lambda$ 為波長；本題 $\lambda=600\ \text{nm}$。</p>
+<div class="math-block">$$E=\frac{hc}{\lambda}$$</div>
+<p>代入 $h=6.626\times10^{-34}\ \text{J·s}$、$c=3.00\times10^{8}\ \text{m/s}$、$\lambda=600\times10^{-9}\ \text{m}$：</p>
+<div class="math-block">$$E=\frac{(6.626\times10^{-34})(3.00\times10^{8})}{600\times10^{-9}}\ \text{J}=3.31\times10^{-19}\ \text{J}$$</div>
+<p><strong>② 光子數：</strong></p>
+<div class="math-block">$$N=\frac{E_{\text{tot}}}{E}$$</div>
+<p>代入 $E_{\text{tot}}=1.0\times10^{-18}\ \text{J}$ 與上一步的 $E=3.31\times10^{-19}\ \text{J}$：</p>
+<div class="math-block">$$N=\frac{1.0\times10^{-18}\ \text{J}}{3.31\times10^{-19}\ \text{J}}=3.0$$</div>
+<div class="math-block">$$\boxed{N\approx3\text{ 個光子}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-9">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-9 · p.90</span></div>
+    <h4>太陽光的光子流量</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Light from the sun arrives at the earth, an average of 1.5 × 10<sup>11</sup> m away, at the rate of 1.4 × 10<sup>3</sup> W/m<sup>2</sup> of area perpendicular to the direction of the light. Assume that sunlight is monochromatic with a frequency of 5.0 × 10<sup>14</sup> Hz.</p><p>(a) How many photons fall per second on each square meter of the earth’s surface directly facing the sun?</p><p>(b) What is the power output of the sun, and how many photons per second does it emit?</p><p>(c) How many photons per cubic meter are there near the earth?</p></div>
+<p class="original-caption">Beiser 習題 2-9 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>太陽光抵達平均距離 $1.5\times10^{11}\ \text{m}$ 外的地球，在垂直於光線方向的每單位面積上功率為 $1.4\times10^{3}\ \text{W/m}^2$。假設太陽光是頻率 $5.0\times10^{14}\ \text{Hz}$ 的單色光。(a) 每秒有多少光子落在地球表面正對太陽的每平方公尺上？(b) 太陽的輸出功率是多少？每秒發出多少光子？(c) 地球附近每立方公尺有多少光子？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：日地距離 $R=1.5\times10^{11}\ \text{m}$，地球處強度 $I=1.4\times10^{3}\ \text{W/m}^2$（垂直光線方向，即「正對太陽」），單色光 $\nu=5.0\times10^{14}\ \text{Hz}$；假設太陽各方向均勻輻射；標準值 $h=6.63\times10^{-34}\ \text{J·s}$、$c=3.0\times10^{8}\ \text{m/s}$。</p>
+<h4>(a) 每秒每平方公尺的光子數</h4>
+<p><strong>① 一個光子的能量：</strong> 單色光每個光子能量都是 $h\nu$，任何能量流量除以 $h\nu$ 就變成光子流量。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E=h\nu$，其中 $E$ 為一個光子的能量、$h$ 為普朗克常數、$\nu$ 為頻率；本題 $\nu=5.0\times10^{14}\ \text{Hz}$。</p>
+<div class="math-block">$$E=h\nu$$</div>
+<p>代入 $h=6.63\times10^{-34}\ \text{J·s}$、$\nu=5.0\times10^{14}\ \text{Hz}$：</p>
+<div class="math-block">$$\begin{aligned}E&amp;=(6.63\times10^{-34}\ \text{J·s})(5.0\times10^{14}\ \text{s}^{-1})\\&amp;=3.315\times10^{-19}\ \text{J}\approx3.3\times10^{-19}\ \text{J}\end{aligned}$$</div>
+<p><strong>② 光子通量：</strong> 每秒落在每平方公尺的能量 $I$，除以每個光子的能量：</p>
+<div class="math-block">$$\Phi=\frac{I}{h\nu}$$</div>
+<p>代入 $I=1.4\times10^{3}\ \text{W/m}^2$ 與上一步的 $h\nu=3.315\times10^{-19}\ \text{J}$：</p>
+<div class="math-block">$$\begin{aligned}\Phi&amp;=\frac{1.4\times10^{3}\ \text{J/(m}^2\text{·s)}}{3.315\times10^{-19}\ \text{J}}\\&amp;=4.22\times10^{21}\ \text{m}^{-2}\text{s}^{-1}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\Phi\approx4.2\times10^{21}\ \text{個/(m}^2\text{·s)}}$$</div>
+<h4>(b) 太陽的總功率與每秒光子數</h4>
+<p><strong>① 太陽的總功率：</strong> 太陽向各方向均勻輻射、中間沒有吸收，同一份功率在距離 $R$ 處攤在整個 $4\pi R^2$ 球面上，總功率＝強度 $\times$ 球面積：</p>
+<div class="math-block">$$P=I\cdot4\pi R^2$$</div>
+<p>代入 $I=1.4\times10^{3}\ \text{W/m}^2$、$R=1.5\times10^{11}\ \text{m}$；球面積 $4\pi(1.5\times10^{11})^2=2.83\times10^{23}\ \text{m}^2$：</p>
+<div class="math-block">$$\begin{aligned}P&amp;=(1.4\times10^{3}\ \text{W/m}^2)(2.83\times10^{23}\ \text{m}^2)\\&amp;=3.96\times10^{26}\ \text{W}\approx4.0\times10^{26}\ \text{W}\end{aligned}$$</div>
+<p><strong>② 每秒發出的光子數：</strong> 總功率除以 (a) 的光子能量：</p>
+<div class="math-block">$$\frac{N}{t}=\frac{P}{h\nu}$$</div>
+<p>代入上一步的 $P=3.96\times10^{26}\ \text{W}$ 與 $h\nu=3.315\times10^{-19}\ \text{J}$：</p>
+<div class="math-block">$$\frac{N}{t}=\frac{3.96\times10^{26}\ \text{J/s}}{3.315\times10^{-19}\ \text{J}}=1.2\times10^{45}\ \text{s}^{-1}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}P\approx4.0\times10^{26}\ \text{W}\\ \frac{N}{t}=1.2\times10^{45}\ \text{個光子/s}\end{gathered}}$$</div>
+<h4>(c) 每立方公尺的光子數</h4>
+<p><strong>① 光子密度：</strong> 光子都以速率 $c$ 遠離太陽，1 秒內穿過一塊 $1\ \text{m}^2$ 截面的，是它後方長 $c\cdot(1\ \text{s})$、體積 $c\cdot1\ \text{m}^2\cdot1\ \text{s}$ 柱子裡的光子；設密度為 $n$，所以 $\Phi=nc$：</p>
+<div class="math-block">$$n=\frac{\Phi}{c}$$</div>
+<p>代入 (a) 的 $\Phi=4.22\times10^{21}\ \text{m}^{-2}\text{s}^{-1}$、$c=3.0\times10^{8}\ \text{m/s}$：</p>
+<div class="math-block">$$\begin{aligned}n&amp;=\frac{4.22\times10^{21}\ \text{m}^{-2}\text{s}^{-1}}{3.0\times10^{8}\ \text{m/s}}\\&amp;=1.4\times10^{13}\ \text{m}^{-3}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{n=1.4\times10^{13}\ \text{個光子/m}^3}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-10">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-10 · p.90</span></div>
+    <h4>雷射脈衝裡有多少光子</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-10">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A detached retina is being “welded” back in place using 20-ms pulses from a 0.50-W laser operating at a wavelength of 632 nm. How many photons are in each pulse?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用功率 $0.50\ \text{W}$、波長 $632\ \text{nm}$ 的雷射，以 $20\ \text{ms}$ 的脈衝把剝離的視網膜「焊」回原位。每個脈衝有多少個光子？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$P=0.50\ \text{W}$（假設脈衝期間穩定輸出），$t=20\ \text{ms}=2.0\times10^{-2}\ \text{s}$，$\lambda=632\ \text{nm}=6.32\times10^{-7}\ \text{m}$；標準值 $h=6.626\times10^{-34}\ \text{J·s}$、$c=3.00\times10^{8}\ \text{m/s}$。</p>
+<p><strong>① 脈衝能量：</strong> 一個脈衝的總能量是 $Pt$，再除以一個光子的能量 $hc/\lambda$ 就是光子數；功率固定時，能量＝功率 $\times$ 時間：</p>
+<div class="math-block">$$E_{\text{pulse}}=Pt$$</div>
+<p>代入 $P=0.50\ \text{W}$、$t=20\times10^{-3}\ \text{s}$：</p>
+<div class="math-block">$$\begin{aligned}E_{\text{pulse}}&amp;=(0.50\ \text{J/s})(20\times10^{-3}\ \text{s})\\&amp;=1.0\times10^{-2}\ \text{J}\end{aligned}$$</div>
+<p><strong>② 一個光子的能量：</strong></p>
+<p class="fnote"><b>公式（光子能量）：</b>$E=\dfrac{hc}{\lambda}$，其中 $E$ 為一個光子的能量、$h$ 為普朗克常數、$c$ 為光速、$\lambda$ 為波長；本題 $\lambda=632\ \text{nm}$。</p>
+<div class="math-block">$$E=\frac{hc}{\lambda}$$</div>
+<p>代入 $h=6.626\times10^{-34}\ \text{J·s}$、$c=3.00\times10^{8}\ \text{m/s}$、$\lambda=632\times10^{-9}\ \text{m}$：</p>
+<div class="math-block">$$E=\frac{(6.626\times10^{-34})(3.00\times10^{8})}{632\times10^{-9}}\ \text{J}=3.15\times10^{-19}\ \text{J}$$</div>
+<p><strong>③ 光子數：</strong></p>
+<div class="math-block">$$N=\frac{E_{\text{pulse}}}{E}$$</div>
+<p>代入 ① 的 $E_{\text{pulse}}=1.0\times10^{-2}\ \text{J}$ 與上一步的 $E=3.15\times10^{-19}\ \text{J}$：</p>
+<div class="math-block">$$N=\frac{1.0\times10^{-2}\ \text{J}}{3.15\times10^{-19}\ \text{J}}=3.2\times10^{16}$$</div>
+<div class="math-block">$$\boxed{N\approx3.2\times10^{16}\text{ 個光子}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-11">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-11 · p.90</span></div>
+    <h4>鎢：由截止波長求入射波長</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-11"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The maximum wavelength for photoelectric emission in tungsten is 230 nm. What wavelength of light must be used in order for electrons with a maximum energy of 1.5 eV to be ejected?</p></div>
+<p class="original-caption">Beiser 習題 2-11 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>鎢的光電發射最大波長是 $230\ \text{nm}$。要讓射出的電子最大能量為 $1.5\ \text{eV}$，必須用什麼波長的光？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：鎢的截止波長 $\lambda_0=230\ \text{nm}$（光電發射最大波長），要的 $KE_{\max}=1.5\ \text{eV}$；標準值 $hc=1240\ \text{eV·nm}$。</p>
+<p><strong>① 由截止波長求功函數：</strong> 題目沒給功函數，從截止波長反推：最大波長的光子能量剛好只夠付功函數，$KE_{\max}=0$。</p>
+<p class="fnote"><b>公式（光電方程式）：</b>$KE_{\max}=h\nu-\phi=\dfrac{hc}{\lambda}-\phi$，其中 $KE_{\max}$ 為光電子最大動能、$h\nu=hc/\lambda$ 為光子能量、$\phi$ 為功函數；本題在截止波長時 $KE_{\max}=0$，得 $\phi=hc/\lambda_0$。</p>
+<p>代入 $hc=1240\ \text{eV·nm}$、$\lambda_0=230\ \text{nm}$：</p>
+<div class="math-block">$$\phi=\frac{1240\ \text{eV·nm}}{230\ \text{nm}}=5.39\ \text{eV}$$</div>
+<p><strong>② 需要的光子能量：</strong> 光子能量＝功函數＋最大動能：</p>
+<div class="math-block">$$h\nu=KE_{\max}+\phi$$</div>
+<p>代入 $KE_{\max}=1.5\ \text{eV}$ 與上一步的 $\phi=5.39\ \text{eV}$：</p>
+<div class="math-block">$$h\nu=1.5\ \text{eV}+5.39\ \text{eV}=6.89\ \text{eV}$$</div>
+<p><strong>③ 換回波長：</strong></p>
+<div class="math-block">$$\lambda=\frac{hc}{h\nu}$$</div>
+<p>代入上一步的 $h\nu=6.89\ \text{eV}$：</p>
+<div class="math-block">$$\lambda=\frac{1240\ \text{eV·nm}}{6.89\ \text{eV}}=180\ \text{nm}$$</div>
+<div class="math-block">$$\boxed{\lambda=180\ \text{nm}\text{（紫外線）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-12">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-12 · p.90</span></div>
+    <h4>銅的光電子最大能量</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-12">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-12"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The minimum frequency for photoelectric emission in copper is $1.1\times10^{15}$ Hz. Find the maximum energy of the photoelectrons (in electronvolts) when light of frequency $1.5\times10^{15}$ Hz is directed on a copper surface.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>銅發生光電發射的最低頻率是 $1.1\times10^{15}\ \text{Hz}$。以頻率 $1.5\times10^{15}\ \text{Hz}$ 的光照射銅表面，光電子的最大能量是多少 eV？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：銅的截止頻率 $\nu_0=1.1\times10^{15}\ \text{Hz}$（最低頻率），入射光 $\nu=1.5\times10^{15}\ \text{Hz}$；標準值 $h=4.136\times10^{-15}\ \text{eV·s}$（題目要 eV）。</p>
+<p><strong>① 把功函數寫成 $h\nu_0$：</strong> 最低頻率的光子能量剛好等於功函數，所以光電方程式可寫成 $h(\nu-\nu_0)$，不必先算功函數。</p>
+<p class="fnote"><b>公式（光電方程式）：</b>$KE_{\max}=h\nu-\phi$，其中 $KE_{\max}$ 為光電子最大動能、$h\nu$ 為光子能量、$\phi$ 為功函數；本題 $\phi=h\nu_0$。</p>
+<div class="math-block">$$KE_{\max}=h\nu-\phi=h\nu-h\nu_0=h(\nu-\nu_0)$$</div>
+<p><strong>② 代入數字：</strong> 先算頻率差，代入 $\nu=1.5\times10^{15}\ \text{Hz}$、$\nu_0=1.1\times10^{15}\ \text{Hz}$：</p>
+<div class="math-block">$$\begin{aligned}\nu-\nu_0&amp;=(1.5-1.1)\times10^{15}\ \text{Hz}\\&amp;=0.40\times10^{15}\ \text{Hz}\end{aligned}$$</div>
+<p>再乘 $h=4.136\times10^{-15}\ \text{eV·s}$：</p>
+<div class="math-block">$$\begin{aligned}KE_{\max}&amp;=(4.136\times10^{-15}\ \text{eV·s})(0.40\times10^{15}\ \text{s}^{-1})\\&amp;=1.65\ \text{eV}\end{aligned}$$</div>
+<p>頻率只有兩位有效數字，答案寫 $1.7\ \text{eV}$。</p>
+<div class="math-block">$$\boxed{KE_{\max}\approx1.7\ \text{eV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-13">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-13 · p.90</span></div>
+    <h4>鈉的截止波長；$200\ \text{nm}$ 的光</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-13">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-13"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>What is the maximum wavelength of light that will cause photoelectrons to be emitted from sodium? What will the maximum kinetic energy of the photoelectrons be if 200-nm light falls on a sodium surface?</p></div>
+<p class="original-caption">Beiser 習題 2-13 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>能使鈉放出光電子的光，最大波長是多少？若 $200\ \text{nm}$ 的光照在鈉表面上，光電子的最大動能是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：鈉的功函數 $\phi=2.3\ \text{eV}$（題目沒給，查 Table 2.1）；第二問 $\lambda=200\ \text{nm}$；標準值 $hc=1.240\times10^{-6}\ \text{eV·m}=1240\ \text{eV·nm}$。</p>
+<h4>(1) 鈉的截止波長</h4>
+<p><strong>① 截止波長：</strong> 波長越長光子能量 $hc/\lambda$ 越小，能打出電子的最長波長就是光子能量剛好等於功函數的那個。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E=h\nu=\dfrac{hc}{\lambda}$，其中 $h$ 為普朗克常數、$\nu$ 為頻率、$c$ 為光速、$\lambda$ 為波長；本題令 $hc/\lambda_{\max}=\phi$。</p>
+<div class="math-block">$$\lambda_{\max}=\frac{hc}{\phi}$$</div>
+<p>代入 $hc=1.240\times10^{-6}\ \text{eV·m}$、$\phi=2.3\ \text{eV}$：</p>
+<div class="math-block">$$\begin{aligned}\lambda_{\max}&amp;=\frac{1.240\times10^{-6}\ \text{eV·m}}{2.3\ \text{eV}}\\&amp;=5.39\times10^{-7}\ \text{m}\\&amp;=539\ \text{nm}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\lambda_{\max}=539\ \text{nm}}$$</div>
+<h4>(2) $200\ \text{nm}$ 光的最大動能</h4>
+<p><strong>① 光子能量：</strong> $200\ \text{nm}$ 比截止波長短，一定有光電子，直接用光電方程式。代入 $\lambda=200\ \text{nm}$、$hc=1240\ \text{eV·nm}$：</p>
+<div class="math-block">$$h\nu=\frac{1240\ \text{eV·nm}}{200\ \text{nm}}=6.2\ \text{eV}\gt\phi$$</div>
+<p>（$200\lt539\ \text{nm}$，有光電子。）</p>
+<p><strong>② 最大動能：</strong></p>
+<p class="fnote"><b>公式（光電方程式）：</b>$KE_{\max}=h\nu-\phi$，其中 $KE_{\max}$ 為光電子最大動能、$h\nu$ 為光子能量、$\phi$ 為功函數；本題 $h\nu=6.2\ \text{eV}$、$\phi=2.3\ \text{eV}$。</p>
+<div class="math-block">$$KE_{\max}=6.2\ \text{eV}-2.3\ \text{eV}=3.9\ \text{eV}$$</div>
+<div class="math-block">$$\boxed{KE_{\max}=3.9\ \text{eV}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-14">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-14 · p.90</span></div>
+    <h4>照紫外光的銀球會帶多少電位</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-14">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-14"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A silver ball is suspended by a string in a vacuum chamber and ultraviolet light of wavelength 200 nm is directed at it. What electrical potential will the ball acquire as a result?</p></div>
+<p class="original-caption">Beiser 習題 2-14 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>真空室中用細線吊著一顆銀球，以波長 $200\ \text{nm}$ 的紫外光照射。銀球最後會帶多少電位？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda=200\ \text{nm}$，銀的功函數 $\phi=4.7\ \text{eV}$（查 Table 2.1）；真空、細線（絕緣）吊著，球失去的電子不會被補回；標準值 $hc=1240\ \text{eV·nm}$。</p>
+<p><strong>① 光子能量：</strong> 光子能量大於功函數時球會不斷放出光電子而帶正電，電位升高到連最快的電子都被拉回為止（$eV=KE_{\max}$，和截止電壓同一件事）。代入 $\lambda=200\ \text{nm}$、$hc=1240\ \text{eV·nm}$：</p>
+<div class="math-block">$$h\nu=\frac{1240\ \text{eV·nm}}{200\ \text{nm}}=6.2\ \text{eV}\gt\phi=4.7\ \text{eV}$$</div>
+<p>大於功函數，所以有光電子。</p>
+<p><strong>② 最大動能：</strong></p>
+<p class="fnote"><b>公式（光電方程式）：</b>$KE_{\max}=h\nu-\phi$，其中 $KE_{\max}$ 為光電子最大動能、$h\nu$ 為光子能量、$\phi$ 為功函數；本題 $h\nu=6.2\ \text{eV}$、$\phi=4.7\ \text{eV}$。</p>
+<div class="math-block">$$KE_{\max}=6.2\ \text{eV}-4.7\ \text{eV}=1.5\ \text{eV}$$</div>
+<p><strong>③ 平衡電位：</strong> 球的電位為 $V$ 時，電子（電荷 $-e$）在球面的電位能是 $-eV$，在無窮遠是 0，逃到無窮遠要付出 $eV$。只要 $KE_{\max}\gt eV$ 就還有電子逃得掉、電位繼續升高；$eV=KE_{\max}$ 時所有電子都被拉回，電位停在</p>
+<div class="math-block">$$V=\frac{KE_{\max}}{e}$$</div>
+<p>代入上一步的 $KE_{\max}=1.5\ \text{eV}$，$\text{eV}/e=\text{V}$：</p>
+<div class="math-block">$$V=\frac{1.5\ \text{eV}}{e}=1.5\ \text{V}$$</div>
+<div class="math-block">$$\boxed{V\approx+1.5\ \text{V}\text{（帶正電）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-15">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-15 · p.90</span></div>
+    <h4>光電管的電流</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-15">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-15"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>1.5 mW of 400-nm light is directed at a photoelectric cell. If 0.10 percent of the incident photons produce photoelectrons, find the current in the cell.</p></div>
+<p class="original-caption">Beiser 習題 2-15 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$1.5\ \text{mW}$、$400\ \text{nm}$ 的光照在光電管上。若入射光子中有 $0.10\%$ 產生光電子，求光電管中的電流。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：入射光功率 $P=1.5\ \text{mW}=1.5\times10^{-3}\ \text{W}$、波長 $\lambda=400\ \text{nm}$、產生光電子的比例 $\eta=0.10\%=0.0010$；標準值 $hc=1240\ \text{eV·nm}$、$e=1.602\times10^{-19}\ \text{C}$。假設光電管加的是收集電子的電壓，每個光電子都到達另一極。</p>
+<p><strong>① 一個光子的能量：</strong> 電流是每秒的光電子數乘上 $e$，所以一路由「功率 → 光子數 → 電子數 → 電流」算下去，先求每個光子帶多少能量。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$E_p=h\nu=\dfrac{hc}{\lambda}$，其中 $h$ 為 Planck 常數、$c$ 為光速、$\nu$ 為頻率、$\lambda$ 為波長；本題 $\lambda=400\ \text{nm}$。</p>
+<p>代入 $\lambda=400\ \text{nm}$、$hc=1240\ \text{eV·nm}$，再乘 $1.602\times10^{-19}\ \text{J/eV}$ 換成焦耳：</p>
+<div class="math-block">$$\begin{aligned}E_p&amp;=\frac{1240\ \text{eV·nm}}{400\ \text{nm}}\\&amp;=3.10\ \text{eV}\\&amp;=4.97\times10^{-19}\ \text{J}\end{aligned}$$</div>
+<p><strong>② 每秒光子數：</strong> 光的功率是每秒的能量，除以一個光子的能量就是每秒的光子數。</p>
+<div class="math-block">$$\frac{N_p}{t}=\frac{P}{E_p}$$</div>
+<p>代入 $P=1.5\times10^{-3}\ \text{W}$ 和上一步的 $E_p=4.97\times10^{-19}\ \text{J}$：</p>
+<div class="math-block">$$\frac{N_p}{t}=\frac{1.5\times10^{-3}\ \text{J/s}}{4.97\times10^{-19}\ \text{J}}=3.02\times10^{15}\ \text{s}^{-1}$$</div>
+<p><strong>③ 每秒光電子數：</strong> 只有 $0.10\%$ 的光子打出光電子。代入 $\eta=0.0010$ 和上一步的 $N_p/t$：</p>
+<div class="math-block">$$\begin{aligned}\frac{N_e}{t}&amp;=\eta\,\frac{N_p}{t}\\&amp;=(0.0010)(3.02\times10^{15}\ \text{s}^{-1})\\&amp;=3.02\times10^{12}\ \text{s}^{-1}\end{aligned}$$</div>
+<p><strong>④ 電流：</strong> 每個光電子帶電 $e$。</p>
+<p class="fnote"><b>公式（電流的定義）：</b>$I=\dfrac{N_e}{t}\,e$，其中 $N_e/t$ 為每秒通過的電子數、$e$ 為每個電子的電荷量；本題 $N_e/t$ 取上一步的結果。</p>
+<p>代入 $N_e/t=3.02\times10^{12}\ \text{s}^{-1}$、$e=1.602\times10^{-19}\ \text{C}$：</p>
+<div class="math-block">$$\begin{aligned}I&amp;=(3.02\times10^{12}\ \text{s}^{-1})(1.602\times10^{-19}\ \text{C})\\&amp;=4.8\times10^{-7}\ \text{A}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{I\approx4.8\times10^{-7}\ \text{A}=0.48\ \mu\text{A}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-16">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-16 · p.90</span></div>
+    <h4>截止電壓與最快光電子的速率</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-16">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-16"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Light of wavelength 400 nm is shone on a metal surface in an apparatus like that of Fig. 2.9. The work function of the metal is 2.50 eV.</p><p>(a) Find the extinction voltage, that is, the retarding voltage at which the photoelectron current disappears.</p><p>(b) Find the speed of the fastest photoelectrons.</p></div>
+<p class="original-caption">Beiser 習題 2-16 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>在 Fig. 2.9 那樣的裝置中，用波長 $400\ \text{nm}$ 的光照射功函數 $2.50\ \text{eV}$ 的金屬表面。(a) 求截止電壓，也就是光電流消失時的反向電壓。(b) 求最快光電子的速率。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：波長 $\lambda=400\ \text{nm}$、功函數 $\phi=2.50\ \text{eV}$；標準值 $hc=1240\ \text{eV·nm}$、$m=9.11\times10^{-31}\ \text{kg}$（$mc^2=511\ \text{keV}$）、$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$。</p>
+<h4>(a) 截止電壓</h4>
+<p><strong>① 光子能量與最大動能：</strong> 光電流消失代表連動能最大的電子都爬不上反向電壓的位能坡，所以先用光電方程式求 $KE_{\max}$。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$h\nu=\dfrac{hc}{\lambda}$，其中 $h$ 為 Planck 常數、$c$ 為光速、$\lambda$ 為波長；本題 $\lambda=400\ \text{nm}$。</p>
+<p>代入 $\lambda=400\ \text{nm}$：</p>
+<div class="math-block">$$h\nu=\frac{1240\ \text{eV·nm}}{400\ \text{nm}}=3.10\ \text{eV}$$</div>
+<p class="fnote"><b>公式（光電方程式）：</b>$KE_{\max}=h\nu-\phi$，其中 $h\nu$ 為光子能量、$\phi$ 為金屬的功函數、$KE_{\max}$ 為光電子的最大動能；本題 $\phi=2.50\ \text{eV}$。</p>
+<p>代入 $\phi=2.50\ \text{eV}$：</p>
+<div class="math-block">$$KE_{\max}=h\nu-\phi=3.10-2.50=0.60\ \text{eV}$$</div>
+<p><strong>② 截止電壓：</strong> 最快的電子剛好被擋回時，反向電壓做的功等於 $KE_{\max}$。</p>
+<div class="math-block">$$eV_0=KE_{\max}\ \Longrightarrow\ V_0=\frac{KE_{\max}}{e}$$</div>
+<p>代入上一步的 $KE_{\max}=0.60\ \text{eV}$，$\text{eV}/e=\text{V}$：</p>
+<div class="math-block">$$\boxed{V_0=0.60\ \text{V}}$$</div>
+<h4>(b) 最快光電子的速率</h4>
+<p><strong>① 能不能用古典動能：</strong> 最快的電子動能就是 $KE_{\max}$，先和電子靜能比較，看要不要用相對論。</p>
+<div class="math-block">$$\begin{aligned}\frac{KE_{\max}}{mc^2}&amp;=\frac{0.60\ \text{eV}}{5.11\times10^{5}\ \text{eV}}\\&amp;=1.2\times10^{-6}\ll1\end{aligned}$$</div>
+<p>相對論修正小到可以忽略，用 $KE=\tfrac12mv^2$；這一步要用 SI 單位。</p>
+<p><strong>② 速率：</strong> 由 $KE=\tfrac12mv^2$ 解出 $v$：</p>
+<div class="math-block">$$v=\sqrt{\frac{2KE}{m}}$$</div>
+<p>代入 (a) 的 $KE=0.60\ \text{eV}=0.60\times1.602\times10^{-19}\ \text{J}$、$m=9.11\times10^{-31}\ \text{kg}$：</p>
+<div class="math-block">$$\begin{aligned}v&amp;=\sqrt{\frac{2(0.60)(1.602\times10^{-19}\ \text{J})}{9.11\times10^{-31}\ \text{kg}}}\\&amp;=\sqrt{2.11\times10^{11}\ \text{m}^2/\text{s}^2}\\&amp;=4.6\times10^{5}\ \text{m/s}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{v=4.6\times10^{5}\ \text{m/s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-17">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-17 · p.90</span></div>
+    <h4>由兩組數據求 $h$ 與功函數</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-17">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-17"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A metal surface illuminated by 8.5 × 10<sup>14</sup> Hz light emits electrons whose maximum energy is 0.52 eV. The same surface illuminated by 12.0 × 10<sup>14</sup> Hz hight emits electrons whose maximum energy is 1.97 eV. From these data find Planck’s constant and the work function of the surface.</p></div>
+<p class="original-caption">Beiser 習題 2-17 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>某金屬表面以 $8.5\times10^{14}\ \text{Hz}$ 的光照射時，射出電子的最大能量為 $0.52\ \text{eV}$；以 $12.0\times10^{14}\ \text{Hz}$ 的光照射時為 $1.97\ \text{eV}$。由這些數據求 Planck 常數和該表面的功函數。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\nu_1=8.5\times10^{14}\ \text{Hz}$ 時最大動能 $KE_1=0.52\ \text{eV}$；$\nu_2=12.0\times10^{14}\ \text{Hz}$ 時 $KE_2=1.97\ \text{eV}$。同一個表面，兩組的功函數 $\phi$ 相同；$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$。</p>
+<p><strong>① 寫出兩條方程式：</strong> 兩組數據都滿足光電方程式，而且 $h$、$\phi$ 相同，兩條方程式、兩個未知數，相減就能消去 $\phi$。</p>
+<p class="fnote"><b>公式（光電方程式）：</b>$KE_{\max}=h\nu-\phi$，其中 $h$ 為 Planck 常數、$\nu$ 為入射光頻率、$\phi$ 為功函數、$KE_{\max}$ 為光電子最大動能；本題兩組 $(\nu,KE_{\max})$ 分別是 $(\nu_1,KE_1)$、$(\nu_2,KE_2)$。</p>
+<div class="math-block">$$KE_1=h\nu_1-\phi,\qquad KE_2=h\nu_2-\phi$$</div>
+<p>第二式減第一式，$\phi$ 消掉：</p>
+<div class="math-block">$$KE_2-KE_1=h(\nu_2-\nu_1)\ \Longrightarrow\ h=\frac{KE_2-KE_1}{\nu_2-\nu_1}$$</div>
+<p><strong>② 求 $h$：</strong> 代入 $KE_2=1.97$、$KE_1=0.52\ \text{eV}$、$\nu_2=12.0\times10^{14}$、$\nu_1=8.5\times10^{14}\ \text{Hz}$：</p>
+<div class="math-block">$$\begin{aligned}h&amp;=\frac{1.97\ \text{eV}-0.52\ \text{eV}}{(12.0-8.5)\times10^{14}\ \text{Hz}}\\&amp;=\frac{1.45\ \text{eV}}{3.5\times10^{14}\ \text{Hz}}\\&amp;=4.14\times10^{-15}\ \text{eV·s}\end{aligned}$$</div>
+<p><strong>③ 換成 J·s：</strong> 乘 $1.602\times10^{-19}\ \text{J/eV}$：</p>
+<div class="math-block">$$\begin{aligned}h&amp;=(4.14\times10^{-15})(1.602\times10^{-19})\ \text{J·s}\\&amp;=6.6\times10^{-34}\ \text{J·s}\end{aligned}$$</div>
+<p><strong>④ 代回求 $\phi$：</strong> 由第一式移項：</p>
+<div class="math-block">$$\phi=h\nu_1-KE_1$$</div>
+<p>代入 $h=4.14\times10^{-15}\ \text{eV·s}$、$\nu_1=8.5\times10^{14}\ \text{Hz}$、$KE_1=0.52\ \text{eV}$：</p>
+<div class="math-block">$$\begin{aligned}\phi&amp;=(4.14\times10^{-15})(8.5\times10^{14})-0.52\\&amp;=3.52-0.52=3.0\ \text{eV}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}h\approx4.1\times10^{-15}\ \text{eV·s}=6.6\times10^{-34}\ \text{J·s}\\ \phi\approx3.0\ \text{eV}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-18">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-18 · p.90</span></div>
+    <h4>由鎢的光電數據求 Planck 常數</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-18">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-18"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The work function of a tungsten surface is 5.4 eV. When the surface is illuminated by light of wavelength 175 nm, the maximum photoelectron energy is 1.7 eV. Find Planck’s constant from these data.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>鎢表面的功函數是 $5.4\ \text{eV}$。以波長 $175\ \text{nm}$ 的光照射時，光電子的最大能量是 $1.7\ \text{eV}$。由這些數據求 Planck 常數。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：功函數 $\phi=5.4\ \text{eV}$、波長 $\lambda=175\ \text{nm}=1.75\times10^{-7}\ \text{m}$、最大動能 $KE_{\max}=1.7\ \text{eV}$；標準值 $c=3.00\times10^{8}\ \text{m/s}$、$1\ \text{eV}=1.60\times10^{-19}\ \text{J}$。$h$ 是要求的量，不能先用 $hc=1240\ \text{eV·nm}$。</p>
+<p><strong>① 光子能量：</strong> 光電方程式右邊兩項都是題目給的，先得到 $h\nu$（eV）；不能用 $hc/\lambda$ 算，那裡面已經含有 $h$。</p>
+<p class="fnote"><b>公式（光電方程式）：</b>$h\nu=KE_{\max}+\phi$，其中 $h\nu$ 為光子能量、$KE_{\max}$ 為光電子最大動能、$\phi$ 為功函數；本題 $KE_{\max}=1.7\ \text{eV}$、$\phi=5.4\ \text{eV}$。</p>
+<div class="math-block">$$h\nu=1.7\ \text{eV}+5.4\ \text{eV}=7.1\ \text{eV}$$</div>
+<p><strong>② 頻率：</strong> 題目給的是波長，只用 $c$ 換成頻率（沒有用到 $h$）。</p>
+<p class="fnote"><b>公式（波速關係）：</b>$\nu=\dfrac{c}{\lambda}$，其中 $c$ 為光速、$\lambda$ 為波長、$\nu$ 為頻率；本題 $\lambda=175\times10^{-9}\ \text{m}$。</p>
+<p>代入 $c=3.00\times10^{8}\ \text{m/s}$、$\lambda=175\times10^{-9}\ \text{m}$：</p>
+<div class="math-block">$$\nu=\frac{3.00\times10^{8}\ \text{m/s}}{175\times10^{-9}\ \text{m}}=1.71\times10^{15}\ \text{Hz}$$</div>
+<p><strong>③ 解出 $h$：</strong> $h=(h\nu)/\nu$，代入 ① 的 $h\nu=7.1\ \text{eV}$ 和 ② 的 $\nu=1.71\times10^{15}\ \text{Hz}$：</p>
+<div class="math-block">$$h=\frac{7.1\ \text{eV}}{1.71\times10^{15}\ \text{Hz}}=4.14\times10^{-15}\ \text{eV·s}$$</div>
+<p>換成 J·s，乘 $1.60\times10^{-19}\ \text{J/eV}$：</p>
+<div class="math-block">$$\begin{aligned}h&amp;=(4.14\times10^{-15})(1.60\times10^{-19})\ \text{J·s}\\&amp;=6.6\times10^{-34}\ \text{J·s}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{h\approx4.1\times10^{-15}\ \text{eV·s}=6.6\times10^{-34}\ \text{J·s}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-2-19">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 2-19 · p.90</span></div>
+    <h4>證明：自由電子不能吸收整個光子</h4>
+    <button type="button" class="exam-btn" data-exam="bz-2-19">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-2-19"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show that it is impossible for a photon to give up all its energy and momentum to a free electron. This is the reason why the photoelectric effect can take place only when photons strike bound electrons.</p></div>
+<p class="original-caption">Beiser 習題 2-19 · p.90</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明光子不可能把它全部的能量和動量都交給一個自由電子。這就是為什麼光電效應只發生在光子撞到被束縛的電子時。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：光子能量 $E_0$、動量 $p_0=E_0/c$；電子質量 $m$，吸收前靜止（守恆律在任何慣性系都成立，可以換到電子原本靜止的座標系）。「自由」表示只有光子和電子兩個物體，系統的能量和動量都守恆；「全部」表示吸收後光子消失、只剩電子。</p>
+<p><strong>① 假設吸收發生，寫出守恆：</strong> 用反證法：假設吸收發生，寫出能量守恆和動量守恆，看吸收後的電子能不能滿足相對論的能量–動量關係（光子是相對論性的，不能用古典的 $\tfrac12mv^2$）。</p>
+<p class="fnote"><b>公式（動量守恆、能量守恆）：</b>沒有外力時系統的總動量與總能量在作用前後不變；本題作用前是光子 $(E_0,\,p_0)$ 加靜止電子 $(mc^2,\,0)$，作用後只有電子 $(E_e,\,p_e)$。</p>
+<p>吸收前電子能量 $mc^2$、動量 0；吸收後電子動量 $p_e$、能量 $E_e$：</p>
+<div class="math-block">$$\text{動量：}\ p_e=p_0=\frac{E_0}c$$</div>
+<div class="math-block">$$\text{能量：}\ E_e=E_0+mc^2=p_ec+mc^2$$</div>
+<p>（能量式裡用動量式把 $E_0$ 換成 $p_ec$。）</p>
+<p><strong>② 代進電子的能量–動量關係：</strong> 吸收後的電子是有質量的粒子，必須滿足這條關係。</p>
+<p class="fnote"><b>公式（相對論能量–動量關係）：</b>$E^2=(pc)^2+(mc^2)^2$，其中 $E$ 為粒子總能量、$p$ 為動量、$m$ 為靜止質量；本題用在吸收後的電子：$E_e^2=(p_ec)^2+(mc^2)^2$。</p>
+<p>把上一步的 $E_e=p_ec+mc^2$ 代入左邊並展開：</p>
+<div class="math-block">$$\begin{aligned}(p_ec+mc^2)^2&amp;=(p_ec)^2+2p_ec\,mc^2\\&amp;\quad+(mc^2)^2\end{aligned}$$</div>
+<p><strong>③ 比較兩邊，導出矛盾：</strong> 令上一步的展開式等於 $(p_ec)^2+(mc^2)^2$，兩邊相同的項消去：</p>
+<div class="math-block">$$2p_ec\,mc^2=0\ \Longrightarrow\ p_e=0\quad(\text{因為 }m\ne0)$$</div>
+<p>於是 $E_0=p_ec=0$：光子根本不存在。所以除了 $E_0=0$ 的無意義情況，吸收不可能發生。</p>
+<p><strong>④ 另一種看法：</strong> 換到「吸收後電子靜止」的座標系：吸收後總能量只剩 $mc^2$；吸收前電子在動（能量 $\gt mc^2$），還加上一個能量為正的光子，吸收前的能量一定比較大，能量不守恆。</p>
+<p><strong>⑤ 為什麼光電效應要束縛電子：</strong> 束縛電子旁邊有原子（原子核）可以分擔動量，而它的質量大、幾乎不分走能量，所以能量與動量可以同時守恆。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{能量與動量守恆不能同時成立，自由電子不能吸收光子}\\ \text{束縛電子可以：原子核分擔動量、幾乎不分走能量}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-03a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>光電管加正、反向電壓：電子到陽極時有多少動能</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-03a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>鉀（$\phi=2.2\ \text{eV}$）陰極被 $400\ \text{nm}$ 的光照射（忽略接觸電位差）。(a) 光電子離開陰極時的動能範圍是多少？(b) 陽極電位比陰極高 $2.0\ \text{V}$ 時，到達陽極的電子動能範圍是多少？(c) 陽極電位比陰極低 $0.50\ \text{V}$ 時，哪些電子到得了？到達時的動能範圍是多少？(d) 截止電壓是多少？若光強加倍，(b)(c) 的動能範圍和電流各怎麼變？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：鉀的功函數 $\phi=2.2\ \text{eV}$、波長 $\lambda=400\ \text{nm}$；(b) 陽極比陰極高 $\Delta V=+2.0\ \text{V}$（加速），(c) 低 $\Delta V=-0.50\ \text{V}$（減速）；忽略接觸電位差；標準值 $hc=1240\ \text{eV·nm}$。</p>
+<h4>(a) 離開陰極時的動能範圍</h4>
+<p><strong>① 光子能量與最大動能：</strong> 光電方程式只給出最大動能，其他電子出來前在金屬裡損失了一些能量，最慢的幾乎是 0，所以初動能是 $0$ 到 $KE_{\max}$ 的範圍。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$h\nu=\dfrac{hc}{\lambda}$，其中 $h$ 為 Planck 常數、$c$ 為光速、$\lambda$ 為波長；本題 $\lambda=400\ \text{nm}$。</p>
+<p>代入 $\lambda=400\ \text{nm}$：</p>
+<div class="math-block">$$h\nu=\frac{1240\ \text{eV·nm}}{400\ \text{nm}}=3.10\ \text{eV}$$</div>
+<p class="fnote"><b>公式（光電方程式）：</b>$KE_{\max}=h\nu-\phi$，其中 $h\nu$ 為光子能量、$\phi$ 為功函數；本題 $\phi=2.2\ \text{eV}$。</p>
+<p>代入 $\phi=2.2\ \text{eV}$：</p>
+<div class="math-block">$$KE_{\max}=h\nu-\phi=3.10-2.2=0.90\ \text{eV}$$</div>
+<div class="math-block">$$\boxed{KE_{\text{初}}=0\text{–}0.90\ \text{eV}}$$</div>
+<h4>(b) 加速 $2.0\ \text{V}$ 時到達陽極的動能範圍</h4>
+<p><strong>① 兩極之間的能量守恆：</strong> 電子離開陰極後只受電場作用，電力是保守力，用能量守恆。</p>
+<p class="fnote"><b>公式（能量守恆、電位能）：</b>$KE+U$ 守恆，點電荷 $q$ 在電位 $V$ 處的電位能 $U=qV$；本題電子 $q=-e$，從陰極到電位高 $\Delta V$ 的陽極，電位能變化 $-e\Delta V$，動能變化 $+e\Delta V$。</p>
+<div class="math-block">$$KE_{\text{到達}}=KE_{\text{初}}+e\,\Delta V$$</div>
+<p>$KE_{\text{到達}}$ 算出來小於 0 的電子，代表半路就被推回陰極。</p>
+<p><strong>② 代入加速電壓：</strong> $e\Delta V=+2.0\ \text{eV}$，範圍兩端（(a) 的 $0$、$0.90\ \text{eV}$）各加 $2.0\ \text{eV}$：</p>
+<div class="math-block">$$\begin{aligned}\text{最慢}&amp;:\ 0+2.0=2.0\ \text{eV}\\\text{最快}&amp;:\ 0.90+2.0=2.9\ \text{eV}\end{aligned}$$</div>
+<p>每個電子都被加速，全部到得了。</p>
+<div class="math-block">$$\boxed{KE_{\text{到達}}=2.0\text{–}2.9\ \text{eV}}$$</div>
+<h4>(c) 減速 $0.50\ \text{V}$ 時哪些電子到得了</h4>
+<p><strong>① 到得了的條件：</strong> 代入 $e\Delta V=-0.50\ \text{eV}$，到達時動能不能小於 0：</p>
+<div class="math-block">$$KE_{\text{到達}}=KE_{\text{初}}-0.50\ \text{eV}\ge0\ \Longrightarrow\ KE_{\text{初}}\ge0.50\ \text{eV}$$</div>
+<p><strong>② 到達時的動能範圍：</strong> 只有初動能 $0.50$ 到 $0.90\ \text{eV}$ 的電子到得了，到達時：</p>
+<div class="math-block">$$\begin{aligned}\text{最慢}&amp;:\ 0.50-0.50=0\\\text{最快}&amp;:\ 0.90-0.50=0.40\ \text{eV}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{只有 }KE_{\text{初}}\ge0.50\ \text{eV}\text{ 的電子到得了}\\ \text{到達時 }0\text{–}0.40\ \text{eV}\end{gathered}}$$</div>
+<h4>(d) 截止電壓與光強加倍</h4>
+<p><strong>① 截止電壓：</strong> 連最快的電子也到不了時電流歸零：$eV_0=KE_{\max}$。代入 (a) 的 $KE_{\max}=0.90\ \text{eV}$：</p>
+<div class="math-block">$$V_0=0.90\ \text{V}$$</div>
+<p><strong>② 光強加倍：</strong> 光強加倍＝每秒光子數加倍，每秒射出的光電子加倍，電流加倍；但每個光子的能量 $h\nu$ 不變，$KE_{\max}$ 不變，(b)(c) 的動能範圍完全不變。</p>
+<div class="math-block">$$\boxed{\begin{gathered}V_0=0.90\ \text{V}\\ \text{光強加倍：電流加倍，動能範圍不變}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-2-03b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>古典波動理論要等多久才打出電子</h4>
+    <button type="button" class="exam-btn" data-exam="sf-2-03b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用古典波動理論估計：強度 $1.0\times10^{-3}\ \text{W/m}^2$ 的微弱 $400\ \text{nm}$ 光照在鉀（$\phi=2.2\ \text{eV}$）上，假設一個電子只能吸收落在一個原子截面（半徑 $0.10\ \text{nm}$ 的圓）上的能量。(a) 電子要累積多久才能逸出？(b) 實驗上光電子在 $10^{-9}\ \text{s}$ 內就出現。用光子圖像算每秒每平方公尺落下幾個光子；並解釋：平均而言一個原子截面也要等好幾個小時才接到一個光子，為什麼光電子仍然立刻出現？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：光強 $I=1.0\times10^{-3}\ \text{W/m}^2$、波長 $\lambda=400\ \text{nm}$、鉀的功函數 $\phi=2.2\ \text{eV}$、原子截面半徑 $r=0.10\ \text{nm}=1.0\times10^{-10}\ \text{m}$；實驗延遲 $\lt10^{-9}\ \text{s}$；標準值 $hc=1240\ \text{eV·nm}$、$1\ \text{eV}=1.602\times10^{-19}\ \text{J}$。</p>
+<h4>(a) 古典預測的累積時間</h4>
+<p><strong>① 一個原子的截面積：</strong> 古典波的能量連續、均勻地攤在波前上，一個原子只接到落在自己截面上的那一份，所以先算截面積。</p>
+<div class="math-block">$$A=\pi r^2$$</div>
+<p>代入 $r=1.0\times10^{-10}\ \text{m}$：</p>
+<div class="math-block">$$A=\pi(1.0\times10^{-10}\ \text{m})^2=3.14\times10^{-20}\ \text{m}^2$$</div>
+<p><strong>② 古典累積時間：</strong> 每秒落在截面上的能量是 $IA$，要累積到 $\phi$；單位統一成 SI，功函數先換成焦耳。</p>
+<div class="math-block">$$t=\frac{\phi}{IA}$$</div>
+<p>代入 $\phi=2.2\ \text{eV}=(2.2)(1.602\times10^{-19})\ \text{J}$、$I=1.0\times10^{-3}\ \text{W/m}^2$、上一步的 $A=3.14\times10^{-20}\ \text{m}^2$：</p>
+<div class="math-block">$$\begin{aligned}t&amp;=\frac{(2.2)(1.602\times10^{-19})\ \text{J}}{(1.0\times10^{-3})(3.14\times10^{-20})\ \text{W}}\\&amp;=\frac{3.52\times10^{-19}\ \text{J}}{3.14\times10^{-23}\ \text{J/s}}\\&amp;=1.1\times10^{4}\ \text{s}\approx3\ \text{h}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{t\approx1.1\times10^{4}\ \text{s}\ (\text{約 3 小時})}$$</div>
+<h4>(b) 光子通量與為什麼沒有延遲</h4>
+<p><strong>① 一個光子的能量：</strong> 光子圖像中能量是一份份 $h\nu$，光子通量＝強度 $/h\nu$。</p>
+<p class="fnote"><b>公式（光子能量）：</b>$h\nu=\dfrac{hc}{\lambda}$，其中 $h$ 為 Planck 常數、$c$ 為光速、$\lambda$ 為波長；本題 $\lambda=400\ \text{nm}$。</p>
+<p>代入 $\lambda=400\ \text{nm}$：</p>
+<div class="math-block">$$\begin{aligned}h\nu&amp;=\frac{1240\ \text{eV·nm}}{400\ \text{nm}}\\&amp;=3.10\ \text{eV}\\&amp;=4.97\times10^{-19}\ \text{J}\end{aligned}$$</div>
+<p><strong>② 光子通量：</strong> 代入 $I=1.0\times10^{-3}\ \text{W/m}^2$ 和上一步的 $h\nu$：</p>
+<div class="math-block">$$\begin{aligned}\frac{I}{h\nu}&amp;=\frac{1.0\times10^{-3}\ \text{J/(m}^2\text{·s)}}{4.97\times10^{-19}\ \text{J}}\\&amp;=2.0\times10^{15}\ \text{m}^{-2}\text{s}^{-1}\end{aligned}$$</div>
+<p><strong>③ 一個原子平均多久接到一個光子：</strong> 每個原子截面每秒接到的光子數＝通量 $\times A$，代入上一步的通量和 (a) 的 $A$：</p>
+<div class="math-block">$$\begin{aligned}&amp;(2.0\times10^{15}\ \text{m}^{-2}\text{s}^{-1})(3.14\times10^{-20}\ \text{m}^2)\\&amp;=6.3\times10^{-5}\ \text{s}^{-1}\end{aligned}$$</div>
+<p>平均要等它的倒數：</p>
+<div class="math-block">$$\frac{1}{6.3\times10^{-5}\ \text{s}^{-1}}=1.6\times10^{4}\ \text{s}\approx4.4\ \text{h}$$</div>
+<p>也就是題目說的「一個原子截面也要等好幾個小時才接到一個光子」。</p>
+<p><strong>④ 為什麼沒有延遲：</strong> 要分清「某一個特定原子要等多久才接到光子」和「整個表面第一個光電子什麼時候出現」。差別在能量是不是集中的：古典波的能量均勻攤在每個原子上，每個電子都得慢慢累積到 $2.2\ \text{eV}$，所有電子大約同時（幾小時後）才出來。光子則是一整份 $3.10\ \text{eV}$ 落在某個隨機位置：特定的原子雖然要等很久，但整個表面每平方公尺每秒就有 $2\times10^{15}$ 份落下，被打到的電子一次吸收就逸出，不需要累積。所以光一打開就有光電子，光電子數正比於光強，延遲則和光強無關。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{每秒每平方公尺 }2.0\times10^{15}\text{ 個光子}\\ \text{能量集中在一個個光子上}\\ \text{被打到的電子一次就逸出，沒有延遲}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>無延遲、強度只改數目、頻率有門檻且 $KE_{\max}$ 線性增加：三件事波動理論都解釋不了。</li>
+    <li>光子能量 $E=h\nu=hc/\lambda$，$hc=1240\ \text{eV·nm}$；一個光子交給一個電子。</li>
+    <li>$h\nu=KE_{\max}+\phi$，$\phi=h\nu_0$，$KE_{\max}=eV_0$；直線斜率是 $h$。</li>
+  </ol>
+</div>

@@ -1,0 +1,255 @@
+<h2>七、綜合題：近年期中考的完整表示 <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 4/5</span> <span class="pg">講義 chp8 第 6–10 頁</span></h2>
+
+<p class="lead">李孟恩課程資料夾的 5 份下學期近代光學期中考（2018、2020、2022、2024、2025），第 2 題全部是電磁波的完整表示（30–40%）：給折射率、頻率、一個場的振幅（或照度）和方向圖，要寫 $\vec E$、$\vec B$、瞬時 $\vec S$ 的完整表示和照度。這一頁照年份排其中的平面波四題（2020 是球面波，在<a href="#o8-x20">第 3 節</a>），每題都用第 6 節的六步；看熟之後，考場上只要讀圖和代數字。物理考古資料夾的 2017、2021 期中考同型題移到第 10 節。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">逐年變化（依考古題整理，不是老師說的）</span>
+  <ul>
+    <li>2017（物理考古資料夾，見<a href="#o8-x17">第 10 節</a>）：三維的 $\hat k$、$\hat e$ 直接給分量，要自己算 $\hat k\times\hat e$。</li>
+    <li>2018：給 $\vec k=(1,2,2)$ 和不歸一化的 $\vec E$ 方向，$\epsilon_0$ 用 $\frac{1}{36\pi}\times10^{-9}$，答案剛好有 $\sqrt\pi$。</li>
+    <li>2021（物理考古資料夾，見<a href="#o8-x21">第 10 節</a>）：給 $E_0$ 與「電場在 x-y 平面」，方向要從圖讀。</li>
+    <li>2022、2024、2025：給 $\vec B$ 的方向（$\pm\hat z$ 或 $-\hat x$），要用 $\hat e=\hat b\times\hat k$ 反推電場方向；2024 給的是 $B_0$ 而不是 $E_0$，而且在 y-z 平面。</li>
+  </ul>
+  <p class="small">瞬時 $\vec S$ 照第 6 節的建議兩行並寫：先寫物理值 $\epsilon_0c_0^2E_0B_0\cos^2(\vec k\cdot\vec r-\omega t)\hat k$，再寫指數型態。下面各題為了簡短只列指數型態那一行。</p>
+</div>
+
+<div class="problem" data-kind="exam" id="o8-x18">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2018-04-25）第 2 題（106下）</span></div>
+    <h4>$\vec k=(1,2,2)$、$\vec E\parallel(2,-1,0)$、$\epsilon_0=\frac{1}{36\pi}\times10^{-9}$ <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 4/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-x18">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-x18"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">2018~2020 近代光學歷屆（掃描）。波向量沒寫單位，本站當成 m⁻¹。</p>
+<div class="original-text" lang="en"><p>2.（30%）一平面電磁波之波向量為 $(k_x,k_y,k_z)=(1,2,2)$。若傳播介質之折射率為 1.5，$\vec E$ 方向沿 (2, −1, 0) 方向，初始相位角為 0，其輻射照度為 10 W/m²，試求：</p><p>① 電場 $\vec E(t)$ 的完整表示（包含振幅、偏振方向、平面波的指數表示及單位）</p><p>② 磁場 $\vec B(t)$ 的完整表示（包含振幅、振動方向、平面波的指數表示及單位）</p><p>③ 瞬時 Poynting 向量的完整表示（包含振幅、方向、指數的表示及單位）</p><p>（卷末：$\epsilon_0\approx\frac{1}{36\pi}\times10^{-9}\ (\text{C}\cdot\text{s})^2/(\text{kg}\cdot\text{m}^3)$，$\mu_r=1$，π 不必展開）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（30%）波向量 $(k_x,k_y,k_z)=(1,2,2)$，折射率 1.5，$\vec E$ 沿 $(2,-1,0)$，初始相位 0，照度 10 W/m²。求 ① $\vec E(t)$；② $\vec B(t)$；③ 瞬時 Poynting 向量。（$\epsilon_0\approx\frac1{36\pi}\times10^{-9}$、$\mu_r=1$、π 不必展開）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>波向量</td><td>$\vec k=(1,2,2)\ \text{m}^{-1}$，$k=3\ \text{m}^{-1}$</td><td>「波向量為 $(k_x,k_y,k_z)=(1,2,2)$」；卷上沒寫單位，當成 m⁻¹（題目沒給頻率，只能用它當真正的 $\vec k$）</td></tr>
+          <tr><td>電場方向</td><td>$\hat e=(2,-1,0)/\sqrt5$</td><td>「$\vec E$ 方向沿 (2, −1, 0)」要先歸一化；$(1,2,2)\cdot(2,-1,0)=0$ ✔</td></tr>
+          <tr><td>折射率、照度</td><td>$n=1.5$、$10\ \text{W/m}^2$</td><td>題目</td></tr>
+          <tr><td>$\epsilon_0$ 與 $c_0$</td><td>$\frac{1}{36\pi}\times10^{-9}$；$c_0=1/\sqrt{\epsilon_0\mu_0}=3\times10^8$</td><td>卷末常數；配 $\mu_0=4\pi\times10^{-7}$ 剛好得 $3\times10^8$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\vec E$、$\vec B$、瞬時 $\vec S$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目給的是 $\vec k$ 本身而不是頻率，<b>所以</b>$\omega=kv=kc_0/n$ 要反推。<b>因為</b>$\epsilon_0=\frac{1}{36\pi}\times10^{-9}$，$\epsilon_0c_0=\frac{0.3}{36\pi}=\frac{1}{120\pi}$，<b>所以</b>答案會留下 $\sqrt\pi$，照「π 不必展開」保留。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-x18-s1" data-sym="w,k">
+        <span class="step-title">$k$、$\omega$</span>
+        $$k=\sqrt{1+4+4}=3\ \text{m}^{-1},\quad\omega=kv=\frac{kc_0}{n}=\frac{3(3\times10^8)}{1.5}=6\times10^8\ \text{rad/s},\quad\vec k\cdot\vec r=x+2y+2z$$
+      </div>
+      <div class="step" data-step="o8-x18-s2" data-sym="E0,eps">
+        <span class="step-title">① 電場振幅與表示</span>
+        $$E_0=\sqrt{\frac{2E_e}{n\epsilon_0c_0}}=\sqrt{\frac{2(10)}{1.5\cdot\frac{1}{120\pi}}}=\sqrt{1600\pi}=40\sqrt\pi\ \text{V/m}\ (\approx70.9)$$
+        $$\vec E=40\sqrt\pi\;\frac{2\hat x-\hat y}{\sqrt5}\;e^{i\left[(x+2y+2z)-6\times10^8t\right]}\ \text{V/m}$$
+      </div>
+      <div class="step" data-step="o8-x18-s3" data-sym="B0">
+        <span class="step-title">② 磁場</span>
+        $$\hat b=\hat k\times\hat e=\frac{1}{3\sqrt5}\begin{vmatrix}\hat x&\hat y&\hat z\\1&2&2\\2&-1&0\end{vmatrix}=\frac{(2,\ 4,\ -5)}{3\sqrt5}$$
+        $$B_0=\frac{nE_0}{c_0}=\frac{1.5(40\sqrt\pi)}{3\times10^8}=2\sqrt\pi\times10^{-7}\ \text{T}$$
+        $$\begin{aligned}&\vec B=2\sqrt\pi\times10^{-7}\;\frac{2\hat x+4\hat y-5\hat z}{3\sqrt5}\;\\&\quad\times e^{i\left[(x+2y+2z)-6\times10^8t\right]}\ \text{T}\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x18-s4" data-sym="S">
+        <span class="step-title">③ 瞬時 $\vec S$</span>
+        $$\epsilon_0c_0^2E_0B_0=\frac{10^{-9}}{36\pi}(9\times10^{16})(40\sqrt\pi)(2\sqrt\pi\times10^{-7})=20\ \text{W/m}^2$$
+        $$\vec S=20\;\frac{\hat x+2\hat y+2\hat z}{3}\;e^{2i\left[(x+2y+2z)-6\times10^8t\right]}\ \text{W/m}^2$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>① $\vec E=40\sqrt\pi\frac{2\hat x-\hat y}{\sqrt5}e^{i[(x+2y+2z)-6\times10^8t]}$ V/m；② $\vec B=2\sqrt\pi\times10^{-7}\frac{2\hat x+4\hat y-5\hat z}{3\sqrt5}e^{i[\cdots]}$ T；③ $\vec S=20\frac{\hat x+2\hat y+2\hat z}{3}e^{2i[(x+2y+2z)-6\times10^8t]}$ W/m²。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$|(2,4,-5)|=\sqrt{45}=3\sqrt5$ ✔；$(2,4,-5)\cdot(1,2,2)=0$、$\cdot(2,-1,0)=0$ ✔；$20/2=10$＝照度 ✔。這個 $k$ 對應 $\lambda=2.09$ m（無線電波），數字怪但題目就是這樣給。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o8-x22">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2022-04-27）第 2 題（110下）</span></div>
+    <h4>給 $\vec B$ 朝 $-\hat z$：反推電場方向（雲端有手寫詳解） <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 4/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-x22">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-x22"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">110 近代光學期中.jpg；雲端「112級下學期光學(期中)」是同一份考卷。另有手寫詳解（110近代光學期中詳解.jpg），本站答案與它一致。</p>
+<div class="original-text" lang="en"><p>2.（40%）一平面電磁波在折射率為 3 的介質中傳播，且其波向量位於 x-y 平面上，如下圖一所示。已知其磁場（$\vec B$）方向朝 $-\hat z$ 方向，電場振幅為 2 V/m，頻率為 $10^{14}$ Hz，且初始相位角為 0 rad。試求</p><p>a. 此平面電磁波電場 $\vec E(x,y,z;t)$ 的完整表示（包含振幅、方向、平面波的指數表示及單位）；</p><p>b. 此平面電磁波磁場 $\vec B(x,y,z;t)$ 的完整表示（包含振幅、方向、平面波的指數表示及單位）；</p><p>c. 此平面電磁波瞬時 Poynting 向量 $\vec S(x,y,z;t)$ 的完整表示（包含振幅、方向、指數的表示及單位）；</p><p>d. 此平面電磁波的輻射照度（包含單位）。</p><p>（$\epsilon_o=8.8542\times10^{-12}\ \text{C}^2\text{s}^2/(\text{kg}\cdot\text{m}^3)$，$C\approx3\times10^8$ m/s，$\mu_r=1$，π不必展開）</p></div>
+<p class="original-caption">下學期近代光學期中考（2022-04-27）第 2 題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（40%）折射率 3 的介質，波向量在 x-y 平面（圖一：$+x$ 上方 30°），磁場朝 $-\hat z$，電場振幅 2 V/m，頻率 $10^{14}$ Hz，初始相位 0。求 a. $\vec E$；b. $\vec B$；c. 瞬時 $\vec S$；d. 照度。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>傳播方向</td><td>$30^\circ$：$\hat k=(\tfrac{\sqrt3}{2},\tfrac12,0)$</td><td>圖一</td></tr>
+          <tr><td>磁場方向</td><td>$\hat b=-\hat z$</td><td>「磁場方向朝 $-\hat z$ 方向」</td></tr>
+          <tr><td>電場振幅</td><td>$E_0=2\ \text{V/m}$</td><td>「電場振幅為 2 V/m」</td></tr>
+          <tr><td>頻率、折射率</td><td>$10^{14}$ Hz、$n=3$</td><td>題目</td></tr>
+          <tr><td>常數</td><td>$\epsilon_0=8.8542\times10^{-12}$、$c_0=3\times10^8$</td><td>題目括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\vec E$、$\vec B$、瞬時 $\vec S$、照度。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>電場方向沒給、只給 $\hat b$，<b>所以</b>用 $\hat e=\hat b\times\hat k$。其餘照六步；這題雲端有完整的手寫詳解，本站逐步對照。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-x22-s1" data-sym="k,w,lam">
+        <span class="step-title">$v$、$\lambda$、$k$、$\omega$</span>
+        $$v=\frac{c_0}{n}=10^8\ \text{m/s},\quad\lambda=\frac v\nu=10^{-6}\ \text{m},\quad k=\frac{2\pi}{\lambda}=2\pi\times10^6\ \text{m}^{-1},\quad\omega=2\pi\times10^{14}\ \text{rad/s}$$
+      </div>
+      <div class="step" data-step="o8-x22-s2" data-sym="E0">
+        <span class="step-title">a. 電場方向與表示</span>
+        $$\hat e=\hat b\times\hat k=(-\hat z)\times\left(\tfrac{\sqrt3}{2},\tfrac12,0\right)=\left(\tfrac12,-\tfrac{\sqrt3}{2},0\right)$$
+        <p>（$\hat z\times(a,b,0)=(-b,a,0)$，再整個變號。）即 $+x$ 下方 60°。</p>
+        $$\begin{aligned}&\vec E=2\left(\tfrac12\hat x-\tfrac{\sqrt3}{2}\hat y\right)\\&\quad\times e^{i\left[2\pi\times10^6\left(\frac{\sqrt3}{2}x+\frac12y\right)-2\pi\times10^{14}t\right]}\ \text{V/m}\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x22-s3" data-sym="B0">
+        <span class="step-title">b. 磁場</span>
+        $$B_0=\frac{E_0}{v}=\frac{2}{10^8}=2\times10^{-8}\ \text{T}$$
+        $$\begin{aligned}&\vec B=2\times10^{-8}(-\hat z)\,\\&\quad\times e^{i\left[2\pi\times10^6\left(\frac{\sqrt3}{2}x+\frac12y\right)-2\pi\times10^{14}t\right]}\ \text{T}\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x22-s4" data-sym="S">
+        <span class="step-title">c. 瞬時 $\vec S$</span>
+        $$\epsilon_0c_0^2E_0B_0=(8.8542\times10^{-12})(9\times10^{16})(2)(2\times10^{-8})=0.0319\ \text{W/m}^2$$
+        $$\begin{aligned}&\vec S=0.0319\left(\tfrac{\sqrt3}{2}\hat x+\tfrac12\hat y\right)\\&\quad\times e^{2i\left[2\pi\times10^6\left(\frac{\sqrt3}{2}x+\frac12y\right)-2\pi\times10^{14}t\right]}\ \text{W/m}^2\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x22-s5" data-sym="Ee">
+        <span class="step-title">d. 照度</span>
+        $$E_e=\tfrac12(0.0319)=0.0159\ \text{W/m}^2\qquad(\text{或}\ \tfrac12n\epsilon_0c_0E_0^2=\tfrac12(3)(8.8542\times10^{-12})(3\times10^8)(4)=0.0159)$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>a. $\vec E=2(\tfrac12\hat x-\tfrac{\sqrt3}{2}\hat y)e^{i[2\pi\times10^6(\frac{\sqrt3}{2}x+\frac12y)-2\pi\times10^{14}t]}$ V/m；b. $\vec B=2\times10^{-8}(-\hat z)e^{i[\cdots]}$ T；c. $\vec S=0.0319(\tfrac{\sqrt3}{2}\hat x+\tfrac12\hat y)e^{2i[\cdots]}$ W/m²；d. $0.0159$ W/m²。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>和雲端「110 近代光學期中詳解」完全相同（$\vec E=2(\tfrac12\hat x-\tfrac{\sqrt3}{2}\hat y)e^{i[\cdots]}$、$B_0=2\times10^{-8}$、$\vec S$ 振幅 0.0319、照度 0.0159）✔。詳解寫 $\vec S=\epsilon_0c_0^2(\vec E\times\vec B)=\epsilon c^2\vec E\times\vec B$，也就是第 6 節說的介質中係數不變。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o8-x24">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2024-04-23）第 2 題（112下）</span></div>
+    <h4>y-z 平面、給 $B_0=2\times10^{-6}$ T 朝 $-\hat x$ <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 4/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-x24">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-x24"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">雲端「114級下學期光學(期中)」；另有一份得滿分的學生答案卷，本站答案與它一致。</p>
+<div class="original-text" lang="en"><p>2.（40%）一平面電磁波在折射率為 1.5 的介質中傳播，其波向量位於 y-z 平面上，且傳播方向如下圖一所示。已知其磁場（$\vec B$）振幅為 $2\times10^{-6}$ T，方向朝 $-\hat x$ 方向，頻率為 $5\times10^{13}$ Hz，且初始相位角為 0 rad。試求：</p><p>(a) 此平面電磁波電場 $\vec E(x,y,z;t)$ 的完整表示（包含振幅、方向、平面波的指數表示及單位）；</p><p>(b) 此平面電磁波磁場 $\vec B(x,y,z;t)$ 的完整表示（包含振幅、方向、平面波的指數表示及單位）；</p><p>(c) 此平面電磁波瞬時 Poynting 向量 $\vec S(x,y,z;t)$ 的完整表示（包含振幅、方向、指數的表示及單位）；</p><p>(d) 此平面電磁波的輻射照度（包含單位）。</p><p>（$\epsilon_o=8.8542\times10^{-12}\ \text{C}^2\text{s}^2/(\text{kg}\cdot\text{m}^3)$，$C\approx3\times10^8$ m/s，$\mu_r=1$，π與√不必轉換成數值）</p></div>
+<p class="original-caption">下學期近代光學期中考（2024-04-23）第 2 題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（40%）折射率 1.5 的介質，波向量在 y-z 平面（圖一：橫軸 $z$、縱軸 $y$，$\vec k$ 在 $-z$ 軸上方 30°、向左上）。磁場振幅 $2\times10^{-6}$ T、朝 $-\hat x$，頻率 $5\times10^{13}$ Hz，初始相位 0。求 (a) $\vec E$；(b) $\vec B$；(c) 瞬時 $\vec S$；(d) 照度。（π 與 √ 不必轉換成數值）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>傳播方向</td><td>$\hat k=(0,\ \tfrac12,\ -\tfrac{\sqrt3}{2})$</td><td>圖一：和 $-z$ 夾 30°、偏向 $+y$ ⟹ $y$ 分量 $\sin30^\circ$、$z$ 分量 $-\cos30^\circ$</td></tr>
+          <tr><td>磁場</td><td>$B_0=2\times10^{-6}\ \text{T}$，$\hat b=-\hat x$</td><td>「磁場振幅為 $2\times10^{-6}$ T，方向朝 $-\hat x$」</td></tr>
+          <tr><td>頻率、折射率</td><td>$5\times10^{13}$ Hz、$n=1.5$</td><td>題目</td></tr>
+          <tr><td>常數</td><td>$\epsilon_0=8.8542\times10^{-12}$、$c_0=3\times10^8$</td><td>題目括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\vec E$、$\vec B$、瞬時 $\vec S$、照度。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這次給的是磁場，<b>所以</b>電場振幅用 $E_0=vB_0=(c_0/n)B_0$、方向用 $\hat e=\hat b\times\hat k$。座標平面換成 y-z，讀圖時要看清楚橫軸是 $z$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-x24-s1" data-sym="k,w,v">
+        <span class="step-title">$v$、$k$、$\omega$</span>
+        $$v=\frac{c_0}{n}=2\times10^8,\quad k=\frac{2\pi\nu}{v}=\frac{2\pi(5\times10^{13})}{2\times10^8}=5\pi\times10^5\ \text{m}^{-1},\quad\omega=2\pi(5\times10^{13})=\pi\times10^{14}$$
+      </div>
+      <div class="step" data-step="o8-x24-s2" data-sym="E0">
+        <span class="step-title">(a) 電場</span>
+        $$E_0=vB_0=(2\times10^8)(2\times10^{-6})=400\ \text{V/m}$$
+        $$\hat e=\hat b\times\hat k=(-\hat x)\times\left(0,\tfrac12,-\tfrac{\sqrt3}{2}\right)=\left(0,\ -\tfrac{\sqrt3}{2},\ -\tfrac12\right)$$
+        <p>（$\hat x\times(0,b,c)=(0,-c,b)$，再變號。）</p>
+        $$\begin{aligned}&\vec E=400\left(-\tfrac{\sqrt3}{2}\hat y-\tfrac12\hat z\right)\\&\quad\times e^{i\left[5\pi\times10^5\left(\frac12y-\frac{\sqrt3}{2}z\right)-\pi\times10^{14}t\right]}\ \text{V/m}\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x24-s3" data-sym="B0">
+        <span class="step-title">(b) 磁場</span>
+        $$\begin{aligned}&\vec B=2\times10^{-6}(-\hat x)\,\\&\quad\times e^{i\left[5\pi\times10^5\left(\frac12y-\frac{\sqrt3}{2}z\right)-\pi\times10^{14}t\right]}\ \text{T}\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x24-s4" data-sym="S">
+        <span class="step-title">(c) 瞬時 $\vec S$</span>
+        $$\epsilon_0c_0^2E_0B_0=(8.8542\times10^{-12})(9\times10^{16})(400)(2\times10^{-6})=637.5\ \text{W/m}^2$$
+        $$\begin{aligned}&\vec S=637.5\left(\tfrac12\hat y-\tfrac{\sqrt3}{2}\hat z\right)\\&\quad\times e^{2i\left[5\pi\times10^5\left(\frac12y-\frac{\sqrt3}{2}z\right)-\pi\times10^{14}t\right]}\ \text{W/m}^2\end{aligned}$$
+      </div>
+      <div class="step" data-step="o8-x24-s5" data-sym="Ee">
+        <span class="step-title">(d) 照度</span>
+        $$E_e=\tfrac12n\epsilon_0c_0E_0^2=\tfrac12(1.5)(8.8542\times10^{-12})(3\times10^8)(400)^2=318.75\ \text{W/m}^2$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\vec E=400(-\tfrac{\sqrt3}{2}\hat y-\tfrac12\hat z)e^{i[5\pi\times10^5(\frac12y-\frac{\sqrt3}{2}z)-\pi\times10^{14}t]}$ V/m；(b) $\vec B=2\times10^{-6}(-\hat x)e^{i[\cdots]}$ T；(c) $\vec S=637.5(\tfrac12\hat y-\tfrac{\sqrt3}{2}\hat z)e^{2i[\cdots]}$ W/m²；(d) $318.75$ W/m²。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$637.5/2=318.75$ ✔；和雲端「114 級下學期光學解答（期中）」得滿分的答案卷每一個數字、方向都相同 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o8-x25">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2025-04-22）第 2 題（113下）</span></div>
+    <h4>最新一年：$n=2.5$、$\vec B$ 朝 $+\hat z$、$\vec k$ 在 $-y$ 旁 30° <span class="must teacher">老師：一定會考</span><span class="must exam">考古高頻 4/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o8-x25">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o8-x25"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">雲端「115級下學期光學(期中)」（掃描）。圖一的 $\vec k$ 與 30° 是印刷的；$\vec E$ 箭頭和 60° 看起來是學生加的，但由「$\vec B$ 朝 $+\hat z$」推出的 $\hat E$ 方向和它一致。</p>
+<div class="original-text" lang="en"><p>2.（40%）一平面電磁波在折射率為 2.5 的介質中傳播，且其波向量位於 x-y 平面上，如下圖一所示。已知其磁場（$\vec B$）方向朝 $+\hat z$ 方向，電場振幅為 5 V/m，頻率為 $2\times10^{14}$ Hz，且初始相位角為 0 rad。試求：</p><p>(a) 此平面電磁波電場 $\vec E(x,y,z;t)$ 的完整表示（包含振幅、偏振方向、平面波的指數表示及單位）；</p><p>(b) 此平面電磁波磁場 $\vec B(x,y,z;t)$ 的完整表示（包含振幅、偏振方向、平面波的指數表示及單位）；</p><p>(c) 此平面電磁波瞬時 Poynting 向量 $\vec S(x,y,z;t)$ 的完整表示（包含振幅、方向、指數的表示及單位）；</p><p>(d) 此平面電磁波的輻射照度（包含單位）。</p><p>（$\epsilon_o=8.8542\times10^{-12}\ \text{C}^2\text{s}^2/(\text{kg}\cdot\text{m}^3)$，$C_o\approx3\times10^8$ m/s，$\mu_r=1$，π不必展開）</p></div>
+<p class="original-caption">下學期近代光學期中考（2025-04-22）第 2 題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（40%）折射率 2.5 的介質，波向量在 x-y 平面（圖一：$\vec k$ 與 $-y$ 軸夾 30°、向左下），磁場朝 $+\hat z$，電場振幅 5 V/m，頻率 $2\times10^{14}$ Hz，初始相位 0。求 (a) $\vec E$；(b) $\vec B$；(c) 瞬時 $\vec S$；(d) 照度。（π 不必展開）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>傳播方向</td><td>$240^\circ$：$\hat k=(-\tfrac12,-\tfrac{\sqrt3}{2},0)$</td><td>圖一：$\vec k$ 從 $-y$ 往左 30° ⟹ 從 $+x$ 量起 $270^\circ-30^\circ=240^\circ$</td></tr>
+          <tr><td>磁場方向</td><td>$\hat b=+\hat z$</td><td>「磁場方向朝 $+\hat z$ 方向」</td></tr>
+          <tr><td>電場振幅</td><td>$E_0=5\ \text{V/m}$</td><td>「電場振幅為 5 V/m」</td></tr>
+          <tr><td>頻率、折射率</td><td>$2\times10^{14}$ Hz、$n=2.5$</td><td>題目</td></tr>
+          <tr><td>常數</td><td>$\epsilon_0=8.8542\times10^{-12}$、$c_0=3\times10^8$</td><td>題目括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\vec E$、$\vec B$、瞬時 $\vec S$、照度。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>給 $\hat b$，<b>所以</b>$\hat e=\hat b\times\hat k$；圖上 $\vec E$ 的 60° 箭頭看起來是學生加的，但算出來的方向和它一致（$-y$ 往右 60°，即 $330^\circ$）。其餘照六步。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o8-x25-s1" data-sym="k,w">
+        <span class="step-title">$k$、$\omega$</span>
+        $$k=\frac{2\pi n\nu}{c_0}=\frac{2\pi(2.5)(2\times10^{14})}{3\times10^8}=\frac{10\pi}{3}\times10^6\ \text{m}^{-1},\qquad\omega=4\pi\times10^{14}\ \text{rad/s}$$
+        $$\varphi=\frac{10\pi}{3}\times10^6\left(-\tfrac12x-\tfrac{\sqrt3}{2}y\right)-4\pi\times10^{14}t$$
+      </div>
+      <div class="step" data-step="o8-x25-s2" data-sym="E0">
+        <span class="step-title">(a) 電場</span>
+        $$\hat e=\hat b\times\hat k=\hat z\times\left(-\tfrac12,-\tfrac{\sqrt3}{2},0\right)=\left(\tfrac{\sqrt3}{2},-\tfrac12,0\right)$$
+        $$\vec E=5\left(\tfrac{\sqrt3}{2}\hat x-\tfrac12\hat y\right)e^{i\varphi}\ \text{V/m}$$
+      </div>
+      <div class="step" data-step="o8-x25-s3" data-sym="B0">
+        <span class="step-title">(b) 磁場</span>
+        $$B_0=\frac{nE_0}{c_0}=\frac{2.5(5)}{3\times10^8}=4.17\times10^{-8}\ \text{T}$$
+        $$\vec B=4.17\times10^{-8}\,\hat z\,e^{i\varphi}\ \text{T}$$
+      </div>
+      <div class="step" data-step="o8-x25-s4" data-sym="S">
+        <span class="step-title">(c) 瞬時 $\vec S$</span>
+        $$\epsilon_0c_0^2E_0B_0=(8.8542\times10^{-12})(9\times10^{16})(5)(4.17\times10^{-8})=0.166\ \text{W/m}^2$$
+        $$\vec S=0.166\left(-\tfrac12\hat x-\tfrac{\sqrt3}{2}\hat y\right)e^{2i\varphi}\ \text{W/m}^2$$
+      </div>
+      <div class="step" data-step="o8-x25-s5" data-sym="Ee">
+        <span class="step-title">(d) 照度</span>
+        $$E_e=\tfrac12n\epsilon_0c_0E_0^2=\tfrac12(2.5)(8.8542\times10^{-12})(3\times10^8)(5)^2=0.0830\ \text{W/m}^2$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\varphi=\frac{10\pi}{3}\times10^6(-\tfrac12x-\tfrac{\sqrt3}{2}y)-4\pi\times10^{14}t$；(a) $\vec E=5(\tfrac{\sqrt3}{2}\hat x-\tfrac12\hat y)e^{i\varphi}$ V/m；(b) $\vec B=4.17\times10^{-8}\hat z\,e^{i\varphi}$ T；(c) $\vec S=0.166(-\tfrac12\hat x-\tfrac{\sqrt3}{2}\hat y)e^{2i\varphi}$ W/m²；(d) $E_e=0.0830$ W/m²。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\hat e\times\hat b=(\tfrac{\sqrt3}{2},-\tfrac12,0)\times\hat z=(-\tfrac12,-\tfrac{\sqrt3}{2},0)=\hat k$ ✔；$0.166/2=0.083$ ✔。</p></div>
+  </div>
+</div>

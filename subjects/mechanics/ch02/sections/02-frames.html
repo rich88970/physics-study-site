@@ -1,0 +1,176 @@
+<h2>二、參考座標系：地球算不算慣性系 <span class="pg">講義 p.14–23 · 課本 §2.3</span></h2>
+
+<p class="lead">牛頓定律只在慣性座標系成立。這一節先定義慣性座標系，用加速中的列車看它失效的樣子，再算出地球公轉、自轉的加速度，說明為什麼大多數問題可以把地面當成慣性系，以及哪些現象（體重計讀數、颱風的旋轉方向）正是地球自轉留下的痕跡。</p>
+
+<h3 id="c2f-frame">2.1 參考座標系與慣性座標系 <span class="pg-tag">p.14–15</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.14–15 Reference Frame, Inertial Frame</span>
+  <p>參考座標系包含觀察者；觀察者在座標系裡架設座標軸。參考座標系可以靜止，也可以運動。<strong>慣性座標系</strong>：靜止或以等速度運動的參考座標系。加速中的座標系不是慣性座標系。</p>
+</div>
+
+<p>講義 p.15、p.17 的圖用掛在車廂裡的單擺說明：車廂靜止或等速前進時，單擺都鉛直下垂（兩者都是慣性座標系）；車廂加速時，單擺卻偏向後方停著，車裡的人看不到有什麼水平力把它拉斜——「牛頓錯了嗎？」答案是：問題出在這個座標系本身在加速。</p>
+
+<p>「靜止」本身也是相對的，所以課本 p.53 用操作型的定義：如果不受外力的物體在某個座標系裡做等速直線運動（或保持靜止），這個座標系就是慣性座標系。只要找到一個慣性座標系，所有相對它做等速運動的座標系也都是（上一節的伽利略轉換）。實務上常用「相對遙遠恆星固定」的座標系當作近似的慣性系。</p>
+
+<h3 id="c2f-train">2.2 加速列車上的球 <span class="pg-tag">p.16–17</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.16–17 Non-inertial Frame</span>
+  <p>把球放在正在加速的高鐵地板上（忽略摩擦），球會往後加速。有力作用在球上嗎？沒有。這個運動遵守牛頓定律嗎？不遵守。只有慣性座標系滿足第一定律的條件；牛頓用第一定律界定了他的定律在哪裡成立。</p>
+</div>
+
+<p>從地面（慣性系）看，地板光滑時沒有水平力作用在球上，球留在原地，是列車從它下面往前加速溜走。從列車上看，球卻以 $-a$ 往後加速，可是找不到施力者。兩種描述的差別就是上一節的 $\ddot{\vec r}\,'=\ddot{\vec r}-\dot{\vec V}$：列車座標系多出 $-\dot{\vec V}=-\vec a$ 這一項。在加速座標系裡硬要用牛頓定律，就得加上沒有施力者的「假想力」$-m\vec a$（課本第 10 章）。</p>
+
+<div class="anim" data-anim="c2-train"></div>
+
+<p>課本 Fig. 2-1 用一個「座標軸方向固定、原點沿圓周運動」的座標系舉同樣的例子：自由質點沿直線 $AC$ 等速前進，座標原點沿一個圓運動。原點經過 $B$ 時速度剛好等於質點速度 $\vec v_c=\vec v_p$，觀察者會看到質點<strong>靜止</strong>；等原點繞到 $D$、方向改變了，同一個不受力的質點卻看起來在加速。所以原點做圓周運動的座標系不是慣性座標系。</p>
+
+<h3 id="c2f-earth">2.3 地球是慣性座標系嗎 <span class="pg-tag">p.18–21</span></h3>
+
+<p>嚴格說不是：地球繞太陽公轉、又自轉，速度方向一直在變。但重點是加速度有多大。等速圓周運動的向心加速度 $a=v^2/R$，$v=2\pi R/T$：</p>
+
+<div class="step" data-step="c2f-rev">
+  <span class="step-title">公轉（講義 p.19）</span>
+  $$v=\frac{2\pi(1.496\times10^{11}\ \text{m})}{3.156\times10^{7}\ \text{s}}\approx2.98\times10^{4}\ \text{m/s},\qquad a=\frac{v^2}{R}=\frac{(29\,780\ \text{m/s})^2}{1.496\times10^{11}\ \text{m}}\approx5.93\times10^{-3}\ \text{m/s}^2$$
+  <p>比較：汽車 5 秒內從 0 加速到 $100\ \text{km/h}$，$a=\dfrac{27.8\ \text{m/s}}{5\ \text{s}}=5.56\ \text{m/s}^2$，大了將近一千倍。</p>
+</div>
+
+<div class="step" data-step="c2f-rot">
+  <span class="step-title">自轉（講義 p.20，赤道）</span>
+  $$v=\frac{2\pi(6\,378\,137\ \text{m})}{86\,400\ \text{s}}\approx464\ \text{m/s},\qquad a=\frac{v^2}{R}\approx3.4\times10^{-2}\ \text{m/s}^2$$
+  <p>約是公轉的 6 倍（講義取 $465\ \text{m/s}$、$3.39\times10^{-2}\ \text{m/s}^2$，相當於用一個恆星日 $86\,164\ \text{s}$ 計算；差別在第三位數，不影響結論）。和 $g=9.8\ \text{m/s}^2$ 比只有 $0.35\%$。</p>
+</div>
+
+<p>所以一般實驗室尺度、時間短的問題，可以把地面當成慣性座標系。效應雖小但量得到，最直接的例子是體重計：</p>
+
+<div class="box lecture">
+  <span class="box-title">p.21 Effects from Rotation Frame</span>
+  <p>北極：$F_g-F_{\text{scale}}=ma=0\ \Rightarrow\ F_{\text{scale}}=F_g$。<br>赤道：$F_g-F_{\text{scale}}=ma=m\dfrac{v^2}{r}\ \Rightarrow\ F_{\text{scale}}=F_g-m\dfrac{v^2}{r}$。赤道上的體重計讀數比較輕。</p>
+</div>
+
+<div class="step" data-step="c2f-scale" data-sym="F,m">
+  <span class="step-title">為什麼赤道比較輕：從慣性系寫 $F=ma$</span>
+  <p>站在北極的人只是在原地轉，沒有向心加速度，地心引力 $F_g$ 和體重計的支撐力 $F_{\text{scale}}$ 抵消。站在赤道的人跟著地球每天繞一圈半徑 $r$ 的圓，需要指向地心的淨力 $mv^2/r$；這個淨力只能由「引力比支撐力大一點」提供，所以支撐力（體重計讀數）$=F_g-mv^2/r$。</p>
+  <p>例如 $m=60\ \text{kg}$：$mv^2/r=(60)(3.39\times10^{-2})\approx2.0\ \text{N}$，讀數少了約 $0.2\ \text{kg}$ 重（$0.35\%$）。實際上赤道的 $g$ 還因地球扁、半徑大而更小一些，兩個效應同向。</p>
+</div>
+
+<h3 id="c2f-coriolis">2.4 科氏效應 <span class="pg-tag">p.22–23</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.22–23 Coriolis Effect</span>
+  <p>地球表面在赤道轉得比兩極快，所以長距離移動的東西（氣流、洋流、飛機）會偏向：北半球向右偏、南半球向左偏。颱風在赤道附近的溫暖海面形成，中心是低壓；周圍空氣流進低壓區時被科氏效應偏轉，繞著中心旋轉：北半球逆時針，南半球順時針。</p>
+</div>
+
+<p>「轉得比較快」指的是地面向東的線速度：緯度 $\lambda$ 處是 $\omega R\cos\lambda$，赤道最大、極點為零。一團空氣從赤道往北吹，它原本跟著赤道地面向東跑得比較快；到了北邊，底下的地面向東比較慢，於是這團空氣相對地面「跑到東邊去」——面向北方看，就是向右偏。往南吹的空氣情況相反，帶著較小的東向速度到了較快的地面上，相對地面落到西邊，面向南方看也是向右偏。北半球的風從四面八方吹向低壓中心，每一股都向右偏，合起來就繞成逆時針的漩渦。</p>
+
+<p>在地面這個（非慣性）座標系裡，這種偏轉要用「科氏力」描述；它的定量公式要等到課本第 10 章非慣性座標系才推導。這一章之後的問題都在慣性座標系裡寫 $\vec F=m\ddot{\vec r}$。</p>
+
+<div class="box pitfall">
+  <span class="box-title">觀察者要在慣性座標系</span>
+  <p>寫 $F=ma$ 之前先問：我量加速度的座標系在加速嗎？在加速電梯、轉盤、轉彎的車裡直接寫 $F=ma$ 會漏掉一項（第 10 節 Atwood 機在電梯中的例題就是這個陷阱）。</p>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-02a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>鉛垂線並不指向地心：緯度 $\lambda$ 的偏角</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-02a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>把地球當成半徑 $R=6.378\times10^6\ \text{m}$ 的均勻球，引力加速度 $g=9.8\ \text{m/s}^2$ 指向地心，每 $86164\ \text{s}$（一個恆星日）自轉一圈（講義 p.20：赤道 $\omega^2R=3.39\times10^{-2}\ \text{m/s}^2$）。在緯度 $\lambda$ 處掛一條靜止的鉛垂線。(a) 從慣性座標系寫 $F=ma$，求鉛垂線和「指向地心的方向」之間的夾角 $\delta(\lambda)$。(b) 哪個緯度 $\delta$ 最大？最大多少度？(c) 求高雄（$\lambda=22.6^\circ$）的 $\delta$，以及體重計讀數比北極少了百分之幾。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：地球半徑 $R=6.378\times10^6\ \text{m}$，引力加速度 $g=9.8\ \text{m/s}^2$ 指向地心，赤道 $\omega^2R=3.39\times10^{-2}\ \text{m/s}^2$；鉛錘質量 $m$，受引力 $m\vec g$ 與繩張力 $\vec T$，相對地面靜止；緯度 $\lambda$，(c) $\lambda=22.6^\circ$。$\omega^2R/g\approx0.0035\ll1$，只保留一階。</p>
+<h4>(a) 鉛垂線與指向地心方向的夾角 $\delta(\lambda)$</h4>
+<p><strong>① 向心加速度拆成兩個分量：</strong> 從慣性系看，鉛錘跟著地球繞地軸做等速圓周運動，半徑是到地軸的距離 $R\cos\lambda$（不是 $R$），加速度指向地軸。</p>
+<p class="fnote"><b>公式（等速圓周運動的向心加速度）：</b>$a=\omega^2r$，其中 $\omega$ 為角速度、$r$ 為到轉軸的距離，方向指向轉軸；本題 $r=R\cos\lambda$。</p>
+<div class="math-block">$$a=\omega^2R\cos\lambda$$</div>
+<p>在經線平面裡，「指向地軸」和「指向地心」夾角是 $\lambda$（赤道時兩者重合），所以</p>
+<div class="math-block">$$a_\parallel=a\cos\lambda=\omega^2R\cos^2\lambda,\qquad a_\perp=a\sin\lambda=\omega^2R\sin\lambda\cos\lambda$$</div>
+<p>$a_\parallel$ 沿指向地心方向；$a_\perp$ 垂直它、沿經線指向北極那一側。</p>
+<p><strong>② 鉛垂方向 $\vec g_{\text{eff}}=\vec g-\vec a$：</strong> 鉛錘只受引力與張力，由第二定律得繩子沿 $\vec g-\vec a$ 下垂。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\sum\vec F=m\vec a$，其中 $\sum\vec F$ 為合力、$m$ 為質量、$\vec a$ 為慣性系中的加速度；本題 $m\vec g+\vec T=m\vec a$，所以 $\vec T=-m(\vec g-\vec a)$。</p>
+<p>$\vec g$ 只有指向地心的分量 $g$：</p>
+<div class="math-block">$$g_{\text{eff},\parallel}=g-\omega^2R\cos^2\lambda,\qquad g_{\text{eff},\perp}=-\omega^2R\sin\lambda\cos\lambda$$</div>
+<p>負號表示 $g_{\text{eff},\perp}$ 沿經線指向赤道。偏角的正切是垂直分量除以平行分量：</p>
+<div class="math-block">$$\tan\delta=\frac{\omega^2R\sin\lambda\cos\lambda}{g-\omega^2R\cos^2\lambda}$$</div>
+<p><strong>③ 用 $\omega^2R\ll g$ 化簡：</strong> 分母裡的 $\omega^2R\cos^2\lambda$ 最多 $0.0339$，和 $9.8$ 比只有 $0.35\%$，可以丟掉；分子用 $\sin\lambda\cos\lambda=\tfrac12\sin2\lambda$，角度很小時 $\tan\delta\approx\delta$。</p>
+<div class="math-block">$$\boxed{\tan\delta=\frac{\omega^2R\sin\lambda\cos\lambda}{g-\omega^2R\cos^2\lambda}\approx\frac{\omega^2R}{2g}\sin2\lambda}$$</div>
+<h4>(b) $\delta$ 最大的緯度</h4>
+<p><strong>① 找最大值：</strong> 近似式只透過 $\sin2\lambda$ 依賴緯度，$2\lambda=90^\circ$ 即 $\lambda=45^\circ$ 時最大，值為 $1$。赤道與極點 $\sin2\lambda=0$，鉛垂線剛好指向地心。</p>
+<div class="math-block">$$\delta_{\max}\approx\frac{\omega^2R}{2g}$$</div>
+<p><strong>② 代數值：</strong> 代入 $\omega^2R=0.0339\ \text{m/s}^2$、$g=9.8\ \text{m/s}^2$，再乘 $180^\circ/\pi$ 換成度：</p>
+<div class="math-block">$$\delta_{\max}=\frac{0.0339}{2(9.8)}=1.73\times10^{-3}\ \text{rad}=0.099^\circ$$</div>
+<div class="math-block">$$\boxed{\lambda=45^\circ,\ \ \delta_{\max}\approx0.10^\circ}$$</div>
+<h4>(c) 高雄的 $\delta$ 與體重計讀數</h4>
+<p><strong>① 高雄的偏角：</strong> 用 (a) 的完整式，代入 $\sin22.6^\circ=0.3843$、$\cos22.6^\circ=0.9232$、$\cos^2=0.8523$，$\omega^2R=0.0339$、$g=9.8$：</p>
+<div class="math-block">$$\tan\delta=\frac{0.0339(0.3843)(0.9232)}{9.8-0.0339(0.8523)}=\frac{0.01203}{9.771}=1.23\times10^{-3}$$</div>
+<div class="math-block">$$\delta=1.23\times10^{-3}\ \text{rad}\times\frac{180^\circ}{\pi}=0.0705^\circ\approx0.07^\circ$$</div>
+<p><strong>② 體重計讀數：</strong> 體重計讀到支撐力 $m|\vec g_{\text{eff}}|$；垂直分量只讓 $|\vec g_{\text{eff}}|$ 改變二階小量，所以讀數 $\approx m(g-\omega^2R\cos^2\lambda)$。北極 $\cos\lambda=0$，讀數是 $mg$，少掉的比例為</p>
+<div class="math-block">$$\frac{\omega^2R\cos^2\lambda}{g}$$</div>
+<p>代入 $\omega^2R=0.0339$、上一步的 $\cos^2\lambda=0.8523$、$g=9.8$：</p>
+<div class="math-block">$$\frac{0.0339(0.8523)}{9.8}=2.9\times10^{-3}=0.29\%$$</div>
+<div class="math-block">$$\boxed{\delta\approx0.07^\circ,\ \ \text{讀數少約 }0.29\%}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="c2-self-02b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>加速列車裡落下的球：沿「斜的鉛垂線」掉下去</h4>
+    <button type="button" class="exam-btn" data-exam="c2-self-02b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>列車在平直軌道上以 $a=1.5\ \text{m/s}^2$ 等加速前進。車廂天花板掛著一個單擺（已經靜止）；同時有人在距地板 $H=1.0\ \text{m}$ 處，相對車廂由靜止放開一顆小球。(a) 在地面（慣性系）分析小球，求它落在放手點正下方的前面還是後面、差多遠。(b) 車上的人看小球走什麼路徑？證明這條路徑和單擺的擺線平行。(c) 車上的人說「有一個向後的力把球推過去」，這個說法錯在哪裡？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：列車加速度 $a=1.5\ \text{m/s}^2$（向前、水平），放手高度 $H=1.0\ \text{m}$，$g=9.8\ \text{m/s}^2$；放手時小球對地水平速度等於當時車速 $u_0$（最後消掉），放手後只受重力；單擺相對車廂靜止。</p>
+<h4>(a) 落在正下方的前面還是後面</h4>
+<p><strong>① 落地時間：</strong> 地面是慣性系，放手後小球水平不受力，地板卻還在加速；鉛直方向是自由落體、和水平獨立，落地時間只由 $H$ 決定。鉛直初速為零：</p>
+<p class="fnote"><b>公式（等加速度位移）：</b>$y=v_0t+\tfrac12at^2$，其中 $v_0$ 為初速、$a$ 為加速度、$t$ 為時間；本題鉛直 $v_0=0$、加速度 $g$、位移 $H$。</p>
+<div class="math-block">$$H=\tfrac12gt_f^2\ \Longrightarrow\ t_f=\sqrt{\frac{2H}{g}}$$</div>
+<p>代入 $H=1.0\ \text{m}$、$g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$t_f=\sqrt{\frac{2(1.0\ \text{m})}{9.8\ \text{m/s}^2}}=0.452\ \text{s}$$</div>
+<p><strong>② 水平位移比較：</strong> 以放手瞬間為 $t=0$、放手點正下方為原點。小球等速 $u_0$；地板上那一點初速 $u_0$、加速度 $a$。</p>
+<div class="math-block">$$x_{\text{球}}=u_0t,\qquad x_{\text{車}}=u_0t+\tfrac12at^2$$</div>
+<p>兩者相減，未知的 $u_0$ 消掉：</p>
+<div class="math-block">$$\Delta x=x_{\text{車}}-x_{\text{球}}=\tfrac12at_f^2=\tfrac12a\cdot\frac{2H}{g}=\frac{aH}{g}$$</div>
+<p>代入 $a=1.5\ \text{m/s}^2$、$H=1.0\ \text{m}$、$g=9.8\ \text{m/s}^2$：</p>
+<div class="math-block">$$\Delta x=\frac{(1.5\ \text{m/s}^2)(1.0\ \text{m})}{9.8\ \text{m/s}^2}=0.153\ \text{m}$$</div>
+<p>$\Delta x\gt0$ 表示地板那一點跑到小球前面，所以小球落在正下方的後面。</p>
+<div class="math-block">$$\boxed{\text{落在正下方後面 }\frac{aH}{g}=15.3\ \text{cm}}$$</div>
+<h4>(b) 車上看的路徑，證明和擺線平行</h4>
+<p><strong>① 車上座標：</strong> 車上的座標 $=$ 小球座標 $-$ 車廂座標；水平用上一小題的相減，鉛直方向車廂不動。兩方向的相對位移都正比於 $t^2$，比值固定，所以是直線。</p>
+<div class="math-block">$$x'=x_{\text{球}}-x_{\text{車}}=-\tfrac12at^2,\qquad y'=-\tfrac12gt^2$$</div>
+<p>兩式相除，$t^2$ 消掉：</p>
+<div class="math-block">$$\frac{x'}{y'}=\frac ag\quad(\text{與 }t\text{ 無關})$$</div>
+<p>路徑是一條通過放手點、向後傾斜的直線，和鉛直線的夾角 $\phi$ 滿足 $\tan\phi=a/g$。代入 $a=1.5$、$g=9.8$：</p>
+<div class="math-block">$$\tan\phi=\frac{1.5}{9.8}=0.153\ \Longrightarrow\ \phi=8.7^\circ$$</div>
+<p><strong>② 單擺的擺線：</strong> 擺錘相對車廂靜止，對地加速度是水平的 $a$；受繩張力 $T$（與鉛直夾 $\phi$）和重力 $mg$，在地面寫兩個方向的 $F=ma$。</p>
+<p class="fnote"><b>公式（牛頓第二定律分量式）：</b>$\sum F_x=ma_x$、$\sum F_y=ma_y$，其中 $\sum F_x$、$\sum F_y$ 為合力分量、$a_x$、$a_y$ 為加速度分量；本題 $a_x=a$、$a_y=0$。</p>
+<div class="math-block">$$\text{水平：}T\sin\phi=ma,\qquad\text{鉛直：}T\cos\phi-mg=0$$</div>
+<p>兩式相除消去 $T$：</p>
+<div class="math-block">$$\tan\phi=\frac ag=0.153\ \Longrightarrow\ \phi=8.7^\circ$$</div>
+<p>張力要有向前的分量才能讓擺錘向前加速，所以擺錘偏在懸點後方，擺線也向後傾 $8.7^\circ$。兩條線的方向都是 $\vec g-\vec a$，所以平行。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{與鉛直夾 }\tan^{-1}(a/g)=8.7^\circ\text{ 的直線}\\ \text{和單擺擺線平行}\end{gathered}}$$</div>
+<h4>(c) 「向後的力」錯在哪</h4>
+<p><strong>① 找不到施力者：</strong> 放手後小球只受地球施的重力，找不到「向後推」的施力者，也找不到第三定律的反作用力。小球看起來向後加速，是因為車廂座標系本身在向前加速：</p>
+<div class="math-block">$$\ddot x'=\ddot x-a=-a$$</div>
+<p>這就是講義 p.16「球往後加速，但沒有力」的定量版本；在車上若硬要寫 $F=ma$，就得加一個假想的 $-ma$，而它沒有施力者。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{那個「力」沒有施力者}\\ \text{是加速座標系造成的視加速度}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>慣性座標系：不受力的物體做等速直線運動的座標系；彼此以等速度相對運動。</li>
+    <li>加速座標系裡會看到「沒有施力者的加速度」，牛頓定律不成立。</li>
+    <li>地球公轉 $a\approx5.9\times10^{-3}$、自轉 $a\approx3.4\times10^{-2}\ \text{m/s}^2$，遠小於 $g$，一般可當慣性系；赤道體重計讀數 $F_g-mv^2/r$、科氏偏轉是它的小效應。</li>
+  </ol>
+</div>

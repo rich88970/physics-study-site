@@ -1,0 +1,148 @@
+<h2>六、電與磁 <span class="pg">課本 §1.6 · p.19–21</span></h2>
+
+<p class="lead">兩條同向電流互相吸引，通常說是「磁力」。這一節說明：換到電荷自己的座標系，同一個力其實是長度收縮造成的普通電力。磁力是電力的相對論效應。</p>
+
+<h3 id="em-why">6.1 為什麼低速電荷也會有相對論效應 <span class="pg-tag">p.19–20</span></h3>
+
+<p>導線中電子的有效速率不到 $1\ \text{mm/s}$，$\gamma-1<10^{-23}$，看起來完全可以忽略。但有兩個放大因素：電力非常強（氫原子中電子和質子的電力是萬有引力的 $10^{39}$ 倍），而且每公分導線有 $10^{20}$ 個以上的電子在動。極小的不平衡乘上極強的電力、極多的電荷，就是看得到的磁力。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.20</span>
+  <p><strong>電荷是相對論不變量</strong>：在一個座標系量到電荷 $Q$，在所有座標系都量到 $Q$。</p>
+</div>
+
+<h3 id="em-wires">6.2 平行電流為什麼互相吸引 <span class="pg-tag">p.20–21 · Fig. 1.12</span></h3>
+
+<p>理想化的模型：導線 I、II 裡有等量、等間距的正負電荷。有電流時，正電荷以 $v$ 向右、負電荷以 $v$ 向左（實際金屬只有電子在動，但這個模型電學上等效、比較好分析）。</p>
+
+<div class="step" data-step="em-lab">
+  <span class="step-title">實驗室座標系</span>
+  <p>正負電荷都以速率 $v$ 運動，間距縮短相同的倍數，兩條導線仍然電中性。可是它們互相吸引——在這個座標系只好說有一種特殊的「磁」交互作用。</p>
+</div>
+
+<div class="step" data-step="em-neg">
+  <span class="step-title">站在導線 I 的一個負電荷上看導線 II</span>
+  <p>II 裡的負電荷和我同速，看起來靜止，間距<strong>不收縮</strong>；II 裡的正電荷以更大的相對速率運動，間距<strong>收縮得更多</strong>。所以 II 看起來帶淨正電，吸引我這個負電荷。</p>
+</div>
+
+<div class="step" data-step="em-pos">
+  <span class="step-title">站在導線 I 的一個正電荷上看導線 II</span>
+  <p>這次 II 的正電荷靜止、負電荷在動、間距較密，II 看起來帶淨負電，同樣吸引我。</p>
+</div>
+
+<p>所以 I 的每一個電荷都被 II 吸引；同理 II 的每個電荷也被 I 吸引。對每個電荷來說，這只是「另一條導線中異號電荷比較密」造成的普通庫侖力。電流反向時，同樣的分析得到排斥。磁力和電力是同一個電磁交互作用的兩個面向。</p>
+
+<div class="anim" data-anim="wires"></div>
+
+<details class="supp">
+  <summary>導線在某些座標系帶電，不違反電荷不變嗎？</summary>
+  <div class="supp-body">
+    <p>要看整個電路。電流必須形成封閉迴路，某段電流在運動觀察者看來帶正電，迴路中反方向的另一段就帶等量負電，整個迴路對所有觀察者都是中性的。所以「磁力」總是作用在同一電路的不同部分之間。所有磁現象都能由庫侖定律、電荷不變和狹義相對論解釋，只是一般比這個例子複雜。</p>
+  </div>
+</details>
+
+<div class="problem" data-kind="self" id="sf-06-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>由長度收縮推出導線旁運動電荷受的磁力 $qvB$</h4>
+    <button type="button" class="exam-btn" data-exam="sf-06-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>實驗室中一條長直導線：正離子靜止，線電荷密度 $+\lambda_0$；電子以速率 $v$ 沿 $+x$ 運動，線電荷密度 $-\lambda_0$（導線在實驗室中性，電流大小 $I=\lambda_0v$）。點電荷 $q>0$ 在距導線 $r$ 處，也以 $v$ 沿 $+x$ 運動。(a) 在 $q$ 的靜止座標系中，導線的淨線電荷密度 $\lambda'$ 是多少？(b) $q$ 在該座標系受的電力？(c) 已知垂直於運動方向的動量 $p_y$ 在兩座標系相同，證明實驗室中的力 $F=F'/\gamma$，並化成 $F=qv\,\dfrac{\mu_0I}{2\pi r}$。力是吸引還是排斥？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：實驗室中正離子靜止、線電荷密度 $+\lambda_0$；電子以 $v$ 沿 $+x$ 運動、線電荷密度 $-\lambda_0$；電流 $I=\lambda_0v$，方向 $-x$；點電荷 $q\gt0$ 距導線 $r$，也以 $v$ 沿 $+x$（$q$ 的座標系中電子靜止）。電荷在所有座標系相同，密度的變化只來自長度收縮。</p>
+<h4>(a) $q$ 座標系中導線的淨線電荷密度</h4>
+<p><strong>① 兩種電荷的固有密度：</strong> 線電荷密度＝電荷 ÷ 長度，電荷不變、長度會收縮，所以先求每種電荷的固有密度，再換到 $q$ 的座標系。</p>
+<p class="fnote"><b>公式（長度收縮）：</b>$L=L_0/\gamma$，其中 $L_0$ 為靜止時的長度（固有長度）、$L$ 為以 $v$ 運動時量到的長度、$\gamma=1/\sqrt{1-\beta^2}$；本題電荷間距縮成 $1/\gamma$，密度變 $\gamma$ 倍。</p>
+<p>正離子在實驗室靜止，固有密度就是 $\lambda_0$。電子在實驗室以 $v$ 運動時密度是 $\lambda_0$，這是收縮後的值，所以電子自己靜止時的固有密度是</p>
+<div class="math-block">$$\lambda_{e,0}=\frac{\lambda_0}{\gamma}$$</div>
+<p><strong>② 換到 $q$ 的座標系：</strong> 在 $q$ 的座標系，正離子以 $v$ 往 $-x$ 運動，密度變成固有密度的 $\gamma$ 倍；電子靜止，密度就是固有密度：</p>
+<div class="math-block">$$\lambda'_+=\gamma\lambda_0,\qquad \lambda'_-=-\frac{\lambda_0}{\gamma}$$</div>
+<p>相加、通分，再用 $\gamma^2-1=\gamma^2\beta^2$（因為 $\gamma^2(1-\beta^2)=1$）：</p>
+<div class="math-block">$$\lambda'=\gamma\lambda_0-\frac{\lambda_0}{\gamma}=\lambda_0\,\frac{\gamma^2-1}{\gamma}=\lambda_0\,\frac{\gamma^2\beta^2}{\gamma}=\gamma\beta^2\lambda_0\gt0$$</div>
+<div class="math-block">$$\boxed{\lambda'=\gamma\beta^2\lambda_0\ \text{（淨正電）}}$$</div>
+<h4>(b) $q$ 在該座標系受的電力</h4>
+<p><strong>① 電力：</strong> 在 $q$ 的座標系 $q$ 靜止，靜止電荷只受電力，用線電荷的電場算。</p>
+<p class="fnote"><b>公式（長直線電荷的電場，高斯定律）：</b>$E=\dfrac{\lambda}{2\pi\varepsilon_0r}$，其中 $\lambda$ 為線電荷密度、$r$ 為到導線的距離、$\varepsilon_0$ 為真空電容率；本題 $\lambda=\lambda'$。</p>
+<p>代入 (a) 的 $\lambda'$：</p>
+<div class="math-block">$$F'=qE'=\frac{q\lambda'}{2\pi\varepsilon_0r}=\frac{q\gamma\beta^2\lambda_0}{2\pi\varepsilon_0r}\quad(\text{沿徑向向外})$$</div>
+<p>$\lambda'$ 和 $q$ 都是正的，所以是排斥。</p>
+<div class="math-block">$$\boxed{F'=\frac{q\gamma\beta^2\lambda_0}{2\pi\varepsilon_0r}\ \text{（排斥）}}$$</div>
+<h4>(c) 換回實驗室，化成 $qvB$</h4>
+<p><strong>① 力的換算：</strong> $p_y$ 不變，而力＝動量變化 ÷ 時間，時間會膨脹，所以力差一個 $\gamma$。同一段衝量 $\Delta p_y$ 兩邊相同（題目）；$q$ 在自己座標系靜止，$\Delta t'$ 是固有時間。</p>
+<p class="fnote"><b>公式（時間膨脹）：</b>$\Delta t=\gamma\Delta t'$，其中 $\Delta t'$ 為 $q$ 靜止座標系的固有時間、$\Delta t$ 為實驗室量到的時間。</p>
+<div class="math-block">$$F=\frac{\Delta p_y}{\Delta t}=\frac{\Delta p_y}{\gamma\Delta t'}=\frac{F'}{\gamma}$$</div>
+<p><strong>② 代入電力：</strong> 代入 (b) 的 $F'$，$\gamma$ 約掉，$\beta^2=v^2/c^2$：</p>
+<div class="math-block">$$F=\frac{1}{\gamma}\cdot\frac{q\gamma\beta^2\lambda_0}{2\pi\varepsilon_0r}=\frac{q\beta^2\lambda_0}{2\pi\varepsilon_0r}=\frac{qv^2\lambda_0}{2\pi\varepsilon_0c^2r}$$</div>
+<p><strong>③ 寫成磁力的形式：</strong> 用 $c^2=1/(\varepsilon_0\mu_0)$ 把電力寫成磁力的形式。</p>
+<p class="fnote"><b>公式（光速與電磁常數）：</b>$c^2=\dfrac{1}{\varepsilon_0\mu_0}$，即 $\varepsilon_0c^2=1/\mu_0$，其中 $\mu_0$ 為真空磁導率。</p>
+<p>再把 $v^2\lambda_0$ 拆成 $v\cdot(\lambda_0v)=vI$：</p>
+<div class="math-block">$$F=\frac{qv\,(\lambda_0v)}{2\pi r}\cdot\frac{1}{\varepsilon_0c^2}=qv\,\frac{\mu_0I}{2\pi r}=qvB$$</div>
+<p>其中 $B=\dfrac{\mu_0I}{2\pi r}$ 正是長直導線的磁場。方向沿徑向向外（排斥）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}F=\frac{F'}{\gamma}=qv\frac{\mu_0I}{2\pi r}=qvB\\ \text{排斥（}q\text{ 的運動方向和電流方向相反）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-06-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩條 10 A 導線：電荷不平衡有多小，力有多大</h4>
+    <button type="button" class="exam-btn" data-exam="sf-06-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩條平行銅線相距 $d=1.0\ \text{cm}$，截面積各 $A=1.0\ \text{mm}^2$，各載同向電流 $I=10\ \text{A}$。銅的自由電子密度 $n=8.5\times10^{28}\ \text{m}^{-3}$。(a) 求每條導線中電子的線電荷密度大小 $\lambda_0$ 和漂移速率 $v$。(b) 站在導線 2 的一個電子上看，導線 1 的淨線電荷密度多大？大約每幾公尺才多出一個基本電荷？(c) 用 (b) 的電力求導線 2 每公尺受的力，並和 $\dfrac{\mu_0I^2}{2\pi d}$ 比較。(d) 若只有導線 1 的電子去推導線 2 的電子（沒有正離子抵消），每公尺的力是多少？這說明了什麼？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：兩線距離 $d=1.0\ \text{cm}=0.010\ \text{m}$；截面積 $A=1.0\ \text{mm}^2=1.0\times10^{-6}\ \text{m}^2$；兩線同向電流 $I=10\ \text{A}$；自由電子密度 $n=8.5\times10^{28}\ \text{m}^{-3}$；導線在實驗室電中性、正離子靜止（同 sf-06-1 的模型）。常數 $e=1.60\times10^{-19}\ \text{C}$、$\varepsilon_0=8.85\times10^{-12}\ \text{F/m}$、$\mu_0=4\pi\times10^{-7}\ \text{T·m/A}$、$c=3.00\times10^8\ \text{m/s}$。</p>
+<h4>(a) 電子的線電荷密度與漂移速率</h4>
+<p><strong>① 電子的線電荷密度：</strong> 先從材料數據算出 $\lambda_0$。每公尺導線體積 $A\times1\ \text{m}$，裡面有 $nA$ 個自由電子，每個帶 $e$：</p>
+<div class="math-block">$$\lambda_0=neA$$</div>
+<p>代入 $n=8.5\times10^{28}\ \text{m}^{-3}$、$A=1.0\times10^{-6}\ \text{m}^2$、$e=1.60\times10^{-19}\ \text{C}$：</p>
+<div class="math-block">$$\begin{aligned}\lambda_0&amp;=(8.5\times10^{28}\ \text{m}^{-3})(1.60\times10^{-19}\ \text{C})(1.0\times10^{-6}\ \text{m}^2)\\ &amp;=1.36\times10^4\ \text{C/m}\end{aligned}$$</div>
+<p><strong>② 漂移速率與 $\beta^2$：</strong> 電流＝每秒通過的電荷＝線電荷密度 × 速率。</p>
+<p class="fnote"><b>公式（電流與線電荷密度）：</b>$I=\lambda_0v$，其中 $\lambda_0$ 為線電荷密度、$v$ 為電荷的速率。</p>
+<p>代入 $I=10\ \text{A}$ 與上一步的 $\lambda_0=1.36\times10^4\ \text{C/m}$：</p>
+<div class="math-block">$$v=\frac{I}{\lambda_0}=\frac{10\ \text{A}}{1.36\times10^4\ \text{C/m}}=7.3\times10^{-4}\ \text{m/s}$$</div>
+<div class="math-block">$$\beta^2=\left(\frac{7.3\times10^{-4}\ \text{m/s}}{3.00\times10^8\ \text{m/s}}\right)^2=(2.45\times10^{-12})^2=6.0\times10^{-24}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\lambda_0=1.36\times10^4\approx1.4\times10^4\ \text{C/m}\\ v=7.3\times10^{-4}\ \text{m/s}\end{gathered}}$$</div>
+<h4>(b) 導線 1 的淨線電荷密度</h4>
+<p><strong>① 淨電荷：</strong> 情境和 sf-06-1 相同（觀察者是和電子同速的電荷），直接用它的結果 $\lambda'=\gamma\beta^2\lambda_0$；$\gamma-1\sim10^{-24}$ 可當成 1。</p>
+<p>代入 (a) 的 $\beta^2=6.0\times10^{-24}$、$\lambda_0=1.36\times10^4\ \text{C/m}$：</p>
+<div class="math-block">$$\lambda'\approx\beta^2\lambda_0=(6.0\times10^{-24})(1.36\times10^4\ \text{C/m})=8.2\times10^{-20}\ \text{C/m}$$</div>
+<p><strong>② 每幾公尺多一個基本電荷：</strong> 所需長度＝$e/\lambda'$：</p>
+<div class="math-block">$$\frac{e}{\lambda'}=\frac{1.60\times10^{-19}\ \text{C}}{8.2\times10^{-20}\ \text{C/m}}\approx2\ \text{m}$$</div>
+<p>每 $2$ 公尺才多出一個基本電荷，而每公尺有 $nA=8.5\times10^{22}$ 個自由電子。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\lambda'\approx8.2\times10^{-20}\approx8\times10^{-20}\ \text{C/m}\\ \text{約每 2 m 一個電子電荷}\end{gathered}}$$</div>
+<h4>(c) 導線 2 每公尺受的力</h4>
+<p><strong>① 用符號化簡：</strong> 實驗室中導線 2 的正離子靜止不受力，力只作用在導線 2 的電子上。導線 2 每公尺的電子電荷大小 $\lambda_0$，受導線 1 的淨電荷產生的電場 $E'=\lambda'/(2\pi\varepsilon_0d)$（轉回實驗室的 $1/\gamma$ 可忽略）。先用符號化簡，看它是否等於 $\mu_0I^2/(2\pi d)$。</p>
+<p class="fnote"><b>公式（長直線電荷的電場、電磁常數）：</b>$E=\dfrac{\lambda}{2\pi\varepsilon_0r}$，其中 $\lambda$ 為線電荷密度、$r$ 為距離；$c^2=1/(\varepsilon_0\mu_0)$；本題 $\lambda=\lambda'$、$r=d$。</p>
+<div class="math-block">$$\frac Fl=\lambda_0E'=\frac{\lambda_0\,\beta^2\lambda_0}{2\pi\varepsilon_0d}=\frac{\lambda_0^2v^2}{2\pi\varepsilon_0c^2d}=\frac{\mu_0(\lambda_0v)^2}{2\pi d}=\frac{\mu_0I^2}{2\pi d}$$</div>
+<p><strong>② 代入數值：</strong> 代入 $\mu_0=4\pi\times10^{-7}$、$I=10\ \text{A}$、$d=0.010\ \text{m}$：</p>
+<div class="math-block">$$\frac Fl=\frac{(4\pi\times10^{-7}\ \text{T·m/A})(10\ \text{A})^2}{2\pi(0.010\ \text{m})}=2.0\times10^{-3}\ \text{N/m}$$</div>
+<p>也直接用 (b) 的數值代入電力式：</p>
+<div class="math-block">$$\frac Fl=\frac{(1.36\times10^4)(8.2\times10^{-20})}{2\pi(8.85\times10^{-12})(0.010)}\ \text{N/m}=2.0\times10^{-3}\ \text{N/m}$$</div>
+<p>兩種算法一致。方向：導線 1 對電子顯正電，所以吸引。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\frac Fl=2.0\times10^{-3}\ \text{N/m（吸引）}\\ \text{與 }\frac{\mu_0I^2}{2\pi d}\text{ 相同}\end{gathered}}$$</div>
+<h4>(d) 沒有正離子抵消時的電力</h4>
+<p><strong>① 沒有抵消的電力：</strong> $\beta^2\sim10^{-23}$ 小到荒謬，還量得到力是因為 $\lambda_0$ 本身極大，把沒有抵消的電力算出來對照。若導線 1 只有電子（$\lambda_0$）去推導線 2 的電子（$\lambda_0$）：</p>
+<div class="math-block">$$\frac Fl=\frac{\lambda_0^2}{2\pi\varepsilon_0d}$$</div>
+<p>代入 (a) 的 $\lambda_0=1.36\times10^4\ \text{C/m}$、$\varepsilon_0$、$d=0.010\ \text{m}$：</p>
+<div class="math-block">$$\frac Fl=\frac{(1.36\times10^4)^2}{2\pi(8.85\times10^{-12})(0.010)}\ \text{N/m}=3.3\times10^{20}\ \text{N/m}$$</div>
+<p><strong>② 意義：</strong> (c) 的力只是它的 $\beta^2=6\times10^{-24}$ 倍。日常看到的磁力，是兩個幾乎完全抵消的巨大電力之間 $10^{-23}$ 的不平衡。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\frac Fl=3.3\times10^{20}\approx3\times10^{20}\ \text{N/m}\\ \text{磁力是巨大電力的 }\beta^2\text{ 倍不平衡}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>電荷在所有座標系都一樣（相對論不變量）。</li>
+    <li>同向電流：換到電荷的座標系，異號電荷間距收縮得較多 ⟹ 對方帶淨異號電 ⟹ 吸引；反向電流則排斥。</li>
+    <li>磁力是電力的相對論效應；電子雖慢，但電力強、電荷多，效果可觀。</li>
+  </ol>
+</div>

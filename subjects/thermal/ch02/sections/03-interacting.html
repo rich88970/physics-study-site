@@ -1,0 +1,743 @@
+<h2>三、交互作用的系統 <span class="pg">課本 §2.3 · p.56–60</span></h2>
+
+<p class="lead">兩個愛因斯坦固體可以互相傳能量時，能量會怎麼分？這一節只加了一個假設——所有可及的微觀態等機率——就推出「熱從能量集中的一方流向分散的一方」，並得到第二定律的第一個版本：多重度傾向增加。</p>
+
+<h3 id="ti-macro">3.1 複合系統的巨觀態與多重度 <span class="pg-tag">p.56</span></h3>
+
+<p>兩個固體 A、B「弱耦合」：能量在它們之間交換得很慢，比各自內部交換慢得多。所以在短時間內 $U_A$、$U_B$ 幾乎固定，可以用 $(q_A,q_B)$ 來指定複合系統的巨觀態；長時間來看 $q_A$ 會變，只有總和 $q=q_A+q_B$ 固定。「巨觀態」是什麼，取決於你看的時間尺度——這句話第 8 節談熵時還會出現。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.56 複合系統的多重度</span>
+  $$\Omega_{\text{total}}=\Omega_A\,\Omega_B=\Omega(N_A,q_A)\,\Omega(N_B,q_B)$$
+  <p>A 的每一個微觀態都可以搭配 B 的任何一個微觀態（兩者獨立），所以相乘。長時間可及的微觀態總數＝把所有 $q_A$ 的 $\Omega_{\text{total}}$ 加起來，也等於把 $N_A+N_B$ 個振子、$q$ 份能量當成一個固體：$\binom{q+N_A+N_B-1}{q}$。</p>
+</div>
+
+<h3 id="ti-assume">3.2 統計力學的基本假設 <span class="pg-tag">p.57–58</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.57 The fundamental assumption of statistical mechanics</span>
+  <p>在熱平衡的孤立系統中，所有可及的微觀態機率相等。</p>
+</div>
+
+<p>這個假設無法證明，但很合理：微觀上，任何把系統從狀態 X 帶到 Y 的過程都可逆，系統也能同樣容易地從 Y 回到 X（細緻平衡原理），所以系統沒有理由偏好某個微觀態。要小心的是「可及」的意思：大系統的微觀態多到一輩子只能經歷其中極小一部分，我們假設的是「實際經歷到的那些是有代表性的樣本」，轉換沒有我們在乎的規律。</p>
+
+<p>有了這個假設，<strong>微觀態</strong>等機率，<strong>巨觀態</strong>就不等機率：巨觀態 $q_A$ 的機率 $=\Omega_A\Omega_B/\Omega(\text{all})$。下面兩個例題算出這件事有多極端。</p>
+
+<div class="anim" data-anim="t2-two-solids"></div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-fig24">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.3 Fig. 2.4 · p.56–58</span></div>
+    <h4>兩個三振子固體分六份能量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-fig24">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$N_A=N_B=3$，$q_{\text{total}}=q_A+q_B=6$。列出每個巨觀態的 $\Omega_A$、$\Omega_B$、$\Omega_{\text{total}}$，並求「各 3 份」與「全在 B」的機率。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>兩固體的振子數</td><td>$N_A=N_B=3$</td><td>「$N_A=N_B=3$」</td></tr>
+          <tr><td>總能量</td><td>$q_A+q_B=6$，固定</td><td>「$q_{\text{total}}=q_A+q_B=6$」；兩固體可交換能量，但總和不變</td></tr>
+          <tr><td>巨觀態</td><td>$q_A=0,1,\dots,6$（$q_B=6-q_A$）</td><td>「列出每個巨觀態」：課本以 $q_A$ 指定巨觀態</td></tr>
+          <tr><td>機率假設</td><td>所有微觀態等機率</td><td>題目要「機率」；用本節的基本假設（孤立、平衡時可及微觀態等機率）</td></tr>
+          <tr><td>兩個特定巨觀態</td><td>「各 3 份」$q_A=3$；「全在 B」$q_A=0$</td><td>「求『各 3 份』與『全在 B』的機率」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：每個巨觀態的 $\Omega_A$、$\Omega_B$、$\Omega_{\text{total}}$；$P(q_A=3)$ 與 $P(q_A=0)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> A、B 各自是愛因斯坦固體，<b>所以</b>給定 $q_A$ 時 $\Omega_A=\Omega(3,q_A)$、$\Omega_B=\Omega(3,6-q_A)$，用 (2.9) 算。<b>因為</b> A 的每一個微觀態都能搭配 B 的任何一個微觀態（兩者各自獨立地排），<b>所以</b>複合系統的多重度是相乘 $\Omega_{\text{total}}=\Omega_A\Omega_B$，不是相加。</p>
+      <p><b>因為</b>基本假設說所有微觀態等機率，<b>所以</b>巨觀態的機率＝$\Omega_{\text{total}}(q_A)$ ÷ 全部微觀態數；全部微觀態數可以把表中各欄相加，也可以把整個系統當成 6 個振子、6 份能量的一個固體來驗算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-fig24-s1" data-sym="q,N">
+        <span class="step-title">先算 $\Omega(3,q)$，$q=0,\dots,6$</span>
+        $$\Omega(3,q)=\binom{q+2}{q}=\frac{(q+2)(q+1)}{2}$$
+        <p class="sub">代入 $q=0,1,2,3,4,5,6$：</p>
+        $$\frac{2\cdot1}2,\ \frac{3\cdot2}2,\ \frac{4\cdot3}2,\ \dots,\ \frac{8\cdot7}2=1,\ 3,\ 6,\ 10,\ 15,\ 21,\ 28$$
+      </div>
+      <div class="step" data-step="tf24a" data-sym="qAB,Omega">
+        <span class="step-title">列表：$\Omega_B$ 用 $q_B=6-q_A$，兩欄相乘</span>
+        <p>$\Omega_A$ 照步驟 1 依 $q_A$ 由小到大排；$q_B=6-q_A$，所以 $\Omega_B$ 是同一串數字倒過來；第三列是上兩列相乘（例如 $q_A=2$：$6\times15=90$）。</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$q_A$</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+          <tbody>
+            <tr><td>$\Omega_A$</td><td>1</td><td>3</td><td>6</td><td>10</td><td>15</td><td>21</td><td>28</td></tr>
+            <tr><td>$\Omega_B$</td><td>28</td><td>21</td><td>15</td><td>10</td><td>6</td><td>3</td><td>1</td></tr>
+            <tr><td>$\Omega_{\text{total}}$</td><td>28</td><td>63</td><td>90</td><td>100</td><td>90</td><td>63</td><td>28</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="tf24b">
+        <span class="step-title">全部微觀態數與驗算</span>
+        <p>把第三列相加：</p>
+        $$\Omega(\text{all})=28+63+90+100+90+63+28=462$$
+        <p class="sub">驗算：整個系統是 $N_A+N_B=6$ 個振子分 $6$ 份能量，代入 (2.9)：</p>
+        $$\Omega(6,6)=\binom{6+6-1}{6}=\binom{11}{6}=462$$
+      </div>
+      <div class="step" data-step="tf24c">
+        <span class="step-title">兩個巨觀態的機率</span>
+        $$P(q_A)=\frac{\Omega_{\text{total}}(q_A)}{\Omega(\text{all})}$$
+        <p class="sub">代入表中 $\Omega_{\text{total}}(3)=100$、$\Omega_{\text{total}}(0)=28$（步驟 2）與 $462$（步驟 3）：</p>
+        $$P(q_A=3)=\frac{100}{462}=0.216$$
+        $$P(q_A=0)=\frac{28}{462}=0.061$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\Omega_{\text{total}}=28,63,90,100,90,63,28$（$q_A=0\to6$），共 462；各 3 份 21.6%，全在 B 6.1%。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>兩固體一樣大，表格對 $q_A=3$ 對稱 ✔。若一開始能量全在 B，等一段時間後比較可能看到能量分散。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-fig25">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §2.3 Fig. 2.5 · p.58–59</span></div>
+    <h4>300 與 200 個振子分 100 份能量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-fig25">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$N_A=300$、$N_B=200$、$q_{\text{total}}=100$。求最可能與最不可能的巨觀態、它們的多重度與機率，以及 $q_A$ 遠離最可能值的機率。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>兩固體的振子數</td><td>$N_A=300$，$N_B=200$</td><td>「$N_A=300$、$N_B=200$」</td></tr>
+          <tr><td>總能量</td><td>$q_A+q_B=100$，固定</td><td>「$q_{\text{total}}=100$」</td></tr>
+          <tr><td>巨觀態</td><td>$q_A=0,1,\dots,100$，共 101 個</td><td>以 $q_A$ 指定巨觀態（本節 3.1）</td></tr>
+          <tr><td>機率假設</td><td>所有微觀態等機率</td><td>本節的基本假設；題目要「機率」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：最可能與最不可能的巨觀態、它們的多重度與機率；$q_A$ 遠離最可能值（$q_A\lt30$ 或 $\gt90$、$q_A\lt10$）的機率。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每個巨觀態的多重度仍是 $\Omega_A\Omega_B$（同 Fig. 2.4 例題），但現在有 101 個、每個都是一百多位數，<b>所以</b>用電腦（試算表或 Python 的整數）逐一算 $\binom{q_A+299}{q_A}\binom{q_B+199}{q_B}$，再找最大與最小。</p>
+      <p>直覺先估：<b>因為</b>每個振子地位相同，能量應大致照振子數分，<b>所以</b>峰約在 $q_A\approx100\times\frac{300}{500}=60$。最不可能的是「能量全擠在<b>小的</b>那個固體」：<b>因為</b> $q_A=0$ 時 100 份全塞進 200 個振子的 B，排法比全塞進 300 個振子的 A（$q_A=100$）少得多。</p>
+      <p><b>因為</b>所有微觀態等機率，<b>所以</b>機率＝多重度 ÷ 全部微觀態數，後者把 500 個振子、100 份能量當成一個固體來算。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-fig25-s1" data-sym="q,N">
+        <span class="step-title">寫出每個巨觀態的多重度</span>
+        $$\Omega_{\text{total}}(q_A)=\Omega(N_A,q_A)\,\Omega(N_B,q-q_A)=\binom{q_A+N_A-1}{q_A}\binom{q-q_A+N_B-1}{q-q_A}$$
+        <p class="sub">代入 $N_A=300$、$N_B=200$、$q=100$（題目）：</p>
+        $$\Omega_{\text{total}}(q_A)=\binom{q_A+299}{q_A}\binom{299-q_A}{100-q_A}$$
+      </div>
+      <div class="step" data-step="tf25a" data-sym="qAB,Omega">
+        <span class="step-title">兩端與峰</span>
+        <p class="sub">代入 $q_A=0$（A 沒有能量，$\Omega_A=1$）：</p>
+        $$\Omega_{\text{total}}(0)=1\cdot\binom{299}{100}=2.8\times10^{81}$$
+        <p class="sub">電腦逐一比較 101 個值，最大的在 $q_A=60$（$q_B=40$）：</p>
+        $$\Omega_{\text{total}}(60)=\binom{359}{60}\binom{239}{40}=(1.30\times10^{69})(5.27\times10^{45})=6.9\times10^{114}$$
+        <p>對照另一端 $q_A=100$：$\binom{399}{100}\cdot1=1.7\times10^{96}$，遠大於 $q_A=0$，所以最小的確是 $q_A=0$。峰與谷的比值：</p>
+        $$\frac{6.9\times10^{114}}{2.8\times10^{81}}=2.5\times10^{33}$$
+      </div>
+      <div class="step" data-step="sc-ex-fig25-s3">
+        <span class="step-title">全部微觀態數</span>
+        <p>整個系統是 $N_A+N_B=500$ 個振子分 100 份能量，代入 (2.9)：</p>
+        $$\Omega(\text{all})=\binom{100+500-1}{100}=\binom{599}{100}=9.3\times10^{115}$$
+      </div>
+      <div class="step" data-step="tf25b">
+        <span class="step-title">機率</span>
+        <p class="sub">代入 $\Omega_{\text{total}}(60)=6.9\times10^{114}$、$\Omega_{\text{total}}(0)=2.8\times10^{81}$（步驟 2）與 $\Omega(\text{all})$（步驟 3）：</p>
+        $$P(60)=\frac{6.9\times10^{114}}{9.3\times10^{115}}=7.4\%$$
+        $$P(0)=\frac{2.8\times10^{81}}{9.3\times10^{115}}=3\times10^{-35}$$
+        <p>遠離峰的整段要把多重度加起來（電腦）：$P(q_A\lt30\text{ 或 }q_A\gt90)\approx9\times10^{-9}$（小於百萬分之一），$P(q_A\lt10)\approx8\times10^{-23}$（小於 $10^{-20}$）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>最可能 $q_A=60$（$\Omega=6.9\times10^{114}$，7.4%）；最不可能 $q_A=0$（$\Omega=2.8\times10^{81}$，機率 $3\times10^{-35}$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>宇宙年齡不到 $10^{18}\ \text{s}$：每秒看 100 次看一整個宇宙年齡，才有機會看到一次 $q_A\lt10$（用課本的上界 $10^{-20}$；精確值 $8\times10^{-23}$ 還要再多約 100 倍）✔</p></div>
+  </div>
+</div>
+
+<h3 id="ti-second">3.3 熱流與第二定律的第一個版本 <span class="pg-tag">p.58–59</span></h3>
+
+<p>若系統一開始 $q_A$ 遠小於 60（例如能量全在 B），等一段時間讓能量重新排列，幾乎可以確定會看到能量從 B 流到 A，而且（除了 $q_A=60$ 附近的小擾動）不會再流回去。這就是<strong>不可逆</strong>：不是物理定律禁止反向，而是反向的巨觀態多重度小到不可能看到。熱的本質因此是一個機率現象。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.59 第二定律（多重度增加定律）</span>
+  <p>能量的自發流動會在系統到達（或非常接近）最可能的巨觀態——多重度最大的巨觀態——時停止。這不是基本定律，而是一個非常強的機率陳述。</p>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">「微觀態等機率」不是「巨觀態等機率」</span>
+  <p>基本假設講的是微觀態。巨觀態的機率要乘多重度。算「全部能量在 A」的機率時，分子是 $\Omega_A(q)\cdot\Omega_B(0)=\Omega_A(q)\cdot1$，不是 1。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-8">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-8（Problem 2.8）· p.59 · 熱學小考（上）作業題</span></div>
+    <h4>兩個十振子固體分二十份能量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-8"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Consider a system of two Einstein solids, A and B, each containing 10 oscillators, sharing a total of 20 units of energy. Assume that the solids are weakly coupled, and that the total energy is fixed.</p><p>(a) How many different macrostates are available to this system?</p><p>(b) How many different microstates are available to this system?</p><p>(c) Assuming that this system is in thermal equilibrium, what is the probability of finding all the energy in solid A?</p><p>(d) What is the probability of finding exactly half of the energy in solid A?</p><p>(e) Under what circumstances would this system exhibit irreversible behavior?</p></div>
+<p class="original-caption">Schroeder 習題 2-8（Problem 2.8）· p.59 · 熱學小考（上）作業題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩個愛因斯坦固體 A、B 各有 10 個振子，共享 20 份能量；兩固體弱耦合，總能量固定。(a) 系統有多少個不同的巨觀態？(b) 有多少個不同的微觀態？(c) 假設系統在熱平衡，能量全部在 A 的機率是多少？(d) 剛好一半能量在 A 的機率是多少？(e) 在什麼情況下這個系統會表現出不可逆的行為？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>兩固體的振子數</td><td>$N_A=N_B=10$</td><td>「A、B <b>各有 10 個振子</b>」</td></tr>
+          <tr><td>總能量</td><td>$q_A+q_B=20$，固定</td><td>「共享 <b>20 份</b>能量」「總能量固定」</td></tr>
+          <tr><td>耦合</td><td>弱耦合：可用 $(q_A,q_B)$ 指定巨觀態</td><td>「兩固體<b>弱耦合</b>」（本節 3.1）</td></tr>
+          <tr><td>機率假設</td><td>所有可及微觀態等機率</td><td>(c)「假設系統在<b>熱平衡</b>」：基本假設</td></tr>
+          <tr><td>(c)(d) 的巨觀態</td><td>全在 A：$q_A=20$；一半：$q_A=10$</td><td>(c)「能量<b>全部在 A</b>」、(d)「剛好<b>一半</b>能量在 A」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 巨觀態數；(b) 微觀態數；(c) $P(q_A=20)$；(d) $P(q_A=10)$；(e) 什麼情況下會看到不可逆的行為。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>巨觀態由 $q_A$ 指定，而 $q_A$ 可以是 $0$ 到 $20$ 的任何整數，<b>所以</b>數整數個數。(b) <b>因為</b>長時間能量可以在兩邊任意流動，可及的微觀態就是「20 個振子分 20 份能量」的所有排法，<b>所以</b>把整個系統當成一個 $N=20$、$q=20$ 的固體代 (2.9)。</p>
+      <p>(c)(d) <b>因為</b>熱平衡時微觀態等機率，<b>所以</b>巨觀態的機率＝$\Omega_A\Omega_B$ ÷ (b) 的總數。注意「全在 A」的分子不是 1：A 自己的 20 份還有很多種排法。(e) 用 (c)(d) 的比值判斷「回到集中狀態」有多難。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t28a" data-sym="qAB">
+        <span class="step-title">(a) 巨觀態</span>
+        <p>$q_A=0,1,\dots,20$（$q_B=20-q_A$ 跟著決定），共 $20+1=21$ 個。</p>
+      </div>
+      <div class="step" data-step="t28b" data-sym="Omega">
+        <span class="step-title">(b) 微觀態：整個系統當成一個固體</span>
+        $$\Omega(\text{all})=\Omega(N_A+N_B,\,q)=\binom{q+N_A+N_B-1}{q}$$
+        <p class="sub">代入 $N_A+N_B=20$、$q=20$（題目），用計算機：</p>
+        $$\Omega(\text{all})=\binom{39}{20}=\frac{39!}{20!\,19!}=6.89\times10^{10}$$
+      </div>
+      <div class="step" data-step="t28c">
+        <span class="step-title">(c) 全在 A：$q_A=20$、$q_B=0$</span>
+        <p>A 的 10 個振子分 20 份，B 的 10 個振子都沒有能量（只有 1 種）：</p>
+        $$\Omega_{\text{total}}=\Omega(10,20)\,\Omega(10,0)=\binom{29}{20}\cdot1$$
+        <p class="sub">用 $\binom{29}{20}=\binom{29}9$ 算（計算機）：</p>
+        $$\binom{29}{9}=10\,015\,005=1.00\times10^{7}$$
+        <p class="sub">除以 (b) 的 $6.89\times10^{10}$：</p>
+        $$P(q_A=20)=\frac{1.00\times10^7}{6.89\times10^{10}}=1.45\times10^{-4}$$
+      </div>
+      <div class="step" data-step="t28d">
+        <span class="step-title">(d) 各 10 份</span>
+        <p>兩邊都是 10 個振子分 10 份，$\Omega(10,10)=\binom{19}{10}=92\,378$：</p>
+        $$\Omega_{\text{total}}=\binom{19}{10}^2=(92\,378)^2=8.53\times10^{9}$$
+        <p class="sub">除以 (b) 的 $6.89\times10^{10}$：</p>
+        $$P(q_A=10)=\frac{8.53\times10^9}{6.89\times10^{10}}=0.124$$
+      </div>
+      <div class="step" data-step="t28e">
+        <span class="step-title">(e) 不可逆</span>
+        <p class="sub">比較 (d) 與 (c)：</p>
+        $$\frac{P(q_A=10)}{P(q_A=20)}=\frac{8.53\times10^9}{1.00\times10^7}\approx850$$
+        <p>平分的機率是全在 A 的約 850 倍。若一開始能量（幾乎）全在一邊，幾乎可以確定它會變得平均；反過來從平均回到全在一邊，每一千次觀察還不到一次。所以初始狀態遠離最可能巨觀態時，就會看到「近似不可逆」的行為；但系統這麼小，反向偶爾仍會發生，並不嚴格不可逆。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 21；(b) $6.89\times10^{10}$；(c) $1.45\times10^{-4}$；(d) 0.124；(e) 從能量集中在一邊的狀態出發時（但這麼小的系統只是近似不可逆）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(d) 不是 $1/21$：巨觀態不等機率 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk-115-5">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">115 級上學期期中 第 5 題 · 改自 Schroeder Problem 2.8 · p.59</span></div>
+    <h4>10 與 20 個振子分 60 份能量</h4>
+    <button type="button" class="exam-btn" data-exam="tk-115-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk-115-5"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>[20pts] Consider a system of two Einstein solids, A and B, each containing 10 oscillators and 20 oscillators, sharing a total of 60 units of energy. Assume that the solids are weakly coupled, and that the total energy is fixed. <em>In this problem, you may express your answer as some combinatorics without evaluating its numerical value.</em></p><p>(a) How many different macrostates are available to this system? (5pts)</p><p>(b) How many different microstates are available to this system? (5pts)</p><p>(c) Assuming that this system is in thermal equilibrium, what is the probability of finding all the energy in solid A? (5pts)</p><p>(d) Assuming that this system is in thermal equilibrium, what is the probability of finding this system at its most likely macrostate? (5pts)</p></div>
+<p class="original-caption">115 級上學期期中 第 5 題 · 改自 Schroeder Problem 2.8 · p.59</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（20 分）考慮由兩個愛因斯坦固體 A、B 組成的系統，分別含 10 個和 20 個振子，共享 60 份能量。假設兩固體弱耦合，且總能量固定。本題的答案可以寫成組合數，不必算出數值。(a) 這個系統有多少個不同的巨觀態？（5 分）(b) 這個系統有多少個不同的微觀態？（5 分）(c) 假設系統處於熱平衡，能量全部在固體 A 的機率是多少？（5 分）(d) 假設系統處於熱平衡，系統處在最可能巨觀態的機率是多少？（5 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>兩固體的振子數</td><td>$N_A=10$，$N_B=20$</td><td>「分別含 <b>10 個和 20 個</b>振子」</td></tr>
+          <tr><td>總能量</td><td>$q_A+q_B=60$，固定</td><td>「共享 <b>60 份</b>能量」「總能量固定」</td></tr>
+          <tr><td>耦合與機率</td><td>弱耦合；平衡時微觀態等機率</td><td>「弱耦合」；(c)(d)「假設系統處於<b>熱平衡</b>」</td></tr>
+          <tr><td>答案形式</td><td>可以寫成組合數</td><td>「答案可以寫成組合數，不必算出數值」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 巨觀態數；(b) 微觀態數；(c) 能量全在 A 的機率；(d) 處在最可能巨觀態的機率。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>和習題 2.8 同一個方法，只是兩個固體不一樣大。(a) <b>因為</b>巨觀態由 $q_A$ 指定，<b>所以</b>數 $q_A$ 的可能值。(b) <b>因為</b>長時間可及的是 30 個振子分 60 份的全部排法，<b>所以</b>代 (2.9)。(c) <b>因為</b>微觀態等機率，<b>所以</b>機率＝$\Omega_A\Omega_B$ ÷ 總數。</p>
+      <p>(d) <b>因為</b>不知道最可能的 $q_A$ 是哪一個，要先找峰。直覺「照振子數分」給 $q_A=60\times\tfrac{10}{30}=20$，但小系統不精確；<b>所以</b>比較相鄰兩個巨觀態的多重度比 $\Omega_{\text{total}}(q_A+1)/\Omega_{\text{total}}(q_A)$，比值大於 1 表示還在上升，由此找出確切的峰（自編難題 3-A 有一般證明）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="k1155a" data-sym="qAB">
+        <span class="step-title">(a) 巨觀態</span>
+        <p>$q_A=0,1,\dots,60$（$q_B=60-q_A$），共 $60+1=61$ 個。</p>
+      </div>
+      <div class="step" data-step="k1155b" data-sym="Omega">
+        <span class="step-title">(b) 微觀態：30 個振子、60 份能量</span>
+        $$\Omega(\text{all})=\binom{q+N_A+N_B-1}{q}$$
+        <p class="sub">代入 $q=60$、$N_A+N_B=30$（題目），$q+N-1=89$：</p>
+        $$\Omega(\text{all})=\binom{89}{60}=\frac{89!}{60!\,29!}\approx2.24\times10^{23}$$
+      </div>
+      <div class="step" data-step="k1155c">
+        <span class="step-title">(c) 全在 A：$\Omega_A(10,60)\,\Omega_B(20,0)$</span>
+        <p>A 的 10 個振子分 60 份，$\binom{60+9}{60}=\binom{69}{60}$；B 沒有能量只有 1 種：</p>
+        $$P=\frac{\binom{69}{60}\cdot1}{\binom{89}{60}}=\frac{69!/(60!\,9!)}{89!/(60!\,29!)}=\frac{69!\,29!}{89!\,9!}$$
+        <p class="sub">代入（計算機）$\binom{69}{60}=\binom{69}9=5.67\times10^{10}$ 與 (b) 的 $2.24\times10^{23}$：</p>
+        $$P=\frac{5.67\times10^{10}}{2.24\times10^{23}}=2.5\times10^{-13}$$
+      </div>
+      <div class="step" data-step="k1155d" data-sym="NAB">
+        <span class="step-title">(d) 相鄰兩個巨觀態的比</span>
+        <p>由 (2.9)，A 多一份時 $\dfrac{\Omega(N_A,q_A+1)}{\Omega(N_A,q_A)}=\dfrac{q_A+N_A}{q_A+1}$；B 同時少一份時 $\dfrac{\Omega(N_B,q_B-1)}{\Omega(N_B,q_B)}=\dfrac{q_B}{q_B+N_B-1}$。$\Omega_{\text{total}}$ 繼續增加的條件是兩者相乘 $\ge1$：</p>
+        $$(q_A+N_A)\,q_B\ \ge\ (q_A+1)(q_B+N_B-1)$$
+        <p class="sub">代入 $N_A=10$、$N_B=20$（題目）與 $q_B=60-q_A$：</p>
+        $$(q_A+10)(60-q_A)\ \ge\ (q_A+1)(79-q_A)$$
+      </div>
+      <div class="step" data-step="tk-115-5-s5">
+        <span class="step-title">(d) 解不等式，找出峰</span>
+        <p>兩邊展開，$-q_A^2$ 互相消掉：</p>
+        $$-q_A^2+50q_A+600\ \ge\ -q_A^2+78q_A+79$$
+        $$521\ \ge\ 28\,q_A\quad\Longleftrightarrow\quad q_A\le18.6$$
+        <p>所以 $q_A=18$ 時比值 $\gt1$（$\Omega(19)\gt\Omega(18)$），$q_A=19$ 時比值 $\lt1$（$\Omega(20)\lt\Omega(19)$）：最可能的巨觀態是 $q_A=19,\ q_B=41$。</p>
+      </div>
+      <div class="step" data-step="k1155e">
+        <span class="step-title">(d) 最可能巨觀態的機率</span>
+        <p>$\Omega_A(10,19)=\binom{19+9}{19}=\binom{28}{19}$，$\Omega_B(20,41)=\binom{41+19}{41}=\binom{60}{41}$：</p>
+        $$P=\frac{\binom{28}{19}\binom{60}{41}}{\binom{89}{60}}$$
+        <p class="sub">代入（計算機）$\binom{28}{19}=6.91\times10^{6}$、$\binom{60}{41}=2.04\times10^{15}$、(b) 的 $2.24\times10^{23}$：</p>
+        $$P=\frac{(6.91\times10^{6})(2.04\times10^{15})}{2.24\times10^{23}}=\frac{1.41\times10^{22}}{2.24\times10^{23}}=0.063$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 61；(b) $\dfrac{89!}{60!\,29!}\approx2.24\times10^{23}$；(c) $\dfrac{69!\,29!}{89!\,9!}\approx2.5\times10^{-13}$；(d) $q_A=19$，$P=\dfrac{\binom{28}{19}\binom{60}{41}}{\binom{89}{60}}\approx6.3\%$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$q_A=20$ 的多重度只比 19 小 0.9%，大系統時兩者沒差（「照振子數分」是 $N$ 很大時的結果；精確條件是 $q_A/(N_A-1)\approx q_B/(N_B-1)$，$60\times\tfrac9{28}=19.3$）✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk-114-4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">114 級上學期期中 第 4 題 · 即 Schroeder Fig. 2.4 的作法 · p.56–57</span></div>
+    <h4>3 與 2 個振子分 5 份能量</h4>
+    <button type="button" class="exam-btn" data-exam="tk-114-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（20 分）考慮由兩個交互作用的小愛因斯坦固體 A 與 B 組成的系統。固體 A 由 3 個振子描述，固體 B 由 2 個振子描述。各固體的振子數固定，能量可以在兩固體間交換。固體 A 的能量是 $q_A\epsilon$、固體 B 的能量是 $q_B\epsilon$，其中 $\epsilon$ 是能量單位，在這個封閉系統中 $q_A+q_B=5$ 固定。(a) 在 $q_A=1$、$q_B=4$ 的情況，求固體 A 的多重度（記為 $\Omega_A$）。用示意圖（例如用圓圈代表能量單位）說明你如何得到 $\Omega_A$。（3 分）(b) 列表寫出 $q_A$ 與 $q_B$ 的所有可能值，以及對應的 $\Omega_A$、$\Omega_B$ 與 $\Omega_{\text{total}}=\Omega_A\Omega_B$。（10 分）(c) 以 $\Omega_{\text{total}}$ 為縱軸、$q_A$ 為橫軸畫出長條圖。（5 分）(d) 從 (c) 的圖中，你認為這張圖告訴你什麼（關於這種封閉系統中的能量分布）？（2 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>A 的振子數</td><td>$N_A=3$</td><td>「固體 A 由 <b>3 個振子</b>描述」</td></tr>
+          <tr><td>B 的振子數</td><td>$N_B=2$</td><td>「固體 B 由 <b>2 個振子</b>描述」</td></tr>
+          <tr><td>總能量</td><td>$q_A+q_B=5$，固定</td><td>「在這個封閉系統中 $q_A+q_B=5$ 固定」；能量單位 $\epsilon$</td></tr>
+          <tr><td>(a) 的巨觀態</td><td>$q_A=1$，$q_B=4$</td><td>(a)「在 $q_A=1$、$q_B=4$ 的情況」</td></tr>
+          <tr><td>機率假設</td><td>所有微觀態等機率</td><td>題目沒寫；(d) 解讀圖形時用基本假設（封閉系統平衡時可及微觀態等機率）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $q_A=1$ 時的 $\Omega_A$，並畫示意圖；(b) 列出所有 $q_A,q_B$ 與 $\Omega_A,\Omega_B,\Omega_{\text{total}}$；(c) 畫 $\Omega_{\text{total}}$ 對 $q_A$ 的長條圖；(d) 圖代表的意義。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這就是 Fig. 2.4 的作法，只換了振子數和總能量，<b>所以</b>每個固體用 (2.9)：$\Omega_A=\binom{q_A+2}{q_A}$、$\Omega_B=\binom{q_B+1}{q_B}=q_B+1$；<b>因為</b> A 的每個微觀態可以配 B 的任一個，<b>所以</b> $\Omega_{\text{total}}=\Omega_A\Omega_B$。</p>
+      <p>(a) 要「示意圖」，<b>因為</b>點與線的圖正是 (2.9) 的證明方式，<b>所以</b>用圓圈代表一份能量、直線代表振子之間的隔板。(d) <b>因為</b>微觀態等機率，巨觀態的機率正比於 $\Omega_{\text{total}}$，<b>所以</b>長條圖的形狀就是能量分配的機率分布。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="k1144a" data-sym="q,N">
+        <span class="step-title">(a) $q_A=1$：1 個圓圈、2 條隔線</span>
+        <p>A 有 3 個振子，需要 $N_A-1=2$ 條隔線；$q_A=1$ 是 1 個圓圈。圓圈可以放在三個位置之一：</p>
+        $$\circ\,|\,|\qquad|\,\circ\,|\qquad|\,|\,\circ$$
+        <p class="sub">代入 (2.9)，$N_A=3$、$q_A=1$（題目 (a)）：</p>
+        $$\Omega_A=\binom{1+3-1}{1}=\binom31=3$$
+        <p>那一份能量可以在三個振子中的任一個。</p>
+      </div>
+      <div class="step" data-step="tk-114-4-s2">
+        <span class="step-title">(b) 兩個固體各自的多重度公式</span>
+        <p>(2.9) 代入 $N_A=3$ 與 $N_B=2$（題目）：</p>
+        $$\Omega_A=\binom{q_A+2}{q_A}=\frac{(q_A+2)(q_A+1)}2$$
+        $$\Omega_B=\binom{q_B+1}{q_B}=q_B+1$$
+        <p class="sub">代入 $q_A=0,\dots,5$：$\Omega_A=1,3,6,10,15,21$；代入 $q_B=5-q_A=5,\dots,0$：$\Omega_B=6,5,4,3,2,1$。</p>
+      </div>
+      <div class="step" data-step="k1144b" data-sym="qAB,Omega">
+        <span class="step-title">(b) 列表，$\Omega_{\text{total}}=\Omega_A\Omega_B$</span>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$q_A$</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+          <tbody>
+            <tr><td>$q_B$</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr>
+            <tr><td>$\Omega_A$</td><td>1</td><td>3</td><td>6</td><td>10</td><td>15</td><td>21</td></tr>
+            <tr><td>$\Omega_B$</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+            <tr><td>$\Omega_{\text{total}}$</td><td>6</td><td>15</td><td>24</td><td>30</td><td>30</td><td>21</td></tr>
+          </tbody>
+        </table></div>
+        <p>例如 $q_A=2$：$6\times4=24$。總和 $6+15+24+30+30+21=126$；驗算：整個系統 5 個振子分 5 份，$\binom{5+5-1}{5}=\binom95=126$。</p>
+      </div>
+      <div class="step" data-step="k1144c">
+        <span class="step-title">(c) 長條圖</span>
+        <p>橫軸 $q_A=0,\dots,5$，縱軸 $\Omega_{\text{total}}$。六根長條高度 6、15、24、30、30、21：由左往右上升，在 $q_A=3,4$ 最高，$q_A=5$ 再降下來（上方圖解可切到這一組）。</p>
+      </div>
+      <div class="step" data-step="k1144d">
+        <span class="step-title">(d) 圖的意義</span>
+        <p>所有微觀態等機率時，巨觀態的機率正比於 $\Omega_{\text{total}}$：</p>
+        $$P(q_A)=\frac{\Omega_{\text{total}}(q_A)}{126}$$
+        <p class="sub">代入 $q_A=3,4$ 的 30 與 $q_A=0$ 的 6（步驟 3）：</p>
+        $$P(3)=P(4)=\frac{30}{126}=24\%$$
+        $$P(0)=\frac6{126}=4.8\%$$
+        <p>最可能的是 $q_A=3$ 或 4，也就是能量大致依振子數 $3:2$ 分配；能量全集中在一邊（$q_A=0$ 或 5）的機率小得多。所以能量會自發地往「分散」的巨觀態流——這就是熱流方向與第二定律的機率解釋。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\Omega_A=3$；(b) $\Omega_{\text{total}}=6,15,24,30,30,21$（共 126）；(c) 先升後降、$q_A=3,4$ 最高的長條圖；(d) 能量傾向依振子數分配，最可能 $q_A=3$ 或 4（各 24%）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>照振子數分 $q_A=5\times\tfrac35=3$，表中 3 與 4 並列最大 ✔（系統太小，峰不尖）</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-9">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-9（Problem 2.9）· p.60</span></div>
+    <h4>六個與四個振子分六份能量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-9"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a computer to reproduce the table and graph in Figure 2.4: two Einstein solids, each containing three harmonic oscillators, with a total of six units of energy. Then modify the table and graph to show the case where one Einstein solid contains six harmonic oscillators and the other contains four harmonic oscillators (with the total number of energy units still equal to six). Assuming that all microstates are equally likely, what is the most probable macrostate, and what is its probability? What is the least probable macrostate, and what is its probability?</p></div>
+<p class="original-caption">Schroeder 習題 2-9（Problem 2.9）· p.60</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用電腦重做 Fig. 2.4 的表與圖（兩個各三振子的固體、共六份能量）。再改成一個固體六個振子、另一個四個振子（能量仍是六份）。假設所有微觀態等機率，最可能的巨觀態是哪個、機率多少？最不可能的是哪個、機率多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第一部分</td><td>$N_A=N_B=3$，$q=6$</td><td>「重做 Fig. 2.4 的表與圖（兩個各三振子的固體、共六份能量）」：即上面 Fig. 2.4 例題</td></tr>
+          <tr><td>第二部分的振子數</td><td>$N_A=6$，$N_B=4$</td><td>「一個固體<b>六個</b>振子、另一個<b>四個</b>振子」</td></tr>
+          <tr><td>總能量</td><td>$q_A+q_B=6$</td><td>「能量<b>仍是六份</b>」</td></tr>
+          <tr><td>機率假設</td><td>所有微觀態等機率</td><td>「假設所有微觀態<b>等機率</b>」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$N_A=6$、$N_B=4$ 時的表格與圖；最可能的巨觀態與它的機率、最不可能的巨觀態與它的機率。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>這和 Fig. 2.4 是同一種系統（兩個弱耦合的愛因斯坦固體），只是振子數不同，<b>所以</b>做法完全一樣：$\Omega_A=\Omega(6,q_A)$、$\Omega_B=\Omega(4,6-q_A)$ 用 (2.9)，相乘得 $\Omega_{\text{total}}$。第一部分的 $3+3$ 情形就是上面的 Fig. 2.4 例題，這裡只寫新的 $6+4$。</p>
+      <p><b>因為</b>微觀態等機率，<b>所以</b>機率＝$\Omega_{\text{total}}$ ÷ 總和；總和可用「10 個振子分 6 份」的 (2.9) 驗算。題目說「用電腦」，<b>因為</b>只有 7 列，手算或試算表都可以。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-9-s1" data-sym="q,N">
+        <span class="step-title">兩個固體的多重度公式</span>
+        <p>(2.9) 代入 $N_A=6$、$N_B=4$（題目）：</p>
+        $$\Omega_A=\binom{q_A+5}{q_A},\qquad\Omega_B=\binom{q_B+3}{q_B}$$
+        <p class="sub">例如 $q_A=3$：$\Omega_A=\binom83=56$；這時 $q_B=3$：$\Omega_B=\binom63=20$，$\Omega_{\text{total}}=56\times20=1120$。</p>
+      </div>
+      <div class="step" data-step="t29a" data-sym="qAB,Omega">
+        <span class="step-title">列表（$N_A=6,N_B=4$）</span>
+        <p>每一欄 $q_B=6-q_A$，第三列＝上兩列相乘：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$q_A$</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+          <tbody>
+            <tr><td>$\Omega_A$</td><td>1</td><td>6</td><td>21</td><td>56</td><td>126</td><td>252</td><td>462</td></tr>
+            <tr><td>$\Omega_B$</td><td>84</td><td>56</td><td>35</td><td>20</td><td>10</td><td>4</td><td>1</td></tr>
+            <tr><td>$\Omega_{\text{total}}$</td><td>84</td><td>336</td><td>735</td><td>1120</td><td>1260</td><td>1008</td><td>462</td></tr>
+          </tbody>
+        </table></div>
+        <p>圖：長條從 $q_A=0$ 的 84 升到 $q_A=4$ 的 1260，再降到 $q_A=6$ 的 462，峰偏向振子多的 A。</p>
+      </div>
+      <div class="step" data-step="sc-2-9-s3">
+        <span class="step-title">總和與驗算</span>
+        $$\sum\Omega_{\text{total}}=84+336+735+1120+1260+1008+462=5005$$
+        <p class="sub">驗算：整個系統 $6+4=10$ 個振子分 6 份，代入 (2.9)：</p>
+        $$\binom{6+10-1}{6}=\binom{15}{6}=5005$$
+      </div>
+      <div class="step" data-step="t29b">
+        <span class="step-title">最可能與最不可能</span>
+        <p>表中最大的是 $q_A=4$ 的 1260，最小的是 $q_A=0$ 的 84：</p>
+        <p class="sub">代入 1260、84（步驟 2）與總和 5005（步驟 3）：</p>
+        $$P(q_A=4)=\frac{1260}{5005}=25.2\%$$
+        $$P(q_A=0)=\frac{84}{5005}=1.7\%$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>最可能 $q_A=4,q_B=2$（25.2%）；最不可能 $q_A=0,q_B=6$（1.7%）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>照振子數分：$6\times\tfrac6{10}=3.6$，最可能落在 4 ✔。最不可能是「能量全在小的那個」，不是「全在大的那個」（$q_A=6$ 還有 462）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-10">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-10（Problem 2.10）· p.60</span></div>
+    <h4>200 與 100 個振子分 100 份能量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-10">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-10"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a computer to produce a table and graph, like those in this section, for the case where one Einstein solid contains 200 oscillators, the other contains 100 oscillators, and there are 100 units of energy in total. What is the most probable macrostate, and what is its probability? What is the least probable macrostate, and what is its probability?</p></div>
+<p class="original-caption">Schroeder 習題 2-10（Problem 2.10）· p.60</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用電腦做出一個固體 200 個振子、另一個 100 個振子、總共 100 份能量的表與圖。最可能的巨觀態是哪個、機率多少？最不可能的是哪個、機率多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>兩固體的振子數</td><td>$N_A=200$，$N_B=100$</td><td>「一個固體 <b>200</b> 個振子、另一個 <b>100</b> 個振子」</td></tr>
+          <tr><td>總能量</td><td>$q_A+q_B=100$</td><td>「總共 <b>100 份</b>能量」</td></tr>
+          <tr><td>巨觀態</td><td>$q_A=0,\dots,100$，101 個</td><td>「像這一節那樣的表與圖」：以 $q_A$ 列表</td></tr>
+          <tr><td>機率假設</td><td>所有微觀態等機率</td><td>題目要「機率」；本節基本假設</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：表與圖；最可能的巨觀態與機率；最不可能的巨觀態與機率。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>和 Fig. 2.5 一樣是兩個大小不同的愛因斯坦固體、101 個巨觀態，每個多重度有近百位數，<b>所以</b>用電腦逐列算 $\Omega_{\text{total}}(q_A)=\binom{q_A+199}{q_A}\binom{q_B+99}{q_B}$，挑出最大和最小。</p>
+      <p>峰的位置可以不靠電腦先確認：<b>因為</b>相鄰兩列的比值大於 1 時還在上升（自編難題 3-A 的公式 $q_A^*=\frac{(N_A-1)q-(N_B-1)}{N_A+N_B-2}$），<b>所以</b>峰在比值跨過 1 的地方。最不可能的是能量全在<b>小的</b> B（$q_A=0$），<b>因為</b>把 100 份塞進 100 個振子的排法遠少於塞進 200 個振子。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-10-s1" data-sym="NAB">
+        <span class="step-title">峰的位置：比值跨過 1 的地方</span>
+        $$q_A^*=\frac{(N_A-1)q-(N_B-1)}{N_A+N_B-2}$$
+        <p class="sub">代入 $N_A=200$、$N_B=100$、$q=100$（題目）：</p>
+        $$q_A^*=\frac{199\times100-99}{298}=\frac{19\,801}{298}=66.4$$
+        <p>$q_A\le66$ 時比值 $\gt1$，所以 $\Omega_{\text{total}}(67)\gt\Omega_{\text{total}}(66)$；之後開始下降。峰在 $q_A=67$，和電腦表格一致（照振子數比例 $100\times\tfrac{200}{300}=66.7$ 也接近）。</p>
+      </div>
+      <div class="step" data-step="t210a" data-sym="Omega,qAB">
+        <span class="step-title">總數與峰的多重度</span>
+        <p>全部微觀態＝300 個振子分 100 份；峰 $q_A=67$、$q_B=33$：</p>
+        $$\Omega(\text{all})=\binom{100+300-1}{100}=\binom{399}{100}=1.68\times10^{96}$$
+        <p class="sub">代入 $q_A=67$（步驟 1）：$\Omega_A=\binom{266}{67}=8.91\times10^{63}$、$\Omega_B=\binom{132}{33}=1.38\times10^{31}$（電腦）：</p>
+        $$\Omega_{\text{total}}(67)=(8.91\times10^{63})(1.38\times10^{31})=1.23\times10^{95}$$
+      </div>
+      <div class="step" data-step="t210b">
+        <span class="step-title">機率</span>
+        <p class="sub">最可能：代入步驟 2 的兩個數：</p>
+        $$P(67)=\frac{1.23\times10^{95}}{1.68\times10^{96}}=7.3\%$$
+        <p class="sub">最不可能 $q_A=0$：$\Omega_A=1$，B 的 100 個振子分 100 份 $\Omega_B=\binom{199}{100}$：</p>
+        $$P(0)=\frac{\binom{199}{100}}{1.68\times10^{96}}=\frac{4.53\times10^{58}}{1.68\times10^{96}}=2.7\times10^{-38}$$
+        <p>另一端 $q_A=100$ 是 $\binom{299}{100}=2.8\times10^{81}$，比 $q_A=0$ 大得多，所以最小的確是 $q_A=0$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>最可能 $q_A=67,q_B=33$（7.3%）；最不可能 $q_A=0,q_B=100$（$2.7\times10^{-38}$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$100\times\tfrac23=66.7$ ✔。最可能巨觀態本身只有 7%，但 $10^{-38}$ 的那一端永遠不會出現。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-2-11">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 2-11（Problem 2.11）· p.60</span></div>
+    <h4>兩個順磁體分 80 份能量</h4>
+    <button type="button" class="exam-btn" data-exam="sc-2-11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-2-11"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Use a computer to produce a table and graph, like those in this section, for two interacting two-state paramagnets, each containing 100 elementary magnetic dipoles. Take a “unit” of energy to be the amount needed to flip a single dipole from the “up” state (parallel to the external field) to the “down” state (antiparallel). Suppose that the total number of units of energy, relative to the state with all dipoles pointing up, is 80; this energy can be shared in any way between the two paramagnets. What is the most probable macrostate, and what is its probability? What is the least probable macrostate, and what is its probability?</p></div>
+<p class="original-caption">Schroeder 習題 2-11（Problem 2.11）· p.60</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用電腦對兩個交互作用的兩態順磁體做出表與圖，各含 100 個磁偶極。一「份」能量取為把一個偶極從「上」（平行外場）翻成「下」所需的能量。相對於全部向上的狀態，總能量是 80 份，可以任意分給兩個順磁體。最可能的巨觀態與機率？最不可能的巨觀態與機率？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>每個順磁體的偶極數</td><td>$N_A=N_B=100$</td><td>「各含 <b>100 個</b>磁偶極」</td></tr>
+          <tr><td>一份能量</td><td>翻轉一個偶極（上→下）所需的能量</td><td>「一『份』能量取為把一個偶極從『上』翻成『下』所需的能量」</td></tr>
+          <tr><td>總能量</td><td>$q_A+q_B=80$ 份</td><td>「相對於<b>全部向上</b>的狀態，總能量是 <b>80 份</b>」：零點是全部向上</td></tr>
+          <tr><td>份數的意義</td><td>$q$ 份 ⟺ 恰有 $q$ 個偶極向下，$q\le100$</td><td>由上一列推得：每翻一個偶極多一份，一個偶極最多翻一次</td></tr>
+          <tr><td>機率假設</td><td>所有微觀態等機率</td><td>題目要「機率」；本節基本假設</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：表與圖；最可能的巨觀態與機率；最不可能的巨觀態與機率。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>能量從「全部向上」算起、一份能量就是翻一個偶極，順磁體有 $q$ 份能量等於有 $q$ 個偶極向下，<b>所以</b>多重度是「100 個中選哪 $q$ 個向下」：$\Omega(N,q)=\binom Nq$。這<b>不是</b>愛因斯坦固體的 $\binom{q+N-1}q$，因為每個偶極最多只能存一份能量。</p>
+      <p><b>因為</b>兩個順磁體可交換能量、彼此獨立排列，<b>所以</b> $\Omega_{\text{total}}=\binom{100}{q_A}\binom{100}{80-q_A}$，用電腦對 $q_A=0,\dots,80$ 列表。全部微觀態數相當於「200 個偶極中選 80 個向下」。<b>因為</b>兩個一樣大，表對 $q_A=40$ 對稱。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-2-11-s1" data-sym="qAB">
+        <span class="step-title">每個巨觀態的多重度</span>
+        $$\Omega_{\text{total}}(q_A)=\binom{N_A}{q_A}\binom{N_B}{q-q_A}$$
+        <p class="sub">代入 $N_A=N_B=100$、$q=80$（題目）：</p>
+        $$\Omega_{\text{total}}(q_A)=\binom{100}{q_A}\binom{100}{80-q_A},\qquad q_A=0,1,\dots,80$$
+      </div>
+      <div class="step" data-step="t211a" data-sym="Omega">
+        <span class="step-title">總數：200 個偶極中選 80 個向下</span>
+        <p>把各列加起來，等於把兩個順磁體合成一個 200 偶極的順磁體、選 80 個向下（Vandermonde 恆等式）：</p>
+        $$\Omega(\text{all})=\sum_{q_A=0}^{80}\binom{100}{q_A}\binom{100}{80-q_A}=\binom{200}{80}$$
+        <p class="sub">用電腦：</p>
+        $$\Omega(\text{all})=\binom{200}{80}=1.65\times10^{57}$$
+      </div>
+      <div class="step" data-step="t211b">
+        <span class="step-title">峰：$q_A=q_B=40$</span>
+        <p>電腦表格的最大值在中間 $q_A=40$（兩個一樣大，對稱）：</p>
+        <p class="sub">代入 $q_A=40$：$\binom{100}{40}=1.375\times10^{28}$，平方後除以步驟 2 的總數：</p>
+        $$P(40)=\frac{\binom{100}{40}^2}{1.65\times10^{57}}=\frac{1.89\times10^{56}}{1.65\times10^{57}}=11.5\%$$
+      </div>
+      <div class="step" data-step="sc-2-11-s4">
+        <span class="step-title">兩端：$q_A=0$ 或 $80$</span>
+        <p>能量全在一邊時，另一邊沒有偶極向下（1 種）：</p>
+        <p class="sub">代入 $q_A=0$：$\binom{100}{0}\binom{100}{80}=\binom{100}{20}=5.4\times10^{20}$（$q_A=80$ 相同）：</p>
+        $$P(0)=P(80)=\frac{5.4\times10^{20}}{1.65\times10^{57}}=3.3\times10^{-37}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>最可能 $q_A=q_B=40$（11.5%）；最不可能 $q_A=0$ 或 80（各 $3.3\times10^{-37}$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>兩個一樣大，峰在中間 ✔。和固體不同的是單一順磁體的 $\Omega$ 在 $q=50$ 就達最大，再加能量反而變小——第 3 章負溫度的來源。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-03a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>不用電腦也能找到峰</h4>
+    <button type="button" class="exam-btn" data-exam="sf-03a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩個愛因斯坦固體 $N_A=300$、$N_B=200$，共 $q=100$ 份能量（Fig. 2.5）。(a) 證明
+$$\frac{\Omega_{\text{total}}(q_A+1)}{\Omega_{\text{total}}(q_A)}=\frac{q_A+N_A}{q_A+1}\cdot\frac{q_B}{q_B+N_B-1},\qquad q_B=q-q_A$$
+(b) 由「比值大於 1 時多重度還在上升」找出最可能的 $q_A$，和課本的 60 比較。(c) 同樣的方法用在考古 115-5（$N_A=10$、$N_B=20$、$q=60$）：為什麼峰在 $q_A=19$，而不是照振子數比例的 20？(d) 系統很大時，峰的條件化簡成什麼？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>(a)(b) 的系統</td><td>$N_A=300$，$N_B=200$，$q=100$</td><td>「$N_A=300$、$N_B=200$，共 $q=100$ 份能量（Fig. 2.5）」</td></tr>
+          <tr><td>(c) 的系統</td><td>$N_A=10$，$N_B=20$，$q=60$</td><td>「考古 115-5（$N_A=10$、$N_B=20$、$q=60$）」</td></tr>
+          <tr><td>能量守恆</td><td>$q_B=q-q_A$：A 多一份、B 就少一份</td><td>題目式子旁的「$q_B=q-q_A$」</td></tr>
+          <tr><td>單一固體的多重度</td><td>$\Omega(N,q)=\binom{q+N-1}q$</td><td>(2.9)；兩個都是愛因斯坦固體</td></tr>
+          <tr><td>(d) 的條件</td><td>$N_A,N_B\gg1$</td><td>(d)「系統<b>很大</b>時」：可以丟掉 $-1$ 這類修正</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明相鄰巨觀態的多重度比公式；(b) 找出 Fig. 2.5 的峰並和 60 比較；(c) 解釋考古 115-5 的峰為什麼是 19；(d) 大系統時峰的條件。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> (2.9) 是階乘的比，相鄰兩個 $q$ 的階乘只差一個因子，<b>所以</b>單一固體的 $\Omega(N,q+1)/\Omega(N,q)$ 約分後非常簡單。<b>因為</b> A 多一份時 B 同時少一份，<b>所以</b>總多重度的比是兩個比相乘。</p>
+      <p><b>因為</b>比值 $\gt1$ 表示 $q_A$ 再加 1 多重度還會變大、比值 $\lt1$ 表示開始變小，<b>所以</b>令比值 $=1$ 解出交叉點，峰就在交叉點之後的第一個整數。這個方法不必算出任何一個一百多位的大數，也不需要電腦。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf03a1" data-sym="qAB,NAB">
+        <span class="step-title">(a) 單一固體相鄰兩項的比</span>
+        <p>用 (2.9) 寫出 $q+1$ 與 $q$ 兩項，$(N-1)!$ 約掉，再用 $(q+N)!=(q+N)(q+N-1)!$、$(q+1)!=(q+1)q!$：</p>
+        $$\frac{\Omega(N,q+1)}{\Omega(N,q)}=\frac{(q+N)!}{(q+1)!\,(N-1)!}\cdot\frac{q!\,(N-1)!}{(q+N-1)!}=\frac{q+N}{q+1}$$
+        <p>B 少一份是同一個比倒過來、$q$ 換成 $q_B-1$：</p>
+        $$\frac{\Omega_B(q_B-1)}{\Omega_B(q_B)}=\frac{(q_B-1)+1}{(q_B-1)+N_B}=\frac{q_B}{q_B+N_B-1}$$
+        <p>兩者相乘就是題目的式子：$\dfrac{\Omega_{\text{total}}(q_A+1)}{\Omega_{\text{total}}(q_A)}=\dfrac{q_A+N_A}{q_A+1}\cdot\dfrac{q_B}{q_B+N_B-1}$。</p>
+      </div>
+      <div class="step" data-step="sf03a2">
+        <span class="step-title">(b) 令比值 $=1$</span>
+        <p class="sub">代入 $N_A=300$、$N_B=200$、$q_B=100-q_A$（題目）：</p>
+        $$(q_A+300)(100-q_A)=(q_A+1)(299-q_A)$$
+        <p>兩邊展開，$-q_A^2$ 消掉：</p>
+        $$-q_A^2-200q_A+30000=-q_A^2+298q_A+299$$
+        $$30000-299=498\,q_A\quad\Longrightarrow\quad q_A=\frac{29701}{498}=59.64$$
+        <p>$q_A\le59$ 時比值 $\gt1$（所以 $\Omega(60)\gt\Omega(59)$），$q_A\ge60$ 時比值 $\lt1$：峰在 $q_A=60$，和課本的試算表一致。</p>
+      </div>
+      <div class="step" data-step="sf03a3">
+        <span class="step-title">(c) 一般解</span>
+        <p>令 $(q_A+N_A)q_B=(q_A+1)(q_B+N_B-1)$，兩邊展開後 $q_Aq_B$ 消掉：</p>
+        $$N_Aq_B=q_A(N_B-1)+q_B+(N_B-1)\ \Longrightarrow\ (N_A-1)q_B=(N_B-1)(q_A+1)$$
+        <p>代入 $q_B=q-q_A$，把 $q_A$ 移到同一邊：</p>
+        $$q_A^*=\frac{(N_A-1)q-(N_B-1)}{N_A+N_B-2}$$
+      </div>
+      <div class="step" data-step="sf-03a-s4">
+        <span class="step-title">(c) 考古 115-5 為什麼是 19</span>
+        <p class="sub">代入 $N_A=10$、$N_B=20$、$q=60$（題目 (c)）：</p>
+        $$q_A^*=\frac{9\times60-19}{28}=\frac{521}{28}=18.6$$
+        <p>交叉點 18.6 之後的第一個整數是 19，所以峰在 19。照比例 $\frac{10}{30}\cdot60=20$ 是大系統的結果；小系統時「$N-1$」（點與線中的隔線數）和分子的「$-(N_B-1)$」這兩個修正看得出來，峰往小的那邊偏 1 左右。</p>
+      </div>
+      <div class="step" data-step="sf03a4">
+        <span class="step-title">(d) 大系統</span>
+        <p>$N_A,N_B\gg1$ 時 $N-1\approx N$，分子的 $-(N_B-1)$ 相對 $(N_A-1)q$ 也可忽略：</p>
+        $$q_A^*\approx\frac{N_Aq}{N_A+N_B}\quad\Longleftrightarrow\quad\frac{q_A}{N_A}=\frac{q_B}{N_B}$$
+        <p>平衡時每個振子的平均能量相同。第 3 章會把這個條件寫成 $\partial\ln\Omega_A/\partial q_A=\partial\ln\Omega_B/\partial q_B$，也就是兩邊溫度相同。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 得證；(b) 交叉點 59.64，峰在 $q_A=60$；(c) $q_A^*=\frac{(N_A-1)q-(N_B-1)}{N_A+N_B-2}=18.6$，峰在 19；(d) $q_A/N_A=q_B/N_B$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(b)(c) 與試算表的峰（Fig. 2.5 的 60、考古 115-5 的 19）都相同 ✔；Fig. 2.4（$N_A=N_B=3,q=6$）：$q_A^*=\frac{2\cdot6-2}{4}=2.5$，所以 $\Omega(3)\gt\Omega(2)$ 且 $\Omega(3)\gt\Omega(4)$，峰在 3 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-03b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>愛因斯坦固體和順磁體交換能量</h4>
+    <button type="button" class="exam-btn" data-exam="sf-03b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>A 是 3 個振子的愛因斯坦固體；B 是 3 個兩態偶極的順磁體，翻轉一個偶極（向上→向下）剛好需要一份能量，和振子的能量單位相同。兩者可以交換能量，總共 $q$ 份（以 B 全部向上為零點）。(a) $q=3$：列出各巨觀態的多重度，最可能的 $q_A$ 與機率？(b) $q=6$：同樣的問題。(c) 兩種情況下 B 的平均能量 $\langle q_B\rangle$。(d) $q\to\infty$ 時 $\langle q_B\rangle\to$？能不能靠和固體接觸，讓順磁體大部分的偶極反平行於磁場（$\langle q_B\rangle\gt1.5$）？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>A</td><td>愛因斯坦固體，$N_A=3$ 個振子</td><td>「A 是 <b>3 個振子</b>的愛因斯坦固體」：一個振子可存很多份</td></tr>
+          <tr><td>B</td><td>兩態順磁體，$N_B=3$ 個偶極</td><td>「B 是 <b>3 個兩態偶極</b>的順磁體」：一個偶極最多存一份，$q_B\le3$</td></tr>
+          <tr><td>能量單位</td><td>翻一個偶極＝振子的一份</td><td>「翻轉一個偶極…剛好需要一份能量，和振子的能量單位相同」</td></tr>
+          <tr><td>總能量</td><td>$q_A+q_B=q$；(a) $q=3$，(b) $q=6$</td><td>「總共 $q$ 份（以 B <b>全部向上</b>為零點）」</td></tr>
+          <tr><td>機率假設</td><td>所有微觀態等機率</td><td>「兩者可以交換能量」：孤立的複合系統，用基本假設</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)(b) 各巨觀態的多重度、最可能的 $q_A$ 與機率；(c) 兩種情況的 $\langle q_B\rangle$；(d) $q\to\infty$ 時 $\langle q_B\rangle$ 的極限，以及能不能讓 $\langle q_B\rangle\gt1.5$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩個系統存能量的方式不同，<b>所以</b>多重度公式不同：A 用愛因斯坦固體 $\Omega_A=\binom{q_A+2}{q_A}$；B 是「3 個偶極中選 $q_B$ 個向下」$\Omega_B=\binom3{q_B}$，而且 $q_B$ 最多 3。<b>因為</b>兩者獨立排列，<b>所以</b>總多重度相乘，再用微觀態等機率求機率與平均。</p>
+      <p>(d) <b>因為</b> $q$ 很大時 A 多拿或少拿幾份對 $\Omega_A$ 的影響趨近於 0，<b>所以</b>只剩 B 自己的權重 $\binom3{q_B}$ 決定分布；再比較有限 $q$ 時對稱兩個巨觀態的權重，判斷能否超過 1.5。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sf03b1" data-sym="qAB,Omega">
+        <span class="step-title">(a) $q=3$</span>
+        <p>$q_B=3-q_A$，$q_A=0,\dots,3$；$\Omega_A=\binom{q_A+2}{q_A}=1,3,6,10$，$\Omega_B=\binom3{q_B}$ 依 $q_B=3,2,1,0$ 是 $1,3,3,1$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$q_A$</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead>
+          <tbody>
+            <tr><td>$\Omega_A$</td><td>1</td><td>3</td><td>6</td><td>10</td></tr>
+            <tr><td>$\Omega_B$（$q_B=3,2,1,0$）</td><td>1</td><td>3</td><td>3</td><td>1</td></tr>
+            <tr><td>$\Omega_{\text{total}}$</td><td>1</td><td>9</td><td>18</td><td>10</td></tr>
+          </tbody>
+        </table></div>
+        <p class="sub">總和 $1+9+18+10=38$；最大的是 $q_A=2$ 的 18：</p>
+        $$P(q_A=2)=\frac{18}{38}=47.4\%$$
+      </div>
+      <div class="step" data-step="sf03b2">
+        <span class="step-title">(b) $q=6$：$q_B\le3$ 所以 $q_A\ge3$</span>
+        <p>B 最多存 3 份，所以 $q_A=6-q_B\ge3$；$\Omega_A=\binom{q_A+2}{q_A}$ 在 $q_A=3,4,5,6$ 是 $10,15,21,28$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$q_A$</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+          <tbody>
+            <tr><td>$\Omega_A$</td><td>10</td><td>15</td><td>21</td><td>28</td></tr>
+            <tr><td>$\Omega_B$（$q_B=3,2,1,0$）</td><td>1</td><td>3</td><td>3</td><td>1</td></tr>
+            <tr><td>$\Omega_{\text{total}}$</td><td>10</td><td>45</td><td>63</td><td>28</td></tr>
+          </tbody>
+        </table></div>
+        <p class="sub">總和 $10+45+63+28=146$；最大的是 $q_A=5$（$q_B=1$）的 63：</p>
+        $$P(q_A=5)=\frac{63}{146}=43.2\%$$
+      </div>
+      <div class="step" data-step="sf03b3">
+        <span class="step-title">(c) B 的平均能量</span>
+        $$\langle q_B\rangle=\frac{\sum q_B\,\Omega_{\text{total}}}{\sum\Omega_{\text{total}}}$$
+        <p class="sub">代入 (a) 的表（$q_B=3,2,1,0$ 對應 $\Omega_{\text{total}}=1,9,18,10$）：</p>
+        $$q=3:\ \langle q_B\rangle=\frac{3\cdot1+2\cdot9+1\cdot18}{38}=\frac{39}{38}=1.03$$
+        <p class="sub">代入 (b) 的表（對應 $10,45,63,28$）：</p>
+        $$q=6:\ \langle q_B\rangle=\frac{3\cdot10+2\cdot45+1\cdot63}{146}=\frac{183}{146}=1.25$$
+        <p>總能量加倍，多出來的 3 份幾乎都進了固體：固體的多重度隨能量一直增加，順磁體的 $\binom3{q_B}$ 在 $q_B=1.5$ 就到頂了。</p>
+      </div>
+      <div class="step" data-step="sf03b4">
+        <span class="step-title">(d) $q\to\infty$ 的極限</span>
+        <p>每個 $q_B$ 的權重是 $\Omega_A(q-q_B)\binom3{q_B}$。和 $q_B=0$ 比較，A 的因子比值是</p>
+        $$\frac{\Omega_A(q-q_B)}{\Omega_A(q)}=\frac{(q-q_B+2)(q-q_B+1)}{(q+2)(q+1)}\ \xrightarrow{q\to\infty}\ 1$$
+        <p class="sub">所以權重只剩 $\binom3{q_B}=1,3,3,1$（$q_B=0,1,2,3$），代入平均的定義：</p>
+        $$\langle q_B\rangle\to\frac{0\cdot1+1\cdot3+2\cdot3+3\cdot1}{8}=1.5=\frac{N_B}2$$
+      </div>
+      <div class="step" data-step="sf-03b-s5">
+        <span class="step-title">(d) 為什麼到不了 1.5 以上</span>
+        <p>對有限的 $q$，$\Omega_A(q-q_B)$ 隨 $q_B$ <b>遞減</b>（B 拿越多，A 越少、排法越少）。$q_B$ 與 $3-q_B$ 兩個對稱的巨觀態，$\binom3{q_B}$ 相同，但能量小的那個 $\Omega_A$ 較大、權重較大，所以平均永遠偏向小於中點：</p>
+        $$\langle q_B\rangle\lt1.5\quad(\text{所有有限 }q)$$
+        <p>和普通的固體接觸，<strong>不可能</strong>讓多數偶極反平行；這種「居量反轉」（第 3 章的負溫度）要用別的方法做出來。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $q_A=2$，47.4%；(b) $q_A=5$，43.2%；(c) $q=3$ 時 1.03、$q=6$ 時 1.25；(d) $\to1.5$，但永遠到不了 1.5 以上，不能靠和固體接觸讓多數偶極反平行。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>總數可用生成函數核對：$\frac{(1+x)^3}{(1-x)^3}$ 中 $x^3$、$x^6$ 的係數是 38、146 ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>弱耦合的兩系統：$\Omega_{\text{total}}=\Omega_A\Omega_B$；總微觀態數＝把兩者合成一個系統來數。</li>
+    <li>基本假設：孤立系統平衡時所有可及微觀態等機率 ⟹ 巨觀態機率 $\propto\Omega_{\text{total}}$。</li>
+    <li>能量自發地流向多重度最大的巨觀態（約照振子數分）並停在那裡：第二定律是機率定律。</li>
+  </ol>
+</div>

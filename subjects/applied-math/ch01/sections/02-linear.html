@@ -1,0 +1,655 @@
+<h2>二、線性方程與積分因子 <span class="pg">板書 9/16 照片 2–3</span></h2>
+
+<p class="lead">第二型是線性方程 $y'+p(x)y=q(x)$。它不一定能分離（右邊有 $q(x)$ 就拆不開），但只要乘上一個「積分因子」$F(x)=e^{\int p\,dx}$，左邊就會變成一個乘積的導數 $(Fy)'$，積一次就解完。這是整學期最常用的技巧：第 4 節的非正合方程、第 5 節的 RC 電路都會再用到。</p>
+
+<h3 id="am1l-def">2.1 線性的意思與標準式 <span class="pg-tag">照片 2</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 2 左）</span>
+  <p>Type 2. linear eq.</p>
+  $$\left(\frac{dy}{dx}\right)^1=-p(x)\,(y)^1+q(x)$$
+  <p>與 $y$ 相關的項次 degree 1。標準式：$\boxed{\,y'+p(x)\,y=q(x)\,}$</p>
+</div>
+
+<p>「線性」指的是未知函數 $y$ 和它的導數 $y'$ 都<strong>只以一次方</strong>出現（板書特別寫出次方 1），而且它們的係數只能含 $x$。所以 $y'+x^2y=\sin x$ 是線性，$y'+y^2=9$（$y^2$）、$y'=\sin y$、$yy'=x$（$y\cdot y'$）都不是。</p>
+<p>讀 $p(x)$、$q(x)$ 之前<strong>一定要先化成標準式</strong>：$y'$ 的係數必須是 1。例如作業第 3 題 $xy'+(1+x)y=e^{-x}\sin2x$ 要先除以 $x$，才讀得出 $p=\dfrac{1+x}{x}$，而不是 $1+x$。</p>
+
+<h3 id="am1l-if">2.2 積分因子法 <span class="pg-tag">照片 2–3</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/16（照片 2 中、右）</span>
+  <p>解題方法：積分因子法（integrating factor）</p>
+  $$F(x)\equiv e^{\int p(x)\,dx},\qquad F(x)\big[y'+p(x)y\big]=F(x)\,q(x)$$
+  $$e^{\int p\,dx}\,y'+\Big[p(x)\,e^{\int p\,dx}\Big]y=q(x)\,e^{\int p\,dx}\qquad(\;F\,y'+F'\,y\;)$$
+  $$\frac{d}{dx}(Fy)=F\,q(x)\ \Rightarrow\ \int\frac{d}{dx}(Fy)\,dx=\int F\,q(x)\,dx\ \Rightarrow\ Fy=\int Fq\,dx\ \Rightarrow\ y=\frac{\int Fq\,dx}{F}$$
+  <p>（旁註）$\dfrac{d\,e^{g(x)}}{dx}=e^{\int p\,dx}\cdot\dfrac{d\left(\int p\,dx\right)}{dx}$</p>
+</div>
+
+<p>整個方法的關鍵是板書框起來的那一項：$p(x)e^{\int p\,dx}$ 剛好是 $F$ 的導數。把旁註寫完整：令 $g(x)=\int p\,dx$，連鎖律給</p>
+$$F'=\frac{d}{dx}e^{g(x)}=e^{g(x)}\,g'(x)=e^{\int p\,dx}\cdot p(x)=p\,F.$$
+<p>所以乘了 $F$ 之後左邊是 $Fy'+F'y$，正是乘積法則 $(Fy)'$ 展開的樣子。原本左邊有 $y$ 和 $y'$ 兩項、沒辦法直接積分；乘上 $F$ 後只剩一個導數，兩邊對 $x$ 積分就把微分方程變成一般的積分問題。</p>
+
+<div class="step" data-step="am1l-if-s1" data-sym="pq,F,Cst">
+  <span class="step-title">完整的公式與兩個細節</span>
+  $$y=\frac{1}{F(x)}\left[\int F(x)\,q(x)\,dx+C\right],\qquad F=e^{\int p\,dx}$$
+  <ol>
+    <li><b>常數 $C$ 也要除以 $F$</b>：板書最後一行 $y=\int Fq\,dx/F$ 的不定積分裡已經含有 $C$。寫成 $y=\frac{1}{F}\int Fq\,dx+C$ 是最常見的錯誤，解出來的 $C$ 會不對。</li>
+    <li><b>$\int p\,dx$ 不用加常數</b>：加了常數 $c$ 只是讓 $F$ 多乘一個 $e^{c}$，兩邊同乘一個常數不影響結果。同理，$\int p\,dx=\ln|x|$ 時 $F=|x|$，在 $x>0$ 的區間直接用 $F=x$ 就好。</li>
+  </ol>
+</div>
+
+<div class="problem" data-kind="example" id="am1-ex-lin">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/16 板書（照片 3）</span></div>
+    <h4>$\dfrac{dy}{dx}+y=e^x\sin x$，$y(0)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-ex-lin">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-ex-lin"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex　$\dfrac{dy}{dx}+y=e^x\sin x$, for $y(0)=1$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $\dfrac{dy}{dx}+y=e^x\sin x$，$y(0)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式係數</td><td>$p(x)=1$</td><td>$y$ 前面的係數是 1（$y'$ 的係數已經是 1，不用再除）</td></tr>
+          <tr><td>右邊</td><td>$q(x)=e^x\sin x$</td><td>等號右邊，只含 $x$</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=1$</td><td>「for $y(0)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $y$ 與 $y'$ 都是一次方、係數不含 $y$，已經是標準式 $y'+p\,y=q$，<b>所以</b>用 Type 2 的積分因子法。它不能分離：$y'=e^x\sin x-y$ 右邊是「相減」，拆不成乘積。</p>
+      <p><b>因為</b>乘上 $F=e^x$ 後右邊變成 $e^{2x}\sin x$，指數乘三角函數要<b>分部積分兩次</b>，第二次會繞回原來的積分，<b>所以</b>把它當成未知數移項解出來。（這段計算板書沒寫出來，照片 3 直接寫結果，網站補上。）</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-ex-lin-s1" data-sym="F">
+        <span class="step-title">積分因子</span>
+        <p class="sub">代入 $p(x)=1$（題目 $y$ 的係數）：</p>
+        $$F(x)=e^{\int1\,dx}=e^{x}$$
+      </div>
+      <div class="step" data-step="am1-ex-lin-s2">
+        <span class="step-title">乘上 $F$，左邊合併成一個導數</span>
+        $$e^xy'+e^xy=e^{2x}\sin x\ \Longrightarrow\ \frac{d}{dx}\big(e^xy\big)=e^{2x}\sin x\ \Longrightarrow\ e^xy=\int e^{2x}\sin x\,dx+C$$
+      </div>
+      <div class="step" data-step="am1-ex-lin-s3">
+        <span class="step-title"><span class="added">網站補充（照片缺漏）</span>分部積分兩次</span>
+        <p>令 $I=\int e^{2x}\sin x\,dx$。第一次取 $u=\sin x$、$dv=e^{2x}dx$（$v=\tfrac12e^{2x}$）：</p>
+        $$I=\tfrac12e^{2x}\sin x-\tfrac12\int e^{2x}\cos x\,dx$$
+        <p>第二次對 $\int e^{2x}\cos x\,dx$ 取 $u=\cos x$、$dv=e^{2x}dx$：</p>
+        $$\int e^{2x}\cos x\,dx=\tfrac12e^{2x}\cos x+\tfrac12\int e^{2x}\sin x\,dx=\tfrac12e^{2x}\cos x+\tfrac12I$$
+        <p>代回第一式：$I=\tfrac12e^{2x}\sin x-\tfrac14e^{2x}\cos x-\tfrac14I$。把 $-\tfrac14I$ 移到左邊：$\tfrac54I=\tfrac14e^{2x}(2\sin x-\cos x)$，所以</p>
+        $$I=\frac{e^{2x}}{5}\,(2\sin x-\cos x)$$
+      </div>
+      <div class="step" data-step="am1-ex-lin-s4" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        $$e^xy=\frac{e^{2x}}{5}(2\sin x-\cos x)+C$$
+        <p class="sub">代入 $x=0$、$y=1$（題目「$y(0)=1$」）：$e^0\cdot1=\dfrac{1}{5}(0-1)+C$，</p>
+        $$1=-\frac15+C\ \Longrightarrow\ C=\frac65$$
+      </div>
+      <div class="step" data-step="am1-ex-lin-s5">
+        <span class="step-title">兩邊除以 $e^x$（$C$ 也要除）</span>
+        $$y=\frac{e^{x}}{5}\,(2\sin x-\cos x)+\frac65\,e^{-x}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\dfrac{e^{x}}{5}(2\sin x-\cos x)+\dfrac65e^{-x}$（板書寫到 $e^xy=\dfrac{e^{2x}}5[2\sin x-\cos x]+C$、$C=\dfrac65$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=-\tfrac15+\tfrac65=1$ ✔。$y'=\tfrac{e^x}{5}(2\sin x-\cos x)+\tfrac{e^x}{5}(2\cos x+\sin x)-\tfrac65e^{-x}$，加上 $y$：$\tfrac{e^x}{5}\big[2(2\sin x-\cos x)+2\cos x+\sin x\big]=\tfrac{e^x}{5}\cdot5\sin x=e^x\sin x$ ✔（$e^{-x}$ 項互相抵消）。</p></div>
+  </div>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">$e^{ax}\sin bx$ 的積分可以直接背</span>
+  <p>$\displaystyle\int e^{ax}\sin bx\,dx=\frac{e^{ax}(a\sin bx-b\cos bx)}{a^2+b^2}$，$\displaystyle\int e^{ax}\cos bx\,dx=\frac{e^{ax}(a\cos bx+b\sin bx)}{a^2+b^2}$。本題 $a=2$、$b=1$ 立刻得到 $\tfrac{e^{2x}}5(2\sin x-\cos x)$；第 5 節交流 RC 電路是 $a=\tfrac1{RC}$、$b=\omega$。考試時仍建議寫出分部積分的過程，或至少寫出公式再代。</p>
+</div>
+
+<h3 id="am1l-hw">2.3 作業：化成標準式、把 $x$ 當未知函數 <span class="pg-tag">作業第 2、3 題</span></h3>
+
+<p>作業第 2 題乍看不是線性：$y'=\dfrac{1}{e^y-x}$ 的 $y$ 在指數裡。但把它倒過來看成 $\dfrac{dx}{dy}=e^y-x$，未知函數改成 $x(y)$，它就對 $x$ 是線性的。這個「換誰當未知函數」的技巧在第 4 節自編難題 4b 會再用到。</p>
+
+<div class="problem" data-kind="textbook" id="am1-hw-2">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">9/16 作業 第 2 題</span></div>
+    <h4>$y'=\dfrac{1}{e^y-x}$，$y(1)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-hw-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-hw-2"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>2. $y'=\dfrac{1}{e^y-x}$, $y(1)=0$</p><p>Ans : $xe^y=\dfrac12e^{2y}+\dfrac12$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y'=\dfrac{1}{e^y-x}$，$y(1)=0$。（老師答案：$xe^y=\tfrac12e^{2y}+\tfrac12$）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$\dfrac{dy}{dx}=\dfrac{1}{e^y-x}$</td><td>題目主式；對 $y$ 不是線性（$e^y$），也不能分離（分母是相減）</td></tr>
+          <tr><td>倒數</td><td>$\dfrac{dx}{dy}=e^y-x$</td><td>右邊是「1 除以某式」，取倒數就很乾淨（自己看出來的）</td></tr>
+          <tr><td>初始條件</td><td>$x=1$ 時 $y=0$，即 $x(0)=1$</td><td>「$y(1)=0$」，換成以 $y$ 為自變數的寫法</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的解（並核對老師答案）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是 $1/(e^y-x)$，以 $y(x)$ 來看是非線性又不能分離，但取倒數 $\dfrac{dx}{dy}=e^y-x$ 後，未知函數 $x(y)$ 只以一次方出現，<b>所以</b>把 $y$ 當自變數、$x$ 當未知函數，它就是 Type 2 線性方程 $x'+x=e^y$（撇號表示對 $y$ 微分）。</p>
+      <p><b>因為</b>標準式 $x'+1\cdot x=e^y$ 的 $p=1$，<b>所以</b>積分因子是 $F=e^{\int1\,dy}=e^y$，和板書例題同一個模式，只是變數名字互換。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-hw-2-s1" data-sym="y,pq">
+        <span class="step-title">取倒數，寫成對 $x$ 的線性方程</span>
+        $$\frac{dx}{dy}=e^y-x\ \Longrightarrow\ \frac{dx}{dy}+x=e^y\qquad(p=1,\ q=e^y)$$
+      </div>
+      <div class="step" data-step="am1-hw-2-s2" data-sym="F">
+        <span class="step-title">乘積分因子 $F=e^{y}$</span>
+        $$e^y\frac{dx}{dy}+e^yx=e^{2y}\ \Longrightarrow\ \frac{d}{dy}\big(xe^y\big)=e^{2y}\ \Longrightarrow\ xe^y=\frac12e^{2y}+C$$
+      </div>
+      <div class="step" data-step="am1-hw-2-s3" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=1$、$y=0$（題目「$y(1)=0$」）：</p>
+        $$1\cdot e^0=\frac12e^0+C\ \Longrightarrow\ C=\frac12$$
+        $$xe^y=\frac12e^{2y}+\frac12$$
+      </div>
+      <div class="step" data-step="am1-hw-2-s4">
+        <span class="step-title">（網站補充）其實是 $x=\cosh y$</span>
+        <p>兩邊除以 $e^y$：$x=\dfrac{e^{y}+e^{-y}}{2}=\cosh y$。反過來 $y=\pm\cosh^{-1}x$；初始點 $(1,0)$ 是 $\cosh$ 的最低點，原方程在那裡 $y'=\dfrac{1}{1-1}$ 發散——以 $y(x)$ 看是鉛直切線，以 $x(y)$ 看則完全平滑，這也說明了為什麼要換 $x$ 當未知函數。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$xe^y=\dfrac12e^{2y}+\dfrac12$，即 $x=\cosh y$（和老師答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$x=\cosh y$：$\dfrac{dx}{dy}=\sinh y$；$e^y-x=e^y-\dfrac{e^y+e^{-y}}2=\dfrac{e^y-e^{-y}}2=\sinh y$ ✔。$y=0$ 時 $x=\cosh0=1$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="am1-hw-3">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">9/16 作業 第 3 題</span></div>
+    <h4>$xy'+(1+x)y=e^{-x}\sin(2x)$ 的通解</h4>
+    <button type="button" class="exam-btn" data-exam="am1-hw-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-hw-3"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>3. $xy'+(1+x)y=e^{-x}\sin(2x)$</p><p>Ans : $-\dfrac{1}{2x}e^{-x}\cos(2x)+K\dfrac{e^{-x}}{x}$. $K$ is constant.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $xy'+(1+x)y=e^{-x}\sin(2x)$。（沒有初始條件；老師答案：$-\dfrac{1}{2x}e^{-x}\cos(2x)+K\dfrac{e^{-x}}{x}$，$K$ 為常數）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$y'$ 的係數</td><td>$x$（不是 1）</td><td>題目「$xy'$」：要先除以 $x$ 才是標準式</td></tr>
+          <tr><td>標準式係數</td><td>$p(x)=\dfrac{1+x}{x}=\dfrac1x+1$</td><td>$(1+x)$ 除以 $x$</td></tr>
+          <tr><td>右邊</td><td>$q(x)=\dfrac{e^{-x}\sin2x}{x}$</td><td>$e^{-x}\sin(2x)$ 除以 $x$</td></tr>
+          <tr><td>初始條件</td><td>無</td><td>題目沒給，答案留一個常數 $K$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：通解 $y(x)$（$x\ne0$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $y$、$y'$ 都是一次方、係數只含 $x$，<b>所以</b>是線性方程；但 $y'$ 前面有 $x$，<b>所以</b>先除以 $x$ 化成標準式，再讀 $p(x)$。直接拿 $1+x$ 當 $p$ 是本題最大的陷阱。</p>
+      <p><b>因為</b> $\int\left(\frac1x+1\right)dx=\ln|x|+x$，積分因子 $F=|x|e^x$ 會把右邊的 $\frac1x$ 和 $e^{-x}$ 一起消掉，<b>所以</b>右邊只剩 $\sin2x$，很好積。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-hw-3-s1" data-sym="pq">
+        <span class="step-title">化成標準式</span>
+        <p>兩邊除以 $x$（$x\ne0$）：</p>
+        $$y'+\left(\frac1x+1\right)y=\frac{e^{-x}\sin2x}{x}$$
+      </div>
+      <div class="step" data-step="am1-hw-3-s2" data-sym="F">
+        <span class="step-title">積分因子</span>
+        <p class="sub">代入 $p=\frac1x+1$（步驟 1）：</p>
+        $$F=e^{\int(\frac1x+1)dx}=e^{\ln|x|+x}=|x|\,e^x\ \to\ \text{取 }F=x\,e^x$$
+        <p>$x\lt 0$ 時 $|x|=-x$，只差一個負號，兩邊同乘不影響，所以統一用 $xe^x$。</p>
+      </div>
+      <div class="step" data-step="am1-hw-3-s3">
+        <span class="step-title">左邊變成 $(Fy)'$，右邊化簡</span>
+        $$\frac{d}{dx}\big(xe^xy\big)=xe^x\cdot\frac{e^{-x}\sin2x}{x}=\sin2x$$
+        <p>驗證左邊：$(xe^x)'=e^x+xe^x=xe^x\left(\frac1x+1\right)=F\,p$ ✔。</p>
+      </div>
+      <div class="step" data-step="am1-hw-3-s4" data-sym="Cst">
+        <span class="step-title">積分、除以 $F$</span>
+        $$xe^xy=\int\sin2x\,dx=-\frac12\cos2x+K\ \Longrightarrow\ y=-\frac{e^{-x}\cos2x}{2x}+K\,\frac{e^{-x}}{x}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=-\dfrac{1}{2x}e^{-x}\cos(2x)+K\dfrac{e^{-x}}{x}$，$K$ 為任意常數（和老師答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>令 $u=xe^xy=-\tfrac12\cos2x+K$，則 $u'=\sin2x$；另一方面 $u'=(xe^x)'y+xe^xy'=e^x\big[xy'+(1+x)y\big]$，所以 $xy'+(1+x)y=e^{-x}u'=e^{-x}\sin2x$ ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am1l-exam">2.4 考古題 <span class="pg-tag">112 上、114 上期中第 1 題 · 109 級、108 級下</span></h3>
+
+<div class="problem" data-kind="exam" id="am1-112a-m1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2023.Nov. 第 1 題（112上） · 115級上學期應數(期中) 第 1 題（同卷）</span></div>
+    <h4>$dy+(2xy-xe^{-x^2})\,dx=0$，$y(0)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-112a-m1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-112a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (6 points) Solve $dy+(2xy-xe^{-x^2})dx=0$ for $y(0)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(6 分) 解 $dy+(2xy-xe^{-x^2})\,dx=0$，$y(0)=1$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>改寫成 $y'$</td><td>$y'+2xy=xe^{-x^2}$</td><td>題目的微分形式除以 $dx$、移項</td></tr>
+          <tr><td>標準式係數</td><td>$p(x)=2x$，$q(x)=xe^{-x^2}$</td><td>$y$ 的係數 $2x$；右邊 $xe^{-x^2}$</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=1$</td><td>「for $y(0)=1$」</td></tr>
+          <tr><td>配分</td><td>6 分</td><td>考卷「(6 points)」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目寫成微分形式，看起來像第 3 型，但除以 $dx$ 後是 $y'+2xy=xe^{-x^2}$，$y$ 只有一次方，<b>所以</b>最快是當 Type 2 線性方程。（若硬當 $M\,dx+N\,dy$：$M=2xy-xe^{-x^2}$、$N=1$，$M_y=2x\ne N_x=0$ 不正合，$\Delta/N=2x$ 只含 $x$，第 4 節的方法給出同一個 $F=e^{x^2}$——兩條路殊途同歸。）</p>
+      <p><b>因為</b>積分因子 $e^{x^2}$ 正好和右邊的 $e^{-x^2}$ 抵消，<b>所以</b>右邊只剩 $x$，一步積完。這是出題者刻意設計的。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-112a-m1-s1" data-sym="pq">
+        <span class="step-title">化成標準式</span>
+        $$\frac{dy}{dx}+2xy-xe^{-x^2}=0\ \Longrightarrow\ y'+2x\,y=x\,e^{-x^2}$$
+      </div>
+      <div class="step" data-step="am1-112a-m1-s2" data-sym="F">
+        <span class="step-title">積分因子</span>
+        <p class="sub">代入 $p=2x$（步驟 1）：</p>
+        $$F=e^{\int2x\,dx}=e^{x^2}$$
+      </div>
+      <div class="step" data-step="am1-112a-m1-s3">
+        <span class="step-title">乘 $F$、積分</span>
+        $$\frac{d}{dx}\big(e^{x^2}y\big)=e^{x^2}\cdot xe^{-x^2}=x\ \Longrightarrow\ e^{x^2}y=\frac{x^2}{2}+C$$
+      </div>
+      <div class="step" data-step="am1-112a-m1-s4" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=0$、$y=1$（題目「$y(0)=1$」）：$e^{0}\cdot1=0+C$，$C=1$。</p>
+        $$y=\left(\frac{x^2}{2}+1\right)e^{-x^2}=\frac{(x^2+2)\,e^{-x^2}}{2}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\left(\dfrac{x^2}{2}+1\right)e^{-x^2}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=1$ ✔。$y'=xe^{-x^2}-2x\left(\tfrac{x^2}2+1\right)e^{-x^2}$，所以 $y'+2xy=xe^{-x^2}$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-114a-m1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2025 Oct. 第 1 題（114上）</span></div>
+    <h4>$(x^2-x-2)y'+3xy=x^2-4x+4$，$y(1)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-114a-m1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-114a-m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>1. Solve $(x^2-x-2)y'+3xy=x^2-4x+4$ for $y(1)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(x^2-x-2)y'+3xy=x^2-4x+4$，$y(1)=1$。（25 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$y'$ 的係數</td><td>$x^2-x-2=(x-2)(x+1)$</td><td>題目「$(x^2-x-2)y'$」；因式分解（自己做）</td></tr>
+          <tr><td>右邊</td><td>$x^2-4x+4=(x-2)^2$</td><td>題目右邊；是完全平方（自己看出來）</td></tr>
+          <tr><td>標準式</td><td>$p=\dfrac{3x}{(x-2)(x+1)}$，$q=\dfrac{x-2}{x+1}$</td><td>全式除以 $(x-2)(x+1)$，右邊約掉一個 $(x-2)$</td></tr>
+          <tr><td>初始條件</td><td>$x_0=1$，$y_0=1$</td><td>「for $y(1)=1$」；$x=1$ 在 $-1\lt x\lt 2$ 之間</td></tr>
+          <tr><td>配分</td><td>25 分</td><td>考卷「25 points for each problem」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足初始條件的 $y(x)$ 以及它成立的區間。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $y$、$y'$ 都是一次方、係數只含 $x$，<b>所以</b>是線性方程；$y'$ 的係數是 $x^2-x-2$，必須先除掉。<b>因為</b>係數在 $x=2$、$x=-1$ 為 0（方程的奇異點），而初始點 $x=1$ 夾在中間，<b>所以</b>解只在 $-1\lt x\lt 2$ 上有意義，絕對值也照這個區間去掉。</p>
+      <p><b>因為</b> $p(x)$ 是有理函數，<b>所以</b>用部分分式積出 $\int p\,dx$；積分因子會是多項式 $(x-2)^2(x+1)$，乘上 $q$ 後分母全部消掉。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-114a-m1-s1" data-sym="pq">
+        <span class="step-title">化成標準式</span>
+        <p>除以 $(x-2)(x+1)$，右邊 $\dfrac{(x-2)^2}{(x-2)(x+1)}=\dfrac{x-2}{x+1}$：</p>
+        $$y'+\frac{3x}{(x-2)(x+1)}\,y=\frac{x-2}{x+1}$$
+      </div>
+      <div class="step" data-step="am1-114a-m1-s2">
+        <span class="step-title">部分分式積 $\int p\,dx$</span>
+        <p>設 $\dfrac{3x}{(x-2)(x+1)}=\dfrac{A}{x-2}+\dfrac{B}{x+1}$，則 $3x=A(x+1)+B(x-2)$。代 $x=2$：$6=3A$，$A=2$；代 $x=-1$：$-3=-3B$，$B=1$。</p>
+        $$\int p\,dx=2\ln|x-2|+\ln|x+1|$$
+      </div>
+      <div class="step" data-step="am1-114a-m1-s3" data-sym="F">
+        <span class="step-title">積分因子（在 $-1\lt x\lt 2$）</span>
+        $$F=e^{2\ln|x-2|+\ln|x+1|}=(x-2)^2\,|x+1|=(x-2)^2(x+1)$$
+        <p>在這個區間 $x+1>0$，絕對值直接拿掉；$(x-2)^2$ 本來就非負。</p>
+      </div>
+      <div class="step" data-step="am1-114a-m1-s4">
+        <span class="step-title">乘 $F$、積分</span>
+        $$\frac{d}{dx}\Big[(x-2)^2(x+1)\,y\Big]=(x-2)^2(x+1)\cdot\frac{x-2}{x+1}=(x-2)^3$$
+        $$(x-2)^2(x+1)\,y=\frac{(x-2)^4}{4}+C$$
+      </div>
+      <div class="step" data-step="am1-114a-m1-s5" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=1$、$y=1$（題目「$y(1)=1$」）：左邊 $(1-2)^2(1+1)\cdot1=2$，右邊 $\dfrac{(1-2)^4}{4}+C=\dfrac14+C$。</p>
+        $$2=\frac14+C\ \Longrightarrow\ C=\frac74$$
+        $$y=\frac{(x-2)^4+7}{4\,(x-2)^2\,(x+1)},\qquad -1\lt x\lt 2$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\dfrac{(x-2)^4+7}{4(x-2)^2(x+1)}=\dfrac{(x-2)^2}{4(x+1)}+\dfrac{7}{4(x-2)^2(x+1)}$，成立於 $-1\lt x\lt 2$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$x=1$：$\dfrac{1+7}{4\cdot1\cdot2}=1$ ✔。令 $u=Fy=\tfrac14(x-2)^4+\tfrac74$，$u'=(x-2)^3$；又 $u'=F(y'+py)$，所以 $y'+py=\dfrac{(x-2)^3}{(x-2)^2(x+1)}=\dfrac{x-2}{x+1}$，乘回 $(x-2)(x+1)$ 就是原方程 ✔。$x\to2^-$ 或 $x\to-1^+$ 時 $y\to\infty$，正好在係數 $x^2-x-2$ 的零點爆掉，符合「解只活在奇異點之間」的判斷。</p></div>
+  </div>
+</div>
+
+<p><strong>更早年級的考古題（109 級下第 1 次期中、108 級下 First Order ODE）。</strong>這兩份考古卷附有老師的答案，題目大量重複；下面兩題都要先寫成線性標準式。第一題的初始條件剛好給在 $y'$ 係數為 0 的地方，是讀「標準式為什麼要除掉係數」的好例子。</p>
+
+<div class="problem" data-kind="exam" id="am1-109b-1b">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 1(b) 題 · 108級下學期 First Order ODE 第 1(b) 題</span></div>
+    <h4>$(x+y)\,dx+(x\ln x)\,dy=0$（$x>0$），$y(1)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-109b-1b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1b"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(b) $(x+y)dx+(x\ln x)dy=0$ $(x>0)$ for $y(1)=1$.　Ans: $y\ln x=-x+1$</p><p>（108級下學期 First Order ODE 1(b) 同題同答案。）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $(x+y)\,dx+(x\ln x)\,dy=0$（$x>0$），$y(1)=1$。（考卷附的答案：$y\ln x=-x+1$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>$M$、$N$</td><td>$M=x+y$，$N=x\ln x$</td><td>$dx$、$dy$ 的係數</td></tr>
+          <tr><td>對 $y$ 的形式</td><td>$y$ 只出現一次方，$dy$ 的係數只含 $x$</td><td>$M$ 是 $y$ 的一次式、$N$ 不含 $y$ ⟹ 可以寫成線性方程</td></tr>
+          <tr><td>定義域</td><td>$x>0$</td><td>「$(x>0)$」：$\ln x$ 才有定義</td></tr>
+          <tr><td>初始條件</td><td>$x_0=1$，$y_0=1$</td><td>「for $y(1)=1$」；注意 $N(1)=1\cdot\ln1=0$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足條件的解（隱式或顯式）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>除以 $dx$ 後是 $x\ln x\,y'+y=-x$，$y$ 和 $y'$ 都只有一次方、係數只含 $x$，<b>所以</b>是第 2 型線性方程：化成標準式、乘積分因子 $F=e^{\int p\,dx}$。（也可以看成非正合：$\Delta=M_y-N_x=1-(\ln x+1)=-\ln x$，$\Delta/N=-\frac1x$ 只含 $x$，$F(x)=\frac1x$，結果相同。）</p>
+      <p><b>因為</b>化標準式要除以 $x\ln x$，而初始點 $x=1$ 正好讓 $x\ln x=0$，<b>所以</b>最後要特別檢查：這個初始條件是給在方程的奇異點上。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-109b-1b-s1" data-sym="pq">
+        <span class="step-title">化成標準式</span>
+        <p>除以 $dx$：$x\ln x\,\dfrac{dy}{dx}+y=-x$。再除以 $x\ln x$（$x\ne1$）：</p>
+        $$y'+\frac{1}{x\ln x}\,y=-\frac{1}{\ln x},\qquad p(x)=\frac{1}{x\ln x},\quad q(x)=-\frac1{\ln x}$$
+      </div>
+      <div class="step" data-step="am1-109b-1b-s2" data-sym="F">
+        <span class="step-title">積分因子</span>
+        <p>一般式 $F=e^{\int p\,dx}$。積分 $\displaystyle\int\frac{dx}{x\ln x}$ 用代換 $u=\ln x$、$du=\dfrac{dx}{x}$：</p>
+        $$\int\frac{dx}{x\ln x}=\int\frac{du}{u}=\ln|\ln x|\ \Longrightarrow\ F=|\ln x|$$
+        <p>積分因子差一個常數倍（$\pm1$）沒有影響，取 $F=\ln x$。</p>
+      </div>
+      <div class="step" data-step="am1-109b-1b-s3">
+        <span class="step-title">$(Fy)'=Fq$，積分</span>
+        <p class="sub">代入 $F=\ln x$（步驟 2）、$q=-\dfrac1{\ln x}$（步驟 1）：</p>
+        $$\frac{d}{dx}\big(y\ln x\big)=\ln x\cdot\Big(-\frac1{\ln x}\Big)=-1\ \Longrightarrow\ y\ln x=-x+C$$
+      </div>
+      <div class="step" data-step="am1-109b-1b-s4" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=1$、$y=1$（題目「$y(1)=1$」），$\ln1=0$：</p>
+        $$1\cdot0=-1+C\ \Longrightarrow\ C=1\qquad\Longrightarrow\qquad y\ln x=-x+1$$
+        <p>注意 $y_0=1$ 根本沒有用到：它乘上了 $\ln1=0$。</p>
+      </div>
+      <div class="step" data-step="am1-109b-1b-s5">
+        <span class="step-title">檢查：初始點在奇異點上</span>
+        <p>$x\ne1$ 時解成顯式 $y=\dfrac{1-x}{\ln x}$。用 L'Hôpital 看 $x\to1$：</p>
+        $$\lim_{x\to1}\frac{1-x}{\ln x}=\lim_{x\to1}\frac{-1}{1/x}=-1$$
+        <p>所以這條解曲線經過的是 $(1,-1)$，不是 $(1,1)$。隱式 $y\ln x=1-x$ 之所以「通過」$(1,1)$，是因為 $x=1$ 時左右兩邊對任何 $y$ 都是 $0=0$：整條直線 $x=1$ 都在這個集合裡（在微分形式裡 $dx=0$、$N(1,y)=0$，直線 $x=1$ 本身也滿足方程）。也就是說，在 $x=1$ 給 $y$ 的值無法決定唯一解——任何 $C$ 都只能是 1，而 $y(1)$ 被迫是 $-1$。考卷要的答案就是 $y\ln x=-x+1$，照寫即可；這段是理解用的補充。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y\ln x=-x+1$，即 $y=\dfrac{1-x}{\ln x}$（$x>0$，$x=1$ 處取極限值 $-1$）。和考卷答案相同；初始條件給在奇異點 $x\ln x=0$ 上，只決定了 $C=1$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>對 $y\ln x+x=1$ 全微分：$\ln x\,dy+\frac yx\,dx+dx=0$，乘 $x$ 得 $(x+y)\,dx+x\ln x\,dy=0$ ✔（這也說明 $F=\frac1x$ 的另一種做法）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am1-108b-1c">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級下學期 First Order ODE 第 1(c) 題</span></div>
+    <h4>$x\dfrac{dy}{dx}-4y=x^6e^x$，$y(1)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-108b-1c">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-108b-1c"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>First Order ODE</p><p>1. Solve the differential equations.</p><p>(c) $x\dfrac{dy}{dx}-4y=x^6e^x$ for $y(1)=1$. Ans: $\dfrac{y}{x^4}=xe^x-e^x+1$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $x\dfrac{dy}{dx}-4y=x^6e^x$，$y(1)=1$。（考卷附的答案：$\dfrac{y}{x^4}=xe^x-e^x+1$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程</td><td>$xy'-4y=x^6e^x$</td><td>題目主式；$y$、$y'$ 都一次、係數只含 $x$ ⟹ 線性</td></tr>
+          <tr><td>標準式係數</td><td>$p=-\dfrac4x$，$q=x^5e^x$</td><td>除以 $y'$ 的係數 $x$ 之後讀（步驟 1）</td></tr>
+          <tr><td>初始條件</td><td>$x_0=1$，$y_0=1$</td><td>「for $y(1)=1$」；$x_0=1>0$，取 $x>0$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $y$ 與 $y'$ 都只出現一次方、係數只含 $x$，右邊 $x^6e^x$ 也只含 $x$，<b>所以</b>是線性方程；右邊有 $x^6e^x$ 不能分離，<b>所以</b>用積分因子。</p>
+      <p><b>因為</b> $y'$ 前面有係數 $x$，<b>所以</b>一定要先除以 $x$ 才讀得到正確的 $p=-4/x$（直接讀成 $p=-4$ 是最常見的錯）。積分因子 $x^{-4}$ 乘上右邊 $x^5e^x$ 剩 $xe^x$，再用一次分部積分。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-108b-1c-s1" data-sym="pq">
+        <span class="step-title">標準式</span>
+        <p class="sub">題目兩邊除以 $x$（$x>0$）：</p>
+        $$y'-\frac4x\,y=x^5e^x,\qquad p=-\frac4x,\quad q=x^5e^x$$
+      </div>
+      <div class="step" data-step="am1-108b-1c-s2" data-sym="F">
+        <span class="step-title">積分因子</span>
+        <p class="sub">代入 $p=-\dfrac4x$（步驟 1）到 $F=e^{\int p\,dx}$：</p>
+        $$F=e^{\int-\frac4x\,dx}=e^{-4\ln x}=x^{-4}$$
+      </div>
+      <div class="step" data-step="am1-108b-1c-s3">
+        <span class="step-title">$(Fy)'=Fq$</span>
+        $$\frac{d}{dx}\Big(\frac{y}{x^4}\Big)=x^{-4}\cdot x^5e^x=xe^x$$
+      </div>
+      <div class="step" data-step="am1-108b-1c-s4">
+        <span class="step-title">分部積分</span>
+        <p>$\int u\,dv=uv-\int v\,du$，取 $u=x$、$dv=e^xdx$（$du=dx$、$v=e^x$）：</p>
+        $$\int xe^x\,dx=xe^x-\int e^x\,dx=xe^x-e^x\ \Longrightarrow\ \frac{y}{x^4}=xe^x-e^x+C$$
+      </div>
+      <div class="step" data-step="am1-108b-1c-s5" data-sym="Cst">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $x=1$、$y=1$（題目「$y(1)=1$」）：</p>
+        $$\frac11=1\cdot e-e+C\ \Longrightarrow\ C=1$$
+        $$y=x^4\big(xe^x-e^x+1\big)=x^5e^x-x^4e^x+x^4$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\dfrac{y}{x^4}=xe^x-e^x+1$，即 $y=x^5e^x-x^4e^x+x^4$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(1)=e-e+1=1$ ✔。$y'=(5x^4+x^5)e^x-(4x^3+x^4)e^x+4x^3$，$xy'-4y=(5x^5+x^6-4x^4-x^5)e^x+4x^4-4x^5e^x+4x^4e^x-4x^4=x^6e^x$ ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am1l-bern">2.5 <span class="added">網站補充</span> Bernoulli 方程：代換成線性</h3>
+
+<p>板書這天沒講，但常和線性方程一起考：形如</p>
+$$y'+p(x)\,y=q(x)\,y^{n}\qquad(n\ne0,1)$$
+<p>的方程（右邊多了 $y^n$，不是線性）。兩邊除以 $y^n$，令 $v=y^{1-n}$，則 $v'=(1-n)y^{-n}y'$，方程變成對 $v$ 的線性方程</p>
+$$v'+(1-n)\,p(x)\,v=(1-n)\,q(x),$$
+<p>再用積分因子解 $v$，最後 $y=v^{1/(1-n)}$。$n=0$ 是線性本身、$n=1$ 可以分離，所以才排除。除以 $y^n$ 時（$n>0$）會丟掉 $y\equiv0$ 這個解。</p>
+
+<p>這一型在 109 級下第 1 次期中 1(c) 與 108 級下 First Order ODE 1(h)（附 Hint: Bernoulli equation）都考過同一題：</p>
+
+<div class="problem" data-kind="exam" id="am1-109b-1c">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 1(c) 題 · 108級下學期 First Order ODE 第 1(h) 題</span></div>
+    <h4>Bernoulli：$y'+\dfrac{y}{x}=xy^2$，$y(1)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="am1-109b-1c">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am1-109b-1c"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>1. Solve the 1st-order ODEs.</p><p>(c) $\dfrac{dy}{dx}+\dfrac{y}{x}=xy^2$ for $y(1)=1$.　Ans: $\dfrac{1}{xy}=-x+2$</p><p>（108級下學期 First Order ODE：(h) $\dfrac{dy}{dx}+\dfrac{y}{x}=xy^2$ for $y(1)=1$. (Hint: Bernoulli equation)　Ans: $\dfrac{1}{xy}=-x+2$）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $\dfrac{dy}{dx}+\dfrac yx=xy^2$，$y(1)=1$。（108 級版本附提示「Bernoulli equation」；考卷附的答案：$\dfrac1{xy}=-x+2$。）另外找出解存在的區間。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>型</td><td>Bernoulli，$n=2$</td><td>右邊多了 $y^2$：不是線性；左邊是 $y'+p\,y$ 的樣子（108 級版本直接提示）</td></tr>
+          <tr><td>係數</td><td>$p(x)=\dfrac1x$，$q(x)=x$</td><td>$y$ 的係數 $\frac1x$；$y^2$ 的係數 $x$</td></tr>
+          <tr><td>初始條件</td><td>$x_0=1$，$y_0=1$</td><td>「for $y(1)=1$」；$x_0>0$，取 $x>0$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$y(x)$ 與存在區間。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>多出來的 $y^2$ 讓它不是線性、也分離不開（左邊有 $\frac{y}{x}$ 相加），<b>所以</b>用 Bernoulli 代換 $v=y^{1-n}=y^{1-2}=\dfrac1y$，把非線性的部分吸收掉，變成對 $v$ 的線性方程。</p>
+      <p><b>因為</b>得到的線性方程 $v'-\frac1xv=-x$ 的 $p=-\frac1x$，積分因子是 $\frac1x$，<b>所以</b>最後解出 $v$ 再取倒數；倒數會在 $v=0$ 的地方爆掉，要回頭檢查區間。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-109b-1c-s1" data-sym="pq">
+        <span class="step-title">除以 $y^2$，代換 $v=1/y$</span>
+        <p>一般式：$y'+py=qy^n$ 除以 $y^n$，令 $v=y^{1-n}$。這裡 $n=2$：</p>
+        $$y^{-2}y'+\frac1x\,y^{-1}=x$$
+        <p>$v=y^{-1}$ ⟹ $v'=-y^{-2}y'$，所以 $y^{-2}y'=-v'$：</p>
+        $$-v'+\frac{v}{x}=x\ \Longrightarrow\ v'-\frac1x\,v=-x$$
+        <p class="sub">初始值：代入 $y(1)=1$（題目）得 $v(1)=\frac11=1$。</p>
+      </div>
+      <div class="step" data-step="am1-109b-1c-s2" data-sym="F">
+        <span class="step-title">積分因子</span>
+        <p class="sub">代入 $p=-\dfrac1x$（步驟 1 的 $v$ 方程）：</p>
+        $$F=e^{\int-\frac1x\,dx}=e^{-\ln x}=\frac1x\qquad(x>0)$$
+        $$\frac{d}{dx}\left(\frac{v}{x}\right)=\frac1x\cdot(-x)=-1\ \Longrightarrow\ \frac vx=-x+C\ \Longrightarrow\ v=-x^2+Cx$$
+      </div>
+      <div class="step" data-step="am1-109b-1c-s3" data-sym="Cst">
+        <span class="step-title">代初始條件、換回 $y$</span>
+        <p class="sub">代入 $v(1)=1$（步驟 1）：$1=-1+C$，$C=2$。</p>
+        $$v=2x-x^2\ \Longrightarrow\ y=\frac1v=\frac{1}{x(2-x)}$$
+        <p>考卷寫成 $\dfrac1{xy}=-x+2$：把 $\dfrac vx=-x+2$ 裡的 $v=\frac1y$ 代回就是這個形式，兩者相同。$v=0$ 在 $x=0$ 與 $x=2$；包含 $x=1$ 的區間是 $0\lt x\lt 2$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\dfrac1{xy}=2-x$，即 $y=\dfrac{1}{2x-x^2}$，存在於 $0\lt x\lt 2$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(1)=\frac11=1$ ✔。$y'=-\dfrac{2-2x}{(2x-x^2)^2}$，$\dfrac yx=\dfrac{1}{x(2x-x^2)}=\dfrac{2-x}{(2x-x^2)^2}$，相加 $\dfrac{x}{(2x-x^2)^2}=xy^2$ ✔。</p></div>
+  </div>
+</div>
+
+<h3 id="am1l-self">2.6 自編難題</h3>
+
+<div class="problem" data-kind="self" id="am1-self-02a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>Bernoulli $n=3$：$y'+y=xy^3$，$y(0)=1$，解往左能走多遠</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-02a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y'+y=xy^3$，$y(0)=1$。開根號時正負號怎麼選？解存在的最大區間是什麼（左端點求到小數三位）？$x\to\infty$ 時 $y$ 怎麼變？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>型</td><td>Bernoulli，$n=3$</td><td>右邊多了 $y^3$；左邊是 $y'+p\,y$</td></tr>
+          <tr><td>係數</td><td>$p=1$，$q=x$</td><td>$y$ 的係數 1；$y^3$ 的係數 $x$</td></tr>
+          <tr><td>初始條件</td><td>$x_0=0$，$y_0=1>0$</td><td>「$y(0)=1$」：正號決定開根號取哪一支</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$y(x)$、根號的正負、最大存在區間、$x\to\infty$ 的行為。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊有 $y^3$，<b>所以</b>令 $v=y^{1-3}=y^{-2}$ 化成線性；和 $n=2$ 不同的是，換回來要開平方根 $y=\pm v^{-1/2}$，<b>所以</b>必須用初始值的正負號選一支，而且 $v$ 必須保持正的。</p>
+      <p><b>因為</b> $v(x)=0$ 的地方 $y$ 爆掉，而 $v$ 的式子含 $x$ 和 $e^{2x}$，不能用代數解出零點，<b>所以</b>先用 $v'$ 的正負證明零點只有一個，再用牛頓法或試值求它。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-02a-s1" data-sym="pq">
+        <span class="step-title">代換 $v=y^{-2}$</span>
+        <p>除以 $y^3$：$y^{-3}y'+y^{-2}=x$。$v=y^{-2}$ ⟹ $v'=-2y^{-3}y'$，所以 $y^{-3}y'=-\tfrac12v'$：</p>
+        $$-\frac12v'+v=x\ \Longrightarrow\ v'-2v=-2x$$
+        <p class="sub">初始值：代入 $y(0)=1$（題目）得 $v(0)=1^{-2}=1$。</p>
+      </div>
+      <div class="step" data-step="am1-self-02a-s2" data-sym="F">
+        <span class="step-title">積分因子與分部積分</span>
+        <p>$p=-2$，$F=e^{\int-2\,dx}=e^{-2x}$：$\dfrac{d}{dx}\big(ve^{-2x}\big)=-2xe^{-2x}$。</p>
+        <p>分部積分取 $u=x$、$dw=-2e^{-2x}dx$（$w=e^{-2x}$）：</p>
+        $$\int-2xe^{-2x}\,dx=xe^{-2x}-\int e^{-2x}\,dx=xe^{-2x}+\frac12e^{-2x}$$
+        $$ve^{-2x}=xe^{-2x}+\frac12e^{-2x}+C\ \Longrightarrow\ v=x+\frac12+Ce^{2x}$$
+      </div>
+      <div class="step" data-step="am1-self-02a-s3" data-sym="Cst">
+        <span class="step-title">代初始條件、選正負號</span>
+        <p class="sub">代入 $v(0)=1$（步驟 1）：$1=0+\tfrac12+C$，$C=\tfrac12$：</p>
+        $$v=x+\frac12+\frac12e^{2x},\qquad y^2=\frac1v$$
+        <p>$y=\pm v^{-1/2}$；因為 $y(0)=1>0$ 而且解連續、不會穿過 $y=0$（$y\equiv0$ 本身是解，唯一性不允許相交），取正號：$y=\dfrac{1}{\sqrt{x+\frac12+\frac12e^{2x}}}$。</p>
+      </div>
+      <div class="step" data-step="am1-self-02a-s4">
+        <span class="step-title">存在區間</span>
+        <p>需要 $v>0$。$v'=1+e^{2x}>0$，所以 $v$ 嚴格遞增，最多一個零點；$v(0)=1>0$，而 $x\to-\infty$ 時 $v\approx x+\tfrac12\to-\infty$，所以恰好有一個零點 $x^*\lt0$。</p>
+        <p>試值：$v(-0.6)=-0.1+\tfrac12e^{-1.2}\approx0.0506$，$v(-0.65)=-0.15+\tfrac12e^{-1.3}\approx-0.0137$；牛頓法 $x_{k+1}=x_k-\dfrac{v(x_k)}{1+e^{2x_k}}$ 從 $-0.65$ 走一步得 $-0.65+\dfrac{0.0137}{1.2725}\approx-0.6392$。所以 $x^*\approx-0.639$，$x\to x^{*+}$ 時 $y\to+\infty$。</p>
+      </div>
+      <div class="step" data-step="am1-self-02a-s5">
+        <span class="step-title">$x\to\infty$ 的行為</span>
+        <p>$v\approx\tfrac12e^{2x}$（指數項壓過 $x$），$y\approx\sqrt2\,e^{-x}\to0$：大 $x$ 時 $y^3$ 那項變得可以忽略，方程回到 $y'+y\approx0$ 的指數衰減。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\Big(x+\tfrac12+\tfrac12e^{2x}\Big)^{-1/2}$（取正根，因 $y(0)=1>0$），存在於 $x^*\lt x\lt\infty$，$x^*\approx-0.639$ 是 $x+\frac12+\frac12e^{2x}=0$ 的根；$x\to\infty$ 時 $y\approx\sqrt2e^{-x}\to0$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=(0+\frac12+\frac12)^{-1/2}=1$ ✔。$y'(0)=-\tfrac12v^{-3/2}v'=-\tfrac12\cdot1\cdot2=-1$；原方程 $y'=-y+xy^3=-1+0=-1$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am1-self-02b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>右邊突然關掉：$y'+2y=g(x)$，分段接起來</h4>
+    <button type="button" class="exam-btn" data-exam="am1-self-02b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$y'+2y=g(x)$，其中 $g(x)=1$（$0\le x\le1$）、$g(x)=0$（$x>1$），$y(0)=0$。求所有 $x\ge0$ 的連續解，並求 $y(1)$、$y(2)$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式係數</td><td>$p=2$</td><td>$y$ 的係數 2</td></tr>
+          <tr><td>右邊</td><td>兩段：$q=1$、之後 $q=0$</td><td>「$g(x)=1$（$0\le x\le1$）、$0$（$x>1$）」：在 $x=1$ 不連續</td></tr>
+          <tr><td>接合條件</td><td>$y$ 在 $x=1$ 連續</td><td>題目「連續解」；$y'$ 可以跳，$y$ 不能跳</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=0$</td><td>題目</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$x\ge0$ 的 $y(x)$（分段寫）與 $y(1)$、$y(2)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>方程在每一段都是線性方程，只是右邊不同，<b>所以</b>兩段分開用積分因子 $e^{2x}$ 解；第一段用 $y(0)=0$ 定常數。</p>
+      <p><b>因為</b> $y$ 要連續，而第二段的方程本身不知道前面發生什麼，<b>所以</b>第二段的初始條件就是第一段在 $x=1$ 的值。這和 RC 電路「充電一段時間後拔掉電池」完全同型（第 5 節）。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am1-self-02b-s1" data-sym="F">
+        <span class="step-title">第一段 $0\le x\le1$：$y'+2y=1$</span>
+        $$\frac{d}{dx}\big(e^{2x}y\big)=e^{2x}\ \Longrightarrow\ e^{2x}y=\frac12e^{2x}+C_1$$
+        <p class="sub">代入 $y(0)=0$（題目）：$0=\tfrac12+C_1$，$C_1=-\tfrac12$。</p>
+        $$y=\frac12\big(1-e^{-2x}\big)$$
+      </div>
+      <div class="step" data-step="am1-self-02b-s2">
+        <span class="step-title">接合點的值</span>
+        $$y(1)=\frac12\big(1-e^{-2}\big)=\frac12(1-0.1353)=0.4323$$
+      </div>
+      <div class="step" data-step="am1-self-02b-s3">
+        <span class="step-title">第二段 $x>1$：$y'+2y=0$</span>
+        <p>$(e^{2x}y)'=0$ ⟹ $y=C_2e^{-2x}$。</p>
+        <p class="sub">代入連續條件 $y(1)=\tfrac12(1-e^{-2})$（步驟 2）：$C_2e^{-2}=\tfrac12(1-e^{-2})$，$C_2=\tfrac12(e^{2}-1)$。</p>
+        $$y=\frac{e^2-1}{2}\,e^{-2x}=y(1)\,e^{-2(x-1)}$$
+      </div>
+      <div class="step" data-step="am1-self-02b-s4">
+        <span class="step-title">$y(2)$</span>
+        $$y(2)=0.4323\,e^{-2}=0.4323\times0.1353=0.0585$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\tfrac12(1-e^{-2x})$（$0\le x\le1$），$y=\tfrac12(e^2-1)e^{-2x}$（$x>1$）；$y(1)=0.4323$，$y(2)=0.0585$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>兩段在 $x=1$ 都等於 $\tfrac12(1-e^{-2})$ ✔。$y'$ 在 $x=1$ 左邊是 $e^{-2}=0.135$、右邊是 $-2y(1)=-0.865$，差 1，正好是 $g$ 跳的量 ✔（由 $y'=g-2y$）。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>線性：$y$、$y'$ 只有一次方、係數只含 $x$；先把 $y'$ 的係數除成 1 再讀 $p(x)$。</li>
+    <li>$F=e^{\int p\,dx}$，因為 $F'=pF$，乘上後左邊 $=(Fy)'$；$y=\dfrac1F\left[\int Fq\,dx+C\right]$，常數也要除以 $F$。</li>
+    <li>對 $y$ 不線性時，試試把 $x$ 當未知函數（$\dfrac{dx}{dy}$）；有 $y^n$ 時用 Bernoulli $v=y^{1-n}$。</li>
+    <li>係數 $y'$ 前面的多項式為 0 的點是奇異點，解只活在包含初始點、不含奇異點的區間。</li>
+  </ol>
+</div>

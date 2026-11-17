@@ -1,0 +1,60 @@
+<p class="lead">應用數學第一個主題是一階常微分方程：方程裡只出現未知函數 $y(x)$ 和它的一階導數 $y'$。柯景元老師 9/16 一次講完四型——可分離、線性、正合、非正合（積分因子）——最後用 RC 電路示範怎麼從物理定律得到一階方程。這一章的方法後面每一章都會用到：二階方程的降階法要解一階線性方程，冪級數解的係數遞迴也常常回到這裡。</p>
+
+<p>本章依 9/16 板書照片的順序排成五個講解節（照片 1–13；9/23 開頭兩張已經是二階方程，歸第 2 章），每節的板書原文放在淡棕色框裡，旁邊是重新整理、補足推導的說明。照片拍不完整的地方由網站補上並標示 <span class="added">網站補充</span>。題目包括板書例題 6 題、9/16 作業 5 題（其中第 4 題就是 110 上期中考題，合併成一張卡）、歷屆考古題 8 題，以及每節 2 題標示「自編難題」的網站自編題。題目右上角可以開「考試寫法」。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">考古題怎麼出</span>
+  <p>網站上 110 上～114 上共 18 份考卷：<strong>上學期期中考每一年都有一階方程</strong>，放在第 1、2 題；上學期期末與下學期考的是 PDE、冪級數、矩陣、複變、Fourier／Laplace，沒有本章的題目（下學期的「一階聯立方程組」用矩陣或 Laplace 轉換解，屬於之後的主題，不收）。本章收錄的 8 題：</p>
+  <div class="symbol-table-wrap"><table>
+    <thead><tr><th>考卷</th><th>題目</th><th>型</th><th>配分</th><th>本站</th></tr></thead>
+    <tbody>
+      <tr><td>110 上期中（2021.11.09）第 1 題</td><td>$(2y+e^y+6x^2)y'+4+12xy=0$</td><td>正合（＝作業第 4 題）</td><td>20</td><td><a href="#am1-110a-m1">第 3 節</a></td></tr>
+      <tr><td>110 上期中 第 2 題</td><td>$v^2$ 空氣阻力落體 $v(t)$</td><td>可分離（應用）</td><td>20</td><td><a href="#am1-110a-m2">第 5 節</a></td></tr>
+      <tr><td>111 上期中（2022.Nov.）第 1 題</td><td>$(y^2+xy^3)dx+(5y^2-xy+y^3\sin y)dy=0$</td><td>非正合 $F(y)=y^{-3}$</td><td>5</td><td><a href="#am1-111a-m1">第 4 節</a></td></tr>
+      <tr><td>112 上期中（2023.Nov.）第 1 題</td><td>$dy+(2xy-xe^{-x^2})dx=0$</td><td>線性</td><td>6</td><td><a href="#am1-112a-m1">第 2 節</a></td></tr>
+      <tr><td>112 上期中 第 2 題</td><td>$(2xe^{3y}+e^x)dx+(3x^2e^{3y}-y^2)dy=0$</td><td>正合</td><td>6</td><td><a href="#am1-112a-m2">第 3 節</a></td></tr>
+      <tr><td>113 上期中（2024.Nov.）第 1 題</td><td>$(e^{2y}-y\cos xy)dx+(2xe^{2y}-x\cos xy+2y)dy=0$</td><td>正合</td><td>25</td><td><a href="#am1-113a-m1">第 3 節</a></td></tr>
+      <tr><td>113 上期中 第 2 題</td><td>$y'+y^2=9$</td><td>可分離</td><td>25</td><td><a href="#am1-113a-m2">第 1 節</a></td></tr>
+      <tr><td>114 上期中（2025 Oct.）第 1 題</td><td>$(x^2-x-2)y'+3xy=x^2-4x+4$</td><td>線性（有奇異點）</td><td>25</td><td><a href="#am1-114a-m1">第 2 節</a></td></tr>
+    </tbody>
+  </table></div>
+  <p>看得出老師的習慣：<strong>正合題出現 3 次、線性 2 次、非正合 1 次、可分離 2 次</strong>，幾乎都附初始條件，答案寫成隱式 $f(x,y)=C$ 就可以。作業第 4 題直接是 110 上原題，所以作業五題都值得當考古題練。</p>
+  <p><strong>更早年級的考古卷（2026-10 補收）。</strong>使用者雲端另有「109級下學期第 1 次期中」（1st-order ODE and 2nd-order homogeneous ODE）、「108級下學期 First Order ODE」與 109 級上的 Euler Formula 卷，都附老師答案，兩份一階卷有 5 題重複。本章新增 13 張卡：可分離 1(a)(g) 與齊次型 1(d)（第 1 節）、線性 1(b)、108 級 1(c)、Bernoulli 1(c)（第 2 節）、正合 1(e)（第 3 節）、積分因子 1(f)(h) 與 108 級 1(f)（第 4 節）、牛頓冷卻與兩題交流 RC 電流（第 5 節）；109 級下第 2 題與 110 上期中第 2 題同題、108 級 1(e) 與 112 上期中第 2 題同方程（初始條件不同），收在原卡。考卷答案有兩處誤植：109 級下 1(a) 的 $-\sin x$ 應為 $+\sin x$，109 級上 Euler 卷第 4 題的 $\sin(\omega t+\phi)$ 應為 $\cos$；卡片內有說明。</p>
+</div>
+
+<p class="exam-entry"><strong>準備考試？</strong>先看<a href="#am1x-formulas">第 6 節「考前衝刺」</a>：必背公式、題型總表和變化題。各節頁面上方的「考試模式」會把解說收起來，只留公式、題目和思路。</p>
+
+<div data-section-list></div>
+
+<details class="supp" id="symbols">
+  <summary>符號總表</summary>
+  <div class="supp-body">
+    <p class="small muted">板書用 $F$ 表示積分因子、小寫 $f$ 表示正合方程的位能函數 $f(x,y)$；$M$、$N$ 在第 1 節是可分離方程的兩個因式，第 3 節起是微分形式 $M\,dx+N\,dy$ 的係數。第 5 節 $C$ 是電容、$q$ 是電荷。</p>
+    <div data-symbol-table></div>
+  </div>
+</details>
+
+<details class="supp" id="photo-gaps">
+  <summary>照片缺漏與網站補充（本章）</summary>
+  <div class="supp-body">
+    <ol>
+      <li><strong>照片 3（線性例題）</strong>：$\int e^{2x}\sin x\,dx$ 的計算沒有在黑板上（直接寫結果），網站補上兩次分部積分；顯式 $y(x)$ 也補上。（<a href="#am1-ex-lin">第 2 節</a>）</li>
+      <li><strong>照片 8（$F(y)$ 規則）</strong>：只寫了 $F=e^{\int-\Delta/M\,dy}$ 的結果，網站補上推導與負號的來源。（<a href="#am1n-rule">第 4 節</a>）</li>
+      <li><strong>照片 10 → 11 之間（約 27 分鐘沒有照片）</strong>：非正合例題拍到老師正在寫 $\partial N'/\partial x$ 為止，之後求 $f$ 與通解 $x^3\sin2y-x^2y=C$ 由網站補上。（<a href="#am1-ex-nonexact">第 4 節</a>）</li>
+      <li><strong>照片 11（RC 電路）</strong>：充電 [a] 只列了方程沒有解，網站補上 $q=C\varepsilon(1-e^{-t/RC})$。（<a href="#am1-ex-rc">第 5 節</a>）</li>
+      <li><strong>照片 13（交流 RC）</strong>：沒有寫電源電壓（由方程推回 $V_0\sin\omega t$）；旁註「$\sin(\omega t+\phi)$ or $\cos(\omega t+\phi)$」沒有展開，網站補上振幅、相位與 $q(0)=0$ 的常數。（<a href="#am1-ex-ac">第 5 節</a>）</li>
+      <li>照片 1、2、4–7 的理論與正合例題都完整。照片 3、9 是老師先寫黑板右半、再回到左半寫後續（$e^xy=\ldots$、$F(x)=x$），網站依推導順序重排；照片 4 左側、照片 7–8 右側是前一段板書的殘留，不重複轉寫。</li>
+    </ol>
+  </div>
+</details>
+
+<details class="supp" id="confusions">
+  <summary>三個最常混淆的地方</summary>
+  <div class="supp-body">
+    <ol>
+      <li><strong>大寫 $F$ 與小寫 $f$</strong>：$F$ 是乘上去的積分因子，$f(x,y)$ 是正合方程要找的函數（解是 $f=C$）。第 1 節的 $F(y',y;x)=0$ 又是一般一階方程的寫法，三者不同。</li>
+      <li><strong>$\Delta/M$ 的負號</strong>：$F(x)=e^{\int\Delta/N\,dx}$ 沒有負號，$F(y)=e^{-\int\Delta/M\,dy}$ 有負號（第 4 節推導）。作業第 5 題、111 上期中都是 $F(y)$，負號錯了 $F$ 就變成倒數。</li>
+      <li><strong>常數除不除</strong>：線性方程 $y=\frac1F\left[\int Fq\,dx+C\right]$，$C$ 也被 $F$ 除；可分離方程取指數後 $C$ 是乘在外面（$Ke^{g(x)}$）。兩種錯誤都會讓初始條件代出錯的常數。</li>
+    </ol>
+  </div>
+</details>

@@ -1,0 +1,29 @@
+{
+  "title": "第 1 章｜相對論",
+  "shortTitle": "近代物理 第 1 章",
+  "range": "課本 Beiser, Concepts of Modern Physics (6th ed.) 第 1 章 p.1–51（含附錄 I、II）",
+  "pageLabel": "課本",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備近代物理考試：課本是 Beiser《Concepts of Modern Physics》(6th ed.) 第 1 章 Relativity（含附錄 I 勞倫茲轉換、附錄 II 時空），沒有講義；考試多半是課本例題、課本習題換數字，以及「證明／說明」題。",
+  "overview": "s00",
+  "sections": [
+    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pages": "p.1–2" },
+    { "id": "s01", "file": "01-postulates.html", "title": "狹義相對論的兩個假設", "pages": "p.2–5", "desc": "慣性座標系、兩個假設、Michelson–Morley 實驗。" },
+    { "id": "s02", "file": "02-time.html", "title": "時間膨脹", "pages": "p.5–10", "desc": "光鐘推導 $t=\\gamma t_0$、固有時間、效應是相互的、速度上限。" },
+    { "id": "s03", "file": "03-doppler.html", "title": "都卜勒效應", "pages": "p.10–15", "desc": "聲音與光的差別、橫向／遠離／接近三種情況、紅移與宇宙膨脹。" },
+    { "id": "s04", "file": "04-length.html", "title": "長度收縮", "pages": "p.15–17", "desc": "緲子為什麼到得了地面、$L=L_0/\\gamma$ 只縮運動方向。" },
+    { "id": "s05", "file": "05-twin.html", "title": "雙生子弔詭", "pages": "p.17–19", "desc": "為什麼不對稱、用都卜勒數訊號驗證年齡差。" },
+    { "id": "s06", "file": "06-em.html", "title": "電與磁", "pages": "p.19–21", "desc": "電荷不變；平行電流的磁力是另一個座標系裡的電力。" },
+    { "id": "s07", "file": "07-momentum.html", "title": "相對論動量", "pages": "p.22–26", "desc": "由碰撞推出 $p=\\gamma mv$、相對論第二定律、$F=\\gamma^3ma$。" },
+    { "id": "s08", "file": "08-energy.html", "title": "質量與能量", "pages": "p.26–30", "desc": "由功推出動能 $(\\gamma-1)mc^2$、靜能 $mc^2$、低速極限。" },
+    { "id": "s09", "file": "09-energy-momentum.html", "title": "能量與動量", "pages": "p.30–33", "desc": "$E^2=(mc^2)^2+(pc)^2$、系統質量、無質量粒子、MeV 單位。" },
+    { "id": "s10", "file": "10-general.html", "title": "廣義相對論", "pages": "p.33–36", "desc": "等效原理、光線偏折、水星近日點、重力波。" },
+    { "id": "s11", "file": "11-lorentz.html", "title": "附錄 I　勞倫茲轉換", "pages": "p.37–45", "desc": "推導、逆轉換、速度相加、同時的相對性。" },
+    { "id": "s12", "file": "12-spacetime.html", "title": "附錄 II　時空", "pages": "p.46–49", "desc": "不變的時空間隔、類時／類空／類光、光錐。" },
+    { "id": "s12x", "file": "12x-challenge.html", "title": "相對論綜合難題", "pageLabel": "", "pages": "網站自編", "desc": "網站自編的 10 題多步綜合題：飛船來回與訊號、1g 加速航程、從飛船發射更快的探測器、多級發射與快速度、對向飛船、光子火箭、粒子門檻與衰變、緲子三方對帳、雷達測距、彈性碰撞。" },
+    { "id": "s13", "file": "13-exam.html", "title": "考前衝刺", "pages": "p.1–51", "desc": "必背公式、題型總表（怎麼認、做法、常錯、代表題）與變化題。" }
+  ],
+  "sources": [{"match": "107 學年", "label": "開原卷", "url": "https://drive.google.com/file/d/1S8_OI91D1dtJgl8rm-BjxiMJpXryioZy/view"}, {"match": "115 級", "label": "開原卷", "url": "https://drive.google.com/file/d/1ZD3edbQ8erZaCwr0vOx7_cSdz-Am3SrH/view"}, {"match": "109 學年上學期考古", "label": "開考古解答", "url": "https://drive.google.com/file/d/1kBTBH1VbH9L4nq8MXrVEh2tXw2ZeBt4t/view"}, {"match": "104 級上學期考古", "label": "開作答卷", "url": "https://drive.google.com/file/d/1r5BUNrxuO0NQDuZa20fpPYQy112j4TC3/view"}, {"match": "Beiser", "label": "開課本原文", "url": "https://drive.google.com/file/d/1-264jj_TNPuMA6_J7ygwrM3LXls4EZjq/view", "pageOffset": 14, "local": "C:/Users/jaiia/Downloads/近物.pdf"}],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": ["figures.js"]
+}

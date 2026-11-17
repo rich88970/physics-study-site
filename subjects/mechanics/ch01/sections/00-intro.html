@@ -1,0 +1,31 @@
+<p class="lead">這一章是整學期力學的工具章。之後的力學定律都寫成向量方程式（例如 $\vec F=m\vec a$），所以要先會四件事：向量怎麼表示和運算、向量怎麼隨時間變化、換一組座標軸時數字怎麼換（第 1–9 節），以及在極、柱、球座標中描述運動，並用梯度、散度、旋度描述力場（第 10–15 節）。</p>
+
+<p>每一節是一頁，照講義頁碼排列，題目放在用到它的那一節。題目右上角可以開「考試寫法」，部分難題有「影片講解」。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">考古題怎麼出</span>
+  <p>雲端「3.力學(董育宸)」資料夾裡共 5 份考卷、28 題，全部逐題看過：116 級下學期第 5–8 章（重力、變分法、Lagrange 力學、連心力）的單章考卷，以及 117 級上學期期末 Exam-4（2025/12/18，第 9 章「質點系」）；上學期期中的資料夾是空的。<strong>沒有屬於 Lecture 1（向量、矩陣與旋轉、座標系、梯度散度旋度、Stokes）的考題</strong>，所以本章沒有考古題卡（能用 Lecture 2 工具完整解的四題——Exam-4 第 1、3 題、第 5 章第 2 題、第 8 章第 1 題——收在 Lecture 2）。不過本章的工具在考卷上一直用到：第 5 章考卷的球體自身重力能、細桿與圓環的重力，都要寫質量元——<a href="#cs-sph">第 11 節球座標</a>的 $\mathrm dV=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$；第 8 章第 1 題證明克卜勒第二定律（考古題卡在 Lecture 2 第 11 節），用的就是<a href="#self-s07-2">第 7 節自編難題</a>的 $\frac{\mathrm d}{\mathrm dt}(\vec r\times\vec v)=\vec r\times\vec a$ 與 $\mathrm dA=\frac12|\vec r\times\mathrm d\vec r|$；第 7 章第 2 題要在極座標寫動能，用<a href="#po-va">第 10 節極座標</a>的速度 $\dot r\,\hat r+r\dot\theta\,\hat\theta$。</p>
+</div>
+
+<p class="exam-entry"><strong>準備考試？</strong>先看<a href="#ex-formulas">第 16 節「考前衝刺」</a>：必背公式、18 種題型的解法和變化題。各節頁面上方的「考試模式」會把解說收起來，只留公式、題目和思路。</p>
+
+<div data-section-list></div>
+
+<details class="supp" id="symbols">
+  <summary>符號總表</summary>
+  <div class="supp-body">
+    <p class="small muted">講義用箭頭 $\vec A$ 表示向量，課本用粗體 $\mathbf A$，意思相同。帽子 $\hat{\ }$ 表示長度為 1 的單位向量。</p>
+    <div data-symbol-table></div>
+  </div>
+</details>
+
+<details class="supp" id="confusions">
+  <summary>三個最常混淆的地方</summary>
+  <div class="supp-body">
+    <ol>
+      <li>$\vec A$ 是向量，$A=|\vec A|$ 是它的長度（非負的數），$A_1$ 是一個分量（可以是負的）。</li>
+      <li>內積 $\vec A\cdot\vec B$ 的結果是<strong>數</strong>；外積 $\vec A\times\vec B$ 的結果是<strong>向量</strong>。</li>
+      <li>第九節的旋轉是「座標軸轉、點不動」。若是「點轉、軸不動」，矩陣中 $\sin\theta$ 的正負號相反。</li>
+    </ol>
+  </div>
+</details>

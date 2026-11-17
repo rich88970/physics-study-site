@@ -1,0 +1,194 @@
+<h2 id="kp-02">二、一階：線性方程與積分因子</h2>
+<h3 id="k02-1">作業一第 2 題｜先交換變數，再用線性積分因子</h3>
+<p><strong>原題：</strong></p>
+<div class="math-block">$$
+y'=\frac{1}{e^y-x},\qquad y(1)=0.
+$$</div>
+<p><strong>中文：</strong> 求滿足上述微分方程及給定初始條件的解。照片附解為：</p>
+<div class="math-block">$$
+xe^y=\frac12e^{2y}+\frac12.
+$$</div>
+<p><strong>① 交換變數，改求 $x(y)$：</strong> 以 $y(x)$ 看，原式含 $e^y$，不是線性；但把 $x$ 看成 $y$ 的函數，$x$ 與 $dx/dy$ 都只出現一次。在 $e^y-x\ne0$ 處取倒數：</p>
+<p class="fnote"><b>公式（反函數導數）：</b>若 $y=y(x)$ 在某處 $\dfrac{dy}{dx}\ne0$，則局部可反解為 $x=x(y)$，且 $\dfrac{dx}{dy}=\dfrac{1}{dy/dx}$，其中 $x,y$ 為互相決定的兩個變數；本題 $\dfrac{dy}{dx}=\dfrac{1}{e^y-x}$，故 $\dfrac{dx}{dy}=e^y-x$。</p>
+<div class="math-block">$$
+\frac{dx}{dy}=e^y-x.
+$$</div>
+<p>移項得到以 $y$ 為自變數的線性標準式：</p>
+<div class="math-block">$$
+\boxed{\frac{dx}{dy}+x=e^y.}
+\tag{2.1}
+$$</div>
+<p><strong>② 求積分因子（對 $y$ 積分）：</strong> 式（2.1）中 $x$ 的係數是 $1$。</p>
+<p class="fnote"><b>公式（積分因子）：</b>一階線性方程 $y'+p(x)y=g(x)$ 的積分因子為 $F(x)=e^{\int p(x)\,dx}$，乘上後左邊成為 $\dfrac{d}{dx}\big[F(x)y\big]$，故 $F(x)y=\int F(x)g(x)\,dx+C$，其中 $x$ 為自變數、$y$ 為待求函數、$p(x),g(x)$ 為已知函數、$C$ 為積分常數；本題自變數改為 $y$、待求函數改為 $x$，$p=1$、$g=e^y$。</p>
+<div class="math-block">$$
+F(y)=e^{\int1\,dy}=e^y.
+\tag{2.2}
+$$</div>
+<p>乘上積分因子：</p>
+<div class="math-block">$$
+e^y\frac{dx}{dy}+e^yx=e^{2y}.
+$$</div>
+<p><strong>③ 左邊合成乘積微分：</strong></p>
+<p class="fnote"><b>公式（乘積律）：</b>$\dfrac{d}{dy}\big[u(y)v(y)\big]=u'(y)v(y)+u(y)v'(y)$，其中 $u,v$ 為可微函數、$'$ 表示對 $y$ 的導數；本題 $u=x(y)$、$v=e^y$。</p>
+<div class="math-block">$$
+\frac{d}{dy}(xe^y)
+=e^y\frac{dx}{dy}+x\frac{d(e^y)}{dy}
+=e^y\frac{dx}{dy}+xe^y.
+$$</div>
+<p>所以：</p>
+<div class="math-block">$$
+\frac{d}{dy}(xe^y)=e^{2y}.
+\tag{2.3}
+$$</div>
+<p><strong>④ 對 $y$ 積分：</strong></p>
+<div class="math-block">$$
+xe^y=\int e^{2y}\,dy+C.
+$$</div>
+<p class="fnote"><b>公式（標準積分）：</b>$\int e^{ay}\,dy=\dfrac{1}{a}e^{ay}+C$，其中 $a\ne0$ 為常數、$y$ 為積分變數、$C$ 為積分常數；本題 $a=2$。</p>
+<div class="math-block">$$
+xe^y=\frac12e^{2y}+C.
+$$</div>
+<p><strong>⑤ 代初值 $(x,y)=(1,0)$：</strong></p>
+<div class="math-block">$$
+1\cdot e^0=\frac12e^0+C,
+\qquad C=\frac12.
+$$</div>
+<div class="math-block">$$
+\boxed{xe^y=\frac12e^{2y}+\frac12.}
+\tag{2.4}
+$$</div>
+<p><strong>注意：</strong> 原題分母在 $(1,0)$ 為 $e^0-1=0$，右側無定義，所以原題不存在包含 $x=1$ 的通常可微初值解。式（2.4）除以 $e^y$ 得 $x=\dfrac{e^y+e^{-y}}2$，在 $y=0$ 處 $dx/dy=0$，無法反解成有限導數的 $y(x)$；對原題只能在 $x&gt;1$ 的兩個分支上當解。令 $t=e^y&gt;0$，由 $t^2-2xt+1=0$ 解出分支：</p>
+<p class="fnote"><b>公式（二次公式）：</b>$at^2+bt+c=0$（$a\ne0$）的根為 $t=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$，其中 $a,b,c$ 為係數、$t$ 為未知數；本題 $a=1$、$b=-2x$、$c=1$。</p>
+<p>得 $t=x\pm\sqrt{x^2-1}$，兩個分支為 $y_\pm(x)=\ln\left(x\pm\sqrt{x^2-1}\right)$（$x&gt;1$）。</p>
+<h3 id="k02-2">作業一第 3 題｜線性方程的積分因子</h3>
+<p><strong>原題：</strong></p>
+<div class="math-block">$$
+xy'+(1+x)y=e^{-x}\sin(2x).
+$$</div>
+<p><strong>中文：</strong> 求上述微分方程的通解（沒有初始條件，$K$ 不能擅自決定）。照片附解（K is constant：$K$ 是任意常數）：</p>
+<div class="math-block">$$
+y=-\frac{e^{-x}}{2x}\cos(2x)+K\frac{e^{-x}}{x}.
+$$</div>
+<p><strong>① 化成標準式：</strong> $y$、$y'$ 都是一次、係數只依賴 $x$，是線性方程。在不跨過 $x=0$ 的區間除以 $x$，讓 $y'$ 的係數變成 $1$：</p>
+<p class="fnote"><b>公式（一階線性標準式）：</b>$y'+p(x)y=g(x)$，其中 $x$ 為自變數、$y$ 為待求函數、$p(x)$ 為 $y$ 的係數、$g(x)$ 為右側已知函數，且 $y'$ 的係數必須是 $1$；本題除以 $x$ 後 $p(x)=1+\dfrac1x$、$g(x)=\dfrac{e^{-x}\sin(2x)}{x}$。</p>
+<div class="math-block">$$
+y'+\left(1+\frac1x\right)y
+=\frac{e^{-x}\sin(2x)}x.
+\tag{3.1}
+$$</div>
+<div class="math-block">$$
+p(x)=1+\frac1x,
+\qquad g(x)=\frac{e^{-x}\sin(2x)}x.
+$$</div>
+<p><strong>② 求積分因子：</strong></p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\dfrac{dx}{x}=\ln|x|+C$（$x\ne0$），其中 $x$ 為積分變數、$C$ 為積分常數；本題用於 $\int\left(1+\dfrac1x\right)dx=x+\ln|x|$，常數可省略（只改變 $F$ 的非零倍數）。</p>
+<p class="fnote"><b>公式（指數律）：</b>$e^{a+b}=e^ae^b$、$e^{\ln u}=u$（$u\gt0$），其中 $a,b$ 為實數、$u$ 為正數；本題 $a=x$、$b=\ln|x|$、$u=|x|$。</p>
+<div class="math-block">$$
+\begin{aligned}
+F(x)
+&amp;=e^{\int p(x)\,dx}\\
+&amp;=e^{\int(1+1/x)\,dx}\\
+&amp;=e^{x+\ln|x|}\\
+&amp;=|x|e^x.
+\end{aligned}
+$$</div>
+<p>在固定 $x&gt;0$ 或 $x&lt;0$ 的區間，$|x|$ 與 $x$ 只差非零常數倍，不影響解法，所以取：</p>
+<div class="math-block">$$
+\boxed{F(x)=xe^x.}
+\tag{3.2}
+$$</div>
+<p><strong>③ 乘上積分因子，辨認乘積微分：</strong> 式（3.1）乘上式（3.2）：</p>
+<div class="math-block">$$
+xe^xy'+(x+1)e^xy=\sin(2x).
+$$</div>
+<p>左側正是 $xe^xy$ 的導數：</p>
+<p class="fnote"><b>公式（乘積律）：</b>$\dfrac{d}{dx}\big[u(x)v(x)\big]=u'(x)v(x)+u(x)v'(x)$，其中 $u,v$ 為可微函數、$'$ 表示對 $x$ 的導數；本題先取 $u=xe^x$、$v=y$，再對 $(xe^x)'$ 取 $u=x$、$v=e^x$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\frac{d}{dx}(xe^xy)
+&amp;=xe^xy'+(xe^x)'y\\
+&amp;=xe^xy'+(e^x+xe^x)y\\
+&amp;=xe^xy'+(x+1)e^xy.
+\end{aligned}
+$$</div>
+<p>因此：</p>
+<div class="math-block">$$
+\frac{d}{dx}(xe^xy)=\sin(2x).
+\tag{3.3}
+$$</div>
+<p><strong>④ 積分並解出 $y$：</strong></p>
+<div class="math-block">$$
+xe^xy=\int\sin(2x)\,dx+K.
+$$</div>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\sin(ax)\,dx=-\dfrac{1}{a}\cos(ax)+C$，其中 $a\ne0$ 為常數、$x$ 為積分變數、$C$ 為積分常數；本題 $a=2$。</p>
+<div class="math-block">$$
+\int\sin(2x)\,dx=-\frac12\cos(2x).
+$$</div>
+<div class="math-block">$$
+xe^xy=-\frac12\cos(2x)+K.
+$$</div>
+<p>除以 $xe^x$：</p>
+<div class="math-block">$$
+\boxed{
+ y=-\frac{e^{-x}}{2x}\cos(2x)
+ +K\frac{e^{-x}}x,
+ \qquad x\ne0.
+}
+\tag{3.4}
+$$</div>
+<p>$K$ 在每個連通求解區間內是常數。</p>
+<p><strong>注意：</strong> 原式在 $x=0$ 只要求 $y(0)=0$。取 $K=1/2$ 時解為 $y=e^{-x}\sin^2x/x$，再令 $y(0)=0$，可光滑延伸過 $x=0$（且 $y'(0)=1$）；其餘 $K$ 在 $x\to0$ 發散。</p>
+<h3 id="k02-3">2025 年 10 月期中第 1 題｜一階線性方程（25 分）</h3>
+<p><strong>原題：</strong> Solve $(x^2-x-2)y'+3xy=x^2-4x+4$ for $y(1)=1$.</p>
+<p><strong>中文：</strong> 解一階 ODE，求通過 $(1,1)$ 的解。</p>
+<p><strong>① 化成標準式：</strong> 因式分解 $x^2-x-2=(x-2)(x+1)$、$x^2-4x+4=(x-2)^2$：</p>
+<div class="math-block">$$
+(x-2)(x+1)y'+3xy=(x-2)^2.
+$$</div>
+<p>在包含 $x=1$、不跨過奇異點 $x=-1,2$ 的區間 $(-1,2)$，除以 $(x-2)(x+1)$：</p>
+<div class="math-block">$$
+y'+\frac{3x}{(x-2)(x+1)}y=\frac{x-2}{x+1}.
+$$</div>
+<p class="symnote">符號：$P(x)=\dfrac{3x}{(x-2)(x+1)}$、$Q(x)=\dfrac{x-2}{x+1}$ 為標準式 $y'+P(x)y=Q(x)$ 的係數與右側；$A,B$ 為部分分式待定常數。</p>
+<p><strong>② 部分分式拆 $P$：</strong> 設 $3x/[(x-2)(x+1)]=A/(x-2)+B/(x+1)$，由 $A+B=3$、$A-2B=0$ 得 $A=2,B=1$：</p>
+<div class="math-block">$$
+P(x)=\frac2{x-2}+\frac1{x+1}.
+$$</div>
+<p><strong>③ 求積分因子：</strong> $F(x)=\exp(\int P(x)dx)$，在 $(-1,2)$ 上取非零且方便的形式。</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\dfrac{dx}{x-c}=\ln|x-c|+C$，其中 $c$ 為常數、$x\ne c$、$C$ 為積分常數；本題 $c=2$ 與 $c=-1$，在區間 $(-1,2)$ 上 $x+1\gt0$，故 $|x+1|=x+1$。</p>
+<p class="fnote"><b>公式（指數律）：</b>$e^{a+b}=e^ae^b$、$e^{n\ln u}=u^n$（$u\gt0$），其中 $a,b,n$ 為實數、$u$ 為正數；本題 $e^{2\ln|x-2|}=|x-2|^2=(x-2)^2$、$e^{\ln(x+1)}=x+1$。</p>
+<div class="math-block">$$
+F(x)=e^{2\ln|x-2|+\ln(x+1)}=(x-2)^2(x+1).
+$$</div>
+<p><strong>④ 乘上 $F$，左邊合成 $(Fy)'$：</strong></p>
+<p class="fnote"><b>公式（乘積律）：</b>$\dfrac{d}{dx}\big[F(x)y\big]=F(x)y'+F'(x)y$，而 $F=e^{\int P\,dx}$ 滿足 $F'(x)=P(x)F(x)$，故 $F(y'+Py)=(Fy)'$，其中 $F$ 為積分因子、$P$ 為標準式中 $y$ 的係數、$y$ 為待求函數；本題 $F=(x-2)^2(x+1)$，右側 $FQ=(x-2)^2(x+1)\cdot\dfrac{x-2}{x+1}=(x-2)^3$。</p>
+<div class="math-block">$$
+\frac{d}{dx}\big[(x-2)^2(x+1)y\big]=(x-2)^3.
+$$</div>
+<p><strong>⑤ 積分：</strong> 右側令 $u=x-2$（$du=dx$）。</p>
+<p class="fnote"><b>公式（冪次積分）：</b>$\int u^n\,du=\dfrac{u^{n+1}}{n+1}+C$（$n\ne-1$），其中 $u$ 為積分變數、$n$ 為常數指數、$C$ 為積分常數；本題 $u=x-2$、$n=3$。</p>
+<div class="math-block">$$
+(x-2)^2(x+1)y=\int(x-2)^3dx=\frac{(x-2)^4}{4}+C.
+$$</div>
+<p><strong>⑥ 代初值 $(1,1)$：</strong> 左側 $(-1)^2(2)=2$，右側 $1/4+C$，故 $C=7/4$。</p>
+<div class="math-block">$$
+\boxed{y(x)=\frac{(x-2)^4+7}{4(x-2)^2(x+1)},\quad -1&lt;x&lt;2.}
+$$</div>
+<h3 id="k02-4">2023 年 11 月期中第 1 題｜一階線性初值方程（6 分）</h3>
+<p><strong>原題：</strong> Solve $dy+(2xy-xe^{-x^2})dx=0$ for $y(0)=1$.</p>
+<p><strong>中文：</strong> 解 $y'+2xy=xe^{-x^2}$，求通過 $(0,1)$ 的解（指數是 $e^{-x^2}$，不是 $e^{-x}$）。</p>
+<p><strong>① 求積分因子：</strong> 除以 $dx$ 後已是標準式，$P(x)=2x$、$Q(x)=xe^{-x^2}$。</p>
+<p class="fnote"><b>公式（積分因子）：</b>$y'+P(x)y=Q(x)$ 的積分因子為 $F(x)=e^{\int P(x)\,dx}$，乘上後 $\big(F(x)y\big)'=F(x)Q(x)$，其中 $x$ 為自變數、$y$ 為待求函數、$P(x),Q(x)$ 為已知函數；本題 $P(x)=2x$、$Q(x)=xe^{-x^2}$。</p>
+<p class="fnote"><b>公式（冪次積分）：</b>$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C$（$n\ne-1$），其中 $x$ 為積分變數、$n$ 為常數指數、$C$ 為積分常數；本題 $\int2x\,dx=x^2$（$n=1$，常數併入 $F$ 的倍數）與 $\int x\,dx=\dfrac{x^2}{2}+C$。</p>
+<div class="math-block">$$
+F(x)=e^{\int2x\,dx}=e^{x^2}.
+$$</div>
+<p><strong>② 乘上 $F$ 並積分：</strong></p>
+<div class="math-block">$$
+(e^{x^2}y)'=e^{x^2}(xe^{-x^2})=x.
+$$</div>
+<p>積分得 $e^{x^2}y=\int xdx=x^2/2+C$。</p>
+<p><strong>③ 代初值：</strong> $y(0)=1$ 給 $C=1$：</p>
+<div class="math-block">$$
+\boxed{y(x)=e^{-x^2}\left(1+\frac{x^2}{2}\right).}
+$$</div>

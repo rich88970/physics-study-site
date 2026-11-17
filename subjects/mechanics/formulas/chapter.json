@@ -1,0 +1,96 @@
+{
+  "title": "公式表（Lecture 1、2）",
+  "shortTitle": "力學 公式表",
+  "range": "Lecture 1、2 全部公式依主題整理：每條附一兩句說明、符號與使用條件，右上角連回講義那一段",
+  "pageLabel": "",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備古典力學考試（老師董育宸，課本 Thornton & Marion 5th ed.）。這一頁是力學 Lecture 1（矩陣、向量與向量微積分）與 Lecture 2（牛頓力學：單一質點）的公式表：每條公式附說明、符號與使用條件。學生問某條公式時，說明它從哪裡來、什麼條件下能用、常見的用錯方式，必要時舉一個短例子。",
+  "overview": "s00",
+  "sections": [
+    {
+      "id": "s00",
+      "file": "00-intro.html",
+      "title": "總覽與使用方式",
+      "pages": ""
+    },
+    {
+      "id": "s01",
+      "file": "01-calculus-vectors.html",
+      "title": "微積分與向量運算",
+      "pages": "Lecture 1 §1–5、§7",
+      "pageLabel": "",
+      "desc": "微分與積分的基本式、向量分量與長度、內積、外積、三重積、$\\varepsilon_{ijk}$、向量的微分。"
+    },
+    {
+      "id": "s02",
+      "file": "02-angular-rotation.html",
+      "title": "角速度、矩陣與座標旋轉",
+      "pages": "Lecture 1 §6、§8、§9",
+      "pageLabel": "",
+      "desc": "$\\vec v=\\vec\\omega\\times\\vec r$、矩陣乘法與行列式、二維與三維旋轉矩陣、正交條件、連續旋轉的次序。"
+    },
+    {
+      "id": "s03",
+      "file": "03-coordinates.html",
+      "title": "曲線座標：極、柱、球",
+      "pages": "Lecture 1 §10–11",
+      "pageLabel": "",
+      "desc": "單位向量隨時間的變化、極座標的速度與加速度、線元素、面積與體積元素、轉動慣量。"
+    },
+    {
+      "id": "s04",
+      "file": "04-vector-calculus.html",
+      "title": "梯度、散度、旋度與積分定理",
+      "pages": "Lecture 1 §12–15",
+      "pageLabel": "",
+      "desc": "$\\nabla$ 運算子、梯度與方向導數、散度與 Gauss 定理、旋度與 Stokes 定理、保守力的三種等價說法。"
+    },
+    {
+      "id": "s05",
+      "file": "05-newton.html",
+      "title": "牛頓定律與解運動方程",
+      "pages": "Lecture 2 §1–4",
+      "pageLabel": "",
+      "desc": "牛頓三定律、伽利略轉換、用第三定律定義質量、地球的加速度、$\\ddot x$ 的三種寫法與依力的形式選寫法。"
+    },
+    {
+      "id": "s06",
+      "file": "06-incline-drag.html",
+      "title": "斜面、阻力與由速度求力",
+      "pages": "Lecture 2 §5–7",
+      "pageLabel": "",
+      "desc": "斜面的座標與正向力、靜摩擦與動摩擦、阻力的一般形式、線性與 $v^2$ 阻力的完整解、終端速度、指數阻力、已知 $v(x)$ 求力、相對論定力。"
+    },
+    {
+      "id": "s07",
+      "file": "07-projectile.html",
+      "title": "拋體（含空氣阻力）",
+      "pages": "Lecture 2 §8–9",
+      "pageLabel": "",
+      "desc": "無阻力拋體的時間、射程、最大高度與軌跡、斜坡上的射程、線性阻力拋體與微擾法、$v^2$ 阻力拋體為什麼要數值解。"
+    },
+    {
+      "id": "s08",
+      "file": "08-atwood-em.html",
+      "title": "Atwood 機與帶電粒子",
+      "pages": "Lecture 2 §10",
+      "pageLabel": "",
+      "desc": "Atwood 機（含加速電梯）、Lorentz 力、均勻磁場中的圓周與螺旋運動、$\\vec E\\times\\vec B$ 漂移。"
+    },
+    {
+      "id": "s09",
+      "file": "09-conservation.html",
+      "title": "動量、角動量與能量守恆",
+      "pages": "Lecture 2 §11–14",
+      "pageLabel": "",
+      "desc": "線動量與角動量守恆、力矩、轉動慣量、功與功能定理、保守力與位能、能量守恆、圓周運動與迴圈軌道。"
+    },
+    {
+      "id": "s10",
+      "file": "10-equilibrium.html",
+      "title": "位能圖、平衡與穩定",
+      "pages": "Lecture 2 §15",
+      "pageLabel": "",
+      "desc": "由能量守恆求速度與時間、轉折點、平衡點與穩定性判斷、平衡點附近的小振動。"
+    }
+  ]
+}

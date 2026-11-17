@@ -1,0 +1,302 @@
+<h2>一、微積分基礎 <span class="pg">講義 p.2–9</span></h2>
+
+<p class="lead">微分是「位置 → 速度」，積分是「加速度 → 速度 → 位置」。講義把兩者寫成同一張表：微分寫成 $\mathrm df=f'(x)\,\mathrm dx$，積分就是把它倒過來讀。</p>
+
+<h3 id="c-differential">1.1 微分：$\mathrm df=f'(x)\,\mathrm dx$ <span class="pg-tag">p.5</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.5 Differentiation</span>
+  $$\mathrm d x^n = n x^{n-1}\,\mathrm dx,\qquad \mathrm d\sin x=\cos x\,\mathrm dx,\qquad \mathrm d\cos x=-\sin x\,\mathrm dx$$
+  $$\mathrm d e^x=e^x\,\mathrm dx,\qquad \mathrm d f(x)=f'(x)\,\mathrm dx$$
+</div>
+
+<p>$\mathrm dx$ 是 $x$ 的微小改變量，$\mathrm df$ 是 $f$ 跟著改變的量，導數 $f'(x)$ 就是兩者的倍數。嚴格說，$f'(x)\,\mathrm dx$ 是沿切線估計的改變量，和曲線上真正的改變量 $\Delta f$ 差了 $(\mathrm dx)^2$ 這個等級的量；$\mathrm dx$ 越小，這個差距消失得越快，所以可以忽略。</p>
+
+<div class="anim" data-anim="differential"></div>
+
+<h3 id="c-integral">1.2 積分：把微分表倒過來讀 <span class="pg-tag">p.3–4</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.3–4 Integration</span>
+  $$x^n\,\mathrm dx=\tfrac{1}{n+1}\,\mathrm d\!\left(x^{n+1}\right),\qquad \sin x\,\mathrm dx=-\mathrm d\cos x$$
+  $$\cos x\,\mathrm dx=\mathrm d\sin x,\qquad e^x\,\mathrm dx=\mathrm d e^x$$
+  $$\begin{aligned}
+  \int x^n\,\mathrm dx&=\frac{x^{n+1}}{n+1}+C\quad(n\neq-1)\\
+  \int \frac{1}{x^n}\,\mathrm dx&=\frac{x^{-n+1}}{-n+1}+C\quad(n\neq 1)\\
+  \int \sin x\,\mathrm dx&=-\cos x+C\\
+  \int\cos x\,\mathrm dx&=\sin x+C\\
+  \int\frac1x\,\mathrm dx&=\ln x+C\\
+  \int e^x\,\mathrm dx&=e^x+C\\
+  \int \dot x\,\mathrm dt&=x+C,\qquad \int\ddot x\,\mathrm dt=\dot x+C
+  \end{aligned}$$
+</div>
+
+<div class="step" data-step="c-reverse">
+  <span class="step-title">每一條都是微分表倒過來</span>
+  <p>以第一條為例：微分表說 $\mathrm d(x^{n+1})=(n+1)x^n\,\mathrm dx$，兩邊除以 $n+1$ 就是 $x^n\,\mathrm dx=\tfrac{1}{n+1}\mathrm d(x^{n+1})$。再兩邊積分，用 $\int\mathrm dF=F+C$ 即得 $\int x^n\,\mathrm dx=\frac{x^{n+1}}{n+1}+C$。積分常數 $C$ 是因為常數的改變量是 0，把改變量加總時看不出常數是多少。</p>
+</div>
+
+<div class="box pitfall">
+  <span class="box-title">三個常見錯誤</span>
+  <ul>
+    <li>$\int\sin x\,\mathrm dx=-\cos x+C$：負號來自 $\mathrm d\cos x=-\sin x\,\mathrm dx$。</li>
+    <li>$\int x^n\,\mathrm dx$ 的公式要 $n\neq-1$；$n=-1$ 時是 $\int\frac1x\,\mathrm dx=\ln x+C$。</li>
+    <li>$x$ 可能為負時要寫 $\ln|x|+C$。</li>
+  </ul>
+</div>
+
+<details class="supp">
+  <summary>$\mathrm d\ln x=\frac1x\,\mathrm dx$ 怎麼來（講義 p.6 的 $\ln x=y\leftrightarrow x=e^y$）</summary>
+  <div class="supp-body">
+    <div class="step" data-step="c-ln">
+      <span class="step-title">由 $x=e^y$ 反推</span>
+      <p>令 $y=\ln x$，則 $x=e^y$，兩邊取改變量：</p>
+      $$\mathrm dx=e^y\,\mathrm dy=x\,\mathrm dy\ \Longrightarrow\ \mathrm d(\ln x)=\mathrm dy=\frac{\mathrm dx}{x}.$$
+    </div>
+  </div>
+</details>
+
+<h3 id="c-dot">1.3 時間導數：$\dot x$、$\ddot x$ <span class="pg-tag">p.4、p.6</span></h3>
+
+$$\dot x\equiv\frac{\mathrm dx}{\mathrm dt}\ \Leftrightarrow\ \mathrm dx=\dot x\,\mathrm dt,\qquad \ddot x\equiv\frac{\mathrm d\dot x}{\mathrm dt}\ \Leftrightarrow\ \mathrm d\dot x=\ddot x\,\mathrm dt$$
+
+<p>$x$ 是位置時，$\dot x$ 是速度、$\ddot x$ 是加速度。因為 $\dot x\,\mathrm dt=\mathrm dx$，所以 $\int\dot x\,\mathrm dt=\int\mathrm dx=x+C$：速度積分得位置，加速度積分得速度。</p>
+
+<p><strong>例：</strong>球在 $t=0$ 時高 $x_0=20\ \text{m}$，以 $v_0=5\ \text{m/s}$ 往上拋，取向上為正，$\ddot x=-g$。</p>
+<div class="step" data-step="c-ff1">
+  <span class="step-title">積分一次</span>
+  <p>$\dot x=\int(-g)\,\mathrm dt=-gt+C_1$；$t=0$ 時 $\dot x=v_0$，所以 $C_1=v_0$：$\ \dot x=-9.8t+5\ \text{m/s}$。</p>
+</div>
+<div class="step" data-step="c-ff2">
+  <span class="step-title">再積分一次</span>
+  <p>$x=-\tfrac12gt^2+v_0t+C_2$；$t=0$ 時 $x=x_0$，所以 $C_2=x_0$：$\ x=-4.9t^2+5t+20\ \text{m}$。</p>
+</div>
+<p>兩個積分常數分別是初速和初位置。</p>
+
+<h3 id="c-product">1.4 乘積律與商數律 <span class="pg-tag">p.7</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.7</span>
+  $$\mathrm d(fg)=g\,\mathrm df+f\,\mathrm dg,\qquad \mathrm d\!\left(\frac fg\right)=\frac{g\,\mathrm df-f\,\mathrm dg}{g^2}$$
+</div>
+
+<p>把 $fg$ 想成長 $f$、寬 $g$ 的長方形面積。兩邊各增加一點，面積多出右邊一條 $g\,\mathrm df$、上面一條 $f\,\mathrm dg$，和角落一小塊 $\mathrm df\,\mathrm dg$；角落是兩個微小量相乘，可以忽略。</p>
+
+<div class="anim" data-anim="product-rule"></div>
+
+<div class="problem" data-kind="example" id="ex-p7a">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.7</span></div>
+    <h4>$\mathrm d(x\sin x)$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p7a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $x\sin x$ 的微分。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$f=x$、$g=\sin x$，要微分的是兩者相乘 $fg=x\sin x$。</p>
+<p><strong>① 各自微分：</strong> $x\sin x$ 是兩個函數相乘，微分表沒有「相乘之後」的公式，要用乘積律拆開；乘積律需要 $\mathrm df$、$\mathrm dg$，所以先各查一次微分表。</p>
+<p class="fnote"><b>公式（微分表）：</b>$\mathrm dx^n=nx^{n-1}\mathrm dx$、$\mathrm d\sin x=\cos x\,\mathrm dx$，其中 $n$ 為指數；本題 $f=x$ 取 $n=1$，$g=\sin x$ 直接查表。</p>
+<div class="math-block">$$\mathrm df=\mathrm d(x^1)=1\cdot x^0\,\mathrm dx=\mathrm dx$$</div>
+<div class="math-block">$$\mathrm dg=\mathrm d(\sin x)=\cos x\,\mathrm dx$$</div>
+<p><strong>② 代入乘積律：</strong> $f$ 變一點時乘上不變的 $g$，加上 $g$ 變一點時乘上不變的 $f$。</p>
+<p class="fnote"><b>公式（乘積律）：</b>$\mathrm d(fg)=g\,\mathrm df+f\,\mathrm dg$，其中 $f,g$ 為兩個因子，$\mathrm df,\mathrm dg$ 為各自的微分；本題 $f=x$、$g=\sin x$。</p>
+<p>代入上一步的 $\mathrm df=\mathrm dx$、$\mathrm dg=\cos x\,\mathrm dx$：</p>
+<div class="math-block">$$\mathrm d(x\sin x)=\underbrace{\sin x}_{g}\cdot\underbrace{\mathrm dx}_{\mathrm df}+\underbrace{x}_{f}\cdot\underbrace{\cos x\,\mathrm dx}_{\mathrm dg}$$</div>
+<p><strong>③ 提出 $\mathrm dx$：</strong> 兩項都有 $\mathrm dx$，提出來就是「導數 $\times\,\mathrm dx$」的形式，導數為 $\dfrac{\mathrm d}{\mathrm dx}(x\sin x)=\sin x+x\cos x$。</p>
+<div class="math-block">$$\boxed{\mathrm d(x\sin x)=(\sin x+x\cos x)\,\mathrm dx}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="ex-p7b">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.7</span></div>
+    <h4>$\mathrm d\!\left(\frac{\sin x}{x}\right)$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p7b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $\dfrac{\sin x}{x}$ 的微分（$x\neq0$）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：分子 $f=\sin x$、分母 $g=x$；$x\neq0$（商數律要除以 $g^2=x^2$）。</p>
+<p><strong>① 各自微分：</strong> 函數是分子除以分母、兩者都隨 $x$ 改變，所以用商數律；先把它需要的 $\mathrm df$、$\mathrm dg$、$g^2$ 算好（查微分表）。</p>
+<div class="math-block">$$\mathrm df=\cos x\,\mathrm dx,\qquad \mathrm dg=\mathrm dx,\qquad g^2=x^2$$</div>
+<p><strong>② 代入商數律：</strong> 分子是「分母 × 分子的變化 − 分子 × 分母的變化」，次序反了會差一個負號。</p>
+<p class="fnote"><b>公式（商數律）：</b>$\mathrm d\!\left(\dfrac fg\right)=\dfrac{g\,\mathrm df-f\,\mathrm dg}{g^2}$，其中 $f$ 為分子、$g$ 為分母；本題 $f=\sin x$、$g=x$。</p>
+<p>代入上一步的 $\mathrm df=\cos x\,\mathrm dx$、$\mathrm dg=\mathrm dx$、$g^2=x^2$：</p>
+<div class="math-block">$$\mathrm d\!\left(\frac{\sin x}{x}\right)=\frac{x\cdot\cos x\,\mathrm dx-\sin x\cdot\mathrm dx}{x^2}$$</div>
+<p><strong>③ 提出 $\mathrm dx$：</strong> 分子兩項都有 $\mathrm dx$，提出來得到導數。</p>
+<div class="math-block">$$\boxed{\mathrm d\!\left(\frac{\sin x}{x}\right)=\frac{x\cos x-\sin x}{x^2}\,\mathrm dx}$$</div>
+    </div>
+  </div>
+</div>
+
+<details class="supp">
+  <summary>商數律可由乘積律推出</summary>
+  <div class="supp-body">
+    <p>把 $\frac fg$ 看成 $f\cdot g^{-1}$，而 $\mathrm d(g^{-1})=-\frac{1}{g^2}\mathrm dg$（p.6 取 $n=1$）：</p>
+    $$\mathrm d\big(f g^{-1}\big)=\frac{\mathrm df}{g}-\frac{f\,\mathrm dg}{g^2}=\frac{g\,\mathrm df-f\,\mathrm dg}{g^2}.$$
+  </div>
+</details>
+
+<h3 id="c-subst">1.5 換元積分 <span class="pg-tag">p.8–9</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.8</span>
+  $$\mathrm dx=\frac1k\,\mathrm d(kx+b),\qquad \int f(kx+b)\,\mathrm dx=\frac1k\int f(y)\,\mathrm dy,\quad y\equiv kx+b$$
+</div>
+
+<p>技巧是把 $\mathrm dx$ 改寫成 $\mathrm d(\text{某東西})$，讓積分變成表上有的形式。第一式成立是因為 $\mathrm d(kx+b)=k\,\mathrm dx$：常數 $b$ 的改變量是 0，所以可以把 $b$ 放進 $\mathrm d(\ )$ 裡。</p>
+
+<div class="problem" data-kind="example" id="ex-p8">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.8</span></div>
+    <h4>$\displaystyle\int\frac{\mathrm dx}{kx+b}$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $\displaystyle\int\frac{\mathrm dx}{kx+b}$（$k\neq0$）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$k,b$ 為常數，$k\neq0$；新變數 $y=kx+b$。</p>
+<p><strong>① 把 $\mathrm dx$ 寫成 $\mathrm d(kx+b)$：</strong> 積分表只有分母是單一變數的 $\int\frac{\mathrm dy}{y}$，所以把整個 $kx+b$ 當成 $y$，但要先把 $\mathrm dx$ 換成 $\mathrm dy$。$k$ 是常數、$b$ 的改變量是 0：</p>
+<div class="math-block">$$\mathrm d(kx+b)=k\,\mathrm dx+0=k\,\mathrm dx$$</div>
+<p>兩邊除以 $k$（需要題目給的 $k\neq0$）：</p>
+<div class="math-block">$$\mathrm dx=\frac1k\,\mathrm d(kx+b)$$</div>
+<p><strong>② 換元：</strong> 把上一步的 $\mathrm dx$ 代進積分，令 $y=kx+b$，常數 $\frac1k$ 提到積分外：</p>
+<div class="math-block">$$\begin{aligned}\int\frac{\mathrm dx}{kx+b}&amp;=\int\frac{1}{kx+b}\cdot\frac1k\,\mathrm d(kx+b)\\&amp;=\frac1k\int\frac{\mathrm dy}{y}\end{aligned}$$</div>
+<p><strong>③ 積分，再換回 $x$：</strong> 套積分表後把 $y=kx+b$ 代回；$\frac1k$ 乘上任意常數仍是任意常數，所以只寫一個 $C$。</p>
+<p class="fnote"><b>公式（積分表）：</b>$\int\frac{\mathrm dy}{y}=\ln|y|+C$，其中 $y$ 為積分變數、$C$ 為積分常數；本題 $y=kx+b$。</p>
+<div class="math-block">$$\begin{aligned}\frac1k\int\frac{\mathrm dy}{y}&amp;=\frac1k\ln|y|+C\\&amp;=\frac1k\ln|kx+b|+C\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\int\frac{\mathrm dx}{kx+b}=\frac1k\ln|kx+b|+C}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="ex-p9">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.9</span></div>
+    <h4>$\displaystyle\int\frac{x}{1+x^2}\,\mathrm dx$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $\displaystyle\int\frac{x}{1+x^2}\,\mathrm dx$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：令 $u=1+x^2$；分母 $1+x^2\ge1\gt0$。</p>
+<p><strong>① 湊出 $\mathrm d(1+x^2)$：</strong> 分子 $x\,\mathrm dx$ 剛好是分母微分的一半，所以把它湊成 $\frac12\mathrm d(1+x^2)$，積分就變成積分表上的 $\int\frac{\mathrm du}{u}$。先求分母的微分，常數 1 的改變量是 0。</p>
+<p class="fnote"><b>公式（冪次微分）：</b>$\mathrm dx^n=nx^{n-1}\mathrm dx$，其中 $n$ 為指數；本題 $n=2$。</p>
+<div class="math-block">$$\mathrm d(1+x^2)=0+2x\,\mathrm dx=2x\,\mathrm dx$$</div>
+<p>兩邊除以 2，得到分子需要的 $x\,\mathrm dx$：</p>
+<div class="math-block">$$x\,\mathrm dx=\tfrac12\,\mathrm d(1+x^2)$$</div>
+<p><strong>② 令 $u=1+x^2$，換元：</strong> 代入上一步的 $x\,\mathrm dx=\frac12\mathrm d(1+x^2)=\frac12\mathrm du$，常數 $\frac12$ 提出：</p>
+<div class="math-block">$$\int\frac{x\,\mathrm dx}{1+x^2}=\int\frac{\frac12\,\mathrm du}{u}=\frac12\int\frac{\mathrm du}{u}$$</div>
+<p><strong>③ 積分，再換回 $x$：</strong> 代回 $u=1+x^2$；因為 $1+x^2\gt0$，絕對值可以拿掉。</p>
+<p class="fnote"><b>公式（積分表）：</b>$\int\frac{\mathrm du}{u}=\ln|u|+C$，其中 $u$ 為積分變數、$C$ 為積分常數；本題 $u=1+x^2$。</p>
+<div class="math-block">$$\frac12\ln|u|+C=\frac12\ln(1+x^2)+C$$</div>
+<div class="math-block">$$\boxed{\int\frac{x}{1+x^2}\,\mathrm dx=\frac12\ln(1+x^2)+C}$$</div>
+<p>（講義省略了 $+C$，考試要寫。）</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s01">1.6 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s01-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>有阻力的滑行：會不會停在有限距離</h4>
+    <button type="button" class="exam-btn" data-exam="self-s01-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>冰上滑行的物體只受阻力，$t=0$ 時 $x=0$、$\dot x=v_0$。(a) 阻力和速度成正比：$\ddot x=-k\dot x$（$k\gt0$）。求 $\dot x(t)$、$x(t)$，物體最後停在哪裡？以 $v_0=20\ \text{m/s}$、$k=0.5\ \text{s}^{-1}$ 代入。(b) 阻力改成和速度平方成正比：$\ddot x=-c\dot x^2$（$c\gt0$）。求 $\dot x(t)$、$x(t)$；物體會停在有限距離內嗎？(c) 兩種阻力都讓速度永遠不會剛好變成 0，為什麼結論不同？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$v=\dot x$；$x(0)=0$、$\dot x(0)=v_0$；只受阻力，$v\gt0$ 一路變小但不反向。(a) $\ddot x=-k\dot x$，$v_0=20\ \text{m/s}$、$k=0.5\ \text{s}^{-1}$；(b) $\ddot x=-c\dot x^2$，$c\gt0$。</p>
+<h4>(a) 線性阻力</h4>
+<p><strong>① 分離變數、積分出 $v(t)$：</strong> 加速度隨速度改變，不能用等加速度公式；把 $\ddot x$ 寫成 $\frac{\mathrm dv}{\mathrm dt}=-kv$，$v$、$t$ 分到兩邊各自積分。</p>
+<div class="math-block">$$\frac{\mathrm dv}{v}=-k\,\mathrm dt$$</div>
+<p>左邊從 $v_0$ 積到 $v$、右邊從 $0$ 積到 $t$（上下限對應同一時刻）。</p>
+<p class="fnote"><b>公式（積分表）：</b>$\int\frac{\mathrm dv}{v}=\ln v$（$v\gt0$），其中 $v$ 為速度；本題上下限為 $v_0$ 到 $v$。</p>
+<div class="math-block">$$\begin{aligned}\ln v-\ln v_0&amp;=-k(t-0)\\ \ln\frac{v}{v_0}&amp;=-kt\end{aligned}$$</div>
+<p>兩邊取指數：</p>
+<div class="math-block">$$v=\dot x=v_0e^{-kt}$$</div>
+<p><strong>② 再積分得 $x(t)$，取 $t\to\infty$：</strong> $\dot x=v$，位置是速度從 $0$ 到 $t$ 的積分（起點 $x(0)=0$）。</p>
+<p class="fnote"><b>公式（積分表）：</b>$\int e^{-kt'}\mathrm dt'=-\frac1ke^{-kt'}$，其中 $k$ 為常數；本題 $k$ 為阻力常數。</p>
+<div class="math-block">$$\begin{aligned}x&amp;=\int_0^t v_0e^{-kt'}\,\mathrm dt'=v_0\Big[-\frac1ke^{-kt'}\Big]_0^t\\&amp;=\frac{v_0}{k}\left(1-e^{-kt}\right)\end{aligned}$$</div>
+<p>$t\to\infty$ 時 $e^{-kt}\to0$，$x\to\dfrac{v_0}{k}$，是有限的停止位置。代入 $v_0=20\ \text{m/s}$、$k=0.5\ \text{s}^{-1}$：</p>
+<div class="math-block">$$x_\infty=\frac{v_0}{k}=\frac{20\ \text{m/s}}{0.5\ \text{s}^{-1}}=40\ \text{m}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\dot x=v_0e^{-kt},\quad x=\frac{v_0}{k}\left(1-e^{-kt}\right)\\ \text{最後停在 }x_\infty=40\ \text{m}\end{gathered}}$$</div>
+<h4>(b) 平方阻力</h4>
+<p><strong>① 分離變數、積分出 $v(t)$：</strong> 同樣把 $\ddot x=-c\dot x^2$ 寫成 $\frac{\mathrm dv}{\mathrm dt}=-cv^2$，分離變數：</p>
+<div class="math-block">$$\frac{\mathrm dv}{v^2}=-c\,\mathrm dt$$</div>
+<p>用 $\int v^{-2}\,\mathrm dv=-v^{-1}$，左邊從 $v_0$ 積到 $v$、右邊從 $0$ 積到 $t$：</p>
+<div class="math-block">$$\Big[-\frac1v\Big]_{v_0}^{v}=-ct\ \Longrightarrow\ \frac1v-\frac1{v_0}=ct$$</div>
+<p>解出 $v$：$\frac1v=\frac{1+cv_0t}{v_0}$，</p>
+<div class="math-block">$$v=\dot x=\frac{v_0}{1+cv_0t}$$</div>
+<p><strong>② 再積分得 $x(t)$：</strong> 被積函數是 $\frac{1}{\alpha t+b}$ 型，$\alpha=cv_0$、$b=1$（改用 $\alpha$，因為 $k$ 在 (a) 已是阻力常數）。</p>
+<p class="fnote"><b>公式（講義 p.8 的換元結果）：</b>$\int\frac{\mathrm dt}{\alpha t+b}=\frac1\alpha\ln(\alpha t+b)$，其中 $\alpha,b$ 為常數；本題 $\alpha=cv_0$、$b=1$。</p>
+<div class="math-block">$$\begin{aligned}x&amp;=\int_0^t\frac{v_0\,\mathrm dt'}{1+cv_0t'}=v_0\cdot\frac{1}{cv_0}\Big[\ln(1+cv_0t')\Big]_0^t\\&amp;=\frac1c\ln(1+cv_0t)\end{aligned}$$</div>
+<p>$\ln$ 沒有上限，$t\to\infty$ 時 $x\to\infty$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\dot x=\frac{v_0}{1+cv_0t},\quad x=\frac1c\ln(1+cv_0t)\\ \text{沒有有限的停止距離}\end{gathered}}$$</div>
+<h4>(c) 為什麼結論不同</h4>
+<p><strong>① 比較停止距離收不收斂：</strong> 兩種情形 $v$ 都不會剛好變成 0，差別在停止距離 $\int_0^\infty v\,\mathrm dt$ 收不收斂：(a) 的 $v$ 指數衰減，積分收斂到 $v_0/k$；(b) 的 $v$ 在 $t$ 很大時約為 $\frac{1}{ct}$，$\int\frac{\mathrm dt}{t}=\ln t$ 會發散。</p>
+<p><strong>② 物理解釋：</strong> 速度很小時 $v^2\ll v$，平方阻力幾乎消失，物體幾乎不再減速，就一直慢慢滑下去。也可以不經過 $t$：(b) 用連鎖律 $\frac{\mathrm dv}{\mathrm dt}=v\frac{\mathrm dv}{\mathrm dx}$，</p>
+<div class="math-block">$$v\frac{\mathrm dv}{\mathrm dx}=-cv^2\ \Longrightarrow\ \frac{\mathrm dv}{\mathrm dx}=-cv\ \Longrightarrow\ v=v_0e^{-cx}$$</div>
+<p>$x$ 再大，$v$ 也不是 0。</p>
+<div class="math-block">$$\boxed{\text{關鍵是低速時阻力消失得多快}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s01-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>彈簧振動：不解 $x(t)$ 也能求振幅</h4>
+    <button type="button" class="exam-btn" data-exam="self-s01-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點的加速度 $\ddot x=-\omega^2x$。已知在 $x=x_0$ 處速度為 $v_0$。不求 $x(t)$，直接求速度和位置的關係 $v(x)$ 與振幅 $A$。代入 $x_0=0.03\ \text{m}$、$v_0=0.4\ \text{m/s}$、$\omega=10\ \text{s}^{-1}$，並求 $x=0.04\ \text{m}$ 處的速率。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\ddot x=-\omega^2x$，$\omega=10\ \text{s}^{-1}$；已知 $x_0=0.03\ \text{m}$ 時 $v_0=0.4\ \text{m/s}$；振幅 $A$ 是離平衡點最遠、$v=0$ 的轉折點。</p>
+<p><strong>① 連鎖律換變數：</strong> 加速度是位置的函數、不知道 $x(t)$ 就不能對 $t$ 積分，而題目要的也是 $v(x)$，所以把 $\frac{\mathrm dv}{\mathrm dt}$ 換成 $v\frac{\mathrm dv}{\mathrm dx}$。</p>
+<p class="fnote"><b>公式（連鎖律）：</b>$\dfrac{\mathrm dv}{\mathrm dt}=\dfrac{\mathrm dv}{\mathrm dx}\dfrac{\mathrm dx}{\mathrm dt}$，其中 $v$ 先依賴 $x$、$x$ 再依賴 $t$；本題 $\frac{\mathrm dx}{\mathrm dt}=v$。</p>
+<div class="math-block">$$\ddot x=\frac{\mathrm dv}{\mathrm dt}=\frac{\mathrm dv}{\mathrm dx}\frac{\mathrm dx}{\mathrm dt}=v\frac{\mathrm dv}{\mathrm dx}$$</div>
+<p>代入 $\ddot x=-\omega^2x$，兩邊乘 $\mathrm dx$：</p>
+<div class="math-block">$$v\,\mathrm dv=-\omega^2x\,\mathrm dx$$</div>
+<p><strong>② 兩邊積分，得 $v^2(x)$：</strong> 左邊從已知狀態的 $v_0$ 積到 $v$，右邊從對應的 $x_0$ 積到 $x$，用 $\int v\,\mathrm dv=\frac12v^2$、$\int x\,\mathrm dx=\frac12x^2$：</p>
+<div class="math-block">$$\begin{aligned}\int_{v_0}^{v}v\,\mathrm dv&amp;=-\omega^2\int_{x_0}^{x}x\,\mathrm dx\\ \tfrac12(v^2-v_0^2)&amp;=-\tfrac12\omega^2(x^2-x_0^2)\end{aligned}$$</div>
+<p>兩邊乘 2、移項：</p>
+<div class="math-block">$$v^2=v_0^2+\omega^2(x_0^2-x^2)$$</div>
+<p><strong>③ 振幅＝速度為 0 的轉折點：</strong> 在最遠處 $x=A$ 速度為 0，代入上式：</p>
+<div class="math-block">$$0=v_0^2+\omega^2(x_0^2-A^2)\ \Longrightarrow\ A^2=x_0^2+\frac{v_0^2}{\omega^2}$$</div>
+<p>代入 $x_0=0.03\ \text{m}$、$v_0=0.4\ \text{m/s}$、$\omega=10\ \text{s}^{-1}$：</p>
+<div class="math-block">$$\begin{aligned}A^2&amp;=(0.03)^2+\frac{(0.4)^2}{(10)^2}\ \text{m}^2\\&amp;=0.0009+0.0016=0.0025\ \text{m}^2\end{aligned}$$</div>
+<div class="math-block">$$A=\sqrt{0.0025}\ \text{m}=0.05\ \text{m}$$</div>
+<p><strong>④ $x=0.04\ \text{m}$ 的速率：</strong> 把要問的位置代進 ② 的 $v^2(x)$，代入 $v_0=0.4$、$\omega=10$、$x_0=0.03$、$x=0.04\ \text{m}$：</p>
+<div class="math-block">$$\begin{aligned}v^2&amp;=(0.4)^2+(10)^2\big[(0.03)^2-(0.04)^2\big]\\&amp;=0.16+100\,(0.0009-0.0016)\\&amp;=0.16-0.07=0.09\ \text{m}^2/\text{s}^2\end{aligned}$$</div>
+<div class="math-block">$$|v|=\sqrt{0.09}=0.3\ \text{m/s}$$</div>
+<p>速度的正負由 $v^2$ 決定不了，題目只問速率。</p>
+<div class="math-block">$$\boxed{\begin{gathered}v^2=v_0^2+\omega^2(x_0^2-x^2)\\ A=\sqrt{x_0^2+v_0^2/\omega^2}=0.05\ \text{m}\\ x=0.04\ \text{m}\text{ 處 }|v|=0.3\ \text{m/s}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\mathrm df=f'(x)\,\mathrm dx$；積分是把微分表倒過來讀，再加積分常數。</li>
+    <li>乘積律 $\mathrm d(fg)=g\,\mathrm df+f\,\mathrm dg$，第七節的向量微分用同一個規則。</li>
+    <li>換元：把被積式湊成 $g(u)\,\mathrm du$，而 $\mathrm d(u+\text{常數})=\mathrm du$。</li>
+  </ol>
+</div>

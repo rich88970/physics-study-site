@@ -1,0 +1,594 @@
+<h2>九、座標旋轉 <span class="pg">講義 p.41–50</span></h2>
+
+<p class="lead">座標軸轉了 $\theta$ 以後，同一個點的座標變成多少？答案是乘上一個旋轉矩陣。弄懂它為什麼長這樣，三維的三個矩陣就不用硬背。</p>
+
+<div class="box pitfall">
+  <span class="box-title">講義轉的是「座標軸」，點不動</span>
+  <p>這叫被動旋轉：軸逆時針轉 $\theta$，從新軸看，點好像順時針轉了。若題目是「點轉、軸不動」（主動旋轉），矩陣中兩個 $\sin\theta$ 的正負號要對調。</p>
+</div>
+
+<div class="anim" data-anim="passive-active"></div>
+
+<h3 id="rot-2d">9.1 二維旋轉 <span class="pg-tag">p.41–42</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.41–42 2-D Rotation</span>
+  <p>$\vec P=x'\hat x'+y'\hat y'=x\hat x+y\hat y$，兩邊分別與 $\hat x'$、$\hat y'$ 內積：</p>
+  $$\begin{aligned}
+  x'&=x\cos\theta+y\cos(90^\circ-\theta)=x\cos\theta+y\sin\theta\\
+  y'&=x\cos(90^\circ+\theta)+y\cos\theta=-x\sin\theta+y\cos\theta
+  \end{aligned}$$
+  $$\begin{bmatrix}x'\\y'\end{bmatrix}=\begin{bmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}\quad\text{（旋轉矩陣）}$$
+</div>
+
+<div class="step" data-step="rot-idea">
+  <span class="step-title">兩邊跟 $\hat x'$ 內積</span>
+  <p>點 $P$ 的位置向量是同一支箭頭，用新軸、舊軸寫都對，所以兩種寫法相等。要取 $x'$（在 $\hat x'$ 方向的分量），就兩邊跟 $\hat x'$ 內積：左邊 $\hat x'\cdot\hat x'=1$、$\hat y'\cdot\hat x'=0$，只剩 $x'$；右邊是 $x(\hat x\cdot\hat x')+y(\hat y\cdot\hat x')$。</p>
+</div>
+
+<div class="step" data-step="rot-angles">
+  <span class="step-title">兩個單位向量的內積 = cos（夾角）</span>
+  <p>$\hat x$ 與 $\hat x'$ 夾 $\theta$；$\hat y$ 在 $90^\circ$、$\hat x'$ 在 $\theta$，夾 $90^\circ-\theta$，所以 $\hat y\cdot\hat x'=\sin\theta$。同理求 $y'$ 時，$\hat x$ 與 $\hat y'$ 夾 $90^\circ+\theta$，$\cos(90^\circ+\theta)=-\sin\theta$——<strong>這就是負號的來源</strong>。</p>
+</div>
+
+<div class="anim" data-anim="rot2d"></div>
+
+<p>矩陣的第一個 row $(\cos\theta,\sin\theta)$ 正好是 $\hat x'$ 在舊座標中的分量，第二個 row $(-\sin\theta,\cos\theta)$ 是 $\hat y'$ 的分量：<strong>旋轉矩陣的每個 row，就是一個新軸用舊座標寫出來</strong>。這個觀察在三維非常好用。</p>
+
+<h3 id="rot-special">9.2 特殊角度 <span class="pg-tag">p.43</span></h3>
+
+<div class="problem" data-kind="example" id="ex-p43">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.43</span></div>
+    <h4>$\theta=0$ 與 $\theta=\pi/2$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p43">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>分別代入 $\theta=0$ 與 $\theta=\pi/2$，求平面旋轉後的座標 $(x',y')$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：座標軸轉 $\theta$、點不動（被動旋轉）；求同一點的新座標 $(x',y')$，$\theta=0$ 與 $\theta=\pi/2$。</p>
+<p><strong>① $\theta=0$：先求三角函數值，再代入：</strong> 旋轉矩陣已是 $\theta$ 的一般式，只要算出 $\cos\theta$、$\sin\theta$ 代進去，再乘上 $\begin{bmatrix}x\\y\end{bmatrix}$。</p>
+<p class="fnote"><b>公式（二維旋轉矩陣）：</b>$x'=x\cos\theta+y\sin\theta$、$y'=-x\sin\theta+y\cos\theta$，其中 $(x,y)$ 為舊座標、$(x',y')$ 為座標軸轉 $\theta$ 後的新座標；本題 $\theta$ 分別取 $0$ 與 $\pi/2$。</p>
+<p>代入 $\cos0=1$、$\sin0=0$：</p>
+<div class="math-block">$$\begin{bmatrix}x'\\y'\end{bmatrix}=\begin{bmatrix}1&amp;0\\0&amp;1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}x\\y\end{bmatrix}$$</div>
+<p>矩陣是單位矩陣，軸沒動，座標不變。</p>
+<div class="math-block">$$\boxed{\theta=0:\ (x',y')=(x,y)}$$</div>
+<p><strong>② $\theta=\pi/2$：代入矩陣：</strong> 代入 $\cos\frac\pi2=0$、$\sin\frac\pi2=1$，矩陣四格依序是 $\cos\theta,\ \sin\theta,\ -\sin\theta,\ \cos\theta$：</p>
+<div class="math-block">$$\lambda\!\left(\tfrac\pi2\right)=\begin{bmatrix}0&amp;1\\-1&amp;0\end{bmatrix}$$</div>
+<p><strong>③ $\theta=\pi/2$：乘上 $(x,y)$：</strong> 第 1 個 row $(0,1)$、第 2 個 row $(-1,0)$ 各和 $(x,y)$ 內積：</p>
+<div class="math-block">$$\begin{aligned}x'&amp;=0\cdot x+1\cdot y=y\\y'&amp;=(-1)\cdot x+0\cdot y=-x\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\theta=\pi/2:\ (x',y')=(y,-x)}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="rot-3d">9.3 三維：繞某一軸旋轉 <span class="pg-tag">p.44–48</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.44–48 繞 $\hat x$、$\hat z$、$\hat y$ 旋轉</span>
+  $$\lambda_x=\begin{bmatrix}1&0&0\\0&\cos\theta&\sin\theta\\0&-\sin\theta&\cos\theta\end{bmatrix}$$
+  $$\lambda_z=\begin{bmatrix}\cos\theta&\sin\theta&0\\-\sin\theta&\cos\theta&0\\0&0&1\end{bmatrix}$$
+  $$\lambda_y=\begin{bmatrix}\cos\theta&0&-\sin\theta\\0&1&0\\\sin\theta&0&\cos\theta\end{bmatrix}$$
+</div>
+
+<p>繞 $\hat x$ 轉時 $x$ 軸不動，所以 $x'=x$（填 1 和 0）；$y,z$ 兩軸在垂直 $x$ 的平面內轉 $\theta$，和二維完全一樣。三個矩陣都是這樣組出來的。</p>
+
+<div class="step" data-step="rot-y">
+  <span class="step-title">為什麼繞 $\hat y$ 的負號在右上角</span>
+  <p>二維公式的「第一軸 → 第二軸」要符合右手系，次序是循環 $x\to y\to z\to x$：繞 $z$ 配對 $(x,y)$，繞 $x$ 配對 $(y,z)$，繞 $y$ 配對 $(z,x)$——<strong>不是 $(x,z)$</strong>。所以繞 $\hat y$ 時 $z'=z\cos\theta+x\sin\theta$、$x'=-z\sin\theta+x\cos\theta$，排回 $(x,y,z)$ 的次序，$-\sin\theta$ 就落在右上角。</p>
+</div>
+
+<div class="anim" data-anim="rot-y"></div>
+
+<details class="supp" id="rot-dircos">
+  <summary>一般原則：$\lambda_{ij}=\hat x_i'\cdot\hat x_j$（方向餘弦）與正交矩陣</summary>
+  <div class="supp-body">
+    <p>把 9.1 推廣到三維：$x_i'=\sum_j\lambda_{ij}x_j$，$\lambda_{ij}=\hat x_i'\cdot\hat x_j$ 是新第 $i$ 軸與舊第 $j$ 軸夾角的 cos。第 $i$ 個 row 就是 $\hat x_i'$ 的分量，所以每個 row 長度 1、不同 row 互相垂直，合起來是 $\lambda\lambda^{\mathsf T}=I$（正交矩陣），表示旋轉不改變長度。$\det\lambda=+1$ 是純旋轉，$-1$ 含鏡射。</p>
+    <p>繞任意軸轉的題目（如課本 1-3），只要寫出三個新軸在舊座標中的分量，排成 row 就是答案。</p>
+  </div>
+</details>
+
+<h3 id="rot-ex11">9.4 Example 1.1 <span class="pg-tag">p.49</span></h3>
+
+<div class="problem" data-kind="example" id="ex-p49">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.49 · Example 1.1</span></div>
+    <h4>$\vec P(2,1,3)$ 在繞 $\hat x_1$ 轉 $30^\circ$ 的座標系中</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p49">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>點 $\vec P(2,1,3)$。座標系繞 $\hat x_1$ 軸旋轉 $30^\circ$，求 $\vec P$ 在新座標系中的分量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：舊座標 $(x_1,x_2,x_3)=(2,1,3)$；座標系繞 $\hat x_1$ 轉 $\theta=30^\circ$，點不動（被動旋轉）；$\cos30^\circ=\frac{\sqrt3}{2}$、$\sin30^\circ=\frac12$。</p>
+<div class="anim" data-anim="rot3d"></div>
+<p><strong>① 寫出 $\lambda_x$，代入 $\theta=30^\circ$：</strong> 轉軸正好是 $\hat x_1$，$x_1$ 軸不動，$x_2,x_3$ 在垂直平面內轉，和二維一樣，直接用 $\lambda_x$。</p>
+<p class="fnote"><b>公式（繞 $\hat x_1$ 的旋轉矩陣）：</b>$\vec x'=\lambda_x\vec x$，$\lambda_x=\begin{bmatrix}1&amp;0&amp;0\\0&amp;\cos\theta&amp;\sin\theta\\0&amp;-\sin\theta&amp;\cos\theta\end{bmatrix}$，其中 $\vec x$ 為舊座標、$\vec x'$ 為新座標、$\theta$ 為座標系繞 $\hat x_1$ 的轉角；本題 $\theta=30^\circ$、$\vec x=(2,1,3)$。</p>
+<p>代入 $\cos30^\circ=\frac{\sqrt3}{2}$、$\sin30^\circ=\frac12$ 與舊座標 $(2,1,3)$：</p>
+<div class="math-block">$$\begin{bmatrix}x_1'\\x_2'\\x_3'\end{bmatrix}=\begin{bmatrix}1&amp;0&amp;0\\0&amp;\frac{\sqrt3}{2}&amp;\frac12\\0&amp;-\frac12&amp;\frac{\sqrt3}{2}\end{bmatrix}\begin{bmatrix}2\\1\\3\end{bmatrix}$$</div>
+<p><strong>② 逐 row 計算：</strong> 第 $i$ 個分量 = 矩陣第 $i$ 個 row 和 $(2,1,3)$ 的內積：</p>
+<div class="math-block">$$x_1'=1\times2+0\times1+0\times3=2$$</div>
+<div class="math-block">$$x_2'=0\times2+\tfrac{\sqrt3}{2}\times1+\tfrac12\times3=\tfrac{3+\sqrt3}{2}$$</div>
+<div class="math-block">$$x_3'=0\times2-\tfrac12\times1+\tfrac{\sqrt3}{2}\times3=\tfrac{3\sqrt3-1}{2}$$</div>
+<p>換成小數（$\sqrt3\approx1.732$）：</p>
+<div class="math-block">$$x_2'=\frac{3+1.732}{2}=2.366,\qquad x_3'=\frac{5.196-1}{2}=2.098$$</div>
+<p>$x_1'$ 不變，因為點在轉軸方向的分量不受繞該軸的旋轉影響。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec P'=\left(2,\ \tfrac{3+\sqrt3}{2},\ \tfrac{3\sqrt3-1}{2}\right)\\ \approx(2,\ 2.366,\ 2.098)\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="rot-tbex">9.5 多次旋轉 <span class="pg-tag">p.50 · 課本 §1.7</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.50 Multiple Rotational Operations</span>
+  <p>先繞 $\hat x_3$ 轉 $\theta$ 到 $x'$（矩陣 $\lambda_1(\theta)$），再繞 $\hat x_1'$ 轉 $\phi$ 到 $x''$（矩陣 $\lambda_2(\phi)$）：</p>
+  $$x''=\lambda_1(\theta)\,\lambda_2(\phi)\,x\quad\text{還是}\quad \lambda_2(\phi)\,\lambda_1(\theta)\,x\ ?$$
+</div>
+
+<p>答案是 $\lambda_2(\phi)\lambda_1(\theta)\,x$：先做的 $\lambda_1$ 直接作用在 $x$ 上得到 $x'=\lambda_1x$，後做的 $\lambda_2$ 再作用在 $x'$ 上，所以 $x''=\lambda_2x'=\lambda_2\lambda_1x$——<strong>後做的寫在左邊</strong>。矩陣乘法不可交換，兩種次序結果不同，下面用 $\theta=\phi=90^\circ$ 實際算一次。</p>
+
+<div class="problem" data-kind="tbexample" id="tb-rot2">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Thornton &amp; Marion §1.7 · p.14–16</span></div>
+    <h4>連續兩次 $90^\circ$ 旋轉，次序對調</h4>
+    <button type="button" class="exam-btn" data-exam="tb-rot2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>座標系先繞 $x_3$ 軸逆時針轉 $90^\circ$（$\lambda_1$），再繞新的 $x_1'$ 軸逆時針轉 $90^\circ$（$\lambda_2$）。求合成的變換矩陣；兩次旋轉的次序對調，結果相同嗎？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda_1$ 繞 $x_3$ 逆時針轉 $90^\circ$；$\lambda_2$ 繞<strong>新的</strong> $x_1'$ 逆時針轉 $90^\circ$；座標軸轉（被動旋轉）；$\cos90^\circ=0$、$\sin90^\circ=1$。</p>
+<div class="anim" data-anim="rot-seq"></div>
+<p><strong>① $\lambda_1$：繞 $x_3$ 轉 $90^\circ$：</strong> 旋轉矩陣的每個 row 就是一個新軸用舊座標寫出來，$90^\circ$ 時新軸都落在舊軸上，直接看圖寫 row 最不易錯號。從 $+x_3$ 往下看，軸逆時針轉 $90^\circ$：新 $x_1'$ 轉到舊 $+x_2$，新 $x_2'$ 轉到舊 $-x_1$，$x_3'$ 不動，即 $\hat x_1'=(0,1,0)$、$\hat x_2'=(-1,0,0)$、$\hat x_3'=(0,0,1)$：</p>
+<div class="math-block">$$\lambda_1=\begin{bmatrix}0&amp;1&amp;0\\-1&amp;0&amp;0\\0&amp;0&amp;1\end{bmatrix}$$</div>
+<p>和公式 $\lambda_z(90^\circ)$ 代入 $\cos90^\circ=0$、$\sin90^\circ=1$ 一樣。</p>
+<p><strong>② $\lambda_2$：在 $x'$ 系裡繞第 1 軸轉 $90^\circ$：</strong> 轉軸 $x_1'$ 不動，新 $x_2''$ 轉到 $+x_3'$，新 $x_3''$ 轉到 $-x_2'$；用 $x'$ 系分量寫成 row $(1,0,0)$、$(0,0,1)$、$(0,-1,0)$：</p>
+<div class="math-block">$$\lambda_2=\begin{bmatrix}1&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;-1&amp;0\end{bmatrix}$$</div>
+<p>它是「$x'$ 座標 → $x''$ 座標」的矩陣，接在 $\lambda_1$ 後面。</p>
+<p><strong>③ 合成 $\lambda_3=\lambda_2\lambda_1$：</strong> 先做的在右、後做的在左。</p>
+<p class="fnote"><b>公式（連續旋轉的合成）：</b>$\vec x''=\lambda_2\vec x'=\lambda_2\lambda_1\vec x$，其中 $\lambda_1$ 是先做的旋轉、$\lambda_2$ 是後做的旋轉，後做的寫在左邊；本題 $\lambda_1,\lambda_2$ 即上兩步的矩陣。</p>
+<p>乘積的第 $i$ 個 row = 用 $\lambda_2$ 第 $i$ 個 row 的三個數當係數，把 $\lambda_1$ 的三個 row 加起來。代入 $\lambda_1$ 的 row 1 $=(0,1,0)$、row 2 $=(-1,0,0)$、row 3 $=(0,0,1)$：</p>
+<div class="math-block">$$\text{row 1}=1\cdot(0,1,0)+0+0=(0,1,0)$$</div>
+<div class="math-block">$$\text{row 2}=0+0+1\cdot(0,0,1)=(0,0,1)$$</div>
+<div class="math-block">$$\text{row 3}=0+(-1)\cdot(-1,0,0)+0=(1,0,0)$$</div>
+<p>意思是 $x_1''=x_2,\ x_2''=x_3,\ x_3''=x_1$。</p>
+<div class="math-block">$$\boxed{\lambda_3=\lambda_2\lambda_1=\begin{bmatrix}0&amp;1&amp;0\\0&amp;0&amp;1\\1&amp;0&amp;0\end{bmatrix}}$$</div>
+<p>（$\lambda_3$ 就是 <a href="#tm-1-3">1-3</a> 繞 $(1,1,1)$ 轉 $120^\circ$ 的矩陣。）</p>
+<p><strong>④ 次序對調 $\lambda_4=\lambda_1\lambda_2$：</strong> 這次用 $\lambda_1$ 的 row 當係數組合 $\lambda_2$ 的 row；代入 $\lambda_2$ 的 row 1 $=(1,0,0)$、row 2 $=(0,0,1)$、row 3 $=(0,-1,0)$：</p>
+<div class="math-block">$$\text{row 1}=1\cdot(0,0,1)=(0,0,1)$$</div>
+<div class="math-block">$$\text{row 2}=(-1)\cdot(1,0,0)=(-1,0,0)$$</div>
+<div class="math-block">$$\text{row 3}=1\cdot(0,-1,0)=(0,-1,0)$$</div>
+<div class="math-block">$$\lambda_4=\lambda_1\lambda_2=\begin{bmatrix}0&amp;0&amp;1\\-1&amp;0&amp;0\\0&amp;-1&amp;0\end{bmatrix}$$</div>
+<p><strong>⑤ 比較：</strong> 第一個 row 就不同：$\lambda_3$ 是 $(0,1,0)$、$\lambda_4$ 是 $(0,0,1)$。兩次轉的軸不同（$x_3$ 與 $x_1'$），先後次序會改變最後的座標系方向。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\lambda_4\neq\lambda_3\\ \text{有限角度的旋轉不能交換次序}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="example" id="ex-p50">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.50</span></div>
+    <h4>先繞 $x_3$ 轉 $\theta$、再繞 $x_1'$ 轉 $\phi$ 的合成矩陣</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p50">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="ex-p50"><span class="part-label original-label">講義英文原文</span>
+<p class="original-note">標題照講義原文拼作 Miltiple（講義筆誤，原文照錄不更正）。</p>
+<div class="original-text" lang="en"><p><strong>Miltiple Rotational Operations</strong></p><p>What’s the rotation matrix of the following operations:</p><p>First, rotate the $x$-coordinate about $\hat x_3$ by $\theta$ to $x'$-coordinate (rotation matrix: $\lambda_1(\theta)$).</p><p>Then, rotate the $x'$-coordinate about $\hat x_1'$ by $\phi$ to $x''$-coordinate (rotation matrix: $\lambda_2(\phi)$).</p><p>$x''=\lambda_1(\theta)\,\lambda_2(\phi)\,x$ or $\lambda_2(\phi)\,\lambda_1(\theta)\,x$ ?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>先把座標系繞 $\hat x_3$ 轉 $\theta$ 得到 $x'$ 系（矩陣 $\lambda_1(\theta)$），再繞新的 $\hat x_1'$ 轉 $\phi$ 得到 $x''$ 系（矩陣 $\lambda_2(\phi)$）。$x''=\lambda_1(\theta)\lambda_2(\phi)x$ 還是 $\lambda_2(\phi)\lambda_1(\theta)x$？寫出一般角度的合成矩陣，並用 $\theta=\phi=90^\circ$ 檢查。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda_1(\theta)$ 繞 $\hat x_3$ 轉 $\theta$（$x\to x'$）；$\lambda_2(\phi)$ 繞<strong>新的</strong> $\hat x_1'$ 轉 $\phi$（$x'\to x''$）；檢查用 $\theta=\phi=90^\circ$。</p>
+<p><strong>① 寫出兩個矩陣：</strong> 每個旋轉矩陣是「把一組座標換成下一組座標」，一步一步代就能定次序；題目要一般角度，用帶 $\cos$、$\sin$ 的矩陣。</p>
+<p class="fnote"><b>公式（繞座標軸的旋轉矩陣）：</b>繞第 3 軸 $\lambda_z(\theta)$ 的第 3 個 row/column 填 1 和 0、其餘為二維旋轉；繞第 1 軸 $\lambda_x(\phi)$ 的第 1 個 row/column 填 1 和 0；本題 $\lambda_1=\lambda_z(\theta)$、$\lambda_2=\lambda_x(\phi)$（在 $x'$ 系裡繞第 1 軸）。</p>
+<div class="math-block">$$\lambda_1(\theta)=\begin{bmatrix}\cos\theta&amp;\sin\theta&amp;0\\-\sin\theta&amp;\cos\theta&amp;0\\0&amp;0&amp;1\end{bmatrix}$$</div>
+<div class="math-block">$$\lambda_2(\phi)=\begin{bmatrix}1&amp;0&amp;0\\0&amp;\cos\phi&amp;\sin\phi\\0&amp;-\sin\phi&amp;\cos\phi\end{bmatrix}$$</div>
+<p><strong>② 決定次序：</strong> 第一次旋轉 $x'=\lambda_1x$，第二次作用在 $x'$ 上 $x''=\lambda_2x'$，把第一式代進第二式：</p>
+<div class="math-block">$$x''=\lambda_2x'=\lambda_2(\lambda_1x)=(\lambda_2\lambda_1)\,x$$</div>
+<p>結合律讓括號可以移動，但次序不能換：後做的寫在左邊。</p>
+<div class="math-block">$$\boxed{x''=\lambda_2(\phi)\lambda_1(\theta)\,x}$$</div>
+<p><strong>③ 乘出 $\lambda_2\lambda_1$：</strong> 乘積的第 $i$ 個 row = 以 $\lambda_2$ 第 $i$ 個 row 為係數，組合 $\lambda_1$ 的三個 row。代入 $\lambda_1$ 的 row 1 $=(\cos\theta,\sin\theta,0)$、row 2 $=(-\sin\theta,\cos\theta,0)$、row 3 $=(0,0,1)$，以及 $\lambda_2$ 的三個 row $(1,0,0)$、$(0,\cos\phi,\sin\phi)$、$(0,-\sin\phi,\cos\phi)$：</p>
+<div class="math-block">$$\text{row 1}=1\cdot\text{row}_1=(\cos\theta,\ \sin\theta,\ 0)$$</div>
+<div class="math-block">$$\begin{aligned}\text{row 2}&amp;=\cos\phi\,\text{row}_2+\sin\phi\,\text{row}_3\\&amp;=(-\cos\phi\sin\theta,\ \cos\phi\cos\theta,\ \sin\phi)\end{aligned}$$</div>
+<div class="math-block">$$\begin{aligned}\text{row 3}&amp;=-\sin\phi\,\text{row}_2+\cos\phi\,\text{row}_3\\&amp;=(\sin\phi\sin\theta,\ -\sin\phi\cos\theta,\ \cos\phi)\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\lambda_2\lambda_1=\begin{bmatrix}\cos\theta&amp;\sin\theta&amp;0\\-\cos\phi\sin\theta&amp;\cos\phi\cos\theta&amp;\sin\phi\\\sin\phi\sin\theta&amp;-\sin\phi\cos\theta&amp;\cos\phi\end{bmatrix}}$$</div>
+<p><strong>④ 檢查 $\theta=\phi=90^\circ$：</strong> 代入 $\cos90^\circ=0$、$\sin90^\circ=1$ 到上一步的矩陣：</p>
+<div class="math-block">$$\lambda_2\lambda_1\Big|_{90^\circ,90^\circ}=\begin{bmatrix}0&amp;1&amp;0\\0&amp;0&amp;1\\1&amp;0&amp;0\end{bmatrix}$$</div>
+<p>就是 <a href='#tb-rot2'>課本 §1.7</a> 的 $\lambda_3$。</p>
+<p><strong>⑤ 反次序 $\lambda_1\lambda_2$ 不一樣：</strong> 只算第 1 個 row：以 $\lambda_1$ 的 row 1 $(\cos\theta,\sin\theta,0)$ 為係數組合 $\lambda_2$ 的 row：</p>
+<div class="math-block">$$\begin{aligned}&amp;\cos\theta\,(1,0,0)+\sin\theta\,(0,\cos\phi,\sin\phi)\\&amp;=(\cos\theta,\ \sin\theta\cos\phi,\ \sin\theta\sin\phi)\end{aligned}$$</div>
+<p>右上角 $\sin\theta\sin\phi$ 一般不是 0，而 $\lambda_2\lambda_1$ 的右上角是 0。</p>
+<div class="math-block">$$\boxed{\lambda_1\lambda_2\neq\lambda_2\lambda_1\ \text{（一般不相等）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="rot-tm">9.6 課本題</h3>
+
+<div class="problem" data-kind="textbook" id="tm-1-1">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-1 · p.43</span></div>
+    <h4>$x_3$ 軸繞 $x_2$ 軸、朝 $x_1$ 轉 $45^\circ$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the transformation matrix that rotates the axis $x_3$ of a rectangular coordinate system $45^\circ$ toward $x_1$ around the $x_2$-axis.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-1 · p.43</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求變換矩陣：把直角座標系的 $x_3$ 軸繞 $x_2$ 軸、朝 $x_1$ 方向旋轉 $45^\circ$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：轉軸 $x_2$（不動，$\hat x_2'=\hat x_2$）；轉角 $45^\circ$，$x_3$ 軸往 $x_1$ 軸倒；新座標系仍為右手系；$\sin45^\circ=\cos45^\circ=\frac1{\sqrt2}$。</p>
+<div class="anim" data-anim="rot11"></div>
+<p><strong>① 寫出 $\hat x_2'$ 與 $\hat x_3'$：</strong> 題目用「朝哪個軸轉」描述方向，套 $\lambda_y$ 容易錯號，改用「每個 row 是一個新軸在舊座標中的分量」，先寫最好寫的兩個新軸。</p>
+<p class="fnote"><b>公式（方向餘弦排法）：</b>$\lambda_{ij}=\hat x_i'\cdot\hat x_j$，即變換矩陣的第 $i$ 個 row 是新軸 $\hat x_i'$ 在舊座標中的三個分量；本題要寫出 $\hat x_1',\hat x_2',\hat x_3'$ 排成三個 row。</p>
+<p>轉軸不動：$\hat x_2'=(0,1,0)$。$\hat x_3'$ 從 $\hat x_3$ 往 $\hat x_1$ 的正方向倒 $45^\circ$，$x_3$ 分量是 $\cos45^\circ$、$x_1$ 分量是 $+\sin45^\circ$、$x_2$ 分量為 0：</p>
+<div class="math-block">$$\hat x_3'=(\sin45^\circ,\ 0,\ \cos45^\circ)=\Big(\tfrac1{\sqrt2},\ 0,\ \tfrac1{\sqrt2}\Big)$$</div>
+<p><strong>② 用外積求 $\hat x_1'$：</strong> 右手系要求 $\hat x_1'=\hat x_2'\times\hat x_3'$，不必再判斷方向。</p>
+<p class="fnote"><b>公式（外積）：</b>$\vec a\times\vec b=(a_2b_3-a_3b_2,\ a_3b_1-a_1b_3,\ a_1b_2-a_2b_1)$，其中 $a_i,b_i$ 為兩向量的分量；本題 $\vec a=\hat x_2'$、$\vec b=\hat x_3'$。</p>
+<p>代入 $\vec a=(0,1,0)$、$\vec b=\big(\frac1{\sqrt2},0,\frac1{\sqrt2}\big)$：</p>
+<div class="math-block">$$\begin{aligned}a_2b_3-a_3b_2&amp;=1\cdot\tfrac1{\sqrt2}-0\cdot0=\tfrac1{\sqrt2}\\a_3b_1-a_1b_3&amp;=0\cdot\tfrac1{\sqrt2}-0\cdot\tfrac1{\sqrt2}=0\\a_1b_2-a_2b_1&amp;=0\cdot0-1\cdot\tfrac1{\sqrt2}=-\tfrac1{\sqrt2}\end{aligned}$$</div>
+<div class="math-block">$$\hat x_1'=\left(\tfrac1{\sqrt2},\ 0,\ -\tfrac1{\sqrt2}\right)$$</div>
+<p>$x_3$ 往 $x_1$ 倒，$x_1$ 就往 $-x_3$ 倒，兩軸才保持垂直。</p>
+<p><strong>③ 排成 row：</strong> 第 $i$ 個 row 放 $\hat x_i'$ 的三個分量：</p>
+<div class="math-block">$$\lambda=\begin{bmatrix}\tfrac1{\sqrt2}&amp;0&amp;-\tfrac1{\sqrt2}\\0&amp;1&amp;0\\\tfrac1{\sqrt2}&amp;0&amp;\tfrac1{\sqrt2}\end{bmatrix}$$</div>
+<p>和講義的 $\lambda_y=\begin{bmatrix}\cos\theta&amp;0&amp;-\sin\theta\\0&amp;1&amp;0\\\sin\theta&amp;0&amp;\cos\theta\end{bmatrix}$ 取 $\theta=45^\circ$ 相同，「$x_3$ 朝 $x_1$ 轉」正是繞 $x_2$ 的正方向。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\lambda=\begin{bmatrix}\tfrac1{\sqrt2}&amp;0&amp;-\tfrac1{\sqrt2}\\0&amp;1&amp;0\\\tfrac1{\sqrt2}&amp;0&amp;\tfrac1{\sqrt2}\end{bmatrix}\\ \text{即}\ \lambda_y\ \text{取}\ \theta=45^\circ\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-5">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-5 · p.43</span></div>
+    <h4>二維正交矩陣：$|\lambda|^2=1$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-5"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show by direct expansion that $|\lambda|^2=1$. For simplicity, take $\lambda$ to be a two-dimensional orthogonal transformation matrix.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-5 · p.43</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>以直接展開證明 $|\lambda|^2=1$（$\lambda$ 為二維正交變換矩陣）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda=\begin{bmatrix}\lambda_{11}&amp;\lambda_{12}\\\lambda_{21}&amp;\lambda_{22}\end{bmatrix}$ 為二維正交矩陣，要用直接展開證明 $|\lambda|^2=1$。</p>
+<p><strong>① 展開 $|\lambda|^2$：</strong> 題目指定直接展開，所以把 $|\lambda|^2$ 寫成元素多項式，再用正交條件化簡。</p>
+<p class="fnote"><b>公式（$2\times2$ 行列式）：</b>$|\lambda|=\lambda_{11}\lambda_{22}-\lambda_{12}\lambda_{21}$，其中 $\lambda_{ij}$ 為第 $i$ 個 row、第 $j$ 個 column 的元素。</p>
+<div class="math-block">$$\begin{aligned}|\lambda|^2&amp;=(\lambda_{11}\lambda_{22}-\lambda_{12}\lambda_{21})^2\\&amp;=\lambda_{11}^2\lambda_{22}^2+\lambda_{12}^2\lambda_{21}^2-2\lambda_{11}\lambda_{12}\lambda_{21}\lambda_{22}\end{aligned}$$</div>
+<p><strong>② 用正交條件組出同一個式子：</strong> 技巧是兩個 row 長度平方相乘、再減掉內積平方。</p>
+<p class="fnote"><b>公式（正交條件）：</b>$\lambda\lambda^{\mathsf T}=I$，對角線給 row 長度 1：$\lambda_{11}^2+\lambda_{12}^2=1$、$\lambda_{21}^2+\lambda_{22}^2=1$；非對角線給 row 互相垂直：$\lambda_{11}\lambda_{21}+\lambda_{12}\lambda_{22}=0$。</p>
+<p>兩個 row 的長度平方相乘（乘積為 1），展開：</p>
+<div class="math-block">$$\begin{aligned}1&amp;=(\lambda_{11}^2+\lambda_{12}^2)(\lambda_{21}^2+\lambda_{22}^2)\\&amp;=\lambda_{11}^2\lambda_{21}^2+\lambda_{11}^2\lambda_{22}^2+\lambda_{12}^2\lambda_{21}^2+\lambda_{12}^2\lambda_{22}^2\end{aligned}$$</div>
+<p>兩個 row 的內積平方（為 0），展開：</p>
+<div class="math-block">$$\begin{aligned}0&amp;=(\lambda_{11}\lambda_{21}+\lambda_{12}\lambda_{22})^2\\&amp;=\lambda_{11}^2\lambda_{21}^2+\lambda_{12}^2\lambda_{22}^2+2\lambda_{11}\lambda_{12}\lambda_{21}\lambda_{22}\end{aligned}$$</div>
+<p><strong>③ 相減：</strong> 第一式減第二式，$\lambda_{11}^2\lambda_{21}^2$ 與 $\lambda_{12}^2\lambda_{22}^2$ 消掉，交叉項變成 $-2(\cdots)$：</p>
+<div class="math-block">$$1-0=\lambda_{11}^2\lambda_{22}^2+\lambda_{12}^2\lambda_{21}^2-2\lambda_{11}\lambda_{12}\lambda_{21}\lambda_{22}$$</div>
+<p>右邊正是 ① 的 $|\lambda|^2$。</p>
+<div class="math-block">$$\boxed{|\lambda|^2=1,\quad|\lambda|=\pm1\quad\blacksquare}$$</div>
+<p><strong>④ 具體例子：旋轉（$|\lambda|=+1$）：</strong> 代入二維旋轉矩陣 $\lambda_{11}=\lambda_{22}=\cos\theta$、$\lambda_{12}=\sin\theta$、$\lambda_{21}=-\sin\theta$：</p>
+<div class="math-block">$$\begin{aligned}\begin{vmatrix}\cos\theta&amp;\sin\theta\\-\sin\theta&amp;\cos\theta\end{vmatrix}&amp;=\cos\theta\cos\theta-\sin\theta(-\sin\theta)\\&amp;=\cos^2\theta+\sin^2\theta=1\end{aligned}$$</div>
+<p><strong>⑤ 具體例子：含鏡射（$|\lambda|=-1$）：</strong> 代入第二個 row 反號的矩陣 $\lambda_{11}=\cos\theta$、$\lambda_{12}=\lambda_{21}=\sin\theta$、$\lambda_{22}=-\cos\theta$（row 仍長度 1、互相垂直）：</p>
+<div class="math-block">$$\begin{aligned}\begin{vmatrix}\cos\theta&amp;\sin\theta\\\sin\theta&amp;-\cos\theta\end{vmatrix}&amp;=\cos\theta(-\cos\theta)-\sin\theta\sin\theta\\&amp;=-\cos^2\theta-\sin^2\theta=-1\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{兩種情形}\ |\lambda|^2=1\\ \text{旋轉}\ |\lambda|=+1\text{，含鏡射}\ |\lambda|=-1\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-15">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-15 · p.45</span></div>
+    <h4>使變換正交的 $\alpha$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-15">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $\alpha$ 使 $\begin{bmatrix}1&0&0\\0&\alpha&-\alpha\\0&\alpha&\alpha\end{bmatrix}$ 為正交變換。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：矩陣三個 row 為 $(1,0,0)$、$(0,\alpha,-\alpha)$、$(0,\alpha,\alpha)$，$\alpha$ 為實數；要求正交。</p>
+<p><strong>① 長度為 1：</strong> 正交矩陣的 row 是互相垂直的單位向量，先用長度條件解出 $\alpha$。row 1 $(1,0,0)$ 長度本來就是 1，不含 $\alpha$。</p>
+<p class="fnote"><b>公式（正交條件）：</b>$\lambda\lambda^{\mathsf T}=I$，其中 $\lambda$ 為變換矩陣、$I$ 為單位矩陣；等價於每個 row 長度為 1、不同 row 內積為 0。本題的 row 就是上面三個向量。</p>
+<p>代入 row 2 $=(0,\alpha,-\alpha)$、row 3 $=(0,\alpha,\alpha)$：</p>
+<div class="math-block">$$|\text{row 2}|^2=0^2+\alpha^2+(-\alpha)^2=2\alpha^2$$</div>
+<div class="math-block">$$|\text{row 3}|^2=0^2+\alpha^2+\alpha^2=2\alpha^2$$</div>
+<p>兩個都要等於 1：</p>
+<div class="math-block">$$2\alpha^2=1\ \Longrightarrow\ \alpha^2=\frac12\ \Longrightarrow\ \alpha=\pm\frac1{\sqrt2}$$</div>
+<p><strong>② 互相垂直：</strong> 檢查不同 row 的內積。</p>
+<div class="math-block">$$\text{row 1}\cdot\text{row 2}=1\cdot0+0\cdot\alpha+0\cdot(-\alpha)=0$$</div>
+<div class="math-block">$$\text{row 1}\cdot\text{row 3}=1\cdot0+0\cdot\alpha+0\cdot\alpha=0$$</div>
+<div class="math-block">$$\text{row 2}\cdot\text{row 3}=0+\alpha\cdot\alpha+(-\alpha)\cdot\alpha=0$$</div>
+<p>對任何 $\alpha$ 都成立，不增加限制；答案只由長度條件決定。</p>
+<p><strong>③ 判斷是哪一種旋轉：</strong> 行列式沿第一個 row 展開。</p>
+<div class="math-block">$$\det=1\cdot\begin{vmatrix}\alpha&amp;-\alpha\\\alpha&amp;\alpha\end{vmatrix}=\alpha\cdot\alpha-(-\alpha)\cdot\alpha=2\alpha^2=1$$</div>
+<p>兩個解都是 $\det=+1$ 的純旋轉。和繞 $x_1$ 的 $\lambda_x=\begin{bmatrix}1&amp;0&amp;0\\0&amp;\cos\theta&amp;\sin\theta\\0&amp;-\sin\theta&amp;\cos\theta\end{bmatrix}$ 比對：$\cos\theta=\alpha$、$\sin\theta=-\alpha$。</p>
+<p>代入 $\alpha=\frac1{\sqrt2}$：$\cos\theta=\frac1{\sqrt2}$、$\sin\theta=-\frac1{\sqrt2}$，得 $\theta=-45^\circ$；代入 $\alpha=-\frac1{\sqrt2}$：$\cos\theta=-\frac1{\sqrt2}$、$\sin\theta=\frac1{\sqrt2}$，得 $\theta=135^\circ$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\alpha=\pm\frac1{\sqrt2},\quad \det=2\alpha^2=1\\ \text{繞 }x_1\text{ 的純旋轉：}\theta=-45^\circ\text{ 與 }135^\circ\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-3">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-3 · p.43</span></div>
+    <h4>繞與三軸夾角相等的軸轉 $120^\circ$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-3"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Find the transformation matrix that rotates a rectangular coordinate system through an angle of $120^\circ$ about an axis making equal angles with the original three coordinate axes.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-3 · p.43</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求變換矩陣：把直角座標系繞一根與原來三個座標軸夾角都相等的軸旋轉 $120^\circ$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：轉角 $\phi=120^\circ$；轉軸 $\hat n$ 與 $\hat x_1,\hat x_2,\hat x_3$ 夾角都相等；轉的是座標系（被動），旋轉方向採右手定則（沿 $\hat n$ 往原點看為逆時針）。</p>
+<div class="video" data-video="tm-1-3"></div>
+<div class="anim" data-anim="rot120"></div>
+<p><strong>① 找出轉軸的單位向量：</strong> 轉軸是 $(1,1,1)$ 方向而非座標軸，現成的 $\lambda_x,\lambda_y,\lambda_z$ 不能直接用，改用對稱性找出三軸輪換。設 $\hat n=(n_1,n_2,n_3)$，它和 $\hat x_i$ 的夾角 cos 是 $\hat n\cdot\hat x_i=n_i$；三個夾角相等，所以 $n_1=n_2=n_3\equiv a$。</p>
+<p>再用單位長度 $|\hat n|=1$：</p>
+<div class="math-block">$$a^2+a^2+a^2=1\ \Longrightarrow\ a=\frac1{\sqrt3}$$</div>
+<div class="math-block">$$\hat n=\frac1{\sqrt3}(1,1,1)$$</div>
+<p>這是立方體的體對角線方向，和每個軸的夾角是 $\cos^{-1}\frac1{\sqrt3}\approx54.7^\circ$。</p>
+<p><strong>② 對稱性：三軸輪換：</strong> 沿 $\hat n$ 看過去，$\hat x_1,\hat x_2,\hat x_3$ 的尖端 $(1,0,0)$、$(0,1,0)$、$(0,0,1)$ 到 $\hat n$ 等距，排成正三角形，彼此相隔 $360^\circ/3=120^\circ$，逆時針順序是 $1\to2\to3$。逆時針轉 $120^\circ$，每根軸轉到下一根的位置：</p>
+<div class="math-block">$$\hat x_1'=\hat x_2,\qquad \hat x_2'=\hat x_3,\qquad \hat x_3'=\hat x_1$$</div>
+<details class="supp">
+        <summary>用旋轉公式驗證 $\hat x_1\to\hat x_2$</summary>
+        <div class="supp-body">
+          <p>繞單位軸 $\hat n$ 轉 $\phi$：$\vec u_{\text{rot}}=\vec u\cos\phi+(\hat n\times\vec u)\sin\phi+\hat n(\hat n\cdot\vec u)(1-\cos\phi)$（Rodrigues 公式）。代 $\vec u=\hat x_1$、$\phi=120^\circ$，其中 $\hat n\times\hat x_1=\tfrac1{\sqrt3}(0,1,-1)$、$\hat n\cdot\hat x_1=\tfrac1{\sqrt3}$：</p>
+          $$\vec u_{\text{rot}}=\left(-\tfrac12,0,0\right)+\left(0,\tfrac12,-\tfrac12\right)+\left(\tfrac12,\tfrac12,\tfrac12\right)=(0,1,0)\ ✔$$
+        </div>
+      </details>
+<p><strong>③ 排成 row：</strong> 第 $i$ 個 row 放 $\hat x_i'$ 的舊座標分量。</p>
+<p class="fnote"><b>公式（方向餘弦）：</b>$\lambda_{ij}=\hat x_i'\cdot\hat x_j$，其中 $\hat x_i'$ 為新軸、$\hat x_j$ 為舊軸；所以第 $i$ 個 row 就是 $\hat x_i'$ 在舊座標的分量。</p>
+<p>代入上一步的 $\hat x_1'=\hat x_2=(0,1,0)$、$\hat x_2'=\hat x_3=(0,0,1)$、$\hat x_3'=\hat x_1=(1,0,0)$：</p>
+<div class="math-block">$$\lambda=\begin{bmatrix}0&amp;1&amp;0\\0&amp;0&amp;1\\1&amp;0&amp;0\end{bmatrix}$$</div>
+<p>乘上 $(x_1,x_2,x_3)^{\mathsf T}$ 得</p>
+<div class="math-block">$$x_1'=x_2,\qquad x_2'=x_3,\qquad x_3'=x_1$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\lambda=\begin{bmatrix}0&amp;1&amp;0\\0&amp;0&amp;1\\1&amp;0&amp;0\end{bmatrix}\\ \text{（反方向轉則為其轉置）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="rot-proof">9.7 正交矩陣的證明 <span class="pg-tag">課本 §1.4–1.10</span></h3>
+
+<p>正交矩陣的證明題都用同一組工具：$\lambda^{\mathsf T}\lambda=I$、$(AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}$（1-4），以及把 $\sum$ 的次序對調。</p>
+
+
+<div class="problem" data-kind="tbexample" id="tb-orth">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Thornton &amp; Marion §1.7 · p.18–19</span></div>
+    <h4>兩個正交矩陣的乘積仍是正交矩陣</h4>
+    <button type="button" class="exam-btn" data-exam="tb-orth">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\lambda$、$\mu$ 都是正交矩陣。證明 $\mu\lambda$（先做 $\lambda$ 再做 $\mu$）也是正交矩陣。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda$、$\mu$ 都是正交矩陣，$\lambda^{\mathsf T}\lambda=I$、$\mu^{\mathsf T}\mu=I$；$\mu\lambda$ 表示先做 $\lambda$、再做 $\mu$（後做的在左）。</p>
+<p><strong>① 轉置反序：</strong> 正交的定義是「轉置乘自己等於 $I$」，所以直接算 $(\mu\lambda)^{\mathsf T}(\mu\lambda)$；先把 $(\mu\lambda)^{\mathsf T}$ 拆開。</p>
+<p class="fnote"><b>公式（轉置反序）：</b>$(AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}$，其中 $A,B$ 為任意可相乘的矩陣（課本題 <a href="#tm-1-4">1-4 (a)</a> 已證明）；本題取 $A=\mu$、$B=\lambda$。</p>
+<div class="math-block">$$(\mu\lambda)^{\mathsf T}=\lambda^{\mathsf T}\mu^{\mathsf T}$$</div>
+<p><strong>② 從中間消起：</strong> 把上一步代入要驗證的乘積，用矩陣乘法的結合律重新加括號，讓 $\mu^{\mathsf T}\mu$ 在一起：</p>
+<div class="math-block">$$(\mu\lambda)^{\mathsf T}(\mu\lambda)=\lambda^{\mathsf T}\mu^{\mathsf T}\mu\lambda=\lambda^{\mathsf T}(\mu^{\mathsf T}\mu)\lambda$$</div>
+<p>代入 $\mu^{\mathsf T}\mu=I$，再代入 $\lambda^{\mathsf T}\lambda=I$：</p>
+<div class="math-block">$$=\lambda^{\mathsf T}I\lambda=\lambda^{\mathsf T}\lambda=I$$</div>
+<p><strong>③ 結論與行列式：</strong> $(\mu\lambda)^{\mathsf T}(\mu\lambda)=I$ 表示 $(\mu\lambda)^{\mathsf T}=(\mu\lambda)^{-1}$，所以 $\mu\lambda$ 正交。再看行列式：$\det(\mu\lambda)=\det\mu\,\det\lambda$。若兩個都是旋轉（$\det=+1$），</p>
+<div class="math-block">$$\det(\mu\lambda)=(+1)(+1)=+1$$</div>
+<p>兩次旋轉合起來仍是旋轉。</p>
+<div class="math-block">$$\boxed{(\mu\lambda)^{\mathsf T}(\mu\lambda)=I,\ \mu\lambda\text{ 是正交矩陣}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="tbexample" id="tb-ex14">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Thornton &amp; Marion Example 1.4 · p.20</span></div>
+    <h4>$\det=+1$ 的旋轉與 $\det=-1$ 的反演</h4>
+    <button type="button" class="exam-btn" data-exam="tb-ex14">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 $|\lambda_2|=1$、$|\lambda_6|=-1$，其中 $\lambda_2$ 是繞 $x_1$ 轉 $90^\circ$，$\lambda_6$ 是反演（$x_i'=-x_i$）。再說明為什麼反演不能由一連串旋轉做出來。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda_2=\begin{bmatrix}1&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;-1&amp;0\end{bmatrix}$（繞 $x_1$ 轉 $90^\circ$，$\lambda_x$ 代 $\cos90^\circ=0$、$\sin90^\circ=1$）；$\lambda_6=\begin{bmatrix}-1&amp;0&amp;0\\0&amp;-1&amp;0\\0&amp;0&amp;-1\end{bmatrix}$（反演，每個座標變號）。</p>
+<h4>(1) $|\lambda_2|$</h4>
+<p><strong>① 沿第一列展開：</strong> 第一個 row 只有一個非零元素，沿它展開最省事。第一個 row 是 $(1,0,0)$，後兩項乘 0 消失，只剩 $1\times$（劃掉第 1 row、第 1 column 後的子行列式）：</p>
+<div class="math-block">$$|\lambda_2|=\begin{vmatrix}1&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;-1&amp;0\end{vmatrix}=1\cdot\begin{vmatrix}0&amp;1\\-1&amp;0\end{vmatrix}$$</div>
+<p class="fnote"><b>公式（$2\times2$ 行列式）：</b>$\begin{vmatrix}a&amp;b\\c&amp;d\end{vmatrix}=ad-bc$，其中 $a,b,c,d$ 為四個元素；本題 $a=0$、$b=1$、$c=-1$、$d=0$。</p>
+<div class="math-block">$$=1\cdot\big(0\cdot0-1\cdot(-1)\big)=1$$</div>
+<div class="math-block">$$\boxed{|\lambda_2|=1}$$</div>
+<h4>(2) $|\lambda_6|$</h4>
+<p><strong>① 同樣沿第一列展開：</strong></p>
+<div class="math-block">$$|\lambda_6|=\begin{vmatrix}-1&amp;0&amp;0\\0&amp;-1&amp;0\\0&amp;0&amp;-1\end{vmatrix}=(-1)\cdot\begin{vmatrix}-1&amp;0\\0&amp;-1\end{vmatrix}$$</div>
+<p>子行列式代入 $a=-1$、$b=0$、$c=0$、$d=-1$：</p>
+<div class="math-block">$$=(-1)\cdot\big((-1)(-1)-0\cdot0\big)=(-1)\cdot1=-1$$</div>
+<div class="math-block">$$\boxed{|\lambda_6|=-1}$$</div>
+<h4>(3) 反演為什麼不能由旋轉組成</h4>
+<p><strong>① 比較行列式（不變量論證）：</strong> 一連串旋轉寫成矩陣就是旋轉矩陣相乘，而行列式對乘法相乘，所以只要比較行列式。假設 $\lambda_6=R_n\cdots R_2R_1$，每個 $R_k$ 都是旋轉，$\det R_k=+1$。</p>
+<p class="fnote"><b>公式（行列式乘法）：</b>$\det(AB)=\det A\,\det B$，其中 $A,B$ 為方陣；本題套用在 $R_n,\dots,R_1$ 的連乘。</p>
+<p>兩邊取行列式：</p>
+<div class="math-block">$$\det\lambda_6=\det R_n\cdots\det R_2\,\det R_1=(+1)^n=+1$$</div>
+<p>但 (2) 算出 $\det\lambda_6=-1$，矛盾。所以反演不能由旋轉組成。$\det=+1$ 的正交變換叫真旋轉（proper rotation），$\det=-1$ 的叫非真旋轉（improper，含鏡射）。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{正交矩陣的行列式只能是 }\pm1\\ \text{旋轉組合永遠是 }+1\text{，做不出 }-1\text{ 的反演}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-6">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-6 · p.44</span></div>
+    <h4>由「長度不變」推出正交條件</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tm-1-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Show that Equation 1.15 can be obtained by using the requirement that the transformation leaves unchanged the length of a line segment.</p></div>
+<p class="original-caption">Thornton &amp; Marion 1-6 · p.44</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明課本式 (1.15) $\displaystyle\sum_i\lambda_{ij}\lambda_{ik}=\delta_{jk}$ 可由「變換不改變線段長度」的要求得到。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：座標變換 $x_i'=\sum_j\lambda_{ij}x_j$；長度不變指 $\sum_i x_i'^2=\sum_j x_j^2$ 對所有 $\vec x$ 成立；$\delta_{jk}$ 在 $j=k$ 為 1、$j\neq k$ 為 0。</p>
+<p><strong>① 展開長度平方：</strong> 長度不變對「所有」$\vec x$ 成立，所以先把 $\sum x_i'^2$ 展開成 $x_jx_k$ 的二次式，之後再挑方便的 $\vec x$ 代入抓係數。</p>
+<p class="fnote"><b>公式（座標變換）：</b>$x_i'=\sum_j\lambda_{ij}x_j$，其中 $x_j$ 為舊座標、$x_i'$ 為新座標、$\lambda_{ij}$ 為變換矩陣元素。</p>
+<p>$x_i'^2=x_i'\cdot x_i'$，兩個 $x_i'$ 各自展開，一個用 $j$、一個用 $k$ 當求和指標：</p>
+<div class="math-block">$$\sum_i x_i'^2=\sum_i\Big(\sum_j\lambda_{ij}x_j\Big)\Big(\sum_k\lambda_{ik}x_k\Big)$$</div>
+<p>有限項求和可以調換次序，把對 $i$ 的求和放到最裡面：</p>
+<div class="math-block">$$=\sum_{j,k}\Big(\sum_i\lambda_{ij}\lambda_{ik}\Big)x_jx_k=\sum_{j,k}M_{jk}\,x_jx_k$$</div>
+<p>其中 $M_{jk}\equiv\sum_i\lambda_{ij}\lambda_{ik}$（$\lambda$ 第 $j$、$k$ 個 column 的內積），且 $M_{jk}=M_{kj}$。</p>
+<p><strong>② 要求長度不變：</strong> 新長度平方 = 舊長度平方，</p>
+<div class="math-block">$$\sum_{j,k}M_{jk}\,x_jx_k=\sum_j x_j^2\qquad\text{對所有 }\vec x\text{ 成立}$$</div>
+<p><strong>③ 取 $\vec x$ 只有第 $j$ 分量為 1：</strong> 代入 $x_j=1$、其他分量 0（例如 $j=2$：$\vec x=(0,1,0)$）。左邊 $\sum_{a,b}M_{ab}x_ax_b$ 只剩 $a=b=j$ 那一項，等於 $M_{jj}$；右邊 $\sum x^2=1$：</p>
+<div class="math-block">$$M_{jj}=1$$</div>
+<p><strong>④ 取 $x_j=x_k=1$（$j\neq k$），其餘為 0：</strong> 例如 $\vec x=(1,1,0)$，左邊只剩 $a,b\in\{j,k\}$ 的四項；用上一步的 $M_{jj}=M_{kk}=1$ 與 $M_{kj}=M_{jk}$：</p>
+<div class="math-block">$$M_{jj}+M_{kk}+M_{jk}+M_{kj}=1+1+2M_{jk}$$</div>
+<p>右邊 $=1^2+1^2=2$，所以</p>
+<div class="math-block">$$2+2M_{jk}=2\ \Longrightarrow\ M_{jk}=0\quad(j\neq k)$$</div>
+<p><strong>⑤ 合起來：</strong> 對角 $=1$、非對角 $=0$，正好是 $\delta_{jk}$ 的定義：</p>
+<div class="math-block">$$M_{jk}=\sum_i\lambda_{ij}\lambda_{ik}=\delta_{jk}$$</div>
+<div class="math-block">$$\boxed{\sum_i\lambda_{ij}\lambda_{ik}=\delta_{jk}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="tbexample" id="tb-inv">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Thornton &amp; Marion §1.10 · p.22</span></div>
+    <h4>內積在旋轉下不變</h4>
+    <button type="button" class="exam-btn" data-exam="tb-inv">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 $\vec A\cdot\vec B=\sum_iA_iB_i$ 在正交變換下不變，因此內積是純量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：內積 $\vec A\cdot\vec B=\sum_iA_iB_i$；正交變換下 $A_i'=\sum_j\lambda_{ij}A_j$、$B_i'=\sum_k\lambda_{ik}B_k$；純量指換座標後數值不變。</p>
+<p><strong>① 代入變換式：</strong> 把新分量換成舊分量，展開後看能否化回 $\sum A_jB_j$；兩個向量用不同的啞指標 $j,k$。</p>
+<p class="fnote"><b>公式（向量分量的變換）：</b>$A_i'=\sum_j\lambda_{ij}A_j$，其中 $A_j$ 為舊分量、$A_i'$ 為新分量、$\lambda_{ij}$ 為正交變換矩陣元素；$\vec B$ 同理，指標用 $k$。</p>
+<div class="math-block">$$\vec A'\cdot\vec B'=\sum_iA_i'B_i'=\sum_i\Big(\sum_j\lambda_{ij}A_j\Big)\Big(\sum_k\lambda_{ik}B_k\Big)$$</div>
+<p><strong>② 對調求和次序：</strong> 有限項的和可任意調換次序；$A_j$、$B_k$ 和 $i$ 無關，可提到 $\sum_i$ 外面：</p>
+<div class="math-block">$$=\sum_{j,k}\Big(\sum_i\lambda_{ij}\lambda_{ik}\Big)A_jB_k$$</div>
+<p class="fnote"><b>公式（正交條件，課本式 1.15）：</b>$\sum_i\lambda_{ij}\lambda_{ik}=\delta_{jk}$，其中 $\delta_{jk}$ 為 Kronecker delta；由課本習題 <a href="#tm-1-6">1-6</a> 得到。</p>
+<div class="math-block">$$=\sum_{j,k}\delta_{jk}A_jB_k$$</div>
+<p><strong>③ $\delta_{jk}$ 只留下 $k=j$：</strong> 對 $k$ 求和時只有 $k=j$ 那一項的 $\delta_{jk}=1$，所以 $\sum_k\delta_{jk}B_k=B_j$：</p>
+<div class="math-block">$$=\sum_jA_jB_j=\vec A\cdot\vec B$$</div>
+<p>所以長度 $\sqrt{\vec A\cdot\vec A}$ 和夾角 $\cos\theta=\frac{\vec A\cdot\vec B}{AB}$ 也都不變（數值例見 <a href="#ex-p49">Example 1.1</a>）。</p>
+<div class="math-block">$$\boxed{\vec A'\cdot\vec B'=\vec A\cdot\vec B\text{，內積是純量}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s09">9.8 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s09-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>用旋轉矩陣推出和角公式</h4>
+    <button type="button" class="exam-btn" data-exam="self-s09-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>二維旋轉矩陣 $\lambda(\theta)=\begin{bmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{bmatrix}$。(a) 由「先轉 $\theta$ 再轉 $\phi$ 等於一次轉 $\theta+\phi$」推出 $\cos(\theta+\phi)$、$\sin(\theta+\phi)$ 的和角公式；(b) 證明 $\lambda(\theta)^{\mathsf T}=\lambda(-\theta)=\lambda(\theta)^{-1}$；(c) 二維旋轉為什麼可以交換次序，三維（p.50）卻不行？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda(\theta)=\begin{bmatrix}\cos\theta&amp;\sin\theta\\-\sin\theta&amp;\cos\theta\end{bmatrix}$；先轉 $\theta$ 再轉 $\phi$ 寫成 $\lambda(\phi)\lambda(\theta)$（後做的在左）。</p>
+<h4>(a) 和角公式</h4>
+<p><strong>① 乘開 $\lambda(\phi)\lambda(\theta)$：</strong> 同一個旋轉可以寫成「兩個矩陣相乘」或「一個 $\lambda(\theta+\phi)$」，逐元素比較就得到和角公式。記 $M=\lambda(\phi)\lambda(\theta)$，逐元素算（row × column）。</p>
+<p class="fnote"><b>公式（矩陣乘法）：</b>$M_{ij}=\sum_k A_{ik}B_{kj}$，即 $A$ 的第 $i$ 個 row 與 $B$ 的第 $j$ 個 column 內積；本題 $A=\lambda(\phi)$、$B=\lambda(\theta)$。</p>
+<p>代入 $\lambda(\phi)$ 的 row 1 $=(\cos\phi,\sin\phi)$、row 2 $=(-\sin\phi,\cos\phi)$；$\lambda(\theta)$ 的 column 1 $=(\cos\theta,-\sin\theta)$、column 2 $=(\sin\theta,\cos\theta)$：</p>
+<div class="math-block">$$\begin{aligned}M_{11}&amp;=\cos\phi\cos\theta-\sin\phi\sin\theta\\M_{12}&amp;=\cos\phi\sin\theta+\sin\phi\cos\theta\\M_{21}&amp;=-\sin\phi\cos\theta-\cos\phi\sin\theta\\M_{22}&amp;=-\sin\phi\sin\theta+\cos\phi\cos\theta\end{aligned}$$</div>
+<p><strong>② 和 $\lambda(\theta+\phi)$ 比較：</strong> 平面上兩次繞同一軸，角度相加，所以 $M=\lambda(\theta+\phi)$：</p>
+<div class="math-block">$$M=\begin{bmatrix}\cos(\theta+\phi)&amp;\sin(\theta+\phi)\\-\sin(\theta+\phi)&amp;\cos(\theta+\phi)\end{bmatrix}$$</div>
+<p>比較 $(1,1)$ 元素與上一步的 $M_{11}$：</p>
+<div class="math-block">$$\cos(\theta+\phi)=\cos\theta\cos\phi-\sin\theta\sin\phi$$</div>
+<p>比較 $(1,2)$ 元素與上一步的 $M_{12}$：</p>
+<div class="math-block">$$\sin(\theta+\phi)=\sin\theta\cos\phi+\cos\theta\sin\phi$$</div>
+<p>$(2,1)$、$(2,2)$ 元素給出同樣兩條（只差一個負號），沒有新資訊。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\cos(\theta+\phi)=\cos\theta\cos\phi-\sin\theta\sin\phi\\ \sin(\theta+\phi)=\sin\theta\cos\phi+\cos\theta\sin\phi\end{gathered}}$$</div>
+<h4>(b) 轉置與反矩陣</h4>
+<p><strong>① 轉置：</strong> 轉置只把兩個 $\sin\theta$ 對調位置，再用 $\sin$ 是奇函數認出 $\lambda(-\theta)$。</p>
+<div class="math-block">$$\lambda(\theta)^{\mathsf T}=\begin{bmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{bmatrix}$$</div>
+<p><strong>② 代入 $-\theta$：</strong> 把 $-\theta$ 代入 $\lambda$，用 $\cos(-\theta)=\cos\theta$、$\sin(-\theta)=-\sin\theta$：</p>
+<div class="math-block">$$\lambda(-\theta)=\begin{bmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{bmatrix}=\lambda(\theta)^{\mathsf T}$$</div>
+<p><strong>③ 反矩陣：</strong> 用 (a) 的「角度相加」：</p>
+<div class="math-block">$$\lambda(-\theta)\lambda(\theta)=\lambda(\theta-\theta)=\lambda(0)=\mathbf 1$$</div>
+<p>所以 $\lambda(-\theta)$ 也是 $\lambda(\theta)$ 的反矩陣，這是正交矩陣 $\lambda^{\mathsf T}=\lambda^{-1}$ 的特例；直觀上轉回 $-\theta$ 就抵消了。</p>
+<div class="math-block">$$\boxed{\lambda(\theta)^{\mathsf T}=\lambda(-\theta)=\lambda(\theta)^{-1}}$$</div>
+<h4>(c) 交換性</h4>
+<p><strong>① 二維只有一根轉軸：</strong> 看「角度相加」的論證在三維哪裡失效。二維只有垂直平面的一根轉軸，任何兩次旋轉都只是角度相加，而數字加法可交換：</p>
+<div class="math-block">$$\lambda(\phi)\lambda(\theta)=\lambda(\theta+\phi)=\lambda(\phi+\theta)=\lambda(\theta)\lambda(\phi)$$</div>
+<p><strong>② 三維不行：</strong> 三維的兩次旋轉可以繞<strong>不同的軸</strong>，合起來不是「角度相加」，上面論證的第一步就不成立；<a href='#tb-rot2'>§1.7</a> 已實際算出 $\lambda_2\lambda_1\neq\lambda_1\lambda_2$。</p>
+<div class="math-block">$$\boxed{\text{同軸旋轉（角度相加）才可交換}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s09-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>無窮小旋轉：$\lambda\approx\mathbf 1+\varepsilon$</h4>
+    <button type="button" class="exam-btn" data-exam="self-s09-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>座標系繞 $x_3$ 轉一個很小的角 $\delta\theta$。(a) 保留到 $\delta\theta$ 的一次項，寫成 $\lambda\approx\mathbf 1+\varepsilon$，並說明 $\varepsilon$ 是反對稱矩陣（$\varepsilon^{\mathsf T}=-\varepsilon$）；(b) 驗證 $\lambda\lambda^{\mathsf T}=\mathbf 1$ 到一次項成立；(c) 證明固定點的座標變化 $\vec x'-\vec x=-\delta\vec\theta\times\vec x$（$\delta\vec\theta=\delta\theta\,\hat x_3$），並說明負號的意思。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：座標系繞 $x_3$ 轉小角 $\delta\theta$，只留 $\delta\theta$ 的一次項；$\delta\vec\theta=\delta\theta\,\hat x_3=(0,0,\delta\theta)$；點不動、座標系轉。</p>
+<h4>(a) 一次展開與反對稱</h4>
+<p><strong>① 寫出 $\lambda_z(\delta\theta)$ 並展開：</strong> 角度很小，把 $\cos$、$\sin$ 展開到一次，矩陣就拆成「單位矩陣 + 小矩陣 $\varepsilon$」。代入 $\lambda_z$ 的形式，角度 $\delta\theta$：</p>
+<div class="math-block">$$\lambda=\begin{bmatrix}\cos\delta\theta&amp;\sin\delta\theta&amp;0\\-\sin\delta\theta&amp;\cos\delta\theta&amp;0\\0&amp;0&amp;1\end{bmatrix}$$</div>
+<p class="fnote"><b>公式（泰勒展開）：</b>$\cos x=1-\frac{x^2}2+\cdots$、$\sin x=x-\frac{x^3}6+\cdots$，其中 $x$ 為小角度（弧度）；本題 $x=\delta\theta$，到一次得 $\cos\delta\theta\approx1$、$\sin\delta\theta\approx\delta\theta$。</p>
+<div class="math-block">$$\lambda\approx\begin{bmatrix}1&amp;\delta\theta&amp;0\\-\delta\theta&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}=\mathbf 1+\varepsilon$$</div>
+<div class="math-block">$$\varepsilon=\begin{bmatrix}0&amp;\delta\theta&amp;0\\-\delta\theta&amp;0&amp;0\\0&amp;0&amp;0\end{bmatrix}$$</div>
+<p><strong>② 反對稱：</strong> 轉置把 $(1,2)$ 的 $\delta\theta$ 和 $(2,1)$ 的 $-\delta\theta$ 對調，每格都變號：</p>
+<div class="math-block">$$\varepsilon^{\mathsf T}=-\varepsilon$$</div>
+<div class="math-block">$$\boxed{\varepsilon=\begin{bmatrix}0&amp;\delta\theta&amp;0\\-\delta\theta&amp;0&amp;0\\0&amp;0&amp;0\end{bmatrix},\ \varepsilon^{\mathsf T}=-\varepsilon}$$</div>
+<h4>(b) 正交到一次</h4>
+<p><strong>① 代入 $\mathbf 1+\varepsilon$：</strong> 一次項是 $\varepsilon+\varepsilon^{\mathsf T}$，反對稱剛好讓它消失。代入 $\lambda\approx\mathbf 1+\varepsilon$、$\lambda^{\mathsf T}\approx\mathbf 1+\varepsilon^{\mathsf T}=\mathbf 1-\varepsilon$：</p>
+<div class="math-block">$$\lambda\lambda^{\mathsf T}\approx(\mathbf 1+\varepsilon)(\mathbf 1-\varepsilon)=\mathbf 1-\varepsilon+\varepsilon-\varepsilon^2=\mathbf 1-\varepsilon^2$$</div>
+<p><strong>② 算 $\varepsilon^2$：</strong> row × column，$(1,1)$ 元素 $=0\cdot0+\delta\theta\cdot(-\delta\theta)=-\delta\theta^2$，$(2,2)$ 元素 $=(-\delta\theta)\cdot\delta\theta=-\delta\theta^2$，其餘為 0：</p>
+<div class="math-block">$$\varepsilon^2=\mathrm{diag}(-\delta\theta^2,\,-\delta\theta^2,\,0)$$</div>
+<p>它是二次小量，所以到一次項 $\lambda\lambda^{\mathsf T}=\mathbf 1$。若 $\varepsilon$ 不是反對稱，一次項 $\varepsilon+\varepsilon^{\mathsf T}$ 就不會消掉；反對稱正是「正交到一次」的條件。</p>
+<div class="math-block">$$\boxed{\lambda\lambda^{\mathsf T}=\mathbf 1+O(\delta\theta^2)}$$</div>
+<h4>(c) 和外積比較</h4>
+<p><strong>① 算 $\varepsilon\vec x$：</strong> 把 $\varepsilon\vec x$ 與 $\delta\vec\theta\times\vec x$ 各自算成分量逐一對照。座標變化 $\vec x'-\vec x=(\mathbf 1+\varepsilon)\vec x-\vec x=\varepsilon\vec x$，用 $\varepsilon$ 的三個 row 內積 $(x_1,x_2,x_3)$：</p>
+<div class="math-block">$$\varepsilon\vec x=(\delta\theta\,x_2,\ -\delta\theta\,x_1,\ 0)$$</div>
+<p><strong>② 算 $\delta\vec\theta\times\vec x$：</strong></p>
+<p class="fnote"><b>公式（外積分量）：</b>$\vec a\times\vec b=(a_2b_3-a_3b_2,\ a_3b_1-a_1b_3,\ a_1b_2-a_2b_1)$，其中 $a_i,b_i$ 為兩向量分量；本題 $\vec a=\delta\vec\theta=(0,0,\delta\theta)$、$\vec b=\vec x$。</p>
+<div class="math-block">$$\begin{aligned}\delta\vec\theta\times\vec x&amp;=(0\cdot x_3-\delta\theta\,x_2,\ \delta\theta\,x_1-0\cdot x_3,\ 0)\\&amp;=(-\delta\theta\,x_2,\ \delta\theta\,x_1,\ 0)\end{aligned}$$</div>
+<p>每個分量剛好差一個負號，所以</p>
+<div class="math-block">$$\vec x'-\vec x=-\delta\vec\theta\times\vec x$$</div>
+<p><strong>③ 負號的意思：</strong> 這裡轉的是座標軸，點不動；從新軸看，點像是反方向轉了 $\delta\theta$（課本圖 1-5 的兩種看法）。若改成「軸不動、點轉 $\delta\vec\theta$」，就是課本式 (1.106) 的 $\delta\vec r=\delta\vec\theta\times\vec r$。另外，兩次小旋轉 $(\mathbf 1+\varepsilon_1)(\mathbf 1+\varepsilon_2)=\mathbf 1+\varepsilon_1+\varepsilon_2+\varepsilon_1\varepsilon_2\approx\mathbf 1+\varepsilon_1+\varepsilon_2$（$\varepsilon_1\varepsilon_2$ 是二次小量），和次序無關，所以無窮小旋轉可以當向量相加。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec x'-\vec x=-\delta\vec\theta\times\vec x\\ \text{負號：轉的是座標軸，點相對新軸反向轉}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>軸逆時針轉 $\theta$（點不動）：$x'=x\cos\theta+y\sin\theta$、$y'=-x\sin\theta+y\cos\theta$，負號來自 $\cos(90^\circ+\theta)$。</li>
+    <li>三維繞某軸：該軸填 1 和 0，其餘照二維；繞 $y$ 時配對是 $(z,x)$。</li>
+    <li>旋轉矩陣的 row = 新軸在舊座標的分量；做完用「長度不變」驗算。</li>
+    <li>連續旋轉：後做的乘在左邊，次序不能對調；正交 ⟺ $\lambda^{\mathsf T}\lambda=I$ ⟺ 保長度，$\det=\pm1$。</li>
+  </ol>
+</div>
+

@@ -1,0 +1,351 @@
+<h2>八、座標系與矩陣乘法 <span class="pg">講義 p.36–40</span></h2>
+
+<p class="lead">同一個運動可以用不同的座標系描述，而在座標系之間換算要靠矩陣乘法。這一節先把矩陣乘法的規則弄熟，第九節再用它做旋轉。</p>
+
+<h3 id="mx-coord">8.1 座標系 <span class="pg-tag">p.36–37</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.37 Coordinate Systems</span>
+  <p>同一個物理現象可以用不同座標系描述，物理定律不會因為選哪一個座標系而改變。座標系像是觀看的角度，可以依需要選擇。</p>
+</div>
+
+<p>例如斜面上的木塊，用「沿斜面、垂直斜面」的軸通常比「水平、鉛直」好算，但兩種描述的是同一個運動。問題是已知一組座標下的分量，怎麼換到另一組——答案是乘上一個矩陣。</p>
+
+<h3 id="mx-dim">8.2 矩陣的尺寸 <span class="pg-tag">p.38</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.38 Dimensions of Matrix</span>
+  $$X=\begin{bmatrix}x_{11}&x_{12}&\cdots\\x_{21}&x_{22}&\cdots\\\vdots&\vdots&\ddots\end{bmatrix}\ \ (m\text{ rows}\times n\text{ columns})$$
+  <p>行矩陣 $\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}$ 是 $3\times1$；列矩陣 $\begin{bmatrix}x_1&x_2&x_3\end{bmatrix}$ 是 $1\times3$。</p>
+</div>
+
+<div class="step" data-step="mx-dim">
+  <span class="step-title">row 和 column</span>
+  <p>row 是橫的一排、column 是直的一排，尺寸寫成「row 數 × column 數」。元素 $x_{ij}$ 的第一個下標是第幾個 row，第二個是第幾個 column。三維向量的分量常寫成 $3\times1$ 的行矩陣，這樣「矩陣 × 向量」就能表示座標轉換。</p>
+</div>
+
+<h3 id="mx-mult">8.3 矩陣乘法 <span class="pg-tag">p.39</span></h3>
+
+<div class="step" data-step="mx-rule">
+  <span class="step-title">row 內積 column</span>
+  <p>$AB$ 的第 $i$ 個 row、第 $j$ 個 column，是 $A$ 的第 $i$ 個 row 和 $B$ 的第 $j$ 個 column 對應相乘再相加：</p>
+  $$(AB)_{ij}=\sum_k A_{ik}B_{kj}$$
+  <p>所以 $A$ 的 column 數必須等於 $B$ 的 row 數：$(X\times Y)(Y\times Z)=X\times Z$。</p>
+</div>
+
+<div class="anim" data-anim="matrix-dims"></div>
+
+<div class="problem" data-kind="example" id="ex-p39">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.39 · Example 1.2</span></div>
+    <h4>求 $AB$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p39">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span>
+      $$A=\begin{bmatrix}2&1&3\\-2&2&4\\-1&-3&-4\end{bmatrix},\qquad B=\begin{bmatrix}-1&-2\\1&2\\3&4\end{bmatrix}$$
+    </div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$A$ 是 $3\times3$（rows $(2,1,3)$、$(-2,2,4)$、$(-1,-3,-4)$），$B$ 是 $3\times2$（columns $(-1,1,3)$、$(-2,2,4)$）。</p>
+<div class="anim" data-anim="matmul"></div>
+<p><strong>① 先比尺寸：</strong> 矩陣乘法只有在左邊的 column 數＝右邊的 row 數時才有定義，所以先比尺寸，再決定要算幾格。</p>
+<p class="fnote"><b>公式（矩陣乘法）：</b>$(AB)_{ij}=\sum_k A_{ik}B_{kj}$，即 $A$ 的第 $i$ 個 row 內積 $B$ 的第 $j$ 個 column；尺寸 $(m\times n)(n\times p)=m\times p$，中間的 $n$ 要相同；本題 $A$ 是 $3\times3$、$B$ 是 $3\times2$。</p>
+<div class="math-block">$$(3\times\underline{3})(\underline{3}\times2)=3\times2$$</div>
+<p>所以 $AB$ 有 3 個 row、2 個 column，共 6 格要算。</p>
+<p><strong>② 第 1 個 row：</strong> $(AB)_{1j}=A_{11}B_{1j}+A_{12}B_{2j}+A_{13}B_{3j}$，每格寫出三個乘積再相加。</p>
+<p>代入 $A$ 的 row 1 $=(2,1,3)$；$B$ 的 column 1 $=(-1,1,3)$、column 2 $=(-2,2,4)$：</p>
+<div class="math-block">$$\begin{aligned}
+(AB)_{11}&amp;=(2)(-1)+(1)(1)+(3)(3)\\
+&amp;=-2+1+9=8\\
+(AB)_{12}&amp;=(2)(-2)+(1)(2)+(3)(4)\\
+&amp;=-4+2+12=10
+\end{aligned}$$</div>
+<p><strong>③ 第 2 個 row：</strong> 代入 $A$ 的 row 2 $=(-2,2,4)$，$B$ 的兩個 column 同上：</p>
+<div class="math-block">$$\begin{aligned}
+(AB)_{21}&amp;=(-2)(-1)+(2)(1)+(4)(3)\\
+&amp;=2+2+12=16\\
+(AB)_{22}&amp;=(-2)(-2)+(2)(2)+(4)(4)\\
+&amp;=4+4+16=24
+\end{aligned}$$</div>
+<p><strong>④ 第 3 個 row：</strong> 代入 $A$ 的 row 3 $=(-1,-3,-4)$：</p>
+<div class="math-block">$$\begin{aligned}
+(AB)_{31}&amp;=(-1)(-1)+(-3)(1)+(-4)(3)\\
+&amp;=1-3-12=-14\\
+(AB)_{32}&amp;=(-1)(-2)+(-3)(2)+(-4)(4)\\
+&amp;=2-6-16=-20
+\end{aligned}$$</div>
+<p>把 6 格依位置排回 $3\times2$ 的矩陣：</p>
+<div class="math-block">$$\boxed{AB=\begin{bmatrix}8&amp;10\\16&amp;24\\-14&amp;-20\end{bmatrix}}$$</div>
+<p><strong>⑤ 反過來 $BA$ 能不能乘：</strong> 代入 $B$ 是 $3\times2$、$A$ 是 $3\times3$：</p>
+<div class="math-block">$$(3\times\underline{2})(\underline{3}\times3):\ 2\neq3$$</div>
+<p>$B$ 的一個 row 只有 2 個數，$A$ 的一個 column 有 3 個數，沒辦法一一對應相乘，所以 $BA$ 沒有定義。</p>
+<div class="math-block">$$\boxed{BA\text{ 不能乘（}2\neq3\text{）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="mx-noncomm">8.4 $AB\neq BA$ <span class="pg-tag">p.40</span></h3>
+
+<div class="problem" data-kind="example" id="ex-p40">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.40 · Example 1.3</span></div>
+    <h4>比較 $AB$ 與 $BA$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p40">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$A=\begin{bmatrix}2&1\\-1&3\end{bmatrix},\qquad B=\begin{bmatrix}-1&2\\4&-2\end{bmatrix}$$</div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$A$ 的 row 1 $=(2,1)$、row 2 $=(-1,3)$；$B$ 的 row 1 $=(-1,2)$、row 2 $=(4,-2)$，column 1 $=(-1,4)$、column 2 $=(2,-2)$。</p>
+<p><strong>① $AB$：$A$ 的 row 內積 $B$ 的 column：</strong> 兩個都是 $2\times2$，$AB$、$BA$ 都能乘，可以真正比較乘的次序；兩者配對的數不同，要各自逐格算。</p>
+<p class="fnote"><b>公式（矩陣乘法）：</b>$(XY)_{ij}=\sum_k X_{ik}Y_{kj}$，其中 $X$ 的第 $i$ 個 row 內積 $Y$ 的第 $j$ 個 column；本題 $2\times2$ 時 $(AB)_{ij}=A_{i1}B_{1j}+A_{i2}B_{2j}$。</p>
+<p>代入 $A$ 的兩個 row 與 $B$ 的兩個 column：</p>
+<div class="math-block">$$\begin{aligned}
+(AB)_{11}&amp;=(2)(-1)+(1)(4)=-2+4=2\\
+(AB)_{12}&amp;=(2)(2)+(1)(-2)=4-2=2\\
+(AB)_{21}&amp;=(-1)(-1)+(3)(4)=1+12=13\\
+(AB)_{22}&amp;=(-1)(2)+(3)(-2)=-2-6=-8
+\end{aligned}$$</div>
+<div class="math-block">$$AB=\begin{bmatrix}2&amp;2\\13&amp;-8\end{bmatrix}$$</div>
+<p><strong>② $BA$：換成 $B$ 的 row 內積 $A$ 的 column：</strong> $(BA)_{ij}=B_{i1}A_{1j}+B_{i2}A_{2j}$。</p>
+<p>代入 $B$ 的 row 1 $=(-1,2)$、row 2 $=(4,-2)$；$A$ 的 column 1 $=(2,-1)$、column 2 $=(1,3)$：</p>
+<div class="math-block">$$\begin{aligned}
+(BA)_{11}&amp;=(-1)(2)+(2)(-1)=-2-2=-4\\
+(BA)_{12}&amp;=(-1)(1)+(2)(3)=-1+6=5\\
+(BA)_{21}&amp;=(4)(2)+(-2)(-1)=8+2=10\\
+(BA)_{22}&amp;=(4)(1)+(-2)(3)=4-6=-2
+\end{aligned}$$</div>
+<div class="math-block">$$BA=\begin{bmatrix}-4&amp;5\\10&amp;-2\end{bmatrix}$$</div>
+<p><strong>③ 比較：</strong> 逐格比對，左上 $2$ 對 $-4$ 就已經不同，所以 $AB\neq BA$。只要一個反例，就證明了矩陣乘法一般不能交換；第九節「先轉 1 再轉 2」寫成矩陣相乘時，乘的次序就是操作的次序。</p>
+<div class="math-block">$$\boxed{\begin{gathered}AB=\begin{bmatrix}2&amp;2\\13&amp;-8\end{bmatrix},\quad BA=\begin{bmatrix}-4&amp;5\\10&amp;-2\end{bmatrix}\\ AB\neq BA\text{（矩陣乘法不可交換）}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="mx-tm">8.5 課本題</h3>
+
+<details class="supp" id="mx-tools">
+  <summary>先備：轉置、$3\times3$ 行列式、反矩陣</summary>
+  <div class="supp-body">
+    <p><strong>轉置</strong>：row 和 column 對調，$(A^{\mathsf T})_{ij}=A_{ji}$（課本寫 $A^t$）。</p>
+    <p><strong>行列式</strong>（沿第一個 row 展開，正負號 $+,-,+$）：</p>
+    $$\begin{vmatrix}a&b&c\\d&e&f\\g&h&i\end{vmatrix}=a(ei-fh)-b(di-fg)+c(dh-eg)$$
+    <p><strong>反矩陣</strong>：$AA^{-1}=A^{-1}A=I$，$I$ 是對角線為 1、其餘為 0 的單位矩陣。</p>
+  </div>
+</details>
+
+<div class="problem" data-kind="textbook" id="tm-1-14">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-14 · p.45</span></div>
+    <h4>行列式、連乘與轉置</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-14">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span>
+      $$\mathsf A=\begin{bmatrix}1&2&-1\\0&3&1\\2&0&1\end{bmatrix},\quad \mathsf B=\begin{bmatrix}2&1&0\\0&-1&2\\1&1&3\end{bmatrix},\quad \mathsf C=\begin{bmatrix}2&1\\4&3\\1&0\end{bmatrix}$$
+      <p>求 (a) $|\mathsf{AB}|$；(b) $\mathsf{AC}$；(c) $\mathsf{ABC}$；(d) $\mathsf{AB}-\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}$。</p>
+    </div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\mathsf A$ 的 rows $(1,2,-1)$、$(0,3,1)$、$(2,0,1)$；$\mathsf B$ 的 columns $(2,0,1)$、$(1,-1,1)$、$(0,2,3)$；$\mathsf C$ 是 $3\times2$，columns $(2,4,1)$、$(1,3,0)$；$|\cdot|$ 為行列式、$^{\mathsf T}$ 為轉置。</p>
+<h4>(a) $|\mathsf{AB}|$</h4>
+<p><strong>① 先算 $\mathsf{AB}$（三小題共用）：</strong> (a)、(c)、(d) 都含 $\mathsf{AB}$，先算一次後面重複用。</p>
+<p class="fnote"><b>公式（矩陣乘法）：</b>$(\mathsf{AB})_{ij}=\sum_k A_{ik}B_{kj}$，即 $\mathsf A$ 的第 $i$ 個 row 內積 $\mathsf B$ 的第 $j$ 個 column；本題 $\mathsf A$、$\mathsf B$ 都是 $3\times3$。</p>
+<p>代入 $\mathsf A$ 的 row 1 $=(1,2,-1)$，和 $\mathsf B$ 的三個 column：</p>
+<div class="math-block">$$\begin{aligned}
+&amp;(1)(2)+(2)(0)+(-1)(1)=1\\
+&amp;(1)(1)+(2)(-1)+(-1)(1)=-2\\
+&amp;(1)(0)+(2)(2)+(-1)(3)=1
+\end{aligned}$$</div>
+<p>row 2 $=(0,3,1)$：</p>
+<div class="math-block">$$\begin{aligned}
+&amp;(0)(2)+(3)(0)+(1)(1)=1\\
+&amp;(0)(1)+(3)(-1)+(1)(1)=-2\\
+&amp;(0)(0)+(3)(2)+(1)(3)=9
+\end{aligned}$$</div>
+<p>row 3 $=(2,0,1)$：</p>
+<div class="math-block">$$\begin{aligned}
+&amp;(2)(2)+(0)(0)+(1)(1)=5\\
+&amp;(2)(1)+(0)(-1)+(1)(1)=3\\
+&amp;(2)(0)+(0)(2)+(1)(3)=3
+\end{aligned}$$</div>
+<div class="math-block">$$\mathsf{AB}=\begin{bmatrix}1&amp;-2&amp;1\\1&amp;-2&amp;9\\5&amp;3&amp;3\end{bmatrix}$$</div>
+<p><strong>② 行列式：沿第一個 row 展開：</strong> 每一項是第一個 row 的元素乘上劃掉它所在 row 與 column 後的 $2\times2$ 行列式，正負號 $+,-,+$。</p>
+<p class="fnote"><b>公式（$3\times3$ 行列式按第一列展開）：</b>$\begin{vmatrix}a&amp;b&amp;c\\d&amp;e&amp;f\\g&amp;h&amp;i\end{vmatrix}=a(ei-fh)-b(di-fg)+c(dh-eg)$，其中 $a\sim i$ 為矩陣的九個元素；本題用上一步的 $\mathsf{AB}$。</p>
+<p>代入 $a=1,b=-2,c=1$；$d=1,e=-2,f=9$；$g=5,h=3,i=3$：</p>
+<div class="math-block">$$\begin{aligned}
+ei-fh&amp;=(-2)(3)-(9)(3)=-6-27=-33\\
+di-fg&amp;=(1)(3)-(9)(5)=3-45=-42\\
+dh-eg&amp;=(1)(3)-(-2)(5)=3+10=13
+\end{aligned}$$</div>
+<div class="math-block">$$\begin{aligned}|\mathsf{AB}|&amp;=1\cdot(-33)-(-2)\cdot(-42)+1\cdot13\\&amp;=-33-84+13\end{aligned}$$</div>
+<p>第二項 $-b=-(-2)=+2$，再乘上 $-42$ 得 $-84$。</p>
+<div class="math-block">$$\boxed{|\mathsf{AB}|=-104}$$</div>
+<h4>(b) $\mathsf{AC}$</h4>
+<p><strong>① 逐格相乘：</strong> 尺寸 $(3\times3)(3\times2)=3\times2$。代入 $\mathsf A$ 的三個 row 與 $\mathsf C$ 的 column 1 $=(2,4,1)$、column 2 $=(1,3,0)$：</p>
+<div class="math-block">$$\begin{aligned}
+(\mathsf{AC})_{11}&amp;=(1)(2)+(2)(4)+(-1)(1)=9\\
+(\mathsf{AC})_{12}&amp;=(1)(1)+(2)(3)+(-1)(0)=7\\
+(\mathsf{AC})_{21}&amp;=(0)(2)+(3)(4)+(1)(1)=13\\
+(\mathsf{AC})_{22}&amp;=(0)(1)+(3)(3)+(1)(0)=9\\
+(\mathsf{AC})_{31}&amp;=(2)(2)+(0)(4)+(1)(1)=5\\
+(\mathsf{AC})_{32}&amp;=(2)(1)+(0)(3)+(1)(0)=2
+\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\mathsf{AC}=\begin{bmatrix}9&amp;7\\13&amp;9\\5&amp;2\end{bmatrix}}$$</div>
+<h4>(c) $\mathsf{ABC}$</h4>
+<p><strong>① 用結合律 $\mathsf{ABC}=(\mathsf{AB})\mathsf C$：</strong> $\mathsf{AB}$ 已經有了，直接拿去乘 $\mathsf C$，尺寸 $(3\times3)(3\times2)=3\times2$。</p>
+<p class="fnote"><b>公式（矩陣乘法結合律）：</b>$(\mathsf{XY})\mathsf Z=\mathsf X(\mathsf{YZ})$，其中 $\mathsf X,\mathsf Y,\mathsf Z$ 為尺寸相容的矩陣；本題 $\mathsf X=\mathsf A$、$\mathsf Y=\mathsf B$、$\mathsf Z=\mathsf C$。</p>
+<p>代入 (a) 的 $\mathsf{AB}$ 三個 row $(1,-2,1)$、$(1,-2,9)$、$(5,3,3)$，與 $\mathsf C$ 的兩個 column：</p>
+<div class="math-block">$$\begin{aligned}
+(\mathsf{ABC})_{11}&amp;=(1)(2)+(-2)(4)+(1)(1)=-5\\
+(\mathsf{ABC})_{12}&amp;=(1)(1)+(-2)(3)+(1)(0)=-5\\
+(\mathsf{ABC})_{21}&amp;=(1)(2)+(-2)(4)+(9)(1)=3\\
+(\mathsf{ABC})_{22}&amp;=(1)(1)+(-2)(3)+(9)(0)=-5\\
+(\mathsf{ABC})_{31}&amp;=(5)(2)+(3)(4)+(3)(1)=25\\
+(\mathsf{ABC})_{32}&amp;=(5)(1)+(3)(3)+(3)(0)=14
+\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\mathsf{ABC}=\begin{bmatrix}-5&amp;-5\\3&amp;-5\\25&amp;14\end{bmatrix}}$$</div>
+<h4>(d) $\mathsf{AB}-\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}$</h4>
+<p><strong>① 只要轉置 $\mathsf{AB}$：</strong> 不必分別轉置 $\mathsf A$、$\mathsf B$ 再相乘，只要把 $\mathsf{AB}$ 的 row 和 column 對調。</p>
+<p class="fnote"><b>公式（乘積的轉置）：</b>$\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}=(\mathsf{AB})^{\mathsf T}$，其中 $^{\mathsf T}$ 把 row 變成 column，是課本習題 1-4 (a)（本節 <a href="#tm-1-4">tm-1-4</a>）證明的結果；本題用 (a) 的 $\mathsf{AB}$。</p>
+<p>$\mathsf{AB}$ 的第 1 個 row $(1,-2,1)$ 變成第 1 個 column，依此類推：</p>
+<div class="math-block">$$(\mathsf{AB})^{\mathsf T}=\begin{bmatrix}1&amp;1&amp;5\\-2&amp;-2&amp;3\\1&amp;9&amp;3\end{bmatrix}$$</div>
+<p><strong>② 逐格相減：</strong></p>
+<div class="math-block">$$\begin{aligned}&amp;\mathsf{AB}-(\mathsf{AB})^{\mathsf T}\\&amp;=\begin{bmatrix}1&amp;-2&amp;1\\1&amp;-2&amp;9\\5&amp;3&amp;3\end{bmatrix}-\begin{bmatrix}1&amp;1&amp;5\\-2&amp;-2&amp;3\\1&amp;9&amp;3\end{bmatrix}\\&amp;=\begin{bmatrix}1-1&amp;-2-1&amp;1-5\\1+2&amp;-2+2&amp;9-3\\5-1&amp;3-9&amp;3-3\end{bmatrix}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\mathsf{AB}-\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}=\begin{bmatrix}0&amp;-3&amp;-4\\3&amp;0&amp;6\\4&amp;-6&amp;0\end{bmatrix}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-4">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-4 · p.43</span></div>
+    <h4>$(\mathsf{AB})^{\mathsf T}=\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}$、$(\mathsf{AB})^{-1}=\mathsf B^{-1}\mathsf A^{-1}$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 (a) $(\mathsf{AB})^{\mathsf T}=\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}$；(b) $(\mathsf{AB})^{-1}=\mathsf B^{-1}\mathsf A^{-1}$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：(a) $\mathsf A$ 為 $m\times n$、$\mathsf B$ 為 $n\times p$（只要 $\mathsf{AB}$ 能乘，不必是方陣）；(b) $\mathsf A$、$\mathsf B$ 為同樣大小、可逆的方陣，$I$ 為單位矩陣。</p>
+<h4>(a) $(\mathsf{AB})^{\mathsf T}=\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}$</h4>
+<p><strong>① 左邊第 $(i,j)$ 個元素：</strong> 兩個矩陣相等就是每個位置的元素都相等，所以取任意 $(i,j)$，兩邊都用定義展開成 $\sum_k$ 來比。</p>
+<p class="fnote"><b>公式（矩陣乘法與轉置的定義）：</b>$(\mathsf{AB})_{ij}=\sum_k A_{ik}B_{kj}$、$(\mathsf M^{\mathsf T})_{ij}=M_{ji}$，其中 $i,j$ 為 row、column 編號，$k$ 為求和指標；本題先用轉置定義，再用乘法定義。</p>
+<div class="math-block">$$\big[(\mathsf{AB})^{\mathsf T}\big]_{ij}=(\mathsf{AB})_{ji}=\sum_k A_{jk}B_{ki}$$</div>
+<p><strong>② 右邊第 $(i,j)$ 個元素：</strong> $\mathsf B^{\mathsf T}$ 是 $p\times n$、$\mathsf A^{\mathsf T}$ 是 $n\times m$，可以乘；先用乘法定義，再用轉置定義把每個因子換回 $\mathsf A$、$\mathsf B$ 的元素。</p>
+<div class="math-block">$$(\mathsf B^{\mathsf T}\mathsf A^{\mathsf T})_{ij}=\sum_k(\mathsf B^{\mathsf T})_{ik}(\mathsf A^{\mathsf T})_{kj}=\sum_k B_{ki}A_{jk}$$</div>
+<p><strong>③ 比較兩邊：</strong> 數字相乘可以交換，$B_{ki}A_{jk}=A_{jk}B_{ki}$，所以兩邊是同一個和（可交換的是數字 $A_{jk}$、$B_{ki}$，不是矩陣）：</p>
+<div class="math-block">$$\big[(\mathsf{AB})^{\mathsf T}\big]_{ij}=\sum_k A_{jk}B_{ki}=(\mathsf B^{\mathsf T}\mathsf A^{\mathsf T})_{ij}$$</div>
+<p>這對每一個 $(i,j)$ 都成立，兩個矩陣相等。</p>
+<div class="math-block">$$\boxed{(\mathsf{AB})^{\mathsf T}=\mathsf B^{\mathsf T}\mathsf A^{\mathsf T}}$$</div>
+<h4>(b) $(\mathsf{AB})^{-1}=\mathsf B^{-1}\mathsf A^{-1}$</h4>
+<p><strong>① 從右邊乘 $\mathsf B^{-1}\mathsf A^{-1}$：</strong> 反矩陣是唯一的，所以不必求出 $(\mathsf{AB})^{-1}$，只要驗證 $\mathsf B^{-1}\mathsf A^{-1}$ 從左右兩邊乘 $\mathsf{AB}$ 都得 $I$；用結合律重新加括號，讓 $\mathsf B\mathsf B^{-1}$ 先合併。</p>
+<p class="fnote"><b>公式（反矩陣的定義與結合律）：</b>$\mathsf M\mathsf M^{-1}=\mathsf M^{-1}\mathsf M=I$，$(\mathsf{XY})\mathsf Z=\mathsf X(\mathsf{YZ})$，其中 $\mathsf M$ 為可逆方陣、$\mathsf X,\mathsf Y,\mathsf Z$ 為尺寸相容的矩陣；本題 $\mathsf M$ 為 $\mathsf A$、$\mathsf B$。</p>
+<div class="math-block">$$\begin{aligned}(\mathsf{AB})(\mathsf B^{-1}\mathsf A^{-1})&amp;=\mathsf A(\mathsf B\mathsf B^{-1})\mathsf A^{-1}\\&amp;=\mathsf A\,I\,\mathsf A^{-1}=\mathsf A\mathsf A^{-1}=I\end{aligned}$$</div>
+<p><strong>② 從左邊乘 $\mathsf B^{-1}\mathsf A^{-1}$：</strong> 同樣的手法，這次讓 $\mathsf A^{-1}\mathsf A$ 先合併。</p>
+<div class="math-block">$$\begin{aligned}(\mathsf B^{-1}\mathsf A^{-1})(\mathsf{AB})&amp;=\mathsf B^{-1}(\mathsf A^{-1}\mathsf A)\mathsf B\\&amp;=\mathsf B^{-1}I\,\mathsf B=\mathsf B^{-1}\mathsf B=I\end{aligned}$$</div>
+<p>兩邊乘起來都是 $I$，依反矩陣的定義，$\mathsf B^{-1}\mathsf A^{-1}$ 就是 $\mathsf{AB}$ 的反矩陣。</p>
+<div class="math-block">$$\boxed{(\mathsf{AB})^{-1}=\mathsf B^{-1}\mathsf A^{-1}\ \blacksquare}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s08">8.6 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s08-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>哪些矩陣和 $A$ 可以交換</h4>
+    <button type="button" class="exam-btn" data-exam="self-s08-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$A=\begin{bmatrix}1&1\\0&1\end{bmatrix}$。求所有和 $A$ 可交換（$AB=BA$）的 $2\times2$ 矩陣 $B$。$B=\begin{bmatrix}1&0\\0&2\end{bmatrix}$ 可以嗎？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$A=\begin{bmatrix}1&amp;1\\0&amp;1\end{bmatrix}$；未知矩陣設成一般形式 $B=\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}$，四個元素都未知；條件 $AB=BA$。</p>
+<p><strong>① 把 $A$ 拆開、化簡條件：</strong> 題目要「所有」可交換的 $B$，所以設一般 $B$ 解元素方程式；$A$ 對角線全是 1，拆成 $A=\mathbf 1+N$，$N=\begin{bmatrix}0&amp;1\\0&amp;0\end{bmatrix}$，單位矩陣和誰都可交換，條件可化簡。代入 $AB-BA$ 用分配律展開：</p>
+<div class="math-block">$$\begin{aligned}AB-BA&amp;=(\mathbf 1+N)B-B(\mathbf 1+N)\\&amp;=\mathbf 1B+NB-B\mathbf 1-BN\\&amp;=B+NB-B-BN\\&amp;=NB-BN\end{aligned}$$</div>
+<p>所以 $AB=BA\Longleftrightarrow NB=BN$。</p>
+<p><strong>② 算 $NB$ 與 $BN$：</strong> 用 row 內積 column 逐格算。</p>
+<p class="fnote"><b>公式（矩陣乘法）：</b>$(XY)_{ij}=\sum_k X_{ik}Y_{kj}$，其中 $X_{ik}$ 是 $X$ 第 $i$ 個 row 的第 $k$ 個元素、$Y_{kj}$ 是 $Y$ 第 $j$ 個 column 的第 $k$ 個元素，即「row 內積 column」；本題 $X,Y$ 對應 $N$ 與 $B$。</p>
+<p>代入 $N=\begin{bmatrix}0&amp;1\\0&amp;0\end{bmatrix}$、$B=\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}$：</p>
+<div class="math-block">$$NB=\begin{bmatrix}0\cdot a+1\cdot c&amp;0\cdot b+1\cdot d\\0\cdot a+0\cdot c&amp;0\cdot b+0\cdot d\end{bmatrix}=\begin{bmatrix}c&amp;d\\0&amp;0\end{bmatrix}$$</div>
+<div class="math-block">$$BN=\begin{bmatrix}a\cdot0+b\cdot0&amp;a\cdot1+b\cdot0\\c\cdot0+d\cdot0&amp;c\cdot1+d\cdot0\end{bmatrix}=\begin{bmatrix}0&amp;a\\0&amp;c\end{bmatrix}$$</div>
+<p>$N$ 乘在左邊，把 $B$ 的第 2 個 row 搬到第 1 個 row；乘在右邊，把第 1 個 column 搬到第 2 個 column。</p>
+<p><strong>③ 逐元素比較，解出條件：</strong> $NB=BN$ 的四個位置分別給出</p>
+<div class="math-block">$$\begin{aligned}(1,1)&amp;:\ c=0, &amp;(1,2)&amp;:\ d=a,\\(2,1)&amp;:\ 0=0, &amp;(2,2)&amp;:\ 0=c\end{aligned}$$</div>
+<p>只有兩個真正的限制：$c=0$、$d=a$；$a$ 和 $b$ 沒有限制。</p>
+<div class="math-block">$$\boxed{B=\begin{bmatrix}a&amp;b\\0&amp;a\end{bmatrix}=a\,\mathbf 1+b\,N\quad(a,b\ \text{任意})}$$</div>
+<p><strong>④ 檢驗 $\begin{bmatrix}1&amp;0\\0&amp;2\end{bmatrix}$：</strong> 代入題目的例子 $a=1$、$b=0$、$c=0$、$d=2$：$c=0$ 符合，但 $d=2\neq a=1$，不符合上一步的條件。直接乘一次：</p>
+<div class="math-block">$$AB=\begin{bmatrix}1&amp;1\\0&amp;1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;2\end{bmatrix}=\begin{bmatrix}1&amp;2\\0&amp;2\end{bmatrix}$$</div>
+<div class="math-block">$$BA=\begin{bmatrix}1&amp;0\\0&amp;2\end{bmatrix}\begin{bmatrix}1&amp;1\\0&amp;1\end{bmatrix}=\begin{bmatrix}1&amp;1\\0&amp;2\end{bmatrix}$$</div>
+<p>右上角 $2\neq1$。</p>
+<div class="math-block">$$\boxed{\begin{bmatrix}1&amp;0\\0&amp;2\end{bmatrix}\ \text{不可交換（不行）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s08-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>轉幾次會回到原位：$\lambda(\theta)^n=\mathbf 1$</h4>
+    <button type="button" class="exam-btn" data-exam="self-s08-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>二維旋轉矩陣 $\lambda(\theta)=\begin{bmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{bmatrix}$（p.42）。(a) 用矩陣乘法和數學歸納法證明 $\lambda(\theta)^n=\lambda(n\theta)$；(b) 找最小的正整數 $n$ 使 $\lambda(72^\circ)^n=\mathbf 1$；(c) 證明對任何正整數 $n$，$\lambda(1\ \text{rad})^n\neq\mathbf 1$；(d) 一般地，$\lambda(\theta)^n=\mathbf 1$ 對某個 $n$ 成立的條件是什麼？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\lambda(\theta)=\begin{bmatrix}\cos\theta&amp;\sin\theta\\-\sin\theta&amp;\cos\theta\end{bmatrix}$；$n$ 為正整數；(b) $\theta=72^\circ$，(c) $\theta=1\ \text{rad}$（約 $57.3^\circ$）。</p>
+<h4>(a) 證明 $\lambda(\theta)^n=\lambda(n\theta)$</h4>
+<p><strong>① 乘一次＝角度相加：</strong> 任意 $n$ 次方無法真的連乘，先證 $\lambda(\theta)\lambda(\phi)=\lambda(\theta+\phi)$，再用歸納法推到 $n$ 次。記 $M=\lambda(\theta)\lambda(\phi)$，用 row 內積 column 逐元素算，再用和角公式合併。</p>
+<p class="fnote"><b>公式（三角和角公式）：</b>$\cos(\theta+\phi)=\cos\theta\cos\phi-\sin\theta\sin\phi$、$\sin(\theta+\phi)=\sin\theta\cos\phi+\cos\theta\sin\phi$，其中 $\theta,\phi$ 為任意兩角；本題 $\theta,\phi$ 就是兩個旋轉矩陣的角度。</p>
+<div class="math-block">$$\begin{aligned}M_{11}&amp;=\cos\theta\cos\phi+\sin\theta(-\sin\phi)\\&amp;=\cos(\theta+\phi)\\
+M_{12}&amp;=\cos\theta\sin\phi+\sin\theta\cos\phi\\&amp;=\sin(\theta+\phi)\\
+M_{21}&amp;=(-\sin\theta)\cos\phi+\cos\theta(-\sin\phi)\\&amp;=-\sin(\theta+\phi)\\
+M_{22}&amp;=(-\sin\theta)\sin\phi+\cos\theta\cos\phi\\&amp;=\cos(\theta+\phi)\end{aligned}$$</div>
+<p>四個元素正好排成 $\lambda(\theta+\phi)$，所以 $\lambda(\theta)\lambda(\phi)=\lambda(\theta+\phi)$。</p>
+<p><strong>② 數學歸納法推到 $n$ 次：</strong> $n=1$ 時 $\lambda(\theta)^1=\lambda(1\cdot\theta)$，成立。假設 $n$ 時 $\lambda(\theta)^n=\lambda(n\theta)$ 成立，$n+1$ 時用上一步的結果（$\phi$ 取 $\theta$、$\theta$ 取 $n\theta$）：</p>
+<div class="math-block">$$\begin{aligned}\lambda(\theta)^{n+1}&amp;=\lambda(\theta)^n\lambda(\theta)\\&amp;=\lambda(n\theta)\lambda(\theta)\\&amp;=\lambda(n\theta+\theta)\\&amp;=\lambda\big((n+1)\theta\big)\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\lambda(\theta)^n=\lambda(n\theta)\ \text{對所有正整數}\ n\ \text{成立}}$$</div>
+<h4>(b) $\lambda(72^\circ)^n=\mathbf 1$ 的最小 $n$</h4>
+<p><strong>① 什麼時候 $\lambda(\alpha)=\mathbf 1$：</strong> 兩矩陣相等要每個元素都相等。逐元素比較 $\mathbf 1=\begin{bmatrix}1&amp;0\\0&amp;1\end{bmatrix}$：對角線要 $\cos\alpha=1$，非對角線要 $\sin\alpha=0$，兩個同時成立只有</p>
+<div class="math-block">$$\alpha=2\pi k\quad(k\ \text{整數})$$</div>
+<p>（$\sin\alpha=0$ 允許 $\alpha=\pi k$，但 $k$ 奇數時 $\cos\alpha=-1$，要排除。）配合 (a) 的 $\lambda(\theta)^n=\lambda(n\theta)$：</p>
+<div class="math-block">$$\lambda(\theta)^n=\mathbf 1\Longleftrightarrow n\theta=2\pi k$$</div>
+<p><strong>② 代入 $\theta=72^\circ$：</strong> 角度用度，$2\pi$ 寫成 $360^\circ$：</p>
+<div class="math-block">$$72^\circ\,n=360^\circ\,k\ \Longleftrightarrow\ n=\frac{360}{72}k=5k$$</div>
+<p>最小正整數取 $k=1$、$n=5$；$n=1,2,3,4$ 對應 $72^\circ,144^\circ,216^\circ,288^\circ$，都不是 $360^\circ$ 的倍數。正五邊形轉五次回原位。</p>
+<div class="math-block">$$\boxed{n=5}$$</div>
+<h4>(c) 證明 $\lambda(1\ \text{rad})^n\neq\mathbf 1$</h4>
+<p><strong>① 反證法：</strong> 假設有正整數 $n$ 使 $\lambda(1)^n=\mathbf 1$。代入 $\theta=1$（弧度）到 (b) 的條件：</p>
+<div class="math-block">$$n\cdot1=2\pi k$$</div>
+<p>$n\ge1$ 所以 $k\ge1$，兩邊除以 $2k$：</p>
+<div class="math-block">$$\pi=\frac{n}{2k}$$</div>
+<p>右邊是兩個整數的比，代表 $\pi$ 是有理數，和「$\pi$ 是無理數」矛盾，所以假設不成立。轉 1 弧度永遠回不到原位，點在圓上的位置會越來越密地分布。</p>
+<div class="math-block">$$\boxed{\lambda(1\ \text{rad})^n\neq\mathbf 1\ \text{（否則}\ \pi\ \text{為有理數）}}$$</div>
+<h4>(d) 一般條件</h4>
+<p><strong>① 改寫成「佔整圈的幾分之幾」：</strong> 把 (b) 的條件改寫：</p>
+<div class="math-block">$$n\theta=2\pi k\ \Longleftrightarrow\ \frac{\theta}{2\pi}=\frac kn$$</div>
+<p>所以 $\theta$ 必須是整圈的有理數倍，才有某個 $n$ 回到 $\mathbf 1$；把 $\frac{\theta}{2\pi}$ 化成最簡分數 $\frac kn$，分母 $n$ 就是最小次數。例：$90^\circ$ 是 $\frac{90}{360}=\frac14$ 圈 → $n=4$；$144^\circ$ 是 $\frac{144}{360}=\frac25$ 圈 → $n=5$；(b) 的 $72^\circ$ 是 $\frac15$ 圈 → $n=5$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\tfrac{\theta}{2\pi}\ \text{為有理數}\\ \text{最小}\ n\ \text{是其最簡分母}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$x_{ij}$：$i$ 是 row、$j$ 是 column；尺寸寫「row 數 × column 數」。</li>
+    <li>$(AB)_{ij}=\sum_kA_{ik}B_{kj}$；$(X\times Y)(Y\times Z)=X\times Z$。</li>
+    <li>$AB\neq BA$；轉置與反矩陣會把次序倒過來。</li>
+  </ol>
+</div>

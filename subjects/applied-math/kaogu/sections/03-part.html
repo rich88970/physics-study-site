@@ -1,0 +1,346 @@
+<h2 id="kp-03">三、一階：恰當方程與積分因子</h2>
+<h3 id="k03-1">作業一第 4 題｜恰當方程</h3>
+<p><strong>原題：</strong></p>
+<div class="math-block">$$
+(2y+e^y+6x^2)y'+4+12xy=0
+\quad\text{with }y(0)=0.
+$$</div>
+<p><strong>中文：</strong> 求上述微分方程的解，且解曲線須通過 $(0,0)$。照片附解為 $4x+6x^2y+y^2+e^y=1$。</p>
+<p><strong>① 寫成 $M\,dx+N\,dy=0$：</strong> 含 $e^y$ 不是線性，改寫成微分形式。$y'$ 前面的係數乘 $dx$ 後成為 $dy$ 項，所以對應 $N$。</p>
+<div class="math-block">$$
+(4+12xy)\,dx+(2y+e^y+6x^2)\,dy=0.
+\tag{4.1}
+$$</div>
+<div class="math-block">$$
+M=4+12xy,
+\qquad N=2y+e^y+6x^2.
+$$</div>
+<p><strong>② 檢查恰當條件：</strong> 求 $M_y$ 時 $x$ 當常數，求 $N_x$ 時 $y$ 當常數。</p>
+<p class="fnote"><b>公式（恰當條件）：</b>$M(x,y)\,dx+N(x,y)\,dy=0$ 在偏導數連續的單連通區域內為恰當方程的充要條件是 $M_y=N_x$，此時存在勢函數 $f(x,y)$ 使 $f_x=M$、$f_y=N$，解曲線為 $f(x,y)=C$，其中 $M,N$ 為 $dx,dy$ 的係數、$M_y=\partial M/\partial y$、$N_x=\partial N/\partial x$、$C$ 為常數；本題 $M=4+12xy$、$N=2y+e^y+6x^2$。</p>
+<div class="math-block">$$
+M_y=12x,
+\qquad N_x=12x.
+\tag{4.2}
+$$</div>
+<p>兩者相等，且係數在整個平面連續，所以存在勢函數 $f$，原式即 $df=0$。</p>
+<p><strong>③ 由 $f_x=M$ 對 $x$ 積分：</strong> $y$ 當常數，積分「常數」要寫成只依賴 $y$ 的 $h(y)$。</p>
+<div class="math-block">$$
+f_x=4+12xy.
+$$</div>
+<p class="fnote"><b>公式（冪次積分）：</b>$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C$（$n\ne-1$），其中 $x$ 為積分變數、$n$ 為常數指數、$C$ 為積分常數（對 $x$ 偏積分時改為只依賴 $y$ 的 $h(y)$）；本題 $\int4\,dx=4x$（$n=0$）、$\int12xy\,dx=12y\dfrac{x^2}{2}$（$n=1$，$y$ 視為常數）。</p>
+<div class="math-block">$$
+\begin{aligned}
+f(x,y)
+&amp;=\int(4+12xy)\,dx+h(y)\\
+&amp;=4x+12y\frac{x^2}{2}+h(y)\\
+&amp;=4x+6x^2y+h(y).
+\end{aligned}
+\tag{4.3}
+$$</div>
+<p><strong>④ 用 $f_y=N$ 決定 $h(y)$：</strong> 式（4.3）對 $y$ 偏微分：</p>
+<div class="math-block">$$
+f_y=6x^2+h'(y).
+$$</div>
+<p>令它等於 $N$：</p>
+<div class="math-block">$$
+6x^2+h'(y)=2y+e^y+6x^2.
+$$</div>
+<p>消去 $6x^2$：</p>
+<div class="math-block">$$
+h'(y)=2y+e^y.
+$$</div>
+<p class="fnote"><b>公式（標準積分）：</b>$\int e^{ay}\,dy=\dfrac{1}{a}e^{ay}+C$（$a\ne0$），其中 $a$ 為常數、$y$ 為積分變數、$C$ 為積分常數；本題 $a=1$，另一項 $\int2y\,dy=y^2$ 用前面的冪次積分。</p>
+<div class="math-block">$$
+h(y)=y^2+e^y.
+$$</div>
+<p>（加法常數併入最後的總常數。）</p>
+<div class="math-block">$$
+f(x,y)=4x+6x^2y+y^2+e^y.
+\tag{4.4}
+$$</div>
+<p><strong>⑤ 寫成 $f=C$ 並代初值：</strong></p>
+<div class="math-block">$$
+4x+6x^2y+y^2+e^y=C.
+$$</div>
+<p>代 $(0,0)$：</p>
+<div class="math-block">$$
+C=4(0)+6(0)^2(0)+(0)^2+e^0=1.
+$$</div>
+<div class="math-block">$$
+\boxed{4x+6x^2y+y^2+e^y=1.}
+\tag{4.5}
+$$</div>
+<p><strong>注意：</strong> $N(0,0)=1\ne0$，初值附近有可微分支；往外延伸時須檢查 $N$ 是否變成零。</p>
+<h3 id="k03-2">作業一第 5 題｜先找 $F(y)$，再化成恰當方程</h3>
+<p><strong>原題：</strong></p>
+<div class="math-block">$$
+\cos y\,dx-2(x-y)\sin y\,dy-\cos y\,dy=0
+\quad\text{with }y(1)=0.
+$$</div>
+<p><strong>中文：</strong> 求上述微分方程的解，且解曲線須通過 $(1,0)$。照片附解為 $(x-y)\cos^2y=1$。</p>
+<p><strong>① 合併 $dy$ 項，辨認 $M,N$：</strong></p>
+<div class="math-block">$$
+\underbrace{\cos y}_{M}\,dx
++\underbrace{\big[-2(x-y)\sin y-\cos y\big]}_{N}\,dy=0.
+\tag{5.1}
+$$</div>
+<p><strong>② 檢查恰當條件：</strong></p>
+<p class="fnote"><b>公式（恰當條件）：</b>$M(x,y)\,dx+N(x,y)\,dy=0$ 在偏導數連續的單連通區域內為恰當方程的充要條件是 $M_y=N_x$，此時存在勢函數 $f(x,y)$ 使 $f_x=M$、$f_y=N$，解曲線為 $f(x,y)=C$，其中 $M,N$ 為 $dx,dy$ 的係數、$M_y=\partial M/\partial y$、$N_x=\partial N/\partial x$、$C$ 為常數；本題 $M=\cos y$、$N=-2(x-y)\sin y-\cos y$；若 $M_y\ne N_x$ 就不是恰當方程。</p>
+<div class="math-block">$$
+M_y=-\sin y,
+\qquad N_x=-2\sin y.
+$$</div>
+<p>兩者不恆等，原式不是恰當方程（只在 $y=0$ 一點相等不夠）。</p>
+<p><strong>③ 算偏導數差，選只依賴 $y$ 的積分因子：</strong> $\Delta$ 表示 $M_y-N_x$。</p>
+<div class="math-block">$$
+\Delta=M_y-N_x
+=(-\sin y)-(-2\sin y)=\sin y.
+\tag{5.2}
+$$</div>
+<p>只依賴 $y$ 的積分因子用 $-\Delta/M$：</p>
+<div class="math-block">$$
+-\frac{\Delta}{M}=-\frac{\sin y}{\cos y}.
+\tag{5.3}
+$$</div>
+<p>它只含 $y$，所以可找 $F(y)$。負號的來源：要求 $FM,FN$ 恰當，</p>
+<div class="math-block">$$
+\frac{\partial(FM)}{\partial y}
+=\frac{\partial(FN)}{\partial x}.
+$$</div>
+<p>$F$ 只依賴 $y$，左邊多出 $F'(y)M$：</p>
+<div class="math-block">$$
+F'M+FM_y=FN_x.
+$$</div>
+<p>在 $F\ne0$、$M\ne0$ 處除以 $FM$：</p>
+<div class="math-block">$$
+\frac{F'}F=\frac{N_x-M_y}{M}=-\frac{\Delta}{M}.
+$$</div>
+<p><strong>④ 求積分因子：</strong></p>
+<p class="fnote"><b>公式（單變數積分因子）：</b>若 $-\dfrac{\Delta}{M}=\dfrac{N_x-M_y}{M}$ 只含 $y$，則 $F(y)=e^{\int(-\Delta/M)\,dy}$ 使 $FM\,dx+FN\,dy=0$ 成為恰當方程，其中 $\Delta=M_y-N_x$、$M,N$ 為 $dx,dy$ 的係數、$F$ 須在使用區域內非零；本題 $-\dfrac{\Delta}{M}=-\dfrac{\sin y}{\cos y}$。</p>
+<div class="math-block">$$
+F(y)=e^{\int-\frac{\sin y}{\cos y}\,dy}.
+$$</div>
+<p>分子是分母的導數：</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\dfrac{u'(y)}{u(y)}\,dy=\ln|u(y)|+C$（$u\ne0$），其中 $u$ 為可微函數、$u'$ 為其對 $y$ 的導數、$C$ 為積分常數；本題 $u=\cos y$、$u'=-\sin y$。</p>
+<div class="math-block">$$
+\int-\frac{\sin y}{\cos y}\,dy=\ln|\cos y|.
+$$</div>
+<p>得 $F(y)=|\cos y|$。從 $y=0$ 出發取 $-\pi/2&lt;y&lt;\pi/2$，此區間 $\cos y&gt;0$，所以：</p>
+<div class="math-block">$$
+\boxed{F(y)=\cos y.}
+\tag{5.4}
+$$</div>
+<p><strong>⑤ 整個方程乘上 $\cos y$，再檢查恰當：</strong> $\widetilde M,\widetilde N$ 為新係數。</p>
+<div class="math-block">$$
+\cos^2y\,dx
++\big[-2(x-y)\sin y\cos y-\cos^2y\big]\,dy=0.
+\tag{5.5}
+$$</div>
+<div class="math-block">$$
+\widetilde M=\cos^2y,
+\qquad
+\widetilde N=-2(x-y)\sin y\cos y-\cos^2y.
+$$</div>
+<p class="fnote"><b>公式（連鎖律）：</b>$\dfrac{d}{dy}f\big(u(y)\big)=f'(u)\,u'(y)$，其中 $f$ 為外層函數、$u$ 為內層函數；本題 $f(u)=u^2$、$u=\cos y$，得 $\dfrac{d}{dy}\cos^2y=-2\sin y\cos y$。</p>
+<div class="math-block">$$
+\widetilde M_y=-2\sin y\cos y,
+\qquad
+\widetilde N_x=-2\sin y\cos y.
+$$</div>
+<p>相等，已成恰當方程。</p>
+<p><strong>⑥ 由 $f_x=\widetilde M$ 對 $x$ 積分：</strong> $\cos^2y$ 視為常數。</p>
+<div class="math-block">$$
+f(x,y)=\int\cos^2y\,dx+h(y)
+=x\cos^2y+h(y).
+\tag{5.6}
+$$</div>
+<p>對 $y$ 偏微分：</p>
+<div class="math-block">$$
+f_y=-2x\sin y\cos y+h'(y).
+$$</div>
+<p>令它等於 $\widetilde N$（先把 $x-y$ 展開）：</p>
+<div class="math-block">$$
+-2x\sin y\cos y+h'(y)
+=-2x\sin y\cos y
++2y\sin y\cos y-\cos^2y.
+$$</div>
+<p>消去 $-2x\sin y\cos y$：</p>
+<div class="math-block">$$
+h'(y)=2y\sin y\cos y-\cos^2y.
+\tag{5.7}
+$$</div>
+<p><strong>⑦ 用乘積律反向辨認 $h(y)$：</strong> 式（5.7）正好是 $-y\cos^2y$ 的導數。</p>
+<p class="fnote"><b>公式（乘積律）：</b>$\dfrac{d}{dy}\big[u(y)v(y)\big]=u'(y)v(y)+u(y)v'(y)$，其中 $u,v$ 為可微函數、$'$ 表示對 $y$ 的導數；本題 $u=-y$、$v=\cos^2y$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\frac{d}{dy}(-y\cos^2y)
+&amp;=(-1)\cos^2y+(-y)\frac{d(\cos^2y)}{dy}\\
+&amp;=-\cos^2y+(-y)(-2\sin y\cos y)\\
+&amp;=-\cos^2y+2y\sin y\cos y.
+\end{aligned}
+$$</div>
+<p>所以：</p>
+<div class="math-block">$$
+h(y)=-y\cos^2y.
+$$</div>
+<p>代回式（5.6）：</p>
+<div class="math-block">$$
+f(x,y)=x\cos^2y-y\cos^2y=(x-y)\cos^2y.
+\tag{5.8}
+$$</div>
+<p><strong>⑧ 寫成 $f=C$ 並代初值 $(1,0)$：</strong></p>
+<div class="math-block">$$
+(x-y)\cos^2y=C.
+$$</div>
+<div class="math-block">$$
+C=(1-0)\cos^2(0)=1.
+$$</div>
+<div class="math-block">$$
+\boxed{(x-y)\cos^2y=1.}
+\tag{5.9}
+$$</div>
+<p><strong>注意：</strong> 初始斜率 $y'(1)=1$ 有限、積分因子在該點非零，初值附近有合法分支；沿曲線走到 $dx/dy=1+2\sin y/\cos^3y=0$ 處會出現垂直切線，不能把整條曲線當成單一的 $y(x)$。</p>
+<h3 id="k03-3">2024 年 11 月期中第 1 題｜恰當方程（25 分）</h3>
+<p><strong>原題：</strong> Solve $(e^{2y}-y\cos(xy))dx+(2xe^{2y}-x\cos(xy)+2y)dy=0$ for $x=0$ and $y=2$.</p>
+<p><strong>中文：</strong> 解此一階微分形式，找通過 $(0,2)$ 的積分曲線。$\cos xy$ 按 $\cos(xy)$ 讀取。</p>
+<p><strong>① 辨認 $M,N$：</strong></p>
+<div class="math-block">$$
+M=e^{2y}-y\cos(xy),\quad N=2xe^{2y}-x\cos(xy)+2y.
+$$</div>
+<p><strong>② 檢查恰當條件：</strong></p>
+<p class="fnote"><b>公式（恰當條件）：</b>$M(x,y)\,dx+N(x,y)\,dy=0$ 在偏導數連續的單連通區域內為恰當方程的充要條件是 $M_y=N_x$，此時存在勢函數 $f(x,y)$ 使 $f_x=M$、$f_y=N$，解曲線為 $f(x,y)=C$，其中 $M,N$ 為 $dx,dy$ 的係數、$M_y=\partial M/\partial y$、$N_x=\partial N/\partial x$、$C$ 為常數；本題 $M=e^{2y}-y\cos(xy)$、$N=2xe^{2y}-x\cos(xy)+2y$。</p>
+<p class="fnote"><b>公式（乘積律）：</b>$\dfrac{\partial}{\partial y}\big[u\,v\big]=u_y\,v+u\,v_y$，其中 $u,v$ 為 $x,y$ 的可微函數、下標 $y$ 表示對 $y$ 偏微分（對 $x$ 時同理）；本題 $M$ 中的 $y\cos(xy)$ 取 $u=y$、$v=\cos(xy)$，$N$ 中的 $x\cos(xy)$ 對 $x$ 偏微分時取 $u=x$、$v=\cos(xy)$。</p>
+<p class="fnote"><b>公式（連鎖律）：</b>$\dfrac{\partial}{\partial y}f\big(g(x,y)\big)=f'(g)\,g_y$，其中 $f$ 為外層函數、$g$ 為內層函數、$g_y=\partial g/\partial y$（對 $x$ 時換成 $g_x$）；本題 $\dfrac{\partial}{\partial y}e^{2y}=2e^{2y}$、$\dfrac{\partial}{\partial y}\cos(xy)=-x\sin(xy)$、$\dfrac{\partial}{\partial x}\cos(xy)=-y\sin(xy)$。</p>
+<div class="math-block">$$
+M_y=2e^{2y}-\cos(xy)+xy\sin(xy),
+$$</div>
+<div class="math-block">$$
+N_x=2e^{2y}-\cos(xy)+xy\sin(xy).
+$$</div>
+<p>兩式相等，是恰當方程。</p>
+<p><strong>③ 由 $f_x=M$ 對 $x$ 積分：</strong> $y$ 當常數；第二項令 $u=xy$、$du=y\,dx$。</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\cos(ax)\,dx=\dfrac{1}{a}\sin(ax)+C$（$a\ne0$），其中 $a$ 為不含 $x$ 的常數、$C$ 為積分常數（對 $x$ 偏積分時改為 $h(y)$）；本題 $a=y$，故 $\int y\cos(xy)\,dx=\sin(xy)$，另 $\int e^{2y}\,dx=xe^{2y}$（$e^{2y}$ 視為常數）。</p>
+<div class="math-block">$$
+f(x,y)=\int[e^{2y}-y\cos(xy)]dx+h(y)=xe^{2y}-\sin(xy)+h(y).
+$$</div>
+<p><strong>④ 用 $f_y=N$ 決定 $h(y)$：</strong></p>
+<div class="math-block">$$
+f_y=2xe^{2y}-x\cos(xy)+h'(y)=2xe^{2y}-x\cos(xy)+2y,
+$$</div>
+<p>所以 $h'(y)=2y$、$h(y)=y^2$，沿解曲線：</p>
+<div class="math-block">$$
+xe^{2y}-\sin(xy)+y^2=C.
+$$</div>
+<p><strong>⑤ 代初值 $(0,2)$：</strong> $C=0-0+4=4$。</p>
+<div class="math-block">$$
+\boxed{xe^{2y}-\sin(xy)+y^2=4.}
+$$</div>
+<h3 id="k03-4">2023 年 11 月期中第 2 題｜恰當方程（6 分）</h3>
+<p><strong>原題：</strong> Solve $(2xe^{3y}+e^x)dx+(3x^2e^{3y}-y^2)dy=0$ for $y(0)=1$.</p>
+<p><strong>中文：</strong> 求通過 $(0,1)$ 的恰當方程解曲線。</p>
+<p><strong>① 檢查恰當條件：</strong> $M=2xe^{3y}+e^x$、$N=3x^2e^{3y}-y^2$。</p>
+<p class="fnote"><b>公式（恰當條件）：</b>$M(x,y)\,dx+N(x,y)\,dy=0$ 在偏導數連續的單連通區域內為恰當方程的充要條件是 $M_y=N_x$，此時存在勢函數 $f(x,y)$ 使 $f_x=M$、$f_y=N$，解曲線為 $f(x,y)=C$，其中 $M,N$ 為 $dx,dy$ 的係數、$M_y=\partial M/\partial y$、$N_x=\partial N/\partial x$、$C$ 為常數；本題 $M=2xe^{3y}+e^x$、$N=3x^2e^{3y}-y^2$。</p>
+<div class="math-block">$$
+M_y=6xe^{3y}=N_x.
+$$</div>
+<p>所以是恰當方程（exact）。</p>
+<p><strong>② 由 $f_x=M$ 對 $x$ 積分：</strong></p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C$（$n\ne-1$）、$\int e^x\,dx=e^x+C$，其中 $x$ 為積分變數、$n$ 為常數指數、$C$ 為積分常數（對 $x$ 偏積分時改為 $h(y)$）；本題 $\int2xe^{3y}\,dx=x^2e^{3y}$（$n=1$，$e^{3y}$ 視為常數），後面 $\int-y^2\,dy=-\dfrac{y^3}{3}$ 也用冪次公式（$n=2$）。</p>
+<div class="math-block">$$
+f(x,y)=\int Mdx=x^2e^{3y}+e^x+h(y).
+$$</div>
+<p><strong>③ 用 $f_y=N$ 決定 $h(y)$：</strong></p>
+<div class="math-block">$$
+f_y=3x^2e^{3y}+h'(y)=3x^2e^{3y}-y^2
+\Rightarrow h'(y)=-y^2.
+$$</div>
+<div class="math-block">$$h(y)=-y^3/3.$$</div>
+<p>故 $f=x^2e^{3y}+e^x-y^3/3=C$。</p>
+<p><strong>④ 代初值 $(0,1)$：</strong></p>
+<div class="math-block">$$
+C=0+1-\frac13=\frac23.
+$$</div>
+<div class="math-block">$$
+\boxed{x^2e^{3y}+e^x-\frac{y^3}{3}=\frac23.}
+$$</div>
+<h3 id="k03-5">2022 年 11 月期中第 1 題｜非恰當方程與積分因子（5 分）</h3>
+<p><strong>原題：</strong> Solve $(y^2+xy^3)dx+(5y^2-xy+y^3\sin y)dy=0$ for $y(0)=\pi/2$.</p>
+<p><strong>中文：</strong> 找此微分形式在 $x=0,y=\pi/2$ 附近的解。</p>
+<p><strong>① 辨認 $M,N$：</strong></p>
+<div class="math-block">$$
+M=y^2+xy^3=y^2(1+xy),\quad N=5y^2-xy+y^3\sin y.
+$$</div>
+<p><strong>② 檢查恰當條件：</strong></p>
+<p class="fnote"><b>公式（恰當條件）：</b>$M(x,y)\,dx+N(x,y)\,dy=0$ 在偏導數連續的單連通區域內為恰當方程的充要條件是 $M_y=N_x$，此時存在勢函數 $f(x,y)$ 使 $f_x=M$、$f_y=N$，解曲線為 $f(x,y)=C$，其中 $M,N$ 為 $dx,dy$ 的係數、$M_y=\partial M/\partial y$、$N_x=\partial N/\partial x$、$C$ 為常數；本題 $M=y^2+xy^3$、$N=5y^2-xy+y^3\sin y$。</p>
+<div class="math-block">$$
+M_y=2y+3xy^2,\qquad N_x=-y.
+$$</div>
+<p>$M_y\neq N_x$，原式非恰當。</p>
+<p><strong>③ 找只依賴 $y$ 的積分因子 $F(y)$：</strong></p>
+<p class="fnote"><b>公式（單變數積分因子）：</b>若 $\dfrac{N_x-M_y}{M}$ 只含 $y$，則 $F(y)=\exp\left(\int\dfrac{N_x-M_y}{M}\,dy\right)$ 使 $FM\,dx+FN\,dy=0$ 成為恰當方程，其中 $M,N$ 為 $dx,dy$ 的係數、$M_y,N_x$ 為偏導數、$F$ 須在使用區域內非零；本題 $M=y^2(1+xy)$、$N_x-M_y=-y-(2y+3xy^2)$。</p>
+<div class="math-block">$$
+\frac{N_x-M_y}{M}
+=\frac{-y-(2y+3xy^2)}{y^2(1+xy)}
+=\frac{-3y(1+xy)}{y^2(1+xy)}
+=-\frac3y.
+$$</div>
+<p>結果只含 $y$：</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\dfrac{dy}{y}=\ln|y|+C$（$y\ne0$），其中 $y$ 為積分變數、$C$ 為積分常數；本題 $\int-\dfrac{3}{y}\,dy=-3\ln|y|$。</p>
+<p class="fnote"><b>公式（指數律）：</b>$e^{n\ln u}=u^n$（$u\gt0$），其中 $n$ 為實數、$u$ 為正數；本題 $n=-3$、$u=|y|$。</p>
+<div class="math-block">$$
+F(y)=\exp\left(\int -\frac3y\,dy\right)=e^{-3\ln|y|}=|y|^{-3}.
+$$</div>
+<p>初值 $y(0)=\pi/2&gt;0$，附近取 $F(y)=y^{-3}$（只在 $y\neq0$ 合法，初值附近不會碰到）。</p>
+<p><strong>④ 乘上 $F$，再檢查恰當：</strong></p>
+<div class="math-block">$$
+\left(\frac1y+x\right)dx+\left(\frac5y-\frac{x}{y^2}+\sin y\right)dy=0.
+$$</div>
+<p>新係數 $\widetilde M=1/y+x$、$\widetilde N=5/y-x/y^2+\sin y$：</p>
+<div class="math-block">$$
+\widetilde M_y=-\frac1{y^2}=\widetilde N_x.
+$$</div>
+<p><strong>⑤ 由 $f_x=\widetilde M$ 對 $x$ 積分：</strong> $y$ 當常數。</p>
+<p class="fnote"><b>公式（冪次積分）：</b>$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C$（$n\ne-1$），其中 $x$ 為積分變數、$n$ 為常數指數、$C$ 為積分常數（對 $x$ 偏積分時改為只依賴 $y$ 的 $h(y)$）；本題 $\int\dfrac1y\,dx=\dfrac{x}{y}$（$n=0$，$\dfrac1y$ 視為常數）、$\int x\,dx=\dfrac{x^2}{2}$（$n=1$）。</p>
+<div class="math-block">$$
+f=\int\left(\frac1y+x\right)dx=\frac{x}{y}+\frac{x^2}2+h(y).
+$$</div>
+<p><strong>⑥ 用 $f_y=\widetilde N$ 決定 $h(y)$：</strong></p>
+<div class="math-block">$$
+f_y=-\frac{x}{y^2}+h'(y)=\frac5y-\frac{x}{y^2}+\sin y,
+$$</div>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\sin y\,dy=-\cos y+C$，其中 $y$ 為積分變數、$C$ 為積分常數；本題用於 $h(y)$ 的第二項，第一項 $\int\dfrac5y\,dy=5\ln|y|=5\ln y$（$y\gt0$）用前面的 $\int dy/y$。</p>
+<div class="math-block">$$
+h'(y)=\frac5y+\sin y,
+\quad h(y)=5\ln y-\cos y.
+$$</div>
+<p><strong>⑦ 代初值 $(0,\pi/2)$：</strong> $f=x/y+x^2/2+5\ln y-\cos y=C$，代入得 $C=5\ln(\pi/2)$。</p>
+<div class="math-block">$$
+\boxed{\frac{x}{y}+\frac{x^2}{2}+5\ln y-\cos y=5\ln\frac\pi2,\quad y&gt;0\text{ 的初值分支}.}
+$$</div>
+<h3 id="k03-6">2021 年 11 月期中第 1 題｜恰當方程（20 分）</h3>
+<p><strong>原題：</strong> Solve $(2y+e^y+6x^2)y'+4+12xy=0$ for $y(0)=0$.</p>
+<p><strong>中文：</strong> 求初始條件 $y(0)=0$ 的一階微分方程解（與作業一第 4 題相同）。</p>
+<p><strong>① 改成 $M\,dx+N\,dy=0$：</strong></p>
+<div class="math-block">$$
+M=4+12xy,\qquad N=2y+e^y+6x^2.
+$$</div>
+<p><strong>② 檢查恰當條件：</strong></p>
+<p class="fnote"><b>公式（恰當條件）：</b>$M(x,y)\,dx+N(x,y)\,dy=0$ 在偏導數連續的單連通區域內為恰當方程的充要條件是 $M_y=N_x$，此時存在勢函數 $f(x,y)$ 使 $f_x=M$、$f_y=N$，解曲線為 $f(x,y)=C$，其中 $M,N$ 為 $dx,dy$ 的係數、$M_y=\partial M/\partial y$、$N_x=\partial N/\partial x$、$C$ 為常數；本題 $M=4+12xy$、$N=2y+e^y+6x^2$。</p>
+<p>$M_y=12x=N_x$，所以是恰當方程。</p>
+<p><strong>③ 由 $f_x=M$ 對 $x$ 積分：</strong></p>
+<p class="fnote"><b>公式（冪次積分）：</b>$\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C$（$n\ne-1$），其中 $x$ 為積分變數、$n$ 為常數指數、$C$ 為積分常數（對 $x$ 偏積分時改為只依賴 $y$ 的 $h(y)$）；本題 $\int4\,dx=4x$（$n=0$）、$\int12xy\,dx=6x^2y$（$n=1$，$y$ 視為常數）。</p>
+<div class="math-block">$$
+f=\int(4+12xy)dx=4x+6x^2y+h(y).
+$$</div>
+<p><strong>④ 用 $f_y=N$ 決定 $h(y)$：</strong></p>
+<div class="math-block">$$
+6x^2+h'(y)=2y+e^y+6x^2\Rightarrow h'(y)=2y+e^y,
+$$</div>
+<p class="fnote"><b>公式（標準積分）：</b>$\int e^{ay}\,dy=\dfrac{1}{a}e^{ay}+C$（$a\ne0$），其中 $a$ 為常數、$y$ 為積分變數、$C$ 為積分常數；本題 $a=1$，另一項 $\int2y\,dy=y^2$ 用前面的冪次積分。</p>
+<div class="math-block">$$
+h(y)=y^2+e^y.
+$$</div>
+<p><strong>⑤ 代初值 $(0,0)$：</strong> $f(x,y)=4x+6x^2y+y^2+e^y=C$，代入得 $C=e^0=1$。</p>
+<div class="math-block">$$
+\boxed{4x+6x^2y+y^2+e^y=1.}
+$$</div>

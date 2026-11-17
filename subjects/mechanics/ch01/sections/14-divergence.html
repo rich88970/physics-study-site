@@ -1,0 +1,235 @@
+<h2>十三、散度 <span class="pg">講義 p.88–93</span></h2>
+
+<p class="lead">散度回答「這一點是不是在往外冒東西」：把向量場想成流體的流動，散度就是每單位體積的淨流出量。正的是源頭，負的是匯集點，零表示流進多少就流出多少。</p>
+
+<h3 id="dv-def">13.1 散度 = 淨通量 ÷ 體積 <span class="pg-tag">p.89–92</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.89–92 Divergence</span>
+  $$\text{Divergence}=\frac{\text{Net Flux}}{\text{Volume}}=\frac{\partial f_x}{\partial x}+\frac{\partial f_y}{\partial y}+\frac{\partial f_z}{\partial z}=\nabla\cdot\vec f\qquad(\text{純量})$$
+</div>
+
+<div class="step" id="dvx-a" data-step="dvx-a" data-sym="fvec,flux">
+  <span class="step-title">只看 $x$ 方向的兩個面</span>
+  <p>小方塊 $\mathrm dx\,\mathrm dy\,\mathrm dz$。垂直 $x$ 軸的兩個面面積都是 $\mathrm dy\,\mathrm dz$。右面（$x+\mathrm dx$）流出 $f_x(x+\mathrm dx)\,\mathrm dy\,\mathrm dz$，左面（$x$）流進 $f_x(x)\,\mathrm dy\,\mathrm dz$：</p>
+  $$\Delta(\text{Flux})_x=\mathrm dy\,\mathrm dz\,\big[f_x(x+\mathrm dx)-f_x(x)\big]=\mathrm dx\,\mathrm dy\,\mathrm dz\,\frac{f_x(x+\mathrm dx)-f_x(x)}{\mathrm dx}=\mathrm dV\,\frac{\partial f_x}{\partial x}$$
+</div>
+
+<div class="step" data-step="dvx-b">
+  <span class="step-title">三個方向加起來，除以體積</span>
+  $$\text{淨通量}=\mathrm dV\Big(\frac{\partial f_x}{\partial x}+\frac{\partial f_y}{\partial y}+\frac{\partial f_z}{\partial z}\Big)\ \Longrightarrow\ \frac{\text{淨通量}}{\mathrm dV}=\nabla\cdot\vec f$$
+  <p>形式上就是 $\nabla$ 和 $\vec f$ 做內積，所以結果是純量。</p>
+</div>
+
+<div class="anim" data-anim="div-flux"></div>
+
+<h3 id="dv-sign">13.2 散度的正負 <span class="pg-tag">p.93</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.93</span>
+  <p>$\nabla\cdot\vec V\lt0$：往一點匯集；$\nabla\cdot\vec V\gt0$：從一點往外發散；$\nabla\cdot\vec V=0$：流進等於流出。</p>
+</div>
+
+<p>例：$\vec r=(x,y,z)$ 處處往外，$\nabla\cdot\vec r=1+1+1=3\gt0$。均勻場 $(c,c,0)$ 的散度是 $0$——箭頭都朝同一方向，流進方塊多少就流出多少。旋轉場 $(-y,x,0)$ 的散度也是 $0+0=0$：它只繞圈，不往外冒。</p>
+
+<h3 id="dv-r">13.3 $\nabla$ 作用在 $r$ 的函數上</h3>
+
+<p>連心力、萬有引力都只和 $r$ 有關，下面兩個結果在考試中最常用。$\nabla\cdot\nabla=\nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}$ 稱為拉普拉斯算子（課本式 1.122）。</p>
+
+<div class="problem" data-kind="textbook" id="tm-1-31">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-31 · p.46</span></div>
+    <h4>$\nabla r^n$、$\nabla f(r)$、$\nabla^2\ln r$</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-31">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>證明 (a) $\nabla r^n=nr^{n-2}\vec r$；(b) $\nabla f(r)=\dfrac{\vec r}{r}\dfrac{\mathrm df}{\mathrm dr}$；(c) $\nabla^2(\ln r)=\dfrac1{r^2}$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$r=\sqrt{x^2+y^2+z^2}$、$\vec r=(x,y,z)$，$r\gt0$（$r^{n-2}$、$\ln r$ 在原點沒有定義）；講義 p.86 已算過 $\dfrac{\partial r}{\partial x_i}=\dfrac{x_i}{r}$。</p>
+<h4>(b) $\nabla f(r)=\dfrac{\vec r}{r}\dfrac{\mathrm df}{\mathrm dr}$</h4>
+<p><strong>① 連鎖律：</strong> (b) 是最一般的情形，(a) 只是 $f=r^n$ 的特例，所以先證 (b)；$f$ 透過 $r$ 依賴 $x_i$。</p>
+<p class="fnote"><b>公式（連鎖律）：</b>$\dfrac{\partial f}{\partial x_i}=\dfrac{\mathrm df}{\mathrm dr}\dfrac{\partial r}{\partial x_i}$，其中 $f$ 只透過 $r$ 依賴座標 $x_i$；本題 $r=\sqrt{x^2+y^2+z^2}$。</p>
+<p>代入 $\frac{\partial r}{\partial x_i}=\frac{x_i}{r}$：</p>
+<div class="math-block">$$\frac{\partial f}{\partial x_i}=\frac{\mathrm df}{\mathrm dr}\frac{x_i}{r}$$</div>
+<p><strong>② 合成向量：</strong> 三個分量 $\frac{x_i}{r}$ 合起來就是 $\frac{(x,y,z)}{r}=\frac{\vec r}{r}$：</p>
+<div class="math-block">$$\boxed{\nabla f(r)=\frac{\mathrm df}{\mathrm dr}\frac{\vec r}{r}}$$</div>
+<h4>(a) $\nabla r^n=nr^{n-2}\vec r$</h4>
+<p><strong>① 取 $f=r^n$：</strong> 代入 $\frac{\mathrm df}{\mathrm dr}=nr^{n-1}$ 到 (b) 的結果：</p>
+<div class="math-block">$$\nabla r^n=nr^{n-1}\frac{\vec r}{r}=nr^{n-1-1}\vec r=nr^{n-2}\vec r$$</div>
+<div class="math-block">$$\boxed{\nabla r^n=nr^{n-2}\vec r}$$</div>
+<h4>(c) $\nabla^2(\ln r)=\dfrac1{r^2}$</h4>
+<p><strong>① 先推通用公式 $\nabla\cdot\big(g(r)\vec r\big)=3g+rg'$：</strong> $\nabla^2=\nabla\cdot\nabla$，而 $\nabla\ln r$ 是「$r$ 的函數 × $\vec r$」的形狀，這種散度之後一再出現，所以先推通用公式。</p>
+<p class="fnote"><b>公式（拉普拉斯算子與散度）：</b>$\nabla^2\phi=\nabla\cdot(\nabla\phi)$、$\nabla\cdot\vec f=\sum_i\dfrac{\partial f_i}{\partial x_i}$，其中 $\phi$ 為純量函數、$f_i$ 為向量 $\vec f$ 的第 $i$ 個分量；本題 $\phi=\ln r$。</p>
+<p>$g(r)\vec r$ 的 $x$ 分量是 $g\,x$。對 $x$ 偏微分用乘積律，其中 $\frac{\partial g}{\partial x}$ 再用連鎖律 $=g'\frac{x}{r}$：</p>
+<div class="math-block">$$\frac{\partial}{\partial x}(g\,x)=g\cdot1+x\frac{\partial g}{\partial x}=g+x\,g'\frac xr=g+g'\frac{x^2}{r}$$</div>
+<p>$y$、$z$ 分量同理（把 $x$ 換成 $y$、$z$）。三個加起來：</p>
+<div class="math-block">$$\nabla\cdot(g\vec r)=3g+g'\frac{x^2+y^2+z^2}{r}=3g+g'\frac{r^2}{r}=3g+rg'$$</div>
+<p><strong>② 取 $g=r^{-2}$：</strong> 由課本題 <a href="#tm-1-28">1-28</a> 的結果 $\nabla\ln r=\vec r/r^2$：</p>
+<div class="math-block">$$\nabla^2\ln r=\nabla\cdot(\nabla\ln r)=\nabla\cdot\big(r^{-2}\vec r\big),\qquad g=r^{-2},\ g'=-2r^{-3}$$</div>
+<p>代入上一步的通用公式：</p>
+<div class="math-block">$$\nabla^2\ln r=3g+rg'=\frac{3}{r^2}+r\cdot\Big(-\frac{2}{r^3}\Big)=\frac3{r^2}-\frac2{r^2}=\frac1{r^2}$$</div>
+<div class="math-block">$$\boxed{\nabla^2(\ln r)=\frac1{r^2}}\quad\blacksquare$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="dv-gauss">13.4 Gauss 定理（課本 §1.17）</h3>
+
+<p>講義沒有寫，但課本有，而且就是「散度 = 淨通量 ÷ 體積」的積分版本：把整塊體積切成很多小方塊，相鄰兩塊共用的面上，一塊的流出正是另一塊的流入，全部互相抵消，只剩最外面的表面。</p>
+
+<div class="box idea">
+  <span class="box-title">課本式 (1.130)</span>
+  $$\oint_S\vec A\cdot\mathrm d\vec a=\int_V\nabla\cdot\vec A\,\mathrm dv$$
+  <p>左邊：穿出封閉曲面 $S$ 的總通量（$\mathrm d\vec a$ 朝外）；右邊：$S$ 所包圍體積內散度的總和。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-36">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-36 · p.47</span></div>
+    <h4>圓柱表面的通量</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-36">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec A=x\hat i-y\hat j+z\hat k$，$S$ 是圓柱 $x^2+y^2=c^2$ 的封閉表面（底面 $z=0$、頂面 $z=d$）。求 $\oint_S\vec A\cdot\mathrm d\vec a$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=(x,\ -y,\ z)$；$S$ 是圓柱 $x^2+y^2=c^2$（半徑 $c$、軸為 $z$ 軸）的封閉表面：側面＋底面 $z=0$＋頂面 $z=d$，$\mathrm d\vec a$ 朝外；圓柱體積 $V=\pi c^2d$。</p>
+<p><strong>① 散度：</strong> 曲面是封閉的，而且 $\vec A$ 的散度是常數，用 Gauss 定理一步得到答案，不必對三個面分別積分。</p>
+<p class="fnote"><b>公式（散度）：</b>$\nabla\cdot\vec A=\dfrac{\partial A_x}{\partial x}+\dfrac{\partial A_y}{\partial y}+\dfrac{\partial A_z}{\partial z}$；本題 $A_x=x$、$A_y=-y$、$A_z=z$。</p>
+<div class="math-block">$$\nabla\cdot\vec A=\frac{\partial x}{\partial x}+\frac{\partial(-y)}{\partial y}+\frac{\partial z}{\partial z}=1-1+1=1$$</div>
+<p><strong>② Gauss 定理：</strong> 通量 = 散度對體積積分。</p>
+<p class="fnote"><b>公式（Gauss 定理）：</b>$\oint_S\vec A\cdot\mathrm d\vec a=\int_V\nabla\cdot\vec A\,\mathrm dv$，其中 $S$ 為包住體積 $V$ 的封閉曲面、$\mathrm d\vec a$ 朝外；本題 $V$ 為圓柱，體積 $\pi c^2d$。</p>
+<div class="math-block">$$\oint_S\vec A\cdot\mathrm d\vec a=\int_V1\,\mathrm dv=\pi c^2d$$</div>
+<div class="math-block">$$\boxed{\oint_S\vec A\cdot\mathrm d\vec a=\pi c^2d}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="tm-1-37">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-37 · p.47</span></div>
+    <h4>球面的通量：直接算與 Gauss 定理</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-37">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec A=(x^2+y^2+z^2)(x\hat i+y\hat j+z\hat k)$，$S$ 是球面 $x^2+y^2+z^2=R^2$。直接計算 $\oint_S\vec A\cdot\mathrm d\vec a$，並用 Gauss 定理再算一次。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=(x^2+y^2+z^2)(x\hat i+y\hat j+z\hat k)=r^2\vec r=r^3\hat r$；$S$ 是球面 $r=R$，外法向量 $\hat n=\hat r$，球面積 $4\pi R^2$。</p>
+<h4>方法一：直接計算</h4>
+<p><strong>① $\vec A\cdot\hat n$：</strong> $\vec A$ 在球面上處處沿著外法向 $\hat r$、大小固定，所以 $\vec A\cdot\hat n$ 是常數，通量就是「常數 × 面積」。</p>
+<div class="math-block">$$\vec A\cdot\hat n=r^3\,\hat r\cdot\hat r=r^3$$</div>
+<p><strong>② 提出積分：</strong> 代入 $r=R$（球面上），它在整個球面上都相同，可以提出積分：</p>
+<div class="math-block">$$\oint_S\vec A\cdot\mathrm d\vec a=R^3\oint_S\mathrm da=R^3\cdot4\pi R^2=4\pi R^5$$</div>
+<div class="math-block">$$\boxed{\oint_S\vec A\cdot\mathrm d\vec a=4\pi R^5}$$</div>
+<h4>方法二：Gauss 定理</h4>
+<p><strong>① 散度：</strong> $\vec A=r^2\vec r$ 正好是「$r$ 的函數 × $\vec r$」，套 1-31（<a href="#tm-1-31">tm-1-31</a>）推出的通用公式，不必逐分量偏微分。</p>
+<p class="fnote"><b>公式（通用散度公式）：</b>$\nabla\cdot\big(g(r)\vec r\big)=3g+rg'$，其中 $g$ 為只和 $r$ 有關的函數、$g'=\mathrm dg/\mathrm dr$；本題 $g=r^2$。</p>
+<p>代入 $g=r^2$、$g'=2r$：</p>
+<div class="math-block">$$\nabla\cdot(r^2\vec r)=3r^2+r\cdot2r=5r^2$$</div>
+<p><strong>② 體積分：</strong> 散度只和 $r$ 有關，把球切成半徑 $r$、厚 $\mathrm dr$ 的球殼一層層加。</p>
+<p class="fnote"><b>公式（Gauss 定理）：</b>$\oint_S\vec A\cdot\mathrm d\vec a=\int_V\nabla\cdot\vec A\,\mathrm dv$，其中 $S$ 為包住體積 $V$ 的封閉曲面；本題 $V$ 為半徑 $R$ 的球。</p>
+<p class="fnote"><b>公式（球殼體積元）：</b>$\mathrm dv=4\pi r^2\,\mathrm dr$，是球座標體積元先把 $\theta,\phi$ 積掉（$\int\sin\theta\,\mathrm d\theta\int\mathrm d\phi=4\pi$）的結果，其中 $r$ 為球殼半徑、$\mathrm dr$ 為厚度。</p>
+<div class="math-block">$$\begin{aligned}\int_V5r^2\,\mathrm dv&amp;=\int_0^R5r^2\cdot4\pi r^2\,\mathrm dr=20\pi\int_0^Rr^4\,\mathrm dr\\&amp;=20\pi\frac{R^5}{5}=4\pi R^5\end{aligned}$$</div>
+<p>和方法一相同。</p>
+<div class="math-block">$$\boxed{\text{兩種方法都得 }4\pi R^5}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s14">13.5 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s14-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>散度處處為 0，通量卻是 $4\pi$</h4>
+    <button type="button" class="exam-btn" data-exam="self-s14-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 用 $\nabla\cdot(g\vec r)=3g+rg'$ 找出使 $\nabla\cdot(r^n\vec r)=0$（$r\neq0$）的 $n$；(b) 對這個 $n$，求穿出半徑 $R$ 球面的通量；(c) 散度在原點以外都是 0，通量卻不是 0，這和 Gauss 定理矛盾嗎？穿出一個<strong>不包含</strong>原點的封閉曲面的通量是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：場 $\vec A=r^n\vec r$；題目指定用通用散度公式 $\nabla\cdot(g\vec r)=3g+rg'$（1-31 推出）；(a) 只看 $r\neq0$。</p>
+<h4>(a) 使散度為 0 的 $n$</h4>
+<p><strong>① 代入通用公式：</strong> 題目已指定用 $\nabla\cdot(g\vec r)=3g+rg'$，代 $g=r^n$ 得到一條只含 $n$ 的條件。</p>
+<p class="fnote"><b>公式（通用散度公式）：</b>$\nabla\cdot\big(g(r)\vec r\big)=3g+rg'$，其中 $g$ 為只和 $r$ 有關的函數、$g'=\mathrm dg/\mathrm dr$；本題 $g=r^n$。</p>
+<p>代入 $g=r^n$、$g'=nr^{n-1}$：</p>
+<div class="math-block">$$\nabla\cdot(r^n\vec r)=3r^n+r\cdot nr^{n-1}=3r^n+nr^n=(n+3)r^n$$</div>
+<p><strong>② 解 $n$：</strong> 要對所有 $r\neq0$ 都等於 0，而 $r^n\neq0$，所以</p>
+<div class="math-block">$$n+3=0\ \Longrightarrow\ n=-3$$</div>
+<p>場是 $\dfrac{\vec r}{r^3}=\dfrac{\hat r}{r^2}$——平方反比，和萬有引力、庫侖場同型。</p>
+<div class="math-block">$$\boxed{n=-3}$$</div>
+<h4>(b) 穿出半徑 $R$ 球面的通量</h4>
+<p><strong>① 直接積分：</strong> 場沿 $\hat r$、在球面上大小固定，$\vec A\cdot\hat n$ 是常數。</p>
+<p class="fnote"><b>公式（球面面積元）：</b>$\mathrm d\vec a=\hat r\,R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi$，其中 $R$ 為球半徑、$\theta$ 為極角、$\phi$ 為方位角。</p>
+<p>代入 $\vec A=\hat r/R^2$（球面上 $r=R$）：</p>
+<div class="math-block">$$\begin{aligned}\oint\frac{\hat r}{R^2}\cdot\hat r\,R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi&amp;=\int_0^\pi\sin\theta\,\mathrm d\theta\int_0^{2\pi}\mathrm d\phi\\&amp;=2\cdot2\pi=4\pi\end{aligned}$$</div>
+<p>和 $R$ 無關：場減弱 $1/R^2$，面積增加 $R^2$，剛好抵消。</p>
+<div class="math-block">$$\boxed{\Phi=4\pi\text{（與 }R\text{ 無關）}}$$</div>
+<h4>(c) 和 Gauss 定理矛盾嗎？不含原點的封閉曲面</h4>
+<p><strong>① 檢查定理的前提：</strong> 看起來「散度 0 卻有通量」，要回去看 Gauss 定理的前提：場必須在整個體積內處處可微。原點的場發散、沒有散度可言，所以定理不能用在包含原點的球上。</p>
+<p class="fnote"><b>公式（Gauss 定理）：</b>$\oint_S\vec A\cdot\mathrm d\vec a=\int_V\nabla\cdot\vec A\,\mathrm dv$，其中 $S$ 為包住體積 $V$ 的封閉曲面，要求 $\vec A$ 在 $V$ 內處處可微；本題 $V$ 必須避開原點。</p>
+<p><strong>② 改看殼層：</strong> 殼層 $R_1\lt r\lt R_2$ 裡面不含原點，散度處處為 0，定理可用：</p>
+<div class="math-block">$$\Phi_{\text{外球面}}+\Phi_{\text{內球面}}=\int_{\text{殼層}}0\,\mathrm dv=0$$</div>
+<p>外球面通量 $=+4\pi$（(b) 的結果）；內球面的「朝外」是朝向原點，和 $\hat r$ 相反，通量 $=-4\pi$，所以 $4\pi-4\pi=0$。全部的 $4\pi$ 都「來自」原點這一點，像一個點源，和 Gauss 定理不矛盾。</p>
+<p><strong>③ 不含原點的封閉曲面：</strong> 曲面內部不含原點，散度處處為 0，Gauss 定理直接適用：</p>
+<div class="math-block">$$\Phi=\int_V0\,\mathrm dv=0$$</div>
+<p>包住原點 ⟹ $4\pi$，沒包住 ⟹ 0，和曲面形狀無關。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{不矛盾：原點是奇異點，定理前提不成立}\\ \text{不含原點的封閉曲面通量 }=0\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s14-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$\vec A=(x^3,y^3,z^3)$ 穿出球面的通量</h4>
+    <button type="button" class="exam-btn" data-exam="self-s14-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$\vec A=x^3\hat i+y^3\hat j+z^3\hat k$，$S$ 是球心在原點、半徑 $R$ 的球面。(a) 用 Gauss 定理求穿出 $S$ 的通量；(b) 直接算面積分驗證（提示：由對稱性 $\oint x^4\,\mathrm dA=\oint y^4\,\mathrm dA=\oint z^4\,\mathrm dA$）。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$\vec A=(x^3,\ y^3,\ z^3)$；$S$ 是球心在原點、半徑 $R$ 的球面，外法向量 $\hat n=\vec r/R$；球面上 $z=R\cos\theta$、$\mathrm dA=R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi$。</p>
+<h4>(a) 用 Gauss 定理</h4>
+<p><strong>① 散度：</strong> 曲面封閉，而散度剛好只和 $r$ 有關，用 Gauss 定理，體積分用球殼一層層加。</p>
+<p class="fnote"><b>公式（散度）：</b>$\nabla\cdot\vec A=\dfrac{\partial A_x}{\partial x}+\dfrac{\partial A_y}{\partial y}+\dfrac{\partial A_z}{\partial z}$；本題 $A_x=x^3$、$A_y=y^3$、$A_z=z^3$。</p>
+<div class="math-block">$$\begin{aligned}\nabla\cdot\vec A&amp;=\frac{\partial x^3}{\partial x}+\frac{\partial y^3}{\partial y}+\frac{\partial z^3}{\partial z}\\&amp;=3x^2+3y^2+3z^2=3r^2\end{aligned}$$</div>
+<p><strong>② 體積分：</strong> 代入 Gauss 定理，用球殼 $\mathrm dV=4\pi r^2\,\mathrm dr$，$r$ 從 0 到 $R$。</p>
+<p class="fnote"><b>公式（Gauss 定理）：</b>$\oint_S\vec A\cdot\mathrm d\vec a=\int_V\nabla\cdot\vec A\,\mathrm dV$，其中 $S$ 為包住體積 $V$ 的封閉曲面；本題 $V$ 為半徑 $R$ 的球，被積函數只和 $r$ 有關，可用球殼體積元 $\mathrm dV=4\pi r^2\,\mathrm dr$。</p>
+<div class="math-block">$$\begin{aligned}\int_V3r^2\,\mathrm dV&amp;=\int_0^R3r^2\cdot4\pi r^2\,\mathrm dr\\&amp;=12\pi\frac{R^5}{5}=\frac{12\pi R^5}{5}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\oint_S\vec A\cdot\mathrm d\vec a=\frac{12\pi R^5}{5}}$$</div>
+<h4>(b) 直接算面積分</h4>
+<p><strong>① 化成一個積分：</strong> 這次 $\vec A$ 不沿 $\hat r$，$\vec A\cdot\hat n$ 在球面上不是常數，要真的積分；三項對稱，只算 $\oint z^4\,\mathrm dA$ 再乘 3（$z=R\cos\theta$ 只含 $\theta$，好積）。代入 $\hat n=(x,y,z)/R$：</p>
+<div class="math-block">$$\vec A\cdot\hat n=\frac{x^3\cdot x+y^3\cdot y+z^3\cdot z}{R}=\frac{x^4+y^4+z^4}{R}$$</div>
+<p>$R$ 是常數，提出積分；再用對稱性 $\oint x^4\,\mathrm dA=\oint y^4\,\mathrm dA=\oint z^4\,\mathrm dA$ 把三項換成同一個：</p>
+<div class="math-block">$$\oint\vec A\cdot\mathrm d\vec a=\frac1R\oint(x^4+y^4+z^4)\,\mathrm dA=\frac3R\oint z^4\,\mathrm dA$$</div>
+<p><strong>② 算 $\oint z^4\,\mathrm dA$：</strong> 代入 $z=R\cos\theta$、$\mathrm dA=R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi$：</p>
+<div class="math-block">$$\begin{aligned}\oint z^4\,\mathrm dA&amp;=\int_0^{2\pi}\!\!\int_0^\pi(R\cos\theta)^4R^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi\\&amp;=2\pi R^6\int_0^\pi\cos^4\theta\sin\theta\,\mathrm d\theta\end{aligned}$$</div>
+<p>令 $u=\cos\theta$、$\mathrm du=-\sin\theta\,\mathrm d\theta$，$\theta:0\to\pi$ 對應 $u:1\to-1$，負號把上下限翻回來：</p>
+<div class="math-block">$$\int_0^\pi\cos^4\theta\sin\theta\,\mathrm d\theta=\int_{-1}^{1}u^4\,\mathrm du=\Big[\frac{u^5}{5}\Big]_{-1}^{1}=\frac25$$</div>
+<div class="math-block">$$\oint z^4\,\mathrm dA=2\pi R^6\cdot\frac25=\frac{4\pi R^6}{5}$$</div>
+<p><strong>③ 合起來：</strong> 代入上一步的結果：</p>
+<div class="math-block">$$\oint\vec A\cdot\mathrm d\vec a=\frac3R\cdot\frac{4\pi R^6}{5}=\frac{12\pi R^5}{5}$$</div>
+<p>與 (a) 相同。</p>
+<div class="math-block">$$\boxed{\text{通量 }\frac{12\pi R^5}{5}\text{（兩種算法一致）}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$\nabla\cdot\vec f=\frac{\partial f_x}{\partial x}+\frac{\partial f_y}{\partial y}+\frac{\partial f_z}{\partial z}$ = 每單位體積的淨流出量（純量）。</li>
+    <li>$\nabla\cdot\vec r=3$；$\nabla\cdot\big(g(r)\vec r\big)=3g+rg'$。</li>
+    <li>Gauss 定理：$\oint_S\vec A\cdot\mathrm d\vec a=\int_V\nabla\cdot\vec A\,\mathrm dv$，封閉曲面的通量題先看散度是否簡單。</li>
+  </ol>
+</div>

@@ -1,0 +1,64 @@
+<h2>三、曲線座標：極、柱、球 <span class="pg">Lecture 1 §10–11</span></h2>
+
+<h3 id="fx-polar">3.1 極座標</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">單位向量與它的時間導數</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#po-unit" title="10.3 ">L1 §10.3</a></span></div>
+  <div class="math-block">$$\hat r=\cos\theta\,\hat i+\sin\theta\,\hat j,\qquad \hat\theta=-\sin\theta\,\hat i+\cos\theta\,\hat j$$</div>
+  <div class="math-block">$$\dot{\hat r}=\dot\theta\,\hat\theta,\qquad \dot{\hat\theta}=-\dot\theta\,\hat r$$</div>
+  <p>極座標的單位向量會跟著粒子轉，對時間微分不是零——這是和直角座標最大的不同，速度、加速度多出來的項都從這裡來。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">極座標的速度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#po-va" title="10.4 極座標的速度與加速度">L1 §10.4</a></span></div>
+  <div class="math-block">$$\vec r=r\hat r,\qquad \vec v=\dot r\,\hat r+r\dot\theta\,\hat\theta$$</div>
+  <p>徑向是「離原點多快」，切向是「繞多快」（$r\dot\theta=r\omega$）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">極座標的加速度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#po-va" title="10.4 極座標的速度與加速度">L1 §10.4</a></span></div>
+  <div class="math-block">$$\vec a=(\ddot r-r\dot\theta^2)\,\hat r+(2\dot r\dot\theta+r\ddot\theta)\,\hat\theta$$</div>
+  <p>$-r\dot\theta^2$ 是向心加速度，$2\dot r\dot\theta$ 是科氏項。等速圓周運動（$\dot r=\ddot r=\ddot\theta=0$）剩 $-r\omega^2\hat r$。切向那一項等於 $\frac1r\frac{\mathrm d}{\mathrm dt}(r^2\dot\theta)$，連心力時為零 ⟹ $r^2\dot\theta$ 守恆（角動量）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">線元素與面積元素</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#po-def" title="10.2 極座標的定義與 ">L1 §10.2</a></span></div>
+  <div class="math-block">$$\mathrm d\vec s=\mathrm dr\,\hat r+r\,\mathrm d\theta\,\hat\theta,\qquad \mathrm dA=r\,\mathrm dr\,\mathrm d\theta$$</div>
+  <p>角度方向走 $\mathrm d\theta$ 的長度是 $r\,\mathrm d\theta$，所以面積元素多一個 $r$。積圓形區域時最常漏掉這個 $r$。</p>
+</div>
+
+<h3 id="fx-cylsph">3.2 柱座標與球座標</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">柱座標</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cs-cyl" title="11.1 柱座標">L1 §11.1</a></span></div>
+  <div class="math-block">$$\mathrm d\vec s=\mathrm dr\,\hat r+r\,\mathrm d\phi\,\hat\phi+\mathrm dz\,\hat z,\qquad \mathrm dV=r\,\mathrm dr\,\mathrm d\phi\,\mathrm dz$$</div>
+  <p>就是極座標加上 $z$：速度、加速度照極座標再加 $\dot z\hat z$、$\ddot z\hat z$。側面面積元素 $r\,\mathrm d\phi\,\mathrm dz$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">球座標</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cs-sph" title="11.2 球座標">L1 §11.2</a></span></div>
+  <div class="math-block">$$x=r\sin\theta\cos\phi,\quad y=r\sin\theta\sin\phi,\quad z=r\cos\theta$$</div>
+  <div class="math-block">$$\mathrm d\vec s=\mathrm dr\,\hat r+r\,\mathrm d\theta\,\hat\theta+r\sin\theta\,\mathrm d\phi\,\hat\phi,\qquad \mathrm dV=r^2\sin\theta\,\mathrm dr\,\mathrm d\theta\,\mathrm d\phi$$</div>
+  <p>$\theta$ 從 $+z$ 軸量（$0$ 到 $\pi$），$\phi$ 繞 $z$ 軸（$0$ 到 $2\pi$）。繞 $\phi$ 的圓半徑是 $r\sin\theta$，所以 $\phi$ 方向的長度是 $r\sin\theta\,\mathrm d\phi$。球面面積元素 $r^2\sin\theta\,\mathrm d\theta\,\mathrm d\phi$，積滿得 $4\pi r^2$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">球座標的速度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cs-sph" title="11.2 球座標">L1 §11.2</a></span></div>
+  <div class="math-block">$$\vec v=\dot r\,\hat r+r\dot\theta\,\hat\theta+r\sin\theta\,\dot\phi\,\hat\phi$$</div>
+  <p>把 $\mathrm d\vec s$ 除以 $\mathrm dt$ 就是速度——三種座標都可以這樣記。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">記法：元素＝各方向長度相乘</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cs-table" title="11.3 四種座標總整理">L1 §11.3</a></span></div>
+  <div class="math-block">$$\mathrm dV=(\mathrm dr)(r\,\mathrm d\theta)(r\sin\theta\,\mathrm d\phi)$$</div>
+  <p>$\mathrm d\vec s$ 的每一項是「沿那個方向走的長度」，角度前面一定乘上轉動的半徑（$r$ 或 $r\sin\theta$）；體積元素就是三項長度相乘，面積元素是兩項相乘。</p>
+</div>
+
+<h3 id="fx-inertia">3.3 轉動慣量</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">轉動慣量的定義與常用值</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#cs-tm" title="11.4 課本題">L1 §11.4</a><a class="fx-src" data-chapter="mechanics/ch02" href="#c2m-inertia" title="11.4 轉動慣量">L2 §11.4</a></span></div>
+  <div class="math-block">$$I=\int(\text{到轉軸的距離})^2\,\mathrm dm$$</div>
+  <div class="math-block">$$\begin{gathered}\text{圓環 }MR^2,\qquad\text{圓盤 }\tfrac12MR^2\\ \text{實心球 }\tfrac25MR^2,\qquad\text{圓管 }\tfrac M2(R_1^2+R_2^2)\end{gathered}$$</div>
+  <p>用柱、球座標的體積元素積分；距離是到<strong>轉軸</strong>的距離（球座標裡是 $r\sin\theta$，不是 $r$）。密度不均勻時 $\mathrm dm=\rho\,\mathrm dV$，$\rho$ 跟著座標變。</p>
+</div>

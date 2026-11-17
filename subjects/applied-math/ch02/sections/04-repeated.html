@@ -1,0 +1,409 @@
+<h2>四、重根與降階法 <span class="pg">板書 9/23 照片 2–3、6</span></h2>
+
+<p class="lead">判別式為 0 時兩個特徵根重合，$e^{\lambda x}$ 只給出<strong>一個</strong>解，但二階方程需要兩個獨立解。老師的辦法是降階法（Reduction of Order）：已知 $y_1$，令 $y_2=y_1u(x)$，代進方程式後 $u$ 本身會消失，只剩 $u'$、$u''$——令 $w=u'$ 就降成一階方程。常係數重根時結果特別簡單：$y_2=xy_1$。同一套推導對變係數方程也成立，就是 114 上期中考要證明的公式。</p>
+
+<h3 id="a2-rp-one">4.1 重根只給一個解 <span class="pg-tag">照片 2</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 2，左上）</span>
+  <p>★ $\lambda_1=\lambda_2$，only one $y=e^{\lambda_1x}$</p>
+  <p>利用 $y_1$ 找 $y_2$：Reduction of Order</p>
+</div>
+
+<p>判別式 $a^2-4b=0$ 時，$\lambda^2+a\lambda+b=(\lambda+\tfrac a2)^2$，唯一的根是 $\lambda=-\tfrac a2$。$e^{\lambda x}$ 乘上任何常數都和自己成比例，不能當第二個解。所以要換一個想法：讓「常數」變成函數，$y_2=y_1u(x)$，看看 $u$ 必須滿足什麼方程式。</p>
+
+<h3 id="a2-rp-derive">4.2 降階法的推導 <span class="pg-tag">照片 3</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 3）</span>
+  <p>★ $\lambda_1=\lambda_2$，only one $y_1=e^{\lambda_1x}$，利用 $y_1$ 找 $y_2$　"Reduction of Order" 降階法</p>
+  <p>$y_2\equiv y_1u(x)$　∵ $y_2$ 是第二個 possible sol.　∴ $y_2''+ay_2'+by_2=0$，將 $y_2=y_1u$ 代入上式</p>
+  $$(y_1u)''+a(y_1u)'+b(y_1u)=0$$
+  $$(y_1'u+u'y_1)'=y_1''u+2y_1'u'+u''y_1$$
+  $$\begin{aligned}&y_1''u+2y_1'u'+u''y_1+ay_1'u\\&\quad+ay_1u'+by_1u=0\end{aligned}$$
+  $$u\,(y_1''+ay_1'+by_1)=0$$
+  $$y_1u''+(2y_1'+ay_1)u'=0$$
+  <p>let $\boxed{w=u'}$</p>
+  $$w'+\left[\frac{2y_1'+ay_1}{y_1}\right]w=0\qquad\text{此為 }w\text{ 的一階線性 ODE}$$
+  $$\frac{dw}{dx}+[\ \ ]w=0,\quad\int\frac{dw}{w}=\int-[\ \ ]dx,\quad\ln w=-\int[\ \ ]dx$$
+  $$w=e^{-\int[\ \ ]dx},\qquad\therefore\ u'=w,\qquad\therefore\ u=\int w\,dx=\int e^{-\int[\ \ ]}\cdots$$
+  <p><span class="added">網站補充（照片缺漏）</span>最後一行被老師的身體擋住。依前一行補完：$u=\displaystyle\int e^{-\int[\ \ ]dx}\,dx$，括號 $[\ \ ]=\dfrac{2y_1'+ay_1}{y_1}$。</p>
+</div>
+
+<p><strong>逐行在做什麼。</strong></p>
+<ol>
+  <li>乘積法則兩次：$(y_1u)'=y_1'u+y_1u'$，$(y_1u)''=y_1''u+2y_1'u'+y_1u''$。中間的 $2y_1'u'$ 是兩個交叉項合併來的，最容易漏掉。</li>
+  <li>把含 $u$（沒有微分）的三項收在一起：$u(y_1''+ay_1'+by_1)$。<strong>因為 $y_1$ 本身是解，這個括號等於 0</strong>——板書劃掉的三項就是它們。這是降階法能成功的關鍵：$u$ 本身消失了。</li>
+  <li>剩下 $y_1u''+(2y_1'+ay_1)u'=0$，只有 $u'$ 和 $u''$。令 $w=u'$，就是 $w$ 的一階方程（可分離，第 1 章 Type 1），階數從 2 降到 1，所以叫「降階」。</li>
+</ol>
+
+<p><strong>把中括號算出來。</strong>$[\ \ ]=\dfrac{2y_1'}{y_1}+a$，所以 $\displaystyle\int[\ \ ]dx=2\ln|y_1|+ax$，</p>
+$$w=e^{-2\ln|y_1|-ax}=\frac{e^{-ax}}{y_1^2},\qquad u=\int\frac{e^{-ax}}{y_1^2}\,dx$$
+
+<p><strong>代回重根。</strong>重根時 $y_1=e^{\lambda x}$、$\lambda=-a/2$，所以 $y_1^2=e^{2\lambda x}=e^{-ax}$，被積函數 $\dfrac{e^{-ax}}{e^{-ax}}=1$：</p>
+$$u=\int1\,dx=x\quad\Rightarrow\quad y_2=xe^{\lambda x}$$
+<p>也可以直接看：$2y_1'+ay_1=(2\lambda+a)y_1=0$，方程式變成 $y_1u''=0$，即 $u''=0$、$u=Ax+B$（照片 6 就是這樣做的）。</p>
+
+<h3 id="a2-rp-ex">4.3 板書例題：$y''-6y'+9y=0$ <span class="pg-tag">照片 6</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 6）</span>
+  <p><strong>Short Note</strong>：當常數係數線性二階 ODE 有重根時，第二個 solution $y_2=y_1x$，因此一般解為 $y=(A+Bx)y_1$。</p>
+  <p>ex.　$y''-6y'+9y=0$，$\begin{cases}y(0)=1\\y'(0)=0\end{cases}$　let $y=e^{\lambda x}$：$\lambda^2-6\lambda+9=0$，$\lambda=3$（重根）</p>
+  <p>只找到一個 possible sol. $y_1=e^{3x}$。利用降階法（參數變異法）Variation of parameters，let $y_2=e^{3x}u$</p>
+  <p>因為 $y_2$ 是原式的解，所以 $(e^{3x}u)''-6(e^{3x}u)'+9(e^{3x}u)=0$ → $u''=0$ → $u=Ax+B$</p>
+  <p>$y_2=e^{3x}(Ax+B)=A\,\underbrace{xe^{3x}}_{\text{和 }y_1\text{ 線性獨立}}+\underbrace{Be^{3x}}_{\text{和 }y_1\text{ 成比例}}$</p>
+  $$\begin{aligned}\text{general sol.}\ y&=c_1e^{3x}+c_2e^{3x}(Ax+B)\\&=c_1e^{3x}+Ac_2e^{3x}x+c_2Be^{3x}\\&=K_1e^{3x}+K_2e^{3x}x\end{aligned}$$
+  <p><span class="added">網站補充（照片缺漏）</span>照片只寫到一般解，題目的初始條件 $y(0)=1$、$y'(0)=0$ 沒有代入；由下面的例題卡補完。</p>
+</div>
+
+<p><strong>關於板書寫的「參數變異法」。</strong>老師在降階法旁邊寫了「參數變異法 Variation of parameters」：兩者的共同想法是「把常數 $c$ 換成函數 $u(x)$」（$cy_1\to u(x)y_1$）。不過一般課本說的「參數變換法」是指第 3 章用來找<strong>非齊次方程特解</strong>的另一個方法（把 $c_1y_1+c_2y_2$ 的兩個常數都換成函數）。本站把這裡的方法叫降階法，第 3 章第 6 節再介紹參數變換法。</p>
+
+<p><strong>為什麼 $Be^{3x}$ 可以丟掉。</strong>$u=Ax+B$ 裡的 $B$ 只是把 $y_1$ 再加一次，對「找一個新的獨立解」沒有幫助；任取 $A=1$、$B=0$ 得 $y_2=xe^{3x}$ 就夠了。一般解的兩個常數 $K_1,K_2$ 會吸收所有的 $A,B,c_1,c_2$。</p>
+
+<div class="problem" data-kind="example" id="a2-b4">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/23 板書 · 照片 6</span></div>
+    <h4>重根加初始條件：$y''-6y'+9y=0$，$y(0)=1$、$y'(0)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-b4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-b4"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.　$y''-6y'+9y=0$，$y(0)=1$，$y'(0)=0$</p><p>let $y=e^{\lambda x}$ ⋯ 只找到一個 possible sol. $y_1=e^{3x}$，利用降階法（參數變異法）Variation of parameters，let $y_2=e^{3x}u$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''-6y'+9y=0$，$y(0)=1$、$y'(0)=0$。用降階法說明第二個解為什麼是 $xe^{3x}$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-6$、$b=9$</td><td>「$y''-6y'+9y=0$」</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=1$、$y'(0)=0$</td><td>板書「$y(0)=1$、$y'(0)=0$」</td></tr>
+          <tr><td>方法</td><td>降階法 $y_2=e^{3x}u$</td><td>「用降階法說明」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$y_2$ 的推導與滿足初始條件的唯一解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>判別式 $36-36=0$，特徵根是重根 $\lambda=3$，<b>所以</b> $e^{\lambda x}$ 只給出一個解 $y_1=e^{3x}$。<b>因為</b>二階方程需要兩個獨立解，<b>所以</b>用降階法：令 $y_2=e^{3x}u$ 代入，$u$ 的項會因為 $y_1$ 是解而消掉。</p>
+      <p>找到一般解 $(K_1+K_2x)e^{3x}$ 後，微分要用乘積法則（$xe^{3x}$ 的導數是 $e^{3x}+3xe^{3x}$），再代初始條件。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-b4-s1" data-sym="lam">
+        <span class="step-title">特徵方程式：重根</span>
+        $$\lambda^2-6\lambda+9=(\lambda-3)^2=0\quad\Rightarrow\quad\lambda=3\ \text{（重根）},\quad y_1=e^{3x}$$
+      </div>
+      <div class="step" data-step="a2-b4-s2" data-sym="u">
+        <span class="step-title">令 $y_2=e^{3x}u$，算兩次導數</span>
+        $$\begin{aligned}(e^{3x}u)'&=e^{3x}(u'+3u)\\(e^{3x}u)''&=e^{3x}(u''+6u'+9u)\end{aligned}$$
+      </div>
+      <div class="step" data-step="a2-b4-s3">
+        <span class="step-title">代入方程式，$u$ 的項消失</span>
+        <p class="sub">代入 $y''-6y'+9y$，提出 $e^{3x}$：</p>
+        $$e^{3x}\left[(u''+6u'+9u)-6(u'+3u)+9u\right]=e^{3x}u''=0$$
+        <p>$u'$ 的係數 $6-6=0$、$u$ 的係數 $9-18+9=0$，只剩 $u''=0$，積分兩次 $u=Ax+B$。取 $A=1$、$B=0$：$y_2=xe^{3x}$。</p>
+      </div>
+      <div class="step" data-step="a2-b4-s4" data-sym="c12">
+        <span class="step-title">一般解與導數</span>
+        $$y=(K_1+K_2x)e^{3x},\qquad y'=\left[K_2+3(K_1+K_2x)\right]e^{3x}$$
+      </div>
+      <div class="step" data-step="a2-b4-s5">
+        <span class="step-title">代入初始條件</span>
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=1$、$y'(0)=0$：</p>
+        $$K_1=1,\qquad K_2+3K_1=0\ \Rightarrow\ K_2=-3$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_2=xe^{3x}$；唯一解 $y=(1-3x)e^{3x}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y'=(-3+3-9x)e^{3x}=-9xe^{3x}$，$y'(0)=0$ ✔；$y''=(-9-27x)e^{3x}$；$y''-6y'+9y=e^{3x}[-9-27x+54x+9-27x]=0$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="a2-hw2">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">9/23 作業 第 2 題</span></div>
+    <h4>重根：$4y''+4y'+y=0$，$y(0)=-2$、$y'(0)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-hw2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-hw2"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>2. $4y''+4y'+y=0$ with $y(0)=-2$ and $y'(0)=1$.</p><p>Ans : $y=-2e^{-x/2}$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $4y''+4y'+y=0$，$y(0)=-2$、$y'(0)=1$。（老師給的答案：$y=-2e^{-x/2}$）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$4,\ 4,\ 1$</td><td>「$4y''+4y'+y=0$」</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=-2$、$y'(0)=1$</td><td>「with $y(0)=-2$ and $y'(0)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解，並驗證老師的答案。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>特徵方程式 $4\lambda^2+4\lambda+1=(2\lambda+1)^2$ 是完全平方，<b>所以</b>是重根，一般解直接用 Short Note 的 $(K_1+K_2x)e^{\lambda x}$。答案裡沒有 $xe^{-x/2}$ 項不代表可以不寫它——是初始條件讓 $K_2$ 剛好為 0。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-hw2-s1" data-sym="lam">
+        <span class="step-title">特徵方程式</span>
+        $$4\lambda^2+4\lambda+1=(2\lambda+1)^2=0\quad\Rightarrow\quad\lambda=-\tfrac12\ \text{（重根）}$$
+        $$y=(K_1+K_2x)e^{-x/2},\qquad y'=\left[K_2-\tfrac12(K_1+K_2x)\right]e^{-x/2}$$
+      </div>
+      <div class="step" data-step="a2-hw2-s2" data-sym="c12">
+        <span class="step-title">代入初始條件</span>
+        <p class="sub">代入 $x=0$ 與題目的 $y(0)=-2$、$y'(0)=1$：</p>
+        $$K_1=-2,\qquad K_2-\tfrac12K_1=1\ \Rightarrow\ K_2+1=1\ \Rightarrow\ K_2=0$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=-2e^{-x/2}$，與老師的答案相同。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y'=e^{-x/2}$、$y''=-\tfrac12e^{-x/2}$：$4y''+4y'+y=(-2+4-2)e^{-x/2}=0$ ✔；$y(0)=-2$、$y'(0)=1$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a2-s04-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩根逐漸靠近：$xe^{x}$ 是怎麼冒出來的</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s04-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $y''-2y'+(1-\varepsilon^2)y=0$（$\varepsilon\gt0$），$y(0)=0$、$y'(0)=1$。(a) 求解 $y_\varepsilon(x)$；(b) 求 $\varepsilon\to0$ 的極限函數；(c) 驗證極限函數正是重根方程 $y''-2y'+y=0$ 在同樣初始條件下的解，並說明這和 $y_2=xe^{\lambda x}$ 的關係。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-2$、$b=1-\varepsilon^2$</td><td>「$y''-2y'+(1-\varepsilon^2)y=0$」</td></tr>
+          <tr><td>參數</td><td>$\varepsilon\gt0$，之後取 $\varepsilon\to0$</td><td>「$\varepsilon\gt0$」、(b)「$\varepsilon\to0$」：$\varepsilon=0$ 時就是重根方程</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=0$、$y'(0)=1$</td><td>「$y(0)=0$、$y'(0)=1$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $y_\varepsilon(x)$；(b) $\lim_{\varepsilon\to0}y_\varepsilon$；(c) 驗證並解釋。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $\varepsilon\gt0$ 時判別式 $4-4(1-\varepsilon^2)=4\varepsilon^2\gt0$，<b>所以</b>是相異實根 $1\pm\varepsilon$，照第 2 節做。<b>因為</b> $\varepsilon\to0$ 時兩根合一、兩個指數函數幾乎一樣，它們的「差除以根的差」會趨近對 $\lambda$ 的導數，<b>所以</b>極限會出現 $\dfrac{\partial}{\partial\lambda}e^{\lambda x}=xe^{\lambda x}$——這是重根第二解的另一種看法。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s04-2-s1" data-sym="lam">
+        <span class="step-title">特徵根</span>
+        $$\lambda^2-2\lambda+1-\varepsilon^2=(\lambda-1)^2-\varepsilon^2=0\ \Rightarrow\ \lambda=1\pm\varepsilon$$
+        $$y=c_1e^{(1+\varepsilon)x}+c_2e^{(1-\varepsilon)x}$$
+      </div>
+      <div class="step" data-step="a2-s04-2-s2" data-sym="c12">
+        <span class="step-title">(a) 代入初始條件</span>
+        <p class="sub">代入 $x=0$ 與 $y(0)=0$、$y'(0)=1$：</p>
+        $$\begin{aligned}c_1+c_2&=0\\(1+\varepsilon)c_1+(1-\varepsilon)c_2&=1\end{aligned}$$
+        <p>由上式 $c_2=-c_1$，代入下式：$c_1(1+\varepsilon-1+\varepsilon)=1$，$c_1=\dfrac1{2\varepsilon}$、$c_2=-\dfrac1{2\varepsilon}$。</p>
+        $$y_\varepsilon=\frac{e^{(1+\varepsilon)x}-e^{(1-\varepsilon)x}}{2\varepsilon}=e^{x}\,\frac{\sinh\varepsilon x}{\varepsilon}$$
+      </div>
+      <div class="step" data-step="a2-s04-2-s3">
+        <span class="step-title">(b) 取 $\varepsilon\to0$</span>
+        <p>$\sinh u=u+\tfrac{u^3}{6}+\cdots$，所以 $\dfrac{\sinh\varepsilon x}{\varepsilon}=x+\dfrac{\varepsilon^2x^3}6+\cdots\to x$：</p>
+        $$\lim_{\varepsilon\to0}y_\varepsilon=xe^{x}$$
+      </div>
+      <div class="step" data-step="a2-s04-2-s4">
+        <span class="step-title">(c) 驗證與解釋</span>
+        <p>$y=xe^x$：$y'=(1+x)e^x$、$y''=(2+x)e^x$，</p>
+        $$y''-2y'+y=\left[(2+x)-2(1+x)+x\right]e^x=0$$
+        <p>且 $y(0)=0$、$y'(0)=1$。解釋：$y_\varepsilon=\dfrac{e^{\lambda_1x}-e^{\lambda_2x}}{\lambda_1-\lambda_2}$ 是兩個解的組合，當 $\lambda_1\to\lambda_2$ 時它趨近 $\dfrac{d}{d\lambda}e^{\lambda x}=xe^{\lambda x}$。兩根合一時，「兩個解的差商」留下來成為第二個解。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $y_\varepsilon=e^x\dfrac{\sinh\varepsilon x}{\varepsilon}$；(b) $xe^x$；(c) $xe^x$ 滿足 $y''-2y'+y=0$ 與同樣的初始條件，就是重根的第二解 $xe^{\lambda x}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_\varepsilon(0)=0$ ✔；$y_\varepsilon'(0)=\tfrac{(1+\varepsilon)-(1-\varepsilon)}{2\varepsilon}=1$ ✔；$\varepsilon=0.01$、$x=1$：$e\cdot\sinh(0.01)/0.01=2.71833$，$xe^x=2.71828$，相差約 $\varepsilon^2/6$ 的比例 ✔</p></div>
+  </div>
+</div>
+
+<h3 id="a2-rp-general">4.4 一般的降階公式（變係數） <span class="pg-tag">網站補充 · 114 上期中</span></h3>
+
+<p>照片 3 的推導從來沒用到「$a$ 是常數」，只用到「$y_1$ 是解」。所以把 $a,b$ 換成 $x$ 的函數 $P(x),Q(x)$，同樣成立：</p>
+$$y''+P(x)y'+Q(x)y=0,\ \ y_1\text{ 已知}\quad\Rightarrow\quad y_2=y_1\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx$$
+<p>用法：(1) 先把 $y''$ 的係數除成 1，才能讀 $P(x)$；(2) 算 $e^{-\int P\,dx}$（積分常數可以取 0）；(3) 除以 $y_1^2$ 再積分；(4) 乘回 $y_1$。第 1 節補充的 Abel 公式說 $W(y_1,y_2)=e^{-\int P\,dx}$，這個公式其實就是「$\left(y_2/y_1\right)'=W/y_1^2$」積分一次。114 上期中第 2 題就是要你從頭證明它；作業第 3 題（第 6 節）是它的應用。</p>
+
+<div class="problem" data-kind="exam" id="a2-114a-m2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2025 Oct. 第 2 題（114上）</span></div>
+    <h4>證明降階公式 $y_2=y_1\int e^{-\int P\,dx}/y_1^2\,dx$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-114a-m2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-114a-m2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2025 Oct.)　25 points for each problem</p><p>2. Consider a second-order linear homogeneous differential equation</p>$$y''+P(x)y'+Q(x)y=0,$$<p>where one solution $y_1(x)$ is already known. Using the method of reduction of order, show that a second linearly independent solution can be written as</p>$$y_2=y_1\int\left[\frac{e^{-\int P(x)dx}}{y_1^2}\right]dx.$$</div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（25 分）考慮二階線性齊次方程 $y''+P(x)y'+Q(x)y=0$，其中一個解 $y_1(x)$ 已知。用降階法證明第二個線性獨立解可以寫成</p>
+    $$y_2=y_1\int\left[\frac{e^{-\int P(x)\,dx}}{y_1^2}\right]dx$$</div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知／前提</th><th>內容</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$y''+P(x)y'+Q(x)y=0$</td><td>「second-order linear homogeneous」：$y''$ 係數已是 1</td></tr>
+          <tr><td>已知解</td><td>$y_1''+Py_1'+Qy_1=0$</td><td>「one solution $y_1(x)$ is already known」：這條等式是證明的關鍵</td></tr>
+          <tr><td>指定方法</td><td>令 $y_2=y_1u(x)$</td><td>「Using the method of reduction of order」</td></tr>
+          <tr><td>要證的另一半</td><td>$y_2$ 與 $y_1$ 線性獨立</td><td>「a second <b>linearly independent</b> solution」：不只要是解，還要獨立</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：推導出公式，並說明 $y_2$ 和 $y_1$ 線性獨立。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目指定降階法，<b>所以</b>令 $y_2=y_1u$ 代入。<b>因為</b> $y_1$ 本身滿足方程式，<b>所以</b>代入後 $u$（未微分）的係數恰好是 $y_1''+Py_1'+Qy_1=0$，只剩 $u'$、$u''$；令 $w=u'$ 變成可分離的一階方程。</p>
+      <p>這題 25 分，評分重點是每一步的理由：乘積法則展開、指出哪一項為什麼是 0、分離變數積分、最後說明獨立性。只寫結果或直接套用常係數的 $u=x$ 都不夠。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-114a-m2-s1" data-sym="u,PQ">
+        <span class="step-title">令 $y_2=y_1u$，用乘積法則求導</span>
+        $$\begin{aligned}y_2'&=y_1'u+y_1u'\\y_2''&=y_1''u+2y_1'u'+y_1u''\end{aligned}$$
+      </div>
+      <div class="step" data-step="a2-114a-m2-s2">
+        <span class="step-title">代入方程式，依 $u,u',u''$ 整理</span>
+        <p class="sub">代入 $y_2''+Py_2'+Qy_2=0$：</p>
+        $$\begin{aligned}&u\left(y_1''+Py_1'+Qy_1\right)\\&\quad+y_1u''+\left(2y_1'+Py_1\right)u'=0\end{aligned}$$
+        <p>因為 $y_1$ 是解，第一個括號為 0（題目「$y_1$ is already known」）：</p>
+        $$y_1u''+\left(2y_1'+Py_1\right)u'=0$$
+      </div>
+      <div class="step" data-step="a2-114a-m2-s3">
+        <span class="step-title">令 $w=u'$，分離變數</span>
+        <p>得到 $w$ 的一階方程 $y_1w'+(2y_1'+Py_1)w=0$。兩邊除以 $y_1w$：</p>
+        $$\frac{dw}{w}=-\left(\frac{2y_1'}{y_1}+P\right)dx$$
+      </div>
+      <div class="step" data-step="a2-114a-m2-s4">
+        <span class="step-title">積分</span>
+        <p>$\displaystyle\int\frac{2y_1'}{y_1}dx=2\ln|y_1|$（分子是分母的導數）：</p>
+        $$\ln|w|=-2\ln|y_1|-\int P\,dx\ \Rightarrow\ w=\frac{e^{-\int P\,dx}}{y_1^2}$$
+        <p>積分常數取 0（只需要<b>一個</b>第二解，常數倍會被一般解的 $c_2$ 吸收）。</p>
+      </div>
+      <div class="step" data-step="a2-114a-m2-s5">
+        <span class="step-title">積回 $u$，乘回 $y_1$</span>
+        $$u=\int w\,dx=\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx\quad\Rightarrow\quad y_2=y_1u=y_1\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx$$
+      </div>
+      <div class="step" data-step="a2-114a-m2-s6" data-sym="W">
+        <span class="step-title">線性獨立</span>
+        <p>$\dfrac{y_2}{y_1}=u$，而 $u'=w=\dfrac{e^{-\int P\,dx}}{y_1^2}\neq0$（指數函數永遠為正），所以 $u$ 不是常數，$y_2$ 不與 $y_1$ 成比例。等價地，$W(y_1,y_2)=y_1^2u'=e^{-\int P\,dx}\neq0$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>證畢：$y_2=y_1\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx$ 是解，且因 $(y_2/y_1)'=e^{-\int P\,dx}/y_1^2\neq0$ 而與 $y_1$ 線性獨立。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>用在板書例題 $y''-6y'+9y=0$：$P=-6$，$e^{-\int P}=e^{6x}$，$y_1^2=e^{6x}$，被積函數 $=1$，$y_2=e^{3x}\cdot x$ ✔，和照片 6 的結果一致。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a2-s04-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>變係數方程的降階：Legendre 方程 $n=1$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s04-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>驗證 $y_1=x$ 是 $(1-x^2)y''-2xy'+2y=0$（$-1\lt x\lt1$）的解，再用降階公式求第二個線性獨立解 $y_2$，並用 Wronskian 檢查。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$(1-x^2)y''-2xy'+2y=0$</td><td>題目；$y''$ 的係數是 $1-x^2$，<b>不是 1</b></td></tr>
+          <tr><td>已知解</td><td>$y_1=x$</td><td>「驗證 $y_1=x$ 是⋯⋯的解」</td></tr>
+          <tr><td>範圍</td><td>$-1\lt x\lt1$</td><td>題目：$1-x^2\gt0$，取對數時不用絕對值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：驗證 $y_1$；求 $y_2$；檢查 $W$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>係數不是常數，特徵方程式不能用；<b>但因為</b>已經知道一個解，<b>所以</b>降階公式可以直接給出第二個解。公式要求 $y''$ 的係數為 1，<b>所以</b>先除以 $1-x^2$ 讀出 $P(x)$——這是最常見的失分點。積分時要用代換 $s=1-x^2$ 和部分分式。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s04-1-s1">
+        <span class="step-title">驗證 $y_1=x$</span>
+        <p>$y_1'=1$、$y_1''=0$：$(1-x^2)\cdot0-2x\cdot1+2x=0$ ✔</p>
+      </div>
+      <div class="step" data-step="a2-s04-1-s2" data-sym="PQ">
+        <span class="step-title">化成標準式，算 $e^{-\int P\,dx}$</span>
+        <p>除以 $1-x^2$：$P(x)=\dfrac{-2x}{1-x^2}$。令 $s=1-x^2$、$ds=-2x\,dx$：</p>
+        $$\int P\,dx=\int\frac{-2x}{1-x^2}dx=\int\frac{ds}{s}=\ln(1-x^2)$$
+        $$e^{-\int P\,dx}=\frac1{1-x^2}$$
+      </div>
+      <div class="step" data-step="a2-s04-1-s3">
+        <span class="step-title">被積函數與部分分式</span>
+        <p class="sub">代入 $y_1^2=x^2$：</p>
+        $$\frac{e^{-\int P\,dx}}{y_1^2}=\frac1{x^2(1-x^2)}=\frac1{x^2}+\frac1{1-x^2}$$
+        <p>（通分：$\dfrac{(1-x^2)+x^2}{x^2(1-x^2)}$ ✔）再用 $\dfrac1{1-x^2}=\dfrac12\left(\dfrac1{1-x}+\dfrac1{1+x}\right)$：</p>
+        $$\int\left(\frac1{x^2}+\frac1{1-x^2}\right)dx=-\frac1x+\frac12\ln\frac{1+x}{1-x}$$
+      </div>
+      <div class="step" data-step="a2-s04-1-s4">
+        <span class="step-title">乘回 $y_1=x$</span>
+        $$y_2=x\left(-\frac1x+\frac12\ln\frac{1+x}{1-x}\right)=\frac x2\ln\frac{1+x}{1-x}-1$$
+      </div>
+      <div class="step" data-step="a2-s04-1-s5" data-sym="W">
+        <span class="step-title">Wronskian 檢查</span>
+        <p>$y_2'=\tfrac12\ln\tfrac{1+x}{1-x}+\tfrac{x}{1-x^2}$（因為 $\tfrac{d}{dx}\ln\tfrac{1+x}{1-x}=\tfrac{2}{1-x^2}$）：</p>
+        $$W=y_1y_2'-y_2y_1'=\frac{x^2}{1-x^2}+1=\frac1{1-x^2}$$
+        <p>正好等於 $e^{-\int P\,dx}$（Abel 公式），而且不為 0。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_2=\dfrac x2\ln\dfrac{1+x}{1-x}-1$（$-1\lt x\lt1$），一般解 $y=c_1x+c_2\left(\dfrac x2\ln\dfrac{1+x}{1-x}-1\right)$。這是 Legendre 方程 $n=1$ 的第二類解 $Q_1(x)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$W=\dfrac1{1-x^2}\neq0$ ✔（獨立）。$x\to\pm1$ 時 $y_2$ 發散，而 $y_1=x$ 有限——第 4、5 章冪級數解會看到 $x=\pm1$ 是奇點。</p></div>
+  </div>
+</div>
+
+<h3 id="a2-rp-old">4.5 更早年級的考古題 <span class="pg-tag">109 級下第 1 次期中第 3(c) 題</span></h3>
+
+<div class="problem" data-kind="exam" id="a2-109b-3c">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 109級下學期第 1 次期中 第 3(c) 題</span></div>
+    <h4>重根：$y''+14y'+49y=0$，$y(0)=1$、$y'(0)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-109b-3c">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-109b-3c"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1st-order ODE and 2nd-order homogeneous ODE</p><p>3. Solve the 2nd-order homogeneous ODEs.</p><p>(c) $y''+14y'+49y=0$ for $y(0)=1$ and $y'(0)=0$.　Ans: $y(t)=(1+7t)e^{-7t}$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''+14y'+49y=0$，$y(0)=1$、$y'(0)=0$。（考卷附的答案：$y(t)=(1+7t)e^{-7t}$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=14$、$b=49$</td><td>「$y''+14y'+49y=0$」；$49=7^2$、$14=2\cdot7$ ⟹ 完全平方</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=1$、$y'(0)=0$</td><td>「for $y(0)=1$ and $y'(0)=0$」：從 1 由靜止放開</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(t)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>特徵方程式 $\lambda^2+14\lambda+49=(\lambda+7)^2$ 判別式為 0，<b>所以</b>只有一個根 $\lambda=-7$、只給一個解 $e^{-7t}$；第二個解由降階法（4.2 節）得到 $te^{-7t}$，一般解是 $(K_1+K_2t)e^{-7t}$。</p>
+      <p>$y'(0)$ 代入時 $te^{-7t}$ 要用乘積法則微分，這是重根題最常錯的地方。物理上這是臨界阻尼（第 5 節）：最快回到平衡、不振盪。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-109b-3c-s1" data-sym="lam">
+        <span class="step-title">特徵根</span>
+        <p class="sub">代入 $a=14$、$b=49$（題目）：判別式 $a^2-4b=196-196=0$，</p>
+        $$\lambda^2+14\lambda+49=(\lambda+7)^2=0\ \Longrightarrow\ \lambda=-7\ \text{（重根）}$$
+      </div>
+      <div class="step" data-step="a2-109b-3c-s2" data-sym="c12">
+        <span class="step-title">一般解與導數</span>
+        $$y=(K_1+K_2t)\,e^{-7t}$$
+        <p>乘積法則：$y'=K_2e^{-7t}-7(K_1+K_2t)e^{-7t}$。</p>
+      </div>
+      <div class="step" data-step="a2-109b-3c-s3">
+        <span class="step-title">代初始條件</span>
+        <p class="sub">代入 $t=0$ 與題目的 $y(0)=1$：$K_1=1$。</p>
+        <p class="sub">代入 $t=0$、$K_1=1$ 與題目的 $y'(0)=0$：</p>
+        $$K_2-7K_1=0\ \Longrightarrow\ K_2=7$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y(t)=(1+7t)\,e^{-7t}$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=1$ ✔；$y'=7e^{-7t}-7(1+7t)e^{-7t}=-49t\,e^{-7t}$，$y'(0)=0$ ✔；$y''=-49e^{-7t}+343te^{-7t}$，$y''+14y'+49y=e^{-7t}\big[(-49+343t)-686t+49(1+7t)\big]=0$ ✔。$t>0$ 時 $y'\lt0$、$y>0$：單調回到 0，不越過平衡點。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>重根 $\lambda=-a/2$：$y=(K_1+K_2x)e^{\lambda x}$；微分時 $xe^{\lambda x}$ 用乘積法則。</li>
+    <li>降階法：$y_2=y_1u$，$u$ 的係數 $=L[y_1]=0$ 消失，令 $w=u'$ 降成一階。</li>
+    <li>一般公式 $y_2=y_1\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}dx$，$P$ 要從「$y''$ 係數為 1」的標準式讀。</li>
+  </ol>
+</div>

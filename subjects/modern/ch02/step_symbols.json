@@ -1,0 +1,257 @@
+{
+  "_說明": "symbols 是本章符號總表；groups 決定總表分組；步驟用 data-sym 指定要提醒的符號（每頁只提醒第一次）。",
+  "symbols": {
+    "h": {
+      "tex": "h",
+      "zh": "Planck 常數",
+      "en": "Planck's constant",
+      "unit": "J·s、eV·s",
+      "note": "$6.626\\times10^{-34}\\ \\text{J·s}=4.136\\times10^{-15}\\ \\text{eV·s}$"
+    },
+    "hc": {
+      "tex": "hc",
+      "zh": "光子能量與波長的換算常數",
+      "unit": "eV·m",
+      "note": "$1.240\\times10^{-6}\\ \\text{eV·m}=1240\\ \\text{eV·nm}$"
+    },
+    "nu": {
+      "tex": "\\nu",
+      "zh": "電磁波（光子）的頻率",
+      "en": "frequency",
+      "unit": "Hz",
+      "note": "課本的 $\\nu$（希臘字母 nu），不是速度 $v$"
+    },
+    "lam": {
+      "tex": "\\lambda",
+      "zh": "波長",
+      "en": "wavelength",
+      "unit": "m、nm、pm",
+      "note": "$\\lambda=c/\\nu$"
+    },
+    "Eph": {
+      "tex": "E=h\\nu",
+      "zh": "一個光子的能量",
+      "en": "photon energy",
+      "unit": "J、eV",
+      "note": "$E=hc/\\lambda$"
+    },
+    "pph": {
+      "tex": "p=h\\nu/c",
+      "zh": "一個光子的動量",
+      "en": "photon momentum",
+      "unit": "kg·m/s、eV/$c$",
+      "note": "$p=h/\\lambda$；由 $E=pc$（第 1 章）"
+    },
+    "T": {
+      "tex": "T",
+      "zh": "絕對溫度",
+      "unit": "K"
+    },
+    "k": {
+      "tex": "k",
+      "zh": "Boltzmann 常數",
+      "en": "Boltzmann's constant",
+      "unit": "J/K",
+      "note": "$1.381\\times10^{-23}\\ \\text{J/K}$"
+    },
+    "u": {
+      "tex": "u(\\nu)\\,\\mathrm d\\nu",
+      "zh": "單位體積、頻率在 $\\nu$ 到 $\\nu+\\mathrm d\\nu$ 的輻射能量",
+      "en": "spectral energy density",
+      "unit": "J/m³"
+    },
+    "Gnu": {
+      "tex": "G(\\nu)\\,\\mathrm d\\nu",
+      "zh": "單位體積中頻率在 $\\nu$ 到 $\\nu+\\mathrm d\\nu$ 的駐波數",
+      "unit": "1/m³"
+    },
+    "eps": {
+      "tex": "\\bar\\epsilon",
+      "zh": "每個駐波（振子）的平均能量",
+      "unit": "J",
+      "note": "古典 $kT$；Planck $h\\nu/(e^{h\\nu/kT}-1)$"
+    },
+    "phi": {
+      "tex": "\\phi",
+      "zh": "功函數：電子離開金屬表面所需的最小能量",
+      "en": "work function",
+      "unit": "eV",
+      "note": "$\\phi=h\\nu_0$；和康普頓的散射角 $\\phi$ 是不同的東西"
+    },
+    "nu0": {
+      "tex": "\\nu_0",
+      "zh": "光電效應的截止（門檻）頻率",
+      "en": "threshold frequency",
+      "unit": "Hz",
+      "note": "$\\nu<\\nu_0$ 時不論多強都沒有光電子"
+    },
+    "KEmax": {
+      "tex": "KE_{\\max}",
+      "zh": "光電子的最大動能",
+      "unit": "eV",
+      "note": "$=eV_0$"
+    },
+    "V0": {
+      "tex": "V_0",
+      "zh": "截止電壓（遏止電位）",
+      "en": "stopping potential",
+      "unit": "V",
+      "note": "電流剛好降到零的反向電壓"
+    },
+    "V": {
+      "tex": "V",
+      "zh": "X 光管的加速電壓",
+      "unit": "V",
+      "note": "電子動能 $KE=eV$"
+    },
+    "lmin": {
+      "tex": "\\lambda_{\\min}",
+      "zh": "X 光連續譜的最短波長（截止波長）",
+      "unit": "m",
+      "note": "$\\lambda_{\\min}=hc/Ve=1.240\\times10^{-6}/V$"
+    },
+    "d": {
+      "tex": "d",
+      "zh": "相鄰 Bragg 平面的間距",
+      "en": "plane spacing",
+      "unit": "nm"
+    },
+    "thB": {
+      "tex": "\\theta",
+      "zh": "Bragg 角：入射光與晶面的夾角（掠射角）",
+      "unit": "°",
+      "note": "不是和法線的夾角；散射偏折 $2\\theta$"
+    },
+    "n": {
+      "tex": "n",
+      "zh": "繞射階數",
+      "en": "order",
+      "unit": "無",
+      "note": "$n=1,2,3,\\dots$"
+    },
+    "lamC": {
+      "tex": "\\lambda_C=h/mc",
+      "zh": "康普頓波長",
+      "en": "Compton wavelength",
+      "unit": "pm",
+      "note": "電子 $2.426\\ \\text{pm}$"
+    },
+    "phiC": {
+      "tex": "\\phi",
+      "zh": "康普頓散射中光子的散射角（入射與散射光子方向的夾角）",
+      "unit": "°"
+    },
+    "thE": {
+      "tex": "\\theta",
+      "zh": "康普頓散射中反衝電子方向與入射光子方向的夾角",
+      "unit": "°"
+    },
+    "lp": {
+      "tex": "\\lambda',\\ \\nu'",
+      "zh": "散射後光子的波長、頻率",
+      "unit": "pm、Hz",
+      "note": "$\\lambda'>\\lambda$"
+    },
+    "m": {
+      "tex": "m",
+      "zh": "電子（正子）的靜止質量",
+      "unit": "kg",
+      "note": "$mc^2=0.511\\ \\text{MeV}$"
+    },
+    "pe": {
+      "tex": "p",
+      "zh": "電子（正子）等有質量粒子的動量",
+      "unit": "MeV/$c$、kg·m/s",
+      "note": "$pc=\\sqrt{KE^2+2KE\\,mc^2}$（第 1 章）"
+    },
+    "mu": {
+      "tex": "\\mu",
+      "zh": "線性衰減係數",
+      "en": "linear attenuation coefficient",
+      "unit": "m⁻¹",
+      "note": "和光子能量、吸收材料有關"
+    },
+    "I": {
+      "tex": "I,\\ I_0",
+      "zh": "穿過吸收體後、入射時的輻射強度",
+      "unit": "W/m²"
+    },
+    "x12": {
+      "tex": "x_{1/2}",
+      "zh": "半值厚度：強度減為一半所需的厚度",
+      "unit": "m",
+      "note": "$\\ln2/\\mu=0.693/\\mu$"
+    },
+    "MR": {
+      "tex": "M,\\ R",
+      "zh": "星體的質量、半徑",
+      "unit": "kg、m"
+    },
+    "Rs": {
+      "tex": "R_S",
+      "zh": "史瓦西半徑",
+      "en": "Schwarzschild radius",
+      "unit": "m",
+      "note": "$2GM/c^2$"
+    }
+  },
+  "groups": [
+    {
+      "title": "光子（第 2–4 節）",
+      "keys": [
+        "h",
+        "hc",
+        "nu",
+        "lam",
+        "Eph",
+        "pph",
+        "T",
+        "k",
+        "u",
+        "Gnu",
+        "eps"
+      ]
+    },
+    {
+      "title": "光電效應（第 3 節）",
+      "keys": [
+        "phi",
+        "nu0",
+        "KEmax",
+        "V0"
+      ]
+    },
+    {
+      "title": "X 射線與繞射（第 5–6 節）",
+      "keys": [
+        "V",
+        "lmin",
+        "d",
+        "thB",
+        "n"
+      ]
+    },
+    {
+      "title": "康普頓效應（第 7 節）",
+      "keys": [
+        "lamC",
+        "phiC",
+        "thE",
+        "lp",
+        "m",
+        "pe"
+      ]
+    },
+    {
+      "title": "吸收與重力（第 9–10 節）",
+      "keys": [
+        "mu",
+        "I",
+        "x12",
+        "MR",
+        "Rs"
+      ]
+    }
+  ],
+  "steps": {}
+}

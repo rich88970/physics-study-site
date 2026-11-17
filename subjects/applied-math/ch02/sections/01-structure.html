@@ -1,0 +1,268 @@
+<h2>一、二階線性方程的結構：疊加原理與一般解 <span class="pg">板書 9/23 照片 1–2</span></h2>
+
+<p class="lead">第 1 章的一階方程只要積分一次；二階方程 $y''+ay'+by=g(x)$ 要「積兩次」，所以一般解裡有兩個任意常數。這一節先不急著解，而是回答三個問題：解長什麼樣子（齊次解加特解）、為什麼需要兩個「線性獨立」的解、兩個常數由什麼決定。這是後面所有解法（第 2–6 節的齊次解、第 3 章的特解）的共同骨架。</p>
+
+<h3 id="a2-st-types">1.1 齊次、非齊次與疊加原理 <span class="pg-tag">照片 1</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 1，左半）</span>
+  $$\begin{cases}y_p''+ay_p'+by_p=g(x)\\ y_1''+ay_1'+by_1=0\\ y_2''+ay_2'+by_2=0\end{cases}$$
+  $$\begin{aligned}&(y_1+y_2+y_p)''+a(y_1+y_2+y_p)'\\&\quad+b(y_1+y_2+y_p)=g(x)\end{aligned}$$
+  <p>「eq of motion」　★ Superposition 疊加原理</p>
+  <p>$g(x)=0$：homogeneous；$g(x)\neq0$：non-homogeneous</p>
+  <p>「⋯數，special function」<span class="added">網站補充（照片缺漏）</span>「數」前面的字已被擦掉，從上下文推測是「變係數」：係數不是常數時，解常常是特殊函數（第 4、5 章的冪級數與 Frobenius 法）。原字看不清，這是推測。</p>
+</div>
+
+<p><strong>名詞。</strong>方程式裡 $y$、$y'$、$y''$ 都只出現一次方、彼此不相乘，叫<strong>線性</strong>（linear）；$y''$ 是最高階，叫<strong>二階</strong>。右邊不含 $y$ 的那一項 $g(x)$ 是「外加的驅動」：$g=0$ 叫<strong>齊次</strong>（homogeneous），$g\neq0$ 叫<strong>非齊次</strong>。老師寫「eq of motion」是在提醒：牛頓第二定律 $m\ddot x=F$ 就是一個二階方程，本章第 5 節的阻尼振盪、第 3 章的受迫振盪都是這個形式。</p>
+
+<p><strong>疊加原理為什麼成立。</strong>把左邊記成 $L[y]=y''+ay'+by$。微分是線性的（$(f+h)'=f'+h'$、$(cf)'=cf'$），所以</p>
+$$L[c_1y_1+c_2y_2]=c_1L[y_1]+c_2L[y_2]$$
+<p>板書把三條方程式加起來就是這件事：$y_1$、$y_2$ 讓左邊等於 0，$y_p$ 讓左邊等於 $g$，三者相加後左邊等於 $0+0+g=g$。所以「齊次解的任意組合 + 一個特解」仍然是解。</p>
+
+<div class="box pitfall">
+  <span class="box-title">疊加原理只對線性方程成立</span>
+  <p>例如 $y''+y^2=0$：$L[y_1+y_2]$ 會多出交叉項 $2y_1y_2$，兩個解相加就不再是解。考卷看到 $y^2$、$yy'$、$\sin y$ 這種項，就不能用本章的方法。</p>
+</div>
+
+<h3 id="a2-st-general">1.2 一般解為什麼是 $c_1y_1+c_2y_2+y_p$ <span class="pg-tag">照片 1</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 1，右半）</span>
+  <p><strong>$y''+ay'+by=0$</strong></p>
+  <p>1. 有兩個可能解 $y_1,y_2$：linear indep，$\dfrac{y_1}{y_2}\neq$ const.</p>
+  <p>2. 一般解（general solution）$y=c_1y_1+c_2y_2$，由 I.C. 決定 $c_1,c_2$ → 唯一解</p>
+  <p><strong>$y''+ay'+by=g(x)$</strong></p>
+  <p>1. 一般解的形式 $y=\boxed{c_1y_1+c_2y_2}+y_p$（框內滿足 $y''+ay'+by=0$）。How to find particular solution?（特解）</p>
+  <p>2. $y_p$ 和 $y_1,y_2$ 要線性獨立，$y_p\neq c_1'y_1+c_2'y_2$</p>
+</div>
+
+<p><strong>為什麼剛好兩個常數。</strong>最簡單的二階方程 $y''=0$ 積兩次得 $y=c_1+c_2x$：每積一次多一個常數。一般的二階線性方程也是這樣——解的全體由兩個常數控制，要用<strong>兩個條件</strong>（例如 $y(0)$ 和 $y'(0)$）才能把它們定下來。</p>
+
+<p><strong>為什麼要「線性獨立」。</strong>如果 $y_2=ky_1$（比值是常數），那麼 $c_1y_1+c_2y_2=(c_1+kc_2)y_1$ 其實只剩一個常數，配不出兩個任意的初始條件。所以老師要求 $y_1/y_2\neq$ 常數。例如 $e^{x}$ 和 $3e^{x}$ 不獨立；$e^{x}$ 和 $e^{2x}$ 獨立（比值 $e^{-x}$ 會變）。</p>
+
+<p><strong>為什麼 $y_p$ 要和 $y_1,y_2$ 獨立。</strong>若 $y_p=c_1'y_1+c_2'y_2$，代入左邊會得到 $0$ 而不是 $g(x)$，它根本不是特解。這句話在第 3 章非常重要：當 $g(x)$ 本身就是齊次解時，照表猜的 $y_p$ 會被「吃掉」，必須乘上 $x$（修正規則）。另外，特解不唯一：$y_p$ 加上任何齊次解還是特解，但一般解的集合不變。</p>
+
+<details class="supp">
+  <summary>網站補充：Wronskian 與「兩個條件一定解得出 $c_1,c_2$」</summary>
+  <div class="supp-body">
+    <p>初始條件 $y(x_0)=K_0$、$y'(x_0)=K_1$ 代入 $y=c_1y_1+c_2y_2+y_p$ 是一組二元一次方程：</p>
+    $$\begin{aligned}c_1y_1(x_0)+c_2y_2(x_0)&=K_0-y_p(x_0)\\c_1y_1'(x_0)+c_2y_2'(x_0)&=K_1-y_p'(x_0)\end{aligned}$$
+    <p>它有唯一解的條件是係數行列式不為 0，這個行列式叫 Wronskian：</p>
+    $$W(y_1,y_2)=\begin{vmatrix}y_1&y_2\\y_1'&y_2'\end{vmatrix}=y_1y_2'-y_2y_1'$$
+    <p>又 $\left(\dfrac{y_2}{y_1}\right)'=\dfrac{W}{y_1^2}$，所以「$y_2/y_1$ 是常數」⟺「$W\equiv0$」：線性獨立和 $W\neq0$ 是同一件事。對 $y''+ay'+by=0$ 還可以證明 $W'=-aW$，即 $W=Ce^{-ax}$（Abel 公式）：$W$ 要嘛處處為 0、要嘛處處不為 0。第 4 節的降階公式裡的 $e^{-\int P\,dx}$ 就是這個 $W$。</p>
+  </div>
+</details>
+
+<h3 id="a2-st-ic">1.3 板書例題：特解本身不一定滿足初始條件 <span class="pg-tag">照片 2</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/23（照片 2，左半）</span>
+  <p>ex：$y''+y=e^{-x}$ 且 $y(0)=1$、$y'(0)=0$</p>
+  <p>已知 $\boxed{y_p=\tfrac12e^{-x}}$。Check $y_p$ 是否可滿足 I.C.？</p>
+  $$y_p'=-\tfrac12e^{-x},\qquad y_p''=\tfrac12e^{-x}\quad\Rightarrow\quad y_p\ \text{滿足原式}$$
+  <p>→ $x=0$，$y_p(0)=\tfrac12$</p>
+  <p><span class="added">網站補充（照片缺漏）</span>照片只寫到 $y_p(0)=\tfrac12$，接下來加上齊次解、代入初始條件的部分由網站補在下面的例題卡。</p>
+</div>
+
+<p>老師用這題說明一般解的結構：$y_p$ 滿足方程式，但 $y_p(0)=\tfrac12\neq1$，只靠 $y_p$ 配不出初始條件。真正的解必須是「$y_p$ + 齊次解」，由齊次解裡的兩個常數去配兩個條件。</p>
+
+<div class="problem" data-kind="example" id="a2-b1">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/23 板書 · 照片 2</span></div>
+    <h4>特解本身不滿足初始條件：$y''+y=e^{-x}$</h4>
+    <button type="button" class="exam-btn" data-exam="a2-b1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a2-b1"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.　$y''+y=e^{-x}$ 且 $y(0)=1$，$y'(0)=0$</p><p>已知 $y_p=\frac12e^{-x}$。Check $y_p$ 是否可滿足 I.C.？</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''+y=e^{-x}$，初始條件 $y(0)=1$、$y'(0)=0$。已知一個特解 $y_p=\tfrac12e^{-x}$。(a) 驗證 $y_p$ 滿足方程式；(b) $y_p$ 本身能不能滿足初始條件？(c) 求滿足初始條件的唯一解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式的係數</td><td>$a=0$、$b=1$、$g(x)=e^{-x}$</td><td>「解 $y''+y=e^{-x}$」：沒有 $y'$ 項，所以 $a=0$；右邊不為 0，是<b>非齊次</b></td></tr>
+          <tr><td>已知特解</td><td>$y_p=\tfrac12e^{-x}$</td><td>「已知一個特解」（板書「已知 $y_p=\frac12e^{-x}$」）</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=1$、$y'(0)=0$</td><td>「初始條件 $y(0)=1$、$y'(0)=0$」：兩個條件，剛好定兩個常數</td></tr>
+          <tr><td>齊次解</td><td>$\cos x$、$\sin x$</td><td>題目沒給，要自己求：$y''+y=0$ 的特徵方程式 $\lambda^2+1=0$（第 3 節）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 代入驗證 $y_p$；(b) 判斷 $y_p$ 能否滿足 $y(0)=1$、$y'(0)=0$；(c) 唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>方程式是二階、線性、非齊次，<b>所以</b>由疊加原理，一般解是「齊次方程的通解 $c_1y_1+c_2y_2$」加上「一個特解 $y_p$」。特解已經給了，只差齊次解。</p>
+      <p><b>因為</b>有兩個初始條件，<b>所以</b>一般解裡要有兩個可調的常數；$y_p$ 是固定的函數、沒有常數可調，(b) 一定會失敗，這正是要加齊次解的理由。</p>
+      <p>常見錯誤：把初始條件套在齊次解 $c_1\cos x+c_2\sin x$ 上解出 $c_1,c_2$ 之後才加 $y_p$——初始條件描述的是<b>完整的</b> $y$，必須在加上 $y_p$ 之後才代入。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-b1-s1" data-sym="yp,g">
+        <span class="step-title">(a) 把 $y_p$ 代回方程式</span>
+        <p>指數函數微分：$\dfrac{d}{dx}e^{-x}=-e^{-x}$。所以</p>
+        $$y_p'=-\tfrac12e^{-x},\qquad y_p''=\tfrac12e^{-x}$$
+        <p class="sub">代入左邊 $y''+y$（題目的方程式）：</p>
+        $$y_p''+y_p=\tfrac12e^{-x}+\tfrac12e^{-x}=e^{-x}$$
+        <p>等於右邊 $g(x)=e^{-x}$，$y_p$ 確實是特解。</p>
+      </div>
+      <div class="step" data-step="a2-b1-s2">
+        <span class="step-title">(b) $y_p$ 本身配不出初始條件</span>
+        <p class="sub">代入 $x=0$（題目的初始條件在 $x=0$）：</p>
+        $$y_p(0)=\tfrac12e^{0}=\tfrac12\neq1,\qquad y_p'(0)=-\tfrac12\neq0$$
+        <p>兩個條件都不滿足，而且 $y_p$ 沒有任何常數可以調整，所以必須加上齊次解。</p>
+      </div>
+      <div class="step" data-step="a2-b1-s3" data-sym="y12,c12">
+        <span class="step-title">(c) 先求齊次解，寫出一般解</span>
+        <p>齊次方程 $y''+y=0$。令 $y=e^{\lambda x}$ 代入，消去 $e^{\lambda x}$ 得特徵方程式：</p>
+        $$\lambda^2+1=0\quad\Rightarrow\quad\lambda=\pm i$$
+        <p>共軛複根 $\alpha\pm i\beta$ 中 $\alpha=0$、$\beta=1$，用 Euler 公式化成實數形式（第 3 節）：$y_1=\cos x$、$y_2=\sin x$。比值 $\tan x$ 不是常數，兩者線性獨立。所以一般解是</p>
+        $$y=c_1\cos x+c_2\sin x+\tfrac12e^{-x}$$
+      </div>
+      <div class="step" data-step="a2-b1-s4">
+        <span class="step-title">代入 $y(0)=1$ 求 $c_1$</span>
+        <p class="sub">代入 $x=0$：$\cos0=1$、$\sin0=0$、$e^0=1$，並用題目的 $y(0)=1$：</p>
+        $$c_1\cdot1+c_2\cdot0+\tfrac12=1\quad\Rightarrow\quad c_1=\tfrac12$$
+      </div>
+      <div class="step" data-step="a2-b1-s5">
+        <span class="step-title">微分後代入 $y'(0)=0$ 求 $c_2$</span>
+        <p>先對一般解微分（$(\cos x)'=-\sin x$、$(\sin x)'=\cos x$）：</p>
+        $$y'=-c_1\sin x+c_2\cos x-\tfrac12e^{-x}$$
+        <p class="sub">代入 $x=0$ 與題目的 $y'(0)=0$：</p>
+        $$0+c_2-\tfrac12=0\quad\Rightarrow\quad c_2=\tfrac12$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $y_p''+y_p=e^{-x}$ ✔；(b) 不能，$y_p(0)=\tfrac12\neq1$；(c) $y=\tfrac12\left(\cos x+\sin x+e^{-x}\right)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=\tfrac12(1+0+1)=1$ ✔；$y'(0)=\tfrac12(0+1-1)=0$ ✔；$y''+y$：$\tfrac12(-\cos x-\sin x+e^{-x})+\tfrac12(\cos x+\sin x+e^{-x})=e^{-x}$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a2-s01-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>由兩個解反推方程式</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s01-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>已知 $y_1=x$ 與 $y_2=x^2$（$x\gt0$）都是某個二階線性齊次方程 $y''+P(x)y'+Q(x)y=0$ 的解。(a) 求 $P(x)$、$Q(x)$。(b) $y_1,y_2$ 是否線性獨立？(c) $y=3x-x^2$、$y=x+x^2+1$ 是不是這個方程式的解？(d) 求滿足 $y(1)=2$、$y'(1)=1$ 的解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>兩個已知解</td><td>$y_1=x$、$y_2=x^2$</td><td>「$y_1=x$ 與 $y_2=x^2$ 都是⋯⋯的解」</td></tr>
+          <tr><td>方程式的形式</td><td>$y''+P(x)y'+Q(x)y=0$，未知 $P,Q$</td><td>「二階線性<b>齊次</b>方程」：右邊是 0，係數可以是 $x$ 的函數</td></tr>
+          <tr><td>定義域</td><td>$x\gt0$</td><td>「（$x\gt0$）」：之後要除以 $x$，不能用 $x=0$</td></tr>
+          <tr><td>(d) 的條件</td><td>$y(1)=2$、$y'(1)=1$</td><td>(d)「滿足 $y(1)=2$、$y'(1)=1$」：條件給在 $x=1$，不是 $x=0$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $P(x)$、$Q(x)$；(b) 判斷獨立性；(c) 判斷兩個函數是不是解；(d) 唯一解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>這題反過來問：解已知、方程式未知。<b>因為</b>「$y_1$ 是解」的意思就是代入後左邊等於 0，<b>所以</b>把 $y_1$、$y_2$ 各代入一次，得到兩條關於 $P$、$Q$ 的方程式，兩個未知數剛好解得出來。</p>
+      <p>(c) <b>因為</b>方程式是線性齊次的，<b>所以</b>疊加原理成立：$y_1,y_2$ 的任何線性組合都是解；但多加一個常數 1 不是組合，必須另外代入檢查。(d) <b>因為</b>獨立的 $y_1,y_2$ 組成一般解，<b>所以</b>用兩個條件定兩個常數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s01-1-s1" data-sym="PQ">
+        <span class="step-title">(a) 代入 $y_1=x$</span>
+        <p>$y_1'=1$、$y_1''=0$，代入 $y''+Py'+Qy=0$：</p>
+        $$0+P\cdot1+Q\cdot x=0\quad\Rightarrow\quad P+xQ=0\qquad①$$
+      </div>
+      <div class="step" data-step="a2-s01-1-s2">
+        <span class="step-title">(a) 代入 $y_2=x^2$，聯立求解</span>
+        <p>$y_2'=2x$、$y_2''=2$，代入：</p>
+        $$2+2xP+x^2Q=0\qquad②$$
+        <p class="sub">由 ① 得 $Q=-P/x$，代入 ②：</p>
+        $$2+2xP-xP=0\ \Rightarrow\ xP=-2\ \Rightarrow\ P=-\frac2x,\quad Q=\frac{2}{x^2}$$
+        <p>兩邊乘 $x^2$，方程式是 $x^2y''-2xy'+2y=0$——這是第 6 節的 Cauchy–Euler 方程。</p>
+      </div>
+      <div class="step" data-step="a2-s01-1-s3" data-sym="W">
+        <span class="step-title">(b) 線性獨立</span>
+        <p>比值 $\dfrac{y_2}{y_1}=x$ 會隨 $x$ 變，不是常數，所以線性獨立。用 Wronskian 也一樣：</p>
+        $$W=y_1y_2'-y_2y_1'=x\cdot2x-x^2\cdot1=x^2\neq0\quad(x\gt0)$$
+      </div>
+      <div class="step" data-step="a2-s01-1-s4">
+        <span class="step-title">(c) 兩個候選函數</span>
+        <p>$3x-x^2=3y_1-y_2$ 是線性組合，由疊加原理一定是解。$x+x^2+1=y_1+y_2+1$：前兩項代入得 0，只要檢查常數 $1$。</p>
+        <p class="sub">把 $y=1$（$y'=y''=0$）代入 (a) 求出的方程式：</p>
+        $$0-\frac2x\cdot0+\frac2{x^2}\cdot1=\frac{2}{x^2}\neq0$$
+        <p>所以 $x+x^2+1$ 代入左邊得 $\dfrac2{x^2}$，<b>不是</b>解。常數只有在 $Q=0$ 時才會是齊次解。</p>
+      </div>
+      <div class="step" data-step="a2-s01-1-s5" data-sym="c12">
+        <span class="step-title">(d) 代入 $x=1$ 的兩個條件</span>
+        <p>一般解 $y=c_1x+c_2x^2$，微分 $y'=c_1+2c_2x$。</p>
+        <p class="sub">代入 $x=1$ 與 (d) 的 $y(1)=2$、$y'(1)=1$：</p>
+        $$\begin{aligned}c_1+c_2&=2\\c_1+2c_2&=1\end{aligned}$$
+        <p>下式減上式得 $c_2=-1$，再代回得 $c_1=3$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $P=-\dfrac2x$、$Q=\dfrac2{x^2}$（即 $x^2y''-2xy'+2y=0$）；(b) 獨立，$W=x^2$；(c) $3x-x^2$ 是解，$x+x^2+1$ 不是；(d) $y=3x-x^2$（正好是 (c) 的第一個函數）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=3x-x^2$：$y'=3-2x$、$y''=-2$，$x^2(-2)-2x(3-2x)+2(3x-x^2)=-2x^2-6x+4x^2+6x-2x^2=0$ ✔；$y(1)=2$、$y'(1)=1$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a2-s01-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>三個非齊次解：相減得到齊次解</h4>
+    <button type="button" class="exam-btn" data-exam="a2-s01-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$y_A=x+e^{2x}$、$y_B=x+e^{-x}$、$y_C=x+e^{2x}+e^{-x}$ 三個函數都是同一個常係數方程 $y''+ay'+by=g(x)$ 的解。(a) 求 $a$、$b$ 與 $g(x)$；(b) 寫出一般解；(c) 求滿足 $y(0)=0$、$y'(0)=0$ 的解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>三個解</td><td>$y_A,y_B,y_C$</td><td>「三個函數都是同一個⋯⋯的解」</td></tr>
+          <tr><td>方程式</td><td>$y''+ay'+by=g(x)$，$a,b$ 是常數</td><td>「<b>常係數</b>方程」：齊次解是 $e^{\lambda x}$ 型，$\lambda$ 是特徵根</td></tr>
+          <tr><td>右邊</td><td>$g(x)$ 未知，可能不為 0</td><td>題目沒說齊次，三個解都含 $x$，要自己判斷</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=0$、$y'(0)=0$</td><td>(c)「滿足 $y(0)=0$、$y'(0)=0$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $a,b,g(x)$；(b) 一般解；(c) 唯一解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $L[y_A]=g$、$L[y_C]=g$，兩式相減 $L[y_C-y_A]=0$，<b>所以</b>兩個非齊次解的差一定是齊次解。用差找出兩個獨立的齊次解，就知道特徵根，再由根和係數的關係得到 $a,b$。</p>
+      <p><b>因為</b>齊次解可以從 $y_A$ 裡扣掉，<b>所以</b>剩下的部分就是一個特解，代入左邊就能讀出 $g(x)$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a2-s01-2-s1" data-sym="y12">
+        <span class="step-title">兩兩相減，得到齊次解</span>
+        $$y_C-y_A=e^{-x},\qquad y_A-y_B=e^{2x}-e^{-x}$$
+        <p>兩者都是齊次解；把它們相加又得到 $e^{2x}$ 也是齊次解。$e^{2x}/e^{-x}=e^{3x}$ 不是常數，所以 $y_1=e^{2x}$、$y_2=e^{-x}$ 線性獨立。</p>
+      </div>
+      <div class="step" data-step="a2-s01-2-s2" data-sym="lam,ab">
+        <span class="step-title">由特徵根讀出 $a$、$b$</span>
+        <p>$e^{2x}$、$e^{-x}$ 是齊次解，表示特徵方程式 $\lambda^2+a\lambda+b=0$ 的根是 $2$ 和 $-1$：</p>
+        $$(\lambda-2)(\lambda+1)=\lambda^2-\lambda-2\quad\Rightarrow\quad a=-1,\ b=-2$$
+      </div>
+      <div class="step" data-step="a2-s01-2-s3" data-sym="g,yp">
+        <span class="step-title">扣掉齊次部分，讀出 $g(x)$</span>
+        <p>$y_A=x+e^{2x}$ 中 $e^{2x}$ 是齊次解，所以 $y_p=x$ 是一個特解。$y_p'=1$、$y_p''=0$：</p>
+        <p class="sub">代入左邊 $y''-y'-2y$（步驟 2 的 $a=-1$、$b=-2$）：</p>
+        $$g(x)=0-1-2x=-1-2x$$
+      </div>
+      <div class="step" data-step="a2-s01-2-s4" data-sym="c12">
+        <span class="step-title">(b)(c) 一般解，代入初始條件</span>
+        $$y=c_1e^{2x}+c_2e^{-x}+x,\qquad y'=2c_1e^{2x}-c_2e^{-x}+1$$
+        <p class="sub">代入 $x=0$ 與 (c) 的 $y(0)=0$、$y'(0)=0$：</p>
+        $$\begin{aligned}c_1+c_2&=0\\2c_1-c_2+1&=0\end{aligned}$$
+        <p>兩式相加：$3c_1+1=0$，$c_1=-\tfrac13$，$c_2=\tfrac13$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $a=-1$、$b=-2$、$g(x)=-1-2x$；(b) $y=c_1e^{2x}+c_2e^{-x}+x$；(c) $y=-\tfrac13e^{2x}+\tfrac13e^{-x}+x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_B=x+e^{-x}$：$L[y_B]=L[x]+L[e^{-x}]=(-1-2x)+0$ ✔。(c)：$y(0)=-\tfrac13+\tfrac13=0$ ✔，$y'(0)=-\tfrac23-\tfrac13+1=0$ ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>線性 ⇒ 疊加原理：齊次解的任意組合 + 一個特解仍是解。</li>
+    <li>二階 ⇒ 兩個常數 ⇒ 需要兩個<strong>線性獨立</strong>的齊次解（$y_1/y_2\neq$ 常數，或 $W\neq0$）和兩個條件。</li>
+    <li>一般解 $y=c_1y_1+c_2y_2+y_p$；初始條件要代入<strong>完整的</strong> $y$，不能只代齊次部分。</li>
+    <li>$y_p$ 不能是齊次解的組合，否則代入得 0（第 3 章修正規則的由來）。</li>
+  </ol>
+</div>

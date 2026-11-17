@@ -1,0 +1,170 @@
+<h2>五、考前衝刺 <span class="pg">板書 10/7 照片 7–11 · 10/14 照片 1–12</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>110、112、114 上期末各有一題 Frobenius，都是<strong>兩根相差整數、小根成功</strong>：110 上 $xy''+(x-1)y'-y=0$（加兩點條件）、112 上 $(x^2+2x)y''-2(x+1)y'+2y=0$（一般解，兩串都截斷）、114 上 $x^2y''+xy'+(x^2-\tfrac14)y=0$（前三個非零項）。114 上另有一題畫 $P_0$–$P_3$。板書與作業練的是另外兩種情況（不是整數差、重根與小根失敗）——考題換成這兩種的可能性很高，降階法 $u=\int e^{-\int P}/y_1^2$ 一定要會。<strong>分數在過程</strong>：判斷正則奇點、寫出指標方程式、平移後的遞迴、檢查 $n=N$ 那一格。</p>
+</div>
+
+<h3 id="am5x-formulas">5.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>判斷與指標</h4>
+    <ul>
+      <li>標準式 $y''+Py'+Qy=0$；$P$、$Q$ 在 0 發散但 $p_0=\lim xP$、$q_0=\lim x^2Q$ 有限 → 正則奇點</li>
+      <li>令 $y=\sum_{n\ge0}a_nx^{n+\gamma}$，$a_0\ne0$</li>
+      <li>指標方程式 $F(\gamma)=\gamma(\gamma-1)+p_0\gamma+q_0=0$</li>
+      <li>遞迴：$a_n$ 的係數是 $F(n+\gamma)$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>對齊次方</h4>
+    <ul>
+      <li>$x^2y''$、$xy'$、$y$ → $x^{n+\gamma}$；$xy''$、$y'$ → $x^{n+\gamma-1}$</li>
+      <li>$x^2y''=\sum(n+\gamma)(n+\gamma-1)a_nx^{n+\gamma}$</li>
+      <li>高一次的項平移成 $a_{n-1}$（下限 $n=1$）；或低一次的項平移成 $a_{n+1}$（下限 $n=-1$）</li>
+    </ul>
+  </section>
+  <section>
+    <h4>三種情況（$\gamma_1\ge\gamma_2$）</h4>
+    <ul>
+      <li>差不是整數：$y_i=x^{\gamma_i}\sum a_nx^n$，兩個都成立</li>
+      <li>重根：$y_2=y_1\ln x+x^{\gamma_1}\sum b_nx^n$</li>
+      <li>差 $N$：大根成功；小根在 $n=N$ 看 $0\cdot a_N=$ 右邊（$=0$ 成功、$\ne0$ 失敗 → $y_2=ky_1\ln x+x^{\gamma_2}\sum b_nx^n$）</li>
+    </ul>
+  </section>
+  <section>
+    <h4>降階法</h4>
+    <ul>
+      <li>$y_2=uy_1$，$y_1u''+(2y_1'+Py_1)u'=0$</li>
+      <li>$u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}dx$</li>
+      <li>$\int P$ 用部分分式；$1/y_1^2$ 用 $(1+s)^{-2}=1-2s+3s^2-\cdots$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>Legendre</h4>
+    <ul>
+      <li>$(1-x^2)y''-2xy'+l(l+1)y=0$；$(n+2)(n+1)a_{n+2}=(n+l+1)(n-l)a_n$</li>
+      <li>只留截斷的一串（另一串在 $\pm1$ 發散），$P_l(1)=1$</li>
+      <li>$P_0=1$、$P_1=x$、$P_2=\tfrac12(3x^2-1)$、$P_3=\tfrac12(5x^3-3x)$、$P_4=\tfrac18(35x^4-30x^2+3)$</li>
+      <li>① $lP_l=(2l-1)xP_{l-1}-(l-1)P_{l-2}$；⑤ $(2l+1)P_l=P_{l+1}'-P_{l-1}'$；$P_l(-x)=(-1)^lP_l(x)$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="am5x-types">5.2 題型總表</h3>
+
+<p class="type-jump"><a href="#am5type-1">① 兩根差不是整數</a><a href="#am5type-2">② 重根</a><a href="#am5type-3">③ 差整數、小根成功</a><a href="#am5type-4">④ 差整數、小根失敗</a><a href="#am5type-5">⑤ 有條件</a><a href="#am5type-6">⑥ Legendre</a></p>
+
+<div class="drill" id="am5type-1">
+  <h4>① 兩根差不是整數：兩個 Frobenius 級數</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>指標根像 $1,\tfrac12$、$\tfrac12,-1$、$0,\tfrac12$；常見於 $2x^2y''+\cdots$ 或 $4xy''+\cdots$。</dd>
+    <dt>做法</dt><dd>對齊次方 → 指標方程式 → $F(n+\gamma)a_n=\cdots$；兩個根各代一次，各寫幾項；看得出 $1/(2n)!$、$1/n!$ 就認 closed form。</dd>
+    <dt>常錯</dt><dd>代入 $\gamma$ 時分母的 $n+\gamma$ 沒換對（例如 $\gamma=-1$ 時 $n=1$ 的分母是負的）；忘記乘回 $x^\gamma$。</dd>
+    <dt>代表題</dt><dd><a href="#am5-ex-1">板書 10/7</a>　<a href="#am5-hw-1">作業 1</a>　<a href="#am5-sf-01a">自編 1-a</a>　<a href="#am5-sf-01b">自編 1-b</a>　<a href="#am5var-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am5type-2">
+  <h4>② 指標方程式重根</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$F(\gamma)$ 是完全平方，例如 $-\gamma^2$、$(\gamma+1)^2$；$p_0=1$、$q_0=0$ 就是重根 0。</dd>
+    <dt>做法</dt><dd>Frobenius 求 $y_1$；$y_2=uy_1$，$u=\int e^{-\int P}/y_1^2\,dx$（被積函數首項一定是 $\tfrac1x$，積出 $\ln x$）；或代入 $y_1\ln x+x^\gamma\sum b_nx^n$。</dd>
+    <dt>常錯</dt><dd>以為重根時第二解是 $xy_1$（那是常係數的重根）；$\int P$ 漏了部分分式的某一項。</dd>
+    <dt>代表題</dt><dd><a href="#am5-ex-2">板書 10/14 例 1</a>　<a href="#am5-sf-02a">自編 2-a</a>　<a href="#am5-sf-02b">自編 2-b</a>　<a href="#am5var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am5type-3">
+  <h4>③ 兩根差整數、小根成功</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>根像 $0,2$、$\pm\tfrac12$；小根算到 $n=N$ 時出現 $0\cdot a_N=0$。期末考三題都是這型。</dd>
+    <dt>做法</dt><dd>先試小根：$a_N$ 自由（取 0）、一個遞迴拿到兩個解；常常會截斷或認得出 $e^{-x}$、$\sin x/\sqrt x$。</dd>
+    <dt>常錯</dt><dd>看到 $F=0$ 就以為失敗；把 $a_N$ 硬設成某個值卻不說明；漏寫一般解。</dd>
+    <dt>代表題</dt><dd><a href="#am5-k112-4">112 上期末 4</a>　<a href="#am5-k114-2">114 上期末 2</a>　<a href="#am5-k110-4">110 上期末 4</a>　<a href="#am5-sf-03a">自編 3-a</a>　<a href="#am5var-2">變化題 2</a>　<a href="#am5var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am5type-4">
+  <h4>④ 兩根差整數、小根失敗（$\ln x$）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>小根在 $n=N$ 得到 $0=$（非零）；作業 2、10/14 例 2。</dd>
+    <dt>做法</dt><dd>大根求 $y_1$；$y_2$ 用降階法（$y_1$ 簡單時）或代入 $ky_1\ln x+x^{\gamma_2}\sum b_nx^n$（$y_1$ 是長級數時）；$k$ 由失敗的那一格決定。</dd>
+    <dt>常錯</dt><dd>長除法 $1/y_1^2$ 展開錯；忘了 $u$ 的 $\tfrac1x$ 項積出 $\ln x$。</dd>
+    <dt>代表題</dt><dd><a href="#am5-ex-3">板書 10/14 例 2</a>　<a href="#am5-hw-2">作業 2</a>　<a href="#am5-sf-03b">自編 3-b</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am5type-5">
+  <h4>⑤ 加條件（含在奇點 $x=0$ 的條件）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>110 上「$y(0)=1$、$y(1)=0$」；自編 1-a。</dd>
+    <dt>做法</dt><dd>先寫一般解（最好 closed form）；在 $x=0$ 的條件先看哪些解在 0 有限；再代兩個點解 $c_1$、$c_2$。</dd>
+    <dt>常錯</dt><dd>把 $y(0)$ 當成 $a_0$ 直接代入 Frobenius 級數（$\gamma\ne0$ 時不對）；含 $\ln x$ 或負指標的解在 0 發散。</dd>
+    <dt>代表題</dt><dd><a href="#am5-k110-4">110 上期末 4</a>　<a href="#am5-sf-01a">自編 1-a</a>　<a href="#am5-sf-02a">自編 2-a</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="am5type-6">
+  <h4>⑥ Legendre 方程式與多項式</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$(1-x^2)y''-2xy'+l(l+1)y=0$、「物理解」「$x=\pm1$ 不發散」、畫 $P_l$、求 $P_l$ 的積分。</dd>
+    <dt>做法</dt><dd>常點冪級數 → 遞迴 → 和 $l$ 同奇偶的那串截斷 → 除以 $x=1$ 的值；畫圖抓端點 $(\pm1)^l$、奇偶、零點、極值；積分用 ⑤。</dd>
+    <dt>常錯</dt><dd>歸一化忘了除以負號（$1-3x^2$ 在 1 是 $-2$）；把不截斷那串寫成交錯號（板書誤植）。</dd>
+    <dt>代表題</dt><dd><a href="#am5-k114-3">114 上期末 3</a>　<a href="#am5-ex-4">板書 Legendre 1</a>　<a href="#am5-ex-5">板書 Legendre 2</a>　<a href="#am5-sf-04a">自編 4-a</a>　<a href="#am5-sf-04b">自編 4-b</a>　<a href="#am5var-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<h3 id="am5x-vars">5.3 變化題：老師可能的改法</h3>
+
+<p>每題都是把考古題或板書例題換條件。先自己寫，再打開解答對照。</p>
+
+<div class="drill-q" id="am5var-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#am5-k114-2">114 上期末 2</a></p>
+  <p>用 Frobenius 法解 $x^2y''+xy'+\big(x^2-\tfrac94\big)y=0$，兩個解各寫前三個非零項。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$F(\gamma)=\gamma^2-\tfrac94$，$\gamma=\pm\tfrac32$（差 3）；遞迴 $(n+\gamma-\tfrac32)(n+\gamma+\tfrac32)a_n=-a_{n-2}$，$n=1$ 給 $a_1=0$。</p>
+    <p>$\gamma=\tfrac32$：$n(n+3)a_n=-a_{n-2}$，$a_2=-\tfrac1{10}$、$a_4=\tfrac1{280}$：$y_1=x^{3/2}\big(1-\tfrac{x^2}{10}+\tfrac{x^4}{280}-\cdots\big)$。</p>
+    <p>$\gamma=-\tfrac32$：$n(n-3)a_n=-a_{n-2}$；$n=3$：$0\cdot a_3=-a_1=0$，小根成功（$a_3$ 取 0）；$a_2=\tfrac12$、$a_4=-\tfrac18$：$y_2=x^{-3/2}\big(1+\tfrac{x^2}{2}-\tfrac{x^4}{8}+\cdots\big)$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am5var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#am5-k110-4">110 上期末 4</a></p>
+  <p>用 Frobenius 法求 $xy''+(x-2)y'-2y=0$ 的一般解。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$p_0=-2$、$q_0=0$：$\gamma(\gamma-3)=0$，$\gamma=0,3$。遞迴 $s(s-3)a_n=-(s-3)a_{n-1}$。</p>
+    <p>小根 $\gamma=0$：$n=1$：$-2a_1=2a_0\Rightarrow a_1=-a_0$；$n=2$：$-2a_2=a_1\Rightarrow a_2=\tfrac12a_0$；$n=3$：$0=0$，$a_3$ 取 0，之後全為零：$y=1-x+\tfrac{x^2}2$。大根 $\gamma=3$：$a_n=-\tfrac{a_{n-1}}{n+3}$，$y=x^3\big(1-\tfrac x4+\tfrac{x^2}{20}-\cdots\big)\propto e^{-x}-1+x-\tfrac{x^2}2$。</p>
+    <p>一般解 $y=c_1\big(1-x+\tfrac{x^2}{2}\big)+c_2e^{-x}$。驗算：$e^{-x}$ 代入 $xe^{-x}-(x-2)e^{-x}-2e^{-x}=0$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am5var-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#am5-sf-02a">自編 2-a</a>、<a href="#am5-ex-2">板書 10/14 例 1</a></p>
+  <p>解 $xy''+(1+x)y'+y=0$：指標、$y_1$ 的 closed form，以及用降階法求 $y_2$ 到 $x^3$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$p_0=1$、$q_0=0$：$\gamma^2=0$ 重根。遞迴 $s^2a_n=-s\,a_{n-1}$，$a_n=-\tfrac{a_{n-1}}{n}$：$y_1=e^{-x}$。</p>
+    <p>$\int P=\ln x+x$，$u'=\dfrac{e^{-x}/x}{e^{-2x}}=\dfrac{e^{x}}{x}=\tfrac1x+1+\tfrac x2+\tfrac{x^2}6+\cdots$，$u=\ln x+x+\tfrac{x^2}4+\tfrac{x^3}{18}+\cdots$；$y_2=e^{-x}\big(\ln x+x+\tfrac{x^2}4+\tfrac{x^3}{18}+\cdots\big)$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am5var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#am5-k112-4">112 上期末 4</a></p>
+  <p>用 Frobenius 法求 $(x^2-x)y''+(4x-2)y'+2y=0$ 的一般解（提示：先試小根）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$xP=\tfrac{4x-2}{x-1}\to2$、$x^2Q=\tfrac{2x}{x-1}\to0$：$\gamma(\gamma+1)=0$，$\gamma=0,-1$。小根 $\gamma=-1$ 在 $n=1$ 得 $0\cdot a_1=0$，$a_1$ 自由：$a_1=0$ 時級數只剩 $a_0x^{-1}$；$a_1$ 的部分是 $x^{-1}(x+x^2+\cdots)=\tfrac{1}{1-x}$。</p>
+    <p>一般解 $y=\dfrac{c_1}{x}+\dfrac{c_2}{1-x}$。驗算：方程式就是 $\big[(x^2-x)y\big]''=0$，$(x^2-x)y=A+Bx$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="am5var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#am5-ex-4">板書 Legendre 1</a></p>
+  <p>Legendre 方程式 $l=2$：寫出不截斷的那一串（奇數串）前四項，說明它為什麼在 $x=1$ 發散，並寫出物理解。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$a_{n+2}=\dfrac{(n-2)(n+3)}{(n+2)(n+1)}a_n$，奇數串：$a_3=\tfrac{(-1)(4)}{6}a_1=-\tfrac23a_1$、$a_5=\tfrac{(1)(6)}{20}a_3=-\tfrac15a_1$、$a_7=\tfrac{(3)(8)}{42}a_5=-\tfrac4{35}a_1$：$x-\tfrac23x^3-\tfrac15x^5-\tfrac4{35}x^7-\cdots$。</p>
+    <p>從 $a_3$ 起全為負，比值 $\approx1-\tfrac2n$，係數像 $-\tfrac Cn$，在 $x=1$ 像 $-\sum\tfrac1n$ 發散。物理解只留偶數串 $1-3x^2$，歸一化 $P_2=\tfrac12(3x^2-1)$。</p>
+  </details>
+</div>

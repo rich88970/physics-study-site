@@ -1,0 +1,195 @@
+<h2>一、同頻率弦波的疊加與相量 <span class="pg">課本 p.113–119</span> <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h2>
+
+<p class="lead">好幾個頻率相同、振幅和相位不同的弦波疊在一起，結果還是一個同頻率的弦波，只是振幅和相位變了。這一節把每個波寫成 $E_{0i}\cos(\alpha_i-\omega t)$，把它看成長度 $E_{0i}$、角度 $\alpha_i$ 的箭頭（相量），用向量相加一次求出合成波的振幅 $E_0$ 和相位角 $\alpha$。</p>
+
+<p class="small muted">（逐字稿 02:42：「第九章我們說一定會考的是：好幾個波的疊加——好幾個弦波的疊加。cos 的波、sin 的波，具有相同的頻率，但是不同的寫法，怎麼去疊加。」03:31：「合成波的振幅跟相位角，這一定會考。」03:35：「就把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，那再利用這種相量的概念去解，求出最後合成波的振幅跟相位角。一定會考。」老師在 6 分半的錄音裡對這一型講了三次「一定會考」。李孟恩課程資料夾的 5 份期中考每份都考這一型（都是第 1 題），依考古題統計推論，不是老師說的。）</p>
+
+<h3 id="o9-sp">1.1 疊加原理 <span class="pg-tag">p.113–114</span></h3>
+
+<p>老師的講義檔案沒有第九章，本節照課本 Pedrotti §1–§2。兩個波在同一點同時存在時，合成的位移就是各自位移的和；電磁波則是電場（或磁場）向量相加：</p>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (1) 與 §1</span>
+  $$\psi=\psi_1+\psi_2,\qquad \vec E=\vec E_1+\vec E_2$$
+  <p>If $\psi_1$ and $\psi_2$ are independently solutions of the wave equation, then the linear combination $\psi=a\psi_1+b\psi_2$ is also a solution.</p>
+</div>
+
+<p>疊加原理成立的原因是波動方程是<strong>線性</strong>的：兩個解相加還是解。本章先把電場當純量處理——這只在兩個電場<strong>平行</strong>（或幾乎平行）時嚴格成立；互相垂直的電場疊加會得到偏振，第十四章以後才處理。</p>
+
+<h3 id="o9-two">1.2 兩個同頻率的波：寫成 $E_0\cos(\alpha-\omega t)$ <span class="pg-tag">p.114–116</span></h3>
+
+<p>兩道同頻率的平面波分別走了 $s_1$、$s_2$ 到達觀察點 P。把和時間無關的部分（路程造成的相位 $ks$ 加上初相 $\varphi$）合成一個常數 $\alpha$，P 點的電場就只剩「常數減 $\omega t$」：</p>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (3)–(7)</span>
+  $$\alpha_1=ks_1+\varphi_1,\qquad \alpha_2=ks_2+\varphi_2$$
+  $$E_1=E_{01}\cos(\alpha_1-\omega t),\qquad E_2=E_{02}\cos(\alpha_2-\omega t)$$
+  $$E_R=E_1+E_2=E_{01}\cos(\alpha_1-\omega t)+E_{02}\cos(\alpha_2-\omega t)$$
+</div>
+
+<p>這就是老師說「寫成 $\cos(\alpha-\omega t)$ 的形式」的由來：<strong>$\alpha$ 是這個波的相位常數，$\omega t$ 前面固定是負號</strong>。兩個特例：</p>
+<ul>
+  <li><strong>相長干涉</strong>：$\alpha_2-\alpha_1=2m\pi$，峰對峰，$E_R=(E_{01}+E_{02})\cos(\alpha_1-\omega t)$，振幅直接相加。</li>
+  <li><strong>相消干涉</strong>：$\alpha_2-\alpha_1=(2m+1)\pi$，峰對谷，$E_R=(E_{01}-E_{02})\cos(\alpha_1-\omega t)$，振幅相減；兩個振幅相等時完全抵消。</li>
+</ul>
+<p>一般情形的相位差介於兩者之間，合成振幅也介於 $|E_{01}-E_{02}|$ 與 $E_{01}+E_{02}$ 之間。</p>
+
+<h3 id="o9-phasor">1.3 相量：把每個波畫成一支箭頭 <span class="pg-tag">p.116–117</span> <span class="must teacher">老師：一定會考</span></h3>
+
+<p>用 $\cos\theta=\mathrm{Re}\,e^{i\theta}$，把兩個波寫成複數再提出共同的 $e^{-i\omega t}$：</p>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (8)–(11)</span>
+  $$E_R=\mathrm{Re}\!\left[e^{-i\omega t}\left(E_{01}e^{i\alpha_1}+E_{02}e^{i\alpha_2}\right)\right],\qquad E_0e^{i\alpha}=E_{01}e^{i\alpha_1}+E_{02}e^{i\alpha_2}$$
+  $$E_0^2=E_{01}^2+E_{02}^2+2E_{01}E_{02}\cos(\alpha_2-\alpha_1)$$
+  $$\tan\alpha=\frac{E_{01}\sin\alpha_1+E_{02}\sin\alpha_2}{E_{01}\cos\alpha_1+E_{02}\cos\alpha_2}$$
+  $$E_R=E_{01}\cos(\alpha_1-\omega t)+E_{02}\cos(\alpha_2-\omega t)=E_0\cos(\alpha-\omega t)$$
+</div>
+
+<p>複數 $E_{0i}e^{i\alpha_i}$ 在複數平面上就是一支長度 $E_{0i}$、和實軸夾角 $\alpha_i$ 的箭頭，這支箭頭叫<strong>相量（phasor）</strong>。兩個複數相加＝兩支箭頭頭尾相接，合成箭頭的長度就是 $E_0$、角度就是 $\alpha$。所以：</p>
+
+<div class="step" data-step="o9-ph-s1" data-sym="E0,alpha">
+  <span class="step-title">分量相加（考試用這個，不用背餘弦定律）</span>
+  <p>合成箭頭的水平分量＝各箭頭水平分量的和，垂直分量也一樣：</p>
+  $$E_0\cos\alpha=E_{01}\cos\alpha_1+E_{02}\cos\alpha_2,\qquad E_0\sin\alpha=E_{01}\sin\alpha_1+E_{02}\sin\alpha_2$$
+  <p>畢氏定理給長度、兩式相除給角度。式 (9) 的餘弦定律只是把這兩式平方相加的結果，兩個波時好用，三、四個波時分量法最不容易錯。</p>
+</div>
+
+<h3 id="o9-n">1.4 推廣到 $N$ 個波 <span class="pg-tag">p.117–119</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti 式 (12)(13)(16)</span>
+  $$\tan\alpha=\frac{\sum_{i=1}^{N}E_{0i}\sin\alpha_i}{\sum_{i=1}^{N}E_{0i}\cos\alpha_i},\qquad E_0^2=\left(\sum_{i=1}^{N}E_{0i}\sin\alpha_i\right)^2+\left(\sum_{i=1}^{N}E_{0i}\cos\alpha_i\right)^2$$
+  $$E_0^2=\sum_{i=1}^{N}E_{0i}^2+2\sum_{j>i}\sum_{i=1}^{N}E_{0i}E_{0j}\cos(\alpha_j-\alpha_i)$$
+</div>
+
+<p>結論（課本原話的意思）：$N$ 個同頻率的弦波相加，還是同頻率的弦波，振幅由式 (13) 或 (16) 給出、相位由式 (12) 給出。下面直接做課本 Example 1，它的步驟就是考試的標準寫法。</p>
+
+<p><strong>課本 Example 1</strong>（p.118）：求 $E_1=7\cos(\tfrac{\pi}{3}-\omega t)$、$E_2=12\sin(\tfrac{\pi}{4}-\omega t)$、$E_3=20\cos(\tfrac{\pi}{5}-\omega t)$ 的合成。</p>
+
+<div class="step" data-step="o9-ex1-s1" data-sym="alpha">
+  <span class="step-title">先把 sin 換成 cos</span>
+  <p>$E_1$、$E_3$ 已經是 $\cos(\alpha-\omega t)$。$E_2$ 是 sin，用 $\sin x=\cos(x-\tfrac{\pi}{2})$：</p>
+  $$E_2=12\cos\!\left(\tfrac{\pi}{4}-\tfrac{\pi}{2}-\omega t\right)=12\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)$$
+  <p>所以三支相量是：長度 7、角度 $\tfrac{\pi}{3}$；長度 12、角度 $-\tfrac{\pi}{4}$；長度 20、角度 $\tfrac{\pi}{5}$。</p>
+</div>
+
+<div class="step" data-step="o9-ex1-s2" data-sym="E0,alpha">
+  <span class="step-title">分量相加、求 $E_0$ 與 $\alpha$</span>
+  $$E_0\cos\alpha=7\cos\tfrac{\pi}{3}+12\cos\!\left(-\tfrac{\pi}{4}\right)+20\cos\tfrac{\pi}{5}=3.500+8.485+16.180=28.166$$
+  $$E_0\sin\alpha=7\sin\tfrac{\pi}{3}+12\sin\!\left(-\tfrac{\pi}{4}\right)+20\sin\tfrac{\pi}{5}=6.062-8.485+11.756=9.333$$
+  $$E_0=\sqrt{28.166^2+9.333^2}=29.67,\qquad \tan\alpha=\frac{9.333}{28.166}\ \Rightarrow\ \alpha=0.32\ \text{rad}$$
+  <p>兩個分量都是正的（第一象限），$\tan^{-1}$ 的值直接可用。結果 $E_R=29.67\cos(0.32-\omega t)$，和課本一致。</p>
+</div>
+
+<h3 id="o9-rules">1.5 改寫成 $A_i\cos(\alpha_i-\omega t)$ 的四條規則 <span class="pg-tag">考試必背</span> <span class="must teacher">老師：一定會考</span></h3>
+
+<p>考卷故意把每一項寫得不一樣：有 sin 有 cos、有負係數、$\omega t$ 有時在前面、有時前面是正號。全部用下面四條改寫，<strong>改完每一項都要是「正振幅 × $\cos(\text{常數}-\omega t)$」</strong>，那個常數就是相量角度：</p>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>原來的樣子</th><th>改寫</th><th>相量角度</th></tr></thead>
+  <tbody>
+    <tr><td>$\cos(\theta-\omega t)$</td><td>不用改</td><td>$\theta$</td></tr>
+    <tr><td>$\cos(\theta+\omega t)$</td><td>cos 是偶函數：$=\cos(-\theta-\omega t)$</td><td>$-\theta$</td></tr>
+    <tr><td>$\sin(\theta+\omega t)$</td><td>$\sin x=\cos(\tfrac{\pi}{2}-x)$：$=\cos(\tfrac{\pi}{2}-\theta-\omega t)$</td><td>$\tfrac{\pi}{2}-\theta$</td></tr>
+    <tr><td>$\sin(\theta-\omega t)$</td><td>$\sin x=\cos(x-\tfrac{\pi}{2})$：$=\cos(\theta-\tfrac{\pi}{2}-\omega t)$</td><td>$\theta-\tfrac{\pi}{2}$</td></tr>
+    <tr><td>係數是負的 $-A\cos(\beta-\omega t)$</td><td>$-\cos x=\cos(x+\pi)$：$=A\cos(\beta\pm\pi-\omega t)$</td><td>$\beta\pm\pi$（選落在 $(-\pi,\pi]$ 的那個）</td></tr>
+  </tbody>
+</table></div>
+
+<p>$\omega t$ 寫在前面的（例如 $\sin(\omega t-\tfrac{\pi}{3})$）先交換成 $\sin(-\tfrac{\pi}{3}+\omega t)$ 再套表。角度算出來超過 $\pi$ 或小於 $-\pi$ 就加減 $2\pi$，相量不變。</p>
+
+<h3 id="o9-quad">1.6 相位角的象限 <span class="pg-tag">最常錯</span></h3>
+
+<p>$\tan\alpha=S/C$ 有兩個解，計算機的 $\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 那一個。一定要看 $C=E_0\cos\alpha$、$S=E_0\sin\alpha$ 的正負號：</p>
+<ul>
+  <li>$C>0$：第一或第四象限，$\alpha=\tan^{-1}(S/C)$ 直接用。</li>
+  <li>$C\lt0$、$S>0$：第二象限，$\alpha=\tan^{-1}(S/C)+\pi$。</li>
+  <li>$C\lt0$、$S\lt0$：第三象限，$\alpha=\tan^{-1}(S/C)-\pi$。</li>
+</ul>
+<p>最後再依題目指定的範圍調整：老師有時要 $\pi\ge\alpha>-\pi$，有時要 $2\pi>\alpha\ge0$（負角加 $2\pi$），舊考卷還出過度數（2021）和更特別的寫法：2007 年要寫成 $E_0\sin(\omega t+\phi)$（$\phi=\tfrac{\pi}{2}-\alpha$）。檢查方法：代 $\omega t=0$，原式各項相加要等於 $E_0\cos\alpha$。</p>
+
+<div class="problem" data-kind="textbook" id="o9-5-2">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">Pedrotti 5-2（作業）· p.129</span></div>
+    <h4>兩個同頻率波的相量圖與合成波 <span class="must teacher">老師：一定會考</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-5-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-5-2"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p><strong>2</strong> <strong>a.</strong> Show in a phasor diagram the following two harmonic waves: $E_1=2\cos\omega t$ and $E_2=7\cos\left(\frac{\pi}{4}-\omega t\right)$ <strong>b.</strong> Determine the mathematical expression for the resultant wave.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 在相量圖上畫出兩個弦波 $E_1=2\cos\omega t$ 與 $E_2=7\cos\!\left(\tfrac{\pi}{4}-\omega t\right)$。(b) 求合成波的數學式。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第一個波</td><td>$E_1=2\cos\omega t$：$E_{01}=2$</td><td>(a)「$E_1=2\cos\omega t$」；括號裡沒有常數，相位常數是 0（要自己看出：$\cos\omega t=\cos(0-\omega t)$）</td></tr>
+          <tr><td>第二個波</td><td>$E_{02}=7$，$\alpha_2=\tfrac{\pi}{4}$</td><td>(a)「$E_2=7\cos(\tfrac{\pi}{4}-\omega t)$」：已經是 $\cos(\alpha-\omega t)$ 形式</td></tr>
+          <tr><td>頻率</td><td>兩個都是 $\omega$</td><td>兩式都是 $\omega t$：同頻率，合成後還是頻率 $\omega$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 相量圖；(b) 合成波 $E_R=E_0\cos(\alpha-\omega t)$ 的 $E_0$ 與 $\alpha$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩個波頻率相同，<b>所以</b>合成結果是同頻率的弦波 $E_0\cos(\alpha-\omega t)$（課本式 (11)）。<b>因為</b>題目要求畫相量圖，先把兩個波都寫成 $E_{0i}\cos(\alpha_i-\omega t)$，相量就是長度 $E_{0i}$、角度 $\alpha_i$ 的箭頭。</p>
+      <p><b>因為</b>合成波的相量就是兩支箭頭頭尾相接的和，<b>所以</b>用分量相加求 $E_0$ 與 $\alpha$；只有兩個波時也可以用餘弦定律（式 (9)）交叉核對。這題和考卷上三、四個波的題目是同一套做法。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-5-2-s1" data-sym="alpha">
+        <span class="step-title">兩個波寫成 $E_{0i}\cos(\alpha_i-\omega t)$</span>
+        <p>cos 是偶函數，$\cos\omega t=\cos(-\omega t)=\cos(0-\omega t)$：</p>
+        $$E_1=2\cos(0-\omega t),\qquad E_2=7\cos\!\left(\tfrac{\pi}{4}-\omega t\right)$$
+        <p>對應的複數（相量）是 $\tilde E_1=2e^{i0}$、$\tilde E_2=7e^{i\pi/4}$，各乘上 $e^{-i\omega t}$ 取實部就回到原來的波。</p>
+      </div>
+      <div class="step" data-step="o9-5-2-s2">
+        <span class="step-title">(a) 相量圖</span>
+        <p>$\tilde E_1$ 是沿實軸、長度 2 的箭頭；$\tilde E_2$ 接在它的箭頭尖上，長度 7、與實軸夾 $45^\circ$；從原點到 $\tilde E_2$ 尖端的箭頭就是合成相量 $E_0e^{i\alpha}$：</p>
+        <svg viewBox="0 0 300 190" width="300" height="190" role="img" aria-label="相量圖：長度 2 的水平箭頭，接長度 7、45 度的箭頭，合成箭頭長 8.53、角度 35.5 度">
+          <line x1="20" y1="170" x2="290" y2="170" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <line x1="20" y1="180" x2="20" y2="10" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <line x1="20" y1="170" x2="60" y2="170" stroke="currentColor" stroke-width="3"/>
+          <polygon points="60,170 52,166 52,174" fill="currentColor"/>
+          <line x1="60" y1="170" x2="159" y2="71" stroke="currentColor" stroke-width="3"/>
+          <polygon points="159,71 150,74 156,80" fill="currentColor"/>
+          <line x1="20" y1="170" x2="159" y2="71" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"/>
+          <text x="32" y="186" font-size="13" fill="currentColor">E₁ = 2</text>
+          <text x="118" y="132" font-size="13" fill="currentColor">E₂ = 7（45°）</text>
+          <text x="40" y="112" font-size="13" fill="currentColor">E₀ = 8.53</text>
+          <text x="70" y="160" font-size="12" fill="currentColor">α</text>
+          <text x="262" y="164" font-size="12" fill="currentColor">實軸</text>
+        </svg>
+      </div>
+      <div class="step" data-step="o9-5-2-s3" data-sym="E0">
+        <span class="step-title">(b) 分量相加求 $E_0$</span>
+        $$E_0\cos\alpha=E_{01}\cos\alpha_1+E_{02}\cos\alpha_2,\qquad E_0\sin\alpha=E_{01}\sin\alpha_1+E_{02}\sin\alpha_2$$
+        <p class="sub">代入 $E_{01}=2$、$\alpha_1=0$、$E_{02}=7$、$\alpha_2=\tfrac{\pi}{4}$（步驟 1）：</p>
+        $$E_0\cos\alpha=2\cos0+7\cos\tfrac{\pi}{4}=2+4.950=6.950$$
+        $$E_0\sin\alpha=2\sin0+7\sin\tfrac{\pi}{4}=0+4.950=4.950$$
+        $$E_0=\sqrt{6.950^2+4.950^2}=\sqrt{72.80}=8.53$$
+        <p>用餘弦定律（式 (9)）核對：$E_0^2=2^2+7^2+2(2)(7)\cos\tfrac{\pi}{4}=53+19.80=72.80$，$E_0=8.53$，一樣。</p>
+      </div>
+      <div class="step" data-step="o9-5-2-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 3 的兩個分量：</p>
+        $$\tan\alpha=\frac{4.950}{6.950}=0.7122\quad\Longrightarrow\quad\alpha=0.619\ \text{rad}=0.197\pi\approx0.20\pi$$
+        <p>兩個分量都是正的，相量在第一象限，$\tan^{-1}$ 的值直接可用。合理性：$\alpha$ 介於 0 與 $\tfrac{\pi}{4}$ 之間，而且比較靠近振幅大的 $E_2$ 的方向。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 見相量圖：長 2、角度 0 的箭頭接上長 7、角度 $45^\circ$ 的箭頭。(b) $E_R=8.53\cos(0.619-\omega t)\approx8.53\cos(0.20\pi-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$：$E_1+E_2=2+7\cos45^\circ=6.950$，$8.53\cos0.619=6.950$ ✔。書末答案 $E_R=8.53\cos(0.20\pi-\omega t)$、解答本 $8.53\cos(0.2\pi-\omega t)$，都一致。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>同頻率的弦波相加，結果是同頻率的弦波 $E_0\cos(\alpha-\omega t)$。</li>
+    <li>每一項先改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」（四條規則），$\alpha_i$ 就是相量角度。</li>
+    <li>$E_0\cos\alpha=\sum A_i\cos\alpha_i$、$E_0\sin\alpha=\sum A_i\sin\alpha_i$；$E_0$ 用畢氏定理。</li>
+    <li>$\alpha$ 依兩個分量的正負號決定象限，再調到題目要求的範圍；代 $\omega t=0$ 驗算。</li>
+  </ol>
+</div>

@@ -1,0 +1,21 @@
+{
+  "title": "第 3 章｜非齊次方程：待定係數法",
+  "shortTitle": "應用數學 第 3 章",
+  "range": "板書 9/30（照片 1–10）· 作業 9/30 · 考古題 110上～114上期中、108級考古卷",
+  "pageLabel": "板書",
+  "tutorIntro": "你是「讀懂物理」讀書網站裡的 AI 助教。對象是台灣的大學物理系學生，正在準備「應用數學」（柯景元老師，115 學年上學期）的考試。這一章是 9/30 的板書：Type II 非齊次方程 $y''+ay'+by=g(x)$ 的待定係數法（undetermined coefficient method）。一般解 $y=c_1y_1+c_2y_2+y_p$，三步驟：Step 1 解齊次方程得 $y_1,y_2$；Step 2 依 $g(x)$ 的形式猜 $y_p$（多項式 → 同次多項式、$\\sin\\omega x,\\cos\\omega x$ → $K_1\\cos\\omega x+K_2\\sin\\omega x$、$e^{kx}$ → $Ae^{kx}$），代回比較係數；Step 3 用初始條件定 $c_1,c_2$。三條規則：加總規則（$g=g_1+g_2$ 時 $y_p=y_{p1}+y_{p2}$）、乘法規則（$g=x\\cos x$ 時猜 $\\{1,x\\}\\otimes\\{\\cos x,\\sin x\\}$ 的四項組合）、修正規則（猜的項和 $y_1,y_2$ 線性相關時乘上 $x$，重根時可能要乘 $x^2$）。應用是受迫阻尼振盪 $\\ddot x+2\\gamma\\dot x+\\omega_0^2x=F_0\\sin\\omega t$ 的穩態振幅 $A=F_0/\\sqrt{(\\omega_0^2-\\omega^2)^2+4\\gamma^2\\omega^2}$、相位與共振；參數變換法（variation of parameters）照片裡沒有，由網站補充。老師的期中考每年都有一題：110 上（$2e^x\\cos x$，要修正）、111 上（多項式加初始條件）、112 上（$60e^{-4x}\\sin5x$，分三小題）、113 上（多項式＋指數＋三角的加總）、114 上（三角函數加初始條件）。學生的課本是上課板書，沒有指定教科書；回答時用板書的記號（$K_0,K_1,\\ldots$ 或 $A,B,C,D$ 是待定係數），並提醒他們寫出「為什麼這樣猜」、比較係數的聯立方程與初始條件代入的過程。",
+  "overview": "s00",
+  "sections": [
+    { "id": "s00", "file": "00-intro.html", "title": "本章總覽", "pages": "9/30 照片 1–10" },
+    { "id": "s01", "file": "01-basic.html", "title": "待定係數法的架構與基本規則", "pages": "9/30 照片 1–3", "desc": "Type II 非齊次方程、三步驟、依 $g(x)$ 猜 $y_p$ 的對照表、比較係數；板書例題 $y''-y'-2y=4x^2$，111 上與 114 上期中、108 級下 1(b)。" },
+    { "id": "s02", "file": "02-sum.html", "title": "加總規則", "pages": "9/30 照片 4", "desc": "$g=g_1+g_2$ 時把方程拆成兩個、特解相加；板書例題 $y''+4y'+4y=4x^2+6e^x$，作業第 1 題、113 上期中。" },
+    { "id": "s03", "file": "03-product.html", "title": "乘法規則", "pages": "9/30 照片 5", "desc": "$g=x\\cos x$ 時猜 $\\{1,x\\}\\otimes\\{\\cos x,\\sin x\\}$；$e^{kx}\\times$ 多項式、$e^{kx}\\times$ 三角函數的捷徑 $y=e^{kx}u$；板書例題、作業第 2 題、112 上期中。" },
+    { "id": "s04", "file": "04-modification.html", "title": "修正規則", "pages": "9/30 照片 6–7", "desc": "猜的 $y_p$ 和齊次解線性相關時乘上 $x$（重根乘 $x^2$）；板書例題 $y''-4y'+4y=2e^{2x}$，作業第 3 題、110 上期中、108 級下 1(c)（邊界條件版）。" },
+    { "id": "s05", "file": "05-forced.html", "title": "應用：受迫阻尼振盪與共振", "pages": "9/30 照片 8–10", "desc": "$\\ddot x+2\\gamma\\dot x+\\omega_0^2x=F_0\\sin\\omega t$ 的穩態解 $K_1,K_2$、振幅 $A(\\omega)$ 與相位 $\\phi$、共振曲線、暫態與穩態；108 級下 LRC 電路的穩態電荷、108 級上 Euler 卷的受迫阻尼振盪（阻尼項寫成 $\\gamma\\dot x$）。" },
+    { "id": "s06", "file": "06-variation.html", "title": "參數變換法", "pages": "網站補充（照片沒有）", "desc": "$g(x)$ 不在對照表裡（$\\sec x$）或方程式是變係數（$x^2y''+xy'-y=x^2\\ln x$）時的通用方法：$y_p=u_1y_1+u_2y_2$、$u_1'=-y_2g/W$、$u_2'=y_1g/W$；用它重算修正規則的例題。" },
+    { "id": "s07", "file": "07-exam.html", "title": "考前衝刺", "pages": "9/30 全部", "desc": "必背公式、猜 $y_p$ 的完整對照表、題型總表（怎麼認／做法／常錯／代表題）與變化題。" }
+  ],
+  "stepSymbols": "step_symbols.json",
+  "exam": "exam.html",
+  "scripts": ["figures.js"]
+}

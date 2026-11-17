@@ -1,0 +1,161 @@
+<h2>七、考前衝刺 <span class="pg">課本 p.113–130</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表（老師說一定會考的相量疊加放第一個），點題號跳到完整詳解，最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p><span class="must teacher">老師：一定會考</span> 相量疊加（逐字稿 02:42、03:31、03:35 講了三次）。李孟恩課程資料夾的 5 份期中考第 1 題全是這一型 <span class="must exam">考古高頻 5/5</span>，2020 以後都是四個同頻率弦波相加、求 $E_0$ 與指定範圍的 $\alpha$，配分 20%。相位速度與群速度老師說「注意一下」，考古題是海浪的群速度 <span class="must exam">考古 1/5</span>；駐波拆成行進波老師沒提，考古 1/5。（考古頻率是依考古題統計推論，不是老師說的。）</p>
+</div>
+
+<h3 id="o9x-formulas">7.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>相量疊加 <span class="must teacher">老師：一定會考</span></h4>
+    <ul>
+      <li>$\sum_iA_i\cos(\alpha_i-\omega t)=E_0\cos(\alpha-\omega t)$</li>
+      <li>$E_0\cos\alpha=\sum A_i\cos\alpha_i$，$E_0\sin\alpha=\sum A_i\sin\alpha_i$</li>
+      <li>$E_0=\sqrt{(\sum A_i\cos\alpha_i)^2+(\sum A_i\sin\alpha_i)^2}$</li>
+      <li>兩個波：$E_0^2=E_{01}^2+E_{02}^2+2E_{01}E_{02}\cos(\alpha_2-\alpha_1)$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>改寫規則</h4>
+    <ul>
+      <li>$\cos(\theta+\omega t)=\cos(-\theta-\omega t)$</li>
+      <li>$\sin(\theta+\omega t)=\cos(\tfrac{\pi}{2}-\theta-\omega t)$</li>
+      <li>$\sin(\theta-\omega t)=\cos(\theta-\tfrac{\pi}{2}-\omega t)$</li>
+      <li>$-\cos x=\cos(x\pm\pi)$；角度可加減 $2\pi$</li>
+      <li>$E_0\sin(\omega t+\phi)$ 形式：$\phi=\tfrac{\pi}{2}-\alpha$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>象限</h4>
+    <ul>
+      <li>$C=\sum A_i\cos\alpha_i>0$：$\alpha=\tan^{-1}(S/C)$</li>
+      <li>$C\lt0$、$S>0$：$+\pi$；$C\lt0$、$S\lt0$：$-\pi$</li>
+      <li>要 $[0,2\pi)$：負角加 $2\pi$</li>
+      <li>驗算：$\omega t=0$ 時原式＝$E_0\cos\alpha$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>光源與駐波</h4>
+    <ul>
+      <li>隨機相位 $E_0^2=NE_{01}^2$；同調同相位 $E_0^2=N^2E_{01}^2$</li>
+      <li>$E_0\sin(\omega t+kx)+E_0\sin(\omega t-kx-\pi)=2E_0\sin kx\cos\omega t$</li>
+      <li>$\sin A\cos B=\tfrac12[\sin(A+B)+\sin(A-B)]$</li>
+      <li>節點間距 $\lambda/2$；雷射腔 $\nu_m=mc/2d$，間隔 $c/2d$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>拍、相位速度與群速度</h4>
+    <ul>
+      <li>拍頻 $\omega_b=\omega_1-\omega_2$</li>
+      <li>$v_p=\omega/k$，$v_g=d\omega/dk=v_p+k\,dv_p/dk=v_p-\lambda\,dv_p/d\lambda$</li>
+      <li>$v_g=v_p[1+(\lambda/n)dn/d\lambda]\approx v_p[1-(\omega/n)dn/d\omega]$</li>
+      <li>正常色散 $dn/d\lambda\lt0$ ⟹ $v_g\lt v_p$</li>
+      <li>$v_p\propto\lambda^m$ ⟹ $v_g=(1-m)v_p$：海浪長波 $\tfrac12$、短波 $\tfrac32$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="o9x-types">7.2 題型總表</h3>
+
+<p class="type-jump"><a href="#o9type-1">① 相量疊加</a><a href="#o9type-2">② 特殊範圍與形式</a><a href="#o9type-3">③ 海浪群速度</a><a href="#o9type-4">④ $v_g$ 改寫與色散</a><a href="#o9type-5">⑤ 駐波與行進波</a></p>
+
+<div class="drill" id="o9type-1">
+  <h4>① 數個同頻率弦波的相量疊加 <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$E=E_0\cos(\alpha-\omega t)=$ 三或四項 sin、cos 的和，括號裡都是 $\omega t$，求 $E_0$ 與 $\alpha$。</dd>
+    <dt>做法</dt><dd>每項改寫成正振幅 $A_i\cos(\alpha_i-\omega t)$ → 列表 $A_i\cos\alpha_i$、$A_i\sin\alpha_i$ → 加總得 $C$、$S$ → $E_0=\sqrt{C^2+S^2}$ → 依 $C$、$S$ 正負定象限。</dd>
+    <dt>常錯</dt><dd>負係數忘了加 $\pi$；$\sin(\theta+\omega t)$ 寫成 $\cos(\theta-\tfrac{\pi}{2}-\omega t)$（那是 $-\omega t$ 的規則）；直接按 $\tan^{-1}$ 沒判斷象限；範圍沒調。</dd>
+    <dt>代表題</dt><dd><a href="#o9-5-2">作業 5-2</a><a href="#o9-2018m1">2018 期中</a><a href="#o9-2020m1">2020 期中</a><a href="#o9-2022m1">2022 期中</a><a href="#o9-2024m1">2024 期中</a><a href="#o9var-1">變化題 1</a><a href="#o9-2008m3">舊考卷 2008 期中</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o9type-2">
+  <h4>② 相量疊加：特殊範圍與形式 <span class="must teacher">老師：一定會考</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>範圍是 $2\pi>\alpha\ge0$、度數，或左邊寫成 $E_0\sin(\omega t+\phi)$。</dd>
+    <dt>做法</dt><dd>先照 ① 求出 $(-\pi,\pi]$ 的 $\alpha$，最後一步再換：負角加 $2\pi$；乘 $180/\pi$；$\phi=\tfrac{\pi}{2}-\alpha$。</dd>
+    <dt>常錯</dt><dd>$\sin(\omega t+\phi)$ 的 $\phi$ 直接寫成 $\alpha$；度數題寫成弧度。</dd>
+    <dt>代表題</dt><dd><a href="#o9-2018m1">2018 期中</a><a href="#o9-2025m1">2025 期中</a><a href="#o9var-2">變化題 2</a><a href="#o9-2007m4">舊考卷 2007 期中（sin 形式）</a><a href="#o9-2021m1">舊考卷 2021 期中（度）</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o9type-3">
+  <h4>③ 給 $v_p(\lambda)$ 求 $v_g/v_p$ <span class="must teacher maybe">老師：注意一下</span> <span class="must exam">考古 1/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給 $v_p=(g\lambda/2\pi)^{1/2}$ 或 $(2\pi T/\lambda\rho)^{1/2}$，問群速度是相位速度的幾倍。</dd>
+    <dt>做法</dt><dd>$v_g=v_p-\lambda\,dv_p/d\lambda$；$v_p\propto\lambda^m$ ⟹ $v_g=(1-m)v_p$。</dd>
+    <dt>常錯</dt><dd>用 $v_g=v_p+\lambda\,dv_p/d\lambda$（符號反了，是 $+k\,dv_p/dk$）；長波長答成 2 倍。</dd>
+    <dt>代表題</dt><dd><a href="#o9-2007m3">2020 海浪題（舊考卷 2007、2011 同題）</a><a href="#o9var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o9type-4">
+  <h4>④ $v_g$ 的改寫與色散介質中的數值 <span class="must teacher maybe">老師：注意一下</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給 $n(\lambda)$（Cauchy）、色散本領、或 $K(\omega)$，求 $v_p$、$v_g$，或改寫 $v_g$ 的式子。</dd>
+    <dt>做法</dt><dd>$v_p=c/n$；$v_g=v_p[1+(\lambda/n)dn/d\lambda]$；$dn/d\lambda$ 由微分或割線斜率得到；$K$ 用 $k=\sqrt K\omega/c$。</dd>
+    <dt>常錯</dt><dd>$\lambda$ 與 $B$ 單位不一致（Å 對 nm）；正常色散的結論寫成 $v_g>v_p$（解答本 5-8 就寫錯）。</dd>
+    <dt>代表題</dt><dd><a href="#o9-5-8">作業 5-8</a><a href="#o9-5-9">作業 5-9</a><a href="#o9-5-10">作業 5-10</a><a href="#o9-5-11">作業 5-11</a><a href="#o9var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="o9type-5">
+  <h4>⑤ 駐波 ⟷ 兩個反向行進波 <span class="must exam">考古 1/5</span></h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給 $A\cos(kx)\sin(\omega t)$ 之類的乘積要拆開，或給兩個反向波的振幅、頻率、波速要合成並找節點。</dd>
+    <dt>做法</dt><dd>積化和差（拆開時振幅減半）或和差化積；$\lambda=2\pi/k$、$\nu=\omega/2\pi$；節點是空間因子為 0。</dd>
+    <dt>常錯</dt><dd>把 $\tfrac12$ 乘進角度（頻率錯一半）；節點、波腹對調。</dd>
+    <dt>代表題</dt><dd><a href="#o9-2018m5">2018 期中</a><a href="#o9var-5">變化題 5</a><a href="#o9-2012m1">舊考卷 2012 期中</a><a href="#o9-2014q3">舊考卷 2014 平時考</a></dd>
+  </dl>
+</div>
+
+<h3 id="o9x-var">7.3 變化題</h3>
+
+<div class="drill-q" id="o9var-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#o9-2024m1">2024 期中第 1 題</a>（網站改數字練習）</p>
+  <p>$E=E_0\cos(\alpha-\omega t)=2\cos(\tfrac{\pi}{3}+\omega t)-\sin(\tfrac{\pi}{6}-\omega t)+3\sin(\tfrac{\pi}{4}+\omega t)-\cos(\tfrac{\pi}{2}-\omega t)$，求 $E_0$（$E_0\ge0$）與 $\alpha$（$\pi\ge\alpha>-\pi$）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>改寫：$2\cos(-\tfrac{\pi}{3}-\omega t)$；$-\sin(\tfrac{\pi}{6}-\omega t)=-\cos(-\tfrac{\pi}{3}-\omega t)=\cos(\tfrac{2\pi}{3}-\omega t)$；$3\cos(\tfrac{\pi}{4}-\omega t)$；$-\cos(\tfrac{\pi}{2}-\omega t)=\cos(-\tfrac{\pi}{2}-\omega t)$。</p>
+    $$C=1-0.5+2.121+0=2.621,\qquad S=-1.732+0.866+2.121-1=0.255$$
+    <p>$E_0=\sqrt{2.621^2+0.255^2}=2.63$；$C>0$，$\alpha=\tan^{-1}(0.0973)=0.097\ \text{rad}$。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o9var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#o9-2007m4">2007 期中第 4 題</a>（物理考古資料夾舊考卷）（網站改數字練習）</p>
+  <p>$E=E_0\sin(\omega t+\phi)=4\cos(\omega t+\tfrac{\pi}{6})-3\sin(\omega t-\tfrac{\pi}{3})$，求 $E_0$ 與 $\phi$（$0\le\phi\lt2\pi$）。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$4\cos(-\tfrac{\pi}{6}-\omega t)$；$-3\sin(-\tfrac{\pi}{3}+\omega t)=-3\cos(\tfrac{5\pi}{6}-\omega t)=3\cos(-\tfrac{\pi}{6}-\omega t)$。兩支相量同方向，直接相加：$E=7\cos(-\tfrac{\pi}{6}-\omega t)$，$E_0=7$、$\alpha=-\tfrac{\pi}{6}$。</p>
+    $$\phi=\tfrac{\pi}{2}-\alpha=\tfrac{\pi}{2}+\tfrac{\pi}{6}=\tfrac{2\pi}{3}$$
+    <p>驗算：$7\sin(\omega t+\tfrac{2\pi}{3})$ 在 $\omega t=0$ 為 $6.06$，原式 $4\cos\tfrac{\pi}{6}-3\sin(-\tfrac{\pi}{3})=3.46+2.60=6.06$ ✔。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o9var-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#o9-2007m3">海浪群速度</a>（網站改數字練習）</p>
+  <p>某介質中波的相位速度 $v_p=C\lambda^{-1}$（$C$ 為常數），求 $v_g/v_p$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$m=-1$：$\lambda\,dv_p/d\lambda=-v_p$，$v_g=v_p-(-v_p)=2v_p$，比值 2（反常色散型，群速度大於相位速度）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="o9var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#o9-5-10">作業 5-10</a>（網站改數字練習）</p>
+  <p>Cauchy 公式 $n=1.50+(4000\ \text{nm}^2)/\lambda^2$，求 $\lambda=400\ \text{nm}$ 的 $v_p$ 與 $v_g$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$n=1.50+4000/160000=1.525$，$v_p=c/1.525=1.967\times10^8\ \text{m/s}$。$dn/d\lambda=-8000/400^3=-1.25\times10^{-4}\ \text{nm}^{-1}$，$\tfrac{\lambda}{n}\tfrac{dn}{d\lambda}=-0.0328$：</p>
+    $$v_g=1.967\times10^8\times(1-0.0328)=1.903\times10^8\ \text{m/s}$$
+  </details>
+</div>
+
+<div class="drill-q" id="o9var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#o9-2012m1">2012 期中第 1 題</a>（物理考古資料夾舊考卷）（網站改數字練習）</p>
+  <p>駐波 $E=60\sin(2\pi x)\sin(8\pi t)$（SI 單位）拆成兩個反向行進波，並求波長與頻率。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$\sin A\sin B=\tfrac12[\cos(A-B)-\cos(A+B)]$：$E=30\cos(2\pi x-8\pi t)-30\cos(2\pi x+8\pi t)$。$\lambda=2\pi/2\pi=1\ \text{m}$，$\nu=8\pi/2\pi=4\ \text{Hz}$。</p>
+  </details>
+</div>

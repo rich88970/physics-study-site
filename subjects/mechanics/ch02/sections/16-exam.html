@@ -1,0 +1,369 @@
+<h2>十六、考前衝刺 <span class="pg">講義 p.1–159 · 課本第 2 章</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>雲端只有 5 份考卷：116 級下學期第 5–8 章的單章考卷，與 117 級上學期期末 Exam-4（2025/12/18，第 9 章「質點系」）。Exam-4 四題裡有兩題只用本章的工具就能完整解，已收成考古題卡：<a href="#c2-exam4-1">第 1 題 爆炸成三塊</a>（動量守恆＋動能差，第 3 節）與<a href="#c2-exam4-3">第 3 題 從桌面滑下的繩子</a>（整條繩的 $F=m\ddot x$ ＋ $v\,\mathrm dv/\mathrm dx$，第 12 節）；另兩題要用剛體轉動能量與變質量的 $\mathrm dp/\mathrm dt$，屬第 9 章，不收。下學期考卷裡也有兩題完全用本章工具：第 5 章<a href="#c2-exam5-2">第 2 題 由 $T^2\propto r^3$ 證明 $n=-2$</a>（徑向 $F=mv^2/r$，第 3 節）與第 8 章<a href="#c2-exam8-1">第 1 題 證明克卜勒第二定律</a>（$\vec N=\dot{\vec L}$，第 11 節）——兩題都是「證明」題，正好是本章推導的寫法。從這些考卷看，老師的考題多半出自<strong>課本</strong>而不是講義：大約一半是課本例題原題，其餘是課本習題改條件，或要求證明、推導。本章的準備方式：13 個課本例題（2.1–2.13）要能完整寫出；習題重點放在阻力（$v$、$v^2$、其他形式）、由 $v(x)$ 求力、拋體與斜坡、守恆與位能圖；推導題熟練「乘 $\dot x$」、$\vec N=\dot{\vec L}$、$\mathrm dE/\mathrm dt=\partial U/\partial t$、$\nabla\times\vec F=0$ 這四個。</p>
+</div>
+
+<h3 id="c2x-formulas">16.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>牛頓定律與座標系</h4>
+    <ul>
+      <li>$\vec F=\dfrac{\mathrm d\vec p}{\mathrm dt}$，$\vec p=m\vec v$；各軸 $F_i=m\ddot x_i$</li>
+      <li>伽利略轉換 $\vec r\,'=\vec r-\vec Vt\Rightarrow\ddot{\vec r}\,'=\ddot{\vec r}$</li>
+      <li>$\dfrac{m_2}{m_1}=-\dfrac{a_1}{a_2}$；兩體孤立 $\vec p_1+\vec p_2$ 守恆</li>
+      <li>赤道體重計 $F_{\text{scale}}=F_g-mv^2/R$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>解 $F=m\ddot x$</h4>
+    <ul>
+      <li>$\ddot x=\dfrac{\mathrm dv}{\mathrm dt}=v\dfrac{\mathrm dv}{\mathrm dx}=\dfrac12\dfrac{\mathrm d(v^2)}{\mathrm dx}$</li>
+      <li>$F(\dot x)$：$\displaystyle\int\frac{m\,\mathrm dv}{F(v)}=t$，$\displaystyle\int\frac{mv\,\mathrm dv}{F(v)}=x$</li>
+      <li>已知 $v(x)$：$F=\tfrac12m\,\mathrm d(v^2)/\mathrm dx$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>斜面</h4>
+    <ul>
+      <li>$N=mg\cos\theta$；無摩擦 $\ddot x=g\sin\theta$，$v=\sqrt{2g\sin\theta\,x}$</li>
+      <li>開始滑 $\tan\theta_c=\mu_s$；滑動 $\ddot x=g(\sin\theta-\mu_k\cos\theta)$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>線性阻力 $-kmv$</h4>
+    <ul>
+      <li>水平：$v=v_0e^{-kt}$，$x=\dfrac{v_0}k(1-e^{-kt})$，$v=v_0-kx$</li>
+      <li>鉛直（$z$ 向上）：$\dot z=-\dfrac gk+\dfrac{kv_0+g}ke^{-kt}$，$v_t=g/k$</li>
+      <li>上拋最高點：$t=\dfrac1k\ln\!\left(1+\dfrac{kv_0}g\right)$，$y_{\max}=\dfrac{v_0}k-\dfrac g{k^2}\ln\!\left(1+\dfrac{kv_0}g\right)$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>$v^2$ 阻力 $kmv^2$</h4>
+    <ul>
+      <li>$v_t=\sqrt{g/k}$；下落 $s=\dfrac1{2k}\ln\dfrac{g-kv_0^2}{g-kv_1^2}$</li>
+      <li>由靜止落下 $v^2=v_t^2(1-e^{-2ky})$，$v=v_t\tanh(\sqrt{gk}\,t)$</li>
+      <li>上升 $x_{\max}=\dfrac1{2k}\ln\dfrac{g+kv_0^2}{g}$；回原處 $\dfrac{v_0v_t}{\sqrt{v_0^2+v_t^2}}$</li>
+      <li>上升、下降分開寫</li>
+    </ul>
+  </section>
+  <section>
+    <h4>拋體</h4>
+    <ul>
+      <li>$T=\dfrac{2v_0\sin\theta}g$，$R=\dfrac{v_0^2\sin2\theta}g$，$y_{\max}=\dfrac{v_0^2\sin^2\theta}{2g}$</li>
+      <li>軌跡 $y=x\tan\theta-\dfrac{gx^2}{2v_0^2\cos^2\theta}$</li>
+      <li>斜坡 $\beta$ 往上：$d_{\max}=\dfrac{v_0^2}{g(1+\sin\beta)}$ 在 $\alpha=\dfrac\pi4+\dfrac\beta2$</li>
+      <li>線性阻力微擾：$T\approx\dfrac{2V}g\left(1-\dfrac{kV}{3g}\right)$，$R'\approx R\left(1-\dfrac{4kV}{3g}\right)$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>Atwood、帶電粒子</h4>
+    <ul>
+      <li>$a=\dfrac{(m_1-m_2)(g-\alpha)}{m_1+m_2}$，$T=\dfrac{2m_1m_2(g-\alpha)}{m_1+m_2}$（電梯下降加速 $\alpha$）</li>
+      <li>磁場：$r=\dfrac{mv_\perp}{qB}$，$\omega_c=\dfrac{qB}m$；$E\times B$ 漂移 $E_\perp/B$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>守恆</h4>
+    <ul>
+      <li>$F_s=\dfrac{\mathrm dp_s}{\mathrm dt}$（$\hat s$ 固定）</li>
+      <li>$\vec L=\vec r\times\vec p$，$\vec N=\vec r\times\vec F=\dot{\vec L}$；$L=I\omega$，$I=\sum m_ir_i^2$</li>
+      <li>$W_{12}=\int_1^2\vec F\cdot\mathrm d\vec r=T_2-T_1$（淨力）</li>
+      <li>保守：$\int_1^2\vec F\cdot\mathrm d\vec r=U_1-U_2$，$\vec F=-\nabla U$，$\nabla\times\vec F=0$</li>
+      <li>$\dfrac{\mathrm dE}{\mathrm dt}=\dfrac{\partial U}{\partial t}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>位能圖與平衡</h4>
+    <ul>
+      <li>$v=\pm\sqrt{\tfrac2m(E-U)}$；轉折點 $E=U(x)$</li>
+      <li>平衡 $U'=0$；穩定 $U''>0$；$\omega=\sqrt{U''(x_0)/m}$</li>
+      <li>$U''=0$：第一個不為零的導數，偶數階且正才穩定</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="c2x-types">16.2 題型總表</h3>
+
+<p class="type-jump"><a href="#c2type-1">① 斜面摩擦</a><a href="#c2type-2">② 線性阻力</a><a href="#c2type-3">③ $v^2$ 阻力</a><a href="#c2type-4">④ 其他形式的力</a><a href="#c2type-5">⑤ 由 $v(x)$ 求力</a><a href="#c2type-6">⑥ 拋體</a><a href="#c2type-7">⑦ 阻力拋體</a><a href="#c2type-8">⑧ 多物體</a><a href="#c2type-9">⑨ 帶電粒子</a><a href="#c2type-10">⑩ 動量角動量</a><a href="#c2type-11">⑪ 功與能量</a><a href="#c2type-12">⑫ 保守力</a><a href="#c2type-13">⑬ 平衡穩定</a><a href="#c2type-14">⑭ 觀念推導</a></p>
+
+<div class="drill" id="c2type-1">
+  <h4>① 斜面與摩擦</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>斜面、摩擦係數、多大角度開始滑、等速、煞車距離。</dd>
+    <dt>做法</dt><dd>$x$ 沿斜面、$y$ 垂直：$N=mg\cos\theta$。靜止臨界 $f=\mu_sN$；滑動 $f=\mu_kN$ 與相對運動反向。等加速度用 $v^2=v_0^2+2a\Delta x$ 串接各段。</dd>
+    <dt>常錯</dt><dd>把靜摩擦一律寫成 $\mu_sN$；下坡煞車時重力分量和摩擦反向。</dd>
+    <dt>代表題</dt><dd><a href="#c2-ex21">例題 2.1</a>　<a href="#c2-ex22">2.2</a>　<a href="#c2-ex23">2.3</a>　<a href="#c2-tm-2-16">課本 2-16</a>　<a href="#c2-tm-2-32">2-32</a>　<a href="#c2-tm-2-24">2-24</a>　<a href="#c2-tm-2-29">2-29</a>　<a href="#c2var-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-2">
+  <h4>② 線性阻力</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$F_r=kmv$ 或 $\alpha v$；求 $v(t)$、$x(t)$、終端速度、上拋最高點。</dd>
+    <dt>做法</dt><dd>$\dfrac{\mathrm dv}{kv+g}=-\mathrm dt$ 分離變數，$\ln$ 再取指數。阻力寫 $-km\dot z$、$\dot z$ 帶號，全程一條式子。</dd>
+    <dt>常錯</dt><dd>初始條件 $v_0$ 的正負；忘記 $k\to0$ 檢查。</dd>
+    <dt>代表題</dt><dd><a href="#c2-ex24">例題 2.4</a>　<a href="#c2-ex25">2.5</a>　<a href="#c2-tm-2-9">課本 2-9</a>　<a href="#c2-tm-2-54">2-54</a>　<a href="#c2-tm-2-34">2-34(a)</a>　<a href="#c2var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-3">
+  <h4>③ $v^2$ 阻力</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$kmv^2$、$\beta v^2$、$bv^2$；「證明落下距離／回到原處的速率」。</dd>
+    <dt>做法</dt><dd>要距離：$\mathrm dz=\dfrac12\dfrac{\mathrm d(v^2)}{g\mp kv^2}$；要時間：$\tanh$（下落）或 $\tan^{-1}$（上升）。上升、下降分段，最高點接起來。</dd>
+    <dt>常錯</dt><dd>用一條 $-kmv^2$ 管上下；$\ln$ 的分子分母顛倒。</dd>
+    <dt>代表題</dt><dd><a href="#c2-tm-2-11">課本 2-11</a>　<a href="#c2-tm-2-12">2-12</a>　<a href="#c2-tm-2-15">2-15</a>　<a href="#c2-tm-2-34">2-34(b)</a>　<a href="#c2-tm-2-51">2-51</a>　<a href="#c2var-2">變化題 2</a>　<a href="#c2var-4">變化題 4</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-4">
+  <h4>④ 其他形式的力：能不能積、怎麼積</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$\alpha e^{\beta v}$、$k(v^3+a^2v)$、$\sqrt v$、相對論動量；「哪些情況可積分」。</dd>
+    <dt>做法</dt><dd>能分離成「$v$ 的式子 $\mathrm dv$ ＝ $t$ 的式子 $\mathrm dt$」就積；停止時間令 $v=0$，停止距離用 $v\,\mathrm dv$ 或積 $v(t)$。動量形式不是 $mv$ 時回到 $\mathrm dp/\mathrm dt$。</dd>
+    <dt>常錯</dt><dd>分部積分的正負號；習題 2-1 只答 (b)：一維的 (c) 用 $v\,\mathrm dv/\mathrm dx$ 也能積，(a) 才是一般不可積。</dd>
+    <dt>代表題</dt><dd><a href="#c2-tm-2-1">課本 2-1</a>　<a href="#c2-tm-2-39">2-39</a>　<a href="#c2-tm-2-13">2-13</a>　<a href="#c2-tm-2-50">2-50</a>　<a href="#c2var-5">變化題 5</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-5">
+  <h4>⑤ 已知 $v(x)$ 求力</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「速率隨距離變化為 $v(x)=\cdots$，求造成它的力」。</dd>
+    <dt>做法</dt><dd>$F(x)=\tfrac12m\,\mathrm d(v^2)/\mathrm dx$；$x(t)$ 由 $\mathrm dx/\mathrm dt=v(x)$ 分離變數；$F(t)$ 代入或 $m\ddot x(t)$。</dd>
+    <dt>常錯</dt><dd>先想求 $x(t)$ 再微分兩次（可行但慢）；積分常數用 $x(0)=0$。</dd>
+    <dt>代表題</dt><dd><a href="#c2-tm-2-37">課本 2-37</a>　<a href="#c2-tm-2-38">2-38</a>　<a href="#c2var-6">變化題 6</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-6">
+  <h4>⑥ 拋體（無阻力）</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>射程、最大高度、穿過某直線、落在斜坡上、距離恆增加。</dd>
+    <dt>做法</dt><dd>水平等速、鉛直等加速；落點條件代入軌跡 $y(x)$；極值對角度微分，配合積化和差。「恆正」用判別式。</dd>
+    <dt>常錯</dt><dd>不同高度還用 $45^\circ$；課本 Eq. (2.35) 的 $t^4$ 印成 $t^2$。</dd>
+    <dt>代表題</dt><dd><a href="#c2-ex26">例題 2.6</a>　<a href="#c2-tm-2-3">課本 2-3</a>　<a href="#c2-tm-2-8">2-8</a>　<a href="#c2-tm-2-14">2-14</a>　<a href="#c2-tm-2-19">2-19</a>　<a href="#c2var-7">變化題 7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-7">
+  <h4>⑦ 有阻力的拋體與微擾</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「計算空氣阻力使射程減少多少」「$k$ 很小時近似」。</dd>
+    <dt>做法</dt><dd>兩軸各自是例題 2.4、2.5；飛行時間的超越方程式把 $e^{-kT}$ 展開，保留 $k$ 一次項，右邊的 $T$ 用零階值代入。</dd>
+    <dt>常錯</dt><dd>展開保留項數不一致（一邊留 $k^2$、一邊只留 $k$）；忘記說明 $k\ll g/V$ 才可用。</dd>
+    <dt>代表題</dt><dd><a href="#c2-ex27">例題 2.7</a>　<a href="#c2-tbex28">例題 2.8</a>　<a href="#c2var-8">變化題 8</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-8">
+  <h4>⑧ 多物體與加速座標系</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>滑輪、繩子、電梯、圓周拉起。</dd>
+    <dt>做法</dt><dd>每個物體一條 $F=ma$；繩長不變連接加速度；加速度一律在慣性系量（電梯中 $\ddot x_i+\alpha$）。</dd>
+    <dt>常錯</dt><dd>電梯中直接用相對加速度；最低點忘記加 $g$。</dd>
+    <dt>代表題</dt><dd><a href="#c2-ex29">例題 2.9</a>　<a href="#c2-tm-2-32">課本 2-32</a>　<a href="#c2-tm-2-5">2-5</a>　<a href="#c2var-9">變化題 9</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-9">
+  <h4>⑨ 帶電粒子在電磁場</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$q\vec v\times\vec B$、螺旋、迴旋頻率、擺線。</dd>
+    <dt>做法</dt><dd>先算外積寫三個分量；平行 $\vec B$ 的分量獨立；垂直的兩個耦合，微分一次互相代入變成簡諧方程式（有電場時先減掉 $E/B$）。</dd>
+    <dt>常錯</dt><dd>外積方向（$\hat k\times\hat j=-\hat i$）；用耦合方程式連接常數這一步漏掉。</dd>
+    <dt>代表題</dt><dd><a href="#c2-tbex210">例題 2.10</a>　<a href="#c2-tm-2-22">課本 2-22</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-10">
+  <h4>⑩ 動量與角動量守恆</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>跳上轉盤、碰撞、雙星、「直接證明 $\dot L=N$」。</dd>
+    <dt>做法</dt><dd>先判斷哪個方向沒有外力、對哪個軸沒有外力矩；彈性碰撞加相對速度反向。證明題直接代 $\vec r(t)$、$\vec v(t)$。</dd>
+    <dt>常錯</dt><dd>$\vec L$ 和 $\vec N$ 用不同原點；非彈性碰撞誤用動能守恆。</dd>
+    <dt>代表題</dt><dd><a href="#c2-ex211">例題 2.11</a>　<a href="#c2-tm-2-21">課本 2-21</a>　<a href="#c2-tm-2-28">2-28</a>　<a href="#c2-tm-2-49">2-49</a>　<a href="#c2-exam4-1">考古題 Exam-4 第 1 題</a>　<a href="#c2-exam5-2">第 5 章第 2 題</a>　<a href="#c2-exam8-1">第 8 章第 1 題</a>　<a href="#c2var-10">變化題 10</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-11">
+  <h4>⑪ 功與能量</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>彈簧壓縮、拉繩上桌、軌道上的速率與正向力、不同座標系的動能。</dd>
+    <dt>做法</dt><dd>$W_{\text{淨}}=\Delta T$；保守力用 $E=T+U$；正向力另寫圓周方向的 $F=ma$；連續分布用積分 $\int g z\,\mathrm dm$。</dd>
+    <dt>常錯</dt><dd>只算部分力的功；圓弧上重力的徑向分量少了 $\cos\theta$。</dd>
+    <dt>代表題</dt><dd><a href="#c2-tm-2-25">課本 2-25</a>　<a href="#c2-tm-2-26">2-26</a>　<a href="#c2-tm-2-27">2-27</a>　<a href="#c2-tm-2-41">2-41</a>　<a href="#c2-exam4-3">考古題 Exam-4 第 3 題</a>　<a href="#c2var-11">變化題 11</a>　<a href="#c2var-13">變化題 13</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-12">
+  <h4>⑫ 保守力判別與求位能</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「常數為何值時是保守力」「哪些力保守，求 $U$」。</dd>
+    <dt>做法</dt><dd>算 $\nabla\times\vec F$ 三個分量；為零後由 $-\partial_xU=F_x$ 積分，積分常數是其餘變數的函數，再用 $F_y$、$F_z$ 定出。</dd>
+    <dt>常錯</dt><dd>忘記負號 $\vec F=-\nabla U$；只檢查一個分量。</dd>
+    <dt>代表題</dt><dd><a href="#c2-p139">講義 p.139</a>　<a href="#c2-tm-2-53">課本 2-53</a>　<a href="#c2var-14">變化題 14</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-13">
+  <h4>⑬ 平衡、穩定性與位能圖</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>給 $U(x)$ 或力，問平衡點、穩定、轉折點、有界、小振盪頻率。</dd>
+    <dt>做法</dt><dd>$U'=0$、$U''$ 正負；無因次化（$y=x/d$）；轉折點解 $E=U$；滾動拘束寫質心高度 $h(\theta)$。</dd>
+    <dt>常錯</dt><dd>$U''=0$ 就下結論；忘了題目限定的區域。</dd>
+    <dt>代表題</dt><dd><a href="#c2-tm-2-47">課本 2-47</a>　<a href="#c2-ex212">例題 2.12</a>　<a href="#c2-ex213">2.13</a>　<a href="#c2-tm-2-43">課本 2-43</a>　<a href="#c2-tm-2-52">2-52</a>　<a href="#c2-tm-2-42">2-42</a>　<a href="#c2var-12">變化題 12</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="c2type-14">
+  <h4>⑭ 觀念與推導</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「什麼是慣性座標系」「證明 $F=ma$ 在伽利略轉換下不變」「由第三定律推動量守恆」「證明 $\dot{\vec L}=\vec N$、$\mathrm dE/\mathrm dt=\partial U/\partial t$」。</dd>
+    <dt>做法</dt><dd>照講義的推導順序寫，每一步標出用了哪個定律或恆等式（乘積律、$\dot{\vec r}\times\dot{\vec r}=0$、混合偏導數相等）。</dd>
+    <dt>常錯</dt><dd>能量守恆只寫 $\vec F=-\nabla U$，漏了 $\partial U/\partial t=0$。</dd>
+    <dt>代表題</dt><dd><a href="#c2l-galinv">伽利略不變</a>　<a href="#c2s-third">動量守恆</a>　<a href="#c2m-ang">角動量</a>　<a href="#c2c-curl">旋度</a>　<a href="#c2c-energy">能量守恆</a></dd>
+  </dl>
+</div>
+
+<h3 id="c2x-var">16.3 變化題</h3>
+
+<div class="drill-q" id="c2var-1">
+  <p class="q-src">變化題 1 · 改自 <a href="#c2-ex22">例題 2.2</a>、<a href="#c2-ex23">2.3</a></p>
+  <p>木塊與斜面的 $\mu_s=0.5$、$\mu_k=0.4$。(a) 原本靜止的木塊在多大角度開始滑？(b) 斜面固定在 $35^\circ$，把木塊輕輕放上，它的加速度是多少？(c) 滑動中把角度降到多少以下，木塊會減速？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>(a) $\theta_c=\tan^{-1}0.5=26.6^\circ$。(b) $35^\circ>26.6^\circ$，會滑：</p>
+    $$\ddot x=g(\sin35^\circ-0.4\cos35^\circ)=9.8(0.574-0.328)=2.41\ \text{m/s}^2$$
+    <p>(c) $\ddot x\lt 0\iff\tan\theta\lt \mu_k$，$\theta\lt \tan^{-1}0.4=21.8^\circ$。驗算：$21.8^\circ\lt 26.6^\circ$，在兩角之間「滑著就繼續滑」✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-2">
+  <p class="q-src">變化題 2 · 改自 <a href="#c2-ex24">例題 2.4</a></p>
+  <p>水平運動的阻力改為 $kmv^2$，初速 $v_0$。求 $v(t)$、$x(t)$ 與 $v(x)$。物體會停在有限距離內嗎？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\frac{\mathrm dv}{v^2}=-k\,\mathrm dt\Rightarrow v=\frac{v_0}{1+kv_0t},\qquad x=\frac1k\ln(1+kv_0t),\qquad v\frac{\mathrm dv}{\mathrm dx}=-kv^2\Rightarrow v=v_0e^{-kx}$$
+    <p>$t\to\infty$ 時 $x\to\infty$（對數成長），不會停在有限距離——和線性阻力的 $x\to v_0/k$ 不同。驗算：把 $x(t)$ 代入 $v_0e^{-kx}=\dfrac{v_0}{1+kv_0t}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-3">
+  <p class="q-src">變化題 3 · 改自 <a href="#c2-ex25">例題 2.5</a></p>
+  <p>線性阻力 $kmv$，物體由靜止落下。多久達到終端速度的一半？那時落下了多遠？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>向下為正：$v=\dfrac gk(1-e^{-kt})$。$v=\dfrac{g}{2k}$ ⟹ $e^{-kt}=\tfrac12$，$t=\dfrac{\ln2}k$。</p>
+    $$s=\int_0^tv\,\mathrm dt'=\frac gkt-\frac g{k^2}(1-e^{-kt})=\frac{g}{k^2}\left(\ln2-\frac12\right)=0.193\,\frac g{k^2}$$
+    <p>驗算：用 $v\,\mathrm dv/\mathrm dy$ 也行：$y=-\dfrac vk-\dfrac g{k^2}\ln\!\left(1-\dfrac{kv}g\right)$，代 $v=g/2k$：$-\dfrac{g}{2k^2}+\dfrac g{k^2}\ln2$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#c2-tm-2-11">課本 2-11</a></p>
+  <p>同 2-11（阻力 $kmv^2$、由靜止落下），改問時間：從靜止加速到 $v_1$ 需要多久？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>$v_t=\sqrt{g/k}$，$\dfrac{\mathrm dv}{g-kv^2}=\mathrm dt$：</p>
+    $$t=\frac{1}{\sqrt{gk}}\tanh^{-1}\!\left(\frac{v_1}{v_t}\right),\qquad\text{即}\ v(t)=v_t\tanh\!\left(\sqrt{gk}\,t\right)$$
+    <p>驗算：$v_1\to v_t$ 時 $t\to\infty$，和 2-11 的 $s\to\infty$ 一致 ✔；$k\to0$：$\tanh^{-1}u\approx u$，$t\approx v_1/g$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#c2-tm-2-39">課本 2-39</a></p>
+  <p>船以初速 $v_0$ 出發，水的阻力為 $F=-c\sqrt v$（$c>0$）。求停止時間與停止距離。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$m\frac{\mathrm dv}{\mathrm dt}=-c\sqrt v\Rightarrow2\sqrt v=2\sqrt{v_0}-\frac cmt\Rightarrow t_{\text{end}}=\frac{2m\sqrt{v_0}}c$$
+    $$mv\frac{\mathrm dv}{\mathrm dx}=-c\sqrt v\Rightarrow\sqrt v\,\mathrm dv=-\frac cm\mathrm dx\Rightarrow d=\frac{2m\,v_0^{3/2}}{3c}$$
+    <p>驗算：$\int_0^{t_{\text{end}}}\left(\sqrt{v_0}-\dfrac{ct}{2m}\right)^2\mathrm dt=\dfrac{2m}{3c}v_0^{3/2}$ ✔。$v\to0$ 時阻力 $\to0$ 但比線性慢，仍在有限時間停下。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-6">
+  <p class="q-src">變化題 6 · 改自 <a href="#c2-tm-2-38">課本 2-38</a></p>
+  <p>質點速率 $v=b\sqrt x$，$t=0$ 時 $x=0$。求 $F(x)$、$x(t)$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$F=\frac12m\frac{\mathrm d(b^2x)}{\mathrm dx}=\frac{mb^2}2\ (\text{常數}),\qquad\frac{\mathrm dx}{\sqrt x}=b\,\mathrm dt\Rightarrow x=\frac{b^2t^2}4$$
+    <p>驗算：$m\ddot x=m\dfrac{b^2}{2}$ ✔；這就是等加速度 $a=b^2/2$，$v^2=2ax=b^2x$ ✔（對應 2-38 的 $n=-\tfrac12$）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-7">
+  <p class="q-src">變化題 7 · 改自 <a href="#c2-tm-2-14">課本 2-14</a></p>
+  <p>改成往<strong>下坡</strong>射：坡度 $\beta$，仰角 $\alpha$（從水平量）。求沿坡面的落點距離、最佳仰角與最大射程。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>落點 $(d\cos\beta,-d\sin\beta)$，相當於 2-14 把 $\beta\to-\beta$：</p>
+    $$d=\frac{2v_0^2\cos\alpha\sin(\alpha+\beta)}{g\cos^2\beta},\qquad\alpha_{\text{best}}=\frac\pi4-\frac\beta2,\qquad d_{\max}=\frac{v_0^2}{g(1-\sin\beta)}$$
+    <p>驗算：$\beta=0$ 回到 $45^\circ$、$v_0^2/g$ ✔；往下坡打得比平地遠，最佳仰角也較低 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-8">
+  <p class="q-src">變化題 8 · 改自 <a href="#c2-ex27">例題 2.7</a></p>
+  <p>線性阻力的拋體，用微擾求最大高度到 $k$ 的一次項。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>鉛直方向就是 2-54 的上拋：$y_{\max}=\dfrac Vk-\dfrac g{k^2}\ln\!\left(1+\dfrac{kV}g\right)$。展開 $\ln(1+z)=z-\tfrac{z^2}2+\tfrac{z^3}3-\cdots$，$z=kV/g$：</p>
+    $$y_{\max}=\frac{V^2}{2g}-\frac{kV^3}{3g^2}+O(k^2)=\frac{V^2}{2g}\left(1-\frac{2kV}{3g}\right)$$
+    <p>驗算：$k=0$ 為 $V^2/2g$ ✔；高度減少的比例 $\tfrac{2kV}{3g}$ 比射程的 $\tfrac{4kV}{3g}$ 小——水平方向整段飛行都在減速。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-9">
+  <p class="q-src">變化題 9 · 改自 <a href="#c2-ex29">例題 2.9</a></p>
+  <p>Atwood 機放在以加速度 $\alpha$ <strong>上升</strong>的電梯中。求兩物體相對滑輪的加速度與繩張力。$m_1=3\ \text{kg}$、$m_2=2\ \text{kg}$、$\alpha=2\ \text{m/s}^2$ 時是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>向下為正時滑輪加速度是 $-\alpha$：$m_1g-T=m_1(\ddot x_1-\alpha)$ 等，結果 $g\to g+\alpha$：</p>
+    $$\ddot x_1=\frac{(m_1-m_2)(g+\alpha)}{m_1+m_2}=\frac{(1)(11.8)}5=2.36\ \text{m/s}^2,\qquad T=\frac{2m_1m_2(g+\alpha)}{m_1+m_2}=\frac{12(11.8)}{5}=28.3\ \text{N}$$
+    <p>驗算：$\alpha=0$ 時 $T=23.5\ \text{N}$；上升加速使繩更緊 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-10">
+  <p class="q-src">變化題 10 · 改自 <a href="#c2-ex211">例題 2.11</a></p>
+  <p>老鼠已經在吊扇外緣跟著轉（角速度 $\omega_1$），然後沿葉片走到中心。角速度變成多少？動能如何變化，多出的能量從哪裡來？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$(I+mR^2)\omega_1=I\omega_2\ \Rightarrow\ \omega_2=\frac{I+mR^2}{I}\,\omega_1$$
+    <p>動能 $\tfrac12I\omega_2^2=\dfrac{I+mR^2}{I}\cdot\tfrac12(I+mR^2)\omega_1^2$，增加了。老鼠往中心走時要用腳拉住葉片抵抗離心的傾向（徑向做功），能量來自老鼠的肌肉。驗算：走回外緣就回到 $\omega_1$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-11">
+  <p class="q-src">變化題 11 · 改自 <a href="#c2-tm-2-25">課本 2-25</a></p>
+  <p>軌道底部改成完整的鉛直圓環（半徑 $R$）。木塊至少要從多高 $h$ 由靜止釋放，才能通過圓環頂端而不離開軌道？此時最低點的正向力是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>頂端不離開：$N\ge0$，$mg+N=mv_{\text{top}}^2/R$ ⟹ $v_{\text{top}}^2\ge gR$。能量：$mgh=mg(2R)+\tfrac12mv_{\text{top}}^2\ge2mgR+\tfrac12mgR$：</p>
+    $$h_{\min}=\frac52R,\qquad N_A=mg\left(1+\frac{2h}R\right)=6mg$$
+    <p>驗算：用 2-25(a) 的公式代 $h=5R/2$ 得 $6mg$；頂端 $N=0$、只靠重力提供向心力 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-12">
+  <p class="q-src">變化題 12 · 改自 <a href="#c2-ex213">例題 2.13</a></p>
+  <p>同一個位能，若 $E=-W/5$，轉折點在哪裡？運動是什麼樣子？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$-\frac15=\frac{-(y^2+1)}{y^4+8}\Rightarrow y^4-5y^2+3=0\Rightarrow y^2=\frac{5\pm\sqrt{13}}2=0.697,\ 4.303$$
+    <p>$|x|=0.835d$ 與 $2.074d$。$-\tfrac W5\lt -\tfrac W8=U(0)$，翻不過中間的峰：質點被困在其中一個谷，例如在 $0.835d\le x\le2.074d$ 之間來回。驗算：$Z(\sqrt2)=-\tfrac14\lt -\tfrac15$，谷底在兩轉折點之間 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-13">
+  <p class="q-src">變化題 13 · 本章技巧用在 117 級上學期期末第 3 題的情境（該題屬第 9 章）</p>
+  <p>長 $L$、質量 $M$ 的柔軟繩子放在光滑桌面上，有 $x_0$ 垂在桌邊外，由靜止釋放。(a) 求垂下長度的速度 $\dot x$ 和 $x$ 的關係；(b) 繩子完全離開桌面時的速率；(c) $x(t)$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>整條繩子一起運動，拉它的只有垂下部分的重量 $\dfrac MLxg$：$M\ddot x=\dfrac{Mg}Lx$。要 $\dot x(x)$ 用 $\ddot x=\tfrac12\mathrm d(\dot x^2)/\mathrm dx$：</p>
+    $$\dot x^2=\frac gL\left(x^2-x_0^2\right),\qquad\dot x(L)=\sqrt{\frac gL\left(L^2-x_0^2\right)},\qquad x(t)=x_0\cosh\!\left(\sqrt{\frac gL}\,t\right)$$
+    <p>驗算：$x_0\to0$ 時 $\dot x(L)\to\sqrt{gL}$；用能量：垂下部分質心下降，$\Delta U=-\dfrac{Mg}{2L}(L^2-x_0^2)=-\tfrac12M\dot x^2$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="c2var-14">
+  <p class="q-src">變化題 14 · 改自 <a href="#c2-tm-2-53">課本 2-53</a></p>
+  <p>$\vec F=y^2z\,\hat i+2xyz\,\hat j+xy^2\,\hat k$ 是保守力嗎？若是，求 $U$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$(\nabla\times\vec F)_x=2xy-2xy=0,\quad(\nabla\times\vec F)_y=y^2-y^2=0,\quad(\nabla\times\vec F)_z=2yz-2yz=0$$
+    <p>保守。$-\partial_xU=y^2z$ ⟹ $U=-xy^2z+f(y,z)$；代入另外兩個分量得 $f$ 為常數：$U=-xy^2z+$ 常數。驗算：$-\nabla U=(y^2z,\,2xyz,\,xy^2)$ ✔</p>
+  </details>
+</div>

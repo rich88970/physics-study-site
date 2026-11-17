@@ -1,0 +1,271 @@
+<h2>十、直角座標與極座標 <span class="pg">講義 p.51–63</span></h2>
+
+<p class="lead">直角座標的單位向量固定不動，微分只微係數；極座標的 $\hat r$、$\hat\theta$ 會跟著粒子轉，微分時多出來的項就是向心加速度和科氏項的來源。</p>
+
+<h3 id="po-rect">10.1 直角座標 <span class="pg-tag">p.52–53</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.52–53 Rectangular Coordinates</span>
+  $$\begin{gathered}\mathrm d\vec s=\mathrm dx\,\hat i+\mathrm dy\,\hat j+\mathrm dz\,\hat k\\ \mathrm dA=\mathrm dx\,\mathrm dy\ (\text{或 }\mathrm dy\,\mathrm dz,\ \mathrm dx\,\mathrm dz),\qquad \mathrm dV=\mathrm dx\,\mathrm dy\,\mathrm dz\end{gathered}$$
+  $$\begin{aligned}\vec r&=x_1\hat i+x_2\hat j+x_3\hat k\\ \vec v&=\dot x_1\hat i+\dot x_2\hat j+\dot x_3\hat k\\ \vec a&=\ddot x_1\hat i+\ddot x_2\hat j+\ddot x_3\hat k\end{aligned}$$
+</div>
+
+<p>對 $x_1\hat i$ 用乘積律：$\frac{\mathrm d}{\mathrm dt}(x_1\hat i)=\dot x_1\hat i+x_1\dot{\hat i}$。$\hat i$ 的方向和長度都不隨時間改變，$\dot{\hat i}=0$，所以只剩係數的導數。<strong>這一步在曲線座標裡不成立</strong>，是本節的重點。</p>
+
+<p>曲線座標（極、柱、球座標）的基底會隨位置轉彎，計算比較複雜，但描述有旋轉對稱的運動（圓周、行星軌道）時，式子反而簡單得多（p.54）。</p>
+
+<h3 id="po-def">10.2 極座標的定義與 $\mathrm dA$ <span class="pg-tag">p.55–56</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.55–56 Polar Coordinates</span>
+  $$\begin{gathered}r\ge0,\qquad 0\le\theta\le2\pi\\ \mathrm d\vec s=\mathrm dr\,\hat r+r\,\mathrm d\theta\,\hat\theta,\qquad \mathrm dA=\mathrm dr\times r\,\mathrm d\theta=r\,\mathrm dr\,\mathrm d\theta\end{gathered}$$
+</div>
+
+<p>$\hat r$ 從原點指向粒子，$\hat\theta$ 垂直 $\hat r$、指向 $\theta$ 增加的方向。$\theta$ 增加 $\mathrm d\theta$ 時，粒子沿圓弧走的距離是弧長 $r\,\mathrm d\theta$，不是 $\mathrm d\theta$，所以小面積是「徑向 $\mathrm dr$ × 弧長 $r\,\mathrm d\theta$」，多一個 $r$。離原點越遠，同樣的 $\mathrm d\theta$ 掃出的面積越大。</p>
+
+<div class="anim" data-anim="polar-area"></div>
+
+<div class="problem" data-kind="example" id="ex-p57">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.57</span></div>
+    <h4>均勻圓盤的轉動慣量</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p57">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>半徑 $R$、面密度 $\rho$（均勻）的圓盤，求對通過圓心、垂直盤面的轉軸的轉動慣量。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：半徑 $R$、均勻面密度 $\rho$ 的完整圓盤，轉軸過圓心且垂直盤面；盤上一點到軸距離就是到圓心距離 $r$；總質量 $M$。</p>
+<p><strong>① 寫出積分：</strong> 到軸距離剛好是極座標的 $r$，積分範圍是「長方形」，所以用極座標。</p>
+<p class="fnote"><b>公式（轉動慣量）：</b>$I=\int d^2\,\mathrm dm$，其中 $d$ 為質量元到轉軸的距離、$\mathrm dm$ 為質量元；本題 $d=r$，均勻所以 $\mathrm dm=\rho\,\mathrm dA$。</p>
+<p>代入極座標面積元 $\mathrm dA=r\,\mathrm dr\,\mathrm d\theta$：</p>
+<div class="math-block">$$I=\int r^2\,\mathrm dm=\int r^2\rho\,\mathrm dA=\rho\iint r^2\cdot r\,\mathrm dr\,\mathrm d\theta=\rho\iint r^3\,\mathrm dr\,\mathrm d\theta$$</div>
+<p>$r^2$ 乘上 $\mathrm dA$ 裡的 $r$，變成 $r^3$。</p>
+<p><strong>② 兩個積分分開算：</strong> 被積函數 $r^3$ 和 $\theta$ 無關、上下限都是常數，雙重積分拆成兩個單一積分相乘。代入範圍 $0\le r\le R$、$0\le\theta\le2\pi$：</p>
+<div class="math-block">$$I=\rho\int_0^Rr^3\,\mathrm dr\int_0^{2\pi}\mathrm d\theta$$</div>
+<div class="math-block">$$\int_0^Rr^3\,\mathrm dr=\Big[\frac{r^4}{4}\Big]_0^R=\frac{R^4}{4},\qquad\int_0^{2\pi}\mathrm d\theta=2\pi$$</div>
+<div class="math-block">$$I=\rho\cdot\frac{R^4}{4}\cdot2\pi=\frac12\rho\pi R^4$$</div>
+<p><strong>③ 換成質量：</strong> 總質量 = 密度 × 面積：$M=\rho\cdot\pi R^2$。把 $\rho\pi R^4$ 拆成 $(\rho\pi R^2)\cdot R^2$：</p>
+<div class="math-block">$$I=\frac12(\rho\pi R^2)R^2=\frac12MR^2$$</div>
+<div class="math-block">$$\boxed{I=\frac12\rho\pi R^4=\frac12MR^2}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="po-unit">10.3 $\hat r$、$\hat\theta$ 對時間的導數 <span class="pg-tag">p.58–61</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.58</span>
+  $$\dot{\hat r}=\frac{\mathrm d\hat r}{\mathrm dt}=\dot\theta\,\hat\theta,\qquad \dot{\hat\theta}=\frac{\mathrm d\hat\theta}{\mathrm dt}=-\dot\theta\,\hat r$$
+</div>
+
+<div class="step" data-step="po-geo" data-sym="polu">
+  <span class="step-title">幾何看法（p.58）</span>
+  <p>粒子轉了 $\mathrm d\theta$，$\hat r$ 也轉了 $\mathrm d\theta$。長度 1 的向量轉一個小角度，尖端走的距離是 $1\cdot\mathrm d\theta$，方向垂直原來的 $\hat r$，也就是 $\hat\theta$ 方向：$\mathrm d\hat r=\mathrm d\theta\,\hat\theta$。$\hat\theta$ 同樣轉了 $\mathrm d\theta$，但它的尖端往 $-\hat r$ 方向偏：$\mathrm d\hat\theta=-\mathrm d\theta\,\hat r$。兩邊除以 $\mathrm dt$ 即得上式。</p>
+</div>
+
+<div class="anim" data-anim="polar-unit"></div>
+
+<div class="step" id="po-cart" data-step="po-cart">
+  <span class="step-title">代數看法：寫成 $\hat i,\hat j$ 再微分（p.59–61）</span>
+  $$\hat r=\cos\theta\,\hat i+\sin\theta\,\hat j,\qquad \hat\theta=-\sin\theta\,\hat i+\cos\theta\,\hat j$$
+  <p>$\hat i,\hat j$ 固定，只有 $\theta$ 隨時間變，用連鎖律 $\frac{\mathrm d}{\mathrm dt}\cos\theta=-\sin\theta\,\dot\theta$：</p>
+  $$\begin{aligned}\dot{\hat r}&=-\dot\theta\sin\theta\,\hat i+\dot\theta\cos\theta\,\hat j\\&=\dot\theta(-\sin\theta\,\hat i+\cos\theta\,\hat j)=\dot\theta\,\hat\theta\\[4pt] \dot{\hat\theta}&=-\dot\theta\cos\theta\,\hat i-\dot\theta\sin\theta\,\hat j\\&=-\dot\theta(\cos\theta\,\hat i+\sin\theta\,\hat j)=-\dot\theta\,\hat r\end{aligned}$$
+  <p>檢查：$\hat r\cdot\hat\theta=-\cos\theta\sin\theta+\sin\theta\cos\theta=0$，兩者垂直；$\theta=\frac\pi2$ 時 $\hat r=\hat j$、$\hat\theta=-\hat i$。</p>
+</div>
+
+<h3 id="po-va">10.4 極座標的速度與加速度 <span class="pg-tag">p.62–63</span></h3>
+
+<div class="box lecture">
+  <span class="box-title">p.62</span>
+  $$\vec r=r\hat r,\qquad \vec v=\dot r\,\hat r+r\dot\theta\,\hat\theta,\qquad \vec a=(\ddot r-r\dot\theta^2)\,\hat r+(2\dot r\dot\theta+r\ddot\theta)\,\hat\theta$$
+</div>
+
+<div class="step" data-step="po-v">
+  <span class="step-title">速度：對 $r\hat r$ 用乘積律</span>
+  $$\vec v=\frac{\mathrm d}{\mathrm dt}(r\hat r)=\dot r\,\hat r+r\,\dot{\hat r}=\dot r\,\hat r+r\dot\theta\,\hat\theta$$
+  <p>$\dot r$ 是遠離原點的快慢（徑向速度），$r\dot\theta$ 是繞原點轉的快慢（$\hat\theta$ 方向的橫向速度；圓周運動時就是 $v=R\omega$）。</p>
+</div>
+
+<div class="step" id="po-a" data-step="po-a">
+  <span class="step-title">加速度：再微分一次，每一項都用乘積律</span>
+  $$\begin{aligned}\vec a&=(\ddot r\,\hat r+\dot r\,\dot{\hat r})+(\dot r\dot\theta\,\hat\theta+r\ddot\theta\,\hat\theta+r\dot\theta\,\dot{\hat\theta})\\&=(\ddot r\,\hat r+\dot r\dot\theta\,\hat\theta)+(\dot r\dot\theta\,\hat\theta+r\ddot\theta\,\hat\theta-r\dot\theta^2\,\hat r)\\&=(\ddot r-r\dot\theta^2)\,\hat r+(2\dot r\dot\theta+r\ddot\theta)\,\hat\theta\end{aligned}$$
+  <p>第二行把 $\dot{\hat r}=\dot\theta\hat\theta$、$\dot{\hat\theta}=-\dot\theta\hat r$ 代入。$-r\dot\theta^2$ 是向心加速度；$2\dot r\dot\theta$ 有兩個來源（$\hat r$ 轉向和 $r\dot\theta$ 變大各貢獻一個 $\dot r\dot\theta$），所以係數是 2。</p>
+</div>
+
+<div class="anim" data-anim="polar-va"></div>
+
+<div class="box pitfall">
+  <span class="box-title">$\ddot r$ 不是加速度的大小</span>
+  <p>$\ddot r$ 只是「到原點的距離」的二次導數。等速圓周運動 $\ddot r=0$，但加速度不是 0：徑向分量是 $-r\dot\theta^2$。</p>
+</div>
+
+<div class="problem" data-kind="example" id="ex-p63">
+  <header>
+    <div class="meta"><span class="chip">講義例題</span><span class="src">講義 p.63</span></div>
+    <h4>等速圓周運動 $a=v^2/r$</h4>
+    <button type="button" class="exam-btn" data-exam="ex-p63">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用極座標的加速度公式證明：等速圓周運動的加速度大小 $a=v^2/r$、方向指向圓心。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：原點放在圓心；圓周運動 $r=$ 常數，等速 $v=r\dot\theta$ 固定；要證 $|\vec a|=v^2/r$、方向 $-\hat r$。</p>
+<p><strong>① 寫出條件：</strong> 原點在圓心時 $r$ 不變、等速時 $\dot\theta$ 也不變，加速度公式只會剩一項。</p>
+<p>半徑固定：$r=$ 常數 ⟹ 對時間微分一次、兩次都是 0：$\dot r=\ddot r=0$。</p>
+<p>等速：$v=r\dot\theta$ 固定、$r$ 固定 ⟹ $\omega=\dot\theta=$ 常數 ⟹ $\ddot\theta=0$。</p>
+<p><strong>② 代入加速度公式：</strong> 把上一步的 $\ddot r=0$、$\dot r=0$、$\ddot\theta=0$ 代進去。</p>
+<p class="fnote"><b>公式（極座標加速度）：</b>$\vec a=(\ddot r-r\dot\theta^2)\hat r+(2\dot r\dot\theta+r\ddot\theta)\hat\theta$，其中 $r$ 為到原點的距離、$\theta$ 為角度、$\hat r$ 與 $\hat\theta$ 為徑向與橫向單位向量；本題原點在圓心。</p>
+<div class="math-block">$$\vec a=(0-r\dot\theta^2)\,\hat r+(2\cdot0\cdot\dot\theta+r\cdot0)\,\hat\theta=-r\dot\theta^2\,\hat r$$</div>
+<p>$\hat\theta$ 分量是 0：速率不變，所以沿運動方向沒有加速度。</p>
+<p><strong>③ 用 $v$ 表示：</strong> 由 $v=r\dot\theta$ 解出 $\dot\theta=\dfrac vr$，代入上一步：</p>
+<div class="math-block">$$\vec a=-r\Big(\frac vr\Big)^2\hat r=-r\cdot\frac{v^2}{r^2}\hat r=-\frac{v^2}{r}\hat r$$</div>
+<p>大小 $\dfrac{v^2}{r}$；$-\hat r$ 是從粒子指回原點（圓心）的方向。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\vec a=-\frac{v^2}{r}\hat r\\ \text{大小 }v^2/r\text{，指向圓心}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="po-tm">10.5 課本題</h3>
+
+<div class="problem" data-kind="textbook" id="tm-1-26">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Thornton &amp; Marion 1-26 · p.46</span></div>
+    <h4>沿心臟線等速率運動</h4>
+    <button type="button" class="exam-btn" data-exam="tm-1-26">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>質點以固定速率 $v$ 沿心臟線 $r=k(1+\cos\theta)$ 運動。求 $\ddot{\vec r}\cdot\hat e_r=\vec a\cdot\hat e_r$、$|\vec a|$ 與 $\dot\theta$。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：軌道 $r=k(1+\cos\theta)$，$k$ 為常數；速率 $v$ 固定；取 $\dot\theta\gt0$（逆時針）；$\hat e_r=\hat r$，所以 $\vec a\cdot\hat e_r=a_r$。</p>
+<p><strong>① 把 $\dot r$ 用 $\dot\theta$ 表示：</strong> 加速度公式要 $\dot r,\ddot r,\dot\theta,\ddot\theta$ 四個量，題目只給軌道和速率，先用連鎖律把 $r$ 的導數化成 $\theta$ 的導數。</p>
+<p>$r$ 是 $\theta$ 的函數、$\theta$ 是 $t$ 的函數：$\dot r=\frac{\mathrm dr}{\mathrm d\theta}\dot\theta$。代入 $r=k(1+\cos\theta)$，$\frac{\mathrm dr}{\mathrm d\theta}=-k\sin\theta$：</p>
+<div class="math-block">$$\dot r=-k\sin\theta\,\dot\theta$$</div>
+<p><strong>② 由速率求 $\dot\theta$：</strong> 速率平方是速度兩個分量的平方和。</p>
+<p class="fnote"><b>公式（極座標速度）：</b>$\vec v=\dot r\hat r+r\dot\theta\hat\theta$，所以 $v^2=\dot r^2+r^2\dot\theta^2$，其中 $\dot r$ 為徑向速度、$r\dot\theta$ 為橫向速度；本題 $v$ 為常數。</p>
+<p>代入上一步的 $\dot r$ 和 $r=k(1+\cos\theta)$：</p>
+<div class="math-block">$$\begin{aligned}v^2&amp;=k^2\sin^2\theta\,\dot\theta^2+k^2(1+\cos\theta)^2\dot\theta^2\\&amp;=k^2\dot\theta^2\big[\sin^2\theta+(1+\cos\theta)^2\big]\end{aligned}$$</div>
+<p>中括號展開：$\sin^2\theta+1+2\cos\theta+\cos^2\theta=2+2\cos\theta$（用 $\sin^2\theta+\cos^2\theta=1$）：</p>
+<div class="math-block">$$v^2=k^2\dot\theta^2\cdot2(1+\cos\theta)$$</div>
+<div class="math-block">$$\dot\theta^2=\frac{v^2}{2k^2(1+\cos\theta)},\qquad\dot\theta=\frac{v}{k\sqrt{2(1+\cos\theta)}}$$</div>
+<p>用 $1+\cos\theta=r/k$ 改寫分母：$k\sqrt{2r/k}=\sqrt{2kr}$：</p>
+<div class="math-block">$$\dot\theta=\frac{v}{\sqrt{2kr}}$$</div>
+<p>離原點越近（$r$ 越小）轉得越快。另外用半角公式 $1+\cos\theta=2\cos^2\frac\theta2$：$\sqrt{2(1+\cos\theta)}=2\cos\frac\theta2$（$|\theta|\lt\pi$），所以</p>
+<div class="math-block">$$\dot\theta=\frac{v}{2k\cos(\theta/2)}$$</div>
+<p><strong>③ 求 $\ddot\theta$：</strong> 對 $\dot\theta^2=\dfrac{v^2}{2k^2(1+\cos\theta)}$ 微分（比對 $\dot\theta$ 微分少一個根號）。左邊 $\frac{\mathrm d}{\mathrm dt}\dot\theta^2=2\dot\theta\ddot\theta$；右邊只有 $(1+\cos\theta)^{-1}$ 隨時間變，用連鎖律：</p>
+<div class="math-block">$$\frac{\mathrm d}{\mathrm dt}(1+\cos\theta)^{-1}=-(1+\cos\theta)^{-2}\cdot(-\sin\theta\,\dot\theta)=\frac{\sin\theta\,\dot\theta}{(1+\cos\theta)^2}$$</div>
+<div class="math-block">$$2\dot\theta\ddot\theta=\frac{v^2}{2k^2}\cdot\frac{\sin\theta\,\dot\theta}{(1+\cos\theta)^2}$$</div>
+<p>兩邊消去 $2\dot\theta$（$\dot\theta\neq0$）：</p>
+<div class="math-block">$$\ddot\theta=\frac{v^2\sin\theta}{4k^2(1+\cos\theta)^2}$$</div>
+<p><strong>④ 求 $\ddot r$：</strong> 對 ① 的 $\dot r=-k\sin\theta\,\dot\theta$ 再微分，用乘積律：</p>
+<div class="math-block">$$\ddot r=-k\cos\theta\,\dot\theta^2-k\sin\theta\,\ddot\theta$$</div>
+<p>代入 ② 的 $\dot\theta^2$、③ 的 $\ddot\theta$：</p>
+<div class="math-block">$$\ddot r=-\frac{v^2\cos\theta}{2k(1+\cos\theta)}-\frac{v^2\sin^2\theta}{4k(1+\cos\theta)^2}$$</div>
+<p>通分（公分母 $4k(1+\cos\theta)^2$）：</p>
+<div class="math-block">$$\ddot r=-\frac{v^2}{4k(1+\cos\theta)^2}\big[2\cos\theta(1+\cos\theta)+\sin^2\theta\big]$$</div>
+<p>中括號用 $\sin^2\theta=1-\cos^2\theta$：$2\cos\theta+2\cos^2\theta+1-\cos^2\theta=(1+\cos\theta)^2$，和分母消掉：</p>
+<div class="math-block">$$\ddot r=-\frac{v^2}{4k}$$</div>
+<p><strong>⑤ 徑向分量 $a_r$：</strong> 用極座標加速度的徑向分量。</p>
+<p class="fnote"><b>公式（極座標加速度）：</b>$a_r=\ddot r-r\dot\theta^2$、$a_\theta=r\ddot\theta+2\dot r\dot\theta$，其中 $a_r$、$a_\theta$ 為徑向、橫向分量；本題四個導數由 ①～④ 求得。</p>
+<p>代入 ④ 的 $\ddot r$、$r=k(1+\cos\theta)$、② 的 $\dot\theta^2$：</p>
+<div class="math-block">$$\begin{aligned}a_r&amp;=-\frac{v^2}{4k}-k(1+\cos\theta)\cdot\frac{v^2}{2k^2(1+\cos\theta)}\\&amp;=-\frac{v^2}{4k}-\frac{v^2}{2k}=-\frac{v^2}{4k}-\frac{2v^2}{4k}=-\frac{3v^2}{4k}\end{aligned}$$</div>
+<p>$1+\cos\theta$ 完全消掉：徑向加速度在軌道上每一點都一樣。</p>
+<p><strong>⑥ 橫向分量 $a_\theta$：</strong> 其中 $2\dot r\dot\theta=2(-k\sin\theta\,\dot\theta)\dot\theta=-2k\sin\theta\,\dot\theta^2$。代入 $r$、③ 的 $\ddot\theta$、② 的 $\dot\theta^2$：</p>
+<div class="math-block">$$r\ddot\theta=k(1+\cos\theta)\cdot\frac{v^2\sin\theta}{4k^2(1+\cos\theta)^2}=\frac{v^2\sin\theta}{4k(1+\cos\theta)}$$</div>
+<div class="math-block">$$2\dot r\dot\theta=-2k\sin\theta\cdot\frac{v^2}{2k^2(1+\cos\theta)}=-\frac{v^2\sin\theta}{k(1+\cos\theta)}$$</div>
+<div class="math-block">$$\begin{aligned}a_\theta&amp;=\frac{v^2\sin\theta}{4k(1+\cos\theta)}-\frac{4v^2\sin\theta}{4k(1+\cos\theta)}\\&amp;=-\frac{3v^2\sin\theta}{4k(1+\cos\theta)}\end{aligned}$$</div>
+<p><strong>⑦ 加速度大小 $|\vec a|$：</strong> $|\vec a|^2=a_r^2+a_\theta^2$，代入 ⑤、⑥，兩項都有 $\frac{9v^4}{16k^2}$，提出來：</p>
+<div class="math-block">$$\begin{aligned}|\vec a|^2&amp;=\frac{9v^4}{16k^2}\Big[1+\frac{\sin^2\theta}{(1+\cos\theta)^2}\Big]\\&amp;=\frac{9v^4}{16k^2}\cdot\frac{(1+\cos\theta)^2+\sin^2\theta}{(1+\cos\theta)^2}\end{aligned}$$</div>
+<p>分子和 ② 一樣化成 $2(1+\cos\theta)$，約掉一個 $1+\cos\theta$：</p>
+<div class="math-block">$$|\vec a|^2=\frac{9v^4}{16k^2}\cdot\frac{2}{1+\cos\theta}\quad\Longrightarrow\quad|\vec a|=\frac{3v^2}{4k}\sqrt{\frac{2}{1+\cos\theta}}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\vec a\cdot\hat e_r=-\frac{3v^2}{4k}\ \text{（與位置無關）}\\ |\vec a|=\frac{3v^2}{4k}\sqrt{\frac{2}{1+\cos\theta}}\\ \dot\theta=\frac{v}{\sqrt{2kr}}=\frac{v}{2k\cos(\theta/2)}\ (|\theta|\lt\pi)\end{gathered}}$$</div>
+<p>$\theta=\pi$ 是尖點 $r=0$，這裡 $\dot\theta$ 和 $|\vec a|$ 都發散。</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="self-s11">10.6 自編難題</h3>
+
+<p>以下兩題是網站自編的難題（不是老師講義或課本題目），要自己建模、把本節兩個以上的觀念接起來。</p>
+
+<div class="problem" data-kind="self" id="self-s11-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>轉動細桿上的珠子</h4>
+    <button type="button" class="exam-btn" data-exam="self-s11-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>光滑細桿在水平面上以固定角速度 $\omega$ 繞一端轉動，桿上套著質量 $m$ 的珠子。桿光滑，只能對珠子施加垂直桿的側向力。$t=0$ 時珠子在 $r=r_0$、相對桿靜止。用極座標的加速度（p.62）求 $r(t)$，以及桿對珠子的力。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：原點放在轉軸端，珠子的角度就是桿的角度 $\theta=\omega t$（$\dot\theta=\omega$、$\ddot\theta=0$）；光滑桿沿桿無力 $F_r=0$，側向力 $\vec N=N\hat\theta$ 未知；水平面上重力被鉛直支撐抵消；初始 $r(0)=r_0$、$\dot r(0)=0$。</p>
+<p><strong>① 寫出加速度：</strong> $\theta$ 已知、力剛好沿 $\hat r$、$\hat\theta$，用極座標最自然，未知數只剩 $r(t)$。</p>
+<p class="fnote"><b>公式（極座標加速度）：</b>$\vec a=(\ddot r-r\dot\theta^2)\hat r+(2\dot r\dot\theta+r\ddot\theta)\hat\theta$，其中 $r$ 為珠子到轉軸的距離、$\theta$ 為桿的角度；本題 $\dot\theta=\omega$、$\ddot\theta=0$。</p>
+<p>代入 $\dot\theta=\omega$、$\ddot\theta=0$：</p>
+<div class="math-block">$$\vec a=(\ddot r-r\omega^2)\,\hat r+(2\dot r\omega)\,\hat\theta$$</div>
+<p><strong>② 徑向：沒有力，解微分方程：</strong> 把牛頓第二定律拆成 $\hat r$、$\hat\theta$ 兩條，$\hat r$ 那條沒有未知力。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$\vec F=m\vec a$，分量式 $F_r=ma_r$、$F_\theta=ma_\theta$，其中 $\vec F$ 為合力、$m$ 為質量；本題 $F_r=0$、$F_\theta=N$。</p>
+<div class="math-block">$$m(\ddot r-r\omega^2)=0\ \Longrightarrow\ \ddot r=\omega^2r$$</div>
+<p>常係數線性方程式，試 $r=e^{\lambda t}$：$\lambda^2=\omega^2$，$\lambda=\pm\omega$，通解</p>
+<div class="math-block">$$r=Ae^{\omega t}+Be^{-\omega t},\qquad\dot r=A\omega e^{\omega t}-B\omega e^{-\omega t}$$</div>
+<p>代入初始條件 $r(0)=r_0$、$\dot r(0)=0$：</p>
+<div class="math-block">$$A+B=r_0,\qquad\omega(A-B)=0\ \Longrightarrow\ A=B=\frac{r_0}{2}$$</div>
+<div class="math-block">$$r(t)=\tfrac{r_0}{2}\big(e^{\omega t}+e^{-\omega t}\big)=r_0\cosh\omega t$$</div>
+<p><strong>③ 橫向：桿的力：</strong> $\hat\theta$ 分量 $N=ma_\theta=m\cdot2\dot r\omega$，需要 $\dot r$。對上一步的 $r(t)$ 微分：</p>
+<div class="math-block">$$\dot r=\frac{\mathrm d}{\mathrm dt}(r_0\cosh\omega t)=r_0\omega\sinh\omega t$$</div>
+<div class="math-block">$$N=2m\omega\cdot r_0\omega\sinh\omega t=2mr_0\omega^2\sinh\omega t\quad(\text{沿}+\hat\theta)$$</div>
+<p>$t\gt0$ 時 $\sinh\omega t\gt0$，桿往轉動方向推珠子。桿只能側推，給不出向心力 $mr\omega^2$，所以珠子往外滑；往外跑的同時被帶著轉（$2\dot r\dot\theta$ 項）要靠 $N$ 提供。</p>
+<div class="math-block">$$\boxed{\begin{gathered}r(t)=r_0\cosh\omega t\\ \vec N=2mr_0\omega^2\sinh(\omega t)\,\hat\theta\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="self-s11-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>心臟線和圓之間的面積</h4>
+    <button type="button" class="exam-btn" data-exam="self-s11-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>心臟線 $r=a(1+\cos\theta)$（<a href='#tm-1-26'>課本 1-26</a> 的曲線）和圓 $r=a$。用 $\mathrm dA=r\,\mathrm dr\,\mathrm d\theta$ 求：(a) 在心臟線內、圓外的面積；(b) 在圓內、心臟線外的面積。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：心臟線 $r=a(1+\cos\theta)$（課本 1-26 的曲線），圓 $r=a$；面積元素 $\mathrm dA=r\,\mathrm dr\,\mathrm d\theta$。</p>
+<p><strong>① 交點與哪條在外：</strong> 哪條曲線在外會隨 $\theta$ 改變，先求交點才能定兩小題的 $\theta$ 範圍與 $r$ 上下限（直接「心臟線面積 − 圓面積」只會得到 $A_a-A_b$）。</p>
+<div class="math-block">$$a(1+\cos\theta)=a\ \Longrightarrow\ \cos\theta=0\ \Longrightarrow\ \theta=\pm\frac\pi2$$</div>
+<p>$|\theta|\lt\frac\pi2$ 時 $\cos\theta\gt0$，$a(1+\cos\theta)\gt a$，心臟線在外；$\frac\pi2\lt|\theta|\le\pi$ 時 $\cos\theta\lt0$，心臟線在內。</p>
+<h4>(a) 心臟線內、圓外</h4>
+<p><strong>① 內層對 $r$ 積分：</strong> 區域在 $-\frac\pi2\le\theta\le\frac\pi2$，每個方向上 $r$ 從 $a$ 到 $a(1+\cos\theta)$。</p>
+<p class="fnote"><b>公式（極座標面積）：</b>$A=\iint r\,\mathrm dr\,\mathrm d\theta$，其中 $r$ 為到原點的距離、$\theta$ 為角度；本題內層從內曲線積到外曲線，外層對 $\theta$ 積。</p>
+<div class="math-block">$$\int_a^{a(1+\cos\theta)}r\,\mathrm dr=\frac12\Big[a^2(1+\cos\theta)^2-a^2\Big]=\frac{a^2}{2}\big(2\cos\theta+\cos^2\theta\big)$$</div>
+<p><strong>② 外層對 $\theta$ 積分：</strong> 兩個積分分開算，$\cos^2\theta$ 用 $\int\cos^2\theta\,\mathrm d\theta=\frac\theta2+\frac{\sin2\theta}4$（由 $\cos^2\theta=\frac{1+\cos2\theta}2$）：</p>
+<div class="math-block">$$\int_{-\pi/2}^{\pi/2}2\cos\theta\,\mathrm d\theta=2\big[\sin\theta\big]_{-\pi/2}^{\pi/2}=2(1+1)=4$$</div>
+<div class="math-block">$$\int_{-\pi/2}^{\pi/2}\cos^2\theta\,\mathrm d\theta=\Big[\frac\theta2+\frac{\sin2\theta}{4}\Big]_{-\pi/2}^{\pi/2}=\frac\pi2$$</div>
+<div class="math-block">$$A_a=\frac{a^2}2\Big(4+\frac\pi2\Big)=\Big(2+\frac\pi4\Big)a^2$$</div>
+<div class="math-block">$$\boxed{A_a=\Big(2+\frac\pi4\Big)a^2\approx2.785a^2}$$</div>
+<h4>(b) 圓內、心臟線外</h4>
+<p><strong>① 內層對 $r$ 積分：</strong> 區域在左半邊 $\frac\pi2\le\theta\le\frac{3\pi}2$，$r$ 從 $a(1+\cos\theta)$ 到 $a$；上下限和 (a) 相反，被積函數變號。</p>
+<div class="math-block">$$\int_{a(1+\cos\theta)}^{a}r\,\mathrm dr=\frac{a^2}{2}\big(-2\cos\theta-\cos^2\theta\big)$$</div>
+<p><strong>② 外層對 $\theta$ 積分：</strong></p>
+<div class="math-block">$$\int_{\pi/2}^{3\pi/2}(-2\cos\theta)\,\mathrm d\theta=-2\big[\sin\theta\big]_{\pi/2}^{3\pi/2}=-2(-1-1)=4$$</div>
+<div class="math-block">$$\int_{\pi/2}^{3\pi/2}\cos^2\theta\,\mathrm d\theta=\Big[\frac\theta2+\frac{\sin2\theta}{4}\Big]_{\pi/2}^{3\pi/2}=\frac\pi2$$</div>
+<div class="math-block">$$A_b=\frac{a^2}2\Big(4-\frac\pi2\Big)=\Big(2-\frac\pi4\Big)a^2$$</div>
+<div class="math-block">$$\boxed{A_b=\Big(2-\frac\pi4\Big)a^2\approx1.215a^2}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>極座標 $\mathrm dA=r\,\mathrm dr\,\mathrm d\theta$：弧長是 $r\,\mathrm d\theta$。</li>
+    <li>$\dot{\hat r}=\dot\theta\hat\theta$、$\dot{\hat\theta}=-\dot\theta\hat r$：單位向量會轉，微分時不能丟掉。</li>
+    <li>$\vec v=\dot r\hat r+r\dot\theta\hat\theta$，$\vec a=(\ddot r-r\dot\theta^2)\hat r+(2\dot r\dot\theta+r\ddot\theta)\hat\theta$。</li>
+  </ol>
+</div>

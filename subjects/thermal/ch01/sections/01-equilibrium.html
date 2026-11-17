@@ -1,0 +1,725 @@
+<h2>一、熱平衡與溫度 <span class="pg">課本 §1.1 p.1–6</span></h2>
+
+<p class="lead">「溫度」是熱力學最熟悉、也最難講清楚的概念。這一節先給兩個定義——操作型（溫度計量到的）與理論型（接觸夠久後兩物體相同的那個量，也就是「放出能量的傾向」）——再說明溫標怎麼建立、為什麼要用從絕對零度量起的 kelvin，最後用熱膨脹係數把溫度計的原理量化。</p>
+
+<h3 id="t1-def">1.1 溫度的兩種定義 <span class="pg-tag">p.1</span></h3>
+
+<p>最直接的定義是<strong>操作型定義</strong>（operational definition）：告訴你「怎麼量」。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.1 兩個定義</span>
+  <p><b>操作型</b>：溫度就是用溫度計量到的東西。</p>
+  <p><b>理論型</b>：溫度是兩個物體接觸夠久之後，兩者相同的那個量。</p>
+</div>
+
+<p>為什麼溫度計管用？把水銀溫度計插進湯裡，水銀會隨溫度熱脹冷縮；等一陣子後水銀的溫度等於湯的溫度，水銀佔的體積就告訴我們那個溫度。這背後依靠一個基本事實：<strong>兩個物體接觸夠久，會趨向同一個溫度</strong>。這個事實重要到可以反過來當成溫度的定義（理論型定義）。但這樣講很模糊：什麼樣的「接觸」？多久算「夠久」？數值怎麼來？如果有不只一個量最後相同怎麼辦？下面一一回答。</p>
+
+<h3 id="t1-eq">1.2 熱平衡、鬆弛時間與三種平衡 <span class="pg-tag">p.2–3</span></h3>
+
+<p>兩個物體接觸夠久之後，我們說它們處於<strong>熱平衡</strong>（thermal equilibrium）；到達熱平衡所需的時間叫<strong>鬆弛時間</strong>（relaxation time）。所以量湯的溫度要等過鬆弛時間，水銀和湯才同溫、讀數才準。</p>
+
+<p>「接觸」的意思是：兩物體之間要有某種方法<strong>自發地交換能量</strong>——我們把這種形式的能量叫「熱」。直接碰觸通常就行；即使隔著真空，也能用電磁波「輻射」交換能量。想阻止兩物體達到熱平衡，就在中間放隔熱材料（玻璃纖維、保溫瓶的雙層真空壁）——但終究還是會平衡，隔熱只是把鬆弛時間拉長。</p>
+
+<p>鬆弛時間取決於你看的是哪個過程：冷奶精倒進熱咖啡，杯內混勻、同溫只要幾秒；整杯咖啡與房間達到熱平衡要好幾十分鐘。（有些書把鬆弛時間精確定義成「溫差降為 $1/e\approx1/2.7$ 倍所需的時間」，本書只需要定性的意思。）</p>
+
+<p>奶精與咖啡的例子還帶出另一件事：它們不只同溫，還混在一起了。混合不是熱平衡的必要條件，而是第二種平衡——<strong>擴散平衡</strong>（diffusive equilibrium）：分子可以到處移動，但不再有往某一邊跑的傾向。還有<strong>力學平衡</strong>（mechanical equilibrium）：大尺度的運動（例如熱氣球膨脹）可以發生，但已經不再發生。每一種平衡都對應一個兩系統之間可以交換的量：</p>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>交換的量</th><th>平衡的種類</th><th>平衡時相等的量（後面幾章會證明）</th></tr></thead>
+  <tbody>
+    <tr><td>能量</td><td>熱平衡</td><td>溫度 $T$</td></tr>
+    <tr><td>體積</td><td>力學平衡</td><td>壓力 $P$</td></tr>
+    <tr><td>粒子</td><td>擴散平衡</td><td>化學勢 $\mu$（第 3 章）</td></tr>
+  </tbody>
+</table></div>
+
+<p>熱氣球（課本 Fig. 1.1）同時和環境進行三種交互作用：交換能量、體積、粒子，但三者並不全在平衡。</p>
+
+<h3 id="t1-theory">1.3 溫度＝自發放出能量的傾向 <span class="pg-tag">p.2–3</span></h3>
+
+<p>兩個能交換能量的物體，若能量自發地從甲流向乙，就說<strong>甲的溫度較高</strong>、乙的溫度較低。照這個慣例，把理論型定義說得更清楚：</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.3 溫度的理論定義（改寫）</span>
+  <p>溫度是物體自發地把能量放給周圍的傾向的量度。兩物體熱接觸時，傾向自發地失去能量的那一個溫度較高。</p>
+</div>
+
+<p>注意這個定義講的是「傾向」，不是「物體裡有多少能量」：一大桶溫水的總能量遠大於一根火柴，但熱是從火柴流向水。第 3 章會用熵把這個定義變成精確的數學式 $1/T=\partial S/\partial U$。</p>
+
+<h3 id="t1-scale">1.4 溫度計與溫標：從攝氏到 kelvin <span class="pg-tag">p.3–5</span></h3>
+
+<p>大多數溫度計利用<strong>熱膨脹</strong>：（固定壓力下）材料熱的時候佔較大體積。要定出數值，就選兩個方便的溫度——例如水的凝固點與沸點——任意指定為 0 和 100，在溫度計上標出這兩點、中間等分成一百格，這支溫度計就「依定義」量的是<strong>攝氏</strong>（Celsius，centigrade）溫標。也可以用金屬片、定壓氣體的膨脹，或電阻等電性質。不同溫度計在 0 與 100 之間的讀數一般<strong>不會完全一致</strong>（只是差很小）——自編難題 1-B 會看到一個差很多的例子。</p>
+
+<p><strong>氣體溫度計</strong>特別有意思：把定壓低密度氣體的體積對溫度的直線往低溫外插，體積會在約 $-273^\circ\text{C}$ 變成零；若改成固定體積，壓力在同一個溫度趨近零（Fig. 1.3）。實際上氣體會先液化，但趨勢很清楚。這個特別的溫度叫<strong>絕對零度</strong>（absolute zero），它定出<strong>絕對溫標</strong>（absolute temperature scale）的零點，由 William Thomson（後來的 Kelvin 男爵）在 1848 年提出，SI 單位叫 <strong>kelvin</strong>（K）。1 K 和 $1^\circ\text{C}$ 一樣大，只是從絕對零度量起：</p>
+
+$$T\,(\text{K})=T\,(^\circ\text{C})+273.15$$
+
+<p>室溫大約是 300 K。（「單位警察」規定不能說「degree kelvin」，就叫 kelvin，而且 SI 單位名稱不大寫。）</p>
+
+<div class="anim" data-anim="t1-gas-thermo"></div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-fig13">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.1 Fig. 1.3 · p.4–5</span></div>
+    <h4>定容氣體溫度計外插出絕對零度</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-fig13">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-fig13"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>A thermometer based on expansion of a gas is especially interesting, though, because if you extrapolate the scale down to very low temperatures, you are led to predict that for any low-density gas at constant pressure, the volume should go to zero at approximately −273°C. (In practice the gas will always liquefy first, but until then the trend is quite clear.) Alternatively, if you hold the volume of the gas fixed, then its pressure will approach zero as the temperature approaches −273°C (see Figure 1.3).</p><p><strong>Figure 1.3.</strong> Data from a student experiment measuring the pressure of a fixed volume of gas at various temperatures (using the bulb apparatus shown in Figure 1.2). The three data sets are for three different amounts of gas (air) in the bulb. Regardless of the amount of gas, the pressure is a linear function of temperature that extrapolates to zero at approximately −280°C. (More precise measurements show that the zero-point does depend slightly on the amount of gas, but has a well-defined limit of −273.15°C as the density of the gas goes to zero.)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>Fig. 1.3 是學生實驗：固定體積的空氣，量不同溫度下的壓力，三組資料是三種不同的氣體量。從圖上讀出中間那條線的兩個資料點約為 $(-76^\circ\text{C},\ 0.66\ \text{atm})$ 與 $(95^\circ\text{C},\ 1.21\ \text{atm})$。(a) 假設 $P$ 是 $T$ 的線性函數，求 $P=0$ 的溫度。(b) 說明為什麼三條線外插到同一點，以及這代表什麼。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第一個讀數</td><td>$T_1=-76^\circ\text{C}$，$P_1=0.66\ \text{atm}$</td><td>「從圖上讀出……約為 $(-76^\circ\text{C},\ 0.66\ \text{atm})$」</td></tr>
+          <tr><td>第二個讀數</td><td>$T_2=95^\circ\text{C}$，$P_2=1.21\ \text{atm}$</td><td>「與 $(95^\circ\text{C},\ 1.21\ \text{atm})$」</td></tr>
+          <tr><td>體積</td><td>固定</td><td>「<b>固定體積</b>的空氣」：定容氣體溫度計</td></tr>
+          <tr><td>函數形式</td><td>$P=P_0+sT$（直線）</td><td>「假設 $P$ 是 $T$ 的<b>線性函數</b>」（圖上資料點排成直線）</td></tr>
+          <tr><td>讀圖誤差</td><td>讀數只有約兩位有效數字</td><td>「約為」：答案只需要到「約 $-280^\circ\text{C}$」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 直線外插到 $P=0$ 的溫度；(b) 三條線交於一點的原因與意義。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目說 $P$ 對 $T$ 是直線，兩點就能定一條直線，<b>所以</b>先用兩點求斜率，再令 $P=0$ 解 $T$（就是直線的橫軸截距）。</p>
+      <p>(b) <b>因為</b>不同氣體量只是讓同溫下的壓力按比例放大（分子多一倍，撞牆多一倍），<b>所以</b>每條線都是「某個常數 ×（$T$ 到某固定點的距離）」：斜率不同，但零點相同。零點相同表示存在一個與氣體量無關的「最低溫度」，可以拿來當溫標的天然零點。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-fig13-s1" data-sym="P,T">
+        <span class="step-title">求直線的斜率</span>
+        $$s=\frac{\Delta P}{\Delta T}=\frac{P_2-P_1}{T_2-T_1}$$
+        <p class="sub">代入題目讀出的兩點 $(-76^\circ\text{C},0.66\ \text{atm})$、$(95^\circ\text{C},1.21\ \text{atm})$：</p>
+        $$s=\frac{1.21-0.66}{95-(-76)}\ \frac{\text{atm}}{^\circ\text{C}}=\frac{0.55}{171}\ \frac{\text{atm}}{^\circ\text{C}}=3.22\times10^{-3}\ \frac{\text{atm}}{^\circ\text{C}}$$
+      </div>
+      <div class="step" data-step="sc-ex-fig13-s2">
+        <span class="step-title">令 $P=0$，解出外插溫度</span>
+        <p>直線寫成點斜式 $P=P_1+s\,(T-T_1)$，令 $P=0$：</p>
+        $$0=P_1+s\,(T_0-T_1)\ \Longrightarrow\ T_0=T_1-\frac{P_1}{s}$$
+        <p class="sub">代入 $T_1=-76^\circ\text{C}$、$P_1=0.66\ \text{atm}$（題目）與 $s$（步驟 1）：</p>
+        $$T_0=-76^\circ\text{C}-\frac{0.66\ \text{atm}}{3.22\times10^{-3}\ \text{atm}/^\circ\text{C}}=-76^\circ\text{C}-205^\circ\text{C}=-281^\circ\text{C}$$
+      </div>
+      <div class="step" data-step="sc-ex-fig13-s3">
+        <span class="step-title">(b) 為什麼三條線交於同一點</span>
+        <p>每條線都可以寫成 $P=s\,(T-T_0)$。分子數不同時，同溫的壓力按比例變（下一節 $PV=NkT$ 會說明 $P\propto N$），所以只有斜率 $s$ 改變，零點 $T_0$ 不變。課本的圖說：三組資料都外插到約 $-280^\circ\text{C}$；更精確的實驗顯示零點和氣體量稍有關係，但當氣體密度趨近零時有確定的極限 $-273.15^\circ\text{C}$。</p>
+        <p>把溫度改從這一點量起，$T(\text{K})=T(^\circ\text{C})+273.15$，直線就變成過原點的正比 $P\propto T$——這就是 kelvin 溫標、也是理想氣體定律裡的 $T$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $T_0\approx-281^\circ\text{C}$，即約 $-280^\circ\text{C}$（讀圖誤差約 $\pm10^\circ\text{C}$）；(b) 氣體量只改斜率不改零點，三線共同的零點（極限值 $-273.15^\circ\text{C}$）就是絕對零度。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>用中間那條線全部五個點做最小平方擬合，零點約 $-280^\circ\text{C}$，與兩點法一致 ✔；與真值 $-273.15^\circ\text{C}$ 差約 3%，在讀圖精度內。</p></div>
+  </div>
+</div>
+
+<p>因為熱力學的許多公式只有用 kelvin（或另一種絕對溫標，例如習題 1.2 的蘭氏溫標）才正確，<strong>代公式前一律先換成 kelvin</strong>。只有在講「兩個溫度的差」時才能直接用攝氏（1 K 與 1°C 一樣大）。</p>
+
+<div class="box pitfall">
+  <span class="box-title">比值用 K，差值 K 或 °C 都可以</span>
+  <p>$\Delta T=40^\circ\text{C}-20^\circ\text{C}=20\ \text{K}$ 沒問題；但 $T_2/T_1$、$PV=nRT$、$\sqrt{3kT/m}$ 這種用到 $T$ 本身的式子，代 $^\circ\text{C}$ 就錯（習題 1.4）。</p>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-1">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-1（Problem 1.1）· p.5</span></div>
+    <h4>華氏與攝氏的換算</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-1"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The Fahrenheit temperature scale is defined so that ice melts at 32°F and water boils at 212°F.</p><p>(a) Derive the formulas for converting from Fahrenheit to Celsius and back.</p><p>(b) What is absolute zero on the Fahrenheit scale?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>華氏溫標的定義是：冰在 $32^\circ\text{F}$ 熔化、水在 $212^\circ\text{F}$ 沸騰。(a) 推導華氏與攝氏互換的公式。(b) 絕對零度在華氏溫標是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>冰點</td><td>$0^\circ\text{C}=32^\circ\text{F}$</td><td>「冰在 $32^\circ\text{F}$ 熔化」；攝氏冰點依定義是 0</td></tr>
+          <tr><td>沸點</td><td>$100^\circ\text{C}=212^\circ\text{F}$</td><td>「水在 $212^\circ\text{F}$ 沸騰」；攝氏沸點依定義是 100</td></tr>
+          <tr><td>兩溫標的關係</td><td>線性（都是兩定點之間等分刻度）</td><td>題目沒寫，由溫標的建立方式（本節 1.4）讀出</td></tr>
+          <tr><td>絕對零度</td><td>$-273.15^\circ\text{C}$</td><td>題目沒給，用本節的值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $T_F(T_C)$ 與 $T_C(T_F)$；(b) 絕對零度的 $T_F$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩種溫標都是在冰點與沸點之間等分刻度，<b>所以</b>兩者是線性關係 $T_F=aT_C+b$；兩個定點給兩條方程式，剛好解出 $a$（斜率）與 $b$（截距）。反函數用代數移項；(b) 把 $-273.15^\circ\text{C}$ 代入 (a) 的公式。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-1-s1" data-sym="T">
+        <span class="step-title">設線性關係，用兩個定點解斜率與截距</span>
+        $$T_F=a\,T_C+b$$
+        <p class="sub">代入冰點 $(T_C,T_F)=(0,32)$（題目）：</p>
+        $$32=a\cdot0+b\ \Longrightarrow\ b=32$$
+        <p class="sub">代入沸點 $(100,212)$（題目）與 $b=32$：</p>
+        $$212=100a+32\ \Longrightarrow\ a=\frac{212-32}{100}=\frac{180}{100}=\frac95$$
+      </div>
+      <div class="step" data-step="sc-1-1-s2">
+        <span class="step-title">(a) 兩個方向的公式</span>
+        $$T_F=\frac95\,T_C+32$$
+        <p>兩邊減 32、再乘 $\tfrac59$ 得反函數：</p>
+        $$T_F-32=\frac95T_C\ \Longrightarrow\ T_C=\frac59\,(T_F-32)$$
+      </div>
+      <div class="step" data-step="sc-1-1-s3">
+        <span class="step-title">(b) 絕對零度</span>
+        <p class="sub">代入 $T_C=-273.15$（本節）：</p>
+        $$T_F=\frac95(-273.15)+32=-491.67+32=-459.67$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $T_F=\tfrac95T_C+32$，$T_C=\tfrac59(T_F-32)$；(b) 絕對零度 $=-459.67^\circ\text{F}\approx-460^\circ\text{F}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>代回 $T_F=212$：$\tfrac59(212-32)=100$ ✔。$-40^\circ\text{C}=-40^\circ\text{F}$（兩溫標唯一相等的點）也滿足公式 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-2">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-2（Problem 1.2）· p.5</span></div>
+    <h4>蘭氏溫標</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-2"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>The Rankine temperature scale (abbreviated °R) uses the same size degrees as Fahrenheit, but measured up from absolute zero like kelvin (so Rankine is to Fahrenheit as kelvin is to Celsius). Find the conversion formula between Rankine and Fahrenheit, and also between Rankine and kelvin. What is room temperature on the Rankine scale?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>蘭氏溫標（Rankine，記為 $^\circ\text{R}$）的一度和華氏一樣大，但像 kelvin 一樣從絕對零度量起（蘭氏之於華氏，就像 kelvin 之於攝氏）。求蘭氏與華氏、蘭氏與 kelvin 的換算公式。室溫在蘭氏溫標是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>度的大小</td><td>$1^\circ\text{R}=1^\circ\text{F}$（溫差）</td><td>「一度和<b>華氏一樣大</b>」</td></tr>
+          <tr><td>零點</td><td>$0^\circ\text{R}=$ 絕對零度 $=-459.67^\circ\text{F}$</td><td>「像 kelvin 一樣<b>從絕對零度量起</b>」；$-459.67^\circ\text{F}$ 由習題 1.1(b)</td></tr>
+          <tr><td>華氏與攝氏度的比</td><td>$1^\circ\text{C}=\tfrac95{}^\circ\text{F}$</td><td>習題 1.1 的斜率 $\tfrac95$</td></tr>
+          <tr><td>室溫</td><td>$\approx300\ \text{K}$</td><td>題目沒給，用本節「室溫約 300 K」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$T_R(T_F)$、$T_R(T_K)$，以及室溫的 $T_R$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>蘭氏和華氏一度一樣大、只差零點，<b>所以</b>兩者只差一個常數（平移）。<b>因為</b>蘭氏和 kelvin 零點相同、只是一度的大小不同，<b>所以</b>兩者只差一個比例因子（無常數項），這個因子就是華氏與攝氏的度大小比 $\tfrac95$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-2-s1" data-sym="T">
+        <span class="step-title">蘭氏 ↔ 華氏：只差零點</span>
+        $$T_R=T_F+c$$
+        <p class="sub">代入絕對零度 $T_R=0$、$T_F=-459.67$（習題 1.1(b)）：</p>
+        $$0=-459.67+c\ \Longrightarrow\ c=459.67,\qquad T_R=T_F+459.67$$
+      </div>
+      <div class="step" data-step="sc-1-2-s2">
+        <span class="step-title">蘭氏 ↔ kelvin：只差比例</span>
+        <p>同一段溫差，用華氏（蘭氏）量的度數是攝氏（kelvin）的 $\tfrac95$ 倍；兩者零點都在絕對零度，所以沒有常數項：</p>
+        $$T_R=\frac95\,T_K\qquad\Big(1^\circ\text{R}=\tfrac59\ \text{K}\Big)$$
+      </div>
+      <div class="step" data-step="sc-1-2-s3">
+        <span class="step-title">室溫</span>
+        <p class="sub">代入室溫 $T_K\approx300\ \text{K}$（本節）：</p>
+        $$T_R=\frac95\times300=540^\circ\text{R}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$T_R=T_F+459.67$；$T_R=\tfrac95T_K$；室溫約 $540^\circ\text{R}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>另一條路：$300\ \text{K}=26.85^\circ\text{C}=80.3^\circ\text{F}$，加 459.67 得 $540.0^\circ\text{R}$ ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-3">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-3（Problem 1.3）· p.5</span></div>
+    <h4>換成 kelvin</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-3"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Determine the kelvin temperature for each of the following:</p><p>(a) human body temperature;</p><p>(b) the boiling point of water (at the standard pressure of 1 atm);</p><p>(c) the coldest day you can remember;</p><p>(d) the boiling point of liquid nitrogen (−196°C);</p><p>(e) the melting point of lead (327°C).</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求下列各溫度的 kelvin 值：(a) 人的體溫；(b) 水的沸點（標準壓力 1 atm）；(c) 你記得最冷的一天；(d) 液態氮的沸點（$-196^\circ\text{C}$）；(e) 鉛的熔點（$327^\circ\text{C}$）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>(a) 體溫</td><td>$37^\circ\text{C}$</td><td>題目沒給，用常識值</td></tr>
+          <tr><td>(b) 水的沸點</td><td>$100^\circ\text{C}$</td><td>「標準壓力 1 atm」下的沸點，攝氏依定義是 100</td></tr>
+          <tr><td>(c) 最冷的一天</td><td>取寒流 $5^\circ\text{C}$（自己的經驗，各人不同）</td><td>「你記得最冷的一天」</td></tr>
+          <tr><td>(d) 液態氮</td><td>$-196^\circ\text{C}$</td><td>題目「（$-196^\circ\text{C}$）」</td></tr>
+          <tr><td>(e) 鉛的熔點</td><td>$327^\circ\text{C}$</td><td>題目「（$327^\circ\text{C}$）」</td></tr>
+          <tr><td>換算</td><td>$T_K=T_C+273.15$</td><td>本節 1.4</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a)–(e) 的 kelvin 溫度。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> kelvin 和攝氏一度一樣大，只是零點移到 $-273.15^\circ\text{C}$，<b>所以</b>每個值都只要加 273.15。題目給的資料只有三位有效數字，答案取到整數 K 即可。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-3-s1" data-sym="T">
+        <span class="step-title">逐一加 273.15</span>
+        $$T_K=T_C+273.15$$
+        <p class="sub">代入 (a) $37$、(b) $100$、(c) $5$（自己的估計）、(d) $-196$、(e) $327$（$^\circ\text{C}$）：</p>
+        $$\begin{aligned}
+        \text{(a)}&\ 37+273.15=310.15\approx310\ \text{K}\\
+        \text{(b)}&\ 100+273.15=373.15\approx373\ \text{K}\\
+        \text{(c)}&\ 5+273.15=278.15\approx278\ \text{K}\\
+        \text{(d)}&\ -196+273.15=77.15\approx77\ \text{K}\\
+        \text{(e)}&\ 327+273.15=600.15\approx600\ \text{K}
+        \end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-3-s2">
+        <span class="step-title">看出 kelvin 的好處</span>
+        <p>用 kelvin 才看得出「離絕對零度多遠」：液態氮（77 K）約是室溫（300 K）的四分之一；鉛的熔點（600 K）剛好是室溫的兩倍（接下來的習題 1.4）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 310 K；(b) 373 K；(c) 依個人經驗，例如寒流 $5^\circ\text{C}=278\ \text{K}$；(d) 77 K；(e) 600 K。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>全部是正值，且只有液態氮離 0 K 不遠——kelvin 溫度不會是負的 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-4">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-4（Problem 1.4）· p.5</span></div>
+    <h4>「兩倍熱」有沒有意義？</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-4"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Does it ever make sense to say that one object is “twice as hot” as another? Does it matter whether one is referring to Celsius or kelvin temperatures? Explain.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>說一個物體比另一個「熱兩倍」有沒有意義？用攝氏或 kelvin 有沒有差別？說明理由。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知的關係／前提</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>「兩倍」的意思</td><td>溫度的比值 $T_2/T_1=2$</td><td>題目「熱兩倍」</td></tr>
+          <tr><td>攝氏零點</td><td>水的冰點，任意選的</td><td>本節 1.4「任意指定為 0 和 100」</td></tr>
+          <tr><td>kelvin 零點</td><td>絕對零度，物理上有意義的最低點</td><td>本節 1.4、Fig. 1.3</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：判斷「兩倍熱」是否有意義，並說明攝氏與 kelvin 的差別。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>「兩倍」是比值，而比值只有在零點有物理意義時才不隨零點的選擇改變，<b>所以</b>要比較兩種溫標的零點；再用一個數值例子看看，換零點後比值會不會變。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-4-s1" data-sym="T">
+        <span class="step-title">攝氏的比值會隨零點而變</span>
+        <p>攝氏 $20^\circ\text{C}$ 是 $10^\circ\text{C}$ 的「兩倍」嗎？換成 kelvin 再算一次比值：</p>
+        <p class="sub">代入 $20^\circ\text{C}=293.15\ \text{K}$、$10^\circ\text{C}=283.15\ \text{K}$：</p>
+        $$\frac{293.15\ \text{K}}{283.15\ \text{K}}=1.035$$
+        <p>同樣兩個溫度，用攝氏比是 2、用 kelvin 比只有 1.035；用華氏（$68^\circ\text{F}$、$50^\circ\text{F}$）比又是 1.36。比值隨任意選的零點改變，所以「攝氏兩倍」沒有物理意義。</p>
+      </div>
+      <div class="step" data-step="sc-1-4-s2">
+        <span class="step-title">kelvin 的比值有意義</span>
+        <p>kelvin（或蘭氏）從絕對零度量起，零點不是任意的，任何絕對溫標之間只差比例因子（習題 1.2：$T_R=\tfrac95T_K$），比值不變。例如鉛的熔點 600 K 是室溫 300 K 的兩倍，用蘭氏算也是 $1080/540=2$。往後第 1 章的 $\overline{K}_{\text{trans}}=\tfrac32kT$ 會給「兩倍」更具體的意思：分子平均平移動能是兩倍。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>只有用絕對溫標（kelvin、蘭氏）時「兩倍熱」才有意義；攝氏、華氏的零點是任意選的，比值沒有意義（例如 $20^\circ\text{C}$ 對 $10^\circ\text{C}$ 的真實比值只有 1.035）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>兩種絕對溫標算出的比值相同（$600/300=1080/540$）✔；溫「差」則不受零點影響，所以差值可以用攝氏 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-5">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-5（Problem 1.5）· p.5</span></div>
+    <h4>量體溫的鬆弛時間</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-5"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>When you’re sick with a fever and you take your temperature with a thermometer, approximately what is the relaxation time?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>發燒時用溫度計量體溫，鬆弛時間大約是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>鬆弛時間的意思</td><td>溫度計與身體達到熱平衡所需的時間</td><td>本節 1.2 的定義（課本只需要定性的意思）</td></tr>
+          <tr><td>初始溫差</td><td>$\Delta T_0\approx38-25=13\ \text{K}$</td><td>題目沒寫；溫度計原本在室溫約 $25^\circ\text{C}$，「發燒」約 $38^\circ\text{C}$</td></tr>
+          <tr><td>需要的精度</td><td>約 $0.1^\circ\text{C}$</td><td>題目沒寫；體溫計的刻度是 $0.1^\circ\text{C}$</td></tr>
+          <tr><td>經驗</td><td>水銀體溫計要夾 3–5 分鐘；電子體溫計約 1 分鐘嗶聲</td><td>生活經驗（題目要的是估計）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：鬆弛時間的數量級。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>鬆弛時間的數值取決於「多接近平衡才算平衡」，<b>所以</b>先用課本註腳的精確定義：溫差每過一個 $\tau$ 縮小成 $1/e$，即 $\Delta T(t)=\Delta T_0e^{-t/\tau}$。再由「要等多久讀數才準到 $0.1^\circ\text{C}$」的經驗，反推 $\tau$。這樣同時回答了「定性的鬆弛時間（要等多久）」與「$1/e$ 定義的 $\tau$」。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-5-s1" data-sym="T">
+        <span class="step-title">溫差縮到 0.1°C 要幾個 $\tau$</span>
+        $$\Delta T(t)=\Delta T_0\,e^{-t/\tau}\ \Longrightarrow\ t=\tau\ln\frac{\Delta T_0}{\Delta T(t)}$$
+        <p class="sub">代入 $\Delta T_0\approx13\ \text{K}$、$\Delta T(t)=0.1\ \text{K}$（上表的估計）：</p>
+        $$t=\tau\ln\frac{13}{0.1}=\tau\ln130\approx4.9\,\tau\approx5\,\tau$$
+      </div>
+      <div class="step" data-step="sc-1-5-s2">
+        <span class="step-title">由經驗的等待時間反推</span>
+        <p class="sub">代入水銀體溫計要等 $t\approx3\text{–}5\ \text{min}$、電子體溫計 $t\approx1\ \text{min}$（經驗）：</p>
+        $$\tau\approx\frac{3\text{–}5\ \text{min}}{5}\approx40\text{–}60\ \text{s}\ (\text{水銀}),\qquad \tau\approx\frac{60\ \text{s}}{5}\approx10\text{–}20\ \text{s}\ (\text{電子})$$
+      </div>
+      <div class="step" data-step="sc-1-5-s3">
+        <span class="step-title">解讀</span>
+        <p>溫度計的感溫頭很小，十幾秒到一分鐘內就差不多到體溫；要等幾分鐘，是因為我們要求讀數準到零點幾度。所以「鬆弛時間」的數值依定義不同，從十幾秒到幾分鐘都說得通。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約一分鐘的數量級：以 $1/e$ 定義約 10 秒到 1 分鐘；若指「讀數準到 $0.1^\circ\text{C}$ 要等多久」，水銀體溫計約 3–5 分鐘。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>解答手冊也給「10–20 秒到三分鐘，依定義而定」，與這裡一致 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-6">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-6（Problem 1.6）· p.6 · 熱學小考（上）作業題</span></div>
+    <h4>用手摸判斷不了溫度</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-6">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-6"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Give an example to illustrate why you cannot accurately judge the temperature of an object by how hot or cold it feels to the touch.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>舉一個例子，說明為什麼不能用摸起來的冷熱準確判斷物體的溫度。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>已知的關係／前提</th><th>內容</th><th>從哪裡來</th></tr></thead>
+        <tbody>
+          <tr><td>同溫的條件</td><td>在同一房間放很久的物體處於熱平衡，溫度相同</td><td>本節 1.2：接觸夠久就同溫</td></tr>
+          <tr><td>皮膚感覺到的量</td><td>熱從皮膚流出的速率（與皮膚表面溫度），不是物體的溫度</td><td>本節 1.3：溫度是「放出能量的傾向」，手感是能量流</td></tr>
+          <tr><td>材料常數（網站補充用）</td><td>熱導率 $k_t$、密度 $\rho$、比熱 $c$</td><td>題目沒給，用常見材料的近似值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：舉例並說明手感與溫度不同的原因。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>手（約 $33^\circ\text{C}$）摸室溫物體時，熱從手流進物體，神經感覺到的是皮膚失去熱的快慢（皮膚表面降到幾度），<b>所以</b>要找「溫度相同、但吸熱快慢很不同」的兩個物體。<b>因為</b>吸熱快慢由材料的導熱性與熱容量決定，<b>所以</b>選金屬（導熱好）對木頭或布（導熱差）。最後用一個簡單模型估計皮膚表面溫度，讓差別變成數字。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-6-s1" data-sym="T">
+        <span class="step-title">例子</span>
+        <p>冬天早上，赤腳從浴室腳踏墊踩到磁磚或浴缸，磁磚冷得多。但兩者整晚都在同一間浴室、緊鄰著，早就熱平衡，溫度相同。同理：教室裡的金屬桌腳摸起來比木頭桌面冷，兩者都是室溫。</p>
+      </div>
+      <div class="step" data-step="sc-1-6-s2" data-sym="kt,c">
+        <span class="step-title">原因：手感量的是熱流</span>
+        <p>金屬（磁磚也是）導熱好、單位體積熱容量大，能快速把熱從皮膚帶走，皮膚表面溫度降得多，就覺得冷；腳踏墊、木頭導熱差，皮膚附近的那一薄層很快被加熱到接近皮膚溫度，熱就不太流了，所以不覺得冷。手感反映的是「熱流進物體的速率」，它取決於材料性質，不只溫度。</p>
+      </div>
+      <div class="step" data-step="sc-1-6-s3" data-sym="rho">
+        <span class="step-title">定量估計（網站補充）</span>
+        <p>兩塊半無限大的物體剛接觸時，接觸面溫度是兩邊溫度以「熱滲透率」$e=\sqrt{k_t\rho c}$ 加權的平均（熱傳導方程式的結果，第 1.7 節之後的內容）：</p>
+        $$T_{\text{接觸}}=\frac{e_{\text{皮}}T_{\text{皮}}+e_{\text{物}}T_{\text{物}}}{e_{\text{皮}}+e_{\text{物}}}$$
+        <p class="sub">代入 $e_{\text{皮}}\approx1180$、$e_{\text{鋼}}\approx13\,500$、$e_{\text{木}}\approx320$（單位 $\text{J}/(\text{m}^2\,\text{K}\,\text{s}^{1/2})$，常見材料值），$T_{\text{皮}}=33^\circ\text{C}$、$T_{\text{物}}=20^\circ\text{C}$：</p>
+        $$T_{\text{鋼}}=\frac{1180(33)+13\,500(20)}{14\,680}=21.0^\circ\text{C},\qquad T_{\text{木}}=\frac{1180(33)+320(20)}{1500}=30.2^\circ\text{C}$$
+        <p>同樣 $20^\circ\text{C}$ 的鋼和木頭，皮膚表面分別被拉到約 $21^\circ\text{C}$ 與 $30^\circ\text{C}$——差 9 度，難怪「感覺」差很多。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>例：同一房間裡的金屬與木頭（或磁磚與腳踏墊）溫度相同，金屬卻摸起來冷得多。因為手感量的是熱從皮膚流走的速率，它由材料的導熱率與熱容量決定，不只由溫度決定。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>反過來想：若兩者都比手熱（例如在 $60^\circ\text{C}$ 的三溫暖），金屬摸起來會比木頭<strong>燙</strong>，符合「導熱好的放大溫差」的說法 ✔</p></div>
+  </div>
+</div>
+
+<h3 id="t1-expand">1.5 熱膨脹係數 <span class="pg-tag">p.6（習題 1.7、1.8）</span></h3>
+
+<p>溫度計的原理是熱膨脹，課本在習題裡把它量化。定壓下，溫度每升高 1 K 體積增加的<strong>比例</strong>叫<strong>體膨脹係數</strong>（thermal expansion coefficient）：</p>
+
+$$\beta\equiv\frac{\Delta V/V}{\Delta T}\qquad(\text{嚴格說是 }\beta=\tfrac1V(\partial V/\partial T)_P)$$
+
+<p>例如水銀溫度升高 1 K 體積增加 $\tfrac1{5500}$，$\beta=1.81\times10^{-4}\ \text{K}^{-1}$（$0$–$200^\circ\text{C}$ 間變化不到 1%）。固體還可以定義沿某方向的<strong>線膨脹係數</strong>（linear thermal expansion coefficient）：</p>
+
+$$\alpha\equiv\frac{\Delta L/L}{\Delta T}$$
+
+<p>鋼的 $\alpha=1.1\times10^{-5}\ \text{K}^{-1}$。直覺上，邊長各增加一個小比例，體積增加的比例就是三個方向的和：$\beta=\alpha_x+\alpha_y+\alpha_z$；各向同性時 $\beta=3\alpha$（習題 1.8(c) 證明，下圖就是證明的圖像）。水是例外：$\beta$ 在 $100^\circ\text{C}$ 是 $7.5\times10^{-4}\ \text{K}^{-1}$，往低溫遞減，$4^\circ\text{C}$ 時為零，再往下變成負的——所以 $4^\circ\text{C}$ 的水密度最大。</p>
+
+<div class="anim" data-anim="t1-expansion"></div>
+
+<div class="problem" data-kind="textbook" id="sc-1-7">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-7（Problem 1.7）· p.6</span></div>
+    <h4>水銀溫度計的毛細管與湖水結冰</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-7"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>When the temperature of liquid mercury increases by one degree Celsius (or one kelvin), its volume increases by one part in 5500. The fractional increase in volume per unit change in temperature (when the pressure is held fixed) is called the <strong>thermal expansion coefficient</strong>, $\beta$: $$\beta\equiv\frac{\Delta V/V}{\Delta T}$$ (where $V$ is volume, $T$ is temperature, and $\Delta$ signifies a change, which in this case should really be infinitesimal if $\beta$ is to be well defined). So for mercury, $\beta=1/5500\ \text{K}^{-1}=1.81\times10^{-4}\ \text{K}^{-1}$. (The exact value varies with temperature, but between 0°C and 200°C the variation is less than 1%.)</p><p>(a) Get a mercury thermometer, estimate the size of the bulb at the bottom, and then estimate what the inside diameter of the tube has to be in order for the thermometer to work as required. Assume that the thermal expansion of the glass is negligible.</p><p>(b) The thermal expansion coefficient of water varies significantly with temperature: It is $7.5\times10^{-4}\ \text{K}^{-1}$ at 100°C, but decreases as the temperature is lowered until it becomes zero at 4°C. Below 4°C it is slightly negative, reaching a value of $-0.68\times10^{-4}\ \text{K}^{-1}$ at 0°C. (This behavior is related to the fact that ice is less dense than water.) With this behavior in mind, imagine the process of a lake freezing over, and discuss in some detail how this process would be different if the thermal expansion coefficient of water were always positive.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>液態水銀溫度升高 $1^\circ\text{C}$（1 K），體積增加 $\tfrac1{5500}$。定壓下每單位溫度變化的體積增加比例叫熱膨脹係數 $\beta\equiv\frac{\Delta V/V}{\Delta T}$，水銀的 $\beta=1/5500\ \text{K}^{-1}=1.81\times10^{-4}\ \text{K}^{-1}$（$0$–$200^\circ\text{C}$ 間變化不到 1%）。(a) 拿一支水銀溫度計，估計底部球泡的大小，再估計管子的內徑要多細溫度計才能正常運作。假設玻璃的熱膨脹可以忽略。(b) 水的熱膨脹係數隨溫度變化很大：$100^\circ\text{C}$ 時為 $7.5\times10^{-4}\ \text{K}^{-1}$，溫度降低時遞減，$4^\circ\text{C}$ 時為零；低於 $4^\circ\text{C}$ 時略為負值，$0^\circ\text{C}$ 時為 $-0.68\times10^{-4}\ \text{K}^{-1}$（這和冰的密度比水小有關）。想像湖水結冰的過程，詳細討論：如果水的熱膨脹係數永遠是正的，這個過程會有什麼不同？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>水銀的 $\beta$</td><td>$1.81\times10^{-4}\ \text{K}^{-1}$</td><td>「水銀的 $\beta=1/5500\ \text{K}^{-1}$」</td></tr>
+          <tr><td>球泡</td><td>圓柱，直徑 4 mm、長 8 mm（自己估計）</td><td>(a)「估計底部球泡的大小」：一般體溫計的球泡</td></tr>
+          <tr><td>每度刻度長</td><td>$\ell\approx5\ \text{mm}$（自己估計）</td><td>題目沒給；體溫計 $35$–$42^\circ\text{C}$ 約佔 3.5 cm</td></tr>
+          <tr><td>溫度變化</td><td>$\Delta T=1\ \text{K}$（一格）</td><td>要讓「升高 1 度」對應一格刻度</td></tr>
+          <tr><td>玻璃</td><td>不膨脹</td><td>「假設玻璃的熱膨脹可以忽略」</td></tr>
+          <tr><td>(b) 水的 $\beta$</td><td>$4^\circ\text{C}$ 為 0，$0$–$4^\circ\text{C}$ 為負</td><td>(b) 題目敘述</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 毛細管內徑的估計；(b) 湖水結冰的過程，以及 $\beta$ 恆正時的差異。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>水銀幾乎全在球泡裡，溫度升 1 K 時多出來的體積 $\Delta V=\beta V\Delta T$ 只能擠進毛細管，<b>所以</b>這個 $\Delta V$ 必須剛好填滿一格刻度長 $\ell$ 的管子：$\Delta V=A\ell$，由此解管子的截面積 $A$ 與內徑。</p>
+      <p>(b) <b>因為</b>密度大的水會沉到底，而 $\beta\lt0$ 代表「越冷越輕」，<b>所以</b>要分 $4^\circ\text{C}$ 以上與以下兩段，看最冷的水在湖面還是湖底，再看冰從哪裡開始結。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-7-s1" data-sym="beta,V">
+        <span class="step-title">(a) 球泡體積與每度的膨脹量</span>
+        <p class="sub">球泡當成圓柱，代入直徑 4 mm（半徑 2 mm）、長 8 mm（自己的估計）：</p>
+        $$V=\pi r^2h=\pi(2\ \text{mm})^2(8\ \text{mm})=100\ \text{mm}^3$$
+        $$\Delta V=\beta V\Delta T$$
+        <p class="sub">代入 $\beta=1.81\times10^{-4}\ \text{K}^{-1}$（題目）、$V=100\ \text{mm}^3$、$\Delta T=1\ \text{K}$：</p>
+        $$\Delta V=(1.81\times10^{-4}\ \text{K}^{-1})(100\ \text{mm}^3)(1\ \text{K})=0.0183\ \text{mm}^3$$
+      </div>
+      <div class="step" data-step="sc-1-7-s2">
+        <span class="step-title">(a) 擠進毛細管：求內徑</span>
+        <p>多出的體積佔一格長 $\ell$ 的管子：$\Delta V=A\ell$，再由 $A=\pi(d/2)^2$ 解內徑：</p>
+        $$A=\frac{\Delta V}{\ell},\qquad d=2\sqrt{\frac A\pi}$$
+        <p class="sub">代入 $\Delta V=0.0183\ \text{mm}^3$（步驟 1）、$\ell=5\ \text{mm}$（估計）：</p>
+        $$A=\frac{0.0183\ \text{mm}^3}{5\ \text{mm}}=3.66\times10^{-3}\ \text{mm}^2,\qquad d=2\sqrt{\frac{3.66\times10^{-3}}{\pi}}\ \text{mm}=0.068\ \text{mm}$$
+        <p>只有頭髮粗細（約 0.07 mm）！所以體溫計的玻璃管要做成放大鏡的形狀才看得到水銀柱。</p>
+      </div>
+      <div class="step" data-step="sc-1-7-s3">
+        <span class="step-title">(b) 真實的湖：從上面結冰</span>
+        <p>秋冬湖面被冷空氣冷卻。在 $4^\circ\text{C}$ 以上，$\beta\gt0$：越冷越重，冷水下沉、較暖的水上升，整個湖對流混合，直到全湖接近 $4^\circ\text{C}$。降到 $4^\circ\text{C}$ 以下，$\beta\lt0$：越冷反而越輕，於是最冷的水留在湖面、不再下沉，對流停止。湖面先到 $0^\circ\text{C}$、先結冰；冰的密度比水小，浮在上面，形成隔熱的蓋子，湖底維持約 $4^\circ\text{C}$，魚可以過冬。</p>
+      </div>
+      <div class="step" data-step="sc-1-7-s4">
+        <span class="step-title">(b) 若 $\beta$ 永遠是正的</span>
+        <p>最冷的水永遠最重，會一直沉到湖底，對流持續到全湖都降到 $0^\circ\text{C}$，冰從<strong>湖底</strong>開始結。若冰也比水重，冰就從底部往上長，沒有浮冰隔熱，很多湖會整個凍透，魚也一起凍住。（若冰仍比水輕，就是底部結出的冰塊浮上來，但沒有隔熱層，結冰仍快得多。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 球泡約 $100\ \text{mm}^3$，每度膨脹 $0.018\ \text{mm}^3$，管子內徑約 0.07 mm（數量級 $10^{-2}$–$10^{-1}$ mm）；(b) 真實湖水因 $4^\circ\text{C}$ 以下越冷越輕，由湖面結冰並被冰層隔熱；若 $\beta$ 恆正，冷水沉底，湖由底部結冰、可能整個凍透。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>解答手冊用球泡 $60\ \text{mm}^3$、每度 8.5 mm，得內徑 0.04 mm；數量級相同 ✔（答案正比於 $\sqrt{V/\ell}$，對估計值不敏感）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-8">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-8（Problem 1.8）· p.6 · 即 115 級上學期期中 第 2 題、114 級上學期期中 第 1 題（考卷只考 (a)(c)）</span></div>
+    <h4>線膨脹：鋼橋、雙金屬片、$\beta=\alpha_x+\alpha_y+\alpha_z$</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-8">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-8"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p class="original-subhead"><strong>課本原文（Schroeder Problem 1.8）</strong></p><p>For a solid, we also define the <strong>linear thermal expansion coefficient</strong>, $\alpha$, as the fractional increase in length per degree: $$\alpha\equiv\frac{\Delta L/L}{\Delta T}.$$</p><p>(a) For steel, $\alpha$ is $1.1\times10^{-5}\ \text{K}^{-1}$. Estimate the total variation in length of a 1-km steel bridge between a cold winter night and a hot summer day.</p><p>(b) The dial thermometer in Figure 1.2 uses a coiled metal strip made of two different metals laminated together. Explain how this works.</p><p>(c) Prove that the volume thermal expansion coefficient of a solid is equal to the sum of its linear expansion coefficients in the three directions: $\beta=\alpha_x+\alpha_y+\alpha_z$. (So for an isotropic solid, which expands the same in all directions, $\beta=3\alpha$.)</p><p class="original-subhead"><strong>考卷原文（115 級上學期期中第 2 題；114 級上學期期中第 1 題同一題）</strong></p><p>[10pts] For a solid, the linear thermal expansion coefficient $\alpha$ is defined as the fractional change in length per degree: $$\alpha=\frac{\Delta L/L}{\Delta T}$$</p><p>(a) For steel, $\alpha$ is $1.1\times10^{-5}\text{K}^{-1}$. Estimate the total variation in length of a 1-km steel bridge between a cold winter night and a hot summer day. (5pts)</p><p>(b) Prove that the volume thermal expansion coefficient of a solid is equal to the sum of its linear expansion coefficients in the three directions: $\beta=\alpha_x+\alpha_y+\alpha_z$. (5pts)</p></div>
+<p class="original-caption">Schroeder 習題 1-8（Problem 1.8）· p.6 · 即 115 級上學期期中 第 2 題、114 級上學期期中 第 1 題（考卷只考 (a)(c)）</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>對固體也定義<strong>線膨脹係數</strong> $\alpha$：每升高一度長度增加的比例，$\alpha\equiv\frac{\Delta L/L}{\Delta T}$。(a) 鋼的 $\alpha$ 是 $1.1\times10^{-5}\ \text{K}^{-1}$。估計一座 1 km 長的鋼橋在寒冷冬夜與炎熱夏日之間長度變化多少。(b) Fig. 1.2 的指針溫度計用兩種不同金屬貼合而成的螺旋金屬片，說明它的原理。(c) 證明固體的體膨脹係數等於三個方向線膨脹係數的和：$\beta=\alpha_x+\alpha_y+\alpha_z$（所以各方向膨脹相同的各向同性固體 $\beta=3\alpha$）。</p><p>考卷版本（115 級期中第 2 題、114 級期中第 1 題，同一題，10 分）：只有 (a)（5 分）與 (c)（5 分，考卷上編為 (b)）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>鋼的線膨脹係數</td><td>$\alpha=1.1\times10^{-5}\ \text{K}^{-1}$</td><td>(a)「鋼的 $\alpha$ 是 $1.1\times10^{-5}\ \text{K}^{-1}$」</td></tr>
+          <tr><td>橋長</td><td>$L=1\ \text{km}=1000\ \text{m}$</td><td>(a)「1 km 長的鋼橋」</td></tr>
+          <tr><td>溫差</td><td>$\Delta T\approx25\ \text{K}$（自己估計：台灣冬夜 $10^\circ\text{C}$、夏日 $35^\circ\text{C}$）</td><td>(a)「寒冷冬夜與炎熱夏日之間」——題目要「估計」，溫差自己定</td></tr>
+          <tr><td>(b) 雙金屬片</td><td>兩金屬 $\alpha$ 不同、貼合在一起</td><td>(b)「兩種不同金屬貼合而成」</td></tr>
+          <tr><td>(c) 長方體</td><td>$V=L_xL_yL_z$，各方向 $\alpha_x,\alpha_y,\alpha_z$</td><td>(c)「三個方向的線膨脹係數」</td></tr>
+          <tr><td>(c) 變化很小</td><td>$\alpha\Delta T\ll1$，可略去二次項</td><td>$\alpha\sim10^{-5}\ \text{K}^{-1}$，定義中的 $\Delta$ 應理解為無窮小</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 鋼橋的長度變化；(b) 雙金屬片溫度計的原理；(c) 證明 $\beta=\alpha_x+\alpha_y+\alpha_z$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>題目給的是「每度的長度變化比例」，<b>所以</b>把定義移項成 $\Delta L=\alpha L\Delta T$ 直接代入；溫差是估計值，答案只要數量級，並說明溫差不同時怎麼變。</p>
+      <p>(b) <b>因為</b>兩片金屬貼在一起、受熱時伸長量不同，<b>所以</b>只能彎曲（伸長多的那片在外側）；捲成螺旋時彎曲變成轉動，帶動指針。</p>
+      <p>(c) <b>因為</b>體積是三個邊長的乘積，<b>所以</b>先寫出升溫後的體積 $L_x(1+\alpha_x\Delta T)L_y(1+\alpha_y\Delta T)L_z(1+\alpha_z\Delta T)$，展開後略去 $(\Delta T)^2$ 以上的小量，與 $\beta$ 的定義比較。也可以用微分的乘積法則，兩種寫法等價。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-8-s1" data-sym="alpha,Llen">
+        <span class="step-title">(a) 把定義移項</span>
+        $$\alpha=\frac{\Delta L/L}{\Delta T}\ \Longrightarrow\ \Delta L=\alpha\,L\,\Delta T$$
+        <p class="sub">代入 $\alpha=1.1\times10^{-5}\ \text{K}^{-1}$、$L=1000\ \text{m}$（題目）、$\Delta T=25\ \text{K}$（台灣冬夜到夏日的估計）：</p>
+        $$\Delta L=(1.1\times10^{-5}\ \text{K}^{-1})(1000\ \text{m})(25\ \text{K})=0.275\ \text{m}\approx28\ \text{cm}$$
+      </div>
+      <div class="step" data-step="sc-1-8-s2">
+        <span class="step-title">(a) 溫差估計不同時</span>
+        <p>$\Delta L$ 正比於 $\Delta T$，每 1 K 是 1.1 cm：115 級期中一份滿分答案卷取 $\Delta T=15\ \text{K}$ 得 16.5 cm；解答手冊取溫帶 $-30\to+40^\circ\text{C}$（70 K）得 77 cm。都是「數十公分」——橋上必須留伸縮縫。</p>
+      </div>
+      <div class="step" data-step="sc-1-8-s3">
+        <span class="step-title">(b) 雙金屬片</span>
+        <p>兩種金屬（例如黃銅 $\alpha\approx1.9\times10^{-5}$、鋼 $1.1\times10^{-5}\ \text{K}^{-1}$）貼合。升溫時黃銅要伸長得多、鋼伸長得少，但兩片黏在一起長度必須一致，於是整條片彎曲，伸長多的黃銅在彎曲的外側。把這條片捲成螺旋，升溫時螺旋捲得更緊（或更鬆），中心轉一個角度，帶動指針；角度近似正比於溫度變化。</p>
+      </div>
+      <div class="step" data-step="sc-1-8-s4" data-sym="beta,V">
+        <span class="step-title">(c) 升溫後的體積</span>
+        <p>取邊長 $L_x,L_y,L_z$ 的長方體，$V=L_xL_yL_z$。每個方向 $L_i\to L_i+\Delta L_i=L_i(1+\alpha_i\Delta T)$（由 $\alpha$ 的定義），所以</p>
+        $$V+\Delta V=L_xL_yL_z(1+\alpha_x\Delta T)(1+\alpha_y\Delta T)(1+\alpha_z\Delta T)$$
+        <p>展開三個括號：</p>
+        $$\begin{aligned}&(1+\alpha_x\Delta T)(1+\alpha_y\Delta T)(1+\alpha_z\Delta T)\\&=1+(\alpha_x+\alpha_y+\alpha_z)\Delta T\\&\quad+(\alpha_x\alpha_y+\alpha_y\alpha_z+\alpha_z\alpha_x)(\Delta T)^2\\&\quad+\alpha_x\alpha_y\alpha_z(\Delta T)^3\end{aligned}$$
+      </div>
+      <div class="step" data-step="sc-1-8-s5">
+        <span class="step-title">(c) 略去高次小量，比較定義</span>
+        <p>$\alpha_i\Delta T\sim10^{-5}\times10=10^{-4}$，平方是 $10^{-8}$，可略（定義中的 $\Delta T$ 本來就應取無窮小）：</p>
+        $$V+\Delta V\approx V\,[1+(\alpha_x+\alpha_y+\alpha_z)\Delta T]\ \Longrightarrow\ \frac{\Delta V}{V}=(\alpha_x+\alpha_y+\alpha_z)\Delta T$$
+        <p class="sub">代入 $\beta$ 的定義 $\beta=\dfrac{\Delta V/V}{\Delta T}$：</p>
+        $$\beta=\alpha_x+\alpha_y+\alpha_z$$
+        <p>幾何意義（上方圖解）：$\Delta V$ 是貼在三個面上的三塊薄板 $\Delta L_x\,L_yL_z+\Delta L_y\,L_xL_z+\Delta L_z\,L_xL_y$，略去的是邊上與角上的細條。各向同性時 $\alpha_x=\alpha_y=\alpha_z=\alpha$，$\beta=3\alpha$。</p>
+      </div>
+      <div class="step" data-step="sc-1-8-s6">
+        <span class="step-title">(c) 另一種寫法：微分</span>
+        <p>$\alpha_i=\dfrac1{L_i}\dfrac{dL_i}{dT}$、$\beta=\dfrac1V\dfrac{dV}{dT}$（定壓），用乘積法則：</p>
+        $$\begin{aligned}\beta&=\frac1{L_xL_yL_z}\Big(\frac{dL_x}{dT}L_yL_z+L_x\frac{dL_y}{dT}L_z\\&\qquad+L_xL_y\frac{dL_z}{dT}\Big)\\&=\alpha_x+\alpha_y+\alpha_z\end{aligned}$$
+        <p>（等價於 $\ln V=\ln L_x+\ln L_y+\ln L_z$ 兩邊對 $T$ 微分。）</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\Delta L=\alpha L\Delta T\approx0.3\ \text{m}$（取 $\Delta T=25\ \text{K}$；溫帶 70 K 時約 0.8 m）；(b) 兩金屬膨脹量不同使貼合的片彎曲，螺旋轉動帶動指針；(c) $\Delta V/V=(\alpha_x+\alpha_y+\alpha_z)\Delta T$，故 $\beta=\alpha_x+\alpha_y+\alpha_z$，各向同性 $\beta=3\alpha$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(a) 比例 $\Delta L/L=2.75\times10^{-4}$，遠小於 1，線性近似成立 ✔。(c) 鋼的 $\beta=3.3\times10^{-5}\ \text{K}^{-1}$，比水銀的 $1.8\times10^{-4}$ 小約 5 倍——固體比液體難膨脹，合理 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-01a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>鋼捲尺量鋁棒、鋁環套鋼軸</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-01a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>鋼的 $\alpha_{\text{s}}=1.1\times10^{-5}\ \text{K}^{-1}$，鋁的 $\alpha_{\text{Al}}=2.3\times10^{-5}\ \text{K}^{-1}$。(a) 一把鋼捲尺在 $20^\circ\text{C}$ 校正準確；一根鋁棒在 $20^\circ\text{C}$ 時長 1.000 m。兩者一起放到 $40^\circ\text{C}$ 後，用捲尺量鋁棒，讀數是多少？讀數多了還是少了多少 mm？(b) $20^\circ\text{C}$ 時，鋁環內徑 99.95 mm，鋼軸直徑 100.00 mm。只加熱鋁環，要升高多少度才套得進去？若把環與軸一起加熱，又要加熱到幾度？(c) 為什麼加熱鋁環時「洞」會變大而不是變小？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>線膨脹係數</td><td>$\alpha_{\text{s}}=1.1\times10^{-5}$，$\alpha_{\text{Al}}=2.3\times10^{-5}\ \text{K}^{-1}$</td><td>題目第一句</td></tr>
+          <tr><td>(a) 捲尺校正溫度</td><td>$20^\circ\text{C}$ 時刻度準確</td><td>「在 $20^\circ\text{C}$ 校正準確」</td></tr>
+          <tr><td>(a) 鋁棒原長</td><td>$L_0=1.000\ \text{m}$（$20^\circ\text{C}$）</td><td>「在 $20^\circ\text{C}$ 時長 1.000 m」</td></tr>
+          <tr><td>(a) 溫差</td><td>$\Delta T=40-20=20\ \text{K}$</td><td>「一起放到 $40^\circ\text{C}$」：兩者同溫（同時升溫）</td></tr>
+          <tr><td>(b) 尺寸</td><td>環內徑 $d_{\text{Al}}=99.95\ \text{mm}$、軸 $d_{\text{s}}=100.00\ \text{mm}$</td><td>(b)「$20^\circ\text{C}$ 時……」</td></tr>
+          <tr><td>(b) 套進去的條件</td><td>環內徑 $\ge$ 軸直徑</td><td>「才套得進去」</td></tr>
+          <tr><td>近似</td><td>$\alpha\Delta T\ll1$，線性</td><td>$\alpha\sim10^{-5}$，$\Delta T$ 數十 K</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $40^\circ\text{C}$ 時的讀數與誤差；(b) 只熱環、環軸一起熱所需的溫度；(c) 洞為什麼變大。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) 不能只算鋁棒的伸長：<b>因為</b>量具本身也膨脹了，捲尺上「1 m」那一段在 $40^\circ\text{C}$ 時實際長度變成 $1\ \text{m}\times(1+\alpha_{\text{s}}\Delta T)$，<b>所以</b>讀數＝鋁棒真長 ÷ 捲尺一單位的真長，結果由兩種材料 $\alpha$ 的<strong>差</strong>決定。</p>
+      <p>(b) <b>因為</b>只熱鋁環時軸不變，<b>所以</b>令 $d_{\text{Al}}(1+\alpha_{\text{Al}}\Delta T)=d_{\text{s}}$；一起加熱時軸也變粗，<b>所以</b>令兩邊的膨脹後尺寸相等，只有在 $\alpha_{\text{Al}}\gt\alpha_{\text{s}}$ 時才有解。(c) 用「均勻放大」的觀點：均勻膨脹就是整個形狀（包括洞）按比例放大。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-01a-s1" data-sym="alpha,Llen">
+        <span class="step-title">(a) 兩者在 40°C 的真長</span>
+        $$L_{\text{Al}}=L_0(1+\alpha_{\text{Al}}\Delta T),\qquad \ell_{\text{單位}}=(1\ \text{m})(1+\alpha_{\text{s}}\Delta T)$$
+        <p class="sub">代入 $L_0=1.000\ \text{m}$、$\Delta T=20\ \text{K}$、兩個 $\alpha$（題目）：</p>
+        $$L_{\text{Al}}=1.000\,(1+2.3\times10^{-5}\times20)\ \text{m}=1.000\,46\ \text{m}$$
+        $$\ell_{\text{單位}}=(1+1.1\times10^{-5}\times20)\ \text{m}=1.000\,22\ \text{m}$$
+      </div>
+      <div class="step" data-step="t1-self-01a-s2">
+        <span class="step-title">(a) 讀數＝真長 ÷ 刻度單位的真長</span>
+        $$\text{讀數}=\frac{L_{\text{Al}}}{\ell_{\text{單位}}}\ \text{m}=\frac{1+\alpha_{\text{Al}}\Delta T}{1+\alpha_{\text{s}}\Delta T}\ \text{m}\approx[1+(\alpha_{\text{Al}}-\alpha_{\text{s}})\Delta T]\ \text{m}$$
+        <p class="sub">代入步驟 1 的兩個值（或直接代 $\alpha_{\text{Al}}-\alpha_{\text{s}}=1.2\times10^{-5}\ \text{K}^{-1}$、$\Delta T=20\ \text{K}$）：</p>
+        $$\text{讀數}=\frac{1.000\,46}{1.000\,22}\ \text{m}=1.000\,24\ \text{m}$$
+        <p>讀數比 $20^\circ\text{C}$ 時多 0.24 mm。注意：鋁棒其實伸長了 0.46 mm，但捲尺自己也伸長 0.22 mm，「看起來」只多 0.24 mm。若捲尺也是鋁做的，讀數會一直是 1.000 m——用同材料的尺量不出熱膨脹。</p>
+      </div>
+      <div class="step" data-step="t1-self-01a-s3">
+        <span class="step-title">(b) 只加熱鋁環</span>
+        $$d_{\text{Al}}(1+\alpha_{\text{Al}}\Delta T)=d_{\text{s}}\ \Longrightarrow\ \Delta T=\frac{d_{\text{s}}-d_{\text{Al}}}{\alpha_{\text{Al}}\,d_{\text{Al}}}$$
+        <p class="sub">代入 $d_{\text{s}}-d_{\text{Al}}=0.05\ \text{mm}$、$d_{\text{Al}}=99.95\ \text{mm}$、$\alpha_{\text{Al}}=2.3\times10^{-5}\ \text{K}^{-1}$（題目）：</p>
+        $$\Delta T=\frac{0.05\ \text{mm}}{(2.3\times10^{-5}\ \text{K}^{-1})(99.95\ \text{mm})}=21.7\ \text{K}$$
+        <p>鋁環加熱到約 $20+21.7=41.7^\circ\text{C}$ 就套得進去。</p>
+      </div>
+      <div class="step" data-step="t1-self-01a-s4">
+        <span class="step-title">(b) 環與軸一起加熱</span>
+        $$d_{\text{Al}}(1+\alpha_{\text{Al}}\Delta T)=d_{\text{s}}(1+\alpha_{\text{s}}\Delta T)\ \Longrightarrow\ \Delta T=\frac{d_{\text{s}}-d_{\text{Al}}}{\alpha_{\text{Al}}d_{\text{Al}}-\alpha_{\text{s}}d_{\text{s}}}$$
+        <p class="sub">代入同樣的數值與 $\alpha_{\text{s}}=1.1\times10^{-5}\ \text{K}^{-1}$、$d_{\text{s}}=100.00\ \text{mm}$：</p>
+        $$\Delta T=\frac{0.05}{2.3\times10^{-5}(99.95)-1.1\times10^{-5}(100.00)}\ \text{K}=\frac{0.05}{1.199\times10^{-3}}\ \text{K}=41.7\ \text{K}$$
+        <p>要加熱到約 $61.7^\circ\text{C}$——差不多是只熱環的兩倍溫升，因為軸也在變粗，只靠兩者 $\alpha$ 的差在追。若環是鋼、軸是鋁（$\alpha_{\text{環}}\lt\alpha_{\text{軸}}$），一起加熱永遠套不進去，反而要一起<strong>冷卻</strong>。</p>
+      </div>
+      <div class="step" data-step="t1-self-01a-s5">
+        <span class="step-title">(c) 洞為什麼變大</span>
+        <p>均勻（各向同性）膨脹時，材料中任兩點的距離都乘上同一個 $1+\alpha\Delta T$，等於整個物體照相放大。想像洞裡原本塞了一塊同材料的圓片：它和環一起膨脹、彼此仍密合，圓片變大，所以洞也變大。洞的直徑就像一段「材料中的長度」，同樣用 $\alpha_{\text{Al}}$ 膨脹——這正是步驟 3 直接用 $d_{\text{Al}}(1+\alpha_{\text{Al}}\Delta T)$ 的理由。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 讀數 1.00024 m，多 0.24 mm（$\approx(\alpha_{\text{Al}}-\alpha_{\text{s}})\Delta T\times1\ \text{m}$）；(b) 只熱環升 21.7 K（約 $42^\circ\text{C}$）；一起熱升 41.7 K（約 $62^\circ\text{C}$）；(c) 均勻膨脹是整體等比例放大，洞的尺寸也按 $\alpha_{\text{Al}}$ 放大。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(a) 近似式 $1.2\times10^{-5}\times20=2.4\times10^{-4}$ 與精確比值 $1.00024$ 相同 ✔。(b) 代回 $\Delta T=41.7\ \text{K}$：環 $99.95\times1.000959=100.046\ \text{mm}$、軸 $100.00\times1.000459=100.046\ \text{mm}$，相等 ✔</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-01b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>用水做的溫度計會讀出什麼？</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-01b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>假想一支「水溫度計」：把水裝進玻璃泡（玻璃膨脹忽略），在 $0^\circ\text{C}$ 與 $100^\circ\text{C}$（用 kelvin 標準溫度計定出）標上 0 與 100，中間依水柱體積等分。水的 $\beta(T)$ 用通過習題 1.7 三個數據的二次式近似：$\beta(0^\circ\text{C})=-0.68\times10^{-4}$、$\beta(4^\circ\text{C})=0$、$\beta(100^\circ\text{C})=7.5\times10^{-4}\ \text{K}^{-1}$。(a) 求這個二次式。(b) 真實溫度 $50^\circ\text{C}$ 時，水溫度計讀數 $\theta$ 是多少？(c) 水溫度計在哪兩個真實溫度讀數都是 0？$4^\circ\text{C}$ 時讀多少？這支溫度計能用嗎？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>三個 $\beta$ 數據</td><td>$(0,-6.8\times10^{-5})$、$(4,0)$、$(100,7.5\times10^{-4})$</td><td>題目（來自習題 1.7(b)）；$T$ 以 $^\circ\text{C}$ 計（溫差用 °C 即可）</td></tr>
+          <tr><td>$\beta$ 的形式</td><td>$\beta(T)=c_0+c_1T+c_2T^2$</td><td>「用通過三個數據的<b>二次式</b>近似」</td></tr>
+          <tr><td>刻度</td><td>$\theta$ 與水的體積成線性，$\theta(0)=0$、$\theta(100)=100$</td><td>「標上 0 與 100，中間依水柱體積等分」</td></tr>
+          <tr><td>玻璃</td><td>不膨脹</td><td>「玻璃膨脹忽略」</td></tr>
+          <tr><td>體積變化小</td><td>$\int\beta\,dT\ll1$，$V(T)\approx V_0(1+\int_0^T\beta\,dT')$</td><td>題目沒寫；$\beta\sim10^{-4}$，100 K 內總變化約 5%（自己判斷）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $c_0,c_1,c_2$；(b) $\theta(50^\circ\text{C})$；(c) 讀數為 0 的兩個溫度、$\theta(4^\circ\text{C})$，並判斷能否當溫度計。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $\beta$ 隨溫度變，$\Delta V=\beta V\Delta T$ 只對小 $\Delta T$ 成立，<b>所以</b>要把定義寫成微分 $dV/V=\beta\,dT$ 再積分；體積變化只有幾個百分比，可以用 $V\approx V_0(1+I(T))$，$I(T)=\int_0^T\beta\,dT'$。</p>
+      <p><b>因為</b>刻度是「依體積等分」，讀數 $\theta$ 與 $V$ 成線性，<b>所以</b> $\theta=100\,I(T)/I(100)$。(c) <b>因為</b> $\beta$ 在 $4^\circ\text{C}$ 以下為負，$V$ 先減後增、在 $4^\circ\text{C}$ 有最小值，<b>所以</b>會有兩個溫度對應同一個體積，令 $I(T)=0$ 求第二個根。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-01b-s1" data-sym="beta">
+        <span class="step-title">(a) 解二次式的係數</span>
+        <p class="sub">代入三個數據（題目）：</p>
+        $$\begin{aligned}T=0:&\quad c_0=-6.8\times10^{-5}\\T=4:&\quad c_0+4c_1+16c_2=0\\T=100:&\quad c_0+100c_1+10^4c_2=7.5\times10^{-4}\end{aligned}$$
+        <p>第二式得 $c_1=1.7\times10^{-5}-4c_2$，代入第三式：$-6.8\times10^{-5}+1.7\times10^{-3}-400c_2+10^4c_2=7.5\times10^{-4}$，</p>
+        $$9600\,c_2=-8.82\times10^{-4}\ \Longrightarrow\ c_2=-9.19\times10^{-8},\quad c_1=1.737\times10^{-5}$$
+        $$\beta(T)=-6.8\times10^{-5}+1.737\times10^{-5}\,T-9.19\times10^{-8}\,T^2\quad(\text{K}^{-1},\ T\text{ 以 }^\circ\text{C})$$
+      </div>
+      <div class="step" data-step="t1-self-01b-s2" data-sym="V">
+        <span class="step-title">體積：把 $dV/V=\beta\,dT$ 積分</span>
+        $$\ln\frac{V}{V_0}=\int_0^T\beta\,dT'\equiv I(T)\ \Longrightarrow\ V\approx V_0\,[1+I(T)]$$
+        $$I(T)=c_0T+\frac{c_1}2T^2+\frac{c_2}3T^3$$
+        <p class="sub">代入 $T=100$、$T=50$ 與步驟 1 的係數：</p>
+        $$\begin{aligned}I(100)&=-6.8\times10^{-3}+0.0869-0.0306\\&=0.0494\\I(50)&=-3.4\times10^{-3}+0.0217-0.0038\\&=0.0145\end{aligned}$$
+      </div>
+      <div class="step" data-step="t1-self-01b-s3">
+        <span class="step-title">(b) 50°C 的讀數</span>
+        <p>讀數與 $V$ 線性，且 $\theta(0)=0$、$\theta(100)=100$：</p>
+        $$\theta=100\times\frac{V-V_0}{V(100)-V_0}=100\times\frac{I(T)}{I(100)}$$
+        <p class="sub">代入 $I(50)=0.0145$、$I(100)=0.0494$（步驟 2）：</p>
+        $$\theta(50^\circ\text{C})=100\times\frac{0.0145}{0.0494}=29.3$$
+        <p>真實 $50^\circ\text{C}$ 時水溫度計只讀到 29.3「度」：因為水在低溫幾乎不膨脹、高溫才膨脹得多，等分刻度把大部分格子留給了高溫段。</p>
+      </div>
+      <div class="step" data-step="t1-self-01b-s4">
+        <span class="step-title">(c) 讀數為 0 的兩個溫度</span>
+        <p>$\theta=0$ ⟺ $I(T)=0$。除了 $T=0$，另一個根滿足 $c_0+\frac{c_1}2T+\frac{c_2}3T^2=0$：</p>
+        $$-6.8\times10^{-5}+8.684\times10^{-6}\,T-3.0625\times10^{-8}\,T^2=0$$
+        <p>兩邊乘 $-1$ 寫成 $pT^2-qT+r=0$，$p=3.0625\times10^{-8}$、$q=8.684\times10^{-6}$、$r=6.8\times10^{-5}$，二次公式取小的根。先算根號：</p>
+        $$\begin{aligned}q^2&=(8.684\times10^{-6})^2\\&=7.541\times10^{-11}\\4pr&=4(3.0625\times10^{-8})(6.8\times10^{-5})\\&=8.33\times10^{-12}\\\sqrt{q^2-4pr}&=8.190\times10^{-6}\end{aligned}$$
+        $$\begin{aligned}T&=\frac{q-\sqrt{q^2-4pr}}{2p}\\&=\frac{(8.684-8.190)\times10^{-6}}{2(3.0625\times10^{-8})}=8.06^\circ\text{C}\end{aligned}$$
+        <p class="sub">再代 $T=4$ 求最低點的讀數：$I(4)=-2.72\times10^{-4}+1.39\times10^{-4}-2.0\times10^{-6}=-1.35\times10^{-4}$，</p>
+        $$\theta(4^\circ\text{C})=100\times\frac{-1.35\times10^{-4}}{0.0494}=-0.27$$
+      </div>
+      <div class="step" data-step="t1-self-01b-s5">
+        <span class="step-title">(c) 判斷</span>
+        <p>真實 $0^\circ\text{C}$ 與 $8.06^\circ\text{C}$ 讀數都是 0，$4^\circ\text{C}$ 讀 $-0.27$：讀數不是溫度的單調函數，在 $0$–$8^\circ\text{C}$ 間一個讀數對應兩個溫度，這段完全不能用；即使在高溫段可用，它和水銀溫度計也差很多（50°C 讀 29.3）。這說明本節的話：「不同物質的溫度計在 0 與 100 之間不必一致」——所以需要一個不依賴物質的溫標（第 3 章的熱力學溫度；實用上用低密度氣體溫度計逼近）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\beta=-6.8\times10^{-5}+1.737\times10^{-5}T-9.19\times10^{-8}T^2\ \text{K}^{-1}$；(b) $\theta(50^\circ\text{C})=29.3$；(c) $0^\circ\text{C}$ 與 $8.06^\circ\text{C}$ 都讀 0，$4^\circ\text{C}$ 讀 $-0.27$；讀數不單調，不能當溫度計（至少在 $0$–$8^\circ\text{C}$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$\beta(T)$ 的根：$4^\circ\text{C}$ 與 $185^\circ\text{C}$（超出範圍），所以 $0$–$100^\circ\text{C}$ 內只在 $4^\circ\text{C}$ 變號，$V$ 的最小值在 $4^\circ\text{C}$ ✔。二次式在 $20^\circ\text{C}$ 給 $2.4\times10^{-4}$，實際 $2.1\times10^{-4}\ \text{K}^{-1}$，模型誤差約 15%，但不影響「不單調」的結論 ✔</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>溫度的操作定義：溫度計量到的；理論定義：接觸夠久後相同的量＝自發放出能量的傾向（高溫給、低溫收）。</li>
+    <li>熱平衡（交換能量）、力學平衡（交換體積）、擴散平衡（交換粒子）；達到平衡所需時間是鬆弛時間，隔熱只是把它拉長。</li>
+    <li>氣體溫度計外插到 $P\to0$ 得絕對零度 $-273.15^\circ\text{C}$；$T(\text{K})=T(^\circ\text{C})+273.15$，$T_F=\tfrac95T_C+32$，$T_R=\tfrac95T_K$。公式裡的 $T$ 一律用 K，溫差可用 °C。</li>
+    <li>$\beta=\dfrac{\Delta V/V}{\Delta T}$、$\alpha=\dfrac{\Delta L/L}{\Delta T}$；$\Delta L=\alpha L\Delta T$；$\beta=\alpha_x+\alpha_y+\alpha_z$（各向同性 $3\alpha$），證明時略去 $(\Delta T)^2$ 項（考古 115-2、114-1）。</li>
+    <li>水在 $4^\circ\text{C}$ 以下 $\beta\lt0$：湖由上往下結冰；不同物質的溫度計讀數不必一致。</li>
+  </ol>
+</div>

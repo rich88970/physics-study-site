@@ -1,0 +1,164 @@
+<h2>七、膜厚量測與本章其餘內容 <span class="pg">課本 p.183–189</span> <span class="must exam">考古 0/5</span></h2>
+
+<p class="lead">等厚條紋對厚度非常敏感：厚度改變半個波長，條紋就移動一整條。把一層薄膜的邊緣放在干涉儀下，膜上與膜外兩套條紋錯開的量，直接告訴我們膜有多厚。課本最後兩節（Stokes 關係、多光束干涉）老師沒有點名、考卷也沒出過，這裡只簡述結論。</p>
+
+<h3 id="o10-th-meas">7.1 由條紋平移量求膜厚 <span class="pg-tag">p.183–184</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">Pedrotti Figure 19–20、式 (40)</span>
+  $$d=\left(\frac{\Delta x}{x}\right)\frac{\lambda}{2}$$
+  <p>$x$：條紋間距；$\Delta x$：膜邊緣處條紋的平移量。</p>
+</div>
+
+<div class="step" data-step="o10-th-s1" data-sym="dx,t">
+  <span class="step-title">為什麼是 $\lambda/2$</span>
+  <p>干涉儀裡等效有一層空氣楔（參考鏡的像 $M'$ 與待測表面之間）。亮紋條件 $2t+\Delta_r=m\lambda$，空氣厚度改變 $\Delta t$ 時級數改變</p>
+  $$\Delta m=\frac{2\Delta t}{\lambda}$$
+  <p>級數改變 1 就是條紋移動一個間距 $x$，所以移動 $\Delta x$ 對應 $\Delta m=\Delta x/x$。膜邊緣兩側的空氣厚度差正是膜厚 $d$：</p>
+  $$\frac{\Delta x}{x}=\frac{2d}{\lambda}\ \Longrightarrow\ d=\frac{\Delta x}{x}\cdot\frac{\lambda}{2}$$
+</div>
+
+<p>單色光看不出平移是 $\Delta x$ 還是 $\Delta x+x$（多一整條）；用白光條紋（中央那條是唯一的）可以分辨。課本習題 7-26：間距 1 mm、平移 3.4 mm、546.1 nm → $d=3.4\times273=928\ \text{nm}$（書末答案）。</p>
+
+<p class="small muted">課程資料夾的 5 份期中考沒有膜厚量測題（0/5）；物理考古資料夾的 <a href="#o10-k17m4">2017 期中考第 4 題</a>是這一型，放在本節最後當練習。</p>
+
+<h3 id="o10-th-stokes">7.2 Stokes 關係（簡述）<span class="pg-tag">p.184–185</span></h3>
+
+<p>用「光路可逆」可以證明：從另一側入射的反射係數 $r'=-r$，穿透係數滿足 $tt'=1-r^2$。$r'=-r$ 就是「一次外反射、一次內反射差 $\pi$」的一般證明，也解釋了舊考卷 <a href="#o10-k07m2">2007 期中考 TM 薄膜</a>那題為什麼兩面反射永遠異號（本節最後的練習題）。</p>
+
+<h3 id="o10-th-multi">7.3 多光束干涉（簡述）<span class="pg-tag">p.185–188</span></h3>
+
+<p>反射率高時，膜裡來回很多次的光都要算，結果是 Airy 函數：穿透照度 $I_T/I_0=1/(1+F\sin^2(\delta/2))$，$F=4r^2/(1-r^2)^2$。$r$ 越大條紋越細、越銳利，這是法布立–培若干涉儀的原理（課本第 8 章）。反射率低時只取前兩道光，就回到本章的兩光束結果。逐字稿與下學期考卷都沒有出現這一部分。</p>
+
+<p class="small muted">下面兩題是物理考古資料夾的舊考卷（2017、2007 期中考），不是李孟恩課程資料夾的考卷，放在這裡當本節的練習；不算進出題頻率。</p>
+
+<div class="problem" data-kind="exam" id="o10-k17m4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2017-04-26）第 4 題（105下）</span></div>
+    <h4>干涉儀條紋平移 0.8 mm、間距 1 mm：待測物厚度 <span class="must exam">考古 0/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-k17m4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k17m4"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">「干涉儀」上方手寫的「薄膜」二字是作答者的註記。</p>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/26/2017</p><p>4. (10%) 右圖 (a) 為干涉儀量測所得的干涉條紋，圖的中間因為一物體造成條紋平移了 0.8 mm（圖 (b) 中的 Δx）。若條紋的亮紋間距為 1 mm（圖 (b) 中的 x），波長為 546.1 nm，試求圖 (a) 中央待測物的厚度為多少 nm？</p></div>
+<p class="original-caption">下學期近代光學期中考（2017-04-26）第 4 題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（10%）圖 (a) 是干涉儀量測所得的干涉條紋，圖中間因為一個物體使條紋平移了 0.8 mm（圖 (b) 的 $\Delta x$）。亮紋間距 1 mm（圖 (b) 的 $x$），波長 546.1 nm，求圖 (a) 中央待測物的厚度（nm）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>平移量</td><td>$\Delta x=0.8\ \text{mm}$</td><td>「條紋平移了 0.8 mm（圖 (b) 中的 Δx）」</td></tr>
+          <tr><td>條紋間距</td><td>$x=1\ \text{mm}$</td><td>「亮紋間距為 1 mm（圖 (b) 中的 x）」</td></tr>
+          <tr><td>波長</td><td>$\lambda=546.1\ \text{nm}$</td><td>「波長為 546.1 nm」</td></tr>
+          <tr><td>平移不到一條</td><td>$\Delta m=0.8$（不是 1.8、2.8…）</td><td>0.8 mm 小於間距 1 mm，取最小解（題目沒說，單色光有此模糊）</td></tr>
+          <tr><td>裝置</td><td>正向反射、空氣楔</td><td>和課本 Figure 19–20 相同（考卷的圖就是課本 Figure 20）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：待測物（膜）厚度 $d$，單位 nm。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>反射式干涉中光來回走兩次，厚度差 $d$ 造成光程差 $2d$，<b>所以</b>每移動一整條條紋代表厚度差 $\lambda/2$；<b>因為</b>只移動了 0.8 條，<b>所以</b> $d=0.8\times\lambda/2$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-k17m4-s1" data-sym="dx,m">
+        <span class="step-title">移動了幾條條紋</span>
+        <p class="sub">代入 $\Delta x=0.8\ \text{mm}$、$x=1\ \text{mm}$（題目）：</p>
+        $$\Delta m=\frac{\Delta x}{x}=\frac{0.8\ \text{mm}}{1\ \text{mm}}=0.8$$
+      </div>
+      <div class="step" data-step="o10-k17m4-s2" data-sym="t">
+        <span class="step-title">換算成厚度</span>
+        $$d=\Delta m\cdot\frac{\lambda}{2}$$
+        <p class="sub">代入 $\Delta m=0.8$（步驟 1）、$\lambda=546.1\ \text{nm}$（題目）：</p>
+        $$d=0.8\times\frac{546.1\ \text{nm}}{2}=218.4\ \text{nm}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$d\approx218\ \text{nm}$（若平移其實多了 $k$ 整條，則 $d=(0.8+k)\times273\ \text{nm}$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>移動 1 整條對應 273 nm，0.8 條是 218 nm ✔；與課本 7-26（3.4 條 → 928 nm）同一個式子。考卷「干涉儀」上方另有手寫的「薄膜」二字，是作答者的註記，不影響題意。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o10-k07m2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2007-04-24）第 2 題（95下）</span></div>
+    <h4>空氣中的薄膜（$n_1=1.2$）：TM 模態建設性干涉條件，分入射角討論 $\Delta_r$ <span class="must exam">考古 0/5（一般薄膜）</span></h4>
+    <button type="button" class="exam-btn" data-exam="o10-k07m2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o10-k07m2"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">考卷印的年份被手寫遮住；同冊學長姐解答頁寫「2007/4/24」，且 2007-04-24 為星期二（2016-04-24 為星期日），判定為 2007 年（推定）。配分「(20%)」被筆跡劃過但讀得出來；圈起來的 TM 與鉛筆算式是作答者的註記。</p>
+<div class="original-text" lang="en"><p>近代光學 期中考　4/24/（印的年份被手寫遮住；依同冊解答頁推定為 2007，不是原卷印的）</p><p>2. (20%) 在學習過 Chap.20 Fresnel Equations 之後，若有一薄膜結構如圖二所示，試寫出 TM 模態產生建設性干涉的條件。</p><p>（註：需將 Δp 及 Δr 完整表示出來，其中 Δr 為入射角的函數，需針對不同的入射角範圍加以討論）</p><p>（圖二：n<sub>0</sub> = 1／n<sub>1</sub> = 1.2／n<sub>0</sub> = 1）</p></div>
+<p class="original-caption">下學期近代光學期中考（2007-04-24）第 2 題</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（20%）學過第 20 章 Fresnel 方程式之後：薄膜結構如圖二（上下都是 $n_0=1$，膜 $n_1=1.2$，厚度 $t$），寫出 TM 模態產生建設性干涉的條件。$\Delta_p$ 與 $\Delta_r$ 都要完整表示，$\Delta_r$ 是入射角的函數，要針對不同的入射角範圍討論。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>折射率</td><td>$n_0=1$（上、下）、$n_1=1.2$</td><td>圖二</td></tr>
+          <tr><td>偏振</td><td>TM（電場在入射面內，p 偏振）</td><td>「TM 模態」</td></tr>
+          <tr><td>入射角</td><td>$\theta_i$ 任意，膜內折射角 $\theta_t$</td><td>「$\Delta_r$ 為入射角的函數」：不能只算正向</td></tr>
+          <tr><td>Fresnel（TM）</td><td>$r_{TM}=\dfrac{-n_t\cos\theta_i+n_i\cos\theta_t}{n_t\cos\theta_i+n_i\cos\theta_t}$</td><td>老師考卷慣用的式子（2014、2020、2022 期中考都附這一條），題目要求「學過 Chap.20 之後」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\Delta_p(\theta_i)$；各入射角範圍的 $\Delta_r$；建設性干涉條件。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> TM 光的反射係數在布魯斯特角 $\theta_p$ 會變號（相位在 0 與 $\pi$ 之間跳），<b>所以</b>「外反射一定多 $\pi$」的簡單規則不能直接用，要把上、下兩個界面的 $r_{TM}$ 正負號分別看。</p>
+      <p><b>因為</b>上下都是空氣，下表面的入射角正好是 $\theta_t$、折射角是 $\theta_i$，兩個 $r_{TM}$ 的式子只差分子正負號，<b>所以</b>會發現兩者永遠異號：不管哪個角度範圍，相對相位都是 $\pi$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o10-k07m2-s1" data-sym="Dp,tht">
+        <span class="step-title">路徑光程差</span>
+        $$\Delta_p=2n_1t\cos\theta_t,\qquad n_0\sin\theta_i=n_1\sin\theta_t$$
+        <p class="sub">代入 $n_0=1$、$n_1=1.2$（圖二）：</p>
+        $$\Delta_p=2.4\,t\sqrt{1-\frac{\sin^2\theta_i}{1.44}}$$
+      </div>
+      <div class="step" data-step="o10-k07m2-s2">
+        <span class="step-title">上表面（$1\to1.2$）的反射相位</span>
+        <p class="sub">代入 $n_i=1$、$n_t=1.2$：</p>
+        $$r_{\text{上}}=\frac{-1.2\cos\theta_i+\cos\theta_t}{1.2\cos\theta_i+\cos\theta_t}$$
+        <p>分子在 $\tan\theta_i=1.2$ 時為 0，即布魯斯特角 $\theta_p=\tan^{-1}1.2=50.2^\circ$。$\theta_i\lt\theta_p$ 時分子為負（例如正向 $-0.2$）→ 相位 $\pi$；$\theta_i>\theta_p$ 時為正 → 相位 0。</p>
+      </div>
+      <div class="step" data-step="o10-k07m2-s3">
+        <span class="step-title">下表面（$1.2\to1$）的反射相位</span>
+        <p class="sub">代入 $n_i=1.2$、$n_t=1$，入射角 $\theta_t$、折射角 $\theta_i$（下面也是空氣）：</p>
+        $$r_{\text{下}}=\frac{-\cos\theta_t+1.2\cos\theta_i}{\cos\theta_t+1.2\cos\theta_i}=-r_{\text{上}}$$
+        <p>所以 $\theta_i\lt\theta_p$（此時 $\theta_t\lt\theta_p'=\tan^{-1}(1/1.2)=39.8^\circ$）相位 0；$\theta_i>\theta_p$ 時相位 $\pi$。又 $\sin\theta_t=\sin\theta_i/1.2\lt1/1.2$，下表面不會全反射。</p>
+      </div>
+      <div class="step" data-step="o10-k07m2-s4" data-sym="Dr">
+        <span class="step-title">分範圍寫出 $\Delta_r$</span>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>入射角</th><th>上表面</th><th>下表面</th><th>$\Delta_r$</th></tr></thead>
+          <tbody>
+            <tr><td>$0\le\theta_i\lt50.2^\circ$</td><td>$\pi$</td><td>0</td><td>$+\lambda/2$</td></tr>
+            <tr><td>$\theta_i=50.2^\circ$</td><td>$r=0$</td><td>$r=0$</td><td>沒有 TM 反射光，無干涉</td></tr>
+            <tr><td>$50.2^\circ\lt\theta_i\lt90^\circ$</td><td>0</td><td>$\pi$</td><td>$-\lambda/2$（和 $+\lambda/2$ 只差一整個波長）</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o10-k07m2-s5">
+        <span class="step-title">建設性干涉條件</span>
+        $$\Delta_p+\Delta_r=m\lambda\ \Longrightarrow\ 2(1.2)\,t\cos\theta_t\pm\frac{\lambda}{2}=m\lambda$$
+        <p>兩個範圍都可以寫成同一式（把 $m$ 重新編號）：</p>
+        $$2.4\,t\sqrt{1-\frac{\sin^2\theta_i}{1.44}}=\left(m-\tfrac12\right)\lambda,\qquad \theta_i\neq50.2^\circ$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\Delta_p=2n_1t\cos\theta_t=2.4t\sqrt{1-\sin^2\theta_i/1.44}$；$\theta_i\lt50.2^\circ$ 時 $\Delta_r=+\lambda/2$，$\theta_i>50.2^\circ$ 時 $\Delta_r=-\lambda/2$，在 $\theta_p=50.2^\circ$ 沒有 TM 反射光。建設性干涉：$2.4t\cos\theta_t=(m-\tfrac12)\lambda$（$\theta_i\ne\theta_p$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p><code>tools/verify_optics_ch10.py</code> 對 $0^\circ$–$89^\circ$（跳過 $50^\circ$ 附近）逐度代 Fresnel 式，上下兩面的 $r_{TM}$ 全部異號 ✔。物理上這就是 Stokes 關係 $r'=-r$：膜的兩側是同一介質時，兩次反射永遠差 $\pi$。正向入射退化成熟悉的肥皂膜 $2n_ft+\lambda/2=m\lambda$ ✔。相位的絕對值依 $r_{TM}$ 的正負號約定而定，但兩面的「相對」相位與約定無關。考卷日期：印的年份被手寫遮住，同冊解答頁寫 2007/4/24，且 4/24 在 2007 年是星期二，所以推定為 2007 年期中考（年份是推定，不是原卷印的）。</p></div>
+  </div>
+</div>
+
+
+<div class="box key">  <span class="box-title">重點整理</span>
+  <ol>
+    <li>反射式：每移一條條紋 ⟺ 厚度差 $\lambda/2$；$d=(\Delta x/x)(\lambda/2)$。</li>
+    <li>單色光有整條的模糊，用白光條紋判斷。</li>
+    <li>$r'=-r$、$tt'=1-r^2$（Stokes）。</li>
+  </ol>
+</div>

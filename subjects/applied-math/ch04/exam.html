@@ -1,0 +1,771 @@
+<!-- 考試書寫版：每份先列完整題目，再列可直接寫在考卷上的完整作答。側欄依 data-exam-id 開啟。 -->
+
+<!-- ===== 一、常點、奇點與收斂半徑 ===== -->
+<article class="exam-item" data-exam-id="am4-sf-01a" data-group="一、常點、奇點與收斂半徑" data-title="自編：分母恆正，收斂半徑卻有限">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$(x^2-2x+5)y''+xy'-y=0$：(a) 標準式與奇點；(b) 在 $x=0$ 展開保證的收斂半徑；(c) 在 $x=1$、$x=3$ 呢？(d) 「分母恆正所以處處收斂」錯在哪？(e) 驗證 $y=x$ 是解，和 (b) 矛盾嗎？</div>
+  <div class="rote">
+    <p><b>看到</b>「$y''$ 的係數 $x^2-2x+5$」＋「在 $x=0$、$1$、$3$ 展開，保證的收斂半徑」⟹ 題型：<b>找奇點（含複數）＋收斂半徑定理</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 標準式與奇點</h5>
+      <p class="wq-step"><span class="memo">背：標準式 $y''+p(x)y'+q(x)y=0$，$p=\dfrac{Q}{P}$，$q=\dfrac{R}{P}$</span>
+        <span class="syms">$y$：未知函數；$P(x)$：$y''$ 的係數；$Q(x)$：$y'$ 的係數；$R(x)$：$y$ 的係數；$p(x)$、$q(x)$：整式除以 $P$ 之後 $y'$、$y$ 的係數</span>
+        題目的 $P=x^2-2x+5$、$Q=x$、$R=-1$，整式除以 $P$。<br>
+        $$y''+\frac{x}{x^2-2x+5}\,y'-\frac{1}{x^2-2x+5}\,y=0$$</p>
+      <p class="wq-step"><span class="memo">背：奇點＝約分後 $P(x)=0$ 的點；$ax^2+bx+c=0\Rightarrow x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$</span>
+        <span class="syms">$P(x)$：$y''$ 的係數；$a$、$b$、$c$：二次式的係數；$b^2-4ac$：判別式</span>
+        分子分母沒有公因式可以約，奇點就是 $x^2-2x+5$ 的根；代 $a=1$、$b=-2$、$c=5$。<br>
+        $x=\dfrac{2\pm\sqrt{4-20}}{2}=\dfrac{2\pm\sqrt{-16}}{2}=1\pm2i$，判別式 $\lt0$，實數點全是常點。</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 在 $x=0$ 展開保證的收斂半徑</h5>
+      <p class="wq-step"><span class="memo">背：$R\ge|x_0-x_s|$（展開點到最近奇點的距離），$|a+bi|=\sqrt{a^2+b^2}$</span>
+        <span class="syms">$R$：冪級數解的收斂半徑；$x_0$：展開點；$x_s$：奇點（可以是複數）；$|x_0-x_s|$：複數平面上兩點的距離；$a$、$b$：複數的實部、虛部</span>
+        兩個奇點 $1\pm2i$ 對實數軸對稱，到實數點的距離一樣，算 $1+2i$ 就好。<br>
+        $|0-(1+2i)|=\sqrt{1^2+2^2}=\sqrt5\approx2.24$，所以 $R\ge\sqrt5$。</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 在 $x=1$、$x=3$ 展開保證的收斂半徑</h5>
+      <p class="wq-step"><span class="memo">背：$R\ge|x_0-x_s|$（展開點到最近奇點的距離），$|a+bi|=\sqrt{a^2+b^2}$</span>
+        <span class="syms">$R$：冪級數解的收斂半徑；$x_0$：展開點；$x_s$：奇點（可以是複數）；$|x_0-x_s|$：複數平面上兩點的距離；$a$、$b$：複數的實部、虛部</span>
+        展開點換成題目給的 $x_0=1$、$x_0=3$，奇點仍是 $1\pm2i$。<br>
+        $x_0=1$：$|1-(1+2i)|=|-2i|=2$，$R\ge2$<br>
+        $x_0=3$：$|3-(1+2i)|=|2-2i|=\sqrt{2^2+2^2}=2\sqrt2\approx2.83$，$R\ge2\sqrt2$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 「分母恆正所以處處收斂」錯在哪</h5>
+      <p class="wq-step"><span class="memo">背：$\sum a_n(x-x_0)^n$ 的收斂範圍是複數平面上的圓盤 $|x-x_0|\lt R$</span>
+        <span class="syms">$a_n$：級數的係數；$x_0$：展開點；$x$：自變數（看成複數）；$R$：收斂半徑</span>
+        圓盤從 $x_0=0$ 往外長，碰到複數奇點 $1\pm2i$ 就停在半徑 $\sqrt5$；實數線上看到的只是它的一條直徑。「實數線上沒有奇點」只保證每個實數點附近都能展開，不保證同一個級數一路收斂。<br>
+        實數上的保證範圍：$-\sqrt5\lt x\lt\sqrt5$（同理 $\dfrac1{1+x^2}=\sum(-1)^nx^{2n}$ 只在 $|x|\lt1$ 收斂）</p>
+    </div>
+    <div class="wq">
+      <h5>(e) 驗證 $y=x$ 是解，和 (b) 有沒有矛盾</h5>
+      <p class="wq-step"><span class="memo">背：驗證解＝把 $y$、$y'$、$y''$ 代回原式，左邊等於 0</span>
+        <span class="syms">$y$：要驗證的函數；$y'$、$y''$：它的一階、二階導數</span>
+        $y=x$ 的級數只有一項，處處收斂；定理說的是「至少 $\sqrt5$」，個別的解可以更好，所以不矛盾。<br>
+        $y=x,\ y'=1,\ y''=0$：$(x^2-2x+5)\cdot0+x\cdot1-x=0$ ✓</p>
+    </div>
+  </div>
+  <div class="final">答：奇點 $1\pm2i$；$R\ge\sqrt5$（$x_0=0$）、$\ge2$（$x_0=1$）、$\ge2\sqrt2$（$x_0=3$）；不矛盾。</div>
+  <p class="small"><a href="#am4-sf-01a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-sf-01b" data-group="一、常點、奇點與收斂半徑" data-title="自編：哪裡用冪級數、哪裡用 Frobenius">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$x^2(x-2)^2y''+3xy'+(x-2)y=0$：(a) 奇點與分類；(b) $x=0,2,1$ 各用什麼方法；(c) 在 $x=\pm1$ 展開的保證半徑。</div>
+  <div class="rote">
+    <p><b>看到</b>「$x^2(x-2)^2y''$」＋「正則還是不正則、該用冪級數還是 Frobenius」＋「保證半徑」⟹ 題型：<b>奇點分類（常點／正則／不正則）＋收斂半徑</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 奇點與分類</h5>
+      <p class="wq-step"><span class="memo">背：$p=\dfrac{Q}{P}$，$q=\dfrac{R}{P}$，先約分；約分後分母為 0 的點是奇點</span>
+        <span class="syms">$P(x)$：$y''$ 的係數；$Q(x)$：$y'$ 的係數；$R(x)$：$y$ 的係數；$p(x)$、$q(x)$：標準式 $y''+py'+qy=0$ 的係數</span>
+        題目的 $P=x^2(x-2)^2$、$Q=3x$、$R=x-2$，兩個都和 $P$ 有公因式，一定要約分。<br>
+        $p=\dfrac{3x}{x^2(x-2)^2}=\dfrac{3}{x(x-2)^2}$，$q=\dfrac{x-2}{x^2(x-2)^2}=\dfrac{1}{x^2(x-2)}$，奇點 $x=0$、$x=2$。</p>
+      <p class="wq-step"><span class="memo">背：$x_0$ 是正則奇點 ⟺ $\displaystyle\lim_{x\to x_0}(x-x_0)p$ 與 $\displaystyle\lim_{x\to x_0}(x-x_0)^2q$ 都有限</span>
+        <span class="syms">$x_0$：要判斷的奇點；$p(x)$、$q(x)$：約分後標準式的係數</span>
+        兩個奇點分開判斷，任何一個極限發散就是不正則。<br>
+        $x_0=0$：$\lim\limits_{x\to0}xp=\lim\limits_{x\to0}\dfrac{3}{(x-2)^2}=\dfrac34$，$\lim\limits_{x\to0}x^2q=\lim\limits_{x\to0}\dfrac{1}{x-2}=-\dfrac12$ ⟹ 正則<br>
+        $x_0=2$：$\lim\limits_{x\to2}(x-2)p=\lim\limits_{x\to2}\dfrac{3}{x(x-2)}=\infty$ ⟹ 不正則（$\lim\limits_{x\to2}(x-2)^2q=0$ 有限也沒用）</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $x=0$、$2$、$1$ 各用什麼方法</h5>
+      <p class="wq-step"><span class="memo">背：常點 → 冪級數 $\sum a_n(x-x_0)^n$；正則奇點 → Frobenius $\sum a_n(x-x_0)^{n+\gamma}$；不正則奇點 → 兩者都不保證</span>
+        <span class="syms">$x_0$：展開點；$a_n$：待定係數；$n$：求和指標；$\gamma$：Frobenius 法的指標（待定的起始次方）</span>
+        直接套 (a) 的分類；$x=1$ 不是奇點，是常點。<br>
+        $x=0$：正則 → Frobenius；$x=2$：不正則 → 兩種都不保證；$x=1$：常點 → 冪級數</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 在 $x=1$、$x=-1$ 展開保證的收斂半徑</h5>
+      <p class="wq-step"><span class="memo">背：$R\ge|x_0-x_s|$（展開點到最近奇點的距離）</span>
+        <span class="syms">$R$：冪級數解的收斂半徑；$x_0$：展開點；$x_s$：奇點；$|x_0-x_s|$：兩點的距離</span>
+        奇點只有 $0$ 與 $2$，取比較近的那個。<br>
+        $x_0=1$：$R\ge\min(|1-0|,\,|1-2|)=\min(1,1)=1$<br>
+        $x_0=-1$：$R\ge\min(|-1-0|,\,|-1-2|)=\min(1,3)=1$</p>
+    </div>
+  </div>
+  <div class="final">答：$x=0$ 正則（Frobenius）、$x=2$ 不正則、$x=1$ 常點（冪級數）；$x=\pm1$ 展開都保證 $R\ge1$。</div>
+  <p class="small"><a href="#am4-sf-01b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 二、冪級數法的步驟 ===== -->
+<article class="exam-item" data-exam-id="am4-ex-1" data-group="二、冪級數法的步驟" data-title="板書：y''+ω0²y=0 的冪級數解">
+  <h3>板書例題 10/7</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-ex-1"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex test　$y''+\omega_0^2y=0$（已知 sin、cos 的組合）</p><p>令 $y=\sum_{n=0}^{\infty}a_nx^n$ 滿足原式，決定 $a_n$。</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用冪級數法解 $y''+\omega_0^2y=0$，驗證得到 $C_1\cos\omega_0x+C_2\sin\omega_0x$。</div>
+  <div class="rote">
+    <p><b>看到</b>「令 $y=\sum a_nx^n$」＋「$y''+\omega_0^2y=0$」＋「已知是 sin、cos 的組合」⟹ 題型：<b>常點的冪級數解（兩項遞迴）＋認出泰勒級數</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>求 $a_n$，並寫成 $C_1\cos\omega_0x+C_2\sin\omega_0x$</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum_{n=0}^{\infty}a_nx^n$，$y''=\displaystyle\sum_{n=2}^{\infty}n(n-1)a_nx^{n-2}=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數（在 $x_0=0$ 展開）；$a_n$：$x^n$ 項的係數（待定）；$n$：求和指標；$\omega_0$：題目的正常數</span>
+        $p=0$、$q=\omega_0^2$ 是常數，$x=0$ 是常點，可以令冪級數；$y''$ 平移 $n\to n+2$，和 $y$ 對齊成 $x^n$。<br>
+        $$\sum_{n=0}^{\infty}\big[(n+2)(n+1)a_{n+2}+\omega_0^2a_n\big]x^n=0$$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\sum_n c_nx^n=0$ 對所有 $x$ 成立 ⟹ 每個 $c_n=0$</span>
+        <span class="syms">$c_n$：合併後 $x^n$ 的總係數；$a_n$：級數係數；$\omega_0$：題目的正常數</span>
+        每個次方的係數都是零，得到遞迴；$a_0$、$a_1$ 沒有方程式限制，是兩個任意常數。<br>
+        $a_{n+2}=-\dfrac{\omega_0^2}{(n+2)(n+1)}\,a_n$</p>
+      <p class="wq-step"><span class="memo">背：遞迴依序代 $n=0,1,2,3$（偶次由 $a_0$、奇次由 $a_1$ 決定）</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$：前兩格已算出的係數；$\omega_0$：題目的正常數</span>
+        每一格用前兩格的結果。<br>
+        $a_2=-\dfrac{\omega_0^2}{2\cdot1}a_0=-\dfrac{\omega_0^2}{2!}a_0$，$a_3=-\dfrac{\omega_0^2}{3\cdot2}a_1=-\dfrac{\omega_0^2}{3!}a_1$<br>
+        $a_4=-\dfrac{\omega_0^2}{4\cdot3}\Big(-\dfrac{\omega_0^2}{2!}a_0\Big)=\dfrac{\omega_0^4}{4!}a_0$，$a_5=-\dfrac{\omega_0^2}{5\cdot4}\Big(-\dfrac{\omega_0^2}{3!}a_1\Big)=\dfrac{\omega_0^4}{5!}a_1$</p>
+      <p class="wq-step"><span class="memo">背：$\cos u=1-\dfrac{u^2}{2!}+\dfrac{u^4}{4!}-\cdots$，$\sin u=u-\dfrac{u^3}{3!}+\dfrac{u^5}{5!}-\cdots$</span>
+        <span class="syms">$u$：泰勒級數的變數（這裡 $u=\omega_0x$）</span>
+        偶次串直接是 $\cos\omega_0x$；奇次串要先提出 $\dfrac1{\omega_0}$ 才湊得成 $\sin\omega_0x$。<br>
+        $$\begin{aligned}y&=a_0\Big[1-\tfrac{(\omega_0x)^2}{2!}+\tfrac{(\omega_0x)^4}{4!}-\cdots\Big]\\&\quad+\tfrac{a_1}{\omega_0}\Big[\omega_0x-\tfrac{(\omega_0x)^3}{3!}+\tfrac{(\omega_0x)^5}{5!}-\cdots\Big]\\&=a_0\cos\omega_0x+\tfrac{a_1}{\omega_0}\sin\omega_0x\end{aligned}$$
+        $C_1=a_0$，$C_2=\dfrac{a_1}{\omega_0}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=a_0\cos\omega_0x+\dfrac{a_1}{\omega_0}\sin\omega_0x$（$C_1=a_0$、$C_2=a_1/\omega_0$）。</div>
+  <p class="small"><a href="#am4-ex-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-sf-02a" data-group="二、冪級數法的步驟" data-title="自編：y''-3y'+2y=0 的三項遞迴">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　用冪級數法解 $y''-3y'+2y=0$，$y(0)=0$、$y'(0)=1$：(a) 遞迴關係；(b) 算出 $a_0$–$a_5$，猜一般項 $a_n$ 並證明；(c) closed form，再用特徵方程式驗算。</div>
+  <div class="rote">
+    <p><b>看到</b>「用冪級數法」＋「有 $y'$ 項的常係數方程式」＋「$y(0)$、$y'(0)$」＋「猜一般項」⟹ 題型：<b>三項遞迴＋猜 $a_n$ 歸納證明＋認出 $e^{ax}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 遞迴關係</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum_{n=0}^{\infty}a_nx^n$，$y'=\displaystyle\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n$，$y''=\displaystyle\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數（在 $x_0=0$ 展開）；$a_n$：$x^n$ 項的係數；$n$：求和指標</span>
+        三個和都已平移成 $x^n$，代入 $y''-3y'+2y=0$ 合併。<br>
+        $$\sum_{n=0}^{\infty}\big[(n+2)(n+1)a_{n+2}-3(n+1)a_{n+1}+2a_n\big]x^n=0$$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\sum_n c_nx^n=0$ ⟹ 每個 $c_n=0$</span>
+        <span class="syms">$c_n$：合併後 $x^n$ 的總係數；$a_n$、$a_{n+1}$、$a_{n+2}$：相鄰三個係數</span>
+        有 $y'$ 項，所以遞迴同時含三個相鄰係數，不能拆成偶、奇兩串。<br>
+        $a_{n+2}=\dfrac{3(n+1)a_{n+1}-2a_n}{(n+2)(n+1)}$，$n\ge0$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $a_0$–$a_5$、一般項與證明</h5>
+      <p class="wq-step"><span class="memo">背：$a_0=y(0)$，$a_1=y'(0)$</span>
+        <span class="syms">$a_0$、$a_1$：級數的前兩個係數；$y(0)$、$y'(0)$：題目給的初始值</span>
+        $y(0)=\sum a_n0^n=a_0$，$y'(0)=a_1$。<br>
+        $a_0=0$，$a_1=1$</p>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{3(n+1)a_{n+1}-2a_n}{(n+2)(n+1)}$ 依序代 $n=0,1,2,3$</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_{n+1}$、$a_n$：前面已算出的兩個係數；$n$：求和指標</span>
+        每一行用上兩行的結果。<br>
+        $$\begin{aligned}a_2&=\tfrac{3\cdot1\cdot a_1-2a_0}{2\cdot1}=\tfrac32\\a_3&=\tfrac{3\cdot2\cdot a_2-2a_1}{3\cdot2}=\tfrac{9-2}{6}=\tfrac76\\a_4&=\tfrac{3\cdot3\cdot a_3-2a_2}{4\cdot3}=\tfrac{\frac{21}2-3}{12}=\tfrac58\\a_5&=\tfrac{3\cdot4\cdot a_4-2a_3}{5\cdot4}=\tfrac{\frac{15}2-\frac73}{20}=\tfrac{31}{120}\end{aligned}$$</p>
+      <p class="wq-step"><span class="memo">背：猜一般項 → 代回遞迴對所有 $n$ 成立 → 歸納法</span>
+        <span class="syms">$a_n$：猜的一般項；$n!$：$n$ 的階乘</span>
+        寫成 $\dfrac{\text{分子}}{n!}$：分子 $0,1,3,7,15,31$ 是 $2^n-1$，猜 $a_n=\dfrac{2^n-1}{n!}$；三項都化成分母 $n!$ 代回。<br>
+        $$\begin{aligned}&(n+2)(n+1)a_{n+2}-3(n+1)a_{n+1}+2a_n\\&=\tfrac{(2^{n+2}-1)-3(2^{n+1}-1)+2(2^n-1)}{n!}\\&=\tfrac{4\cdot2^n-6\cdot2^n+2\cdot2^n-1+3-2}{n!}=0\ \checkmark\end{aligned}$$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) closed form 與特徵方程式驗算</h5>
+      <p class="wq-step"><span class="memo">背：$e^u=\displaystyle\sum_{n=0}^{\infty}\frac{u^n}{n!}$</span>
+        <span class="syms">$u$：指數函數泰勒級數的變數（這裡 $u=2x$ 和 $u=x$）</span>
+        一般項拆成兩個級數，各自是一個指數函數。<br>
+        $y=\displaystyle\sum_{n=0}^{\infty}\frac{(2x)^n}{n!}-\sum_{n=0}^{\infty}\frac{x^n}{n!}=e^{2x}-e^x$</p>
+      <p class="wq-step"><span class="memo">背：$y''+By'+Cy=0$ ⟹ $\lambda^2+B\lambda+C=0$，$y=c_1e^{\lambda_1x}+c_2e^{\lambda_2x}$</span>
+        <span class="syms">$B$、$C$：常係數；$\lambda_1$、$\lambda_2$：特徵根；$c_1$、$c_2$：由初始條件決定的常數</span>
+        $B=-3$、$C=2$，再代題目的 $y(0)=0$、$y'(0)=1$。<br>
+        $\lambda^2-3\lambda+2=(\lambda-1)(\lambda-2)=0$；$c_1+c_2=0$、$c_1+2c_2=1$ ⟹ $c_1=-1$、$c_2=1$，$y=e^{2x}-e^x$ ✓</p>
+    </div>
+  </div>
+  <div class="final">答：$a_n=\dfrac{2^n-1}{n!}$，$y=e^{2x}-e^x$。</div>
+  <p class="small"><a href="#am4-sf-02a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-sf-02b" data-group="二、冪級數法的步驟" data-title="自編：(1+x)y'=py 的二項式級數">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$(1+x)y'=py$，$y(0)=1$：(a) 遞迴與 $a_n$；(b) $p=3$；(c) $p=\tfrac12$ 前四項與收斂半徑；(d) 估計 $\sqrt{1.2}$。</div>
+  <div class="rote">
+    <p><b>看到</b>「一階 $(1+x)y'=py$」＋「令 $y=\sum a_nx^n$」＋「$p=3$ 截斷、$p=\tfrac12$ 求半徑」＋「估計 $\sqrt{1.2}$」⟹ 題型：<b>一格接一格的遞迴＝二項式級數</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 遞迴關係與 $a_n$ 的一般式</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum_{n=0}^{\infty}a_nx^n$，$y'=\displaystyle\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n$，$xy'=\displaystyle\sum_{n=0}^{\infty}na_nx^n$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a_n$：$x^n$ 項的係數；$n$：求和指標；$p$：題目的常數</span>
+        $(1+x)y'=y'+xy'$，第一個平移、第二個本來就是 $x^n$，移項合併。<br>
+        $$\sum_{n=0}^{\infty}\big[(n+1)a_{n+1}+na_n-pa_n\big]x^n=0$$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\sum_n c_nx^n=0$ ⟹ 每個 $c_n=0$</span>
+        <span class="syms">$c_n$：合併後 $x^n$ 的總係數；$a_n$、$a_{n+1}$：相鄰兩個係數；$p$：題目的常數</span>
+        一階方程式只有 $a_{n+1}$ 和 $a_n$，是一條鏈。<br>
+        $a_{n+1}=\dfrac{p-n}{n+1}\,a_n$</p>
+      <p class="wq-step"><span class="memo">背：$a_0=y(0)$；$\dbinom pn=\dfrac{p(p-1)(p-2)\cdots(p-n+1)}{n!}$，$(1+x)^p=\displaystyle\sum_{n=0}^{\infty}\dbinom pnx^n$</span>
+        <span class="syms">$a_0$：常數項；$y(0)$：題目給的初始值；$\binom pn$：推廣的二項式係數；$p$：題目的常數</span>
+        題目 $y(0)=1$ 所以 $a_0=1$，遞迴從 $a_0$ 連乘下去。<br>
+        $a_n=\dfrac{p(p-1)(p-2)\cdots(p-n+1)}{n!}=\dbinom pn$，$y=(1+x)^p$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) $p=3$ 的解</h5>
+      <p class="wq-step"><span class="memo">背：$a_{n+1}=\dfrac{p-n}{n+1}\,a_n$，分子 $p-n=0$ 之後全為零</span>
+        <span class="syms">$a_{n+1}$：要求的係數；$a_n$：前一個係數；$p$：題目的常數（這裡 $p=3$）</span>
+        代 $p=3$、$a_0=1$，到 $n=3$ 分子變 0，級數截斷。<br>
+        $a_1=\tfrac31\cdot1=3$，$a_2=\tfrac22\cdot3=3$，$a_3=\tfrac13\cdot3=1$，$a_4=\tfrac{3-3}{4}\cdot1=0$<br>
+        $y=1+3x+3x^2+x^3=(1+x)^3$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $p=\tfrac12$ 的前四項與收斂半徑</h5>
+      <p class="wq-step"><span class="memo">背：$a_{n+1}=\dfrac{p-n}{n+1}\,a_n$</span>
+        <span class="syms">$a_{n+1}$：要求的係數；$a_n$：前一個係數；$p$：題目的常數（這裡 $p=\tfrac12$）</span>
+        代 $p=\tfrac12$、$a_0=1$，$\tfrac12-n$ 永遠不為零，不會截斷。<br>
+        $a_1=\tfrac12$，$a_2=\dfrac{\frac12-1}{2}\cdot\dfrac12=-\dfrac18$，$a_3=\dfrac{\frac12-2}{3}\cdot\Big(-\dfrac18\Big)=\dfrac1{16}$<br>
+        $y=1+\tfrac12x-\tfrac18x^2+\tfrac1{16}x^3-\cdots$</p>
+      <p class="wq-step"><span class="memo">背：比值審斂 $\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}x^{n+1}}{a_nx^n}\right|\lt1$ 就收斂</span>
+        <span class="syms">$a_n$、$a_{n+1}$：相鄰兩個係數；$x$：自變數；$n$：求和指標</span>
+        比值直接用遞迴的 $\dfrac{p-n}{n+1}$。<br>
+        $\left|\dfrac{\frac12-n}{n+1}\right||x|\xrightarrow{n\to\infty}|x|\lt1$ ⟹ $R=1$</p>
+      <p class="wq-step"><span class="memo">背：$R\ge|x_0-x_s|$（展開點到最近奇點的距離）</span>
+        <span class="syms">$R$：收斂半徑；$x_0$：展開點；$x_s$：奇點</span>
+        標準式 $y'-\dfrac{p}{1+x}y=0$ 的奇點是 $x=-1$，定理在這裡剛好取等號。<br>
+        $|0-(-1)|=1=R$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 估計 $\sqrt{1.2}$</h5>
+      <p class="wq-step"><span class="memo">背：$(1+x)^{1/2}\approx1+\tfrac12x-\tfrac18x^2+\tfrac1{16}x^3$（$|x|\lt1$）</span>
+        <span class="syms">$x$：自變數，必須在收斂範圍 $|x|\lt1$ 內</span>
+        $\sqrt{1.2}=(1+0.2)^{1/2}=y(0.2)$，$x=0.2$ 在 $|x|\lt1$ 內，代 (c) 的四項。<br>
+        $y(0.2)\approx1+\tfrac12(0.2)-\tfrac18(0.2)^2+\tfrac1{16}(0.2)^3=1+0.1-0.005+0.0005=1.0955$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=(1+x)^p$；$p=3$ 截斷成 $(1+x)^3$；$R=1$；$\sqrt{1.2}\approx1.0955$。</div>
+  <p class="small"><a href="#am4-sf-02b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 三、變係數方程式 ===== -->
+<article class="exam-item" data-exam-id="am4-ex-2" data-group="三、變係數方程式" data-title="板書：y''-xy'+y=0">
+  <h3>板書例題 10/7</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-ex-2"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex Solve　$y''-xy'+y=0$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用冪級數法解 $y''-xy'+y=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y''-xy'+y=0$」＋「係數是多項式、沒有初始條件」⟹ 題型：<b>常點冪級數解（跳兩格遞迴，一串截斷）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>遞迴關係與兩個線性獨立解</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum_{n=0}^{\infty}a_nx^n$，$y''=\displaystyle\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n$，$xy'=\displaystyle\sum_{n=0}^{\infty}na_nx^n$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數（在 $x_0=0$ 展開）；$a_n$：$x^n$ 項的係數；$n$：求和指標</span>
+        $p=-x$、$q=1$ 是多項式，$x=0$ 是常點；$xy'$ 本來就是 $x^n$，只有 $y''$ 要平移。<br>
+        $$\sum_{n=0}^{\infty}\big[(n+2)(n+1)a_{n+2}-na_n+a_n\big]x^n=0$$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\sum_n c_nx^n=0$ ⟹ 每個 $c_n=0$</span>
+        <span class="syms">$c_n$：合併後 $x^n$ 的總係數；$a_n$、$a_{n+2}$：差兩格的係數</span>
+        遞迴只連 $a_{n+2}$ 與 $a_n$，偶、奇兩串各自獨立。<br>
+        $a_{n+2}=\dfrac{n-1}{(n+2)(n+1)}\,a_n$</p>
+      <p class="wq-step"><span class="memo">背：遞迴分子 $=0$ 的那一格之後，同一串全為零（截斷）</span>
+        <span class="syms">$a_n$：級數係數；$n-1$：遞迴的分子</span>
+        奇次串從 $a_1$ 出發，$n=1$ 時分子 $1-1=0$。<br>
+        $a_3=\dfrac{1-1}{3\cdot2}a_1=0$ ⟹ $a_5=a_7=\cdots=0$，奇次串只剩 $a_1x$</p>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{n-1}{(n+2)(n+1)}\,a_n$ 代 $n=0,2,4$</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$：前兩格的係數；$n$：偶數指標</span>
+        偶次串分子 $n-1$ 不會是零，無窮多項。<br>
+        $a_2=\dfrac{-1}{2\cdot1}a_0=-\dfrac12a_0$，$a_4=\dfrac{1}{4\cdot3}a_2=-\dfrac1{24}a_0$，$a_6=\dfrac{3}{6\cdot5}a_4=-\dfrac1{240}a_0$</p>
+      <p class="wq-step"><span class="memo">背：一般解 $y=a_0y_1+a_1y_2$（$y_1$：$a_0=1,a_1=0$；$y_2$：$a_0=0,a_1=1$）</span>
+        <span class="syms">$a_0$、$a_1$：兩個任意常數；$y_1$：偶次串；$y_2$：奇次串</span>
+        一個偶函數、一個奇函數，比值不是常數，線性獨立。<br>
+        $y_1=1-\dfrac{x^2}2-\dfrac{x^4}{24}-\dfrac{x^6}{240}-\cdots$，$y_2=x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=a_0\Big(1-\dfrac{x^2}2-\dfrac{x^4}{24}-\dfrac{x^6}{240}-\cdots\Big)+a_1x$。</div>
+  <p class="small"><a href="#am4-ex-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-hw-1" data-group="三、變係數方程式" data-title="作業 1：y''+x²y'+xy=0">
+  <h3>10/7 作業 第 1 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-hw-1"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p><b>Homework: Power Series Solution</b></p><p>1. Solve $y''+x^2y'+xy=0$.</p><p>Ans: two linear independent solution $y_1(x)$ and $y_2(x)$,</p><p>$y_1(x)=1-\frac{1}{6}x^3+\frac{1}{45}x^6-\dots$</p><p>$y_2(x)=x-\frac{1}{6}x^4+\frac{5}{252}x^7-\dots$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''+x^2y'+xy=0$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y''+x^2y'+xy=0$」＋「兩個線性獨立解（老師答案從 $1$ 和 $x$ 開始）」⟹ 題型：<b>常點冪級數解（跳三格遞迴，三條鏈）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>遞迴關係與兩個線性獨立解</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum_{n=0}^{\infty}a_nx^n$；$x^m\displaystyle\sum_n b_nx^n$ 令 $k=n+m$ 改寫成 $\displaystyle\sum_k b_{k-m}x^k$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數（在 $x_0=0$ 展開）；$a_n$：$x^n$ 項的係數；$b_n$：任一個級數的係數；$m$：乘上的 $x$ 次方；$k$：平移後的次方指標</span>
+        $x^2y'=\sum na_nx^{n+1}$、$xy=\sum a_nx^{n+1}$ 都令 $k=n+1$，從 $x^1$ 開始；$y''$ 平移成 $x^k$。<br>
+        $$\sum_{k=0}^{\infty}(k+2)(k+1)a_{k+2}x^k+\sum_{k=1}^{\infty}(k-1)a_{k-1}x^k+\sum_{k=1}^{\infty}a_{k-1}x^k=0$$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\sum_k c_kx^k=0$ ⟹ 每個 $c_k=0$（$x^0$ 單獨寫）</span>
+        <span class="syms">$c_k$：合併後 $x^k$ 的總係數；$a_{k+2}$、$a_{k-1}$：差三格的係數</span>
+        $x^0$ 只有 $y''$ 的項；$k\ge1$ 時 $(k-1)a_{k-1}+a_{k-1}=ka_{k-1}$。<br>
+        $x^0$：$2a_2=0\Rightarrow a_2=0$，所以 $a_5=a_8=\cdots=0$<br>
+        $x^k$：$(k+2)(k+1)a_{k+2}+ka_{k-1}=0\Rightarrow a_{k+2}=-\dfrac{k}{(k+2)(k+1)}a_{k-1}$</p>
+      <p class="wq-step"><span class="memo">背：$y_1$ 取 $a_0=1$、$a_1=0$；$y_2$ 取 $a_0=0$、$a_1=1$</span>
+        <span class="syms">$y_1$、$y_2$：兩個線性獨立解；$a_0$、$a_1$：級數的前兩個係數；$a_{k+2}$、$a_{k-1}$：遞迴裡差三格的係數</span>
+        $y_1$ 用 $k=1,4$；$y_2$ 用 $k=2,5$。<br>
+        $y_1$：$a_3=-\dfrac{1}{3\cdot2}a_0=-\dfrac16$，$a_6=-\dfrac{4}{6\cdot5}a_3=-\dfrac2{15}\Big(-\dfrac16\Big)=\dfrac1{45}$<br>
+        $y_2$：$a_4=-\dfrac{2}{4\cdot3}a_1=-\dfrac16$，$a_7=-\dfrac{5}{7\cdot6}a_4=-\dfrac5{42}\Big(-\dfrac16\Big)=\dfrac5{252}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=a_0\Big(1-\tfrac16x^3+\tfrac1{45}x^6-\cdots\Big)+a_1\Big(x-\tfrac16x^4+\tfrac5{252}x^7-\cdots\Big)$。</div>
+  <p class="small"><a href="#am4-hw-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-k114-1" data-group="三、變係數方程式" data-title="考古 114上期末 1：y''-x²y'-xy=0">
+  <h3>114 上期末 第 1 題（25%）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k114-1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (25%) Solve $y''-x^2y'-xy=0$ by the power series method. You only need to find the first three nonzero terms of each of the two linearly independent series solutions.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用冪級數法解 $y''-x^2y'-xy=0$，兩個線性獨立解各寫前三個非零項。</div>
+  <div class="rote">
+    <p><b>看到</b>「by the power series method」＋「$y''-x^2y'-xy=0$」＋「每個解前三個非零項」⟹ 題型：<b>常點冪級數解（跳三格遞迴，和作業 1 只差正負號）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>兩個線性獨立解各前三個非零項</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum_{n=0}^{\infty}a_nx^n$；$x^m\displaystyle\sum_n b_nx^n$ 令 $k=n+m$ 改寫成 $\displaystyle\sum_k b_{k-m}x^k$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數（在 $x_0=0$ 展開）；$a_n$：$x^n$ 項的係數；$b_n$：任一個級數的係數；$m$：乘上的 $x$ 次方；$k$：平移後的次方指標</span>
+        $x^2y'$、$xy$ 都令 $k=n+1$，從 $x^1$ 開始；$y''$ 平移成 $x^k$。<br>
+        $$\sum_{k=0}^{\infty}(k+2)(k+1)a_{k+2}x^k-\sum_{k=1}^{\infty}(k-1)a_{k-1}x^k-\sum_{k=1}^{\infty}a_{k-1}x^k=0$$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\sum_k c_kx^k=0$ ⟹ 每個 $c_k=0$（$x^0$ 單獨寫）</span>
+        <span class="syms">$c_k$：合併後 $x^k$ 的總係數；$a_{k+2}$、$a_{k-1}$：差三格的係數</span>
+        $x^0$ 只有 $2a_2$；$k\ge1$ 時兩個負項合併成 $-ka_{k-1}$。<br>
+        $x^0$：$2a_2=0\Rightarrow a_2=0$，所以 $a_5=a_8=\cdots=0$<br>
+        $x^k$：$(k+2)(k+1)a_{k+2}-ka_{k-1}=0\Rightarrow a_{k+2}=\dfrac{k}{(k+2)(k+1)}a_{k-1}$</p>
+      <p class="wq-step"><span class="memo">背：$a_0$ 鏈：$a_0\to a_3\to a_6$；$a_1$ 鏈：$a_1\to a_4\to a_7$</span>
+        <span class="syms">$a_0$、$a_1$：兩個任意常數；$a_{k+2}$、$a_{k-1}$：遞迴裡差三格的係數</span>
+        只要三個非零項，每條鏈算兩步（$k=1,4$ 與 $k=2,5$）。<br>
+        $a_3=\dfrac{1}{3\cdot2}a_0=\dfrac16a_0$，$a_6=\dfrac{4}{6\cdot5}a_3=\dfrac2{15}\cdot\dfrac16a_0=\dfrac1{45}a_0$<br>
+        $a_4=\dfrac{2}{4\cdot3}a_1=\dfrac16a_1$，$a_7=\dfrac{5}{7\cdot6}a_4=\dfrac5{42}\cdot\dfrac16a_1=\dfrac5{252}a_1$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=a_0\Big(1+\tfrac16x^3+\tfrac1{45}x^6+\cdots\Big)+a_1\Big(x+\tfrac16x^4+\tfrac5{252}x^7+\cdots\Big)$。</div>
+  <p class="small"><a href="#am4-k114-1">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-hw-2" data-group="三、變係數方程式" data-title="作業 2：y''+(x³+1)y'-y=0">
+  <h3>10/7 作業 第 2 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-hw-2"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>2. Solve $y''+(x^3+1)y'-y=0$.</p><p>提示: 兩個線性獨立解對應於待定係數 $a_0=1,a_1=0$ 以及 $a_0=0,a_1=1$</p><p>Ans: two linear independent solution $y_1(x)$ and $y_2(x)$,</p><p>$y_1(x)=1+\frac{1}{2}x^2-\frac{1}{6}x^3+\frac{1}{12}x^4-\dots$</p><p>$y_2(x)=x-\frac{1}{2}x^2+\frac{1}{3}x^3-\frac{1}{8}x^4-\dots$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''+(x^3+1)y'-y=0$（提示：取 $a_0=1,a_1=0$ 與 $a_0=0,a_1=1$）。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(x^3+1)y'$」＋「提示：$a_0=1,a_1=0$ 與 $a_0=0,a_1=1$」⟹ 題型：<b>常點冪級數解（四項遞迴，兩組初值分開算）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>遞迴關係</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum a_nx^n$，$y''\to(k+2)(k+1)a_{k+2}$，$y'\to(k+1)a_{k+1}$，$x^my^{(j)}$ 的下標往回移 $m$ 格</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a_n$：$x^n$ 項的係數；$k$：比較係數的次方；$m$：乘上的 $x$ 次方；$y^{(j)}$：$j$ 階導數</span>
+        $x^3y'=\sum na_nx^{n+2}$ 令 $k=n+2$，得 $(k-2)a_{k-2}$，從 $x^2$ 才出現；$-y\to-a_k$。<br>
+        $x^k$ 的係數：$(k+2)(k+1)a_{k+2}+(k+1)a_{k+1}+(k-2)a_{k-2}-a_k$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\sum_k c_kx^k=0$ ⟹ 每個 $c_k=0$（低次方單獨寫）</span>
+        <span class="syms">$c_k$：$x^k$ 的總係數；$a_{k-2}$、$a_k$、$a_{k+1}$、$a_{k+2}$：一個方程式裡的四個係數</span>
+        $x^0$、$x^1$ 時 $x^3y'$ 還沒出現。<br>
+        $x^0$：$2a_2+a_1-a_0=0$；$x^1$：$6a_3+2a_2-a_1=0$<br>
+        $x^k$（$k\ge2$）：$a_{k+2}=\dfrac{a_k-(k+1)a_{k+1}-(k-2)a_{k-2}}{(k+2)(k+1)}$</p>
+    </div>
+    <div class="wq">
+      <h5>$y_1$：$a_0=1$、$a_1=0$</h5>
+      <p class="wq-step"><span class="memo">背：$a_2=\dfrac{a_0-a_1}{2}$，$a_3=\dfrac{a_1-2a_2}{6}$，$a_{k+2}=\dfrac{a_k-(k+1)a_{k+1}-(k-2)a_{k-2}}{(k+2)(k+1)}$</span>
+        <span class="syms">$a_0$、$a_1$：題目提示的初值；$a_2$、$a_3$、$a_4$：依序算出的係數；$k$：比較係數的次方</span>
+        代提示的 $(1,0)$，每一行用前面的值；$a_4$ 用 $k=2$。<br>
+        $a_2=\dfrac{1-0}{2}=\dfrac12$，$a_3=\dfrac{0-1}{6}=-\dfrac16$，$a_4=\dfrac{a_2-3a_3-0\cdot a_0}{12}=\dfrac{\frac12+\frac12}{12}=\dfrac1{12}$</p>
+    </div>
+    <div class="wq">
+      <h5>$y_2$：$a_0=0$、$a_1=1$</h5>
+      <p class="wq-step"><span class="memo">背：$a_2=\dfrac{a_0-a_1}{2}$，$a_3=\dfrac{a_1-2a_2}{6}$，$a_{k+2}=\dfrac{a_k-(k+1)a_{k+1}-(k-2)a_{k-2}}{(k+2)(k+1)}$</span>
+        <span class="syms">$a_0$、$a_1$：題目提示的初值；$a_2$、$a_3$、$a_4$：依序算出的係數；$k$：比較係數的次方</span>
+        代提示的 $(0,1)$。<br>
+        $a_2=\dfrac{0-1}{2}=-\dfrac12$，$a_3=\dfrac{1-2(-\frac12)}{6}=\dfrac13$，$a_4=\dfrac{-\frac12-3\cdot\frac13-0\cdot a_0}{12}=-\dfrac18$</p>
+    </div>
+  </div>
+  <div class="final">答：$y_1=1+\tfrac12x^2-\tfrac16x^3+\tfrac1{12}x^4-\cdots$，$y_2=x-\tfrac12x^2+\tfrac13x^3-\tfrac18x^4-\cdots$，$y=a_0y_1+a_1y_2$。</div>
+  <p class="small"><a href="#am4-hw-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-k112-3" data-group="三、變係數方程式" data-title="考古 112上期末 3：y''-4xy'+(4x²-2)y=0">
+  <h3>112 上期末 第 3 題（8 分）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k112-3"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">卷頭印「應用數學期中考 (2024. 01.)」，時間與考古題網站的分類都是 112 學年上學期期末考。</p>
+<div class="original-text" lang="en"><p>3. (8 points) Solve the general solution of $y''-4xy'+(4x^2-2)y=0$ by the power series method.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　用冪級數法求 $y''-4xy'+(4x^2-2)y=0$ 的一般解。</div>
+  <div class="rote">
+    <p><b>看到</b>「by the power series method」＋「$(4x^2-2)y$」＋「general solution」⟹ 題型：<b>常點冪級數解（三項遞迴但同奇偶）＋認出 $e^{x^2}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>一般解</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum a_nx^n$，$y''\to(n+2)(n+1)a_{n+2}$，$xy'\to na_n$，$x^2y\to a_{n-2}$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數（在 $x_0=0$ 展開）；$a_n$：$x^n$ 項的係數；$n$：比較係數的次方</span>
+        四項各自寫成 $x^n$ 的係數；$4x^2y$ 從 $x^2$ 才出現。<br>
+        $x^n$ 的係數：$(n+2)(n+1)a_{n+2}-4na_n+4a_{n-2}-2a_n$</p>
+      <p class="wq-step"><span class="memo">背：$\displaystyle\sum_n c_nx^n=0$ ⟹ 每個 $c_n=0$（低次方單獨寫）</span>
+        <span class="syms">$c_n$：$x^n$ 的總係數；$a_{n-2}$、$a_n$、$a_{n+2}$：下標同奇偶的三個係數</span>
+        三個下標同奇偶，偶次、奇次仍是兩條獨立的鏈。<br>
+        $x^0$：$2a_2-2a_0=0\Rightarrow a_2=a_0$；$x^1$：$6a_3-4a_1-2a_1=0\Rightarrow a_3=a_1$<br>
+        $x^n$（$n\ge2$）：$a_{n+2}=\dfrac{(4n+2)a_n-4a_{n-2}}{(n+2)(n+1)}$</p>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{(4n+2)a_n-4a_{n-2}}{(n+2)(n+1)}$ 代 $n=2,4$ 與 $n=3,5$</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$、$a_{n-2}$：同一條鏈前兩個係數；$a_0$、$a_1$：任意常數</span>
+        偶次鏈從 $a_0$、奇次鏈從 $a_1$ 出發。<br>
+        $a_4=\dfrac{10a_2-4a_0}{12}=\dfrac12a_0$，$a_6=\dfrac{18a_4-4a_2}{30}=\dfrac{9a_0-4a_0}{30}=\dfrac16a_0$<br>
+        $a_5=\dfrac{14a_3-4a_1}{20}=\dfrac12a_1$，$a_7=\dfrac{22a_5-4a_3}{42}=\dfrac{11a_1-4a_1}{42}=\dfrac16a_1$</p>
+      <p class="wq-step"><span class="memo">背：$e^u=\displaystyle\sum_{k=0}^{\infty}\frac{u^k}{k!}$</span>
+        <span class="syms">$u$：泰勒級數的變數（這裡 $u=x^2$）；$k$：求和指標</span>
+        係數 $1,1,\tfrac12,\tfrac16$ 是 $\tfrac1{k!}$，猜 $a_{2k}=\tfrac1{k!}$（$a_0=1$），代回 $n=2k$ 的遞迴兩邊相等。<br>
+        左 $=\dfrac{(2k+2)(2k+1)}{(k+1)!}=\dfrac{2(2k+1)}{k!}$，右 $=\dfrac{8k+2}{k!}-\dfrac{4}{(k-1)!}=\dfrac{2(2k+1)}{k!}$ ✓<br>
+        偶次串 $=\sum\dfrac{x^{2k}}{k!}=e^{x^2}$，奇次串同理 $=xe^{x^2}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=a_0\Big(1+x^2+\tfrac{x^4}{2!}+\cdots\Big)+a_1\Big(x+x^3+\tfrac{x^5}{2!}+\cdots\Big)=(a_0+a_1x)e^{x^2}$。</div>
+  <p class="small"><a href="#am4-k112-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-sf-03a" data-group="三、變係數方程式" data-title="自編：y''-2xy'+2λy=0 的多項式解">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　$y''-2xy'+2\lambda y=0$：(a) 遞迴；(b) 何時有多項式解；(c) $\lambda=3$ 的多項式（最高次係數 8）與另一解；(d) $\lambda=2.5$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y''-2xy'+2\lambda y=0$」＋「何時有多項式解」＋「$\lambda=3$、$\lambda=2.5$」⟹ 題型：<b>從遞迴分子判斷級數截斷（Hermite 型）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 遞迴關係</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum a_nx^n$，$y''\to(n+2)(n+1)a_{n+2}$，$xy'\to na_n$；每個 $x^n$ 係數為 0</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a_n$：$x^n$ 項的係數；$n$：比較係數的次方；$\lambda$：題目的常數</span>
+        $-2xy'$ 不用平移，三項都是 $x^n$。<br>
+        $(n+2)(n+1)a_{n+2}-2na_n+2\lambda a_n=0\Rightarrow a_{n+2}=\dfrac{2(n-\lambda)}{(n+2)(n+1)}a_n$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 何時有多項式解、次數</h5>
+      <p class="wq-step"><span class="memo">背：鏈在 $a_N$ 之後全為零 ⟺ $a_{N+2}=0$ 而 $a_N\ne0$ ⟺ 遞迴分子 $=0$</span>
+        <span class="syms">$a_N$：最後一個不為零的係數；$N$：它的下標（非負整數）；$\lambda$：題目的常數</span>
+        分子 $2(N-\lambda)=0$ 要在某個整數 $N$ 發生。<br>
+        $\lambda=N=0,1,2,\dots$ ⟹ 和 $\lambda$ 同奇偶的那串截斷，得 $\lambda$ 次多項式；另一串分子永不為零，不截斷</p>
+    </div>
+    <div class="wq">
+      <h5>(c) $\lambda=3$ 的多項式（最高次係數 8）與另一解</h5>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{2(n-\lambda)}{(n+2)(n+1)}a_n$</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$：前兩格的係數；$\lambda$：題目的常數（這裡 $\lambda=3$）</span>
+        $\lambda=3$ 是奇數，奇次串（從 $a_1$）截斷；再用題目要求的最高次係數 8 決定 $a_1$。<br>
+        $a_3=\dfrac{2(1-3)}{3\cdot2}a_1=-\dfrac23a_1$，$a_5=\dfrac{2(3-3)}{5\cdot4}a_3=0$<br>
+        $-\dfrac23a_1=8\Rightarrow a_1=-12$，$y=8x^3-12x$</p>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{2(n-\lambda)}{(n+2)(n+1)}a_n$（偶次串）</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$：前兩格的係數；$a_0$：偶次串的任意常數；$\lambda=3$</span>
+        偶數 $n$ 時 $n-3\ne0$，不會截斷，另一解是無窮級數。<br>
+        $a_2=\dfrac{2(0-3)}{2\cdot1}a_0=-3a_0$，$a_4=\dfrac{2(2-3)}{4\cdot3}a_2=\dfrac12a_0$，$a_6=\dfrac{2(4-3)}{6\cdot5}a_4=\dfrac1{30}a_0$<br>
+        $y_1=1-3x^2+\tfrac12x^4+\tfrac1{30}x^6+\cdots$，不是多項式</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $\lambda=2.5$</h5>
+      <p class="wq-step"><span class="memo">背：截斷 ⟺ 遞迴分子 $2(n-\lambda)=0$ 對某個整數 $n$</span>
+        <span class="syms">$n$：係數下標（整數）；$\lambda$：題目的常數（這裡 $2.5$）</span>
+        $2.5$ 不是整數，任何整數 $n$ 都不會讓分子變零。<br>
+        $n-2.5\ne0$ ⟹ 兩串都不截斷，沒有多項式解</p>
+    </div>
+  </div>
+  <div class="final">答：$\lambda$ 為非負整數時有 $\lambda$ 次多項式解；$\lambda=3$：$8x^3-12x$，另一解非多項式；$\lambda=2.5$ 無多項式解。</div>
+  <p class="small"><a href="#am4-sf-03a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-sf-03b" data-group="三、變係數方程式" data-title="自編：y''=xy 的級數與 y(1)">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''=xy$，$y(0)=1$、$y'(0)=0$：(a) 遞迴關係，哪些係數為零；(b) 非零係數的一般式；(c) 收斂半徑；(d) $y(1)$ 到小數點後第 5 位，取幾項就夠。</div>
+  <div class="rote">
+    <p><b>看到</b>「$y''=xy$」＋「$y(0)$、$y'(0)$」＋「收斂半徑」＋「$y(1)$ 到第 5 位」⟹ 題型：<b>跳三格遞迴（Airy 型）＋比值審斂＋截斷誤差</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 遞迴關係與零係數</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum a_nx^n$，$y''\to(n+2)(n+1)a_{n+2}$，$xy=\displaystyle\sum_{n\ge1}a_{n-1}x^n$；每個 $x^n$ 係數為 0</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a_n$：$x^n$ 項的係數；$n$：比較係數的次方</span>
+        $xy$ 往上推一格，從 $x^1$ 開始，$x^0$ 只有 $2a_2$。<br>
+        $x^0$：$2a_2=0$；$x^n$（$n\ge1$）：$a_{n+2}=\dfrac{a_{n-1}}{(n+2)(n+1)}$</p>
+      <p class="wq-step"><span class="memo">背：$a_0=y(0)$，$a_1=y'(0)$</span>
+        <span class="syms">$a_0$、$a_1$：級數的前兩個係數；$y(0)$、$y'(0)$：題目給的初始值</span>
+        遞迴跳三格，三條鏈各從 $a_0$、$a_1$、$a_2$ 出發。<br>
+        $a_0=1$、$a_1=0$、$a_2=0$ ⟹ $a_1=a_4=a_7=\cdots=0$，$a_2=a_5=a_8=\cdots=0$，只剩 $a_0,a_3,a_6,\dots$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 非零係數的一般式</h5>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{a_{n-1}}{(n+2)(n+1)}$ 代 $n=1,4,7,10$</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_{n-1}$：前三格的係數；$k$：第幾個非零係數</span>
+        每走一步分母多乘兩個相鄰整數。<br>
+        $a_3=\dfrac1{3\cdot2}=\dfrac16$，$a_6=\dfrac{a_3}{6\cdot5}=\dfrac1{180}$，$a_9=\dfrac{a_6}{9\cdot8}=\dfrac1{12960}$，$a_{12}=\dfrac{a_9}{12\cdot11}=\dfrac1{1710720}$<br>
+        $a_{3k}=\dfrac{1}{(2\cdot3)(5\cdot6)(8\cdot9)\cdots\big((3k-1)(3k)\big)}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 收斂半徑</h5>
+      <p class="wq-step"><span class="memo">背：比值審斂 $\displaystyle\lim\left|\frac{\text{下一項}}{\text{這一項}}\right|\lt1$ 就收斂</span>
+        <span class="syms">$a_{3k}x^{3k}$、$a_{3k+3}x^{3k+3}$：相鄰兩個非零項；$k$：項的編號；$x$：自變數</span>
+        相鄰非零項差三個次方，比值用遞迴的分母。<br>
+        $\left|\dfrac{a_{3k+3}x^{3k+3}}{a_{3k}x^{3k}}\right|=\dfrac{|x|^3}{(3k+3)(3k+2)}\xrightarrow{k\to\infty}0\lt1$ ⟹ $R=\infty$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $y(1)$ 到小數第 5 位與項數</h5>
+      <p class="wq-step"><span class="memo">背：截掉的尾巴 $\lt$ 下一項 ×（略大於 1 的因子）</span>
+        <span class="syms">$y(1)$：解在 $x=1$ 的值；$a_{3k}$：(b) 的非零係數</span>
+        代 $x=1$，把 (b) 的係數相加；第 5 項 $a_{12}=5.8\times10^{-7}$，之後每項再小 $210$ 倍以上。<br>
+        $y(1)=1+0.1666667+0.0055556+0.0000772+0.0000006+\cdots=1.17230$<br>
+        前 4 項和 $1.172299$，誤差 $\lt10^{-6}$，取 4 個非零項就夠</p>
+    </div>
+  </div>
+  <div class="final">答：$y=1+\tfrac{x^3}6+\tfrac{x^6}{180}+\tfrac{x^9}{12960}+\cdots$，$R=\infty$，$y(1)\approx1.17230$。</div>
+  <p class="small"><a href="#am4-sf-03b">回到正文詳解</a></p>
+</article>
+
+<!-- ===== 四、初始條件、邊界條件與非齊次項 ===== -->
+<article class="exam-item" data-exam-id="am4-hw-3" data-group="四、初始條件、邊界條件與非齊次項" data-title="作業 3：(x-1)y''-xy'+y=0">
+  <h3>10/7 作業 第 3 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-hw-3"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>3. Solve $(x-1)y''-xy'+y=0,\ y(0)=-2,\ y'(0)=6$.</p><p>Ans: $y=-2\left(1+\frac{1}{2}x^2+\frac{1}{6}x^3+\dots\right)+6x$</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(x-1)y''-xy'+y=0$，$y(0)=-2$、$y'(0)=6$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(x-1)y''$」＋「$y(0)$、$y'(0)$」⟹ 題型：<b>初值問題的冪級數解（$x=0$ 是常點，三項遞迴，認出 $e^x$）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>滿足初始條件的解</h5>
+      <p class="wq-step"><span class="memo">背：$P(x_0)\ne0$ ⟹ $x_0$ 是常點；$a_0=y(0)$，$a_1=y'(0)$</span>
+        <span class="syms">$P(x)$：$y''$ 的係數；$x_0$：展開點；$a_0$、$a_1$：級數的前兩個係數；$y(0)$、$y'(0)$：題目給的初始值</span>
+        $P=x-1$ 在 $x=0$ 為 $-1\ne0$，可以令 $y=\sum a_nx^n$；係數先用一般的 $a_0$、$a_1$ 算，最後再代。<br>
+        $a_0=-2$，$a_1=6$</p>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum a_nx^n$；$xy''\to(k+1)k\,a_{k+1}$，$y''\to(k+2)(k+1)a_{k+2}$，$xy'\to ka_k$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a_n$：$x^n$ 項的係數；$k$：比較係數的次方</span>
+        $(x-1)y''=xy''-y''$，$xy''=\sum n(n-1)a_nx^{n-1}$ 令 $k=n-1$；四項合併後令係數為 0。<br>
+        $(k+1)k\,a_{k+1}-(k+2)(k+1)a_{k+2}-ka_k+a_k=0$<br>
+        $a_{k+2}=\dfrac{k(k+1)a_{k+1}-(k-1)a_k}{(k+2)(k+1)}$</p>
+      <p class="wq-step"><span class="memo">背：$a_{k+2}=\dfrac{k(k+1)a_{k+1}-(k-1)a_k}{(k+2)(k+1)}$ 代 $k=0,1,2$</span>
+        <span class="syms">$a_{k+2}$：要求的係數；$a_{k+1}$、$a_k$：前兩個係數；$a_0$：任意常數</span>
+        $k=0$ 時 $a_1$ 乘上 $0$，之後的係數只跟 $a_0$ 有關。<br>
+        $a_2=\dfrac{0+a_0}{2}=\dfrac{a_0}2$，$a_3=\dfrac{2a_2-0}{6}=\dfrac{a_0}6$，$a_4=\dfrac{6a_3-a_2}{12}=\dfrac{a_0}{24}$<br>
+        規律 $a_k=\dfrac{a_0}{k!}$（$k\ge2$），代回遞迴：$\dfrac{\frac{a_0}{k!}[k-(k-1)]}{(k+2)(k+1)}=\dfrac{a_0}{(k+2)!}$ ✓</p>
+      <p class="wq-step"><span class="memo">背：$e^x=\displaystyle\sum_{k=0}^{\infty}\frac{x^k}{k!}=1+x+\frac{x^2}{2!}+\cdots$</span>
+        <span class="syms">$x$：自變數；$k$：求和指標；$a_0$、$a_1$：由初始條件決定的常數</span>
+        $a_0$ 那串少了 $x$ 項，所以是 $e^x-x$；再代 $a_0=-2$、$a_1=6$。<br>
+        $y=a_0\Big(1+\dfrac{x^2}{2!}+\dfrac{x^3}{3!}+\cdots\Big)+a_1x=a_0(e^x-x)+a_1x$<br>
+        $y=-2\Big(1+\tfrac12x^2+\tfrac16x^3+\cdots\Big)+6x=-2(e^x-x)+6x=8x-2e^x$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=-2\Big(1+\tfrac12x^2+\tfrac16x^3+\cdots\Big)+6x=8x-2e^x$。</div>
+  <p class="small"><a href="#am4-hw-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-k113-2" data-group="四、初始條件、邊界條件與非齊次項" data-title="考古 113上期末 2：y''-(1+x)y=0">
+  <h3>113 上期末 第 2 題（25 分）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k113-2"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">113 學年上學期期末考（掃描檔，網站依原卷轉寫）。</p>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>2. Find the power series solution of $y''-(1+x)y=0$ with $y(0)=1$ and $y'(0)=0$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　求 $y''-(1+x)y=0$，$y(0)=1$、$y'(0)=0$ 的冪級數解。</div>
+  <div class="rote">
+    <p><b>看到</b>「power series solution」＋「$y''-(1+x)y=0$」＋「$y(0)=1$、$y'(0)=0$」⟹ 題型：<b>初值問題的冪級數解（三項遞迴，直接代數字）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>冪級數解</h5>
+      <p class="wq-step"><span class="memo">背：$a_0=y(0)$，$a_1=y'(0)$</span>
+        <span class="syms">$a_0$、$a_1$：級數的前兩個係數；$y(0)$、$y'(0)$：題目給的初始值</span>
+        係數是多項式，$x=0$ 是常點，令 $y=\sum a_nx^n$。<br>
+        $a_0=1$，$a_1=0$</p>
+      <p class="wq-step"><span class="memo">背：$y''\to(n+2)(n+1)a_{n+2}$，$y\to a_n$，$xy=\displaystyle\sum_{n\ge1}a_{n-1}x^n$；每個 $x^n$ 係數為 0</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a_n$：$x^n$ 項的係數；$n$：比較係數的次方</span>
+        $(1+x)y=y+xy$，$xy$ 從 $x^1$ 開始，所以 $x^0$ 單獨寫。<br>
+        $x^0$：$2a_2-a_0=0\Rightarrow a_2=\dfrac{a_0}2$<br>
+        $x^n$（$n\ge1$）：$a_{n+2}=\dfrac{a_n+a_{n-1}}{(n+2)(n+1)}$</p>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=\dfrac{a_n+a_{n-1}}{(n+2)(n+1)}$ 代 $n=1,2,3,4$</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$、$a_{n-1}$：前面已算出的兩個係數</span>
+        初值已給定，直接代數字一項一項算。<br>
+        $a_2=\tfrac12$，$a_3=\dfrac{a_1+a_0}{3\cdot2}=\dfrac16$，$a_4=\dfrac{a_2+a_1}{4\cdot3}=\dfrac{1/2}{12}=\dfrac1{24}$<br>
+        $a_5=\dfrac{a_3+a_2}{5\cdot4}=\dfrac{\frac16+\frac12}{20}=\dfrac1{30}$，$a_6=\dfrac{a_4+a_3}{6\cdot5}=\dfrac{\frac1{24}+\frac16}{30}=\dfrac1{144}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=1+\dfrac{x^2}{2}+\dfrac{x^3}{6}+\dfrac{x^4}{24}+\dfrac{x^5}{30}+\dfrac{x^6}{144}+\cdots$</div>
+  <p class="small"><a href="#am4-k113-2">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-k110-3" data-group="四、初始條件、邊界條件與非齊次項" data-title="考古 110上期末 3：非齊次 y''-x²y'+(x+2)y=x">
+  <h3>110 上期末 第 3 題</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k110-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>3. Solve $y''-x^2y'+(x+2)y=x$ with $y(0)=2,y'(0)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''-x^2y'+(x+2)y=x$，$y(0)=2$、$y'(0)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「係數含 $x$」＋「右邊 $=x$」＋「$y(0)$、$y'(0)$」⟹ 題型：<b>非齊次的冪級數解（右邊也比較係數）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>滿足初始條件的解</h5>
+      <p class="wq-step"><span class="memo">背：$a_0=y(0)$，$a_1=y'(0)$；右邊 $g(x)=\sum g_kx^k$，兩邊同次方係數相等</span>
+        <span class="syms">$a_0$、$a_1$：級數前兩個係數；$y(0)$、$y'(0)$：題目給的初始值；$g(x)$：右邊的函數；$g_k$：右邊 $x^k$ 的係數</span>
+        係數不是常數，不能用待定係數法；右邊 $x$ 只有 $g_1=1$，其他 $g_k=0$。<br>
+        $a_0=2$，$a_1=1$</p>
+      <p class="wq-step"><span class="memo">背：$y''\to(k+2)(k+1)a_{k+2}$，$x^2y'\to(k-1)a_{k-1}$，$xy\to a_{k-1}$，$y\to a_k$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a_n$：$x^n$ 項的係數；$k$：比較係數的次方；$\delta_{k1}$：$k=1$ 時為 1、其他為 0</span>
+        $-x^2y'$ 和 $xy$ 合併：$-(k-1)a_{k-1}+a_{k-1}=-(k-2)a_{k-1}$。<br>
+        $x^0$：$2a_2+2a_0=0$<br>
+        $x^k$（$k\ge1$）：$(k+2)(k+1)a_{k+2}-(k-2)a_{k-1}+2a_k=\delta_{k1}$</p>
+      <p class="wq-step"><span class="memo">背：$a_{k+2}=\dfrac{\delta_{k1}+(k-2)a_{k-1}-2a_k}{(k+2)(k+1)}$ 代 $k=1,2,3,4$</span>
+        <span class="syms">$a_{k+2}$：要求的係數；$a_{k-1}$、$a_k$：前面已算出的係數；$\delta_{k1}$：只在 $k=1$ 為 1</span>
+        右邊的 1 只出現在 $k=1$ 那一行。<br>
+        $a_2=-a_0=-2$，$a_3=\dfrac{1-a_0-2a_1}{6}=\dfrac{1-2-2}{6}=-\dfrac12$<br>
+        $a_4=\dfrac{0\cdot a_1-2a_2}{12}=\dfrac13$，$a_5=\dfrac{a_2-2a_3}{20}=\dfrac{-2+1}{20}=-\dfrac1{20}$，$a_6=\dfrac{2a_3-2a_4}{30}=\dfrac{-1-\frac23}{30}=-\dfrac1{18}$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=2+x-2x^2-\tfrac12x^3+\tfrac13x^4-\tfrac1{20}x^5-\tfrac1{18}x^6+\cdots$</div>
+  <p class="small"><a href="#am4-k110-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-k111-3" data-group="四、初始條件、邊界條件與非齊次項" data-title="考古 111上期末 3：(x²+1)y''-2xy'+2y=0 邊界條件">
+  <h3>111 上期末 第 3 題（10 分）</h3>
+  <div class="orig"><!-- original-question:start -->
+<section class="original-source" data-original-id="am4-k111-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>3. (10 pts) Solve $(x^2+1)y''-2xy'+2y=0$ with $y(0)=1$ and $y(1)=1$.</p></div>
+</section>
+<!-- original-question:end -->
+<strong>題目</strong>　解 $(x^2+1)y''-2xy'+2y=0$，$y(0)=1$、$y(1)=1$。</div>
+  <div class="rote">
+    <p><b>看到</b>「$(x^2+1)y''$」＋「$y(0)=1$、$y(1)=1$（第二個在 $x=1$）」⟹ 題型：<b>先求一般解再代邊界條件（兩串都截斷成多項式）</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>一般解與滿足條件的解</h5>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum a_nx^n$，$x^2y''\to n(n-1)a_n$，$y''\to(n+2)(n+1)a_{n+2}$，$xy'\to na_n$</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a_n$：$x^n$ 項的係數；$n$：比較係數的次方</span>
+        $P=x^2+1$ 在 $x=0$ 不為零，是常點；四項合併成 $x^n$ 的係數。<br>
+        $(n+2)(n+1)a_{n+2}+\big[n(n-1)-2n+2\big]a_n=0\Rightarrow a_{n+2}=-\dfrac{(n-1)(n-2)}{(n+2)(n+1)}a_n$</p>
+      <p class="wq-step"><span class="memo">背：遞迴分子 $=0$ 的那一格之後，同一串全為零（截斷）</span>
+        <span class="syms">$a_n$：級數係數；$(n-1)(n-2)$：遞迴的分子；$a_0$、$a_1$：任意常數</span>
+        分子在 $n=1$、$n=2$ 為零，兩串都截斷成多項式，在 $x=1$ 代值沒問題。<br>
+        $a_2=-\dfrac{(-1)(-2)}{2\cdot1}a_0=-a_0$，$a_4=-\dfrac{(1)(0)}{4\cdot3}a_2=0$；$a_3=-\dfrac{(0)(-1)}{3\cdot2}a_1=0$<br>
+        一般解 $y=a_0(1-x^2)+a_1x$</p>
+      <p class="wq-step"><span class="memo">背：條件代進一般解，解出常數</span>
+        <span class="syms">$y(0)$、$y(1)$：題目給的兩個條件；$a_0$、$a_1$：一般解的常數</span>
+        第二個條件在 $x=1$，不是 $y'(0)$，所以不能直接當 $a_1$。<br>
+        $y(0)=a_0=1$；$y(1)=a_0(1-1)+a_1\cdot1=1\Rightarrow a_1=1$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=1+x-x^2$。</div>
+  <p class="small"><a href="#am4-k111-3">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-sf-04a" data-group="四、初始條件、邊界條件與非齊次項" data-title="自編：條件在 x=1，在 x=1 展開">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''+(x-1)y'+y=0$，$y(1)=2$、$y'(1)=0$：(a) 為什麼在 $x=1$ 展開比在 $x=0$ 方便；(b) 令 $t=x-1$，求遞迴關係；(c) 寫出級數並認出 closed form；(d) 求 $y(1.5)$。</div>
+  <div class="rote">
+    <p><b>看到</b>「條件給在 $x=1$」＋「令 $t=x-1$」＋「認出 closed form」＋「$y(1.5)$」⟹ 題型：<b>換展開點的冪級數解＋認出 $e^{u}$</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 為什麼在 $x=1$ 展開</h5>
+      <p class="wq-step"><span class="memo">背：在 $x_0$ 展開 $y=\sum a_n(x-x_0)^n$ 時，$a_0=y(x_0)$，$a_1=y'(x_0)$</span>
+        <span class="syms">$x_0$：展開點；$a_n$：$(x-x_0)^n$ 項的係數；$y(x_0)$、$y'(x_0)$：在展開點的函數值與導數</span>
+        條件給在 $x=1$，選 $x_0=1$ 就直接得到 $a_0$、$a_1$；在 $x=0$ 展開要用兩個無窮級數在 $x=1$ 的值去解常數。<br>
+        $a_0=y(1)=2$，$a_1=y'(1)=0$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 令 $t=x-1$ 的遞迴關係</h5>
+      <p class="wq-step"><span class="memo">背：$t=x-1$ ⟹ $\dfrac{dy}{dx}=\dfrac{dy}{dt}$；$y=\displaystyle\sum a_nt^n$，$y''\to(n+2)(n+1)a_{n+2}$，$ty'\to na_n$</span>
+        <span class="syms">$t$：新的自變數（$t=x-1$）；$y$：未知函數；$a_n$：$t^n$ 項的係數；$n$：比較係數的次方</span>
+        換變數後方程式變成 $y''+ty'+y=0$，每個 $t^n$ 係數為 0。<br>
+        $(n+2)(n+1)a_{n+2}+(n+1)a_n=0\Rightarrow a_{n+2}=-\dfrac{a_n}{n+2}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 級數與 closed form</h5>
+      <p class="wq-step"><span class="memo">背：$a_{n+2}=-\dfrac{a_n}{n+2}$ 代 $n=0,2,4$</span>
+        <span class="syms">$a_{n+2}$：要求的係數；$a_n$：前兩格的係數；$a_0=2$、$a_1=0$：(a) 得到的初值</span>
+        $a_1=0$ 使奇次串全為零，只算偶次串。<br>
+        $a_2=-\dfrac{a_0}2=-1$，$a_4=-\dfrac{a_2}4=\dfrac14$，$a_6=-\dfrac{a_4}6=-\dfrac1{24}$；$a_{2k}=\dfrac{(-1)^k}{2^kk!}a_0$</p>
+      <p class="wq-step"><span class="memo">背：$e^u=\displaystyle\sum_{k=0}^{\infty}\frac{u^k}{k!}$</span>
+        <span class="syms">$u$：泰勒級數的變數（這裡 $u=-\tfrac{t^2}2$）；$k$：求和指標；$t=x-1$</span>
+        $\dfrac{(-1)^k}{2^k}t^{2k}=\Big(-\dfrac{t^2}2\Big)^k$。<br>
+        $y=2\displaystyle\sum_{k=0}^{\infty}\frac1{k!}\Big(-\frac{t^2}2\Big)^k=2e^{-t^2/2}=2e^{-(x-1)^2/2}$</p>
+    </div>
+    <div class="wq">
+      <h5>(d) $y(1.5)$</h5>
+      <p class="wq-step"><span class="memo">背：$y=2e^{-(x-1)^2/2}$</span>
+        <span class="syms">$x$：要求值的點；$e$：自然對數的底</span>
+        $x=1.5$ 時 $t=0.5$，$\dfrac{t^2}2=0.125$。<br>
+        $y(1.5)=2e^{-0.125}=2\times0.8825=1.7650$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=2e^{-(x-1)^2/2}$，$y(1.5)\approx1.7650$。</div>
+  <p class="small"><a href="#am4-sf-04a">回到正文詳解</a></p>
+</article>
+
+<article class="exam-item" data-exam-id="am4-sf-04b" data-group="四、初始條件、邊界條件與非齊次項" data-title="自編：右邊的奇點決定半徑">
+  <h3>自編難題（非課本）</h3>
+  <div class="orig"><!-- original-question:start -->
+<!-- original-question:end -->
+<strong>題目</strong>　解 $y''-xy'-y=\dfrac1{1-x}$，$y(0)=0$、$y'(0)=0$：(a) 把右邊寫成冪級數，求遞迴關係；(b) 求到 $x^6$ 的係數；(c) 收斂半徑與原因；(d) 驗證 $e^{x^2/2}$ 是對應齊次方程式的解，說明一般解的結構。</div>
+  <div class="rote">
+    <p><b>看到</b>「右邊 $\dfrac1{1-x}$」＋「左邊係數沒有奇點，問收斂半徑」⟹ 題型：<b>非齊次冪級數解（右邊用幾何級數）＋右邊的奇點決定半徑</b></p>
+  </div>
+  <div class="write-q">
+    <div class="wq">
+      <h5>(a) 右邊的級數與遞迴關係</h5>
+      <p class="wq-step"><span class="memo">背：$\dfrac1{1-x}=\displaystyle\sum_{n=0}^{\infty}x^n$（$|x|\lt1$）</span>
+        <span class="syms">$x$：自變數；$n$：求和指標</span>
+        右邊每個 $x^n$ 的係數都是 1。<br>
+        $\dfrac1{1-x}=1+x+x^2+\cdots$</p>
+      <p class="wq-step"><span class="memo">背：$y=\displaystyle\sum a_nx^n$，$y''\to(n+2)(n+1)a_{n+2}$，$xy'\to na_n$；兩邊同次方係數相等</span>
+        <span class="syms">$y$：未知函數；$x$：自變數；$a_n$：$x^n$ 項的係數；$n$：比較係數的次方</span>
+        左邊 $x^n$ 的係數等於右邊的 1。<br>
+        $(n+2)(n+1)a_{n+2}-na_n-a_n=1\Rightarrow a_{n+2}=\dfrac1{(n+2)(n+1)}+\dfrac{a_n}{n+2}$</p>
+    </div>
+    <div class="wq">
+      <h5>(b) 到 $x^6$ 的係數</h5>
+      <p class="wq-step"><span class="memo">背：$a_0=y(0)$，$a_1=y'(0)$；$a_{n+2}=\dfrac1{(n+2)(n+1)}+\dfrac{a_n}{n+2}$</span>
+        <span class="syms">$a_0$、$a_1$：前兩個係數；$y(0)$、$y'(0)$：題目給的初始值；$a_{n+2}$、$a_n$：差兩格的係數</span>
+        題目 $a_0=a_1=0$，依序代 $n=0$ 到 $4$。<br>
+        $a_2=\dfrac12+0=\dfrac12$，$a_3=\dfrac16+0=\dfrac16$，$a_4=\dfrac1{12}+\dfrac{a_2}4=\dfrac1{12}+\dfrac18=\dfrac5{24}$<br>
+        $a_5=\dfrac1{20}+\dfrac{a_3}5=\dfrac1{20}+\dfrac1{30}=\dfrac1{12}$，$a_6=\dfrac1{30}+\dfrac{a_4}6=\dfrac1{30}+\dfrac5{144}=\dfrac{49}{720}$</p>
+    </div>
+    <div class="wq">
+      <h5>(c) 收斂半徑與原因</h5>
+      <p class="wq-step"><span class="memo">背：非齊次時 $R\ge$ 到 $p$、$q$、$g$ 最近奇點的距離；$\displaystyle\lim\frac{a_{n+1}}{a_n}\to1$ ⟹ $R=1$</span>
+        <span class="syms">$R$：收斂半徑；$p$、$q$：左邊標準式的係數；$g$：右邊的函數；$a_n$：級數係數</span>
+        $p=-x$、$q=-1$ 沒有奇點，但 $g=\dfrac1{1-x}$ 在 $x=1$ 發散；遞迴第一項 $\approx\dfrac1{n^2}$ 主導，所以 $a_n\approx\dfrac1{n^2}$。<br>
+        $\dfrac{a_{n+1}}{a_n}\approx\dfrac{n^2}{(n+1)^2}\xrightarrow{n\to\infty}1$ ⟹ $R=1$（$=|0-1|$）</p>
+    </div>
+    <div class="wq">
+      <h5>(d) 齊次解 $e^{x^2/2}$ 與一般解</h5>
+      <p class="wq-step"><span class="memo">背：驗證解＝代回齊次方程式 $y''-xy'-y=0$；一般解＝特解＋齊次解</span>
+        <span class="syms">$y$：要驗證的函數；$y'$、$y''$：它的導數；$c_1$、$c_2$：任意常數；$y_2$：另一個齊次解</span>
+        齊次解都處處收斂，整個一般解的半徑仍是 1，由特解決定。<br>
+        $y'=xe^{x^2/2}$，$y''=(1+x^2)e^{x^2/2}$：$(1+x^2-x^2-1)e^{x^2/2}=0$ ✓<br>
+        一般解 $=$ 本題特解 $+c_1e^{x^2/2}+c_2y_2$</p>
+    </div>
+  </div>
+  <div class="final">答：$y=\tfrac12x^2+\tfrac16x^3+\tfrac5{24}x^4+\tfrac1{12}x^5+\tfrac{49}{720}x^6+\cdots$，$R=1$。</div>
+  <p class="small"><a href="#am4-sf-04b">回到正文詳解</a></p>
+</article>

@@ -1,0 +1,404 @@
+<h2>三、圖形、零點與邊界值問題 <span class="pg">板書 10/21 照片 5–6</span></h2>
+
+<p class="lead">有了 $J_m$ 與 $Y_m$，老師接著畫圖、列零點表，並在黑板角落畫了一個半徑 $R$ 的圓盤 $y(r,\theta)$——這是零點的用途：圓形邊界上的條件（鼓膜邊緣固定、圓柱表面溫度為 0、波函數在腔壁為 0）會變成「$J_m(kR)=0$」，於是 $k$ 只能取零點除以 $R$。113 上期末與 113 下期中都是這種題目。</p>
+
+<h3 id="am6-zr-graph">3.1 $J_0,J_1,Y_0,Y_1$ 的圖形 <span class="pg-tag">照片 5</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 5 右）</span>
+  <p>（圖：$J_0(x)$ 從 $(0,1)$ 出發、$J_1(x)$ 從原點出發，兩者都是振幅漸小的振盪）</p>
+  <p>（圖：$Y_0(x)$、$Y_1(x)$ 在 $x\to0$ 往 $-\infty$，之後振盪）</p>
+  <p>（圖：半徑 $R$ 的圓，圓內一點標 $y(r,\theta)$，$r$ 從圓心量起）</p>
+</div>
+
+<div class="anim" data-anim="am6-graphs"></div>
+
+<div class="step" data-step="am6-zr-s1" data-sym="Jm,Ym">
+  <span class="step-title">圖上要記住的特徵 <span class="added">網站補充</span></span>
+  <ul>
+    <li>$J_0(0)=1$，$J_m(0)=0$（$m\ge1$，首項 $\propto x^m$）；$Y_m(x)\to-\infty$（$x\to0^+$）。</li>
+    <li>$x$ 大時 $J_m\approx\sqrt{\frac2{\pi x}}\cos\big(x-\frac{m\pi}2-\frac\pi4\big)$、$Y_m\approx\sqrt{\frac2{\pi x}}\sin\big(x-\frac{m\pi}2-\frac\pi4\big)$：振幅像 $x^{-1/2}$ 衰減，零點間距趨近 $\pi$。</li>
+    <li>$J_0'=-J_1$（第 4 節 ③ 取 $m=0$）：$J_0$ 的極值點就是 $J_1$ 的零點。</li>
+  </ul>
+  <p>板書照片 5 的 $Y_1$ 畫得比 $Y_0$ 晚過零點、$J_1$ 比 $J_0$ 晚，和零點表一致。</p>
+</div>
+
+<h3 id="am6-zr-table">3.2 零點表與圓形邊界 <span class="pg-tag">照片 6 左</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/21（照片 6 左）</span>
+  <p>◎ "Zeros of Bessel functions"　　　　Neumann functions</p>
+  <table>
+    <thead><tr><th></th><th>$J_0$</th><th>$J_1$</th><th></th><th>$Y_0$</th><th>$Y_1$</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>2.4</td><td>3.8</td><td>1</td><td>0.9</td><td>2.2</td></tr>
+      <tr><td>2</td><td>5.5</td><td>7.0</td><td>2</td><td>4.0</td><td>5.4</td></tr>
+      <tr><td>3</td><td>8.7</td><td>10.2</td><td>3</td><td>7.1</td><td>8.6</td></tr>
+      <tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="step" data-step="am6-zr-s2" data-sym="jmn">
+  <span class="step-title">精確值與用法 <span class="added">網站補充</span></span>
+  <p>記 $j_{mn}$ 為 $J_m$ 的第 $n$ 個正零點。板書表到小數一位；精確值（考試用表上的一位通常就夠）：</p>
+  <table>
+    <thead><tr><th>$n$</th><th>$j_{0n}$</th><th>$j_{1n}$</th><th>$j_{2n}$</th><th>$Y_0$ 零點</th><th>$Y_1$ 零點</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>2.4048</td><td>3.8317</td><td>5.1356</td><td>0.8936</td><td>2.1971</td></tr>
+      <tr><td>2</td><td>5.5201</td><td>7.0156</td><td>8.4172</td><td>3.9577</td><td>5.4297</td></tr>
+      <tr><td>3</td><td>8.6537</td><td>10.1735</td><td>11.6198</td><td>7.0861</td><td>8.5960</td></tr>
+    </tbody>
+  </table>
+  <p>用法（照片 5 的圓盤）：半徑 $R$ 的圓盤上 $y(r,\theta)=R(r)\Theta(\theta)$，徑向是 $r^2R''+rR'+(k^2r^2-m^2)R=0$，解 $AJ_m(kr)+BY_m(kr)$。</p>
+  <p>① <b>圓心有限</b> ⇒ $B=0$（$Y_m$ 在 $r=0$ 發散）。② <b>邊界 $R(R)=0$</b> ⇒ $J_m(kR)=0$ ⇒ $kR=j_{mn}$，$k=\dfrac{j_{mn}}{R}$。所以「$k$ 有哪些值」就是查零點表。$Y_m$ 的零點只在不含圓心的區域（例如圓環 $a\le r\le b$）才會用到。</p>
+</div>
+
+<h3 id="am6-zr-orth">3.3 正交性與 Fourier–Bessel 級數 <span class="added">網站補充</span></h3>
+
+<p>圓盤問題最後都要把初始條件或邊界值展開成 $J_m(j_{mn}r/R)$ 的級數，就像弦振動用 $\sin\frac{n\pi x}{L}$ 展開。關鍵是<b>帶權重 $r$ 的正交性</b>（證明見自編 3-b）：</p>
+$$\int_0^R r\,J_m\Big(\frac{j_{mn}r}{R}\Big)J_m\Big(\frac{j_{mk}r}{R}\Big)dr=\begin{cases}0,&n\ne k\\[2pt]\dfrac{R^2}{2}\big[J_{m+1}(j_{mn})\big]^2,&n=k\end{cases}$$
+<p>所以 $f(r)=\sum_nc_nJ_m\big(\frac{j_{mn}r}R\big)$ 的係數是</p>
+$$c_n=\frac{2}{R^2\,[J_{m+1}(j_{mn})]^2}\int_0^R r\,f(r)\,J_m\Big(\frac{j_{mn}r}{R}\Big)dr$$
+<p>其中的積分常常要用第 4 節的遞迴恆等式算（111 上期末的積分正是 $m=0$ 的這種積分，自編 4-c）。</p>
+
+<div class="problem" data-kind="exam" id="am6-k113-3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2024.Dec. 第 3 題（113上）</span></div>
+    <h4>$x^2y''+xy'+\lambda^2x^2y=0$，$y(0)=1$、$y(3)=0$，求 $\lambda$</h4>
+    <button type="button" class="exam-btn" data-exam="am6-k113-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-k113-3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>25 points for each problem</p><p>3. If a function $y$ satisfies $x^2y''+xy'+\lambda^2x^2y=0$ with $y(0)=1$ and $y(3)=0$, find the values of $\lambda$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（25 分）函數 $y$ 滿足 $x^2y''+xy'+\lambda^2x^2y=0$，且 $y(0)=1$、$y(3)=0$，求 $\lambda$ 的值。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$x^2y''+xy'+(\lambda^2x^2-0^2)y=0$</td><td>「$x^2y''+xy'+\lambda^2x^2y=0$」：和 $x^2y''+xy'+(a^2x^2-m^2)y=0$ 比較，$a=\lambda$、$m=0$</td></tr>
+          <tr><td>條件 1</td><td>$y(0)=1$（有限）</td><td>「$y(0)=1$」：在奇點 $x=0$ 的條件，隱含「$y$ 在 0 有限」</td></tr>
+          <tr><td>條件 2</td><td>$y(3)=0$</td><td>「$y(3)=0$」</td></tr>
+          <tr><td>$J_0$ 零點</td><td>2.4、5.5、8.7（精確 2.4048、5.5201、8.6537）</td><td>題目沒給，用板書零點表</td></tr>
+          <tr><td>配分</td><td>25 分</td><td>「25 points for each problem」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：所有可能的 $\lambda$（以及對應的 $y$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>方程式是 $x^2y''+xy'+(a^2x^2-m^2)y=0$ 型（$a=\lambda$、$m=0$），<b>所以</b>令 $t=\lambda x$ 化成 0 階 Bessel 方程，一般解 $AJ_0(\lambda x)+BY_0(\lambda x)$，不必重做 Frobenius。</p>
+      <p><b>因為</b> $Y_0$ 在 $x=0$ 發散、$J_0(0)=1$，<b>所以</b> $y(0)=1$ 一次決定 $B=0$、$A=1$；剩下的 $y(3)=0$ 不能再調常數，只能限制 $\lambda$：$J_0(3\lambda)=0$。這是「邊界條件決定本徵值」的典型。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-k113-3-s1" data-sym="lam">
+        <span class="step-title">化成 Bessel 方程</span>
+        <p>先設 $\lambda\ne0$。令 $t=\lambda x$：$x\dfrac{d}{dx}=t\dfrac{d}{dt}$、$x^2\dfrac{d^2}{dx^2}=t^2\dfrac{d^2}{dt^2}$：</p>
+        <p class="sub">代入 $\lambda^2x^2=t^2$：</p>
+        $$t^2y_{tt}+ty_t+t^2y=0\quad(m=0\text{ 的 Bessel 方程})$$
+        $$y=A\,J_0(\lambda x)+B\,Y_0(\lambda x)$$
+      </div>
+      <div class="step" data-step="am6-k113-3-s2" data-sym="Ym">
+        <span class="step-title">$y(0)=1$</span>
+        <p>$x\to0$：$Y_0(\lambda x)\sim\frac2\pi\ln(\lambda x)\to-\infty$，而 $y(0)=1$ 是有限值，所以 $B=0$。</p>
+        <p class="sub">$J_0(0)=1$，代入 $y(0)=A\cdot1=1$：</p>
+        $$A=1,\qquad y=J_0(\lambda x)$$
+      </div>
+      <div class="step" data-step="am6-k113-3-s3" data-sym="jmn">
+        <span class="step-title">$y(3)=0$ 決定 $\lambda$</span>
+        <p class="sub">代入 $x=3$（題目「$y(3)=0$」）：</p>
+        $$J_0(3\lambda)=0\ \Longrightarrow\ 3\lambda=\pm j_{0n}\ \Longrightarrow\ \lambda=\pm\frac{j_{0n}}{3},\quad n=1,2,3,\dots$$
+        <p>（$J_0$ 是偶函數，$\lambda$ 取負號得到同一個解，因為方程式只含 $\lambda^2$。）</p>
+      </div>
+      <div class="step" data-step="am6-k113-3-s4">
+        <span class="step-title">數值</span>
+        <p class="sub">代入板書零點表 2.4、5.5、8.7（括號是精確值 2.4048、5.5201、8.6537 的結果）：</p>
+        $$\lambda\approx\frac{2.4}3=0.80\,(0.8016),\quad\frac{5.5}3=1.83\,(1.8400),\quad\frac{8.7}{3}=2.90\,(2.8846),\ \dots$$
+      </div>
+      <div class="step" data-step="am6-k113-3-s5">
+        <span class="step-title">排除 $\lambda=0$</span>
+        <p class="sub">$\lambda=0$ 時方程式變成 Cauchy–Euler $x^2y''+xy'=0$，解 $y=c_1+c_2\ln x$；$y(0)$ 有限 ⇒ $c_2=0$，$y(0)=1$ ⇒ $y\equiv1$：</p>
+        <p>$y(3)=1\ne0$，所以 $\lambda=0$ 不行。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\lambda=\pm\dfrac{j_{0n}}{3}$（$J_0$ 的第 $n$ 個零點除以 3）：$\lambda\approx\pm0.80,\ \pm1.84,\ \pm2.88,\dots$；對應 $y=J_0(\lambda x)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$\lambda=0.8016$：$J_0(3\times0.8016)=J_0(2.4048)=0$ ✔，$J_0(0)=1$ ✔。驗算腳本用 sympy 代入 $J_0(\lambda x)$ 確認滿足方程式，並以 mpmath 求 $J_0$ 零點。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am6-k113b-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2025.Apr. 第 2 題（113下）</span></div>
+    <h4>圓柱腔中的 Schrödinger 方程：基態能量</h4>
+    <button type="button" class="exam-btn" data-exam="am6-k113b-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am6-k113b-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. (15%) Consider the stationary Schrödinger equation $-\frac{\hbar^2}{2m}\nabla^2\Psi=E\Psi$ in a cylindrical cavity. The wave function is give by $\Psi=\Psi(r,\theta,z)$ and the boundary conditions are</p><p>$\Psi|_{r=1}=0,\quad\Psi|_{z=1}=0,\quad\Psi|_{z=-1}=0.$</p><p>Find the ground state energy.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（15%）考慮圓柱形空腔中的定態 Schrödinger 方程 $-\dfrac{\hbar^2}{2m}\nabla^2\Psi=E\Psi$，波函數 $\Psi=\Psi(r,\theta,z)$，邊界條件 $\Psi|_{r=1}=0$、$\Psi|_{z=1}=0$、$\Psi|_{z=-1}=0$。求基態能量。（題中 $m$ 是粒子質量；為了不和 Bessel 的階數混淆，下面把階數寫成 $p$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$\nabla^2\Psi+k^2\Psi=0$，$k^2=\frac{2mE}{\hbar^2}$</td><td>「$-\frac{\hbar^2}{2m}\nabla^2\Psi=E\Psi$」移項</td></tr>
+          <tr><td>腔的半徑</td><td>$1$</td><td>「$\Psi|_{r=1}=0$」</td></tr>
+          <tr><td>腔的高度</td><td>$z\in[-1,1]$，長度 2</td><td>「$\Psi|_{z=1}=0$、$\Psi|_{z=-1}=0$」</td></tr>
+          <tr><td>隱含條件</td><td>$\Psi$ 在 $r=0$ 有限；$\Psi(\theta+2\pi)=\Psi(\theta)$</td><td>題目沒寫，波函數必須有限、單值</td></tr>
+          <tr><td>$j_{01}$</td><td>2.4048（板書 2.4）</td><td>板書零點表</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：基態（最低）能量 $E$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>邊界是圓柱的側面與上下底，<b>所以</b>用圓柱座標分離變數 $\Psi=R(r)\Theta(\theta)Z(z)$：$z$ 方向是兩端固定的弦（$\sin$/$\cos$），$r$ 方向是 Bessel 方程（第 1 節 1.1）。</p>
+      <p><b>因為</b> $E\propto k^2=k_r^2+k_z^2$，<b>所以</b>基態是兩個方向各取最小的允許值：$k_z$ 取最長的半波長，$k_r$ 取所有 $j_{pn}$ 中最小的 $j_{01}$。要說明為什麼其他組合比較大。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-k113b-2-s1">
+        <span class="step-title">分離變數</span>
+        <p class="sub">$\nabla^2\Psi+k^2\Psi=0$ 代入 $\Psi=R\Theta Z$（1.1 節的步驟）：</p>
+        $$Z''=-k_z^2Z,\qquad\Theta''=-p^2\Theta,\qquad r^2R''+rR'+(k_r^2r^2-p^2)R=0,\qquad k^2=k_r^2+k_z^2$$
+        <p>$\Theta$ 單值 ⇒ $p=0,1,2,\dots$。</p>
+      </div>
+      <div class="step" data-step="am6-k113b-2-s2">
+        <span class="step-title">$z$ 方向</span>
+        <p class="sub">$Z(\pm1)=0$，區間長 $L=2$：允許 $k_z=\dfrac{n_z\pi}{L}=\dfrac{n_z\pi}{2}$，最小的 $n_z=1$：</p>
+        $$Z=\cos\frac{\pi z}{2},\qquad k_z=\frac\pi2\quad\big(\cos(\pm\tfrac\pi2)=0\ \checkmark\big)$$
+      </div>
+      <div class="step" data-step="am6-k113b-2-s3" data-sym="jmn">
+        <span class="step-title">$r$ 方向</span>
+        <p>$R=AJ_p(k_rr)+BY_p(k_rr)$；$r=0$ 有限 ⇒ $B=0$。</p>
+        <p class="sub">$\Psi|_{r=1}=0$ ⇒ $J_p(k_r)=0$ ⇒ $k_r=j_{pn}$；所有零點中最小的是 $j_{01}=2.4048$（$j_{11}=3.83$、$j_{21}=5.14$ 都更大）：</p>
+        $$k_r=j_{01}=2.4048,\qquad R=J_0(2.4048\,r)$$
+      </div>
+      <div class="step" data-step="am6-k113b-2-s4">
+        <span class="step-title">基態能量</span>
+        <p class="sub">$E=\dfrac{\hbar^2k^2}{2m}=\dfrac{\hbar^2}{2m}\big(k_r^2+k_z^2\big)$，代入 $k_r=2.4048$、$k_z=\frac\pi2$：</p>
+        $$E_0=\frac{\hbar^2}{2m}\Big(j_{01}^2+\frac{\pi^2}{4}\Big)=\frac{\hbar^2}{2m}(5.783+2.467)=8.251\,\frac{\hbar^2}{2m}\approx4.13\,\frac{\hbar^2}{m}$$
+      </div>
+      <div class="step" data-step="am6-k113b-2-s5">
+        <span class="step-title">確認是最低的</span>
+        <p>下一個候選：$p=1$（$j_{11}^2+\frac{\pi^2}4=14.68+2.47=17.15$）或 $n_z=2$（$5.78+\pi^2=15.65$），都比 8.25 大。基態波函數 $\Psi_0=J_0(2.405r)\cos\frac{\pi z}2$，沒有角度依賴、內部沒有節面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$E_0=\dfrac{\hbar^2}{2m}\Big(j_{01}^2+\dfrac{\pi^2}{4}\Big)\approx\dfrac{\hbar^2}{2m}\,(2.405^2+2.467)\approx8.25\,\dfrac{\hbar^2}{2m}$；$\Psi_0\propto J_0(2.405r)\cos\frac{\pi z}{2}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$J_0(2.4048)=0$ ✔、$\cos(\pm\frac\pi2)=0$ ✔；驗算腳本在 $p=0,1,2$、$n_z=1,2,3$、$n=1,2,3$ 的組合中找最小的 $j_{pn}^2+(n_z\pi/2)^2$，確認是 $8.2506$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-03a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>圓形鼓膜：頻率為什麼不是整數倍？</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-03a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>半徑 $R$、邊緣固定的圓形鼓膜滿足 $u_{tt}=c^2\nabla^2u$，$u(R,\theta,t)=0$。(a) 用分離變數 $u=J_p(kr)\cos(p\theta)\cos(\omega t)$ 說明允許的角頻率 $\omega_{pn}=\dfrac{c\,j_{pn}}{R}$。(b) 列出最低的四個相異頻率，以基頻 $\omega_{01}$ 的倍數表示，並說明和弦（$\omega_n=n\omega_1$）不同。(c) $(p,n)=(0,2)$ 模態的節線圓半徑是多少？(d) 若基頻是 $100\ \text{Hz}$，$(1,1)$ 模態是幾 Hz？(e) 把鼓膜中央挖掉半徑 $\frac R2$ 的圓，變成內外兩圈都固定的圓環 $\frac R2\le r\le R$：寫出軸對稱模態的頻率條件，求最低的 $kR$（數值），並和「把圓環拉直成長 $\frac R2$ 的弦」的估計比較。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>方程式</td><td>$u_{tt}=c^2\nabla^2u$</td><td>題目（二維波動方程）</td></tr>
+          <tr><td>邊界</td><td>$u(R,\theta,t)=0$</td><td>「邊緣固定」</td></tr>
+          <tr><td>圓心</td><td>$u$ 有限</td><td>題目沒寫，鼓膜位移有限 ⇒ 不用 $Y_p$</td></tr>
+          <tr><td>零點</td><td>$j_{01}=2.4048$、$j_{11}=3.8317$、$j_{21}=5.1356$、$j_{02}=5.5201$</td><td>3.2 節精確值表</td></tr>
+          <tr><td>基頻</td><td>$100\ \text{Hz}$</td><td>(d)</td></tr>
+          <tr><td>圓環</td><td>$u(\frac R2)=u(R)=0$，區域不含圓心</td><td>(e)「內外兩圈都固定」；不含 $r=0$ ⇒ $Y_0$ 不能丟</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $\omega_{pn}$；(b) 四個頻率比；(c) 節線圓半徑；(d) $(1,1)$ 的頻率；(e) 圓環的頻率條件與最低 $kR$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>時間部分 $\cos\omega t$ 讓 $u_{tt}=-\omega^2u$，<b>所以</b>波動方程變成 Helmholtz 方程 $\nabla^2u+\frac{\omega^2}{c^2}u=0$，徑向是 $k=\omega/c$ 的 Bessel 方程；邊緣條件 $J_p(kR)=0$ 決定 $k$，再乘 $c$ 得頻率。</p>
+      <p><b>因為</b> Bessel 函數的零點不是等間距（$j_{11}/j_{01}=1.59$ 不是整數），<b>所以</b>泛音不是基頻的整數倍——這就是鼓聲沒有明確音高的原因。要列「最低的四個」必須把不同 $p$ 的零點混在一起排序，不能只看 $p=0$。「相異頻率」是指 $\cos p\theta$ 與 $\sin p\theta$（$p\ge1$）這對簡併模態只算一次。</p>
+      <p><b>因為</b> (e) 的區域不含圓心，<b>所以</b>「圓心有限」這個丟掉 $Y_0$ 的理由不見了，必須保留 $AJ_0+BY_0$；兩個邊界條件是 $A,B$ 的齊次聯立方程，要有非零解，係數行列式必須為 0——這條超越方程只能數值求根。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-03a-s1">
+        <span class="step-title">(a) 允許的頻率</span>
+        <p class="sub">$u=J_p(kr)\cos p\theta\cos\omega t$ 代入：左邊 $-\omega^2u$，右邊 $c^2\nabla^2u=-c^2k^2u$（$J_p(kr)\cos p\theta$ 是 $\nabla^2+k^2$ 的解）⇒ $\omega=ck$；邊緣 $J_p(kR)=0$ ⇒ $kR=j_{pn}$：</p>
+        $$\omega_{pn}=\frac{c\,j_{pn}}{R}$$
+      </div>
+      <div class="step" data-step="am6-sf-03a-s2" data-sym="jmn">
+        <span class="step-title">(b) 把零點排序</span>
+        <p class="sub">所有 $j_{pn}$ 由小到大：$j_{01}=2.405\lt j_{11}=3.832\lt j_{21}=5.136\lt j_{02}=5.520\lt\cdots$，各除以 $j_{01}$：</p>
+        $$\frac{\omega_{11}}{\omega_{01}}=\frac{3.832}{2.405}=1.593,\quad\frac{\omega_{21}}{\omega_{01}}=\frac{5.136}{2.405}=2.136,\quad\frac{\omega_{02}}{\omega_{01}}=\frac{5.520}{2.405}=2.295$$
+        <p>比例 $1:1.593:2.136:2.295$ 不是 $1:2:3:4$。弦的頻率比是整數，因為 $\sin\frac{n\pi x}L$ 的零點條件 $kL=n\pi$ 等間距；Bessel 函數的零點只在 $x$ 很大時才接近等間距。</p>
+      </div>
+      <div class="step" data-step="am6-sf-03a-s3">
+        <span class="step-title">(c) $(0,2)$ 模態的節線圓</span>
+        <p>$(0,2)$：$u\propto J_0\big(\frac{j_{02}r}{R}\big)$，在 $0\lt r\lt R$ 內為零的地方是 $\frac{j_{02}r}{R}=j_{01}$：</p>
+        <p class="sub">代入 $j_{01}=2.4048$、$j_{02}=5.5201$：</p>
+        $$r=\frac{j_{01}}{j_{02}}R=0.4357\,R$$
+      </div>
+      <div class="step" data-step="am6-sf-03a-s4">
+        <span class="step-title">(d) 換成 Hz</span>
+        <p class="sub">頻率與 $\omega$ 成正比，$f_{11}=1.593\,f_{01}$，代入 $f_{01}=100\ \text{Hz}$：</p>
+        $$f_{11}=159.3\ \text{Hz}$$
+        <p>（$(1,1)$ 模態的節線是一條直徑 $\cos\theta=0$。）</p>
+      </div>
+      <div class="step" data-step="am6-sf-03a-s5" data-sym="Ym">
+        <span class="step-title">(e) 圓環：$Y_0$ 不能丟</span>
+        <p class="sub">軸對稱 $u=\big[AJ_0(kr)+BY_0(kr)\big]\cos\omega t$，代入 $u(\frac R2)=0$、$u(R)=0$：</p>
+        $$\begin{cases}AJ_0(\frac{kR}2)+BY_0(\frac{kR}2)=0\\ AJ_0(kR)+BY_0(kR)=0\end{cases}$$
+        $$\Longrightarrow\ J_0\big(\tfrac{kR}{2}\big)Y_0(kR)-J_0(kR)\,Y_0\big(\tfrac{kR}{2}\big)=0$$
+        <p>（$A$、$B$ 不全為 0 ⇔ 係數行列式為 0。）</p>
+      </div>
+      <div class="step" data-step="am6-sf-03a-s6">
+        <span class="step-title">(e) 數值求根與弦的估計</span>
+        <p class="sub">令 $f(\kappa)=J_0(\frac\kappa2)Y_0(\kappa)-J_0(\kappa)Y_0(\frac\kappa2)$，$\kappa=kR$；試算 $f(6.2)=+0.0033$、$f(6.3)=-0.0038$，在中間變號，線性內插：</p>
+        $$\kappa_1=kR\approx6.2+0.1\times\frac{0.0033}{0.0033+0.0038}=6.246$$
+        <p class="sub">把很窄的圓環近似成兩端固定、長 $L=R-\frac R2=\frac R2$ 的弦：$kL=\pi$：</p>
+        $$kR\approx\frac{\pi}{1/2}=2\pi=6.283\quad(\text{和 }6.246\text{ 差 }0.6\%)$$
+        <p>圓環的最低頻率是整片鼓膜基頻的 $6.246/2.405=2.60$ 倍：挖掉中央讓膜「變短」，頻率升高。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\omega_{pn}=cj_{pn}/R$；(b) $\omega_{01}:\omega_{11}:\omega_{21}:\omega_{02}=1:1.593:2.136:2.295$，不是整數倍；(c) $r=0.436R$；(d) $159\ \text{Hz}$；(e) $J_0(\frac{kR}2)Y_0(kR)-J_0(kR)Y_0(\frac{kR}2)=0$，最低 $kR\approx6.25$（弦的估計 $2\pi=6.28$），是整片鼓膜基頻的 2.60 倍。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$J_0(j_{02}\cdot0.4357)=J_0(2.4049)\approx0$ ✔。下面的圖畫出 $(0,1)$、$(0,2)$、$(0,3)$ 的徑向剖面與節線圓。驗算腳本用 mpmath 重算零點與比例。</p>
+    <div class="anim" data-anim="am6-drum"></div></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-03b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>證明 $J_0$ 的正交性與歸一化常數</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-03b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>設 $\alpha\ne\beta$ 都是 $J_0$ 的正零點，$u=J_0(\alpha x)$、$v=J_0(\beta x)$。(a) 證明 $u$ 滿足 $(xu')'+\alpha^2xu=0$。(b) 證明 $\displaystyle\int_0^1x\,u\,v\,dx=0$。(c) 證明 $\displaystyle\int_0^1x\,u^2\,dx=\tfrac12\big[J_1(\alpha)\big]^2$（可用 $J_0'=-J_1$）。(d) 用 $\alpha=j_{01}$ 算出數值。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>零點</td><td>$J_0(\alpha)=J_0(\beta)=0$，$\alpha\ne\beta$</td><td>題目</td></tr>
+          <tr><td>Bessel 方程</td><td>$x^2y''+xy'+x^2y=0$（$m=0$）</td><td>第 1 節</td></tr>
+          <tr><td>導數關係</td><td>$J_0'=-J_1$</td><td>題目提示（第 4 節 ③，$m=0$）</td></tr>
+          <tr><td>$J_1(j_{01})$</td><td>0.5191</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 自伴形式；(b) 正交；(c) 歸一化；(d) 數值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $x^2y''+xy'=x(xy')'$，<b>所以</b> Bessel 方程可以寫成 $(xu')'=-\alpha^2xu$ 的「自伴形式」；兩條這樣的方程交叉相乘相減，左邊會變成一個全微分 $\frac{d}{dx}[x(vu'-uv')]$，積分只剩端點——端點上 $u(1)=v(1)=0$、$x=0$ 時有因子 $x$，全部為零。這就是 $x$ 當權重的來源。</p>
+      <p><b>因為</b> (b) 的方法在 $\alpha=\beta$ 時變成 $0=0$ 沒有資訊，<b>所以</b>歸一化要換一招：乘 $2xu'$ 製造 $\frac{d}{dx}(xu')^2$ 與 $\frac{d}{dx}(u^2)$，再分部積分。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-03b-s1">
+        <span class="step-title">(a) 自伴形式</span>
+        <p class="sub">令 $t=\alpha x$，$J_0(t)$ 滿足 $t^2J_0''+tJ_0'+t^2J_0=0$；換回 $x$（$u'=\alpha J_0'$、$u''=\alpha^2J_0''$）並除以 $x$：</p>
+        $$x u''+u'+\alpha^2xu=0\iff(xu')'+\alpha^2xu=0$$
+      </div>
+      <div class="step" data-step="am6-sf-03b-s2">
+        <span class="step-title">(b) 交叉相減</span>
+        <p class="sub">$v\times[(xu')'=-\alpha^2xu]$ 減 $u\times[(xv')'=-\beta^2xv]$：</p>
+        $$v(xu')'-u(xv')'=(\beta^2-\alpha^2)\,x\,uv$$
+        <p>左邊 $=\dfrac{d}{dx}\big[x(vu'-uv')\big]$（展開：$x'(vu'-uv')+x(v'u'+vu''-u'v'-uv'')$，正好是 $v(xu')'-u(xv')'$）。</p>
+      </div>
+      <div class="step" data-step="am6-sf-03b-s3">
+        <span class="step-title">(b) 積分、代端點</span>
+        <p class="sub">從 0 積到 1；$x=1$ 時 $u(1)=J_0(\alpha)=0$、$v(1)=J_0(\beta)=0$；$x=0$ 時前面有因子 $x=0$：</p>
+        $$(\beta^2-\alpha^2)\int_0^1x\,uv\,dx=\Big[x(vu'-uv')\Big]_0^1=0$$
+        <p>$\alpha\ne\beta$（都是正數）⇒ $\beta^2-\alpha^2\ne0$ ⇒ $\int_0^1xuv\,dx=0$。</p>
+      </div>
+      <div class="step" data-step="am6-sf-03b-s4">
+        <span class="step-title">(c) 乘 $2xu'$</span>
+        <p class="sub">$(xu')'+\alpha^2xu=0$ 乘 $2xu'$：$2(xu')(xu')'=\frac{d}{dx}(xu')^2$，$2\alpha^2x^2uu'=\alpha^2x^2\frac{d}{dx}(u^2)$：</p>
+        $$\frac{d}{dx}(xu')^2+\alpha^2x^2\frac{d}{dx}(u^2)=0$$
+        <p class="sub">積分 0 到 1，第二項分部積分 $\int_0^1x^2(u^2)'dx=\big[x^2u^2\big]_0^1-\int_0^12xu^2dx$：</p>
+        $$\big[(xu')^2\big]_0^1+\alpha^2\big[x^2u^2\big]_0^1-2\alpha^2\int_0^1xu^2dx=0$$
+      </div>
+      <div class="step" data-step="am6-sf-03b-s5">
+        <span class="step-title">(c) 代端點</span>
+        <p class="sub">$x=1$：$u(1)=0$、$u'(1)=\alpha J_0'(\alpha)=-\alpha J_1(\alpha)$；$x=0$：兩項都有 $x$ 因子為 0：</p>
+        $$\alpha^2J_1(\alpha)^2-2\alpha^2\int_0^1xu^2dx=0\ \Longrightarrow\ \int_0^1x\,J_0(\alpha x)^2dx=\frac12J_1(\alpha)^2$$
+      </div>
+      <div class="step" data-step="am6-sf-03b-s6">
+        <span class="step-title">(d) 數值</span>
+        <p class="sub">代入 $J_1(2.4048)=0.5191$：</p>
+        $$\int_0^1x\,J_0(2.4048x)^2dx=\frac{0.51915^2}{2}=0.1348$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $(xu')'+\alpha^2xu=0$；(b) $(\beta^2-\alpha^2)\int_0^1xuv=[x(vu'-uv')]_0^1=0$ ⇒ 正交（權重 $x$）；(c) $\int_0^1xJ_0(\alpha x)^2dx=\frac12J_1(\alpha)^2$；(d) $0.1348$。換成半徑 $R$：$\int_0^Rr J_0(j_nr/R)^2dr=\frac{R^2}2J_1(j_n)^2$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>驗算腳本數值積分：$\int_0^1xJ_0(j_{01}x)J_0(j_{02}x)dx\approx10^{-17}$ ✔、$\int_0^1xJ_0(j_{01}x)^2dx=0.134757$，$\frac12J_1(j_{01})^2=0.134757$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am6-sf-03c">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$J_0$、$J_1$ 的零點為什麼交錯？用漸近式估零點</h4>
+    <button type="button" class="exam-btn" data-exam="am6-sf-03c">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>(a) 直接由級數證明 $J_0'=-J_1$ 與 $(xJ_1)'=xJ_0$。(b) 用 Rolle 定理證明：$J_0$ 的相鄰兩零點之間一定有 $J_1$ 的零點；$J_1$ 的相鄰兩零點（含 $x=0$）之間一定有 $J_0$ 的零點。由此說明板書表 $2.4\lt3.8\lt5.5\lt7.0\lt8.7\lt10.2$ 的交錯。(c) 用 $J_m(x)\approx\sqrt{\frac2{\pi x}}\cos\big(x-\frac{m\pi}2-\frac\pi4\big)$ 估計 $J_0$、$J_1$ 的前三個零點，和板書表比較，說明誤差隨 $n$ 怎麼變。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>級數</td><td>$J_0=\sum\frac{(-1)^k}{(k!)^2}(\frac x2)^{2k}$、$J_1=\sum\frac{(-1)^k}{k!(k+1)!}(\frac x2)^{2k+1}$</td><td>第 1 節定義</td></tr>
+          <tr><td>Rolle 定理</td><td>$f(a)=f(b)=0$ ⇒ $(a,b)$ 內有 $f'=0$</td><td>微積分</td></tr>
+          <tr><td>漸近式</td><td>$\sqrt{\frac2{\pi x}}\cos(x-\frac{m\pi}2-\frac\pi4)$</td><td>題目給</td></tr>
+          <tr><td>零點表</td><td>$J_0$：2.4、5.5、8.7；$J_1$：3.8、7.0、10.2</td><td>板書照片 6</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 兩個導數關係；(b) 交錯的證明；(c) 漸近估計與比較。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>零點交錯是「$f=0$ 的兩點之間 $f'=0$」的結論，<b>所以</b>需要兩個把「一個函數的導數」寫成「另一個函數」的關係：$J_0'=-J_1$ 讓 $J_0$ 的零點夾出 $J_1$ 的零點；$(xJ_1)'=xJ_0$ 讓 $xJ_1$ 的零點夾出 $J_0$ 的零點。用 $xJ_1$ 而不是 $J_1$，是因為 $(xJ_1)'$ 才等於 $J_0$ 的倍數。</p>
+      <p><b>因為</b>漸近式是 $\cos$，零點就是 $\cos$ 的零點，<b>所以</b>直接解 $x-\frac{m\pi}2-\frac\pi4=(n-\frac12)\pi$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am6-sf-03c-s1">
+        <span class="step-title">(a) $J_0'=-J_1$</span>
+        <p class="sub">逐項微分，$k=0$ 的常數項消失；令 $k=j+1$：</p>
+        $$J_0'=\sum_{k\ge1}\frac{(-1)^k\,2k}{(k!)^2\,2}\Big(\frac x2\Big)^{2k-1}=\sum_{k\ge1}\frac{(-1)^k}{k!(k-1)!}\Big(\frac x2\Big)^{2k-1}=-\sum_{j\ge0}\frac{(-1)^j}{(j+1)!\,j!}\Big(\frac x2\Big)^{2j+1}=-J_1$$
+      </div>
+      <div class="step" data-step="am6-sf-03c-s2">
+        <span class="step-title">(a) $(xJ_1)'=xJ_0$</span>
+        <p class="sub">$xJ_1=\sum\frac{(-1)^k\,2}{k!(k+1)!}\big(\frac x2\big)^{2k+2}$，微分：$\frac{d}{dx}(\frac x2)^{2k+2}=(k+1)(\frac x2)^{2k+1}$：</p>
+        $$(xJ_1)'=\sum\frac{(-1)^k\,2(k+1)}{k!(k+1)!}\Big(\frac x2\Big)^{2k+1}=x\sum\frac{(-1)^k}{(k!)^2}\Big(\frac x2\Big)^{2k}=xJ_0$$
+      </div>
+      <div class="step" data-step="am6-sf-03c-s3" data-sym="jmn">
+        <span class="step-title">(b) 交錯</span>
+        <p>① $J_0(j_{0n})=J_0(j_{0,n+1})=0$ ⇒ 中間有 $J_0'=-J_1=0$：每兩個 $J_0$ 零點之間有 $J_1$ 的零點。</p>
+        <p>② $f=xJ_1$ 在 $x=0$ 與 $J_1$ 的每個正零點為 0 ⇒ 中間有 $f'=xJ_0=0$，$x\gt0$ ⇒ $J_0=0$：$0$ 與 $j_{11}$ 之間、每兩個 $J_1$ 零點之間都有 $J_0$ 的零點。</p>
+        <p>①② 合起來：$0\lt j_{01}\lt j_{11}\lt j_{02}\lt j_{12}\lt j_{03}\lt\cdots$，板書表 $2.4\lt3.8\lt5.5\lt7.0\lt8.7\lt10.2$ ✔。</p>
+      </div>
+      <div class="step" data-step="am6-sf-03c-s4">
+        <span class="step-title">(c) 漸近零點</span>
+        <p class="sub">$\cos\theta=0\iff\theta=(n-\frac12)\pi$，代入 $\theta=x-\frac{m\pi}2-\frac\pi4$：</p>
+        $$x_n\approx\Big(n+\frac m2-\frac14\Big)\pi:\qquad m=0:\ 2.356,\ 5.498,\ 8.639;\qquad m=1:\ 3.927,\ 7.069,\ 10.210$$
+      </div>
+      <div class="step" data-step="am6-sf-03c-s5">
+        <span class="step-title">(c) 比較</span>
+        <p class="sub">和精確值 $j_{0n}=2.405,5.520,8.654$、$j_{1n}=3.832,7.016,10.173$ 相比：</p>
+        $$J_0:\ -0.049,\ -0.022,\ -0.014;\qquad J_1:\ +0.095,\ +0.053,\ +0.037$$
+        <p>誤差大約像 $\frac1x$ 遞減（漸近式本來就是 $x$ 大時的近似）；到第 3 個零點，$J_1$ 的估計 10.21 四捨五入到一位已和板書 10.2 一致；$J_0$ 的估計 8.639 四捨五入是 8.6，和精確值 8.6537（板書 8.7）仍差 0.014，四捨五入後不一致。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $J_0'=-J_1$、$(xJ_1)'=xJ_0$；(b) 由 Rolle 定理，$0\lt j_{01}\lt j_{11}\lt j_{02}\lt j_{12}\lt\cdots$；(c) $J_0$：$2.36,5.50,8.64$，$J_1$：$3.93,7.07,10.21$，誤差隨 $n$ 遞減（約 $\propto1/x$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>驗算腳本用 sympy 確認 $\frac{d}{dx}J_0=-J_1$、$\frac{d}{dx}(xJ_1)=xJ_0$（級數到 $x^{15}$），並用 mpmath 的零點檢查交錯與誤差。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$J_0(0)=1$、$J_{m\ge1}(0)=0$、$Y_m(0^+)=-\infty$；大 $x$ 時像 $\sqrt{2/(\pi x)}\cos(\cdots)$，零點間距 $\to\pi$。</li>
+    <li>零點表：$J_0$ 2.405、5.520、8.654；$J_1$ 3.832、7.016、10.17；$Y_0$ 0.894、3.958、7.086；$Y_1$ 2.197、5.430、8.596。$J_0$、$J_1$ 零點交錯。</li>
+    <li>圓盤／圓柱：圓心有限 ⇒ 丟 $Y_m$；邊界為 0 ⇒ $kR=j_{mn}$；能量、頻率 $\propto j_{mn}$（還要加上 $z$ 方向）。</li>
+    <li>正交性（權重 $r$）$\int_0^Rr J_m(\frac{j_{mn}r}R)J_m(\frac{j_{mk}r}R)dr=\frac{R^2}2J_{m+1}(j_{mn})^2\delta_{nk}$，用來求 Fourier–Bessel 係數。</li>
+  </ol>
+</div>

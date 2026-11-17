@@ -1,0 +1,519 @@
+<h2>十一、附錄 I　勞倫茲轉換 <span class="pg">課本 Appendix I · p.37–45</span></h2>
+
+<p class="lead">前面每個效應都是個別推出來的。勞倫茲轉換把它們統一成一組座標換算公式：給一個事件在 $S$ 的 $(x,y,z,t)$，就能算出它在 $S'$ 的 $(x',y',z',t')$。時間膨脹、長度收縮、速度相加、同時的相對性都是它的推論。</p>
+
+<p>設定（Fig. 1.22）：$S'$ 相對 $S$ 以速率 $v$ 沿 $+x$ 運動；$t=t'=0$ 時兩原點重合。</p>
+
+<h3 id="lt-galileo">11.1 伽利略轉換為什麼不行 <span class="pg-tag">p.37–38</span></h3>
+
+<div class="box lecture book">
+  <span class="box-title">p.37–38 Eqs. (1.26)–(1.32) Galilean transformation</span>
+  $$x'=x-vt,\quad y'=y,\quad z'=z,\quad t'=t;\qquad V'_x=V_x-v,\quad V'_y=V_y,\quad V'_z=V_z$$
+</div>
+
+<p>它同時違反兩個假設：用它轉換，電磁學方程式在 $S'$ 會變成不同的形式（違反第一假設）；$S$ 量到沿 $x$ 的光速 $c$，$S'$ 會量到 $c'=c-v$（違反第二假設）。</p>
+
+<h3 id="lt-derive">11.2 推導 <span class="pg-tag">p.38–41</span></h3>
+
+<div class="step" data-step="lt-guess" data-sym="xt">
+  <span class="step-title">猜一個線性形式</span>
+  $$x'=k(x-vt)\qquad(1.33)$$
+  <p>$k$ 和 $x,t$ 無關，只可能和 $v$ 有關。理由：線性（$S$ 的一個事件對應 $S'$ 的一個事件）、最簡單、$k\to1$ 時回到伽利略。相對性原理要求反過來的式子形式相同，只把 $v$ 變號；兩式的 $k$ 必須相同，因為兩座標系除了 $v$ 的正負沒有差別：</p>
+  $$x=k(x'+vt')\qquad(1.34)$$
+  <p>垂直方向沒有相對運動：$y'=y$、$z'=z$。</p>
+</div>
+
+<div class="step" data-step="lt-tprime">
+  <span class="step-title">時間不能相同：解出 $t'$</span>
+  <p>把 (1.33) 代入 (1.34)：$x=k^2(x-vt)+kvt'$，解 $t'$：</p>
+  $$t'=kt+\left(\frac{1-k^2}{kv}\right)x\qquad(1.37)$$
+  <p>只要 $k\neq1$，$t'$ 就和位置 $x$ 有關——時間不再是絕對的。</p>
+</div>
+
+<div class="step" data-step="lt-k" data-sym="gamma">
+  <span class="step-title">用光速不變求 $k$</span>
+  <p>$t=t'=0$ 時在共同原點點亮閃光，兩個座標系都量到光以 $c$ 擴散（Fig. 1.23）：$S$ 中 $x=ct$，$S'$ 中 $x'=ct'$。把 (1.33)、(1.37) 代入 $x'=ct'$：</p>
+  $$k(x-vt)=ckt+\frac{c(1-k^2)}{kv}x$$
+  <p>兩邊除以 $k$、整理 $x$：</p>
+  $$x\left[1-\left(\frac1{k^2}-1\right)\frac cv\right]=ct\left(1+\frac vc\right)\quad\Longrightarrow\quad x=ct\,\frac{1+v/c}{1-\left(\frac1{k^2}-1\right)\frac cv}$$
+  <p>要和 $x=ct$ 一致，分式必須等於 1：</p>
+  $$\frac vc=-\left(\frac1{k^2}-1\right)\frac cv\ \Longrightarrow\ \frac1{k^2}=1-\frac{v^2}{c^2}\ \Longrightarrow\ k=\frac1{\sqrt{1-v^2/c^2}}=\gamma\qquad(1.40)$$
+</div>
+
+<div class="step" data-step="lt-t">
+  <span class="step-title">代回 $t'$</span>
+  <p>$1-\gamma^2=-\gamma^2v^2/c^2$，所以 $\dfrac{1-\gamma^2}{\gamma v}=-\dfrac{\gamma v}{c^2}$，(1.37) 變成 $t'=\gamma\left(t-\dfrac{vx}{c^2}\right)$。</p>
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.40–42 Eqs. (1.41)–(1.48) Lorentz transformation</span>
+  $$x'=\frac{x-vt}{\sqrt{1-v^2/c^2}},\quad y'=y,\quad z'=z,\quad t'=\frac{t-vx/c^2}{\sqrt{1-v^2/c^2}}$$
+  <p>逆轉換（由 $S'$ 求 $S$）：撇號互換、$v\to-v$：</p>
+  $$x=\frac{x'+vt'}{\sqrt{1-v^2/c^2}},\quad y=y',\quad z=z',\quad t=\frac{t'+vx'/c^2}{\sqrt{1-v^2/c^2}}$$
+</div>
+
+<p>Lorentz 當初發現電磁學的基本方程式只有在這組轉換下才在所有慣性座標系形式相同；Einstein 幾年後才看出它的完整意義。$v\ll c$ 時它回到伽利略轉換。</p>
+
+<p>考試最常用的是「差量」形式（兩個事件相減）：</p>
+$$\Delta x'=\gamma(\Delta x-v\Delta t),\qquad\Delta t'=\gamma\left(\Delta t-\frac{v\,\Delta x}{c^2}\right)$$
+
+<div class="problem" data-kind="tbexample" id="bz-ex1-9">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 1.9 · p.41–42</span></div>
+    <h4>用勞倫茲轉換推長度收縮</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex1-9">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex1-9"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Derive the relativistic length contraction using the Lorentz transformation.</p></div>
+<p class="original-caption">Beiser Example 1.9 · p.41–42</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用勞倫茲轉換推導相對論長度收縮。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：桿子靜止在 $S'$，兩端在 $x'_1$、$x'_2$，固有長度 $L_0=x'_2-x'_1$；$S'$ 相對 $S$ 以 $v$ 沿 $+x$ 運動。</p>
+<p><strong>① 兩端在同一時刻 $t$：</strong> 在 $S$ 量運動中的桿長，必須在 $S$ 的同一時刻 $t$ 記下兩端位置 $x_1$、$x_2$，所以用把 $x'$ 寫成 $(x,t)$ 的轉換式，兩端代入同一個 $t$。</p>
+<p class="fnote"><b>公式（勞倫茲轉換）：</b>$x'=\dfrac{x-vt}{\sqrt{1-v^2/c^2}}$（1.41），其中 $(x,t)$ 為事件在 $S$ 的座標、$x'$ 為在 $S'$ 的位置、$v$ 為 $S'$ 相對 $S$ 的速度；本題兩端各代一次。</p>
+<div class="math-block">$$x'_1=\frac{x_1-vt}{\sqrt{1-v^2/c^2}},\qquad x'_2=\frac{x_2-vt}{\sqrt{1-v^2/c^2}}$$</div>
+<p><strong>② 相減，$vt$ 消掉：</strong> 兩式相減，同一個 $vt$ 互相抵消：</p>
+<div class="math-block">$$L_0=x'_2-x'_1=\frac{x_2-x_1}{\sqrt{1-v^2/c^2}}$$</div>
+<p>$S$ 量到的長度是 $L=x_2-x_1$，兩邊乘 $\sqrt{1-v^2/c^2}$：</p>
+<div class="math-block">$$\boxed{L=x_2-x_1=L_0\sqrt{1-v^2/c^2}}$$</div>
+<p>即 (1.9)。</p>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="tbexample" id="bz-ex1-10">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 1.10 · p.42–43</span></div>
+    <h4>用逆勞倫茲轉換推時間膨脹</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex1-10">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex1-10"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Derive the formula for time dilation using the inverse Lorentz transformation.</p></div>
+<p class="original-caption">Beiser Example 1.10 · p.42–43</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用逆勞倫茲轉換推導時間膨脹公式。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：鐘固定在 $S'$ 的某一點 $x'$，兩次讀數 $t'_1$、$t'_2$，固有時間 $t_0=t'_2-t'_1$；$S'$ 相對 $S$ 以 $v$ 運動。</p>
+<p><strong>① 兩個讀數：</strong> 兩次讀數都在同一個 $x'$，所以選含 $(t',x')$ 的逆轉換，相減時 $vx'/c^2$ 就會消掉。</p>
+<p class="fnote"><b>公式（逆勞倫茲轉換）：</b>$t=\dfrac{t'+vx'/c^2}{\sqrt{1-v^2/c^2}}$（1.48），其中 $(x',t')$ 為事件在 $S'$ 的座標、$t$ 為在 $S$ 的時間、$v$ 為 $S'$ 相對 $S$ 的速度；本題兩次讀數各代一次。</p>
+<div class="math-block">$$t_1=\frac{t'_1+vx'/c^2}{\sqrt{1-v^2/c^2}},\qquad t_2=\frac{t'_2+vx'/c^2}{\sqrt{1-v^2/c^2}}$$</div>
+<p><strong>② 相減：</strong> 同一個 $vx'/c^2$ 抵消，並用 $t_0=t'_2-t'_1$：</p>
+<div class="math-block">$$t=t_2-t_1=\frac{t'_2-t'_1}{\sqrt{1-v^2/c^2}}$$</div>
+<div class="math-block">$$\boxed{t=\frac{t_0}{\sqrt{1-v^2/c^2}}=\gamma t_0}$$</div>
+<p>和光鐘的結果相同。</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="lt-velocity">11.3 速度相加 <span class="pg-tag">p.43–44</span></h3>
+
+<p>常識說：以 30 m/s 行駛的車上往前丟出 10 m/s 的球，球對地 40 m/s。照這樣，車燈的光對地就是 $c+v$，違反光速不變。正確的相加要從勞倫茲轉換推。</p>
+
+<div class="step" data-step="lt-diff" data-sym="Vx">
+  <span class="step-title">把逆轉換微分</span>
+  <p>物體在 $S$ 的速度 $V_x=\mathrm dx/\mathrm dt$，在 $S'$ 的速度 $V'_x=\mathrm dx'/\mathrm dt'$。由 (1.45)–(1.48)：</p>
+  $$\mathrm dx=\frac{\mathrm dx'+v\,\mathrm dt'}{\sqrt{1-v^2/c^2}},\quad\mathrm dy=\mathrm dy',\quad\mathrm dz=\mathrm dz',\quad\mathrm dt=\frac{\mathrm dt'+v\,\mathrm dx'/c^2}{\sqrt{1-v^2/c^2}}$$
+</div>
+
+<div class="step" data-step="lt-ratio">
+  <span class="step-title">相除，分子分母同除 $\mathrm dt'$</span>
+  $$V_x=\frac{\mathrm dx'+v\,\mathrm dt'}{\mathrm dt'+v\,\mathrm dx'/c^2}=\frac{V'_x+v}{1+vV'_x/c^2}\qquad(1.49)$$
+  <p>$y$、$z$ 方向的 $\mathrm dy$ 不變，但 $\mathrm dt$ 變了，所以垂直分量也會變：</p>
+  $$V_y=\frac{V'_y\sqrt{1-v^2/c^2}}{1+vV'_x/c^2},\qquad V_z=\frac{V'_z\sqrt{1-v^2/c^2}}{1+vV'_x/c^2}\qquad(1.50),(1.51)$$
+</div>
+
+<div class="box lecture book">
+  <span class="box-title">p.44 Eqs. (1.49)–(1.51) Relativistic velocity transformation</span>
+  $$V_x=\frac{V'_x+v}{1+vV'_x/c^2},\qquad V_y=\frac{V'_y\sqrt{1-v^2/c^2}}{1+vV'_x/c^2}$$
+  <p>反方向（已知 $S$ 中的速度，求 $S'$ 中的）：$V'_x=\dfrac{V_x-v}{1-vV_x/c^2}$，$V'_y=\dfrac{V_y\sqrt{1-v^2/c^2}}{1-vV_x/c^2}$。</p>
+</div>
+
+<p>檢查：若 $V'_x=c$（車燈），$V_x=\dfrac{c+v}{1+v/c}=\dfrac{c(c+v)}{c+v}=c$。兩個小於 $c$ 的速度怎麼加都小於 $c$。</p>
+
+<div class="anim" data-anim="velocity-add"></div>
+
+<div class="box pitfall">
+  <span class="box-title">先定好 $S$、$S'$ 和正負號</span>
+  <p>$v$ 永遠是「$S'$ 相對 $S$」的速度；$V'_x$ 是物體相對 $S'$ 的速度。迎面而來的物體速度要帶負號。要問「A 看 B 多快」，就令 A 為 $S'$。</p>
+</div>
+
+<div class="problem" data-kind="tbexample" id="bz-ex1-11">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Beiser Example 1.11 · p.44</span></div>
+    <h4>要以 0.5c 超越 0.9c 的太空船</h4>
+    <button type="button" class="exam-btn" data-exam="bz-ex1-11">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-ex1-11"><span class="part-label original-label">英文課本例題</span>
+<div class="original-text" lang="en"><p>Spacecraft Alpha is moving at 0.90c with respect to the earth. If spacecraft Beta is to pass Alpha at a relative speed of 0.50c in the same direction, what speed must Beta have with respect to the earth?</p></div>
+<p class="original-caption">Beiser Example 1.11 · p.44</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>太空船 Alpha 相對地球以 $0.90c$ 運動。太空船 Beta 要以相對 $0.50c$ 的速率同方向超越 Alpha，Beta 相對地球要多快？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：$S$＝地球，$S'$＝Alpha，$v=0.90c$；Beta 相對 Alpha 同方向 $V'_x=+0.50c$，求 Beta 相對地球的 $V_x$。</p>
+<p><strong>① 速度相加：</strong> 已知 Beta 在 Alpha 座標系的速度，要求地球座標系的速度，用由 $S'$ 求 $S$ 的速度相加；不能直接加成 $1.40c$，分母正是讓結果保持小於 $c$ 的修正。</p>
+<p class="fnote"><b>公式（相對論速度相加）：</b>$V_x=\dfrac{V'_x+v}{1+vV'_x/c^2}$（1.49），其中 $V'_x$ 為物體在 $S'$ 的速度、$V_x$ 為在 $S$ 的速度、$v$ 為 $S'$ 相對 $S$ 的速度；本題 $V'_x=0.50c$、$v=0.90c$。</p>
+<div class="math-block">$$V_x=\frac{V'_x+v}{1+vV'_x/c^2}$$</div>
+<p>代入 $V'_x=0.50c$、$v=0.90c$：</p>
+<div class="math-block">$$V_x=\frac{0.50c+0.90c}{1+(0.90)(0.50)}=\frac{1.40c}{1.45}$$</div>
+<div class="math-block">$$\boxed{V_x=0.97c}$$</div>
+<p>伽利略會說 $1.40c$，不可能。</p>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="kg-107-5">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">107 學年期中（2018/10/30）第 5 題 · 垂直方向的速度相加</span></div>
+    <h4>互相垂直的兩台機車</h4>
+    <button type="button" class="exam-btn" data-exam="kg-107-5">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-5"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>Imaging two motorcycles (Alpha and Beta) racing at relativistic speeds along perpendicular paths from the policeman who is at rest. The policeman sees the speed of Alpha is $0.75c$ toward east, and the speed of Beta is $0.90c$ toward south. How fast the Beta is receding from Alpha? (15%)</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 5 題 · 垂直方向的速度相加</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>兩台機車 Alpha、Beta 以相對論速率從靜止的警察處沿互相垂直的路線離開。警察看 Alpha 以 $0.75c$ 往東、Beta 以 $0.90c$ 往南。Beta 相對 Alpha 遠離的速率是多少？（15%）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：警察為 $S$，$x$ 朝東、$y$ 朝北；Alpha 為 $S'$，$v=0.75c$ 往東；Beta 在 $S$ 中 $V_x=0$、$V_y=-0.90c$（往南）。</p>
+<p><strong>① $x$ 分量：</strong> 問的是「從 Alpha 看」，已知 Beta 在 $S$ 的速度、要求 $S'$ 的速度，用反方向的速度轉換；垂直分量也會因時間膨脹而改變，不能直接用畢氏定理合成。</p>
+<p class="fnote"><b>公式（相對論速度轉換）：</b>$V'_x=\dfrac{V_x-v}{1-vV_x/c^2}$、$V'_y=\dfrac{V_y\sqrt{1-v^2/c^2}}{1-vV_x/c^2}$，其中 $(V_x,V_y)$ 為物體在 $S$ 的速度、$(V'_x,V'_y)$ 為在 $S'$ 的速度、$v$ 為 $S'$ 相對 $S$ 沿 $+x$ 的速度；本題 $v=0.75c$。</p>
+<div class="math-block">$$V'_x=\frac{V_x-v}{1-vV_x/c^2}$$</div>
+<p>代入 $V_x=0$（Beta 只往南）、$v=0.75c$：</p>
+<div class="math-block">$$V'_x=\frac{0-0.75c}{1-0}=-0.75c$$</div>
+<p><strong>② $y$ 分量：</strong></p>
+<div class="math-block">$$V'_y=\frac{V_y\sqrt{1-v^2/c^2}}{1-vV_x/c^2}$$</div>
+<p>代入 $V_y=-0.90c$、$v=0.75c$、$V_x=0$：</p>
+<div class="math-block">$$V'_y=(-0.90c)\sqrt{1-0.75^2}=(-0.90c)(0.661)=-0.595c$$</div>
+<p><strong>③ 速率與方向：</strong> 代入上兩步的 $V'_x=-0.75c$、$V'_y=-0.595c$：</p>
+<div class="math-block">$$\begin{aligned}V'&amp;=\sqrt{V'^2_x+V'^2_y}=c\sqrt{0.5625+0.3544}\\&amp;=c\sqrt{0.9169}=0.958c\end{aligned}$$</div>
+<p>兩個分量都是負的：往西又往南，和西方的夾角 $\tan^{-1}(0.595/0.75)=38^\circ$。</p>
+<div class="math-block">$$\boxed{V'=0.958c，\text{西偏南 }38^\circ}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-54">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-54 · p.51</span></div>
+    <h4>運動中的物體裂成兩塊</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-54">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-54"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A body moving at 0.500c with respect to an observer disintegrates into two fragments that move in opposite directions relative to their center of mass along the same line of motion as the original body. One fragment has a velocity of 0.600c in the backward direction relative to the center of mass and the other has a velocity of 0.500c in the forward direction. What velocities will the observer find?</p></div>
+<p class="original-caption">Beiser 習題 1-54 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一個相對觀察者以 $0.500c$ 運動的物體裂成兩塊，沿原運動方向相反地飛開：相對質心，一塊以 $0.600c$ 往後、另一塊以 $0.500c$ 往前。觀察者看到兩塊的速度各是多少？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：質心相對觀察者 $v=0.500c$（$S'$＝質心座標系）；相對質心，往前碎片 $V'_x=+0.500c$、往後碎片 $V'_x=-0.600c$，都在同一直線上。</p>
+<p><strong>① 往前的碎片：</strong> 碎片速度是相對質心給的，要求相對觀察者的，每塊各代一次速度相加；往前取 $+$、往後取 $-$。</p>
+<p class="fnote"><b>公式（相對論速度相加）：</b>$V_x=\dfrac{V'_x+v}{1+vV'_x/c^2}$（1.49），其中 $V'_x$ 為碎片在 $S'$（質心）的速度、$V_x$ 為在觀察者座標系的速度、$v$ 為質心相對觀察者的速度；本題 $v=0.500c$。</p>
+<div class="math-block">$$V_x=\frac{V'_x+v}{1+vV'_x/c^2}$$</div>
+<p>代入 $V'_x=+0.500c$、$v=0.500c$：</p>
+<div class="math-block">$$V_x=\frac{0.500c+0.500c}{1+(0.500)(0.500)}=\frac{1.000c}{1.25}=0.800c$$</div>
+<p><strong>② 往後的碎片：</strong> 代入 $V'_x=-0.600c$、$v=0.500c$：</p>
+<div class="math-block">$$V_x=\frac{-0.600c+0.500c}{1+(0.500)(-0.600)}=\frac{-0.100c}{0.700}=-0.143c$$</div>
+<p>負號：在觀察者看來這塊往後（和原運動方向相反）飛。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{一塊 }0.800c\text{ 往前}\\ \text{另一塊 }0.143c\text{ 往後}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-55">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-55 · p.51</span></div>
+    <h4>從兩側飛向月球的太空船</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-55">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-55"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A man on the moon sees two spacecraft, A and B, coming toward him from opposite directions at the respective speeds of 0.800c and 0.900c.</p><p>(a) What does a man on A measure for the speed with which he is approaching the moon? For the speed with which he is approaching B?</p><p>(b) What does a man on B measure for the speed with which he is approaching the moon? For the speed with which he is approaching A?</p></div>
+<p class="original-caption">Beiser 習題 1-55 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>月球上的人看到太空船 A、B 從相反方向朝他飛來，速率各為 $0.800c$、$0.900c$。(a) A 上的人量到自己接近月球多快？接近 B 多快？(b) B 上的人呢？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：月球為 $S$，取 A 的運動方向為 $+x$；A 為 $S'$，$v=+0.800c$；B 在 $S$ 中 $V_x=-0.900c$（從相反方向飛來）。</p>
+<h4>(a) A 看</h4>
+<p><strong>① A 接近月球：</strong> 兩物體間的相對速率從哪一邊看都一樣，月球看 A 是 $0.800c$，A 看月球也是 $0.800c$，不用計算。</p>
+<p><strong>② A 接近 B：</strong> 要的是 B 在 A 座標系中的速度，把 B 在月球座標系的速度代入反方向的轉換。</p>
+<p class="fnote"><b>公式（相對論速度轉換）：</b>$V'_x=\dfrac{V_x-v}{1-vV_x/c^2}$，其中 $V_x$ 為物體在 $S$ 的速度、$V'_x$ 為在 $S'$ 的速度、$v$ 為 $S'$ 相對 $S$ 的速度；本題 $V_x=-0.900c$（B）、$v=+0.800c$（A）。</p>
+<div class="math-block">$$V'_x=\frac{V_x-v}{1-vV_x/c^2}$$</div>
+<p>代入 $V_x=-0.900c$、$v=+0.800c$：</p>
+<div class="math-block">$$V'_x=\frac{-0.900c-0.800c}{1-(0.800)(-0.900)}=\frac{-1.700c}{1.720}=-0.988c$$</div>
+<p>負號表示 B 朝 A 飛來，接近速率 $0.988c$。</p>
+<div class="math-block">$$\boxed{\text{接近月球 }0.800c\text{，接近 B }0.988c}$$</div>
+<h4>(b) B 看</h4>
+<p><strong>① B 接近月球與 A：</strong> 月球以 $0.900c$ 接近 B；A 以同樣的 $0.988c$ 接近（相對速率對兩人相同）。也可以令 B 為 $S'$（$v=-0.900c$），把 A 的 $V_x=+0.800c$ 代入同一式：</p>
+<div class="math-block">$$V'_x=\frac{0.800+0.900}{1+0.720}c=0.988c$$</div>
+<div class="math-block">$$\boxed{\text{接近月球 }0.900c\text{，接近 A }0.988c}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-56">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-56 · p.51</span></div>
+    <h4>兩個觀察者看同一個電子的動能</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-56">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-56"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An electron whose speed relative to an observer in a laboratory is 0.800c is also being studied by an observer moving in the same direction as the electron at a speed of 0.500c relative to the laboratory. What is the kinetic energy (in MeV) of the electron to each observer?</p></div>
+<p class="original-caption">Beiser 習題 1-56 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>電子相對實驗室以 $0.800c$ 運動，另一位觀察者相對實驗室以 $0.500c$ 同向運動。兩位觀察者量到電子的動能各是多少（MeV）？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：電子相對實驗室 $V_x=0.800c$；第二位觀察者相對實驗室 $v=0.500c$ 同向（當 $S'$）；電子靜能 $mc^2=0.511\ \text{MeV}$。</p>
+<p><strong>① 實驗室量到的動能：</strong> 動能只由相對該觀察者的速率決定、不是不變量，所以兩位觀察者各用自己量到的速率；實驗室的速率題目已給。</p>
+<p class="fnote"><b>公式（相對論動能）：</b>$KE=(\gamma-1)mc^2$，$\gamma=\dfrac1{\sqrt{1-V^2/c^2}}$，其中 $V$ 為粒子相對該觀察者的速率、$mc^2$ 為靜能；本題 $mc^2=0.511\ \text{MeV}$。</p>
+<p>代入 $V_x=0.800c$、$mc^2=0.511\ \text{MeV}$：</p>
+<div class="math-block">$$\begin{aligned}KE&amp;=\left(\frac1{\sqrt{1-0.8^2}}-1\right)(0.511\ \text{MeV})\\&amp;=(0.667)(0.511)\ \text{MeV}=0.341\ \text{MeV}\end{aligned}$$</div>
+<p><strong>② 第二位觀察者看電子多快：</strong> 不能直接相減成 $0.300c$，要用速度轉換。</p>
+<p class="fnote"><b>公式（相對論速度轉換）：</b>$V'_x=\dfrac{V_x-v}{1-vV_x/c^2}$，其中 $V_x$ 為電子在實驗室的速度、$V'_x$ 為在第二位觀察者座標系的速度、$v$ 為第二位觀察者相對實驗室的速度；本題 $v=0.500c$。</p>
+<div class="math-block">$$V'_x=\frac{V_x-v}{1-vV_x/c^2}$$</div>
+<p>代入 $V_x=0.800c$、$v=0.500c$：</p>
+<div class="math-block">$$V'_x=\frac{0.800c-0.500c}{1-(0.500)(0.800)}=\frac{0.300c}{0.600}=0.500c$$</div>
+<p><strong>③ 第二位觀察者量到的動能：</strong> 代入上一步的 $V'_x=0.500c$：</p>
+<div class="math-block">$$\begin{aligned}KE'&amp;=\left(\frac1{\sqrt{1-0.5^2}}-1\right)(0.511\ \text{MeV})\\&amp;=(0.155)(0.511)\ \text{MeV}=0.0790\ \text{MeV}\end{aligned}$$</div>
+<div class="math-block">$$\boxed{\begin{gathered}\text{實驗室 }KE=0.341\ \text{MeV}\\ \text{第二位觀察者 }KE'=0.0790\ \text{MeV}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-53">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-53 · p.51</span></div>
+    <h4>光行差：太空船舷窗看到的星星往前擠</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-53">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-53"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>A spacecraft moving in the +x direction receives a light signal from a source in the xy plane. In the reference frame of the fixed stars, the speed of the spacecraft is v and the signal arrives at an angle θ to the axis of the spacecraft.</p><p>(a) With the help of the Lorentz transformation find the angle θ′ at which the signal arrives in the reference frame of the spacecraft.</p><p>(b) What would you conclude from this result about the view of the stars from a porthole on the side of the spacecraft?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>太空船沿 $+x$ 方向運動，接收到 $xy$ 平面上一個光源發出的光訊號。在恆星座標系中，太空船速率為 $v$，訊號從與太空船軸線夾 $\theta$ 角的方向射來。(a) 利用勞倫茲轉換，求在太空船座標系中訊號射來的角度 $\theta'$。(b) 由此結果，從太空船側邊舷窗看到的星空會是什麼樣子？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：恆星座標系 $S$，太空船（$S'$）沿 $+x$、速率 $v$，$\beta=v/c$；訊號從與 $+x$ 夾 $\theta$ 的方向射來，光在 $S$ 中的速度 $V_x=-c\cos\theta$、$V_y=-c\sin\theta$（射向太空船，與光源所在方向相反），$V_z=0$。</p>
+<h4>(a) 太空船座標系中的角度</h4>
+<p><strong>① 轉換光的速度：</strong> 訊號從哪個方向射來由光的速度向量決定，把 $V_x$、$V_y$ 都代入速度轉換（垂直分量也要轉）。</p>
+<p class="fnote"><b>公式（相對論速度轉換）：</b>$V'_x=\dfrac{V_x-v}{1-vV_x/c^2}$、$V'_y=\dfrac{V_y\sqrt{1-v^2/c^2}}{1-vV_x/c^2}$（(1.49)–(1.51) 的反方向），其中 $(V_x,V_y)$ 為光在 $S$ 的速度、$(V'_x,V'_y)$ 為在 $S'$ 的速度、$v$ 為太空船速率。</p>
+<p>代入 $V_x=-c\cos\theta$、$V_y=-c\sin\theta$，分母 $1-vV_x/c^2=1+\beta\cos\theta$：</p>
+<div class="math-block">$$V'_x=\frac{V_x-v}{1-vV_x/c^2}=-c\,\frac{\cos\theta+\beta}{1+\beta\cos\theta}$$</div>
+<div class="math-block">$$V'_y=\frac{V_y\sqrt{1-\beta^2}}{1-vV_x/c^2}=-c\,\frac{\sin\theta\sqrt{1-\beta^2}}{1+\beta\cos\theta}$$</div>
+<p><strong>② 角度：</strong> 相除，分母 $1+\beta\cos\theta$ 和負號都約掉（光仍是「從 $\theta'$ 方向射來」）：</p>
+<div class="math-block">$$\boxed{\tan\theta'=\frac{V'_y}{V'_x}=\frac{\sin\theta\sqrt{1-v^2/c^2}}{\cos\theta+v/c}}$$</div>
+<p>等價寫法：</p>
+<div class="math-block">$$\cos\theta'=\frac{V'_x}{-c}=\frac{\cos\theta+\beta}{1+\beta\cos\theta}$$</div>
+<h4>(b) 舷窗看到的星空</h4>
+<p><strong>① 正側面的星：</strong> 代入 $\theta=90^\circ$（$\sin\theta=1$、$\cos\theta=0$）：</p>
+<div class="math-block">$$\tan\theta'=\frac{\sqrt{1-\beta^2}}{\beta}$$</div>
+<p>右邊有限，所以 $\theta'\lt90^\circ$：看起來偏到前方。$v\to c$ 時 $\tan\theta'\to0$、$\theta'\to0$：幾乎所有星星都擠到正前方，側邊舷窗外越來越暗、越來越空。</p>
+<div class="math-block">$$\boxed{\begin{gathered}v\to c\text{ 時 }\theta'\to0\text{，星星往運動方向集中}\\ \text{舷窗外的星比靜止時少}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<h3 id="lt-simul">11.4 同時的相對性 <span class="pg-tag">p.44–45</span></h3>
+
+<p>地球上的人看到兩支閃光在同一時刻 $t_0$、不同地點 $x_1,x_2$ 點亮。太空船駕駛（$S'$）用 (1.44)：</p>
+
+<div class="step" data-step="lt-simul-d" data-sym="xt">
+  <span class="step-title">兩個 $t'$ 相減</span>
+  $$t'_1=\frac{t_0-vx_1/c^2}{\sqrt{1-v^2/c^2}},\quad t'_2=\frac{t_0-vx_2/c^2}{\sqrt{1-v^2/c^2}}\quad\Longrightarrow\quad t'_2-t'_1=\frac{v(x_1-x_2)/c^2}{\sqrt{1-v^2/c^2}}$$
+</div>
+
+<p>在一個座標系同時、不同地點的兩事件，在另一個座標系不同時。誰對？兩人都對，各自量他看到的。「同時」不是絕對的，所以物理理論不能依賴「不同地點同時發生」：例如能量守恆不能只說「這裡少 $\Delta E$、那裡同時多 $\Delta E$」，因為有些觀察者會看到能量不守恆。能量必須真的從一處<strong>流</strong>到另一處——能量在每個地方局部守恆，比「孤立系統總能量守恆」更強。</p>
+
+<div class="anim" data-anim="simultaneity"></div>
+
+<div class="problem" data-kind="exam" id="kg-107-4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">107 學年期中（2018/10/30）第 4 題 · 同時的相對性</span></div>
+    <h4>平板車上同時閃光，地面看誰先</h4>
+    <button type="button" class="exam-btn" data-exam="kg-107-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="kg-107-4"><span class="part-label original-label">英文原卷題目</span>
+<div class="original-text" lang="en"><p>Anna is on a flatcar moving to east at speed of $0.6c$ relative to Bob who is standing on the ground. Anna holds a flashbulb in each hand and cause them flash simultaneously. Assume Anna’s hands are 2 m apart when she opens her arms in an east-west direction. According to Bob, which flashbulb (east or west) flashes first and by how much? (15%)</p></div>
+<p class="original-caption">107 學年期中（2018/10/30）第 4 題 · 同時的相對性</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>Anna 站在相對地面上的 Bob 以 $0.6c$ 往東運動的平板車上，雙手各拿一個閃光燈，讓它們同時閃光。她張開雙臂沿東西方向，兩手相距 $2\ \text{m}$。依 Bob 的觀點，哪一個（東或西）先閃？早多少？（15%）</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：Bob（地面）為 $S$，Anna（平板車）為 $S'$，$v=+0.6c$（$x$ 朝東）；Anna 座標系中兩次閃光同時 $\Delta t'=0$，兩手相距 $\Delta x'=x'_E-x'_W=2\ \text{m}$；$c=3.00\times10^8\ \text{m/s}$。</p>
+<p><strong>① 定事件與 $\gamma$：</strong> 「同時」與「相距 2 m」都是 Anna 座標系的量，要求 Bob 的 $\Delta t$，所以用逆轉換的差量式；這不是時間膨脹（兩事件不在同一地點）。事件 W：西手閃光，位置 $x'_W$；事件 E：東手閃光，$x'_E=x'_W+2\ \text{m}$；$t'_E=t'_W$。</p>
+<p>代入 $v=0.6c$：</p>
+<div class="math-block">$$\gamma=\frac{1}{\sqrt{1-0.36}}=\frac{1}{0.8}=1.25$$</div>
+<p><strong>② 逆轉換求 Bob 的時間差：</strong></p>
+<p class="fnote"><b>公式（逆勞倫茲轉換差量式）：</b>$\Delta t=\gamma\left(\Delta t'+\dfrac{v\Delta x'}{c^2}\right)$，其中 $\Delta t'$、$\Delta x'$ 為兩事件在 $S'$ 的時間差與位置差、$\Delta t$ 為在 $S$ 的時間差、$v$ 為 $S'$ 相對 $S$ 的速度；本題取 $\Delta t=t_E-t_W$。</p>
+<div class="math-block">$$t_E-t_W=\gamma\left[(t'_E-t'_W)+\frac{v(x'_E-x'_W)}{c^2}\right]$$</div>
+<p>代入 $\gamma=1.25$、$t'_E-t'_W=0$、$x'_E-x'_W=2\ \text{m}$、$v=0.6c$：</p>
+<div class="math-block">$$t_E-t_W=(1.25)\frac{(0.6c)(2\ \text{m})}{c^2}=\frac{1.5\ \text{m}}{c}=\frac{1.5\ \text{m}}{3.00\times10^8\ \text{m/s}}$$</div>
+<div class="math-block">$$t_E-t_W=5.0\times10^{-9}\ \text{s}\gt0$$</div>
+<p>正號：東手的閃光比較晚，所以西手先閃。</p>
+<div class="math-block">$$\boxed{\text{西邊（後方）先閃，早 }5.0\ \text{ns}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-51">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-51 · p.51</span></div>
+    <h4>另一人看兩次爆炸在同一地點</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-51">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-51"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An observer detects two explosions, one that occurs near her at a certain time and another that occurs 2.00 ms later 100 km away. Another observer finds that the two explosions occur at the same place. What time interval separates the explosions to the second observer?</p></div>
+<p class="original-caption">Beiser 習題 1-51 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一位觀察者看到兩次爆炸：一次在她身邊，另一次晚 $2.00\ \text{ms}$、在 $100\ \text{km}$ 外。另一位觀察者發現兩次爆炸發生在同一地點。對第二位觀察者，兩次爆炸相隔多久？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：第一位觀察者量到 $\Delta t=2.00\ \text{ms}$、$\Delta x=100\ \text{km}=1.00\times10^5\ \text{m}$；第二位觀察者 $\Delta x'=0$；$c=3.00\times10^8\ \text{m/s}$。</p>
+<p><strong>① 求 $v$：</strong> 第二位觀察者看兩事件在同一地點，令 $\Delta x'=0$ 解出他相對第一位觀察者的速度 $v$。</p>
+<p class="fnote"><b>公式（勞倫茲轉換差量式）：</b>$\Delta x'=\gamma(\Delta x-v\Delta t)$、$\Delta t'=\gamma\left(\Delta t-\dfrac{v\Delta x}{c^2}\right)$，其中 $\Delta x$、$\Delta t$ 為第一位觀察者量到的位置差與時間差，$\Delta x'$、$\Delta t'$ 為第二位觀察者量到的，$v$ 為兩者相對速度。</p>
+<p>$\Delta x'=\gamma(\Delta x-v\Delta t)=0$，括號為零：</p>
+<div class="math-block">$$v=\frac{\Delta x}{\Delta t}$$</div>
+<p>代入 $\Delta x=1.00\times10^5\ \text{m}$、$\Delta t=2.00\times10^{-3}\ \text{s}$：</p>
+<div class="math-block">$$v=\frac{1.00\times10^5\ \text{m}}{2.00\times10^{-3}\ \text{s}}=5.00\times10^7\ \text{m/s}=0.167c$$</div>
+<p><strong>② 求 $\Delta t'$：</strong> 代入時間的差量式，並用上一步的 $\Delta x=v\Delta t$：</p>
+<div class="math-block">$$\Delta t'=\gamma\left(\Delta t-\frac{v\Delta x}{c^2}\right)=\gamma\Delta t\left(1-\frac{v^2}{c^2}\right)=\Delta t\sqrt{1-\frac{v^2}{c^2}}$$</div>
+<p>代入 $\Delta t=2.00\ \text{ms}$、$v/c=0.167$（$v^2/c^2=0.0278$）：</p>
+<div class="math-block">$$\Delta t'=(2.00\ \text{ms})\sqrt{1-0.0278}$$</div>
+<div class="math-block">$$\boxed{\Delta t'=1.97\ \text{ms}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="bz-1-52">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Beiser 習題 1-52 · p.51</span></div>
+    <h4>同時的兩次爆炸，另一人看相距 160 km</h4>
+    <button type="button" class="exam-btn" data-exam="bz-1-52">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="bz-1-52"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An observer detects two explosions that occur at the same time, one near her and the other 100 km away. Another observer finds that the two explosions occur 160 km apart. What time interval separates the explosions to the second observer?</p></div>
+<p class="original-caption">Beiser 習題 1-52 · p.51</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一位觀察者看到兩次爆炸同時發生，一次在她身邊、一次在 $100\ \text{km}$ 外。另一位觀察者量到兩次爆炸相距 $160\ \text{km}$。對他而言兩次爆炸相隔多久？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：第一位觀察者 $\Delta t=0$、$\Delta x=100\ \text{km}=1.00\times10^5\ \text{m}$；第二位觀察者 $\Delta x'=160\ \text{km}$；$c=3.00\times10^8\ \text{m/s}$。</p>
+<p><strong>① 求 $\gamma$、$v$：</strong> $\Delta t=0$ 代入位置差量式只剩 $\Delta x'=\gamma\Delta x$，兩個距離的比值直接給出 $\gamma$。這不是長度收縮：兩次爆炸不是某根尺的兩端。</p>
+<p class="fnote"><b>公式（勞倫茲轉換差量式）：</b>$\Delta x'=\gamma(\Delta x-v\Delta t)$、$\Delta t'=\gamma\left(\Delta t-\dfrac{v\Delta x}{c^2}\right)$，其中 $\Delta x$、$\Delta t$ 為第一位觀察者量到的位置差與時間差，$\Delta x'$、$\Delta t'$ 為第二位觀察者量到的，$v$ 為兩者相對速度、$\gamma=1/\sqrt{1-v^2/c^2}$。</p>
+<p>$\Delta t=0$ 時 $\Delta x'=\gamma\Delta x$：</p>
+<div class="math-block">$$\gamma=\frac{\Delta x'}{\Delta x}$$</div>
+<p>代入 $\Delta x'=160\ \text{km}$、$\Delta x=100\ \text{km}$：</p>
+<div class="math-block">$$\gamma=\frac{160}{100}=1.60$$</div>
+<div class="math-block">$$\frac vc=\sqrt{1-\frac1{1.60^2}}=\sqrt{1-0.391}=0.781$$</div>
+<p><strong>② 求 $\Delta t'$：</strong> $\Delta t=0$ 代入時間差量式：</p>
+<div class="math-block">$$\Delta t'=\gamma\left(0-\frac{v\Delta x}{c^2}\right)\ \Longrightarrow\ |\Delta t'|=\gamma\frac{v}{c}\cdot\frac{\Delta x}{c}$$</div>
+<p>代入上一步的 $\gamma=1.60$、$v/c=0.781$，以及 $\Delta x=1.00\times10^5\ \text{m}$：</p>
+<div class="math-block">$$|\Delta t'|=\frac{(1.60)(0.781)(1.00\times10^5\ \text{m})}{3.00\times10^8\ \text{m/s}}=4.16\times10^{-4}\ \text{s}$$</div>
+<div class="math-block">$$\boxed{|\Delta t'|=0.416\ \text{ms}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-11-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>20 m 的竿子塞進 10 m 的穀倉：門關的先後</h4>
+    <button type="button" class="exam-btn" data-exam="sf-11-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>固有長度 $20\ \text{m}$ 的竿子以 $v=\tfrac{\sqrt3}{2}c$（$\gamma=2$）沿 $+x$ 飛進固有長度 $10\ \text{m}$ 的穀倉。穀倉座標系 $S$：入口在 $x=0$、出口在 $x=10\ \text{m}$。在 $S$ 中，竿尾通過入口的瞬間（$t=0$），入口和出口的門同時關上（再立刻打開）。(a) 在 $S$ 中竿子多長？兩扇門關上時竿子在不在穀倉裡？(b) 在竿子座標系 $S'$ 中，穀倉多長？竿子明明比穀倉長 4 倍，怎麼可能「被關在裡面」？用勞倫茲轉換求兩次關門在 $S'$ 中的時刻與位置，解釋這個弔詭。</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：固有長度竿子 $20\ \text{m}$、穀倉 $10\ \text{m}$；$v=\tfrac{\sqrt3}{2}c=0.866c$、$\gamma=2$。穀倉系 $S$ 入口 $x=0$、出口 $x=10\ \text{m}$；竿子系 $S'$ 竿尾在 $x'=0$，$t=t'=0$ 時兩原點重合。事件 A（入口關門）$(x,t)=(0,\ 0)$，事件 B（出口關門）$(x,t)=(10\ \text{m},\ 0)$。</p>
+<h4>(a) 穀倉座標系</h4>
+<p><strong>① 竿子的長度：</strong> 在穀倉座標系中竿子在動，長度收縮，再和穀倉比較。</p>
+<p class="fnote"><b>公式（長度收縮）：</b>$L=\dfrac{L_0}{\gamma}$，其中 $L_0$ 為物體靜止時量的固有長度、$\gamma=1/\sqrt{1-v^2/c^2}$、$L$ 為物體以 $v$ 運動時量到的長度；本題 $L_0=20\ \text{m}$、$\gamma=2$。</p>
+<p>代入竿子 $L_0=20\ \text{m}$、$\gamma=2$：</p>
+<div class="math-block">$$L=\frac{20\ \text{m}}{2}=10\ \text{m}$$</div>
+<p><strong>② 關門那一刻竿子在哪：</strong> $t=0$ 時竿尾在 $x=0$、竿頭在 $x=0+10\ \text{m}=10\ \text{m}$，竿子剛好整根在穀倉內，兩扇門同時關上，一瞬間竿子被關在裡面。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{竿長 }10\ \text{m}\\ \text{關門時剛好整根在穀倉內}\end{gathered}}$$</div>
+<h4>(b) 竿子座標系</h4>
+<p><strong>① 穀倉的長度：</strong> 弔詭的根源是「兩扇門同時關」只在 $S$ 成立，光說長度收縮是相互的解決不了，一定要算同時性。先看長度：穀倉在 $S'$ 中運動而收縮；竿子靜止，竿尾在 $x'=0$、竿頭在 $x'=20\ \text{m}$。</p>
+<div class="math-block">$$L_{\text{倉}}=\frac{10\ \text{m}}{2}=5\ \text{m}$$</div>
+<p><strong>② 兩次關門在 $S'$ 的時刻與位置：</strong> 把兩次關門當成事件 A、B 代入勞倫茲轉換。</p>
+<p class="fnote"><b>公式（勞倫茲轉換）：</b>$t'=\gamma\left(t-\dfrac{vx}{c^2}\right)$、$x'=\gamma(x-vt)$，其中 $(x,t)$ 為事件在 $S$ 的座標、$(x',t')$ 為在以 $v$ 沿 $+x$ 運動的 $S'$ 中的座標；本題 $\gamma=2$、$v=0.866c$。</p>
+<p>事件 A 在兩系都是原點：$t'_A=0$、$x'_A=0$。事件 B 代入 $x=10\ \text{m}$、$t=0$：</p>
+<div class="math-block">$$\begin{aligned}t'_B&amp;=\gamma\left(0-\frac{v\,(10\ \text{m})}{c^2}\right)=-\frac{2(0.866)(10\ \text{m})}{c}\\&amp;=-5.77\times10^{-8}\ \text{s}\end{aligned}$$</div>
+<div class="math-block">$$x'_B=\gamma(10\ \text{m}-0)=2(10\ \text{m})=20\ \text{m}$$</div>
+<p><strong>③ 解釋弔詭：</strong> 在 $S'$ 中出口門<strong>先</strong>關（早 $17.3\ \text{m}/c=57.7\ \text{ns}$），那時它正好在竿頭 $x'=20\ \text{m}$ 處，關了又開，竿頭剛好穿出去。之後穀倉繼續以 $v$ 往後移，$57.7\ \text{ns}$ 後入口抵達竿尾 $x'=0$ 才關門。兩扇門從來沒有「同時」關著竿子，所以沒有矛盾。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{穀倉 }5\ \text{m}\text{；A：}t'_A=0,\ x'_A=0\\ \text{B：}t'_B=-5.77\times10^{-8}\ \text{s},\ x'_B=20\ \text{m}\\ \text{出口門在竿頭處先關，}\\ 57.7\ \text{ns}\text{ 後入口門才在竿尾處關}\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="sf-11-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>快速度（rapidity）：連續五次加 0.5c</h4>
+    <button type="button" class="exam-btn" data-exam="sf-11-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>定義快速度 $\phi$：$\beta=\tanh\phi$。(a) 證明速度相加公式 (1.49) 等價於 $\phi=\phi_1+\phi_2$（提示：$\tanh(a+b)=\dfrac{\tanh a+\tanh b}{1+\tanh a\tanh b}$）。(b) 火箭從靜止起，每一次都在「自己當時的靜止座標系」中加速到 $0.5c$。依序寫出前五次後相對起點的速度。(c) 至少要幾次才超過 $0.99c$？能不能有限次數達到 $c$？</p></div>
+    <div class="part solution concise"><span class="part-label">解題</span>
+<p class="symnote">符號：快速度 $\phi$ 定義為 $\beta=\tanh\phi$；$v$ 為 $S'$ 相對 $S$ 的速度，$V'_x$、$V_x$ 為物體在 $S'$、$S$ 中的速度；火箭從 $\beta_0=0$ 起，每次在當時的靜止座標系中加速到 $0.5c$。</p>
+<h4>(a) 速度相加等價於快速度相加</h4>
+<p><strong>① 把速度寫成 $\tanh$：</strong> 速度相加公式 (1.49) 和 $\tanh$ 的加法公式長得一模一樣，把每個速度寫成 $\tanh$ 代入就看出來。</p>
+<p class="fnote"><b>公式（相對論速度相加 (1.49)）：</b>$V_x=\dfrac{V'_x+v}{1+vV'_x/c^2}$，其中 $v$ 為 $S'$ 相對 $S$ 的速度、$V'_x$ 為物體在 $S'$ 中的速度、$V_x$ 為物體在 $S$ 中的速度；本題令 $v/c=\tanh\phi_1$、$V'_x/c=\tanh\phi_2$。</p>
+<p>代入並用題目給的加法公式：</p>
+<div class="math-block">$$\frac{V_x}{c}=\frac{\tanh\phi_1+\tanh\phi_2}{1+\tanh\phi_1\tanh\phi_2}=\tanh(\phi_1+\phi_2)$$</div>
+<p>所以合成速度的快速度就是 $\phi_1+\phi_2$。</p>
+<div class="math-block">$$\boxed{\phi=\phi_1+\phi_2}$$</div>
+<h4>(b) 五次加速後的速度</h4>
+<p><strong>① 遞推式：</strong> 每次都是 (1.49) 的情況，$v=\beta_nc$（火箭當時的速度）、$V'_x=0.5c$：</p>
+<div class="math-block">$$\beta_{n+1}=\frac{\beta_n+0.5}{1+0.5\beta_n}$$</div>
+<p><strong>② 逐次代入：</strong> 從靜止 $\beta_0=0$ 起：</p>
+<div class="math-block">$$0.5\ \to\ 0.8\ \to\ 0.9286\ \to\ 0.9756\ \to\ 0.9918$$</div>
+<p>例如第 3 次：</p>
+<div class="math-block">$$\frac{0.8+0.5}{1+0.4}=\frac{13}{14}=0.9286$$</div>
+<div class="math-block">$$\boxed{0.5c,\ 0.8c,\ 0.929c,\ 0.976c,\ 0.992c}$$</div>
+<h4>(c) 幾次才超過 $0.99c$</h4>
+<p><strong>① 用快速度相加：</strong> 每次都加上同一個 $\phi_1=\tanh^{-1}0.5$，$n$ 次後 $\phi=n\phi_1$。要求 $\tanh(n\phi_1)\gt0.99$，即 $n\phi_1\gt\tanh^{-1}0.99$：</p>
+<div class="math-block">$$\phi_1=\tanh^{-1}0.5=0.5493,\qquad \tanh^{-1}0.99=2.647$$</div>
+<div class="math-block">$$n\gt\frac{2.647}{0.5493}=4.82\ \Longrightarrow\ n=5$$</div>
+<p><strong>② 能不能到 $c$：</strong> $\tanh(n\phi_1)\lt1$ 對任何有限的 $n$ 都成立，$\phi\to\infty$ 才 $\beta\to1$，所以有限次數永遠到不了 $c$。</p>
+<div class="math-block">$$\boxed{\begin{gathered}\text{至少 5 次（第 4 次只有 }0.976c\text{）}\\ \text{有限次數永遠到不了 }c\end{gathered}}$$</div>
+    </div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>$x'=\gamma(x-vt)$、$t'=\gamma(t-vx/c^2)$；逆轉換 $v\to-v$。由線性猜測＋光速不變推出 $k=\gamma$。</li>
+    <li>$V_x=\dfrac{V'_x+v}{1+vV'_x/c^2}$；垂直分量也要除以 $1+vV'_x/c^2$ 再乘 $\sqrt{1-v^2/c^2}$。</li>
+    <li>同時性是相對的：$\Delta t=\gamma v\Delta x'/c^2$，後方的事件先發生。</li>
+  </ol>
+</div>

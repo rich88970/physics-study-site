@@ -1,0 +1,481 @@
+<h2>三、兩根相差整數：小根可能失敗 <span class="pg">板書 10/14 照片 6–7</span></h2>
+
+<p class="lead">指標根 $\gamma_1$、$\gamma_2$ 相差一個正整數 $N$ 時，大根一定沒問題；小根算到第 $N$ 格會遇到「係數為零」：$F(\gamma_2+N)=F(\gamma_1)=0$。10/14 的 $xy''+3y'-y=0$ 是小根失敗的例子，老師用降階法加長除法求第二解。但期末考的三題 Frobenius（110、112、114 上）全都是小根<strong>成功</strong>的情況。這一節把兩種結果放在一起比較，並說明怎麼判斷。</p>
+
+<h3 id="am5-int-board">3.1 板書例題：$xy''+3y'-y=0$ <span class="pg-tag">照片 6</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 6）</span>
+  <p>ex Solve　$xy''+3y'-y=0$；令 $y=\displaystyle\sum a_nx^{n+\gamma}$（$a_0\ne0$）</p>
+  <p>$\gamma=0,\ -2$；遞迴關係 $(n+\gamma)(n+\gamma+2)a_n=a_{n-1}$</p>
+  <p>For $\gamma=0$：$n(n+2)a_n=a_{n-1}$；$a_0=$ 待定，$a_1=\tfrac13a_0$，$a_2=\tfrac1{24}a_0$，$a_3=\tfrac1{360}a_0$</p>
+  <p>第一個可能解　$y_1=\displaystyle\sum_{n=0}^{\infty}a_nx^{n+0}=a_0+a_1x+a_2x^2+\cdots\propto\Big(1+\frac13x+\frac1{24}x^2+\frac1{360}x^3+\cdots\Big)$　沒有 closed form</p>
+  <p>For $\gamma=-2$ ✗：$(n-2)\,n\,a_n=a_{n-1}$；$a_0=$ 待定；$(n=1)$ $-a_1=a_0\to\underline{a_0=0}$；$(n=2)$ $0\cdot2\cdot a_2=a_1\to a_1=0$</p>
+  <p>利用降階法求 $y_2$：$y_2=uy_1$，$u=\displaystyle\int\frac{e^{-\int P(x)dx}}{y_1^2}dx$</p>
+</div>
+
+<div class="step" data-step="am5-int-s1" data-sym="gam,an">
+  <span class="step-title">指標與遞迴是怎麼來的 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>照片 6 直接寫出 $\gamma=0,-2$ 與遞迴，中間的代入由網站補上。$xy''$、$3y'$ 都是 $x^{n+\gamma-1}$ 型，$-y$ 是 $x^{n+\gamma}$ 型，對齊到 $x^{n+\gamma-1}$（記 $s=n+\gamma$）：</p>
+  $$xy''+3y'\ \to\ \big[s(s-1)+3s\big]a_n=s(s+2)\,a_n,\qquad -y\ \to\ -a_{n-1}\ (n\ge1)$$
+  <p>$n=0$：$\gamma(\gamma+2)a_0=0$，$\gamma=0$ 或 $-2$（公式 $p_0=3$、$q_0=0$：$\gamma^2+2\gamma=0$ ✓）。$n\ge1$：$(n+\gamma)(n+\gamma+2)a_n=a_{n-1}$。兩根相差 $N=2$。</p>
+</div>
+
+<div class="step" data-step="am5-int-s2">
+  <span class="step-title">小根 $\gamma=-2$ 為什麼失敗</span>
+  <p>$\gamma=-2$ 時 $a_n$ 的係數 $(n-2)n$ 在 $n=2$ 為零——這就是 $F(\gamma_2+N)=F(\gamma_1)=0$。$n=2$ 的方程式變成</p>
+  $$0\cdot a_2=a_1\quad\Longrightarrow\quad a_1=0,$$
+  <p>再回到 $n=1$：$(1-2)\cdot1\cdot a_1=a_0$，即 $a_0=-a_1=0$，和 $a_0\ne0$ 矛盾。板書兩行的箭頭就是這個推論（先由 $n=2$ 得 $a_1=0$，再由 $n=1$ 得 $a_0=0$）。所以小根做不出級數解，第二解要另外找。</p>
+</div>
+
+<details class="supp">
+  <summary>$y_1$ 的一般項（網站補充）</summary>
+  <div class="supp-body">
+    <p>$a_n=\dfrac{a_{n-1}}{n(n+2)}$，連乘 $\prod_{k=1}^nk(k+2)=n!\cdot\dfrac{(n+2)!}{2}$，所以 $a_n=\dfrac{2}{n!\,(n+2)!}a_0$：$n=1,2,3$ 得 $\tfrac13,\tfrac1{24},\tfrac1{360}$，和板書相同。這個級數不是初等函數的展開（板書說「沒有 closed form」），所以第二解只能寫成級數。</p>
+  </div>
+</details>
+
+<h3 id="am5-int-long">3.2 降階法加長除法 <span class="pg-tag">照片 7</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 10/14（照片 7）</span>
+  <p>$u=\displaystyle\int\frac{e^{-\int P(x)dx}}{y_1^2}dx=\int\frac{1}{x^3y_1^2}dx$；$P(x)=\dfrac3x$，$\displaystyle\int P(x)\,dx=\int\frac3x\,dx=3\ln x$</p>
+  $$u=\int\frac{1}{x^3\Big(1+\frac13x+\frac1{24}x^2+\frac1{360}x^3+\cdots\Big)^2}dx\quad\text{長除法}$$
+  $$u=\int\frac1{x^3}\Big(1-\frac23x+\frac14x^2-\cdots\Big)dx=-\frac{1}{2x^2}+\frac{2}{3x}+\frac{\ln x}{4}-\cdots$$
+  <p>$y_2=uy_1$</p>
+</div>
+
+<div class="step" data-step="am5-int-s3" data-sym="uu">
+  <span class="step-title">長除法那一步 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>令 $s=\tfrac13x+\tfrac1{24}x^2+\cdots$，$(1+s)^{-2}=1-2s+3s^2-\cdots$：</p>
+  $$\frac{1}{y_1^2}=1-2\Big(\frac x3+\frac{x^2}{24}\Big)+3\Big(\frac x3\Big)^2+\cdots=1-\frac23x+\Big(-\frac1{12}+\frac13\Big)x^2+\cdots=1-\frac23x+\frac14x^2-\cdots$$
+  <p>除以 $x^3$ 後逐項積分：$\int x^{-3}=-\tfrac1{2x^2}$、$\int-\tfrac23x^{-2}=\tfrac2{3x}$、$\int\tfrac14x^{-1}=\tfrac14\ln x$。關鍵是 $\tfrac1x$ 那一項：它積出 $\ln x$。下一項是 $-\tfrac{19}{270}$，積出 $-\tfrac{19}{270}x$。</p>
+</div>
+
+<div class="step" data-step="am5-int-s4" data-sym="y12">
+  <span class="step-title">把 $y_2=uy_1$ 乘出來 <span class="added">網站補充（照片缺漏）</span></span>
+  <p>板書停在 $y_2=uy_1$。$\ln x$ 的部分是 $\tfrac14y_1\ln x$；其餘把 $-\tfrac1{2x^2}+\tfrac2{3x}$ 乘上 $y_1=1+\tfrac x3+\tfrac{x^2}{24}+\cdots$：</p>
+  $$x^{-2}:\ -\tfrac12,\qquad x^{-1}:\ -\tfrac12\cdot\tfrac13+\tfrac23=\tfrac12,\qquad x^{0}:\ -\tfrac12\cdot\tfrac1{24}+\tfrac23\cdot\tfrac13=\tfrac{29}{144}$$
+  $$y_2=\frac14\,y_1\ln x+x^{-2}\Big(-\frac12+\frac12x+\frac{29}{144}x^2+\cdots\Big)$$
+  <p>形式正是 $k\,y_1\ln x+x^{\gamma_2}\sum b_nx^n$（$\gamma_2=-2$、$k=\tfrac14$）：小根的級數「差一點」就成功，缺的部分由 $\ln x$ 項補上。$u$ 的積分常數不同只會讓 $y_2$ 多一個 $y_1$ 的倍數，所以 $x^0$ 的係數 $\tfrac{29}{144}$ 不是唯一的（$x^{-2}$、$x^{-1}$ 與 $k$ 才是確定的）。</p>
+</div>
+
+<h3 id="am5-int-rule">3.3 小根什麼時候會成功 <span class="added">網站補充</span></h3>
+
+<p>小根 $\gamma_2$ 算到 $n=N$ 時，方程式是</p>
+$$\underbrace{F(\gamma_2+N)}_{=0}\,a_N=\big(\text{由 }a_{N-1},a_{N-2},\dots\text{ 算出的右邊}\big).$$
+<ul>
+  <li>右邊<b>不是 0</b>（例如 $xy''+3y'-y=0$ 的 $a_1$、作業 2 的 $-a_0$）：矛盾，<b>小根失敗</b>，第二解 $y_2=k\,y_1\ln x+x^{\gamma_2}\sum b_nx^n$，用降階法或代入這個形式求。</li>
+  <li>右邊<b>剛好是 0</b>：$0\cdot a_N=0$，$a_N$ 可以任意取，<b>小根成功</b>。這時小根一次給出整個一般解：$a_0$ 那部分是新的解，$a_N$ 那部分正好是大根的解 $y_1$，所以通常取 $a_N=0$ 讓兩個解分開。</li>
+</ul>
+<p>考試的策略：<b>先試小根</b>。成功的話一個遞迴就拿到兩個解（110、112、114 上期末都是這樣）；失敗的話，大根給 $y_1$，再照 10/14 的做法用降階法。右邊會不會是 0 常常和遞迴「跳幾格」有關：$a_n$ 只連到 $a_{n-2}$ 時，$N=1$ 那一格的右邊是 $a_{-1}=0$，小根一定成功（114 上、自編 3-a）。</p>
+
+<div class="problem" data-kind="example" id="am5-ex-3">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 10/14 板書（照片 6–7）</span></div>
+    <h4>$xy''+3y'-y=0$：$\gamma=-2$ 失敗，第二解有 $\tfrac14y_1\ln x$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-ex-3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-ex-3"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex Solve　$xy''+3y'-y=0$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>用 Frobenius 法解 $xy''+3y'-y=0$：求指標與遞迴、第一個解，說明小根為什麼失敗，並用降階法求第二個解的前幾項。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac3x$、$Q=-\dfrac1x$</td><td>「$xy''+3y'-y$」除以 $x$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$3$、$0$</td><td>$xP=3$；$x^2Q=-x\to0$</td></tr>
+          <tr><td>降階公式</td><td>$u=\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}dx$</td><td>板書照片 6 最後一行（第 2 節的 ★）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：$\gamma$、遞迴、$y_1$（到 $x^3$）、小根失敗的理由、$y_2$ 的 $\ln$ 係數與主要項。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $x=0$ 是正則奇點，<b>所以</b>用 Frobenius；$xy''$、$3y'$ 是 $x^{n+\gamma-1}$ 型、$y$ 高一次，對齊到 $x^{n+\gamma-1}$。</p>
+      <p><b>因為</b>兩根 $0$、$-2$ 相差 2（整數），小根在 $n=2$ 碰到 $F=0$，<b>所以</b>要檢查 $n=2$ 的方程式是否矛盾；矛盾就用大根的 $y_1$ 做降階。$y_1$ 沒有 closed form，<b>所以</b> $1/y_1^2$ 用長除法（二項式展開）變成冪級數再積分。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-ex-3-s1" data-sym="gam">
+        <span class="step-title">指標與遞迴</span>
+        $$s(s+2)\,a_n=a_{n-1}\ (s=n+\gamma);\qquad n=0:\ \gamma(\gamma+2)=0\Rightarrow\gamma_1=0,\ \gamma_2=-2\ (N=2)$$
+      </div>
+      <div class="step" data-step="am5-ex-3-s2" data-sym="an">
+        <span class="step-title">大根 $\gamma=0$</span>
+        <p class="sub">$n(n+2)a_n=a_{n-1}$，$n=1,2,3$：</p>
+        $$a_1=\frac{a_0}{1\cdot3}=\frac13a_0,\quad a_2=\frac{a_1}{2\cdot4}=\frac1{24}a_0,\quad a_3=\frac{a_2}{3\cdot5}=\frac1{360}a_0$$
+        <p>$y_1=1+\tfrac13x+\tfrac1{24}x^2+\tfrac1{360}x^3+\cdots$（$a_0=1$）。</p>
+      </div>
+      <div class="step" data-step="am5-ex-3-s3">
+        <span class="step-title">小根 $\gamma=-2$ 矛盾</span>
+        <p class="sub">$(n-2)n\,a_n=a_{n-1}$；$n=2$：$0\cdot a_2=a_1\Rightarrow a_1=0$；$n=1$：$-a_1=a_0\Rightarrow a_0=0$，和 $a_0\ne0$ 矛盾。</p>
+      </div>
+      <div class="step" data-step="am5-ex-3-s4" data-sym="uu">
+        <span class="step-title">降階公式</span>
+        <p class="sub">$\int P\,dx=3\ln x$，$e^{-\int P\,dx}=x^{-3}$；代入 $y_1$（步驟 2）並用 $(1+s)^{-2}=1-2s+3s^2-\cdots$：</p>
+        $$u'=\frac{1}{x^3y_1^2}=\frac1{x^3}\Big(1-\frac23x+\frac14x^2-\frac{19}{270}x^3+\cdots\Big)$$
+        $$u=-\frac1{2x^2}+\frac2{3x}+\frac14\ln x-\frac{19}{270}x+\cdots$$
+      </div>
+      <div class="step" data-step="am5-ex-3-s5" data-sym="y12">
+        <span class="step-title">$y_2=uy_1$</span>
+        $$y_2=\frac14\,y_1\ln x+\frac{1}{x^2}\Big(-\frac12+\frac12x+\frac{29}{144}x^2+\cdots\Big)$$
+        <p>一般解 $y=c_1y_1+c_2y_2$，$x\gt0$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\gamma=0,-2$；$y_1=1+\tfrac13x+\tfrac1{24}x^2+\tfrac1{360}x^3+\cdots$（$a_n=\tfrac{2}{n!(n+2)!}$）；$\gamma=-2$ 在 $n=2$ 推出 $a_0=0$，失敗；$y_2=uy_1=\tfrac14y_1\ln x+x^{-2}\big(-\tfrac12+\tfrac12x+\tfrac{29}{144}x^2+\cdots\big)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$u'$ 的首項 $x^{-3}=x^{-p_0}\cdot x^{-2\gamma_1}$ ✔；$\ln x$ 的係數 $\tfrac14$ 來自 $u'$ 的 $x^{-1}$ 項，不為 0，和「小根失敗 ⟹ 一定有 $\ln x$」一致。把 $y_2$ 代回方程式，殘差到 $x^{-1}$ 都是 0（驗算腳本）。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="am5-hw-2">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">10/14 作業 第 2 題</span></div>
+    <h4>$xy''-xy'+y=0$：$y_1=x$，$y_2=x\ln x-1+\cdots$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-hw-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-hw-2"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>2. Solve $xy''-xy'+y=0$.</p><p>Ans: two linear independent solution $y_1(x)$ and $y_2(x)$,</p><p>$y_1(x)=x$</p><p>$y_2(x)=x\ln x-1+\frac{1}{2}x^2+\frac{1}{12}x^3+\frac{1}{72}x^4+\dots$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>解 $xy''-xy'+y=0$。老師給的答案：$y_1(x)=x$，$y_2(x)=x\ln x-1+\tfrac12x^2+\tfrac1{12}x^3+\tfrac1{72}x^4+\cdots$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=-1$、$Q=\dfrac1x$</td><td>「$xy''-xy'+y$」除以 $x$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$0$、$0$</td><td>$xP=-x\to0$；$x^2Q=x\to0$</td></tr>
+          <tr><td>方法</td><td>Frobenius＋降階</td><td>作業標題 Frobenius Method；老師答案的 $x\ln x$ 表示要降階</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：兩個線性獨立解（驗證老師的 $y_2$ 到 $x^4$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $p_0=q_0=0$，指標方程式 $\gamma(\gamma-1)=0$，兩根 $1$、$0$ 相差 1，<b>所以</b>先算大根 $\gamma=1$，再檢查小根 $\gamma=0$ 在 $n=1$ 會不會矛盾。</p>
+      <p><b>因為</b>大根的解剛好是 $y_1=x$（closed form 很簡單），而 $P=-1$ 積分很容易，<b>所以</b>小根失敗後用降階公式 $y_2=x\int\frac{e^{x}}{x^2}dx$，把 $e^x$ 展開逐項積分，比代入未知形式更快。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-hw-2-s1" data-sym="gam,an">
+        <span class="step-title">指標與遞迴</span>
+        <p>$xy''\to s(s-1)a_n$（$x^{s-1}$），$-xy'+y$ 平移後 $\to\big[-(s-1)+1\big]a_{n-1}=-(s-2)a_{n-1}$：</p>
+        $$s(s-1)\,a_n=(s-2)\,a_{n-1};\qquad n=0:\ \gamma(\gamma-1)=0\Rightarrow\gamma_1=1,\ \gamma_2=0$$
+      </div>
+      <div class="step" data-step="am5-hw-2-s2" data-sym="y12">
+        <span class="step-title">大根 $\gamma=1$：級數截斷</span>
+        <p class="sub">$s=n+1$：$(n+1)n\,a_n=(n-1)a_{n-1}$；$n=1$：$2a_1=0\cdot a_0=0$。</p>
+        <p>$a_1=0$ 之後全部為零，$y_1=a_0x$：取 $y_1=x$。驗算 $0-x+x=0$ ✓。</p>
+      </div>
+      <div class="step" data-step="am5-hw-2-s3">
+        <span class="step-title">小根 $\gamma=0$：失敗</span>
+        <p class="sub">$s=n$：$n(n-1)a_n=(n-2)a_{n-1}$；$n=1$：$0\cdot a_1=-a_0$。</p>
+        <p>右邊 $-a_0\ne0$，矛盾——小根做不出級數解。</p>
+      </div>
+      <div class="step" data-step="am5-hw-2-s4" data-sym="uu">
+        <span class="step-title">降階法</span>
+        <p class="sub">$\int P\,dx=-x$，$e^{-\int P\,dx}=e^x$；代入 $y_1=x$：</p>
+        $$u=\int\frac{e^x}{x^2}dx=\int\Big(\frac1{x^2}+\frac1x+\frac12+\frac x6+\frac{x^2}{24}+\cdots\Big)dx=-\frac1x+\ln x+\frac x2+\frac{x^2}{12}+\frac{x^3}{72}+\cdots$$
+      </div>
+      <div class="step" data-step="am5-hw-2-s5">
+        <span class="step-title">$y_2=uy_1=xu$</span>
+        $$y_2=x\ln x-1+\frac12x^2+\frac1{12}x^3+\frac1{72}x^4+\cdots$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_1=x$，$y_2=x\ln x-1+\tfrac12x^2+\tfrac1{12}x^3+\tfrac1{72}x^4+\cdots$，一般解 $y=c_1y_1+c_2y_2$。老師的答案正確（$y_2$ 就是 $x\int\frac{e^x}{x^2}dx$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_2$ 代入到 $x^1$：$y_2'=\ln x+1+x+\cdots$、$y_2''=\tfrac1x+1+\cdots$；$xy_2''=1+x$、$-xy_2'=-x\ln x-x$、$y_2=x\ln x-1$，相加：$\ln$ 項 $-x\ln x+x\ln x=0$，常數 $1-1=0$，$x$ 項 $1-1=0$ ✔。$\ln x$ 的係數 $k=1$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am5-k110-4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2022.Jan. 第 4 題（110上）</span></div>
+    <h4>$xy''+(x-1)y'-y=0$，$y(0)=1$、$y(1)=0$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-k110-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-k110-4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>4. Solve $xy''+(x-1)y'-y=0$ with $y(0)=1,y(1)=0$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>解 $xy''+(x-1)y'-y=0$，$y(0)=1$、$y(1)=0$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac{x-1}{x}$、$Q=-\dfrac1x$</td><td>除以 $x$；$x=0$ 是奇點</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$-1$、$0$</td><td>$xP=x-1\to-1$；$x^2Q=-x\to0$</td></tr>
+          <tr><td>方法</td><td>Frobenius（題目沒指定）</td><td>$x=0$ 是正則奇點，冪級數不能用</td></tr>
+          <tr><td>條件</td><td>$y(0)=1$、$y(1)=0$</td><td>題目：一個在奇點、一個在 $x=1$，都要先有一般解</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一般解，再用兩個條件決定常數。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $y''$ 的係數 $x$ 在 0 為零，但 $xP$、$x^2Q$ 有限，<b>所以</b>用 Frobenius。指標方程式 $\gamma(\gamma-1)-\gamma=\gamma(\gamma-2)$，兩根 $2$、$0$ 相差 2，<b>所以</b>先試小根 $\gamma=0$，看 $n=2$ 是否給出 $0=0$。</p>
+      <p><b>因為</b>條件給在 $x=0$ 與 $x=1$，<b>所以</b>先寫出一般解（最好是 closed form），再代兩個點。條件在奇點 $x=0$ 也沒問題：兩個指標都 $\ge0$，兩個解在 0 都有限。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-k110-4-s1" data-sym="gam,an">
+        <span class="step-title">代入、對齊到 $x^{n+\gamma-1}$</span>
+        <p>$xy''-y'\to\big[s(s-1)-s\big]a_n=s(s-2)a_n$；$xy'-y$ 平移後 $\to\big[(s-1)-1\big]a_{n-1}=(s-2)a_{n-1}$（$s=n+\gamma$）：</p>
+        $$s(s-2)\,a_n+(s-2)\,a_{n-1}=0;\qquad n=0:\ \gamma(\gamma-2)=0\Rightarrow\gamma=2,\ 0$$
+      </div>
+      <div class="step" data-step="am5-k110-4-s2">
+        <span class="step-title">大根 $\gamma=2$</span>
+        <p class="sub">$s=n+2$：$(n+2)n\,a_n=-n\,a_{n-1}$，$n\ge1$ 約掉 $n$：$a_n=-\dfrac{a_{n-1}}{n+2}$。取 $a_0=\tfrac12$ 方便：</p>
+        $$a_n=\frac{2(-1)^n}{(n+2)!}a_0\ \Longrightarrow\ y=\sum_{n=0}^{\infty}\frac{(-1)^n\,x^{n+2}}{(n+2)!}=e^{-x}-1+x$$
+      </div>
+      <div class="step" data-step="am5-k110-4-s3" data-sym="y12">
+        <span class="step-title">小根 $\gamma=0$：成功</span>
+        <p class="sub">$s=n$：$n(n-2)a_n=-(n-2)a_{n-1}$。</p>
+        $$n=1:\ -a_1=a_0\Rightarrow a_1=-a_0;\qquad n=2:\ 0\cdot a_2=-0\cdot a_1=0\ \Rightarrow\ a_2\ \text{任意}$$
+        <p>$n\ge3$ 約掉 $(n-2)$：$a_n=-\dfrac{a_{n-1}}{n}$。取 $a_2=0$ 則 $a_3=a_4=\cdots=0$：$y=a_0(1-x)$。（$a_2\ne0$ 的部分 $a_2(x^2-\tfrac{x^3}3+\cdots)=2a_2(e^{-x}-1+x)$，就是大根的解。）</p>
+      </div>
+      <div class="step" data-step="am5-k110-4-s4">
+        <span class="step-title">一般解與條件</span>
+        $$y=c_1(1-x)+c_2\,(e^{-x}-1+x)$$
+        <p class="sub">$y(0)=1$：$c_1\cdot1+c_2(1-1+0)=c_1=1$。$y(1)=0$：$c_1\cdot0+c_2(e^{-1}-1+1)=c_2e^{-1}=0\Rightarrow c_2=0$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>一般解 $y=c_1(1-x)+c_2(e^{-x}-1+x)$（等價於 $C_1(x-1)+C_2e^{-x}$）；滿足條件的解 $y=1-x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=1-x$：$y'=-1$、$y''=0$；$0+(x-1)(-1)-(1-x)=0$ ✔；$y(0)=1$、$y(1)=0$ ✔。$e^{-x}$ 也是解：$xe^{-x}-(x-1)e^{-x}-e^{-x}=0$ ✔。另一種做法：看出 $y_1=1-x$ 後用降階法，$e^{-\int P\,dx}=xe^{-x}$，$u=\int\frac{xe^{-x}}{(1-x)^2}dx=\frac{e^{-x}}{1-x}$，$y_2=uy_1=e^{-x}$，一致。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am5-k112-4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2024.01. 第 4 題（112上） · 115級上學期應數(期末) 第 4 題（同卷）</span></div>
+    <h4>$(x^2+2x)y''-2(x+1)y'+2y=0$ by Frobenius method</h4>
+    <button type="button" class="exam-btn" data-exam="am5-k112-4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-k112-4"><span class="part-label original-label">考卷原文</span>
+<p class="original-note">卷頭印「應用數學期中考 (2024. 01.)」，時間與考古題網站的分類都是 112 學年上學期期末考。</p>
+<div class="original-text" lang="en"><p>4. (8 points) Solve the general solution of $(x^2+2x)y''-2(x+1)y'+2y=0$ by Frobenius method.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（8 分）用 Frobenius 法求 $(x^2+2x)y''-2(x+1)y'+2y=0$ 的一般解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac{-2(x+1)}{x(x+2)}$、$Q=\dfrac{2}{x(x+2)}$</td><td>除以 $x^2+2x=x(x+2)$；奇點 $0$、$-2$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$-1$、$0$</td><td>$xP=\tfrac{-2(x+1)}{x+2}\to-1$；$x^2Q=\tfrac{2x}{x+2}\to0$</td></tr>
+          <tr><td>方法</td><td>Frobenius，在 $x=0$</td><td>「by Frobenius method」</td></tr>
+          <tr><td>收斂範圍</td><td>$0\lt x\lt2$（至少）</td><td>到另一個奇點 $-2$ 的距離</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一般解。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $p_0=-1$、$q_0=0$，指標方程式 $\gamma(\gamma-1)-\gamma=\gamma(\gamma-2)=0$，兩根相差 2，<b>所以</b>先試小根 $\gamma=0$：若在 $n=2$ 得到 $0=0$，一個遞迴就給出兩個解。</p>
+      <p><b>因為</b>係數是 $x^2$、$x$ 的組合，$x^2y''$、$xy'$、$y$ 是 $x^{n+\gamma}$ 型，$2xy''$、$y'$ 是 $x^{n+\gamma-1}$ 型，<b>所以</b>對齊到 $x^{n+\gamma-1}$，前三項平移成 $a_{n-1}$；把兩組係數各自因式分解，會發現遞迴很快截斷成多項式。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-k112-4-s1" data-sym="gam,an">
+        <span class="step-title">兩組係數</span>
+        <p>記 $s=n+\gamma$。$x^{s-1}$ 型：$2xy''-2y'\to\big[2s(s-1)-2s\big]a_n=2s(s-2)a_n$。$x^{s}$ 型平移成 $a_{n-1}$：$x^2y''-2xy'+2y\to\big[(s-1)(s-2)-2(s-1)+2\big]a_{n-1}=(s-2)(s-3)a_{n-1}$。</p>
+        $$2s(s-2)\,a_n+(s-2)(s-3)\,a_{n-1}=0;\qquad n=0:\ 2\gamma(\gamma-2)=0\Rightarrow\gamma=0,\ 2$$
+      </div>
+      <div class="step" data-step="am5-k112-4-s2" data-sym="y12">
+        <span class="step-title">小根 $\gamma=0$</span>
+        <p class="sub">$s=n$：$2n(n-2)a_n=-(n-2)(n-3)a_{n-1}$。</p>
+        $$n=1:\ -2a_1=-2a_0\Rightarrow a_1=a_0;\qquad n=2:\ 0\cdot a_2=0\Rightarrow a_2\ \text{任意};\qquad n=3:\ 6a_3=-(1)(0)a_2=0\Rightarrow a_3=0$$
+        <p>$a_3=0$ 之後 $n\ge4$：$a_n=-\dfrac{(n-3)}{2n}a_{n-1}=0$。所以 $y=a_0(1+x)+a_2x^2$——小根一次給出兩個解。</p>
+      </div>
+      <div class="step" data-step="am5-k112-4-s3">
+        <span class="step-title">大根 $\gamma=2$ 驗證</span>
+        <p class="sub">$s=n+2$：$2(n+2)n\,a_n=-n(n-1)a_{n-1}$；$n=1$：$6a_1=0$，之後全為零。</p>
+        <p>$y=a_0x^2$，和小根裡 $a_2$ 那部分相同。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\gamma=0,2$；一般解 $y=c_1(1+x)+c_2x^2$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=1+x$：$0-2(x+1)+2(1+x)=0$ ✔。$y=x^2$：$(x^2+2x)\cdot2-2(x+1)\cdot2x+2x^2=2x^2+4x-4x^2-4x+2x^2=0$ ✔。Wronskian $(1+x)(2x)-x^2=x^2+2x\ne0$（$x\gt0$），線性獨立 ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="am5-k114-2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期末考 2025.Dec. 第 2 題（114上）</span></div>
+    <h4>$x^2y''+xy'+\big(x^2-\tfrac14\big)y=0$：兩個解各寫前三個非零項</h4>
+    <button type="button" class="exam-btn" data-exam="am5-k114-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="am5-k114-2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. (25%) Solve $x^2y''+xy'+\left(x^2-\frac{1}{4}\right)y=0$ by the Frobenius method. You only need to find the first three nonzero terms of each of the two linearly independent series solutions.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目（中文）</span><p>（25%）用 Frobenius 法解 $x^2y''+xy'+\big(x^2-\tfrac14\big)y=0$。只需要寫出兩個線性獨立級數解各自的前三個非零項。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式的係數</td><td>$P=\dfrac1x$、$Q=\dfrac{x^2-\frac14}{x^2}$</td><td>除以 $x^2$</td></tr>
+          <tr><td>$p_0$、$q_0$</td><td>$1$、$-\tfrac14$</td><td>$xP=1$；$x^2Q=x^2-\tfrac14\to-\tfrac14$</td></tr>
+          <tr><td>方法與要寫的項</td><td>Frobenius；每個解 3 個非零項</td><td>「by the Frobenius method」「first three nonzero terms of each」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：指標、遞迴、$y_1$ 與 $y_2$ 各前三個非零項。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $x^2y''$、$xy'$、$-\tfrac14y$ 都是 $x^{n+\gamma}$ 型，只有 $x^2y$ 高兩次，<b>所以</b>對齊到 $x^{n+\gamma}$，$x^2y$ 平移成 $a_{n-2}$；$n=0$ 給指標，$n=1$ 單獨給 $a_1$ 的方程式，$n\ge2$ 給跳兩格的遞迴。</p>
+      <p><b>因為</b>兩根 $\pm\tfrac12$ 相差 1，小根在 $n=1$ 會遇到 $F=0$；但這裡遞迴跳兩格，$n=1$ 的右邊沒有東西（$a_{-1}=0$），<b>所以</b>是 $0\cdot a_1=0$，小根成功，$a_1$ 可以取 0。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-k114-2-s1" data-sym="gam,an">
+        <span class="step-title">代入並分出 $n=0$、$n=1$</span>
+        <p>$x^2y''+xy'-\tfrac14y\to\big[s(s-1)+s-\tfrac14\big]a_n=\big(s^2-\tfrac14\big)a_n=(s+\tfrac12)(s-\tfrac12)a_n$；$x^2y\to a_{n-2}$（$n\ge2$）：</p>
+        $$(\gamma+\tfrac12)(\gamma-\tfrac12)a_0+(\gamma+\tfrac32)(\gamma+\tfrac12)a_1x+\sum_{n\ge2}\Big[(n+\gamma+\tfrac12)(n+\gamma-\tfrac12)a_n+a_{n-2}\Big]x^n=0$$
+        <p>（全式乘了 $x^\gamma$，和老師參考解答的寫法相同。）$n=0$：$\gamma=\pm\tfrac12$。</p>
+      </div>
+      <div class="step" data-step="am5-k114-2-s2">
+        <span class="step-title">$\gamma=\tfrac12$</span>
+        <p class="sub">$n=1$：$(2)(1)a_1=0\Rightarrow a_1=0$（奇數項全為零）；$n\ge2$：$a_n=-\dfrac{a_{n-2}}{(n+1)n}$：</p>
+        $$a_2=-\frac{a_0}{3\cdot2}=-\frac16a_0,\qquad a_4=-\frac{a_2}{5\cdot4}=\frac1{120}a_0$$
+        $$y_1=x^{1/2}\Big(1-\frac{x^2}{6}+\frac{x^4}{120}-\cdots\Big)$$
+      </div>
+      <div class="step" data-step="am5-k114-2-s3">
+        <span class="step-title">$\gamma=-\tfrac12$：$a_1$ 自由</span>
+        <p class="sub">$n=1$：係數 $(\gamma+\tfrac32)(\gamma+\tfrac12)$ 在 $\gamma=-\tfrac12$ 是 $(1)(0)=0$，方程式 $0\cdot a_1=0$，$a_1$ 任意，取 $a_1=0$；$n\ge2$：$a_n=-\dfrac{a_{n-2}}{n(n-1)}$：</p>
+        $$a_2=-\frac{a_0}{2\cdot1}=-\frac12a_0,\qquad a_4=-\frac{a_2}{4\cdot3}=\frac1{24}a_0$$
+        $$y_2=x^{-1/2}\Big(1-\frac{x^2}{2}+\frac{x^4}{24}-\cdots\Big)$$
+      </div>
+      <div class="step" data-step="am5-k114-2-s4" data-sym="y12">
+        <span class="step-title">一般解與 closed form <span class="added">網站補充</span></span>
+        $$y=c_1x^{1/2}\Big(1-\frac{x^2}6+\frac{x^4}{120}-\cdots\Big)+c_2x^{-1/2}\Big(1-\frac{x^2}2+\frac{x^4}{24}-\cdots\Big)=c_1\frac{\sin x}{\sqrt x}+c_2\frac{\cos x}{\sqrt x}$$
+        <p>括號乘上 $x$ 就是 $\sin x$ 的級數、本身就是 $\cos x$ 的級數。若在 $\gamma=-\tfrac12$ 取 $a_1\ne0$，多出來的 $a_1x^{-1/2}(x-\tfrac{x^3}6+\cdots)$ 正好是 $y_1$，所以取 $a_1=0$ 不會漏解。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$\gamma=\pm\tfrac12$；$y_1=x^{1/2}\big(1-\tfrac16x^2+\tfrac1{120}x^4-\cdots\big)$，$y_2=x^{-1/2}\big(1-\tfrac12x^2+\tfrac1{24}x^4-\cdots\big)$；$y=c_1y_1+c_2y_2=c_1\dfrac{\sin x}{\sqrt x}+c_2\dfrac{\cos x}{\sqrt x}$。（與老師參考解答的結果相同。）</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p><b>老師參考解答的誤植</b>：$\gamma=\tfrac12$ 一欄寫「$a_4=\tfrac{-1}{20}a_1=\tfrac1{120}a_0$」，應為 $\tfrac{-1}{20}a_2$（$a_1=0$，乘上去會得 0）；$\gamma=-\tfrac12$ 一欄「$a_4=\tfrac{-1}{12}a_1$」同樣應為 $a_2$。另外 $\gamma=-\tfrac12$ 的「$a_1=0$」是選擇而不是被迫（係數 $(\gamma+\tfrac32)(\gamma+\tfrac12)=0$）。最後的 $y_1$、$y_2$ 都正確。$\dfrac{\cos x}{\sqrt x}$ 代回原式成立（驗算腳本）；第三個非零項的下一項是 $-\tfrac{x^6}{5040}$、$-\tfrac{x^6}{720}$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am5-sf-03a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩根都差 1：一題小根成功、一題小根失敗</h4>
+    <button type="button" class="exam-btn" data-exam="am5-sf-03a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>下面兩個方程式在 $x=0$ 的指標根都相差 1。(a) $xy''+2y'-xy=0$：只用小根求出兩個線性獨立解，並認出 closed form。(b) $xy''-y=0$：說明小根為什麼失敗，並用大根求 $y_1$ 的前四項。(c) 不必算到底，怎麼從遞迴的長相事先判斷小根會不會成功？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>(a) $p_0$、$q_0$</td><td>$2$、$0$</td><td>$P=\tfrac2x$、$Q=-1$：$xP=2$、$x^2Q=-x^2\to0$</td></tr>
+          <tr><td>(b) $p_0$、$q_0$</td><td>$0$、$0$</td><td>$P=0$、$Q=-\tfrac1x$：$x^2Q=-x\to0$</td></tr>
+          <tr><td>根的差</td><td>$N=1$</td><td>題目「相差 1」，下面會算出</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 兩個解與 closed form；(b) 失敗理由與 $y_1$；(c) 判斷方法。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩根差 $N=1$，小根在 $n=1$ 時 $a_1$ 的係數是 0，<b>所以</b>關鍵是 $n=1$ 那條方程式的右邊：(a) 的 $xy$ 讓遞迴跳兩格，$n=1$ 的右邊是 $a_{-1}=0$；(b) 的 $y$ 讓遞迴只跳一格，右邊是 $a_0\ne0$。</p>
+      <p><b>因為</b> (a) 的係數會是 $\tfrac1{(2k)!}$、$\tfrac1{(2k+1)!}$ 而且沒有交錯號，<b>所以</b>認出 $\cosh$、$\sinh$，前面還有 $x^{-1}$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-sf-03a-s1" data-sym="gam,an">
+        <span class="step-title">(a) 指標與遞迴</span>
+        <p>$xy''+2y'\to\big[s(s-1)+2s\big]a_n=s(s+1)a_n$（$x^{s-1}$），$-xy$ 比 $x^{s-1}$ 高兩次，平移成 $-a_{n-2}$：</p>
+        $$s(s+1)\,a_n=a_{n-2};\qquad n=0:\ \gamma(\gamma+1)=0\Rightarrow\gamma=0,\ -1$$
+      </div>
+      <div class="step" data-step="am5-sf-03a-s2" data-sym="y12">
+        <span class="step-title">(a) 小根 $\gamma=-1$</span>
+        <p class="sub">$s=n-1$：$(n-1)n\,a_n=a_{n-2}$；$n=1$：$0\cdot a_1=a_{-1}=0$ ⇒ $a_1$ 任意。</p>
+        $$a_2=\frac{a_0}{2},\ a_4=\frac{a_2}{12}=\frac{a_0}{24};\qquad a_3=\frac{a_1}{6},\ a_5=\frac{a_3}{20}=\frac{a_1}{120}$$
+        $$y=\frac{a_0}{x}\Big(1+\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\Big)+\frac{a_1}{x}\Big(x+\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots\Big)=a_0\frac{\cosh x}{x}+a_1\frac{\sinh x}{x}$$
+      </div>
+      <div class="step" data-step="am5-sf-03a-s3">
+        <span class="step-title">(b) 小根 $\gamma=0$ 失敗</span>
+        <p>$xy''\to s(s-1)a_n$，$-y\to-a_{n-1}$：$s(s-1)a_n=a_{n-1}$，指標 $\gamma(\gamma-1)=0$，$\gamma=1,0$。</p>
+        <p class="sub">$\gamma=0$、$n=1$：$0\cdot a_1=a_0$，而 $a_0\ne0$——矛盾。</p>
+      </div>
+      <div class="step" data-step="am5-sf-03a-s4">
+        <span class="step-title">(b) 大根 $\gamma=1$</span>
+        <p class="sub">$s=n+1$：$(n+1)n\,a_n=a_{n-1}$，$n=1,2,3$：</p>
+        $$a_1=\frac{a_0}{2},\quad a_2=\frac{a_1}{6}=\frac{a_0}{12},\quad a_3=\frac{a_2}{12}=\frac{a_0}{144}$$
+        <p>$y_1=x\big(1+\tfrac x2+\tfrac{x^2}{12}+\tfrac{x^3}{144}+\cdots\big)$；第二解要 $k\,y_1\ln x+\sum b_nx^n$（做法同自編 3-b）。</p>
+      </div>
+      <div class="step" data-step="am5-sf-03a-s5">
+        <span class="step-title">(c) 判斷法</span>
+        <p>小根在 $n=N$ 的方程式是 $0\cdot a_N=$（右邊）。右邊由 $a_{N-1},a_{N-2},\dots$ 組成：若遞迴只連到 $a_{n-2}$（跳兩格）而 $N=1$，右邊只有 $a_{-1}=0$，一定成功；一般情況要把 $a_1,\dots,a_{N-1}$ 算出來代進去看是不是 0。(b) 的右邊直接是 $a_0$，所以一定失敗。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $y=a_0\dfrac{\cosh x}{x}+a_1\dfrac{\sinh x}{x}$（小根 $-1$ 一次給出兩個解）；(b) 小根在 $n=1$ 得 $0=a_0$ 矛盾，$y_1=x\big(1+\tfrac x2+\tfrac{x^2}{12}+\tfrac{x^3}{144}+\cdots\big)$；(c) 看 $n=N$ 那條方程式的右邊是否為 0。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y=\dfrac{\cosh x}{x}$：$xy=\cosh x$，原式 $xy''+2y'=(xy)''$，所以方程式就是 $(xy)''=xy$，$xy=\cosh x$、$\sinh x$ ✔。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="am5-sf-03b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>$xy''+y=0$：小根失敗時，代入 $k\,y_1\ln x+\sum b_nx^n$ 求 $k$</h4>
+    <button type="button" class="exam-btn" data-exam="am5-sf-03b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>考慮 $xy''+y=0$。(a) 求指標，並用大根求 $y_1$ 的前四項。(b) 說明小根失敗。(c) 設 $y_2=k\,y_1\ln x+\sum_{n\ge0}b_nx^n$，取 $b_0=1$、$b_1=0$，代入方程式求 $k$、$b_2$、$b_3$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>標準式</td><td>$P=0$、$Q=\dfrac1x$；$p_0=q_0=0$</td><td>「$xy''+y$」除以 $x$</td></tr>
+          <tr><td>第二解形式</td><td>$k\,y_1\ln x+\sum b_nx^n$</td><td>(c)：小根 $\gamma_2=0$，所以後面的級數從 $x^0$ 開始</td></tr>
+          <tr><td>正規化</td><td>$b_0=1$、$b_1=0$</td><td>(c)：$b_1$ 只會多一個 $y_1$，可任取</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $\gamma$、$y_1$；(b) 失敗理由；(c) $k$、$b_2$、$b_3$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩根 $1$、$0$ 差 1，而遞迴只跳一格，小根在 $n=1$ 得 $0=$（非零），<b>所以</b>第二解一定帶 $\ln x$。</p>
+      <p><b>因為</b> $y_1$ 沒有 closed form，降階公式要做長除法，<b>所以</b>改用代入：$L[y_1\ln x]=\ln x\,L[y_1]+(\text{不含 }\ln\text{ 的項})$，前者為 0，後者和 $L\big[\sum b_nx^n\big]$ 逐次方抵消。最低次方的方程式會直接決定 $k$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="am5-sf-03b-s1" data-sym="gam,an">
+        <span class="step-title">(a) 指標與 $y_1$</span>
+        <p>$s(s-1)a_n=-a_{n-1}$，$\gamma(\gamma-1)=0$，$\gamma=1,0$。大根 $s=n+1$：$a_n=-\dfrac{a_{n-1}}{n(n+1)}$，$a_n=\dfrac{(-1)^n}{n!\,(n+1)!}$：</p>
+        $$y_1=x-\frac{x^2}{2}+\frac{x^3}{12}-\frac{x^4}{144}+\cdots$$
+      </div>
+      <div class="step" data-step="am5-sf-03b-s2">
+        <span class="step-title">(b) 小根失敗</span>
+        <p class="sub">$\gamma=0$、$n=1$：$1\cdot0\cdot a_1=-a_0$，即 $0=-a_0$，和 $a_0\ne0$ 矛盾。</p>
+      </div>
+      <div class="step" data-step="am5-sf-03b-s3">
+        <span class="step-title">(c) $L[y_1\ln x]$ 的不含 $\ln$ 部分</span>
+        <p>$(y_1\ln x)''=y_1''\ln x+\dfrac{2y_1'}{x}-\dfrac{y_1}{x^2}$，所以</p>
+        $$L[y_1\ln x]=x(y_1\ln x)''+y_1\ln x=\ln x\cdot\underbrace{L[y_1]}_0+2y_1'-\frac{y_1}{x}$$
+        <p class="sub">代入 $y_1=\sum c_nx^{n+1}$（$c_0=1$、$c_1=-\tfrac12$、$c_2=\tfrac1{12}$）：$2y_1'-\dfrac{y_1}x=\sum\big[2(n+1)-1\big]c_nx^n=1-\tfrac32x+\tfrac5{12}x^2-\cdots$</p>
+      </div>
+      <div class="step" data-step="am5-sf-03b-s4" data-sym="y12">
+        <span class="step-title">(c) 逐次方抵消</span>
+        <p>$L\big[\sum b_mx^m\big]=\sum\big[m(m-1)b_m+b_{m-1}\big]x^{m-1}$。$L[y_2]=k\big(1-\tfrac32x+\tfrac5{12}x^2\big)+L[\sum b_mx^m]=0$：</p>
+        <p class="sub">$x^0$（$m=1$）：$0\cdot b_1+b_0+k=0$，代入 $b_0=1$：</p>
+        $$k=-1$$
+        <p class="sub">$x^1$（$m=2$）：$2b_2+b_1-\tfrac32k=0$，代入 $b_1=0$、$k=-1$：$2b_2+\tfrac32=0$；$x^2$（$m=3$）：$6b_3+b_2+\tfrac5{12}k=0$：</p>
+        $$b_2=-\frac34,\qquad 6b_3=\frac34+\frac5{12}=\frac76\Rightarrow b_3=\frac7{36}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $\gamma=1,0$；$y_1=x-\tfrac{x^2}2+\tfrac{x^3}{12}-\tfrac{x^4}{144}+\cdots$；(b) $\gamma=0$ 在 $n=1$ 得 $0=-a_0$；(c) $k=-1$、$b_2=-\tfrac34$、$b_3=\tfrac7{36}$：$y_2=-y_1\ln x+1-\tfrac34x^2+\tfrac7{36}x^3+\cdots$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$k$ 由 $x^0$ 的方程式決定、$b_1$ 那一格的係數是 $0$（$m(m-1)$ 在 $m=1$ 為零）——這正是小根失敗的同一格，失敗的「缺口」由 $k\ne0$ 的 $\ln$ 項補上 ✔。整個 $y_2$ 代回原式到 $x^5$ 檢查過（驗算腳本）。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>兩根差 $N$（正整數）：大根一定給 $y_1$；小根在 $n=N$ 遇到 $0\cdot a_N=$ 右邊。</li>
+    <li>右邊 $=0$：小根成功，$a_N$ 自由（取 0），一個遞迴就得到一般解（110、112、114 上期末）。</li>
+    <li>右邊 $\ne0$：小根失敗，$y_2=k\,y_1\ln x+x^{\gamma_2}\sum b_nx^n$，用降階法（被積函數做長除法）或代入這個形式求。</li>
+    <li>考試先試小根；條件給在奇點 $x=0$ 時，先確認各解在 0 是否有限。</li>
+  </ol>
+</div>

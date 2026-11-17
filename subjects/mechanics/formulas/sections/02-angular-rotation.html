@@ -1,0 +1,63 @@
+<h2>二、角速度、矩陣與座標旋轉 <span class="pg">Lecture 1 §6、§8、§9</span></h2>
+
+<h3 id="fx-omega">2.1 角速度</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">角速度與線速度</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#ang-scalar" title="6.1 ">L1 §6.1</a></span></div>
+  <div class="math-block">$$\omega=\dot\theta,\qquad v=R\omega$$</div>
+  <p>$R$ 是到轉軸的距離（不是到原點的距離），$\theta$ 用弧度。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">角速度向量</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#ang-vector" title="6.2 ">L1 §6.2</a></span></div>
+  <div class="math-block">$$\vec v=\vec\omega\times\vec r,\qquad v=r\omega\sin\alpha$$</div>
+  <p>$\vec\omega$ 沿轉軸、方向用右手定則（四指沿轉動方向，拇指指 $\vec\omega$）。次序是 $\vec\omega\times\vec r$，寫反會差一個負號。$r\sin\alpha$ 就是到轉軸的距離 $R$。</p>
+  <p class="symnote">符號：$\alpha$＝$\vec r$ 與轉軸的夾角。</p>
+</div>
+
+<h3 id="fx-matrix">2.2 矩陣</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">矩陣乘法</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#mx-mult" title="8.3 矩陣乘法">L1 §8.3</a><a class="fx-src" data-chapter="mechanics/ch01" href="#mx-noncomm" title="8.4 ">L1 §8.4</a></span></div>
+  <div class="math-block">$$(AB)_{ij}=\sum_kA_{ik}B_{kj},\qquad AB\neq BA\ \text{（一般而言）}$$</div>
+  <p>第 $i$ 列乘第 $j$ 行。$A$ 的行數要等於 $B$ 的列數才能乘；$(m\times n)(n\times p)=(m\times p)$。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">轉置、反矩陣、行列式</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#mx-tm" title="8.5 課本題">L1 §8.5</a></span></div>
+  <div class="math-block">$$(AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T},\qquad (AB)^{-1}=B^{-1}A^{-1},\qquad \det(AB)=\det A\,\det B$$</div>
+  <p>轉置和反矩陣都會讓次序顛倒。三階行列式沿第一列展開：$a(ei-fh)-b(di-fg)+c(dh-eg)$。</p>
+</div>
+
+<h3 id="fx-rot">2.3 座標旋轉</h3>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">二維旋轉矩陣</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#rot-2d" title="9.1 二維旋轉">L1 §9.1</a></span></div>
+  <div class="math-block">$$\begin{bmatrix}x'\\y'\end{bmatrix}=\begin{bmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}$$</div>
+  <p>這是「座標軸逆時針轉 $\theta$」後，同一個點的新座標（點沒動、軸在動）。若是點本身轉 $\theta$，$\sin$ 的正負號對調。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">三維：繞單一軸旋轉</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#rot-3d" title="9.3 三維：繞某一軸旋轉">L1 §9.3</a></span></div>
+  <div class="math-block">$$\lambda_z=\begin{bmatrix}\cos\theta&\sin\theta&0\\-\sin\theta&\cos\theta&0\\0&0&1\end{bmatrix},\qquad \lambda_x=\begin{bmatrix}1&0&0\\0&\cos\theta&\sin\theta\\0&-\sin\theta&\cos\theta\end{bmatrix}$$</div>
+  <div class="math-block">$$\lambda_y=\begin{bmatrix}\cos\theta&0&-\sin\theta\\0&1&0\\\sin\theta&0&\cos\theta\end{bmatrix}$$</div>
+  <p>繞哪一軸，那一軸的座標不變（對應的列與行是 1、0）。$\lambda_y$ 的 $\sin$ 正負位置和另外兩個相反，因為 $z\to x$ 才是右手循環的次序。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">旋轉矩陣的意義</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#rot-proof" title="9.7 正交矩陣的證明 課本 §1.4–1.10">L1 §9.7</a></span></div>
+  <div class="math-block">$$x_i'=\sum_j\lambda_{ij}x_j,\qquad \lambda_{ij}=\cos(x_i',x_j)=\hat x_i'\cdot\hat x_j$$</div>
+  <p>第 $i$ 列就是新軸 $\hat x_i'$ 在舊座標裡的分量（方向餘弦）。求旋轉矩陣時，把每個新軸寫成舊軸的組合，照列填進去即可。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">正交條件</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#rot-proof" title="9.7 正交矩陣的證明 課本 §1.4–1.10">L1 §9.7</a></span></div>
+  <div class="math-block">$$\lambda^{\mathsf T}\lambda=I\iff\sum_i\lambda_{ij}\lambda_{ik}=\delta_{jk},\qquad \lambda^{-1}=\lambda^{\mathsf T},\qquad \det\lambda=\pm1$$</div>
+  <p>旋轉不改變長度和夾角，所以各列（各行）互相垂直且長度 1。轉回去的矩陣就是轉置，不用算反矩陣。$\det=+1$ 是真正的旋轉，$-1$ 含鏡射（左右手座標互換）。</p>
+</div>
+
+<div class="fx">
+  <div class="fx-head"><span class="fx-name">連續旋轉的次序</span><span class="fx-links"><a class="fx-src" data-chapter="mechanics/ch01" href="#rot-tbex" title="9.5 多次旋轉">L1 §9.5</a></span></div>
+  <div class="math-block">$$\text{先 }\lambda_1\text{ 再 }\lambda_2:\qquad \vec x''=\lambda_2\lambda_1\,\vec x$$</div>
+  <p>後做的寫在左邊。有限角度的旋轉一般不可交換（$\lambda_2\lambda_1\neq\lambda_1\lambda_2$），所以有限旋轉不是向量；無限小旋轉才可交換。</p>
+</div>

@@ -1,0 +1,1914 @@
+<h2>五、壓縮功 <span class="pg">課本 §1.5 · p.20–28</span></h2>
+
+<p class="lead">最重要的一種功是壓縮（或膨脹）氣體的功。只要壓縮得夠慢、氣體一直保持內部平衡，功就能用氣體自己的壓力寫成 $W=-\int P\,dV$，也就是 PV 圖上曲線底下面積的負值。把它用在理想氣體上，得到兩個理想化的極端：慢到溫度不變的<strong>等溫</strong>壓縮，和快到來不及傳熱的<strong>絕熱</strong>壓縮——後者給出 $VT^{f/2}$ 與 $PV^\gamma$ 守恆。</p>
+
+<h3 id="t15-quasi">5.1 準靜態壓縮：$W=-P\,\Delta V$ <span class="pg-tag">p.20–21</span></h3>
+
+<p>力學裡的功是力點乘位移：$W=\vec F\cdot d\vec r$（1.25）。對一個不是質點的系統，「位移」指的是哪一點？熱力學一律取<strong>施力的接觸點</strong>，也不處理重力這類長程力；這樣功–能定理保證系統的總能量增加 $W$。</p>
+
+<p>看 Fig. 1.8 的汽缸–活塞：力與位移平行，$W=F\,\Delta x$（1.26，活塞向內時 $\Delta x$ 為正）。接下來想把 $F$ 換成「氣體壓力 × 活塞面積」$PA$，但這需要一個假設：壓縮時氣體<strong>一直保持內部平衡</strong>，壓力處處相同（才有一個「$P$」可以用）。這就要求活塞動得夠慢，讓氣體來得及跟上；這樣的體積變化叫做<strong>準靜態</strong>（quasistatic）。要壓得「不準靜態」，活塞速度至少要接近氣體的聲速，所以實際上大多數壓縮都可以當成準靜態。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.21 Eq. (1.27)–(1.28) 準靜態壓縮的功</span>
+  $$W=PA\,\Delta x\quad\text{且}\quad A\,\Delta x=-\Delta V\quad\Longrightarrow\quad W=-P\,\Delta V$$
+  <p>$W$ 是外界<strong>對氣體</strong>做的功。壓縮時 $\Delta V\lt0$，$W\gt0$；膨脹時 $\Delta V\gt0$，$W\lt0$（氣體對外做功）。</p>
+</div>
+
+<p>（若活塞與缸壁有摩擦，「你推活塞做的功」就不等於「活塞對氣體做的功」；$W$ 一律指後者，或假設沒有摩擦。）</p>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-100j">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.5 Eq. (1.28) · p.21</span></div>
+    <h4>把一大氣壓的空氣壓掉一公升要做多少功</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-100j">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-100j"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>For example, if you have a tank of air at atmospheric pressure ($10^5\ \text{N/m}^2$) and you wish to reduce its volume by one liter ($10^{-3}\ \text{m}^3$), you must perform 100 J of work. You can easily convince yourself that the same formula holds if the gas expands; then $\Delta V$ is positive, so the work done on the gas is negative, as required.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>一個空氣槽在大氣壓力（$10^5\ \text{N/m}^2$）下，要把它的體積減少一公升（$10^{-3}\ \text{m}^3$），必須做多少功？若改成膨脹一公升呢？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>壓力</td><td>$P=10^5\ \text{N/m}^2$</td><td>「大氣壓力（$10^5\ \text{N/m}^2$）」</td></tr>
+          <tr><td>體積變化</td><td>$\Delta V=-10^{-3}\ \text{m}^3$（壓縮）；$+10^{-3}$（膨脹）</td><td>「體積<b>減少</b>一公升」</td></tr>
+          <tr><td>壓力近似不變</td><td>槽很大，少一公升 $P$ 幾乎不變</td><td>題目沒寫：「空氣槽」比 1 L 大得多</td></tr>
+          <tr><td>過程</td><td>準靜態</td><td>題目沒寫：一般的推法都夠慢</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：壓縮 1 L 與膨脹 1 L 時外界對空氣做的功。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>壓縮是準靜態、而且體積變化相對整槽很小，壓力幾乎不變，<b>所以</b>直接用 (1.28) $W=-P\,\Delta V$，不必積分。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-100j-s1" data-sym="W,P,V">
+        <span class="step-title">壓縮</span>
+        $$W=-P\,\Delta V$$
+        <p class="sub">代入 $P=10^5\ \text{N/m}^2$、$\Delta V=-10^{-3}\ \text{m}^3$（題目）：</p>
+        $$W=-(10^5\ \text{N/m}^2)(-10^{-3}\ \text{m}^3)=+100\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-ex-100j-s2">
+        <span class="step-title">膨脹</span>
+        <p class="sub">$\Delta V=+10^{-3}\ \text{m}^3$：</p>
+        $$W=-(10^5)(+10^{-3})\ \text{J}=-100\ \text{J}$$
+        <p>外界對氣體做負功，也就是氣體對外做了 100 J。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>壓縮要做 $+100\ \text{J}$；膨脹時 $W=-100\ \text{J}$（氣體對外做 100 J）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>好記的換算：$1\ \text{atm·L}\approx100\ \text{J}$（精確是 101.3 J）✔；單位 $\text{N/m}^2\cdot\text{m}^3=\text{N·m}=\text{J}$ ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>兩問用的是同一條公式 $W=-P\,\Delta V$，各代一次數字，差別只在 $\Delta V$ 的正負。整題能一行算完的關鍵是：<b>槽很大、只少 1 L，壓力幾乎不變</b>，所以可以用「一個 $P$」，不必積分。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜壓縮：先定 $\Delta V$ 的正負，再代入 $W=-P\,\Delta V$</h5>
+          <p><b>在做什麼</b>：求外界推活塞、把體積壓掉 1 L 時，對空氣做的功。</p>
+          <p><b>為什麼可以這樣做</b>：(1.28) 是從活塞推出來的——你用力 $F=PA$ 把活塞往內推 $\Delta x$，做功 $PA\,\Delta x$；氣體體積同時少了 $A\,\Delta x$，也就是 $\Delta V=-A\,\Delta x$，兩式合起來就是 $W=-P\,\Delta V$。式子裡只能放一個 $P$，所以需要兩個條件：① <b>準靜態</b>——一般推活塞的速度遠比聲速慢，槽內壓力處處相同；② <b>過程中 $P$ 幾乎不變</b>——題目說的是「空氣槽」，比 1 L 大得多。例如 100 L 的槽等溫少掉 1 L，壓力只從 1 變成 $100/99\approx1.01$ 倍，改變約 1%，可以忽略。</p>
+          <p><b>怎麼算</b>：先把文字翻成符號。「體積減少一公升」⟹ $\Delta V=V_f-V_i=-1\ \text{L}$；再換單位，$1\ \text{m}^3=(10\ \text{dm})^3=1000\ \text{L}$，所以 $1\ \text{L}=10^{-3}\ \text{m}^3$：</p>
+          $$\begin{aligned}W&=-(10^5\ \text{N/m}^2)(-10^{-3}\ \text{m}^3)\\&=+10^{2}\ \text{N·m}=+100\ \text{J}\end{aligned}$$
+          <p>單位：$\text{N/m}^2\times\text{m}^3=\text{N·m}=\text{J}$。正號的意思是：你推活塞，把 100 J 的能量送進了空氣。</p>
+          <p><b>這步容易錯</b>：① 把 $W$ 當成「氣體對外做的功」——Schroeder 的 $W$ 一律是<b>外界對氣體</b>做的功（第一定律寫成 $\Delta U=Q+W$），慣例弄反答案就整個變號；② 公升沒換成 $\text{m}^3$，直接代 $\Delta V=-1$，會得到 $10^5\ \text{J}$ 這種離譜的數字。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜膨脹：只有 $\Delta V$ 變號</h5>
+          <p><b>在做什麼</b>：同一條公式，$\Delta V=+10^{-3}\ \text{m}^3$。</p>
+          <p><b>怎麼算</b>：$W=-(10^5)(+10^{-3})\ \text{J}=-100\ \text{J}$。</p>
+          <p><b>怎麼讀這個負號</b>：「外界對氣體做了 $-100\ \text{J}$」和「氣體對外做了 $+100\ \text{J}$」是同一件事——氣體推著活塞往外走，把能量交給外界。</p>
+          <p><b>這步容易錯</b>：憑感覺在答案前面補正負號。只要先把 $\Delta V$ 的正負定好再代入，答案的符號會自己跑出來，不必另外判斷。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>壓力的單位 $\text{N/m}^2$ 也可以寫成 $\text{J/m}^3$：$1\ \text{atm}\approx10^5\ \text{J/m}^3=100\ \text{J/L}$，這就是好記的「<b>1 atm·L ≈ 100 J</b>」（精確是 101.3 J）。數量級：100 J 大約是把 1 kg 的書舉高 10 m（$1\times9.8\times10=98\ \text{J}$），不大但也不能忽略。符號也合理：壓縮把能量送進氣體（$W\gt0$），膨脹時氣體把能量送出去（$W\lt0$）。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>5 atm（$5\times10^5\ \text{Pa}$）的高壓大槽壓掉 1 L</b>：$W=-(5\times10^5)(-10^{-3})=+500\ \text{J}$；同樣的體積變化，壓力越高越費力。</li>
+          <li><b>槽本身只有 2 L，慢慢（等溫）壓到 1 L</b>：壓力從 1 atm 升到 2 atm，條件 ② 不成立，不能再用一個 $P$。改用等溫公式 (1.30)：$W=P_iV_i\ln\dfrac{V_i}{V_f}=(10^5)(2\times10^{-3})\ln2\approx139\ \text{J}$（見<a href="#sc-ex-isotherm">等溫壓縮例題</a>）。若硬用初壓會得 100 J、用末壓會得 200 J，真正答案夾在中間。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<h3 id="t15-pv">5.2 壓力會變時：PV 圖下的面積 <span class="pg-tag">p.21–22</span></h3>
+
+<p>(1.28) 有一個漏洞：壓縮過程中壓力通常會變，該用初壓、末壓還是平均？對<strong>無限小</strong>的體積變化沒有問題，壓力的變化可以忽略。而大的變化可以想成一連串小變化：每一小步用 (1.28)，再把所有小的功加起來。畫在 PV 圖上，每一小步的 $P\,dV$ 是一條細長條的面積，加起來就是曲線底下的面積（Fig. 1.9）。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.22 Eq. (1.29) 準靜態的功</span>
+  $$W=-\int_{V_i}^{V_f}P(V)\,dV$$
+  <p>外界對氣體做的功＝ PV 圖上過程曲線底下面積的<strong>負值</strong>（由左往右膨脹為負，由右往左壓縮為正）。壓力變不變都適用；只是不一定積得出漂亮的式子。</p>
+</div>
+
+<p>功和路徑有關：同樣從 $V_i$ 到 $V_f$，走壓力高的路，底下面積大，功就大。繞一圈回到原點的<strong>循環</strong>，淨功等於圈起來的面積——順時針繞（膨脹時壓力高）外界淨做負功、氣體淨對外做功，這就是熱機；逆時針則相反（習題 1.33、1.34）。另外，壓縮–膨脹功不是唯一一種功：電池裡的化學反應對電路做電功，攪拌、通電也都是功。</p>
+
+<div class="anim" data-anim="t1-pv-work"></div>
+
+<div class="problem" data-kind="textbook" id="sc-1-31">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-31（Problem 1.31）· p.22</span></div>
+    <h4>氦在 $P\propto V$ 下由 1 L 膨脹到 3 L</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-31">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-31"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Imagine some helium in a cylinder with an initial volume of 1 liter and an initial pressure of 1 atm. Somehow the helium is made to expand to a final volume of 3 liters, in such a way that its pressure rises in direct proportion to its volume.</p><p>(a) Sketch a graph of pressure vs. volume for this process.</p><p>(b) Calculate the work done on the gas during this process, assuming that there are no “other” types of work being done.</p><p>(c) Calculate the change in the helium’s energy content during this process.</p><p>(d) Calculate the amount of heat added to or removed from the helium during this process.</p><p>(e) Describe what you might do to cause the pressure to rise as the helium expands.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>汽缸裡有一些氦，初體積 1 公升、初壓力 1 atm。用某種方法讓氦膨脹到末體積 3 公升，而且過程中壓力與體積成正比地上升。(a) 畫出這個過程的壓力對體積圖。(b) 計算過程中對氣體做的功，假設沒有「其他」種類的功。(c) 計算過程中氦的能量變化。(d) 計算過程中加進（或移出）氦的熱。(e) 描述你可以怎麼做，讓氦膨脹時壓力上升。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>初狀態</td><td>$V_i=1\ \text{L}$，$P_i=1\ \text{atm}$</td><td>「初體積 1 公升、初壓力 1 atm」</td></tr>
+          <tr><td>末體積</td><td>$V_f=3\ \text{L}$</td><td>「膨脹到末體積 3 公升」</td></tr>
+          <tr><td>路徑</td><td>$P=cV$，$c=P_i/V_i=1\ \text{atm/L}$</td><td>「壓力與體積<b>成正比</b>地上升」</td></tr>
+          <tr><td>末壓力</td><td>$P_f=3\ \text{atm}$</td><td>由 $P=cV$ 得出</td></tr>
+          <tr><td>功的種類</td><td>只有準靜態壓縮–膨脹功</td><td>(b)「沒有<b>其他</b>種類的功」；壓力一路有定義 ⟹ 準靜態</td></tr>
+          <tr><td>氦的自由度</td><td>$f=3$，$U=\tfrac32NkT=\tfrac32PV$</td><td>題目沒寫：氦單原子、當理想氣體</td></tr>
+          <tr><td>換算</td><td>$1\ \text{atm·L}=101.3\ \text{J}$</td><td>題目沒給：$1.013\times10^5\ \text{Pa}\times10^{-3}\ \text{m}^3$</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) PV 圖；(b) $W$；(c) $\Delta U$；(d) $Q$；(e) 實際怎麼做。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(b) <b>因為</b>壓力隨體積變，<b>所以</b>不能用 $-P\Delta V$ 一次算，要用 (1.29) 積分 $-\int P\,dV$；$P=cV$ 是直線，面積是梯形，積分和「平均壓力 × 體積變化」一樣。</p>
+      <p>(c) <b>因為</b>理想氣體的熱能 $U=\frac32NkT=\frac32PV$，<b>所以</b> $\Delta U$ 只要初末的 $PV$，不必知道 $N$ 或 $T$。(d) <b>因為</b>已知 $\Delta U$ 與 $W$，<b>所以</b>用第一定律 $Q=\Delta U-W$ 反推熱。</p>
+      <p>單位：<b>因為</b>題目用 atm 與 L，<b>所以</b>先在 atm·L 裡算完，最後再乘 101.3 J 換成焦耳，比較不會算錯。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-31-s1" data-sym="P,V">
+        <span class="step-title">(a) PV 圖</span>
+        <p>$P=cV$ 是一條<strong>通過原點</strong>的直線，從 $(1\ \text{L},1\ \text{atm})$ 畫到 $(3\ \text{L},3\ \text{atm})$，箭頭向右上；底下（到 $V$ 軸）是一個梯形（見上面圖解第 2 步）。</p>
+      </div>
+      <div class="step" data-step="sc-1-31-s2" data-sym="W">
+        <span class="step-title">(b) 功：積分</span>
+        $$W=-\int_{V_i}^{V_f}cV\,dV=-\frac c2\left(V_f^2-V_i^2\right)$$
+        <p class="sub">代入 $c=1\ \text{atm/L}$、$V_f=3\ \text{L}$、$V_i=1\ \text{L}$（題目）：</p>
+        $$W=-\tfrac12(1\ \text{atm/L})(9-1)\ \text{L}^2=-4\ \text{atm·L}$$
+        <p class="sub">換成焦耳（$1\ \text{atm·L}=101.3\ \text{J}$）：</p>
+        $$W=-4(101.3\ \text{J})=-405\ \text{J}$$
+        <p>（梯形面積驗算：平均壓力 2 atm × 2 L = 4 atm·L ✔）負號：氣體膨脹、對外做了 405 J。</p>
+      </div>
+      <div class="step" data-step="sc-1-31-s3" data-sym="U,f">
+        <span class="step-title">(c) 能量變化</span>
+        $$\Delta U=\tfrac32\left(P_fV_f-P_iV_i\right)$$
+        <p class="sub">代入 $P_fV_f=(3\ \text{atm})(3\ \text{L})$、$P_iV_i=(1\ \text{atm})(1\ \text{L})$：</p>
+        $$\Delta U=\tfrac32(9-1)\ \text{atm·L}=12\ \text{atm·L}=1216\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-31-s4" data-sym="Q">
+        <span class="step-title">(d) 熱</span>
+        $$Q=\Delta U-W$$
+        <p class="sub">代入 $\Delta U=12\ \text{atm·L}$（步驟 3）、$W=-4\ \text{atm·L}$（步驟 2）：</p>
+        $$Q=12-(-4)=16\ \text{atm·L}=1621\ \text{J}$$
+        <p>正的：有 1621 J 的熱<strong>加進</strong>氦。</p>
+      </div>
+      <div class="step" data-step="sc-1-31-s5">
+        <span class="step-title">(e) 怎麼做到</span>
+        <p>$PV$ 從 1 變 9 ⟹ 溫度升為 9 倍，氣體一邊膨脹一邊大幅升溫，必須持續供熱：例如在汽缸下面用火焰加熱，同時讓活塞慢慢往外退，退的速度控制成壓力剛好跟體積成正比上升。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 過原點的直線 $(1,1)\to(3,3)$；(b) $W=-4\ \text{atm·L}\approx-405\ \text{J}$；(c) $\Delta U=12\ \text{atm·L}\approx1216\ \text{J}$；(d) $Q=16\ \text{atm·L}\approx1621\ \text{J}$（吸熱）；(e) 一邊加熱一邊慢慢讓活塞外移。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>解答手冊取 $1\ \text{atm}=10^5\ \text{Pa}$，得 $-400$、$1200$、$1600\ \text{J}$，與本卡只差取位 ✔。$Q$ 比 $\Delta U$ 大：吸進的熱一部分變內能、一部分拿去對外做功 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>(a) 畫圖其實是在替 (b) 準備：直線底下的梯形面積就是 $|W|$。(b) 積分出 $W$ → (c) 用 $U=\tfrac32PV$ 只看兩端的 $PV$ 得到 $\Delta U$ → (d) 第一定律 $Q=\Delta U-W$ 反推熱 → (e) 把數字翻成操作。整題能做得這麼快的關鍵是：<b>理想氣體的內能只要 $PV$ 乘積</b>，不必知道分子數或溫度，所以可以全程在 atm·L 裡算，最後再一次換成焦耳。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜(a) 把「成正比」寫成式子，畫 PV 圖</h5>
+          <p><b>在做什麼</b>：「壓力與體積成正比」⟹ $P=cV$。比例常數由初狀態決定：$c=P_i/V_i=1\ \text{atm}/1\ \text{L}=1\ \text{atm/L}$，所以末壓力 $P_f=cV_f=3\ \text{atm}$（題目沒給，要自己推）。</p>
+          <p><b>怎麼畫</b>：$P=cV$ 是一條<b>通過原點</b>的直線，只畫 $(1\ \text{L},1\ \text{atm})$ 到 $(3\ \text{L},3\ \text{atm})$ 那一段，箭頭向右上；把直線到 $V$ 軸之間的梯形塗起來——這塊面積就是下一步的 $|W|$。</p>
+          <p><b>這步容易錯</b>：從 $(1,1)$ 隨手畫一條往右上的斜線。「正比」的意思是延長線一定要過原點，斜率由 $P_i/V_i$ 決定，否則末壓力就不是 3 atm。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜(b) 功：壓力在變，所以要積分</h5>
+          <p><b>在做什麼</b>：壓力一路從 1 升到 3 atm，不能挑一個 $P$ 乘 $\Delta V$，要用 (1.29) $W=-\int P\,dV$。</p>
+          <p><b>為什麼可以用 (1.29)</b>：這條式子要求準靜態。題目能說「壓力與體積成正比」，表示每一刻氣體都有一個確定的壓力——內部一直平衡，就是準靜態。題目又說沒有「其他」種類的功，所以 $W$ 只有這一項。</p>
+          <p><b>怎麼算</b>：把 $P=cV$ 代進去，冪次積分 $\int V\,dV=\tfrac12V^2$：</p>
+          $$\begin{aligned}W&=-\int_{1\,\text{L}}^{3\,\text{L}}cV\,dV=-\frac c2\Big[V^2\Big]_{1}^{3}\\&=-\tfrac12(1\ \text{atm/L})(9-1)\ \text{L}^2\\&=-4\ \text{atm·L}\end{aligned}$$
+          <p>單位：$\text{atm/L}\times\text{L}^2=\text{atm·L}$。換焦耳：$1\ \text{atm·L}=(1.013\times10^5\ \text{Pa})(10^{-3}\ \text{m}^3)=101.3\ \text{J}$，所以 $W=-4\times101.3=-405\ \text{J}$。</p>
+          <p><b>用圖驗算</b>：梯形面積＝平均高度 × 寬 $=\tfrac{1+3}2\ \text{atm}\times2\ \text{L}=4\ \text{atm·L}$ ✔。直線的平均壓力剛好是頭尾平均，所以梯形和積分一定一致。</p>
+          <p><b>這步容易錯</b>：① 用 $-P_f\,\Delta V=-6$ 或 $-P_i\,\Delta V=-2\ \text{atm·L}$，前者高估、後者低估；② 忘了負號：膨脹 $dV\gt0$，外界對氣體做的功是負的（氣體對外做了 405 J）。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜(c) 能量變化：$\Delta U=\tfrac32\,\Delta(PV)$</h5>
+          <p><b>在做什麼</b>：求氦的內能（「energy content」）變化。</p>
+          <p><b>為什麼可以這樣做</b>：均分定理（§1.3）：氦是單原子，只有 3 個平移自由度，$U=\tfrac32NkT$；再用理想氣體定律 $NkT=PV$，得 $U=\tfrac32PV$。$U$ 是狀態量，只看兩端，不管中間怎麼走，也不必知道 $N$、$T$ 各是多少。</p>
+          <p><b>怎麼算</b>：$P_iV_i=(1)(1)=1\ \text{atm·L}$，$P_fV_f=(3)(3)=9\ \text{atm·L}$：</p>
+          $$\Delta U=\tfrac32(9-1)\ \text{atm·L}=12\ \text{atm·L}=1216\ \text{J}$$
+          <p><b>這步容易錯</b>：① 氦用了 $\tfrac52$（那是雙原子的空氣、氮）；② 以為「理想氣體 $\Delta U=0$」——只有<b>等溫</b>才是；這裡 $PV$ 從 1 變 9，溫度變成原來的 9 倍。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 4｜(d) 熱：用第一定律反推</h5>
+          <p><b>在做什麼</b>：熱沒有自己的公式，只能由 $\Delta U=Q+W$ 移項得 $Q=\Delta U-W$。</p>
+          <p><b>怎麼算</b>：代入步驟 3 的 $\Delta U=12$ 與步驟 2 帶著負號的 $W=-4$（atm·L）：</p>
+          $$Q=12-(-4)=16\ \text{atm·L}=1621\ \text{J}$$
+          <p><b>怎麼讀</b>：$Q\gt0$，熱是<b>加進</b>氦的。吸進的 16 份裡，12 份留下來升溫，4 份拿去對外做功——膨脹時「熱＝內能增加＋對外做的功」。</p>
+          <p><b>這步容易錯</b>：慣例混用。若寫成 $Q=\Delta U+W$ 再代 $W=-4$，會得到錯的 8 atm·L。記住：$W$ 是外界對氣體的功，直接用步驟 2 的帶號數字代進 $Q=\Delta U-W$，不要再自己翻號。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 5｜(e) 實際上怎麼做到</h5>
+          <p><b>在做什麼</b>：把前面的數字翻成操作。$T\propto PV$ 從 1 變 9，氣體一邊膨脹一邊大幅升溫；升溫和對外做功都要能量，只能靠持續加熱供應。</p>
+          <p><b>怎麼做</b>：在汽缸底下用火焰加熱，同時讓活塞慢慢往外退，控制退的速度，讓壓力剛好跟體積成正比上升。退得太快，壓力會掉（像等溫或絕熱膨脹）；退得太慢，壓力會升得比 $cV$ 還高。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>三個量的比例 $(-W):\Delta U:Q=4:12:16=1:3:4$。這不是巧合：$P=cV$ 時 $\int P\,dV=\tfrac c2(V_f^2-V_i^2)=\tfrac12\Delta(PV)$，而 $\Delta U=\tfrac32\Delta(PV)$，所以 $|W|:\Delta U=1:3$（一般是 $1:f$）。解答手冊取 $1\ \text{atm}=10^5\ \text{Pa}$，得 $-400$、$1200$、$1600\ \text{J}$，和本卡只差 1.3%。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>膨脹到 4 L</b>（正是<a href="#tk1-114-7">考古 114-7</a>）：$P_fV_f=16$，$W=-\tfrac12(16-1)=-7.5$、$\Delta U=\tfrac32(15)=22.5$、$Q=30$（atm·L），比例仍是 $1:3:4$。</li>
+          <li><b>換成雙原子的氮（$f=5$）</b>：功只看路徑，仍是 $-4\ \text{atm·L}$；$\Delta U=\tfrac52\times8=20\ \text{atm·L}$，$Q=24\ \text{atm·L}$，比例變成 $1:5:6$。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk1-114-7">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">114 級上學期期中 第 7 題 · 即 Schroeder Problem 1.31 換數字（3 L → 4 L）· p.22</span></div>
+    <h4>氦在 $P\propto V$ 下由 1 L 膨脹到 4 L：功與內能變化</h4>
+    <button type="button" class="exam-btn" data-exam="tk1-114-7">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1-114-7"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>7. [10pts] Imagine some helium in a cylinder with an initial volume of 1 liter and an initial pressure of 1 atm (around $10^5N/m^2$). Somehow the helium is made to expand to a final volume of 4 liters (1 liter is $10^{-3}m$), in such a way that its pressure rises in direct proportional to its volume. For the following calculations related to energy, use Joule as the energy unit.</p><p>(a) Sketch a graph of pressure vs. volume for this process. (2pts)</p><p>(b) Calculate the work done on the gas during this process, assuming that there are no ”other” types of work being done. (4pts)</p><p>(c) Calculate the change in the helium’s energy content during this process. (4pts)</p><p class=\"original-subhead\"><strong>課本原文（Schroeder Problem 1.31，原題是膨脹到 3 L，另有 (d)(e)）</strong></p><p>Imagine some helium in a cylinder with an initial volume of 1 liter and an initial pressure of 1 atm. Somehow the helium is made to expand to a final volume of 3 liters, in such a way that its pressure rises in direct proportion to its volume.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（完整翻譯）</span><p>（10 分）想像汽缸裡有一些氦，初體積 1 公升、初壓力 1 atm（約 $10^5\ \text{N/m}^2$）。用某種方法讓氦膨脹到末體積 4 公升（1 公升是 $10^{-3}\ \text{m}^3$；原卷寫成 $10^{-3}\,m$），而且壓力與體積成正比地上升。以下和能量有關的計算，請用焦耳當能量單位。(a) 畫出這個過程的壓力對體積圖。（2 分）(b) 計算過程中對氣體做的功，假設沒有「其他」種類的功。（4 分）(c) 計算過程中氦的能量變化。（4 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>初狀態</td><td>$V_i=1\ \text{L}=10^{-3}\ \text{m}^3$，$P_i=10^5\ \text{Pa}$</td><td>「初體積 1 公升、初壓力 1 atm（約 $10^5\ \text{N/m}^2$）」</td></tr>
+          <tr><td>末體積</td><td>$V_f=4\ \text{L}=4\times10^{-3}\ \text{m}^3$</td><td>「膨脹到末體積 <b>4 公升</b>」</td></tr>
+          <tr><td>路徑</td><td>$P=cV$，$c=P_i/V_i$</td><td>「壓力與體積<b>成正比</b>地上升」</td></tr>
+          <tr><td>末壓力</td><td>$P_f=4\ \text{atm}=4\times10^5\ \text{Pa}$</td><td>由 $P=cV$ 得出</td></tr>
+          <tr><td>功</td><td>只有準靜態 $-\int P\,dV$</td><td>(b)「沒有其他種類的功」</td></tr>
+          <tr><td>氦</td><td>$U=\tfrac32PV$</td><td>題目沒寫：單原子理想氣體 $f=3$</td></tr>
+          <tr><td>單位</td><td>焦耳</td><td>「請用<b>焦耳</b>當能量單位」：要用 $10^5\ \text{Pa}$、$10^{-3}\ \text{m}^3$ 換算</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) PV 圖；(b) $W$（J）；(c) $\Delta U$（J）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>和習題 1.31 相同，只把末體積換成 4 L。(b) <b>因為</b>壓力隨體積線性上升，<b>所以</b>用 $W=-\int P\,dV$（或直線下梯形面積）。(c) <b>因為</b>單原子理想氣體 $U=\frac32NkT=\frac32PV$，<b>所以</b>只要初末的 $PV$。</p>
+      <p><b>因為</b>題目指定焦耳、並給了 $1\ \text{atm}\approx10^5\ \text{N/m}^2$，<b>所以</b>這裡用 $10^5$（不是 $1.013\times10^5$），答案才和題目給的數字一致。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk1-114-7-s1" data-sym="P,V">
+        <span class="step-title">(a) PV 圖</span>
+        <p>$P=cV$：通過原點的直線，由 $(1\ \text{L},1\ \text{atm})$ 到 $(4\ \text{L},4\ \text{atm})$，箭頭向右上；底下到 $V$ 軸是梯形，面積就是 $|W|$。</p>
+      </div>
+      <div class="step" data-step="tk1-114-7-s2" data-sym="W">
+        <span class="step-title">(b) 功</span>
+        $$W=-\int_{V_i}^{V_f}cV\,dV=-\frac c2\left(V_f^2-V_i^2\right)=-\tfrac12\left(P_fV_f-P_iV_i\right)$$
+        <p>（$cV_f^2=P_fV_f$、$cV_i^2=P_iV_i$。）</p>
+        <p class="sub">代入 $P_fV_f=(4\times10^5)(4\times10^{-3})=1600\ \text{J}$、$P_iV_i=(10^5)(10^{-3})=100\ \text{J}$（題目）：</p>
+        $$W=-\tfrac12(1600-100)\ \text{J}=-750\ \text{J}$$
+      </div>
+      <div class="step" data-step="tk1-114-7-s3" data-sym="U">
+        <span class="step-title">(c) 能量變化</span>
+        $$\Delta U=\tfrac32\left(P_fV_f-P_iV_i\right)$$
+        <p class="sub">代入同樣的 $P_fV_f=1600\ \text{J}$、$P_iV_i=100\ \text{J}$：</p>
+        $$\Delta U=\tfrac32(1500\ \text{J})=2250\ \text{J}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 過原點的直線 $(1\ \text{L},1\ \text{atm})\to(4\ \text{L},4\ \text{atm})$；(b) $W=-750\ \text{J}$（氣體對外做 750 J）；(c) $\Delta U=+2250\ \text{J}$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>梯形面積：平均壓力 $2.5\ \text{atm}$ × $3\ \text{L}$ = 7.5 atm·L = 750 J ✔。雖然沒問，熱 $Q=\Delta U-W=3000\ \text{J}$，$\Delta U:|W|:Q=3:1:4$，和 1.31 的 12:4:16 比例相同——$P\propto V$ 的過程比例永遠是這樣（自編難題 05b）✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>和<a href="#sc-1-31">習題 1.31</a> 同一條路，只是末體積換成 4 L，而且題目<b>指定用焦耳</b>、給了 $1\ \text{atm}\approx10^5\ \text{Pa}$。(a) 畫圖 → (b) 把功的積分改寫成 $-\tfrac12\Delta(PV)$ → (c) $\Delta U=\tfrac32\Delta(PV)$。關鍵：<b>先把 $cV^2$ 換成 $PV$</b>，(b)、(c) 都只需要兩端 $PV$ 的差 1500 J，算一次用兩次，也不必碰 $c$ 的 SI 值。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜(a) PV 圖</h5>
+          <p><b>在做什麼</b>：$P=cV$，$c=P_i/V_i=1\ \text{atm/L}$，所以 $P_f=c\cdot4\ \text{L}=4\ \text{atm}$。畫一條通過原點的直線，標出 $(1\ \text{L},1\ \text{atm})$ 與 $(4\ \text{L},4\ \text{atm})$，箭頭向右上，把底下到 $V$ 軸的梯形塗起來。</p>
+          <p><b>這步容易錯</b>：這題 2 分就在細節——兩端座標沒標、箭頭畫反（變成壓縮），或沒讓直線延伸過原點（可以畫虛線延長）。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜(b) 功：先把積分寫成兩端的 $PV$</h5>
+          <p><b>為什麼用 $-\int P\,dV$</b>：壓力每一刻都有定義（和體積成正比），就是準靜態；題目說沒有其他種類的功，所以 $W$ 只有壓縮–膨脹功。壓力從 1 升到 4 atm，不能用單一壓力乘 $\Delta V$。</p>
+          <p><b>怎麼算</b>：積分後，利用「直線上每一點都有 $cV=P$」把 $cV^2$ 換成 $PV$：</p>
+          $$\begin{aligned}W&=-\int_{V_i}^{V_f}cV\,dV=-\frac c2\left(V_f^2-V_i^2\right)\\&=-\tfrac12\left[(cV_f)V_f-(cV_i)V_i\right]\\&=-\tfrac12\left(P_fV_f-P_iV_i\right)\end{aligned}$$
+          <p>再代 SI 數字（$\text{Pa·m}^3=\text{N·m}=\text{J}$，乘出來直接是焦耳）：$P_iV_i=(10^5)(10^{-3})=100\ \text{J}$，$P_fV_f=(4\times10^5)(4\times10^{-3})=1600\ \text{J}$：</p>
+          $$W=-\tfrac12(1600-100)\ \text{J}=-750\ \text{J}$$
+          <p><b>為什麼不先算 $c$</b>：$c=10^5\ \text{Pa}/10^{-3}\ \text{m}^3=10^8\ \text{Pa/m}^3$，再代 $V_f^2=(4\times10^{-3})^2=1.6\times10^{-5}\ \text{m}^6$，次方非常容易錯一位；換成 $PV$ 就沒有這個風險。</p>
+          <p><b>這步容易錯</b>：① 用 $-P_f\Delta V=-1200\ \text{J}$ 或 $-P_i\Delta V=-300\ \text{J}$；② 答 $-7.5\ \text{atm·L}$ 沒換成焦耳，題目明說要焦耳；③ 原卷寫「1 liter is $10^{-3}\,m$」是筆誤，應為 $10^{-3}\ \text{m}^3$，不要被它帶著用錯單位。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜(c) 能量變化</h5>
+          <p><b>為什麼是 $\tfrac32PV$</b>：題目沒寫，但氦是單原子理想氣體，$f=3$，$U=\tfrac32NkT=\tfrac32PV$。「energy content」指的是內能 $U$，不是熱 $Q$。</p>
+          <p><b>怎麼算</b>：同一個差值 $P_fV_f-P_iV_i=1500\ \text{J}$ 再用一次：</p>
+          $$\Delta U=\tfrac32(1500\ \text{J})=2250\ \text{J}$$
+          <p><b>這步容易錯</b>：用了 $\tfrac52$ 會得到 3750 J（那是雙原子）；把 (c) 答成熱 $Q$。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>梯形面積：平均壓力 $\tfrac{1+4}2=2.5\ \text{atm}$ × 寬 3 L ＝ 7.5 atm·L，乘 100 J 就是 750 J ✔。$\Delta U/|W|=3$，正好等於 $f$——$P\propto V$ 的路徑永遠是 $|W|=\tfrac12\Delta(PV)$、$\Delta U=\tfrac f2\Delta(PV)$。物理上這是很極端的過程：$PV$ 漲成 16 倍，溫度也漲成 16 倍（300 K 起就到 4800 K），只能一邊膨脹一邊拚命加熱。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>用 $1\ \text{atm}=1.013\times10^5\ \text{Pa}$</b>：$W=-7.5\times101.3\approx-760\ \text{J}$、$\Delta U=22.5\times101.3\approx2280\ \text{J}$，差 1.3%。考試照題目給的數字最安全。</li>
+          <li><b>只膨脹到 2 L，並加問熱</b>：$P_fV_f=(2\times10^5)(2\times10^{-3})=400\ \text{J}$，$W=-\tfrac12(300)=-150\ \text{J}$、$\Delta U=\tfrac32(300)=450\ \text{J}$、$Q=\Delta U-W=600\ \text{J}$，比例仍是 $1:3:4$。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-32">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-32（Problem 1.32）· p.23</span></div>
+    <h4>把一公升水壓縮 1% 要做多少功</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-32">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-32"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>By applying a pressure of 200 atm, you can compress water to 99% of its usual volume. Sketch this process (not necessarily to scale) on a <i>PV</i> diagram, and estimate the work required to compress a liter of water by this amount. Does the result surprise you?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>施加 200 atm 的壓力，可以把水壓縮到平常體積的 99%。在 PV 圖上畫出這個過程（不必照比例），並估計把一公升水壓縮這麼多所需的功。結果讓你意外嗎？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>初狀態</td><td>$V_i=1\ \text{L}$，$P_i=1\ \text{atm}$</td><td>「一公升水」；「平常」狀態＝大氣壓</td></tr>
+          <tr><td>末狀態</td><td>$V_f=0.99\ \text{L}$，$P_f=200\ \text{atm}$</td><td>「200 atm」「平常體積的 <b>99%</b>」</td></tr>
+          <tr><td>體積變化</td><td>$\Delta V=-0.01\ \text{L}=-10^{-5}\ \text{m}^3$</td><td>由上兩列</td></tr>
+          <tr><td>P–V 關係</td><td>近似直線（壓縮率近似固定）</td><td>題目沒給曲線形狀：「估計」即可</td></tr>
+          <tr><td>換算</td><td>$1\ \text{atm}=1.013\times10^5\ \text{Pa}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：PV 圖示意；壓縮功的估計；評論。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>壓力從 1 atm 一路升到 200 atm，<b>所以</b>功是 PV 曲線下的面積 $-\int P\,dV$；題目沒給曲線的確切形狀，而體積只變 1%，<b>所以</b>把它近似成直線，面積＝平均壓力 × $|\Delta V|$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-32-s1" data-sym="P,V">
+        <span class="step-title">PV 圖</span>
+        <p>橫軸 $V$ 只在 0.99–1.00 L 之間，縱軸 $P$ 從 1 升到 200 atm：一條<strong>幾乎垂直</strong>、往左上的線（實際上略為上凹：越壓越難壓）。底下的面積很窄。</p>
+      </div>
+      <div class="step" data-step="sc-1-32-s2" data-sym="W">
+        <span class="step-title">估計功</span>
+        <p>直線近似，平均壓力 $\bar P=\frac12(P_i+P_f)$：</p>
+        $$W\approx-\bar P\,\Delta V=-\tfrac12(P_i+P_f)\,\Delta V$$
+        <p class="sub">代入 $P_i=1\ \text{atm}$、$P_f=200\ \text{atm}$、$\Delta V=-0.01\ \text{L}$（題目）：</p>
+        $$W\approx-\tfrac12(201\ \text{atm})(-0.01\ \text{L})=1.0\ \text{atm·L}\approx100\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-32-s3">
+        <span class="step-title">比較</span>
+        <p>100 J 大約是把 10 kg 的東西舉高 1 m（$mgh=10\times9.8\times1\approx100\ \text{J}$），和 sc-ex-100j 把一大氣壓的空氣壓掉一公升差不多。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約 100 J（1 atm·L）。壓力雖然高達 200 atm，但體積只變 0.01 L，功並不大——功是「力 × 位移」，位移很小。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>精確到取位：$\tfrac12(201)(1.013\times10^5)(10^{-5})=102\ \text{J}$，若曲線上凹則略小 ✔；解答手冊同樣估 100 J ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>先在 PV 圖上看出這是一條「幾乎垂直」的短線 → 功是它底下那條窄窄的面積，曲線形狀不知道，就用連接兩端的直線（梯形）估 → 拿日常的能量來比，回答「意外嗎」。關鍵觀察：<b>功＝壓力 × 體積變化</b>，壓力雖然高達 200 atm，體積變化卻只有 0.01 L。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜畫 PV 圖</h5>
+          <p><b>在做什麼</b>：標出起點 $(1.00\ \text{L},1\ \text{atm})$、終點 $(0.99\ \text{L},200\ \text{atm})$，從起點往<b>左上</b>畫到終點（體積變小、壓力變大）。</p>
+          <p><b>為什麼長這樣</b>：橫向只跨 0.01 L，縱向卻跨 199 atm，所以線幾乎是垂直的；真實的曲線略為上凹（越壓越難壓），題目說不必照比例，畫直線或略彎都可以，但方向一定要對。</p>
+          <p><b>這步容易錯</b>：橫軸從 0 畫起，0.99–1.00 L 那段會擠成一條看不見的線。把橫軸放大、只畫 0.99–1.00 L 附近，圖才看得出面積。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜估計功：直線近似＝梯形面積</h5>
+          <p><b>為什麼可以用 $W=-\int P\,dV$</b>：這條式子只要求準靜態（物質內部壓力均勻），不限氣體，液體、固體都能用。但水沒有理想氣體定律，$P(V)$ 要靠實驗，題目只給兩個端點，所以只能「估計」。體積只變 1%，曲線在這麼小的範圍內幾乎是直線，直線近似夠好。</p>
+          <p><b>怎麼算</b>：直線下面積＝平均壓力 × $|\Delta V|$，其中 $\Delta V=0.99-1.00=-0.01\ \text{L}$：</p>
+          $$\begin{aligned}W&\approx-\tfrac12(P_i+P_f)\,\Delta V\\&=-\tfrac12(201\ \text{atm})(-0.01\ \text{L})\\&=1.005\ \text{atm·L}\approx1.0\ \text{atm·L}\end{aligned}$$
+          <p>換成焦耳：$1.005\times101.3\approx102\ \text{J}$，也就是約 100 J。也可以全用 SI：$0.01\ \text{L}=10^{-5}\ \text{m}^3$，$\tfrac12(201\times1.013\times10^5\ \text{Pa})(10^{-5}\ \text{m}^3)\approx102\ \text{J}$。</p>
+          <p><b>這步容易錯</b>：① 直接用 $W=-P_f\Delta V=200\times0.01=2\ \text{atm·L}$，高估一倍——壓力不是一開始就是 200 atm；② 把 $\Delta V$ 寫成 0.99 L（那是末體積，不是變化量）；③ $0.01\ \text{L}=10^{-5}\ \text{m}^3$，不是 $10^{-2}$ 或 $10^{-3}$。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜比較：結果讓人意外嗎</h5>
+          <p><b>在做什麼</b>：把 100 J 和熟悉的量比。舉重：$mgh=10\times9.8\times1\approx100\ \text{J}$，只是把 10 kg 舉高 1 m；和<a href="#sc-ex-100j">課文例題</a>在一大氣壓下壓掉 1 L 空氣一樣多。</p>
+          <p><b>為什麼會「意外」</b>：200 atm 聽起來嚇人，功卻很小，因為水太硬，「位移」$\Delta V$ 只有 10 mL。換成溫度看更清楚：這 100 J 就算全部變成熱，也只讓這 1 kg 水升溫 $100/4186\approx0.024\ \text{K}$。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>把題目的數字寫成體積模數：$B=\dfrac{\Delta P}{-\Delta V/V}\approx\dfrac{199\ \text{atm}}{0.01}\approx2\times10^4\ \text{atm}\approx2\times10^9\ \text{Pa}$（<a href="#sc-1-39">習題 1.39</a> 會正式定義），水比空氣（$B\sim1\ \text{atm}$）硬兩萬倍。直線近似下功也可以寫成彈簧的形式 $W\approx\tfrac12BV\left(\tfrac{\Delta V}V\right)^2=\tfrac12(2\times10^4\ \text{atm})(1\ \text{L})(10^{-4})=1.0\ \text{atm·L}$ ✔，和梯形一致（初壓 1 atm 相對 200 atm 可忽略）。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>10 L 的水同樣壓到 99%</b>：壓力範圍不變、$\Delta V$ 變 10 倍，$W\approx1000\ \text{J}$。</li>
+          <li><b>壓到 98%</b>（假設 $B=199\ \text{atm}/0.01$ 不變，約需 $1+199\times2=399\ \text{atm}$）：$W\approx\tfrac12(1+399)(0.02)=4.0\ \text{atm·L}\approx405\ \text{J}$。壓縮量加倍、功變 4 倍，正是 $\tfrac12kx^2$ 的味道。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-33">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-33（Problem 1.33）· p.23</span></div>
+    <h4>三角形循環：每一步 $W$、$\Delta U$、$Q$ 的正負</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-33">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-33"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An ideal gas is made to undergo the cyclic process shown in Figure 1.10(a). For each of the steps A, B, and C, determine whether each of the following is positive, negative, or zero: (a) the work done on the gas; (b) the change in the energy content of the gas; (c) the heat added to the gas. Then determine the sign of each of these three quantities for the whole cycle. What does this process accomplish?</p></div>
+<p class="original-caption">Schroeder 習題 1-33（Problem 1.33）· p.23</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>理想氣體進行 Fig. 1.10(a) 的循環過程。對 A、B、C 每一步，判斷下列各量是正、負還是零：(a) 對氣體做的功；(b) 氣體能量的變化；(c) 加進氣體的熱。再判斷整個循環這三個量的正負。這個過程達成了什麼？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>步驟 A</td><td>定壓、體積增加（向右）</td><td>Fig. 1.10(a) 底邊箭頭向右</td></tr>
+          <tr><td>步驟 B</td><td>定容、壓力增加（向上）</td><td>Fig. 1.10(a) 右邊箭頭向上</td></tr>
+          <tr><td>步驟 C</td><td>沿斜線回到起點：體積、壓力都減少</td><td>Fig. 1.10(a) 斜邊箭頭向左下</td></tr>
+          <tr><td>繞行方向</td><td>逆時針</td><td>A→B→C 依序看</td></tr>
+          <tr><td>理想氣體</td><td>$U=\tfrac f2NkT=\tfrac f2PV$</td><td>「理想氣體」＋均分定理</td></tr>
+          <tr><td>功</td><td>$W=-\int P\,dV$</td><td>準靜態（圖上每一點都有確定的 $P$）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：A、B、C 與整個循環的 $W$、$\Delta U$、$Q$ 正負；循環的作用。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $W=-\int P\,dV$，<b>所以</b> $W$ 的正負只看體積：變小為正、變大為負、不變為零。<b>因為</b>理想氣體 $U=\frac f2PV$，<b>所以</b> $\Delta U$ 的正負只看 $PV$ 乘積變大還是變小。最後 $Q$ 用第一定律 $Q=\Delta U-W$ 決定。</p>
+      <p>整個循環：<b>因為</b>回到原狀態，<b>所以</b> $\Delta U=0$；淨功是圈住的面積，由繞行方向決定正負。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-33-s1" data-sym="W,U,Q">
+        <span class="step-title">步驟 A：定壓膨脹</span>
+        <p>$V$ 增加 ⟹ $W\lt0$；$P$ 不變、$V$ 變大 ⟹ $PV$ 增加 ⟹ $\Delta U\gt0$；$Q=\Delta U-W=(+)-(-)\gt0$。</p>
+      </div>
+      <div class="step" data-step="sc-1-33-s2">
+        <span class="step-title">步驟 B：定容加壓</span>
+        <p>$V$ 不變 ⟹ $W=0$；$P$ 增加 ⟹ $\Delta U\gt0$；$Q=\Delta U\gt0$。</p>
+      </div>
+      <div class="step" data-step="sc-1-33-s3">
+        <span class="step-title">步驟 C：斜線壓縮回原點</span>
+        <p>$V$ 減少 ⟹ $W\gt0$；$P$、$V$ 都減少 ⟹ $PV$ 減少 ⟹ $\Delta U\lt0$；$Q=\Delta U-W=(-)-(+)\lt0$。</p>
+      </div>
+      <div class="step" data-step="sc-1-33-s4">
+        <span class="step-title">整個循環</span>
+        <p>回到原點：$\Delta U=0$。C 的平均壓力比 A 高（斜線在底邊上方）、兩段 $|\Delta V|$ 相同 ⟹ C 的正功大於 A 的負功 ⟹ $W_{\text{淨}}\gt0$（逆時針，等於三角形面積）。$Q_{\text{淨}}=0-W_{\text{淨}}\lt0$。</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>步驟</th><th>$W$</th><th>$\Delta U$</th><th>$Q$</th></tr></thead>
+          <tbody>
+            <tr><td>A</td><td>−</td><td>+</td><td>+</td></tr>
+            <tr><td>B</td><td>0</td><td>+</td><td>+</td></tr>
+            <tr><td>C</td><td>+</td><td>−</td><td>−</td></tr>
+            <tr><td>整圈</td><td>+</td><td>0</td><td>−</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>A：$W-$、$\Delta U+$、$Q+$；B：$W0$、$\Delta U+$、$Q+$；C：$W+$、$\Delta U-$、$Q-$；整圈：$W+$、$\Delta U=0$、$Q-$。這個循環吃進淨功、放出淨熱：A、B 吸熱，C 放熱，等於把熱從一處搬到另一處（像冷凍機的雛形，但吸熱並不都在低溫，不實用）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>數值例：取 A 為 $(1,1)\to(2,1)$、B 到 $(2,2)$、C 沿直線回 $(1,1)$（單位任意），算出 $W_A=-1$、$W_C=+1.5$，淨 $+0.5$＝三角形面積 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>三個量各有一條判斷規則：<b>$W$ 看體積</b>（變小為正）、<b>$\Delta U$ 看 $PV$ 乘積</b>（變大為正）、<b>$Q$ 最後用 $Q=\Delta U-W$</b>。逐段套規則判斷 A、B、C，最後整圈用「狀態量回到原值」和「圈住的面積」。整題不用數字也能做的關鍵是：A、B、C 每一段的 $\Delta U$ 和 $-W$ 都<b>同號</b>（或其中一個為零），相加的正負是確定的。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜A：定壓膨脹（底邊向右）</h5>
+          <p><b>在做什麼</b>：判斷 A 的 $W$、$\Delta U$、$Q$ 正負。</p>
+          <p><b>為什麼這樣判斷（整題通用的兩條規則）</b>：① $W=-\int P\,dV$，壓力永遠是正的，所以 $W$ 的正負只看 $dV$：體積變大 $W\lt0$、變小 $W\gt0$、不變 $W=0$。② 理想氣體 $U=\tfrac f2NkT$，再用 $NkT=PV$ 得 $U=\tfrac f2PV$，所以 $\Delta U$ 的正負只看 $PV$ 乘積：變大就是升溫。$Q$ 在圖上沒有規則可讀，只能用 $Q=\Delta U-W$。</p>
+          <p><b>怎麼判斷</b>：$V$ 增加 ⟹ $W\lt0$；$P$ 不變、$V$ 變大 ⟹ $PV$ 變大 ⟹ $\Delta U\gt0$；$Q=\Delta U-W=(+)-(-)=(+)+(+)\gt0$。</p>
+          <p><b>物理意義</b>：氣體同時要升溫、又要對外做功，兩筆能量都得靠吸熱。</p>
+          <p><b>這步容易錯</b>：看到「定壓」就以為溫度不變、$\Delta U=0$——定壓不是等溫，$PV$ 明明變大了。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜B：定容加壓（右邊向上）</h5>
+          <p><b>怎麼判斷</b>：$V$ 不變 ⟹ $W=0$；$P$ 變大 ⟹ $PV$ 變大 ⟹ $\Delta U\gt0$；$Q=\Delta U-0\gt0$。</p>
+          <p><b>這步容易錯</b>：以為「沒有功就沒有熱」。定容時熱照樣可以進出（像在密閉鍋子底下加熱），只是全部變成內能。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜C：沿斜邊壓縮回起點</h5>
+          <p><b>怎麼判斷</b>：$V$ 減少 ⟹ $W\gt0$；$P$、$V$ 兩個都減少 ⟹ 乘積一定減少 ⟹ $\Delta U\lt0$；$Q=(-)-(+)\lt0$，放熱。</p>
+          <p><b>這步容易錯</b>：把斜邊當成等溫線而說 $\Delta U=0$。C 從右上角走到左下角，$P$、$V$ 一起變小，溫度一路下降；而且等溫線 $PV=$ 常數是雙曲線，不會是一條直的斜邊。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 4｜整個循環</h5>
+          <p><b>$\Delta U$</b>：$U$ 是狀態量，繞一圈回到原點 ⟹ $\Delta U_{\text{淨}}=0$。</p>
+          <p><b>$W$</b>：B 沒有功，只要比 A 和 C。兩段跨過同一段體積（$|\Delta V|$ 相同），但 C 走在 A 的上方、平均壓力較高，所以 C 的正功大於 A 的負功 ⟹ $W_{\text{淨}}\gt0$，大小正好是三角形面積。判斷方向的口訣：<b>逆時針繞，外界淨做正功</b>；順時針才是熱機（<a href="#sc-1-34">習題 1.34</a>）。</p>
+          <p><b>$Q$</b>：$Q_{\text{淨}}=\Delta U_{\text{淨}}-W_{\text{淨}}=0-(+)\lt0$。</p>
+          <p><b>這個過程做了什麼</b>：吃進淨功、吐出等量的淨熱；吸熱（A、B）和放熱（C）發生在不同溫度，等於一邊把功變成熱、一邊把熱從一處搬到另一處。</p>
+          <p><b>這步容易錯</b>：以為整圈 $\Delta U=0$，所以 $W$、$Q$ 也是零——$W$、$Q$ 是路徑量，整圈只保證 $Q_{\text{淨}}=-W_{\text{淨}}$。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>用數字驗證正負表：單原子 $f=3$，A：$(1,1)\to(2,1)$、B：到 $(2,2)$、C：沿直線回 $(1,1)$（$V$ 用 L、$P$ 用 atm）。A：$W=-1$、$\Delta U=\tfrac32(2-1)=1.5$、$Q=2.5$；B：$W=0$、$\Delta U=\tfrac32(4-2)=3$、$Q=3$；C：梯形 $W=+\tfrac12(2+1)(1)=1.5$、$\Delta U=\tfrac32(1-4)=-4.5$、$Q=-6$。整圈 $W=+0.5$＝三角形面積 $\tfrac12\times1\times1$、$\Delta U=0$、$Q=-0.5$（atm·L），每一格的正負都和表格一致 ✔。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>同樣的數字、換成雙原子（$f=5$）</b>：A：$\Delta U=2.5$、$Q=3.5$；B：$\Delta U=Q=5$；C：$\Delta U=-7.5$、$Q=-9$。功不變（只看幾何），整圈仍是 $W=+0.5$、$Q=-0.5$（atm·L）。</li>
+          <li><b>反方向繞</b>（沿斜邊往右上、再沿 B 往下、再沿 A 往左）：每一步每個量都變號，整圈 $W\lt0$、$Q\gt0$，變成熱機，和<a href="#sc-1-34">習題 1.34</a> 的矩形循環同類。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-34">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-34（Problem 1.34）· p.23</span></div>
+    <h4>雙原子氣體的矩形循環</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-34">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-34"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>An ideal diatomic gas, in a cylinder with a movable piston, undergoes the rectangular cyclic process shown in Figure 1.10(b). Assume that the temperature is always such that rotational degrees of freedom are active, but vibrational modes are “frozen out.” Also assume that the only type of work done on the gas is quasistatic compression-expansion work.</p><p>(a) For each of the four steps A through D, compute the work done on the gas, the heat added to the gas, and the change in the energy content of the gas. Express all answers in terms of $P_1$, $P_2$, $V_1$, and $V_2$. (Hint: Compute $\Delta U$ before $Q$, using the ideal gas law and the equipartition theorem.)</p><p>(b) Describe in words what is physically being done during each of the four steps; for example, during step A, heat is added to the gas (from an external flame or something) while the piston is held fixed.</p><p>(c) Compute the net work done on the gas, the net heat added to the gas, and the net change in the energy of the gas during the entire cycle. Are the results as you expected? Explain briefly.</p></div>
+<p class="original-caption">Schroeder 習題 1-34（Problem 1.34）· p.23</p>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>汽缸（活塞可動）裡的理想雙原子氣體進行 Fig. 1.10(b) 的矩形循環。假設溫度一直讓轉動自由度活化、振動模式「凍結」；也假設對氣體做的功只有準靜態的壓縮–膨脹功。(a) 對 A 到 D 四個步驟，計算對氣體做的功、加進氣體的熱、氣體能量的變化，全部用 $P_1$、$P_2$、$V_1$、$V_2$ 表示。（提示：先用理想氣體定律與均分定理算 $\Delta U$，再算 $Q$。）(b) 用文字描述每一步實際上在做什麼；例如步驟 A：活塞固定不動，從外面（火焰之類）把熱加給氣體。(c) 計算整個循環對氣體做的淨功、加進的淨熱、氣體能量的淨變化。結果和你預期的一樣嗎？簡單說明。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>A</td><td>$V=V_1$ 固定，$P_1\to P_2$</td><td>Fig. 1.10(b) 左邊向上</td></tr>
+          <tr><td>B</td><td>$P=P_2$ 固定，$V_1\to V_2$</td><td>Fig. 1.10(b) 上邊向右</td></tr>
+          <tr><td>C</td><td>$V=V_2$ 固定，$P_2\to P_1$</td><td>Fig. 1.10(b) 右邊向下</td></tr>
+          <tr><td>D</td><td>$P=P_1$ 固定，$V_2\to V_1$</td><td>Fig. 1.10(b) 下邊向左</td></tr>
+          <tr><td>自由度</td><td>$f=5$，$U=\tfrac52NkT=\tfrac52PV$</td><td>「<b>雙原子</b>」「轉動活化、振動凍結」</td></tr>
+          <tr><td>功</td><td>$W=-\int P\,dV$</td><td>「只有準靜態的壓縮–膨脹功」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 四步的 $W$、$Q$、$\Delta U$；(b) 每步的物理描述；(c) 淨 $W$、$Q$、$\Delta U$ 與解釋。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>每一步不是定容就是定壓，<b>所以</b>功不必積分：定容 $W=0$，定壓 $W=-P\Delta V$。</p>
+      <p><b>因為</b>理想氣體 $U=\frac52NkT$，再用 $NkT=PV$，$U=\frac52PV$，<b>所以</b>每一步 $\Delta U=\frac52(P_fV_f-P_iV_i)$——提示說先算 $\Delta U$，就是因為它只要端點；最後 $Q=\Delta U-W$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-34-s1" data-sym="U,f">
+        <span class="step-title">一般式</span>
+        $$W=\begin{cases}0&\text{定容}\\-P\,(V_f-V_i)&\text{定壓}\end{cases}\qquad\Delta U=\tfrac52(P_fV_f-P_iV_i)$$
+        $$Q=\Delta U-W$$
+      </div>
+      <div class="step" data-step="sc-1-34-s2" data-sym="W,Q">
+        <span class="step-title">A（定容加壓）與 C（定容減壓）</span>
+        <p class="sub">A：$V=V_1$，$P_1\to P_2$（圖）：</p>
+        $$W_A=0,\quad\Delta U_A=\tfrac52V_1(P_2-P_1)=Q_A$$
+        <p class="sub">C：$V=V_2$，$P_2\to P_1$（圖）：</p>
+        $$W_C=0,\quad\Delta U_C=-\tfrac52V_2(P_2-P_1)=Q_C$$
+      </div>
+      <div class="step" data-step="sc-1-34-s3">
+        <span class="step-title">B（定壓膨脹）</span>
+        <p class="sub">$P=P_2$，$V_1\to V_2$（圖）：</p>
+        $$W_B=-P_2(V_2-V_1),\quad\Delta U_B=\tfrac52P_2(V_2-V_1)$$
+        $$Q_B=\tfrac52P_2(V_2-V_1)+P_2(V_2-V_1)=\tfrac72P_2(V_2-V_1)$$
+      </div>
+      <div class="step" data-step="sc-1-34-s4">
+        <span class="step-title">D（定壓壓縮）</span>
+        <p class="sub">$P=P_1$，$V_2\to V_1$（圖）：</p>
+        $$W_D=+P_1(V_2-V_1),\quad\Delta U_D=-\tfrac52P_1(V_2-V_1)$$
+        $$Q_D=-\tfrac52P_1(V_2-V_1)-P_1(V_2-V_1)=-\tfrac72P_1(V_2-V_1)$$
+      </div>
+      <div class="step" data-step="sc-1-34-s5">
+        <span class="step-title">(b) 每一步在做什麼</span>
+        <p>A：活塞固定、用火焰加熱，壓力上升。B：一邊繼續加熱、一邊讓活塞外移，保持壓力 $P_2$。C：活塞固定、把熱抽走（例如浸冰水），壓力下降。D：一邊繼續抽熱、一邊把活塞推回，保持壓力 $P_1$。</p>
+      </div>
+      <div class="step" data-step="sc-1-34-s6">
+        <span class="step-title">(c) 整個循環</span>
+        <p>把四步相加（$\Delta U$ 的四項：$\frac52[V_1P_2-V_1P_1+P_2V_2-P_2V_1-V_2P_2+V_2P_1-P_1V_2+P_1V_1]=0$）：</p>
+        $$W_{\text{淨}}=-P_2(V_2-V_1)+P_1(V_2-V_1)=-(P_2-P_1)(V_2-V_1)$$
+        $$\Delta U_{\text{淨}}=0,\qquad Q_{\text{淨}}=(P_2-P_1)(V_2-V_1)$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span>
+      <ul>
+        <li>A：$W=0$；$\Delta U=Q=\frac52V_1(P_2-P_1)$</li>
+        <li>B：$W=-P_2(V_2-V_1)$；$\Delta U=\frac52P_2(V_2-V_1)$；$Q=\frac72P_2(V_2-V_1)$</li>
+        <li>C：$W=0$；$\Delta U=Q=-\frac52V_2(P_2-P_1)$</li>
+        <li>D：$W=P_1(V_2-V_1)$；$\Delta U=-\frac52P_1(V_2-V_1)$；$Q=-\frac72P_1(V_2-V_1)$</li>
+        <li>整圈：$W=-(P_2-P_1)(V_2-V_1)$；$\Delta U=0$；$Q=(P_2-P_1)(V_2-V_1)$</li>
+      </ul>
+      <p>符合預期：回到原狀態 $\Delta U=0$；順時針繞，膨脹（B）時壓力比壓縮（D）時高，氣體淨對外做功＝矩形面積，淨吸熱全部變成功——這是一部熱機。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>$Q_{\text{淨}}=-W_{\text{淨}}$ ✔；$Q_B/|W_B|=7/2$：定壓加熱時吸的熱 $\frac72$ 份只有 1 份拿去做功，正是第 6 節 $C_P/(C_P-C_V)=\frac72$ ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>先寫一組四段共用的公式（定容 $W=0$、定壓 $W=-P\Delta V$、$\Delta U=\tfrac52\Delta(PV)$、$Q=\Delta U-W$），再逐段代入矩形四個角的座標 → (b) 由每段 $Q$、$W$ 的正負，翻成「接熱源還是冷源、活塞怎麼動」→ (c) 四段相加。整題不必積分的關鍵是：<b>矩形的四條邊不是定容就是定壓</b>；而 $\Delta U$ 只看端點，照提示先算它最穩。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜一般式：四段共用的公式</h5>
+          <p><b>在做什麼</b>：先把公式寫好，後面每段只要代座標，一律「末減初」，正負號就不會亂。</p>
+          <p><b>為什麼 $U=\tfrac52PV$</b>：雙原子分子有 3 個平移、2 個轉動自由度（繞鍵軸本身的轉動慣量太小，不算）；題目說振動凍結，所以 $f=5$，$U=\tfrac52NkT=\tfrac52PV$。</p>
+          <p><b>為什麼功不必積分</b>：定容 $dV=0$ ⟹ $W=0$；定壓時 $P$ 是常數，可以提到積分外 ⟹ $W=-P(V_f-V_i)$。</p>
+          <p><b>為什麼提示要先算 $\Delta U$</b>：$U$ 是狀態量，只要兩端點；熱沒有直接的公式，只能最後由 $Q=\Delta U-W$ 得到。</p>
+          <p><b>這步容易錯</b>：$f$ 用 3（單原子）或 7（把振動也算進去）。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜A 與 C：兩段定容</h5>
+          <p><b>怎麼算 A</b>（$V=V_1$，$(V_1,P_1)\to(V_1,P_2)$）：$W_A=0$，</p>
+          $$\Delta U_A=\tfrac52\left(P_2V_1-P_1V_1\right)=\tfrac52V_1(P_2-P_1)=Q_A$$
+          <p><b>怎麼算 C</b>（$V=V_2$，$(V_2,P_2)\to(V_2,P_1)$）：$W_C=0$，</p>
+          $$\Delta U_C=\tfrac52\left(P_1V_2-P_2V_2\right)=-\tfrac52V_2(P_2-P_1)=Q_C$$
+          <p><b>這步容易錯</b>：C 在矩形右邊，體積是 $V_2$，不是 $V_1$。也因此 $|Q_C|\gt|Q_A|$：同樣的壓力變化，體積大的那一邊內能變化較大，兩段不會互相抵消。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜B：定壓膨脹</h5>
+          <p><b>怎麼算</b>（$P=P_2$，$V_1\to V_2$）：</p>
+          $$\begin{aligned}W_B&=-P_2(V_2-V_1)\\\Delta U_B&=\tfrac52(P_2V_2-P_2V_1)=\tfrac52P_2(V_2-V_1)\end{aligned}$$
+          $$\begin{aligned}Q_B&=\Delta U_B-W_B\\&=\tfrac52P_2(V_2-V_1)+P_2(V_2-V_1)\\&=\tfrac72P_2(V_2-V_1)\end{aligned}$$
+          <p><b>怎麼讀</b>：以 $P_2(V_2-V_1)$ 為「一份」，吸進 $\tfrac72$ 份熱，$\tfrac52$ 份留下來升溫，只有 1 份拿去對外做功。$\tfrac72$ 正是第 6 節的 $C_P/(Nk)$。</p>
+          <p><b>這步容易錯</b>：$Q=\Delta U-W$ 裡 $W$ 是負的，減一個負數變成加；寫成 $\tfrac52-1=\tfrac32$ 就錯了。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 4｜D：定壓壓縮</h5>
+          <p><b>怎麼算</b>（$P=P_1$，$V_2\to V_1$）：末減初 $V_f-V_i=V_1-V_2\lt0$，</p>
+          $$\begin{aligned}W_D&=-P_1(V_1-V_2)=+P_1(V_2-V_1)\\\Delta U_D&=\tfrac52(P_1V_1-P_1V_2)=-\tfrac52P_1(V_2-V_1)\end{aligned}$$
+          $$\begin{aligned}Q_D&=-\tfrac52P_1(V_2-V_1)-P_1(V_2-V_1)\\&=-\tfrac72P_1(V_2-V_1)\end{aligned}$$
+          <p><b>這步容易錯</b>：D 是壓縮，$W_D\gt0$；很多人照抄 B 的形式寫成負的。和 B 比，D 只是壓力換成 $P_1$、方向相反，三個量都變號。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 5｜(b) 每一步實際在做什麼</h5>
+          <p><b>怎麼判斷</b>：$Q$ 的正負決定要接熱源還是冷源，$\Delta V$ 決定活塞怎麼動。</p>
+          <ul>
+            <li>A：$Q\gt0$、活塞不動 ⟹ 固定活塞、用火焰加熱，壓力上升。</li>
+            <li>B：$Q\gt0$、體積變大 ⟹ 繼續加熱，同時讓活塞外移，把壓力維持在 $P_2$。若只讓活塞外移而不加熱，膨脹會讓壓力下降。</li>
+            <li>C：$Q\lt0$、活塞不動 ⟹ 固定活塞、把熱抽走（例如浸冰水），壓力下降。</li>
+            <li>D：$Q\lt0$、體積變小 ⟹ 繼續冷卻，同時把活塞推回，壓力維持在 $P_1$。</li>
+          </ul>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 6｜(c) 四段相加</h5>
+          <p><b>$\Delta U$</b>：把四段的八項寫出來，兩兩抵消（$V_1P_2$ 與 $-P_2V_1$、$P_2V_2$ 與 $-V_2P_2$……）：</p>
+          $$\begin{aligned}\tfrac52\big[&(V_1P_2-V_1P_1)+(P_2V_2-P_2V_1)\\&+(V_2P_1-V_2P_2)+(P_1V_1-P_1V_2)\big]=0\end{aligned}$$
+          <p>這也是代數的自我檢查：狀態量繞一圈必須回到原值。</p>
+          <p><b>$W$</b>：只有 B、D 有功：$W_{\text{淨}}=-P_2(V_2-V_1)+P_1(V_2-V_1)=-(P_2-P_1)(V_2-V_1)$，就是矩形面積加負號。</p>
+          <p><b>$Q$</b>：$Q_{\text{淨}}=0-W_{\text{淨}}=(P_2-P_1)(V_2-V_1)$。也可以把四個 $Q$ 直接相加驗算：$\tfrac52V_1\Delta P+\tfrac72P_2\Delta V-\tfrac52V_2\Delta P-\tfrac72P_1\Delta V=-\tfrac52\Delta P\Delta V+\tfrac72\Delta P\Delta V=\Delta P\,\Delta V$ ✔（$\Delta P=P_2-P_1$、$\Delta V=V_2-V_1$）。</p>
+          <p><b>符合預期嗎</b>：符合。順時針繞，高壓時膨脹、低壓時壓縮，氣體推出去的功比被推回來的多，淨對外做功——這是一部熱機，淨吸的熱全部變成功。</p>
+          <p><b>這步容易錯</b>：以為整圈 $\Delta U=0$ 所以 $Q=0$；或把每一段都當成 $Q=-W$（那只有等溫或整個循環才成立）。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>代數值 $P_1=1\ \text{atm}$、$P_2=2\ \text{atm}$、$V_1=1\ \text{L}$、$V_2=3\ \text{L}$：A：$Q=\Delta U=2.5$；B：$W=-4$、$\Delta U=10$、$Q=14$；C：$Q=\Delta U=-7.5$；D：$W=+2$、$\Delta U=-5$、$Q=-7$（atm·L）。整圈 $W=-2$、$\Delta U=0$、$Q=+2$，正好是矩形面積 $1\times2$ ✔。吸熱（A＋B）共 16.5，只換到 2 的淨功，效率約 12%——吸的熱大部分在 C、D 丟給了冷源，這是第 4 章熱機效率的起點。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>換成單原子氣體（$f=3$）</b>：$\tfrac52\to\tfrac32$、$\tfrac72\to\tfrac52$；淨功是幾何面積，仍是 $-2\ \text{atm·L}$；吸熱 $1.5+10=11.5$，效率約 17%。</li>
+          <li><b>改成逆時針繞</b>：每個量都變號，整圈 $W=+(P_2-P_1)(V_2-V_1)$、$Q=-(P_2-P_1)(V_2-V_1)$：外界做功、氣體放熱，和<a href="#sc-1-33">習題 1.33</a> 同類。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<h3 id="t15-iso">5.3 理想氣體的等溫壓縮 <span class="pg-tag">p.23–25</span></h3>
+
+<p>壓縮氣體就是對它做功、加能量，通常溫度會升高（打過腳踏車胎就知道）。但如果壓得很慢，或容器和環境導熱很好，熱會一邊流出去，溫度就升得不多（潛水氣瓶灌氣時常泡在水裡，就是為了不讓瓶內空氣太熱）。所以「快壓」和「慢壓」在熱力學裡差別很大。課本考慮兩個理想化的極端：</p>
+<ul>
+  <li><strong>等溫</strong>（isothermal）壓縮：慢到氣體溫度完全不升。</li>
+  <li><strong>絕熱</strong>（adiabatic）壓縮：快到完全沒有熱流出（但仍假設是準靜態）。</li>
+</ul>
+<p>真實的壓縮介於兩者之間，通常比較接近絕熱。</p>
+
+<p>等溫幾乎一定意味著準靜態，所以可以用 (1.29)，壓力由理想氣體定律給出 $P=NkT/V$（$T$ 固定）。在 PV 圖上它是一條上凹的雙曲線，叫做<strong>等溫線</strong>（isotherm，Fig. 1.11）。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.24 Eq. (1.30)–(1.31) 等溫過程的功與熱</span>
+  $$W=NkT\ln\frac{V_i}{V_f},\qquad Q=-W=NkT\ln\frac{V_f}{V_i}$$
+  <p>壓縮（$V_f\lt V_i$）時 $W\gt0$、$Q\lt0$：熱流出到環境；等溫膨脹時相反，要從外面吸熱。</p>
+</div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-isotherm">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.5 Eq. (1.30)–(1.31) · p.24–25</span></div>
+    <h4>等溫壓縮的功與熱</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-isotherm">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-isotherm"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>Suppose, then, that you compress an ideal gas isothermally, that is, without changing its temperature. This almost certainly implies that the process is quasistatic, so I can use formula 1.29 to calculate the work done, with $P$ determined by the ideal gas law.</p>$$W=-\int_{V_i}^{V_f}P\,dV=-NkT\int_{V_i}^{V_f}\frac1V\,dV=NkT\ln\frac{V_i}{V_f}.\qquad(1.30)$$<p>As the gas is compressed isothermally, heat must be flowing out, into the environment.</p>$$Q=\Delta U-W=\Delta\left(\tfrac12NfkT\right)-W=0-W=NkT\ln\frac{V_f}{V_i}.\qquad(1.31)$$</div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$N$ 個分子的理想氣體在溫度 $T$ 下，由體積 $V_i$ 準靜態等溫壓縮到 $V_f$。(a) 推導外界對氣體做的功 (1.30)。(b) 推導氣體吸收的熱 (1.31)。(c) 數值例：室溫一大氣壓的 1 L 空氣等溫壓縮到 0.5 L，$W$、$Q$ 各多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>壓力</td><td>$P=NkT/V$</td><td>「理想氣體」</td></tr>
+          <tr><td>溫度</td><td>$T$ 固定</td><td>「<b>等溫</b>壓縮」</td></tr>
+          <tr><td>功</td><td>$W=-\int P\,dV$</td><td>「準靜態」⟹ 可用 (1.29)</td></tr>
+          <tr><td>內能</td><td>$U=\tfrac f2NkT$，等溫 ⟹ $\Delta U=0$</td><td>題目沒寫：理想氣體 $U$ 只和 $T$ 有關</td></tr>
+          <tr><td>(c)</td><td>$P_iV_i=1\ \text{atm·L}=101.3\ \text{J}$，$V_i/V_f=2$</td><td>「一大氣壓的 1 L 空氣」「壓縮到 0.5 L」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $W$ 的公式；(b) $Q$ 的公式；(c) 數值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>壓力隨體積變（$P\propto1/V$），<b>所以</b>要積分；<b>因為</b> $T$ 固定，<b>所以</b> $NkT$ 可以提到積分外，剩下 $\int dV/V$。</p>
+      <p>(b) <b>因為</b>理想氣體的 $U$ 只由 $T$ 決定，等溫 ⟹ $\Delta U=0$，<b>所以</b>第一定律直接給 $Q=-W$：壓進去多少功，就流出多少熱。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-isotherm-s1" data-sym="W,N,k,T">
+        <span class="step-title">(a) 積分</span>
+        $$W=-\int_{V_i}^{V_f}P\,dV=-NkT\int_{V_i}^{V_f}\frac{dV}V$$
+        <p>$\int dV/V=\ln V$：</p>
+        $$W=-NkT\left(\ln V_f-\ln V_i\right)=NkT\ln\frac{V_i}{V_f}$$
+      </div>
+      <div class="step" data-step="sc-ex-isotherm-s2" data-sym="Q,U">
+        <span class="step-title">(b) 熱</span>
+        $$Q=\Delta U-W=\Delta\left(\tfrac12NfkT\right)-W=0-W=NkT\ln\frac{V_f}{V_i}$$
+      </div>
+      <div class="step" data-step="sc-ex-isotherm-s3">
+        <span class="step-title">(c) 數值</span>
+        <p>$NkT=PV$ 在等溫線上處處相同，用初狀態：</p>
+        <p class="sub">代入 $NkT=P_iV_i=101.3\ \text{J}$、$V_i/V_f=1/0.5=2$（題目）：</p>
+        $$W=(101.3\ \text{J})\ln2=70.2\ \text{J},\qquad Q=-70.2\ \text{J}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $W=NkT\ln(V_i/V_f)$；(b) $Q=NkT\ln(V_f/V_i)=-W$；(c) $W=70.2\ \text{J}$，$Q=-70.2\ \text{J}$（放熱）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>粗估：只壓掉 0.5 L，壓力從 1 升到 2 atm，平均約 1.4 atm，$1.4\times0.5\approx0.7\ \text{atm·L}\approx70\ \text{J}$ ✔；和 sc-ex-100j「一大氣壓下壓掉 1 L 要 100 J」同量級 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>(a) 用理想氣體定律把 $P$ 寫成 $V$ 的函數，積分出功 → (b) 等溫 ⟹ $\Delta U=0$，第一定律直接給 $Q=-W$ → (c) 用 $NkT=P_iV_i$ 代數字。整題的關鍵是同一件事用了兩次：<b>$T$ 固定</b>，讓 $NkT$ 成為常數可以提到積分外，也讓理想氣體的內能不變。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜(a) 積分出等溫功</h5>
+          <p><b>在做什麼</b>：求 $W=-\int P\,dV$。要能積，被積函數只能剩 $V$ 一個變數。</p>
+          <p><b>為什麼可以這樣做</b>：① <b>等溫幾乎一定是準靜態</b>：壓縮時氣體被做功，要維持溫度不變，熱必須一邊流出去；熱傳導很慢，所以壓縮也得很慢，慢到這種程度，氣體內部當然一直平衡，(1.29) 可以用。② 理想氣體 $P=NkT/V$，而 $N$、$k$、$T$ 都固定，所以 $NkT$ 是常數，可以提到積分外。</p>
+          <p><b>怎麼算</b>：$\int dV/V=\ln V$：</p>
+          $$\begin{aligned}W&=-\int_{V_i}^{V_f}\frac{NkT}V\,dV=-NkT\Big[\ln V\Big]_{V_i}^{V_f}\\&=-NkT\left(\ln V_f-\ln V_i\right)=NkT\ln\frac{V_i}{V_f}\end{aligned}$$
+          <p>最後一步：$-(\ln a-\ln b)=\ln b-\ln a=\ln(b/a)$，負號被吸收成「分子分母對調」。</p>
+          <p><b>用符號檢查</b>：壓縮時 $V_i\gt V_f$，比值大於 1，對數為正，$W\gt0$ ✔。</p>
+          <p><b>這步容易錯</b>：① 寫成 $\ln(V_f/V_i)$，壓縮時算出負功；② 在溫度會變的過程（例如絕熱）也把 $NkT$ 提出積分——那時 $T$ 跟著 $V$ 變，不能這樣做（見<a href="#sc-ex-adiabat">下一節</a>）。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜(b) 第一定律求熱</h5>
+          <p><b>為什麼 $\Delta U=0$</b>：理想氣體分子之間沒有交互作用位能，$U=\tfrac f2NkT$ 只和溫度有關，和體積無關；$T$ 不變 ⟹ $\Delta U=0$。這只對理想氣體成立：真實氣體，或等溫的相變（100°C 的水沸騰），$\Delta U\ne0$。</p>
+          <p><b>怎麼算</b>：</p>
+          $$Q=\Delta U-W=0-NkT\ln\frac{V_i}{V_f}=NkT\ln\frac{V_f}{V_i}$$
+          <p>（$-\ln x=\ln(1/x)$。）</p>
+          <p><b>怎麼讀</b>：壓縮時 $Q\lt0$，熱流出到環境。氣體像一條輸送帶：功從活塞進來，同樣多的能量以熱的形式從缸壁出去，自己的內能一點沒變。</p>
+          <p><b>這步容易錯</b>：把「等溫」和「絕熱」搞混，以為等溫 $Q=0$。等溫是溫度不變、熱一直在流；絕熱才是沒有熱流（溫度會變）。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜(c) 代數字</h5>
+          <p><b>數字從哪來</b>：不必分別知道 $N$ 和 $T$——等溫線上 $PV=NkT$ 處處相同，用初狀態最方便：$NkT=P_iV_i=1\ \text{atm·L}=101.3\ \text{J}$。體積比 $V_i/V_f=1/0.5=2$，$\ln2=0.693$。</p>
+          $$W=(101.3\ \text{J})(0.693)=70.2\ \text{J},\qquad Q=-70.2\ \text{J}$$
+          <p>順便：末壓力 $P_f=P_iV_i/V_f=2\ \text{atm}$。</p>
+          <p><b>這步容易錯</b>：計算機按成 $\log_{10}$：$\log_{10}2=0.301$，會得到 30.5 J。物理裡的 $\ln$ 一律是自然對數。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>平均壓力 $=W/|\Delta V|=0.693\ \text{atm·L}/0.5\ \text{L}\approx1.39\ \text{atm}$，介於初壓 1 atm 與末壓 2 atm 之間，所以 70 J 也介於「用初壓估」的 $1\times0.5\times101.3\approx50.7\ \text{J}$ 與「用末壓估」的 $101\ \text{J}$ 之間 ✔。另一個規律：功正比於 $\ln(V_i/V_f)$，<b>每把體積減半，功都是 $NkT\ln2$</b>——從 0.5 L 再壓到 0.25 L，壓力加倍但體積變化減半，又是 70.2 J。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>反過來，等溫膨脹 1 L → 2 L</b>：$W=-70.2\ \text{J}$、$Q=+70.2\ \text{J}$；吸進的熱全部拿去對外做功。</li>
+          <li><b>壓到 0.1 L</b>：$W=(101.3\ \text{J})\ln10\approx233\ \text{J}$、$Q=-233\ \text{J}$。這正是<a href="#t1-self-05a">自編難題 05a</a> 的路徑一，那裡會和「絕熱壓縮再冷卻」比誰省功。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<h3 id="t15-adia">5.4 理想氣體的絕熱壓縮 <span class="pg-tag">p.25–28</span></h3>
+
+<p>絕熱壓縮快到沒有熱流出，但仍假設準靜態（實際上通常是不錯的近似）。做了功又不讓熱跑掉，能量就增加：$\Delta U=Q+W=W$（1.32）。理想氣體 $U\propto T$，所以溫度也上升。PV 圖上這條曲線從低溫的等溫線出發、終點在高溫的等溫線上，所以它比兩條等溫線都<strong>陡</strong>（Fig. 1.12），叫做<strong>絕熱線</strong>（adiabat）。</p>
+
+<div class="box lecture book">
+  <span class="box-title">p.26 Eq. (1.39)–(1.40) 準靜態絕熱過程</span>
+  $$VT^{f/2}=\text{常數},\qquad PV^\gamma=\text{常數},\qquad\gamma=\frac{f+2}f$$
+  <p>$\gamma$ 叫做絕熱指數（adiabatic exponent）：單原子 $\tfrac53$，雙原子（室溫）$\tfrac75=1.4$。第 6 節會看到 $\gamma=C_P/C_V$。</p>
+</div>
+
+<div class="anim" data-anim="t1-adiabat"></div>
+
+<div class="problem" data-kind="tbexample" id="sc-ex-adiabat">
+  <header>
+    <div class="meta"><span class="chip">課本例題</span><span class="src">Schroeder §1.5 Eq. (1.32)–(1.39) · p.25–26</span></div>
+    <h4>推導絕熱過程的 $VT^{f/2}=$ 常數</h4>
+    <button type="button" class="exam-btn" data-exam="sc-ex-adiabat">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-ex-adiabat"><span class="part-label original-label">課文題材摘錄</span>
+<p class="original-note">本題由課文範例整理；此處只摘錄設定，計算過程請見下方解析。</p>
+<div class="original-text" lang="en"><p>Now let’s consider adiabatic compression, which is so fast that no heat flows out of (or into) the gas. I’ll still assume, however, that the compression is quasistatic.</p><p>To find an equation describing the exact shape of this curve, let me first use the equipartition theorem to write $U=\frac f2NkT$ (1.33), where $f$ is the number of degrees of freedom per molecule—3 for a monatomic gas, 5 for a diatomic gas near room temperature, etc.</p><p>To simplify this equation, exponentiate both sides and gather the $i$’s and $f$’s. After a couple of lines of algebra you’ll find $V_fT_f^{f/2}=V_iT_i^{f/2}$ (1.38), or more compactly, $VT^{f/2}=\text{constant}$ (1.39).</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>$N$ 個分子、每分子 $f$ 個自由度的理想氣體，進行準靜態絕熱壓縮。由第一定律與均分定理推出溫度與體積的關係 (1.38)–(1.39)，並說明為什麼絕熱線比等溫線陡。</p></div>
+    <div class="part givens"><span class="part-label">已知的關係與目標</span>
+      <table>
+        <thead><tr><th>項目</th><th>關係</th><th>出處</th></tr></thead>
+        <tbody>
+          <tr><td>絕熱</td><td>$Q=0$ ⟹ $dU=W$</td><td>課本 (1.32)：「快到沒有熱流出」</td></tr>
+          <tr><td>準靜態的功</td><td>$W=-P\,dV$</td><td>課本 (1.28)，取無限小一段</td></tr>
+          <tr><td>均分定理</td><td>$U=\tfrac f2NkT$ ⟹ $dU=\tfrac f2Nk\,dT$</td><td>課本 (1.33)–(1.34)；$f$ 不隨溫度變</td></tr>
+          <tr><td>理想氣體</td><td>$P=NkT/V$</td><td>理想氣體定律</td></tr>
+          <tr><td>目標</td><td>$V_fT_f^{f/2}=V_iT_i^{f/2}$</td><td>課本 (1.38)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：推出 (1.38)、(1.39)；解釋絕熱線為什麼比等溫線陡。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>過程中 $P$、$V$、$T$ 三個都在變，沒辦法直接積 $-\int P\,dV$（不知道 $P(V)$），<b>所以</b>先對<strong>無限小一段</strong>寫第一定律，得到一條 $dT$ 與 $dV$ 的微分方程。</p>
+      <p><b>因為</b>方程裡還有 $P$，<b>所以</b>用 $P=NkT/V$ 換掉，讓 $T$ 和 $V$ 可以分離到等號兩邊（$dT/T$ 對 $dV/V$），再各自積分。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-ex-adiabat-s1" data-sym="U,f,W">
+        <span class="step-title">無限小一段的第一定律</span>
+        <p>$Q=0$，$dU=W=-P\,dV$；左邊用 $dU=\frac f2Nk\,dT$（1.34）：</p>
+        $$\frac f2Nk\,dT=-P\,dV\qquad(1.35)$$
+      </div>
+      <div class="step" data-step="sc-ex-adiabat-s2" data-sym="P">
+        <span class="step-title">消去 $P$、分離變數</span>
+        <p>代入 $P=NkT/V$，兩邊除以 $NkT$：</p>
+        $$\frac f2\,\frac{dT}T=-\frac{dV}V\qquad(1.36)$$
+      </div>
+      <div class="step" data-step="sc-ex-adiabat-s3">
+        <span class="step-title">從初狀態積分到末狀態</span>
+        $$\frac f2\int_{T_i}^{T_f}\frac{dT}T=-\int_{V_i}^{V_f}\frac{dV}V\ \Longrightarrow\ \frac f2\ln\frac{T_f}{T_i}=-\ln\frac{V_f}{V_i}\qquad(1.37)$$
+      </div>
+      <div class="step" data-step="sc-ex-adiabat-s4">
+        <span class="step-title">取指數、整理</span>
+        <p>$\frac f2\ln x=\ln x^{f/2}$，$-\ln y=\ln(1/y)$：</p>
+        $$\left(\frac{T_f}{T_i}\right)^{f/2}=\frac{V_i}{V_f}\ \Longrightarrow\ V_fT_f^{f/2}=V_iT_i^{f/2}$$
+        <p>初末可以是過程中任兩點，所以 $VT^{f/2}=$ 常數（1.39）。</p>
+      </div>
+      <div class="step" data-step="sc-ex-adiabat-s5">
+        <span class="step-title">為什麼比等溫線陡</span>
+        <p>壓縮時 $V$ 變小，$T^{f/2}$ 必須變大，溫度上升；$P=NkT/V$ 不只因 $V$ 變小而增加，還因 $T$ 變大再增加一次。所以同樣縮小體積，絕熱線上壓力升得比等溫線（只有 $1/V$）快。消去 $T$ 後的定量結果是 $PV^\gamma=$ 常數，$\gamma\gt1$（習題 1.35）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$V_fT_f^{f/2}=V_iT_i^{f/2}$，即 $VT^{f/2}=$ 常數；壓縮時溫度上升，壓力比等溫時升得快，絕熱線較陡。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>單原子 $f=3$：$VT^{3/2}=$ 常數，等價於 $TV^{2/3}=$ 常數——和第 2 章自編難題 09b 由熵不變得到的結果一樣 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>絕熱時 $P$、$V$、$T$ 三個都在變，我們不知道 $P(V)$，沒辦法像等溫那樣直接積功。所以反過來做：對<b>無限小一段</b>寫第一定律 → 用 $PV=NkT$ 消掉 $P$，把 $T$ 和 $V$ 分到等號兩邊 → 兩邊各自積分 → 取指數整理成 $VT^{f/2}=$ 常數 → 用它解釋絕熱線為什麼陡。整題能做下去的關鍵是第二步：<b>除以 $NkT$ 之後，變數剛好分離成 $dT/T$ 對 $dV/V$</b>。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜無限小一段的第一定律</h5>
+          <p><b>在做什麼</b>：寫出 $dU=Q+W$ 在一小段過程裡的樣子，三項各自代入。</p>
+          <p><b>為什麼可以這樣做</b>：$Q=0$（絕熱）；$W=-P\,dV$（準靜態）；$dU=\tfrac f2Nk\,dT$（均分定理，$f$ 在過程中不變）。「快到沒有熱流」和「準靜態」並不矛盾：氣體內部壓力拉平靠聲波，毫秒內完成；熱從氣體流到缸壁靠傳導，要好幾秒以上。壓縮速度夾在兩者之間，就同時滿足兩個條件。</p>
+          <p><b>怎麼算</b>：</p>
+          $$\frac f2Nk\,dT=-P\,dV\qquad(1.35)$$
+          <p><b>這步容易錯</b>：功寫成 $+P\,dV$，結果會變成「膨脹升溫」。用「壓縮（$dV\lt0$）必須升溫（$dT\gt0$）」檢查符號：右邊 $-P\,dV\gt0$ ✔。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜消去 $P$、分離變數</h5>
+          <p><b>在做什麼</b>：讓等號一邊只有 $T$、另一邊只有 $V$，才能各自積分。</p>
+          <p><b>怎麼算</b>：代入 $P=NkT/V$：</p>
+          $$\frac f2Nk\,dT=-\frac{NkT}V\,dV$$
+          <p>兩邊同除以 $NkT$：</p>
+          $$\frac f2\,\frac{dT}T=-\frac{dV}V\qquad(1.36)$$
+          <p>順便 $N$、$k$ 都消掉了——結果和氣體有多少無關。</p>
+          <p><b>這步容易錯</b>：只除以 $Nk$、忘了除 $T$，左邊剩 $dT$、右邊還有 $T$，變數沒有分開就積不下去。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜從初狀態積分到末狀態</h5>
+          <p><b>為什麼可以把 $\tfrac f2$ 拿到積分外</b>：$f$ 是常數（過程中沒有新的自由度「解凍」）。</p>
+          <p><b>怎麼算</b>：$\int dx/x=\ln x$，上下限代進去：</p>
+          $$\frac f2\ln\frac{T_f}{T_i}=-\ln\frac{V_f}{V_i}\qquad(1.37)$$
+          <p><b>怎麼讀</b>：右邊的負號就是「壓縮 ⟹ 升溫」——$V_f\lt V_i$ 時右邊為正，所以 $T_f\gt T_i$。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 4｜取指數、整理</h5>
+          <p><b>怎麼算</b>：兩個對數規則：$a\ln x=\ln x^a$（係數搬進指數）、$-\ln y=\ln(1/y)$（負號變倒數）：</p>
+          $$\begin{aligned}&\ln\left(\frac{T_f}{T_i}\right)^{f/2}=\ln\frac{V_i}{V_f}\\\Longrightarrow\ &\left(\frac{T_f}{T_i}\right)^{f/2}=\frac{V_i}{V_f}\end{aligned}$$
+          <p>交叉相乘，把 $i$、$f$ 各歸一邊：$V_fT_f^{f/2}=V_iT_i^{f/2}$。初、末可以是同一條絕熱線上任兩點，所以 $VT^{f/2}=$ 常數（1.39）。</p>
+          <p><b>這步容易錯</b>：指數放錯邊，寫成 $TV^{f/2}$。回頭看步驟 2：$\tfrac f2$ 跟著的是 $dT/T$，所以是 $T$ 的次方。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 5｜為什麼絕熱線比等溫線陡</h5>
+          <p><b>定性</b>：$P=NkT/V$ 受兩個因素推高——$V$ 變小、$T$ 變大。等溫線只有前者；絕熱壓縮時溫度也上升，壓力再被推高一次，所以升得更快。</p>
+          <p><b>定量</b>：(1.39) 取 $2/f$ 次方得 $TV^{2/f}=$ 常數，即 $T\propto V^{-2/f}$；代進 $P\propto T/V$：$P\propto V^{-(1+2/f)}=V^{-\gamma}$。對 $V$ 微分，在同一點：</p>
+          $$\begin{aligned}\left(\frac{dP}{dV}\right)_{\text{絕熱}}&=-\gamma\frac PV\\\left(\frac{dP}{dV}\right)_{\text{等溫}}&=-\frac PV\end{aligned}$$
+          <p>斜率差 $\gamma\gt1$ 倍，這就是<a href="#sc-1-35">習題 1.35</a> 的 $PV^\gamma=$ 常數。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>做的功全部變成內能，平均分給 $f$ 個自由度，<b>自由度越多，溫度升得越少</b>：體積減半時，單原子升溫 $2^{2/3}=1.59$ 倍，雙原子只升 $2^{0.4}=1.32$ 倍；$f\to\infty$ 時溫度幾乎不變，絕熱線退化成等溫線。適用範圍也要記得：自由膨脹（氣體衝進真空）同樣 $Q=0$，但它不是準靜態，$W=0$、理想氣體溫度不變，$VT^{f/2}$ 並不守恆。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>單原子氣體 300 K，絕熱壓到一半體積</b>：$T_f=300\times2^{2/3}\approx476\ \text{K}$；雙原子則是 $300\times2^{0.4}\approx396\ \text{K}$。</li>
+          <li><b>雙原子絕熱膨脹到兩倍體積</b>：$T_f=300\times2^{-0.4}\approx227\ \text{K}$。膨脹的空氣會變冷——<a href="#sc-1-38">習題 1.38</a> 的快氣泡、<a href="#sc-1-40">習題 1.40</a> 上升的空氣團都是這個原理。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-35">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-35（Problem 1.35）· p.26</span></div>
+    <h4>由 $VT^{f/2}=$ 常數推出 $PV^\gamma=$ 常數</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-35">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-35"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Derive equation 1.40 from equation 1.39.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>由 (1.39) 推導 (1.40)。</p></div>
+    <div class="part givens"><span class="part-label">已知的關係與目標</span>
+      <table>
+        <thead><tr><th>項目</th><th>關係</th><th>出處</th></tr></thead>
+        <tbody>
+          <tr><td>出發式</td><td>$VT^{f/2}=$ 常數</td><td>課本 (1.39)</td></tr>
+          <tr><td>理想氣體</td><td>$T=PV/(Nk)$</td><td>理想氣體定律；$N$ 固定</td></tr>
+          <tr><td>目標</td><td>$PV^\gamma=$ 常數，$\gamma=(f+2)/f$</td><td>課本 (1.40)</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：從 (1.39) 消去 $T$，得到 (1.40)。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> (1.40) 只含 $P$、$V$，<b>所以</b>用理想氣體定律把 (1.39) 的 $T$ 換成 $PV/Nk$；<b>因為</b>結果裡 $P$ 的次方是 $f/2$，<b>所以</b>兩邊同取 $2/f$ 次方，讓 $P$ 變成一次方，再整理 $V$ 的指數。常數的任何次方、乘上常數都還是常數。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-35-s1" data-sym="T,P,V">
+        <span class="step-title">代入 $T=PV/Nk$</span>
+        $$V\left(\frac{PV}{Nk}\right)^{f/2}=\text{常數}\ \Longrightarrow\ P^{f/2}\,V^{1+f/2}=\text{常數}\times(Nk)^{f/2}$$
+        <p>$N$、$k$ 固定，右邊仍是常數。</p>
+      </div>
+      <div class="step" data-step="sc-1-35-s2" data-sym="gamma">
+        <span class="step-title">兩邊取 $2/f$ 次方</span>
+        $$P\,V^{(1+\frac f2)\cdot\frac2f}=\text{常數}'$$
+        <p>指數：$(1+\frac f2)\cdot\frac2f=\frac2f+1=\frac{f+2}f\equiv\gamma$：</p>
+        $$PV^\gamma=\text{常數}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$PV^\gamma=$ 常數，$\gamma=\dfrac{f+2}f$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>另一種寫法：由 (1.39) 與 $PV^\gamma$ 也能得到 $TV^{\gamma-1}=$ 常數（$\gamma-1=2/f$，就是 (1.39) 取 $2/f$ 次方）✔；$f\to\infty$ 時 $\gamma\to1$，絕熱線退化成等溫線——自由度多到加的功幾乎不升溫 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>目標式只有 $P$、$V$，所以要做的就是<b>消掉 $T$</b>：用理想氣體定律代 $T=PV/(Nk)$，得到 $P^{f/2}V^{1+f/2}=$ 常數 → 兩邊取 $2/f$ 次方，讓 $P$ 變成一次方，$V$ 的指數自然就是 $\gamma$。整題的代數規則只有一條要放心用：<b>常數乘常數、常數的任何次方，都還是常數</b>，所以 $(Nk)^{f/2}$ 之類的東西可以直接吸收進右邊。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜代入 $T=PV/(Nk)$</h5>
+          <p><b>在做什麼</b>：把 (1.39) $VT^{f/2}=$ 常數裡的 $T$ 換成 $P$、$V$。</p>
+          <p><b>為什麼可以這樣做</b>：理想氣體定律在絕熱線上每一點都成立；$N$ 固定（封閉汽缸、氣體不漏），$k$ 是常數，所以 $Nk$ 是常數。</p>
+          <p><b>怎麼算</b>：用 $(ab)^n=a^nb^n$ 把次方分給 $P$ 和 $V$，再合併 $V\cdot V^{f/2}=V^{1+f/2}$：</p>
+          $$\begin{aligned}V\left(\frac{PV}{Nk}\right)^{f/2}&=V\cdot\frac{P^{f/2}V^{f/2}}{(Nk)^{f/2}}=\text{常數}\\\Longrightarrow\ P^{f/2}\,V^{1+f/2}&=\text{常數}\times(Nk)^{f/2}\end{aligned}$$
+          <p>右邊仍是常數，記成「常數′」。</p>
+          <p><b>這步容易錯</b>：$(PV)^{f/2}$ 只給 $P$ 加了次方，漏掉 $V^{f/2}$，最後 $V$ 的指數會少掉 $f/2$。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜兩邊取 $2/f$ 次方，讀出 $\gamma$</h5>
+          <p><b>為什麼要這樣做</b>：目標是 $PV^\gamma$ 的標準形式，$P$ 必須是一次方；$(P^{f/2})^{2/f}=P$。</p>
+          <p><b>怎麼算</b>：$V$ 的指數也乘上 $2/f$，用分配律展開：</p>
+          $$\begin{aligned}\left(1+\frac f2\right)\cdot\frac2f&=\frac2f+\frac f2\cdot\frac2f\\&=\frac2f+1=\frac{f+2}f\equiv\gamma\end{aligned}$$
+          <p>所以 $PV^\gamma=(\text{常數}')^{2/f}=$ 常數，這就是 (1.40)，也是 $\gamma=(f+2)/f$ 這個定義的由來。</p>
+          <p><b>這步容易錯</b>：① 指數沒有分配律展開，算成 $1+f$ 或 $\tfrac2f$；② 把 $\gamma$ 寫反成 $f/(f+2)$——那會小於 1，表示絕熱線比等溫線平，和<a href="#sc-ex-adiabat">上一張卡</a>「壓縮時溫度上升、壓力升得更快」矛盾，可以拿這點自我檢查。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>代幾個 $f$：單原子 $f=3$，$\gamma=\tfrac53$；雙原子 $f=5$，$\gamma=\tfrac75=1.4$；$f\to\infty$ 時 $\gamma\to1$，絕熱線退化成等溫線 $PV=$ 常數。只要 $f$ 有限，$\gamma=1+\tfrac2f\gt1$，絕熱線一定比等溫線陡 ✔。另外 (1.39) 直接取 $2/f$ 次方就是 $TV^{2/f}=TV^{\gamma-1}=$ 常數，三種寫法互相對得上。適用條件也跟著 (1.39)：只能用在<b>準靜態</b>絕熱、$N$ 固定的理想氣體。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>求 $T$ 與 $P$ 的關係</b>：在 $PV^\gamma$ 中代 $V=NkT/P$：$P\left(\tfrac{NkT}P\right)^\gamma\propto T^\gamma P^{1-\gamma}=$ 常數，所以 $T\propto P^{(\gamma-1)/\gamma}$；$\dfrac{\gamma-1}\gamma=\dfrac{2/f}{(f+2)/f}=\dfrac2{f+2}$。對它微分就是<a href="#sc-1-40">習題 1.40(a)</a> 的 $\dfrac{dT}{dP}=\dfrac2{f+2}\dfrac TP$。</li>
+          <li><b>數值</b>：絕熱壓成一半體積，壓力變為 $2^\gamma$ 倍——單原子 $2^{5/3}\approx3.17$ 倍、雙原子 $2^{1.4}\approx2.64$ 倍；等溫只有 2 倍。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="tk1x-1e">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">某級上學期期中（範圍第 1–4.1 章）第 1 題(e) · 同 114 級期中第 3 題(c)（收在第 2 章 tk-114-3）</span></div>
+    <h4>證明準靜態絕熱過程 $PV^\gamma=$ 常數，$\gamma=C_P/C_V$</h4>
+    <button type="button" class="exam-btn" data-exam="tk1x-1e">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="tk1x-1e"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. The equation of state obeyed by the ideal gas (also called ideal gas law) is</p>$$PV=NkT$$<p>(gas pressure P, volume V, number of gas particles N, Boltzmann constant k, and temperature T.). This ideal gas law is valid when the interatomic interaction can be ignored, and the atomic density is low.</p><p>(d) Use the first law of thermodynamics to find the relationship between the constant volume heat capacity $C_V$ and the constant pressure heat capacity $C_P$ of monatomic ideal gas with number of gas particles N.(3pts)</p><p>(e) Show that in the quasi-static and adiabatic process, the gas pressure P and volume V obey</p>$$PV^\gamma=constant$$<p>. Here $\gamma=C_P/C_V$ is called adiabatic exponent. (6pts)</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">原卷題目（第 1 題 (e) 小題，完整翻譯）</span><p>（承第 1 題：理想氣體遵守 $PV=NkT$；(d) 用第一定律求粒子數為 $N$ 的單原子理想氣體 $C_V$ 與 $C_P$ 的關係。）(e) 證明在準靜態且絕熱的過程中，氣體壓力 $P$ 與體積 $V$ 滿足
+    $$PV^\gamma=\text{constant}.$$
+    這裡 $\gamma=C_P/C_V$ 稱為絕熱指數。（6 分）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>狀態方程</td><td>$PV=NkT$</td><td>題目第 1 題開頭</td></tr>
+          <tr><td>絕熱</td><td>$Q=0$</td><td>「<b>絕熱</b>的過程」</td></tr>
+          <tr><td>準靜態</td><td>$W=-P\,dV$</td><td>「<b>準靜態</b>」：壓力一路有定義</td></tr>
+          <tr><td>內能</td><td>$dU=C_V\,dT$</td><td>理想氣體 $U$ 只和 $T$ 有關（題目沒寫），$C_V=(\partial U/\partial T)_V$</td></tr>
+          <tr><td>(d) 的結果</td><td>$C_P=C_V+Nk$</td><td>承 (d)；理想氣體普遍成立</td></tr>
+          <tr><td>定義</td><td>$\gamma=C_P/C_V$</td><td>題目</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：證明 $PV^\gamma=$ 常數，其中 $\gamma=C_P/C_V$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>題目的 $\gamma$ 定義成 $C_P/C_V$（不是課本的 $(f+2)/f$），<b>所以</b>證明裡不要用自由度，而是用 $dU=C_V\,dT$，最後靠 (d) 的 $C_P-C_V=Nk$ 把係數變成 $\gamma-1$。</p>
+      <p>其餘和課文相同：<b>因為</b> $P$、$V$、$T$ 都在變，<b>所以</b>先寫無限小一段的第一定律，用 $PV=NkT$ 消去 $P$、分離變數、積分，最後再用 $PV=NkT$ 把 $T$ 換回 $P$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="tk1x-1e-s1" data-sym="CV,U,W">
+        <span class="step-title">第一定律（無限小一段）</span>
+        <p>絕熱 $Q=0$、準靜態 $W=-P\,dV$；理想氣體 $dU=C_V\,dT$：</p>
+        $$C_V\,dT=-P\,dV$$
+      </div>
+      <div class="step" data-step="tk1x-1e-s2" data-sym="CP,gamma">
+        <span class="step-title">消去 $P$，係數變成 $\gamma-1$</span>
+        <p>代入 $P=NkT/V$，兩邊除以 $C_VT$：</p>
+        $$\frac{dT}T=-\frac{Nk}{C_V}\,\frac{dV}V$$
+        <p>由 (d) $Nk=C_P-C_V$：$\dfrac{Nk}{C_V}=\dfrac{C_P}{C_V}-1=\gamma-1$：</p>
+        $$\frac{dT}T=-(\gamma-1)\frac{dV}V$$
+      </div>
+      <div class="step" data-step="tk1x-1e-s3">
+        <span class="step-title">積分</span>
+        <p>$C_V$ 不隨溫度變（單原子 $\frac32Nk$），$\gamma$ 是常數：</p>
+        $$\ln T=-(\gamma-1)\ln V+\text{常數}\ \Longrightarrow\ TV^{\gamma-1}=\text{常數}$$
+      </div>
+      <div class="step" data-step="tk1x-1e-s4" data-sym="P,V">
+        <span class="step-title">換回 $P$、$V$</span>
+        <p>$T=PV/(Nk)$，$Nk$ 併進常數：</p>
+        $$\frac{PV}{Nk}V^{\gamma-1}=\text{常數}\ \Longrightarrow\ PV^\gamma=\text{常數}$$
+        <p class="sub">單原子：$C_V=\frac32Nk$、$C_P=\frac52Nk$（(d)），$\gamma=\frac53$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>得證：$PV^\gamma=$ 常數，$\gamma=C_P/C_V$（單原子 $\tfrac53$）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>與課文一致：$C_V=\frac f2Nk$、$C_P=\frac{f+2}2Nk$ ⟹ $C_P/C_V=(f+2)/f$ ✔。同一題也出現在 114 級期中第 3 題 (c)，見<a data-chapter="thermal/ch02" href="#tk-114-3">第 2 章</a>第九節的考古 114-3 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>骨架和<a href="#sc-ex-adiabat">課文推導</a>一樣：無限小一段的第一定律 → 消去 $P$、分離變數 → 積分 → 換回 $P$、$V$。不同的是題目把 $\gamma$ <b>定義成 $C_P/C_V$</b>，所以全程用熱容量、不用自由度；$\gamma$ 出現的那一刻，靠的是 (d) 的結果 $C_P-C_V=Nk$。這是 6 分的證明題，「絕熱」「準靜態」「理想氣體」三個條件各在哪一步用到，答案卷上都要寫出來。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜第一定律（無限小一段）</h5>
+          <p><b>在做什麼</b>：寫 $dU=Q+W$，三項各自代入。</p>
+          <p><b>為什麼可以這樣做</b>：$Q=0$ 用的是「<b>絕熱</b>」；$W=-P\,dV$ 用的是「<b>準靜態</b>」（壓力一路有定義）；$dU=C_V\,dT$ 用的是「<b>理想氣體</b>」。最後這項最容易被問：$C_V=(\partial U/\partial T)_V$ 的定義是定容的，為什麼體積在變的絕熱過程也能用？因為理想氣體分子間沒有作用力，$U$ 只是 $T$ 的函數，不管 $V$ 怎麼變，$dU=\dfrac{dU}{dT}dT=C_V\,dT$ 都成立。</p>
+          <p><b>怎麼算</b>：</p>
+          $$C_V\,dT=-P\,dV$$
+          <p><b>這步容易錯</b>：看到壓力在變就寫 $dU=C_P\,dT$。$C_P$ 是定壓過程<b>吸的熱</b>對溫度的比；內能的變化永遠是 $C_V\,dT$。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜消去 $P$，讓 $\gamma-1$ 出現</h5>
+          <p><b>怎麼算</b>：代 $P=NkT/V$，兩邊同除以 $C_VT$，讓左邊只剩 $T$、右邊只剩 $V$：</p>
+          $$\begin{aligned}&C_V\,dT=-\frac{NkT}V\,dV\\\Longrightarrow\ &\frac{dT}T=-\frac{Nk}{C_V}\,\frac{dV}V\end{aligned}$$
+          <p>現在係數是 $Nk/C_V$，題目要的卻是 $C_P/C_V$。用 (d)：$Nk=C_P-C_V$，所以</p>
+          $$\begin{aligned}&\frac{Nk}{C_V}=\frac{C_P-C_V}{C_V}=\gamma-1\\\Longrightarrow\ &\frac{dT}T=-(\gamma-1)\frac{dV}V\end{aligned}$$
+          <p><b>(d) 為什麼成立（一句話）</b>：定壓加熱時，氣體一邊升溫一邊推活塞；由 $PV=NkT$、$P$ 固定得 $P\,dV=Nk\,dT$，所以每升 1 K 要多付 $Nk$ 的功，$C_P=C_V+Nk$（見<a href="#tk1x-1cd">考古 1(c)(d)</a>、<a href="#sc-ex-6-cpcv">課文推導</a>）。這就是題目把 (d) 放在前面的原因。</p>
+          <p><b>這步容易錯</b>：跳過 (d)，直接寫 $\gamma-1=2/f$——那證的是課文的定義 $\gamma=(f+2)/f$，不是題目的 $C_P/C_V$。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜積分</h5>
+          <p><b>為什麼可以直接積</b>：要先說明 $C_V$ 不隨溫度變（單原子 $C_V=\tfrac32Nk$），$\gamma$ 才是常數，才能拿到積分外。</p>
+          <p><b>怎麼算</b>：兩邊積分，再用 $a\ln x=\ln x^a$ 合併：</p>
+          $$\begin{aligned}\ln T&=-(\gamma-1)\ln V+\text{常數}\\\ln T+\ln V^{\gamma-1}&=\text{常數}\\\ln\left(TV^{\gamma-1}\right)&=\text{常數}\\TV^{\gamma-1}&=\text{常數}\end{aligned}$$
+          <p><b>這步容易錯</b>：負號丟掉，得到 $TV^{1-\gamma}=$ 常數——那表示膨脹會升溫，和「絕熱膨脹變冷」矛盾。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 4｜換回 $P$、$V$</h5>
+          <p><b>怎麼算</b>：$T=PV/(Nk)$，$Nk$ 是常數，乘到右邊併進常數；$V\cdot V^{\gamma-1}=V^\gamma$：</p>
+          $$\frac{PV}{Nk}\,V^{\gamma-1}=\text{常數}\ \Longrightarrow\ PV^\gamma=\text{常數}$$
+          <p>最後補上單原子的值：$C_V=\tfrac32Nk$、$C_P=\tfrac52Nk$，$\gamma=\tfrac53$。</p>
+          <p><b>這步容易錯</b>：整題只寫「由課本 $PV^\gamma=$ 常數」——題目要的是證明，引用結論拿不到分數。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>和課文一致：$C_V=\tfrac f2Nk$、$C_P=\tfrac{f+2}2Nk$ ⟹ $C_P/C_V=(f+2)/f$ ✔，兩種定義是同一個 $\gamma$。式子 $\gamma-1=Nk/C_V$ 還有物理意義：分母 $C_V$ 是「儲存能量的能力」，氣體越能存能量，同樣的功升溫越少，$\gamma$ 越接近 1。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>要求證 $T^\gamma P^{1-\gamma}=$ 常數</b>：從步驟 3 的 $TV^{\gamma-1}=$ 常數出發，代 $V=NkT/P$：$T\left(\tfrac{NkT}P\right)^{\gamma-1}=(Nk)^{\gamma-1}T^\gamma P^{1-\gamma}$，$(Nk)^{\gamma-1}$ 併進常數即得。</li>
+          <li><b>數值</b>：單原子氣體準靜態絕熱膨脹到 8 倍體積：$T_f=T_i\cdot8^{-2/3}=T_i/4$，$P_f=P_i\cdot8^{-5/3}=P_i/32$。雙原子的話 $\gamma=\tfrac75$，證明一字不改。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-36">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-36（Problem 1.36）· p.26</span></div>
+    <h4>打氣：一公升空氣絕熱壓縮到 7 atm</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-36">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-36"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In the course of pumping up a bicycle tire, a liter of air at atmospheric pressure is compressed adiabatically to a pressure of 7 atm. (Air is mostly diatomic nitrogen and oxygen.)</p><p>(a) What is the final volume of this air after compression?</p><p>(b) How much work is done in compressing the air?</p><p>(c) If the temperature of the air is initially 300 K, what is the temperature after compression?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>給腳踏車胎打氣的過程中，一公升大氣壓的空氣被絕熱壓縮到 7 atm。（空氣大部分是雙原子的氮和氧。）(a) 壓縮後這些空氣的體積是多少？(b) 壓縮空氣做了多少功？(c) 若空氣初溫 300 K，壓縮後溫度是多少？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>初狀態</td><td>$V_i=1\ \text{L}$，$P_i=1\ \text{atm}$，$T_i=300\ \text{K}$</td><td>「一公升大氣壓的空氣」「初溫 300 K」</td></tr>
+          <tr><td>末壓力</td><td>$P_f=7\ \text{atm}$</td><td>「壓縮到 <b>7 atm</b>」</td></tr>
+          <tr><td>過程</td><td>準靜態絕熱：$PV^\gamma$、$VT^{f/2}$ 守恆</td><td>「<b>絕熱</b>壓縮」（打氣很快，熱來不及流出）</td></tr>
+          <tr><td>自由度</td><td>$f=5$，$\gamma=7/5$</td><td>「雙原子的氮和氧」，室溫振動凍結</td></tr>
+          <tr><td>換算</td><td>$1\ \text{atm·L}=101.3\ \text{J}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $V_f$；(b) 壓縮功 $W$；(c) $T_f$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>已知初末壓力、要體積，<b>所以</b>用 $PV^\gamma$ 守恆。(b) <b>因為</b>絕熱 $Q=0$，<b>所以</b> $W=\Delta U=\frac f2(P_fV_f-P_iV_i)$，不必積分（也可以直接積 $-\int P\,dV$ 驗算）。(c) <b>因為</b>已知體積比，<b>所以</b>用 $VT^{f/2}$ 守恆，或直接用 $PV=NkT$ 由兩端的 $PV$ 比求溫度比。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-36-s1" data-sym="gamma,V">
+        <span class="step-title">(a) 末體積</span>
+        $$P_fV_f^\gamma=P_iV_i^\gamma\ \Longrightarrow\ V_f=V_i\left(\frac{P_i}{P_f}\right)^{1/\gamma}$$
+        <p class="sub">代入 $V_i=1\ \text{L}$、$P_i/P_f=1/7$（題目）、$1/\gamma=5/7$：</p>
+        $$V_f=(1\ \text{L})\left(\tfrac17\right)^{5/7}=0.249\ \text{L}$$
+      </div>
+      <div class="step" data-step="sc-1-36-s2" data-sym="W,U">
+        <span class="step-title">(b) 功＝內能增加</span>
+        $$W=\Delta U=\tfrac52\left(P_fV_f-P_iV_i\right)$$
+        <p class="sub">代入 $P_fV_f=(7\ \text{atm})(0.249\ \text{L})=1.743\ \text{atm·L}$（步驟 1）、$P_iV_i=1\ \text{atm·L}$：</p>
+        $$W=\tfrac52(1.743-1)\ \text{atm·L}=1.86\ \text{atm·L}=188\ \text{J}$$
+      </div>
+      <div class="step" data-step="sc-1-36-s3" data-sym="T">
+        <span class="step-title">(c) 末溫</span>
+        $$V_fT_f^{f/2}=V_iT_i^{f/2}\ \Longrightarrow\ T_f=T_i\left(\frac{V_i}{V_f}\right)^{2/f}$$
+        <p class="sub">代入 $T_i=300\ \text{K}$、$V_i/V_f=1/0.249=4.01$（步驟 1）、$2/f=2/5$：</p>
+        $$T_f=(300\ \text{K})(4.01)^{0.4}=(300\ \text{K})(1.744)=523\ \text{K}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $V_f\approx0.25\ \text{L}$；(b) $W\approx188\ \text{J}$；(c) $T_f\approx523\ \text{K}$（約 250°C）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>用 $PV=NkT$ 驗 (c)：$T_f/T_i=P_fV_f/(P_iV_i)=1.743$ ✔。直接積分 $W=\frac{P_iV_i}{\gamma-1}\left[(V_i/V_f)^{\gamma-1}-1\right]=\frac{1}{0.4}(0.744)=1.86\ \text{atm·L}$ ✔；與解答手冊相同。實際打氣筒沒那麼燙：壓縮不夠快、筒壁吸熱 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>先判斷「打氣＝準靜態絕熱」，然後三問各挑一條最合手的關係：(a) 已知壓力比、求體積 → $PV^\gamma$ 守恆；(b) 絕熱 $Q=0$ ⟹ $W=\Delta U=\tfrac52\Delta(PV)$，要用到 (a) 的 $V_f$；(c) 已知體積比、求溫度 → $VT^{f/2}$ 守恆（或更快：$T\propto PV$）。關鍵是<b>手上有什麼比值，就挑哪一條守恆式</b>，不必每次都從頭推。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜(a) 末體積：用 $PV^\gamma$</h5>
+          <p><b>為什麼是準靜態絕熱</b>：壓一下打氣筒不到一秒，熱來不及從空氣傳到筒壁（$Q\approx0$）；但活塞速度遠低於聲速，筒內壓力每一刻都均勻（準靜態）。空氣主要是 N₂、O₂，室溫下 $f=5$，$\gamma=\tfrac75$。</p>
+          <p><b>怎麼算</b>：從 $P_fV_f^\gamma=P_iV_i^\gamma$ 解 $V_f$：先移項 $V_f^\gamma=V_i^\gamma\,(P_i/P_f)$，兩邊開 $\gamma$ 次方：</p>
+          $$V_f=V_i\left(\frac{P_i}{P_f}\right)^{1/\gamma}=(1\ \text{L})\left(\tfrac17\right)^{5/7}$$
+          <p>手算：$\ln7=1.946$，乘 $\tfrac57$ 得 1.390，$e^{-1.390}\approx0.249$，所以 $V_f\approx0.249\ \text{L}$。</p>
+          <p><b>對照等溫</b>：等溫會縮到 $\tfrac17\approx0.143\ \text{L}$；絕熱只縮到約 $\tfrac14$，因為空氣一邊被壓一邊變熱，熱膨脹「抵抗」了一部分壓縮。</p>
+          <p><b>這步容易錯</b>：① 指數用 $\gamma$ 而不是 $1/\gamma$：$(1/7)^{1.4}\approx0.066\ \text{L}$，縮得比等溫還多，明顯不合理；② 空氣用了單原子的 $\gamma=\tfrac53$。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜(b) 功＝內能增加</h5>
+          <p><b>為什麼不必積分</b>：絕熱 $Q=0$，第一定律 $\Delta U=Q+W$ 直接給 $W=\Delta U$；空氣 $U=\tfrac52NkT=\tfrac52PV$，所以只要兩端的 $PV$。</p>
+          <p><b>怎麼算</b>：$P_fV_f=(7\ \text{atm})(0.249\ \text{L})=1.743\ \text{atm·L}$（用步驟 1 的結果），$P_iV_i=1\ \text{atm·L}$：</p>
+          $$\begin{aligned}W&=\tfrac52(1.743-1)\ \text{atm·L}=1.86\ \text{atm·L}\\&=1.86\times101.3\ \text{J}\approx188\ \text{J}\end{aligned}$$
+          <p><b>另一條路驗算</b>：直接積分 $-\int P_iV_i^\gamma V^{-\gamma}dV$，整理後是 $W=\dfrac{P_iV_i}{\gamma-1}\Big[\big(\tfrac{V_i}{V_f}\big)^{\gamma-1}-1\Big]=\dfrac{1}{0.4}(1.743-1)=1.86\ \text{atm·L}$ ✔。</p>
+          <p><b>這步容易錯</b>：係數用 $\tfrac32$；忘了乘 101.3 換成焦耳；壓縮功寫成負號（壓縮時外界對氣體做正功）。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜(c) 末溫</h5>
+          <p><b>怎麼算</b>：由 $V_fT_f^{f/2}=V_iT_i^{f/2}$ 解出 $T_f=T_i(V_i/V_f)^{2/f}$。體積比 $V_i/V_f=1/0.249=4.01$，$2/f=0.4$：</p>
+          $$T_f=(300\ \text{K})(4.01)^{0.4}=(300\ \text{K})(1.744)=523\ \text{K}$$
+          <p><b>更快的算法（也是驗算）</b>：$N$ 不變，$T\propto PV$，所以 $T_f/T_i=P_fV_f/(P_iV_i)=1.743$，步驟 2 已經算過，連次方都不用算 ✔。</p>
+          <p><b>這步容易錯</b>：溫度比用攝氏——$27\times1.743$ 沒有意義，比值一定要用 K。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>壓力變 7 倍 = 體積縮 4.01 倍 × 溫度升 1.743 倍（$4.01\times1.743\approx7$）：壓力的增加一部分來自「擠」、一部分來自「熱」。523 K 約 250°C，這就是打氣筒底部會發熱的原因；實際沒那麼燙，因為筒壁一直在吸熱，壓縮也不是瞬間完成。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>改打氦氣（$f=3$，$\gamma=\tfrac53$）到 7 atm</b>：$V_f=7^{-3/5}\approx0.311\ \text{L}$，$W=\tfrac32(7\times0.311-1)\approx1.77\ \text{atm·L}\approx179\ \text{J}$，$T_f=300\times2.18\approx653\ \text{K}$。單原子自由度少，升溫更多。</li>
+          <li><b>慢慢打（等溫）到 7 atm</b>：$V_f=\tfrac17\approx0.143\ \text{L}$，$W=(101.3\ \text{J})\ln7\approx197\ \text{J}$——比絕熱的 188 J 還多！因為「同樣末壓力」時，等溫要壓到更小的體積。和<a href="#t1-self-05a">自編難題 05a</a>「同樣末體積時等溫比較省功」正好相反：比較時要看固定的是什麼。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-37">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-37（Problem 1.37）· p.26</span></div>
+    <h4>柴油引擎為什麼不需要火星塞</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-37">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-37"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In a Diesel engine, atmospheric air is quickly compressed to about 1/20 of its original volume. Estimate the temperature of the air after compression, and explain why a Diesel engine does not require spark plugs.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>柴油引擎把大氣中的空氣快速壓縮到原體積的約 1/20。估計壓縮後空氣的溫度，並說明為什麼柴油引擎不需要火星塞。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>體積比</td><td>$V_i/V_f=20$</td><td>「壓縮到原體積的約 <b>1/20</b>」</td></tr>
+          <tr><td>過程</td><td>絕熱：$VT^{f/2}$ 守恆</td><td>「<b>快速</b>壓縮」：熱來不及流出</td></tr>
+          <tr><td>初溫</td><td>$T_i=300\ \text{K}$</td><td>「大氣中的空氣」：題目沒給，取室溫</td></tr>
+          <tr><td>自由度</td><td>$f=5$</td><td>空氣（雙原子）；假設高溫時振動仍未大量活化</td></tr>
+          <tr><td>柴油自燃溫度</td><td>約 500–550 K（200 多 °C）</td><td>題目沒給：一般資料</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：壓縮後溫度的估計；不需要火星塞的理由。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>壓縮很快、可視為絕熱，而且已知的是<strong>體積比</strong>，<b>所以</b>用 $VT^{f/2}=$ 常數直接解溫度比，不必知道壓力。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-37-s1" data-sym="T,f">
+        <span class="step-title">溫度</span>
+        $$T_f=T_i\left(\frac{V_i}{V_f}\right)^{2/f}$$
+        <p class="sub">代入 $T_i=300\ \text{K}$（取室溫）、$V_i/V_f=20$（題目）、$2/f=0.4$：</p>
+        $$T_f=(300\ \text{K})(20)^{0.4}=(300\ \text{K})(3.31)=994\ \text{K}\approx1000\ \text{K}$$
+      </div>
+      <div class="step" data-step="sc-1-37-s2">
+        <span class="step-title">為什麼不用火星塞</span>
+        <p>約 1000 K（700°C 以上）遠高於柴油的自燃溫度（約 500 多 K）。燃料一噴進這團熱空氣就自己點燃，不需要火花。汽油引擎壓縮比低（約 10），而且是先混好油氣再壓，必須用火星塞控制點火時機。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>約 1000 K；壓縮後的空氣熱到足以讓噴入的柴油自燃，所以不需要火星塞。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>末壓力 $P_f=P_i\cdot20^{1.4}=66\ \text{atm}$，是柴油引擎汽缸常見的量級 ✔；實際溫度略低（缸壁散熱、高溫時振動部分活化使 $f$ 稍大）✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>「快速壓縮」⟹ 絕熱；題目給的是<b>體積比</b> ⟹ 用 $VT^{f/2}=$ 常數直接解溫度比 → 把算出的溫度和柴油的自燃溫度比較，回答為什麼不需要火星塞。這是估計題，關鍵是<b>自己補上合理的初溫（300 K）並寫出這個假設</b>。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜溫度：用 $VT^{f/2}$ 解溫度比</h5>
+          <p><b>為什麼可以當絕熱</b>：引擎每分鐘轉幾千圈，以 2000 rpm 為例，一圈 0.03 s，壓縮行程只佔半圈，約 0.015 s；這麼短的時間熱來不及從空氣傳到缸壁。活塞速度仍遠比聲速慢，所以是準靜態絕熱。</p>
+          <p><b>為什麼選 $VT^{f/2}$</b>：已知的是體積比、要求的是溫度，這條式子剛好只含 $V$ 和 $T$，不需要壓力，也不需要氣體量。</p>
+          <p><b>怎麼算</b>：由 $V_fT_f^{f/2}=V_iT_i^{f/2}$ 得 $(T_f/T_i)^{f/2}=V_i/V_f$，兩邊取 $2/f$ 次方：</p>
+          $$T_f=T_i\left(\frac{V_i}{V_f}\right)^{2/f}=(300\ \text{K})(20)^{0.4}$$
+          <p>數字從哪來：$V_i/V_f=20$（題目「1/20」），$T_i=300\ \text{K}$（題目沒給，取室溫），空氣 $f=5$ ⟹ $2/f=0.4$。沒有計算機時用對數：$\ln20=\ln2+\ln10\approx0.693+2.303=3.00$，乘 0.4 得 1.20，$e^{1.2}\approx3.32$。所以</p>
+          $$T_f\approx(300\ \text{K})(3.31)=994\ \text{K}\approx1000\ \text{K}$$
+          <p><b>這步容易錯</b>：① 用攝氏：$27\times3.31\approx89$°C，完全錯，溫度比一定要用 K；② 指數用 $\gamma=1.4$ 而不是 $\gamma-1=0.4$：$300\times20^{1.4}\approx19900\ \text{K}$，那是把壓力比當成溫度比；③ 空氣用單原子的 $2/3$，會得到約 2210 K。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜為什麼不需要火星塞</h5>
+          <p><b>在做什麼</b>：拿步驟 1 的結果和柴油的自燃溫度（不需火花、自己著火的溫度，約 500–550 K）比較。</p>
+          <p><b>怎麼判斷</b>：約 1000 K（700°C 以上）遠高於自燃溫度。柴油引擎只壓縮純空氣，壓到最熱時才把柴油噴進去，燃料一碰到這團熱空氣就自己點燃——噴油的時刻就是點火的時刻，不需要火花。</p>
+          <p><b>和汽油引擎的差別</b>：汽油引擎是先把油氣混好再一起壓，如果靠壓縮讓它自燃，點火時機就控制不了（這正是「爆震」）。所以汽油引擎壓縮比做得比較低（約 10），再用火星塞在對的時刻點火。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>末壓力 $P_f=P_i\cdot20^{1.4}\approx66\ \text{atm}$，也等於「體積比 × 溫度比」$=20\times3.31$ ✔，是柴油引擎汽缸常見的量級，所以缸體要做得特別厚重。溫度只按 $r^{0.4}$ 增加，體積縮 20 倍、溫度才 3.3 倍，但絕對溫度從室溫跳到近千度，已足夠點火。實際值略低：缸壁散熱，而且高溫時振動開始部分活化，$f$ 稍大、$2/f$ 稍小。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>冬天，初溫 273 K</b>：$T_f=273\times3.31\approx905\ \text{K}$，仍遠高於自燃溫度。（冷車難發動，是因為冰冷的缸壁會吸走大量熱、偏離絕熱，所以柴油車有預熱塞。）</li>
+          <li><b>壓縮比要多大才剛好達到 530 K</b>：$r^{0.4}=530/300=1.767$ ⟹ $r=(1.767)^{1/0.4}=(1.767)^{2.5}\approx4.1$。實際用 20 左右，留了很大的餘裕。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-38">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-38（Problem 1.38）· p.26</span></div>
+    <h4>湖底的兩個氣泡：上升快的和慢的誰比較大</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-38">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-38"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>Two identical bubbles of gas form at the bottom of a lake, then rise to the surface. Because the pressure is much lower at the surface than at the bottom, both bubbles expand as they rise. However, bubble A rises very quickly, so that no heat is exchanged between it and the water. Meanwhile, bubble B rises slowly (impeded by a tangle of seaweed), so that it always remains in thermal equilibrium with the water (which has the same temperature everywhere). Which of the two bubbles is larger by the time they reach the surface? Explain your reasoning fully.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>湖底生出兩個一樣的氣泡，然後升到水面。因為水面的壓力比湖底低得多，兩個氣泡上升時都會膨脹。但氣泡 A 上升得很快，和水之間沒有熱交換；氣泡 B 上升得很慢（被一團水草纏住），一直和水保持熱平衡（水各處溫度相同）。到達水面時哪一個氣泡比較大？完整說明理由。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>初狀態</td><td>兩泡相同：同 $N$、$P$、$V$、$T$</td><td>「兩個<b>一樣</b>的氣泡」</td></tr>
+          <tr><td>末壓力</td><td>兩泡相同（水面壓力）</td><td>「升到水面」</td></tr>
+          <tr><td>A</td><td>絕熱膨脹，$Q=0$</td><td>「上升得很快，<b>沒有熱交換</b>」</td></tr>
+          <tr><td>B</td><td>等溫膨脹，$T$＝水溫不變</td><td>「一直和水保持<b>熱平衡</b>」「水各處溫度相同」</td></tr>
+          <tr><td>氣體</td><td>理想氣體，$V=NkT/P$，$U=\frac f2NkT$</td><td>題目沒寫：氣泡裡的空氣</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：判斷哪個氣泡到水面時較大，並說明理由。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩泡的 $N$ 相同、到水面時 $P$ 也相同，由 $V=NkT/P$，<b>所以</b>比體積等於比末溫度。<b>因為</b>理想氣體 $U\propto T$，<b>所以</b>再化成比「誰的內能剩得多」——這可以用第一定律判斷。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-38-s1" data-sym="V,T">
+        <span class="step-title">比體積＝比溫度</span>
+        $$V=\frac{NkT}P,\qquad N\text{、}P\text{ 兩泡相同}\ \Longrightarrow\ \frac{V_A}{V_B}=\frac{T_A}{T_B}$$
+      </div>
+      <div class="step" data-step="sc-1-38-s2" data-sym="U,Q,W">
+        <span class="step-title">用第一定律比溫度</span>
+        <p>兩泡都膨脹、推開周圍的水，對外做功（$W\lt0$）。B 從水吸熱補回失去的能量，溫度維持在水溫：$T_B=T_{\text{水}}$。A 沒有熱進來：$\Delta U_A=W\lt0$，能量減少，$U=\frac f2NkT$ ⟹ 溫度下降：$T_A\lt T_{\text{水}}$。</p>
+      </div>
+      <div class="step" data-step="sc-1-38-s3">
+        <span class="step-title">結論</span>
+        $$T_A\lt T_B\ \Longrightarrow\ V_A\lt V_B$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>氣泡 B（慢的、等溫的）比較大：兩者末壓力相同，B 吸熱保持水溫，A 絕熱膨脹降溫，溫度低體積就小。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>數值例：湖深 10 m，壓力比約 2。B（等溫）體積變 2 倍；A（絕熱，$\gamma=1.4$）只變 $2^{1/1.4}=1.64$ 倍，溫度降為 $2^{-2/7}=0.82$ 倍 ✔。PV 圖上：同樣從一點降壓，等溫線比絕熱線平，走到同一壓力時等溫線的體積較大 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>把「誰比較大」翻成「誰比較熱」（兩泡同 $N$、到水面時同 $P$，所以 $V\propto T$）→ 用第一定律比兩泡的溫度（B 有熱補充、A 沒有）→ 下結論。整題的關鍵是第一步的轉換：一個看似要知道很多細節（湖多深、氣泡多大）的問題，<b>變成只要比溫度</b>，而溫度只靠一條第一定律就能比。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜比體積＝比溫度</h5>
+          <p><b>在做什麼</b>：用理想氣體定律 $V=NkT/P$ 找出「體積由什麼決定」。</p>
+          <p><b>為什麼可以這樣做</b>：「兩個一樣的氣泡」⟹ 分子數 $N$ 相同（上升過程氣體不會跑掉）；「升到水面」⟹ 末壓力都是水面壓力，$P$ 相同。$N$、$P$、$k$ 都一樣，剩下的唯一差別就是溫度：</p>
+          $$\frac{V_A}{V_B}=\frac{NkT_A/P}{NkT_B/P}=\frac{T_A}{T_B}$$
+          <p><b>這步容易錯</b>：以為「末壓力相同，所以體積相同」——忘了兩泡的溫度不一樣。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜用第一定律比溫度</h5>
+          <p><b>在做什麼</b>：分別判斷 A、B 到水面時的溫度。</p>
+          <p><b>為什麼可以這樣判斷</b>：$\Delta U=Q+W$，理想氣體 $U=\tfrac f2NkT$，內能減少就是降溫。兩泡上升都在膨脹、推開周圍的水，對外做功，所以 $W\lt0$；差別只在<b>有沒有熱補充</b>。</p>
+          <ul>
+            <li><b>B（慢，一直和水熱平衡）</b>：等溫，$T_B=T_{\text{水}}$。它推水損失的能量，由水以熱的形式補回：$Q_B=-W_B\gt0$。</li>
+            <li><b>A（快，沒有熱交換）</b>：絕熱，$Q_A=0$，$\Delta U_A=W_A\lt0$——推水的能量只能花自己的內能，溫度下降：$T_A\lt T_{\text{水}}$。A 雖然「快」，但上升速度仍遠比水中聲速慢，泡內壓力每一刻都和周圍水壓相同，仍是準靜態絕熱。</li>
+          </ul>
+          <p><b>這步容易錯</b>：① 把「絕熱」當成「溫度不變」——絕熱是沒有熱流，溫度正因此改變；② 以為快的 A 膨脹得比較「猛」所以比較大，快慢影響的是熱交換，不是膨脹的力道。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜結論</h5>
+          <p>$T_A\lt T_B$ ⟹ $V_A\lt V_B$：<b>慢的 B 比較大</b>。</p>
+          <p><b>用 PV 圖再看一次</b>：兩泡從同一點出發、降到同一壓力。絕熱線比等溫線陡——壓力降很多、體積卻增加得少，所以走到同一壓力時，A 的體積較小。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>代一組數字：湖深 10 m，$\rho gh=1000\times9.8\times10\approx9.8\times10^4\ \text{Pa}\approx1\ \text{atm}$，湖底約 2 atm，壓力比約 2。B（等溫 $PV=$ 常數）體積變 2 倍；A（絕熱 $PV^{1.4}=$ 常數）體積只變 $2^{1/1.4}\approx1.64$ 倍，溫度由 $T\propto P^{(\gamma-1)/\gamma}=P^{2/7}$ 降為 $2^{-2/7}\approx0.82$ 倍（300 K → 約 246 K）。兩者一致：$V\propto T/P$，$0.82\times2=1.64$ ✔。真實氣泡介於兩者之間。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>湖深 20 m（壓力比約 3）</b>：B 體積變 3 倍；A 變 $3^{1/1.4}\approx2.19$ 倍，溫度降為 $3^{-2/7}\approx0.73$ 倍（300 K → 約 219 K）。湖越深，兩泡差越多。</li>
+          <li><b>反過來，兩泡從水面被帶到 10 m 深（被壓縮）</b>：B 等溫縮成 0.5 倍；A 絕熱壓縮變熱，只縮成 $2^{-1/1.4}\approx0.61$ 倍——這次快的 A 比較大。規律不變：同樣的壓力變化，絕熱的體積變化永遠比等溫小。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-39">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-39（Problem 1.39）· p.27 · 熱學小考（上）作業題</span></div>
+    <h4>體積模數與聲速</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-39">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-39"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>By applying Newton’s laws to the oscillations of a continuous medium, one can show that the speed of a sound wave is given by</p>$$c_s=\sqrt{\frac B\rho},$$<p>where $\rho$ is the density of the medium (mass per unit volume) and $B$ is the <i>bulk modulus</i>, a measure of the medium’s stiffness. More precisely, if we imagine applying an increase in pressure $\Delta P$ to a chunk of the material, and this increase results in a (negative) change in volume $\Delta V$, then $B$ is defined as the change in pressure divided by the magnitude of the fractional change in volume:</p>$$B\equiv\frac{\Delta P}{-\Delta V/V}.$$<p>This definition is still ambiguous, however, because I haven’t said whether the compression is to take place isothermally or adiabatically (or in some other way).</p><p>(a) Compute the bulk modulus of an ideal gas, in terms of its pressure $P$, for both isothermal and adiabatic compressions.</p><p>(b) Argue that for purposes of computing the speed of a sound wave, the adiabatic $B$ is the one we should use.</p><p>(c) Derive an expression for the speed of sound in an ideal gas, in terms of its temperature and average molecular mass. Compare your result to the formula for the rms speed of the molecules in the gas. Evaluate the speed of sound numerically for air at room temperature.</p><p>(d) When Scotland’s Battlefield Band played in Utah, one musician remarked that the high altitude threw their bagpipes out of tune. Would you expect altitude to affect the speed of sound (and hence the frequencies of the standing waves in the pipes)? If so, in which direction? If not, why not?</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>對連續介質的振盪套用牛頓定律，可以證明聲波速度是 $c_s=\sqrt{B/\rho}$，$\rho$ 是介質密度（每單位體積的質量），$B$ 是體積模數（bulk modulus），衡量介質多「硬」。更精確地說：對一塊材料增加壓力 $\Delta P$，造成（負的）體積變化 $\Delta V$，則 $B$ 定義為壓力變化除以體積相對變化的大小：
+    $$B\equiv\frac{\Delta P}{-\Delta V/V}.$$
+    這個定義還不明確，因為沒說壓縮是等溫還是絕熱（或其他方式）。(a) 求理想氣體在等溫與絕熱壓縮下的體積模數，以壓力 $P$ 表示。(b) 說明計算聲速時應該用絕熱的 $B$。(c) 推導理想氣體中聲速的式子，以溫度與平均分子質量表示，並和分子的方均根速率比較。求室溫空氣中的聲速數值。(d) 蘇格蘭的 Battlefield Band 在猶他州表演時，一位樂手說高海拔讓風笛走音了。你預期海拔會影響聲速（因而影響管中駐波的頻率）嗎？若會，往哪個方向？若不會，為什麼？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>聲速</td><td>$c_s=\sqrt{B/\rho}$</td><td>題目給</td></tr>
+          <tr><td>體積模數</td><td>$B=-V\,dP/dV$（無限小形式）</td><td>題目的定義取 $\Delta\to d$</td></tr>
+          <tr><td>等溫</td><td>$PV=NkT$，$T$ 固定</td><td>(a)「等溫」</td></tr>
+          <tr><td>絕熱</td><td>$PV^\gamma=C$</td><td>(a)「絕熱」；課本 (1.40)</td></tr>
+          <tr><td>密度</td><td>$\rho=Nm/V=mP/(kT)$</td><td>(c)「平均分子質量 $m$」＋理想氣體定律</td></tr>
+          <tr><td>空氣</td><td>$\gamma=1.4$，$M=0.029\ \text{kg/mol}$</td><td>題目沒給：雙原子 $f=5$；空氣平均莫耳質量 29 g/mol</td></tr>
+          <tr><td>室溫</td><td>$T=300\ \text{K}$，$R=8.315\ \text{J/(mol·K)}$</td><td>(c)「室溫」；$R$ 用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $B_{\text{等溫}}$、$B_{\text{絕熱}}$；(b) 為什麼用絕熱；(c) $c_s(T,m)$、與 $v_{\text{rms}}$ 比較、空氣數值；(d) 海拔的影響。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b> $B$ 要的是 $dP/dV$，<b>所以</b>把兩種過程的 $P(V)$ 各自對 $V$ 微分。(b) <b>因為</b>聲波的壓縮與稀疏區每半個週期就互換，而熱要跨過半個波長才能把溫度拉平，<b>所以</b>比較「聲波週期」和「熱傳導所需時間」。</p>
+      <p>(c) <b>因為</b> $B$ 與 $\rho$ 都正比於 $P$，<b>所以</b>相除時 $P$ 消掉，剩下只和 $T$、$m$ 有關的式子，形狀正好像 $v_{\text{rms}}=\sqrt{3kT/m}$。(d) 由 (c) 的結果判斷聲速依賴什麼。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-39-s1" data-sym="Bmod,P,V">
+        <span class="step-title">(a) 等溫</span>
+        $$P=\frac{NkT}V\ \Longrightarrow\ \frac{dP}{dV}=-\frac{NkT}{V^2}$$
+        $$B_{\text{等溫}}=-V\frac{dP}{dV}=\frac{NkT}V=P$$
+      </div>
+      <div class="step" data-step="sc-1-39-s2" data-sym="gamma">
+        <span class="step-title">(a) 絕熱</span>
+        $$P=\frac C{V^\gamma}\ \Longrightarrow\ \frac{dP}{dV}=-\gamma\frac C{V^{\gamma+1}}$$
+        $$B_{\text{絕熱}}=-V\frac{dP}{dV}=\gamma\frac C{V^\gamma}=\gamma P$$
+        <p>$\gamma\gt1$，絕熱比等溫難壓（壓縮時同時升溫，壓力升得更快）。</p>
+      </div>
+      <div class="step" data-step="sc-1-39-s3">
+        <span class="step-title">(b) 為什麼用絕熱</span>
+        <p>聲波裡被壓縮的區域變熱、稀疏的區域變冷，兩者相距半個波長；熱要靠分子碰撞傳導過去，比聲波（同樣靠分子運動傳播）的壓縮–稀疏互換慢得多。在熱還來不及流過去之前，那一區已經反過來了，所以每一小塊氣體實際上沒有熱交換：絕熱。</p>
+      </div>
+      <div class="step" data-step="sc-1-39-s4" data-sym="cs,rho,m">
+        <span class="step-title">(c) 聲速的式子</span>
+        <p>密度 $\rho=\dfrac{Nm}V=\dfrac{mP}{kT}$（用 $N/V=P/kT$），代入 $B_{\text{絕熱}}=\gamma P$：</p>
+        $$c_s=\sqrt{\frac B\rho}=\sqrt{\frac{\gamma P}{mP/kT}}=\sqrt{\frac{\gamma kT}m}=\sqrt{\frac{\gamma RT}M}$$
+        <p>（最後一步分子分母同乘 $N_A$，$M=N_Am$ 是莫耳質量。）和 $v_{\text{rms}}=\sqrt{3kT/m}$ 只差 $3\to\gamma$：$c_s=v_{\text{rms}}\sqrt{\gamma/3}$，聲速比分子方均根速率慢。</p>
+      </div>
+      <div class="step" data-step="sc-1-39-s5" data-sym="M">
+        <span class="step-title">(c) 室溫空氣的數值</span>
+        <p class="sub">代入 $\gamma=1.4$、$R=8.315\ \text{J/(mol·K)}$、$T=300\ \text{K}$、$M=0.029\ \text{kg/mol}$：</p>
+        $$c_s=\sqrt{\frac{1.4(8.315)(300)}{0.029}}\ \text{m/s}=\sqrt{1.20\times10^5}\ \text{m/s}=347\ \text{m/s}$$
+        <p>同條件 $v_{\text{rms}}=\sqrt{3(8.315)(300)/0.029}=508\ \text{m/s}$，比值 $\sqrt{3/1.4}=1.46$。</p>
+      </div>
+      <div class="step" data-step="sc-1-39-s6">
+        <span class="step-title">(d) 海拔</span>
+        <p>$c_s=\sqrt{\gamma kT/m}$ <strong>與壓力無關</strong>（$B$ 與 $\rho$ 都正比於 $P$，相除消掉）。高海拔只是壓力低，若溫度相同聲速不變，駐波頻率 $f=c_s/\lambda$ 不變。若真的走音，原因應是溫度：較冷 ⟹ 聲速較慢 ⟹ 音調變低。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $B_{\text{等溫}}=P$，$B_{\text{絕熱}}=\gamma P$；(b) 熱傳導遠慢於聲波的壓縮–稀疏互換，近似絕熱；(c) $c_s=\sqrt{\gamma kT/m}=\sqrt{\gamma RT/M}$，是 $v_{\text{rms}}$ 的 $\sqrt{\gamma/3}$ 倍，室溫空氣約 347 m/s；(d) 只靠壓力不會改變聲速；要改變也是溫度造成（冷則音低）。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>小考答案卷 347.02 m/s、解答手冊 347 m/s ✔；0°C 時 $\sqrt{1.4(8.315)(273)/0.029}=331\ \text{m/s}$，正是常見的聲速表值 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>(a) $B$ 的定義其實是「PV 曲線的斜率乘 $-V$」：等溫、絕熱各寫出 $P(V)$ 再微分 → (b) 比較聲波週期和熱擴散所需的時間，說明聲波是絕熱的 → (c) $B$ 和 $\rho$ 都正比於 $P$，相除時 $P$ 消掉，得到只含 $T$、$m$ 的聲速，再代空氣的數字 → (d) 由 (c) 的式子判斷海拔的影響。關鍵是 (c) 裡<b>壓力被消掉</b>——這一步同時就是 (d) 的答案。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜(a) 等溫的 $B$</h5>
+          <p><b>在做什麼</b>：把定義 $B=\dfrac{\Delta P}{-\Delta V/V}$ 取無限小，寫成 $B=-V\dfrac{dP}{dV}$。要取無限小，是因為 $B$ 本身會隨狀態變，我們要的是某一個狀態附近、小擾動下的值。</p>
+          <p><b>怎麼算</b>：$T$ 固定時 $P=NkT/V$，$NkT$ 是常數，$\dfrac{d}{dV}V^{-1}=-V^{-2}$：</p>
+          $$\begin{aligned}\frac{dP}{dV}&=-\frac{NkT}{V^2}\\B_{\text{等溫}}&=-V\left(-\frac{NkT}{V^2}\right)=\frac{NkT}V=P\end{aligned}$$
+          <p><b>這步容易錯</b>：漏掉定義裡的負號，得到負的 $B$。$dP/dV$ 本來就是負的（壓縮時壓力上升），負負得正，$B$ 一定是正的。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜(a) 絕熱的 $B$</h5>
+          <p><b>怎麼算</b>：絕熱 $PV^\gamma=C$ ⟹ $P=CV^{-\gamma}$，冪次微分多掉下一個 $\gamma$：</p>
+          $$\begin{aligned}\frac{dP}{dV}&=-\gamma CV^{-\gamma-1}\\B_{\text{絕熱}}&=-V\left(-\gamma CV^{-\gamma-1}\right)=\gamma CV^{-\gamma}=\gamma P\end{aligned}$$
+          <p><b>怎麼讀</b>：$\gamma\gt1$，絕熱比等溫「硬」——壓縮時同時升溫，壓力升得更快。這和「絕熱線比等溫線陡」是同一件事。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜(b) 為什麼聲速要用絕熱的 $B$</h5>
+          <p><b>在做什麼</b>：判斷聲波裡每一小塊氣體，有沒有時間和旁邊交換熱。</p>
+          <p><b>怎麼估</b>：聲波裡被壓縮的區域變熱、稀疏的區域變冷，兩者相距半個波長 $L=\lambda/2$。熱靠擴散跨過距離 $L$ 大約需要 $t\sim L^2/D$，空氣的熱擴散係數 $D\approx2\times10^{-5}\ \text{m}^2/\text{s}$。以 $\lambda=1\ \text{m}$ 為例：</p>
+          $$t\sim\frac{(0.5\ \text{m})^2}{2\times10^{-5}\ \text{m}^2/\text{s}}\approx1.25\times10^4\ \text{s}$$
+          <p>而聲波週期只有 $\lambda/c_s=1/347\approx3\times10^{-3}\ \text{s}$。熱還沒走多遠，壓縮區和稀疏區已經互換了幾百萬次，每一小塊氣體實際上沒有熱交換——就是絕熱。</p>
+          <p><b>這步容易錯</b>：以為聲波的振幅很小、變化很溫和，所以是等溫——那正是牛頓當年的錯誤。要比的是時間，不是振幅。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 4｜(c) 聲速的式子</h5>
+          <p><b>在做什麼</b>：把 $\rho$ 也寫成 $P$ 的形式，代進 $c_s=\sqrt{B/\rho}$。</p>
+          <p><b>怎麼算</b>：密度 $\rho=Nm/V$，而由 $PV=NkT$，$N/V=P/(kT)$，所以 $\rho=mP/(kT)$。代入 $B_{\text{絕熱}}=\gamma P$：</p>
+          $$c_s=\sqrt{\frac{\gamma P}{mP/(kT)}}=\sqrt{\frac{\gamma kT}m}=\sqrt{\frac{\gamma RT}M}$$
+          <p>最後一步：根號裡分子分母同乘亞佛加厥數 $N_A$，$kN_A=R$、$mN_A=M$（莫耳質量），代數字比較方便。</p>
+          <p><b>和 $v_{\text{rms}}$ 比</b>：$v_{\text{rms}}=\sqrt{3kT/m}$（<a href="#sc-1-18">習題 1.18</a>），形狀一模一樣，只差 $3\to\gamma$：$c_s/v_{\text{rms}}=\sqrt{\gamma/3}=\sqrt{1.4/3}\approx0.68$。聲音靠分子互相碰撞「傳話」，所以和分子速率同量級，又比分子慢。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 5｜(c) 室溫空氣的數值</h5>
+          <p><b>數字從哪來</b>：空氣雙原子 $\gamma=1.4$；平均莫耳質量 29 g/mol（約 78% 的 N₂ 28 g/mol、21% 的 O₂ 32 g/mol），換成 SI 是 $M=0.029\ \text{kg/mol}$；$T=300\ \text{K}$，$R=8.315\ \text{J/(mol·K)}$。</p>
+          $$\begin{aligned}c_s&=\sqrt{\frac{1.4(8.315)(300)}{0.029}}\ \text{m/s}\\&=\sqrt{\frac{3492}{0.029}}\ \text{m/s}=\sqrt{1.20\times10^5}\ \text{m/s}\\&\approx347\ \text{m/s}\end{aligned}$$
+          <p>單位：$\dfrac{\text{J/mol}}{\text{kg/mol}}=\text{J/kg}=\text{m}^2/\text{s}^2$，開根號就是 m/s。同條件 $v_{\text{rms}}=\sqrt{3(8.315)(300)/0.029}\approx508\ \text{m/s}$。</p>
+          <p><b>這步容易錯</b>：① $M$ 用 29 而不是 0.029 kg/mol，算出約 11 m/s；② 溫度用攝氏代入。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 6｜(d) 海拔會不會讓風笛走音</h5>
+          <p><b>怎麼判斷</b>：看步驟 4 的結果 $c_s=\sqrt{\gamma kT/m}$——<b>裡面沒有壓力</b>。高海拔只是壓力低：密度 $\rho$ 變小，但 $B=\gamma P$ 也同比例變小，相除抵消。風笛管長固定 ⟹ 駐波波長固定 ⟹ 頻率 $f=c_s/\lambda$ 只隨聲速、也就是只隨溫度變。</p>
+          <p><b>結論</b>：只靠壓力不會走音；若真的走音，原因是高處比較冷：$T$ 低 ⟹ 聲速慢 ⟹ 音調變低。</p>
+          <p><b>這步容易錯</b>：回答「空氣稀薄所以聲速慢」——只看到 $\rho$ 變小，忘了 $B$ 也一起變小。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>0°C 時 $\sqrt{1.4(8.315)(273)/0.029}\approx331\ \text{m/s}$，正是常見的聲速表值 ✔。如果照牛頓用等溫的 $B=P$，會得到 $\sqrt{RT/M}\approx293\ \text{m/s}$，比實測低約 15%（$1-1/\sqrt{1.4}$）；一百多年後拉普拉斯指出要用絕熱，多出的 $\sqrt\gamma$ 才把差距補上——步驟 3 的時間比較就是理由。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>300 K 的氦氣</b>（$\gamma=\tfrac53$，$M=0.004\ \text{kg/mol}$）：$c_s=\sqrt{\tfrac53(8.315)(300)/0.004}\approx1019\ \text{m/s}$，約空氣的 3 倍。吸了氦氣說話，聲道的共振頻率變高，聲音變尖。</li>
+          <li><b>寒冷的 −20°C（253 K）</b>：$c_s=\sqrt{1.4(8.315)(253)/0.029}\approx319\ \text{m/s}$；風笛頻率正比於 $c_s\propto\sqrt T$，變為 $\sqrt{253/300}\approx0.918$ 倍，大約低 1.5 個半音——這才是海拔「可能」讓風笛走音的原因。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="sc-1-40">
+  <header>
+    <div class="meta"><span class="chip">課本題</span><span class="src">Schroeder 習題 1-40（Problem 1.40）· p.27 · 熱學小考（上）作業題</span></div>
+    <h4>乾絕熱遞減率</h4>
+    <button type="button" class="exam-btn" data-exam="sc-1-40">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="sc-1-40"><span class="part-label original-label">英文原題</span>
+<div class="original-text" lang="en"><p>In Problem 1.16 you calculated the pressure of earth’s atmosphere as a function of altitude, assuming constant temperature. Ordinarily, however, the temperature of the bottommost 10–15 km of the atmosphere (called the <i>troposphere</i>) decreases with increasing altitude, due to heating from the ground (which is warmed by sunlight). If the temperature gradient $|dT/dz|$ exceeds a certain critical value, <i>convection</i> will occur: Warm, low-density air will rise, while cool, high-density air sinks. The decrease of pressure with altitude causes a rising air mass to expand adiabatically and thus to cool. The condition for convection to occur is that the rising air mass must remain warmer than the surrounding air despite this adiabatic cooling.</p><p>(a) Show that when an ideal gas expands adiabatically, the temperature and pressure are related by the differential equation</p>$$\frac{dT}{dP}=\frac2{f+2}\frac TP.$$<p>(b) Assume that $dT/dz$ is just at the critical value for convection to begin, so that the vertical forces on a convecting air mass are always approximately in balance. Use the result of Problem 1.16(b) to find a formula for $dT/dz$ in this case. The result should be a constant, independent of temperature and pressure, which evaluates to approximately −10°C/km. This fundamental meteorological quantity is known as the <i>dry adiabatic lapse rate</i>.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>習題 1.16 在溫度固定的假設下算出大氣壓力隨高度的變化。但通常大氣最底層的 10–15 km（對流層）溫度隨高度降低，因為空氣是被（受陽光加熱的）地面從下方加熱的。若溫度梯度 $|dT/dz|$ 超過某個臨界值，就會發生對流：溫暖、低密度的空氣上升，冷而密的空氣下沉。壓力隨高度降低，使上升的空氣團絕熱膨脹而冷卻。對流發生的條件是：上升的空氣團儘管絕熱冷卻，仍要比周圍的空氣熱。(a) 證明理想氣體絕熱膨脹時，溫度與壓力滿足微分方程
+    $$\frac{dT}{dP}=\frac2{f+2}\frac TP.$$
+    (b) 假設 $dT/dz$ 剛好在開始對流的臨界值，使對流空氣團所受的鉛直力一直近似平衡。用習題 1.16(b) 的結果求這時 $dT/dz$ 的公式。結果應該是一個與溫度、壓力無關的常數，數值約為 $-10\ \text{°C/km}$。這個基本的氣象學量叫做乾絕熱遞減率（dry adiabatic lapse rate）。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>絕熱</td><td>$Q=0$ ⟹ $dU=-P\,dV$</td><td>(a)「絕熱膨脹」；準靜態（空氣團一路和周圍壓力平衡）</td></tr>
+          <tr><td>內能</td><td>$U=\frac f2NkT$</td><td>均分定理</td></tr>
+          <tr><td>理想氣體</td><td>$PV=NkT$</td><td>(a)「理想氣體」</td></tr>
+          <tr><td>壓力隨高度</td><td>$\dfrac{dP}{dz}=-\dfrac{mg}{kT}P$</td><td>(b)「習題 1.16(b) 的結果」（流體靜力平衡）</td></tr>
+          <tr><td>空氣</td><td>$f=5$，$M=0.029\ \text{kg/mol}$</td><td>題目沒給：雙原子；平均莫耳質量 29 g/mol</td></tr>
+          <tr><td>常數</td><td>$g=9.8\ \text{m/s}^2$，$R=8.315\ \text{J/(mol·K)}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 證明 $dT/dP=\frac2{f+2}\frac TP$；(b) 臨界 $dT/dz$ 的公式與數值。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>課文的 (1.35) $\frac f2Nk\,dT=-P\,dV$ 含 $dV$，而題目要的是 $T$ 與 $P$ 的關係，<b>所以</b>把理想氣體定律取微分 $P\,dV+V\,dP=Nk\,dT$，用它把 $P\,dV$ 換成 $dT$ 與 $dP$。</p>
+      <p>(b) <b>因為</b>空氣團上升 $dz$ 時壓力變化 $dP$ 由 1.16(b) 給出，而它的溫度變化由 (a) 給出，<b>所以</b>連鎖律 $\frac{dT}{dz}=\frac{dT}{dP}\frac{dP}{dz}$；兩個式子裡的 $T/P$ 和 $P/T$ 會互相抵消，結果與 $T$、$P$ 無關。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="sc-1-40-s1" data-sym="U,f,W">
+        <span class="step-title">(a) 第一定律</span>
+        <p>$Q=0$，$dU=-P\,dV$，$U=\frac f2NkT$：</p>
+        $$\frac f2Nk\,dT=-P\,dV$$
+      </div>
+      <div class="step" data-step="sc-1-40-s2" data-sym="P,V">
+        <span class="step-title">(a) 把 $P\,dV$ 換掉</span>
+        <p>對 $PV=NkT$ 兩邊取微分（乘積法則）：</p>
+        $$P\,dV+V\,dP=Nk\,dT\ \Longrightarrow\ P\,dV=Nk\,dT-V\,dP=Nk\,dT-\frac{NkT}P\,dP$$
+        <p>（最後用 $V=NkT/P$。）代回上式：</p>
+        $$\frac f2Nk\,dT=-Nk\,dT+\frac{NkT}P\,dP$$
+      </div>
+      <div class="step" data-step="sc-1-40-s3">
+        <span class="step-title">(a) 整理</span>
+        <p>消去 $Nk$，$dT$ 項移到左邊：</p>
+        $$\frac{f+2}2\,dT=\frac TP\,dP\ \Longrightarrow\ \frac{dT}{dP}=\frac2{f+2}\frac TP$$
+      </div>
+      <div class="step" data-step="sc-1-40-s4" data-sym="m,T">
+        <span class="step-title">(b) 連鎖律</span>
+        <p>上升 $dz$：由 1.16(b)，$dP=-\frac{mg}{kT}P\,dz$；代入 (a)：</p>
+        $$dT=\frac2{f+2}\frac TP\left(-\frac{mg}{kT}P\,dz\right)=-\frac2{f+2}\frac{mg}k\,dz$$
+        $$\frac{dT}{dz}=-\frac2{f+2}\frac{mg}k=-\frac2{f+2}\frac{Mg}R$$
+        <p>（$m/k=M/R$，分子分母同乘 $N_A$。）$T$、$P$ 都消掉了，是常數。</p>
+      </div>
+      <div class="step" data-step="sc-1-40-s5" data-sym="M">
+        <span class="step-title">(b) 數值</span>
+        <p class="sub">代入 $f=5$、$M=0.029\ \text{kg/mol}$、$g=9.8\ \text{m/s}^2$、$R=8.315\ \text{J/(mol·K)}$：</p>
+        $$\frac{dT}{dz}=-\frac27\cdot\frac{(0.029)(9.8)}{8.315}\ \text{K/m}=-9.8\times10^{-3}\ \text{K/m}=-9.8\ \text{K/km}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 得證；(b) $\dfrac{dT}{dz}=-\dfrac2{f+2}\dfrac{Mg}R\approx-9.8\ \text{K/km}$（約 $-10\ \text{°C/km}$）。實際溫度降得比這快時就會對流。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>(a) 也可由 $PV^\gamma$ 與 $PV=NkT$ 消去 $V$ 得 $T\propto P^{2/(f+2)}$，微分即得 ✔；小考答案卷 $-9.765\ \text{K/km}$、解答手冊 $-9.8\ \text{K/km}$ ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>(a) 從課文的 (1.35) $\tfrac f2Nk\,dT=-P\,dV$ 出發，但題目要的是 $T$ 對 $P$，所以用 $PV=NkT$ 的微分把 $P\,dV$ 換成 $dT$、$dP$，再整理。(b) 空氣團上升 $dz$ 時，壓力的變化由靜力平衡（習題 1.16(b)）給出，溫度的變化由 (a) 給出，兩者用連鎖律相乘 → 代數字。整題的關鍵是 (b)：<b>(a) 帶來的 $T/P$ 和靜力平衡帶來的 $P/T$ 剛好抵消</b>，所以遞減率是一個常數。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜(a) 絕熱的第一定律</h5>
+          <p><b>在做什麼</b>：對空氣團上升的一小段寫 $dU=Q+W$。</p>
+          <p><b>為什麼可以這樣做</b>：空氣導熱很差，而對流的空氣團尺度有幾百公尺，上升的幾分鐘內熱幾乎傳不進出 ⟹ $Q=0$；空氣團的壓力隨時和周圍相同 ⟹ 準靜態，$W=-P\,dV$；均分定理 $dU=\tfrac f2Nk\,dT$。</p>
+          $$\frac f2Nk\,dT=-P\,dV$$
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜(a) 把 $P\,dV$ 換成 $dT$ 和 $dP$</h5>
+          <p><b>為什麼要換</b>：高度告訴我們的是壓力怎麼變，不是體積，所以要消去 $dV$。</p>
+          <p><b>怎麼算</b>：對 $PV=NkT$ 兩邊取微分（$N$ 固定），左邊用乘積法則：</p>
+          $$\begin{aligned}P\,dV+V\,dP&=Nk\,dT\\P\,dV&=Nk\,dT-V\,dP\\&=Nk\,dT-\frac{NkT}P\,dP\end{aligned}$$
+          <p>（最後一行用 $V=NkT/P$，讓式子裡只剩 $T$、$P$。）代回步驟 1：</p>
+          $$\frac f2Nk\,dT=-Nk\,dT+\frac{NkT}P\,dP$$
+          <p><b>這步容易錯</b>：對 $PV$ 微分只寫 $P\,dV$、漏掉 $V\,dP$——兩個量都在變，乘積法則兩項都要。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜(a) 整理</h5>
+          <p><b>怎麼算</b>：兩邊除以 $Nk$，$dT$ 項移到左邊合併：$\tfrac f2\,dT+dT=\tfrac{f+2}2\,dT$，</p>
+          $$\begin{aligned}&\frac{f+2}2\,dT=\frac TP\,dP\\\Longrightarrow\ &\frac{dT}{dP}=\frac2{f+2}\frac TP\end{aligned}$$
+          <p><b>怎麼讀</b>：係數 $\tfrac{f+2}2$ 正是 $C_P/(Nk)$——空氣團的壓力在變，定壓熱容量自然跑了出來。另一條路也能驗：由 $PV^\gamma$ 與 $PV=NkT$ 消去 $V$ 得 $T\propto P^{2/(f+2)}$（<a href="#sc-1-35">習題 1.35</a> 的改法），對 $P$ 微分就是同一個式子 ✔。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 4｜(b) 連鎖律：$T$、$P$ 互相抵消</h5>
+          <p><b>壓力怎麼隨高度變</b>（<a href="#sc-1-16">習題 1.16(b)</a>）：厚 $dz$ 的一薄層空氣，上下的壓力差撐住它的重量，$dP=-\rho g\,dz$；再用 $\rho=mP/(kT)$，得 $\dfrac{dP}{dz}=-\dfrac{mg}{kT}P$。</p>
+          <p><b>為什麼溫度在變也能用 1.16(b)</b>：這個<b>微分式</b>只是局部的力平衡，$T$ 代當地溫度就成立；只有把它積成指數大氣 $P\propto e^{-mgz/kT}$ 那一步才需要等溫。</p>
+          <p><b>「臨界」的意思</b>：題目設定 $dT/dz$ 剛好在開始對流的臨界值——空氣團上升時一直和周圍一樣熱、一樣重，鉛直力平衡。所以空氣團的絕熱冷卻率就是大氣的 $dT/dz$，(a) 和 1.16(b) 可以用在同一組 $T$、$P$ 上。</p>
+          <p><b>怎麼算</b>：</p>
+          $$\begin{aligned}\frac{dT}{dz}&=\frac{dT}{dP}\cdot\frac{dP}{dz}\\&=\frac2{f+2}\frac TP\cdot\left(-\frac{mg}{kT}P\right)\\&=-\frac2{f+2}\frac{mg}k=-\frac2{f+2}\frac{Mg}R\end{aligned}$$
+          <p>$\tfrac TP\cdot\tfrac PT=1$，溫度和壓力全部消掉；最後一步分子分母同乘 $N_A$：$mN_A=M$、$kN_A=R$。</p>
+          <p><b>這步容易錯</b>：① 以為 1.16 只能用在等溫大氣而不敢用；② 符號：$dT/dz$ 是負的（越高越冷）。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 5｜(b) 數值</h5>
+          <p><b>數字從哪來</b>：空氣雙原子 $f=5$ ⟹ $\tfrac2{f+2}=\tfrac27$；$M=0.029\ \text{kg/mol}$，$g=9.8\ \text{m/s}^2$，$R=8.315\ \text{J/(mol·K)}$。</p>
+          $$\begin{aligned}\frac{dT}{dz}&=-\frac27\cdot\frac{(0.029)(9.8)}{8.315}\ \text{K/m}\\&=-\frac27(0.0342)\ \text{K/m}\\&=-9.77\times10^{-3}\ \text{K/m}\approx-9.8\ \text{K/km}\end{aligned}$$
+          <p>單位：$\dfrac{(\text{kg/mol})(\text{m/s}^2)}{\text{J/(mol·K)}}=\dfrac{\text{N}\cdot\text{K}}{\text{N·m}}=\text{K/m}$ ✔，再乘 1000 換成每公里。</p>
+          <p><b>這步容易錯</b>：① $M$ 用 29（g/mol 沒換），差 1000 倍；② K/m 與 K/km 搞混；③ 空氣用 $f=3$，係數變成 $\tfrac25$，會得到約 13.7 K/km。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>結果可以寫成 $\dfrac{dT}{dz}=-\dfrac g{c_P}$，$c_P=\tfrac72R/M\approx1003\ \text{J/(kg·K)}$ 是每公斤空氣的定壓比熱：$9.8/1003\approx9.77\times10^{-3}\ \text{K/m}$ ✔。物理意義：空氣團每上升 1 m，每公斤多了 $g$ 焦耳的重力位能，這筆帳由它的焓支付，所以變冷。實際大氣平均只降約 6.5 K/km，因為潮濕空氣上升時水氣凝結放出潛熱，抵消了一部分冷卻。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>一團乾空氣從地面 300 K 上升 2 km</b>：$T\approx300-2\times9.77\approx280.5\ \text{K}$。若周圍大氣是標準的每公里降 6.5 K（2 km 處約 287 K），空氣團比周圍冷、密度大，會沉回去——大氣<b>穩定</b>，不會乾對流。</li>
+          <li><b>火星大氣</b>（CO₂，$M=0.044\ \text{kg/mol}$，$g=3.71\ \text{m/s}^2$，粗略取 $f=5$）：$\dfrac{dT}{dz}\approx-\tfrac27\cdot\tfrac{0.044\times3.71}{8.315}\approx-5.6\ \text{K/km}$，重力小，遞減率就小。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-05a">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>同一個末狀態：等溫壓縮 vs 絕熱壓縮再冷卻</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-05a">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>1 L、1 atm、300 K 的空氣要變成 0.1 L、300 K。路徑一：準靜態等溫壓縮到 0.1 L。路徑二：先準靜態絕熱壓縮到 0.1 L，再保持體積不變讓它冷卻回 300 K。(a) 兩條路徑的末壓力各是多少？(b) 各要對空氣做多少功、空氣放出多少熱？(c) 哪條路比較省功、省多少？多出來的功最後到哪裡去了？這對設計空氣壓縮機有什麼啟示？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>初狀態</td><td>$V_i=1\ \text{L}$，$P_i=1\ \text{atm}$，$T_i=300\ \text{K}$</td><td>題目</td></tr>
+          <tr><td>末狀態</td><td>$V_f=0.1\ \text{L}$，$T_f=300\ \text{K}$</td><td>題目</td></tr>
+          <tr><td>路徑一</td><td>等溫：$W=NkT\ln(V_i/V_f)$</td><td>「準靜態<b>等溫</b>壓縮」；(1.30)</td></tr>
+          <tr><td>路徑二(1)</td><td>絕熱：$PV^{1.4}$、$VT^{5/2}$ 守恆，$Q=0$</td><td>「準靜態<b>絕熱</b>壓縮」</td></tr>
+          <tr><td>路徑二(2)</td><td>定容冷卻：$W=0$</td><td>「保持<b>體積不變</b>讓它冷卻」</td></tr>
+          <tr><td>空氣</td><td>$f=5$，$\gamma=1.4$，$U=\tfrac52PV$</td><td>題目沒寫：雙原子</td></tr>
+          <tr><td>$NkT$</td><td>$P_iV_i=1\ \text{atm·L}=101.3\ \text{J}$</td><td>由初狀態</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 兩路徑的末壓力（含路徑二中間點）；(b) 各自的總功與總放熱；(c) 比較、多餘功的去處、對壓縮機的啟示。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>兩條路的起點與終點完全相同、理想氣體 $U$ 只看 $T$，<b>所以</b>兩條路的 $\Delta U$ 都是 0，全程 $Q=-W$——但 $W$ 是路徑量，兩條路不同。</p>
+      <p>路徑一直接用 (1.30)。路徑二分兩段：<b>因為</b>第一段絕熱，<b>所以</b> $W=\Delta U=\frac52(P_2V_2-P_iV_i)$，中間點由 $PV^\gamma$ 求；<b>因為</b>第二段定容，<b>所以</b> $W=0$，放出的熱＝這段內能的減少。在 PV 圖上，絕熱線比等溫線陡，曲線下面積較大——這就是答案的幾何意義。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-05a-s1" data-sym="P">
+        <span class="step-title">(a) 末壓力</span>
+        <p>兩路徑末狀態都是 0.1 L、300 K，$P\propto T/V$：$P_f=P_i\frac{V_i}{V_f}=10\ \text{atm}$（兩條都一樣，它是狀態量）。</p>
+        <p class="sub">路徑二的中間點（絕熱壓到 0.1 L）：代入 $V_i/V_f=10$、$\gamma=1.4$：</p>
+        $$P_2=P_i\left(\frac{V_i}{V_f}\right)^\gamma=10^{1.4}\ \text{atm}=25.1\ \text{atm},\qquad T_2=300\times10^{0.4}=754\ \text{K}$$
+      </div>
+      <div class="step" data-step="t1-self-05a-s2" data-sym="W,Q">
+        <span class="step-title">(b) 路徑一：等溫</span>
+        $$W_1=NkT\ln\frac{V_i}{V_f}$$
+        <p class="sub">代入 $NkT=101.3\ \text{J}$、$V_i/V_f=10$：</p>
+        $$W_1=(101.3\ \text{J})\ln10=233\ \text{J},\qquad Q_1=-W_1=-233\ \text{J}$$
+      </div>
+      <div class="step" data-step="t1-self-05a-s3" data-sym="U">
+        <span class="step-title">(b) 路徑二：絕熱段</span>
+        $$W_{2a}=\Delta U=\tfrac52\left(P_2V_f-P_iV_i\right)$$
+        <p class="sub">代入 $P_2V_f=(25.1\ \text{atm})(0.1\ \text{L})=2.512\ \text{atm·L}$（步驟 1）、$P_iV_i=1\ \text{atm·L}$：</p>
+        $$W_{2a}=\tfrac52(2.512-1)\ \text{atm·L}=3.78\ \text{atm·L}=383\ \text{J}$$
+      </div>
+      <div class="step" data-step="t1-self-05a-s4">
+        <span class="step-title">(b) 路徑二：定容冷卻段</span>
+        <p>$W_{2b}=0$；溫度回 300 K，內能減少的量正好是絕熱段增加的 383 J：</p>
+        $$Q_{2b}=\Delta U_{2b}=-383\ \text{J}$$
+        <p>路徑二合計 $W_2=383\ \text{J}$、$Q_2=-383\ \text{J}$。</p>
+      </div>
+      <div class="step" data-step="t1-self-05a-s5">
+        <span class="step-title">(c) 比較</span>
+        $$W_2-W_1=383-233=150\ \text{J}$$
+        <p>等溫路徑省 150 J（約省 40%）。多做的 150 J 並沒有留在空氣裡（末狀態相同），而是在冷卻段變成熱、散到環境中浪費掉了。PV 圖上：絕熱線比等溫線陡，同樣從 1 L 壓到 0.1 L，它底下的面積較大。啟示：壓縮機壓得快（接近絕熱）時，最好<strong>分段壓縮、段間冷卻</strong>（intercooling），讓路徑盡量貼近等溫線以省功，也避免空氣過熱。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) 兩路末壓力都是 10 atm（路徑二中間點 25.1 atm、754 K）；(b) 等溫：$W=233\ \text{J}$、放熱 233 J；絕熱＋冷卻：$W=383\ \text{J}$、放熱 383 J；(c) 等溫省 150 J，多的功在冷卻時以熱散失；實務上用多段壓縮加中間冷卻。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>兩條路都 $Q=-W$、$\Delta U=0$ ✔；絕熱功另用 $\frac{P_iV_i}{\gamma-1}[(V_i/V_f)^{\gamma-1}-1]=\frac{1}{0.4}(2.512-1)=3.78\ \text{atm·L}$ ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>(a) 末狀態已經給定，末壓力直接由 $P\propto T/V$ 得出；另外要求路徑二的中間點（絕熱剛壓完）→ (b) 三段各用最省事的功公式：等溫用 $\ln$、絕熱用 $W=\Delta U$、定容 $W=0$ → (c) 比較兩條路，追蹤多出來的功去了哪裡。整題的關鍵是：<b>起終點相同 ⟹ 兩條路 $\Delta U$ 都是 0 ⟹ 每條路都是 $Q=-W$</b>；但 $W$ 是路徑量，兩條路的 $W$ 不同。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜(a) 末壓力，以及路徑二的中間點</h5>
+          <p><b>為什麼末壓力不必分路徑算</b>：壓力是狀態量。末狀態 0.1 L、300 K 已經確定，$N$ 不變時 $P\propto T/V$：</p>
+          $$P_f=P_i\cdot\frac{T_f}{T_i}\cdot\frac{V_i}{V_f}=(1\ \text{atm})(1)(10)=10\ \text{atm}$$
+          <p>兩條路都一樣。</p>
+          <p><b>中間點怎麼算</b>：絕熱段由 $PV^\gamma$ 守恆求壓力、由 $TV^{\gamma-1}$ 守恆求溫度（$\gamma=1.4$，$V_i/V_f=10$）：</p>
+          $$\begin{aligned}P_2&=P_i\left(\frac{V_i}{V_f}\right)^\gamma=10^{1.4}\ \text{atm}=25.1\ \text{atm}\\T_2&=T_i\left(\frac{V_i}{V_f}\right)^{\gamma-1}=300\times10^{0.4}=754\ \text{K}\end{aligned}$$
+          <p>驗算：$T\propto PV$，$\tfrac{25.1\times0.1}{1\times1}=2.51$，$300\times2.51=754\ \text{K}$ ✔。接著定容冷卻，壓力跟著溫度等比例下降：$25.1\times\tfrac{300}{754}=10\ \text{atm}$，回到末壓力 ✔。</p>
+          <p><b>這步容易錯</b>：把 25.1 atm 當成路徑二的末壓力，忘了後面還有冷卻段。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜(b) 路徑一：等溫</h5>
+          <p><b>為什麼用 (1.30)</b>：準靜態等溫，$W=NkT\ln(V_i/V_f)$（<a href="#sc-ex-isotherm">課文推導</a>）。$NkT$ 不必拆開：等溫線上 $PV=NkT$ 處處相同，用初狀態 $P_iV_i=1\ \text{atm·L}=101.3\ \text{J}$。</p>
+          <p><b>怎麼算</b>：$\ln10=2.303$：</p>
+          $$W_1=(101.3\ \text{J})(2.303)=233\ \text{J},\qquad Q_1=-W_1=-233\ \text{J}$$
+          <p>（$\Delta U=0$，做進去的功全部以熱流出。）</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜(b) 路徑二：絕熱段</h5>
+          <p><b>為什麼 $W=\Delta U$</b>：絕熱 $Q=0$，功全部變成內能；空氣 $U=\tfrac52PV$，只要兩端的 $PV$。</p>
+          <p><b>怎麼算</b>：$P_2V_f=(25.1\ \text{atm})(0.1\ \text{L})=2.512\ \text{atm·L}$（步驟 1），$P_iV_i=1\ \text{atm·L}$：</p>
+          $$\begin{aligned}W_{2a}&=\tfrac52\left(P_2V_f-P_iV_i\right)\\&=\tfrac52(2.512-1)\ \text{atm·L}\\&=3.78\ \text{atm·L}=383\ \text{J}\end{aligned}$$
+          <p><b>這步容易錯</b>：係數寫成 $\gamma$ 或 $\tfrac32$——空氣是 $\tfrac f2=\tfrac52$。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 4｜(b) 路徑二：定容冷卻段</h5>
+          <p><b>怎麼算</b>：體積不動 ⟹ $W_{2b}=0$。溫度從 754 K 回到 300 K，內能的變化 $\tfrac52(P_fV_f-P_2V_f)=\tfrac52(1-2.512)=-3.78\ \text{atm·L}$，正好把絕熱段存進去的 383 J 全部退回：</p>
+          $$Q_{2b}=\Delta U_{2b}=-383\ \text{J}$$
+          <p>路徑二合計：$W_2=383+0=383\ \text{J}$，$Q_2=0+(-383)=-383\ \text{J}$，$\Delta U_2=0$ ✔。</p>
+          <p><b>這步容易錯</b>：只看絕熱段就說路徑二 $Q=0$——冷卻段放了 383 J 的熱。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 5｜(c) 比較：差額去了哪裡</h5>
+          <p><b>怎麼算</b>：$W_2-W_1=383-233=150\ \text{J}$，等溫路徑省了 $150/383\approx39\%$，約四成。</p>
+          <p><b>多的 150 J 到哪去</b>：兩條路末狀態相同、內能相同，所以這 150 J 不在空氣裡；它在冷卻段變成熱散到環境——路徑二多放的熱 $|Q_2|-|Q_1|=383-233=150\ \text{J}$ 正好就是它。先把空氣弄熱、再把熱丟掉，就是浪費。</p>
+          <p><b>PV 圖上看</b>：兩條路都從 (1 L, 1 atm) 往左走到 0.1 L。絕熱線比等溫線陡，一路在等溫線<b>上方</b>，底下面積（功）較大；最後那段垂直的冷卻線沒有面積，不貢獻功。</p>
+          <p><b>對壓縮機的啟示</b>：壓縮時盡量讓氣體保持冷——<b>多段壓縮、段間冷卻</b>，讓路徑貼近等溫線，省功也避免空氣過熱。</p>
+          <p><b>這步容易錯</b>：以為起終點相同所以功也相同——功是路徑量。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>兩條路都 $\Delta U=0$、$Q=-W$ ✔；絕熱功另用積分公式 $\dfrac{P_iV_i}{\gamma-1}\Big[\big(\tfrac{V_i}{V_f}\big)^{\gamma-1}-1\Big]=\dfrac1{0.4}(2.512-1)=3.78\ \text{atm·L}$ ✔。對照<a href="#sc-1-36">習題 1.36</a>：那裡固定的是<b>末壓力</b>，等溫反而比絕熱費功（197 J 對 188 J）；這裡固定的是<b>末體積</b>，等溫比較省。比較兩種過程時，一定要先看固定的是什麼。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>壓縮比只有 2（1 L → 0.5 L）</b>：等溫 $W_1=101.3\ln2\approx70.2\ \text{J}$；絕熱＋冷卻 $W_2=\tfrac52(2^{0.4}-1)(101.3\ \text{J})\approx80.9\ \text{J}$。只差 10.7 J（約 13%）——壓縮比越大，兩條路差越多。</li>
+          <li><b>兩段壓縮、中間冷卻</b>（每段壓縮比 $\sqrt{10}$）：第一段絕熱後冷卻回 300 K，$PV$ 又回到 1 atm·L，所以兩段的功一樣，每段 $\tfrac52(10^{0.2}-1)(101.3\ \text{J})\approx148\ \text{J}$，合計約 296 J，介於 233 J 與 383 J 之間；段數越多越接近等溫。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="t1-self-05b">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>多方過程 $PV^n=$ 常數：吸熱卻降溫</h4>
+    <button type="button" class="exam-btn" data-exam="t1-self-05b">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>理想氣體（每分子 $f$ 個自由度）沿 $PV^n=$ 常數的路徑進行準靜態過程（$n\ne1$，叫做多方過程 polytropic process）。(a) 證明過程中對氣體做的功 $W=\dfrac{P_fV_f-P_iV_i}{n-1}=\dfrac{Nk\,\Delta T}{n-1}$。(b) 定義沿這條路徑、每莫耳的熱容量 $C_{\text{mol}}=\dfrac Q{(\text{莫耳數})\,\Delta T}$，證明 $C_{\text{mol}}=R\left(\dfrac1{\gamma-1}-\dfrac1{n-1}\right)$，並檢查 $n=0$、$n=\gamma$、$n\to\infty$ 三種特例，以及 $n=-1$（$P\propto V$）時和習題 1.31 的數字是否一致。(c) 1 mol 空氣沿 $PV^{1.2}=$ 常數膨脹，溫度由 300 K 降到 270 K：求 $W$、$\Delta U$、$Q$。它吸熱還是放熱？為什麼「吸熱卻降溫」不違反第一定律？</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>路徑</td><td>$PV^n=K$（常數），$n\ne1$</td><td>題目</td></tr>
+          <tr><td>功</td><td>$W=-\int P\,dV$</td><td>「準靜態」</td></tr>
+          <tr><td>內能</td><td>$U=\tfrac f2NkT$，$\gamma=(f+2)/f$ ⟹ $\tfrac f2=\tfrac1{\gamma-1}$</td><td>均分定理；$\gamma-1=2/f$</td></tr>
+          <tr><td>(b) 特例</td><td>$n=0$ 定壓；$n=\gamma$ 絕熱；$n\to\infty$ 定容；$n=-1$ $P\propto V$</td><td>題目；$PV^0=P$、$PV^{\infty}$ 等價於 $V$ 固定</td></tr>
+          <tr><td>(c)</td><td>1 mol 空氣 $f=5$，$n=1.2$，$T$：300 → 270 K</td><td>題目</td></tr>
+          <tr><td>$R$</td><td>$8.315\ \text{J/(mol·K)}$</td><td>題目沒給，用標準值</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 推導 $W$；(b) 推導 $C_{\text{mol}}$、四個特例；(c) $W$、$\Delta U$、$Q$ 的數值與解釋。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p>(a) <b>因為</b>路徑已知 $P=K/V^n$，<b>所以</b>直接積分 $-\int P\,dV$；再用 $K=P_iV_i^n=P_fV_f^n$ 把結果寫成端點的 $PV$，最後 $PV=NkT$ 換成 $\Delta T$。</p>
+      <p>(b) <b>因為</b> $\Delta U=\frac f2Nk\Delta T$ 與 $W=\frac{Nk\Delta T}{n-1}$ 都正比於 $\Delta T$，<b>所以</b>第一定律 $Q=\Delta U-W$ 也正比於 $\Delta T$，比例係數就是熱容量。這把 $C_V$、$C_P$、絕熱、等溫統一成一條公式。</p>
+      <p>(c) <b>因為</b> $1\lt n\lt\gamma$ 時 $\frac1{n-1}\gt\frac1{\gamma-1}$，<b>所以</b>熱容量是負的：膨脹時對外做的功比內能減少的還多，差額必須靠吸熱補上。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="t1-self-05b-s1" data-sym="W,P,V">
+        <span class="step-title">(a) 積分</span>
+        $$W=-\int_{V_i}^{V_f}KV^{-n}\,dV=-K\frac{V_f^{1-n}-V_i^{1-n}}{1-n}=\frac{KV_f^{1-n}-KV_i^{1-n}}{n-1}$$
+        <p>$KV^{1-n}=(PV^n)V^{1-n}=PV$，再用 $PV=NkT$：</p>
+        $$W=\frac{P_fV_f-P_iV_i}{n-1}=\frac{Nk\,\Delta T}{n-1}$$
+      </div>
+      <div class="step" data-step="t1-self-05b-s2" data-sym="Q,U,gamma">
+        <span class="step-title">(b) 熱與熱容量</span>
+        $$Q=\Delta U-W=\frac f2Nk\,\Delta T-\frac{Nk\,\Delta T}{n-1}=Nk\,\Delta T\left(\frac1{\gamma-1}-\frac1{n-1}\right)$$
+        <p>（$\frac f2=\frac1{\gamma-1}$。）一莫耳 $Nk=R$，除以 $\Delta T$：</p>
+        $$C_{\text{mol}}=R\left(\frac1{\gamma-1}-\frac1{n-1}\right)$$
+      </div>
+      <div class="step" data-step="t1-self-05b-s3">
+        <span class="step-title">(b) 特例</span>
+        <p>$n=0$（定壓）：$C=R(\frac f2+1)$，即 $C_P$ ✔。$n=\gamma$（絕熱）：$C=0$，$Q=0$ ✔。$n\to\infty$（定容）：$\frac1{n-1}\to0$，$C=\frac f2R=C_V$ ✔。$n\to1$（等溫）：$C\to\pm\infty$，有熱進出卻不升溫 ✔。</p>
+        <p class="sub">$n=-1$（$P\propto V$）、氦 $f=3$：$C=R(\frac32+\frac12)=2R$。對照習題 1.31：$Q=16\ \text{atm·L}$、$Nk\Delta T=P_fV_f-P_iV_i=8\ \text{atm·L}$，$Q/(Nk\Delta T)=2$ ✔</p>
+      </div>
+      <div class="step" data-step="t1-self-05b-s4">
+        <span class="step-title">(c) 數值</span>
+        <p class="sub">代入 1 mol（$Nk=R=8.315$）、$\Delta T=270-300=-30\ \text{K}$、$f=5$、$n=1.2$（題目）：</p>
+        $$\Delta U=\tfrac52(8.315)(-30)\ \text{J}=-624\ \text{J}$$
+        $$W=\frac{(8.315)(-30)}{1.2-1}\ \text{J}=-1247\ \text{J}$$
+        $$Q=\Delta U-W=-624-(-1247)=+624\ \text{J}$$
+      </div>
+      <div class="step" data-step="t1-self-05b-s5">
+        <span class="step-title">(c) 解釋</span>
+        <p>$Q\gt0$：吸熱。氣體對外做了 1247 J，其中只有 624 J 來自內能減少，其餘 624 J 由吸熱供應；吸的熱不夠補上全部做功，所以溫度還是下降。熱容量 $C=Q/\Delta T=-20.8\ \text{J/K}=-2.5R$，和公式 $R(2.5-5)=-2.5R$ 一致。「溫度」和「吸了多少熱」本來就是兩件事（4.1 節）。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a)(b) 見推導，$C_{\text{mol}}=R\left(\frac1{\gamma-1}-\frac1{n-1}\right)$，四個特例與 1.31 皆一致；(c) $W=-1247\ \text{J}$、$\Delta U=-624\ \text{J}$、$Q=+624\ \text{J}$：吸熱但降溫，熱容量 $-2.5R$。</p></div>
+    <div class="part check"><span class="part-label">檢查</span><p>體積比 $V_f/V_i=(T_i/T_f)^{1/(n-1)}=(300/270)^5=1.69$，確實是膨脹 ✔；$1\lt n\lt\gamma$ 的負熱容量在第 6 節「重力束縛系統」還會再看到另一種版本 ✔</p></div>
+    <details class="part explain"><summary><span>跟著詳解一步步講：每步做什麼、為什麼、怎麼算、哪裡會錯</span></summary>
+      <div class="explain-body">
+        <h5>解題路線</h5>
+        <p>三問其實是同一條線：(a) 沿路徑積分出功 $W$ → (b) 用第一定律把 $W$ 和 $\Delta U$ 合成熱 $Q$，再除以 $\Delta T$ 得到熱容量 → (c) 代數字並解釋正負號。整題能做下去的關鍵是：<b>$W$ 和 $\Delta U$ 最後都會正比於 $\Delta T$</b>，所以 $Q$ 也正比於 $\Delta T$，熱容量才有一個固定的值。</p>
+
+        <div class="ex-step">
+          <h5>步驟 1｜(a) 把 $P$ 寫成 $V$ 的函數，積分出功</h5>
+          <p><b>在做什麼</b>：求 $W=-\int P\,dV$。積分要能做，被積函數只能剩一個變數，所以先用路徑條件把 $P$ 寫成 $V$ 的函數。</p>
+          <p><b>為什麼可以這樣做</b>：題目說「準靜態」，氣體每一刻都有確定的壓力，而且這個壓力剛好落在 $PV^n=K$ 這條曲線上，所以 $P=KV^{-n}$ 在整個過程都成立，$K$ 是同一個常數。</p>
+          <p><b>怎麼算</b>：冪次積分 $\int V^{-n}dV=\dfrac{V^{1-n}}{1-n}$（$n\ne1$ 才能這樣積）：</p>
+          $$W=-K\,\frac{V_f^{1-n}-V_i^{1-n}}{1-n}=\frac{KV_f^{1-n}-KV_i^{1-n}}{n-1}$$
+          <p>第二個等號只是把分母的 $1-n$ 換成 $-(n-1)$、吸收前面的負號。</p>
+          <p><b>最關鍵的一步</b>：$KV_f^{1-n}$ 是什麼？$K$ 在路徑上每一點都等於 $PV^n$，在末點就是 $P_fV_f^{\,n}$，所以 $KV_f^{1-n}=P_fV_f^{\,n}\cdot V_f^{1-n}=P_fV_f$。初點同理。於是積分結果只剩端點的 $PV$：</p>
+          $$W=\frac{P_fV_f-P_iV_i}{n-1}$$
+          <p>最後用 $PV=NkT$ 把 $PV$ 換成 $NkT$，分子變成 $Nk(T_f-T_i)=Nk\,\Delta T$。</p>
+          <p><b>這步容易錯</b>：① $n=1$（等溫）不能用冪次公式，要用 $\int dV/V=\ln V$，所以題目特別排除 $n=1$；② 把 $K$ 當成只和初狀態有關，不敢在末點用 $K=P_fV_f^{\,n}$——其實 $K$ 在整條路徑上都一樣，初點、末點都可以代。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 2｜(b) 第一定律求熱，整理成熱容量</h5>
+          <p><b>在做什麼</b>：熱不能直接算（沒有「熱的公式」），只能用 $Q=\Delta U-W$ 從另外兩個量推出來。</p>
+          <p><b>$\Delta U$ 為什麼是 $\tfrac f2Nk\,\Delta T$</b>：理想氣體的內能只和溫度有關（均分定理 $U=\tfrac f2NkT$），不管走哪條路徑，只要初末溫度一樣，$\Delta U$ 就一樣。很多人以為 $C_V\Delta T$ 只能用在定容過程——那是熱 $Q$ 的公式；$\Delta U=C_V\Delta T$ 對理想氣體的<b>任何</b>過程都成立。</p>
+          <p><b>怎麼算</b>：兩項都提出 $Nk\,\Delta T$：</p>
+          $$Q=\frac f2Nk\,\Delta T-\frac{Nk\,\Delta T}{n-1}=Nk\,\Delta T\left(\frac f2-\frac1{n-1}\right)$$
+          <p>題目要用 $\gamma$ 表示，所以把 $\tfrac f2$ 換掉：$\gamma=\dfrac{f+2}{f}=1+\dfrac2f$ ⟹ $\gamma-1=\dfrac2f$ ⟹ $\dfrac f2=\dfrac1{\gamma-1}$。一莫耳 $Nk=N_Ak=R$，除以 $\Delta T$ 就是每莫耳的熱容量：</p>
+          $$C_{\text{mol}}=R\left(\frac1{\gamma-1}-\frac1{n-1}\right)$$
+          <p><b>這步容易錯</b>：第一定律的 $W$ 是「外界對氣體做的功」，要用步驟 1 算出的那個帶正負號的 $W$ 直接減，不要自己再翻一次號。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 3｜(b) 特例：怎麼看出每個 $n$ 對應哪種過程</h5>
+          <ul>
+            <li>$n=0$：$PV^0=P=$ 常數，<b>定壓</b>。代入得 $R\big(\tfrac1{\gamma-1}+1\big)=R\big(\tfrac f2+1\big)=C_P$ ✔。</li>
+            <li>$n=\gamma$：就是 §1.5 的<b>絕熱</b>曲線 $PV^\gamma=$ 常數，括號裡兩項相減為 0，$C=0$，也就是 $Q=0$ ✔。</li>
+            <li>$n\to\infty$：把 $PV^n=K$ 兩邊開 $n$ 次方，$P^{1/n}V=K^{1/n}$；$n\to\infty$ 時 $P^{1/n}\to1$，剩下 $V=$ 常數，<b>定容</b>。$\tfrac1{n-1}\to0$，$C=\tfrac f2R=C_V$ ✔。</li>
+            <li>$n=-1$：$PV^{-1}=$ 常數，即 $P\propto V$，就是習題 1.31 的路徑。氦 $f=3$、$\gamma=\tfrac53$：$C=R\big(\tfrac32+\tfrac12\big)=2R$。拿 1.31 的數字驗：$Q=16\ \text{atm·L}$，$Nk\Delta T=P_fV_f-P_iV_i=9-1=8\ \text{atm·L}$，$Q/(Nk\Delta T)=2$ ✔。</li>
+          </ul>
+          <p><b>為什麼要做這一步</b>：推出一般公式後，用已知的特例檢查是最快的除錯方法——四個特例都對，公式幾乎不可能錯。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 4｜(c) 代數字</h5>
+          <p><b>數字從哪來</b>：1 mol ⟹ $Nk=R=8.315\ \text{J/K}$；「由 300 K 降到 270 K」⟹ $\Delta T=T_f-T_i=-30\ \text{K}$（末減初，降溫是負的）；空氣雙原子 $f=5$；$n=1.2$。</p>
+          $$\Delta U=\tfrac52(8.315)(-30)=-624\ \text{J}$$
+          $$W=\frac{R\,\Delta T}{n-1}=\frac{(8.315)(-30)}{0.2}=-1247\ \text{J}$$
+          $$Q=\Delta U-W=-624-(-1247)=+624\ \text{J}$$
+          <p><b>順便確認是膨脹</b>：把 $P=NkT/V$ 代進 $PV^n=K$ 得 $TV^{n-1}=$ 常數，所以 $V_f/V_i=(T_i/T_f)^{1/(n-1)}=(300/270)^5\approx1.69$——體積變大，和 $W\lt0$（氣體對外做功）一致。</p>
+          <p><b>這步容易錯</b>：$\Delta T$ 寫成 $+30$，三個量的正負號全反；$n-1=0.2$ 在分母，$W$ 的大小是 $\Delta U$ 的兩倍，看起來「太大」不要懷疑。</p>
+        </div>
+
+        <div class="ex-step">
+          <h5>步驟 5｜(c) 為什麼吸熱卻降溫不矛盾</h5>
+          <p>把能量的帳攤開：氣體對外做了 1247 J 的功。這 1247 J 從哪來？624 J 是自己內能減少的，另外 624 J 是吸進來的熱。吸的熱不夠付全部的功，所以內能（溫度）還是下降。第一定律只要求帳平衡，沒有說「吸熱一定升溫」——<b>溫度看內能，熱只是能量進來的一種管道</b>。</p>
+        </div>
+
+        <h5>做完回頭看</h5>
+        <p>$C=Q/\Delta T=624/(-30)=-20.8\ \text{J/K}=-2.5R$，和公式 $R\big(\tfrac1{0.4}-\tfrac1{0.2}\big)=R(2.5-5)=-2.5R$ 一致 ✔。從公式也看得出規律：只要 $1\lt n\lt\gamma$，$\tfrac1{n-1}\gt\tfrac1{\gamma-1}$，熱容量就是負的——介於等溫與絕熱之間的膨脹，都是「吸熱卻降溫」。</p>
+
+        <h5>如果題目改成……</h5>
+        <ul>
+          <li><b>$n=1.3$、同樣 300 → 270 K</b>：$W=\frac{8.315(-30)}{0.3}=-832\ \text{J}$，$\Delta U=-624\ \text{J}$，$Q=+208\ \text{J}$；$C=-0.83R$，仍然吸熱降溫，但吸得少（$n$ 越接近 $\gamma$ 越接近絕熱）。</li>
+          <li><b>$n=1.5$（比 $\gamma=1.4$ 大）</b>：$W=-499\ \text{J}$，$Q=-624+499=-125\ \text{J}$，$C=+0.5R$：變成一邊降溫一邊放熱，熱容量回到正的。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>準靜態：$W=-P\,dV$，$W=-\int P\,dV$＝ PV 圖下面積的負值；功與路徑有關，循環淨功＝圈住的面積（順時針為熱機）。$1\ \text{atm·L}\approx101\ \text{J}$。</li>
+    <li>理想氣體 $U=\tfrac f2PV$：任何過程 $\Delta U=\tfrac f2(P_fV_f-P_iV_i)$，再用 $Q=\Delta U-W$ 求熱（習題 1.31、1.34、考古 114-7）。</li>
+    <li>等溫：$W=NkT\ln(V_i/V_f)$，$Q=-W$。</li>
+    <li>絕熱（$Q=0$）：$VT^{f/2}$、$PV^\gamma$、$TV^{\gamma-1}$ 守恆，$\gamma=(f+2)/f=C_P/C_V$；$W=\Delta U$；絕熱線比等溫線陡。</li>
+    <li>應用：打氣 7 atm 升到 523 K、柴油壓縮 20 倍約 1000 K；聲速 $\sqrt{\gamma kT/m}$（用絕熱 $B=\gamma P$，與壓力無關）；乾絕熱遞減率 $-\tfrac2{f+2}\tfrac{Mg}R\approx-9.8\ \text{K/km}$。</li>
+  </ol>
+</div>

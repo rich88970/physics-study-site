@@ -1,0 +1,115 @@
+<h2 id="kp-12">H-5. 課本第 7 章第 1 題：完整干涉照度與可見度</h2>
+<p><strong>來源</strong>：Pedrotti 第 7 章 Problem 1，印刷第 189 頁，PDF 第 208 頁。</p>
+<p><strong>原題：</strong> Two mutually coherent beams with parallel electric fields are described by</p>
+<div class="math-block">$$
+E_1=3\cos\left(ks_1-\omega t+\frac\pi5\right),\quad
+E_2=4\cos\left(ks_2-\omega t+\frac\pi6\right).
+$$</div>
+<p>The amplitudes are in <strong>kV/m</strong>. At point $P$, the phase difference due to optical paths is $\pi/3$, with the <strong>first beam having the longer path</strong>. Find (a) individual irradiances $I_1,I_2$; (b) interference irradiance $I_{12}$; (c) net irradiance; (d) fringe visibility.</p>
+<p><strong>中文：</strong> 兩束互相相干、電場偏振方向平行的光，電場式如上，振幅單位 <strong>kV/m</strong>。在觀察點 $P$，<strong>由路徑長短造成的相位差是 $\pi/3$，且第一束的路徑較長</strong>。求兩束各自照度、干涉交叉項、總照度及條紋對比度。</p>
+<p><strong>① (a) 兩束各自的照度：</strong> 先把振幅換成 V/m：</p>
+<div class="math-block">$$E_{01}=3\ \mathrm{kV/m}=3000\ \mathrm{V/m},$$</div>
+<div class="math-block">$$E_{02}=4\ \mathrm{kV/m}=4000\ \mathrm{V/m}.$$</div>
+<p class="fnote"><b>公式（照度與振幅）：</b>$I=\dfrac12\varepsilon_0c_0E_0^2$，其中 $I$ 為平均照度（W/m²）、$\varepsilon_0$ 為真空介電常數（F/m）、$c_0$ 為真空光速（m/s）、$E_0$ 為電場振幅（V/m）；本題兩束分別代入 $E_{01}=3000\ \mathrm{V/m}$、$E_{02}=4000\ \mathrm{V/m}$。</p>
+<p>空氣近似真空，令共同常數 $K=\tfrac12\varepsilon_0c_0$：</p>
+<div class="math-block">$$K=\frac12(8.8542\times10^{-12})(3\times10^8)
+=0.00132813.$$</div>
+<p>因此：</p>
+<div class="math-block">$$
+\begin{aligned}
+I_1&amp;=KE_{01}^2\\
+&amp;=0.00132813(3000)^2\\
+&amp;=\boxed{11953.17\ \mathrm{W/m^2}}.
+\end{aligned}
+$$</div>
+<p>同樣：</p>
+<div class="math-block">$$
+\begin{aligned}
+I_2&amp;=KE_{02}^2\\
+&amp;=0.00132813(4000)^2\\
+&amp;=\boxed{21250.08\ \mathrm{W/m^2}}.
+\end{aligned}
+$$</div>
+<p><strong>② 組合總相位差：</strong> 不能直接拿 $\pi/3$ 當總相位差，電場式本身還有初相位 $\pi/5$、$\pi/6$。兩束相位：</p>
+<div class="math-block">$$\Phi_1=ks_1-\omega t+\frac\pi5.$$</div>
+<div class="math-block">$$\Phi_2=ks_2-\omega t+\frac\pi6.$$</div>
+<p>第一束減第二束：</p>
+<div class="math-block">$$
+\begin{aligned}
+\delta&amp;=\Phi_1-\Phi_2\\
+&amp;=k(s_1-s_2)+\left(\frac\pi5-\frac\pi6\right).
+\end{aligned}
+$$</div>
+<p>第一束路徑較長，路徑造成的相位差為：</p>
+<div class="math-block">$$k(s_1-s_2)=\frac\pi3.$$</div>
+<p>初相位差：</p>
+<div class="math-block">$$\frac\pi5-\frac\pi6=\frac{6\pi-5\pi}{30}=\frac\pi{30}.$$</div>
+<p>總相位差：</p>
+<div class="math-block">$$
+\boxed{\delta=\frac\pi3+\frac\pi{30}=\frac{11\pi}{30}=66^\circ}.
+$$</div>
+<p><strong>③ (b) 干涉交叉項 $I_{12}$：</strong> 相干光要加上交叉項：</p>
+<div class="math-block">$$\boxed{I_{12}=2\sqrt{I_1I_2}\cos\delta}.$$</div>
+<p>由 $I_j=\tfrac12\varepsilon_0c_0E_{0j}^2$ 改用振幅計算：</p>
+<div class="math-block">$$2\sqrt{I_1I_2}=\varepsilon_0c_0E_{01}E_{02}.$$</div>
+<p>所以：</p>
+<div class="math-block">$$
+\begin{aligned}
+I_{12}&amp;=(8.8542\times10^{-12})(3\times10^8)(3000)(4000)
+\cos66^\circ\\
+&amp;=31875.12\cos66^\circ\\
+&amp;=\boxed{12964.78\ \mathrm{W/m^2}}.
+\end{aligned}
+$$</div>
+<p>交叉項為正，表示此觀察點是部分<strong>建設性干涉</strong>。</p>
+<p><strong>④ (c) 總照度：</strong> 兩束照度加上交叉項：</p>
+<div class="math-block">$$
+\begin{aligned}
+I_{\mathrm{net}}&amp;=I_1+I_2+I_{12}\\
+&amp;=11953.17+21250.08+12964.78\\
+&amp;=\boxed{46168.03\ \mathrm{W/m^2}}.
+\end{aligned}
+$$</div>
+<p><strong>⑤ (d) 條紋可見度：</strong> 亮、暗條紋的最大與最小照度：</p>
+<div class="math-block">$$
+I_{\max}=(\sqrt{I_1}+\sqrt{I_2})^2,\quad
+I_{\min}=(\sqrt{I_1}-\sqrt{I_2})^2.
+$$</div>
+<p>代入定義：</p>
+<div class="math-block">$$
+V=\frac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}
+=\frac{2\sqrt{I_1I_2}}{I_1+I_2}.
+$$</div>
+<p>$I_1:I_2=3^2:4^2=9:16$，直接用振幅比：</p>
+<div class="math-block">$$
+V=\frac{2(3)(4)}{3^2+4^2}
+=\frac{24}{25}
+=\boxed{0.96}.
+$$</div>
+<p><strong>7-1 最終答案：</strong></p>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>小題</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(a) $I_1,I_2$</td>
+<td>$11953.17,\ 21250.08$ W/m²</td>
+</tr>
+<tr>
+<td>(b) $I_{12}$</td>
+<td>$12964.78$ W/m²</td>
+</tr>
+<tr>
+<td>(c) $I_{\mathrm{net}}$</td>
+<td>$46168.03$ W/m²</td>
+</tr>
+<tr>
+<td>(d) $V$</td>
+<td>$0.96$</td>
+</tr>
+</tbody>
+</table></div>

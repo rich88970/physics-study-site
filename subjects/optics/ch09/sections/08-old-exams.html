@@ -1,0 +1,1055 @@
+<h2>八、物理考古資料夾題目 <span class="pg">課本 p.116–123</span></h2>
+
+<p class="lead">這一頁的 13 題來自雲端「物理考古／光學」資料夾（「光學(很多以前的考卷可自己慢慢看)」）裡的舊考卷：2007–2014、2017 年下學期近代光學期中考與平時考的照片（光學下學期考卷 IMG_55xx／56xx），以及 2021 年期中考（光學考古／109近代光學期中.jpg）。這些考卷<strong>不在李孟恩老師的課程資料夾</strong>（雲端「2.光學-近代光學(李孟恩)」）裡，所以從前面各節移出來，另外收在這裡。</p>
+
+<p>前面各節的考古題、藍框「考古高頻」與出題頻率，只算課程資料夾的 5 份下學期期中考（2018-04-25、2020-04-21、2022-04-27、2024-04-23、2025-04-22）。這裡的題目做法和近年完全一樣，拿來多練很好，但<strong>不算進主要統計</strong>。每張卡原封不動搬過來、卡片 id 沒變，前面各節的連結會自動換到這一頁；卡上的藍框數字仍是課程資料夾 5 份考卷的統計。</p>
+
+<h3 id="o9-old-count">舊考卷中出現次數（參考，不算進主要統計）</h3>
+
+<p class="small muted">物理考古資料夾的舊考卷共 16 份（期中考 2007、2008、2009、2010、2011、2012、2013、2014、2017、2021；平時考 2007-06-01、2011-04-06、2012-04-11、2013-04-10、2014-04-09、2017-04-12）。2020、2022 期中考在兩個資料夾都有，算在課程資料夾。</p>
+
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>題型</th><th>課程資料夾（主要統計）</th><th>物理考古資料夾舊考卷（參考）</th></tr></thead>
+  <tbody>
+    <tr><td>同頻率弦波相量疊加</td><td>5/5</td><td>11/16（期中 2007、2008、2010、2011、2013、2021；平時考 2011、2012、2013、2014、2017）</td></tr>
+    <tr><td>海浪群速度</td><td>1/5（2020）</td><td>2/16（2007 期中、2011 平時考；這張卡含 2020，留在第 5 節 <a href="#o9-2007m3">o9-2007m3</a>）</td></tr>
+    <tr><td>駐波 ⟷ 行進波</td><td>1/5（2018）</td><td>2/16（2012 期中、2014 平時考）</td></tr>
+  </tbody>
+</table></div>
+
+<h3 id="o9-old-three">8.1 三個波的相量疊加（2007–2017）</h3>
+
+<div class="problem" data-kind="exam" id="o9-2008m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2008-05-05）第 3 題（96下）</span></div>
+    <h4>3 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2008m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2008m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>3. (20%) $E_0\cos(\alpha-\omega t)=-4\sin(\frac{\pi}{3}+\omega t)-3\cos(\omega t+\frac{\pi}{6})+2\sin(\omega t-\frac{\pi}{4})$</p><p>試求　a. $E_0$ $(E_0>0)$　b. $\alpha$ $(\pi\ge\alpha>-\pi)$，以 rad 為單位。</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E_0\cos(\alpha-\omega t)\\&=-4\sin\!\left(\tfrac{\pi}{3}+\omega t\right)-3\cos\!\left(\omega t+\tfrac{\pi}{6}\right)\\&\quad+2\sin\!\left(\omega t-\tfrac{\pi}{4}\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0>0$）；(b) $\alpha$（$\pi\ge\alpha>-\pi$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$-4\sin\!\left(\tfrac{\pi}{3}+\omega t\right)$</td><td>題目等號右邊第 1 項：係數 $-4$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 2 項</td><td>$-3\cos\!\left(\omega t+\tfrac{\pi}{6}\right)$</td><td>題目等號右邊第 2 項：係數 $-3$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$2\sin\!\left(\omega t-\tfrac{\pi}{4}\right)$</td><td>題目等號右邊第 3 項：係數 $2$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>3 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0>0$</td><td>題目「$(E_0>0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$\pi\ge\alpha>-\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0>0$）；(b) 相位角 $\alpha$（$\pi\ge\alpha>-\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>3 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、1 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2008m3-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $-4\sin\!\left(\tfrac{\pi}{3}+\omega t\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(\tfrac{\pi}{6}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(-\tfrac{5\pi}{6}-\omega t\right)$。所以這一項 $=4\cos\!\left(-\tfrac{5\pi}{6}-\omega t\right)$，$A_1=4$、$\alpha_1=-\tfrac{5\pi}{6}$（$-150^\circ$）。</li>
+          <li>第 2 項 $-3\cos\!\left(\omega t+\tfrac{\pi}{6}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(\tfrac{\pi}{6}+\omega t\right)=\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)$。所以這一項 $=3\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)$，$A_2=3$、$\alpha_2=\tfrac{5\pi}{6}$（$150^\circ$）。</li>
+          <li>第 3 項 $2\sin\!\left(\omega t-\tfrac{\pi}{4}\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(-\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\left(-\tfrac{\pi}{4}\right)-\omega t\right)=\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=2\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$，$A_3=2$、$\alpha_3=\tfrac{3\pi}{4}$（$135^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=4\cos\!\left(-\tfrac{5\pi}{6}-\omega t\right)+3\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)\\&\quad+2\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2008m3-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$4$</td><td>$-\tfrac{5\pi}{6}$</td><td>$4\cos(-\tfrac{5\pi}{6})=-3.464$</td><td>$4\sin(-\tfrac{5\pi}{6})=-2.000$</td></tr>
+            <tr><td>2</td><td>$3$</td><td>$\tfrac{5\pi}{6}$</td><td>$3\cos(\tfrac{5\pi}{6})=-2.598$</td><td>$3\sin(\tfrac{5\pi}{6})=1.500$</td></tr>
+            <tr><td>3</td><td>$2$</td><td>$\tfrac{3\pi}{4}$</td><td>$2\cos(\tfrac{3\pi}{4})=-1.414$</td><td>$2\sin(\tfrac{3\pi}{4})=1.414$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=-7.476$</td><td>$E_0\sin\alpha=0.914$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2008m3-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=-7.476$、$E_0\sin\alpha=0.914$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(-7.476)^2+(0.914)^2}=\sqrt{56.732}=7.532$$
+        <p>題目要求 $E_0>0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2008m3-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{0.914}{-7.476}=-0.1223$$
+        <p>$E_0\cos\alpha\lt0$、$E_0\sin\alpha>0$，相量在<b>第二象限</b>；計算機給的 $\tan^{-1}(-0.1223)=-0.1217$ 在第四象限，要加 $\pi$：$\alpha=-0.1217+\pi=3.0199\ \text{rad}$，也就是 $173.03^\circ$（$0.9613\pi$）。</p>
+        <p>已經在題目要求的 $\pi\ge\alpha>-\pi$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=7.53$；(b) $\alpha=3.020\ \text{rad}$（$173.0^\circ$）。也就是 $E=7.53\cos(3.020-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：3 項直接相加得 $-7.476$，應該等於 $E_0\cos\alpha=7.532\times\cos(3.0199)=-7.476$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $0.914$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=0.914$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2011m3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2011-04-27）第 3 題（99下）</span></div>
+    <h4>3 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2011m3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2011m3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>3. (20%) $E=E_0\cos(\alpha-\omega t)=-2\cos(\omega t+\frac{\pi}{3})+4\sin(\omega t-\frac{\pi}{4})-4\sin(\frac{\pi}{6}+\omega t)$</p><p>試求　(a) $E_0$ $(E_0>0)$　(b) $\alpha$ $(\pi\ge\alpha>-\pi)$，以 rad 為單位</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E=E_0\cos(\alpha-\omega t)\\&=-2\cos\!\left(\omega t+\tfrac{\pi}{3}\right)+4\sin\!\left(\omega t-\tfrac{\pi}{4}\right)\\&\quad-4\sin\!\left(\tfrac{\pi}{6}+\omega t\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0>0$）；(b) $\alpha$（$\pi\ge\alpha>-\pi$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$-2\cos\!\left(\omega t+\tfrac{\pi}{3}\right)$</td><td>題目等號右邊第 1 項：係數 $-2$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 2 項</td><td>$4\sin\!\left(\omega t-\tfrac{\pi}{4}\right)$</td><td>題目等號右邊第 2 項：係數 $4$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$-4\sin\!\left(\tfrac{\pi}{6}+\omega t\right)$</td><td>題目等號右邊第 3 項：係數 $-4$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>3 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0>0$</td><td>題目「$(E_0>0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$\pi\ge\alpha>-\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0>0$）；(b) 相位角 $\alpha$（$\pi\ge\alpha>-\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>3 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、1 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2011m3-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $-2\cos\!\left(\omega t+\tfrac{\pi}{3}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$。所以這一項 $=2\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$，$A_1=2$、$\alpha_1=\tfrac{2\pi}{3}$（$120^\circ$）。</li>
+          <li>第 2 項 $4\sin\!\left(\omega t-\tfrac{\pi}{4}\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(-\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\left(-\tfrac{\pi}{4}\right)-\omega t\right)=\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=4\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$，$A_2=4$、$\alpha_2=\tfrac{3\pi}{4}$（$135^\circ$）。</li>
+          <li>第 3 項 $-4\sin\!\left(\tfrac{\pi}{6}+\omega t\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(\tfrac{\pi}{6}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(\tfrac{\pi}{3}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(-\tfrac{2\pi}{3}-\omega t\right)$。所以這一項 $=4\cos\!\left(-\tfrac{2\pi}{3}-\omega t\right)$，$A_3=4$、$\alpha_3=-\tfrac{2\pi}{3}$（$-120^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=2\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)+4\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)\\&\quad+4\cos\!\left(-\tfrac{2\pi}{3}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2011m3-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$2$</td><td>$\tfrac{2\pi}{3}$</td><td>$2\cos(\tfrac{2\pi}{3})=-1.000$</td><td>$2\sin(\tfrac{2\pi}{3})=1.732$</td></tr>
+            <tr><td>2</td><td>$4$</td><td>$\tfrac{3\pi}{4}$</td><td>$4\cos(\tfrac{3\pi}{4})=-2.828$</td><td>$4\sin(\tfrac{3\pi}{4})=2.828$</td></tr>
+            <tr><td>3</td><td>$4$</td><td>$-\tfrac{2\pi}{3}$</td><td>$4\cos(-\tfrac{2\pi}{3})=-2.000$</td><td>$4\sin(-\tfrac{2\pi}{3})=-3.464$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=-5.828$</td><td>$E_0\sin\alpha=1.096$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2011m3-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=-5.828$、$E_0\sin\alpha=1.096$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(-5.828)^2+(1.096)^2}=\sqrt{35.173}=5.931$$
+        <p>題目要求 $E_0>0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2011m3-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{1.096}{-5.828}=-0.1881$$
+        <p>$E_0\cos\alpha\lt0$、$E_0\sin\alpha>0$，相量在<b>第二象限</b>；計算機給的 $\tan^{-1}(-0.1881)=-0.1859$ 在第四象限，要加 $\pi$：$\alpha=-0.1859+\pi=2.9557\ \text{rad}$，也就是 $169.35^\circ$（$0.9408\pi$）。</p>
+        <p>已經在題目要求的 $\pi\ge\alpha>-\pi$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=5.93$；(b) $\alpha=2.956\ \text{rad}$（$169.3^\circ$）。也就是 $E=5.93\cos(2.956-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：3 項直接相加得 $-5.828$，應該等於 $E_0\cos\alpha=5.931\times\cos(2.9557)=-5.828$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $1.096$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=1.096$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2011q2">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學平時考（2011-04-06）第 2 題（99下）</span></div>
+    <h4>3 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2011q2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2011q2"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2. (30%) $E=E_0\cos(\alpha-\omega t)=-3\sin(\frac{\pi}{4}+\omega t)-2\cos(\omega t+\frac{\pi}{3})+4\sin(\omega t-\frac{\pi}{6})$</p><p>(a) 試求 $E_0$ $(E_0\ge0)$　(b) 試求 $\alpha$ $(\pi\ge\alpha>-\pi)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E=E_0\cos(\alpha-\omega t)\\&=-3\sin\!\left(\tfrac{\pi}{4}+\omega t\right)-2\cos\!\left(\omega t+\tfrac{\pi}{3}\right)\\&\quad+4\sin\!\left(\omega t-\tfrac{\pi}{6}\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0\ge0$）；(b) $\alpha$（$\pi\ge\alpha>-\pi$）。（30%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$-3\sin\!\left(\tfrac{\pi}{4}+\omega t\right)$</td><td>題目等號右邊第 1 項：係數 $-3$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 2 項</td><td>$-2\cos\!\left(\omega t+\tfrac{\pi}{3}\right)$</td><td>題目等號右邊第 2 項：係數 $-2$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$4\sin\!\left(\omega t-\tfrac{\pi}{6}\right)$</td><td>題目等號右邊第 3 項：係數 $4$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>3 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0\ge0$</td><td>題目「$(E_0\ge0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$\pi\ge\alpha>-\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0\ge0$）；(b) 相位角 $\alpha$（$\pi\ge\alpha>-\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>3 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、1 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2011q2-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $-3\sin\!\left(\tfrac{\pi}{4}+\omega t\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(\tfrac{\pi}{4}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(-\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=3\cos\!\left(-\tfrac{3\pi}{4}-\omega t\right)$，$A_1=3$、$\alpha_1=-\tfrac{3\pi}{4}$（$-135^\circ$）。</li>
+          <li>第 2 項 $-2\cos\!\left(\omega t+\tfrac{\pi}{3}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$。所以這一項 $=2\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$，$A_2=2$、$\alpha_2=\tfrac{2\pi}{3}$（$120^\circ$）。</li>
+          <li>第 3 項 $4\sin\!\left(\omega t-\tfrac{\pi}{6}\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(-\tfrac{\pi}{6}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\left(-\tfrac{\pi}{6}\right)-\omega t\right)=\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$。所以這一項 $=4\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$，$A_3=4$、$\alpha_3=\tfrac{2\pi}{3}$（$120^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=3\cos\!\left(-\tfrac{3\pi}{4}-\omega t\right)+2\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)\\&\quad+4\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2011q2-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$3$</td><td>$-\tfrac{3\pi}{4}$</td><td>$3\cos(-\tfrac{3\pi}{4})=-2.121$</td><td>$3\sin(-\tfrac{3\pi}{4})=-2.121$</td></tr>
+            <tr><td>2</td><td>$2$</td><td>$\tfrac{2\pi}{3}$</td><td>$2\cos(\tfrac{2\pi}{3})=-1.000$</td><td>$2\sin(\tfrac{2\pi}{3})=1.732$</td></tr>
+            <tr><td>3</td><td>$4$</td><td>$\tfrac{2\pi}{3}$</td><td>$4\cos(\tfrac{2\pi}{3})=-2.000$</td><td>$4\sin(\tfrac{2\pi}{3})=3.464$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=-5.121$</td><td>$E_0\sin\alpha=3.075$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2011q2-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=-5.121$、$E_0\sin\alpha=3.075$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(-5.121)^2+(3.075)^2}=\sqrt{35.683}=5.973$$
+        <p>題目要求 $E_0\ge0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2011q2-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{3.075}{-5.121}=-0.6004$$
+        <p>$E_0\cos\alpha\lt0$、$E_0\sin\alpha>0$，相量在<b>第二象限</b>；計算機給的 $\tan^{-1}(-0.6004)=-0.5407$ 在第四象限，要加 $\pi$：$\alpha=-0.5407+\pi=2.6009\ \text{rad}$，也就是 $149.02^\circ$（$0.8279\pi$）。</p>
+        <p>已經在題目要求的 $\pi\ge\alpha>-\pi$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=5.97$；(b) $\alpha=2.601\ \text{rad}$（$149.0^\circ$）。也就是 $E=5.97\cos(2.601-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：3 項直接相加得 $-5.121$，應該等於 $E_0\cos\alpha=5.973\times\cos(2.6009)=-5.121$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $3.075$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=3.075$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2012q1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學平時考（2012-04-11）第 1 題（100下）</span></div>
+    <h4>3 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2012q1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2012q1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (20%) $E=E_0\cos(\alpha-\omega t)=-3\cos(\omega t-\frac{\pi}{6})-2\sin(\omega t+\frac{\pi}{4})+4\sin(\omega t-\frac{\pi}{3})$</p><p>試求　(a) $E_0$ $(E_0\ge0)$　(b) $\alpha$ $(\pi\ge\alpha>-\pi)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E=E_0\cos(\alpha-\omega t)\\&=-3\cos\!\left(\omega t-\tfrac{\pi}{6}\right)-2\sin\!\left(\omega t+\tfrac{\pi}{4}\right)\\&\quad+4\sin\!\left(\omega t-\tfrac{\pi}{3}\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0\ge0$）；(b) $\alpha$（$\pi\ge\alpha>-\pi$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$-3\cos\!\left(\omega t-\tfrac{\pi}{6}\right)$</td><td>題目等號右邊第 1 項：係數 $-3$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 2 項</td><td>$-2\sin\!\left(\omega t+\tfrac{\pi}{4}\right)$</td><td>題目等號右邊第 2 項：係數 $-2$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$4\sin\!\left(\omega t-\tfrac{\pi}{3}\right)$</td><td>題目等號右邊第 3 項：係數 $4$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>3 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0\ge0$</td><td>題目「$(E_0\ge0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$\pi\ge\alpha>-\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0\ge0$）；(b) 相位角 $\alpha$（$\pi\ge\alpha>-\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>3 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、1 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2012q1-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $-3\cos\!\left(\omega t-\tfrac{\pi}{6}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(-\tfrac{\pi}{6}+\omega t\right)=\cos\!\left(\tfrac{\pi}{6}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(-\tfrac{5\pi}{6}-\omega t\right)$。所以這一項 $=3\cos\!\left(-\tfrac{5\pi}{6}-\omega t\right)$，$A_1=3$、$\alpha_1=-\tfrac{5\pi}{6}$（$-150^\circ$）。</li>
+          <li>第 2 項 $-2\sin\!\left(\omega t+\tfrac{\pi}{4}\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(\tfrac{\pi}{4}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(-\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=2\cos\!\left(-\tfrac{3\pi}{4}-\omega t\right)$，$A_2=2$、$\alpha_2=-\tfrac{3\pi}{4}$（$-135^\circ$）。</li>
+          <li>第 3 項 $4\sin\!\left(\omega t-\tfrac{\pi}{3}\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(-\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\left(-\tfrac{\pi}{3}\right)-\omega t\right)=\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)$。所以這一項 $=4\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)$，$A_3=4$、$\alpha_3=\tfrac{5\pi}{6}$（$150^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=3\cos\!\left(-\tfrac{5\pi}{6}-\omega t\right)+2\cos\!\left(-\tfrac{3\pi}{4}-\omega t\right)\\&\quad+4\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2012q1-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$3$</td><td>$-\tfrac{5\pi}{6}$</td><td>$3\cos(-\tfrac{5\pi}{6})=-2.598$</td><td>$3\sin(-\tfrac{5\pi}{6})=-1.500$</td></tr>
+            <tr><td>2</td><td>$2$</td><td>$-\tfrac{3\pi}{4}$</td><td>$2\cos(-\tfrac{3\pi}{4})=-1.414$</td><td>$2\sin(-\tfrac{3\pi}{4})=-1.414$</td></tr>
+            <tr><td>3</td><td>$4$</td><td>$\tfrac{5\pi}{6}$</td><td>$4\cos(\tfrac{5\pi}{6})=-3.464$</td><td>$4\sin(\tfrac{5\pi}{6})=2.000$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=-7.476$</td><td>$E_0\sin\alpha=-0.914$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2012q1-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=-7.476$、$E_0\sin\alpha=-0.914$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(-7.476)^2+(-0.914)^2}=\sqrt{56.732}=7.532$$
+        <p>題目要求 $E_0\ge0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2012q1-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{-0.914}{-7.476}=0.1223$$
+        <p>$E_0\cos\alpha\lt0$、$E_0\sin\alpha\lt0$，相量在<b>第三象限</b>；計算機給的 $\tan^{-1}(0.1223)=0.1217$ 在第一象限，要減 $\pi$：$\alpha=0.1217-\pi=-3.0199\ \text{rad}$，也就是 $-173.03^\circ$（$-0.9613\pi$）。</p>
+        <p>已經在題目要求的 $\pi\ge\alpha>-\pi$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=7.53$；(b) $\alpha=-3.020\ \text{rad}$（$-173.0^\circ$）。也就是 $E=7.53\cos(-3.020-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：3 項直接相加得 $-7.476$，應該等於 $E_0\cos\alpha=7.532\times\cos(-3.0199)=-7.476$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $-0.914$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=-0.914$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2013q1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學平時考（2013-04-10）第 1 題（101下）</span></div>
+    <h4>3 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2013q1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2013q1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (20%) $E=E_0\cos(\alpha-\omega t)=2\sin(\frac{\pi}{3}-\omega t)-3\sin(\frac{\pi}{6}+\omega t)-\cos(\omega t-\frac{\pi}{4})$</p><p>試求　(a) $E_0$ $(E_0\ge0)$　(b) $\alpha$ $(\pi\ge\alpha>-\pi)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E=E_0\cos(\alpha-\omega t)\\&=2\sin\!\left(\tfrac{\pi}{3}-\omega t\right)-3\sin\!\left(\tfrac{\pi}{6}+\omega t\right)\\&\quad-\cos\!\left(\omega t-\tfrac{\pi}{4}\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0\ge0$）；(b) $\alpha$（$\pi\ge\alpha>-\pi$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$2\sin\!\left(\tfrac{\pi}{3}-\omega t\right)$</td><td>題目等號右邊第 1 項：係數 $2$、正弦、括號裡 $\omega t$ 前面是負號</td></tr>
+          <tr><td>第 2 項</td><td>$-3\sin\!\left(\tfrac{\pi}{6}+\omega t\right)$</td><td>題目等號右邊第 2 項：係數 $-3$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$-\cos\!\left(\omega t-\tfrac{\pi}{4}\right)$</td><td>題目等號右邊第 3 項：係數 $-1$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>3 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0\ge0$</td><td>題目「$(E_0\ge0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$\pi\ge\alpha>-\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0\ge0$）；(b) 相位角 $\alpha$（$\pi\ge\alpha>-\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>3 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、1 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2013q1-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $2\sin\!\left(\tfrac{\pi}{3}-\omega t\right)$：$\sin x=\cos(x-\tfrac{\pi}{2})$，$\sin\!\left(\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(\tfrac{\pi}{3}-\tfrac{\pi}{2}-\omega t\right)=\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)$。所以這一項 $=2\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)$，$A_1=2$、$\alpha_1=-\tfrac{\pi}{6}$（$-30^\circ$）。</li>
+          <li>第 2 項 $-3\sin\!\left(\tfrac{\pi}{6}+\omega t\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(\tfrac{\pi}{6}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(\tfrac{\pi}{3}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(-\tfrac{2\pi}{3}-\omega t\right)$。所以這一項 $=3\cos\!\left(-\tfrac{2\pi}{3}-\omega t\right)$，$A_2=3$、$\alpha_2=-\tfrac{2\pi}{3}$（$-120^\circ$）。</li>
+          <li>第 3 項 $-\cos\!\left(\omega t-\tfrac{\pi}{4}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(-\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(\tfrac{\pi}{4}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(-\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=\cos\!\left(-\tfrac{3\pi}{4}-\omega t\right)$，$A_3=1$、$\alpha_3=-\tfrac{3\pi}{4}$（$-135^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=2\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)+3\cos\!\left(-\tfrac{2\pi}{3}-\omega t\right)\\&\quad+\cos\!\left(-\tfrac{3\pi}{4}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2013q1-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$2$</td><td>$-\tfrac{\pi}{6}$</td><td>$2\cos(-\tfrac{\pi}{6})=1.732$</td><td>$2\sin(-\tfrac{\pi}{6})=-1.000$</td></tr>
+            <tr><td>2</td><td>$3$</td><td>$-\tfrac{2\pi}{3}$</td><td>$3\cos(-\tfrac{2\pi}{3})=-1.500$</td><td>$3\sin(-\tfrac{2\pi}{3})=-2.598$</td></tr>
+            <tr><td>3</td><td>$1$</td><td>$-\tfrac{3\pi}{4}$</td><td>$1\cos(-\tfrac{3\pi}{4})=-0.707$</td><td>$1\sin(-\tfrac{3\pi}{4})=-0.707$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=-0.475$</td><td>$E_0\sin\alpha=-4.305$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2013q1-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=-0.475$、$E_0\sin\alpha=-4.305$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(-0.475)^2+(-4.305)^2}=\sqrt{18.760}=4.331$$
+        <p>題目要求 $E_0\ge0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2013q1-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{-4.305}{-0.475}=9.0625$$
+        <p>$E_0\cos\alpha\lt0$、$E_0\sin\alpha\lt0$，相量在<b>第三象限</b>；計算機給的 $\tan^{-1}(9.0625)=1.4609$ 在第一象限，要減 $\pi$：$\alpha=1.4609-\pi=-1.6807\ \text{rad}$，也就是 $-96.30^\circ$（$-0.5350\pi$）。</p>
+        <p>已經在題目要求的 $\pi\ge\alpha>-\pi$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=4.33$；(b) $\alpha=-1.681\ \text{rad}$（$-96.3^\circ$）。也就是 $E=4.33\cos(-1.681-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：3 項直接相加得 $-0.475$，應該等於 $E_0\cos\alpha=4.331\times\cos(-1.6807)=-0.475$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $-4.305$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=-4.305$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2013m1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2013-04-24）第 1 題（101下）</span></div>
+    <h4>3 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2013m1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2013m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (20%) $E_0\cos(\alpha-\omega t)=2\sin(\omega t-\frac{\pi}{3})-\cos(\omega t+\frac{\pi}{4})-3\sin(\frac{2}{3}\pi+\omega t)$</p><p>試求　① $E_0$ $(E_0>0)$　② $\alpha$ $(\pi\ge\alpha>-\pi)$</p><p>（考卷右上附：$h=6.626\times10^{-34}$ J·s，$\epsilon_0=8.854\times10^{-12}$ F/m）</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E_0\cos(\alpha-\omega t)\\&=2\sin\!\left(\omega t-\tfrac{\pi}{3}\right)-\cos\!\left(\omega t+\tfrac{\pi}{4}\right)\\&\quad-3\sin\!\left(\tfrac{2}{3}\pi+\omega t\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0>0$）；(b) $\alpha$（$\pi\ge\alpha>-\pi$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$2\sin\!\left(\omega t-\tfrac{\pi}{3}\right)$</td><td>題目等號右邊第 1 項：係數 $2$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 2 項</td><td>$-\cos\!\left(\omega t+\tfrac{\pi}{4}\right)$</td><td>題目等號右邊第 2 項：係數 $-1$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$-3\sin\!\left(\tfrac{2}{3}\pi+\omega t\right)$</td><td>題目等號右邊第 3 項：係數 $-3$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>3 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0>0$</td><td>題目「$(E_0>0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$\pi\ge\alpha>-\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0>0$）；(b) 相位角 $\alpha$（$\pi\ge\alpha>-\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>3 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、1 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2013m1-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $2\sin\!\left(\omega t-\tfrac{\pi}{3}\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(-\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\left(-\tfrac{\pi}{3}\right)-\omega t\right)=\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)$。所以這一項 $=2\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)$，$A_1=2$、$\alpha_1=\tfrac{5\pi}{6}$（$150^\circ$）。</li>
+          <li>第 2 項 $-\cos\!\left(\omega t+\tfrac{\pi}{4}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$，$A_2=1$、$\alpha_2=\tfrac{3\pi}{4}$（$135^\circ$）。</li>
+          <li>第 3 項 $-3\sin\!\left(\tfrac{2}{3}\pi+\omega t\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(\tfrac{2\pi}{3}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\tfrac{2\pi}{3}-\omega t\right)=\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)$。所以這一項 $=3\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)$，$A_3=3$、$\alpha_3=\tfrac{5\pi}{6}$（$150^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=2\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)+\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)\\&\quad+3\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2013m1-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$2$</td><td>$\tfrac{5\pi}{6}$</td><td>$2\cos(\tfrac{5\pi}{6})=-1.732$</td><td>$2\sin(\tfrac{5\pi}{6})=1.000$</td></tr>
+            <tr><td>2</td><td>$1$</td><td>$\tfrac{3\pi}{4}$</td><td>$1\cos(\tfrac{3\pi}{4})=-0.707$</td><td>$1\sin(\tfrac{3\pi}{4})=0.707$</td></tr>
+            <tr><td>3</td><td>$3$</td><td>$\tfrac{5\pi}{6}$</td><td>$3\cos(\tfrac{5\pi}{6})=-2.598$</td><td>$3\sin(\tfrac{5\pi}{6})=1.500$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=-5.037$</td><td>$E_0\sin\alpha=3.207$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2013m1-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=-5.037$、$E_0\sin\alpha=3.207$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(-5.037)^2+(3.207)^2}=\sqrt{35.659}=5.972$$
+        <p>題目要求 $E_0>0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2013m1-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{3.207}{-5.037}=-0.6367$$
+        <p>$E_0\cos\alpha\lt0$、$E_0\sin\alpha>0$，相量在<b>第二象限</b>；計算機給的 $\tan^{-1}(-0.6367)=-0.5670$ 在第四象限，要加 $\pi$：$\alpha=-0.5670+\pi=2.5746\ \text{rad}$，也就是 $147.52^\circ$（$0.8195\pi$）。</p>
+        <p>已經在題目要求的 $\pi\ge\alpha>-\pi$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=5.97$；(b) $\alpha=2.575\ \text{rad}$（$147.5^\circ$）。也就是 $E=5.97\cos(2.575-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：3 項直接相加得 $-5.037$，應該等於 $E_0\cos\alpha=5.972\times\cos(2.5746)=-5.037$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $3.207$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=3.207$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2014q1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學平時考（2014-04-09）第 1 題（102下）</span></div>
+    <h4>3 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2014q1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2014q1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (20%) $E=E_0\cos(\alpha-\omega t)=3\sin(\frac{\pi}{6}+\omega t)-4\sin(\frac{\pi}{4}-\omega t)-2\cos(\frac{\pi}{3}+\omega t)$</p><p>試求　(a) $E_0$ $(E_0\ge0)$　(b) $\alpha$ $(\pi\ge\alpha\ge-\pi)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E=E_0\cos(\alpha-\omega t)\\&=3\sin\!\left(\tfrac{\pi}{6}+\omega t\right)-4\sin\!\left(\tfrac{\pi}{4}-\omega t\right)\\&\quad-2\cos\!\left(\tfrac{\pi}{3}+\omega t\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0\ge0$）；(b) $\alpha$（$\pi\ge\alpha\ge-\pi$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$3\sin\!\left(\tfrac{\pi}{6}+\omega t\right)$</td><td>題目等號右邊第 1 項：係數 $3$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 2 項</td><td>$-4\sin\!\left(\tfrac{\pi}{4}-\omega t\right)$</td><td>題目等號右邊第 2 項：係數 $-4$、正弦、括號裡 $\omega t$ 前面是負號</td></tr>
+          <tr><td>第 3 項</td><td>$-2\cos\!\left(\tfrac{\pi}{3}+\omega t\right)$</td><td>題目等號右邊第 3 項：係數 $-2$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>3 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0\ge0$</td><td>題目「$(E_0\ge0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$\pi\ge\alpha\ge-\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0\ge0$）；(b) 相位角 $\alpha$（$\pi\ge\alpha\ge-\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>3 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、1 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2014q1-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $3\sin\!\left(\tfrac{\pi}{6}+\omega t\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(\tfrac{\pi}{6}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(\tfrac{\pi}{3}-\omega t\right)$。所以這一項 $=3\cos\!\left(\tfrac{\pi}{3}-\omega t\right)$，$A_1=3$、$\alpha_1=\tfrac{\pi}{3}$（$60^\circ$）。</li>
+          <li>第 2 項 $-4\sin\!\left(\tfrac{\pi}{4}-\omega t\right)$：$\sin x=\cos(x-\tfrac{\pi}{2})$，$\sin\!\left(\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(\tfrac{\pi}{4}-\tfrac{\pi}{2}-\omega t\right)=\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=4\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$，$A_2=4$、$\alpha_2=\tfrac{3\pi}{4}$（$135^\circ$）。</li>
+          <li>第 3 項 $-2\cos\!\left(\tfrac{\pi}{3}+\omega t\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$。所以這一項 $=2\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$，$A_3=2$、$\alpha_3=\tfrac{2\pi}{3}$（$120^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=3\cos\!\left(\tfrac{\pi}{3}-\omega t\right)+4\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)\\&\quad+2\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2014q1-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$3$</td><td>$\tfrac{\pi}{3}$</td><td>$3\cos(\tfrac{\pi}{3})=1.500$</td><td>$3\sin(\tfrac{\pi}{3})=2.598$</td></tr>
+            <tr><td>2</td><td>$4$</td><td>$\tfrac{3\pi}{4}$</td><td>$4\cos(\tfrac{3\pi}{4})=-2.828$</td><td>$4\sin(\tfrac{3\pi}{4})=2.828$</td></tr>
+            <tr><td>3</td><td>$2$</td><td>$\tfrac{2\pi}{3}$</td><td>$2\cos(\tfrac{2\pi}{3})=-1.000$</td><td>$2\sin(\tfrac{2\pi}{3})=1.732$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=-2.328$</td><td>$E_0\sin\alpha=7.159$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2014q1-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=-2.328$、$E_0\sin\alpha=7.159$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(-2.328)^2+(7.159)^2}=\sqrt{56.666}=7.528$$
+        <p>題目要求 $E_0\ge0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2014q1-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{7.159}{-2.328}=-3.0744$$
+        <p>$E_0\cos\alpha\lt0$、$E_0\sin\alpha>0$，相量在<b>第二象限</b>；計算機給的 $\tan^{-1}(-3.0744)=-1.2563$ 在第四象限，要加 $\pi$：$\alpha=-1.2563+\pi=1.8853\ \text{rad}$，也就是 $108.02^\circ$（$0.6001\pi$）。</p>
+        <p>已經在題目要求的 $\pi\ge\alpha\ge-\pi$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=7.53$；(b) $\alpha=1.885\ \text{rad}$（$108.0^\circ$）。也就是 $E=7.53\cos(1.885-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：3 項直接相加得 $-2.328$，應該等於 $E_0\cos\alpha=7.528\times\cos(1.8853)=-2.328$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $7.159$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=7.159$ ✔。兩個時刻都對上，振幅與相位就同時確認了。這份平時考的學長姐答案卷（照片 IMG_5604）寫 $E_0=7.528$、$\alpha=108.01^\circ$，和本題一致。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2017q1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學平時考（2017-04-12）第 1 題（105下）</span></div>
+    <h4>3 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2017q1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2017q1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (20%) $E=E_0\cos(\alpha-\omega t)=2\sin(\frac{\pi}{6}-\omega t)-3\sin(\frac{\pi}{3}+\omega t)-\cos(\frac{\pi}{4}+\omega t)$</p><p>試求：① $E_0$ $(E_0\ge0)$　② $\alpha$ $(\pi\ge\alpha>-\pi)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E=E_0\cos(\alpha-\omega t)\\&=2\sin\!\left(\tfrac{\pi}{6}-\omega t\right)-3\sin\!\left(\tfrac{\pi}{3}+\omega t\right)\\&\quad-\cos\!\left(\tfrac{\pi}{4}+\omega t\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0\ge0$）；(b) $\alpha$（$\pi\ge\alpha>-\pi$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$2\sin\!\left(\tfrac{\pi}{6}-\omega t\right)$</td><td>題目等號右邊第 1 項：係數 $2$、正弦、括號裡 $\omega t$ 前面是負號</td></tr>
+          <tr><td>第 2 項</td><td>$-3\sin\!\left(\tfrac{\pi}{3}+\omega t\right)$</td><td>題目等號右邊第 2 項：係數 $-3$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$-\cos\!\left(\tfrac{\pi}{4}+\omega t\right)$</td><td>題目等號右邊第 3 項：係數 $-1$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>3 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0\ge0$</td><td>題目「$(E_0\ge0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$\pi\ge\alpha>-\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0\ge0$）；(b) 相位角 $\alpha$（$\pi\ge\alpha>-\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>3 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、1 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2017q1-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $2\sin\!\left(\tfrac{\pi}{6}-\omega t\right)$：$\sin x=\cos(x-\tfrac{\pi}{2})$，$\sin\!\left(\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(\tfrac{\pi}{6}-\tfrac{\pi}{2}-\omega t\right)=\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)$。所以這一項 $=2\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)$，$A_1=2$、$\alpha_1=-\tfrac{\pi}{3}$（$-60^\circ$）。</li>
+          <li>第 2 項 $-3\sin\!\left(\tfrac{\pi}{3}+\omega t\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(\tfrac{\pi}{6}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(-\tfrac{5\pi}{6}-\omega t\right)$。所以這一項 $=3\cos\!\left(-\tfrac{5\pi}{6}-\omega t\right)$，$A_2=3$、$\alpha_2=-\tfrac{5\pi}{6}$（$-150^\circ$）。</li>
+          <li>第 3 項 $-\cos\!\left(\tfrac{\pi}{4}+\omega t\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$，$A_3=1$、$\alpha_3=\tfrac{3\pi}{4}$（$135^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=2\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)+3\cos\!\left(-\tfrac{5\pi}{6}-\omega t\right)\\&\quad+\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2017q1-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$2$</td><td>$-\tfrac{\pi}{3}$</td><td>$2\cos(-\tfrac{\pi}{3})=1.000$</td><td>$2\sin(-\tfrac{\pi}{3})=-1.732$</td></tr>
+            <tr><td>2</td><td>$3$</td><td>$-\tfrac{5\pi}{6}$</td><td>$3\cos(-\tfrac{5\pi}{6})=-2.598$</td><td>$3\sin(-\tfrac{5\pi}{6})=-1.500$</td></tr>
+            <tr><td>3</td><td>$1$</td><td>$\tfrac{3\pi}{4}$</td><td>$1\cos(\tfrac{3\pi}{4})=-0.707$</td><td>$1\sin(\tfrac{3\pi}{4})=0.707$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=-2.305$</td><td>$E_0\sin\alpha=-2.525$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2017q1-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=-2.305$、$E_0\sin\alpha=-2.525$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(-2.305)^2+(-2.525)^2}=\sqrt{11.689}=3.419$$
+        <p>題目要求 $E_0\ge0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2017q1-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{-2.525}{-2.305}=1.0953$$
+        <p>$E_0\cos\alpha\lt0$、$E_0\sin\alpha\lt0$，相量在<b>第三象限</b>；計算機給的 $\tan^{-1}(1.0953)=0.8309$ 在第一象限，要減 $\pi$：$\alpha=0.8309-\pi=-2.3107\ \text{rad}$，也就是 $-132.39^\circ$（$-0.7355\pi$）。</p>
+        <p>已經在題目要求的 $\pi\ge\alpha>-\pi$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=3.42$；(b) $\alpha=-2.311\ \text{rad}$（$-132.4^\circ$）。也就是 $E=3.42\cos(-2.311-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：3 項直接相加得 $-2.305$，應該等於 $E_0\cos\alpha=3.419\times\cos(-2.3107)=-2.305$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $-2.525$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=-2.525$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2007m4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2007-04-24）第 4 題（95下）</span></div>
+    <h4>3 個同頻率弦波疊加：求 $E_0$ 與 $\phi$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2007m4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2007m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>4. (20%) $E=E_0\sin(\omega t+\phi)=3\cos(\omega t-\frac{\pi}{4})-2\cos(\omega t+\frac{\pi}{3})+4\sin(-\omega t+\frac{3}{4}\pi)$</p><p>試求　(a) $E_0$ $(E_0\ge0)$　(b) $\phi$ $(0\le\phi<2\pi)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E=E_0\sin(\omega t+\phi)\\&=3\cos\!\left(\omega t-\tfrac{\pi}{4}\right)-2\cos\!\left(\omega t+\tfrac{\pi}{3}\right)\\&\quad+4\sin\!\left(-\omega t+\tfrac{3}{4}\pi\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0\ge0$）；(b) $\phi$（$0\le\phi\lt2\pi$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$3\cos\!\left(\omega t-\tfrac{\pi}{4}\right)$</td><td>題目等號右邊第 1 項：係數 $3$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 2 項</td><td>$-2\cos\!\left(\omega t+\tfrac{\pi}{3}\right)$</td><td>題目等號右邊第 2 項：係數 $-2$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$4\sin\!\left(-\omega t+\tfrac{3}{4}\pi\right)$</td><td>題目等號右邊第 3 項：係數 $4$、正弦、括號裡 $\omega t$ 前面是負號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>3 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\sin(\omega t+\phi)$</td><td>題目等號左邊用的是 <b>sin</b>、而且是 $\omega t+\phi$，和課本的 $E_0\cos(\alpha-\omega t)$ 不同，最後要換回來</td></tr>
+          <tr><td>振幅條件</td><td>$E_0\ge0$</td><td>題目「$(E_0\ge0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$0\le\phi\lt2\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0\ge0$）；(b) 相位角 $\phi$（$0\le\phi\lt2\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>3 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 1 個 sin、2 個 cos，還有 1 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2007m4-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $3\cos\!\left(\omega t-\tfrac{\pi}{4}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(-\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(\tfrac{\pi}{4}-\omega t\right)$。所以這一項 $=3\cos\!\left(\tfrac{\pi}{4}-\omega t\right)$，$A_1=3$、$\alpha_1=\tfrac{\pi}{4}$（$45^\circ$）。</li>
+          <li>第 2 項 $-2\cos\!\left(\omega t+\tfrac{\pi}{3}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$。所以這一項 $=2\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$，$A_2=2$、$\alpha_2=\tfrac{2\pi}{3}$（$120^\circ$）。</li>
+          <li>第 3 項 $4\sin\!\left(-\omega t+\tfrac{3}{4}\pi\right)$：$\sin x=\cos(x-\tfrac{\pi}{2})$，$\sin\!\left(\tfrac{3\pi}{4}-\omega t\right)=\cos\!\left(\tfrac{3\pi}{4}-\tfrac{\pi}{2}-\omega t\right)=\cos\!\left(\tfrac{\pi}{4}-\omega t\right)$。所以這一項 $=4\cos\!\left(\tfrac{\pi}{4}-\omega t\right)$，$A_3=4$、$\alpha_3=\tfrac{\pi}{4}$（$45^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=3\cos\!\left(\tfrac{\pi}{4}-\omega t\right)+2\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)\\&\quad+4\cos\!\left(\tfrac{\pi}{4}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2007m4-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$3$</td><td>$\tfrac{\pi}{4}$</td><td>$3\cos(\tfrac{\pi}{4})=2.121$</td><td>$3\sin(\tfrac{\pi}{4})=2.121$</td></tr>
+            <tr><td>2</td><td>$2$</td><td>$\tfrac{2\pi}{3}$</td><td>$2\cos(\tfrac{2\pi}{3})=-1.000$</td><td>$2\sin(\tfrac{2\pi}{3})=1.732$</td></tr>
+            <tr><td>3</td><td>$4$</td><td>$\tfrac{\pi}{4}$</td><td>$4\cos(\tfrac{\pi}{4})=2.828$</td><td>$4\sin(\tfrac{\pi}{4})=2.828$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=3.950$</td><td>$E_0\sin\alpha=6.682$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2007m4-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=3.950$、$E_0\sin\alpha=6.682$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(3.950)^2+(6.682)^2}=\sqrt{60.247}=7.762$$
+        <p>題目要求 $E_0\ge0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2007m4-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{6.682}{3.950}=1.6917$$
+        <p>$E_0\cos\alpha>0$、$E_0\sin\alpha>0$，相量在<b>第一象限</b>，計算機的 $\tan^{-1}$ 值本來就落在這個象限，直接可用：$\alpha=1.0369\ \text{rad}$，也就是 $59.41^\circ$（$0.3301\pi$）。</p>
+      </div>
+      <div class="step" data-step="o9-2007m4-s5" data-sym="alpha">
+        <span class="step-title">換回題目的 $\sin(\omega t+\phi)$ 形式</span>
+        <p>題目要的是 $E_0\sin(\omega t+\phi)$。用 $\sin x=\cos(x-\tfrac{\pi}{2})$ 再用 cos 是偶函數：</p>
+        $$E_0\sin(\omega t+\phi)=E_0\cos\!\left(\omega t+\phi-\tfrac{\pi}{2}\right)=E_0\cos\!\left(\tfrac{\pi}{2}-\phi-\omega t\right)$$
+        <p>和 $E_0\cos(\alpha-\omega t)$ 比較：$\alpha=\tfrac{\pi}{2}-\phi$，所以 $\phi=\tfrac{\pi}{2}-\alpha$。</p>
+        <p class="sub">代入 $\alpha=1.0369\ \text{rad}$（步驟 4）：</p>
+        $$\phi=\tfrac{\pi}{2}-1.0369=0.5339\ \text{rad}$$
+        <p>在 $0\le\phi\lt2\pi$ 裡面，就是 $30.59^\circ$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=7.76$；(b) $\phi=0.534\ \text{rad}\approx30.6^\circ$。也就是 $E=7.76\sin(\omega t+0.534)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：3 項直接相加得 $3.950$，應該等於 $E_0\cos\alpha=7.762\times\cos(1.0369)=3.950$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $6.682$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=6.682$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<h3 id="o9-old-four">8.2 四個波的相量疊加（2010、2021 期中考）</h3>
+
+<div class="problem" data-kind="exam" id="o9-2010m4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2010-04-28）第 4 題（98下）</span></div>
+    <h4>4 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2010m4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2010m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>4. (20%) $E=E_0\cos(\alpha-\omega t)=2\sin(\frac{\pi}{6}-\omega t)-3\cos(\omega t+\frac{\pi}{4})-\sin(\omega t-\frac{\pi}{3})+\cos(\omega t-\frac{\pi}{3})$</p><p>試求　① $E_0$ $(E_0\ge0)$　② $\alpha$ $(-\pi<\alpha\le\pi)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E=E_0\cos(\alpha-\omega t)\\&=2\sin\!\left(\tfrac{\pi}{6}-\omega t\right)-3\cos\!\left(\omega t+\tfrac{\pi}{4}\right)\\&\quad-\sin\!\left(\omega t-\tfrac{\pi}{3}\right)+\cos\!\left(\omega t-\tfrac{\pi}{3}\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0\ge0$）；(b) $\alpha$（$-\pi\lt\alpha\le\pi$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$2\sin\!\left(\tfrac{\pi}{6}-\omega t\right)$</td><td>題目等號右邊第 1 項：係數 $2$、正弦、括號裡 $\omega t$ 前面是負號</td></tr>
+          <tr><td>第 2 項</td><td>$-3\cos\!\left(\omega t+\tfrac{\pi}{4}\right)$</td><td>題目等號右邊第 2 項：係數 $-3$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$-\sin\!\left(\omega t-\tfrac{\pi}{3}\right)$</td><td>題目等號右邊第 3 項：係數 $-1$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 4 項</td><td>$\cos\!\left(\omega t-\tfrac{\pi}{3}\right)$</td><td>題目等號右邊第 4 項：係數 $1$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>4 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0\ge0$</td><td>題目「$(E_0\ge0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$-\pi\lt\alpha\le\pi$</td><td>題目 (b) 小題的括號</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0\ge0$）；(b) 相位角 $\alpha$（$-\pi\lt\alpha\le\pi$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>4 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、2 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2010m4-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $2\sin\!\left(\tfrac{\pi}{6}-\omega t\right)$：$\sin x=\cos(x-\tfrac{\pi}{2})$，$\sin\!\left(\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(\tfrac{\pi}{6}-\tfrac{\pi}{2}-\omega t\right)=\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)$。所以這一項 $=2\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)$，$A_1=2$、$\alpha_1=-\tfrac{\pi}{3}$（$-60^\circ$）。</li>
+          <li>第 2 項 $-3\cos\!\left(\omega t+\tfrac{\pi}{4}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=3\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$，$A_2=3$、$\alpha_2=\tfrac{3\pi}{4}$（$135^\circ$）。</li>
+          <li>第 3 項 $-\sin\!\left(\omega t-\tfrac{\pi}{3}\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(-\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\left(-\tfrac{\pi}{3}\right)-\omega t\right)=\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(\tfrac{5\pi}{6}-\omega t\right)=\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)$。所以這一項 $=\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)$，$A_3=1$、$\alpha_3=-\tfrac{\pi}{6}$（$-30^\circ$）。</li>
+          <li>第 4 項 $\cos\!\left(\omega t-\tfrac{\pi}{3}\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(-\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(\tfrac{\pi}{3}-\omega t\right)$。所以這一項 $=\cos\!\left(\tfrac{\pi}{3}-\omega t\right)$，$A_4=1$、$\alpha_4=\tfrac{\pi}{3}$（$60^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=2\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)+3\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)\\&\quad+\cos\!\left(-\tfrac{\pi}{6}-\omega t\right)+\cos\!\left(\tfrac{\pi}{3}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2010m4-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$2$</td><td>$-\tfrac{\pi}{3}$</td><td>$2\cos(-\tfrac{\pi}{3})=1.000$</td><td>$2\sin(-\tfrac{\pi}{3})=-1.732$</td></tr>
+            <tr><td>2</td><td>$3$</td><td>$\tfrac{3\pi}{4}$</td><td>$3\cos(\tfrac{3\pi}{4})=-2.121$</td><td>$3\sin(\tfrac{3\pi}{4})=2.121$</td></tr>
+            <tr><td>3</td><td>$1$</td><td>$-\tfrac{\pi}{6}$</td><td>$1\cos(-\tfrac{\pi}{6})=0.866$</td><td>$1\sin(-\tfrac{\pi}{6})=-0.500$</td></tr>
+            <tr><td>4</td><td>$1$</td><td>$\tfrac{\pi}{3}$</td><td>$1\cos(\tfrac{\pi}{3})=0.500$</td><td>$1\sin(\tfrac{\pi}{3})=0.866$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=0.245$</td><td>$E_0\sin\alpha=0.755$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2010m4-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=0.245$、$E_0\sin\alpha=0.755$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(0.245)^2+(0.755)^2}=\sqrt{0.630}=0.794$$
+        <p>題目要求 $E_0\ge0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2010m4-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{0.755}{0.245}=3.0866$$
+        <p>$E_0\cos\alpha>0$、$E_0\sin\alpha>0$，相量在<b>第一象限</b>，計算機的 $\tan^{-1}$ 值本來就落在這個象限，直接可用：$\alpha=1.2575\ \text{rad}$，也就是 $72.05^\circ$（$0.4003\pi$）。</p>
+        <p>已經在題目要求的 $-\pi\lt\alpha\le\pi$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=0.79$；(b) $\alpha=1.257\ \text{rad}$（$72.0^\circ$）。也就是 $E=0.79\cos(1.257-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：4 項直接相加得 $0.245$，應該等於 $E_0\cos\alpha=0.794\times\cos(1.2575)=0.245$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $0.755$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=0.755$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2021m1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2021-04-27）第 1 題（109下）</span></div>
+    <h4>4 個同頻率弦波疊加：求 $E_0$ 與 $\alpha$ <span class="must teacher">老師：一定會考</span> <span class="must exam">考古高頻 5/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2021m1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2021m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (20%) $E=E_0\cos(\alpha-\omega t)=3\sin\left(\frac{\pi}{3}+\omega t\right)-2\cos\left(\frac{\pi}{4}+\omega t\right)-4\sin\left(\frac{\pi}{6}-\omega t\right)+3\cos\left(-\frac{\pi}{3}+\omega t\right)$，</p><p>試求：a. $E_0$ $(E_0\ge0)$；b. $\alpha$ $(180^\circ\ge\alpha>-180^\circ)$。</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span>$$\begin{aligned}&E=E_0\cos(\alpha-\omega t)\\&=3\sin\!\left(\tfrac{\pi}{3}+\omega t\right)-2\cos\!\left(\tfrac{\pi}{4}+\omega t\right)\\&\quad-4\sin\!\left(\tfrac{\pi}{6}-\omega t\right)+3\cos\!\left(-\tfrac{\pi}{3}+\omega t\right)\end{aligned}$$<p>試求 (a) $E_0$（$E_0\ge0$）；(b) $\alpha$（$180^\circ\ge\alpha>-180^\circ$）。（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 項</td><td>$3\sin\!\left(\tfrac{\pi}{3}+\omega t\right)$</td><td>題目等號右邊第 1 項：係數 $3$、正弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 2 項</td><td>$-2\cos\!\left(\tfrac{\pi}{4}+\omega t\right)$</td><td>題目等號右邊第 2 項：係數 $-2$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>第 3 項</td><td>$-4\sin\!\left(\tfrac{\pi}{6}-\omega t\right)$</td><td>題目等號右邊第 3 項：係數 $-4$、正弦、括號裡 $\omega t$ 前面是負號</td></tr>
+          <tr><td>第 4 項</td><td>$3\cos\!\left(-\tfrac{\pi}{3}+\omega t\right)$</td><td>題目等號右邊第 4 項：係數 $3$、餘弦、括號裡 $\omega t$ 前面是正號</td></tr>
+          <tr><td>頻率</td><td>每一項都是同一個 $\omega$</td><td>4 項括號裡都是「$\omega t$」：同頻率，合成後還是頻率 $\omega$ 的單一弦波（題目沒寫出來，要自己看出）</td></tr>
+          <tr><td>答案的形式</td><td>$E_0\cos(\alpha-\omega t)$</td><td>題目等號左邊（老師一定用這個形式）</td></tr>
+          <tr><td>振幅條件</td><td>$E_0\ge0$</td><td>題目「$(E_0\ge0)$」：振幅取正，負號全部吸收到相位裡</td></tr>
+          <tr><td>相位範圍</td><td>$180^\circ\ge\alpha>-180^\circ$</td><td>題目 (b) 小題的括號（以度為單位）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) 合成波的振幅 $E_0$（$E_0\ge0$）；(b) 相位角 $\alpha$（$180^\circ\ge\alpha>-180^\circ$）。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>4 項的頻率都一樣（括號裡都是 $\omega t$），只是振幅和相位不同，<b>所以</b>合成結果仍然是同一個頻率的弦波，可以寫成 $E_0\cos(\alpha-\omega t)$（課本式 (11)–(13)）。這正是老師說「一定會考」的題型：「把它寫成 $\cos(\alpha-\omega t)$ 的這種形式，再利用相量的概念去解」（逐字稿 03:35）。</p>
+      <p><b>因為</b>題目混了 2 個 sin、2 個 cos，還有 2 個負係數、$\omega t$ 前面的正負號也不一樣，直接用和差化積會算到亂掉，<b>所以</b>先把<b>每一項都改寫成「正振幅 × $\cos(\alpha_i-\omega t)$」</b>：sin 用 $\sin x=\cos(\tfrac{\pi}{2}-x)$ 換成 cos，$+\omega t$ 用 cos 是偶函數翻過來，負號用 $-\cos x=\cos(x+\pi)$ 吸進相位。統一之後，每一項就是一個長度 $A_i$、角度 $\alpha_i$ 的相量（向量）。</p>
+      <p><b>因為</b>相量相加就是向量相加，<b>所以</b>分別把水平分量 $A_i\cos\alpha_i$、垂直分量 $A_i\sin\alpha_i$ 加起來，再用畢氏定理求長度 $E_0$、用 $\tan\alpha$ 求角度。最常錯的是最後一步：$\tan^{-1}$ 只給 $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ 的值，<b>一定要看兩個分量的正負號決定象限</b>，再調整到題目指定的範圍。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2021m1-s1" data-sym="alpha">
+        <span class="step-title">每一項改寫成 $A_i\cos(\alpha_i-\omega t)$</span>
+        <p>目標是讓每一項都長成「正的振幅 × $\cos(\text{常數}-\omega t)$」，這樣常數就是那一項相量的角度。</p>
+        <ol>
+          <li>第 1 項 $3\sin\!\left(\tfrac{\pi}{3}+\omega t\right)$：$\sin x=\cos(\tfrac{\pi}{2}-x)$，$\sin\!\left(\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(\tfrac{\pi}{2}-\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(\tfrac{\pi}{6}-\omega t\right)$。所以這一項 $=3\cos\!\left(\tfrac{\pi}{6}-\omega t\right)$，$A_1=3$、$\alpha_1=\tfrac{\pi}{6}$（$30^\circ$）。</li>
+          <li>第 2 項 $-2\cos\!\left(\tfrac{\pi}{4}+\omega t\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(\tfrac{\pi}{4}+\omega t\right)=\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{4}-\omega t\right)=\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$。所以這一項 $=2\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)$，$A_2=2$、$\alpha_2=\tfrac{3\pi}{4}$（$135^\circ$）。</li>
+          <li>第 3 項 $-4\sin\!\left(\tfrac{\pi}{6}-\omega t\right)$：$\sin x=\cos(x-\tfrac{\pi}{2})$，$\sin\!\left(\tfrac{\pi}{6}-\omega t\right)=\cos\!\left(\tfrac{\pi}{6}-\tfrac{\pi}{2}-\omega t\right)=\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)$；係數是負的，用 $-\cos x=\cos(x+\pi)$：$-\cos\!\left(-\tfrac{\pi}{3}-\omega t\right)=\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$。所以這一項 $=4\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)$，$A_3=4$、$\alpha_3=\tfrac{2\pi}{3}$（$120^\circ$）。</li>
+          <li>第 4 項 $3\cos\!\left(-\tfrac{\pi}{3}+\omega t\right)$：cos 是偶函數：$\cos x=\cos(-x)$，$\cos\!\left(-\tfrac{\pi}{3}+\omega t\right)=\cos\!\left(\tfrac{\pi}{3}-\omega t\right)$。所以這一項 $=3\cos\!\left(\tfrac{\pi}{3}-\omega t\right)$，$A_4=3$、$\alpha_4=\tfrac{\pi}{3}$（$60^\circ$）。</li>
+        </ol>
+        <p>整理後：</p>
+        $$\begin{aligned}E&=3\cos\!\left(\tfrac{\pi}{6}-\omega t\right)+2\cos\!\left(\tfrac{3\pi}{4}-\omega t\right)\\&\quad+4\cos\!\left(\tfrac{2\pi}{3}-\omega t\right)+3\cos\!\left(\tfrac{\pi}{3}-\omega t\right)\end{aligned}$$
+      </div>
+      <div class="step" data-step="o9-2021m1-s2" data-sym="E0,alpha">
+        <span class="step-title">相量的水平與垂直分量相加</span>
+        <p>把 $E_0\cos(\alpha-\omega t)$ 展開成 $E_0\cos\alpha\cos\omega t+E_0\sin\alpha\sin\omega t$，每一項也這樣展開，比較 $\cos\omega t$ 與 $\sin\omega t$ 的係數，就是課本式 (12)(13) 的兩個和：</p>
+        $$E_0\cos\alpha=\sum_i A_i\cos\alpha_i,\qquad E_0\sin\alpha=\sum_i A_i\sin\alpha_i$$
+        <p class="sub">代入步驟 1 得到的 $A_i$、$\alpha_i$：</p>
+        <div class="symbol-table-wrap"><table>
+          <thead><tr><th>$i$</th><th>$A_i$</th><th>$\alpha_i$</th><th>$A_i\cos\alpha_i$</th><th>$A_i\sin\alpha_i$</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$3$</td><td>$\tfrac{\pi}{6}$</td><td>$3\cos(\tfrac{\pi}{6})=2.598$</td><td>$3\sin(\tfrac{\pi}{6})=1.500$</td></tr>
+            <tr><td>2</td><td>$2$</td><td>$\tfrac{3\pi}{4}$</td><td>$2\cos(\tfrac{3\pi}{4})=-1.414$</td><td>$2\sin(\tfrac{3\pi}{4})=1.414$</td></tr>
+            <tr><td>3</td><td>$4$</td><td>$\tfrac{2\pi}{3}$</td><td>$4\cos(\tfrac{2\pi}{3})=-2.000$</td><td>$4\sin(\tfrac{2\pi}{3})=3.464$</td></tr>
+            <tr><td>4</td><td>$3$</td><td>$\tfrac{\pi}{3}$</td><td>$3\cos(\tfrac{\pi}{3})=1.500$</td><td>$3\sin(\tfrac{\pi}{3})=2.598$</td></tr>
+            <tr><td>合計</td><td></td><td></td><td>$E_0\cos\alpha=0.684$</td><td>$E_0\sin\alpha=8.976$</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="step" data-step="o9-2021m1-s3" data-sym="E0">
+        <span class="step-title">(a) 合成振幅：畢氏定理</span>
+        $$E_0=\sqrt{(E_0\cos\alpha)^2+(E_0\sin\alpha)^2}$$
+        <p class="sub">代入 $E_0\cos\alpha=0.684$、$E_0\sin\alpha=8.976$（步驟 2 的合計）：</p>
+        $$E_0=\sqrt{(0.684)^2+(8.976)^2}=\sqrt{81.043}=9.002$$
+        <p>題目要求 $E_0\ge0$，取正根即可。</p>
+      </div>
+      <div class="step" data-step="o9-2021m1-s4" data-sym="alpha">
+        <span class="step-title">(b) 相位角：先判斷象限</span>
+        $$\tan\alpha=\frac{E_0\sin\alpha}{E_0\cos\alpha}$$
+        <p class="sub">代入步驟 2 的兩個合計：</p>
+        $$\tan\alpha=\frac{8.976}{0.684}=13.1260$$
+        <p>$E_0\cos\alpha>0$、$E_0\sin\alpha>0$，相量在<b>第一象限</b>，計算機的 $\tan^{-1}$ 值本來就落在這個象限，直接可用：$\alpha=1.4948\ \text{rad}$，也就是 $85.64^\circ$（$0.4758\pi$）。</p>
+        <p>題目要用度：$\alpha=85.64^\circ$，在 $180^\circ\ge\alpha>-180^\circ$ 裡面。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_0=9.00$；(b) $\alpha=85.6^\circ$（$1.495\ \text{rad}$）。也就是 $E=9.00\cos(85.6^\circ-\omega t)$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>代 $\omega t=0$ 回原式：4 項直接相加得 $0.684$，應該等於 $E_0\cos\alpha=9.002\times\cos(1.4948)=0.684$ ✔；代 $\omega t=\tfrac{\pi}{2}$：原式得 $8.976$，應該等於 $E_0\cos(\alpha-\tfrac{\pi}{2})=E_0\sin\alpha=8.976$ ✔。兩個時刻都對上，振幅與相位就同時確認了。</p></div>
+  </div>
+</div>
+
+<h3 id="o9-old-sw">8.3 駐波拆成兩個行進波（2012 期中考、2014 平時考）</h3>
+
+<div class="problem" data-kind="exam" id="o9-2012m1">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學期中考（2012-05-02）第 1 題（100下）</span></div>
+    <h4>把駐波 $100\cos(4\pi x)\sin(5\pi t)$ 拆成兩個行進波 <span class="must exam">考古 1/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2012m1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2012m1"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>1. (20%) 某一駐波 $E(x,t)=100\cdot\cos(4\pi x)\sin(5\pi t)$，其中 $x$ 以米為單位，$t$ 以秒為單位。</p><p>(a) 試將 $E(x,t)$ 表示成兩個行進方向相反的正弦波的疊加</p><p>(b) 在 (a) 小題中的正弦波之波長為多少米？</p><p>(c) 在 (a) 小題中的正弦波之頻率為多少 Hz？</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>某一駐波 $E(x,t)=100\cos(4\pi x)\sin(5\pi t)$，其中 $x$ 以公尺、$t$ 以秒為單位。(a) 把 $E(x,t)$ 表示成兩個行進方向相反的正弦波的疊加；(b) (a) 中正弦波的波長是多少公尺？(c) (a) 中正弦波的頻率是多少 Hz？（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>駐波振幅</td><td>$100$</td><td>「$E(x,t)=100\cos(4\pi x)\sin(5\pi t)$」最前面的係數</td></tr>
+          <tr><td>波數</td><td>$k=4\pi\ \text{m}^{-1}$</td><td>$\cos(4\pi x)$，而且「$x$ 以公尺為單位」</td></tr>
+          <tr><td>角頻率</td><td>$\omega=5\pi\ \text{s}^{-1}$</td><td>$\sin(5\pi t)$，而且「$t$ 以秒為單位」</td></tr>
+          <tr><td>要寫的形式</td><td>兩個<b>正弦</b>波</td><td>(a)「兩個行進方向相反的正弦波」：用 sin 表示</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $E=E_a+E_b$ 的兩個行進波；(b) 波長 $\lambda$；(c) 頻率 $\nu$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>駐波是空間因子 × 時間因子的乘積，而兩個反向行進波相加會得到這種乘積（第 4.2 節），<b>所以</b>反過來用積化和差 $\sin A\cos B=\tfrac12[\sin(A+B)+\sin(A-B)]$，把乘積拆成兩個 $\sin(\text{常數}\cdot x\pm\text{常數}\cdot t)$ 的和。</p>
+      <p><b>因為</b>拆開後每個行進波的 $x$ 係數就是 $k$、$t$ 係數就是 $\omega$，和原來駐波的一樣，<b>所以</b>波長 $\lambda=2\pi/k$、頻率 $\nu=\omega/2\pi$。常見錯誤：把積化和差的 $\tfrac12$ 乘到角度上（變成 $\tfrac{5\pi}{2}t$），頻率就錯成一半。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2012m1-s1" data-sym="k,omega">
+        <span class="step-title">(a) 積化和差</span>
+        $$\sin A\cos B=\tfrac12\left[\sin(A+B)+\sin(A-B)\right]$$
+        <p class="sub">令 $A=5\pi t$、$B=4\pi x$（題目的兩個因子），係數 100 保留：</p>
+        $$E=100\sin(5\pi t)\cos(4\pi x)=50\sin(5\pi t+4\pi x)+50\sin(5\pi t-4\pi x)$$
+      </div>
+      <div class="step" data-step="o9-2012m1-s2">
+        <span class="step-title">判斷兩個波的行進方向</span>
+        <p>相位固定的點：$5\pi t+4\pi x=$ 常數 ⟹ $t$ 增加時 $x$ 減少，第一項往 $-x$ 走；$5\pi t-4\pi x=$ 常數 ⟹ $x$ 隨 $t$ 增加，第二項往 $+x$ 走。也可以寫成</p>
+        $$E=50\sin(4\pi x+5\pi t)-50\sin(4\pi x-5\pi t)$$
+        <p>（第二項用 $\sin(-\theta)=-\sin\theta$ 換順序），兩種寫法相等。</p>
+      </div>
+      <div class="step" data-step="o9-2012m1-s3" data-sym="k">
+        <span class="step-title">(b) 波長</span>
+        $$\lambda=\frac{2\pi}{k}$$
+        <p class="sub">代入 $k=4\pi\ \text{m}^{-1}$（步驟 1 中 $x$ 的係數）：</p>
+        $$\lambda=\frac{2\pi}{4\pi\ \text{m}^{-1}}=0.5\ \text{m}$$
+      </div>
+      <div class="step" data-step="o9-2012m1-s4" data-sym="omega">
+        <span class="step-title">(c) 頻率</span>
+        $$\nu=\frac{\omega}{2\pi}$$
+        <p class="sub">代入 $\omega=5\pi\ \text{s}^{-1}$（步驟 1 中 $t$ 的係數）：</p>
+        $$\nu=\frac{5\pi\ \text{s}^{-1}}{2\pi}=2.5\ \text{Hz}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E=50\sin(4\pi x+5\pi t)+50\sin(5\pi t-4\pi x)$：振幅各 50，前者往 $-x$、後者往 $+x$；(b) $\lambda=0.5\ \text{m}$；(c) $\nu=2.5\ \text{Hz}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>把 (a) 兩項用和差化積加回去：$50\cdot2\sin(5\pi t)\cos(4\pi x)=100\cos4\pi x\sin5\pi t$ ✔。波速 $\nu\lambda=1.25\ \text{m/s}=\omega/k$ ✔。雲端照片上的手寫答案把角度寫成 $\tfrac{5}{2}\pi t$、頻率 $1.25\ \text{Hz}$，是把 $\tfrac12$ 錯乘進角度；正確是 $2.5\ \text{Hz}$。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="o9-2014q3">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">下學期近代光學平時考（2014-04-09）第 3 題（102下）</span></div>
+    <h4>兩個反向餘弦波合成駐波：數學式、節點、波腹 <span class="must exam">考古 1/5</span></h4>
+    <button type="button" class="exam-btn" data-exam="o9-2014q3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="o9-2014q3"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>3. (20%) 兩道振幅相等的餘弦波，分別沿 $+x$ 與 $-x$ 方向行進。若其振幅為 10 m，頻率為 5 Hz，相位速度大小為 20 m/s，且兩者之初始相位角（$x=0=t$ 之相位角）均為 0。</p><p>(a) 試寫出此二道波的數學表示（以 cos 函數寫出）。</p><p>(b) 此二道波疊加後形成駐波，試寫出此駐波的數學表示（整理成單一項，不含加減號）。</p><p>(c) 試寫出此駐波節點的位置在哪些地方。</p><p>(d) 試寫出此駐波波腹的位置在哪些地方。</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>兩道振幅相等的餘弦波分別沿 $+x$ 與 $-x$ 方向行進，振幅 $10\ \text{m}$、頻率 $5\ \text{Hz}$、相位速度大小 $20\ \text{m/s}$，且兩者的初始相位角（$x=0=t$ 時的相位角）都是 0。(a) 寫出這兩道波的數學式（以 cos 函數寫出）；(b) 兩道波疊加後形成駐波，寫出駐波的數學式（整理成單一項，不含加減號）；(c) 駐波節點在哪些位置？(d) 波腹在哪些位置？（20%）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>振幅</td><td>$A=10\ \text{m}$</td><td>「振幅相等」「振幅為 $10\ \text{m}$」</td></tr>
+          <tr><td>頻率</td><td>$\nu=5\ \text{Hz}$</td><td>「頻率為 $5\ \text{Hz}$」</td></tr>
+          <tr><td>相位速度</td><td>$v_p=20\ \text{m/s}$</td><td>「相位速度大小為 $20\ \text{m/s}$」</td></tr>
+          <tr><td>初始相位</td><td>0</td><td>「$x=0=t$ 之相位角均為 0」：cos 括號裡沒有額外常數</td></tr>
+          <tr><td>方向</td><td>一個 $+x$、一個 $-x$</td><td>「分別沿 $+x$ 與 $-x$ 方向行進」</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：(a) $E_1$、$E_2$；(b) $E_1+E_2$ 寫成單一乘積；(c) 節點位置；(d) 波腹位置。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>行進波 $A\cos(kx\mp\omega t)$ 需要 $k$ 與 $\omega$，而題目給的是頻率和相位速度，<b>所以</b>先用 $\lambda=v_p/\nu$、$k=2\pi/\lambda$、$\omega=2\pi\nu$ 換出來。$kx-\omega t$ 往 $+x$ 走、$kx+\omega t$ 往 $-x$ 走。</p>
+      <p><b>因為</b>兩個 cos 相加可以用和差化積 $\cos A+\cos B=2\cos\tfrac{A+B}{2}\cos\tfrac{A-B}{2}$ 變成乘積，<b>所以</b>得到「空間因子 × 時間因子」的駐波；節點是空間因子為 0 的地方，波腹是空間因子絕對值最大的地方。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="o9-2014q3-s1" data-sym="k,omega">
+        <span class="step-title">由頻率與相位速度求 $\lambda$、$k$、$\omega$</span>
+        $$\lambda=\frac{v_p}{\nu},\qquad k=\frac{2\pi}{\lambda},\qquad \omega=2\pi\nu$$
+        <p class="sub">代入 $v_p=20\ \text{m/s}$、$\nu=5\ \text{Hz}$（題目）：</p>
+        $$\lambda=\frac{20\ \text{m/s}}{5\ \text{s}^{-1}}=4\ \text{m},\qquad k=\frac{2\pi}{4\ \text{m}}=\frac{\pi}{2}\ \text{m}^{-1},\qquad \omega=2\pi(5\ \text{s}^{-1})=10\pi\ \text{s}^{-1}$$
+      </div>
+      <div class="step" data-step="o9-2014q3-s2">
+        <span class="step-title">(a) 兩道行進波</span>
+        <p>初始相位為 0，所以 $x=0$、$t=0$ 時括號為 0：</p>
+        $$E_1=10\cos\!\left(\tfrac{\pi}{2}x-10\pi t\right)\ \text{m}\quad(+x),\qquad E_2=10\cos\!\left(\tfrac{\pi}{2}x+10\pi t\right)\ \text{m}\quad(-x)$$
+        <p>（$x$ 以 m、$t$ 以 s 計。$\cos(\omega t-kx)$ 的寫法也對，cos 是偶函數。）</p>
+      </div>
+      <div class="step" data-step="o9-2014q3-s3">
+        <span class="step-title">(b) 和差化積成單一項</span>
+        $$\cos A+\cos B=2\cos\frac{A+B}{2}\cos\frac{A-B}{2}$$
+        <p class="sub">代入 $A=\tfrac{\pi}{2}x+10\pi t$、$B=\tfrac{\pi}{2}x-10\pi t$（步驟 2）：$\tfrac{A+B}{2}=\tfrac{\pi}{2}x$、$\tfrac{A-B}{2}=10\pi t$：</p>
+        $$E=E_1+E_2=20\cos\!\left(\tfrac{\pi}{2}x\right)\cos(10\pi t)\ \text{m}$$
+      </div>
+      <div class="step" data-step="o9-2014q3-s4">
+        <span class="step-title">(c) 節點：空間因子為 0</span>
+        $$\cos\!\left(\tfrac{\pi}{2}x\right)=0\ \Longrightarrow\ \tfrac{\pi}{2}x=\left(n+\tfrac12\right)\pi\ \Longrightarrow\ x=(2n+1)\ \text{m}$$
+        <p>$n=0,\pm1,\pm2,\ldots$，也就是 $x=\pm1,\pm3,\pm5,\ldots\ \text{m}$。</p>
+      </div>
+      <div class="step" data-step="o9-2014q3-s5">
+        <span class="step-title">(d) 波腹：$|\cos|=1$</span>
+        $$\left|\cos\!\left(\tfrac{\pi}{2}x\right)\right|=1\ \Longrightarrow\ \tfrac{\pi}{2}x=n\pi\ \Longrightarrow\ x=2n\ \text{m}$$
+        <p>$n=0,\pm1,\pm2,\ldots$，也就是 $x=0,\pm2,\pm4,\ldots\ \text{m}$，振幅 $20\ \text{m}$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>(a) $E_1=10\cos(\tfrac{\pi}{2}x-10\pi t)$、$E_2=10\cos(\tfrac{\pi}{2}x+10\pi t)$（m）；(b) $E=20\cos(\tfrac{\pi}{2}x)\cos(10\pi t)$（m）；(c) 節點 $x=(2n+1)\ \text{m}$；(d) 波腹 $x=2n\ \text{m}$（$n$ 為整數）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>相鄰節點相距 $2\ \text{m}=\lambda/2$ ✔，波腹在節點正中間 ✔。$x=0$ 時 $E=20\cos10\pi t$，是兩波都在 $x=0$ 同相位的結果 ✔。學長姐答案卷（照片 IMG_5604）的節點 $x=2n+1$、波腹 $x=2n$ 一致。</p></div>
+  </div>
+</div>
+

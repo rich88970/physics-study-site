@@ -1,0 +1,377 @@
+<h2>四、修正規則 <span class="pg">板書 9/30 照片 6–7</span></h2>
+
+<p class="lead">照表猜的 $y_p$ 如果<strong>本身就是齊次解</strong>，代進左邊會得到 0，永遠等不到右邊——比較係數會出現「$0=2$」這種矛盾。修正規則（Modification rule）就是：把猜測乘上 $x$；乘一次還是齊次解（重根時），就再乘一次。這是待定係數法最常考、也最常錯的地方。</p>
+
+<h3 id="a3-md-board">4.1 板書：Modification rule <span class="pg-tag">照片 6–7</span></h3>
+
+<div class="box lecture board">
+  <span class="box-title">板書 · 9/30（照片 6–7）</span>
+  <p>ex.（Modification rule）　Solve $y''-4y'+4y=\boxed{2e^{2x}}$　Ⓐ</p>
+  <p>Step 1.　$y''-4y'+4y=0$ → 重根 2 → $y_1=e^{2x}$。根據降階法，常數係數的二階線性 ODE 的第二個可能解 $y_2=xy_1=xe^{2x}$</p>
+  <p>Step 2.　找 $y_p$：猜 $y_p=Ae^{2x}$。？$y_p$ 和 $y_1,y_2$ 線性獨立：$\dfrac{y_p}{y_1}=A$　✗</p>
+  <p>修正猜 $y_p=Axy_1=Axe^{2x}$：$\dfrac{y_p}{y_1}=Ax$ → $y_p$ 和 $y_1$ linear indep；$\dfrac{y_p}{y_2}=A$　✗</p>
+  <p>再修正，猜 $y_p=xy_2$：$y_p=Ax^2e^{2x}$。將 $y_p,y_p',y_p''$ 代入 Ⓐ，比較係數：</p>
+  <p>$e^{2x}$：$2K=2\to K=1$；$xe^{2x}$：$0=0$；$x^2e^{2x}$：$0=0$　→　$y_p=x^2e^{2x}$</p>
+  <p>Step 3.　$y=c_1e^{2x}+c_2xe^{2x}+x^2e^{2x}$</p>
+  <p><span class="added">網站補充（照片缺漏）</span>比較係數那一行板書把未知數寫成 $K$，就是前一行的 $A$。$y_p'$、$y_p''$ 的計算照片裡沒有，補在下面的例題卡。</p>
+</div>
+
+<p><strong>老師的判斷方法：比值。</strong>猜測和 $y_1$ 或 $y_2$ 的比值如果是常數（$y_p/y_1=A$），就表示猜測只是齊次解的倍數，代進去一定得 0。這和第 2 章「$y_1/y_2\neq$ 常數才獨立」是同一個檢查。</p>
+
+<p><strong>更快的判斷：看特徵根的重數。</strong>右邊的 $e^{kx}$（或 $e^{kx}\cos\omega x$ 對應 $k\pm i\omega$，多項式對應 $k=0$）：</p>
+<div class="symbol-table-wrap"><table>
+  <thead><tr><th>$k$（或 $k\pm i\omega$）是特徵根嗎</th><th>照表的猜測要乘</th><th>例子</th></tr></thead>
+  <tbody>
+    <tr><td>不是</td><td>$x^0$（不修正）</td><td>$y''+9y=x\cos x$（根 $\pm3i$，右邊 $\pm i$）</td></tr>
+    <tr><td>單根</td><td>$x^1$</td><td>$y''+y=2x\sin x$（根 $\pm i$）</td></tr>
+    <tr><td>重根</td><td>$x^2$</td><td>$y''-4y'+4y=2e^{2x}$（重根 2）</td></tr>
+  </tbody>
+</table></div>
+<p>這和第 3 節 3.2 的捷徑一致：令 $y=e^{kx}u$ 後，$k$ 是單根時 $u$ 的係數 $p(k)=0$，只剩 $u''+p'(k)u'$，要讓 $u'$ 是多項式，$u$ 就得高一次；重根時連 $p'(k)=0$，只剩 $u''$，$u$ 要高兩次。</p>
+
+<div class="box pitfall">
+  <span class="box-title">乘 $x$ 是乘「整組」</span>
+  <p>右邊 $2x\sin x$、根 $\pm i$：照乘法規則猜 $(Ax+B)\cos x+(Cx+D)\sin x$，其中 $B\cos x+D\sin x$ 是齊次解。要把<strong>整組</strong>乘 $x$：$x[(Ax+B)\cos x+(Cx+D)\sin x]$，不是只把撞到的 $B\cos x+D\sin x$ 那兩項乘 $x$（那樣會漏掉 $x^2$ 項）。加總規則拆開的不同塊則各自判斷。</p>
+</div>
+
+<div class="problem" data-kind="example" id="a3-b4">
+  <header>
+    <div class="meta"><span class="chip">板書例題</span><span class="src">柯景元 9/30 板書 · 照片 6–7</span></div>
+    <h4>Modification rule：$y''-4y'+4y=2e^{2x}$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-b4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-b4"><span class="part-label original-label">板書原題</span>
+<div class="original-text" lang="en"><p>ex.（Modification rule）　Solve $y''-4y'+4y=2e^{2x}$　Ⓐ</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $y''-4y'+4y=2e^{2x}$ 的一般解，並說明為什麼 $Ae^{2x}$、$Axe^{2x}$ 都不能當特解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-4$、$b=4$</td><td>「$y''-4y'+4y$」：$(\lambda-2)^2$，重根 2</td></tr>
+          <tr><td>非齊次項</td><td>$2e^{2x}$，$k=2$</td><td>「$=2e^{2x}$」：$k$ 等於特徵根，而且是重根</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：一般解；說明前兩個猜測為什麼失敗。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>齊次解是 $e^{2x}$、$xe^{2x}$，<b>所以</b>照表猜的 $Ae^{2x}$ 是 $y_1$ 的倍數、修正一次的 $Axe^{2x}$ 是 $y_2$ 的倍數，代進去都得 0。<b>因為</b> $k=2$ 是重根，<b>所以</b>要乘 $x^2$：猜 $Ax^2e^{2x}$。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-b4-s1" data-sym="y12,lam">
+        <span class="step-title">Step 1：齊次解</span>
+        $$\lambda^2-4\lambda+4=(\lambda-2)^2\ \Rightarrow\ y_1=e^{2x},\ y_2=xe^{2x}$$
+      </div>
+      <div class="step" data-step="a3-b4-s2">
+        <span class="step-title">前兩個猜測為什麼失敗</span>
+        <p>$L[e^{2x}]=(4-8+4)e^{2x}=0$，所以 $L[Ae^{2x}]=0\neq2e^{2x}$：比較係數得 $0=2$。$xe^{2x}=y_2$ 也是齊次解，$L[Axe^{2x}]=0$，同樣失敗。</p>
+      </div>
+      <div class="step" data-step="a3-b4-s3" data-sym="yp,K">
+        <span class="step-title">猜 $y_p=Ax^2e^{2x}$，求導</span>
+        $$\begin{aligned}y_p'&=A(2x+2x^2)e^{2x}\\y_p''&=A(2+8x+4x^2)e^{2x}\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-b4-s4">
+        <span class="step-title">代入 Ⓐ，比較係數</span>
+        $$\begin{aligned}y_p''-4y_p'+4y_p=Ae^{2x}\big[&(2+8x+4x^2)\\&-(8x+8x^2)+4x^2\big]\end{aligned}$$
+        <p>依 $e^{2x}$、$xe^{2x}$、$x^2e^{2x}$ 收集：$x^2$：$4-8+4=0$；$x$：$8-8=0$；常數：$2$。</p>
+        <p class="sub">和右邊 $2e^{2x}$（題目）比較：</p>
+        $$2A=2\ \Rightarrow\ A=1\qquad(\text{板書的 }2K=2)$$
+      </div>
+      <div class="step" data-step="a3-b4-s5" data-sym="c12">
+        <span class="step-title">Step 3：一般解</span>
+        $$y=c_1e^{2x}+c_2xe^{2x}+x^2e^{2x}=(c_1+c_2x+x^2)e^{2x}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_p=x^2e^{2x}$，$y=(c_1+c_2x+x^2)e^{2x}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>捷徑：$y=e^{2x}u$，$2k+a=0$、$k^2+ak+b=0$，方程式變成 $u''=2$，$u=x^2$ ✔（$c_1+c_2x$ 正是 $u''=0$ 的解，也就是齊次解）。第 6 節會用參數變換法再算一次，結果相同。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="textbook" id="a3-hw3">
+  <header>
+    <div class="meta"><span class="chip">作業</span><span class="src">9/30 作業 第 3 題</span></div>
+    <h4>乘法加修正：$y''+y=2x\sin x$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-hw3">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-hw3"><span class="part-label original-label">作業原題</span>
+<div class="original-text" lang="en"><p>3. Find the particular solution of $y''+y=2x\sin(x)$.</p><p>Hint: 修正規則.</p><p>Ans : $y_p=-\dfrac12x^2\cos(x)+\dfrac12x\sin(x)$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>求 $y''+y=2x\sin x$ 的特解。提示：修正規則。（老師給的答案：$y_p=-\tfrac12x^2\cos x+\tfrac12x\sin x$）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=0$、$b=1$</td><td>「$y''+y$」：特徵根 $\pm i$（單根）</td></tr>
+          <tr><td>非齊次項</td><td>$2x\sin x$：一次多項式 × 頻率 1</td><td>「$=2x\sin x$」：頻率和齊次解相同</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：特解 $y_p$，並驗證老師的答案。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>右邊是 $x\times\sin x$，<b>所以</b>先用乘法規則猜 $(Ax+B)\cos x+(Cx+D)\sin x$。<b>因為</b> $\pm i$ 是特徵根（單根），其中 $B\cos x+D\sin x$ 是齊次解，<b>所以</b>整組乘 $x$。</p>
+      <p>計算上用兩個公式省事：$(p\cos x)''+p\cos x=p''\cos x-2p'\sin x$、$(q\sin x)''+q\sin x=q''\sin x+2q'\cos x$（$p,q$ 是多項式）。$x^2$ 項會自動消掉，這正是乘 $x$ 的效果。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-hw3-s1" data-sym="yp,K">
+        <span class="step-title">猜測（修正後）</span>
+        $$y_p=x\left[(Ax+B)\cos x+(Cx+D)\sin x\right]=p\cos x+q\sin x$$
+        <p>其中 $p=Ax^2+Bx$、$q=Cx^2+Dx$。</p>
+      </div>
+      <div class="step" data-step="a3-hw3-s2">
+        <span class="step-title">兩個公式的由來</span>
+        <p>$(p\cos x)'=p'\cos x-p\sin x$，$(p\cos x)''=p''\cos x-2p'\sin x-p\cos x$，所以</p>
+        $$(p\cos x)''+p\cos x=p''\cos x-2p'\sin x$$
+        <p>同理 $(q\sin x)''+q\sin x=q''\sin x+2q'\cos x$。</p>
+      </div>
+      <div class="step" data-step="a3-hw3-s3">
+        <span class="step-title">代入</span>
+        <p class="sub">代入 $p'=2Ax+B$、$p''=2A$、$q'=2Cx+D$、$q''=2C$：</p>
+        $$\begin{aligned}y_p''+y_p=&\ (2A+2D+4Cx)\cos x\\&+(2C-2B-4Ax)\sin x\end{aligned}$$
+      </div>
+      <div class="step" data-step="a3-hw3-s4">
+        <span class="step-title">比較係數</span>
+        <p class="sub">和右邊 $2x\sin x$（題目）比較四種函數：</p>
+        $$\begin{aligned}x\cos x&:\ 4C=0&\cos x&:\ 2A+2D=0\\x\sin x&:\ -4A=2&\sin x&:\ 2C-2B=0\end{aligned}$$
+        <p>$A=-\tfrac12$、$C=0$、$B=0$、$D=\tfrac12$。</p>
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_p=-\tfrac12x^2\cos x+\tfrac12x\sin x$，與老師的答案相同；一般解再加 $c_1\cos x+c_2\sin x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y_p'=-\tfrac12x\cos x+\tfrac12x^2\sin x+\tfrac12\sin x$，$y_p''=\tfrac32x\sin x+\tfrac12x^2\cos x$；$y_p''+y_p=\tfrac32x\sin x+\tfrac12x\sin x=2x\sin x$ ✔。若忘了修正，$B,D$ 那兩項代入得 0，會出現 $0=$ 非零的矛盾。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="exam" id="a3-110a-m4">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應用數學期中考 2021.11.09 第 4 題（110上）</span></div>
+    <h4>右邊就是齊次解：$y''-2y'+2y=2e^x\cos x$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-110a-m4">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-110a-m4"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>應用數學期中考 (2021.11.09)　20 points for each problem</p><p>4. Find the particular solution of $y''-2y'+2y=2e^x\cos x$.</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>（20 分）求 $y''-2y'+2y=2e^x\cos x$ 的特解。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-2$、$b=2$</td><td>「$y''-2y'+2y$」：特徵根 $1\pm i$</td></tr>
+          <tr><td>非齊次項</td><td>$2e^x\cos x$，對應 $1\pm i$</td><td>「$=2e^x\cos x$」：正好是齊次解 $e^x\cos x$ 的 2 倍</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：特解 $y_p$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>特徵根 $1\pm i$ 和右邊對應的 $1\pm i$ 相同（單根），<b>所以</b>乘法規則的猜測 $e^x(A\cos x+B\sin x)$ 整個是齊次解，要乘 $x$：$y_p=xe^x(A\cos x+B\sin x)$。</p>
+      <p><b>因為</b>有 $e^x$ 因子，<b>所以</b>令 $y=e^xu$：$2k+a=0$、$k^2+ak+b=1$，方程式變成 $u''+u=2\cos x$，這是「無阻尼共振」的形式，計算非常短。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-110a-m4-s1" data-sym="lam">
+        <span class="step-title">特徵根與修正判斷</span>
+        $$\lambda^2-2\lambda+2=0\ \Rightarrow\ \lambda=1\pm i,\quad y_1=e^x\cos x,\ y_2=e^x\sin x$$
+        <p>右邊 $2e^x\cos x=2y_1$：一定要修正。</p>
+      </div>
+      <div class="step" data-step="a3-110a-m4-s2">
+        <span class="step-title">令 $y=e^xu$</span>
+        <p class="sub">代入 $k=1$、$a=-2$、$b=2$：$2k+a=0$、$k^2+ak+b=1-2+2=1$：</p>
+        $$u''+u=2\cos x$$
+      </div>
+      <div class="step" data-step="a3-110a-m4-s3" data-sym="K">
+        <span class="step-title">猜 $u=x(A\cos x+B\sin x)$</span>
+        <p>用上面作業第 3 題的兩個公式（$p=Ax$、$q=Bx$，$p''=q''=0$）：</p>
+        $$u''+u=-2A\sin x+2B\cos x$$
+        <p class="sub">和 $2\cos x$ 比較：$\sin x$：$-2A=0$；$\cos x$：$2B=2$：</p>
+        $$A=0,\ B=1,\qquad u=x\sin x$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y_p=xe^x\sin x$（一般解 $y=e^x(c_1\cos x+c_2\sin x)+xe^x\sin x$）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$u=x\sin x$：$u''=2\cos x-x\sin x$，$u''+u=2\cos x$ ✔，所以 $L[xe^x\sin x]=e^x(u''+u)=2e^x\cos x$ ✔。右邊是 $\cos$，特解卻是 $\sin$——修正後的猜測一定要 $\cos$、$\sin$ 都放。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a3-s04-1">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>兩塊都要修正：$y''-y=\cosh x$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s04-1">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''-y=\cosh x$，$y(0)=0$、$y'(0)=0$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=0$、$b=-1$</td><td>「$y''-y$」：特徵根 $\pm1$</td></tr>
+          <tr><td>非齊次項</td><td>$\tfrac12e^x+\tfrac12e^{-x}$</td><td>「$=\cosh x$」展開</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=0$、$y'(0)=0$</td><td>題目</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $\cosh x$ 拆開後的 $e^x$ 和 $e^{-x}$ <b>兩個都是</b>齊次解（特徵根 $\pm1$ 都是單根），<b>所以</b>加總規則拆成兩塊後，兩塊都要乘 $x$。用捷徑 $y=e^{\pm x}u$ 算 $L[xe^{\pm x}]$ 最快。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s04-1-s1" data-sym="y12">
+        <span class="step-title">齊次解與修正判斷</span>
+        $$\lambda^2-1=0\ \Rightarrow\ \lambda=\pm1,\quad y_c=c_1e^x+c_2e^{-x}$$
+        <p>猜 $y_p=Axe^x+Bxe^{-x}$。</p>
+      </div>
+      <div class="step" data-step="a3-s04-1-s2" data-sym="K">
+        <span class="step-title">兩塊各自代入</span>
+        <p class="sub">$xe^{x}$：$k=1$，$2k+a=2$、$k^2-1=0$，$u=x$ 代入 $u''+2u'$ 得 $2$；$xe^{-x}$：$k=-1$，$2k+a=-2$，得 $-2$：</p>
+        $$L[xe^x]=2e^x,\qquad L[xe^{-x}]=-2e^{-x}$$
+        <p>所以 $2A=\tfrac12$、$-2B=\tfrac12$：$A=\tfrac14$、$B=-\tfrac14$。</p>
+        $$y_p=\tfrac x4(e^x-e^{-x})=\tfrac x2\sinh x$$
+      </div>
+      <div class="step" data-step="a3-s04-1-s3" data-sym="c12">
+        <span class="step-title">代入初始條件</span>
+        <p>$y=c_1e^x+c_2e^{-x}+\tfrac x2\sinh x$，$y'=c_1e^x-c_2e^{-x}+\tfrac12\sinh x+\tfrac x2\cosh x$。</p>
+        <p class="sub">代入 $x=0$（$\sinh0=0$）與 $y(0)=0$、$y'(0)=0$：</p>
+        $$c_1+c_2=0,\qquad c_1-c_2=0\ \Rightarrow\ c_1=c_2=0$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=\tfrac x2\sinh x$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y'=\tfrac12\sinh x+\tfrac x2\cosh x$，$y''=\cosh x+\tfrac x2\sinh x$；$y''-y=\cosh x$ ✔。若沒修正，猜 $A\cosh x$ 會得到 $L[\cosh x]=0$，矛盾。</p></div>
+  </div>
+</div>
+
+<div class="problem" data-kind="self" id="a3-s04-2">
+  <header>
+    <div class="meta"><span class="chip">自編難題</span><span class="src">網站自編（非課本）</span></div>
+    <h4>多項式也會撞：$y''+3y'=6x+2+9e^{-3x}$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-s04-2">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''+3y'=6x+2+9e^{-3x}$，$y(0)=0$、$y'(0)=0$。</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=3$、$b=0$</td><td>「$y''+3y'$」：<b>沒有 $y$ 項</b>，特徵根 $0,-3$</td></tr>
+          <tr><td>非齊次項</td><td>$6x+2$（對應 $\lambda=0$）、$9e^{-3x}$（$\lambda=-3$）</td><td>右邊兩塊</td></tr>
+          <tr><td>初始條件</td><td>$y(0)=0$、$y'(0)=0$</td><td>題目</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：唯一解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b> $b=0$，常數（$\lambda=0$）是齊次解，<b>所以</b>多項式那一塊也要修正：照表的 $K_0+K_1x$ 整組乘 $x$。<b>因為</b> $-3$ 也是特徵根，<b>所以</b>指數那一塊也乘 $x$。兩塊撞到的原因不同，但規則一樣——這題考的是「多項式也可能撞到齊次解」。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-s04-2-s1" data-sym="y12">
+        <span class="step-title">齊次解</span>
+        $$\lambda^2+3\lambda=\lambda(\lambda+3)=0\ \Rightarrow\ y_c=c_1+c_2e^{-3x}$$
+      </div>
+      <div class="step" data-step="a3-s04-2-s2" data-sym="K">
+        <span class="step-title">多項式塊：猜 $x(K_0+K_1x)$</span>
+        <p>$y=K_0x+K_1x^2$：$y'=K_0+2K_1x$、$y''=2K_1$：</p>
+        $$2K_1+3K_0+6K_1x=6x+2$$
+        <p class="sub">比較：$x$：$6K_1=6$ ⟹ $K_1=1$；常數：$2+3K_0=2$ ⟹ $K_0=0$。這一塊是 $x^2$。</p>
+      </div>
+      <div class="step" data-step="a3-s04-2-s3">
+        <span class="step-title">指數塊：猜 $Axe^{-3x}$</span>
+        <p class="sub">捷徑 $k=-3$：$2k+a=-3$、$k^2+ak+b=0$，$u=Ax$ 代入 $u''-3u'$：</p>
+        $$-3Ae^{-3x}=9e^{-3x}\ \Rightarrow\ A=-3$$
+        <p>$y_p=x^2-3xe^{-3x}$。</p>
+      </div>
+      <div class="step" data-step="a3-s04-2-s4" data-sym="c12">
+        <span class="step-title">代入初始條件</span>
+        $$y=c_1+c_2e^{-3x}+x^2-3xe^{-3x}$$
+        $$y'=-3c_2e^{-3x}+2x-3e^{-3x}+9xe^{-3x}$$
+        <p class="sub">代入 $x=0$ 與 $y(0)=0$、$y'(0)=0$：</p>
+        $$c_1+c_2=0,\qquad -3c_2-3=0\ \Rightarrow\ c_2=-1,\ c_1=1$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=1-e^{-3x}+x^2-3xe^{-3x}$。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$L[x^2]=2+6x$ ✔；$L[xe^{-3x}]$：$(xe^{-3x})'=(1-3x)e^{-3x}$、$''=(-6+9x)e^{-3x}$，$''+3'=(-6+9x+3-9x)e^{-3x}=-3e^{-3x}$ ✔；$y'(0)=3+0-3=0$ ✔</p></div>
+  </div>
+</div>
+
+<h3 id="a3-md-old">4.2 更早年級的考古題 <span class="pg-tag">108 級下 2nd Order ODE 第 1(c) 題</span></h3>
+
+<p>和 110 上期中（$y''-2y'+2y=2e^x\cos x$）同一型：右邊的 $e^{kx}\sin\omega x$ 剛好對上齊次解，要乘 $x$。不同的是這題給的是<strong>兩點邊界條件</strong> $y(0)$、$y(\pi/4)$，不是 $y(0)$、$y'(0)$。</p>
+
+<div class="problem" data-kind="exam" id="a3-108b-1c">
+  <header>
+    <div class="meta"><span class="chip">考古題</span><span class="src">應數考古 108級下學期 2nd Order ODE and Fourier Series 第 1(c) 題</span></div>
+    <h4>要修正＋邊界條件：$y''-2y'+5y=8e^x\sin2x$，$y(0)=0$、$y(\pi/4)=1$</h4>
+    <button type="button" class="exam-btn" data-exam="a3-108b-1c">考試書寫版</button>
+  </header>
+  <div class="pbody">
+    <div class="part statement"><!-- original-question:start -->
+<section class="original-source" data-original-id="a3-108b-1c"><span class="part-label original-label">考卷原文</span>
+<div class="original-text" lang="en"><p>2nd Order ODE and Fourier Series</p><p>1. Solve the differential equations.</p><p>(c) Solve $y''-2y'+5y=8e^x\sin2x$ for $y(0)=0$, $y\left(\frac{\pi}{4}\right)=1$.</p><p>$y=e^{-\frac{\pi}{4}}e^x\sin2x-2xe^x\cos2x$</p></div>
+</section>
+<!-- original-question:end -->
+<span class="part-label">題目</span><p>解 $y''-2y'+5y=8e^x\sin2x$，$y(0)=0$、$y\big(\frac\pi4\big)=1$。（考卷附的答案：$y=e^{-\pi/4}e^x\sin2x-2xe^x\cos2x$。）</p></div>
+    <div class="part givens"><span class="part-label">從題目讀出的條件</span>
+      <table>
+        <thead><tr><th>量</th><th>數值</th><th>題目哪裡看到的</th></tr></thead>
+        <tbody>
+          <tr><td>係數</td><td>$a=-2$、$b=5$</td><td>左邊「$y''-2y'+5y$」</td></tr>
+          <tr><td>$g(x)$</td><td>$8e^x\sin2x$：$k=1$、$\omega=2$</td><td>右邊「$8e^x\sin2x$」；對應的複數 $k\pm i\omega=1\pm2i$</td></tr>
+          <tr><td>條件</td><td>$y(0)=0$、$y(\frac\pi4)=1$</td><td>「for $y(0)=0$, $y(\frac\pi4)=1$」：兩個點的函數值（邊界條件）</td></tr>
+        </tbody>
+      </table>
+      <p class="wanted"><b>要求</b>：滿足兩個條件的解 $y(x)$。</p>
+    </div>
+    <div class="part plan"><span class="part-label">為什麼這樣解</span>
+      <p><b>因為</b>齊次的特徵根是 $1\pm2i$，和右邊 $e^x\sin2x$ 對應的 $1\pm2i$ 完全相同（一重），<b>所以</b>照乘法規則猜的 $e^x(K_1\cos2x+K_2\sin2x)$ 本身是齊次解、代入會得 0，必須用修正規則乘上 $x$。</p>
+      <p><b>因為</b>右邊有 $e^x$，<b>所以</b>用 3 節的捷徑 $y=e^xu$ 把指數拿掉，只需處理 $u''+4u=8\sin2x$，代數最省。最後用 $\cos\frac\pi2=0$、$\sin\frac\pi2=1$ 代邊界條件。</p>
+    </div>
+    <div class="part solution"><span class="part-label">詳解</span>
+      <div class="step" data-step="a3-108b-1c-s1" data-sym="lam,y12">
+        <span class="step-title">Step 1 齊次解</span>
+        <p class="sub">代入 $a=-2$、$b=5$（題目）：</p>
+        $$\lambda=\frac{2\pm\sqrt{4-20}}{2}=1\pm2i\ \Longrightarrow\ y_h=e^x\big(A\cos2x+B\sin2x\big)$$
+      </div>
+      <div class="step" data-step="a3-108b-1c-s2" data-sym="yp">
+        <span class="step-title">捷徑 $y=e^xu$</span>
+        <p>$y'=e^x(u'+u)$，$y''=e^x(u''+2u'+u)$，代入左邊：</p>
+        $$y''-2y'+5y=e^x\big[u''+2u'+u-2u'-2u+5u\big]=e^x\big(u''+4u\big)$$
+        <p class="sub">令它等於題目右邊 $8e^x\sin2x$，兩邊除以 $e^x$：</p>
+        $$u''+4u=8\sin2x$$
+        <p>$u$ 的齊次解是 $\cos2x$、$\sin2x$，右邊 $\sin2x$ 正好撞上 ⟹ 修正：$u_p=x(K_1\cos2x+K_2\sin2x)$。</p>
+      </div>
+      <div class="step" data-step="a3-108b-1c-s3" data-sym="K">
+        <span class="step-title">代回求係數</span>
+        $$u_p'=K_1\cos2x+K_2\sin2x+x(-2K_1\sin2x+2K_2\cos2x)$$
+        $$u_p''=2(-2K_1\sin2x+2K_2\cos2x)+x(-4K_1\cos2x-4K_2\sin2x)$$
+        <p>$u_p''+4u_p$：含 $x$ 的項 $-4x(\cdots)+4x(\cdots)$ 抵消（這就是乘 $x$ 有效的原因），剩下</p>
+        $$u_p''+4u_p=-4K_1\sin2x+4K_2\cos2x=8\sin2x\ \Longrightarrow\ K_1=-2,\ K_2=0$$
+        $$y_p=e^xu_p=-2x\,e^x\cos2x$$
+      </div>
+      <div class="step" data-step="a3-108b-1c-s4" data-sym="c12">
+        <span class="step-title">Step 3 邊界條件</span>
+        $$y=e^x\big(A\cos2x+B\sin2x\big)-2xe^x\cos2x$$
+        <p class="sub">代入 $x=0$ 與題目 $y(0)=0$：$A\cdot1+0-0=0$，$A=0$。</p>
+        <p class="sub">代入 $x=\frac\pi4$（$\cos\frac\pi2=0$、$\sin\frac\pi2=1$）與題目 $y(\frac\pi4)=1$：</p>
+        $$e^{\pi/4}\big(0+B\big)-2\cdot\frac\pi4\,e^{\pi/4}\cdot0=1\ \Longrightarrow\ B=e^{-\pi/4}$$
+      </div>
+    </div>
+    <div class="part result"><span class="part-label">答案</span><p>$y=e^{-\pi/4}e^{x}\sin2x-2xe^x\cos2x=e^{x-\pi/4}\sin2x-2xe^x\cos2x$（和考卷答案相同）。</p></div>
+    <div class="part check"><span class="part-label">驗算</span><p>$y(0)=0-0=0$ ✔；$y(\frac\pi4)=e^{0}\cdot1-\frac\pi2e^{\pi/4}\cdot0=1$ ✔。$y_p$：$u_p=-2x\cos2x$，$u_p''=8\sin2x+8x\cos2x$，$u_p''+4u_p=8\sin2x$ ✔。邊界條件這裡有唯一解，因為 $x=\frac\pi4$ 時 $\sin2x\ne0$；若改成 $y(\frac\pi2)$，$\sin\pi=0$，$B$ 就定不出來（第 2 章 3.2 節的情況）。</p></div>
+  </div>
+</div>
+
+<div class="box key">
+  <span class="box-title">重點整理</span>
+  <ol>
+    <li>猜測是齊次解（比值是常數）⟹ 代入得 0、比較係數矛盾 ⟹ 乘 $x$；重根乘 $x^2$。</li>
+    <li>判斷捷徑：右邊對應的 $k$（或 $k\pm i\omega$，多項式是 $k=0$）是特徵根幾重，就乘 $x$ 的幾次方。</li>
+    <li>乘 $x$ 是乘整組；加總拆開的各塊各自判斷；$b=0$ 時多項式也會撞。</li>
+  </ol>
+</div>

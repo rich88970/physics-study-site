@@ -1,0 +1,195 @@
+<h2 id="kp-01">一、一階：可分離變數</h2>
+<h3 id="k01-1">作業一｜總符號表</h3>
+<div class="symbol-table-wrap"><table>
+<thead>
+<tr>
+<th>符號</th>
+<th>意義與角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$x$</td>
+<td>原題的自變數（independent variable）；第 2 題變換後，暫時改作待求函數。</td>
+</tr>
+<tr>
+<td>$y=y(x)$</td>
+<td>原題要找的依變數／未知函數（dependent variable）。</td>
+</tr>
+<tr>
+<td>$y'=dy/dx$</td>
+<td>$y$ 對 $x$ 的導數；第 2 題交換變數後，改用 $dx/dy$，兩者不可混寫。</td>
+</tr>
+<tr>
+<td>$p(x),g(x)$</td>
+<td>一階線性標準式中的已知係數、已知右側函數。交換變數後可改依賴 $y$。</td>
+</tr>
+<tr>
+<td>$F$</td>
+<td>積分因子（integrating factor）；在使用區間內須非零，才能保持方程等價。</td>
+</tr>
+<tr>
+<td>$M,N$</td>
+<td>微分形式中分別乘在 $dx,dy$ 前面的函數；每題重新依該題定義。</td>
+</tr>
+<tr>
+<td>$f(x,y)$</td>
+<td>勢函數（potential function）；其偏導數分別等於 $M,N$。小寫 $f$ 不是積分因子 $F$。</td>
+</tr>
+<tr>
+<td>$h(y)$</td>
+<td>對 $x$ 積分後可能留下的、只依賴 $y$ 的未知函數。</td>
+</tr>
+<tr>
+<td>$M_y,N_x,f_x,f_y$</td>
+<td>偏導數的簡寫，例如 $M_y=\partial M/\partial y$；偏微分時另一個座標先固定。</td>
+</tr>
+<tr>
+<td>$C,C_1,C_2$</td>
+<td>積分常數；不同下標表示數值可能已改變，不能在換算後認為仍是同一數字。</td>
+</tr>
+<tr>
+<td>$K$</td>
+<td>第 3 題照片使用的任意常數，與其他題的 $C$ 分開。</td>
+</tr>
+<tr>
+<td>$e,\ln,\pi$</td>
+<td>自然指數的底數、自然對數、圓周率；實數對數的真數須為正。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="k01-2">作業一第 1 題｜可分離變數</h3>
+<p><strong>原題：</strong>（First Order ODE）</p>
+<div class="math-block">$$
+xy\cos(y^2)y'+2\sin(y^2)=0,
+\qquad y(1)=\sqrt{\frac{\pi}{2}}.
+$$</div>
+<p><strong>中文：</strong> 求符合上述方程、並通過指定初始點的解。照片附解為 $x^4\sin(y^2)=1$。</p>
+<p class="symnote">符號：$y(1)=\sqrt{\pi/2}$ 表示 $x=1$ 時 $y=\sqrt{\pi/2}$，即 $y^2=\pi/2$；三角函數用弧度。</p>
+<p><strong>① 分離變數：</strong> 把 $y'$ 換回 $dy/dx$、移項後，含 $y$ 的因子可以集中到一邊，另一邊只剩 $x$。</p>
+<div class="math-block">$$
+xy\cos(y^2)\frac{dy}{dx}=-2\sin(y^2).
+$$</div>
+<p>在 $x\ne0$、$\sin(y^2)\ne0$ 的區域，兩邊除以 $x\sin(y^2)$：</p>
+<p class="fnote"><b>公式（可分離變數）：</b>若方程能寫成 $p(y)\,\dfrac{dy}{dx}=f(x)$，則 $p(y)\,dy=f(x)\,dx$，兩邊分別積分得 $\int p(y)\,dy=\int f(x)\,dx+C$，其中 $x$ 為自變數、$y$ 為待求函數、$p(y)$ 只含 $y$、$f(x)$ 只含 $x$、$C$ 為積分常數；本題 $p(y)=\dfrac{y\cos(y^2)}{\sin(y^2)}$、$f(x)=-\dfrac{2}{x}$。</p>
+<div class="math-block">$$
+\frac{y\cos(y^2)}{\sin(y^2)}\,dy
+=-\frac{2}{x}\,dx.
+\tag{1.1}
+$$</div>
+<p><strong>② 左邊換元、右邊直接積分：</strong> 令 $u=\sin(y^2)$，它的微分正好含分子的 $y\cos(y^2)$。</p>
+<p class="fnote"><b>公式（連鎖律）：</b>$\dfrac{d}{dy}f\big(g(y)\big)=f'\big(g(y)\big)\,g'(y)$，即 $d\big[f(g(y))\big]=f'(g(y))\,g'(y)\,dy$，其中 $f$ 為外層函數、$g$ 為內層函數、$f',g'$ 為各自的導數；本題 $f=\sin$、$g(y)=y^2$，故 $f'=\cos$、$g'(y)=2y$。</p>
+<div class="math-block">$$
+u=\sin(y^2),
+\qquad du=2y\cos(y^2)\,dy.
+$$</div>
+<p>$du$ 比原分子多一個 $2$，所以要補 $\tfrac12$：</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\dfrac{du}{u}=\ln|u|+C$（$u\ne0$），其中 $u$ 為積分變數、$\ln$ 為自然對數、$C$ 為積分常數；本題左邊 $u=\sin(y^2)$，右邊把 $u$ 換成 $x$ 得 $\int\dfrac{dx}{x}=\ln|x|$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\int\frac{y\cos(y^2)}{\sin(y^2)}\,dy
+&amp;=\frac12\int\frac{du}{u}\\
+&amp;=\frac12\ln|u|\\
+&amp;=\frac12\ln|\sin(y^2)|.
+\end{aligned}
+$$</div>
+<p>右邊對 $x$ 積分：</p>
+<div class="math-block">$$
+\int-\frac{2}{x}\,dx=-2\ln|x|.
+$$</div>
+<p>兩邊的積分常數合成一個 $C_1$：</p>
+<div class="math-block">$$
+\frac12\ln|\sin(y^2)|=-2\ln|x|+C_1.
+\tag{1.2}
+$$</div>
+<p><strong>③ 整理成隱式：</strong> 式（1.2）乘以 $2$、對數項移到左邊，新常數記為 $C_2$：</p>
+<div class="math-block">$$
+\ln|\sin(y^2)|+4\ln|x|=C_2.
+$$</div>
+<p class="fnote"><b>公式（對數律）：</b>$n\ln|a|=\ln|a|^n$、$\ln|a|+\ln|b|=\ln|ab|$，其中 $a,b$ 為非零實數、$n$ 為實數常數；本題 $n=4$、$a=x$、$b=\sin(y^2)$。</p>
+<div class="math-block">$$
+\ln|x^4\sin(y^2)|=C_2.
+$$</div>
+<p>取指數得 $|x^4\sin(y^2)|=e^{C_2}$，把正負號併入新的帶號常數 $C$（這一族 $C\ne0$）：</p>
+<div class="math-block">$$
+x^4\sin(y^2)=C.
+\tag{1.3}
+$$</div>
+<p><strong>④ 代初值：</strong> $x=1$、$y^2=\pi/2$：</p>
+<div class="math-block">$$
+C=1^4\sin\left(\frac{\pi}{2}\right)=1.
+$$</div>
+<div class="math-block">$$
+\boxed{x^4\sin(y^2)=1.}
+\tag{1.4}
+$$</div>
+<p><strong>注意：</strong> 給定點代回原方程，$\cos(\pi/2)=0$ 使 $y'$ 項消失，左邊只剩 $2\ne0$，所以原題在 $x=1$ 沒有可微且滿足原式的 $y(x)$；式（1.4）是通過給定點、在該點有垂直切線的積分曲線，實數分支只在 $x&gt;1$ 存在。另外，除以 $\sin(y^2)$ 會漏掉常數解 $y\equiv\pm\sqrt{n\pi}$（$n$ 為非負整數），但它們不符合初值。</p>
+<h3 id="k01-3">2024 年 11 月期中第 2 題｜非線性可分離變數（25 分）</h3>
+<p><strong>原題：</strong> Solve $y'+y^2=9$ for $y(0)=0$.</p>
+<p><strong>中文：</strong> 解 $y'=9-y^2$ 的一階初值題。</p>
+<p><strong>① 分離變數：</strong> 移項成 $y'=9-y^2$，再除以 $9-y^2$（這會排除平衡解 $y=\pm3$，但它們不符合初值）。</p>
+<p class="fnote"><b>公式（可分離變數）：</b>若方程能寫成 $p(y)\,\dfrac{dy}{dx}=f(x)$，則 $p(y)\,dy=f(x)\,dx$，兩邊分別積分得 $\int p(y)\,dy=\int f(x)\,dx+C$，其中 $x$ 為自變數、$y$ 為待求函數、$p(y)$ 只含 $y$、$f(x)$ 只含 $x$、$C$ 為積分常數；本題 $p(y)=\dfrac{1}{9-y^2}$、$f(x)=1$。</p>
+<div class="math-block">$$
+\frac{dy}{9-y^2}=dx=\frac{dy}{(3-y)(3+y)}.
+$$</div>
+<p><strong>② 部分分式：</strong> 把左邊拆成兩個一次分母。</p>
+<p class="fnote"><b>公式（部分分式）：</b>$\dfrac{1}{(a-y)(a+y)}=\dfrac{1}{2a}\left(\dfrac{1}{a-y}+\dfrac{1}{a+y}\right)$，其中 $a\ne0$ 為常數、$y\ne\pm a$；本題 $a=3$。</p>
+<div class="math-block">$$
+\frac{1}{(3-y)(3+y)}=\frac16\left(\frac1{3-y}+\frac1{3+y}\right).
+$$</div>
+<p><strong>③ 兩邊積分：</strong> 注意 $\int dy/(3-y)=-\ln|3-y|$（係數 $c=-1$）。</p>
+<p class="fnote"><b>公式（標準積分）：</b>$\int\dfrac{dy}{b+cy}=\dfrac{1}{c}\ln|b+cy|+C$，其中 $b,c$ 為常數且 $c\ne0$、$y$ 為積分變數、$C$ 為積分常數；本題 $\dfrac{1}{3+y}$ 取 $b=3$、$c=1$，$\dfrac{1}{3-y}$ 取 $b=3$、$c=-1$。</p>
+<p class="fnote"><b>公式（對數律）：</b>$\ln|a|-\ln|b|=\ln\left|\dfrac{a}{b}\right|$，其中 $a,b$ 為非零實數；本題 $a=3+y$、$b=3-y$。</p>
+<div class="math-block">$$
+\frac16\big[\ln|3+y|-\ln|3-y|\big]=x+C
+\quad\Rightarrow\quad
+\frac16\ln\left|\frac{3+y}{3-y}\right|=x+C.
+$$</div>
+<p><strong>④ 代初值並解出 $y$：</strong> $y(0)=0$ 給 $C=0$；經過 $y=0$ 的分支上分式為正，絕對值可直接拿掉：</p>
+<div class="math-block">$$
+\frac{3+y}{3-y}=e^{6x};\qquad
+3+y=3e^{6x}-ye^{6x}.
+$$</div>
+<div class="math-block">$$
+y(1+e^{6x})=3(e^{6x}-1),
+$$</div>
+<div class="math-block">$$
+\boxed{y(x)=3\frac{e^{6x}-1}{e^{6x}+1}=3\tanh(3x).}
+$$</div>
+<p class="symnote">符號：$\tanh u=\dfrac{e^u-e^{-u}}{e^u+e^{-u}}$（雙曲正切），取 $u=3x$ 即得左邊的分式。特解對所有實數 $x$ 有定義。</p>
+<h3 id="k01-4">2021 年 11 月期中第 2 題｜平方速度阻力下自由落體（20 分）</h3>
+<p><strong>原題：</strong> An object of mass $m$ falls from rest under gravity subject to an air resistance proportional to the square of its velocity. Taking the $y$-axis as positive down, find $v$ as a function of $t$.</p>
+<p><strong>中文：</strong> 質量為 $m$ 的物體從靜止下落，空氣阻力大小與速度平方成正比；向下為 $y$ 正方向，求速度 $v(t)$。</p>
+<p class="symnote">符號：$m&gt;0$ 質量、$g&gt;0$ 重力加速度、$k&gt;0$ 阻力係數（阻力大小 $kv^2$，向上）、$v=dy/dt$ 向下速度、$t\ge0$ 時間；初值 $v(0)=0$。</p>
+<p><strong>① 列運動方程：</strong> 向下為正，重力 $+mg$、阻力 $-kv^2$。</p>
+<p class="fnote"><b>公式（牛頓第二定律）：</b>$m\dfrac{dv}{dt}=F_{\text{net}}$，其中 $m$ 為質量（kg）、$v$ 為速度（m/s）、$t$ 為時間（s）、$F_{\text{net}}$ 為沿正方向的合力（N）；本題向下為正，重力為 $+mg$、阻力為 $-kv^2$（$v\ge0$ 時向上），故 $F_{\text{net}}=mg-kv^2$。</p>
+<div class="math-block">$$
+m\frac{dv}{dt}=mg-kv^2
+\Rightarrow
+\frac{dv}{dt}=g-\frac{k}{m}v^2.
+$$</div>
+<p><strong>② 引入終端速度：</strong> 定義 $v_T=\sqrt{mg/k}$，使 $(k/m)v_T^2=g$：</p>
+<div class="math-block">$$
+\frac{dv}{dt}=g\left(1-\frac{v^2}{v_T^2}\right),
+$$</div>
+<p><strong>③ 分離變數並換元：</strong></p>
+<p class="fnote"><b>公式（可分離變數）：</b>若方程能寫成 $p(y)\,\dfrac{dy}{dx}=f(x)$，則 $p(y)\,dy=f(x)\,dx$，兩邊分別積分得 $\int p(y)\,dy=\int f(x)\,dx+C$，其中 $x$ 為自變數、$y$ 為待求函數、$p(y)$ 只含 $y$、$f(x)$ 只含 $x$、$C$ 為積分常數；本題自變數為 $t$、待求函數為 $v$，$p(v)=\dfrac{1}{1-(v/v_T)^2}$、$f(t)=g$。</p>
+<div class="math-block">$$
+\frac{dv}{1-(v/v_T)^2}=g\,dt.
+$$</div>
+<p>令 $u=v/v_T$（$dv=v_Tdu$）：</p>
+<div class="math-block">$$
+v_T\int\frac{du}{1-u^2}=gt+C.
+$$</div>
+<p><strong>④ 積分：</strong> 從 $u(0)=0$ 起有 $0\le u&lt;1$，所以 $\int du/(1-u^2)=\operatorname{artanh}(u)$：</p>
+<div class="math-block">$$
+v_T\operatorname{artanh}\left(\frac{v}{v_T}\right)=gt+C.
+$$</div>
+<p class="symnote">符號：$\operatorname{artanh}u=\frac12\ln\frac{1+u}{1-u}$（$|u|&lt;1$），是 $\tanh z=\dfrac{e^z-e^{-z}}{e^z+e^{-z}}$ 的反函數。</p>
+<p><strong>⑤ 代初值：</strong> $v(0)=0$ 給 $C=0$，兩邊取雙曲正切：</p>
+<div class="math-block">$$
+\frac{v}{v_T}=\tanh\left(\frac{gt}{v_T}\right).
+$$</div>
+<div class="math-block">$$
+\boxed{v(t)=\sqrt{\frac{mg}{k}}\,\tanh\left(\sqrt{\frac{gk}{m}}\,t\right),\quad t\ge0.}
+$$</div>

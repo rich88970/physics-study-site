@@ -1,0 +1,110 @@
+<h2 id="kp-18">H-11. 新增八道題的考試書寫版（詳細推導見 H-1～H-8）</h2>
+<div class="box idea"><p>考前複習用；某一步不懂就回到前面對應的完整題解。</p>
+</div>
+<h3 id="k18-1">① 2020 期中第 2 題：球面電磁波</h3>
+<p>已知 $r_0=\sqrt{2^2+1^2+3^2}=\sqrt{14}\ \mathrm m$、$\hat r_0=(2\hat x+\hat y+3\hat z)/\sqrt{14}$、$\hat\phi_0=(-\hat x+2\hat y)/\sqrt5$、$\lambda=2\ \mathrm m$、$I(r_0)=2\ \mathrm{W/m^2}$。</p>
+<p class="fnote"><b>公式（照度與振幅）：</b>$I=\dfrac12\varepsilon_0c_0E_0^2$，其中 $I$ 為平均照度（W/m²）、$\varepsilon_0$ 為真空介電常數（F/m）、$c_0$ 為真空光速（m/s）、$E_0$ 為電場振幅（V/m）；本題 $I(r_0)=2\ \mathrm{W/m^2}$，移項得 $E_0=\sqrt{2I/(\varepsilon_0c_0)}$。</p>
+<p class="fnote"><b>公式（電磁波 E、B 關係）：</b>$\vec B=\dfrac{1}{c_0}\hat k\times\vec E$，其中 $\hat k$ 為傳播方向單位向量、$c_0$ 為真空光速（m/s）、$\vec E$ 為電場（V/m）、$\vec B$ 為磁場（T）；本題球面波 $\hat k=\hat r_0$、$\vec E\parallel\hat\phi_0$，所以 $B_0=E_0/c_0$、方向 $\hat b_0=\hat r_0\times\hat\phi_0$。</p>
+<div class="math-block">$$
+\begin{aligned}
+k&amp;=2\pi/\lambda=\pi\ \mathrm{rad/m},\quad\omega=c_0k=3\pi\times10^8\ \mathrm{rad/s},\\
+E_0(r_0)&amp;=\sqrt{2I/(\varepsilon_0c_0)}=38.8056\ \mathrm{V/m},\\
+B_0(r_0)&amp;=E_0(r_0)/c_0=1.29352\times10^{-7}\ \mathrm T,\\
+\hat b_0&amp;=\hat r_0\times\hat\phi_0=(-6\hat x-3\hat y+5\hat z)/\sqrt{70},\\
+\Phi_0(t)&amp;=\pi\sqrt{14}-3\pi\times10^8t+\phi_0.
+\end{aligned}
+$$</div>
+<p class="fnote"><b>公式（Poynting 向量）：</b>$\vec S=\dfrac{1}{\mu_0}\vec E\times\vec B$，其中 $\vec S$ 為瞬時 Poynting 向量（W/m²）、$\mu_0$ 為真空磁導率（H/m）、$\vec E$ 為電場（V/m）、$\vec B$ 為磁場（T）；本題大小 $\dfrac{E_0B_0}{\mu_0}=\varepsilon_0c_0E_0^2=2I(r_0)=4\ \mathrm{W/m^2}$，方向 $\hat\phi_0\times\hat b_0=\hat r_0$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\vec S(r_0,t)&amp;=4\hat r_0\cos^2\Phi_0(t)\ \mathrm{W/m^2},\\
+\vec E(r_0,t)&amp;=38.8056\hat\phi_0\cos\Phi_0(t)\ \mathrm{V/m},\\
+\vec B(r_0,t)&amp;=1.29352\times10^{-7}\hat b_0\cos\Phi_0(t)\ \mathrm T.
+\end{aligned}
+$$</div>
+<p class="fnote"><b>公式（球面波距離關係）：</b>$E_0(r)=E_0(r_0)\dfrac{r_0}{r},\quad I(r)=I(r_0)\left(\dfrac{r_0}{r}\right)^2$，由總功率 $P=4\pi r^2I$ 不隨 $r$ 改變而來，其中 $r$ 為到點波源的距離（m）、$r_0$ 為參考距離（m）、$E_0$ 為電場振幅（V/m）、$I$ 為平均照度（W/m²）、$P$ 為總功率（W）；本題 $r_0=\sqrt{14}\ \mathrm m$，$B_0$ 與 $E_0$ 同比例、$\vec S$ 與 $I$ 同比例。</p>
+<p class="fnote"><b>公式（Euler 公式）：</b>$\cos\Phi=\operatorname{Re}\{e^{i\Phi}\}=\dfrac{e^{i\Phi}+e^{-i\Phi}}{2}$，平方得 $\cos^2\Phi=\dfrac{e^{2i\Phi}+2+e^{-2i\Phi}}{4}$，其中 $\Phi$ 為相位（rad）；本題 $\Phi=\pi r-3\pi\times10^8t+\phi_0$。</p>
+<p>任意半徑時，各式再乘 $r_0/r$（E、B）或 $(r_0/r)^2$（S），並將相位換為 $\pi r-3\pi\times10^8t+\phi_0$。指數寫法：電磁場用 $\operatorname{Re}\{\cdots e^{i\Phi}\}$，S 用 $(e^{2i\Phi}+2+e^{-2i\Phi})/4$。</p>
+<h3 id="k18-2">② 課本 4-19：圓柱波振幅</h3>
+<p class="fnote"><b>公式（能量通量守恆）：</b>$P=IA$，其中 $P$ 為穿過某曲面的總平均功率（W）、$I$ 為該面上的平均照度（W/m²）、$A$ 為曲面面積（m²）；本題曲面是半徑 $r$、長 $L$ 的同軸圓柱側面 $A=2\pi rL$，$P=P_L$ 與 $r$ 無關。</p>
+<div class="math-block">$$P_L=I(r)\,2\pi rL\quad\Rightarrow\quad I(r)=\frac{P_L}{2\pi rL}\propto r^{-1}.$$</div>
+<p class="fnote"><b>公式（電磁波 E、B 關係）：</b>$\vec B=\dfrac{1}{c_0}\hat k\times\vec E$，故振幅 $B_0=E_0/c_0$，其中 $\hat k$ 為傳播方向單位向量、$c_0$ 為真空光速（m/s）、$\vec E$ 為電場（V/m）、$\vec B$ 為磁場（T）；本題 $\hat k=\hat\rho$、$\vec E\parallel\hat z$，因 $\hat\rho\times\hat z=-\hat\phi$，$\vec B$ 沿 $-\hat\phi$。</p>
+<div class="math-block">$$I(r)=\tfrac12\varepsilon_0c_0E_0(r)^2
+\quad\Rightarrow\quad
+\boxed{E_0(r)\propto r^{-1/2}},\quad
+\boxed{B_0(r)\propto r^{-1/2}}.$$</div>
+<p class="fnote"><b>公式（Euler 公式）：</b>$e^{i\Phi}=\cos\Phi+i\sin\Phi$，故對實振幅 $A$ 有 $\operatorname{Re}\{Ae^{i\Phi}\}=A\cos\Phi$，其中 $\Phi$ 為相位（rad）、$A$ 可含單位向量；本題 $\Phi=kr-\omega t$。</p>
+<p>示範指數形式：$\vec E=\operatorname{Re}\{C\hat z e^{i(kr-\omega t)}/\sqrt r\}$、$\vec B=\operatorname{Re}\{-C\hat\phi e^{i(kr-\omega t)}/(c_0\sqrt r)\}$。</p>
+<h3 id="k18-3">③ 課本 4-18：燈泡與雷射</h3>
+<p class="fnote"><b>公式（光轉換效率）：</b>$P_\mathrm{light}=\eta P_\mathrm{in}$，其中 $P_\mathrm{in}$ 為耗電功率（W）、$\eta$ 為轉為光的比例（無單位）、$P_\mathrm{light}$ 為光功率（W）；本題 $\eta=0.05$、$P_\mathrm{in}=220\ \mathrm W$。</p>
+<p class="fnote"><b>公式（照度定義）：</b>$I=\dfrac{P}{A}$，其中 $P$ 為通過受光面的平均功率（W）、$A$ 為受光面積（m²）、$I$ 為平均照度（W/m²）；本題 (a) 光均勻向四周傳播，取球面 $A=4\pi r^2$、$r=10\ \mathrm m$，(b) $A$ 為聚焦截面積 $10^{-10}\ \mathrm{m^2}$、$P=2000\ \mathrm W$。</p>
+<p class="fnote"><b>公式（照度與振幅）：</b>$I=\dfrac12\varepsilon_0c_0E_0^2$，其中 $I$ 為平均照度（W/m²）、$\varepsilon_0$ 為真空介電常數（F/m）、$c_0$ 為真空光速（m/s）、$E_0$ 為電場振幅（V/m）；本題移項得 $E_0=\sqrt{2I/(\varepsilon_0c_0)}$，(a)(b) 各代入 $I_a$、$I_b$。</p>
+<div class="math-block">$$
+\begin{aligned}
+P_\mathrm{light}&amp;=0.05(220)=11\ \mathrm W,\\
+I_a&amp;=\frac{11}{4\pi(10)^2}=8.75352\times10^{-3}\ \mathrm{W/m^2},\\
+E_{0a}&amp;=\sqrt{\frac{2I_a}{\varepsilon_0c_0}}=2.56727\ \mathrm{V/m},\\
+A_b&amp;=10^{-6}\ \mathrm{cm^2}=10^{-10}\ \mathrm{m^2},\\
+I_b&amp;=\frac{2000}{10^{-10}}=2.00\times10^{13}\ \mathrm{W/m^2},\\
+E_{0b}&amp;=\sqrt{\frac{2I_b}{\varepsilon_0c_0}}=1.22714\times10^8\ \mathrm{V/m},\\
+B_{0b}&amp;=E_{0b}/c_0=0.409047\ \mathrm T.
+\end{aligned}
+$$</div>
+<h3 id="k18-4">④ 2018 期中第 3 題：可見度</h3>
+<p class="fnote"><b>公式（雙光束干涉照度）：</b>$I(\delta)=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$，其中 $I_1,I_2$ 為兩束相干、平行偏振光各自的照度（W/m²）、$\delta$ 為觀察點的總相位差（rad）；$\cos\delta=+1$ 得 $I_{\max}$、$\cos\delta=-1$ 得 $I_{\min}$，本題 $I_1=NI_2$。</p>
+<div class="math-block">$$
+I_{\max}=(\sqrt{I_1}+\sqrt{I_2})^2,\quad
+I_{\min}=(\sqrt{I_1}-\sqrt{I_2})^2.
+$$</div>
+<div class="math-block">$$I_1=NI_2\quad\Rightarrow\quad
+\boxed{V=\frac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}=\frac{2\sqrt N}{N+1}}.$$</div>
+<div class="math-block">$$V=3/4,\ x=\sqrt N\ \Rightarrow\ 8x=3(x^2+1)
+\ \Rightarrow\ 3x^2-8x+3=0.$$</div>
+<p class="fnote"><b>公式（二次公式）：</b>$ax^2+bx+c=0\ (a\ne0)\ \Rightarrow\ x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$，其中 $a,b,c$ 為實係數、$x$ 為未知數；本題 $a=3$、$b=-8$、$c=3$，因 $x=\sqrt N\gt1$ 取正號。</p>
+<div class="math-block">$$x=(4+\sqrt7)/3&gt;1\quad\Rightarrow\quad\boxed{N=4.90733}.$$</div>
+<h3 id="k18-5">⑤ 課本 7-1：完整照度與對比度</h3>
+<p class="fnote"><b>公式（總相位差）：</b>若 $E_j=E_{0j}\cos(ks_j-\omega t+\alpha_j)$，則 $\delta=\Phi_1-\Phi_2=k(s_1-s_2)+(\alpha_1-\alpha_2)$，其中 $E_{0j}$ 為第 $j$ 束振幅（V/m）、$k$ 為波數（rad/m）、$s_j$ 為路徑長（m）、$\omega$ 為角頻率（rad/s）、$\alpha_j$ 為初相位（rad）、$\Phi_j$ 為第 $j$ 束的總相位；本題 $k(s_1-s_2)=\pi/3$、$\alpha_1=\pi/5$、$\alpha_2=\pi/6$。</p>
+<p class="fnote"><b>公式（雙光束干涉照度）：</b>$I_\mathrm{net}=I_1+I_2+I_{12}$，$I_{12}=2\sqrt{I_1I_2}\cos\delta$，其中 $I_1,I_2$ 為兩束各自照度（W/m²）、$I_{12}$ 為干涉交叉項（W/m²）、$\delta$ 為總相位差（rad）；本題由 $I_j=\tfrac12\varepsilon_0c_0E_{0j}^2$ 得 $2\sqrt{I_1I_2}=\varepsilon_0c_0E_{01}E_{02}$。</p>
+<p class="fnote"><b>公式（可見度）：</b>$V=\dfrac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}}$，$I_{\max}=(\sqrt{I_1}+\sqrt{I_2})^2$、$I_{\min}=(\sqrt{I_1}-\sqrt{I_2})^2$，其中 $I_{\max},I_{\min}$ 為亮、暗紋照度（W/m²）、$V$ 為可見度（無單位）；本題代入得 $V=\dfrac{2\sqrt{I_1I_2}}{I_1+I_2}$，再用 $I_j\propto E_{0j}^2$ 寫成振幅形式。</p>
+<div class="math-block">$$
+\begin{aligned}
+E_{01}&amp;=3000\ \mathrm{V/m},\quad E_{02}=4000\ \mathrm{V/m},\\
+\delta&amp;=\pi/3+\pi/5-\pi/6=11\pi/30,\\
+I_1&amp;=\tfrac12\varepsilon_0c_0E_{01}^2=11953.17\ \mathrm{W/m^2},\\
+I_2&amp;=\tfrac12\varepsilon_0c_0E_{02}^2=21250.08\ \mathrm{W/m^2},\\
+I_{12}&amp;=\varepsilon_0c_0E_{01}E_{02}\cos\delta=12964.78\ \mathrm{W/m^2},\\
+I_\mathrm{net}&amp;=I_1+I_2+I_{12}=46168.03\ \mathrm{W/m^2},\\
+V&amp;=\frac{2E_{01}E_{02}}{E_{01}^2+E_{02}^2}=\boxed{0.96}.
+\end{aligned}
+$$</div>
+<h3 id="k18-6">⑥ 2018 期中第 4 題：楊氏雙狹縫＋薄片</h3>
+<p class="fnote"><b>公式（楊氏亮紋位置）：</b>$d\sin\theta=m\lambda$，小角度 $\sin\theta\approx y/L$ 得 $y_m=\dfrac{m\lambda L}{d}$，相鄰間距 $\Delta y=\dfrac{\lambda L}{d}$，其中 $d$ 為雙狹縫間距（m）、$\theta$ 為觀察方向與中軸的夾角、$m$ 為整數級次、$\lambda$ 為波長（m）、$L$ 為狹縫到屏幕距離（m）、$y_m$ 為第 $m$ 亮紋到中央亮紋的距離（m）；本題 $\Delta y=1\ \mathrm{mm}$、$d=0.6\ \mathrm{mm}$、$\lambda=550\ \mathrm{nm}$。</p>
+<p class="fnote"><b>公式（薄片造成的條紋平移）：</b>$\Delta_\mathrm{glass}=(n-1)t$，整組條紋移動 $\Delta_\mathrm{glass}/\lambda$ 個間距，即 $|\Delta y_\mathrm{shift}|=\dfrac{\Delta_\mathrm{glass}}{\lambda}\Delta y=\dfrac{(n-1)tL}{d}$，其中 $n$ 為薄片折射率、$t$ 為薄片厚度（m）、$\Delta_\mathrm{glass}$ 為額外光程差（m）；本題 $n=1.5$、$t=200\ \mathrm{\mu m}$、$L=1.09091\ \mathrm m$。</p>
+<div class="math-block">$$
+\begin{aligned}
+\Delta y&amp;=\frac{\lambda L}{d}\quad\Rightarrow\quad
+L=\frac{(1\times10^{-3})(0.6\times10^{-3})}{550\times10^{-9}}\\
+&amp;=\boxed{1.09091\ \mathrm m},\\
+\Delta_\mathrm{glass}&amp;=(n-1)t=0.5(200\ \mathrm{\mu m})=100\ \mathrm{\mu m},\\
+|\Delta y_\mathrm{shift}|&amp;=\frac{(n-1)tL}{d}=\boxed{181.818\ \mathrm{mm}}.
+\end{aligned}
+$$</div>
+<h3 id="k18-7">⑦ 課本 7-6：兩波長條紋重合</h3>
+<p class="fnote"><b>公式（雙狹縫亮紋與暗紋位置）：</b>$y_{m,\mathrm{亮}}=\dfrac{m\lambda L}{d}\ (m=0,1,2,\ldots)$，$y_{j,\mathrm{暗}}=\dfrac{(j-\tfrac12)\lambda L}{d}\ (j=1,2,3,\ldots)$，其中 $d$ 為狹縫間距（m）、$L$ 為到屏幕距離（m）、$\lambda$ 為波長（m）、$m$ 為亮紋級次、$j$ 表示第 $j$ 個暗紋；本題第一光 $\lambda_1=436\ \mathrm{nm}$ 取 $j=4$，第二光 $\lambda_2$ 取 $m=3$。</p>
+<div class="math-block">$$
+y_{4,\mathrm{暗}}^{(1)}=(4-\tfrac12)\frac{\lambda_1L}{d},\quad
+y_{3,\mathrm{亮}}^{(2)}=3\frac{\lambda_2L}{d}.
+$$</div>
+<div class="math-block">$$3.5\lambda_1=3\lambda_2\quad\Rightarrow\quad
+\boxed{\lambda_2=\frac{3.5}{3}(436)=508.667\ \mathrm{nm}}.$$</div>
+<h3 id="k18-8">⑧ 2020 期中第 3 題：群速度</h3>
+<p class="fnote"><b>公式（相速度與群速度）：</b>$k=\dfrac{2\pi}{\lambda}$，$v_p=\dfrac{\omega}{k}$，$v_g=\dfrac{d\omega}{dk}$，其中 $\lambda$ 為波長（m）、$k$ 為波數（rad/m）、$\omega$ 為角頻率（rad/s）、$v_p$ 為相速度、$v_g$ 為群速度；本題先把 $v_p$ 寫成 $k$ 的函數，求 $\omega=kv_p$ 再對 $k$ 微分。</p>
+<p class="fnote"><b>公式（冪次微分）：</b>$\dfrac{d}{dk}k^a=ak^{a-1}$，其中 $a$ 為常數指數、$k$ 為自變數；本題 $a=2/3$，$g^{1/3}$ 視為常數提出。</p>
+<div class="math-block">$$
+\begin{aligned}
+v_p&amp;=(g\lambda/(2\pi))^{1/3}=(g/k)^{1/3}=g^{1/3}k^{-1/3},\\
+\omega&amp;=kv_p=g^{1/3}k^{2/3},\\
+v_g&amp;=d\omega/dk=\tfrac23g^{1/3}k^{-1/3}=\boxed{\tfrac23v_p}.
+\end{aligned}
+$$</div>
+<p><strong>注意：</strong> 原卷 $1/3$ 冪次與「$g$ 為重力加速度」的速度量綱不合；以原卷數學形式作答是 $2/3$，若老師另外說明是深水波平方根關係，才會得到 $1/2$。</p>

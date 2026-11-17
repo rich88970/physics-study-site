@@ -1,0 +1,17 @@
+{
+  "symbols": {
+    "PQ": { "tex": "P(x),\\ Q(x)", "zh": "標準式 y''+P y'+Q y=0 的係數", "unit": "", "note": "先除以 $y''$ 的係數；正則奇點：$xP$、$x^2Q$ 不發散" },
+    "p0q0": { "tex": "p_0,\\ q_0", "zh": "xP 與 x²Q 在 x→0 的極限", "unit": "", "note": "指標方程式 $\\gamma(\\gamma-1)+p_0\\gamma+q_0=0$" },
+    "gam": { "tex": "\\gamma", "zh": "指標（Frobenius 級數的起始次方）", "unit": "", "note": "$y=\\sum a_nx^{n+\\gamma}$，$a_0\\ne0$；兩根記 $\\gamma_1\\ge\\gamma_2$" },
+    "an": { "tex": "a_n", "zh": "級數係數", "unit": "", "note": "$a_0$ 待定（不為 0），其餘由遞迴關係決定" },
+    "uu": { "tex": "u(x)", "zh": "降階法的乘數 y2=u y1", "unit": "", "note": "$u=\\displaystyle\\int\\frac{e^{-\\int P\\,dx}}{y_1^2}dx$" },
+    "y12": { "tex": "y_1,\\ y_2", "zh": "兩個線性獨立解", "unit": "", "note": "一般解 $y=c_1y_1+c_2y_2$" },
+    "ll": { "tex": "l", "zh": "Legendre 方程式的參數（非負整數）", "unit": "", "note": "$(1-x^2)y''-2xy'+l(l+1)y=0$" },
+    "Pl": { "tex": "P_l(x)", "zh": "Legendre 多項式（l 次）", "unit": "", "note": "歸一化 $P_l(1)=1$；$P_l(-x)=(-1)^lP_l(x)$" }
+  },
+  "groups": [
+    { "title": "Frobenius 法", "keys": ["PQ", "p0q0", "gam", "an", "uu", "y12"] },
+    { "title": "Legendre 方程式", "keys": ["ll", "Pl"] }
+  ],
+  "steps": {}
+}

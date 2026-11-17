@@ -1,0 +1,308 @@
+<h2>八、考前衝刺 <span class="pg">課本第 1 章 · p.1–48</span></h2>
+
+<p class="lead">考試前用這一頁：先背公式，再看題型表。每一型都寫了怎麼認、怎麼做、哪裡會錯，點題號就跳到完整詳解。最後用變化題自我測驗。</p>
+
+<div class="box idea exam-style">
+  <span class="box-title">老師的出題方式</span>
+  <p>三份上學期期中考中屬於第 1 章的題目：115 級（範圍第 1–2 章）第 1 題咖啡加冰（<a href="#tk1-115-1">考古 115-1</a>）、第 2 題熱膨脹（就是課本 1.8 的 (a)(c)，<a href="#sc-1-8">課本 1-8</a>）；114 級第 1 題熱膨脹（和 115 級第 2 題同一題）、第 2 題均分定理求 $v_{\text{rms}}$（<a href="#tk1-114-2">考古 114-2</a>）、第 7 題氦氣 $P\propto V$ 膨脹（課本 1.31 換數字，<a href="#tk1-114-7">考古 114-7</a>），第 3 題 (a)–(c) 和第 2 章合在<a data-chapter="thermal/ch02" href="#tk-114-3">第 2 章考古 114-3</a>；某級（範圍第 1–4.1 章）第 1 題 (a) 壓力的微觀模型（<a href="#tk1x-1a">考古 某級-1a</a>）、(b) 均分定理（<a href="#tk1x-1b">1b</a>）、(c)(d) 第一定律與 $C_P-C_V$（<a href="#tk1x-1cd">1cd</a>）、(e) $PV^\gamma$（<a href="#tk1x-1e">1e</a>）、(i) 凡得瓦的維里係數（課本 1.17(c)，<a href="#sc-1-17">課本 1-17</a>），第 4 題重力束縛系統的負熱容量（<a href="#tk1x-4">考古 某級-4</a>）。</p>
+  <p>規律：<strong>課本習題原題或只換數字</strong>（1.8、1.17、1.31、1.47、1.55），以及<strong>課文裡的標準推導</strong>——壓力的微觀模型、均分定理、$C_P=C_V+Nk$、絕熱 $PV^\gamma=$ 常數，考卷會要求寫出完整推導，不能只寫結果。§1.7 過程的速率沒有出現在期中考，但熱學小考有 1.57、1.61、1.63、1.66、1.69 五題。</p>
+</div>
+
+<h3 id="t1x-formulas">8.1 必背公式</h3>
+
+<div class="sheet">
+  <section>
+    <h4>溫度與熱膨脹（§1.1）</h4>
+    <ul>
+      <li>$T(\text{K})=T(^\circ\text{C})+273.15$；$T_F=\tfrac95T_C+32$；溫度「差」可直接用攝氏</li>
+      <li>$\Delta L=\alpha L\,\Delta T$；$\beta=\dfrac{\Delta V/V}{\Delta T}=\alpha_x+\alpha_y+\alpha_z$（各向同性 $3\alpha$）</li>
+      <li>水在 $4^\circ\text{C}$ 以下 $\beta\lt0$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>理想氣體（§1.2）</h4>
+    <ul>
+      <li>$PV=nRT=NkT$；$R=8.315\ \text{J/(mol·K)}$，$k=1.381\times10^{-23}\ \text{J/K}$，$kT\approx\tfrac1{40}\ \text{eV}$（室溫）</li>
+      <li>微觀模型：$PV=Nm\overline{v_x^2}$ ⟹ $\tfrac12m\overline{v^2}=\tfrac32kT$，$v_{\text{rms}}=\sqrt{3kT/m}$</li>
+      <li>維里：$PV=nRT\big(1+\frac{B}{V/n}+\frac{C}{(V/n)^2}+\cdots\big)$；凡得瓦 $B=b-\frac a{RT}$、$C=b^2$</li>
+      <li>指數大氣 $P(z)=P_0e^{-mgz/kT}$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>均分定理（§1.3）</h4>
+    <ul>
+      <li>每個二次自由度 $\tfrac12kT$：$U_{\text{thermal}}=Nf\cdot\tfrac12kT$</li>
+      <li>$f$：單原子 3、雙原子（室溫）5、固體每原子 6</li>
+    </ul>
+  </section>
+  <section>
+    <h4>熱、功與壓縮功（§1.4–1.5）</h4>
+    <ul>
+      <li>$\Delta U=Q+W$（$W$＝外界對系統做的功）；$1\ \text{cal}=4.184\ \text{J}$</li>
+      <li>準靜態 $W=-\int P\,\mathrm dV$；理想氣體 $\Delta U=\tfrac f2\Delta(PV)$；$1\ \text{atm·L}\approx101\ \text{J}$</li>
+      <li>等溫：$W=NkT\ln\dfrac{V_i}{V_f}$，$Q=-W$</li>
+      <li>絕熱：$VT^{f/2}$、$PV^\gamma$、$TV^{\gamma-1}$ 守恆，$\gamma=\dfrac{f+2}f$；$W=\Delta U$</li>
+    </ul>
+  </section>
+  <section>
+    <h4>熱容量、潛熱與焓（§1.6）</h4>
+    <ul>
+      <li>$C_V=\left(\frac{\partial U}{\partial T}\right)_V=\tfrac f2Nk$；$C_P=\left(\frac{\partial H}{\partial T}\right)_P=C_V+Nk$</li>
+      <li>$Q=mc\,\Delta T$；相變 $Q=mL$（冰的熔化熱 $333\ \text{J/g}$、水的汽化熱 $2260\ \text{J/g}$）</li>
+      <li>$H=U+PV$；定壓、沒有其他功：$\Delta H=Q$</li>
+      <li>重力束縛系統：$U_{\text{總}}=-K$ ⟹ 熱容量為負</li>
+    </ul>
+  </section>
+  <section>
+    <h4>過程的速率（§1.7）</h4>
+    <ul>
+      <li>Fourier：$\dfrac Q{\Delta t}=-k_tA\dfrac{\mathrm dT}{\mathrm dx}$；$R=\Delta x/k_t$，串聯 R 值相加</li>
+      <li>$\ell\approx\dfrac1{4\pi r^2}\dfrac VN=\dfrac{kT}{4\pi r^2P}$（空氣約 150 nm）</li>
+      <li>$k_t\approx\tfrac12\frac{C_V}V\ell\bar v$，$\eta\approx\tfrac12\rho\ell\bar v$，$D\approx\tfrac12\ell\bar v$</li>
+      <li>熱方程 $\partial_tT=K\partial_x^2T$、Fick $\partial_tn=D\partial_x^2n$；$\Delta t\approx(\Delta x)^2/D$</li>
+    </ul>
+  </section>
+</div>
+
+<h3 id="t1x-types">8.2 題型總表</h3>
+
+<p class="type-jump"><a href="#t1type-1">① 溫標與熱膨脹</a><a href="#t1type-2">② 理想氣體估計</a><a href="#t1type-3">③ 微觀模型與 $v_{\text{rms}}$</a><a href="#t1type-4">④ 維里與凡得瓦</a><a href="#t1type-5">⑤ 均分定理</a><a href="#t1type-6">⑥ 熱與功、第一定律</a><a href="#t1type-7">⑦ PV 圖的功與循環</a><a href="#t1type-8">⑧ 等溫與絕熱</a><a href="#t1type-9">⑨ 熱容量</a><a href="#t1type-10">⑩ 熱量平衡與潛熱</a><a href="#t1type-11">⑪ 焓與燃燒</a><a href="#t1type-12">⑫ 負熱容量</a><a href="#t1type-13">⑬ 熱傳導</a><a href="#t1type-14">⑭ 平均自由徑與輸運</a></p>
+
+<div class="drill" id="t1type-1">
+  <h4>① 溫標換算與熱膨脹</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>°F／°C／K 換算；橋、鐵軌、雙金屬片的伸長；「證明 $\beta=\alpha_x+\alpha_y+\alpha_z$」。</dd>
+    <dt>做法</dt><dd>$\Delta L=\alpha L\Delta T$；證明時把 $V=L_xL_yL_z$ 每邊各乘 $(1+\alpha_i\Delta T)$，展開後丟掉 $(\Delta T)^2$ 以上的小量。</dd>
+    <dt>常錯</dt><dd>用 $T$ 的比值算「兩倍熱」（攝氏沒有意義）；證明時沒說明為什麼可以丟掉二次項。</dd>
+    <dt>代表題</dt><dd><a href="#sc-1-8">課本 1-8（考古 115-2、114-1）</a>　<a href="#sc-1-1">1-1</a>　<a href="#sc-1-3">1-3</a>　<a href="#sc-1-4">1-4</a>　<a href="#sc-1-7">1-7</a>　<a href="#t1-self-01a">自編 01a</a>　<a href="#t1var-6">變化題 6</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-2">
+  <h4>② 理想氣體的數量估計</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>一莫耳的體積、房間有幾個分子、分子間距、熱氣球要多熱、大氣壓隨高度。</dd>
+    <dt>做法</dt><dd>$PV=NkT$ 解出要的量；分子間距 $(V/N)^{1/3}$；熱氣球用浮力＝重量，$\rho\propto1/T$；大氣 $\mathrm dP/\mathrm dz=-\rho g$ 配 $\rho=Pm/kT$。</dd>
+    <dt>常錯</dt><dd>溫度用攝氏；$N$ 和 $n$ 混用（$Nk=nR$）；忘了空氣的平均分子量約 29 g/mol。</dd>
+    <dt>代表題</dt><dd><a href="#sc-1-9">課本 1-9</a>　<a href="#sc-1-10">1-10</a>　<a href="#sc-1-12">1-12</a>　<a href="#sc-1-15">1-15</a>　<a href="#sc-1-16">1-16</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-3">
+  <h4>③ 壓力的微觀模型與 $v_{\text{rms}}$</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「由分子撞牆推導 $\tfrac12m\overline{v^2}=\tfrac32kT$」、方均根速率、誰跑得快、同位素分離、瀉流。</dd>
+    <dt>做法</dt><dd>一個分子來回一趟 $\Delta t=2L/v_x$，每次動量變化 $2mv_x$ ⟹ $\bar P=m\overline{v_x^2}/V$（$N$ 個加總）；配 $PV=NkT$ 與 $\overline{v^2}=3\overline{v_x^2}$。比較兩種氣體：$v_{\text{rms}}\propto1/\sqrt m$。</dd>
+    <dt>常錯</dt><dd>動量變化寫成 $mv_x$（少了反彈的 2 倍）；忘了 $\overline{v^2}=3\overline{v_x^2}$；質量用 g/mol 沒換成每個分子的公斤數。</dd>
+    <dt>代表題</dt><dd><a href="#tk1x-1a">考古 某級-1a</a>　<a href="#tk1-114-2">考古 114-2</a>　<a href="#sc-1-18">課本 1-18</a>　<a href="#sc-1-19">1-19</a>　<a href="#sc-1-20">1-20</a>　<a href="#sc-1-22">1-22</a>　<a href="#t1var-3">變化題 3</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-4">
+  <h4>④ 維里展開與凡得瓦方程式</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「由凡得瓦方程式求第二、第三維里係數」、用數據擬合 $a$、$b$。</dd>
+    <dt>做法</dt><dd>把 $P=\frac{nRT}{V-nb}-\frac{an^2}{V^2}$ 寫成 $\frac{PV}{nRT}=\frac1{1-b/(V/n)}-\frac{a}{RT(V/n)}$，用 $\frac1{1-x}=1+x+x^2+\cdots$ 展開比較係數：$B=b-\frac a{RT}$、$C=b^2$。</dd>
+    <dt>常錯</dt><dd>展開到一次就停，答不出 $C$；$V$ 和 $V/n$（莫耳體積）混用。</dd>
+    <dt>代表題</dt><dd><a href="#sc-1-17">課本 1-17（考古 某級-1i）</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-5">
+  <h4>⑤ 均分定理與自由度</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「敘述均分定理並舉例」、一公升氦與空氣的熱能、一克鉛的熱能、水蒸氣有幾個自由度。</dd>
+    <dt>做法</dt><dd>數二次項：平移 3、轉動（線形 2、非線形 3）、每個振動模式 2（室溫下通常凍結）、固體每原子 6；$U=Nf\cdot\tfrac12kT$，氣體可寫成 $\tfrac f2PV$。</dd>
+    <dt>常錯</dt><dd>雙原子算 7（室溫振動凍結）；繞鍵軸的轉動也算進去；只適用二次項，量子凍結時不成立。</dd>
+    <dt>代表題</dt><dd><a href="#tk1x-1b">考古 某級-1b</a>　<a href="#sc-ex-dof">課文自由度</a>　<a href="#sc-1-23">課本 1-23</a>　<a href="#sc-1-24">1-24</a>　<a href="#sc-1-25">1-25</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-6">
+  <h4>⑥ 熱與功的區分、第一定律</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「說明第一定律」、某段能量轉移算熱還是功、沒加熱卻升溫的例子、搖一瓶水會升溫多少。</dd>
+    <dt>做法</dt><dd>熱＝因溫差而自發的能量流，功＝其他方式；先畫清楚系統邊界。$\Delta U=Q+W$，注意 $W$ 的正負號約定。</dd>
+    <dt>常錯</dt><dd>說「系統含有多少熱」；邊界改了熱與功就會互換卻沒說明；和 $\Delta U=Q-W$ 的課本混用正負號。</dd>
+    <dt>代表題</dt><dd><a href="#tk1x-1cd">考古 某級-1cd</a>　<a href="#sc-1-26">課本 1-26</a>　<a href="#sc-1-27">1-27</a>　<a href="#sc-1-29">1-29</a>　<a href="#sc-1-30">1-30</a>　<a href="#t1-self-04b">自編 04b</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-7">
+  <h4>⑦ PV 圖上的功與循環</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>$P\propto V$ 的膨脹、三角形或矩形循環、每一步 $W$、$\Delta U$、$Q$ 的正負或數值。</dd>
+    <dt>做法</dt><dd>$W=-$（曲線下面積）；理想氣體 $\Delta U=\tfrac f2(P_fV_f-P_iV_i)$；最後 $Q=\Delta U-W$。循環一圈 $\Delta U=0$，淨功＝圍住的面積（順時針時外界做負功）。</dd>
+    <dt>常錯</dt><dd>$W$ 的正負號；$P\propto V$ 時忘了終壓也變了；用 atm·L 沒換成焦耳。</dd>
+    <dt>代表題</dt><dd><a href="#tk1-114-7">考古 114-7</a>　<a href="#sc-1-31">課本 1-31</a>　<a href="#sc-1-33">1-33</a>　<a href="#sc-1-34">1-34</a>　<a href="#sc-ex-100j">課文 100 J</a>　<a href="#t1var-2">變化題 2</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-8">
+  <h4>⑧ 等溫與絕熱過程</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「證明準靜態絕熱 $PV^\gamma=$ 常數」、打氣筒、柴油引擎點火溫度、聲速、乾絕熱遞減率。</dd>
+    <dt>做法</dt><dd>絕熱：$\mathrm dU=-P\,\mathrm dV$ 配 $U=\tfrac f2NkT$、$P=NkT/V$ ⟹ $\tfrac f2\frac{\mathrm dT}T=-\frac{\mathrm dV}V$ ⟹ $VT^{f/2}=$ 常數，再用 $T\propto PV$ 換成 $PV^\gamma$。等溫：$W=NkT\ln(V_i/V_f)$、$Q=-W$。</dd>
+    <dt>常錯</dt><dd>把絕熱當等溫（溫度其實會變）；$\gamma$ 用錯（單原子 5/3、雙原子 7/5）；等溫說成「沒有熱」。</dd>
+    <dt>代表題</dt><dd><a href="#tk1x-1e">考古 某級-1e</a>　<a href="#sc-ex-adiabat">課文推導</a>　<a href="#sc-ex-isotherm">等溫</a>　<a href="#sc-1-35">課本 1-35</a>　<a href="#sc-1-36">1-36</a>　<a href="#sc-1-37">1-37</a>　<a href="#sc-1-39">1-39</a>　<a href="#sc-1-40">1-40</a>　<a href="#t1var-4">變化題 4</a>　<a href="#t1var-5">5</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-9">
+  <h4>⑨ 熱容量：$C_V$、$C_P$ 與 $C_P-C_V$</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>「求單原子理想氣體 $C_P$ 與 $C_V$ 的關係」、用均分定理解釋熱容量數據、量金屬的熱容量。</dd>
+    <dt>做法</dt><dd>$C_V=(\partial U/\partial T)_V=\tfrac f2Nk$；定壓時 $Q=\Delta U+P\Delta V$，$P\Delta V=Nk\Delta T$ ⟹ $C_P=C_V+Nk$，$\gamma=C_P/C_V$。</dd>
+    <dt>常錯</dt><dd>$C_P$ 和 $C_V$ 搞反；固體也加 $Nk$（固體幾乎不膨脹，兩者近乎相同）；偏微分固定哪個變數沒寫清楚。</dd>
+    <dt>代表題</dt><dd><a href="#tk1x-1cd">考古 某級-1cd</a>　<a href="#sc-ex-6-cpcv">課文推導</a>　<a href="#sc-ex-6-cv">莫耳熱容量</a>　<a href="#sc-1-41">課本 1-41</a>　<a href="#sc-1-43">1-43</a>　<a href="#sc-1-44">1-44</a>　<a href="#sc-1-45">1-45</a>　<a href="#t1var-7">變化題 7</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-10">
+  <h4>⑩ 熱量平衡與潛熱</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>咖啡／茶加冰、義大利麵丟進沸水、蒸汽通入冰、積雪能撐幾週。</dd>
+    <dt>做法</dt><dd>熱的放熱＝冷的吸熱；冰要先算「熔化 $mL$」再算「融化後的水升溫 $mc\Delta T$」。不確定末狀態時先比較各關卡需要的熱量。</dd>
+    <dt>常錯</dt><dd>漏掉融化後的冰水還要升溫那一段；潛熱單位（J/g 與 J/kg）混用。</dd>
+    <dt>代表題</dt><dd><a href="#tk1-115-1">考古 115-1</a>　<a href="#sc-1-47">課本 1-47</a>　<a href="#sc-1-42">1-42</a>　<a href="#sc-1-48">1-48</a>　<a href="#t1-self-06a">自編 06a</a>　<a href="#t1var-1">變化題 1</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-11">
+  <h4>⑪ 焓、相變與燃燒</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>沸騰的焓變中有多少是推開大氣的功、燃燒熱、Hess 定律、解離能、食物熱量換算。</dd>
+    <dt>做法</dt><dd>$\Delta H=\Delta U+P\Delta V$；生成焓：產物總和減反應物總和；氣體的 $P\Delta V=\Delta n\,RT$。</dd>
+    <dt>常錯</dt><dd>只有元素的標準狀態生成焓才是 0（單原子氫不是標準狀態，它的生成焓不是 0）；水要分清液態或氣態。</dd>
+    <dt>代表題</dt><dd><a href="#sc-ex-6-boil">課文沸騰</a>　<a href="#sc-1-49">課本 1-49</a>　<a href="#sc-1-50">1-50</a>　<a href="#sc-1-51">1-51</a>　<a href="#sc-1-53">1-53</a>　<a href="#sc-1-54">1-54</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-12">
+  <h4>⑫ 重力束縛系統的負熱容量</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>均勻密度的恆星、位能 $-\frac35\frac{GM^2}R$、太陽的平均溫度、「失去能量反而變熱」。</dd>
+    <dt>做法</dt><dd>均位定理 $U_{\text{位}}=-2K$ ⟹ $U_{\text{總}}=-K$；$K=\tfrac32NkT$ ⟹ $C=\mathrm dU/\mathrm dT=-\tfrac32Nk\lt0$。$N=M/m_p$（完全游離時還要算電子）。</dd>
+    <dt>常錯</dt><dd>忘了均位定理的 2 倍；$N$ 只算質子不算電子（會差兩倍）。</dd>
+    <dt>代表題</dt><dd><a href="#tk1x-4">考古 某級-4</a>　<a href="#sc-1-55">課本 1-55</a>　<a href="#t1-self-06b">自編 06b</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-13">
+  <h4>⑬ 熱傳導與 R 值</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>窗戶、牆壁、房子的熱損失、平底鍋柄多久變燙、地球內部的熱流、推導熱方程。</dd>
+    <dt>做法</dt><dd>穩態 $Q/\Delta t=A\Delta T/R$，串聯 R 值相加、並聯 $A/R$ 相加；時間尺度 $\Delta t\sim(\Delta x)^2\rho c/k_t$。</dd>
+    <dt>常錯</dt><dd>忽略玻璃兩側的靜止空氣層（5000 W 與 250 W 差 20 倍）；單位 ft²·°F·hr/Btu 換算。</dd>
+    <dt>代表題</dt><dd><a href="#sc-ex-window">課文窗戶</a>　<a href="#sc-1-56">課本 1-56</a>　<a href="#sc-1-57">1-57</a>　<a href="#sc-1-58">1-58</a>　<a href="#sc-1-60">1-60</a>　<a href="#sc-1-61">1-61</a>　<a href="#sc-1-62">1-62</a>　<a href="#t1-self-07a">自編 07a</a>　<a href="#t1var-8">變化題 8</a></dd>
+  </dl>
+</div>
+
+<div class="drill" id="t1type-14">
+  <h4>⑭ 平均自由徑、黏滯與擴散</h4>
+  <dl>
+    <dt>怎麼認</dt><dd>平均自由徑多長、多低壓力 $\ell$ 才有 10 cm、估計 $k_t$、$\eta$、$D$、色素或香水擴散要多久、推導 Fick 第二定律。</dd>
+    <dt>做法</dt><dd>分子掃過的圓柱體積 $\pi(2r)^2\ell$ 裡有一個分子 ⟹ $\ell\approx\frac{1}{4\pi r^2}\frac VN$；兩盒交換分子模型給 $k_t$、$\eta$、$D$；擴散時間 $\sim(\Delta x)^2/D$。</dd>
+    <dt>常錯</dt><dd>半徑 $r$ 和直徑混用（差 4 倍）；把擴散距離當成和時間成正比。</dd>
+    <dt>代表題</dt><dd><a href="#sc-ex-mfp">課文平均自由徑</a>　<a href="#sc-ex-kt-air">空氣熱導率</a>　<a href="#sc-1-63">課本 1-63</a>　<a href="#sc-1-64">1-64</a>　<a href="#sc-1-66">1-66</a>　<a href="#sc-ex-dye">色素擴散</a>　<a href="#sc-1-68">1-68</a>　<a href="#sc-1-69">1-69</a>　<a href="#sc-1-70">1-70</a>　<a href="#t1var-9">變化題 9</a>　<a href="#t1var-10">10</a></dd>
+  </dl>
+</div>
+
+<h3 id="t1x-vars">8.3 變化題：老師可能的改法</h3>
+
+<p class="small muted">每題都先自己算，再打開解答。數值用 $c_{\text{水}}=4.186\ \text{J/(g·K)}$、冰的熔化熱 $333\ \text{J/g}$、$1\ \text{atm}=1.013\times10^5\ \text{Pa}$、$k=1.381\times10^{-23}\ \text{J/K}$。</p>
+
+<div class="drill-q" id="t1var-1">
+  <p class="q-src">變化題 1 · 改自考古 <a href="#tk1-115-1">115-1</a></p>
+  <p>200 g、$90^\circ\text{C}$ 的咖啡（當成水）要加多少 $0^\circ\text{C}$ 的冰，才會降到 $70^\circ\text{C}$？忽略杯子吸熱。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>冰先熔化，熔化後的冰水再從 $0$ 升到 $70^\circ\text{C}$；咖啡從 90 降到 70：</p>
+    $$m(333+4.186\times70)=200\times4.186\times20\ \Rightarrow\ m=\frac{16744}{626.0}\approx26.7\ \text{g}$$
+    <p>驗算：咖啡放熱 $16.7\ \text{kJ}$；冰吸熱 $26.7\times333+26.7\times293=8.9+7.8=16.7\ \text{kJ}$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="t1var-2">
+  <p class="q-src">變化題 2 · 改自考古 <a href="#tk1-114-7">114-7</a></p>
+  <p>一些氦氣從 $2\ \text{L}$、$1\ \text{atm}$ 開始，沿著 $P\propto V$ 的直線膨脹到 $4\ \text{L}$。求外界對氣體做的功、內能變化與吸收的熱。</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>終壓 $P_f=1\times\frac42=2\ \text{atm}$。$P\propto V$ 時曲線下面積 $=\tfrac12(P_fV_f-P_iV_i)$：</p>
+    $$P_fV_f-P_iV_i=8-2=6\ \text{atm·L}=608\ \text{J}$$
+    $$W=-\tfrac12(608)=-304\ \text{J},\quad\Delta U=\tfrac32(608)=912\ \text{J},\quad Q=\Delta U-W=1216\ \text{J}$$
+    <p>驗算：膨脹 $W\lt0$、升溫 $\Delta U\gt0$，所以要吸熱 ✔；$Q:\Delta U:(-W)=4:3:1$，和課本 1.31 的比例相同 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="t1var-3">
+  <p class="q-src">變化題 3 · 改自考古 <a href="#tk1-114-2">114-2</a></p>
+  <p>300 K 時氦原子（4.00 u）與氬原子（39.95 u）的方均根速率各是多少？誰快、快幾倍？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$v_{\text{rms}}=\sqrt{\frac{3kT}{m}}:\quad v_{\text{He}}=\sqrt{\frac{3(1.381\times10^{-23})(300)}{4.00(1.66\times10^{-27})}}\approx1370\ \text{m/s},\quad v_{\text{Ar}}\approx433\ \text{m/s}$$
+    <p>氦快 $\sqrt{39.95/4.00}\approx3.16$ 倍。驗算：同溫下平均動能相同，$v\propto1/\sqrt m$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="t1var-4">
+  <p class="q-src">變化題 4 · 改自 <a href="#sc-1-37">課本 1-37</a></p>
+  <p>$300\ \text{K}$、$1\ \text{atm}$ 的空氣絕熱壓縮到原來的 $1/10$ 體積，末溫與末壓是多少？</p>
+  <details class="reveal"><summary>看解答</summary>
+    <p>空氣 $f=5$，$\gamma=7/5$。$TV^{\gamma-1}$ 與 $PV^\gamma$ 守恆：</p>
+    $$T_f=300\times10^{0.4}\approx754\ \text{K},\qquad P_f=1\times10^{1.4}\approx25.1\ \text{atm}$$
+    <p>驗算：$P_fV_f/T_f=25.1\times0.1/754=3.33\times10^{-3}=P_iV_i/T_i=1/300$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="t1var-5">
+  <p class="q-src">變化題 5 · 改自 <a href="#sc-ex-isotherm">課文等溫壓縮</a></p>
+  <p>一莫耳理想氣體在 $300\ \text{K}$ 等溫壓縮到一半體積，外界做多少功？氣體吸收多少熱？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$W=nRT\ln\frac{V_i}{V_f}=8.315\times300\times\ln2\approx1729\ \text{J},\qquad Q=-W=-1729\ \text{J}$$
+    <p>等溫 $\Delta U=0$，外界做的功全部以熱的形式流出 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="t1var-6">
+  <p class="q-src">變化題 6 · 改自 <a href="#sc-1-8">課本 1-8（考古 115-2）</a></p>
+  <p>一條 $30\ \text{m}$ 長的鋼軌，從冬天到夏天溫度差 $40\ \text{K}$，要留多大的伸縮縫？取 $\alpha=1.1\times10^{-5}\ \text{K}^{-1}$。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\Delta L=\alpha L\Delta T=(1.1\times10^{-5})(30)(40)=0.0132\ \text{m}\approx1.3\ \text{cm}$$
+    <p>驗算：相對伸長 $4.4\times10^{-4}$，遠小於 1，線性近似成立 ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="t1var-7">
+  <p class="q-src">變化題 7 · 改自考古 <a href="#tk1x-1cd">某級-1cd</a></p>
+  <p>2 mol 雙原子理想氣體（室溫）定壓升溫 $10\ \text{K}$。求吸收的熱、內能變化與外界做的功。</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$Q=nC_{P,m}\Delta T=2\cdot\tfrac72(8.315)(10)\approx582\ \text{J},\quad\Delta U=2\cdot\tfrac52(8.315)(10)\approx416\ \text{J}$$
+    $$W=\Delta U-Q=-nR\Delta T\approx-166\ \text{J}$$
+    <p>驗算：$-W=P\Delta V=nR\Delta T$ ✔；$Q/\Delta U=7/5=\gamma$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="t1var-8">
+  <p class="q-src">變化題 8 · 改自 <a href="#sc-ex-window">課文窗戶</a></p>
+  <p>一片 $2\ \text{m}^2$、厚 $4\ \text{mm}$ 的玻璃（$k_t=0.8\ \text{W/(m·K)}$），內外溫差 $15\ \text{K}$。只算玻璃本身時熱流多大？實際上為什麼小很多？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\frac Q{\Delta t}=k_tA\frac{\Delta T}{\Delta x}=0.8\times2\times\frac{15}{0.004}=6000\ \text{W}$$
+    <p>實際上玻璃兩側各有約 1 mm 的靜止空氣層，空氣 $k_t\approx0.026$，R 值比玻璃大得多；串聯後熱流降到幾百瓦（見<a href="#sc-1-57">課本 1-57</a>）。</p>
+  </details>
+</div>
+
+<div class="drill-q" id="t1var-9">
+  <p class="q-src">變化題 9 · 改自 <a href="#sc-ex-mfp">課文平均自由徑</a>、<a href="#sc-1-63">課本 1-63</a></p>
+  <p>飛機巡航高度約 10 km，那裡 $P\approx0.26\ \text{atm}$、$T\approx223\ \text{K}$。取分子半徑 $r=1.5\ \text{Å}$，平均自由徑是地面（300 K、1 atm）的幾倍？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\ell=\frac{kT}{4\pi r^2P}:\quad\ell_{\text{地面}}\approx1.45\times10^{-7}\ \text{m},\quad\ell_{10\ \text{km}}\approx4.1\times10^{-7}\ \text{m}$$
+    <p>約 2.9 倍。驗算：比值 $=\frac{223/0.26}{300/1}=2.86$ ✔</p>
+  </details>
+</div>
+
+<div class="drill-q" id="t1var-10">
+  <p class="q-src">變化題 10 · 改自 <a href="#sc-ex-dye">課文色素擴散</a></p>
+  <p>糖分子在水中的擴散係數約 $D=1\times10^{-9}\ \text{m}^2/\text{s}$。不攪拌的話，糖要擴散 1 cm 大約要多久？擴散 2 cm 呢？</p>
+  <details class="reveal"><summary>看解答</summary>
+    $$\Delta t\approx\frac{(\Delta x)^2}{D}=\frac{(0.01)^2}{10^{-9}}=10^5\ \text{s}\approx1\ \text{天}$$
+    <p>距離加倍、時間變 4 倍，約 4 天——所以泡茶要攪拌（對流）✔</p>
+  </details>
+</div>

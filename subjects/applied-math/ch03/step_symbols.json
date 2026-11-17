@@ -1,0 +1,25 @@
+{
+  "_說明": "symbols 是本章符號總表；groups 決定總表分組；步驟用 data-sym 指定要提醒的符號（每頁只提醒第一次）。",
+  "symbols": {
+    "g":     { "tex": "g(x)", "zh": "非齊次項（右邊的驅動）", "unit": "—", "note": "$g\\neq0$ 是 Type II；猜 $y_p$ 完全看 $g$ 的形式" },
+    "ab":    { "tex": "a,\\ b", "zh": "常係數方程 $y''+ay'+by=g(x)$ 的係數", "unit": "—", "note": "" },
+    "y12":   { "tex": "y_1,\\ y_2", "zh": "齊次解（Step 1）", "unit": "—", "note": "也叫 complementary solution $y_c=c_1y_1+c_2y_2$" },
+    "yp":    { "tex": "y_p", "zh": "特解（particular solution）", "unit": "—", "note": "任何一個滿足非齊次方程的解；要和 $y_1,y_2$ 線性獨立" },
+    "K":     { "tex": "K_0,K_1,\\ldots;\\ A,B,C,D", "zh": "待定係數：猜的 $y_p$ 裡未知的常數", "unit": "—", "note": "代回原式、比較同類項的係數求出" },
+    "c12":   { "tex": "c_1,\\ c_2", "zh": "一般解裡的任意常數（Step 3 由初始條件決定）", "unit": "—", "note": "要等 $y_p$ 求出來、寫成完整的 $y$ 之後才代初始條件" },
+    "lam":   { "tex": "\\lambda", "zh": "齊次方程的特徵根", "unit": "—", "note": "$g$ 裡的指數 $k$（或 $k\\pm i\\omega$）等於特徵根時要用修正規則" },
+    "W":     { "tex": "W=y_1y_2'-y_2y_1'", "zh": "Wronskian（參數變換法的分母）", "unit": "—", "note": "第 6 節用" },
+    "u12":   { "tex": "u_1(x),\\ u_2(x)", "zh": "參數變換法：把 $c_1,c_2$ 換成函數", "unit": "—", "note": "$u_1'=-y_2g/W$、$u_2'=y_1g/W$" },
+    "gam":   { "tex": "\\gamma=\\dfrac{\\beta}{2m}", "zh": "阻尼係數（板書 9/30 把阻力常數寫成 $\\beta$）", "unit": "s⁻¹", "note": "第 2 章寫成 $b$" },
+    "w0":    { "tex": "\\omega_0=\\sqrt{k/m}", "zh": "自然角頻率", "unit": "rad/s", "note": "" },
+    "w":     { "tex": "\\omega", "zh": "外力的角頻率（板書：操縱變因）", "unit": "rad/s", "note": "和第 2 章欠阻尼的 $\\omega$ 不同" },
+    "F0":    { "tex": "F_0=\\dfrac{f_0}{m}", "zh": "每單位質量的外力振幅", "unit": "m/s²", "note": "外力 $f_{\\text{ext}}=f_0\\sin\\omega t$" },
+    "Aphi":  { "tex": "A(\\omega),\\ \\phi", "zh": "穩態振幅與相位：$x_p=A\\sin(\\omega t+\\phi)$", "unit": "m、rad", "note": "$K_1=A\\sin\\phi$、$K_2=A\\cos\\phi$" }
+  },
+  "groups": [
+    { "title": "待定係數法", "keys": ["g", "ab", "y12", "yp", "K", "c12", "lam"] },
+    { "title": "參數變換法", "keys": ["W", "u12"] },
+    { "title": "受迫阻尼振盪", "keys": ["gam", "w0", "w", "F0", "Aphi"] }
+  ],
+  "steps": {}
+}
