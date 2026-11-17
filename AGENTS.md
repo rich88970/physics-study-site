@@ -30,7 +30,7 @@ subjects/<科目>/<章>/
     figures*.js             本章圖解
     videos/                 （只有力學第 1 章有）講解影片與時間軸
 subjects/_template/ch01/    新章節範本
-tools/                      建置、檢查、轉換工具（見第 6 節）
+tools/                      建置、檢查、轉換工具（見第 6 節）、verify_*.py 各章答案的獨立驗算
 tools/sources/*.md          「考古題章」「公式表章」的 Markdown 來源（改這裡再轉換，不直接改產生的 HTML）
 ```
 
@@ -100,7 +100,14 @@ tools/sources/*.md          「考古題章」「公式表章」的 Markdown 來
 3. 編 `chapter.json`：`sections` 每節一筆 `{ "id": "s01", "file": "01-xxx.html", "title": "…", "pages": "p.1–5", "desc": "一句話" }`，依講義頁碼排序；
    `overview` 填總覽節的 id（`"s00"`，檔案 `00-intro.html`，內含 `<div data-section-list></div>` 自動列出各節）。
 4. 寫 `sections/*.html`（照第 3、4 節格式）、`exam.html`、`step_symbols.json`。
-5. 執行第 6 節的建置與檢查，全部通過才算完成。
+5. 數值答案寫一支 `tools/verify_<科目>_<章>.py`（sympy／numpy）獨立重算，跑過再寫進網站。
+6. 執行第 6 節的建置與檢查，全部通過才算完成。
+
+**首頁怎麼更新**：根目錄的 `index.html` 不用手改，它讀 `subjects/registry.json` 自動產生科目與章節連結。
+- 新增章節：在該科目的 `chapters` 加一筆 `{ "id", "title", "range", "status": "ready" }`，首頁就會出現這一章（`status` 不是 `ready` 時只顯示章名和「待加入」、沒有連結）。
+- 新增科目：在 `subjects` 加一筆 `{ "id", "name", "teacher", "textbook", "chapters": [...] }`，順序就是首頁的顯示順序。
+- 改完 registry 一樣要跑 `python tools/build_bundle.py`，不然雙擊開啟的本機版首頁不會更新。
+- 完成後開首頁確認新連結點得進去，再開該章總覽確認各節都列出來。
 
 ## 6. 建置與檢查（每次改完都要跑）
 
